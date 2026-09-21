@@ -59,12 +59,14 @@ pub use graph::{
     PlanDiagnostic, PlanExpansion, PlanStep, PlanView, RequirementView, StepsBasis, StepsSection,
     ThresholdItemView, UnlockDiagnostic, UnlockNode, UnlockTotals, UnlockView, STEPS,
 };
-pub use icon::{icon_source, IconRef, MarkTier, ICON_SCHEME};
+pub use icon::{icon_source, IconRef, MarkFill, MarkTier, ICON_SCHEME};
 pub use live::{
     live_marks, live_view, LiveAchievement, LiveDiagnostic, LiveGraph, LiveMarkRow, LiveMarks,
     LiveOpen, LiveView,
 };
-pub use mark_art::{mark_source, MarkFrames, LOBBY_ANM2, WIDGET_ANM2};
+pub use mark_art::{
+    mark_source, paper_source, widget_source, MarkFrames, WidgetArt, LOBBY_ANM2, WIDGET_ANM2,
+};
 pub use marks::{
     character_for, counter_index, marks_matrix, marks_totals, Cell, CellLevel, CharacterGroup,
     CharacterRow, MarkArtView, MarksMatrix, MarksTotals, BOSSES, CHARACTERS, CHARACTER_KEYS,
@@ -102,7 +104,7 @@ pub use search::{
 pub use settings::{
     session_document_fits, snap_percent, Settings, DEFAULT_SCALE, MAX_SESSION_BYTES, SCALE_PERCENTS,
 };
-pub use sprite_png::{crop_png, decode_rgba, trim_opaque};
+pub use sprite_png::{crop_png, decode_rgba, overlay, trim_opaque};
 pub use summary::{save_summary, SaveDiagnostic, SaveSummary, SectionCount};
 pub use target_sprite::{target_sprite, TargetSprite};
 pub use tray::{tray_action, tray_locale, tray_text, TrayAction, TrayLocale, TrayText};

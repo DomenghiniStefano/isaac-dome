@@ -476,3 +476,95 @@ fn the_reading_json_shape_is_pinned() {
         serde_json::json!({ "kind": "known", "bits": 0, "level": "empty", "online": false }),
     );
 }
+
+/// A catalog that exists. What the widget's URL needs is only that the game's archives are
+/// open — the paper and the symbols come from the anm2 files, never from the catalog.
+fn catalog_with_heads() -> Catalog {
+    let anm2 = coop_menu_anm2();
+    Catalog::build(|p| match p {
+        "players.xml" => Some(PLAYERS.to_vec()),
+        "gfx/ui/coop menu.anm2" => Some(anm2.clone()),
+        _ => None,
+    })
+}
+
+// The emblem's address. The band over the matrix draws the game's own completion widget,
+// and what it draws is read from the same cells the footer's column totals are: a column is
+// at hard when *every* readable cell in it is hard, at normal when at least one has a level,
+// and absent when none has. So the picture and the numbers under it can only ever agree.
+
+/// The value a cell holds at each level, as `cell_at` reads it: bit 0 is the first level,
+/// bit 1 the second. Written out rather than derived, like `NEVER` above.
+const NORMAL: u32 = 1;
+const HARD: u32 = 3;
+
+/// Every cell of `column` set to `value`, for the rows that have one.
+fn whole_column(column: usize, value: u32) -> Vec<(usize, u32)> {
+    (0..CHARACTERS.len())
+        .filter_map(|row| counter_index(row, column).map(|i| (i, value)))
+        .collect()
+}
+
+/// The `widget/…` segment the matrix asks for, with an icon builder that answers.
+fn widget_fills(counters: &[u32], catalog: Option<&Catalog>) -> String {
+    let m = marks_matrix(counters, catalog, |r| Some(r.to_path()));
+    m.widget_url
+        .expect("a catalog means a widget")
+        .strip_prefix("widget/")
+        .expect("the widget's own address")
+        .to_string()
+}
+
+#[test]
+fn an_untouched_profile_asks_for_a_bare_paper() {
+    let c = catalog_with_heads();
+    assert_eq!(
+        widget_fills(&counters(523, &[]), Some(&c)),
+        "------------",
+        "nothing done draws no symbol at all, not twelve faint ones"
+    );
+}
+
+#[test]
+fn a_column_reaches_hard_only_when_every_readable_cell_does() {
+    let c = catalog_with_heads();
+    // One character on hard is not the column: thirty-three others have not done it.
+    let one = marks_matrix(
+        &counters(523, &[(counter_index(0, 0).unwrap(), HARD)]),
+        Some(&c),
+        |r| Some(r.to_path()),
+    );
+    assert_eq!(
+        one.widget_url.unwrap(),
+        "widget/n-----------",
+        "some progress is the normal symbol"
+    );
+    // The whole column on hard is.
+    assert_eq!(
+        widget_fills(&counters(523, &whole_column(0, HARD)), Some(&c)),
+        "h-----------"
+    );
+    // The whole column on normal is not: `hard` is what "done" means for a column (B22).
+    assert_eq!(
+        widget_fills(&counters(523, &whole_column(0, NORMAL)), Some(&c)),
+        "n-----------"
+    );
+}
+
+#[test]
+fn a_column_nobody_can_read_is_not_counted_against_it() {
+    // The Beast is unlocated for twenty rows, so its readable cells are the fourteen
+    // originals'. Filling those is the whole of what can be read, and the column is done —
+    // the same rule `TallyTone::Full` uses over `readable`, not over every row.
+    let c = catalog_with_heads();
+    let fills = widget_fills(&counters(523, &whole_column(11, HARD)), Some(&c));
+    assert_eq!(fills.chars().nth(11), Some('h'));
+}
+
+#[test]
+fn without_the_game_there_is_no_widget_to_ask_for() {
+    // Same rule as the symbols and the heads: a URL nothing can serve draws a broken image
+    // where the band should simply have no picture.
+    let m = marks_matrix(&counters(523, &[]), None, |r| Some(r.to_path()));
+    assert!(m.widget_url.is_none());
+}

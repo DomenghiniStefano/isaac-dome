@@ -251,6 +251,14 @@ export type MarksMatrix = {
    */
   art: Array<MarkArtView>
   totals: MarksTotals
+  /**
+   * The game's own completion widget, drawn for this profile: one picture, composed by
+   * the protocol handler out of the paper and the symbols the columns have earned.
+   *
+   * `None` without the game's archives, like every other URL here — the band then simply
+   * has no picture, which is the one thing that never looks broken.
+   */
+  widgetUrl: string | null
 }
 
 /**

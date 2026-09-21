@@ -36,6 +36,6 @@ pub use items::{Item, ItemKind};
 // `items.xml`, so a caller can ask which edition introduced an id without a game installed.
 pub use origin::{origin_of, Origin};
 pub use players::Character;
-pub use sprite::{Rect, SpriteRef};
+pub use sprite::{Point, Rect, SpriteRef};
 pub use text::{Language, Text};
 pub use unlock::Unlock;
