@@ -73,5 +73,11 @@
 # entry as an arrow and had to rewrite it as a delta to resolve. A delta survives a merge; an arrow
 # between two totals does not. The totals below are the ones `scripts/check` counted on the merge
 # itself.
-RUST_TESTS=1160
+# **Raised on 2026-09-21**, Rust +12: the key a boss portrait answers to. Ten unit tests beside
+# `merge_keys` — one per tier, one per way two rows can want the same key — and two on the
+# installed game: that a contested key draws the boss whose page it is, and that the twenty
+# pages no file name reaches are reached by their title. The contested set is read from the
+# catalog rather than listed, so a patch that contests a fifth key is covered the day it ships.
+# UI does not move: nothing in this one is UI.
+RUST_TESTS=1172
 UI_TESTS=747

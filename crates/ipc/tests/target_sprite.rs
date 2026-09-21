@@ -9,6 +9,10 @@
 //! own output: `bossportraits.xml` writes the portrait as
 //! `Portrait_<type>.<variant>_<Name>.png`, and type and variant are exactly the key of
 //! `Target::Entity`.
+//!
+//! That file name is the **fallback**, though, not the rule: where a wiki page names the
+//! row, the page's own key is the one that answers. The tiers are unit-tested beside
+//! `merge_keys`, and what they do to the installed game is in `target_sprite_real.rs`.
 
 use catalog::Catalog;
 use ipc::{target_sprite, Target, TargetSprite};
@@ -17,7 +21,12 @@ const ITEMS: &[u8] = br#"<items gfxroot="gfx/items/"><passive id="2" gfx="a.png"
 const ACH: &[u8] = br#"<achievements gfxroot="gfx/ui/achievement/"><achievement id="1" text="t1" gfx="1.png" /><!-- Beat Challenge #1 --><achievement id="2" text="t2" gfx="2.png" /></achievements>"#;
 const PLAYERS: &[u8] =
     br##"<players portraitroot="gfx/ui/boss/"><player id="7" name="#Z_NAME" portrait="z.png" /></players>"##;
-const BOSSES: &[u8] = br#"<bosses root="resources/gfx/ui/boss/"><boss id="1" name="Monstro" portrait="Portrait_20.0_Monstro.png" /><boss id="2" name="Chub" portrait="Portrait_28.1_Chub.png" /><boss id="3" name="Cadavra" portrait="Portrait_Cadavra.png" /></bosses>"#;
+/// The boss rows carry **invented** names, and that is the point: the key of a row the
+/// wiki names is the key of its page, read from the dataset compiled into this binary, so
+/// a fixture called `Chub` would be answering with the real Chub's key (28.0) rather than
+/// with the one written here. Names no page has isolate the fallback these tests are
+/// about — the key the portrait's own file name declares.
+const BOSSES: &[u8] = br#"<bosses root="resources/gfx/ui/boss/"><boss id="1" name="Quilfur" portrait="Portrait_20.0_Quilfur.png" /><boss id="2" name="Brantle" portrait="Portrait_28.1_Brantle.png" /><boss id="3" name="Nevecka" portrait="Portrait_Nevecka.png" /></bosses>"#;
 const CHALLENGES: &[u8] =
     br#"<challenges><challenge name="Pitch Black" id="1" /><challenge name="Muffled" id="2" /></challenges>"#;
 
@@ -81,8 +90,9 @@ fn an_achievement_and_a_character_resolve_to_their_own_art() {
 #[test]
 fn a_boss_page_finds_its_portrait_through_the_entity_id_written_in_the_filename() {
     let c = catalog_with_art();
-    // `Portrait_20.0_Monstro.png` → entity type 20, variant 0. This is not a name-based
-    // match: type and variant are written into the file name by `bossportraits.xml`.
+    // `Portrait_20.0_Quilfur.png` → entity type 20, variant 0: `bossportraits.xml` writes
+    // type and variant into the file name, and that is what a row no wiki page names is
+    // reached by.
     assert_eq!(
         path(
             &c,
@@ -92,7 +102,7 @@ fn a_boss_page_finds_its_portrait_through_the_entity_id_written_in_the_filename(
                 subtype: 0
             }
         ),
-        "gfx/ui/boss/Portrait_20.0_Monstro.png"
+        "gfx/ui/boss/Portrait_20.0_Quilfur.png"
     );
     // The variant matters: 28.1 is not 28.0.
     assert_eq!(
@@ -104,7 +114,7 @@ fn a_boss_page_finds_its_portrait_through_the_entity_id_written_in_the_filename(
                 subtype: 0
             }
         ),
-        "gfx/ui/boss/Portrait_28.1_Chub.png"
+        "gfx/ui/boss/Portrait_28.1_Brantle.png"
     );
     assert!(
         matches!(
@@ -136,14 +146,14 @@ fn the_subtype_does_not_take_part_in_the_match() {
                 subtype: 3
             }
         ),
-        "gfx/ui/boss/Portrait_20.0_Monstro.png"
+        "gfx/ui/boss/Portrait_20.0_Quilfur.png"
     );
 }
 
 #[test]
 fn a_portrait_that_does_not_declare_an_entity_is_not_reachable_by_entity() {
     let c = catalog_with_art();
-    // `Portrait_Cadavra.png` has no `<type>.<variant>` in its name. The boss exists in
+    // `Portrait_Nevecka.png` has no `<type>.<variant>` in its name. The boss exists in
     // the catalog, but it can't be reached from a `Target::Entity`: this is declared,
     // not guessed at.
     assert!(matches!(
