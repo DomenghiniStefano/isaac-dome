@@ -38,7 +38,7 @@ const { t } = useMessages()
            (spec 3.13a). The text simply takes the width in both cases. -->
       <div
         v-if="widgetUrl"
-        class="hidden size-completion-widget shrink-0 place-items-center border border-border tile-wash @regular/page:grid"
+        class="hidden size-completion-widget shrink-0 place-items-center @regular/page:grid"
       >
         <PixelSprite :url="widgetUrl" class="size-full" />
       </div>

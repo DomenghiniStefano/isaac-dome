@@ -117,6 +117,14 @@
      and centres in it, so the row's height is the head's and never the symbol's. */
   --spacing-row-matrix: 2.75rem;
   /* The game's own completion widget, the emblem the screen opens on (card #58): the paper is
-     96px, drawn at a whole multiple like every other piece of the game's art. */
+     96px, drawn at a whole multiple like every other piece of the game's art.
+
+     **One step larger was tried and measured rather than argued.** The only other whole
+     multiple is `(--sprite-multiple + 1)`, 288px at scale 100, and the paper does look better
+     at it — but the band is as tall as the emblem, so the band goes from 232 to 329 and on a
+     1280x800 window the matrix drops from five visible rows to three. This screen's subject is
+     the grid; the emblem is what it opens with. Trimming the picture's transparent margin
+     first buys 8px of the 96, which is not the difference. It is one value to change if the
+     judgement ever goes the other way. */
   --spacing-completion-widget: calc(96px * var(--sprite-multiple));
 }
