@@ -246,7 +246,7 @@ fn cell_and_totals_json_shape_is_pinned() {
 /// is named after a mode.
 #[test]
 fn the_totals_count_hard_inside_normal_and_never_beside_it() {
-    // 3 = both bits, 7 = both plus the unconfirmed one, 1 = the first level alone,
+    // 3 = both bits, 7 = both plus the online bit, 1 = the first level alone,
     // 2 = the second alone. Four cells with a level, three of them hard.
     let m = marks_matrix(
         &counters(523, &[(27, 3), (41, 7), (55, 1), (69, 2)]),
@@ -360,7 +360,7 @@ fn with_a_catalog_urls_follow_what_it_knows() {
 }
 
 #[test]
-fn a_cell_holding_only_the_unconfirmed_bit_counts_on_neither_side() {
+fn a_cell_holding_only_the_online_bit_counts_on_neither_side() {
     // 4 has never been observed; if it appears, the grid draws it empty, and so must the total.
     let m = marks_matrix(&counters(523, &[(27, 4), (41, 5)]), None, no_icon);
     assert_eq!(
