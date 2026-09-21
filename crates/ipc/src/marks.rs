@@ -124,6 +124,43 @@ pub fn counter_index(character: usize, boss: usize) -> Option<usize> {
     core_save::marks::cell_index(character, *core_save::marks::Column::ALL.get(boss)?)
 }
 
+/// The level a cell's mark reached. Fieldless, so it crosses as a bare camelCase string
+/// and the TypeScript is a union of values: a tag distinguishes variants that carry
+/// different data, and there is none here (CLAUDE.md, "Enums on the IPC").
+///
+/// Two levels and not three: bit 2 is not one of them. It says where a mark was taken,
+/// which is why it travels beside this enum and not inside it.
+///
+/// Not to be confused with `graph::MarkLevelView`, which names the same two bits `base`
+/// and `second`. That one describes a *target* — "go and take this cell at this level" —
+/// and refuses `hard` on purpose, because what bit 1 means outside Greed is unmeasured.
+/// Here the matrix is being drawn and `normal`/`hard` is the vocabulary its own totals
+/// have carried since B22; the two names are one measurement away from becoming one.
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, ts_rs::TS)]
+#[serde(rename_all = "camelCase")]
+pub enum CellLevel {
+    /// Neither level bit: this character has never beaten that boss.
+    Empty,
+    /// Bit 0 alone, the first level.
+    Normal,
+    /// Bit 1, whether or not bit 0 stands with it. A bare 2 is the first level
+    /// **overwritten** and not a second level taken without the first: four located cells
+    /// go 1 → 2 across the 638-era series (B58, measured 2026-09-17). What bit 1 means
+    /// outside Greed is still unmeasured, which is why the name stops at the level.
+    Hard,
+}
+
+impl CellLevel {
+    /// Whether the mark was taken at all. A `match` over the whole enum and not a `!=
+    /// Empty`, so a level added later has to come here and say which side it falls on.
+    pub fn reached(self) -> bool {
+        match self {
+            CellLevel::Empty => false,
+            CellLevel::Normal | CellLevel::Hard => true,
+        }
+    }
+}
+
 /// A cell of the matrix. The three variants are the module's reason for existing:
 /// "never done", "not readable", and "suspicious value" are three different things.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, ts_rs::TS)]
@@ -133,8 +170,21 @@ pub fn counter_index(character: usize, boss: usize) -> Option<usize> {
     rename_all_fields = "camelCase"
 )]
 pub enum Cell {
-    /// Valid mask: bits 0 and 1 = mark levels, bit 2 = unexplained third level.
-    Known { bits: u8 },
+    /// Valid mask, read here rather than at the far end of the IPC: `bits` is the value
+    /// the file holds, `level` and `online` are what it means.
+    ///
+    /// Bit 2 is **won online** — measured 2026-09-12 on a matched window around an online
+    /// co-op run, confirmed by the owner on 2026-09-20 against the game's own completion
+    /// screen (`docs/save-format.md`, "Counters and marks"). It is a field and not a
+    /// level because it answers a different question.
+    ///
+    /// `bits` stays beside the reading for the Verify page, which exists to show what the
+    /// file actually holds; every screen that draws a mark reads `level` and `online`.
+    Known {
+        bits: u8,
+        level: CellLevel,
+        online: bool,
+    },
     /// Index not located in the tables, or past the end of the section read.
     Unknown,
     /// Outside 0..=7: not a mask, so the index points somewhere else.
@@ -254,8 +304,27 @@ pub fn marks_matrix(
 pub(crate) fn cell_at(counters: &[u32], character: usize, boss: usize) -> Cell {
     match counter_index(character, boss).and_then(|i| counters.get(i)) {
         None => Cell::Unknown,
-        Some(&value) if value <= 7 => Cell::Known { bits: value as u8 },
+        Some(&value) if value <= 7 => {
+            let bits = value as u8;
+            Cell::Known {
+                bits,
+                level: level_of(bits),
+                online: bits & 4 != 0,
+            }
+        }
         Some(&value) => Cell::Unexpected { value },
+    }
+}
+
+/// Bit 1 decides on its own, because a mark replaces the one before it rather than
+/// accumulating: requiring bit 0 as well would read a bare 2 as no level at all.
+fn level_of(bits: u8) -> CellLevel {
+    if bits & 2 != 0 {
+        CellLevel::Hard
+    } else if bits & 1 != 0 {
+        CellLevel::Normal
+    } else {
+        CellLevel::Empty
     }
 }
 
@@ -281,12 +350,19 @@ fn totals_from(cells: &[Cell]) -> MarksTotals {
         readable: count(|c| matches!(c, Cell::Known { .. })),
         unknown: count(|c| matches!(c, Cell::Unknown)),
         unexpected: count(|c| matches!(c, Cell::Unexpected { .. })),
-        // Bit 0 or bit 1: the unconfirmed bit alone draws nothing in the grid (the
-        // frontend's `markVisual`), and a total that counts what its grid doesn't show lies.
-        normal: count(|c| matches!(c, Cell::Known { bits } if *bits & 3 != 0)),
-        // Bit 1 alone decides hard, and a bare 2 is hard: the value replaces the one before
-        // it rather than accumulating, so requiring bit 0 as well would drop the cells where
-        // the second level overwrote the first (B58, 2026-09-17).
-        hard: count(|c| matches!(c, Cell::Known { bits } if *bits & 2 != 0)),
+        // Every cell that reached *a* level. Read off `level` and not off the mask: the
+        // online bit alone is not a level, and a total that counted it would say a mark was
+        // taken where the grid draws none.
+        normal: count(|c| matches!(c, Cell::Known { level, .. } if level.reached())),
+        // The ones that reached the second, so `hard <= normal` holds by construction.
+        hard: count(|c| {
+            matches!(
+                c,
+                Cell::Known {
+                    level: CellLevel::Hard,
+                    ..
+                }
+            )
+        }),
     }
 }

@@ -1,6 +1,7 @@
 use catalog::Catalog;
 use ipc::{
-    counter_index, marks_matrix, Cell, CharacterGroup, IconRef, MarkArtView, BOSSES, CHARACTERS,
+    counter_index, marks_matrix, Cell, CellLevel, CharacterGroup, IconRef, MarkArtView, BOSSES,
+    CHARACTERS,
 };
 
 #[test]
@@ -99,6 +100,16 @@ fn no_icon(_: &IconRef) -> Option<String> {
     None
 }
 
+/// A readable cell with no mark at all: the value every cell holds on a fresh profile.
+/// Written out rather than derived from the bits — a helper that computed the level here
+/// would be the production rule stated a second time, and every assertion below would
+/// agree with it by construction.
+const NEVER: Cell = Cell::Known {
+    bits: 0,
+    level: CellLevel::Empty,
+    online: false,
+};
+
 #[test]
 fn matrix_has_the_expected_shape_and_totals() {
     let m = marks_matrix(&counters(523, &[]), None, no_icon);
@@ -116,23 +127,37 @@ fn matrix_has_the_expected_shape_and_totals() {
 fn the_hole_is_now_the_beast_alone_for_the_last_twenty_rows() {
     let m = marks_matrix(&counters(523, &[]), None, no_icon);
     // row 15 = Bethany, column 9 = Delirium: located since 2026-09-08.
-    assert_eq!(m.characters[15].cells[9], Cell::Known { bits: 0 });
+    assert_eq!(m.characters[15].cells[9], NEVER);
     // Column 10 is Mother, located since 2026-09-20 for these rows too.
-    assert_eq!(m.characters[15].cells[10], Cell::Known { bits: 0 });
-    assert_eq!(m.characters[14].cells[10], Cell::Known { bits: 0 });
+    assert_eq!(m.characters[15].cells[10], NEVER);
+    assert_eq!(m.characters[14].cells[10], NEVER);
     // Column 11 is The Beast, and it is what is left of the hole.
     assert_eq!(m.characters[15].cells[11], Cell::Unknown);
     assert_eq!(m.characters[14].cells[11], Cell::Unknown);
     // Row 0 = Isaac: the original characters have all twelve columns.
-    assert_eq!(m.characters[0].cells[10], Cell::Known { bits: 0 });
-    assert_eq!(m.characters[0].cells[11], Cell::Known { bits: 0 });
+    assert_eq!(m.characters[0].cells[10], NEVER);
+    assert_eq!(m.characters[0].cells[11], NEVER);
 }
 
 #[test]
 fn a_read_value_becomes_a_bit_mask() {
     let m = marks_matrix(&counters(523, &[(27, 3), (41, 7)]), None, no_icon);
-    assert_eq!(m.characters[0].cells[0], Cell::Known { bits: 3 });
-    assert_eq!(m.characters[0].cells[1], Cell::Known { bits: 7 });
+    assert_eq!(
+        m.characters[0].cells[0],
+        Cell::Known {
+            bits: 3,
+            level: CellLevel::Hard,
+            online: false
+        }
+    );
+    assert_eq!(
+        m.characters[0].cells[1],
+        Cell::Known {
+            bits: 7,
+            level: CellLevel::Hard,
+            online: true
+        }
+    );
     assert_eq!(m.totals.normal, 2, "only readable, non-zero cells count");
 }
 
@@ -157,11 +182,7 @@ fn a_shorter_section_yields_unknown_not_a_panic() {
         Cell::Unknown,
         "index 384 is past the end of the file"
     );
-    assert_eq!(
-        m.characters[0].cells[0],
-        Cell::Known { bits: 0 },
-        "index 27 is still there"
-    );
+    assert_eq!(m.characters[0].cells[0], NEVER, "index 27 is still there");
     assert!(m.totals.unknown > 40);
     assert_eq!(m.totals.readable + m.totals.unknown, 408);
 }
@@ -225,7 +246,7 @@ fn cell_and_totals_json_shape_is_pinned() {
 /// is named after a mode.
 #[test]
 fn the_totals_count_hard_inside_normal_and_never_beside_it() {
-    // 3 = both bits, 7 = both plus the unconfirmed one, 1 = the first level alone,
+    // 3 = both bits, 7 = both plus the online bit, 1 = the first level alone,
     // 2 = the second alone. Four cells with a level, three of them hard.
     let m = marks_matrix(
         &counters(523, &[(27, 3), (41, 7), (55, 1), (69, 2)]),
@@ -339,7 +360,7 @@ fn with_a_catalog_urls_follow_what_it_knows() {
 }
 
 #[test]
-fn a_cell_holding_only_the_unconfirmed_bit_counts_on_neither_side() {
+fn a_cell_holding_only_the_online_bit_counts_on_neither_side() {
     // 4 has never been observed; if it appears, the grid draws it empty, and so must the total.
     let m = marks_matrix(&counters(523, &[(27, 4), (41, 5)]), None, no_icon);
     assert_eq!(
@@ -365,5 +386,93 @@ fn the_new_fields_are_camel_case_on_the_wire() {
     assert!(
         art.contains_key("normalUrl") && art.contains_key("hardUrl"),
         "{art:?}"
+    );
+}
+
+/// B21: the cell says what it is, instead of handing the frontend a mask to decode.
+///
+/// The three facts a mask holds are three fields: the raw value it was read as, the level
+/// it reached, and whether the mark was taken online. They used to be one number, and the
+/// rules that turned it into a reading lived in two TypeScript files at once — which is
+/// how bit 2 went on being called "a third level, meaning unconfirmed" in the tooltip for
+/// eight days after `docs/save-format.md` had it as "won online".
+///
+/// `online` is a field beside the level and never a level of its own: it says *where* a
+/// mark was taken, not how high it is.
+#[test]
+fn a_known_cell_says_the_level_and_whether_it_was_taken_online() {
+    let m = marks_matrix(
+        &counters(523, &[(27, 1), (41, 3), (55, 2), (69, 7), (83, 5), (97, 4)]),
+        None,
+        no_icon,
+    );
+    let cells = &m.characters[0].cells;
+    assert_eq!(
+        cells[0],
+        Cell::Known {
+            bits: 1,
+            level: CellLevel::Normal,
+            online: false
+        },
+    );
+    assert_eq!(
+        cells[1],
+        Cell::Known {
+            bits: 3,
+            level: CellLevel::Hard,
+            online: false
+        },
+    );
+    assert_eq!(
+        cells[2],
+        Cell::Known {
+            bits: 2,
+            level: CellLevel::Hard,
+            online: false
+        },
+        "a bare 2 is the normal mark overwritten, so hard wins without bit 0 (B58)"
+    );
+    assert_eq!(
+        cells[3],
+        Cell::Known {
+            bits: 7,
+            level: CellLevel::Hard,
+            online: true
+        },
+    );
+    assert_eq!(
+        cells[4],
+        Cell::Known {
+            bits: 5,
+            level: CellLevel::Normal,
+            online: true
+        },
+    );
+    assert_eq!(
+        cells[5],
+        Cell::Known {
+            bits: 4,
+            level: CellLevel::Empty,
+            online: true
+        },
+        "no sample has ever held 4, but the reading is total: the bit is reported where it \
+         is, and an empty level is not a mark"
+    );
+}
+
+/// The reading crosses the IPC as its own fields, in camelCase, with the level a bare
+/// string and not a tagged object: it carries no data, so a tag would add a key per cell
+/// and hide that the field is a value (CLAUDE.md, "Enums on the IPC").
+#[test]
+fn the_reading_json_shape_is_pinned() {
+    let m = marks_matrix(&counters(523, &[(27, 7)]), None, no_icon);
+    let json = serde_json::to_value(&m).unwrap();
+    assert_eq!(
+        json["characters"][0]["cells"][0],
+        serde_json::json!({ "kind": "known", "bits": 7, "level": "hard", "online": true }),
+    );
+    assert_eq!(
+        json["characters"][0]["cells"][1],
+        serde_json::json!({ "kind": "known", "bits": 0, "level": "empty", "online": false }),
     );
 }
