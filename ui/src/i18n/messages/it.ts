@@ -36,7 +36,7 @@ export const it = {
     },
   },
   marks: {
-    wonOnline: 'vinto anche online',
+    wonOnline: 'online',
   },
   routes: {
     search: 'Cerca',
@@ -734,7 +734,11 @@ export const it = {
   completion: {
     intro:
       'Ogni personaggio, ogni marchio, e quanto il salvataggio lascia leggere.',
+    headline: 'marchi presi in hard',
     kpi: {
+      columns: 'boss completi',
+      columnsExplain:
+        'Boss che ogni personaggio ha battuto in hard, fra le celle leggibili di quella colonna. È lo stesso conto di “personaggi completi”, letto per colonna invece che per riga — ed è quello che disegna la carta qui accanto: un simbolo compare in hard solo quando la colonna è piena.',
       normal: 'marchi in normale',
       normalExplain:
         'Celle con un segno, fra quelle che il salvataggio lascia leggere. Un marchio preso in hard conta anche qui, perché battere un boss in hard è la più difficile delle due. Le celle non leggibili restano fuori dal denominatore.',
@@ -752,7 +756,7 @@ export const it = {
       empty: 'mai fatto',
       normal: 'normale',
       hard: 'hard',
-      online: 'vinto anche online',
+      online: 'online',
       unknown: 'non leggibile',
     },
     grid: {

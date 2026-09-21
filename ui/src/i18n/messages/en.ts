@@ -727,7 +727,11 @@ export const en: MessageSchema = {
   completion: {
     intro:
       'Every character, every mark, and how much of it the save lets us read.',
+    headline: 'marks taken on hard',
     kpi: {
+      columns: 'complete bosses',
+      columnsExplain:
+        'Bosses every character has beaten on hard, among that column’s readable cells. The same count as “complete characters”, read down a column instead of across a row — and it is what the paper beside it draws: a symbol appears at hard only once its column is full.',
       normal: 'marks at normal',
       normalExplain:
         'Cells with a mark, among those the save lets us read. A mark taken on hard counts here too, because beating a boss on hard is the harder of the two. Unreadable cells stay out of the denominator.',
