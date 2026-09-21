@@ -491,7 +491,7 @@ fn missing_view(
                     out.push(RequirementView::Boss {
                         id: id.0,
                         name: b.name.clone(),
-                        page: page_of(dataset, wiki_target::boss(b)),
+                        page: page_of(dataset, wiki_target::boss(c, b)),
                     });
                 }
             }
@@ -734,9 +734,9 @@ pub fn resolve_target(
         TargetKey::Boss { id } => {
             let b = c.boss(BossId(id))?;
             resolved.name = b.name.clone();
-            // A portrait that declares no entity key names no page: `None`, never a guessed
+            // A row `boss_keys` leaves without a key names no page: `None`, never a guessed
             // variant (`wiki_target::boss`).
-            resolved.page = page_of(dataset, wiki_target::boss(b));
+            resolved.page = page_of(dataset, wiki_target::boss(c, b));
         }
         TargetKey::Challenge { id } => {
             let ch = c.challenge(ChallengeId(id))?;
