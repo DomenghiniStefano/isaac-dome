@@ -33,7 +33,7 @@ const icon = computed(() => tabOriginIcon[props.tab.origin])
     :data-drop="drop ?? undefined"
     :class="
       cn(
-        '@container flex h-tab max-w-tab-max min-w-tab-min shrink grow-0 basis-tab-max cursor-pointer items-center gap-1.5 overflow-hidden border-x-2 border-t-2 border-b-0 border-transparent pr-1.5 pl-2 text-label text-subtle-foreground select-none tab-intrinsic data-[drop=after]:border-r-selection-edge data-[drop=before]:border-l-selection-edge',
+        '@container/tab flex h-tab max-w-tab-max min-w-tab-min shrink grow-0 basis-tab-max cursor-pointer items-center gap-1.5 overflow-hidden border-x-2 border-t-2 border-b-0 border-transparent pr-1.5 pl-2 text-label text-subtle-foreground select-none tab-intrinsic data-[drop=after]:border-r-selection-edge data-[drop=before]:border-l-selection-edge',
         active && 'border-t-primary bg-sheet text-foreground',
         dragging && 'opacity-disabled',
       )
@@ -48,19 +48,19 @@ const icon = computed(() => tabOriginIcon[props.tab.origin])
         cn(
           'size-3 shrink-0',
           active
-            ? 'text-highlight @max-tab-narrow:hidden'
+            ? 'text-highlight @max-tab-narrow/tab:hidden'
             : 'text-faint-foreground',
         )
       "
     />
-    <span class="min-w-0 flex-1 truncate @max-tab-narrow:hidden">{{
+    <span class="min-w-0 flex-1 truncate @max-tab-narrow/tab:hidden">{{
       tab.label
     }}</span>
     <Button
       :variant="ButtonVariant.Chrome"
       :size="ButtonSize.Micro"
       :aria-label="t('shell.closeTab')"
-      :class="active ? undefined : '@max-tab-narrow:hidden'"
+      :class="active ? undefined : '@max-tab-narrow/tab:hidden'"
       tabindex="-1"
       @pointerdown.stop
       @click.stop="emit('close')"
