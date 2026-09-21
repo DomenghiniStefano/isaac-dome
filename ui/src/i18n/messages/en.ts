@@ -32,7 +32,7 @@ export const en: MessageSchema = {
     },
   },
   marks: {
-    thirdLevel: 'third level, meaning unconfirmed',
+    wonOnline: 'also won online',
   },
   routes: {
     search: 'Search',
@@ -745,7 +745,7 @@ export const en: MessageSchema = {
       empty: 'never done',
       normal: 'normal',
       hard: 'hard',
-      third: 'third level',
+      online: 'also won online',
       unknown: 'unreadable',
     },
     grid: {

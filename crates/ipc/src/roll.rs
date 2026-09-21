@@ -192,7 +192,7 @@ fn playable_rows(catalog: Option<&Catalog>, flags: Option<&[bool]>) -> Option<Ve
 /// does.
 fn cell_value(counters: Option<&[u32]>, character: usize, boss: usize) -> roll::CellValue {
     match counters.map(|c| cell_at(c, character, boss)) {
-        Some(crate::Cell::Known { bits }) => roll::CellValue::Known { bits },
+        Some(crate::Cell::Known { bits, .. }) => roll::CellValue::Known { bits },
         Some(crate::Cell::Unknown) | Some(crate::Cell::Unexpected { .. }) | None => {
             roll::CellValue::Unreadable
         }

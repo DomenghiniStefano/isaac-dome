@@ -66,8 +66,8 @@ pub use live::{
 };
 pub use mark_art::{mark_source, MarkFrames, LOBBY_ANM2, WIDGET_ANM2};
 pub use marks::{
-    character_for, counter_index, marks_matrix, marks_totals, Cell, CharacterGroup, CharacterRow,
-    MarkArtView, MarksMatrix, MarksTotals, BOSSES, CHARACTERS, CHARACTER_KEYS,
+    character_for, counter_index, marks_matrix, marks_totals, Cell, CellLevel, CharacterGroup,
+    CharacterRow, MarkArtView, MarksMatrix, MarksTotals, BOSSES, CHARACTERS, CHARACTER_KEYS,
 };
 pub use preview::{preview_of, CandidatePreview, PreviewCount};
 pub use profile::{

@@ -7,14 +7,19 @@ import { Badge, BadgeVariant } from '@/components/ui/badge'
 import { Button, ButtonVariant } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { useMessages } from '@/i18n'
-import type { Cell } from '@/lib/ipc/types'
+import { CellLevel, type Cell } from '@/lib/ipc/types'
 
 const { t } = useMessages()
 
 // The app's own components, not a picture of them: the preview is at the chosen size
 // because everything is, which is the whole point of the mechanism. A mark taken on both
 // levels, with no art: the fallback outfit is what a machine without the game draws.
-const cell: Cell = { kind: 'known', bits: 3 }
+const cell: Cell = {
+  kind: 'known',
+  bits: 3,
+  level: CellLevel.Hard,
+  online: false,
+}
 </script>
 
 <template>

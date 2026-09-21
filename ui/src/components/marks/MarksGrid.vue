@@ -70,7 +70,7 @@ const cellState = (cell: Cell): string => {
     reading.status === CellStatus.Unexpected
       ? `${state} ${valueOf(cell) ?? ''}`
       : state
-  return reading.third ? `${said} · ${t('marks.thirdLevel')}` : said
+  return reading.online ? `${said} · ${t('marks.wonOnline')}` : said
 }
 
 // A number that fills its denominator in the done colour, one with no denominator at all

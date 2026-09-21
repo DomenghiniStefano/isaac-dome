@@ -36,7 +36,7 @@ export const it = {
     },
   },
   marks: {
-    thirdLevel: 'terzo livello, significato non confermato',
+    wonOnline: 'vinto anche online',
   },
   routes: {
     search: 'Cerca',
@@ -752,7 +752,7 @@ export const it = {
       empty: 'mai fatto',
       normal: 'normale',
       hard: 'hard',
-      third: 'terzo livello',
+      online: 'vinto anche online',
       unknown: 'non leggibile',
     },
     grid: {
