@@ -121,6 +121,17 @@
 # finished. Nothing else in the band or the grid is logic: the emblem's rule is Rust's, the
 # bars and the pinned columns are CSS, and neither has a test here that would only be
 # restating the template.
+#
+# **Raised on 2026-09-22**, Rust +6: `centre_opaque`, and it exists because the emblem was
+# looked at in the real window and was visibly off-centre in its frame. The game's crop is
+# not centred on what it draws — the clean paper covers x 0-84, y 3-82 of its 96x96 and the
+# bloodied one x 0-87, y 1-82, so the two tiers are off by different amounts and no written
+# offset fits both. Four of the six are the ways a re-centring goes wrong rather than the
+# happy path: a drawing already centred that must not drift, an odd margin that must leave
+# the extra pixel on one side instead of splitting the drawing, a canvas that must not change
+# size, and a count of opaque pixels that must come out the same — the failure being a shift
+# that pushes part of the picture off the edge, which looks like a crop nobody asked for and
+# on this picture means losing a column.
 
-RUST_TESTS=1203
+RUST_TESTS=1209
 UI_TESTS=759

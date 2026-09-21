@@ -70,6 +70,42 @@ pub fn crop_png(sheet: &[u8], x: u32, y: u32, w: u32, h: u32) -> Option<Vec<u8>>
 /// The box here is read from the picture each time, so it survives the sheet changing.
 pub fn trim_opaque(png: &[u8]) -> Option<Vec<u8>> {
     let (w, h, pixel) = decode_rgba(png)?;
+    let (x, y, tw, th) = opaque_box(&pixel, w, h)?;
+    encode_rgba(tw, th, &cut(&pixel, w, x, y, tw, th))
+}
+
+/// Moves the drawing to the middle of the picture it is already in, **keeping the canvas**.
+///
+/// The emblem's case. The game's own crop is not centred on what it draws: measured on the
+/// installed game on 2026-09-21, the completion widget's clean paper covers x 0-84 and y 3-82
+/// of its 96x96 — eleven empty pixels on the right, thirteen at the bottom, none on the left
+/// — and the bloodied sheet covers x 0-87 and y 1-82. The two tiers are off by *different*
+/// amounts, so no offset written down anywhere fits both.
+///
+/// **Why this rather than `trim_opaque`.** Trimming answers 85x80 for one tier and 88x82 for
+/// the other: the picture would change size the moment a profile was completed, and a picture
+/// that is no longer a whole multiple of its own pixels blurs inside a fixed box. Keeping the
+/// canvas keeps every state the same size and the scale exact; only the placement moves.
+///
+/// An odd margin leaves the extra pixel on one side rather than splitting the drawing. `None`
+/// when there is nothing in the picture, like `trim_opaque`: the caller keeps what it had.
+pub fn centre_opaque(png: &[u8]) -> Option<Vec<u8>> {
+    let (w, h, pixel) = decode_rgba(png)?;
+    let (x, y, bw, bh) = opaque_box(&pixel, w, h)?;
+    let drawing = cut(&pixel, w, x, y, bw, bh);
+    let (to_x, to_y) = ((w - bw) / 2, (h - bh) / 2);
+    let mut out = vec![0u8; (w as usize) * (h as usize) * 4];
+    for row in 0..bh {
+        let from = ((row * bw) as usize) * 4;
+        let to = (((to_y + row) * w + to_x) as usize) * 4;
+        let bytes = (bw as usize) * 4;
+        out[to..to + bytes].copy_from_slice(&drawing[from..from + bytes]);
+    }
+    encode_rgba(w, h, &out)
+}
+
+/// The box the opaque pixels occupy, as `(x, y, w, h)`. `None` when there are none.
+fn opaque_box(pixel: &[u8], w: u32, h: u32) -> Option<(u32, u32, u32, u32)> {
     let (mut left, mut top) = (w, h);
     let (mut right, mut bottom) = (0, 0);
     for y in 0..h {
@@ -88,8 +124,7 @@ pub fn trim_opaque(png: &[u8]) -> Option<Vec<u8>> {
     if left > right || top > bottom {
         return None;
     }
-    let (tw, th) = (right - left + 1, bottom - top + 1);
-    encode_rgba(tw, th, &cut(&pixel, w, left, top, tw, th))
+    Some((left, top, right - left + 1, bottom - top + 1))
 }
 
 /// The pixels of one rectangle of `pixel`, which is `sheet_w` wide. The rectangle is the
