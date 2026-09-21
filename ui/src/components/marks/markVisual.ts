@@ -1,4 +1,4 @@
-import type { Cell, MarkArtView } from '@/lib/ipc/types'
+import { CellLevel, type Cell, type MarkArtView } from '@/lib/ipc/types'
 import { assertNever } from '@/lib/assertNever'
 
 export const MarkTier = { Normal: 'normal', Hard: 'hard' } as const
@@ -38,13 +38,27 @@ export const markArtOf = (view: MarkArtView | undefined): MarkArt | null => {
 // measurement settled it: a name taken from a guess outliving the guess
 // (`docs/save-format.md`, "Counters and marks").
 //
-// Hard wins whether or not bit 0 is set: `2` is common on real profiles and the game draws
-// the hard sprite for it. The online flag travels beside the tier, never folded into it —
-// it says *where* a mark was taken, not how high it is. A higher bit is outside what the
-// save is known to store, so the cell reads as unexpected instead of being drawn from a
-// guess.
-const Bit = { Normal: 1, Hard: 2, Online: 4 } as const
-const knownBits = Bit.Normal | Bit.Hard | Bit.Online
+// **The mask is not decoded here.** `ipc::marks::cell_at` reads it once and sends the
+// reading — the level and the online flag as their own fields — and a value outside the
+// mask never arrives as `known` at all. This file used to hold its own copy of the bit
+// rules, and so did `lib/completion/completionView.ts`: two copies of one measurement, in
+// the layer furthest from where it was measured. That is how bit 2 kept its wrong name
+// here for eight days after `docs/save-format.md` had the right one.
+//
+// The online flag stays beside the tier, never folded into it: it says *where* a mark was
+// taken, not how high it is.
+const tierOf = (level: CellLevel): MarkTier | null => {
+  switch (level) {
+    case CellLevel.Empty:
+      return null
+    case CellLevel.Normal:
+      return MarkTier.Normal
+    case CellLevel.Hard:
+      return MarkTier.Hard
+    default:
+      return assertNever(level)
+  }
+}
 
 export const markVisual = (cell: Cell): MarkVisual => {
   switch (cell.kind) {
@@ -53,14 +67,11 @@ export const markVisual = (cell: Cell): MarkVisual => {
     case 'unexpected':
       return { kind: 'unexpected', value: cell.value }
     case 'known': {
-      const { bits } = cell
-      if ((bits & ~knownBits) !== 0) return { kind: 'unexpected', value: bits }
-      const online = (bits & Bit.Online) !== 0
-      if ((bits & Bit.Hard) !== 0)
-        return { kind: 'marked', tier: MarkTier.Hard, online }
-      if ((bits & Bit.Normal) !== 0)
-        return { kind: 'marked', tier: MarkTier.Normal, online }
-      return { kind: 'empty', online }
+      const { level, online } = cell
+      const tier = tierOf(level)
+      return tier === null
+        ? { kind: 'empty', online }
+        : { kind: 'marked', tier, online }
     }
     default:
       return assertNever(cell)

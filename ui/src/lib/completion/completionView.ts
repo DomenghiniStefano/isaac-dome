@@ -1,9 +1,14 @@
 import { compact, first, last } from 'lodash-es'
 import { assertNever } from '@/lib/assertNever'
-import type { Cell, CharacterRow, MarksMatrix } from '@/lib/ipc/types'
+import {
+  CellLevel,
+  type Cell,
+  type CharacterRow,
+  type MarksMatrix,
+} from '@/lib/ipc/types'
 
 // What a cell says, in the tooltip's words: the level it reached, and the two ways of not
-// knowing. The unconfirmed bit travels beside the status, never as a level.
+// knowing. The online bit travels beside the status, never as a level.
 //
 // There is no `Both` (B22). A mark taken on hard counts as taken on normal too, so "normal
 // and hard" was never a third thing a cell could say — it was the same cell said twice, and
@@ -25,16 +30,25 @@ export interface CellReading {
   online: boolean
 }
 
-// The same bit rules as markVisual: bit 0 the normal mark, bit 1 the hard one, bit 2 the
-// boss beaten online, anything higher unexpected. Bit 2 sits outside `CellStatus` on
-// purpose — it is not a level, so it cannot be one of the statuses.
-const Bit = { Normal: 1, Hard: 2, Online: 4 } as const
-const knownBits = Bit.Normal | Bit.Hard | Bit.Online
-
-const levelStatus = (normal: boolean, hard: boolean): CellStatus => {
-  if (hard) return CellStatus.Hard
-  if (normal) return CellStatus.Normal
-  return CellStatus.Empty
+// The level as the IPC read it, not as this file decodes it. Until B21 the bit rules lived
+// here *and* in `components/marks/markVisual.ts` — one measurement written down twice, at
+// the far end of the boundary from where it was measured, which is how the online bit kept
+// a name the save format had already corrected.
+//
+// Online sits outside `CellStatus` on purpose — it is not a level, so it cannot be one of
+// the statuses. A value outside the mask never reaches here as `known`: `ipc::marks` sends
+// it as `unexpected`.
+const levelStatus = (level: CellLevel): CellStatus => {
+  switch (level) {
+    case CellLevel.Empty:
+      return CellStatus.Empty
+    case CellLevel.Normal:
+      return CellStatus.Normal
+    case CellLevel.Hard:
+      return CellStatus.Hard
+    default:
+      return assertNever(level)
+  }
 }
 
 export const cellReading = (cell: Cell): CellReading => {
@@ -43,15 +57,8 @@ export const cellReading = (cell: Cell): CellReading => {
       return { status: CellStatus.Unknown, online: false }
     case 'unexpected':
       return { status: CellStatus.Unexpected, online: false }
-    case 'known': {
-      const { bits } = cell
-      if ((bits & ~knownBits) !== 0)
-        return { status: CellStatus.Unexpected, online: false }
-      return {
-        status: levelStatus((bits & Bit.Normal) !== 0, (bits & Bit.Hard) !== 0),
-        online: (bits & Bit.Online) !== 0,
-      }
-    }
+    case 'known':
+      return { status: levelStatus(cell.level), online: cell.online }
     default:
       return assertNever(cell)
   }

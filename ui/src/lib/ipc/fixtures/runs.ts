@@ -1,5 +1,13 @@
-import { MarkColumnView, MarkLevelView } from '../types'
-import type { LiveView, RunView, RunsView } from '../types'
+import { CellLevel, MarkColumnView, MarkLevelView } from '../types'
+import type { Cell, LiveView, RunView, RunsView } from '../types'
+
+// A cell with no mark at all, the value every one of Tainted Cain's holds below.
+const NEVER: Cell = {
+  kind: 'known',
+  bits: 0,
+  level: CellLevel.Empty,
+  online: false,
+}
 
 // A handful of runs for the Run screen in the browser: the archive is a database on the
 // machine, so the fixtures are the only way to draw this list without the app.
@@ -110,11 +118,7 @@ export const liveAnswer = (): LiveView => ({
       {
         character: 'Tainted Cain',
         headUrl: null,
-        cells: [
-          { kind: 'known' as const, bits: 0 },
-          { kind: 'known' as const, bits: 0 },
-          { kind: 'known' as const, bits: 0 },
-        ],
+        cells: [NEVER, NEVER, NEVER],
         missing: 3,
       },
     ],

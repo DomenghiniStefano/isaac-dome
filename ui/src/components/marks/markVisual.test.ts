@@ -1,46 +1,62 @@
 import { describe, expect, it } from 'vitest'
+import { CellLevel, type Cell } from '@/lib/ipc/types'
 import { MarkTier, markArtOf, markVisual } from './markVisual'
 
-const known = (bits: number) => markVisual({ kind: 'known', bits })
+// The cell as the IPC sends it. `bits` is the value a real cell in that state carries, and
+// nothing here reads it: since B21 the mask is decoded once, in `ipc::marks::cell_at`, and
+// the tests that pin *that* reading live in `crates/ipc/tests/marks.rs`. What is left for
+// this module is the mapping onto what the grid draws.
+const cell = (bits: number, level: CellLevel, online: boolean): Cell => ({
+  kind: 'known',
+  bits,
+  level,
+  online,
+})
 
 describe('markVisual', () => {
-  it('reads 0 as never done', () => {
-    expect(known(0)).toEqual({ kind: 'empty', online: false })
+  it('draws nothing for a cell that reached no level', () => {
+    expect(cell(0, CellLevel.Empty, false)).toBeDefined()
+    expect(markVisual(cell(0, CellLevel.Empty, false))).toEqual({
+      kind: 'empty',
+      online: false,
+    })
   })
 
-  it('reads bit 0 alone as the normal mark', () => {
-    expect(known(1)).toEqual({
+  it('draws the normal tier for the first level', () => {
+    expect(markVisual(cell(1, CellLevel.Normal, false))).toEqual({
       kind: 'marked',
       tier: MarkTier.Normal,
       online: false,
     })
   })
 
-  it('reads bit 1 alone as the hard mark, as the game draws it', () => {
-    expect(known(2)).toEqual({
+  it('draws the hard tier for the second level, as the game draws it', () => {
+    // 2 without bit 0 is an ordinary cell on a real profile: a mark replaces the one
+    // before it (B58). The IPC has already said `hard`, and this module does not second
+    // guess it.
+    expect(markVisual(cell(2, CellLevel.Hard, false))).toEqual({
+      kind: 'marked',
+      tier: MarkTier.Hard,
+      online: false,
+    })
+    expect(markVisual(cell(3, CellLevel.Hard, false))).toEqual({
       kind: 'marked',
       tier: MarkTier.Hard,
       online: false,
     })
   })
 
-  it('reads both levels as the hard mark', () => {
-    expect(known(3)).toEqual({
-      kind: 'marked',
-      tier: MarkTier.Hard,
-      online: false,
-    })
-  })
-
-  // 4 and 6 are shapes no real save has shown — the observed set is 0, 1, 2, 3, 5, 7. They
-  // are handled rather than assumed away: a value the tables can represent has to draw
-  // something, and "never seen" is not "cannot happen".
   it('carries the online win on a cell with no mark of its own', () => {
-    expect(known(4)).toEqual({ kind: 'empty', online: true })
+    // A shape no real save has shown — the observed set is 0, 1, 2, 3, 5, 7. It is handled
+    // rather than assumed away: "never seen" is not "cannot happen".
+    expect(markVisual(cell(4, CellLevel.Empty, true))).toEqual({
+      kind: 'empty',
+      online: true,
+    })
   })
 
   it('carries the online win beside the normal mark', () => {
-    expect(known(5)).toEqual({
+    expect(markVisual(cell(5, CellLevel.Normal, true))).toEqual({
       kind: 'marked',
       tier: MarkTier.Normal,
       online: true,
@@ -48,20 +64,11 @@ describe('markVisual', () => {
   })
 
   it('carries the online win beside the hard mark', () => {
-    expect(known(6)).toEqual({
+    expect(markVisual(cell(7, CellLevel.Hard, true))).toEqual({
       kind: 'marked',
       tier: MarkTier.Hard,
       online: true,
     })
-    expect(known(7)).toEqual({
-      kind: 'marked',
-      tier: MarkTier.Hard,
-      online: true,
-    })
-  })
-
-  it('reads a bit above bit 2 as unexpected instead of drawing a guess', () => {
-    expect(known(8)).toEqual({ kind: 'unexpected', value: 8 })
   })
 
   it('keeps an unreadable cell unreadable', () => {
@@ -69,9 +76,32 @@ describe('markVisual', () => {
   })
 
   it("keeps the IPC's unexpected value", () => {
+    // A value outside the mask never arrives as `known`: `ipc::marks` sends it here as
+    // `unexpected`, so this module no longer has a range of its own to police.
     expect(markVisual({ kind: 'unexpected', value: 9 })).toEqual({
       kind: 'unexpected',
       value: 9,
+    })
+  })
+})
+
+// B21: the mask is decoded once, in `ipc::marks::cell_at`, and this module reads the
+// reading. A cell whose bits disagree with its level is not a shape the IPC can send — it
+// is the probe that says whether a decoder is still living here, where it would drift from
+// the Rust one the way the tooltip's wording did for eight days.
+describe('markVisual reads the reading and not the mask', () => {
+  it('takes the tier from the level', () => {
+    expect(markVisual(cell(0, CellLevel.Hard, false))).toEqual({
+      kind: 'marked',
+      tier: MarkTier.Hard,
+      online: false,
+    })
+  })
+
+  it('takes the online win from its own field', () => {
+    expect(markVisual(cell(0, CellLevel.Empty, true))).toEqual({
+      kind: 'empty',
+      online: true,
     })
   })
 })

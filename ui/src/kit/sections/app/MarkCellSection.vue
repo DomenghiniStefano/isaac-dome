@@ -1,32 +1,47 @@
 <script setup lang="ts">
 import MarkCell from '@/components/marks/MarkCell.vue'
-import type { Cell } from '@/lib/ipc/types'
+import { CellLevel, type Cell } from '@/lib/ipc/types'
 import KitSection from '../../KitSection.vue'
 
-const known = (bits: number): Cell => ({ kind: 'known', bits })
+// The cells as the IPC sends them: the mask it was read from, the level it reached, and
+// whether the run was won online. Named rather than written as digits, because the page
+// exists to show what each state *looks* like and a number says nothing about that.
+const known = (bits: number, level: CellLevel, online = false): Cell => ({
+  kind: 'known',
+  bits,
+  level,
+  online,
+})
+const NEVER = known(0, CellLevel.Empty)
+const NORMAL = known(1, CellLevel.Normal)
+const HARD_ALONE = known(2, CellLevel.Hard)
+const HARD = known(3, CellLevel.Hard)
+const ONLINE_ONLY = known(4, CellLevel.Empty, true)
+const NORMAL_ONLINE = known(5, CellLevel.Normal, true)
+const HARD_ONLINE = known(7, CellLevel.Hard, true)
 const unknown: Cell = { kind: 'unknown' }
 
 const states: { label: string; cell: Cell }[] = [
-  { label: 'mai fatto', cell: known(0) },
-  { label: 'normale', cell: known(1) },
-  { label: 'hard', cell: known(3) },
-  { label: 'hard + bit 2', cell: known(7) },
-  { label: 'solo bit 2', cell: known(4) },
+  { label: 'mai fatto', cell: NEVER },
+  { label: 'normale', cell: NORMAL },
+  { label: 'hard', cell: HARD },
+  { label: 'hard, vinto online', cell: HARD_ONLINE },
+  { label: 'solo vinto online', cell: ONLINE_ONLY },
   { label: 'non leggibile', cell: unknown },
   { label: 'anomalo', cell: { kind: 'unexpected', value: 9 } },
 ]
 
 // The reference profile's shape: a dense top, an empty bottom, an unreadable corner.
 const rows: { name: string; cells: Cell[] }[] = [
-  { name: 'Isaac', cells: [known(3), known(7), known(3), known(2), known(1)] },
-  { name: 'Cain', cells: [known(3), known(3), known(0), known(1), known(0)] },
+  { name: 'Isaac', cells: [HARD, HARD_ONLINE, HARD, HARD_ALONE, NORMAL] },
+  { name: 'Cain', cells: [HARD, HARD, NEVER, NORMAL, NEVER] },
   {
     name: 'The Forgotten',
-    cells: [known(2), known(0), known(0), known(0), unknown],
+    cells: [HARD_ALONE, NEVER, NEVER, NEVER, unknown],
   },
   {
     name: 'Tainted Lost',
-    cells: [known(0), known(5), known(0), known(0), unknown],
+    cells: [NEVER, NORMAL_ONLINE, NEVER, NEVER, unknown],
   },
 ]
 </script>
