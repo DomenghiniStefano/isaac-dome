@@ -2562,6 +2562,119 @@ nodes, and then move the virtualizer to the hit.
 
 ---
 
+## B69 — A missing icon draws nothing, and nothing is not an answer (implementation, `ipc` and `ui`, small)
+
+**Needs:** the game — the substitute picture is the game's own and is read out of the user's
+archives — then a window, because the whole entry is about what somebody sees where a picture
+is not.
+
+Asked for by the owner on **2026-09-22**. `PixelSprite` has three states and two of them look
+alike: the picture, the hatch when the caller asked for one, and **an empty `<span>`** when it
+did not. A row whose icon the app could not resolve is therefore drawn as a hole, and a hole
+reads as *"this thing has no picture"* — which is a statement about the game, not about us. The
+truth is the other one: *we* do not have the icon.
+
+### What stands in for it, and it is the game's own word for the same thing
+
+The game already draws an unknown item: the red question mark of Curse of the Blind. Measured on
+2026-09-22 — `gfx/items/collectibles/questionmark.png`, 3047 bytes, out of `graphics.a`, present
+in this machine's copy. Using it means the app says "unknown" in the vocabulary its user already
+reads, instead of inventing a glyph of its own.
+
+### It is not bundled, and that shapes the work
+
+Constraint 3 forbids the file in the package, so the question mark travels the way every other
+sprite does: a reference of its own in `ipc::IconRef`, resolved in `crates/app/src/icons.rs`,
+served over `isaac://`. **The substitute can therefore be missing too** — no game installed, no
+question mark — and the last resort stays exactly what it is today, the hatch or the empty span.
+A fallback behind a fallback is not one layer too many here; it is constraint 5 written out.
+
+### The open question is who decides
+
+Two shapes, and they are not equivalent:
+
+- **Rust never answers `None`** and hands back the question mark's URL instead. Simple, and it
+  destroys the distinction: the payload can no longer say *this row has no icon*, so nothing
+  downstream — a diagnostic, a count, a test — can ever tell the two apart again.
+- **The UI asks for the unknown sprite when `url` is `null`.** The payload keeps the truth and
+  the drawing decision sits where the drawing is. It needs one URL to exist without a row asking
+  for it, since nothing outside Rust may build an `isaac://` path by hand.
+
+The second is the one to try first, and the entry closes with the choice written down either way.
+
+### Where it does not go
+
+`RoomSymbol` puts its own drawing in the `fallback` slot, and a room the game has no minimap
+icon for is **not** an unknown item — the Floor grid keeps what it draws. The default belongs to
+the empty slot, not to every caller.
+
+### Closes when
+
+- [ ] A row whose icon could not be resolved draws the game's question mark; a row whose icon
+      resolves is untouched.
+- [ ] Nothing is committed: `scripts/check-no-game-assets.mjs` stays green and the picture is
+      read from the user's own copy at runtime.
+- [ ] With the game absent the screens still draw, and the placeholder degrades to today's
+      behaviour instead of leaving a broken request per row.
+- [ ] The Floor grid still draws its own room symbols.
+- [ ] Which side decides — Rust or the UI — is written down with the reason, because the next
+      icon that fails to resolve will ask the same question.
+- [ ] Seen in a window: Collection, the palette's results, and the Completion row heads.
+
+---
+
+## B70 — Seven boss portraits are a sheet, not a picture, and the app draws the whole sheet (bug, `ipc`, small)
+
+**Needs:** the game — the finding is a measurement over `gfx/ui/boss/`, and so is the fix's
+check — then a window, because what is wrong is what the row looks like.
+
+Reported by the owner on **2026-09-22**: the bosses that come out of the ground, *Pin* among
+them, draw wrong. Measured the same day, over the 105 portraits `bossportraits.xml` declares —
+96 distinct files read out of `afterbirthp.a` and `repentance.a`, two declared and absent (*The
+Beast*, *Cadavra*, which the catalog already reports).
+
+**Every portrait is 192x192 except seven:**
+
+| file | size | what is in it |
+|---|---|---|
+| `Portrait_62.0_Pin.png` | 384x192 | Pin on the left, the rubble of its hole on the right |
+| `Portrait_269.0_Polycephalus.png` | 384x192 | same shape |
+| `Portrait_269.1_Polycephalus2.png` | 384x192 | same shape |
+| `Portrait_270.0_MegaFred.png` | 384x192 | same shape |
+| `Portrait_401.0_TheStain.png` | 384x192 | same shape |
+| `Portrait_BigHorn.png` | 384x192 | the head and its debris on the left, the right half empty |
+| `Portrait_Mother.png` | 480x440 | the head at the top, the two hands at the bottom |
+
+The measurement is one command away, and the seven files are in `samples/sprites/` next to
+*Monstro* as the 192x192 comparison: `cargo run --example estrai -p unpack -- <paths>` with the
+`portrait=` attributes of `bossportraits.xml`, then each PNG's IHDR at bytes 16 and 20.
+
+The app asks for the file and draws it whole, so a row that everywhere else holds one creature
+holds, for these seven, **a creature and a second thing beside it** — Pin with a pile of stones
+floating to its right, Mother with two detached hands under her. `trims_to_drawing` does not
+save it: the box it trims to contains both drawings, and for Big Horn's empty half it is the
+only reason the damage is small.
+
+### What is not known yet, and must not be guessed
+
+**Which piece the versus screen draws, and how it knows.** Each row of `bossportraits.xml`
+carries `pivotX`/`pivotY` (Pin: 92, 152), which is a point and not a rectangle, and the game may
+well be reading an anm2 instead. "Take the leftmost 192" fits six files and fits *Mother* not at
+all, which is exactly the shape of a rule inferred from the majority — the kind this repo pays
+for later. Read it from the game's own data before writing it down.
+
+### Closes when
+
+- [ ] Where the crop comes from is read from the game's data — the pivot, an anm2, or something
+      else — and written down with the file it was read from.
+- [ ] All seven draw as one creature, and the other 89 are byte-for-byte what they are today.
+- [ ] *Mother* is right too, or the entry says why she is her own case and what she gets.
+- [ ] The two portraits the archives do not hold keep reading as absent, not as a broken crop.
+- [ ] A test pins the sizes, so a patch that reshapes a sheet fails here instead of on a screen.
+- [ ] Seen in a window, wherever a boss portrait is drawn.
+
+---
+
 ## Closed entries
 
 **34 entries have closed**, and they are in `docs/completed/backlog-closed.md` with
