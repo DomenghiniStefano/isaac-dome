@@ -11,6 +11,7 @@ const UI_DIR = join('src', 'components', 'ui')
 // is the one check they are excused from.
 const DEV_ONLY_DIRS = [join('src', 'kit'), join('src', 'verify')]
 const WINDOW_DIR = join('src', 'lib', 'window')
+const SCREENS_DIR = join('src', 'screens')
 
 const STYLE_BLOCK = /<style[^>]*>([\s\S]*?)<\/style>/g
 const STYLE_EXEMPTION = /^\s*\/\*\s*exception allowed:/
@@ -52,6 +53,39 @@ const visibleText = (body) => {
     .replace(/<!--[\s\S]*?-->/g, '')
     .replace(/\{\{[\s\S]*?\}\}/g, '')
     .replace(TAG, ' ')
+}
+
+// **A screen is what the router mounts**, not everything under `src/screens/` — that folder holds
+// "one screen per route, **and the parts only it uses**" (the conventions), so `UnlockRow.vue` and
+// `SaveCard.vue` live there and are not screens. Read from `routes.ts` rather than guessed from
+// the path, so it cannot rot: a screen added to the router is a screen here the same minute.
+// `WelcomeScreen.vue` is added by hand because it is mounted by `App.vue` as a takeover above the
+// router (3.8), which is the one screen the router never names.
+//
+// What this cannot see, said rather than discovered: `WikiScreen.vue` delegates to four bodies
+// that are the real roots, and they are not router-imported, so the shape is not *required* of
+// them. They carry it anyway; nothing would notice if a fifth one did not.
+const SCREEN_FILES = new Set(
+  [
+    ...readFileSync(join(SRC, 'router', 'routes.ts'), 'utf8').matchAll(
+      /from '@\/screens\/([^']+)'/g,
+    ),
+  ]
+    .map(([, path]) => join('src', 'screens', ...path.split('/')))
+    .concat(join('src', 'screens', 'welcome', 'WelcomeScreen.vue')),
+)
+const isScreen = (file) => SCREEN_FILES.has(relative(ROOT, file))
+
+// A screen's root: the first tag inside its `<template>`, and its class list. Both responsive
+// rules below are facts about that one line and nothing deeper — a `max-w-*` on a card inside a
+// screen is the card's business, and a scroll on a panel is the panel's (spec 3.13a §4).
+const ROOT_TAG = /<template>\s*(?:<!--[\s\S]*?-->\s*)*<([a-zA-Z][\w-]*)([^>]*)>/
+const rootClasses = (body) => {
+  const template = body.match(TEMPLATE_BLOCK)
+  if (!template) return ''
+  const root = `<template>${template[1]}`.match(ROOT_TAG)
+  const attrs = root ? (root[2] ?? '') : ''
+  return attrs.match(/\bclass="([^"]*)"/)?.[1] ?? ''
 }
 
 // **A comment is not code** (`docs/BACKLOG.md` B59). Every rule below is a regex against the raw
@@ -140,7 +174,20 @@ const isUnder = (file, dir) => relative(ROOT, file).startsWith(dir)
 
 // Exceptions are declared here, per file and per check, with a reason. An exception
 // with no reason is an untracked violation; an empty list is the goal.
-const EXEMPTIONS = []
+const EXEMPTIONS = [
+  {
+    file: 'src/screens/welcome/WelcomeScreen.vue',
+    check: 'screen root is neither flowing nor filling',
+    reason:
+      'the welcome is a takeover above the router (3.8), drawn by App.vue outside <main>: there is no page box for it to fill, and it sizes itself against the window',
+  },
+  {
+    file: 'src/screens/WikiScreen.vue',
+    check: 'screen root is neither flowing nor filling',
+    reason:
+      'it has no root of its own: it picks one of four bodies from the query, and each of those carries the shape',
+  },
+]
 
 const isExempt = (file, check) =>
   EXEMPTIONS.some(
@@ -178,6 +225,69 @@ const checks = [
     test: (file, body) =>
       /@tauri-apps\/api\/(window|webviewWindow|event)/.test(body) &&
       !isUnder(file, WINDOW_DIR),
+  },
+  {
+    // Spec 3.13a §2 and §9. The first half is the rejected approach: a media query measures the
+    // window, which is not what the content has — the sidebar alone is 252px the window cannot
+    // account for — and its `rem` cannot see the interface's scale at all.
+    //
+    // The second half is the hole the first one leaves: `containers.css` does not reset Tailwind's
+    // own `--container-*` scale, so `@max-md/page:` is writable today and would be a fourth
+    // threshold nobody declared, measured against a number nobody chose.
+    //
+    // **A Vue event binding has the same shape as a variant** — `@update:open="x"` — so the two
+    // are told apart the only way that is honest here: a container variant names its container
+    // with a `/`, and an event binding never does. That naming is §5's rule, which is what makes
+    // this rule possible at all.
+    name: 'media query variant, or a container size that is not ours',
+    test: (_f, body) => {
+      const media = /(^|[\s"'`])(?:[a-z0-9-]+:)*(?:sm|md|lg|xl|2xl):/m.test(
+        body,
+      )
+      const ours = new Set([
+        'compact',
+        'regular',
+        'wide',
+        'tab-narrow',
+        'sidebar-room',
+      ])
+      const named = [...body.matchAll(/@(?:max-)?([a-z0-9-]+)\/[a-z-]+:/g)]
+      return media || named.some(([, size]) => !ours.has(size))
+    },
+  },
+  {
+    // Spec 3.13a §4. Two shapes and not twenty: a screen either flows and scrolls, or fills and
+    // hands the height that is left to one region inside it. A root that is neither is a screen
+    // whose height nobody decided — which fails nothing, and looks like a bug in the list inside
+    // it rather than in the screen around it.
+    name: 'screen root is neither flowing nor filling',
+    test: (file, body) => {
+      if (!isScreen(file)) return false
+      const cls = rootClasses(body)
+      const flowing = /\boverflow-y-auto\b/.test(cls)
+      const filling = /\boverflow-hidden\b/.test(cls) && /\bmin-h-0\b/.test(cls)
+      return !/\bh-full\b/.test(cls) || !(flowing || filling)
+    },
+  },
+  {
+    // Spec 3.13a §3: the cap left by decision, on every screen at once. This is what stops it
+    // coming back by habit from the screen next door — which is exactly how all of them came to
+    // carry the same one.
+    name: 'width cap on a screen root',
+    test: (file, body) =>
+      file.endsWith('.vue') &&
+      isUnder(file, SCREENS_DIR) &&
+      /\bmax-w-/.test(rootClasses(body)),
+  },
+  {
+    // Spec 3.13a §7 and §9. It does not prove the *right* columns fell — nothing in a script can.
+    // It proves both edits were made: a narrow template with no hidden cell is a grid that dropped
+    // a track while every cell stayed, which slides the rest into the wrong columns. The header
+    // and the row live in two files, so each has to pass on its own.
+    name: 'narrow grid template with no column hidden',
+    test: (_f, body) =>
+      /\bgrid-cols-[a-z-]+-narrow\b/.test(body) &&
+      !/@max-compact\/page:hidden/.test(body),
   },
   {
     name: 'arbitrary pixel value in a class',
@@ -433,6 +543,90 @@ const FIXTURES = [
     file: 'src/screens/Fixture.vue',
     body: '<style>\n.a { color: red; }\n</style>\n',
     expect: ['style block with no declared exemption'],
+  },
+  // The four below name a **real** screen, because the rule's scope is read from the router and a
+  // file the router never heard of is not a screen (see `SCREEN_FILES`). The body is still
+  // invented; only the path has to be one the rule applies to.
+  {
+    name: 'a flowing screen root is allowed',
+    file: 'src/screens/GoalsScreen.vue',
+    body: '<template>\n  <div class="flex h-full flex-col gap-4 overflow-y-auto pt-5 pb-15" />\n</template>\n',
+    expect: [],
+  },
+  {
+    name: 'a filling screen root is allowed',
+    file: 'src/screens/GoalsScreen.vue',
+    body: '<template>\n  <div class="flex h-full min-h-0 flex-col gap-4 overflow-hidden pt-5 pb-5" />\n</template>\n',
+    expect: [],
+  },
+  {
+    name: 'a screen root with no shape at all is caught',
+    file: 'src/screens/GoalsScreen.vue',
+    body: '<template>\n  <div class="flex flex-col gap-4" />\n</template>\n',
+    expect: ['screen root is neither flowing nor filling'],
+  },
+  {
+    // A part that lives under `screens/` is not a screen and owes no shape. This is the guard on
+    // the scope: the first version of the rule accused twenty-seven of them.
+    name: 'a part under screens/ is not a screen',
+    file: 'src/screens/unlock/UnlockRow.vue',
+    body: '<template>\n  <span class="px-2" />\n</template>\n',
+    expect: [],
+  },
+  {
+    name: 'a media query variant is caught',
+    file: 'src/screens/GoalsScreen.vue',
+    body: '<template>\n  <div class="grid grid-cols-2 sm:grid-cols-4" />\n</template>\n',
+    expect: [
+      'media query variant, or a container size that is not ours',
+      'screen root is neither flowing nor filling',
+    ],
+  },
+  {
+    name: 'one of our container variants is allowed',
+    file: 'src/screens/unlock/UnlockRow.vue',
+    body: '<template>\n  <span class="flex flex-col @wide/page:flex-row @max-compact/page:hidden" />\n</template>\n',
+    expect: [],
+  },
+  {
+    name: 'a container size that is not ours is caught',
+    file: 'src/screens/unlock/UnlockRow.vue',
+    body: '<template>\n  <span class="@max-md/page:hidden" />\n</template>\n',
+    expect: ['media query variant, or a container size that is not ours'],
+  },
+  {
+    // The guard on the half that could not tell them apart: an event binding wears the same shape
+    // as a variant, and only the container's name separates them.
+    name: 'a Vue event binding is not a container variant',
+    file: 'src/screens/unlock/UnlockRow.vue',
+    body: '<template>\n  <Thing @update:open="go" @update:model-value="go" />\n</template>\n',
+    expect: [],
+  },
+  {
+    name: 'a narrow template with its hidden cells is allowed',
+    file: 'src/screens/unlock/UnlockRow.vue',
+    body: '<template>\n  <div class="grid grid-cols-unlock @max-compact/page:grid-cols-unlock-narrow">\n    <span class="@max-compact/page:hidden" />\n  </div>\n</template>\n',
+    expect: [],
+  },
+  {
+    name: 'a narrow template with no hidden cell is half the work',
+    file: 'src/screens/unlock/UnlockRow.vue',
+    body: '<template>\n  <div class="grid grid-cols-unlock @max-compact/page:grid-cols-unlock-narrow" />\n</template>\n',
+    expect: ['narrow grid template with no column hidden'],
+  },
+  {
+    name: 'a width cap on a screen root is caught',
+    file: 'src/screens/GoalsScreen.vue',
+    body: '<template>\n  <div class="flex h-full max-w-250 flex-col overflow-y-auto" />\n</template>\n',
+    expect: ['width cap on a screen root'],
+  },
+  {
+    // The guard on the rule's own reach: the root is the first tag and nothing deeper, so a cap
+    // on a card inside a screen is the card's business and must not be accused.
+    name: 'a width cap below the root is not the root',
+    file: 'src/screens/Fixture.vue',
+    body: '<template>\n  <div class="flex h-full flex-col overflow-y-auto">\n    <p class="max-w-80" />\n  </div>\n</template>\n',
+    expect: [],
   },
 ]
 

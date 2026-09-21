@@ -35,27 +35,30 @@ const progressItems = [
           v-for="item in progressItems"
           :key="item.id"
           :active="item.id === current"
+          :label="item.label"
           @click="current = item.id"
         >
           <template #icon><component :is="item.icon" /></template>
-          {{ item.label }}
         </SidebarItem>
       </SectionSidebar>
-      <SectionSidebar
-        v-model:width="settingsWidth"
-        title="Impostazioni"
-        hint="Come l'app trova gioco e salvataggi."
-      >
-        <template #icon><CogIcon /></template>
-        <SidebarItem :active="false">
-          <template #icon><SaveIcon /></template>
-          Profilo di gioco
-        </SidebarItem>
-        <SidebarItem :active="true">
-          <template #icon><Grid2x2Icon /></template>
-          Tab
-        </SidebarItem>
-      </SectionSidebar>
+      <!-- The collapsed state, drawn without touching the window: a 384px `shell` container is
+           below --container-compact, so what is inside it folds for real. That is what container
+           queries buy and media queries could not (spec 3.13a §11). -->
+      <div class="group/shell @container/shell flex w-96 items-start">
+        <SectionSidebar
+          v-model:width="settingsWidth"
+          title="Impostazioni"
+          hint="Come l'app trova gioco e salvataggi."
+        >
+          <template #icon><CogIcon /></template>
+          <SidebarItem :active="false" label="Profilo di gioco">
+            <template #icon><SaveIcon /></template>
+          </SidebarItem>
+          <SidebarItem :active="true" label="Tab">
+            <template #icon><Grid2x2Icon /></template>
+          </SidebarItem>
+        </SectionSidebar>
+      </div>
     </div>
   </KitSection>
 </template>
