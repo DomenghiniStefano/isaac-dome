@@ -21,3 +21,11 @@ export const rowWidePx = (percent: number): number =>
 
 export const rowResultPx = (percent: number): number =>
   remToPx(RowResultRem, percent)
+
+// A wiki list row carries more than a table row does: the page's figure in its frame, the
+// title, and the line that says what the page is. Its own constant, because it is drawn
+// with its own token — `--spacing-row-wiki`, and rows.test.ts holds the two together.
+export const RowWikiRem = 3.75
+
+export const rowWikiPx = (percent: number): number =>
+  remToPx(RowWikiRem, percent)
