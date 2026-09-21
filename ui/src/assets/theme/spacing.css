@@ -95,8 +95,36 @@
   --spacing-mark-symbol: calc(16px * var(--sprite-multiple));
   --spacing-mark-cell: calc(var(--spacing-mark-symbol) * 1.25);
   /* The completion matrix's frame (Schermate.dc.html): the name column, the row total, and a
-     column header tall enough for a vertical "Mom's Heart" over the symbol. */
-  --spacing-matrix-name: 11rem;
-  --spacing-matrix-total: 3.25rem;
+     column header tall enough for a vertical "Mom's Heart" over the symbol.
+
+     The name column widened from 11rem with card #58: it carries three things now — the head
+     in a frame, the name, and the row's own bar — where it used to carry two, and at 11rem
+     "T. Jacob & Esau" lost half its letters to the truncation. */
+  --spacing-matrix-name: 12.5rem;
+  /* A total's column. Widened from 3.25rem with card #58, and the number is measured rather
+     than chosen: the widest string either column ever holds is a group's, `138/198`, which
+     renders at 45px at scale 100 — and the last column now carries the grid's own 12px
+     right inset, since the scrolling box can have no padding of its own. 45 + 12 needs 60,
+     and at 52 the two group totals printed as `151/198138/198`. */
+  --spacing-matrix-total: 3.75rem;
   --spacing-matrix-header: 7.375rem;
+  /* The framed co-op head in that column: the 32px sprite with somewhere to sit, the same
+     idea as a wiki row's figure at the height a matrix row can spare. Not a whole multiple
+     of the sprite on purpose — the frame is a box and the sprite keeps its own size inside
+     it, exactly as `--spacing-wiki-row-figure` does. */
+  --spacing-matrix-head: 2.5rem;
+  /* A matrix row: the framed head plus the padding around it. The cell is smaller than this
+     and centres in it, so the row's height is the head's and never the symbol's. */
+  --spacing-row-matrix: 2.75rem;
+  /* The game's own completion widget, the emblem the screen opens on (card #58): the paper is
+     96px, drawn at a whole multiple like every other piece of the game's art.
+
+     **One step larger was tried and measured rather than argued.** The only other whole
+     multiple is `(--sprite-multiple + 1)`, 288px at scale 100, and the paper does look better
+     at it — but the band is as tall as the emblem, so the band goes from 232 to 329 and on a
+     1280x800 window the matrix drops from five visible rows to three. This screen's subject is
+     the grid; the emblem is what it opens with. Trimming the picture's transparent margin
+     first buys 8px of the 96, which is not the difference. It is one value to change if the
+     judgement ever goes the other way. */
+  --spacing-completion-widget: calc(96px * var(--sprite-multiple));
 }

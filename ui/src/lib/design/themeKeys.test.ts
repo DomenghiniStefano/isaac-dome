@@ -48,6 +48,9 @@ describe('themeKeys', () => {
     expect(typography).toContain('@theme')
     expect(themeKeys(typography, ThemeNamespace.Text)).toEqual([
       'title',
+      // Larger than the title, and above it in the file because the scale descends: the one
+      // number a screen opens on (card #58).
+      'headline',
       'kpi',
       'heading',
       'body',

@@ -6,7 +6,7 @@
 //! already — a wrong path doesn't raise an error, it goes quiet.
 
 use catalog::Catalog;
-use ipc::{icon_source, IconRef, ItemKindView, MarkTier, Target};
+use ipc::{icon_source, IconRef, ItemKindView, MarkFill, MarkTier, Target};
 
 const ITEMS: &[u8] = b"<items gfxroot=\"gfx/items/\"><passive id=\"2\" gfx=\"a.png\" name=\"A\" achievement=\"1\" /></items>";
 const ACH: &[u8] = b"<achievements gfxroot=\"gfx/ui/achievement/\"><achievement id=\"1\" text=\"t1\" gfx=\"1.png\" /></achievements>";
@@ -360,4 +360,70 @@ fn every_room_kind_is_trimmed_not_only_the_ones_with_an_icon() {
     for kind in ipc::ROOM_KINDS {
         assert!(IconRef::Room { kind }.trims_to_drawing(), "{kind:?}");
     }
+}
+
+// The widget's address. It is the only reference that carries **state** rather than
+// identity: the picture it names depends on what the profile has done, so the twelve
+// columns travel in the path and the handler composes what they ask for.
+
+/// `-`, `n`, `h` per column, in `BOSSES` order, read back into the array.
+fn fills(spelled: &str) -> [MarkFill; 12] {
+    let mut out = [MarkFill::None; 12];
+    for (i, c) in spelled.chars().enumerate() {
+        out[i] = match c {
+            'n' => MarkFill::Normal,
+            'h' => MarkFill::Hard,
+            _ => MarkFill::None,
+        };
+    }
+    out
+}
+
+#[test]
+fn the_widget_survives_the_round_trip() {
+    for spelled in [
+        "------------",
+        "hhhhhhhhhhhh",
+        "nnnnnnnnnnnn",
+        "hn-hn-hn-hn-",
+    ] {
+        let r = IconRef::Widget {
+            fills: fills(spelled),
+        };
+        let path = r.to_path();
+        assert_eq!(path, format!("widget/{spelled}"));
+        assert_eq!(IconRef::parse(&path), Some(r), "round trip of {path:?}");
+    }
+}
+
+#[test]
+fn a_widget_address_of_the_wrong_shape_is_not_ours() {
+    // Twelve columns exactly. A shorter string would compose a picture missing a mark and
+    // look like a profile that hasn't got it — a plausible wrong answer, which is the kind
+    // this protocol refuses on principle.
+    for bad in [
+        "widget",
+        "widget/",
+        "widget/hhhhhhhhhhh",
+        "widget/hhhhhhhhhhhhh",
+        "widget/hhhhhhhhhhhx",
+        "widget/hhhhhhhhhhhh/extra",
+        "widget/HHHHHHHHHHHH",
+    ] {
+        assert_eq!(
+            IconRef::parse(bad),
+            None,
+            "{bad:?} is not an address of ours"
+        );
+    }
+}
+
+#[test]
+fn the_widget_is_not_trimmed_to_its_drawing() {
+    // The paper's margin is where the marks are placed: trimming it would move every one of
+    // them, and the offsets are the game's own.
+    assert!(!IconRef::Widget {
+        fills: fills("hn----------")
+    }
+    .trims_to_drawing());
 }
