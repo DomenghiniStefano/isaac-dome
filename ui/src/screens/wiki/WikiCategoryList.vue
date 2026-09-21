@@ -67,7 +67,7 @@ const open = (page: WikiPageRef, event: MouseEvent) => {
 </script>
 
 <template>
-  <div class="flex max-w-250 flex-col gap-4">
+  <div class="flex h-full min-h-0 flex-col gap-4 overflow-hidden pt-5 pb-5">
     <ScreenHeader
       :icon="wikiCategoryIcon[category]"
       :title="t(wikiCategoryTitle[category])"
@@ -76,7 +76,7 @@ const open = (page: WikiPageRef, event: MouseEvent) => {
     <p v-if="noCatalog" class="text-caption text-subtle-foreground">
       {{ t('wiki.noCatalog') }}
     </p>
-    <Card v-if="wiki.index">
+    <Card v-if="wiki.index" class="min-h-0 flex-1">
       <CardHeader class="flex-wrap">
         <CardTitle class="tabular-nums"
           >{{ pages.length }} / {{ total }} {{ t('wiki.pages') }}</CardTitle

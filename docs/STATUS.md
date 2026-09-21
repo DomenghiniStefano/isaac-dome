@@ -389,14 +389,32 @@ said what it carried; it is fully merged and kept, its deletion waiting for the 
       development builds because `current_exe()` there is `target\debug\app.exe`. Plan
       `docs/superpowers/plans/2026-09-16-autostart.md`. **Nobody has seen it**: it needs an
       installed build, a logout and a login, which is what its five lines below are for.
-- [ ] **M5 — Public release**. **The app can be packaged since 2026-09-16, and could not before**:
-      `pnpm build` compiled and then stopped on `Couldn't find a .ico icon`, with
-      `crates/app/icons/` holding exactly the set Tauri looks for. Declaring `bundle.icon`
-      explicitly fixes it, and the first MSI and NSIS installers this project has ever produced
-      came out of that run. **Nothing runs `pnpm build` to the end** — `scripts/check` does not, by
-      design, since it downloads WiX and NSIS and takes minutes — so the next thing that breaks
-      packaging will be just as quiet. B11 closed with it: the font's licence and readme and
-      `dataset/ATTRIBUTION.md` are inside both installers, checked by extracting them.
+- [x] **M5 — Public release, done on 2026-09-20.** The repository is public, `v0.1.0` to `v0.1.3`
+      are published, and **an installed build has been watched updating itself** — the one link
+      of that feature nothing here can test. `docs/release.md` is the procedure, `pnpm release`
+      builds and signs, `pnpm release --publish` also tags and uploads, and publishing stays
+      behind its own flag because a build can be repeated and a release cannot be taken back.
+      Card B64.
+
+      **The app could not be packaged at all before 2026-09-16**: `pnpm build` compiled and then
+      stopped on `Couldn't find a .ico icon`, with `crates/app/icons/` holding exactly the set
+      Tauri looks for. Declaring `bundle.icon` explicitly fixed it. B11 closed with it: the
+      font's licence and readme and `dataset/ATTRIBUTION.md` are inside both installers, checked
+      by extracting them.
+
+      **What the four releases cost, and it is the part worth keeping.** `scripts/check` still
+      never runs `pnpm build` to the end, by design, so everything about packaging and signing is
+      found at release time — and on this day it was found four times. A build without the private
+      key builds both installers *and then* fails, so `target/release/bundle/` is never evidence
+      that anything was signed. A Tauri CLI older than 2.11.5 signs without recording the version,
+      which `requireSignedVersion` then rejects on every machine at once. And `target/` is never
+      emptied, so picking "the first installer there" uploads whichever sorts first. Each of those
+      is a guard in `scripts/release-manifest.mjs` now, and each was written after it happened.
+
+      **The release that mattered most carried no code.** 0.1.3 is 0.1.2 with a different number,
+      published so that an installed build had something to update to with nothing else moving.
+      That is the only way this repository has to see the updater work, and it is worth doing
+      once.
 
 ---
 
@@ -813,7 +831,12 @@ keyboard, which is exactly the kind of thing this repo cannot test and only a wi
 the branch that redrew it wrote one before closing. Eight of the nine need only a window; the
 ninth needs the game installed, because what it checks is the game's own picture. **The ninth
 line arrived the same day, from B68**, and it is the one nobody could have written earlier: the
-Ultra tab had never had a candidate in it to look at.
+Ultra tab had never had a candidate in it to look at. **It is also the first line in this list
+ever ticked** — of the 81, eighty are still open, and this one was written and closed on the same
+day because the owner opened the window it asked for straight away. The count stays 81: a ticked
+line is closed, not gone, and the tally is of lines gathered rather than of lines outstanding.
+That eighty of them have never been looked at is the honest state of this section, and it is
+worth reading as one number rather than as a list nobody finishes.
 
 
 **This is the live list; the reports are the record.** Each line below was written by the
@@ -893,12 +916,14 @@ and not fifteen; what is left needs a real window, a real screen and a real pair
       card. The layout is `lg:flex-row` against a grid that is a fixed 27.5rem: the question is
       what happens at the width the window actually opens at, not at the one a browser was
       resized to.
-- [ ] **The Ultra tab lights cells, and its three levels are told apart** (B68). Until 2026-09-20
-      that tab read 0 on every grid, so nothing in this group had ever seen it with anything in
-      it. Two things to look at: that a floor painted from a real run puts candidates where the
-      reference site puts them, and that the 1-room band — which is the one deliberately *not*
-      suppressed by a better cell — does not flood the map with third-level cells until the grid
-      reads as noise. If it does, the rank is right and the **drawing** is wrong.
+- [x] **The Ultra tab lights cells, and its three levels are told apart** (B68), **looked at by
+      the owner on 2026-09-20** and closed the same day the line was written. Until that morning
+      the tab read 0 on every grid, so nothing in this group had ever seen it with anything in
+      it. The line asked one thing in particular: whether the 1-room band — the one deliberately
+      *not* suppressed by a better cell, and 74% of all candidates across 300 random grids —
+      would flood the map until it read as noise. The window says no. **What is on file is that
+      answer and not a measurement**: nobody counted the bands on a painted floor, and if the
+      grid ever does read as noise the rank is still right and the drawing is what changes.
 - [ ] **NEEDS GAME — the game's own minimap icons appear, and they are the right ones.** With the
       game installed each room wears its icon instead of our drawing. Two things to look at: that
       the icon is there at all, and that **the Challenge Room wears the crossed swords**. That one

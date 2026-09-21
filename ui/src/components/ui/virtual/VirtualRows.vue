@@ -87,11 +87,11 @@ const onScroll = useDebounceFn(() => {
 </script>
 
 <template>
-  <div
-    ref="scroller"
-    class="max-h-virtual-rows-body overflow-auto"
-    @scroll="onScroll"
-  >
+  <!-- The height is what is left, not a number (spec 3.13a §4): this used to cap at a 35rem token,
+       which made a tall window show the same short list as a short one. Every ancestor up to the
+       page box needs `min-h-0`, or `flex-1` grows to fit the rows instead of fitting the space and
+       the list pushes the screen — which fails nothing and reads as a bug in the virtualizer. -->
+  <div ref="scroller" class="min-h-0 flex-1 overflow-auto" @scroll="onScroll">
     <div :style="body" class="relative h-(--virtual-rows-total)">
       <slot :visible="visible" />
     </div>

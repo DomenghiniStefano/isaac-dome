@@ -53,6 +53,23 @@
     var(--spacing-unlock-queue);
 }
 
+/* Unlock at compact (spec 3.13a §7): the drawing, the name, the state, the queue button. What
+   falls is what the row unlocks, its condition, and the fan-out — the two widest, whose absence
+   costs least because the row is still named, and a number that means nothing without the columns
+   beside it. Each of the three carries `@max-compact/page:hidden` on its cell, in
+   `UnlockTable.vue` for the header and `UnlockRow.vue` for the row.
+
+   **The two edits are one change.** A template that drops a track while its cell stays slides
+   every cell after it into the wrong column: it reads as a styling bug and is a counting one.
+   `scan-conventions.mjs` catches the half where the template moves and nothing is hidden. */
+@utility grid-cols-unlock-narrow {
+  grid-template-columns:
+    var(--spacing-unlock-art)
+    minmax(0, 1fr)
+    var(--spacing-unlock-state)
+    var(--spacing-unlock-queue);
+}
+
 /* The Collection's table: the sprite, the name, the quality, the pools, the origin, the state. */
 @utility grid-cols-collection {
   grid-template-columns:
@@ -123,5 +140,36 @@
   overflow-x: auto;
   &::-webkit-scrollbar {
     display: none;
+  }
+}
+
+/* The section sidebar is collapsed by either of two inputs (spec 3.13a §6): the shell is too
+   narrow for it, or somebody asked for it. Written once as a utility because the pair *is* the
+   state — repeating two variants on six elements is six chances to write only half of it, and the
+   half that is missing only shows under one of the two conditions.
+
+   The width is `--container-sidebar-room` spelled out: a `@utility` cannot carry a Tailwind variant, so
+   this is the one place the number is written by hand instead of read from the token. Moving the
+   threshold means moving it here too — `lib/design/thresholds.test.ts` guards the other two
+   copies and cannot see this one. */
+@utility sidebar-collapsed-hidden {
+  @container shell (width < 560px) {
+    display: none;
+  }
+  [data-sidebar='collapsed'] & {
+    display: none;
+  }
+}
+
+/* The other half of the same state: what is left in a collapsed sidebar is centred in it. Its own
+   utility rather than a variant on each element, for the reason above — the two conditions have
+   to travel together, or the manual collapse centres nothing and only the narrow one looks right.
+   Same hand-written 560px — `--container-sidebar-room` — same reason. */
+@utility sidebar-collapsed-center {
+  @container shell (width < 560px) {
+    justify-content: center;
+  }
+  [data-sidebar='collapsed'] & {
+    justify-content: center;
   }
 }

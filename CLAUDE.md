@@ -353,18 +353,21 @@ in `dataset/ATTRIBUTION.md`, CC BY-SA 4.0: it ships in the package.
   (`core-save`, `discovery`, `unpack`, `ipc`, `ui`, `wiki-snapshot`);
   drop the parentheses when the change is repo-wide (`docs:`, `chore:`, `build:`).
   Messages in English, atomic commits.
-- Integration branch: **`develop`**. **`master` is the public face and is kept level with it**
-  (`--ff-only`, since 2026-09-16); a release is a **tag** on `master`, not the act of moving the
-  branch. It used to read "`master` only receives releases", and that cost something real: `master`
-  is GitHub's default branch, so under the old rule the repository's landing page sat 733 commits
-  behind on an Italian scaffold. Details and the two moves it took in `docs/STATUS.md`.
-- **`master` is frozen: do not merge into it, do not move it, until told to in so many words.**
-  Suspended on 2026-09-17, and it suspends only the *moving* — the rule above still describes what
-  `master` is for and how it is brought level when the freeze lifts. Finishing a sub-project ends
-  at `develop`: merge there, push, and stop. "The check is green" is not the instruction, and
-  neither is "`develop` has moved ahead" — the only thing that lifts this is the owner saying so,
-  for that one time. Nothing enforces it: no hook, no branch protection, by decision, the same way
-  there is no CI. It holds because it is read.
+- Integration branch: **`develop`**. Work lands there and stops there: finishing a sub-project is
+  merge, push, and done.
+- **`master` is the release branch, since 2026-09-20.** It is fast-forwarded to `develop`
+  (`--ff-only`) **at the moment of a release**, and the tag goes on it; between releases it sits
+  at the last one. So `master` is what somebody who opens the repository gets, and what they get
+  is the version they can actually download — which is the whole reason it is not just a mirror
+  of `develop`.
+  **Two earlier readings, both paid for.** It once said "`master` only receives releases" while no
+  release existed, and since `master` is GitHub's default branch the landing page sat 733 commits
+  behind on an Italian scaffold. It was then frozen outright on 2026-09-17, which was right while
+  nothing shipped and stopped being right on 2026-09-20, when four releases went out in an evening
+  and every one of them needed the branch moved. `docs/STATUS.md` has the moves; `docs/release.md`
+  has the procedure.
+  Nothing enforces any of this: no hook, no branch protection, by decision, the same way there is
+  no CI. It holds because it is read.
 - **A merged branch is closed in the same breath as the merge**, locally and on the remote —
   unless work continues on it, which is the only exception. A branch that is merged holds nothing
   `develop` does not, *by construction*, so keeping it buys no safety and costs the one thing that
@@ -377,6 +380,18 @@ in `dataset/ATTRIBUTION.md`, CC BY-SA 4.0: it ships in the package.
   (`git rev-list --count <b> --not --remotes`). The second is the one that catches a branch whose
   commits live only on this machine, and it is the reason the 2026-09-16 sweep could delete
   seventy-odd refs without losing a line.
+- **After a history rewrite, ancestry stops being the test — compare the content.** On 2026-09-20
+  the sprites left the *history* and not only the tree (constraint 3), which gave every commit on
+  `develop` a new hash. A ref that was not rewritten with it keeps the old ones, so
+  `git rev-list --count develop..<b>` reports it as unmerged **for ever**, and the rule above then
+  keeps a branch alive that holds nothing. Measured on 2026-09-21: `feature/app-update` counted 1
+  and `feature/roll` 2, while the only thing those commits added —
+  `docs/superpowers/specs/2026-09-20-app-update-design.md` and
+  `docs/superpowers/specs/2026-09-17-roll-design.md` — sat on `develop` as **byte-identical blobs**,
+  under the same subjects at `2f51ed6d` and `20f7e72c`. So when the count is non-zero after a
+  rewrite, ask what the commits actually *add*: `git rev-parse <commit>:<file>` against
+  `git rev-parse develop:<file>`, equal blob ids meaning the branch carries nothing. All three
+  branches were deleted on the remote that day, and `origin` now holds `develop` and `master` only.
 - **Never** a `Co-Authored-By` trailer or references to Claude, in any commit, PR, or
   issue.
 
@@ -462,6 +477,19 @@ in `dataset/ATTRIBUTION.md`, CC BY-SA 4.0: it ships in the package.
   parallel by other sessions, and a clean `git status` at the start of a session is no
   promise it's still clean at the end. Stage by explicit path, and say so when the tree
   holds changes that aren't yours.
+- Don't *merge* a clone that predates a history rewrite — **reset it**. A machine whose last pull is
+  older than 2026-09-20 holds the pre-rewrite commits, so a pull sets two histories against each
+  other that share no ancestor for the same work, and every file both sides touched comes back
+  `UU`: on 2026-09-21 that was `CLAUDE.md`, `Cargo.lock`, `scripts/check`, `package.json` and some
+  fifty more, with conflict markers landing **inside `CLAUDE.md` itself** — the session read its own
+  instructions with `<<<<<<<` in them. The resolution for every one of those files was "take the
+  remote", which is a sign it was never a merge. `git fetch origin --prune` then
+  `git reset --hard origin/<branch>` per branch is the whole operation; for a branch that is not
+  checked out, `git branch -f <b> origin/<b>` moves it without disturbing the worktree. `master`
+  was 790 ahead and 940 behind, and those 790 were the purged history, on no remote at all.
+  **`git clean -x` is not part of it, ever**: `samples/` is git-ignored, and `-x` deletes the
+  fourteen months of saves along with `node_modules`. Re-install after the reset (`pnpm install`,
+  `cargo fetch`) — the lockfiles moved with the tree.
 
 ## Test data
 

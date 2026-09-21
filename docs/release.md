@@ -63,7 +63,8 @@ pnpm release
 
 That is `scripts/release-build.ps1`: it asks for the key's password, sets the two variables for
 that one process, runs `pnpm build` and then step 3, and clears the password on the way out —
-on a failed build and on Ctrl-C as well.
+on a failed build and on Ctrl-C as well. **It stops there and touches nothing outside this
+machine.** Step 4 is what publishes, and it is a flag away.
 
 **Do not set those two variables permanently.** A password in the user environment lives in the
 registry in plain text, readable by anything running as that user, which gives back most of what
@@ -127,7 +128,33 @@ been broken for everybody at once:
 
 ### 4. Publish
 
-Tag on `master`, create the release, and upload **three** files:
+```powershell
+pnpm release --publish            # or: pnpm release --publish --notes notes.md
+```
+
+This is steps 2 and 3 again, followed by the tag and the upload. **Publishing is behind its own
+flag on purpose**: building and signing can be repeated all day, and publishing cannot be taken
+back once somebody has fetched it. `pnpm release` on its own never touches the network.
+
+Everything that can refuse does so **before** the build, so a five-minute build and a typed
+password are never spent on a publish that was impossible from the start:
+
+| it stops on | because |
+|---|---|
+| `gh` not authenticated | the upload would fail at the very end |
+| HEAD is not `master` | a release is a tag on `master`, and tagging elsewhere makes the landing page and the release disagree |
+| commits not pushed | the tag would name a commit nobody else can fetch |
+| the tag already exists | the version was not bumped |
+
+Then it prints the repository, the tag and the three files with their sizes, and asks you to
+**type the version** — not to press `y`. Publishing the wrong version is the mistake worth a
+prompt at all, and a habit of pressing `y` is not a confirmation. Anything else stops it, with
+nothing tagged and nothing uploaded.
+
+The repository it publishes to is read out of the updater endpoint, so a release cannot land
+somewhere the app does not look.
+
+By hand, the same thing is: tag on `master`, create the release, and upload **three** files:
 
 - `IsaacDome_<version>_x64-setup.exe` — what the updater downloads, and what a new user installs
 - `IsaacDome_<version>_x64_en-US.msi` — the alternative for a machine that wants an MSI

@@ -52,7 +52,12 @@ const more = computed(() => Math.max(0, props.node.unlocks.length - 1))
       }}<template v-if="queued"> · {{ t('queue.inQueue') }}</template></span
     >
   </span>
-  <span class="flex min-w-0 items-center gap-2 px-2">
+  <!-- The three cells that fall at compact, each paired with a track dropped from
+       `grid-cols-unlock-narrow` (spec 3.13a §7): what the row unlocks, its condition, its fan-out.
+       Hidden and not collapsed to a zero-width track, because a zero-width cell stays in the
+       accessibility tree and a screen reader would read columns the eye was told it could do
+       without. -->
+  <span class="flex min-w-0 items-center gap-2 px-2 @max-compact/page:hidden">
     <template v-if="first">
       <PixelSprite
         v-if="first.kind === 'item'"
@@ -71,16 +76,19 @@ const more = computed(() => Math.max(0, props.node.unlocks.length - 1))
     </template>
     <EmptyValue v-else>{{ t('unlock.unlocksNothing') }}</EmptyValue>
   </span>
-  <span class="min-w-0 truncate px-2 text-caption text-foreground-soft">
+  <span
+    class="min-w-0 truncate px-2 text-caption text-foreground-soft @max-compact/page:hidden"
+  >
     <template v-if="known?.condition">{{ known.condition }}</template>
     <EmptyValue v-else>{{ t('unlock.noCondition') }}</EmptyValue>
   </span>
   <span class="px-2">
     <NodeStateBadge :node="node" />
   </span>
-  <span class="px-2 text-right text-row text-foreground tabular-nums">{{
-    node.done ? '—' : node.graph.fanOut
-  }}</span>
+  <span
+    class="px-2 text-right text-row text-foreground tabular-nums @max-compact/page:hidden"
+    >{{ node.done ? '—' : node.graph.fanOut }}</span
+  >
   <span class="flex justify-center">
     <Button
       v-if="canAdd"
