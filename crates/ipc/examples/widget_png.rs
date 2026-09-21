@@ -10,7 +10,8 @@
 //! `cargo run -p ipc --example widget_png -- <out-dir>` (default: `samples/sprites`).
 
 use ipc::{
-    crop_png, overlay, widget_source, MarkFill, MarkFrames, BOSSES, LOBBY_ANM2, WIDGET_ANM2,
+    centre_opaque, crop_png, overlay, widget_source, MarkFill, MarkFrames, BOSSES, LOBBY_ANM2,
+    WIDGET_ANM2,
 };
 
 fn main() {
@@ -76,7 +77,9 @@ fn main() {
             .iter()
             .map(|(p, x, y)| (p.as_slice(), *x, *y))
             .collect();
-        match overlay(&paper, &pieces) {
+        // Centred like the app serves it (`crates/app/src/icons.rs`), or this probe would
+        // show a picture nobody actually sees.
+        match overlay(&paper, &pieces).map(|p| centre_opaque(&p).unwrap_or(p)) {
             Some(png) => {
                 let path = out.join(format!("{name}.png"));
                 match std::fs::write(&path, &png) {
