@@ -142,11 +142,15 @@ Three moves, and none of them is optional:
 - **Something learned is a comment on the card, the same day.** A decision taken, a constraint
   measured, a deviation from the spec, a defect found in the plan itself: the card carries it.
   A session's memory does not survive the session; the card does.
-- **Finishing moves it to `UAT`, not to `Done`.** `Done` is for work that has been *looked at*.
-  A merged branch with a green `pnpm check` is built, not seen — and on a machine without the
-  game installed, half of what a screen shows cannot be seen at all. Tick the checklist items
-  that are really done, leave open the ones that are not, and say in a comment what is still
-  unverified and what would settle it.
+- **Finishing moves it to `UAT`, and never further.** A merged branch with a green `pnpm check`
+  is built, not seen — and on a machine without the game installed, half of what a screen shows
+  cannot be seen at all. Tick the checklist items that are really done, leave open the ones that
+  are not, and say in a comment what is still unverified and what would settle it. **The two
+  columns past `UAT` are not a session's to use**: `DA RILASCIARE` is where the owner puts what
+  they have looked at and approved, and `Done` means **in the hands of somebody using the app**,
+  which happens when a release is cut and not when a merge lands. Since 2026-09-21 that gap has
+  a column instead of being hidden inside `Done`; `docs/BACKLOG.md` says why, and the column
+  doubles as the next release's shopping list.
 
 The checklist on a card is the plan's task list: tick an item when its task is reviewed and
 committed, never when it is merely written. A card whose checklist is fully ticked and whose
@@ -366,6 +370,18 @@ in `dataset/ATTRIBUTION.md`, CC BY-SA 4.0: it ships in the package.
   nothing shipped and stopped being right on 2026-09-20, when four releases went out in an evening
   and every one of them needed the branch moved. `docs/STATUS.md` has the moves; `docs/release.md`
   has the procedure.
+  **`master` is pushed on a release and on nothing else, and the release is the owner's call.**
+  No commit is made on it, no branch is merged into it, no push touches it, unless a release is
+  being cut and the owner has said to cut it. A session that finds itself *on* `master` has
+  already taken a wrong turn: leave it before writing anything. This is not a caution about
+  force-pushing — an ordinary fast-forward at the wrong moment publishes, to everybody who
+  opens the repository, a version nobody decided to ship.
+  **A worktree is never left resting on `master` either**, for the reason above: the next
+  session opens it, writes, commits by habit, and the work lands on the release branch with
+  nothing in the way. Park it on a work branch or on a detached `HEAD` at `develop` — which is
+  what `isaac-dome` and `isaac-dome-tabs` both do — so that committing requires choosing a
+  branch first. Found and fixed on 2026-09-21, on a worktree this file's own instructions had
+  left sitting there.
   Nothing enforces any of this: no hook, no branch protection, by decision, the same way there is
   no CI. It holds because it is read.
 - **A merged branch is closed in the same breath as the merge**, locally and on the remote —
