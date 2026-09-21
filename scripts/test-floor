@@ -99,5 +99,18 @@
 # **A delta again, and it met B21's in this file** — the fourth time. Neither side could have
 # written a total: B21 raised UI from 747 to 749 while this branch was raising it to 754 from
 # the same 747, and 749 + 7 is the only number either of them agrees with.
-RUST_TESTS=1176
+#
+# **Raised on 2026-09-21**, Rust +27: card #58, the completion widget as the Completion
+# screen's emblem. Three in `catalog` — a frame now carries *where* its layer draws it, which
+# is the one number a picture made of layers needs and a single icon never did. Eight on
+# `overlay`, the composition itself, and six of those eight are about the ways it must not
+# lose a piece: a transparent pixel, a half-transparent one, an offset that hangs over an
+# edge, one entirely off it, and a piece that is not a PNG at all. Six on `widget_source`,
+# three on the address, four on the matrix that asks for it, and three on the installed game
+# — where the last of those exists because the other two cannot fail on their own: it
+# composes the bare paper and the full one and asserts they differ, so "96×96, fine" is never
+# read off an instrument nobody has shown able to speak. UI does not move in this commit; its
+# half comes with the screen.
+
+RUST_TESTS=1203
 UI_TESTS=756

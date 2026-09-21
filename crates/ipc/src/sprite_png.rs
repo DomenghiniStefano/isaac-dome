@@ -115,3 +115,67 @@ fn encode_rgba(w: u32, h: u32, pixel: &[u8]) -> Option<Vec<u8>> {
     }
     Some(out)
 }
+
+/// Lays `pieces` over `base` and encodes the result, which keeps **the base's size**: a
+/// piece is placed on the picture, it never enlarges it.
+///
+/// Each piece is `(png, x, y)`, where `x, y` is its top-left in the base's pixels and may be
+/// negative — the game places a layer around a pivot, so an offset that runs off the edge is
+/// ordinary. Anything outside the base is clipped, the way `crop_png` clips: losing a mark
+/// over a rectangle that hangs over the corner would be worse than drawing the part of it
+/// that fits.
+///
+/// **A piece that isn't a PNG is skipped, while a base that isn't one is `None`.** They are
+/// not the same failure: the widget without one of its eleven marks still says most of the
+/// truth, and the widget without its paper is not a picture at all.
+///
+/// The blend is source-over on straight (un-premultiplied) alpha. Replacing the rectangle
+/// instead would punch a hole in the paper for every mark, because a mark is pixel art on a
+/// transparent tile.
+pub fn overlay(base: &[u8], pieces: &[(&[u8], i32, i32)]) -> Option<Vec<u8>> {
+    let (w, h, mut pixel) = decode_rgba(base)?;
+    for &(png, at_x, at_y) in pieces {
+        let Some((pw, ph, src)) = decode_rgba(png) else {
+            continue;
+        };
+        for y in 0..ph {
+            let Some(dy) = offset(at_y, y, h) else {
+                continue;
+            };
+            for x in 0..pw {
+                let Some(dx) = offset(at_x, x, w) else {
+                    continue;
+                };
+                let s = ((y * pw + x) as usize) * 4;
+                let d = ((dy * w + dx) as usize) * 4;
+                blend(&mut pixel[d..d + 4], &src[s..s + 4]);
+            }
+        }
+    }
+    encode_rgba(w, h, &pixel)
+}
+
+/// Where pixel `i` of a piece placed at `at` lands, or `None` when that is off the picture.
+fn offset(at: i32, i: u32, limit: u32) -> Option<u32> {
+    let p = at.checked_add(i32::try_from(i).ok()?)?;
+    u32::try_from(p).ok().filter(|&p| p < limit)
+}
+
+/// Source-over, rounded: `out = src + dst * (1 - a)`, on straight alpha.
+fn blend(dst: &mut [u8], src: &[u8]) {
+    let a = u32::from(src[3]);
+    if a == 0 {
+        return;
+    }
+    if a == 255 {
+        dst.copy_from_slice(src);
+        return;
+    }
+    let keep = 255 - a;
+    for c in 0..3 {
+        let over = u32::from(src[c]) * a + u32::from(dst[c]) * keep;
+        dst[c] = ((over + 127) / 255) as u8;
+    }
+    let out_a = a * 255 + u32::from(dst[3]) * keep;
+    dst[3] = ((out_a + 127) / 255) as u8;
+}
