@@ -23,6 +23,12 @@
   --text-*: initial;
   --text-title: 1.875rem;
   --text-title--line-height: 1.3;
+  /* The one number a screen opens on, on the band above everything else (card #58). Larger
+     than the title, because the title says which screen this is and the number says the
+     thing the screen was opened to find out. A whole pixel size at scale 100, like the rest
+     of the scale. */
+  --text-headline: 2.5rem;
+  --text-headline--line-height: 1;
   /* A KPI's number (Chrome e Stati.dc.html, "KPI"). */
   --text-kpi: 1.625rem;
   --text-kpi--line-height: 1;
