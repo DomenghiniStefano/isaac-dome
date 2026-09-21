@@ -31,8 +31,28 @@
   --spacing-achievement: 5.5rem;
   /* An achievement drawing in a table row: 48 x 32, the 263 x 176 drawing at its ratio. */
   --spacing-achievement-thumb: 3rem;
+  /* The same drawing leading a wiki page's band (card #57): 176 wide, so at its ratio it is
+     118 tall and sits inside the band's 128 without setting the band's height itself. */
+  --spacing-achievement-hero: 11rem;
   /* A wiki page's figure (Schermate.dc.html): a 32px sprite at 3x, a 192px portrait at half. */
   --spacing-wiki-figure: 6rem;
+  /* The same figure on a page's opening band (card #57), half as large again: on a band that
+     wide the 96px one reads as a label stuck to the title rather than as the subject of the
+     page. It stays a whole multiple of the 32px sprite, so pixel art lands on whole pixels. */
+  --spacing-wiki-hero: 8rem;
+  /* The column that stays beside a page's text: the card, the index of its sections, and the
+     provenance. Measured on the character sheet, the widest of the seven — six stats in two
+     rows fit at this width and wrap at anything narrower. */
+  --spacing-wiki-aside: 17rem;
+  /* A wiki list row: the framed figure, the page's name, and the line under it saying what it
+     is. `RowWikiRem` in `lib/scale/rows.ts` is this number, and its test holds the two here. */
+  --spacing-row-wiki: 3.75rem;
+  /* The figure inside one of those rows, framed: the 32px sprite at 1.5x, which is what the
+     row's height leaves once its padding is taken. */
+  --spacing-wiki-row-figure: 3rem;
+  /* A category's tile on the landing: tall enough that the icon leads and the two lines of
+     text sit under it, instead of three things competing on one line. */
+  --spacing-wiki-tile: 7rem;
   /* Unlock's table (Schermate.dc.html): the drawing column, the state badge column, the
      fan-out column, the add-to-the-queue column. */
   --spacing-unlock-art: 4rem;
