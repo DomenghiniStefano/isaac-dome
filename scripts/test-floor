@@ -73,5 +73,11 @@
 # entry as an arrow and had to rewrite it as a delta to resolve. A delta survives a merge; an arrow
 # between two totals does not. The totals below are the ones `scripts/check` counted on the merge
 # itself.
+# **Raised on 2026-09-21**, UI +7: card #57, the Wiki's three views. Five are `wikiOutline`'s —
+# the index beside a page's text, and the rule that a page with one section gets none, which is the
+# only judgment in the whole sub-project. Two are `rows`'s: the new `--spacing-row-wiki` token and
+# the number the virtualizer positions its rows with, held together the way the other two row
+# heights already are. Rust does not move: nothing here is Rust.
+
 RUST_TESTS=1160
-UI_TESTS=747
+UI_TESTS=754

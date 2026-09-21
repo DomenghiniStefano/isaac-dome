@@ -176,7 +176,10 @@ const onOpen = (location: TabLocation, newTab: boolean) => {
             }}</TooltipContent>
           </Tooltip>
         </aside>
-        <div class="min-w-0 flex-1">
+        <!-- A measure, not a width: wiki prose runs to 90 characters a line at the page's
+             full width, which is past what anyone reads comfortably. Capped, the space that
+             is left sits between the text and the column beside it. -->
+        <div class="max-w-200 min-w-0 flex-1">
           <WikiSections
             :sections="entry.sections"
             :icon-for="wiki.iconFor"
