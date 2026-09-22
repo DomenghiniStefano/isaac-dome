@@ -4,6 +4,7 @@
 export const FoldingTable = {
   Unlock: 'unlock',
   Collection: 'collection',
+  Challenges: 'challenges',
 } as const
 export type FoldingTable = (typeof FoldingTable)[keyof typeof FoldingTable]
 
@@ -19,4 +20,5 @@ export const TableTracks: Record<
 > = {
   [FoldingTable.Unlock]: { full: 7, narrow: 4 },
   [FoldingTable.Collection]: { full: 6, narrow: 3 },
+  [FoldingTable.Challenges]: { full: 6, narrow: 4 },
 }
