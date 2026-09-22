@@ -429,7 +429,7 @@ fn without_a_graph_there_are_no_next_steps_to_suggest() {
     flags[5] = true;
     let v = unlock_view(None, None, Some(&flags), None, None, None, |_| None);
     assert!(
-        next_steps(&v).sections.is_empty(),
+        next_steps(&v, &Default::default()).sections.is_empty(),
         "not-done is not the same as unlockable: with no graph the app has nothing to \
          recommend, and the view's NoCatalog diagnostic is what says why"
     );
@@ -473,7 +473,7 @@ fn next_steps_take_what_is_unlockable_now_most_fan_out_first() {
         },
         diagnostics: vec![],
     };
-    let s = next_steps(&v);
+    let s = next_steps(&v, &Default::default());
     assert_eq!(
         slots_of(&s, StepsBasis::FanOut),
         vec![3, 5, 1],
@@ -894,7 +894,7 @@ fn a_node_held_only_by_counters_goes_to_the_closeness_section() {
         available(3, 1, vec![counter(3, 11)]), // eight to go
     ]);
 
-    let s = next_steps(&v);
+    let s = next_steps(&v, &Default::default());
     let bases: Vec<StepsBasis> = s.sections.iter().map(|x| x.basis).collect();
     assert_eq!(bases, vec![StepsBasis::FanOut, StepsBasis::Closeness]);
     assert_eq!(slots_of(&s, StepsBasis::FanOut), vec![1]);
@@ -942,7 +942,7 @@ fn the_two_sections_never_name_the_same_node() {
             steps_missing: 0,
         },
     }]);
-    let s = next_steps(&v);
+    let s = next_steps(&v, &Default::default());
     assert_eq!(s.sections.len(), 1, "one node cannot fill two sections");
     assert_eq!(
         s.sections[0].basis,
@@ -958,7 +958,7 @@ fn a_section_with_no_steps_is_not_emitted() {
     let mut flags = vec![false; 10];
     flags[2] = true;
     let v = unlock_view(None, None, Some(&flags), None, None, None, |_| None);
-    assert!(next_steps(&v).sections.is_empty());
+    assert!(next_steps(&v, &Default::default()).sections.is_empty());
 }
 
 /// A node with a mark still standing is `available_now` too, but a mark is binary: there is
@@ -983,7 +983,7 @@ fn a_mark_is_not_a_distance_and_stays_in_the_fan_out_section() {
             steps_missing: 0,
         },
     }]);
-    let s = next_steps(&v);
+    let s = next_steps(&v, &Default::default());
     assert_eq!(slots_of(&s, StepsBasis::FanOut), vec![7]);
     assert!(slots_of(&s, StepsBasis::Closeness).is_empty());
 }
@@ -1040,7 +1040,69 @@ fn the_pair_carries_the_steps_of_the_view_it_travels_with() {
     let mut flags = vec![false; 10];
     flags[2] = true;
     let view = unlock_view(None, None, Some(&flags), None, None, None, |_| None);
-    let pair = ipc::graph_views(view.clone());
+    let pair = ipc::graph_views(view.clone(), &Default::default());
     assert_eq!(pair.unlock, view);
-    assert_eq!(pair.steps, next_steps(&view));
+    assert_eq!(pair.steps, next_steps(&view, &Default::default()));
+}
+
+/// A known achievement that is available now, with the fan-out it would open and whatever
+/// still stands in its way.
+fn known_available(id: u32, fan_out: u32, missing: Vec<RequirementView>) -> UnlockNode {
+    UnlockNode {
+        achievement: AchievementRef::Known {
+            id,
+            text: format!("achievement {id}"),
+            condition: None,
+            icon_url: None,
+        },
+        done: false,
+        unlocks: vec![],
+        origin: None,
+        missing,
+        graph: GraphInfo::Computed {
+            available_now: true,
+            blocked_by: 0,
+            fan_out,
+            steps_missing: 0,
+        },
+    }
+}
+
+/// A suggestion is something to add. One already in the queue is a decision taken, and
+/// suggesting it again spends a place under the cap on it: the next candidate takes that
+/// place instead, so the section stays as long as the profile allows.
+#[test]
+fn what_is_queued_is_not_suggested_and_its_place_goes_to_the_next() {
+    let count = STEPS as u32 + 1;
+    let nodes: Vec<UnlockNode> = (1..=count)
+        .map(|id| known_available(id, 100 - id, vec![]))
+        .collect();
+    let v = ipc::for_tests::unlock_view_of(nodes);
+    assert_eq!(
+        slots_of(&next_steps(&v, &Default::default()), StepsBasis::FanOut).len(),
+        STEPS,
+        "the fixture has to overflow the cap, or the refill is not tested"
+    );
+
+    let queued = std::collections::BTreeSet::from([1]);
+    let s = next_steps(&v, &queued);
+    let expected: Vec<u32> = (2..=count).collect();
+    assert_eq!(slots_of(&s, StepsBasis::FanOut), expected);
+}
+
+/// Queued and near is still queued: closeness does not hand it to the other section either.
+#[test]
+fn a_queued_node_is_absent_from_both_sections() {
+    let near = RequirementView::Counter {
+        label: "Mom's Heart".into(),
+        current: 9,
+        at_least: 11,
+    };
+    let v = ipc::for_tests::unlock_view_of(vec![
+        known_available(1, 9, vec![near]),
+        known_available(2, 3, vec![]),
+    ]);
+    let s = next_steps(&v, &std::collections::BTreeSet::from([1]));
+    assert_eq!(slots_of(&s, StepsBasis::FanOut), vec![2]);
+    assert!(slots_of(&s, StepsBasis::Closeness).is_empty());
 }

@@ -1,5 +1,7 @@
 //! The graph's three screens: Unlock, Next steps and the Collection.
 
+use std::collections::BTreeSet;
+
 use tauri::AppHandle;
 
 use core_save::Kind;
@@ -39,14 +41,26 @@ pub(crate) fn unlock(
 /// called together and which rebuilt the same pipeline twice — settings, a walk of the Steam
 /// libraries, the `.dat` read whole and parsed, 642 nodes, the evaluation — for one screen
 /// load. One command reads the profile once, by construction rather than by a cache.
+///
+/// The queue is read too, because the steps leave out what it already holds. A queue that
+/// can't be read leaves nothing out: every suggestion shows, which is the screen as it was
+/// before the queue existed, and the queue's own card says why it is missing.
 #[tauri::command]
 pub fn graph_views(
     app: AppHandle,
     state: tauri::State<'_, CatalogState>,
     resources: tauri::State<'_, ResourcesState>,
     graph: tauri::State<'_, GraphState>,
+    store: tauri::State<'_, StoreState>,
 ) -> Result<ipc::GraphViews, IpcError> {
-    Ok(ipc::graph_views(unlock(app, state, resources, graph)?))
+    let queued: BTreeSet<u32> = match store.lock(&app).map(|guard| guard.queue()) {
+        Ok(Ok(Ok(q))) => q.rows().iter().map(|r| r.achievement).collect(),
+        _ => BTreeSet::new(),
+    };
+    Ok(ipc::graph_views(
+        unlock(app, state, resources, graph)?,
+        &queued,
+    ))
 }
 
 #[tauri::command]
