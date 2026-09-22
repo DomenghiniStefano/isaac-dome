@@ -175,6 +175,44 @@ fn a_target_both_sides_know_is_one_document_with_the_catalog_name_as_its_title()
     }));
 }
 
+/// The catalog's name wins because it is what the game calls the thing — but only when the
+/// game calls it something. Dead God (637) is the achievement whose `text` in
+/// `achievements.xml` is **empty** (Steam's schema names it "Dead God"; measured with
+/// `probe_steam_schema`, 2026-09-23), and read as a name it replaced the wiki's title with
+/// nothing: the row came up blank and was found only through the alias.
+#[test]
+fn an_empty_catalog_name_does_not_replace_the_wiki_title() {
+    let mut ds = dataset();
+    ds.achievements.insert(
+        637,
+        wiki::for_tests::entry(
+            "Dead God",
+            Infobox::Achievement {
+                quote: vec![],
+                requirements: vec![],
+                notes: vec![],
+                unlocks: None,
+            },
+        ),
+    );
+    let index = SearchIndex::build(Ok(&ds));
+    let catalog = Catalog::build(|p| {
+        match p {
+        "achievements.xml" => Some(
+            b"<achievements gfxroot=\"gfx/ui/achievement/\"><achievement id=\"637\" text=\"\" gfx=\"637.png\" /></achievements>"
+                .to_vec(),
+        ),
+        _ => None,
+    }
+    });
+    let docs = for_tests::documents(&index, Some(&catalog));
+    let dead_god = docs
+        .get(&Target::Achievement { id: 637 })
+        .expect("the achievement is on both sides");
+    assert_eq!(dead_god.title, "Dead God");
+    assert_eq!(dead_god.alias, None);
+}
+
 #[test]
 fn without_a_catalog_the_documents_are_the_wiki_pages_alone() {
     let ds = dataset();
