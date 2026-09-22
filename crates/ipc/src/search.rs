@@ -157,9 +157,10 @@ pub(crate) fn documents(index: &SearchIndex, catalog: Option<&Catalog>) -> BTree
     let mut join = |target: Target, title: String, condition: Option<String>| {
         match docs.get_mut(&target) {
             // The catalog's name wins: it is what the game itself calls the thing. The wiki
-            // title stays as an alias when it says something else.
+            // title stays as an alias when it says something else. An empty name is the game
+            // calling it nothing — Dead God's `text` is blank — and it does not win.
             Some(doc) => {
-                if doc.title != title {
+                if doc.title != title && !title.trim().is_empty() {
                     doc.alias = Some(std::mem::replace(&mut doc.title, title));
                 }
                 doc.condition = condition;
