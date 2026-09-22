@@ -46,10 +46,11 @@ const detail = computed(() => {
     <span class="truncate text-label text-subtle-foreground">{{ detail }}</span>
   </span>
   <span class="px-2 text-right text-row tabular-nums">{{ run.floors }}</span>
-  <span class="truncate px-2 text-label text-subtle-foreground">{{
-    run.seedWords
-  }}</span>
-  <span class="flex min-w-0 items-center gap-2 px-2">
+  <span
+    class="truncate px-2 text-label text-subtle-foreground @max-compact/page:hidden"
+    >{{ run.seedWords }}</span
+  >
+  <span class="flex min-w-0 items-center gap-2 px-2 @max-compact/page:hidden">
     <span class="truncate text-label text-subtle-foreground">{{
       t(sourceText(run.source.kind))
     }}</span>
