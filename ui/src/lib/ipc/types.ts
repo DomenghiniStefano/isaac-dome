@@ -1114,11 +1114,18 @@ export type Infobox =
     }
   | {
       kind: 'achievement'
+      /**
+       * The line on the game's unlock paper, which the wiki files under `description`:
+       * "Just Stop!", "OMG!". It is the game's voice and not a description, so it is the
+       * quote, the way an item's pickup line is. Empty where the wiki wrote a placeholder
+       * ("???" on 136 rows) or nothing.
+       */
+      quote: Array<Inline>
       requirements: Array<Inline>
       /**
        * Caveats on the requirement ("Possession of The Polaroid is required…"). An
        * achievement is a row on a storage page and carries no sections of its own, so
-       * this is the only prose it has beyond `description` and `requirements`.
+       * this is the only prose it has beyond `quote` and `requirements`.
        */
       notes: Array<Inline>
       /**
@@ -1210,8 +1217,12 @@ export type Entry = {
    */
   revid: number
   /**
-   * The infobox's summary line. Plain text for achievements, wikitext everywhere else:
-   * both arrive as inline so the frontend has one shape and no switch on the kind.
+   * The summary line: the infobox's `description`, or on a boss, a character or a
+   * challenge whose infobox has none, the page's opening paragraph. **Empty on every
+   * achievement from the wiki**: what the wiki files there is the unlock paper's line,
+   * which is `Infobox::Achievement.quote`, and the summary the screen draws is composed
+   * from `unlocks` and `requirements` where the words can be translated. A hand-written
+   * description in `corrections.json` fills it, on any kind, and wins over the wiki.
    */
   description: Array<Inline>
   /**

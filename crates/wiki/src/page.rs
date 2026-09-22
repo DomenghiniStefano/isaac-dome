@@ -464,10 +464,13 @@ pub fn parse_page(
                     .get_or_insert_with(|| preamble(text, r, d))
                     .clone()
             }
+            // What the wiki files as an achievement's `description` is the unlock paper's
+            // line, and it went to the infobox's `quote`: it is not a summary, and read as
+            // one it put "???" under 136 titles.
+            InfoboxKind::Achievement => Vec::new(),
             InfoboxKind::Passive
             | InfoboxKind::Activated
             | InfoboxKind::Trinket
-            | InfoboxKind::Achievement
             | InfoboxKind::Boss
             | InfoboxKind::Challenge
             | InfoboxKind::Character => facts.description,
