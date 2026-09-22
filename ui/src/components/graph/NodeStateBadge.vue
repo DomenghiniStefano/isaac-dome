@@ -29,10 +29,10 @@ const stateText: Record<NodeState, MessageKey<MessageSchema>> = {
   [NodeState.Partial]: 'graph.state.partial',
 }
 
-// "bloccato da 2": the number is the graph's, the words are the messages'.
+// "requisiti mancanti: 2": the number is the graph's, the words are the messages'.
 const label = computed(() =>
   state.value === NodeState.Blocked
-    ? `${t(stateText[state.value])} ${props.node.graph.blockedBy}`
+    ? t(stateText[state.value], { count: props.node.graph.blockedBy })
     : t(stateText[state.value]),
 )
 </script>
