@@ -200,6 +200,7 @@ fn a_lock_carries_the_achievement_page_only_when_the_dataset_has_it() {
         wiki::for_tests::entry(
             "t2",
             Infobox::Achievement {
+                quote: vec![],
                 requirements: vec![],
                 notes: vec![],
                 unlocks: None,
