@@ -53,7 +53,9 @@ Copied from `CLAUDE.md` and `docs/frontend-conventions.md`; every task's require
 | `ui/src/lib/plan/addPaneState.ts` **(new)** | Which of the left pane's four states is showing — decided on the want and the catalog, never on a list's length. |
 | `ui/src/lib/plan/addPaneState.test.ts` **(new)** | The above. |
 | `ui/src/screens/goals/AddPane.vue` **(new)** | The left pane: search bar, then the sections, the want's answer, the missing-game alert, or nothing to unlock. |
-| `ui/src/screens/GoalsScreen.vue` | Becomes the two-pane screen. |
+| `ui/src/screens/goals/GoalsHero.vue` **(new)** | The band the screen opens on — the title on a lit ground, and nothing countable (spec §4.2). |
+| `ui/src/screens/GoalsScreen.vue` | Becomes the banded two-pane screen. |
+| `docs/frontend-conventions.md` | Gains the third screen shape; Completion moves into it, where it has belonged since card #58. |
 | `ui/src/screens/plan/QueueCard.vue` | Keeps the drag; draws `GoalRow` instead of `QueueRow`. |
 | `ui/src/lib/window/sessionDocument.ts` | Gains the retired-name map. |
 | `ui/src/router/routeTable.ts`, `routes.ts`, `components/shell/sectionNav.ts` | `Plan` leaves; `/progress/plan` redirects. |
@@ -1034,16 +1036,51 @@ git commit -m "feat(ui): one pane for everything that can enter the queue"
 > it is the vacuity trap `CLAUDE.md` names. The route has to leave in the same commit that
 > teaches the reader to carry it, or the test proves nothing.
 
-- [ ] **Step 1: Assemble the screen**
+- [ ] **Step 1: Assemble the screen, on the band**
 
-`GoalsScreen.vue` keeps its `ScreenHeader` and becomes:
+Spec §4.2: the same grammar as `CompletionHero.vue` and `WikiHero.vue`. Read `CompletionScreen.vue`
+and `CompletionHero.vue` first and copy the **shape**, not the content — the band here holds the
+`ScreenHeader` and nothing else, no headline number and no progress bar.
+
+Create `ui/src/screens/goals/GoalsHero.vue`:
 
 ```vue
-    <div class="flex flex-col items-start gap-4 @wide/page:flex-row">
-      <AddPane class="w-full @wide/page:w-add-pane @wide/page:shrink-0" … />
-      <QueueCard class="w-full min-w-0 flex-1" … />
+<template>
+  <!-- The band the screen opens on, the same grammar as Completion's and a wiki page's: the
+       light comes from the corner and falls back into the page, and the grain stands in for
+       the shadow the skin does not have. It carries the title and nothing countable — spec
+       §5 declined a count at the top of this screen, and a band is not a reason to find one. -->
+  <header class="relative border-b border-hairline hero-wash px-5.5 py-5">
+    <span class="pointer-events-none absolute inset-0 hero-grain" />
+    <div class="relative">
+      <ScreenHeader :icon="ListChecksIcon" :title="t('routes.goals')">{{
+        t('goals.intro')
+      }}</ScreenHeader>
     </div>
+  </header>
+</template>
 ```
+
+`GoalsScreen.vue` becomes the banded shape — the band stays, the two panes take the height that is
+left. It is **not** the `flowing` root it has today:
+
+```vue
+  <div class="-mx-5.5 flex h-full min-h-0 flex-col overflow-hidden">
+    <GoalsHero />
+    <div class="flex min-h-0 flex-1 flex-col gap-4 overflow-y-auto px-5.5 pt-4 pb-5
+                @wide/page:flex-row @wide/page:items-start @wide/page:overflow-hidden">
+      <AddPane class="w-full @wide/page:w-add-pane @wide/page:shrink-0" … />
+      <QueueCard class="w-full min-w-0 flex-1 @wide/page:min-h-0" … />
+    </div>
+  </div>
+```
+
+> **Why the overflow swaps sides at `wide`.** Stacked, the two panes are one column and the
+> column scrolls. Side by side they are two columns of different lengths, and one scrollbar for
+> both would scroll the queue out of sight to reach the bottom of the recommendations — which is
+> the one thing §2 says must never happen. So above `wide` the row holds the height and each pane
+> scrolls inside itself. `min-h-0` on every link of that chain is not decoration: the contract in
+> `docs/frontend-conventions.md` says what one missing link costs.
 
 It loads both stores (`graph.load()`, `queue.load()`) as `PlanScreen` did, keeps `QueueError`, the
 `DiagnosticsList` with the import button, and drops the three-count `<p>` and the *"nel tuo piano"*
@@ -1163,20 +1200,35 @@ Expected: PASS, with the three new session tests green. If `sectionNav.test.ts` 
 before editing it — it asserts that every Progress route is in the sidebar, and it should stay
 green on its own now that `Plan` is in neither.
 
-- [ ] **Step 7: Redraw `docs/architecture.md`**
+- [ ] **Step 7: Add the third screen shape to the contract**
+
+`docs/frontend-conventions.md` §"A screen is one of two shapes" lists *flowing* and *filling*, and
+files **Completion** under flowing. It has not been flowing since card #58. Add a third row and
+move Completion into it beside Goals:
+
+| shape | root classes | who |
+|---|---|---|
+| **banded** | `-mx-5.5 flex h-full min-h-0 flex-col overflow-hidden`, a `hero-wash` header, and a body carrying `min-h-0 flex-1` | a screen that opens on a band: Completion, Goals |
+
+Rename the heading to "A screen is one of three shapes", and remove Goals and Plan from the
+flowing row. Say in a line that Completion was listed wrongly since card #58 and that this is the
+correction — a contract that describes two of three shapes is read as forbidding the third.
+
+- [ ] **Step 8: Redraw `docs/architecture.md`**
 
 The header pins **17 routes**; it becomes **16**. Update the count, remove the `planr` node from
 the `progressGroup` subgraph, remove the *Plan* row from the route table, and fold its commands
 into the *Goals* row. Add a line to the header's drawn-on paragraph saying what moved and when,
 the way the existing entries do.
 
-- [ ] **Step 8: Commit**
+- [ ] **Step 9: Commit**
 
 ```bash
 git add ui/src/screens/GoalsScreen.vue ui/src/router/routeTable.ts ui/src/router/routes.ts \
   ui/src/components/shell/sectionNav.ts ui/src/lib/window/sessionDocument.ts \
   ui/src/lib/window/sessionDocument.test.ts ui/src/lib/plan/queueRows.ts \
-  ui/src/assets/theme/spacing.css docs/architecture.md
+  ui/src/assets/theme/spacing.css ui/src/screens/goals/GoalsHero.vue \
+  docs/frontend-conventions.md docs/architecture.md
 git commit -m "feat(ui): Obiettivi holds the queue, and the Piano route retires into it"
 ```
 
