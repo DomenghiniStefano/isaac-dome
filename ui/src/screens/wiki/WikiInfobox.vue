@@ -97,7 +97,11 @@ const stats = computed(() => {
       <!-- The three facts every kind declares, drawn once: they live on the entry, not in
            the variant, so repeating them per kind would repeat the same markup four times. -->
       <dl class="flex flex-col gap-2">
+        <!-- An achievement has no description from the wiki (its paper line is the quote,
+             on the band): "none" here would contradict the two rows below that say what it
+             gives and asks. One written by hand in `corrections.json` is still drawn. -->
         <InfoboxRow
+          v-if="infobox.kind !== 'achievement' || entry.description.length > 0"
           :label="t('wiki.infobox.description')"
           :inline="entry.description"
           v-bind="forward"

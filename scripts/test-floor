@@ -196,5 +196,15 @@
 # the floor **without a paragraph**. This one is not it: whoever reads the file next should find
 # the +2 and the +3 described by the session that made them, and that entry is still missing.
 
-RUST_TESTS=1229
-UI_TESTS=781
+# **Raised on 2026-09-23**, Rust +7 and UI +4, card #66: descriptions the wiki does not give.
+# Rust: one on `{{dlc|…}}` closing with the parenthesis it opened in (57 sites in the
+# snapshot), two on a boss, character or challenge taking its opening paragraph when the
+# infobox is silent — the first paragraph that says something, a list's lines kept apart —
+# one on an achievement's unlock-paper line becoming its quote with `???` dropped, two on
+# `corrections.json`'s hand-written descriptions (one winning, one naming nothing and being
+# reported), and one on the real file, guarded against being vacuous. UI +4: `heroSummary`,
+# the line under an achievement's title — what it unlocks, else what it asks, and a
+# hand-written description over both.
+
+RUST_TESTS=1236
+UI_TESTS=785
