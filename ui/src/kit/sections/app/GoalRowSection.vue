@@ -48,6 +48,7 @@ const rows: {
   label: string
   model: RowModel
   extras?: QueueExtras
+  canAdd?: boolean
   position?: number
 }[] = [
   {
@@ -82,6 +83,7 @@ const rows: {
   },
   {
     label: 'consiglio · nessun grip, nessuna posizione, il più al suo posto',
+    canAdd: true,
     model: model({ text: 'Fascia di Mamma', fanOut: 12 }),
   },
 ]
@@ -97,6 +99,7 @@ const rows: {
           :node="node"
           :extras="row.extras"
           :position="row.position"
+          :can-add="row.canAdd"
           :busy="false"
         />
       </Card>
