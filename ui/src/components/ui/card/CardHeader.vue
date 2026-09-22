@@ -12,7 +12,7 @@ const props = defineProps<{
     data-slot="card-header"
     :class="
       cn(
-        'flex items-center justify-between gap-2 bg-band px-3 py-2 text-band-foreground',
+        'flex items-center justify-between gap-2 bg-band band-wash px-3 py-2 text-band-foreground',
         props.class,
       )
     "

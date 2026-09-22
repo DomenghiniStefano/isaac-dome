@@ -38,6 +38,20 @@
      a row of a table, and the day a row's hover moves the fields must not move with it. */
   --color-field-hover: #241812;
   --color-hairline: #2e1e17;
+  /* Depth without a shadow (2026-09-22). `--shadow-*` is `initial` by decision and stays
+     that way, so a surface is lifted the way `hero-wash` and `tile-wash` already lift one:
+     lit where the light falls and not lit where it does not. Three tones, all inside
+     families the palette already holds — nothing new enters the hue wheel.
+
+     `card-lit` sits between `card` (#1b120e) and `sheet` (#2a1c17): a card washed all the
+     way to `sheet` stops reading as a card and starts reading as a sheet, which is a
+     different surface with a different job.
+     `hairline-lit` is the top edge that same light would catch, one step above `hairline`.
+     `band-edge` is where a band's wash runs out, so a header long enough to cross the
+     screen is not one flat rectangle of `band`. */
+  --color-card-lit: #221710;
+  --color-hairline-lit: #402b21;
+  --color-band-edge: #4a2e25;
   --color-primary-hover: #a81c00;
   --color-primary-active: #6c0c00;
   --color-primary-edge: #4a0a00;
