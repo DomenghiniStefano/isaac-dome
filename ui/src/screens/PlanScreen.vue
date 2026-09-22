@@ -5,7 +5,7 @@ import QueueError from '@/components/plan/QueueError.vue'
 import { Skeleton } from '@/components/ui/skeleton'
 import { useOnActiveProfile } from '@/composables/useOnActiveProfile'
 import { useMessages } from '@/i18n'
-import { queueSummary, queuedIds } from '@/lib/plan/queueRows'
+import { queuedIds } from '@/lib/plan/queueRows'
 import { useGraphStore } from '@/stores/views'
 import { LoadStatus } from '@/stores/loadStatus'
 import { useQueueStore } from '@/stores/queue'
@@ -39,7 +39,6 @@ const readable = computed((): boolean => {
     )
   )
 })
-const summary = computed(() => queueSummary(queue.view?.rows ?? []))
 const queued = computed(() => queuedIds(queue.view))
 const nodes = computed(() => graph.view?.unlock.nodes ?? [])
 </script>
@@ -55,11 +54,6 @@ const nodes = computed(() => graph.view?.unlock.nodes ?? [])
       @retry="queue.load()"
     />
     <template v-else-if="queue.view">
-      <p v-if="readable" class="text-caption text-foreground-soft tabular-nums">
-        {{ t('plan.summary.rows') }}: {{ summary.rows }} ·
-        {{ t('plan.summary.wanted') }}: {{ summary.wanted }} ·
-        {{ t('plan.summary.pulledIn') }}: {{ summary.pulledIn }}
-      </p>
       <DiagnosticsList :entries="planEntries(queue.view.diagnostics)">
         <template #action>
           <Button
