@@ -272,7 +272,7 @@ export const it = {
     blindfoldedYes: 'bendata',
     blindfoldedNo: 'non bendata',
     blindfolded: 'bendata',
-    noCondition: 'non lo sappiamo',
+    noCondition: 'la wiki non lo dice',
     unlocksNothing: 'non sblocca niente',
     unnamedReward: 'achievement {id}',
     columns: {
@@ -681,7 +681,7 @@ export const it = {
   },
   plan: {
     intro:
-      'L’ordine in cui vuoi fare le cose: quelle che hai chiesto, più quello che serve prima. Trascina una riga dove vuoi — se le manca un prerequisito si ferma appena sotto, invece di rifiutare lo spostamento.',
+      'L’ordine in cui vuoi fare le cose: quelle che hai aggiunto tu, più quello che serve prima. Trascina una riga dove vuoi — se le manca un prerequisito si ferma appena sotto, invece di rifiutare lo spostamento.',
     opens: 'apre {count}',
     opensNothing: 'non apre altro',
     detail: 'Mostra il dettaglio',
@@ -696,8 +696,8 @@ export const it = {
     },
     row: {
       move: 'Sposta la riga (Alt e freccia su o giù)',
-      wanted: 'chiesta',
-      serves: 'serve',
+      wanted: 'aggiunta da te',
+      serves: 'serve per',
       unlocks: 'sblocca',
       fanOut: 'sblocca',
       outsideQueue: 'passi fuori dalla coda',
@@ -708,7 +708,7 @@ export const it = {
     emptyHint: 'Aggiungi una riga dalla proposta qui accanto, o da Unlock.',
     completed: {
       closed: 'righe chiuse giocando',
-      wanted: 'fra quelle chieste',
+      wanted: 'fra quelle aggiunte da te',
     },
     unresolved: 'il gioco non lo conosce più',
     alerts: {
@@ -845,8 +845,9 @@ export const it = {
       now: 'sbloccabile ora',
       blocked: 'bloccato da',
       // Non "grafo parziale": chi legge non sa cosa sia un grafo, e la cosa che deve
-      // sapere è che la risposta non c'è — non come mai.
-      partial: 'non sappiamo dirlo',
+      // sapere è che la risposta non c'è — non come mai. E deve dire *di cosa* non c'è:
+      // "non sappiamo dirlo", da solo su un badge, non diceva cosa non sapevamo.
+      partial: 'requisiti incerti',
     },
     why: {
       title: 'Cosa gli manca',
@@ -874,7 +875,7 @@ export const it = {
       done: 'fatto',
       now: 'sbloccabile ora',
       blocked: 'bloccato',
-      partial: 'non sappiamo dirlo',
+      partial: 'requisiti incerti',
     },
     // Una cella della matrice: il boss e il personaggio con cui va battuto.
     markName: '{boss} con {character}',
@@ -913,7 +914,7 @@ export const it = {
       fanOut: 'Sblocca',
     },
     unlocksNothing: 'niente che il gioco nomini',
-    noCondition: 'non lo sappiamo',
+    noCondition: 'il gioco non la scrive',
     diagnostics: {
       noCatalogTitle: 'Non troviamo il gioco',
       noCatalog:
@@ -1065,8 +1066,8 @@ export const it = {
     inPlan: 'già nella coda del Piano',
     add: 'Aggiungi alla coda',
     addShort: 'Aggiungi',
-    remove: 'Togli dalla coda',
-    removeShort: 'Togli',
+    remove: 'Rimuovi dalla coda',
+    removeShort: 'Rimuovi dalla coda',
     errorTitle: 'La coda non è cambiata',
   },
   // Perché un comando non ha potuto rispondere. Da N2 sono varianti sul filo, non una frase
