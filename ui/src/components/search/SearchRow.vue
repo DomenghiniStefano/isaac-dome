@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
+import AchievementArt from '@/components/graph/AchievementArt.vue'
+import { ArtSize } from '@/components/graph/artSize'
 import PixelSprite from '@/components/sprite/PixelSprite.vue'
 import { Badge, BadgeVariant } from '@/components/ui/badge'
 import { useMessages } from '@/i18n'
@@ -28,6 +30,17 @@ const title = computed(() =>
 
 const iconUrl = computed(() =>
   props.row.kind === 'hit' ? props.row.hit.iconUrl : null,
+)
+
+// An achievement's or a challenge's picture is a drawing, not a sprite: dark strokes on
+// transparency at its own ratio, which on the dark theme needs the mark paper under it — the
+// way every table and the wiki draw it (`AchievementArt`, `WikiFigure`). Drawn as a sprite it
+// was squeezed into a square and lost against the background.
+const painting = computed(
+  () =>
+    props.row.kind === 'hit' &&
+    (props.row.hit.target.kind === 'achievement' ||
+      props.row.hit.target.kind === 'challenge'),
 )
 
 // The mark is drawn only when it says something about *this* row. `none` is a boss or a
@@ -85,7 +98,17 @@ const detail = computed((): Detail | null => {
 
 <template>
   <div class="flex min-w-0 flex-1 items-center gap-3">
-    <PixelSprite :url="iconUrl" placeholder class="size-icon-compact" />
+    <!-- One slot as wide as a drawing for every row, so the titles stay in one column
+         whether the row leads with a drawing or a sprite. -->
+    <span class="flex w-achievement-thumb shrink-0 justify-center">
+      <AchievementArt v-if="painting" :url="iconUrl" :size="ArtSize.Thumb" />
+      <PixelSprite
+        v-else
+        :url="iconUrl"
+        placeholder
+        class="size-icon-compact"
+      />
+    </span>
     <div class="flex min-w-0 flex-1 flex-col">
       <span class="truncate text-row text-foreground">{{ title }}</span>
       <span v-if="detail" class="truncate text-caption text-subtle-foreground">
