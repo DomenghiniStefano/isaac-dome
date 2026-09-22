@@ -39,8 +39,19 @@ export default defineConfig({
   test: {
     include: ['src/**/*.test.ts'],
     // Vitest doesn't load CSS by default and hands a `?raw` import an empty string.
-    // `cn()` reads its token names from the theme files, and base.test.ts reads base.css,
-    // so those load as source. No `$` anchor: the module id ends in `?raw`.
-    css: { include: [/src\/assets\/theme\/.+\.css/, /src\/assets\/base\.css/] },
+    // `cn()` reads its token names from the theme files, base.test.ts reads base.css, and
+    // `design/tables.test.ts` reads the grid templates out of utilities.css, so those load as
+    // source. No `$` anchor: the module id ends in `?raw`.
+    //
+    // **A file missing from this list fails as a wrong answer, not as an error**: the import
+    // succeeds and yields `''`, so a test that reads a stylesheet reports that the stylesheet
+    // declares nothing — which is indistinguishable from a rule that was never written.
+    css: {
+      include: [
+        /src\/assets\/theme\/.+\.css/,
+        /src\/assets\/base\.css/,
+        /src\/assets\/utilities\.css/,
+      ],
+    },
   },
 })

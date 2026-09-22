@@ -32,13 +32,19 @@ defineExpose({
 <template>
   <div class="flex min-h-0 flex-1 flex-col">
     <div
-      class="grid grid-cols-collection items-center border-b border-hairline bg-muted text-label text-subtle-foreground"
+      class="grid grid-cols-collection items-center border-b border-hairline bg-muted text-label text-subtle-foreground @max-compact/page:grid-cols-collection-narrow"
     >
       <span />
       <span class="px-2 py-1.5">{{ t('collection.columns.item') }}</span>
-      <span class="px-2 py-1.5">{{ t('collection.columns.quality') }}</span>
-      <span class="px-2 py-1.5">{{ t('collection.columns.pools') }}</span>
-      <span class="px-2 py-1.5">{{ t('collection.columns.origin') }}</span>
+      <span class="px-2 py-1.5 @max-compact/page:hidden">{{
+        t('collection.columns.quality')
+      }}</span>
+      <span class="px-2 py-1.5 @max-compact/page:hidden">{{
+        t('collection.columns.pools')
+      }}</span>
+      <span class="px-2 py-1.5 @max-compact/page:hidden">{{
+        t('collection.columns.origin')
+      }}</span>
       <span class="px-2 py-1.5">{{ t('collection.columns.state') }}</span>
     </div>
     <VirtualRows
@@ -55,7 +61,7 @@ defineExpose({
         :style="style"
         :class="
           cn(
-            'absolute inset-x-0 top-0 grid h-row-wide translate-y-(--row-start) grid-cols-collection items-center border-b border-hairline hover:bg-row-hover',
+            'absolute inset-x-0 top-0 grid h-row-wide translate-y-(--row-start) grid-cols-collection items-center border-b border-hairline hover:bg-row-hover @max-compact/page:grid-cols-collection-narrow',
             index % 2 === 1 && 'bg-row-alt',
           )
         "

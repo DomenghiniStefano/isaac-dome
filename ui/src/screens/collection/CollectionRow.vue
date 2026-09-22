@@ -66,10 +66,10 @@ const groups = computed(() => lockWhy(props.item.lock, t))
       subtitle
     }}</span>
   </span>
-  <span class="px-2">
+  <span class="px-2 @max-compact/page:hidden">
     <QualityPips :quality="item.quality" />
   </span>
-  <span class="flex min-w-0 items-center gap-2 px-2">
+  <span class="flex min-w-0 items-center gap-2 px-2 @max-compact/page:hidden">
     <template v-if="firstPool">
       <span class="truncate text-caption text-foreground">{{ firstPool }}</span>
       <span
@@ -80,9 +80,10 @@ const groups = computed(() => lockWhy(props.item.lock, t))
     </template>
     <EmptyValue v-else>{{ t('collection.poolNone') }}</EmptyValue>
   </span>
-  <span class="truncate px-2 text-caption text-foreground-soft">{{
-    origin ?? '—'
-  }}</span>
+  <span
+    class="truncate px-2 text-caption text-foreground-soft @max-compact/page:hidden"
+    >{{ origin ?? '—' }}</span
+  >
   <span class="px-2">
     <WhyMenu :groups="groups" :label="t('collection.lockedBy')">
       <Badge
