@@ -33,8 +33,11 @@ const detail = computed(() => {
 </script>
 
 <template>
-  <span class="min-w-0 px-2">
-    <span v-if="run.character !== null" class="truncate text-row">{{
+  <!-- The truncation belongs to the cell and not to what is inside it: `truncate` on an inline
+       `<span>` sets `overflow` on a box that has none, so it generated nothing and the name ran
+       under the badge beside it — at every width, not only when the row is narrow. -->
+  <span class="min-w-0 truncate px-2">
+    <span v-if="run.character !== null" class="text-row">{{
       run.character
     }}</span>
     <EmptyValue v-else>{{ t('runs.noCharacter') }}</EmptyValue>
