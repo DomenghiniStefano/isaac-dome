@@ -68,3 +68,49 @@ describe('one load, written once', () => {
     expect(store.error).toBeNull()
   })
 })
+
+// A refresh is the same profile read again because something it depends on moved — the
+// queue, for the suggestions. It keeps what is shown until the answer arrives, so the screen
+// does not fall back to a skeleton for every row you add.
+describe('a refresh of the same profile', () => {
+  it('keeps the view while it reads, and replaces it with the answer', async () => {
+    let answer = 'first'
+    let seen: unknown = 'not called'
+    const useStore = defineViewStore(StoreId.Graph, () => {
+      seen = store.view
+      return Promise.resolve(answer)
+    })
+    const store = useStore()
+    await store.load()
+    answer = 'second'
+    await store.refresh()
+    expect(seen).toBe('first')
+    expect(store.view).toBe('second')
+    expect(store.status).toBe(LoadStatus.Ready)
+  })
+
+  it('leaves the view and the status alone when the read fails', async () => {
+    let fail = false
+    const useStore = defineViewStore(StoreId.Graph, () =>
+      fail ? Promise.reject(new Error('gone')) : Promise.resolve('first'),
+    )
+    const store = useStore()
+    await store.load()
+    fail = true
+    await store.refresh()
+    expect(store.view).toBe('first')
+    expect(store.status).toBe(LoadStatus.Ready)
+  })
+
+  it('does nothing before a first load', async () => {
+    let calls = 0
+    const useStore = defineViewStore(StoreId.Graph, () => {
+      calls += 1
+      return Promise.resolve('x')
+    })
+    const store = useStore()
+    await store.refresh()
+    expect(calls).toBe(0)
+    expect(store.view).toBeNull()
+  })
+})
