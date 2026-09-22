@@ -104,6 +104,20 @@
     var(--spacing-challenge-queue);
 }
 
+/* Challenges at compact (spec 3.13a §7): the number, the name, the state, and the button that
+   puts its reward in the queue. What falls is the character it forces and the goal — the two
+   that explain a challenge rather than name it, and the two widest. The button stays: a row that
+   loses its action at the width where it is hardest to reach is a row that does nothing. Both
+   carry `@max-compact/page:hidden`, in `ChallengesTable.vue` for the header and
+   `ChallengeRow.vue` for the row. */
+@utility grid-cols-challenges-narrow {
+  grid-template-columns:
+    var(--spacing-challenge-number)
+    minmax(0, 1fr)
+    var(--spacing-challenge-state)
+    var(--spacing-challenge-queue);
+}
+
 /* The Run diary: the character, how it ended, the floors, the seed, where it came from. */
 @utility grid-cols-runs {
   grid-template-columns:
