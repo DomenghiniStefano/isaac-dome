@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { CheckIcon } from '@lucide/vue'
+import { CheckIcon, Trash2Icon } from '@lucide/vue'
 import { computed } from 'vue'
 import { Button, ButtonSize, ButtonVariant } from '@/components/ui/button'
 import { useMessages } from '@/i18n'
@@ -55,7 +55,9 @@ const unresolved = computed(() =>
         :size="ButtonSize.Compact"
         :disabled="busy"
         @click="emit('remove', id)"
-        >{{ t('queue.removeShort') }}</Button
+        ><Trash2Icon class="text-destructive" />{{
+          t('queue.removeShort')
+        }}</Button
       >
     </span>
   </div>
