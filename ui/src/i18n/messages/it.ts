@@ -40,7 +40,7 @@ export const it = {
   },
   routes: {
     search: 'Cerca',
-    goals: 'Obiettivi consigliati',
+    goals: 'Obiettivi',
     completion: 'Completamento',
     unlock: 'Unlock',
     plan: 'Piano',
@@ -686,7 +686,7 @@ export const it = {
     opensNothing: 'non apre altro',
     detail: 'Mostra il dettaglio',
     queueCount: 'La tua coda',
-    addPane: 'Da aggiungere',
+    addPane: 'Obiettivi consigliati',
     queueTitle: 'La coda',
     hint: {
       idle: 'trascina per riordinare — nessuno spostamento viene rifiutato',
@@ -786,7 +786,7 @@ export const it = {
   // finestra Informazioni, dove chi vuole lo trova (B32 §2).
   goals: {
     intro:
-      'Cose che puoi sbloccare adesso. In alto quelle che aprono di più, sotto quelle a cui sei più vicino.',
+      'Cosa sbloccare e in che ordine: prendi dai consigli, o chiedi quello che vuoi, e mettilo in coda.',
     fanOut: 'Aprono di più',
     closeness: 'Ci sei quasi',
     inPlan: 'Nel tuo Piano',
