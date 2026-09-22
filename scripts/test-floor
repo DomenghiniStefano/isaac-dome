@@ -172,5 +172,18 @@
 # Rust does not move: the cycle is frontend end to end, and the spec's §7 says that was checked
 # rather than hoped — everything the new row draws was already on the wire.
 
+# **Raised on 2026-09-22**, UI +3: 3.13b's, the three tables that fold. All three are one
+# property said three ways — that a `grid-cols-*-narrow` template exists beside its full one,
+# that both declare the number of tracks `lib/design/tables.ts` names, and that the narrow one is
+# genuinely shorter. `scan-conventions.mjs`'s rule 4 already proved both halves of the edit were
+# made; what it cannot see is whether the template that was written actually drops a column, and
+# a narrow set equal to its full set would have passed every other gate in the repo.
+#
+# One of the three earned its place before it ever went green: `utilities.css` was missing from
+# `vite.config.ts`'s `test.css.include`, and a `?raw` import of an excluded stylesheet does not
+# error — it yields `''`. The first run therefore said the four templates did not exist, which is
+# the same sentence a real regression would produce. Rust does not move: the whole sub-project is
+# CSS and templates.
+
 RUST_TESTS=1227
-UI_TESTS=775
+UI_TESTS=778
