@@ -86,8 +86,16 @@
   --spacing-challenge-number: 3rem;
   --spacing-challenge-state: 8.5rem;
   --spacing-challenge-queue: 2.5rem;
-  /* The Plan's proposal column (Schermate.dc.html, 246px, on the 4px grid). */
-  --spacing-plan-aside: 15.5rem;
+  /* The pane everything enters the queue from. It was `--spacing-plan-aside` at 15.5rem while
+     that column was a secondary proposal beside the queue; it is now the only way in, and both
+     the name and the number were wrong for that.
+
+     **Re-measured in the browser**, because at 15.5rem a row's title box came out **37px** and
+     the names truncated to "The …". The row's fixed parts are 209px — padding 24, the
+     thumbnail 48, "apre N" 45, the add and disclosure buttons 22 each, and four 12px gaps —
+     and a flexible column wants ~160px to say anything, which is the figure `containers.css`
+     measured on Unlock and not a new guess. 209 + 160 = 369, on the 4px grid: 372. */
+  --spacing-add-pane: 23.25rem;
   /* The window (Chrome e Stati.dc.html, "Finestra"): tab strip, tabs, drag region,
      window controls, navbar. */
   --spacing-titlebar: 1.875rem;
