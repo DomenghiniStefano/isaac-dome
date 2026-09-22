@@ -1,33 +1,27 @@
 <script setup lang="ts">
-import { InfoIcon, ListChecksIcon } from '@lucide/vue'
 import { computed } from 'vue'
-import EmptyCategory from '@/components/data-state/EmptyCategory.vue'
-import QueueError from '@/components/plan/QueueError.vue'
-import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
-import { Button, ButtonSize, ButtonVariant } from '@/components/ui/button'
-import { Skeleton } from '@/components/ui/skeleton'
 import { useRoute } from 'vue-router'
+import DiagnosticsList from '@/components/diagnostics/DiagnosticsList.vue'
+import QueueError from '@/components/plan/QueueError.vue'
+import { Button, ButtonVariant } from '@/components/ui/button'
+import { Skeleton } from '@/components/ui/skeleton'
 import { useOnActiveProfile } from '@/composables/useOnActiveProfile'
 import { useWant } from '@/composables/useWant'
 import { useMessages } from '@/i18n'
-import { NodeState } from '@/lib/graph/nodeState'
-import { nodeSlot } from '@/lib/graph/unlockFacets'
+import { planEntries } from '@/lib/diagnostics/plan'
 import { wantBanner, wantBlocks } from '@/lib/graph/wantBlocks'
 import { wantLocation, wantOf } from '@/lib/graph/wantLocation'
 import type { Target } from '@/lib/ipc/types'
-import { planNow } from '@/lib/plan/planNow'
-import { canQueue, isQueued, queuedIds } from '@/lib/plan/queueRows'
+import { queuedIds } from '@/lib/plan/queueRows'
 import { RouteName } from '@/router/routeTable'
 import type { TabLocation } from '@/router/routeTable'
-import { useTabsStore } from '@/stores/tabs'
-import { useGraphStore } from '@/stores/views'
 import { LoadStatus } from '@/stores/loadStatus'
 import { useQueueStore } from '@/stores/queue'
-import ScreenHeader from './ScreenHeader.vue'
-import GoalCard from './goals/GoalCard.vue'
-import WantAnswer from './goals/WantAnswer.vue'
-import WantBar from './goals/WantBar.vue'
-import { sectionTitle } from './goals/sectionTitle'
+import { useTabsStore } from '@/stores/tabs'
+import { useGraphStore } from '@/stores/views'
+import AddPane from './goals/AddPane.vue'
+import GoalsHero from './goals/GoalsHero.vue'
+import QueueCard from './plan/QueueCard.vue'
 import ProfileError from './profile/ProfileError.vue'
 
 const graph = useGraphStore()
@@ -35,6 +29,12 @@ const queue = useQueueStore()
 const tabs = useTabsStore()
 const route = useRoute()
 const { t } = useMessages()
+
+// The queue and the graph together: the pane beside the queue is the recommendations, and
+// the texts of rows that left the queue come from the Unlock view.
+useOnActiveProfile(async () => {
+  await Promise.all([graph.load(), queue.load()])
+})
 
 // B37: the want lives in the URL, so back, forward and tab restore all reach it, and a link
 // from anywhere can ask the question without this screen knowing who called.
@@ -59,15 +59,9 @@ const ask = (wanted: Target) => {
 }
 const stopAsking = () => tabs.navigate({ name: RouteName.Goals })
 
-// The same cap a section has: this is a reminder, not the queue.
-const PLAN_ROWS = 5
-
-useOnActiveProfile(async () => {
-  await Promise.all([graph.load(), queue.load()])
-})
-
-// An empty page has two reasons, and the sections don't say which: the unlock view's
-// diagnostics do (DESIGN-BRIEF.md §7.3).
+// An empty pane has two reasons, and the sections don't say which: the unlock view's
+// diagnostics do (DESIGN-BRIEF.md §7.3). Read once here and handed down, so nothing computes
+// "is the game installed" a second time.
 const noCatalog = computed(
   () =>
     graph.view?.unlock.diagnostics.some((d) => d.kind === 'noCatalog') ?? false,
@@ -78,17 +72,19 @@ const noCatalog = computed(
 const queued = computed(() => queuedIds(queue.view))
 const canWrite = computed(() => queue.view?.storeAvailable === true)
 
-// This page recommends; Unlock is the exhaustive list. Every section ends on the way there,
-// with the same filter already picked, so the two stop competing.
-const seeAll: TabLocation = {
-  name: RouteName.Unlock,
-  query: { state: NodeState.Now },
-}
-const plan: TabLocation = { name: RouteName.Plan }
-
-// At most as many as one section: the landing page reminds, the Plan is where the queue is
-// read and moved.
-const inPlan = computed(() => planNow(queue.view, PLAN_ROWS))
+// The queue card needs a queue that could be read: no database, an unreadable document and no
+// catalog each say so in an alert instead of an empty list.
+const readable = computed((): boolean => {
+  const view = queue.view
+  return (
+    view !== null &&
+    view.storeAvailable &&
+    !view.diagnostics.some(
+      (d) => d.kind === 'unreadable' || d.kind === 'noCatalog',
+    )
+  )
+})
+const nodes = computed(() => graph.view?.unlock.nodes ?? [])
 const open = (location: TabLocation, newTab: boolean) => {
   if (newTab) tabs.open(location)
   else tabs.navigate(location)
@@ -96,107 +92,80 @@ const open = (location: TabLocation, newTab: boolean) => {
 </script>
 
 <template>
-  <div class="flex h-full flex-col gap-4 overflow-y-auto pt-5 pb-15">
-    <ScreenHeader :icon="ListChecksIcon" :title="t('routes.goals')">{{
-      t('goals.intro')
-    }}</ScreenHeader>
-    <!-- B37: the other end of the same question. While a want is named the recommendations
-         step aside — the page answers one question at a time — and clearing the bar brings
-         them back. -->
-    <WantBar @pick="ask" @clear="stopAsking" />
-    <template v-if="target !== null">
-      <ProfileError
-        v-if="wantStatus === LoadStatus.Failed"
-        :error="wantError"
-        @retry="reloadWant()"
-      />
-      <template v-else-if="wantView">
-        <QueueError v-if="queue.mutationFailed" :error="queue.mutationError" />
-        <WantAnswer
-          :blocks="blocks"
-          :banner="banner"
+  <!-- The shell's gutter is taken back by this box and handed to its children, so the band
+       can be the full width of the page without overflowing it (spec §4.2). The screen does
+       not scroll as one block: the band stays, and the two panes take the height left. -->
+  <div class="-mx-5.5 flex h-full min-h-0 flex-col overflow-hidden">
+    <GoalsHero />
+    <ProfileError
+      v-if="queue.status === LoadStatus.Failed"
+      :error="queue.error"
+      class="mx-5.5 mt-4"
+      @retry="queue.load()"
+    />
+    <ProfileError
+      v-else-if="wantStatus === LoadStatus.Failed"
+      :error="wantError"
+      class="mx-5.5 mt-4"
+      @retry="reloadWant()"
+    />
+    <div
+      v-else-if="queue.view"
+      class="flex min-h-0 flex-1 flex-col gap-3 px-5.5 pt-4 pb-5"
+    >
+      <DiagnosticsList :entries="planEntries(queue.view.diagnostics)">
+        <template #action>
+          <Button
+            :variant="ButtonVariant.Outline"
+            :disabled="queue.busy"
+            @click="queue.importGoals()"
+            >{{ t('plan.alerts.import') }}</Button
+          >
+        </template>
+      </DiagnosticsList>
+      <QueueError v-if="queue.mutationFailed" :error="queue.mutationError" />
+      <!-- Stacked, the two panes are one column and the column scrolls. Side by side they
+           are two columns of different lengths, and one scrollbar for both would scroll the
+           queue out of sight to reach the bottom of the recommendations — which is the one
+           thing the queue's fixed place exists to prevent. So above `wide` the row holds the
+           height and each pane scrolls inside itself. -->
+      <div
+        class="flex min-h-0 flex-1 flex-col gap-4 overflow-y-auto @wide/page:flex-row @wide/page:items-stretch @wide/page:overflow-hidden"
+      >
+        <AddPane
+          class="@wide/page:min-h-0 @wide/page:w-add-pane @wide/page:shrink-0 @wide/page:overflow-y-auto"
+          :sections="graph.view?.steps.sections ?? []"
+          :queued="queued"
           :can-write="canWrite"
           :busy="queue.busy"
-          @queue="queue.add($event)"
+          :want-active="target !== null"
+          :no-catalog="noCatalog"
+          :blocks="blocks"
+          :banner="banner"
+          @add="queue.add($event)"
+          @pick="ask"
+          @clear="stopAsking"
           @navigate="open"
         />
-      </template>
-      <Skeleton v-else class="h-28 w-full" />
-    </template>
-    <ProfileError
-      v-else-if="graph.status === LoadStatus.Failed"
-      :error="graph.error"
-      @retry="graph.load()"
-    />
-    <template v-else-if="graph.view">
-      <QueueError v-if="queue.mutationFailed" :error="queue.mutationError" />
-      <template v-if="graph.view.steps.sections.length > 0">
-        <!-- One block per reason. A section that would be empty never arrives: Rust decides
-             "absent" once, so there is no heading over nothing to handle here. -->
-        <section
-          v-for="section in graph.view.steps.sections"
-          :key="section.basis"
-          class="flex flex-col gap-2"
+        <div
+          v-if="readable"
+          class="min-w-0 flex-1 @wide/page:min-h-0 @wide/page:overflow-y-auto"
         >
-          <h2 class="text-label text-subtle-foreground">
-            {{ t(sectionTitle[section.basis]) }}
-          </h2>
-          <GoalCard
-            v-for="step in section.steps"
-            :key="nodeSlot(step)"
-            :node="step"
-            :queued="isQueued(step, queued)"
-            :can-add="canWrite && canQueue(step, queued)"
+          <QueueCard
+            :rows="queue.view.rows"
+            :diagnostics="queue.view.diagnostics"
+            :nodes="nodes"
             :busy="queue.busy"
-            @add="queue.add(nodeSlot(step))"
-            @navigate="open"
+            :last-move="queue.lastMove"
+            @move="queue.move"
+            @remove="queue.remove"
           />
-          <Button
-            :variant="ButtonVariant.Ref"
-            :size="ButtonSize.Inline"
-            class="self-start"
-            @click="open(seeAll, $event.ctrlKey)"
-            >{{ t('goals.seeAll') }}</Button
-          >
-        </section>
-      </template>
-      <Alert v-else-if="noCatalog">
-        <InfoIcon />
-        <AlertTitle>{{ t('goals.noCatalogTitle') }}</AlertTitle>
-        <AlertDescription>{{ t('goals.noCatalog') }}</AlertDescription>
-      </Alert>
-      <EmptyCategory v-else>{{ t('goals.nothingNow') }}</EmptyCategory>
-
-      <!-- Outside the chain above on purpose: what *you* had decided is worth showing even
-           on a page with nothing to suggest. Absent when the queue holds nothing playable
-           now, or could not be read at all (spec §4.3). -->
-      <section v-if="inPlan.length > 0" class="flex flex-col gap-2">
-        <h2 class="text-label text-subtle-foreground">
-          {{ t('goals.inPlan') }}
-        </h2>
-        <GoalCard
-          v-for="row in inPlan"
-          :key="nodeSlot(row.node)"
-          :node="row.node"
-          :queued="true"
-          :can-add="false"
-          :busy="queue.busy"
-          compact
-          @navigate="open"
-        />
-        <Button
-          :variant="ButtonVariant.Ref"
-          :size="ButtonSize.Inline"
-          class="self-start"
-          @click="open(plan, $event.ctrlKey)"
-          >{{ t('goals.openPlan') }}</Button
-        >
-      </section>
-    </template>
-    <div v-else class="flex flex-col gap-2">
-      <Skeleton class="h-28 w-full" />
-      <Skeleton class="h-28 w-full" />
-      <Skeleton class="h-28 w-full" />
+        </div>
+      </div>
+    </div>
+    <div v-else class="flex flex-col gap-4 px-5.5 pt-4">
+      <Skeleton class="h-8 w-120" />
+      <Skeleton class="h-40 w-full" />
     </div>
   </div>
 </template>

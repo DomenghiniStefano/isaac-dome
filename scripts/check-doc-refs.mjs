@@ -43,6 +43,21 @@ const EXEMPTIONS = [
     path: 'docs/progetto.html',
     why: 'the original Italian project document, rewritten as docs/PROJECT.md on 2026-09-07; the status names it as what master used to show, which is history and not a promise',
   },
+  // Obiettivi and the Plan merged into one screen on 2026-09-22, and three files went with the
+  // merge. The documents naming them are recording the going, which is the case this report
+  // cannot tell apart from a promise on its own.
+  {
+    path: 'ui/src/screens/plan/QueueRow.vue',
+    why: 'the queue row became the shared ui/src/components/plan/GoalRow.vue; the 2026-09-13 drag spec names the file it was written against',
+  },
+  {
+    path: 'ui/src/screens/goals/GoalCard.vue',
+    why: 'replaced by that same shared row; the merge spec lists it under what stops existing, which has to name it',
+  },
+  {
+    path: 'ui/src/screens/plan/ProposalAside.vue',
+    why: 'same: it was the recommendations drawn a second time, and the left pane is that, done once',
+  },
   { path: 'stores/graph.ts', why: 'three view stores became one stores/views.ts with N8' },
   { path: 'stores/completion.ts', why: 'same' },
   { path: 'stores/collection.ts', why: 'same' },

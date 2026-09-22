@@ -33,17 +33,6 @@ export const isQueued = (node: UnlockNode, queued: Set<number>): boolean =>
 export const canQueue = (node: UnlockNode, queued: Set<number>): boolean =>
   node.achievement.kind === 'known' && !node.done && !isQueued(node, queued)
 
-export interface QueueSummary {
-  rows: number
-  wanted: number
-  pulledIn: number
-}
-
-export const queueSummary = (rows: QueueRow[]): QueueSummary => {
-  const wanted = rows.filter((r) => r.wanted).length
-  return { rows: rows.length, wanted, pulledIn: rows.length - wanted }
-}
-
 export interface OriginRow {
   id: number
   row: QueueRow | null

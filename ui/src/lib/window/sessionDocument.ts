@@ -57,13 +57,23 @@ const isRouteName = (value: unknown): value is RouteName =>
 // A location we can still open. The query is carried as it was written: a filter or a page that
 // no longer resolves is the screen's business, and every screen already says so (B6). What is
 // checked here is the one thing that decides whether the tab can exist at all.
+// Screens that merged into another. A stored tab on one of these is **carried**, not dropped:
+// the reader further down says eight tabs do not vanish because one screen was renamed, and
+// losing the ninth quietly is the same failure at a smaller size. The Plan became the queue
+// inside Obiettivi, so a tab on it opens there, still showing whatever it was showing.
+const RETIRED_ROUTE_NAMES: Readonly<Record<string, RouteName>> = {
+  plan: RouteName.Goals,
+}
+
 const readLocation = (value: unknown): TabLocation | null => {
   if (typeof value !== 'object' || value === null) return null
   const { name, query } = value as { name?: unknown; query?: unknown }
-  if (!isRouteName(name)) return null
+  const resolved =
+    typeof name === 'string' ? (RETIRED_ROUTE_NAMES[name] ?? name) : name
+  if (!isRouteName(resolved)) return null
   return query === undefined || query === null
-    ? { name }
-    : { name, query: query as TabLocation['query'] }
+    ? { name: resolved }
+    : { name: resolved, query: query as TabLocation['query'] }
 }
 
 // A stored view, as far as it can be trusted here: an object, and nothing more. What it means
