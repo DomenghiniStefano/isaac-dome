@@ -84,6 +84,16 @@ pub fn build(raw: &Raw, corrections: &Corrections) -> Dataset {
         }
         ds.meta.max_revid = ds.meta.max_revid.max(p.index.revid);
     }
+    // Written by hand, and it wins over the page: the reason to write one is that the
+    // wiki's is missing or says nothing. One that names no entry is left for
+    // `Corrections::unmatched_descriptions` to report, not guessed at.
+    for (collection, entries) in &corrections.descriptions {
+        for (key, text) in entries {
+            if let Some(entry) = ds.entry_by_key_mut(collection, key) {
+                entry.description = crate::inline::parse_inline(text, &r, &mut diagnostics);
+            }
+        }
+    }
     ds.meta.last_known_patch = raw
         .versions
         .iter()
@@ -211,6 +221,64 @@ mod tests {
         assert_eq!(*requires, Some(3));
         assert_eq!(contributors, &vec![Target::Item { id: 25 }]);
         assert!(ds.entry(&Target::Stage { name: "x".into() }).is_none());
+    }
+
+    fn with_descriptions(pairs: &[(&str, &str, &str)]) -> Corrections {
+        let mut c = Corrections::default();
+        for (collection, key, text) in pairs {
+            c.descriptions
+                .entry(collection.to_string())
+                .or_default()
+                .insert(key.to_string(), text.to_string());
+        }
+        c
+    }
+
+    /// `corrections.json` carries descriptions written by hand — Dead God's, which the wiki
+    /// leaves blank, or a better line than the wiki's — keyed the way `wiki.json` keys its
+    /// collections. One **wins** over whatever the page gave, because the reason to write
+    /// one is that the page's is missing or says nothing. It is wikitext, so a link in it is
+    /// a link on screen.
+    #[test]
+    fn a_hand_written_description_wins_and_is_wikitext() {
+        let ds = build(
+            &raw(),
+            &with_descriptions(&[
+                ("characters", "2", "Starts with {{i|Breakfast}}."),
+                ("transformations", "0", "Three flies."),
+            ]),
+        );
+        let cain = ds.entry(&Target::Character { id: 2 }).unwrap();
+        assert_eq!(crate::plain(&cain.description), "Starts with Breakfast.");
+        assert!(cain.description.iter().any(|i| matches!(
+            i,
+            crate::Inline::Ref {
+                target: Target::Item { id: 25 },
+                ..
+            }
+        )));
+        let guppy = ds.entry(&Target::Transformation { id: 0 }).unwrap();
+        assert_eq!(crate::plain(&guppy.description), "Three flies.");
+    }
+
+    /// A correction naming no entry does nothing, and says nothing either: the file is
+    /// written by hand, so a typo in a key is the likely failure. `unmatched_descriptions`
+    /// is what makes it speak, and this is it speaking about one it knows is wrong.
+    #[test]
+    fn a_description_for_no_entry_is_reported() {
+        let corrections = with_descriptions(&[
+            ("characters", "2", "fine"),
+            ("characters", "99", "no such character"),
+            ("charcters", "2", "no such collection"),
+        ]);
+        let ds = build(&raw(), &corrections);
+        assert_eq!(
+            corrections.unmatched_descriptions(&ds),
+            vec![
+                ("characters".to_string(), "99".to_string()),
+                ("charcters".to_string(), "2".to_string()),
+            ]
+        );
     }
 
     #[test]
