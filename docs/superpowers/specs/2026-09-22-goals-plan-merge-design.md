@@ -114,6 +114,27 @@ carrying two readings, and the row does not grow to say it. The full state stays
 expansion, where it can be a word instead of a colour — a colour alone is not an accessible answer,
 which is why it is never the *only* place the state is said.
 
+## 4.2 Decision (owner) — the screen opens on the band the other two already have
+
+Added on 2026-09-22, after the rest of this document, on the owner's ask to follow the style the
+last cycle set. `CompletionHero.vue` (card #58) and `WikiHero.vue` established a grammar: a header
+the full width of the page box — the screen hands it the gutter with `-mx-5.5` rather than the band
+taking it — lit from the corner (`hero-wash`), grained where a skin has no shadow (`hero-grain`),
+and **the screen stops scrolling as one block**: the band stays put and what is under it takes the
+height that is left and scrolls inside itself.
+
+Obiettivi takes that grammar, and **only that**. The band holds the `ScreenHeader` and nothing
+else: no headline number, no progress bar. §5 below declined a count at the top of this screen and
+that decision stands — what was declined was the *number*, not the treatment, and a band exists
+here to make three screens look like one product, not to find something to put in it.
+
+> **A drift this uncovered, fixed in the same cycle.** `docs/frontend-conventions.md` lists a
+> screen as one of two shapes, *flowing* or *filling*, and files Completion under *flowing*. It has
+> not been either since card #58: it is `-mx-5.5 flex h-full min-h-0 flex-col overflow-hidden` with
+> a band and a filling body. The document was not updated then. This cycle adds the third shape to
+> that table and lists both screens under it — a contract that describes two of three shapes is
+> read as forbidding the third.
+
 ## 5. Decision (owner) — no band of counts
 
 `righe: 12 · voluti: 4 · trascinati: 8` goes, and nothing replaces it.
@@ -123,7 +144,8 @@ removed, a pulled-in one leaves when its wish does — but as a total at the top
 question anybody has. Two alternatives were offered and both declined: a bar drawing the
 composition, and a line reading *"5 dei 12 li puoi fare adesso"*.
 
-The count moves to where its subject is: the right pane's heading, *La tua coda 12*.
+The count moves to where its subject is: the right pane's heading, *La tua coda 12*. §4.2's band
+does not reopen this: it carries the title and nothing countable.
 
 ## 6. Decision (owner) — Obiettivi wins the name and the route
 
