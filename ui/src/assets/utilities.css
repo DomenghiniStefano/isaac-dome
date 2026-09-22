@@ -128,6 +128,18 @@
     minmax(0, 1fr);
 }
 
+/* The Run diary at compact (spec 3.13a §7): the character, how it ended, the floors. What falls
+   is the seed — the widest text on the row and the least scannable — and where the run came
+   from, which answers "which log said so" and is not the question a diary is read with. The
+   floors stay: how far you got is half of what a run is, and the track is 64px. Both carry
+   `@max-compact/page:hidden`, in `RunsTable.vue` for the header and `RunRow.vue` for the row. */
+@utility grid-cols-runs-narrow {
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1.4fr)
+    var(--spacing-runs-floors);
+}
+
 /* Live’s table of what a run could open: the achievement, the cell it needs, how the game
    words it, and how much it opens in turn. */
 @utility grid-cols-live-opens {

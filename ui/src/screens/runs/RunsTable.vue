@@ -27,13 +27,17 @@ const { t } = useMessages()
 <template>
   <div class="flex min-h-0 flex-1 flex-col">
     <div
-      class="grid grid-cols-runs items-center border-b border-hairline bg-muted text-label text-subtle-foreground"
+      class="grid grid-cols-runs items-center border-b border-hairline bg-muted text-label text-subtle-foreground @max-compact/page:grid-cols-runs-narrow"
     >
       <span class="px-2 py-1.5">{{ t('runs.column.character') }}</span>
       <span class="px-2 py-1.5">{{ t('runs.column.outcome') }}</span>
       <span class="px-2 py-1.5 text-right">{{ t('runs.column.floors') }}</span>
-      <span class="px-2 py-1.5">{{ t('runs.column.seed') }}</span>
-      <span class="px-2 py-1.5">{{ t('runs.column.source') }}</span>
+      <span class="px-2 py-1.5 @max-compact/page:hidden">{{
+        t('runs.column.seed')
+      }}</span>
+      <span class="px-2 py-1.5 @max-compact/page:hidden">{{
+        t('runs.column.source')
+      }}</span>
     </div>
     <VirtualRows
       v-slot="{ visible }"
@@ -50,7 +54,7 @@ const { t } = useMessages()
         :style="style"
         :class="
           cn(
-            'absolute inset-x-0 top-0 grid h-row-wide translate-y-(--row-start) grid-cols-runs items-center border-b border-hairline text-left hover:bg-row-hover',
+            'absolute inset-x-0 top-0 grid h-row-wide translate-y-(--row-start) grid-cols-runs items-center border-b border-hairline text-left hover:bg-row-hover @max-compact/page:grid-cols-runs-narrow',
             index % 2 === 1 && 'bg-row-alt',
             selected !== null &&
               runKey(selected) === runKey(run) &&
