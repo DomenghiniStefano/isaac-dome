@@ -149,7 +149,9 @@ const reset = () => {
   <!-- A filling screen (spec 3.13a §4): the header, the diagnostics and the filter bar stay put,
        and the table takes the height that is left. `pb-5` and not a flowing screen's `pb-15`,
        because nothing ever scrolls past the bottom here. -->
-  <div class="flex h-full min-h-0 flex-col gap-4 overflow-hidden pt-5 pb-5">
+  <div
+    class="flex h-full min-h-0 flex-col gap-4 overflow-hidden px-5.5 pt-5 pb-5"
+  >
     <ScreenHeader :icon="LockOpenIcon" :title="t('routes.unlock')">{{
       t('unlock.intro')
     }}</ScreenHeader>

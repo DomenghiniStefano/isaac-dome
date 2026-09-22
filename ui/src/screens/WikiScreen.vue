@@ -35,6 +35,7 @@ const missing = computed(() => wiki.index?.info.kind === 'missing')
     v-if="wiki.status === LoadStatus.Failed"
     :error="wiki.error"
     :title="t('wiki.states.failedTitle')"
+    class="mx-5.5 mt-5"
     @retry="wiki.loadIndex()"
   />
   <WikiLanding v-else-if="missing" />

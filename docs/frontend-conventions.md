@@ -290,21 +290,31 @@ What follows is the contract.
 
 ### A screen is one of three shapes
 
-`<main>` is the **page box**: it scrolls nothing, carries the horizontal padding only, and is the
-size container named `page`. Under it every screen declares itself:
+`<main>` is the **page box**: it scrolls nothing, pads nothing, and is the size container named
+`page`. Under it every screen declares itself, and carries its own gutter:
 
 | shape | root classes | who |
 |---|---|---|
-| **flowing** | `flex h-full flex-col gap-4 overflow-y-auto pt-5 pb-15` | content flows and the screen scrolls: Profile, Appearance, Background, Tabs settings, Floor, Live, Roll, the wiki landing and page |
-| **filling** | `flex h-full min-h-0 flex-col gap-4 overflow-hidden pt-5 pb-5`, with **exactly one** descendant carrying `min-h-0 flex-1` | a screen with a list: Unlock, Collection, Challenges, Runs, Search, the wiki's category lists |
-| **banded** | `-mx-5.5 flex h-full min-h-0 flex-col overflow-hidden`, a `hero-wash` header, then a body carrying `min-h-0 flex-1` and its own `px-5.5` | a screen that opens on a band: Completion, Goals |
+| **flowing** | `flex h-full flex-col gap-4 overflow-y-auto px-5.5 pt-5 pb-15` | content flows and the screen scrolls: Profile, Appearance, Background, Tabs settings, Floor, Live, Roll |
+| **filling** | `flex h-full min-h-0 flex-col gap-4 overflow-hidden px-5.5 pt-5 pb-5`, with **exactly one** descendant carrying `min-h-0 flex-1` | a screen with a list: Unlock, Collection, Challenges, Runs, Search |
+| **banded** | `flex h-full min-h-0 flex-col` with `overflow-hidden` or `overflow-y-auto`, a `hero-wash` header, then children carrying their own `px-5.5` | a screen that opens on a band: Completion, Goals, the wiki's landing, pages and category lists |
+
+**The gutter is on the box that scrolls, never around it** (card #63). Until 2026-09-22 the page
+box carried `px-5.5` and every scrollbar sat 22px inside the window's edge; the banded screens
+took it back with `-mx-5.5` so their band could reach the edge, which was the same defect paid for
+twice. A box that scrolls at the right-hand edge carries the padding *inside* it, so its scrollbar
+is the window's edge — in Goals side by side that is the queue's pane, not the row.
 
 **The third row is a correction, not an addition.** Completion stopped being *flowing* with card
-#58 and this table was not updated: it took the gutter back with `-mx-5.5` so its band could be
-the page's full width, and its matrix has scrolled inside itself ever since. A contract that
-describes two of three shapes is read as forbidding the third, so it is written down now that
-Goals is the second screen of the kind. The band takes the gutter from the screen rather than
-taking it itself — `WikiLanding.vue` records what doing that the other way round cost.
+#58 and this table was not updated, and its matrix has scrolled inside itself ever since. A
+contract that describes two of three shapes is read as forbidding the third, so it is written down
+now that Goals is the second screen of the kind. The band never grows past a gutter to reach the
+edge — `WikiLanding.vue` records what that cost.
+
+**The thresholds include the gutter.** A container query measures the page box, and since the
+page box pads nothing that is 44px more than the content: `containers.css` declares compact,
+regular and wide at 844, 1004 and 1324, the content widths they were drawn against plus the
+gutter.
 
 **`min-h-0` on every link of a filling chain is not decoration.** A flex item's default
 `min-height:auto` refuses to shrink below its content, so one missing `min-h-0` between the page
@@ -359,7 +369,8 @@ tree, and a screen reader would read the columns the eye was told it could do wi
 640 × 480 logical pixels, declared in **two** places because windows are born in two:
 `crates/app/tauri.conf.json` for the main window and the one the tray rebuilds, and
 `ui/src/lib/window/windowFloor.ts` for a window torn off a tab, which never goes through that
-config. A test holds the two to the same number. At the floor the page box has about 428px.
+config. A test holds the two to the same number. At the floor the page box has about 472px, 428 of
+content.
 
 ### What checks it
 

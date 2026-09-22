@@ -67,10 +67,9 @@ const open = (page: WikiPageRef, event: MouseEvent) => {
 </script>
 
 <template>
-  <!-- The shell's gutter is taken back by the scrolling box and handed to its children, so
-       the band can be the full width without overflowing anything (`WikiLanding.vue` says
-       what that cost when it was done the other way round). -->
-  <div class="-mx-5.5 flex h-full min-h-0 flex-col overflow-hidden pb-5">
+  <!-- The gutter is the children's, so the band can be the full width without overflowing
+       anything (`WikiLanding.vue` says what that cost when it was done the other way round). -->
+  <div class="flex h-full min-h-0 flex-col overflow-hidden pb-5">
     <!-- The same band a page opens with (`WikiHero.vue`), at the size a list deserves: the
          category is the subject here, so it carries the icon, the count, and the filter. -->
     <header
