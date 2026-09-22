@@ -12,6 +12,7 @@ fn achievement(id: u32, requirements: Vec<Inline>) -> (u32, Entry) {
         wiki::for_tests::entry(
             &format!("A{id}"),
             Infobox::Achievement {
+                quote: Vec::new(),
                 requirements,
                 notes: Vec::new(),
                 unlocks: None,
