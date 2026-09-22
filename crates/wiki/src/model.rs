@@ -10,8 +10,12 @@ pub struct Entry {
     pub title: String,
     /// Wiki revision the page was read from: says how stale the data is.
     pub revid: u64,
-    /// The infobox's summary line. Plain text for achievements, wikitext everywhere else:
-    /// both arrive as inline so the frontend has one shape and no switch on the kind.
+    /// The summary line: the infobox's `description`, or on a boss, a character or a
+    /// challenge whose infobox has none, the page's opening paragraph. **Empty on every
+    /// achievement from the wiki**: what the wiki files there is the unlock paper's line,
+    /// which is `Infobox::Achievement.quote`, and the summary the screen draws is composed
+    /// from `unlocks` and `requirements` where the words can be translated. A hand-written
+    /// description in `corrections.json` fills it, on any kind, and wins over the wiki.
     pub description: Vec<Inline>,
     /// The editions the **infobox** says the entry exists in, in release order. Empty when
     /// the parameter is absent, which is the wiki's "no restriction" and not "it exists
@@ -194,10 +198,11 @@ impl Infobox {
                 pools,
             } => vec![quote, pools],
             Infobox::Achievement {
+                quote,
                 requirements,
                 notes,
                 unlocks: _,
-            } => vec![requirements, notes],
+            } => vec![quote, requirements, notes],
             Infobox::Boss {
                 base_hp: _,
                 stage_hp,
@@ -275,10 +280,15 @@ pub enum Infobox {
         pools: Vec<Inline>,
     },
     Achievement {
+        /// The line on the game's unlock paper, which the wiki files under `description`:
+        /// "Just Stop!", "OMG!". It is the game's voice and not a description, so it is the
+        /// quote, the way an item's pickup line is. Empty where the wiki wrote a placeholder
+        /// ("???" on 136 rows) or nothing.
+        quote: Vec<Inline>,
         requirements: Vec<Inline>,
         /// Caveats on the requirement ("Possession of The Polaroid is required…"). An
         /// achievement is a row on a storage page and carries no sections of its own, so
-        /// this is the only prose it has beyond `description` and `requirements`.
+        /// this is the only prose it has beyond `quote` and `requirements`.
         notes: Vec<Inline>,
         /// The thing this achievement unlocks. It does NOT rise to `Entry`: it points the
         /// opposite way from `unlocked_by`, and putting the two in one place is a trap.

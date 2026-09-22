@@ -2,7 +2,8 @@
 //! infobox itself declares (not the folder the page was listed under), and level-2
 //! sections with a recognized title give the text. The preamble is discarded: it's the
 //! "X is a passive item…" sentence that `catalog` already covers — **except on a
-//! transformation**, where it is the only place the wiki says how you become one (B51).
+//! transformation**, where it is the only place the wiki says how you become one (B51), and
+//! on a boss, a character or a challenge whose infobox writes no `description`.
 
 use serde::{Deserialize, Serialize};
 
@@ -125,11 +126,88 @@ fn entry_key(kind: InfoboxKind, title: &str, ib: &RawInfobox, r: &Resolver) -> O
 /// level-2 heading, with the infobox and the header template gone — `parse_inline` resolves
 /// the links and skips the layout templates, and an empty preamble gives an empty list.
 ///
-/// Discarded for every other kind, where it is the "X is a passive item…" sentence that
-/// `catalog` already covers. B51: on a transformation it carries the requirement.
+/// Discarded for items and trinkets, where it is the "X is a passive item…" sentence that
+/// `catalog` already covers. B51: on a transformation it carries the requirement; on a boss,
+/// a character or a challenge whose infobox has no `description`, it is the summary.
+///
+/// The **first paragraph** only, with `__TOC__` taken out: 46 boss, character and challenge
+/// pages open with several paragraphs — Isaac's runs on into his stats — and 24 carry that
+/// magic word, which draws the table of contents and is never prose. No transformation
+/// opens with more than one, so B51 reads the same sentence it always did.
 fn preamble(text: &str, r: &Resolver, d: &mut Diagnostics) -> Vec<crate::Inline> {
     let (pre, _) = split_page(text);
-    crate::inline::parse_inline(without_the_boxes(&pre).trim(), r, d)
+    let pre = without_the_boxes(&pre).replace("__TOC__", "");
+    // The first paragraph that *says* something: on 19 character pages the first one is an
+    // image or a layout template, which parses to nothing.
+    pre.split("\n\n")
+        .map(|p| one_line(parse_blocks(p.trim(), r, d)))
+        .find(|inline| !crate::plain(inline).trim().is_empty())
+        .unwrap_or_default()
+}
+
+/// A paragraph's blocks as one line of inline text. Parsed as blocks, a list's lines are
+/// each their own span — so a `{{dlc|…}}` marker ends with its line — and the `*` is gone;
+/// then everything is joined by one space, because a summary is drawn as a single line.
+fn one_line(blocks: Vec<crate::Block>) -> Vec<crate::Inline> {
+    fn walk(blocks: Vec<crate::Block>, out: &mut Vec<crate::Inline>) {
+        for block in blocks {
+            match block {
+                crate::Block::Paragraph { inline } | crate::Block::Heading { inline, .. } => {
+                    piece(inline, out)
+                }
+                crate::Block::List { items, .. } => {
+                    for item in items {
+                        piece(item.inline, out);
+                        walk(item.children, out);
+                    }
+                }
+                // A table is not a sentence: nothing in a summary reads one out.
+                crate::Block::Table { .. } => {}
+            }
+        }
+    }
+    fn piece(inline: Vec<crate::Inline>, out: &mut Vec<crate::Inline>) {
+        out.push(crate::Inline::Text {
+            text: " ".to_string(),
+            style: crate::Style::Plain,
+        });
+        out.extend(inline);
+    }
+    let mut out = Vec::new();
+    walk(blocks, &mut out);
+    let mut space = true;
+    squeeze(&mut out, &mut space);
+    if let Some(crate::Inline::Text { text, .. }) = out.last_mut() {
+        text.truncate(text.trim_end().len());
+    }
+    out.retain(|i| !matches!(i, crate::Inline::Text { text, .. } if text.is_empty()));
+    out
+}
+
+/// Every run of whitespace becomes one space, across node boundaries and into editions, and
+/// none is left at the start: `space` says whether the text so far ends in one.
+fn squeeze(inline: &mut [crate::Inline], space: &mut bool) {
+    for node in inline {
+        match node {
+            crate::Inline::Text { text, .. } => {
+                let mut out = String::with_capacity(text.len());
+                for ch in text.chars() {
+                    if ch.is_whitespace() {
+                        if !*space {
+                            out.push(' ');
+                        }
+                        *space = true;
+                    } else {
+                        out.push(ch);
+                        *space = false;
+                    }
+                }
+                *text = out;
+            }
+            crate::Inline::Edition { inline, .. } => squeeze(inline, space),
+            crate::Inline::Ref { .. } | crate::Inline::Concept { .. } => *space = false,
+        }
+    }
 }
 
 /// The preamble text with the infobox and the page header taken out, and **nothing else**:
@@ -328,6 +406,9 @@ pub fn parse_page(
 ) -> Vec<(EntryKey, Entry)> {
     let mut out = Vec::new();
     let mut page_sections: Option<Vec<Section>> = None;
+    // Parsed once, like the sections: a page with two infoboxes has one preamble, and
+    // reading it twice would count its diagnostics twice.
+    let mut page_preamble: Option<Vec<crate::Inline>> = None;
     let page = page_editions(text);
     for ib in extract_infoboxes(text) {
         let Some(kind) = InfoboxKind::of(&ib.name) else {
@@ -359,7 +440,9 @@ pub fn parse_page(
             // section on all sixteen pages (Guppy's is empty) and on none of them says how
             // the transformation happens, so nothing is dropped by putting it second.
             InfoboxKind::Transformation => {
-                let mut out = preamble(text, r, d);
+                let mut out = page_preamble
+                    .get_or_insert_with(|| preamble(text, r, d))
+                    .clone();
                 // Two sentences written in two places meet in one field, and nothing in
                 // either carries the space between them.
                 if !out.is_empty() && !facts.description.is_empty() {
@@ -371,10 +454,23 @@ pub fn parse_page(
                 out.extend(facts.description);
                 out
             }
+            // Bosses and characters have no `description` parameter, and 27 of 45 challenges
+            // leave it out: the opening paragraph is the only summary those pages write. It
+            // stands in when the infobox is silent, never alongside it.
+            InfoboxKind::Boss | InfoboxKind::Challenge | InfoboxKind::Character
+                if facts.description.is_empty() =>
+            {
+                page_preamble
+                    .get_or_insert_with(|| preamble(text, r, d))
+                    .clone()
+            }
+            // What the wiki files as an achievement's `description` is the unlock paper's
+            // line, and it went to the infobox's `quote`: it is not a summary, and read as
+            // one it put "???" under 136 titles.
+            InfoboxKind::Achievement => Vec::new(),
             InfoboxKind::Passive
             | InfoboxKind::Activated
             | InfoboxKind::Trinket
-            | InfoboxKind::Achievement
             | InfoboxKind::Boss
             | InfoboxKind::Challenge
             | InfoboxKind::Character => facts.description,
@@ -436,6 +532,86 @@ mod tests {
         // The two sentences are written in two places and meet in one field: the space
         // between them belongs to neither, so it is put here.
         assert!(text.ends_with("3 fly items. Grants flight."), "{text}");
+    }
+
+    /// Bosses and characters have no `description` parameter at all, and 27 of the 45
+    /// challenge pages leave it out: on those pages the only summary the wiki writes is the
+    /// opening paragraph, which the parser used to discard, and all 169 of them reached the
+    /// screen with no line under the title. The preamble stands in when the infobox is
+    /// silent, and only then: a challenge that fills the parameter keeps its own words.
+    #[test]
+    fn a_boss_character_or_challenge_without_a_description_takes_the_preamble() {
+        let desc = |title: &str, src: &str| {
+            let v = parse_page(title, 1, src, &test_resolver(), &mut Diagnostics::default());
+            crate::plain(&v[0].1.description)
+        };
+        assert_eq!(
+            desc(
+                "Mom",
+                "{{infobox boss\n | id = 45\n}}\n'''Mom''' is a [[boss]].\n== Behavior ==\nx\n"
+            ),
+            "Mom is a boss."
+        );
+        assert_eq!(
+            desc(
+                "Cain",
+                "{{infobox character\n | id = 2\n}}\n'''Cain''' is a character.\n== Notes ==\nn\n"
+            ),
+            "Cain is a character."
+        );
+        assert_eq!(
+            desc(
+                "Pitch Black",
+                "{{infobox challenge\n | number = 1\n}}\n'''Pitch Black''' is challenge #1.\n== Difficulty ==\nx\n"
+            ),
+            "Pitch Black is challenge #1."
+        );
+        assert_eq!(
+            desc(
+                "XXXXXXXXL",
+                "{{infobox challenge\n | number = 21\n | description = Every floor is XL.\n}}\n'''XXXXXXXXL''' is challenge #21.\n== Difficulty ==\nx\n"
+            ),
+            "Every floor is XL."
+        );
+        // A summary is the first paragraph. 46 of those pages open with several — Isaac's
+        // runs on into his stats and his tips — and 24 carry `__TOC__`, a magic word that
+        // draws the table of contents and is never prose.
+        assert_eq!(
+            desc(
+                "Isaac",
+                "{{infobox character\n | id = 0\n}}\n\n\n[[File:Isaac.png]]\n\n'''Isaac''' is a character.\n\nHe starts with the D6.\n__TOC__\n== Notes ==\nn\n"
+            ),
+            "Isaac is a character."
+        );
+        assert_eq!(
+            desc(
+                "Pitch Black",
+                "{{infobox challenge\n | number = 1\n}}\n'''Pitch Black''' is challenge #1.\n__TOC__\n\n== Difficulty ==\nx\n"
+            ),
+            "Pitch Black is challenge #1."
+        );
+    }
+
+    /// 27 boss pages open with a list — "can appear:" and one line per edition. Read as one
+    /// run of inline text the `*` reached the screen and every line's `{{dlc|…}}` marker ran
+    /// on into the next line; read as blocks, each line is its own span, joined by a space.
+    #[test]
+    fn a_list_in_the_preamble_is_one_line_per_edition() {
+        let src = "{{infobox boss\n | id = 45\n}}\n'''Mom''' can appear:\n* {{dlc|nr}} In the Depths.\n* {{dlc|r}} Only in the Mausoleum.\n\n== Behavior ==\nx\n";
+        let v = parse_page("Mom", 1, src, &test_resolver(), &mut Diagnostics::default());
+        let description = &v[0].1.description;
+        assert_eq!(
+            crate::plain(description),
+            "Mom can appear: In the Depths. Only in the Mausoleum."
+        );
+        let editions: Vec<&Vec<crate::Dlc>> = description
+            .iter()
+            .filter_map(|i| match i {
+                crate::Inline::Edition { only, .. } => Some(only),
+                _ => None,
+            })
+            .collect();
+        assert_eq!(editions.len(), 2, "{description:?}");
     }
 
     #[test]

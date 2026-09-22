@@ -248,6 +248,7 @@ const filledInfobox = (infobox: Infobox): Infobox => {
       const box = infobox as Box<'achievement'>
       return {
         kind: 'achievement',
+        quote: box.quote ?? [],
         requirements: box.requirements ?? [],
         notes: box.notes ?? [],
         unlocks: box.unlocks ?? null,
