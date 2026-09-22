@@ -10,5 +10,10 @@
     "Tainted Eden": 30, "Tainted Lost": 31, "Tainted The Lost": 31, "Tainted Lilith": 32, "Tainted Keeper": 33,
     "Tainted Apollyon": 34, "Tainted Forgotten": 35, "Tainted The Forgotten": 35, "Tainted Bethany": 36,
     "Tainted Jacob": 37, "Dead Tainted Lazarus": 38, "Tainted Lazarus (Dead)": 38, "Tainted Soul": 40
+  },
+  "descriptions": {
+    "achievements": {
+      "637": "Unlocked everything. You are the Dead God."
+    }
   }
 }
