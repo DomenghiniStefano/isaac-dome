@@ -5,7 +5,7 @@ import EmptyCategory from '@/components/data-state/EmptyCategory.vue'
 import GoalRow from '@/components/plan/GoalRow.vue'
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 import { Button, ButtonSize, ButtonVariant } from '@/components/ui/button'
-import { Card } from '@/components/ui/card'
+import { Card, CardHeader, CardTitle } from '@/components/ui/card'
 import { useMessages } from '@/i18n'
 import { NodeState } from '@/lib/graph/nodeState'
 import { nodeSlot } from '@/lib/graph/unlockFacets'
@@ -56,73 +56,79 @@ const seeAll: TabLocation = {
   <!-- Where rows come from: either the app proposes, or you name what you are after. The
        queue beside it never changes content, so you can see what you decided while you
        decide what to add to it (spec §2, §3). -->
-  <div class="flex w-full min-w-0 flex-col gap-3">
-    <span class="text-label text-subtle-foreground">{{
-      t('plan.addPane')
-    }}</span>
-    <WantBar @pick="emit('pick', $event)" @clear="emit('clear')" />
+  <Card class="w-full min-w-0 flex-col gap-0 p-0">
+    <!-- The same band the queue wears, for the same reason: two panels of one workbench read
+         as a tool, where a banded card beside a bare column reads as a card and a leftover. -->
+    <CardHeader>
+      <CardTitle>{{ t('plan.addPane') }}</CardTitle>
+    </CardHeader>
+    <div class="flex flex-col gap-3 p-3">
+      <WantBar @pick="emit('pick', $event)" @clear="emit('clear')" />
 
-    <WantAnswer
-      v-if="state === AddPaneState.Want"
-      :blocks="blocks"
-      :banner="banner"
-      :can-write="canWrite"
-      :busy="busy"
-      @queue="emit('add', $event)"
-      @navigate="(l, n) => emit('navigate', l, n)"
-    />
+      <WantAnswer
+        v-if="state === AddPaneState.Want"
+        :blocks="blocks"
+        :banner="banner"
+        :can-write="canWrite"
+        :busy="busy"
+        @queue="emit('add', $event)"
+        @navigate="(l, n) => emit('navigate', l, n)"
+      />
 
-    <template v-else-if="state === AddPaneState.Sections">
-      <!-- One block per reason. A section that would be empty never arrives: Rust decides
+      <template v-else-if="state === AddPaneState.Sections">
+        <!-- One block per reason. A section that would be empty never arrives: Rust decides
            "absent" once, so there is no heading over nothing to handle here. -->
-      <section
-        v-for="section in sections"
-        :key="section.basis"
-        class="flex flex-col gap-1"
-      >
-        <h2 class="text-label text-subtle-foreground">
-          {{ t(sectionTitle[section.basis]) }}
-        </h2>
-        <Card class="flex-col gap-0 p-0">
-          <div
-            v-for="step in section.steps"
-            :key="nodeSlot(step)"
-            :class="[
-              'border-b border-hairline last:border-b-0',
-              isQueued(step, queued) && 'opacity-disabled',
-            ]"
-          >
-            <!-- A row already in the queue stays, dimmed, with its button refused: the list
+        <section
+          v-for="section in sections"
+          :key="section.basis"
+          class="flex flex-col gap-1"
+        >
+          <h2 class="text-label text-subtle-foreground">
+            {{ t(sectionTitle[section.basis]) }}
+          </h2>
+          <!-- A bare list, not a card: the pane is the card now, and a card inside a card is
+             two edges saying the same thing. -->
+          <div class="-mx-3 border-y border-hairline bg-data">
+            <div
+              v-for="step in section.steps"
+              :key="nodeSlot(step)"
+              :class="[
+                'border-b border-hairline last:border-b-0',
+                isQueued(step, queued) && 'opacity-disabled',
+              ]"
+            >
+              <!-- A row already in the queue stays, dimmed, with its button refused: the list
                  must not shuffle under the finger while you add to it (spec §4). -->
-            <GoalRow
-              :model="rowModel(step, t)"
-              :node="step"
-              :can-add="canWrite && canQueue(step, queued)"
-              :busy="busy"
-              @add="emit('add', nodeSlot(step))"
-              @navigate="(l, n) => emit('navigate', l, n)"
-            />
+              <GoalRow
+                :model="rowModel(step, t)"
+                :node="step"
+                :can-add="canWrite && canQueue(step, queued)"
+                :busy="busy"
+                @add="emit('add', nodeSlot(step))"
+                @navigate="(l, n) => emit('navigate', l, n)"
+              />
+            </div>
           </div>
-        </Card>
-      </section>
-      <Button
-        :variant="ButtonVariant.Ref"
-        :size="ButtonSize.Inline"
-        class="self-start"
-        @click="emit('navigate', seeAll, $event.ctrlKey)"
-        >{{ t('goals.seeAll') }}</Button
-      >
-    </template>
+        </section>
+        <Button
+          :variant="ButtonVariant.Ref"
+          :size="ButtonSize.Inline"
+          class="self-start"
+          @click="emit('navigate', seeAll, $event.ctrlKey)"
+          >{{ t('goals.seeAll') }}</Button
+        >
+      </template>
 
-    <Alert v-else-if="state === AddPaneState.NoCatalog">
-      <InfoIcon />
-      <AlertTitle>{{ t('goals.noCatalogTitle') }}</AlertTitle>
-      <AlertDescription>{{ t('goals.noCatalog') }}</AlertDescription>
-    </Alert>
+      <Alert v-else-if="state === AddPaneState.NoCatalog">
+        <InfoIcon />
+        <AlertTitle>{{ t('goals.noCatalogTitle') }}</AlertTitle>
+        <AlertDescription>{{ t('goals.noCatalog') }}</AlertDescription>
+      </Alert>
 
-    <!-- The fourth member. `v-else` is the exhaustive arm a template can have: every other
+      <!-- The fourth member. `v-else` is the exhaustive arm a template can have: every other
          state is named above it, so a fifth added to the enum lands here visibly rather than
          silently. -->
-    <EmptyCategory v-else>{{ t('goals.nothingNow') }}</EmptyCategory>
-  </div>
+      <EmptyCategory v-else>{{ t('goals.nothingNow') }}</EmptyCategory>
+    </div>
+  </Card>
 </template>

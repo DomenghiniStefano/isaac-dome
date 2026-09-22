@@ -151,7 +151,10 @@ const open = (location: TabLocation, newTab: boolean) => {
           v-if="readable"
           class="min-w-0 flex-1 @wide/page:min-h-0 @wide/page:overflow-y-auto"
         >
+          <!-- Both panes fill the row: two panels of the same height read as one workbench,
+               where one tall and one short read as a panel and a leftover. -->
           <QueueCard
+            class="h-full"
             :rows="queue.view.rows"
             :diagnostics="queue.view.diagnostics"
             :nodes="nodes"

@@ -94,8 +94,14 @@
      the names truncated to "The …". The row's fixed parts are 209px — padding 24, the
      thumbnail 48, "apre N" 45, the add and disclosure buttons 22 each, and four 12px gaps —
      and a flexible column wants ~160px to say anything, which is the figure `containers.css`
-     measured on Unlock and not a new guess. 209 + 160 = 369, on the 4px grid: 372. */
-  --spacing-add-pane: 23.25rem;
+     measured on Unlock and not a new guess.
+
+     **Re-measured a second time** when "apre N" became a chip and the row gained its hover
+     accent: the chip's padding took 12px and the accent's border 2, so the fixed parts are
+     223 — padding 12 + 2 of accent + 12, the thumbnail 48, the chip 57, the two buttons 22
+     each, and four 12px gaps. 223 + 160 = 383, on the 4px grid: 384. The sum is written out
+     precisely so that the next thing to change the row says which number moved. */
+  --spacing-add-pane: 24rem;
   /* The window (Chrome e Stati.dc.html, "Finestra"): tab strip, tabs, drag region,
      window controls, navbar. */
   --spacing-titlebar: 1.875rem;

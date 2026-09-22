@@ -67,7 +67,13 @@ const open = (newTab: boolean) => {
     v-slot="{ open: shown }"
     :class="cn('flex flex-col', dragging && 'opacity-disabled')"
   >
-    <div class="flex items-center gap-3 px-3 py-2.5">
+    <!-- The accent is the same grammar as the drop line the drag draws: 2px of `primary` at
+         the left edge, here saying "this is the row under the pointer" instead of "this is
+         where it would land". It is a border rather than a pseudo-element so it costs the row
+         nothing when it is not there. -->
+    <div
+      class="flex items-center gap-3 border-l-2 border-transparent px-3 py-2.5 hover:border-l-primary hover:bg-row-hover"
+    >
       <Button
         v-if="position !== undefined"
         :variant="ButtonVariant.Ghost"
@@ -108,9 +114,9 @@ const open = (newTab: boolean) => {
       <span
         :class="
           cn(
-            'shrink-0 text-caption tabular-nums',
+            'shrink-0 rounded-full px-1.5 py-0.5 text-caption tabular-nums',
             model.playable
-              ? 'text-state-now-foreground'
+              ? 'bg-state-now-surface text-state-now-foreground'
               : 'text-subtle-foreground',
           )
         "
