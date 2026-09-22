@@ -366,6 +366,14 @@ Better to start from accessible primitives and dress them ourselves.
 > only group by killer and character. **Next steps** is called *Obiettivi consigliati* (B32) and
 > groups by the reason a row is suggested. And the table is missing **Wiki** and **Floor**, which
 > did not exist when it was written. Everything else in it was built as described.
+>
+> **A fourth, on 2026-09-22: Next steps and Plan are one row now, not two.** They answer halves of
+> one question — what is worth doing, and what you decided to do — and shipped as two screens
+> joined by a text button at the bottom of a section. They are one screen at `/progress/goals`,
+> recommendations on the left and the queue on the right; `/progress/plan` is a redirect.
+> `docs/superpowers/specs/2026-09-22-goals-plan-merge-design.md` has the reasoning. The table
+> above is left as it was, because this document freezes at M0 and a row rewritten in place would
+> be a design that was never taken.
 
 **Profile selection** sits at the bottom of the list because it's the least flashy, not
 because it's optional: on a real machine six saves coexist — three slots for the `rep_`

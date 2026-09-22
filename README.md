@@ -10,19 +10,25 @@ stranger's house" drives half the project's decisions.
 
 ## What it does
 
-Eight screens, all powered by the save file and the game files already on disk.
+Seven screens, all powered by the save file and the game files already on disk.
 
-| # | Screen | Answers | Status |
-|---|---|---|---|
-| 0 | **Profile selection** | Which save I'm looking at, and how to switch it | data complete |
-| 1 | **Next steps** | The 5 things worth doing right now | contract fixed, ordering with M2 |
-| 2 | **Unlock** | What's missing, filterable on every facet | contract fixed, graph with M2 |
-| 3 | **Plan** | My goals expanded into steps | goals saved, expansion with M3 |
-| 4 | **Completion** | Character × mark matrix, and how much of it is actually readable | data complete |
-| 5 | **Collection** | Items never touched, by pool and quality | data complete (909 items) |
-| 6 | **Runs** | Win rate, nemesis, streaks | M4 |
-| 7 | **Live** | What I've collected in this run | M4 |
-| 8 | **Search** | Where this thing lives: items, achievements, challenges, wiki, trees, screens | catalog and wiki complete, graph nodes with M2 |
+| Screen | Answers | Status |
+|---|---|---|
+| **Profile selection** | Which save I'm looking at, and how to switch it | data complete |
+| **Next steps** | The 5 things worth doing right now, and the queue I put them in | contract fixed, ordering with M2 |
+| **Unlock** | What's missing, filterable on every facet | contract fixed, graph with M2 |
+| **Completion** | Character × mark matrix, and how much of it is actually readable | data complete |
+| **Collection** | Items never touched, by pool and quality | data complete (909 items) |
+| **Runs** | Win rate, nemesis, streaks | M4 |
+| **Live** | What I've collected in this run | M4 |
+| **Search** | Where this thing lives: items, achievements, challenges, wiki, trees, screens | catalog and wiki complete, graph nodes with M2 |
+
+**Next steps** and **Plan** were two screens until 2026-09-22 and are one now: what is worth doing
+and what you decided to do are halves of the same question, and a text button at the bottom of a
+section was the only thing joining them. The numbering this table used to carry went with the
+merge — it was `DESIGN-BRIEF.md`'s and re-deriving it here only made two documents to keep
+agreeing. **Sfide, Wiki, Floor and Stasera are not in this table**: they were built after it was
+written, and the list is the shape the project was planned in rather than what ships today.
 
 And a shell that behaves like a browser: **several tabs open together** — a tab is a
 location, so it can also be an item's detail or a wiki page, not just a section — with a

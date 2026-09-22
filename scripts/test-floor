@@ -152,5 +152,25 @@
 # without a word. Rust does not move: which screen opens is a frontend constant and no
 # command knows about it.
 
+# **Raised on 2026-09-22**, UI +9 net, and the net is the point: 23 arrived and 14 left, in the
+# cycle that made Obiettivi and the Plan one screen. Arrived: 11 on `rowModel`, the one module
+# that decides what a row says; 4 on `queueExtras`, what the queue around a row adds; 5 on
+# `addPaneState`, which of the left pane's four states is showing; 3 on the retired-name map,
+# where a stored tab on the Plan is carried to Obiettivi instead of being dropped in silence.
+# Left: the 8 of `goalCard.test.ts`, the 5 of `planNow.test.ts`, and 1 of `queueRows`'s.
+#
+# **Only 6 of those 14 are a loss of coverage, and none of the 14 is a loss of a guard.** The 8
+# are `goalCard`'s and they were **carried into `rowModel.test.ts`, not deleted** — B28's Tainted
+# name, the 231 nameless nodes, the slot that must go nowhere: every one is asserted in the new
+# file, against the function that replaced the old one. The other 6 go because their subject
+# does. `planNow` fed the "in your Plan" reminder, which a page that could not see the queue
+# needed and a page with the queue beside it does not; `queueSummary` fed the band of three
+# counts the owner declined. A test whose subject stopped existing is not coverage dropped, it
+# is coverage with nothing left to be about — and saying which of the two a deletion was is the
+# whole reason this file is prose and not a number.
+#
+# Rust does not move: the cycle is frontend end to end, and the spec's §7 says that was checked
+# rather than hoped — everything the new row draws was already on the wire.
+
 RUST_TESTS=1227
-UI_TESTS=766
+UI_TESTS=775
