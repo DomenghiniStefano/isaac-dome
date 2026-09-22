@@ -172,5 +172,29 @@
 # Rust does not move: the cycle is frontend end to end, and the spec's §7 says that was checked
 # rather than hoped — everything the new row draws was already on the wire.
 
+# **Raised on 2026-09-22**, UI +3: 3.13b's, the three tables that fold. All three are one
+# property said three ways — that a `grid-cols-*-narrow` template exists beside its full one,
+# that both declare the number of tracks `lib/design/tables.ts` names, and that the narrow one is
+# genuinely shorter. `scan-conventions.mjs`'s rule 4 already proved both halves of the edit were
+# made; what it cannot see is whether the template that was written actually drops a column, and
+# a narrow set equal to its full set would have passed every other gate in the repo.
+#
+# One of the three earned its place before it ever went green: `utilities.css` was missing from
+# `vite.config.ts`'s `test.css.include`, and a `?raw` import of an excluded stylesheet does not
+# error — it yields `''`. The first run therefore said the four templates did not exist, which is
+# the same sentence a real regression would produce. Rust does not move: the whole sub-project is
+# CSS and templates.
+#
+# **This merge is the fifth time the delta rule was paid for, and the first time it was paid
+# silently.** Both sides raised UI by 3 from the same 775 and both therefore wrote the literal
+# `UI_TESTS=778` — so git auto-merged that line with **no conflict at all**, and the file came
+# out claiming 778 when the two suites together hold 781. A conflict is a question; an identical
+# wrong line is an answer nobody was asked for. The totals below were counted by `scripts/check`
+# on the merge itself, which is the only reading either side could have trusted.
+#
+# The other side is `feat(ui): the suggestions follow the queue` (Rust +2, UI +3) and it raised
+# the floor **without a paragraph**. This one is not it: whoever reads the file next should find
+# the +2 and the +3 described by the session that made them, and that entry is still missing.
+
 RUST_TESTS=1229
-UI_TESTS=778
+UI_TESTS=781

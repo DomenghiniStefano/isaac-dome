@@ -81,12 +81,39 @@
     var(--spacing-collection-state);
 }
 
+/* The Collection at compact (spec 3.13a §7): the sprite, the name, the state. What falls is the
+   quality, the pools and the origin — the pools because they are the widest and say least when
+   truncated, the origin because it is the least urgent thing about an item, and the quality on
+   arithmetic: its 96px would leave the name 140 of the 428 the window floor gives, and most item
+   names truncate there. Each of the three carries `@max-compact/page:hidden` on its cell, in
+   `CollectionTable.vue` for the header and `CollectionRow.vue` for the row. */
+@utility grid-cols-collection-narrow {
+  grid-template-columns:
+    var(--spacing-collection-sprite)
+    minmax(0, 1fr)
+    var(--spacing-collection-state);
+}
+
 /* The Challenges table: the number, the name, the character it forces, the goal, the state,
    and the button that puts its reward in the Plan's queue. */
 @utility grid-cols-challenges {
   grid-template-columns:
     var(--spacing-challenge-number)
     minmax(0, 1.4fr) minmax(0, 1fr) minmax(0, 1fr)
+    var(--spacing-challenge-state)
+    var(--spacing-challenge-queue);
+}
+
+/* Challenges at compact (spec 3.13a §7): the number, the name, the state, and the button that
+   puts its reward in the queue. What falls is the character it forces and the goal — the two
+   that explain a challenge rather than name it, and the two widest. The button stays: a row that
+   loses its action at the width where it is hardest to reach is a row that does nothing. Both
+   carry `@max-compact/page:hidden`, in `ChallengesTable.vue` for the header and
+   `ChallengeRow.vue` for the row. */
+@utility grid-cols-challenges-narrow {
+  grid-template-columns:
+    var(--spacing-challenge-number)
+    minmax(0, 1fr)
     var(--spacing-challenge-state)
     var(--spacing-challenge-queue);
 }
@@ -99,6 +126,18 @@
     var(--spacing-runs-floors)
     minmax(0, 1fr)
     minmax(0, 1fr);
+}
+
+/* The Run diary at compact (spec 3.13a §7): the character, how it ended, the floors. What falls
+   is the seed — the widest text on the row and the least scannable — and where the run came
+   from, which answers "which log said so" and is not the question a diary is read with. The
+   floors stay: how far you got is half of what a run is, and the track is 64px. Both carry
+   `@max-compact/page:hidden`, in `RunsTable.vue` for the header and `RunRow.vue` for the row. */
+@utility grid-cols-runs-narrow {
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1.4fr)
+    var(--spacing-runs-floors);
 }
 
 /* Live’s table of what a run could open: the achievement, the cell it needs, how the game

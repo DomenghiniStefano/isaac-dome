@@ -364,6 +364,16 @@ column: it reads as a styling bug and is a counting one. Collapsing the track to
 one edit, nothing to keep in step — is **rejected**: a zero-width cell stays in the accessibility
 tree, and a screen reader would read the columns the eye was told it could do without.
 
+**The pairs that exist are listed in `ui/src/lib/design/tables.ts`** — `unlock`, `collection`,
+`challenges`, `runs` — with the track count of each template, and a fifth table is added there
+**first**. The scan rule below proves both edits were made; the record is what proves the narrow
+template actually drops something, which no stylesheet can state about itself.
+
+**What survives a fold**, the rule the four were chosen by: who the row is, how it is doing, and
+the button that acts on it. What falls is what *explains* the row and what is *derived* from it.
+The sets themselves, and the 428px they were measured against, are in
+`docs/superpowers/specs/2026-09-20-responsive-layout-design.md` §12.
+
 ### The window has a floor
 
 640 × 480 logical pixels, declared in **two** places because windows are born in two:
