@@ -247,8 +247,8 @@ flowchart TD
   shell --> settingsGroup
 
   subgraph progressGroup["progress — behind the profile gate"]
-    goals["/progress/goals"]
     completion["/progress/completion"]
+    goals["/progress/goals"]
     unlock["/progress/unlock"]
     planr["/progress/plan"]
     collection["/progress/collection"]
@@ -279,8 +279,8 @@ outside it.
 | Screen | Path | Origin | Reads through | Commands behind it |
 |---|---|---|---|---|
 | Search | `/search` | search | `lib/ipc/search` directly, `tabs` | `search` |
-| Goals | `/progress/goals` | progress | `views`, `queue`, `tabs` | `graph_views`, `want`, `plan`, `add_goal`, `remove_goal`, the five `queue_*` |
 | Completion | `/progress/completion` | progress | `views` | `save_summary`, `completion` |
+| Goals | `/progress/goals` | progress | `views`, `queue`, `tabs` | `graph_views`, `want`, `plan`, `add_goal`, `remove_goal`, the five `queue_*` |
 | Unlock | `/progress/unlock` | progress | `views`, `queue` | `graph_views`, `want`, the five `queue_*` |
 | Plan | `/progress/plan` | progress | `views`, `queue` | `plan`, `add_goal`, `remove_goal`, the five `queue_*` |
 | Collection | `/progress/collection` | progress | `views` | `collection` |
