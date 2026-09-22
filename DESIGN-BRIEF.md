@@ -94,9 +94,6 @@ answers one question: **what am I missing, and what's worth playing tonight.**
 Fan-made, offline, no account, no telemetry. It installs and works with no
 configuration on any Steam copy of the game.
 
-**The opening screen is "Next steps", not the collection.** If the app opens on a grid of
-items we've just rebuilt the game's own menu, which the user already has.
-
 > Naming note: the screen used to be called **"Tonight"**. That name is dropped: the one
 > that stands is **"Next steps"**, and `docs/PROJECT.md` is already aligned. The word "tonight"
 > stays instead in the *question* the app answers — it's the time constraint that makes the
@@ -169,9 +166,9 @@ which is the property `sectionNav.test.ts` keeps.
 
 Three consequences, all to be designed:
 
-1. **On a machine without Isaac the app isn't empty.** It opens on the Wiki, which works on
-   its own. It's the only piece of the product that depends on nothing, and it's also the
-   first thing a new user sees if they installed the app before the game.
+1. **On a machine without Isaac the app isn't empty.** The Wiki works on its own: it's the
+   only piece of the product that depends on nothing, and it's what a new user has if they
+   installed the app before the game.
 2. **The Wiki has two outfits.** The **text** is always there; the **images** come from the
    game's archives (§5.7), so without the game installed the pages are typographic. This isn't
    the same case as "sprite not yet extracted" in §5.6: there the image will eventually

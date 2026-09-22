@@ -269,8 +269,8 @@ A declared fork, with a recommendation:
 - ✅ **A limit on the number of tabs** (3.7a): there is none. They shrink, then the strip scrolls.
 - **How a new tab opens**: from search (B5), from a wiki link, from a node
   in the tree, and with what gesture — middle click and `Ctrl+click` are the browser-like expectation.
-- **What the first launch does**, when there are no saved tabs yet: it opens on *Next
-  steps*, a single tab, as it does today.
+- **What the first launch does**, when there are no saved tabs yet: a single tab on
+  `defaultLocation`, as it does today.
 
 ---
 

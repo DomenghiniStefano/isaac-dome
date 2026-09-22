@@ -8,9 +8,6 @@ account, no telemetry, no configuration: install it and it reads whatever Steam 
 finds on the machine. It's not a personal tool — the constraint "has to work at a
 stranger's house" drives half the project's decisions.
 
-It doesn't open on a grid of items: that's already the game's own menu. It opens on
-**Next steps**, the five things worth doing right now.
-
 ## What it does
 
 Eight screens, all powered by the save file and the game files already on disk.
