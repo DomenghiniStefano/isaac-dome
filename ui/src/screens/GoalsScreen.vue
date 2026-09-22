@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import DiagnosticsList from '@/components/diagnostics/DiagnosticsList.vue'
 import QueueError from '@/components/plan/QueueError.vue'
@@ -71,6 +71,20 @@ const noCatalog = computed(
 // "in the queue" line or the button.
 const queued = computed(() => queuedIds(queue.view))
 const canWrite = computed(() => queue.view?.storeAvailable === true)
+
+// The suggestions leave out what the queue holds, and Rust decides which ones fill the
+// place (`next_steps`). So when what the queue holds changes — here, from another screen, or
+// from another window through `plan-changed` — the suggestions are asked again. A reorder
+// changes nothing they depend on, and a queue arriving with the profile arrives with the
+// graph beside it: neither asks.
+const queuedKey = computed(() =>
+  queue.view === null
+    ? null
+    : [...queued.value].sort((a, b) => a - b).join(','),
+)
+watch(queuedKey, (now, before) => {
+  if (now !== null && before !== null && now !== before) void graph.refresh()
+})
 
 // The queue card needs a queue that could be read: no database, an unreadable document and no
 // catalog each say so in an alert instead of an empty list.

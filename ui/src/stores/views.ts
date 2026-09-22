@@ -23,6 +23,7 @@ export interface ViewStore<T> {
   status: Ref<LoadStatus>
   error: Ref<IpcError | null>
   load: () => Promise<void>
+  refresh: () => Promise<void>
 }
 
 // Three stores wrote the same `view` / `status` / `error` triad and the same `try` / `catch`;
@@ -45,7 +46,20 @@ export const defineViewStore = <T>(id: StoreId, read: () => Promise<T>) =>
       })
     }
 
-    return { view, status, error, load }
+    // The same profile, read again because something the view depends on moved. The old
+    // view stays until the answer replaces it, and a failed refresh leaves it standing: what
+    // was shown is still this profile's, only a moment older. Before a first load there is
+    // nothing to refresh, and `load` is the one that reads.
+    const refresh = async (): Promise<void> => {
+      if (view.value === null) return
+      try {
+        view.value = await read()
+      } catch {
+        // Kept as it was, see above.
+      }
+    }
+
+    return { view, status, error, load, refresh }
   })
 
 // The active profile's Collection.
