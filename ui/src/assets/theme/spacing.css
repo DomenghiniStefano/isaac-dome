@@ -13,6 +13,16 @@
   --spacing-row-wide: 2.5rem;
   /* A search result: two lines, the title and why it matched. */
   --spacing-row-result: 3.5rem;
+  /* Where a goal row's expansion starts: under the text, never under the grip. Two numbers
+     and not one, because a queue row and a proposal do not start their text in the same
+     place — the proposal has no grip and no position — and a single value overshot one while
+     falling short of the other. **Measured in the browser on the Kit page** and then derived
+     back: padding 0.75 + grip --spacing-control 2.125 + 0.75 + the position's 1 + 0.75 +
+     --spacing-achievement-thumb 3 + 0.75 = 9.125rem, and the same sum without the grip and
+     the position = 4.5rem. Either changes the moment one of those parts does, which is why
+     the sum is written out. */
+  --spacing-row-detail: 9.125rem;
+  --spacing-row-detail-bare: 4.5rem;
   /* Height of button, input, select; side of an icon button. */
   --spacing-control: 2.125rem;
   /* Side of a compact icon button: the tab strip's "+" inside the 30px title bar. */

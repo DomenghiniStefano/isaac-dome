@@ -36,6 +36,7 @@ import SearchRowSection from './sections/app/SearchRowSection.vue'
 import DataStateSection from './sections/app/DataStateSection.vue'
 import CollapsibleCardSection from './sections/app/CollapsibleCardSection.vue'
 import DragListSection from './sections/app/DragListSection.vue'
+import GoalRowSection from './sections/app/GoalRowSection.vue'
 import WidthsSection from './sections/app/WidthsSection.vue'
 import { TooltipProvider } from '@/components/ui/tooltip'
 </script>
@@ -85,6 +86,7 @@ import { TooltipProvider } from '@/components/ui/tooltip'
       <ProfileBlockSection />
       <WantAnswerSection />
       <DragListSection />
+      <GoalRowSection />
       <WidthsSection />
     </main>
   </TooltipProvider>
