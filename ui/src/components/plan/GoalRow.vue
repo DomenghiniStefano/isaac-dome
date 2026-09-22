@@ -3,7 +3,7 @@ import {
   ChevronDownIcon,
   GripVerticalIcon,
   ListPlusIcon,
-  XIcon,
+  Trash2Icon,
 } from '@lucide/vue'
 import { computed } from 'vue'
 import AchievementArt from '@/components/graph/AchievementArt.vue'
@@ -186,7 +186,9 @@ const open = (newTab: boolean) => {
         :size="ButtonSize.Compact"
         :disabled="busy"
         @click="emit('remove')"
-        ><XIcon />{{ t('queue.removeShort') }}</Button
+        ><Trash2Icon class="text-destructive" />{{
+          t('queue.removeShort')
+        }}</Button
       >
     </CollapsibleContent>
   </Collapsible>
