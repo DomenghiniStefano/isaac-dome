@@ -29,8 +29,11 @@ const props = defineProps<{
   node: UnlockNode
   /** Present only in the queue: it brings the grip and the number with it. */
   position?: number
-  /** Present only in the queue. Its absence is what turns the row into a proposal. */
+  /** Present only in the queue: the badges the queue around the row adds. */
   extras?: QueueExtras
+  /** Whether this row offers to join the queue. Said, never inferred: a row in the want's
+      chain has neither `extras` nor a `+`, and the block above it carries the one offer. */
+  canAdd?: boolean
   busy: boolean
   dragging?: boolean
 }>()
@@ -114,7 +117,7 @@ const open = (newTab: boolean) => {
         >{{ opensText }}</span
       >
       <Button
-        v-if="extras === undefined"
+        v-if="canAdd"
         :variant="ButtonVariant.Outline"
         :size="ButtonSize.IconCompact"
         :aria-label="t('queue.add')"
