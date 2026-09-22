@@ -31,7 +31,7 @@ describe('sectionNav', () => {
       completion && isEntryActive(completion, { name: RouteName.Completion }),
     ).toBe(true)
     expect(
-      completion && isEntryActive(completion, { name: RouteName.Plan }),
+      completion && isEntryActive(completion, { name: RouteName.Unlock }),
     ).toBe(false)
     expect(completion && isEntryActive(completion, undefined)).toBe(false)
   })
@@ -130,7 +130,6 @@ describe('the three sections are three preconditions', () => {
         RouteName.Goals,
         RouteName.Completion,
         RouteName.Unlock,
-        RouteName.Plan,
         RouteName.Collection,
         // Challenges reads section 7 of the .dat, so it is behind the profile gate like the
         // rest of Progress — and not beside Floor, which only reads what you painted.

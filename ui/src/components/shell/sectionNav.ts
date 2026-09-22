@@ -70,7 +70,6 @@ export const sidebarEntries: Record<SidebarSection, SidebarEntry[]> = {
     RouteName.Completion,
     RouteName.Goals,
     RouteName.Unlock,
-    RouteName.Plan,
     RouteName.Collection,
     RouteName.Challenges,
     RouteName.Roll,

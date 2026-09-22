@@ -9,7 +9,10 @@ that takes, what the screens are, and what it takes to build and check the thing
 > 2026-09-20 on `feature/app-update`, which added the seventeenth route, four commands, the
 > sixth event and the one arrow that leaves the machine, again the same day on
 > `feature/floor-grid`, which gave the Floor screen the game's own minimap icons and the
-> command that fetches them, and once more when `design-export` left the repository.
+> command that fetches them, and once more when `design-export` left the repository. **Redrawn
+> on 2026-09-22** on `feature/goals-plan-merge`, which took that seventeenth route back out: the
+> Plan stopped being a screen and became the queue inside Obiettivi, so `/progress/plan` is now a
+> bare redirect carrying no name, and the commands that were on its row are listed on Goals's.
 >
 > **What keeps it true, and what does not.** Every path named here is checked by
 > `scripts/check-doc-refs.mjs`, which is why the nodes carry real paths instead of pretty
@@ -23,7 +26,7 @@ that takes, what the screens are, and what it takes to build and check the thing
 > just below are the tripwire — if one of them is wrong, so is the drawing.
 
 Counted at that commit, and every number below is derived from the code, not from prose:
-**16 crates**, **41 Tauri commands**, **6 events**, **17 routes**, **6 store migrations**.
+**16 crates**, **41 Tauri commands**, **6 events**, **16 routes**, **6 store migrations**.
 
 ---
 
@@ -250,7 +253,6 @@ flowchart TD
     completion["/progress/completion"]
     goals["/progress/goals"]
     unlock["/progress/unlock"]
-    planr["/progress/plan"]
     collection["/progress/collection"]
     challengesr["/progress/challenges"]
     rollr["/progress/roll"]
@@ -272,7 +274,7 @@ flowchart TD
 ```
 
 The grouping is not decoration: `routes.ts` derives `needsProfile` from the origin being
-`progress`, so the seven screens in that box are exactly the ones the gate covers. The three
+`progress`, so the six screens in that box are exactly the ones the gate covers. The three
 tools answer from the log, the archive and the user's own drawing, which is why they sit
 outside it.
 
@@ -282,7 +284,6 @@ outside it.
 | Completion | `/progress/completion` | progress | `views` | `save_summary`, `completion` |
 | Goals | `/progress/goals` | progress | `views`, `queue`, `tabs` | `graph_views`, `want`, `plan`, `add_goal`, `remove_goal`, the five `queue_*` |
 | Unlock | `/progress/unlock` | progress | `views`, `queue` | `graph_views`, `want`, the five `queue_*` |
-| Plan | `/progress/plan` | progress | `views`, `queue` | `plan`, `add_goal`, `remove_goal`, the five `queue_*` |
 | Collection | `/progress/collection` | progress | `views` | `collection` |
 | Challenges | `/progress/challenges` | progress | `views`, `queue`, `tabs` | `challenges`, the five `queue_*` |
 | Roll | `/progress/roll` | progress | `roll` | `roll`, `roll_draw`, `set_roll_preset` |

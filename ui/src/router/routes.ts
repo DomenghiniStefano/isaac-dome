@@ -13,7 +13,6 @@ import GoalsScreen from '@/screens/GoalsScreen.vue'
 import PlaceholderScreen from '@/screens/PlaceholderScreen.vue'
 import LiveScreen from '@/screens/LiveScreen.vue'
 import RunsScreen from '@/screens/RunsScreen.vue'
-import PlanScreen from '@/screens/PlanScreen.vue'
 import ProfileScreen from '@/screens/ProfileScreen.vue'
 import RollScreen from '@/screens/RollScreen.vue'
 import SearchScreen from '@/screens/SearchScreen.vue'
@@ -45,7 +44,6 @@ const screens: Partial<Record<RouteName, Component>> = {
   [RouteName.Completion]: CompletionScreen,
   [RouteName.Goals]: GoalsScreen,
   [RouteName.Unlock]: UnlockScreen,
-  [RouteName.Plan]: PlanScreen,
   [RouteName.Collection]: CollectionScreen,
   [RouteName.Challenges]: ChallengesScreen,
   [RouteName.Roll]: RollScreen,
@@ -63,6 +61,12 @@ const screens: Partial<Record<RouteName, Component>> = {
 
 export const routes: RouteRecordRaw[] = [
   { path: '/', redirect: { name: RouteName.Completion } },
+  // The URL a link or a bookmark may still carry, from when the Plan was a screen of its own.
+  // **No `name`**, so it is not a location and cannot become a tab: a stored tab is carried by
+  // `sessionDocument`'s retired-name map, which is a different mechanism because it answers a
+  // different question — one is an address somebody typed, the other is a window somebody left
+  // open. The path is written out because it no longer has an entry in `routePath` to read.
+  { path: '/progress/plan', redirect: { name: RouteName.Goals } },
   ...Object.values(RouteName).map((name): RouteRecordRaw => ({
     path: routePath[name],
     name,

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import EmptyCategory from '@/components/data-state/EmptyCategory.vue'
+import GoalRow from '@/components/plan/GoalRow.vue'
 import { Card, CardHeader, CardTitle } from '@/components/ui/card'
 import { DragGhost } from '@/components/ui/drag'
 import { useDragList } from '@/composables/useDragList'
@@ -20,10 +21,11 @@ import {
   dropEdge,
   stepAnchor,
 } from '@/lib/plan/queueDrop'
+import { queueExtras } from '@/lib/plan/queueExtras'
 import { knownText, rowId, stoppedUnder } from '@/lib/plan/queueRows'
+import { rowModel } from '@/lib/plan/rowModel'
 import type { QueueMove } from '@/stores/queue'
 import QueueFootnotes from './QueueFootnotes.vue'
-import QueueRow from './QueueRow.vue'
 
 const props = defineProps<{
   rows: QueueRowView[]
@@ -120,7 +122,13 @@ const hint = computed((): string => {
 <template>
   <Card>
     <CardHeader class="flex-wrap">
-      <CardTitle>{{ t('plan.queueTitle') }}</CardTitle>
+      <!-- The count the page used to carry at the top, on the thing it counts (spec §5). -->
+      <CardTitle
+        >{{ t('plan.queueCount') }}
+        <span class="text-subtle-foreground tabular-nums">{{
+          rows.length
+        }}</span></CardTitle
+      >
       <span class="text-caption text-foreground-soft">{{ hint }}</span>
     </CardHeader>
     <div
@@ -141,9 +149,10 @@ const hint = computed((): string => {
           v-if="gap === index"
           class="absolute inset-x-0 -top-px h-0.5 bg-primary"
         />
-        <QueueRow
-          :row="row"
-          :rows="rows"
+        <GoalRow
+          :model="rowModel(row.node, t)"
+          :node="row.node"
+          :extras="queueExtras(row, rows)"
           :position="index + 1"
           :dragging="drag.moving.value && drag.from.value === index"
           :busy="busy"
@@ -166,9 +175,10 @@ const hint = computed((): string => {
     <!-- The lifted copy, drawn `busy` on purpose: its grip and its remove button are a picture
          of the row's, and must not answer a pointer that is in the middle of a drag. -->
     <DragGhost v-if="drag.ghost.value && grabbed" :box="drag.ghost.value">
-      <QueueRow
-        :row="grabbed"
-        :rows="rows"
+      <GoalRow
+        :model="rowModel(grabbed.node, t)"
+        :node="grabbed.node"
+        :extras="queueExtras(grabbed, rows)"
         :position="(drag.from.value ?? 0) + 1"
         :dragging="false"
         :busy="true"

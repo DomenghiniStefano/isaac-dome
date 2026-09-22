@@ -288,15 +288,23 @@ The reasoning, and the two approaches that were rejected, are in
 [`docs/superpowers/specs/2026-09-20-responsive-layout-design.md`](superpowers/specs/2026-09-20-responsive-layout-design.md).
 What follows is the contract.
 
-### A screen is one of two shapes
+### A screen is one of three shapes
 
 `<main>` is the **page box**: it scrolls nothing, carries the horizontal padding only, and is the
 size container named `page`. Under it every screen declares itself:
 
 | shape | root classes | who |
 |---|---|---|
-| **flowing** | `flex h-full flex-col gap-4 overflow-y-auto pt-5 pb-15` | content flows and the screen scrolls: Profile, Appearance, Background, Goals, Tabs settings, Completion, Plan, Floor, Live, Roll, the wiki landing and page |
+| **flowing** | `flex h-full flex-col gap-4 overflow-y-auto pt-5 pb-15` | content flows and the screen scrolls: Profile, Appearance, Background, Tabs settings, Floor, Live, Roll, the wiki landing and page |
 | **filling** | `flex h-full min-h-0 flex-col gap-4 overflow-hidden pt-5 pb-5`, with **exactly one** descendant carrying `min-h-0 flex-1` | a screen with a list: Unlock, Collection, Challenges, Runs, Search, the wiki's category lists |
+| **banded** | `-mx-5.5 flex h-full min-h-0 flex-col overflow-hidden`, a `hero-wash` header, then a body carrying `min-h-0 flex-1` and its own `px-5.5` | a screen that opens on a band: Completion, Goals |
+
+**The third row is a correction, not an addition.** Completion stopped being *flowing* with card
+#58 and this table was not updated: it took the gutter back with `-mx-5.5` so its band could be
+the page's full width, and its matrix has scrolled inside itself ever since. A contract that
+describes two of three shapes is read as forbidding the third, so it is written down now that
+Goals is the second screen of the kind. The band takes the gutter from the screen rather than
+taking it itself — `WikiLanding.vue` records what doing that the other way round cost.
 
 **`min-h-0` on every link of a filling chain is not decoration.** A flex item's default
 `min-height:auto` refuses to shrink below its content, so one missing `min-h-0` between the page
