@@ -12,7 +12,10 @@ const props = defineProps<{
     data-slot="card"
     :class="
       cn(
-        'flex flex-col border border-border bg-card text-card-foreground',
+        // `bg-card` stays under the wash: a gradient is an image, and a surface that draws
+        // one still needs a colour for the moment before it paints and for anything that
+        // reads the background rather than the picture on it.
+        'flex flex-col border border-border border-t-hairline-lit bg-card card-wash text-card-foreground',
         props.class,
       )
     "

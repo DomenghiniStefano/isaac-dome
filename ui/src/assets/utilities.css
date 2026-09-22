@@ -199,6 +199,45 @@
   );
 }
 
+/* A card, lit from above (2026-09-22). The same move `tile-wash` makes on a tile and
+   `hero-wash` makes on a band, at the smallest amplitude of the three: a card has to gain an
+   edge without becoming a second sheet, so it runs `card-lit` to `card` and stops there.
+   **This is the replacement for the shadow the skin does not have**, and the decision that
+   it has none is untouched — `--shadow-*` is still `initial`. */
+@utility card-wash {
+  background-image: linear-gradient(
+    180deg,
+    var(--color-card-lit) 0%,
+    var(--color-card) 60%
+  );
+}
+
+/* The band across a card's header. Flat, it is one long rectangle of `band`; lit, it has a
+   direction, which is what makes a header read as the top of something rather than as a
+   stripe laid over it. Horizontal, because the band's length is what needs breaking and its
+   height is already small. */
+@utility band-wash {
+  background-image: linear-gradient(
+    90deg,
+    var(--color-band) 0%,
+    var(--color-band-edge) 100%
+  );
+}
+
+/* The line under a band that is lit in the middle and gone at the edges — a rule that stops
+   rather than one drawn across the screen, which is the same reasoning `hero-wash` gives for
+   needing no bottom edge at all. Used where a band does have to end on a line. */
+@utility edge-lit {
+  border-image: linear-gradient(
+      90deg,
+      transparent 0%,
+      var(--color-hairline-lit) 30%,
+      var(--color-hairline-lit) 70%,
+      transparent 100%
+    )
+    1;
+}
+
 /* A category's tile on the landing, and a wiki row's figure frame: the data surface lit from
    above, so a sprite drawn on it has something to sit on instead of floating on the card. */
 @utility tile-wash {
