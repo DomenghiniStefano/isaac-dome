@@ -22,14 +22,18 @@ const { t } = useMessages()
 <template>
   <div class="flex min-h-0 flex-1 flex-col">
     <div
-      class="grid grid-cols-challenges items-center border-b border-hairline bg-muted text-label text-subtle-foreground"
+      class="grid grid-cols-challenges items-center border-b border-hairline bg-muted text-label text-subtle-foreground @max-compact/page:grid-cols-challenges-narrow"
     >
       <span class="px-2 py-1.5 text-right">{{
         t('challenges.columns.number')
       }}</span>
       <span class="px-2 py-1.5">{{ t('challenges.columns.challenge') }}</span>
-      <span class="px-2 py-1.5">{{ t('challenges.columns.character') }}</span>
-      <span class="px-2 py-1.5">{{ t('challenges.columns.goal') }}</span>
+      <span class="px-2 py-1.5 @max-compact/page:hidden">{{
+        t('challenges.columns.character')
+      }}</span>
+      <span class="px-2 py-1.5 @max-compact/page:hidden">{{
+        t('challenges.columns.goal')
+      }}</span>
       <span class="px-2 py-1.5">{{ t('challenges.columns.state') }}</span>
       <span />
     </div>
@@ -38,7 +42,7 @@ const { t } = useMessages()
       :key="row.number"
       :class="
         cn(
-          'grid min-h-row-wide grid-cols-challenges items-center border-b border-hairline hover:bg-row-hover',
+          'grid min-h-row-wide grid-cols-challenges items-center border-b border-hairline hover:bg-row-hover @max-compact/page:grid-cols-challenges-narrow',
           index % 2 === 1 && 'bg-row-alt',
         )
       "

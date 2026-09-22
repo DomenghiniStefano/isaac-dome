@@ -65,13 +65,15 @@ const done = computed(() => props.row.state.kind === 'done')
       <template v-if="queued"> · {{ t('queue.inQueue') }}</template>
     </span>
   </span>
-  <span class="min-w-0 truncate px-2 text-caption text-foreground">
+  <span
+    class="min-w-0 truncate px-2 text-caption text-foreground @max-compact/page:hidden"
+  >
     <!-- A challenge the wiki has no page for says nothing here: it must not read as "any
          character", which is a fact about the game nobody read. -->
     <template v-if="row.characterName">{{ row.characterName }}</template>
     <EmptyValue v-else>{{ t('challenges.noCondition') }}</EmptyValue>
   </span>
-  <span class="flex min-w-0 items-center gap-1.5 px-2">
+  <span class="flex min-w-0 items-center gap-1.5 px-2 @max-compact/page:hidden">
     <WikiInline
       v-if="row.goal"
       :inline="row.goal"
