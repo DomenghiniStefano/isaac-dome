@@ -10,6 +10,8 @@ import { useMessages } from '@/i18n'
 import type { Entry, Target } from '@/lib/ipc/types'
 import { Dlc } from '@/lib/ipc/types'
 import type { WikiCategory } from '@/router/routeTable'
+import { useWikiStore } from '@/stores/wiki'
+import { summaryOf } from './heroSummary'
 import { kindText, pageId } from './wikiLabels'
 
 // `entry` is `undefined` while the page is being read and `null` when the dataset lacks it:
@@ -28,6 +30,7 @@ const props = defineProps<{
 }>()
 const emit = defineEmits<{ navigate: [target: Target, newTab: boolean] }>()
 const { t } = useMessages()
+const wiki = useWikiStore()
 
 // The editions the infobox states, in release order. An empty list is the wiki's "no
 // restriction" and NOT "it exists nowhere" (the `dlc` field's own doc), so nothing is drawn
@@ -38,12 +41,25 @@ const editions = computed(() =>
     .map((dlc) => ({ dlc, name: dlcNames[dlc] })),
 )
 
-// The pickup quote, the one line of the game's own voice on the page. Items and trinkets
-// carry it; every other kind has none, and no other field stands in for it.
+// The line under the title (`heroSummary.ts`): the entry's description, or on an achievement
+// what it unlocks, else what it asks for.
+const summary = computed(() =>
+  props.entry
+    ? summaryOf(props.entry, t('wiki.infobox.unlocks'), wiki.titleOf)
+    : [],
+)
+
+// The one line of the game's own voice on the page: the pickup quote of an item or a
+// trinket, the unlock paper's line of an achievement. Every other kind has none, and no
+// other field stands in for it.
 const quote = computed(() => {
   const box = props.entry?.infobox
   if (box === undefined) return null
-  return box.kind === 'item' || box.kind === 'trinket' ? box.quote : null
+  return box.kind === 'item' ||
+    box.kind === 'trinket' ||
+    box.kind === 'achievement'
+    ? box.quote
+    : null
 })
 
 // Quality is the item's alone: `-1..=4` in the catalog, and the pips draw `null` as a dash.
@@ -78,12 +94,9 @@ const id = computed(() => (props.target ? pageId(props.target) : null))
         <h1 class="text-title text-foreground">{{ title }}</h1>
         <!-- `WikiInline` is a fragment — its root is the v-for — so it takes no class of its
              own: the paragraph around it is what sets the measure and the size. -->
-        <p
-          v-if="entry && entry.description.length > 0"
-          class="max-w-200 text-body"
-        >
+        <p v-if="summary.length > 0" class="max-w-200 text-body">
           <WikiInline
-            :inline="entry.description"
+            :inline="summary"
             :icon-for="iconFor"
             :can-open="canOpen"
             @navigate="(next, newTab) => emit('navigate', next, newTab)"

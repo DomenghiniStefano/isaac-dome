@@ -12,6 +12,11 @@ use crate::{Diagnostics, Dlc, Inline, Style};
 /// frame above it is an open `Edition` with its own codes.
 struct Out {
     frames: Vec<(Vec<Dlc>, Vec<Inline>)>,
+    /// One per frame above the bottom: the parenthesis depth a marker was opened at, when it
+    /// was opened inside one. The `)` that brings the text back to that depth closes it.
+    closes_at: Vec<Option<u32>>,
+    /// Parentheses open in the text so far.
+    paren: u32,
     buf: String,
     bold: bool,
     italic: bool,
@@ -21,9 +26,36 @@ impl Out {
     fn new() -> Out {
         Out {
             frames: vec![(Vec::new(), Vec::new())],
+            closes_at: Vec::new(),
+            paren: 0,
             buf: String::new(),
             bold: false,
             italic: false,
+        }
+    }
+
+    /// A character of plain text. A `)` that closes a parenthesis opened *before* the
+    /// innermost marker closes the marker first, so the parenthesis stays outside it.
+    fn text_char(&mut self, ch: char) {
+        match ch {
+            '(' => self.paren += 1,
+            ')' => {
+                if self.paren > 0 && self.closes_at.last() == Some(&Some(self.paren)) {
+                    self.close();
+                }
+                self.paren = self.paren.saturating_sub(1);
+            }
+            _ => {}
+        }
+        self.buf.push(ch);
+    }
+
+    /// `{{dlc|r}}` with no text of its own: a scope that runs to the end of the value, to
+    /// `{{dlc-}}`, or — opened inside a parenthesis — to the `)` that closes it.
+    fn open_marker(&mut self, only: Vec<Dlc>) {
+        self.open(only);
+        if let Some(last) = self.closes_at.last_mut() {
+            *last = (self.paren > 0).then_some(self.paren);
         }
     }
 
@@ -75,6 +107,7 @@ impl Out {
     fn open(&mut self, only: Vec<Dlc>) {
         self.flush();
         self.frames.push((only, Vec::new()));
+        self.closes_at.push(None);
     }
 
     /// Closes the innermost `Edition`; does nothing without any open frame. An edition with
@@ -89,6 +122,7 @@ impl Out {
     fn close(&mut self) {
         self.flush();
         if self.frames.len() > 1 {
+            self.closes_at.pop();
             if let Some((only, inline)) = self.frames.pop() {
                 if only.is_empty() {
                     for node in inline {
@@ -302,7 +336,7 @@ fn parse_inline_at(src: &str, r: &Resolver, d: &mut Diagnostics, depth: u32) -> 
         let Some(ch) = rest.chars().next() else {
             break;
         };
-        out.buf.push(ch);
+        out.text_char(ch);
         i += ch.len_utf8();
     }
     out.finish()
@@ -323,7 +357,7 @@ fn template(t: &Template, r: &Resolver, d: &mut Diagnostics, out: &mut Out, dept
                 recurse_into_arg(content, r, d, out, depth);
                 out.close();
             }
-            None => out.open(dlc_codes(&arg, d)),
+            None => out.open_marker(dlc_codes(&arg, d)),
         },
         "dlc-" => out.close(),
         "dlcalt" => {
@@ -1174,6 +1208,53 @@ mod tests {
             vec![Inline::Edition {
                 only: vec![Dlc::Repentance, Dlc::RepentancePlus],
                 inline: vec![text("everything after this", Style::Plain)]
+            }]
+        );
+    }
+
+    /// A marker written **inside a parenthesis** qualifies the parenthesis, not the rest of
+    /// the value: `({{dlc|r+}} including the 4 Repentance+ achievements)` is Dead God's
+    /// requirement, and the wiki draws the icon in front of the aside only. Until 2026-09-23
+    /// the scope ran to the end of the value, 57 times across the snapshot, and Dead God's
+    /// "and collect every item in the game" read as a Repentance+-only clause.
+    #[test]
+    fn a_marker_inside_a_parenthesis_closes_with_it() {
+        let rplus = || vec![Dlc::RepentancePlus];
+        let (v, _) = p("all ({{dlc|r+}} including the 4) and every item");
+        assert_eq!(
+            v,
+            vec![
+                text("all (", Style::Plain),
+                Inline::Edition {
+                    only: rplus(),
+                    inline: vec![text(" including the 4", Style::Plain)]
+                },
+                text(") and every item", Style::Plain)
+            ]
+        );
+
+        // A parenthesis opened *after* the marker is part of its span, and closing it does
+        // not close the scope.
+        let (v, _) = p("a ({{dlc|r+}} b (c) d) e");
+        assert_eq!(
+            v,
+            vec![
+                text("a (", Style::Plain),
+                Inline::Edition {
+                    only: rplus(),
+                    inline: vec![text(" b (c) d", Style::Plain)]
+                },
+                text(") e", Style::Plain)
+            ]
+        );
+
+        // Outside any parenthesis the marker still runs on, through a balanced aside.
+        let (v, _) = p("{{dlc|r+}}x (y) z");
+        assert_eq!(
+            v,
+            vec![Inline::Edition {
+                only: rplus(),
+                inline: vec![text("x (y) z", Style::Plain)]
             }]
         );
     }
