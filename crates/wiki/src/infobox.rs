@@ -178,6 +178,19 @@ fn inline(ib: &RawInfobox, name: &str, r: &Resolver, d: &mut Diagnostics) -> Vec
     parse_inline(param(ib, name), r, d)
 }
 
+/// An achievement's unlock-paper line, or nothing when the wiki wrote a placeholder in its
+/// place: 136 rows read "???" and one "...", and a quote made only of those says nothing.
+fn paper_line(inline: Vec<Inline>) -> Vec<Inline> {
+    let placeholder = crate::plain(&inline)
+        .chars()
+        .all(|c| c == '?' || c == '.' || c == '…' || c.is_whitespace());
+    if placeholder {
+        Vec::new()
+    } else {
+        inline
+    }
+}
+
 /// The `dlc` parameter as the editions it names. Absent is the one value that stays empty:
 /// the page declares no range, which `Editions::of` then reads back as "narrows nothing".
 /// An unreadable code is counted by `parse_code` and also leaves the entry declaring
@@ -293,6 +306,7 @@ pub fn infobox_from(
             pools: inline(ib, "pool", r, d),
         },
         InfoboxKind::Achievement => Infobox::Achievement {
+            quote: paper_line(inline(ib, "description", r, d)),
             requirements: inline(ib, "requirements", r, d),
             notes: inline(ib, "notes", r, d),
             unlocks: r.by_page_title(param(ib, "link")),
@@ -604,6 +618,7 @@ mod tests {
             ],
         );
         let Infobox::Achievement {
+            quote: _,
             requirements,
             notes,
             unlocks,
@@ -642,6 +657,34 @@ mod tests {
             entry_facts(&ib, &r, &mut d).unlocked_by,
             Some(Target::Achievement { id: 62 })
         );
+    }
+
+    /// An achievement's `description` is the line on the game's unlock paper — "Just Stop!"
+    /// on 1000000%, "OMG!" on !Platinum God! — and not a description: it is the quote, the
+    /// game's own voice, the way an item's pickup line is. 136 read "???", one "..." and one
+    /// is blank, and those are no line at all, so they are no quote rather than a quote that
+    /// says nothing.
+    #[test]
+    fn an_achievements_paper_line_is_its_quote_and_a_placeholder_is_none() {
+        let r = test_resolver();
+        let quote = |description: &str| {
+            let ib = raw("infobox achievement", &[("description", description)]);
+            let Infobox::Achievement { quote, .. } = infobox_from(
+                InfoboxKind::Achievement,
+                &ib,
+                "",
+                &r,
+                &mut Diagnostics::default(),
+            ) else {
+                panic!()
+            };
+            crate::plain(&quote)
+        };
+        assert_eq!(quote("Just Stop!"), "Just Stop!");
+        assert_eq!(quote("Unlocked..."), "Unlocked...");
+        assert_eq!(quote("???"), "");
+        assert_eq!(quote(" ... "), "");
+        assert_eq!(quote(""), "");
     }
 
     #[test]
