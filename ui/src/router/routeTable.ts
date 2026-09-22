@@ -31,8 +31,8 @@ import type { MessageSchema } from '@/i18n/messages/it'
 // sight: tab labels and the sidebar are built and tested from this alone.
 export const RouteName = {
   Search: 'search',
-  Goals: 'goals',
   Completion: 'completion',
+  Goals: 'goals',
   Unlock: 'unlock',
   Plan: 'plan',
   Collection: 'collection',
@@ -80,12 +80,12 @@ export interface TabLocation {
 
 type Message = MessageKey<MessageSchema>
 
-export const defaultLocation: TabLocation = { name: RouteName.Goals }
+export const defaultLocation: TabLocation = { name: RouteName.Completion }
 
 export const routePath: Record<RouteName, string> = {
   [RouteName.Search]: '/search',
-  [RouteName.Goals]: '/progress/goals',
   [RouteName.Completion]: '/progress/completion',
+  [RouteName.Goals]: '/progress/goals',
   [RouteName.Unlock]: '/progress/unlock',
   [RouteName.Plan]: '/progress/plan',
   [RouteName.Collection]: '/progress/collection',
@@ -104,8 +104,8 @@ export const routePath: Record<RouteName, string> = {
 
 export const routeTitle: Record<RouteName, Message> = {
   [RouteName.Search]: 'routes.search',
-  [RouteName.Goals]: 'routes.goals',
   [RouteName.Completion]: 'routes.completion',
+  [RouteName.Goals]: 'routes.goals',
   [RouteName.Unlock]: 'routes.unlock',
   [RouteName.Plan]: 'routes.plan',
   [RouteName.Collection]: 'routes.collection',
@@ -124,8 +124,8 @@ export const routeTitle: Record<RouteName, Message> = {
 
 export const routeOrigin: Record<RouteName, TabOrigin> = {
   [RouteName.Search]: TabOrigin.Search,
-  [RouteName.Goals]: TabOrigin.Progress,
   [RouteName.Completion]: TabOrigin.Progress,
+  [RouteName.Goals]: TabOrigin.Progress,
   [RouteName.Unlock]: TabOrigin.Progress,
   [RouteName.Plan]: TabOrigin.Progress,
   [RouteName.Collection]: TabOrigin.Progress,
@@ -146,8 +146,8 @@ export const routeOrigin: Record<RouteName, TabOrigin> = {
 
 export const routeIcon: Record<RouteName, Component> = {
   [RouteName.Search]: tabOriginIcon[TabOrigin.Search],
-  [RouteName.Goals]: ListChecksIcon,
   [RouteName.Completion]: Grid2x2Icon,
+  [RouteName.Goals]: ListChecksIcon,
   [RouteName.Unlock]: LockOpenIcon,
   [RouteName.Plan]: MapIcon,
   [RouteName.Collection]: LayersIcon,

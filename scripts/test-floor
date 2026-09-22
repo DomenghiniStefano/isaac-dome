@@ -145,5 +145,12 @@
 # the whole of the bug, since "nothing" and "we could not find it" used to draw the same
 # square.
 
+
+# **Raised on 2026-09-22**, UI +1: the location the app opens on. It moved from Goals to
+# Completion, and until today nothing said what it was — `defaultLocation` is read by the `/`
+# redirect and by a first launch with no saved tabs, and either could have been changed
+# without a word. Rust does not move: which screen opens is a frontend constant and no
+# command knows about it.
+
 RUST_TESTS=1227
-UI_TESTS=765
+UI_TESTS=766

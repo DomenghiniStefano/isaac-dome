@@ -42,8 +42,8 @@ declare module 'vue-router' {
 
 // The screens that exist. Every other route renders its placeholder until its sub-project.
 const screens: Partial<Record<RouteName, Component>> = {
-  [RouteName.Goals]: GoalsScreen,
   [RouteName.Completion]: CompletionScreen,
+  [RouteName.Goals]: GoalsScreen,
   [RouteName.Unlock]: UnlockScreen,
   [RouteName.Plan]: PlanScreen,
   [RouteName.Collection]: CollectionScreen,
@@ -62,7 +62,7 @@ const screens: Partial<Record<RouteName, Component>> = {
 }
 
 export const routes: RouteRecordRaw[] = [
-  { path: '/', redirect: { name: RouteName.Goals } },
+  { path: '/', redirect: { name: RouteName.Completion } },
   ...Object.values(RouteName).map((name): RouteRecordRaw => ({
     path: routePath[name],
     name,
