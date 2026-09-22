@@ -367,9 +367,6 @@ Better to start from accessible primitives and dress them ourselves.
 > groups by the reason a row is suggested. And the table is missing **Wiki** and **Floor**, which
 > did not exist when it was written. Everything else in it was built as described.
 
-The opening screen is **Next steps**, not the collection: if the app opens on a grid of
-items, I've just rebuilt the game's own menu.
-
 **Profile selection** sits at the bottom of the list because it's the least flashy, not
 because it's optional: on a real machine six saves coexist — three slots for the `rep_`
 edition and three for `rep+` — and every number the app shows depends on which one is
