@@ -315,3 +315,47 @@ describe('the sizes the document remembers', () => {
     ).toBe(9000)
   })
 })
+
+describe('a tab stored on a screen that has since merged', () => {
+  // The route left the table in the same commit as this test. Before that, `plan` was a
+  // RouteName and both assertions would have passed without a line of the map being
+  // written — the vacuity trap, in the one place it costs somebody their tabs.
+  const stored = (location: unknown) =>
+    JSON.stringify({
+      version: 2,
+      windows: [
+        { tabs: [{ entries: [{ location }], index: 0 }], activeIndex: 0 },
+      ],
+    })
+  const firstLocation = (document: string) =>
+    readSession(document)?.windows[0]?.tabs[0]?.entries[0]?.location
+
+  it('restores a Piano tab on Obiettivi', () => {
+    expect(firstLocation(stored({ name: 'plan' }))).toEqual({
+      name: RouteName.Goals,
+    })
+  })
+
+  it('carries the query across with it', () => {
+    expect(
+      firstLocation(stored({ name: 'plan', query: { want: 'item:5' } })),
+    ).toEqual({ name: RouteName.Goals, query: { want: 'item:5' } })
+  })
+
+  // The guard: the map carries what it names and widens nothing else.
+  it('still drops a name that is neither known nor retired', () => {
+    const document = JSON.stringify({
+      version: 2,
+      windows: [
+        {
+          tabs: [
+            { entries: [{ location: { name: 'nowhere' } }], index: 0 },
+            tab(RouteName.Wiki),
+          ],
+          activeIndex: 0,
+        },
+      ],
+    })
+    expect(readSession(document)?.windows[0]?.tabs).toHaveLength(1)
+  })
+})
