@@ -266,7 +266,7 @@ export const en: MessageSchema = {
     blindfoldedYes: 'blindfolded',
     blindfoldedNo: 'not blindfolded',
     blindfolded: 'blindfolded',
-    noCondition: 'we do not know',
+    noCondition: 'the wiki does not say',
     unlocksNothing: 'unlocks nothing',
     unnamedReward: 'achievement {id}',
     columns: {
@@ -674,7 +674,7 @@ export const en: MessageSchema = {
   },
   plan: {
     intro:
-      'The order you mean to do things in: what you asked for, plus what has to come first. Drag a row wherever you like — if something it needs is still missing it settles just below, instead of refusing the move.',
+      'The order you mean to do things in: what you added, plus what has to come first. Drag a row wherever you like — if something it needs is still missing it settles just below, instead of refusing the move.',
     opens: 'opens {count}',
     opensNothing: 'opens nothing',
     detail: 'Show the detail',
@@ -689,8 +689,8 @@ export const en: MessageSchema = {
     },
     row: {
       move: 'Move the row (Alt and the up or down arrow)',
-      wanted: 'asked for',
-      serves: 'serves',
+      wanted: 'added by you',
+      serves: 'needed for',
       unlocks: 'unlocks',
       fanOut: 'unlocks',
       outsideQueue: 'steps outside the queue',
@@ -701,7 +701,7 @@ export const en: MessageSchema = {
     emptyHint: 'Add a row from the proposal beside it, or from Unlock.',
     completed: {
       closed: 'rows closed by playing',
-      wanted: 'among the ones asked for',
+      wanted: 'among the ones you added',
     },
     unresolved: 'the game no longer knows it',
     alerts: {
@@ -834,7 +834,7 @@ export const en: MessageSchema = {
       done: 'done',
       now: 'unlockable now',
       blocked: 'blocked by',
-      partial: "we can't tell",
+      partial: 'requirements unclear',
     },
     why: {
       title: 'What it still needs',
@@ -862,7 +862,7 @@ export const en: MessageSchema = {
       done: 'done',
       now: 'unlockable now',
       blocked: 'blocked',
-      partial: "we can't tell",
+      partial: 'requirements unclear',
     },
     // One cell of the matrix: the boss, and the character to beat it with.
     markName: '{boss} as {character}',
@@ -899,7 +899,7 @@ export const en: MessageSchema = {
       fanOut: 'Unlocks',
     },
     unlocksNothing: 'nothing the game names',
-    noCondition: "we don't know",
+    noCondition: 'the game does not say',
     diagnostics: {
       noCatalogTitle: "We can't find the game",
       noCatalog:
@@ -1049,7 +1049,7 @@ export const en: MessageSchema = {
     add: 'Add to the queue',
     addShort: 'Add',
     remove: 'Remove from the queue',
-    removeShort: 'Remove',
+    removeShort: 'Remove from the queue',
     errorTitle: "The queue didn't change",
   },
   // Why a command could not answer. Since N2 these are variants on the wire, not a sentence
