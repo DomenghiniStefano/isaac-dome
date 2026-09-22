@@ -1,8 +1,11 @@
 <script setup lang="ts">
 import { InfoIcon } from '@lucide/vue'
+import GoalRow from '@/components/plan/GoalRow.vue'
 import { Alert, AlertDescription } from '@/components/ui/alert'
 import { Button, ButtonSize, ButtonVariant } from '@/components/ui/button'
+import { Card } from '@/components/ui/card'
 import { useMessages } from '@/i18n'
+import { rowModel } from '@/lib/plan/rowModel'
 import { WantBlockKind } from '@/lib/graph/wantBlocks'
 import type { WantBlock } from '@/lib/graph/wantBlocks'
 import { nodeSlot } from '@/lib/graph/unlockFacets'
@@ -10,7 +13,6 @@ import type { WantDiagnostic } from '@/lib/ipc/types'
 import type { MessageKey } from '@/i18n/messageKey'
 import type { MessageSchema } from '@/i18n/messages/it'
 import type { TabLocation } from '@/router/routeTable'
-import GoalCard from './GoalCard.vue'
 
 type Message = MessageKey<MessageSchema>
 
@@ -73,28 +75,33 @@ const bannerText: Record<WantDiagnostic['kind'], Message> = {
           <span class="pt-3 text-label text-subtle-foreground">{{
             at + 1
           }}</span>
-          <GoalCard
-            class="flex-1"
-            :node="step"
-            :queued="false"
-            :can-add="false"
-            :busy="busy"
-            compact
-            @navigate="(location, newTab) => emit('navigate', location, newTab)"
-          />
+          <!-- No `+` on a step: the one offer is the block's own "put it all in the Plan"
+               below, because a chain half in the queue is not what you asked for. -->
+          <Card class="flex-1 flex-col gap-0 p-0">
+            <GoalRow
+              :model="rowModel(step, t)"
+              :node="step"
+              :busy="busy"
+              @navigate="
+                (location, newTab) => emit('navigate', location, newTab)
+              "
+            />
+          </Card>
         </li>
         <li class="flex items-start gap-2">
           <span class="pt-3 text-label text-subtle-foreground">{{
             block.steps.length + 1
           }}</span>
-          <GoalCard
-            class="flex-1"
-            :node="block.node"
-            :queued="!block.queueable"
-            :can-add="false"
-            :busy="busy"
-            @navigate="(location, newTab) => emit('navigate', location, newTab)"
-          />
+          <Card class="flex-1 flex-col gap-0 p-0">
+            <GoalRow
+              :model="rowModel(block.node, t)"
+              :node="block.node"
+              :busy="busy"
+              @navigate="
+                (location, newTab) => emit('navigate', location, newTab)
+              "
+            />
+          </Card>
         </li>
       </ol>
       <p v-if="block.unknown > 0" class="text-body text-subtle-foreground">

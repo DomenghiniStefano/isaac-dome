@@ -13,6 +13,16 @@
   --spacing-row-wide: 2.5rem;
   /* A search result: two lines, the title and why it matched. */
   --spacing-row-result: 3.5rem;
+  /* Where a goal row's expansion starts: under the text, never under the grip. Two numbers
+     and not one, because a queue row and a proposal do not start their text in the same
+     place — the proposal has no grip and no position — and a single value overshot one while
+     falling short of the other. **Measured in the browser on the Kit page** and then derived
+     back: padding 0.75 + grip --spacing-control 2.125 + 0.75 + the position's 1 + 0.75 +
+     --spacing-achievement-thumb 3 + 0.75 = 9.125rem, and the same sum without the grip and
+     the position = 4.5rem. Either changes the moment one of those parts does, which is why
+     the sum is written out. */
+  --spacing-row-detail: 9.125rem;
+  --spacing-row-detail-bare: 4.5rem;
   /* Height of button, input, select; side of an icon button. */
   --spacing-control: 2.125rem;
   /* Side of a compact icon button: the tab strip's "+" inside the 30px title bar. */
@@ -76,8 +86,16 @@
   --spacing-challenge-number: 3rem;
   --spacing-challenge-state: 8.5rem;
   --spacing-challenge-queue: 2.5rem;
-  /* The Plan's proposal column (Schermate.dc.html, 246px, on the 4px grid). */
-  --spacing-plan-aside: 15.5rem;
+  /* The pane everything enters the queue from. It was `--spacing-plan-aside` at 15.5rem while
+     that column was a secondary proposal beside the queue; it is now the only way in, and both
+     the name and the number were wrong for that.
+
+     **Re-measured in the browser**, because at 15.5rem a row's title box came out **37px** and
+     the names truncated to "The …". The row's fixed parts are 209px — padding 24, the
+     thumbnail 48, "apre N" 45, the add and disclosure buttons 22 each, and four 12px gaps —
+     and a flexible column wants ~160px to say anything, which is the figure `containers.css`
+     measured on Unlock and not a new guess. 209 + 160 = 369, on the 4px grid: 372. */
+  --spacing-add-pane: 23.25rem;
   /* The window (Chrome e Stati.dc.html, "Finestra"): tab strip, tabs, drag region,
      window controls, navbar. */
   --spacing-titlebar: 1.875rem;

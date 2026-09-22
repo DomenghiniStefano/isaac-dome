@@ -39,7 +39,7 @@ const three = (): TabsState => ({
   tabs: [
     one('a', RouteName.Goals),
     one('b', RouteName.Unlock),
-    one('c', RouteName.Plan),
+    one('c', RouteName.Collection),
   ],
   activeId: 'b',
 })
@@ -86,7 +86,7 @@ describe('tabModel', () => {
   })
 
   it('never leaves the bar empty: closing the only tab opens a fresh one', () => {
-    const s = closeTab(firstState('a', at(RouteName.Plan)), 'a', fresh)
+    const s = closeTab(firstState('a', at(RouteName.Collection)), 'a', fresh)
     expect(s).toEqual({ tabs: [fresh()], activeId: 'new' })
   })
 
@@ -100,7 +100,7 @@ describe('tabModel', () => {
     expect(s.tabs.map((t) => tabLocation(t).name)).toEqual([
       RouteName.Goals,
       RouteName.Profile,
-      RouteName.Plan,
+      RouteName.Collection,
     ])
     expect(s.activeId).toBe('b')
   })
@@ -147,7 +147,7 @@ describe('tab history', () => {
     expect(s.tabs.map((t) => tabLocation(t).name)).toEqual([
       RouteName.Goals,
       RouteName.Unlock,
-      RouteName.Plan,
+      RouteName.Collection,
     ])
   })
 
@@ -205,7 +205,7 @@ describe('tab history', () => {
   })
 
   it('keeps the history bounded, dropping the oldest and never the current', () => {
-    const names = [RouteName.Unlock, RouteName.Plan]
+    const names = [RouteName.Unlock, RouteName.Collection]
     const s = Array.from({ length: HistoryDepth + 5 }).reduce<TabsState>(
       (state, _, i) => navigateTab(state, at(names[i % 2])),
       three(),
@@ -234,7 +234,9 @@ describe('tabLabel', () => {
   })
 
   it("is the route's message on any other location", () => {
-    expect(tabLabel(at(RouteName.Plan), titleOf)).toBe('routes.plan')
+    expect(tabLabel(at(RouteName.Collection), titleOf)).toBe(
+      'routes.collection',
+    )
     expect(
       tabLabel(
         { name: RouteName.Wiki, query: { category: WikiCategory.Bosses } },
