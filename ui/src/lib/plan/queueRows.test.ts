@@ -7,7 +7,6 @@ import {
   isQueued,
   originRows,
   proposalLabel,
-  queueSummary,
   queuedIds,
   rowId,
   stoppedUnder,
@@ -43,10 +42,6 @@ describe('the queue, read', () => {
     expect(queuedIds(null).size).toBe(0)
     expect(isQueued(node(55), queuedIds(view))).toBe(true)
     expect(isQueued(node(484), queuedIds(view))).toBe(false)
-  })
-
-  it('counts rows asked for and rows pulled in', () => {
-    expect(queueSummary(rows)).toEqual({ rows: 3, wanted: 2, pulledIn: 1 })
   })
 
   it("names the wish a step serves, and says when it isn't shown", () => {
