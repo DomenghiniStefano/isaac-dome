@@ -675,11 +675,11 @@ export const en: MessageSchema = {
   plan: {
     intro:
       'The order you mean to do things in: what you asked for, plus what has to come first. Drag a row wherever you like — if something it needs is still missing it settles just below, instead of refusing the move.',
-    summary: {
-      rows: 'rows',
-      wanted: 'asked for',
-      pulledIn: 'pulled in',
-    },
+    opens: 'opens {count}',
+    opensNothing: 'opens nothing',
+    detail: 'Show the detail',
+    queueCount: 'Your queue',
+    addPane: 'To add',
     queueTitle: 'The queue',
     hint: {
       idle: 'drag to reorder — no move is ever refused',

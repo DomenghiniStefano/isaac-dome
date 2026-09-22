@@ -682,11 +682,11 @@ export const it = {
   plan: {
     intro:
       'L’ordine in cui vuoi fare le cose: quelle che hai chiesto, più quello che serve prima. Trascina una riga dove vuoi — se le manca un prerequisito si ferma appena sotto, invece di rifiutare lo spostamento.',
-    summary: {
-      rows: 'righe',
-      wanted: 'chieste',
-      pulledIn: 'tirate dentro',
-    },
+    opens: 'apre {count}',
+    opensNothing: 'non apre altro',
+    detail: 'Mostra il dettaglio',
+    queueCount: 'La tua coda',
+    addPane: 'Da aggiungere',
     queueTitle: 'La coda',
     hint: {
       idle: 'trascina per riordinare — nessuno spostamento viene rifiutato',
