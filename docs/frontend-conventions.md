@@ -551,6 +551,25 @@ the row, not a second one. The skin is flat by decision (`assets/theme/shadow.cs
 `--shadow-*: initial`), so it lifts with a `primary` border on an opaque sheet and never with a
 shadow token. The sidebar's resize stays outside it: same choreography, no list and no drop.
 
+### Depth is a wash, never a shadow
+
+`--shadow-*` is `initial` and stays that way; `--default-transition-duration` is `0ms` on
+`steps(1)` and stays that way. **Both were reconsidered on 2026-09-22 and both were kept** —
+`docs/superpowers/specs/2026-09-22-goals-plan-merge-design.md` §4.3 has the choice and who made
+it. So a surface that needs to read as raised is **lit**, not lifted:
+
+| utility | what it lights |
+|---|---|
+| `hero-wash` | a screen's opening band, from the corner the picture sits in |
+| `band-wash` | a card's header, along its length |
+| `card-wash` | a card, from above, at the smallest amplitude of the three |
+| `tile-wash` | a tile or a figure's frame, so a sprite has something to sit on |
+| `edge-lit` | a rule that is lit in the middle and gone at the edges, for a band that must end on a line |
+
+The amplitudes are deliberately different and deliberately ordered: a card washed as hard as a
+band stops reading as a card. A new wash joins this table or it is not a wash, it is a one-off
+gradient somewhere — which is the thing `--color-*: initial` exists to make impossible.
+
 ### How a primitive is written
 
 - **From the registry, already dressed.** shadcn-vue 2.8.2, style `reka-vega`. Never

@@ -135,6 +135,40 @@ here to make three screens look like one product, not to find something to put i
 > that table and lists both screens under it — a contract that describes two of three shapes is
 > read as forbidding the third.
 
+## 4.3 Decision (owner) — depth by wash, and the two decisions that stay
+
+Added on 2026-09-22 after the merge shipped, on the owner's ask for something more
+commercial — "more colour, more gradients". Two of the three things that usually answer that
+are forbidden here, and the forbidding is deliberate and written down:
+
+- `assets/theme/shadow.css` is one rule, `--shadow-*: initial`, over the sentence *"the skin
+  is flat ('bordo pixel piatto'): no shadow token exists"*.
+- `assets/theme/motion.css`: *"the game doesn't interpolate, so neither do we"* — the default
+  transition is **0ms** on `steps(1)`, and *"data never moves"*.
+
+**Both stay.** The owner was shown the choice and kept them. What was not forbidden is the
+gradient: `hero-wash` and `tile-wash` already exist, and `hero-wash`'s own comment calls a wash
+*what replaces the shadow the skin does not have*. So depth is added in that grammar and in no
+other — three tones inside families the palette already holds, and no new hue.
+
+| what | where |
+|---|---|
+| `card-wash` | every `Card`, at the smallest amplitude of the three washes: `card-lit` → `card`, so a card gains an edge without becoming a sheet |
+| `border-t-hairline-lit` | every `Card`: the edge that light would catch, which is how a flat skin says "raised" |
+| `band-wash` | every `CardHeader`: `band` → `band-edge` along its length, so a header reads as the top of something instead of a stripe laid over it |
+| the row's accent | 2px of `primary` on the left on hover — the same grammar as the drop line the drag already draws |
+| `apre N` | becomes a chip on `state-now-surface` when it is playable: the one coloured value on the row stops being loose text |
+
+**And the two panes became two panels.** The queue wore a band and the recommendations wore a
+small grey label, which read as a panel beside a leftover. They are both `Card` + `CardHeader`
+now, both filling the row's height. This is the change that did most of the work, and it is
+composition rather than colour — worth recording, because the ask was for colour.
+
+> **A cost, measured rather than noticed later.** The chip's padding and the accent's border
+> took 14px off the row's title box, which had just been measured to 161px. `--spacing-add-pane`
+> goes 23.25rem → 24rem, and the token's comment carries the second sum. Any future change to
+> what sits on a row pays this again, which is why the sum is written out rather than totalled.
+
 ## 5. Decision (owner) — no band of counts
 
 `righe: 12 · voluti: 4 · trascinati: 8` goes, and nothing replaces it.
