@@ -350,6 +350,15 @@ three can never drift without the suite noticing. The snapshot (`pnpm wiki:fetch
 talks to the wiki at runtime. Source attribution (wiki, URL, license, snapshot date) lives
 in `dataset/ATTRIBUTION.md`, CC BY-SA 4.0: it ships in the package.
 
+**A description the wiki doesn't give is written in `corrections.json`**, under
+`descriptions`, keyed the way `wiki.json` keys its collections (`"achievements": {"637": …}`,
+bosses by `id.variant.subtype`). It is wikitext, it wins over the page's, and one naming no
+entry fails `every_hand_written_description_names_an_entry_that_exists`. Rerun
+`pnpm wiki:build` after editing it. Before writing one, know what already fills the gap: a
+boss, character or challenge without an infobox `description` takes its page's opening
+paragraph, and an achievement's line under the title is composed from what it unlocks — the
+wiki's `description` for an achievement is the unlock paper's line, and it is the quote.
+
 ### Commits
 
 - Conventional Commits, **`type(scope): subject`** — `feat(core-save): …`,

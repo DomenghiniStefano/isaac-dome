@@ -546,6 +546,25 @@ fn the_correction_check_detects_a_correction_that_matches_nothing() {
     );
 }
 
+/// Every hand-written description in `corrections.json` lands on an entry of the snapshot.
+/// The file is written by hand against `wiki.json`'s keys, and a typo in one — `bosses`
+/// keyed `45` instead of `45.0.0` — fills nothing and says nothing. Not vacuous: the file
+/// carries Dead God's (637), and `a_description_for_no_entry_is_reported` in `build.rs`
+/// shows the check speaking about entries it knows are wrong.
+#[test]
+fn every_hand_written_description_names_an_entry_that_exists() {
+    let corr = corrections();
+    assert!(
+        !corr.descriptions.is_empty(),
+        "the file carries at least Dead God's: the check below would be vacuous"
+    );
+    assert_eq!(
+        corr.unmatched_descriptions(dataset()),
+        Vec::<(String, String)>::new(),
+        "descriptions in corrections.json that name no entry"
+    );
+}
+
 /// Trinket 138 (`'M`) ships a quote that reads like a parse gone wrong —
 /// `t's broken9Reroll your dest` — and it is **the game's own text, on purpose**. It was
 /// filed as a wiki defect on 2026-09-14 and that was wrong: the page explains itself three

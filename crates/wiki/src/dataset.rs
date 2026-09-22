@@ -153,6 +153,43 @@ impl Dataset {
         format!("{id}.{variant}.{subtype}")
     }
 
+    /// The entry under `key` in the collection `wiki.json` calls `collection`: how
+    /// `corrections.json` names one, since the file is written against the JSON.
+    pub(crate) fn entry_by_key_mut(&mut self, collection: &str, key: &str) -> Option<&mut Entry> {
+        fn by_number<'a>(map: &'a mut BTreeMap<u32, Entry>, key: &str) -> Option<&'a mut Entry> {
+            map.get_mut(&key.parse::<u32>().ok()?)
+        }
+        match collection {
+            "items" => by_number(&mut self.items, key),
+            "trinkets" => by_number(&mut self.trinkets, key),
+            "achievements" => by_number(&mut self.achievements, key),
+            "bosses" => self.bosses.get_mut(key),
+            "challenges" => by_number(&mut self.challenges, key),
+            "characters" => by_number(&mut self.characters, key),
+            "transformations" => by_number(&mut self.transformations, key),
+            _ => None, // allowed: a name from a hand-written file, an open-ended string
+        }
+    }
+
+    /// Whether [`Dataset::entry_by_key_mut`] would find an entry.
+    pub fn has_key(&self, collection: &str, key: &str) -> bool {
+        let by_number = |map: &BTreeMap<u32, Entry>| {
+            key.parse::<u32>()
+                .ok()
+                .is_some_and(|n| map.contains_key(&n))
+        };
+        match collection {
+            "items" => by_number(&self.items),
+            "trinkets" => by_number(&self.trinkets),
+            "achievements" => by_number(&self.achievements),
+            "bosses" => self.bosses.contains_key(key),
+            "challenges" => by_number(&self.challenges),
+            "characters" => by_number(&self.characters),
+            "transformations" => by_number(&self.transformations),
+            _ => false, // allowed: a name from a hand-written file, an open-ended string
+        }
+    }
+
     /// The entry for a `Target`, if the dataset has one. Floors, rooms and pickups have no
     /// page in the dataset: `None` by construction. Transformations used to be in that
     /// group and are not any more — they have sixteen pages of their own.

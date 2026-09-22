@@ -54,6 +54,12 @@ pub struct Corrections {
     /// different template. Wins over the ids derived from the pages.
     #[serde(default)]
     pub characters: BTreeMap<String, u32>,
+    /// Descriptions written by hand, as wikitext: collection, named the way `wiki.json`
+    /// names it (`achievements`, `bosses`…), then the entry's key in that collection. One
+    /// wins over the page's, on any kind — the reason to write one is that the wiki's is
+    /// missing (Dead God) or says nothing.
+    #[serde(default)]
+    pub descriptions: BTreeMap<String, BTreeMap<String, String>>,
 }
 
 /// The tables [`Corrections::apply`] is ever called with. A `page_id` entry filed under
@@ -70,6 +76,21 @@ impl Corrections {
             .keys()
             .map(String::as_str)
             .filter(|t| !CORRECTED_TABLES.contains(t))
+            .collect()
+    }
+
+    /// The hand-written descriptions that name no entry of `ds` — an unknown collection or
+    /// a key it does not hold — in file order. Empty is the healthy answer: anything else
+    /// is a line in `corrections.json` that is doing nothing, and saying nothing about it.
+    pub fn unmatched_descriptions(&self, ds: &crate::Dataset) -> Vec<(String, String)> {
+        self.descriptions
+            .iter()
+            .flat_map(|(collection, entries)| {
+                entries
+                    .keys()
+                    .filter(|key| !ds.has_key(collection, key))
+                    .map(|key| (collection.clone(), key.clone()))
+            })
             .collect()
     }
 
