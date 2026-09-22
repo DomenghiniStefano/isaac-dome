@@ -99,10 +99,9 @@ const onOpen = (location: TabLocation, newTab: boolean) => {
 </script>
 
 <template>
-  <!-- The scrolling box takes the shell's gutter back and hands it to its children, so the
-       opening band is the full width of the page without overflowing it (`WikiLanding.vue`
-       records what the other way round cost). -->
-  <div class="-mx-5.5 flex h-full flex-col overflow-y-auto pb-15">
+  <!-- The gutter is the children's, so the opening band is the full width of the page without
+       overflowing it (`WikiLanding.vue` records what the other way round cost). -->
+  <div class="flex h-full flex-col overflow-y-auto pb-15">
     <WikiHero
       :target="target"
       :title="title"

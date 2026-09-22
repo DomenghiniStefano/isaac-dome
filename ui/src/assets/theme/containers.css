@@ -11,17 +11,22 @@
      `@wide/page:` against the `page` container, and `@max-compact/shell:` against `shell`. In px
      and measured at scale 100, for the reason the tab's token gives above.
 
+     **Each one includes the 44px of gutter.** The page box pads nothing since card #63 — the
+     screen carries `px-5.5` on the box that scrolls, so the scrollbar sits on the window's edge —
+     and a container query measures the page box, gutter and all. The widths below were drawn
+     against the content (800, 960, 1280) and moved up by the gutter so nothing changed shape.
+
      compact — below it, one column: a table at its minimum column set, a KPI strip stacked.
        **Measured on Unlock**, the densest table: its fixed columns are 296px (art 4rem, state
        8.5rem, fan-out 3.5rem, queue 2.5rem) and the three flexible ones want ~160px each to say
-       anything, so the full table needs ~780. Below that it is the narrow set. It sits far above
-       the ~428px the page box has at the 640 window floor, so the narrowest window the app allows
-       is comfortably inside it.
+       anything, so the full table needs ~780 of content. Below that it is the narrow set. It sits
+       far above the ~472px the page box has at the 640 window floor, so the narrowest window the
+       app allows is comfortably inside it.
      regular — the shape the screens are drawn at today, near the `max-w-250` they all carried.
      wide — above it, what sat under something may sit beside it. */
-  --container-compact: 800px;
-  --container-regular: 960px;
-  --container-wide: 1280px;
+  --container-compact: 844px;
+  --container-regular: 1004px;
+  --container-wide: 1324px;
 
   /* The section sidebar's own break, and **not** `compact` — the same reason the tab has a token
      of its own (spec 3.13a §5): where the sidebar stops being worth its width is a fact about the

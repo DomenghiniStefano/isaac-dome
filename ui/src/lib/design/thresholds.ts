@@ -17,7 +17,7 @@ export type Threshold = (typeof Threshold)[keyof typeof Threshold]
 // two `sidebar-collapsed-*` utilities, which a `@utility` cannot express as a variant — three
 // copies, and nothing here can see the third.
 export const ThresholdPx: Record<Threshold, number> = {
-  [Threshold.Compact]: 800,
-  [Threshold.Regular]: 960,
-  [Threshold.Wide]: 1280,
+  [Threshold.Compact]: 844,
+  [Threshold.Regular]: 1004,
+  [Threshold.Wide]: 1324,
 }

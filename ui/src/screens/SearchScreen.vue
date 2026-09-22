@@ -108,7 +108,9 @@ const open = (row: SearchRow, event: MouseEvent) => {
 </script>
 
 <template>
-  <div class="flex h-full min-h-0 flex-col gap-4 overflow-hidden pt-5 pb-5">
+  <div
+    class="flex h-full min-h-0 flex-col gap-4 overflow-hidden px-5.5 pt-5 pb-5"
+  >
     <ScreenHeader :icon="SearchIcon" :title="t('routes.search')">{{
       t('search.intro')
     }}</ScreenHeader>
