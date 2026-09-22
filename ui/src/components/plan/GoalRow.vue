@@ -83,17 +83,22 @@ const open = (newTab: boolean) => {
         >{{ position }}</span
       >
       <AchievementArt :url="model.art" :size="ArtSize.Thumb" />
-      <Button
-        v-if="model.location"
-        :variant="ButtonVariant.Ref"
-        :size="ButtonSize.Inline"
-        class="min-w-0 flex-1 justify-start truncate text-row"
-        @click="open($event.ctrlKey)"
-        >{{ model.text }}</Button
-      >
-      <span v-else class="min-w-0 flex-1 truncate text-row text-foreground">{{
-        model.text
-      }}</span>
+      <!-- The box takes the width; the link does not. `Ref` draws its underline on its own
+           bottom border, so a button stretched to the row would underline the whole row and
+           centre the text inside it. -->
+      <div class="flex min-w-0 flex-1">
+        <Button
+          v-if="model.location"
+          :variant="ButtonVariant.Ref"
+          :size="ButtonSize.Inline"
+          class="min-w-0 shrink truncate text-row"
+          @click="open($event.ctrlKey)"
+          >{{ model.text }}</Button
+        >
+        <span v-else class="min-w-0 truncate text-row text-foreground">{{
+          model.text
+        }}</span>
+      </div>
       <!-- One value carrying two readings (spec §4.1): how much it opens, and in its colour
            whether you can play it tonight. The state is also a word inside, so the colour is
            never the only carrier. -->
