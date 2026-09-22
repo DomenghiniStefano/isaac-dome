@@ -301,3 +301,48 @@ The frame is CSS, and CSS is looked at. Said plainly rather than dressed up as c
   than policed by §9's rule 1 — try it, and record what it breaks.
 - Whether the page box's horizontal padding should itself shrink at compact — left open on
   purpose: it is a number to look at, not a decision to take on paper.
+
+**3.13b's answers** (2026-09-22), for the three tables that had columns to lose. The rule they
+were chosen by is Unlock's, applied literally: what survives is **who the row is, how it is
+doing, and the button that acts on it**; what falls is what *explains* the row and what is
+*derived* from it.
+
+| table | narrow set | what falls | fixed px of the 428 |
+|---|---|---|---|
+| Collection | sprite, name, state | quality, pools, origin | 192 |
+| Challenges | number, name, state, queue | character, goal | 224 |
+| Runs | character, outcome, floors | seed, source | 64 |
+
+The Collection's **quality** was the close call and it lost on arithmetic, not on taste: keeping
+its 96px would leave the item name 140 of the 428, and most item names truncate there. Challenges
+**keeps its queue button**, because a row that loses its action at the width where it is hardest
+to reach is a row that does nothing.
+
+**And two screens that fold nothing.** `SearchResults` and `WikiCategoryList` are not grids:
+their rows are flex with `min-w-0 flex-1 truncate`, and the toolbars around them — `FilterBar`,
+`SearchToolbar`, the wiki hero — are `flex-wrap`, so they fold by themselves. Runs' KPI strip
+already carried `@regular/page:grid-cols-4`. They were examined and left alone, which is a
+finding and not an omission.
+
+**A trap beside them**, because the next person will walk into it: `SearchRow.vue` is drawn both
+in the Search screen and inside `SearchPalette`, which is an overlay outside `<main>`. A
+`@max-compact/page:` written in that file measures a container the palette does not have, so
+there it would silently never match. A fold in a shared row needs its own container, or it needs
+to stay out.
+
+**What the pairs are held by**, since §9's rule 4 proves only that both edits were made and never
+that the right columns fell: `ui/src/lib/design/tables.ts` names the four pairs and their track
+counts, and `tables.test.ts` reads `utilities.css?raw` and fails when a narrow template is
+missing or is not shorter than its own full one. Adding a fifth table means adding it there
+first.
+
+**One thing that had to change for that test to be able to read anything**, and it is the kind of
+failure this repo writes rules against: `ui/vite.config.ts`'s `test.css.include` is an allowlist,
+and a stylesheet missing from it does not error — the `?raw` import **succeeds and yields `''`**.
+A test reading an absent file reports that the file declares nothing, which is indistinguishable
+from a rule nobody wrote. `utilities.css` was added to the list; the comment there now says why
+the list is not optional.
+
+**All three tables fold slightly before they have to** — full, they need ~710–750px against an
+800px `compact`. That is §5's shared scale working as decided: three sizes and not seven, at the
+price of a table or two folding early.
