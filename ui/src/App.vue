@@ -311,14 +311,14 @@ const takeover = computed(() => welcome.value.kind !== 'hidden')
               <template #icon><component :is="entry.icon" /></template>
             </SidebarItem>
           </SectionSidebar>
-          <!-- The page box (spec 3.13a §4): it scrolls nothing and carries the horizontal padding
-               only. The vertical padding is the screen's, because on a screen that fills its
-               height a bottom padding here would be sixty pixels of nothing under a list that
-               could have used them. It is also the `page` container every threshold is measured
-               against. -->
-          <main
-            class="@container/page min-h-0 min-w-0 flex-1 overflow-hidden px-5.5"
-          >
+          <!-- The page box (spec 3.13a §4): it scrolls nothing and pads nothing. The padding is
+               the screen's, on the box that scrolls: a gutter here put every scrollbar 22px
+               inside the window's edge, and a band meant to reach the edge had to take it back
+               with `-mx-5.5` (card #63). The vertical padding was already the screen's, because
+               on a screen that fills its height a bottom padding here would be sixty pixels of
+               nothing under a list that could have used them. It is also the `page` container
+               every threshold is measured against. -->
+          <main class="@container/page min-h-0 min-w-0 flex-1 overflow-hidden">
             <RouterView v-slot="{ Component, route }">
               <ProgressGate v-if="route.meta.needsProfile">
                 <component :is="Component" />

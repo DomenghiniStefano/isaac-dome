@@ -5,9 +5,9 @@ import KitSection from '../../KitSection.vue'
 
 // Three boxes, each its own `page` container, so a compact layout can be judged without resizing
 // the window — the thing container queries buy and media queries could not (spec 3.13a §11). The
-// widths straddle all three: 500 is below compact (800), 900 is past it and below regular (960),
-// and 1300 is past wide (1280).
-const widths = [500, 900, 1300]
+// widths straddle all three: 500 is below compact (844), 900 is past it and below regular (1004),
+// and 1350 is past wide (1324).
+const widths = [500, 900, 1350]
 
 const node = (id: number, text: string, done: boolean): UnlockNode => ({
   achievement: {

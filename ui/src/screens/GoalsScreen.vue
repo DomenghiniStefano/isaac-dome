@@ -106,10 +106,10 @@ const open = (location: TabLocation, newTab: boolean) => {
 </script>
 
 <template>
-  <!-- The shell's gutter is taken back by this box and handed to its children, so the band
-       can be the full width of the page without overflowing it (spec §4.2). The screen does
-       not scroll as one block: the band stays, and the two panes take the height left. -->
-  <div class="-mx-5.5 flex h-full min-h-0 flex-col overflow-hidden">
+  <!-- The gutter is the children's, so the band can be the full width of the page without
+       overflowing it (spec §4.2). The screen does not scroll as one block: the band stays, and
+       the two panes take the height left. -->
+  <div class="flex h-full min-h-0 flex-col overflow-hidden">
     <GoalsHero />
     <ProfileError
       v-if="queue.status === LoadStatus.Failed"
@@ -142,9 +142,11 @@ const open = (location: TabLocation, newTab: boolean) => {
            are two columns of different lengths, and one scrollbar for both would scroll the
            queue out of sight to reach the bottom of the recommendations — which is the one
            thing the queue's fixed place exists to prevent. So above `wide` the row holds the
-           height and each pane scrolls inside itself. -->
+           height and each pane scrolls inside itself. Whichever box scrolls at the right-hand
+           edge carries the gutter inside it, so its scrollbar sits on the window's edge: the
+           column when stacked, the queue's pane side by side (card #63). -->
       <div
-        class="flex min-h-0 flex-1 flex-col gap-4 overflow-y-auto @wide/page:flex-row @wide/page:items-stretch @wide/page:overflow-hidden"
+        class="-mx-5.5 flex min-h-0 flex-1 flex-col gap-4 overflow-y-auto px-5.5 @wide/page:flex-row @wide/page:items-stretch @wide/page:overflow-hidden @wide/page:pr-0"
       >
         <AddPane
           class="@wide/page:min-h-0 @wide/page:w-add-pane @wide/page:shrink-0 @wide/page:overflow-y-auto"
@@ -163,7 +165,7 @@ const open = (location: TabLocation, newTab: boolean) => {
         />
         <div
           v-if="readable"
-          class="min-w-0 flex-1 @wide/page:min-h-0 @wide/page:overflow-y-auto"
+          class="min-w-0 flex-1 @wide/page:min-h-0 @wide/page:overflow-y-auto @wide/page:pr-5.5"
         >
           <!-- Both panes fill the row: two panels of the same height read as one workbench,
                where one tall and one short read as a panel and a leftover. -->
