@@ -36,7 +36,7 @@ export const en: MessageSchema = {
   },
   routes: {
     search: 'Search',
-    goals: 'Suggested goals',
+    goals: 'Goals',
     completion: 'Completion',
     unlock: 'Unlock',
     plan: 'Plan',
@@ -679,7 +679,7 @@ export const en: MessageSchema = {
     opensNothing: 'opens nothing',
     detail: 'Show the detail',
     queueCount: 'Your queue',
-    addPane: 'To add',
+    addPane: 'Suggested goals',
     queueTitle: 'The queue',
     hint: {
       idle: 'drag to reorder — no move is ever refused',
@@ -777,7 +777,7 @@ export const en: MessageSchema = {
   // The landing screen: what you get, how, why it is worth it, and the one action.
   goals: {
     intro:
-      'Things you can unlock right now. At the top the ones that open the most, below the ones you are closest to.',
+      'What to unlock and in what order: take from the suggestions, or ask for what you want, and queue it.',
     fanOut: 'They open the most',
     closeness: 'Almost there',
     inPlan: 'In your Plan',
