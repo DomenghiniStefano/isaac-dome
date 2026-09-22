@@ -3,6 +3,7 @@
 // header and the rows take under the threshold.
 export const FoldingTable = {
   Unlock: 'unlock',
+  Collection: 'collection',
 } as const
 export type FoldingTable = (typeof FoldingTable)[keyof typeof FoldingTable]
 
@@ -17,4 +18,5 @@ export const TableTracks: Record<
   { full: number; narrow: number }
 > = {
   [FoldingTable.Unlock]: { full: 7, narrow: 4 },
+  [FoldingTable.Collection]: { full: 6, narrow: 3 },
 }
