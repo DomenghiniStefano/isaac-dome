@@ -149,6 +149,9 @@ const LAYOUT: &[&str] = &[
     "#ev:youtube",
     "disambig msg",
     "header characters",
+    // The tainted pages' own header, and nothing but the header: it went uncounted while
+    // the preamble it sits in was thrown away unread.
+    "header tainted characters",
     "storage page",
     "unlockable",
     "header transformations",
