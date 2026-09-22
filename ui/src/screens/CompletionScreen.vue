@@ -23,12 +23,12 @@ const kpis = computed(() =>
 </script>
 
 <template>
-  <!-- The shell's gutter is taken back by this box and handed to its children, so the band
-       can be the full width of the page without overflowing it — the same move the wiki's
-       screens make, and `WikiLanding.vue` records what doing it the other way round cost.
-       The screen does not scroll: the band stays, and the matrix takes the height that is
-       left and scrolls inside itself (spec 3.13a, card #58). -->
-  <div class="-mx-5.5 flex h-full min-h-0 flex-col overflow-hidden">
+  <!-- The gutter is the children's, so the band can be the full width of the page without
+       overflowing it — the same shape as the wiki's screens, and `WikiLanding.vue` records
+       what doing it the other way round cost. The screen does not scroll: the band stays, and
+       the matrix takes the height that is left and scrolls inside itself (spec 3.13a, card
+       #58). -->
+  <div class="flex h-full min-h-0 flex-col overflow-hidden">
     <div v-if="completion.status === LoadStatus.Failed" class="px-5.5 pt-5">
       <ProfileError :error="completion.error" @retry="completion.load()" />
     </div>
