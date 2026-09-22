@@ -158,7 +158,7 @@ fn next_steps_on_the_real_profile_are_unlockable_now_by_fan_out() {
         None,
         |r: &ipc::IconRef| Some(format!("{}://{}", ipc::ICON_SCHEME, r.to_path())),
     );
-    let steps = next_steps(&v);
+    let steps = next_steps(&v, &Default::default());
     let all: Vec<&ipc::UnlockNode> = steps.sections.iter().flat_map(|s| s.steps.iter()).collect();
     assert!(!all.is_empty(), "the real profile has work left to do");
     assert!(all.iter().all(|n| !n.done));
@@ -512,7 +512,7 @@ fn a_young_profile_has_a_closeness_section_and_it_is_ordered_by_distance() {
         return;
     };
 
-    let steps = next_steps(&v);
+    let steps = next_steps(&v, &Default::default());
     let Some(close) = steps
         .sections
         .iter()
@@ -586,7 +586,7 @@ fn the_reference_profile_has_crossed_every_counter_threshold() {
         "measured 2026-09-13: none stood on this profile, and these do: {counters:?}"
     );
     assert!(
-        next_steps(&v)
+        next_steps(&v, &Default::default())
             .sections
             .iter()
             .all(|x| x.basis != ipc::StepsBasis::Closeness),

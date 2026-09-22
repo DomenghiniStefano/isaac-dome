@@ -3,6 +3,8 @@
 //! a value that looks computed — `GraphInfo::Stub` left the wire with M2, because a node
 //! saying "the graph doesn't exist" would now be lying.
 
+use std::collections::BTreeSet;
+
 use serde::{Deserialize, Serialize};
 use wiki::{Dataset, Target};
 
@@ -281,9 +283,10 @@ pub struct GraphViews {
 }
 
 /// The pair, built from one view: the steps are the filter over exactly the list that
-/// travels beside them.
-pub fn graph_views(unlock: UnlockView) -> GraphViews {
-    let steps = next_steps(&unlock);
+/// travels beside them. `queued` is what the plan queue already holds, which the steps leave
+/// out — see `next_steps`.
+pub fn graph_views(unlock: UnlockView, queued: &BTreeSet<u32>) -> GraphViews {
+    let steps = next_steps(&unlock, queued);
     GraphViews { unlock, steps }
 }
 
@@ -854,7 +857,11 @@ fn closeness(n: &UnlockNode) -> Option<u32> {
 ///
 /// Ties break by slot ascending, so two calls on the same profile give the same list: an
 /// order that shuffles reads as the app changing its mind.
-pub fn next_steps(view: &UnlockView) -> NextSteps {
+///
+/// What is already in the plan queue is not a suggestion: it is a decision taken, and a
+/// place under the cap spent on it is a place the next candidate did not get. It leaves
+/// before either section claims, so it falls back to neither.
+pub fn next_steps(view: &UnlockView, queued: &BTreeSet<u32>) -> NextSteps {
     let available: Vec<&UnlockNode> = view
         .nodes
         .iter()
@@ -866,6 +873,11 @@ pub fn next_steps(view: &UnlockView) -> NextSteps {
                     ..
                 }
             )
+        })
+        .filter(|n| match n.achievement {
+            AchievementRef::Known { id, .. } => !queued.contains(&id),
+            // A slot the catalog does not name cannot be queued.
+            AchievementRef::Unknown { .. } => true,
         })
         .collect();
 
