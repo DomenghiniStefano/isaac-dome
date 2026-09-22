@@ -14,7 +14,8 @@ const state = computed(() => gateState(profile.setup))
 
 <template>
   <slot v-if="state.kind === 'content'" />
-  <div v-else class="flex flex-col gap-4">
+  <!-- The shell's page box pads nothing: the gutter is the screen's, and this stands in for one. -->
+  <div v-else class="flex flex-col gap-4 px-5.5 pt-5">
     <Skeleton class="h-10 w-full" />
     <Skeleton class="h-50 w-full" />
   </div>
