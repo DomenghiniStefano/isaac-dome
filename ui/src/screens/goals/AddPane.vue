@@ -97,8 +97,9 @@ const seeAll: TabLocation = {
                 isQueued(step, queued) && 'opacity-disabled',
               ]"
             >
-              <!-- A row already in the queue stays, dimmed, with its button refused: the list
-                 must not shuffle under the finger while you add to it (spec §4). -->
+              <!-- A queued row is not suggested (Rust leaves it out), so this only lasts the
+                 moment between adding it and the suggestions coming back: dimmed, its button
+                 refused, so the same click cannot land twice. -->
               <GoalRow
                 :model="rowModel(step, t)"
                 :node="step"

@@ -172,5 +172,5 @@
 # Rust does not move: the cycle is frontend end to end, and the spec's §7 says that was checked
 # rather than hoped — everything the new row draws was already on the wire.
 
-RUST_TESTS=1227
-UI_TESTS=775
+RUST_TESTS=1229
+UI_TESTS=778
