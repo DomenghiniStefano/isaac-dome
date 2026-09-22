@@ -70,12 +70,11 @@ const open = (category: WikiCategory, event: MouseEvent) => {
 </script>
 
 <template>
-  <!-- The gutter is moved, not sold off: the shell puts `px-5.5` on the page box, and a band
-       that reached the window's edge by growing past it opened a horizontal scrollbar under
-       the whole screen (seen 2026-09-21). So the scrolling box takes the gutter back with
-       `-mx-5.5` and hands it to its children instead — the band then simply is the full
-       width, and nothing overflows anything. -->
-  <div class="-mx-5.5 flex h-full flex-col overflow-y-auto pb-15">
+  <!-- The gutter is the children's, not this box's: the band is the full width of the page
+       and the sections under it carry `px-5.5`. A band that reached the window's edge by
+       growing past a gutter opened a horizontal scrollbar under the whole screen (seen
+       2026-09-21), which is why the shell's page box pads nothing (card #63). -->
+  <div class="flex h-full flex-col overflow-y-auto pb-15">
     <!-- The landing opens on the same band its pages do, and the categories come straight
          under it: what somebody arriving here wants is a way in, not the provenance of the
          dataset — that stays, and it goes last. -->

@@ -23,9 +23,9 @@ describe('the page thresholds', () => {
   })
 
   it('leave the window floor inside compact', () => {
-    // 640 window (spec §8) − 168 sidebar at its minimum − 44 of horizontal padding on the page
-    // box. If compact ever drops below that, the narrowest window the app allows draws a layout
-    // that was never designed for it.
-    expect(ThresholdPx[Threshold.Compact]).toBeGreaterThan(640 - 168 - 44)
+    // 640 window (spec §8) − 168 sidebar at its minimum: the page box pads nothing since card
+    // #63, so that is its whole width. If compact ever drops below that, the narrowest window the
+    // app allows draws a layout that was never designed for it.
+    expect(ThresholdPx[Threshold.Compact]).toBeGreaterThan(640 - 168)
   })
 })
