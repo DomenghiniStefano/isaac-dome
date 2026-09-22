@@ -138,34 +138,26 @@ const open = (location: TabLocation, newTab: boolean) => {
         </template>
       </DiagnosticsList>
       <QueueError v-if="queue.mutationFailed" :error="queue.mutationError" />
-      <!-- Stacked, the two panes are one column and the column scrolls. Side by side they
+      <!-- **The queue comes first, and the suggestions follow it** — stacked, the queue is the
+           top of the column and you scroll past it to what you could add; side by side, the
+           queue is the left-hand pane. The screen answers "what am I doing" before it answers
+           "what else could I do", and the second question is only worth reading once the first
+           has been.
+
+           Stacked, the two panes are one column and the column scrolls. Side by side they
            are two columns of different lengths, and one scrollbar for both would scroll the
            queue out of sight to reach the bottom of the recommendations — which is the one
            thing the queue's fixed place exists to prevent. So above `wide` the row holds the
            height and each pane scrolls inside itself. Whichever box scrolls at the right-hand
            edge carries the gutter inside it, so its scrollbar sits on the window's edge: the
-           column when stacked, the queue's pane side by side (card #63). -->
+           column when stacked, and side by side **the suggestions**, which is where the gutter
+           went when the two changed places (card #63). -->
       <div
         class="-mx-5.5 flex min-h-0 flex-1 flex-col gap-4 overflow-y-auto px-5.5 @wide/page:flex-row @wide/page:items-stretch @wide/page:overflow-hidden @wide/page:pr-0"
       >
-        <AddPane
-          class="@wide/page:min-h-0 @wide/page:w-add-pane @wide/page:shrink-0 @wide/page:overflow-y-auto"
-          :sections="graph.view?.steps.sections ?? []"
-          :queued="queued"
-          :can-write="canWrite"
-          :busy="queue.busy"
-          :want-active="target !== null"
-          :no-catalog="noCatalog"
-          :blocks="blocks"
-          :banner="banner"
-          @add="queue.add($event)"
-          @pick="ask"
-          @clear="stopAsking"
-          @navigate="open"
-        />
         <div
           v-if="readable"
-          class="min-w-0 flex-1 @wide/page:min-h-0 @wide/page:overflow-y-auto @wide/page:pr-5.5"
+          class="min-w-0 flex-1 @wide/page:min-h-0 @wide/page:overflow-y-auto"
         >
           <!-- Both panes fill the row: two panels of the same height read as one workbench,
                where one tall and one short read as a panel and a leftover. -->
@@ -180,6 +172,21 @@ const open = (location: TabLocation, newTab: boolean) => {
             @remove="queue.remove"
           />
         </div>
+        <AddPane
+          class="@wide/page:min-h-0 @wide/page:w-add-pane @wide/page:shrink-0 @wide/page:overflow-y-auto @wide/page:pr-5.5"
+          :sections="graph.view?.steps.sections ?? []"
+          :queued="queued"
+          :can-write="canWrite"
+          :busy="queue.busy"
+          :want-active="target !== null"
+          :no-catalog="noCatalog"
+          :blocks="blocks"
+          :banner="banner"
+          @add="queue.add($event)"
+          @pick="ask"
+          @clear="stopAsking"
+          @navigate="open"
+        />
       </div>
     </div>
     <div v-else class="flex flex-col gap-4 px-5.5 pt-4">
