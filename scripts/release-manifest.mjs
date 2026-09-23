@@ -7,9 +7,10 @@
 // ones who cannot fix it. There is no CI to catch this later; there is this script and the
 // person reading its output.
 //
-// It invents nothing. The version, the endpoint and the public key all come out of
-// `crates/app/tauri.conf.json`, which is where Tauri itself reads them, so the manifest cannot
-// disagree with the app that will be asked to install it. The owner and the repository are read
+// It invents nothing. The endpoint and the public key come out of `crates/app/tauri.conf.json`
+// and the version out of the root `package.json`, which is where Tauri itself reads each of them
+// -- the config names that file as its `version` -- so the manifest cannot disagree with the app
+// that will be asked to install it. The owner and the repository are read
 // out of the endpoint URL for the same reason -- a second place to write "DomenghiniStefano" is
 // a second place for it to be wrong.
 //
@@ -20,6 +21,7 @@ import { fileURLToPath } from 'node:url'
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..')
 const configPath = join(root, 'crates/app/tauri.conf.json')
+const packagePath = join(root, 'package.json')
 const nsisDir = join(root, 'target/release/bundle/nsis')
 const outPath = join(root, 'target/release/latest.json')
 
@@ -33,10 +35,21 @@ const die = (message) => {
 }
 
 const config = JSON.parse(readFileSync(configPath, 'utf8'))
-const version = config.version
+const version = JSON.parse(readFileSync(packagePath, 'utf8')).version
 const updater = config.plugins?.updater ?? {}
 
-if (!version) die(`no "version" in ${configPath}`)
+if (!version) die(`no "version" in ${packagePath}`)
+
+// **One place for the version.** Tauri takes a literal `version` in the config over the file it
+// could name instead, so a number written back into `tauri.conf.json` would build one version
+// while this manifest announced another -- and the app, comparing against what is running, would
+// then call itself up to date for ever.
+if (config.version !== '../../package.json') {
+  die(
+    `tauri.conf.json's "version" is ${JSON.stringify(config.version)}, and it has to be ` +
+      '"../../package.json": the version lives in the root package.json. Bump it with `pnpm bump`.',
+  )
+}
 
 // **The placeholder guard.** `pubkey` ships empty so that a release build still starts -- an
 // empty key fails closed, every download ending in `rejected` rather than in an unverified

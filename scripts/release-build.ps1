@@ -39,7 +39,9 @@ if ($Notes -and -not (Test-Path $Notes)) {
     exit 1
 }
 
-$version = (Get-Content (Join-Path $root 'crates\app\tauri.conf.json') -Raw | ConvertFrom-Json).version
+# The root `package.json` holds the version, and `tauri.conf.json` names that file rather than a
+# number; `release-manifest.mjs` refuses a config that writes one back.
+$version = (Get-Content (Join-Path $root 'package.json') -Raw | ConvertFrom-Json).version
 $tag = "v$version"
 
 # **Everything that can refuse, refuses before the build starts.** A publish that turns out to be
@@ -66,13 +68,13 @@ if ($Publish) {
         exit 1
     }
     if (git -C $root tag -l $tag) {
-        Write-Host "$tag already exists. Bump the version in crates/app/tauri.conf.json." -ForegroundColor Red
+        Write-Host "$tag already exists. Bump it with pnpm bump <patch|minor|major>." -ForegroundColor Red
         exit 1
     }
 }
 
 Write-Host "Building IsaacDome $version, signed." -ForegroundColor Cyan
-Write-Host 'The version comes from crates/app/tauri.conf.json. Bump it there before a release.'
+Write-Host 'The version comes from the root package.json. Bump it with pnpm bump before a release.'
 
 # `-AsSecureString` so the password is never echoed and never lands in the console history.
 $secure = Read-Host -AsSecureString 'Password of the signing key'
