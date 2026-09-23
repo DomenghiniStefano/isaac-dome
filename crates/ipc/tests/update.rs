@@ -8,6 +8,7 @@
 
 use ipc::for_tests::update_at;
 use ipc::{UpdateFailure, UpdatePhase, UpdateReason, UpdateState};
+use wiki::{Block, Inline, Style};
 
 const VERSION: &str = "0.1.0";
 
@@ -54,7 +55,7 @@ fn a_check_after_an_answer_is_allowed() {
         UpdatePhase::UpToDate,
         UpdatePhase::Ready {
             version: "0.2.0".into(),
-            notes: None,
+            notes: vec![],
         },
         UpdatePhase::Failed {
             reason: UpdateFailure::Offline,
@@ -111,7 +112,7 @@ fn a_chunk_arriving_after_the_end_changes_nothing() {
         },
         UpdatePhase::Ready {
             version: "0.2.0".into(),
-            notes: None,
+            notes: vec![],
         },
         UpdatePhase::Idle,
     ] {
@@ -194,9 +195,18 @@ fn every_phase_is_tagged_and_its_fields_are_camel_case() {
         (
             UpdatePhase::Ready {
                 version: "0.2.0".into(),
-                notes: Some("what changed".into()),
+                notes: vec![Block::Paragraph {
+                    inline: vec![Inline::Text {
+                        text: "what changed".into(),
+                        style: Style::Plain,
+                    }],
+                }],
             },
-            serde_json::json!({ "kind": "ready", "version": "0.2.0", "notes": "what changed" }),
+            serde_json::json!({
+                "kind": "ready",
+                "version": "0.2.0",
+                "notes": [{ "kind": "paragraph", "inline": [{ "kind": "text", "text": "what changed", "style": "plain" }] }],
+            }),
         ),
         (
             UpdatePhase::Failed {
@@ -242,4 +252,33 @@ fn asking_to_install_nothing_is_the_one_error_that_crosses() {
         serde_json::to_value(ipc::IpcError::UpdateNotReady).unwrap(),
         serde_json::json!({ "kind": "updateNotReady" })
     );
+}
+
+/// The notes cross as blocks, never as the markdown they arrived in: the manifest is not
+/// signed, so its text reaches the window as words and never as markup. No notes at all and
+/// notes that are only whitespace are the same thing to draw.
+#[test]
+fn the_notes_are_read_into_blocks_when_the_download_is_ready() {
+    let mut state = UpdateState::default();
+    state.ready(
+        "0.2.0".into(),
+        Some("### What changed\n\n- **One.**".into()),
+    );
+    let UpdatePhase::Ready { notes, .. } = state.phase() else {
+        panic!("expected ready, found {:?}", state.phase());
+    };
+    assert_eq!(notes, &ipc::release_notes("### What changed\n\n- **One.**"));
+    assert!(matches!(
+        notes.first(),
+        Some(Block::Heading { level: 3, .. })
+    ));
+
+    for none in [None, Some("  \n".to_string())] {
+        let mut state = UpdateState::default();
+        state.ready("0.2.0".into(), none);
+        assert!(matches!(
+            state.phase(),
+            UpdatePhase::Ready { notes, .. } if notes.is_empty()
+        ));
+    }
 }
