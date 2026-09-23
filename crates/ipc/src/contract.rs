@@ -123,6 +123,7 @@ pub fn render() -> String {
     decl::<core_save::marks::CharacterGroup>(&cfg, &mut out);
     decl::<crate::CharacterRow>(&cfg, &mut out);
     decl::<crate::MarkArtView>(&cfg, &mut out);
+    decl::<crate::SecondLevelView>(&cfg, &mut out);
     decl::<crate::MarksTotals>(&cfg, &mut out);
     decl::<crate::MarksMatrix>(&cfg, &mut out);
     decl::<crate::StatusView>(&cfg, &mut out);
