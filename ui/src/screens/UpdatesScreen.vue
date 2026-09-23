@@ -25,6 +25,7 @@ import {
 import { AppEvent, watchAppEvent } from '@/lib/window/appEvents'
 import { useSettingsStore } from '@/stores/settings'
 import { useUpdateStore } from '@/stores/update'
+import WikiBlocks from '@/components/wiki/WikiBlocks.vue'
 import ScreenHeader from './ScreenHeader.vue'
 
 const settings = useSettingsStore()
@@ -116,7 +117,7 @@ const failure = computed(() =>
     </Field>
     <Field v-if="notes">
       <FieldLabel>{{ t('updates.notesTitle') }}</FieldLabel>
-      <FieldDescription>{{ notes }}</FieldDescription>
+      <WikiBlocks :blocks="notes" />
     </Field>
     <div class="flex items-center gap-2">
       <Button
