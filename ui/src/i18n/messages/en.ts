@@ -83,7 +83,10 @@ export const en: MessageSchema = {
     collected: 'collected',
     wouldOpen: 'If you finish this run',
     missing: 'marks still to take',
-    secondLevel: 'on hard',
+    secondLevel: {
+      hard: 'on hard',
+      ultraGreedier: 'on Ultra Greedier',
+    },
     noCondition: 'the game does not say',
     column: {
       achievement: 'Achievement',
@@ -730,16 +733,16 @@ export const en: MessageSchema = {
     kpi: {
       columns: 'complete bosses',
       columnsExplain:
-        'Bosses every character has beaten on hard, among that column’s readable cells. The same count as “complete characters”, read down a column instead of across a row — and it is what the paper beside it draws: a symbol appears at hard only once its column is full.',
+        'Bosses every character has beaten on hard (Greed on Ultra Greedier), among that column’s readable cells. The same count as “complete characters”, read down a column instead of across a row — and it is what the paper beside it draws: a symbol appears at hard only once its column is full.',
       normal: 'marks at normal',
       normalExplain:
         'Cells with a mark, among those the save lets us read. A mark taken on hard counts here too, because beating a boss on hard is the harder of the two. Unreadable cells stay out of the denominator.',
       hard: 'marks at hard',
       hardExplain:
-        'Cells with the second level, over the same denominator. Never more than the count beside it: every hard mark is also a normal one.',
+        'Cells with the second level, over the same denominator: hard in the boss columns, Ultra Greedier in Greed’s. Never more than the count beside it, because a mark at the second level counts as a normal one too.',
       complete: 'complete characters',
       completeExplain:
-        'Characters with every one of their readable cells at hard, which is what the game’s own widget means by a full row. A character with unreadable cells is complete over fewer columns.',
+        'Characters with every one of their readable cells at hard, and Greed at Ultra Greedier, which is what the game’s own widget means by a full row. A character with unreadable cells is complete over fewer columns.',
     },
     card: {
       title: 'Marks matrix',
@@ -767,6 +770,7 @@ export const en: MessageSchema = {
       empty: 'never done',
       normal: 'normal',
       hard: 'hard',
+      ultraGreedier: 'Ultra Greedier',
       unknown: "we can't tell for this character",
       unexpected: 'a value we did not expect:',
     },

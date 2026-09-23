@@ -1,7 +1,7 @@
 use catalog::Catalog;
 use ipc::{
-    counter_index, marks_matrix, Cell, CellLevel, CharacterGroup, IconRef, MarkArtView, BOSSES,
-    CHARACTERS,
+    counter_index, marks_matrix, Cell, CellLevel, CharacterGroup, IconRef, MarkArtView,
+    SecondLevelView, BOSSES, CHARACTERS,
 };
 
 #[test]
@@ -567,4 +567,36 @@ fn without_the_game_there_is_no_widget_to_ask_for() {
     // where the band should simply have no picture.
     let m = marks_matrix(&counters(523, &[]), None, |r| Some(r.to_path()));
     assert!(m.widget_url.is_none());
+}
+
+/// What the second level of each column is called, one per boss (B66). In Greed bit 1 is
+/// Ultra Greedier, measured on 2026-09-12 on three characters, and a mode is not a
+/// difficulty; in the other eleven it is hard, on the one observation of 2026-09-20 and the
+/// owner's wording for the screen. The list is read from Rust so the screen never decides
+/// which column is Greed.
+#[test]
+fn greed_names_its_second_level_ultra_greedier_and_the_other_columns_hard() {
+    let m = marks_matrix(&counters(523, &[]), None, no_icon);
+    assert_eq!(m.second_levels.len(), m.bosses.len(), "one per column");
+    for (boss, level) in m.bosses.iter().zip(&m.second_levels) {
+        let expected = if boss == "Greed" {
+            SecondLevelView::UltraGreedier
+        } else {
+            SecondLevelView::Hard
+        };
+        assert_eq!(*level, expected, "{boss}");
+    }
+    assert!(
+        m.second_levels.contains(&SecondLevelView::UltraGreedier),
+        "the one column the rule is about is in the list"
+    );
+}
+
+#[test]
+fn a_second_level_crosses_as_a_bare_camel_case_string() {
+    let m = marks_matrix(&counters(523, &[]), None, no_icon);
+    let json = serde_json::to_value(&m).expect("serializes");
+    let levels = json["secondLevels"].as_array().expect("an array");
+    assert_eq!(levels[0], "hard");
+    assert_eq!(levels[7], "ultraGreedier");
 }
