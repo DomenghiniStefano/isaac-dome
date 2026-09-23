@@ -72,11 +72,15 @@ const forward = computed(() => ({
           </TableRow>
         </TableBody>
       </Table>
+      <!-- A heading inside the text is the section heading's grammar at a smaller step — the
+           band's bar and the highlight — because the pixel font has no weights and a colour
+           alone next to `foreground` did not read as a heading (card #73). -->
       <h3
         v-else-if="block.kind === 'heading' && block.level <= 3"
-        class="text-control text-highlight"
+        class="flex items-center gap-2 text-body text-highlight not-first:mt-2"
       >
-        <WikiInline :inline="block.inline" v-bind="forward" />
+        <span class="h-3 w-1 shrink-0 bg-band" />
+        <span><WikiInline :inline="block.inline" v-bind="forward" /></span>
       </h3>
       <h4
         v-else-if="block.kind === 'heading'"
