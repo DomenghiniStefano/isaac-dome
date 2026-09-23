@@ -51,9 +51,23 @@ and the signing key from step 1 must never be committed afterwards either.
 
 ### 1. Bump the version
 
-`crates/app/tauri.conf.json`, the `version` field. **That file is the only place the version is
-written**: `crates/app/Cargo.toml` keeps a version of its own and Tauri ignores it when the
-config names one, so there is nothing to keep in step.
+```powershell
+pnpm bump minor                   # or patch, major, or an exact 1.2.3
+```
+
+Commit the result on `develop` and push it. **The root `package.json` is the only place the
+version is written**, since 2026-09-23: `crates/app/tauri.conf.json` names that file as its
+`version` (`"../../package.json"`), and Tauri reads the number from there. `crates/app/Cargo.toml`
+keeps a version of its own and Tauri ignores it when the config names one, so there is nothing
+to keep in step. `pnpm release:manifest` refuses a config that writes a number back, because
+Tauri would build that one while the manifest announced the other.
+
+**`pnpm bump`, not `pnpm version`.** The bare command commits *and tags* `v<version>` wherever
+you are — `develop`, at this step — and step 4 then stops on "the tag already exists", because
+the tag belongs on `master` and is created there. `bump` is `pnpm version --no-git-tag-version`,
+which only rewrites the file. **Neither `.npmrc` nor `pnpm-workspace.yaml` can switch the tag
+off**: measured on 2026-09-23 on pnpm 12.4.1, `git-tag-version=false` in the first and
+`gitTagVersion: false` in the second are both ignored, and the flag is the only thing it obeys.
 
 ### 2. Build, signed
 
@@ -110,16 +124,17 @@ pnpm release:manifest                    # or: pnpm release:manifest notes.md
 `pnpm release` already ran this for you; run it on its own when the build was fine and you want
 to write the manifest again, or to attach release notes.
 
-It reads the version, the endpoint and the public key out of `tauri.conf.json` — the same file
-Tauri reads, so the manifest cannot disagree with the app that will be asked to install it — and
-writes `target/release/latest.json`.
+It reads the endpoint and the public key out of `tauri.conf.json` and the version out of the
+root `package.json` — the same files Tauri reads, so the manifest cannot disagree with the app
+that will be asked to install it — and writes `target/release/latest.json`.
 
-It **refuses** rather than warns, in four places, and each refusal is a release that would have
-been broken for everybody at once:
+It **refuses** rather than warns, and each refusal is a release that would have been broken for
+everybody at once:
 
 | it stops on | because |
 |---|---|
 | `pubkey` still empty | the release would offer an update nobody can install |
+| `tauri.conf.json` names a version instead of `../../package.json` | Tauri would build that number while the manifest announced the other one |
 | no `*-setup.exe` | there is nothing to publish; the build did not run |
 | the installer's name does not carry the version | a manifest saying 0.3.0 beside a 0.2.0 installer installs the wrong build, and the app then reports itself up to date for ever, because the plugin compares against what is *running* |
 | no `.sig` beside the installer | the build ran unsigned (step 2), and the signature is not optional |
@@ -144,7 +159,7 @@ password are never spent on a publish that was impossible from the start:
 | `gh` not authenticated | the upload would fail at the very end |
 | HEAD is not `master` | a release is a tag on `master`, and tagging elsewhere makes the landing page and the release disagree |
 | commits not pushed | the tag would name a commit nobody else can fetch |
-| the tag already exists | the version was not bumped |
+| the tag already exists | the version was not bumped — or it was bumped with a bare `pnpm version`, which tags on the spot (step 1) |
 
 Then it prints the repository, the tag and the three files with their sizes, and asks you to
 **type the version** — not to press `y`. Publishing the wrong version is the mistake worth a
