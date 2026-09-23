@@ -14,6 +14,7 @@
 use serde::Serialize;
 
 use crate::graph::{AchievementRef, MarkColumnView, MarkLevelView, RequirementView, UnlockNode};
+use crate::marks::{second_level_of_view, SecondLevelView};
 use crate::runs::RunView;
 
 /// One achievement this run could open, and how much it opens in turn: the graph already
@@ -33,6 +34,10 @@ pub struct LiveOpen {
     pub character_name: String,
     pub column: MarkColumnView,
     pub level: MarkLevelView,
+    /// The word for `level` when it is `second`, in this column's own terms (B66): Ultra
+    /// Greedier in Greed, hard elsewhere. `None` at the base level, which the screen says nothing
+    /// extra for.
+    pub second_level: Option<SecondLevelView>,
     pub achievements: Vec<LiveAchievement>,
 }
 
@@ -204,6 +209,10 @@ pub fn live_view(
                 character_name: name,
                 column,
                 level,
+                second_level: match level {
+                    MarkLevelView::Base => None,
+                    MarkLevelView::Second => Some(second_level_of_view(column)),
+                },
                 achievements: vec![offered(node)],
             }),
         }

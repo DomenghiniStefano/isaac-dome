@@ -88,7 +88,10 @@ export const it = {
     collected: 'raccolti',
     wouldOpen: 'Se finisci questa run',
     missing: 'marchi da prendere',
-    secondLevel: 'in hard',
+    secondLevel: {
+      hard: 'in hard',
+      ultraGreedier: 'in Ultra Greedier',
+    },
     noCondition: 'il gioco non lo scrive',
     column: {
       achievement: 'Achievement',
@@ -737,16 +740,16 @@ export const it = {
     kpi: {
       columns: 'boss completi',
       columnsExplain:
-        'Boss che ogni personaggio ha battuto in hard, fra le celle leggibili di quella colonna. È lo stesso conto di “personaggi completi”, letto per colonna invece che per riga — ed è quello che disegna la carta qui accanto: un simbolo compare in hard solo quando la colonna è piena.',
+        'Boss che ogni personaggio ha battuto in hard (in Greed, in Ultra Greedier), fra le celle leggibili di quella colonna. È lo stesso conto di “personaggi completi”, letto per colonna invece che per riga — ed è quello che disegna la carta qui accanto: un simbolo compare in hard solo quando la colonna è piena.',
       normal: 'marchi in normale',
       normalExplain:
         'Celle con un segno, fra quelle che il salvataggio lascia leggere. Un marchio preso in hard conta anche qui, perché battere un boss in hard è la più difficile delle due. Le celle non leggibili restano fuori dal denominatore.',
       hard: 'marchi in hard',
       hardExplain:
-        'Celle con il secondo livello, sullo stesso denominatore. Mai più del numero accanto: ogni marchio hard è anche un marchio normale.',
+        'Celle con il secondo livello, sullo stesso denominatore: hard nelle colonne dei boss, Ultra Greedier in quella di Greed. Mai più del numero accanto, perché un marchio al secondo livello conta anche come marchio normale.',
       complete: 'personaggi completi',
       completeExplain:
-        'Personaggi con tutte le celle leggibili in hard, che è quello che il widget del gioco intende per riga piena. Chi ha celle non leggibili risulta completo su meno colonne.',
+        'Personaggi con tutte le celle leggibili in hard, e Greed in Ultra Greedier, che è quello che il widget del gioco intende per riga piena. Chi ha celle non leggibili risulta completo su meno colonne.',
     },
     card: {
       title: 'Matrice dei marchi',
@@ -774,6 +777,7 @@ export const it = {
       empty: 'mai fatto',
       normal: 'normale',
       hard: 'hard',
+      ultraGreedier: 'Ultra Greedier',
       unknown: 'non lo sappiamo dire per questo personaggio',
       unexpected: 'un valore che non ci aspettavamo:',
     },

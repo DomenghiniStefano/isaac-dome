@@ -210,5 +210,5 @@
 # empty — Dead God's `text` in `achievements.xml` is blank, and the row came up with no name.
 # UI does not move: the search row's drawing on paper is presentation, looked at in the browser.
 
-RUST_TESTS=1251
-UI_TESTS=788
+RUST_TESTS=1254
+UI_TESTS=792

@@ -72,7 +72,8 @@ pub use mark_art::{
 };
 pub use marks::{
     character_for, counter_index, marks_matrix, marks_totals, Cell, CellLevel, CharacterGroup,
-    CharacterRow, MarkArtView, MarksMatrix, MarksTotals, BOSSES, CHARACTERS, CHARACTER_KEYS,
+    CharacterRow, MarkArtView, MarksMatrix, MarksTotals, SecondLevelView, BOSSES, CHARACTERS,
+    CHARACTER_KEYS,
 };
 pub use preview::{preview_of, CandidatePreview, PreviewCount};
 pub use profile::{

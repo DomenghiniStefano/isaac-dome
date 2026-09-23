@@ -1,11 +1,17 @@
 import { describe, expect, it } from 'vitest'
 import { completionMatrix } from '@/lib/ipc/fixtures/completion'
-import { CellLevel, type Cell, type MarksMatrix } from '@/lib/ipc/types'
+import {
+  CellLevel,
+  SecondLevelView,
+  type Cell,
+  type MarksMatrix,
+} from '@/lib/ipc/types'
 import {
   CellStatus,
   MatrixGroup,
   TallyTone,
   cellReading,
+  cellStatusKey,
   columnTallies,
   completionKpis,
   matrixGroups,
@@ -379,5 +385,42 @@ describe('cellReading reads the reading and not the mask', () => {
         online: true,
       }),
     ).toEqual({ status: CellStatus.Empty, online: true })
+  })
+})
+
+describe('what a cell at the second level is called', () => {
+  // B66: bit 1 is Ultra Greedier in Greed, measured, and hard in the other eleven columns.
+  // The column's word comes from Rust (`secondLevels`); this only picks the sentence.
+  it('is Ultra Greedier in the column whose second level is Ultra Greedier', () => {
+    expect(cellStatusKey(CellStatus.Hard, SecondLevelView.UltraGreedier)).toBe(
+      'completion.cell.ultraGreedier',
+    )
+  })
+
+  it('is hard in every other column', () => {
+    expect(cellStatusKey(CellStatus.Hard, SecondLevelView.Hard)).toBe(
+      'completion.cell.hard',
+    )
+  })
+
+  it('leaves every status below the second level alone', () => {
+    for (const status of [
+      CellStatus.Empty,
+      CellStatus.Normal,
+      CellStatus.Unknown,
+      CellStatus.Unexpected,
+    ]) {
+      expect(cellStatusKey(status, SecondLevelView.UltraGreedier)).toBe(
+        cellStatusKey(status, SecondLevelView.Hard),
+      )
+    }
+  })
+
+  it('names Greed and only Greed that way in the matrix the screen receives', () => {
+    const m = completionMatrix()
+    const greedier = m.bosses.filter(
+      (_, i) => m.secondLevels[i] === SecondLevelView.UltraGreedier,
+    )
+    expect(greedier).toEqual(['Greed'])
   })
 })

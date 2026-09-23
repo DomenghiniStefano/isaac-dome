@@ -235,6 +235,25 @@ export type CharacterRow = {
  */
 export type MarkArtView = { normalUrl: string | null; hardUrl: string | null }
 
+/**
+ * What the screen calls a column's second level — bit 1. Fieldless, so a bare camelCase
+ * string on the wire.
+ *
+ * **Not a rename of `graph::rules::MarkLevel::Second`**, which stays named for the bit. This
+ * is the word a player reads, and it is decided per column because the bit does not mean
+ * one thing (B66, `docs/save-format.md`): in Greed it is Ultra Greedier, measured on
+ * 2026-09-12 on three characters — a *mode*, which replaces Greed rather than adding to it;
+ * in the other eleven it is hard, on one observation (Mother on hard, 2026-09-20, `0 → 3`)
+ * and the owner's wording for the screen (card #58). The discriminator that would settle the
+ * eleven is a win on normal on an empty cell.
+ */
+export const SecondLevelView = {
+  Hard: 'hard',
+  UltraGreedier: 'ultraGreedier',
+} as const
+export type SecondLevelView =
+  (typeof SecondLevelView)[keyof typeof SecondLevelView]
+
 export type MarksTotals = {
   cells: number
   readable: number
@@ -260,6 +279,11 @@ export type MarksMatrix = {
    * was built on.
    */
   art: Array<MarkArtView>
+  /**
+   * `second_levels[i]` names `bosses[i]`'s second level, so the screen never decides which
+   * column is Greed.
+   */
+  secondLevels: Array<SecondLevelView>
   totals: MarksTotals
   /**
    * The game's own completion widget, drawn for this profile: one picture, composed by
@@ -1609,6 +1633,12 @@ export type LiveOpen = {
   characterName: string
   column: MarkColumnView
   level: MarkLevelView
+  /**
+   * The word for `level` when it is `second`, in this column's own terms (B66): Ultra
+   * Greedier in Greed, hard elsewhere. `None` at the base level, which the screen says nothing
+   * extra for.
+   */
+  secondLevel: SecondLevelView | null
   achievements: Array<LiveAchievement>
 }
 

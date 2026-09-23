@@ -17,11 +17,13 @@ import {
   MatrixGroup,
   TallyTone,
   cellReading,
+  cellStatusKey,
   columnTallies,
   matrixGroups,
   tallyColumns,
 } from '@/lib/completion/completionView'
 import type { Tally, TallyColumn } from '@/lib/completion/completionView'
+import { SecondLevelView } from '@/lib/ipc/types'
 import type { Cell, MarksMatrix } from '@/lib/ipc/types'
 import MarkCell from './MarkCell.vue'
 import { markArtOf } from './markVisual'
@@ -42,14 +44,6 @@ const groupTitle: Record<MatrixGroup, MessageKey<MessageSchema>> = {
   [MatrixGroup.Tainted]: 'completion.groups.tainted',
 }
 
-const statusText: Record<CellStatus, MessageKey<MessageSchema>> = {
-  [CellStatus.Empty]: 'completion.cell.empty',
-  [CellStatus.Normal]: 'completion.cell.normal',
-  [CellStatus.Hard]: 'completion.cell.hard',
-  [CellStatus.Unknown]: 'completion.cell.unknown',
-  [CellStatus.Unexpected]: 'completion.cell.unexpected',
-}
-
 // What a suspicious cell holds, said in its tooltip rather than hidden among the empty ones.
 const valueOf = (cell: Cell): number | null => {
   switch (cell.kind) {
@@ -64,9 +58,12 @@ const valueOf = (cell: Cell): number | null => {
   }
 }
 
-const cellState = (cell: Cell): string => {
+// The second level in its column's word (B66): Ultra Greedier in Greed, hard elsewhere. A
+// column the payload does not name falls back to hard, which is what the eleven others are.
+const cellState = (cell: Cell, column: number): string => {
   const reading = cellReading(cell)
-  const state = t(statusText[reading.status])
+  const second = props.matrix.secondLevels[column] ?? SecondLevelView.Hard
+  const state = t(cellStatusKey(reading.status, second))
   const said =
     reading.status === CellStatus.Unexpected
       ? `${state} ${valueOf(cell) ?? ''}`
@@ -242,7 +239,7 @@ const barTone = (tally: Tally): ProgressTone =>
           </TooltipTrigger>
           <TooltipContent class="flex flex-col gap-0.5">
             <span>{{ entry.row.character }} · {{ matrix.bosses[b] }}</span>
-            <span class="text-foreground-soft">{{ cellState(cell) }}</span>
+            <span class="text-foreground-soft">{{ cellState(cell, b) }}</span>
           </TooltipContent>
         </Tooltip>
         <span
