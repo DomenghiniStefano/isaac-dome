@@ -5,7 +5,9 @@ import EmptyValue from '@/components/data-state/EmptyValue.vue'
 import { useMessages } from '@/i18n'
 import { columnName } from '@/lib/graph/nodeState'
 import type { AchievementRef, LiveOpen, Target } from '@/lib/ipc/types'
-import { MarkLevelView } from '@/lib/ipc/types'
+import { SecondLevelView } from '@/lib/ipc/types'
+import type { MessageKey } from '@/i18n/messageKey'
+import type { MessageSchema } from '@/i18n/messages/it'
 
 // Everything the run could open, in one table instead of a card per cell: the cell is a
 // column, so the boss is still said once per row and the rows can be read against each other
@@ -34,13 +36,17 @@ const targetOf = (a: AchievementRef): Target | null =>
 const iconOf = (a: AchievementRef): string | null =>
   a.kind === 'known' ? a.iconUrl : null
 
-// The second bit of a cell is Ultra Greedier in the Greed column and unmeasured elsewhere
-// (`graph::rules::MarkLevel` is named after the bit for that reason), so it is said only
-// where it is a different thing to go and do.
+// The second level is said only where it is a different thing to go and do, and in the
+// column's own word (B66): Ultra Greedier in Greed, hard elsewhere. Which is which arrives
+// from Rust in `secondLevel`, `null` at the base level.
+const secondLevelWord: Record<SecondLevelView, MessageKey<MessageSchema>> = {
+  [SecondLevelView.Hard]: 'live.secondLevel.hard',
+  [SecondLevelView.UltraGreedier]: 'live.secondLevel.ultraGreedier',
+}
 const cellName = (open: LiveOpen): string =>
-  open.level === MarkLevelView.Second
-    ? `${columnName[open.column]} · ${t('live.secondLevel')}`
-    : columnName[open.column]
+  open.secondLevel === null
+    ? columnName[open.column]
+    : `${columnName[open.column]} · ${t(secondLevelWord[open.secondLevel])}`
 </script>
 
 <template>

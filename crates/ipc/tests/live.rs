@@ -3,7 +3,7 @@
 
 use ipc::{
     live_view, AchievementRef, GraphInfo, LiveDiagnostic, LiveGraph, MarkColumnView, MarkLevelView,
-    RequirementView, RunOutcomeView, RunSource, RunView, UnlockNode,
+    RequirementView, RunOutcomeView, RunSource, RunView, SecondLevelView, UnlockNode,
 };
 
 fn open_run(character: Option<&str>) -> RunView {
@@ -261,5 +261,42 @@ fn an_id_from_the_log_settles_which_character_it_is() {
             .any(|d| matches!(d, LiveDiagnostic::AmbiguousCharacter { .. })),
         "nothing is ambiguous once the log has said it: {:#?}",
         view.diagnostics
+    );
+}
+
+/// The second level of a cell is said in that column's own word (B66): Ultra Greedier in
+/// Greed, which is where a second-level offer actually comes from, and hard elsewhere. A
+/// base-level offer carries no word, because the screen says nothing extra for it.
+#[test]
+fn a_second_level_offer_names_its_level_the_way_its_column_does() {
+    let second = |column| RequirementView::Mark {
+        character: 3,
+        character_name: "Judas".into(),
+        column,
+        level: MarkLevelView::Second,
+    };
+    let nodes = vec![
+        node(1, vec![second(MarkColumnView::Greed)]),
+        node(2, vec![second(MarkColumnView::Mother)]),
+        node(3, vec![mark(3, "Judas", MarkColumnView::Satan)]),
+    ];
+    let view = live_view(
+        Some(open_run(Some("Judas"))),
+        LiveGraph::Nodes(&nodes),
+        None,
+        by_name,
+    );
+    let words: Vec<_> = view
+        .opens
+        .iter()
+        .map(|o| (o.column, o.second_level))
+        .collect();
+    assert_eq!(
+        words,
+        vec![
+            (MarkColumnView::Greed, Some(SecondLevelView::UltraGreedier)),
+            (MarkColumnView::Mother, Some(SecondLevelView::Hard)),
+            (MarkColumnView::Satan, None),
+        ]
     );
 }

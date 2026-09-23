@@ -1,7 +1,10 @@
 import { compact, first, last } from 'lodash-es'
 import { assertNever } from '@/lib/assertNever'
+import type { MessageKey } from '@/i18n/messageKey'
+import type { MessageSchema } from '@/i18n/messages/it'
 import {
   CellLevel,
+  SecondLevelView,
   type Cell,
   type CharacterRow,
   type MarksMatrix,
@@ -50,6 +53,28 @@ const levelStatus = (level: CellLevel): CellStatus => {
       return assertNever(level)
   }
 }
+
+const statusText: Record<CellStatus, MessageKey<MessageSchema>> = {
+  [CellStatus.Empty]: 'completion.cell.empty',
+  [CellStatus.Normal]: 'completion.cell.normal',
+  [CellStatus.Hard]: 'completion.cell.hard',
+  [CellStatus.Unknown]: 'completion.cell.unknown',
+  [CellStatus.Unexpected]: 'completion.cell.unexpected',
+}
+
+const secondLevelText: Record<SecondLevelView, MessageKey<MessageSchema>> = {
+  [SecondLevelView.Hard]: 'completion.cell.hard',
+  [SecondLevelView.UltraGreedier]: 'completion.cell.ultraGreedier',
+}
+
+// What a cell says in its tooltip. The second level takes its column's word (B66): bit 1 is
+// Ultra Greedier in Greed and hard elsewhere, and which column is which arrives from Rust in
+// `secondLevels` — this only picks the sentence.
+export const cellStatusKey = (
+  status: CellStatus,
+  second: SecondLevelView,
+): MessageKey<MessageSchema> =>
+  status === CellStatus.Hard ? secondLevelText[second] : statusText[status]
 
 export const cellReading = (cell: Cell): CellReading => {
   switch (cell.kind) {

@@ -1,5 +1,6 @@
 import {
   CellLevel,
+  SecondLevelView,
   type Cell,
   type CharacterRow,
   type MarksMatrix,
@@ -123,6 +124,11 @@ export const completionMatrix = (): MarksMatrix => {
     characters,
     bosses,
     art: bosses.map(() => noArt),
+    // As `ipc::second_level` names them: Greed's second level is Ultra Greedier, every
+    // other column's is hard.
+    secondLevels: bosses.map((boss) =>
+      boss === 'Greed' ? SecondLevelView.UltraGreedier : SecondLevelView.Hard,
+    ),
     totals: {
       cells: cells.length,
       readable: count((c) => c.kind === 'known'),

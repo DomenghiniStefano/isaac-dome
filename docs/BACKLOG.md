@@ -2498,9 +2498,23 @@ is a guess that slipped past the `MarkLevel::Second` naming it was supposed to d
 
 ### Closes when
 
-- [ ] Bit 1's meaning outside Greed is either measured or explicitly left open in the wording.
-- [ ] `en.ts` and `it.ts` agree with whatever `docs/save-format.md` is willing to state.
-- [ ] `graph::rules::MarkLevel`'s naming and the Completion screen's naming say the same thing.
+- [x] Bit 1's meaning outside Greed is either measured or explicitly left open in the wording.
+- [x] `en.ts` and `it.ts` agree with whatever `docs/save-format.md` is willing to state.
+- [x] ~~`graph::rules::MarkLevel`'s naming and the Completion screen's naming say the same
+  thing.~~ Replaced by a decision: they say different things on purpose, and the difference is
+  written down.
+
+**Resolved on 2026-09-23**, not by the rename this entry proposed. The owner kept *hard* for
+the eleven boss columns — the word card #58 chose, and the one observation of 2026-09-20
+(Mother on hard, `0 → 3`) points the same way — and the Greed column now says *Ultra
+Greedier*, which is measured. The half this entry had not seen was the worse one: the Greed
+cells were being called *hard*, and Live offered "Greed · on hard" for exactly the Ultra
+Greedier unlocks. `ipc::SecondLevelView`, decided per column in `ipc::marks::second_level`,
+now travels beside the matrix (`secondLevels`) and on every second-level Live offer
+(`secondLevel`); the headline and the column labels keep *hard*, and the explanations say what
+Greed's second level is. `graph::rules::MarkLevel` keeps its bit names, and
+`docs/save-format.md` says why the two differ. The eleven stay one win on normal on an empty
+cell away from being measured.
 
 ---
 
