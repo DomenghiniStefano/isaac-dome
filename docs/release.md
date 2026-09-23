@@ -49,6 +49,52 @@ and the signing key from step 1 must never be committed afterwards either.
 
 ## Every release
 
+**The whole sequence, from the main worktree**, which holds `develop`. The steps below explain
+each one; this is the order, and the git moves around them that the steps leave out:
+
+```powershell
+# on develop, pnpm check green
+pnpm bump minor
+git add package.json; git commit -m "chore: release 0.2.0"; git push origin develop
+
+git switch master
+git merge --ff-only develop
+git push origin master
+
+pnpm release --publish --notes <notes.md>     # in your own terminal, see below
+
+git switch develop
+```
+
+Then, on the board, the cards in `DA RILASCIARE` go to `Done`: they are now in the hands of
+somebody using the app. Cards still in `UAT` stay there even when their code shipped — approving
+them is the owner's call, and the release does not make it.
+
+- **`master` moves only here, and only when the owner has said to cut a release** (`CLAUDE.md`).
+  The main worktree checks it out for the length of the publish and returns to `develop`
+  straight after, so `develop` is back where every other worktree expects to find it.
+- **The release carries all of `develop`**, `UAT` cards included — `master` is fast-forwarded,
+  not cherry-picked. Look at what `UAT` holds before step 4 if that matters for this release.
+- **Run the publish in a terminal of your own, not through an agent's shell.** It reads the key's
+  password with `Read-Host -AsSecureString` and then asks you to type the version: an agent's
+  shell has no interactive input, and the password is not something to hand to one anyway.
+  Measured on 2026-09-23 through Claude Code's `!` prefix, which runs bash: the backslashes of a
+  Windows `--notes` path were swallowed (`C:UsersstefaAppData…`) and the script stopped on "no
+  release notes". Forward slashes survive both shells.
+
+**Warnings every build prints, and which are expected.** A release build on 2026-09-23 (0.2.0)
+printed four; none stops the build, and each has a card on the board rather than a fix in the
+middle of a release:
+
+| warning | status |
+|---|---|
+| the bundle identifier `dev.isaacdome.app` ends with `.app` | macOS-only conflict; changing it moves the app's data folder, so it needs a migration first |
+| `INEFFECTIVE_DYNAMIC_IMPORT` on `lib/scale/apply.ts` and `lib/ipc/settings.ts` | `main.ts` imports them dynamically while other modules import them statically; harmless, to be tidied |
+| a chunk larger than 500 kB (`index-*.js`, ~725 kB) | to be measured before splitting: a desktop app loads it from disk |
+| `PLUGIN_TIMINGS` | Vite's own profiling note, informational |
+
+A warning that is **not** in this table is new, and worth reading before typing the version.
+
 ### 1. Bump the version
 
 ```powershell
