@@ -598,8 +598,7 @@ export const en: MessageSchema = {
     notesTitle: 'What changes',
     check: 'Check now',
     install: 'Restart and install',
-    installHint:
-      'The app closes, the installer carries on by itself, and the app opens again on its own.',
+    installHint: 'Closes the app, installs the new version and opens it again.',
     saveFailedTitle: 'The setting was not saved',
     saveFailed:
       'The app already behaves this way, but we could not write it down: it will be back as it was next time you start it.',

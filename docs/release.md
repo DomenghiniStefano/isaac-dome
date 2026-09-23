@@ -83,14 +83,13 @@ them is the owner's call, and the release does not make it.
   release notes". Forward slashes survive both shells.
 
 **Warnings every build prints, and which are expected.** A release build on 2026-09-23 (0.2.0)
-printed four; none stops the build, and each has a card on the board rather than a fix in the
-middle of a release:
+printed four. Two were fixed the same evening — `INEFFECTIVE_DYNAMIC_IMPORT` on `main.ts`'s two
+imports, and the 725 kB entry chunk, gone once the screens load when first opened — and two
+remain, neither of which stops the build:
 
 | warning | status |
 |---|---|
-| the bundle identifier `dev.isaacdome.app` ends with `.app` | macOS-only conflict; changing it moves the app's data folder, so it needs a migration first |
-| `INEFFECTIVE_DYNAMIC_IMPORT` on `lib/scale/apply.ts` and `lib/ipc/settings.ts` | `main.ts` imports them dynamically while other modules import them statically; harmless, to be tidied |
-| a chunk larger than 500 kB (`index-*.js`, ~725 kB) | to be measured before splitting: a desktop app loads it from disk |
+| the bundle identifier `dev.isaacdome.app` ends with `.app` | macOS-only conflict; the app is Windows-only, and changing it moves `%APPDATA%\dev.isaacdome.app` (settings, `isaacdome.db`) out from under every installation |
 | `PLUGIN_TIMINGS` | Vite's own profiling note, informational |
 
 A warning that is **not** in this table is new, and worth reading before typing the version.
@@ -192,6 +191,13 @@ everybody at once:
 ```powershell
 pnpm release --publish            # or: pnpm release --publish --notes notes.md
 ```
+
+**The notes are what an installed app shows under "Cosa cambia"**, so write them in the markdown
+it reads: `#` headings, paragraphs, `-` or `1.` lists, `**bold**`, `` `code` `` and a `---` rule.
+Rust reads that subset into blocks (`crates/ipc/src/release_notes.rs`) and never hands the window
+markup, because `latest.json` is not signed; anything outside it — a link, a table, an image —
+shows as the characters it was written with. Until 2026-09-23 the notes reached the screen as
+one run of raw text, and 0.2.0's were the ones seen that way.
 
 This is steps 2 and 3 again, followed by the tag and the upload. **Publishing is behind its own
 flag on purpose**: building and signing can be repeated all day, and publishing cannot be taken

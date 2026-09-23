@@ -1,7 +1,13 @@
 import { describe, expect, it } from 'vitest'
-import { UpdateFailure, UpdateReason } from '@/lib/ipc/types'
-import type { UpdatePhase, UpdateView } from '@/lib/ipc/types'
-import { canCheck, canInstall, phasePart, progressPercent } from './phase'
+import { Style, UpdateFailure, UpdateReason } from '@/lib/ipc/types'
+import type { Block, UpdatePhase, UpdateView } from '@/lib/ipc/types'
+import {
+  canCheck,
+  canInstall,
+  phasePart,
+  progressPercent,
+  releaseNotes,
+} from './phase'
 
 const view = (
   phase: UpdatePhase,
@@ -13,7 +19,7 @@ const every: UpdatePhase[] = [
   { kind: 'checking' },
   { kind: 'upToDate' },
   { kind: 'downloading', version: '0.2.0', percent: 40 },
-  { kind: 'ready', version: '0.2.0', notes: null },
+  { kind: 'ready', version: '0.2.0', notes: [] },
   { kind: 'failed', reason: UpdateFailure.Offline },
 ]
 
@@ -24,7 +30,7 @@ describe('the check button', () => {
     for (const phase of [
       { kind: 'idle' } as const,
       { kind: 'upToDate' } as const,
-      { kind: 'ready', version: '0.2.0', notes: null } as const,
+      { kind: 'ready', version: '0.2.0', notes: [] as Block[] } as const,
       { kind: 'failed', reason: UpdateFailure.Offline } as const,
     ]) {
       expect(canCheck(view(phase)), phase.kind).toBe(true)
@@ -62,7 +68,7 @@ describe('the install button', () => {
     expect(
       canInstall(
         view(
-          { kind: 'ready', version: '0.2.0', notes: null },
+          { kind: 'ready', version: '0.2.0', notes: [] },
           UpdateReason.NotSupported,
         ),
       ),
@@ -110,7 +116,7 @@ describe('the sentence', () => {
         .params,
     ).toEqual({ version: '0.2.0' })
     expect(
-      phasePart(view({ kind: 'ready', version: '0.2.0', notes: null })).params,
+      phasePart(view({ kind: 'ready', version: '0.2.0', notes: [] })).params,
     ).toEqual({ version: '0.2.0' })
   })
 
@@ -129,5 +135,34 @@ describe('the sentence', () => {
     expect(
       phasePart(view({ kind: 'upToDate' }, UpdateReason.NotSupported)).key,
     ).toBe(phasePart(view({ kind: 'idle' }, UpdateReason.NotSupported)).key)
+  })
+})
+
+describe('the release notes', () => {
+  const notes: Block[] = [
+    {
+      kind: 'paragraph',
+      inline: [{ kind: 'text', text: 'what changed', style: Style.Plain }],
+    },
+  ]
+
+  it('are the blocks of the version that is ready', () => {
+    expect(
+      releaseNotes(view({ kind: 'ready', version: '0.2.0', notes })),
+    ).toEqual(notes)
+  })
+
+  it('are nothing to draw when the release carried none', () => {
+    // An empty list and no notes are one case: the screen draws no "what changes" heading
+    // over nothing.
+    expect(
+      releaseNotes(view({ kind: 'ready', version: '0.2.0', notes: [] })),
+    ).toBeNull()
+  })
+
+  it('belong to a ready version and to no other phase', () => {
+    for (const phase of every.filter((p) => p.kind !== 'ready')) {
+      expect(releaseNotes(view(phase)), phase.kind).toBeNull()
+    }
   })
 })

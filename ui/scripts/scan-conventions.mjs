@@ -59,6 +59,10 @@ const visibleText = (body) => {
 // "one screen per route, **and the parts only it uses**" (the conventions), so `UnlockRow.vue` and
 // `SaveCard.vue` live there and are not screens. Read from `routes.ts` rather than guessed from
 // the path, so it cannot rot: a screen added to the router is a screen here the same minute.
+// **Both shapes of import count**: the screens load lazily since 2026-09-23, so `routes.ts`
+// names all but one of them as `import('@/screens/…')`, and a pattern that read only the static
+// `from` let fifteen screens fall out of the check with "0 violations" to show for it — caught
+// by the fixtures below, not by the count.
 // `WelcomeScreen.vue` is added by hand because it is mounted by `App.vue` as a takeover above the
 // router (3.8), which is the one screen the router never names.
 //
@@ -68,7 +72,7 @@ const visibleText = (body) => {
 const SCREEN_FILES = new Set(
   [
     ...readFileSync(join(SRC, 'router', 'routes.ts'), 'utf8').matchAll(
-      /from '@\/screens\/([^']+)'/g,
+      /(?:from |import\()'@\/screens\/([^']+)'/g,
     ),
   ]
     .map(([, path]) => join('src', 'screens', ...path.split('/')))
