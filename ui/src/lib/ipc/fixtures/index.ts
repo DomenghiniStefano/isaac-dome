@@ -181,6 +181,8 @@ type Handler = (
 // command with no fixture should fail on the development server, not render undefined.
 const handlers: Partial<Record<CommandName, Handler>> = {
   [Command.Settings]: () => settingsAnswer(),
+  [Command.UpdateStatus]: async () => (await import('./update')).updateAnswer(),
+  [Command.CheckUpdate]: async () => (await import('./update')).updateAnswer(),
   [Command.SetScale]: (args) => setScaleAnswer(Number(args?.percent)),
   [Command.SetStayInBackground]: (args) =>
     setStayInBackgroundAnswer(Boolean(args?.stay)),

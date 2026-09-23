@@ -7,6 +7,9 @@
 //! Spec: `docs/superpowers/specs/2026-09-20-app-update-design.md`.
 
 use serde::Serialize;
+use wiki::Block;
+
+use crate::release_notes::release_notes;
 
 /// Why an update could not even be offered.
 ///
@@ -73,7 +76,9 @@ pub enum UpdatePhase {
     /// Verified, in memory, waiting for the word.
     Ready {
         version: String,
-        notes: Option<String>,
+        /// The release notes, read into blocks (`release_notes`): the manifest is not signed,
+        /// so its text crosses as words and never as markup. Empty when it carried none.
+        notes: Vec<Block>,
     },
     Failed {
         reason: UpdateFailure,
@@ -175,7 +180,10 @@ impl UpdateState {
     }
 
     pub fn ready(&mut self, version: String, notes: Option<String>) {
-        self.phase = UpdatePhase::Ready { version, notes };
+        self.phase = UpdatePhase::Ready {
+            version,
+            notes: notes.as_deref().map(release_notes).unwrap_or_default(),
+        };
     }
 
     pub fn fail(&mut self, reason: UpdateFailure) {

@@ -19,6 +19,7 @@ mod profile;
 mod progress;
 mod queue;
 mod reasons;
+mod release_notes;
 mod resources;
 mod roll;
 mod runs;
@@ -85,6 +86,7 @@ pub use queue::{
     QueueInputs, QueueRow, QueueView,
 };
 pub use reasons::{IoReason, SaveReason, SettingsReason, StoreReason};
+pub use release_notes::release_notes;
 pub use resources::{
     archive_views, data_url, extraction_report, ArchiveMode, ArchiveView, ExtractionReport,
     SpriteView,

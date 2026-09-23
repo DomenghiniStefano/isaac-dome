@@ -1,6 +1,6 @@
 import type { MessagePart } from '@/lib/ipc/errorText'
 import { UpdateFailure } from '@/lib/ipc/types'
-import type { UpdateView } from '@/lib/ipc/types'
+import type { Block, UpdateView } from '@/lib/ipc/types'
 import { assertNever } from '@/lib/assertNever'
 
 // What the Updates screen draws, read off the view and nothing else. The phase comes from the
@@ -71,6 +71,9 @@ export const phasePart = (view: UpdateView): MessagePart => {
 }
 
 // The release notes, when the manifest carried any. Only ever shown beside the version they
-// belong to, which is why they come off the phase and not off a field of their own.
-export const releaseNotes = (view: UpdateView): string | null =>
-  view.phase.kind === 'ready' ? view.phase.notes : null
+// belong to, which is why they come off the phase and not off a field of their own. Blocks,
+// never markdown: Rust read them, because the manifest they came in is not signed.
+export const releaseNotes = (view: UpdateView): Block[] | null =>
+  view.phase.kind === 'ready' && view.phase.notes.length > 0
+    ? view.phase.notes
+    : null
