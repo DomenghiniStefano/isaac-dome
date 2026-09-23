@@ -131,9 +131,9 @@ const failure = computed(() =>
         <DownloadIcon />
         {{ t('updates.install') }}
       </Button>
+      <HelpTip v-if="canInstall(update.view)">{{
+        t('updates.installHint')
+      }}</HelpTip>
     </div>
-    <FieldDescription v-if="canInstall(update.view)">{{
-      t('updates.installHint')
-    }}</FieldDescription>
   </div>
 </template>
