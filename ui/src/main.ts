@@ -4,6 +4,8 @@ import './assets/main.css'
 import App from './App.vue'
 import { i18n } from './i18n'
 import { DevRoute } from './lib/constants/devRoutes'
+import { settings } from './lib/ipc/settings'
+import { applyScale } from './lib/scale/apply'
 import { router } from './router'
 
 // The splash `index.html` painted before the bundle existed: it goes when something is on
@@ -34,8 +36,6 @@ const mountVerify = async () => {
 // mounts at 100, and the Appearance screen says what happened.
 const mountApp = async () => {
   try {
-    const { settings } = await import('./lib/ipc/settings')
-    const { applyScale } = await import('./lib/scale/apply')
     applyScale((await settings()).scale)
   } catch {
     // No backend, or a settings file that won't read: `--app-scale` keeps its CSS fallback.
