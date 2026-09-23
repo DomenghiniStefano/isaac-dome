@@ -1,3 +1,4 @@
+use core_save::marks::Column;
 use serde::Serialize;
 
 /// The twelve columns the game's own completion widget draws. Mother and The Beast were
@@ -217,6 +218,63 @@ pub struct MarkArtView {
     pub hard_url: Option<String>,
 }
 
+/// What the screen calls a column's second level — bit 1. Fieldless, so a bare camelCase
+/// string on the wire.
+///
+/// **Not a rename of `graph::rules::MarkLevel::Second`**, which stays named for the bit. This
+/// is the word a player reads, and it is decided per column because the bit does not mean
+/// one thing (B66, `docs/save-format.md`): in Greed it is Ultra Greedier, measured on
+/// 2026-09-12 on three characters — a *mode*, which replaces Greed rather than adding to it;
+/// in the other eleven it is hard, on one observation (Mother on hard, 2026-09-20, `0 → 3`)
+/// and the owner's wording for the screen (card #58). The discriminator that would settle the
+/// eleven is a win on normal on an empty cell.
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, ts_rs::TS)]
+#[serde(rename_all = "camelCase")]
+pub enum SecondLevelView {
+    Hard,
+    UltraGreedier,
+}
+
+/// Exhaustive, with no `_` arm: a thirteenth column breaks the build here instead of being
+/// called hard by default.
+pub fn second_level(column: Column) -> SecondLevelView {
+    match column {
+        Column::Greed => SecondLevelView::UltraGreedier,
+        Column::MomsHeart
+        | Column::Isaac
+        | Column::Satan
+        | Column::BossRush
+        | Column::BlueBaby
+        | Column::TheLamb
+        | Column::MegaSatan
+        | Column::Hush
+        | Column::Delirium
+        | Column::Mother
+        | Column::TheBeast => SecondLevelView::Hard,
+    }
+}
+
+/// The same word for a column as the graph names it, so Live says what Completion says.
+/// A translation onto the layout's column and not a second rule: which column is Greed is
+/// decided once, in [`second_level`].
+pub(crate) fn second_level_of_view(column: crate::graph::MarkColumnView) -> SecondLevelView {
+    use crate::graph::MarkColumnView as V;
+    second_level(match column {
+        V::MomsHeart => Column::MomsHeart,
+        V::Isaac => Column::Isaac,
+        V::Satan => Column::Satan,
+        V::BossRush => Column::BossRush,
+        V::BlueBaby => Column::BlueBaby,
+        V::TheLamb => Column::TheLamb,
+        V::MegaSatan => Column::MegaSatan,
+        V::Greed => Column::Greed,
+        V::Hush => Column::Hush,
+        V::Delirium => Column::Delirium,
+        V::Mother => Column::Mother,
+        V::TheBeast => Column::TheBeast,
+    })
+}
+
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, ts_rs::TS)]
 #[serde(rename_all = "camelCase")]
 pub struct MarksTotals {
@@ -240,6 +298,9 @@ pub struct MarksMatrix {
     /// `art[i]` draws `bosses[i]`: a parallel array, so `bosses` keeps the shape the design
     /// was built on.
     pub art: Vec<MarkArtView>,
+    /// `second_levels[i]` names `bosses[i]`'s second level, so the screen never decides which
+    /// column is Greed.
+    pub second_levels: Vec<SecondLevelView>,
     pub totals: MarksTotals,
     /// The game's own completion widget, drawn for this profile: one picture, composed by
     /// the protocol handler out of the paper and the symbols the columns have earned.
@@ -343,6 +404,7 @@ pub fn marks_matrix(
         characters: rows,
         bosses: BOSSES.iter().map(|b| b.to_string()).collect(),
         art,
+        second_levels: Column::ALL.iter().map(|&c| second_level(c)).collect(),
         totals,
         widget_url,
     }

@@ -129,6 +129,7 @@ export const liveAnswer = (): LiveView => ({
       characterName: 'Tainted Cain',
       column: MarkColumnView.MomsHeart,
       level: MarkLevelView.Base,
+      secondLevel: null,
       achievements: [
         {
           achievement: {

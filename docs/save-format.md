@@ -159,7 +159,11 @@ overwrites Greed; a **difficulty** is not alternative to the run, so hard lights
 "the second level of that column", and what that level *is* differs per column.
 
 **One observation does not name a bit**, so `graph::rules::MarkLevel` stays `Base` / `Second`
-after the bits and not `Hard` after a meaning. What closes it is the opposite discriminator:
+after the bits and not `Hard` after a meaning. **The screen is allowed a word the crate is
+not** (B66, owner, 2026-09-23): `ipc::SecondLevelView` says *hard* for the eleven boss columns
+and *Ultra Greedier* for Greed, decided per column in `ipc::marks::second_level` and sent
+beside the matrix, so no screen decides which column is Greed. The word is the player's; the
+bit keeps its bit name everywhere a rule is written. What closes it is the opposite discriminator:
 **a win on normal, on a cell still at zero**. A `1` there confirms the reading; a `3` refutes it
 and sends the search elsewhere. The difficulty is **not in the log** — checked on
 2026-09-20 across the whole file, the game never writes it, not even in the seed line — so it
