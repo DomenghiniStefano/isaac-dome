@@ -605,8 +605,7 @@ export const it = {
     notesTitle: 'Cosa cambia',
     check: 'Controlla ora',
     install: 'Riavvia e installa',
-    installHint:
-      "L'app si chiude, l'installer va avanti da solo e l'app si riapre da sé.",
+    installHint: "Chiude l'app, installa la nuova versione e la riapre.",
     saveFailedTitle: "L'impostazione non è stata salvata",
     saveFailed:
       "L'app si comporta già così, ma non siamo riusciti a scriverlo: al prossimo avvio torna com'era.",

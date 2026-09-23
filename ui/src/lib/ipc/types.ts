@@ -1936,7 +1936,15 @@ export type UpdatePhase =
   | { kind: 'checking' }
   | { kind: 'upToDate' }
   | { kind: 'downloading'; version: string; percent: number | null }
-  | { kind: 'ready'; version: string; notes: string | null }
+  | {
+      kind: 'ready'
+      version: string
+      /**
+       * The release notes, read into blocks (`release_notes`): the manifest is not signed,
+       * so its text crosses as words and never as markup. Empty when it carried none.
+       */
+      notes: Array<Block>
+    }
   | { kind: 'failed'; reason: UpdateFailure }
 
 /**
