@@ -1,25 +1,10 @@
 import type { Component } from 'vue'
-import type { RouteRecordRaw } from 'vue-router'
+import type { RouteComponent, RouteRecordRaw } from 'vue-router'
 import { TabOrigin } from '@/components/shell/tabs'
 import type { MessageKey } from '@/i18n/messageKey'
 import type { MessageSchema } from '@/i18n/messages/it'
-import AppearanceScreen from '@/screens/AppearanceScreen.vue'
-import BackgroundScreen from '@/screens/BackgroundScreen.vue'
-import ChallengesScreen from '@/screens/ChallengesScreen.vue'
-import CollectionScreen from '@/screens/CollectionScreen.vue'
 import CompletionScreen from '@/screens/CompletionScreen.vue'
-import FloorScreen from '@/screens/FloorScreen.vue'
-import GoalsScreen from '@/screens/GoalsScreen.vue'
 import PlaceholderScreen from '@/screens/PlaceholderScreen.vue'
-import LiveScreen from '@/screens/LiveScreen.vue'
-import RunsScreen from '@/screens/RunsScreen.vue'
-import ProfileScreen from '@/screens/ProfileScreen.vue'
-import RollScreen from '@/screens/RollScreen.vue'
-import SearchScreen from '@/screens/SearchScreen.vue'
-import TabsSettingsScreen from '@/screens/TabsSettingsScreen.vue'
-import UpdatesScreen from '@/screens/UpdatesScreen.vue'
-import UnlockScreen from '@/screens/UnlockScreen.vue'
-import WikiScreen from '@/screens/WikiScreen.vue'
 import {
   RouteName,
   routeArrives,
@@ -40,23 +25,30 @@ declare module 'vue-router' {
 }
 
 // The screens that exist. Every other route renders its placeholder until its sub-project.
-const screens: Partial<Record<RouteName, Component>> = {
+//
+// **Each loads when it is first opened**, except the one the app opens on: sixteen screens
+// imported up front made one 725 kB chunk that every launch parsed whole, for a first paint
+// that draws one of them. Completamento stays in the entry chunk so the first screen does not
+// wait on a second file.
+const screens: Partial<
+  Record<RouteName, RouteComponent | (() => Promise<RouteComponent>)>
+> = {
   [RouteName.Completion]: CompletionScreen,
-  [RouteName.Goals]: GoalsScreen,
-  [RouteName.Unlock]: UnlockScreen,
-  [RouteName.Collection]: CollectionScreen,
-  [RouteName.Challenges]: ChallengesScreen,
-  [RouteName.Roll]: RollScreen,
-  [RouteName.Live]: LiveScreen,
-  [RouteName.Runs]: RunsScreen,
-  [RouteName.Floor]: FloorScreen,
-  [RouteName.Wiki]: WikiScreen,
-  [RouteName.Search]: SearchScreen,
-  [RouteName.Profile]: ProfileScreen,
-  [RouteName.Appearance]: AppearanceScreen,
-  [RouteName.Background]: BackgroundScreen,
-  [RouteName.TabsSettings]: TabsSettingsScreen,
-  [RouteName.Updates]: UpdatesScreen,
+  [RouteName.Goals]: () => import('@/screens/GoalsScreen.vue'),
+  [RouteName.Unlock]: () => import('@/screens/UnlockScreen.vue'),
+  [RouteName.Collection]: () => import('@/screens/CollectionScreen.vue'),
+  [RouteName.Challenges]: () => import('@/screens/ChallengesScreen.vue'),
+  [RouteName.Roll]: () => import('@/screens/RollScreen.vue'),
+  [RouteName.Live]: () => import('@/screens/LiveScreen.vue'),
+  [RouteName.Runs]: () => import('@/screens/RunsScreen.vue'),
+  [RouteName.Floor]: () => import('@/screens/FloorScreen.vue'),
+  [RouteName.Wiki]: () => import('@/screens/WikiScreen.vue'),
+  [RouteName.Search]: () => import('@/screens/SearchScreen.vue'),
+  [RouteName.Profile]: () => import('@/screens/ProfileScreen.vue'),
+  [RouteName.Appearance]: () => import('@/screens/AppearanceScreen.vue'),
+  [RouteName.Background]: () => import('@/screens/BackgroundScreen.vue'),
+  [RouteName.TabsSettings]: () => import('@/screens/TabsSettingsScreen.vue'),
+  [RouteName.Updates]: () => import('@/screens/UpdatesScreen.vue'),
 }
 
 export const routes: RouteRecordRaw[] = [
