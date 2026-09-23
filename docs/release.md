@@ -193,6 +193,13 @@ everybody at once:
 pnpm release --publish            # or: pnpm release --publish --notes notes.md
 ```
 
+**The notes are what an installed app shows under "Cosa cambia"**, so write them in the markdown
+it reads: `#` headings, paragraphs, `-` or `1.` lists, `**bold**`, `` `code` `` and a `---` rule.
+Rust reads that subset into blocks (`crates/ipc/src/release_notes.rs`) and never hands the window
+markup, because `latest.json` is not signed; anything outside it — a link, a table, an image —
+shows as the characters it was written with. Until 2026-09-23 the notes reached the screen as
+one run of raw text, and 0.2.0's were the ones seen that way.
+
 This is steps 2 and 3 again, followed by the tag and the upload. **Publishing is behind its own
 flag on purpose**: building and signing can be repeated all day, and publishing cannot be taken
 back once somebody has fetched it. `pnpm release` on its own never touches the network.
