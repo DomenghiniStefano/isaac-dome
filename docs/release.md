@@ -89,7 +89,7 @@ remain, neither of which stops the build:
 
 | warning | status |
 |---|---|
-| the bundle identifier `dev.isaacdome.app` ends with `.app` | macOS-only conflict; the app is Windows-only, and changing it moves `%APPDATA%\dev.isaacdome.app` (settings, `isaacdome.db`) out from under every installation |
+| the bundle identifier `dev.isaacdome.app` ends with `.app` | macOS-only conflict; the app is Windows-only for now (owner, 2026-09-23), and changing it moves `%APPDATA%\dev.isaacdome.app` (settings, `isaacdome.db`) out from under every installation, so it waits for a macOS build and comes with a data migration (card #70) |
 | `PLUGIN_TIMINGS` | Vite's own profiling note, informational |
 
 A warning that is **not** in this table is new, and worth reading before typing the version.
