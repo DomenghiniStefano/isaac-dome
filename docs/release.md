@@ -273,6 +273,11 @@ cheaply again.
 
 `scripts/check` does not run `pnpm build`, by design — it downloads WiX and NSIS and takes
 minutes. So the signing configuration, the bundle names and this whole chain are exercised only
-by a real release. The first one has to be watched by a person: build, publish, install the
-older version on a machine, and confirm it finds, downloads, verifies and installs the newer one.
-Until that has been done once, the feature is written and not proven.
+by a real release, and a person has to watch it: build, publish, install the older version on a
+machine, and confirm it finds, downloads, verifies and installs the newer one.
+
+**Done for the first time on 2026-09-23**, by the owner on this machine: an installed 0.1.3
+found 0.2.0, verified it and installed it, and that 0.2.0 then did the same with 0.2.1 — whose
+notes it drew as blocks. The chain is proven for NSIS on Windows, per-user, with
+`requireSignedVersion` on. Every release still exercises it again, and a change to the signing
+key, the endpoint or the installer mode is a change this paragraph no longer covers.
