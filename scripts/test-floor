@@ -210,5 +210,11 @@
 # empty — Dead God's `text` in `achievements.xml` is blank, and the row came up with no name.
 # UI does not move: the search row's drawing on paper is presentation, looked at in the browser.
 
+# **Raised on 2026-09-24**, UI +3, card #75: the search palette reopens on the last search,
+# selected. The three are `queryToRecall`, what the palette keeps when it closes: a search as it
+# was typed, and nothing for an empty one or one made only of spaces. The selection itself is
+# `select()` on the focus the listbox already gives the input, and is looked at in the window.
+# Rust does not move: nothing in this one is Rust.
+
 RUST_TESTS=1254
-UI_TESTS=805
+UI_TESTS=808

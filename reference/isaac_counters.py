@@ -15,6 +15,13 @@ count (491 and 492 are Mother's and The Beast's kills, and they rose by exactly
 as many as the new marks) and the character (188 is a bitmask of the characters
 that won the run; it read Magdalene for base+1 and Cain for base+2).
 
+Updated 2026-09-20: Mother for The Forgotten (437) and the 19 (base 438). T. Eden
+beat Mother and [449] was the only cell to move in 423-490: row +11 into the
+19-block puts its base at 438, and the one cell left over in 437-456 is The
+Forgotten's. Same three checks - achievement 567 (Mother + Tainted Eden), the
+Mother kills [491] up by exactly one, and 188 at 1 << 30. The Beast for the same
+20 characters is still unlocated.
+
 The PROGRESSION_* cells aren't counters but bit masks:
     bit 0 (1) and bit 1 (2) = the two levels of the completion mark
     bit 2 (4) = third level, meaning not yet confirmed
@@ -76,6 +83,8 @@ FORGOTTEN = {
     203: "Mom's Heart", 204: "Isaac", 205: "Satan", 206: "Boss Rush",
     207: "Blue Baby", 208: "The Lamb", 209: "Mega Satan", 210: "Greed",
     211: "Hush", 213: "Delirium",
+    # 2026-09-20: the cell left over below the 19-block, once T. Eden placed it at 438.
+    437: "Mother",
 }
 
 # --- 19-cell blocks: Bethany, Jacob & Esau, and the Tainted (derived) ---
@@ -87,21 +96,23 @@ BLOCKS_19 = [
     # characters agree on it - Bethany (+0), Jacob & Esau (+1), T. Cain (+4),
     # T. Azazel (+9), each on a day DELIRIUM_KILLS also rose.
     ("Delirium", 404),
-    # Mother and The Beast for the 19 later characters, and for The Forgotten, are
-    # inside 423-490 by the spacing (the two 14-blocks are exactly 34 = 14+1+19
-    # apart), but every candidate cell is zero in every save collected so far, so
-    # nothing distinguishes one layout from another. Left out on purpose.
+    # 2026-09-20, on one character: T. Eden (+11) moved [449] and nothing else in
+    # 423-490. One is enough here because the block is bracketed by measured bases,
+    # 423-436 below it and 457 above, with no slack for it to sit anywhere else.
+    ("Mother", 438),
+    # The Beast for the 19 later characters, and for The Forgotten, is inside
+    # 471-490 by the same spacing (the two 14-blocks are exactly 34 = 14+1+19
+    # apart), but no window has moved a cell there yet. Left out on purpose.
 ]
 
 # Indices still without a label:
 #   385      a counter on its own, value 49, unchanged across the whole series
 #   386-403  eighteen cells, zero in every save, family unknown
-#   437-456  Mother for The Forgotten and the 19: located by spacing, unverified
-#   471-490  the same for The Beast
+#   471-490  The Beast for The Forgotten and the 19: located by spacing, unverified
 #   493-522  a family of counters that move together, several per session
 UNRESOLVED = (
-    [385] + list(range(386, 404)) + list(range(437, 457))
-    + list(range(471, 491)) + list(range(493, 523))
+    [385] + list(range(386, 404)) + list(range(471, 491))
+    + list(range(493, 523))
 )
 
 MARK_BITS = {1: "level 1", 2: "level 2", 4: "level 3"}
