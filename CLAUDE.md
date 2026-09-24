@@ -388,29 +388,36 @@ wiki's `description` for an achievement is the unlock paper's line, and it is th
   **A worktree is never left resting on `master` either**, for the reason above: the next
   session opens it, writes, commits by habit, and the work lands on the release branch with
   nothing in the way. Park it on a work branch, or on a detached `HEAD` at `develop` — which is
-  what the secondary worktrees do, `develop` itself being checked out in the main one since
-  2026-09-22 — so that committing requires choosing a branch first. Found and fixed on
+  what every worktree with nothing in hand does, `develop` itself being checked out in none of
+  them (the next entry) — so that committing requires choosing a branch first. Found and fixed on
   2026-09-21, on a worktree this file's own instructions had left sitting there.
   Nothing enforces any of this: no hook, no branch protection, by decision, the same way there is
   no CI. It holds because it is read.
-- **The main worktree holds `develop`; every other worktree sits on a branch of its own.**
-  Decided by the owner on 2026-09-22, and it replaces the rule that no worktree at all could
-  hold it. `C:\Projects\isaac-dome` is where integration happens — the `--no-ff` merge and the
-  push — and it stays on `develop` between one and the next instead of returning to a detached
-  `HEAD`: the branch is checked out where it is used, and a session that comes looking for it
-  finds it in the one place it is supposed to be.
-  **What has not changed is the reason the old rule existed.** Git refuses to check out one
-  branch in two worktrees, so `develop` being checked out *here* means no other worktree can
-  take it: a second worktree that tried would get an error naming a directory and not a reason,
-  which reads as a broken repository rather than as a branch that lives elsewhere. That is
-  exactly why the place is fixed and written down. **Measured on 2026-09-21**, when it was not:
-  `isaac-dome-online` was switched to `develop` to take a merge and left there, `develop` stayed
-  locked until that worktree was removed, and removing a worktree is the delicate operation two
-  entries below — junctions and all.
-  So: merge and push from the main worktree; a secondary worktree that needs `develop` merged
-  into its own branch does that from its own side, and never by checking `develop` out. A
-  secondary worktree with nothing in hand is parked on a detached `HEAD` at `develop`, so that
-  committing there requires choosing a branch first.
+- **No worktree ever holds `develop` — not even the main one.** Decided by the owner on
+  2026-09-24 ("non blocchiamo mai develop con un worktree"), and it replaces the 2026-09-22 rule
+  that the main worktree kept it checked out. Git refuses to check out one branch in two
+  worktrees, so a `develop` checked out *anywhere* is a `develop` locked for every other
+  worktree — and a worktree that tries gets an error naming a directory and not a reason, which
+  reads as a broken repository rather than as a branch that lives elsewhere.
+  **Both earlier rules failed on that one fact.** On 2026-09-21 `isaac-dome-online` was switched
+  to `develop` to take a merge and left there, and `develop` stayed locked until that worktree
+  was removed — the delicate operation two entries below, junctions and all. The fix was to give
+  `develop` one fixed home, the main worktree, and on 2026-09-24 that home was taken: another
+  session had checked out its own feature branch there, with uncommitted work in it, and a
+  finished fix had no legal place to be merged. A branch that has to be *somewhere* is a branch
+  that can be in the way.
+  **So a merge never needs `develop` checked out**, and is done from whichever worktree is free:
+  ```
+  git fetch origin --prune
+  git switch --detach origin/develop
+  git merge --no-ff <branch>
+  git push origin HEAD:develop
+  git branch -f develop HEAD        # the local ref follows, checked out nowhere
+  ```
+  then the branch is closed (below) and the worktree stays parked on that detached `HEAD`. A
+  worktree that needs `develop` merged into its own branch merges `origin/develop` from its own
+  side. `git branch -f` is refused while `develop` is checked out somewhere — which is the rule
+  catching itself being broken, and the place to look is `git worktree list`.
 - **A merged branch is closed in the same breath as the merge**, locally and on the remote —
   unless work continues on it, which is the only exception. A branch that is merged holds nothing
   `develop` does not, *by construction*, so keeping it buys no safety and costs the one thing that
