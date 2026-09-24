@@ -58,6 +58,7 @@ impl NameIndex {
 
 /// One ref, one outcome. Convenience for tests and single lookups: it builds the index
 /// every time, so anything resolving many refs uses `requirement_with`.
+#[cfg(feature = "test-api")]
 pub fn requirement(
     c: &Catalog,
     rules: &Rules,

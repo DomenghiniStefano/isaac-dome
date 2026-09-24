@@ -6,6 +6,7 @@ mod bossportraits;
 mod catalog;
 mod challenges;
 mod diagnostics;
+#[cfg(feature = "test-api")]
 pub mod for_tests;
 mod heads;
 mod ids;

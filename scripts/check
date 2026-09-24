@@ -92,6 +92,20 @@ run 'test count' node scripts/check-test-count.mjs
 # while CLAUDE.md said nobody did. The comment at the top of the script says what it cannot see.
 run 'samples access' node scripts/check-samples-access.mjs
 
+# **A gate.** The test-only API (`for_tests`, the tables and lookups only tests reach) sits behind
+# each crate's `test-api` feature, turned on by `[dev-dependencies]` (card #81, C8). This asks
+# the release graph — `app`'s normal and build edges, which is what ships — whether any crate
+# carries it. A `features = ["test-api"]` on a normal dependency would put it in the binary.
+no_test_api() {
+	tree=$(cargo tree -p app -e normal,build -f '{p} {f}') || return 1
+	if printf '%s\n' "$tree" | grep -q 'test-api'; then
+		printf '%s\n' "$tree" | grep 'test-api'
+		return 1
+	fi
+	printf 'no crate in the release graph enables test-api\n'
+}
+run 'no test-api in release' no_test_api
+
 # The contract is generated (N7, B2 in docs/IMPROVEMENTS.md): this is what makes a Rust type
 # and its TypeScript disagree loudly instead of silently. It regenerates into a scratch copy
 # and compares — it never writes the real file, because a check that repairs what it is

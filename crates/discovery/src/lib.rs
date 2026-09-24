@@ -214,6 +214,7 @@ pub fn discover(opts: &Options) -> Discovery {
 /// One module per crate, and nothing test-only anywhere else in the public surface: a name
 /// in the crate's `pub use` list says "call me", which is the opposite of what these mean.
 /// Nothing outside a `tests/` target may call them.
+#[cfg(feature = "test-api")]
 pub mod for_tests {
     use std::collections::BTreeSet;
 

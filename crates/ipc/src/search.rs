@@ -79,6 +79,7 @@ impl SearchIndex {
         self.loaded
     }
 
+    #[cfg(feature = "test-api")]
     pub fn len(&self) -> usize {
         self.pages.len()
     }
@@ -87,12 +88,14 @@ impl SearchIndex {
         self.pages.is_empty()
     }
 
+    #[cfg(feature = "test-api")]
     pub fn title(&self, target: &Target) -> Option<&str> {
         self.pages.get(target).map(|d| d.title.as_str())
     }
 
     /// The flattened text of one page's section: the measurable half of the index, so a test
     /// can state what a page reads as without going through a query.
+    #[cfg(feature = "test-api")]
     pub fn section_text(&self, target: &Target, kind: SectionKind) -> Option<&str> {
         self.pages
             .get(target)?

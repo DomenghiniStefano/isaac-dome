@@ -7,6 +7,7 @@ mod collection;
 pub mod contract;
 mod error;
 mod floor;
+#[cfg(feature = "test-api")]
 pub mod for_tests;
 mod goals;
 mod graph;
@@ -51,7 +52,7 @@ pub use collection::{
 pub use error::IpcError;
 pub use floor::{
     floor_view, room_icons, AppliedRule, FloorCandidate, FloorDiagnostic, FloorSolutionView,
-    FloorUnresolved, FloorView, RoomIconView, RoomKindView, TargetView, ROOM_KINDS,
+    FloorUnresolved, FloorView, RoomIconView, RoomKindView, TargetView,
 };
 pub use goals::{target_exists, Goal, GoalId, TargetKey, UnlockTarget};
 pub use graph::{
@@ -71,10 +72,14 @@ pub use mark_art::{
     mark_source, paper_source, widget_source, MarkFrames, WidgetArt, LOBBY_ANM2, WIDGET_ANM2,
 };
 pub use marks::{
-    character_for, counter_index, marks_matrix, marks_totals, Cell, CellLevel, CharacterGroup,
-    CharacterRow, MarkArtView, MarksMatrix, MarksTotals, SecondLevelView, BOSSES, CHARACTERS,
-    CHARACTER_KEYS,
+    character_for, marks_matrix, Cell, CellLevel, CharacterGroup, CharacterRow, MarkArtView,
+    MarksMatrix, MarksTotals, SecondLevelView, BOSSES, CHARACTERS,
 };
+// Reached only by tests: the layout tables and counter lookups are the crate's own business.
+#[cfg(feature = "test-api")]
+pub use floor::ROOM_KINDS;
+#[cfg(feature = "test-api")]
+pub use marks::{counter_index, marks_totals, CHARACTER_KEYS};
 pub use preview::{preview_of, CandidatePreview, PreviewCount};
 pub use profile::{
     candidates, profile_id, resolve_active, setup_state, ActiveProfile, CandidateSource,

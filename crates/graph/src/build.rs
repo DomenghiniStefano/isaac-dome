@@ -202,6 +202,7 @@ impl Graph {
     }
 
     /// Reachable only through `crate::for_tests`, which is where the reason lives.
+    #[cfg(feature = "test-api")]
     pub(crate) fn from_edges(edges: &[(u32, &[u32])], unknown: &[(u32, &[&str])]) -> Graph {
         let nodes = edges
             .iter()
@@ -223,6 +224,7 @@ impl Graph {
     }
 
     /// Reachable only through `crate::for_tests`, which is where the reason lives.
+    #[cfg(feature = "test-api")]
     pub(crate) fn from_requirements(rows: &[(u32, Vec<Requirement>)]) -> Graph {
         Graph {
             nodes: rows
