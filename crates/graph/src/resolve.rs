@@ -168,7 +168,7 @@ fn contributor(c: &Catalog, t: &Target) -> Option<ThresholdItem> {
         c.item(k, id).map(|i| ThresholdItem {
             kind: i.kind,
             id: i.id,
-            unlocked_by: i.unlocked_by.map(|a| a.0),
+            unlocked_by: i.unlocked_by,
         })
     })
 }

@@ -31,7 +31,7 @@ fn enqueueing_a_real_achievement_queues_exactly_its_missing_chain() {
 
     let chain = g.missing_chain(deepest, &graph::FlagsOnly(Some(&flags)));
     let mut q = plan::Queue::default();
-    let ids: Vec<u32> = chain.iter().copied().chain([deepest]).collect();
+    let ids: Vec<graph::AchievementId> = chain.iter().copied().chain([deepest]).collect();
     q.enqueue(deepest, &chain, &GraphDeps::new(&g, Some(&flags), &ids));
 
     assert_eq!(
@@ -40,9 +40,10 @@ fn enqueueing_a_real_achievement_queues_exactly_its_missing_chain() {
         "the wish and its chain, nothing else"
     );
     assert!(
-        q.rows()
-            .iter()
-            .all(|r| !flags.get(r.achievement as usize).copied().unwrap_or(false)),
+        q.rows().iter().all(|r| !flags
+            .get(r.achievement.0 as usize)
+            .copied()
+            .unwrap_or(false)),
         "a chain must never contain something already done"
     );
     assert_eq!(
@@ -52,7 +53,7 @@ fn enqueueing_a_real_achievement_queues_exactly_its_missing_chain() {
     );
 
     // The order the queue produced has to satisfy the graph, row by row.
-    let order: Vec<u32> = q.rows().iter().map(|r| r.achievement).collect();
+    let order: Vec<graph::AchievementId> = q.rows().iter().map(|r| r.achievement).collect();
     for (i, id) in order.iter().enumerate() {
         for prereq in g.missing_chain(*id, &graph::FlagsOnly(Some(&flags))) {
             if let Some(j) = order.iter().position(|x| *x == prereq) {
@@ -69,7 +70,7 @@ fn two_real_wishes_that_share_a_step_keep_one_row_for_it() {
     };
     // Two nodes whose chains overlap: the case `origins` exists for. Found rather than
     // hard-coded, because which achievements share a step moves with the game.
-    let with_chain: Vec<(u32, Vec<u32>)> = g
+    let with_chain: Vec<(graph::AchievementId, Vec<graph::AchievementId>)> = g
         .nodes()
         .iter()
         .map(|n| {
@@ -90,13 +91,13 @@ fn two_real_wishes_that_share_a_step_keep_one_row_for_it() {
         test_support::skip("no two achievements on this profile share a missing step");
         return;
     };
-    let shared: Vec<u32> = ca.iter().filter(|s| cb.contains(s)).copied().collect();
+    let shared: Vec<graph::AchievementId> = ca.iter().filter(|s| cb.contains(s)).copied().collect();
     eprintln!("{a} and {b} share {} step(s): {shared:?}", shared.len());
 
     let mut q = plan::Queue::default();
-    let ids_a: Vec<u32> = ca.iter().copied().chain([a]).collect();
+    let ids_a: Vec<graph::AchievementId> = ca.iter().copied().chain([a]).collect();
     q.enqueue(a, &ca, &GraphDeps::new(&g, Some(&flags), &ids_a));
-    let mut ids_b: Vec<u32> = q.rows().iter().map(|r| r.achievement).collect();
+    let mut ids_b: Vec<graph::AchievementId> = q.rows().iter().map(|r| r.achievement).collect();
     ids_b.extend(cb.iter().copied());
     ids_b.push(b);
     q.enqueue(b, &cb, &GraphDeps::new(&g, Some(&flags), &ids_b));

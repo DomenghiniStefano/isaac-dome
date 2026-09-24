@@ -46,11 +46,11 @@ fn every_node_the_catalog_has_was_described_by_the_rules() {
     // ("Donate 10 Coins to the Donation Machine"), which is the threshold family M2
     // deliberately leaves out. A node missing from the wiki entirely is drift.
     let dataset = wiki::Dataset::embedded().expect("embedded wiki dataset");
-    let absent: Vec<u32> = g
+    let absent: Vec<graph::AchievementId> = g
         .nodes()
         .iter()
         .filter(|n| rules.refs(n.achievement).is_empty())
-        .filter(|n| !dataset.achievements.contains_key(&n.achievement))
+        .filter(|n| !dataset.achievements.contains_key(&n.achievement.0))
         .map(|n| n.achievement)
         .collect();
     assert!(
@@ -77,7 +77,11 @@ fn zero_prerequisites_is_not_the_same_as_available_now() {
         // Done comes first, whatever the graph says about it: an achievement already
         // earned needs no recommendation, and counting it under "can't say" would inflate
         // that number with work that is finished.
-        if flags.get(n.achievement as usize).copied().unwrap_or(false) {
+        if flags
+            .get(n.achievement.0 as usize)
+            .copied()
+            .unwrap_or(false)
+        {
             done += 1;
             continue;
         }

@@ -5,6 +5,16 @@ use catalog::Catalog;
 use graph::build::{Graph, GraphDiagnostic};
 use graph::rules::{Corrections, Requirements, Rules};
 
+use graph::AchievementId;
+
+fn a(n: u32) -> AchievementId {
+    AchievementId(n)
+}
+
+fn aa(ns: &[u32]) -> Vec<AchievementId> {
+    ns.iter().copied().map(AchievementId).collect()
+}
+
 const PLAYERS: &str = r#"<players root="gfx/" portraitroot="gfx/ui/stage/">
   <player id="0" name="Isaac" portrait="PlayerPortrait_Isaac.png" />
   <player id="1" name="Magdalene" portrait="PlayerPortrait_Magdalene.png" achievement="1" />
@@ -53,10 +63,10 @@ fn a_character_requirement_becomes_an_edge_to_its_unlocking_achievement() {
             r#"{"schemaVersion":2}"#,
         ),
     );
-    let node = g.node(2).expect("node 2");
+    let node = g.node(a(2)).expect("node 2");
     assert_eq!(
         node.prerequisites,
-        vec![1],
+        aa(&[1]),
         "Magdalene is unlocked by achievement 1: that is the edge, and it comes from the game"
     );
     assert!(node.unknown.is_empty());
@@ -76,7 +86,7 @@ fn content_available_from_the_start_produces_no_edge() {
             r#"{"schemaVersion":2}"#,
         ),
     );
-    let node = g.node(2).expect("node 2");
+    let node = g.node(a(2)).expect("node 2");
     assert!(
         node.prerequisites.is_empty(),
         "Isaac has no unlocked_by: no edge, and that is a fact, not a gap"
@@ -102,7 +112,7 @@ fn an_uncurated_target_counts_as_unknown_on_its_node() {
         ),
     );
     assert_eq!(
-        g.node(2).expect("node 2").unknown,
+        g.node(a(2)).expect("node 2").unknown,
         vec!["Nowhere".to_string()]
     );
 }
@@ -122,7 +132,7 @@ fn a_gate_edge_comes_from_the_verdict() {
                 "verdicts":{"stage:The Void":{"behind":{"achievement":1}}}}"#,
         ),
     );
-    assert_eq!(g.node(2).expect("node 2").prerequisites, vec![1]);
+    assert_eq!(g.node(a(2)).expect("node 2").prerequisites, aa(&[1]));
 }
 
 #[test]
@@ -140,8 +150,8 @@ fn a_ref_straight_to_an_achievement_is_an_edge_on_its_own() {
         ),
     );
     assert_eq!(
-        g.node(2).expect("node 2").prerequisites,
-        vec![1],
+        g.node(a(2)).expect("node 2").prerequisites,
+        aa(&[1]),
         "an achievement named directly needs no verdict: it is already a node"
     );
 }
@@ -165,7 +175,7 @@ fn a_verdict_pointing_at_an_achievement_that_does_not_exist_is_diagnosed() {
         g.diagnostics().iter().any(|d| matches!(
             d,
             GraphDiagnostic::EdgeOutsideCatalog {
-                achievement: 999,
+                achievement: AchievementId(999),
                 ..
             }
         )),
@@ -173,7 +183,7 @@ fn a_verdict_pointing_at_an_achievement_that_does_not_exist_is_diagnosed() {
         g.diagnostics()
     );
     assert!(
-        g.node(2).expect("node 2").prerequisites.is_empty(),
+        g.node(a(2)).expect("node 2").prerequisites.is_empty(),
         "a dangling edge is dropped, not followed"
     );
 }
@@ -194,8 +204,8 @@ fn the_same_prerequisite_named_twice_is_one_edge() {
         ),
     );
     assert_eq!(
-        g.node(2).expect("node 2").prerequisites,
-        vec![1],
+        g.node(a(2)).expect("node 2").prerequisites,
+        aa(&[1]),
         "prerequisites are a set: 'blocked by 2' would be counting the same run twice"
     );
 }
@@ -209,7 +219,7 @@ fn every_achievement_in_the_catalog_is_a_node_even_with_no_requirements() {
         2,
         "the graph covers the catalog, not just what the wiki wrote about"
     );
-    assert!(g.node(1).is_some());
+    assert!(g.node(a(1)).is_some());
 }
 
 #[test]
@@ -239,16 +249,19 @@ fn a_node_is_never_its_own_prerequisite() {
             r#"{"schemaVersion":2}"#,
         ),
     );
-    let node = g.node(1).expect("node 1");
+    let node = g.node(a(1)).expect("node 1");
     assert!(
         node.prerequisites.is_empty(),
         "achievement 1 unlocks Magdalene and requires her: the edge is dropped, got {:?}",
         node.prerequisites
     );
     assert!(
-        g.diagnostics()
-            .iter()
-            .any(|d| matches!(d, GraphDiagnostic::SelfPrerequisite { node: 1 })),
+        g.diagnostics().iter().any(|d| matches!(
+            d,
+            GraphDiagnostic::SelfPrerequisite {
+                node: AchievementId(1)
+            }
+        )),
         "dropping an edge is a decision: it gets named, got {:?}",
         g.diagnostics()
     );
@@ -292,7 +305,7 @@ fn a_tainted_character_is_found_by_id_when_its_name_is_shared() {
         "mark":{"column":"mother","level":"base"},
         "counter":{"name":"motherKills","atLeast":1}}}}}"#;
     let g = Graph::build(&c, &rules(requirements, corrections));
-    let node = g.node(1).expect("node 1");
+    let node = g.node(a(1)).expect("node 1");
     assert!(
         node.requirements
             .contains(&graph::model::Requirement::Mark {
@@ -330,7 +343,7 @@ fn a_base_character_is_found_by_id_even_though_its_name_also_resolves() {
     let corrections = r#"{"schemaVersion":2,"verdicts":{"entity:Mother":{"progress":{
         "mark":{"column":"mother","level":"base"}}}}}"#;
     let g = Graph::build(&c, &rules(requirements, corrections));
-    let node = g.node(1).expect("node 1");
+    let node = g.node(a(1)).expect("node 1");
     assert!(
         node.requirements
             .contains(&graph::model::Requirement::Mark {

@@ -11,11 +11,11 @@ use wiki::Target;
 
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct Node {
-    pub achievement: u32,
+    pub achievement: AchievementId,
     pub requirements: Vec<Requirement>,
     /// Achievement ids this node sits behind. Sorted and deduplicated: two refs naming the
     /// same prerequisite are one run, not two.
-    pub prerequisites: Vec<u32>,
+    pub prerequisites: Vec<AchievementId>,
     /// The requirements that couldn't be interpreted, by label. Labels rather than a
     /// count because evaluation needs to know **which** gate is missing: one the profile
     /// has already passed stops blocking, and that is decided per gate, per profile.
@@ -25,22 +25,25 @@ pub struct Node {
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub enum GraphDiagnostic {
     /// A curated `behind` points at an achievement this catalog doesn't have.
-    EdgeOutsideCatalog { node: u32, achievement: u32 },
+    EdgeOutsideCatalog {
+        node: AchievementId,
+        achievement: AchievementId,
+    },
     /// A challenge unlocked by several achievements: "either of these", which the model
     /// has no way to say. The requirement becomes unknown rather than wrong.
-    Disjunction { node: u32, count: u32 },
+    Disjunction { node: AchievementId, count: u32 },
     /// Nodes that form a cycle. Filled in during evaluation.
-    Cycle { nodes: Vec<u32> },
+    Cycle { nodes: Vec<AchievementId> },
     /// A node listed among its own prerequisites. The achievement that unlocks Tainted
     /// Isaac names Tainted Isaac in its requirements — true of the wiki's sentence, and
     /// meaningless as an edge. Dropped rather than treated as a cycle, because a cycle
     /// makes every node downstream unknowable and this is just a self-reference.
-    SelfPrerequisite { node: u32 },
+    SelfPrerequisite { node: AchievementId },
     /// A transformation whose set the profile has not reached: `current` of `at_least` of
     /// its items are unlocked. The node is `Partial`, and this says why — otherwise "we
     /// cannot say" and "you are one item short" would look the same from outside.
     ThresholdUnmet {
-        node: u32,
+        node: AchievementId,
         label: String,
         current: u32,
         at_least: u32,
@@ -62,7 +65,7 @@ impl Graph {
         let mut nodes = Vec::new();
         let mut diagnostics = Vec::new();
         for a in c.achievements() {
-            let id = a.id.0;
+            let id = a.id;
             let mut requirements = Vec::new();
             let mut prerequisites = Vec::new();
             let mut unknown: Vec<String> = Vec::new();
@@ -118,17 +121,17 @@ impl Graph {
                     | Requirement::Threshold { .. } => {}
                     Requirement::Character { id: cid } => {
                         if let Some(by) = c.character(*cid).and_then(|ch| ch.unlocked_by) {
-                            prerequisites.push(by.0);
+                            prerequisites.push(by);
                         }
                     }
                     Requirement::Boss { id: bid } => {
                         if let Some(by) = c.boss(*bid).and_then(|b| b.unlocked_by) {
-                            prerequisites.push(by.0);
+                            prerequisites.push(by);
                         }
                     }
                     Requirement::Item { kind, id: iid } => {
                         if let Some(by) = c.item(*kind, *iid).and_then(|i| i.unlocked_by) {
-                            prerequisites.push(by.0);
+                            prerequisites.push(by);
                         }
                     }
                     Requirement::Challenge { id: chid } => {
@@ -138,7 +141,7 @@ impl Graph {
                             .unwrap_or_default();
                         match by.len() {
                             0 => {}
-                            1 => prerequisites.push(by[0].0),
+                            1 => prerequisites.push(by[0]),
                             n => {
                                 // "Either of these" is a disjunction, and the model has no
                                 // way to say it. Unknown is wrong-free; picking one would
@@ -157,7 +160,8 @@ impl Graph {
                         // no verdict involved.
                         let direct = gate
                             .strip_prefix("achievement:")
-                            .and_then(|n| n.parse::<u32>().ok());
+                            .and_then(|n| n.parse::<u32>().ok())
+                            .map(AchievementId);
                         let edge = match (direct, rules.verdict(gate)) {
                             (Some(id), _) => Some(id),
                             (None, Some(Verdict::Behind { achievement })) => Some(*achievement),
@@ -170,7 +174,7 @@ impl Graph {
                             | (None, None) => None,
                         };
                         if let Some(target) = edge {
-                            if c.achievement(AchievementId(target)).is_some() {
+                            if c.achievement(target).is_some() {
                                 prerequisites.push(target);
                             } else {
                                 diagnostics.push(GraphDiagnostic::EdgeOutsideCatalog {
@@ -207,9 +211,9 @@ impl Graph {
         let nodes = edges
             .iter()
             .map(|(id, prerequisites)| Node {
-                achievement: *id,
+                achievement: AchievementId(*id),
                 requirements: Vec::new(),
-                prerequisites: prerequisites.to_vec(),
+                prerequisites: prerequisites.iter().copied().map(AchievementId).collect(),
                 unknown: unknown
                     .iter()
                     .find(|(n, _)| n == id)
@@ -230,7 +234,7 @@ impl Graph {
             nodes: rows
                 .iter()
                 .map(|(achievement, requirements)| Node {
-                    achievement: *achievement,
+                    achievement: AchievementId(*achievement),
                     requirements: requirements.clone(),
                     prerequisites: Vec::new(),
                     unknown: Vec::new(),
@@ -244,7 +248,7 @@ impl Graph {
         &self.nodes
     }
 
-    pub fn node(&self, achievement: u32) -> Option<&Node> {
+    pub fn node(&self, achievement: AchievementId) -> Option<&Node> {
         self.nodes.iter().find(|n| n.achievement == achievement)
     }
 

@@ -92,7 +92,7 @@ fn a_store_that_will_not_open_is_a_different_case_from_an_unreadable_document() 
 #[test]
 fn without_a_catalog_the_queue_is_empty_and_declares_why() {
     let q = plan::Queue::from_rows(vec![plan::Row {
-        achievement: 1,
+        achievement: graph::AchievementId(1),
         wanted: true,
         origins: vec![],
     }]);
@@ -106,14 +106,14 @@ fn a_completed_row_leaves_the_view_and_is_reported() {
     let c = catalog_with_achievements();
     let q = plan::Queue::from_rows(vec![
         plan::Row {
-            achievement: 1,
+            achievement: graph::AchievementId(1),
             wanted: true,
             origins: vec![],
         },
         plan::Row {
-            achievement: 2,
+            achievement: graph::AchievementId(2),
             wanted: false,
-            origins: vec![1],
+            origins: vec![1].into_iter().map(graph::AchievementId).collect(),
         },
     ]);
     // Slot 1 is done, slot 2 is not.
@@ -135,7 +135,7 @@ fn a_completed_row_leaves_the_view_and_is_reported() {
 fn a_row_the_catalog_no_longer_knows_is_declared_by_id() {
     let c = catalog_with_achievements();
     let q = plan::Queue::from_rows(vec![plan::Row {
-        achievement: 900,
+        achievement: graph::AchievementId(900),
         wanted: true,
         origins: vec![],
     }]);
@@ -151,9 +151,9 @@ fn a_row_the_catalog_no_longer_knows_is_declared_by_id() {
 fn a_row_carries_its_origins_and_the_node_the_unlock_screen_would_draw() {
     let c = catalog_with_achievements();
     let q = plan::Queue::from_rows(vec![plan::Row {
-        achievement: 2,
+        achievement: graph::AchievementId(2),
         wanted: false,
-        origins: vec![1, 41],
+        origins: vec![1, 41].into_iter().map(graph::AchievementId).collect(),
     }]);
     let flags = [false, false, false];
     let v = ipc::queue_view(inputs(Some(&c), Some(&flags), Ok(&q)), |_| None);
@@ -230,7 +230,8 @@ fn a_goal_is_pending_until_the_queue_holds_the_achievement_that_unlocks_it() {
         id: 2,
     });
     let unknown = goal(ipc::TargetKey::Boss { id: 99 });
-    let queued: std::collections::BTreeSet<u32> = [1].into_iter().collect();
+    let queued: std::collections::BTreeSet<graph::AchievementId> =
+        [graph::AchievementId(1)].into_iter().collect();
     let empty = std::collections::BTreeSet::new();
 
     assert_eq!(

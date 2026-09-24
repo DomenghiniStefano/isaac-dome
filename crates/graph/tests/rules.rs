@@ -6,6 +6,12 @@ use graph::rules::{
     RulesError, Verdict, SCHEMA_VERSION,
 };
 
+use graph::AchievementId;
+
+fn a(n: u32) -> AchievementId {
+    AchievementId(n)
+}
+
 const REQS: &str = r#"{
   "schemaVersion": 2,
   "generatedFrom": { "snapshotAt": "2026-09-04T17:33:31Z", "maxRevid": 269057 },
@@ -81,10 +87,10 @@ fn refs_are_read_for_the_achievement_that_owns_them() {
     let r: Requirements = serde_json::from_str(REQS).expect("parses");
     let c: Corrections = serde_json::from_str(CORR).expect("parses");
     let rules = Rules::build(r, c).expect("rules build");
-    assert_eq!(rules.refs(1).len(), 1);
-    assert_eq!(rules.refs(1)[0].label, "Red Heart");
+    assert_eq!(rules.refs(a(1)).len(), 1);
+    assert_eq!(rules.refs(a(1))[0].label, "Red Heart");
     assert!(
-        rules.refs(999).is_empty(),
+        rules.refs(a(999)).is_empty(),
         "an achievement with no row has no requirements, and that is not an error"
     );
 }
