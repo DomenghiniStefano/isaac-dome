@@ -110,7 +110,9 @@ pub struct RunsView {
 
 /// What the command gathers before this crate can answer.
 pub struct RunsInputs<'a> {
-    /// Each source with its folded runs, in the order they should be shown.
+    /// Each source with its folded runs, in the order the archive took them in — not the order
+    /// they are shown in: that is `ui/src/lib/runs/runOrder.ts`, which reads the one clock the
+    /// archive has, a session folder's name (card #80, P8).
     pub sources: Vec<(RunSource, Vec<run::Run>)>,
     pub catalog: Option<&'a Catalog>,
     pub diagnostics: Vec<RunsDiagnostic>,
