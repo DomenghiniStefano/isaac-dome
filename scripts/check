@@ -75,6 +75,11 @@ run 'pnpm scan' pnpm scan
 # noticing. See the comment at the top of the script.
 run 'no game assets' node scripts/check-no-game-assets.mjs
 
+# **A gate too, for the same reason.** No Steam account id is tracked beyond the declared fakes:
+# the owner's sat in a probe path and a test fixture for three weeks and left the history on
+# 2026-09-24 (card #83). The script never names the real one.
+run 'no steam account id' node scripts/check-no-steam-account-id.mjs
+
 # **Fewer tests than where the branch started fails** (B63). Declarations counted by `git grep` in
 # the working tree and at the merge base with `develop`, so there is no stored number to raise
 # and nothing for two branches to conflict on — which is what the file it replaced,
