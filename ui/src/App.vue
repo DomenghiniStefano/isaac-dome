@@ -6,6 +6,7 @@ import NavBar from '@/components/shell/NavBar.vue'
 import ProfileIndicator from '@/components/shell/ProfileIndicator.vue'
 import SearchPalette from '@/components/search/SearchPalette.vue'
 import SectionSidebar from '@/components/shell/SectionSidebar.vue'
+import SidebarEdgeTab from '@/components/shell/SidebarEdgeTab.vue'
 import SidebarItem from '@/components/shell/SidebarItem.vue'
 import TitleBar from '@/components/shell/TitleBar.vue'
 import {
@@ -37,6 +38,7 @@ import {
   historyAction,
   pointerHistoryAction,
 } from '@/lib/shell/navigation'
+import { togglesSidebar } from '@/lib/shell/sidebarToggle'
 import {
   closeWindow,
   minimizeWindow,
@@ -46,7 +48,9 @@ import {
 } from '@/lib/window/appWindow'
 import { AppEvent, watchAppEvents } from '@/lib/window/appEvents'
 import {
+  setSidebarCollapsed,
   setSidebarWidth,
+  sidebarCollapsed,
   sidebarWidth as storedWidth,
 } from '@/lib/window/layout'
 import { useWindowSession } from '@/lib/window/session'
@@ -193,6 +197,9 @@ const sidebarWidth = computed<number>({
       : clampSidebarWidth(storedWidth.value),
   set: (px) => setSidebarWidth(px),
 })
+// Folded to its icons by the tab on its edge or by `Ctrl+B`; one value for the app, like the width.
+// The shell being too narrow folds it too, in CSS alone, and never writes here.
+const toggleSidebar = () => setSidebarCollapsed(!sidebarCollapsed.value)
 const header = computed(() => sidebarHeaders[browsing.value])
 const entries = computed(() => sidebarEntries[browsing.value])
 
@@ -223,6 +230,14 @@ useShortcut((event) => {
   const action = shortcutAction(event)
   if (action === null) return false
   void settings.step(action)
+  return true
+})
+
+// `Ctrl+B` folds the sidebar from anywhere — but only where there is one: over the welcome it
+// would change a sidebar nobody can see, and the shell would come up folded for no reason shown.
+useShortcut((event) => {
+  if (takeover.value || !togglesSidebar(event)) return false
+  toggleSidebar()
   return true
 })
 
@@ -293,9 +308,12 @@ const takeover = computed(() => welcome.value.kind !== 'hidden')
              sidebar collapses inside it — which is why the sidebar's threshold hangs here and not
              on `page`, where a collapse would widen the content, re-cross the threshold and
              oscillate (spec 3.13a §6). -->
-        <!-- `group/shell` is the sidebar's second input: nothing writes `data-sidebar` here yet,
-             and the button's own card will write it and nothing else (spec 3.13a §6). -->
-        <div class="group/shell @container/shell flex min-h-0 flex-1">
+        <!-- `group/shell` is the sidebar's second input, and `data-sidebar` is the only thing the
+             edge tab writes (spec 3.13a §6, card #54): the CSS 3.13a built does the folding. -->
+        <div
+          :data-sidebar="sidebarCollapsed ? 'collapsed' : undefined"
+          class="group/shell @container/shell flex min-h-0 flex-1"
+        >
           <SectionSidebar
             v-model:width="sidebarWidth"
             :title="t(header.title)"
@@ -303,6 +321,12 @@ const takeover = computed(() => welcome.value.kind !== 'hidden')
             class="border-y-0 border-l-0"
           >
             <template #icon><component :is="header.icon" /></template>
+            <template #edge>
+              <SidebarEdgeTab
+                :collapsed="sidebarCollapsed"
+                @toggle="toggleSidebar"
+              />
+            </template>
             <SidebarItem
               v-for="entry in entries"
               :key="entry.key"

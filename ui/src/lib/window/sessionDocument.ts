@@ -44,9 +44,14 @@ export interface StoredWindow {
 // **`tables` is not here yet**, although §8 of the spec names it, because nothing in the app
 // produces a table size: B27's resizable tables are not built, and a named place for a value that
 // does not exist is one more thing to read and nothing to store.
+//
+// `sidebarCollapsed` is the same kind of part, and it is `true` or absent — never `false`. Open is
+// what the sidebar is until somebody folds it, so an open sidebar writes nothing, exactly as a
+// width nobody set writes nothing.
 export interface StoredSession {
   windows: StoredWindow[]
   sidebarWidth?: number
+  sidebarCollapsed?: true
 }
 
 const routeNames: readonly string[] = Object.values(RouteName)
@@ -198,8 +203,14 @@ export const readSession = (raw: string | null): StoredSession | null => {
     return null
   }
   if (typeof parsed !== 'object' || parsed === null) return null
-  const { version, tabs, activeIndex, windows, sidebarWidth } =
-    parsed as Record<string, unknown>
+  const {
+    version,
+    tabs,
+    activeIndex,
+    windows,
+    sidebarWidth,
+    sidebarCollapsed,
+  } = parsed as Record<string, unknown>
   // Version 1 said `tabs` at the top level and knew nothing about windows. It is one window,
   // wherever the window manager decides to put it — and it never carried a sidebar width.
   if (version === FirstVersion) {
@@ -213,10 +224,13 @@ export const readSession = (raw: string | null): StoredSession | null => {
   if (kept.length === 0) return null
   // A number, and nothing more: the bounds are the sidebar's own and are enforced where it is
   // drawn (`clampSidebarWidth`). A parser that knew 168 and 420 would be a parser holding the
-  // design's pixels.
-  return isFinite(sidebarWidth)
-    ? { windows: kept, sidebarWidth }
-    : { windows: kept }
+  // design's pixels. Folded is `true` and nothing else: a `"yes"` written by hand is not a
+  // sidebar anybody folded.
+  return {
+    windows: kept,
+    ...(isFinite(sidebarWidth) ? { sidebarWidth } : {}),
+    ...(sidebarCollapsed === true ? { sidebarCollapsed } : {}),
+  }
 }
 
 // Only the entry each tab is showing keeps its view. `MAX_SESSION_BYTES` is 64 KiB and its
@@ -244,4 +258,5 @@ export const writeSession = (session: StoredSession): string =>
     ...(session.sidebarWidth === undefined
       ? {}
       : { sidebarWidth: session.sidebarWidth }),
+    ...(session.sidebarCollapsed ? { sidebarCollapsed: true } : {}),
   })

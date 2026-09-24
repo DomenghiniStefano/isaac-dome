@@ -22,6 +22,9 @@ export const ButtonVariant = {
   // — unpainted, a room, or a cell a cited rule allows — is the answer the screen computes,
   // and cva cannot express a colour that changes per cell.
   Cell: 'cell',
+  // A tab on the sidebar's inner edge that folds it: the sidebar's own surface and edge, so it
+  // reads as a piece of the sidebar sticking out rather than a button laid on the page.
+  SidebarTab: 'sidebarTab',
 } as const
 export type ButtonVariant = (typeof ButtonVariant)[keyof typeof ButtonVariant]
 
@@ -37,6 +40,7 @@ export const ButtonSize = {
   Section: 'section',
   Cell: 'cell',
   Brush: 'brush',
+  SidebarTab: 'sidebarTab',
 } as const
 export type ButtonSize = (typeof ButtonSize)[keyof typeof ButtonSize]
 
@@ -87,6 +91,8 @@ export const buttonVariants = cva(
         // that was painted on it, and 169 borders would be a lattice the eye reads before it
         // reads the answer.
         [ButtonVariant.Cell]: 'border-transparent hover:border-input',
+        [ButtonVariant.SidebarTab]:
+          'border-secondary bg-data text-subtle-foreground hover:border-input hover:text-foreground',
       },
       size: {
         [ButtonSize.Default]: 'h-control px-4',
@@ -111,6 +117,9 @@ export const buttonVariants = cva(
         // the grid's beside it, and edgeless, so the swatch is flush with the row's own edge.
         [ButtonSize.Brush]:
           'h-floor-cell w-full justify-start gap-2.5 border-0 p-0 pr-1.5 text-row',
+        // Twice as tall as it is wide: a tab, not a square, so it reads as hanging off the edge.
+        [ButtonSize.SidebarTab]:
+          'h-8 w-4 p-0 [&_svg:not([class*=size-])]:size-3',
       },
     },
     compoundVariants: [

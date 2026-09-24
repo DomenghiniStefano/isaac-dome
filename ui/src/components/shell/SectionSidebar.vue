@@ -58,19 +58,28 @@ const onKeydown = (e: KeyboardEvent) => {
        (spec 3.13a §6). The inline style above sets the *variable*, never the width, so a variant
        class wins by ordinary cascade — which is what lets the collapse be pure CSS, and lets the
        button's own card write `data-sidebar="collapsed"` and touch nothing else. -->
+  <!-- Folding moves in the sheet's five steps (Motion.dc.html), whichever input asked for it. Not
+       while the edge is being dragged: there every pixel of the pointer would become a 200ms
+       animation, and the edge would trail the cursor instead of sitting under it. -->
   <aside
     :style="widthVariable"
-    class="flex w-(--sidebar-width) shrink-0 border border-secondary bg-data group-data-[sidebar=collapsed]/shell:w-sidebar-icons @max-sidebar-room/shell:w-sidebar-icons"
+    :data-resizing="resizing !== null"
+    class="relative flex w-(--sidebar-width) shrink-0 border border-secondary bg-data transition-[width] duration-sheet ease-sheet group-data-[sidebar=collapsed]/shell:w-sidebar-icons data-[resizing=true]:transition-none @max-sidebar-room/shell:w-sidebar-icons"
   >
-    <div class="flex min-w-0 flex-1 flex-col">
+    <!-- Clipped, so that while the width folds the edge passes over the labels instead of the
+         labels spilling past it onto the page. The column and not the aside: the edge tab hangs
+         outside the aside, and clipping it would cut the tab in half. -->
+    <div class="flex min-w-0 flex-1 flex-col overflow-hidden">
       <div
         class="flex items-center sidebar-collapsed-center gap-2 px-2.75 pt-2.5 pb-2.25"
       >
-        <span class="text-highlight [&_svg]:size-3.5"
+        <span class="shrink-0 text-highlight [&_svg]:size-3.5"
           ><slot name="icon"
         /></span>
+        <!-- Truncated like the entries below, for the few frames an unfolding sidebar is narrower
+             than its own title. -->
         <span
-          class="sidebar-collapsed-hidden text-caption tracking-caps text-foreground uppercase"
+          class="sidebar-collapsed-hidden min-w-0 truncate text-caption tracking-caps text-foreground uppercase"
           >{{ title }}</span
         >
         <HelpTip v-if="hint" class="sidebar-collapsed-hidden">{{
@@ -96,5 +105,8 @@ const onKeydown = (e: KeyboardEvent) => {
       @dblclick="width = SidebarWidth.Default"
       @keydown="onKeydown"
     />
+    <!-- Whatever hangs off the inner edge: the aside is `relative` for it, and it is drawn last
+         so it sits over the resize handle it shares the edge with. -->
+    <slot name="edge" />
   </aside>
 </template>
