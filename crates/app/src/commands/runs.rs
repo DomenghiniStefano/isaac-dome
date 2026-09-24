@@ -79,28 +79,11 @@ pub(crate) fn live(
         Err(_) => ipc::LiveGraph::NoGraph,
     };
 
-    // The catalog's own names, which is where the ambiguity comes from: a Tainted character
-    // answers to the base form's name, so this hands back every character that name reaches
-    // and `live_view` says there were two rather than choosing one.
     let rs = resources.get();
     let cat = rs.and_then(|rs| catalog.get_or_build(rs));
-    // Given the id the log stated, exactly that character; given only a name, everyone who
-    // answers to it — which is two whenever a Tainted form is involved, because the game gives
-    // it the base form's name.
     let by_name = |name: &str, id: Option<u32>| -> Vec<(u32, String)> {
-        let Some(c) = cat else { return Vec::new() };
-        c.characters()
-            .filter(|ch| match id {
-                Some(id) => ch.id.0 == id,
-                None => c.text(&ch.name, catalog::Language::English) == name,
-            })
-            .map(|ch| {
-                (
-                    ch.id.0,
-                    c.text(&ch.name, catalog::Language::English).to_string(),
-                )
-            })
-            .collect()
+        cat.map(|c| ipc::characters_named(c, name, id))
+            .unwrap_or_default()
     };
 
     // The row of the completion matrix for whoever is being played — two rows when the name
@@ -118,11 +101,7 @@ pub(crate) fn live(
                             .into_iter()
                             .map(|(id, _)| id)
                             .collect();
-                    let rows: Vec<usize> = (0..ipc::CHARACTERS.len())
-                        .filter(|row| {
-                            ipc::character_for(*row, c).is_some_and(|ch| wanted.contains(&ch.id.0))
-                        })
-                        .collect();
+                    let rows = ipc::live_mark_rows(c, &wanted);
                     (!rows.is_empty()).then(|| ipc::live_marks(&matrix, &rows))
                 })
         }
