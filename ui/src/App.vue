@@ -26,6 +26,7 @@ import { TooltipProvider } from '@/components/ui/tooltip'
 import { usePointerShortcut } from '@/composables/usePointerShortcut'
 import { useShortcut } from '@/composables/useShortcut'
 import { useFormat } from '@/composables/useFormat'
+import { useToday } from '@/composables/useToday'
 import { useMessages } from '@/i18n'
 import type { Point } from '@/lib/drag/dragList'
 import { indicator } from '@/lib/profile/profileView'
@@ -227,9 +228,12 @@ useShortcut((event) => {
   return true
 })
 
+// The date moves at midnight, so "today" on the indicator becomes "yesterday" without a
+// relaunch (card #80, P10).
+const today = useToday()
 const indicatorView = computed(() =>
   profile.setup
-    ? indicator(profile.setup.active, new Date(), fmt.locale())
+    ? indicator(profile.setup.active, today.value, fmt.locale())
     : null,
 )
 
