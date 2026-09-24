@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { vScrollMemory } from '@/directives/scrollMemory'
 import { InfoIcon, TriangleAlertIcon } from '@lucide/vue'
 import { computed } from 'vue'
 import { TabOrigin } from '@/components/shell/tabs'
@@ -74,7 +75,10 @@ const open = (category: WikiCategory, event: MouseEvent) => {
        and the sections under it carry `px-5.5`. A band that reached the window's edge by
        growing past a gutter opened a horizontal scrollbar under the whole screen (seen
        2026-09-21), which is why the shell's page box pads nothing (card #63). -->
-  <div class="flex h-full flex-col overflow-y-auto pb-15">
+  <div
+    v-scroll-memory="'page'"
+    class="flex h-full flex-col overflow-y-auto pb-15"
+  >
     <!-- The landing opens on the same band its pages do, and the categories come straight
          under it: what somebody arriving here wants is a way in, not the provenance of the
          dataset — that stays, and it goes last. -->

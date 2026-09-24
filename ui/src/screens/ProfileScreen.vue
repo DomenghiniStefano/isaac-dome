@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { vScrollMemory } from '@/directives/scrollMemory'
 import { SaveIcon } from '@lucide/vue'
 import { computed } from 'vue'
 import { Skeleton } from '@/components/ui/skeleton'
@@ -25,7 +26,10 @@ const activeProfile = computed(() => {
        indicator opens it. What is left here is where the numbers come from — the chain, the
        save in use, and what the file let us read. The candidate table and the "nothing
        found" card went with the choice; this screen is only ever open with a profile. -->
-  <div class="flex h-full flex-col gap-4 overflow-y-auto px-5.5 pt-5 pb-15">
+  <div
+    v-scroll-memory="'page'"
+    class="flex h-full flex-col gap-4 overflow-y-auto px-5.5 pt-5 pb-15"
+  >
     <ScreenHeader :icon="SaveIcon" :title="t('profile.title')">{{
       t('profile.intro')
     }}</ScreenHeader>
