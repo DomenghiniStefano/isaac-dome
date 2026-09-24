@@ -277,3 +277,32 @@ pub fn live_marks(matrix: &crate::marks::MarksMatrix, rows: &[usize]) -> LiveMar
             .collect(),
     }
 }
+
+/// Who the log could mean (card #81, V1: this was a closure in the `live` command). Given the
+/// id the log stated, exactly that character; given only a name, everyone who answers to it in
+/// the catalog's English names — which is two whenever a Tainted form is involved, because the
+/// game gives it the base form's name. `live_view` says there were two rather than choosing.
+pub fn characters_named(c: &catalog::Catalog, name: &str, id: Option<u32>) -> Vec<(u32, String)> {
+    c.characters()
+        .filter(|ch| match id {
+            Some(id) => ch.id.0 == id,
+            None => c.text(&ch.name, catalog::Language::English) == name,
+        })
+        .map(|ch| {
+            (
+                ch.id.0,
+                c.text(&ch.name, catalog::Language::English).to_string(),
+            )
+        })
+        .collect()
+}
+
+/// The rows of the completion matrix for the characters asked for, in the matrix's order —
+/// two rows when a name reached two forms (card #81, V1, out of the `live` command).
+pub fn live_mark_rows(c: &catalog::Catalog, wanted: &[u32]) -> Vec<usize> {
+    (0..crate::marks::CHARACTERS.len())
+        .filter(|row| {
+            crate::marks::character_for(*row, c).is_some_and(|ch| wanted.contains(&ch.id.0))
+        })
+        .collect()
+}
