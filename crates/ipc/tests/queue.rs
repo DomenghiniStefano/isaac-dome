@@ -233,8 +233,14 @@ fn a_goal_is_pending_until_the_queue_holds_the_achievement_that_unlocks_it() {
     let queued: std::collections::BTreeSet<u32> = [1].into_iter().collect();
     let empty = std::collections::BTreeSet::new();
 
-    assert_eq!(ipc::goals_pending(&c, &[item.clone()], &queued), 0);
-    assert_eq!(ipc::goals_pending(&c, &[item.clone()], &empty), 1);
+    assert_eq!(
+        ipc::goals_pending(&c, std::slice::from_ref(&item), &queued),
+        0
+    );
+    assert_eq!(
+        ipc::goals_pending(&c, std::slice::from_ref(&item), &empty),
+        1
+    );
     // A goal nothing unlocks cannot be stood for by any row: it stays pending.
     assert_eq!(ipc::goals_pending(&c, &[item, unknown], &queued), 1);
 }
