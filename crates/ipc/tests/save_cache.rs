@@ -166,3 +166,35 @@ fn a_failure_is_not_remembered() {
     assert_eq!(*value, 3, "the next call tried again instead of failing");
     assert_eq!(loads.get(), 1);
 }
+
+/// Card #80, item 05: a save written **while** it is being read. The time the entry keeps must
+/// be the one from before the read, so the next command sees the file moved and reads it
+/// again. Read after the load, it was the new time on the old content, served as fresh until
+/// the game wrote once more.
+#[test]
+fn a_save_written_during_the_read_is_read_again_by_the_next_command() {
+    let cache: SaveCache<u32> = SaveCache::default();
+    let id = profile_id(&path());
+    let clock = Cell::new(100);
+    let loads = Cell::new(0);
+    let stat = |_: &Path| at(clock.get());
+    let load = |_: &Path| {
+        loads.set(loads.get() + 1);
+        // The game writes the file while this read is under way.
+        clock.set(200);
+        Ok(loads.get())
+    };
+
+    let (_, first) = cache
+        .get(Some(&id), stat, || Ok((id.clone(), path())), load)
+        .unwrap();
+    let (_, second) = cache
+        .get(Some(&id), stat, || Ok((id.clone(), path())), load)
+        .unwrap();
+
+    assert_eq!(*first, 1);
+    assert_eq!(
+        *second, 2,
+        "the read that saw half of each version is not trusted"
+    );
+}
