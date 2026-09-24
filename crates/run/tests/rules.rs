@@ -171,7 +171,10 @@ fn the_embedded_file_is_the_one_that_ships() {
     // **3 since 2026-09-16**, when `roomsGenerated` was added for F2: a run folded before it
     // carries floors that say nothing about how they were generated, and "nothing was said"
     // would be indistinguishable from "the log did not have the line yet".
-    assert_eq!(Rules::embedded().version(), 3);
+    // **4 since 2026-09-25**, when the fold stopped dropping the player line of a solo
+    // launch's second run (card 80, P1): every run after the first was cached without its
+    // character, and only a new version makes the store fold those sources again.
+    assert_eq!(Rules::embedded().version(), 4);
 }
 
 #[test]

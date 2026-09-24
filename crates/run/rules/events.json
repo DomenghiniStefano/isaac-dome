@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "patterns": {
     "runStarted": "RNG Start Seed: (?<words>[A-Z0-9]{4} [A-Z0-9]{4}) \\((?<numeric>\\d+)\\) \\[(?<kind>[^,\\]]+)",
     "floorEntered": "Level::Init m_Stage (?<stage>\\d+), m_StageType (?<stage_type>\\d+) Seed (?<seed>\\d+)",

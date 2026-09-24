@@ -179,6 +179,17 @@ impl Run {
                         }
                         continue;
                     };
+                    // A run that already knows its character, off the online table, is over as
+                    // far as a new player line is concerned: on a solo launch the next run's
+                    // line arrives before its seed, while the fold still holds the last run
+                    // (card #80, P1). Online the line repeats for every player at the table,
+                    // and those stay the run's to ignore.
+                    if let Event::PlayerInitialized { subtype, .. } = other {
+                        if run.character_id.is_some() && !matches!(run.seed_kind, SeedKind::Net) {
+                            pending_character.get_or_insert(subtype);
+                            continue;
+                        }
+                    }
                     apply(run, other, kinds, &mut starting);
                 }
             }
