@@ -182,8 +182,14 @@ export const readSession = (raw: string | null): StoredSession | null => {
     return null
   }
   if (typeof parsed !== 'object' || parsed === null) return null
-  const { version, tabs, activeIndex, windows, sidebarWidth, sidebarCollapsed } =
-    parsed as Record<string, unknown>
+  const {
+    version,
+    tabs,
+    activeIndex,
+    windows,
+    sidebarWidth,
+    sidebarCollapsed,
+  } = parsed as Record<string, unknown>
   // Version 1 said `tabs` at the top level and knew nothing about windows. It is one window,
   // wherever the window manager decides to put it — and it never carried a sidebar width.
   if (version === FirstVersion) {

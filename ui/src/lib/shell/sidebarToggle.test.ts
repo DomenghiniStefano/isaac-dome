@@ -4,8 +4,7 @@ import { togglesSidebar } from './sidebarToggle'
 const press = (
   key: string,
   { ctrlKey = true, shiftKey = false, altKey = false, repeat = false } = {},
-) =>
-  togglesSidebar({ key, ctrlKey, shiftKey, altKey, repeat } as KeyboardEvent)
+) => togglesSidebar({ key, ctrlKey, shiftKey, altKey, repeat } as KeyboardEvent)
 
 describe('togglesSidebar', () => {
   it('is Ctrl+B', () => {
