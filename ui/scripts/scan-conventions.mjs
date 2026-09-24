@@ -254,6 +254,10 @@ const checks = [
         'wide',
         'tab-narrow',
         'sidebar-room',
+        // The Floor workbench's two breaks, against its own `floor` container: declared in
+        // `assets/theme/floor.css` beside the sums they are made of.
+        'floor-rail',
+        'floor-all',
       ])
       const named = [...body.matchAll(/@(?:max-)?([a-z0-9-]+)\/[a-z-]+:/g)]
       return media || named.some(([, size]) => !ours.has(size))
