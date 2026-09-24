@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { vScrollMemory } from '@/directives/scrollMemory'
 import { MonitorDotIcon, TriangleAlertIcon } from '@lucide/vue'
 import {
   Alert,
@@ -35,7 +36,10 @@ const startFailure = computed(() =>
 </script>
 
 <template>
-  <div class="flex h-full flex-col gap-4 overflow-y-auto px-5.5 pt-5 pb-15">
+  <div
+    v-scroll-memory="'page'"
+    class="flex h-full flex-col gap-4 overflow-y-auto px-5.5 pt-5 pb-15"
+  >
     <ScreenHeader :icon="MonitorDotIcon" :title="t('routes.background')">{{
       t('background.intro')
     }}</ScreenHeader>

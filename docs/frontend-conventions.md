@@ -393,10 +393,32 @@ content.
 
 ### What checks it
 
-`scan-conventions.mjs`, four rules: no media-query variant and no container size that is not ours;
+`scan-conventions.mjs`, five rules: no media-query variant and no container size that is not ours;
 a screen root is one of the two shapes; no width cap on a screen root; a narrow grid template with
-no hidden cell. A screen, for the middle two, is **what the router mounts** — read from
+no hidden cell; no scrolling box under `src/screens/` without `v-scroll-memory`. A screen, for the middle two, is **what the router mounts** — read from
 `routes.ts`, because `src/screens/` also holds the parts only one screen uses.
+
+### A tab loses nothing
+
+Decided by the owner on 2026-09-24 (#79): switching tab, going back, tearing a tab off or reopening
+the app **gives back the screen exactly as it was left**, down to the scroll. Three pieces make
+that true, and each covers what the others do not.
+
+- **One instance of a screen per history entry of a tab.** `App.vue` keys the `RouterView`'s
+  component with the tab's id and its position in its history. Without it the router reused one
+  component for every tab on the same route, and anything a screen held in a `ref` walked from
+  one tab into the next. The position is safe in the key because typing does not move it: a
+  refinement of the same view replaces the entry in place.
+- **What the user chose lives in the tab's reading** — filters, sort, selection, a drawing — through
+  `useTabView` and a `tabView.ts` beside the screen. A `ref` is right only for what should be lost
+  on the next switch: a hover, a menu that is open.
+- **Every region that scrolls carries `v-scroll-memory="'name'"`** (`ui/src/directives/scrollMemory.ts`).
+  The position is the shell's, kept on the entry beside the reading (never inside it: `useTabView`
+  writes the reading whole and would erase it), and it travels with a torn-off tab and a saved
+  session. The name tells two regions of one entry apart. It restores once the content can reach
+  the position, keeps putting it back while content still arrives above it, and lets go the moment
+  a hand is on the region. The lists on `VirtualRows` keep their own offset in the reading instead,
+  measured against a row count.
 
 ---
 
@@ -763,6 +785,7 @@ For honesty's sake, and so as not to make this document look more complete than 
 | **A screen root that is neither flowing nor filling** | `ui/scripts/scan-conventions.mjs` |
 | **A width cap on a screen root** | `ui/scripts/scan-conventions.mjs` |
 | **A narrow grid template with no column hidden** | `ui/scripts/scan-conventions.mjs` |
+| **A scrolling box under `src/screens/` without `v-scroll-memory`** | `ui/scripts/scan-conventions.mjs` |
 
 Three rows arrived on 2026-09-06 — before that, the document declared five rules and the
 script checked three — six more on 2026-09-10 with the design system, and **four on

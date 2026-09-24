@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { vScrollMemory } from '@/directives/scrollMemory'
 import { computed, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import DiagnosticsList from '@/components/diagnostics/DiagnosticsList.vue'
@@ -153,10 +154,12 @@ const open = (location: TabLocation, newTab: boolean) => {
            column when stacked, and side by side **the suggestions**, which is where the gutter
            went when the two changed places (card #63). -->
       <div
+        v-scroll-memory="'body'"
         class="-mx-5.5 flex min-h-0 flex-1 flex-col gap-4 overflow-y-auto px-5.5 @wide/page:flex-row @wide/page:items-stretch @wide/page:overflow-hidden @wide/page:pr-0"
       >
         <div
           v-if="readable"
+          v-scroll-memory="'queue'"
           class="min-w-0 flex-1 @wide/page:min-h-0 @wide/page:overflow-y-auto"
         >
           <!-- Both panes fill the row: two panels of the same height read as one workbench,
@@ -173,6 +176,7 @@ const open = (location: TabLocation, newTab: boolean) => {
           />
         </div>
         <AddPane
+          v-scroll-memory="'suggestions'"
           class="@wide/page:min-h-0 @wide/page:w-add-pane @wide/page:shrink-0 @wide/page:overflow-y-auto @wide/page:pr-5.5"
           :sections="graph.view?.steps.sections ?? []"
           :queued="queued"

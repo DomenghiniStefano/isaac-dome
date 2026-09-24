@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { vScrollMemory } from '@/directives/scrollMemory'
 import { Grid3x3Icon } from '@lucide/vue'
 import { computed } from 'vue'
 import DiagnosticsList from '@/components/diagnostics/DiagnosticsList.vue'
@@ -57,7 +58,10 @@ const noStartRoom = computed(() =>
 </script>
 
 <template>
-  <div class="flex h-full flex-col gap-4 overflow-y-auto px-5.5 pt-5 pb-15">
+  <div
+    v-scroll-memory="'page'"
+    class="flex h-full flex-col gap-4 overflow-y-auto px-5.5 pt-5 pb-15"
+  >
     <ScreenHeader :icon="Grid3x3Icon" :title="t('routes.floor')">{{
       t('floor.intro')
     }}</ScreenHeader>
