@@ -49,7 +49,9 @@
   }
 }
 
-/* Motion.dc.html: loops become static, entrances instant. */
+/* Motion.dc.html: loops become static, entrances instant. The delay goes with the duration: the
+   sidebar's labels wait for its width to fold (utilities.css), and with no fold to wait for they
+   would vanish a beat after the edge had already snapped shut. */
 @media (prefers-reduced-motion: reduce) {
   *,
   ::before,
@@ -57,5 +59,6 @@
     animation-duration: 0ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0ms !important;
+    transition-delay: 0ms !important;
   }
 }
