@@ -173,6 +173,7 @@ const open = (location: TabLocation, newTab: boolean) => {
             :last-move="queue.lastMove"
             @move="queue.move"
             @remove="queue.remove"
+            @navigate="open"
           />
         </div>
         <AddPane
