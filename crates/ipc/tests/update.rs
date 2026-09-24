@@ -6,6 +6,10 @@
 //!
 //! Spec: `docs/superpowers/specs/2026-09-20-app-update-design.md`.
 
+// A test that extracts one variant panics on every other, the ones added later included: here
+// the wildcard *is* the assertion, and it fails loudly on a new variant instead of hiding it.
+#![allow(clippy::wildcard_enum_match_arm)]
+
 use ipc::for_tests::update_at;
 use ipc::{UpdateFailure, UpdatePhase, UpdateReason, UpdateState};
 use wiki::{Block, Inline, Style};

@@ -22,6 +22,7 @@ pub enum Diagnostic {
 
 /// Joins `rel` under `cache_dir`, accepting only normal path components.
 /// Rejects (`None`) any absolute path, drive/UNC prefix, `..`, or `.`.
+#[allow(clippy::wildcard_enum_match_arm)] // a foreign enum; the reason is at the wildcard arm
 fn safe_join(cache_dir: &Path, rel: &str) -> Option<PathBuf> {
     let rel = rel.replace('\\', "/");
     let mut dest = cache_dir.to_path_buf();
@@ -32,7 +33,9 @@ fn safe_join(cache_dir: &Path, rel: &str) -> Option<PathBuf> {
                 dest.push(c);
                 pushed = true;
             }
-            _ => return None, // RootDir, Prefix (C:), ParentDir (..), CurDir (.)
+            // RootDir, Prefix (C:), ParentDir (..), CurDir (.): only a plain name stays inside the
+            // cache, so refusing by default is the rule, and a component std adds later is refused too.
+            _ => return None,
         }
     }
     if pushed {

@@ -14,6 +14,10 @@
 //! row, the page's own key is the one that answers. The tiers are unit-tested beside
 //! `merge_keys`, and what they do to the installed game is in `target_sprite_real.rs`.
 
+// A test that extracts one variant panics on every other, the ones added later included: here
+// the wildcard *is* the assertion, and it fails loudly on a new variant instead of hiding it.
+#![allow(clippy::wildcard_enum_match_arm)]
+
 use catalog::Catalog;
 use ipc::{target_sprite, Target, TargetSprite};
 

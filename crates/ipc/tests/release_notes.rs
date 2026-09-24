@@ -8,6 +8,10 @@
 //! The subset is the one `docs/release.md`'s notes are written in: headings, paragraphs,
 //! bullet and numbered lists, `**bold**`, `` `code` `` and a `---` rule.
 
+// A test that extracts one variant panics on every other, the ones added later included: here
+// the wildcard *is* the assertion, and it fails loudly on a new variant instead of hiding it.
+#![allow(clippy::wildcard_enum_match_arm)]
+
 use ipc::release_notes;
 use wiki::{Block, Inline, ListItem, Style};
 

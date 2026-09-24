@@ -157,20 +157,26 @@ pub fn run() {
         })
         .build(tauri::generate_context!())
         .expect("failed to start the application")
-        .run(|app, event| match event {
-            // `code` is `None` when the user closed the last window and `Some` when the code
-            // asked to exit (`AppHandle::exit`, the tray's Quit). Preventing only the first is
-            // what makes Quit work without a flag anyone has to remember to set.
-            tauri::RunEvent::ExitRequested {
-                code: None, api, ..
-            } if settings_file::load(app).stay_in_background => {
-                api.prevent_exit();
-                tray::notice_once(app);
-            }
-            // `RunEvent` is `#[non_exhaustive]` and is not ours: this is the one catch-all the
-            // repo's exhaustiveness rule cannot ask us to remove.
-            _ => (),
-        });
+        .run(on_run_event);
+}
+
+// A function of its own so the lint's allow covers this one match and nothing else in `run`.
+#[allow(clippy::wildcard_enum_match_arm)] // a foreign enum; the reason is at the wildcard arm
+fn on_run_event(app: &tauri::AppHandle, event: tauri::RunEvent) {
+    match event {
+        // `code` is `None` when the user closed the last window and `Some` when the code
+        // asked to exit (`AppHandle::exit`, the tray's Quit). Preventing only the first is
+        // what makes Quit work without a flag anyone has to remember to set.
+        tauri::RunEvent::ExitRequested {
+            code: None, api, ..
+        } if settings_file::load(app).stay_in_background => {
+            api.prevent_exit();
+            tray::notice_once(app);
+        }
+        // `RunEvent` is `#[non_exhaustive]` and is not ours: this is the one catch-all the
+        // repo's exhaustiveness rule cannot ask us to remove.
+        _ => (),
+    }
 }
 
 /// What this process was handed, without the executable's own argument.

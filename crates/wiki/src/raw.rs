@@ -78,9 +78,11 @@ pub fn page_file_name(title: &str) -> String {
 }
 
 /// Reads a text file; `Missing` if it doesn't exist, `Unreadable` for every other error.
+#[allow(clippy::wildcard_enum_match_arm)] // a foreign enum; the reason is at the wildcard arm
 fn read_text(path: &Path) -> Result<String, RawError> {
     std::fs::read_to_string(path).map_err(|e| match e.kind() {
         std::io::ErrorKind::NotFound => RawError::Missing(path.to_path_buf()),
+        // `ErrorKind` is `#[non_exhaustive]` and not ours: "every other error" is the contract.
         _ => RawError::Unreadable(path.to_path_buf(), e.to_string()),
     })
 }

@@ -7,7 +7,7 @@ use discovery::{discover, Options};
 use ipc::IpcError;
 
 use crate::icons::icon_url;
-use crate::state::*;
+use crate::state::{active_save, CatalogState, ResourcesState, SearchState};
 /// The wiki page for a target, if the dataset knows it. The embedded dataset failing to
 /// load is an expected case, diagnosed elsewhere (`ExtractionReport.wiki`): here it's
 /// enough to say the command can't answer.

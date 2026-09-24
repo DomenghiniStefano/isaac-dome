@@ -8,3 +8,11 @@ members = ["crates/*"]
 # the source it derives from — see `LICENSE` and `dataset/ATTRIBUTION.md`.
 [workspace.package]
 license = "GPL-3.0-only"
+
+# The rules CLAUDE.md states for Rust, as lints wherever a lint can say them (card #81, C3):
+# no `use …::*` outside a test module's `use super::*`, and no `_ =>` on an enum, so adding a
+# variant breaks the build instead of falling into a wildcard. `warn` is enough: `scripts/check`
+# runs clippy with `-D warnings`. Every crate opts in with `[lints] workspace = true`.
+[workspace.lints.clippy]
+wildcard_imports = "warn"
+wildcard_enum_match_arm = "warn"
