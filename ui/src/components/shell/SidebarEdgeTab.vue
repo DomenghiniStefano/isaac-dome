@@ -10,6 +10,7 @@ import {
 } from '@/components/ui/tooltip'
 import { useMessages } from '@/i18n'
 import { KeyName } from '@/lib/constants/keyNames'
+import { Side } from '@/lib/constants/placement'
 
 // The sidebar's own half of folding it: a tab straddling its inner edge, half way down, where the
 // hand already goes to drag the width. Always drawn, never only on hover — a control that appears
@@ -45,7 +46,7 @@ const label = computed(() =>
     </TooltipTrigger>
     <!-- To the right, the side the tab sticks out on: above it the sentence covered the sidebar's
          own edge, which is the thing the tab is about. -->
-    <TooltipContent side="right" class="flex items-center gap-2">
+    <TooltipContent :side="Side.Right" class="flex items-center gap-2">
       {{ label }}
       <KbdGroup>
         <Kbd>{{ KeyName.Ctrl }}</Kbd>
