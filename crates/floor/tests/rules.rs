@@ -4,6 +4,10 @@
 //! content of the wiki; the last two hold the real file to
 //! `docs/superpowers/reports/2026-09-15-secret-room-rules.md`.
 
+// A test that extracts one variant panics on every other, the ones added later included: here
+// the wildcard *is* the assertion, and it fails loudly on a new variant instead of hiding it.
+#![allow(clippy::wildcard_enum_match_arm)]
+
 use floor::{Constraint, Rules, Target};
 
 const FIXTURE: &str = r#"{

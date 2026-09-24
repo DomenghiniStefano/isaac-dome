@@ -2,6 +2,10 @@
 //! and the real catalog via `samples/packed`. They skip with a note if something is
 //! missing. The numbers are fixtures of known origin, measured on 2026-09-05.
 
+// A test that extracts one variant panics on every other, the ones added later included: here
+// the wildcard *is* the assertion, and it fails loudly on a new variant instead of hiding it.
+#![allow(clippy::wildcard_enum_match_arm)]
+
 use std::collections::BTreeSet;
 
 use catalog::{Catalog, ItemKind};

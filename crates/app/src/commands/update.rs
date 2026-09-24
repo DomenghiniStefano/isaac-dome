@@ -78,6 +78,7 @@ fn changed(app: &AppHandle) {
 /// plugin's `Error` is `#[non_exhaustive]` and its own variants carry URLs and paths, so it
 /// never crosses the boundary — only the answer does. The catch-all arm is owed to that
 /// attribute, the same exemption `lib.rs` already takes for `RunEvent`.
+#[allow(clippy::wildcard_enum_match_arm)] // a foreign enum; the reason is at the wildcard arm
 fn failure_of(error: &tauri_plugin_updater::Error) -> UpdateFailure {
     use tauri_plugin_updater::Error as E;
     match error {
@@ -112,6 +113,8 @@ fn failure_of(error: &tauri_plugin_updater::Error) -> UpdateFailure {
         | E::FailedToDetermineExtractPath
         | E::TempDirNotFound
         | E::TempDirNotOnSameMountPoint => UpdateFailure::InstallFailed,
+        // `tauri_plugin_updater::Error` is not ours: a variant the plugin adds is a failure we have
+        // no sentence for, which is what `Unknown` says.
         _ => UpdateFailure::Unknown,
     }
 }

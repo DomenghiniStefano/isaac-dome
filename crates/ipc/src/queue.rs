@@ -71,21 +71,21 @@ pub fn achievements_unlocking(c: &Catalog, key: &crate::goals::TargetKey) -> Vec
     use catalog::Unlock;
     c.achievements()
         .filter(|a| {
-            c.unlocks(a.id).iter().any(|u| match (u, key) {
-                (
-                    Unlock::Item { kind, id },
-                    TargetKey::Item {
-                        item_kind: k,
-                        id: want,
-                    },
-                ) => item_kind(*k) == *kind && id.0 == *want,
-                (Unlock::Character { id }, TargetKey::Character { id: want }) => id.0 == *want,
-                (Unlock::Boss { id }, TargetKey::Boss { id: want }) => id.0 == *want,
-                (Unlock::Challenge { id }, TargetKey::Challenge { id: want }) => id.0 == *want,
-                // A pair of enums has sixteen combinations of which four mean anything.
-                // The exhaustiveness rule bans a catch-all that hides a new variant of one
-                // closed enum; this one hides nothing — the four are written out above it.
-                _ => false,
+            // Exhaustive on `Unlock`, so a new kind of unlock breaks the build here instead of
+            // matching nothing; the key is then only asked whether it names the same thing.
+            c.unlocks(a.id).iter().any(|u| match u {
+                Unlock::Item { kind, id } => matches!(
+                    key,
+                    TargetKey::Item { item_kind: k, id: want }
+                        if item_kind(*k) == *kind && id.0 == *want
+                ),
+                Unlock::Character { id } => {
+                    matches!(key, TargetKey::Character { id: want } if id.0 == *want)
+                }
+                Unlock::Boss { id } => matches!(key, TargetKey::Boss { id: want } if id.0 == *want),
+                Unlock::Challenge { id } => {
+                    matches!(key, TargetKey::Challenge { id: want } if id.0 == *want)
+                }
             })
         })
         .map(|a| a.id.0)

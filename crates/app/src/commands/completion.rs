@@ -8,7 +8,7 @@ use ipc::{IpcError, MarksMatrix, SaveSummary};
 
 use crate::icons::icon_url;
 
-use crate::state::*;
+use crate::state::{active_save, CatalogState, ResourcesState};
 
 #[tauri::command]
 pub fn save_summary(app: AppHandle) -> Result<SaveSummary, IpcError> {

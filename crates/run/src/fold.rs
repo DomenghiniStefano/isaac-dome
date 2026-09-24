@@ -159,7 +159,16 @@ impl Run {
                     current = Some(run);
                     starting = true;
                 }
-                other => {
+                other @ (Event::FloorEntered { .. }
+                | Event::RoomsGenerated { .. }
+                | Event::RoomEntered { .. }
+                | Event::RoomTransition
+                | Event::ItemAdded { .. }
+                | Event::Died { .. }
+                | Event::Ended { .. }
+                | Event::AchievementUnlocked { .. }
+                | Event::SaveWritten { .. }
+                | Event::PlayerInitialized { .. }) => {
                     // Events arriving before the first seed line belong to no run: a log
                     // begins mid-session, with menu lines and an intro cutscene. The one
                     // exception is the player being initialized, which a solo run logs just

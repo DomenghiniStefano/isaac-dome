@@ -9,7 +9,9 @@ use ipc::IpcError;
 
 use crate::icons::icon_url;
 
-use crate::state::*;
+use crate::state::{
+    active_save, progress_sections, CatalogState, GraphState, ResourcesState, StoreState,
+};
 
 /// The Unlock view. Not a command since N8: it is built once per screen load, inside
 /// `graph_views`, and a second entry point is a second reading of the profile.
