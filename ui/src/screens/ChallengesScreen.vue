@@ -10,6 +10,7 @@ import { Card } from '@/components/ui/card'
 import { Skeleton } from '@/components/ui/skeleton'
 import { useOnActiveProfile } from '@/composables/useOnActiveProfile'
 import { useTabView } from '@/composables/useTabView'
+import { vScrollMemory } from '@/directives/scrollMemory'
 import { useMessages } from '@/i18n'
 import {
   ChallengeFacet,
@@ -117,66 +118,70 @@ const navigate = (target: Target, newTab: boolean) => {
 </script>
 
 <template>
-  <div
-    class="flex h-full min-h-0 flex-col gap-4 overflow-hidden px-5.5 pt-5 pb-5"
-  >
-    <ScreenHeader :icon="FlagIcon" :title="t('routes.challenges')">{{
-      t('challenges.intro')
-    }}</ScreenHeader>
-    <ProfileError
-      v-if="store.status === LoadStatus.Failed"
-      :error="store.error"
-      @retry="store.load()"
-    />
-    <template v-else-if="store.view">
-      <DiagnosticsList :entries="challengeEntries(store.view.diagnostics)" />
-      <QueueError v-if="queue.mutationFailed" :error="queue.mutationError" />
-      <Card class="min-h-0 flex-1">
-        <FilterBar
-          :shown="rows.length"
-          :total="all.length"
-          :query="filter.query"
-          :rows="all"
-          :faceting="challengeFaceting"
-          :filter="filter"
-          :facets="challengeSlots"
-          :state="{
-            facet: ChallengeFacet.State,
-            order: challengeStateOrder,
-            dot: challengeStateDot,
-            text: challengeStateText,
-          }"
-          :title="challengeFacetTitle"
-          :value-label="valueLabel"
-          :labels="barLabels"
-          @update:query="setQuery"
-          @update:picks="setPicks"
-          @reset="reset"
-        />
-        <ChallengesTable
-          v-if="rows.length > 0"
-          :rows="rows"
-          :queued="[...queued]"
-          :can-write="canWrite"
-          :busy="queue.busy"
-          @add="queue.add"
-          @navigate="navigate"
-        />
-        <div v-else class="flex flex-col items-start gap-3 p-4">
-          <EmptyCategory>{{ t(empty.text) }}</EmptyCategory>
-          <Button
-            v-if="empty.reset"
-            :variant="ButtonVariant.Outline"
-            @click="reset"
-            >{{ t('filters.reset') }}</Button
-          >
-        </div>
-      </Card>
-    </template>
-    <div v-else class="flex flex-col gap-4">
-      <Skeleton class="h-8 w-120" />
-      <Skeleton class="h-12 w-full" />
-      <Skeleton class="h-150 w-full" />
+  <!-- The screen is the box that scrolls, and the columns' header pins to its top (card #80,
+       P3: the rows past the card could not be reached). The gutter is the children's, not the
+       box's, as on Completion: a padded box pins its sticky header one padding below its edge,
+       and the rows would show through the strip above it. -->
+  <div v-scroll-memory="'page'" class="h-full overflow-y-auto">
+    <div class="flex flex-col gap-4 px-5.5 pt-5 pb-5">
+      <ScreenHeader :icon="FlagIcon" :title="t('routes.challenges')">{{
+        t('challenges.intro')
+      }}</ScreenHeader>
+      <ProfileError
+        v-if="store.status === LoadStatus.Failed"
+        :error="store.error"
+        @retry="store.load()"
+      />
+      <template v-else-if="store.view">
+        <DiagnosticsList :entries="challengeEntries(store.view.diagnostics)" />
+        <QueueError v-if="queue.mutationFailed" :error="queue.mutationError" />
+        <Card>
+          <FilterBar
+            :shown="rows.length"
+            :total="all.length"
+            :query="filter.query"
+            :rows="all"
+            :faceting="challengeFaceting"
+            :filter="filter"
+            :facets="challengeSlots"
+            :state="{
+              facet: ChallengeFacet.State,
+              order: challengeStateOrder,
+              dot: challengeStateDot,
+              text: challengeStateText,
+            }"
+            :title="challengeFacetTitle"
+            :value-label="valueLabel"
+            :labels="barLabels"
+            @update:query="setQuery"
+            @update:picks="setPicks"
+            @reset="reset"
+          />
+          <ChallengesTable
+            v-if="rows.length > 0"
+            :rows="rows"
+            :queued="[...queued]"
+            :can-write="canWrite"
+            :busy="queue.busy"
+            @add="queue.add"
+            @navigate="navigate"
+          />
+          <div v-else class="flex flex-col items-start gap-3 p-4">
+            <EmptyCategory>{{ t(empty.text) }}</EmptyCategory>
+            <Button
+              v-if="empty.reset"
+              :variant="ButtonVariant.Outline"
+              @click="reset"
+              >{{ t('filters.reset') }}</Button
+            >
+          </div>
+        </Card>
+      </template>
+      <div v-else class="flex flex-col gap-4">
+        <Skeleton class="h-8 w-120" />
+        <Skeleton class="h-12 w-full" />
+        <Skeleton class="h-150 w-full" />
+      </div>
     </div>
   </div>
 </template>
