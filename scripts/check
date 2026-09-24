@@ -87,6 +87,11 @@ run 'no steam account id' node scripts/check-no-steam-account-id.mjs
 # script says what it counts and what it cannot see.
 run 'test count' node scripts/check-test-count.mjs
 
+# **A gate.** `samples/` is opened from `crates/test-support/` only, examples included, and no
+# sample is named `live.` (card #81, C2): nine examples and three tests built their own paths
+# while CLAUDE.md said nobody did. The comment at the top of the script says what it cannot see.
+run 'samples access' node scripts/check-samples-access.mjs
+
 # The contract is generated (N7, B2 in docs/IMPROVEMENTS.md): this is what makes a Rust type
 # and its TypeScript disagree loudly instead of silently. It regenerates into a scratch copy
 # and compares — it never writes the real file, because a check that repairs what it is
