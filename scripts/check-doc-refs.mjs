@@ -59,6 +59,18 @@ const EXEMPTIONS = [
     why: 'same: it was the recommendations drawn a second time, and the left pane is that, done once',
   },
   {
+    path: 'ui/src/lib/window/session.ts',
+    why: 'became ui/src/composables/useWindowSession.ts on 2026-09-24 (card #81, V7: a module that imports a store is a composable); the 2026-09-15 tabs spec names where it was written',
+  },
+  {
+    path: 'components/shell/sectionNav.ts',
+    why: 'moved to lib/shell/sectionNav.ts on 2026-09-24 (card #81, V7); the 2026-09-12 scale spec names where it was',
+  },
+  {
+    path: 'components/shell/sidebarWidth.ts',
+    why: 'moved to lib/shell/sidebarWidth.ts on 2026-09-24 (card #81, V7); the 2026-09-20 responsive spec names where it was',
+  },
+  {
     path: 'components/wiki/dlcNames.ts',
     why: 'moved to lib/wiki/dlcNames.ts on 2026-09-24 (card #81, C4: lib/ imports no component); the 2026-09-12 wiki spec names where it was written',
   },

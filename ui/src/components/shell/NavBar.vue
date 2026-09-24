@@ -13,7 +13,11 @@ import { AppName } from '@/lib/constants/app'
 import { AriaCurrent } from '@/lib/constants/aria'
 import { KeyName } from '@/lib/constants/keyNames'
 import BrandMark from './BrandMark.vue'
-import { NavSection, navSectionIcon, navSectionLabel } from './navSection'
+import {
+  NavSection,
+  navSectionIcon,
+  navSectionLabel,
+} from '@/lib/shell/navSection'
 
 // `section` is the active tab's, `null` while a settings page is open; `settingsActive`
 // says so, because the cog is a section like the other two and has to read as lit when you

@@ -13,7 +13,7 @@ import { useMessages } from '@/i18n'
 import type { ActiveProfile, SetupState } from '@/lib/ipc/types'
 import { candidateSourceLabel } from '@/lib/profile/profileLabels'
 import { editionLong, editionShort, gameName } from '@/lib/profile/profileView'
-import ProfileFact from './ProfileFact.vue'
+import ProfileFact from '@/components/data-state/ProfileFact.vue'
 
 const props = defineProps<{
   active: Extract<ActiveProfile, { kind: 'active' }>

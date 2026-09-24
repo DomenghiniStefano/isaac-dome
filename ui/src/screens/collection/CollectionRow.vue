@@ -11,7 +11,7 @@ import { CollectionFacet } from '@/lib/collection/collectionFacets'
 import { ItemState, itemState } from '@/lib/collection/itemState'
 import { lockWhy } from '@/lib/graph/whyMenu'
 import type { CollectionItem } from '@/lib/ipc/types'
-import QualityPips from './QualityPips.vue'
+import QualityPips from '@/components/data-state/QualityPips.vue'
 import { collectionFacetValueLabel, itemStateText } from './collectionLabels'
 
 const props = defineProps<{

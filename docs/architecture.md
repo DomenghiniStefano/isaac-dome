@@ -305,7 +305,7 @@ because the phase it draws is held in the backend and changes without anybody as
 
 **Thirty-six of the forty-one commands are reachable from a screen.** The other five are not
 loose ends: `window_session` and `set_window_session` belong to the shell and travel through
-`ui/src/lib/window/session.ts`; `extraction_report` is called only by the development-only
+`ui/src/composables/useWindowSession.ts`; `extraction_report` is called only by the development-only
 verification page, `ui/src/verify/VerifyPage.vue`; and `choose_game_folder` and
 `choose_saves_folder` belong to the welcome flow that runs before any screen is routed,
 `ui/src/screens/welcome/NothingFound.vue`. 36 + 2 + 1 + 2 = 41, which is the kind of sum worth

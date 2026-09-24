@@ -4,7 +4,7 @@ import { HelpTip } from '@/components/ui/tooltip'
 import { useMessages } from '@/i18n'
 import { EventKey } from '@/lib/constants/eventKeys'
 import { currentFactor } from '@/lib/scale/apply'
-import { SidebarWidth, clampSidebarWidth } from './sidebarWidth'
+import { SidebarWidth, clampSidebarWidth } from '@/lib/shell/sidebarWidth'
 
 defineProps<{ title: string; hint?: string }>()
 const width = defineModel<number>('width', { required: true })
