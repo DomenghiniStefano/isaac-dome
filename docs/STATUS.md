@@ -40,6 +40,17 @@ nothing was rewritten and nothing force-pushed. Only then was `master → develo
 
 **A rebase was the alternative and was rejected**: replaying 728 commits of the shared integration
 branch and force-pushing it, to gain an ancestor that is an abandoned scaffold.
+
+**The history has been rewritten twice, and a clone older than 2026-09-24 is reset, not merged**
+(`CLAUDE.md` → "Don't *merge* a clone that predates a history rewrite"). On 2026-09-20 the 6065
+sprites of `design-export/` left it. On 2026-09-24 the owner's 32-bit Steam account id did (card
+#83): it sat in five commits — the live probe's save path, the `ipc` fixtures, one archived plan —
+and was replaced by `123456789` everywhere, same length, so the tree at `develop`'s tip hashed
+identically before and after and only those three files differ at any older commit or tag. No
+`filter-repo` on this machine: `git fast-export` through `sed -b` (binary, or Git Bash's `sed`
+eats the CRs and the stream's byte counts break) into `git fast-import`. Every hash changed;
+`develop`, `master` and the seven tags were force-pushed, the GitHub Releases follow their tags.
+`scripts/check-no-steam-account-id.mjs` keeps it from coming back.
 **Branches from 3.4 on: one per sub-project, cut from `develop`** (decided 2026-09-11). Nobody
 commits on `develop` directly: it is where finished work lands, through a `--no-ff` merge with
 `scripts/check` green. A sub-project gets its own `feature/<name>` branch — Collection is

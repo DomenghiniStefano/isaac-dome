@@ -528,8 +528,10 @@ wiki's `description` for an achievement is the unlock paper's line, and it is th
   parallel by other sessions, and a clean `git status` at the start of a session is no
   promise it's still clean at the end. Stage by explicit path, and say so when the tree
   holds changes that aren't yours.
-- Don't *merge* a clone that predates a history rewrite — **reset it**. A machine whose last pull is
-  older than 2026-09-20 holds the pre-rewrite commits, so a pull sets two histories against each
+- Don't *merge* a clone that predates a history rewrite — **reset it**. There have been two: on
+  2026-09-20 the sprites left the history, and on **2026-09-24** the owner's Steam account id did
+  (card #83, `docs/STATUS.md`). A machine whose last pull is
+  older than 2026-09-24 holds the pre-rewrite commits, so a pull sets two histories against each
   other that share no ancestor for the same work, and every file both sides touched comes back
   `UU`: on 2026-09-21 that was `CLAUDE.md`, `Cargo.lock`, `scripts/check`, `package.json` and some
   fifty more, with conflict markers landing **inside `CLAUDE.md` itself** — the session read its own
