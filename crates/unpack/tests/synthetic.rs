@@ -164,3 +164,20 @@ fn bogocrypt_past_the_end_of_the_input_returns_none() {
         "the guard: a length the input does hold still decrypts"
     );
 }
+
+/// Two entries whose djb2 collide are two files, told apart by their fnv (card #80, R6). An
+/// index keyed on djb2 alone kept the last one read and made the other disappear.
+#[test]
+fn two_entries_sharing_a_djb2_are_both_found() {
+    let k = path_key("gfx/items/collectibles/collectibles_001_thesadonion.png");
+    let bytes = build(
+        &[(k.djb2, k.fnv, 14, 4, 0), (k.djb2, k.fnv ^ 1, 18, 4, 0)],
+        &[0u8; 8],
+    );
+    let tmp = tempfile::NamedTempFile::new().unwrap();
+    std::fs::write(tmp.path(), &bytes).unwrap();
+
+    let a = Archive::open(tmp.path()).unwrap();
+    assert_eq!(a.entries().len(), 2);
+    assert!(a.contains("gfx/items/collectibles/collectibles_001_thesadonion.png"));
+}
