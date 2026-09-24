@@ -62,7 +62,7 @@ pub fn real_graph_and_flags() -> Option<(Graph, Vec<bool>)> {
 /// One entry per dated save, oldest first: file name, the evaluation, and the flags.
 /// Skips when fewer than two eras are present — a comparison needs two.
 /// A profile at one moment: the file it came from, its evaluation, and its flags.
-pub type Era = (String, BTreeMap<u32, NodeInfo>, Vec<bool>);
+pub type Era = (String, BTreeMap<graph::AchievementId, NodeInfo>, Vec<bool>);
 
 pub fn series_evals() -> Option<Vec<Era>> {
     let (catalog, _rs) = real_catalog()?;
@@ -78,7 +78,7 @@ pub fn series_evals() -> Option<Vec<Era>> {
             continue;
         };
         let e = g.evaluate(&graph::FlagsOnly(Some(&flags)));
-        let infos: BTreeMap<u32, NodeInfo> = g
+        let infos: BTreeMap<graph::AchievementId, NodeInfo> = g
             .nodes()
             .iter()
             .filter_map(|n| e.node(n.achievement).map(|i| (n.achievement, i.clone())))

@@ -2,6 +2,7 @@
 //! snapshot and holds no id of ours; `corrections.json` is written by hand. Nothing here
 //! knows about the user's catalog: resolution happens later, in `graph::build`.
 
+use catalog::AchievementId;
 use std::collections::BTreeMap;
 
 use serde::{Deserialize, Serialize};
@@ -100,7 +101,7 @@ pub enum Verdict {
     /// Fought on night one: Satan, Mom, Isaac.
     AlwaysAvailable(bool),
     /// Sits behind an achievement of the graph.
-    Behind { achievement: u32 },
+    Behind { achievement: AchievementId },
     /// Not a prerequisite at all: a pickup that appears in the sentence.
     NotAPrerequisite(bool),
     /// Judged, and the answer is that the model can't say it: gated, but by something
@@ -286,10 +287,10 @@ impl Rules {
         self.requirements.transformations.get(&id)
     }
 
-    pub fn refs(&self, achievement: u32) -> &[RefRow] {
+    pub fn refs(&self, achievement: AchievementId) -> &[RefRow] {
         self.requirements
             .achievements
-            .get(&achievement)
+            .get(&achievement.0)
             .map(|a| a.refs.as_slice())
             .unwrap_or(&[])
     }

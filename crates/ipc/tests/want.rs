@@ -253,11 +253,15 @@ fn a_chain_is_ordered_the_way_the_queue_orders_it() {
 
     // The same order the Plan produces, because it is the Plan's own computation.
     let mut q = plan::Queue::from_rows(vec![]);
-    let chain = g.missing_chain(3, &graph::FlagsOnly(Some(&READ)));
+    let chain = g.missing_chain(graph::AchievementId(3), &graph::FlagsOnly(Some(&READ)));
     let mut rows = chain.clone();
-    rows.push(3);
-    q.enqueue(3, &chain, &ipc::GraphDeps::new(&g, Some(&READ), &rows));
-    let queued: Vec<u32> = q.rows().iter().map(|r| r.achievement).collect();
+    rows.push(graph::AchievementId(3));
+    q.enqueue(
+        graph::AchievementId(3),
+        &chain,
+        &ipc::GraphDeps::new(&g, Some(&READ), &rows),
+    );
+    let queued: Vec<u32> = q.rows().iter().map(|r| r.achievement.0).collect();
     assert_eq!(
         queued,
         vec![1, 2, 3],

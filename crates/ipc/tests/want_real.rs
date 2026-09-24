@@ -72,12 +72,21 @@ fn known(node: &ipc::UnlockNode) -> Option<u32> {
 }
 
 /// The not-done node whose chain is longest, with that chain.
-fn deepest(view: &UnlockView, g: &graph::Graph, flags: &[bool]) -> Option<(u32, Vec<u32>)> {
+fn deepest(
+    view: &UnlockView,
+    g: &graph::Graph,
+    flags: &[bool],
+) -> Option<(u32, Vec<graph::AchievementId>)> {
     view.nodes
         .iter()
         .filter(|n| !n.done)
         .filter_map(known)
-        .map(|id| (id, g.missing_chain(id, &graph::FlagsOnly(Some(flags)))))
+        .map(|id| {
+            (
+                id,
+                g.missing_chain(graph::AchievementId(id), &graph::FlagsOnly(Some(flags))),
+            )
+        })
         .max_by_key(|(_, chain)| chain.len())
 }
 
@@ -136,12 +145,16 @@ fn a_wants_chain_is_what_the_queue_would_hold() {
 
     let mut q = plan::Queue::from_rows(vec![]);
     let mut rows = chain.clone();
-    rows.push(id);
-    q.enqueue(id, &chain, &ipc::GraphDeps::new(&g, Some(&flags), &rows));
+    rows.push(graph::AchievementId(id));
+    q.enqueue(
+        graph::AchievementId(id),
+        &chain,
+        &ipc::GraphDeps::new(&g, Some(&flags), &rows),
+    );
     let queued: Vec<u32> = q
         .rows()
         .iter()
-        .map(|r| r.achievement)
+        .map(|r| r.achievement.0)
         .filter(|a| *a != id)
         .collect();
     assert_eq!(preview, queued, "the preview is the queue's own order");

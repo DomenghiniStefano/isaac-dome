@@ -49,7 +49,10 @@ fn steps_missing_is_zero_exactly_when_the_node_is_done_or_available() {
             continue;
         };
         checked += 1;
-        let done = flags.get(n.achievement as usize).copied().unwrap_or(false);
+        let done = flags
+            .get(n.achievement.0 as usize)
+            .copied()
+            .unwrap_or(false);
         assert_eq!(
             *steps_missing == 0,
             done || *available_now,
@@ -65,7 +68,8 @@ fn no_edge_points_outside_the_catalog() {
     let Some((g, _)) = support::real_graph_and_flags() else {
         return;
     };
-    let known: std::collections::BTreeSet<u32> = g.nodes().iter().map(|n| n.achievement).collect();
+    let known: std::collections::BTreeSet<graph::AchievementId> =
+        g.nodes().iter().map(|n| n.achievement).collect();
     for n in g.nodes() {
         for p in &n.prerequisites {
             assert!(
@@ -194,12 +198,12 @@ fn every_resolvable_requirement_produced_its_edge() {
             let Some(a) = expected else { continue };
             // A node that unlocks the very thing it names is not its own prerequisite:
             // that edge is dropped on purpose, with a `SelfPrerequisite` diagnostic.
-            if a.0 == n.achievement {
+            if a == n.achievement {
                 continue;
             }
             checked += 1;
             assert!(
-                n.prerequisites.contains(&a.0),
+                n.prerequisites.contains(&a),
                 "node {} has requirement {r:?}, unlocked by achievement {}, and no edge for it",
                 n.achievement,
                 a.0
@@ -227,7 +231,7 @@ fn the_four_transformation_nodes_are_answered_and_not_uninterpreted() {
     };
     let mut thresholds = 0;
     for id in [65u32, 161, 178, 352] {
-        let Some(n) = g.nodes().iter().find(|n| n.achievement == id) else {
+        let Some(n) = g.nodes().iter().find(|n| n.achievement.0 == id) else {
             panic!("node {id} is not in the graph")
         };
         for r in &n.requirements {

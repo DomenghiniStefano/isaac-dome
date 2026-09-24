@@ -1,7 +1,7 @@
 //! The domain types. They don't cross the IPC: `ipc` defines its own views, as it already
 //! does for `ItemKindView` and `OriginView`.
 
-use catalog::{BossId, ChallengeId, CharacterId, ItemId, ItemKind};
+use catalog::{AchievementId, BossId, ChallengeId, CharacterId, ItemId, ItemKind};
 
 /// One item of a `Threshold`'s set, resolved against the catalog. A struct and not a tuple
 /// because the two halves are read together at four call sites, and `(kind, id)` reversed
@@ -14,7 +14,7 @@ pub struct ThresholdItem {
     /// graph is built, because `Graph::evaluate` has a profile and **no catalog**: every
     /// other requirement answers that question by turning it into a prerequisite edge, and
     /// a threshold is precisely the one that must not draw edges.
-    pub unlocked_by: Option<u32>,
+    pub unlocked_by: Option<AchievementId>,
 }
 
 /// What an achievement demands. The type is the point: it says whether the prerequisite

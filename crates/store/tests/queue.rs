@@ -7,9 +7,9 @@ use tempfile::tempdir;
 
 fn row(achievement: u32, wanted: bool, origins: &[u32]) -> Row {
     Row {
-        achievement,
+        achievement: plan::AchievementId(achievement),
         wanted,
-        origins: origins.to_vec(),
+        origins: origins.iter().copied().map(plan::AchievementId).collect(),
     }
 }
 
@@ -28,8 +28,16 @@ fn a_queue_survives_reopening() {
     let s = Store::open(&path).expect("reopens");
     let q = s.queue().expect("query").expect("document parses");
     assert_eq!(q.rows().len(), 2);
-    assert_eq!(q.position(41), Some(1), "the order is what was written");
-    assert_eq!(q.rows()[0].origins, vec![41], "and so is everything else");
+    assert_eq!(
+        q.position(plan::AchievementId(41)),
+        Some(1),
+        "the order is what was written"
+    );
+    assert_eq!(
+        q.rows()[0].origins,
+        vec![plan::AchievementId(41)],
+        "and so is everything else"
+    );
 }
 
 #[test]
@@ -62,7 +70,7 @@ fn writing_twice_replaces_the_document_instead_of_keeping_two() {
         .expect("writes again");
     let q = s.queue().expect("query").expect("parses");
     assert_eq!(q.rows().len(), 1);
-    assert_eq!(q.rows()[0].achievement, 2);
+    assert_eq!(q.rows()[0].achievement, plan::AchievementId(2));
 }
 
 // `the_schema_version_moved_to_three` lived here and was a fixture of its era. It is superseded

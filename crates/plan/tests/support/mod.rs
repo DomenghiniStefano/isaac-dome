@@ -12,11 +12,14 @@ use graph::Graph;
 /// for the rows involved. The same shape the app uses; three lines rather than a dependency
 /// on the Tauri crate, which nothing depends on.
 pub struct GraphDeps {
-    chains: std::collections::BTreeMap<u32, std::collections::BTreeSet<u32>>,
+    chains: std::collections::BTreeMap<
+        graph::AchievementId,
+        std::collections::BTreeSet<graph::AchievementId>,
+    >,
 }
 
 impl GraphDeps {
-    pub fn new(g: &Graph, flags: Option<&[bool]>, rows: &[u32]) -> GraphDeps {
+    pub fn new(g: &Graph, flags: Option<&[bool]>, rows: &[graph::AchievementId]) -> GraphDeps {
         GraphDeps {
             chains: rows
                 .iter()
@@ -34,7 +37,7 @@ impl GraphDeps {
 }
 
 impl plan::Dependencies for GraphDeps {
-    fn requires(&self, a: u32, b: u32) -> bool {
+    fn requires(&self, a: graph::AchievementId, b: graph::AchievementId) -> bool {
         self.chains.get(&a).is_some_and(|c| c.contains(&b))
     }
 }

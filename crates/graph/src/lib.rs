@@ -16,5 +16,8 @@ pub mod resolve;
 pub mod rules;
 
 pub use build::Graph;
+// The id every public signature here speaks in (card #81, V12), re-exported so `plan` reads it
+// from the crate it already depends on.
+pub use catalog::AchievementId;
 pub use evaluate::{FlagsOnly, Profile};
 pub use rules::{target_key, Corrections, Requirements, Rules, RulesError, SCHEMA_VERSION};

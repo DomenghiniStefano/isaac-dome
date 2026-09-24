@@ -5,12 +5,13 @@
 //! where you asked whenever that is a position at all.
 
 use crate::model::{Queue, Row};
+use graph::AchievementId;
 
 /// "a requires b", transitively. The queue asks this and nothing else, which keeps this
 /// crate independent of how the graph computes it — and lets the tests state the relation
 /// they mean instead of deriving it.
 pub trait Dependencies {
-    fn requires(&self, a: u32, b: u32) -> bool;
+    fn requires(&self, a: AchievementId, b: AchievementId) -> bool;
 }
 
 impl Queue {
@@ -20,7 +21,12 @@ impl Queue {
     /// the view leaves completed and unresolved rows out and its positions are not the file's.
     /// An `after` that isn't queued, or is the moved row itself, leaves the queue as it is: the
     /// caller's picture was stale, and the view it gets back is the truth.
-    pub fn move_after(&mut self, achievement: u32, after: Option<u32>, deps: &impl Dependencies) {
+    pub fn move_after(
+        &mut self,
+        achievement: AchievementId,
+        after: Option<AchievementId>,
+        deps: &impl Dependencies,
+    ) {
         let Some(from) = self.position(achievement) else {
             return;
         };
@@ -43,7 +49,12 @@ impl Queue {
     /// Rows that depend on it are dragged along, right below it; rows it depends on are a wall
     /// it stops under, and never move; everything else keeps its relative order. The landing
     /// is clamped between one past the last prerequisite and the end of the list.
-    pub fn move_row(&mut self, achievement: u32, to: usize, deps: &impl Dependencies) -> usize {
+    pub fn move_row(
+        &mut self,
+        achievement: AchievementId,
+        to: usize,
+        deps: &impl Dependencies,
+    ) -> usize {
         let Some(from) = self.position(achievement) else {
             // Not in the queue: nothing to move, and not an error.
             return to.min(self.rows().len().saturating_sub(1));

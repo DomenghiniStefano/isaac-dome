@@ -22,7 +22,7 @@ fn an_available_node_is_never_taken_away() {
                 continue;
             };
             checked += 1;
-            let done_after = after.2.get(*id as usize).copied().unwrap_or(false);
+            let done_after = after.2.get(id.0 as usize).copied().unwrap_or(false);
             let still = matches!(
                 after.1.get(id),
                 Some(NodeInfo::Computed {
