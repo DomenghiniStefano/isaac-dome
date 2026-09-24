@@ -20,20 +20,21 @@ use crate::catalog_view::{item_kind, ItemKindView};
 pub struct GoalId(String);
 
 impl GoalId {
-    /// A fresh id, 128 bits in hex built from the clock, the address of an allocation,
-    /// and the pid. It guarantees exactly one thing: **it distinguishes goals created at
-    /// different moments on the same machine**. It is not random (the clock dominates
-    /// it) and it is not secret: don't use it as a token, and two different machines
-    /// have no guarantee against generating the same id — that's fine, because
-    /// databases never get merged.
-    pub fn new() -> GoalId {
+    /// An id, 128 bits in hex, hashed from what the caller hands in: the second the goal was
+    /// created and a nonce `app` draws from the clock's nanoseconds, the pid and an
+    /// allocation's address. `ipc` reads none of those itself (card #81, V2), the way `roll`'s
+    /// draw arrives with its seed — so the same inputs give the same id, and a test can say so.
+    ///
+    /// It guarantees exactly one thing: **different inputs give different ids** on this
+    /// machine. It is not random and not secret: don't use it as a token, and two machines
+    /// have no guarantee against the same id — fine, because databases never get merged.
+    pub fn new(created_unix: i64, nonce: u64) -> GoalId {
         use std::hash::{Hash, Hasher};
         let mut h = std::collections::hash_map::DefaultHasher::new();
-        std::time::SystemTime::now().hash(&mut h);
-        let probe = Box::new(0u8);
-        (&*probe as *const u8 as usize).hash(&mut h);
+        created_unix.hash(&mut h);
+        nonce.hash(&mut h);
         let a = h.finish();
-        std::process::id().hash(&mut h);
+        a.hash(&mut h);
         let b = h.finish();
         GoalId(format!("{a:016x}{b:016x}"))
     }
@@ -45,12 +46,6 @@ impl GoalId {
     /// Only for tests and for `store`, which reads back ids already generated.
     pub fn from_str_unchecked(s: &str) -> GoalId {
         GoalId(s.to_string())
-    }
-}
-
-impl Default for GoalId {
-    fn default() -> Self {
-        GoalId::new()
     }
 }
 

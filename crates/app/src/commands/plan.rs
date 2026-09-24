@@ -55,12 +55,12 @@ pub fn add_goal(
         Some(c) if !ipc::target_exists(c, &target) => return Err(IpcError::UnknownTarget),
         Some(_) => {}
     }
-    let created_unix = std::time::SystemTime::now()
+    let since_epoch = std::time::SystemTime::now()
         .duration_since(std::time::UNIX_EPOCH)
-        .map(|d| d.as_secs() as i64)
-        .unwrap_or(0);
+        .unwrap_or_default();
+    let created_unix = since_epoch.as_secs() as i64;
     let goal = ipc::Goal {
-        id: ipc::GoalId::new(),
+        id: ipc::GoalId::new(created_unix, goal_nonce(since_epoch.subsec_nanos())),
         target,
         created_unix,
         note: None,
@@ -105,4 +105,20 @@ pub fn remove_goal(
         None,
         icon_url,
     ))
+}
+
+/// The entropy a goal id is hashed from, drawn here because `ipc` reads no clock (card #81, V2):
+/// the clock's nanoseconds, the pid, the address of a fresh allocation, and a counter, so two
+/// goals added within one nanosecond of each other still differ.
+fn goal_nonce(nanos: u32) -> u64 {
+    use std::hash::{Hash, Hasher};
+    use std::sync::atomic::{AtomicU64, Ordering};
+    static COUNTER: AtomicU64 = AtomicU64::new(0);
+    let mut h = std::collections::hash_map::DefaultHasher::new();
+    nanos.hash(&mut h);
+    std::process::id().hash(&mut h);
+    let probe = Box::new(0u8);
+    (&*probe as *const u8 as usize).hash(&mut h);
+    COUNTER.fetch_add(1, Ordering::Relaxed).hash(&mut h);
+    h.finish()
 }
