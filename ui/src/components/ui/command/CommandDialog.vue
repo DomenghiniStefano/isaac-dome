@@ -28,6 +28,7 @@ const props = defineProps<
     // Both belong to the Command inside: the palette never mounts one itself.
     filter?: boolean
     search?: string
+    keepSearch?: boolean
   }
 >()
 // `highlight` and `highlightItem` are the Command's, relayed: the dialog is a wrapper, and a
@@ -52,6 +53,7 @@ const delegatedProps = reactiveOmit(
   'class',
   'filter',
   'search',
+  'keepSearch',
 )
 const forwarded = useForwardPropsEmits(delegatedProps, emits)
 </script>
@@ -71,6 +73,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
         class="border-0"
         :filter="props.filter"
         :search="props.search"
+        :keep-search="props.keepSearch"
         @update:search="emits('update:search', $event)"
         @highlight="emits('highlight', $event)"
       >
