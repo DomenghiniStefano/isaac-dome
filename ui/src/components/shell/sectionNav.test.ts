@@ -10,7 +10,7 @@ import {
   sidebarEntries,
   sidebarSectionOf,
 } from './sectionNav'
-import { TabOrigin } from './tabs'
+import { TabOrigin } from '@/lib/shell/tabs'
 
 describe('sectionNav', () => {
   it('puts a settings tab in the Settings sidebar', () => {

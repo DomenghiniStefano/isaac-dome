@@ -23,7 +23,7 @@ import {
 import type { FacetSlot } from '@/lib/facets/facetOptions'
 import type { FacetFilter, Faceting } from '@/lib/facets/faceting'
 import StateToggle from './StateToggle.vue'
-import type { FilterBarLabels, Label } from './labels'
+import type { FilterBarLabels, Label } from '@/lib/facets/labels'
 
 // Every filter a list has, in one place: the state, the search, the controls that matter on
 // this screen, and the rest behind a fold. The screen brings a description of its facets; the

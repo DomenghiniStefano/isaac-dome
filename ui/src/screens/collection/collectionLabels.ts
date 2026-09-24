@@ -3,8 +3,8 @@ import type { MessageKey } from '@/i18n/messageKey'
 import type { MessageSchema } from '@/i18n/messages/it'
 import { assertNever } from '@/lib/assertNever'
 import { oneOf } from '@/lib/oneOf'
-import { originLabel } from '@/components/facets/labels'
-import type { FilterBarLabels, Translate } from '@/components/facets/labels'
+import { originLabel } from '@/lib/facets/labels'
+import type { FilterBarLabels, Translate } from '@/lib/facets/labels'
 import type { FacetSlot } from '@/lib/facets/facetOptions'
 import {
   CollectionFacet,

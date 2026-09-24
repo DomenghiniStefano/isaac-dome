@@ -1,4 +1,4 @@
-import type { FilterBarLabels } from '@/components/facets/labels'
+import type { FilterBarLabels } from '@/lib/facets/labels'
 import type { MessageKey } from '@/i18n/messageKey'
 import type { MessageSchema } from '@/i18n/messages/it'
 import { assertNever } from '@/lib/assertNever'

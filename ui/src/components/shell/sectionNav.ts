@@ -13,8 +13,8 @@ import {
 } from '@/router/routeTable'
 import type { TabLocation } from '@/router/routeTable'
 import { NavSection } from './navSection'
-import { TabOrigin } from './tabs'
-import { tabOriginIcon } from './tabOriginIcon'
+import { TabOrigin } from '@/lib/shell/tabs'
+import { tabOriginIcon } from '@/lib/shell/tabOriginIcon'
 
 type Message = MessageKey<MessageSchema>
 

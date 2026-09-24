@@ -596,7 +596,7 @@ becomes a drag past a threshold, the pointer is captured only then, the items' r
 once, nothing moves until the release — plus the lifted copy and `Escape`, which calls a drag off
 and commits nothing. The decisions it makes are pure and tested in `lib/drag/dragList.ts`. A
 screen brings two things and nothing else: where its items are, and what a drop there means —
-`components/shell/tabs.ts` for the strip, `lib/plan/queueDrop.ts` for the queue. A third
+`lib/shell/tabs.ts` for the strip, `lib/plan/queueDrop.ts` for the queue. A third
 hand-written pointer drag inside a screen is a bug, not a variant. The lifted copy is
 `components/ui/drag/DragGhost.vue`, teleported to the body and `aria-hidden`: it is a picture of
 the row, not a second one. The skin is flat by decision (`assets/theme/shadow.css` sets
@@ -786,6 +786,7 @@ For honesty's sake, and so as not to make this document look more complete than 
 | **A width cap on a screen root** | `ui/scripts/scan-conventions.mjs` |
 | **A narrow grid template with no column hidden** | `ui/scripts/scan-conventions.mjs` |
 | **A scrolling box under `src/screens/` without `v-scroll-memory`** | `ui/scripts/scan-conventions.mjs` |
+| **An import against the layer direction** (`lib/`, `stores/`, `composables/` import no component or screen; `components/` no screen; `router/` no component) — since 2026-09-24, card #81 | `ui/scripts/scan-conventions.mjs` |
 
 Three rows arrived on 2026-09-06 — before that, the document declared five rules and the
 script checked three — six more on 2026-09-10 with the design system, and **four on
