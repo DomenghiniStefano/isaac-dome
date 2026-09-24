@@ -43,7 +43,7 @@ const SaveDelay = 400
 
 // How far a restored window is stepped from the one before it when the document has no box for
 // it — a version 1 session, or a window whose geometry could not be read. Window geometry, like
-// `StripBand` and `TearBand`: it is not a visual constant and never reaches a template.
+// `TearBand`: it is not a visual constant and never reaches a template.
 const CascadeStep = 32
 
 // How many times a write waits for a window that has not said what it holds yet before going
