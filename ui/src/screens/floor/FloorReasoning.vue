@@ -4,7 +4,9 @@ import { computed } from 'vue'
 import EmptyCategory from '@/components/data-state/EmptyCategory.vue'
 import { useMessages } from '@/i18n'
 import { cellPosition, rankStep } from '@/lib/floor/cellView'
+import { ruleNoteKey, ruleTextKey } from '@/lib/floor/ruleText'
 import type { FloorSolutionView, TargetView } from '@/lib/ipc/types'
+import FloorLegend from './FloorLegend.vue'
 import FloorRank from './FloorRank.vue'
 
 // The reasoning behind the answer on the grid, for the one target the grid is drawing.
@@ -15,7 +17,12 @@ import FloorRank from './FloorRank.vue'
 // was not on the screen. One pane, the shown target's, next to the drawing it explains.
 //
 // Each row opens on the same square the cell wears, so a row and its cell are recognisably one
-// thing — the order is the square's order, best place first.
+// thing — the order is the square's order, best place first. **The legend of that square lives
+// here, beside the title**: it explains the numbers this pane lists, and under the grid it sat
+// among the controls that move the drawing, explaining something none of them do.
+//
+// The sentences are the app's language, not the wiki's (`lib/floor/ruleText.ts`); a rule with
+// no translation yet shows its quote rather than nothing.
 
 const props = defineProps<{
   target: TargetView
@@ -27,6 +34,15 @@ const candidates = computed(() =>
   sortBy(props.solution?.candidates ?? [], 'rank'),
 )
 const unresolved = computed(() => props.solution?.unresolved ?? [])
+
+const textOf = (rule: { id: string; quote: string }): string => {
+  const key = ruleTextKey(rule.id)
+  return key === null ? rule.quote : t(key)
+}
+const noteOf = (item: { rule: string; note: string }): string => {
+  const key = ruleNoteKey(item.rule)
+  return key === null ? item.note : t(key)
+}
 
 // A candidate names a cell, and a cell index is not a place. "Cell 97" sends you counting
 // along the grid; row 8, column 7 is where you were already looking.
@@ -41,7 +57,10 @@ const placeOf = (cell: number): string => {
     <header
       class="flex h-control shrink-0 items-center justify-between gap-2 border-b border-hairline px-3"
     >
-      <span class="text-control">{{ t(`floor.target.${target}`) }}</span>
+      <span class="flex items-center gap-2">
+        <span class="text-control">{{ t(`floor.target.${target}`) }}</span>
+        <FloorLegend :shown="target" />
+      </span>
       <span class="text-caption text-subtle-foreground tabular-nums">{{
         candidates.length
       }}</span>
@@ -74,7 +93,7 @@ const placeOf = (cell: number): string => {
             v-for="rule in candidate.applied"
             :key="rule.id"
             class="text-caption text-foreground-soft"
-            >{{ rule.quote }}</span
+            >{{ textOf(rule) }}</span
           >
         </div>
       </div>
@@ -90,10 +109,10 @@ const placeOf = (cell: number): string => {
         }}</span>
         <div v-for="item in unresolved" :key="item.rule" class="flex flex-col">
           <span class="text-caption text-foreground-soft">{{
-            item.quote
+            textOf({ id: item.rule, quote: item.quote })
           }}</span>
           <span class="text-caption text-faint-foreground">{{
-            item.note
+            noteOf(item)
           }}</span>
         </div>
       </div>

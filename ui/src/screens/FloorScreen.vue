@@ -11,7 +11,6 @@ import { useFloorStore } from '@/stores/floor'
 import FloorClear from './floor/FloorClear.vue'
 import FloorGrid from './floor/FloorGrid.vue'
 import FloorMove from './floor/FloorMove.vue'
-import FloorLegend from './floor/FloorLegend.vue'
 import FloorPalette from './floor/FloorPalette.vue'
 import FloorReasoning from './floor/FloorReasoning.vue'
 import FloorTargets from './floor/FloorTargets.vue'
@@ -63,81 +62,92 @@ const noStartRoom = computed(() =>
          under the first, so choosing a room meant scrolling past the drawing to reach the
          brush. The rules were three closed cards under all of it, one per target.
 
-         The workbench wraps rather than breaks: the drawing and its rail are one piece that is
-         never split, and the reasoning takes whatever width is left beside it or, where there is
-         none, the line underneath. -->
+         **The order never changes: the grid, then the rooms, then the reasoning.** What gives
+         way to a narrower window is the line breaks, in the reverse of that order — the
+         reasoning leaves the first line before the rooms do, and the rooms leave it only to sit
+         under the grid. Both breaks are the workbench's own width (`@container/floor`, the sums
+         are in `floor.css`), not the page's: the question is whether these three fit in this
+         card. -->
     <Card>
-      <CardContent class="flex flex-wrap items-stretch gap-4">
-        <div class="flex max-w-full min-w-0 flex-col gap-3">
-          <div class="flex items-center gap-2">
-            <FloorTargets
-              :solutions="solutions"
-              :shown="store.shown"
-              @show="store.show($event)"
-            />
-            <!-- Two marks and they are never both here: this one appears only while the start
+      <CardContent class="@container/floor">
+        <div
+          class="flex flex-col gap-4 @floor-all/floor:flex-row @floor-all/floor:items-stretch"
+        >
+          <div class="flex w-fit max-w-full min-w-0 flex-col gap-3">
+            <div class="flex items-center gap-2">
+              <FloorTargets
+                :solutions="solutions"
+                :shown="store.shown"
+                @show="store.show($event)"
+              />
+              <!-- Two marks and they are never both here: this one appears only while the start
                  room is missing, the legend's lives under the grid beside the arrows. Two
                  identical question marks in one row would be one question mark too many. -->
-            <HelpTip v-if="noStartRoom" :label="t('floor.startRoomMissing')">{{
-              t('floor.diagnostic.noStartRoom')
-            }}</HelpTip>
-          </div>
-          <!-- Below the compact width the rail and the grid do not fit side by side, and the
-               rail goes under the drawing in two columns rather than leaving it: a tool a scroll
-               away from its canvas is the arrangement this one replaced. -->
-          <div class="flex items-start gap-3 @max-compact/page:flex-col">
-            <FloorPalette
-              class="@max-compact/page:order-last @max-compact/page:w-full @max-compact/page:grid-cols-2"
-              :brush="store.brush"
-              :icons="store.icons"
-              @pick="store.brush = $event"
-            />
-            <div class="flex max-w-full min-w-0 flex-col gap-3">
-              <!-- The grid is 27.5rem and cannot be anything else: thirteen cells of pixel art
+              <HelpTip
+                v-if="noStartRoom"
+                :label="t('floor.startRoomMissing')"
+                >{{ t('floor.diagnostic.noStartRoom') }}</HelpTip
+              >
+            </div>
+            <!-- Where the rail and the grid do not fit side by side, the rail goes under the
+               drawing in two columns rather than away from it: a tool a scroll away from its
+               canvas is the arrangement this one replaced. -->
+            <div
+              class="flex flex-col gap-3 @floor-rail/floor:flex-row @floor-rail/floor:items-start"
+            >
+              <FloorPalette
+                class="order-last grid-cols-2 @floor-rail/floor:order-first @floor-rail/floor:w-floor-palette @floor-rail/floor:shrink-0 @floor-rail/floor:grid-cols-1"
+                :brush="store.brush"
+                :icons="store.icons"
+                @pick="store.brush = $event"
+              />
+              <div class="flex max-w-full min-w-0 flex-col gap-3">
+                <!-- The grid is 27.5rem and cannot be anything else: thirteen cells of pixel art
                    do not have a smaller size that is still pixel art. Where the window is
                    narrower than that it scrolls, which keeps the whole floor reachable instead
                    of hiding the right of it behind the card's edge. -->
-              <div class="min-w-0 overflow-x-auto">
-                <FloorGrid
-                  :cells="store.cells"
-                  :icons="store.icons"
-                  :solutions="solutions"
-                  :shown="store.shown"
-                  @paint="store.paint($event)"
-                  @settle="store.settle()"
-                  @erase="store.erase($event)"
-                />
-              </div>
-              <!-- The arrows move the drawing and sit where it starts; the button that empties
-                   it is as far from them as the row allows, which is the point. -->
-              <div class="flex items-center gap-2">
-                <FloorMove :cells="store.cells" @move="store.move($event)" />
-                <FloorLegend :shown="store.shown" />
-                <!-- The wrapper carries the margin, not the component: `FloorClear`'s root is
+                <div class="min-w-0 overflow-x-auto">
+                  <FloorGrid
+                    :cells="store.cells"
+                    :icons="store.icons"
+                    :solutions="solutions"
+                    :shown="store.shown"
+                    @paint="store.paint($event)"
+                    @settle="store.settle()"
+                    @erase="store.erase($event)"
+                  />
+                </div>
+                <!-- The arrows move the drawing and sit where it starts; the button that empties
+                   it is as far from them as the row allows, which is the point. What the colours
+                   mean is not here: it sits beside the list of ranked places it explains. -->
+                <div class="flex items-center gap-2">
+                  <FloorMove :cells="store.cells" @move="store.move($event)" />
+                  <!-- The wrapper carries the margin, not the component: `FloorClear`'s root is
                      a Dialog, which renders no element of its own for a class to land on. -->
-                <div class="ml-auto">
-                  <FloorClear @clear="store.clear()" />
+                  <div class="ml-auto">
+                    <FloorClear @clear="store.clear()" />
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- As tall as the workbench beside it and never taller: the pane is laid over a box
+          <!-- As tall as the workbench beside it and never taller: the pane is laid over a box
              that only has a minimum height, so a long list scrolls inside it instead of
-             stretching the row and pushing the grid's controls down. On a line of its own it
+             stretching the row and pushing the grid's controls down. Under the workbench it
              keeps the grid's height, for the same reason.
 
              No source line, on purpose: the wiki's attribution is carried once, in
              Information, where a licence belongs, and not repeated on every row. -->
-        <div
-          class="relative min-h-floor-grid min-w-floor-reasoning flex-1 basis-floor-reasoning"
-        >
-          <FloorReasoning
-            class="absolute inset-0"
-            :target="store.shown"
-            :solution="shownSolution"
-          />
+          <div
+            class="relative min-h-floor-grid @floor-all/floor:min-w-0 @floor-all/floor:flex-1"
+          >
+            <FloorReasoning
+              class="absolute inset-0"
+              :target="store.shown"
+              :solution="shownSolution"
+            />
+          </div>
         </div>
       </CardContent>
     </Card>

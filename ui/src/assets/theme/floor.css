@@ -25,6 +25,26 @@
      than as a column of words. */
   --spacing-floor-reasoning: 18rem;
 
+  /* The room rail's width: the longest name either language gives a room ("Super segreta",
+     "Ultra Secret") beside its swatch and its key, measured at 10.75rem in a window. A width of
+     its own rather than its content's, because the two breaks below are computed from it. */
+  --spacing-floor-palette: 11rem;
+
+  /* Where the workbench changes shape, against its own width (the `floor` container), because
+     **the order is fixed and only the line breaks move**: the grid, then the rooms, then the
+     reasoning. Breaking on the page's width and letting the pane wrap by itself did not keep
+     that order — between the two, the grid and the reasoning shared the first line and the
+     rooms dropped under the grid, the tool pushed behind its own answer.
+
+     Written as numbers and not as calc(): a container query cannot read a custom property, and
+     Tailwind writes the value into the query as it is. So they are sums, said here:
+       rail — the rail beside the grid: palette 11 + gap 0.75 + grid 27.5 = 39.25rem.
+       all  — the reasoning beside both: rail 39.25 + gap 1 + reasoning 18 = 58.25rem.
+     A change to any of those tokens is a change to these two. In rem like the tokens they sum,
+     so the breaks move with the interface's scale. */
+  --container-floor-rail: 39.25rem;
+  --container-floor-all: 58.25rem;
+
   /* Our own drawing inside a cell, when the game is not here to lend its own. A fraction of
      the cell above, and it moves with it. */
   --spacing-floor-symbol: 1.0625rem;
