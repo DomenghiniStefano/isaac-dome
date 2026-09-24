@@ -305,7 +305,8 @@ pub struct SteamView {
 #[serde(rename_all = "camelCase")]
 pub struct GameView {
     pub dir_hint: String,
-    pub edition: Edition,
+    /// `None` when the install says nothing about it — a game folder chosen by hand.
+    pub edition: Option<Edition>,
     pub dlcs: Vec<Dlc>,
 }
 
