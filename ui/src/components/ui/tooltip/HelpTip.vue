@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { CircleHelpIcon } from '@lucide/vue'
+import type { HTMLAttributes } from 'vue'
 import { useMessages } from '@/i18n'
+import { cn } from '@/lib/cn'
 import Tooltip from './Tooltip.vue'
 import TooltipContent from './TooltipContent.vue'
 import TooltipTrigger from './TooltipTrigger.vue'
@@ -20,7 +22,11 @@ import TooltipTrigger from './TooltipTrigger.vue'
 // what they explain — the screen's title, the sidebar's section, a switch's label — so
 // upwards is where the chrome is: on the screen header it covered the tab bar, and a tooltip
 // that hides the navigation to explain the page is trading one confusion for another.
-defineProps<{ label?: string }>()
+//
+// `class` is taken by hand and handed to the trigger: `Tooltip` renders no element of its own, so
+// a class falling through to it lands nowhere. That is how the sidebar's `sidebar-collapsed-hidden`
+// stayed on the mark from 3.13a to card #54 while the sidebar folded round it.
+const props = defineProps<{ label?: string; class?: HTMLAttributes['class'] }>()
 const { t } = useMessages()
 </script>
 
@@ -28,7 +34,9 @@ const { t } = useMessages()
   <Tooltip>
     <TooltipTrigger
       :aria-label="label ?? t('ui.explain')"
-      class="shrink-0 text-faint-foreground hover:text-foreground"
+      :class="
+        cn('shrink-0 text-faint-foreground hover:text-foreground', props.class)
+      "
     >
       <CircleHelpIcon class="size-3.5" />
     </TooltipTrigger>

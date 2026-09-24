@@ -216,5 +216,22 @@
 # `select()` on the focus the listbox already gives the input, and is looked at in the window.
 # Rust does not move: nothing in this one is Rust.
 
+# **Raised on 2026-09-24**, UI +20, card #54: the sidebar folds from a tab on its edge. Nine on
+# the session document — a folded sidebar round-trips, an open one writes nothing, four values
+# that are not `true` read as open and keep the windows, the version does not move, the fold
+# travels beside the width, a version 1 document reads as open. Five on `sameLayout`, which is
+# what stops a window echoing back the layout it just heard: a fold and a drag are each news on
+# their own. Six on `togglesSidebar`, Ctrl+B and not its neighbours, and not a held key's
+# repeats. The fold itself — five steps of width, labels flipped at the right end — is CSS, and
+# was measured in a headless browser rather than asserted here. Rust does not move.
+#
+# **Merged against `develop`'s UI +19, as a delta** — the sixth time: both sides started from 808,
+# one wrote 827 and this one 828, and 808 + 19 + 20 = 847 is the number neither could have
+# written alone. The +19 came with `fix(ui): a tab loses nothing` and `fix(ui): a Wiki category's
+# filter and position belong to its tab`, and **without a paragraph**; it is theirs to describe,
+# and it is still missing here. Merged a second time into `develop` against its next +7 — `fix(ui):
+# the Collection's find bar belongs to its tab` and `fix(ui): what is typed into the want bar
+# belongs to its tab`, also without a paragraph — so 834 + 20 = 854.
+
 RUST_TESTS=1254
-UI_TESTS=834
+UI_TESTS=854

@@ -275,7 +275,16 @@ check the Kit page, not only the typecheck.
 **Motion runs on `steps()`.** `duration-tap|panel|sheet|loop` with `ease-tap|panel|sheet|frame`,
 and `animate-*` tokens for entrances; the default transition is `0ms` on `steps(1)`, so hover
 and active never lag. No exit animations. `prefers-reduced-motion` collapses everything to
-0ms in `base.css`.
+0ms in `base.css` — durations and delays both.
+
+**A `display` that follows an animated size waits for it, one way.** When a box folds in steps
+and something inside it has to go (`display: none`, a `justify-content` that changes), a flip at
+the first frame leaves the box half empty for the whole animation. Transition the discrete
+property with `transition-behavior: allow-discrete` and put the `transition-delay` **only on the
+rules of the state being arrived at when folding**: a transition runs on the arriving state's
+`transition-*`, so folding waits for the size and unfolding flips at once. The section sidebar is
+the example (`sidebar-collapsed-hidden` and `sidebar-collapsed-center` in `utilities.css`,
+card #54).
 
 > The **values** of the tokens are set by the design system, not this document. Here we
 > only establish that they exist and that nobody writes a visual value anywhere else.
