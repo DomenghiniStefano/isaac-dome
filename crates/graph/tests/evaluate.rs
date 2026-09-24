@@ -5,6 +5,16 @@
 use graph::build::{Graph, GraphDiagnostic};
 use graph::evaluate::NodeInfo;
 
+use graph::AchievementId;
+
+fn a(n: u32) -> AchievementId {
+    AchievementId(n)
+}
+
+fn aa(ns: &[u32]) -> Vec<AchievementId> {
+    ns.iter().copied().map(AchievementId).collect()
+}
+
 fn graph(edges: &[(u32, &[u32])], unknown: &[(u32, &[&str])]) -> Graph {
     graph::for_tests::from_edges(edges, unknown)
 }
@@ -22,7 +32,7 @@ fn a_node_with_no_prerequisites_is_available_now() {
     let g = graph(&[(1, &[])], &[]);
     let e = g.evaluate(&graph::FlagsOnly(Some(&flags(&[], 2))));
     assert_eq!(
-        e.node(1),
+        e.node(a(1)),
         Some(&NodeInfo::Computed {
             available_now: true,
             blocked_by: 0,
@@ -37,7 +47,7 @@ fn a_done_prerequisite_stops_blocking() {
     let g = graph(&[(1, &[]), (2, &[1])], &[]);
     let blocked = g.evaluate(&graph::FlagsOnly(Some(&flags(&[], 3))));
     assert_eq!(
-        blocked.node(2),
+        blocked.node(a(2)),
         Some(&NodeInfo::Computed {
             available_now: false,
             blocked_by: 1,
@@ -47,7 +57,7 @@ fn a_done_prerequisite_stops_blocking() {
     );
     let freed = g.evaluate(&graph::FlagsOnly(Some(&flags(&[1], 3))));
     assert_eq!(
-        freed.node(2),
+        freed.node(a(2)),
         Some(&NodeInfo::Computed {
             available_now: true,
             blocked_by: 0,
@@ -62,8 +72,8 @@ fn steps_missing_counts_a_shared_ancestor_once() {
     // 4 needs 2 and 3; both need 1. Three runs, not four.
     let g = graph(&[(1, &[]), (2, &[1]), (3, &[1]), (4, &[2, 3])], &[]);
     let e = g.evaluate(&graph::FlagsOnly(Some(&flags(&[], 5))));
-    let Some(NodeInfo::Computed { steps_missing, .. }) = e.node(4) else {
-        panic!("node 4 should be Computed: {:?}", e.node(4));
+    let Some(NodeInfo::Computed { steps_missing, .. }) = e.node(a(4)) else {
+        panic!("node 4 should be Computed: {:?}", e.node(a(4)));
     };
     assert_eq!(
         *steps_missing, 3,
@@ -75,7 +85,7 @@ fn steps_missing_counts_a_shared_ancestor_once() {
 fn steps_missing_skips_what_is_already_done() {
     let g = graph(&[(1, &[]), (2, &[1]), (3, &[2])], &[]);
     let e = g.evaluate(&graph::FlagsOnly(Some(&flags(&[1], 4))));
-    let Some(NodeInfo::Computed { steps_missing, .. }) = e.node(3) else {
+    let Some(NodeInfo::Computed { steps_missing, .. }) = e.node(a(3)) else {
         panic!("node 3 should be Computed");
     };
     assert_eq!(
@@ -88,7 +98,7 @@ fn steps_missing_skips_what_is_already_done() {
 fn fan_out_counts_the_nodes_this_one_opens() {
     let g = graph(&[(1, &[]), (2, &[1]), (3, &[1])], &[]);
     let e = g.evaluate(&graph::FlagsOnly(Some(&flags(&[], 4))));
-    let Some(NodeInfo::Computed { fan_out, .. }) = e.node(1) else {
+    let Some(NodeInfo::Computed { fan_out, .. }) = e.node(a(1)) else {
         panic!("node 1 should be Computed");
     };
     assert_eq!(*fan_out, 2);
@@ -99,7 +109,7 @@ fn an_unknown_requirement_makes_the_node_partial() {
     let g = graph(&[(1, &[])], &[(1, &["Bestiary", "Collect"])]);
     let e = g.evaluate(&graph::FlagsOnly(Some(&flags(&[], 2))));
     assert_eq!(
-        e.node(1),
+        e.node(a(1)),
         Some(&NodeInfo::Partial {
             blocked_by: 0,
             fan_out: 0,
@@ -121,9 +131,9 @@ fn a_cycle_is_declared_and_never_walked_twice() {
         e.diagnostics()
     );
     assert!(
-        matches!(e.node(1), Some(NodeInfo::Partial { .. })),
+        matches!(e.node(a(1)), Some(NodeInfo::Partial { .. })),
         "a node inside a cycle cannot claim a transitive count, got {:?}",
-        e.node(1)
+        e.node(a(1))
     );
 }
 
@@ -135,7 +145,7 @@ fn a_node_already_done_is_not_available_now() {
         available_now,
         steps_missing,
         ..
-    }) = e.node(1)
+    }) = e.node(a(1))
     else {
         panic!("node 1 should be Computed");
     };
@@ -147,7 +157,7 @@ fn a_node_already_done_is_not_available_now() {
 fn without_section_one_there_are_no_nodes_and_no_invented_zeros() {
     let g = graph(&[(1, &[])], &[]);
     let e = g.evaluate(&graph::FlagsOnly(None));
-    assert_eq!(e.node(1), None, "unread is not the same as not done");
+    assert_eq!(e.node(a(1)), None, "unread is not the same as not done");
 }
 
 #[test]
@@ -157,7 +167,7 @@ fn a_slot_the_save_does_not_reach_is_treated_as_not_done() {
     // progress the file doesn't contain.
     let g = graph(&[(1, &[]), (9, &[])], &[]);
     let e = g.evaluate(&graph::FlagsOnly(Some(&flags(&[], 3))));
-    let Some(NodeInfo::Computed { available_now, .. }) = e.node(9) else {
+    let Some(NodeInfo::Computed { available_now, .. }) = e.node(a(9)) else {
         panic!("node 9 should be Computed");
     };
     assert!(available_now);
@@ -176,7 +186,7 @@ fn an_uninterpreted_gate_stops_blocking_once_something_behind_it_is_done() {
     );
     let e = g.evaluate(&graph::FlagsOnly(Some(&flags(&[1], 3))));
     assert_eq!(
-        e.node(2),
+        e.node(a(2)),
         Some(&NodeInfo::Computed {
             available_now: true,
             blocked_by: 0,
@@ -195,9 +205,9 @@ fn a_gate_with_no_evidence_behind_it_still_blocks() {
     );
     let e = g.evaluate(&graph::FlagsOnly(Some(&flags(&[], 3))));
     assert!(
-        matches!(e.node(2), Some(NodeInfo::Partial { unknown: 1, .. })),
+        matches!(e.node(a(2)), Some(NodeInfo::Partial { unknown: 1, .. })),
         "nothing done behind it: we genuinely don't know, got {:?}",
-        e.node(2)
+        e.node(a(2))
     );
 }
 
@@ -209,9 +219,9 @@ fn evidence_is_per_gate_not_per_node() {
         &[(1, &["Delirium"]), (2, &["Delirium"]), (3, &["Bestiary"])],
     );
     let e = g.evaluate(&graph::FlagsOnly(Some(&flags(&[1], 4))));
-    assert!(matches!(e.node(2), Some(NodeInfo::Computed { .. })));
+    assert!(matches!(e.node(a(2)), Some(NodeInfo::Computed { .. })));
     assert!(
-        matches!(e.node(3), Some(NodeInfo::Partial { unknown: 1, .. })),
+        matches!(e.node(a(3)), Some(NodeInfo::Partial { unknown: 1, .. })),
         "one gate's evidence says nothing about another's"
     );
 }
@@ -224,9 +234,9 @@ fn a_node_waiting_on_two_gates_needs_evidence_for_both() {
     );
     let e = g.evaluate(&graph::FlagsOnly(Some(&flags(&[1], 3))));
     assert!(
-        matches!(e.node(2), Some(NodeInfo::Partial { unknown: 1, .. })),
+        matches!(e.node(a(2)), Some(NodeInfo::Partial { unknown: 1, .. })),
         "Delirium is proven, Bestiary isn't: one unknown left, got {:?}",
-        e.node(2)
+        e.node(a(2))
     );
 }
 
@@ -251,25 +261,25 @@ fn the_inference_is_declared_not_silent() {
 fn the_missing_chain_is_what_still_stands_between_you_and_a_node() {
     let g = graph(&[(1, &[]), (2, &[1]), (3, &[2])], &[]);
     assert_eq!(
-        g.missing_chain(3, &graph::FlagsOnly(Some(&flags(&[], 4)))),
-        vec![1, 2]
+        g.missing_chain(a(3), &graph::FlagsOnly(Some(&flags(&[], 4)))),
+        aa(&[1, 2])
     );
     assert_eq!(
-        g.missing_chain(3, &graph::FlagsOnly(Some(&flags(&[1], 4)))),
-        vec![2],
+        g.missing_chain(a(3), &graph::FlagsOnly(Some(&flags(&[1], 4)))),
+        aa(&[2]),
         "what is done is not owed again"
     );
     assert!(
-        g.missing_chain(1, &graph::FlagsOnly(Some(&flags(&[], 4))))
+        g.missing_chain(a(1), &graph::FlagsOnly(Some(&flags(&[], 4))))
             .is_empty(),
         "nothing stands between you and a node with no prerequisites"
     );
     assert!(
-        g.missing_chain(3, &graph::FlagsOnly(None)).is_empty(),
+        g.missing_chain(a(3), &graph::FlagsOnly(None)).is_empty(),
         "without section 1 there is nothing to compute, and nothing is claimed"
     );
     assert!(
-        g.missing_chain(999, &graph::FlagsOnly(Some(&flags(&[], 4))))
+        g.missing_chain(a(999), &graph::FlagsOnly(Some(&flags(&[], 4))))
             .is_empty(),
         "a node that isn't in the graph owes nothing: it is not an error"
     );
@@ -279,7 +289,7 @@ fn the_missing_chain_is_what_still_stands_between_you_and_a_node() {
 fn a_node_in_a_cycle_has_no_knowable_chain() {
     let g = graph(&[(1, &[2]), (2, &[1])], &[]);
     assert!(
-        g.missing_chain(1, &graph::FlagsOnly(Some(&flags(&[], 3))))
+        g.missing_chain(a(1), &graph::FlagsOnly(Some(&flags(&[], 3))))
             .is_empty(),
         "not knowable comes back empty, and `NodeInfo::Partial` is what says so"
     );
@@ -318,7 +328,7 @@ impl graph::Profile for Fake {
 
 impl Fake {
     fn node_1(&self, g: &Graph) -> Option<NodeInfo> {
-        g.evaluate(self).node(1).cloned()
+        g.evaluate(self).node(a(1)).cloned()
     }
 }
 
@@ -433,7 +443,7 @@ fn a_flags_only_profile_cannot_answer_and_says_so() {
     let g = one_node(mother_of(0));
     let f = vec![false, false];
     let e = g.evaluate(&graph::FlagsOnly(Some(&f)));
-    assert!(matches!(e.node(1), Some(NodeInfo::Partial { .. })));
+    assert!(matches!(e.node(a(1)), Some(NodeInfo::Partial { .. })));
 }
 
 // --- Thresholds: a transformation, answered against the profile and never as an edge. ---
@@ -446,7 +456,7 @@ fn contributor(id: u32, gate: Option<u32>) -> ThresholdItem {
     ThresholdItem {
         kind: ItemKind::Passive,
         id: ItemId(id),
-        unlocked_by: gate,
+        unlocked_by: gate.map(AchievementId),
     }
 }
 
@@ -476,7 +486,7 @@ fn a_met_threshold_leaves_the_node_available_now() {
     let g = guppy_node(&[Some(1), Some(2), Some(3)], 0);
     let e = g.evaluate(&graph::FlagsOnly(Some(&flags(&[1, 2, 3], 66))));
     assert_eq!(
-        e.node(65),
+        e.node(a(65)),
         Some(&NodeInfo::Computed {
             available_now: true,
             blocked_by: 0,
@@ -492,7 +502,7 @@ fn an_ungated_contributor_counts_on_its_own() {
     let g = guppy_node(&[None, None, None], 0);
     let e = g.evaluate(&graph::FlagsOnly(Some(&flags(&[], 66))));
     assert!(matches!(
-        e.node(65),
+        e.node(a(65)),
         Some(NodeInfo::Computed {
             available_now: true,
             ..
@@ -508,15 +518,15 @@ fn an_unmet_threshold_makes_the_node_partial_and_says_why() {
     let g = guppy_node(&[Some(1), Some(2), Some(3)], 0);
     let e = g.evaluate(&graph::FlagsOnly(Some(&flags(&[1, 2], 66))));
     assert!(
-        matches!(e.node(65), Some(NodeInfo::Partial { blocked_by: 0, .. })),
+        matches!(e.node(a(65)), Some(NodeInfo::Partial { blocked_by: 0, .. })),
         "{:?}",
-        e.node(65)
+        e.node(a(65))
     );
     assert!(
         e.diagnostics().iter().any(|d| matches!(
             d,
             GraphDiagnostic::ThresholdUnmet {
-                node: 65,
+                node: AchievementId(65),
                 current: 2,
                 at_least: 3,
                 ..
@@ -535,7 +545,7 @@ fn an_unresolved_contributor_never_unmeets_a_met_threshold() {
     let g = guppy_node(&[Some(1), Some(2), Some(3)], 1);
     let e = g.evaluate(&graph::FlagsOnly(Some(&flags(&[1, 2, 3], 66))));
     assert!(matches!(
-        e.node(65),
+        e.node(a(65)),
         Some(NodeInfo::Computed {
             available_now: true,
             ..
@@ -549,7 +559,7 @@ fn an_unresolved_contributor_never_unmeets_a_met_threshold() {
 fn an_unresolved_contributor_below_the_line_is_unanswerable_not_unmet() {
     let g = guppy_node(&[Some(1), Some(2), Some(3)], 1);
     let e = g.evaluate(&graph::FlagsOnly(Some(&flags(&[1], 66))));
-    assert!(matches!(e.node(65), Some(NodeInfo::Partial { .. })));
+    assert!(matches!(e.node(a(65)), Some(NodeInfo::Partial { .. })));
     assert!(
         !e.diagnostics()
             .iter()

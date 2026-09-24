@@ -1,18 +1,19 @@
 //! The queue and its rows. The order **is** the position in the array: there is no
 //! sequence column, and therefore no way to write an order that contradicts itself.
 
+use graph::AchievementId;
 use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Row {
-    pub achievement: u32,
+    pub achievement: AchievementId,
     /// You asked for this one, for itself.
     pub wanted: bool,
     /// Every wanted achievement whose chain passes through this row. A list, not a single
     /// value: two wishes can need the same step, and with one slot the second would be
     /// lost — visibly, on removal, when a step another wish still needs looks orphaned.
-    pub origins: Vec<u32>,
+    pub origins: Vec<AchievementId>,
 }
 
 impl Row {
@@ -50,7 +51,7 @@ impl Queue {
         &self.0
     }
 
-    pub fn position(&self, achievement: u32) -> Option<usize> {
+    pub fn position(&self, achievement: AchievementId) -> Option<usize> {
         self.0.iter().position(|r| r.achievement == achievement)
     }
 

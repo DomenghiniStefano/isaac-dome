@@ -42,7 +42,7 @@ fn queue_view_now(
     let (queue, goals_pending, reason) = match store.lock(app) {
         Ok(guard) => {
             let read = guard.queue();
-            let queued: std::collections::BTreeSet<u32> = match &read {
+            let queued: std::collections::BTreeSet<graph::AchievementId> = match &read {
                 Ok(Ok(q)) => q.rows().iter().map(|r| r.achievement).collect(),
                 _ => std::collections::BTreeSet::new(),
             };
@@ -107,8 +107,12 @@ fn queue_mutate(
 }
 
 /// The ids a move has to reason about: what is already queued, plus what is about to be.
-fn ids_for(q: &plan::Queue, achievement: u32, chain: &[u32]) -> Vec<u32> {
-    let mut ids: Vec<u32> = q.rows().iter().map(|r| r.achievement).collect();
+fn ids_for(
+    q: &plan::Queue,
+    achievement: graph::AchievementId,
+    chain: &[graph::AchievementId],
+) -> Vec<graph::AchievementId> {
+    let mut ids: Vec<graph::AchievementId> = q.rows().iter().map(|r| r.achievement).collect();
     ids.push(achievement);
     ids.extend(chain.iter().copied());
     ids
@@ -135,6 +139,8 @@ pub fn queue_add(
     resources: tauri::State<'_, ResourcesState>,
     graph: tauri::State<'_, GraphState>,
 ) -> Result<ipc::QueueView, IpcError> {
+    // The IPC speaks in bare numbers; the queue in typed ids (card #81, V12).
+    let achievement = graph::AchievementId(achievement);
     let pieces = queue_pieces(&app, &catalog, &resources, &graph)?;
     queue_mutate(&app, &store, &pieces, |q, g, flags| {
         let chain = g.missing_chain(achievement, &graph::FlagsOnly(flags));
@@ -153,6 +159,7 @@ pub fn queue_remove(
     resources: tauri::State<'_, ResourcesState>,
     graph: tauri::State<'_, GraphState>,
 ) -> Result<ipc::QueueView, IpcError> {
+    let achievement = graph::AchievementId(achievement);
     let pieces = queue_pieces(&app, &catalog, &resources, &graph)?;
     queue_mutate(&app, &store, &pieces, |q, _g, _flags| q.remove(achievement))?;
     queue_view_now(&app, &store, &pieces)
@@ -170,11 +177,15 @@ pub fn queue_move(
 ) -> Result<ipc::QueueView, IpcError> {
     let pieces = queue_pieces(&app, &catalog, &resources, &graph)?;
     queue_mutate(&app, &store, &pieces, |q, g, flags| {
-        let ids: Vec<u32> = q.rows().iter().map(|r| r.achievement).collect();
+        let ids: Vec<graph::AchievementId> = q.rows().iter().map(|r| r.achievement).collect();
         let deps = GraphDeps::new(g, flags, &ids);
         // The row the drop landed under, not an index: the view the screen drew leaves
         // completed and unresolved rows out, so its positions are not the document's.
-        q.move_after(achievement, after, &deps);
+        q.move_after(
+            graph::AchievementId(achievement),
+            after.map(graph::AchievementId),
+            &deps,
+        );
     })?;
     queue_view_now(&app, &store, &pieces)
 }
@@ -206,7 +217,8 @@ pub fn queue_import_goals(
     };
     queue_mutate(&app, &store, &pieces, |q, g, flags| {
         for target in &targets {
-            let Some(achievement) = ipc::achievement_unlocking(c, target) else {
+            let Some(achievement) = ipc::achievement_unlocking(c, target).map(graph::AchievementId)
+            else {
                 continue;
             };
             let chain = g.missing_chain(achievement, &graph::FlagsOnly(flags));

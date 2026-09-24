@@ -4,7 +4,7 @@
 //! traversal of its own. It resolves what you named, finds the achievements that grant it,
 //! and asks for the chain — in the order the Plan would play it.
 
-use catalog::Catalog;
+use catalog::{AchievementId, Catalog};
 use serde::Serialize;
 use wiki::Target;
 
@@ -187,24 +187,24 @@ fn route_state(
     // for a slot the graph says nothing about, so the chain comes out empty and `unknown`
     // counts it. The route then reads "I can't tell you the series", never "nothing missing".
     let chain = g
-        .map(|g| g.missing_chain(id, &graph::FlagsOnly(Some(flags))))
+        .map(|g| g.missing_chain(AchievementId(id), &graph::FlagsOnly(Some(flags))))
         .unwrap_or_default();
     // The order is the queue's, asked rather than reinvented: `enqueue` appends the chain,
     // then the wish, then runs the repair that pulls the prerequisites above it. An empty
     // throwaway queue makes this preview and the write the Plan performs one computation.
     let mut rows = chain.clone();
-    rows.push(id);
+    rows.push(AchievementId(id));
     let mut queue = plan::Queue::from_rows(Vec::new());
     let deps = match g {
         Some(g) => crate::queue::GraphDeps::new(g, Some(flags), &rows),
         None => crate::queue::GraphDeps::from_chains([]),
     };
-    queue.enqueue(id, &chain, &deps);
+    queue.enqueue(AchievementId(id), &chain, &deps);
     let steps: Vec<UnlockNode> = queue
         .rows()
         .iter()
-        .filter(|r| r.achievement != id)
-        .filter_map(|r| node_of(view, r.achievement))
+        .filter(|r| r.achievement != AchievementId(id))
+        .filter_map(|r| node_of(view, r.achievement.0))
         .cloned()
         .collect();
     let unknown = steps

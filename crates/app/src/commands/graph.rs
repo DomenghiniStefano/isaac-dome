@@ -56,7 +56,7 @@ pub fn graph_views(
     store: tauri::State<'_, StoreState>,
 ) -> Result<ipc::GraphViews, IpcError> {
     let queued: BTreeSet<u32> = match store.lock(&app).map(|guard| guard.queue()) {
-        Ok(Ok(Ok(q))) => q.rows().iter().map(|r| r.achievement).collect(),
+        Ok(Ok(Ok(q))) => q.rows().iter().map(|r| r.achievement.0).collect(),
         _ => BTreeSet::new(),
     };
     Ok(ipc::graph_views(

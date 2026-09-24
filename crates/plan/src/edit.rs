@@ -4,6 +4,7 @@
 
 use crate::model::{Queue, Row};
 use crate::order::Dependencies;
+use graph::AchievementId;
 
 impl Queue {
     /// Adds `achievement` as a wish, with its missing prerequisites before it.
@@ -11,7 +12,12 @@ impl Queue {
     /// A step already queued keeps its place and gains an origin; a wish already queued is
     /// left exactly where it is — asking twice is not a reason to undo an arrangement you
     /// made by hand.
-    pub fn enqueue(&mut self, achievement: u32, chain: &[u32], deps: &impl Dependencies) {
+    pub fn enqueue(
+        &mut self,
+        achievement: AchievementId,
+        chain: &[AchievementId],
+        deps: &impl Dependencies,
+    ) {
         let already_queued = self.position(achievement).is_some();
         let mut rows = self.rows().to_vec();
         for step in chain {
@@ -49,7 +55,7 @@ impl Queue {
 
     /// Removes a wish. Its steps go only if nothing else keeps them: another wish that
     /// needs them, or your having asked for them yourself.
-    pub fn remove(&mut self, achievement: u32) {
+    pub fn remove(&mut self, achievement: AchievementId) {
         let mut rows = self.rows().to_vec();
         for r in rows.iter_mut() {
             r.origins.retain(|o| *o != achievement);

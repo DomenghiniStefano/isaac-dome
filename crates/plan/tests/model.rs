@@ -1,13 +1,22 @@
 //! The queue document: what it looks like on disk, and the difference between a queue
 //! that is empty and one that couldn't be read.
 
+use graph::AchievementId;
 use plan::{Queue, Row};
+
+fn a(n: u32) -> AchievementId {
+    AchievementId(n)
+}
+
+fn aa(ns: &[u32]) -> Vec<AchievementId> {
+    ns.iter().copied().map(AchievementId).collect()
+}
 
 fn row(achievement: u32, wanted: bool, origins: &[u32]) -> Row {
     Row {
-        achievement,
+        achievement: a(achievement),
         wanted,
-        origins: origins.to_vec(),
+        origins: aa(origins),
     }
 }
 
@@ -25,8 +34,8 @@ fn the_document_round_trips_and_the_order_is_the_position() {
     );
     let back = Queue::from_json(&json).expect("round trip");
     assert_eq!(back, q);
-    assert_eq!(back.position(41), Some(1));
-    assert_eq!(back.position(999), None);
+    assert_eq!(back.position(a(41)), Some(1));
+    assert_eq!(back.position(a(999)), None);
 }
 
 #[test]
@@ -58,4 +67,20 @@ fn a_row_with_no_reason_to_exist_knows_it() {
     assert!(row(7, false, &[]).is_orphan());
     assert!(!row(7, true, &[]).is_orphan(), "you asked for it");
     assert!(!row(7, false, &[41]).is_orphan(), "it serves a wish");
+}
+
+/// Card #81, V12: the row's ids become `AchievementId`, and the document on disk must not move.
+/// Written before the type changed, from the shape the spec above fixes: a plan saved today
+/// reads back after the change, with the same numbers.
+#[test]
+fn a_document_saved_before_the_ids_were_typed_reads_back_the_same() {
+    let saved = r#"[{"achievement":89,"wanted":true,"origins":[41,512]}]"#;
+    let q = Queue::from_json(saved).expect("a document from before reads");
+    let row = &q.rows()[0];
+    assert_eq!(row.achievement, graph::AchievementId(89));
+    assert_eq!(
+        row.origins,
+        vec![graph::AchievementId(41), graph::AchievementId(512)]
+    );
+    assert_eq!(q.to_json(), saved, "and writes back byte for byte");
 }
