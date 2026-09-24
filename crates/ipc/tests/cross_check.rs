@@ -136,11 +136,15 @@ fn rust_matrix_agrees_with_the_python_reference() {
         "no suspicious value on a real save"
     );
 
-    // 34 characters × 12 columns = 408 cells, less the 40 that sit in the unread
-    // bottom-right block (Mother and The Beast for The Forgotten and the 19): 368. Was
-    // 321 for as long as the matrix had 10 columns — 34 × 10 − 19 — and stayed behind
-    // when the twelve-column matrix landed on 2026-09-08.
-    assert_eq!(matrix.totals.readable, 368, "{SAMPLE}");
+    // 34 characters × 12 columns = 408 cells, less the 20 still unread: The Beast for The
+    // Forgotten and the 19. 388. Was 368 until Mother's half of that block was located on
+    // 2026-09-20 (T. Eden's window, `core_save::marks`), and the number stayed behind for
+    // four days: the Python reference had not learned the cells either, so on a machine
+    // that runs it the two disagreed on The Forgotten × Mother, and on one without Python
+    // the whole test skips and says nothing. Was 321 for as long as the matrix had 10
+    // columns — 34 × 10 − 19 — and stayed behind when the twelve-column matrix landed on
+    // 2026-09-08.
+    assert_eq!(matrix.totals.readable, 388, "{SAMPLE}");
 
     // `started` was pinned at 93, and 93 was a fixture of the ten-column era just as 321
     // was. Rather than move it to a new number this file would have to keep chasing, it

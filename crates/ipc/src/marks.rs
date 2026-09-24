@@ -3,8 +3,9 @@ use serde::Serialize;
 
 /// The twelve columns the game's own completion widget draws. Mother and The Beast were
 /// located on 2026-09-08, on the historical series: for the 14 original characters they
-/// are as verified as the other ten, for The Forgotten and the 19 later characters they
-/// are still unlocated — see `FORGOTTEN` and `BLOCKS_19`.
+/// are as verified as the other ten. For The Forgotten and the 19 later characters Mother
+/// was located on 2026-09-20 and The Beast is still unlocated — see `FORGOTTEN` and
+/// `BLOCKS_19` in `core_save::marks`.
 pub const BOSSES: [&str; 12] = [
     "Mom's Heart",
     "Isaac",
