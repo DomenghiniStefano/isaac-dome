@@ -64,8 +64,9 @@ pub struct ResourceSet {
 impl ResourceSet {
     /// Opens the archives present in `packed_dir`, in precedence order.
     ///
-    /// Degrades: an archive that fails to open is skipped silently, because its
-    /// absence is normal (different editions of the game have a different subset).
+    /// Degrades: an archive that is not there is skipped, because its
+    /// absence is normal (different editions of the game have a different subset); one that
+    /// is there and does not open is kept in `broken()`, never skipped in silence.
     pub fn open(packed_dir: &Path) -> ResourceSet {
         let mut archives = Vec::new();
         let mut info = Vec::new();
