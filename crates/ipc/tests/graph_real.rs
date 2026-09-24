@@ -18,10 +18,11 @@ use unpack::ResourceSet;
 
 fn real() -> Option<(Catalog, ResourceSet, Save)> {
     let packed = test_support::packed_dir()?;
-    // Stays `live` and not a dated file: the numbers pinned below are measured
-    // against this profile, and changing it would mean deriving them again from the
-    // code's own output — exactly the wrong way to write an expected value.
-    let save = test_support::sample("live.rep+persistentgamedata1.dat")?;
+    // A dated file since 2026-09-24 (card #81, C2): it was `live.`, the name CLAUDE.md
+    // warns invites overwriting. The numbers pinned below were measured on `live`, dated
+    // 2026-08-31, and hold unchanged on the snapshot of that same day — they were not
+    // derived again from the code's output.
+    let save = test_support::sample("20260831.rep+persistentgamedata1.dat")?;
     let rs = ResourceSet::open(&packed);
     let c = Catalog::build(|p| rs.read(p));
     // A sample that's present but unreadable isn't a silent skip: it's declared.

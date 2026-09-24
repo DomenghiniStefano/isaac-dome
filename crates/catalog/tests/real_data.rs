@@ -341,11 +341,11 @@ fn the_catalog_ids_are_a_subset_of_the_save_slots_and_the_holes_are_the_missing_
     let Some((c, _)) = build_or_skip() else {
         return;
     };
-    let Some(save_path) = test_support::sample("live.rep+persistentgamedata1.dat") else {
+    let Some(save_path) = test_support::sample("20260831.rep+persistentgamedata1.dat") else {
         return;
     };
     let Ok(save) = core_save::Save::open(&save_path) else {
-        test_support::skip("the live profile exists but doesn't open");
+        test_support::skip("the 2026-08-31 profile exists but doesn't open");
         return;
     };
     let item_slots = save
