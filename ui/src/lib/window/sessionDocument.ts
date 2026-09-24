@@ -1,6 +1,6 @@
 import { RouteName } from '@/router/routeTable'
 import type { TabLocation } from '@/router/routeTable'
-import type { Entry, TabSeed } from '@/stores/tabModel'
+import type { Entry, EntryScroll, TabSeed } from '@/stores/tabModel'
 
 // The document's version. It is bumped when an older app could read the new shape and be wrong
 // about it — never for a part it can simply ignore. An entry gaining a `view` is such a part, so
@@ -90,12 +90,30 @@ const readView = (value: unknown): unknown =>
     ? value
     : undefined
 
+// Where each region of the screen was scrolled to (`v-scroll-memory`). Read region by region: a
+// position that is not a distance costs that region and nothing else, and positions that are not
+// an object at all are none — the tab opens at the top, which is what it did before they existed.
+const readScroll = (value: unknown): EntryScroll | undefined => {
+  if (typeof value !== 'object' || value === null || Array.isArray(value))
+    return undefined
+  const kept = Object.entries(value).filter(
+    ([, top]) => typeof top === 'number' && Number.isFinite(top) && top >= 0,
+  )
+  return kept.length === 0
+    ? undefined
+    : (Object.fromEntries(kept) as EntryScroll)
+}
+
 // Two shapes, one reader. Before 3.7a an entry *was* a location, and a document written by that
 // version must still open: losing somebody's tabs on an update is not a thing the app can
 // explain to them afterwards.
 const readEntry = (value: unknown): Entry | null => {
   if (typeof value !== 'object' || value === null) return null
-  const { location, view } = value as { location?: unknown; view?: unknown }
+  const { location, view, scroll } = value as {
+    location?: unknown
+    view?: unknown
+    scroll?: unknown
+  }
   if (location === undefined) {
     const bare = readLocation(value)
     return bare === null ? null : { location: bare }
@@ -103,9 +121,12 @@ const readEntry = (value: unknown): Entry | null => {
   const read = readLocation(location)
   if (read === null) return null
   const kept = readView(view)
-  return kept === undefined
-    ? { location: read }
-    : { location: read, view: kept }
+  const positions = readScroll(scroll)
+  return {
+    location: read,
+    ...(kept === undefined ? {} : { view: kept }),
+    ...(positions === undefined ? {} : { scroll: positions }),
+  }
 }
 
 const readTab = (value: unknown): TabSeed | null => {

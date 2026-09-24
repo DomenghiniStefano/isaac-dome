@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { vScrollMemory } from '@/directives/scrollMemory'
 import { DicesIcon } from '@lucide/vue'
 import { computed, onMounted, onUnmounted } from 'vue'
 import EmptyCategory from '@/components/data-state/EmptyCategory.vue'
@@ -72,7 +73,10 @@ const cardState = computed((): CardState | null => {
 </script>
 
 <template>
-  <div class="flex h-full flex-col gap-4 overflow-y-auto px-5.5 pt-5 pb-15">
+  <div
+    v-scroll-memory="'page'"
+    class="flex h-full flex-col gap-4 overflow-y-auto px-5.5 pt-5 pb-15"
+  >
     <ScreenHeader :icon="DicesIcon" :title="t('routes.roll')">{{
       t('roll.intro')
     }}</ScreenHeader>

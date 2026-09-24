@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { vScrollMemory } from '@/directives/scrollMemory'
 import { InfoIcon } from '@lucide/vue'
 import { computed, watch } from 'vue'
 import EmptyCategory from '@/components/data-state/EmptyCategory.vue'
@@ -101,7 +102,10 @@ const onOpen = (location: TabLocation, newTab: boolean) => {
 <template>
   <!-- The gutter is the children's, so the opening band is the full width of the page without
        overflowing it (`WikiLanding.vue` records what the other way round cost). -->
-  <div class="flex h-full flex-col overflow-y-auto pb-15">
+  <div
+    v-scroll-memory="'page'"
+    class="flex h-full flex-col overflow-y-auto pb-15"
+  >
     <WikiHero
       :target="target"
       :title="title"

@@ -224,6 +224,12 @@
 # their own. Six on `togglesSidebar`, Ctrl+B and not its neighbours, and not a held key's
 # repeats. The fold itself — five steps of width, labels flipped at the right end — is CSS, and
 # was measured in a headless browser rather than asserted here. Rust does not move.
+#
+# **Merged against `develop`'s UI +19, as a delta** — the sixth time: both sides started from 808,
+# one wrote 827 and this one 828, and 808 + 19 + 20 = 847 is the number neither could have
+# written alone. The +19 came with `fix(ui): a tab loses nothing` and `fix(ui): a Wiki category's
+# filter and position belong to its tab`, and **without a paragraph**; it is theirs to describe,
+# and it is still missing here.
 
 RUST_TESTS=1254
-UI_TESTS=828
+UI_TESTS=847

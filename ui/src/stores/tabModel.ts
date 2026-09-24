@@ -12,6 +12,20 @@ type Message = MessageKey<MessageSchema>
 export interface Entry {
   location: TabLocation
   view?: unknown
+  scroll?: EntryScroll
+}
+
+// Where each region of the entry's screen was scrolled to, by the region's name
+// (`v-scroll-memory`). The shell's and never the screen's: a screen's `view` is written whole
+// by `useTabView`, so a position kept inside it would be erased by the next filter click.
+export type EntryScroll = Record<string, number>
+
+// One history entry of one tab, and the page it was showing: what a late write names so that it
+// lands on that entry or on nothing.
+export interface EntryAddress {
+  tabId: string
+  index: number
+  location: TabLocation
 }
 
 // A tab is its own little browser: the views it has been through, and which one of them it is
@@ -36,6 +50,10 @@ export const tabLocation = (tab: Tab): TabLocation =>
 
 // How the entry a tab is showing was being read, or nothing when it was never read into.
 export const entryView = (tab: Tab): unknown => tab.entries[tab.index]?.view
+
+// Where the entry a tab is showing was scrolled to, region by region; nothing when never scrolled.
+export const entryScroll = (tab: Tab): EntryScroll =>
+  tab.entries[tab.index]?.scroll ?? {}
 
 // The tab bar's rules, pure: the store only holds the result.
 export const firstState = (id: string, location: TabLocation): TabsState => ({
@@ -265,6 +283,36 @@ export const setEntryView = (
   if (!tab || !sameView(tabLocation(tab), location)) return state
   const entries = [...tab.entries]
   entries[tab.index] = { ...entries[tab.index], view }
+  return {
+    ...state,
+    tabs: state.tabs.map((each) =>
+      each.id === tab.id ? { ...each, entries } : each,
+    ),
+  }
+}
+
+// A region's position, written into the entry it was measured on.
+//
+// **Addressed by tab and entry, not aimed at the active tab** — the one difference from
+// `setEntryView`, and it is the point. A screen saves its last position as it is taken down, and it
+// is taken down *because* the active tab or entry has just changed; aimed at "the active tab", the
+// last position of every page you leave would land on the page you arrived at. The guard is the
+// view's, said the other way round: the tab must still be there, the entry must still be at that
+// place in its history, and it must still be the same page — otherwise the write reaches nothing.
+export const setEntryScroll = (
+  state: TabsState,
+  tabId: string,
+  index: number,
+  location: TabLocation,
+  region: string,
+  top: number,
+): TabsState => {
+  if (!Number.isFinite(top) || top < 0) return state
+  const tab = state.tabs.find((each) => each.id === tabId)
+  const entry = tab?.entries[index]
+  if (!tab || !entry || !sameView(entry.location, location)) return state
+  const entries = [...tab.entries]
+  entries[index] = { ...entry, scroll: { ...entry.scroll, [region]: top } }
   return {
     ...state,
     tabs: state.tabs.map((each) =>
