@@ -119,6 +119,10 @@ export const diagnosticText = (d: RunsDiagnostic): Key => {
       return 'runs.diagnostic.unreadableEvents'
     case 'noCatalog':
       return 'runs.diagnostic.noCatalog'
+    case 'unreadableSessions':
+      return 'runs.diagnostic.unreadableSessions'
+    case 'liveLogUnreadable':
+      return 'runs.diagnostic.liveLogUnreadable'
     default:
       return assertNever(d)
   }

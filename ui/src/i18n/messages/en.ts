@@ -287,6 +287,10 @@ export const en: MessageSchema = {
         'The app’s database will not open, so the archive cannot be read.',
       unreadableEvents:
         '{count} log lines were not understood: the runs holding them may be incomplete.',
+      unreadableSessions:
+        '{count} online sessions could not be read: the runs inside them are not in the archive.',
+      liveLogUnreadable:
+        'The log the game is writing cannot be read: the run being played is not in the archive.',
       noCatalog:
         'The game is not installed: items carry their number and not their name.',
     },

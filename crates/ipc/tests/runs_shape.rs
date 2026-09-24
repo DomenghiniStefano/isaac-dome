@@ -178,3 +178,47 @@ fn the_game_calling_a_run_online_is_what_online_means() {
     assert!(!view.runs[0].online);
     assert!(view.runs[1].online);
 }
+
+/// What the archive's own reading met is said, not left to look like an empty archive
+/// (card #80, R4). Each problem is one diagnostic, and a clean reading is none.
+#[test]
+fn an_archive_that_could_not_be_read_says_so() {
+    use ipc::{ArchiveHealth, RunsDiagnostic};
+
+    assert_eq!(ArchiveHealth::default().diagnostics(), vec![]);
+    assert_eq!(
+        ArchiveHealth {
+            no_log_folder: true,
+            unreadable_sessions: 0,
+            live_log_unreadable: false,
+        }
+        .diagnostics(),
+        vec![RunsDiagnostic::NoLogFolder]
+    );
+    assert_eq!(
+        ArchiveHealth {
+            no_log_folder: false,
+            unreadable_sessions: 3,
+            live_log_unreadable: true,
+        }
+        .diagnostics(),
+        vec![
+            RunsDiagnostic::UnreadableSessions { count: 3 },
+            RunsDiagnostic::LiveLogUnreadable,
+        ]
+    );
+}
+
+#[test]
+fn the_archive_diagnostics_are_tagged_camel_case() {
+    use ipc::RunsDiagnostic;
+
+    assert_eq!(
+        serde_json::to_value(RunsDiagnostic::UnreadableSessions { count: 3 }).unwrap(),
+        serde_json::json!({ "kind": "unreadableSessions", "count": 3 })
+    );
+    assert_eq!(
+        serde_json::to_value(RunsDiagnostic::LiveLogUnreadable).unwrap(),
+        serde_json::json!({ "kind": "liveLogUnreadable" })
+    );
+}

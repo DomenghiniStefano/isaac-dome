@@ -17,6 +17,14 @@ const table: Record<RunsDiagnostic['kind'], DiagnosticRow> = {
     severity: Severity.Warning,
     body: 'runs.diagnostic.storeUnavailable',
   },
+  unreadableSessions: {
+    severity: Severity.Warning,
+    body: 'runs.diagnostic.unreadableSessions',
+  },
+  liveLogUnreadable: {
+    severity: Severity.Warning,
+    body: 'runs.diagnostic.liveLogUnreadable',
+  },
   unreadableEvents: {
     severity: Severity.Note,
     body: 'runs.diagnostic.unreadableEvents',

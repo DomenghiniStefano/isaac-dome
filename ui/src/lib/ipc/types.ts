@@ -1532,6 +1532,8 @@ export type RunsDiagnostic =
   | { kind: 'storeUnavailable'; reason: StoreReason }
   | { kind: 'unreadableEvents'; count: number }
   | { kind: 'noCatalog' }
+  | { kind: 'unreadableSessions'; count: number }
+  | { kind: 'liveLogUnreadable' }
 
 export type RunsView = {
   runs: Array<RunView>
