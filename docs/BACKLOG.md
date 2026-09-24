@@ -2233,6 +2233,11 @@ the original incident. What it still cannot see is a floor nobody raises, which 
 comparison and therefore CI; that limit is written in `scripts/test-floor` and in `CLAUDE.md`.
 Commit `chore: the suite says how many tests exist, and a shorter one fails`.
 
+**Replaced on 2026-09-24** (card #84), the guard kept and the file gone: `scripts/test-floor` made
+every two parallel branches conflict on its totals, and `scripts/check-test-count.mjs` compares the
+declared tests against the branch's merge base with `develop` instead — no number stored, and the
+"floor nobody raises" limit above closed by the same move.
+
 **Needs:** nothing — `scripts/check` already parses the run's output for the skip summary.
 
 Found on 2026-09-16, while deciding what to do with the worktrees. Comparing the abandoned branch
