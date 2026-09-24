@@ -69,7 +69,11 @@ pub fn series_evals() -> Option<Vec<Era>> {
     let g = Graph::build(&catalog, embedded_rules());
     let mut out = Vec::new();
     for path in test_support::dated_series("rep+persistentgamedata1.dat") {
-        let Ok(s) = Save::open(&path) else { continue };
+        let Ok(s) = Save::open(&path) else {
+            let name = path.file_name().unwrap_or_default().to_string_lossy();
+            test_support::skip(&format!("{name} is in the series and does not open"));
+            continue;
+        };
         let Some(flags) = s.flags(Kind::Achievements) else {
             continue;
         };

@@ -4,7 +4,8 @@
 fn a_named_log_is_found_or_skipped_with_a_note() {
     match test_support::log_sample("20260912-solo-judas.log.txt") {
         Some(path) => assert!(path.ends_with("20260912-solo-judas.log.txt")),
-        None => test_support::skip("20260912-solo-judas.log.txt missing from samples/logs/"),
+        // `log_sample` has already declared the skip; saying it twice counted it twice.
+        None => {}
     }
 }
 
@@ -32,7 +33,13 @@ fn a_launch_is_not_reachable_from_the_run_logs() {
 fn the_probe_files_are_not_logs() {
     // `samples/logs/` also holds `probe*.tsv` and `watch.log`, which are measurements and not
     // logs. A looser filter is exactly the mistake `is_dated` exists to prevent.
-    for path in test_support::log_samples() {
+    let logs = test_support::log_samples();
+    if logs.is_empty() {
+        // Without this the loop passes on nothing and says nothing.
+        test_support::skip("no run log in samples/logs/: no file name to check");
+        return;
+    }
+    for path in logs {
         let name = path
             .file_name()
             .unwrap_or_default()
