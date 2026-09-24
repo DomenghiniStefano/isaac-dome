@@ -388,36 +388,33 @@ wiki's `description` for an achievement is the unlock paper's line, and it is th
   **A worktree is never left resting on `master` either**, for the reason above: the next
   session opens it, writes, commits by habit, and the work lands on the release branch with
   nothing in the way. Park it on a work branch, or on a detached `HEAD` at `develop` — which is
-  what every worktree with nothing in hand does, `develop` itself being checked out in none of
-  them (the next entry) — so that committing requires choosing a branch first. Found and fixed on
+  what an idle secondary worktree does, `develop` itself being checked out in the main one
+  (the next entry) — so that committing requires choosing a branch first. Found and fixed on
   2026-09-21, on a worktree this file's own instructions had left sitting there.
   Nothing enforces any of this: no hook, no branch protection, by decision, the same way there is
   no CI. It holds because it is read.
-- **No worktree ever holds `develop` — not even the main one.** Decided by the owner on
-  2026-09-24 ("non blocchiamo mai develop con un worktree"), and it replaces the 2026-09-22 rule
-  that the main worktree kept it checked out. Git refuses to check out one branch in two
-  worktrees, so a `develop` checked out *anywhere* is a `develop` locked for every other
-  worktree — and a worktree that tries gets an error naming a directory and not a reason, which
-  reads as a broken repository rather than as a branch that lives elsewhere.
-  **Both earlier rules failed on that one fact.** On 2026-09-21 `isaac-dome-online` was switched
-  to `develop` to take a merge and left there, and `develop` stayed locked until that worktree
-  was removed — the delicate operation two entries below, junctions and all. The fix was to give
-  `develop` one fixed home, the main worktree, and on 2026-09-24 that home was taken: another
-  session had checked out its own feature branch there, with uncommitted work in it, and a
-  finished fix had no legal place to be merged. A branch that has to be *somewhere* is a branch
-  that can be in the way.
-  **So a merge never needs `develop` checked out**, and is done from whichever worktree is free:
-  ```
-  git fetch origin --prune
-  git switch --detach origin/develop
-  git merge --no-ff <branch>
-  git push origin HEAD:develop
-  git branch -f develop HEAD        # the local ref follows, checked out nowhere
-  ```
-  then the branch is closed (below) and the worktree stays parked on that detached `HEAD`. A
-  worktree that needs `develop` merged into its own branch merges `origin/develop` from its own
-  side. `git branch -f` is refused while `develop` is checked out somewhere — which is the rule
-  catching itself being broken, and the place to look is `git worktree list`.
+- **The main worktree is always on `develop`, and nothing else is ever on it.** Decided by the
+  owner on 2026-09-22 and restated on 2026-09-24. Two halves, and both are the rule:
+  **the main worktree (`C:PersonalProjectsisaac-dome` on this machine) holds `develop`,
+  checked out as a branch** — not a detached `HEAD`, not a feature branch, not for a minute. It
+  is the code the owner looks at, so it is always the integrated state, and it is where the
+  `--no-ff` merge and the push happen. **No work happens there**: a session that needs a branch
+  makes a secondary worktree for it (`git worktree add ../isaac-dome-<topic> -b <branch> develop`)
+  and works in that. And **no secondary worktree is ever on `develop`**, because Git refuses to
+  check out one branch in two worktrees: a second holder locks it, and the main worktree then
+  cannot take the merge — the error names a directory and not a reason, which reads as a broken
+  repository rather than as a branch that lives elsewhere.
+  **Both halves have been broken, and each one cost a merge.** On 2026-09-21 `isaac-dome-online`
+  was switched to `develop` to take a merge and left there, and `develop` stayed locked until
+  that worktree was removed — the delicate operation two entries below, junctions and all. On
+  2026-09-24 a session checked its feature branch out *in the main worktree*, with uncommitted
+  work in it, and a fix finished in a secondary worktree had nowhere to be merged; the answer
+  written here that day — "no worktree holds `develop`, merge on a detached `HEAD`" — solved the
+  lock by taking `develop` away from the owner as well, and was reverted the same afternoon.
+  So: work in a secondary worktree on its own branch; merge and push from the main worktree, on
+  `develop`; a secondary worktree that needs `develop` merged into its own branch merges
+  `origin/develop` from its own side. A finished secondary worktree is removed (the junction
+  rules below) or parked on a detached `HEAD` at `develop` — never on `develop` itself.
 - **A merged branch is closed in the same breath as the merge**, locally and on the remote —
   unless work continues on it, which is the only exception. A branch that is merged holds nothing
   `develop` does not, *by construction*, so keeping it buys no safety and costs the one thing that
