@@ -50,11 +50,10 @@ pub fn run() {
         // serves it. Asynchronous on purpose — a grid asks for a hundred at once, and each
         // one reads from an archive; on the main thread they would queue up behind the
         // commands.
-        // **When a CSP is introduced** (it has to be, before the public release) it must
-        // allow `img-src` from this scheme — `isaac:` and, on Windows,
-        // `http://isaac.localhost`. Today `tauri.conf.json` says `"csp": null`, so nothing
-        // blocks it; the day it doesn't, every icon in the app disappears with no error in
-        // the console and no failing test.
+        // **The CSP in `tauri.conf.json` names this scheme in `img-src`** — `isaac:` and, on
+        // Windows, `http://isaac.localhost` (card #80, R1). Renaming `ICON_SCHEME` without
+        // changing both policies there (`csp` and `devCsp`) makes every icon in the app
+        // disappear with no error in the console and no failing test.
         .register_asynchronous_uri_scheme_protocol(ipc::ICON_SCHEME, |ctx, request, responder| {
             let app = ctx.app_handle().clone();
             // Only the path matters, and it has to leave the request before the thread
