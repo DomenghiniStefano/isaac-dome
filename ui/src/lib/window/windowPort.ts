@@ -13,6 +13,7 @@ import {
 } from '@tauri-apps/api/webviewWindow'
 import type { Point } from '@/lib/drag/dragList'
 import { fakeWindows } from './fakeWindows'
+import { soleWindowPort } from './soleWindow'
 import { WindowEventName } from './messages'
 import type { WindowMessage } from './messages'
 import { windowBackground } from './windowBackground'
@@ -200,7 +201,11 @@ const tauriPort: WindowPort = {
   self: () => boxOf(getCurrentWindow()),
 }
 
-// Outside Tauri — `pnpm ui:dev` in a browser tab — windows do not exist. The fake invents one
-// so the gesture can be exercised and watched; it is not the verification, which needs a real
-// window, a mouse and two monitors.
-export const windowPort: WindowPort = isTauri() ? tauriPort : fakeWindows()
+// Outside Tauri — `pnpm ui:dev` in a browser tab — windows do not exist. In development the fake
+// invents one so the gesture can be exercised and watched; it is not the verification, which
+// needs a real window, a mouse and two monitors. A production build outside Tauri gets the sole
+// window instead: `import.meta.env.DEV` is a build-time constant, so the fake's branch and its
+// import are dropped from that bundle (card #81, V10).
+const outsideTauri = (): WindowPort =>
+  import.meta.env.DEV ? fakeWindows() : soleWindowPort
+export const windowPort: WindowPort = isTauri() ? tauriPort : outsideTauri()

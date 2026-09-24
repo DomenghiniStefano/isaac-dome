@@ -87,7 +87,9 @@ pub fn cross_check_character_parents(pages: &[RawPage], r: &Resolver) -> ParentC
                 };
                 match (&differing.wiki_parent, &differing.player_parent) {
                     (Some(_), Some(_)) => out.mismatches.push(differing),
-                    _ => out.stated_by_one.push(differing),
+                    (Some(_), None) | (None, Some(_)) | (None, None) => {
+                        out.stated_by_one.push(differing)
+                    }
                 }
             }
         }
