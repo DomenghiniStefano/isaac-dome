@@ -347,7 +347,7 @@ flowchart TD
     fe["typecheck · ui:test · lint · format:check · scan"]
     contract["types.ts regenerated and diffed"]
     refs["check-doc-refs.mjs — a report, never a gate"]
-    floorc["test-count floor — scripts/test-floor"]
+    floorc["test count against the merge base — check-test-count.mjs"]
   end
 
   hook["pre-commit — scripts/git-hooks<br/>cargo fmt and pnpm scan only"]
