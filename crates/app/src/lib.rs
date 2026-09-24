@@ -194,7 +194,7 @@ fn args_after_exe() -> Vec<String> {
 /// watch — each of them leaves the rest of the app exactly as it was.
 fn start_archive(app: tauri::AppHandle) {
     std::thread::spawn(move || {
-        let discovery = discovery::discover(&discovery::Options::default());
+        let discovery = crate::state::discovery_now(&app);
         let Some(data) = discovery.game_data else {
             return;
         };
@@ -242,7 +242,7 @@ fn ingest_with(app: &tauri::AppHandle, job: impl FnOnce(&log_watch::Ingest<'_>))
         return;
     };
     let kinds = resources
-        .get()
+        .get(app)
         .and_then(|rs| catalog_state.get_or_build(rs))
         .map(ipc::CatalogKinds);
     let all_passive = AllPassive;

@@ -16,7 +16,7 @@ pub(crate) fn runs(
     resources: tauri::State<'_, ResourcesState>,
     archive: tauri::State<'_, ArchiveState>,
 ) -> Result<RunsView, IpcError> {
-    let rs = resources.get();
+    let rs = resources.get(&app);
     let catalog = rs.and_then(|rs| catalog.get_or_build(rs));
     let mut diagnostics = Vec::new();
     let mut sources = Vec::new();
@@ -72,11 +72,11 @@ pub(crate) fn live(
         matches!(r.source, RunSource::Live) && matches!(r.outcome, ipc::RunOutcomeView::Open)
     });
 
+    let rs = resources.get(&app);
+    let cat = rs.and_then(|rs| catalog.get_or_build(rs));
     let unlocked = crate::commands::graph::unlock(app, catalog.clone(), resources.clone(), graph);
     let nodes = ipc::live_graph(&unlocked);
 
-    let rs = resources.get();
-    let cat = rs.and_then(|rs| catalog.get_or_build(rs));
     let by_name = |name: &str, id: Option<u32>| -> Vec<(u32, String)> {
         cat.map(|c| ipc::characters_named(c, name, id))
             .unwrap_or_default()

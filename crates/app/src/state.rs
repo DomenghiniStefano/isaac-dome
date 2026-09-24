@@ -10,7 +10,7 @@ use std::sync::{Arc, Mutex, MutexGuard, OnceLock};
 
 use catalog::Catalog;
 use core_save::{Kind, Save};
-use discovery::{discover, Options};
+use discovery::{discover, Discovery};
 use ipc::{ActiveProfile, IpcError, ProfileId};
 use store::Store;
 use tauri::{AppHandle, Manager};
@@ -62,11 +62,11 @@ impl GraphState {
 pub(crate) struct ResourcesState(OnceLock<ResourceSet>);
 
 impl ResourcesState {
-    pub(crate) fn get(&self) -> Option<&ResourceSet> {
+    pub(crate) fn get(&self, app: &AppHandle) -> Option<&ResourceSet> {
         if let Some(rs) = self.0.get() {
             return Some(rs);
         }
-        let d = discover(&Options::default());
+        let d = discovery_now(app);
         let dir = d.game.as_ref()?.dir.join("resources").join("packed");
         Some(self.0.get_or_init(|| ResourceSet::open(&dir)))
     }
@@ -115,7 +115,7 @@ pub(crate) fn active_save(app: &AppHandle) -> Result<(ProfileId, Arc<Save>), Ipc
         settings.active_profile_id.as_ref(),
         |path| std::fs::metadata(path).ok().and_then(|m| m.modified().ok()),
         || {
-            let d = discover(&Options::default());
+            let d = discovery_now(app);
             let views = ipc::candidates(&d.saves);
             let state = ipc::resolve_active(
                 settings.active_profile_id.as_ref(),
@@ -231,4 +231,12 @@ impl run::ItemKinds for AllPassive {
     fn kind_of(&self, _id: u32) -> run::ItemKind {
         run::ItemKind::Passive
     }
+}
+
+/// Discovery as the user configured it: the folders chosen by hand (B14) tried before the
+/// automatic search. **The one way to discover** in this crate (card #80, item 01) — five
+/// places used to call `discover(&Options::default())`, so a save found in a chosen folder
+/// was accepted by `select_profile` and then answered as `NoActiveProfile` everywhere else.
+pub(crate) fn discovery_now(app: &AppHandle) -> Discovery {
+    discover(&settings_file::options(app))
 }
