@@ -88,8 +88,8 @@ pub use profile::{
 };
 pub use progress::SaveProgress;
 pub use queue::{
-    achievement_unlocking, achievements_unlocking, queue_view, GraphDeps, QueueDiagnostic,
-    QueueInputs, QueueRow, QueueView,
+    achievement_unlocking, achievements_unlocking, goals_pending, queue_view, GraphDeps,
+    QueueDiagnostic, QueueInputs, QueueRow, QueueView,
 };
 pub use reasons::{IoReason, SaveReason, SettingsReason, StoreReason};
 pub use release_notes::release_notes;

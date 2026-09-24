@@ -212,3 +212,29 @@ fn a_target_named_by_two_achievements_has_two_routes() {
     // The old function keeps its contract: the first, and only the first.
     assert_eq!(ipc::achievement_unlocking(&c, &key), Some(1));
 }
+
+/// Card #81, V1: a goal is pending while nothing in the queue stands for it. This was a filter
+/// inside the `queue` command; the expected values are that command's behaviour, read from it.
+#[test]
+fn a_goal_is_pending_until_the_queue_holds_the_achievement_that_unlocks_it() {
+    let c = catalog_with_achievements();
+    let goal = |target: ipc::TargetKey| ipc::Goal {
+        id: ipc::GoalId::from_str_unchecked("g"),
+        target,
+        created_unix: 0,
+        note: None,
+    };
+    // Item 2 is unlocked by achievement 1; boss 99 is unlocked by nothing the catalog knows.
+    let item = goal(ipc::TargetKey::Item {
+        item_kind: ipc::ItemKindView::Passive,
+        id: 2,
+    });
+    let unknown = goal(ipc::TargetKey::Boss { id: 99 });
+    let queued: std::collections::BTreeSet<u32> = [1].into_iter().collect();
+    let empty = std::collections::BTreeSet::new();
+
+    assert_eq!(ipc::goals_pending(&c, &[item.clone()], &queued), 0);
+    assert_eq!(ipc::goals_pending(&c, &[item.clone()], &empty), 1);
+    // A goal nothing unlocks cannot be stood for by any row: it stays pending.
+    assert_eq!(ipc::goals_pending(&c, &[item, unknown], &queued), 1);
+}

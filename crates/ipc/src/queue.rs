@@ -261,3 +261,17 @@ impl plan::Dependencies for GraphDeps {
         self.chains.get(&a).is_some_and(|c| c.contains(&b))
     }
 }
+
+/// How many goals nothing in the queue stands for yet (card #81, V1: this was a filter inside
+/// the `queue` command). A goal whose target no achievement unlocks can never be stood for, so
+/// it stays pending — the queue has no row that would mean it.
+pub fn goals_pending(
+    c: &Catalog,
+    goals: &[crate::goals::Goal],
+    queued: &std::collections::BTreeSet<u32>,
+) -> u32 {
+    goals
+        .iter()
+        .filter(|g| achievement_unlocking(c, &g.target).is_none_or(|a| !queued.contains(&a)))
+        .count() as u32
+}
