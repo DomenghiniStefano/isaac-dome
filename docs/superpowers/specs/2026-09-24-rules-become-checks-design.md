@@ -205,7 +205,9 @@ the stack, one review of the whole stack, then the merges and the push.
 - **V11.** The `run` row of the module table and `run/src/lib.rs` stop crediting `Tail` with "a
   shorter file is a relaunch": `run::resume` says that. `store` building an `IpcError` in
   `degrade.rs` **stays**, and the table says why: `store` is the one crate whose every failure is
-  a reason the frontend shows, and a second error type mapped one-to-one would be the same enum
+  a reason the frontend shows — and the reason it lives there is the dependency: `store` depends on
+  `ipc` for `Goal` and `GoalId`, so it is the only crate that sees both halves (the header of
+  `degrade.rs` already said so). A second error type mapped one-to-one would be the same enum
   written twice.
 - **V6.** A test on real data that walks something counts what it checked and asserts
   `checked > 0`, beside the skip it declares when there is nothing to walk. A silent
