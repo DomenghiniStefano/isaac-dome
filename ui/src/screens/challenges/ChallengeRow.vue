@@ -92,7 +92,7 @@ const done = computed(() => props.row.state.kind === 'done')
   </span>
   <span class="flex justify-center">
     <Button
-      v-if="canAdd && reward && reward.done !== true"
+      v-if="canAdd"
       :variant="ButtonVariant.Ghost"
       :size="ButtonSize.IconCompact"
       :aria-label="t('queue.add')"
