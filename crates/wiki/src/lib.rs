@@ -6,11 +6,13 @@ mod build;
 mod dataset;
 mod diagnostics;
 mod editions;
+#[cfg(feature = "test-api")]
 pub mod for_tests;
 mod infobox;
 mod inline;
 mod model;
 mod page;
+#[cfg(feature = "test-api")]
 mod parent_check;
 mod raw;
 mod resolver;

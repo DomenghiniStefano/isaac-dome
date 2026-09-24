@@ -3,6 +3,7 @@
 mod arch;
 mod bogocrypt;
 mod extract;
+#[cfg(feature = "test-api")]
 pub mod for_tests;
 mod hash;
 mod isaac;

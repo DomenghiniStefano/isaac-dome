@@ -14,7 +14,13 @@ run = { path = "../run" }
 plan = { path = "../plan" }
 roll = { path = "../roll" }
 
+[features]
+# The `for_tests` module and the API only tests reach, kept out of the release build
+# (card #81, C8). The crate's own tests turn it on through the self-reference below.
+test-api = []
+
 [dev-dependencies]
+store = { path = ".", features = ["test-api"] }
 rusqlite = { version = "0.40", features = ["bundled"] }
 tempfile = "3"
 

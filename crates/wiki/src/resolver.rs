@@ -432,6 +432,7 @@ impl Resolver {
     /// the same way an infobox's `parent` parameter is. `None` means the table has no row
     /// for this name at all — not a disagreement, since there is nothing to compare against
     /// (see `parent_check`) — distinct from `Some(None)`, a row that states no parent.
+    #[cfg(feature = "test-api")]
     pub(crate) fn player_table_parent(&self, name: &str) -> Option<Option<Target>> {
         let raw = self.player_parent.get(&key(name))?;
         Some(self.by_page_title(raw))

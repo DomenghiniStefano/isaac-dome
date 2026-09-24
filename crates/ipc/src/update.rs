@@ -112,6 +112,7 @@ pub struct UpdateState {
 impl UpdateState {
     /// A state resting at a phase. Test-only, reachable through `for_tests`: the app only ever
     /// starts at [`UpdatePhase::Idle`] and moves through the calls below.
+    #[cfg(feature = "test-api")]
     pub(crate) fn at(phase: UpdatePhase) -> Self {
         UpdateState {
             phase,
