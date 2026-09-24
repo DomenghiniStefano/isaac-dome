@@ -2,8 +2,8 @@
 import { vScrollMemory } from '@/directives/scrollMemory'
 import { InfoIcon, TriangleAlertIcon } from '@lucide/vue'
 import { computed } from 'vue'
-import { TabOrigin } from '@/components/shell/tabs'
-import { tabOriginIcon } from '@/components/shell/tabOriginIcon'
+import { TabOrigin } from '@/lib/shell/tabs'
+import { tabOriginIcon } from '@/lib/shell/tabOriginIcon'
 import {
   Alert,
   AlertDescription,

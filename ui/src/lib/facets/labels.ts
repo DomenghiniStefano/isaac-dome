@@ -1,4 +1,4 @@
-import { dlcNames } from '@/components/wiki/dlcNames'
+import { dlcNames } from '@/lib/wiki/dlcNames'
 import type { MessageKey } from '@/i18n/messageKey'
 import type { MessageSchema } from '@/i18n/messages/it'
 import { Dlc } from '@/lib/ipc/types'

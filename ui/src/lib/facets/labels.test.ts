@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { dlcNames } from '@/components/wiki/dlcNames'
+import { dlcNames } from '@/lib/wiki/dlcNames'
 import { Dlc } from '@/lib/ipc/types'
 import { OriginValue } from '@/lib/ipc/values'
 import { originLabel } from './labels'

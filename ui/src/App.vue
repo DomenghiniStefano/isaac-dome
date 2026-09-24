@@ -24,7 +24,7 @@ import {
   SidebarWidth,
   clampSidebarWidth,
 } from '@/components/shell/sidebarWidth'
-import type { TabView } from '@/components/shell/tabs'
+import type { TabView } from '@/lib/shell/tabs'
 import { TooltipProvider } from '@/components/ui/tooltip'
 import { usePointerShortcut } from '@/composables/usePointerShortcut'
 import { useShortcut } from '@/composables/useShortcut'

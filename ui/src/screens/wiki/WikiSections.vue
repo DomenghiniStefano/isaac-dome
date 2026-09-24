@@ -4,7 +4,7 @@ import WikiBlocks from '@/components/wiki/WikiBlocks.vue'
 import { useMessages } from '@/i18n'
 import type { Section, Target } from '@/lib/ipc/types'
 import { sectionAnchor } from './wikiOutline'
-import { sectionText } from './wikiLabels'
+import { sectionText } from '@/lib/wiki/wikiLabels'
 
 defineProps<{
   sections: Section[]
