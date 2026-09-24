@@ -92,7 +92,7 @@ fn the_declared_folder_is_preferred_over_the_search() {
     fs::create_dir_all(&plus).unwrap();
     fs::create_dir_all(&plain).unwrap();
 
-    let found = scan_game_data(tmp.path(), Some(&plain)).expect("the folder is there");
+    let found = scan_game_data(Some(tmp.path()), Some(&plain)).expect("the folder is there");
     assert_eq!(found.dir, plain);
 }
 
@@ -108,7 +108,7 @@ fn the_search_still_finds_the_folder_with_nothing_declared() {
         .join("Binding of Isaac Repentance+");
     fs::create_dir_all(&dir).unwrap();
 
-    let found = scan_game_data(tmp.path(), None).expect("the folder is there");
+    let found = scan_game_data(Some(tmp.path()), None).expect("the folder is there");
     assert_eq!(found.dir, dir);
 }
 
@@ -123,8 +123,8 @@ fn a_declared_folder_that_is_not_there_falls_back_to_the_search() {
         .join("Binding of Isaac Repentance+");
     fs::create_dir_all(&dir).unwrap();
 
-    let found =
-        scan_game_data(tmp.path(), Some(&tmp.path().join("nowhere"))).expect("the search answers");
+    let found = scan_game_data(Some(tmp.path()), Some(&tmp.path().join("nowhere")))
+        .expect("the search answers");
     assert_eq!(found.dir, dir);
 }
 
@@ -137,7 +137,7 @@ fn what_is_inside_the_declared_folder_is_reported_the_same_way() {
     fs::create_dir_all(dir.join("online_logs")).unwrap();
     fs::write(dir.join("log.txt"), b"[INFO] - hello").unwrap();
 
-    let found = scan_game_data(tmp.path(), Some(&dir)).expect("the folder is there");
+    let found = scan_game_data(Some(tmp.path()), Some(&dir)).expect("the folder is there");
     assert_eq!(found.dir, dir);
     assert_eq!(found.log, Some(dir.join("log.txt")));
     assert_eq!(found.online_logs, Some(dir.join("online_logs")));
