@@ -8,7 +8,7 @@ use crate::section::Section;
 pub const MAGIC: &[u8; 14] = b"ISAACNGSAVE09R";
 
 /// The structural model of a save: raw sections + diagnostics.
-#[derive(Debug, Clone, Serialize)]
+#[derive(Debug, Clone)]
 pub struct Save {
     /// The `u32` at 0x10, meaning unknown, exposed raw.
     pub unknown_0x10: u32,
