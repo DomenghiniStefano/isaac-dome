@@ -1,13 +1,15 @@
 <script setup lang="ts">
-import { computed, ref, watch } from 'vue'
+import { computed, watch } from 'vue'
 import PixelSprite from '@/components/sprite/PixelSprite.vue'
 import { Button, ButtonSize, ButtonVariant } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { useSearch } from '@/composables/useSearch'
+import { useTabView } from '@/composables/useTabView'
 import { useMessages } from '@/i18n'
 import { SearchLimit } from '@/lib/ipc/search'
 import type { Target } from '@/lib/ipc/types'
 import { wantable } from '@/lib/graph/wantLocation'
+import { goalsView } from './tabView'
 
 const emit = defineEmits<{ pick: [target: Target]; clear: [] }>()
 const { t } = useMessages()
@@ -15,8 +17,17 @@ const { t } = useMessages()
 // second debounce, and the answer keeps the backend's order.
 const { view, ask } = useSearch(SearchLimit.Palette)
 
-const typed = ref('')
-watch(typed, (query) => ask(String(query)))
+// What is being typed is the tab's (`tabView.ts`), so it survives a tab switch, a back and a
+// tear-off. Asked at once as well as on every change: words that come back with the tab must
+// come back with their answers, not as a bar that shows text and no hits under it.
+const reading = useTabView(goalsView)
+const typed = computed({
+  get: () => reading.value.typed,
+  set: (value: string) => {
+    reading.value = { ...reading.value, typed: String(value) }
+  },
+})
+watch(typed, (query) => ask(query), { immediate: true })
 
 // Only what the app can be asked for. The rule is `wantable`'s, tested there: a second list
 // of kinds in this component would be a second answer to the same question.
