@@ -6,6 +6,7 @@ import { i18n, useMessages } from '@/i18n'
 import type { MessageKey } from '@/i18n/messageKey'
 import type { MessageSchema } from '@/i18n/messages/it'
 import { assertNever } from '@/lib/assertNever'
+import { columnName } from '@/lib/graph/nodeState'
 import type { DrawnView } from '@/lib/ipc/types'
 import { formatRelativeDay } from '@/lib/profile/profileView'
 import { statusText } from './rollText'
@@ -31,7 +32,7 @@ const sentence = computed((): Sentence => {
     case 'mark':
       return {
         key: 'roll.card.mark',
-        params: { character, column: target.column },
+        params: { character, column: columnName[target.column] },
       }
     case 'greedier':
       return { key: 'roll.card.greedier', params: { character } }

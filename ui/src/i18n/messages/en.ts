@@ -219,7 +219,8 @@ export const en: MessageSchema = {
         'Draw at least one room: without one there is nothing to judge.',
       noStartRoom:
         'Mark the start room. Without it the rule about rooms walked from the start cannot be read, and the Super Secret Room is only half judged.',
-      rulesUnreadable: 'The placement rules did not load: {reason}.',
+      rulesUnreadable:
+        'The placement rules did not load. This is a fault in the build, not in your floor.',
       gridMalformed:
         'The grid that arrived is not a floor: {cells} cells instead of 169.',
     },

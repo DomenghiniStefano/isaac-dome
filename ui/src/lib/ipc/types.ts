@@ -312,7 +312,7 @@ export type StatusView = (typeof StatusView)[keyof typeof StatusView]
  * (`roll::Target`'s own reasoning, carried into the view).
  */
 export type DrawnTargetView =
-  { kind: 'mark'; column: string } | { kind: 'greedier' }
+  { kind: 'mark'; column: MarkColumnView } | { kind: 'greedier' }
 
 /**
  * Every value of an axis, or the ones named — the view's mirror of `roll::Selection`.
@@ -1599,7 +1599,7 @@ export type FloorSolutionView = {
 export type FloorDiagnostic =
   | { kind: 'gridEmpty' }
   | { kind: 'noStartRoom' }
-  | { kind: 'rulesUnreadable'; reason: string }
+  | { kind: 'rulesUnreadable' }
   | { kind: 'gridMalformed'; cells: number }
 
 export type FloorView = {
