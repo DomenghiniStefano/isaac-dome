@@ -54,8 +54,10 @@ const typed = ref('')
 // The row the keyboard is on, mirrored from the listbox (see the keyboard section below).
 const highlighted = ref<string | null>(null)
 watch(typed, (query) => ask(query))
-// Closing keeps the search (`queryToRecall`) and forgets the row: the palette reopens on the
-// last search, selected, so typing replaces it and Enter opens its first row again. It is asked
+// Closing keeps the search (`queryToRecall`) and forgets the row, however it closes — `Esc` or
+// a chosen row, which is why the Command is told to `keep-search`: an item clears it on select
+// otherwise, before the palette ever sees it close. The palette reopens on the last search,
+// selected, so typing replaces it and Enter opens its first row again. It is asked
 // again on opening because the answer may have changed since — a game installed meanwhile —
 // and that answer is also what puts the highlight back on the first row.
 watch(open, (isOpen) => {
@@ -170,6 +172,7 @@ const onKeydown = (event: KeyboardEvent) => {
     v-model:open="open"
     v-model:search="typed"
     :filter="false"
+    keep-search
     :title="t('routes.search')"
     :description="t('search.intro')"
     @highlight="onHighlight"

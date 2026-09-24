@@ -17,6 +17,8 @@ export const [useCommand, provideCommandContext] = createContext<{
   allItems: Ref<Map<string, string>>
   allGroups: Ref<Map<string, Set<string>>>
   filterState: CommandFilterState
+  /** Whether choosing an item leaves the search as it is instead of clearing it. */
+  keepSearch: Ref<boolean>
 }>('Command')
 
 export const [useCommandGroup, provideCommandGroupContext] = createContext<{
