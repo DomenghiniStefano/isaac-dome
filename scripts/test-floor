@@ -211,4 +211,4 @@
 # UI does not move: the search row's drawing on paper is presentation, looked at in the browser.
 
 RUST_TESTS=1254
-UI_TESTS=792
+UI_TESTS=799

@@ -138,6 +138,8 @@ export const it = {
     startRoomMissing: 'Manca la stanza di partenza',
     cellCandidate: '{cell} — {target}, posto {rank}',
     move: {
+      title: 'Sposta il disegno',
+      note: "Le frecce spostano tutto il piano disegnato di una cella in quella direzione, senza ridisegnarlo. Servono quando la stanza di partenza è finita troppo vicina a un bordo e la mappa non ci sta. Una freccia grigia vuol dire che c'è una stanza contro quel bordo: spostare ancora la farebbe uscire dalla griglia.",
       left: 'Sposta tutto a sinistra',
       up: 'Sposta tutto in alto',
       down: 'Sposta tutto in basso',
@@ -146,6 +148,45 @@ export const it = {
     rank: {
       title: 'Cosa vuol dire un colore',
       note: 'Più pieno il quadrato, più probabile il posto. Oltre il terzo le regole non dicono altro.',
+    },
+    // What each rule of `crates/floor/rules/placement.json` says, keyed by its id in camel case
+    // (`lib/floor/ruleText.ts`). In English it is the wiki's quote, word for word.
+    ruleText: {
+      secretNeighbours:
+        'Una stanza segreta ha la stessa probabilità di trovarsi in un punto valido con 3 stanze adiacenti che con 4.',
+      secretNeighboursTwo:
+        'I punti con 2 stanze adiacenti sono rari ma possibili, anche quando ce ne sono con 3 o più.',
+      secretNeighboursOne:
+        'I punti con una sola stanza adiacente capitano solo se non esiste nessun punto valido con 3 o più adiacenti, e sono molto rari.',
+      secretForbiddenNeighbours:
+        'Una stanza segreta può stare accanto a stanze di ogni tipo, tranne le stanze del boss, le super segrete e altre stanze segrete.',
+      superSecretDeadEnd:
+        'Una stanza super segreta sta sempre accanto a una sola altra stanza.',
+      superSecretNeighbourNotSpecial:
+        'La stanza accanto non può essere una stanza speciale; in altre parole, la super segreta occupa uno dei vicoli ciechi del piano, come ogni altra stanza speciale.',
+      superSecretNotNextToSecret:
+        'Non può essere collegata alla stanza segreta.',
+      superSecretSecondLongest:
+        'La super segreta prende il posto del vicolo cieco che, dalla stanza di partenza, richiede di attraversare il secondo numero più alto di stanze per arrivarci.',
+      ultraSecretConnections:
+        "Un'ultra segreta compare più facilmente nei punti che, attraverso le stanze rosse adiacenti, si collegano a 3 o più stanze non rosse (i quadrati diversi di una stanza a L contano come 2).",
+      ultraSecretConnectionsTwo:
+        'Può collegarsi anche a 2 o a 1 stanza non rossa attraverso le stanze rosse adiacenti, ma un punto specifico da 3 o più stanze è 11,5 volte più probabile di un punto specifico da 2.',
+      ultraSecretConnectionsOne:
+        "Se non c'è nessun punto da 3 o più stanze, un punto specifico da 2 stanze è 11,5 volte più probabile di un punto specifico da 1.",
+      ultraSecretNotConnected:
+        "Le ultra segrete sono stanze speciali che non sono collegate direttamente a nessun'altra stanza della mappa.",
+      ultraSecretRedRoomInvalid:
+        "Un'ultra segreta non può collegarsi a stanze rosse che confinano con stanze segrete, super segrete o maledette, né stare in un punto dove una delle stanze rosse adiacenti non sarebbe valida, per esempio accanto a una stanza del boss.",
+      ultraSecretShapes:
+        'Non accanto ai lati delle stanze strette, o di qualsiasi stanza che su quel lato non può aprire una stanza rossa; sono però ammessi i punti sul bordo della griglia 13x13 dove una stanza rossa si aprirebbe normalmente su una stanza I AM ERROR.',
+    },
+    // Why the grid cannot judge a rule, for the rules that can reach the screen unjudged.
+    ruleNote: {
+      superSecretSecondLongest:
+        'Manca la stanza di partenza: senza, non si possono contare le stanze da attraversare.',
+      ultraSecretShapes:
+        'Dipende dalla forma della stanza dietro quel lato, e su questa griglia ogni stanza è un quadrato solo: le stanze a L e quelle strette non si possono disegnare, quindi questa regola non si può giudicare.',
     },
     unresolved: 'Quello che la griglia non può giudicare',
     none: 'Nessuna cella permessa dalle regole, con quello che hai disegnato finora.',
