@@ -246,7 +246,8 @@ Operational rules:
   tailwindcss 4.3.3. (`--opacity-*`, on the other hand, is the right family for
   `opacity-*`.)
 - **Spacing:** padding and gaps use Tailwind's standard 4px grid (`p-1`, `gap-2`, half
-  steps such as `p-2.5` allowed). Named spacing tokens exist only for dimensions that mean
+  steps such as `p-2.5` allowed, quarter steps such as `gap-0.75` refused by `pnpm scan` since
+  2026-09-24). Named spacing tokens exist only for dimensions that mean
   something — row heights, control height, scrollbar, sprite sizes — in
   `theme/spacing.css`. The grid is only 4px while `rem` is the browser's 16px: **no font
   size on `html`**. The document's text size sits on `body`; on the root it made every step
@@ -787,6 +788,10 @@ For honesty's sake, and so as not to make this document look more complete than 
 | **A narrow grid template with no column hidden** | `ui/scripts/scan-conventions.mjs` |
 | **A scrolling box under `src/screens/` without `v-scroll-memory`** | `ui/scripts/scan-conventions.mjs` |
 | **An import against the layer direction** (`lib/`, `stores/`, `composables/` import no component or screen; `components/` no screen; `router/` no component) — since 2026-09-24, card #81 | `ui/scripts/scan-conventions.mjs` |
+| **A token read from a string** (`var(--…)` in `:style` or a TS string, unless the key *sets* a `'--name'`) — since 2026-09-24, card #81 | `ui/scripts/scan-conventions.mjs` |
+| **A quarter step off the 4px grid** (`gap-0.75`) | `ui/scripts/scan-conventions.mjs` |
+| **A numbered `z-*`** — the names are in `assets/theme/layers.css` | `ui/scripts/scan-conventions.mjs` |
+| **A `shadow-*` class with no `--shadow-*` token** (`--shadow-*` is `initial`, so it draws nothing) | `ui/scripts/scan-conventions.mjs` |
 
 Three rows arrived on 2026-09-06 — before that, the document declared five rules and the
 script checked three — six more on 2026-09-10 with the design system, and **four on

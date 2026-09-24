@@ -27,7 +27,7 @@ describe('levelHeight', () => {
   })
 
   it('fills the cell to the brim for the best place the rules allow', () => {
-    expect(levelHeight[RankStep.First]).toBe('var(--floor-level-first)')
+    expect(levelHeight[RankStep.First]).toBe('h-floor-level-first')
   })
 
   it('never gives two steps the same height, which is the only thing telling them apart', () => {

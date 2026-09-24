@@ -306,3 +306,22 @@
     var(--color-data) 100%
   );
 }
+
+/* The floor grid: as many cells across as the grid is wide. The count is not written here — it
+   is `WIDTH` in `lib/floor/painting.ts`, which the template sets as `--floor-width`, so the
+   number lives once and the CSS only reads it (card #81, C5). */
+@utility grid-cols-floor {
+  grid-template-columns: repeat(var(--floor-width), var(--spacing-floor-cell));
+}
+
+/* How much of a floor cell the answer fills, one class per step of the order. Utilities rather
+   than `height: var(--floor-level-…)` bound from a string: the token is read here, once. */
+@utility h-floor-level-first {
+  height: var(--floor-level-first);
+}
+@utility h-floor-level-second {
+  height: var(--floor-level-second);
+}
+@utility h-floor-level-third {
+  height: var(--floor-level-third);
+}

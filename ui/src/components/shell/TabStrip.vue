@@ -124,7 +124,7 @@ const onKeydown = (e: KeyboardEvent) => {
 </script>
 
 <template>
-  <div class="flex min-w-0 items-end gap-px pl-1.75">
+  <div class="flex min-w-0 items-end gap-px pl-2">
     <div
       ref="strip"
       role="tablist"
@@ -173,7 +173,7 @@ const onKeydown = (e: KeyboardEvent) => {
       :variant="ButtonVariant.Chrome"
       :size="ButtonSize.IconCompact"
       :aria-label="t('shell.newTab')"
-      class="mb-px ml-0.75"
+      class="mb-px ml-1"
       @click="emit('add')"
     >
       <PlusIcon />

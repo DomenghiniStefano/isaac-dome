@@ -60,7 +60,7 @@ const diagnosticText = (d: SaveDiagnostic): string => {
         <div
           v-for="s in sections"
           :key="s.kind"
-          class="flex flex-col gap-1.5 border border-border bg-data px-2.5 py-2.25"
+          class="flex flex-col gap-1.5 border border-border bg-data px-2.5 py-2"
         >
           <span class="text-label text-subtle-foreground">{{ s.kind }}</span>
           <span class="text-row text-foreground">{{ s.name }}</span>
@@ -80,7 +80,7 @@ const diagnosticText = (d: SaveDiagnostic): string => {
         </AlertDescription>
       </Alert>
       <p
-        class="border border-border bg-data px-3 py-2.75 text-caption text-foreground-soft"
+        class="border border-border bg-data px-3 py-3 text-caption text-foreground-soft"
       >
         {{ t('profile.read.note') }}
       </p>

@@ -117,10 +117,8 @@ const rub = (cell: number): void => {
 
 <template>
   <div
-    class="grid w-fit gap-floor-gap"
-    :style="{
-      gridTemplateColumns: `repeat(${WIDTH}, var(--spacing-floor-cell))`,
-    }"
+    class="grid w-fit grid-cols-floor gap-floor-gap"
+    :style="{ '--floor-width': WIDTH }"
     @pointerup="end"
     @pointerleave="end"
   >

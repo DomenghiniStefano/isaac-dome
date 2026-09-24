@@ -14,7 +14,7 @@ defineProps<{ box: GhostBox }>()
   <Teleport to="body">
     <div
       aria-hidden="true"
-      class="pointer-events-none fixed top-(--drag-top) left-(--drag-left) z-50 h-(--drag-height) w-(--drag-width) overflow-hidden border-2 border-primary bg-sheet"
+      class="pointer-events-none fixed top-(--drag-top) left-(--drag-left) z-overlay h-(--drag-height) w-(--drag-width) overflow-hidden border-2 border-primary bg-sheet"
       :style="{
         '--drag-left': `${box.left}px`,
         '--drag-top': `${box.top}px`,

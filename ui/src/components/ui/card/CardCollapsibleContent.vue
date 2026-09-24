@@ -18,7 +18,7 @@ const delegatedProps = reactiveOmit(props, 'class')
     v-bind="delegatedProps"
     :class="
       cn(
-        'animate-panel-open px-3 py-2.75 text-caption text-foreground-soft',
+        'animate-panel-open px-3 py-3 text-caption text-foreground-soft',
         props.class,
       )
     "

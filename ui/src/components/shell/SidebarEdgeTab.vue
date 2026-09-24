@@ -27,7 +27,7 @@ const label = computed(() =>
     :aria-label="label"
     :aria-expanded="!collapsed"
     :data-collapsed="collapsed"
-    class="group/tab absolute top-1/2 left-full z-10 -translate-x-1/2 -translate-y-1/2 @max-sidebar-room/shell:hidden"
+    class="group/tab absolute top-1/2 left-full z-raised -translate-x-1/2 -translate-y-1/2 @max-sidebar-room/shell:hidden"
     @click="emit('toggle')"
   >
     <ChevronLeftIcon
