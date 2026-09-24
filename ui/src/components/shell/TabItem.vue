@@ -4,9 +4,9 @@ import { computed } from 'vue'
 import { Button, ButtonSize, ButtonVariant } from '@/components/ui/button'
 import { useMessages } from '@/i18n'
 import { cn } from '@/lib/cn'
-import type { DropSide, TabView } from './tabs'
-import { TabRole } from './tabs'
-import { tabOriginIcon } from './tabOriginIcon'
+import type { DropSide, TabView } from '@/lib/shell/tabs'
+import { TabRole } from '@/lib/shell/tabs'
+import { tabOriginIcon } from '@/lib/shell/tabOriginIcon'
 
 const props = defineProps<{
   tab: TabView

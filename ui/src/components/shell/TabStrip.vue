@@ -10,8 +10,8 @@ import { Axis, boxAt } from '@/lib/drag/dragList'
 import type { Point } from '@/lib/drag/dragList'
 import { toClient } from '@/lib/window/tearOff'
 import TabItem from './TabItem.vue'
-import type { IncomingHover, TabView } from './tabs'
-import { DropSide, TabRole, dropSide } from './tabs'
+import type { IncomingHover, TabView } from '@/lib/shell/tabs'
+import { DropSide, TabRole, dropSide } from '@/lib/shell/tabs'
 
 const props = withDefaults(
   defineProps<{

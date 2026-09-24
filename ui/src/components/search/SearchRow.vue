@@ -11,7 +11,7 @@ import type { MessageKey } from '@/i18n/messageKey'
 import type { MessageSchema } from '@/i18n/messages/it'
 import { RowGroup } from '@/lib/search/rows'
 import type { SearchRow } from '@/lib/search/rows'
-import { sectionText } from '@/screens/wiki/wikiLabels'
+import { sectionText } from '@/lib/wiki/wikiLabels'
 
 const props = defineProps<{ row: SearchRow }>()
 const { t } = useMessages()

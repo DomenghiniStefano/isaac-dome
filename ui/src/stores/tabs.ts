@@ -6,7 +6,7 @@ import { oweSeed } from '@/lib/window/seeds'
 import { newWindowLabel, windowPort } from '@/lib/window/windowPort'
 import { defaultLocation } from '@/router/routeTable'
 import type { TabLocation } from '@/router/routeTable'
-import type { IncomingHover } from '@/components/shell/tabs'
+import type { IncomingHover } from '@/lib/shell/tabs'
 import { WindowMessageKind } from '@/lib/window/messages'
 import {
   backTab,

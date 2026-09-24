@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { TabOrigin } from '@/components/shell/tabs'
+import { TabOrigin } from '@/lib/shell/tabs'
 import {
   RouteName,
   WikiCategory,

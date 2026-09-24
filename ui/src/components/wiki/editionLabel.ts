@@ -1,5 +1,5 @@
 import { Dlc } from '@/lib/ipc/types'
-import { dlcNames } from './dlcNames'
+import { dlcNames } from '@/lib/wiki/dlcNames'
 
 // The tag an edition-scoped passage carries: the editions' names in release order (the
 // declaration order of Dlc), each once. No edition gives no text, and no tag is drawn.

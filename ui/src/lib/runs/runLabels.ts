@@ -2,7 +2,7 @@ import type { MessageKey } from '@/i18n/messageKey'
 import type { MessageSchema } from '@/i18n/messages/it'
 import { assertNever } from '@/lib/assertNever'
 import type { RunOutcomeView, RunSource, RunsDiagnostic } from '@/lib/ipc/types'
-import type { FilterBarLabels } from '@/components/facets/labels'
+import type { FilterBarLabels } from '@/lib/facets/labels'
 import type { FacetSlot } from '@/lib/facets/facetOptions'
 import { RunCompany, RunFacet } from './runFacets'
 

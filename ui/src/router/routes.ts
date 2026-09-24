@@ -1,6 +1,6 @@
 import type { Component } from 'vue'
 import type { RouteComponent, RouteRecordRaw } from 'vue-router'
-import { TabOrigin } from '@/components/shell/tabs'
+import { TabOrigin } from '@/lib/shell/tabs'
 import type { MessageKey } from '@/i18n/messageKey'
 import type { MessageSchema } from '@/i18n/messages/it'
 import CompletionScreen from '@/screens/CompletionScreen.vue'

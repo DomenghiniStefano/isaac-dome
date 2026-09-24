@@ -21,8 +21,8 @@ import {
   TrophyIcon,
   UserIcon,
 } from '@lucide/vue'
-import { TabOrigin } from '@/components/shell/tabs'
-import { tabOriginIcon } from '@/components/shell/tabOriginIcon'
+import { TabOrigin } from '@/lib/shell/tabs'
+import { tabOriginIcon } from '@/lib/shell/tabOriginIcon'
 import type { MessageKey } from '@/i18n/messageKey'
 import type { MessageSchema } from '@/i18n/messages/it'
 

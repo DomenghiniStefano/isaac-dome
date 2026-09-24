@@ -58,6 +58,10 @@ const EXEMPTIONS = [
     path: 'ui/src/screens/plan/ProposalAside.vue',
     why: 'same: it was the recommendations drawn a second time, and the left pane is that, done once',
   },
+  {
+    path: 'components/wiki/dlcNames.ts',
+    why: 'moved to lib/wiki/dlcNames.ts on 2026-09-24 (card #81, C4: lib/ imports no component); the 2026-09-12 wiki spec names where it was written',
+  },
   { path: 'stores/graph.ts', why: 'three view stores became one stores/views.ts with N8' },
   { path: 'stores/completion.ts', why: 'same' },
   { path: 'stores/collection.ts', why: 'same' },
