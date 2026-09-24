@@ -1,8 +1,9 @@
 //! The archive: sources, the events that are the archive, and the runs that are a cache of a
 //! fold over them.
 
+use ipc::{RunSource, RunsDiagnostic};
 use run::{Event, Floor, Generated, Outcome, Run, SeedKind, SourceKey};
-use store::{SourceKind, Store, StoreError, SCHEMA_VERSION};
+use store::{ArchivedRuns, SourceKind, Store, StoreError, StoredSource, SCHEMA_VERSION};
 
 fn open() -> (tempfile::TempDir, Store) {
     let dir = tempfile::tempdir().unwrap();
@@ -362,5 +363,79 @@ fn importing_a_session_writes_its_source_and_its_events_together() {
             .unwrap()
             .source_key,
         key(500)
+    );
+}
+
+/// Card #81, V1: naming a source and gathering its cached runs was logic inside the `runs`
+/// command, which is wiring and untested. The expected values are that command's behaviour,
+/// read from it: a session is named by its folder, a launch is the source with no name.
+#[test]
+fn every_archived_source_is_named_the_way_the_runs_screen_names_it() {
+    let (_d, store) = open();
+    let session = store
+        .import_session("09_12_2026__13_34_26", &key(0), &[])
+        .unwrap();
+    let launch = store.insert_log_source(&key(0)).unwrap();
+    store.cache_runs(session, 1, &[run_of("AAA AAA")]).unwrap();
+    store
+        .cache_runs(launch, 1, &[run_of("BBB BBB"), run_of("CCC CCC")])
+        .unwrap();
+
+    let archived = store.archived_runs(1).unwrap();
+
+    assert_eq!(archived.unreadable, 0);
+    let named: Vec<(RunSource, usize)> = archived
+        .sources
+        .iter()
+        .map(|(source, runs)| (source.clone(), runs.len()))
+        .collect();
+    assert_eq!(
+        named,
+        vec![
+            (
+                RunSource::Session {
+                    name: "09_12_2026__13_34_26".to_string()
+                },
+                1
+            ),
+            (RunSource::Live, 2),
+        ]
+    );
+}
+
+#[test]
+fn a_source_nobody_folded_under_these_rules_contributes_no_row() {
+    let (_d, store) = open();
+    let launch = store.insert_log_source(&key(0)).unwrap();
+    store.cache_runs(launch, 1, &[run_of("AAA AAA")]).unwrap();
+
+    let archived = store.archived_runs(2).unwrap();
+
+    assert!(archived.sources.is_empty());
+    assert_eq!(archived.unreadable, 0);
+}
+
+#[test]
+fn a_session_row_with_no_name_reads_as_the_launch_it_cannot_be_told_from() {
+    let row = StoredSource {
+        id: 1,
+        kind: SourceKind::Session,
+        key: None,
+        source_key: key(0),
+    };
+    assert_eq!(row.run_source(), RunSource::Live);
+}
+
+#[test]
+fn unreadable_caches_are_counted_in_one_diagnostic_and_none_says_nothing() {
+    let clean = ArchivedRuns::default();
+    assert!(clean.diagnostics().is_empty());
+    let two = ArchivedRuns {
+        sources: vec![],
+        unreadable: 2,
+    };
+    assert_eq!(
+        two.diagnostics(),
+        vec![RunsDiagnostic::UnreadableEvents { count: 2 }]
     );
 }

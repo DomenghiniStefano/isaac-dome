@@ -95,3 +95,70 @@ fn a_refused_write_and_an_ignored_one_are_two_answers() {
         serde_json::json!({ "kind": "autostartNotWritable", "reason": "writeIgnored" })
     );
 }
+
+/// Card #81, V1: what `set_autostart` answers was decided inside the command. The expected values
+/// are its behaviour, read from it: the answer is the read-back, and when it disagrees with what
+/// was asked, whether the plugin accepted the write tells the two failures apart.
+mod answer {
+    use super::*;
+
+    fn read(enabled: bool) -> AutostartView {
+        AutostartView {
+            enabled,
+            unavailable: None,
+        }
+    }
+
+    #[test]
+    fn a_read_back_that_matches_what_was_asked_is_the_answer() {
+        let got = ipc::autostart_answer(true, Some(true), read(true));
+        assert!(matches!(got, Ok(v) if v.enabled));
+    }
+
+    #[test]
+    fn a_write_accepted_and_undone_by_the_system_was_ignored() {
+        let got = ipc::autostart_answer(true, Some(true), read(false));
+        assert!(matches!(
+            got,
+            Err(IpcError::AutostartNotWritable {
+                reason: AutostartFailure::WriteIgnored
+            })
+        ));
+    }
+
+    #[test]
+    fn a_write_the_plugin_refused_was_refused() {
+        let got = ipc::autostart_answer(true, Some(false), read(false));
+        assert!(matches!(
+            got,
+            Err(IpcError::AutostartNotWritable {
+                reason: AutostartFailure::WriteRefused
+            })
+        ));
+        // No manager at all is a write nobody accepted.
+        let none = ipc::autostart_answer(true, None, read(false));
+        assert!(matches!(
+            none,
+            Err(IpcError::AutostartNotWritable {
+                reason: AutostartFailure::WriteRefused
+            })
+        ));
+    }
+
+    #[test]
+    fn disabling_a_value_that_is_not_there_is_not_a_failure() {
+        // The plugin errors on `disable()` with nothing to remove; the read-back says off.
+        let got = ipc::autostart_answer(false, Some(false), read(false));
+        assert!(matches!(got, Ok(v) if !v.enabled));
+    }
+
+    #[test]
+    fn a_switch_that_cannot_be_offered_answers_with_why_and_not_with_a_write_error() {
+        let unavailable = AutostartView {
+            enabled: false,
+            unavailable: Some(AutostartReason::NotSupported),
+        };
+        let got = ipc::autostart_answer(true, None, unavailable);
+        assert!(matches!(got, Ok(v) if v.unavailable.is_some()));
+    }
+}

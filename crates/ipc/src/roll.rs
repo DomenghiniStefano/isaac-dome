@@ -482,3 +482,27 @@ pub fn roll_view(
         diagnostics,
     }
 }
+
+/// The document after a draw (card #81, V1: this was the body of the `roll_draw` command). The
+/// deck is the preset's, made effective by what the save can tell — the same judgment
+/// `roll_view` makes for the count it reports, from the one place it is written — and the draw
+/// records that deck's size and the time it was handed. The seed and the time come from `app`:
+/// `roll::draw` is a function of `(deck, seed)`, and so is this.
+pub fn drawn_document(
+    mut doc: roll::Document,
+    counters: Option<&[u32]>,
+    flags: Option<&[bool]>,
+    catalog: Option<&Catalog>,
+    seed: u64,
+    drawn_unix: i64,
+) -> roll::Document {
+    let (space, playability_known) = roll_space(counters, flags, catalog);
+    let effective = deck_preset(&doc.preset, playability_known);
+    let deck = roll::deck(&space, &effective);
+    doc.current = roll::draw(&deck, seed).map(|target| roll::Drawn {
+        target,
+        deck_size: deck.targets.len(),
+        drawn_unix,
+    });
+    doc
+}

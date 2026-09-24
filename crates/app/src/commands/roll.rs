@@ -99,21 +99,18 @@ pub fn roll_draw(
     // An unreadable document is replaced here too, exactly as `set_roll_preset` replaces one
     // below: pressing Pesca is asking for something new just as much as changing the preset
     // is, so there is nothing for the old, unparseable document to contribute.
-    let mut doc = document.unwrap_or_default();
-    let (space, playability_known) = ipc::roll_space(counters.as_deref(), flags.as_deref(), cat);
-    // The same judgment `roll_view` makes for the count it reports, from the one place it is
-    // written (`ipc::deck_preset`): the deck the draw picks from and the deck size the card
-    // later reports must never be two independently maintained rules.
-    let effective = ipc::deck_preset(&doc.preset, playability_known);
-    let deck = roll::deck(&space, &effective);
-    doc.current = roll::draw(&deck, seed_now()).map(|target| roll::Drawn {
-        target,
-        deck_size: deck.targets.len(),
-        drawn_unix: SystemTime::now()
-            .duration_since(UNIX_EPOCH)
-            .map(|d| d.as_secs() as i64)
-            .unwrap_or(0),
-    });
+    let drawn_unix = SystemTime::now()
+        .duration_since(UNIX_EPOCH)
+        .map(|d| d.as_secs() as i64)
+        .unwrap_or(0);
+    let doc = ipc::drawn_document(
+        document.unwrap_or_default(),
+        counters.as_deref(),
+        flags.as_deref(),
+        cat,
+        seed_now(),
+        drawn_unix,
+    );
     let wrote = write_document(&app, &store, &doc);
     view_now(&app, &state, &resources, &store, !wrote)
 }

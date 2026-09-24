@@ -37,8 +37,8 @@ mod wiki;
 mod wiki_target;
 
 pub use autostart::{
-    launch_intent, AutostartFailure, AutostartReason, AutostartView, LaunchIntent, AUTOSTART_ENTRY,
-    SILENT_ARG,
+    autostart_answer, launch_intent, AutostartFailure, AutostartReason, AutostartView,
+    LaunchIntent, AUTOSTART_ENTRY, SILENT_ARG,
 };
 pub use catalog_view::{catalog_view, item_views, CatalogView, ItemKindView, ItemView, KindCounts};
 pub use challenges::{
@@ -65,8 +65,8 @@ pub use icon::{
     icon_source, unknown_source, IconRef, MarkFill, MarkTier, ICON_SCHEME, UNKNOWN_SPRITE,
 };
 pub use live::{
-    live_marks, live_view, LiveAchievement, LiveDiagnostic, LiveGraph, LiveMarkRow, LiveMarks,
-    LiveOpen, LiveView,
+    characters_named, live_mark_rows, live_marks, live_view, LiveAchievement, LiveDiagnostic,
+    LiveGraph, LiveMarkRow, LiveMarks, LiveOpen, LiveView,
 };
 pub use mark_art::{
     mark_source, paper_source, widget_source, MarkFrames, WidgetArt, LOBBY_ANM2, WIDGET_ANM2,
@@ -88,8 +88,8 @@ pub use profile::{
 };
 pub use progress::SaveProgress;
 pub use queue::{
-    achievement_unlocking, achievements_unlocking, queue_view, GraphDeps, QueueDiagnostic,
-    QueueInputs, QueueRow, QueueView,
+    achievement_unlocking, achievements_unlocking, goals_pending, queue_view, GraphDeps,
+    QueueDiagnostic, QueueInputs, QueueRow, QueueView,
 };
 pub use reasons::{IoReason, SaveReason, SettingsReason, StoreReason};
 pub use release_notes::release_notes;
@@ -98,9 +98,9 @@ pub use resources::{
     SpriteView,
 };
 pub use roll::{
-    deck_preset, preset_from_view, preset_view, roll_space, roll_view, DeckView, DrawnTargetView,
-    DrawnView, PresetView, RollDiagnostic, RollInputs, RollRowView, RollView, SelectionView,
-    StatusView,
+    deck_preset, drawn_document, preset_from_view, preset_view, roll_space, roll_view, DeckView,
+    DrawnTargetView, DrawnView, PresetView, RollDiagnostic, RollInputs, RollRowView, RollView,
+    SelectionView, StatusView,
 };
 pub use runs::{
     runs_view, CatalogKinds, RunItemRef, RunOutcomeView, RunSource, RunTotals, RunView,
