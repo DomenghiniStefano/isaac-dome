@@ -6,7 +6,14 @@ import { watchWindowBox, watchWindowFocus } from './appWindow'
 import { focusOrder, rememberFocus } from './focusOrder'
 import { WindowMessageKind } from './messages'
 import type { WindowMessage } from './messages'
-import { setSidebarWidth, sidebarWidth } from './layout'
+import {
+  currentLayout,
+  sameLayout,
+  setLayout,
+  sidebarCollapsed,
+  sidebarWidth,
+} from './layout'
+import type { Layout } from './layout'
 import { clampToMonitors } from './monitorClamp'
 import { oweSeed, takeSeed } from './seeds'
 import { readSession, writeSession } from './sessionDocument'
@@ -71,17 +78,16 @@ export const useWindowSession = (): void => {
   const gone = new Set<string>()
   let box: StoredBox | undefined
   let postponed = 0
-  // The sidebar width this window has already told the others about, so that hearing it back —
+  // The sidebar layout this window has already told the others about, so that hearing it back —
   // or hearing it from somebody else — is not a reason to say it again.
-  let announced: number | null = null
+  let announced: Layout | null = null
 
-  // One width for the app, so a window that changes it tells the rest. Also the answer a newborn
+  // One layout for the app, so a window that changes it tells the rest. Also the answer a newborn
   // gets, which is why it is a function and not a line inside the watcher.
   const tellLayout = (): void => {
-    if (sidebarWidth.value === null) return
     void windowPort.broadcast({
       kind: WindowMessageKind.Layout,
-      sidebarWidth: sidebarWidth.value,
+      ...currentLayout(),
     })
   }
 
@@ -148,6 +154,7 @@ export const useWindowSession = (): void => {
               ...(sidebarWidth.value === null
                 ? {}
                 : { sidebarWidth: sidebarWidth.value }),
+              ...(sidebarCollapsed.value ? { sidebarCollapsed: true } : {}),
             }),
           )
         } catch (e) {
@@ -263,8 +270,11 @@ export const useWindowSession = (): void => {
         // broadcast it back, which would wake everyone else's: one drag would cost a round of
         // messages per window. Recording it as announced *before* setting it is what stops that,
         // and it does not depend on when the watcher happens to flush — a synchronous flag would.
-        announced = m.sidebarWidth
-        setSidebarWidth(m.sidebarWidth)
+        announced = {
+          sidebarWidth: m.sidebarWidth,
+          sidebarCollapsed: m.sidebarCollapsed,
+        }
+        setLayout(announced)
         remember()
         return
       default:
@@ -276,11 +286,12 @@ export const useWindowSession = (): void => {
     // Deep: a tab navigating changes an entry inside the array, not the array itself, and a
     // shallow watch would save the bar's shape and never what it is showing.
     watch(() => tabs.session, held, { deep: true })
-    // The sidebar is not a tab and not a window: one value, beside them in the document, and the
+    // The sidebar is not a tab and not a window: one layout, beside them in the document, and the
     // others hear it change.
-    watch(sidebarWidth, (px) => {
-      if (px !== announced) {
-        announced = px
+    watch([sidebarWidth, sidebarCollapsed], () => {
+      const now = currentLayout()
+      if (!sameLayout(announced, now)) {
+        announced = now
         tellLayout()
       }
       remember()
@@ -334,11 +345,14 @@ export const useWindowSession = (): void => {
       // appeared.
       if (!tabs.pending) return
       forget()
-      // The sidebar you sized is the sidebar you get back. Set before the seeding, so the first
-      // paint is already at the right width rather than snapping to it.
-      const stored = restored?.sidebarWidth ?? null
+      // The sidebar you sized and folded is the sidebar you get back. Set before the seeding, so
+      // the first paint is already at the right width rather than snapping to it.
+      const stored: Layout = {
+        sidebarWidth: restored?.sidebarWidth ?? null,
+        sidebarCollapsed: restored?.sidebarCollapsed === true,
+      }
       announced = stored
-      setSidebarWidth(stored)
+      setLayout(stored)
       // `main` takes the first window of the document and reopens the rest — a restored window
       // is a torn-off window that nobody dragged, so this is the tear-off's own machinery.
       const windows = restored?.windows ?? []
