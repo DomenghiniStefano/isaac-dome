@@ -141,9 +141,12 @@
      **Inset, never outward.** The grid's cells are two pixels apart, so a glow thrown outwards
      lands on the neighbours — and in a corner of the map where every second cell is a
      candidate, that is one smear rather than nine answers. */
-  --shadow-floor-glow-secret: inset 0 0 0.5rem #3f8fd6cc;
-  --shadow-floor-glow-super: inset 0 0 0.5rem #4fa538cc;
-  --shadow-floor-glow-ultra: inset 0 0 0.5rem #c2569bcc;
+  --shadow-floor-glow-secret: inset 0 0 0.5rem
+    color-mix(in srgb, var(--color-floor-target-secret) 80%, transparent);
+  --shadow-floor-glow-super: inset 0 0 0.5rem
+    color-mix(in srgb, var(--color-floor-target-super) 80%, transparent);
+  --shadow-floor-glow-ultra: inset 0 0 0.5rem
+    color-mix(in srgb, var(--color-floor-target-ultra) 80%, transparent);
 
   /* The place in the order, printed in the middle of the cell — and the halo that is what
      makes printing it possible at all.

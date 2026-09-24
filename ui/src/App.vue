@@ -18,12 +18,9 @@ import {
   sidebarEntries,
   sidebarHeaders,
   sidebarSectionOf,
-} from '@/components/shell/sectionNav'
-import type { SidebarEntry } from '@/components/shell/sectionNav'
-import {
-  SidebarWidth,
-  clampSidebarWidth,
-} from '@/components/shell/sidebarWidth'
+} from '@/lib/shell/sectionNav'
+import type { SidebarEntry } from '@/lib/shell/sectionNav'
+import { SidebarWidth, clampSidebarWidth } from '@/lib/shell/sidebarWidth'
 import type { TabView } from '@/lib/shell/tabs'
 import { TooltipProvider } from '@/components/ui/tooltip'
 import { usePointerShortcut } from '@/composables/usePointerShortcut'
@@ -54,7 +51,7 @@ import {
   sidebarCollapsed,
   sidebarWidth as storedWidth,
 } from '@/lib/window/layout'
-import { useWindowSession } from '@/lib/window/session'
+import { useWindowSession } from '@/composables/useWindowSession'
 import { routeOrigin } from '@/router/routeTable'
 import ProgressGate from '@/screens/ProgressGate.vue'
 import WelcomeScreen from '@/screens/welcome/WelcomeScreen.vue'
