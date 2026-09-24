@@ -6,7 +6,9 @@
 /// than what has been read from it is a new log rather than a corrupted one.
 #[derive(Debug, Default)]
 pub struct Tail {
-    remainder: String,
+    /// Raw bytes, not decoded text (card #80, P7): a read ends wherever 256 KiB ends, which can
+    /// be inside a character, so decoding waits until a line is whole.
+    remainder: Vec<u8>,
     read: u64,
 }
 
@@ -15,25 +17,26 @@ impl Tail {
     /// them. A trailing partial line is kept, not returned: it is not a line yet.
     pub fn advance(&mut self, chunk: &[u8]) -> Vec<String> {
         self.read += chunk.len() as u64;
-        // Lossy on purpose: mods write into this same file and one bad byte must not cost the
-        // run around it.
-        self.remainder.push_str(&String::from_utf8_lossy(chunk));
-        let mut lines = Vec::new();
-        while let Some(at) = self.remainder.find('\n') {
-            let line = self.remainder[..at].trim_end_matches('\r').to_string();
-            self.remainder.drain(..=at);
-            lines.push(line);
-        }
-        lines
+        self.remainder.extend_from_slice(chunk);
+        let Some(last) = self.remainder.iter().rposition(|&b| b == b'\n') else {
+            return Vec::new();
+        };
+        let complete: Vec<u8> = self.remainder.drain(..=last).collect();
+        complete[..last]
+            .split(|&b| b == b'\n')
+            // Lossy on purpose, and per line: mods write into this same file, and one bad byte
+            // must cost its own line and not the run around it.
+            .map(|line| {
+                String::from_utf8_lossy(line)
+                    .trim_end_matches('\r')
+                    .to_string()
+            })
+            .collect()
     }
 
-    /// Bytes held back because the last line is not finished.
-    ///
-    /// The watcher stores the end of the last **complete** line as its offset: counting a
-    /// half-written line as read would lose it, since the next read starts after it. Measured in
-    /// bytes of the decoded remainder, which differs from the raw bytes only where the log held
-    /// invalid UTF-8 — and there the anchor and the offset drift together, so the next read
-    /// still lines up.
+    /// Bytes held back because the last line is not finished — bytes **of the file**, so the
+    /// offset the watcher stores (the end of the last complete line) is exact. Counting a
+    /// half-written line as read would lose it, since the next read starts after it.
     pub fn pending(&self) -> usize {
         self.remainder.len()
     }
