@@ -13,7 +13,7 @@
 
 use std::path::Path;
 
-use crate::arch::{Archive, CompressionMode};
+use crate::arch::{Archive, CompressionMode, OpenError};
 
 /// Precedence order: the first one that has the resource wins. A missing archive is skipped.
 const PRECEDENCE: [&str; 8] = [
@@ -38,10 +38,27 @@ pub struct ArchiveInfo {
     pub entries: usize,
 }
 
+/// Why an archive that is there did not open. `BadMagic`'s bytes and the OS's sentence stay
+/// behind: what a diagnostic needs is which case it is.
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub enum ArchiveFault {
+    TooShort,
+    BadMagic,
+    Io { kind: std::io::ErrorKind },
+}
+
+/// An archive the install has and that did not open (card #80, R6).
+#[derive(Debug, Clone)]
+pub struct BrokenArchive {
+    pub name: String,
+    pub fault: ArchiveFault,
+}
+
 /// An installation's archives, queryable by logical path.
 pub struct ResourceSet {
     archives: Vec<(String, Archive)>,
     info: Vec<ArchiveInfo>,
+    broken: Vec<BrokenArchive>,
 }
 
 impl ResourceSet {
@@ -52,18 +69,39 @@ impl ResourceSet {
     pub fn open(packed_dir: &Path) -> ResourceSet {
         let mut archives = Vec::new();
         let mut info = Vec::new();
+        let mut broken = Vec::new();
         for name in PRECEDENCE {
-            let Ok(a) = Archive::open(&packed_dir.join(name)) else {
-                continue;
+            let fault = match Archive::open(&packed_dir.join(name)) {
+                Ok(a) => {
+                    info.push(ArchiveInfo {
+                        name: name.to_string(),
+                        mode: a.mode(),
+                        entries: a.entries().len(),
+                    });
+                    archives.push((name.to_string(), a));
+                    continue;
+                }
+                // Not there: an edition that does not ship it, which is normal.
+                Err(OpenError::Io(e)) if e.kind() == std::io::ErrorKind::NotFound => continue,
+                Err(OpenError::Io(e)) => ArchiveFault::Io { kind: e.kind() },
+                Err(OpenError::TooShort) => ArchiveFault::TooShort,
+                Err(OpenError::BadMagic { .. }) => ArchiveFault::BadMagic,
             };
-            info.push(ArchiveInfo {
+            broken.push(BrokenArchive {
                 name: name.to_string(),
-                mode: a.mode(),
-                entries: a.entries().len(),
+                fault,
             });
-            archives.push((name.to_string(), a));
         }
-        ResourceSet { archives, info }
+        ResourceSet {
+            archives,
+            info,
+            broken,
+        }
+    }
+
+    /// The archives that are there and did not open, in precedence order (card #80, R6).
+    pub fn broken(&self) -> &[BrokenArchive] {
+        &self.broken
     }
 
     /// The open archives, in precedence order.
