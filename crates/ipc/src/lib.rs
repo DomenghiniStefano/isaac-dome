@@ -37,8 +37,8 @@ mod wiki;
 mod wiki_target;
 
 pub use autostart::{
-    launch_intent, AutostartFailure, AutostartReason, AutostartView, LaunchIntent, AUTOSTART_ENTRY,
-    SILENT_ARG,
+    autostart_answer, launch_intent, AutostartFailure, AutostartReason, AutostartView,
+    LaunchIntent, AUTOSTART_ENTRY, SILENT_ARG,
 };
 pub use catalog_view::{catalog_view, item_views, CatalogView, ItemKindView, ItemView, KindCounts};
 pub use challenges::{

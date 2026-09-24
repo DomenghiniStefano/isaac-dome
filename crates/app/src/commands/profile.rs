@@ -7,9 +7,7 @@ use tauri_plugin_autostart::AutoLaunchManager;
 use tauri_plugin_dialog::DialogExt;
 
 use discovery::discover;
-use ipc::{
-    AutostartFailure, AutostartReason, AutostartView, IpcError, ProfileId, Settings, SetupState,
-};
+use ipc::{AutostartReason, AutostartView, IpcError, ProfileId, Settings, SetupState};
 
 use crate::events::{announce, PROFILE_CHANGED, SETTINGS_CHANGED};
 use crate::settings_file;
@@ -193,33 +191,14 @@ pub fn set_autostart(app: AppHandle, on: bool) -> Result<AutostartView, IpcError
     // **Whether the write was accepted is kept**, and it is the whole difference between the
     // two failures. The plugin's error itself is dropped: it is a bare string built from
     // `e.to_string()` and it can carry the executable's path, the Windows username with it.
-    let accepted = match app.try_state::<AutoLaunchManager>() {
-        Some(manager) => {
-            let wrote = if on {
-                manager.enable()
-            } else {
-                manager.disable()
-            };
-            // `disable()` on a value that is not there is an error in the plugin and means
-            // nothing here: the read-back below says `false`, which is what was asked for.
-            wrote.is_ok() || !on
+    let wrote = app.try_state::<AutoLaunchManager>().map(|manager| {
+        if on {
+            manager.enable().is_ok()
+        } else {
+            manager.disable().is_ok()
         }
-        None => false,
-    };
-    let view = read_autostart(&app);
-    match view.unavailable {
-        // The switch cannot be offered, and saying so is a better answer than a write error
-        // about a registry nobody could read in the first place.
-        Some(_) => Ok(view),
-        None if view.enabled == on => Ok(view),
-        None => Err(IpcError::AutostartNotWritable {
-            reason: if accepted {
-                AutostartFailure::WriteIgnored
-            } else {
-                AutostartFailure::WriteRefused
-            },
-        }),
-    }
+    });
+    ipc::autostart_answer(on, wrote, read_autostart(&app))
 }
 
 /// `try_state`, never `app.autolaunch()`: that helper is `state::<AutoLaunchManager>()`, which
