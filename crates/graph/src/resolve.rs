@@ -115,20 +115,19 @@ pub fn requirement_with(
             .challenge(ChallengeId(*number))
             .map(|ch| Requirement::Challenge { id: ch.id })
             .unwrap_or_else(unknown),
-        Target::Item { id } | Target::Trinket { id } => index
-            .item(&label)
-            .or_else(|| {
-                [
-                    ItemKind::Passive,
-                    ItemKind::Active,
-                    ItemKind::Familiar,
-                    ItemKind::Trinket,
-                ]
-                .into_iter()
-                .find_map(|k| c.item(k, ItemId(*id)).map(|i| (i.kind, i.id)))
-            })
-            .map(|(kind, id)| Requirement::Item { kind, id })
-            .unwrap_or_else(unknown),
+        Target::Item { id } | Target::Trinket { id } => {
+            let kinds = item_kinds_of(&row.target);
+            index
+                .item(&label)
+                .filter(|(kind, _)| kinds.contains(kind))
+                .or_else(|| {
+                    kinds
+                        .iter()
+                        .find_map(|k| c.item(*k, ItemId(*id)).map(|i| (i.kind, i.id)))
+                })
+                .map(|(kind, id)| Requirement::Item { kind, id })
+                .unwrap_or_else(unknown)
+        }
         // An achievement referenced directly is already a node. It travels as a gate key
         // so that `build` has one place that turns requirements into edges.
         Target::Achievement { id } => Requirement::Gate {
@@ -158,15 +157,8 @@ fn contributor(c: &Catalog, t: &Target) -> Option<ThresholdItem> {
         | Target::Room { .. }
         | Target::Concept { .. } => return None,
     };
-    [
-        ItemKind::Passive,
-        ItemKind::Active,
-        ItemKind::Familiar,
-        ItemKind::Trinket,
-    ]
-    .into_iter()
-    .find_map(|k| {
-        c.item(k, id).map(|i| ThresholdItem {
+    item_kinds_of(t).iter().find_map(|k| {
+        c.item(*k, id).map(|i| ThresholdItem {
             kind: i.kind,
             id: i.id,
             unlocked_by: i.unlocked_by,
@@ -251,5 +243,24 @@ fn from_verdict(
         // `Partial` either way. The difference is recorded in `corrections.json`, for
         // whoever reads it next, not in the value.
         Some(Verdict::Unknown { .. }) | None => unknown(),
+    }
+}
+
+/// The id space a reference names (card #80, item 04). Collectibles and trinkets are numbered
+/// separately — passive 46 and trinket 46 are two things — so a wiki `Item` is one of the three
+/// collectible kinds and a `Trinket` is only a trinket. Resolving across the two used to turn
+/// `Trinket { id: 46 }` into passive 46.
+fn item_kinds_of(t: &Target) -> &'static [ItemKind] {
+    match t {
+        Target::Trinket { .. } => &[ItemKind::Trinket],
+        Target::Item { .. } => &[ItemKind::Passive, ItemKind::Active, ItemKind::Familiar],
+        Target::Character { .. }
+        | Target::Achievement { .. }
+        | Target::Challenge { .. }
+        | Target::Entity { .. }
+        | Target::Transformation { .. }
+        | Target::Stage { .. }
+        | Target::Room { .. }
+        | Target::Concept { .. } => &[],
     }
 }
