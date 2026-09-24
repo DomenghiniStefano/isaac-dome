@@ -16,6 +16,21 @@ export interface CollectionReading {
   filter: CollectionFilter
   sort: CollectionSort
   offset: ScrollOffset | null
+  find: CollectionFind | null
+}
+
+// The find bar (B67), open: what it is looking for and which match it is on. `null` is the bar
+// closed. It was three refs on the screen (#79), and a tab switch closed it with the words in it.
+export interface CollectionFind {
+  query: string
+  current: string | null
+}
+
+const readFind = (value: unknown): CollectionFind | null => {
+  if (typeof value !== 'object' || value === null) return null
+  const { query, current } = value as { query?: unknown; current?: unknown }
+  if (typeof query !== 'string') return null
+  return { query, current: typeof current === 'string' ? current : null }
 }
 
 const sorts: readonly string[] = Object.values(CollectionSort)
@@ -27,13 +42,15 @@ export const collectionView: TabViewSpec<CollectionReading> = {
     filter: defaultCollectionFilter(),
     sort: CollectionSort.Quality,
     offset: null,
+    find: null,
   }),
   read: (value) => {
     if (typeof value !== 'object' || value === null) return null
-    const { filter, sort, offset } = value as {
+    const { filter, sort, offset, find } = value as {
       filter?: unknown
       sort?: unknown
       offset?: unknown
+      find?: unknown
     }
     const read = readFacetFilter<CollectionFacet>(filter, collectionFacetOrder)
     if (read === null) return null
@@ -43,6 +60,7 @@ export const collectionView: TabViewSpec<CollectionReading> = {
         (readString(sort, sorts) as CollectionSort | null) ??
         CollectionSort.Quality,
       offset: readScrollOffset(offset),
+      find: readFind(find),
     }
   },
 }

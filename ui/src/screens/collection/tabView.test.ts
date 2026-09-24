@@ -14,6 +14,7 @@ describe("the Collection's reading", () => {
       filter: defaultCollectionFilter(),
       sort: CollectionSort.Quality,
       offset: null,
+      find: null,
     })
   })
 
@@ -24,6 +25,7 @@ describe("the Collection's reading", () => {
       filter: emptyCollectionFilter(),
       sort: CollectionSort.Name,
       offset: null,
+      find: null,
     }
     expect(collectionView.read(JSON.parse(JSON.stringify(reading)))).toEqual(
       reading,
@@ -39,5 +41,38 @@ describe("the Collection's reading", () => {
 
   it('refuses a record that is not a reading', () => {
     expect(collectionView.read({ sort: CollectionSort.Name })).toBeNull()
+  })
+
+  // The find bar is part of how the list was being read (#79): open, what it was looking for, and
+  // which match it was on. It used to be three refs, and a tab switch closed it.
+  it('reads back an open find bar, its words and the match it was on', () => {
+    const reading = {
+      filter: emptyCollectionFilter(),
+      sort: CollectionSort.Name,
+      offset: null,
+      find: { query: 'sacred', current: '331' },
+    }
+    expect(collectionView.read(JSON.parse(JSON.stringify(reading)))).toEqual(
+      reading,
+    )
+  })
+
+  it('reads a find bar that does not read as a closed one, and keeps the rest', () => {
+    const read = collectionView.read({
+      filter: emptyCollectionFilter(),
+      sort: CollectionSort.Name,
+      find: { query: 42 },
+    })
+    expect(read?.find).toBeNull()
+    expect(read?.sort).toBe(CollectionSort.Name)
+  })
+
+  it('reads a match that is not a key as no match, and keeps the words', () => {
+    expect(
+      collectionView.read({
+        filter: emptyCollectionFilter(),
+        find: { query: 'sacred', current: 331 },
+      })?.find,
+    ).toEqual({ query: 'sacred', current: null })
   })
 })
