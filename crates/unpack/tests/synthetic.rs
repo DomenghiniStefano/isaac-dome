@@ -128,3 +128,39 @@ fn archive_read_with_invalid_lzw_data_returns_none() {
         "invalid LZW data must give None, not panic"
     );
 }
+
+// Card #80, item 09. The declared length comes from the archive's index as a raw u32: a
+// corrupted entry can claim four gigabytes. The decompressors used to reserve that much up
+// front, and an allocation that fails aborts the process — no `None`, no degrade. These are
+// the cases LZW already had, for all three, plus the length that used to be the danger.
+const DECLARED_TOO_LARGE: usize = u32::MAX as usize;
+
+#[test]
+fn lzw_with_a_declared_length_of_four_gigabytes_returns_none() {
+    let tiny = [0u8, 0, 0, 0, 0xAA, 0xBB];
+    assert!(unpack::for_tests::lzw_decompress(&tiny, 0, DECLARED_TOO_LARGE).is_none());
+}
+
+#[test]
+fn miniz_with_a_declared_length_of_four_gigabytes_returns_none() {
+    let tiny = [0u8; 12];
+    assert!(unpack::for_tests::miniz_decompress(&tiny, 0, DECLARED_TOO_LARGE, 7).is_none());
+}
+
+#[test]
+fn miniz_truncated_and_garbage_return_none() {
+    assert!(unpack::for_tests::miniz_decompress(&[1, 2], 0, 100, 7).is_none());
+    let garbage: Vec<u8> = (0..64u8).map(|b| b.wrapping_mul(37)).collect();
+    assert!(unpack::for_tests::miniz_decompress(&garbage, 0, 5000, 7).is_none());
+}
+
+#[test]
+fn bogocrypt_past_the_end_of_the_input_returns_none() {
+    let tiny = [9u8; 8];
+    assert!(unpack::for_tests::bogocrypt_decompress(&tiny, 0, DECLARED_TOO_LARGE, 7).is_none());
+    assert!(unpack::for_tests::bogocrypt_decompress(&tiny, 4, 8, 7).is_none());
+    assert!(
+        unpack::for_tests::bogocrypt_decompress(&tiny, 0, 8, 7).is_some(),
+        "the guard: a length the input does hold still decrypts"
+    );
+}
