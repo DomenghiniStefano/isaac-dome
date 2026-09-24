@@ -3,7 +3,7 @@
 //! The input is the generator's raw output — double quotes, trailing semicolon — because the
 //! rewriter runs before prettier does.
 
-use ipc::contract::{pascal_case, to_const_enums};
+use ipc::contract::{bare_tag_members, pascal_case, tagged_fieldless_unions, to_const_enums};
 
 #[test]
 fn a_union_of_string_literals_becomes_the_const_pair() {
@@ -81,4 +81,80 @@ fn pascal_case_reads_both_spellings() {
     assert_eq!(pascal_case("rep_plus"), "RepPlus");
     assert_eq!(pascal_case("rep"), "Rep");
     assert_eq!(pascal_case("championVersions"), "ChampionVersions");
+}
+
+#[test]
+fn a_union_of_bare_tags_is_named() {
+    let file = r#"export type WantDiagnostic = { "kind": "noCatalog" } | { "kind": "noProfile" };"#;
+
+    assert_eq!(tagged_fieldless_unions(file), vec!["WantDiagnostic"]);
+}
+
+#[test]
+fn one_member_with_data_makes_the_tag_legitimate() {
+    let file =
+        r#"export type SaveReason = { "kind": "tooShort" } | { "kind": "io", reason: IoReason, };"#;
+
+    assert!(tagged_fieldless_unions(file).is_empty());
+}
+
+#[test]
+fn an_empty_struct_variant_carries_nothing_and_counts_as_bare() {
+    let file = r#"export type Drawn = { "kind": "greedier", } | { "kind": "other" };"#;
+
+    assert_eq!(tagged_fieldless_unions(file), vec!["Drawn"]);
+}
+
+#[test]
+fn a_single_bare_variant_is_named_too() {
+    let file = r#"export type Only = { "kind": "one" };"#;
+
+    assert_eq!(tagged_fieldless_unions(file), vec!["Only"]);
+}
+
+#[test]
+fn a_pipe_inside_a_field_is_not_a_member_boundary_that_hides_data() {
+    let file =
+        r#"export type Lock = { "kind": "free" } | { "kind": "unlocked", text: string | null, };"#;
+
+    assert!(tagged_fieldless_unions(file).is_empty());
+}
+
+#[test]
+fn string_unions_and_the_const_pair_are_not_tagged() {
+    let file = r#"export type MissingReason = "steamNotFound" | "noSaves";
+export const X = {
+  A: "a",
+} as const;
+export type X = (typeof X)[keyof typeof X];"#;
+
+    assert!(tagged_fieldless_unions(file).is_empty());
+}
+
+#[test]
+fn a_declaration_split_across_lines_is_not_read() {
+    // The limit, stated: the recognizer reads one line per declaration, as `ts-rs` writes a
+    // union whose members carry no field docs. A multi-line union has fields, so this is not a
+    // hole today — the test exists so that the day it is, the reason is already written here.
+    let file = "export type Split = { \"kind\": \"a\" }\n  | { \"kind\": \"b\" };";
+
+    assert!(tagged_fieldless_unions(file).is_empty());
+}
+
+#[test]
+fn bare_members_are_counted_inside_unions_that_also_carry_data() {
+    // What the contract test's vacuity guard reads: the recognizer still seeing bare members in
+    // the unions that legitimately have them.
+    let file = r#"export type WantState = { "kind": "done" } | { "kind": "chain", unknown: number, } | { "kind": "noProfile" };"#;
+
+    assert_eq!(bare_tag_members(file), 2);
+}
+
+#[test]
+fn a_format_the_recognizer_cannot_read_counts_nothing() {
+    // The failure the guard exists for: a generator that stops quoting the tag would make every
+    // union unreadable, and "no violations" would then be true of nothing.
+    let file = r#"export type WantState = { kind: "done" } | { kind: "noProfile" };"#;
+
+    assert_eq!(bare_tag_members(file), 0);
 }
