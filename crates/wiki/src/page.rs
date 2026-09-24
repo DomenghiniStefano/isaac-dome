@@ -250,8 +250,15 @@ fn without_the_boxes(text: &str) -> String {
 /// of them. Read as "each entry's own", the note about the ending chest, marked `na+`, has
 /// nothing in common with Ultra Greedier's `a+` and is thrown away; it is the one span in
 /// 4831 that the counter caught the first time this pass ran.
+#[cfg(test)]
 fn page_editions(text: &str) -> crate::editions::Editions {
-    extract_infoboxes(text)
+    page_editions_of(&extract_infoboxes(text))
+}
+
+/// The page's range from infoboxes already extracted: `parse_page` reads them once and hands
+/// the list here, rather than extracting them a second time (card #80, P6).
+fn page_editions_of(infoboxes: &[RawInfobox]) -> crate::editions::Editions {
+    infoboxes
         .first()
         .and_then(|ib| crate::editions::Editions::parse(ib.params.get("dlc")?))
         .unwrap_or(crate::editions::Editions::ALL)
@@ -269,6 +276,12 @@ fn page_editions(text: &str) -> crate::editions::Editions {
 /// A page that declares no range narrows nothing, which is half of them. When the two share
 /// no edition the span is dropped and counted: the wiki draws its own error there, so it is
 /// the wiki contradicting itself and not a code we failed to read.
+///
+/// **The entry's own fields only.** The sections and the preamble belong to the page and are
+/// shared by every entry on it, so they are narrowed once, where they are read
+/// (`narrow_sections`): narrowed here, on each entry's copy, one span was counted once per
+/// infobox (card #80, P6). The description may carry the preamble; narrowing it again changes
+/// nothing and counts nothing, because a narrowed span already fits the page.
 fn narrow_to_page(entry: &mut Entry, page: crate::editions::Editions, d: &mut Diagnostics) {
     if page.is_all() {
         return;
@@ -277,7 +290,27 @@ fn narrow_to_page(entry: &mut Entry, page: crate::editions::Editions, d: &mut Di
     for field in entry.infobox.inlines_mut() {
         narrow_inline(field, page, d);
     }
-    for section in &mut entry.sections {
+}
+
+/// The page's preamble, narrowed once like its sections: every entry that takes it shares it.
+fn narrowed_preamble(
+    text: &str,
+    page: crate::editions::Editions,
+    r: &Resolver,
+    d: &mut Diagnostics,
+) -> Vec<crate::Inline> {
+    let mut read = preamble(text, r, d);
+    if !page.is_all() {
+        narrow_inline(&mut read, page, d);
+    }
+    read
+}
+
+fn narrow_sections(sections: &mut [Section], page: crate::editions::Editions, d: &mut Diagnostics) {
+    if page.is_all() {
+        return;
+    }
+    for section in sections {
         for block in &mut section.blocks {
             narrow_block(block, page, d);
         }
@@ -411,8 +444,9 @@ pub fn parse_page(
     // Parsed once, like the sections: a page with two infoboxes has one preamble, and
     // reading it twice would count its diagnostics twice.
     let mut page_preamble: Option<Vec<crate::Inline>> = None;
-    let page = page_editions(text);
-    for ib in extract_infoboxes(text) {
+    let infoboxes = extract_infoboxes(text);
+    let page = page_editions_of(&infoboxes);
+    for ib in infoboxes {
         let Some(kind) = InfoboxKind::of(&ib.name) else {
             d.unknown_infobox(&ib.name);
             continue;
@@ -430,7 +464,11 @@ pub fn parse_page(
             | InfoboxKind::Challenge
             | InfoboxKind::Character
             | InfoboxKind::Transformation => page_sections
-                .get_or_insert_with(|| sections(text, r, d))
+                .get_or_insert_with(|| {
+                    let mut read = sections(text, r, d);
+                    narrow_sections(&mut read, page, d);
+                    read
+                })
                 .clone(),
         };
         let facts = entry_facts(&ib, r, d);
@@ -443,7 +481,7 @@ pub fn parse_page(
             // the transformation happens, so nothing is dropped by putting it second.
             InfoboxKind::Transformation => {
                 let mut out = page_preamble
-                    .get_or_insert_with(|| preamble(text, r, d))
+                    .get_or_insert_with(|| narrowed_preamble(text, page, r, d))
                     .clone();
                 // Two sentences written in two places meet in one field, and nothing in
                 // either carries the space between them.
@@ -463,7 +501,7 @@ pub fn parse_page(
                 if facts.description.is_empty() =>
             {
                 page_preamble
-                    .get_or_insert_with(|| preamble(text, r, d))
+                    .get_or_insert_with(|| narrowed_preamble(text, page, r, d))
                     .clone()
             }
             // What the wiki files as an achievement's `description` is the unlock paper's
@@ -805,6 +843,18 @@ mod tests {
                 .any(|i| matches!(i, crate::Inline::Text { text, .. } if text.contains("only in Rebirth"))),
             "the words went with it: {:?}", items[0]
         );
+        assert_eq!(d.spans_outside_their_page, 1);
+    }
+
+    /// Card #80, P6: the counter counts spans, not copies. A page with two infoboxes shares
+    /// its sections between the two entries, and narrowing each entry's copy counted one span
+    /// once per entry.
+    #[test]
+    fn a_span_in_sections_two_entries_share_is_counted_once() {
+        let src = "{{infobox boss\n | id = 1\n | dlc = a\n}}\n{{infobox boss\n | id = 2\n | dlc = a\n}}\n== Behavior ==\n* {{dlc|na|only in Rebirth}}\n";
+        let mut d = Diagnostics::default();
+        let v = parse_page("Twins", 7, src, &test_resolver(), &mut d);
+        assert_eq!(v.len(), 2, "two entries share the page");
         assert_eq!(d.spans_outside_their_page, 1);
     }
 
