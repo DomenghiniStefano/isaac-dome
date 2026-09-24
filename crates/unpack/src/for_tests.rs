@@ -9,3 +9,24 @@
 pub fn lzw_decompress(archive: &[u8], start: usize, decompressed_len: usize) -> Option<Vec<u8>> {
     crate::lzw::decompress(archive, start, decompressed_len)
 }
+
+/// The two other decompressors, exposed for the same synthetic cases LZW already had (card
+/// #80, item 09): a declared length far past the input, a truncated block, bytes that mean
+/// nothing. Each must answer `None`, and none may ask the allocator for the declared length.
+pub fn miniz_decompress(
+    archive: &[u8],
+    start: usize,
+    decompressed_len: usize,
+    name_hash_b: u32,
+) -> Option<Vec<u8>> {
+    crate::miniz::decompress(archive, start, decompressed_len, name_hash_b)
+}
+
+pub fn bogocrypt_decompress(
+    archive: &[u8],
+    start: usize,
+    decompressed_len: usize,
+    name_hash_b: u32,
+) -> Option<Vec<u8>> {
+    crate::bogocrypt::decompress(archive, start, decompressed_len, name_hash_b)
+}
