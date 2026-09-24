@@ -3,7 +3,7 @@
 //! The input is the generator's raw output — double quotes, trailing semicolon — because the
 //! rewriter runs before prettier does.
 
-use ipc::contract::{pascal_case, tagged_fieldless_unions, to_const_enums};
+use ipc::contract::{bare_tag_members, pascal_case, tagged_fieldless_unions, to_const_enums};
 
 #[test]
 fn a_union_of_string_literals_becomes_the_const_pair() {
@@ -139,4 +139,22 @@ fn a_declaration_split_across_lines_is_not_read() {
     let file = "export type Split = { \"kind\": \"a\" }\n  | { \"kind\": \"b\" };";
 
     assert!(tagged_fieldless_unions(file).is_empty());
+}
+
+#[test]
+fn bare_members_are_counted_inside_unions_that_also_carry_data() {
+    // What the contract test's vacuity guard reads: the recognizer still seeing bare members in
+    // the unions that legitimately have them.
+    let file = r#"export type WantState = { "kind": "done" } | { "kind": "chain", unknown: number, } | { "kind": "noProfile" };"#;
+
+    assert_eq!(bare_tag_members(file), 2);
+}
+
+#[test]
+fn a_format_the_recognizer_cannot_read_counts_nothing() {
+    // The failure the guard exists for: a generator that stops quoting the tag would make every
+    // union unreadable, and "no violations" would then be true of nothing.
+    let file = r#"export type WantState = { kind: "done" } | { kind: "noProfile" };"#;
+
+    assert_eq!(bare_tag_members(file), 0);
 }
