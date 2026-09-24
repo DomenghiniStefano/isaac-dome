@@ -62,6 +62,8 @@ import { useWikiStore } from '@/stores/wiki'
 
 const router = useRouter()
 const tabs = useTabsStore()
+// Which instance of the screen is showing: one per history entry of each tab (see the template).
+const screenKey = computed(() => `${tabs.activeId}#${tabs.active?.index ?? 0}`)
 const profile = useProfileStore()
 const wiki = useWikiStore()
 // Read again when another window writes: the plan's queue, and the size of the interface.
@@ -319,11 +321,18 @@ const takeover = computed(() => welcome.value.kind !== 'hidden')
                nothing under a list that could have used them. It is also the `page` container
                every threshold is measured against. -->
           <main class="@container/page min-h-0 min-w-0 flex-1 overflow-hidden">
+            <!-- **One instance of a screen per history entry of a tab** (#79). Without the key the
+                 router reused one component for every tab on the same route, so what a screen
+                 held locally — a typed filter, the find bar, the scroll — walked from one tab into
+                 the next, and a freshly opened tab showed another's position. With it, every entry
+                 is built from its own reading and its own positions (`v-scroll-memory`).
+                 The index is safe in the key because typing does not move it: a refinement of the
+                 same view replaces the entry in place (`tabModel`'s `goTo`). -->
             <RouterView v-slot="{ Component, route }">
               <ProgressGate v-if="route.meta.needsProfile">
-                <component :is="Component" />
+                <component :is="Component" :key="screenKey" />
               </ProgressGate>
-              <component :is="Component" v-else />
+              <component :is="Component" v-else :key="screenKey" />
             </RouterView>
           </main>
         </div>

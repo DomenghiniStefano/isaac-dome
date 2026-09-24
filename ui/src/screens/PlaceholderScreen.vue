@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { vScrollMemory } from '@/directives/scrollMemory'
 import { useRoute } from 'vue-router'
 import EmptyCategory from '@/components/data-state/EmptyCategory.vue'
 import { useMessages } from '@/i18n'
@@ -11,7 +12,10 @@ const { t } = useMessages()
 <template>
   <!-- A screen that isn't built yet says which sub-project brings it: honest, and removed
        screen by screen. -->
-  <div class="flex h-full flex-col gap-4 overflow-y-auto px-5.5 pt-5 pb-15">
+  <div
+    v-scroll-memory="'page'"
+    class="flex h-full flex-col gap-4 overflow-y-auto px-5.5 pt-5 pb-15"
+  >
     <ScreenHeader :icon="route.meta.icon" :title="t(route.meta.title)" />
     <EmptyCategory v-if="route.meta.arrives">{{
       t(route.meta.arrives)

@@ -21,13 +21,14 @@ import {
   refineTab,
   removeTab,
   seedState,
+  setEntryScroll,
   setEntryView,
   sessionOf,
   selectTab,
   tabLocation,
   tabSeed,
 } from './tabModel'
-import type { Tab, TabSeed, TabsState } from './tabModel'
+import type { EntryAddress, Tab, TabSeed, TabsState } from './tabModel'
 
 // The open tabs, window-wide. The rules are tabModel's; this holds the result. What a window
 // holds is saved and restored by `lib/window/session.ts` (part of 3.7, landed with the tray).
@@ -89,6 +90,18 @@ export const useTabsStore = defineStore(StoreId.Tabs, () => {
   // the result, as with every other tab rule.
   const setView = (location: TabLocation, view: unknown): void => {
     state.value = setEntryView(state.value, location, view)
+  }
+  // Where a region of an entry's screen was scrolled to. Addressed by tab and entry rather than
+  // aimed at the active one: the rule is `tabModel`'s, and says why.
+  const setScroll = (at: EntryAddress, region: string, top: number): void => {
+    state.value = setEntryScroll(
+      state.value,
+      at.tabId,
+      at.index,
+      at.location,
+      region,
+      top,
+    )
   }
   const refine = (location: TabLocation): void => {
     state.value = refineTab(state.value, location)
@@ -256,6 +269,7 @@ export const useTabsStore = defineStore(StoreId.Tabs, () => {
     openWindowWith,
     refine,
     setView,
+    setScroll,
     back,
     forward,
   }

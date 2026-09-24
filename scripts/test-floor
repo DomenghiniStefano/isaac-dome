@@ -217,4 +217,4 @@
 # Rust does not move: nothing in this one is Rust.
 
 RUST_TESTS=1254
-UI_TESTS=808
+UI_TESTS=823
