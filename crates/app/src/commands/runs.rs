@@ -73,11 +73,7 @@ pub(crate) fn live(
     });
 
     let unlocked = crate::commands::graph::unlock(app, catalog.clone(), resources.clone(), graph);
-    let nodes = match &unlocked {
-        Ok(view) => ipc::LiveGraph::Nodes(&view.nodes),
-        Err(IpcError::NoActiveProfile) => ipc::LiveGraph::NoProfile,
-        Err(_) => ipc::LiveGraph::NoGraph,
-    };
+    let nodes = ipc::live_graph(&unlocked);
 
     let rs = resources.get();
     let cat = rs.and_then(|rs| catalog.get_or_build(rs));

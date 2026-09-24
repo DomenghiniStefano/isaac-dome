@@ -65,8 +65,8 @@ pub use icon::{
     icon_source, unknown_source, IconRef, MarkFill, MarkTier, ICON_SCHEME, UNKNOWN_SPRITE,
 };
 pub use live::{
-    characters_named, live_mark_rows, live_marks, live_view, LiveAchievement, LiveDiagnostic,
-    LiveGraph, LiveMarkRow, LiveMarks, LiveOpen, LiveView,
+    characters_named, live_graph, live_mark_rows, live_marks, live_view, LiveAchievement,
+    LiveDiagnostic, LiveGraph, LiveMarkRow, LiveMarks, LiveOpen, LiveView,
 };
 pub use mark_art::{
     mark_source, paper_source, widget_source, MarkFrames, WidgetArt, LOBBY_ANM2, WIDGET_ANM2,

@@ -1684,6 +1684,7 @@ export type LiveDiagnostic =
   | { kind: 'ambiguousCharacter'; name: string; forms: number }
   | { kind: 'noGraph' }
   | { kind: 'noProfile' }
+  | { kind: 'saveUnreadable' }
 
 export type LiveView = {
   run: RunView | null
