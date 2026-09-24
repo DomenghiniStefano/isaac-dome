@@ -11,9 +11,11 @@ mod fold;
 mod rules;
 mod source;
 mod tail;
+mod throttle;
 
 pub use event::{Event, SeedKind};
 pub use fold::{Floor, Generated, ItemKind, ItemKinds, Outcome, Pass, Run};
 pub use rules::{Rules, RulesError};
 pub use source::{fingerprint, resume, Resume, SourceKey, ANCHOR_BYTES, PREFIX_BYTES};
 pub use tail::Tail;
+pub use throttle::Throttle;
