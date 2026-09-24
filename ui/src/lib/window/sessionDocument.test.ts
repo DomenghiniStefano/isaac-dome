@@ -359,3 +359,61 @@ describe('a tab stored on a screen that has since merged', () => {
     expect(readSession(document)?.windows[0]?.tabs).toHaveLength(1)
   })
 })
+
+// The positions ride next to the view and follow its rules: kept for the entry each tab is
+// showing, read back region by region, and one that does not read costs that region only.
+describe('the positions a stored entry carries', () => {
+  const stored = (scroll: unknown) =>
+    v1([
+      {
+        entries: [{ location: { name: RouteName.Floor }, scroll }],
+        index: 0,
+      },
+    ])
+
+  it('round-trips the position of each region', () => {
+    const one = {
+      entries: [
+        {
+          location: { name: RouteName.Floor },
+          scroll: { page: 480, pane: 90 },
+        },
+      ],
+      index: 0,
+    }
+    const back = readSession(
+      writeSession({ windows: [{ tabs: [one], activeIndex: 0 }] }),
+    )
+    expect(back?.windows[0]?.tabs[0]?.entries[0]?.scroll).toEqual({
+      page: 480,
+      pane: 90,
+    })
+  })
+
+  it('drops a region whose position is not a distance and keeps the rest', () => {
+    const entry = readSession(stored({ page: 480, pane: -3, list: 'far' }))
+      ?.windows[0]?.tabs[0]?.entries[0]
+    expect(entry?.scroll).toEqual({ page: 480 })
+  })
+
+  it('reads positions that are not an object as none, and keeps the tab', () => {
+    const entry = readSession(stored([480]))?.windows[0]?.tabs[0]?.entries[0]
+    expect(entry?.location).toEqual({ name: RouteName.Floor })
+    expect(entry?.scroll).toBeUndefined()
+  })
+
+  it('stores the positions of the entry each tab is showing and of no other', () => {
+    const one = {
+      entries: [
+        { location: { name: RouteName.Unlock }, scroll: { page: 10 } },
+        { location: { name: RouteName.Floor }, scroll: { page: 20 } },
+      ],
+      index: 1,
+    }
+    const written = JSON.parse(
+      writeSession({ windows: [{ tabs: [one], activeIndex: 0 }] }),
+    )
+    expect(written.windows[0].tabs[0].entries[0].scroll).toBeUndefined()
+    expect(written.windows[0].tabs[0].entries[1].scroll).toEqual({ page: 20 })
+  })
+})

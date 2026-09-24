@@ -186,6 +186,12 @@ const EXEMPTIONS = [
       'the welcome is a takeover above the router (3.8), drawn by App.vue outside <main>: there is no page box for it to fill, and it sizes itself against the window',
   },
   {
+    file: 'src/screens/welcome/WelcomeScreen.vue',
+    check: 'scrolling box without v-scroll-memory',
+    reason:
+      'the welcome is not a tab: it is shown above the router before there is a profile, so there is no history entry for a position to be kept on',
+  },
+  {
     file: 'src/screens/WikiScreen.vue',
     check: 'screen root is neither flowing nor filling',
     reason:
@@ -275,6 +281,25 @@ const checks = [
       const flowing = /\boverflow-y-auto\b/.test(cls)
       const filling = /\boverflow-hidden\b/.test(cls) && /\bmin-h-0\b/.test(cls)
       return !/\bh-full\b/.test(cls) || !(flowing || filling)
+    },
+  },
+  {
+    // #79, and the owner's words: going back loses *nothing*. A box that scrolls without
+    // `v-scroll-memory` keeps its position only until the next tab switch, back or tear-off —
+    // which fails nothing and reads as the app forgetting. Every tag under `screens/` whose
+    // class scrolls (`overflow-auto`, `overflow-y-auto`, under any variant) carries the
+    // directive on the same tag. The lists on `VirtualRows` are not tags here: the component
+    // lives in `components/ui/` and keeps its own offset in the screen's reading.
+    name: 'scrolling box without v-scroll-memory',
+    test: (file, body) => {
+      if (!file.endsWith('.vue') || !isUnder(file, SCREENS_DIR)) return false
+      const template = body.match(TEMPLATE_BLOCK)
+      if (!template) return false
+      return [...template[1].matchAll(TAG)].some(
+        ([tag]) =>
+          /\bclass="(?:[^"]*[\s:])?overflow-(?:y-)?auto\b/.test(tag) &&
+          !/\bv-scroll-memory=/.test(tag),
+      )
     },
   },
   {
@@ -435,6 +460,36 @@ const breaches = (file, raw) => {
 // that never existed, and what it must and must not be accused of.
 const FIXTURES = [
   {
+    name: 'a scrolling box without a memory is caught',
+    file: 'src/screens/floor/FloorReasoning.vue',
+    body: '<template>\n  <div class="flex min-h-0 flex-1 flex-col overflow-y-auto" />\n</template>\n',
+    expect: ['scrolling box without v-scroll-memory'],
+  },
+  {
+    name: 'a box that scrolls only under a variant is caught too',
+    file: 'src/screens/goals/AddPane.vue',
+    body: '<template>\n  <div class="min-w-0 @wide/page:overflow-y-auto" />\n</template>\n',
+    expect: ['scrolling box without v-scroll-memory'],
+  },
+  {
+    name: 'a scrolling box with a memory is allowed',
+    file: 'src/screens/floor/FloorReasoning.vue',
+    body: `<template>\n  <div v-scroll-memory="'reasoning'" class="min-h-0 overflow-auto" />\n</template>\n`,
+    expect: [],
+  },
+  {
+    name: 'a box that hides its overflow is not a scrolling box',
+    file: 'src/screens/floor/FloorReasoning.vue',
+    body: '<template>\n  <div class="overflow-hidden overflow-x-auto" />\n</template>\n',
+    expect: [],
+  },
+  {
+    name: 'a scrolling box outside screens/ is not this rule',
+    file: 'src/components/ui/virtual/VirtualRows.vue',
+    body: '<template>\n  <div class="min-h-0 flex-1 overflow-auto" />\n</template>\n',
+    expect: [],
+  },
+  {
     name: 'a comment naming invoke() is not a call',
     file: 'src/screens/Fixture.vue',
     body: '<script setup lang="ts">\n// A screen never calls invoke() directly: the wrappers in lib/ipc/ do.\nconst a = 1\n</script>\n',
@@ -558,7 +613,7 @@ const FIXTURES = [
   {
     name: 'a flowing screen root is allowed',
     file: 'src/screens/GoalsScreen.vue',
-    body: '<template>\n  <div class="flex h-full flex-col gap-4 overflow-y-auto pt-5 pb-15" />\n</template>\n',
+    body: `<template>\n  <div v-scroll-memory="'page'" class="flex h-full flex-col gap-4 overflow-y-auto pt-5 pb-15" />\n</template>\n`,
     expect: [],
   },
   {
@@ -625,7 +680,7 @@ const FIXTURES = [
   {
     name: 'a width cap on a screen root is caught',
     file: 'src/screens/GoalsScreen.vue',
-    body: '<template>\n  <div class="flex h-full max-w-250 flex-col overflow-y-auto" />\n</template>\n',
+    body: `<template>\n  <div v-scroll-memory="'page'" class="flex h-full max-w-250 flex-col overflow-y-auto" />\n</template>\n`,
     expect: ['width cap on a screen root'],
   },
   {
@@ -633,7 +688,7 @@ const FIXTURES = [
     // on a card inside a screen is the card's business and must not be accused.
     name: 'a width cap below the root is not the root',
     file: 'src/screens/Fixture.vue',
-    body: '<template>\n  <div class="flex h-full flex-col overflow-y-auto">\n    <p class="max-w-80" />\n  </div>\n</template>\n',
+    body: `<template>\n  <div v-scroll-memory="'page'" class="flex h-full flex-col overflow-y-auto">\n    <p class="max-w-80" />\n  </div>\n</template>\n`,
     expect: [],
   },
 ]

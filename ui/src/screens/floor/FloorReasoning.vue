@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { vScrollMemory } from '@/directives/scrollMemory'
 import { sortBy } from 'lodash-es'
 import { computed } from 'vue'
 import EmptyCategory from '@/components/data-state/EmptyCategory.vue'
@@ -65,7 +66,10 @@ const placeOf = (cell: number): string => {
         candidates.length
       }}</span>
     </header>
-    <div class="flex min-h-0 flex-1 flex-col overflow-y-auto">
+    <div
+      v-scroll-memory="'reasoning'"
+      class="flex min-h-0 flex-1 flex-col overflow-y-auto"
+    >
       <div
         v-for="candidate in candidates"
         :key="candidate.cell"

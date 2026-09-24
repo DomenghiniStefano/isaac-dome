@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { vScrollMemory } from '@/directives/scrollMemory'
 import { SlidersHorizontalIcon, TriangleAlertIcon } from '@lucide/vue'
 import {
   Alert,
@@ -18,7 +19,10 @@ const { t } = useMessages()
 </script>
 
 <template>
-  <div class="flex h-full flex-col gap-4 overflow-y-auto px-5.5 pt-5 pb-15">
+  <div
+    v-scroll-memory="'page'"
+    class="flex h-full flex-col gap-4 overflow-y-auto px-5.5 pt-5 pb-15"
+  >
     <ScreenHeader
       :icon="SlidersHorizontalIcon"
       :title="t('routes.appearance')"
