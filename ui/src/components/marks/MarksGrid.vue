@@ -127,26 +127,26 @@ const followRows = (event: Event) => {
       >
         <!-- The corner: above the pinned column and above the pinned row, so neither slides
            over it. It takes the **whole** header's height and not just its label's, or the
-           boss names scroll under the part of the name column it leaves uncovered — which
+           boss symbols scroll under the part of the name column it leaves uncovered — which
            is what they did, and it reads as the column having come unstuck. -->
         <span
-          class="sticky left-0 z-raised-corner flex h-matrix-header items-end justify-self-stretch bg-card pl-3 text-label text-subtle-foreground"
+          class="sticky left-0 z-raised-corner flex items-end self-stretch justify-self-stretch bg-card pl-3 text-label text-subtle-foreground"
           >{{ t('completion.grid.character') }}</span
         >
-        <div
-          v-for="(boss, b) in matrix.bosses"
-          :key="boss"
-          class="flex h-matrix-header flex-col items-center justify-end gap-2"
-        >
-          <span
-            class="writing-vertical text-label whitespace-nowrap text-foreground"
-            >{{ boss }}</span
-          >
-          <PixelSprite
-            :url="art[b]?.hard ?? null"
-            class="size-mark-symbol shrink-0"
-          />
-        </div>
+        <!-- The boss is its symbol, and its name is the tooltip (card #85). The names used to
+             stand above the symbols, written vertically, and cost the pinned header 118px of
+             a screen whose subject is the rows under it. -->
+        <Tooltip v-for="(boss, b) in matrix.bosses" :key="boss">
+          <TooltipTrigger as-child>
+            <div tabindex="0" :aria-label="boss" class="flex">
+              <PixelSprite
+                :url="art[b]?.hard ?? null"
+                class="size-mark-symbol shrink-0"
+              />
+            </div>
+          </TooltipTrigger>
+          <TooltipContent>{{ boss }}</TooltipContent>
+        </Tooltip>
         <span
           class="justify-self-end pr-0.5 text-label text-subtle-foreground"
           >{{ t('completion.grid.normal') }}</span
