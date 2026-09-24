@@ -22,6 +22,7 @@ import { SearchDiagnostic } from '@/lib/ipc/types'
 import type { MessageKey } from '@/i18n/messageKey'
 import type { MessageSchema } from '@/i18n/messages/it'
 import { keyAfterAnswer } from '@/lib/search/highlight'
+import { queryToRecall } from '@/lib/search/recall'
 import {
   RowGroup,
   matchingScreens,
@@ -53,9 +54,16 @@ const typed = ref('')
 // The row the keyboard is on, mirrored from the listbox (see the keyboard section below).
 const highlighted = ref<string | null>(null)
 watch(typed, (query) => ask(query))
+// Closing keeps the search (`queryToRecall`) and forgets the row: the palette reopens on the
+// last search, selected, so typing replaces it and Enter opens its first row again. It is asked
+// again on opening because the answer may have changed since — a game installed meanwhile —
+// and that answer is also what puts the highlight back on the first row.
 watch(open, (isOpen) => {
-  if (isOpen) return
-  typed.value = ''
+  if (isOpen) {
+    ask(typed.value)
+    return
+  }
+  typed.value = queryToRecall(typed.value)
   highlighted.value = null
 })
 
@@ -168,7 +176,11 @@ const onKeydown = (event: KeyboardEvent) => {
   >
     <!-- The keydown sits on the input because that is where the focus is: the listbox's own
          Enter handler runs first and ignores the modified key, so the two never both fire. -->
-    <CommandInput :placeholder="t('search.placeholder')" @keydown="onKeydown" />
+    <CommandInput
+      :placeholder="t('search.placeholder')"
+      select-on-focus
+      @keydown="onKeydown"
+    />
     <CommandList>
       <CommandEmpty>{{ t('search.empty') }}</CommandEmpty>
       <CommandGroup
