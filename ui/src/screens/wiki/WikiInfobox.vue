@@ -2,7 +2,7 @@
 import { computed } from 'vue'
 import { Badge, BadgeVariant } from '@/components/ui/badge'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import QualityPips from '@/screens/collection/QualityPips.vue'
+import QualityPips from '@/components/data-state/QualityPips.vue'
 import { useMessages } from '@/i18n'
 import { assertNever } from '@/lib/assertNever'
 import { CollectibleTemplate } from '@/lib/ipc/types'
