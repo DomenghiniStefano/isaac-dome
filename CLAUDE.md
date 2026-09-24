@@ -233,6 +233,15 @@ label, and the open item is the honest record of why.
   `Option` and cannot.
 - **No `use …::*`** outside a test module's `use super::*`: checked by `clippy::wildcard_imports`,
   declared with the lint above. `use crate::state::*` was in seven command files until it was.
+- **Test-only API stays out of the release binary.** A crate's `for_tests` module, and anything
+  only tests reach (`ipc::counter_index`, `SearchIndex::len`, `graph::resolve::requirement`, …),
+  sits behind `#[cfg(feature = "test-api")]`. The crate turns it on for its own tests with a
+  self-reference in `[dev-dependencies]` (`ipc = { path = ".", features = ["test-api"] }`), and a
+  crate whose tests use another's does the same for that one. **Checked since 2026-09-24** (card
+  #81, C8) by `no test-api in release` in `scripts/check`, which asks `cargo tree` whether
+  anything in `app`'s normal graph enables it. Something used by production *and* by tests
+  stays `pub(crate)` and gets a feature-gated `pub use` in `lib.rs`, so the tests' imports do
+  not move.
 
 ### Frontend → `docs/frontend-conventions.md`
 

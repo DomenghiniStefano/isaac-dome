@@ -20,7 +20,15 @@ roll = { path = "../roll" }
 png = "0.17"
 ts-rs = "12.0.1"
 
+[features]
+# The `for_tests` module and the API only tests reach, kept out of the release build
+# (card #81, C8). The crate's own tests turn it on through the self-reference below.
+test-api = []
+
 [dev-dependencies]
+wiki = { path = "../wiki", features = ["test-api"] }
+graph = { path = "../graph", features = ["test-api"] }
+ipc = { path = ".", features = ["test-api"] }
 test-support = { path = "../test-support" }
 serde_json = "1"
 
