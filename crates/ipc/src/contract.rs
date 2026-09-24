@@ -69,6 +69,45 @@ fn rewrite_line(line: &str) -> Option<String> {
     Some(pair)
 }
 
+/// The unions whose every member is a bare tag, `{ "kind": "…" }` and nothing else.
+///
+/// That is a fieldless enum serialized with `tag = "kind"`, which CLAUDE.md calls a bug and
+/// not a style: the value is a string, and a tag around it hides that. **By form, like
+/// `to_const_enums`**, so a new one is found the day it is written and no list can forget it.
+/// A union with one data-carrying member is a tagged enum by right and is not named.
+///
+/// Reads one line per declaration, which is how `ts-rs` writes a union without field docs;
+/// a union spread over lines has fields, so it cannot be one of these today.
+pub fn tagged_fieldless_unions(file: &str) -> Vec<&str> {
+    file.lines().filter_map(tagged_fieldless_union).collect()
+}
+
+fn tagged_fieldless_union(line: &str) -> Option<&str> {
+    let rest = line.strip_prefix("export type ")?;
+    let (name, body) = rest.split_once(" = ")?;
+    let body = body.strip_suffix(';')?;
+    body.split('|').all(is_bare_tag).then_some(name)
+}
+
+/// `{ "kind": "x" }`, or `{ "kind": "x", }` for a struct variant with no fields. A `|` inside a
+/// field splits a member into fragments, and a fragment is never a bare tag.
+fn is_bare_tag(member: &str) -> bool {
+    let Some(inner) = member
+        .trim()
+        .strip_prefix('{')
+        .and_then(|m| m.strip_suffix('}'))
+    else {
+        return false;
+    };
+    inner
+        .trim()
+        .trim_end_matches(',')
+        .trim_end()
+        .strip_prefix(r#""kind": ""#)
+        .and_then(|v| v.strip_suffix('"'))
+        .is_some_and(|v| !v.contains('"'))
+}
+
 use ts_rs::{Config, TS};
 
 /// The header of the generated file. It names the command rather than describing the
