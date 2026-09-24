@@ -20,6 +20,11 @@
     13 * var(--spacing-floor-cell) + 12 * var(--spacing-floor-gap)
   );
 
+  /* The narrowest the reasoning beside the grid may be before it takes the line underneath
+     instead: a quotation needs about forty characters of line to be read as a sentence rather
+     than as a column of words. */
+  --spacing-floor-reasoning: 18rem;
+
   /* Our own drawing inside a cell, when the game is not here to lend its own. A fraction of
      the cell above, and it moves with it. */
   --spacing-floor-symbol: 1.0625rem;

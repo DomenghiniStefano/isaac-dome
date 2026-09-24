@@ -8,22 +8,22 @@ import { brushFor, paletteKey, paletteOrder, roomFill } from '@/lib/floor/rooms'
 import type { RoomKindView } from '@/lib/ipc/types'
 import RoomSymbol from './RoomSymbol.vue'
 
-// The brush: fourteen rooms, one per line, beside the grid they paint.
+// The brush: fourteen rooms, one per line, against the grid they paint.
 //
-// It was a single row of swatches above the grid, and it cost the name. Fourteen squares wide
-// leaves no room to write anything, so the name was a hover away and the shortcut was a digit
-// printed on top of the room's own colour — barely there on the Treasure Room's gold. A column
-// has the width the row never had: **the key, the picture and the name on the same line**, and
-// nothing has to be remembered or hovered to be read.
+// **Third arrangement, and the one a drawing program has.** It was a row of swatches above the
+// grid, which had no width for a name; then a card of its own on the far side of the screen,
+// which had the width and put the tool a page away from the canvas — at most widths the card
+// wrapped under the grid, and picking a room meant scrolling past the drawing to reach it. It is
+// a tool rail now, attached to the grid's left edge.
 //
-// It sits on the right because the right-hand column was holding the least of the screen while
-// the grid's own controls crowded the top of the left one. The order is the keys' order, 1 to 9
-// and on, which is only a reading order if there is a direction to read in — down the column
-// now rather than across the row.
+// **A row is exactly a cell tall, with the grid's own gap between rows**, so the rail's lines run
+// level with the grid's and the fourteenth sits beside the controls under it. The swatch is the
+// cell this brush paints at the size it will land, the name beside it, the key at the far end
+// where a menu keeps its shortcuts.
 //
-// **The chosen one is marked outside its own fill**: a cream border on the cream Normal Room is
-// a border nobody sees, and that is the row the screen opens on. An outline with an offset sits
-// on the card behind the row, where one colour reads against all fourteen.
+// **The chosen one is the row filled**, the way the sidebar marks the page you are on. An outline
+// around the swatch was the earlier mark, and a cream edge on the cream Normal Room — the row the
+// screen opens on — is an edge nobody sees; a filled row reads against all fourteen.
 
 defineProps<{
   brush: RoomKindView
@@ -43,22 +43,20 @@ useShortcut((event) => {
 </script>
 
 <template>
-  <div class="flex flex-col gap-1">
+  <div
+    class="grid content-start gap-floor-gap"
+    role="group"
+    :aria-label="t('floor.rooms')"
+  >
     <Button
       v-for="kind in paletteOrder"
       :key="kind"
       :variant="ButtonVariant.Ghost"
-      :size="ButtonSize.Row"
-      class="gap-3"
-      :class="
-        brush === kind ? 'outline-2 -outline-offset-2 outline-highlight' : ''
-      "
+      :size="ButtonSize.Brush"
+      class="aria-pressed:bg-primary aria-pressed:hover:bg-primary"
       :aria-pressed="brush === kind"
       @click="emit('pick', kind)"
     >
-      <Kbd>{{ paletteKey[kind] }}</Kbd>
-      <!-- The swatch is the cell this brush paints, at the size it will be: the colour and the
-           drawing together, so what you pick and what lands on the grid are one picture. -->
       <span
         aria-hidden="true"
         class="grid size-floor-cell shrink-0 place-items-center"
@@ -66,7 +64,10 @@ useShortcut((event) => {
       >
         <RoomSymbol :kind="kind" :url="icons.get(kind) ?? null" />
       </span>
-      <span>{{ t(`floor.room.${kind}`) }}</span>
+      <span class="flex-1 truncate text-left">{{
+        t(`floor.room.${kind}`)
+      }}</span>
+      <Kbd>{{ paletteKey[kind] }}</Kbd>
     </Button>
   </div>
 </template>

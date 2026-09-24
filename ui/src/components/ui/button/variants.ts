@@ -36,6 +36,7 @@ export const ButtonSize = {
   Compact: 'compact',
   Section: 'section',
   Cell: 'cell',
+  Brush: 'brush',
 } as const
 export type ButtonSize = (typeof ButtonSize)[keyof typeof ButtonSize]
 
@@ -106,6 +107,10 @@ export const buttonVariants = cva(
         [ButtonSize.Section]:
           'h-full gap-1.75 px-3.25 [&_svg:not([class*=size-])]:size-3.5',
         [ButtonSize.Cell]: 'size-floor-cell p-0 text-caption',
+        // One room of the Floor palette: exactly a cell tall, so the palette's rows line up with
+        // the grid's beside it, and edgeless, so the swatch is flush with the row's own edge.
+        [ButtonSize.Brush]:
+          'h-floor-cell w-full justify-start gap-2.5 border-0 p-0 pr-1.5 text-row',
       },
     },
     compoundVariants: [
