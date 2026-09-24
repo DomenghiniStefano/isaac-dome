@@ -176,9 +176,13 @@ label, and the open item is the honest record of why.
   key per row and hide the fact that the field is a value, not a discriminator. The moment
   a variant gains a field, the enum becomes tagged — and the TypeScript changes with it, so
   the rule applies to the whole enum, not per variant. **Zero exceptions in the repo**:
-  `ItemKindView`, `OriginView`, `StepsBasis`, `CandidateSource`, `MissingReason`, `StatusView`.
+  `ItemKindView`, `OriginView`, `StepsBasis`, `CandidateSource`, `MissingReason`, `StatusView`,
+  `SearchDiagnostic`, `WantDiagnostic`, `ChallengesDiagnostic`.
   A tagged unit enum showing up again is a bug, not an alternative style — two conventions for the
-  same thing means a TypeScript `switch` silently falls into no branch.
+  same thing means a TypeScript `switch` silently falls into no branch. **Checked since
+  2026-09-24** (card #81, C1) by `no_fieldless_enum_crosses_as_a_tagged_object` in
+  `crates/ipc/tests/contract_shapes.rs`, which reads the generated contract by form: two had come
+  back, `WantDiagnostic` and `ChallengesDiagnostic`, while this paragraph said zero.
 - **`rename_all` on an enum does NOT rename the fields inside its struct variants.** It
   renames the variant names. Fields need `rename_all_fields = "camelCase"` **in addition**,
   otherwise `Active { auto_selected }` comes out as `auto_selected` and TypeScript reads
