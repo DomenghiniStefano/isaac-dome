@@ -146,30 +146,38 @@ pub(crate) fn active_save(app: &AppHandle) -> Result<(ProfileId, Arc<Save>), Ipc
 /// app is open, which is why this is a cache with a rule and not a `OnceLock`.
 #[derive(Default)]
 pub(crate) struct SaveState(pub(crate) ipc::SaveCache<Save>);
-/// The app's database, opened once on first use. If it doesn't open (permissions, corrupt
-/// file, newer schema), what's left is the reason as a variant: the commands return it
-/// instead of retrying on every call. It's a `StoreReason` and not an `IpcError` because
-/// the only variant that would make sense here is `StoreUnavailable` — the type pins that
-/// down, and `plan` puts it straight into the plan without a `match` that would have to
-/// discard impossible variants.
+/// The app's database, opened on first use and kept once it opens. **A failed open is not
+/// kept** (card #80, R2): permissions, a full disk, a file another program holds — "an
+/// expected failure is never cached", as `ResourcesState` already does, or the only way back
+/// from a moment's failure would be a restart. The reason travels as a `StoreReason` and not
+/// an `IpcError` because the only variant that would make sense here is `StoreUnavailable` —
+/// the type pins that down, and `plan` puts it straight into the plan without a `match` that
+/// would have to discard impossible variants.
 #[derive(Default)]
-pub(crate) struct StoreState(OnceLock<Result<Mutex<Store>, ipc::StoreReason>>);
+pub(crate) struct StoreState {
+    store: OnceLock<Mutex<Store>>,
+    /// Held while opening: two commands arriving together would otherwise both run the
+    /// migrations on the same file, and the second would meet the first's lock.
+    opening: Mutex<()>,
+}
 
 impl StoreState {
     pub(crate) fn get_or_open(&self, app: &AppHandle) -> Result<&Mutex<Store>, ipc::StoreReason> {
-        self.0
-            .get_or_init(|| {
-                let dir = app
-                    .path()
-                    .app_data_dir()
-                    .map_err(|_| ipc::StoreReason::DataDirUnknown)?;
-                std::fs::create_dir_all(&dir).map_err(|_| ipc::StoreReason::DataDirNotCreatable)?;
-                Store::open(&dir.join("isaacdome.db"))
-                    .map(Mutex::new)
-                    .map_err(|e| (&e).into())
-            })
-            .as_ref()
-            .map_err(|r| *r)
+        if let Some(store) = self.store.get() {
+            return Ok(store);
+        }
+        let _opening = self.opening.lock().unwrap_or_else(|e| e.into_inner());
+        if let Some(store) = self.store.get() {
+            return Ok(store);
+        }
+        let dir = app
+            .path()
+            .app_data_dir()
+            .map_err(|_| ipc::StoreReason::DataDirUnknown)?;
+        std::fs::create_dir_all(&dir).map_err(|_| ipc::StoreReason::DataDirNotCreatable)?;
+        let store =
+            Store::open(&dir.join("isaacdome.db")).map_err(|e| ipc::StoreReason::from(&e))?;
+        Ok(self.store.get_or_init(|| Mutex::new(store)))
     }
 
     /// The store, open and locked, or the reason there isn't one. Fails only if it
