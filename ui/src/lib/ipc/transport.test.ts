@@ -2,6 +2,7 @@ import { beforeEach, describe, expect, it } from 'vitest'
 import { Command } from '../constants/commands'
 import { FixtureScenario, answer, resetFixtures } from './fixtures'
 import { call } from './transport'
+import type { CommandName } from './transport'
 import type { MarksMatrix, SetupState } from './types'
 
 beforeEach(() => resetFixtures())
@@ -13,8 +14,10 @@ describe('call, outside Tauri in development', () => {
   })
 
   it('rejects a command no fixture answers instead of resolving undefined', async () => {
-    // Plan has no fixture until sub-project 3.3b; unlock gained one with 3.3a.
-    await expect(call(Command.Plan)).rejects.toThrow(Command.Plan)
+    // Every real command has a fixture since card #80 (`fixtures/coverage.test.ts` holds
+    // them to it), so the refusal is shown on a name no command has.
+    const unknown = 'no_such_command' as CommandName
+    await expect(call(unknown)).rejects.toThrow(unknown)
   })
 })
 

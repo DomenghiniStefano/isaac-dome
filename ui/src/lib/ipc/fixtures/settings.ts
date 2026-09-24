@@ -90,3 +90,10 @@ export const setAutostartAnswer = (on: boolean): AutostartView => {
   }
   return autostartAnswer()
 }
+
+// The auto-update switch, which the fixture carried and nothing could write (card #80,
+// item 10).
+export const setAutoUpdateAnswer = (on: boolean): Settings => {
+  autoUpdate = on
+  return settingsAnswer()
+}
