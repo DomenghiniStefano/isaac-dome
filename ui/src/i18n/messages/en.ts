@@ -134,6 +134,8 @@ export const en: MessageSchema = {
     startRoomMissing: 'The start room is missing',
     cellCandidate: '{cell} — {target}, place {rank}',
     move: {
+      title: 'Move the drawing',
+      note: 'The arrows shift the whole floor you drew one cell in that direction, without redrawing it. They are for when the start room ended up too close to an edge and the map does not fit. A grey arrow means a room is against that edge: moving further would push it off the grid.',
       left: 'Move everything left',
       up: 'Move everything up',
       down: 'Move everything down',
@@ -142,6 +144,44 @@ export const en: MessageSchema = {
     rank: {
       title: 'What a colour means',
       note: 'The fuller the square, the likelier the place. Past the third the rules say no more.',
+    },
+    // What each rule of `crates/floor/rules/placement.json` says, keyed by its id in camel case
+    // (`lib/floor/ruleText.ts`). In English it is the wiki's quote, word for word.
+    ruleText: {
+      secretNeighbours:
+        'Secret Rooms are equally as likely to be in a valid location with 3 neighbors, as it is with 4 neighbors.',
+      secretNeighboursTwo:
+        '2 neighbor locations are rare but possible, even when there are locations with 3+ neighbors available.',
+      secretNeighboursOne:
+        '1 neighbor locations can only happen if there are no valid 3+ neighbor locations, and are very rare.',
+      secretForbiddenNeighbours:
+        'Secret Rooms can exist next to all types of rooms except Boss Rooms, Super Secret Rooms, and other Secret Rooms',
+      superSecretDeadEnd:
+        'Super Secret Rooms are only located next to one other room',
+      superSecretNeighbourNotSpecial:
+        "this room can't be a Special Room; in other words, it is placed on one of the floor's dead ends, like any other Special Room",
+      superSecretNotNextToSecret: 'cannot be connected to the Secret Room',
+      superSecretSecondLongest:
+        'Super Secret Rooms replace the dead-end room that would require the 2nd most rooms walked through from the start room to access',
+      ultraSecretConnections:
+        'Ultra Secret rooms are most likely generated in spots that connect to 3+ non-red rooms through its adjacent red rooms (different squares in L rooms count as 2).',
+      ultraSecretConnectionsTwo:
+        'They can be connected to 2 or 1 non-red rooms through its adjacent red rooms, but a specific 3+ room location is 11.5x more likely than a specific 2 room location',
+      ultraSecretConnectionsOne:
+        'If there is no 3+ room location available then a specific 2 room location is 11.5x more likely than a specific 1 room location.',
+      ultraSecretNotConnected:
+        'Ultra Secret Rooms are special rooms that are not connected to any other room on the map directly.',
+      ultraSecretRedRoomInvalid:
+        "Ultra Secret Rooms can't be connected to red rooms that connect to Secret Rooms, Super Secret Rooms, or Curse Rooms, and can't be in a location where any of its adjacent red rooms are invalid, such as next to a Boss Room",
+      ultraSecretShapes:
+        "next to the sides of narrow rooms, or any room that can't have a red room opened on that specific side, however locations on the 13x13 border where a red room would normally open to an I AM ERROR room are allowed",
+    },
+    // Why the grid cannot judge a rule, for the rules that can reach the screen unjudged.
+    ruleNote: {
+      superSecretSecondLongest:
+        'There is no start room: without one, the rooms walked through cannot be counted.',
+      ultraSecretShapes:
+        'It depends on the shape of the room behind that side, and every room on this grid is a single square: L-shaped and narrow rooms cannot be drawn, so this rule cannot be judged.',
     },
     unresolved: 'What the grid cannot judge',
     none: 'No cell the rules allow, with what you have drawn so far.',
