@@ -94,6 +94,31 @@ fn flags_an_unexpected_kind_but_keeps_going() {
 }
 
 #[test]
+fn a_missing_section_flags_only_the_one_that_took_its_place() {
+    // Kind 2 is absent: 3 arrives where 2 was expected, and 4 then follows 3 as it should.
+    // Counting on from the expected number flagged 4 as well, and every section after it
+    // (card #80, P11a).
+    let bytes = build(
+        0,
+        &[(1, 1, &[1]), (3, 1, &7u32.to_le_bytes()), (4, 1, &[1])],
+    );
+
+    let save = Save::parse(&bytes).unwrap();
+    let unexpected: Vec<_> = save
+        .diagnostics
+        .iter()
+        .filter_map(|d| match d {
+            Diagnostic::UnexpectedKind {
+                expected, found, ..
+            } => Some((*expected, *found)),
+            _ => None,
+        })
+        .collect();
+    assert_eq!(unexpected, vec![(2, 3)]);
+    assert_eq!(save.sections.len(), 3);
+}
+
+#[test]
 fn flags_trailing_bytes_before_checksum() {
     // A 2-byte section, then 3 leftover bytes, then the checksum.
     let bytes = build(0, &[(1, 2, &[0, 0, 9, 9, 9])]); // count=2 but 5 bytes of data
