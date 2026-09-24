@@ -102,16 +102,15 @@ export const buttonVariants = cva(
           'size-icon-compact [&_svg:not([class*=size-])]:size-3',
         [ButtonSize.Micro]:
           'size-3.5 border-0 p-0 [&_svg:not([class*=size-])]:size-2',
-        [ButtonSize.Row]:
-          'h-auto w-full justify-start px-2.75 py-1.75 text-row',
+        [ButtonSize.Row]: 'h-auto w-full justify-start px-3 py-2 text-row',
         // Inline, not inline-flex: in a flex box an icon's bottom edge becomes the baseline
         // and lifts the label off the line of the surrounding text.
         [ButtonSize.Inline]: 'inline h-auto p-0 align-baseline text-row',
         [ButtonSize.Window]: 'h-full w-window-control border-0',
-        [ButtonSize.Compact]: 'h-7 gap-1.75 px-2.25 text-caption',
+        [ButtonSize.Compact]: 'h-7 gap-2 px-2 text-caption',
         // A navbar section: the navbar's full height.
         [ButtonSize.Section]:
-          'h-full gap-1.75 px-3.25 [&_svg:not([class*=size-])]:size-3.5',
+          'h-full gap-2 px-3 [&_svg:not([class*=size-])]:size-3.5',
         [ButtonSize.Cell]: 'size-floor-cell p-0 text-caption',
         // One room of the Floor palette: exactly a cell tall, so the palette's rows line up with
         // the grid's beside it, and edgeless, so the swatch is flush with the row's own edge.

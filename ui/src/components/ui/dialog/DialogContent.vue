@@ -46,7 +46,7 @@ const { t } = useMessages()
       v-bind="{ ...$attrs, ...forwarded }"
       :class="
         cn(
-          'fixed top-1/2 left-1/2 z-50 flex w-full max-w-md -translate-x-1/2 -translate-y-1/2 animate-sheet-rise flex-col border border-input bg-sheet text-foreground',
+          'fixed top-1/2 left-1/2 z-overlay flex w-full max-w-md -translate-x-1/2 -translate-y-1/2 animate-sheet-rise flex-col border border-input bg-sheet text-foreground',
           props.class,
         )
       "

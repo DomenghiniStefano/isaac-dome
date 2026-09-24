@@ -89,7 +89,7 @@ const open = (page: WikiPageRef, event: MouseEvent) => {
           class="size-6 text-foreground-soft"
         />
       </span>
-      <div class="relative flex min-w-0 flex-1 flex-col gap-0.75">
+      <div class="relative flex min-w-0 flex-1 flex-col gap-1">
         <h1 class="text-title text-foreground">
           {{ t(wikiCategoryTitle[category]) }}
         </h1>

@@ -71,7 +71,7 @@ const onKeydown = (e: KeyboardEvent) => {
          outside the aside, and clipping it would cut the tab in half. -->
     <div class="flex min-w-0 flex-1 flex-col overflow-hidden">
       <div
-        class="flex items-center sidebar-collapsed-center gap-2 px-2.75 pt-2.5 pb-2.25"
+        class="flex items-center sidebar-collapsed-center gap-2 px-3 pt-2.5 pb-2"
       >
         <span class="shrink-0 text-highlight [&_svg]:size-3.5"
           ><slot name="icon"
@@ -97,7 +97,7 @@ const onKeydown = (e: KeyboardEvent) => {
       :aria-valuemax="SidebarWidth.Max"
       :aria-valuenow="width"
       :data-resizing="resizing !== null"
-      class="sidebar-collapsed-hidden w-1.25 shrink-0 cursor-col-resize hover:bg-input data-[resizing=true]:bg-input"
+      class="sidebar-collapsed-hidden w-1 shrink-0 cursor-col-resize hover:bg-input data-[resizing=true]:bg-input"
       @pointerdown="onPointerDown"
       @pointermove="onPointerMove"
       @pointerup="onPointerUp"

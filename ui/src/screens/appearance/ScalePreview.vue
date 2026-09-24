@@ -25,7 +25,7 @@ const cell: Cell = {
 <template>
   <!-- Pinned at the top, like Discord's: the slider and what it does have to be on screen
        together, so the page scrolls under this. -->
-  <Card class="sticky top-0 z-10">
+  <Card class="sticky top-0 z-raised">
     <CardHeader class="flex-wrap">
       <CardTitle>{{ t('appearance.preview') }}</CardTitle>
       <span class="text-caption text-subtle-foreground">{{

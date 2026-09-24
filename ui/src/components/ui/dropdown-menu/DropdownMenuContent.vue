@@ -39,7 +39,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
       v-bind="{ ...$attrs, ...forwarded }"
       :class="
         cn(
-          'z-50 flex max-w-(--reka-dropdown-menu-content-available-width) min-w-48 animate-panel-rise flex-col border border-input bg-popover py-1 text-popover-foreground',
+          'z-overlay flex max-w-(--reka-dropdown-menu-content-available-width) min-w-48 animate-panel-rise flex-col border border-input bg-popover py-1 text-popover-foreground',
           props.class,
         )
       "

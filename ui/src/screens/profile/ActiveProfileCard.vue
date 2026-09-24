@@ -59,7 +59,7 @@ const view = computed(() => {
       >
         {{ view.short }}
       </div>
-      <div class="flex min-w-0 flex-1 flex-col gap-2.75">
+      <div class="flex min-w-0 flex-1 flex-col gap-3">
         <span class="text-heading text-foreground">{{ view.title }}</span>
         <div class="flex flex-wrap gap-5">
           <ProfileFact
@@ -77,7 +77,7 @@ const view = computed(() => {
           >{{ t('profile.active.foundIn') }} {{ view.source }}</span
         >
       </div>
-      <div class="flex shrink-0 flex-col gap-1.75">
+      <div class="flex shrink-0 flex-col gap-2">
         <Button :variant="ButtonVariant.Secondary" @click="emit('change')">
           <SaveIcon />{{ t('profile.active.change') }}
         </Button>

@@ -109,14 +109,14 @@ const barTone = (tally: Tally): ProgressTone =>
        edge, the way a banded table wants. -->
   <div :style="columns" class="flex w-max min-w-full flex-col pb-3">
     <div
-      class="sticky top-0 z-20 grid grid-cols-matrix items-end justify-items-center gap-0.5 bg-card pt-2.5 pb-1.5"
+      class="sticky top-0 z-raised-header grid grid-cols-matrix items-end justify-items-center gap-0.5 bg-card pt-2.5 pb-1.5"
     >
       <!-- The corner: above the pinned column and above the pinned row, so neither slides
            over it. It takes the **whole** header's height and not just its label's, or the
            boss names scroll under the part of the name column it leaves uncovered — which
            is what they did, and it reads as the column having come unstuck. -->
       <span
-        class="sticky left-0 z-30 flex h-matrix-header items-end justify-self-stretch bg-card pl-3 text-label text-subtle-foreground"
+        class="sticky left-0 z-raised-corner flex h-matrix-header items-end justify-self-stretch bg-card pl-3 text-label text-subtle-foreground"
         >{{ t('completion.grid.character') }}</span
       >
       <div
@@ -206,7 +206,7 @@ const barTone = (tally: Tally): ProgressTone =>
         <div
           :class="
             cn(
-              'sticky left-0 z-10 flex min-w-0 items-center gap-2 justify-self-stretch py-0.5 pr-2 pl-3 group-hover:bg-row-hover',
+              'sticky left-0 z-raised flex min-w-0 items-center gap-2 justify-self-stretch py-0.5 pr-2 pl-3 group-hover:bg-row-hover',
               entry.index % 2 === 1 ? 'bg-row-alt' : 'bg-card',
             )
           "
@@ -270,7 +270,7 @@ const barTone = (tally: Tally): ProgressTone =>
       class="mt-2 grid grid-cols-matrix items-center justify-items-center gap-0.5 border-t border-border pt-1.5"
     >
       <span
-        class="sticky left-0 z-10 justify-self-stretch bg-card pr-1.5 pl-3 text-label text-highlight"
+        class="sticky left-0 z-raised justify-self-stretch bg-card pr-1.5 pl-3 text-label text-highlight"
         >{{ t('completion.grid.columnTotals') }}</span
       >
       <span
@@ -288,7 +288,7 @@ const barTone = (tally: Tally): ProgressTone =>
       class="grid grid-cols-matrix items-center justify-items-center gap-0.5 pt-1"
     >
       <span
-        class="sticky left-0 z-10 justify-self-stretch bg-card pr-1.5 pl-3 text-label text-subtle-foreground"
+        class="sticky left-0 z-raised justify-self-stretch bg-card pr-1.5 pl-3 text-label text-subtle-foreground"
         >{{ t('completion.grid.columnTotalsHard') }}</span
       >
       <span

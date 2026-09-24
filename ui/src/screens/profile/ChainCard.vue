@@ -55,7 +55,7 @@ const detail = (row: ChainRow): string => {
       <div
         v-for="row in rows"
         :key="row.link"
-        class="flex items-center gap-3 border border-hairline bg-data px-2.75 py-2.25"
+        class="flex items-center gap-3 border border-hairline bg-data px-3 py-2"
       >
         <span class="w-30 shrink-0 text-row text-foreground">{{
           t(chainLinkLabel[row.link])

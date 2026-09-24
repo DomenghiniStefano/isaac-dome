@@ -18,8 +18,7 @@ defineProps<{ target: TargetView; step: RankStep; rank: number }>()
   <span aria-hidden="true" class="absolute inset-0" :class="targetAura[target]">
     <span
       class="absolute inset-x-0 bottom-0"
-      :class="targetFill[target]"
-      :style="{ height: levelHeight[step] }"
+      :class="[targetFill[target], levelHeight[step]]"
     />
     <span
       class="absolute inset-0 grid place-items-center text-floor-rank-foreground tabular-nums text-shadow-floor-rank"

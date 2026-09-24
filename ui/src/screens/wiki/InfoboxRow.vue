@@ -22,7 +22,7 @@ const { t } = useMessages()
        column beside the page's text, and a 128px label in a 272px column left the values
        wrapping every second row. Stacked, the value gets the whole width at every size. -->
   <div
-    class="flex flex-col gap-0.75 border-b border-hairline pb-2 last:border-b-0 last:pb-0"
+    class="flex flex-col gap-1 border-b border-hairline pb-2 last:border-b-0 last:pb-0"
   >
     <dt class="text-label text-subtle-foreground">{{ label }}</dt>
     <dd class="min-w-0 text-row">
