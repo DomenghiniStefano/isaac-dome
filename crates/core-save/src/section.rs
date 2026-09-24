@@ -89,7 +89,7 @@ impl Kind {
 }
 
 /// A section read from the file: header + raw data bytes.
-#[derive(Debug, Clone, Serialize)]
+#[derive(Debug, Clone)]
 pub struct Section {
     pub kind: Kind,
     pub count: u32,
