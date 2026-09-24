@@ -2,8 +2,8 @@
 import { HelpTip } from '@/components/ui/tooltip'
 import { useMessages } from '@/i18n'
 import { RankStep } from '@/lib/floor/cellView'
-import { levelHeight, targetAura, targetFill } from '@/lib/floor/targets'
 import type { TargetView } from '@/lib/ipc/types'
+import FloorRank from './FloorRank.vue'
 
 // What the fill means, a hover away.
 //
@@ -18,6 +18,10 @@ import type { TargetView } from '@/lib/ipc/types'
 // width from the drawing beside it. **The squares came into the tooltip with it**, because
 // three fills and a sentence about fills belong in one place — the sentence alone would ask
 // you to remember which square it was talking about.
+//
+// **The mark moved from under the grid to the reasoning's title** — under the grid it stood
+// between the arrows and the bin, among controls that change the drawing, while what it explains
+// is the ranked list: its squares are the squares that list opens each row with.
 //
 // They are the cell itself, at the cell's own size and in the hue of the target being shown:
 // a legend drawn smaller, or in some other colour, explains a screen nobody is looking at.
@@ -38,17 +42,11 @@ const steps = [RankStep.Third, RankStep.Second, RankStep.First]
           :key="step"
           class="relative size-floor-cell bg-floor-empty text-caption"
         >
-          <span class="absolute inset-0" :class="targetAura[shown]">
-            <span
-              class="absolute inset-x-0 bottom-0"
-              :class="targetFill[shown]"
-              :style="{ height: levelHeight[step] }"
-            />
-            <span
-              class="absolute inset-0 grid place-items-center text-floor-rank-foreground tabular-nums text-shadow-floor-rank"
-              >{{ steps.length - place }}</span
-            >
-          </span>
+          <FloorRank
+            :target="shown"
+            :step="step"
+            :rank="steps.length - place"
+          />
         </span>
       </span>
       <span>{{ t('floor.rank.note') }}</span>
