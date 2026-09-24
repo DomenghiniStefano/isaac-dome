@@ -125,9 +125,14 @@ impl run::ItemKinds for CatalogKinds<'_> {
         match collectible(self.0, id).map(|i| i.kind) {
             Some(ItemKind::Active) => run::ItemKind::Active,
             Some(ItemKind::Familiar) => run::ItemKind::Familiar,
+            Some(ItemKind::Passive) => run::ItemKind::Passive,
             // An item this catalog does not know accumulates rather than replacing: reading an
             // unknown id as an active would silently drop whatever the player was carrying.
-            _ => run::ItemKind::Passive,
+            None => run::ItemKind::Passive,
+            // `collectible` looks up the three collectible kinds only, so a trinket cannot come
+            // back here; named rather than folded into a wildcard (card #80, item 12), so a new
+            // kind of item has to be decided here instead of counting as a passive in silence.
+            Some(ItemKind::Trinket) => run::ItemKind::Passive,
         }
     }
 }
