@@ -21,6 +21,28 @@ pub const BOSSES: [&str; 12] = [
     "The Beast",
 ];
 
+/// The same twelve columns as the value the UI translates, in the order of [`BOSSES`] (card
+/// #81, V3: a drawn mark crossed as the English name). The assertion below ties the two
+/// lengths, so a thirteenth column added to one and not the other does not compile.
+pub(crate) const MARK_COLUMNS: [crate::graph::MarkColumnView; 12] = {
+    use crate::graph::MarkColumnView as C;
+    [
+        C::MomsHeart,
+        C::Isaac,
+        C::Satan,
+        C::BossRush,
+        C::BlueBaby,
+        C::TheLamb,
+        C::MegaSatan,
+        C::Greed,
+        C::Hush,
+        C::Delirium,
+        C::Mother,
+        C::TheBeast,
+    ]
+};
+const _: () = assert!(MARK_COLUMNS.len() == BOSSES.len());
+
 /// Which block family a row belongs to. Defined with the layout, because that is what it
 /// describes; re-exported here because it crosses the IPC as part of a `CharacterRow`.
 pub use core_save::marks::CharacterGroup;

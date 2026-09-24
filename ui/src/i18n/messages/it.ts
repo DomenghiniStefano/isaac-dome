@@ -226,7 +226,7 @@ export const it = {
       noStartRoom:
         'Segna la stanza di partenza. Senza, la regola sui passi dalla partenza non si può leggere, e la Super segreta resta giudicata solo a metà.',
       rulesUnreadable:
-        'Le regole di piazzamento non si sono caricate: {reason}.',
+        'Le regole di piazzamento non si sono caricate. È un difetto della build, non del tuo piano.',
       gridMalformed:
         'La griglia arrivata non è un piano: {cells} celle invece di 169.',
     },
