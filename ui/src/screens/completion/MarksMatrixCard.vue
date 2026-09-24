@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { vScrollMemory } from '@/directives/scrollMemory'
 import type { HTMLAttributes } from 'vue'
 import { computed } from 'vue'
 import MarksGrid from '@/components/marks/MarksGrid.vue'
@@ -32,7 +33,10 @@ const legendArt = computed(() => markArtOf(props.matrix.art[0]))
          its name column. `p-0` is not a tidy-up — a padding here would be scrolled past,
          and the rows would show in the strip above the pinned header. The grid holds its
          own inset instead. -->
-    <CardContent class="min-h-0 flex-1 overflow-auto p-0">
+    <CardContent
+      v-scroll-memory="'matrix'"
+      class="min-h-0 flex-1 overflow-auto p-0"
+    >
       <MarksGrid :matrix="matrix" />
     </CardContent>
   </Card>
