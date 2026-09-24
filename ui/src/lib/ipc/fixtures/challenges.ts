@@ -1,4 +1,4 @@
-import { Style } from '../types'
+import { ChallengesDiagnostic, Style } from '../types'
 import type { ChallengeRow, ChallengesView, Inline } from '../types'
 
 // Development only. The challenges are hand-written — no recorded payload carries them, and
@@ -107,6 +107,6 @@ export const challengesUnread = (): ChallengesView => {
       state: { kind: 'unknown' as const },
     })),
     totals: { slots: 0, challenges: rows.length, done: 0 },
-    diagnostics: [{ kind: 'noChallengesSection' }],
+    diagnostics: [ChallengesDiagnostic.NoChallengesSection],
   }
 }

@@ -81,8 +81,9 @@ pub enum ChallengeStateView {
     Unknown,
 }
 
-#[derive(Debug, Clone, PartialEq, Eq, Serialize, ts_rs::TS)]
-#[serde(tag = "kind", rename_all = "camelCase")]
+/// What the list could not take into account. Fieldless: a bare string.
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, ts_rs::TS)]
+#[serde(rename_all = "camelCase")]
 pub enum ChallengesDiagnostic {
     NoCatalog,
     NoChallengesSection,

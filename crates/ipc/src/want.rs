@@ -68,12 +68,9 @@ pub enum WantState {
     NoProfile,
 }
 
-#[derive(Debug, Clone, PartialEq, Eq, Serialize, ts_rs::TS)]
-#[serde(
-    tag = "kind",
-    rename_all = "camelCase",
-    rename_all_fields = "camelCase"
-)]
+/// Why the answer is empty or partial. Fieldless: a bare string.
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, ts_rs::TS)]
+#[serde(rename_all = "camelCase")]
 pub enum WantDiagnostic {
     NoCatalog,
     NoProfile,

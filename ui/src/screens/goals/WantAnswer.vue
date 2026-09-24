@@ -9,7 +9,7 @@ import { rowModel } from '@/lib/plan/rowModel'
 import { WantBlockKind } from '@/lib/graph/wantBlocks'
 import type { WantBlock } from '@/lib/graph/wantBlocks'
 import { nodeSlot } from '@/lib/graph/unlockFacets'
-import type { WantDiagnostic } from '@/lib/ipc/types'
+import { WantDiagnostic } from '@/lib/ipc/types'
 import type { MessageKey } from '@/i18n/messageKey'
 import type { MessageSchema } from '@/i18n/messages/it'
 import type { TabLocation } from '@/router/routeTable'
@@ -37,11 +37,11 @@ const heading: Record<WantBlockKind, Message> = {
   [WantBlockKind.NoProfile]: 'want.noProfile',
 }
 
-const bannerText: Record<WantDiagnostic['kind'], Message> = {
-  noCatalog: 'want.diagnostics.noCatalog',
-  noProfile: 'want.diagnostics.noProfile',
-  nothingUnlocks: 'want.diagnostics.nothingUnlocks',
-  notUnlockable: 'want.diagnostics.notUnlockable',
+const bannerText: Record<WantDiagnostic, Message> = {
+  [WantDiagnostic.NoCatalog]: 'want.diagnostics.noCatalog',
+  [WantDiagnostic.NoProfile]: 'want.diagnostics.noProfile',
+  [WantDiagnostic.NothingUnlocks]: 'want.diagnostics.nothingUnlocks',
+  [WantDiagnostic.NotUnlockable]: 'want.diagnostics.notUnlockable',
 }
 </script>
 
@@ -49,7 +49,7 @@ const bannerText: Record<WantDiagnostic['kind'], Message> = {
   <div class="flex flex-col gap-4">
     <Alert v-if="banner !== null">
       <InfoIcon />
-      <AlertDescription>{{ t(bannerText[banner.kind]) }}</AlertDescription>
+      <AlertDescription>{{ t(bannerText[banner]) }}</AlertDescription>
     </Alert>
     <!-- One block per way in. Two achievements granting the same thing is two blocks, each
          with its own button: neither is hidden and neither is chosen for you. -->
