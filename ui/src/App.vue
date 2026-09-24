@@ -44,7 +44,8 @@ import {
   watchWindowFocus,
   windowSize,
 } from '@/lib/window/appWindow'
-import { AppEvent, watchAppEvents } from '@/lib/window/appEvents'
+import { appEventHandlers } from '@/lib/window/appEventHandlers'
+import { watchAppEvents } from '@/lib/window/appEvents'
 import {
   setSidebarCollapsed,
   setSidebarWidth,
@@ -60,6 +61,7 @@ import { useQueueStore } from '@/stores/queue'
 import { useSettingsStore } from '@/stores/settings'
 import { tabLabel, tabLocation } from '@/stores/tabModel'
 import { useTabsStore } from '@/stores/tabs'
+import { useLiveStore, useRunsStore } from '@/stores/views'
 import { useWikiStore } from '@/stores/wiki'
 
 const router = useRouter()
@@ -86,31 +88,16 @@ onMounted(async () => {
   stopWatchingFocus = await watchWindowFocus((value) => {
     focused.value = value
   })
-  // A window never learns of a write it did not make, so it is told. The profile carries
-  // through to every screen that reads the save (`useOnActiveProfile`); the queue store is
-  // read again wherever it is mounted.
-  stopAppEvents = await watchAppEvents({
-    // One answer settles every window: a picker this window opened on purpose closes when
-    // another window chooses, because the settled profile is the app's and not the window's.
-    [AppEvent.ProfileChanged]: () => {
-      profile.stopPicking()
-      void profile.load()
-    },
-    [AppEvent.SettingsChanged]: () => void settings.load(),
-    [AppEvent.PlanChanged]: () => void queue.load(),
-    // The run archive has no screen yet (M4 keeps `Live` and `Runs` placeholders on purpose):
-    // the only thing that draws it is the development-only verification page, which listens
-    // for itself. The entry stays so that every event is accounted for here.
-    [AppEvent.RunsChanged]: () => undefined,
-    // The Roll screen listens for this one itself (`RollScreen.vue`'s own `watchAppEvent`),
-    // so that two windows agree through a draw made in either. The entry stays here so that
-    // every event is accounted for in this one registry, exactly like `RunsChanged` above.
-    [AppEvent.RollChanged]: () => undefined,
-    // The Updates screen listens for this one itself, like the Roll screen: a download tells
-    // every window a hundred times, and a window with that screen closed has nothing to draw
-    // with it. The entry stays here so that every event is accounted for in this one registry.
-    [AppEvent.UpdateChanged]: () => undefined,
-  })
+  // What each event does is `appEventHandlers`' to say, where it is tested.
+  stopAppEvents = await watchAppEvents(
+    appEventHandlers({
+      profile,
+      settings,
+      queue,
+      runs: useRunsStore(),
+      live: useLiveStore(),
+    }),
+  )
 })
 onUnmounted(() => {
   stopWatchingFocus?.()
