@@ -49,6 +49,11 @@ fn no_fieldless_enum_crosses_as_a_tagged_object() {
     // written. The recognizer's own cases are in `tests/contract.rs`.
     let contract = ipc::contract::render();
 
+    // The vacuity guard: an empty list proves nothing unless the recognizer still reads this
+    // generator's output. `WantState`, `ChallengeStateView` and others hold bare members beside
+    // data-carrying ones; a `ts-rs` release that wrote the tag in another form would take this
+    // count to zero instead of leaving the test green on nothing.
+    assert!(ipc::contract::bare_tag_members(&contract) > 0);
     assert_eq!(
         ipc::contract::tagged_fieldless_unions(&contract),
         Vec::<&str>::new()
