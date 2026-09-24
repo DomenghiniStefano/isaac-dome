@@ -106,7 +106,7 @@ fn main() {
         .map(|n| remote.join(n))
         .collect();
 
-    let out = PathBuf::from("samples/logs/probe.tsv");
+    let out = test_support::logs_dir().join("probe.tsv");
     let mut report = std::fs::File::create(&out).expect("the probe writes its own report");
     let started = Instant::now();
     let mut prints: BTreeMap<PathBuf, u64> = BTreeMap::new();

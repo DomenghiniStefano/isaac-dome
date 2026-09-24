@@ -5,11 +5,10 @@ use std::collections::HashSet;
 
 use unpack::Archive;
 
-/// The repo's `samples/` folder: `packed` is a junction to the game's folder there.
+/// The repo's `samples/` folder, through `test-support`: `packed` is a junction to the
+/// game's folder there.
 fn samples(name: &str) -> std::path::PathBuf {
-    std::path::Path::new(env!("CARGO_MANIFEST_DIR"))
-        .join("../../samples")
-        .join(name)
+    test_support::samples_dir().join(name)
 }
 
 fn main() {

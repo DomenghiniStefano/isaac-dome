@@ -94,31 +94,22 @@ fn counters(s: &Save) -> Vec<u32> {
 }
 
 fn main() {
-    let dir = std::path::Path::new("samples");
-    let Ok(entries) = std::fs::read_dir(dir) else {
-        eprintln!("skip: no samples/ directory");
-        return;
-    };
-    let mut files: Vec<String> = entries
-        .filter_map(|e| e.ok())
-        .map(|e| e.file_name().to_string_lossy().into_owned())
-        .filter(|n| {
-            n.len() == 8 + 1 + "rep+persistentgamedata1.dat".len()
-                && n.as_bytes()[8] == b'.'
-                && n[..8].chars().all(|c| c.is_ascii_digit())
-                && n.ends_with("rep+persistentgamedata1.dat")
-        })
-        .collect();
-    files.sort();
-    files.dedup_by(|a, b| a[..8] == b[..8]);
+    // The series through `test-support`, which declares every file it hands out and uses the
+    // one date filter the repo has (`is_dated`): a looser one once let a same-day
+    // `20260912-pre.` snapshot win the dedup.
+    let files = test_support::dated_series("rep+persistentgamedata1.dat");
     if files.len() < 2 {
         eprintln!("skip: fewer than two dated rep+ samples");
         return;
     }
 
     let mut prev: Option<(String, Vec<u32>)> = None;
-    for f in files {
-        let Ok(bytes) = std::fs::read(dir.join(&f)) else {
+    for path in files {
+        let f = path
+            .file_name()
+            .map(|n| n.to_string_lossy().into_owned())
+            .unwrap_or_default();
+        let Ok(bytes) = std::fs::read(&path) else {
             continue;
         };
         let Ok(save) = Save::parse(&bytes) else {
