@@ -98,8 +98,10 @@ const accessibleName = computed(() => {
       v-if="online"
       :class="
         cn(
-          'absolute right-0.75 size-1.5',
-          symbol ? 'bottom-0.75 bg-background' : 'top-0.75 bg-highlight',
+          'absolute right-mark-inset size-1.5',
+          symbol
+            ? 'bottom-mark-inset bg-background'
+            : 'top-mark-inset bg-highlight',
         )
       "
     />

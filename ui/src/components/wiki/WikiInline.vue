@@ -69,7 +69,7 @@ const refs = computed(() =>
         v-if="refs[index]?.icon"
         :src="refs[index]?.icon ?? undefined"
         alt=""
-        class="mr-0.75 inline-block size-4 align-text-bottom pixelated"
+        class="mr-1 inline-block size-4 align-text-bottom pixelated"
       />{{ token.label }}
     </Button>
     <span
@@ -84,7 +84,7 @@ const refs = computed(() =>
         v-if="refs[index]?.icon"
         :src="refs[index]?.icon ?? undefined"
         alt=""
-        class="mr-0.75 inline-block size-4 align-text-bottom pixelated"
+        class="mr-1 inline-block size-4 align-text-bottom pixelated"
       />{{ token.label }}</span
     >
     <span
@@ -95,7 +95,7 @@ const refs = computed(() =>
     <template v-else-if="token.kind === 'edition'">
       <span
         v-if="token.only.length"
-        class="border border-secondary-edge px-1.25 text-label text-highlight"
+        class="border border-secondary-edge px-1 text-label text-highlight"
         >{{ editionLabel(token.only) }}</span
       >
       <WikiInline

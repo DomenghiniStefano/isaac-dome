@@ -21,7 +21,7 @@ const delegatedProps = reactiveOmit(props, 'class')
     v-bind="delegatedProps"
     :class="
       cn(
-        'group flex w-full cursor-pointer items-center gap-2.25 bg-muted px-3 py-2.25 text-left text-caption text-foreground-soft data-[state=open]:border-b data-[state=open]:border-secondary data-[state=open]:text-highlight',
+        'group flex w-full cursor-pointer items-center gap-2 bg-muted px-3 py-2 text-left text-caption text-foreground-soft data-[state=open]:border-b data-[state=open]:border-secondary data-[state=open]:text-highlight',
         props.class,
       )
     "

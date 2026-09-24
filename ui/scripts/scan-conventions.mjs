@@ -188,6 +188,42 @@ const LAYER_BANS = {
 // `'@/<layer>/…'` in a static or dynamic import; a `?` in the path (`?raw`) never matches.
 const LAYER_IMPORT = /(?:\bfrom\s+|\bimport\s*\(\s*)'@\/([a-z]+)\/[^'?]*'/g
 
+// Card #81, C5. A class starts after whitespace, a quote, a backtick or a variant's colon.
+const CLASS_START = String.raw`(?:^|[\s"'\x60:])`
+const CLASS_END = String.raw`(?=[\s"'\x60]|$)`
+// `gap-0.75`, `-mt-2.25`: a quarter of the 4px grid. Half steps stay allowed (the conventions).
+const QUARTER_STEP = new RegExp(
+  `${CLASS_START}-?[a-z]+(?:-[a-z]+)*-\\d+\\.(?:25|75)${CLASS_END}`,
+  'm',
+)
+// `z-10`: a stacking order with no name. The names live in `assets/theme/layers.css`.
+const BARE_Z = new RegExp(`${CLASS_START}-?z-\\d+${CLASS_END}`, 'm')
+// `shadow-<name>` exists only if `--shadow-<name>` is declared: `--shadow-*` is `initial`, so an
+// undeclared one draws nothing and says nothing. `text-shadow-…` is its own namespace and the
+// `-` in front of it keeps it out of this pattern.
+const SHADOW_CLASS = new RegExp(
+  `${CLASS_START}shadow-([a-z0-9-]+)${CLASS_END}`,
+  'gm',
+)
+const DECLARED_SHADOWS = new Set(
+  walk(join(SRC, 'assets'))
+    .filter((f) => f.endsWith('.css'))
+    .flatMap((f) => [
+      ...readFileSync(f, 'utf8').matchAll(/--shadow-([a-z0-9-]+)\s*:/g),
+    ])
+    .map(([, name]) => name),
+)
+// A string that reads a token — `'var(--floor-level-first)'`, `repeat(13, var(--x))` — outside
+// the one sanctioned shape, a `'--name': value` key that *sets* a variable the CSS then reads.
+const readsTokenInString = (body) =>
+  body
+    .split('\n')
+    .some(
+      (line) =>
+        /['"\x60][^'"\x60]*var\(--/.test(line) &&
+        !/['"]--[\w-]+['"]\s*:/.test(line),
+    )
+
 // Exceptions are declared here, per file and per check, with a reason. An exception
 // with no reason is an untracked violation; an empty list is the goal.
 const EXEMPTIONS = [
@@ -237,6 +273,28 @@ const checks = [
   {
     name: 'invoke() outside src/lib/ipc/',
     test: (file, body) => /\binvoke\s*\(/.test(body) && !isUnder(file, IPC_DIR),
+  },
+  {
+    // Card #81, C5, four rules on tokens. What they cannot see: a class assembled from pieces
+    // (`'gap-' + n`), and a token read through a variable a line away from its quotes.
+    name: 'a token read from a string instead of set as a variable',
+    test: (file, body) =>
+      !file.endsWith('.test.ts') && readsTokenInString(body),
+  },
+  {
+    name: 'a quarter step off the 4px grid',
+    test: (_f, body) => QUARTER_STEP.test(body),
+  },
+  {
+    name: 'a z-index with no name',
+    test: (_f, body) => BARE_Z.test(body),
+  },
+  {
+    name: 'a shadow class with no --shadow token behind it',
+    test: (_f, body) =>
+      [...body.matchAll(SHADOW_CLASS)].some(
+        ([, name]) => !DECLARED_SHADOWS.has(name),
+      ),
   },
   {
     // Card #81, C4: the layers only point down. Logic (`lib/`, `stores/`, `composables/`) knows
@@ -488,6 +546,60 @@ const breaches = (file, raw) => {
 // was reworded the day it was found — so nothing else would say whether it works. Each is a file
 // that never existed, and what it must and must not be accused of.
 const FIXTURES = [
+  {
+    name: 'a :style that reads a token is caught',
+    file: 'src/screens/floor/Fixture.vue',
+    body: '<template>\n  <div :style="{ gridTemplateColumns: `repeat(13, var(--spacing-floor-cell))` }" />\n</template>\n',
+    expect: ['a token read from a string instead of set as a variable'],
+  },
+  {
+    name: 'a token held in a TypeScript string is caught',
+    file: 'src/lib/floor/fixture.ts',
+    body: "export const h = { first: 'var(--floor-level-first)' }\n",
+    expect: ['a token read from a string instead of set as a variable'],
+  },
+  {
+    name: 'setting a variable the CSS reads is the sanctioned shape',
+    file: 'src/components/shell/Fixture.vue',
+    body: '<script setup lang="ts">\nconst s = { \'--sidebar-width\': `calc(${w}px * var(--app-scale, 1))` }\n</script>\n',
+    expect: [],
+  },
+  {
+    name: 'a quarter step is caught',
+    file: 'src/components/Fixture.vue',
+    body: '<template>\n  <div class="flex gap-0.75" />\n</template>\n',
+    expect: ['a quarter step off the 4px grid'],
+  },
+  {
+    name: 'a half step is allowed',
+    file: 'src/components/Fixture.vue',
+    body: '<template>\n  <div class="flex gap-2.5 px-0.5" />\n</template>\n',
+    expect: [],
+  },
+  {
+    name: 'a numbered z-index is caught',
+    file: 'src/components/Fixture.vue',
+    body: '<template>\n  <div class="sticky top-0 z-10" />\n</template>\n',
+    expect: ['a z-index with no name'],
+  },
+  {
+    name: 'a named z-index is allowed',
+    file: 'src/components/Fixture.vue',
+    body: '<template>\n  <div class="sticky top-0 z-raised" />\n</template>\n',
+    expect: [],
+  },
+  {
+    name: 'a shadow with no token draws nothing and is caught',
+    file: 'src/components/Fixture.vue',
+    body: '<template>\n  <div class="shadow-floor-nothing" />\n</template>\n',
+    expect: ['a shadow class with no --shadow token behind it'],
+  },
+  {
+    name: 'a declared shadow and a text-shadow are allowed',
+    file: 'src/components/Fixture.vue',
+    body: '<template>\n  <div class="shadow-floor-glow-secret text-shadow-floor-rank" />\n</template>\n',
+    expect: [],
+  },
   {
     name: 'lib importing a component is caught',
     file: 'src/lib/runs/fixture.ts',

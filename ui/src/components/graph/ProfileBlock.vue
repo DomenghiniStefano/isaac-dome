@@ -114,7 +114,7 @@ const open = (location: TabLocation | null, newTab: boolean) => {
                 v-if="entry.iconUrl"
                 :src="entry.iconUrl"
                 alt=""
-                class="mr-0.75 inline-block size-4 align-text-bottom pixelated"
+                class="mr-1 inline-block size-4 align-text-bottom pixelated"
               />{{ entry.name }}
             </Button>
             <span v-else class="text-body text-foreground">{{

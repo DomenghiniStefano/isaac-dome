@@ -210,7 +210,7 @@ const stats = computed(() => {
           <span
             v-for="stat in stats"
             :key="stat.label"
-            class="flex flex-col gap-0.75"
+            class="flex flex-col gap-1"
           >
             <span class="text-label text-subtle-foreground">{{
               stat.label
@@ -265,7 +265,7 @@ const stats = computed(() => {
            are stated on 45 of 720 pages, so their absence is the wiki's silence and not the
            item's — the row goes with it rather than declaring none. -->
       <dl v-else-if="infobox.kind === 'item'" class="flex flex-col gap-2">
-        <div class="flex flex-col gap-0.75 border-b border-hairline pb-2">
+        <div class="flex flex-col gap-1 border-b border-hairline pb-2">
           <dt class="text-label text-subtle-foreground">
             {{ t('wiki.infobox.quality') }}
           </dt>
