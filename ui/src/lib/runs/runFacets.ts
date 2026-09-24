@@ -1,7 +1,7 @@
 import { sortBy, uniq } from 'lodash-es'
 import { assertNever } from '@/lib/assertNever'
 import { createFaceting } from '@/lib/facets/faceting'
-import type { RunOutcomeView, RunView } from '@/lib/ipc/types'
+import type { RunOutcomeView, RunSource, RunView } from '@/lib/ipc/types'
 
 // The Run diary's half of a faceted list: which facets it has, how a run answers one, what the
 // search reads, what each facet offers. Matching, the counts and the active count are the
@@ -45,7 +45,9 @@ export const RunCompany = {
 export type RunCompany = (typeof RunCompany)[keyof typeof RunCompany]
 
 const onlineOrder: RunCompany[] = [RunCompany.Online, RunCompany.Solo]
-const sourceOrder = ['live', 'session']
+// Typed on the wire's tag, so a renamed source is a compile error here and not a facet value
+// that stops sorting.
+const sourceOrder: RunSource['kind'][] = ['live', 'session']
 
 const facetValues = (run: RunView, facet: RunFacet): string[] => {
   switch (facet) {
