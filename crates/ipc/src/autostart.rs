@@ -103,3 +103,31 @@ pub struct AutostartView {
     /// with two different causes.
     pub unavailable: Option<AutostartReason>,
 }
+
+/// What `set_autostart` answers (card #81, V1: this was decided inside the command). `wrote` is
+/// whether the plugin accepted the write — `None` when there is no plugin to ask. The answer is
+/// **the read-back**, never what was asked for; when the two disagree, whether the write was
+/// accepted is what tells a system that undid it from a plugin that refused it.
+///
+/// `disable()` on a value that is not there is an error in the plugin and means nothing here:
+/// the read-back says off, which is what was asked for — so a failed disable counts as accepted.
+pub fn autostart_answer(
+    on: bool,
+    wrote: Option<bool>,
+    view: AutostartView,
+) -> Result<AutostartView, crate::IpcError> {
+    let accepted = wrote.is_some_and(|ok| ok || !on);
+    match view.unavailable {
+        // The switch cannot be offered, and saying so is a better answer than a write error
+        // about a registry nobody could read in the first place.
+        Some(_) => Ok(view),
+        None if view.enabled == on => Ok(view),
+        None => Err(crate::IpcError::AutostartNotWritable {
+            reason: if accepted {
+                AutostartFailure::WriteIgnored
+            } else {
+                AutostartFailure::WriteRefused
+            },
+        }),
+    }
+}

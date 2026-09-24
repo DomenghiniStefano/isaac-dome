@@ -3,7 +3,6 @@
 use tauri::AppHandle;
 
 use ipc::{IpcError, RunSource, RunsDiagnostic, RunsInputs, RunsView};
-use store::SourceKind;
 
 use crate::state::{
     progress_sections, ArchiveState, CatalogState, GraphState, ResourcesState, StoreState,
@@ -23,43 +22,15 @@ pub(crate) fn runs(
     let mut sources = Vec::new();
 
     match store.lock(&app) {
-        Ok(guard) => {
-            let version = archive.rules().version();
-            match guard.sources() {
-                Ok(rows) => {
-                    let mut unreadable = 0;
-                    for row in rows {
-                        let name = match (row.kind, &row.key) {
-                            (SourceKind::Session, Some(n)) => {
-                                RunSource::Session { name: n.clone() }
-                            }
-                            // A session row with no name cannot be told from a launch, and the
-                            // launch is the honest reading: it is the source with no name.
-                            (SourceKind::Session, None) | (SourceKind::Log, _) => RunSource::Live,
-                        };
-                        match guard.cached_runs(row.id, version) {
-                            // Including an empty fold, which is a source read under these rules
-                            // that holds no run: it contributes no row and no total, and saying
-                            // so is cheaper than a second rule about which sources may be here.
-                            Ok(Some(runs)) => sources.push((name, runs)),
-                            // Since migration 5 this is one state and not three: nobody has
-                            // folded this source under these rules. It is folded again the next
-                            // time its log is read — which for a launch with no run in it used
-                            // to be a promise that could not come true, because folding it
-                            // produced nothing and nothing was what it had cached.
-                            Ok(None) => {}
-                            Err(_) => unreadable += 1,
-                        }
-                    }
-                    if unreadable > 0 {
-                        diagnostics.push(RunsDiagnostic::UnreadableEvents { count: unreadable });
-                    }
-                }
-                Err(e) => diagnostics.push(RunsDiagnostic::StoreUnavailable {
-                    reason: (&e).into(),
-                }),
+        Ok(guard) => match guard.archived_runs(archive.rules().version()) {
+            Ok(archived) => {
+                diagnostics.extend(archived.diagnostics());
+                sources = archived.sources;
             }
-        }
+            Err(e) => diagnostics.push(RunsDiagnostic::StoreUnavailable {
+                reason: (&e).into(),
+            }),
+        },
         Err(reason) => diagnostics.push(RunsDiagnostic::StoreUnavailable { reason }),
     }
 
@@ -108,28 +79,11 @@ pub(crate) fn live(
         Err(_) => ipc::LiveGraph::NoGraph,
     };
 
-    // The catalog's own names, which is where the ambiguity comes from: a Tainted character
-    // answers to the base form's name, so this hands back every character that name reaches
-    // and `live_view` says there were two rather than choosing one.
     let rs = resources.get();
     let cat = rs.and_then(|rs| catalog.get_or_build(rs));
-    // Given the id the log stated, exactly that character; given only a name, everyone who
-    // answers to it — which is two whenever a Tainted form is involved, because the game gives
-    // it the base form's name.
     let by_name = |name: &str, id: Option<u32>| -> Vec<(u32, String)> {
-        let Some(c) = cat else { return Vec::new() };
-        c.characters()
-            .filter(|ch| match id {
-                Some(id) => ch.id.0 == id,
-                None => c.text(&ch.name, catalog::Language::English) == name,
-            })
-            .map(|ch| {
-                (
-                    ch.id.0,
-                    c.text(&ch.name, catalog::Language::English).to_string(),
-                )
-            })
-            .collect()
+        cat.map(|c| ipc::characters_named(c, name, id))
+            .unwrap_or_default()
     };
 
     // The row of the completion matrix for whoever is being played — two rows when the name
@@ -147,11 +101,7 @@ pub(crate) fn live(
                             .into_iter()
                             .map(|(id, _)| id)
                             .collect();
-                    let rows: Vec<usize> = (0..ipc::CHARACTERS.len())
-                        .filter(|row| {
-                            ipc::character_for(*row, c).is_some_and(|ch| wanted.contains(&ch.id.0))
-                        })
-                        .collect();
+                    let rows = ipc::live_mark_rows(c, &wanted);
                     (!rows.is_empty()).then(|| ipc::live_marks(&matrix, &rows))
                 })
         }

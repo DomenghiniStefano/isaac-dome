@@ -49,14 +49,7 @@ fn queue_view_now(
             // A goal counts as pending while nothing in the queue stands for it. Without a
             // catalog we can't tell, and claiming zero would be a guess: none are reported.
             let pending = match (guard.goals(), pieces.catalog) {
-                (Ok(goals), Some(c)) => goals
-                    .goals
-                    .iter()
-                    .filter(|g| {
-                        ipc::achievement_unlocking(c, &g.target)
-                            .is_none_or(|a| !queued.contains(&a))
-                    })
-                    .count() as u32,
+                (Ok(goals), Some(c)) => ipc::goals_pending(c, &goals.goals, &queued),
                 _ => 0,
             };
             match read {

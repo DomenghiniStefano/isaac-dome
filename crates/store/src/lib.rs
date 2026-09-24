@@ -13,7 +13,7 @@ use std::path::Path;
 use ipc::{Goal, GoalId, TargetKey};
 use rusqlite::{params, Connection, OptionalExtension};
 
-pub use archive::{EventsRead, SourceKind, StoredSource};
+pub use archive::{ArchivedRuns, EventsRead, SourceKind, StoredSource};
 pub use degrade::{plan_parts, store_error, store_unavailable};
 pub use migrations::SCHEMA_VERSION;
 
