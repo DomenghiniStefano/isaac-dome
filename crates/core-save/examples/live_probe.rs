@@ -91,7 +91,14 @@ fn describe(previous: Option<&Save>, now: &Save) -> String {
 fn main() {
     let home = std::env::var("USERPROFILE").unwrap_or_else(|_| ".".into());
     let docs = PathBuf::from(&home).join("Documents/My Games/Binding of Isaac Repentance+");
-    let remote = PathBuf::from("C:/Program Files (x86)/Steam/userdata/123456789/250900/remote");
+    // The save folder is the caller's to name: it sits under `userdata\<account id>\`, and a
+    // path written here would publish the account id and presume where Steam is installed.
+    let Some(remote) = std::env::args_os().nth(1).map(PathBuf::from) else {
+        eprintln!(
+            "usage: live_probe <save folder>, e.g. …\\Steam\\userdata\\<account id>\\250900\\remote"
+        );
+        std::process::exit(2);
+    };
 
     let log = docs.join("log.txt");
     let saves: Vec<PathBuf> = ["rep+persistentgamedata1.dat", "rep+persistentgamedata2.dat"]

@@ -293,7 +293,7 @@ that never happens.
 - Before declaring anything done: **`pnpm check`** (i.e. `scripts/check`), which runs
   `cargo fmt --check`, `cargo clippy --all-targets -- -D warnings`, `cargo test --workspace`,
   `pnpm typecheck`, `pnpm ui:test`, `pnpm lint`, `pnpm format:check`, `pnpm scan`,
-  `scripts/check-no-game-assets.mjs`, `scripts/check-test-count.mjs`, the IPC contract's
+  `scripts/check-no-game-assets.mjs`, `scripts/check-no-steam-account-id.mjs`, `scripts/check-test-count.mjs`, the IPC contract's
   regeneration, and `scripts/check-doc-refs.mjs`. **There's
   no CI**, by choice: the list of commands lives in that script and nowhere else. The two
   fast ones also run in the pre-commit hook (`git config core.hooksPath scripts/git-hooks`).
