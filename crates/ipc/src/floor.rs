@@ -87,7 +87,7 @@ pub enum FloorDiagnostic {
     /// No Start room, so the rule about how many rooms are walked cannot be read.
     NoStartRoom,
     /// The embedded rules did not parse. A build-time mistake, reported rather than hidden.
-    RulesUnreadable { reason: String },
+    RulesUnreadable,
     /// The grid did not have 169 cells. The screen sent something that is not a floor.
     GridMalformed { cells: u32 },
 }
@@ -170,8 +170,8 @@ pub fn floor_view(cells: Vec<Option<RoomKindView>>) -> FloorView {
 
     let rules = match floor::Rules::embedded() {
         Ok(r) => r,
-        Err(e) => {
-            diagnostics.push(FloorDiagnostic::RulesUnreadable { reason: e.message });
+        Err(_) => {
+            diagnostics.push(FloorDiagnostic::RulesUnreadable);
             return FloorView {
                 solutions: Vec::new(),
                 painted,

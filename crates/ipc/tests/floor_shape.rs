@@ -81,3 +81,13 @@ fn every_room_kind_of_the_domain_has_a_view() {
         assert!(json.as_str().is_some(), "a fieldless enum is a bare string");
     }
 }
+
+/// Card #81, V3: the rules are embedded at build time, so the text of a `serde_json` error is a
+/// developer's message and not a translatable one. The diagnostic carries nothing.
+#[test]
+fn unreadable_rules_cross_as_a_bare_tag() {
+    assert_eq!(
+        serde_json::to_value(ipc::FloorDiagnostic::RulesUnreadable).unwrap(),
+        serde_json::json!({ "kind": "rulesUnreadable" })
+    );
+}

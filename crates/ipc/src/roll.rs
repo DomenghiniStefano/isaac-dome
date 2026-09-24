@@ -11,8 +11,9 @@
 use catalog::Catalog;
 use serde::{Deserialize, Serialize};
 
+use crate::graph::MarkColumnView;
 use crate::icon::{IconRef, MarkTier};
-use crate::marks::{cell_at, character_for, BOSSES, CHARACTERS};
+use crate::marks::{cell_at, character_for, BOSSES, CHARACTERS, MARK_COLUMNS};
 use crate::StoreReason;
 
 /// One target as the card names it: a mark names its column, a Greedier says so it is one —
@@ -25,8 +26,8 @@ use crate::StoreReason;
     rename_all_fields = "camelCase"
 )]
 pub enum DrawnTargetView {
-    Mark { column: String },
-    Greedier {},
+    Mark { column: MarkColumnView },
+    Greedier,
 }
 
 /// Recomputed from the save on every read, never stored: the card closes itself, and nothing
@@ -300,12 +301,15 @@ fn status_view(status: roll::Status) -> StatusView {
     }
 }
 
-fn target_view(target: roll::Target) -> DrawnTargetView {
+/// `None` for a column the matrix does not have. `drawn_view` has already dropped such a draw
+/// through `space.status`, but the index comes from a document on disk, so it is read with
+/// `get` rather than trusted.
+fn target_view(target: roll::Target) -> Option<DrawnTargetView> {
     match target {
-        roll::Target::Mark { column, .. } => DrawnTargetView::Mark {
-            column: BOSSES[column as usize].to_string(),
-        },
-        roll::Target::Greedier { .. } => DrawnTargetView::Greedier {},
+        roll::Target::Mark { column, .. } => MARK_COLUMNS
+            .get(column as usize)
+            .map(|&column| DrawnTargetView::Mark { column }),
+        roll::Target::Greedier { .. } => Some(DrawnTargetView::Greedier),
     }
 }
 
@@ -356,7 +360,7 @@ fn drawn_view(
     // where the fallback belongs.
     let art_url = catalog.and_then(|_| icon(&target_icon(drawn.target, space.greed_column())));
     Some(DrawnView {
-        target: target_view(drawn.target),
+        target: target_view(drawn.target)?,
         character: CHARACTERS[character as usize].0.to_string(),
         head_url,
         art_url,

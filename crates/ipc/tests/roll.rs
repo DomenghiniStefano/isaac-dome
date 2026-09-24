@@ -165,7 +165,7 @@ fn a_drawn_mark_names_its_column_and_a_drawn_greedier_says_it_is_one() {
     assert_eq!(
         view(Some(&c), &mark).drawn.expect("a card").target,
         ipc::DrawnTargetView::Mark {
-            column: ipc::BOSSES[1].to_string()
+            column: ipc::MarkColumnView::Isaac
         }
     );
 
@@ -179,7 +179,7 @@ fn a_drawn_mark_names_its_column_and_a_drawn_greedier_says_it_is_one() {
     };
     assert_eq!(
         view(Some(&c), &greedier).drawn.expect("a card").target,
-        ipc::DrawnTargetView::Greedier {}
+        ipc::DrawnTargetView::Greedier
     );
 }
 
@@ -523,4 +523,22 @@ fn an_empty_deck_draws_nothing_and_says_so_with_none() {
     // No counters: no cell can be read, so there is nothing missing to draw from.
     let doc = ipc::drawn_document(Document::default(), None, None, None, 42, 1);
     assert_eq!(doc.current, None);
+}
+
+/// Card #81, V3: the column crosses as the value the UI already translates everywhere else, not
+/// the boss's English name; and a Greedier carries nothing, so it is a bare tag.
+#[test]
+fn a_drawn_target_crosses_as_a_translatable_value() {
+    use serde_json::{json, to_value};
+    assert_eq!(
+        to_value(ipc::DrawnTargetView::Mark {
+            column: ipc::MarkColumnView::MomsHeart
+        })
+        .unwrap(),
+        json!({ "kind": "mark", "column": "momsHeart" })
+    );
+    assert_eq!(
+        to_value(ipc::DrawnTargetView::Greedier).unwrap(),
+        json!({ "kind": "greedier" })
+    );
 }
