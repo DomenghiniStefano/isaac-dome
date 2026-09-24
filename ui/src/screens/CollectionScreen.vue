@@ -99,9 +99,28 @@ const rows = computed(() =>
 // filter decides which rows exist, and the find walks the ones that are left. That is why the
 // haystack is `rows` and not `items` — searching rows a filter has hidden would scroll to
 // something that is not on the screen.
-const findOpen = ref(false)
-const findQuery = ref('')
-const findCurrent = ref<string | null>(null)
+//
+// The bar is the tab's reading (#79): open or closed, its words and the match it is on come back
+// after a tab switch, a back or a tear-off, like the filter above it.
+const findOpen = computed(() => reading.value.find !== null)
+const findQuery = computed({
+  get: () => reading.value.find?.query ?? '',
+  set: (query: string) => {
+    reading.value = {
+      ...reading.value,
+      find: { query, current: reading.value.find?.current ?? null },
+    }
+  },
+})
+const findCurrent = computed({
+  get: () => reading.value.find?.current ?? null,
+  set: (current: string | null) => {
+    reading.value = {
+      ...reading.value,
+      find: { query: reading.value.find?.query ?? '', current },
+    }
+  },
+})
 const table = ref<InstanceType<typeof CollectionTable> | null>(null)
 
 // The key is a string because the bar is not the Collection's: a wiki page and a run do not
@@ -112,14 +131,15 @@ const haystack = computed(() =>
 
 useShortcut((event) => {
   if (!opensFind(event)) return false
-  findOpen.value = true
+  reading.value = {
+    ...reading.value,
+    find: reading.value.find ?? { query: '', current: null },
+  }
   return true
 })
 
 const closeFind = () => {
-  findOpen.value = false
-  findQuery.value = ''
-  findCurrent.value = null
+  reading.value = { ...reading.value, find: null }
 }
 
 // The row exists in the model before it exists as a node, so the scroll waits a tick for the
