@@ -28,7 +28,8 @@ import type { TabView } from '@/lib/shell/tabs'
 import { TooltipProvider } from '@/components/ui/tooltip'
 import { usePointerShortcut } from '@/composables/usePointerShortcut'
 import { useShortcut } from '@/composables/useShortcut'
-import { i18n, useMessages } from '@/i18n'
+import { useFormat } from '@/composables/useFormat'
+import { useMessages } from '@/i18n'
 import type { Point } from '@/lib/drag/dragList'
 import { indicator } from '@/lib/profile/profileView'
 import { welcomeState } from '@/lib/profile/welcomeView'
@@ -74,6 +75,7 @@ const wiki = useWikiStore()
 const queue = useQueueStore()
 const settings = useSettingsStore()
 const { t } = useMessages()
+const fmt = useFormat()
 
 // Everything this window says to the others, and hears from them: a window born from a
 // tear-off asks for its tabs here, and any window can be handed one.
@@ -243,7 +245,7 @@ useShortcut((event) => {
 
 const indicatorView = computed(() =>
   profile.setup
-    ? indicator(profile.setup.active, new Date(), i18n.global.locale.value)
+    ? indicator(profile.setup.active, new Date(), fmt.locale())
     : null,
 )
 

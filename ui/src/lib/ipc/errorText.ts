@@ -12,7 +12,9 @@ export interface MessagePart {
   params?: Record<string, unknown>
 }
 
-const io = (reason: IoReason): MessageKey<MessageSchema> => {
+// Exported for the setup diagnostics, which name a path the app could not read and why (card
+// #81, V9: that reason used to reach the screen as its raw wire value).
+export const ioReasonKey = (reason: IoReason): MessageKey<MessageSchema> => {
   switch (reason) {
     case IoReason.NotFound:
       return 'ipcReasons.ioNotFound'
@@ -32,7 +34,7 @@ const save = (reason: SaveReason): MessagePart => {
     case 'badMagic':
       return { key: 'ipcReasons.saveBadMagic' }
     case 'io':
-      return { key: io(reason.reason) }
+      return { key: ioReasonKey(reason.reason) }
     default:
       return assertNever(reason)
   }
@@ -45,7 +47,7 @@ const settings = (reason: SettingsReason): MessagePart => {
     case 'encoding':
       return { key: 'ipcReasons.settingsEncoding' }
     case 'io':
-      return { key: io(reason.reason) }
+      return { key: ioReasonKey(reason.reason) }
     default:
       return assertNever(reason)
   }

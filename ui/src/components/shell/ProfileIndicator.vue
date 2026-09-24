@@ -17,7 +17,7 @@ const label = computed((): string => {
   if (v === null) return ''
   switch (v.kind) {
     case 'active':
-      return [v.edition, `${t('indicator.slot')} ${v.slot}`, v.modified]
+      return [v.edition, t('indicator.slot', { slot: v.slot }), v.modified]
         .filter(Boolean)
         .join(' · ')
     case 'noProfile':

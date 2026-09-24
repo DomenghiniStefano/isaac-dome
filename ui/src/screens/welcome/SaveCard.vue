@@ -3,24 +3,23 @@ import { TriangleAlertIcon } from '@lucide/vue'
 import { computed } from 'vue'
 import { Badge } from '@/components/ui/badge'
 import { RadioGroupItem } from '@/components/ui/radio-group'
-import { i18n, useMessages } from '@/i18n'
+import { useFormat } from '@/composables/useFormat'
+import { useMessages } from '@/i18n'
 import { cn } from '@/lib/cn'
 import type { CandidateView } from '@/lib/ipc/types'
 import { candidateSourceLabel } from '@/lib/profile/profileLabels'
 import { previewLines, unreadableNote } from '@/lib/profile/previewView'
-import { editionShort, formatModified } from '@/lib/profile/profileView'
+import { editionShort } from '@/lib/profile/profileView'
 
 const props = defineProps<{ candidate: CandidateView; selected: boolean }>()
 const { t } = useMessages()
+const fmt = useFormat()
 
 const edition = computed(() => editionShort(props.candidate.prefix))
 const modified = computed(
   () =>
-    formatModified(
-      props.candidate.modifiedUnix,
-      new Date(),
-      i18n.global.locale.value,
-    ) ?? t('welcome.card.never'),
+    fmt.modified(props.candidate.modifiedUnix, new Date()) ??
+    t('welcome.card.never'),
 )
 // Both the lines and the note are decided in `previewView`, where they are tested: a count
 // that could not be read draws a dash, never a zero.

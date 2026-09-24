@@ -112,16 +112,24 @@ export const formatModified = (
 ): string | null => {
   const relative = formatRelativeDay(unix, now, locale)
   if (unix === null || relative === null) return null
-  const absolute = new Intl.DateTimeFormat(locale, {
+  return `${relative} · ${formatDate(new Date(unix * 1000), locale)}`
+}
+
+// The one date shape the interface prints: day, short month, year. Here beside `formatCount`
+// so a screen never writes its own `Intl.DateTimeFormat` (card #81, V9).
+export const formatDate = (date: Date, locale: Locale): string =>
+  new Intl.DateTimeFormat(locale, {
     day: 'numeric',
     month: 'short',
     year: 'numeric',
-  }).format(new Date(unix * 1000))
-  return `${relative} · ${absolute}`
-}
+  }).format(date)
 
 export const formatCount = (n: number, locale: Locale): string =>
   new Intl.NumberFormat(locale).format(n)
+
+// `percent` is on the 0–100 scale the settings speak, not the 0–1 `Intl` takes.
+export const formatPercent = (percent: number, locale: Locale): string =>
+  new Intl.NumberFormat(locale, { style: 'percent' }).format(percent / 100)
 
 // Game names are data, not messages: they read the same in both languages.
 const editionShortName: Record<SavePrefix, string> = {

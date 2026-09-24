@@ -8,16 +8,11 @@ import {
   CardCollapsibleContent,
   CardCollapsibleTrigger,
 } from '@/components/ui/card'
-import { i18n, useMessages } from '@/i18n'
+import { useFormat } from '@/composables/useFormat'
+import { useMessages } from '@/i18n'
 import type { ActiveProfile, SetupState } from '@/lib/ipc/types'
 import { candidateSourceLabel } from '@/lib/profile/profileLabels'
-import {
-  editionLong,
-  editionShort,
-  formatCount,
-  formatModified,
-  gameName,
-} from '@/lib/profile/profileView'
+import { editionLong, editionShort, gameName } from '@/lib/profile/profileView'
 import ProfileFact from './ProfileFact.vue'
 
 const props = defineProps<{
@@ -26,17 +21,17 @@ const props = defineProps<{
 }>()
 const emit = defineEmits<{ change: []; reload: [] }>()
 const { t } = useMessages()
+const fmt = useFormat()
 
 const view = computed(() => {
-  const locale = i18n.global.locale.value
   const profile = props.active.profile
   return {
     short: editionShort(profile.prefix),
-    title: `${editionLong(profile.prefix)} · ${t('indicator.slot')} ${profile.slot}`,
+    title: `${editionLong(profile.prefix)} · ${t('indicator.slot', { slot: profile.slot })}`,
     modified:
-      formatModified(profile.modifiedUnix, new Date(), locale) ??
+      fmt.modified(profile.modifiedUnix, new Date()) ??
       t('profile.active.unknownDate'),
-    size: `${formatCount(profile.sizeBytes, locale)} ${t('profile.active.bytes')}`,
+    size: t('profile.active.bytes', { count: fmt.count(profile.sizeBytes) }),
     dlcs: props.game?.dlcs.map(gameName).join(' · ') ?? '',
     source: t(candidateSourceLabel[profile.source]),
   }
