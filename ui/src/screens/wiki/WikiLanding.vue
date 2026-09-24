@@ -18,8 +18,8 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from '@/components/ui/tooltip'
-import { i18n, useMessages } from '@/i18n'
-import { formatCount } from '@/lib/profile/profileView'
+import { useFormat } from '@/composables/useFormat'
+import { useMessages } from '@/i18n'
 import {
   RouteName,
   WikiCategory,
@@ -33,6 +33,7 @@ import ProfileFact from '../profile/ProfileFact.vue'
 const wiki = useWikiStore()
 const tabs = useTabsStore()
 const { t } = useMessages()
+const fmt = useFormat()
 
 const info = computed(() => wiki.index?.info ?? null)
 const loaded = computed(() =>
@@ -41,22 +42,16 @@ const loaded = computed(() =>
 
 // The provenance in words: the snapshot's day, the patch the wiki knew, the totals.
 const view = computed(() => {
-  const locale = i18n.global.locale.value
   const value = loaded.value
   if (!value) return null
   return {
-    snapshot: new Intl.DateTimeFormat(locale, {
-      day: 'numeric',
-      month: 'short',
-      year: 'numeric',
-    }).format(new Date(value.snapshotAt)),
+    snapshot: fmt.date(new Date(value.snapshotAt)),
     patch: value.lastKnownPatch
       ? `${value.lastKnownPatch.number} · ${value.lastKnownPatch.date}`
       : t('wiki.provenance.patchUnknown'),
-    unresolved: formatCount(value.unresolved, locale),
-    unknownTemplates: formatCount(value.unknownTemplates, locale),
-    count: (category: WikiCategory) =>
-      formatCount(value.counts[category], locale),
+    unresolved: fmt.count(value.unresolved),
+    unknownTemplates: fmt.count(value.unknownTemplates),
+    count: (category: WikiCategory) => fmt.count(value.counts[category]),
   }
 })
 

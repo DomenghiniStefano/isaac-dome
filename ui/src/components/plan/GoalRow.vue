@@ -169,9 +169,11 @@ const open = (newTab: boolean) => {
           v-for="s in extras?.serves ?? []"
           :key="s.id"
           :variant="BadgeVariant.Tag"
-          >{{ t('plan.row.serves') }} «{{
-            s.text ?? `${t('plan.achievement')} ${s.id}`
-          }}»</Badge
+          >{{
+            t('plan.row.serves', {
+              name: s.text ?? t('plan.achievementNumbered', { id: s.id }),
+            })
+          }}</Badge
         >
         <Badge
           v-if="(extras?.stepsNotQueued ?? 0) > 0"

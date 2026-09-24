@@ -218,6 +218,12 @@ the stack, one review of the whole stack, then the merges and the push.
   `roll`'s seed already arrives). `impl Default for GoalId` goes: a default that generates an id
   is a clock read nobody sees. `target_sprite` takes the dataset as a parameter instead of
   `wiki::Dataset::embedded()` behind a `OnceLock`.
+  **Deferred to card #82, S3, on 2026-09-24 (executor's ruling).** The boss keys the dataset
+  feeds are read through `wiki_target::boss`, `resolve_target`, `want`, `search` and
+  `missing_view` — some thirty callers — and S3 is the item that computes `boss_keys` once per
+  catalog and passes it. Threading a parameter now would rewrite the same lines twice. The
+  dataset is a compile-time constant with no I/O, so what stays is a hidden dependency, not an
+  impure read. V2 is therefore **half closed**: the `GoalId` half landed, this half did not.
 - **V1.** Each of the six moves as a pure function in `ipc` over plain data — rows, ids,
   names, never a `tauri::State` — and `app` keeps the lock, the call and nothing else. The
   function names and their modules are the plan's; the rule is that every one gets a test in
