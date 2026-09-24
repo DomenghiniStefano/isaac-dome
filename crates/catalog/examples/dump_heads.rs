@@ -1,10 +1,10 @@
 //! Spike: prints the crops of coop menu.anm2's Main layer and a PowerShell command
 //! to slice the sheet, so the heads can be looked at and the map written.
 
-use std::path::Path;
-
 fn main() {
-    let packed = Path::new(env!("CARGO_MANIFEST_DIR")).join("../../samples/packed");
+    let Some(packed) = test_support::packed_dir() else {
+        return;
+    };
     let rs = unpack::ResourceSet::open(&packed);
     let Some(anm2) = rs.read("gfx/ui/coop menu.anm2") else {
         println!("anm2 missing: needs samples/packed");
@@ -13,7 +13,7 @@ fn main() {
     let mut d = Vec::new();
     let frames = catalog::for_tests::parse_heads(&anm2, &mut d);
     println!("{} frames in the Main layer", frames.len());
-    let out = Path::new(env!("CARGO_MANIFEST_DIR")).join("../../samples/sprites/heads");
+    let out = test_support::samples_dir().join("sprites").join("heads");
     println!(
         "# in PowerShell, after `cargo run -p unpack --example estrai -- \"gfx/ui/coop menu.png\"`:"
     );

@@ -1,4 +1,4 @@
-//! The Collection against the real catalog (`samples/packed`) and the live profile. Properties,
+//! The Collection against the real catalog (`samples/packed`) and the 2026-08-31 profile. Properties,
 //! not values: they hold on any profile and any patch, and skip with a note without the game.
 
 use catalog::Catalog;
@@ -10,13 +10,13 @@ fn every_listed_collectible_reads_its_own_slot() {
     let Some(packed) = test_support::packed_dir() else {
         return;
     };
-    let Some(sample) = test_support::sample("live.rep+persistentgamedata1.dat") else {
+    let Some(sample) = test_support::sample("20260831.rep+persistentgamedata1.dat") else {
         return;
     };
     let rs = ResourceSet::open(&packed);
     let c = Catalog::build(|p| rs.read(p));
     let Ok(save) = Save::open(&sample) else {
-        test_support::skip("the live profile exists but doesn't read");
+        test_support::skip("the 2026-08-31 profile exists but doesn't read");
         return;
     };
     let items = save.flags(Kind::Items).expect("section 4");

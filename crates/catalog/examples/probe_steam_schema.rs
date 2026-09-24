@@ -14,7 +14,7 @@
 //! `cargo run -p catalog --example probe_steam_schema [path to the .bin]`
 
 use std::collections::BTreeMap;
-use std::path::{Path, PathBuf};
+use std::path::PathBuf;
 
 /// Valve's binary KeyValues: a type byte, a NUL-terminated key, then the value. `0` opens a
 /// nested object and `8` closes one. Only the types this file actually uses are read; anything
@@ -105,7 +105,9 @@ fn main() {
     }
     println!("{} achievements in Steam's schema", steam.len());
 
-    let packed = Path::new(env!("CARGO_MANIFEST_DIR")).join("../../samples/packed");
+    let Some(packed) = test_support::packed_dir() else {
+        return;
+    };
     let rs = unpack::ResourceSet::open(&packed);
     let cat = catalog::Catalog::build(|p| rs.read(p));
     let mine: Vec<_> = cat.achievements().collect();

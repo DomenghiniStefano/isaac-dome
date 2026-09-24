@@ -15,13 +15,13 @@ use ipc::{
 };
 
 fn main() {
-    let packed = std::path::Path::new(env!("CARGO_MANIFEST_DIR")).join("../../samples/packed");
+    let Some(packed) = test_support::packed_dir() else {
+        return;
+    };
     let out = std::env::args()
         .nth(1)
         .map(std::path::PathBuf::from)
-        .unwrap_or_else(|| {
-            std::path::Path::new(env!("CARGO_MANIFEST_DIR")).join("../../samples/sprites")
-        });
+        .unwrap_or_else(|| test_support::samples_dir().join("sprites"));
     let rs = unpack::ResourceSet::open(&packed);
     let read = |p: &str| {
         rs.read(p)

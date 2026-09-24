@@ -290,7 +290,11 @@ that never happens.
   `sample: <file>` when there is one, `skip: …` when there isn't — because a test on real
   data has to say **which slice of the domain it actually ran on**. This isn't theory: the
   `unpack` tests all ran on `config.a`, the only archive the decompressor could open, and
-  the main function was broken with a green suite.
+  the main function was broken with a green suite. **Checked since 2026-09-24** (card #81,
+  C2) by `scripts/check-samples-access.mjs`, a gate in `scripts/check`, **examples included**:
+  a string literal that is a path into `samples/` (`"../../samples/packed"`, `"samples"`)
+  outside `crates/test-support/` fails, and so does a sample name starting `live.`. Nine
+  examples and three tests did both while this paragraph said nobody did.
 - **"The tool isn't there" is verified by making it answer, not by checking whether the
   command starts.** On Windows, `python` with no Python installed is a *Microsoft Store
   alias*: it starts, prints "install from the Store" and exits with 49. An `Err` from
@@ -309,7 +313,7 @@ that never happens.
 - Before declaring anything done: **`pnpm check`** (i.e. `scripts/check`), which runs
   `cargo fmt --check`, `cargo clippy --all-targets -- -D warnings`, `cargo test --workspace`,
   `pnpm typecheck`, `pnpm ui:test`, `pnpm lint`, `pnpm format:check`, `pnpm scan`,
-  `scripts/check-no-game-assets.mjs`, `scripts/check-no-steam-account-id.mjs`, `scripts/check-test-count.mjs`, the IPC contract's
+  `scripts/check-no-game-assets.mjs`, `scripts/check-no-steam-account-id.mjs`, `scripts/check-test-count.mjs`, `scripts/check-samples-access.mjs`, the IPC contract's
   regeneration, and `scripts/check-doc-refs.mjs`. **There's
   no CI**, by choice: the list of commands lives in that script and nowhere else. The two
   fast ones also run in the pre-commit hook (`git config core.hooksPath scripts/git-hooks`).
