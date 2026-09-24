@@ -5,13 +5,13 @@ import { useMessages } from '@/i18n'
 import { candidateFor, cellPosition } from '@/lib/floor/cellView'
 import { CELLS, START, WIDTH } from '@/lib/floor/painting'
 import type { PaintedCells } from '@/lib/floor/painting'
-import { levelHeight, targetAura, targetFill } from '@/lib/floor/targets'
 import { roomFill } from '@/lib/floor/rooms'
 import type {
   FloorSolutionView,
   RoomKindView,
   TargetView,
 } from '@/lib/ipc/types'
+import FloorRank from './FloorRank.vue'
 import RoomSymbol from './RoomSymbol.vue'
 
 // The grid says two things at once, and keeping them apart is the whole design: the **fill and
@@ -151,22 +151,12 @@ const rub = (cell: number): void => {
            The digit carries its own halo instead of an ink chosen for what is under it: the
            middle of the cell is the bright fill at the first step and the dark veil at the
            third, and no single colour reads on both. -->
-      <span
+      <FloorRank
         v-if="candidates[i]"
-        aria-hidden="true"
-        class="absolute inset-0"
-        :class="targetAura[shown]"
-      >
-        <span
-          class="absolute inset-x-0 bottom-0"
-          :class="targetFill[shown]"
-          :style="{ height: levelHeight[candidates[i]!.step] }"
-        />
-        <span
-          class="absolute inset-0 grid place-items-center text-floor-rank-foreground tabular-nums text-shadow-floor-rank"
-          >{{ candidates[i]!.rank }}</span
-        >
-      </span>
+        :target="shown"
+        :step="candidates[i]!.step"
+        :rank="candidates[i]!.rank"
+      />
     </Button>
   </div>
 </template>
