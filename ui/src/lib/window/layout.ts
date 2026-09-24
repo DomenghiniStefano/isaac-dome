@@ -9,7 +9,7 @@ import { ref } from 'vue'
 //
 // `null` means nobody has ever sized it, which is not the same as the default. **The default and
 // the bounds are not here**: they belong to the sidebar, which is a component, and nothing under
-// `lib/` imports from `components/` — checked, and this file keeps it that way. What travels here
+// `lib/` imports from `components/` — `pnpm scan` refuses it since 2026-09-24. What travels here
 // is a number; what makes it a legal width is `clampSidebarWidth`, where it is drawn.
 export const sidebarWidth = ref<number | null>(null)
 

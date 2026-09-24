@@ -176,6 +176,18 @@ const blankComments = (body) => {
 
 const isUnder = (file, dir) => relative(ROOT, file).startsWith(dir)
 
+// The top folder under `src/` a file lives in, and what each one may not import (C4 below).
+const layerOf = (file) => relative(SRC, file).split(/[\\/]/)[0]
+const LAYER_BANS = {
+  lib: ['components', 'screens'],
+  stores: ['components', 'screens'],
+  composables: ['components', 'screens'],
+  components: ['screens'],
+  router: ['components'],
+}
+// `'@/<layer>/…'` in a static or dynamic import; a `?` in the path (`?raw`) never matches.
+const LAYER_IMPORT = /(?:\bfrom\s+|\bimport\s*\(\s*)'@\/([a-z]+)\/[^'?]*'/g
+
 // Exceptions are declared here, per file and per check, with a reason. An exception
 // with no reason is an untracked violation; an empty list is the goal.
 const EXEMPTIONS = [
@@ -225,6 +237,23 @@ const checks = [
   {
     name: 'invoke() outside src/lib/ipc/',
     test: (file, body) => /\binvoke\s*\(/.test(body) && !isUnder(file, IPC_DIR),
+  },
+  {
+    // Card #81, C4: the layers only point down. Logic (`lib/`, `stores/`, `composables/`) knows
+    // nothing of what draws it, a component knows no screen, and the router mounts screens but
+    // borrows nothing from components. On 2026-09-24 twelve imports pointed up, one of them under
+    // a comment in `lib/window/layout.ts` saying the direction was "checked".
+    //
+    // Both shapes count, `from '…'` and `import('…')`. A `?raw` import is excluded: it reads a
+    // file's source as text (`virtualRows.test.ts` checks a component's markup), not its code.
+    name: 'import against the layer direction',
+    test: (file, body) => {
+      const layer = layerOf(file)
+      const banned = LAYER_BANS[layer] ?? []
+      return [...body.matchAll(LAYER_IMPORT)].some(([, target]) =>
+        banned.includes(target),
+      )
+    },
   },
   {
     // Three namespaces, not one: `window` was the whole story while there was one window.
@@ -459,6 +488,48 @@ const breaches = (file, raw) => {
 // was reworded the day it was found — so nothing else would say whether it works. Each is a file
 // that never existed, and what it must and must not be accused of.
 const FIXTURES = [
+  {
+    name: 'lib importing a component is caught',
+    file: 'src/lib/runs/fixture.ts',
+    body: "import type { X } from '@/components/facets/labels'\n",
+    expect: ['import against the layer direction'],
+  },
+  {
+    name: 'a store importing a screen lazily is caught',
+    file: 'src/stores/fixture.ts',
+    body: "const s = () => import('@/screens/GoalsScreen.vue')\n",
+    expect: ['import against the layer direction'],
+  },
+  {
+    name: 'a component importing a screen is caught',
+    file: 'src/components/search/Fixture.vue',
+    body: '<script setup lang="ts">\nimport { x } from \'@/screens/wiki/wikiLabels\'\n</script>\n',
+    expect: ['import against the layer direction'],
+  },
+  {
+    name: 'the router mounts screens and that is allowed',
+    file: 'src/router/fixture.ts',
+    body: "const s = () => import('@/screens/GoalsScreen.vue')\n",
+    expect: [],
+  },
+  {
+    name: 'the router borrowing from components is caught',
+    file: 'src/router/fixture.ts',
+    body: "import { TabOrigin } from '@/components/shell/tabs'\n",
+    expect: ['import against the layer direction'],
+  },
+  {
+    name: 'a ?raw import reads text, not code',
+    file: 'src/lib/scale/fixture.test.ts',
+    body: "import src from '@/components/ui/virtual/VirtualRows.vue?raw'\n",
+    expect: [],
+  },
+  {
+    name: 'lib importing lib is the direction',
+    file: 'src/lib/runs/fixture.ts',
+    body: "import { x } from '@/lib/facets/labels'\n",
+    expect: [],
+  },
   {
     name: 'a scrolling box without a memory is caught',
     file: 'src/screens/floor/FloorReasoning.vue',

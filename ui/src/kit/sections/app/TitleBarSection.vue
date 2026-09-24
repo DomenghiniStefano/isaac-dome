@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import TitleBar from '@/components/shell/TitleBar.vue'
-import type { TabView } from '@/components/shell/tabs'
-import { TabOrigin } from '@/components/shell/tabs'
+import type { TabView } from '@/lib/shell/tabs'
+import { TabOrigin } from '@/lib/shell/tabs'
 import KitSection from '../../KitSection.vue'
 
 const tabs = ref<TabView[]>([

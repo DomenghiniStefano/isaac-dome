@@ -2,7 +2,7 @@
 import type { Point } from '@/lib/drag/dragList'
 import TabStrip from './TabStrip.vue'
 import WindowControls from './WindowControls.vue'
-import type { IncomingHover, TabView } from './tabs'
+import type { IncomingHover, TabView } from '@/lib/shell/tabs'
 
 withDefaults(
   defineProps<{

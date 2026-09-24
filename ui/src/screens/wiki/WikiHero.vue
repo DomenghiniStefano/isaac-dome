@@ -5,14 +5,14 @@ import QualityPips from '@/screens/collection/QualityPips.vue'
 import WikiFigure from '@/components/wiki/WikiFigure.vue'
 import WikiInline from '@/components/wiki/WikiInline.vue'
 import { WikiFigureSize } from '@/components/wiki/figureSize'
-import { dlcNames } from '@/components/wiki/dlcNames'
+import { dlcNames } from '@/lib/wiki/dlcNames'
 import { useMessages } from '@/i18n'
 import type { Entry, Target } from '@/lib/ipc/types'
 import { Dlc } from '@/lib/ipc/types'
 import type { WikiCategory } from '@/router/routeTable'
 import { useWikiStore } from '@/stores/wiki'
 import { summaryOf } from './heroSummary'
-import { kindText, pageId } from './wikiLabels'
+import { kindText, pageId } from '@/lib/wiki/wikiLabels'
 
 // `entry` is `undefined` while the page is being read and `null` when the dataset lacks it:
 // the band is drawn in all three states, because the title, the kind and the figure are the

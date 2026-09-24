@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { useMessages } from '@/i18n'
 import type { Section } from '@/lib/ipc/types'
 import { outlineOf } from './wikiOutline'
-import { sectionText } from './wikiLabels'
+import { sectionText } from '@/lib/wiki/wikiLabels'
 
 const props = defineProps<{ sections: Section[] }>()
 const { t } = useMessages()

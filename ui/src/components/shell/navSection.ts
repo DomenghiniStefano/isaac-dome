@@ -1,8 +1,8 @@
 import type { Component } from 'vue'
 import type { MessageKey } from '@/i18n/messageKey'
 import type { MessageSchema } from '@/i18n/messages/it'
-import { TabOrigin } from './tabs'
-import { tabOriginIcon } from './tabOriginIcon'
+import { TabOrigin } from '@/lib/shell/tabs'
+import { tabOriginIcon } from '@/lib/shell/tabOriginIcon'
 
 // The navbar's three sections (DESIGN-BRIEF.md §4): three preconditions, three places.
 // Progress reads the save, Tool reads the log or what you painted, the Wiki reads neither.
