@@ -275,6 +275,36 @@ Exceptions live in the `EXEMPTIONS` array at the top of the script, per file and
 reason. Every new rule has to be added there too, otherwise the document promises a check
 that never happens.
 
+### What is checked, and what holds only because it is read
+
+The code review of 2026-09-24 measured it: **what a script checked was clean everywhere, and
+what lived only here was broken in every area** (card #81). So each rule in this file says what
+checks it, and the ones nothing can check are listed here, so a reader knows which rules are
+held up only by being read.
+
+**Checked**, each named where the rule is written: the IPC contract (`pnpm ipc:types` diff, the
+contract tests in `crates/ipc/tests/`, fieldless enums never tagged), `clippy` with
+`[workspace.lints]` (`_ =>` on an enum, `use …::*`), the gates in `scripts/check` (game assets,
+Steam account id, test count, `samples/` access, `test-api` in the release graph), and
+`pnpm scan` for the frontend (its table is in `docs/frontend-conventions.md`).
+
+**Not checkable, and held only by review:**
+
+- Logic with a return value worth checking lives in a pure crate, not in `app`.
+- No `format!("{:?}")` across the IPC, and no `Debug` string as a user-facing message.
+- Expected cases travel as diagnostics in the payload; `Err` is for "cannot answer at all".
+- No game file loaded whole into memory; shared handles read positionally (`seek_read`).
+- An expected failure is never cached in `tauri::State`.
+- `rename_all_fields` on an enum with struct variants: pinned per type by a JSON-shape test,
+  never by a rule that sees every enum.
+- A section, bit or tally is never named from a guess, and a measured one never keeps its guess.
+- Test-first, with the expected value from the spec; pinned numbers carry their era in a dated
+  file name; a property over a series has a vacuity guard.
+- A new crate opts into the workspace lints with `[lints] workspace = true` — a crate without
+  those two lines is not linted, and only review sees the omission.
+- `docs/architecture.md` is redrawn in the commit that changes one of its five counts.
+- `master` moves only when the owner cuts a release.
+
 ### Tests
 
 - **Test-first** for code with logic. The expected value comes from the spec, **never

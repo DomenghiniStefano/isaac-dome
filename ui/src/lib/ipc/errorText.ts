@@ -1,14 +1,8 @@
 import type { MessageSchema } from '@/i18n/messages/it'
 import type { MessageKey } from '@/i18n/messageKey'
 import { assertNever } from '@/lib/assertNever'
-import type {
-  AutostartFailure,
-  IoReason,
-  IpcError,
-  SaveReason,
-  SettingsReason,
-  StoreReason,
-} from './types'
+import { AutostartFailure, IoReason } from './types'
+import type { IpcError, SaveReason, SettingsReason, StoreReason } from './types'
 
 // One piece of the sentence: a key, and the values the translation puts inside it. The word
 // order around a value is the translation's business, which is why the values travel as
@@ -20,11 +14,11 @@ export interface MessagePart {
 
 const io = (reason: IoReason): MessageKey<MessageSchema> => {
   switch (reason) {
-    case 'notFound':
+    case IoReason.NotFound:
       return 'ipcReasons.ioNotFound'
-    case 'permissionDenied':
+    case IoReason.PermissionDenied:
       return 'ipcReasons.ioPermissionDenied'
-    case 'other':
+    case IoReason.Other:
       return 'ipcReasons.ioOther'
     default:
       return assertNever(reason)
@@ -62,9 +56,9 @@ const settings = (reason: SettingsReason): MessagePart => {
 // half of one.
 export const autostartFailurePart = (reason: AutostartFailure): MessagePart => {
   switch (reason) {
-    case 'writeRefused':
+    case AutostartFailure.WriteRefused:
       return { key: 'ipcReasons.autostartWriteRefused' }
-    case 'writeIgnored':
+    case AutostartFailure.WriteIgnored:
       return { key: 'ipcReasons.autostartWriteIgnored' }
     default:
       return assertNever(reason)
