@@ -3,7 +3,6 @@
 use tauri::AppHandle;
 
 use ipc::{IpcError, RunSource, RunsDiagnostic, RunsInputs, RunsView};
-use store::SourceKind;
 
 use crate::state::{
     progress_sections, ArchiveState, CatalogState, GraphState, ResourcesState, StoreState,
@@ -23,43 +22,15 @@ pub(crate) fn runs(
     let mut sources = Vec::new();
 
     match store.lock(&app) {
-        Ok(guard) => {
-            let version = archive.rules().version();
-            match guard.sources() {
-                Ok(rows) => {
-                    let mut unreadable = 0;
-                    for row in rows {
-                        let name = match (row.kind, &row.key) {
-                            (SourceKind::Session, Some(n)) => {
-                                RunSource::Session { name: n.clone() }
-                            }
-                            // A session row with no name cannot be told from a launch, and the
-                            // launch is the honest reading: it is the source with no name.
-                            (SourceKind::Session, None) | (SourceKind::Log, _) => RunSource::Live,
-                        };
-                        match guard.cached_runs(row.id, version) {
-                            // Including an empty fold, which is a source read under these rules
-                            // that holds no run: it contributes no row and no total, and saying
-                            // so is cheaper than a second rule about which sources may be here.
-                            Ok(Some(runs)) => sources.push((name, runs)),
-                            // Since migration 5 this is one state and not three: nobody has
-                            // folded this source under these rules. It is folded again the next
-                            // time its log is read — which for a launch with no run in it used
-                            // to be a promise that could not come true, because folding it
-                            // produced nothing and nothing was what it had cached.
-                            Ok(None) => {}
-                            Err(_) => unreadable += 1,
-                        }
-                    }
-                    if unreadable > 0 {
-                        diagnostics.push(RunsDiagnostic::UnreadableEvents { count: unreadable });
-                    }
-                }
-                Err(e) => diagnostics.push(RunsDiagnostic::StoreUnavailable {
-                    reason: (&e).into(),
-                }),
+        Ok(guard) => match guard.archived_runs(archive.rules().version()) {
+            Ok(archived) => {
+                diagnostics.extend(archived.diagnostics());
+                sources = archived.sources;
             }
-        }
+            Err(e) => diagnostics.push(RunsDiagnostic::StoreUnavailable {
+                reason: (&e).into(),
+            }),
+        },
         Err(reason) => diagnostics.push(RunsDiagnostic::StoreUnavailable { reason }),
     }
 

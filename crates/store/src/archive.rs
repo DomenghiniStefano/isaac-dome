@@ -4,6 +4,7 @@
 //! rules version and `events` does not: one of the two tables can be thrown away and rebuilt,
 //! and it is not the one the game wrote.
 
+use ipc::{RunSource, RunsDiagnostic};
 use run::{Event, Run, SourceKey};
 use rusqlite::{params, OptionalExtension};
 
@@ -46,6 +47,38 @@ pub struct StoredSource {
     /// The session's folder name. `None` for a launch, which has no name.
     pub key: Option<String>,
     pub source_key: SourceKey,
+}
+
+impl StoredSource {
+    /// The source as the Runs screen names it. A session row with no name cannot be told from
+    /// a launch, and the launch is the honest reading: it is the source with no name.
+    pub fn run_source(&self) -> RunSource {
+        match (self.kind, &self.key) {
+            (SourceKind::Session, Some(name)) => RunSource::Session { name: name.clone() },
+            (SourceKind::Session, None) | (SourceKind::Log, _) => RunSource::Live,
+        }
+    }
+}
+
+/// Every source's runs as a fold under one rules version produced them, named, and how many
+/// sources had a cache that could not be read. What the Runs screen is built from.
+#[derive(Debug, Clone, PartialEq, Eq, Default)]
+pub struct ArchivedRuns {
+    pub sources: Vec<(RunSource, Vec<Run>)>,
+    pub unreadable: u32,
+}
+
+impl ArchivedRuns {
+    /// What the Runs screen says about this read: a count of unreadable caches, and nothing
+    /// when there were none.
+    pub fn diagnostics(&self) -> Vec<RunsDiagnostic> {
+        (self.unreadable > 0)
+            .then_some(RunsDiagnostic::UnreadableEvents {
+                count: self.unreadable,
+            })
+            .into_iter()
+            .collect()
+    }
 }
 
 /// Events read back. A row that does not parse is counted rather than hidden, the way an
@@ -324,6 +357,22 @@ impl Store {
             .map_err(StoreError::from_sqlite)?
             .flatten();
         Ok((folded == Some(rules_version)).then(Vec::new))
+    }
+
+    /// Every source's cached runs under `rules_version`, named, oldest source first (card #81,
+    /// V1: this was the body of the `runs` command). A source nobody folded under these rules
+    /// contributes no row — it is folded again the next time its log is read — and an empty
+    /// fold contributes a row with no run in it, which adds nothing to any total.
+    pub fn archived_runs(&self, rules_version: u32) -> Result<ArchivedRuns, StoreError> {
+        let mut archived = ArchivedRuns::default();
+        for row in self.sources()? {
+            match self.cached_runs(row.id, rules_version) {
+                Ok(Some(runs)) => archived.sources.push((row.run_source(), runs)),
+                Ok(None) => {}
+                Err(_) => archived.unreadable += 1,
+            }
+        }
+        Ok(archived)
     }
 
     fn insert_source(
