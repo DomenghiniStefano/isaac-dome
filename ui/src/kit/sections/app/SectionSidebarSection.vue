@@ -10,7 +10,7 @@ import { ref } from 'vue'
 import SectionSidebar from '@/components/shell/SectionSidebar.vue'
 import SidebarEdgeTab from '@/components/shell/SidebarEdgeTab.vue'
 import SidebarItem from '@/components/shell/SidebarItem.vue'
-import { SidebarWidth } from '@/components/shell/sidebarWidth'
+import { SidebarWidth } from '@/lib/shell/sidebarWidth'
 import KitSection from '../../KitSection.vue'
 
 const progressWidth = ref<number>(SidebarWidth.Default)

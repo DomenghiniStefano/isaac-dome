@@ -28,7 +28,7 @@ import {
 } from '@/router/routeTable'
 import { useTabsStore } from '@/stores/tabs'
 import { useWikiStore } from '@/stores/wiki'
-import ProfileFact from '../profile/ProfileFact.vue'
+import ProfileFact from '@/components/data-state/ProfileFact.vue'
 
 const wiki = useWikiStore()
 const tabs = useTabsStore()

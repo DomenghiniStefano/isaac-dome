@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { Badge } from '@/components/ui/badge'
-import QualityPips from '@/screens/collection/QualityPips.vue'
+import QualityPips from '@/components/data-state/QualityPips.vue'
 import WikiFigure from '@/components/wiki/WikiFigure.vue'
 import WikiInline from '@/components/wiki/WikiInline.vue'
 import { WikiFigureSize } from '@/components/wiki/figureSize'

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import NavBar from '@/components/shell/NavBar.vue'
-import { NavSection } from '@/components/shell/navSection'
+import { NavSection } from '@/lib/shell/navSection'
 import KitSection from '../../KitSection.vue'
 
 const section = ref<NavSection>(NavSection.Wiki)

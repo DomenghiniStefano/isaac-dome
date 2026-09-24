@@ -2,26 +2,30 @@ import { onBeforeUnmount, onMounted, watch } from 'vue'
 import { assertNever } from '@/lib/assertNever'
 import { setWindowSession, windowSession } from '@/lib/ipc/session'
 import { useTabsStore } from '@/stores/tabs'
-import { watchWindowBox, watchWindowFocus } from './appWindow'
-import { focusOrder, rememberFocus } from './focusOrder'
-import { WindowMessageKind } from './messages'
-import type { WindowMessage } from './messages'
+import { watchWindowBox, watchWindowFocus } from '@/lib/window/appWindow'
+import { focusOrder, rememberFocus } from '@/lib/window/focusOrder'
+import { WindowMessageKind } from '@/lib/window/messages'
+import type { WindowMessage } from '@/lib/window/messages'
 import {
   currentLayout,
   sameLayout,
   setLayout,
   sidebarCollapsed,
   sidebarWidth,
-} from './layout'
-import type { Layout } from './layout'
-import { clampToMonitors } from './monitorClamp'
-import { oweSeed, takeSeed } from './seeds'
-import { readSession, writeSession } from './sessionDocument'
-import type { StoredBox, StoredSession, StoredWindow } from './sessionDocument'
-import { noteSessionError } from './sessionHealth'
-import { SessionAction, decideSessionWrite } from './sessionWriter'
-import { newWindowLabel, windowPort } from './windowPort'
-import type { WindowBox } from './windowPort'
+} from '@/lib/window/layout'
+import type { Layout } from '@/lib/window/layout'
+import { clampToMonitors } from '@/lib/window/monitorClamp'
+import { oweSeed, takeSeed } from '@/lib/window/seeds'
+import { readSession, writeSession } from '@/lib/window/sessionDocument'
+import type {
+  StoredBox,
+  StoredSession,
+  StoredWindow,
+} from '@/lib/window/sessionDocument'
+import { noteSessionError } from '@/lib/window/sessionHealth'
+import { SessionAction, decideSessionWrite } from '@/lib/window/sessionWriter'
+import { newWindowLabel, windowPort } from '@/lib/window/windowPort'
+import type { WindowBox } from '@/lib/window/windowPort'
 
 // How long a newborn window waits for the seed that says what it holds before falling back to
 // its landing tab. **It is a deadline, not a delay**: whoever owes the seed is another window of
