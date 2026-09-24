@@ -29,7 +29,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
       v-bind="{ ...forwarded, ...$attrs }"
       :class="
         cn(
-          'z-50 w-fit max-w-xs animate-panel-rise border border-input bg-tooltip px-2 py-1.5 text-caption text-foreground',
+          'z-overlay w-fit max-w-xs animate-panel-rise border border-input bg-tooltip px-2 py-1.5 text-caption text-foreground',
           props.class,
         )
       "

@@ -55,7 +55,7 @@ const promises = [
         <!-- The session's diagnostic was here from 3.7b until 3.6a built the Tabs screen, which
              is where it belongs: next to the switch that turns the session off. A diagnostic in
              two places is the same mistake as a setting in two places. -->
-        <div class="flex flex-col gap-0.75">
+        <div class="flex flex-col gap-1">
           <span class="text-label text-subtle-foreground">{{
             t('about.version')
           }}</span>
@@ -71,7 +71,7 @@ const promises = [
           <div
             v-for="promise in promises"
             :key="promise.title"
-            class="flex flex-col gap-0.75"
+            class="flex flex-col gap-1"
           >
             <span class="text-control text-foreground">{{
               t(promise.title)

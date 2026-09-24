@@ -52,11 +52,11 @@ export const targetAura: Record<TargetView, string> = {
  * where the order stops meaning anything. Reading `--floor-level-third` as "thirty per cent
  * likely" would be reading a number nobody measured.
  *
- * A variable rather than a class, because a height is a value the template binds and not one
- * of a set of utilities: `h-1/3` would be the fraction written twice, here and in the legend.
+ * One class per step (`h-floor-level-*` in `assets/utilities.css`), which reads the height
+ * token once: binding `var(--floor-level-…)` from a string read it here too (card #81, C5).
  */
 export const levelHeight: Record<RankStep, string> = {
-  [RankStep.First]: 'var(--floor-level-first)',
-  [RankStep.Second]: 'var(--floor-level-second)',
-  [RankStep.Third]: 'var(--floor-level-third)',
+  [RankStep.First]: 'h-floor-level-first',
+  [RankStep.Second]: 'h-floor-level-second',
+  [RankStep.Third]: 'h-floor-level-third',
 }

@@ -50,11 +50,11 @@ const barTone: Record<KpiTone, ProgressTone> = {
           cn(
             'flex flex-col',
             surface === KpiSurface.Panel &&
-              'border border-border bg-sheet px-3.25 pt-2.75 pb-3',
+              'border border-border bg-sheet px-3 pt-3 pb-3',
           )
         "
       >
-        <div class="flex items-baseline gap-1.25">
+        <div class="flex items-baseline gap-1">
           <span
             :class="
               cn(
@@ -77,9 +77,7 @@ const barTone: Record<KpiTone, ProgressTone> = {
             >/ {{ denominator }}</span
           >
         </div>
-        <span class="mt-1.75 text-label text-muted-foreground">{{
-          label
-        }}</span>
+        <span class="mt-2 text-label text-muted-foreground">{{ label }}</span>
         <Progress
           v-if="hasKpiBar(denominator)"
           :model-value="value"

@@ -19,7 +19,7 @@ defineProps<{ active: boolean; label: string }>()
     :size="ButtonSize.Row"
     :aria-current="active ? AriaCurrent.Page : undefined"
     :aria-label="label"
-    class="sidebar-collapsed-center gap-2.25 [&_svg]:size-4 [&_svg]:text-subtle-foreground aria-[current=page]:[&_svg]:text-foreground"
+    class="sidebar-collapsed-center gap-2 [&_svg]:size-4 [&_svg]:text-subtle-foreground aria-[current=page]:[&_svg]:text-foreground"
   >
     <slot name="icon" />
     <span class="sidebar-collapsed-hidden truncate">{{ label }}</span>

@@ -1,0 +1,22 @@
+/* Stacking order, named (card #81, C5). Tailwind v4 has no theme namespace for `z-index`, so the
+   names are utilities and the numbers live here once: a `z-10` in a template was a position in
+   an order nobody had written down.
+
+   - raised: above its own siblings inside one scroll box — a sticky column, a pinned card, the
+     sidebar's edge tab over the page next to it;
+   - raised-header / raised-corner: the marks matrix, where a sticky header row and a sticky
+     name column cross, and the corner cell has to sit above both;
+   - overlay: what floats above the whole window — dialogs, menus, popovers, tooltips, the drag
+     ghost. shadcn-vue ships these at 50, and it stays 50. */
+@utility z-raised {
+  z-index: 10;
+}
+@utility z-raised-header {
+  z-index: 20;
+}
+@utility z-raised-corner {
+  z-index: 30;
+}
+@utility z-overlay {
+  z-index: 50;
+}
