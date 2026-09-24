@@ -258,13 +258,17 @@ that never happens.
   On 2026-09-12 a commit added `crates/ipc/tests/progress.rs` and deleted
   `crates/ipc/tests/profile.rs` in the same diff, 647 lines and 27 tests of it, and every gate
   stayed green for four days: **deleting a test fails nothing**. **It fails something since
-  2026-09-16** (B63): `scripts/check` totals the tests that *exist* — passed plus failed plus
-  ignored on the Rust side, Vitest's parenthesised total on the other — and compares both against
-  `scripts/test-floor`. A suite that shrank fails the run; one that grew prints the line to paste,
-  because failing on a rise would fail every commit that adds a test. **What it still cannot
-  see** is a floor nobody raises: two hundred tests added and fifty later deleted stays quiet, and
-  closing that needs a per-commit comparison, which is CI. So a test file that leaves in the same
-  commit that adds another is still the shape to look for in a diff.
+  2026-09-16** (B63), and **since 2026-09-24 without a number to keep** (card #84):
+  `scripts/check-test-count.mjs` counts the tests *declared* — `#[test]`, and `it(`/`test(` in
+  Vitest — in the working tree and at the branch's merge base with `develop`, read with
+  `git grep` at that revision. A suite with fewer fails the run, and every file that lost tests is
+  named even when the total held. It replaced `scripts/test-floor`, two stored totals every branch
+  had to raise, which made **any two parallel branches conflict on that one file** — six times in
+  its own record, once auto-merged to the wrong number. Comparing against the merge base also
+  closes the limit the floor had: fifty tests deleted on a later branch are fifty fewer than
+  where *that* branch started. **What it cannot see**: a case taken out of an `it.each` table,
+  because a declaration is not a run. A deliberate removal is
+  `ISAACDOME_ALLOW_FEWER_TESTS=1 pnpm check`, and the commit says why.
 - **`samples/` is only opened from the `test-support` crate**, never by hand with
   `env!("CARGO_MANIFEST_DIR")`. Its functions always declare the outcome on stderr —
   `sample: <file>` when there is one, `skip: …` when there isn't — because a test on real
@@ -289,8 +293,8 @@ that never happens.
 - Before declaring anything done: **`pnpm check`** (i.e. `scripts/check`), which runs
   `cargo fmt --check`, `cargo clippy --all-targets -- -D warnings`, `cargo test --workspace`,
   `pnpm typecheck`, `pnpm ui:test`, `pnpm lint`, `pnpm format:check`, `pnpm scan`,
-  `scripts/check-no-game-assets.mjs`, the IPC contract's regeneration,
-  `scripts/check-doc-refs.mjs`, and the test-count floor. **There's
+  `scripts/check-no-game-assets.mjs`, `scripts/check-test-count.mjs`, the IPC contract's
+  regeneration, and `scripts/check-doc-refs.mjs`. **There's
   no CI**, by choice: the list of commands lives in that script and nowhere else. The two
   fast ones also run in the pre-commit hook (`git config core.hooksPath scripts/git-hooks`).
 - **The document reference report is a report, and never fails the run.** It checks every file
