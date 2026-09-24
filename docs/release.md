@@ -49,20 +49,21 @@ and the signing key from step 1 must never be committed afterwards either.
 
 ## Every release
 
-**The whole sequence, from whichever worktree is free**, on a detached `HEAD` — no worktree ever
-holds `develop` or `master` (`CLAUDE.md`, *Commits*). The steps below explain
+**The whole sequence, from the main worktree**, which holds `develop`. The steps below explain
 each one; this is the order, and the git moves around them that the steps leave out:
 
 ```powershell
-git fetch origin --prune
-git switch --detach origin/develop           # pnpm check green here
+# on develop, pnpm check green
 pnpm bump minor
-git add package.json; git commit -m "chore: release 0.2.0"
-git push origin HEAD:develop
-git push origin HEAD:master                  # refused unless it is a fast-forward
-git branch -f develop HEAD; git branch -f master HEAD
+git add package.json; git commit -m "chore: release 0.2.0"; git push origin develop
+
+git switch master
+git merge --ff-only develop
+git push origin master
 
 pnpm release --publish --notes <notes.md>     # in your own terminal, see below
+
+git switch develop
 ```
 
 Then, on the board, the cards in `DA RILASCIARE` go to `Done`: they are now in the hands of
@@ -70,10 +71,8 @@ somebody using the app. Cards still in `UAT` stay there even when their code shi
 them is the owner's call, and the release does not make it.
 
 - **`master` moves only here, and only when the owner has said to cut a release** (`CLAUDE.md`).
-  It is never checked out to do it: `git push origin HEAD:master` from the detached release commit
-  is the fast-forward, and the remote refuses it for the same reason `--ff-only` would — a
-  `master` that is not an ancestor of the release. The worktree stays on that detached `HEAD`
-  afterwards, so neither branch is left locked or left open to a commit made by habit.
+  The main worktree checks it out for the length of the publish and returns to `develop`
+  straight after, so `develop` is back where every other worktree expects to find it.
 - **The release carries all of `develop`**, `UAT` cards included — `master` is fast-forwarded,
   not cherry-picked. Look at what `UAT` holds before step 4 if that matters for this release.
 - **Run the publish in a terminal of your own, not through an agent's shell.** It reads the key's
