@@ -2,11 +2,9 @@
 
 use std::path::Path;
 
-use serde::Serialize;
-
 use crate::hash::PathKey;
 
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub struct Entry {
     pub key: PathKey,
     pub offset: u64,
