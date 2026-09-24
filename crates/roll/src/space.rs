@@ -15,9 +15,23 @@ pub enum CellValue {
 /// caller that gets the shape wrong gets an error, not a silently short deck.
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum SpaceError {
-    CellCount { expected: usize, found: usize },
-    PlayableCount { expected: usize, found: usize },
-    GreedColumn { columns: usize, found: usize },
+    CellCount {
+        expected: usize,
+        found: usize,
+    },
+    PlayableCount {
+        expected: usize,
+        found: usize,
+    },
+    GreedColumn {
+        columns: usize,
+        found: usize,
+    },
+    /// More rows or columns than a `Target` can name: its coordinates are `u8`.
+    TooLarge {
+        rows: usize,
+        columns: usize,
+    },
 }
 
 impl std::fmt::Display for SpaceError {
@@ -31,6 +45,9 @@ impl std::fmt::Display for SpaceError {
             }
             SpaceError::GreedColumn { columns, found } => {
                 write!(f, "greed column {found} outside {columns} columns")
+            }
+            SpaceError::TooLarge { rows, columns } => {
+                write!(f, "{rows}x{columns} is past what a target can address")
             }
         }
     }
@@ -62,6 +79,12 @@ impl Space {
         cells: Vec<CellValue>,
         playable: Vec<bool>,
     ) -> Result<Space, SpaceError> {
+        // First, so the product below cannot overflow and no cast in `deck` can wrap: a
+        // target addresses its cell with two `u8` (card #80, P11c).
+        const ADDRESSABLE: usize = u8::MAX as usize + 1;
+        if rows > ADDRESSABLE || columns > ADDRESSABLE {
+            return Err(SpaceError::TooLarge { rows, columns });
+        }
         let expected = rows * columns;
         if cells.len() != expected {
             return Err(SpaceError::CellCount {
