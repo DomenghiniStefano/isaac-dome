@@ -300,3 +300,51 @@ fn a_second_level_offer_names_its_level_the_way_its_column_does() {
         ]
     );
 }
+
+/// Card #80, item 13: what the graph's answer means to Live, variant by variant. It used to be
+/// `Err(_) => NoGraph`, so a save that did not read was told as "the game is not installed".
+mod graph_of {
+    use ipc::{live_graph, IpcError, LiveGraph, SaveReason};
+
+    fn view() -> ipc::UnlockView {
+        ipc::for_tests::unlock_view_of(vec![])
+    }
+
+    #[test]
+    fn the_nodes_when_the_graph_answered() {
+        let ok = Ok(view());
+        assert!(matches!(live_graph(&ok), LiveGraph::Nodes(_)));
+    }
+
+    #[test]
+    fn no_profile_when_there_is_no_profile_to_read() {
+        assert!(matches!(
+            live_graph(&Err(IpcError::NoActiveProfile)),
+            LiveGraph::NoProfile
+        ));
+        assert!(matches!(
+            live_graph(&Err(IpcError::UnknownProfile {
+                id: "gone".to_string()
+            })),
+            LiveGraph::NoProfile
+        ));
+    }
+
+    #[test]
+    fn an_unreadable_save_is_said_as_such_and_not_as_a_missing_game() {
+        assert!(matches!(
+            live_graph(&Err(IpcError::UnreadableSave {
+                reason: SaveReason::TooShort
+            })),
+            LiveGraph::SaveUnreadable
+        ));
+    }
+
+    #[test]
+    fn no_graph_when_the_catalog_is_missing() {
+        assert!(matches!(
+            live_graph(&Err(IpcError::CatalogUnavailable)),
+            LiveGraph::NoGraph
+        ));
+    }
+}

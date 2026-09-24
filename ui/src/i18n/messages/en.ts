@@ -116,6 +116,8 @@ export const en: MessageSchema = {
         'The log writes “{name}”, and the game calls {forms} characters that: the base form and the Tainted one. Both are below, because guessing which would be an inference.',
       noGraph: 'Without the game installed we do not know what it would open.',
       noProfile: 'Without a save chosen we do not know what you are missing.',
+      saveUnreadable:
+        'The chosen save does not read, so we do not know what you are missing. The run stays here.',
     },
   },
   floor: {

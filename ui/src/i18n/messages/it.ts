@@ -120,6 +120,8 @@ export const it = {
         'Il log scrive «{name}», e il gioco chiama così {forms} personaggi: la forma base e quella Tainted. Sotto trovi entrambe, perché indovinare quale sia sarebbe un’ipotesi.',
       noGraph: 'Senza il gioco installato non sappiamo cosa aprirebbe.',
       noProfile: 'Senza un salvataggio scelto non sappiamo cosa ti manca.',
+      saveUnreadable:
+        'Il salvataggio scelto non si legge, quindi non sappiamo cosa ti manca. La partita resta qui.',
     },
   },
   floor: {
