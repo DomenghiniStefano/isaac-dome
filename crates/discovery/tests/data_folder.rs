@@ -17,7 +17,7 @@ fn the_folder_with_the_plus_is_found_with_everything_in_it() {
     fs::create_dir_all(dir.join("save_backups")).unwrap();
     fs::write(dir.join("log.txt"), b"[INFO] - hello").unwrap();
 
-    let found = scan_game_data(tmp.path(), None).expect("the folder is there");
+    let found = scan_game_data(Some(tmp.path()), None).expect("the folder is there");
     assert_eq!(found.dir, dir);
     assert_eq!(found.log, Some(dir.join("log.txt")));
     assert_eq!(found.online_logs, Some(dir.join("online_logs")));
@@ -35,7 +35,7 @@ fn the_folder_without_the_plus_is_found_too() {
     fs::create_dir_all(&dir).unwrap();
     fs::write(dir.join("log.txt"), b"[INFO] - hello").unwrap();
 
-    let found = scan_game_data(tmp.path(), None).expect("the folder is there");
+    let found = scan_game_data(Some(tmp.path()), None).expect("the folder is there");
     assert_eq!(found.dir, dir);
     assert_eq!(found.log, Some(dir.join("log.txt")));
     assert_eq!(found.online_logs, None);
@@ -50,7 +50,7 @@ fn the_one_with_the_plus_wins_when_both_exist() {
     fs::create_dir_all(games.join("Binding of Isaac Repentance")).unwrap();
     fs::create_dir_all(games.join("Binding of Isaac Repentance+")).unwrap();
 
-    let found = scan_game_data(tmp.path(), None).expect("a folder is there");
+    let found = scan_game_data(Some(tmp.path()), None).expect("a folder is there");
     assert_eq!(found.dir, games.join("Binding of Isaac Repentance+"));
 }
 
@@ -65,7 +65,7 @@ fn a_folder_that_exists_but_is_empty_is_still_the_folder() {
         .join("Binding of Isaac Repentance+");
     fs::create_dir_all(&dir).unwrap();
 
-    let found = scan_game_data(tmp.path(), None).expect("the folder is there");
+    let found = scan_game_data(Some(tmp.path()), None).expect("the folder is there");
     assert_eq!(found.log, None);
     assert_eq!(found.online_logs, None);
     assert_eq!(found.save_backups, None);
@@ -74,7 +74,7 @@ fn a_folder_that_exists_but_is_empty_is_still_the_folder() {
 #[test]
 fn nothing_there_is_none_and_not_an_error() {
     let tmp = tempfile::tempdir().unwrap();
-    assert!(scan_game_data(tmp.path(), None).is_none());
+    assert!(scan_game_data(Some(tmp.path()), None).is_none());
 }
 
 #[test]
@@ -84,5 +84,20 @@ fn a_file_where_the_folder_should_be_is_not_a_folder() {
     let games = tmp.path().join("My Games");
     fs::create_dir_all(&games).unwrap();
     fs::write(games.join("Binding of Isaac Repentance+"), b"not a folder").unwrap();
-    assert!(scan_game_data(tmp.path(), None).is_none());
+    assert!(scan_game_data(Some(tmp.path()), None).is_none());
+}
+
+/// Card #80, P9: the folder the game says it writes to (B57) is its own answer, not a hint for
+/// the Documents search. It was read only inside that search, so on a machine where
+/// `dirs::document_dir()` answers nothing the declared folder was never tried.
+#[test]
+fn the_declared_folder_is_found_without_a_documents_folder() {
+    let tmp = tempfile::tempdir().unwrap();
+    let declared = tmp.path().join("elsewhere");
+    fs::create_dir_all(&declared).unwrap();
+    fs::write(declared.join("log.txt"), b"[INFO] - hello").unwrap();
+
+    let found = scan_game_data(None, Some(&declared)).expect("the declared folder is there");
+    assert_eq!(found.dir, declared);
+    assert_eq!(found.log, Some(declared.join("log.txt")));
 }
