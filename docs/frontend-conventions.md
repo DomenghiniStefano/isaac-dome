@@ -316,7 +316,10 @@ twice. A box that scrolls at the right-hand edge carries the padding *inside* it
 is the window's edge — in Goals side by side that is the queue's pane, not the row.
 
 **The third row is a correction, not an addition.** Completion stopped being *flowing* with card
-#58 and this table was not updated, and its matrix has scrolled inside itself ever since. A
+#58 and this table was not updated, and its matrix scrolled inside itself from then until card #85,
+when the whole screen became the box that scrolls: the band goes, the boss header pins to the top
+of the screen, and only the rows scroll sideways (`MarksGrid.vue` says why the header is a strip of
+its own). A
 contract that describes two of three shapes is read as forbidding the third, so it is written down
 now that Goals is the second screen of the kind. The band never grows past a gutter to reach the
 edge — `WikiLanding.vue` records what that cost.
