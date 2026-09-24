@@ -14,21 +14,36 @@ import FloorMove from './floor/FloorMove.vue'
 import FloorPalette from './floor/FloorPalette.vue'
 import FloorReasoning from './floor/FloorReasoning.vue'
 import FloorTargets from './floor/FloorTargets.vue'
+import { useFloorDrawing } from './floor/useFloorDrawing'
 import ScreenHeader from './ScreenHeader.vue'
 
 const store = useFloorStore()
 const { t } = useMessages()
 
-// The grid answers from the moment it opens: an empty floor is a diagnostic, not a blank.
-void store.solve()
+// The drawing is this tab's and the pictures are this window's: a torn-off tab takes its floor
+// with it, and every tab draws with the same game.
+const {
+  cells,
+  shown,
+  brush,
+  view,
+  failed,
+  paint,
+  settle,
+  move,
+  erase,
+  clear,
+  show,
+  pick,
+} = useFloorDrawing()
 // The pictures are asked once, beside the first answer: they do not change with the drawing.
 void store.loadIcons()
 
-const solutions = computed(() => store.view?.solutions ?? [])
+const solutions = computed(() => view.value?.solutions ?? [])
 
 // The reasoning follows the switch: it explains the picture on the grid, and only that one.
 const shownSolution = computed(
-  () => solutions.value.find((s) => s.target === store.shown) ?? null,
+  () => solutions.value.find((s) => s.target === shown.value) ?? null,
 )
 
 // The missing start room is a hint and it was drawn as an alert: a full-width box, above
@@ -37,7 +52,7 @@ const shownSolution = computed(
 // app takes. `floorEntries` maps the kind to `null` for exactly this, so the list below cannot
 // also draw it and say it twice.
 const noStartRoom = computed(() =>
-  (store.view?.diagnostics ?? []).some((d) => d.kind === 'noStartRoom'),
+  (view.value?.diagnostics ?? []).some((d) => d.kind === 'noStartRoom'),
 )
 </script>
 
@@ -47,14 +62,11 @@ const noStartRoom = computed(() =>
       t('floor.intro')
     }}</ScreenHeader>
 
-    <DiagnosticsList
-      v-if="store.view"
-      :entries="floorEntries(store.view.diagnostics)"
-    />
+    <DiagnosticsList v-if="view" :entries="floorEntries(view.diagnostics)" />
 
     <!-- The failure is said, and the grid stays: what you painted is yours, and losing it
          because a command did not answer would be the app throwing away your work. -->
-    <EmptyCategory v-if="store.failed">{{ t('floor.failed') }}</EmptyCategory>
+    <EmptyCategory v-if="failed">{{ t('floor.failed') }}</EmptyCategory>
 
     <!-- **One workbench, the way a drawing program is laid out**: the tools against the canvas,
          the canvas, and what the canvas means beside it. It was two cards before — the grid in
@@ -77,8 +89,8 @@ const noStartRoom = computed(() =>
             <div class="flex items-center gap-2">
               <FloorTargets
                 :solutions="solutions"
-                :shown="store.shown"
-                @show="store.show($event)"
+                :shown="shown"
+                @show="show($event)"
               />
               <!-- Two marks and they are never both here: this one appears only while the start
                  room is missing, the legend's lives under the grid beside the arrows. Two
@@ -97,9 +109,9 @@ const noStartRoom = computed(() =>
             >
               <FloorPalette
                 class="order-last grid-cols-2 @floor-rail/floor:order-first @floor-rail/floor:w-floor-palette @floor-rail/floor:shrink-0 @floor-rail/floor:grid-cols-1"
-                :brush="store.brush"
+                :brush="brush"
                 :icons="store.icons"
-                @pick="store.brush = $event"
+                @pick="pick($event)"
               />
               <div class="flex max-w-full min-w-0 flex-col gap-3">
                 <!-- The grid is 27.5rem and cannot be anything else: thirteen cells of pixel art
@@ -108,24 +120,24 @@ const noStartRoom = computed(() =>
                    of hiding the right of it behind the card's edge. -->
                 <div class="min-w-0 overflow-x-auto">
                   <FloorGrid
-                    :cells="store.cells"
+                    :cells="cells"
                     :icons="store.icons"
                     :solutions="solutions"
-                    :shown="store.shown"
-                    @paint="store.paint($event)"
-                    @settle="store.settle()"
-                    @erase="store.erase($event)"
+                    :shown="shown"
+                    @paint="paint($event)"
+                    @settle="settle()"
+                    @erase="erase($event)"
                   />
                 </div>
                 <!-- The arrows move the drawing and sit where it starts; the button that empties
                    it is as far from them as the row allows, which is the point. What the colours
                    mean is not here: it sits beside the list of ranked places it explains. -->
                 <div class="flex items-center gap-2">
-                  <FloorMove :cells="store.cells" @move="store.move($event)" />
+                  <FloorMove :cells="cells" @move="move($event)" />
                   <!-- The wrapper carries the margin, not the component: `FloorClear`'s root is
                      a Dialog, which renders no element of its own for a class to land on. -->
                   <div class="ml-auto">
-                    <FloorClear @clear="store.clear()" />
+                    <FloorClear @clear="clear()" />
                   </div>
                 </div>
               </div>
@@ -144,7 +156,7 @@ const noStartRoom = computed(() =>
           >
             <FloorReasoning
               class="absolute inset-0"
-              :target="store.shown"
+              :target="shown"
               :solution="shownSolution"
             />
           </div>
