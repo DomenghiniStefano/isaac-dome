@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ChevronRightIcon } from '@lucide/vue'
-import { computed, ref, watch } from 'vue'
+import { computed } from 'vue'
 import EmptyCategory from '@/components/data-state/EmptyCategory.vue'
 import { Button, ButtonSize, ButtonVariant } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
@@ -9,12 +9,14 @@ import { Skeleton } from '@/components/ui/skeleton'
 import { VirtualRows } from '@/components/ui/virtual'
 import WikiFigure from '@/components/wiki/WikiFigure.vue'
 import { WikiFigureSize } from '@/components/wiki/figureSize'
+import { useTabView } from '@/composables/useTabView'
 import { useMessages } from '@/i18n'
 import type { WikiPageRef } from '@/lib/ipc/types'
 import { rowWikiPx } from '@/lib/scale/rows'
 import { pageLocation } from '@/lib/wiki/category'
 import { emptyList, queryTyped } from '@/lib/facets/emptyList'
 import { filterPages } from '@/lib/wiki/listFilter'
+import type { ScrollOffset } from '@/lib/scale/scrollOffset'
 import { pageKey } from '@/lib/wiki/pageKey'
 import {
   WikiCategory,
@@ -23,6 +25,7 @@ import {
 } from '@/router/routeTable'
 import { useTabsStore } from '@/stores/tabs'
 import { useWikiStore } from '@/stores/wiki'
+import { wikiView } from './tabView'
 import { pageId } from './wikiLabels'
 
 const props = defineProps<{ category: WikiCategory }>()
@@ -30,15 +33,17 @@ const wiki = useWikiStore()
 const tabs = useTabsStore()
 const { t } = useMessages()
 
-// The filter belongs to this screen and to this category: a tab that moves to another
-// category starts clean.
-const query = ref('')
-watch(
-  () => props.category,
-  () => {
-    query.value = ''
-  },
-)
+// The filter and the position are the entry's reading (`tabView.ts`): they come back after a tab
+// switch, a back, a tear-off. A tab that moves to another category is a new entry, so it starts
+// clean without anything here having to clear it.
+const reading = useTabView(wikiView)
+const query = computed(() => reading.value.query)
+const setQuery = (value: string) => {
+  reading.value = { ...reading.value, query: value }
+}
+const setOffset = (offset: ScrollOffset) => {
+  reading.value = { ...reading.value, offset }
+}
 
 const all = computed(() => wiki.index?.pages ?? [])
 const total = computed(() => filterPages(all.value, props.category, '').length)
@@ -96,7 +101,7 @@ const open = (page: WikiPageRef, event: MouseEvent) => {
         :model-value="query"
         :placeholder="t('wiki.search')"
         class="relative w-search"
-        @update:model-value="query = String($event)"
+        @update:model-value="setQuery(String($event))"
       />
     </header>
     <div class="flex min-h-0 flex-1 flex-col gap-3 px-5.5 pt-4">
@@ -109,6 +114,8 @@ const open = (page: WikiPageRef, event: MouseEvent) => {
           v-slot="{ visible }"
           :rows="pages"
           :row-px="rowWikiPx"
+          :offset="reading.offset"
+          @offset-change="setOffset"
         >
           <!-- The banding is the row's position, so a list of 900 keeps a place to rest the
                eye; the hover wins over it, or the row under the pointer would be the only
@@ -147,7 +154,7 @@ const open = (page: WikiPageRef, event: MouseEvent) => {
           <Button
             v-if="empty.reset"
             :variant="ButtonVariant.Outline"
-            @click="query = ''"
+            @click="setQuery('')"
             >{{ t('wiki.resetFilters') }}</Button
           >
         </div>
