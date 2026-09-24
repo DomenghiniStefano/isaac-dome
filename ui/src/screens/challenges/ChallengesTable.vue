@@ -28,9 +28,9 @@ const add = (row: Row): void => {
 </script>
 
 <template>
-  <div class="flex min-h-0 flex-1 flex-col">
+  <div class="flex flex-col">
     <div
-      class="grid grid-cols-challenges items-center border-b border-hairline bg-muted text-label text-subtle-foreground @max-compact/page:grid-cols-challenges-narrow"
+      class="sticky top-0 z-raised-header grid grid-cols-challenges items-center border-b border-hairline bg-muted text-label text-subtle-foreground @max-compact/page:grid-cols-challenges-narrow"
     >
       <span class="px-2 py-1.5 text-right">{{
         t('challenges.columns.number')
