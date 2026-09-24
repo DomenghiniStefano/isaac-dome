@@ -70,7 +70,9 @@ pub struct GameInstall {
     pub dir: PathBuf,
     pub library: PathBuf,
     pub manifest: PathBuf,
-    pub edition: Edition,
+    /// `None` when nothing says which edition this is: a folder chosen by hand has no
+    /// appmanifest, and the absence of a file is not evidence of Rebirth (card #80, P9).
+    pub edition: Option<Edition>,
     pub dlcs: Vec<Dlc>,
     /// Unix epoch (seconds) of the last update installed, from the
     /// appmanifest's `LastUpdated`. `None` without a manifest or without the key.

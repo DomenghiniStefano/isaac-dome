@@ -131,7 +131,10 @@ export type InstalledDlc = (typeof InstalledDlc)[keyof typeof InstalledDlc]
 
 export type GameView = {
   dirHint: string
-  edition: Edition
+  /**
+   * `None` when the install says nothing about it — a game folder chosen by hand.
+   */
+  edition: Edition | null
   dlcs: Array<InstalledDlc>
 }
 

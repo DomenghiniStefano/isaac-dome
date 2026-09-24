@@ -58,13 +58,10 @@ fn malformed_manifest_falls_back_to_canonical_dir() {
 
     let (game, diags) = find_game(&Options::default(), Some(&steam));
 
-    // The game must be found with edition Rebirth (no DLC from the .acf)
+    // The game is found, and its edition is unknown: a manifest that does not read says
+    // nothing about the DLCs, and reading that silence as Rebirth was a guess (card #80, P9).
     let game = game.expect("must find the game via the canonical fallback");
-    assert_eq!(
-        game.edition,
-        Edition::Rebirth,
-        "no DLC from the malformed manifest"
-    );
+    assert_eq!(game.edition, None, "a malformed manifest says no edition");
     assert_eq!(
         game.updated_unix, None,
         "no update date without a readable manifest"
@@ -121,7 +118,7 @@ fn malformed_manifest_without_canonical_dir_continues_to_next_library() {
     let game = game.expect("must find the game in the second library");
     assert_eq!(
         game.edition,
-        Edition::Afterbirth,
+        Some(Edition::Afterbirth),
         "must read the DLC from the second library's manifest"
     );
 
@@ -182,7 +179,7 @@ fn finds_game_in_second_library_when_absent_from_first() {
         "the game must be in lib2, not lib1: {}",
         game.dir.display()
     );
-    assert_eq!(game.edition, Edition::Afterbirth);
+    assert_eq!(game.edition, Some(Edition::Afterbirth));
 
     let has_not_found = diags.iter().any(|d| matches!(d, Diagnostic::GameNotFound));
     assert!(!has_not_found, "GameNotFound must not appear: {diags:?}");

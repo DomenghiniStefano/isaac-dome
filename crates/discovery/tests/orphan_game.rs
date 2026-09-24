@@ -143,3 +143,19 @@ fn a_stale_manifest_does_not_hide_the_library_that_has_the_game() {
         "the second library holds it"
     );
 }
+
+/// Card #80, P9: a game folder chosen by hand (B14) comes with no appmanifest, so nothing says
+/// which edition it is. It used to read as Rebirth — a claim about the user's copy made from
+/// the absence of a file. The edition is unknown there, and says so.
+#[test]
+fn a_game_folder_chosen_by_hand_has_no_edition_it_can_claim() {
+    let tmp = tempfile::tempdir().unwrap();
+    let chosen = Options {
+        steam_root: None,
+        game_dir: Some(tmp.path().to_path_buf()),
+        save_dir: None,
+    };
+    let (game, _) = find_game(&chosen, None);
+    let game = game.expect("a chosen folder is taken as the game");
+    assert_eq!(game.edition, None);
+}
