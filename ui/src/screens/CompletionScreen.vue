@@ -4,6 +4,7 @@ import { computed } from 'vue'
 import { Alert, AlertDescription } from '@/components/ui/alert'
 import { Skeleton } from '@/components/ui/skeleton'
 import { useOnActiveProfile } from '@/composables/useOnActiveProfile'
+import { vScrollMemory } from '@/directives/scrollMemory'
 import { useMessages } from '@/i18n'
 import { completionKpis } from '@/lib/completion/completionView'
 import { useCompletionStore } from '@/stores/views'
@@ -25,16 +26,19 @@ const kpis = computed(() =>
 <template>
   <!-- The gutter is the children's, so the band can be the full width of the page without
        overflowing it — the same shape as the wiki's screens, and `WikiLanding.vue` records
-       what doing it the other way round cost. The screen does not scroll: the band stays, and
-       the matrix takes the height that is left and scrolls inside itself (spec 3.13a, card
-       #58). -->
-  <div class="flex h-full min-h-0 flex-col overflow-hidden">
+       what doing it the other way round cost.
+       **The screen flows and scrolls, the matrix does not scroll on its own** (card #85). It
+       used to be the other way round (card #58): the band stayed and the matrix scrolled in
+       the height left under it, which on a small window was three rows under a band that
+       never moved. Now the band, the card's title and the legend scroll away with the page,
+       and the boss header is the one thing that stays, pinned to the top of the screen. -->
+  <div v-scroll-memory="'page'" class="flex h-full flex-col overflow-y-auto">
     <div v-if="completion.status === LoadStatus.Failed" class="px-5.5 pt-5">
       <ProfileError :error="completion.error" @retry="completion.load()" />
     </div>
     <template v-else-if="completion.view && kpis">
       <CompletionHero :kpis="kpis" :widget-url="completion.view.widgetUrl" />
-      <div class="flex min-h-0 flex-1 flex-col gap-3 px-5.5 pt-4 pb-5">
+      <div class="flex flex-col gap-3 px-5.5 pt-4 pb-5">
         <!-- Nothing readable is a state, not an empty grid: the cells still say "unknown". -->
         <Alert v-if="kpis.readable === 0">
           <InfoIcon />
@@ -42,12 +46,12 @@ const kpis = computed(() =>
             t('completion.nothingReadable')
           }}</AlertDescription>
         </Alert>
-        <MarksMatrixCard :matrix="completion.view" class="min-h-0 flex-1" />
+        <MarksMatrixCard :matrix="completion.view" />
       </div>
     </template>
-    <div v-else class="flex flex-col gap-4 px-5.5 pt-5">
+    <div v-else class="flex flex-1 flex-col gap-4 px-5.5 pt-5 pb-5">
       <Skeleton class="h-52 w-full" />
-      <Skeleton class="min-h-0 flex-1" />
+      <Skeleton class="flex-1" />
     </div>
   </div>
 </template>
