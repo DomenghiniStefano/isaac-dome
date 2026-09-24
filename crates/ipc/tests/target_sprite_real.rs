@@ -10,6 +10,10 @@
 //! uses to tell the design side how much it will be able to illustrate. If they change,
 //! it shows up here.
 
+// A test that extracts one variant panics on every other, the ones added later included: here
+// the wildcard *is* the assertion, and it fails loudly on a new variant instead of hiding it.
+#![allow(clippy::wildcard_enum_match_arm)]
+
 use std::collections::{BTreeMap, BTreeSet};
 
 use catalog::Catalog;

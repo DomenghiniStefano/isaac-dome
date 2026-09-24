@@ -450,6 +450,8 @@ fn strip_attributes(cell: &str) -> &str {
     cell
 }
 
+// Tests extract one variant and panic on the rest: the wildcard is the assertion.
+#[allow(clippy::wildcard_enum_match_arm)]
 #[cfg(test)]
 mod tests {
     use super::*;

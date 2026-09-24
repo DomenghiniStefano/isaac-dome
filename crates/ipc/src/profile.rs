@@ -277,7 +277,9 @@ fn named_absence(active: ActiveProfile, diagnostics: &[DiscoveryDiagnostic]) -> 
         } if chosen => ActiveProfile::None {
             reason: MissingReason::NoSavesInChosenFolder,
         },
-        other => other,
+        other @ (ActiveProfile::None { .. }
+        | ActiveProfile::NeedsChoice { .. }
+        | ActiveProfile::Active { .. }) => other,
     }
 }
 
