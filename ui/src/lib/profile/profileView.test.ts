@@ -8,6 +8,8 @@ import {
   chainLinks,
   editionShort,
   formatCount,
+  formatDate,
+  formatPercent,
   formatModified,
   indicator,
   sectionLabel,
@@ -171,5 +173,24 @@ describe('sectionLabel', () => {
     expect(sectionLabel('achievements')).toBe('profile.sections.achievements')
     expect(sectionLabel('unknown5')).toBe('profile.sections.unknown')
     expect(sectionLabel('something_new')).toBeNull()
+  })
+})
+
+// Card #81, V9: a date is formatted in one place, next to `formatCount`, rather than by an
+// `Intl.DateTimeFormat` written into each screen. The shape is the one `formatModified` already
+// printed after its "·", read from its own tests above.
+describe('formatDate', () => {
+  it('prints the day, the short month and the year in the interface language', () => {
+    expect(formatDate(new Date(2026, 8, 2, 12), Locale.It)).toBe('2 set 2026')
+    expect(formatDate(new Date(2026, 7, 31, 10), Locale.En)).toBe(
+      'Aug 31, 2026',
+    )
+  })
+})
+
+describe('formatPercent', () => {
+  it('writes a percentage the way each language does', () => {
+    expect(formatPercent(125, Locale.It)).toBe('125%')
+    expect(formatPercent(125, Locale.En)).toBe('125%')
   })
 })

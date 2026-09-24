@@ -2,13 +2,13 @@
 import { computed } from 'vue'
 import PixelSprite from '@/components/sprite/PixelSprite.vue'
 import { Card, CardContent } from '@/components/ui/card'
-import { i18n, useMessages } from '@/i18n'
+import { useFormat } from '@/composables/useFormat'
+import { useMessages } from '@/i18n'
 import type { MessageKey } from '@/i18n/messageKey'
 import type { MessageSchema } from '@/i18n/messages/it'
 import { assertNever } from '@/lib/assertNever'
 import { columnName } from '@/lib/graph/nodeState'
 import type { DrawnView } from '@/lib/ipc/types'
-import { formatRelativeDay } from '@/lib/profile/profileView'
 import { statusText } from './rollText'
 
 // The one card on screen: what to play tonight, drawn from the deck. Both images degrade to
@@ -17,6 +17,7 @@ import { statusText } from './rollText'
 // and symbols.
 const props = defineProps<{ drawn: DrawnView }>()
 const { t } = useMessages()
+const fmt = useFormat()
 
 interface Sentence {
   key: MessageKey<MessageSchema>
@@ -44,12 +45,7 @@ const sentence = computed((): Sentence => {
 // `drawnUnix` is always set on a real draw, so this never falls back to the empty string in
 // practice — the type stays honest about the one case (`unix === null`) that cannot reach it.
 const when = computed(
-  () =>
-    formatRelativeDay(
-      props.drawn.drawnUnix,
-      new Date(),
-      i18n.global.locale.value,
-    ) ?? '',
+  () => fmt.relativeDay(props.drawn.drawnUnix, new Date()) ?? '',
 )
 </script>
 
