@@ -23,7 +23,7 @@ fn queue_pieces<'a>(
     resources: &'a ResourcesState,
     graph: &'a GraphState,
 ) -> Result<QueuePieces<'a>, IpcError> {
-    let rs = resources.get();
+    let rs = resources.get(app);
     let c = rs.and_then(|rs| catalog.get_or_build(rs));
     Ok(QueuePieces {
         catalog: c,

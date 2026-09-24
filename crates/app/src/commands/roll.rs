@@ -26,7 +26,7 @@ fn view_now(
     write_failed: bool,
 ) -> Result<ipc::RollView, IpcError> {
     let (flags, counters) = progress_sections(app)?;
-    let rs = resources.get();
+    let rs = resources.get(app);
     let cat = rs.and_then(|rs| catalog.get_or_build(rs));
     let (document, read_reason) = read_document(app, store);
     let store_reason = if write_failed {
@@ -93,7 +93,7 @@ pub fn roll_draw(
     store: tauri::State<'_, StoreState>,
 ) -> Result<ipc::RollView, IpcError> {
     let (flags, counters) = progress_sections(&app)?;
-    let rs = resources.get();
+    let rs = resources.get(&app);
     let cat = rs.and_then(|rs| state.get_or_build(rs));
     let (document, _) = read_document(&app, &store);
     // An unreadable document is replaced here too, exactly as `set_roll_preset` replaces one

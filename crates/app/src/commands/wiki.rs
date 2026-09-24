@@ -3,11 +3,10 @@
 use tauri::AppHandle;
 
 use core_save::Kind;
-use discovery::{discover, Options};
 use ipc::IpcError;
 
 use crate::icons::icon_url;
-use crate::state::{active_save, CatalogState, ResourcesState, SearchState};
+use crate::state::{active_save, discovery_now, CatalogState, ResourcesState, SearchState};
 /// The wiki page for a target, if the dataset knows it. The embedded dataset failing to
 /// load is an expected case, diagnosed elsewhere (`ExtractionReport.wiki`): here it's
 /// enough to say the command can't answer.
@@ -22,13 +21,14 @@ pub fn wiki_entry(target: ipc::Target) -> Result<Option<ipc::Entry>, IpcError> {
 /// that didn't load is an empty index that says so, not an `Err`: the landing shows it.
 #[tauri::command]
 pub fn wiki_index(
+    app: AppHandle,
     state: tauri::State<'_, CatalogState>,
     resources: tauri::State<'_, ResourcesState>,
 ) -> Result<ipc::WikiIndex, IpcError> {
-    let d = discover(&Options::default());
+    let d = discovery_now(&app);
     let game_updated_unix = d.game.as_ref().and_then(|g| g.updated_unix);
     // No game is expected: the index goes out with no icon links, and the screen says so.
-    let catalog = resources.get().and_then(|rs| state.get_or_build(rs));
+    let catalog = resources.get(&app).and_then(|rs| state.get_or_build(rs));
     Ok(ipc::wiki_index(
         wiki::Dataset::embedded(),
         catalog,
@@ -49,7 +49,7 @@ pub fn search(
     limit: usize,
 ) -> Result<ipc::SearchView, IpcError> {
     // Game not installed is expected: the answer goes out with wiki titles alone.
-    let catalog = resources.get().and_then(|rs| state.get_or_build(rs));
+    let catalog = resources.get(&app).and_then(|rs| state.get_or_build(rs));
     let sections = active_save(&app)
         .ok()
         .map(|(_, s)| (s.flags(Kind::Achievements), s.flags(Kind::Items)));

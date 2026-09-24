@@ -23,7 +23,7 @@ pub(crate) fn unlock(
 ) -> Result<ipc::UnlockView, IpcError> {
     let (flags, counters) = progress_sections(&app)?;
     // Game not installed is expected: the view goes out without a catalog and says so.
-    let resources = resources.get();
+    let resources = resources.get(&app);
     let catalog = resources.and_then(|rs| state.get_or_build(rs));
     let g = catalog.and_then(|c| graph.get(c));
     let progress = ipc::SaveProgress::new(flags.as_deref(), counters.as_deref(), catalog);
@@ -73,7 +73,7 @@ pub fn collection(
 ) -> Result<ipc::CollectionView, IpcError> {
     let (_, save) = active_save(&app)?;
     // Game not installed is expected: the view goes out without a catalog and says so.
-    let resources = resources.get();
+    let resources = resources.get(&app);
     let catalog = resources.and_then(|rs| state.get_or_build(rs));
     let items = save.flags(Kind::Items);
     let achievements = save.flags(Kind::Achievements);
@@ -98,7 +98,7 @@ pub fn want(
 ) -> Result<ipc::WantView, IpcError> {
     let (flags, counters) = progress_sections(&app)?;
     // Game not installed is expected: the view goes out without a catalog and says so.
-    let resources = resources.get();
+    let resources = resources.get(&app);
     let catalog = resources.and_then(|rs| state.get_or_build(rs));
     let g = catalog.and_then(|c| graph.get(c));
     let progress = ipc::SaveProgress::new(flags.as_deref(), counters.as_deref(), catalog);
@@ -132,7 +132,7 @@ pub fn challenges(
 ) -> Result<ipc::ChallengesView, IpcError> {
     let (_, save) = active_save(&app)?;
     // Game not installed is expected: the view goes out without a catalog and says so.
-    let resources = resources.get();
+    let resources = resources.get(&app);
     let catalog = resources.and_then(|rs| state.get_or_build(rs));
     let challenges = save.flags(Kind::Challenges);
     let achievements = save.flags(Kind::Achievements);
