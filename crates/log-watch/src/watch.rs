@@ -4,11 +4,13 @@
 //! and a watch registered on the file follows the old handle — going deaf exactly when a new
 //! launch starts, which is the one moment that matters.
 
+use std::ffi::OsStr;
 use std::path::Path;
-use std::sync::mpsc::channel;
+use std::sync::mpsc::{channel, RecvTimeoutError};
 use std::time::{Duration, Instant};
 
 use notify::{RecursiveMode, Watcher};
+use run::Throttle;
 
 use crate::WatchError;
 
@@ -21,7 +23,8 @@ pub struct LogWatcher {
     _inner: notify::RecommendedWatcher,
 }
 
-/// Calls `on_change` when `log` may have changed, at most once every [`DEBOUNCE`].
+/// Calls `on_change` when `log` may have changed: at once, then at most once every
+/// [`DEBOUNCE`], and a change inside that wait is acted on when it ends rather than dropped.
 pub fn watch(log: &Path, on_change: impl Fn() + Send + 'static) -> Result<LogWatcher, WatchError> {
     let folder = log
         .parent()
@@ -44,18 +47,22 @@ pub fn watch(log: &Path, on_change: impl Fn() + Send + 'static) -> Result<LogWat
         .map_err(watch_error)?;
 
     std::thread::spawn(move || {
-        let mut last: Option<Instant> = None;
-        // Ends when the sender is dropped, which is when the watcher is.
-        while let Ok(event) = rx.recv() {
-            let touched = match &name {
-                Some(n) => event
-                    .paths
-                    .iter()
-                    .any(|p| p.file_name().is_some_and(|f| f == n.as_os_str())),
-                None => true,
+        // When to act is `run::Throttle`'s to say (card #80, item 02): at once on a change,
+        // and a change inside the quiet period kept for when it ends — never dropped.
+        let mut throttle = Throttle::new(DEBOUNCE);
+        loop {
+            // Waits for the next change, or only as long as a kept change has left.
+            let received = match throttle.wait(Instant::now()) {
+                Some(wait) => rx.recv_timeout(wait),
+                None => rx.recv().map_err(|_| RecvTimeoutError::Disconnected),
             };
-            if touched && last.is_none_or(|t| t.elapsed() >= DEBOUNCE) {
-                last = Some(Instant::now());
+            let act = match received {
+                Ok(event) => touches(&event, name.as_deref()) && throttle.event(Instant::now()),
+                Err(RecvTimeoutError::Timeout) => throttle.tick(Instant::now()),
+                // The sender is dropped when the watcher is: the watch is over.
+                Err(RecvTimeoutError::Disconnected) => break,
+            };
+            if act {
                 on_change();
             }
         }
@@ -69,5 +76,16 @@ pub fn watch(log: &Path, on_change: impl Fn() + Send + 'static) -> Result<LogWat
 fn watch_error(_e: notify::Error) -> WatchError {
     WatchError::Io {
         kind: std::io::ErrorKind::Other,
+    }
+}
+
+/// Whether an event in the folder is about the log itself; with no file name, every one is.
+fn touches(event: &notify::Event, name: Option<&OsStr>) -> bool {
+    match name {
+        Some(n) => event
+            .paths
+            .iter()
+            .any(|p| p.file_name().is_some_and(|f| f == n)),
+        None => true,
     }
 }
