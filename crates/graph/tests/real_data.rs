@@ -11,6 +11,7 @@ fn available_now_and_blocked_by_never_contradict_each_other() {
         return;
     };
     let e = g.evaluate(&graph::FlagsOnly(Some(&flags)));
+    let mut checked = 0;
     for n in g.nodes() {
         let Some(NodeInfo::Computed {
             available_now,
@@ -20,12 +21,15 @@ fn available_now_and_blocked_by_never_contradict_each_other() {
         else {
             continue;
         };
+        checked += 1;
         assert!(
             !(*available_now && *blocked_by > 0),
             "node {} claims available_now with {blocked_by} prerequisites missing",
             n.achievement
         );
     }
+    // The vacuity guard: a graph with no computed node satisfies the property on nothing.
+    assert!(checked > 0, "no computed node to hold the property over");
 }
 
 #[test]
@@ -34,6 +38,7 @@ fn steps_missing_is_zero_exactly_when_the_node_is_done_or_available() {
         return;
     };
     let e = g.evaluate(&graph::FlagsOnly(Some(&flags)));
+    let mut checked = 0;
     for n in g.nodes() {
         let Some(NodeInfo::Computed {
             available_now,
@@ -43,6 +48,7 @@ fn steps_missing_is_zero_exactly_when_the_node_is_done_or_available() {
         else {
             continue;
         };
+        checked += 1;
         let done = flags.get(n.achievement as usize).copied().unwrap_or(false);
         assert_eq!(
             *steps_missing == 0,
@@ -51,6 +57,7 @@ fn steps_missing_is_zero_exactly_when_the_node_is_done_or_available() {
             n.achievement
         );
     }
+    assert!(checked > 0, "no computed node to hold the property over");
 }
 
 #[test]
@@ -162,6 +169,7 @@ fn every_resolvable_requirement_produced_its_edge() {
     let Some((c, g)) = support::real_graph() else {
         return;
     };
+    let mut checked = 0;
     for n in g.nodes() {
         for r in &n.requirements {
             // The three kinds whose edge is a single `unlocked_by` on the catalog side.
@@ -189,6 +197,7 @@ fn every_resolvable_requirement_produced_its_edge() {
             if a.0 == n.achievement {
                 continue;
             }
+            checked += 1;
             assert!(
                 n.prerequisites.contains(&a.0),
                 "node {} has requirement {r:?}, unlocked by achievement {}, and no edge for it",
@@ -197,6 +206,10 @@ fn every_resolvable_requirement_produced_its_edge() {
             );
         }
     }
+    assert!(
+        checked > 0,
+        "no requirement resolved to an unlock, so no edge was checked"
+    );
 }
 
 /// The four nodes B34 left unanswerable: 65 and 161 behind Guppy, 178 and 352 behind
