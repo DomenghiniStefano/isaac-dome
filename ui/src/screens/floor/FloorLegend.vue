@@ -2,8 +2,8 @@
 import { HelpTip } from '@/components/ui/tooltip'
 import { useMessages } from '@/i18n'
 import { RankStep } from '@/lib/floor/cellView'
-import { levelHeight, targetAura, targetFill } from '@/lib/floor/targets'
 import type { TargetView } from '@/lib/ipc/types'
+import FloorRank from './FloorRank.vue'
 
 // What the fill means, a hover away.
 //
@@ -38,17 +38,11 @@ const steps = [RankStep.Third, RankStep.Second, RankStep.First]
           :key="step"
           class="relative size-floor-cell bg-floor-empty text-caption"
         >
-          <span class="absolute inset-0" :class="targetAura[shown]">
-            <span
-              class="absolute inset-x-0 bottom-0"
-              :class="targetFill[shown]"
-              :style="{ height: levelHeight[step] }"
-            />
-            <span
-              class="absolute inset-0 grid place-items-center text-floor-rank-foreground tabular-nums text-shadow-floor-rank"
-              >{{ steps.length - place }}</span
-            >
-          </span>
+          <FloorRank
+            :target="shown"
+            :step="step"
+            :rank="steps.length - place"
+          />
         </span>
       </span>
       <span>{{ t('floor.rank.note') }}</span>
