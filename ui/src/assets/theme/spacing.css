@@ -121,8 +121,9 @@
      smaller than the symbol inside it (cycle 3.5c, Decision 3). */
   --spacing-mark-symbol: calc(16px * var(--sprite-multiple));
   --spacing-mark-cell: calc(var(--spacing-mark-symbol) * 1.25);
-  /* The completion matrix's frame (Schermate.dc.html): the name column, the row total, and a
-     column header tall enough for a vertical "Mom's Heart" over the symbol.
+  /* The completion matrix's frame (Schermate.dc.html): the name column and the row total. The
+     column header no longer has a height of its own: since card #85 it is the boss symbol
+     alone, the name in its tooltip.
 
      The name column widened from 11rem with card #58: it carries three things now — the head
      in a frame, the name, and the row's own bar — where it used to carry two, and at 11rem
@@ -134,7 +135,6 @@
      right inset, since the scrolling box can have no padding of its own. 45 + 12 needs 60,
      and at 52 the two group totals printed as `151/198138/198`. */
   --spacing-matrix-total: 3.75rem;
-  --spacing-matrix-header: 7.375rem;
   /* The framed co-op head in that column: the 32px sprite with somewhere to sit, the same
      idea as a wiki row's figure at the height a matrix row can spare. Not a whole multiple
      of the sprite on purpose — the frame is a box and the sprite keeps its own size inside

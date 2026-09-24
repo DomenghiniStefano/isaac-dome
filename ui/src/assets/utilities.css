@@ -150,12 +150,6 @@
     var(--spacing-live-opens);
 }
 
-/* A column header read bottom to top. */
-@utility writing-vertical {
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-}
-
 @utility hatch-unknown {
   background-image: repeating-linear-gradient(
     45deg,
