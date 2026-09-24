@@ -76,7 +76,7 @@ pub fn samples_dir() -> PathBuf {
 /// used, or that it's being skipped because it's missing.
 pub fn sample(name: &str) -> Option<PathBuf> {
     let path = samples_dir().join(name);
-    if path.exists() {
+    if path.is_file() {
         declare(&format!("sample: {name}"));
         return Some(path);
     }

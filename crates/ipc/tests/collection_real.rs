@@ -28,6 +28,8 @@ fn every_listed_collectible_reads_its_own_slot() {
         achievements.as_deref(),
         |_| None,
     );
+    // The vacuity guard: a view with no rows satisfies every per-row assertion below.
+    assert!(!v.items.is_empty(), "the collection has no rows to check");
     for item in &v.items {
         assert_eq!(
             item.in_collection,

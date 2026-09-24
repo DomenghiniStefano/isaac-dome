@@ -10,6 +10,7 @@ fn an_available_node_is_never_taken_away() {
     let Some(series) = support::series_evals() else {
         return;
     };
+    let mut checked = 0;
     for pair in series.windows(2) {
         let (before, after) = (&pair[0], &pair[1]);
         for (id, info) in &before.1 {
@@ -20,6 +21,7 @@ fn an_available_node_is_never_taken_away() {
             else {
                 continue;
             };
+            checked += 1;
             let done_after = after.2.get(*id as usize).copied().unwrap_or(false);
             let still = matches!(
                 after.1.get(id),
@@ -37,6 +39,11 @@ fn an_available_node_is_never_taken_away() {
             );
         }
     }
+    // The vacuity guard: a series where nothing was ever available holds this on nothing.
+    assert!(
+        checked > 0,
+        "no node was available in any era of the series"
+    );
 }
 
 #[test]
@@ -44,6 +51,7 @@ fn steps_missing_never_grows() {
     let Some(series) = support::series_evals() else {
         return;
     };
+    let mut checked = 0;
     for pair in series.windows(2) {
         let (before, after) = (&pair[0], &pair[1]);
         for (id, info) in &before.1 {
@@ -58,6 +66,7 @@ fn steps_missing_never_grows() {
             else {
                 continue;
             };
+            checked += 1;
             assert!(
                 now <= was,
                 "node {id}: {was} steps in {} became {now} in {} — progress does not undo",
@@ -66,6 +75,7 @@ fn steps_missing_never_grows() {
             );
         }
     }
+    assert!(checked > 0, "no node was computed in two consecutive eras");
 }
 
 #[test]
