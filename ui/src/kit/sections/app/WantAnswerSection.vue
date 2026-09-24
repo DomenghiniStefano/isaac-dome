@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { WantDiagnostic } from '@/lib/ipc/types'
 import type { UnlockNode } from '@/lib/ipc/types'
 import { WantBlockKind } from '@/lib/graph/wantBlocks'
 import type { WantBlock } from '@/lib/graph/wantBlocks'
@@ -84,7 +85,7 @@ const noProfile = block(WantBlockKind.NoProfile)
     />
     <WantAnswer
       :blocks="[noProfile]"
-      :banner="{ kind: 'noProfile' }"
+      :banner="WantDiagnostic.NoProfile"
       :can-write="false"
       :busy="false"
     />
@@ -97,7 +98,7 @@ const noProfile = block(WantBlockKind.NoProfile)
     />
     <WantAnswer
       :blocks="[]"
-      :banner="{ kind: 'nothingUnlocks' }"
+      :banner="WantDiagnostic.NothingUnlocks"
       :can-write="false"
       :busy="false"
     />

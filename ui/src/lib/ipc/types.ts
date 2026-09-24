@@ -937,11 +937,17 @@ export type WantedView =
   | { kind: 'achievement'; achievement: AchievementRef }
   | { kind: 'unresolved' }
 
+/**
+ * Why the answer is empty or partial. Fieldless: a bare string.
+ */
+export const WantDiagnostic = {
+  NoCatalog: 'noCatalog',
+  NoProfile: 'noProfile',
+  NothingUnlocks: 'nothingUnlocks',
+  NotUnlockable: 'notUnlockable',
+} as const
 export type WantDiagnostic =
-  | { kind: 'noCatalog' }
-  | { kind: 'noProfile' }
-  | { kind: 'nothingUnlocks' }
-  | { kind: 'notUnlockable' }
+  (typeof WantDiagnostic)[keyof typeof WantDiagnostic]
 
 export type WantView = {
   wanted: WantedView
@@ -1821,11 +1827,17 @@ export type ChallengeTotals = {
   done: number
 }
 
+/**
+ * What the list could not take into account. Fieldless: a bare string.
+ */
+export const ChallengesDiagnostic = {
+  NoCatalog: 'noCatalog',
+  NoChallengesSection: 'noChallengesSection',
+  NoAchievementSection: 'noAchievementSection',
+  NoWiki: 'noWiki',
+} as const
 export type ChallengesDiagnostic =
-  | { kind: 'noCatalog' }
-  | { kind: 'noChallengesSection' }
-  | { kind: 'noAchievementSection' }
-  | { kind: 'noWiki' }
+  (typeof ChallengesDiagnostic)[keyof typeof ChallengesDiagnostic]
 
 export type ChallengesView = {
   challenges: Array<ChallengeRow>

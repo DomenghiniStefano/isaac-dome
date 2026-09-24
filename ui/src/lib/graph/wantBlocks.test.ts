@@ -1,3 +1,4 @@
+import { WantDiagnostic } from '@/lib/ipc/types'
 import { describe, expect, it } from 'vitest'
 import type { UnlockNode, WantState, WantView } from '@/lib/ipc/types'
 import { WantBlockKind, wantBanner, wantBlocks } from './wantBlocks'
@@ -83,8 +84,8 @@ describe('wantBlocks', () => {
     expect(
       wantBanner({
         ...view({ kind: 'done' }),
-        diagnostics: [{ kind: 'nothingUnlocks' }],
+        diagnostics: [WantDiagnostic.NothingUnlocks],
       }),
-    ).toEqual({ kind: 'nothingUnlocks' })
+    ).toBe(WantDiagnostic.NothingUnlocks)
   })
 })

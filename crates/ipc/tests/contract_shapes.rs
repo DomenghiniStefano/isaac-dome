@@ -41,3 +41,16 @@ fn the_section_kind_stops_being_a_bare_string() {
     // `string`, which is why a renamed variant changed the wire with the suite green.
     assert!(<ipc::SectionCount as TS>::decl(&cfg()).contains("kind: Kind"));
 }
+
+#[test]
+fn no_fieldless_enum_crosses_as_a_tagged_object() {
+    // CLAUDE.md: a fieldless enum is a bare camelCase string, and a tagged unit enum is a bug.
+    // Read from the generated contract, not a list of names, so a new one fails the day it is
+    // written. The recognizer's own cases are in `tests/contract.rs`.
+    let contract = ipc::contract::render();
+
+    assert_eq!(
+        ipc::contract::tagged_fieldless_unions(&contract),
+        Vec::<&str>::new()
+    );
+}

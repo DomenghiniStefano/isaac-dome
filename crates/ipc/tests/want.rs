@@ -364,6 +364,16 @@ fn want_view_json_shape_is_pinned() {
     ))
     .unwrap();
     assert_eq!(none["wanted"], json!({ "kind": "unresolved" }));
-    assert_eq!(none["diagnostics"], json!([{ "kind": "noCatalog" }]));
+    assert_eq!(none["diagnostics"], json!(["noCatalog"]));
     assert_eq!(none["routes"], json!([]));
+}
+
+#[test]
+fn a_want_diagnostic_is_a_bare_string_on_the_wire() {
+    use serde_json::{json, to_value};
+
+    assert_eq!(
+        to_value(WantDiagnostic::NothingUnlocks).expect("serializes"),
+        json!("nothingUnlocks")
+    );
 }

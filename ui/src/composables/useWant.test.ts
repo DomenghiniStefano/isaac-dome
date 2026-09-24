@@ -1,3 +1,4 @@
+import { WantDiagnostic } from '@/lib/ipc/types'
 import { describe, expect, it } from 'vitest'
 import { nextTick, ref } from 'vue'
 import type { Target, WantView } from '@/lib/ipc/types'
@@ -7,7 +8,7 @@ import { wantFrom } from './useWant'
 const answer = (kind: string): WantView => ({
   wanted: { kind: 'unresolved' },
   routes: [],
-  diagnostics: [{ kind: 'nothingUnlocks' }],
+  diagnostics: [WantDiagnostic.NothingUnlocks],
   // The tag is what the test reads back; the rest is the smallest legal view.
   ...({ probe: kind } as object),
 })

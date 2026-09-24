@@ -170,3 +170,11 @@ fn a_reward_carries_whether_it_is_earned_and_unread_is_not_earned() {
         .diagnostics
         .contains(&ChallengesDiagnostic::NoAchievementSection));
 }
+
+#[test]
+fn a_challenges_diagnostic_is_a_bare_string_on_the_wire() {
+    assert_eq!(
+        to_value(ChallengesDiagnostic::NoChallengesSection).expect("serializes"),
+        json!("noChallengesSection")
+    );
+}
