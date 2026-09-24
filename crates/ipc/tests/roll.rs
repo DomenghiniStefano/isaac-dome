@@ -483,3 +483,44 @@ fn a_preset_survives_the_trip_out_to_the_frontend_and_back() {
     let out = ipc::preset_view(&preset);
     assert_eq!(ipc::preset_from_view(&out), preset);
 }
+
+/// Card #81, V1: building the draw was the body of the `roll_draw` command. The expected values
+/// are what that command did, read from it: the deck is the preset's, made effective by what the
+/// save can tell, and the draw records that deck's size and the time it was handed.
+#[test]
+fn a_draw_records_its_deck_size_and_its_time_and_leaves_the_preset_alone() {
+    let counters = zeroed_counters();
+    let doc = ipc::drawn_document(
+        Document::default(),
+        Some(&counters),
+        None,
+        None,
+        42,
+        1_700_000_000,
+    );
+
+    let drawn = doc
+        .current
+        .clone()
+        .expect("a deck of missing cells draws something");
+    assert_eq!(drawn.drawn_unix, 1_700_000_000);
+    let (space, known) = ipc::roll_space(Some(&counters), None, None);
+    let deck = roll::deck(&space, &ipc::deck_preset(&doc.preset, known));
+    assert_eq!(drawn.deck_size, deck.targets.len());
+    assert_eq!(doc.preset, Preset::default());
+}
+
+#[test]
+fn the_same_seed_draws_the_same_target() {
+    let counters = zeroed_counters();
+    let a = ipc::drawn_document(Document::default(), Some(&counters), None, None, 42, 1);
+    let b = ipc::drawn_document(Document::default(), Some(&counters), None, None, 42, 2);
+    assert_eq!(a.current.map(|d| d.target), b.current.map(|d| d.target));
+}
+
+#[test]
+fn an_empty_deck_draws_nothing_and_says_so_with_none() {
+    // No counters: no cell can be read, so there is nothing missing to draw from.
+    let doc = ipc::drawn_document(Document::default(), None, None, None, 42, 1);
+    assert_eq!(doc.current, None);
+}
