@@ -316,6 +316,64 @@ describe('the sizes the document remembers', () => {
   })
 })
 
+describe('whether the sidebar was folded', () => {
+  const one = [{ tabs: [tab(RouteName.Goals)], activeIndex: 0 }]
+
+  it('round-trips a folded sidebar', () => {
+    const back = readSession(
+      writeSession({ windows: one, sidebarCollapsed: true }),
+    )
+    expect(back?.sidebarCollapsed).toBe(true)
+  })
+
+  // Open is what a sidebar is until somebody folds it, so open is the key's absence — the same
+  // rule as a width nobody set.
+  it('writes nothing for an open sidebar', () => {
+    const stored = JSON.parse(writeSession({ windows: one }))
+    expect('sidebarCollapsed' in stored).toBe(false)
+    expect(
+      readSession(writeSession({ windows: one }))?.sidebarCollapsed,
+    ).toBeUndefined()
+  })
+
+  // Only `true` folds it: a `"yes"`, a `1` or a `false` written by hand is not a sidebar anybody
+  // folded, and the windows still open.
+  it.each(['yes', 1, false, null])(
+    'reads %j as open, and keeps the windows',
+    (value) => {
+      const raw = JSON.stringify({
+        version: 2,
+        windows: [{ tabs: [tab(RouteName.Goals)], activeIndex: 0 }],
+        sidebarCollapsed: value,
+      })
+      const read = readSession(raw)
+      expect(read?.windows).toHaveLength(1)
+      expect(read?.sidebarCollapsed).toBeUndefined()
+    },
+  )
+
+  it('does not move the version', () => {
+    const stored = JSON.parse(
+      writeSession({ windows: one, sidebarCollapsed: true }),
+    )
+    expect(stored.version).toBe(2)
+  })
+
+  it('travels beside the width without disturbing it', () => {
+    const back = readSession(
+      writeSession({ windows: one, sidebarWidth: 260, sidebarCollapsed: true }),
+    )
+    expect(back?.sidebarWidth).toBe(260)
+    expect(back?.sidebarCollapsed).toBe(true)
+  })
+
+  it('reads a version 1 document as open', () => {
+    expect(
+      readSession(v1([tab(RouteName.Goals)]))?.sidebarCollapsed,
+    ).toBeUndefined()
+  })
+})
+
 describe('a tab stored on a screen that has since merged', () => {
   // The route left the table in the same commit as this test. Before that, `plan` was a
   // RouteName and both assertions would have passed without a line of the map being

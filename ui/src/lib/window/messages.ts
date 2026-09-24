@@ -88,12 +88,15 @@ export interface ClosingMessage {
   label: string
 }
 
-// The sidebar's width, as whoever just dragged it now has it. One value for the app, so this is
-// how the others come to hold the same one — and how a window born after the change is told, when
-// its creator answers the Ready that says somebody new exists.
+// The sidebar's width and whether it is folded, as whoever just changed one of them now has them.
+// One layout for the app, so this is how the others come to hold the same one — and how a window
+// born after the change is told, when its creator answers the Ready that says somebody new exists.
+// The width is `null` when nobody ever sized it, and it travels anyway: a fold is news even
+// then.
 export interface LayoutMessage {
   kind: typeof WindowMessageKind.Layout
-  sidebarWidth: number
+  sidebarWidth: number | null
+  sidebarCollapsed: boolean
 }
 
 export type WindowMessage =
