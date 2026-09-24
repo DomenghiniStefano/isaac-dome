@@ -22,7 +22,7 @@ pub fn real_catalog() -> Option<(Catalog, unpack::ResourceSet)> {
     Some((c, rs))
 }
 
-fn embedded_rules() -> &'static graph::Rules {
+pub fn embedded_rules() -> &'static graph::Rules {
     match graph::rules::embedded() {
         Ok(r) => r,
         // Not a skip: the rules are compiled in, so this can only be our own broken file.

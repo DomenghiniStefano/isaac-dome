@@ -14,6 +14,11 @@ fn every_edge_is_accounted_for() {
         (0u32, 0u32, 0u32, 0u32, 0u32);
     let (mut mark, mut counter, mut threshold) = (0u32, 0u32, 0u32);
     let mut produced = 0u32;
+    // Card 80, P5: the gates that do produce an edge, counted by the rule `build` applies, so
+    // `edges` is compared with requirements of the same kind. They used to be left out of
+    // `produced` while their edges stayed in `edges`.
+    let mut produced_by_gate = 0u32;
+    let rules = support::embedded_rules();
     for n in g.nodes() {
         for r in &n.requirements {
             let unlocker = match r {
@@ -40,8 +45,21 @@ fn every_edge_is_accounted_for() {
                         }
                     }
                 }
-                graph::model::Requirement::Gate { .. } => {
+                graph::model::Requirement::Gate { gate: key } => {
                     gate += 1;
+                    let target = key
+                        .strip_prefix("achievement:")
+                        .and_then(|n| n.parse::<u32>().ok())
+                        .map(graph::AchievementId)
+                        .or(match rules.verdict(key) {
+                            Some(graph::rules::Verdict::Behind { achievement }) => {
+                                Some(*achievement)
+                            }
+                            _ => None,
+                        });
+                    if target.is_some_and(|t| c.achievement(t).is_some()) {
+                        produced_by_gate += 1;
+                    }
                     continue;
                 }
                 // Answered by the profile, so it produces no edge and is not uninterpreted
@@ -78,6 +96,14 @@ fn every_edge_is_accounted_for() {
         }
     }
     let edges: u32 = g.nodes().iter().map(|n| n.prerequisites.len() as u32).sum();
+    // `build` drops a node listed among its own prerequisites, with a diagnostic: those
+    // requirements produced no edge, and are taken out of what could have.
+    let self_edges = g
+        .diagnostics()
+        .iter()
+        .filter(|d| matches!(d, graph::build::GraphDiagnostic::SelfPrerequisite { .. }))
+        .count() as u32;
+    let produced = (produced + produced_by_gate).saturating_sub(self_edges);
     eprintln!(
         "requirements: character {character}, boss {boss}, item {item}, challenge {challenge}, \
          gate {gate}, mark {mark}, counter {counter}, threshold {threshold}, \
