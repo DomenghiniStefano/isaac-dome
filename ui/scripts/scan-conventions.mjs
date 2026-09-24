@@ -224,6 +224,32 @@ const readsTokenInString = (body) =>
         !/['"]--[\w-]+['"]\s*:/.test(line),
     )
 
+// Card #81, C6. `a ?? await b()` awaits only on one branch, and the reader has to work out which
+// half of the expression suspends; the await goes on its own line, in a `const`.
+const CONDITIONAL_AWAIT = /(?:\?\?|\|\||&&|[^?.]\?)\s*await\b/
+
+// The body of every `switch (subject) { … }`, found by counting braces from the opening one.
+// Not a parser: a brace inside a string would miscount, and no switch in `src/` has one.
+const switchesOf = (body) =>
+  [...body.matchAll(/\bswitch\s*\(([^)]*)\)\s*\{/g)].map((m) => {
+    let depth = 1
+    let i = m.index + m[0].length
+    for (; i < body.length && depth > 0; i += 1) {
+      if (body[i] === '{') depth += 1
+      else if (body[i] === '}') depth -= 1
+    }
+    return { subject: m[1].trim(), block: body.slice(m.index + m[0].length, i) }
+  })
+
+// A `case '…'` is the tag's sanctioned exception to rule 5 only when the switch is on a tag.
+// On a value, the value's `const` names it (`IoReason.NotFound`), which is what makes a renamed
+// variant a compile error instead of a branch nobody reaches.
+const switchesOnAValueByLiteral = (body) =>
+  switchesOf(body).some(
+    ({ subject, block }) =>
+      !/\.kind$/.test(subject) && /\bcase\s+'/.test(block),
+  )
+
 // Exceptions are declared here, per file and per check, with a reason. An exception
 // with no reason is an untracked violation; an empty list is the goal.
 const EXEMPTIONS = [
@@ -273,6 +299,16 @@ const checks = [
   {
     name: 'invoke() outside src/lib/ipc/',
     test: (file, body) => /\binvoke\s*\(/.test(body) && !isUnder(file, IPC_DIR),
+  },
+  {
+    // Card #81, C6. What they cannot see: a tag copied to a local first (`const k = x.kind;
+    // switch (k)`) reads as a value, and an await split from its operator across a comment.
+    name: 'an await inside a conditional expression',
+    test: (_f, body) => CONDITIONAL_AWAIT.test(body),
+  },
+  {
+    name: 'a switch on a value compared against a string literal',
+    test: (_f, body) => switchesOnAValueByLiteral(body),
   },
   {
     // Card #81, C5, four rules on tokens. What they cannot see: a class assembled from pieces
@@ -546,6 +582,42 @@ const breaches = (file, raw) => {
 // was reworded the day it was found — so nothing else would say whether it works. Each is a file
 // that never existed, and what it must and must not be accused of.
 const FIXTURES = [
+  {
+    name: 'an await on one side of ?? is caught',
+    file: 'src/stores/fixture.ts',
+    body: 'const w = cached ?? await open()\n',
+    expect: ['an await inside a conditional expression'],
+  },
+  {
+    name: 'an await in a ternary branch is caught',
+    file: 'src/stores/fixture.ts',
+    body: 'const w = ready ? await open() : null\n',
+    expect: ['an await inside a conditional expression'],
+  },
+  {
+    name: 'an await on its own line is the shape',
+    file: 'src/stores/fixture.ts',
+    body: 'const w = await open()\nconst x = w?.id ?? null\n',
+    expect: [],
+  },
+  {
+    name: 'a switch on a value compared against literals is caught',
+    file: 'src/lib/ipc/fixture.ts',
+    body: "switch (reason) {\n  case 'notFound':\n    return 1\n}\n",
+    expect: ['a switch on a value compared against a string literal'],
+  },
+  {
+    name: 'a switch on a tag may name its literals',
+    file: 'src/lib/ipc/fixture.ts',
+    body: "switch (reason.kind) {\n  case 'io': {\n    return 1\n  }\n}\n",
+    expect: [],
+  },
+  {
+    name: 'a switch on a value through its const is the shape',
+    file: 'src/lib/ipc/fixture.ts',
+    body: 'switch (reason) {\n  case IoReason.NotFound:\n    return 1\n}\n',
+    expect: [],
+  },
   {
     name: 'a :style that reads a token is caught',
     file: 'src/screens/floor/Fixture.vue',

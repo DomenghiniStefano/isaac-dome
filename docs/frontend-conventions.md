@@ -792,6 +792,8 @@ For honesty's sake, and so as not to make this document look more complete than 
 | **A quarter step off the 4px grid** (`gap-0.75`) | `ui/scripts/scan-conventions.mjs` |
 | **A numbered `z-*`** — the names are in `assets/theme/layers.css` | `ui/scripts/scan-conventions.mjs` |
 | **A `shadow-*` class with no `--shadow-*` token** (`--shadow-*` is `initial`, so it draws nothing) | `ui/scripts/scan-conventions.mjs` |
+| **An `await` inside `??`, `\|\|`, `&&` or a ternary** — since 2026-09-24, card #81 | `ui/scripts/scan-conventions.mjs` |
+| **A `switch` on a value compared against `case '…'`** (on a `.kind` tag the literal is the exception rule 5 allows) | `ui/scripts/scan-conventions.mjs` |
 
 Three rows arrived on 2026-09-06 — before that, the document declared five rules and the
 script checked three — six more on 2026-09-10 with the design system, and **four on
