@@ -43,7 +43,7 @@ fn character_row(c: &Catalog, label: &str, wiki_id: u32) -> Option<usize> {
 
 /// The (boss label, character label, wiki character id) an achievement's references name.
 fn pair(rules: &graph::Rules, id: u32, boss: &str) -> Option<(String, u32)> {
-    let refs = rules.refs(id);
+    let refs = rules.refs(graph::AchievementId(id));
     let keys: Vec<String> = refs
         .iter()
         .map(|r| target_key(&r.target, rules.alias(&r.label)))

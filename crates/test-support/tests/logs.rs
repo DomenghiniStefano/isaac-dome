@@ -2,10 +2,10 @@
 
 #[test]
 fn a_named_log_is_found_or_skipped_with_a_note() {
-    match test_support::log_sample("20260912-solo-judas.log.txt") {
-        Some(path) => assert!(path.ends_with("20260912-solo-judas.log.txt")),
-        // `log_sample` has already declared the skip; saying it twice counted it twice.
-        None => {}
+    // Nothing on `None`: `log_sample` has already declared the skip, and saying it twice
+    // counted it twice.
+    if let Some(path) = test_support::log_sample("20260912-solo-judas.log.txt") {
+        assert!(path.ends_with("20260912-solo-judas.log.txt"));
     }
 }
 

@@ -1,7 +1,7 @@
 //! The plan queue as the UI sees it: rows already resolved to nodes, and every reason a
 //! row is missing said out loud.
 
-use catalog::Catalog;
+use catalog::{AchievementId, Catalog};
 use serde::Serialize;
 use wiki::Dataset;
 
@@ -173,23 +173,23 @@ pub fn queue_view(
             AchievementRef::Unknown { .. } => None,
         })
         .collect();
-    let queued: std::collections::BTreeSet<u32> =
+    let queued: std::collections::BTreeSet<AchievementId> =
         queue.rows().iter().map(|r| r.achievement).collect();
 
     let mut rows = Vec::new();
     let mut completed = 0u32;
     let mut completed_wanted = Vec::new();
     for r in queue.rows() {
-        let Some(node) = by_id.get(&r.achievement) else {
+        let Some(node) = by_id.get(&r.achievement.0) else {
             diagnostics.push(QueueDiagnostic::Unresolved {
-                achievement: r.achievement,
+                achievement: r.achievement.0,
             });
             continue;
         };
         if node.done {
             completed += 1;
             if r.wanted {
-                completed_wanted.push(r.achievement);
+                completed_wanted.push(r.achievement.0);
             }
             continue;
         }
@@ -205,7 +205,7 @@ pub fn queue_view(
         rows.push(QueueRow {
             node: (*node).clone(),
             wanted: r.wanted,
-            origins: r.origins.clone(),
+            origins: r.origins.iter().map(|a| a.0).collect(),
             steps_not_queued,
         });
     }
@@ -233,12 +233,12 @@ pub fn queue_view(
 /// here. It lives in this crate rather than in the Tauri one because it is a rule with a
 /// return value worth checking, and the Tauri crate is wiring and isn't tested.
 pub struct GraphDeps {
-    chains: std::collections::BTreeMap<u32, std::collections::BTreeSet<u32>>,
+    chains: std::collections::BTreeMap<AchievementId, std::collections::BTreeSet<AchievementId>>,
 }
 
 impl GraphDeps {
     /// The chains as the graph gives them, for the rows a move involves.
-    pub fn new(g: &graph::Graph, flags: Option<&[bool]>, rows: &[u32]) -> GraphDeps {
+    pub fn new(g: &graph::Graph, flags: Option<&[bool]>, rows: &[AchievementId]) -> GraphDeps {
         GraphDeps::from_chains(
             rows.iter()
                 .map(|a| (*a, g.missing_chain(*a, &graph::FlagsOnly(flags)))),
@@ -246,7 +246,9 @@ impl GraphDeps {
     }
 
     /// The same table without a graph: the part worth checking, and what the tests use.
-    pub fn from_chains(chains: impl IntoIterator<Item = (u32, Vec<u32>)>) -> GraphDeps {
+    pub fn from_chains(
+        chains: impl IntoIterator<Item = (AchievementId, Vec<AchievementId>)>,
+    ) -> GraphDeps {
         GraphDeps {
             chains: chains
                 .into_iter()
@@ -257,7 +259,7 @@ impl GraphDeps {
 }
 
 impl plan::Dependencies for GraphDeps {
-    fn requires(&self, a: u32, b: u32) -> bool {
+    fn requires(&self, a: AchievementId, b: AchievementId) -> bool {
         self.chains.get(&a).is_some_and(|c| c.contains(&b))
     }
 }
@@ -268,10 +270,12 @@ impl plan::Dependencies for GraphDeps {
 pub fn goals_pending(
     c: &Catalog,
     goals: &[crate::goals::Goal],
-    queued: &std::collections::BTreeSet<u32>,
+    queued: &std::collections::BTreeSet<AchievementId>,
 ) -> u32 {
     goals
         .iter()
-        .filter(|g| achievement_unlocking(c, &g.target).is_none_or(|a| !queued.contains(&a)))
+        .filter(|g| {
+            achievement_unlocking(c, &g.target).is_none_or(|a| !queued.contains(&AchievementId(a)))
+        })
         .count() as u32
 }

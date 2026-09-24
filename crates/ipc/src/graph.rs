@@ -624,7 +624,7 @@ pub fn unlock_view(
         if flag {
             done += 1;
         }
-        let info = match eval.and_then(|e| e.node(slot)) {
+        let info = match eval.and_then(|e| e.node(AchievementId(slot))) {
             Some(graph::evaluate::NodeInfo::Computed {
                 available_now,
                 blocked_by,
@@ -653,7 +653,7 @@ pub fn unlock_view(
                 unknown: 1,
             },
         };
-        let missing = match (catalog, graph.and_then(|g| g.node(slot))) {
+        let missing = match (catalog, graph.and_then(|g| g.node(AchievementId(slot)))) {
             (Some(c), Some(n)) => missing_view(c, dataset, n, read, progress),
             _ => Vec::new(),
         };

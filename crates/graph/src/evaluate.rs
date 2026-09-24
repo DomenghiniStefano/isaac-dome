@@ -3,7 +3,7 @@
 
 use std::collections::{BTreeMap, BTreeSet};
 
-use catalog::CharacterId;
+use catalog::{AchievementId, CharacterId};
 
 use crate::build::{Graph, GraphDiagnostic};
 use crate::model::{Requirement, ThresholdItem};
@@ -69,12 +69,12 @@ pub enum NodeInfo {
 }
 
 pub struct Eval {
-    infos: BTreeMap<u32, NodeInfo>,
+    infos: BTreeMap<AchievementId, NodeInfo>,
     diagnostics: Vec<GraphDiagnostic>,
 }
 
 impl Eval {
-    pub fn node(&self, achievement: u32) -> Option<&NodeInfo> {
+    pub fn node(&self, achievement: AchievementId) -> Option<&NodeInfo> {
         self.infos.get(&achievement)
     }
 
@@ -91,7 +91,7 @@ impl Graph {
     /// tally. Asking about it first would turn "you can do this" into "we cannot say" for a
     /// profile that already can.
     fn state(
-        done: &impl Fn(u32) -> bool,
+        done: &impl Fn(AchievementId) -> bool,
         at_least: u32,
         of: &[ThresholdItem],
         unresolved: u32,
@@ -119,7 +119,7 @@ impl Graph {
         };
         // A slot the file doesn't reach is not done. The other reading would claim
         // progress the save doesn't contain.
-        let done = |id: u32| flags.get(id as usize).copied().unwrap_or(false);
+        let done = |id: AchievementId| flags.get(id.0 as usize).copied().unwrap_or(false);
 
         // A gate the graph can't express is passed when the profile has already earned an
         // achievement that carries it: if "beat Delirium with Isaac" is done, Delirium is
@@ -135,15 +135,15 @@ impl Graph {
             }
         }
 
-        let mut fan_out: BTreeMap<u32, u32> = BTreeMap::new();
+        let mut fan_out: BTreeMap<AchievementId, u32> = BTreeMap::new();
         for n in self.nodes() {
             for &p in &n.prerequisites {
                 *fan_out.entry(p).or_insert(0) += 1;
             }
         }
 
-        let mut missing: BTreeMap<u32, Option<BTreeSet<u32>>> = BTreeMap::new();
-        let mut cycles: Vec<Vec<u32>> = Vec::new();
+        let mut missing: BTreeMap<AchievementId, Option<BTreeSet<AchievementId>>> = BTreeMap::new();
+        let mut cycles: Vec<Vec<AchievementId>> = Vec::new();
         for n in self.nodes() {
             let mut stack = Vec::new();
             transitive(
@@ -254,11 +254,15 @@ impl Graph {
     /// and when the node isn't in the graph at all — four different situations that the
     /// caller tells apart from `NodeInfo`, not from this list. It answers one question:
     /// what would still have to be earned.
-    pub fn missing_chain(&self, achievement: u32, profile: &dyn Profile) -> Vec<u32> {
+    pub fn missing_chain(
+        &self,
+        achievement: AchievementId,
+        profile: &dyn Profile,
+    ) -> Vec<AchievementId> {
         let Some(flags) = profile.done() else {
             return Vec::new();
         };
-        let done = |id: u32| flags.get(id as usize).copied().unwrap_or(false);
+        let done = |id: AchievementId| flags.get(id.0 as usize).copied().unwrap_or(false);
         let mut memo = BTreeMap::new();
         let mut stack = Vec::new();
         let mut cycles = Vec::new();
@@ -273,12 +277,12 @@ impl Graph {
 /// even when many nodes share an ancestor.
 fn transitive(
     g: &Graph,
-    id: u32,
-    done: &impl Fn(u32) -> bool,
-    memo: &mut BTreeMap<u32, Option<BTreeSet<u32>>>,
-    stack: &mut Vec<u32>,
-    cycles: &mut Vec<Vec<u32>>,
-) -> Option<BTreeSet<u32>> {
+    id: AchievementId,
+    done: &impl Fn(AchievementId) -> bool,
+    memo: &mut BTreeMap<AchievementId, Option<BTreeSet<AchievementId>>>,
+    stack: &mut Vec<AchievementId>,
+    cycles: &mut Vec<Vec<AchievementId>>,
+) -> Option<BTreeSet<AchievementId>> {
     if let Some(hit) = memo.get(&id) {
         return hit.clone();
     }
