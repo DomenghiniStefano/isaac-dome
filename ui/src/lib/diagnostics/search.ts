@@ -1,5 +1,5 @@
 import { SearchDiagnostic } from '@/lib/ipc/types'
-import { entriesFrom, Severity } from './spec'
+import { entriesFromValues, Severity } from './spec'
 import type { DiagnosticEntry, DiagnosticRow } from './spec'
 
 // `noProfile` is the expected state before a save is chosen (spec 3.5, Decision 8), so it is
@@ -32,12 +32,6 @@ const table: Record<SearchDiagnostic, DiagnosticRow> = {
   },
 }
 
-// The only screen whose diagnostic is a bare string and not a tagged object: it carries no
-// values, so it is given the shape the shared builder reads.
 export const searchEntries = (
   diagnostics: SearchDiagnostic[],
-): DiagnosticEntry[] =>
-  entriesFrom(
-    diagnostics.map((kind) => ({ kind })),
-    table,
-  )
+): DiagnosticEntry[] => entriesFromValues(diagnostics, table)

@@ -72,3 +72,14 @@ export const entriesFrom = <D extends { kind: string }>(
       },
     ]
   })
+
+// A screen whose diagnostics carry no values receives bare strings — the Rust rule for a
+// fieldless enum — and this gives them the shape `entriesFrom` reads.
+export const entriesFromValues = <D extends string>(
+  diagnostics: D[],
+  table: Record<D, DiagnosticRow | null>,
+): DiagnosticEntry[] =>
+  entriesFrom(
+    diagnostics.map((kind) => ({ kind })),
+    table,
+  )

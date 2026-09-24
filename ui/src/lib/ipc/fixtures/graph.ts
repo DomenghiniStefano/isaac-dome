@@ -1,4 +1,5 @@
 import { assertNever } from '@/lib/assertNever'
+import { WantDiagnostic } from '../types'
 import type {
   NextSteps,
   RequirementView,
@@ -251,7 +252,7 @@ export const wantAnswer = (
     return {
       wanted: { kind: 'unresolved' },
       routes: [],
-      diagnostics: [{ kind: 'noCatalog' }],
+      diagnostics: [WantDiagnostic.NoCatalog],
     }
   const nodes = payload<UnlockView>('unlock').nodes.map(nodeResolved)
   const node = nodes.find((n) => namesTarget(n, target))
@@ -259,7 +260,7 @@ export const wantAnswer = (
     return {
       wanted: { kind: 'unresolved' },
       routes: [],
-      diagnostics: [{ kind: 'nothingUnlocks' }],
+      diagnostics: [WantDiagnostic.NothingUnlocks],
     }
   const first = node.unlocks[0]
   const wanted: WantedView =

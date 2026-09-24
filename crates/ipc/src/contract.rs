@@ -69,6 +69,60 @@ fn rewrite_line(line: &str) -> Option<String> {
     Some(pair)
 }
 
+/// The unions whose every member is a bare tag, `{ "kind": "…" }` and nothing else.
+///
+/// That is a fieldless enum serialized with `tag = "kind"`, which CLAUDE.md calls a bug and
+/// not a style: the value is a string, and a tag around it hides that. **By form, like
+/// `to_const_enums`**, so a new one is found the day it is written and no list can forget it.
+/// A union with one data-carrying member is a tagged enum by right and is not named.
+///
+/// Reads one line per declaration, which is how `ts-rs` writes a union without field docs;
+/// a union spread over lines has fields, so it cannot be one of these today.
+pub fn tagged_fieldless_unions(file: &str) -> Vec<&str> {
+    file.lines()
+        .filter_map(union_line)
+        .filter(|(_, body)| body.split('|').all(is_bare_tag))
+        .map(|(name, _)| name)
+        .collect()
+}
+
+/// How many bare members the recognizer reads across every union, the legitimate ones
+/// included. The vacuity guard of the contract test: zero means the generator's output is no
+/// longer in a form `is_bare_tag` can see, and an empty `tagged_fieldless_unions` then says
+/// nothing.
+pub fn bare_tag_members(file: &str) -> usize {
+    file.lines()
+        .filter_map(union_line)
+        .map(|(_, body)| body.split('|').filter(|m| is_bare_tag(m)).count())
+        .sum()
+}
+
+/// `export type Name = body;` on one line, as `(name, body)`.
+fn union_line(line: &str) -> Option<(&str, &str)> {
+    let rest = line.strip_prefix("export type ")?;
+    let (name, body) = rest.split_once(" = ")?;
+    Some((name, body.strip_suffix(';')?))
+}
+
+/// `{ "kind": "x" }`, or `{ "kind": "x", }` for a struct variant with no fields. A `|` inside a
+/// field splits a member into fragments, and a fragment is never a bare tag.
+fn is_bare_tag(member: &str) -> bool {
+    let Some(inner) = member
+        .trim()
+        .strip_prefix('{')
+        .and_then(|m| m.strip_suffix('}'))
+    else {
+        return false;
+    };
+    inner
+        .trim()
+        .trim_end_matches(',')
+        .trim_end()
+        .strip_prefix(r#""kind": ""#)
+        .and_then(|v| v.strip_suffix('"'))
+        .is_some_and(|v| !v.contains('"'))
+}
+
 use ts_rs::{Config, TS};
 
 /// The header of the generated file. It names the command rather than describing the
