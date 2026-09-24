@@ -542,3 +542,48 @@ fn a_drawn_target_crosses_as_a_translatable_value() {
         json!({ "kind": "greedier" })
     );
 }
+
+/// The review of card #81's second block: the lengths of `MARK_COLUMNS` and `BOSSES` are tied by
+/// a const assertion, but their order was not. Every column, drawn, names the boss of its
+/// position — the pairs below are the matrix's own header, read from `BOSSES`.
+#[test]
+fn every_drawn_column_names_the_boss_of_its_position() {
+    use ipc::MarkColumnView as C;
+    let expected = [
+        ("Mom's Heart", C::MomsHeart),
+        ("Isaac", C::Isaac),
+        ("Satan", C::Satan),
+        ("Boss Rush", C::BossRush),
+        ("Blue Baby", C::BlueBaby),
+        ("The Lamb", C::TheLamb),
+        ("Mega Satan", C::MegaSatan),
+        ("Greed", C::Greed),
+        ("Hush", C::Hush),
+        ("Delirium", C::Delirium),
+        ("Mother", C::Mother),
+        ("The Beast", C::TheBeast),
+    ];
+    assert_eq!(expected.len(), ipc::BOSSES.len());
+    let c = zeroed_counters();
+    for (column, (boss, view_column)) in expected.into_iter().enumerate() {
+        assert_eq!(ipc::BOSSES[column], boss, "the header this test reads");
+        let doc = Document {
+            current: Some(Drawn {
+                target: Target::Mark {
+                    character: 0,
+                    column: column as u8,
+                },
+                deck_size: 1,
+                drawn_unix: 0,
+            }),
+            ..Document::default()
+        };
+        assert_eq!(
+            view(Some(&c), &doc).drawn.map(|d| d.target),
+            Some(ipc::DrawnTargetView::Mark {
+                column: view_column
+            }),
+            "column {column}, {boss}"
+        );
+    }
+}
