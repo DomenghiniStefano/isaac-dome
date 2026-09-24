@@ -2,19 +2,16 @@
 
 use std::path::{Component, Path, PathBuf};
 
-use serde::Serialize;
-
 use crate::arch::Archive;
 
-#[derive(Debug, Clone, Serialize)]
+#[derive(Debug, Clone)]
 pub struct ExtractReport {
     pub extracted: Vec<PathBuf>,
     pub missing: Vec<String>,
     pub diagnostics: Vec<Diagnostic>,
 }
 
-#[derive(Debug, Clone, PartialEq, Eq, Serialize)]
-#[serde(rename_all = "snake_case", tag = "type")]
+#[derive(Debug, Clone, PartialEq, Eq)]
 pub enum Diagnostic {
     DecompressFailed { path: String },
     WriteFailed { path: PathBuf, reason: String },

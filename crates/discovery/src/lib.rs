@@ -50,7 +50,7 @@ pub struct GameDataFolder {
     pub save_backups: Option<PathBuf>,
 }
 
-#[derive(Debug, Clone, Serialize)]
+#[derive(Debug, Clone)]
 pub struct SteamInstall {
     pub root: PathBuf,
     pub source: SteamSource,
@@ -65,7 +65,7 @@ pub enum SteamSource {
     Override,
 }
 
-#[derive(Debug, Clone, Serialize)]
+#[derive(Debug, Clone)]
 pub struct GameInstall {
     pub dir: PathBuf,
     pub library: PathBuf,
@@ -97,7 +97,7 @@ pub enum Dlc {
     RepentancePlus,
 }
 
-#[derive(Debug, Clone, Serialize)]
+#[derive(Debug, Clone)]
 pub struct SaveCandidate {
     pub path: PathBuf,
     pub slot: u8,
@@ -107,8 +107,7 @@ pub struct SaveCandidate {
     pub size: u64,
 }
 
-#[derive(Debug, Clone, PartialEq, Eq, Serialize)]
-#[serde(rename_all = "snake_case", tag = "type")]
+#[derive(Debug, Clone, PartialEq, Eq)]
 pub enum SaveSource {
     SteamCloud { account_id: String },
     Documents { folder: PathBuf },

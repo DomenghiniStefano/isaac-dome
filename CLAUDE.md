@@ -189,7 +189,11 @@ label, and the open item is the honest record of why.
   `undefined` with no error at all. Same failure mode as forgetting `rename_all` on a
   struct, and just as silent: pin it with a test on the JSON shape.
 - **Don't cross the IPC boundary**: file paths, offsets, raw bytes. Only already-resolved
-  view-models; candidate saves travel with an **opaque id**.
+  view-models; candidate saves travel with an **opaque id**. **The compiler holds it since
+  2026-09-24** (card #81, C7): no type carrying a path or an offset derives `Serialize` —
+  `SteamInstall`, `GameInstall`, `SaveCandidate`, `SaveSource`, `Save`, `Section`,
+  `unpack::{Entry, ExtractReport, Diagnostic}` did, while `discovery` said "not `Serialize`,
+  deliberately". A new one that adds the derive is the thing to refuse in review.
 - **Never `format!("{:?}")` to push a type across the IPC.** `Debug` prints *every* field,
   including the ones the boundary forbids: a `PathBuf` in a diagnostic carries the Steam
   account id under `userdata\` and always the Windows username. Every type that goes out
