@@ -156,12 +156,24 @@ fn the_key_of_a_view_keeps_the_identity_and_drops_name_and_icon() {
     }
 }
 
+/// `ipc` reads no clock and no pid (card #81, V2): the id is a function of what `app` hands in,
+/// the way `roll`'s draw is a function of its seed. So it can be tested for what it promises.
 #[test]
-fn fresh_goal_ids_are_distinct_and_opaque() {
-    let a = GoalId::new();
-    let b = GoalId::new();
-    assert_ne!(a, b);
-    assert!(a.as_str().len() >= 16);
+fn a_goal_id_is_a_function_of_its_inputs() {
+    assert_eq!(GoalId::new(1_700_000_000, 7), GoalId::new(1_700_000_000, 7));
+}
+
+#[test]
+fn two_goals_in_the_same_second_differ_by_their_nonce() {
+    assert_ne!(GoalId::new(1_700_000_000, 7), GoalId::new(1_700_000_000, 8));
+    assert_ne!(GoalId::new(1_700_000_000, 7), GoalId::new(1_700_000_001, 7));
+}
+
+#[test]
+fn a_goal_id_is_thirty_two_hex_digits() {
+    let id = GoalId::new(1_700_000_000, 7);
+    assert_eq!(id.as_str().len(), 32);
+    assert!(id.as_str().bytes().all(|b| b.is_ascii_hexdigit()));
 }
 
 /// The id crosses the IPC as a bare string — `type GoalId = string` on the TypeScript
