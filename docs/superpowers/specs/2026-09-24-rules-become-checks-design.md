@@ -177,3 +177,72 @@ samples path assembled across two files is invisible to it.
 - C1–C9 ticked on card #81, and the card in `UAT`, with nothing past it — none of this is visible
   in a window, so the open question for the owner is only whether the rules chosen are the right
   ones.
+
+---
+
+## 6. The second block: the violations no check can find (V1, V2, V3, V6, V9, V11, V12)
+
+**Status:** decomposition agreed in conversation on 2026-09-24. The first block landed on
+`develop` at `0ec9c9b`. These seven have no check to turn on — each is a rule CLAUDE.md now lists
+under *"holds only because it is read"*, or a fix to a boundary type — so a branch here closes
+what the review of 2026-09-24 named, and its tests are what keep it closed.
+
+Same method as the first block, by the owner's decision on 2026-09-24: branches stacked one on
+another in `isaac-dome-checks`, targeted tests while working, **one** `pnpm check` at the top of
+the stack, one review of the whole stack, then the merges and the push.
+
+| # | Branch | Items | What changes |
+|---|---|---|---|
+| 1 | `feature/docs-and-vacuity` | V11, V6 | documents and tests only |
+| 2 | `feature/ipc-purity` | V2 | `ipc` stops reading the clock, the pid and the embedded dataset |
+| 3 | `feature/logic-out-of-app` | V1 | six functions with a return value move from `app` to `ipc`, with tests |
+| 4 | `feature/typed-wire` | V3 | three wire shapes lose a free string or an empty struct |
+| 5 | `feature/typed-ids` | V12 | `AchievementId` through `graph` and `plan` |
+| 6 | `feature/i18n-sentences` | V9 | one message per sentence, dates formatted in one place |
+
+### 6.1 Decisions
+
+- **V11.** The `run` row of the module table and `run/src/lib.rs` stop crediting `Tail` with "a
+  shorter file is a relaunch": `run::resume` says that. `store` building an `IpcError` in
+  `degrade.rs` **stays**, and the table says why: `store` is the one crate whose every failure is
+  a reason the frontend shows, and a second error type mapped one-to-one would be the same enum
+  written twice.
+- **V6.** A test on real data that walks something counts what it checked and asserts
+  `checked > 0`, beside the skip it declares when there is nothing to walk. A silent
+  `let … else { continue }` over samples becomes `test_support::skip(…)`.
+  `test_support::sample()` tests `is_file()` like its siblings.
+- **V2.** `GoalId::new(created_unix: i64, nonce: u64)` — the id is still the hash it is today,
+  of values `app` now hands in (the clock, the pid mixed with an allocation's address, as
+  `roll`'s seed already arrives). `impl Default for GoalId` goes: a default that generates an id
+  is a clock read nobody sees. `target_sprite` takes the dataset as a parameter instead of
+  `wiki::Dataset::embedded()` behind a `OnceLock`.
+- **V1.** Each of the six moves as a pure function in `ipc` over plain data — rows, ids,
+  names, never a `tauri::State` — and `app` keeps the lock, the call and nothing else. The
+  function names and their modules are the plan's; the rule is that every one gets a test in
+  `crates/ipc/tests/` written from what the command does today, **read from the code as the
+  spec of its behaviour**, because this is a move and not a change.
+- **V3.**
+  - `FloorDiagnostic::RulesUnreadable` loses `reason: String`: the rules are embedded at build
+    time, so the text of a `serde_json` error is a developer's message, and it is not
+    translatable. The variant carries nothing.
+  - `DrawnTargetView::Mark { column: String }`, the boss's English name, becomes
+    `{ column: MarkColumnView }`, which the UI already translates everywhere else.
+  - `Greedier {}` becomes `Greedier`. Tagged, because its enum has a variant with data.
+  - `types.ts` is regenerated and the UI follows it.
+- **V12.** `catalog::AchievementId` replaces `u32` in the public signatures of `graph` and
+  `plan` — `build`, `model`, `rules`, `evaluate`, `plan::model` — and `resolve.rs` stops
+  throwing the type away. `ipc` converts to `u32` where the view-model is built, and only
+  there. The plan documents (`plan`'s JSON in `store`) keep their on-disk shape: `AchievementId`
+  serializes as the `u32` it wraps, which is pinned by a test before the change.
+- **V9.** A sentence is one message with named interpolation, never pieces joined in code. The
+  `«»` quotes live inside the messages, not in `GoalRow.vue`. One `achievementLabel(id)`. Dates
+  go through a `formatDate` in `lib/` beside `formatCount`, the only reader of
+  `i18n.global.locale` for formatting; the seven SFCs that read it for that stop.
+
+### 6.2 Done means
+
+- the six branches merged into `develop`, with `pnpm check` green once at the top of the stack
+  and one review of the whole stack;
+- V1, V2, V3, V6, V9, V11, V12 ticked on card #81, and the card in `UAT` with `NEEDS WINDOW` —
+  V9 and V3 change text the user reads, and the C5 roundings from the first block are still
+  unseen.
