@@ -59,8 +59,21 @@ export const barLabels: FilterBarLabels = {
   search: 'runs.search',
 }
 
+/** A table, as the outcome's is: exhaustive by its type, and the one list `isSource` reads. */
+export const sourceTextByKind: Record<RunSource['kind'], Key> = {
+  live: 'runs.source.live',
+  session: 'runs.source.session',
+}
+
 export const sourceText = (source: RunSource['kind']): Key =>
-  source === 'live' ? 'runs.source.live' : 'runs.source.session'
+  sourceTextByKind[source]
+
+// A facet value is a string, and one the build does not know — a newer backend, a hand-edited
+// fixture — is shown as it came rather than looked up into `undefined` (card #80, P10).
+const isOutcome = (value: string): value is RunOutcomeView['kind'] =>
+  Object.hasOwn(outcomeTextByKind, value)
+const isSource = (value: string): value is RunSource['kind'] =>
+  Object.hasOwn(sourceTextByKind, value)
 
 /** A facet's value in words. A value outside its set is shown as it came, never dropped. */
 export const facetValueLabel = (
@@ -70,13 +83,18 @@ export const facetValueLabel = (
 ): string => {
   switch (facet) {
     case RunFacet.Outcome:
-      return t(outcomeText(value as RunOutcomeView['kind']))
+      return isOutcome(value) ? t(outcomeText(value)) : value
     case RunFacet.Online:
-      return t(
-        value === RunCompany.Online ? 'runs.online.online' : 'runs.online.solo',
-      )
+      switch (value) {
+        case RunCompany.Online:
+          return t('runs.online.online')
+        case RunCompany.Solo:
+          return t('runs.online.solo')
+        default:
+          return value
+      }
     case RunFacet.Source:
-      return t(sourceText(value as RunSource['kind']))
+      return isSource(value) ? t(sourceText(value)) : value
     // The characters are names the log printed: there is nothing to translate, and the same
     // name covers a Tainted form (the spec's §3).
     case RunFacet.Character:
