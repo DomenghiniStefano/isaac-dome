@@ -16,7 +16,12 @@ const delegatedProps = reactiveOmit(props, 'class')
 const forwarded = useForwardPropsEmits(delegatedProps, emits)
 
 const id = useId()
-const { filterState, allItems, allGroups } = useCommand()
+const { filterState, allItems, allGroups, keepSearch } = useCommand()
+
+const onSelect = () => {
+  if (keepSearch.value) return
+  filterState.search = ''
+}
 // null: an item outside any group is allowed.
 const groupContext = useCommandGroup(null)
 
@@ -64,7 +69,7 @@ onUnmounted(() => {
         props.class,
       )
     "
-    @select="() => (filterState.search = '')"
+    @select="onSelect"
   >
     <slot />
   </ListboxItem>
