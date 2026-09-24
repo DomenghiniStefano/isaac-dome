@@ -2,7 +2,8 @@
 //!
 //! The split is the repo's rule — *if a return value is worth checking, it lives in a pure
 //! crate* — applied to a file watcher, where the parts worth checking are not the ones that
-//! touch the disk. [`Tail`] turns bytes into lines and recognizes a relaunch; the rules turn a
+//! touch the disk. [`Tail`] turns bytes into lines, [`resume`] says whether a file is still the
+//! launch that was being read; the rules turn a
 //! line into an event; the fold makes the judgments the log does not make.
 
 mod event;
