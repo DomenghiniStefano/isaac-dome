@@ -189,57 +189,83 @@ fn args_after_exe() -> Vec<String> {
 /// Fills the run archive and then follows the log, off the main thread.
 ///
 /// A backfill of twenty-eight sessions must not hold the window shut, and **every failure here
-/// is a quiet archive, never an app that will not start**: no game folder, no database, no
-/// watch — each of them leaves the rest of the app exactly as it was.
+/// is an archive that says what it is missing, never an app that will not start**. No game
+/// folder, no database, a session or the live log that would not read: each leaves the rest of
+/// the app exactly as it was and reaches the Runs screen as a diagnostic (card #80, R4). A
+/// watch that will not start is the one that stays quiet — the archive read at launch is
+/// still whole, it only stops following.
 fn start_archive(app: tauri::AppHandle) {
     std::thread::spawn(move || {
+        let archive: tauri::State<'_, ArchiveState> = app.state();
         let discovery = crate::state::discovery_now(&app);
         let Some(data) = discovery.game_data else {
+            // Said, not left to look like an archive with nothing in it (card #80, R4).
+            archive.record(|h| h.no_log_folder = true);
+            events::announce(&app, events::RUNS_CHANGED);
             return;
         };
         if let Some(online) = &data.online_logs {
-            ingest_with(&app, |i| {
-                i.backfill(online);
-            });
+            // One lock per session and not one for them all (card #80, R3): a first launch
+            // reads twenty-eight folders, and the queue, the plan, the runs and the window
+            // session wait on this same database meanwhile.
+            let mut unreadable = 0;
+            for folder in log_watch::sessions(online) {
+                if let Some(Err(_)) = ingest_with(&app, |i| i.session(&folder)) {
+                    unreadable += 1;
+                }
+            }
+            archive.record(|h| h.unreadable_sessions = unreadable);
         }
-        if let Some(log) = &data.log {
-            ingest_with(&app, |i| {
-                let _ = i.live_log(log);
-            });
-        }
+        // Derived even when the file is not there yet (card #80, R5): discovery names only a
+        // log that exists, and a fresh install has none until the game's first launch — which
+        // is exactly the launch worth watching. The watch is on the folder, so a file that
+        // appears later is seen.
+        let log = data.log.unwrap_or_else(|| data.dir.join("log.txt"));
+        read_live_log(&app, &log);
         events::announce(&app, events::RUNS_CHANGED);
 
-        let Some(log) = data.log.clone() else {
-            return;
-        };
         let handle = app.clone();
         let watched = log.clone();
         if let Ok(watcher) = log_watch::watch(&log, move || {
-            ingest_with(&handle, |i| {
-                let _ = i.live_log(&watched);
-            });
+            read_live_log(&handle, &watched);
             events::announce(&handle, events::RUNS_CHANGED);
         }) {
-            let archive: tauri::State<'_, ArchiveState> = app.state();
             archive.keep(watcher);
         }
     });
 }
 
+/// Reads the live log into the archive and keeps whether it could (card #80, R4). A log that
+/// is not there is not unreadable: it is a game that has not been launched yet.
+fn read_live_log(app: &tauri::AppHandle, log: &std::path::Path) {
+    let Some(read) = ingest_with(app, |i| i.live_log(log)) else {
+        // No database: the runs command says so itself.
+        return;
+    };
+    let unreadable = match read {
+        Ok(_) => false,
+        Err(log_watch::WatchError::Io { kind }) => kind != std::io::ErrorKind::NotFound,
+        Err(log_watch::WatchError::Store(_)) => true,
+    };
+    let archive: tauri::State<'_, ArchiveState> = app.state();
+    archive.record(|h| h.live_log_unreadable = unreadable);
+}
+
 /// Runs one job with an `Ingest` built from the app's state, holding the database only for as
-/// long as the job takes.
+/// long as the job takes. `None` when the database is not there to hold.
 ///
 /// The catalog answers what an item is when the game is installed; without it everything
 /// accumulates, which changes which active a run is carrying and never changes an outcome. So
 /// the archive is built either way rather than waiting for a game that may not be there.
-fn ingest_with(app: &tauri::AppHandle, job: impl FnOnce(&log_watch::Ingest<'_>)) {
+fn ingest_with<R>(
+    app: &tauri::AppHandle,
+    job: impl FnOnce(&log_watch::Ingest<'_>) -> R,
+) -> Option<R> {
     let archive: tauri::State<'_, ArchiveState> = app.state();
     let store_state: tauri::State<'_, StoreState> = app.state();
     let catalog_state: tauri::State<'_, CatalogState> = app.state();
     let resources: tauri::State<'_, ResourcesState> = app.state();
-    let Ok(store) = store_state.lock(app) else {
-        return;
-    };
+    let store = store_state.lock(app).ok()?;
     let kinds = resources
         .get(app)
         .and_then(|rs| catalog_state.get_or_build(rs))
@@ -253,5 +279,5 @@ fn ingest_with(app: &tauri::AppHandle, job: impl FnOnce(&log_watch::Ingest<'_>))
             None => &all_passive,
         },
     };
-    job(&ingest);
+    Some(job(&ingest))
 }

@@ -18,7 +18,8 @@ pub(crate) fn runs(
 ) -> Result<RunsView, IpcError> {
     let rs = resources.get(&app);
     let catalog = rs.and_then(|rs| catalog.get_or_build(rs));
-    let mut diagnostics = Vec::new();
+    // What the archive's own reading met comes first: it is why the list may be short.
+    let mut diagnostics = archive.health().diagnostics();
     let mut sources = Vec::new();
 
     match store.lock(&app) {

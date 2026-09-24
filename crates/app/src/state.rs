@@ -210,12 +210,14 @@ pub(crate) fn progress_sections(
     Ok((save.flags(Kind::Achievements), save.u32s(Kind::Counters)))
 }
 
-/// The rules that turn a log line into an event, parsed once, and the watcher's handle — which
-/// is kept only because dropping it would end the watch.
+/// The rules that turn a log line into an event, parsed once; the watcher's handle — kept only
+/// because dropping it would end the watch; and what the archive's reading last met, which
+/// the runs command sends out (card #80, R4).
 #[derive(Default)]
 pub(crate) struct ArchiveState {
     rules: OnceLock<run::Rules>,
     watcher: Mutex<Option<log_watch::LogWatcher>>,
+    health: Mutex<ipc::ArchiveHealth>,
 }
 
 impl ArchiveState {
@@ -227,6 +229,17 @@ impl ArchiveState {
         if let Ok(mut guard) = self.watcher.lock() {
             *guard = Some(watcher);
         }
+    }
+
+    pub(crate) fn health(&self) -> ipc::ArchiveHealth {
+        self.health
+            .lock()
+            .unwrap_or_else(|e| e.into_inner())
+            .clone()
+    }
+
+    pub(crate) fn record(&self, change: impl FnOnce(&mut ipc::ArchiveHealth)) {
+        change(&mut self.health.lock().unwrap_or_else(|e| e.into_inner()));
     }
 }
 
