@@ -64,3 +64,37 @@ fn a_missing_resource_is_none_not_a_panic() {
     assert!(rs.read("gfx/non/esiste/proprio.png").is_none());
     assert!(rs.read("").is_none());
 }
+
+/// An archive that is not there is an edition that does not ship it, and is skipped. One that
+/// is there and does not open is a broken install, and is said (card #80, R6): both used to
+/// be the same silence.
+#[test]
+fn a_broken_archive_is_reported_and_a_missing_one_is_not() {
+    let dir = tempfile::tempdir().unwrap();
+    std::fs::write(dir.path().join("config.a"), b"not an archive at all").unwrap();
+    std::fs::write(dir.path().join("fonts.a"), b"short").unwrap();
+
+    let rs = ResourceSet::open(dir.path());
+
+    assert!(rs.archives().is_empty());
+    let broken: Vec<(&str, &unpack::ArchiveFault)> = rs
+        .broken()
+        .iter()
+        .map(|b| (b.name.as_str(), &b.fault))
+        .collect();
+    assert_eq!(
+        broken,
+        vec![
+            ("fonts.a", &unpack::ArchiveFault::TooShort),
+            ("config.a", &unpack::ArchiveFault::BadMagic),
+        ]
+    );
+}
+
+#[test]
+fn a_folder_with_no_archives_has_nothing_broken() {
+    let dir = tempfile::tempdir().unwrap();
+    let rs = ResourceSet::open(dir.path());
+    assert!(rs.archives().is_empty());
+    assert!(rs.broken().is_empty());
+}

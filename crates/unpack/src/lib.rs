@@ -14,7 +14,7 @@ mod resource_set;
 pub use arch::{Archive, CompressionMode, Entry, OpenError};
 pub use extract::{extract_subset, Diagnostic, ExtractReport};
 pub use hash::{path_key, PathKey};
-pub use resource_set::{ArchiveInfo, ResourceSet};
+pub use resource_set::{ArchiveFault, ArchiveInfo, BrokenArchive, ResourceSet};
 
 /// How much to reserve before decompressing an entry (card #80, item 09). The declared length
 /// is a raw u32 from the archive's index, and a corrupted one can claim four gigabytes: reserved
