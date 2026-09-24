@@ -71,10 +71,17 @@ pub fn generate(d: &Dataset) -> Requirements {
     let mut achievements = BTreeMap::new();
     let mut uses: BTreeMap<String, (String, u32, bool)> = BTreeMap::new();
     for (&id, entry) in &d.achievements {
-        let Infobox::Achievement { requirements, .. } = &entry.infobox else {
+        let requirements = match &entry.infobox {
+            Infobox::Achievement { requirements, .. } => requirements,
             // An achievement page carrying another infobox is a wiki anomaly, not our
-            // error: it contributes no requirement and no inventory row.
-            continue;
+            // error: it contributes no requirement and no inventory row. Named one by one,
+            // so an eighth kind of infobox has to be placed here rather than skipped.
+            Infobox::Item { .. }
+            | Infobox::Trinket { .. }
+            | Infobox::Boss { .. }
+            | Infobox::Challenge { .. }
+            | Infobox::Transformation { .. }
+            | Infobox::Character { .. } => continue,
         };
         let mut refs = Vec::new();
         collect_refs(requirements, &mut refs);

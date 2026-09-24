@@ -401,8 +401,16 @@ fn condition_of(a: &catalog::Achievement, dataset: Option<&Dataset>) -> Option<S
         return Some(from_file);
     }
     let entry = dataset?.entry(&wiki_target::achievement(a.id))?;
-    let wiki::Infobox::Achievement { requirements, .. } = &entry.infobox else {
-        return None;
+    let requirements = match &entry.infobox {
+        wiki::Infobox::Achievement { requirements, .. } => requirements,
+        // An achievement's page with another kind of infobox says no condition. Named one by
+        // one, so a new kind of infobox has to be placed here rather than skipped.
+        wiki::Infobox::Item { .. }
+        | wiki::Infobox::Trinket { .. }
+        | wiki::Infobox::Boss { .. }
+        | wiki::Infobox::Challenge { .. }
+        | wiki::Infobox::Transformation { .. }
+        | wiki::Infobox::Character { .. } => return None,
     };
     let line = wiki::plain(requirements).trim().to_string();
     (!line.is_empty()).then_some(line)
