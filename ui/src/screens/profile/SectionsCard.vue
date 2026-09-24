@@ -12,22 +12,23 @@ import {
   CardCollapsibleContent,
   CardCollapsibleTrigger,
 } from '@/components/ui/card'
-import { i18n, useMessages } from '@/i18n'
+import { useFormat } from '@/composables/useFormat'
+import { useMessages } from '@/i18n'
 import { assertNever } from '@/lib/assertNever'
 import type { SaveDiagnostic, SaveSummary } from '@/lib/ipc/types'
-import { formatCount, sectionLabel } from '@/lib/profile/profileView'
+import { sectionLabel } from '@/lib/profile/profileView'
 
 const props = defineProps<{ summary: SaveSummary }>()
 const { t } = useMessages()
+const fmt = useFormat()
 
 const sections = computed(() => {
-  const locale = i18n.global.locale.value
   return props.summary.sections.map((s) => {
     const label = sectionLabel(s.kind)
     return {
       kind: s.kind,
       name: label ? t(label) : s.kind,
-      count: formatCount(s.count, locale),
+      count: fmt.count(s.count),
     }
   })
 })
@@ -35,9 +36,12 @@ const sections = computed(() => {
 const diagnosticText = (d: SaveDiagnostic): string => {
   switch (d.kind) {
     case 'unexpectedKind':
-      return `${t('profile.saveDiagnostics.unexpectedKind')} (${d.expected}, ${d.found})`
+      return t('profile.saveDiagnostics.unexpectedKind', {
+        expected: d.expected,
+        found: d.found,
+      })
     case 'sectionOverrun':
-      return `${t('profile.saveDiagnostics.sectionOverrun')} (${d.section})`
+      return t('profile.saveDiagnostics.sectionOverrun', { section: d.section })
     case 'trailingBytes':
       return t('profile.saveDiagnostics.trailingBytes')
     default:

@@ -114,8 +114,9 @@ const hint = computed((): string => {
     ? stoppedUnder(props.rows, last.achievement, last.after)
     : null
   if (!wall) return t('plan.hint.idle')
-  const text = knownText(wall.node) ?? `${t('plan.achievement')} ${rowId(wall)}`
-  return `${t('plan.hint.stoppedUnder')} «${text}»: ${t('plan.hint.prerequisite')}`
+  const name =
+    knownText(wall.node) ?? t('plan.achievementNumbered', { id: rowId(wall) })
+  return t('plan.hint.stoppedUnder', { name })
 })
 </script>
 

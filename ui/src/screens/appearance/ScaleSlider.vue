@@ -3,7 +3,8 @@ import { computed } from 'vue'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Kbd, KbdGroup } from '@/components/ui/kbd'
 import { Slider } from '@/components/ui/slider'
-import { i18n, useMessages } from '@/i18n'
+import { useFormat } from '@/composables/useFormat'
+import { useMessages } from '@/i18n'
 import { KeyName } from '@/lib/constants/keyNames'
 import { cn } from '@/lib/cn'
 import { percentAt, scalePercents, stepIndex } from '@/lib/scale/steps'
@@ -11,16 +12,14 @@ import { percentAt, scalePercents, stepIndex } from '@/lib/scale/steps'
 const props = defineProps<{ percent: number }>()
 const emit = defineEmits<{ pick: [percent: number] }>()
 const { t } = useMessages()
+const fmt = useFormat()
 
 // The slider walks positions, not percentages: the ladder is unevenly spaced and the
 // slider's own spacing is even, which is what makes 50 and 67 as far apart as 175 and 200.
 const position = computed(() => [stepIndex(props.percent)])
 const last = scalePercents.length - 1
 
-const label = (percent: number): string =>
-  new Intl.NumberFormat(i18n.global.locale.value, {
-    style: 'percent',
-  }).format(percent / 100)
+const label = (percent: number): string => fmt.percent(percent)
 
 const onPick = (value: number[] | undefined) => {
   const index = value?.[0]

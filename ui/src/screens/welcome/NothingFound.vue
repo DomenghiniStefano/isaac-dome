@@ -9,6 +9,7 @@ import {
 import { Button, ButtonVariant } from '@/components/ui/button'
 import { useMessages } from '@/i18n'
 import { assertNever } from '@/lib/assertNever'
+import { ioReasonKey } from '@/lib/ipc/errorText'
 import type { MissingReason, SetupDiagnostic } from '@/lib/ipc/types'
 import { missingReasonLabel } from '@/lib/profile/profileLabels'
 import { useProfileStore } from '@/stores/profile'
@@ -29,9 +30,12 @@ const diagnosticText = (d: SetupDiagnostic): string => {
     case 'noSavesInChosenFolder':
       return t('profile.diagnostics.noSavesInChosenFolder')
     case 'unreadablePath':
-      return `${t('profile.diagnostics.unreadablePath')} · ${d.name} · ${d.reason}`
+      return t('profile.diagnostics.unreadablePath', {
+        name: d.name,
+        reason: t(ioReasonKey(d.reason)),
+      })
     case 'malformedManifest':
-      return `${t('profile.diagnostics.malformedManifest')} · ${d.name}`
+      return t('profile.diagnostics.malformedManifest', { name: d.name })
     default:
       return assertNever(d)
   }

@@ -729,26 +729,26 @@ export const en: MessageSchema = {
     hint: {
       idle: 'drag to reorder — no move is ever refused',
       dragging: 'drop it anywhere: the queue sorts itself out',
-      stoppedUnder: 'it stopped under',
-      prerequisite: "that's a prerequisite",
+      stoppedUnder: "it stopped under «{name}»: that's a prerequisite",
     },
     row: {
       move: 'Move the row (Alt and the up or down arrow)',
       wanted: 'added by you',
-      serves: 'needed for',
+      serves: 'needed for «{name}»',
       unlocks: 'unlocks',
       fanOut: 'unlocks',
       outsideQueue: 'prerequisites not queued',
       condition: 'how to get it:',
     },
-    achievement: 'achievement',
+    achievementNumbered: 'achievement {id}',
     empty: 'The queue is empty.',
     emptyHint: 'Add a row from the proposal beside it, or from Unlock.',
     completed: {
-      closed: 'rows closed by playing',
-      wanted: 'among the ones you added',
+      closed: 'rows closed by playing: {count}',
+      closedWanted:
+        'rows closed by playing: {count} · among the ones you added: {names}',
     },
-    unresolved: 'the game no longer knows it',
+    unresolved: 'achievement {id}: the game no longer knows it',
     alerts: {
       storeUnavailableTitle: "The plan isn't available",
       unreadableTitle: "This version can't read the saved queue",
@@ -994,7 +994,7 @@ export const en: MessageSchema = {
   indicator: {
     noProfile: 'No active profile',
     notFound: 'Saves not found',
-    slot: 'slot',
+    slot: 'slot {slot}',
   },
   profile: {
     title: 'Game profile',
@@ -1011,7 +1011,7 @@ export const en: MessageSchema = {
       yourChoice: 'your choice',
       several: 'more than one',
       chosen: 'chosen',
-      candidates: 'candidate files',
+      candidates: '{n} candidate files',
     },
     none: {
       steamNotFound:
@@ -1028,8 +1028,8 @@ export const en: MessageSchema = {
       gameNotFound: "Game: not in Steam's libraries",
       noSavesFound: 'Saves: no file in the known places',
       noSavesInChosenFolder: 'Saves: no file in the folder you pointed at',
-      unreadablePath: 'Unreadable path',
-      malformedManifest: 'Unreadable Steam manifest',
+      unreadablePath: 'Unreadable path · {name} · {reason}',
+      malformedManifest: 'Unreadable Steam manifest · {name}',
     },
     pick: {
       title: 'A choice is needed',
@@ -1061,7 +1061,7 @@ export const en: MessageSchema = {
       change: 'Change profile',
       reload: 'Read the file again',
       unknownDate: 'unknown',
-      bytes: 'bytes',
+      bytes: '{count} bytes',
     },
     read: {
       title: 'What we could read',
@@ -1070,8 +1070,8 @@ export const en: MessageSchema = {
       diagnostics: "The file holds something we didn't expect",
     },
     saveDiagnostics: {
-      unexpectedKind: "A section isn't the expected one",
-      sectionOverrun: 'A section runs past the end of the file',
+      unexpectedKind: "A section isn't the expected one ({expected}, {found})",
+      sectionOverrun: 'A section runs past the end of the file ({section})',
       trailingBytes: 'There are extra bytes at the end of the file',
     },
     sections: {

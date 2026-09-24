@@ -34,9 +34,9 @@ const detail = (row: ChainRow): string => {
     case 'hint':
       return d.hint
     case 'count':
-      return `${d.n} ${t('profile.chain.candidates')}`
+      return t('profile.chain.candidates', { n: d.n })
     case 'profile':
-      return `${editionShort(d.candidate.prefix)} · ${t('indicator.slot')} ${d.candidate.slot}`
+      return `${editionShort(d.candidate.prefix)} · ${t('indicator.slot', { slot: d.candidate.slot })}`
     case 'none':
       return ''
     default:

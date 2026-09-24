@@ -736,26 +736,26 @@ export const it = {
     hint: {
       idle: 'trascina per riordinare — nessuno spostamento viene rifiutato',
       dragging: 'rilascia dove vuoi: la coda si sistema da sola',
-      stoppedUnder: 'si è fermata sotto',
-      prerequisite: 'è un prerequisito',
+      stoppedUnder: 'si è fermata sotto «{name}»: è un prerequisito',
     },
     row: {
       move: 'Sposta la riga (Alt e freccia su o giù)',
       wanted: 'aggiunta da te',
-      serves: 'serve per',
+      serves: 'serve per «{name}»',
       unlocks: 'sblocca',
       fanOut: 'sblocca',
       outsideQueue: 'prerequisiti non in coda',
       condition: 'come si prende:',
     },
-    achievement: 'achievement',
+    achievementNumbered: 'achievement {id}',
     empty: 'La coda è vuota.',
     emptyHint: 'Aggiungi una riga dalla proposta qui accanto, o da Unlock.',
     completed: {
-      closed: 'righe chiuse giocando',
-      wanted: 'fra quelle aggiunte da te',
+      closed: 'righe chiuse giocando: {count}',
+      closedWanted:
+        'righe chiuse giocando: {count} · fra quelle aggiunte da te: {names}',
     },
-    unresolved: 'il gioco non lo conosce più',
+    unresolved: 'achievement {id}: il gioco non lo conosce più',
     alerts: {
       storeUnavailableTitle: 'Il piano non è disponibile',
       unreadableTitle: 'La coda salvata non si legge con questa versione',
@@ -1011,7 +1011,7 @@ export const it = {
   indicator: {
     noProfile: 'Nessun profilo attivo',
     notFound: 'Salvataggi non trovati',
-    slot: 'slot',
+    slot: 'slot {slot}',
   },
   profile: {
     title: 'Profilo di gioco',
@@ -1028,7 +1028,7 @@ export const it = {
       yourChoice: 'scegli tu',
       several: 'più di uno',
       chosen: 'scelto',
-      candidates: 'file candidati',
+      candidates: '{n} file candidati',
     },
     none: {
       steamNotFound:
@@ -1046,8 +1046,8 @@ export const it = {
       noSavesFound: 'Salvataggi: nessun file nelle posizioni note',
       noSavesInChosenFolder:
         'Salvataggi: nessun file nella cartella che hai indicato',
-      unreadablePath: 'Percorso non leggibile',
-      malformedManifest: 'Manifest di Steam non leggibile',
+      unreadablePath: 'Percorso non leggibile · {name} · {reason}',
+      malformedManifest: 'Manifest di Steam non leggibile · {name}',
     },
     pick: {
       title: 'Serve scegliere',
@@ -1079,7 +1079,7 @@ export const it = {
       change: 'Cambia profilo',
       reload: 'Rileggi il file',
       unknownDate: 'sconosciuto',
-      bytes: 'byte',
+      bytes: '{count} byte',
     },
     read: {
       title: 'Cosa siamo riusciti a leggere',
@@ -1088,8 +1088,8 @@ export const it = {
       diagnostics: 'Il file contiene qualcosa che non ci aspettavamo',
     },
     saveDiagnostics: {
-      unexpectedKind: 'Una sezione non è quella attesa',
-      sectionOverrun: 'Una sezione va oltre la fine del file',
+      unexpectedKind: 'Una sezione non è quella attesa ({expected}, {found})',
+      sectionOverrun: 'Una sezione va oltre la fine del file ({section})',
       trailingBytes: 'Ci sono byte in più alla fine del file',
     },
     sections: {

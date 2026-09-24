@@ -15,7 +15,7 @@ const emit = defineEmits<{ remove: [achievement: number] }>()
 const { t } = useMessages()
 
 const nameOf = (id: number): string =>
-  achievementText(props.nodes, id) ?? `${t('plan.achievement')} ${id}`
+  achievementText(props.nodes, id) ?? t('plan.achievementNumbered', { id })
 
 // A row never leaves the queue without a word: the ones closed by playing, and the ones the
 // catalog no longer knows, which stay in the file until removed.
@@ -24,11 +24,12 @@ const closed = computed((): string | null => {
     d.kind === 'completed' ? [d] : [],
   )[0]
   if (!done) return null
-  const wanted =
-    done.wanted.length > 0
-      ? ` · ${t('plan.completed.wanted')}: ${done.wanted.map(nameOf).join(', ')}`
-      : ''
-  return `${t('plan.completed.closed')}: ${done.count}${wanted}`
+  return done.wanted.length > 0
+    ? t('plan.completed.closedWanted', {
+        count: done.count,
+        names: done.wanted.map(nameOf).join(', '),
+      })
+    : t('plan.completed.closed', { count: done.count })
 })
 
 const unresolved = computed(() =>
@@ -49,7 +50,7 @@ const unresolved = computed(() =>
       }}</span
     >
     <span v-for="id in unresolved" :key="id" class="flex items-center gap-2">
-      {{ t('plan.achievement') }} {{ id }} {{ t('plan.unresolved') }}
+      {{ t('plan.unresolved', { id }) }}
       <Button
         :variant="ButtonVariant.Ghost"
         :size="ButtonSize.Compact"
