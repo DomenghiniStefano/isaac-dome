@@ -25,8 +25,9 @@ import { readFileSync } from 'node:fs'
 // Permanent exceptions, a reason each. Never a violation waiting for a fix.
 const EXEMPTIONS = []
 
-// A literal that is nothing but a relative path into samples/.
-const SAMPLES_PATH = /^(\.\.\/)*samples(\/[^\s"]*)?$/
+// A literal that is nothing but a path into samples/: any run of `/`, `./` and `../` in front
+// (`"/../../samples"` is what `concat!(env!("CARGO_MANIFEST_DIR"), …)` needs), and `\` read as `/`.
+const SAMPLES_PATH = /^(?:\.{0,2}[/\\])*samples(?:[/\\][^\s"]*)?$/
 const LIVE_NAME = /^live\./
 
 // The string literals of one line, with `//` comments outside strings ignored. Not a parser: it
@@ -40,6 +41,10 @@ export const literalsOf = (line) => {
     if (c === '/' && line[i + 1] === '/') break
     if (c === "'" && line[i + 2] === "'") {
       i += 3 // a char literal like '"' must not open a string
+      continue
+    }
+    if (c === "'" && line[i + 1] === '\\' && line[i + 3] === "'") {
+      i += 4 // nor an escaped one like '\"'
       continue
     }
     if (c === '"') {
@@ -72,6 +77,12 @@ export const findingsOf = (source) =>
 
 // Every run proves the check can still speak before it is believed to have nothing to say.
 const FIXTURES = [
+  // The shapes the 2026-09-24 review found getting through the first version of this gate.
+  { src: 'concat!(env!("CARGO_MANIFEST_DIR"), "/../../samples/packed")', found: 1 },
+  { src: 'Path::new("./samples/packed")', found: 1 },
+  { src: 'Path::new("..\\\\..\\\\samples")', found: 1 },
+  { src: 'Path::new("samples\\\\packed")', found: 1 },
+  { src: 'let q = \'\\"\'; let s = "samples";', found: 1 },
   { src: 'let p = Path::new("samples");', found: 1 },
   { src: 'x.join("../../samples/packed")', found: 1 },
   { src: 'PathBuf::from("samples/logs/probe.tsv")', found: 1 },
