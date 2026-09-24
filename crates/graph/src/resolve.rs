@@ -108,7 +108,8 @@ pub fn requirement_with(
             Some(id) if c.boss(id).and_then(|b| b.unlocked_by).is_some() => {
                 Requirement::Boss { id }
             }
-            _ => from_verdict(rules, &verdict_key, character, unknown),
+            // A boss the game does not gate, or no boss by that name: the verdict decides.
+            Some(_) | None => from_verdict(rules, &verdict_key, character, unknown),
         },
         Target::Challenge { number } => c
             .challenge(ChallengeId(*number))

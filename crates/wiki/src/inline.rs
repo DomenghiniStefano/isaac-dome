@@ -82,7 +82,8 @@ impl Out {
         };
         match top.last_mut() {
             Some(Inline::Text { text: t, style: s }) if *s == style => t.push_str(&text),
-            _ => top.push(Inline::Text { text, style }),
+            // A different style, another kind of node, or nothing yet: a new text node.
+            Some(_) | None => top.push(Inline::Text { text, style }),
         }
     }
 
@@ -100,7 +101,8 @@ impl Out {
             {
                 t.push_str(text);
             }
-            _ => top.push(node),
+            // Anything else is a new node: two texts of different styles, or not two texts.
+            (_, Some(_) | None) => top.push(node),
         }
     }
 

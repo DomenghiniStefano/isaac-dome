@@ -310,7 +310,8 @@ fn build_lists(items: &[RawItem], depth: usize, r: &Resolver, d: &mut Diagnostic
         let item = ListItem { inline, children };
         match cur.as_mut() {
             Some((o, v)) if *o == ordered => v.push(item),
-            _ => {
+            // The other kind of list, or no list open yet: close what is open and start one.
+            Some(_) | None => {
                 if let Some((o, v)) = cur.take() {
                     blocks.push(Block::List {
                         ordered: o,
