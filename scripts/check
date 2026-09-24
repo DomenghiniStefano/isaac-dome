@@ -75,6 +75,13 @@ run 'pnpm scan' pnpm scan
 # noticing. See the comment at the top of the script.
 run 'no game assets' node scripts/check-no-game-assets.mjs
 
+# **Fewer tests than where the branch started fails** (B63). Declarations counted by `git grep` in
+# the working tree and at the merge base with `develop`, so there is no stored number to raise
+# and nothing for two branches to conflict on — which is what the file it replaced,
+# `scripts/test-floor`, did on every parallel merge (card #84). The comment at the top of the
+# script says what it counts and what it cannot see.
+run 'test count' node scripts/check-test-count.mjs
+
 # The contract is generated (N7, B2 in docs/IMPROVEMENTS.md): this is what makes a Rust type
 # and its TypeScript disagree loudly instead of silently. It regenerates into a scratch copy
 # and compares — it never writes the real file, because a check that repairs what it is
@@ -102,9 +109,9 @@ node scripts/check-doc-refs.mjs || printf 'the reference report could not run\n'
 skipped=$(grep -c '^skip:' "$declarations")
 real_files=$(grep -c '^sample:' "$declarations")
 
-# **How many tests exist**, which is the one thing `cargo test` never reports (B63): it says what
-# ran, and a deleted test is not a dimmed suite but a shorter one. Passed plus failed plus
-# ignored, so a test that stops running is as loud as one that stops existing.
+# **How many tests ran**, printed and never judged: the judgment is `test count` above, on the
+# declarations. Passed plus failed plus ignored on the Rust side, so a test the harness stopped
+# running still shows here.
 rust_tests=$(awk '/^test result:/ {
 	for (i = 1; i <= NF; i++)
 		if ($i == "passed;" || $i == "failed;" || $i == "ignored;") s += $(i - 1)
@@ -113,32 +120,11 @@ rust_tests=$(awk '/^test result:/ {
 # counts the skipped ones too, which is the number this is about.
 ui_tests=$(awk '/Tests +[0-9]/ { n = $NF; gsub(/[()]/, "", n); t = n } END { print t + 0 }' "$ui_output")
 
-floor_rust=0
-floor_ui=0
-if [ -f scripts/test-floor ]; then
-	# shellcheck source=scripts/test-floor
-	. ./scripts/test-floor
-	floor_rust=$RUST_TESTS
-	floor_ui=$UI_TESTS
-fi
-
 printf '\n=== summary\n'
 printf 'tests skipped (sample or missing tool): %s\n' "$skipped"
 printf 'real files touched: %s\n' "$real_files"
 [ "$skipped" -gt 0 ] && grep '^skip:' "$declarations" | sort | uniq -c | sed 's/^/  /'
-printf 'tests that exist: %s rust, %s ui (floor %s and %s)\n' \
-	"$rust_tests" "$ui_tests" "$floor_rust" "$floor_ui"
-
-# A suite that shrank is the failure. A suite that grew is a line to paste, never a failure —
-# failing on a rise would fail every commit that adds a test. What it cannot see is a floor
-# nobody raises: see the comment in `scripts/test-floor`.
-if [ "$rust_tests" -lt "$floor_rust" ] || [ "$ui_tests" -lt "$floor_ui" ]; then
-	printf '  a suite is SHORTER than it was. If a test was meant to go, say so and lower the floor.\n'
-	failed="$failed test-count"
-elif [ "$rust_tests" -gt "$floor_rust" ] || [ "$ui_tests" -gt "$floor_ui" ]; then
-	printf '  raise the floor in scripts/test-floor: RUST_TESTS=%s UI_TESTS=%s\n' \
-		"$rust_tests" "$ui_tests"
-fi
+printf 'tests that ran: %s rust, %s ui\n' "$rust_tests" "$ui_tests"
 
 if [ -n "$failed" ]; then
 	printf '\nFAILED:%s\n' "$failed"
