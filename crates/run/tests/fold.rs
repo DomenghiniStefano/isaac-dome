@@ -488,3 +488,33 @@ fn a_summary_before_any_floor_belongs_to_no_floor_and_invents_none() {
     let runs = Run::fold([started(), generated(19, 12)].into_iter(), &Kinds(&[]));
     assert!(runs[0].floors.is_empty());
 }
+
+/// Card #80, P1: on a solo launch the line for the **next** run arrives while the fold still
+/// holds the finished one — the run is closed only by the next seed. It used to reach the
+/// finished run, which already had its character, and be dropped there: from the second run
+/// of a launch on, every run went without its id.
+#[test]
+fn the_init_after_a_run_ends_is_the_next_runs() {
+    let runs = Run::fold(
+        [
+            Event::PlayerInitialized {
+                variant: 0,
+                subtype: 3,
+            },
+            seed(1, SeedKind::New),
+            Event::Died {
+                killer: "Monstro".to_string(),
+                spawner: String::new(),
+            },
+            Event::PlayerInitialized {
+                variant: 0,
+                subtype: 8,
+            },
+            seed(2, SeedKind::New),
+        ]
+        .into_iter(),
+        &Kinds(&[]),
+    );
+    assert_eq!(runs[0].character_id, Some(3));
+    assert_eq!(runs[1].character_id, Some(8), "run 2 is played by 8");
+}
