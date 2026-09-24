@@ -103,8 +103,8 @@ pub use roll::{
     SelectionView, StatusView,
 };
 pub use runs::{
-    runs_view, CatalogKinds, RunItemRef, RunOutcomeView, RunSource, RunTotals, RunView,
-    RunsDiagnostic, RunsInputs, RunsView,
+    runs_view, ArchiveHealth, CatalogKinds, RunItemRef, RunOutcomeView, RunSource, RunTotals,
+    RunView, RunsDiagnostic, RunsInputs, RunsView,
 };
 pub use save_cache::SaveCache;
 pub use search::{

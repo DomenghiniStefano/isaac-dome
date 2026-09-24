@@ -293,6 +293,10 @@ export const it = {
         'Il database dell’app non si apre, quindi l’archivio non si può leggere.',
       unreadableEvents:
         '{count} righe del log non sono state capite: le run che le contengono possono essere incomplete.',
+      unreadableSessions:
+        '{count} sessioni online non si sono lette: le run che contengono non sono nell’archivio.',
+      liveLogUnreadable:
+        'Il log che il gioco sta scrivendo non si legge: la run in corso non è nell’archivio.',
       noCatalog:
         'Il gioco non è installato: gli oggetti hanno il loro numero e non il nome.',
     },
