@@ -13,3 +13,6 @@ serde = { version = "1", features = ["derive"] }
 test-support = { path = "../test-support" }
 unpack = { path = "../unpack" }
 core-save = { path = "../core-save" }
+
+[lints]
+workspace = true

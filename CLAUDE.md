@@ -216,7 +216,19 @@ label, and the open item is the honest record of why.
 - **If a return value is worth checking, it lives in a pure crate.** The Tauri crate keeps
   only the wiring, which isn't tested.
 - **Exhaustiveness is mandatory**: no `_ =>` arm on a closed enum. Adding a variant has to
-  break the build, not silently produce an empty result.
+  break the build, not silently produce an empty result. **Checked since 2026-09-24** (card
+  #81, C3) by `clippy::wildcard_enum_match_arm`, declared once in the root `Cargo.toml` under
+  `[workspace.lints.clippy]` and inherited by every crate with `[lints] workspace = true` — a
+  new crate that leaves out those two lines is not checked, and only review sees it. A foreign
+  enum (`io::ErrorKind`, `tauri::RunEvent`, `serde_json::Value`) takes an `#[allow]` on the
+  function with the reason at the wildcard arm: clippy reads the level at the `match`, so an
+  allow on the arm itself is ignored. Test files allow it once at the top: a test that extracts
+  one variant panics on every other, and the wildcard is the assertion. **What the lint cannot
+  see**: a wildcard over a tuple of enums, or `Some(x) if … => …, _ =>` — the first is written
+  exhaustive on the enum that can grow (`ipc::queue::achievements_unlocking`), the second is
+  `Option` and cannot.
+- **No `use …::*`** outside a test module's `use super::*`: checked by `clippy::wildcard_imports`,
+  declared with the lint above. `use crate::state::*` was in seven command files until it was.
 
 ### Frontend → `docs/frontend-conventions.md`
 

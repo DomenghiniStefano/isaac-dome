@@ -3,6 +3,10 @@
 //! it lives in a pure crate, and the Tauri crate is not tested. They check the same things
 //! here, next to the code they are about.
 
+// A test that extracts one variant panics on every other, the ones added later included: here
+// the wildcard *is* the assertion, and it fails loudly on a new variant instead of hiding it.
+#![allow(clippy::wildcard_enum_match_arm)]
+
 use ipc::{IpcError, StoreReason};
 use store::{plan_parts, store_error, GoalsRead, StoreError};
 

@@ -88,6 +88,7 @@ pub(crate) fn decompress(
 /// Raw inflate of a single block, with the same contract as the C#: reads up to
 /// `limit` bytes and does **not** require the stream to end within the block.
 /// `miniz_oxide`'s high-level helper would discard the output of a truncated stream.
+#[allow(clippy::wildcard_enum_match_arm)] // a foreign enum; the reason is at the wildcard arm
 fn inflate_block(block: &[u8], limit: usize) -> Option<Vec<u8>> {
     use miniz_oxide::inflate::core::{decompress, inflate_flags, DecompressorOxide};
     use miniz_oxide::inflate::TINFLStatus;
@@ -105,6 +106,8 @@ fn inflate_block(block: &[u8], limit: usize) -> Option<Vec<u8>> {
             buf.truncate(written);
             Some(buf)
         }
+        // `TINFLStatus` belongs to `miniz_oxide`: every status but the three above is a failure,
+        // and one it adds later is one too.
         _ => None,
     }
 }

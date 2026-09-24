@@ -588,6 +588,8 @@ fn write_plain(inline: &[Inline], out: &mut String) {
     }
 }
 
+// Tests extract one variant and panic on the rest: the wildcard is the assertion.
+#[allow(clippy::wildcard_enum_match_arm)]
 #[cfg(test)]
 mod tests {
     use super::*;

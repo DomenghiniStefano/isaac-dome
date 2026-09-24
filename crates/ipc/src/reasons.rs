@@ -25,10 +25,13 @@ pub enum IoReason {
 }
 
 impl From<std::io::ErrorKind> for IoReason {
+    #[allow(clippy::wildcard_enum_match_arm)] // a foreign enum; the reason is at the wildcard arm
     fn from(kind: std::io::ErrorKind) -> Self {
         match kind {
             std::io::ErrorKind::NotFound => IoReason::NotFound,
             std::io::ErrorKind::PermissionDenied => IoReason::PermissionDenied,
+            // `ErrorKind` is `#[non_exhaustive]` and not ours: `Other` is the name for every kind we
+            // give no sentence of its own, including the ones std adds later.
             _ => IoReason::Other,
         }
     }

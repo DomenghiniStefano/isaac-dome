@@ -8,7 +8,7 @@ use store::{store_error, store_unavailable};
 use crate::events::{announce, PLAN_CHANGED};
 use crate::icons::icon_url;
 
-use crate::state::*;
+use crate::state::{achievement_flags, CatalogState, GraphState, ResourcesState, StoreState};
 use catalog::Catalog;
 /// What every queue command needs, gathered once so the five read the same way.
 struct QueuePieces<'a> {

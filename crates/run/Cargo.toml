@@ -12,3 +12,6 @@ serde_json = "1"
 
 [dev-dependencies]
 test-support = { path = "../test-support" }
+
+[lints]
+workspace = true

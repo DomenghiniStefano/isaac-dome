@@ -1,3 +1,7 @@
+// A test that extracts one variant panics on every other, the ones added later included: here
+// the wildcard *is* the assertion, and it fails loudly on a new variant instead of hiding it.
+#![allow(clippy::wildcard_enum_match_arm)]
+
 use discovery::{
     Diagnostic, Discovery, Dlc, Edition, GameInstall, SaveCandidate, SavePrefix, SaveSource,
     SteamInstall, SteamSource,

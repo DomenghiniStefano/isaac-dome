@@ -111,7 +111,15 @@ pub fn want_view(
             ),
             None => return unresolved(WantDiagnostic::NothingUnlocks),
         },
-        _ => {
+        Target::Item { .. }
+        | Target::Trinket { .. }
+        | Target::Character { .. }
+        | Target::Challenge { .. }
+        | Target::Entity { .. }
+        | Target::Transformation { .. }
+        | Target::Stage { .. }
+        | Target::Room { .. }
+        | Target::Concept { .. } => {
             let Some(key) = key_of(c, target) else {
                 return unresolved(WantDiagnostic::NothingUnlocks);
             };

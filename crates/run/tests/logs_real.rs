@@ -1,6 +1,10 @@
 //! The rules, against logs the game actually wrote. Skips with a note when `samples/logs/` is
 //! not there: the folder is git-ignored and the suite stays green for anyone who clones.
 
+// A test that extracts one variant panics on every other, the ones added later included: here
+// the wildcard *is* the assertion, and it fails loudly on a new variant instead of hiding it.
+#![allow(clippy::wildcard_enum_match_arm)]
+
 use run::{Event, Generated, ItemKind, ItemKinds, Outcome, Pass, Rules, Run, Tail};
 
 /// The fold needs item kinds and this test has no catalog. Every id reads as a passive, which

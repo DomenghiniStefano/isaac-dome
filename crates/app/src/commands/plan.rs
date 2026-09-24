@@ -8,7 +8,7 @@ use store::{plan_parts, store_error, store_unavailable};
 use crate::events::{announce, PLAN_CHANGED};
 use crate::icons::icon_url;
 
-use crate::state::*;
+use crate::state::{CatalogState, ResourcesState, StoreState};
 
 #[tauri::command]
 pub fn plan(

@@ -9,7 +9,7 @@ use ipc::IpcError;
 
 use crate::events::{announce, ROLL_CHANGED};
 use crate::icons::icon_url;
-use crate::state::*;
+use crate::state::{progress_sections, CatalogState, ResourcesState, StoreState};
 
 /// Everything the view needs, read once. The catalog may be absent — the game is not
 /// installed — and that is a diagnostic, never an error.

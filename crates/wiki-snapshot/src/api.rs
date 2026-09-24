@@ -267,9 +267,12 @@ pub fn parse_cargo(json: &str) -> Result<Vec<Row>, String> {
             .ok_or_else(|| format!("row {i}: `title` missing or not an object"))?;
         let mut row = Row::new();
         for (k, val) in obj {
+            #[allow(clippy::wildcard_enum_match_arm)]
+            // a foreign enum; the reason is at the wildcard arm
             let s = match val {
                 Value::Null => String::new(),
                 Value::String(s) => s.clone(),
+                // `serde_json::Value` is not ours, and every other shape is rendered as JSON text.
                 other => other.to_string(),
             };
             row.insert(k.clone(), s);

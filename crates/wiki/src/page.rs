@@ -333,7 +333,9 @@ fn narrow_inline(
                     });
                 }
             }
-            other => out.push(other),
+            other @ (crate::Inline::Text { .. }
+            | crate::Inline::Ref { .. }
+            | crate::Inline::Concept { .. }) => out.push(other),
         }
     }
     *inline = out;
@@ -490,6 +492,8 @@ pub fn parse_page(
     out
 }
 
+// Tests extract one variant and panic on the rest: the wildcard is the assertion.
+#[allow(clippy::wildcard_enum_match_arm)]
 #[cfg(test)]
 mod tests {
     use super::*;
