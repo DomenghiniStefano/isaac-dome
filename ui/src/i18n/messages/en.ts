@@ -25,6 +25,8 @@ export const en: MessageSchema = {
     settings: 'Settings',
     about: 'About',
     resizeSidebar: 'Resize the sidebar',
+    collapseSidebar: 'Collapse the sidebar',
+    expandSidebar: 'Expand the sidebar',
     sections: {
       progress: 'Progress',
       tool: 'Tools',

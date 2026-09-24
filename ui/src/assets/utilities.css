@@ -190,26 +190,46 @@
    The width is `--container-sidebar-room` spelled out: a `@utility` cannot carry a Tailwind variant, so
    this is the one place the number is written by hand instead of read from the token. Moving the
    threshold means moving it here too — `lib/design/thresholds.test.ts` guards the other two
-   copies and cannot see this one. */
+   copies and cannot see this one.
+
+   **Folding, the flip waits for the width** (card #54). The aside folds in the sheet's five steps,
+   and `display` cannot animate: flipped at once, the labels vanished on the first frame and left
+   the icons centred in a sidebar still two hundred pixels wide. Delayed by the sheet's own
+   duration, the edge clips the labels as it passes over them and drops them on the last step.
+   **Unfolding, nothing waits**: the labels are back on the first frame and widen with the edge.
+   That asymmetry is where the delay is written — a transition runs on the *arriving* state's
+   `transition-*`, so the delay sits in the folded rules only. `allow-discrete` is what lets a
+   transition hold a `display` at all; reduced motion zeroes the delay with every other duration
+   (base.css). */
 @utility sidebar-collapsed-hidden {
+  transition-property: display;
+  transition-behavior: allow-discrete;
   @container shell (width < 560px) {
     display: none;
+    transition-delay: var(--transition-duration-sheet);
   }
   [data-sidebar='collapsed'] & {
     display: none;
+    transition-delay: var(--transition-duration-sheet);
   }
 }
 
 /* The other half of the same state: what is left in a collapsed sidebar is centred in it. Its own
    utility rather than a variant on each element, for the reason above — the two conditions have
    to travel together, or the manual collapse centres nothing and only the narrow one looks right.
-   Same hand-written 560px — `--container-sidebar-room` — same reason. */
+   Same hand-written 560px — `--container-sidebar-room` — same reason, and the same one-way delay:
+   an icon that moved to the centre before its label went would sit on top of it for two hundred
+   ms, and one that stayed centred while its label came back would push the label off the edge. */
 @utility sidebar-collapsed-center {
+  transition-property: justify-content;
+  transition-behavior: allow-discrete;
   @container shell (width < 560px) {
     justify-content: center;
+    transition-delay: var(--transition-duration-sheet);
   }
   [data-sidebar='collapsed'] & {
     justify-content: center;
+    transition-delay: var(--transition-duration-sheet);
   }
 }
 

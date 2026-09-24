@@ -29,6 +29,8 @@ export const it = {
     settings: 'Impostazioni',
     about: 'Informazioni',
     resizeSidebar: 'Ridimensiona la barra laterale',
+    collapseSidebar: 'Riduci la barra laterale',
+    expandSidebar: 'Espandi la barra laterale',
     sections: {
       progress: 'Progressi',
       tool: 'Tool',

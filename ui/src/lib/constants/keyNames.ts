@@ -3,6 +3,7 @@
 // glyph for them.
 export const KeyName = {
   Ctrl: 'Ctrl',
+  B: 'B',
   K: 'K',
   Esc: 'Esc',
   Plus: '+',
