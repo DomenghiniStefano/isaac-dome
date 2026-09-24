@@ -1,25 +1,16 @@
 import { defineStore } from 'pinia'
-import { ref, shallowRef } from 'vue'
-import { floorCandidates, roomIcons } from '@/lib/ipc/floor'
-import {
-  emptyCells,
-  paintStroke,
-  type PaintedCells,
-} from '@/lib/floor/painting'
-import { RoomKindView, TargetView, type FloorView } from '@/lib/ipc/types'
+import { ref } from 'vue'
+import { roomIcons } from '@/lib/ipc/floor'
+import type { RoomKindView } from '@/lib/ipc/types'
 import { StoreId } from '@/lib/constants/stores'
 
-// The painted floor is a scratchpad, not a document: it lives here and nowhere else, and it is
-// gone when the app closes. Persisting it would outlive the floor it describes.
+// What the Floor screen shares across a window: the game's pictures, and nothing else.
+//
+// **The drawing is not here any more**, and that is a fix (`screens/floor/tabView.ts` has the
+// story): a store is one per window, a drawing is one per tab, and keeping it here lost it on
+// every tear-off. The pictures are the other way round — they are the installed game's, the
+// same for every tab — so they are asked once per window and kept.
 export const useFloorStore = defineStore(StoreId.Floor, () => {
-  const cells = ref<PaintedCells>(emptyCells())
-  // The Normal Room to begin with, and never nothing: the palette has no eraser on it, so a
-  // brush that paints nothing would be a state the screen cannot show and cannot leave.
-  // Rubbing out is the right button on the grid.
-  const brush = ref<RoomKindView>(RoomKindView.Normal)
-  const view = shallowRef<FloorView | null>(null)
-  const failed = ref(false)
-
   // The game's own picture per room kind, asked once. Empty until it answers and empty for
   // good on a machine without the game: the grid draws its own symbols either way, so there
   // is nothing here to wait for and nothing to report when it stays empty.
@@ -38,71 +29,5 @@ export const useFloorStore = defineStore(StoreId.Floor, () => {
     }
   }
 
-  // One target at a time, and never none: three answers laid over one 2rem cell could only be
-  // drawn too small to read, and a screen showing no answer at all would hide nothing of the
-  // drawing — a candidate only ever sits on a cell nobody painted. It opens on the Secret
-  // Room, the one a player looks for on every floor.
-  const shown = ref<TargetView>(TargetView.Secret)
-
-  const solve = async (): Promise<void> => {
-    try {
-      view.value = await floorCandidates(cells.value)
-      failed.value = false
-    } catch {
-      view.value = null
-      failed.value = true
-    }
-  }
-
-  // Paint lands at once; the rules are asked afterwards, once. The two are separate because a
-  // drag is many cells and one question: a `solve` per cell the pointer brushes past is a
-  // round trip to Rust for an answer about a corridor that is still being drawn.
-  const paint = (path: number[]): void => {
-    cells.value = paintStroke(cells.value, path, brush.value)
-  }
-
-  const settle = async (): Promise<void> => {
-    await solve()
-  }
-
-  // The whole drawing, one cell over — already worked out by `shift`, which is also what
-  // decided the arrow could be pressed at all. The store does not shift it a second time:
-  // asking the same question twice is how the answer and the button end up disagreeing.
-  const move = async (to: PaintedCells): Promise<void> => {
-    cells.value = to
-    await solve()
-  }
-
-  // Rubbing out is painting with no brush: one path through the grid, not a second one that
-  // could disagree with it.
-  const erase = async (cell: number): Promise<void> => {
-    cells.value = paintStroke(cells.value, [cell], null)
-    await solve()
-  }
-
-  const clear = async (): Promise<void> => {
-    cells.value = emptyCells()
-    await solve()
-  }
-
-  const show = (target: TargetView): void => {
-    shown.value = target
-  }
-
-  return {
-    cells,
-    brush,
-    view,
-    failed,
-    shown,
-    icons,
-    loadIcons,
-    paint,
-    settle,
-    move,
-    erase,
-    clear,
-    solve,
-    show,
-  }
+  return { icons, loadIcons }
 })
