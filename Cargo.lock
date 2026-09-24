@@ -468,6 +468,7 @@ dependencies = [
 name = "catalog"
 version = "0.1.0"
 dependencies = [
+ "catalog",
  "core-save",
  "quick-xml 0.42.0",
  "serde",
@@ -888,6 +889,7 @@ name = "discovery"
 version = "0.1.0"
 dependencies = [
  "dirs 6.0.0",
+ "discovery",
  "keyvalues-parser",
  "serde",
  "steamlocate",
@@ -1561,6 +1563,7 @@ version = "0.1.0"
 dependencies = [
  "catalog",
  "core-save",
+ "graph",
  "serde",
  "serde_json",
  "test-support",
@@ -1991,6 +1994,7 @@ dependencies = [
  "discovery",
  "floor",
  "graph",
+ "ipc",
  "plan",
  "png 0.17.16",
  "roll",
@@ -3974,6 +3978,7 @@ dependencies = [
  "rusqlite",
  "serde",
  "serde_json",
+ "store",
  "tempfile",
 ]
 
@@ -5054,6 +5059,7 @@ dependencies = [
  "serde",
  "tempfile",
  "test-support",
+ "unpack",
 ]
 
 [[package]]
@@ -5409,6 +5415,7 @@ dependencies = [
  "serde_json",
  "tempfile",
  "ts-rs",
+ "wiki",
 ]
 
 [[package]]

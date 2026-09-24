@@ -349,6 +349,7 @@ impl Store {
         Ok(self.conn.last_insert_rowid())
     }
 
+    #[cfg(feature = "test-api")]
     pub(crate) fn replace_event_json(
         &self,
         source_id: i64,

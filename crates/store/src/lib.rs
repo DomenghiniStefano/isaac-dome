@@ -4,6 +4,7 @@
 
 mod archive;
 mod degrade;
+#[cfg(feature = "test-api")]
 pub mod for_tests;
 mod migrations;
 
