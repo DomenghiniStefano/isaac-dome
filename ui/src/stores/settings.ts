@@ -1,7 +1,6 @@
 import { defineStore } from 'pinia'
 import { computed, ref } from 'vue'
 import { StoreId } from '@/lib/constants/stores'
-import { asIpcError } from '@/lib/ipc/errors'
 import {
   setAutoUpdate as saveAutoUpdate,
   setResumeTabs as saveResumeTabs,
@@ -22,6 +21,7 @@ import {
   snapPercent,
 } from '@/lib/scale/steps'
 import { assertNever } from '@/lib/assertNever'
+import { attempt, clearFailure } from './tracked'
 
 // The interface's size, window-wide and profile-free. The size is **applied first and saved
 // after**: the user asked for it, so the app is already that size while the file is written,
@@ -68,14 +68,8 @@ export const useSettingsStore = defineStore(StoreId.Settings, () => {
   // cleared before, set on a failure along with what failed. Nothing here undoes anything —
   // what the switch shows after a failure is each setter's own decision.
   const saving = async (write: () => Promise<void>): Promise<void> => {
-    saveFailed.value = false
-    saveError.value = null
-    try {
-      await write()
-    } catch (e) {
-      saveFailed.value = true
-      saveError.value = asIpcError(e)
-    }
+    clearFailure(saveFailed, saveError)
+    await attempt(saveFailed, saveError, write)
   }
 
   const setScale = async (percent: number): Promise<void> => {

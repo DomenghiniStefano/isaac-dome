@@ -16,7 +16,7 @@ import FloorPalette from './floor/FloorPalette.vue'
 import FloorReasoning from './floor/FloorReasoning.vue'
 import FloorTargets from './floor/FloorTargets.vue'
 import { useFloorDrawing } from './floor/useFloorDrawing'
-import ScreenHeader from './ScreenHeader.vue'
+import ScreenHeader from '@/components/screen/ScreenHeader.vue'
 
 const store = useFloorStore()
 const { t } = useMessages()

@@ -11,17 +11,11 @@ import SidebarItem from '@/components/shell/SidebarItem.vue'
 import TitleBar from '@/components/shell/TitleBar.vue'
 import {
   SidebarSection,
-  firstEntry,
   isEntryActive,
   navSectionOf,
-  sectionOfOrigin,
-  sidebarEntries,
-  sidebarHeaders,
   sidebarSectionOf,
 } from '@/lib/shell/sectionNav'
-import type { SidebarEntry } from '@/lib/shell/sectionNav'
-import { SidebarWidth, clampSidebarWidth } from '@/lib/shell/sidebarWidth'
-import type { TabView } from '@/lib/shell/tabs'
+import { tabViewOf } from '@/lib/shell/tabViews'
 import { TooltipProvider } from '@/components/ui/tooltip'
 import { usePointerShortcut } from '@/composables/usePointerShortcut'
 import { useShortcut } from '@/composables/useShortcut'
@@ -48,20 +42,13 @@ import {
 import { appEventHandlers } from '@/lib/window/appEventHandlers'
 import { watchAppEvents } from '@/lib/window/appEvents'
 import { subscriptions } from '@/lib/window/subscriptions'
-import {
-  setSidebarCollapsed,
-  setSidebarWidth,
-  sidebarCollapsed,
-  sidebarWidth as storedWidth,
-} from '@/lib/window/layout'
+import { useSidebar } from '@/composables/useSidebar'
 import { useWindowSession } from '@/composables/useWindowSession'
-import { routeOrigin } from '@/router/routeTable'
 import ProgressGate from '@/screens/ProgressGate.vue'
 import WelcomeScreen from '@/screens/welcome/WelcomeScreen.vue'
 import { useProfileStore } from '@/stores/profile'
 import { useQueueStore } from '@/stores/queue'
 import { useSettingsStore } from '@/stores/settings'
-import { tabLabel, tabLocation } from '@/stores/tabModel'
 import { useTabsStore } from '@/stores/tabs'
 import { useLiveStore, useRunsStore } from '@/stores/views'
 import { useWikiStore } from '@/stores/wiki'
@@ -146,61 +133,20 @@ useShortcut((event) => {
 })
 usePointerShortcut(pointerHistoryAction, walk)
 
-// A page tab reads as its page's title once the wiki index knows it; every other label is
-// a message.
-const tabViews = computed<TabView[]>(() =>
-  tabs.tabs.map((tab) => {
-    const location = tabLocation(tab)
-    const label = tabLabel(location, wiki.titleOf)
-    return {
-      id: tab.id,
-      label: typeof label === 'string' ? t(label) : label.text,
-      origin: routeOrigin[location.name],
-    }
-  }),
+const tabViews = computed(() =>
+  tabs.tabs.map((tab) => tabViewOf(tab, wiki.titleOf, t)),
 )
 
-// The sidebar shows the active tab's section, until the navbar or the cog picks another.
-const browsing = ref<SidebarSection>(SidebarSection.Progress)
-watch(
-  () => tabs.location?.name,
-  (name) => {
-    if (!name) return
-    // A search tab belongs to neither section: the sidebar stays where the user left it.
-    const section = sectionOfOrigin(routeOrigin[name])
-    if (section) browsing.value = section
-  },
-  { immediate: true },
-)
-
-// **Not this window's number.** The sidebar's width is one value for the app, kept in
-// `lib/window/layout.ts` and written into the session beside the windows (3.7c): what is here is
-// only the reading of it. `null` is "nobody ever sized it", which is the default and not a stored
-// width; anything stored goes through the clamp, so a number written by an older build with other
-// bounds comes back inside today's.
-const sidebarWidth = computed<number>({
-  get: () =>
-    storedWidth.value === null
-      ? SidebarWidth.Default
-      : clampSidebarWidth(storedWidth.value),
-  set: (px) => setSidebarWidth(px),
-})
-// Folded to its icons by the tab on its edge or by `Ctrl+B`; one value for the app, like the width.
-// The shell being too narrow folds it too, in CSS alone, and never writes here.
-const toggleSidebar = () => setSidebarCollapsed(!sidebarCollapsed.value)
-const header = computed(() => sidebarHeaders[browsing.value])
-const entries = computed(() => sidebarEntries[browsing.value])
-
-// Ctrl+click opens the entry in a new tab, as a browser does.
-const openEntry = (entry: SidebarEntry, event: MouseEvent) =>
-  tabs.go(entry.location, event.ctrlKey)
-
-// Clicking a section goes to its first page at once, with no second click in the sidebar:
-// this reverses Decision 5 of the shell spec, on purpose (`docs/BACKLOG.md` B24). The
-// sidebar follows the tab through the watch above, so `browsing` needs no setting here.
-const openSection = (section: SidebarSection, event: MouseEvent) => {
-  openEntry(firstEntry(section), event)
-}
+const sidebar = useSidebar()
+const {
+  browsing,
+  width: sidebarWidth,
+  collapsed: sidebarCollapsed,
+  header,
+  entries,
+  openEntry,
+  openSection,
+} = sidebar
 
 // Informazioni is a dialog over the tab, not a tab of its own (`docs/BACKLOG.md` B25).
 const aboutOpen = ref(false)
@@ -223,7 +169,7 @@ useShortcut((event) => {
 // would change a sidebar nobody can see, and the shell would come up folded for no reason shown.
 useShortcut((event) => {
   if (takeover.value || !togglesSidebar(event)) return false
-  toggleSidebar()
+  sidebar.toggle()
   return true
 })
 
@@ -314,7 +260,7 @@ const takeover = computed(() => welcome.value.kind !== 'hidden')
             <template #edge>
               <SidebarEdgeTab
                 :collapsed="sidebarCollapsed"
-                @toggle="toggleSidebar"
+                @toggle="sidebar.toggle"
               />
             </template>
             <SidebarItem

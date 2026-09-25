@@ -1,10 +1,10 @@
 import { knownId, knownText, nodeWithId } from '@/lib/graph/achievementNode'
-import { nodeSlot } from '@/lib/graph/unlockFacets'
+import { nodeNumber } from '@/lib/graph/achievementNode'
 import type { QueueRow, QueueView, UnlockNode } from '@/lib/ipc/types'
 
 // A queue row is always a known achievement (the view leaves unresolved ones out), so its slot
 // is its id.
-export const rowId = (row: QueueRow): number => nodeSlot(row.node)
+export const rowId = (row: QueueRow): number => nodeNumber(row.node)
 
 export const achievementText = (
   nodes: UnlockNode[],

@@ -4,6 +4,7 @@ import {
   DragThreshold,
   boxAt,
   boxOf,
+  measure,
   crossedThreshold,
   ghostOrigin,
   grabOffset,
@@ -104,5 +105,23 @@ describe('boxOf', () => {
       bottom: 60,
     }
     expect(boxOf(rect)).toStrictEqual(box(10, 20, 30, 40))
+  })
+})
+
+describe('measure', () => {
+  it("is the element's rectangle, snapshotted to its box", () => {
+    const el = {
+      getBoundingClientRect: () => ({
+        x: 1,
+        y: 2,
+        left: 1,
+        top: 2,
+        width: 3,
+        height: 4,
+        right: 4,
+        bottom: 6,
+      }),
+    } as unknown as Element
+    expect(measure(el)).toStrictEqual(box(1, 2, 3, 4))
   })
 })

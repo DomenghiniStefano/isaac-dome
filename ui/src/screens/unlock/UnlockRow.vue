@@ -11,7 +11,7 @@ import { useMessages } from '@/i18n'
 import { cn } from '@/lib/cn'
 import { knownAchievement } from '@/lib/graph/achievementNode'
 import { targetName } from '@/lib/graph/characterName'
-import { nodeSlot } from '@/lib/graph/unlockFacets'
+import { nodeNumber } from '@/lib/graph/achievementNode'
 import type { UnlockNode } from '@/lib/ipc/types'
 
 const props = defineProps<{
@@ -47,7 +47,7 @@ const more = computed(() => Math.max(0, props.node.unlocks.length - 1))
       >{{ text }}</span
     >
     <span class="text-micro text-faint-foreground tabular-nums"
-      >{{ t('graph.slot') }} {{ nodeSlot(node)
+      >{{ t('graph.slot') }} {{ nodeNumber(node)
       }}<template v-if="queued"> · {{ t('queue.inQueue') }}</template></span
     >
   </span>

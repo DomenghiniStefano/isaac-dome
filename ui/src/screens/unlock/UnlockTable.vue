@@ -3,7 +3,7 @@ import { VirtualRows } from '@/components/ui/virtual'
 import type { ScrollOffset } from '@/lib/scale/scrollOffset'
 import { useMessages } from '@/i18n'
 import { cn } from '@/lib/cn'
-import { nodeSlot } from '@/lib/graph/unlockFacets'
+import { nodeNumber } from '@/lib/graph/achievementNode'
 import type { UnlockNode } from '@/lib/ipc/types'
 import { canQueue, isQueued } from '@/lib/plan/queueRows'
 import { rowWidePx } from '@/lib/scale/rows'
@@ -53,7 +53,7 @@ const { t } = useMessages()
     >
       <div
         v-for="{ index, style, row: node } in visible"
-        :key="nodeSlot(node)"
+        :key="nodeNumber(node)"
         :style="style"
         :class="
           cn(
@@ -67,7 +67,7 @@ const { t } = useMessages()
           :queued="isQueued(node, queued)"
           :can-add="canWrite && canQueue(node, queued)"
           :busy="busy"
-          @add="emit('add', nodeSlot(node))"
+          @add="emit('add', nodeNumber(node))"
         />
       </div>
     </VirtualRows>

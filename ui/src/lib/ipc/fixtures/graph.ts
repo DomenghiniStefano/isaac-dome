@@ -1,5 +1,5 @@
 import { assertNever } from '@/lib/assertNever'
-import { knownId } from '@/lib/graph/achievementNode'
+import { knownId, nodeNumber } from '@/lib/graph/achievementNode'
 import { warnOnce } from './warnOnce'
 import { WantDiagnostic } from '../types'
 import type {
@@ -64,17 +64,12 @@ const nodeResolved = (node: UnlockNode): UnlockNode => ({
   unlocks: node.unlocks.map(targetWithoutIcon),
 })
 
-const slotOf = (node: UnlockNode): number =>
-  node.achievement.kind === 'known'
-    ? node.achievement.id
-    : node.achievement.slot
-
 // What crates/ipc/src/graph.rs `unlock_view` builds without a catalog: every slot an unknown
 // achievement with the save's done, nothing unlocked, no origin, nothing missing, and a
 // partial graph with one unknown — never computed, which would read as nothing in the way.
 const withoutCatalog = (view: UnlockView): UnlockView => ({
   nodes: view.nodes.map((node) => ({
-    achievement: { kind: 'unknown', slot: slotOf(node) },
+    achievement: { kind: 'unknown', slot: nodeNumber(node) },
     done: node.done,
     unlocks: [],
     origin: null,

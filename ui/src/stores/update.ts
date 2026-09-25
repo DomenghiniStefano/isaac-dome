@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 import { StoreId } from '@/lib/constants/stores'
-import { asIpcError } from '@/lib/ipc/errors'
+import { attempt, clearFailure } from './tracked'
 import { checkUpdate, installUpdate, updateStatus } from '@/lib/ipc/update'
 import type { IpcError, UpdateView } from '@/lib/ipc/types'
 import { UpdateReason } from '@/lib/ipc/types'
@@ -38,25 +38,19 @@ export const useUpdateStore = defineStore(StoreId.Update, () => {
   // The button. It returns when the whole thing is over — the phases in between arrive through
   // the event, which is also what keeps a second window's bar moving.
   const check = async (): Promise<void> => {
-    error.value = null
-    try {
+    clearFailure(null, error)
+    const landed = await attempt(null, error, async () => {
       view.value = await checkUpdate()
-    } catch (e) {
-      error.value = asIpcError(e)
-      await read()
-    }
+    })
+    if (!landed) await read()
   }
 
   // **When this works it does not return**: the installer is launched and the process ends.
   // Reaching the line after it means the bytes were not there, which is a defect of ours and
   // the only error this screen can raise.
   const install = async (): Promise<void> => {
-    error.value = null
-    try {
-      await installUpdate()
-    } catch (e) {
-      error.value = asIpcError(e)
-    }
+    clearFailure(null, error)
+    await attempt(null, error, installUpdate)
     await read()
   }
 

@@ -17,8 +17,8 @@ import EntityChip from '@/components/runs/EntityChip.vue'
 import ItemChips from '@/components/runs/ItemChips.vue'
 import LiveMarksRow from './live/LiveMarksRow.vue'
 import LiveOpensTable from './live/LiveOpensTable.vue'
-import ProfileError from './profile/ProfileError.vue'
-import ScreenHeader from './ScreenHeader.vue'
+import ProfileError from '@/components/data-state/ProfileError.vue'
+import ScreenHeader from '@/components/screen/ScreenHeader.vue'
 
 const store = useLiveStore()
 const { t } = useMessages()

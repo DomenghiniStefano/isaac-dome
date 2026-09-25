@@ -26,6 +26,9 @@ const { t } = useMessages()
 const reward = computed(() => props.row.rewards[0] ?? null)
 const more = computed(() => Math.max(0, props.row.rewards.length - 1))
 const done = computed(() => props.row.state.kind === 'done')
+// Known defect, kept as found (card #82): the name never reads the click's Ctrl, so a
+// Ctrl-click replaces this tab instead of opening the page beside it. The fix is this line.
+const openName = (page: Target) => emit('navigate', page, false)
 </script>
 
 <template>
@@ -41,7 +44,7 @@ const done = computed(() => props.row.state.kind === 'done')
       :variant="ButtonVariant.Link"
       :size="ButtonSize.Compact"
       :class="cn('justify-start truncate', done && 'text-subtle-foreground')"
-      @click="emit('navigate', row.page, false)"
+      @click="openName(row.page)"
       >{{ row.name }}</Button
     >
     <span

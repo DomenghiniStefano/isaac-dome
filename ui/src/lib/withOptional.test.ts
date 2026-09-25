@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { withOptional } from './withOptional'
+import { whenTrue, withOptional } from './withOptional'
 
 describe('withOptional', () => {
   it('carries the field when it has a value', () => {
@@ -22,5 +22,14 @@ describe('withOptional', () => {
     expect(withOptional('s', '')).toStrictEqual({ s: '' })
     expect(withOptional('b', false)).toStrictEqual({ b: false })
     expect(withOptional('z', null)).toStrictEqual({ z: null })
+  })
+})
+
+describe('whenTrue', () => {
+  it('keeps a switch that is on, and leaves one that is off absent', () => {
+    expect({ ...withOptional('folded', whenTrue(true)) }).toStrictEqual({
+      folded: true,
+    })
+    expect({ ...withOptional('folded', whenTrue(false)) }).toStrictEqual({})
   })
 })

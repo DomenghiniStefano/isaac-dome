@@ -19,19 +19,17 @@ import {
 import { challengeCharacterNames } from '@/lib/challenges/characterNames'
 import { challengeEntries } from '@/lib/diagnostics/challenges'
 import { emptyList, isFiltering } from '@/lib/facets/emptyList'
-import type { Target } from '@/lib/ipc/types'
-import { pageLocation } from '@/lib/wiki/category'
 import { LoadStatus } from '@/stores/loadStatus'
 import { useTabsStore } from '@/stores/tabs'
 import { useChallengesStore } from '@/stores/views'
-import ScreenHeader from './ScreenHeader.vue'
+import ScreenHeader from '@/components/screen/ScreenHeader.vue'
 import ChallengesTable from './challenges/ChallengesTable.vue'
 import {
   challengeBar,
   challengeFacetValueLabel,
-} from './challenges/challengeLabels'
+} from '@/lib/challenges/challengeLabels'
 import { challengesView } from './challenges/tabView'
-import ProfileError from './profile/ProfileError.vue'
+import ProfileError from '@/components/data-state/ProfileError.vue'
 
 const store = useChallengesStore()
 const { queue, queued, canWrite } = useQueueOffer()
@@ -64,13 +62,6 @@ const empty = computed(() =>
     noResults: 'challenges.noResults',
   }),
 )
-
-// A reference replaces this tab's page, or opens one beside it with Ctrl — the same action a
-// search result has (DESIGN-BRIEF.md §4.2).
-const navigate = (target: Target, newTab: boolean) => {
-  const location = pageLocation(target)
-  if (location !== null) tabs.go(location, newTab)
-}
 </script>
 
 <template>
@@ -109,7 +100,7 @@ const navigate = (target: Target, newTab: boolean) => {
             :can-write="canWrite"
             :busy="queue.busy"
             @add="queue.add"
-            @navigate="navigate"
+            @navigate="tabs.openPage"
           />
           <ListEmptyState v-else :empty="empty" @reset="reset" />
         </Card>

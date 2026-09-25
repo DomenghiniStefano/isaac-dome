@@ -108,12 +108,13 @@ export const wikiPages = (): Page[] => {
       const target = bossTarget(e)
       return target ? [{ target, title: e.name ?? '' }] : []
     })
-  const challenges = new Map<number, string>()
-  for (const node of Object.values(unlocks)[0]?.nodes ?? []) {
-    for (const t of node.unlocks) {
-      if (t.kind === 'challenge') challenges.set(t.id, t.name)
-    }
-  }
+  const challenges = new Map<number, string>(
+    (Object.values(unlocks)[0]?.nodes ?? []).flatMap((node) =>
+      node.unlocks.flatMap((t) =>
+        t.kind === 'challenge' ? [[t.id, t.name] as const] : [],
+      ),
+    ),
+  )
   const challengePages: Page[] = [...challenges]
     .sort(([a], [b]) => a - b)
     .map(([id, name]) => ({

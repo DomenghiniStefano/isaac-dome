@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { RouteName } from '@/router/routeTable'
-import { readSession, writeSession } from './sessionDocument'
+import { readSession, storedSession, writeSession } from './sessionDocument'
 
 const tab = (name: RouteName) => ({
   entries: [{ location: { name } }],
@@ -243,9 +243,9 @@ describe('the view a stored entry carries', () => {
         ],
       }),
     )
-    for (const window of stored.windows) {
-      expect(window.tabs[0].entries[0].view).toBeUndefined()
-      expect(window.tabs[0].entries[1].view).toEqual({ sort: 'id' })
+    for (const kept of stored.windows) {
+      expect(kept.tabs[0].entries[0].view).toBeUndefined()
+      expect(kept.tabs[0].entries[1].view).toEqual({ sort: 'id' })
     }
   })
 
@@ -473,5 +473,26 @@ describe('the positions a stored entry carries', () => {
     )
     expect(written.windows[0].tabs[0].entries[0].scroll).toBeUndefined()
     expect(written.windows[0].tabs[0].entries[1].scroll).toEqual({ page: 20 })
+  })
+})
+
+describe('storedSession', () => {
+  const windows = [
+    {
+      tabs: [{ entries: [{ location: { name: RouteName.Goals } }], index: 0 }],
+      activeIndex: 0,
+    },
+  ]
+
+  it('carries the width once somebody sized it, and the fold once somebody folded', () => {
+    expect(
+      storedSession(windows, { sidebarWidth: 260, sidebarCollapsed: true }),
+    ).toStrictEqual({ windows, sidebarWidth: 260, sidebarCollapsed: true })
+  })
+
+  it('leaves both keys out when nobody touched the sidebar', () => {
+    expect(
+      storedSession(windows, { sidebarWidth: null, sidebarCollapsed: false }),
+    ).toStrictEqual({ windows })
   })
 })

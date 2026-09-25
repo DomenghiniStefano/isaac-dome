@@ -15,15 +15,16 @@ import { useMessages } from '@/i18n'
 import { unlockEntries } from '@/lib/diagnostics/unlock'
 import { emptyList, isFiltering } from '@/lib/facets/emptyList'
 import { characterForms } from '@/lib/graph/characterName'
-import { stateOrder } from '@/lib/graph/nodeState'
+import { NodeState } from '@/lib/graph/nodeState'
+import { oneOf } from '@/lib/oneOf'
 import { FacetId, sortNodes, unlockFaceting } from '@/lib/graph/unlockFacets'
 import { singleQuery } from '@/lib/search/queryParam'
 import { LoadStatus } from '@/stores/loadStatus'
 import { useGraphStore } from '@/stores/views'
-import ScreenHeader from './ScreenHeader.vue'
-import ProfileError from './profile/ProfileError.vue'
+import ScreenHeader from '@/components/screen/ScreenHeader.vue'
+import ProfileError from '@/components/data-state/ProfileError.vue'
 import UnlockTable from './unlock/UnlockTable.vue'
-import { facetValueLabel, unlockBar } from './unlock/facetLabels'
+import { unlockBar, unlockFacetValueLabel } from '@/lib/graph/unlockLabels'
 import { unlockView } from './unlock/tabView'
 
 const graph = useGraphStore()
@@ -53,8 +54,7 @@ watch(
 watch(
   () => route.query.state,
   (value) => {
-    const wanted = singleQuery(value)
-    const state = stateOrder.find((s) => s === wanted)
+    const state = oneOf(NodeState, singleQuery(value) ?? '')
     if (state) setPicks(FacetId.State, [state])
   },
   { immediate: true },
@@ -67,7 +67,7 @@ const characters = computed(() => characterForms(nodes.value))
 // A picked value in words. The Character facet stores ids (B28), so the label needs the forms
 // the nodes carry: it is the screen that has them, not the control that draws the chip.
 const valueLabel = (facet: FacetId, value: string) =>
-  facetValueLabel(t, facet, value, characters.value)
+  unlockFacetValueLabel(t, facet, value, characters.value)
 const rows = computed(() =>
   sortNodes(
     nodes.value.filter((node) => unlockFaceting.matches(node, filter.value)),

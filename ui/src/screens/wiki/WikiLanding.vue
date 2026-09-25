@@ -12,7 +12,8 @@ import {
 } from '@/components/ui/alert'
 import { Button, ButtonVariant } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Skeleton } from '@/components/ui/skeleton'
+import ScreenSkeleton from '@/components/data-state/ScreenSkeleton.vue'
+import { SkeletonBlock } from '@/components/data-state/skeletonBlock'
 import {
   Tooltip,
   TooltipContent,
@@ -29,7 +30,7 @@ import {
 import { useTabsStore } from '@/stores/tabs'
 import { useWikiStore } from '@/stores/wiki'
 import ProfileFact from '@/components/data-state/ProfileFact.vue'
-import HeroBand from '../HeroBand.vue'
+import HeroBand from '@/components/screen/HeroBand.vue'
 
 const wiki = useWikiStore()
 const tabs = useTabsStore()
@@ -167,10 +168,12 @@ const open = (category: WikiCategory, event: MouseEvent) =>
           </CardContent>
         </Card>
       </template>
-      <div v-else class="flex flex-col gap-4 pt-5">
-        <Skeleton class="h-24 w-full" />
-        <Skeleton class="h-40 w-full" />
-      </div>
+      <ScreenSkeleton
+        v-else
+        untitled
+        class="pt-5"
+        :blocks="[SkeletonBlock.SummaryCard, SkeletonBlock.Card]"
+      />
     </div>
   </div>
 </template>

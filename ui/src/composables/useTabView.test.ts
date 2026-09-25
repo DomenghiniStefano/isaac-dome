@@ -9,6 +9,7 @@ import { useTabView } from './useTabView'
 
 interface Reading {
   sort: string
+  query?: string
 }
 
 const spec: TabViewSpec<Reading> = {
@@ -21,12 +22,13 @@ const spec: TabViewSpec<Reading> = {
 
 // No component: the composable uses `ref` and `watch` and no lifecycle hook, so a scope is
 // everything it needs. Mounting would want a DOM and a dependency this repo does not have.
-const inScope = (): Ref<Reading> => {
+const inScopeWithUpdate = () => {
   const scope = effectScope()
-  const reading = scope.run(() => useTabView(spec))
-  if (!reading) throw new Error('the scope ran nothing')
-  return reading
+  const view = scope.run(() => useTabView(spec))
+  if (!view) throw new Error('the scope ran nothing')
+  return view
 }
+const inScope = (): Ref<Reading> => inScopeWithUpdate().reading
 
 const tabs = () => useTabsStore()
 
@@ -112,5 +114,24 @@ describe('a screen reaching its own reading', () => {
     store.back()
     await nextTick()
     expect(reading.value).toEqual({ sort: 'name' })
+  })
+
+  it('an update moves one field and keeps the rest', () => {
+    tabs().seed(
+      [
+        {
+          entries: [
+            { location: { name: RouteName.Unlock }, view: { sort: 'name' } },
+          ],
+          index: 0,
+        },
+      ],
+      0,
+    )
+    const { reading, update } = inScopeWithUpdate()
+    update({ query: 'brim' })
+    expect(reading.value).toEqual({ sort: 'name', query: 'brim' })
+    update({ sort: 'id' })
+    expect(reading.value).toEqual({ sort: 'id', query: 'brim' })
   })
 })

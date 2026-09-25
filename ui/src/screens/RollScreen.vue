@@ -14,11 +14,11 @@ import { AppEvent } from '@/lib/window/appEvents'
 import { useAppEvent } from '@/composables/useAppEvent'
 import { LoadStatus } from '@/stores/loadStatus'
 import { useRollStore } from '@/stores/roll'
-import ProfileError from './profile/ProfileError.vue'
+import ProfileError from '@/components/data-state/ProfileError.vue'
 import RollCard from './roll/RollCard.vue'
 import RollPanel from './roll/RollPanel.vue'
 import { rollCardState } from './roll/rollText'
-import ScreenHeader from './ScreenHeader.vue'
+import ScreenHeader from '@/components/screen/ScreenHeader.vue'
 
 const store = useRollStore()
 const { t } = useMessages()

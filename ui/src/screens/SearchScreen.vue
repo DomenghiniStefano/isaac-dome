@@ -12,20 +12,12 @@ import type { ScrollOffset } from '@/lib/scale/scrollOffset'
 import { useMessages } from '@/i18n'
 import { Timing } from '@/lib/constants/timing'
 import { SearchLimit } from '@/lib/ipc/search'
-import { SearchDiagnostic } from '@/lib/ipc/types'
 import { singleQuery } from '@/lib/search/queryParam'
-import {
-  RowGroup,
-  filterGroups,
-  groupCounts,
-  matchingScreens,
-  screenEntries,
-  searchRows,
-} from '@/lib/search/rows'
+import { RowGroup, filterGroups, groupCounts, rowsFor } from '@/lib/search/rows'
 import type { SearchRow } from '@/lib/search/rows'
 import { RouteName } from '@/router/routeTable'
 import { useTabsStore } from '@/stores/tabs'
-import ScreenHeader from './ScreenHeader.vue'
+import ScreenHeader from '@/components/screen/ScreenHeader.vue'
 import DiagnosticsList from '@/components/diagnostics/DiagnosticsList.vue'
 import { searchEntries } from '@/lib/diagnostics/search'
 import SearchResults from './search/SearchResults.vue'
@@ -67,30 +59,17 @@ watch(
 )
 
 const diagnostics = computed(() => view.value?.diagnostics ?? [])
-const catalog = computed(
-  () => !diagnostics.value.includes(SearchDiagnostic.NoCatalog),
-)
 
 // The whole answer, uncapped: the per-group cap belongs to the palette.
-const allRows = computed(() =>
-  searchRows(
-    view.value?.hits ?? [],
-    matchingScreens(screenEntries(t), typed.value),
-    { catalog: catalog.value, cap: null },
-  ),
-)
+const allRows = computed(() => rowsFor(view.value, typed.value, t, null))
 
 // Which groups the search is narrowed to belongs to the tab, not to this component (B39). The
 // query is not here: it is in the location already, because a search is a place you can link to.
-const reading = useTabView(searchView)
-const setOffset = (offset: ScrollOffset) => {
-  reading.value = { ...reading.value, offset }
-}
+const { reading, update } = useTabView(searchView)
+const setOffset = (offset: ScrollOffset) => update({ offset })
 const picked = computed({
   get: () => reading.value.picked,
-  set: (value: RowGroup[]) => {
-    reading.value = { ...reading.value, picked: value }
-  },
+  set: (value: RowGroup[]) => update({ picked: value }),
 })
 const rows = computed(() => filterGroups(allRows.value, picked.value))
 const counts = computed(() => groupCounts(allRows.value))

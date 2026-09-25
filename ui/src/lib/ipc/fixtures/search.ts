@@ -96,11 +96,10 @@ export const rankFixture = (
           match: { kind: 'condition', text: doc.condition } as SearchMatch,
         },
       ]
-    for (const s of doc.sections) {
-      const match = fragment(s.section, s.text, all)
-      if (match) return [{ tier: 5, doc, match }]
-    }
-    return []
+    const match = doc.sections
+      .map((s) => fragment(s.section, s.text, all))
+      .find((m) => m !== null)
+    return match ? [{ tier: 5, doc, match }] : []
   })
   ranked.sort(
     (a, b) => a.tier - b.tier || a.doc.title.localeCompare(b.doc.title),

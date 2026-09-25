@@ -3,7 +3,7 @@ import { groupBy } from 'lodash-es'
 import { assertNever } from '@/lib/assertNever'
 import { MarkColumnView } from '@/lib/ipc/types'
 import type { RequirementView, UnlockNode } from '@/lib/ipc/types'
-import { pageLocation } from '@/lib/wiki/category'
+import { pageLocationOf } from '@/lib/wiki/category'
 import type { TabLocation } from '@/router/routeTable'
 import { characterLabel } from './characterName'
 
@@ -135,14 +135,14 @@ const thresholdEntries = (
   {
     key: `threshold-${requirement.transformation}`,
     name: requirementName(requirement, t),
-    location: requirement.page ? pageLocation(requirement.page) : null,
+    location: pageLocationOf(requirement.page),
   },
   ...requirement.of
     .filter((item) => !item.unlocked)
     .map((item) => ({
       key: `threshold-${requirement.transformation}-${item.id}`,
       name: item.name,
-      location: item.page ? pageLocation(item.page) : null,
+      location: pageLocationOf(item.page),
     })),
 ]
 
@@ -180,7 +180,7 @@ const requirementLocation = (
     case 'boss':
     case 'challenge':
     case 'item':
-      return requirement.page ? pageLocation(requirement.page) : null
+      return pageLocationOf(requirement.page)
     case 'gate':
     case 'mark':
     case 'counter':
@@ -188,7 +188,7 @@ const requirementLocation = (
       return null
     // Its own page, which the dataset has had since the sixteen were imported.
     case 'threshold':
-      return requirement.page ? pageLocation(requirement.page) : null
+      return pageLocationOf(requirement.page)
     default:
       return assertNever(requirement)
   }
@@ -206,34 +206,33 @@ export interface RequirementGroup {
   entries: RequirementEntry[]
 }
 
+// The rows one requirement draws: one, except a threshold, which is a set and answers with its
+// own row and one per item still locked.
+const entriesOf = (
+  requirement: RequirementView,
+  t: Translate,
+): RequirementEntry[] =>
+  requirement.kind === 'threshold'
+    ? thresholdEntries(requirement, t)
+    : [
+        {
+          key: requirementKey(requirement),
+          name: requirementName(requirement, t),
+          location: requirementLocation(requirement),
+        },
+      ]
+
 // "1 character and 2 unknown conditions", not "blocked by 3": what a node is missing,
-// grouped. `t` is here for the one name that is composed rather than quoted.
+// grouped. `t` is here for the one name that is composed rather than quoted. A kind the node
+// is missing nothing of has no group.
 export const missingGroups = (
   node: UnlockNode,
   t: Translate,
 ): RequirementGroup[] => {
   const byKind = groupBy(node.missing, (requirement) => requirement.kind)
   return requirementOrder.flatMap((kind) => {
-    const of = byKind[kind]
-    return of
-      ? [
-          {
-            kind,
-            // `flatMap`, because a threshold is a set and answers with several rows where
-            // every other kind answers with one.
-            entries: of.flatMap((r) =>
-              r.kind === 'threshold'
-                ? thresholdEntries(r, t)
-                : [
-                    {
-                      key: requirementKey(r),
-                      name: requirementName(r, t),
-                      location: requirementLocation(r),
-                    },
-                  ],
-            ),
-          },
-        ]
-      : []
+    const of = byKind[kind] ?? []
+    if (of.length === 0) return []
+    return [{ kind, entries: of.flatMap((r) => entriesOf(r, t)) }]
   })
 }

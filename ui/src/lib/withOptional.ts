@@ -7,3 +7,8 @@ export const withOptional = <K extends string, V>(
   value: V | undefined,
 ): Partial<Record<K, V>> =>
   value === undefined ? {} : ({ [key]: value } as Record<K, V>)
+
+// A flag that is `true` or absent, never `false`: the value `withOptional` keeps for a switch
+// whose off position is the default.
+export const whenTrue = (flag: boolean): true | undefined =>
+  flag ? true : undefined

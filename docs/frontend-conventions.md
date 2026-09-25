@@ -35,44 +35,53 @@ ui/
       ui/          shadcn-vue primitives (reka-vega), dressed: they live in the repo
       shell/       title bar, tabs, window controls, navbar, section sidebar
       marks/       the completion-matrix cell, its bit reading, and the grid of cells
-      graph/       a node's state badge and its why, the achievement drawing, kind labels
-      plan/        QueueError: a write to the plan queue that was refused, and why
+      graph/       a node's state badge and its why, the achievement drawing, the profile block
+      plan/        GoalRow, and QueueError: a write to the plan queue that was refused, and why
+      screen/      what every screen opens on: ScreenHeader, and HeroBand for the ones with a band
       sprite/      PixelSprite: a game sprite that falls back, never a broken image
       kpi/         the KPI tile
       wiki/        the wiki's inline tokens and blocks
-      data-state/  read-but-empty, unreadable, empty category
+      data-state/  read-but-empty, unreadable, empty category, ScreenSkeleton, and ProfileError:
+                   a read that failed, with its retry
       <domain>/    further app components, named for WHAT THEY ARE
-    composables/   useOnActiveProfile: a screen reloads when the active profile changes;
-                   useIpcErrorText: one sentence per IpcError, for every screen
-    stores/        Pinia, setup syntax: tabs (and tabModel, its pure rules), profile,
-                   completion, graph, queue
+    composables/   what a screen reaches for, one concern each: useTabView (how the tab's
+                   entry is being read) and useFacetedReading on top of it, useOnActiveProfile,
+                   useIpcErrorText, useQueueOffer, useSearch, useWant, useDragList and
+                   useTabDrag, useSidebar, useWindowSession (mounted once, by App.vue), and the
+                   keyboard and pointer shortcuts
+    stores/        Pinia, setup syntax: tabs (and tabModel, its pure rules), profile, settings,
+                   queue, wiki, floor, roll, update; views.ts for the ones that are one read
+                   (completion, graph, collection, challenges, runs, live); tracked.ts for how a
+                   read and a write say they ended
     router/        routeTable (names, paths, titles, icons: no components), routes, index
-    screens/       one screen per route, and the parts only it uses (`screens/profile/`,
-                   `screens/completion/`, `screens/nextSteps/`, `screens/unlock/`,
-                   `screens/plan/`, `screens/collection/`)
+    screens/       one screen per route, and the parts only it uses (`screens/goals/`,
+                   `screens/completion/`, `screens/unlock/`, `screens/collection/`, …)
     kit/           development-only Kit page: every primitive in every state (`#kit`)
     verify/        development-only verification page: every command, raw (`#verify`)
     lib/
       ipc/         typed wrappers around Tauri commands — the only place with invoke()
         transport.ts  call(): invoke() in Tauri, the fixtures under `pnpm ui:dev`
         errors.ts     isIpcError (the contract's kinds only) and asIpcError, shared by the stores
-        fixtures/     development answers, one scenario per `?fixture=`; `art.ts` and
-                      `graphArt.ts` glob the pack's sprites, which since 2026-09-15 are not
-                      there, so every image answers null; `graph.ts`
-                      answers the pack's real unlock payloads, `?catalog=none` without the
-                      game, and `graphArt.ts` held their 1,500 images, loaded only then and
-                      indexed once; `queue.ts` keeps a plan queue in memory, repaired by a port
+        fixtures/     development answers, one scenario per `?fixture=`, and **no images**:
+                      every picture answers null, because the game's sprites are not in the
+                      repository (constraint 3); `graph.ts` answers the pack's real unlock
+                      payloads, `?catalog=none` without the game; `queue.ts` keeps a plan
+                      queue in memory, repaired by a port
                       of the Rust rule (`queueRepair.ts`), `?queue=empty|unavailable|unreadable`;
                       `collection.ts` answers the pack's `collection.json` when it has one, and
                       until then real names and locks with **declared synthetic** quality, pools
                       and flags (`collectionSource()`), `?collection=unread`
-      window/      appWindow: the only module that talks to the window; windowFloor: the
-                   smallest window the layout is designed against, 640x480
+      window/      the only place that talks to the window (appWindow, windowPort, preview, …);
+                   windowFloor: the smallest window the layout is designed against, 640x480;
+                   the session across windows (its document, ledger, saver, layout echo, reopen)
       profile/     what the profile screen and the indicator show, as pure functions
       completion/  what the Completion screen counts, as pure functions
-      graph/       a node's state and why, Unlock's facets, search and sort, as pure functions
+      graph/       a node's state and why, Unlock's facets and their labels, an achievement
+                   reference's readings, as pure functions
       plan/        the queue's drops and anchors, the row a move stopped under, as pure functions
-      collection/  a collectible's state and the Collection's facets, as pure functions
+      collection/  a collectible's state and the Collection's facets and labels, as pure functions
+      <domain>/    the same for every other screen: challenges, runs, live, floor, search, …;
+                   a screen's facet labels live beside its facets, never in `screens/`
       constants/   magic strings: command names, dev routes, key names, placement
       design/      themeKeys: the token names cn() reads from the theme CSS;
                    thresholds: the three widths a screen changes shape at

@@ -1,6 +1,7 @@
 import { compact } from 'lodash-es'
 import type { Message } from '@/i18n/message'
-import type { SearchHit } from '@/lib/ipc/types'
+import { SearchDiagnostic } from '@/lib/ipc/types'
+import type { SearchHit, SearchView } from '@/lib/ipc/types'
 import { pageLocation } from '@/lib/wiki/category'
 import {
   RouteName,
@@ -28,7 +29,7 @@ export const rowGroupOrder: RowGroup[] = [
 ]
 
 // What a group is called, on the palette's headings, on a row's tag and on the Search screen's
-// toggles alike: three places that each kept their own copy of this table.
+// toggles alike.
 export const rowGroupLabel: Record<RowGroup, Message> = {
   [RowGroup.Screens]: 'search.groups.screens',
   [RowGroup.Wiki]: 'search.groups.wiki',
@@ -151,6 +152,24 @@ export const searchRows = (
     return cap === null ? inGroup : inGroup.slice(0, cap)
   })
 }
+
+// Without the game there is nothing for Unlock and the Collection to be filtered by.
+const hasCatalog = (view: SearchView | null): boolean =>
+  !(view?.diagnostics ?? []).includes(SearchDiagnostic.NoCatalog)
+
+// Every row one answer and one query open, the palette's and the Search screen's alike: the
+// screens the query names, then the hits' destinations, `cap` rows per group at most. No answer
+// yet is no hits, and the screens are still offered.
+export const rowsFor = (
+  view: SearchView | null,
+  typed: string,
+  t: (m: Message) => string,
+  cap: number | null,
+): SearchRow[] =>
+  searchRows(view?.hits ?? [], matchingScreens(screenEntries(t), typed), {
+    catalog: hasCatalog(view),
+    cap,
+  })
 
 // No pick is every group: an empty toggle group never means an empty screen.
 export const filterGroups = (

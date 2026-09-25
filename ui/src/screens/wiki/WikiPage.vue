@@ -5,7 +5,8 @@ import { computed, watch } from 'vue'
 import EmptyCategory from '@/components/data-state/EmptyCategory.vue'
 import ProfileBlock from '@/components/graph/ProfileBlock.vue'
 import { Button, ButtonVariant } from '@/components/ui/button'
-import { Skeleton } from '@/components/ui/skeleton'
+import ScreenSkeleton from '@/components/data-state/ScreenSkeleton.vue'
+import { SkeletonBlock } from '@/components/data-state/skeletonBlock'
 import {
   Tooltip,
   TooltipContent,
@@ -13,10 +14,9 @@ import {
 } from '@/components/ui/tooltip'
 import { useMessages } from '@/i18n'
 import { achievementNode } from '@/lib/graph/achievementNode'
-import { nodeSlot } from '@/lib/graph/unlockFacets'
-import type { Target } from '@/lib/ipc/types'
+import { nodeNumber } from '@/lib/graph/achievementNode'
 import { canQueue, isQueued } from '@/lib/plan/queueRows'
-import { categoryOf, pageLocation } from '@/lib/wiki/category'
+import { categoryOf } from '@/lib/wiki/category'
 import { parsePageKey } from '@/lib/wiki/pageKey'
 import { RouteName } from '@/router/routeTable'
 import type { WikiCategory } from '@/router/routeTable'
@@ -24,7 +24,7 @@ import { useQueueOffer } from '@/composables/useQueueOffer'
 import { useTabsStore } from '@/stores/tabs'
 import { useGraphStore } from '@/stores/views'
 import { useWikiStore } from '@/stores/wiki'
-import ProfileError from '../profile/ProfileError.vue'
+import ProfileError from '@/components/data-state/ProfileError.vue'
 import WikiHero from './WikiHero.vue'
 import WikiInfobox from './WikiInfobox.vue'
 import WikiOutline from './WikiOutline.vue'
@@ -67,12 +67,6 @@ const title = computed(
 )
 const icon = computed(() => (target.value ? wiki.iconFor(target.value) : null))
 
-// A reference replaces the page in this tab, or opens one beside it with Ctrl: the same
-// action as opening a search result (DESIGN-BRIEF.md §4.2).
-const onNavigate = (next: Target, newTab: boolean) => {
-  const location = pageLocation(next)
-  if (location !== null) tabs.go(location, newTab)
-}
 // A page that would not load is this page's failure, not the wiki's (card #80, R9): the retry
 // asks for this page again, and every other tab keeps what it shows.
 const retry = () => {
@@ -113,7 +107,7 @@ const canAdd = computed(
       :page-key="pageKey"
       :icon-for="wiki.iconFor"
       :can-open="wiki.hasPage"
-      @navigate="onNavigate"
+      @navigate="tabs.openPage"
     />
     <div class="flex flex-col gap-5 px-5.5 pt-5">
       <!-- Above the wiki's own answer, and outside it: what the profile knows does not depend
@@ -125,7 +119,7 @@ const canAdd = computed(
         :queued="isQueued(node, queued)"
         :can-add="canAdd"
         :busy="queue.busy"
-        @add="queue.add(nodeSlot(node))"
+        @add="queue.add(nodeNumber(node))"
       />
       <template v-if="unknown">
         <EmptyCategory
@@ -146,10 +140,11 @@ const canAdd = computed(
         :title="t('wiki.states.pageFailedTitle')"
         @retry="retry"
       />
-      <div v-else-if="entry === undefined" class="flex flex-col gap-4">
-        <Skeleton class="h-40 w-full" />
-        <Skeleton class="h-40 w-full" />
-      </div>
+      <ScreenSkeleton
+        v-else-if="entry === undefined"
+        untitled
+        :blocks="[SkeletonBlock.Card, SkeletonBlock.Card]"
+      />
       <!-- The card and the index come first in the document and last on a wide page: stacked,
            the facts belong above the prose, and side by side they belong beside it. One
            `flex-row-reverse` says both, where two orders would need two templates. -->
@@ -164,7 +159,7 @@ const canAdd = computed(
             :entry="entry"
             :icon-for="wiki.iconFor"
             :can-open="wiki.hasPage"
-            @navigate="onNavigate"
+            @navigate="tabs.openPage"
           />
           <WikiOutline :sections="entry.sections" />
           <Tooltip>
@@ -190,7 +185,7 @@ const canAdd = computed(
             :sections="entry.sections"
             :icon-for="wiki.iconFor"
             :can-open="wiki.hasPage"
-            @navigate="onNavigate"
+            @navigate="tabs.openPage"
           />
         </div>
       </div>

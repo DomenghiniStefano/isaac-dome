@@ -13,7 +13,6 @@ import { useTabView } from '@/composables/useTabView'
 import { useMessages } from '@/i18n'
 import type { WikiPageRef } from '@/lib/ipc/types'
 import { rowWikiPx } from '@/lib/scale/rows'
-import { pageLocation } from '@/lib/wiki/category'
 import { emptyList, queryTyped } from '@/lib/facets/emptyList'
 import { filterPages } from '@/lib/wiki/listFilter'
 import type { ScrollOffset } from '@/lib/scale/scrollOffset'
@@ -27,7 +26,7 @@ import { useTabsStore } from '@/stores/tabs'
 import { useWikiStore } from '@/stores/wiki'
 import { wikiView } from './tabView'
 import { pageId } from '@/lib/wiki/wikiLabels'
-import HeroBand from '../HeroBand.vue'
+import HeroBand from '@/components/screen/HeroBand.vue'
 
 const props = defineProps<{ category: WikiCategory }>()
 const wiki = useWikiStore()
@@ -37,14 +36,10 @@ const { t } = useMessages()
 // The filter and the position are the entry's reading (`tabView.ts`): they come back after a tab
 // switch, a back, a tear-off. A tab that moves to another category is a new entry, so it starts
 // clean without anything here having to clear it.
-const reading = useTabView(wikiView)
+const { reading, update } = useTabView(wikiView)
 const query = computed(() => reading.value.query)
-const setQuery = (value: string) => {
-  reading.value = { ...reading.value, query: value }
-}
-const setOffset = (offset: ScrollOffset) => {
-  reading.value = { ...reading.value, offset }
-}
+const setQuery = (value: string) => update({ query: value })
+const setOffset = (offset: ScrollOffset) => update({ offset })
 
 const all = computed(() => wiki.index?.pages ?? [])
 const total = computed(() => filterPages(all.value, props.category, '').length)
@@ -64,10 +59,8 @@ const noCatalog = computed(
   () => all.value.length > 0 && all.value.every((p) => p.iconUrl === null),
 )
 
-const open = (page: WikiPageRef, event: MouseEvent) => {
-  const location = pageLocation(page.target)
-  if (location !== null) tabs.go(location, event.ctrlKey)
-}
+const open = (page: WikiPageRef, event: MouseEvent) =>
+  tabs.openPage(page.target, event.ctrlKey)
 </script>
 
 <template>

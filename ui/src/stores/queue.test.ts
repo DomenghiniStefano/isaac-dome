@@ -60,4 +60,22 @@ describe('useQueueStore', () => {
     expect(store.mutationError).toEqual({ kind: 'catalogUnavailable' })
     expect(store.busy).toBe(false)
   })
+
+  // A refused write's reason stays on screen until the next write has answered: it is the
+  // answer that clears it, not the asking.
+  it('keeps the last refusal while the next write is in flight, and clears it once it lands', async () => {
+    const store = useQueueStore()
+    await store.load()
+    vi.stubGlobal('location', { search: '?catalog=none' })
+    await store.add(484)
+    vi.unstubAllGlobals()
+    const next = store.add(484)
+    expect(store.busy).toBe(true)
+    expect(store.mutationFailed).toBe(true)
+    expect(store.mutationError).toEqual({ kind: 'catalogUnavailable' })
+    await next
+    expect(store.busy).toBe(false)
+    expect(store.mutationFailed).toBe(false)
+    expect(store.mutationError).toBeNull()
+  })
 })
