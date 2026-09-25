@@ -384,7 +384,7 @@ mod tests {
             target,
         } = infobox_from(InfoboxKind::Transformation, &ib, "", &r, &mut d)
         else {
-            panic!()
+            panic!("a transformation infobox gives Infobox::Transformation")
         };
         assert_eq!(requires, None);
         assert!(contributors.is_empty());
@@ -408,7 +408,7 @@ mod tests {
             ..
         } = infobox_from(InfoboxKind::Transformation, &ib, text, &r, &mut d)
         else {
-            panic!()
+            panic!("a transformation infobox gives Infobox::Transformation")
         };
         assert_eq!(requires, Some(3));
         assert_eq!(contributors, vec![Target::Item { id: 25 }]);
@@ -517,7 +517,7 @@ mod tests {
             pools,
         } = infobox_from(InfoboxKind::Passive, &ib, "", &r, &mut d)
         else {
-            panic!()
+            panic!("a passive collectible infobox gives Infobox::Item")
         };
         assert!(matches!(
             quote.first(),
@@ -545,7 +545,7 @@ mod tests {
             template, recharge, ..
         } = infobox_from(InfoboxKind::Activated, &ib, "", &r, &mut d)
         else {
-            panic!()
+            panic!("an activated collectible infobox gives Infobox::Item")
         };
         assert_eq!(template, CollectibleTemplate::Activated);
         assert!(!recharge.is_empty());
@@ -562,7 +562,7 @@ mod tests {
         let Infobox::Trinket { quote, tags, pools } =
             infobox_from(InfoboxKind::Trinket, &ib, "", &r, &mut d)
         else {
-            panic!()
+            panic!("a trinket infobox gives Infobox::Trinket")
         };
         assert!(matches!(
             quote.first(),
@@ -609,7 +609,7 @@ mod tests {
             unlocks,
         } = infobox_from(InfoboxKind::Achievement, &ib, "", &r, &mut d)
         else {
-            panic!()
+            panic!("an achievement infobox gives Infobox::Achievement")
         };
         // `description` is no longer here: it rose to `Entry`, and `entry_facts` reads it.
         // An achievement's is plain text, so it arrives as a single `Inline::Text`.
@@ -634,7 +634,7 @@ mod tests {
         );
         let Infobox::Boss { base_hp, .. } = infobox_from(InfoboxKind::Boss, &ib, "", &r, &mut d)
         else {
-            panic!()
+            panic!("a boss infobox gives Infobox::Boss")
         };
         assert_eq!(base_hp, Some(250));
         // Same move: the boss's `unlocked by` is now one of the three common facts.
@@ -661,7 +661,7 @@ mod tests {
                 &r,
                 &mut Diagnostics::default(),
             ) else {
-                panic!()
+                panic!("an achievement infobox gives Infobox::Achievement")
             };
             crate::plain(&quote)
         };
@@ -776,7 +776,7 @@ mod tests {
             variant, stage_hp, ..
         } = infobox_from(InfoboxKind::Boss, &ib, "", &r, &mut d)
         else {
-            panic!()
+            panic!("a boss infobox gives Infobox::Boss")
         };
         assert_eq!(variant, Some(1));
         assert!(!stage_hp.is_empty());
@@ -787,7 +787,7 @@ mod tests {
         let Infobox::Challenge { character, .. } =
             infobox_from(InfoboxKind::Challenge, &ib, "", &r, &mut d)
         else {
-            panic!()
+            panic!("a challenge infobox gives Infobox::Challenge")
         };
         assert_eq!(character, Some(Target::Character { id: 0 }));
 
@@ -798,7 +798,7 @@ mod tests {
         let Infobox::Character { tears, parent, .. } =
             infobox_from(InfoboxKind::Character, &ib, "", &r, &mut d)
         else {
-            panic!()
+            panic!("a character infobox gives Infobox::Character")
         };
         assert_eq!(tears, "2.73");
         assert_eq!(parent, Some(Target::Character { id: 21 }));
@@ -824,7 +824,7 @@ mod tests {
             ..
         } = infobox_from(InfoboxKind::Challenge, &ib, "", &r, &mut d)
         else {
-            panic!()
+            panic!("a challenge infobox gives Infobox::Challenge")
         };
         assert!(blindfolded);
         assert!(!has_shops);
