@@ -1,11 +1,10 @@
 <script setup lang="ts">
+import type { Message } from '@/i18n/message'
 import { computed } from 'vue'
 import PixelSprite from '@/components/sprite/PixelSprite.vue'
 import { Card, CardContent } from '@/components/ui/card'
 import { useFormat } from '@/composables/useFormat'
 import { useMessages } from '@/i18n'
-import type { MessageKey } from '@/i18n/messageKey'
-import type { MessageSchema } from '@/i18n/messages/it'
 import { assertNever } from '@/lib/assertNever'
 import { columnName } from '@/lib/graph/nodeState'
 import type { DrawnView } from '@/lib/ipc/types'
@@ -20,7 +19,7 @@ const { t } = useMessages()
 const fmt = useFormat()
 
 interface Sentence {
-  key: MessageKey<MessageSchema>
+  key: Message
   params: Record<string, unknown>
 }
 

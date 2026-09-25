@@ -1,9 +1,6 @@
-import type { MessageKey } from '@/i18n/messageKey'
-import type { MessageSchema } from '@/i18n/messages/it'
+import type { Message } from '@/i18n/message'
 import { assertNever } from '@/lib/assertNever'
 import type { CandidatePreview, PreviewCount } from '@/lib/ipc/types'
-
-type Message = MessageKey<MessageSchema>
 
 /**
  * One line of a welcome card. `done` and `of` are **both null** when the file did not let us

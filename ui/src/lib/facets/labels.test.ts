@@ -1,9 +1,9 @@
+import type { Translate } from '@/i18n/message'
 import { describe, expect, it } from 'vitest'
 import { dlcNames } from '@/lib/wiki/dlcNames'
 import { Dlc } from '@/lib/ipc/types'
 import { OriginValue } from '@/lib/ipc/values'
 import { originLabel } from './labels'
-import type { Translate } from './labels'
 
 // The label only ever reads a key back, so the key is what a test can assert on.
 const t = ((key: string) => key) as Translate

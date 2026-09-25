@@ -1,3 +1,4 @@
+import { maxBy } from 'lodash-es'
 import type { StoredBox } from './sessionDocument'
 import type { MonitorArea } from './windowPort'
 
@@ -36,16 +37,8 @@ export const clampToMonitors = (
   if (!first) return { box, scaleFactor: 1 }
   // The one it overlaps most, and the earliest of them on a tie — so a box touching two equally
   // lands on the primary, which is the first the port hands over.
-  let best = first
-  let area = 0
-  for (const m of monitors) {
-    const here = overlap(box, m)
-    if (here > area) {
-      area = here
-      best = m
-    }
-  }
-  if (area > 0) return { box, scaleFactor: best.scaleFactor }
+  const best = maxBy(monitors, (m) => overlap(box, m)) ?? first
+  if (overlap(box, best) > 0) return { box, scaleFactor: best.scaleFactor }
   // On no monitor at all: the primary's work-area corner, **at the size it had**. A window that
   // comes back resized is not the window that was left, and one larger than the screen is still
   // reachable by the title bar the corner puts on screen.

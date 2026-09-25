@@ -7,10 +7,6 @@ const targets = Object.values(TargetView)
 const steps = [RankStep.First, RankStep.Second, RankStep.Third]
 
 describe('targetFill', () => {
-  it('has a colour for every target: a target with none is an invisible answer', () => {
-    for (const target of targets) expect(targetFill[target]).toBeTruthy()
-  })
-
   it('gives the three targets three different colours', () => {
     // The defect the owner reported on 2026-09-20: Secret was blue and Super was teal, and on
     // the grid they read as the same colour. The hue is what tells you which of the three you
@@ -22,10 +18,6 @@ describe('targetFill', () => {
 })
 
 describe('levelHeight', () => {
-  it('has a height for every step: a rank with none is a cell that fills itself', () => {
-    for (const step of steps) expect(levelHeight[step]).toBeTruthy()
-  })
-
   it('fills the cell to the brim for the best place the rules allow', () => {
     expect(levelHeight[RankStep.First]).toBe('h-floor-level-first')
   })

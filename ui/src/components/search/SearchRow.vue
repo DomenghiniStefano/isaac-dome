@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import type { Message } from '@/i18n/message'
 import { computed } from 'vue'
 import AchievementArt from '@/components/graph/AchievementArt.vue'
 import { ArtSize } from '@/components/graph/artSize'
@@ -7,8 +8,6 @@ import { Badge, BadgeVariant } from '@/components/ui/badge'
 import { useMessages } from '@/i18n'
 import { assertNever } from '@/lib/assertNever'
 import { ProgressMark } from '@/lib/ipc/types'
-import type { MessageKey } from '@/i18n/messageKey'
-import type { MessageSchema } from '@/i18n/messages/it'
 import { rowGroupLabel } from '@/lib/search/rows'
 import type { SearchRow } from '@/lib/search/rows'
 import { sectionText } from '@/lib/wiki/wikiLabels'
@@ -56,7 +55,7 @@ const markVariant: Record<Told, BadgeVariant> = {
   [ProgressMark.Pending]: BadgeVariant.Now,
 }
 
-const markText: Record<Told, MessageKey<MessageSchema>> = {
+const markText: Record<Told, Message> = {
   [ProgressMark.Done]: 'search.progress.done',
   [ProgressMark.Pending]: 'search.progress.pending',
 }

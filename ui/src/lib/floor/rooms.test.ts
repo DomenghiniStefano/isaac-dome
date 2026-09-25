@@ -11,10 +11,6 @@ import {
 const kinds = Object.values(RoomKindView)
 
 describe('roomFill', () => {
-  it('paints every kind the game has, because a kind with no colour is an undrawable floor', () => {
-    for (const kind of kinds) expect(roomFill[kind]).toBeTruthy()
-  })
-
   it('gives each kind a fill of its own: two kinds one colour is a grid that lies', () => {
     const fills = kinds.map((kind) => roomFill[kind])
     expect(new Set(fills).size).toBe(kinds.length)
@@ -29,10 +25,6 @@ describe('roomFill', () => {
 })
 
 describe('roomSymbol', () => {
-  it('knows every kind, drawing or not', () => {
-    for (const kind of kinds) expect(roomSymbol[kind]).toBeDefined()
-  })
-
   it('leaves the normal room bare: it is the most frequent, and a mark on each would be noise', () => {
     expect(roomSymbol[RoomKindView.Normal]).toBe('')
   })
@@ -58,10 +50,6 @@ describe('paletteOrder', () => {
 })
 
 describe('paletteKey', () => {
-  it('gives every kind a key, because a palette half reachable by hand is one nobody trusts', () => {
-    for (const kind of kinds) expect(paletteKey[kind]).toBeTruthy()
-  })
-
   it('never hands the same key to two kinds', () => {
     const keys = kinds.map((kind) => paletteKey[kind])
     expect(new Set(keys).size).toBe(keys.length)

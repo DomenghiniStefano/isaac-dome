@@ -1,5 +1,6 @@
 import type { QueueRow } from '@/lib/ipc/types'
-import { knownText, originRows } from './queueRows'
+import { knownText } from '@/lib/graph/achievementNode'
+import { originRows } from './queueRows'
 
 /** A wish this row serves. `text` is `null` when that wish is no longer in the queue. */
 export interface Serves {

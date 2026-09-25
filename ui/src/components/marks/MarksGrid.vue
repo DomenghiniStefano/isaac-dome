@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import type { Message } from '@/i18n/message'
 import { computed, useTemplateRef } from 'vue'
 import PixelSprite from '@/components/sprite/PixelSprite.vue'
 import { Progress, ProgressSize, ProgressTone } from '@/components/ui/progress'
@@ -8,8 +9,6 @@ import {
   TooltipTrigger,
 } from '@/components/ui/tooltip'
 import { useMessages } from '@/i18n'
-import type { MessageKey } from '@/i18n/messageKey'
-import type { MessageSchema } from '@/i18n/messages/it'
 import { assertNever } from '@/lib/assertNever'
 import { cn } from '@/lib/cn'
 import {
@@ -39,7 +38,7 @@ const columns = computed(() => ({
 const groups = computed(() => matrixGroups(props.matrix))
 const totals = computed(() => columnTallies(props.matrix))
 
-const groupTitle: Record<MatrixGroup, MessageKey<MessageSchema>> = {
+const groupTitle: Record<MatrixGroup, Message> = {
   [MatrixGroup.Base]: 'completion.groups.base',
   [MatrixGroup.Tainted]: 'completion.groups.tainted',
 }

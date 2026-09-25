@@ -1,14 +1,11 @@
-import type { MessageKey } from '@/i18n/messageKey'
-import type { MessageSchema } from '@/i18n/messages/it'
+import type { Message, Translate } from '@/i18n/message'
 import { assertNever } from '@/lib/assertNever'
 import type { RunOutcomeView, RunSource, RunsDiagnostic } from '@/lib/ipc/types'
 import type { FilterBarLabels } from '@/lib/facets/labels'
 import type { FacetSlot } from '@/lib/facets/facetOptions'
 import { RunCompany, RunFacet } from './runFacets'
 
-type Key = MessageKey<MessageSchema>
-
-export const facetTitle: Record<RunFacet, Key> = {
+export const facetTitle: Record<RunFacet, Message> = {
   [RunFacet.Outcome]: 'runs.facet.outcome',
   [RunFacet.Character]: 'runs.facet.character',
   [RunFacet.Online]: 'runs.facet.online',
@@ -23,14 +20,14 @@ export const facetTitle: Record<RunFacet, Key> = {
  * A table and not a `switch` since 3.10: the state row takes its words as a table, and one
  * mapping written twice is how the row and the badge end up saying different things.
  */
-export const outcomeTextByKind: Record<RunOutcomeView['kind'], Key> = {
+export const outcomeTextByKind: Record<RunOutcomeView['kind'], Message> = {
   won: 'runs.outcome.won',
   died: 'runs.outcome.died',
   abandoned: 'runs.outcome.abandoned',
   open: 'runs.outcome.open',
 }
 
-export const outcomeText = (outcome: RunOutcomeView['kind']): Key =>
+export const outcomeText = (outcome: RunOutcomeView['kind']): Message =>
   outcomeTextByKind[outcome]
 
 /**
@@ -60,12 +57,12 @@ export const barLabels: FilterBarLabels = {
 }
 
 /** A table, as the outcome's is: exhaustive by its type, and the one list `isSource` reads. */
-export const sourceTextByKind: Record<RunSource['kind'], Key> = {
+export const sourceTextByKind: Record<RunSource['kind'], Message> = {
   live: 'runs.source.live',
   session: 'runs.source.session',
 }
 
-export const sourceText = (source: RunSource['kind']): Key =>
+export const sourceText = (source: RunSource['kind']): Message =>
   sourceTextByKind[source]
 
 // A facet value is a string, and one the build does not know — a newer backend, a hand-edited
@@ -77,7 +74,7 @@ const isSource = (value: string): value is RunSource['kind'] =>
 
 /** A facet's value in words. A value outside its set is shown as it came, never dropped. */
 export const facetValueLabel = (
-  t: (key: Key, named?: Record<string, unknown>) => string,
+  t: Translate,
   facet: RunFacet,
   value: string,
 ): string => {
@@ -109,7 +106,7 @@ export const facetValueLabel = (
  * missing: none of them is allowed to read as "no runs", which would be the app answering a
  * question it could not ask.
  */
-export const diagnosticText = (d: RunsDiagnostic): Key => {
+export const diagnosticText = (d: RunsDiagnostic): Message => {
   switch (d.kind) {
     case 'noLogFolder':
       return 'runs.diagnostic.noLogFolder'

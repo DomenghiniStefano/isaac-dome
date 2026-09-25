@@ -5,7 +5,7 @@ import { Button, ButtonSize, ButtonVariant } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { useMessages } from '@/i18n'
 import { FindAction, findAction } from '@/lib/find/keyboard'
-import { Direction, findMatches, stepMatch } from '@/lib/find/matches'
+import { FindDirection, findMatches, stepMatch } from '@/lib/find/matches'
 import type { FindRow } from '@/lib/find/matches'
 
 // A bar, not a dialog: the dialog is the palette's shape, and the palette is exactly what this
@@ -37,7 +37,7 @@ watch(state, (found) => {
   if (index >= 0) emit('move', index)
 })
 
-const step = (direction: Direction) => {
+const step = (direction: FindDirection) => {
   current.value = stepMatch(state.value, direction).current
 }
 
@@ -46,8 +46,8 @@ const onKeydown = (event: KeyboardEvent) => {
   if (action === null) return
   event.preventDefault()
   if (action === FindAction.Close) emit('close')
-  else if (action === FindAction.Next) step(Direction.Next)
-  else step(Direction.Previous)
+  else if (action === FindAction.Next) step(FindDirection.Next)
+  else step(FindDirection.Previous)
 }
 
 // A screen with nothing to search says so instead of offering a bar that can never match:
@@ -81,7 +81,7 @@ const nothingFound = computed(() => searching.value && state.value.total === 0)
       :size="ButtonSize.Compact"
       :disabled="state.total === 0"
       :aria-label="t('find.previous')"
-      @click="step(Direction.Previous)"
+      @click="step(FindDirection.Previous)"
     >
       <ChevronUpIcon />
     </Button>
@@ -90,7 +90,7 @@ const nothingFound = computed(() => searching.value && state.value.total === 0)
       :size="ButtonSize.Compact"
       :disabled="state.total === 0"
       :aria-label="t('find.next')"
-      @click="step(Direction.Next)"
+      @click="step(FindDirection.Next)"
     >
       <ChevronDownIcon />
     </Button>

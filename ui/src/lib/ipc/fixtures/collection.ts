@@ -6,6 +6,7 @@ import type {
   OriginView,
 } from '../types'
 import { graphAnswers } from './graph'
+import { warnOnce } from './warnOnce'
 
 // Development only. There is no recorded `collection` payload to read — writing one needs a
 // machine with the game and a save, and nothing in the repository produces it — so the items
@@ -138,15 +139,13 @@ const synthetic = (collectionRead: boolean): CollectionView => {
   }
 }
 
-let warned = false
+const declareSynthetic = warnOnce(
+  'Collection fixture: quality, pools and collection flags are synthetic, the fixtures carrying no recorded collection payload',
+)
 
 // Said once on the development server, where someone is looking at the screen.
 const warnSynthetic = (): void => {
-  if (warned || typeof window === 'undefined') return
-  warned = true
-  console.warn(
-    'Collection fixture: quality, pools and collection flags are synthetic, the fixtures carrying no recorded collection payload',
-  )
+  if (typeof window !== 'undefined') declareSynthetic()
 }
 
 export const collectionAnswer = ({

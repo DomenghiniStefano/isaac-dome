@@ -4,6 +4,7 @@ import { createFaceting } from '@/lib/facets/faceting'
 import type { FacetFilter } from '@/lib/facets/faceting'
 import type { UnlockNode, UnlockTarget } from '@/lib/ipc/types'
 import { OriginValue, TargetKind, originOrder } from '@/lib/ipc/values'
+import { knownAchievement, knownText } from './achievementNode'
 import { characterForms, characterValue } from './characterName'
 import { NodeState, nodeState, stateOrder } from './nodeState'
 
@@ -93,8 +94,8 @@ export const facetValues = (node: UnlockNode, facet: FacetId): string[] => {
 // file is silent, and the names of what it unlocks. The engine lowercases it.
 const searchText = (node: UnlockNode): string =>
   [
-    node.achievement.kind === 'known' ? node.achievement.text : '',
-    node.achievement.kind === 'known' ? (node.achievement.condition ?? '') : '',
+    knownText(node) ?? '',
+    knownAchievement(node)?.condition ?? '',
     ...node.unlocks.map((t) => t.name),
   ].join('\n')
 
@@ -159,11 +160,8 @@ export const sortNodes = (
       ])
     case UnlockSort.Name:
       return sortBy(nodes, [
-        (n) => (n.achievement.kind === 'known' ? 0 : 1),
-        (n) =>
-          n.achievement.kind === 'known'
-            ? n.achievement.text.toLowerCase()
-            : '',
+        (n) => (knownAchievement(n) ? 0 : 1),
+        (n) => knownText(n)?.toLowerCase() ?? '',
         nodeSlot,
       ])
     default:

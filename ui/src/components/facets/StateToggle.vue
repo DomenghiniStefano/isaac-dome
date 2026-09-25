@@ -1,12 +1,11 @@
 <script setup lang="ts">
+import type { Message } from '@/i18n/message'
 import {
   ToggleGroup,
   ToggleGroupItem,
   ToggleGroupType,
 } from '@/components/ui/toggle-group'
 import { useMessages } from '@/i18n'
-import type { MessageKey } from '@/i18n/messageKey'
-import type { MessageSchema } from '@/i18n/messages/it'
 import { cn } from '@/lib/cn'
 
 // The filter that matters more than the others (DESIGN-BRIEF.md §6): a screen's states, each
@@ -20,7 +19,7 @@ defineProps<{
   counts: Record<string, number>
   picked: string[]
   dot: Record<string, string>
-  text: Record<string, MessageKey<MessageSchema>>
+  text: Record<string, Message>
 }>()
 const emit = defineEmits<{ update: [picked: string[]] }>()
 const { t } = useMessages()

@@ -1,9 +1,12 @@
 {
   "title": "Magdalene",
   "revid": 262276,
+  "description": [],
+  "dlc": [],
+  "unlockedBy": null,
   "infobox": {
     "kind": "achievement",
-    "description": "Unlocked a new character.",
+    "quote": [],
     "requirements": [
       {
         "kind": "text",
@@ -26,6 +29,7 @@
         "style": "plain"
       }
     ],
+    "notes": [],
     "unlocks": {
       "kind": "character",
       "id": 1

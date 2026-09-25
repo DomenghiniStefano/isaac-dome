@@ -62,6 +62,16 @@ describe('a remembered window lands somewhere it can be reached', () => {
     expect(clampToMonitors(box, [])).toEqual({ box, scaleFactor: 1 })
   })
 
+  // Half of it on each of two identical screens: the tie goes to the one listed first, which
+  // is the primary, because that is the order the port hands them over in.
+  it('breaks a tie for the monitor listed first', () => {
+    const left = { ...primary, scaleFactor: 1.25 }
+    const right = { ...primary, left: 1920, scaleFactor: 1.5 }
+    const halfAndHalf = { left: 1420, top: 100, width: 1000, height: 700 }
+    expect(clampToMonitors(halfAndHalf, [left, right]).scaleFactor).toBe(1.25)
+    expect(clampToMonitors(halfAndHalf, [right, left]).scaleFactor).toBe(1.5)
+  })
+
   it('lands on the first monitor given when none of them holds the box', () => {
     const gone = { left: -4000, top: -4000, width: 900, height: 700 }
     expect(clampToMonitors(gone, [second, primary]).box.left).toBe(second.left)
