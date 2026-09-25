@@ -303,22 +303,7 @@ pub fn infobox_from(
             environment: inline(ib, "environment", r, d),
             pool: inline(ib, "pool", r, d),
         },
-        InfoboxKind::Challenge => Infobox::Challenge {
-            blindfolded: yes(ib, "blindfolded"),
-            has_shops: yes(ib, "has shops"),
-            has_treasure_rooms: yes(ib, "has treasure rooms"),
-            items: inline(ib, "item", r, d),
-            trinkets: inline(ib, "trinket", r, d),
-            pickups: inline(ib, "pickup", r, d),
-            health: inline(ib, "health", r, d),
-            curse: inline(ib, "curse", r, d),
-            goal: inline(ib, "goal", r, d),
-            character: r.by_page_title(param(ib, "character")),
-            // `unlocks` is usually a page title; for achievements it's the name.
-            unlocks: r
-                .by_page_title(param(ib, "unlocks"))
-                .or_else(|| r.achievement_by_name(param(ib, "unlocks"))),
-        },
+        InfoboxKind::Challenge => challenge_from(ib, r, d),
         InfoboxKind::Transformation => {
             let c = crate::transformation::contributors(ib, page, r, d);
             Infobox::Transformation {
@@ -327,18 +312,41 @@ pub fn infobox_from(
                 target: inline(ib, "target", r, d),
             }
         }
-        InfoboxKind::Character => Infobox::Character {
-            health: inline(ib, "health", r, d),
-            damage: text(ib, "damage"),
-            tears: text(ib, "tears"),
-            range: text(ib, "range"),
-            speed: text(ib, "speed"),
-            luck: text(ib, "luck"),
-            shot_speed: text(ib, "shot speed"),
-            pickups: inline(ib, "pickups", r, d),
-            collectibles: inline(ib, "collectibles", r, d),
-            parent: r.by_page_title(param(ib, "parent")),
-        },
+        InfoboxKind::Character => character_from(ib, r, d),
+    }
+}
+
+fn challenge_from(ib: &RawInfobox, r: &Resolver, d: &mut Diagnostics) -> Infobox {
+    Infobox::Challenge {
+        blindfolded: yes(ib, "blindfolded"),
+        has_shops: yes(ib, "has shops"),
+        has_treasure_rooms: yes(ib, "has treasure rooms"),
+        items: inline(ib, "item", r, d),
+        trinkets: inline(ib, "trinket", r, d),
+        pickups: inline(ib, "pickup", r, d),
+        health: inline(ib, "health", r, d),
+        curse: inline(ib, "curse", r, d),
+        goal: inline(ib, "goal", r, d),
+        character: r.by_page_title(param(ib, "character")),
+        // `unlocks` is usually a page title; for achievements it's the name.
+        unlocks: r
+            .by_page_title(param(ib, "unlocks"))
+            .or_else(|| r.achievement_by_name(param(ib, "unlocks"))),
+    }
+}
+
+fn character_from(ib: &RawInfobox, r: &Resolver, d: &mut Diagnostics) -> Infobox {
+    Infobox::Character {
+        health: inline(ib, "health", r, d),
+        damage: text(ib, "damage"),
+        tears: text(ib, "tears"),
+        range: text(ib, "range"),
+        speed: text(ib, "speed"),
+        luck: text(ib, "luck"),
+        shot_speed: text(ib, "shot speed"),
+        pickups: inline(ib, "pickups", r, d),
+        collectibles: inline(ib, "collectibles", r, d),
+        parent: r.by_page_title(param(ib, "parent")),
     }
 }
 

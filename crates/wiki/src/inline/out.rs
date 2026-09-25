@@ -109,8 +109,8 @@ impl Out {
 
     /// Closes the innermost `Edition`; does nothing without any open frame. An edition with
     /// no content is not emitted — and neither is one whose `only` is empty, which is how
-    /// `span_restriction` says the code restricts **nothing**: either it named every edition, or it
-    /// could not be read and was counted. Either way the words go back to the parent, since
+    /// `span_restriction` says the code restricts **nothing**: either it named every edition, or
+    /// it could not be read and was counted. Either way the words go back to the parent, since
     /// a node declaring its text valid in no edition at all is worse than the text on its
     /// own.
     ///
@@ -118,17 +118,17 @@ impl Out {
     /// skipping the open would leave the close popping somebody else's frame.
     pub(super) fn close(&mut self) {
         self.flush();
-        if self.frames.len() > 1 {
-            self.closes_at.pop();
-            if let Some((only, inline)) = self.frames.pop() {
-                if only.is_empty() {
-                    for node in inline {
-                        self.push(node);
-                    }
-                } else if !inline.is_empty() {
-                    self.push(Inline::Edition { only, inline });
-                }
-            }
+        if self.frames.len() <= 1 {
+            return;
+        }
+        self.closes_at.pop();
+        let Some((only, inline)) = self.frames.pop() else {
+            return;
+        };
+        if only.is_empty() {
+            inline.into_iter().for_each(|node| self.push(node));
+        } else if !inline.is_empty() {
+            self.push(Inline::Edition { only, inline });
         }
     }
 

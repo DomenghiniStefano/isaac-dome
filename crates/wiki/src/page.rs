@@ -190,25 +190,27 @@ fn one_line(blocks: Vec<Block>) -> Vec<Inline> {
 fn squeeze(inline: &mut [Inline], space: &mut bool) {
     for node in inline {
         match node {
-            Inline::Text { text, .. } => {
-                let mut out = String::with_capacity(text.len());
-                for ch in text.chars() {
-                    if ch.is_whitespace() {
-                        if !*space {
-                            out.push(' ');
-                        }
-                        *space = true;
-                    } else {
-                        out.push(ch);
-                        *space = false;
-                    }
-                }
-                *text = out;
-            }
+            Inline::Text { text, .. } => *text = squeezed(text, space),
             Inline::Edition { inline, .. } => squeeze(inline, space),
             Inline::Ref { .. } | Inline::Concept { .. } => *space = false,
         }
     }
+}
+
+/// One text node, squeezed: `space` comes in saying whether the text before it ends in one,
+/// and goes out saying whether this one does.
+fn squeezed(text: &str, space: &mut bool) -> String {
+    text.chars()
+        .fold(String::with_capacity(text.len()), |mut out, ch| {
+            if !ch.is_whitespace() {
+                out.push(ch);
+                *space = false;
+            } else if !*space {
+                out.push(' ');
+                *space = true;
+            }
+            out
+        })
 }
 
 /// The preamble text with the infobox and the page header taken out, and **nothing else**:

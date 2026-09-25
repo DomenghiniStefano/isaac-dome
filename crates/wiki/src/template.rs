@@ -122,34 +122,39 @@ fn assemble(parts: Vec<String>) -> Template {
     let mut args = Vec::new();
     let mut named = BTreeMap::new();
     for p in it {
-        // `k=v` only if `k` doesn't contain `{{`/`[[`: an `=` inside a link isn't a name.
-        match p.split_once('=') {
-            Some((k, v)) if !k.contains("{{") && !k.contains("[[") && !k.trim().is_empty() => {
-                let k = k.trim();
-                let v = v.trim().to_string();
-                // A name that is a number is MediaWiki's explicit positional syntax:
-                // `{{i|1=Bird's Eye}}` is `{{i|Bird's Eye}}`. Filed under `named` instead,
-                // it leaves `args` empty and the resolver with nothing to resolve.
-                //
-                // Accepted only for the slot right after the last one, or one already
-                // filled. The index comes from external wikitext, and a rule that
-                // honoured any number would let `{{x|999999999=y}}` ask for a vector of a
-                // billion empty slots. An index that leaves a gap keeps its named form,
-                // which is what it looks like anyway — degrade, don't allocate.
-                match k.parse::<usize>() {
-                    Ok(n) if (1..=args.len() + 1).contains(&n) => match args.get_mut(n - 1) {
-                        Some(slot) => *slot = v,
-                        None => args.push(v),
-                    },
-                    _ => {
-                        named.insert(k.to_lowercase(), v);
-                    }
-                }
-            }
-            _ => args.push(p.trim().to_string()),
+        match named_part(&p) {
+            Some((k, v)) => place_named(&mut args, &mut named, k, v),
+            None => args.push(p.trim().to_string()),
         }
     }
     Template { name, args, named }
+}
+
+/// `k=v`, trimmed, only if `k` doesn't contain `{{`/`[[`: an `=` inside a link isn't a name.
+fn named_part(part: &str) -> Option<(&str, String)> {
+    let (k, v) = part.split_once('=')?;
+    (!k.contains("{{") && !k.contains("[[") && !k.trim().is_empty())
+        .then(|| (k.trim(), v.trim().to_string()))
+}
+
+/// A named argument, filed. A name that is a number is MediaWiki's explicit positional
+/// syntax: `{{i|1=Bird's Eye}}` is `{{i|Bird's Eye}}`. Filed under `named` instead, it leaves
+/// `args` empty and the resolver with nothing to resolve.
+///
+/// Accepted only for the slot right after the last one, or one already filled. The index
+/// comes from external wikitext, and a rule that honoured any number would let
+/// `{{x|999999999=y}}` ask for a vector of a billion empty slots. An index that leaves a gap
+/// keeps its named form, which is what it looks like anyway — degrade, don't allocate.
+fn place_named(args: &mut Vec<String>, named: &mut BTreeMap<String, String>, k: &str, v: String) {
+    match k.parse::<usize>() {
+        Ok(n) if (1..=args.len() + 1).contains(&n) => match args.get_mut(n - 1) {
+            Some(slot) => *slot = v,
+            None => args.push(v),
+        },
+        _ => {
+            named.insert(k.to_lowercase(), v);
+        }
+    }
 }
 
 #[cfg(test)]
