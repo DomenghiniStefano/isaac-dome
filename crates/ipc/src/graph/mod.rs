@@ -19,5 +19,4 @@ pub use types::{
     OriginView, PlanDiagnostic, PlanView, RequirementView, StepsBasis, StepsSection,
     ThresholdItemView, UnlockDiagnostic, UnlockNode, UnlockTotals, UnlockView,
 };
-pub(crate) use unlock::origin_view;
 pub use unlock::{unlock_view, UnlockInputs};

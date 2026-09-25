@@ -108,14 +108,14 @@ fn managed_state(builder: Builder<Wry>) -> Builder<Wry> {
         .manage(update::UpdaterState::default())
 }
 
-/// Icons don't travel inside the payloads any more: rows carry a link, and this serves it.
+/// Icons don't travel inside the payloads: rows carry a link, and this serves it.
 /// Asynchronous on purpose — a grid asks for a hundred at once, and each one reads from an
 /// archive; on the main thread they would queue up behind the commands.
 ///
 /// **The CSP in `tauri.conf.json` names this scheme in `img-src`** — `isaac:` and, on Windows,
-/// `http://isaac.localhost` (card #80, R1). Renaming `ICON_SCHEME` without changing both
-/// policies there (`csp` and `devCsp`) makes every icon in the app disappear with no error in
-/// the console and no failing test.
+/// `http://isaac.localhost`. Renaming `ICON_SCHEME` without changing both policies there
+/// (`csp` and `devCsp`) makes every icon in the app disappear with no error in the console and
+/// no failing test.
 fn icon_protocol(builder: Builder<Wry>) -> Builder<Wry> {
     builder.register_asynchronous_uri_scheme_protocol(
         ipc::ICON_SCHEME,
@@ -213,9 +213,9 @@ fn args_after_exe() -> Vec<String> {
 /// A backfill of twenty-eight sessions must not hold the window shut, and **every failure here
 /// is an archive that says what it is missing, never an app that will not start**. No game
 /// folder, no database, a session or the live log that would not read: each leaves the rest of
-/// the app exactly as it was and reaches the Runs screen as a diagnostic (card #80, R4). A
-/// watch that will not start is the one that stays quiet — the archive read at launch is
-/// still whole, it only stops following.
+/// the app exactly as it was and reaches the Runs screen as a diagnostic. A watch that will not
+/// start is the one that stays quiet — the archive read at launch is still whole, it only stops
+/// following.
 fn start_archive(app: tauri::AppHandle) {
     std::thread::spawn(move || fill_and_follow(&app));
 }
@@ -223,7 +223,7 @@ fn start_archive(app: tauri::AppHandle) {
 fn fill_and_follow(app: &tauri::AppHandle) {
     let archive: tauri::State<'_, ArchiveState> = app.state();
     let Some(data) = crate::state::discovery_now(app).game_data else {
-        // Said, not left to look like an archive with nothing in it (card #80, R4).
+        // Said, not left to look like an archive with nothing in it.
         archive.record(|h| h.no_log_folder = true);
         events::announce(app, events::RUNS_CHANGED);
         return;
@@ -237,10 +237,9 @@ fn fill_and_follow(app: &tauri::AppHandle) {
         let unreadable = import_sessions(app, online);
         archive.record(|h| h.unreadable_sessions = unreadable);
     }
-    // Derived even when the file is not there yet (card #80, R5): discovery names only a
-    // log that exists, and a fresh install has none until the game's first launch — which
-    // is exactly the launch worth watching. The watch is on the folder, so a file that
-    // appears later is seen.
+    // Derived even when the file is not there yet: discovery names only a log that exists, and a
+    // fresh install has none until the game's first launch — which is exactly the launch worth
+    // watching. The watch is on the folder, so a file that appears later is seen.
     let log = data.log.unwrap_or_else(|| data.dir.join("log.txt"));
     read_live_log(app, &log);
     events::announce(app, events::RUNS_CHANGED);
@@ -249,9 +248,9 @@ fn fill_and_follow(app: &tauri::AppHandle) {
 
 /// Imports every session not in the archive yet, answering how many would not read.
 ///
-/// One lock per session and not one for them all (card #80, R3): a first launch reads
-/// twenty-eight folders, and the queue, the plan, the runs and the window session wait on this
-/// same database meanwhile.
+/// One lock per session and not one for them all: a first launch reads twenty-eight folders,
+/// and the queue, the plan, the runs and the window session wait on this same database
+/// meanwhile.
 fn import_sessions(app: &tauri::AppHandle, online: &std::path::Path) -> u32 {
     log_watch::sessions(online)
         .iter()
@@ -272,8 +271,8 @@ fn follow_live_log(app: &tauri::AppHandle, log: std::path::PathBuf) {
     }
 }
 
-/// Reads the live log into the archive and keeps whether it could (card #80, R4). A log that
-/// is not there is not unreadable: it is a game that has not been launched yet.
+/// Reads the live log into the archive and keeps whether it could. A log that is not there is
+/// not unreadable: it is a game that has not been launched yet.
 fn read_live_log(app: &tauri::AppHandle, log: &std::path::Path) {
     let Some(read) = ingest_with(app, |i| i.live_log(log)) else {
         // No database: the runs command says so itself.

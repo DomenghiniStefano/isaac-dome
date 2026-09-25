@@ -9,5 +9,13 @@ description = "The draw: the completion space, the deck a preset leaves in it, a
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
 
+[features]
+# The API only tests reach, kept out of the release build. The crate's own tests turn it on
+# through the self-reference below.
+test-api = []
+
+[dev-dependencies]
+roll = { path = ".", features = ["test-api"] }
+
 [lints]
 workspace = true

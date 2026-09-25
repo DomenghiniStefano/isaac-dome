@@ -77,6 +77,16 @@ pub struct Rules {
     patterns: Vec<(Kind, Regex)>,
 }
 
+/// One rule's pattern, compiled; a pattern that does not compile names its rule.
+fn compile(kind: Kind, name: &str, pattern: &str) -> Result<(Kind, Regex), RulesError> {
+    Regex::new(pattern)
+        .map(|regex| (kind, regex))
+        .map_err(|e| RulesError::Pattern {
+            kind: name.to_owned(),
+            message: e.to_string(),
+        })
+}
+
 impl Rules {
     /// The file that ships, embedded at build time the way `graph` embeds its own rules. The
     /// app never reads it from disk.
@@ -92,20 +102,15 @@ impl Rules {
     /// does not parse is an error the caller can name.
     pub fn parse(text: &str) -> Result<Self, RulesError> {
         let file: File = serde_json::from_str(text).map_err(|e| RulesError::Json(e.to_string()))?;
-        let mut patterns = Vec::new();
-        for (name, pattern) in &file.patterns {
+        let mut patterns = file
+            .patterns
+            .iter()
             // A name we do not know is skipped rather than refused: a newer rules file may
             // carry an event an older binary has no variant for, and refusing the whole file
             // would cost every rule in it.
-            let Some(kind) = Kind::parse(name) else {
-                continue;
-            };
-            let regex = Regex::new(pattern).map_err(|e| RulesError::Pattern {
-                kind: name.clone(),
-                message: e.to_string(),
-            })?;
-            patterns.push((kind, regex));
-        }
+            .filter_map(|(name, pattern)| Some((Kind::parse(name)?, name, pattern)))
+            .map(|(kind, name, pattern)| compile(kind, name, pattern))
+            .collect::<Result<Vec<_>, _>>()?;
         // The order is the enum's, not the file's: a `BTreeMap` sorts by name, and the one
         // ordering that matters — a room transition is not a room — must not depend on how
         // somebody spelled the keys.

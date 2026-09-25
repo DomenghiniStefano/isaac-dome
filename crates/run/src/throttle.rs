@@ -1,4 +1,4 @@
-//! When a burst of log changes is acted on (card #80, item 02). Pure: it is handed the time,
+//! When a burst of log changes is acted on. Pure: it is handed the time,
 //! it never reads a clock, so the rule is tested without waiting for one.
 
 use std::time::{Duration, Instant};

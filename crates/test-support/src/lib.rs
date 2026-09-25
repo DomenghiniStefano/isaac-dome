@@ -73,6 +73,12 @@ pub fn samples_dir() -> PathBuf {
     Path::new(env!("CARGO_MANIFEST_DIR")).join("../../samples")
 }
 
+/// The path of `name` under `samples/`, declared nothing: for the examples, which are run by
+/// hand and print what they found themselves. A test asks [`sample`] or one of its siblings.
+pub fn sample_path(name: &str) -> PathBuf {
+    samples_dir().join(name)
+}
+
 /// The path to a sample, if it exists. Always declares the outcome: which file is being
 /// used, or that it's being skipped because it's missing.
 pub fn sample(name: &str) -> Option<PathBuf> {
@@ -302,6 +308,23 @@ pub fn is_dated(name: &str, suffix: &str) -> bool {
     };
     date.len() == 8 && date.bytes().all(|b| b.is_ascii_digit())
 }
+
+/// The suffix of the Repentance series of saves in `samples/`, slot 1.
+pub const REP_SERIES: &str = "rep_persistentgamedata1.dat";
+
+/// The suffix of the Repentance+ series of saves in `samples/`, slot 1.
+pub const REP_PLUS_SERIES: &str = "rep+persistentgamedata1.dat";
+
+/// The historical series in `samples/`, one suffix per edition, slot 1. The files come
+/// from the dated backups the game leaves in `save_backups\`, copied under the name they
+/// already had — `YYYYMMDD.` plus one of these suffixes.
+///
+/// There are two because a comparison only means something **inside** one profile:
+/// `rep_` snapshots are a Repentance profile, `rep+` a Repentance+ one, and laying them
+/// end to end would read a change of profile as progress. Which is also why this is a
+/// list and not a single constant: pinned to `rep+` alone, the three dated Repentance
+/// saves sitting in `samples/` were read by nothing at all.
+pub const SERIES: [&str; 2] = [REP_SERIES, REP_PLUS_SERIES];
 
 /// The historical series: all dated samples with that suffix, in chronological order.
 ///

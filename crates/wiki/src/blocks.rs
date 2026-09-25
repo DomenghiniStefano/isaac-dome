@@ -295,52 +295,70 @@ fn heading(line: &str) -> Option<(u8, &str)> {
     None
 }
 
+/// One item of a list at some depth: its own line, if it has one, and the deeper lines that
+/// follow it and hang from it.
+struct Entry<'a> {
+    ordered: bool,
+    /// `None` when deeper lines arrive with no line of this depth in front of them.
+    head: Option<&'a RawItem>,
+    deeper: &'a [RawItem],
+}
+
+/// The entry `items` starts with at `depth`, and what is left after it; `None` once the
+/// lines climb above `depth` or run out.
+fn next_entry(items: &[RawItem], depth: usize) -> Option<(Entry<'_>, &[RawItem])> {
+    let first = items.first().filter(|item| item.depth >= depth)?;
+    let (head, rest) = match items.split_first() {
+        Some((item, rest)) if item.depth == depth => (Some(item), rest),
+        Some(_) | None => (None, items),
+    };
+    let (deeper, after) = rest.split_at(rest.iter().take_while(|it| it.depth > depth).count());
+    let entry = Entry {
+        ordered: first.ordered,
+        head,
+        deeper,
+    };
+    Some((entry, after))
+}
+
+/// Groups consecutive items into lists, a new one each time `ordered` changes.
+fn into_lists(items: impl Iterator<Item = (bool, ListItem)>) -> Vec<Block> {
+    items
+        .fold(
+            Vec::<(bool, Vec<ListItem>)>::new(),
+            |mut lists, (ordered, item)| {
+                match lists.last_mut() {
+                    Some((o, v)) if *o == ordered => v.push(item),
+                    // The other kind of list, or no list open yet: start one.
+                    Some(_) | None => lists.push((ordered, vec![item])),
+                }
+                lists
+            },
+        )
+        .into_iter()
+        .map(|(ordered, items)| Block::List { ordered, items })
+        .collect()
+}
+
 /// Items at depth `depth` become a list; deeper items that follow an item end up in its
 /// `children`. Multiple lists appear when `ordered` changes at the same level. Deeper
 /// items with no item of this level in front of them hang from an empty item.
 fn build_lists(items: &[RawItem], depth: usize, r: &Resolver, d: &mut Diagnostics) -> Vec<Block> {
-    let mut blocks = Vec::new();
-    let mut cur: Option<(bool, Vec<ListItem>)> = None;
-    let mut i = 0;
-    while let Some(item) = items.get(i) {
-        if item.depth < depth {
-            break;
-        }
-        let ordered = item.ordered;
-        let inline = if item.depth > depth {
-            Vec::new()
-        } else {
-            i += 1;
-            parse_inline(&item.text, r, d)
-        };
-        let start = i;
-        while items.get(i).is_some_and(|it| it.depth > depth) {
-            i += 1;
-        }
-        let deeper = items.get(start..i).unwrap_or_default();
-        let children = build_lists(deeper, depth + 1, r, d);
-        let item = ListItem { inline, children };
-        match cur.as_mut() {
-            Some((o, v)) if *o == ordered => v.push(item),
-            // The other kind of list, or no list open yet: close what is open and start one.
-            Some(_) | None => {
-                if let Some((o, v)) = cur.take() {
-                    blocks.push(Block::List {
-                        ordered: o,
-                        items: v,
-                    });
-                }
-                cur = Some((ordered, vec![item]));
-            }
-        }
-    }
-    if let Some((o, v)) = cur {
-        blocks.push(Block::List {
-            ordered: o,
-            items: v,
-        });
-    }
-    blocks
+    let entries = std::iter::successors(next_entry(items, depth), |(_, after)| {
+        next_entry(after, depth)
+    })
+    .map(|(entry, _)| entry);
+    // An item's own line is parsed before its children, so the diagnostics come out in the
+    // order the page wrote them.
+    let items = entries.map(|entry| {
+        let inline = entry
+            .head
+            .map(|head| parse_inline(&head.text, r, d))
+            .unwrap_or_default();
+        let children = build_lists(entry.deeper, depth + 1, r, d);
+        (entry.ordered, ListItem { inline, children })
+    });
+    into_lists(items)
 }
 
 /// Splits a table row into cells, ignoring a separator nested inside `{{…}}` or `[[…]]`.

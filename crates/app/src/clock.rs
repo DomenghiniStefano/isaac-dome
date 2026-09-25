@@ -1,5 +1,5 @@
-//! The clock, read in one place. The pure crates read none (`ipc` since card #81, V2; `roll`
-//! by construction), so every timestamp and every seed the app needs is drawn here.
+//! The clock, read in one place. The pure crates read none, so every timestamp and every seed
+//! the app needs is drawn here.
 
 use std::time::{Duration, SystemTime, UNIX_EPOCH};
 

@@ -182,12 +182,18 @@ fn playable_rows(catalog: Option<&Catalog>, flags: Option<&[bool]>) -> Option<Ve
     )
 }
 
-/// One cell of the matrix, read from the counters when they exist. `Cell::Known` stays;
-/// `Cell::Unknown` and `Cell::Unexpected` both become `Unreadable` — a draw does not need to
-/// tell "not located" from "suspicious value" apart, only `ipc::Cell`'s diagnostics screen
-/// does.
-fn cell_value(counters: Option<&[u32]>, character: usize, boss: usize) -> roll::CellValue {
-    match counters.map(|c| cell_at(c, character, boss)) {
+/// One cell of the matrix, read from the counters when they exist. `Cell::Known` hands its raw
+/// bits on; `Cell::Unknown` and `Cell::Unexpected` both become `Unreadable` — a draw does not
+/// need to tell "not located" from "suspicious value" apart, only `ipc::Cell`'s diagnostics
+/// screen does.
+///
+/// The cell is *read* by the same decoder the matrix draws with, but it is not *judged* the same
+/// way: `roll::Space::status` counts any non-zero value as taken, so a cell holding bit 2 alone
+/// ("won online", no level bit) is taken for the draw while the matrix draws it as
+/// `CellLevel::Empty`. The two disagree on that one value; it is left as it is here, because
+/// deciding which of them is right changes what a draw offers.
+fn cell_value(counters: Option<&[u32]>, character: usize, column: Column) -> roll::CellValue {
+    match counters.map(|c| cell_at(c, character, column)) {
         Some(crate::Cell::Known { bits, .. }) => roll::CellValue::Known { bits },
         Some(crate::Cell::Unknown) | Some(crate::Cell::Unexpected { .. }) | None => {
             roll::CellValue::Unreadable
@@ -230,9 +236,8 @@ pub fn deck_preset(preset: &roll::Preset, playability_known: bool) -> roll::Pres
 /// The matrix as a `roll::Space`, and whether playability could be determined at all.
 ///
 /// `ROSTER.len()` x `BOSSES.len()`, with Greed at its own `Column::position` — the column
-/// itself, not a name looked up in a table of names, which is what it was until card #82 and
-/// fell back to Mom's Heart on a miss. The lengths come from the same tables `ipc::marks`
-/// measured, so `Space::new` cannot fail here — the fallback exists for
+/// itself, so a lookup by name has no miss to fall back from. The lengths come from the same
+/// tables `ipc::marks` measured, so `Space::new` cannot fail here — the fallback exists for
 /// the case that never happens, not for a panic to stand in its place.
 pub fn roll_space(
     counters: Option<&[u32]>,
@@ -243,8 +248,7 @@ pub fn roll_space(
     let columns = BOSSES.len();
     let greed = Column::Greed.position();
     let cells: Vec<roll::CellValue> = (0..rows)
-        .flat_map(|r| (0..columns).map(move |c| (r, c)))
-        .map(|(r, c)| cell_value(counters, r, c))
+        .flat_map(|r| Column::ALL.map(|column| cell_value(counters, r, column)))
         .collect();
     let known = playable_rows(catalog, flags);
     let playability_known = known.is_some();

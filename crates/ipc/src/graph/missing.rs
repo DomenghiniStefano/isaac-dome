@@ -5,8 +5,7 @@ use graph::model::{Requirement, ThresholdItem};
 use graph::rules::{CounterName, MarkColumn, MarkLevel};
 use wiki::{Dataset, Target};
 
-use super::types::{MarkLevelView, RequirementView, ThresholdItemView};
-use crate::catalog_view::kind_view;
+use super::types::{RequirementView, ThresholdItemView};
 use crate::target_sprite::BossKeys;
 use crate::wiki_target::{self, page_of};
 
@@ -96,7 +95,7 @@ impl Standing<'_> {
                 character: character.0,
                 character_name: self.c.text(&ch.name, EN).to_string(),
                 column,
-                level: level_view(level),
+                level,
             })
     }
 
@@ -142,7 +141,7 @@ impl Standing<'_> {
     fn item(&self, kind: ItemKind, id: ItemId) -> Option<RequirementView> {
         let i = self.c.item(kind, id)?;
         (!self.done(i.unlocked_by)).then(|| RequirementView::Item {
-            item_kind: kind_view(kind),
+            item_kind: kind,
             id: id.0,
             name: self.c.text(&i.name, EN).to_string(),
             page: page_of(self.dataset, wiki_target::item(i)),
@@ -176,7 +175,7 @@ impl Standing<'_> {
     fn threshold_item(&self, t: &ThresholdItem) -> Option<ThresholdItemView> {
         let i = self.c.item(t.kind, t.id)?;
         Some(ThresholdItemView {
-            item_kind: kind_view(t.kind),
+            item_kind: t.kind,
             id: t.id.0,
             name: self.c.text(&i.name, EN).to_string(),
             unlocked: self.done(i.unlocked_by),
@@ -193,13 +192,6 @@ fn gate_view(gate: &str) -> RequirementView {
             .map(|(_, l)| l)
             .unwrap_or(gate)
             .to_string(),
-    }
-}
-
-fn level_view(l: MarkLevel) -> MarkLevelView {
-    match l {
-        MarkLevel::Base => MarkLevelView::Base,
-        MarkLevel::Second => MarkLevelView::Second,
     }
 }
 

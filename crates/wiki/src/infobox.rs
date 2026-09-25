@@ -140,6 +140,7 @@ impl InfoboxKind {
 ///   whose infobox has no such parameter, included — so it is the template's default and
 ///   states nothing about any row. The count is read from the page body instead
 ///   (`transformation::requires`), where each page says its own.
+#[cfg(feature = "test-api")]
 pub const IGNORED_PARAMS: &[&str] = &[
     "image name",
     "costume name",

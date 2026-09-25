@@ -25,9 +25,10 @@ pub use build::build;
 pub use dataset::{Counts, Dataset, DatasetError, Meta, Patch, Source, HOST, SCHEMA_VERSION};
 pub use diagnostics::Diagnostics;
 pub use editions::{parse_code, Editions};
+#[cfg(feature = "test-api")]
+pub use infobox::IGNORED_PARAMS;
 pub use infobox::{
     entry_facts, extract_infoboxes, infobox_from, EntryFacts, InfoboxKind, RawInfobox,
-    IGNORED_PARAMS,
 };
 pub use inline::{parse_inline, plain};
 pub use model::{

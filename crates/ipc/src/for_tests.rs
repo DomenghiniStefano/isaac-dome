@@ -50,8 +50,7 @@ pub fn update_at(phase: crate::UpdatePhase) -> crate::UpdateState {
     crate::UpdateState::at(phase)
 }
 
-/// The catalog's boss keys as the app settles them, with the dataset compiled into the binary:
-/// what every boss lookup read before the keys became a parameter (card #82, S3).
+/// The catalog's boss keys as the app settles them, with the dataset compiled into the binary.
 pub fn bosses(catalog: &Catalog) -> crate::BossKeys {
     crate::boss_keys(catalog, wiki::Dataset::embedded().ok())
 }

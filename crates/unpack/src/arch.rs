@@ -56,7 +56,7 @@ impl CompressionMode {
 pub struct Archive {
     file: std::fs::File,
     entries: Vec<Entry>,
-    /// Keyed on both hashes (card #80, R6): two paths whose djb2 collide are two files, and
+    /// Keyed on both hashes: two paths whose djb2 collide are two files, and
     /// an index on djb2 alone kept only the last one read.
     index: std::collections::HashMap<PathKey, usize>,
     /// Where each entry's data ends, in the same order as `entries`.
@@ -107,71 +107,100 @@ impl From<std::io::Error> for OpenError {
     }
 }
 
+/// Bytes in one index record: five little-endian `u32`.
+const RECORD_LEN: usize = 20;
+
+/// Bytes in the header: the 7-byte signature, the mode byte, the index offset, the count.
+const HEADER_LEN: usize = 14;
+
+/// What the header declares.
+struct Header {
+    mode: CompressionMode,
+    index_off: u64,
+    count: usize,
+}
+
+/// The header, checked for its signature. The caller has already made sure the file holds one.
+fn read_header(file: &std::fs::File) -> Result<Header, OpenError> {
+    let mut header = [0u8; HEADER_LEN];
+    read_exact_at(file, &mut header, 0)?;
+    if &header[0..7] != b"ARCH000" {
+        let mut found = [0u8; 7];
+        found.copy_from_slice(&header[0..7]);
+        return Err(OpenError::BadMagic { found });
+    }
+    Ok(Header {
+        mode: CompressionMode::from_byte(header[7]),
+        index_off: u32::from_le_bytes([header[8], header[9], header[10], header[11]]) as u64,
+        count: u16::from_le_bytes([header[12], header[13]]) as usize,
+    })
+}
+
+/// The index table, read in one shot and only for the whole records that fit in the file: a
+/// truncated index degrades to "take what's there".
+fn read_table(file: &std::fs::File, header: &Header, file_len: u64) -> std::io::Result<Vec<u8>> {
+    let available = file_len.saturating_sub(header.index_off) / RECORD_LEN as u64;
+    let readable = (header.count as u64).min(available) as usize;
+    let mut table = vec![0u8; readable * RECORD_LEN];
+    if readable > 0 {
+        read_exact_at(file, &mut table, header.index_off)?;
+    }
+    Ok(table)
+}
+
+/// One index record, or `None` when its offset points past the end of the file: such a
+/// record is discarded.
+fn parse_record(record: &[u8], file_len: u64) -> Option<Entry> {
+    let word = |k: usize| {
+        let p = k * 4;
+        u32::from_le_bytes([record[p], record[p + 1], record[p + 2], record[p + 3]])
+    };
+    let offset = word(2) as u64;
+    (offset < file_len).then(|| Entry {
+        key: PathKey {
+            djb2: word(0),
+            fnv: word(1),
+        },
+        offset,
+        decompressed_len: word(3),
+        checksum: word(4),
+    })
+}
+
+/// Where each key's entry is. Two records with the same key: the later one wins.
+fn index_of(entries: &[Entry]) -> std::collections::HashMap<PathKey, usize> {
+    entries
+        .iter()
+        .enumerate()
+        .map(|(i, entry)| (entry.key, i))
+        .collect()
+}
+
 impl Archive {
     /// Opens the archive reading **only** the header and the index table. The data stays
     /// on disk: a 700 MB `.a` file costs a few hundred kilobytes here.
     pub fn open(path: &Path) -> Result<Archive, OpenError> {
         let file = std::fs::File::open(path)?;
         let file_len = file.metadata()?.len();
-        if file_len < 14 {
+        if file_len < HEADER_LEN as u64 {
             return Err(OpenError::TooShort);
         }
-        let mut header = [0u8; 14];
-        read_exact_at(&file, &mut header, 0)?;
-        if &header[0..7] != b"ARCH000" {
-            let mut found = [0u8; 7];
-            found.copy_from_slice(&header[0..7]);
-            return Err(OpenError::BadMagic { found });
-        }
-        let mode = CompressionMode::from_byte(header[7]);
-        let index_off = u32::from_le_bytes([header[8], header[9], header[10], header[11]]) as u64;
-        let count = u16::from_le_bytes([header[12], header[13]]) as usize;
-
-        // The index is read in one shot, and only for the part that fits in the file: a
-        // truncated index degrades to "take what's there", as before.
-        let available = file_len.saturating_sub(index_off) / 20;
-        let readable = (count as u64).min(available) as usize;
-        let mut table = vec![0u8; readable * 20];
-        if readable > 0 {
-            read_exact_at(&file, &mut table, index_off)?;
-        }
-
-        let mut entries = Vec::with_capacity(readable);
-        let mut index = std::collections::HashMap::with_capacity(readable);
-        for i in 0..readable {
-            let o = i * 20;
-            let word = |k: usize| {
-                let p = o + k * 4;
-                u32::from_le_bytes([table[p], table[p + 1], table[p + 2], table[p + 3]])
-            };
-            let offset = word(2) as u64;
-            if offset >= file_len {
-                continue; // out-of-bounds record: discarded
-            }
-            let entry = Entry {
-                key: PathKey {
-                    djb2: word(0),
-                    fnv: word(1),
-                },
-                offset,
-                decompressed_len: word(3),
-                checksum: word(4),
-            };
-            index.insert(entry.key, entries.len());
-            entries.push(entry);
-        }
-
+        let header = read_header(&file)?;
+        let table = read_table(&file, &header, file_len)?;
+        let entries: Vec<Entry> = table
+            .chunks_exact(RECORD_LEN)
+            .filter_map(|record| parse_record(record, file_len))
+            .collect();
+        let index = index_of(&entries);
         // The data ends where the index begins; if the header declares that beyond the
         // file, the end of the file wins instead.
-        let data_end = index_off.min(file_len);
-        let ends = entry_ends(&entries, data_end);
-
+        let ends = entry_ends(&entries, header.index_off.min(file_len));
         Ok(Archive {
             file,
             entries,
             index,
             ends,
-            mode,
+            mode: header.mode,
         })
     }
 

@@ -21,7 +21,7 @@ pub const fn boss_name(column: Column) -> &'static str {
 }
 
 /// The twelve columns the game's own completion widget draws, by name, in the order of
-/// [`Column::ALL`] — which is the one list of them (card #82, S1). Mother and The Beast were
+/// [`Column::ALL`], which is the one list of them. Mother and The Beast were
 /// located on 2026-09-08, on the historical series: for the 14 original characters they
 /// are as verified as the other ten. For The Forgotten and the 19 later characters Mother
 /// was located on 2026-09-20 and The Beast is still unlocated — see `FORGOTTEN` and
@@ -77,9 +77,9 @@ const fn tainted(name: &'static str, key: &'static str) -> RosterRow {
     }
 }
 
-/// The 34 rows of the matrix, in the layout's order: one table, where a name and its key used
-/// to be two parallel arrays that only a test kept in step (card #82, S2). Its length is the
-/// layout's [`ROWS`], so a row added to one and not the other does not compile.
+/// The 34 rows of the matrix, in the layout's order: one table, so a row's name and its key
+/// cannot fall out of step. Its length is the layout's [`ROWS`], so a row added to one and not
+/// the other does not compile.
 pub const ROSTER: [RosterRow; ROWS] = {
     use CharacterGroup::{Forgotten, Later, Original};
     [
@@ -153,17 +153,6 @@ pub fn character_for(row: usize, catalog: &catalog::Catalog) -> Option<&catalog:
     })
 }
 
-/// Index into the counters section for the (character, boss) cell, where `boss` is a
-/// position in [`BOSSES`]. `None` when the cell isn't located, or either index is out of
-/// range.
-///
-/// The tables themselves live in `core_save::marks`: a cell's index is the shape of the
-/// save file, and this module draws a screen. What stays here is the translation from the
-/// screen's parallel arrays to the layout's typed column.
-pub fn counter_index(character: usize, boss: usize) -> Option<usize> {
-    core_save::cell_index(character, *core_save::Column::ALL.get(boss)?)
-}
-
 /// The level a cell's mark reached. Fieldless, so it crosses as a bare camelCase string
 /// and the TypeScript is a union of values: a tag distinguishes variants that carry
 /// different data, and there is none here (CLAUDE.md, "Enums on the IPC").
@@ -171,11 +160,12 @@ pub fn counter_index(character: usize, boss: usize) -> Option<usize> {
 /// Two levels and not three: bit 2 is not one of them. It says where a mark was taken,
 /// which is why it travels beside this enum and not inside it.
 ///
-/// Not to be confused with `graph::MarkLevelView`, which names the same two bits `base`
-/// and `second`. That one describes a *target* — "go and take this cell at this level" —
-/// and refuses `hard` on purpose, because what bit 1 means outside Greed is unmeasured.
-/// Here the matrix is being drawn and `normal`/`hard` is the vocabulary its own totals
-/// have carried since B22; the two names are one measurement away from becoming one.
+/// Not to be confused with `graph::rules::MarkLevel` (`MarkLevelView` on the wire), which
+/// names the same two bits `base` and `second`. That one describes a *target* — "go and take
+/// this cell at this level" — and refuses `hard` on purpose, because what bit 1 means outside
+/// Greed is unmeasured. Here the matrix is being drawn and `normal`/`hard` is the vocabulary
+/// its own totals have carried since B22; the two names are one measurement away from
+/// becoming one.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, ts_rs::TS)]
 #[serde(rename_all = "camelCase")]
 pub enum CellLevel {
@@ -381,7 +371,9 @@ pub fn marks_matrix(
             character: row.name.to_string(),
             group: row.group,
             tainted: row.tainted,
-            cells: (0..BOSSES.len()).map(|b| cell_at(counters, c, b)).collect(),
+            cells: Column::ALL
+                .map(|column| cell_at(counters, c, column))
+                .to_vec(),
             head_url: catalog
                 .and_then(|cat| character_for(c, cat))
                 .and_then(|ch| ch.head.as_ref())
@@ -422,11 +414,15 @@ pub fn marks_matrix(
     }
 }
 
-// `pub(crate)`, not private: `crate::roll::roll_space` reads the same cell the matrix
-// draws. A second definition of "what a cell holds" would drift from the matrix the
-// Completion screen draws, the same argument `marks_totals` already carries.
-pub(crate) fn cell_at(counters: &[u32], character: usize, boss: usize) -> Cell {
-    match counter_index(character, boss).and_then(|i| counters.get(i)) {
+// `pub(crate)`, not private: `crate::roll::roll_space` and `crate::progress` read a cell with
+// this decoder. A second definition of "what a cell holds" would drift from the matrix the
+// Completion screen draws, the same argument `marks_totals` already carries. How a draw then
+// *judges* the bits is `roll`'s, and it differs on one value (see `crate::roll::cell_value`).
+//
+// The index is the layout's (`core_save::cell_index`): a cell's place is the shape of the save
+// file, and this module draws a screen.
+pub(crate) fn cell_at(counters: &[u32], character: usize, column: Column) -> Cell {
+    match core_save::cell_index(character, column).and_then(|i| counters.get(i)) {
         None => Cell::Unknown,
         Some(&value) if value <= 7 => {
             let bits = value as u8;
@@ -457,7 +453,7 @@ fn level_of(bits: u8) -> CellLevel {
 /// definition of "a mark is taken" would drift from this one.
 pub fn marks_totals(counters: &[u32]) -> MarksTotals {
     let cells: Vec<Cell> = (0..ROSTER.len())
-        .flat_map(|c| (0..BOSSES.len()).map(move |b| cell_at(counters, c, b)))
+        .flat_map(|c| Column::ALL.map(|column| cell_at(counters, c, column)))
         .collect();
     totals_from(&cells)
 }

@@ -7,7 +7,9 @@ use ipc::{IpcError, MarksMatrix, SaveSummary};
 
 use crate::icons::icon_url;
 
-use crate::state::{active_save, catalog_now, discovery_now, CatalogState, ResourcesState};
+use crate::state::{
+    active_save, catalog_and_resources, catalog_now, discovery_now, CatalogState, ResourcesState,
+};
 
 #[tauri::command]
 pub fn save_summary(app: AppHandle) -> Result<SaveSummary, IpcError> {
@@ -47,7 +49,7 @@ pub fn extraction_report(
     let wiki = ipc::wiki_info(wiki::Dataset::embedded(), game_updated_unix);
     // Game not installed is an expected case, not an error: the command still answers
     // and the report says there's nothing to extract.
-    let Some(resources) = resources.get(&app) else {
+    let Some((resources, catalog)) = catalog_and_resources(&app, &resources, &state) else {
         return Ok(ipc::extraction_report(
             Vec::new(),
             Vec::new(),
@@ -56,7 +58,6 @@ pub fn extraction_report(
             wiki,
         ));
     };
-    let catalog = state.get_or_build(resources);
 
     // The icons are extracted here, where I/O is allowed, and go out already resolved.
     let sprites = ipc::item_views(catalog, |p| resources.read(p), SAMPLE_ICONS)
