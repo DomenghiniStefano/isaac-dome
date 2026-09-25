@@ -45,7 +45,6 @@ export const it = {
     goals: 'Obiettivi',
     completion: 'Completamento',
     unlock: 'Unlock',
-    plan: 'Piano',
     collection: 'Collezione',
     challenges: 'Sfide',
     roll: 'Stasera',
@@ -58,7 +57,6 @@ export const it = {
     background: 'Background',
     tabsSettings: 'Tab',
     updates: 'Aggiornamenti',
-    about: 'Informazioni',
   },
   wikiCategories: {
     items: 'Oggetti',
@@ -84,9 +82,7 @@ export const it = {
   live: {
     intro:
       'Quello che stai giocando adesso, e cosa aprirebbe se lo finisci. L’app deve essere aperta mentre giochi: il gioco riscrive il log a ogni avvio.',
-    run: 'La run in corso',
     floors: 'piani',
-    heldActive: 'in mano',
     collected: 'raccolti',
     wouldOpen: 'Se finisci questa run',
     missing: 'marchi da prendere',
@@ -108,7 +104,6 @@ export const it = {
     unlockedHere: 'Sbloccati in questa run',
     opens: 'apre {count}',
     opensNothingMore: 'non apre altro',
-    beat: 'Batti {column} con {character}',
     nothing:
       'Niente che questa run possa aprire da sola: quello che manca agli achievement non è un marchio di questo personaggio.',
     diagnostic: {
@@ -263,7 +258,6 @@ export const it = {
       won: 'vinte',
       died: 'morte',
       abandoned: 'abbandonate',
-      open: 'in corso',
     },
     column: {
       character: 'Personaggio',
@@ -276,7 +270,6 @@ export const it = {
     noItems: 'nessuno',
     openPage: 'Clic per la pagina, Ctrl+clic per aprirla di fianco',
     itemId: 'oggetto {id}',
-    floors: 'piani',
     killedBy: 'uccisa da {killer}',
     endedWith: 'finale {ending}',
     startingItems: 'Oggetti iniziali',
@@ -730,14 +723,11 @@ export const it = {
   },
 
   plan: {
-    intro:
-      'L’ordine in cui vuoi fare le cose: quelle che hai aggiunto tu, più quello che serve prima. Trascina una riga dove vuoi — se le manca un prerequisito si ferma appena sotto, invece di rifiutare lo spostamento.',
     opens: 'apre {count}',
     opensNothing: 'non apre altro',
     detail: 'Mostra il dettaglio',
     queueCount: 'La tua coda',
     addPane: 'Obiettivi consigliati',
-    queueTitle: 'La coda',
     hint: {
       idle: 'trascina per riordinare — nessuno spostamento viene rifiutato',
       dragging: 'rilascia dove vuoi: la coda si sistema da sola',
@@ -747,10 +737,7 @@ export const it = {
       move: 'Sposta la riga (Alt e freccia su o giù)',
       wanted: 'aggiunta da te',
       serves: 'serve per «{name}»',
-      unlocks: 'sblocca',
-      fanOut: 'sblocca',
       outsideQueue: 'prerequisiti non in coda',
-      condition: 'come si prende:',
     },
     achievementNumbered: 'achievement {id}',
     empty: 'La coda è vuota.',
@@ -773,12 +760,6 @@ export const it = {
       goalsPending:
         'Obiettivi salvati prima che esistesse la coda: nessuno li sposta da solo.',
       import: 'Importa nella coda',
-    },
-    aside: {
-      title: 'Prossimi passi',
-      intro:
-        'Righe sbloccabili adesso, ordinate per quante cose aprono. Non sono la tua coda: sono la proposta.',
-      empty: 'Nessuna proposta adesso.',
     },
   },
   completion: {
@@ -840,11 +821,7 @@ export const it = {
       'Cosa sbloccare e in che ordine: prendi dai consigli, o chiedi quello che vuoi, e mettilo in coda.',
     fanOut: 'Aprono di più',
     closeness: 'Ci sei quasi',
-    inPlan: 'Nel tuo Piano',
-    openPlan: 'Apri il Piano',
     seeAll: 'Vedile tutte',
-    opens: 'Apre altre {count} cose',
-    opensNothing: 'Non apre altro',
     noCatalogTitle: 'Non troviamo il gioco',
     noCatalog:
       'IsaacDome legge i file di The Binding of Isaac per sapere quale achievement sblocca cosa, e sul computer non li trova. Installa il gioco da Steam e riapri l’app: qui troverai cosa conviene giocare stasera.',
@@ -1054,21 +1031,6 @@ export const it = {
       unreadablePath: 'Percorso non leggibile · {name} · {reason}',
       malformedManifest: 'Manifest di Steam non leggibile · {name}',
     },
-    pick: {
-      title: 'Serve scegliere',
-      summary: 'finché non scegli, nessun profilo è attivo',
-      savedGone:
-        'Il profilo che usavi non esiste più dove stava. Non ne abbiamo scelto un altro al suo posto: i numeri di un profilo diverso, mostrati senza dirlo, sono l’errore che non ti accorgi di avere.',
-      edition: 'Edizione',
-      slot: 'Slot',
-      foundIn: 'Trovato qui',
-      modified: 'Modificato',
-      size: 'Dimensione',
-      suggested: 'più recente',
-      hint: 'Il più recente è solo un suggerimento: scegli tu quale profilo leggere.',
-      use: 'Usa questo profilo',
-      cancel: 'Annulla',
-    },
     sources: {
       steamCloud: 'Steam Cloud',
       documents: 'Documenti',
@@ -1116,7 +1078,6 @@ export const it = {
     inQueue: 'in coda',
     inPlan: 'già nella coda del Piano',
     add: 'Aggiungi alla coda',
-    addShort: 'Aggiungi',
     remove: 'Rimuovi dalla coda',
     removeShort: 'Rimuovi dalla coda',
     errorTitle: 'La coda non è cambiata',

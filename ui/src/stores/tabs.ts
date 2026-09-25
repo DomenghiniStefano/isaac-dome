@@ -4,6 +4,9 @@ import { StoreId } from '@/lib/constants/stores'
 import type { Point } from '@/lib/drag/dragList'
 import { oweSeed } from '@/lib/window/seeds'
 import { newWindowLabel, windowPort } from '@/lib/window/windowPort'
+import type { WindowBox } from '@/lib/window/windowPort'
+import type { Target } from '@/lib/ipc/types'
+import { pageLocation } from '@/lib/wiki/category'
 import { defaultLocation } from '@/router/routeTable'
 import type { TabLocation } from '@/router/routeTable'
 import type { IncomingHover } from '@/lib/shell/tabs'
@@ -88,9 +91,15 @@ export const useTabsStore = defineStore(StoreId.Tabs, () => {
   }
   // The app's one gesture: a click navigates the active tab, Ctrl opens the page beside it.
   // Every link, row and entry that goes somewhere goes through here, with the modifier it read.
-  const go = (location: TabLocation, newTab: boolean): void => {
+  // No location is a reference with nowhere to go, and it moves nothing.
+  const go = (location: TabLocation | null, newTab: boolean): void => {
+    if (location === null) return
     if (newTab) open(location)
     else navigate(location)
+  }
+  // The same gesture on a wiki reference: its page, here or beside (DESIGN-BRIEF.md §4.2).
+  const openPage = (target: Target, newTab: boolean): void => {
+    go(pageLocation(target), newTab)
   }
   // How the active tab's current entry is being read. The rule is `tabModel`'s; this only holds
   // the result, as with every other tab rule.
@@ -224,9 +233,16 @@ export const useTabsStore = defineStore(StoreId.Tabs, () => {
   // and the gap the marker is drawn in is the gap the tab is docked into: one computation.
   const aimed = ref<number | null>(null)
 
+  // This window's geometry for the hover: the one already read, or read now on its first point.
+  const hoverGeometry = async (): Promise<WindowBox> => {
+    const known = incoming.value?.window
+    if (known) return known
+    return windowPort.self()
+  }
+
   const aimIncoming = async (at: Point): Promise<void> => {
-    const window = incoming.value?.window ?? (await windowPort.self())
-    incoming.value = { at, window }
+    const geometry = await hoverGeometry()
+    incoming.value = { at, window: geometry }
   }
 
   const clearIncoming = (): void => {
@@ -261,6 +277,7 @@ export const useTabsStore = defineStore(StoreId.Tabs, () => {
     move,
     navigate,
     go,
+    openPage,
     seed,
     seedAt,
     session,

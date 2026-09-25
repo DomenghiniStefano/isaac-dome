@@ -8,7 +8,7 @@ import { Button, ButtonSize, ButtonVariant } from '@/components/ui/button'
 import { Card, CardHeader, CardTitle } from '@/components/ui/card'
 import { useMessages } from '@/i18n'
 import { NodeState } from '@/lib/graph/nodeState'
-import { nodeSlot } from '@/lib/graph/unlockFacets'
+import { nodeNumber } from '@/lib/graph/achievementNode'
 import type { WantBlock } from '@/lib/graph/wantBlocks'
 import type { StepsSection, Target, WantDiagnostic } from '@/lib/ipc/types'
 import { AddPaneState, addPaneState } from '@/lib/plan/addPaneState'
@@ -91,7 +91,7 @@ const seeAll: TabLocation = {
           <div class="-mx-3 border-y border-hairline bg-data">
             <div
               v-for="step in section.steps"
-              :key="nodeSlot(step)"
+              :key="nodeNumber(step)"
               :class="[
                 'border-b border-hairline last:border-b-0',
                 isQueued(step, queued) && 'opacity-disabled',
@@ -105,7 +105,7 @@ const seeAll: TabLocation = {
                 :node="step"
                 :can-add="canWrite && canQueue(step, queued)"
                 :busy="busy"
-                @add="emit('add', nodeSlot(step))"
+                @add="emit('add', nodeNumber(step))"
               />
             </div>
           </div>

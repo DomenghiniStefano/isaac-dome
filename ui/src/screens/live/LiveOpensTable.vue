@@ -1,12 +1,10 @@
 <script setup lang="ts">
-import type { Message } from '@/i18n/message'
 import { computed } from 'vue'
 import EntityChip from '@/components/runs/EntityChip.vue'
 import EmptyValue from '@/components/data-state/EmptyValue.vue'
 import { useMessages } from '@/i18n'
-import { columnName } from '@/lib/graph/nodeState'
-import type { AchievementRef, LiveOpen, Target } from '@/lib/ipc/types'
-import { SecondLevelView } from '@/lib/ipc/types'
+import { opensRows } from '@/lib/live/opensRows'
+import type { LiveOpen } from '@/lib/ipc/types'
 
 // Everything the run could open, in one table instead of a card per cell: the cell is a
 // column, so the boss is still said once per row and the rows can be read against each other
@@ -14,38 +12,7 @@ import { SecondLevelView } from '@/lib/ipc/types'
 const props = defineProps<{ opens: LiveOpen[] }>()
 const { t } = useMessages()
 
-const rows = computed(() =>
-  props.opens.flatMap((open) =>
-    open.achievements.map((entry) => ({
-      key: `${open.character}-${open.column}-${text(entry.achievement)}`,
-      open,
-      achievement: entry.achievement,
-      fanOut: entry.fanOut,
-    })),
-  ),
-)
-
-function text(a: AchievementRef): string {
-  return a.kind === 'known' ? a.text : String(a.slot)
-}
-const conditionOf = (a: AchievementRef): string | null =>
-  a.kind === 'known' ? a.condition : null
-const targetOf = (a: AchievementRef): Target | null =>
-  a.kind === 'known' ? { kind: 'achievement', id: a.id } : null
-const iconOf = (a: AchievementRef): string | null =>
-  a.kind === 'known' ? a.iconUrl : null
-
-// The second level is said only where it is a different thing to go and do, and in the
-// column's own word (B66): Ultra Greedier in Greed, hard elsewhere. Which is which arrives
-// from Rust in `secondLevel`, `null` at the base level.
-const secondLevelWord: Record<SecondLevelView, Message> = {
-  [SecondLevelView.Hard]: 'live.secondLevel.hard',
-  [SecondLevelView.UltraGreedier]: 'live.secondLevel.ultraGreedier',
-}
-const cellName = (open: LiveOpen): string =>
-  open.secondLevel === null
-    ? columnName[open.column]
-    : `${columnName[open.column]} · ${t(secondLevelWord[open.secondLevel])}`
+const rows = computed(() => opensRows(props.opens, t))
 </script>
 
 <template>
@@ -66,16 +33,16 @@ const cellName = (open: LiveOpen): string =>
     >
       <span class="px-2 py-1">
         <EntityChip
-          :target="targetOf(row.achievement)"
-          :name="text(row.achievement)"
-          :detail="conditionOf(row.achievement)"
-          :icon-url="iconOf(row.achievement)"
+          :target="row.target"
+          :name="row.name"
+          :detail="row.condition"
+          :icon-url="row.iconUrl"
         />
       </span>
-      <span class="truncate px-2 text-row">{{ cellName(row.open) }}</span>
+      <span class="truncate px-2 text-row">{{ row.cell }}</span>
       <span class="px-2 text-label text-subtle-foreground">
-        <span v-if="conditionOf(row.achievement)" class="line-clamp-2">{{
-          conditionOf(row.achievement)
+        <span v-if="row.condition" class="line-clamp-2">{{
+          row.condition
         }}</span>
         <EmptyValue v-else>{{ t('live.noCondition') }}</EmptyValue>
       </span>

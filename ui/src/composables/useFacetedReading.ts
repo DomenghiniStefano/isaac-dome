@@ -4,8 +4,7 @@ import type { TabViewSpec } from '@/lib/tabs/tabView'
 import { useTabView } from './useTabView'
 
 // How a faceted list reads its tab's reading: the filter, and the moves its filter bar makes on
-// it. Unlock, Collection, Challenges and Runs each wrote this scaffold on their own — the same
-// computed over `reading.filter`, the same three setters.
+// it — the pick of one facet, the query, a reset.
 //
 // The filter belongs to the tab, not to the screen: leaving and coming back — through a
 // tear-off, a restart, or the back button — finds it where it was left (B39). `update` is how
@@ -20,11 +19,7 @@ export const useFacetedReading = <
   view: TabViewSpec<Reading>,
   emptyFilter: () => FacetFilter<Facet>,
 ) => {
-  const reading = useTabView(view)
-
-  const update = (patch: Partial<Reading>) => {
-    reading.value = { ...reading.value, ...patch }
-  }
+  const { reading, update } = useTabView(view)
   const filter = computed({
     get: (): FacetFilter<Facet> => reading.value.filter,
     set: (value: FacetFilter<Facet>) =>

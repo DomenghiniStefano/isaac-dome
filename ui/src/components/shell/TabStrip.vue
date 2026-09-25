@@ -5,7 +5,7 @@ import { Button, ButtonSize, ButtonVariant } from '@/components/ui/button'
 import { DragGhost } from '@/components/ui/drag'
 import { useTabDrag } from '@/composables/useTabDrag'
 import { useMessages } from '@/i18n'
-import { boxOf } from '@/lib/drag/dragList'
+import { measure } from '@/lib/drag/dragList'
 import type { Point } from '@/lib/drag/dragList'
 import { toClient } from '@/lib/window/tearOff'
 import TabItem from './TabItem.vue'
@@ -71,7 +71,7 @@ const grabbed = computed(() =>
 const incomingGap = computed((): number | null => {
   const hover = props.incoming
   if (!hover) return null
-  const boxes = tabElements().map((el) => boxOf(el.getBoundingClientRect()))
+  const boxes = tabElements().map(measure)
   return arrivalGap(boxes, toClient(hover.at, hover.window), props.tabs.length)
 })
 

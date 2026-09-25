@@ -7,7 +7,7 @@ import type { WindowBox } from './windowPort'
 // `stripUnderPoint`). In rem, like the title bar it has to cover (`--spacing-titlebar`): a fixed
 // 40px was covered by a 45px strip at 150% and a 60px one at 200%, so a drop on the lower part
 // of the strip opened a window (card 80, item 08). 2.5rem is the 40px it was at 100%.
-export const StripBandRem = 2.5
+const StripBandRem = 2.5
 
 // The band at the interface's scale, in logical pixels.
 export const stripBandPx = (percent: number): number =>
@@ -71,3 +71,23 @@ export const stripUnderPoint = (
 // client pixels — the pointer is still inside the window when this first becomes true.
 export const pastTearBand = (p: Point, strip: Box): boolean =>
   p.y > strip.top + strip.height + TearBand || p.y < strip.top - TearBand
+
+// From the cursor to where a new window's top-left belongs, in this window's logical pixels:
+// the grab inside the tab (`p` against the ghost's corner), plus where the strip sits inside a
+// window. Read when the tab leaves, while the ghost and the strip are still on the page, so the
+// window that opens is drawn **around the tab you are holding**.
+export const grabOffset = (p: Point, ghost: Box, strip: Box): Point => ({
+  x: p.x - ghost.left + strip.left,
+  y: p.y - ghost.top + strip.top,
+})
+
+// Where a window opened for a tab dropped at `p` goes, so the tab lands under the cursor. The
+// offset is in this window's logical pixels; the cursor speaks in the desktop's.
+export const windowOrigin = (
+  p: Point,
+  offset: Point,
+  scaleFactor: number,
+): Point => ({
+  x: Math.round(p.x - offset.x * scaleFactor),
+  y: Math.round(p.y - offset.y * scaleFactor),
+})

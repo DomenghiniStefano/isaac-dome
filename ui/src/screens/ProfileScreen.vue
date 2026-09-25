@@ -2,14 +2,15 @@
 import { vScrollMemory } from '@/directives/scrollMemory'
 import { SaveIcon } from '@lucide/vue'
 import { computed } from 'vue'
-import { Skeleton } from '@/components/ui/skeleton'
+import ScreenSkeleton from '@/components/data-state/ScreenSkeleton.vue'
+import { SkeletonBlock } from '@/components/data-state/skeletonBlock'
 import { useMessages } from '@/i18n'
 import { LoadStatus } from '@/stores/loadStatus'
 import { useProfileStore } from '@/stores/profile'
-import ScreenHeader from './ScreenHeader.vue'
+import ScreenHeader from '@/components/screen/ScreenHeader.vue'
 import ActiveProfileCard from './profile/ActiveProfileCard.vue'
 import ChainCard from './profile/ChainCard.vue'
-import ProfileError from './profile/ProfileError.vue'
+import ProfileError from '@/components/data-state/ProfileError.vue'
 import SectionsCard from './profile/SectionsCard.vue'
 
 const profile = useProfileStore()
@@ -47,9 +48,10 @@ const activeProfile = computed(() => profile.activeProfile)
         <SectionsCard v-if="profile.summary" :summary="profile.summary" />
       </template>
     </template>
-    <div v-else class="flex flex-col gap-4">
-      <Skeleton class="h-30 w-full" />
-      <Skeleton class="h-50 w-full" />
-    </div>
+    <ScreenSkeleton
+      v-else
+      untitled
+      :blocks="[SkeletonBlock.ProfileCard, SkeletonBlock.TallCard]"
+    />
   </div>
 </template>

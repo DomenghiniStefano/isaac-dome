@@ -9,7 +9,7 @@ import { useMessages } from '@/i18n'
 import { rowModel } from '@/lib/plan/rowModel'
 import { WantBlockKind } from '@/lib/graph/wantBlocks'
 import type { WantBlock } from '@/lib/graph/wantBlocks'
-import { nodeSlot } from '@/lib/graph/unlockFacets'
+import { nodeNumber } from '@/lib/graph/achievementNode'
 import { WantDiagnostic } from '@/lib/ipc/types'
 
 defineProps<{
@@ -50,7 +50,7 @@ const bannerText: Record<WantDiagnostic, Message> = {
          with its own button: neither is hidden and neither is chosen for you. -->
     <section
       v-for="(block, index) in blocks"
-      :key="nodeSlot(block.node)"
+      :key="nodeNumber(block.node)"
       class="flex flex-col gap-2"
     >
       <h2 class="text-label text-subtle-foreground">
@@ -64,7 +64,7 @@ const bannerText: Record<WantDiagnostic, Message> = {
       <ol class="flex flex-col gap-2">
         <li
           v-for="(step, at) in block.steps"
-          :key="nodeSlot(step)"
+          :key="nodeNumber(step)"
           class="flex items-start gap-2"
         >
           <span class="pt-3 text-label text-subtle-foreground">{{

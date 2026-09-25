@@ -18,16 +18,9 @@ import { useMessages } from '@/i18n'
 import { EventKey } from '@/lib/constants/eventKeys'
 import { KeyName } from '@/lib/constants/keyNames'
 import { SearchLimit } from '@/lib/ipc/search'
-import { SearchDiagnostic } from '@/lib/ipc/types'
 import { keyAfterAnswer } from '@/lib/search/highlight'
 import { queryToRecall } from '@/lib/search/recall'
-import {
-  groupedRows,
-  matchingScreens,
-  rowGroupLabel,
-  screenEntries,
-  searchRows,
-} from '@/lib/search/rows'
+import { groupedRows, rowGroupLabel, rowsFor } from '@/lib/search/rows'
 import type { SearchRow as Row } from '@/lib/search/rows'
 import { RouteName } from '@/router/routeTable'
 import type { TabLocation } from '@/router/routeTable'
@@ -67,20 +60,10 @@ watch(open, (isOpen) => {
   highlighted.value = null
 })
 
-const catalog = computed(
-  () => !(view.value?.diagnostics ?? []).includes(SearchDiagnostic.NoCatalog),
-)
-
 // Five rows per group in the palette; the whole answer is the Search screen's job.
 const PaletteCap = 5
 
-const rows = computed(() =>
-  searchRows(
-    view.value?.hits ?? [],
-    matchingScreens(screenEntries(t), typed.value),
-    { catalog: catalog.value, cap: PaletteCap },
-  ),
-)
+const rows = computed(() => rowsFor(view.value, typed.value, t, PaletteCap))
 
 const groups = computed(() => groupedRows(rows.value))
 

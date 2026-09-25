@@ -13,7 +13,7 @@ import { floorView } from './tabView'
 // on mount, and when the tab under a mounted screen changes. Storing it would be storing an
 // answer from a version of the rules that may no longer be the one running.
 export const useFloorDrawing = () => {
-  const reading = useTabView(floorView)
+  const { reading } = useTabView(floorView)
   const view = shallowRef<FloorView | null>(null)
   const failed = ref(false)
 

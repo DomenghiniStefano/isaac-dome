@@ -1,6 +1,6 @@
 import type { Translate } from '@/i18n/message'
 import type { UnlockNode, UnlockTarget } from '@/lib/ipc/types'
-import { pageLocation } from '@/lib/wiki/category'
+import { pageLocationOf } from '@/lib/wiki/category'
 import type { TabLocation } from '@/router/routeTable'
 import { targetName } from './characterName'
 
@@ -25,5 +25,5 @@ export const nodeUnlocks = (node: UnlockNode, t: Translate): UnlockEntry[] =>
     key: `${target.kind}-${target.id}`,
     name: targetName(t, target),
     iconUrl: iconOf(target),
-    location: target.page ? pageLocation(target.page) : null,
+    location: pageLocationOf(target.page),
   }))

@@ -25,14 +25,14 @@ import type { FindState } from '@/lib/find/findState'
 import { singleQuery } from '@/lib/search/queryParam'
 import { LoadStatus } from '@/stores/loadStatus'
 import { useCollectionStore } from '@/stores/views'
-import ScreenHeader from './ScreenHeader.vue'
+import ScreenHeader from '@/components/screen/ScreenHeader.vue'
 import CollectionTable from './collection/CollectionTable.vue'
 import {
   collectionBar,
   collectionFacetValueLabel,
-} from './collection/collectionLabels'
+} from '@/lib/collection/collectionLabels'
 import { collectionView } from './collection/tabView'
-import ProfileError from './profile/ProfileError.vue'
+import ProfileError from '@/components/data-state/ProfileError.vue'
 
 const store = useCollectionStore()
 const { t } = useMessages()

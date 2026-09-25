@@ -7,6 +7,8 @@ import {
   toClient,
   toDesktop,
   stripUnderPoint,
+  grabOffset,
+  windowOrigin,
 } from './tearOff'
 import type { WindowBox } from './windowPort'
 import spacing from '@/assets/theme/spacing.css?raw'
@@ -171,5 +173,30 @@ describe('the strip band at every scale', () => {
     const w = win('a', 0, 0)
     // 55px down: inside a 60px title bar, outside the old 40px band.
     expect(inStripBand(w, { x: 100, y: 55 }, 200)).toBe(true)
+  })
+})
+
+describe('where a torn-off window opens', () => {
+  it('is offset by the grab inside the tab and the strip inside the window', () => {
+    const ghost = { left: 140, top: 6, width: 160, height: 30 }
+    const strip = { left: 72, top: 4, width: 800, height: 36 }
+    expect(grabOffset({ x: 150, y: 20 }, ghost, strip)).toEqual({
+      x: 82,
+      y: 18,
+    })
+  })
+
+  it('puts the tab under the cursor, the offset scaled to desktop pixels', () => {
+    expect(windowOrigin({ x: 1000, y: 500 }, { x: 82, y: 18 }, 1.5)).toEqual({
+      x: 877,
+      y: 473,
+    })
+  })
+
+  it('lands on whole pixels', () => {
+    expect(windowOrigin({ x: 10, y: 10 }, { x: 1, y: 1 }, 1.25)).toEqual({
+      x: 9,
+      y: 9,
+    })
   })
 })

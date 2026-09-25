@@ -44,7 +44,7 @@ const detail = computed(() => {
   </span>
   <span class="flex min-w-0 items-center gap-2 px-2">
     <Badge :variant="tone[run.outcome.kind]">{{
-      t(outcomeText(run.outcome.kind))
+      t(outcomeText[run.outcome.kind])
     }}</Badge>
     <span class="truncate text-label text-subtle-foreground">{{ detail }}</span>
   </span>
@@ -55,7 +55,7 @@ const detail = computed(() => {
   >
   <span class="flex min-w-0 items-center gap-2 px-2 @max-compact/page:hidden">
     <span class="truncate text-label text-subtle-foreground">{{
-      t(sourceText(run.source.kind))
+      t(sourceText[run.source.kind])
     }}</span>
     <Badge v-if="run.online" :variant="BadgeVariant.Tag">{{
       t('runs.online.online')

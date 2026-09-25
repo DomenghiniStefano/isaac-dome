@@ -24,19 +24,34 @@ const CELLS = 169
  * One rule each. They overlap on purpose: the whole question this screen had to answer again
  * is what a cell looks like when more than one target claims it.
  */
+// A rank from the tests a place passes, best first: the first test it passes is its rank, and
+// one that passes none ranks after all of them.
+const rankedBy =
+  (...tests: ((n: number) => boolean)[]) =>
+  (n: number): number => {
+    const at = tests.findIndex((test) => test(n))
+    return at === -1 ? tests.length : at
+  }
+
 const RULES = [
   {
     target: 'secret',
     id: 'fixture-secret',
-    // Three neighbours or more is the best place, two is a lesser one.
+    // Four neighbours or more is the best place, three the next, two the least.
     allowed: (n: number) => n >= 2,
-    rank: (n: number) => (n >= 4 ? 0 : n >= 3 ? 1 : 2),
+    rank: rankedBy(
+      (n) => n >= 4,
+      (n) => n >= 3,
+    ),
   },
   {
     target: 'superSecret',
     id: 'fixture-super',
     allowed: (n: number) => n >= 1 && n <= 3,
-    rank: (n: number) => (n === 1 ? 0 : n === 2 ? 1 : 2),
+    rank: rankedBy(
+      (n) => n === 1,
+      (n) => n === 2,
+    ),
   },
   {
     target: 'ultraSecret',

@@ -1,11 +1,13 @@
 import { describe, expect, it } from 'vitest'
-import type { SearchHit } from '@/lib/ipc/types'
+import { SearchDiagnostic } from '@/lib/ipc/types'
+import type { SearchHit, SearchView } from '@/lib/ipc/types'
 import { RouteName } from '@/router/routeTable'
 import {
   RowGroup,
   filterGroups,
   groupCounts,
   groupedRows,
+  rowsFor,
   searchRows,
 } from './rows'
 import type { ScreenEntry } from './rows'
@@ -114,5 +116,54 @@ describe('groupedRows', () => {
 
   it('has no group for no rows', () => {
     expect(groupedRows([])).toEqual([])
+  })
+})
+
+describe('rowsFor', () => {
+  const t = (m: string) => (m === 'routes.collection' ? 'Collezione' : m)
+  const answer = (over: Partial<SearchView> = {}): SearchView => ({
+    query: 'coll',
+    hits: [hit({})],
+    total: 1,
+    diagnostics: [],
+    ...over,
+  })
+
+  it('offers the screens the query names before the hits', () => {
+    const rows = rowsFor(answer(), 'coll', t, null)
+    expect(rows.map((r) => r.key)).toEqual([
+      'route-collection',
+      'wiki-The D6',
+      'collection-The D6',
+    ])
+  })
+
+  it('without an answer yet still offers the screens', () => {
+    expect(rowsFor(null, 'coll', t, null).map((r) => r.kind)).toEqual([
+      'screen',
+    ])
+  })
+
+  it('without the game, no hit opens Unlock or the Collection', () => {
+    const rows = rowsFor(
+      answer({ diagnostics: [SearchDiagnostic.NoCatalog] }),
+      'zzz',
+      t,
+      null,
+    )
+    expect(rows.map((r) => r.group)).toEqual([RowGroup.Wiki])
+  })
+
+  it('caps every group at the count asked for', () => {
+    const hits = [1, 2, 3].map((id) =>
+      hit({ target: { kind: 'item', id }, title: `i${id}` }),
+    )
+    const rows = rowsFor(answer({ hits }), 'zzz', t, 2)
+    expect(groupCounts(rows)).toEqual({
+      [RowGroup.Screens]: 0,
+      [RowGroup.Wiki]: 2,
+      [RowGroup.Unlock]: 0,
+      [RowGroup.Collection]: 2,
+    })
   })
 })

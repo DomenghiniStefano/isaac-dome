@@ -12,8 +12,8 @@ import {
 } from '@/components/ui/tooltip'
 import { useMessages } from '@/i18n'
 import type { CompletionKpis as Kpis } from '@/lib/completion/completionView'
-import ScreenHeader from '../ScreenHeader.vue'
-import HeroBand from '../HeroBand.vue'
+import ScreenHeader from '@/components/screen/ScreenHeader.vue'
+import HeroBand from '@/components/screen/HeroBand.vue'
 
 defineProps<{ kpis: Kpis; widgetUrl: string | null }>()
 const { t } = useMessages()

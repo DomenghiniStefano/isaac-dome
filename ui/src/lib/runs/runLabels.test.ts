@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { RunFacet } from './runFacets'
-import { facetValueLabel } from './runLabels'
+import { runFacetValueLabel } from './runLabels'
 
 // A key is its own translation here: what matters is which key, or that there was none.
 const t = (key: string): string => {
@@ -9,15 +9,15 @@ const t = (key: string): string => {
   return `«${key}»`
 }
 
-describe('facetValueLabel', () => {
+describe('runFacetValueLabel', () => {
   it('words the values it knows', () => {
-    expect(facetValueLabel(t, RunFacet.Outcome, 'won')).toBe(
+    expect(runFacetValueLabel(t, RunFacet.Outcome, 'won')).toBe(
       '«runs.outcome.won»',
     )
-    expect(facetValueLabel(t, RunFacet.Source, 'live')).toBe(
+    expect(runFacetValueLabel(t, RunFacet.Source, 'live')).toBe(
       '«runs.source.live»',
     )
-    expect(facetValueLabel(t, RunFacet.Source, 'session')).toBe(
+    expect(runFacetValueLabel(t, RunFacet.Source, 'session')).toBe(
       '«runs.source.session»',
     )
   })
@@ -25,9 +25,9 @@ describe('facetValueLabel', () => {
   // Card #80, P10: the comment above the function promised this, and the code looked the
   // value up in a table and translated `undefined`.
   it('shows a value outside its set as it came', () => {
-    expect(facetValueLabel(t, RunFacet.Outcome, 'drowned')).toBe('drowned')
-    expect(facetValueLabel(t, RunFacet.Source, 'replay')).toBe('replay')
-    expect(facetValueLabel(t, RunFacet.Online, 'splitscreen')).toBe(
+    expect(runFacetValueLabel(t, RunFacet.Outcome, 'drowned')).toBe('drowned')
+    expect(runFacetValueLabel(t, RunFacet.Source, 'replay')).toBe('replay')
+    expect(runFacetValueLabel(t, RunFacet.Online, 'splitscreen')).toBe(
       'splitscreen',
     )
   })

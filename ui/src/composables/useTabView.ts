@@ -13,7 +13,12 @@ import { useTabsStore } from '@/stores/tabs'
 //
 // The debounce is for the burst, not for the cost: a facet click moves a pick and a count in the
 // same breath.
-export const useTabView = <T>(spec: TabViewSpec<T>): Ref<T> => {
+//
+// `update` moves part of the reading and keeps the rest, which is how a screen writes one field
+// of it — a query, a scroll offset, a selection.
+export const useTabView = <T extends object>(
+  spec: TabViewSpec<T>,
+): { reading: Ref<T>; update: (patch: Partial<T>) => void } => {
   const tabs = useTabsStore()
 
   const current = (): T => {
@@ -44,5 +49,9 @@ export const useTabView = <T>(spec: TabViewSpec<T>): Ref<T> => {
 
   watch(reading, () => void remember(), { deep: true })
 
-  return reading
+  const update = (patch: Partial<T>): void => {
+    reading.value = { ...reading.value, ...patch }
+  }
+
+  return { reading, update }
 }

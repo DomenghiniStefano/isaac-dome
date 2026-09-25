@@ -35,8 +35,20 @@ const art = computed(() => props.matrix.art.map((view) => markArtOf(view)))
 const columns = computed(() => ({
   '--matrix-columns': props.matrix.bosses.length,
 }))
-const groups = computed(() => matrixGroups(props.matrix))
-const totals = computed(() => columnTallies(props.matrix))
+// B22 item 4: two number columns, not one slot holding a pair. Each carries its own
+// denominator because each sits under its own heading. Worked out once per matrix, beside the
+// tally they are read from, not twice per row per render.
+const groups = computed(() =>
+  matrixGroups(props.matrix).map((group) => ({
+    ...group,
+    columns: tallyColumns(group.tally),
+    rows: group.rows.map((entry) => ({
+      ...entry,
+      columns: tallyColumns(entry.tally),
+    })),
+  })),
+)
+const totals = computed(() => columnTallies(props.matrix).map(tallyColumns))
 
 const groupTitle: Record<MatrixGroup, Message> = {
   [MatrixGroup.Base]: 'completion.groups.base',
@@ -69,10 +81,6 @@ const cellState = (cell: Cell, column: number): string => {
       : state
   return reading.online ? `${said} · ${t('marks.wonOnline')}` : said
 }
-
-// B22 item 4: two number columns, not one slot holding a pair. Each carries its own
-// denominator because each sits under its own heading.
-const columnsOf = (tally: Tally) => tallyColumns(tally)
 
 // A row's bar is the same reading its two numbers are, drawn: hard over readable, in the
 // done colour once the row is finished. It carries no figures of its own — the two columns
@@ -175,11 +183,11 @@ const followRows = (event: Event) => {
               >
             </div>
             <TallyCell
-              :column="columnsOf(group.tally).normal"
+              :column="group.columns.normal"
               class="justify-self-end pr-0.5 text-label"
             />
             <TallyCell
-              :column="columnsOf(group.tally).hard"
+              :column="group.columns.hard"
               class="justify-self-end pr-3 text-label"
             />
           </div>
@@ -243,11 +251,11 @@ const followRows = (event: Event) => {
               </TooltipContent>
             </Tooltip>
             <TallyCell
-              :column="columnsOf(entry.tally).normal"
+              :column="entry.columns.normal"
               class="justify-self-end pr-0.5 text-label"
             />
             <TallyCell
-              :column="columnsOf(entry.tally).hard"
+              :column="entry.columns.hard"
               class="justify-self-end pr-3 text-label"
             />
           </div>
@@ -264,9 +272,9 @@ const followRows = (event: Event) => {
             >{{ t('completion.grid.columnTotals') }}</span
           >
           <TallyCell
-            v-for="(tally, b) in totals"
+            v-for="(total, b) in totals"
             :key="b"
-            :column="columnsOf(tally).normal"
+            :column="total.normal"
             class="text-micro"
           />
           <span />
@@ -280,9 +288,9 @@ const followRows = (event: Event) => {
             >{{ t('completion.grid.columnTotalsHard') }}</span
           >
           <TallyCell
-            v-for="(tally, b) in totals"
+            v-for="(total, b) in totals"
             :key="b"
-            :column="columnsOf(tally).hard"
+            :column="total.hard"
             class="text-micro"
           />
           <span />
