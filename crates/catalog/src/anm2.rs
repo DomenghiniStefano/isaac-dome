@@ -9,7 +9,7 @@
 //! Real files come in three different shapes, and this module treats them all the same
 //! way because they're the same thing seen from different angles:
 //!
-//! - `minimap_icons.anm2`: 41 one-frame animations — the animation name **is** the
+//! - `minimap_icons.anm2`: one-frame animations — the animation name **is** the
 //!   icon's name (`IconShop`, `IconDevilRoom`…);
 //! - `hudstats.anm2`: two nine-frame animations — the name lives on the animation, and
 //!   the individual piece is told apart by position;
