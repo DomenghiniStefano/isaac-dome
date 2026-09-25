@@ -1,6 +1,6 @@
 import { assertNever } from '@/lib/assertNever'
 import { createFaceting } from '@/lib/facets/faceting'
-import type { ChallengeRow } from '@/lib/ipc/types'
+import type { ChallengeRow, ChallengeStateView } from '@/lib/ipc/types'
 
 // The Challenges screen's half of a faceted list: which facets it has, how a row answers one,
 // what the search reads, what each facet offers. Matching, the counts and the active count are
@@ -14,6 +14,16 @@ export const ChallengeFacet = {
 } as const
 export type ChallengeFacet =
   (typeof ChallengeFacet)[keyof typeof ChallengeFacet]
+
+// A challenge's state, as the wire tags it. The tag is the wire's; this names its values, so a
+// label reads one back from a filter's string with `oneOf` and a table over them is exhaustive.
+export const ChallengeState = {
+  Done: 'done',
+  Available: 'available',
+  Blocked: 'blocked',
+  Unknown: 'unknown',
+} as const satisfies Record<string, ChallengeStateView['kind']>
+export type ChallengeState = ChallengeStateView['kind']
 
 const facetOrder: ChallengeFacet[] = [
   ChallengeFacet.State,
