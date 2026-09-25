@@ -52,10 +52,7 @@ fn character_from(e: &Element, portraitroot: &str, d: &mut Vec<Diagnostic>) -> O
         portrait: SpriteRef::whole(format!("{portraitroot}/{portrait}")),
         head: None,
         tainted: is_tainted_portrait(portrait),
-        unlocked_by: e
-            .attr("achievement")
-            .and_then(|a| a.parse().ok())
-            .map(AchievementId),
+        unlocked_by: xml::unlocked_by(e),
     })
 }
 

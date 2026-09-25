@@ -112,10 +112,7 @@ fn item_from(e: &Element, kind: ItemKind, gfxroot: &str, d: &mut Vec<Diagnostic>
         quality: None,
         tags: Vec::new(),
         sprite: SpriteRef::whole(format!("{gfxroot}/{}/{gfx}", kind.folder())),
-        unlocked_by: e
-            .attr("achievement")
-            .and_then(|a| a.parse().ok())
-            .map(AchievementId),
+        unlocked_by: xml::unlocked_by(e),
         pools: Vec::new(),
         origin: origin::origin_of(kind, ItemId(id)),
     })
