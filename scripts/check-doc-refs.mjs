@@ -58,6 +58,15 @@ const EXEMPTIONS = [
     path: 'ui/src/screens/plan/ProposalAside.vue',
     why: 'same: it was the recommendations drawn a second time, and the left pane is that, done once',
   },
+  // Card #82's cleanup of ui/: two files named by documents that record their history.
+  {
+    path: 'ui/src/screens/plan/QueueCard.vue',
+    why: 'moved to ui/src/screens/goals/QueueCard.vue on 2026-09-25 (card #82): the Plan route is gone and only Goals draws the queue; the 2026-09-13 drag spec names the file it was written against',
+  },
+  {
+    path: 'screens/completion/CompletionKpis.vue',
+    why: 'deleted on 2026-09-25 (card #82), imported nowhere since the Completion hero took its tiles; the backlog entry records what it was',
+  },
   {
     path: 'ui/src/lib/window/session.ts',
     why: 'became ui/src/composables/useWindowSession.ts on 2026-09-24 (card #81, V7: a module that imports a store is a composable); the 2026-09-15 tabs spec names where it was written',
