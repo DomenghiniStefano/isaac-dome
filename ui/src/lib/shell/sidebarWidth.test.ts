@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { clampSidebarWidth } from './sidebarWidth'
+import { clampSidebarWidth, shownSidebarWidth } from './sidebarWidth'
 
 describe('clampSidebarWidth', () => {
   it('raises a width below the minimum to the minimum', () => {
@@ -24,5 +24,20 @@ describe('clampSidebarWidth', () => {
 
   it('rounds to a whole pixel', () => {
     expect(clampSidebarWidth(250.6)).toBe(251)
+  })
+})
+
+describe('shownSidebarWidth', () => {
+  it('is the default while nobody has sized the sidebar', () => {
+    expect(shownSidebarWidth(null)).toBe(212)
+  })
+
+  it('is a stored width inside the bounds, as stored', () => {
+    expect(shownSidebarWidth(300)).toBe(300)
+  })
+
+  it('brings a width stored under other bounds back inside these', () => {
+    expect(shownSidebarWidth(9000)).toBe(420)
+    expect(shownSidebarWidth(10)).toBe(168)
   })
 })

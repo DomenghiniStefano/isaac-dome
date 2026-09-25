@@ -18,3 +18,9 @@ export const clampSidebarWidth = (px: number): number =>
   Number.isFinite(px)
     ? clamp(Math.round(px), SidebarWidth.Min, SidebarWidth.Max)
     : SidebarWidth.Default
+
+// The width the sidebar is drawn at, from what the app holds. `null` is "nobody ever sized it",
+// which is the default and not a stored width; anything stored goes through the clamp, so a
+// number written by an older build with other bounds comes back inside today's.
+export const shownSidebarWidth = (stored: number | null): number =>
+  stored === null ? SidebarWidth.Default : clampSidebarWidth(stored)
