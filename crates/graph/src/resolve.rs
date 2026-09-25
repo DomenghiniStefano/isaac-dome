@@ -4,7 +4,11 @@
 use std::collections::HashMap;
 
 use catalog::{BossId, Catalog, ChallengeId, CharacterId, ItemId, ItemKind, Language};
-use wiki::Target;
+// The one comparison key for names, owned by `wiki` and shared through the dependency the
+// graph already has on it: lowercased, whitespace collapsed, `&` read as `and`. The graph
+// kept a narrower one of its own (trim and lowercase) until card #82 (F4), and the only
+// alias in `corrections.json`, *Jacob and Esau* -> *Jacob & Esau*, existed to bridge the two.
+use wiki::{key, Target};
 
 use crate::model::{Requirement, ThresholdItem};
 use crate::rules::{target_key, RefRow, Rules, Verdict};
@@ -15,14 +19,6 @@ pub struct NameIndex {
     characters: HashMap<String, CharacterId>,
     bosses: HashMap<String, BossId>,
     items: HashMap<String, (ItemKind, ItemId)>,
-}
-
-/// Trimmed and lowercased, nothing more. Not `wiki::key`, which also collapses whitespace and
-/// reads `&` as `and`. Switching this one over would change which names match — *Jacob and
-/// Esau* would meet *Jacob & Esau* without the alias `corrections.json` carries for it — so it
-/// stays until that is decided on its own.
-fn key(s: &str) -> String {
-    s.trim().to_lowercase()
 }
 
 impl NameIndex {

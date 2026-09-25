@@ -98,13 +98,36 @@ fn a_boss_the_game_does_not_gate_is_judged_not_assumed() {
 
 #[test]
 fn an_alias_is_applied_before_the_lookup() {
+    // An id the catalog lacks, so the name is what resolves; and a label no normalization
+    // turns into the game's, so only the alias can.
     let c = catalog();
-    let rules = rules(r#"{"schemaVersion":2,"aliases":{"Jacob and Esau":"Jacob & Esau"}}"#);
+    let rules = rules(r#"{"schemaVersion":2,"aliases":{"The Twins":"Jacob & Esau"}}"#);
     assert_eq!(
         requirement(
             &c,
             &rules,
-            &row(Target::Character { id: 19 }, "Jacob and Esau"),
+            &row(Target::Character { id: 99 }, "The Twins"),
+            None
+        ),
+        Requirement::Character {
+            id: CharacterId(19)
+        }
+    );
+}
+
+/// The wiki writes "Jacob and Esau", the game "Jacob &amp; Esau". Names are compared by
+/// `wiki::key` — lowercased, whitespace collapsed, `&` read as `and` — the same key the wiki
+/// crate matches its own links with, so the two spellings meet without an alias (card #82,
+/// review F4). Id 99 is one the catalog lacks: the name is what resolves here.
+#[test]
+fn a_name_meets_the_games_spelling_across_ampersand_and_spacing() {
+    let c = catalog();
+    let rules = rules(r#"{"schemaVersion":2}"#);
+    assert_eq!(
+        requirement(
+            &c,
+            &rules,
+            &row(Target::Character { id: 99 }, "Jacob  and Esau"),
             None
         ),
         Requirement::Character {
