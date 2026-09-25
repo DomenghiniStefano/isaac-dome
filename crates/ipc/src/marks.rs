@@ -171,7 +171,7 @@ pub fn counter_index(character: usize, boss: usize) -> Option<usize> {
 /// Two levels and not three: bit 2 is not one of them. It says where a mark was taken,
 /// which is why it travels beside this enum and not inside it.
 ///
-/// Not to be confused with `graph::MarkLevelView`, which names the same two bits `base`
+/// Not to be confused with `graph::rules::MarkLevel` (`MarkLevelView` on the wire), which names the same two bits `base`
 /// and `second`. That one describes a *target* — "go and take this cell at this level" —
 /// and refuses `hard` on purpose, because what bit 1 means outside Greed is unmeasured.
 /// Here the matrix is being drawn and `normal`/`hard` is the vocabulary its own totals

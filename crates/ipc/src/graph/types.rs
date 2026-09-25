@@ -120,14 +120,9 @@ pub struct ThresholdItemView {
 /// `MarkColumn` is the same type, so a requirement's column crosses as it is.
 pub use core_save::Column as MarkColumnView;
 
-/// A level inside a cell, named for its bit. `Second` is Ultra Greedier in the Greed
-/// column, measured; what it means elsewhere is not, and `hard` would ship that claim.
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, ts_rs::TS)]
-#[serde(rename_all = "camelCase")]
-pub enum MarkLevelView {
-    Base,
-    Second,
-}
+/// A level inside a cell, named for its bit: the graph's own `MarkLevel`, so a requirement's
+/// level crosses as it is, like its column.
+pub use graph::rules::MarkLevel as MarkLevelView;
 
 /// One rule for the enums on this boundary: those whose variants carry different data are
 /// tagged on `kind`; those with no fields travel as a bare string. `UnlockTarget::Item`
