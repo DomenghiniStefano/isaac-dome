@@ -47,7 +47,7 @@ pub fn watch(log: &Path, on_change: impl Fn() + Send + 'static) -> Result<LogWat
         .map_err(watch_error)?;
 
     std::thread::spawn(move || {
-        // When to act is `run::Throttle`'s to say (card #80, item 02): at once on a change,
+        // When to act is `run::Throttle`'s to say: at once on a change,
         // and a change inside the quiet period kept for when it ends — never dropped.
         let mut throttle = Throttle::new(DEBOUNCE);
         loop {
