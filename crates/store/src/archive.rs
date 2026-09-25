@@ -370,7 +370,7 @@ impl Store {
     }
 
     /// The cached runs of the launch the watcher follows — the latest `log.txt` — under
-    /// `rules_version`, and no other source's (card #80, R10). What Live reads on every line the
+    /// `rules_version`, and no other source's. What Live reads on every line the
     /// watcher reports: the whole archive would be every session ever played, read to keep one
     /// run. `None` when there is no launch, or when these rules have not folded it.
     pub fn live_runs(&self, rules_version: u32) -> Result<Option<Vec<Run>>, StoreError> {
@@ -380,21 +380,26 @@ impl Store {
         }
     }
 
-    /// Every source's cached runs under `rules_version`, named, oldest source first (card #81,
-    /// V1: this was the body of the `runs` command). A source nobody folded under these rules
-    /// contributes no row — `stale_sources` names it, and the archive folds it again at the next
-    /// launch, since a session's log is never read twice — and an empty
-    /// fold contributes a row with no run in it, which adds nothing to any total.
+    /// Every source's cached runs under `rules_version`, named, oldest source first. A source
+    /// nobody folded under these rules contributes no row — `stale_sources` names it, and the
+    /// archive folds it again at the next launch, since a session's log is never read twice —
+    /// and an empty fold contributes a row with no run in it, which adds nothing to any total.
+    /// A cache that cannot be read is counted in `unreadable` and costs no other source.
     pub fn archived_runs(&self, rules_version: u32) -> Result<ArchivedRuns, StoreError> {
-        let mut archived = ArchivedRuns::default();
-        for row in self.sources()? {
-            match self.cached_runs(row.id, rules_version) {
-                Ok(Some(runs)) => archived.sources.push((row.run_source(), runs)),
-                Ok(None) => {}
-                Err(_) => archived.unreadable += 1,
-            }
-        }
-        Ok(archived)
+        let cached: Vec<_> = self
+            .sources()?
+            .into_iter()
+            .map(|row| (row.run_source(), self.cached_runs(row.id, rules_version)))
+            .collect();
+        let unreadable = cached.iter().filter(|(_, runs)| runs.is_err()).count() as u32;
+        let sources = cached
+            .into_iter()
+            .filter_map(|(source, runs)| Some((source, runs.ok()??)))
+            .collect();
+        Ok(ArchivedRuns {
+            sources,
+            unreadable,
+        })
     }
 
     fn insert_source(

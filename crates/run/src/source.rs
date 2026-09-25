@@ -68,16 +68,13 @@ pub enum Resume {
 ///
 /// `DefaultHasher` is explicitly not stable across Rust releases, and a key that changed with
 /// the toolchain would make every source look new after an upgrade — which re-imports the whole
-/// archive. This is eleven lines and the same number forever.
+/// archive. This is a few lines and the same number forever.
 pub fn fingerprint(bytes: &[u8]) -> u64 {
     const OFFSET_BASIS: u64 = 0xcbf2_9ce4_8422_2325;
     const PRIME: u64 = 0x0000_0100_0000_01b3;
-    let mut hash = OFFSET_BASIS;
-    for b in bytes {
-        hash ^= *b as u64;
-        hash = hash.wrapping_mul(PRIME);
-    }
-    hash
+    bytes.iter().fold(OFFSET_BASIS, |hash, b| {
+        (hash ^ *b as u64).wrapping_mul(PRIME)
+    })
 }
 
 /// The decision. Three ways to be a new file and one way to be the old one.

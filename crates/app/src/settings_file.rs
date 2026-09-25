@@ -1,7 +1,7 @@
 //! The settings file, `settings.json` in the config folder: the `ipc::Settings` the screens read
 //! and write — the active profile, the scale, the switches — plus the two folders chosen by hand,
 //! which never cross the IPC. A missing or unreadable file is read as the defaults; a malformed
-//! one is read as the defaults too and set aside before the next write (card #80, P2) — never a
+//! one is read as the defaults too and set aside before the next write — never a
 //! fatal error, never a silent overwrite of the user's file.
 
 use discovery::Options;
@@ -41,9 +41,9 @@ fn settings_path(app: &AppHandle) -> Result<PathBuf, IpcError> {
 pub struct Stored {
     #[serde(flatten)]
     pub settings: Settings,
-    /// Chosen by hand when discovery could not find the game (B14).
+    /// Chosen by hand when discovery could not find the game.
     pub game_dir: Option<PathBuf>,
-    /// Chosen by hand when discovery could not find the saves (B14).
+    /// Chosen by hand when discovery could not find the saves.
     pub save_dir: Option<PathBuf>,
 }
 
@@ -55,7 +55,7 @@ fn read_stored(app: &AppHandle) -> Stored {
 }
 
 /// What is on disk, told apart: a file that does not parse is **not** the same as no file,
-/// because writing over it would lose the folders it holds (card #80, P2).
+/// because writing over it would lose the folders it holds.
 enum FileRead {
     Absent,
     Parsed(Stored),
@@ -129,9 +129,9 @@ fn write(app: &AppHandle, stored: &Stored) -> Result<(), IpcError> {
     }
     let body =
         serde_json::to_string_pretty(stored).map_err(|_| not_writable(SettingsReason::Encoding))?;
-    // A file that does not parse is put aside before anything is written, never written over
-    // (card #80, P2): it may hold the folders chosen by hand, and "never a silent overwrite of
-    // the user's file" is this module's promise. Named by the second it was set aside, so a
+    // A file that does not parse is put aside before anything is written, never written over:
+    // it may hold the folders chosen by hand, and "never a silent overwrite of the user's file"
+    // is this module's promise. Named by the second it was set aside, so a
     // second bad file does not replace the first.
     if matches!(read_file(app), FileRead::Malformed) {
         let unix = crate::clock::now_unix();

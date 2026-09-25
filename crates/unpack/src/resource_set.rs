@@ -47,7 +47,7 @@ pub enum ArchiveFault {
     Io { kind: std::io::ErrorKind },
 }
 
-/// An archive the install has and that did not open (card #80, R6).
+/// An archive the install has and that did not open.
 #[derive(Debug, Clone)]
 pub struct BrokenArchive {
     pub name: String,
@@ -57,8 +57,20 @@ pub struct BrokenArchive {
 /// An installation's archives, queryable by logical path.
 pub struct ResourceSet {
     archives: Vec<(String, Archive)>,
+    /// What `archives` holds, as `archives()` hands it out: a slice needs somewhere to live.
     info: Vec<ArchiveInfo>,
     broken: Vec<BrokenArchive>,
+}
+
+/// Why an archive that is there did not open; `None` when it is not there — an edition that
+/// does not ship it, which is normal.
+fn fault(e: OpenError) -> Option<ArchiveFault> {
+    match e {
+        OpenError::Io(e) if e.kind() == std::io::ErrorKind::NotFound => None,
+        OpenError::Io(e) => Some(ArchiveFault::Io { kind: e.kind() }),
+        OpenError::TooShort => Some(ArchiveFault::TooShort),
+        OpenError::BadMagic { .. } => Some(ArchiveFault::BadMagic),
+    }
 }
 
 impl ResourceSet {
@@ -68,31 +80,27 @@ impl ResourceSet {
     /// absence is normal (different editions of the game have a different subset); one that
     /// is there and does not open is kept in `broken()`, never skipped in silence.
     pub fn open(packed_dir: &Path) -> ResourceSet {
-        let mut archives = Vec::new();
-        let mut info = Vec::new();
-        let mut broken = Vec::new();
-        for name in PRECEDENCE {
-            let fault = match Archive::open(&packed_dir.join(name)) {
-                Ok(a) => {
-                    info.push(ArchiveInfo {
+        let (archives, broken) = PRECEDENCE.iter().fold(
+            (Vec::new(), Vec::new()),
+            |(mut archives, mut broken), name| {
+                match Archive::open(&packed_dir.join(name)) {
+                    Ok(a) => archives.push((name.to_string(), a)),
+                    Err(e) => broken.extend(fault(e).map(|fault| BrokenArchive {
                         name: name.to_string(),
-                        mode: a.mode(),
-                        entries: a.entries().len(),
-                    });
-                    archives.push((name.to_string(), a));
-                    continue;
+                        fault,
+                    })),
                 }
-                // Not there: an edition that does not ship it, which is normal.
-                Err(OpenError::Io(e)) if e.kind() == std::io::ErrorKind::NotFound => continue,
-                Err(OpenError::Io(e)) => ArchiveFault::Io { kind: e.kind() },
-                Err(OpenError::TooShort) => ArchiveFault::TooShort,
-                Err(OpenError::BadMagic { .. }) => ArchiveFault::BadMagic,
-            };
-            broken.push(BrokenArchive {
-                name: name.to_string(),
-                fault,
-            });
-        }
+                (archives, broken)
+            },
+        );
+        let info = archives
+            .iter()
+            .map(|(name, a)| ArchiveInfo {
+                name: name.clone(),
+                mode: a.mode(),
+                entries: a.entries().len(),
+            })
+            .collect();
         ResourceSet {
             archives,
             info,
@@ -100,7 +108,7 @@ impl ResourceSet {
         }
     }
 
-    /// The archives that are there and did not open, in precedence order (card #80, R6).
+    /// The archives that are there and did not open, in precedence order.
     pub fn broken(&self) -> &[BrokenArchive] {
         &self.broken
     }
