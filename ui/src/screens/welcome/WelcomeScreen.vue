@@ -22,9 +22,7 @@ const { t } = useMessages()
 
 // Nothing is preselected while a choice is pending: the suggestion stays a suggestion
 // (DESIGN-BRIEF.md §4.1). Changing an active profile starts on the one in use.
-const active = computed(() =>
-  profile.setup?.active.kind === 'active' ? profile.setup.active.profile : null,
-)
+const active = computed(() => profile.activeProfile?.profile ?? null)
 const selected = ref<string | undefined>(active.value?.id)
 
 const candidates = computed(() => profile.setup?.candidates ?? [])

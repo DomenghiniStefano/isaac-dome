@@ -5,6 +5,7 @@ import type { CommandArgs, CommandName } from '../transport'
 import type { IpcError, SetupState, Target } from '../types'
 import { completionMatrix } from './completion'
 import { candidates, noneSetup, setupWith, summary } from './profile'
+import { settledProfile } from '../../profile/settledProfile'
 import {
   autostartAnswer,
   resetSettingsFixture,
@@ -138,7 +139,7 @@ const updateNotReady: IpcError = { kind: 'updateNotReady' }
 
 // Every command that reads the save answers only with an active profile, as the backend does.
 const whenActive = (scenario: FixtureScenario, read: () => unknown): unknown =>
-  setupFor(scenario).active.kind === 'active'
+  settledProfile(setupFor(scenario)) !== null
     ? read()
     : Promise.reject(noActiveProfile)
 
