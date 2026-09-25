@@ -23,8 +23,8 @@ import {
 } from '@/lib/plan/queueDrop'
 import type { Anchor } from '@/lib/plan/queueDrop'
 import { queueExtras } from '@/lib/plan/queueExtras'
-import { knownText } from '@/lib/graph/achievementNode'
-import { rowId, stoppedUnder } from '@/lib/plan/queueRows'
+import { queueHint } from '@/lib/plan/queueHint'
+import { rowId } from '@/lib/plan/queueRows'
 import { rowModel } from '@/lib/plan/rowModel'
 
 import type { QueueMove } from '@/stores/queue'
@@ -118,18 +118,9 @@ const onStep = (index: number, e: KeyboardEvent) => {
   moveTo(index, stepAnchor(ids.value, index, direction))
 }
 
-// What the band says: how to drag, what a drop will do, or where the last move stopped and why.
-const hint = computed((): string => {
-  if (drag.moving.value) return t('plan.hint.dragging')
-  const last = props.lastMove
-  const wall = last
-    ? stoppedUnder(props.rows, last.achievement, last.after)
-    : null
-  if (!wall) return t('plan.hint.idle')
-  const name =
-    knownText(wall.node) ?? t('plan.achievementNumbered', { id: rowId(wall) })
-  return t('plan.hint.stoppedUnder', { name })
-})
+const hint = computed(() =>
+  queueHint(t, drag.moving.value, props.rows, props.lastMove),
+)
 </script>
 
 <template>
