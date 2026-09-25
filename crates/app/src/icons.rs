@@ -76,7 +76,9 @@ pub(crate) fn icon_bytes(app: &AppHandle, path: &str) -> tauri::http::Response<V
         | ipc::IconRef::Head { .. }
         | ipc::IconRef::Page { .. }
         | ipc::IconRef::Room { .. } => {
-            ipc::icon_source(app.state::<CatalogState>().get_or_build(rs), &reference)
+            let state = app.state::<CatalogState>();
+            let catalog = state.get_or_build(rs);
+            ipc::icon_source(catalog, state.bosses(Some(catalog)), &reference)
                 .cloned()
                 .and_then(|sprite| sprite_bytes(rs, &sprite, trim))
         }

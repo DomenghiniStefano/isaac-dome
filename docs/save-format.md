@@ -97,7 +97,8 @@ depends on the section.
 > have to agree. On `20260915` they agree on **39 of 39** judged rows — **21 of them both true
 > and 18 both false**, which is what makes the agreement a result and not an empty row of
 > zeroes — while the off-by-one reading breaks 13 of the same 39.
-> `cargo run -p ipc --example probe_challenges` is the instrument.
+> The instrument was the `probe_challenges` example of `ipc`, removed on 2026-09-25 (card #82,
+> D1) once the answer was measured; it stays in the history before that date.
 
 > **The game reads ELEVEN chunks and we parse TEN sections**, and nothing yet explains the
 > gap. Loading a profile it prints, in order: Achievements, Counters, Level Counters,

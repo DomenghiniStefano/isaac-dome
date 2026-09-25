@@ -121,23 +121,11 @@ pub enum Verdict {
     },
 }
 
-/// The twelve columns of the completion matrix, in the game's own order.
-#[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub enum MarkColumn {
-    MomsHeart,
-    Isaac,
-    Satan,
-    BossRush,
-    BlueBaby,
-    TheLamb,
-    MegaSatan,
-    Greed,
-    Hush,
-    Delirium,
-    Mother,
-    TheBeast,
-}
+/// The twelve columns of the completion matrix, in the game's own order: the layout's own
+/// enum, not a copy of it (card #82, S1). A rules file spells a column the way the layout
+/// serializes it (`"momsHeart"`), and nothing more of `core-save` is read from here — the
+/// index a cell sits at stays the business of whoever answers `Profile::mark`.
+pub use core_save::Column as MarkColumn;
 
 /// A level within a cell, **named for the bit and not for a meaning**. Bit 0 is `Base`,
 /// bit 1 is `Second`.
@@ -165,6 +153,19 @@ pub enum CounterName {
     DeliriumKills,
     MotherKills,
     BeastKills,
+}
+
+impl CounterName {
+    /// The column whose boss the tally counts the kills of. Exhaustive, so a fifth tally has
+    /// to say which boss it is about before anything can label it.
+    pub fn column(self) -> MarkColumn {
+        match self {
+            CounterName::HushKills => MarkColumn::Hush,
+            CounterName::DeliriumKills => MarkColumn::Delirium,
+            CounterName::MotherKills => MarkColumn::Mother,
+            CounterName::BeastKills => MarkColumn::TheBeast,
+        }
+    }
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]

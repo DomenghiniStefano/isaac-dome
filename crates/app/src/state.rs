@@ -22,12 +22,29 @@ use crate::settings_file;
 /// milliseconds, but building it (`Catalog::build` reads every source) doesn't. It
 /// doesn't open the `ResourceSet` itself: it receives it already open from the caller,
 /// which opens it just once.
+///
+/// Its boss keys are kept beside it (card #82, S3): settled once, from this catalog and the
+/// dataset compiled into the binary, and handed to every lookup that names a boss.
 #[derive(Default)]
-pub(crate) struct CatalogState(OnceLock<Catalog>);
+pub(crate) struct CatalogState {
+    catalog: OnceLock<Catalog>,
+    bosses: OnceLock<ipc::BossKeys>,
+}
 
 impl CatalogState {
     pub(crate) fn get_or_build(&self, rs: &ResourceSet) -> &Catalog {
-        self.0.get_or_init(|| Catalog::build(|p| rs.read(p)))
+        self.catalog.get_or_init(|| Catalog::build(|p| rs.read(p)))
+    }
+
+    /// The boss keys of the catalog this state holds, or none when there is no catalog to
+    /// key. `catalog` is the one [`catalog_now`] returned from this same state.
+    pub(crate) fn bosses(&self, catalog: Option<&Catalog>) -> &ipc::BossKeys {
+        match catalog {
+            Some(c) => self
+                .bosses
+                .get_or_init(|| ipc::boss_keys(c, wiki::Dataset::embedded().ok())),
+            None => ipc::BossKeys::NONE,
+        }
     }
 }
 

@@ -11,9 +11,9 @@ use catalog::{Catalog, Language};
 use serde::Serialize;
 use wiki::{Block, Dataset, DatasetError, Entry, Inline, SectionKind, Target};
 
+use crate::flags::recorded_done;
 use crate::icon::IconRef;
-use crate::target_sprite::{target_sprite, TargetSprite};
-use crate::wiki::boss_target;
+use crate::target_sprite::{target_sprite, BossKeys, TargetSprite};
 use crate::wiki_target;
 
 /// One page as the search reads it: the title, and the text of each section in the order the
@@ -37,37 +37,11 @@ impl SearchIndex {
                 pages: BTreeMap::new(),
             };
         };
-        let mut pages = BTreeMap::new();
-        let mut add = |target: Target, entry: &Entry| {
-            pages.insert(target, doc(entry));
-        };
-        for (id, e) in &ds.items {
-            add(Target::Item { id: *id }, e);
-        }
-        for (id, e) in &ds.trinkets {
-            add(Target::Trinket { id: *id }, e);
-        }
-        for (id, e) in &ds.achievements {
-            add(Target::Achievement { id: *id }, e);
-        }
-        for (key, e) in &ds.bosses {
-            if let Some(t) = boss_target(key) {
-                add(t, e);
-            }
-        }
-        for (n, e) in &ds.challenges {
-            add(Target::Challenge { number: *n }, e);
-        }
-        for (id, e) in &ds.characters {
-            add(Target::Character { id: *id }, e);
-        }
-        // B46: the sixteen transformations are pages like the others. Indexed here as well
-        // as in `wiki_index`, because a page that exists and cannot be found reads exactly
-        // like a page that does not exist — which is how this was found, by typing a name
-        // into the app and getting nothing.
-        for (id, e) in &ds.transformations {
-            add(Target::Transformation { id: *id }, e);
-        }
+        // Every page the index lists, from the same walk (`crate::wiki::pages`): B46 was the
+        // transformations missing from one of two hand-written lists.
+        let pages = crate::wiki::pages(ds)
+            .map(|(target, entry)| (target, doc(entry)))
+            .collect();
         SearchIndex {
             loaded: true,
             pages,
@@ -137,7 +111,11 @@ pub struct Doc {
 
 /// Every document, keyed by target so the order is the kind's and then the id's, and a target
 /// the two sides share is one row.
-pub(crate) fn documents(index: &SearchIndex, catalog: Option<&Catalog>) -> BTreeMap<Target, Doc> {
+pub(crate) fn documents(
+    index: &SearchIndex,
+    catalog: Option<&Catalog>,
+    bosses: &BossKeys,
+) -> BTreeMap<Target, Doc> {
     let mut docs: BTreeMap<Target, Doc> = index
         .pages
         .iter()
@@ -194,7 +172,7 @@ pub(crate) fn documents(index: &SearchIndex, catalog: Option<&Catalog>) -> BTree
     for b in c.bosses() {
         // The key is whatever `boss_keys` settles for the row — its page's, or the one its
         // portrait's file name declares. A row left without one names no target and is out.
-        if let Some(target) = wiki_target::boss(c, b) {
+        if let Some(target) = wiki_target::boss(bosses, b) {
             join(target, b.name.clone(), None);
         }
     }
@@ -218,7 +196,7 @@ pub(crate) fn progress(target: &Target, flags: Option<SaveFlags<'_>>) -> Progres
     let mark = |slots: Option<&[bool]>, id: u32| match slots {
         None => ProgressMark::Unknown,
         Some(f) => {
-            if f.get(id as usize).copied().unwrap_or(false) {
+            if recorded_done(f, id) {
                 ProgressMark::Done
             } else {
                 ProgressMark::Pending
@@ -499,6 +477,7 @@ fn best_field(
 pub fn search(
     index: &SearchIndex,
     catalog: Option<&Catalog>,
+    bosses: &BossKeys,
     flags: Option<SaveFlags<'_>>,
     query: &str,
     limit: usize,
@@ -514,7 +493,7 @@ pub fn search(
         };
     }
     let folded_query = fold(query.trim());
-    let docs = documents(index, catalog);
+    let docs = documents(index, catalog, bosses);
     let mut ranked: Vec<(u8, u8, String, Target, Doc, SearchMatch, ProgressMark)> = docs
         .into_iter()
         .filter_map(|(target, doc)| {
@@ -539,7 +518,7 @@ pub fn search(
     let hits = ranked
         .into_iter()
         .map(|(_, _, _, target, doc, matched, progress)| SearchHit {
-            icon_url: catalog.and_then(|c| match target_sprite(c, &target) {
+            icon_url: catalog.and_then(|c| match target_sprite(c, bosses, &target) {
                 TargetSprite::Found(_) => icon(&IconRef::Page {
                     target: target.clone(),
                 }),

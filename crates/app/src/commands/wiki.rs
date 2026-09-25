@@ -34,6 +34,7 @@ pub fn wiki_index(
     Ok(ipc::wiki_index(
         wiki::Dataset::embedded(),
         catalog,
+        state.bosses(catalog),
         game_updated_unix,
         icon_url,
     ))
@@ -62,6 +63,7 @@ pub fn search(
     Ok(ipc::search(
         index.get(),
         catalog,
+        state.bosses(catalog),
         flags,
         &query,
         limit,

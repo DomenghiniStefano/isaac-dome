@@ -8,7 +8,9 @@ use catalog::Catalog;
 use serde::Serialize;
 use wiki::{Dataset, Infobox, Inline, Target};
 
+use crate::flags::{recorded, recorded_done};
 use crate::icon::IconRef;
+use crate::wiki_target::page_of;
 
 #[derive(Debug, Clone, Serialize, ts_rs::TS)]
 #[serde(rename_all = "camelCase")]
@@ -133,21 +135,15 @@ pub fn challenges_view(
     let mut listed: Vec<_> = c.challenges().collect();
     listed.sort_by_key(|ch| ch.id.0);
 
-    let page_of = |t: Target| dataset.and_then(|d| d.entry(&t).map(|_| t));
-
     let rows: Vec<ChallengeRow> = listed
         .iter()
         .map(|ch| {
             let number = ch.id.0;
-            let finished = challenges.and_then(|f| f.get(number as usize).copied());
+            let finished = recorded(challenges, number);
             let missing: Vec<u32> = ch
                 .unlocked_by
                 .iter()
-                .filter(|a| {
-                    !achievements
-                        .and_then(|f| f.get(a.0 as usize).copied())
-                        .unwrap_or(false)
-                })
+                .filter(|a| !achievements.is_some_and(|f| recorded_done(f, a.0)))
                 .map(|a| a.0)
                 .collect();
             let state = match finished {
@@ -157,23 +153,10 @@ pub fn challenges_view(
                 Some(false) => ChallengeStateView::Blocked { missing },
             };
 
-            // `if let` and not a `match` with a `_` arm: this reads one variant of an open
-            // catalogue of infoboxes, it does not claim to enumerate them.
-            let entry = dataset.and_then(|d| d.entry(&Target::Challenge { number }));
-            let mut character = None;
-            let mut goal = None;
-            let mut blindfolded = None;
-            if let Some(Infobox::Challenge {
-                character: ch_character,
-                goal: ch_goal,
-                blindfolded: ch_blindfolded,
-                ..
-            }) = entry.map(|e| &e.infobox)
-            {
-                character = ch_character.clone();
-                goal = Some(ch_goal.clone());
-                blindfolded = Some(*ch_blindfolded);
-            }
+            let facts = challenge_facts(dataset, number);
+            let character = facts.as_ref().and_then(|f| f.character.clone());
+            let goal = facts.as_ref().map(|f| f.goal.clone());
+            let blindfolded = facts.as_ref().map(|f| f.blindfolded);
 
             let character_name = character
                 .as_ref()
@@ -191,15 +174,15 @@ pub fn challenges_view(
                         achievement: a.0,
                         text: c.achievement(*a).map(|x| x.text.clone()),
                         icon_url: icon(&IconRef::Achievement { id: a.0 }),
-                        page: page_of(Target::Achievement { id: a.0 }),
-                        done: achievements.and_then(|f| f.get(a.0 as usize).copied()),
+                        page: page_of(dataset, Target::Achievement { id: a.0 }),
+                        done: recorded(achievements, a.0),
                     })
                     .collect(),
                 character,
                 character_name,
                 goal,
                 blindfolded,
-                page: page_of(Target::Challenge { number }),
+                page: page_of(dataset, Target::Challenge { number }),
             }
         })
         .collect();
@@ -217,4 +200,33 @@ pub fn challenges_view(
         challenges: rows,
         diagnostics,
     }
+}
+
+/// What the wiki's challenge infobox says about one challenge.
+struct ChallengeFacts {
+    character: Option<Target>,
+    goal: Vec<Inline>,
+    blindfolded: bool,
+}
+
+/// The challenge's own infobox, when the dataset has the page and the page has one.
+///
+/// `let … else` and not a `match` with a `_` arm: this reads one variant of an open
+/// catalogue of infoboxes, it does not claim to enumerate them.
+fn challenge_facts(dataset: Option<&Dataset>, number: u32) -> Option<ChallengeFacts> {
+    let entry = dataset?.entry(&Target::Challenge { number })?;
+    let Infobox::Challenge {
+        character,
+        goal,
+        blindfolded,
+        ..
+    } = &entry.infobox
+    else {
+        return None;
+    };
+    Some(ChallengeFacts {
+        character: character.clone(),
+        goal: goal.clone(),
+        blindfolded: *blindfolded,
+    })
 }

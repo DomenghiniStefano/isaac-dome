@@ -2,7 +2,7 @@
 //!
 //! Run: `cargo run -q -p core-save --example row_marks -- <row> <before.dat> <after.dat>`
 
-use core_save::marks::{cell_index, Column};
+use core_save::{cell_index, Column};
 use core_save::{Kind, Save};
 
 fn cells(p: &str) -> Vec<u32> {

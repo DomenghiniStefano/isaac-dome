@@ -37,7 +37,11 @@ fn every_mapped_kind_crops_a_real_icon() {
     let rs = unpack::ResourceSet::open(&dir);
     let catalog = catalog::Catalog::build(|p| rs.read(p));
     for kind in KINDS {
-        let sprite = icon_source(&catalog, &IconRef::Room { kind });
+        let sprite = icon_source(
+            &catalog,
+            &ipc::for_tests::bosses(&catalog),
+            &IconRef::Room { kind },
+        );
         if BARE.contains(&kind) {
             assert!(sprite.is_none(), "{kind:?}: the game has no icon for it");
             continue;
@@ -74,7 +78,11 @@ fn a_room_icon_is_served_with_no_transparent_margin_around_it() {
     // on 2026-09-20, all twelve are smaller than their square.
     let mut trimmed_smaller = 0;
     for kind in KINDS {
-        let Some(sprite) = icon_source(&catalog, &IconRef::Room { kind }) else {
+        let Some(sprite) = icon_source(
+            &catalog,
+            &ipc::for_tests::bosses(&catalog),
+            &IconRef::Room { kind },
+        ) else {
             continue;
         };
         let sheet = rs.read(&sprite.path).expect("the sheet is in the archives");
@@ -118,7 +126,11 @@ fn no_two_kinds_crop_the_same_piece_of_the_sheet() {
     let catalog = catalog::Catalog::build(|p| rs.read(p));
     let mut seen: Vec<(String, Option<catalog::Rect>)> = Vec::new();
     for kind in KINDS {
-        if let Some(sprite) = icon_source(&catalog, &IconRef::Room { kind }) {
+        if let Some(sprite) = icon_source(
+            &catalog,
+            &ipc::for_tests::bosses(&catalog),
+            &IconRef::Room { kind },
+        ) {
             let key = (sprite.path.clone(), sprite.rect);
             assert!(!seen.contains(&key), "{kind:?}: already taken");
             seen.push(key);

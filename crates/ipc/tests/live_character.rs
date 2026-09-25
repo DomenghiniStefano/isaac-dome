@@ -51,9 +51,9 @@ fn a_name_nobody_answers_to_is_nobody() {
 #[test]
 fn the_matrix_rows_are_the_rows_of_the_characters_asked_for() {
     let c = catalog();
-    let tainted_isaac = ipc::CHARACTER_KEYS
+    let tainted_isaac = ipc::ROSTER
         .iter()
-        .position(|&(key, tainted)| key == "ISAAC" && tainted)
+        .position(|r| r.key == "ISAAC" && r.tainted)
         .expect("Tainted Isaac has a row");
     assert_eq!(ipc::live_mark_rows(&c, &[0]), vec![0]);
     assert_eq!(ipc::live_mark_rows(&c, &[0, 21]), vec![0, tainted_isaac]);
