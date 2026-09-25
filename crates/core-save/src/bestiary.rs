@@ -9,6 +9,9 @@
 //! file gives them. Telling them apart needs a matched window against a live game, which
 //! is recorded as open work; a name invented in the meantime would be the same mistake
 //! that had section 6 reporting bosses as cards.
+//!
+//! No screen reads it: it is kept for the measuring examples (`bestiary_diff`,
+//! `matched_window`), the instruments that will tell the blocks apart.
 
 use serde::Serialize;
 
