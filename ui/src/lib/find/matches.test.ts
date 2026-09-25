@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { Direction, findMatches, stepMatch } from './matches'
+import { FindDirection, findMatches, stepMatch } from './matches'
 
 const rows = [
   { key: 'a', text: "Mom's Heart" },
@@ -70,32 +70,32 @@ describe('findMatches', () => {
 describe('stepMatch', () => {
   it('walks forward, which is what Enter asks for', () => {
     const state = findMatches(rows, 'heart', null)
-    expect(stepMatch(state, Direction.Next).current).toBe('d')
+    expect(stepMatch(state, FindDirection.Next).current).toBe('d')
   })
 
   it('wraps from the last match to the first, because the entry says the last wraps', () => {
     const state = findMatches(rows, 'heart', 'd')
-    expect(stepMatch(state, Direction.Next).current).toBe('a')
+    expect(stepMatch(state, FindDirection.Next).current).toBe('a')
   })
 
   it('walks backwards, which is what Shift+Enter asks for', () => {
     const state = findMatches(rows, 'heart', 'd')
-    expect(stepMatch(state, Direction.Previous).current).toBe('a')
+    expect(stepMatch(state, FindDirection.Previous).current).toBe('a')
   })
 
   it('wraps from the first match back to the last', () => {
     const state = findMatches(rows, 'heart', 'a')
-    expect(stepMatch(state, Direction.Previous).current).toBe('d')
+    expect(stepMatch(state, FindDirection.Previous).current).toBe('d')
   })
 
   it('moves the position with the current row', () => {
     const state = findMatches(rows, 'heart', 'a')
-    expect(stepMatch(state, Direction.Next).position).toBe(2)
+    expect(stepMatch(state, FindDirection.Next).position).toBe(2)
   })
 
   it('stays empty when there is nothing to step through', () => {
     const state = findMatches(rows, 'zzz', null)
-    expect(stepMatch(state, Direction.Next).current).toBeNull()
-    expect(stepMatch(state, Direction.Previous).position).toBe(0)
+    expect(stepMatch(state, FindDirection.Next).current).toBeNull()
+    expect(stepMatch(state, FindDirection.Previous).position).toBe(0)
   })
 })

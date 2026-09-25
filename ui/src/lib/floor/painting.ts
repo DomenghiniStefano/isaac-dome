@@ -1,3 +1,4 @@
+import { range } from 'lodash-es'
 import type { RoomKindView } from '@/lib/ipc/types'
 
 // The grid the game uses: 13 wide, 13 tall, a cell's index is y * WIDTH + x. The start room
@@ -18,19 +19,23 @@ export const xy = (cell: number): { x: number; y: number } => ({
 })
 
 /** The four ways the drawing can be nudged, under the grid. */
-export const Direction = {
+export const ShiftDirection = {
   Left: 'left',
   Up: 'up',
   Down: 'down',
   Right: 'right',
 } as const
-export type Direction = (typeof Direction)[keyof typeof Direction]
+export type ShiftDirection =
+  (typeof ShiftDirection)[keyof typeof ShiftDirection]
 
-const step: Record<Direction, { x: number; y: number }> = {
-  [Direction.Left]: { x: -1, y: 0 },
-  [Direction.Up]: { x: 0, y: -1 },
-  [Direction.Down]: { x: 0, y: 1 },
-  [Direction.Right]: { x: 1, y: 0 },
+const onGrid = ({ x, y }: { x: number; y: number }): boolean =>
+  x >= 0 && x < WIDTH && y >= 0 && y < HEIGHT
+
+const step: Record<ShiftDirection, { x: number; y: number }> = {
+  [ShiftDirection.Left]: { x: -1, y: 0 },
+  [ShiftDirection.Up]: { x: 0, y: -1 },
+  [ShiftDirection.Down]: { x: 0, y: 1 },
+  [ShiftDirection.Right]: { x: 1, y: 0 },
 }
 
 /**
@@ -49,19 +54,20 @@ const step: Record<Direction, { x: number; y: number }> = {
  */
 export const shift = (
   cells: PaintedCells,
-  direction: Direction,
+  direction: ShiftDirection,
 ): PaintedCells | null => {
   const by = step[direction]
-  const next = emptyCells()
-  for (let cell = 0; cell < CELLS; cell += 1) {
+  const moved = range(CELLS).flatMap((cell) => {
     const kind = cells[cell]
-    if (kind === null || kind === undefined) continue
+    if (kind === null || kind === undefined) return []
     const { x, y } = xy(cell)
-    const to = { x: x + by.x, y: y + by.y }
-    if (to.x < 0 || to.x >= WIDTH || to.y < 0 || to.y >= HEIGHT) return null
-    next[to.y * WIDTH + to.x] = kind
-  }
-  return next
+    return [{ kind, to: { x: x + by.x, y: y + by.y } }]
+  })
+  if (!moved.every(({ to }) => onGrid(to))) return null
+  const landed = new Map(
+    moved.map(({ kind, to }) => [to.y * WIDTH + to.x, kind] as const),
+  )
+  return emptyCells().map((_, cell) => landed.get(cell) ?? null)
 }
 
 // A stroke is the cells the pointer crossed, in order and with repeats; a null brush erases.
@@ -71,10 +77,10 @@ export const paintStroke = (
   stroke: number[],
   brush: RoomKindView | null,
 ): PaintedCells => {
-  const next = [...cells]
-  for (const cell of stroke) {
-    if (!Number.isInteger(cell) || cell < 0 || cell >= CELLS) continue
-    next[cell] = brush
-  }
-  return next
+  const crossed = new Set(
+    stroke.filter(
+      (cell) => Number.isInteger(cell) && cell >= 0 && cell < CELLS,
+    ),
+  )
+  return cells.map((kind, cell) => (crossed.has(cell) ? brush : kind))
 }

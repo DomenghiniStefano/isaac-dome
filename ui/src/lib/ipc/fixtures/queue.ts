@@ -1,4 +1,5 @@
 import { assertNever } from '../../assertNever'
+import { knownId } from '../../graph/achievementNode'
 import type {
   IpcError,
   QueueDiagnostic,
@@ -70,9 +71,10 @@ const pending = (scenario: QueueScenario): number =>
 
 const byId = (nodes: UnlockNode[]): Map<number, UnlockNode> =>
   new Map(
-    nodes.flatMap((n) =>
-      n.achievement.kind === 'known' ? [[n.achievement.id, n] as const] : [],
-    ),
+    nodes.flatMap((n) => {
+      const id = knownId(n)
+      return id === null ? [] : [[id, n] as const]
+    }),
   )
 
 // A row requires another when a character it's missing is one the other unlocks: 55 (beat

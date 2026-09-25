@@ -1,11 +1,8 @@
-import type { MessageKey } from '@/i18n/messageKey'
+import type { Message } from '@/i18n/message'
 import { assertNever } from '@/lib/assertNever'
-import type { MessageSchema } from '@/i18n/messages/it'
 import { SectionKind } from '@/lib/ipc/types'
 import type { Target } from '@/lib/ipc/types'
 import { WikiCategory } from '@/router/routeTable'
-
-type Message = MessageKey<MessageSchema>
 
 // A section's name for the reader (Schermate.dc.html, SEC_LABEL). A record over the whole
 // set: a kind with no name fails to compile.

@@ -1,3 +1,4 @@
+import type { Message } from '@/i18n/message'
 import type { Component } from 'vue'
 import {
   ActivityIcon,
@@ -23,8 +24,6 @@ import {
 } from '@lucide/vue'
 import { TabOrigin } from '@/lib/shell/tabs'
 import { tabOriginIcon } from '@/lib/shell/tabOriginIcon'
-import type { MessageKey } from '@/i18n/messageKey'
-import type { MessageSchema } from '@/i18n/messages/it'
 
 // Everything a location needs to be named, drawn and placed, with no screen component in
 // sight: tab labels and the sidebar are built and tested from this alone.
@@ -75,8 +74,6 @@ export interface TabLocation {
     want?: string
   }
 }
-
-type Message = MessageKey<MessageSchema>
 
 export const defaultLocation: TabLocation = { name: RouteName.Completion }
 
@@ -156,11 +153,6 @@ export const routeIcon: Record<RouteName, Component> = {
   [RouteName.Background]: MonitorDotIcon,
   [RouteName.TabsSettings]: AppWindowIcon,
   [RouteName.Updates]: RefreshCwIcon,
-}
-
-// Which sub-project brings a screen that is still a placeholder; absent once it's real.
-export const routeArrives: Partial<Record<RouteName, Message>> = {
-  [RouteName.TabsSettings]: 'placeholder.tabs',
 }
 
 export const wikiCategoryTitle: Record<WikiCategory, Message> = {

@@ -1,6 +1,9 @@
 {
   "title": "The Family Man",
   "revid": 253308,
+  "description": [],
+  "dlc": [],
+  "unlockedBy": null,
   "infobox": {
     "kind": "challenge",
     "blindfolded": true,
@@ -79,13 +82,10 @@
         "style": "plain"
       }
     ],
+    "character": null,
     "unlocks": {
       "kind": "item",
       "id": 168
-    },
-    "unlockedBy": {
-      "kind": "achievement",
-      "id": 165
     }
   },
   "sections": [

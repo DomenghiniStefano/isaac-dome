@@ -3,6 +3,7 @@ import {
   Axis,
   DragThreshold,
   boxAt,
+  boxOf,
   crossedThreshold,
   ghostOrigin,
   grabOffset,
@@ -86,5 +87,22 @@ describe('the ghost keeps the grab where the finger put it', () => {
   it('puts the box back under the pointer at that offset', () => {
     const offset = { x: 60, y: 15 }
     expect(ghostOrigin(offset, { x: 500, y: 300 })).toEqual({ x: 440, y: 285 })
+  })
+})
+
+describe('boxOf', () => {
+  it('keeps the four numbers a hit test reads, and nothing else of the rectangle', () => {
+    // What `getBoundingClientRect()` hands over: the box plus its derived edges.
+    const rect = {
+      x: 10,
+      y: 20,
+      left: 10,
+      top: 20,
+      width: 30,
+      height: 40,
+      right: 40,
+      bottom: 60,
+    }
+    expect(boxOf(rect)).toStrictEqual(box(10, 20, 30, 40))
   })
 })

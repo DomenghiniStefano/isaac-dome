@@ -71,8 +71,6 @@ export const createFaceting = <Row, Facet extends string>(
     facets.every((facet) => matchesFacet(row, facet, filter.picks[facet]))
 
   return {
-    // Built fresh each call: one shared object would carry a screen's picks into the next
-    // list opened on the same engine.
     empty: () => emptyFilter(spec.order),
 
     matches: (row, filter) => matchesFacets(row, filter, spec.order),

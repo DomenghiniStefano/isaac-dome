@@ -49,4 +49,39 @@ describe('searchFrom', () => {
     await state.run('br')
     expect(state.view.value).toBeNull()
   })
+
+  // The same guard as an answer: a failure that arrives after a newer question was answered
+  // speaks for a question nobody is asking any more.
+  it('a failure to an older question leaves the newer answer standing', async () => {
+    let fail: (e: Error) => void = () => {}
+    const pending = new Promise<SearchView>((_, reject) => {
+      fail = reject
+    })
+    const call = vi
+      .fn()
+      .mockImplementationOnce(() => pending)
+      .mockImplementationOnce(() => Promise.resolve(view('br')))
+    const state = searchFrom(call, 10)
+    const slow = state.run('b')
+    await state.run('br')
+    fail(new Error('down'))
+    await slow
+    expect(state.view.value?.query).toBe('br')
+  })
+
+  // The screen calls `run` from a debounce and never catches: a failed search is an empty
+  // answer, not a rejection that surfaces as an unhandled error.
+  it('a failed search settles instead of throwing', async () => {
+    const call = vi.fn(() => Promise.reject(new Error('down')))
+    const state = searchFrom(call, 10)
+    await expect(state.run('b')).resolves.toBeUndefined()
+    expect(state.view.value).toBeNull()
+  })
+
+  it('asks with the limit it was made with', async () => {
+    const call = vi.fn(() => Promise.resolve(view('b')))
+    const state = searchFrom(call, 7)
+    await state.run('b')
+    expect(call).toHaveBeenCalledWith('b', 7)
+  })
 })

@@ -1,10 +1,9 @@
-import type { MessageKey } from '@/i18n/messageKey'
-import type { MessageSchema } from '@/i18n/messages/it'
+import type { Message } from '@/i18n/message'
 import { TargetKind } from '@/lib/ipc/values'
 
 // What a node unlocks, in words. A record over the whole set: a kind with no words fails to
 // compile.
-export const unlockKindText: Record<TargetKind, MessageKey<MessageSchema>> = {
+export const unlockKindText: Record<TargetKind, Message> = {
   [TargetKind.Passive]: 'graph.kinds.passive',
   [TargetKind.Active]: 'graph.kinds.active',
   [TargetKind.Familiar]: 'graph.kinds.familiar',

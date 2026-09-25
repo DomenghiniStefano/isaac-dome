@@ -55,7 +55,7 @@ ui/
     lib/
       ipc/         typed wrappers around Tauri commands — the only place with invoke()
         transport.ts  call(): invoke() in Tauri, the fixtures under `pnpm ui:dev`
-        errors.ts     isIpcError, shared by the stores
+        errors.ts     isIpcError (the contract's kinds only) and asIpcError, shared by the stores
         fixtures/     development answers, one scenario per `?fixture=`; `art.ts` and
                       `graphArt.ts` glob the pack's sprites, which since 2026-09-15 are not
                       there, so every image answers null; `graph.ts`
@@ -77,7 +77,7 @@ ui/
       design/      themeKeys: the token names cn() reads from the theme CSS;
                    thresholds: the three widths a screen changes shape at
       cn.ts        class merging that knows our tokens
-    i18n/          it (the schema), en, locale, useMessages()
+    i18n/          it (the schema), en, locale, useMessages(), and `Message` and `Translate` (message.ts)
     assets/
       main.css     imports only
       theme/       one file per token family

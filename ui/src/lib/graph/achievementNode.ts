@@ -1,4 +1,30 @@
-import type { Target, UnlockNode, UnlockView } from '@/lib/ipc/types'
+import type {
+  AchievementRef,
+  Target,
+  UnlockNode,
+  UnlockView,
+} from '@/lib/ipc/types'
+
+// An achievement the catalog can name. The other variant is a slot and nothing else: no id to
+// queue, no text to show, no page to open.
+export type KnownAchievement = Extract<AchievementRef, { kind: 'known' }>
+
+export const knownAchievement = (node: UnlockNode): KnownAchievement | null =>
+  node.achievement.kind === 'known' ? node.achievement : null
+
+// `null` and not `-1`: a sentinel number would be a valid argument to the queue command.
+export const knownId = (node: UnlockNode): number | null =>
+  knownAchievement(node)?.id ?? null
+
+export const knownText = (node: UnlockNode): string | null =>
+  knownAchievement(node)?.text ?? null
+
+// The node for one achievement id, never an unknown slot that happens to carry the same number:
+// a slot's number is its position in the save, not an id.
+export const nodeWithId = (
+  nodes: readonly UnlockNode[],
+  id: number,
+): UnlockNode | null => nodes.find((n) => knownId(n) === id) ?? null
 
 // The node a wiki page names, when the page is an achievement and the profile can answer for
 // it. Not a join — `UnlockView` arrives already resolved; this picks the row (spec §3.2).
@@ -21,9 +47,5 @@ export const achievementNode = (
     return null
   if (unlock.diagnostics.some((d) => d.kind === 'noAchievementSection'))
     return null
-  return (
-    unlock.nodes.find(
-      (n) => n.achievement.kind === 'known' && n.achievement.id === target.id,
-    ) ?? null
-  )
+  return nodeWithId(unlock.nodes, target.id)
 }
