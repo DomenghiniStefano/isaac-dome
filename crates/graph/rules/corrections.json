@@ -1,8 +1,6 @@
 {
   "schemaVersion": 2,
-  "aliases": {
-    "Jacob and Esau": "Jacob & Esau"
-  },
+  "aliases": {},
   "verdicts": {
     "concept:'stars' item tag": {
       "notAPrerequisite": true

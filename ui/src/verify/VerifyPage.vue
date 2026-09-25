@@ -163,8 +163,8 @@ const modeText = (m: ArchiveMode) => {
   }
 }
 
-// An archive that is there and did not open (card #80, R6). The verification page speaks
-// English, like the rest of it: the IO reason stays the wire value.
+// An archive that is there and did not open. The verification page speaks English, like the
+// rest of it: the IO reason stays the wire value.
 const brokenText = (r: ArchiveReason) => {
   switch (r.kind) {
     case 'tooShort':

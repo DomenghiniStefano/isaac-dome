@@ -67,8 +67,8 @@ const open = (category: WikiCategory, event: MouseEvent) =>
 <template>
   <!-- The gutter is the children's, not this box's: the band is the full width of the page
        and the sections under it carry `px-5.5`. A band that reached the window's edge by
-       growing past a gutter opened a horizontal scrollbar under the whole screen (seen
-       2026-09-21), which is why the shell's page box pads nothing (card #63). -->
+       growing past a gutter opened a horizontal scrollbar under the whole screen, which is
+       why the shell's page box pads nothing. -->
   <div
     v-scroll-memory="'page'"
     class="flex h-full flex-col overflow-y-auto pb-15"

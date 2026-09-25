@@ -4,10 +4,10 @@ import type { ActiveProfile, SetupState } from '@/lib/ipc/types'
 /**
  * What a screen that needs a profile shows, now that it is only ever mounted with one.
  *
- * It used to carry three more states — "there are candidates, choose one", "the chain broke
- * here", "the read failed" — because the gate *was* the profile selection (DESIGN-BRIEF.md
- * §4.3). Since 3.8 the welcome takes all three, above the router, and while any of them is
- * true the shell is not drawn at all. They live in `welcomeView.ts`, with their tests.
+ * The gate answers one question only — is a profile settled — and nothing about *how* to get
+ * one: choosing among candidates, a broken chain, a failed read are `welcomeView.ts`'s states,
+ * above the router, and the shell is not drawn at all while any of them holds. They live there,
+ * with their own tests.
  *
  * What is left is the one moment the shell is up without a profile: the instant before the
  * first answer. Skeletons, never "there is nothing" — that would be a guess.

@@ -98,13 +98,36 @@ fn a_boss_the_game_does_not_gate_is_judged_not_assumed() {
 
 #[test]
 fn an_alias_is_applied_before_the_lookup() {
+    // An id the catalog lacks, so the name is what resolves; and a label no normalization
+    // turns into the game's, so only the alias can.
     let c = catalog();
-    let rules = rules(r#"{"schemaVersion":2,"aliases":{"Jacob and Esau":"Jacob & Esau"}}"#);
+    let rules = rules(r#"{"schemaVersion":2,"aliases":{"The Twins":"Jacob & Esau"}}"#);
     assert_eq!(
         requirement(
             &c,
             &rules,
-            &row(Target::Character { id: 19 }, "Jacob and Esau"),
+            &row(Target::Character { id: 99 }, "The Twins"),
+            None
+        ),
+        Requirement::Character {
+            id: CharacterId(19)
+        }
+    );
+}
+
+/// The wiki writes "Jacob and Esau", the game "Jacob &amp; Esau". Names are compared by
+/// `wiki::key` — lowercased, whitespace collapsed, `&` read as `and` — the same key the wiki
+/// crate matches its own links with, so the two spellings meet without an alias (card #82,
+/// review F4). Id 99 is one the catalog lacks: the name is what resolves here.
+#[test]
+fn a_name_meets_the_games_spelling_across_ampersand_and_spacing() {
+    let c = catalog();
+    let rules = rules(r#"{"schemaVersion":2}"#);
+    assert_eq!(
+        requirement(
+            &c,
+            &rules,
+            &row(Target::Character { id: 99 }, "Jacob  and Esau"),
             None
         ),
         Requirement::Character {
@@ -506,5 +529,32 @@ fn a_transformation_contributor_stays_in_its_own_id_space() {
     assert_eq!(
         unresolved, 1,
         "item 47 is not a collectible, and is counted as unresolved"
+    );
+}
+
+/// The game names a Tainted character exactly like its base form — `players.xml` carries
+/// `id="0" name="Isaac"` and `id="21" name="Isaac"` with a `_b` portrait — so the name index
+/// keeps one of the two, the later one. A reference to character 0 labelled "Isaac" is base
+/// Isaac, and only the wiki's id says so: resolved by name, it became Tainted Isaac and drew
+/// the edge to the achievement that unlocks *him* (card #82, review F1).
+#[test]
+fn a_base_character_reference_is_resolved_by_id_not_by_the_shared_name() {
+    let c = Catalog::build(|p| {
+        match p {
+        "players.xml" => Some(
+            br#"<players root="gfx/" portraitroot="gfx/ui/stage/">
+                  <player id="0" name="Isaac" portrait="PlayerPortrait_Isaac.png" />
+                  <player id="21" name="Isaac" portrait="PlayerPortrait_Isaac_b.png" achievement="474" />
+                </players>"#
+                .to_vec(),
+        ),
+        _ => None,
+    }
+    });
+    let rules = rules(r#"{"schemaVersion":2}"#);
+    assert_eq!(
+        requirement(&c, &rules, &row(Target::Character { id: 0 }, "Isaac"), None),
+        Requirement::Character { id: CharacterId(0) },
+        "character 0 is base Isaac, whatever the name index kept for \"Isaac\""
     );
 }

@@ -67,8 +67,8 @@ const title = computed(
 )
 const icon = computed(() => (target.value ? wiki.iconFor(target.value) : null))
 
-// A page that would not load is this page's failure, not the wiki's (card #80, R9): the retry
-// asks for this page again, and every other tab keeps what it shows.
+// A page that would not load is this page's failure, not the wiki's: the retry asks for this
+// page again, and every other tab keeps what it shows.
 const retry = () => {
   if (target.value) void wiki.loadEntry(target.value)
 }

@@ -69,12 +69,15 @@ pub fn series_evals() -> Option<Vec<Era>> {
     let g = Graph::build(&catalog, embedded_rules());
     let mut out = Vec::new();
     for path in test_support::dated_series("rep+persistentgamedata1.dat") {
+        let name = path.file_name().unwrap_or_default().to_string_lossy();
         let Ok(s) = Save::open(&path) else {
-            let name = path.file_name().unwrap_or_default().to_string_lossy();
             test_support::skip(&format!("{name} is in the series and does not open"));
             continue;
         };
+        // Declared like the unreadable file above: a save dropped from the series in silence
+        // shortens every property over it with nothing on stderr to say so.
         let Some(flags) = s.flags(Kind::Achievements) else {
+            test_support::skip(&format!("{name} is in the series and has no section 1"));
             continue;
         };
         let e = g.evaluate(&graph::evaluate::FlagsOnly(Some(&flags)));
@@ -83,11 +86,7 @@ pub fn series_evals() -> Option<Vec<Era>> {
             .iter()
             .filter_map(|n| e.node(n.achievement).map(|i| (n.achievement, i.clone())))
             .collect();
-        let name = path
-            .file_name()
-            .map(|n| n.to_string_lossy().to_string())
-            .unwrap_or_default();
-        out.push((name, infos, flags));
+        out.push((name.to_string(), infos, flags));
     }
     eprintln!("sample: {} dated saves in the series", out.len());
     if out.len() < 2 {
