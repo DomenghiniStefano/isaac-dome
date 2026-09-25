@@ -1,8 +1,8 @@
-//! unpack — Isaac's ARCH000 reader, targeted extraction by path (read-only).
+//! unpack — Isaac's ARCH000 reader: the index kept in memory, and one entry read by path when
+//! it is asked for. Read-only.
 
 mod arch;
 mod bogocrypt;
-mod extract;
 #[cfg(feature = "test-api")]
 pub mod for_tests;
 mod hash;
@@ -12,7 +12,6 @@ mod miniz;
 mod resource_set;
 
 pub use arch::{Archive, CompressionMode, Entry, OpenError};
-pub use extract::{extract_subset, Diagnostic, ExtractReport};
 pub use hash::{path_key, PathKey};
 pub use resource_set::{ArchiveFault, ArchiveInfo, BrokenArchive, ResourceSet};
 

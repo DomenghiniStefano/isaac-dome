@@ -407,3 +407,155 @@ fn a_reward_for_a_challenge_the_file_does_not_have_is_a_diagnostic() {
     assert_eq!(c.achievements().count(), 1);
     assert!(c.challenge(ChallengeId(1)).unwrap().rewards.is_empty());
 }
+
+/// The order of the diagnostics is the order the sources are read in, then what the pieces
+/// say about each other. Nothing sorts it afterwards, so it is pinned here as a whole.
+#[test]
+fn with_nothing_to_read_the_diagnostics_come_in_reading_order() {
+    let c = Catalog::build(|_| None);
+    let missing = |source| Diagnostic::SourceMissing { source };
+    assert_eq!(
+        c.diagnostics(),
+        &[
+            missing(Source::Strings),
+            missing(Source::Items),
+            missing(Source::Metadata),
+            missing(Source::Players),
+            missing(Source::CoopMenuAnm2),
+            Diagnostic::HeadSheetUnavailable,
+            missing(Source::Achievements),
+            missing(Source::ItemPools),
+            missing(Source::Challenges),
+            missing(Source::VersusScreen),
+            missing(Source::VersusScreenMother),
+            missing(Source::VersusScreenDogma),
+            missing(Source::BossPortraits),
+            missing(Source::MinimapIcons),
+        ]
+    );
+}
+
+#[test]
+fn the_cross_file_diagnostics_follow_the_per_file_ones_rewards_before_keys() {
+    let items: &[u8] = b"<items><passive id=\"1\" gfx=\"a.png\" name=\"#K_ONE\" description=\"#K_TWO\" /><passive gfx=\"b.png\" name=\"B\" /></items>";
+    let players: &[u8] =
+        b"<players><player id=\"0\" name=\"#K_ONE\" portrait=\"p.png\" /></players>";
+    let ach: &[u8] = b"<achievements><!-- Beat Challenge #45 --><achievement id=\"9\" gfx=\"a.png\" /></achievements>";
+    let c = Catalog::build(|p| match p {
+        "items.xml" => Some(items.to_vec()),
+        "players.xml" => Some(players.to_vec()),
+        "achievements.xml" => Some(ach.to_vec()),
+        "stringtable.sta" => Some(b"<stringtable><key".to_vec()),
+        _ => None,
+    });
+    let tail: Vec<&Diagnostic> = c
+        .diagnostics()
+        .iter()
+        .filter(|d| !matches!(d, Diagnostic::SourceMissing { .. }))
+        .collect();
+    assert_eq!(
+        tail,
+        vec![
+            &Diagnostic::SourceUnreadable {
+                source: Source::Strings
+            },
+            &Diagnostic::ElementSkipped {
+                source: Source::Items,
+                id: None,
+                reason: catalog::SkipReason::MissingId
+            },
+            &Diagnostic::HeadSheetUnavailable,
+            &Diagnostic::RewardForUnknownChallenge {
+                achievement: AchievementId(9),
+                challenge: ChallengeId(45)
+            },
+            &Diagnostic::UnresolvedKey {
+                key: "K_ONE".to_string()
+            },
+            &Diagnostic::UnresolvedKey {
+                key: "K_TWO".to_string()
+            },
+        ],
+        "one key per distinct key, items before characters, name before description"
+    );
+}
+
+#[test]
+fn a_pool_entry_goes_to_the_first_collectible_kind_with_that_id_and_an_unknown_one_to_nobody() {
+    // Ids are unique across the three collectible kinds in the real file; the order of the
+    // search is what decides when they are not.
+    let items: &[u8] = b"<items><active id=\"4\" gfx=\"a.png\" name=\"A\" /><familiar id=\"4\" gfx=\"f.png\" name=\"F\" /><passive id=\"4\" gfx=\"p.png\" name=\"P\" /><trinket id=\"5\" gfx=\"t.png\" name=\"T\" /></items>";
+    let pools: &[u8] = b"<ItemPools><Pool Name=\"p\"><Item Id=\"4\"/><Item Id=\"5\"/><Item Id=\"77\"/></Pool></ItemPools>";
+    let c = Catalog::build(|p| match p {
+        "items.xml" => Some(items.to_vec()),
+        "itempools.xml" => Some(pools.to_vec()),
+        _ => None,
+    });
+    let pools_of = |k| c.item(k, ItemId(4)).map(|i| i.pools.len());
+    assert_eq!(pools_of(ItemKind::Passive), Some(1));
+    assert_eq!(pools_of(ItemKind::Active), Some(0));
+    assert_eq!(pools_of(ItemKind::Familiar), Some(0));
+    assert!(c
+        .item(ItemKind::Trinket, ItemId(5))
+        .unwrap()
+        .pools
+        .is_empty());
+    assert_eq!(
+        c.pools()[0].entries.len(),
+        3,
+        "the pool keeps every entry it read"
+    );
+}
+
+#[test]
+fn a_familiar_finds_its_metadata_under_item_and_a_trinket_only_under_trinket() {
+    let items: &[u8] = b"<items><familiar id=\"8\" gfx=\"f.png\" name=\"F\" /><trinket id=\"8\" gfx=\"t.png\" name=\"T\" /></items>";
+    let meta: &[u8] = b"<items><item id=\"8\" quality=\"2\" tags=\"baby\"/></items>";
+    let c = Catalog::build(|p| match p {
+        "items.xml" => Some(items.to_vec()),
+        "items_metadata.xml" => Some(meta.to_vec()),
+        _ => None,
+    });
+    let f = c.item(ItemKind::Familiar, ItemId(8)).unwrap();
+    assert_eq!(
+        (f.quality, f.tags.as_slice()),
+        (Some(2), &["baby".to_string()][..])
+    );
+    let t = c.item(ItemKind::Trinket, ItemId(8)).unwrap();
+    assert_eq!((t.quality, t.tags.is_empty()), (None, true));
+}
+
+#[test]
+fn a_character_without_a_cell_or_past_the_sheet_has_no_head() {
+    let players: &[u8] = b"<players><player id=\"0\" name=\"I\" portrait=\"i.png\" /><player id=\"1\" name=\"M\" portrait=\"m.png\" /><player id=\"20\" name=\"E\" portrait=\"e.png\" /></players>";
+    let c = Catalog::build(|p| match p {
+        "players.xml" => Some(players.to_vec()),
+        "gfx/ui/coop menu.anm2" => Some(ANM2_TWO.to_vec()),
+        _ => None,
+    });
+    assert!(c.character(CharacterId(0)).unwrap().head.is_some());
+    assert_eq!(
+        c.character(CharacterId(1)).unwrap().head,
+        None,
+        "frame 2 is past the two the sheet has"
+    );
+    assert_eq!(
+        c.character(CharacterId(20)).unwrap().head,
+        None,
+        "Esau has no cell"
+    );
+}
+
+#[test]
+fn the_minimap_icons_are_read_by_name() {
+    let anm2: &[u8] = br#"<AnimatedActor><Animations><Animation Name="IconShop"><LayerAnimations>
+<LayerAnimation LayerId="0"><Frame XCrop="16" YCrop="0" Width="16" Height="16"/><Frame XCrop="32" YCrop="0" Width="16" Height="16"/></LayerAnimation>
+</LayerAnimations></Animation></Animations></AnimatedActor>"#;
+    let c = Catalog::build(|p| (p == "gfx/ui/minimap_icons.anm2").then(|| anm2.to_vec()));
+    assert_eq!(
+        c.minimap_icon("IconShop").and_then(|s| s.rect).map(|r| r.x),
+        Some(16),
+        "the first frame wins"
+    );
+    assert_eq!(c.minimap_icon("IconBoss"), None);
+}

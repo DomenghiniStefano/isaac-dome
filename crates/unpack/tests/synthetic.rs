@@ -110,7 +110,7 @@ fn lzw_truncated_data_returns_none() {
 fn archive_read_with_invalid_lzw_data_returns_none() {
     // A synthetic archive where an entry has known hashes but invalid non-LZW data.
     // Archive::read must return None, never panic.
-    let test_path = "resources/prova.xml";
+    let test_path = "resources/sample.xml";
     let k = path_key(test_path);
     // Offset 14 (right after the header), dummy data that doesn't decompress.
     let bad_data = [0xFFu8; 32];

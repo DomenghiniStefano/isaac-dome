@@ -452,6 +452,42 @@ fn a_second_pass_under_one_floor_is_kept_beside_the_first_and_not_instead_of_it(
 }
 
 #[test]
+fn a_third_pass_follows_the_first_two_in_the_order_the_log_wrote_them() {
+    // No floor in the corpus has three; the order is the log's, which is the one thing a
+    // reader that has to pick a pass can rely on.
+    let runs = Run::fold(
+        [
+            started(),
+            floor(4, 4),
+            generated(19, 12),
+            generated(19, 14),
+            generated(20, 3),
+        ]
+        .into_iter(),
+        &Kinds(&[]),
+    );
+    assert_eq!(
+        runs[0].floors[0].generated,
+        Generated::Several {
+            passes: vec![
+                Pass {
+                    rooms: 19,
+                    loops: 12
+                },
+                Pass {
+                    rooms: 19,
+                    loops: 14
+                },
+                Pass {
+                    rooms: 20,
+                    loops: 3
+                },
+            ]
+        }
+    );
+}
+
+#[test]
 fn a_summary_attaches_to_the_last_floor_announced_and_not_to_the_next_one() {
     let runs = Run::fold(
         [

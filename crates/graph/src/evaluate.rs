@@ -5,15 +5,8 @@ use std::collections::{BTreeMap, BTreeSet};
 
 use catalog::{AchievementId, CharacterId};
 
-use crate::build::{Graph, GraphDiagnostic};
+use crate::build::{Graph, GraphDiagnostic, Node};
 use crate::model::{Requirement, ThresholdItem};
-
-/// What a threshold says about one profile: met, not met, or not answerable at all.
-enum ThresholdState {
-    Met,
-    Unmet { current: u32 },
-    Unanswerable,
-}
 use crate::rules::{CounterName, MarkColumn, MarkLevel};
 
 /// What the graph is allowed to ask a save. Three questions, all already resolved by the
@@ -83,32 +76,21 @@ impl Eval {
     }
 }
 
-impl Graph {
-    /// What a threshold says about a profile.
-    ///
-    /// Satisfaction is tested **first**, and that order is the whole design: an unresolved
-    /// contributor is an item this catalog does not have, so it can only ever *add* to the
-    /// tally. Asking about it first would turn "you can do this" into "we cannot say" for a
-    /// profile that already can.
-    fn state(
-        done: &impl Fn(AchievementId) -> bool,
-        at_least: u32,
-        of: &[ThresholdItem],
-        unresolved: u32,
-    ) -> ThresholdState {
-        // An item nothing gates is always available; one that is gated counts once its
-        // achievement is done. This is the same question `Requirement::Item` answers with
-        // an edge, asked here because a threshold has none.
-        let current = of.iter().filter(|i| i.unlocked_by.is_none_or(done)).count() as u32;
-        if current >= at_least {
-            ThresholdState::Met
-        } else if unresolved > 0 {
-            ThresholdState::Unanswerable
-        } else {
-            ThresholdState::Unmet { current }
-        }
-    }
+/// Per node, the set of not-done achievements standing between the profile and it; `None`
+/// where that is not knowable. The memo `transitive` fills.
+type Missing = BTreeMap<AchievementId, Option<BTreeSet<AchievementId>>>;
 
+/// Everything `evaluate` reads about the whole graph before it looks at any one node.
+struct Walk<'g> {
+    /// Per uninterpreted label, how many done achievements carry it.
+    evidence: BTreeMap<&'g str, u32>,
+    /// Per achievement, how many nodes sit directly behind it.
+    fan_out: BTreeMap<AchievementId, u32>,
+    missing: Missing,
+    cycles: Vec<Vec<AchievementId>>,
+}
+
+impl Graph {
     pub fn evaluate(&self, profile: &dyn Profile) -> Eval {
         let Some(flags) = profile.done() else {
             // Section 1 wasn't read. No nodes: "unread" must not become "not done".
@@ -117,134 +99,93 @@ impl Graph {
                 diagnostics: Vec::new(),
             };
         };
-        // A slot the file doesn't reach is not done. The other reading would claim
-        // progress the save doesn't contain.
-        let done = |id: AchievementId| flags.get(id.0 as usize).copied().unwrap_or(false);
-
-        // A gate the graph can't express is passed when the profile has already earned an
-        // achievement that carries it: if "beat Delirium with Isaac" is done, Delirium is
-        // reachable for this player, whatever gates it. That is evidence read from the
-        // save, not an optimistic guess, and it is what keeps the late game countable —
-        // on a real profile it takes the uninterpreted requirements from 210 to 6.
-        let mut evidence: BTreeMap<&str, u32> = BTreeMap::new();
-        for n in self.nodes() {
-            if done(n.achievement) {
-                for label in &n.unknown {
-                    *evidence.entry(label.as_str()).or_insert(0) += 1;
+        let done = done_in(flags);
+        let walk = self.walk(&done);
+        let (infos, unmet): (BTreeMap<AchievementId, NodeInfo>, Vec<Vec<GraphDiagnostic>>) = self
+            .nodes()
+            .iter()
+            .map(|n| {
+                let (info, unmet) = node_info(n, profile, &done, &walk);
+                ((n.achievement, info), unmet)
+            })
+            .unzip();
+        let diagnostics = self
+            .diagnostics()
+            .iter()
+            .cloned()
+            .chain(unmet.into_iter().flatten())
+            .chain(
+                walk.cycles
+                    .into_iter()
+                    .map(|nodes| GraphDiagnostic::Cycle { nodes }),
+            )
+            // The inference is declared, never silent: whoever reads the screen can see that
+            // the app decided a gate was passed, and on what evidence.
+            .chain(walk.evidence.into_iter().map(|(label, done)| {
+                GraphDiagnostic::GateSatisfiedByEvidence {
+                    label: label.to_string(),
+                    done,
                 }
-            }
-        }
+            }))
+            .collect();
+        Eval { infos, diagnostics }
+    }
 
-        let mut fan_out: BTreeMap<AchievementId, u32> = BTreeMap::new();
-        for n in self.nodes() {
-            for &p in &n.prerequisites {
-                *fan_out.entry(p).or_insert(0) += 1;
-            }
+    fn walk(&self, done: &impl Fn(AchievementId) -> bool) -> Walk<'_> {
+        let (missing, cycles) = self.transitive_all(done);
+        Walk {
+            evidence: self.evidence(done),
+            fan_out: self.fan_out(),
+            missing,
+            cycles,
         }
+    }
 
-        let mut missing: BTreeMap<AchievementId, Option<BTreeSet<AchievementId>>> = BTreeMap::new();
-        let mut cycles: Vec<Vec<AchievementId>> = Vec::new();
+    /// A gate the graph can't express is passed when the profile has already earned an
+    /// achievement that carries it: if "beat Delirium with Isaac" is done, Delirium is
+    /// reachable for this player, whatever gates it. That is evidence read from the save,
+    /// not an optimistic guess, and it is what keeps the late game countable — on a real
+    /// profile it takes the uninterpreted requirements from 210 to 6.
+    fn evidence(&self, done: &impl Fn(AchievementId) -> bool) -> BTreeMap<&str, u32> {
+        self.nodes()
+            .iter()
+            .filter(|n| done(n.achievement))
+            .flat_map(|n| n.unknown.iter().map(String::as_str))
+            .fold(BTreeMap::new(), |mut tally, label| {
+                *tally.entry(label).or_insert(0) += 1;
+                tally
+            })
+    }
+
+    fn fan_out(&self) -> BTreeMap<AchievementId, u32> {
+        self.nodes()
+            .iter()
+            .flat_map(|n| n.prerequisites.iter().copied())
+            .fold(BTreeMap::new(), |mut tally, p| {
+                *tally.entry(p).or_insert(0) += 1;
+                tally
+            })
+    }
+
+    /// `transitive` over every node, sharing one memo, in node order — which is also the order
+    /// the cycles are found and declared in.
+    fn transitive_all(
+        &self,
+        done: &impl Fn(AchievementId) -> bool,
+    ) -> (Missing, Vec<Vec<AchievementId>>) {
+        let mut missing = Missing::new();
+        let mut cycles = Vec::new();
         for n in self.nodes() {
-            let mut stack = Vec::new();
             transitive(
                 self,
                 n.achievement,
-                &done,
+                done,
                 &mut missing,
-                &mut stack,
+                &mut Vec::new(),
                 &mut cycles,
             );
         }
-
-        let mut unmet: Vec<GraphDiagnostic> = Vec::new();
-        let mut infos = BTreeMap::new();
-        for n in self.nodes() {
-            let id = n.achievement;
-            let blocked_by = n.prerequisites.iter().filter(|&&p| !done(p)).count() as u32;
-            let fan = fan_out.get(&id).copied().unwrap_or(0);
-            let transitive_known = missing.get(&id).and_then(|m| m.as_ref());
-            let unproven = n
-                .unknown
-                .iter()
-                .filter(|l| !evidence.contains_key(l.as_str()))
-                .count() as u32;
-            // A requirement this profile cannot answer joins the uninterpreted ones. An
-            // unread section 2 and one of the 40 unlocated cells are both "we can't say",
-            // and neither is allowed to read as satisfied — which is what would happen if
-            // an unanswerable mark simply fell out of the count.
-            let mut unanswerable = 0u32;
-            for r in &n.requirements {
-                let cannot_say = match r {
-                    Requirement::Mark {
-                        character, column, ..
-                    } => profile.mark(*character, *column).is_none(),
-                    Requirement::Counter { name, .. } => profile.counter(*name).is_none(),
-                    Requirement::Threshold {
-                        label,
-                        at_least,
-                        of,
-                        unresolved,
-                        ..
-                    } => match Self::state(&done, *at_least, of, *unresolved) {
-                        ThresholdState::Met => false,
-                        ThresholdState::Unanswerable => true,
-                        ThresholdState::Unmet { current } => {
-                            // Declared rather than folded into a count of unknowns: "this
-                            // node is Partial because you have two of the three Guppy
-                            // items" is on the record, the way an inferred gate is.
-                            unmet.push(GraphDiagnostic::ThresholdUnmet {
-                                node: id,
-                                label: label.clone(),
-                                current,
-                                at_least: *at_least,
-                            });
-                            true
-                        }
-                    },
-                    Requirement::Character { .. }
-                    | Requirement::Boss { .. }
-                    | Requirement::Challenge { .. }
-                    | Requirement::Item { .. }
-                    | Requirement::Gate { .. }
-                    | Requirement::Unknown { .. }
-                    | Requirement::None => false,
-                };
-                if cannot_say {
-                    unanswerable += 1;
-                }
-            }
-            let info = match (unproven + unanswerable, transitive_known) {
-                (0, Some(set)) => NodeInfo::Computed {
-                    available_now: blocked_by == 0 && !done(id),
-                    blocked_by,
-                    fan_out: fan,
-                    steps_missing: set.len() as u32,
-                },
-                // Either a requirement wasn't interpreted, or the node sits in a cycle and
-                // the transitive count can't be taken. Both are "we can't say".
-                (unknown, _) => NodeInfo::Partial {
-                    blocked_by,
-                    fan_out: fan,
-                    unknown: unknown.max(1),
-                },
-            };
-            infos.insert(id, info);
-        }
-
-        let mut diagnostics = self.diagnostics().to_vec();
-        diagnostics.extend(unmet);
-        for nodes in cycles {
-            diagnostics.push(GraphDiagnostic::Cycle { nodes });
-        }
-        // The inference is declared, never silent: whoever reads the screen can see that
-        // the app decided a gate was passed, and on what evidence.
-        for (label, done) in evidence {
-            diagnostics.push(GraphDiagnostic::GateSatisfiedByEvidence {
-                label: label.to_string(),
-                done,
-            });
-        }
-        Eval { infos, diagnostics }
+        (missing, cycles)
     }
 
     /// The not-done achievements standing between the profile and this node, transitively,
@@ -262,24 +203,178 @@ impl Graph {
         let Some(flags) = profile.done() else {
             return Vec::new();
         };
-        let done = |id: AchievementId| flags.get(id.0 as usize).copied().unwrap_or(false);
-        let mut memo = BTreeMap::new();
-        let mut stack = Vec::new();
-        let mut cycles = Vec::new();
-        transitive(self, achievement, &done, &mut memo, &mut stack, &mut cycles)
-            .map(|set| set.into_iter().collect())
-            .unwrap_or_default()
+        let done = done_in(flags);
+        transitive(
+            self,
+            achievement,
+            &done,
+            &mut Missing::new(),
+            &mut Vec::new(),
+            &mut Vec::new(),
+        )
+        .map(|set| set.into_iter().collect())
+        .unwrap_or_default()
+    }
+}
+
+/// Whether an achievement is done. A slot the file doesn't reach is not done: the other
+/// reading would claim progress the save doesn't contain.
+fn done_in(flags: &[bool]) -> impl Fn(AchievementId) -> bool + '_ {
+    |id: AchievementId| flags.get(id.0 as usize).copied().unwrap_or(false)
+}
+
+/// One node against the profile, and the unmet thresholds that explain why it is `Partial`.
+fn node_info(
+    n: &Node,
+    profile: &dyn Profile,
+    done: &impl Fn(AchievementId) -> bool,
+    walk: &Walk<'_>,
+) -> (NodeInfo, Vec<GraphDiagnostic>) {
+    let id = n.achievement;
+    let blocked_by = n.prerequisites.iter().filter(|&&p| !done(p)).count() as u32;
+    let fan_out = walk.fan_out.get(&id).copied().unwrap_or(0);
+    let unproven = n
+        .unknown
+        .iter()
+        .filter(|l| !walk.evidence.contains_key(l.as_str()))
+        .count() as u32;
+    // A requirement this profile cannot answer joins the uninterpreted ones. An unread
+    // section 2 and one of the 40 unlocated cells are both "we can't say", and neither is
+    // allowed to read as satisfied — which is what would happen if an unanswerable mark
+    // simply fell out of the count.
+    let unanswered: Vec<Unanswered> = n
+        .requirements
+        .iter()
+        .filter_map(|r| unanswered(id, r, profile, done))
+        .collect();
+    let unknown = unproven + unanswered.len() as u32;
+    let info = match (unknown, walk.missing.get(&id).and_then(|m| m.as_ref())) {
+        (0, Some(set)) => NodeInfo::Computed {
+            available_now: blocked_by == 0 && !done(id),
+            blocked_by,
+            fan_out,
+            steps_missing: set.len() as u32,
+        },
+        // Either a requirement wasn't interpreted, or the node sits in a cycle and the
+        // transitive count can't be taken. Both are "we can't say".
+        (unknown, _) => NodeInfo::Partial {
+            blocked_by,
+            fan_out,
+            unknown: unknown.max(1),
+        },
+    };
+    let unmet = unanswered
+        .into_iter()
+        .filter_map(Unanswered::diagnostic)
+        .collect();
+    (info, unmet)
+}
+
+/// Why a requirement the profile is asked about does not count as met.
+enum Unanswered {
+    /// The profile cannot say: an unread section, an unlocated cell, a threshold whose
+    /// missing contributors might still meet it.
+    CannotSay,
+    /// Declared rather than folded into a count of unknowns: "this node is Partial because
+    /// you have two of the three Guppy items" is on the record, the way an inferred gate is.
+    Unmet(GraphDiagnostic),
+}
+
+impl Unanswered {
+    fn diagnostic(self) -> Option<GraphDiagnostic> {
+        match self {
+            Unanswered::CannotSay => None,
+            Unanswered::Unmet(d) => Some(d),
+        }
+    }
+}
+
+/// `None` for a requirement that counts as met here: one the profile answers — a cell or a
+/// tally read, whatever its value, a threshold reached — and every requirement the profile
+/// is not asked about at all.
+fn unanswered(
+    node: AchievementId,
+    r: &Requirement,
+    profile: &dyn Profile,
+    done: &impl Fn(AchievementId) -> bool,
+) -> Option<Unanswered> {
+    let cannot_say = |unread: bool| unread.then_some(Unanswered::CannotSay);
+    match r {
+        Requirement::Mark {
+            character, column, ..
+        } => cannot_say(profile.mark(*character, *column).is_none()),
+        Requirement::Counter { name, .. } => cannot_say(profile.counter(*name).is_none()),
+        Requirement::Threshold {
+            label,
+            at_least,
+            of,
+            unresolved,
+            ..
+        } => match threshold_state(done, *at_least, of, *unresolved) {
+            ThresholdState::Met => None,
+            ThresholdState::Unanswerable => Some(Unanswered::CannotSay),
+            ThresholdState::Unmet { current } => {
+                Some(Unanswered::Unmet(GraphDiagnostic::ThresholdUnmet {
+                    node,
+                    label: label.clone(),
+                    current,
+                    at_least: *at_least,
+                }))
+            }
+        },
+        Requirement::Character { .. }
+        | Requirement::Boss { .. }
+        | Requirement::Challenge { .. }
+        | Requirement::Item { .. }
+        | Requirement::Gate { .. }
+        | Requirement::Unknown { .. }
+        | Requirement::None => None,
+    }
+}
+
+/// What a threshold says about one profile: met, not met, or not answerable at all.
+enum ThresholdState {
+    Met,
+    Unmet { current: u32 },
+    Unanswerable,
+}
+
+/// What a threshold says about a profile.
+///
+/// Satisfaction is tested **first**, and that order is the whole design: an unresolved
+/// contributor is an item this catalog does not have, so it can only ever *add* to the
+/// tally. Asking about it first would turn "you can do this" into "we cannot say" for a
+/// profile that already can.
+fn threshold_state(
+    done: &impl Fn(AchievementId) -> bool,
+    at_least: u32,
+    of: &[ThresholdItem],
+    unresolved: u32,
+) -> ThresholdState {
+    // An item nothing gates is always available; one that is gated counts once its
+    // achievement is done. This is the same question `Requirement::Item` answers with an
+    // edge, asked here because a threshold has none.
+    let current = of.iter().filter(|i| i.unlocked_by.is_none_or(done)).count() as u32;
+    if current >= at_least {
+        ThresholdState::Met
+    } else if unresolved > 0 {
+        ThresholdState::Unanswerable
+    } else {
+        ThresholdState::Unmet { current }
     }
 }
 
 /// The set of not-done achievements standing between the profile and this node. `None`
 /// means "not knowable": the node sits in a cycle. Memoized, so each node is computed once
 /// even when many nodes share an ancestor.
+///
+/// A depth-first walk with a memo and a path stack: the mutable state is the algorithm, and
+/// threading it through return values would only hide that.
 fn transitive(
     g: &Graph,
     id: AchievementId,
     done: &impl Fn(AchievementId) -> bool,
-    memo: &mut BTreeMap<AchievementId, Option<BTreeSet<AchievementId>>>,
+    memo: &mut Missing,
     stack: &mut Vec<AchievementId>,
     cycles: &mut Vec<Vec<AchievementId>>,
 ) -> Option<BTreeSet<AchievementId>> {

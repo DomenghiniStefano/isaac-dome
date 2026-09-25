@@ -7,7 +7,7 @@ use ipc::{IpcError, MarksMatrix, SaveSummary};
 
 use crate::icons::icon_url;
 
-use crate::state::{active_save, discovery_now, CatalogState, ResourcesState};
+use crate::state::{active_save, catalog_now, discovery_now, CatalogState, ResourcesState};
 
 #[tauri::command]
 pub fn save_summary(app: AppHandle) -> Result<SaveSummary, IpcError> {
@@ -25,7 +25,7 @@ pub fn completion(
     let counters = save.u32s(Kind::Counters).unwrap_or_default();
     // Game not installed is expected: the matrix goes out without art, and the screen draws
     // the fallback outfit.
-    let catalog = resources.get(&app).and_then(|rs| state.get_or_build(rs));
+    let catalog = catalog_now(&app, &resources, &state);
     Ok(ipc::marks_matrix(&counters, catalog, icon_url))
 }
 
@@ -58,21 +58,16 @@ pub fn extraction_report(
     };
     let catalog = state.get_or_build(resources);
 
-    let view = catalog.map(ipc::catalog_view);
     // The icons are extracted here, where I/O is allowed, and go out already resolved.
-    let sprites = catalog
-        .map(|c| {
-            ipc::item_views(c, |p| resources.read(p), SAMPLE_ICONS)
-                .into_iter()
-                .filter_map(|i| i.data_url.map(|u| (i.id, i.name, u)))
-                .collect()
-        })
-        .unwrap_or_default();
+    let sprites = ipc::item_views(catalog, |p| resources.read(p), SAMPLE_ICONS)
+        .into_iter()
+        .filter_map(|i| i.data_url.map(|u| (i.id, i.name, u)))
+        .collect();
 
     Ok(ipc::extraction_report(
         ipc::archive_views(resources.archives()),
         ipc::broken_archive_views(resources.broken()),
-        view,
+        Some(ipc::catalog_view(catalog)),
         sprites,
         wiki,
     ))

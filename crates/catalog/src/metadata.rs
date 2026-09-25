@@ -7,10 +7,12 @@
 
 use std::collections::BTreeMap;
 
-use crate::diagnostics::{Diagnostic, SkipReason, Source};
+use crate::diagnostics::{Diagnostic, Source};
 use crate::ids::ItemId;
 use crate::items::ItemKind;
-use crate::xml::{elements, Element};
+use crate::xml::{self, Element};
+
+const SOURCE: Source = Source::Metadata;
 
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct Metadata {
@@ -23,33 +25,28 @@ pub fn parse(
     bytes: &[u8],
     diagnostics: &mut Vec<Diagnostic>,
 ) -> BTreeMap<(ItemKind, ItemId), Metadata> {
-    let els = match elements(bytes) {
-        Ok(els) => els,
-        Err(_) => {
-            diagnostics.push(Diagnostic::SourceUnreadable {
-                source: Source::Metadata,
-            });
-            return BTreeMap::new();
-        }
+    let Some(els) = xml::read(bytes, SOURCE, diagnostics) else {
+        return BTreeMap::new();
     };
-    let mut out = BTreeMap::new();
-    for e in &els {
-        let kind = match e.name.as_str() {
-            "item" => ItemKind::Passive,
-            "trinket" => ItemKind::Trinket,
-            _ => continue, // allowed: a tag name is an open string
-        };
-        let Some(raw_id) = e.attr("id") else {
-            diagnostics.push(skipped(None, SkipReason::MissingId));
-            continue;
-        };
-        let Ok(id) = raw_id.parse::<u32>() else {
-            diagnostics.push(skipped(None, SkipReason::MalformedId));
-            continue;
-        };
-        out.insert((kind, ItemId(id)), metadata_of(e));
+    // Collected in file order, so a repeated row is read as the last one.
+    els.iter()
+        .filter_map(|e| row_from(e, diagnostics))
+        .collect()
+}
+
+fn row_from(e: &Element, d: &mut Vec<Diagnostic>) -> Option<((ItemKind, ItemId), Metadata)> {
+    let kind = kind_of_tag(&e.name)?;
+    let id = xml::required_id(e, "id", SOURCE, d)?;
+    Some(((kind, ItemId(id)), metadata_of(e)))
+}
+
+/// The key a row files under: `<item>` covers the three collectible kinds, under `Passive`.
+fn kind_of_tag(name: &str) -> Option<ItemKind> {
+    match name {
+        "item" => Some(ItemKind::Passive),
+        "trinket" => Some(ItemKind::Trinket),
+        _ => None, // allowed: a tag name is an open string
     }
-    out
 }
 
 fn metadata_of(e: &Element) -> Metadata {
@@ -62,17 +59,10 @@ fn metadata_of(e: &Element) -> Metadata {
     }
 }
 
-fn skipped(id: Option<u32>, reason: SkipReason) -> Diagnostic {
-    Diagnostic::ElementSkipped {
-        source: Source::Metadata,
-        id,
-        reason,
-    }
-}
-
 #[cfg(test)]
 mod tests {
     use super::*;
+    use crate::diagnostics::SkipReason;
 
     const META: &[u8] = b"<items>
     <item id=\"1\" quality=\"3\" tags=\"summonable tearsup offensive\"/>
@@ -123,6 +113,35 @@ mod tests {
             id: None,
             reason: SkipReason::MalformedId
         }));
+    }
+
+    #[test]
+    fn the_skips_come_in_file_order_and_other_elements_are_not_rows() {
+        let (_, d) = parsed();
+        let skipped = |reason| Diagnostic::ElementSkipped {
+            source: Source::Metadata,
+            id: None,
+            reason,
+        };
+        assert_eq!(
+            d,
+            vec![
+                skipped(SkipReason::MissingId),
+                skipped(SkipReason::MalformedId)
+            ],
+            "the root `<items>` is not a row and is not diagnosed"
+        );
+    }
+
+    #[test]
+    fn a_repeated_row_is_read_as_the_last_one() {
+        let mut d = Vec::new();
+        let m = parse(
+            b"<items><item id=\"1\" quality=\"1\"/><item id=\"1\" quality=\"4\"/></items>",
+            &mut d,
+        );
+        assert_eq!(m.len(), 1);
+        assert_eq!(m[&(ItemKind::Passive, ItemId(1))].quality, Some(4));
     }
 
     #[test]

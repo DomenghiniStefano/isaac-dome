@@ -163,8 +163,8 @@ impl Archive {
 
         // The data ends where the index begins; if the header declares that beyond the
         // file, the end of the file wins instead.
-        let fine_dati = index_off.min(file_len);
-        let ends = entry_ends(&entries, fine_dati);
+        let data_end = index_off.min(file_len);
+        let ends = entry_ends(&entries, data_end);
 
         Ok(Archive {
             file,
@@ -202,14 +202,14 @@ impl Archive {
         if end <= start {
             return None;
         }
-        let mut compressi = vec![0u8; (end - start) as usize];
-        read_exact_at(&self.file, &mut compressi, start).ok()?;
+        let mut compressed = vec![0u8; (end - start) as usize];
+        read_exact_at(&self.file, &mut compressed, start).ok()?;
         let len = entry.decompressed_len as usize;
         match self.mode {
-            CompressionMode::Lzw => crate::lzw::decompress(&compressi, 0, len),
-            CompressionMode::MiniZ => crate::miniz::decompress(&compressi, 0, len, entry.key.fnv),
+            CompressionMode::Lzw => crate::lzw::decompress(&compressed, 0, len),
+            CompressionMode::MiniZ => crate::miniz::decompress(&compressed, 0, len, entry.key.fnv),
             CompressionMode::Bogocrypt1 => {
-                crate::bogocrypt::decompress(&compressi, 0, len, entry.key.fnv)
+                crate::bogocrypt::decompress(&compressed, 0, len, entry.key.fnv)
             }
             // Not implemented: no archive in this installation uses them, so there's
             // nothing to verify them against. The archive stays openable and indexable,
@@ -224,13 +224,13 @@ impl Archive {
 }
 
 /// Where each entry's data ends: the first offset **greater** than its own, or
-/// `fine_dati` if it's the last one. The index isn't assumed to be sorted by offset —
+/// `data_end` if it's the last one. The index isn't assumed to be sorted by offset —
 /// it's sorted here.
 ///
 /// A bound wider than the truth does no harm: the decompressors stop once they've
 /// produced the declared bytes. A narrower one does, which is why two entries sharing
 /// the same offset (which the index allows) both get the same bound, not zero.
-fn entry_ends(entries: &[Entry], fine_dati: u64) -> Vec<u64> {
+fn entry_ends(entries: &[Entry], data_end: u64) -> Vec<u64> {
     let mut offsets: Vec<u64> = entries.iter().map(|e| e.offset).collect();
     offsets.sort_unstable();
     offsets.dedup();
@@ -239,8 +239,8 @@ fn entry_ends(entries: &[Entry], fine_dati: u64) -> Vec<u64> {
         .map(|e| {
             match offsets.binary_search(&e.offset) {
                 // There's a following offset: the data reaches up to it.
-                Ok(p) if p + 1 < offsets.len() => offsets[p + 1].min(fine_dati.max(e.offset)),
-                _ => fine_dati.max(e.offset),
+                Ok(p) if p + 1 < offsets.len() => offsets[p + 1].min(data_end.max(e.offset)),
+                _ => data_end.max(e.offset),
             }
         })
         .collect()

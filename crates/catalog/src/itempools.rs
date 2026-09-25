@@ -1,12 +1,13 @@
-//! `itempools.xml`: which pool each item appears in and with what weight. 31 pools in
-//! the Repentance file, 2,058 entries; every `Id` exists in `items.xml`, and 24
-//! collectibles are in no pool at all (that's data, not a defect; trinkets are never in
-//! pools by construction).
+//! `itempools.xml`: which pool each item appears in and with what weight. In the
+//! Repentance+ file of 2026-09-04 (`tests/real_data.rs`): 31 pools, 2,058 entries, every
+//! `Id` in `items.xml`, and 24 collectibles in no pool at all (that's data, not a defect;
+//! trinkets are never in pools by construction).
 
 use crate::diagnostics::{Diagnostic, SkipReason, Source};
 use crate::ids::ItemId;
-use crate::strings::children_named;
-use crate::xml::{elements, Element};
+use crate::xml::{self, Element};
+
+const SOURCE: Source = Source::ItemPools;
 
 #[derive(Debug, Clone, PartialEq)]
 pub struct PoolEntry {
@@ -30,45 +31,34 @@ pub struct PoolMembership {
 }
 
 pub fn parse(bytes: &[u8], diagnostics: &mut Vec<Diagnostic>) -> Vec<Pool> {
-    let els = match elements(bytes) {
-        Ok(els) => els,
-        Err(_) => {
-            diagnostics.push(Diagnostic::SourceUnreadable {
-                source: Source::ItemPools,
-            });
-            return Vec::new();
-        }
+    let Some(els) = xml::read(bytes, SOURCE, diagnostics) else {
+        return Vec::new();
     };
-    let mut pools = Vec::new();
-    for (i, e) in els.iter().enumerate() {
-        if e.name != "Pool" {
-            continue;
-        }
-        let Some(name) = e.attr("Name") else {
-            diagnostics.push(skipped(None, SkipReason::MissingName));
-            continue;
-        };
-        let entries = children_named(&els, i, "Item")
-            .into_iter()
-            .filter_map(|item| entry_from(item, diagnostics))
-            .collect();
-        pools.push(Pool {
-            name: name.to_string(),
-            entries,
-        });
-    }
-    pools
+    els.iter()
+        .enumerate()
+        .filter(|(_, e)| e.name == "Pool")
+        .filter_map(|(i, _)| pool_from(&els, i, diagnostics))
+        .collect()
+}
+
+/// The pool at `els[i]`. A pool without a name is skipped whole: its entries are not read,
+/// so they are not diagnosed either.
+fn pool_from(els: &[Element], i: usize, d: &mut Vec<Diagnostic>) -> Option<Pool> {
+    let Some(name) = els[i].attr("Name") else {
+        return xml::skip(SOURCE, None, SkipReason::MissingName, d);
+    };
+    let entries = xml::children_named(els, i, "Item")
+        .into_iter()
+        .filter_map(|item| entry_from(item, d))
+        .collect();
+    Some(Pool {
+        name: name.to_string(),
+        entries,
+    })
 }
 
 fn entry_from(e: &Element, d: &mut Vec<Diagnostic>) -> Option<PoolEntry> {
-    let Some(raw_id) = e.attr("Id") else {
-        d.push(skipped(None, SkipReason::MissingId));
-        return None;
-    };
-    let Ok(id) = raw_id.parse::<u32>() else {
-        d.push(skipped(None, SkipReason::MalformedId));
-        return None;
-    };
+    let id = xml::required_id(e, "Id", SOURCE, d)?;
     let num =
         |name: &str, default: f32| e.attr(name).and_then(|v| v.parse().ok()).unwrap_or(default);
     Some(PoolEntry {
@@ -77,14 +67,6 @@ fn entry_from(e: &Element, d: &mut Vec<Diagnostic>) -> Option<PoolEntry> {
         decrease_by: num("DecreaseBy", 1.0),
         remove_on: num("RemoveOn", 0.1),
     })
-}
-
-fn skipped(id: Option<u32>, reason: SkipReason) -> Diagnostic {
-    Diagnostic::ElementSkipped {
-        source: Source::ItemPools,
-        id,
-        reason,
-    }
 }
 
 #[cfg(test)]
@@ -147,6 +129,52 @@ mod tests {
             id: None,
             reason: SkipReason::MissingName
         }));
+    }
+
+    #[test]
+    fn the_skips_come_in_file_order_and_a_nameless_pool_says_nothing_of_its_items() {
+        let (_, d) = parsed();
+        let skipped = |reason| Diagnostic::ElementSkipped {
+            source: Source::ItemPools,
+            id: None,
+            reason,
+        };
+        assert_eq!(
+            d,
+            vec![
+                skipped(SkipReason::MissingId),
+                skipped(SkipReason::MalformedId),
+                skipped(SkipReason::MissingName),
+            ]
+        );
+    }
+
+    #[test]
+    fn an_item_outside_a_pool_belongs_to_none_and_a_nested_one_to_nobody() {
+        // Only the direct children of a `<Pool>` are its entries.
+        let mut d = Vec::new();
+        let p = parse(
+            b"<ItemPools><Item Id=\"1\"/><Pool Name=\"p\"><Group><Item Id=\"2\"/></Group><Item Id=\"3\"/></Pool></ItemPools>",
+            &mut d,
+        );
+        assert_eq!(p.len(), 1);
+        assert_eq!(
+            p[0].entries.iter().map(|e| e.item).collect::<Vec<_>>(),
+            vec![ItemId(3)]
+        );
+        assert!(d.is_empty());
+    }
+
+    #[test]
+    fn junk_is_empty_with_one_diagnostic() {
+        let mut d = Vec::new();
+        assert!(parse(b"<ItemPools><Pool", &mut d).is_empty());
+        assert_eq!(
+            d,
+            vec![Diagnostic::SourceUnreadable {
+                source: Source::ItemPools
+            }]
+        );
     }
 
     #[test]

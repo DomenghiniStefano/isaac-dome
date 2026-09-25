@@ -144,18 +144,68 @@ impl Editions {
     pub fn is_all(self) -> bool {
         self == Editions::ALL
     }
+
+    /// The `dlc` column of a Cargo row, which is the bitmask itself rather than a code. Bits
+    /// above the five editions are dropped, and a mask naming none of them is `NONE`: the
+    /// question asked of a row is which editions it has, and that answer never needs a guess.
+    pub(crate) fn of_cargo_bits(mask: u32) -> Editions {
+        // `& 31` leaves at most five bits, which always fit.
+        Editions(u8::try_from(mask & 31).unwrap_or(0))
+    }
+
+    pub fn contains(self, dlc: Dlc) -> bool {
+        BITS.iter().any(|(bit, d)| *d == dlc && self.0 & bit != 0)
+    }
 }
 
 /// A code, parsed, with an unreadable one counted instead of dropped. The counter is the
 /// only thing that would make a thirty-first code visible instead of shipped.
 pub fn parse_code(code: &str, d: &mut Diagnostics) -> Editions {
-    match Editions::parse(code) {
-        Some(e) => e,
-        None => {
-            d.unknown_dlc_code(code.trim());
-            Editions::ALL
-        }
+    parse_counted(code, d).unwrap_or(Editions::ALL)
+}
+
+/// A code, parsed; `None` — counted — for one outside the wiki's switch. The two readings
+/// below differ in what they make of that `None`, and nothing else.
+fn parse_counted(code: &str, d: &mut Diagnostics) -> Option<Editions> {
+    let editions = Editions::parse(code);
+    if editions.is_none() {
+        d.unknown_dlc_code(code.trim());
     }
+    editions
+}
+
+/// An infobox's `dlc` parameter as the editions the entry declares. Absent is the one value
+/// that stays empty: the page declares no range, which [`Editions::of`] then reads back as
+/// "narrows nothing". An unreadable code is counted and also leaves the entry declaring
+/// nothing, since the wiki itself answers `0` there.
+pub(crate) fn declared_range(code: &str, d: &mut Diagnostics) -> Vec<Dlc> {
+    if code.trim().is_empty() {
+        return Vec::new();
+    }
+    parse_counted(code, d)
+        .map(Editions::list)
+        .unwrap_or_default()
+}
+
+/// The editions a `{{dlc|…}}` code restricts its span to, or an **empty** list when it
+/// restricts nothing — which `inline`'s `Out::close` unwraps instead of emitting, because a
+/// badge naming every edition says as much as no badge at all.
+///
+/// Two things land on that empty list, and only one of them is a gap. `n`, `x` and a blank
+/// argument are the wiki's own row 31, "no restriction", and are silent. A code outside the
+/// switch is counted, because the wiki answers `0 <!-- invalid string! -->` there and a
+/// thirty-first code has to be visible rather than shipped.
+///
+/// Whole codes only: the argument is one code, never a list. 1734 of the uses in the
+/// wikitext were read one code at a time until 2026-09-15 — `nr` as nothing, `a+nr` as
+/// three editions including the two the `n` removes — and each opened a span valid in no
+/// edition at all.
+pub(crate) fn span_restriction(code: &str, d: &mut Diagnostics) -> Vec<Dlc> {
+    let editions = parse_code(code, d);
+    if editions.is_all() {
+        return Vec::new();
+    }
+    editions.list()
 }
 
 #[cfg(test)]
@@ -299,5 +349,38 @@ mod tests {
         let mut d = Diagnostics::default();
         assert_eq!(parse_code("zz", &mut d), Editions::ALL);
         assert_eq!(d.unknown_dlc_codes.get("zz"), Some(&1));
+    }
+
+    /// A Cargo row's `dlc` is the mask itself: 4 is Afterbirth † alone (Tonsil's collectible),
+    /// 24 is Repentance on, 0 names nothing. A bit above the five says nothing about them.
+    #[test]
+    fn a_cargo_mask_names_the_editions_of_its_bits() {
+        assert!(!Editions::of_cargo_bits(4).contains(Dlc::RepentancePlus));
+        assert!(Editions::of_cargo_bits(4).contains(Dlc::AfterbirthPlus));
+        assert!(Editions::of_cargo_bits(24).contains(Dlc::RepentancePlus));
+        assert!(Editions::of_cargo_bits(0).is_empty());
+        assert_eq!(
+            Editions::of_cargo_bits(32 + 16).list(),
+            vec![Dlc::RepentancePlus]
+        );
+    }
+
+    /// The two readings of one code differ exactly where their contracts say: an entry's
+    /// range lists every edition a code names, `n` included, and a span's restriction is empty
+    /// when it restricts nothing. Unreadable, both are empty, and both count it once.
+    #[test]
+    fn a_range_and_a_restriction_read_one_code_two_ways() {
+        let mut d = Diagnostics::default();
+        assert_eq!(declared_range("n", &mut d).len(), 5);
+        assert_eq!(span_restriction("n", &mut d), Vec::new());
+        assert_eq!(declared_range("", &mut d), Vec::new());
+        assert_eq!(
+            declared_range("r", &mut d),
+            span_restriction("r", &mut d),
+            "a code that restricts reads the same both ways"
+        );
+        assert_eq!(declared_range("zz", &mut d), Vec::new());
+        assert_eq!(span_restriction("zz", &mut d), Vec::new());
+        assert_eq!(d.unknown_dlc_codes.get("zz"), Some(&2));
     }
 }

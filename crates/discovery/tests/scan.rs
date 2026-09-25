@@ -88,3 +88,15 @@ fn override_dir_yields_override_source() {
     assert!(diags.is_empty());
     let _ = Diagnostic::NoSavesFound;
 }
+
+#[test]
+fn a_file_in_userdata_is_not_an_account() {
+    let tmp = tempfile::tempdir().unwrap();
+    let root = tmp.path();
+    touch(&root.join("userdata/111/250900/remote/rep+persistentgamedata1.dat"));
+    touch(&root.join("userdata/stray.txt"));
+
+    let (saves, diags) = scan_userdata(root);
+    assert_eq!(saves.len(), 1, "{saves:?}");
+    assert!(diags.is_empty(), "{diags:?}");
+}

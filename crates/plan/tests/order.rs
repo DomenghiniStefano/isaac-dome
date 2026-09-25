@@ -2,7 +2,7 @@
 //! contradict: a move is never refused, the rows that must yield are moved.
 
 use graph::AchievementId;
-use plan::order::Dependencies;
+use plan::Dependencies;
 use plan::{Queue, Row};
 
 fn a(n: u32) -> AchievementId {

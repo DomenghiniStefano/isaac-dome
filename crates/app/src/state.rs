@@ -26,9 +26,22 @@ use crate::settings_file;
 pub(crate) struct CatalogState(OnceLock<Catalog>);
 
 impl CatalogState {
-    pub(crate) fn get_or_build(&self, rs: &ResourceSet) -> Option<&Catalog> {
-        Some(self.0.get_or_init(|| Catalog::build(|p| rs.read(p))))
+    pub(crate) fn get_or_build(&self, rs: &ResourceSet) -> &Catalog {
+        self.0.get_or_init(|| Catalog::build(|p| rs.read(p)))
     }
+}
+
+/// The catalog as it stands now: `None` when the game isn't installed, which every caller
+/// treats as an expected case and never as an error. **The one way to ask for it** in this
+/// crate — the chain from the archives to the catalog used to be written out at every call
+/// site. Nothing is cached on the way out: "absent" comes from `ResourcesState`, which never
+/// keeps it.
+pub(crate) fn catalog_now<'a>(
+    app: &AppHandle,
+    resources: &'a ResourcesState,
+    catalog: &'a CatalogState,
+) -> Option<&'a Catalog> {
+    resources.get(app).map(|rs| catalog.get_or_build(rs))
 }
 
 /// The Unlock view Live reads, kept until the save it was evaluated on is read again (card #80,
@@ -42,15 +55,18 @@ pub(crate) struct LiveUnlockState(pub(crate) ipc::PerSave<Save, ipc::UnlockView>
 /// parse can only be our own broken file, and they degrade like everything else — the
 /// commands answer without graph info rather than failing.
 #[derive(Default)]
-pub(crate) struct GraphState(OnceLock<graph::Graph>);
+pub(crate) struct GraphState(OnceLock<graph::build::Graph>);
 
 impl GraphState {
-    pub(crate) fn get(&self, catalog: &catalog::Catalog) -> Option<&graph::Graph> {
+    pub(crate) fn get(&self, catalog: &catalog::Catalog) -> Option<&graph::build::Graph> {
         if let Some(g) = self.0.get() {
             return Some(g);
         }
         let rules = graph::rules::embedded().ok()?;
-        Some(self.0.get_or_init(|| graph::Graph::build(catalog, rules)))
+        Some(
+            self.0
+                .get_or_init(|| graph::build::Graph::build(catalog, rules)),
+        )
     }
 }
 
