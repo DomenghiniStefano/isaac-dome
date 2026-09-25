@@ -14,7 +14,7 @@ use crate::state::{
     active_save, catalog_now, CatalogState, GraphState, ResourcesState, StoreState,
 };
 
-/// The Unlock view. Not a command since N8: it is built once per screen load, inside
+/// The Unlock view. Not a command: it is built once per screen load, inside
 /// `graph_views`, and a second entry point is a second reading of the profile.
 pub(crate) fn unlock(
     app: AppHandle,
@@ -30,7 +30,7 @@ pub(crate) fn unlock(
 }
 
 /// The Unlock view of one save, the catalog and the graph already resolved: the half of
-/// `unlock` that Live keeps between two lines of the log (card #80, R10).
+/// `unlock` that Live keeps between two lines of the log.
 pub(crate) fn unlock_of(
     save: &Save,
     catalog: Option<&Catalog>,
@@ -55,10 +55,10 @@ pub(crate) fn unlock_of(
     )
 }
 
-/// Both graph screens in one answer (N8). They used to be two commands, which the frontend
-/// called together and which rebuilt the same pipeline twice — settings, a walk of the Steam
-/// libraries, the `.dat` read whole and parsed, 642 nodes, the evaluation — for one screen
-/// load. One command reads the profile once, by construction rather than by a cache.
+/// Both graph screens in one answer. The frontend needs them together, and as two commands
+/// they would build the same pipeline twice — settings, a walk of the Steam libraries, the
+/// `.dat` read and parsed, 642 nodes, the evaluation — for one screen load. One command reads
+/// the profile once, by construction rather than by a cache.
 ///
 /// The queue is read too, because the steps leave out what it already holds. A queue that
 /// can't be read leaves nothing out: every suggestion shows, which is the screen as it was
@@ -116,7 +116,7 @@ pub fn want(
     let catalog = catalog_now(&app, &resources, &state);
     let g = catalog.and_then(|c| graph.get(c));
     // The same Unlock view the Unlock screen reads, from the same function: two copies of the
-    // evaluation were two chances to disagree about one profile.
+    // evaluation would be two chances to disagree about one profile.
     let view = unlock_of(&save, catalog, state.bosses(catalog), g);
     let flags = save.flags(Kind::Achievements);
     Ok(ipc::want_view(

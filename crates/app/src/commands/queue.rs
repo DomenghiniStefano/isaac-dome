@@ -143,7 +143,7 @@ pub fn queue_add(
     resources: tauri::State<'_, ResourcesState>,
     graph: tauri::State<'_, GraphState>,
 ) -> Result<ipc::QueueView, IpcError> {
-    // The IPC speaks in bare numbers; the queue in typed ids (card #81, V12).
+    // The IPC speaks in bare numbers; the queue in typed ids.
     let achievement = graph::AchievementId(achievement);
     let pieces = queue_pieces(&app, &catalog, &resources, &graph)?;
     queue_mutate(&app, &store, &pieces, |q, g, flags| {
@@ -210,8 +210,8 @@ pub fn queue_import_goals(
     let Some(c) = pieces.catalog else {
         return Err(IpcError::CatalogUnavailable);
     };
-    // Both arms used to answer with the same sentence, which threw away which of the two
-    // had happened. The reason is a variant now, so each says what it actually knows.
+    // Each arm answers with its own variant: one sentence for both would throw away which of
+    // the two happened.
     let targets: Vec<ipc::TargetKey> = match store.lock(&app) {
         Ok(guard) => match guard.goals() {
             Ok(read) => read.goals.into_iter().map(|g| g.target).collect(),

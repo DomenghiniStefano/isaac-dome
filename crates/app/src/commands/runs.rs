@@ -120,10 +120,10 @@ fn live_marks(app: &AppHandle, open: Option<&RunView>, c: &Catalog) -> Option<ip
     (!rows.is_empty()).then(|| ipc::live_marks(&matrix, &rows))
 }
 
-/// The open run of the launch being followed, from that launch's own cached fold (card #80,
-/// R10: this was the whole archive, read on every line the watcher reported). At most one: the
-/// fold never leaves two runs open on the launch it is following. A store that cannot be read
-/// is no run to show, the way it was when this read went through `runs`.
+/// The open run of the launch being followed, from that launch's own cached fold and not the
+/// whole archive, which is every session ever played and would be read on every line the
+/// watcher reports. At most one: the fold never leaves two runs open on the launch it is
+/// following. A store that cannot be read is no run to show, as for the `runs` command.
 fn open_run(
     app: &AppHandle,
     store: &StoreState,

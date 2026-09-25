@@ -225,6 +225,7 @@ impl Dataset {
     }
 
     /// Whether [`Dataset::entry_by_key_mut`] would find an entry.
+    #[cfg(feature = "test-api")]
     pub fn has_key(&self, collection: &str, key: &str) -> bool {
         let Ok(collection) = collection.parse() else {
             return false;
@@ -238,6 +239,7 @@ impl Dataset {
         }
     }
 
+    #[cfg(feature = "test-api")]
     fn shelf(&self, collection: Collection) -> Shelf<&Numbered, &Bosses> {
         match collection {
             Collection::Items => Shelf::Numbered(&self.items),

@@ -78,34 +78,32 @@ pub fn sort_rows(rows: &mut [Row]) {
 
 /// Percent-encodes everything except alphanumerics, `-`, `_`, `.`, `~`.
 pub fn url_encode(s: &str) -> String {
-    let mut out = String::with_capacity(s.len());
-    for b in s.bytes() {
-        match b {
-            b'A'..=b'Z' | b'a'..=b'z' | b'0'..=b'9' | b'-' | b'_' | b'.' | b'~' => {
-                out.push(b as char)
-            }
-            _ => out.push_str(&format!("%{b:02X}")),
+    s.bytes().map(url_encode_byte).collect()
+}
+
+fn url_encode_byte(b: u8) -> String {
+    match b {
+        b'A'..=b'Z' | b'a'..=b'z' | b'0'..=b'9' | b'-' | b'_' | b'.' | b'~' => {
+            char::from(b).to_string()
         }
+        _ => format!("%{b:02X}"),
     }
-    out
 }
 
 /// The URL that lists pages transcluding `template`, with the text of the latest revision;
 /// `cont` is the `continue` map from the previous response (empty on the first request).
 pub fn pages_url(template: &str, cont: &Continue) -> String {
-    let mut url = format!(
+    let base = format!(
         "{HOST}/api.php?action=query&generator=embeddedin&geititle={}&geinamespace=0\
          &geilimit={PAGES_PER_REQUEST}&prop=revisions&rvprop=content%7Cids%7Ctimestamp\
          &rvslots=main&format=json&formatversion=2&maxlag=5",
         url_encode(template)
     );
-    for (k, v) in cont {
-        url.push('&');
-        url.push_str(&url_encode(k));
-        url.push('=');
-        url.push_str(&url_encode(v));
-    }
-    url
+    let continuation: String = cont
+        .iter()
+        .map(|(k, v)| format!("&{}={}", url_encode(k), url_encode(v)))
+        .collect();
+    base + &continuation
 }
 
 /// The URL for a page of `ROWS_PER_REQUEST` rows of a Cargo table.
@@ -167,19 +165,11 @@ pub struct PageBatch {
 /// A page without `revisions` is never an error here: that's decided by whoever sees all the batches.
 pub fn parse_pages(json: &str) -> Result<PageBatch, String> {
     let v = parse_response(json)?;
-    let cont = match v.get("continue").and_then(Value::as_object) {
-        Some(map) => {
-            let mut cont = BTreeMap::new();
-            for (k, val) in map {
-                let s = val
-                    .as_str()
-                    .ok_or_else(|| format!("continue: `{k}` is not a string"))?;
-                cont.insert(k.clone(), s.to_string());
-            }
-            Some(cont)
-        }
-        None => None,
-    };
+    let cont = v
+        .get("continue")
+        .and_then(Value::as_object)
+        .map(continue_map)
+        .transpose()?;
     let mut batch = PageBatch {
         cont,
         ..PageBatch::default()
@@ -220,6 +210,17 @@ pub fn parse_pages(json: &str) -> Result<PageBatch, String> {
     Ok(batch)
 }
 
+/// The `continue` object as the next request sends it back: every value must be a string.
+fn continue_map(map: &serde_json::Map<String, Value>) -> Result<Continue, String> {
+    map.iter()
+        .map(|(k, val)| {
+            val.as_str()
+                .map(|s| (k.clone(), s.to_string()))
+                .ok_or_else(|| format!("continue: `{k}` is not a string"))
+        })
+        .collect()
+}
+
 /// The bookkeeping for one kind across its batches: who was listed without text and
 /// hasn't arrived with text yet. At the end of the kind, an empty `unresolved` means the
 /// snapshot is complete; otherwise pages are missing and the fetch must fail with their titles.
@@ -258,27 +259,33 @@ pub fn parse_cargo(json: &str) -> Result<Vec<Row>, String> {
         .get("cargoquery")
         .and_then(Value::as_array)
         .ok_or_else(|| "cargoquery missing or not a list".to_string())?;
-    let mut rows = Vec::with_capacity(list.len());
-    for (i, item) in list.iter().enumerate() {
-        let obj = item
-            .get("title")
-            .and_then(Value::as_object)
-            .ok_or_else(|| format!("row {i}: `title` missing or not an object"))?;
-        let mut row = Row::new();
-        for (k, val) in obj {
-            #[allow(clippy::wildcard_enum_match_arm)]
-            // a foreign enum; the reason is at the wildcard arm
-            let s = match val {
-                Value::Null => String::new(),
-                Value::String(s) => s.clone(),
-                // `serde_json::Value` is not ours, and every other shape is rendered as JSON text.
-                other => other.to_string(),
-            };
-            row.insert(k.clone(), s);
-        }
-        rows.push(row);
+    list.iter()
+        .enumerate()
+        .map(|(i, item)| {
+            item.get("title")
+                .and_then(Value::as_object)
+                .map(cargo_row)
+                .ok_or_else(|| format!("row {i}: `title` missing or not an object"))
+        })
+        .collect()
+}
+
+/// One Cargo row: every field as text.
+fn cargo_row(obj: &serde_json::Map<String, Value>) -> Row {
+    obj.iter()
+        .map(|(k, val)| (k.clone(), cargo_text(val)))
+        .collect()
+}
+
+/// A field's value as text: `null` is the empty string, a string itself.
+#[allow(clippy::wildcard_enum_match_arm)] // a foreign enum; the reason is at the wildcard arm
+fn cargo_text(val: &Value) -> String {
+    match val {
+        Value::Null => String::new(),
+        Value::String(s) => s.clone(),
+        // `serde_json::Value` is not ours, and every other shape is rendered as JSON text.
+        other => other.to_string(),
     }
-    Ok(rows)
 }
 
 #[cfg(test)]
@@ -403,6 +410,44 @@ mod tests {
         let rows = parse_cargo(r#"{"cargoquery":[{"title":{"alias":null}}]}"#).unwrap();
         assert_eq!(rows[0].get("alias").map(String::as_str), Some(""));
         assert!(parse_cargo(r#"{"error":{"code":"badtable","info":"x"}}"#).is_err());
+    }
+
+    /// A value that is neither a string nor null is kept as its JSON text; a row that is not an
+    /// object under `title` is an error naming its position; the rows keep the response's order.
+    #[test]
+    fn parse_cargo_keeps_other_values_as_json_text_and_names_a_malformed_row() {
+        let rows = parse_cargo(
+            r#"{"cargoquery":[{"title":{"n":5,"b":true,"l":[1]}},{"title":{"n":"x"}}]}"#,
+        )
+        .unwrap();
+        assert_eq!(rows.len(), 2);
+        assert_eq!(rows[0].get("n").map(String::as_str), Some("5"));
+        assert_eq!(rows[0].get("b").map(String::as_str), Some("true"));
+        assert_eq!(rows[0].get("l").map(String::as_str), Some("[1]"));
+        assert_eq!(rows[1].get("n").map(String::as_str), Some("x"));
+        assert_eq!(
+            parse_cargo(r#"{"cargoquery":[{"title":{}},{"title":3}]}"#),
+            Err("row 1: `title` missing or not an object".to_string())
+        );
+    }
+
+    /// Every byte outside the unreserved set is encoded on its own, a multi-byte character too.
+    #[test]
+    fn url_encode_encodes_each_reserved_byte() {
+        assert_eq!(url_encode("aZ9-_.~"), "aZ9-_.~");
+        assert_eq!(url_encode("a b/é"), "a%20b%2F%C3%A9");
+    }
+
+    /// A `continue` value that is not a string is an error naming its key.
+    #[test]
+    fn parse_pages_refuses_a_continue_value_that_is_not_a_string() {
+        assert_eq!(
+            parse_pages(r#"{"continue":{"geicontinue":"1","n":2}}"#),
+            Err("continue: `n` is not a string".to_string())
+        );
+        let b = parse_pages(r#"{"continue":{"a":"1","b":"2"}}"#).unwrap();
+        let expected: Continue = [("a".into(), "1".into()), ("b".into(), "2".into())].into();
+        assert_eq!(b.cont, Some(expected));
     }
 
     #[test]

@@ -73,6 +73,12 @@ pub fn samples_dir() -> PathBuf {
     Path::new(env!("CARGO_MANIFEST_DIR")).join("../../samples")
 }
 
+/// The path of `name` under `samples/`, declared nothing: for the examples, which are run by
+/// hand and print what they found themselves. A test asks [`sample`] or one of its siblings.
+pub fn sample_path(name: &str) -> PathBuf {
+    samples_dir().join(name)
+}
+
 /// The path to a sample, if it exists. Always declares the outcome: which file is being
 /// used, or that it's being skipped because it's missing.
 pub fn sample(name: &str) -> Option<PathBuf> {
