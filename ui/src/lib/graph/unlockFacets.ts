@@ -4,7 +4,7 @@ import { createFaceting } from '@/lib/facets/faceting'
 import type { FacetFilter } from '@/lib/facets/faceting'
 import type { UnlockNode, UnlockTarget } from '@/lib/ipc/types'
 import { OriginValue, TargetKind, originOrder } from '@/lib/ipc/values'
-import { knownAchievement, knownText } from './achievementNode'
+import { knownAchievement, knownText, nodeNumber } from './achievementNode'
 import { characterForms, characterValue } from './characterName'
 import { NodeState, nodeState, stateOrder } from './nodeState'
 
@@ -44,11 +44,6 @@ export const UnlockSort = {
 export type UnlockSort = (typeof UnlockSort)[keyof typeof UnlockSort]
 
 export type UnlockFilter = FacetFilter<FacetId>
-
-export const nodeSlot = (node: UnlockNode): number =>
-  node.achievement.kind === 'known'
-    ? node.achievement.id
-    : node.achievement.slot
 
 export const targetKind = (target: UnlockTarget): TargetKind => {
   switch (target.kind) {
@@ -150,19 +145,19 @@ export const sortNodes = (
       return sortBy(nodes, [
         (n) => (n.done ? 1 : 0),
         (n) => -n.graph.fanOut,
-        nodeSlot,
+        nodeNumber,
       ])
     case UnlockSort.Steps:
       return sortBy(nodes, [
         (n) => stepsRank[nodeState(n)],
         (n) => n.graph.blockedBy,
-        nodeSlot,
+        nodeNumber,
       ])
     case UnlockSort.Name:
       return sortBy(nodes, [
         (n) => (knownAchievement(n) ? 0 : 1),
         (n) => knownText(n)?.toLowerCase() ?? '',
-        nodeSlot,
+        nodeNumber,
       ])
     default:
       return assertNever(sort)

@@ -13,7 +13,7 @@ import {
 } from '@/components/ui/tooltip'
 import { useMessages } from '@/i18n'
 import { achievementNode } from '@/lib/graph/achievementNode'
-import { nodeSlot } from '@/lib/graph/unlockFacets'
+import { nodeNumber } from '@/lib/graph/achievementNode'
 import { canQueue, isQueued } from '@/lib/plan/queueRows'
 import { categoryOf } from '@/lib/wiki/category'
 import { parsePageKey } from '@/lib/wiki/pageKey'
@@ -118,7 +118,7 @@ const canAdd = computed(
         :queued="isQueued(node, queued)"
         :can-add="canAdd"
         :busy="queue.busy"
-        @add="queue.add(nodeSlot(node))"
+        @add="queue.add(nodeNumber(node))"
       />
       <template v-if="unknown">
         <EmptyCategory

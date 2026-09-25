@@ -5,7 +5,14 @@ import EntityChip from '@/components/runs/EntityChip.vue'
 import EmptyValue from '@/components/data-state/EmptyValue.vue'
 import { useMessages } from '@/i18n'
 import { columnName } from '@/lib/graph/nodeState'
-import type { AchievementRef, LiveOpen, Target } from '@/lib/ipc/types'
+import {
+  refCondition,
+  refIcon,
+  refNumber,
+  refTarget,
+  refText,
+} from '@/lib/graph/achievementNode'
+import type { AchievementRef, LiveOpen } from '@/lib/ipc/types'
 import { SecondLevelView } from '@/lib/ipc/types'
 
 // Everything the run could open, in one table instead of a card per cell: the cell is a
@@ -26,14 +33,8 @@ const rows = computed(() =>
 )
 
 function text(a: AchievementRef): string {
-  return a.kind === 'known' ? a.text : String(a.slot)
+  return refText(a) ?? String(refNumber(a))
 }
-const conditionOf = (a: AchievementRef): string | null =>
-  a.kind === 'known' ? a.condition : null
-const targetOf = (a: AchievementRef): Target | null =>
-  a.kind === 'known' ? { kind: 'achievement', id: a.id } : null
-const iconOf = (a: AchievementRef): string | null =>
-  a.kind === 'known' ? a.iconUrl : null
 
 // The second level is said only where it is a different thing to go and do, and in the
 // column's own word (B66): Ultra Greedier in Greed, hard elsewhere. Which is which arrives
@@ -66,16 +67,16 @@ const cellName = (open: LiveOpen): string =>
     >
       <span class="px-2 py-1">
         <EntityChip
-          :target="targetOf(row.achievement)"
+          :target="refTarget(row.achievement)"
           :name="text(row.achievement)"
-          :detail="conditionOf(row.achievement)"
-          :icon-url="iconOf(row.achievement)"
+          :detail="refCondition(row.achievement)"
+          :icon-url="refIcon(row.achievement)"
         />
       </span>
       <span class="truncate px-2 text-row">{{ cellName(row.open) }}</span>
       <span class="px-2 text-label text-subtle-foreground">
-        <span v-if="conditionOf(row.achievement)" class="line-clamp-2">{{
-          conditionOf(row.achievement)
+        <span v-if="refCondition(row.achievement)" class="line-clamp-2">{{
+          refCondition(row.achievement)
         }}</span>
         <EmptyValue v-else>{{ t('live.noCondition') }}</EmptyValue>
       </span>

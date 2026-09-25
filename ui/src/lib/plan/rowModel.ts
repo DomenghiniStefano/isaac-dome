@@ -1,7 +1,14 @@
 import type { Translate } from '@/i18n/message'
 import { targetName } from '@/lib/graph/characterName'
 import { NodeState, nodeState } from '@/lib/graph/nodeState'
-import type { UnlockNode } from '@/lib/ipc/types'
+import {
+  refCondition,
+  refIcon,
+  refNumber,
+  refTarget,
+  refText,
+} from '@/lib/graph/achievementNode'
+import type { AchievementRef, UnlockNode } from '@/lib/ipc/types'
 import { pageLocation } from '@/lib/wiki/category'
 import type { TabLocation } from '@/router/routeTable'
 
@@ -31,23 +38,32 @@ export interface RowModel {
   location: TabLocation | null
 }
 
+// What you get comes first, and the achievement's text is only the fallback: the file names
+// a Tainted character by its base form (`docs/BACKLOG.md` B28, B32).
+const rowText = (node: UnlockNode, t: Translate): string => {
+  const unlocked = node.unlocks.map((u) => targetName(t, u)).join(Separator)
+  if (unlocked !== '') return unlocked
+  return (
+    refText(node.achievement) ??
+    `${t('graph.unknownAchievement')} · ${t('graph.slot')} ${refNumber(node.achievement)}`
+  )
+}
+
+const pageOf = (a: AchievementRef): TabLocation | null => {
+  const target = refTarget(a)
+  return target === null ? null : pageLocation(target)
+}
+
 export const rowModel = (node: UnlockNode, t: Translate): RowModel => {
   const a = node.achievement
-  const known = a.kind === 'known'
-  // What you get comes first, and the achievement's text is only the fallback: the file names
-  // a Tainted character by its base form (`docs/BACKLOG.md` B28, B32).
-  const unlocked = node.unlocks.map((u) => targetName(t, u)).join(Separator)
-  const fallback = known
-    ? a.text
-    : `${t('graph.unknownAchievement')} · ${t('graph.slot')} ${a.slot}`
   const state = nodeState(node)
   return {
-    text: unlocked === '' ? fallback : unlocked,
-    condition: known ? a.condition : null,
-    art: known ? a.iconUrl : null,
+    text: rowText(node, t),
+    condition: refCondition(a),
+    art: refIcon(a),
     fanOut: node.graph.fanOut,
     playable: state === NodeState.Now,
     state,
-    location: known ? pageLocation({ kind: 'achievement', id: a.id }) : null,
+    location: pageOf(a),
   }
 }
