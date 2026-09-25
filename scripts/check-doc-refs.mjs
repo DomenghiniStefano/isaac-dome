@@ -29,6 +29,20 @@ import { execFileSync } from 'child_process'
 // Known-legitimate unresolved references: `path` as the document writes it, and why it is not
 // a defect. A name that stops appearing here has either been fixed or the document changed.
 const EXEMPTIONS = [
+  // Card #82 (2026-09-25) split two ipc files into modules and removed dead code; the dated
+  // specs name the files they were written against.
+  {
+    path: 'ui/src/screens/PlaceholderScreen.vue',
+    why: 'the router placeholder machinery was removed once every route had a screen; the 2026-09-11 shell spec designed it',
+  },
+  {
+    path: 'crates/ipc/src/search.rs',
+    why: 'became crates/ipc/src/search/{mod,rank,text}.rs; the 2026-09-12 search and blocked-menu specs name the file they changed',
+  },
+  {
+    path: 'crates/ipc/examples/dlc_mask.rs',
+    why: 'a finished probe, deleted; the 2026-09-13 infobox spec records what it measured',
+  },
   {
     path: 'target/release/latest.json',
     why: 'the updater manifest `pnpm release:manifest` writes; a build output under target/, never tracked, and the release design names where it lands',
