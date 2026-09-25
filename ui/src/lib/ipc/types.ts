@@ -658,8 +658,19 @@ export type MarkColumnView =
   (typeof MarkColumnView)[keyof typeof MarkColumnView]
 
 /**
- * A level inside a cell, named for its bit. `Second` is Ultra Greedier in the Greed
- * column, measured; what it means elsewhere is not, and `hard` would ship that claim.
+ * A level within a cell, **named for the bit and not for a meaning**. Bit 0 is `Base`,
+ * bit 1 is `Second`.
+ *
+ * In the Greed column `Second` is Ultra Greedier, measured 2026-09-12 on three days and
+ * three characters. What bit 1 means in the other eleven columns is *not* measured, so a
+ * name like `Hard` would assert exactly what this repository has already paid for twice
+ * (sections 3 and 6, a mark's bit 2).
+ *
+ * Ordered, `Base` first, so a cell reached at the second level satisfies a requirement
+ * for the base one by `reached >= required`.
+ *
+ * The one definition of the two levels: a requirement carries it across the IPC as
+ * `MarkLevelView`, a bare camelCase string.
  */
 export const MarkLevelView = {
   Base: 'base',

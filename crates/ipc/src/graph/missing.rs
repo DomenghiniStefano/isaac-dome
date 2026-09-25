@@ -5,7 +5,7 @@ use graph::model::{Requirement, ThresholdItem};
 use graph::rules::{CounterName, MarkColumn, MarkLevel};
 use wiki::{Dataset, Target};
 
-use super::types::{MarkLevelView, RequirementView, ThresholdItemView};
+use super::types::{RequirementView, ThresholdItemView};
 use crate::target_sprite::BossKeys;
 use crate::wiki_target::{self, page_of};
 
@@ -95,7 +95,7 @@ impl Standing<'_> {
                 character: character.0,
                 character_name: self.c.text(&ch.name, EN).to_string(),
                 column,
-                level: level_view(level),
+                level,
             })
     }
 
@@ -192,13 +192,6 @@ fn gate_view(gate: &str) -> RequirementView {
             .map(|(_, l)| l)
             .unwrap_or(gate)
             .to_string(),
-    }
-}
-
-fn level_view(l: MarkLevel) -> MarkLevelView {
-    match l {
-        MarkLevel::Base => MarkLevelView::Base,
-        MarkLevel::Second => MarkLevelView::Second,
     }
 }
 

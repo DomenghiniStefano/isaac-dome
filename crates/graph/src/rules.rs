@@ -137,7 +137,11 @@ pub use core_save::Column as MarkColumn;
 ///
 /// Ordered, `Base` first, so a cell reached at the second level satisfies a requirement
 /// for the base one by `reached >= required`.
-#[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Serialize, Deserialize)]
+///
+/// The one definition of the two levels: a requirement carries it across the IPC as
+/// `MarkLevelView`, a bare camelCase string.
+#[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Serialize, Deserialize, ts_rs::TS)]
+#[ts(rename = "MarkLevelView")]
 #[serde(rename_all = "camelCase")]
 pub enum MarkLevel {
     Base,
