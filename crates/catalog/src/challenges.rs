@@ -8,7 +8,9 @@
 
 use crate::diagnostics::{Diagnostic, SkipReason, Source};
 use crate::ids::{AchievementId, ChallengeId, ItemId};
-use crate::xml::{elements, Element};
+use crate::xml::{self, Element};
+
+const SOURCE: Source = Source::Challenges;
 
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct Challenge {
@@ -22,14 +24,8 @@ pub struct Challenge {
 }
 
 pub fn parse(bytes: &[u8], diagnostics: &mut Vec<Diagnostic>) -> Vec<Challenge> {
-    let els = match elements(bytes) {
-        Ok(els) => els,
-        Err(_) => {
-            diagnostics.push(Diagnostic::SourceUnreadable {
-                source: Source::Challenges,
-            });
-            return Vec::new();
-        }
+    let Some(els) = xml::read(bytes, SOURCE, diagnostics) else {
+        return Vec::new();
     };
     els.iter()
         .filter(|e| e.name == "challenge")
@@ -38,31 +34,16 @@ pub fn parse(bytes: &[u8], diagnostics: &mut Vec<Diagnostic>) -> Vec<Challenge> 
 }
 
 fn challenge_from(e: &Element, d: &mut Vec<Diagnostic>) -> Option<Challenge> {
-    let skip = |id: Option<u32>, reason: SkipReason, d: &mut Vec<Diagnostic>| {
-        d.push(Diagnostic::ElementSkipped {
-            source: Source::Challenges,
-            id,
-            reason,
-        });
-        None
-    };
-    let Some(raw_id) = e.attr("id") else {
-        return skip(None, SkipReason::MissingId, d);
-    };
-    let Ok(id) = raw_id.parse::<u32>() else {
-        return skip(None, SkipReason::MalformedId, d);
-    };
-    let Some(name) = e.attr("name") else {
-        return skip(Some(id), SkipReason::MissingName, d);
-    };
+    let id = xml::required_id(e, "id", SOURCE, d)?;
+    let name = xml::required_attr(e, "name", id, SkipReason::MissingName, SOURCE, d)?;
     // The two lists degrade differently: an id <= 0 in `startingitems` is a game signal
     // (the id is dropped, the challenge stays valid), while a non-numeric token in
     // `achievements` is a corrupted file (the whole challenge is dropped).
     let Some(items) = item_id_list(e.attr("startingitems").unwrap_or("")) else {
-        return skip(Some(id), SkipReason::MalformedList, d);
+        return xml::skip(SOURCE, Some(id), SkipReason::MalformedList, d);
     };
     let Some(achievements) = id_list(e.attr("achievements").unwrap_or("")) else {
-        return skip(Some(id), SkipReason::MalformedList, d);
+        return xml::skip(SOURCE, Some(id), SkipReason::MalformedList, d);
     };
     Some(Challenge {
         id: ChallengeId(id),

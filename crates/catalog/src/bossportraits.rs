@@ -4,10 +4,11 @@
 
 use crate::diagnostics::{Diagnostic, SkipReason, Source};
 use crate::ids::{AchievementId, BossId};
-use crate::items::normalize_root;
 use crate::sprite::SpriteRef;
 use crate::versusscreen::PortraitCrops;
-use crate::xml::{elements, Element};
+use crate::xml::{self, Element};
+
+const SOURCE: Source = Source::BossPortraits;
 
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct Boss {
@@ -18,23 +19,10 @@ pub struct Boss {
 }
 
 pub fn parse(bytes: &[u8], crops: &PortraitCrops, diagnostics: &mut Vec<Diagnostic>) -> Vec<Boss> {
-    let els = match elements(bytes) {
-        Ok(els) => els,
-        Err(_) => {
-            diagnostics.push(Diagnostic::SourceUnreadable {
-                source: Source::BossPortraits,
-            });
-            return Vec::new();
-        }
+    let Some(els) = xml::read(bytes, SOURCE, diagnostics) else {
+        return Vec::new();
     };
-    let root = els
-        .iter()
-        .find(|e| e.name == "bosses")
-        .and_then(|e| e.attr("root"))
-        .map(normalize_root)
-        .filter(|r| !r.is_empty())
-        .unwrap_or_else(|| "gfx/ui/boss".to_string());
-
+    let root = xml::root_attr(&els, "bosses", "root", "gfx/ui/boss");
     els.iter()
         .filter(|e| e.name == "boss")
         .filter_map(|e| boss_from(e, &root, crops, diagnostics))
@@ -47,42 +35,26 @@ fn boss_from(
     crops: &PortraitCrops,
     d: &mut Vec<Diagnostic>,
 ) -> Option<Boss> {
-    let skip = |id: Option<u32>, reason: SkipReason, d: &mut Vec<Diagnostic>| {
-        d.push(Diagnostic::ElementSkipped {
-            source: Source::BossPortraits,
-            id,
-            reason,
-        });
-        None
-    };
-    let Some(raw_id) = e.attr("id") else {
-        return skip(None, SkipReason::MissingId, d);
-    };
-    let Ok(id) = raw_id.parse::<u32>() else {
-        return skip(None, SkipReason::MalformedId, d);
-    };
-    let Some(portrait) = e.attr("portrait") else {
-        return skip(Some(id), SkipReason::MissingSprite, d);
-    };
-    let Some(name) = e.attr("name") else {
-        return skip(Some(id), SkipReason::MissingName, d);
-    };
+    let id = xml::required_id(e, "id", SOURCE, d)?;
+    let portrait = xml::required_attr(e, "portrait", id, SkipReason::MissingSprite, SOURCE, d)?;
+    let name = xml::required_attr(e, "name", id, SkipReason::MissingName, SOURCE, d)?;
     Some(Boss {
         id: BossId(id),
         name: name.to_string(),
-        portrait: {
-            // Not the whole file: six portraits hold the boss and the rubble it climbs out of
-            // side by side, and Mother holds her hands under her (B70). The rectangle is the
-            // one the game's own versus screen cuts, never a size of ours.
-            let path = format!("{root}/{portrait}");
-            let rect = crops.rect_for(&path);
-            SpriteRef { path, rect }
-        },
+        portrait: cropped_portrait(format!("{root}/{portrait}"), crops),
         unlocked_by: e
             .attr("achievement")
             .and_then(|a| a.parse().ok())
             .map(AchievementId),
     })
+}
+
+/// Not the whole file: six portraits hold the boss and the rubble it climbs out of side by
+/// side, and Mother holds her hands under her (B70). The rectangle is the one the game's own
+/// versus screen cuts, never a size of ours.
+fn cropped_portrait(path: String, crops: &PortraitCrops) -> SpriteRef {
+    let rect = crops.rect_for(&path);
+    SpriteRef { path, rect }
 }
 
 #[cfg(test)]

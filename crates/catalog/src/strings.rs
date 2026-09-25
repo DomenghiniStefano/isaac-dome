@@ -4,7 +4,7 @@ use std::collections::HashMap;
 
 use crate::diagnostics::{Diagnostic, Source};
 use crate::text::Language;
-use crate::xml::{elements, Element};
+use crate::xml::{self, Element};
 
 pub struct Strings {
     /// The languages in the order of their declared indices, unknown ones skipped.
@@ -15,68 +15,19 @@ pub struct Strings {
 
 impl Strings {
     pub fn parse(bytes: &[u8], diagnostics: &mut Vec<Diagnostic>) -> Option<Strings> {
-        let els = match elements(bytes) {
-            Ok(els) => els,
-            Err(_) => {
-                diagnostics.push(Diagnostic::SourceUnreadable {
-                    source: Source::Strings,
-                });
-                return None;
-            }
-        };
-
-        // Declared index -> language. Index 0 is "Key", not a language.
-        let mut by_index: Vec<(usize, Option<Language>)> = Vec::new();
-        for e in els.iter().filter(|e| e.name == "language") {
-            let (Some(index), Some(name)) = (e.attr("index"), e.attr("name")) else {
-                continue;
-            };
-            let Ok(index) = index.parse::<usize>() else {
-                continue;
-            };
-            if index == 0 {
-                continue;
-            }
-            let lang = Language::from_name(name);
-            if lang.is_none() {
-                diagnostics.push(Diagnostic::UnknownLanguage {
-                    name: name.to_string(),
-                });
-            }
-            by_index.push((index, lang));
-        }
-        by_index.sort_by_key(|(i, _)| *i);
-        // Position of the n-th <string> -> language (or None if unknown).
-        let slots: Vec<Option<Language>> = by_index.iter().map(|(_, l)| *l).collect();
+        let els = xml::read(bytes, Source::Strings, diagnostics)?;
+        let slots = language_slots(&els, diagnostics);
         let languages: Vec<Language> = slots.iter().flatten().copied().collect();
-
-        let mut texts = HashMap::new();
-        let mut i = 0;
-        while i < els.len() {
-            if els[i].name == "key" {
-                let Some(key) = els[i].attr("name") else {
-                    i += 1;
-                    continue;
-                };
-                let strings = children_named(&els, i, "string");
-                let mut row = vec![None; languages.len()];
-                for (n, s) in strings.iter().enumerate() {
-                    // The n-th <string> belongs to the language at index n+1.
-                    let Some(Some(lang)) = slots.get(n) else {
-                        continue;
-                    };
-                    // `lang` can't fail to be in `languages`: it comes from there. If it
-                    // ever were, the string is dropped instead of ending up in slot 0
-                    // (English), which would be wrong data passed off as good.
-                    let Some(pos) = languages.iter().position(|l| l == lang) else {
-                        continue;
-                    };
-                    row[pos] = Some(s.text.clone());
-                }
-                texts.insert(key.to_string(), row);
-            }
-            i += 1;
-        }
+        // Collected in file order, so a key declared twice is read as the last one.
+        let texts = els
+            .iter()
+            .enumerate()
+            .filter(|(_, e)| e.name == "key")
+            .filter_map(|(i, e)| {
+                let key = e.attr("name")?;
+                Some((key.to_string(), row_of(&els, i, &slots, &languages)))
+            })
+            .collect();
         Some(Strings { languages, texts })
     }
 
@@ -90,19 +41,59 @@ impl Strings {
     }
 }
 
-/// The direct children of element `parent` with that name: those that follow at depth
-/// +1, up to the next element at depth <= the parent's.
-pub(crate) fn children_named<'a>(
-    els: &'a [Element],
-    parent: usize,
-    name: &str,
-) -> Vec<&'a Element> {
-    let depth = els[parent].depth;
-    els[parent + 1..]
+/// The language of the n-th `<string>` of every key, by declared index (`None` where the
+/// language is one we don't know). Index 0 is "Key", not a language, and a declaration
+/// without a usable index is none at all.
+fn language_slots(els: &[Element], d: &mut Vec<Diagnostic>) -> Vec<Option<Language>> {
+    let mut by_index: Vec<(usize, Option<Language>)> = els
         .iter()
-        .take_while(|e| e.depth > depth)
-        .filter(|e| e.depth == depth + 1 && e.name == name)
-        .collect()
+        .filter(|e| e.name == "language")
+        .filter_map(|e| declared_language(e, d))
+        .collect();
+    by_index.sort_by_key(|(i, _)| *i);
+    by_index.into_iter().map(|(_, l)| l).collect()
+}
+
+/// One `<language>`: its index and what it is. An unknown name is diagnosed and keeps its
+/// slot, so the languages after it do not slide into its place.
+fn declared_language(e: &Element, d: &mut Vec<Diagnostic>) -> Option<(usize, Option<Language>)> {
+    let index = e.attr("index")?.parse::<usize>().ok()?;
+    let name = e.attr("name")?;
+    if index == 0 {
+        return None;
+    }
+    let lang = Language::from_name(name);
+    if lang.is_none() {
+        d.push(Diagnostic::UnknownLanguage {
+            name: name.to_string(),
+        });
+    }
+    Some((index, lang))
+}
+
+/// The texts of the key at `els[key]`, aligned to `languages`: the n-th `<string>` belongs
+/// to the n-th slot, and one past the declared slots, or in an unknown one, is dropped.
+fn row_of(
+    els: &[Element],
+    key: usize,
+    slots: &[Option<Language>],
+    languages: &[Language],
+) -> Vec<Option<String>> {
+    xml::children_named(els, key, "string")
+        .into_iter()
+        .zip(slots)
+        .filter_map(|(s, slot)| {
+            let lang = (*slot)?;
+            // `lang` can't fail to be in `languages`: it comes from there. If it ever were,
+            // the string is dropped instead of ending up in slot 0 (English), which would
+            // be wrong data passed off as good.
+            let pos = languages.iter().position(|l| *l == lang)?;
+            Some((pos, s.text.clone()))
+        })
+        .fold(vec![None; languages.len()], |mut row, (pos, text)| {
+            row[pos] = Some(text);
+            row
+        })
 }
 
 #[cfg(test)]

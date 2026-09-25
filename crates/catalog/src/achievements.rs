@@ -5,9 +5,10 @@
 
 use crate::diagnostics::{Diagnostic, SkipReason, Source};
 use crate::ids::AchievementId;
-use crate::items::normalize_root;
 use crate::sprite::SpriteRef;
-use crate::xml::{elements, Element};
+use crate::xml::{self, Element};
+
+const SOURCE: Source = Source::Achievements;
 
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct Achievement {
@@ -24,23 +25,10 @@ pub struct Achievement {
 }
 
 pub fn parse(bytes: &[u8], diagnostics: &mut Vec<Diagnostic>) -> Vec<Achievement> {
-    let els = match elements(bytes) {
-        Ok(els) => els,
-        Err(_) => {
-            diagnostics.push(Diagnostic::SourceUnreadable {
-                source: Source::Achievements,
-            });
-            return Vec::new();
-        }
+    let Some(els) = xml::read(bytes, SOURCE, diagnostics) else {
+        return Vec::new();
     };
-    let gfxroot = els
-        .iter()
-        .find(|e| e.name == "achievements")
-        .and_then(|e| e.attr("gfxroot"))
-        .map(normalize_root)
-        .filter(|r| !r.is_empty())
-        .unwrap_or_else(|| "gfx/ui/achievement".to_string());
-
+    let gfxroot = xml::root_attr(&els, "achievements", "gfxroot", "gfx/ui/achievement");
     els.iter()
         .filter(|e| e.name == "achievement")
         .filter_map(|e| achievement_from(e, &gfxroot, diagnostics))
@@ -48,24 +36,8 @@ pub fn parse(bytes: &[u8], diagnostics: &mut Vec<Diagnostic>) -> Vec<Achievement
 }
 
 fn achievement_from(e: &Element, gfxroot: &str, d: &mut Vec<Diagnostic>) -> Option<Achievement> {
-    let skip = |id: Option<u32>, reason: SkipReason, d: &mut Vec<Diagnostic>| {
-        d.push(Diagnostic::ElementSkipped {
-            source: Source::Achievements,
-            id,
-            reason,
-        });
-        None
-    };
-    let Some(raw_id) = e.attr("id") else {
-        return skip(None, SkipReason::MissingId, d);
-    };
-    let Ok(id) = raw_id.parse::<u32>() else {
-        return skip(None, SkipReason::MalformedId, d);
-    };
-    let Some(gfx) = e.attr("gfx") else {
-        return skip(Some(id), SkipReason::MissingSprite, d);
-    };
-
+    let id = xml::required_id(e, "id", SOURCE, d)?;
+    let gfx = xml::required_attr(e, "gfx", id, SkipReason::MissingSprite, SOURCE, d)?;
     Some(Achievement {
         id: AchievementId(id),
         // Without text the achievement stays a node in the graph: an empty label beats
