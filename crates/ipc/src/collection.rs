@@ -9,7 +9,6 @@ use serde::Serialize;
 use wiki::{Dataset, Target};
 
 use crate::flags::{recorded, recorded_done};
-use crate::graph::origin_view;
 use crate::wiki_target;
 use crate::{IconRef, ItemKindView, OriginView};
 
@@ -157,7 +156,7 @@ fn item_row(
         icon_url: icon(&IconRef::Item { kind, id: i.id.0 }),
         quality: i.quality,
         pools: distinct_pools(i),
-        origin: i.origin.map(origin_view),
+        origin: i.origin,
         in_collection: recorded(items, i.id.0),
         lock: lock_of(c, dataset, i.unlocked_by, achievements),
     }

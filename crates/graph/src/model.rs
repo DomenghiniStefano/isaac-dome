@@ -1,5 +1,5 @@
-//! The domain types. They don't cross the IPC: `ipc` defines its own views, as it already
-//! does for `ItemKindView` and `OriginView`.
+//! The domain types. They don't cross the IPC: `ipc` builds its own views of them, and only
+//! the catalog's own enums (`ItemKind`, `Origin`) travel as they are.
 
 use catalog::{AchievementId, BossId, ChallengeId, CharacterId, ItemId, ItemKind};
 

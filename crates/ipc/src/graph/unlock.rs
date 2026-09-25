@@ -1,6 +1,6 @@
 //! The Unlock view: one node per slot of section 1, and the pieces a node is made of.
 
-use catalog::{AchievementId, Catalog, Origin, Unlock};
+use catalog::{AchievementId, Catalog, Unlock};
 use wiki::Dataset;
 
 use super::missing::missing_view;
@@ -251,16 +251,7 @@ fn condition_of(a: &catalog::Achievement, dataset: Option<&Dataset>) -> Option<S
 
 fn first_item_origin(c: &Catalog, unlocks: &[Unlock]) -> Option<OriginView> {
     match unlocks.first()? {
-        Unlock::Item { kind, id } => c.item(*kind, *id)?.origin.map(origin_view),
+        Unlock::Item { kind, id } => c.item(*kind, *id)?.origin,
         Unlock::Character { .. } | Unlock::Boss { .. } | Unlock::Challenge { .. } => None,
-    }
-}
-
-pub(crate) fn origin_view(o: Origin) -> OriginView {
-    match o {
-        Origin::Rebirth => OriginView::Rebirth,
-        Origin::Afterbirth => OriginView::Afterbirth,
-        Origin::AfterbirthPlus => OriginView::AfterbirthPlus,
-        Origin::Repentance => OriginView::Repentance,
     }
 }
