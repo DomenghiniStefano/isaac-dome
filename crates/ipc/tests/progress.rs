@@ -101,3 +101,22 @@ fn without_a_catalog_no_character_maps_to_a_row() {
     let p = SaveProgress::new(None, Some(&counters), None);
     assert_eq!(p.mark(catalog::CharacterId(0), MarkColumn::Greed), None);
 }
+
+/// A bare 2 is the second level, not "nothing": a mark replaces the one before it, so bit 1
+/// decides on its own (B58: four located cells go 1 → 2 across the 638-era series). With bit
+/// 2 beside it, still the second level — the online bit is never a level.
+#[test]
+fn bit_one_alone_is_the_second_level() {
+    let mut counters = vec![0u32; 600];
+    counters[142] = 2; // Greed, Keeper: bit 1 alone
+    counters[131] = 6; // Greed, Magdalene: bit 1 and the online bit
+    let p = SaveProgress::new(None, Some(&counters), None);
+    assert_eq!(
+        p.level_at(12, MarkColumn::Greed),
+        Some(Some(MarkLevel::Second))
+    );
+    assert_eq!(
+        p.level_at(1, MarkColumn::Greed),
+        Some(Some(MarkLevel::Second))
+    );
+}
