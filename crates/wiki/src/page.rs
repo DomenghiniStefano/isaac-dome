@@ -579,7 +579,7 @@ fn entry_description(
 mod tests {
     use super::*;
     use crate::resolver::fixtures::test_resolver;
-    use crate::{Block, Diagnostics, SectionKind};
+    use crate::{Block, Diagnostics, Dlc, Infobox, SectionKind, Target};
 
     /// Measured on 2026-09-13: `Template:Infobox transformation` exists and is transcluded by
     /// exactly the sixteen pages the Cargo table has rows for. The kind is declared like the
@@ -609,7 +609,7 @@ mod tests {
 ";
         let mut d = Diagnostics::default();
         let v = parse_page("Beelzebub", 7, src, &test_resolver(), &mut d);
-        let text = crate::plain(&v[0].1.description);
+        let text = plain(&v[0].1.description);
         assert!(
             text.starts_with("Beelzebub is a transformation, turning Isaac into a fly after picking up 3 fly items."),
             "{text}"
@@ -628,7 +628,7 @@ mod tests {
     fn a_boss_character_or_challenge_without_a_description_takes_the_preamble() {
         let desc = |title: &str, src: &str| {
             let v = parse_page(title, 1, src, &test_resolver(), &mut Diagnostics::default());
-            crate::plain(&v[0].1.description)
+            plain(&v[0].1.description)
         };
         assert_eq!(
             desc(
@@ -686,13 +686,13 @@ mod tests {
         let v = parse_page("Mom", 1, src, &test_resolver(), &mut Diagnostics::default());
         let description = &v[0].1.description;
         assert_eq!(
-            crate::plain(description),
+            plain(description),
             "Mom can appear: In the Depths. Only in the Mausoleum."
         );
-        let editions: Vec<&Vec<crate::Dlc>> = description
+        let editions: Vec<&Vec<Dlc>> = description
             .iter()
             .filter_map(|i| match i {
-                crate::Inline::Edition { only, .. } => Some(only),
+                Inline::Edition { only, .. } => Some(only),
                 _ => None,
             })
             .collect();
@@ -765,22 +765,19 @@ mod tests {
         let v = parse_page("Breakfast", 7, src, &test_resolver(), &mut d);
         let e = &v[0].1;
         // `r` is "added in Repentance", so it names Repentance **and** Repentance+.
-        assert_eq!(
-            e.dlc,
-            vec![crate::Dlc::Repentance, crate::Dlc::RepentancePlus]
-        );
-        assert_eq!(e.unlocked_by, Some(crate::Target::Achievement { id: 62 }));
+        assert_eq!(e.dlc, vec![Dlc::Repentance, Dlc::RepentancePlus]);
+        assert_eq!(e.unlocked_by, Some(Target::Achievement { id: 62 }));
         assert!(matches!(
             e.description.first(),
-            Some(crate::Inline::Text { text, .. }) if text.contains("Tears up")
+            Some(Inline::Text { text, .. }) if text.contains("Tears up")
         ));
     }
 
     /// The editions of every `Edition` node under an entry, in the order they are found.
-    fn edition_nodes(inline: &[crate::Inline]) -> Vec<Vec<crate::Dlc>> {
+    fn edition_nodes(inline: &[Inline]) -> Vec<Vec<Dlc>> {
         let mut out = Vec::new();
         for i in inline {
-            if let crate::Inline::Edition { only, inline } = i {
+            if let Inline::Edition { only, inline } = i {
                 out.push(only.clone());
                 out.extend(edition_nodes(inline));
             }
@@ -788,11 +785,11 @@ mod tests {
         out
     }
 
-    fn entry_editions(e: &Entry) -> Vec<Vec<crate::Dlc>> {
+    fn entry_editions(e: &Entry) -> Vec<Vec<Dlc>> {
         let mut out = edition_nodes(&e.description);
         for s in &e.sections {
             for b in &s.blocks {
-                if let crate::Block::List { items, .. } = b {
+                if let Block::List { items, .. } = b {
                     for item in items {
                         out.extend(edition_nodes(&item.inline));
                     }
@@ -817,14 +814,14 @@ mod tests {
         let v = parse_page("Breakfast", 7, src, &test_resolver(), &mut d);
         assert_eq!(
             entry_editions(&v[0].1),
-            vec![vec![crate::Dlc::Repentance]],
+            vec![vec![Dlc::Repentance]],
             "the body's span"
         );
         // The infobox's fields go through the same pass: a quote carries editions too.
-        let crate::Infobox::Item { quote, .. } = &v[0].1.infobox else {
+        let Infobox::Item { quote, .. } = &v[0].1.infobox else {
             panic!("a collectible page carries an item infobox")
         };
-        assert_eq!(edition_nodes(quote), vec![vec![crate::Dlc::Repentance]]);
+        assert_eq!(edition_nodes(quote), vec![vec![Dlc::Repentance]]);
         assert_eq!(d.spans_outside_their_page, 0);
     }
 
@@ -840,10 +837,10 @@ mod tests {
         assert_eq!(
             page_editions(src).list(),
             vec![
-                crate::Dlc::Afterbirth,
-                crate::Dlc::AfterbirthPlus,
-                crate::Dlc::Repentance,
-                crate::Dlc::RepentancePlus
+                Dlc::Afterbirth,
+                Dlc::AfterbirthPlus,
+                Dlc::Repentance,
+                Dlc::RepentancePlus
             ]
         );
     }
@@ -856,10 +853,7 @@ mod tests {
         let src = "{{infobox passive collectible\n | id = 25\n}}\n== Effects ==\n* {{dlc|r+|only the last}}\n";
         let mut d = Diagnostics::default();
         let v = parse_page("Breakfast", 7, src, &test_resolver(), &mut d);
-        assert_eq!(
-            entry_editions(&v[0].1),
-            vec![vec![crate::Dlc::RepentancePlus]]
-        );
+        assert_eq!(entry_editions(&v[0].1), vec![vec![Dlc::RepentancePlus]]);
     }
 
     /// When the two ranges share no edition the wiki draws its own error, so the span is a
@@ -876,15 +870,15 @@ mod tests {
             "a badge naming no edition: {:?}",
             v[0].1.sections
         );
-        let crate::Block::List { items, .. } = &v[0].1.sections[0].blocks[0] else {
+        let Block::List { items, .. } = &v[0].1.sections[0].blocks[0] else {
             panic!("the Effects section holds a list")
         };
         assert!(
+            items[0].inline.iter().any(
+                |i| matches!(i, Inline::Text { text, .. } if text.contains("only in Rebirth"))
+            ),
+            "the words went with it: {:?}",
             items[0]
-                .inline
-                .iter()
-                .any(|i| matches!(i, crate::Inline::Text { text, .. } if text.contains("only in Rebirth"))),
-            "the words went with it: {:?}", items[0]
         );
         assert_eq!(d.spans_outside_their_page, 1);
     }
