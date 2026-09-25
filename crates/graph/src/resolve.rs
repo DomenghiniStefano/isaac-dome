@@ -90,9 +90,7 @@ pub fn requirement_with(
         label: label.clone(),
     };
     match &row.target {
-        Target::Character { id } => index
-            .character(&label)
-            .or_else(|| c.character(CharacterId(*id)).map(|ch| ch.id))
+        Target::Character { id } => character_of(c, index, *id, &label)
             .map(|id| Requirement::Character { id })
             .unwrap_or_else(unknown),
         // By name, never by id: the wiki's entity id is the game's entity type, ours comes
@@ -130,6 +128,25 @@ pub fn requirement_with(
             from_verdict(rules, &verdict_key, character, unknown)
         }
     }
+}
+
+/// A character reference: **by the wiki's id first, and only then by name** (`label` is
+/// already aliased). The game gives a Tainted character its base form's name and tells them
+/// apart by a flag, so the name index holds one entry for the two — the later, Tainted one —
+/// and plain "Isaac" comes back as Tainted Isaac. The wiki numbers characters the way
+/// `players.xml` does, so the id is the one thing that separates them. Name-first, 255 of the
+/// 396 character references on the 2026-09 catalog drew their edge to a Tainted unlock (card
+/// #82, review F1). One function serves the requirement and the sentence's character, so the
+/// two can no longer disagree about who a reference names.
+pub(crate) fn character_of(
+    c: &Catalog,
+    index: &NameIndex,
+    id: u32,
+    label: &str,
+) -> Option<CharacterId> {
+    c.character(CharacterId(id))
+        .map(|ch| ch.id)
+        .or_else(|| index.character(label))
 }
 
 /// An item or trinket reference: by name within the id space the reference names, then by

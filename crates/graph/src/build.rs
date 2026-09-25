@@ -238,10 +238,9 @@ fn sentence_character(
     refs: &[RefRow],
 ) -> Option<CharacterId> {
     refs.iter().find_map(|r| match &r.target {
-        Target::Character { id } => c
-            .character(CharacterId(*id))
-            .map(|ch| ch.id)
-            .or_else(|| index.character(rules.alias(&r.label))),
+        Target::Character { id } => {
+            crate::resolve::character_of(c, index, *id, rules.alias(&r.label))
+        }
         Target::Item { .. }
         | Target::Trinket { .. }
         | Target::Achievement { .. }
