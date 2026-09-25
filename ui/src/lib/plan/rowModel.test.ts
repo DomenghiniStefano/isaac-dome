@@ -28,9 +28,8 @@ const base: UnlockNode = {
   },
 }
 
-// The eight below came from `lib/graph/goalCard.test.ts`, which this module replaces. They
-// are carried rather than rewritten: the reasons they exist — B28, the 231 nameless nodes,
-// the slot that must go nowhere — did not stop being true because the function moved.
+// What a row is called and where it goes, for the cases that have cost something: B28, the 231
+// nameless nodes, the slot that must go nowhere.
 describe('what a row is called', () => {
   // B28: the file writes the base name for both forms, and the five rows of the reference
   // profile were all Tainted characters labelled as their base form. The text is what you
