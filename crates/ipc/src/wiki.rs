@@ -65,7 +65,7 @@ pub fn wiki_index(
 }
 
 /// Every page of the dataset with its identity, by kind and then by id: the one walk the
-/// index and the search both read (card #82, S4). Two walks is how B46 happened — the sixteen
+/// index and the search both read. Two walks is how B46 happened — the sixteen
 /// transformations entered the dataset on 2026-09-13 and one of the two lists did not learn
 /// about them, and a page that exists and cannot be found reads exactly like a page that
 /// does not exist.

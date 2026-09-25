@@ -1,10 +1,9 @@
 //! Reading one slot of a flag section — achievements (section 1), challenges, collection —
 //! with the default each question needs when the save holds no record of it.
 //!
-//! The same `flags.get(slot).copied()` was written out at eight call sites with three
-//! different answers for "past the end of the section" (card #82, S4). The answers are right
-//! for their questions and differ on purpose; what was wrong was that nothing named which one
-//! a site meant. Each helper here is one of those answers, named for it.
+//! "Past the end of the section" has three answers, each right for its question and different
+//! on purpose. Each helper here is one of them, named for it, so a call site says which one it
+//! means rather than spelling `flags.get(slot).copied()` and leaving the default implicit.
 
 /// Whether the save records the slot as done. A slot past the section's end reads as **not
 /// done**: the save has no record of it, and "done" is a claim that needs one.

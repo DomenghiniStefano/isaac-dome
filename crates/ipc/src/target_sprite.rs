@@ -125,10 +125,8 @@ impl BossKeys {
 /// the unkeyed portraits — true of a fuzzy one, false of this.
 ///
 /// **Settled once per catalog, by whoever holds it** — the app keeps it beside the catalog —
-/// and handed to every lookup (card #82, S3). It used to be settled behind a process-wide
-/// cache compared on every lookup (card #80, R10), with the dataset read from the binary
-/// behind a `OnceLock`: the dataset is a parameter now, and without one only the portraits'
-/// file names speak.
+/// and handed to every lookup, so no lookup compares a cache. The dataset is a parameter:
+/// without one, only the portraits' file names speak.
 pub fn boss_keys(c: &Catalog, dataset: Option<&Dataset>) -> BossKeys {
     let rows: Vec<(&str, &str)> = c
         .bosses()

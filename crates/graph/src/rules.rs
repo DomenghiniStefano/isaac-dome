@@ -122,7 +122,7 @@ pub enum Verdict {
 }
 
 /// The twelve columns of the completion matrix, in the game's own order: the layout's own
-/// enum, not a copy of it (card #82, S1). A rules file spells a column the way the layout
+/// enum, not a copy of it. A rules file spells a column the way the layout
 /// serializes it (`"momsHeart"`), and nothing more of `core-save` is read from here — the
 /// index a cell sits at stays the business of whoever answers `Profile::mark`.
 pub use core_save::Column as MarkColumn;
@@ -233,7 +233,7 @@ impl Rules {
             }
             // The flag is the file's way of writing a unit variant, and `true` is its only
             // meaning: `false` would still resolve to no prerequisite, the opposite of what it
-            // reads as (card #80, P11b).
+            // reads as.
             if let Verdict::AlwaysAvailable(false) | Verdict::NotAPrerequisite(false) = v {
                 return Err(RulesError::Malformed {
                     reason: format!("{key}: a verdict written false says nothing"),

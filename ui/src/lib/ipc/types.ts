@@ -552,8 +552,8 @@ export type ArchiveReason =
   { kind: 'tooShort' } | { kind: 'badMagic' } | { kind: 'io'; reason: IoReason }
 
 /**
- * An archive the install has and that did not open (card #80, R6). Its name is one of the
- * game's own archive names, never a path.
+ * An archive the install has and that did not open. Its name is one of the game's own
+ * archive names, never a path.
  */
 export type BrokenArchiveView = { name: string; reason: ArchiveReason }
 
@@ -633,11 +633,10 @@ export type AchievementRef =
 /**
  * The twelve columns the game's own completion widget draws, in its order.
  *
- * **The one definition of the twelve** (card #82, S1). The graph's rules name a column with
- * it (`graph::rules::MarkColumn`), and it crosses the IPC as `MarkColumnView`: a bare
- * camelCase string, fieldless, so the TypeScript is a union of values. It used to be three
- * enums of the same twelve joined by hand-written maps, each one a place for a thirteenth
- * column to be forgotten.
+ * **The one definition of the twelve.** The graph's rules name a column with it
+ * (`graph::rules::MarkColumn`), and it crosses the IPC as `MarkColumnView`: a bare camelCase
+ * string, fieldless, so the TypeScript is a union of values. One enum, so there is no
+ * hand-written map between copies for a thirteenth column to be forgotten in.
  *
  * Ordered in the game's order, so a column can key a sorted map.
  */
