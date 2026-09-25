@@ -36,14 +36,10 @@ const { t } = useMessages()
 // The filter and the position are the entry's reading (`tabView.ts`): they come back after a tab
 // switch, a back, a tear-off. A tab that moves to another category is a new entry, so it starts
 // clean without anything here having to clear it.
-const reading = useTabView(wikiView)
+const { reading, update } = useTabView(wikiView)
 const query = computed(() => reading.value.query)
-const setQuery = (value: string) => {
-  reading.value = { ...reading.value, query: value }
-}
-const setOffset = (offset: ScrollOffset) => {
-  reading.value = { ...reading.value, offset }
-}
+const setQuery = (value: string) => update({ query: value })
+const setOffset = (offset: ScrollOffset) => update({ offset })
 
 const all = computed(() => wiki.index?.pages ?? [])
 const total = computed(() => filterPages(all.value, props.category, '').length)

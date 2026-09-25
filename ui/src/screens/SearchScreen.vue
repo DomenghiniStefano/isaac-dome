@@ -82,15 +82,11 @@ const allRows = computed(() =>
 
 // Which groups the search is narrowed to belongs to the tab, not to this component (B39). The
 // query is not here: it is in the location already, because a search is a place you can link to.
-const reading = useTabView(searchView)
-const setOffset = (offset: ScrollOffset) => {
-  reading.value = { ...reading.value, offset }
-}
+const { reading, update } = useTabView(searchView)
+const setOffset = (offset: ScrollOffset) => update({ offset })
 const picked = computed({
   get: () => reading.value.picked,
-  set: (value: RowGroup[]) => {
-    reading.value = { ...reading.value, picked: value }
-  },
+  set: (value: RowGroup[]) => update({ picked: value }),
 })
 const rows = computed(() => filterGroups(allRows.value, picked.value))
 const counts = computed(() => groupCounts(allRows.value))
