@@ -1,5 +1,5 @@
 import type { Translate } from '@/i18n/message'
-import type { UnlockNode, UnlockTarget } from '@/lib/ipc/types'
+import type { RequirementView, UnlockNode, UnlockTarget } from '@/lib/ipc/types'
 
 // The two forms of a character, base and Tainted, carry the same name: `achievements.xml`
 // writes `You unlocked "The Lost"` for both, and `players.xml` tells them apart by the `b`
@@ -20,25 +20,25 @@ export const characterLabel = (t: Translate, form: CharacterForm): string =>
 export const characterValue = (character: { id: number }): string =>
   String(character.id)
 
+// A missing character by its facet value, and nothing for every other requirement.
+const characterEntry = (
+  requirement: RequirementView,
+): [string, CharacterForm][] =>
+  requirement.kind === 'character'
+    ? [
+        [
+          characterValue(requirement),
+          { name: requirement.name, tainted: requirement.tainted },
+        ],
+      ]
+    : []
+
 // Every character the nodes are missing, by that value: what turns a facet's picks back
 // into names.
 export const characterForms = (
   nodes: UnlockNode[],
 ): Map<string, CharacterForm> =>
-  new Map(
-    nodes.flatMap((node) =>
-      node.missing.flatMap((requirement) =>
-        requirement.kind === 'character'
-          ? [
-              [
-                characterValue(requirement),
-                { name: requirement.name, tainted: requirement.tainted },
-              ] as const,
-            ]
-          : [],
-      ),
-    ),
-  )
+  new Map(nodes.flatMap((node) => node.missing.flatMap(characterEntry)))
 
 // What a target is called on screen. Every kind but one is the game's own name; a character
 // needs its form as well, or the Tainted one reads as the base.
