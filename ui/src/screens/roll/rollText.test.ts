@@ -1,8 +1,9 @@
 import { describe, expect, it } from 'vitest'
 import { StatusView } from '@/lib/ipc/types'
-import type { DeckView, RollRowView } from '@/lib/ipc/types'
+import type { DeckView, DrawnView, RollRowView } from '@/lib/ipc/types'
 import {
   emptyDeckReason,
+  rollCardState,
   rowOptions,
   selectionOf,
   statusText,
@@ -94,5 +95,35 @@ describe('rowOptions', () => {
       { value: '0', label: 'Isaac', count: 11, picked: true },
       { value: '1', label: 'Magdalene', count: 12, picked: false },
     ])
+  })
+})
+
+// What the card slot shows, and the one place it is decided.
+describe('rollCardState', () => {
+  const drawn = { character: 'Isaac' } as DrawnView
+
+  it('shows the drawn target whenever there is one, whatever the deck says', () => {
+    expect(rollCardState({ drawn, deck: deck() })).toEqual({
+      kind: 'drawn',
+      drawn,
+    })
+  })
+
+  // An empty deck is a first-class state: it says which exclusion emptied it, and how many.
+  it('says which exclusion emptied the deck, with its count', () => {
+    expect(rollCardState({ drawn: null, deck: deck({ locked: 12 }) })).toEqual({
+      kind: 'emptyDeck',
+      key: 'roll.emptyDeck.locked',
+      count: 12,
+    })
+  })
+
+  it('tells a space with nothing in it from a deck not drawn from yet', () => {
+    expect(rollCardState({ drawn: null, deck: deck() })).toEqual({
+      kind: 'nothingToDeck',
+    })
+    expect(rollCardState({ drawn: null, deck: deck({ size: 4 }) })).toEqual({
+      kind: 'notDrawnYet',
+    })
   })
 })

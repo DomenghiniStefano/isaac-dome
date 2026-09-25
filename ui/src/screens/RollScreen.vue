@@ -9,10 +9,7 @@ import DiagnosticsList from '@/components/diagnostics/DiagnosticsList.vue'
 import { Button } from '@/components/ui/button'
 import { useOnActiveProfile } from '@/composables/useOnActiveProfile'
 import { useMessages } from '@/i18n'
-import type { MessageKey } from '@/i18n/messageKey'
-import type { MessageSchema } from '@/i18n/messages/it'
 import { rollEntries } from '@/lib/diagnostics/roll'
-import type { DrawnView } from '@/lib/ipc/types'
 import { AppEvent } from '@/lib/window/appEvents'
 import { useAppEvent } from '@/composables/useAppEvent'
 import { LoadStatus } from '@/stores/loadStatus'
@@ -20,7 +17,7 @@ import { useRollStore } from '@/stores/roll'
 import ProfileError from './profile/ProfileError.vue'
 import RollCard from './roll/RollCard.vue'
 import RollPanel from './roll/RollPanel.vue'
-import { EmptyDeckReason, emptyDeckReason } from './roll/rollText'
+import { rollCardState } from './roll/rollText'
 import ScreenHeader from './ScreenHeader.vue'
 
 const store = useRollStore()
@@ -34,40 +31,9 @@ useAppEvent(AppEvent.RollChanged, () => {
   void store.load()
 })
 
-// The key for each of the four exclusions `emptyDeckReason` can name. A presentational lookup,
-// not a judgment: which reason it is comes from the tested pure function, this only routes it
-// to a sentence.
-const emptyDeckKey: Record<EmptyDeckReason, MessageKey<MessageSchema>> = {
-  [EmptyDeckReason.Taken]: 'roll.emptyDeck.taken',
-  [EmptyDeckReason.Unreadable]: 'roll.emptyDeck.unreadable',
-  [EmptyDeckReason.Locked]: 'roll.emptyDeck.locked',
-  [EmptyDeckReason.Filtered]: 'roll.emptyDeck.filtered',
-}
-
-// What the card slot shows when there is no drawn target to draw a `RollCard` from: an empty
-// deck is a first-class state, not a disabled button, so it says which exclusion emptied it
-// and how many — or, failing that, that there was never anything to draw in the first place.
-type CardState =
-  | { kind: 'drawn'; drawn: DrawnView }
-  | { kind: 'emptyDeck'; key: MessageKey<MessageSchema>; count: number }
-  | { kind: 'nothingToDeck' }
-  | { kind: 'notDrawnYet' }
-
-const cardState = computed((): CardState | null => {
-  const view = store.view
-  if (!view) return null
-  if (view.drawn) return { kind: 'drawn', drawn: view.drawn }
-  const reason = emptyDeckReason(view.deck)
-  if (reason)
-    return {
-      kind: 'emptyDeck',
-      key: emptyDeckKey[reason],
-      count: view.deck[reason],
-    }
-  return view.deck.size === 0
-    ? { kind: 'nothingToDeck' }
-    : { kind: 'notDrawnYet' }
-})
+const cardState = computed(() =>
+  store.view ? rollCardState(store.view) : null,
+)
 </script>
 
 <template>

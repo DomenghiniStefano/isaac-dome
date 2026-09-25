@@ -3,7 +3,13 @@ import type { MessageKey } from '@/i18n/messageKey'
 import type { MessageSchema } from '@/i18n/messages/it'
 import { assertNever } from '@/lib/assertNever'
 import { StatusView } from '@/lib/ipc/types'
-import type { DeckView, RollRowView, SelectionView } from '@/lib/ipc/types'
+import type {
+  DeckView,
+  DrawnView,
+  RollRowView,
+  RollView,
+  SelectionView,
+} from '@/lib/ipc/types'
 import type { FacetOption } from '@/lib/facets/facetOptions'
 
 type Message = MessageKey<MessageSchema>
@@ -77,3 +83,36 @@ export const rowOptions = (rows: RollRowView[]): FacetOption[] =>
     count: row.targets,
     picked: row.selected,
   }))
+
+// The sentence for each of the four exclusions `emptyDeckReason` can name.
+const emptyDeckKey: Record<EmptyDeckReason, Message> = {
+  [EmptyDeckReason.Taken]: 'roll.emptyDeck.taken',
+  [EmptyDeckReason.Unreadable]: 'roll.emptyDeck.unreadable',
+  [EmptyDeckReason.Locked]: 'roll.emptyDeck.locked',
+  [EmptyDeckReason.Filtered]: 'roll.emptyDeck.filtered',
+}
+
+// What the card slot shows. With no drawn target to draw a `RollCard` from, an empty deck is a
+// first-class state, not a disabled button: it says which exclusion emptied it and how many —
+// or, failing that, that there was never anything to draw in the first place.
+export type CardState =
+  | { kind: 'drawn'; drawn: DrawnView }
+  | { kind: 'emptyDeck'; key: Message; count: number }
+  | { kind: 'nothingToDeck' }
+  | { kind: 'notDrawnYet' }
+
+export const rollCardState = (
+  view: Pick<RollView, 'drawn' | 'deck'>,
+): CardState => {
+  if (view.drawn) return { kind: 'drawn', drawn: view.drawn }
+  const reason = emptyDeckReason(view.deck)
+  if (reason)
+    return {
+      kind: 'emptyDeck',
+      key: emptyDeckKey[reason],
+      count: view.deck[reason],
+    }
+  return view.deck.size === 0
+    ? { kind: 'nothingToDeck' }
+    : { kind: 'notDrawnYet' }
+}
