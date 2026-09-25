@@ -11,6 +11,8 @@ mod sessions;
 mod watch;
 
 pub use archive::{Ingest, Ingested};
+// Only the tests read these directly (card #81, C8): the ingest is what the app calls.
+#[cfg(feature = "test-api")]
 pub use read::{chunk, head, len, window_ending_at, CHUNK};
 pub use sessions::sessions;
 pub use watch::{watch, LogWatcher};

@@ -5,5 +5,8 @@ edition = "2021"
 license.workspace = true
 description = "Helpers shared by the tests that read real data from samples/"
 
+[dev-dependencies]
+tempfile = "3"
+
 [lints]
 workspace = true

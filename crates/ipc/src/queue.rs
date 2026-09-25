@@ -106,12 +106,12 @@ pub struct QueueInputs<'a> {
     /// The embedded wiki dataset, for the page a requirement links to. `None` links nothing.
     pub dataset: Option<&'a Dataset>,
     pub flags: Option<&'a [bool]>,
-    pub graph: Option<&'a graph::Graph>,
+    pub graph: Option<&'a graph::build::Graph>,
     pub eval: Option<&'a graph::evaluate::Eval>,
     /// What the save says about marks and tallies, for the requirements the graph now
     /// answers from the profile. `None` draws none of them — which is right only when
     /// `eval` was built without one too, or the queue and Unlock would disagree.
-    pub progress: Option<&'a dyn graph::Profile>,
+    pub progress: Option<&'a dyn graph::evaluate::Profile>,
     pub queue: Result<&'a plan::Queue, &'a plan::QueueError>,
     pub goals_pending: u32,
     /// `Some` when the database itself failed, as the case it is: never a sentence, and
@@ -196,7 +196,7 @@ pub fn queue_view(
         let steps_not_queued = graph
             .zip(flags)
             .map(|(g, f)| {
-                g.missing_chain(r.achievement, &graph::FlagsOnly(Some(f)))
+                g.missing_chain(r.achievement, &graph::evaluate::FlagsOnly(Some(f)))
                     .iter()
                     .filter(|id| !queued.contains(id))
                     .count() as u32
@@ -238,10 +238,14 @@ pub struct GraphDeps {
 
 impl GraphDeps {
     /// The chains as the graph gives them, for the rows a move involves.
-    pub fn new(g: &graph::Graph, flags: Option<&[bool]>, rows: &[AchievementId]) -> GraphDeps {
+    pub fn new(
+        g: &graph::build::Graph,
+        flags: Option<&[bool]>,
+        rows: &[AchievementId],
+    ) -> GraphDeps {
         GraphDeps::from_chains(
             rows.iter()
-                .map(|a| (*a, g.missing_chain(*a, &graph::FlagsOnly(flags)))),
+                .map(|a| (*a, g.missing_chain(*a, &graph::evaluate::FlagsOnly(flags)))),
         )
     }
 

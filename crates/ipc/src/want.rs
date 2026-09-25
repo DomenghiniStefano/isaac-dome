@@ -84,7 +84,7 @@ pub fn want_view(
     catalog: Option<&Catalog>,
     view: &UnlockView,
     flags: Option<&[bool]>,
-    g: Option<&graph::Graph>,
+    g: Option<&graph::build::Graph>,
     target: &Target,
     mut icon: impl FnMut(&IconRef) -> Option<String>,
 ) -> WantView {
@@ -162,7 +162,7 @@ pub fn want_view(
 fn route_state(
     node: &UnlockNode,
     flags: Option<&[bool]>,
-    g: Option<&graph::Graph>,
+    g: Option<&graph::build::Graph>,
     view: &UnlockView,
 ) -> WantState {
     let Some(flags) = flags else {
@@ -187,7 +187,7 @@ fn route_state(
     // for a slot the graph says nothing about, so the chain comes out empty and `unknown`
     // counts it. The route then reads "I can't tell you the series", never "nothing missing".
     let chain = g
-        .map(|g| g.missing_chain(AchievementId(id), &graph::FlagsOnly(Some(flags))))
+        .map(|g| g.missing_chain(AchievementId(id), &graph::evaluate::FlagsOnly(Some(flags))))
         .unwrap_or_default();
     // The order is the queue's, asked rather than reinvented: `enqueue` appends the chain,
     // then the wish, then runs the repair that pulls the prerequisites above it. An empty

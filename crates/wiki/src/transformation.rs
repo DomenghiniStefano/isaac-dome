@@ -49,11 +49,12 @@ pub fn requires(text: &str) -> Option<u32> {
 
 /// Every item and trinket target of an inline run, in order, edition wrappers included: a
 /// list qualified by `dlc =` still names items that count, in that edition.
-fn refs(inline: &[Inline], out: &mut Vec<Target>) {
-    for i in inline {
-        match i {
+fn item_refs(inline: &[Inline]) -> Vec<Target> {
+    inline
+        .iter()
+        .flat_map(|i| match i {
             Inline::Ref { target, .. } => match target {
-                Target::Item { .. } | Target::Trinket { .. } => out.push(target.clone()),
+                Target::Item { .. } | Target::Trinket { .. } => vec![target.clone()],
                 Target::Character { .. }
                 | Target::Achievement { .. }
                 | Target::Challenge { .. }
@@ -61,12 +62,12 @@ fn refs(inline: &[Inline], out: &mut Vec<Target>) {
                 | Target::Transformation { .. }
                 | Target::Stage { .. }
                 | Target::Room { .. }
-                | Target::Concept { .. } => {}
+                | Target::Concept { .. } => Vec::new(),
             },
-            Inline::Edition { inline, .. } => refs(inline, out),
-            Inline::Text { .. } | Inline::Concept { .. } => {}
-        }
-    }
+            Inline::Edition { inline, .. } => item_refs(inline),
+            Inline::Text { .. } | Inline::Concept { .. } => Vec::new(),
+        })
+        .collect()
 }
 
 /// The union of the two sources on the page, deduplicated, the body's tables first because
@@ -82,29 +83,35 @@ fn refs(inline: &[Inline], out: &mut Vec<Target>) {
 /// reads it and where a test can see it. Returning it as well would be a second copy of one
 /// fact, free to drift from the first.
 pub fn contributors(ib: &RawInfobox, text: &str, r: &Resolver, d: &mut Diagnostics) -> Vec<Target> {
-    let mut body = Vec::new();
-    for line in text
+    let body: Vec<Target> = text
         .lines()
         .filter(|l| TABLES.iter().any(|t| l.contains(t)))
-    {
-        refs(&parse_inline(line, r, d), &mut body);
-    }
-    let mut from_infobox = Vec::new();
+        .flat_map(|line| item_refs(&parse_inline(line, r, d)))
+        .collect();
     let items = ib.params.get("items").map(String::as_str).unwrap_or("");
-    refs(&parse_inline(items, r, d), &mut from_infobox);
-
-    let disagree = body.iter().any(|t| !from_infobox.contains(t))
-        || from_infobox.iter().any(|t| !body.contains(t));
-    if disagree {
+    let from_infobox = item_refs(&parse_inline(items, r, d));
+    if !same_set(&body, &from_infobox) {
         d.transformation_sources_disagree += 1;
     }
-    let mut targets: Vec<Target> = Vec::new();
-    for t in body.into_iter().chain(from_infobox) {
-        if !targets.contains(&t) {
-            targets.push(t);
-        }
-    }
-    targets
+    union_in_order(body, from_infobox)
+}
+
+/// Whether every target of each list is in the other.
+fn same_set(a: &[Target], b: &[Target]) -> bool {
+    a.iter().all(|t| b.contains(t)) && b.iter().all(|t| a.contains(t))
+}
+
+/// `first` then `second`, each target once, where it first appears.
+fn union_in_order(first: Vec<Target>, second: Vec<Target>) -> Vec<Target> {
+    first
+        .into_iter()
+        .chain(second)
+        .fold(Vec::new(), |mut targets, t| {
+            if !targets.contains(&t) {
+                targets.push(t);
+            }
+            targets
+        })
 }
 
 #[cfg(test)]

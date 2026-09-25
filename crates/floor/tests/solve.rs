@@ -360,3 +360,63 @@ fn an_ultra_candidate_names_every_rule_behind_it() {
         ]
     );
 }
+
+// --- the order of the rules file ---------------------------------------------------------------
+
+/// The embedded file with its rules listed back to front.
+fn reversed_rules() -> Rules {
+    let mut file: serde_json::Value =
+        serde_json::from_str(include_str!("../rules/placement.json")).expect("the file is JSON");
+    file["rules"]
+        .as_array_mut()
+        .expect("the file lists its rules")
+        .reverse();
+    Rules::parse(&file.to_string()).expect("the reversed file parses")
+}
+
+/// Each candidate as `(cell, neighbours, rank, applied)`, and the unresolved rules by id.
+type Unordered = (Vec<(u16, u8, u8, Vec<String>)>, Vec<String>);
+
+/// A solution with the order of its lists taken out: which rules named a candidate is a set,
+/// and so is what could not be evaluated.
+fn as_sets(s: &floor::Solution) -> Unordered {
+    let candidates = s
+        .candidates
+        .iter()
+        .map(|c| {
+            let mut applied = c.applied.clone();
+            applied.sort();
+            (c.cell, c.neighbours, c.rank, applied)
+        })
+        .collect();
+    let mut unresolved: Vec<String> = s.unresolved.iter().map(|u| u.rule.clone()).collect();
+    unresolved.sort();
+    (candidates, unresolved)
+}
+
+#[test]
+fn the_answer_does_not_depend_on_the_order_the_file_lists_the_rules_in() {
+    // Every rule is a sentence about where a room can be, and none of those sentences says
+    // "after the one above": a narrowing rule listed before the count it narrows must narrow it
+    // all the same, and the dead-end ranking ranks what the narrowing left.
+    let floors = [
+        parse_grid(&["....", ".nSn", "..nB", "..n."]),
+        parse_grid(&["..n", ".....", "n...n"]),
+        parse_grid(&["nnn"]),
+    ];
+    let reversed = reversed_rules();
+    for target in [Target::Secret, Target::SuperSecret, Target::UltraSecret] {
+        let answered = floors
+            .iter()
+            .filter(|g| !solve(g, rules(), target).candidates.is_empty())
+            .count();
+        assert!(answered > 0, "{target:?}: the property needs candidates");
+        for g in &floors {
+            assert_eq!(
+                as_sets(&solve(g, &reversed, target)),
+                as_sets(&solve(g, rules(), target)),
+                "{target:?}"
+            );
+        }
+    }
+}

@@ -139,86 +139,82 @@ pub async fn check_update(app: AppHandle) -> Result<UpdateView, IpcError> {
     Ok(state.view(&version(&app)))
 }
 
-/// The whole check, shared by the command and the launch.
+/// The whole check, shared by the command and the launch: look, and download whatever is found.
 ///
-/// Returns nothing: both callers read the state afterwards, and a failure here is a phase and
-/// not an error — an endpoint that will not answer is something the user reads, not something
-/// that breaks a command.
+/// Returns nothing, because a failure here is a phase and not an error — an endpoint that will
+/// not answer is something the user reads, not something that breaks a command. The command
+/// reads the state back when this returns; the launch does not, and the windows hear of every
+/// step through the event either way.
 pub async fn check_now(app: &AppHandle) {
-    if !UPDATER_BUILD {
+    let state = app.state::<UpdaterState>().inner();
+    if !UPDATER_BUILD || !begin_check(state) {
         return;
     }
-    {
-        let state: tauri::State<'_, UpdaterState> = app.state();
-        // `false` means one is already running, or a download is: doing nothing is the answer,
-        // and the state is left exactly as it was.
-        if state.with(|inner| inner.state.begin_check()) != Some(true) {
-            return;
-        }
-    }
     changed(app);
 
-    let found = match app.updater() {
-        Ok(updater) => updater.check().await,
-        Err(e) => Err(e),
-    };
-    let update = match found {
+    let update = match find_update(app).await {
         Ok(Some(update)) => Arc::new(update),
-        Ok(None) => {
-            let state: tauri::State<'_, UpdaterState> = app.state();
-            state.with(|inner| inner.state.up_to_date());
-            changed(app);
-            return;
-        }
-        Err(e) => return fail(app, &e),
+        Ok(None) => return settle(app, state, |inner| inner.state.up_to_date()),
+        Err(e) => return fail(app, state, &e),
     };
+    settle(app, state, |inner| {
+        inner.ready = None;
+        inner.state.begin_download(update.version.clone());
+    });
 
-    let announced = update.version.clone();
-    {
-        let state: tauri::State<'_, UpdaterState> = app.state();
-        state.with(|inner| {
-            inner.ready = None;
-            inner.state.begin_download(announced.clone());
-        });
+    match download(app, state, &update).await {
+        Ok(bytes) => settle(app, state, |inner| {
+            inner
+                .state
+                .ready(update.version.clone(), update.body.clone());
+            inner.ready = Some((update.clone(), bytes));
+        }),
+        Err(e) => fail(app, state, &e),
     }
-    changed(app);
+}
 
-    // The callback is called once per chunk and does two cheap things: counts the bytes, and
-    // asks whether the whole percentage point moved. Only then is every window told — at most
-    // a hundred times over a download instead of thousands.
-    let downloaded = update
+/// Starts a check if none is running. `false` means one already is, or a download is: doing
+/// nothing is the answer, and the state is left exactly as it was.
+fn begin_check(state: &UpdaterState) -> bool {
+    state.with(|inner| inner.state.begin_check()) == Some(true)
+}
+
+async fn find_update(app: &AppHandle) -> Result<Option<Update>, tauri_plugin_updater::Error> {
+    app.updater()?.check().await
+}
+
+/// The bytes of the update. The callback is called once per chunk and does two cheap things:
+/// counts the bytes, and asks whether the whole percentage point moved. Only then is every
+/// window told — at most a hundred times over a download instead of thousands.
+async fn download(
+    app: &AppHandle,
+    state: &UpdaterState,
+    update: &Update,
+) -> Result<Vec<u8>, tauri_plugin_updater::Error> {
+    update
         .download(
             |chunk, total| {
-                let state: tauri::State<'_, UpdaterState> = app.state();
                 if state.with(|inner| inner.state.advance(chunk, total)) == Some(true) {
                     changed(app);
                 }
             },
             || {},
         )
-        .await;
-
-    match downloaded {
-        Ok(bytes) => {
-            let state: tauri::State<'_, UpdaterState> = app.state();
-            let notes = update.body.clone();
-            state.with(|inner| {
-                inner.state.ready(announced.clone(), notes.clone());
-                inner.ready = Some((update.clone(), bytes));
-            });
-            changed(app);
-        }
-        Err(e) => fail(app, &e),
-    }
+        .await
 }
 
-fn fail(app: &AppHandle, error: &tauri_plugin_updater::Error) {
-    let state: tauri::State<'_, UpdaterState> = app.state();
-    state.with(|inner| {
+/// Moves the phase and tells the windows, in that order: a window that reads on the event must
+/// find the new phase already there.
+fn settle<T>(app: &AppHandle, state: &UpdaterState, step: impl FnOnce(&mut Inner) -> T) {
+    state.with(step);
+    changed(app);
+}
+
+fn fail(app: &AppHandle, state: &UpdaterState, error: &tauri_plugin_updater::Error) {
+    settle(app, state, |inner| {
         inner.ready = None;
         inner.state.fail(failure_of(error));
     });
-    changed(app);
 }
 
 /// Installs what was downloaded. **On Windows this does not return**: the plugin launches the

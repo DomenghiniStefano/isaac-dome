@@ -3,119 +3,108 @@
 
 use std::collections::BTreeMap;
 
-use crate::dataset::{Counts, Dataset, Patch, Source};
-use crate::infobox::{extract_infoboxes, InfoboxKind};
-use crate::page::{parse_page, EntryKey, PageKind};
+use crate::dataset::{Dataset, Meta, Patch, Source, HOST};
+use crate::infobox::{extract_infoboxes, InfoboxKind, RawInfobox};
+use crate::page::{parse_page, PageKind};
 use crate::raw::{Raw, RawPage};
-use crate::resolver::{Corrections, Resolver};
+use crate::resolver::{Corrections, Resolver, Row};
 use crate::Diagnostics;
 
 /// Characters have no Cargo table: title (and the infobox's `name`) → id is derived from
-/// their pages, before building the resolver.
+/// their pages, before building the resolver. A title always takes its page's id; a `name`
+/// takes one only if nothing took that key before it.
 fn characters(raw: &Raw) -> BTreeMap<String, u32> {
-    let mut characters = BTreeMap::new();
-    for p in raw
-        .pages
+    raw.pages
         .iter()
         .filter(|p| p.index.kind == PageKind::Character)
-    {
-        let Some(ib) = extract_infoboxes(&p.text)
-            .into_iter()
-            .find(|ib| InfoboxKind::of(&ib.name) == Some(InfoboxKind::Character))
-        else {
-            continue;
-        };
-        let Some(id) = ib
-            .params
-            .get("id")
-            .and_then(|s| s.trim().parse::<u32>().ok())
-        else {
-            continue;
-        };
-        characters.insert(p.title.clone(), id);
-        if let Some(alias) = ib.params.get("name") {
-            characters.entry(alias.trim().to_string()).or_insert(id);
-        }
-    }
-    characters
+        .filter_map(|p| Some((p, character_infobox(&p.text)?)))
+        .filter_map(|(p, ib)| Some((p, leading_id(&ib)?, ib)))
+        .fold(BTreeMap::new(), |mut characters, (p, id, ib)| {
+            characters.insert(p.title.clone(), id);
+            if let Some(alias) = ib.params.get("name") {
+                characters.entry(alias.trim().to_string()).or_insert(id);
+            }
+            characters
+        })
+}
+
+/// A character page's first character infobox.
+fn character_infobox(text: &str) -> Option<RawInfobox> {
+    extract_infoboxes(text)
+        .into_iter()
+        .find(|ib| InfoboxKind::of(&ib.name) == Some(InfoboxKind::Character))
+}
+
+/// The infobox's `id`, when it is a number and nothing else.
+fn leading_id(ib: &RawInfobox) -> Option<u32> {
+    ib.params.get("id")?.trim().parse().ok()
 }
 
 /// Builds the dataset. Pages are visited in (kind, title) order; a key that recurs keeps
 /// the first entry.
 pub fn build(raw: &Raw, corrections: &Corrections) -> Dataset {
-    let characters = characters(raw);
-    let r = Resolver::new(&raw.tables, &characters, corrections);
+    let r = Resolver::new(&raw.tables, &characters(raw), corrections);
     let mut ds = Dataset::empty();
     let mut diagnostics = Diagnostics::default();
-    let mut pages: Vec<&RawPage> = raw.pages.iter().collect();
-    pages.sort_by(|a, b| (a.index.kind, &a.title).cmp(&(b.index.kind, &b.title)));
-    for p in pages {
+    for p in pages_in_order(raw) {
         let mut d = Diagnostics::default();
         for (key, entry) in parse_page(&p.title, p.index.revid, &p.text, &r, &mut d) {
-            match key {
-                EntryKey::Item(id) => {
-                    ds.items.entry(id).or_insert(entry);
-                }
-                EntryKey::Trinket(id) => {
-                    ds.trinkets.entry(id).or_insert(entry);
-                }
-                EntryKey::Achievement(id) => {
-                    ds.achievements.entry(id).or_insert(entry);
-                }
-                EntryKey::Boss(id, variant, subtype) => {
-                    ds.bosses
-                        .entry(Dataset::boss_key(id, variant, subtype))
-                        .or_insert(entry);
-                }
-                EntryKey::Challenge(number) => {
-                    ds.challenges.entry(number).or_insert(entry);
-                }
-                EntryKey::Character(id) => {
-                    ds.characters.entry(id).or_insert(entry);
-                }
-                EntryKey::Transformation(id) => {
-                    ds.transformations.entry(id).or_insert(entry);
-                }
-            }
+            ds.insert_first(key, entry);
         }
         diagnostics.merge(&d);
-        if p.index.timestamp > ds.meta.snapshot_at {
-            ds.meta.snapshot_at = p.index.timestamp.clone();
-        }
-        ds.meta.max_revid = ds.meta.max_revid.max(p.index.revid);
+        note_revision(&mut ds.meta, p);
     }
-    // Written by hand, and it wins over the page: the reason to write one is that the
-    // wiki's is missing or says nothing. One that names no entry is left for
-    // `Corrections::unmatched_descriptions` to report, not guessed at.
+    apply_descriptions(&mut ds, corrections, &r, &mut diagnostics);
+    ds.meta.last_known_patch = last_known_patch(&raw.versions);
+    ds.meta.source = Source {
+        name: "The Binding of Isaac: Rebirth Wiki".into(),
+        url: HOST.into(),
+        license: "CC BY-SA 4.0".into(),
+    };
+    ds.meta.counts = ds.counts();
+    ds.meta.diagnostics = diagnostics;
+    ds
+}
+
+fn pages_in_order(raw: &Raw) -> Vec<&RawPage> {
+    let mut pages: Vec<&RawPage> = raw.pages.iter().collect();
+    pages.sort_by(|a, b| (a.index.kind, &a.title).cmp(&(b.index.kind, &b.title)));
+    pages
+}
+
+/// The snapshot is as recent as its most recent page.
+fn note_revision(meta: &mut Meta, p: &RawPage) {
+    if p.index.timestamp > meta.snapshot_at {
+        meta.snapshot_at = p.index.timestamp.clone();
+    }
+    meta.max_revid = meta.max_revid.max(p.index.revid);
+}
+
+/// The descriptions `corrections.json` carries. Written by hand, and one wins over the page: the reason
+/// to write one is that the wiki's is missing or says nothing. One that names no entry is left
+/// for `Corrections::unmatched_descriptions` to report, not guessed at.
+fn apply_descriptions(
+    ds: &mut Dataset,
+    corrections: &Corrections,
+    r: &Resolver,
+    d: &mut Diagnostics,
+) {
     for (collection, entries) in &corrections.descriptions {
         for (key, text) in entries {
             if let Some(entry) = ds.entry_by_key_mut(collection, key) {
-                entry.description = crate::inline::parse_inline(text, &r, &mut diagnostics);
+                entry.description = crate::inline::parse_inline(text, r, d);
             }
         }
     }
-    ds.meta.last_known_patch = raw
-        .versions
+}
+
+/// The most recent patch in the `version` table, by date.
+fn last_known_patch(versions: &[Row]) -> Option<Patch> {
+    versions
         .iter()
         .filter_map(|v| Some((v.get("date")?.clone(), v.get("number")?.clone())))
         .max()
-        .map(|(date, number)| Patch { number, date });
-    ds.meta.source = Source {
-        name: "The Binding of Isaac: Rebirth Wiki".into(),
-        url: "https://bindingofisaacrebirth.wiki.gg".into(),
-        license: "CC BY-SA 4.0".into(),
-    };
-    ds.meta.counts = Counts {
-        items: ds.items.len() as u32,
-        trinkets: ds.trinkets.len() as u32,
-        achievements: ds.achievements.len() as u32,
-        bosses: ds.bosses.len() as u32,
-        challenges: ds.challenges.len() as u32,
-        characters: ds.characters.len() as u32,
-        transformations: ds.transformations.len() as u32,
-    };
-    ds.meta.diagnostics = diagnostics;
-    ds
+        .map(|(date, number)| Patch { number, date })
 }
 
 #[cfg(test)]

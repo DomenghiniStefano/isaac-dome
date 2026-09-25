@@ -17,7 +17,7 @@
 use catalog::Catalog;
 use core_save::marks::{cell_index, Column};
 use core_save::{Kind, Save};
-use graph::target_key;
+use graph::rules::target_key;
 use test_support::dated_series;
 
 const SERIES: &str = "rep+persistentgamedata1.dat";
@@ -42,7 +42,7 @@ fn character_row(c: &Catalog, label: &str, wiki_id: u32) -> Option<usize> {
 }
 
 /// The (boss label, character label, wiki character id) an achievement's references name.
-fn pair(rules: &graph::Rules, id: u32, boss: &str) -> Option<(String, u32)> {
+fn pair(rules: &graph::rules::Rules, id: u32, boss: &str) -> Option<(String, u32)> {
     let refs = rules.refs(graph::AchievementId(id));
     let keys: Vec<String> = refs
         .iter()

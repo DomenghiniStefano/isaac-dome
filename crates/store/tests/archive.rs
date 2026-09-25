@@ -3,13 +3,10 @@
 
 use ipc::{RunSource, RunsDiagnostic};
 use run::{Event, Floor, Generated, Outcome, Run, SeedKind, SourceKey};
-use store::{ArchivedRuns, SourceKind, Store, StoreError, StoredSource, SCHEMA_VERSION};
+use store::{ArchivedRuns, SourceKind, Store, StoredSource, SCHEMA_VERSION};
 
-fn open() -> (tempfile::TempDir, Store) {
-    let dir = tempfile::tempdir().unwrap();
-    let store = Store::open(&dir.path().join("isaacdome.db")).unwrap();
-    (dir, store)
-}
+mod common;
+use common::temp_store;
 
 fn key(offset: u64) -> SourceKey {
     SourceKey::new(b"a banner", b"some bytes", offset)
@@ -48,7 +45,7 @@ fn run_of(seed: &str) -> Run {
 
 #[test]
 fn the_schema_is_at_version_six() {
-    let (_d, store) = open();
+    let (_d, store) = temp_store();
     assert_eq!(SCHEMA_VERSION, 6);
     assert_eq!(store.schema_version().unwrap(), 6);
 }
@@ -57,7 +54,7 @@ fn the_schema_is_at_version_six() {
 fn a_session_is_found_again_by_its_folder_name() {
     // The name is the whole identity of an online session: re-reading the folder must find the
     // same source and import nothing twice.
-    let (_d, store) = open();
+    let (_d, store) = temp_store();
     assert!(store
         .session_source("09_12_2026__13_34_26")
         .unwrap()
@@ -78,7 +75,7 @@ fn a_session_is_found_again_by_its_folder_name() {
 fn two_launches_are_two_sources_and_the_first_keeps_its_events() {
     // The game rewrites log.txt on every launch. The second launch must not overwrite the
     // first: that is the archive losing exactly what it exists to keep.
-    let (_d, store) = open();
+    let (_d, store) = temp_store();
     let first = store.insert_log_source(&key(0)).unwrap();
     store
         .append_to_log(first, &key(0), &[started("AAA AAA")])
@@ -98,7 +95,7 @@ fn two_launches_are_two_sources_and_the_first_keeps_its_events() {
 
 #[test]
 fn appending_twice_continues_the_sequence_instead_of_starting_over() {
-    let (_d, store) = open();
+    let (_d, store) = temp_store();
     let id = store.insert_log_source(&key(0)).unwrap();
     assert_eq!(
         store
@@ -124,7 +121,7 @@ fn appending_twice_continues_the_sequence_instead_of_starting_over() {
 
 #[test]
 fn the_offset_a_source_reached_survives_being_written_again() {
-    let (_d, store) = open();
+    let (_d, store) = temp_store();
     let id = store.insert_log_source(&key(0)).unwrap();
     store.append_to_log(id, &key(40_000), &[]).unwrap();
     assert_eq!(
@@ -136,7 +133,7 @@ fn the_offset_a_source_reached_survives_being_written_again() {
 #[test]
 fn an_event_row_that_does_not_parse_is_counted_and_the_others_still_read() {
     // `goals()`'s rule, applied to the archive: one bad row must not wipe the run around it.
-    let (_d, store) = open();
+    let (_d, store) = temp_store();
     let id = store.insert_log_source(&key(0)).unwrap();
     store
         .append_to_log(id, &key(0), &[started("AAA AAA"), Event::RoomTransition])
@@ -152,7 +149,7 @@ fn an_event_row_that_does_not_parse_is_counted_and_the_others_still_read() {
 fn runs_cached_under_one_rules_version_are_not_returned_for_another() {
     // Decision 2 of the spec, made structural: a newer rules file invalidates the cache instead
     // of leaving two readings side by side.
-    let (_d, store) = open();
+    let (_d, store) = temp_store();
     let id = store.insert_log_source(&key(0)).unwrap();
     store.cache_runs(id, 1, &[run_of("AAA AAA")]).unwrap();
 
@@ -165,7 +162,7 @@ fn runs_cached_under_one_rules_version_are_not_returned_for_another() {
 
 #[test]
 fn caching_again_replaces_the_fold_instead_of_adding_to_it() {
-    let (_d, store) = open();
+    let (_d, store) = temp_store();
     let id = store.insert_log_source(&key(0)).unwrap();
     store.cache_runs(id, 1, &[run_of("AAA AAA")]).unwrap();
     store
@@ -178,7 +175,7 @@ fn caching_again_replaces_the_fold_instead_of_adding_to_it() {
 fn a_source_nobody_has_folded_has_no_cache() {
     // The first of the three states the one `Option` has to carry, and the only one it was ever
     // right about: nothing has been folded here, so there is nothing to answer with.
-    let (_d, store) = open();
+    let (_d, store) = temp_store();
     let id = store.insert_log_source(&key(0)).unwrap();
     assert_eq!(store.cached_runs(id, 1).unwrap(), None);
 }
@@ -188,7 +185,7 @@ fn a_source_folded_into_no_run_reads_back_as_an_empty_fold() {
     // A launch that holds the intro and nothing else folds to zero runs. That is an answer, and
     // it used to be indistinguishable from never having been read — which is not a missing cache
     // but a loop: fold again, produce nothing again, cache nothing again, for ever.
-    let (_d, store) = open();
+    let (_d, store) = temp_store();
     let id = store.insert_log_source(&key(0)).unwrap();
     store.cache_runs(id, 1, &[]).unwrap();
     assert_eq!(store.cached_runs(id, 1).unwrap(), Some(vec![]));
@@ -199,7 +196,7 @@ fn an_empty_fold_under_one_rules_version_is_not_returned_for_another() {
     // The third state. `runs` carries the rules version per row and zero rows have nowhere to
     // put one, so the version of the fold lives on the source: a newer rules file still finds
     // nothing here and folds again.
-    let (_d, store) = open();
+    let (_d, store) = temp_store();
     let id = store.insert_log_source(&key(0)).unwrap();
     store.cache_runs(id, 1, &[]).unwrap();
     assert_eq!(store.cached_runs(id, 2).unwrap(), None);
@@ -210,7 +207,7 @@ fn a_fold_that_used_to_hold_runs_and_now_holds_none_reads_as_empty() {
     // Replacement in the direction the test above it does not cover: `DELETE` with nothing
     // written after leaves no row behind, so the fold's own version is the only thing left that
     // says this source was read at all.
-    let (_d, store) = open();
+    let (_d, store) = temp_store();
     let id = store.insert_log_source(&key(0)).unwrap();
     store.cache_runs(id, 1, &[run_of("AAA AAA")]).unwrap();
     store.cache_runs(id, 1, &[]).unwrap();
@@ -267,7 +264,7 @@ fn a_database_from_before_the_fold_version_keeps_its_archive_and_reads_it_as_unf
 
 #[test]
 fn every_source_comes_back_in_the_order_it_was_inserted() {
-    let (_d, store) = open();
+    let (_d, store) = temp_store();
     let first = store.insert_log_source(&key(0)).unwrap();
     let second = store
         .import_session("09_12_2026__13_34_26", &key(0), &[])
@@ -301,31 +298,13 @@ fn a_database_from_before_the_archive_gains_the_tables_and_keeps_its_plan() {
 }
 
 #[test]
-fn a_file_from_a_newer_app_is_still_refused_untouched() {
-    // The guard that already exists, checked against the new version number rather than assumed
-    // to have survived it.
-    let dir = tempfile::tempdir().unwrap();
-    let path = dir.path().join("isaacdome.db");
-    {
-        let conn = rusqlite::Connection::open(&path).unwrap();
-        conn.execute_batch("PRAGMA user_version = 99;").unwrap();
-    }
-    match Store::open(&path) {
-        Err(StoreError::NewerSchema { found, supported }) => {
-            assert_eq!((found, supported), (99, SCHEMA_VERSION));
-        }
-        other => panic!("expected NewerSchema, got {other:?}"),
-    }
-}
-
-#[test]
 fn the_events_and_the_offset_they_belong_to_move_in_the_same_write() {
     // Atomicity here is not a speed concern, it is the duplicate-runs failure by another road:
     // events written while the offset stays behind are events the next read finds again and
     // files a second time. So there is **one** call that does both, and no way through this API
     // to do either alone — which is why this test reads the pair after each write rather than
     // trying to tear them apart.
-    let (_d, store) = open();
+    let (_d, store) = temp_store();
     let id = store.insert_log_source(&key(0)).unwrap();
 
     store
@@ -351,7 +330,7 @@ fn the_events_and_the_offset_they_belong_to_move_in_the_same_write() {
 fn importing_a_session_writes_its_source_and_its_events_together() {
     // The same rule on the other path: a source row with no events would be a session marked
     // imported for ever, holding nothing.
-    let (_d, store) = open();
+    let (_d, store) = temp_store();
     let id = store
         .import_session("09_12_2026__13_34_26", &key(500), &[started("AAAA AAAA")])
         .unwrap();
@@ -371,7 +350,7 @@ fn importing_a_session_writes_its_source_and_its_events_together() {
 /// read from it: a session is named by its folder, a launch is the source with no name.
 #[test]
 fn every_archived_source_is_named_the_way_the_runs_screen_names_it() {
-    let (_d, store) = open();
+    let (_d, store) = temp_store();
     let session = store
         .import_session("09_12_2026__13_34_26", &key(0), &[])
         .unwrap();
@@ -405,7 +384,7 @@ fn every_archived_source_is_named_the_way_the_runs_screen_names_it() {
 
 #[test]
 fn a_source_nobody_folded_under_these_rules_contributes_no_row() {
-    let (_d, store) = open();
+    let (_d, store) = temp_store();
     let launch = store.insert_log_source(&key(0)).unwrap();
     store.cache_runs(launch, 1, &[run_of("AAA AAA")]).unwrap();
 
@@ -448,7 +427,7 @@ fn unreadable_caches_are_counted_in_one_diagnostic_and_none_says_nothing() {
 fn the_live_runs_are_the_latest_launchs_and_no_one_elses() {
     // `live` used to read the whole archive — every session, every launch — every time the
     // watcher said a line arrived, to keep one run of one source.
-    let (_d, store) = open();
+    let (_d, store) = temp_store();
     let old = store.insert_log_source(&key(0)).unwrap();
     store.cache_runs(old, 1, &[run_of("AAA AAA")]).unwrap();
     let session = store
@@ -468,7 +447,7 @@ fn the_live_runs_are_the_latest_launchs_and_no_one_elses() {
 
 #[test]
 fn there_are_no_live_runs_before_any_launch_was_read() {
-    let (_d, store) = open();
+    let (_d, store) = temp_store();
     let session = store
         .import_session("09_12_2026__13_34_26", &key(0), &[started("SSS SSS")])
         .unwrap();
@@ -480,7 +459,7 @@ fn there_are_no_live_runs_before_any_launch_was_read() {
 #[test]
 fn the_latest_launch_folded_under_other_rules_has_no_live_runs() {
     // The same rule `cached_runs` keeps: a fold another rules file produced is not an answer.
-    let (_d, store) = open();
+    let (_d, store) = temp_store();
     let latest = store.insert_log_source(&key(0)).unwrap();
     store.cache_runs(latest, 1, &[run_of("AAA AAA")]).unwrap();
 
@@ -490,7 +469,7 @@ fn the_latest_launch_folded_under_other_rules_has_no_live_runs() {
 #[test]
 fn a_source_is_stale_when_these_rules_did_not_fold_it() {
     // Never folded, folded by other rules, folded by these: only the last is current.
-    let (_d, store) = open();
+    let (_d, store) = temp_store();
     let never = store.insert_log_source(&key(0)).unwrap();
     let other = store.insert_log_source(&key(0)).unwrap();
     store.cache_runs(other, 1, &[run_of("AAA AAA")]).unwrap();

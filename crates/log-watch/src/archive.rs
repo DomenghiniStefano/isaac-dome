@@ -9,7 +9,8 @@ use run::{
 };
 use store::Store;
 
-use crate::{chunk, head, len, sessions, window_ending_at, WatchError, CHUNK};
+use crate::read::{chunk, head, len, window_ending_at, CHUNK};
+use crate::WatchError;
 
 /// What one ingest did. Numbers, not a sentence: the caller logs them and the tests read them.
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
@@ -85,17 +86,19 @@ impl Ingest<'_> {
 
     /// Every session on the disk that is not in the archive yet. Errors are collected, never
     /// raised: one unreadable folder must not cost the other twenty-seven.
+    ///
+    /// Only the tests call it (card #81, C8): the app walks `sessions()` itself and ingests each
+    /// folder under a lock of its own, so the database is never held for the whole backfill.
+    #[cfg(feature = "test-api")]
     pub fn backfill(&self, online_logs: &Path) -> (Vec<Ingested>, Vec<WatchError>) {
-        let mut done = Vec::new();
-        let mut errors = Vec::new();
-        for folder in sessions(online_logs) {
-            match self.session(&folder) {
-                Ok(Some(ingested)) => done.push(ingested),
-                Ok(None) => {}
-                Err(e) => errors.push(e),
-            }
-        }
-        (done, errors)
+        let (read, failed): (Vec<_>, Vec<_>) = crate::sessions(online_logs)
+            .iter()
+            .map(|folder| self.session(folder))
+            .partition(Result::is_ok);
+        (
+            read.into_iter().filter_map(Result::ok).flatten().collect(),
+            failed.into_iter().filter_map(Result::err).collect(),
+        )
     }
 
     /// Folds again every source these rules have not folded, from the events already in the

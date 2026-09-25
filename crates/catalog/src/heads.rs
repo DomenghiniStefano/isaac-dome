@@ -1,24 +1,21 @@
 //! `gfx/ui/coop menu.anm2`: the head crops in the `coop menu.png` sheet.
 //! The anm2 is XML: `Main` animation, `Main` layer (id 0), one `<Frame>` per cell.
 
+use crate::anm2;
 use crate::diagnostics::{Diagnostic, Source};
 use crate::ids::CharacterId;
 use crate::sprite::Rect;
-use crate::strings::children_named;
-use crate::xml::{elements, Element};
+use crate::xml;
 
 pub const SHEET: &str = "gfx/ui/coop menu.png";
 
 /// The frames of layer 0 of the `Main` animation, in order; `None` where the crop is missing.
+///
+/// Read through `anm2`'s layer animations rather than its crops: a frame without a crop
+/// keeps its slot here, because `frame_for` counts cells by position.
 pub fn parse(bytes: &[u8], diagnostics: &mut Vec<Diagnostic>) -> Vec<Option<Rect>> {
-    let els = match elements(bytes) {
-        Ok(els) => els,
-        Err(_) => {
-            diagnostics.push(Diagnostic::SourceUnreadable {
-                source: Source::CoopMenuAnm2,
-            });
-            return Vec::new();
-        }
+    let Some(els) = xml::read(bytes, Source::CoopMenuAnm2, diagnostics) else {
+        return Vec::new();
     };
     let Some(main) = els
         .iter()
@@ -26,30 +23,12 @@ pub fn parse(bytes: &[u8], diagnostics: &mut Vec<Diagnostic>) -> Vec<Option<Rect
     else {
         return Vec::new();
     };
-    let main_depth = els[main].depth;
-    // The first <LayerAnimation LayerId="0"> inside the Main animation.
-    let Some(layer) = els[main + 1..]
-        .iter()
-        .take_while(|e| e.depth > main_depth)
-        .position(|e| e.name == "LayerAnimation" && e.attr("LayerId") == Some("0"))
-        .map(|p| main + 1 + p)
-    else {
-        return Vec::new();
-    };
-    children_named(&els, layer, "Frame")
+    // The first <LayerAnimation LayerId="0"> inside the (first) Main animation.
+    anm2::layer_animations(xml::subtree(&els, main))
         .into_iter()
-        .map(rect_of)
-        .collect()
-}
-
-fn rect_of(e: &Element) -> Option<Rect> {
-    let n = |name: &str| e.attr(name).and_then(|v| v.parse::<u32>().ok());
-    Some(Rect {
-        x: n("XCrop")?,
-        y: n("YCrop")?,
-        w: n("Width")?,
-        h: n("Height")?,
-    })
+        .find(|la| la.layer_id == Some("0"))
+        .map(|la| la.frames.into_iter().map(anm2::rect_of).collect())
+        .unwrap_or_default()
 }
 
 /// The frame that portrays the character.
@@ -174,6 +153,40 @@ mod tests {
         assert_eq!(frame_for(CharacterId(999)), None);
         // Frame 0 is the "?" placeholder: it belongs to no one.
         assert!((0..=40).all(|i| frame_for(CharacterId(i)) != Some(0)));
+    }
+
+    #[test]
+    fn without_a_main_animation_or_its_layer_zero_there_are_no_frames_and_no_diagnostic() {
+        let mut d = Vec::new();
+        let no_main: &[u8] =
+            br#"<AnimatedActor><Animations><Animation Name="Other"><LayerAnimations>
+<LayerAnimation LayerId="0"><Frame XCrop="0" YCrop="0" Width="32" Height="32"/></LayerAnimation>
+</LayerAnimations></Animation></Animations></AnimatedActor>"#;
+        assert!(parse(no_main, &mut d).is_empty());
+        let no_layer_zero: &[u8] =
+            br#"<AnimatedActor><Animations><Animation Name="Main"><LayerAnimations>
+<LayerAnimation LayerId="1"><Frame XCrop="0" YCrop="0" Width="32" Height="32"/></LayerAnimation>
+</LayerAnimations></Animation>
+<Animation Name="After"><LayerAnimations>
+<LayerAnimation LayerId="0"><Frame XCrop="0" YCrop="0" Width="32" Height="32"/></LayerAnimation>
+</LayerAnimations></Animation></Animations></AnimatedActor>"#;
+        assert!(
+            parse(no_layer_zero, &mut d).is_empty(),
+            "layer 0 of the next animation is not Main's"
+        );
+        assert!(d.is_empty());
+    }
+
+    #[test]
+    fn a_layer_of_frames_without_crops_is_frames_not_nothing() {
+        // Every frame keeps its slot, crop or not: the map indexes by position.
+        let mut d = Vec::new();
+        let cropless: &[u8] =
+            br#"<AnimatedActor><Animations><Animation Name="Main"><LayerAnimations>
+<LayerAnimation LayerId="0"><Frame Delay="1"/><Frame Delay="1"/></LayerAnimation>
+</LayerAnimations></Animation></Animations></AnimatedActor>"#;
+        assert_eq!(parse(cropless, &mut d), vec![None, None]);
+        assert!(d.is_empty());
     }
 
     #[test]

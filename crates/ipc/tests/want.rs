@@ -213,7 +213,7 @@ fn the_no_profile_diagnostic_and_the_rows_cannot_disagree() {
 
 /// 3 needs 2, 2 needs 1. The ids ascend here, so a test that only checked membership would
 /// pass on `missing_chain`'s own order; the point is that the order comes from the edges.
-fn chained_graph() -> graph::Graph {
+fn chained_graph() -> graph::build::Graph {
     graph::for_tests::from_edges(&[(1, &[]), (2, &[1]), (3, &[2])], &[])
 }
 
@@ -253,7 +253,10 @@ fn a_chain_is_ordered_the_way_the_queue_orders_it() {
 
     // The same order the Plan produces, because it is the Plan's own computation.
     let mut q = plan::Queue::from_rows(vec![]);
-    let chain = g.missing_chain(graph::AchievementId(3), &graph::FlagsOnly(Some(&READ)));
+    let chain = g.missing_chain(
+        graph::AchievementId(3),
+        &graph::evaluate::FlagsOnly(Some(&READ)),
+    );
     let mut rows = chain.clone();
     rows.push(graph::AchievementId(3));
     q.enqueue(
