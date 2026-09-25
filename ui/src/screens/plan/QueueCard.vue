@@ -22,7 +22,8 @@ import {
   stepAnchor,
 } from '@/lib/plan/queueDrop'
 import { queueExtras } from '@/lib/plan/queueExtras'
-import { knownText, rowId, stoppedUnder } from '@/lib/plan/queueRows'
+import { knownText } from '@/lib/graph/achievementNode'
+import { rowId, stoppedUnder } from '@/lib/plan/queueRows'
 import { rowModel } from '@/lib/plan/rowModel'
 import type { TabLocation } from '@/router/routeTable'
 import type { QueueMove } from '@/stores/queue'

@@ -1,4 +1,5 @@
 import { assertNever } from '@/lib/assertNever'
+import { knownId } from '@/lib/graph/achievementNode'
 import { WantDiagnostic } from '../types'
 import type {
   NextSteps,
@@ -221,10 +222,7 @@ export const graphAnswers = ({
 // first two not-done nodes as the chain — but it never invents a state: done is done, and
 // without a catalog nothing resolves, exactly as Rust answers.
 const namesTarget = (node: UnlockNode, target: Target): boolean => {
-  if (target.kind === 'achievement')
-    return (
-      node.achievement.kind === 'known' && node.achievement.id === target.id
-    )
+  if (target.kind === 'achievement') return knownId(node) === target.id
   return node.unlocks.some((u) => {
     switch (u.kind) {
       case 'item':
