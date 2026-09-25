@@ -48,6 +48,9 @@ const blindfoldedOrder: BlindfoldedValue[] = [
   BlindfoldedValue.No,
 ]
 
+const blindfoldedValue = (blindfolded: boolean): BlindfoldedValue =>
+  blindfolded ? BlindfoldedValue.Yes : BlindfoldedValue.No
+
 // What a row answers for a facet. **A row the wiki knows nothing about answers with nothing**:
 // `blindfolded: null` is "there is no page", and offering it as "not blindfolded" would put a
 // row under a value the app cannot support. Same for a challenge the page names no character
@@ -63,9 +66,7 @@ const facetValues = (row: ChallengeRow, facet: ChallengeFacet): string[] => {
     case ChallengeFacet.Rewards:
       return [row.rewards.length > 0 ? RewardsValue.Some : RewardsValue.None]
     case ChallengeFacet.Blindfolded:
-      return row.blindfolded === null
-        ? []
-        : [row.blindfolded ? BlindfoldedValue.Yes : BlindfoldedValue.No]
+      return row.blindfolded === null ? [] : [blindfoldedValue(row.blindfolded)]
     default:
       return assertNever(facet)
   }
