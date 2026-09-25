@@ -56,20 +56,9 @@ fn reduces_by_id(t: &Target) -> bool {
     }
 }
 
-/// Whether a verdict is always consulted, and so must exist.
-///
-/// True for every target in the inventory, entities included. An entity only escapes the
-/// verdict table when it resolves to a boss the game itself gates by an achievement — 27
-/// of 103 bosses — and the other 76 have to be judged, or a node behind Delirium would
-/// read as "nothing in the way". Requiring a verdict for all of them costs a handful of
-/// rows that are never read; not requiring them cost a silent hole, found on 2026-09-07.
-fn verdict_required(_t: &Target) -> bool {
-    true
-}
-
 pub fn generate(d: &Dataset) -> Requirements {
     let mut achievements = BTreeMap::new();
-    let mut uses: BTreeMap<String, (String, u32, bool)> = BTreeMap::new();
+    let mut uses: BTreeMap<String, (String, u32)> = BTreeMap::new();
     for (&id, entry) in &d.achievements {
         let requirements = match &entry.infobox {
             Infobox::Achievement { requirements, .. } => requirements,
@@ -90,9 +79,7 @@ pub fn generate(d: &Dataset) -> Requirements {
                 continue;
             }
             let key = target_key(&r.target, &r.label);
-            let e = uses
-                .entry(key)
-                .or_insert((r.label.clone(), 0, verdict_required(&r.target)));
+            let e = uses.entry(key).or_insert((r.label.clone(), 0));
             e.1 += 1;
         }
         achievements.insert(id, AchievementRefs { refs });
@@ -108,12 +95,7 @@ pub fn generate(d: &Dataset) -> Requirements {
         // makes the `derived` test mean anything.
         targets: uses
             .into_iter()
-            .map(|(key, (label, uses, verdict_required))| TargetRow {
-                key,
-                label,
-                uses,
-                verdict_required,
-            })
+            .map(|(key, (label, uses))| TargetRow { key, label, uses })
             .collect(),
         transformations: d
             .transformations

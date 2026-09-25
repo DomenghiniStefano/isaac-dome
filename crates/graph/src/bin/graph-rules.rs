@@ -39,13 +39,8 @@ fn main() {
         eprintln!("cannot write {}: {e}", out.display());
         std::process::exit(1);
     }
-    let required = requirements
-        .targets
-        .iter()
-        .filter(|t| t.verdict_required)
-        .count();
     eprintln!(
-        "{} achievements, {} targets ({required} needing a verdict) -> {}",
+        "{} achievements, {} targets, each needing a verdict -> {}",
         requirements.achievements.len(),
         requirements.targets.len(),
         out.display()
