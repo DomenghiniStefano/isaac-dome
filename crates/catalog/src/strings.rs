@@ -199,6 +199,50 @@ mod tests {
         );
     }
 
+    // Languages declared out of index order, one without a usable index, a key without a
+    // name, a key declared twice, a key with more strings than languages, and a `<string>`
+    // that is not the key's direct child.
+    const EDGES: &[u8] = br#"<stringtable><languages>
+      <language id="3" index="2" name="French"/>
+      <language id="21" index="0" name="Key"/>
+      <language id="4" index="x" name="German"/>
+      <language id="5" name="Spanish"/>
+      <language id="0" index="1" name="English"/>
+    </languages>
+    <category name="Items">
+      <key><string>orphan</string></key>
+      <key name="TWICE"><string>first</string></key>
+      <key name="TWICE"><string>second</string><string>deuxieme</string></key>
+      <key name="LONG"><string>a</string><string>b</string><string>c</string></key>
+      <key name="NESTED"><wrap><string>deep</string></wrap><string>top</string></key>
+    </category></stringtable>"#;
+
+    #[test]
+    fn languages_follow_the_declared_index_and_unusable_declarations_are_ignored() {
+        let mut d = Vec::new();
+        let s = Strings::parse(EDGES, &mut d).expect("valid table");
+        assert_eq!(s.languages(), &[Language::English, Language::French]);
+        assert!(
+            d.is_empty(),
+            "a declaration without an index is no language: {d:?}"
+        );
+    }
+
+    #[test]
+    fn a_repeated_key_is_read_as_the_last_one_and_extra_strings_are_dropped() {
+        let mut d = Vec::new();
+        let s = Strings::parse(EDGES, &mut d).expect("valid table");
+        assert_eq!(s.get("TWICE", Language::English), Some("second"));
+        assert_eq!(s.get("TWICE", Language::French), Some("deuxieme"));
+        assert_eq!(s.get("LONG", Language::French), Some("b"));
+        assert_eq!(
+            s.get("NESTED", Language::English),
+            Some("top"),
+            "only the key's direct children are its strings"
+        );
+        assert_eq!(s.get("", Language::English), None);
+    }
+
     #[test]
     fn junk_yields_none_and_a_diagnostic() {
         let mut d = Vec::new();

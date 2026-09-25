@@ -151,6 +151,68 @@ mod tests {
     }
 
     #[test]
+    fn the_skips_are_reported_in_file_order_and_nothing_else_is() {
+        let (_, d) = parsed();
+        assert_eq!(
+            d,
+            vec![
+                Diagnostic::ElementSkipped {
+                    source: Source::Achievements,
+                    id: None,
+                    reason: SkipReason::MissingId
+                },
+                Diagnostic::ElementSkipped {
+                    source: Source::Achievements,
+                    id: Some(5),
+                    reason: SkipReason::MissingSprite
+                },
+            ]
+        );
+    }
+
+    #[test]
+    fn a_malformed_id_is_skipped_without_an_id() {
+        let mut d = Vec::new();
+        let a = parse(
+            b"<achievements><achievement id=\"x\" gfx=\"a.png\" /></achievements>",
+            &mut d,
+        );
+        assert!(a.is_empty());
+        assert_eq!(
+            d,
+            vec![Diagnostic::ElementSkipped {
+                source: Source::Achievements,
+                id: None,
+                reason: SkipReason::MalformedId
+            }]
+        );
+    }
+
+    #[test]
+    fn without_a_gfxroot_the_sprite_takes_the_game_folder_and_no_text_is_an_empty_label() {
+        let mut d = Vec::new();
+        let a = parse(
+            b"<achievements><achievement id=\"1\" gfx=\"a.png\" /></achievements>",
+            &mut d,
+        );
+        assert_eq!(a[0].sprite.path, "gfx/ui/achievement/a.png");
+        assert_eq!(a[0].text, "");
+        assert!(d.is_empty());
+    }
+
+    #[test]
+    fn junk_is_empty_with_one_diagnostic() {
+        let mut d = Vec::new();
+        assert!(parse(b"<achievements><achievement", &mut d).is_empty());
+        assert_eq!(
+            d,
+            vec![Diagnostic::SourceUnreadable {
+                source: Source::Achievements
+            }]
+        );
+    }
+
+    #[test]
     fn steam_description_is_kept_and_absent_when_the_attribute_is_missing() {
         let ach = b"<achievements gfxroot=\"gfx/ui/achievement/\">
 \t<achievement id=\"517\" text=\"x\" gfx=\"a.png\" steam_name=\"Dirty Mind\" steam_description=\"Complete Challenge 36.\" />

@@ -150,6 +150,52 @@ mod tests {
     }
 
     #[test]
+    fn the_skips_come_in_file_order_and_a_nameless_pool_says_nothing_of_its_items() {
+        let (_, d) = parsed();
+        let skipped = |reason| Diagnostic::ElementSkipped {
+            source: Source::ItemPools,
+            id: None,
+            reason,
+        };
+        assert_eq!(
+            d,
+            vec![
+                skipped(SkipReason::MissingId),
+                skipped(SkipReason::MalformedId),
+                skipped(SkipReason::MissingName),
+            ]
+        );
+    }
+
+    #[test]
+    fn an_item_outside_a_pool_belongs_to_none_and_a_nested_one_to_nobody() {
+        // Only the direct children of a `<Pool>` are its entries.
+        let mut d = Vec::new();
+        let p = parse(
+            b"<ItemPools><Item Id=\"1\"/><Pool Name=\"p\"><Group><Item Id=\"2\"/></Group><Item Id=\"3\"/></Pool></ItemPools>",
+            &mut d,
+        );
+        assert_eq!(p.len(), 1);
+        assert_eq!(
+            p[0].entries.iter().map(|e| e.item).collect::<Vec<_>>(),
+            vec![ItemId(3)]
+        );
+        assert!(d.is_empty());
+    }
+
+    #[test]
+    fn junk_is_empty_with_one_diagnostic() {
+        let mut d = Vec::new();
+        assert!(parse(b"<ItemPools><Pool", &mut d).is_empty());
+        assert_eq!(
+            d,
+            vec![Diagnostic::SourceUnreadable {
+                source: Source::ItemPools
+            }]
+        );
+    }
+
+    #[test]
     fn a_missing_numeric_attribute_defaults_to_the_game_default_not_to_a_skip() {
         // In the real file every Item has all four attributes; if one were missing or
         // non-numeric, the game uses Weight=1, DecreaseBy=1, RemoveOn=0.1. We do the same.

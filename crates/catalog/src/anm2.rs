@@ -332,6 +332,73 @@ mod tests {
         assert_eq!(spritesheets(PER_ANIMATION), vec!["minimap_icons.png"]);
     }
 
+    /// A layer animation naming a layer nobody declared, one outside any `<Animation>`, a
+    /// frame without `Visible`, and a frame nested one level too deep to be the layer's.
+    const LOOSE: &[u8] = br#"<AnimatedActor>
+<Content><Spritesheets><Spritesheet Id="5" Path="first.png"/><Spritesheet Id="6" Path="second.png"/></Spritesheets>
+<Layers><Layer Id="0" Name="Known" SpritesheetId="9"/><Layer Name="NoId"/></Layers></Content>
+<LayerAnimation LayerId="0"><Frame XCrop="1" YCrop="1" Width="1" Height="1"/></LayerAnimation>
+<Animations><Animation Name="A"><LayerAnimations>
+<LayerAnimation LayerId="42"><Frame XCrop="2" YCrop="2" Width="2" Height="2" Visible="False"/><Group><Frame XCrop="9" YCrop="9" Width="9" Height="9"/></Group></LayerAnimation>
+<LayerAnimation><Frame XCrop="3" YCrop="3" Width="3" Height="3" XPosition="x"/></LayerAnimation>
+</LayerAnimations></Animation></Animations></AnimatedActor>"#;
+
+    #[test]
+    fn what_a_file_leaves_undeclared_reads_as_empty_names_and_the_first_sheet() {
+        let f = frames(LOOSE).expect("valid XML");
+        let seen: Vec<(&str, &str, &str, usize, bool, u32)> = f
+            .iter()
+            .map(|f| {
+                (
+                    f.animation.as_str(),
+                    f.layer.as_str(),
+                    f.sheet.as_str(),
+                    f.index,
+                    f.visible,
+                    f.rect.x,
+                )
+            })
+            .collect();
+        assert_eq!(
+            seen,
+            vec![
+                // Outside any animation; its layer's sheet id names no sheet.
+                ("", "Known", "first.png", 0, true, 1),
+                // A layer nobody declared; `Visible` is only `false` when it says so.
+                ("A", "", "first.png", 0, true, 2),
+                // No `LayerId` at all.
+                ("A", "", "first.png", 0, true, 3),
+            ],
+            "the nested frame is not the layer's"
+        );
+        assert_eq!(
+            f[2].origin,
+            Point { x: 0, y: 0 },
+            "a malformed position is 0"
+        );
+    }
+
+    #[test]
+    fn a_crop_with_a_malformed_coordinate_is_not_a_crop() {
+        let bad: &[u8] = br#"<AnimatedActor><Animations><Animation Name="A"><LayerAnimations>
+<LayerAnimation LayerId="0"><Frame XCrop="-1" YCrop="0" Width="4" Height="4"/><Frame XCrop="0" YCrop="0" Width="4" Height="4"/></LayerAnimation>
+</LayerAnimations></Animation></Animations></AnimatedActor>"#;
+        let f = frames(bad).expect("valid XML");
+        assert_eq!(f.len(), 1);
+        assert_eq!(f[0].index, 1, "the index still counts the frame left out");
+        assert_eq!(f[0].sheet, "", "no sheet declared at all");
+    }
+
+    #[test]
+    fn an_unreadable_file_has_no_spritesheets() {
+        assert!(spritesheets(b"not xml <<<").is_empty());
+        assert_eq!(
+            spritesheets(LOOSE),
+            vec!["first.png", "second.png"],
+            "declaration order"
+        );
+    }
+
     #[test]
     fn an_unreadable_file_and_one_without_crops_are_two_different_cases() {
         // A `None` and a `Some(vec![])` are drawn differently: the first is a broken

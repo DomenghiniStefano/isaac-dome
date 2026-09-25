@@ -164,4 +164,58 @@ mod tests {
             reason: SkipReason::MissingSprite
         }));
     }
+
+    #[test]
+    fn the_skips_come_in_file_order_with_the_portrait_checked_before_the_name() {
+        let mut d = Vec::new();
+        let b = parse(
+            b"<bosses>
+<boss id=\"x\" name=\"A\" portrait=\"a.png\" />
+<boss name=\"B\" portrait=\"b.png\" />
+<boss id=\"3\" />
+<boss id=\"4\" portrait=\"d.png\" />
+</bosses>",
+            &PortraitCrops::default(),
+            &mut d,
+        );
+        assert!(b.is_empty());
+        let skipped = |id, reason| Diagnostic::ElementSkipped {
+            source: Source::BossPortraits,
+            id,
+            reason,
+        };
+        assert_eq!(
+            d,
+            vec![
+                skipped(None, SkipReason::MalformedId),
+                skipped(None, SkipReason::MissingId),
+                skipped(Some(3), SkipReason::MissingSprite),
+                skipped(Some(4), SkipReason::MissingName),
+            ]
+        );
+    }
+
+    #[test]
+    fn without_a_root_the_portrait_takes_the_game_folder() {
+        let mut d = Vec::new();
+        let b = parse(
+            b"<bosses><boss id=\"1\" name=\"M\" portrait=\"m.png\" achievement=\"x\" /></bosses>",
+            &PortraitCrops::default(),
+            &mut d,
+        );
+        assert_eq!(b[0].portrait.path, "gfx/ui/boss/m.png");
+        assert_eq!(b[0].unlocked_by, None, "a malformed link is no link");
+    }
+
+    #[test]
+    fn junk_is_empty_with_one_diagnostic() {
+        let mut d = Vec::new();
+        assert!(parse(b"<bosses><boss", &PortraitCrops::default(), &mut d).is_empty());
+        assert_eq!(
+            d,
+            vec![Diagnostic::SourceUnreadable {
+                source: Source::BossPortraits
+            }]
+        );
+    }
 }

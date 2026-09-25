@@ -224,6 +224,50 @@ mod tests {
     }
 
     #[test]
+    fn the_skips_come_in_file_order_with_the_sprite_checked_before_the_name() {
+        let (_, d) = parsed();
+        let skipped = |id, reason| Diagnostic::ElementSkipped {
+            source: Source::Items,
+            id,
+            reason,
+        };
+        assert_eq!(
+            d,
+            vec![
+                skipped(None, SkipReason::MissingId),
+                skipped(None, SkipReason::MalformedId),
+                skipped(Some(7), SkipReason::MissingSprite),
+            ]
+        );
+        let mut d = Vec::new();
+        let none = parse(
+            b"<items><trinket id=\"3\" /><trinket id=\"4\" gfx=\"t.png\" /></items>",
+            &mut d,
+        );
+        assert!(none.is_empty());
+        assert_eq!(
+            d,
+            vec![
+                skipped(Some(3), SkipReason::MissingSprite),
+                skipped(Some(4), SkipReason::MissingName),
+            ]
+        );
+    }
+
+    #[test]
+    fn without_a_gfxroot_or_a_description_the_game_defaults_apply() {
+        let mut d = Vec::new();
+        let items = parse(
+            b"<items><trinket id=\"2\" gfx=\"t.png\" name=\"T\" achievement=\"x\" /></items>",
+            &mut d,
+        );
+        assert_eq!(items[0].sprite.path, "gfx/items/trinkets/t.png");
+        assert_eq!(items[0].description, Text::from_attr(""));
+        assert_eq!(items[0].unlocked_by, None, "a malformed link is no link");
+        assert!(d.is_empty());
+    }
+
+    #[test]
     fn junk_is_empty_with_one_diagnostic() {
         let mut d = Vec::new();
         assert!(parse(b"<items><passive", &mut d).is_empty());
