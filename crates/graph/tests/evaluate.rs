@@ -2,9 +2,13 @@
 //! this task is the arithmetic, and mixing XML fixtures in would test the previous one
 //! again.
 
+use std::collections::BTreeMap;
+
+use catalog::{CharacterId, ItemId, ItemKind};
 use graph::build::{Graph, GraphDiagnostic};
 use graph::evaluate::NodeInfo;
-
+use graph::model::{Requirement, ThresholdItem};
+use graph::rules::{CounterName, MarkColumn, MarkLevel};
 use graph::AchievementId;
 
 fn a(n: u32) -> AchievementId {
@@ -298,11 +302,6 @@ fn a_node_in_a_cycle_has_no_knowable_chain() {
 
 // --- requirements the profile answers (spec 2026-09-12, §4.3 and §4.6) ---------------
 
-use catalog::CharacterId;
-use graph::model::Requirement;
-use graph::rules::{CounterName, MarkColumn, MarkLevel};
-use std::collections::BTreeMap;
-
 /// The tests own the numbers, so nothing here depends on a sample.
 ///
 /// `marks` absent = the cell is not located (one of the 40). `Some(None)` = located and
@@ -448,9 +447,6 @@ fn a_flags_only_profile_cannot_answer_and_says_so() {
 }
 
 // --- Thresholds: a transformation, answered against the profile and never as an edge. ---
-
-use catalog::{ItemId, ItemKind};
-use graph::model::ThresholdItem;
 
 /// One contributor: `gate` is the achievement that unlocks it, `None` when nothing does.
 fn contributor(id: u32, gate: Option<u32>) -> ThresholdItem {
