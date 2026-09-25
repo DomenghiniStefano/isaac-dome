@@ -15,7 +15,7 @@ use wiki::Target;
 use crate::catalog_view::{item_kind, ItemKindView};
 use crate::floor::{minimap_icon_name, RoomKindView, ROOM_KINDS};
 use crate::marks::{character_for, BOSSES, ROSTER};
-use crate::target_sprite::{target_sprite, TargetSprite};
+use crate::target_sprite::{target_sprite, BossKeys, TargetSprite};
 
 /// The two levels of a mark. The game draws them as two different symbols, not one tinted
 /// (DESIGN-BRIEF.md §5.6).
@@ -365,14 +365,14 @@ fn page_target<'a>(
 ///
 /// `None` covers both "no such id" and "the catalog is older than the reference" — the
 /// caller draws the placeholder either way, and nothing here invents a path.
-pub fn icon_source<'a>(c: &'a Catalog, r: &IconRef) -> Option<&'a SpriteRef> {
+pub fn icon_source<'a>(c: &'a Catalog, bosses: &BossKeys, r: &IconRef) -> Option<&'a SpriteRef> {
     match r {
         IconRef::Achievement { id } => c.achievement(AchievementId(*id)).map(|a| &a.sprite),
         IconRef::Item { kind, id } => c.item(item_kind(*kind), ItemId(*id)).map(|i| &i.sprite),
         IconRef::Head { row } => character_for(*row, c).and_then(|ch| ch.head.as_ref()),
         // A page's figure is whatever `target_sprite` finds for the page's identity; "no art"
         // and "unknown id" both draw the placeholder.
-        IconRef::Page { target } => match target_sprite(c, target) {
+        IconRef::Page { target } => match target_sprite(c, bosses, target) {
             TargetSprite::Found(s) => Some(s),
             TargetSprite::NoArt | TargetSprite::Unknown => None,
         },

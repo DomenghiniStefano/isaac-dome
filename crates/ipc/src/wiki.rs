@@ -10,7 +10,7 @@ pub use wiki::{Block, Dlc, Entry, Infobox, Inline, ListItem, Section, SectionKin
 use wiki::{Dataset, DatasetError};
 
 use crate::icon::IconRef;
-use crate::target_sprite::{target_sprite, TargetSprite};
+use crate::target_sprite::{target_sprite, BossKeys, TargetSprite};
 
 /// One page of the dataset: its identity, its own title, and the link to its figure when
 /// the catalog draws one.
@@ -38,6 +38,7 @@ pub struct WikiIndex {
 pub fn wiki_index(
     dataset: Result<&Dataset, &DatasetError>,
     catalog: Option<&Catalog>,
+    bosses: &BossKeys,
     game_updated_unix: Option<u64>,
     mut icon: impl FnMut(&IconRef) -> Option<String>,
 ) -> WikiIndex {
@@ -50,7 +51,7 @@ pub fn wiki_index(
     };
     let pages = pages(ds)
         .map(|(target, entry)| WikiPageRef {
-            icon_url: catalog.and_then(|c| match target_sprite(c, &target) {
+            icon_url: catalog.and_then(|c| match target_sprite(c, bosses, &target) {
                 TargetSprite::Found(_) => icon(&IconRef::Page {
                     target: target.clone(),
                 }),

@@ -13,7 +13,6 @@ pub mod for_tests;
 mod goals;
 mod graph;
 mod icon;
-mod last_input;
 mod live;
 mod mark_art;
 mod marks;
@@ -120,7 +119,7 @@ pub use settings::{
 };
 pub use sprite_png::{centre_opaque, crop_png, decode_rgba, overlay, trim_opaque};
 pub use summary::{save_summary, SaveDiagnostic, SaveSummary, SectionCount};
-pub use target_sprite::{target_sprite, TargetSprite};
+pub use target_sprite::{boss_keys, target_sprite, BossKeys, TargetSprite};
 pub use tray::{tray_action, tray_locale, tray_text, TrayAction, TrayLocale, TrayText};
 pub use update::{UpdateFailure, UpdatePhase, UpdateReason, UpdateState, UpdateView};
 pub use want::{want_view, WantDiagnostic, WantRoute, WantState, WantView, WantedView};

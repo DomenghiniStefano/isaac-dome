@@ -64,6 +64,7 @@ fn view_of(c: &Catalog, s: &Save) -> Option<ipc::UnlockView> {
     let e = g.evaluate(&progress);
     Some(unlock_view(
         Some(c),
+        &ipc::for_tests::bosses(c),
         wiki::Dataset::embedded().ok(),
         Some(&flags),
         Some(&g),
@@ -79,6 +80,7 @@ fn the_real_profile_has_379_done_637_known_and_4_unknown_slots() {
     let flags = s.flags(Kind::Achievements).expect("section 1");
     let v = unlock_view(
         Some(&c),
+        &ipc::for_tests::bosses(&c),
         None,
         Some(&flags),
         None,
@@ -124,7 +126,16 @@ fn the_slot_id_junction_is_pinned_by_the_items_seen_in_the_save() {
     let Some((c, _, s)) = real() else { return };
     let flags = s.flags(Kind::Achievements).expect("section 1");
     let seen = s.flags(Kind::Items).expect("section 4");
-    let v = unlock_view(Some(&c), None, Some(&flags), None, None, None, |_| None);
+    let v = unlock_view(
+        Some(&c),
+        &ipc::for_tests::bosses(&c),
+        None,
+        Some(&flags),
+        None,
+        None,
+        None,
+        |_| None,
+    );
     let done: BTreeSet<u32> = v
         .nodes
         .iter()
@@ -156,6 +167,7 @@ fn next_steps_on_the_real_profile_are_unlockable_now_by_fan_out() {
     let e = g.evaluate(&graph::evaluate::FlagsOnly(Some(&flags)));
     let v = unlock_view(
         Some(&c),
+        &ipc::for_tests::bosses(&c),
         None,
         Some(&flags),
         Some(&g),
@@ -228,6 +240,7 @@ fn the_real_catalog_resolves_a_saved_key_into_a_named_target() {
     // The first of each family, read from the game files on 2026-09-05.
     let item = resolve_target(
         &c,
+        &ipc::for_tests::bosses(&c),
         &TargetKey::Item {
             item_kind: ItemKindView::Passive,
             id: 1,
@@ -259,6 +272,7 @@ fn the_real_catalog_resolves_a_saved_key_into_a_named_target() {
             // happily on an install whose archives don't hold the sprite at all.
             let sprite = ipc::icon_source(
                 &c,
+                &ipc::for_tests::bosses(&c),
                 &ipc::IconRef::Item {
                     kind: ItemKindView::Passive,
                     id: 1,
@@ -273,8 +287,14 @@ fn the_real_catalog_resolves_a_saved_key_into_a_named_target() {
         }
         other => panic!("expected an item, got {other:?}"),
     }
-    let character =
-        resolve_target(&c, &TargetKey::Character { id: 0 }, None, &mut icon).expect("character 0");
+    let character = resolve_target(
+        &c,
+        &ipc::for_tests::bosses(&c),
+        &TargetKey::Character { id: 0 },
+        None,
+        &mut icon,
+    )
+    .expect("character 0");
     assert_eq!(
         character,
         UnlockTarget::Character {
@@ -284,7 +304,14 @@ fn the_real_catalog_resolves_a_saved_key_into_a_named_target() {
             page: None
         }
     );
-    let boss = resolve_target(&c, &TargetKey::Boss { id: 1 }, None, &mut icon).expect("boss 1");
+    let boss = resolve_target(
+        &c,
+        &ipc::for_tests::bosses(&c),
+        &TargetKey::Boss { id: 1 },
+        None,
+        &mut icon,
+    )
+    .expect("boss 1");
     assert_eq!(
         boss,
         UnlockTarget::Boss {
@@ -293,8 +320,14 @@ fn the_real_catalog_resolves_a_saved_key_into_a_named_target() {
             page: None
         }
     );
-    let challenge =
-        resolve_target(&c, &TargetKey::Challenge { id: 1 }, None, &mut icon).expect("challenge 1");
+    let challenge = resolve_target(
+        &c,
+        &ipc::for_tests::bosses(&c),
+        &TargetKey::Challenge { id: 1 },
+        None,
+        &mut icon,
+    )
+    .expect("challenge 1");
     assert_eq!(
         challenge,
         UnlockTarget::Challenge {
@@ -309,7 +342,7 @@ fn the_real_catalog_resolves_a_saved_key_into_a_named_target() {
     // `key()` and `resolve_target` are each other's inverse, on real data.
     for t in [item, character, boss, challenge] {
         assert_eq!(
-            resolve_target(&c, &t.key(), None, &mut icon).as_ref(),
+            resolve_target(&c, &ipc::for_tests::bosses(&c), &t.key(), None, &mut icon).as_ref(),
             Some(&t),
             "resolving a target's key gives back the same target"
         );
@@ -331,7 +364,11 @@ fn an_absurd_key_resolves_to_nothing() {
         TargetKey::Boss { id: 999_999 },
         TargetKey::Challenge { id: 999_999 },
     ] {
-        assert_eq!(resolve_target(&c, &key, None, &mut icon), None, "{key:?}");
+        assert_eq!(
+            resolve_target(&c, &ipc::for_tests::bosses(&c), &key, None, &mut icon),
+            None,
+            "{key:?}"
+        );
     }
 }
 
@@ -354,10 +391,22 @@ fn the_tainted_form_of_a_character_is_a_different_target_under_the_same_name() {
         test_support::skip("this catalog has no character unlocked by 82 and 484");
         return;
     };
-    let base = resolve_target(&c, &TargetKey::Character { id: base }, None, &mut icon)
-        .expect("the base character");
-    let tainted = resolve_target(&c, &TargetKey::Character { id: tainted }, None, &mut icon)
-        .expect("the tainted character");
+    let base = resolve_target(
+        &c,
+        &ipc::for_tests::bosses(&c),
+        &TargetKey::Character { id: base },
+        None,
+        &mut icon,
+    )
+    .expect("the base character");
+    let tainted = resolve_target(
+        &c,
+        &ipc::for_tests::bosses(&c),
+        &TargetKey::Character { id: tainted },
+        None,
+        &mut icon,
+    )
+    .expect("the tainted character");
     let (
         UnlockTarget::Character {
             name: base_name,
@@ -408,6 +457,7 @@ fn a_blocked_node_links_to_the_pages_the_dataset_has() {
 
     let v = unlock_view(
         Some(&c),
+        &ipc::for_tests::bosses(&c),
         Some(ds),
         Some(&flags),
         Some(&g),
@@ -430,6 +480,7 @@ fn a_blocked_node_links_to_the_pages_the_dataset_has() {
     // No dataset: the names still come out, and nothing links.
     let without = unlock_view(
         Some(&c),
+        &ipc::for_tests::bosses(&c),
         None,
         Some(&flags),
         Some(&g),
@@ -466,7 +517,16 @@ fn what_a_node_unlocks_links_to_the_pages_the_dataset_has() {
         | UnlockTarget::Challenge { page, .. } => page.clone(),
     };
 
-    let v = unlock_view(Some(&c), Some(ds), Some(&flags), None, None, None, |_| None);
+    let v = unlock_view(
+        Some(&c),
+        &ipc::for_tests::bosses(&c),
+        Some(ds),
+        Some(&flags),
+        None,
+        None,
+        None,
+        |_| None,
+    );
     let targets = || v.nodes.iter().flat_map(|n| n.unlocks.iter());
     let linked = targets()
         .filter_map(&page_of)
@@ -483,7 +543,16 @@ fn what_a_node_unlocks_links_to_the_pages_the_dataset_has() {
     );
 
     // No dataset: the names still come out, and nothing links.
-    let without = unlock_view(Some(&c), None, Some(&flags), None, None, None, |_| None);
+    let without = unlock_view(
+        Some(&c),
+        &ipc::for_tests::bosses(&c),
+        None,
+        Some(&flags),
+        None,
+        None,
+        None,
+        |_| None,
+    );
     assert!(without
         .nodes
         .iter()
@@ -616,14 +685,23 @@ fn the_wiki_answers_how_to_get_it_where_the_game_file_is_silent() {
     let flags = s.flags(Kind::Achievements).expect("section 1");
 
     let conditions = |dataset: Option<&wiki::Dataset>| -> Vec<(u32, Option<String>)> {
-        unlock_view(Some(&c), dataset, Some(&flags), None, None, None, |_| None)
-            .nodes
-            .iter()
-            .filter_map(|n| match &n.achievement {
-                AchievementRef::Known { id, condition, .. } => Some((*id, condition.clone())),
-                AchievementRef::Unknown { .. } => None,
-            })
-            .collect()
+        unlock_view(
+            Some(&c),
+            &ipc::for_tests::bosses(&c),
+            dataset,
+            Some(&flags),
+            None,
+            None,
+            None,
+            |_| None,
+        )
+        .nodes
+        .iter()
+        .filter_map(|n| match &n.achievement {
+            AchievementRef::Known { id, condition, .. } => Some((*id, condition.clone())),
+            AchievementRef::Unknown { .. } => None,
+        })
+        .collect()
     };
 
     let from_file = conditions(None);

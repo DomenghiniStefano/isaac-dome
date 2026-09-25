@@ -13,7 +13,7 @@ use wiki::{Block, Dataset, DatasetError, Entry, Inline, SectionKind, Target};
 
 use crate::flags::recorded_done;
 use crate::icon::IconRef;
-use crate::target_sprite::{target_sprite, TargetSprite};
+use crate::target_sprite::{target_sprite, BossKeys, TargetSprite};
 use crate::wiki_target;
 
 /// One page as the search reads it: the title, and the text of each section in the order the
@@ -111,7 +111,11 @@ pub struct Doc {
 
 /// Every document, keyed by target so the order is the kind's and then the id's, and a target
 /// the two sides share is one row.
-pub(crate) fn documents(index: &SearchIndex, catalog: Option<&Catalog>) -> BTreeMap<Target, Doc> {
+pub(crate) fn documents(
+    index: &SearchIndex,
+    catalog: Option<&Catalog>,
+    bosses: &BossKeys,
+) -> BTreeMap<Target, Doc> {
     let mut docs: BTreeMap<Target, Doc> = index
         .pages
         .iter()
@@ -168,7 +172,7 @@ pub(crate) fn documents(index: &SearchIndex, catalog: Option<&Catalog>) -> BTree
     for b in c.bosses() {
         // The key is whatever `boss_keys` settles for the row — its page's, or the one its
         // portrait's file name declares. A row left without one names no target and is out.
-        if let Some(target) = wiki_target::boss(c, b) {
+        if let Some(target) = wiki_target::boss(bosses, b) {
             join(target, b.name.clone(), None);
         }
     }
@@ -473,6 +477,7 @@ fn best_field(
 pub fn search(
     index: &SearchIndex,
     catalog: Option<&Catalog>,
+    bosses: &BossKeys,
     flags: Option<SaveFlags<'_>>,
     query: &str,
     limit: usize,
@@ -488,7 +493,7 @@ pub fn search(
         };
     }
     let folded_query = fold(query.trim());
-    let docs = documents(index, catalog);
+    let docs = documents(index, catalog, bosses);
     let mut ranked: Vec<(u8, u8, String, Target, Doc, SearchMatch, ProgressMark)> = docs
         .into_iter()
         .filter_map(|(target, doc)| {
@@ -513,7 +518,7 @@ pub fn search(
     let hits = ranked
         .into_iter()
         .map(|(_, _, _, target, doc, matched, progress)| SearchHit {
-            icon_url: catalog.and_then(|c| match target_sprite(c, &target) {
+            icon_url: catalog.and_then(|c| match target_sprite(c, bosses, &target) {
                 TargetSprite::Found(_) => icon(&IconRef::Page {
                     target: target.clone(),
                 }),

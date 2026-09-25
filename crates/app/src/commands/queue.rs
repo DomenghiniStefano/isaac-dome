@@ -15,6 +15,7 @@ use catalog::Catalog;
 /// What every queue command needs, gathered once so the five read the same way.
 struct QueuePieces<'a> {
     catalog: Option<&'a Catalog>,
+    bosses: &'a ipc::BossKeys,
     graph: Option<&'a graph::build::Graph>,
     flags: Option<Vec<bool>>,
 }
@@ -28,6 +29,7 @@ fn queue_pieces<'a>(
     let c = catalog_now(app, resources, catalog);
     Ok(QueuePieces {
         catalog: c,
+        bosses: catalog.bosses(c),
         graph: c.and_then(|c| graph.get(c)),
         flags: achievement_flags(app)?,
     })
@@ -63,6 +65,7 @@ fn queue_view_now(
     Ok(ipc::queue_view(
         ipc::QueueInputs {
             catalog: pieces.catalog,
+            bosses: pieces.bosses,
             dataset: wiki::Dataset::embedded().ok(),
             flags: pieces.flags.as_deref(),
             graph: pieces.graph,
