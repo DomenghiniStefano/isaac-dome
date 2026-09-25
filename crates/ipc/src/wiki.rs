@@ -107,13 +107,12 @@ pub(crate) fn pages(ds: &Dataset) -> impl Iterator<Item = (Target, &Entry)> {
 /// The inverse of `Dataset::boss_key`: `"20.0.0"` → the entity. A key that isn't three
 /// numbers is one the build never wrote, and the page is left out rather than guessed.
 fn boss_target(key: &str) -> Option<Target> {
-    let mut parts = key.split('.').map(|s| s.parse::<u32>().ok());
-    let target = Target::Entity {
-        id: parts.next()??,
-        variant: parts.next()??,
-        subtype: parts.next()??,
-    };
-    parts.next().is_none().then_some(target)
+    let (id, variant, subtype) = Dataset::parse_boss_key(key)?;
+    Some(Target::Entity {
+        id,
+        variant,
+        subtype,
+    })
 }
 
 /// A game patch, as the wiki knows it.
