@@ -177,6 +177,40 @@ mod tests {
     }
 
     #[test]
+    fn without_a_main_animation_or_its_layer_zero_there_are_no_frames_and_no_diagnostic() {
+        let mut d = Vec::new();
+        let no_main: &[u8] =
+            br#"<AnimatedActor><Animations><Animation Name="Other"><LayerAnimations>
+<LayerAnimation LayerId="0"><Frame XCrop="0" YCrop="0" Width="32" Height="32"/></LayerAnimation>
+</LayerAnimations></Animation></Animations></AnimatedActor>"#;
+        assert!(parse(no_main, &mut d).is_empty());
+        let no_layer_zero: &[u8] =
+            br#"<AnimatedActor><Animations><Animation Name="Main"><LayerAnimations>
+<LayerAnimation LayerId="1"><Frame XCrop="0" YCrop="0" Width="32" Height="32"/></LayerAnimation>
+</LayerAnimations></Animation>
+<Animation Name="After"><LayerAnimations>
+<LayerAnimation LayerId="0"><Frame XCrop="0" YCrop="0" Width="32" Height="32"/></LayerAnimation>
+</LayerAnimations></Animation></Animations></AnimatedActor>"#;
+        assert!(
+            parse(no_layer_zero, &mut d).is_empty(),
+            "layer 0 of the next animation is not Main's"
+        );
+        assert!(d.is_empty());
+    }
+
+    #[test]
+    fn a_layer_of_frames_without_crops_is_frames_not_nothing() {
+        // Every frame keeps its slot, crop or not: the map indexes by position.
+        let mut d = Vec::new();
+        let cropless: &[u8] =
+            br#"<AnimatedActor><Animations><Animation Name="Main"><LayerAnimations>
+<LayerAnimation LayerId="0"><Frame Delay="1"/><Frame Delay="1"/></LayerAnimation>
+</LayerAnimations></Animation></Animations></AnimatedActor>"#;
+        assert_eq!(parse(cropless, &mut d), vec![None, None]);
+        assert!(d.is_empty());
+    }
+
+    #[test]
     fn junk_yields_no_frames_and_a_diagnostic() {
         let mut d = Vec::new();
         assert!(parse(b"<AnimatedActor><Animation", &mut d).is_empty());

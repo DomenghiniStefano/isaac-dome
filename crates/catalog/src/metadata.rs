@@ -126,6 +126,35 @@ mod tests {
     }
 
     #[test]
+    fn the_skips_come_in_file_order_and_other_elements_are_not_rows() {
+        let (_, d) = parsed();
+        let skipped = |reason| Diagnostic::ElementSkipped {
+            source: Source::Metadata,
+            id: None,
+            reason,
+        };
+        assert_eq!(
+            d,
+            vec![
+                skipped(SkipReason::MissingId),
+                skipped(SkipReason::MalformedId)
+            ],
+            "the root `<items>` is not a row and is not diagnosed"
+        );
+    }
+
+    #[test]
+    fn a_repeated_row_is_read_as_the_last_one() {
+        let mut d = Vec::new();
+        let m = parse(
+            b"<items><item id=\"1\" quality=\"1\"/><item id=\"1\" quality=\"4\"/></items>",
+            &mut d,
+        );
+        assert_eq!(m.len(), 1);
+        assert_eq!(m[&(ItemKind::Passive, ItemId(1))].quality, Some(4));
+    }
+
+    #[test]
     fn junk_is_empty_with_one_diagnostic() {
         let mut d = Vec::new();
         assert!(parse(b"<items><item", &mut d).is_empty());

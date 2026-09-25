@@ -156,4 +156,54 @@ mod tests {
             reason: SkipReason::MissingSprite
         }));
     }
+
+    #[test]
+    fn the_portrait_is_checked_before_the_name_and_a_malformed_id_carries_no_id() {
+        let mut d = Vec::new();
+        let c = parse(
+            b"<players>
+<player id=\"x\" name=\"#A\" portrait=\"a.png\" />
+<player id=\"4\" />
+<player id=\"5\" portrait=\"b.png\" />
+</players>",
+            &mut d,
+        );
+        assert!(c.is_empty());
+        let skipped = |id, reason| Diagnostic::ElementSkipped {
+            source: Source::Players,
+            id,
+            reason,
+        };
+        assert_eq!(
+            d,
+            vec![
+                skipped(None, SkipReason::MalformedId),
+                skipped(Some(4), SkipReason::MissingSprite),
+                skipped(Some(5), SkipReason::MissingName),
+            ]
+        );
+    }
+
+    #[test]
+    fn without_a_portraitroot_the_portrait_takes_the_game_folder() {
+        let mut d = Vec::new();
+        let c = parse(
+            b"<players portraitroot=\"resources/\"><player id=\"0\" name=\"#I\" portrait=\"p.png\" achievement=\"x\" /></players>",
+            &mut d,
+        );
+        assert_eq!(c[0].portrait.path, "gfx/ui/stage/p.png");
+        assert_eq!(c[0].unlocked_by, None, "a malformed link is no link");
+    }
+
+    #[test]
+    fn junk_is_empty_with_one_diagnostic() {
+        let mut d = Vec::new();
+        assert!(parse(b"<players><player", &mut d).is_empty());
+        assert_eq!(
+            d,
+            vec![Diagnostic::SourceUnreadable {
+                source: Source::Players
+            }]
+        );
+    }
 }

@@ -150,6 +150,48 @@ mod tests {
     }
 
     #[test]
+    fn the_skips_come_in_file_order_and_a_bad_id_carries_none() {
+        let mut d = Vec::new();
+        let c = parse(
+            b"<challenges>
+<challenge name=\"A\" id=\"x\" />
+<challenge name=\"B\" />
+<challenge name=\"C\" id=\"3\" startingitems=\"1,y\" achievements=\"z\" />
+<challenge name=\"D\" id=\"4\" achievements=\"1;2\" />
+</challenges>",
+            &mut d,
+        );
+        assert!(c.is_empty());
+        let skipped = |id, reason| Diagnostic::ElementSkipped {
+            source: Source::Challenges,
+            id,
+            reason,
+        };
+        assert_eq!(
+            d,
+            vec![
+                skipped(None, SkipReason::MalformedId),
+                skipped(None, SkipReason::MissingId),
+                skipped(Some(3), SkipReason::MalformedList),
+                skipped(Some(4), SkipReason::MalformedList),
+            ],
+            "one diagnostic per challenge, even when both lists are bad"
+        );
+    }
+
+    #[test]
+    fn junk_is_empty_with_one_diagnostic() {
+        let mut d = Vec::new();
+        assert!(parse(b"<challenges><challenge", &mut d).is_empty());
+        assert_eq!(
+            d,
+            vec![Diagnostic::SourceUnreadable {
+                source: Source::Challenges
+            }]
+        );
+    }
+
+    #[test]
     fn id_list_accepts_only_all_numeric() {
         assert_eq!(id_list("1,2,3"), Some(vec![1, 2, 3]));
         assert_eq!(id_list(""), Some(vec![]));
