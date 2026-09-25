@@ -231,12 +231,7 @@ fn pools_are_31_every_entry_is_a_known_item_and_24_items_are_in_none() {
     );
     let in_no_pool = c
         .items()
-        .filter(|i| {
-            matches!(
-                i.kind,
-                ItemKind::Passive | ItemKind::Active | ItemKind::Familiar
-            )
-        })
+        .filter(|i| ItemKind::COLLECTIBLES.contains(&i.kind))
         .filter(|i| i.pools.is_empty())
         .count();
     // 26 on the first pass, measured with a text grep on items.xml: it was also
@@ -247,7 +242,7 @@ fn pools_are_31_every_entry_is_a_known_item_and_24_items_are_in_none() {
     assert_eq!(in_no_pool, 24);
     for p in c.pools() {
         for e in &p.entries {
-            let known = [ItemKind::Passive, ItemKind::Active, ItemKind::Familiar]
+            let known = ItemKind::COLLECTIBLES
                 .iter()
                 .any(|&k| c.item(k, e.item).is_some());
             assert!(

@@ -22,6 +22,20 @@ pub enum ItemKind {
 }
 
 impl ItemKind {
+    /// Every kind, in the order `Ord` sorts them.
+    pub const ALL: [ItemKind; 4] = [
+        ItemKind::Passive,
+        ItemKind::Active,
+        ItemKind::Familiar,
+        ItemKind::Trinket,
+    ];
+
+    /// The three kinds that share one id space — `items.xml`'s collectibles, the only kinds a
+    /// pool names — in the order a lookup by bare id searches them. Trinkets are numbered
+    /// apart: passive 46 and trinket 46 are two things.
+    pub const COLLECTIBLES: [ItemKind; 3] =
+        [ItemKind::Passive, ItemKind::Active, ItemKind::Familiar];
+
     fn from_tag(name: &str) -> Option<ItemKind> {
         match name {
             "passive" => Some(ItemKind::Passive),
@@ -107,6 +121,33 @@ mod tests {
         let mut d = Vec::new();
         let items = parse(ITEMS, &mut d);
         (items, d)
+    }
+
+    /// The position each kind must hold in `ALL`. An exhaustive match, so a new kind does not
+    /// compile until it is given one here, next to the list it has to join.
+    fn position_in_all(kind: ItemKind) -> usize {
+        match kind {
+            ItemKind::Passive => 0,
+            ItemKind::Active => 1,
+            ItemKind::Familiar => 2,
+            ItemKind::Trinket => 3,
+        }
+    }
+
+    #[test]
+    fn all_holds_every_kind_once_in_sort_order() {
+        let positions: Vec<usize> = ItemKind::ALL.iter().map(|&k| position_in_all(k)).collect();
+        assert_eq!(positions, (0..ItemKind::ALL.len()).collect::<Vec<_>>());
+        assert!(ItemKind::ALL.windows(2).all(|w| w[0] < w[1]));
+    }
+
+    #[test]
+    fn the_collectibles_are_every_kind_that_lands_in_the_collectibles_folder() {
+        let by_folder: Vec<ItemKind> = ItemKind::ALL
+            .into_iter()
+            .filter(|k| k.folder() == "collectibles")
+            .collect();
+        assert_eq!(by_folder, ItemKind::COLLECTIBLES.to_vec());
     }
 
     #[test]
