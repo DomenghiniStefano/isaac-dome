@@ -11,8 +11,8 @@ fn the_embedded_rules_are_the_committed_ones() {
         rules
             .targets()
             .iter()
-            .all(|t| !t.verdict_required || rules.verdict(&t.key).is_some()),
-        "the embedded rules carry a verdict for every target that needs one"
+            .all(|t| rules.verdict(&t.key).is_some()),
+        "the embedded rules carry a verdict for every target"
     );
     // The era of the numbers pinned across this suite. Moved from 2026-09-13T14:01:45Z on
     // 2026-09-14 by B45's refetch, and **only the era moved**: the regenerated

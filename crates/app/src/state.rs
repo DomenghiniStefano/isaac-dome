@@ -55,15 +55,18 @@ pub(crate) struct LiveUnlockState(pub(crate) ipc::PerSave<Save, ipc::UnlockView>
 /// parse can only be our own broken file, and they degrade like everything else — the
 /// commands answer without graph info rather than failing.
 #[derive(Default)]
-pub(crate) struct GraphState(OnceLock<graph::Graph>);
+pub(crate) struct GraphState(OnceLock<graph::build::Graph>);
 
 impl GraphState {
-    pub(crate) fn get(&self, catalog: &catalog::Catalog) -> Option<&graph::Graph> {
+    pub(crate) fn get(&self, catalog: &catalog::Catalog) -> Option<&graph::build::Graph> {
         if let Some(g) = self.0.get() {
             return Some(g);
         }
         let rules = graph::rules::embedded().ok()?;
-        Some(self.0.get_or_init(|| graph::Graph::build(catalog, rules)))
+        Some(
+            self.0
+                .get_or_init(|| graph::build::Graph::build(catalog, rules)),
+        )
     }
 }
 

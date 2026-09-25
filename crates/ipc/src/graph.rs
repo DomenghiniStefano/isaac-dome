@@ -398,7 +398,7 @@ fn missing_view(
     dataset: Option<&Dataset>,
     node: &graph::build::Node,
     flags: &[bool],
-    progress: Option<&dyn graph::Profile>,
+    progress: Option<&dyn graph::evaluate::Profile>,
 ) -> Vec<RequirementView> {
     let en = catalog::Language::English;
     let done =
@@ -549,9 +549,9 @@ pub fn unlock_view(
     catalog: Option<&Catalog>,
     dataset: Option<&Dataset>,
     flags: Option<&[bool]>,
-    graph: Option<&graph::Graph>,
+    graph: Option<&graph::build::Graph>,
     eval: Option<&graph::evaluate::Eval>,
-    progress: Option<&dyn graph::Profile>,
+    progress: Option<&dyn graph::evaluate::Profile>,
     mut icon: impl FnMut(&IconRef) -> Option<String>,
 ) -> UnlockView {
     let read = flags.unwrap_or(&[]);

@@ -1,7 +1,8 @@
+use catalog::Catalog;
 use ipc::{
-    AchievementRef, GraphInfo, IconRef, ItemKindView, NextSteps, OriginView, PlanDiagnostic,
-    RequirementView, StepsBasis, StepsSection, Target, UnlockDiagnostic, UnlockNode, UnlockTarget,
-    UnlockTotals, UnlockView, STEPS,
+    next_steps, plan_view, unlock_view, AchievementRef, GraphInfo, IconRef, ItemKindView,
+    NextSteps, OriginView, PlanDiagnostic, RequirementView, StepsBasis, StepsSection, Target,
+    UnlockDiagnostic, UnlockNode, UnlockTarget, UnlockTotals, UnlockView, STEPS,
 };
 use serde_json::{json, to_value, Value};
 
@@ -197,9 +198,6 @@ fn store_available_and_the_store_diagnostic_cannot_disagree() {
         assert_eq!(says_unavailable, reason.is_some());
     }
 }
-
-use catalog::Catalog;
-use ipc::{next_steps, plan_view, unlock_view};
 
 const ITEMS_WITH_ACHIEVEMENTS: &[u8] = b"<items gfxroot=\"gfx/items/\"><passive id=\"2\" gfx=\"a.png\" name=\"A\" achievement=\"1\" /><trinket id=\"1\" gfx=\"t.png\" name=\"T\" achievement=\"3\" /></items>";
 const ACH: &[u8] = b"<achievements gfxroot=\"gfx/ui/achievement/\"><!-- c1 --><achievement id=\"1\" text=\"t1\" gfx=\"1.png\" /><achievement id=\"2\" text=\"t2\" gfx=\"2.png\" /><achievement id=\"3\" text=\"t3\" gfx=\"3.png\" /></achievements>";
