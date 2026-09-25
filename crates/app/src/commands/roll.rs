@@ -1,15 +1,13 @@
 //! The draw: read, draw again, change the preset. Three commands, each answering with the
 //! whole `RollView` (N8) — one screen, one round trip, whatever the user just did.
 
-use std::time::{SystemTime, UNIX_EPOCH};
-
 use tauri::AppHandle;
 
 use ipc::IpcError;
 
 use crate::events::{announce, ROLL_CHANGED};
 use crate::icons::icon_url;
-use crate::state::{progress_sections, CatalogState, ResourcesState, StoreState};
+use crate::state::{catalog_now, progress_sections, CatalogState, ResourcesState, StoreState};
 
 /// Everything the view needs, read once. The catalog may be absent — the game is not
 /// installed — and that is a diagnostic, never an error.
@@ -26,8 +24,7 @@ fn view_now(
     write_failed: bool,
 ) -> Result<ipc::RollView, IpcError> {
     let (flags, counters) = progress_sections(app)?;
-    let rs = resources.get(app);
-    let cat = rs.and_then(|rs| catalog.get_or_build(rs));
+    let cat = catalog_now(app, resources, catalog);
     let (document, read_reason) = read_document(app, store);
     let store_reason = if write_failed {
         Some(ipc::StoreReason::Unreadable)
@@ -65,14 +62,10 @@ fn read_document(
     }
 }
 
-/// Nanoseconds since the epoch. The clock lives here and nowhere else: `roll::draw` is a
+/// Nanoseconds since the epoch, as the draw's seed. Drawn on this side because `roll::draw` is a
 /// function of `(deck, seed)`, which is what makes it testable at all.
 fn seed_now() -> u64 {
-    SystemTime::now()
-        .duration_since(UNIX_EPOCH)
-        .map(|d| d.as_nanos() as u64)
-        // A clock before 1970 is not a reason to refuse a draw.
-        .unwrap_or(0)
+    crate::clock::since_epoch().as_nanos() as u64
 }
 
 #[tauri::command]
@@ -93,16 +86,12 @@ pub fn roll_draw(
     store: tauri::State<'_, StoreState>,
 ) -> Result<ipc::RollView, IpcError> {
     let (flags, counters) = progress_sections(&app)?;
-    let rs = resources.get(&app);
-    let cat = rs.and_then(|rs| state.get_or_build(rs));
+    let cat = catalog_now(&app, &resources, &state);
     let (document, _) = read_document(&app, &store);
     // An unreadable document is replaced here too, exactly as `set_roll_preset` replaces one
     // below: pressing Pesca is asking for something new just as much as changing the preset
     // is, so there is nothing for the old, unparseable document to contribute.
-    let drawn_unix = SystemTime::now()
-        .duration_since(UNIX_EPOCH)
-        .map(|d| d.as_secs() as i64)
-        .unwrap_or(0);
+    let drawn_unix = crate::clock::now_unix();
     let doc = ipc::drawn_document(
         document.unwrap_or_default(),
         counters.as_deref(),
