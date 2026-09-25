@@ -11,7 +11,7 @@ fn section(kind: Kind, bytes: Vec<u8>) -> Section {
     Section {
         kind,
         count: (bytes.len() / per) as u32,
-        f2: 0,
+        declared_size: 0,
         offset: 0,
         bytes,
     }
