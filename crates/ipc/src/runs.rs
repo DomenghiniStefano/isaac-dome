@@ -106,10 +106,9 @@ pub enum RunsDiagnostic {
     LiveLogUnreadable,
 }
 
-/// What the archive's own reading met, kept by the app between one reading and the next
-/// (card #80, R4). It used to be dropped — `let _ =` on the live log, a backfill's errors
-/// thrown away, `NoLogFolder` declared and never sent — and an archive that could not be read
-/// then looked exactly like one with nothing in it.
+/// What the archive's own reading met, kept by the app between one reading and the next.
+/// Without it an archive that could not be read — the live log failing, a backfill's errors,
+/// no folder to watch — looks exactly like one with nothing in it.
 #[derive(Debug, Clone, Default, PartialEq, Eq)]
 pub struct ArchiveHealth {
     /// Discovery found no folder the game writes its logs to.
@@ -127,19 +126,16 @@ impl ArchiveHealth {
             unreadable_sessions,
             live_log_unreadable,
         } = *self;
-        let mut out = Vec::new();
-        if no_log_folder {
-            out.push(RunsDiagnostic::NoLogFolder);
-        }
-        if unreadable_sessions > 0 {
-            out.push(RunsDiagnostic::UnreadableSessions {
+        [
+            no_log_folder.then_some(RunsDiagnostic::NoLogFolder),
+            (unreadable_sessions > 0).then_some(RunsDiagnostic::UnreadableSessions {
                 count: unreadable_sessions,
-            });
-        }
-        if live_log_unreadable {
-            out.push(RunsDiagnostic::LiveLogUnreadable);
-        }
-        out
+            }),
+            live_log_unreadable.then_some(RunsDiagnostic::LiveLogUnreadable),
+        ]
+        .into_iter()
+        .flatten()
+        .collect()
     }
 }
 
@@ -155,7 +151,7 @@ pub struct RunsView {
 pub struct RunsInputs<'a> {
     /// Each source with its folded runs, in the order the archive took them in — not the order
     /// they are shown in: that is `ui/src/lib/runs/runOrder.ts`, which reads the one clock the
-    /// archive has, a session folder's name (card #80, P8).
+    /// archive has, a session folder's name.
     pub sources: Vec<(RunSource, Vec<run::Run>)>,
     pub catalog: Option<&'a Catalog>,
     pub diagnostics: Vec<RunsDiagnostic>,
@@ -175,13 +171,15 @@ impl run::ItemKinds for CatalogKinds<'_> {
             // unknown id as an active would silently drop whatever the player was carrying.
             None => run::ItemKind::Passive,
             // `collectible` looks up the three collectible kinds only, so a trinket cannot come
-            // back here; named rather than folded into a wildcard (card #80, item 12), so a new
-            // kind of item has to be decided here instead of counting as a passive in silence.
+            // back here; named rather than folded into a wildcard, so a new kind of item has to
+            // be decided here instead of counting as a passive in silence.
             Some(ItemKind::Trinket) => run::ItemKind::Passive,
         }
     }
 }
 
+/// The runs of every source, in the order given, with the totals counted off them and the
+/// catalog's absence said after whatever the archive's reading already met.
 pub fn runs_view(
     inputs: RunsInputs<'_>,
     mut icon: impl FnMut(&crate::icon::IconRef) -> Option<String>,
@@ -189,71 +187,112 @@ pub fn runs_view(
     let RunsInputs {
         sources,
         catalog,
-        mut diagnostics,
-    } = inputs;
-    if catalog.is_none() {
-        diagnostics.push(RunsDiagnostic::NoCatalog);
-    }
-    let mut named = |id: u32| -> RunItemRef {
-        // The line the fold reads is `Adding collectible N`: a trinket cannot be meant, and
-        // looking one up would put the wrong name on a run.
-        let found = catalog.and_then(|c| collectible(c, id));
-        RunItemRef {
-            id,
-            name: found
-                .zip(catalog)
-                .map(|(item, c)| c.text(&item.name, Language::English).to_string()),
-            icon_url: found.and_then(|item| {
-                icon(&crate::icon::IconRef::Item {
-                    kind: crate::catalog_view::kind_view(item.kind),
-                    id,
-                })
-            }),
-        }
-    };
-
-    let mut runs = Vec::new();
-    let mut totals = RunTotals::default();
-    for (source, folded) in sources {
-        for (ordinal, r) in folded.into_iter().enumerate() {
-            let outcome = match r.outcome {
-                run::Outcome::Won { ending } => {
-                    totals.won += 1;
-                    RunOutcomeView::Won { ending }
-                }
-                run::Outcome::Died { killer } => {
-                    totals.died += 1;
-                    RunOutcomeView::Died { killer }
-                }
-                run::Outcome::Abandoned => {
-                    totals.abandoned += 1;
-                    RunOutcomeView::Abandoned
-                }
-                run::Outcome::Open => {
-                    totals.open += 1;
-                    RunOutcomeView::Open
-                }
-            };
-            totals.runs += 1;
-            runs.push(RunView {
-                source: source.clone(),
-                ordinal: ordinal as u32,
-                character: r.character,
-                character_id: r.character_id,
-                seed_words: r.seed_words,
-                online: r.seed_kind == run::SeedKind::Net,
-                outcome,
-                floors: r.floors.len() as u32,
-                starting_items: r.starting_items.iter().copied().map(&mut named).collect(),
-                collected: r.collected.iter().copied().map(&mut named).collect(),
-                held_active: r.held_active.map(&mut named),
-                achievements: r.achievements,
-            });
-        }
-    }
-    RunsView {
-        runs,
-        totals,
         diagnostics,
+    } = inputs;
+    let mut named = |id: u32| named_item(catalog, id, &mut icon);
+    let runs: Vec<RunView> = sources
+        .into_iter()
+        .flat_map(|(source, folded)| {
+            folded
+                .into_iter()
+                .enumerate()
+                .map(move |(ordinal, r)| (source.clone(), ordinal as u32, r))
+        })
+        .map(|(source, ordinal, r)| run_view(source, ordinal, r, &mut named))
+        .collect();
+    RunsView {
+        totals: RunTotals::of(&runs),
+        runs,
+        diagnostics: diagnostics
+            .into_iter()
+            .chain(catalog.is_none().then_some(RunsDiagnostic::NoCatalog))
+            .collect(),
+    }
+}
+
+fn run_view(
+    source: RunSource,
+    ordinal: u32,
+    r: run::Run,
+    named: &mut impl FnMut(u32) -> RunItemRef,
+) -> RunView {
+    RunView {
+        source,
+        ordinal,
+        character: r.character,
+        character_id: r.character_id,
+        seed_words: r.seed_words,
+        online: r.seed_kind == run::SeedKind::Net,
+        outcome: outcome_view(r.outcome),
+        floors: r.floors.len() as u32,
+        starting_items: r.starting_items.iter().map(|id| named(*id)).collect(),
+        collected: r.collected.iter().map(|id| named(*id)).collect(),
+        held_active: r.held_active.map(&mut *named),
+        achievements: r.achievements,
+    }
+}
+
+/// An item of a run, named and pictured when the catalog knows it. The line the fold reads is
+/// `Adding collectible N`: a trinket cannot be meant, and looking one up would put the wrong
+/// name on a run.
+fn named_item(
+    catalog: Option<&Catalog>,
+    id: u32,
+    icon: &mut impl FnMut(&crate::icon::IconRef) -> Option<String>,
+) -> RunItemRef {
+    let found = catalog.and_then(|c| collectible(c, id));
+    RunItemRef {
+        id,
+        name: found
+            .zip(catalog)
+            .map(|(item, c)| c.text(&item.name, Language::English).to_string()),
+        icon_url: found.and_then(|item| {
+            icon(&crate::icon::IconRef::Item {
+                kind: crate::catalog_view::kind_view(item.kind),
+                id,
+            })
+        }),
+    }
+}
+
+fn outcome_view(o: run::Outcome) -> RunOutcomeView {
+    match o {
+        run::Outcome::Won { ending } => RunOutcomeView::Won { ending },
+        run::Outcome::Died { killer } => RunOutcomeView::Died { killer },
+        run::Outcome::Abandoned => RunOutcomeView::Abandoned,
+        run::Outcome::Open => RunOutcomeView::Open,
+    }
+}
+
+impl RunTotals {
+    /// Counted off the finished runs, so the totals can never disagree with the list beside them.
+    fn of(runs: &[RunView]) -> RunTotals {
+        runs.iter()
+            .fold(RunTotals::default(), |t, r| t.counting(&r.outcome))
+    }
+
+    fn counting(self, outcome: &RunOutcomeView) -> RunTotals {
+        let t = RunTotals {
+            runs: self.runs + 1,
+            ..self
+        };
+        match outcome {
+            RunOutcomeView::Won { .. } => RunTotals {
+                won: t.won + 1,
+                ..t
+            },
+            RunOutcomeView::Died { .. } => RunTotals {
+                died: t.died + 1,
+                ..t
+            },
+            RunOutcomeView::Abandoned => RunTotals {
+                abandoned: t.abandoned + 1,
+                ..t
+            },
+            RunOutcomeView::Open => RunTotals {
+                open: t.open + 1,
+                ..t
+            },
+        }
     }
 }
