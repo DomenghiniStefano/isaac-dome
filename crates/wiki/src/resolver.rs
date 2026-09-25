@@ -70,6 +70,7 @@ pub const CORRECTED_TABLES: [&str; 2] = ["collectible", "trinket"];
 impl Corrections {
     /// The `page_id` tables no lookup will ever ask about. Empty is the healthy answer;
     /// anything else is a correction sitting in the file doing nothing.
+    #[cfg(feature = "test-api")]
     pub fn unknown_tables(&self) -> Vec<&str> {
         self.page_id
             .keys()
@@ -81,6 +82,7 @@ impl Corrections {
     /// The hand-written descriptions that name no entry of `ds` — an unknown collection or
     /// a key it does not hold — in file order. Empty is the healthy answer: anything else
     /// is a line in `corrections.json` that is doing nothing, and saying nothing about it.
+    #[cfg(feature = "test-api")]
     pub fn unmatched_descriptions(&self, ds: &crate::Dataset) -> Vec<(String, String)> {
         self.descriptions
             .iter()
