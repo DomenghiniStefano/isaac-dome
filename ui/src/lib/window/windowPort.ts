@@ -18,6 +18,7 @@ import { WindowEventName } from './messages'
 import type { WindowMessage } from './messages'
 import { windowBackground } from './windowBackground'
 import { WindowFloor } from './windowFloor'
+import { windowCreated } from './windowCreated'
 
 // The first window's label, fixed by `tauri.conf.json`. Every other window is born here.
 export const MainLabel = 'main'
@@ -162,10 +163,7 @@ const tauriPort: WindowPort = {
       backgroundColor: windowBackground(),
       visible: false,
     })
-    await new Promise<void>((resolve, reject) => {
-      void w.once('tauri://created', () => resolve())
-      void w.once('tauri://error', (e) => reject(new Error(String(e.payload))))
-    })
+    await windowCreated(w)
     await w.setPosition(
       new PhysicalPosition(Math.round(at.x), Math.round(at.y)),
     )

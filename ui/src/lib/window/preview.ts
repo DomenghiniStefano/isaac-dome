@@ -5,6 +5,7 @@ import {
   getAllWebviewWindows,
 } from '@tauri-apps/api/webviewWindow'
 import type { Point } from '@/lib/drag/dragList'
+import { windowCreated } from './windowCreated'
 
 // The tab that follows the cursor once it has left the strip. It is created on the first
 // tear-off of the session and afterwards only hidden and shown again: creating a window costs
@@ -67,8 +68,12 @@ export const warmPreview = async (label: string): Promise<void> => {
   })
   preview = created
   shownLabel = label
-  await new Promise<void>((resolve) => {
-    void created.once('tauri://created', () => resolve())
+  // A card Tauri would not make is forgotten, so the next drag tries again instead of
+  // showing a window that is not there.
+  await windowCreated(created).catch((e: unknown) => {
+    preview = null
+    shownLabel = null
+    throw e
   })
 }
 
