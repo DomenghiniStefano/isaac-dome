@@ -76,12 +76,14 @@ const openName = (page: Target, ctrlKey: boolean) =>
     <EmptyValue v-else>{{ t('challenges.noCondition') }}</EmptyValue>
   </span>
   <span class="flex min-w-0 items-center gap-1.5 px-2 @max-compact/page:hidden">
-    <WikiInline
-      v-if="row.goal"
-      :inline="row.goal"
-      class="min-w-0 truncate text-caption"
-      @navigate="(target, newTab) => emit('navigate', target, newTab)"
-    />
+    <!-- `WikiInline` is a fragment and takes no class of its own: this span sets the measure
+         and the truncation, the way every other caller wraps it. -->
+    <span v-if="row.goal" class="min-w-0 truncate text-caption">
+      <WikiInline
+        :inline="row.goal"
+        @navigate="(target, newTab) => emit('navigate', target, newTab)"
+      />
+    </span>
     <EmptyValue v-else>{{ t('challenges.noCondition') }}</EmptyValue>
     <span
       v-if="row.blindfolded"
