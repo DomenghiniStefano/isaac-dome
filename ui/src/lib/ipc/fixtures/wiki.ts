@@ -8,6 +8,7 @@ import type {
   WikiPageRef,
 } from '../types'
 import { pageKey, parsePageKey } from '@/lib/wiki/pageKey'
+import { warnOnce } from './warnOnce'
 
 // Development only. The dataset as the fixtures can stand in for it: every page's identity
 // and title from the index (items, trinkets, achievements, bosses, characters — real names,
@@ -200,17 +201,14 @@ export const wikiIndexAnswer = ({ withWiki }: WikiAnswerOptions): WikiIndex => {
   return { info: infoOf(list), pages: refs }
 }
 
-let warned = false
+const warnSamples = warnOnce(
+  `wiki fixture: ${samplePages.size} sample pages are recorded; every other page reads as unknown`,
+)
 
 // The eleven sample pages answer with their real text; every other page is one the fixtures
 // don't carry, answered the way the app answers a page the dataset lacks.
 export const wikiEntryAnswer = (target: Target): Entry | null => {
-  if (!warned) {
-    warned = true
-    console.warn(
-      `wiki fixture: ${samplePages.size} sample pages are recorded; every other page reads as unknown`,
-    )
-  }
+  warnSamples()
   const key = pageKey(target)
   if (key === null) return null
   // Round-tripping the key guards the sample names against a target the app never writes.
