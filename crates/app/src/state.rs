@@ -26,9 +26,22 @@ use crate::settings_file;
 pub(crate) struct CatalogState(OnceLock<Catalog>);
 
 impl CatalogState {
-    pub(crate) fn get_or_build(&self, rs: &ResourceSet) -> Option<&Catalog> {
-        Some(self.0.get_or_init(|| Catalog::build(|p| rs.read(p))))
+    pub(crate) fn get_or_build(&self, rs: &ResourceSet) -> &Catalog {
+        self.0.get_or_init(|| Catalog::build(|p| rs.read(p)))
     }
+}
+
+/// The catalog as it stands now: `None` when the game isn't installed, which every caller
+/// treats as an expected case and never as an error. **The one way to ask for it** in this
+/// crate — the chain from the archives to the catalog used to be written out at every call
+/// site. Nothing is cached on the way out: "absent" comes from `ResourcesState`, which never
+/// keeps it.
+pub(crate) fn catalog_now<'a>(
+    app: &AppHandle,
+    resources: &'a ResourcesState,
+    catalog: &'a CatalogState,
+) -> Option<&'a Catalog> {
+    resources.get(app).map(|rs| catalog.get_or_build(rs))
 }
 
 /// The Unlock view Live reads, kept until the save it was evaluated on is read again (card #80,

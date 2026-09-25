@@ -11,7 +11,7 @@ use ipc::IpcError;
 use crate::icons::icon_url;
 
 use crate::state::{
-    active_save, progress_sections, CatalogState, GraphState, ResourcesState, StoreState,
+    active_save, catalog_now, CatalogState, GraphState, ResourcesState, StoreState,
 };
 
 /// The Unlock view. Not a command since N8: it is built once per screen load, inside
@@ -24,8 +24,7 @@ pub(crate) fn unlock(
 ) -> Result<ipc::UnlockView, IpcError> {
     let (_, save) = active_save(&app)?;
     // Game not installed is expected: the view goes out without a catalog and says so.
-    let resources = resources.get(&app);
-    let catalog = resources.and_then(|rs| state.get_or_build(rs));
+    let catalog = catalog_now(&app, &resources, &state);
     let g = catalog.and_then(|c| graph.get(c));
     Ok(unlock_of(&save, catalog, g))
 }
@@ -86,8 +85,7 @@ pub fn collection(
 ) -> Result<ipc::CollectionView, IpcError> {
     let (_, save) = active_save(&app)?;
     // Game not installed is expected: the view goes out without a catalog and says so.
-    let resources = resources.get(&app);
-    let catalog = resources.and_then(|rs| state.get_or_build(rs));
+    let catalog = catalog_now(&app, &resources, &state);
     let items = save.flags(Kind::Items);
     let achievements = save.flags(Kind::Achievements);
     Ok(ipc::collection_view(
@@ -109,22 +107,14 @@ pub fn want(
     resources: tauri::State<'_, ResourcesState>,
     graph: tauri::State<'_, GraphState>,
 ) -> Result<ipc::WantView, IpcError> {
-    let (flags, counters) = progress_sections(&app)?;
+    let (_, save) = active_save(&app)?;
     // Game not installed is expected: the view goes out without a catalog and says so.
-    let resources = resources.get(&app);
-    let catalog = resources.and_then(|rs| state.get_or_build(rs));
+    let catalog = catalog_now(&app, &resources, &state);
     let g = catalog.and_then(|c| graph.get(c));
-    let progress = ipc::SaveProgress::new(flags.as_deref(), counters.as_deref(), catalog);
-    let eval = g.map(|g| g.evaluate(&progress));
-    let view = ipc::unlock_view(
-        catalog,
-        wiki::Dataset::embedded().ok(),
-        flags.as_deref(),
-        g,
-        eval.as_ref(),
-        Some(&progress),
-        icon_url,
-    );
+    // The same Unlock view the Unlock screen reads, from the same function: two copies of the
+    // evaluation were two chances to disagree about one profile.
+    let view = unlock_of(&save, catalog, g);
+    let flags = save.flags(Kind::Achievements);
     Ok(ipc::want_view(
         catalog,
         &view,
@@ -135,8 +125,9 @@ pub fn want(
     ))
 }
 
-/// The forty-five challenges for the active profile. Wiring only: the join is `ipc`'s, and
-/// the section's own length is what the totals state — never the constant 46.
+/// The challenges for the active profile. Wiring only: the join is `ipc`'s, and no count is
+/// written here — the slots are the section's own length (46 cells today, cell 0 unused) and the
+/// challenges are the catalog's (45 today), each read from where it was measured.
 #[tauri::command]
 pub fn challenges(
     app: AppHandle,
@@ -145,8 +136,7 @@ pub fn challenges(
 ) -> Result<ipc::ChallengesView, IpcError> {
     let (_, save) = active_save(&app)?;
     // Game not installed is expected: the view goes out without a catalog and says so.
-    let resources = resources.get(&app);
-    let catalog = resources.and_then(|rs| state.get_or_build(rs));
+    let catalog = catalog_now(&app, &resources, &state);
     let challenges = save.flags(Kind::Challenges);
     let achievements = save.flags(Kind::Achievements);
     Ok(ipc::challenges_view(
