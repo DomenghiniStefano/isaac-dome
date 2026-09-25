@@ -12,7 +12,7 @@
 use std::collections::BTreeMap;
 
 use catalog::{Catalog, CharacterId};
-use core_save::{counter_index_of, CounterKey};
+use core_save::counter_index_of;
 use graph::rules::{CounterName, MarkColumn, MarkLevel};
 
 use crate::marks::{cell_at, character_for, Cell, CellLevel, ROSTER};
@@ -84,17 +84,6 @@ impl graph::evaluate::Profile for SaveProgress<'_> {
     }
 
     fn counter(&self, name: CounterName) -> Option<u32> {
-        self.counters?.get(counter_index_of(key_of(name))).copied()
-    }
-}
-
-/// The tallies: the rules file spells a name, the layout holds the number, and an
-/// exhaustive match is what keeps them joined.
-fn key_of(n: CounterName) -> CounterKey {
-    match n {
-        CounterName::HushKills => CounterKey::HushKills,
-        CounterName::DeliriumKills => CounterKey::DeliriumKills,
-        CounterName::MotherKills => CounterKey::MotherKills,
-        CounterName::BeastKills => CounterKey::BeastKills,
+        self.counters?.get(counter_index_of(name)).copied()
     }
 }

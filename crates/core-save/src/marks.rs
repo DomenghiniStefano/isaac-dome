@@ -195,14 +195,31 @@ pub fn cell_index(row: usize, column: Column) -> Option<usize> {
 /// The tallies of section 2 whose index is located.
 ///
 /// Typed rather than a string, so the crates that name one cannot drift apart in silence:
-/// a rules file is allowed to carry `"hushKills"` precisely because the number lives here,
-/// and an exhaustive match is what keeps the two spellings joined.
-#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+/// the graph's rules file spells a tally the way this enum serializes (`"hushKills"`), and
+/// the number it sits at stays here. The one definition — `graph::rules::CounterName` is
+/// this type — so a fifth tally is one variant, not two joined by a map.
+///
+/// Ordered, so a tally can key a sorted map.
+#[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
 pub enum CounterKey {
     HushKills,
     DeliriumKills,
     MotherKills,
     BeastKills,
+}
+
+impl CounterKey {
+    /// The column whose boss the tally counts the kills of. Exhaustive, so a fifth tally has
+    /// to say which boss it is about before anything can label it.
+    pub fn column(self) -> Column {
+        match self {
+            CounterKey::HushKills => Column::Hush,
+            CounterKey::DeliriumKills => Column::Delirium,
+            CounterKey::MotherKills => Column::Mother,
+            CounterKey::BeastKills => Column::TheBeast,
+        }
+    }
 }
 
 /// Located on the series: 158 and 187 carry documented REPENTOGON names, 491 and 492 were

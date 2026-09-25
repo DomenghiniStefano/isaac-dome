@@ -148,29 +148,11 @@ pub enum MarkLevel {
     Second,
 }
 
-/// A tally of section 2, named. The index it sits at is `core-save`'s business: a rules
-/// file carrying an offset would be the same mistake as an offset crossing the IPC.
-#[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub enum CounterName {
-    HushKills,
-    DeliriumKills,
-    MotherKills,
-    BeastKills,
-}
-
-impl CounterName {
-    /// The column whose boss the tally counts the kills of. Exhaustive, so a fifth tally has
-    /// to say which boss it is about before anything can label it.
-    pub fn column(self) -> MarkColumn {
-        match self {
-            CounterName::HushKills => MarkColumn::Hush,
-            CounterName::DeliriumKills => MarkColumn::Delirium,
-            CounterName::MotherKills => MarkColumn::Mother,
-            CounterName::BeastKills => MarkColumn::TheBeast,
-        }
-    }
-}
+/// A tally of section 2, named: the layout's own enum, like the column. A rules file spells
+/// it the way the layout serializes it (`"hushKills"`); the index it sits at stays
+/// `core-save`'s business, since a rules file carrying an offset would be the same mistake as
+/// an offset crossing the IPC.
+pub use core_save::CounterKey as CounterName;
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
