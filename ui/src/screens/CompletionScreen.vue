@@ -2,7 +2,8 @@
 import { InfoIcon } from '@lucide/vue'
 import { computed } from 'vue'
 import { Alert, AlertDescription } from '@/components/ui/alert'
-import { Skeleton } from '@/components/ui/skeleton'
+import ScreenSkeleton from '@/components/data-state/ScreenSkeleton.vue'
+import { SkeletonBlock } from '@/components/data-state/skeletonBlock'
 import { useOnActiveProfile } from '@/composables/useOnActiveProfile'
 import { vScrollMemory } from '@/directives/scrollMemory'
 import { useMessages } from '@/i18n'
@@ -49,9 +50,11 @@ const kpis = computed(() =>
         <MarksMatrixCard :matrix="completion.view" />
       </div>
     </template>
-    <div v-else class="flex flex-1 flex-col gap-4 px-5.5 pt-5 pb-5">
-      <Skeleton class="h-52 w-full" />
-      <Skeleton class="flex-1" />
-    </div>
+    <ScreenSkeleton
+      v-else
+      untitled
+      class="flex-1 px-5.5 pt-5 pb-5"
+      :blocks="[SkeletonBlock.Hero, SkeletonBlock.Fill]"
+    />
   </div>
 </template>

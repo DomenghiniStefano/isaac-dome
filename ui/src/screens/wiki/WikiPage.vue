@@ -5,7 +5,8 @@ import { computed, watch } from 'vue'
 import EmptyCategory from '@/components/data-state/EmptyCategory.vue'
 import ProfileBlock from '@/components/graph/ProfileBlock.vue'
 import { Button, ButtonVariant } from '@/components/ui/button'
-import { Skeleton } from '@/components/ui/skeleton'
+import ScreenSkeleton from '@/components/data-state/ScreenSkeleton.vue'
+import { SkeletonBlock } from '@/components/data-state/skeletonBlock'
 import {
   Tooltip,
   TooltipContent,
@@ -139,10 +140,11 @@ const canAdd = computed(
         :title="t('wiki.states.pageFailedTitle')"
         @retry="retry"
       />
-      <div v-else-if="entry === undefined" class="flex flex-col gap-4">
-        <Skeleton class="h-40 w-full" />
-        <Skeleton class="h-40 w-full" />
-      </div>
+      <ScreenSkeleton
+        v-else-if="entry === undefined"
+        untitled
+        :blocks="[SkeletonBlock.Card, SkeletonBlock.Card]"
+      />
       <!-- The card and the index come first in the document and last on a wide page: stacked,
            the facts belong above the prose, and side by side they belong beside it. One
            `flex-row-reverse` says both, where two orders would need two templates. -->
