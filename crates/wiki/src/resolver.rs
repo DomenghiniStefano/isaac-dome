@@ -5,18 +5,17 @@ use std::collections::{BTreeMap, BTreeSet};
 
 use serde::{Deserialize, Serialize};
 
-use crate::Target;
+use crate::editions::Editions;
+use crate::{Dlc, Target};
 
-/// The Repentance+ bit in the `dlc` field of the Cargo tables, a bitmask: 1 Rebirth,
-/// 2 Afterbirth, 4 Afterbirth+, 8 Repentance, 16 Repentance+.
-pub const DLC_REPENTANCE_PLUS: u32 = 16;
-
-/// True if the row is valid in the current edition. A row with no `dlc`, or with a `dlc`
-/// that isn't an integer, is kept: the filter only excludes what the wiki declares to
-/// belong to another edition (Afterbirth+'s collectible 474 "Tonsil", `dlc = 4`).
+/// True if the row is valid in the current edition, Repentance+. The `dlc` field of the Cargo
+/// tables is a bitmask, read by [`Editions`] like every other statement of an edition. A row
+/// with no `dlc`, or with a `dlc` that isn't an integer, is kept: the filter only excludes
+/// what the wiki declares to belong to another edition (Afterbirth+'s collectible 474
+/// "Tonsil", `dlc = 4`).
 pub fn in_current_edition(row: &Row) -> bool {
     match row.get("dlc").and_then(|s| s.trim().parse::<u32>().ok()) {
-        Some(mask) => mask & DLC_REPENTANCE_PLUS != 0,
+        Some(mask) => Editions::of_cargo_bits(mask).contains(Dlc::RepentancePlus),
         None => true,
     }
 }
