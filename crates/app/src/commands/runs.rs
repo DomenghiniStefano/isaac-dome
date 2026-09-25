@@ -82,7 +82,13 @@ pub(crate) fn live(
 ) -> Result<ipc::LiveView, IpcError> {
     let cat = catalog_now(&app, &resources, &catalog);
     let open = open_run(&app, &store, &archive, cat);
-    let unlocked = live_unlock_view(&app, &live_unlock, cat, cat.and_then(|c| graph.get(c)));
+    let unlocked = live_unlock_view(
+        &app,
+        &live_unlock,
+        cat,
+        catalog.bosses(cat),
+        cat.and_then(|c| graph.get(c)),
+    );
     let nodes = ipc::live_graph(unlocked.as_deref());
     let marks = cat.and_then(|c| live_marks(&app, open.as_ref(), c));
     Ok(ipc::live_view(open, nodes, marks, |name, id| {
@@ -144,13 +150,14 @@ fn live_unlock_view(
     app: &AppHandle,
     state: &LiveUnlockState,
     catalog: Option<&Catalog>,
+    bosses: &ipc::BossKeys,
     g: Option<&graph::build::Graph>,
 ) -> Result<Arc<ipc::UnlockView>, IpcError> {
     let (_, save) = active_save(app)?;
     if let (Some(c), Some(g)) = (catalog, g) {
         return state
             .0
-            .get(&save, || Ok(unlock_of(&save, Some(c), Some(g))));
+            .get(&save, || Ok(unlock_of(&save, Some(c), bosses, Some(g))));
     }
-    Ok(Arc::new(unlock_of(&save, catalog, g)))
+    Ok(Arc::new(unlock_of(&save, catalog, bosses, g)))
 }

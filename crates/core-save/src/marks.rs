@@ -8,10 +8,20 @@
 //! Nothing here reads a file. It maps (row, column) and a tally's name onto indices, and
 //! says `None` for the cells nobody has located.
 
-use serde::Serialize;
+use serde::{Deserialize, Serialize};
 
 /// The twelve columns the game's own completion widget draws, in its order.
-#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+///
+/// **The one definition of the twelve** (card #82, S1). The graph's rules name a column with
+/// it (`graph::rules::MarkColumn`), and it crosses the IPC as `MarkColumnView`: a bare
+/// camelCase string, fieldless, so the TypeScript is a union of values. It used to be three
+/// enums of the same twelve joined by hand-written maps, each one a place for a thirteenth
+/// column to be forgotten.
+///
+/// Ordered in the game's order, so a column can key a sorted map.
+#[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Serialize, Deserialize, ts_rs::TS)]
+#[ts(rename = "MarkColumnView")]
+#[serde(rename_all = "camelCase")]
 pub enum Column {
     MomsHeart,
     Isaac,
@@ -29,8 +39,9 @@ pub enum Column {
 
 impl Column {
     /// Position in the per-boss tables below. Written out rather than derived, so that
-    /// reordering the enum cannot silently reindex every table.
-    pub fn position(self) -> usize {
+    /// reordering the enum cannot silently reindex every table. It is also the column's
+    /// index in [`Column::ALL`], which the layout tests hold.
+    pub const fn position(self) -> usize {
         match self {
             Column::MomsHeart => 0,
             Column::Isaac => 1,
@@ -47,6 +58,8 @@ impl Column {
         }
     }
 
+    /// Every column, in the game's order: the list every per-column table of the project is
+    /// derived from, here and in `ipc` alike.
     pub const ALL: [Column; 12] = [
         Column::MomsHeart,
         Column::Isaac,
@@ -62,6 +75,17 @@ impl Column {
         Column::TheBeast,
     ];
 }
+
+/// A column's position is its index in `ALL`: a table indexed by one and read by the other
+/// cannot disagree without failing to build. An index walk because iterators do not run in a
+/// `const`.
+const _: () = {
+    let mut i = 0;
+    while i < Column::ALL.len() {
+        assert!(Column::ALL[i].position() == i);
+        i += 1;
+    }
+};
 
 /// Which block family a row belongs to. It is the file's structure, not the player's way
 /// of grouping characters: the three families are where the unread cells live.
@@ -81,7 +105,7 @@ pub const ROWS: usize = 34;
 
 const FIRST_LATER: usize = 15;
 
-pub fn group_of(row: usize) -> Option<CharacterGroup> {
+pub const fn group_of(row: usize) -> Option<CharacterGroup> {
     match row {
         0..=13 => Some(CharacterGroup::Original),
         14 => Some(CharacterGroup::Forgotten),

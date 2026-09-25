@@ -106,6 +106,18 @@ pub(crate) fn item_kind(v: ItemKindView) -> ItemKind {
     }
 }
 
+/// The collectible numbered `id`, whichever of the three collectible kinds it is.
+///
+/// The wiki's `Item { id }` and a run's `Adding collectible N` both name one by number alone.
+/// Passives, actives and familiars share one id space, so at most one kind matches; a trinket
+/// never does, because it can carry the same number as a collectible and is not the thing
+/// either of them means. One helper where there were three copies (card #82, S4).
+pub(crate) fn collectible(c: &Catalog, id: u32) -> Option<&catalog::Item> {
+    [ItemKind::Passive, ItemKind::Active, ItemKind::Familiar]
+        .into_iter()
+        .find_map(|kind| c.item(kind, catalog::ItemId(id)))
+}
+
 fn language_label(l: Language) -> String {
     match l {
         Language::English => "english",

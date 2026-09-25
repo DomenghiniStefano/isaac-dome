@@ -37,9 +37,16 @@ fn real() -> Option<(Catalog, Save)> {
 fn the_unlock_payload_carries_links_and_stays_small() {
     let Some((c, s)) = real() else { return };
     let flags = s.flags(Kind::Achievements).expect("section 1");
-    let view = ipc::unlock_view(Some(&c), None, Some(&flags), None, None, None, |r| {
-        Some(format!("{}://{}", ipc::ICON_SCHEME, r.to_path()))
-    });
+    let view = ipc::unlock_view(
+        Some(&c),
+        &ipc::for_tests::bosses(&c),
+        None,
+        Some(&flags),
+        None,
+        None,
+        None,
+        |r| Some(format!("{}://{}", ipc::ICON_SCHEME, r.to_path())),
+    );
     let json = serde_json::to_string(&view).expect("serializes");
 
     assert!(
@@ -70,7 +77,7 @@ fn the_wiki_index_stays_a_payload() {
         test_support::skip("the embedded dataset didn't load");
         return;
     };
-    let index = ipc::wiki_index(Ok(ds), None, None, |_| None);
+    let index = ipc::wiki_index(Ok(ds), None, ipc::BossKeys::NONE, None, |_| None);
     let json = serde_json::to_string(&index).expect("serializes");
     assert!(
         json.len() < INDEX_CEILING,

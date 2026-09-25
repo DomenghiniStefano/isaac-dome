@@ -14,7 +14,7 @@
 use serde::Serialize;
 
 use crate::graph::{AchievementRef, MarkColumnView, MarkLevelView, RequirementView, UnlockNode};
-use crate::marks::{second_level_of_view, SecondLevelView};
+use crate::marks::{second_level, SecondLevelView};
 use crate::runs::RunView;
 
 /// One achievement this run could open, and how much it opens in turn: the graph already
@@ -224,7 +224,7 @@ pub fn live_view(
                 level,
                 second_level: match level {
                     MarkLevelView::Base => None,
-                    MarkLevelView::Second => Some(second_level_of_view(column)),
+                    MarkLevelView::Second => Some(second_level(column)),
                 },
                 achievements: vec![offered(node)],
             }),
@@ -313,7 +313,7 @@ pub fn characters_named(c: &catalog::Catalog, name: &str, id: Option<u32>) -> Ve
 /// The rows of the completion matrix for the characters asked for, in the matrix's order —
 /// two rows when a name reached two forms (card #81, V1, out of the `live` command).
 pub fn live_mark_rows(c: &catalog::Catalog, wanted: &[u32]) -> Vec<usize> {
-    (0..crate::marks::CHARACTERS.len())
+    (0..crate::marks::ROSTER.len())
         .filter(|row| {
             crate::marks::character_for(*row, c).is_some_and(|ch| wanted.contains(&ch.id.0))
         })

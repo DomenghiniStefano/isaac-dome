@@ -12,6 +12,7 @@ fn a_stage_is_not_a_thing_you_unlock() {
     let c = catalog_with_achievements();
     let v = ipc::want_view(
         Some(&c),
+        &ipc::for_tests::bosses(&c),
         &empty_view(),
         None,
         None,
@@ -29,6 +30,7 @@ fn a_stage_is_not_a_thing_you_unlock() {
 fn without_a_catalog_nothing_resolves_and_the_view_says_so() {
     let v = ipc::want_view(
         None,
+        ipc::BossKeys::NONE,
         &empty_view(),
         None,
         None,
@@ -55,6 +57,7 @@ fn an_item_names_the_achievement_that_grants_it() {
     let c = catalog_with_achievements();
     let v = ipc::want_view(
         Some(&c),
+        &ipc::for_tests::bosses(&c),
         &view_of(&c),
         Some(&READ),
         None,
@@ -80,6 +83,7 @@ fn a_challenge_named_by_two_achievements_shows_two_routes() {
     let c = catalog_with_achievements();
     let v = ipc::want_view(
         Some(&c),
+        &ipc::for_tests::bosses(&c),
         &view_of(&c),
         Some(&READ),
         None,
@@ -104,6 +108,7 @@ fn an_achievement_named_directly_is_its_own_route() {
     let c = catalog_with_achievements();
     let v = ipc::want_view(
         Some(&c),
+        &ipc::for_tests::bosses(&c),
         &view_of(&c),
         Some(&READ),
         None,
@@ -126,6 +131,7 @@ fn a_thing_no_achievement_grants_says_which_empty_it_is() {
     // Character 7 is granted by achievement 2; character 9 is in no file at all.
     let v = ipc::want_view(
         Some(&c),
+        &ipc::for_tests::bosses(&c),
         &view_of(&c),
         Some(&READ),
         None,
@@ -143,7 +149,16 @@ fn view_with(c: &catalog::Catalog, done: &[u32], info: GraphInfo) -> ipc::Unlock
     for id in done {
         flags[*id as usize] = true;
     }
-    let mut v = ipc::unlock_view(Some(c), None, Some(&flags), None, None, None, |_| None);
+    let mut v = ipc::unlock_view(
+        Some(c),
+        &ipc::for_tests::bosses(c),
+        None,
+        Some(&flags),
+        None,
+        None,
+        None,
+        |_| None,
+    );
     for n in v.nodes.iter_mut() {
         n.graph = info;
     }
@@ -163,6 +178,7 @@ fn a_want_you_already_have_says_so() {
     let v = view_with(&c, &[1], COMPUTED_NOW);
     let w = ipc::want_view(
         Some(&c),
+        &ipc::for_tests::bosses(&c),
         &v,
         Some(&[false; 4]),
         None,
@@ -178,6 +194,7 @@ fn a_want_with_nothing_in_the_way_is_available_now() {
     let v = view_with(&c, &[], COMPUTED_NOW);
     let w = ipc::want_view(
         Some(&c),
+        &ipc::for_tests::bosses(&c),
         &v,
         Some(&[false; 4]),
         None,
@@ -191,7 +208,15 @@ fn a_want_with_nothing_in_the_way_is_available_now() {
 fn without_the_section_the_view_names_the_route_and_claims_nothing() {
     let c = catalog_with_achievements();
     let v = view_with(&c, &[], COMPUTED_NOW);
-    let w = ipc::want_view(Some(&c), &v, None, None, &Target::Item { id: 2 }, |_| None);
+    let w = ipc::want_view(
+        Some(&c),
+        &ipc::for_tests::bosses(&c),
+        &v,
+        None,
+        None,
+        &Target::Item { id: 2 },
+        |_| None,
+    );
     assert_eq!(w.routes[0].state, WantState::NoProfile);
     assert_eq!(w.diagnostics, vec![WantDiagnostic::NoProfile]);
 }
@@ -204,7 +229,15 @@ fn the_no_profile_diagnostic_and_the_rows_cannot_disagree() {
     let c = catalog_with_achievements();
     for flags in [None, Some(&[false; 4][..])] {
         let v = view_with(&c, &[], COMPUTED_NOW);
-        let w = ipc::want_view(Some(&c), &v, flags, None, &Target::Item { id: 2 }, |_| None);
+        let w = ipc::want_view(
+            Some(&c),
+            &ipc::for_tests::bosses(&c),
+            &v,
+            flags,
+            None,
+            &Target::Item { id: 2 },
+            |_| None,
+        );
         let all_rows = w.routes.iter().all(|r| r.state == WantState::NoProfile);
         let banner = w.diagnostics.contains(&WantDiagnostic::NoProfile);
         assert_eq!(all_rows, banner);
@@ -232,6 +265,7 @@ fn a_chain_is_ordered_the_way_the_queue_orders_it() {
     // Trinket 1 is granted by achievement 3, the deepest node.
     let w = ipc::want_view(
         Some(&c),
+        &ipc::for_tests::bosses(&c),
         &v,
         Some(&READ),
         Some(&g),
@@ -285,6 +319,7 @@ fn a_partly_read_chain_counts_what_it_could_not_interpret() {
     };
     let w = ipc::want_view(
         Some(&c),
+        &ipc::for_tests::bosses(&c),
         &v,
         Some(&READ),
         Some(&g),
@@ -316,6 +351,7 @@ fn no_route_is_an_empty_chain_that_claims_nothing_is_missing() {
             let v = view_with(&c, done, info);
             let w = ipc::want_view(
                 Some(&c),
+                &ipc::for_tests::bosses(&c),
                 &v,
                 Some(&READ),
                 Some(&g),
@@ -344,6 +380,7 @@ fn want_view_json_shape_is_pinned() {
     let v = view_with(&c, &[], BLOCKED);
     let w = to_value(ipc::want_view(
         Some(&c),
+        &ipc::for_tests::bosses(&c),
         &v,
         Some(&READ),
         Some(&g),
@@ -363,6 +400,7 @@ fn want_view_json_shape_is_pinned() {
     // The shapes that have no route, each naming which empty it is.
     let none = to_value(ipc::want_view(
         None,
+        ipc::BossKeys::NONE,
         &v,
         Some(&READ),
         Some(&g),
