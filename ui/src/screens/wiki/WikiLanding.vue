@@ -58,11 +58,8 @@ const view = computed(() => {
 const categories = Object.values(WikiCategory)
 
 // A category card opens its list in the tab, or beside it with Ctrl, as a sidebar entry does.
-const open = (category: WikiCategory, event: MouseEvent) => {
-  const location = { name: RouteName.Wiki, query: { category } }
-  if (event.ctrlKey) tabs.open(location)
-  else tabs.navigate(location)
-}
+const open = (category: WikiCategory, event: MouseEvent) =>
+  tabs.go({ name: RouteName.Wiki, query: { category } }, event.ctrlKey)
 </script>
 
 <template>

@@ -10,6 +10,7 @@ import { nodeUnlocks } from '@/lib/graph/nodeUnlocks'
 import { nodeWhy } from '@/lib/graph/whyMenu'
 import type { UnlockNode } from '@/lib/ipc/types'
 import type { TabLocation } from '@/router/routeTable'
+import { useTabsStore } from '@/stores/tabs'
 
 const props = defineProps<{
   node: UnlockNode
@@ -17,11 +18,9 @@ const props = defineProps<{
   canAdd: boolean
   busy: boolean
 }>()
-const emit = defineEmits<{
-  add: []
-  navigate: [location: TabLocation, newTab: boolean]
-}>()
+const emit = defineEmits<{ add: [] }>()
 const { t } = useMessages()
+const tabs = useTabsStore()
 
 // The page has room, so what is in the way is rows and not a menu: the menu exists because a
 // badge is small (spec §3.1). Same model as the badge's, same links, same gesture.
@@ -54,7 +53,7 @@ const opensText = computed(() => {
 })
 
 const open = (location: TabLocation | null, newTab: boolean) => {
-  if (location) emit('navigate', location, newTab)
+  if (location) tabs.go(location, newTab)
 }
 </script>
 

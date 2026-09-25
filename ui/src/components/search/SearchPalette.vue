@@ -110,8 +110,7 @@ const { ctrl } = useGestureModifiers()
 
 // Enter navigates the active tab; Ctrl opens the row beside it, as a browser does.
 const openAt = (location: TabLocation, newTab: boolean) => {
-  if (newTab) tabs.open(location)
-  else tabs.navigate(location)
+  tabs.go(location, newTab)
   open.value = false
 }
 

@@ -86,6 +86,12 @@ export const useTabsStore = defineStore(StoreId.Tabs, () => {
   const navigate = (location: TabLocation): void => {
     state.value = navigateTab(state.value, location)
   }
+  // The app's one gesture: a click navigates the active tab, Ctrl opens the page beside it.
+  // Every link, row and entry that goes somewhere goes through here, with the modifier it read.
+  const go = (location: TabLocation, newTab: boolean): void => {
+    if (newTab) open(location)
+    else navigate(location)
+  }
   // How the active tab's current entry is being read. The rule is `tabModel`'s; this only holds
   // the result, as with every other tab rule.
   const setView = (location: TabLocation, view: unknown): void => {
@@ -254,6 +260,7 @@ export const useTabsStore = defineStore(StoreId.Tabs, () => {
     close,
     move,
     navigate,
+    go,
     seed,
     seedAt,
     session,

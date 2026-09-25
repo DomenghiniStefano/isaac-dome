@@ -19,7 +19,7 @@ import { canQueue, isQueued, queuedIds } from '@/lib/plan/queueRows'
 import { categoryOf, pageLocation } from '@/lib/wiki/category'
 import { parsePageKey } from '@/lib/wiki/pageKey'
 import { RouteName } from '@/router/routeTable'
-import type { TabLocation, WikiCategory } from '@/router/routeTable'
+import type { WikiCategory } from '@/router/routeTable'
 import { useQueueStore } from '@/stores/queue'
 import { useTabsStore } from '@/stores/tabs'
 import { useGraphStore } from '@/stores/views'
@@ -71,9 +71,7 @@ const icon = computed(() => (target.value ? wiki.iconFor(target.value) : null))
 // action as opening a search result (DESIGN-BRIEF.md §4.2).
 const onNavigate = (next: Target, newTab: boolean) => {
   const location = pageLocation(next)
-  if (location === null) return
-  if (newTab) tabs.open(location)
-  else tabs.navigate(location)
+  if (location !== null) tabs.go(location, newTab)
 }
 // A page that would not load is this page's failure, not the wiki's (card #80, R9): the retry
 // asks for this page again, and every other tab keeps what it shows.
@@ -99,10 +97,6 @@ const canAdd = computed(
     node.value !== null &&
     canQueue(node.value, queued.value),
 )
-const onOpen = (location: TabLocation, newTab: boolean) => {
-  if (newTab) tabs.open(location)
-  else tabs.navigate(location)
-}
 </script>
 
 <template>
@@ -134,7 +128,6 @@ const onOpen = (location: TabLocation, newTab: boolean) => {
         :can-add="canAdd"
         :busy="queue.busy"
         @add="queue.add(nodeSlot(node))"
-        @navigate="onOpen"
       />
       <template v-if="unknown">
         <EmptyCategory
