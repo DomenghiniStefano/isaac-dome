@@ -15,14 +15,13 @@ import type { RunView } from '@/lib/ipc/types'
 import { runFaceting } from '@/lib/runs/runFacets'
 import type { RunFacet } from '@/lib/runs/runFacets'
 import { runKey } from '@/lib/runs/runKey'
-import { facetValueLabel } from '@/lib/runs/runLabels'
+import { runFacetValueLabel, runsBar } from '@/lib/runs/runLabels'
 import { orderRuns } from '@/lib/runs/runOrder'
 import { LoadStatus } from '@/stores/loadStatus'
 import { useRunsStore } from '@/stores/views'
 import ProfileError from './profile/ProfileError.vue'
 import RunDetail from './runs/RunDetail.vue'
 import RunsTable from './runs/RunsTable.vue'
-import { runsBar } from './runs/runsBar'
 import { runsView } from './runs/tabView'
 import ScreenHeader from './ScreenHeader.vue'
 
@@ -60,7 +59,7 @@ const empty = computed(() =>
 )
 
 const valueLabel = (facet: RunFacet, value: string) =>
-  facetValueLabel(t, facet, value)
+  runFacetValueLabel(t, facet, value)
 </script>
 
 <template>

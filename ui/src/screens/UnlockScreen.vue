@@ -23,7 +23,7 @@ import { useGraphStore } from '@/stores/views'
 import ScreenHeader from './ScreenHeader.vue'
 import ProfileError from './profile/ProfileError.vue'
 import UnlockTable from './unlock/UnlockTable.vue'
-import { facetValueLabel, unlockBar } from './unlock/facetLabels'
+import { unlockBar, unlockFacetValueLabel } from '@/lib/graph/unlockLabels'
 import { unlockView } from './unlock/tabView'
 
 const graph = useGraphStore()
@@ -67,7 +67,7 @@ const characters = computed(() => characterForms(nodes.value))
 // A picked value in words. The Character facet stores ids (B28), so the label needs the forms
 // the nodes carry: it is the screen that has them, not the control that draws the chip.
 const valueLabel = (facet: FacetId, value: string) =>
-  facetValueLabel(t, facet, value, characters.value)
+  unlockFacetValueLabel(t, facet, value, characters.value)
 const rows = computed(() =>
   sortNodes(
     nodes.value.filter((node) => unlockFaceting.matches(node, filter.value)),

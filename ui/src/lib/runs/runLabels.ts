@@ -3,7 +3,9 @@ import { assertNever } from '@/lib/assertNever'
 import type { RunOutcomeView, RunSource, RunsDiagnostic } from '@/lib/ipc/types'
 import type { FilterBarLabels } from '@/lib/facets/labels'
 import type { FacetSlot } from '@/lib/facets/facetOptions'
-import { RunCompany, RunFacet } from './runFacets'
+import type { FilterBarDescriptor } from '@/lib/facets/filterBar'
+import type { RunView } from '@/lib/ipc/types'
+import { RunCompany, RunFacet, outcomeOrder, runFaceting } from './runFacets'
 
 export const facetTitle: Record<RunFacet, Message> = {
   [RunFacet.Outcome]: 'runs.facet.outcome',
@@ -73,7 +75,7 @@ const isSource = (value: string): value is RunSource['kind'] =>
   Object.hasOwn(sourceTextByKind, value)
 
 /** A facet's value in words. A value outside its set is shown as it came, never dropped. */
-export const facetValueLabel = (
+export const runFacetValueLabel = (
   t: Translate,
   facet: RunFacet,
   value: string,
@@ -99,6 +101,20 @@ export const facetValueLabel = (
     default:
       return assertNever(facet)
   }
+}
+
+// The Run diary's filter bar. No sort: the order is the archive's (`runOrder.ts`).
+export const runsBar: FilterBarDescriptor<RunView, RunFacet, never> = {
+  faceting: runFaceting,
+  facets: runSlots,
+  state: {
+    facet: RunFacet.Outcome,
+    order: outcomeOrder,
+    dot: outcomeDot,
+    text: outcomeTextByKind,
+  },
+  title: facetTitle,
+  labels: barLabels,
 }
 
 /**

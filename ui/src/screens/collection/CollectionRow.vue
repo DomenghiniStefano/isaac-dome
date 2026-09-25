@@ -2,7 +2,7 @@
 import { computed } from 'vue'
 import EmptyValue from '@/components/data-state/EmptyValue.vue'
 import FindHighlight from '@/components/find/FindHighlight.vue'
-import { unlockKindText } from '@/components/graph/unlockKindText'
+import { unlockKindText } from '@/lib/graph/unlockKindText'
 import PixelSprite from '@/components/sprite/PixelSprite.vue'
 import WhyMenu from '@/components/graph/WhyMenu.vue'
 import { Badge, BadgeVariant } from '@/components/ui/badge'
@@ -12,7 +12,10 @@ import { ItemState, itemState } from '@/lib/collection/itemState'
 import { lockWhy } from '@/lib/graph/whyMenu'
 import type { CollectionItem } from '@/lib/ipc/types'
 import QualityPips from '@/components/data-state/QualityPips.vue'
-import { collectionFacetValueLabel, itemStateText } from './collectionLabels'
+import {
+  collectionFacetValueLabel,
+  itemStateText,
+} from '@/lib/collection/collectionLabels'
 
 const props = defineProps<{
   item: CollectionItem

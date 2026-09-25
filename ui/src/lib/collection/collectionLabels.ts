@@ -1,5 +1,5 @@
 import type { Message, Translate } from '@/i18n/message'
-import { unlockKindText } from '@/components/graph/unlockKindText'
+import { unlockKindText } from '@/lib/graph/unlockKindText'
 import { assertNever } from '@/lib/assertNever'
 import { oneOf } from '@/lib/oneOf'
 import { originLabel } from '@/lib/facets/labels'

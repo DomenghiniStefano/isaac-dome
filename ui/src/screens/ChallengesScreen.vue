@@ -27,7 +27,7 @@ import ChallengesTable from './challenges/ChallengesTable.vue'
 import {
   challengeBar,
   challengeFacetValueLabel,
-} from './challenges/challengeLabels'
+} from '@/lib/challenges/challengeLabels'
 import { challengesView } from './challenges/tabView'
 import ProfileError from './profile/ProfileError.vue'
 

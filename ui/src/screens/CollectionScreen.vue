@@ -30,7 +30,7 @@ import CollectionTable from './collection/CollectionTable.vue'
 import {
   collectionBar,
   collectionFacetValueLabel,
-} from './collection/collectionLabels'
+} from '@/lib/collection/collectionLabels'
 import { collectionView } from './collection/tabView'
 import ProfileError from './profile/ProfileError.vue'
 
