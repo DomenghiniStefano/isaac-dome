@@ -91,3 +91,31 @@ fn unreadable_rules_cross_as_a_bare_tag() {
         serde_json::json!({ "kind": "rulesUnreadable" })
     );
 }
+
+/// `ROOM_KINDS` is written out by hand, and nothing in the compiler holds it complete: a
+/// kind added to `RoomKindView` and forgotten there would never get an icon or a token. The
+/// complete list is the one the wire declares, which `ts-rs` reads off the enum itself — so
+/// the two are compared, and every declared value is read back into the kind it names.
+#[test]
+fn room_kinds_lists_every_kind_the_wire_declares_and_each_one_round_trips() {
+    use ts_rs::TS;
+    let decl = <RoomKindView as TS>::decl(&ts_rs::Config::new());
+    let mut declared: Vec<&str> = decl.split('"').skip(1).step_by(2).collect();
+    assert!(
+        !declared.is_empty(),
+        "the declaration still reads as quoted members: {decl}"
+    );
+    let mut listed: Vec<String> = ipc::ROOM_KINDS
+        .iter()
+        .map(|k| serde_json::to_value(k).expect("serializes"))
+        .map(|v| v.as_str().expect("a bare string").to_string())
+        .collect();
+    declared.sort_unstable();
+    listed.sort_unstable();
+    assert_eq!(listed, declared);
+    for value in declared {
+        let kind: RoomKindView =
+            serde_json::from_value(Value::from(value)).expect("a declared value reads back");
+        assert!(ipc::ROOM_KINDS.contains(&kind), "{value}");
+    }
+}
