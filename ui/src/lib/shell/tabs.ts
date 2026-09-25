@@ -1,4 +1,6 @@
-import type { Point } from '@/lib/drag/dragList'
+import { EventKey } from '@/lib/constants/eventKeys'
+import { Axis, boxAt } from '@/lib/drag/dragList'
+import type { Box, Point } from '@/lib/drag/dragList'
 import type { WindowBox } from '@/lib/window/windowPort'
 
 // A tab's origin, drawn as an icon on the tab itself (DESIGN-BRIEF.md §4.2): the mixed bar
@@ -56,4 +58,31 @@ export const moveIndex = (
   if (from === target) return from
   const slot = side === DropSide.Before ? target : target + 1
   return slot > from ? slot - 1 : slot
+}
+
+// Where a tab arriving from another window would land, from the point it hovers at and the
+// strip's tabs: beside the tab under it, by its half, or at the end past every tab. The gap
+// the marker is drawn in **is** where the drop lands — one computation, so what you saw is what
+// you get.
+export const arrivalGap = (boxes: Box[], p: Point, count: number): number => {
+  const index = boxAt(boxes, p, Axis.X)
+  const box = index === null ? undefined : boxes[index]
+  if (index === null || !box) return count
+  return dropSide(p.x, box.left, box.width) === DropSide.Before
+    ? index
+    : index + 1
+}
+
+// The tab the arrow keys move to from the active one, stopping at either end. `null` for any
+// other key, or with no active tab in the strip.
+export const neighbourIndex = (
+  ids: string[],
+  activeId: string | null,
+  key: string,
+): number | null => {
+  const index = ids.findIndex((id) => id === activeId)
+  if (index < 0) return null
+  if (key === EventKey.ArrowRight) return Math.min(index + 1, ids.length - 1)
+  if (key === EventKey.ArrowLeft) return Math.max(index - 1, 0)
+  return null
 }

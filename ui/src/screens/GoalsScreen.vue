@@ -15,6 +15,11 @@ import { wantBanner, wantBlocks } from '@/lib/graph/wantBlocks'
 import { wantLocation, wantOf } from '@/lib/graph/wantLocation'
 import type { Target } from '@/lib/ipc/types'
 
+import {
+  membershipChanged,
+  queueMembership,
+  queueReadable,
+} from '@/lib/plan/queueView'
 import { RouteName } from '@/router/routeTable'
 import type { TabLocation } from '@/router/routeTable'
 import { LoadStatus } from '@/stores/loadStatus'
@@ -74,27 +79,14 @@ const noCatalog = computed(
 // from another window through `plan-changed` — the suggestions are asked again. A reorder
 // changes nothing they depend on, and a queue arriving with the profile arrives with the
 // graph beside it: neither asks.
-const queuedKey = computed(() =>
-  queue.view === null
-    ? null
-    : [...queued.value].sort((a, b) => a - b).join(','),
+watch(
+  () => queueMembership(queue.view),
+  (now, before) => {
+    if (membershipChanged(now, before)) void graph.refresh()
+  },
 )
-watch(queuedKey, (now, before) => {
-  if (now !== null && before !== null && now !== before) void graph.refresh()
-})
 
-// The queue card needs a queue that could be read: no database, an unreadable document and no
-// catalog each say so in an alert instead of an empty list.
-const readable = computed((): boolean => {
-  const view = queue.view
-  return (
-    view !== null &&
-    view.storeAvailable &&
-    !view.diagnostics.some(
-      (d) => d.kind === 'unreadable' || d.kind === 'noCatalog',
-    )
-  )
-})
+const readable = computed(() => queueReadable(queue.view))
 const nodes = computed(() => graph.view?.unlock.nodes ?? [])
 </script>
 
