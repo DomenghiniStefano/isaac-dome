@@ -65,6 +65,57 @@ pub fn parse_template_at(s: &str, at: usize) -> Option<(Template, usize)> {
     None
 }
 
+/// A piece of wikitext as [`template_segments`] cuts it.
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub(crate) enum Segment<'a> {
+    /// Text between templates, verbatim. A `{{` that opens nothing is text as well.
+    Text(&'a str),
+    /// A top-level template: parsed, the source it was parsed from, and everything after it.
+    Template {
+        template: Template,
+        source: &'a str,
+        after: &'a str,
+    },
+}
+
+/// `text` cut into its top-level templates and the text between them, in order. Laid end to
+/// end, the segments' `Text` and `source` give `text` back byte for byte.
+///
+/// It is the one answer to "where does each template begin and end", which a line-by-line pass
+/// cannot give: an infobox spans a dozen lines. Four passes each carried their own loop of
+/// "find `{{`, try `parse_template_at`, step over a `{{` that closes nothing" — the infobox
+/// extraction, the preamble's cleanup, the block wrappers and the heading normalization. A
+/// template nested inside another one is part of the outer one's `source`, never a segment.
+pub(crate) fn template_segments(text: &str) -> impl Iterator<Item = Segment<'_>> {
+    let mut cursor = 0;
+    std::iter::from_fn(move || {
+        let (segment, len) = segment_at(text, cursor)?;
+        cursor += len;
+        Some(segment)
+    })
+}
+
+/// The segment that starts at `at`, and how many bytes it spans; `None` at the end of `text`.
+fn segment_at(text: &str, at: usize) -> Option<(Segment<'_>, usize)> {
+    let rest = text.get(at..).filter(|rest| !rest.is_empty())?;
+    Some(match rest.find("{{") {
+        None => (Segment::Text(rest), rest.len()),
+        Some(0) => match parse_template_at(text, at) {
+            Some((template, end)) => (
+                Segment::Template {
+                    template,
+                    source: text.get(at..end)?,
+                    after: text.get(end..)?,
+                },
+                end - at,
+            ),
+            // A `{{` with no close: text, and the scan resumes right after it.
+            None => (Segment::Text(rest.get(..2)?), 2),
+        },
+        Some(pos) => (Segment::Text(rest.get(..pos)?), pos),
+    })
+}
+
 fn assemble(parts: Vec<String>) -> Template {
     let mut it = parts.into_iter();
     let name = it.next().unwrap_or_default().trim().to_lowercase();
@@ -185,6 +236,54 @@ mod tests {
         assert!(parse_template_at("{{i|x}}", 99).is_none());
         // `at` in the middle of a multibyte character: must not panic
         assert!(parse_template_at("é{{i|x}}", 1).is_none());
+    }
+
+    fn joined(text: &str) -> String {
+        template_segments(text)
+            .map(|s| match s {
+                Segment::Text(t) => t,
+                Segment::Template { source, .. } => source,
+            })
+            .collect()
+    }
+
+    /// The segments are a cut, not a rewrite: laid end to end they are the input, whatever
+    /// the input — a nested template, an unclosed one, a multibyte character next to a brace.
+    #[test]
+    fn the_segments_laid_end_to_end_are_the_text() {
+        for text in [
+            "",
+            "plain",
+            "a {{i|x}} b {{dlc|r|{{i|y}}}} c",
+            "{{i|Breakfast",
+            "é{{ {{i|x}}}} }}é",
+            "{{infobox boss\n | id = 1\n}}\n'''Hush'''",
+        ] {
+            assert_eq!(joined(text), text, "{text:?}");
+        }
+    }
+
+    /// Only top-level templates are segments, each with what follows it; a `{{` that closes
+    /// nothing is text, and the template after it is still found.
+    #[test]
+    fn a_segment_is_a_top_level_template_or_the_text_around_it() {
+        let segments: Vec<Segment> = template_segments("a {{bug|{{i|x}}}} {{ b {{i|y}}").collect();
+        let names: Vec<&str> = segments
+            .iter()
+            .filter_map(|s| match s {
+                Segment::Template { template, .. } => Some(template.name.as_str()),
+                Segment::Text(_) => None,
+            })
+            .collect();
+        assert_eq!(names, vec!["bug", "i"]);
+        assert!(matches!(
+            &segments[1],
+            Segment::Template {
+                source: "{{bug|{{i|x}}}}",
+                after: " {{ b {{i|y}}",
+                ..
+            }
+        ));
     }
 
     #[test]
