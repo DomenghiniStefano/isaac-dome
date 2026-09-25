@@ -1,6 +1,6 @@
 //! `items.xml`: items, trinkets and familiars, with the sprite path already composed.
 
-use serde::Serialize;
+use serde::{Deserialize, Serialize};
 
 use crate::diagnostics::{Diagnostic, SkipReason, Source};
 use crate::ids::{AchievementId, ItemId};
@@ -12,7 +12,18 @@ use crate::xml::{self, Element};
 
 const SOURCE: Source = Source::Items;
 
-#[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash, Serialize)]
+/// The four kinds `items.xml` files an item under, and the one definition of them: it crosses
+/// the IPC as `ItemKindView`, and an icon URL spells it with the same word
+/// ([`ItemKind::name`]).
+///
+/// A fieldless enum: on the wire it's a bare camelCase string (`"passive"`), like
+/// `OriginView`. The tag exists to distinguish variants that carry different data, and here
+/// there are none: `{"kind":"passive"}` would cost a key on every row and say nothing more.
+/// The day a variant gains a field, the enum becomes tagged and the TypeScript side follows.
+#[derive(
+    Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash, Serialize, Deserialize, ts_rs::TS,
+)]
+#[ts(rename = "ItemKindView")]
 #[serde(rename_all = "camelCase")]
 pub enum ItemKind {
     Passive,
@@ -36,14 +47,22 @@ impl ItemKind {
     pub const COLLECTIBLES: [ItemKind; 3] =
         [ItemKind::Passive, ItemKind::Active, ItemKind::Familiar];
 
-    fn from_tag(name: &str) -> Option<ItemKind> {
-        match name {
-            "passive" => Some(ItemKind::Passive),
-            "active" => Some(ItemKind::Active),
-            "familiar" => Some(ItemKind::Familiar),
-            "trinket" => Some(ItemKind::Trinket),
-            _ => None, // allowed: a tag name is an open string
+    /// The kind's one word: the element `items.xml` files it under, the segment of an icon URL
+    /// (`item/passive/92`), and the string `serde` writes for it on the IPC. Three uses of one
+    /// spelling, held together by a test on the serialized form in `ipc`.
+    pub const fn name(self) -> &'static str {
+        match self {
+            ItemKind::Passive => "passive",
+            ItemKind::Active => "active",
+            ItemKind::Familiar => "familiar",
+            ItemKind::Trinket => "trinket",
         }
+    }
+
+    /// The inverse of [`ItemKind::name`]. `None` for any other word: an element name and a
+    /// URL segment are both open strings.
+    pub fn from_name(name: &str) -> Option<ItemKind> {
+        ItemKind::ALL.into_iter().find(|k| k.name() == name)
     }
 
     /// The subfolder under `gfxroot`: the game picks it from the kind, the XML doesn't say it.
@@ -75,7 +94,7 @@ pub fn parse(bytes: &[u8], diagnostics: &mut Vec<Diagnostic>) -> Vec<Item> {
     };
     let gfxroot = xml::root_attr(&els, "items", "gfxroot", "gfx/items");
     els.iter()
-        .filter_map(|e| ItemKind::from_tag(&e.name).map(|k| (e, k)))
+        .filter_map(|e| ItemKind::from_name(&e.name).map(|k| (e, k)))
         .filter_map(|(e, kind)| item_from(e, kind, &gfxroot, diagnostics))
         .collect()
 }

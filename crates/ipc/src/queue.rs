@@ -69,7 +69,6 @@ pub enum QueueDiagnostic {
 /// `unlocked_by` is a list in the game's own file, so two ways in is a shape the data has,
 /// and picking one silently is a wrong answer wearing a right one's clothes.
 pub fn achievements_unlocking(c: &Catalog, key: &crate::goals::TargetKey) -> Vec<u32> {
-    use crate::catalog_view::item_kind;
     use crate::goals::TargetKey;
     use catalog::Unlock;
     c.achievements()
@@ -80,7 +79,7 @@ pub fn achievements_unlocking(c: &Catalog, key: &crate::goals::TargetKey) -> Vec
                 Unlock::Item { kind, id } => matches!(
                     key,
                     TargetKey::Item { item_kind: k, id: want }
-                        if item_kind(*k) == *kind && id.0 == *want
+                        if *k == *kind && id.0 == *want
                 ),
                 Unlock::Character { id } => {
                     matches!(key, TargetKey::Character { id: want } if id.0 == *want)

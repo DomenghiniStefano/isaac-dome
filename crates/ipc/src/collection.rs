@@ -8,7 +8,6 @@ use catalog::{AchievementId, Catalog, Item, ItemKind, Language};
 use serde::Serialize;
 use wiki::{Dataset, Target};
 
-use crate::catalog_view::kind_view;
 use crate::flags::{recorded, recorded_done};
 use crate::graph::origin_view;
 use crate::wiki_target;
@@ -150,7 +149,7 @@ fn item_row(
     achievements: Option<&[bool]>,
     icon: &mut impl FnMut(&IconRef) -> Option<String>,
 ) -> CollectionItem {
-    let kind = kind_view(i.kind);
+    let kind = i.kind;
     CollectionItem {
         id: i.id.0,
         kind,
