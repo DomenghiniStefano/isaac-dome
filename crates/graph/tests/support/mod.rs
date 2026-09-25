@@ -8,8 +8,8 @@ use std::collections::BTreeMap;
 
 use catalog::Catalog;
 use core_save::{Kind, Save};
+use graph::build::Graph;
 use graph::evaluate::NodeInfo;
-use graph::Graph;
 
 /// The real catalog, built from the game's archives.
 pub fn real_catalog() -> Option<(Catalog, unpack::ResourceSet)> {
@@ -22,7 +22,7 @@ pub fn real_catalog() -> Option<(Catalog, unpack::ResourceSet)> {
     Some((c, rs))
 }
 
-pub fn embedded_rules() -> &'static graph::Rules {
+pub fn embedded_rules() -> &'static graph::rules::Rules {
     match graph::rules::embedded() {
         Ok(r) => r,
         // Not a skip: the rules are compiled in, so this can only be our own broken file.
@@ -59,11 +59,11 @@ pub fn real_graph_and_flags() -> Option<(Graph, Vec<bool>)> {
     Some((Graph::build(&catalog, embedded_rules()), flags))
 }
 
-/// One entry per dated save, oldest first: file name, the evaluation, and the flags.
-/// Skips when fewer than two eras are present — a comparison needs two.
 /// A profile at one moment: the file it came from, its evaluation, and its flags.
 pub type Era = (String, BTreeMap<graph::AchievementId, NodeInfo>, Vec<bool>);
 
+/// One era per dated save that opens and carries section 1, oldest first. Skips when fewer
+/// than two eras are left — a comparison needs two.
 pub fn series_evals() -> Option<Vec<Era>> {
     let (catalog, _rs) = real_catalog()?;
     let g = Graph::build(&catalog, embedded_rules());
@@ -77,7 +77,7 @@ pub fn series_evals() -> Option<Vec<Era>> {
         let Some(flags) = s.flags(Kind::Achievements) else {
             continue;
         };
-        let e = g.evaluate(&graph::FlagsOnly(Some(&flags)));
+        let e = g.evaluate(&graph::evaluate::FlagsOnly(Some(&flags)));
         let infos: BTreeMap<graph::AchievementId, NodeInfo> = g
             .nodes()
             .iter()

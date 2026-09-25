@@ -160,47 +160,42 @@ pub fn no_saves(chosen_folder: bool) -> Diagnostic {
 
 /// Entry point. Enumerates everything it finds; never chooses; never returns `Err`.
 pub fn discover(opts: &Options) -> Discovery {
-    let mut diagnostics = Vec::new();
+    let (steam, steam_diags) = steam::find_steam(opts);
+    let (game, game_diags) = game::find_game(opts, steam.as_ref());
+    let documents = dirs::document_dir();
 
-    let (steam, mut steam_diags) = steam::find_steam(opts);
-    diagnostics.append(&mut steam_diags);
+    // The folder chosen by hand first, then every Steam account, then Documents.
+    let (saves, save_diags) = saves::merge(
+        [
+            opts.save_dir
+                .as_deref()
+                .map(|dir| saves::scan_dir(dir, &|| SaveSource::Override)),
+            steam.as_ref().map(|s| saves::scan_userdata(&s.root)),
+            documents.as_deref().map(saves::scan_documents),
+        ]
+        .into_iter()
+        .flatten(),
+    );
 
-    let (game, mut game_diags) = game::find_game(opts, steam.as_ref());
-    diagnostics.append(&mut game_diags);
-
-    let mut saves = Vec::new();
-
-    if let Some(dir) = &opts.save_dir {
-        let (mut c, mut d) = saves::scan_dir(dir, &|| SaveSource::Override);
-        saves.append(&mut c);
-        diagnostics.append(&mut d);
-    }
-    if let Some(steam) = &steam {
-        let (mut c, mut d) = saves::scan_userdata(&steam.root);
-        saves.append(&mut c);
-        diagnostics.append(&mut d);
-    }
     // The data folder is probed **whether or not** a save was found there: with Steam Cloud on
     // there never is one, and that is the ordinary machine.
     //
     // The game writes down where it saves (B57), so when the install is known that answer is
     // asked for first: the two Documents folders differ by one character and which one exists
     // depends on a history the app cannot see. It is a candidate and not the answer — without
-    // the game there is no file, and the search below is what every machine used before it.
+    // the game there is no file, and the search is what every machine used before it.
     let declared = game
         .as_ref()
         .and_then(|g| data_folder::declared_game_data(&g.dir));
-    let documents = dirs::document_dir();
-    if let Some(documents) = &documents {
-        let (mut c, mut d) = saves::scan_documents(documents);
-        saves.append(&mut c);
-        diagnostics.append(&mut d);
-    }
     let game_data = data_folder::scan_game_data(documents.as_deref(), declared.as_deref());
 
-    if saves.is_empty() {
-        diagnostics.push(no_saves(opts.save_dir.is_some()));
-    }
+    let nothing_found = saves.is_empty().then(|| no_saves(opts.save_dir.is_some()));
+    let diagnostics = steam_diags
+        .into_iter()
+        .chain(game_diags)
+        .chain(save_diags)
+        .chain(nothing_found)
+        .collect();
 
     Discovery {
         steam,

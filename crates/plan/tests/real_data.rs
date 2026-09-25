@@ -16,7 +16,7 @@ fn enqueueing_a_real_achievement_queues_exactly_its_missing_chain() {
         .iter()
         .map(|n| {
             (
-                g.missing_chain(n.achievement, &graph::FlagsOnly(Some(&flags)))
+                g.missing_chain(n.achievement, &graph::evaluate::FlagsOnly(Some(&flags)))
                     .len(),
                 n.achievement,
             )
@@ -29,7 +29,7 @@ fn enqueueing_a_real_achievement_queues_exactly_its_missing_chain() {
         "a finished profile would make this test vacuous: it needs something left to do"
     );
 
-    let chain = g.missing_chain(deepest, &graph::FlagsOnly(Some(&flags)));
+    let chain = g.missing_chain(deepest, &graph::evaluate::FlagsOnly(Some(&flags)));
     let mut q = plan::Queue::default();
     let ids: Vec<graph::AchievementId> = chain.iter().copied().chain([deepest]).collect();
     q.enqueue(deepest, &chain, &GraphDeps::new(&g, Some(&flags), &ids));
@@ -55,7 +55,7 @@ fn enqueueing_a_real_achievement_queues_exactly_its_missing_chain() {
     // The order the queue produced has to satisfy the graph, row by row.
     let order: Vec<graph::AchievementId> = q.rows().iter().map(|r| r.achievement).collect();
     for (i, id) in order.iter().enumerate() {
-        for prereq in g.missing_chain(*id, &graph::FlagsOnly(Some(&flags))) {
+        for prereq in g.missing_chain(*id, &graph::evaluate::FlagsOnly(Some(&flags))) {
             if let Some(j) = order.iter().position(|x| *x == prereq) {
                 assert!(j < i, "{prereq} must come before {id}, got {order:?}");
             }
@@ -76,7 +76,7 @@ fn two_real_wishes_that_share_a_step_keep_one_row_for_it() {
         .map(|n| {
             (
                 n.achievement,
-                g.missing_chain(n.achievement, &graph::FlagsOnly(Some(&flags))),
+                g.missing_chain(n.achievement, &graph::evaluate::FlagsOnly(Some(&flags))),
             )
         })
         .filter(|(_, c)| !c.is_empty())

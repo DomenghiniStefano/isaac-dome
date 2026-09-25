@@ -23,23 +23,19 @@ fn key(s: &str) -> String {
 
 impl NameIndex {
     pub fn new(c: &Catalog) -> NameIndex {
+        // Collected in catalog order: where two entries share a name, the later one keeps the
+        // key, exactly as successive inserts would.
         let en = Language::English;
-        let mut characters = HashMap::new();
-        for ch in c.characters() {
-            characters.insert(key(c.text(&ch.name, en)), ch.id);
-        }
-        let mut bosses = HashMap::new();
-        for b in c.bosses() {
-            bosses.insert(key(&b.name), b.id);
-        }
-        let mut items = HashMap::new();
-        for i in c.items() {
-            items.insert(key(c.text(&i.name, en)), (i.kind, i.id));
-        }
         NameIndex {
-            characters,
-            bosses,
-            items,
+            characters: c
+                .characters()
+                .map(|ch| (key(c.text(&ch.name, en)), ch.id))
+                .collect(),
+            bosses: c.bosses().map(|b| (key(&b.name), b.id)).collect(),
+            items: c
+                .items()
+                .map(|i| (key(c.text(&i.name, en)), (i.kind, i.id)))
+                .collect(),
         }
     }
 
@@ -115,19 +111,9 @@ pub fn requirement_with(
             .challenge(ChallengeId(*number))
             .map(|ch| Requirement::Challenge { id: ch.id })
             .unwrap_or_else(unknown),
-        Target::Item { id } | Target::Trinket { id } => {
-            let kinds = item_kinds_of(&row.target);
-            index
-                .item(&label)
-                .filter(|(kind, _)| kinds.contains(kind))
-                .or_else(|| {
-                    kinds
-                        .iter()
-                        .find_map(|k| c.item(*k, ItemId(*id)).map(|i| (i.kind, i.id)))
-                })
-                .map(|(kind, id)| Requirement::Item { kind, id })
-                .unwrap_or_else(unknown)
-        }
+        Target::Item { id } | Target::Trinket { id } => item(c, index, &row.target, *id, &label)
+            .map(|(kind, id)| Requirement::Item { kind, id })
+            .unwrap_or_else(unknown),
         // An achievement referenced directly is already a node. It travels as a gate key
         // so that `build` has one place that turns requirements into edges.
         Target::Achievement { id } => Requirement::Gate {
@@ -140,6 +126,26 @@ pub fn requirement_with(
             from_verdict(rules, &verdict_key, character, unknown)
         }
     }
+}
+
+/// An item or trinket reference: by name within the id space the reference names, then by
+/// its id in that same space.
+fn item(
+    c: &Catalog,
+    index: &NameIndex,
+    target: &Target,
+    id: u32,
+    label: &str,
+) -> Option<(ItemKind, ItemId)> {
+    let kinds = item_kinds_of(target);
+    index
+        .item(label)
+        .filter(|(kind, _)| kinds.contains(kind))
+        .or_else(|| {
+            kinds
+                .iter()
+                .find_map(|k| c.item(*k, ItemId(id)).map(|i| (i.kind, i.id)))
+        })
 }
 
 /// One contributor of a transformation, by **id alone**. Unlike a reference in a sentence
@@ -194,20 +200,14 @@ fn threshold(
     if (row.items.len() as u32) < at_least {
         return unknown();
     }
-    let mut of = Vec::new();
-    let mut unresolved = 0;
-    for t in &row.items {
-        match contributor(c, t) {
-            Some(item) => of.push(item),
-            None => unresolved += 1,
-        }
-    }
+    let contributors: Vec<Option<ThresholdItem>> =
+        row.items.iter().map(|t| contributor(c, t)).collect();
     Requirement::Threshold {
         transformation: id,
         label: label.to_string(),
         at_least,
-        of,
-        unresolved,
+        unresolved: contributors.iter().filter(|i| i.is_none()).count() as u32,
+        of: contributors.into_iter().flatten().collect(),
     }
 }
 
@@ -253,7 +253,7 @@ fn from_verdict(
 fn item_kinds_of(t: &Target) -> &'static [ItemKind] {
     match t {
         Target::Trinket { .. } => &[ItemKind::Trinket],
-        Target::Item { .. } => &[ItemKind::Passive, ItemKind::Active, ItemKind::Familiar],
+        Target::Item { .. } => &ItemKind::COLLECTIBLES,
         Target::Character { .. }
         | Target::Achievement { .. }
         | Target::Challenge { .. }

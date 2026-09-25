@@ -35,7 +35,7 @@ use unpack::ResourceSet;
 const YOUNG: &str = "20260912.coop-partner.persistentgamedata1.dat";
 
 /// Everything the view needs, built the way `crates/app/src/commands/graph.rs` builds it.
-fn setup(name: &str) -> Option<(Catalog, graph::Graph, Vec<bool>, UnlockView)> {
+fn setup(name: &str) -> Option<(Catalog, graph::build::Graph, Vec<bool>, UnlockView)> {
     let packed = test_support::packed_dir()?;
     let path = test_support::sample(name)?;
     let rs = ResourceSet::open(&packed);
@@ -49,7 +49,7 @@ fn setup(name: &str) -> Option<(Catalog, graph::Graph, Vec<bool>, UnlockView)> {
     };
     let flags = s.flags(Kind::Achievements)?;
     let counters = s.u32s(Kind::Counters)?;
-    let g = graph::Graph::build(&c, graph::rules::embedded().expect("embedded rules"));
+    let g = graph::build::Graph::build(&c, graph::rules::embedded().expect("embedded rules"));
     let progress = ipc::SaveProgress::new(Some(&flags), Some(&counters), Some(&c));
     let e = g.evaluate(&progress);
     let view = ipc::unlock_view(
@@ -74,7 +74,7 @@ fn known(node: &ipc::UnlockNode) -> Option<u32> {
 /// The not-done node whose chain is longest, with that chain.
 fn deepest(
     view: &UnlockView,
-    g: &graph::Graph,
+    g: &graph::build::Graph,
     flags: &[bool],
 ) -> Option<(u32, Vec<graph::AchievementId>)> {
     view.nodes
@@ -84,7 +84,10 @@ fn deepest(
         .map(|id| {
             (
                 id,
-                g.missing_chain(graph::AchievementId(id), &graph::FlagsOnly(Some(flags))),
+                g.missing_chain(
+                    graph::AchievementId(id),
+                    &graph::evaluate::FlagsOnly(Some(flags)),
+                ),
             )
         })
         .max_by_key(|(_, chain)| chain.len())

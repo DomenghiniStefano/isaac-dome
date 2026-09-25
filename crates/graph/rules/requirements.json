@@ -12228,632 +12228,527 @@
     {
       "key": "concept:'stars' item tag",
       "label": "'stars' item tag",
-      "uses": 1,
-      "verdictRequired": true
+      "uses": 1
     },
     {
       "key": "concept:7 Deadly Sins",
       "label": "7 Deadly Sins",
-      "uses": 1,
-      "verdictRequired": true
+      "uses": 1
     },
     {
       "key": "concept:Angel Room items",
       "label": "Angel Room items",
-      "uses": 1,
-      "verdictRequired": true
+      "uses": 1
     },
     {
       "key": "concept:Angel Rooms items",
       "label": "Angel Rooms items",
-      "uses": 1,
-      "verdictRequired": true
+      "uses": 1
     },
     {
       "key": "concept:Bestiary",
       "label": "Bestiary",
-      "uses": 2,
-      "verdictRequired": true
+      "uses": 2
     },
     {
       "key": "concept:Blood Donation Machine",
       "label": "Blood Donation Machine",
-      "uses": 1,
-      "verdictRequired": true
+      "uses": 1
     },
     {
       "key": "concept:Blue Flies",
       "label": "Blue Flies",
-      "uses": 1,
-      "verdictRequired": true
+      "uses": 1
     },
     {
       "key": "concept:Cards and Runes",
       "label": "Cards and Runes",
-      "uses": 1,
-      "verdictRequired": true
+      "uses": 1
     },
     {
       "key": "concept:Chapter 1",
       "label": "Chapter 1",
-      "uses": 3,
-      "verdictRequired": true
+      "uses": 3
     },
     {
       "key": "concept:Chapter 2",
       "label": "Chapter 2",
-      "uses": 4,
-      "verdictRequired": true
+      "uses": 4
     },
     {
       "key": "concept:Chapter 3",
       "label": "Chapter 3",
-      "uses": 3,
-      "verdictRequired": true
+      "uses": 3
     },
     {
       "key": "concept:Chapter 4",
       "label": "Chapter 4",
-      "uses": 3,
-      "verdictRequired": true
+      "uses": 3
     },
     {
       "key": "concept:Chapter 6",
       "label": "Chapter 6",
-      "uses": 2,
-      "verdictRequired": true
+      "uses": 2
     },
     {
       "key": "concept:Character",
       "label": "Character",
-      "uses": 2,
-      "verdictRequired": true
+      "uses": 2
     },
     {
       "key": "concept:Coin",
       "label": "Coin",
-      "uses": 1,
-      "verdictRequired": true
+      "uses": 1
     },
     {
       "key": "concept:Collect",
       "label": "Collect",
-      "uses": 3,
-      "verdictRequired": true
+      "uses": 3
     },
     {
       "key": "concept:Completion Mark",
       "label": "Completion Mark",
-      "uses": 19,
-      "verdictRequired": true
+      "uses": 19
     },
     {
       "key": "concept:Daily Challenge",
       "label": "Daily Challenge",
-      "uses": 3,
-      "verdictRequired": true
+      "uses": 3
     },
     {
       "key": "concept:Deals with the Devil",
       "label": "Deals with the Devil",
-      "uses": 3,
-      "verdictRequired": true
+      "uses": 3
     },
     {
       "key": "concept:Donation Machine",
       "label": "Donation Machine",
-      "uses": 10,
-      "verdictRequired": true
+      "uses": 10
     },
     {
       "key": "concept:Greed Donation Machine",
       "label": "Greed Donation Machine",
-      "uses": 12,
-      "verdictRequired": true
+      "uses": 12
     },
     {
       "key": "concept:Gulp!",
       "label": "Gulp!",
-      "uses": 1,
-      "verdictRequired": true
+      "uses": 1
     },
     {
       "key": "concept:Harbinger",
       "label": "Harbinger",
-      "uses": 2,
-      "verdictRequired": true
+      "uses": 2
     },
     {
       "key": "concept:Hard mode",
       "label": "Hard mode",
-      "uses": 38,
-      "verdictRequired": true
+      "uses": 38
     },
     {
       "key": "concept:Horf!",
       "label": "Horf!",
-      "uses": 1,
-      "verdictRequired": true
+      "uses": 1
     },
     {
       "key": "concept:I - The Magician",
       "label": "I - The Magician",
-      "uses": 1,
-      "verdictRequired": true
+      "uses": 1
     },
     {
       "key": "concept:Slot Machine",
       "label": "Slot Machine",
-      "uses": 1,
-      "verdictRequired": true
+      "uses": 1
     },
     {
       "key": "concept:Tinted Rock",
       "label": "Tinted Rock",
-      "uses": 4,
-      "verdictRequired": true
+      "uses": 4
     },
     {
       "key": "concept:Victory Lap",
       "label": "Victory Lap",
-      "uses": 3,
-      "verdictRequired": true
+      "uses": 3
     },
     {
       "key": "concept:XIII - Death",
       "label": "XIII - Death",
-      "uses": 1,
-      "verdictRequired": true
+      "uses": 1
     },
     {
       "key": "concept:XIX - The Sun",
       "label": "XIX - The Sun",
-      "uses": 1,
-      "verdictRequired": true
+      "uses": 1
     },
     {
       "key": "concept:XV - The Devil?",
       "label": "XV - The Devil?",
-      "uses": 1,
-      "verdictRequired": true
+      "uses": 1
     },
     {
       "key": "concept:Yes Mother? items",
       "label": "Yes Mother? items",
-      "uses": 1,
-      "verdictRequired": true
+      "uses": 1
     },
     {
       "key": "concept:bed",
       "label": "bed",
-      "uses": 2,
-      "verdictRequired": true
+      "uses": 2
     },
     {
       "key": "concept:character",
       "label": "character",
-      "uses": 2,
-      "verdictRequired": true
+      "uses": 2
     },
     {
       "key": "concept:collect",
       "label": "collect",
-      "uses": 2,
-      "verdictRequired": true
+      "uses": 2
     },
     {
       "key": "concept:collection",
       "label": "collection",
-      "uses": 1,
-      "verdictRequired": true
+      "uses": 1
     },
     {
       "key": "concept:ending",
       "label": "ending",
-      "uses": 4,
-      "verdictRequired": true
+      "uses": 4
     },
     {
       "key": "concept:familiar",
       "label": "familiar",
-      "uses": 1,
-      "verdictRequired": true
+      "uses": 1
     },
     {
       "key": "concept:hard mode",
       "label": "hard mode",
-      "uses": 1,
-      "verdictRequired": true
+      "uses": 1
     },
     {
       "key": "concept:heart",
       "label": "heart",
-      "uses": 1,
-      "verdictRequired": true
+      "uses": 1
     },
     {
       "key": "concept:homing",
       "label": "homing",
-      "uses": 1,
-      "verdictRequired": true
+      "uses": 1
     },
     {
       "key": "concept:item",
       "label": "item",
-      "uses": 1,
-      "verdictRequired": true
+      "uses": 1
     },
     {
       "key": "concept:items",
       "label": "items",
-      "uses": 2,
-      "verdictRequired": true
+      "uses": 2
     },
     {
       "key": "concept:items from Devil Rooms",
       "label": "items from Devil Rooms",
-      "uses": 1,
-      "verdictRequired": true
+      "uses": 1
     },
     {
       "key": "concept:pills",
       "label": "pills",
-      "uses": 1,
-      "verdictRequired": true
+      "uses": 1
     },
     {
       "key": "concept:rock",
       "label": "rock",
-      "uses": 2,
-      "verdictRequired": true
+      "uses": 2
     },
     {
       "key": "concept:tainted character",
       "label": "tainted character",
-      "uses": 1,
-      "verdictRequired": true
+      "uses": 1
     },
     {
       "key": "concept:technology",
       "label": "technology",
-      "uses": 1,
-      "verdictRequired": true
+      "uses": 1
     },
     {
       "key": "entity:???",
       "label": "???",
-      "uses": 42,
-      "verdictRequired": true
+      "uses": 42
     },
     {
       "key": "entity:Angel",
       "label": "Angel",
-      "uses": 3,
-      "verdictRequired": true
+      "uses": 3
     },
     {
       "key": "entity:Baby Plum",
       "label": "Baby Plum",
-      "uses": 2,
-      "verdictRequired": true
+      "uses": 2
     },
     {
       "key": "entity:Battery Bum",
       "label": "Battery Bum",
-      "uses": 2,
-      "verdictRequired": true
+      "uses": 2
     },
     {
       "key": "entity:C.H.A.D.",
       "label": "C.H.A.D.",
-      "uses": 1,
-      "verdictRequired": true
+      "uses": 1
     },
     {
       "key": "entity:Delirium",
       "label": "Delirium",
-      "uses": 36,
-      "verdictRequired": true
+      "uses": 36
     },
     {
       "key": "entity:Die",
       "label": "Die",
-      "uses": 1,
-      "verdictRequired": true
+      "uses": 1
     },
     {
       "key": "entity:Gish",
       "label": "Gish",
-      "uses": 1,
-      "verdictRequired": true
+      "uses": 1
     },
     {
       "key": "entity:Hell Game",
       "label": "Hell Game",
-      "uses": 1,
-      "verdictRequired": true
+      "uses": 1
     },
     {
       "key": "entity:Hornfel",
       "label": "Hornfel",
-      "uses": 1,
-      "verdictRequired": true
+      "uses": 1
     },
     {
       "key": "entity:Hush",
       "label": "Hush",
-      "uses": 36,
-      "verdictRequired": true
+      "uses": 36
     },
     {
       "key": "entity:Isaac",
       "label": "Isaac",
-      "uses": 39,
-      "verdictRequired": true
+      "uses": 39
     },
     {
       "key": "entity:It Lives!",
       "label": "It Lives!",
-      "uses": 27,
-      "verdictRequired": true
+      "uses": 27
     },
     {
       "key": "entity:Krampus",
       "label": "Krampus",
-      "uses": 1,
-      "verdictRequired": true
+      "uses": 1
     },
     {
       "key": "entity:Lil' Batteries",
       "label": "Lil' Batteries",
-      "uses": 1,
-      "verdictRequired": true
+      "uses": 1
     },
     {
       "key": "entity:Little Horn",
       "label": "Little Horn",
-      "uses": 1,
-      "verdictRequired": true
+      "uses": 1
     },
     {
       "key": "entity:Locked Chest",
       "label": "Locked Chest",
-      "uses": 1,
-      "verdictRequired": true
+      "uses": 1
     },
     {
       "key": "entity:Lokii",
       "label": "Lokii",
-      "uses": 2,
-      "verdictRequired": true
+      "uses": 2
     },
     {
       "key": "entity:Mega Satan",
       "label": "Mega Satan",
-      "uses": 39,
-      "verdictRequired": true
+      "uses": 39
     },
     {
       "key": "entity:Mom",
       "label": "Mom",
-      "uses": 13,
-      "verdictRequired": true
+      "uses": 13
     },
     {
       "key": "entity:Mom's Heart",
       "label": "Mom's Heart",
-      "uses": 45,
-      "verdictRequired": true
+      "uses": 45
     },
     {
       "key": "entity:Mother",
       "label": "Mother",
-      "uses": 38,
-      "verdictRequired": true
+      "uses": 38
     },
     {
       "key": "entity:Portal",
       "label": "Portal",
-      "uses": 1,
-      "verdictRequired": true
+      "uses": 1
     },
     {
       "key": "entity:Red Heart",
       "label": "Red Heart",
-      "uses": 3,
-      "verdictRequired": true
+      "uses": 3
     },
     {
       "key": "entity:Satan",
       "label": "Satan",
-      "uses": 39,
-      "verdictRequired": true
+      "uses": 39
     },
     {
       "key": "entity:Shell Game",
       "label": "Shell Game",
-      "uses": 1,
-      "verdictRequired": true
+      "uses": 1
     },
     {
       "key": "entity:Shopkeeper",
       "label": "Shopkeeper",
-      "uses": 1,
-      "verdictRequired": true
+      "uses": 1
     },
     {
       "key": "entity:Soul Heart",
       "label": "Soul Heart",
-      "uses": 1,
-      "verdictRequired": true
+      "uses": 1
     },
     {
       "key": "entity:Steven",
       "label": "Steven",
-      "uses": 1,
-      "verdictRequired": true
+      "uses": 1
     },
     {
       "key": "entity:The Beast",
       "label": "The Beast",
-      "uses": 34,
-      "verdictRequired": true
+      "uses": 34
     },
     {
       "key": "entity:The Lamb",
       "label": "The Lamb",
-      "uses": 45,
-      "verdictRequired": true
+      "uses": 45
     },
     {
       "key": "entity:The Siren",
       "label": "The Siren",
-      "uses": 1,
-      "verdictRequired": true
+      "uses": 1
     },
     {
       "key": "entity:Ultra Greed",
       "label": "Ultra Greed",
-      "uses": 17,
-      "verdictRequired": true
+      "uses": 17
     },
     {
       "key": "entity:Ultra Greedier",
       "label": "Ultra Greedier",
-      "uses": 34,
-      "verdictRequired": true
+      "uses": 34
     },
     {
       "key": "entity:Ultra Pride",
       "label": "Ultra Pride",
-      "uses": 1,
-      "verdictRequired": true
+      "uses": 1
     },
     {
       "key": "entity:dying",
       "label": "dying",
-      "uses": 1,
-      "verdictRequired": true
+      "uses": 1
     },
     {
       "key": "entity:poops",
       "label": "poops",
-      "uses": 1,
-      "verdictRequired": true
+      "uses": 1
     },
     {
       "key": "entity:rainbow poop",
       "label": "rainbow poop",
-      "uses": 1,
-      "verdictRequired": true
+      "uses": 1
     },
     {
       "key": "room:Arcade",
       "label": "Arcade",
-      "uses": 1,
-      "verdictRequired": true
+      "uses": 1
     },
     {
       "key": "room:Black Market",
       "label": "Black Market",
-      "uses": 1,
-      "verdictRequired": true
+      "uses": 1
     },
     {
       "key": "room:Boss Rush",
       "label": "Boss Rush",
-      "uses": 34,
-      "verdictRequired": true
+      "uses": 34
     },
     {
       "key": "room:Devil Room",
       "label": "Devil Room",
-      "uses": 1,
-      "verdictRequired": true
+      "uses": 1
     },
     {
       "key": "room:Sacrifice Room",
       "label": "Sacrifice Room",
-      "uses": 1,
-      "verdictRequired": true
+      "uses": 1
     },
     {
       "key": "room:Secret Room",
       "label": "Secret Room",
-      "uses": 1,
-      "verdictRequired": true
+      "uses": 1
     },
     {
       "key": "room:Shop",
       "label": "Shop",
-      "uses": 3,
-      "verdictRequired": true
+      "uses": 3
     },
     {
       "key": "stage:Basement",
       "label": "Basement",
-      "uses": 3,
-      "verdictRequired": true
+      "uses": 3
     },
     {
       "key": "stage:Caves",
       "label": "Caves",
-      "uses": 1,
-      "verdictRequired": true
+      "uses": 1
     },
     {
       "key": "stage:Corpse",
       "label": "Corpse",
-      "uses": 1,
-      "verdictRequired": true
+      "uses": 1
     },
     {
       "key": "stage:Dark Room",
       "label": "Dark Room",
-      "uses": 1,
-      "verdictRequired": true
+      "uses": 1
     },
     {
       "key": "stage:Depths",
       "label": "Depths",
-      "uses": 1,
-      "verdictRequired": true
+      "uses": 1
     },
     {
       "key": "stage:Downpour",
       "label": "Downpour",
-      "uses": 1,
-      "verdictRequired": true
+      "uses": 1
     },
     {
       "key": "stage:Home",
       "label": "Home",
-      "uses": 18,
-      "verdictRequired": true
+      "uses": 18
     },
     {
       "key": "stage:Mausoleum",
       "label": "Mausoleum",
-      "uses": 1,
-      "verdictRequired": true
+      "uses": 1
     },
     {
       "key": "stage:Mines",
       "label": "Mines",
-      "uses": 1,
-      "verdictRequired": true
+      "uses": 1
     },
     {
       "key": "transformation:Beelzebub",
       "label": "Beelzebub",
-      "uses": 2,
-      "verdictRequired": true
+      "uses": 2
     },
     {
       "key": "transformation:Guppy",
       "label": "Guppy",
-      "uses": 2,
-      "verdictRequired": true
+      "uses": 2
     }
   ],
   "transformations": {

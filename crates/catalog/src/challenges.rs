@@ -1,4 +1,5 @@
-//! `challenges.xml`: 45 challenges with literal names. The unlock link here is
+//! `challenges.xml`: challenges with literal names, 45 in the Repentance+ file of
+//! 2026-09-04 (`tests/real_data.rs`). The unlock link here is
 //! **plural** (`achievements="42,34,53"`): a list, not a single id. In the real file
 //! the lists aren't always comma-separated: challenge 44 ("Red Redemption") has
 //! `achievements="490 415"`, space-separated. And `startingitems` can contain
@@ -8,7 +9,9 @@
 
 use crate::diagnostics::{Diagnostic, SkipReason, Source};
 use crate::ids::{AchievementId, ChallengeId, ItemId};
-use crate::xml::{elements, Element};
+use crate::xml::{self, Element};
+
+const SOURCE: Source = Source::Challenges;
 
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct Challenge {
@@ -22,14 +25,8 @@ pub struct Challenge {
 }
 
 pub fn parse(bytes: &[u8], diagnostics: &mut Vec<Diagnostic>) -> Vec<Challenge> {
-    let els = match elements(bytes) {
-        Ok(els) => els,
-        Err(_) => {
-            diagnostics.push(Diagnostic::SourceUnreadable {
-                source: Source::Challenges,
-            });
-            return Vec::new();
-        }
+    let Some(els) = xml::read(bytes, SOURCE, diagnostics) else {
+        return Vec::new();
     };
     els.iter()
         .filter(|e| e.name == "challenge")
@@ -38,31 +35,16 @@ pub fn parse(bytes: &[u8], diagnostics: &mut Vec<Diagnostic>) -> Vec<Challenge> 
 }
 
 fn challenge_from(e: &Element, d: &mut Vec<Diagnostic>) -> Option<Challenge> {
-    let skip = |id: Option<u32>, reason: SkipReason, d: &mut Vec<Diagnostic>| {
-        d.push(Diagnostic::ElementSkipped {
-            source: Source::Challenges,
-            id,
-            reason,
-        });
-        None
-    };
-    let Some(raw_id) = e.attr("id") else {
-        return skip(None, SkipReason::MissingId, d);
-    };
-    let Ok(id) = raw_id.parse::<u32>() else {
-        return skip(None, SkipReason::MalformedId, d);
-    };
-    let Some(name) = e.attr("name") else {
-        return skip(Some(id), SkipReason::MissingName, d);
-    };
+    let id = xml::required_id(e, "id", SOURCE, d)?;
+    let name = xml::required_attr(e, "name", id, SkipReason::MissingName, SOURCE, d)?;
     // The two lists degrade differently: an id <= 0 in `startingitems` is a game signal
     // (the id is dropped, the challenge stays valid), while a non-numeric token in
     // `achievements` is a corrupted file (the whole challenge is dropped).
     let Some(items) = item_id_list(e.attr("startingitems").unwrap_or("")) else {
-        return skip(Some(id), SkipReason::MalformedList, d);
+        return xml::skip(SOURCE, Some(id), SkipReason::MalformedList, d);
     };
     let Some(achievements) = id_list(e.attr("achievements").unwrap_or("")) else {
-        return skip(Some(id), SkipReason::MalformedList, d);
+        return xml::skip(SOURCE, Some(id), SkipReason::MalformedList, d);
     };
     Some(Challenge {
         id: ChallengeId(id),
@@ -147,6 +129,48 @@ mod tests {
             id: Some(5),
             reason: SkipReason::MissingName
         }));
+    }
+
+    #[test]
+    fn the_skips_come_in_file_order_and_a_bad_id_carries_none() {
+        let mut d = Vec::new();
+        let c = parse(
+            b"<challenges>
+<challenge name=\"A\" id=\"x\" />
+<challenge name=\"B\" />
+<challenge name=\"C\" id=\"3\" startingitems=\"1,y\" achievements=\"z\" />
+<challenge name=\"D\" id=\"4\" achievements=\"1;2\" />
+</challenges>",
+            &mut d,
+        );
+        assert!(c.is_empty());
+        let skipped = |id, reason| Diagnostic::ElementSkipped {
+            source: Source::Challenges,
+            id,
+            reason,
+        };
+        assert_eq!(
+            d,
+            vec![
+                skipped(None, SkipReason::MalformedId),
+                skipped(None, SkipReason::MissingId),
+                skipped(Some(3), SkipReason::MalformedList),
+                skipped(Some(4), SkipReason::MalformedList),
+            ],
+            "one diagnostic per challenge, even when both lists are bad"
+        );
+    }
+
+    #[test]
+    fn junk_is_empty_with_one_diagnostic() {
+        let mut d = Vec::new();
+        assert!(parse(b"<challenges><challenge", &mut d).is_empty());
+        assert_eq!(
+            d,
+            vec![Diagnostic::SourceUnreadable {
+                source: Source::Challenges
+            }]
+        );
     }
 
     #[test]

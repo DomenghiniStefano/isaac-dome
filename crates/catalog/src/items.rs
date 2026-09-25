@@ -8,7 +8,9 @@ use crate::itempools::PoolMembership;
 use crate::origin::{self, Origin};
 use crate::sprite::SpriteRef;
 use crate::text::Text;
-use crate::xml::{elements, Element};
+use crate::xml::{self, Element};
+
+const SOURCE: Source = Source::Items;
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash, Serialize)]
 #[serde(rename_all = "camelCase")]
@@ -20,6 +22,20 @@ pub enum ItemKind {
 }
 
 impl ItemKind {
+    /// Every kind, in the order `Ord` sorts them.
+    pub const ALL: [ItemKind; 4] = [
+        ItemKind::Passive,
+        ItemKind::Active,
+        ItemKind::Familiar,
+        ItemKind::Trinket,
+    ];
+
+    /// The three kinds that share one id space — `items.xml`'s collectibles, the only kinds a
+    /// pool names — in the order a lookup by bare id searches them. Trinkets are numbered
+    /// apart: passive 46 and trinket 46 are two things.
+    pub const COLLECTIBLES: [ItemKind; 3] =
+        [ItemKind::Passive, ItemKind::Active, ItemKind::Familiar];
+
     fn from_tag(name: &str) -> Option<ItemKind> {
         match name {
             "passive" => Some(ItemKind::Passive),
@@ -54,23 +70,10 @@ pub struct Item {
 }
 
 pub fn parse(bytes: &[u8], diagnostics: &mut Vec<Diagnostic>) -> Vec<Item> {
-    let els = match elements(bytes) {
-        Ok(els) => els,
-        Err(_) => {
-            diagnostics.push(Diagnostic::SourceUnreadable {
-                source: Source::Items,
-            });
-            return Vec::new();
-        }
+    let Some(els) = xml::read(bytes, SOURCE, diagnostics) else {
+        return Vec::new();
     };
-    let gfxroot = els
-        .iter()
-        .find(|e| e.name == "items")
-        .and_then(|e| e.attr("gfxroot"))
-        .map(normalize_root)
-        .filter(|r| !r.is_empty())
-        .unwrap_or_else(|| "gfx/items".to_string());
-
+    let gfxroot = xml::root_attr(&els, "items", "gfxroot", "gfx/items");
     els.iter()
         .filter_map(|e| ItemKind::from_tag(&e.name).map(|k| (e, k)))
         .filter_map(|(e, kind)| item_from(e, kind, &gfxroot, diagnostics))
@@ -78,27 +81,9 @@ pub fn parse(bytes: &[u8], diagnostics: &mut Vec<Diagnostic>) -> Vec<Item> {
 }
 
 fn item_from(e: &Element, kind: ItemKind, gfxroot: &str, d: &mut Vec<Diagnostic>) -> Option<Item> {
-    let skip = |id: Option<u32>, reason: SkipReason, d: &mut Vec<Diagnostic>| {
-        d.push(Diagnostic::ElementSkipped {
-            source: Source::Items,
-            id,
-            reason,
-        });
-        None
-    };
-    let Some(raw_id) = e.attr("id") else {
-        return skip(None, SkipReason::MissingId, d);
-    };
-    let Ok(id) = raw_id.parse::<u32>() else {
-        return skip(None, SkipReason::MalformedId, d);
-    };
-    let Some(gfx) = e.attr("gfx") else {
-        return skip(Some(id), SkipReason::MissingSprite, d);
-    };
-    let Some(name) = e.attr("name") else {
-        return skip(Some(id), SkipReason::MissingName, d);
-    };
-
+    let id = xml::required_id(e, "id", SOURCE, d)?;
+    let gfx = xml::required_attr(e, "gfx", id, SkipReason::MissingSprite, SOURCE, d)?;
+    let name = xml::required_attr(e, "name", id, SkipReason::MissingName, SOURCE, d)?;
     Some(Item {
         id: ItemId(id),
         kind,
@@ -115,13 +100,6 @@ fn item_from(e: &Element, kind: ItemKind, gfxroot: &str, d: &mut Vec<Diagnostic>
         pools: Vec::new(),
         origin: origin::origin_of(kind, ItemId(id)),
     })
-}
-
-/// `resources/gfx/items/` or `gfx/items/` -> `gfx/items`: no archive root or trailing slash.
-pub(crate) fn normalize_root(root: &str) -> String {
-    let r = root.replace('\\', "/");
-    let r = r.strip_prefix("resources/").unwrap_or(&r);
-    r.trim_matches('/').to_string()
 }
 
 #[cfg(test)]
@@ -143,6 +121,33 @@ mod tests {
         let mut d = Vec::new();
         let items = parse(ITEMS, &mut d);
         (items, d)
+    }
+
+    /// The position each kind must hold in `ALL`. An exhaustive match, so a new kind does not
+    /// compile until it is given one here, next to the list it has to join.
+    fn position_in_all(kind: ItemKind) -> usize {
+        match kind {
+            ItemKind::Passive => 0,
+            ItemKind::Active => 1,
+            ItemKind::Familiar => 2,
+            ItemKind::Trinket => 3,
+        }
+    }
+
+    #[test]
+    fn all_holds_every_kind_once_in_sort_order() {
+        let positions: Vec<usize> = ItemKind::ALL.iter().map(|&k| position_in_all(k)).collect();
+        assert_eq!(positions, (0..ItemKind::ALL.len()).collect::<Vec<_>>());
+        assert!(ItemKind::ALL.windows(2).all(|w| w[0] < w[1]));
+    }
+
+    #[test]
+    fn the_collectibles_are_every_kind_that_lands_in_the_collectibles_folder() {
+        let by_folder: Vec<ItemKind> = ItemKind::ALL
+            .into_iter()
+            .filter(|k| k.folder() == "collectibles")
+            .collect();
+        assert_eq!(by_folder, ItemKind::COLLECTIBLES.to_vec());
     }
 
     #[test]
@@ -224,6 +229,50 @@ mod tests {
     }
 
     #[test]
+    fn the_skips_come_in_file_order_with_the_sprite_checked_before_the_name() {
+        let (_, d) = parsed();
+        let skipped = |id, reason| Diagnostic::ElementSkipped {
+            source: Source::Items,
+            id,
+            reason,
+        };
+        assert_eq!(
+            d,
+            vec![
+                skipped(None, SkipReason::MissingId),
+                skipped(None, SkipReason::MalformedId),
+                skipped(Some(7), SkipReason::MissingSprite),
+            ]
+        );
+        let mut d = Vec::new();
+        let none = parse(
+            b"<items><trinket id=\"3\" /><trinket id=\"4\" gfx=\"t.png\" /></items>",
+            &mut d,
+        );
+        assert!(none.is_empty());
+        assert_eq!(
+            d,
+            vec![
+                skipped(Some(3), SkipReason::MissingSprite),
+                skipped(Some(4), SkipReason::MissingName),
+            ]
+        );
+    }
+
+    #[test]
+    fn without_a_gfxroot_or_a_description_the_game_defaults_apply() {
+        let mut d = Vec::new();
+        let items = parse(
+            b"<items><trinket id=\"2\" gfx=\"t.png\" name=\"T\" achievement=\"x\" /></items>",
+            &mut d,
+        );
+        assert_eq!(items[0].sprite.path, "gfx/items/trinkets/t.png");
+        assert_eq!(items[0].description, Text::from_attr(""));
+        assert_eq!(items[0].unlocked_by, None, "a malformed link is no link");
+        assert!(d.is_empty());
+    }
+
+    #[test]
     fn junk_is_empty_with_one_diagnostic() {
         let mut d = Vec::new();
         assert!(parse(b"<items><passive", &mut d).is_empty());
@@ -233,14 +282,6 @@ mod tests {
                 source: Source::Items
             }]
         );
-    }
-
-    #[test]
-    fn normalize_root_strips_the_archive_prefix_backslashes_and_trailing_slashes() {
-        assert_eq!(normalize_root("resources/gfx/items/"), "gfx/items");
-        assert_eq!(normalize_root("gfx/items"), "gfx/items");
-        assert_eq!(normalize_root("gfx\\items\\"), "gfx/items");
-        assert_eq!(normalize_root(""), "");
     }
 
     #[test]

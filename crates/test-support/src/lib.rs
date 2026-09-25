@@ -20,6 +20,7 @@
 //! merged into one file can split a line down the middle, and the summary that tells you
 //! how much a run *didn't* verify is worth nothing if its own numbers are approximate.
 
+use std::collections::BTreeSet;
 use std::io::Write;
 use std::path::{Path, PathBuf};
 
@@ -75,13 +76,75 @@ pub fn samples_dir() -> PathBuf {
 /// The path to a sample, if it exists. Always declares the outcome: which file is being
 /// used, or that it's being skipped because it's missing.
 pub fn sample(name: &str) -> Option<PathBuf> {
-    let path = samples_dir().join(name);
+    declared_file(
+        samples_dir().join(name),
+        name,
+        &format!("{name} missing from samples/"),
+    )
+}
+
+/// One file, with its outcome declared: `sample: {shown}` when it is there, `skip: {missing}`
+/// when it is not. Every lookup by name goes through here, so the one thing they must all do —
+/// say which file they used — cannot be done five ways.
+fn declared_file(path: PathBuf, shown: &str, missing: &str) -> Option<PathBuf> {
     if path.is_file() {
-        declare(&format!("sample: {name}"));
+        declare(&format!("sample: {shown}"));
         return Some(path);
     }
-    declare(&format!("skip: {name} missing from samples/"));
+    declare(&format!("skip: {missing}"));
     None
+}
+
+/// A file by name in one of `samples/`'s own folders (`windows`, `logs`, `launches`), worded the
+/// way those three share: `sample: logs/{name}`, `skip: logs/{name} missing from samples/logs/`.
+fn declared_file_in(folder: &str, name: &str) -> Option<PathBuf> {
+    declared_file(
+        samples_dir().join(folder).join(name),
+        &format!("{folder}/{name}"),
+        &format!("{folder}/{name} missing from samples/{folder}/"),
+    )
+}
+
+/// The names in `dir` that `keep` accepts, in name order; `None` when `dir` cannot be read. A
+/// name that is not UTF-8 is left out: it could not be declared, and an undeclared sample is the
+/// thing this crate exists to prevent.
+fn names_in(dir: &Path, keep: impl Fn(&str) -> bool) -> Option<BTreeSet<String>> {
+    let entries = std::fs::read_dir(dir).ok()?;
+    Some(
+        entries
+            .flatten()
+            .filter_map(|entry| entry.file_name().into_string().ok())
+            .filter(|name| keep(name))
+            .collect(),
+    )
+}
+
+/// Every file of one folder that `keep` accepts, in name order, each declared as
+/// `sample: {prefix}{name}`. A folder that cannot be read declares `skip: {unreadable}`, one that
+/// holds nothing to keep `skip: {none}`. The walks over `samples/` differ only in those words and
+/// in the filter: a helper that declares which files it used is precisely the thing that must not
+/// exist three times with three behaviours.
+fn declared_files(
+    dir: &Path,
+    prefix: &str,
+    keep: impl Fn(&str) -> bool,
+    unreadable: &str,
+    none: &str,
+) -> Vec<PathBuf> {
+    let Some(names) = names_in(dir, keep) else {
+        declare(&format!("skip: {unreadable}"));
+        return Vec::new();
+    };
+    if names.is_empty() {
+        declare(&format!("skip: {none}"));
+    }
+    names
+        .into_iter()
+        .map(|name| {
+            declare(&format!("sample: {prefix}{name}"));
+            dir.join(name)
+        })
+        .collect()
 }
 
 /// The `samples/windows/` folder: the halves of a **matched window** — a snapshot taken
@@ -98,15 +161,7 @@ pub fn windows_dir() -> PathBuf {
 
 /// One half of a matched window by name, declaring which file it is or why there is none.
 pub fn window_sample(name: &str) -> Option<PathBuf> {
-    let path = windows_dir().join(name);
-    if path.is_file() {
-        declare(&format!("sample: windows/{name}"));
-        return Some(path);
-    }
-    declare(&format!(
-        "skip: windows/{name} missing from samples/windows/"
-    ));
-    None
+    declared_file_in("windows", name)
 }
 
 /// The `samples/empty/` folder: a save slot the game **created and nobody ever played**.
@@ -123,25 +178,13 @@ pub fn empty_profiles_dir() -> PathBuf {
 /// Every untouched profile, in name order, each one declared. It is the state the app opens in on
 /// the evening somebody installs the game, and every other sample here is a profile with progress.
 pub fn empty_profile_samples() -> Vec<PathBuf> {
-    let Ok(entries) = std::fs::read_dir(empty_profiles_dir()) else {
-        declare("skip: samples/empty/ is missing");
-        return Vec::new();
-    };
-    let mut found: Vec<PathBuf> = entries
-        .flatten()
-        .map(|entry| entry.path())
-        .filter(|path| path.extension().is_some_and(|e| e == "dat"))
-        .collect();
-    found.sort();
-    for path in &found {
-        if let Some(name) = path.file_name().and_then(|name| name.to_str()) {
-            declare(&format!("sample: empty/{name}"));
-        }
-    }
-    if found.is_empty() {
-        declare("skip: no *.dat in samples/empty/");
-    }
-    found
+    declared_files(
+        &empty_profiles_dir(),
+        "empty/",
+        |name| Path::new(name).extension().is_some_and(|e| e == "dat"),
+        "samples/empty/ is missing",
+        "no *.dat in samples/empty/",
+    )
 }
 
 /// The bytes of a sample, with the same declaration as [`sample`].
@@ -167,13 +210,7 @@ pub fn logs_dir() -> PathBuf {
 
 /// One log by name, declaring which file it is or why there is none.
 pub fn log_sample(name: &str) -> Option<PathBuf> {
-    let path = logs_dir().join(name);
-    if path.is_file() {
-        declare(&format!("sample: logs/{name}"));
-        return Some(path);
-    }
-    declare(&format!("skip: logs/{name} missing from samples/logs/"));
-    None
+    declared_file_in("logs", name)
 }
 
 /// Every real log, in name order. The folder also holds probe output (`probe*.tsv`) and a
@@ -207,44 +244,19 @@ pub fn launch_samples() -> Vec<PathBuf> {
 
 /// One launch by name, declaring which file it is or why there is none.
 pub fn launch_sample(name: &str) -> Option<PathBuf> {
-    let path = launches_dir().join(name);
-    if path.is_file() {
-        declare(&format!("sample: launches/{name}"));
-        return Some(path);
-    }
-    declare(&format!(
-        "skip: launches/{name} missing from samples/launches/"
-    ));
-    None
+    declared_file_in("launches", name)
 }
 
 /// The `*.log.txt` of one folder, sorted, with every outcome declared. Shared by [`log_samples`]
-/// and [`launch_samples`]: a helper that declares which file it used is precisely the thing that
-/// must not exist twice with two behaviours.
+/// and [`launch_samples`], which differ only in the folder.
 fn declared_logs_in(dir: &Path, label: &str) -> Vec<PathBuf> {
-    let Ok(entries) = std::fs::read_dir(dir) else {
-        declare(&format!("skip: samples/{label}/ is missing"));
-        return Vec::new();
-    };
-    let mut found: Vec<PathBuf> = entries
-        .flatten()
-        .map(|entry| entry.path())
-        .filter(|path| {
-            path.file_name()
-                .and_then(|name| name.to_str())
-                .is_some_and(|name| name.ends_with(".log.txt"))
-        })
-        .collect();
-    found.sort();
-    for path in &found {
-        if let Some(name) = path.file_name().and_then(|name| name.to_str()) {
-            declare(&format!("sample: {label}/{name}"));
-        }
-    }
-    if found.is_empty() {
-        declare(&format!("skip: no *.log.txt in samples/{label}/"));
-    }
-    found
+    declared_files(
+        dir,
+        &format!("{label}/"),
+        |name| name.ends_with(".log.txt"),
+        &format!("samples/{label}/ is missing"),
+        &format!("no *.log.txt in samples/{label}/"),
+    )
 }
 
 /// Skips for a reason that isn't a missing file: a tool absent from the machine, a
@@ -271,15 +283,11 @@ pub fn packed_dir() -> Option<PathBuf> {
 /// a specific `.a`: which archive they touched is half the result, because for months
 /// they all ran on `config.a` and nobody had noticed.
 pub fn packed_file(name: &str) -> Option<PathBuf> {
-    let path = samples_dir().join("packed").join(name);
-    if path.is_file() {
-        declare(&format!("sample: packed/{name}"));
-        return Some(path);
-    }
-    skip(&format!(
-        "samples/packed/{name} missing (requires the game installation)"
-    ));
-    None
+    declared_file(
+        samples_dir().join("packed").join(name),
+        &format!("packed/{name}"),
+        &format!("samples/packed/{name} missing (requires the game installation)"),
+    )
 }
 
 /// A dated sample name: `YYYYMMDD.` followed by the requested suffix. This is the format
@@ -300,31 +308,18 @@ pub fn is_dated(name: &str, suffix: &str) -> bool {
 /// Ordering by name **is** chronological order, because the name starts with
 /// `YYYYMMDD`. Every file used is declared, one per line.
 pub fn dated_series(suffix: &str) -> Vec<PathBuf> {
-    let Ok(entries) = std::fs::read_dir(samples_dir()) else {
-        skip(&format!("samples/ not readable (series {suffix})"));
-        return Vec::new();
-    };
-    let mut names: Vec<String> = entries
-        .filter_map(|e| e.ok())
-        .filter_map(|e| e.file_name().into_string().ok())
-        .filter(|n| is_dated(n, suffix))
-        .collect();
-    names.sort();
-    if names.is_empty() {
-        skip(&format!("no dated sample *.{suffix} in samples/"));
-    }
-    names
-        .iter()
-        .map(|n| {
-            declare(&format!("sample: {n}"));
-            samples_dir().join(n)
-        })
-        .collect()
+    declared_files(
+        &samples_dir(),
+        "",
+        |name| is_dated(name, suffix),
+        &format!("samples/ not readable (series {suffix})"),
+        &format!("no dated sample *.{suffix} in samples/"),
+    )
 }
 
 #[cfg(test)]
 mod tests {
-    use super::{append_line, is_dated};
+    use super::{append_line, is_dated, names_in};
 
     const SUFFIX: &str = "rep+persistentgamedata1.dat";
 
@@ -358,13 +353,12 @@ mod tests {
     /// whatever spoke last.
     #[test]
     fn the_mirror_appends_instead_of_replacing() {
-        let path = std::env::temp_dir().join("isaacdome-declarations-append.txt");
-        let _ = std::fs::remove_file(&path);
+        let dir = tempfile::tempdir().expect("a temporary folder");
+        let path = dir.path().join("declarations.txt");
         append_line(&path, "sample: one").expect("first write");
         append_line(&path, "skip: two").expect("second write");
         let written = std::fs::read_to_string(&path).expect("the file is there");
         assert_eq!(written, "sample: one\nskip: two\n");
-        let _ = std::fs::remove_file(&path);
     }
 
     /// Every declaration of a run reaches the same file from many threads and many test
@@ -374,8 +368,8 @@ mod tests {
     /// `skip: …installation)skip: …installation)` — two declarations fused, counted once.
     #[test]
     fn concurrent_appends_never_fuse_two_lines() {
-        let path = std::env::temp_dir().join("isaacdome-declarations-concurrent.txt");
-        let _ = std::fs::remove_file(&path);
+        let dir = tempfile::tempdir().expect("a temporary folder");
+        let path = dir.path().join("declarations.txt");
         let expected = ["skip: alpha", "sample: beta", "skip: gamma-is-longer"];
         let target = path.as_path();
         std::thread::scope(|s| {
@@ -395,16 +389,31 @@ mod tests {
             "a line came out mangled: {:?}",
             lines.iter().find(|l| !expected.contains(l))
         );
-        let _ = std::fs::remove_file(&path);
     }
 
     /// A mirror that can't be written is not worth failing a test over: the declaration
     /// is already on stderr, and the summary reports how many it managed to count.
     #[test]
     fn a_mirror_that_cannot_be_written_is_not_an_error_for_the_caller() {
-        let unwritable = std::env::temp_dir()
-            .join("no-such-dir-isaacdome")
-            .join("x.txt");
+        let dir = tempfile::tempdir().expect("a temporary folder");
+        let unwritable = dir.path().join("no-such-dir").join("x.txt");
         assert!(append_line(&unwritable, "skip: nowhere").is_err());
+    }
+
+    /// The walks over `samples/` keep what their filter accepts and nothing else, in name
+    /// order — which for a dated series **is** chronological order — and a folder that is not
+    /// there is `None`, which the walk declares as a skip rather than as an empty series.
+    #[test]
+    fn a_folder_walk_keeps_what_the_filter_accepts_in_name_order() {
+        let dir = tempfile::tempdir().expect("a temporary folder");
+        for name in ["b.log.txt", "probe.tsv", "a.log.txt", "watch.log"] {
+            std::fs::write(dir.path().join(name), "").expect("a file in the folder");
+        }
+        let names = names_in(dir.path(), |name| name.ends_with(".log.txt"));
+        assert_eq!(
+            names.map(|set| set.into_iter().collect::<Vec<_>>()),
+            Some(vec!["a.log.txt".to_string(), "b.log.txt".to_string()])
+        );
+        assert_eq!(names_in(&dir.path().join("absent"), |_| true), None);
     }
 }

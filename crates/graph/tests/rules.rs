@@ -19,8 +19,7 @@ const REQS: &str = r#"{
     "1": { "refs": [{ "target": { "kind": "entity", "id": 5, "variant": 10, "subtype": 1 },
                       "label": "Red Heart" }] }
   },
-  "targets": [{ "key": "entity:Red Heart", "label": "Red Heart", "uses": 3,
-               "verdictRequired": false }]
+  "targets": [{ "key": "entity:Red Heart", "label": "Red Heart", "uses": 3 }]
 }"#;
 
 const CORR: &str = r#"{

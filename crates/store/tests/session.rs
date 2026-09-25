@@ -2,16 +2,10 @@
 //! "there isn't one" and "there is an empty one".
 
 use store::{Store, SCHEMA_VERSION};
-use tempfile::{tempdir, TempDir};
+use tempfile::tempdir;
 
-// The same shape `queue.rs` uses: a real file in a temporary directory, because `Store::open`
-// is what runs the migrations and that is half of what these tests are about. The directory
-// is returned with the store: dropping it would take the file with it.
-fn store() -> (TempDir, Store) {
-    let dir = tempdir().expect("temp dir");
-    let s = Store::open(&dir.path().join("isaacdome.db")).expect("opens");
-    (dir, s)
-}
+mod common;
+use common::temp_store;
 
 #[test]
 fn the_schema_knows_the_session() {
@@ -25,13 +19,13 @@ fn the_schema_knows_the_session() {
 
 #[test]
 fn a_fresh_database_has_no_session() {
-    let (_dir, s) = store();
+    let (_dir, s) = temp_store();
     assert_eq!(s.session().expect("reads"), None);
 }
 
 #[test]
 fn the_document_written_is_the_document_read() {
-    let (_dir, s) = store();
+    let (_dir, s) = temp_store();
     let document = r#"{"version":1,"tabs":[],"activeIndex":0}"#;
     s.set_session(Some(document)).expect("writes");
     assert_eq!(s.session().expect("reads").as_deref(), Some(document));
@@ -90,7 +84,7 @@ fn a_version_two_database_gains_the_session_without_losing_its_queue() {
 
 #[test]
 fn a_second_write_replaces_the_first_rather_than_adding_a_second_answer() {
-    let (_dir, s) = store();
+    let (_dir, s) = temp_store();
     s.set_session(Some("one")).expect("writes");
     s.set_session(Some("two")).expect("writes again");
     assert_eq!(s.session().expect("reads").as_deref(), Some("two"));
@@ -98,7 +92,7 @@ fn a_second_write_replaces_the_first_rather_than_adding_a_second_answer() {
 
 #[test]
 fn clearing_leaves_no_session_behind() {
-    let (_dir, s) = store();
+    let (_dir, s) = temp_store();
     s.set_session(Some("one")).expect("writes");
     s.set_session(None).expect("clears");
     assert_eq!(s.session().expect("reads"), None);

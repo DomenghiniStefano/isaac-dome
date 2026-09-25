@@ -61,7 +61,6 @@ impl Queue {
         };
         let mut rows: Vec<Row> = self.rows().to_vec();
         let moved = rows.remove(from);
-
         // The two relations behave differently, and the asymmetry is the rule itself:
         //
         // **Dependents are dragged.** Move a prerequisite down and what needs it follows,
@@ -73,52 +72,65 @@ impl Queue {
         //
         // A row the graph can't compute answers `false` both ways, so it neither drags nor
         // walls: it stays exactly where it is.
-        let mut dragged = Vec::new();
-        let mut rest = Vec::new();
-        // `to` counts the dragged rows too, and each one above it leaves with the moved row:
-        // the target among the rows that stay is that much higher.
-        let mut target = to;
-        for (i, r) in rows.into_iter().enumerate() {
-            if deps.requires(r.achievement, achievement) {
-                if i < to {
-                    target -= 1;
-                }
-                dragged.push(r);
-            } else {
-                rest.push(r);
-            }
-        }
+        let (dragged, rest, target) = split_dependents(rows, achievement, to, deps);
+        let landed = target.clamp(floor(&rest, achievement, deps), rest.len());
+        *self = Queue::from_rows(place(rest, landed, moved, dragged, deps));
+        landed
+    }
+}
 
-        // The floor: one past the last prerequisite of the moved row left in the list. It
-        // bounds the moved row only; the rows dragged with it can have prerequisites of their
-        // own, and those are placed below.
-        let floor = rest
-            .iter()
-            .rposition(|r| deps.requires(achievement, r.achievement))
-            .map(|i| i + 1)
-            .unwrap_or(0);
-        let landed = target.clamp(floor, rest.len());
+/// The rows that depend on `achievement`, which move with it, apart from the rows that stay;
+/// and `to` as a position among the rows that stay. `to` counts the dragged rows too, and
+/// each one above it leaves with the moved row: the target is that much higher.
+fn split_dependents(
+    rows: Vec<Row>,
+    achievement: AchievementId,
+    to: usize,
+    deps: &impl Dependencies,
+) -> (Vec<Row>, Vec<Row>, usize) {
+    let depends = |r: &Row| deps.requires(r.achievement, achievement);
+    let above = rows.iter().take(to).filter(|r| depends(r)).count();
+    let (dragged, rest): (Vec<Row>, Vec<Row>) = rows.into_iter().partition(depends);
+    (dragged, rest, to - above)
+}
 
-        // A dragged row lands right below the moved one — unless one of its **own** other
-        // prerequisites is still further down, and then right below that one (card #80,
-        // item 03: `[2, 1, 3]` with 3 needing both, moving 1 to the top used to put 3 above
-        // 2). Walked in the dragged rows' own order, and each one looks at the rows already
-        // placed below as well: a dragged row that needs another dragged row placed lower
-        // follows it there.
-        let mut tail = rest.split_off(landed);
-        let mut out = rest;
-        out.push(moved);
-        for row in dragged {
+/// One past the last prerequisite of the moved row left in the list. It bounds the moved row
+/// only; the rows dragged with it can have prerequisites of their own, and those are placed
+/// below.
+fn floor(rest: &[Row], achievement: AchievementId, deps: &impl Dependencies) -> usize {
+    rest.iter()
+        .rposition(|r| deps.requires(achievement, r.achievement))
+        .map(|i| i + 1)
+        .unwrap_or(0)
+}
+
+/// The queue with `moved` at `landed` among the rows that stay, and the dragged rows below it.
+///
+/// A dragged row lands right below the moved one — unless one of its **own** other
+/// prerequisites is still further down, and then right below that one (card #80, item 03:
+/// `[2, 1, 3]` with 3 needing both, moving 1 to the top used to put 3 above 2). Walked in the
+/// dragged rows' own order, and each one looks at the rows already placed below as well: a
+/// dragged row that needs another dragged row placed lower follows it there.
+fn place(
+    mut rest: Vec<Row>,
+    landed: usize,
+    moved: Row,
+    dragged: Vec<Row>,
+    deps: &impl Dependencies,
+) -> Vec<Row> {
+    let tail = rest.split_off(landed);
+    rest.push(moved);
+    let (head, tail) = dragged
+        .into_iter()
+        .fold((rest, tail), |(mut head, mut tail), row| {
             match tail
                 .iter()
                 .rposition(|r| deps.requires(row.achievement, r.achievement))
             {
                 Some(last) => tail.insert(last + 1, row),
-                None => out.push(row),
+                None => head.push(row),
             }
-        }
-        out.extend(tail);
-        *self = Queue::from_rows(out);
-        landed
-    }
+            (head, tail)
+        });
+    head.into_iter().chain(tail).collect()
 }

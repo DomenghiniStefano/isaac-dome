@@ -1,5 +1,6 @@
 //! A page = preamble + level-2 sections. Subsections stay in the body.
 
+use crate::template::{template_segments, Segment, Template};
 use crate::SectionKind;
 
 /// A level-2 section as it is in the wikitext: raw title and body, subsections included.
@@ -41,9 +42,11 @@ pub fn split_page(text: &str) -> (String, Vec<RawSection>) {
 }
 
 /// Templates that render a marker or nothing at all, so a heading means the same without them.
-/// **Measured, not guessed** (B54): across the 1113 pages of the snapshot, exactly six template
-/// names appear in a heading — these four, plus `{{s|…}}` and `{{c|…}}`, which are a stage's and
-/// a character's *name* and are the whole point of the distinction below.
+/// **Measured, not guessed** (B54, re-read 2026-09-25): across the 1113 pages of the snapshot,
+/// exactly six template names appear in a heading — four of these (`dlc`, `dlc+`, `unlockable`,
+/// `anchor`), plus `{{s|…}}` and `{{c|…}}`, which are a stage's and a character's *name* and are
+/// the whole point of the distinction below. `dlc-` is in no heading: it is listed because it
+/// is the closer of `dlc+`, and renders nothing wherever it is.
 const MARKER_TEMPLATES: [&str; 5] = ["dlc", "dlc+", "dlc-", "unlockable", "anchor"];
 
 /// A comparable title: link brackets gone, marker templates gone, a **content** template replaced
@@ -63,70 +66,26 @@ const MARKER_TEMPLATES: [&str; 5] = ["dlc", "dlc+", "dlc-", "unlockable", "ancho
 /// nothing at all, which is why a heading made only of one comes out **empty** — the wiki draws it
 /// blank too, and The Forgotten's unlock section is the page that proves it.
 pub fn normalize_title(title: &str) -> String {
-    let chars: Vec<char> = title.chars().collect();
-    let mut s = String::new();
-    let mut i = 0;
-    while i < chars.len() {
-        if chars[i] == '{' && chars.get(i + 1) == Some(&'{') {
-            let (inner, next) = template_at(&chars, i);
-            s.push_str(&rendered(&inner));
-            i = next;
-            continue;
-        }
-        if chars[i] == '[' || chars[i] == ']' {
-            i += 1;
-            continue;
-        }
-        s.push(chars[i]);
-        i += 1;
-    }
-    s.to_lowercase()
+    let flat: String = template_segments(title)
+        .map(|segment| match segment {
+            Segment::Text(text) => text.replace(['[', ']'], ""),
+            Segment::Template { template, .. } => rendered(&template),
+        })
+        .collect();
+    flat.to_lowercase()
         .split_whitespace()
         .collect::<Vec<_>>()
         .join(" ")
 }
 
-/// The text a `{{…}}` at `at` leaves behind, and the index just past it. Nesting is followed so
-/// a template inside an argument does not end the outer one early.
-fn template_at(chars: &[char], at: usize) -> (String, usize) {
-    let mut depth = 0usize;
-    let mut i = at;
-    let mut inner = String::new();
-    while i < chars.len() {
-        if chars[i] == '{' && chars.get(i + 1) == Some(&'{') {
-            depth += 1;
-            i += 2;
-            if depth > 1 {
-                inner.push_str("{{");
-            }
-            continue;
-        }
-        if chars[i] == '}' && chars.get(i + 1) == Some(&'}') {
-            depth -= 1;
-            i += 2;
-            if depth == 0 {
-                return (inner, i);
-            }
-            inner.push_str("}}");
-            continue;
-        }
-        inner.push(chars[i]);
-        i += 1;
-    }
-    // Unclosed: everything after it was inside the template as far as anyone can tell.
-    (inner, chars.len())
-}
-
 /// What a template puts on screen: nothing for a marker, its first argument otherwise — which is
 /// the name for `{{c|Tainted Eve}}` and `{{s|Ashpit}}`, the only two content templates any
 /// heading in the snapshot uses.
-fn rendered(inner: &str) -> String {
-    let mut parts = inner.split('|');
-    let name = parts.next().unwrap_or("").trim().to_lowercase();
-    if MARKER_TEMPLATES.contains(&name.as_str()) {
+fn rendered(t: &Template) -> String {
+    if MARKER_TEMPLATES.contains(&t.name.as_str()) {
         return String::new();
     }
-    parts.next().unwrap_or("").trim().to_string()
+    t.args.first().cloned().unwrap_or_default()
 }
 
 /// The section kind for a wiki title; `None` for titles that aren't kept.

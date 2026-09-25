@@ -15,9 +15,9 @@ pub mod model;
 pub mod resolve;
 pub mod rules;
 
-pub use build::Graph;
+// Every item of this crate has one path, through the module that defines it:
+// `graph::build::Graph`, `graph::rules::Rules`. The one re-export is another crate's type.
+//
 // The id every public signature here speaks in (card #81, V12), re-exported so `plan` reads it
 // from the crate it already depends on.
 pub use catalog::AchievementId;
-pub use evaluate::{FlagsOnly, Profile};
-pub use rules::{target_key, Corrections, Requirements, Rules, RulesError, SCHEMA_VERSION};
