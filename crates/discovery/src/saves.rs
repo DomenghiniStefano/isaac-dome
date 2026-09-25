@@ -27,101 +27,94 @@ pub(crate) fn parse_save_filename(name: &str) -> Option<(SavePrefix, u8)> {
     Some((prefix, slot))
 }
 
+/// What a scan found and what got in its way, the shape every scanner here answers with.
+pub(crate) type Scan = (Vec<SaveCandidate>, Vec<Diagnostic>);
+
+/// Several scans as one, in the order they were given: the saves one after the other, and the
+/// diagnostics the same way.
+pub(crate) fn merge(scans: impl IntoIterator<Item = Scan>) -> Scan {
+    let (saves, diags): (Vec<_>, Vec<_>) = scans.into_iter().unzip();
+    (
+        saves.into_iter().flatten().collect(),
+        diags.into_iter().flatten().collect(),
+    )
+}
+
+/// A folder that could not be listed. Not there is not a diagnostic: a machine without that
+/// folder is the ordinary case, and only a folder that is there and refuses is worth saying.
+fn unreadable(path: &Path, err: &std::io::Error) -> Vec<Diagnostic> {
+    (err.kind() != std::io::ErrorKind::NotFound)
+        .then(|| Diagnostic::UnreadablePath {
+            path: path.to_path_buf(),
+            kind: err.kind(),
+        })
+        .into_iter()
+        .collect()
+}
+
 /// Scans a single folder for valid save files.
-pub(crate) fn scan_dir(
-    dir: &Path,
-    source: &dyn Fn() -> SaveSource,
-) -> (Vec<SaveCandidate>, Vec<Diagnostic>) {
-    let mut saves = Vec::new();
-    let mut diags = Vec::new();
-
-    let entries = match std::fs::read_dir(dir) {
-        Ok(entries) => entries,
-        Err(err) => {
-            if err.kind() != std::io::ErrorKind::NotFound {
-                diags.push(Diagnostic::UnreadablePath {
-                    path: dir.to_path_buf(),
-                    kind: err.kind(),
-                });
-            }
-            return (saves, diags);
-        }
-    };
-
-    for entry in entries.flatten() {
-        let name = entry.file_name();
-        let Some(name) = name.to_str() else {
-            continue;
-        };
-        let Some((prefix, slot)) = parse_save_filename(name) else {
-            continue;
-        };
-        let meta = entry.metadata().ok();
-        saves.push(SaveCandidate {
-            path: entry.path(),
-            slot,
-            prefix,
-            source: source(),
-            modified: meta.as_ref().and_then(|m| m.modified().ok()),
-            size: meta.as_ref().map(|m| m.len()).unwrap_or(0),
-        });
+pub(crate) fn scan_dir(dir: &Path, source: &dyn Fn() -> SaveSource) -> Scan {
+    match std::fs::read_dir(dir) {
+        Ok(entries) => (
+            entries
+                .flatten()
+                .filter_map(|entry| candidate(&entry, source))
+                .collect(),
+            Vec::new(),
+        ),
+        Err(err) => (Vec::new(), unreadable(dir, &err)),
     }
+}
 
-    (saves, diags)
+/// The entry as a save, when its name is one.
+fn candidate(entry: &std::fs::DirEntry, source: &dyn Fn() -> SaveSource) -> Option<SaveCandidate> {
+    let name = entry.file_name();
+    let (prefix, slot) = parse_save_filename(name.to_str()?)?;
+    let meta = entry.metadata().ok();
+    Some(SaveCandidate {
+        path: entry.path(),
+        slot,
+        prefix,
+        source: source(),
+        modified: meta.as_ref().and_then(|m| m.modified().ok()),
+        size: meta.as_ref().map(|m| m.len()).unwrap_or(0),
+    })
 }
 
 /// For each account in `<steam_root>/userdata/*`, scans `250900/remote/`.
-pub(crate) fn scan_userdata(steam_root: &Path) -> (Vec<SaveCandidate>, Vec<Diagnostic>) {
+pub(crate) fn scan_userdata(steam_root: &Path) -> Scan {
     let userdata = steam_root.join("userdata");
-    let mut saves = Vec::new();
-    let mut diags = Vec::new();
-
     let entries = match std::fs::read_dir(&userdata) {
         Ok(entries) => entries,
-        Err(err) => {
-            if err.kind() != std::io::ErrorKind::NotFound {
-                diags.push(Diagnostic::UnreadablePath {
-                    path: userdata,
-                    kind: err.kind(),
-                });
-            }
-            return (saves, diags);
-        }
+        Err(err) => return (Vec::new(), unreadable(&userdata, &err)),
     };
-
-    for entry in entries.flatten() {
-        if !entry.file_type().map(|t| t.is_dir()).unwrap_or(false) {
-            continue;
-        }
-        let account_id = entry.file_name().to_string_lossy().into_owned();
-        let remote = entry.path().join("250900").join("remote");
-        let (mut c, mut d) = scan_dir(&remote, &|| SaveSource::SteamCloud {
-            account_id: account_id.clone(),
-        });
-        saves.append(&mut c);
-        diags.append(&mut d);
-    }
-
-    (saves, diags)
+    merge(
+        entries
+            .flatten()
+            .filter(|entry| entry.file_type().map(|t| t.is_dir()).unwrap_or(false))
+            .map(|entry| {
+                let account_id = entry.file_name().to_string_lossy().into_owned();
+                let remote = entry.path().join("250900").join("remote");
+                scan_dir(&remote, &|| SaveSource::SteamCloud {
+                    account_id: account_id.clone(),
+                })
+            }),
+    )
 }
 
 /// Scans the two possible folders in Documents (with and without the `+`).
-pub(crate) fn scan_documents(documents: &Path) -> (Vec<SaveCandidate>, Vec<Diagnostic>) {
-    let mut saves = Vec::new();
-    let mut diags = Vec::new();
-
-    for folder in [
-        "Binding of Isaac Repentance+",
-        "Binding of Isaac Repentance",
-    ] {
-        let dir = documents.join("My Games").join(folder);
-        let dir_for_source = dir.clone();
-        let (mut c, mut d) = scan_dir(&dir, &|| SaveSource::Documents {
-            folder: dir_for_source.clone(),
-        });
-        saves.append(&mut c);
-        diags.append(&mut d);
-    }
-
-    (saves, diags)
+pub(crate) fn scan_documents(documents: &Path) -> Scan {
+    merge(
+        [
+            "Binding of Isaac Repentance+",
+            "Binding of Isaac Repentance",
+        ]
+        .into_iter()
+        .map(|folder| {
+            let dir = documents.join("My Games").join(folder);
+            scan_dir(&dir, &|| SaveSource::Documents {
+                folder: dir.clone(),
+            })
+        }),
+    )
 }
