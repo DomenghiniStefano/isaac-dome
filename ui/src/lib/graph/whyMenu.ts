@@ -1,9 +1,10 @@
 import type { Message, Translate } from '@/i18n/message'
 import { assertNever } from '@/lib/assertNever'
 import type { LockView, UnlockNode } from '@/lib/ipc/types'
-import { pageLocation } from '@/lib/wiki/category'
+import { pageLocationOf } from '@/lib/wiki/category'
 import type { TabLocation } from '@/router/routeTable'
 import { RequirementKind, missingGroups } from './nodeState'
+import type { RequirementEntry } from './nodeState'
 
 // The menu behind a badge, as data: one group per kind, one entry per thing in the way, and
 // for each the place that says how *it* is unlocked. Pure, so the model is what gets tested
@@ -40,6 +41,17 @@ export const nodeWhy = (node: UnlockNode, t: Translate): WhyGroup[] =>
     entries: group.entries,
   }))
 
+// The achievement a lock is waiting on, as the menu's one entry: its text, or its number when
+// the catalog has no text for it.
+const lockEntry = (
+  lock: Exclude<LockView, { kind: 'free' }>,
+  t: Translate,
+): RequirementEntry => ({
+  key: `achievement-${lock.achievement}`,
+  name: lock.text ?? `${t('collection.achievement')} ${lock.achievement}`,
+  location: pageLocationOf(lock.page),
+})
+
 // The Collection's lock: one group, one entry — the achievement that opens the item. `free`
 // has nothing to say, and says nothing.
 export const lockWhy = (lock: LockView, t: Translate): WhyGroup[] => {
@@ -49,20 +61,7 @@ export const lockWhy = (lock: LockView, t: Translate): WhyGroup[] => {
     case 'unlocked':
     case 'locked':
     case 'unknown':
-      return [
-        {
-          label: 'collection.lockedBy',
-          entries: [
-            {
-              key: `achievement-${lock.achievement}`,
-              name:
-                lock.text ??
-                `${t('collection.achievement')} ${lock.achievement}`,
-              location: lock.page ? pageLocation(lock.page) : null,
-            },
-          ],
-        },
-      ]
+      return [{ label: 'collection.lockedBy', entries: [lockEntry(lock, t)] }]
     default:
       return assertNever(lock)
   }

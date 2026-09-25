@@ -40,3 +40,8 @@ export const pageLocation = (target: Target): TabLocation | null => {
     ? null
     : { name: RouteName.Wiki, query: { category, page } }
 }
+
+// The same for a reference that may have no page at all: no page, no location.
+export const pageLocationOf = (
+  page: Target | null | undefined,
+): TabLocation | null => (page ? pageLocation(page) : null)
