@@ -199,9 +199,8 @@ export const useWindowSession = (): void => {
     if ((await windowPort.labels()).length > 1) return
     const monitors = await windowPort.monitors()
     const self = await windowPort.self()
-    let step = 0
-    for (const window of rest) {
-      step += 1
+    for (const [index, window] of rest.entries()) {
+      const step = index + 1
       const wanted = window.box ?? {
         left: self.left + CascadeStep * step,
         top: self.top + CascadeStep * step,
@@ -286,7 +285,20 @@ export const useWindowSession = (): void => {
     }
   }
 
-  onMounted(async () => {
+  // Where this window is, is the other half of what the session stores about it. A window that
+  // cannot say where it is still has tabs worth storing, so this never throws upward: the
+  // document simply carries no box for it, and the restore cascades it instead.
+  const readBox = async (): Promise<void> => {
+    try {
+      box = boxOf(await windowPort.self())
+    } catch {
+      box = undefined
+    }
+  }
+
+  // Everything this window listens to for as long as it lives: its own tabs and layout, the
+  // other windows, its focus and its place on the desktop.
+  const installWatchers = async (): Promise<void> => {
     // Deep: a tab navigating changes an entry inside the array, not the array itself, and a
     // shallow watch would save the bar's shape and never what it is showing.
     watch(() => tabs.session, held, { deep: true })
@@ -312,63 +324,64 @@ export const useWindowSession = (): void => {
         })
       }),
     )
-    // Where this window is, is the other half of what the session stores about it. A window that
-    // cannot say where it is still has tabs worth storing, so this never throws upward: the
-    // document simply carries no box for it, and the restore cascades it instead.
-    const readBox = async (): Promise<void> => {
-      try {
-        box = boxOf(await windowPort.self())
-      } catch {
-        box = undefined
-      }
-    }
     await readBox()
     await listening.add(() =>
       watchWindowBox(() => {
         void readBox().then(held)
       }),
     )
+  }
+
+  // **Nobody owes the first window a seed**: what it holds is its own last session. Everything
+  // that can go wrong — no session, the setting off, a document we can't read, a read that
+  // throws — ends at the same empty seed.
+  const readStoredSession = async (): Promise<StoredSession | null> => {
+    try {
+      return readSession(await windowSession())
+    } catch {
+      return null
+    }
+  }
+
+  const restoreMain = async (): Promise<void> => {
+    const restored = await readStoredSession()
+    // The deadline may have fired while the read was in flight. It has already seeded the bar,
+    // and replacing it now would swap the user's tabs under them a beat after they appeared.
+    if (!tabs.pending) return
+    forget()
+    // The sidebar you sized and folded is the sidebar you get back. Set before the seeding, so
+    // the first paint is already at the right width rather than snapping to it.
+    const stored: Layout = {
+      sidebarWidth: restored?.sidebarWidth ?? null,
+      sidebarCollapsed: restored?.sidebarCollapsed === true,
+    }
+    announced = stored
+    setLayout(stored)
+    // `main` takes the first window of the document and reopens the rest — a restored window is
+    // a torn-off window that nobody dragged, so this is the tear-off's own machinery.
+    const windows = restored?.windows ?? []
+    tabs.seed(windows[0]?.tabs ?? [], windows[0]?.activeIndex ?? 0)
+    held()
+    void reopen(windows.slice(1))
+  }
+
+  onMounted(async () => {
+    await installWatchers()
     if (!tabs.pending) {
       held()
       return
     }
-    // The deadline is the same for both: whoever is owed nothing ends up with an empty seed,
-    // which `seedState` turns into the landing tab.
+    // The deadline is the same for every window: whoever is owed nothing ends up with an empty
+    // seed, which `seedState` turns into the landing tab.
     timer = window.setTimeout(() => {
       tabs.seed([], 0)
       held()
     }, SeedTimeout)
     if (windowPort.isMain()) {
-      // **Nobody owes the first window a seed**: what it holds is its own last session.
-      // Everything that can go wrong — no session, the setting off, a document we can't read,
-      // a read that throws — ends at the same empty seed.
-      let restored: StoredSession | null = null
-      try {
-        restored = readSession(await windowSession())
-      } catch {
-        restored = null
-      }
-      // The deadline may have fired while the read was in flight. It has already seeded the
-      // bar, and replacing it now would swap the user's tabs under them a beat after they
-      // appeared.
-      if (!tabs.pending) return
-      forget()
-      // The sidebar you sized and folded is the sidebar you get back. Set before the seeding, so
-      // the first paint is already at the right width rather than snapping to it.
-      const stored: Layout = {
-        sidebarWidth: restored?.sidebarWidth ?? null,
-        sidebarCollapsed: restored?.sidebarCollapsed === true,
-      }
-      announced = stored
-      setLayout(stored)
-      // `main` takes the first window of the document and reopens the rest — a restored window
-      // is a torn-off window that nobody dragged, so this is the tear-off's own machinery.
-      const windows = restored?.windows ?? []
-      tabs.seed(windows[0]?.tabs ?? [], windows[0]?.activeIndex ?? 0)
-      held()
-      void reopen(windows.slice(1))
+      await restoreMain()
       return
     }
+    // Any other window was born from a tear-off or a restore, and asks the window that owes it.
     await windowPort.broadcast({
       kind: WindowMessageKind.Ready,
       label: windowPort.label(),

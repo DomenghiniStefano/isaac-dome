@@ -192,10 +192,8 @@ const header = computed(() => sidebarHeaders[browsing.value])
 const entries = computed(() => sidebarEntries[browsing.value])
 
 // Ctrl+click opens the entry in a new tab, as a browser does.
-const openEntry = (entry: SidebarEntry, event: MouseEvent) => {
-  if (event.ctrlKey) tabs.open(entry.location)
-  else tabs.navigate(entry.location)
-}
+const openEntry = (entry: SidebarEntry, event: MouseEvent) =>
+  tabs.go(entry.location, event.ctrlKey)
 
 // Clicking a section goes to its first page at once, with no second click in the sidebar:
 // this reverses Decision 5 of the shell spec, on purpose (`docs/BACKLOG.md` B24). The
@@ -299,8 +297,9 @@ const takeover = computed(() => welcome.value.kind !== 'hidden')
              sidebar collapses inside it — which is why the sidebar's threshold hangs here and not
              on `page`, where a collapse would widen the content, re-cross the threshold and
              oscillate (spec 3.13a §6). -->
-        <!-- `group/shell` is the sidebar's second input, and `data-sidebar` is the only thing the
-             edge tab writes (spec 3.13a §6, card #54): the CSS 3.13a built does the folding. -->
+        <!-- `group/shell` is the sidebar's second input: the shell carries `data-sidebar` while
+             `sidebarCollapsed` is on — whether the edge tab or `Ctrl+B` set it — and the CSS does
+             the folding (spec 3.13a §6, card #54). -->
         <div
           :data-sidebar="sidebarCollapsed ? 'collapsed' : undefined"
           class="group/shell @container/shell flex min-h-0 flex-1"
@@ -329,20 +328,14 @@ const takeover = computed(() => welcome.value.kind !== 'hidden')
             </SidebarItem>
           </SectionSidebar>
           <!-- The page box (spec 3.13a §4): it scrolls nothing and pads nothing. The padding is
-               the screen's, on the box that scrolls: a gutter here put every scrollbar 22px
-               inside the window's edge, and a band meant to reach the edge had to take it back
-               with `-mx-5.5` (card #63). The vertical padding was already the screen's, because
-               on a screen that fills its height a bottom padding here would be sixty pixels of
-               nothing under a list that could have used them. It is also the `page` container
-               every threshold is measured against. -->
+               the screen's, on the box that scrolls, so every scrollbar sits on the window's edge
+               (card #63). It is also the `page` container every threshold is measured against. -->
           <main class="@container/page min-h-0 min-w-0 flex-1 overflow-hidden">
-            <!-- **One instance of a screen per history entry of a tab** (#79). Without the key the
-                 router reused one component for every tab on the same route, so what a screen
-                 held locally — a typed filter, the find bar, the scroll — walked from one tab into
-                 the next, and a freshly opened tab showed another's position. With it, every entry
-                 is built from its own reading and its own positions (`v-scroll-memory`).
-                 The index is safe in the key because typing does not move it: a refinement of the
-                 same view replaces the entry in place (`tabModel`'s `goTo`). -->
+            <!-- **One instance of a screen per history entry of a tab** (#79): without the key the
+                 router reuses one component for every tab on the same route, and what a screen
+                 holds locally walks from one tab into the next. The index is safe in the key
+                 because typing does not move it: a refinement of the same view replaces the entry
+                 in place (`tabModel`'s `goTo`). -->
             <RouterView v-slot="{ Component, route }">
               <ProgressGate v-if="route.meta.needsProfile">
                 <component :is="Component" :key="screenKey" />

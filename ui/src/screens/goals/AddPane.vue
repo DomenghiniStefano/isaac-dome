@@ -16,6 +16,7 @@ import { canQueue, isQueued } from '@/lib/plan/queueRows'
 import { rowModel } from '@/lib/plan/rowModel'
 import { RouteName } from '@/router/routeTable'
 import type { TabLocation } from '@/router/routeTable'
+import { useTabsStore } from '@/stores/tabs'
 import WantAnswer from './WantAnswer.vue'
 import WantBar from './WantBar.vue'
 import { sectionTitle } from './sectionTitle'
@@ -36,9 +37,9 @@ const emit = defineEmits<{
   add: [achievement: number]
   pick: [target: Target]
   clear: []
-  navigate: [location: TabLocation, newTab: boolean]
 }>()
 const { t } = useMessages()
+const tabs = useTabsStore()
 
 const state = computed(() =>
   addPaneState(props.wantActive, props.sections, props.noCatalog),
@@ -72,7 +73,6 @@ const seeAll: TabLocation = {
         :can-write="canWrite"
         :busy="busy"
         @queue="emit('add', $event)"
-        @navigate="(l, n) => emit('navigate', l, n)"
       />
 
       <template v-else-if="state === AddPaneState.Sections">
@@ -106,7 +106,6 @@ const seeAll: TabLocation = {
                 :can-add="canWrite && canQueue(step, queued)"
                 :busy="busy"
                 @add="emit('add', nodeSlot(step))"
-                @navigate="(l, n) => emit('navigate', l, n)"
               />
             </div>
           </div>
@@ -115,7 +114,7 @@ const seeAll: TabLocation = {
           :variant="ButtonVariant.Ref"
           :size="ButtonSize.Inline"
           class="self-start"
-          @click="emit('navigate', seeAll, $event.ctrlKey)"
+          @click="tabs.go(seeAll, $event.ctrlKey)"
           >{{ t('goals.seeAll') }}</Button
         >
       </template>

@@ -15,12 +15,12 @@ import { useMessages } from '@/i18n'
 import { achievementNode } from '@/lib/graph/achievementNode'
 import { nodeSlot } from '@/lib/graph/unlockFacets'
 import type { Target } from '@/lib/ipc/types'
-import { canQueue, isQueued, queuedIds } from '@/lib/plan/queueRows'
+import { canQueue, isQueued } from '@/lib/plan/queueRows'
 import { categoryOf, pageLocation } from '@/lib/wiki/category'
 import { parsePageKey } from '@/lib/wiki/pageKey'
 import { RouteName } from '@/router/routeTable'
-import type { TabLocation, WikiCategory } from '@/router/routeTable'
-import { useQueueStore } from '@/stores/queue'
+import type { WikiCategory } from '@/router/routeTable'
+import { useQueueOffer } from '@/composables/useQueueOffer'
 import { useTabsStore } from '@/stores/tabs'
 import { useGraphStore } from '@/stores/views'
 import { useWikiStore } from '@/stores/wiki'
@@ -37,7 +37,7 @@ const props = defineProps<{
 const wiki = useWikiStore()
 const tabs = useTabsStore()
 const graph = useGraphStore()
-const queue = useQueueStore()
+const { queue, queued, canWrite } = useQueueOffer()
 const { t } = useMessages()
 
 // The key is the tab's; a key that doesn't parse is a page the dataset doesn't know, the
@@ -71,9 +71,7 @@ const icon = computed(() => (target.value ? wiki.iconFor(target.value) : null))
 // action as opening a search result (DESIGN-BRIEF.md §4.2).
 const onNavigate = (next: Target, newTab: boolean) => {
   const location = pageLocation(next)
-  if (location === null) return
-  if (newTab) tabs.open(location)
-  else tabs.navigate(location)
+  if (location !== null) tabs.go(location, newTab)
 }
 // A page that would not load is this page's failure, not the wiki's (card #80, R9): the retry
 // asks for this page again, and every other tab keeps what it shows.
@@ -92,17 +90,11 @@ const back = () => {
 const node = computed(() =>
   achievementNode(graph.view?.unlock ?? null, target.value),
 )
-const queued = computed(() => queuedIds(queue.view))
+
 const canAdd = computed(
   () =>
-    queue.view?.storeAvailable === true &&
-    node.value !== null &&
-    canQueue(node.value, queued.value),
+    canWrite.value && node.value !== null && canQueue(node.value, queued.value),
 )
-const onOpen = (location: TabLocation, newTab: boolean) => {
-  if (newTab) tabs.open(location)
-  else tabs.navigate(location)
-}
 </script>
 
 <template>
@@ -134,7 +126,6 @@ const onOpen = (location: TabLocation, newTab: boolean) => {
         :can-add="canAdd"
         :busy="queue.busy"
         @add="queue.add(nodeSlot(node))"
-        @navigate="onOpen"
       />
       <template v-if="unknown">
         <EmptyCategory
