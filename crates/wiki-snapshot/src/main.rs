@@ -14,8 +14,8 @@ use std::process::ExitCode;
 use wiki::{build, page_file_name, Corrections, Dataset, IndexEntry, PageKind, Raw, Row};
 
 use crate::api::{
-    cargo_url, is_translation_subpage, pages_url, parse_cargo, parse_pages, sort_rows, Pending,
-    ROWS_PER_REQUEST, TABLES,
+    cargo_url, is_translation_subpage, pages_url, parse_cargo, parse_pages, sort_rows, FetchedPage,
+    Pending, ROWS_PER_REQUEST, TABLES,
 };
 use crate::store::{prune, write_if_changed};
 
@@ -113,99 +113,163 @@ fn page_bytes(text: &str) -> Vec<u8> {
     text.replace("\r\n", "\n").into_bytes()
 }
 
-/// Downloads all pages of one kind, writes them and updates the index; returns the
-/// file names written or confirmed, for the directory's `prune`.
+/// What fetching one kind leaves behind: how many files it wrote, and the names it wrote or
+/// confirmed — the ones the directory's `prune` keeps, and whose count is the kind's page
+/// count. It also remembers each file name's lowercase spelling, for [`admit`].
+#[derive(Debug, Default)]
+struct KindFetch {
+    written: usize,
+    keep: BTreeSet<String>,
+    /// `page_file_name` is injective, but Windows's filesystem is case-insensitive: two
+    /// titles that collide would keep the first one and warn about it. Lowercase file name →
+    /// the title that took it.
+    titles_by_lower_name: BTreeMap<String, String>,
+}
+
+/// Whether a page that arrived with text is filed under the kind being fetched.
+#[derive(Debug, PartialEq, Eq)]
+enum Admission {
+    /// Filed, under this file name.
+    Admit(String),
+    /// A translation (`Steven/de`): it transcludes the same infobox, and it is not a page of ours.
+    Translation,
+    /// Already filed under another kind, which keeps it.
+    OtherKind(PageKind),
+    /// Another title already took the same file name on a case-insensitive filesystem.
+    SameFileAs(String),
+}
+
+/// Where a page goes, from what is already filed. Pure: the warnings and the writes are the
+/// caller's. A page that reappears with text within the same kind is admitted again and
+/// silently replaces its entry; the same page under a different kind stays with the first.
+fn admit(
+    title: &str,
+    kind: PageKind,
+    index: &BTreeMap<String, IndexEntry>,
+    fetched: &KindFetch,
+) -> Admission {
+    if is_translation_subpage(title) {
+        return Admission::Translation;
+    }
+    if let Some(prev) = index.get(title).filter(|prev| prev.kind != kind) {
+        return Admission::OtherKind(prev.kind);
+    }
+    let name = format!("{}.wikitext", page_file_name(title));
+    match fetched
+        .titles_by_lower_name
+        .get(&name.to_lowercase())
+        .filter(|first| *first != title)
+    {
+        Some(first) => Admission::SameFileAs(first.clone()),
+        None => Admission::Admit(name),
+    }
+}
+
+/// Downloads all pages of one kind, writes them and updates the index.
+///
+/// One generator run per template, and `Pending` belongs to a run: a page the server lists
+/// without text arrives in a later batch *of that same run*, so each template has to answer
+/// for its own before the next one starts (B45: the characters have two).
 fn fetch_kind(
     kind: PageKind,
     dir: &Path,
     index: &mut BTreeMap<String, IndexEntry>,
-) -> Result<(usize, usize, BTreeSet<String>), Failure> {
-    let mut keep = BTreeSet::new();
-    // `page_file_name` is injective, but Windows's filesystem is case-insensitive:
-    // two titles that collide would keep the first one and warn about it.
-    let mut seen_lower: BTreeMap<String, String> = BTreeMap::new();
-    let mut pages = 0;
-    let mut written = 0;
-    // Pages listed without text: the server relists in every batch the ones already
-    // delivered too, and in a truncated batch it lists ahead of time the ones that will
-    // arrive later. Only at the end of the kind do we know if any are still missing.
-    // One generator run per template, and `Pending` belongs to a run: a page the server
-    // lists without text arrives in a later batch *of that same run*, so each template has
-    // to answer for its own before the next one starts (B45: the characters have two).
+) -> Result<KindFetch, Failure> {
+    let mut fetched = KindFetch::default();
     for template in kind.templates() {
-        let mut pending = Pending::default();
-        let mut cont = BTreeMap::new();
-        loop {
-            let body = http::get(&pages_url(template, &cont)).map_err(Failure::Error)?;
-            let batch = parse_pages(&body).map_err(Failure::Error)?;
-            for (pageid, title) in &batch.without_revision {
-                pending.seen_without(*pageid, title);
-            }
-            for page in batch.pages {
-                pending.delivered(page.pageid);
-                // Translations (`Steven/de`) transclude the same infobox: they aren't pages of ours.
-                if is_translation_subpage(&page.title) {
-                    continue;
-                }
-                // A page that reappears with text within the same kind silently replaces the
-                // entry; the same page under a different kind stays with the first one and warns.
-                if let Some(prev) = index.get(&page.title).filter(|prev| prev.kind != kind) {
-                    eprintln!(
-                        "  warning: «{}» is already of kind {}; ignored as {}",
-                        page.title,
-                        prev.kind.dir(),
-                        kind.dir()
-                    );
-                    continue;
-                }
-                let name = format!("{}.wikitext", page_file_name(&page.title));
-                if let Some(first) = seen_lower
-                    .get(&name.to_lowercase())
-                    .filter(|first| **first != page.title)
-                {
-                    eprintln!(
-                        "  warning: «{}» and «{}» have the same file name on a case-insensitive \
-                     filesystem; keeping the first one",
-                        first, page.title
-                    );
-                    continue;
-                }
-                seen_lower.insert(name.to_lowercase(), page.title.clone());
-                let path = dir.join(&name);
-                if write_if_changed(&path, &page_bytes(&page.text))
-                    .map_err(|e| io_error(&path, e))?
-                {
-                    written += 1;
-                }
-                if keep.insert(name) {
-                    pages += 1;
-                }
-                index.insert(
-                    page.title,
-                    IndexEntry {
-                        kind,
-                        pageid: page.pageid,
-                        revid: page.revid,
-                        timestamp: page.timestamp,
-                    },
-                );
-            }
-            match batch.cont {
-                Some(c) => cont = c,
-                None => break,
-            }
+        fetch_template(template, kind, dir, index, &mut fetched)?;
+    }
+    Ok(fetched)
+}
+
+/// One template's generator run, batch after batch.
+///
+/// Pages listed without text: the server relists in every batch the ones already delivered
+/// too, and in a truncated batch it lists ahead of time the ones that will arrive later. Only
+/// at the end of the run do we know if any are still missing.
+fn fetch_template(
+    template: &str,
+    kind: PageKind,
+    dir: &Path,
+    index: &mut BTreeMap<String, IndexEntry>,
+    fetched: &mut KindFetch,
+) -> Outcome {
+    let mut pending = Pending::default();
+    let mut cont = BTreeMap::new();
+    loop {
+        let body = http::get(&pages_url(template, &cont)).map_err(Failure::Error)?;
+        let batch = parse_pages(&body).map_err(Failure::Error)?;
+        for (pageid, title) in &batch.without_revision {
+            pending.seen_without(*pageid, title);
         }
-        let unresolved = pending.unresolved();
-        if !unresolved.is_empty() {
-            return Err(Failure::Error(format!(
-                "{}: {} pages listed by {template} but never arrived with text: {}",
-                kind.dir(),
-                unresolved.len(),
-                unresolved.join(", ")
-            )));
+        for page in batch.pages {
+            pending.delivered(page.pageid);
+            file_page(page, kind, dir, index, fetched)?;
+        }
+        match batch.cont {
+            Some(c) => cont = c,
+            None => break,
         }
     }
-    Ok((pages, written, keep))
+    let unresolved = pending.unresolved();
+    if !unresolved.is_empty() {
+        return Err(Failure::Error(format!(
+            "{}: {} pages listed by {template} but never arrived with text: {}",
+            kind.dir(),
+            unresolved.len(),
+            unresolved.join(", ")
+        )));
+    }
+    Ok(())
+}
+
+/// Writes one page and files it in the index, or says why it is not filed.
+fn file_page(
+    page: FetchedPage,
+    kind: PageKind,
+    dir: &Path,
+    index: &mut BTreeMap<String, IndexEntry>,
+    fetched: &mut KindFetch,
+) -> Outcome {
+    let name = match admit(&page.title, kind, index, fetched) {
+        Admission::Admit(name) => name,
+        Admission::Translation => return Ok(()),
+        Admission::OtherKind(prev) => {
+            eprintln!(
+                "  warning: «{}» is already of kind {}; ignored as {}",
+                page.title,
+                prev.dir(),
+                kind.dir()
+            );
+            return Ok(());
+        }
+        Admission::SameFileAs(first) => {
+            eprintln!(
+                "  warning: «{}» and «{}» have the same file name on a case-insensitive \
+                 filesystem; keeping the first one",
+                first, page.title
+            );
+            return Ok(());
+        }
+    };
+    fetched
+        .titles_by_lower_name
+        .insert(name.to_lowercase(), page.title.clone());
+    let path = dir.join(&name);
+    if write_if_changed(&path, &page_bytes(&page.text)).map_err(|e| io_error(&path, e))? {
+        fetched.written += 1;
+    }
+    fetched.keep.insert(name);
+    index.insert(
+        page.title,
+        IndexEntry {
+            kind,
+            pageid: page.pageid,
+            revid: page.revid,
+            timestamp: page.timestamp,
+        },
+    );
+    Ok(())
 }
 
 /// Downloads a whole Cargo table, in pages of `ROWS_PER_REQUEST` rows.
@@ -238,14 +302,16 @@ fn fetch(out: &Path) -> Outcome {
     let mut index = BTreeMap::new();
     for kind in PageKind::ALL {
         let dir = out.join("pages").join(kind.dir());
-        let (pages, written, keep) = fetch_kind(kind, &dir, &mut index)?;
-        let removed = prune(&dir, &keep).map_err(|e| io_error(&dir, e))?;
+        let fetched = fetch_kind(kind, &dir, &mut index)?;
+        let removed = prune(&dir, &fetched.keep).map_err(|e| io_error(&dir, e))?;
         for name in &removed {
             println!("  deleted {}", name);
         }
         println!(
-            "{}: {pages} pages, {written} written, {} deleted",
+            "{}: {} pages, {} written, {} deleted",
             kind.dir(),
+            fetched.keep.len(),
+            fetched.written,
             removed.len()
         );
     }
@@ -362,5 +428,50 @@ mod tests {
     #[test]
     fn page_bytes_normalise_line_endings() {
         assert_eq!(page_bytes("a\r\nb\n"), b"a\nb\n");
+    }
+
+    fn entry(kind: PageKind) -> IndexEntry {
+        IndexEntry {
+            kind,
+            pageid: 1,
+            revid: 1,
+            timestamp: String::new(),
+        }
+    }
+
+    /// A page is filed under the kind being fetched unless it is a translation, belongs to
+    /// another kind already, or would share a file name with another title on a
+    /// case-insensitive filesystem. The same title twice is the server relisting it, and it
+    /// is filed again.
+    #[test]
+    fn admission_decides_where_a_page_goes() {
+        let mut index = BTreeMap::new();
+        index.insert("Cain".to_string(), entry(PageKind::Character));
+        let mut fetched = KindFetch::default();
+        fetched
+            .titles_by_lower_name
+            .insert("the_d6.wikitext".into(), "The D6".into());
+
+        let kind = PageKind::Collectible;
+        assert_eq!(
+            admit("Steven/de", kind, &index, &fetched),
+            Admission::Translation
+        );
+        assert_eq!(
+            admit("Cain", kind, &index, &fetched),
+            Admission::OtherKind(PageKind::Character)
+        );
+        assert_eq!(
+            admit("The d6", kind, &index, &fetched),
+            Admission::SameFileAs("The D6".into())
+        );
+        assert_eq!(
+            admit("The D6", kind, &index, &fetched),
+            Admission::Admit("The_D6.wikitext".into())
+        );
+        assert_eq!(
+            admit("Cain", PageKind::Character, &index, &fetched),
+            Admission::Admit("Cain.wikitext".into())
+        );
     }
 }
