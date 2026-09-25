@@ -42,13 +42,15 @@ pub(crate) fn unlock_of(
     let progress = ipc::SaveProgress::new(flags.as_deref(), counters.as_deref(), catalog);
     let eval = g.map(|g| g.evaluate(&progress));
     ipc::unlock_view(
-        catalog,
-        bosses,
-        wiki::Dataset::embedded().ok(),
-        flags.as_deref(),
-        g,
-        eval.as_ref(),
-        Some(&progress),
+        ipc::UnlockInputs {
+            catalog,
+            bosses,
+            dataset: wiki::Dataset::embedded().ok(),
+            flags: flags.as_deref(),
+            graph: g,
+            eval: eval.as_ref(),
+            progress: Some(&progress),
+        },
         icon_url,
     )
 }

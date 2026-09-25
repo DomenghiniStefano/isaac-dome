@@ -150,13 +150,15 @@ fn view_with(c: &catalog::Catalog, done: &[u32], info: GraphInfo) -> ipc::Unlock
         flags[*id as usize] = true;
     }
     let mut v = ipc::unlock_view(
-        Some(c),
-        &ipc::for_tests::bosses(c),
-        None,
-        Some(&flags),
-        None,
-        None,
-        None,
+        ipc::UnlockInputs {
+            catalog: Some(c),
+            bosses: &ipc::for_tests::bosses(c),
+            dataset: None,
+            flags: Some(&flags),
+            graph: None,
+            eval: None,
+            progress: None,
+        },
         |_| None,
     );
     for n in v.nodes.iter_mut() {

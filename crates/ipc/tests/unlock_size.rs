@@ -38,13 +38,15 @@ fn the_unlock_payload_carries_links_and_stays_small() {
     let Some((c, s)) = real() else { return };
     let flags = s.flags(Kind::Achievements).expect("section 1");
     let view = ipc::unlock_view(
-        Some(&c),
-        &ipc::for_tests::bosses(&c),
-        None,
-        Some(&flags),
-        None,
-        None,
-        None,
+        ipc::UnlockInputs {
+            catalog: Some(&c),
+            bosses: &ipc::for_tests::bosses(&c),
+            dataset: None,
+            flags: Some(&flags),
+            graph: None,
+            eval: None,
+            progress: None,
+        },
         |r| Some(format!("{}://{}", ipc::ICON_SCHEME, r.to_path())),
     );
     let json = serde_json::to_string(&view).expect("serializes");
