@@ -14,11 +14,13 @@
 // the wildcard *is* the assertion, and it fails loudly on a new variant instead of hiding it.
 #![allow(clippy::wildcard_enum_match_arm)]
 
+mod support;
+
 use std::collections::{BTreeMap, BTreeSet};
 
 use catalog::Catalog;
 use ipc::{target_sprite, Target, TargetSprite};
-use unpack::ResourceSet;
+use support::real_catalog;
 
 /// The family of a target, to group the count.
 fn family(t: &Target) -> &'static str {
@@ -96,12 +98,6 @@ fn page_coverage(c: &Catalog) -> BTreeMap<&'static str, Counts> {
         }
     }
     per_family
-}
-
-fn real_catalog() -> Option<Catalog> {
-    let packed = test_support::packed_dir()?;
-    let rs = ResourceSet::open(&packed);
-    Some(Catalog::build(|p| rs.read(p)))
 }
 
 #[test]

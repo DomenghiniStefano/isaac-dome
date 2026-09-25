@@ -3,7 +3,6 @@
 use catalog::{BossId, Catalog, ChallengeId, CharacterId, ItemId, Unlock};
 use wiki::Dataset;
 
-use crate::catalog_view::{item_kind, kind_view};
 use crate::goals::{TargetKey, UnlockTarget};
 use crate::icon::IconRef;
 use crate::target_sprite::BossKeys;
@@ -23,7 +22,7 @@ pub fn resolve_target(
     let mut resolved = crate::goals::Resolved::default();
     match *key {
         TargetKey::Item { item_kind: k, id } => {
-            let i = c.item(item_kind(k), ItemId(id))?;
+            let i = c.item(k, ItemId(id))?;
             resolved.name = c.text(&i.name, english).to_string();
             resolved.icon_url = icon(&IconRef::Item { kind: k, id });
             resolved.page = page_of(dataset, wiki_target::item(i));
@@ -72,7 +71,7 @@ pub fn target_of(
 fn key_of(u: &Unlock) -> TargetKey {
     match *u {
         Unlock::Item { kind, id } => TargetKey::Item {
-            item_kind: kind_view(kind),
+            item_kind: kind,
             id: id.0,
         },
         Unlock::Character { id } => TargetKey::Character { id: id.0 },

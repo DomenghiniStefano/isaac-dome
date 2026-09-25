@@ -50,8 +50,7 @@ pub(crate) fn achievement(id: AchievementId) -> Target {
 
 /// A page, only when the dataset really has one. `Some(target)` is a link the screen can
 /// follow; `None` is a name it draws without one — never a link that leads nowhere. One rule
-/// for every screen that links a page (card #82, S4): the graph, the challenges and the
-/// collection each had their own copy.
+/// for every screen that links a page: the graph, the challenges and the collection.
 pub(crate) fn page_of(dataset: Option<&Dataset>, target: Target) -> Option<Target> {
     dataset?.entry(&target).is_some().then_some(target)
 }

@@ -8,9 +8,10 @@ description = "Normalizes the game's XML into a catalog queryable by id. Pure: b
 [dependencies]
 quick-xml = "0.42"
 serde = { version = "1", features = ["derive"] }
+ts-rs = "12.0.1"
 
 [features]
-# The `for_tests` module and the API only tests reach, kept out of the release build
+# The API only tests reach, kept out of the release build
 # (card #81, C8). The crate's own tests turn it on through the self-reference below.
 test-api = []
 

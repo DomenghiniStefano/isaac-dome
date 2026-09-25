@@ -54,8 +54,8 @@ pub fn archive_views(archives: &[ArchiveInfo]) -> Vec<ArchiveView> {
         .collect()
 }
 
-/// An archive the install has and that did not open (card #80, R6). Its name is one of the
-/// game's own archive names, never a path.
+/// An archive the install has and that did not open. Its name is one of the game's own
+/// archive names, never a path.
 #[derive(Debug, Clone, Serialize, ts_rs::TS)]
 #[serde(rename_all = "camelCase")]
 pub struct BrokenArchiveView {

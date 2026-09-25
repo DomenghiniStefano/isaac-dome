@@ -9,6 +9,7 @@ use quick_xml::events::Event;
 use quick_xml::{Reader, XmlVersion};
 
 use crate::diagnostics::{Diagnostic, SkipReason, Source};
+use crate::ids::AchievementId;
 
 /// An element of the document, in opening order.
 #[derive(Debug, Clone, PartialEq, Eq)]
@@ -195,6 +196,15 @@ pub(crate) fn required_attr<'e>(
 
 /// The folder the root element `root` declares in `attr`, normalized; `default` when it
 /// declares none, or one that normalizes to nothing (`""`, `resources/`).
+/// The achievement an element's `achievement` attribute says unlocks it: how `items.xml`,
+/// `players.xml` and `bossportraits.xml` all spell the gate. `None` when there is none, or it
+/// is not a number.
+pub(crate) fn unlocked_by(e: &Element) -> Option<AchievementId> {
+    e.attr("achievement")
+        .and_then(|a| a.parse().ok())
+        .map(AchievementId)
+}
+
 pub(crate) fn root_attr(els: &[Element], root: &str, attr: &str, default: &str) -> String {
     els.iter()
         .find(|e| e.name == root)

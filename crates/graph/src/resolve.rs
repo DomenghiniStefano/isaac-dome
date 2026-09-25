@@ -17,6 +17,10 @@ pub struct NameIndex {
     items: HashMap<String, (ItemKind, ItemId)>,
 }
 
+/// Trimmed and lowercased, nothing more. Not `wiki::key`, which also collapses whitespace and
+/// reads `&` as `and`. Switching this one over would change which names match — *Jacob and
+/// Esau* would meet *Jacob & Esau* without the alias `corrections.json` carries for it — so it
+/// stays until that is decided on its own.
 fn key(s: &str) -> String {
     s.trim().to_lowercase()
 }

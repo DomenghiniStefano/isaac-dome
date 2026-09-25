@@ -508,6 +508,18 @@ fn a_pool_entry_goes_to_the_first_collectible_kind_with_that_id_and_an_unknown_o
 }
 
 #[test]
+fn a_collectible_by_bare_id_is_the_first_collectible_kind_with_it_and_never_a_trinket() {
+    let items: &[u8] = b"<items><active id=\"4\" gfx=\"a.png\" name=\"A\" /><familiar id=\"4\" gfx=\"f.png\" name=\"F\" /><familiar id=\"6\" gfx=\"g.png\" name=\"G\" /><trinket id=\"5\" gfx=\"t.png\" name=\"T\" /></items>";
+    let c = Catalog::build(|p| (p == "items.xml").then(|| items.to_vec()));
+    let kind_of = |id| c.collectible(ItemId(id)).map(|i| i.kind);
+    // Passive, then active, then familiar: 4 is an active before it is a familiar.
+    assert_eq!(kind_of(4), Some(ItemKind::Active));
+    assert_eq!(kind_of(6), Some(ItemKind::Familiar));
+    assert_eq!(kind_of(5), None, "a trinket is numbered apart");
+    assert_eq!(kind_of(77), None);
+}
+
+#[test]
 fn a_familiar_finds_its_metadata_under_item_and_a_trinket_only_under_trinket() {
     let items: &[u8] = b"<items><familiar id=\"8\" gfx=\"f.png\" name=\"F\" /><trinket id=\"8\" gfx=\"t.png\" name=\"T\" /></items>";
     let meta: &[u8] = b"<items><item id=\"8\" quality=\"2\" tags=\"baby\"/></items>";

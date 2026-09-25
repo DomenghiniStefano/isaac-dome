@@ -12,7 +12,7 @@
 use std::collections::BTreeMap;
 
 use catalog::{Catalog, CharacterId};
-use core_save::{counter_index_of, CounterKey};
+use core_save::counter_index_of;
 use graph::rules::{CounterName, MarkColumn, MarkLevel};
 
 use crate::marks::{cell_at, character_for, Cell, CellLevel, ROSTER};
@@ -42,11 +42,11 @@ impl<'a> SaveProgress<'a> {
     /// that far, or the value isn't a mask. `Some(None)` — read, nothing reached.
     /// `Some(Some(level))` — the highest level its bits show.
     ///
-    /// Read through [`cell_at`], the decoder the matrix draws with (card #82, S3), so bit 2 —
+    /// Read through [`cell_at`], the decoder the matrix draws with, so bit 2 —
     /// "won online", measured 2026-09-12, not a level — is left out here for the same reason
     /// it is left out of a drawn cell's level.
     pub fn level_at(&self, row: usize, column: MarkColumn) -> Option<Option<MarkLevel>> {
-        match cell_at(self.counters?, row, column.position()) {
+        match cell_at(self.counters?, row, column) {
             Cell::Known { level, .. } => Some(reached_level(level)),
             // Not located, past the end of the section, or outside the mask's range: a level
             // read out of any of them would be invented.
@@ -84,17 +84,6 @@ impl graph::evaluate::Profile for SaveProgress<'_> {
     }
 
     fn counter(&self, name: CounterName) -> Option<u32> {
-        self.counters?.get(counter_index_of(key_of(name))).copied()
-    }
-}
-
-/// The tallies: the rules file spells a name, the layout holds the number, and an
-/// exhaustive match is what keeps them joined.
-fn key_of(n: CounterName) -> CounterKey {
-    match n {
-        CounterName::HushKills => CounterKey::HushKills,
-        CounterName::DeliriumKills => CounterKey::DeliriumKills,
-        CounterName::MotherKills => CounterKey::MotherKills,
-        CounterName::BeastKills => CounterKey::BeastKills,
+        self.counters?.get(counter_index_of(name)).copied()
     }
 }
