@@ -1,7 +1,6 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 import { StoreId } from '@/lib/constants/stores'
-import { asIpcError } from '@/lib/ipc/errors'
 import {
   queue as readQueue,
   queueAdd,
@@ -11,7 +10,7 @@ import {
 } from '@/lib/ipc/queue'
 import type { IpcError, QueueView } from '@/lib/ipc/types'
 import { LoadStatus } from './loadStatus'
-import { tracked } from './tracked'
+import { attempt, tracked } from './tracked'
 
 export interface QueueMove {
   achievement: number
@@ -43,21 +42,16 @@ export const useQueueStore = defineStore(StoreId.Queue, () => {
     })
   }
 
+  // The last refusal stays on screen until this write has answered: the answer clears it, not
+  // the asking.
   const write = async (run: () => Promise<QueueView>): Promise<boolean> => {
     busy.value = true
     lastMove.value = null
-    try {
+    const landed = await attempt(mutationFailed, mutationError, async () => {
       view.value = await run()
-      mutationFailed.value = false
-      mutationError.value = null
-      return true
-    } catch (e) {
-      mutationFailed.value = true
-      mutationError.value = asIpcError(e)
-      return false
-    } finally {
-      busy.value = false
-    }
+    })
+    busy.value = false
+    return landed
   }
 
   const add = async (achievement: number): Promise<void> => {
