@@ -22,7 +22,7 @@ mod transformation;
 
 pub use blocks::parse_blocks;
 pub use build::build;
-pub use dataset::{Counts, Dataset, DatasetError, Meta, Patch, Source, SCHEMA_VERSION};
+pub use dataset::{Counts, Dataset, DatasetError, Meta, Patch, Source, HOST, SCHEMA_VERSION};
 pub use diagnostics::Diagnostics;
 pub use editions::{parse_code, Editions};
 pub use infobox::{

@@ -37,6 +37,10 @@ pub struct Patch {
     pub date: String,
 }
 
+/// The wiki the dataset is derived from: the attribution's URL in [`Source`], and the host
+/// `wiki-snapshot` downloads from. One constant, so the two cannot name different wikis.
+pub const HOST: &str = "https://bindingofisaacrebirth.wiki.gg";
+
 /// Provenance and license: the dataset is derived from the wiki and travels with attribution.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]

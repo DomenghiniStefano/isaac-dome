@@ -3,7 +3,7 @@
 
 use std::collections::BTreeMap;
 
-use crate::dataset::{Dataset, Meta, Patch, Source};
+use crate::dataset::{Dataset, Meta, Patch, Source, HOST};
 use crate::infobox::{extract_infoboxes, InfoboxKind, RawInfobox};
 use crate::page::{parse_page, PageKind};
 use crate::raw::{Raw, RawPage};
@@ -58,7 +58,7 @@ pub fn build(raw: &Raw, corrections: &Corrections) -> Dataset {
     ds.meta.last_known_patch = last_known_patch(&raw.versions);
     ds.meta.source = Source {
         name: "The Binding of Isaac: Rebirth Wiki".into(),
-        url: "https://bindingofisaacrebirth.wiki.gg".into(),
+        url: HOST.into(),
         license: "CC BY-SA 4.0".into(),
     };
     ds.meta.counts = ds.counts();
