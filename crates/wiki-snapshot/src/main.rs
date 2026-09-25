@@ -366,8 +366,8 @@ fn print_meta(ds: &Dataset) {
         Some(p) => println!("last known patch: {} ({})", p.number, p.date),
         None => println!("last known patch: none"),
     }
-    // Every counter, destructured **without `..`** (card #80, item 14): five of the ten were
-    // never printed, and a counter added later now breaks the build until it is.
+    // Every counter, destructured **without `..`**, so a counter added later breaks the build
+    // until it is printed: named by hand, five of the ten went unprinted.
     let wiki::Diagnostics {
         unresolved,
         unknown_templates,
