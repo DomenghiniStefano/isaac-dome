@@ -6,7 +6,7 @@ import { Card, CardHeader, CardTitle } from '@/components/ui/card'
 import { DragGhost } from '@/components/ui/drag'
 import { useDragList } from '@/composables/useDragList'
 import { useMessages } from '@/i18n'
-import { EventKey } from '@/lib/constants/eventKeys'
+
 import { Axis, boxAt } from '@/lib/drag/dragList'
 import type { Box, Point } from '@/lib/drag/dragList'
 import type {
@@ -16,10 +16,10 @@ import type {
 } from '@/lib/ipc/types'
 import {
   DropEdge,
-  StepDirection,
   dropAnchor,
   dropEdge,
   stepAnchor,
+  stepDirection,
 } from '@/lib/plan/queueDrop'
 import { queueExtras } from '@/lib/plan/queueExtras'
 import { knownText, rowId, stoppedUnder } from '@/lib/plan/queueRows'
@@ -88,18 +88,23 @@ const gap = computed((): number | null => {
   return landing.edge === DropEdge.Above ? landing.index : landing.index + 1
 })
 
-const grabbed = computed(() =>
-  drag.from.value === null ? null : props.rows[drag.from.value],
+// What each row draws, worked out once per answer from the queue. In the template these were
+// two calls per row per render, and `queueExtras` reads the whole queue for each row: O(n²) on
+// every render, and a drag renders on every pointer move.
+const drawn = computed(() =>
+  props.rows.map((row) => ({
+    row,
+    model: rowModel(row.node, t),
+    extras: queueExtras(row, props.rows),
+  })),
 )
 
-const directionOf = (key: string): StepDirection | null => {
-  if (key === EventKey.ArrowUp) return StepDirection.Up
-  if (key === EventKey.ArrowDown) return StepDirection.Down
-  return null
-}
+const grabbed = computed(() =>
+  drag.from.value === null ? null : drawn.value[drag.from.value],
+)
 
 const onStep = (index: number, e: KeyboardEvent) => {
-  const direction = e.altKey ? directionOf(e.key) : null
+  const direction = stepDirection(e.key, e.altKey)
   if (!direction || props.busy) return
   e.preventDefault()
   const anchor = stepAnchor(ids.value, index, direction)
@@ -142,7 +147,7 @@ const hint = computed((): string => {
       @pointercancel="drag.end"
     >
       <div
-        v-for="(row, index) in rows"
+        v-for="({ row, model, extras }, index) in drawn"
         :key="rowId(row)"
         data-queue-row
         class="relative border-b border-hairline last:border-b-0"
@@ -152,9 +157,9 @@ const hint = computed((): string => {
           class="absolute inset-x-0 -top-px h-0.5 bg-primary"
         />
         <GoalRow
-          :model="rowModel(row.node, t)"
+          :model="model"
           :node="row.node"
-          :extras="queueExtras(row, rows)"
+          :extras="extras"
           :position="index + 1"
           :dragging="drag.moving.value && drag.from.value === index"
           :busy="busy"
@@ -178,9 +183,9 @@ const hint = computed((): string => {
          of the row's, and must not answer a pointer that is in the middle of a drag. -->
     <DragGhost v-if="drag.ghost.value && grabbed" :box="drag.ghost.value">
       <GoalRow
-        :model="rowModel(grabbed.node, t)"
-        :node="grabbed.node"
-        :extras="queueExtras(grabbed, rows)"
+        :model="grabbed.model"
+        :node="grabbed.row.node"
+        :extras="grabbed.extras"
         :position="(drag.from.value ?? 0) + 1"
         :dragging="false"
         :busy="true"
