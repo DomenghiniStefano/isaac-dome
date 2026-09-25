@@ -1,5 +1,5 @@
 import type { Message, Translate } from '@/i18n/message'
-import { unlockKindText } from '@/components/graph/unlockKindText'
+import { unlockKindText } from './unlockKindText'
 import { assertNever } from '@/lib/assertNever'
 import { oneOf } from '@/lib/oneOf'
 import { characterLabel } from '@/lib/graph/characterName'
@@ -30,7 +30,7 @@ export const stateText: Record<NodeState, Message> = {
 
 // A facet value in words. Values come back from the filter as strings; one that isn't in its
 // set is shown as it came rather than dropped.
-export const facetValueLabel = (
+export const unlockFacetValueLabel = (
   t: Translate,
   facet: FacetId,
   value: string,
