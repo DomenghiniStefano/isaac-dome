@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import type { Target } from '@/lib/ipc/types'
-import { refsOf } from './infoboxRefs'
+import { refOf, refsOf } from './infoboxRefs'
 
 // B40: a transformation's `contributors` are items and trinkets, in page order, that link
 // like any other `Target`. The same resolution `WikiInfobox.vue` already did for one
@@ -34,5 +34,19 @@ describe('refsOf', () => {
 
   it('answers an empty list for an empty list', () => {
     expect(refsOf([], () => null)).toEqual([])
+  })
+})
+
+// A `Target` field (`unlockedBy`, `unlocks`) is a one-reference inline, or nothing at all.
+describe('refOf', () => {
+  it('draws a target as the one reference it is', () => {
+    const target: Target = { kind: 'achievement', id: 3 }
+    expect(refOf(target, () => 'Maggy')).toEqual([
+      { kind: 'ref', target, label: 'Maggy' },
+    ])
+  })
+
+  it('draws no field as no reference', () => {
+    expect(refOf(null, () => 'Maggy')).toEqual([])
   })
 })

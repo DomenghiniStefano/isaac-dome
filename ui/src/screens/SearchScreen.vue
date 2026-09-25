@@ -101,10 +101,8 @@ const limited = computed(() => total.value > (view.value?.hits.length ?? 0))
 const hasQuery = computed(() => typed.value.trim() !== '')
 
 // A click opens the row in the active tab; Ctrl opens it beside, as everywhere else.
-const open = (row: SearchRow, event: MouseEvent) => {
-  if (event.ctrlKey) tabs.open(row.location)
-  else tabs.navigate(row.location)
-}
+const open = (row: SearchRow, event: MouseEvent) =>
+  tabs.go(row.location, event.ctrlKey)
 </script>
 
 <template>
