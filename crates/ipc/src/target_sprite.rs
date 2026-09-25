@@ -157,7 +157,6 @@ fn merge_keys<'a>(
     rows: &[(&'a str, &'a str)],
     wiki: &HashMap<String, (u32, u32)>,
 ) -> HashMap<&'a str, (u32, u32)> {
-    type Tier<'t> = &'t dyn Fn(&str, &str) -> Option<(u32, u32)>;
     let page = |s: &str| wiki.get(&normalized(s)).copied();
     let tiers: [Tier; 3] = [
         &|name, _| page(name),
@@ -168,16 +167,7 @@ fn merge_keys<'a>(
     let mut out: HashMap<&'a str, (u32, u32)> = HashMap::new();
     let mut spoken: HashSet<(u32, u32)> = HashSet::new();
     for tier in tiers {
-        let mut claims: HashMap<(u32, u32), Vec<&'a str>> = HashMap::new();
-        for (name, path) in rows {
-            if out.contains_key(name) {
-                continue;
-            }
-            match tier(name, path) {
-                Some(k) if !spoken.contains(&k) => claims.entry(k).or_default().push(name),
-                _ => {}
-            }
-        }
+        let claims = claims_of(rows, tier, &out, &spoken);
         for (k, names) in &claims {
             spoken.insert(*k);
             if let [only] = names[..] {
@@ -186,6 +176,26 @@ fn merge_keys<'a>(
         }
     }
     out
+}
+
+/// One way of reading a row's key from its `(name, portrait path)`.
+type Tier<'t> = &'t dyn Fn(&str, &str) -> Option<(u32, u32)>;
+
+/// The rows `tier` gives each key to, in row order: only rows that have no key yet, and only
+/// keys no earlier tier spoke about.
+fn claims_of<'a>(
+    rows: &[(&'a str, &'a str)],
+    tier: Tier,
+    out: &HashMap<&'a str, (u32, u32)>,
+    spoken: &HashSet<(u32, u32)>,
+) -> HashMap<(u32, u32), Vec<&'a str>> {
+    rows.iter()
+        .filter(|(name, _)| !out.contains_key(name))
+        .filter_map(|&(name, path)| Some((tier(name, path).filter(|k| !spoken.contains(k))?, name)))
+        .fold(HashMap::new(), |mut claims, (k, name)| {
+            claims.entry(k).or_default().push(name);
+            claims
+        })
 }
 
 /// The dataset's boss pages as `normalized title → (type, variant)`. A title two pages
