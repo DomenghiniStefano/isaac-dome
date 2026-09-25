@@ -1,11 +1,18 @@
 import { describe, expect, it } from 'vitest'
-import type { UnlockNode, UnlockView } from '@/lib/ipc/types'
+import type { AchievementRef, UnlockNode, UnlockView } from '@/lib/ipc/types'
 import {
   achievementNode,
   knownAchievement,
   knownId,
+  knownRef,
   knownText,
+  nodeNumber,
   nodeWithId,
+  refCondition,
+  refIcon,
+  refNumber,
+  refTarget,
+  refText,
 } from './achievementNode'
 
 const node = (id: number): UnlockNode => ({
@@ -106,5 +113,41 @@ describe('a known achievement', () => {
   it('is found by its id, and a slot carrying the same number is not it', () => {
     expect(nodeWithId([unknown, node(1), node(3)], 3)).toStrictEqual(node(3))
     expect(nodeWithId([unknown], 3)).toBeNull()
+  })
+})
+
+describe('an achievement reference', () => {
+  const known: AchievementRef = {
+    kind: 'known',
+    id: 19,
+    text: 'Lost Baby',
+    condition: 'Beat the Lamb',
+    iconUrl: 'asset://19.png',
+  }
+  const slot: AchievementRef = { kind: 'unknown', slot: 640 }
+
+  it('a known one answers everything it carries, and its page', () => {
+    expect(knownRef(known)).toBe(known)
+    expect(refNumber(known)).toBe(19)
+    expect(refText(known)).toBe('Lost Baby')
+    expect(refCondition(known)).toBe('Beat the Lamb')
+    expect(refIcon(known)).toBe('asset://19.png')
+    expect(refTarget(known)).toEqual({ kind: 'achievement', id: 19 })
+  })
+
+  it('a slot answers its number and nothing else', () => {
+    expect(knownRef(slot)).toBeNull()
+    expect(refNumber(slot)).toBe(640)
+    expect(refText(slot)).toBeNull()
+    expect(refCondition(slot)).toBeNull()
+    expect(refIcon(slot)).toBeNull()
+    expect(refTarget(slot)).toBeNull()
+  })
+
+  it('a node is numbered by its reference', () => {
+    expect(nodeNumber(node(19))).toBe(19)
+    expect(
+      nodeNumber({ ...node(3), achievement: { kind: 'unknown', slot: 7 } }),
+    ).toBe(7)
   })
 })

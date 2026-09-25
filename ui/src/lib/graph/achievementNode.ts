@@ -9,15 +9,44 @@ import type {
 // queue, no text to show, no page to open.
 export type KnownAchievement = Extract<AchievementRef, { kind: 'known' }>
 
+// What a reference carries, read once. Every answer about a slot the catalog cannot name is
+// `null`, except its number.
+export const knownRef = (a: AchievementRef): KnownAchievement | null =>
+  a.kind === 'known' ? a : null
+
+// The number a row is known by: the achievement's id, or the save's slot when the catalog
+// cannot name it. A key and a label, never an id to queue — `knownId` is that.
+export const refNumber = (a: AchievementRef): number =>
+  a.kind === 'known' ? a.id : a.slot
+
+export const refText = (a: AchievementRef): string | null =>
+  knownRef(a)?.text ?? null
+
+export const refCondition = (a: AchievementRef): string | null =>
+  knownRef(a)?.condition ?? null
+
+export const refIcon = (a: AchievementRef): string | null =>
+  knownRef(a)?.iconUrl ?? null
+
+// The achievement's wiki page. A slot has none.
+export const refTarget = (a: AchievementRef): Target | null => {
+  const known = knownRef(a)
+  return known ? { kind: 'achievement', id: known.id } : null
+}
+
+// The same readings on a node, which is where most callers hold the reference.
 export const knownAchievement = (node: UnlockNode): KnownAchievement | null =>
-  node.achievement.kind === 'known' ? node.achievement : null
+  knownRef(node.achievement)
 
 // `null` and not `-1`: a sentinel number would be a valid argument to the queue command.
 export const knownId = (node: UnlockNode): number | null =>
   knownAchievement(node)?.id ?? null
 
 export const knownText = (node: UnlockNode): string | null =>
-  knownAchievement(node)?.text ?? null
+  refText(node.achievement)
+
+export const nodeNumber = (node: UnlockNode): number =>
+  refNumber(node.achievement)
 
 // The node for one achievement id, never an unknown slot that happens to carry the same number:
 // a slot's number is its position in the save, not an id.
