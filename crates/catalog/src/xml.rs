@@ -38,6 +38,9 @@ impl Element {
 pub struct XmlError;
 
 /// All the elements of the document, in opening order, with text and comment.
+///
+/// One loop over quick-xml's events, with its state kept in three locals: a pull parser is
+/// a cursor, and this is the one place in the crate that is written as one on purpose.
 pub fn elements(bytes: &[u8]) -> Result<Vec<Element>, XmlError> {
     let mut reader = Reader::from_reader(bytes);
     // No trim_text: quick-xml 0.42 splits entity references (`&amp;`) into `GeneralRef`
@@ -72,13 +75,7 @@ pub fn elements(bytes: &[u8]) -> Result<Vec<Element>, XmlError> {
             }
             Event::GeneralRef(r) => {
                 if let Some(&i) = open.last() {
-                    if let Some(ch) = r.resolve_char_ref().map_err(|_| XmlError)? {
-                        out[i].text.push(ch);
-                    } else {
-                        let resolved = quick_xml::escape::resolve_predefined_entity(r.as_ref())
-                            .ok_or(XmlError)?;
-                        out[i].text.push_str(resolved);
-                    }
+                    push_reference(&mut out[i].text, &r)?;
                 }
             }
             Event::Comment(c) => {
@@ -96,6 +93,18 @@ pub fn elements(bytes: &[u8]) -> Result<Vec<Element>, XmlError> {
         return Err(XmlError); // elements never closed: truncated document
     }
     Ok(out)
+}
+
+/// Appends what an entity reference stands for: a character reference (`&#39;`) or one of
+/// the five predefined entities. Any other entity is an error.
+fn push_reference(text: &mut String, r: &quick_xml::events::BytesRef<'_>) -> Result<(), XmlError> {
+    match r.resolve_char_ref().map_err(|_| XmlError)? {
+        Some(ch) => text.push(ch),
+        None => {
+            text.push_str(quick_xml::escape::resolve_predefined_entity(r).ok_or(XmlError)?);
+        }
+    }
+    Ok(())
 }
 
 /// Adds an open element (`Start` or `Empty`) to `out`, claiming any pending comment
