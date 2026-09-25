@@ -1,6 +1,6 @@
 //! The expensive things, opened once and kept: the catalog, the graph, the archives, the
-//! mark frames, the search index, the database. Plus the active profile's save, which since
-//! N8 is kept too — and is the only one of them that has to be **given up** again, because
+//! mark frames, the search index, the database. Plus the active profile's save, which is
+//! kept too — and is the only one of them that has to be **given up** again, because
 //! the game rewrites it while the app is open. The rule for that lives in `ipc::SaveCache`.
 //!
 //! All wiring. Nothing here has a return value worth checking that is not already checked
@@ -23,7 +23,7 @@ use crate::settings_file;
 /// doesn't open the `ResourceSet` itself: it receives it already open from the caller,
 /// which opens it just once.
 ///
-/// Its boss keys are kept beside it (card #82, S3): settled once, from this catalog and the
+/// Its boss keys are kept beside it: settled once, from this catalog and the
 /// dataset compiled into the binary, and handed to every lookup that names a boss.
 #[derive(Default)]
 pub(crate) struct CatalogState {
@@ -32,7 +32,9 @@ pub(crate) struct CatalogState {
 }
 
 impl CatalogState {
-    pub(crate) fn get_or_build(&self, rs: &ResourceSet) -> &Catalog {
+    /// Private on purpose: the rest of the crate asks [`catalog_and_resources`] or
+    /// [`catalog_now`], so the archives a catalog is built from are always `ResourcesState`'s.
+    fn get_or_build(&self, rs: &ResourceSet) -> &Catalog {
         self.catalog.get_or_init(|| Catalog::build(|p| rs.read(p)))
     }
 
@@ -48,21 +50,31 @@ impl CatalogState {
     }
 }
 
-/// The catalog as it stands now: `None` when the game isn't installed, which every caller
-/// treats as an expected case and never as an error. **The one way to ask for it** in this
-/// crate — the chain from the archives to the catalog used to be written out at every call
-/// site. Nothing is cached on the way out: "absent" comes from `ResourcesState`, which never
-/// keeps it.
+/// The game's archives and the catalog built from them, as they stand now: `None` when the
+/// game isn't installed, which every caller treats as an expected case and never as an error.
+/// **The one way to reach the catalog** in this crate, with [`catalog_now`] for the callers
+/// that need only the catalog: the chain from the archives to it is written here and at no
+/// call site. Nothing is cached on the way out: "absent" comes from `ResourcesState`, which
+/// never keeps it.
+pub(crate) fn catalog_and_resources<'a>(
+    app: &AppHandle,
+    resources: &'a ResourcesState,
+    catalog: &'a CatalogState,
+) -> Option<(&'a ResourceSet, &'a Catalog)> {
+    let rs = resources.get(app)?;
+    Some((rs, catalog.get_or_build(rs)))
+}
+
+/// The catalog as it stands now, without the archives: [`catalog_and_resources`]'s second half.
 pub(crate) fn catalog_now<'a>(
     app: &AppHandle,
     resources: &'a ResourcesState,
     catalog: &'a CatalogState,
 ) -> Option<&'a Catalog> {
-    resources.get(app).map(|rs| catalog.get_or_build(rs))
+    catalog_and_resources(app, resources, catalog).map(|(_, c)| c)
 }
 
-/// The Unlock view Live reads, kept until the save it was evaluated on is read again (card #80,
-/// R10): the watcher reports a line every two seconds during a run, and the profile moves only
+/// The Unlock view Live reads, kept until the save it was evaluated on is read again: the watcher reports a line every two seconds during a run, and the profile moves only
 /// when the game writes the `.dat`. When to build is `ipc::PerSave`'s rule, tested there.
 #[derive(Default)]
 pub(crate) struct LiveUnlockState(pub(crate) ipc::PerSave<Save, ipc::UnlockView>);
@@ -140,7 +152,7 @@ impl SearchState {
             .get_or_init(|| ipc::SearchIndex::build(wiki::Dataset::embedded()))
     }
 }
-/// The active profile's save, from the one read a screen pays for (N8). `NoActiveProfile`
+/// The active profile's save, from the one read a screen pays for. `NoActiveProfile`
 /// when there isn't one: for the UI that means "go to selection", not an error to display.
 ///
 /// Every rule about *when* the last read may stand lives in `ipc::SaveCache`, with its
@@ -186,9 +198,9 @@ pub(crate) fn active_save(app: &AppHandle) -> Result<(ProfileId, Arc<Save>), Ipc
 #[derive(Default)]
 pub(crate) struct SaveState(pub(crate) ipc::SaveCache<Save>);
 /// The app's database, opened on first use and kept once it opens. **A failed open is not
-/// kept** (card #80, R2): permissions, a full disk, a file another program holds — "an
-/// expected failure is never cached", as `ResourcesState` already does, or the only way back
-/// from a moment's failure would be a restart. The reason travels as a `StoreReason` and not
+/// kept**: permissions, a full disk, a file another program holds — "an expected failure is
+/// never cached", as for `ResourcesState`, or the only way back from a moment's failure would
+/// be a restart. The reason travels as a `StoreReason` and not
 /// an `IpcError` because the only variant that would make sense here is `StoreUnavailable` —
 /// the type pins that down, and `plan` puts it straight into the plan without a `match` that
 /// would have to discard impossible variants.
@@ -251,7 +263,7 @@ pub(crate) fn progress_sections(
 
 /// The rules that turn a log line into an event, parsed once; the watcher's handle — kept only
 /// because dropping it would end the watch; and what the archive's reading last met, which
-/// the runs command sends out (card #80, R4).
+/// the runs command sends out.
 #[derive(Default)]
 pub(crate) struct ArchiveState {
     rules: OnceLock<run::Rules>,
@@ -293,10 +305,10 @@ impl run::ItemKinds for AllPassive {
     }
 }
 
-/// Discovery as the user configured it: the folders chosen by hand (B14) tried before the
-/// automatic search. **The one way to discover** in this crate (card #80, item 01) — five
-/// places used to call `discover(&Options::default())`, so a save found in a chosen folder
-/// was accepted by `select_profile` and then answered as `NoActiveProfile` everywhere else.
+/// Discovery as the user configured it: the folders chosen by hand tried before the automatic
+/// search. **The one way to discover** in this crate: `discover(&Options::default())` skips the
+/// chosen folders, so a save found in one would be accepted by `select_profile` and then
+/// answered as `NoActiveProfile` everywhere else — which is what five call sites once did.
 pub(crate) fn discovery_now(app: &AppHandle) -> Discovery {
     discover(&settings_file::options(app))
 }
