@@ -61,11 +61,13 @@ const routeNames: readonly string[] = Object.values(RouteName)
 const isRouteName = (value: unknown): value is RouteName =>
   typeof value === 'string' && routeNames.includes(value)
 
-// Screens that merged into another. A stored tab on one of these is **carried**, not dropped:
+// The route each retired screen merged into, by the name a stored tab may still carry — only
+// the reader consults it, and nothing writes a retired name. A stored tab on one of these is
+// **carried**, not dropped:
 // the reader further down says eight tabs do not vanish because one screen was renamed, and
 // losing the ninth quietly is the same failure at a smaller size. The Plan became the queue
 // inside Obiettivi, so a tab on it opens there, still showing whatever it was showing.
-const RETIRED_ROUTE_NAMES: Readonly<Record<string, RouteName>> = {
+const routeMergedInto: Readonly<Record<string, RouteName>> = {
   plan: RouteName.Goals,
 }
 
@@ -76,7 +78,7 @@ const readLocation = (value: unknown): TabLocation | null => {
   if (typeof value !== 'object' || value === null) return null
   const { name, query } = value as { name?: unknown; query?: unknown }
   const resolved =
-    typeof name === 'string' ? (RETIRED_ROUTE_NAMES[name] ?? name) : name
+    typeof name === 'string' ? (routeMergedInto[name] ?? name) : name
   if (!isRouteName(resolved)) return null
   return query === undefined || query === null
     ? { name: resolved }
@@ -144,8 +146,9 @@ const readTab = (value: unknown): TabSeed | null => {
 }
 
 // A number we can place a window by. `NaN` and `Infinity` are numbers to `typeof` and are not
-// coordinates to anybody else.
-const isFinite = (value: unknown): value is number =>
+// coordinates to anybody else. Not named `isFinite`: that is a global, which coerces a string,
+// and a local that shadows it reads as the global to anybody who does not scroll up.
+const isFiniteNumber = (value: unknown): value is number =>
   typeof value === 'number' && Number.isFinite(value)
 
 // Half a box is not a position: a window placed at a left with no top is a window somewhere
@@ -153,7 +156,7 @@ const isFinite = (value: unknown): value is number =>
 const readBox = (value: unknown): StoredBox | undefined => {
   if (typeof value !== 'object' || value === null) return undefined
   const { left, top, width, height } = value as Record<string, unknown>
-  if (![left, top, width, height].every(isFinite)) return undefined
+  if (![left, top, width, height].every(isFiniteNumber)) return undefined
   return {
     left: left as number,
     top: top as number,
@@ -235,7 +238,7 @@ export const readSession = (raw: string | null): StoredSession | null => {
   // sidebar anybody folded.
   return {
     windows: kept,
-    ...(isFinite(sidebarWidth) ? { sidebarWidth } : {}),
+    ...(isFiniteNumber(sidebarWidth) ? { sidebarWidth } : {}),
     ...(sidebarCollapsed === true ? { sidebarCollapsed } : {}),
   }
 }

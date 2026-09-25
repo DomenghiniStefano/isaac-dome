@@ -19,22 +19,23 @@ export const xy = (cell: number): { x: number; y: number } => ({
 })
 
 /** The four ways the drawing can be nudged, under the grid. */
-export const Direction = {
+export const ShiftDirection = {
   Left: 'left',
   Up: 'up',
   Down: 'down',
   Right: 'right',
 } as const
-export type Direction = (typeof Direction)[keyof typeof Direction]
+export type ShiftDirection =
+  (typeof ShiftDirection)[keyof typeof ShiftDirection]
 
 const onGrid = ({ x, y }: { x: number; y: number }): boolean =>
   x >= 0 && x < WIDTH && y >= 0 && y < HEIGHT
 
-const step: Record<Direction, { x: number; y: number }> = {
-  [Direction.Left]: { x: -1, y: 0 },
-  [Direction.Up]: { x: 0, y: -1 },
-  [Direction.Down]: { x: 0, y: 1 },
-  [Direction.Right]: { x: 1, y: 0 },
+const step: Record<ShiftDirection, { x: number; y: number }> = {
+  [ShiftDirection.Left]: { x: -1, y: 0 },
+  [ShiftDirection.Up]: { x: 0, y: -1 },
+  [ShiftDirection.Down]: { x: 0, y: 1 },
+  [ShiftDirection.Right]: { x: 1, y: 0 },
 }
 
 /**
@@ -53,7 +54,7 @@ const step: Record<Direction, { x: number; y: number }> = {
  */
 export const shift = (
   cells: PaintedCells,
-  direction: Direction,
+  direction: ShiftDirection,
 ): PaintedCells | null => {
   const by = step[direction]
   const moved = range(CELLS).flatMap((cell) => {

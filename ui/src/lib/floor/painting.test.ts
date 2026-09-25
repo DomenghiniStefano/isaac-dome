@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import {
   CELLS,
-  Direction,
+  ShiftDirection,
   WIDTH,
   emptyCells,
   paintStroke,
@@ -70,7 +70,7 @@ describe('shifting the drawing', () => {
 
   it('moves every painted cell one step, and leaves what it left behind empty', () => {
     const before = painted(at(5, 5), at(6, 5))
-    const after = shift(before, Direction.Right)
+    const after = shift(before, ShiftDirection.Right)
     expect(after).not.toBeNull()
     expect(after![at(6, 5)]).toBe(RoomKindView.Normal)
     expect(after![at(7, 5)]).toBe(RoomKindView.Normal)
@@ -83,52 +83,60 @@ describe('shifting the drawing', () => {
       [at(2, 1)],
       RoomKindView.Shop,
     )
-    const after = shift(before, Direction.Down)
+    const after = shift(before, ShiftDirection.Down)
     expect(after![at(1, 2)]).toBe(RoomKindView.Boss)
     expect(after![at(2, 2)]).toBe(RoomKindView.Shop)
   })
 
   it('goes each of the four ways', () => {
     const before = painted(at(6, 6))
-    expect(shift(before, Direction.Left)![at(5, 6)]).toBe(RoomKindView.Normal)
-    expect(shift(before, Direction.Right)![at(7, 6)]).toBe(RoomKindView.Normal)
-    expect(shift(before, Direction.Up)![at(6, 5)]).toBe(RoomKindView.Normal)
-    expect(shift(before, Direction.Down)![at(6, 7)]).toBe(RoomKindView.Normal)
+    expect(shift(before, ShiftDirection.Left)![at(5, 6)]).toBe(
+      RoomKindView.Normal,
+    )
+    expect(shift(before, ShiftDirection.Right)![at(7, 6)]).toBe(
+      RoomKindView.Normal,
+    )
+    expect(shift(before, ShiftDirection.Up)![at(6, 5)]).toBe(
+      RoomKindView.Normal,
+    )
+    expect(shift(before, ShiftDirection.Down)![at(6, 7)]).toBe(
+      RoomKindView.Normal,
+    )
   })
 
   it('refuses the one direction that would push a room off the grid', () => {
     // A room against the left edge: every other direction is still open, which is what makes
     // a disabled arrow readable as "not that way" rather than as "not any more".
     const before = painted(at(0, 6))
-    expect(shift(before, Direction.Left)).toBeNull()
-    expect(shift(before, Direction.Right)).not.toBeNull()
-    expect(shift(before, Direction.Up)).not.toBeNull()
-    expect(shift(before, Direction.Down)).not.toBeNull()
+    expect(shift(before, ShiftDirection.Left)).toBeNull()
+    expect(shift(before, ShiftDirection.Right)).not.toBeNull()
+    expect(shift(before, ShiftDirection.Up)).not.toBeNull()
+    expect(shift(before, ShiftDirection.Down)).not.toBeNull()
   })
 
   it('refuses on any edge, not only the first one it looks at', () => {
-    expect(shift(painted(at(6, 0)), Direction.Up)).toBeNull()
-    expect(shift(painted(at(12, 6)), Direction.Right)).toBeNull()
-    expect(shift(painted(at(6, 12)), Direction.Down)).toBeNull()
+    expect(shift(painted(at(6, 0)), ShiftDirection.Up)).toBeNull()
+    expect(shift(painted(at(12, 6)), ShiftDirection.Right)).toBeNull()
+    expect(shift(painted(at(6, 12)), ShiftDirection.Down)).toBeNull()
   })
 
   it('refuses because of a room on the edge even when most of the drawing is not', () => {
     // The whole drawing moves or none of it does: a move that kept the middle and dropped the
     // one room touching the wall would be the screen editing what you drew.
     const before = painted(at(0, 0), at(5, 5), at(6, 5), at(7, 5))
-    expect(shift(before, Direction.Left)).toBeNull()
+    expect(shift(before, ShiftDirection.Left)).toBeNull()
   })
 
   it('moves an untouched grid to another untouched grid rather than refusing', () => {
     // Nothing to lose, so nothing to refuse. A disabled arrow has to mean one thing only.
-    const after = shift(emptyCells(), Direction.Left)
+    const after = shift(emptyCells(), ShiftDirection.Left)
     expect(after).not.toBeNull()
     expect(after!.every((c) => c === null)).toBe(true)
   })
 
   it('answers a new grid and never the one it was given', () => {
     const before = painted(at(5, 5))
-    const after = shift(before, Direction.Right)
+    const after = shift(before, ShiftDirection.Right)
     expect(after).not.toBe(before)
     expect(before[at(5, 5)]).toBe(RoomKindView.Normal)
   })
