@@ -94,8 +94,8 @@ pub use queue::{
 pub use reasons::{IoReason, SaveReason, SettingsReason, StoreReason};
 pub use release_notes::release_notes;
 pub use resources::{
-    archive_views, data_url, extraction_report, ArchiveMode, ArchiveView, ExtractionReport,
-    SpriteView,
+    archive_views, broken_archive_views, data_url, extraction_report, ArchiveMode, ArchiveReason,
+    ArchiveView, BrokenArchiveView, ExtractionReport, SpriteView,
 };
 pub use roll::{
     deck_preset, drawn_document, preset_from_view, preset_view, roll_space, roll_view, DeckView,

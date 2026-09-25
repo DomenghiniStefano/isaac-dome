@@ -200,6 +200,8 @@ pub fn render() -> String {
     decl::<crate::IpcError>(&cfg, &mut out);
     decl::<crate::ArchiveMode>(&cfg, &mut out);
     decl::<crate::ArchiveView>(&cfg, &mut out);
+    decl::<crate::ArchiveReason>(&cfg, &mut out);
+    decl::<crate::BrokenArchiveView>(&cfg, &mut out);
     decl::<crate::KindCounts>(&cfg, &mut out);
     decl::<crate::CatalogView>(&cfg, &mut out);
     decl::<crate::SpriteView>(&cfg, &mut out);

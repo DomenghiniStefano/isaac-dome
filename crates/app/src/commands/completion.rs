@@ -48,7 +48,13 @@ pub fn extraction_report(
     // Game not installed is an expected case, not an error: the command still answers
     // and the report says there's nothing to extract.
     let Some(resources) = resources.get(&app) else {
-        return Ok(ipc::extraction_report(Vec::new(), None, Vec::new(), wiki));
+        return Ok(ipc::extraction_report(
+            Vec::new(),
+            Vec::new(),
+            None,
+            Vec::new(),
+            wiki,
+        ));
     };
     let catalog = state.get_or_build(resources);
 
@@ -65,6 +71,7 @@ pub fn extraction_report(
 
     Ok(ipc::extraction_report(
         ipc::archive_views(resources.archives()),
+        ipc::broken_archive_views(resources.broken()),
         view,
         sprites,
         wiki,
