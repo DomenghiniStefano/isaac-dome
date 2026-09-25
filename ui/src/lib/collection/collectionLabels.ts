@@ -1,8 +1,9 @@
 import type { Message, Translate } from '@/i18n/message'
-import { unlockKindText } from '@/lib/graph/unlockKindText'
+import { unlockKindLabel } from '@/lib/graph/unlockKindText'
 import { assertNever } from '@/lib/assertNever'
 import { oneOf } from '@/lib/oneOf'
 import { originLabel } from '@/lib/facets/labels'
+import { StateTone, stateDots } from '@/lib/facets/stateTone'
 import type { FilterBarLabels } from '@/lib/facets/labels'
 import type { FacetSlot } from '@/lib/facets/facetOptions'
 import type { Faceting } from '@/lib/facets/faceting'
@@ -15,9 +16,8 @@ import {
   QualityValue,
 } from '@/lib/collection/collectionFacets'
 import { ItemState, itemStateOrder } from '@/lib/collection/itemState'
-import { TargetKind } from '@/lib/ipc/values'
 
-export const collectionFacetTitle: Record<CollectionFacet, Message> = {
+const collectionFacetTitle: Record<CollectionFacet, Message> = {
   [CollectionFacet.State]: 'collection.facet.state',
   [CollectionFacet.Quality]: 'collection.facet.quality',
   [CollectionFacet.Pool]: 'collection.facet.pool',
@@ -50,10 +50,8 @@ export const collectionFacetValueLabel = (
         : value
     case CollectionFacet.Pool:
       return value === NoPool ? t('collection.poolNone') : value
-    case CollectionFacet.Kind: {
-      const kind = oneOf(TargetKind, value)
-      return kind ? t(unlockKindText[kind]) : value
-    }
+    case CollectionFacet.Kind:
+      return unlockKindLabel(t, value)
     case CollectionFacet.Origin:
       return originLabel(t, value)
     default:
@@ -61,38 +59,36 @@ export const collectionFacetValueLabel = (
   }
 }
 
-// A state is never colour alone: the square carries its colour, the name says it. Unreadable
-// wears the unknown hatch, as its badge does.
-export const itemStateDot: Record<ItemState, string> = {
-  [ItemState.InCollection]: 'bg-state-done',
-  [ItemState.Available]: 'bg-state-now',
-  [ItemState.Locked]: 'bg-state-blocked',
-  [ItemState.Unknown]:
-    'hatch-unknown border border-dashed border-state-unknown',
-}
+// Unreadable wears the unknown hatch, as its badge does.
+const itemStateDot = stateDots<ItemState>({
+  [ItemState.InCollection]: StateTone.Done,
+  [ItemState.Available]: StateTone.Now,
+  [ItemState.Locked]: StateTone.Blocked,
+  [ItemState.Unknown]: StateTone.Unknown,
+})
 
 // Which filters are on screen at rest and which are behind the fold (spec 3.10 §3). The state
 // is not one of these: it has its own row, and reaches the bar as its `state` prop.
-export const collectionSlots: FacetSlot<CollectionFacet>[] = [
+const collectionSlots: FacetSlot<CollectionFacet>[] = [
   { facet: CollectionFacet.Quality, inView: true },
   { facet: CollectionFacet.Pool, inView: false },
   { facet: CollectionFacet.Kind, inView: false },
   { facet: CollectionFacet.Origin, inView: false },
 ]
 
-export const sortOrder: CollectionSort[] = [
+const sortOrder: CollectionSort[] = [
   CollectionSort.Quality,
   CollectionSort.Id,
   CollectionSort.Name,
 ]
 
-export const sortText: Record<CollectionSort, Message> = {
+const sortText: Record<CollectionSort, Message> = {
   [CollectionSort.Quality]: 'collection.sort.quality',
   [CollectionSort.Id]: 'collection.sort.id',
   [CollectionSort.Name]: 'collection.sort.name',
 }
 
-export const barLabels: FilterBarLabels = {
+const barLabels: FilterBarLabels = {
   rows: 'collection.items',
   search: 'collection.search',
   sortBy: 'collection.sortBy',

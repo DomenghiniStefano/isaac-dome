@@ -15,7 +15,8 @@ import { useMessages } from '@/i18n'
 import { unlockEntries } from '@/lib/diagnostics/unlock'
 import { emptyList, isFiltering } from '@/lib/facets/emptyList'
 import { characterForms } from '@/lib/graph/characterName'
-import { stateOrder } from '@/lib/graph/nodeState'
+import { NodeState } from '@/lib/graph/nodeState'
+import { oneOf } from '@/lib/oneOf'
 import { FacetId, sortNodes, unlockFaceting } from '@/lib/graph/unlockFacets'
 import { singleQuery } from '@/lib/search/queryParam'
 import { LoadStatus } from '@/stores/loadStatus'
@@ -53,8 +54,7 @@ watch(
 watch(
   () => route.query.state,
   (value) => {
-    const wanted = singleQuery(value)
-    const state = stateOrder.find((s) => s === wanted)
+    const state = oneOf(NodeState, singleQuery(value) ?? '')
     if (state) setPicks(FacetId.State, [state])
   },
   { immediate: true },

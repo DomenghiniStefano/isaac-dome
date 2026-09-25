@@ -1,9 +1,11 @@
 import type { Message, Translate } from '@/i18n/message'
 import type { FilterBarLabels } from '@/lib/facets/labels'
 import { assertNever } from '@/lib/assertNever'
+import { StateTone, stateDots } from '@/lib/facets/stateTone'
 import {
   BlindfoldedValue,
   ChallengeFacet,
+  ChallengeState,
   RewardsValue,
   challengeFaceting,
 } from '@/lib/challenges/challengeFacets'
@@ -14,25 +16,31 @@ import { oneOf } from '@/lib/oneOf'
 
 // The four states a challenge can be in, in the order the row shows them: what is behind you,
 // what you can play now, what is not offered yet, and what could not be read.
-export const challengeStateOrder = ['done', 'available', 'blocked', 'unknown']
+const challengeStateOrder: ChallengeState[] = [
+  ChallengeState.Done,
+  ChallengeState.Available,
+  ChallengeState.Blocked,
+  ChallengeState.Unknown,
+]
 
-export const challengeStateText: Record<string, Message> = {
-  done: 'challenges.state.done',
-  available: 'challenges.state.available',
-  blocked: 'challenges.state.blocked',
-  unknown: 'challenges.state.unknown',
+// A state's plain name: the row's toggle, its chips, and the badge but for a blocked one, which
+// says how many gates it waits for.
+export const challengeStateText: Record<ChallengeState, Message> = {
+  [ChallengeState.Done]: 'challenges.state.done',
+  [ChallengeState.Available]: 'challenges.state.available',
+  [ChallengeState.Blocked]: 'challenges.state.blocked',
+  [ChallengeState.Unknown]: 'challenges.state.unknown',
 }
 
-// A state is never colour alone: the square carries the colour, the name says it. Unreadable
-// wears the unknown hatch, as its badge does.
-export const challengeStateDot: Record<string, string> = {
-  done: 'bg-state-done',
-  available: 'bg-state-now',
-  blocked: 'bg-state-blocked',
-  unknown: 'hatch-unknown border border-dashed border-state-unknown',
-}
+// Unreadable wears the unknown hatch, as its badge does.
+const challengeStateDot = stateDots<ChallengeState>({
+  [ChallengeState.Done]: StateTone.Done,
+  [ChallengeState.Available]: StateTone.Now,
+  [ChallengeState.Blocked]: StateTone.Blocked,
+  [ChallengeState.Unknown]: StateTone.Unknown,
+})
 
-export const challengeFacetTitle: Record<ChallengeFacet, Message> = {
+const challengeFacetTitle: Record<ChallengeFacet, Message> = {
   [ChallengeFacet.State]: 'challenges.facet.state',
   [ChallengeFacet.Character]: 'challenges.facet.character',
   [ChallengeFacet.Rewards]: 'challenges.facet.rewards',
@@ -42,13 +50,13 @@ export const challengeFacetTitle: Record<ChallengeFacet, Message> = {
 // Spec 3.11 §7: the character is the filter a reader reaches for here; what it unlocks and
 // whether it is blindfolded are behind the fold. The state is not one of these — it has its
 // own row.
-export const challengeSlots: FacetSlot<ChallengeFacet>[] = [
+const challengeSlots: FacetSlot<ChallengeFacet>[] = [
   { facet: ChallengeFacet.Character, inView: true },
   { facet: ChallengeFacet.Rewards, inView: false },
   { facet: ChallengeFacet.Blindfolded, inView: false },
 ]
 
-export const barLabels: FilterBarLabels = {
+const barLabels: FilterBarLabels = {
   rows: 'challenges.rows',
   search: 'challenges.search',
 }
@@ -64,8 +72,10 @@ export const challengeFacetValueLabel = (
   characterNames: Map<string, string>,
 ): string => {
   switch (facet) {
-    case ChallengeFacet.State:
-      return challengeStateText[value] ? t(challengeStateText[value]) : value
+    case ChallengeFacet.State: {
+      const state = oneOf(ChallengeState, value)
+      return state ? t(challengeStateText[state]) : value
+    }
     case ChallengeFacet.Character:
       return characterNames.get(value) ?? value
     case ChallengeFacet.Rewards:
