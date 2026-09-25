@@ -1,10 +1,14 @@
 {
   "title": "Isaac",
   "revid": 266789,
+  "description": [],
+  "dlc": [],
+  "unlockedBy": null,
   "infobox": {
     "kind": "character",
     "health": [],
     "damage": "",
+    "tears": "",
     "range": "",
     "speed": "",
     "luck": "",
@@ -41,7 +45,7 @@
         "label": "The D6"
       }
     ],
-    "unlockedBy": null
+    "parent": null
   },
   "sections": [
     {

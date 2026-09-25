@@ -1,9 +1,14 @@
 {
   "title": "Monstro",
   "revid": 267047,
+  "description": [],
+  "dlc": [],
+  "unlockedBy": null,
   "infobox": {
     "kind": "boss",
     "baseHp": 250,
+    "stageHp": [],
+    "variant": null,
     "environment": [
       {
         "kind": "text",
@@ -262,8 +267,7 @@
           }
         ]
       }
-    ],
-    "unlockedBy": null
+    ]
   },
   "sections": [
     {

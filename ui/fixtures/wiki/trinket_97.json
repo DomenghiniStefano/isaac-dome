@@ -1,8 +1,14 @@
 {
   "title": "Tonsil",
   "revid": 266715,
+  "description": [],
+  "dlc": [],
+  "unlockedBy": null,
   "infobox": {
-    "kind": "trinket"
+    "kind": "trinket",
+    "quote": [],
+    "tags": [],
+    "pools": []
   },
   "sections": [
     {

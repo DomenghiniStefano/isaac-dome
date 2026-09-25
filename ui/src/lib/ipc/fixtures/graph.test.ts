@@ -20,7 +20,7 @@ describe('graphAnswers with the game installed', () => {
   })
 
   it('answers the five steps, most fan-out first, as one section', () => {
-    // The pack's payload predates the sections, so it reads as the one basis it carries.
+    // The recorded payload has one section, the basis it was made with.
     expect(steps.sections.map((s) => s.basis)).toEqual(['fanOut'])
     expect(
       steps.sections[0].steps.map((s) =>
