@@ -24,7 +24,7 @@ import {
 import { queueExtras } from '@/lib/plan/queueExtras'
 import { knownText, rowId, stoppedUnder } from '@/lib/plan/queueRows'
 import { rowModel } from '@/lib/plan/rowModel'
-import type { TabLocation } from '@/router/routeTable'
+
 import type { QueueMove } from '@/stores/queue'
 import QueueFootnotes from './QueueFootnotes.vue'
 
@@ -38,9 +38,6 @@ const props = defineProps<{
 const emit = defineEmits<{
   move: [achievement: number, after: number | null]
   remove: [achievement: number]
-  // A row's link, handed up to the screen that owns the tabs (card 80, item 07: it was
-  // emitted by the row and heard by nobody, so it looked like a link and did nothing).
-  navigate: [location: TabLocation, newTab: boolean]
 }>()
 const { t } = useMessages()
 
@@ -164,7 +161,6 @@ const hint = computed((): string => {
           @grab="drag.start(index, $event)"
           @step="onStep(index, $event)"
           @remove="emit('remove', rowId(row))"
-          @navigate="(location, newTab) => emit('navigate', location, newTab)"
         />
         <span
           v-if="index === rows.length - 1 && gap === rows.length"

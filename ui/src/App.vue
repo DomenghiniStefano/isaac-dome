@@ -192,10 +192,8 @@ const header = computed(() => sidebarHeaders[browsing.value])
 const entries = computed(() => sidebarEntries[browsing.value])
 
 // Ctrl+click opens the entry in a new tab, as a browser does.
-const openEntry = (entry: SidebarEntry, event: MouseEvent) => {
-  if (event.ctrlKey) tabs.open(entry.location)
-  else tabs.navigate(entry.location)
-}
+const openEntry = (entry: SidebarEntry, event: MouseEvent) =>
+  tabs.go(entry.location, event.ctrlKey)
 
 // Clicking a section goes to its first page at once, with no second click in the sidebar:
 // this reverses Decision 5 of the shell spec, on purpose (`docs/BACKLOG.md` B24). The

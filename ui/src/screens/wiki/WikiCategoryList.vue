@@ -65,9 +65,7 @@ const noCatalog = computed(
 
 const open = (page: WikiPageRef, event: MouseEvent) => {
   const location = pageLocation(page.target)
-  if (location === null) return
-  if (event.ctrlKey) tabs.open(location)
-  else tabs.navigate(location)
+  if (location !== null) tabs.go(location, event.ctrlKey)
 }
 </script>
 

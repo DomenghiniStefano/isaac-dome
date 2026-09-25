@@ -111,9 +111,7 @@ const reset = () => {
 // search result has (DESIGN-BRIEF.md §4.2).
 const navigate = (target: Target, newTab: boolean) => {
   const location = pageLocation(target)
-  if (location === null) return
-  if (newTab) tabs.open(location)
-  else tabs.navigate(location)
+  if (location !== null) tabs.go(location, newTab)
 }
 </script>
 

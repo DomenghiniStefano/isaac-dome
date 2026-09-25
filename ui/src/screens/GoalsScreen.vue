@@ -100,10 +100,6 @@ const readable = computed((): boolean => {
   )
 })
 const nodes = computed(() => graph.view?.unlock.nodes ?? [])
-const open = (location: TabLocation, newTab: boolean) => {
-  if (newTab) tabs.open(location)
-  else tabs.navigate(location)
-}
 </script>
 
 <template>
@@ -173,7 +169,6 @@ const open = (location: TabLocation, newTab: boolean) => {
             :last-move="queue.lastMove"
             @move="queue.move"
             @remove="queue.remove"
-            @navigate="open"
           />
         </div>
         <AddPane
@@ -190,7 +185,6 @@ const open = (location: TabLocation, newTab: boolean) => {
           @add="queue.add($event)"
           @pick="ask"
           @clear="stopAsking"
-          @navigate="open"
         />
       </div>
     </div>
