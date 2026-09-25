@@ -12,6 +12,7 @@ pub mod for_tests;
 mod goals;
 mod graph;
 mod icon;
+mod last_input;
 mod live;
 mod mark_art;
 mod marks;
