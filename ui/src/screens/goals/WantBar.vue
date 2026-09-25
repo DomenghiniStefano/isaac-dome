@@ -20,12 +20,10 @@ const { view, ask } = useSearch(SearchLimit.Palette)
 // What is being typed is the tab's (`tabView.ts`), so it survives a tab switch, a back and a
 // tear-off. Asked at once as well as on every change: words that come back with the tab must
 // come back with their answers, not as a bar that shows text and no hits under it.
-const reading = useTabView(goalsView)
+const { reading, update } = useTabView(goalsView)
 const typed = computed({
   get: () => reading.value.typed,
-  set: (value: string) => {
-    reading.value = { ...reading.value, typed: String(value) }
-  },
+  set: (value: string) => update({ typed: String(value) }),
 })
 watch(typed, (query) => ask(query), { immediate: true })
 
