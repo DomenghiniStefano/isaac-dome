@@ -15,10 +15,7 @@ import SectionsCard from './profile/SectionsCard.vue'
 const profile = useProfileStore()
 const { t } = useMessages()
 
-const activeProfile = computed(() => {
-  const a = profile.setup?.active
-  return a?.kind === 'active' ? a : null
-})
+const activeProfile = computed(() => profile.activeProfile)
 </script>
 
 <template>

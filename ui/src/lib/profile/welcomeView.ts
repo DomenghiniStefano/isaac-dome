@@ -1,6 +1,7 @@
 import { assertNever } from '@/lib/assertNever'
 import type { MissingReason, SetupState } from '@/lib/ipc/types'
 import { LoadStatus } from '@/stores/loadStatus'
+import { settledProfile } from './settledProfile'
 
 /**
  * Whether the window draws the welcome instead of the shell, and what it says.
@@ -27,7 +28,7 @@ export const welcomeState = (
   status: LoadStatus,
   picking: boolean,
 ): WelcomeState => {
-  const settled = setup !== null && setup.active.kind === 'active'
+  const settled = settledProfile(setup) !== null
   // The same order `gateState` states as its own property: a settled profile wins over a
   // failed reload, so a window that was working a second ago is not blanked by one.
   if (settled && !picking) return { kind: 'hidden' }
