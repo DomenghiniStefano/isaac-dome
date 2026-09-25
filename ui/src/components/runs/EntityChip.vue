@@ -6,7 +6,6 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from '@/components/ui/tooltip'
-import { useGestureModifiers } from '@/composables/useGestureModifiers'
 import { useMessages } from '@/i18n'
 import type { Target } from '@/lib/ipc/types'
 import { pageLocation } from '@/lib/wiki/category'
@@ -29,17 +28,10 @@ const props = defineProps<{
 }>()
 const { t } = useMessages()
 const tabs = useTabsStore()
-const { ctrl } = useGestureModifiers()
 
 const location = computed(() =>
   props.target === null ? null : pageLocation(props.target),
 )
-
-// The app's one gesture: a click navigates the active tab, Ctrl opens the page beside it.
-const open = () => {
-  const to = location.value
-  if (to) tabs.go(to, ctrl.value)
-}
 </script>
 
 <template>
@@ -53,7 +45,7 @@ const open = () => {
           highlighted ? 'border-highlight' : 'border-hairline',
           location === null ? undefined : 'hover:bg-row-hover',
         ]"
-        @click="open"
+        @click="tabs.go(location, $event.ctrlKey)"
       >
         <PixelSprite
           :url="iconUrl"

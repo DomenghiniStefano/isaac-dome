@@ -51,9 +51,6 @@ const opensText = computed(() =>
     ? t('plan.opens', { count: props.model.fanOut })
     : t('plan.opensNothing'),
 )
-const open = (newTab: boolean) => {
-  if (props.model.location) tabs.go(props.model.location, newTab)
-}
 </script>
 
 <template>
@@ -101,7 +98,7 @@ const open = (newTab: boolean) => {
           :variant="ButtonVariant.Ref"
           :size="ButtonSize.Inline"
           class="min-w-0 shrink truncate text-row"
-          @click="open($event.ctrlKey)"
+          @click="tabs.go(model.location, $event.ctrlKey)"
           >{{ model.text }}</Button
         >
         <span v-else class="min-w-0 truncate text-row text-foreground">{{

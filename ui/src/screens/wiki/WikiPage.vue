@@ -14,9 +14,8 @@ import {
 import { useMessages } from '@/i18n'
 import { achievementNode } from '@/lib/graph/achievementNode'
 import { nodeSlot } from '@/lib/graph/unlockFacets'
-import type { Target } from '@/lib/ipc/types'
 import { canQueue, isQueued } from '@/lib/plan/queueRows'
-import { categoryOf, pageLocation } from '@/lib/wiki/category'
+import { categoryOf } from '@/lib/wiki/category'
 import { parsePageKey } from '@/lib/wiki/pageKey'
 import { RouteName } from '@/router/routeTable'
 import type { WikiCategory } from '@/router/routeTable'
@@ -67,12 +66,6 @@ const title = computed(
 )
 const icon = computed(() => (target.value ? wiki.iconFor(target.value) : null))
 
-// A reference replaces the page in this tab, or opens one beside it with Ctrl: the same
-// action as opening a search result (DESIGN-BRIEF.md §4.2).
-const onNavigate = (next: Target, newTab: boolean) => {
-  const location = pageLocation(next)
-  if (location !== null) tabs.go(location, newTab)
-}
 // A page that would not load is this page's failure, not the wiki's (card #80, R9): the retry
 // asks for this page again, and every other tab keeps what it shows.
 const retry = () => {
@@ -113,7 +106,7 @@ const canAdd = computed(
       :page-key="pageKey"
       :icon-for="wiki.iconFor"
       :can-open="wiki.hasPage"
-      @navigate="onNavigate"
+      @navigate="tabs.openPage"
     />
     <div class="flex flex-col gap-5 px-5.5 pt-5">
       <!-- Above the wiki's own answer, and outside it: what the profile knows does not depend
@@ -164,7 +157,7 @@ const canAdd = computed(
             :entry="entry"
             :icon-for="wiki.iconFor"
             :can-open="wiki.hasPage"
-            @navigate="onNavigate"
+            @navigate="tabs.openPage"
           />
           <WikiOutline :sections="entry.sections" />
           <Tooltip>
@@ -190,7 +183,7 @@ const canAdd = computed(
             :sections="entry.sections"
             :icon-for="wiki.iconFor"
             :can-open="wiki.hasPage"
-            @navigate="onNavigate"
+            @navigate="tabs.openPage"
           />
         </div>
       </div>

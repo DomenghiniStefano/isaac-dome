@@ -4,6 +4,8 @@ import { StoreId } from '@/lib/constants/stores'
 import type { Point } from '@/lib/drag/dragList'
 import { oweSeed } from '@/lib/window/seeds'
 import { newWindowLabel, windowPort } from '@/lib/window/windowPort'
+import type { Target } from '@/lib/ipc/types'
+import { pageLocation } from '@/lib/wiki/category'
 import { defaultLocation } from '@/router/routeTable'
 import type { TabLocation } from '@/router/routeTable'
 import type { IncomingHover } from '@/lib/shell/tabs'
@@ -88,9 +90,15 @@ export const useTabsStore = defineStore(StoreId.Tabs, () => {
   }
   // The app's one gesture: a click navigates the active tab, Ctrl opens the page beside it.
   // Every link, row and entry that goes somewhere goes through here, with the modifier it read.
-  const go = (location: TabLocation, newTab: boolean): void => {
+  // No location is a reference with nowhere to go, and it moves nothing.
+  const go = (location: TabLocation | null, newTab: boolean): void => {
+    if (location === null) return
     if (newTab) open(location)
     else navigate(location)
+  }
+  // The same gesture on a wiki reference: its page, here or beside (DESIGN-BRIEF.md §4.2).
+  const openPage = (target: Target, newTab: boolean): void => {
+    go(pageLocation(target), newTab)
   }
   // How the active tab's current entry is being read. The rule is `tabModel`'s; this only holds
   // the result, as with every other tab rule.
@@ -261,6 +269,7 @@ export const useTabsStore = defineStore(StoreId.Tabs, () => {
     move,
     navigate,
     go,
+    openPage,
     seed,
     seedAt,
     session,
