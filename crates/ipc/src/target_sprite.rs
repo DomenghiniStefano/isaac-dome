@@ -41,7 +41,7 @@ pub fn target_sprite<'a>(c: &'a Catalog, bosses: &BossKeys, t: &Target) -> Targe
         // The wiki doesn't distinguish passives, actives and familiars: it just says
         // `Item { id }`. The three share the same id space, so at most one will match.
         Target::Item { id } => c
-            .collectible(catalog::ItemId(*id))
+            .collectible(ItemId(*id))
             .map_or(TargetSprite::Unknown, |i| TargetSprite::Found(&i.sprite)),
         Target::Trinket { id } => c
             .item(ItemKind::Trinket, ItemId(*id))
@@ -193,10 +193,12 @@ fn merge_keys<'a>(
 /// The dataset's boss pages as `normalized title → (type, variant)`. A title two pages
 /// share names neither of them. The subtype is dropped here, as it is in the lookup.
 fn wiki_boss_keys(ds: &Dataset) -> HashMap<String, (u32, u32)> {
-    let titled = ds
-        .bosses
-        .iter()
-        .filter_map(|(key, entry)| Some((normalized(&entry.title), type_and_variant(key)?)));
+    let titled = ds.bosses.iter().filter_map(|(key, entry)| {
+        Some((
+            normalized(&entry.title),
+            Dataset::boss_key_type_and_variant(key)?,
+        ))
+    });
     let seen = titled.fold(
         HashMap::<String, Option<(u32, u32)>>::new(),
         |mut seen, (title, key)| {
@@ -209,12 +211,6 @@ fn wiki_boss_keys(ds: &Dataset) -> HashMap<String, (u32, u32)> {
     seen.into_iter()
         .filter_map(|(t, k)| Some((t, k?)))
         .collect()
-}
-
-/// `"20.0.0"` → `(20, 0)`: the first two numbers of a dataset boss key.
-fn type_and_variant(key: &str) -> Option<(u32, u32)> {
-    let mut parts = key.split('.').map(|n| n.parse::<u32>().ok());
-    Some((parts.next()??, parts.next()??))
 }
 
 /// Case, spaces and punctuation dropped, and a leading `the` with them: the wiki writes
@@ -231,30 +227,30 @@ fn normalized(s: &str) -> String {
 
 /// `…/Portrait_902.0_Wormwood.png` → `Wormwood`, `…/Portrait_Shell.png` → `Shell`.
 fn portrait_stem(path: &str) -> Option<&str> {
-    let file = path.rsplit(['/', '\\']).next()?;
-    let rest = file
-        .strip_suffix(".png")
-        .unwrap_or(file)
-        .strip_prefix("Portrait_")?;
+    let rest = portrait_file(path)?;
+    let rest = rest.strip_suffix(".png").unwrap_or(rest);
     match rest.split_once('_') {
-        Some((head, tail)) if is_key(head) => Some(tail),
+        Some((head, name)) if portrait_key(head).is_some() => Some(name),
         _ => Some(rest),
     }
 }
 
-fn is_key(s: &str) -> bool {
-    s.split_once('.')
-        .is_some_and(|(a, b)| a.parse::<u32>().is_ok() && b.parse::<u32>().is_ok())
-}
-
 /// `…/Portrait_<type>.<variant>_<Name>.png` → `(type, variant)`.
-pub(crate) fn entity_key(path: &str) -> Option<(u32, u32)> {
-    let file = path.rsplit(['/', '\\']).next()?;
-    let rest = file.strip_prefix("Portrait_")?;
+fn entity_key(path: &str) -> Option<(u32, u32)> {
     // The boss name follows the first `_`, and can itself contain dots: cut there
     // first, then split off type and variant.
-    let key = rest.split('_').next()?;
-    let (kind, variant) = key.split_once('.')?;
+    portrait_key(portrait_file(path)?.split('_').next()?)
+}
+
+/// A portrait's file name after `Portrait_`, `.png` left on. `None` for any other file.
+fn portrait_file(path: &str) -> Option<&str> {
+    path.rsplit(['/', '\\']).next()?.strip_prefix("Portrait_")
+}
+
+/// `<type>.<variant>` → the two numbers: the key a portrait's file name may start with,
+/// and the one reading of it behind both functions above.
+fn portrait_key(head: &str) -> Option<(u32, u32)> {
+    let (kind, variant) = head.split_once('.')?;
     Some((kind.parse().ok()?, variant.parse().ok()?))
 }
 
@@ -362,13 +358,20 @@ mod tests {
     /// no part in finding a portrait.
     #[test]
     fn a_dataset_key_gives_its_first_two_numbers_whatever_follows() {
-        assert_eq!(type_and_variant("20.0.0"), Some((20, 0)));
-        assert_eq!(type_and_variant("19.2.1"), Some((19, 2)));
-        assert_eq!(type_and_variant("20.0"), Some((20, 0)));
-        assert_eq!(type_and_variant("20.0.x"), Some((20, 0)));
-        assert_eq!(type_and_variant("20.0.0.0"), Some((20, 0)));
+        assert_eq!(Dataset::boss_key_type_and_variant("20.0.0"), Some((20, 0)));
+        assert_eq!(Dataset::boss_key_type_and_variant("19.2.1"), Some((19, 2)));
+        assert_eq!(Dataset::boss_key_type_and_variant("20.0"), Some((20, 0)));
+        assert_eq!(Dataset::boss_key_type_and_variant("20.0.x"), Some((20, 0)));
+        assert_eq!(
+            Dataset::boss_key_type_and_variant("20.0.0.0"),
+            Some((20, 0))
+        );
         for refused in ["20", "x.0.0", "20.x.0", "", ".0.0"] {
-            assert_eq!(type_and_variant(refused), None, "{refused:?}");
+            assert_eq!(
+                Dataset::boss_key_type_and_variant(refused),
+                None,
+                "{refused:?}"
+            );
         }
     }
 
