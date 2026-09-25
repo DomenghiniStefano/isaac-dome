@@ -1,8 +1,7 @@
+import type { Message } from '@/i18n/message'
 import type { Component } from 'vue'
 import type { RouteComponent, RouteRecordRaw } from 'vue-router'
 import { TabOrigin } from '@/lib/shell/tabs'
-import type { MessageKey } from '@/i18n/messageKey'
-import type { MessageSchema } from '@/i18n/messages/it'
 import CompletionScreen from '@/screens/CompletionScreen.vue'
 import PlaceholderScreen from '@/screens/PlaceholderScreen.vue'
 import {
@@ -17,10 +16,10 @@ import {
 declare module 'vue-router' {
   interface RouteMeta {
     origin: TabOrigin
-    title: MessageKey<MessageSchema>
+    title: Message
     icon: Component
     needsProfile: boolean
-    arrives?: MessageKey<MessageSchema>
+    arrives?: Message
   }
 }
 

@@ -1,9 +1,6 @@
-import type { MessageKey } from '@/i18n/messageKey'
-import type { MessageSchema } from '@/i18n/messages/it'
+import type { Message } from '@/i18n/message'
 import { defaultLocation, locationTitle } from '@/router/routeTable'
 import type { TabLocation } from '@/router/routeTable'
-
-type Message = MessageKey<MessageSchema>
 
 // A tab's history entry: where it is, and how it was being read there. `view` is `unknown` on
 // purpose — the shell stores it and never looks inside, and each screen validates its own

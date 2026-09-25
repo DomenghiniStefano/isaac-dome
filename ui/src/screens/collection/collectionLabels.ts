@@ -1,10 +1,9 @@
+import type { Message, Translate } from '@/i18n/message'
 import { unlockKindText } from '@/components/graph/unlockKindText'
-import type { MessageKey } from '@/i18n/messageKey'
-import type { MessageSchema } from '@/i18n/messages/it'
 import { assertNever } from '@/lib/assertNever'
 import { oneOf } from '@/lib/oneOf'
 import { originLabel } from '@/lib/facets/labels'
-import type { FilterBarLabels, Translate } from '@/lib/facets/labels'
+import type { FilterBarLabels } from '@/lib/facets/labels'
 import type { FacetSlot } from '@/lib/facets/facetOptions'
 import {
   CollectionFacet,
@@ -15,10 +14,7 @@ import {
 import { ItemState } from '@/lib/collection/itemState'
 import { TargetKind } from '@/lib/ipc/values'
 
-export const collectionFacetTitle: Record<
-  CollectionFacet,
-  MessageKey<MessageSchema>
-> = {
+export const collectionFacetTitle: Record<CollectionFacet, Message> = {
   [CollectionFacet.State]: 'collection.facet.state',
   [CollectionFacet.Quality]: 'collection.facet.quality',
   [CollectionFacet.Pool]: 'collection.facet.pool',
@@ -26,7 +22,7 @@ export const collectionFacetTitle: Record<
   [CollectionFacet.Origin]: 'collection.facet.origin',
 }
 
-export const itemStateText: Record<ItemState, MessageKey<MessageSchema>> = {
+export const itemStateText: Record<ItemState, Message> = {
   [ItemState.InCollection]: 'collection.state.inCollection',
   [ItemState.Available]: 'collection.state.available',
   [ItemState.Locked]: 'collection.state.locked',
@@ -87,7 +83,7 @@ export const sortOrder: CollectionSort[] = [
   CollectionSort.Name,
 ]
 
-export const sortText: Record<CollectionSort, MessageKey<MessageSchema>> = {
+export const sortText: Record<CollectionSort, Message> = {
   [CollectionSort.Quality]: 'collection.sort.quality',
   [CollectionSort.Id]: 'collection.sort.id',
   [CollectionSort.Name]: 'collection.sort.name',

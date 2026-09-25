@@ -1,18 +1,17 @@
+import type { Message, Translate } from '@/i18n/message'
 import { unlockKindText } from '@/components/graph/unlockKindText'
-import type { MessageKey } from '@/i18n/messageKey'
-import type { MessageSchema } from '@/i18n/messages/it'
 import { assertNever } from '@/lib/assertNever'
 import { oneOf } from '@/lib/oneOf'
 import { characterLabel } from '@/lib/graph/characterName'
 import type { CharacterForm } from '@/lib/graph/characterName'
 import { NodeState } from '@/lib/graph/nodeState'
 import { originLabel } from '@/lib/facets/labels'
-import type { FilterBarLabels, Translate } from '@/lib/facets/labels'
+import type { FilterBarLabels } from '@/lib/facets/labels'
 import type { FacetSlot } from '@/lib/facets/facetOptions'
 import { FacetId, UnlockSort } from '@/lib/graph/unlockFacets'
 import { TargetKind } from '@/lib/ipc/values'
 
-export const facetTitle: Record<FacetId, MessageKey<MessageSchema>> = {
+export const facetTitle: Record<FacetId, Message> = {
   [FacetId.State]: 'unlock.facet.state',
   [FacetId.Unlocks]: 'unlock.facet.unlocks',
   [FacetId.Origin]: 'unlock.facet.origin',
@@ -20,7 +19,7 @@ export const facetTitle: Record<FacetId, MessageKey<MessageSchema>> = {
 }
 
 // A state's plain name, for the toggle and the chips; the badge says "blocked by N" itself.
-export const stateText: Record<NodeState, MessageKey<MessageSchema>> = {
+export const stateText: Record<NodeState, Message> = {
   [NodeState.Done]: 'graph.stateName.done',
   [NodeState.Now]: 'graph.stateName.now',
   [NodeState.Blocked]: 'graph.stateName.blocked',
@@ -80,7 +79,7 @@ export const sortOrder: UnlockSort[] = [
   UnlockSort.Name,
 ]
 
-export const sortText: Record<UnlockSort, MessageKey<MessageSchema>> = {
+export const sortText: Record<UnlockSort, Message> = {
   [UnlockSort.FanOut]: 'unlock.sort.fanOut',
   [UnlockSort.Steps]: 'unlock.sort.steps',
   [UnlockSort.Name]: 'unlock.sort.name',

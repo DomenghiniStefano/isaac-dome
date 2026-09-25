@@ -1,5 +1,4 @@
-import type { MessageKey } from '@/i18n/messageKey'
-import type { MessageSchema } from '@/i18n/messages/it'
+import type { Message } from '@/i18n/message'
 import type { SearchHit } from '@/lib/ipc/types'
 import { pageLocation } from '@/lib/wiki/category'
 import {
@@ -9,8 +8,6 @@ import {
   wikiCategoryTitle,
 } from '@/router/routeTable'
 import type { TabLocation } from '@/router/routeTable'
-
-type Message = MessageKey<MessageSchema>
 
 // A result is not a row: it is the **destinations** it can open. "Brimstone" is a wiki page
 // and a Collection row, and the two are different places (DESIGN-BRIEF.md §4.2).

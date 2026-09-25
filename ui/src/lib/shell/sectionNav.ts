@@ -1,7 +1,6 @@
+import type { Message } from '@/i18n/message'
 import type { Component } from 'vue'
 import { LayoutGridIcon } from '@lucide/vue'
-import type { MessageKey } from '@/i18n/messageKey'
-import type { MessageSchema } from '@/i18n/messages/it'
 import { assertNever } from '@/lib/assertNever'
 import {
   RouteName,
@@ -15,8 +14,6 @@ import type { TabLocation } from '@/router/routeTable'
 import { NavSection } from './navSection'
 import { TabOrigin } from '@/lib/shell/tabs'
 import { tabOriginIcon } from '@/lib/shell/tabOriginIcon'
-
-type Message = MessageKey<MessageSchema>
 
 // The sidebar shows one section at a time (Schermate.dc.html): the three navbar sections,
 // plus Settings, reached from the cog.
