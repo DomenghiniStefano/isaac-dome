@@ -35,8 +35,8 @@ export const outcomeOrder: RunOutcomeView['kind'][] = [
   'open',
 ]
 
-// Ours, not the wire's: the archive says  and a facet needs two values with
-// names. A const object and not a union of strings — the repo's rule, and the same reason the
+// Ours, not the wire's: the archive says `online: true` or `false`, and a facet needs two values
+// with names. A const object and not a union of strings — the repo's rule, and the same reason the
 // wire's own fieldless enums are objects.
 export const RunCompany = {
   Online: 'online',

@@ -26,8 +26,8 @@ export interface ViewStore<T> {
   refresh: () => Promise<void>
 }
 
-// Three stores wrote the same `view` / `status` / `error` triad and the same `try` / `catch`;
-// only the call in the middle changed. This is the middle, taken as an argument.
+// Every store below wrote the same `view` / `status` / `error` triad and the same `try` /
+// `catch`; only the call in the middle changed. This is the middle, taken as an argument.
 //
 // The view is cleared **before** the read, not after it: a view belongs to one profile, and
 // showing the old one for the length of a command would show it under a profile it was never
@@ -85,7 +85,7 @@ export const useCompletionStore = defineViewStore<MarksMatrix>(
 export const useRunsStore = defineViewStore<RunsView>(StoreId.Runs, runs)
 
 // What the run being watched would open. Its own store: the two screens are two questions,
-// and Live'''s answer changes while Run'''s does not.
+// and Live's answer changes while the Run diary's does not.
 export const useLiveStore = defineViewStore<LiveView>(StoreId.Live, live)
 
 // The active profile's unlock graph, read by Next steps and Unlock alike. One read, and

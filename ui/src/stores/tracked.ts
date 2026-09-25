@@ -6,9 +6,10 @@ import type { IpcError } from '@/lib/ipc/types'
 // One read, with its status and its error written the same way everywhere.
 //
 // Every store wrote this `try` / `catch` by hand and only the call in the middle changed.
-// `defineViewStore` is the whole store for the three whose shape is just the triad; this is
-// the half underneath it, for the three that carry more — the profile loads two things, the
-// queue clears its mutation state first, the wiki skips a read it has already made.
+// `defineViewStore` is the whole store for the ones whose shape is just the triad; this is the
+// half underneath it, for the four that carry more — the profile loads two things, the queue
+// clears its mutation state first, the wiki skips a read it has already made, and the roll
+// writes through the same read.
 //
 // An error that is not ours becomes `null`: the status already says it failed, and a foreign
 // object is not something the UI can say anything about.

@@ -85,9 +85,10 @@ export const useSettingsStore = defineStore(StoreId.Settings, () => {
     })
   }
 
-  // The two switches of the Background screen. Same rule as the size: **applied first, saved
-  // after**, and a failed write is said rather than undone — except that here the app's actual
-  // behaviour is the backend's, so the answer is what the switch ends up showing.
+  // Staying in the background, one of the Background screen's two switches. Same rule as the
+  // size: **applied first, saved after**, and a failed write is said rather than undone —
+  // except that here the app's actual behaviour is the backend's, so the answer is what the
+  // switch ends up showing.
   const setStayInBackground = async (stay: boolean): Promise<void> => {
     stayInBackground.value = stay
     await saving(async () => {
@@ -99,8 +100,8 @@ export const useSettingsStore = defineStore(StoreId.Settings, () => {
 
   // Starting with Windows, and it is the one switch here that **moves after the answer**.
   //
-  // The three above it change what the app is doing *now*, so the honest thing is to do it and
-  // report a failed write. This one changes what happens at the next login: there is nothing to
+  // The other four setters here change what the app is doing *now*, so the honest thing is to do
+  // it and report a failed write. This one changes what happens at the next login: there is nothing to
   // already be doing, the truth is in the registry and not in `settings.json`, and a switch left
   // on because it was clicked would be a promise nothing kept.
   const refreshAutostart = async (): Promise<void> => {
@@ -123,9 +124,9 @@ export const useSettingsStore = defineStore(StoreId.Settings, () => {
       autostartUnavailable.value = view.unavailable
     })
 
-  // Whether the app looks for a new version when it starts. Same rule as the two above —
-  // moved first, saved after — and it is a promise about the *next* launch, so nothing here
-  // goes and checks: the button on the same screen is what checks now.
+  // Whether the app looks for a new version when it starts. Same rule as the size and staying in
+  // the background — moved first, saved after — and it is a promise about the *next* launch, so
+  // nothing here goes and checks: the button on the same screen is what checks now.
   const setAutoUpdate = async (on: boolean): Promise<void> => {
     autoUpdate.value = on
     await saving(async () => {
