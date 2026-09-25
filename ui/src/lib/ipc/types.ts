@@ -1002,11 +1002,6 @@ export type GoalView = {
   note: string | null
 }
 
-export type PlanStep = { goal: GoalId; node: UnlockNode; done: boolean }
-
-export type PlanExpansion =
-  { kind: 'stub' } | { kind: 'computed'; steps: Array<PlanStep> }
-
 /**
  * The plan degrades and says why. `store_available` is derived from the absence of
  * `StoreUnavailable`: the UI uses it as a gate and reads the diagnostics for the text.
@@ -1021,7 +1016,6 @@ export type PlanDiagnostic =
 
 export type PlanView = {
   goals: Array<GoalView>
-  expansion: PlanExpansion
   /**
    * What couldn't be read from the plan: one row per unreadable goal.
    */

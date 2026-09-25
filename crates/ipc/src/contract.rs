@@ -231,8 +231,6 @@ pub fn render() -> String {
     decl::<crate::WantView>(&cfg, &mut out);
     decl::<crate::GoalId>(&cfg, &mut out);
     decl::<crate::GoalView>(&cfg, &mut out);
-    decl::<crate::PlanStep>(&cfg, &mut out);
-    decl::<crate::PlanExpansion>(&cfg, &mut out);
     decl::<crate::PlanDiagnostic>(&cfg, &mut out);
     decl::<crate::PlanView>(&cfg, &mut out);
     decl::<crate::SectionKind>(&cfg, &mut out);
