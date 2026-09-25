@@ -5,15 +5,9 @@ use std::collections::HashSet;
 
 use unpack::Archive;
 
-/// The repo's `samples/` folder, through `test-support`: `packed` is a junction to the
-/// game's folder there.
-fn samples(name: &str) -> std::path::PathBuf {
-    test_support::samples_dir().join(name)
-}
-
 fn main() {
-    let packed = samples("packed");
-    let Ok(list) = std::fs::read_to_string(samples("filelist.txt")) else {
+    let packed = test_support::sample_path("packed");
+    let Ok(list) = std::fs::read_to_string(test_support::sample_path("filelist.txt")) else {
         println!("samples/filelist.txt missing: the path dictionary is needed");
         return;
     };
