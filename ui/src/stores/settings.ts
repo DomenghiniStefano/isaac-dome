@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 import { computed, ref } from 'vue'
 import { StoreId } from '@/lib/constants/stores'
-import { isIpcError } from '@/lib/ipc/errors'
+import { asIpcError } from '@/lib/ipc/errors'
 import {
   setAutoUpdate as saveAutoUpdate,
   setResumeTabs as saveResumeTabs,
@@ -64,16 +64,25 @@ export const useSettingsStore = defineStore(StoreId.Settings, () => {
     }
   }
 
-  const setScale = async (percent: number): Promise<void> => {
-    const wanted = apply(percent)
+  // One write the user asked for, with its outcome said the same way by every setter: the flag
+  // cleared before, set on a failure along with what failed. Nothing here undoes anything —
+  // what the switch shows after a failure is each setter's own decision.
+  const saving = async (write: () => Promise<void>): Promise<void> => {
     saveFailed.value = false
     saveError.value = null
     try {
-      apply((await saveScale(wanted)).scale)
+      await write()
     } catch (e) {
       saveFailed.value = true
-      saveError.value = isIpcError(e) ? e : null
+      saveError.value = asIpcError(e)
     }
+  }
+
+  const setScale = async (percent: number): Promise<void> => {
+    const wanted = apply(percent)
+    await saving(async () => {
+      apply((await saveScale(wanted)).scale)
+    })
   }
 
   // The two switches of the Background screen. Same rule as the size: **applied first, saved
@@ -81,16 +90,11 @@ export const useSettingsStore = defineStore(StoreId.Settings, () => {
   // behaviour is the backend's, so the answer is what the switch ends up showing.
   const setStayInBackground = async (stay: boolean): Promise<void> => {
     stayInBackground.value = stay
-    saveFailed.value = false
-    saveError.value = null
-    try {
+    await saving(async () => {
       stayInBackground.value = (
         await saveStayInBackground(stay)
       ).stayInBackground
-    } catch (e) {
-      saveFailed.value = true
-      saveError.value = isIpcError(e) ? e : null
-    }
+    })
   }
 
   // Starting with Windows, and it is the one switch here that **moves after the answer**.
@@ -112,44 +116,28 @@ export const useSettingsStore = defineStore(StoreId.Settings, () => {
     }
   }
 
-  const setAutostart = async (on: boolean): Promise<void> => {
-    saveFailed.value = false
-    saveError.value = null
-    try {
+  const setAutostart = (on: boolean): Promise<void> =>
+    saving(async () => {
       const view = await saveAutostart(on)
       autostart.value = view.enabled
       autostartUnavailable.value = view.unavailable
-    } catch (e) {
-      saveFailed.value = true
-      saveError.value = isIpcError(e) ? e : null
-    }
-  }
+    })
 
   // Whether the app looks for a new version when it starts. Same rule as the two above —
   // moved first, saved after — and it is a promise about the *next* launch, so nothing here
   // goes and checks: the button on the same screen is what checks now.
   const setAutoUpdate = async (on: boolean): Promise<void> => {
     autoUpdate.value = on
-    saveFailed.value = false
-    saveError.value = null
-    try {
+    await saving(async () => {
       autoUpdate.value = (await saveAutoUpdate(on)).autoUpdate
-    } catch (e) {
-      saveFailed.value = true
-      saveError.value = isIpcError(e) ? e : null
-    }
+    })
   }
 
   const setResumeTabs = async (resume: boolean): Promise<void> => {
     resumeTabs.value = resume
-    saveFailed.value = false
-    saveError.value = null
-    try {
+    await saving(async () => {
       resumeTabs.value = (await saveResumeTabs(resume)).resumeTabs
-    } catch (e) {
-      saveFailed.value = true
-      saveError.value = isIpcError(e) ? e : null
-    }
+    })
   }
 
   // `Ctrl` `+`, `Ctrl` `-`, `Ctrl` `0`: the same ladder and the same saved value as the
