@@ -139,13 +139,19 @@ export const wikiPages = (): Page[] => {
 
 // What an achievement asks of you, as the unlock payload words it: the search fixture
 // matches on it the way the backend matches on `unlock_condition`.
+//
+// The recorded payload predates the resolved condition (graph.ts's `withCondition` reads the
+// same fact): it still carries the game file's `hint`, not the `condition` the real type
+// declares, so it is read with the same cast.
 export const wikiConditions = (): Map<number, string> =>
   new Map(
-    (Object.values(unlocks)[0]?.nodes ?? []).flatMap((node) =>
-      node.achievement.kind === 'known' && node.achievement.condition !== null
-        ? [[node.achievement.id, node.achievement.condition] as const]
-        : [],
-    ),
+    (Object.values(unlocks)[0]?.nodes ?? []).flatMap((node) => {
+      if (node.achievement.kind !== 'known') return []
+      const { hint } = node.achievement as unknown as {
+        hint: string | null | undefined
+      }
+      return hint ? [[node.achievement.id, hint] as const] : []
+    }),
   )
 
 const missing: WikiInfo = { kind: 'missing', reason: 'malformed' }

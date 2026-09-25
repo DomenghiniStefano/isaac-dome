@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import {
   extractionReportAnswer,
+  wikiConditions,
   wikiEntryAnswer,
   wikiIndexAnswer,
 } from './wiki'
@@ -59,6 +60,14 @@ describe('the wiki fixture', () => {
     const none = wikiIndexAnswer({ withWiki: false })
     expect(none.info.kind).toBe('missing')
     expect(none.pages).toHaveLength(0)
+  })
+})
+
+describe('wikiConditions', () => {
+  it('names the game file condition for the achievements it recorded one for', () => {
+    const conditions = wikiConditions()
+    expect(conditions.size).toBe(283)
+    expect(conditions.get(1)).toBe('have 7 or more max red hearts at one time')
   })
 })
 
