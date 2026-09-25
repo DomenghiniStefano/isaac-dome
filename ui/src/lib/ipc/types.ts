@@ -752,7 +752,8 @@ export type UnlockTarget =
     }
 
 /**
- * `catalog::Origin` doesn't cross the IPC boundary: this is its view, like `ItemKindView` for `ItemKind`.
+ * The edition that introduced an item. The one definition: it crosses the IPC as
+ * `OriginView`, a bare camelCase string like `ItemKindView`.
  */
 export const OriginView = {
   Rebirth: 'rebirth',

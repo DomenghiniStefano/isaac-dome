@@ -1,7 +1,7 @@
 //! The wire types of the graph screens: the node, its requirements, the views and their
 //! diagnostics.
 
-use serde::{Deserialize, Serialize};
+use serde::Serialize;
 use wiki::Target;
 
 use crate::catalog_view::ItemKindView;
@@ -185,15 +185,8 @@ pub enum GraphInfo {
     },
 }
 
-/// `catalog::Origin` doesn't cross the IPC boundary: this is its view, like `ItemKindView` for `ItemKind`.
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize, ts_rs::TS)]
-#[serde(rename_all = "camelCase")]
-pub enum OriginView {
-    Rebirth,
-    Afterbirth,
-    AfterbirthPlus,
-    Repentance,
-}
+/// The catalog's own origin, under the name the boundary has always used.
+pub use catalog::Origin as OriginView;
 
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, ts_rs::TS)]
 #[serde(rename_all = "camelCase")]

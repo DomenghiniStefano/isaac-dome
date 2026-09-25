@@ -9,12 +9,15 @@
 //! types with the same name and different meanings would be a conflict just waiting to
 //! confuse whoever reads the imports.
 
-use serde::Serialize;
+use serde::{Deserialize, Serialize};
 
 use crate::ids::ItemId;
 use crate::items::ItemKind;
 
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize)]
+/// The edition that introduced an item. The one definition: it crosses the IPC as
+/// `OriginView`, a bare camelCase string like `ItemKindView`.
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize, ts_rs::TS)]
+#[ts(rename = "OriginView")]
 #[serde(rename_all = "camelCase")]
 pub enum Origin {
     Rebirth,
