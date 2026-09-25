@@ -8,6 +8,7 @@
 //! `PlayabilityUnknown` fire on every load, and the screen still has to answer: a target is an
 //! index pair, not a sprite.
 
+use crate::flags::playable_unless_locked;
 use crate::graph::MarkColumnView;
 use crate::icon::{IconRef, MarkTier};
 use crate::marks::{cell_at, character_for, BOSSES, ROSTER};
@@ -165,7 +166,7 @@ fn row_playable(row: usize, catalog: &Catalog, flags: &[bool]) -> bool {
     };
     match character.unlocked_by {
         None => true,
-        Some(id) => flags.get(id.0 as usize).copied().unwrap_or(true),
+        Some(id) => playable_unless_locked(flags, id.0),
     }
 }
 

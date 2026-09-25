@@ -48,61 +48,64 @@ pub fn wiki_index(
             pages: Vec::new(),
         };
     };
-    let mut page = |target: Target, entry: &Entry| WikiPageRef {
-        icon_url: catalog.and_then(|c| match target_sprite(c, &target) {
-            TargetSprite::Found(_) => icon(&IconRef::Page {
-                target: target.clone(),
+    let pages = pages(ds)
+        .map(|(target, entry)| WikiPageRef {
+            icon_url: catalog.and_then(|c| match target_sprite(c, &target) {
+                TargetSprite::Found(_) => icon(&IconRef::Page {
+                    target: target.clone(),
+                }),
+                TargetSprite::NoArt | TargetSprite::Unknown => None,
             }),
-            TargetSprite::NoArt | TargetSprite::Unknown => None,
-        }),
-        title: entry.title.clone(),
-        target,
-    };
-    let mut pages = Vec::new();
-    pages.extend(
-        ds.items
-            .iter()
-            .map(|(id, e)| page(Target::Item { id: *id }, e)),
-    );
-    pages.extend(
-        ds.trinkets
-            .iter()
-            .map(|(id, e)| page(Target::Trinket { id: *id }, e)),
-    );
-    pages.extend(
-        ds.achievements
-            .iter()
-            .map(|(id, e)| page(Target::Achievement { id: *id }, e)),
-    );
-    pages.extend(
-        ds.bosses
-            .iter()
-            .filter_map(|(key, e)| Some(page(boss_target(key)?, e))),
-    );
-    pages.extend(
-        ds.challenges
-            .iter()
-            .map(|(n, e)| page(Target::Challenge { number: *n }, e)),
-    );
-    pages.extend(
-        ds.characters
-            .iter()
-            .map(|(id, e)| page(Target::Character { id: *id }, e)),
-    );
-    // B46: a transformation is a page like the others since 2026-09-13, when the sixteen
-    // entered the dataset. Left out here, a category could not list one and a reference
-    // could not open one — the index is where both read from.
-    pages.extend(
-        ds.transformations
-            .iter()
-            .map(|(id, e)| page(Target::Transformation { id: *id }, e)),
-    );
+            title: entry.title.clone(),
+            target,
+        })
+        .collect();
     WikiIndex { info, pages }
+}
+
+/// Every page of the dataset with its identity, by kind and then by id: the one walk the
+/// index and the search both read (card #82, S4). Two walks is how B46 happened — the sixteen
+/// transformations entered the dataset on 2026-09-13 and one of the two lists did not learn
+/// about them, and a page that exists and cannot be found reads exactly like a page that
+/// does not exist.
+pub(crate) fn pages(ds: &Dataset) -> impl Iterator<Item = (Target, &Entry)> {
+    let items = ds.items.iter().map(|(id, e)| (Target::Item { id: *id }, e));
+    let trinkets = ds
+        .trinkets
+        .iter()
+        .map(|(id, e)| (Target::Trinket { id: *id }, e));
+    let achievements = ds
+        .achievements
+        .iter()
+        .map(|(id, e)| (Target::Achievement { id: *id }, e));
+    let bosses = ds
+        .bosses
+        .iter()
+        .filter_map(|(key, e)| Some((boss_target(key)?, e)));
+    let challenges = ds
+        .challenges
+        .iter()
+        .map(|(n, e)| (Target::Challenge { number: *n }, e));
+    let characters = ds
+        .characters
+        .iter()
+        .map(|(id, e)| (Target::Character { id: *id }, e));
+    let transformations = ds
+        .transformations
+        .iter()
+        .map(|(id, e)| (Target::Transformation { id: *id }, e));
+    items
+        .chain(trinkets)
+        .chain(achievements)
+        .chain(bosses)
+        .chain(challenges)
+        .chain(characters)
+        .chain(transformations)
 }
 
 /// The inverse of `Dataset::boss_key`: `"20.0.0"` → the entity. A key that isn't three
 /// numbers is one the build never wrote, and the page is left out rather than guessed.
-pub(crate) fn boss_target(key: &str) -> Option<Target> {
+fn boss_target(key: &str) -> Option<Target> {
     let mut parts = key.split('.').map(|s| s.parse::<u32>().ok());
     let target = Target::Entity {
         id: parts.next()??,
@@ -251,7 +254,7 @@ fn days_from_civil(y: i64, m: i64, d: i64) -> i64 {
     let y = if m <= 2 { y - 1 } else { y };
     let era = if y >= 0 { y } else { y - 399 } / 400;
     let yoe = y - era * 400; // [0, 399]
-    let mp = if m > 2 { m - 3 } else { m + 9 }; // [0, 11], marzo = 0
+    let mp = if m > 2 { m - 3 } else { m + 9 }; // [0, 11], March = 0
     let doy = (153 * mp + 2) / 5 + d - 1; // [0, 365]
     let doe = yoe * 365 + yoe / 4 - yoe / 100 + doy; // [0, 146096]
     era * 146_097 + doe - 719_468

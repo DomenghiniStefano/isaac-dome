@@ -5,7 +5,7 @@
 //! requirement links by it; a second copy would be wrong within a release.
 
 use catalog::{AchievementId, Boss, Catalog, Challenge, Character, Item, ItemKind};
-use wiki::Target;
+use wiki::{Dataset, Target};
 
 use crate::target_sprite::boss_keys;
 
@@ -48,4 +48,12 @@ pub(crate) fn boss(c: &Catalog, b: &Boss) -> Option<Target> {
 
 pub(crate) fn achievement(id: AchievementId) -> Target {
     Target::Achievement { id: id.0 }
+}
+
+/// A page, only when the dataset really has one. `Some(target)` is a link the screen can
+/// follow; `None` is a name it draws without one — never a link that leads nowhere. One rule
+/// for every screen that links a page (card #82, S4): the graph, the challenges and the
+/// collection each had their own copy.
+pub(crate) fn page_of(dataset: Option<&Dataset>, target: Target) -> Option<Target> {
+    dataset?.entry(&target).is_some().then_some(target)
 }

@@ -373,7 +373,7 @@ use catalog::{AchievementId, BossId, Catalog, ChallengeId, CharacterId, ItemId, 
 
 use crate::catalog_view::{item_kind, kind_view, ItemKindView};
 use crate::icon::IconRef;
-use crate::wiki_target;
+use crate::wiki_target::{self, page_of};
 
 /// How to get an achievement, in one line. The game's `unlock_condition` first — it is the
 /// game's own words about its own unlock — and the wiki's requirement only where the file
@@ -402,13 +402,6 @@ fn condition_of(a: &catalog::Achievement, dataset: Option<&Dataset>) -> Option<S
     (!line.is_empty()).then_some(line)
 }
 
-/// A page, only when the dataset really has one. `Some(target)` is a link the screen can
-/// follow; `None` is a name it draws without one — never a link that leads nowhere.
-fn page_of(dataset: Option<&Dataset>, target: Option<Target>) -> Option<Target> {
-    let (ds, t) = (dataset?, target?);
-    ds.entry(&t).is_some().then_some(t)
-}
-
 /// The Unlock view: one node per slot 1..=N of section 1 of the save. `flags[i]` is
 /// slot i; slot 0 is unused (the `slot[id]` mapping, verified on 2026-09-05: 169 items
 /// out of 171 seen with the achievement done).
@@ -428,10 +421,8 @@ fn missing_view(
     progress: Option<&dyn graph::Profile>,
 ) -> Vec<RequirementView> {
     let en = catalog::Language::English;
-    let done = |a: Option<AchievementId>| {
-        a.and_then(|a| flags.get(a.0 as usize).copied())
-            .unwrap_or(false)
-    };
+    let done =
+        |a: Option<AchievementId>| a.is_some_and(|a| crate::flags::recorded_done(flags, a.0));
     let mut out = Vec::new();
     for r in &node.requirements {
         match r {
@@ -478,7 +469,7 @@ fn missing_view(
                         id: id.0,
                         name: c.text(&ch.name, en).to_string(),
                         tainted: ch.tainted,
-                        page: page_of(dataset, Some(wiki_target::character(ch))),
+                        page: page_of(dataset, wiki_target::character(ch)),
                     });
                 }
             }
@@ -488,7 +479,7 @@ fn missing_view(
                     out.push(RequirementView::Boss {
                         id: id.0,
                         name: b.name.clone(),
-                        page: page_of(dataset, wiki_target::boss(c, b)),
+                        page: wiki_target::boss(c, b).and_then(|t| page_of(dataset, t)),
                     });
                 }
             }
@@ -499,7 +490,7 @@ fn missing_view(
                     out.push(RequirementView::Challenge {
                         id: id.0,
                         name: ch.name.clone(),
-                        page: page_of(dataset, Some(wiki_target::challenge(ch))),
+                        page: page_of(dataset, wiki_target::challenge(ch)),
                     });
                 }
             }
@@ -512,7 +503,7 @@ fn missing_view(
                         item_kind: kind_view(*kind),
                         id: id.0,
                         name: c.text(&i.name, en).to_string(),
-                        page: page_of(dataset, Some(wiki_target::item(i))),
+                        page: page_of(dataset, wiki_target::item(i)),
                     });
                 }
             }
@@ -532,7 +523,7 @@ fn missing_view(
                             id: t.id.0,
                             name: c.text(&i.name, en).to_string(),
                             unlocked: done(i.unlocked_by),
-                            page: page_of(dataset, Some(wiki_target::item(i))),
+                            page: page_of(dataset, wiki_target::item(i)),
                         })
                     })
                     .collect();
@@ -549,9 +540,9 @@ fn missing_view(
                         unresolved: *unresolved,
                         page: page_of(
                             dataset,
-                            Some(Target::Transformation {
+                            Target::Transformation {
                                 id: *transformation,
-                            }),
+                            },
                         ),
                     });
                 }
@@ -718,7 +709,7 @@ pub fn resolve_target(
             let i = c.item(item_kind(k), ItemId(id))?;
             resolved.name = c.text(&i.name, english).to_string();
             resolved.icon_url = icon(&IconRef::Item { kind: k, id });
-            resolved.page = page_of(dataset, Some(wiki_target::item(i)));
+            resolved.page = page_of(dataset, wiki_target::item(i));
         }
         TargetKey::Character { id } => {
             let ch = c.character(CharacterId(id))?;
@@ -726,20 +717,20 @@ pub fn resolve_target(
             // The base and Tainted forms carry the same name key: without the flag the two
             // go out as one character (`docs/BACKLOG.md` B28).
             resolved.tainted = ch.tainted;
-            resolved.page = page_of(dataset, Some(wiki_target::character(ch)));
+            resolved.page = page_of(dataset, wiki_target::character(ch));
         }
         TargetKey::Boss { id } => {
             let b = c.boss(BossId(id))?;
             resolved.name = b.name.clone();
             // A row `boss_keys` leaves without a key names no page: `None`, never a guessed
             // variant (`wiki_target::boss`).
-            resolved.page = page_of(dataset, wiki_target::boss(c, b));
+            resolved.page = wiki_target::boss(c, b).and_then(|t| page_of(dataset, t));
         }
         TargetKey::Challenge { id } => {
             let ch = c.challenge(ChallengeId(id))?;
             resolved.rewards = ch.rewards.iter().map(|a| a.0).collect();
             resolved.name = ch.name.clone();
-            resolved.page = page_of(dataset, Some(wiki_target::challenge(ch)));
+            resolved.page = page_of(dataset, wiki_target::challenge(ch));
         }
     }
     Some(key.view(resolved))

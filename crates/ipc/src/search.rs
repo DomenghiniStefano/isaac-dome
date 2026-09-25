@@ -11,9 +11,9 @@ use catalog::{Catalog, Language};
 use serde::Serialize;
 use wiki::{Block, Dataset, DatasetError, Entry, Inline, SectionKind, Target};
 
+use crate::flags::recorded_done;
 use crate::icon::IconRef;
 use crate::target_sprite::{target_sprite, TargetSprite};
-use crate::wiki::boss_target;
 use crate::wiki_target;
 
 /// One page as the search reads it: the title, and the text of each section in the order the
@@ -37,37 +37,11 @@ impl SearchIndex {
                 pages: BTreeMap::new(),
             };
         };
-        let mut pages = BTreeMap::new();
-        let mut add = |target: Target, entry: &Entry| {
-            pages.insert(target, doc(entry));
-        };
-        for (id, e) in &ds.items {
-            add(Target::Item { id: *id }, e);
-        }
-        for (id, e) in &ds.trinkets {
-            add(Target::Trinket { id: *id }, e);
-        }
-        for (id, e) in &ds.achievements {
-            add(Target::Achievement { id: *id }, e);
-        }
-        for (key, e) in &ds.bosses {
-            if let Some(t) = boss_target(key) {
-                add(t, e);
-            }
-        }
-        for (n, e) in &ds.challenges {
-            add(Target::Challenge { number: *n }, e);
-        }
-        for (id, e) in &ds.characters {
-            add(Target::Character { id: *id }, e);
-        }
-        // B46: the sixteen transformations are pages like the others. Indexed here as well
-        // as in `wiki_index`, because a page that exists and cannot be found reads exactly
-        // like a page that does not exist — which is how this was found, by typing a name
-        // into the app and getting nothing.
-        for (id, e) in &ds.transformations {
-            add(Target::Transformation { id: *id }, e);
-        }
+        // Every page the index lists, from the same walk (`crate::wiki::pages`): B46 was the
+        // transformations missing from one of two hand-written lists.
+        let pages = crate::wiki::pages(ds)
+            .map(|(target, entry)| (target, doc(entry)))
+            .collect();
         SearchIndex {
             loaded: true,
             pages,
@@ -218,7 +192,7 @@ pub(crate) fn progress(target: &Target, flags: Option<SaveFlags<'_>>) -> Progres
     let mark = |slots: Option<&[bool]>, id: u32| match slots {
         None => ProgressMark::Unknown,
         Some(f) => {
-            if f.get(id as usize).copied().unwrap_or(false) {
+            if recorded_done(f, id) {
                 ProgressMark::Done
             } else {
                 ProgressMark::Pending
