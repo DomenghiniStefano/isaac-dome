@@ -7,7 +7,7 @@
 //! Row numbers are positions in the 34-row order — Magdalene 1, Cain 2, Keeper 12, The
 //! Forgotten 14, Bethany 15, T. Jacob 33.
 
-use core_save::marks::{cell_index, counter_index_of, Column, CounterKey, ROWS};
+use core_save::{cell_index, counter_index_of, Column, CounterKey, ROWS};
 
 /// The bases pinned on 2026-09-08 and re-derived independently on 2026-09-12 by walking
 /// the days an achievement flipped (spec 2026-09-12, §2.3). Values, not a formula: a

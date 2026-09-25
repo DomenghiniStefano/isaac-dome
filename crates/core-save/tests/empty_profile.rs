@@ -159,7 +159,7 @@ fn the_untouched_bestiary_is_structure_and_nothing_else() {
 /// before its silence here means anything.
 #[test]
 fn not_one_cell_of_the_matrix_is_set_in_an_untouched_profile() {
-    use core_save::marks::{cell_index, Column, ROWS};
+    use core_save::{cell_index, Column, ROWS};
 
     let cells = |save: &Save| -> Vec<u32> {
         let counters = save.u32s(Kind::Counters).unwrap_or_default();

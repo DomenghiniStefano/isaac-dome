@@ -15,7 +15,7 @@
 #![allow(clippy::wildcard_enum_match_arm)]
 
 use catalog::Catalog;
-use core_save::marks::{cell_index, Column};
+use core_save::{cell_index, Column};
 use core_save::{Kind, Save};
 use graph::target_key;
 use test_support::dated_series;
@@ -38,7 +38,7 @@ fn character_row(c: &Catalog, label: &str, wiki_id: u32) -> Option<usize> {
         .character(catalog::CharacterId(wiki_id))
         .map(|ch| ch.id)
         .or_else(|| index.character(label))?;
-    (0..core_save::marks::ROWS).find(|&row| ipc::character_for(row, c).map(|ch| ch.id) == Some(id))
+    (0..core_save::ROWS).find(|&row| ipc::character_for(row, c).map(|ch| ch.id) == Some(id))
 }
 
 /// The (boss label, character label, wiki character id) an achievement's references name.

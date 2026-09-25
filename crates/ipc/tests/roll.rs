@@ -462,7 +462,7 @@ fn greed_is_where_the_save_layout_expects() {
     // name "Greed" looked up in `BOSSES`, with a fallback to column 0 that would have read
     // Mom's Heart's bits for every Greedier target, with no error and every other test green.
     // Pinned from the game's widget order: Greed is the eighth column, and the header names it.
-    assert_eq!(core_save::marks::Column::Greed.position(), 7);
+    assert_eq!(core_save::Column::Greed.position(), 7);
     assert_eq!(ipc::BOSSES[7], "Greed");
 }
 
