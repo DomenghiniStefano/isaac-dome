@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import type { Message } from '@/i18n/message'
 import { computed } from 'vue'
 import EntityChip from '@/components/runs/EntityChip.vue'
 import EmptyValue from '@/components/data-state/EmptyValue.vue'
@@ -6,8 +7,6 @@ import { useMessages } from '@/i18n'
 import { columnName } from '@/lib/graph/nodeState'
 import type { AchievementRef, LiveOpen, Target } from '@/lib/ipc/types'
 import { SecondLevelView } from '@/lib/ipc/types'
-import type { MessageKey } from '@/i18n/messageKey'
-import type { MessageSchema } from '@/i18n/messages/it'
 
 // Everything the run could open, in one table instead of a card per cell: the cell is a
 // column, so the boss is still said once per row and the rows can be read against each other
@@ -39,7 +38,7 @@ const iconOf = (a: AchievementRef): string | null =>
 // The second level is said only where it is a different thing to go and do, and in the
 // column's own word (B66): Ultra Greedier in Greed, hard elsewhere. Which is which arrives
 // from Rust in `secondLevel`, `null` at the base level.
-const secondLevelWord: Record<SecondLevelView, MessageKey<MessageSchema>> = {
+const secondLevelWord: Record<SecondLevelView, Message> = {
   [SecondLevelView.Hard]: 'live.secondLevel.hard',
   [SecondLevelView.UltraGreedier]: 'live.secondLevel.ultraGreedier',
 }

@@ -4,8 +4,6 @@ import { Dlc } from '@/lib/ipc/types'
 import { OriginValue } from '@/lib/ipc/values'
 import { oneOf } from '@/lib/oneOf'
 
-export type Label = Message
-
 // The words a faceted list needs, passed as message keys and never as a prefix to build them
 // from. `t(`${prefix}.rows`)` would be a key neither the i18n types nor `pnpm scan` can see: a
 // screen naming a key that does not exist would ship, and show the key.
@@ -14,10 +12,10 @@ export type Label = Message
 // words "ordina per". Everything else the bar says is shared and read from `filters.*`, because
 // three screens writing "filtri attivi" three times is how two of them end up disagreeing.
 export interface FilterBarLabels {
-  rows: Label
-  search: Label
+  rows: Message
+  search: Message
   // Absent on a list with nothing to choose between: the Run diary's order is the archive's.
-  sortBy?: Label
+  sortBy?: Message
 }
 
 // The origin DLC's names are game data, the same as the wiki's editions; only "not stated" is

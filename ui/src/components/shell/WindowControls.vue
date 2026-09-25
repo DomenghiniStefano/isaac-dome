@@ -1,10 +1,9 @@
 <script setup lang="ts">
+import type { Message } from '@/i18n/message'
 import type { Component } from 'vue'
 import { MinusIcon, SquareIcon, XIcon } from '@lucide/vue'
 import { Button, ButtonSize, ButtonVariant } from '@/components/ui/button'
 import { useMessages } from '@/i18n'
-import type { MessageKey } from '@/i18n/messageKey'
-import type { MessageSchema } from '@/i18n/messages/it'
 
 const emit = defineEmits<{
   minimize: []
@@ -14,7 +13,7 @@ const emit = defineEmits<{
 const { t } = useMessages()
 
 interface WindowControl {
-  label: MessageKey<MessageSchema>
+  label: Message
   icon: Component
   variant: ButtonVariant
   press: () => void
