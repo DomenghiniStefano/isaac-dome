@@ -84,7 +84,7 @@ interface Measurable {
   scaleFactor: () => Promise<number>
 }
 
-const boxOf = async (w: Measurable): Promise<WindowBox> => {
+const measureWindow = async (w: Measurable): Promise<WindowBox> => {
   const [p, s, f] = await Promise.all([
     w.outerPosition(),
     w.outerSize(),
@@ -118,7 +118,7 @@ const tauriPort: WindowPort = {
         try {
           if (!(await w.isVisible())) return null
           if (await w.isMinimized()) return null
-          return await boxOf(w)
+          return await measureWindow(w)
         } catch {
           // **A window that is not there is not an error.** `getAllWebviewWindows` keeps
           // listing a window for a while after it closes, and every call on it then answers
@@ -208,7 +208,7 @@ const tauriPort: WindowPort = {
   closeSelf: async () => {
     await getCurrentWindow().close()
   },
-  self: () => boxOf(getCurrentWindow()),
+  self: () => measureWindow(getCurrentWindow()),
 }
 
 // Outside Tauri — `pnpm ui:dev` in a browser tab — windows do not exist. In development the fake

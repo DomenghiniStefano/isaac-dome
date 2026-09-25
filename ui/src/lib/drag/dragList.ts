@@ -23,14 +23,19 @@ export interface Box {
 }
 
 // The box of a measured rectangle, and nothing else of it: a `DOMRect` also carries `x`, `y`,
-// `right`, `bottom` and `toJSON`, and a snapshot is the four numbers a hit test reads. The
-// caller measures (`el.getBoundingClientRect()`); this only copies.
+// `right`, `bottom` and `toJSON`, and a snapshot is the four numbers a hit test reads. Any
+// other rectangle with those four — a window's, which also carries its label and scale — is
+// copied down to them the same way.
 export const boxOf = (r: Box): Box => ({
   left: r.left,
   top: r.top,
   width: r.width,
   height: r.height,
 })
+
+// An element's box, measured now. The one layout read of a drag: done once when the press
+// becomes one, never per pointermove.
+export const measure = (el: Element): Box => boxOf(el.getBoundingClientRect())
 
 // Where the lifted copy is drawn, in client pixels.
 export type GhostBox = Box

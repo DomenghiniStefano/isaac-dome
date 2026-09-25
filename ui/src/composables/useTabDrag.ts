@@ -4,7 +4,7 @@ import { TabDrag, moveIndex, tabDropAt } from '@/lib/shell/tabs'
 import type { TabDrop } from '@/lib/shell/tabs'
 import { useDragList } from '@/composables/useDragList'
 import type { DragList } from '@/composables/useDragList'
-import { Axis, boxOf } from '@/lib/drag/dragList'
+import { Axis, measure } from '@/lib/drag/dragList'
 import type { Box, Point } from '@/lib/drag/dragList'
 import { focusOrder } from '@/lib/window/focusOrder'
 import { WindowMessageKind } from '@/lib/window/messages'
@@ -69,8 +69,7 @@ export const useTabDrag = (options: TabDragOptions): TabDrag => {
 
   const stripBox = (): Box | null => {
     const el = options.strip.value
-    if (!el) return null
-    return boxOf(el.getBoundingClientRect())
+    return el ? measure(el) : null
   }
 
   // Only one window is told at a time, and it is always told when the tab leaves it: a marker

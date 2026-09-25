@@ -27,7 +27,7 @@ import { noteSessionError } from '@/lib/window/sessionHealth'
 import { SessionAction, decideSessionWrite } from '@/lib/window/sessionWriter'
 import { subscriptions } from '@/lib/window/subscriptions'
 import { newWindowLabel, windowPort } from '@/lib/window/windowPort'
-import type { WindowBox } from '@/lib/window/windowPort'
+import { boxOf } from '@/lib/drag/dragList'
 
 // How long a newborn window waits for the seed that says what it holds before falling back to
 // its landing tab. **It is a deadline, not a delay**: whoever owes the seed is another window of
@@ -56,13 +56,6 @@ const CascadeStep = 32
 // is the exact failure this whole sub-project is here to remove. Three attempts is 1.2 s, well
 // past the seed deadline that bounds an honest wait.
 const PostponeLimit = 3
-
-const boxOf = (w: WindowBox): StoredBox => ({
-  left: w.left,
-  top: w.top,
-  width: w.width,
-  height: w.height,
-})
 
 // A window's whole cross-window life: one listener, one exhaustive switch. Mounted once, by
 // App.vue. Docking and hovering fill the arms that are empty here.
