@@ -200,9 +200,10 @@ export const useWindowSession = (): void => {
     if ((await windowPort.labels()).length > 1) return
     const monitors = await windowPort.monitors()
     const self = await windowPort.self()
-    let step = 0
-    for (const window of rest) {
-      step += 1
+    const reopenOne = async (
+      window: StoredWindow,
+      step: number,
+    ): Promise<void> => {
       const wanted = window.box ?? {
         left: self.left + CascadeStep * step,
         top: self.top + CascadeStep * step,
@@ -223,6 +224,17 @@ export const useWindowSession = (): void => {
       )
       await paid
     }
+    // One after the other, each a cascade step further than the last.
+    const reopenFrom = async (
+      windows: readonly StoredWindow[],
+      step: number,
+    ): Promise<void> => {
+      const [first, ...others] = windows
+      if (!first) return
+      await reopenOne(first, step)
+      await reopenFrom(others, step + 1)
+    }
+    await reopenFrom(rest, 1)
   }
 
   const onMessage = (m: WindowMessage) => {
@@ -316,12 +328,15 @@ export const useWindowSession = (): void => {
     // Where this window is, is the other half of what the session stores about it. A window that
     // cannot say where it is still has tabs worth storing, so this never throws upward: the
     // document simply carries no box for it, and the restore cascades it instead.
-    const readBox = async (): Promise<void> => {
+    const measuredBox = async (): Promise<StoredBox | undefined> => {
       try {
-        box = boxOf(await windowPort.self())
+        return boxOf(await windowPort.self())
       } catch {
-        box = undefined
+        return undefined
       }
+    }
+    const readBox = async (): Promise<void> => {
+      box = await measuredBox()
     }
     await readBox()
     await listening.add(() =>
