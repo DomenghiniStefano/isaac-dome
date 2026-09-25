@@ -20,11 +20,13 @@ use crate::text::{Language, Text};
 use crate::unlock::{self, Unlock};
 use crate::versusscreen::{self, PortraitCrops};
 
-/// The sources, by logical path. Public: callers and tests know what will be asked for.
+/// The sources, by logical path: what `build` will ask for. Only the tests read the list —
+/// `build` asks by `path_of` — so it is compiled for them alone.
 ///
 /// Built from [`path_of`], so a path is written once. What this list cannot do is grow by
 /// itself: a new source read by `build` and left out of here fails
 /// `a_reader_that_has_nothing_yields_one_missing_diagnostic_per_source`.
+#[cfg(feature = "test-api")]
 pub const SOURCES: [(&str, Source); 13] = [
     source(Source::Items),
     source(Source::Metadata),
@@ -41,6 +43,7 @@ pub const SOURCES: [(&str, Source); 13] = [
     source(Source::VersusScreenDogma),
 ];
 
+#[cfg(feature = "test-api")]
 const fn source(s: Source) -> (&'static str, Source) {
     (path_of(s), s)
 }

@@ -3381,6 +3381,7 @@ dependencies = [
 name = "roll"
 version = "0.1.0"
 dependencies = [
+ "roll",
  "serde",
  "serde_json",
 ]

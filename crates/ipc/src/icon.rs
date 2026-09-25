@@ -359,7 +359,7 @@ pub fn icon_source<'a>(c: &'a Catalog, bosses: &BossKeys, r: &IconRef) -> Option
         // a game that is not installed both answer None, and the screen draws its own symbol.
         IconRef::Room { kind } => minimap_icon_name(*kind).and_then(|n| c.minimap_icon(n)),
         // Not the catalog's: the symbols and the paper they sit on are pieces of the
-        // widget's sheets, see `mark_source`, `paper_source` and `widget_source`.
+        // widget's sheets, see `mark_source` and `widget_source`.
         IconRef::Mark { .. } | IconRef::Widget { .. } => None,
         // Not the catalog's either: it is a file of the game, named here, and `unknown_source`
         // is the one that answers for it — the borrow this function hands out has to live in

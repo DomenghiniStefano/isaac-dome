@@ -148,7 +148,8 @@ impl Space {
     }
 
     /// Every target the space holds: one per cell, plus one `Greedier` per row. This is the
-    /// total the deck's accounting is checked against.
+    /// total the deck's accounting is checked against, in the tests.
+    #[cfg(feature = "test-api")]
     pub fn target_count(&self) -> usize {
         self.rows * self.columns + self.rows
     }

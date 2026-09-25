@@ -144,7 +144,9 @@ pub fn mark_source(column: Column, tier: MarkTier, frames: &MarkFrames) -> Optio
     Some(sprite_of(anm2, f))
 }
 
-/// The sheet the marks are laid on, at `tier`. Same file, same frame rule as a symbol.
+/// The sheet the marks are laid on, at `tier`. Same file, same frame rule as a symbol. For the
+/// tests: the app draws the paper through `widget_source`, which picks the tier itself.
+#[cfg(feature = "test-api")]
 pub fn paper_source(tier: MarkTier, frames: &MarkFrames) -> Option<SpriteRef> {
     let f = frame_at(&frames.widget, PAPER_LAYER, None, frame_index(tier))?;
     Some(sprite_of(WIDGET_ANM2, f))

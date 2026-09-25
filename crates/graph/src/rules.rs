@@ -260,8 +260,9 @@ impl Rules {
         self.corrections.verdicts.get(key)
     }
 
-    /// Every key a verdict was written for. Used to catch verdicts left behind by a
-    /// snapshot that dropped their target.
+    /// Every key a verdict was written for. Used by the curation tests to catch verdicts left
+    /// behind by a snapshot that dropped their target.
+    #[cfg(feature = "test-api")]
     pub fn verdict_keys(&self) -> impl Iterator<Item = &str> {
         self.corrections.verdicts.keys().map(String::as_str)
     }
