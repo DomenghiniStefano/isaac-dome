@@ -7,9 +7,9 @@ import { RankStep } from './cellView'
 // CSS at all, so the cell would simply come out empty with nothing to say why.
 
 /**
- * One colour per target, and only one: the rank used to walk three steps down the hue, and it
- * no longer needs to, because the height says the same thing more plainly. What the hue is for
- * is telling you which of the three you are looking at without going back to read the switch.
+ * One colour per target, and only one: the height already says which place in the order, more
+ * plainly than walking the hue down three steps would. What the hue is for is telling you which
+ * of the three you are looking at without going back to read the switch.
  *
  * The three are far apart on purpose. Secret was blue and Super was teal, about forty degrees
  * between them, and the first person to open this screen could not tell them apart. Blue,
@@ -53,7 +53,8 @@ export const targetAura: Record<TargetView, string> = {
  * likely" would be reading a number nobody measured.
  *
  * One class per step (`h-floor-level-*` in `assets/utilities.css`), which reads the height
- * token once: binding `var(--floor-level-…)` from a string read it here too (card #81, C5).
+ * token once: binding `var(--floor-level-…)` from a string would read it here too, which the
+ * scan forbids.
  */
 export const levelHeight: Record<RankStep, string> = {
   [RankStep.First]: 'h-floor-level-first',

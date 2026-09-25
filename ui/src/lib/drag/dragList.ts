@@ -45,10 +45,10 @@ export type GhostBox = Box
 export const DragThreshold = 4
 
 // A press becomes a drag on travel in **any** direction, and the list's axis has nothing to do
-// with it. It used to read the axis alone, and that was wrong in the one case that matters:
-// the strip runs along x, the tear-off is a vertical gesture, so dragging a tab straight down
-// out of the window never started a drag at all. Measured on the machine, 2026-09-13. The axis
-// still decides the hit test; it does not decide what a drag is.
+// with it: reading the axis alone would be wrong in the one case that matters — the strip runs
+// along x, the tear-off is a vertical gesture, so dragging a tab straight down out of the window
+// would never start a drag at all. The axis still decides the hit test; it does not decide what
+// a drag is.
 export const crossedThreshold = (
   from: Point,
   to: Point,

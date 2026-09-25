@@ -25,8 +25,7 @@ export const appEventHandlers = (
   },
   [AppEvent.SettingsChanged]: () => void s.settings.load(),
   [AppEvent.PlanChanged]: () => void s.queue.load(),
-  // The run archive fills itself in the background (card #80, item 06: this was a no-op under
-  // a comment calling Live and Runs placeholders). `refresh` reads again only a view some
+  // The run archive fills itself in the background. `refresh` reads again only a view some
   // screen has loaded, so a window with neither screen open reads nothing.
   [AppEvent.RunsChanged]: () => {
     void s.runs.refresh()

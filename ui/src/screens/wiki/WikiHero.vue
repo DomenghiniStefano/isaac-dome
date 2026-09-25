@@ -73,8 +73,8 @@ const id = computed(() => (props.target ? pageId(props.target) : null))
 </script>
 
 <template>
-  <!-- The band that opens a page (card #57). It is the full width of the page box, because a
-       band that stops short of the window reads as a card that happens to be wide. -->
+  <!-- The band that opens a page. It is the full width of the page box, because a band that
+       stops short of the window reads as a card that happens to be wide. -->
   <HeroBand>
     <div class="relative flex flex-col gap-4 @regular/page:flex-row">
       <WikiFigure

@@ -52,7 +52,7 @@ const artSize: Record<WikiFigureSize, ArtSize> = {
 
 // The box a sprite or a portrait is set in. A thumbnail has none — it sits bare in whatever
 // holds it — and the other three are the same frame at three sizes, so a page's figure is
-// recognisably one thing from a list row to the band that opens the page (card #57).
+// recognisably one thing from a list row to the band that opens the page.
 const box: Record<WikiFigureSize, string | null> = {
   [WikiFigureSize.Thumb]: null,
   [WikiFigureSize.Row]: 'size-wiki-row-figure border-hairline tile-wash',

@@ -223,7 +223,7 @@ export const wikiEntryAnswer = (target: Target): Entry | null => {
   return sample ?? null
 }
 
-// The recorded extraction report, as the development-only verification page asks for it
-// (card #80, item 10). A machine that recorded none answers the empty report it would have.
+// The recorded extraction report, as the development-only verification page asks for it. A
+// machine that recorded none answers the empty report it would have.
 export const extractionReportAnswer = (): ExtractionReport | undefined =>
   Object.values(reports)[0]

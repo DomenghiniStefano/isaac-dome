@@ -298,6 +298,6 @@ export const answer = async <T>(
 }
 
 // Whether the development server can answer a command at all. Read by the test that holds the
-// fixtures to every command a wrapper in `lib/ipc/` can send (card #80, item 10).
+// fixtures to every command a wrapper in `lib/ipc/` can send.
 export const hasFixture = (command: CommandName): boolean =>
   handlers[command] !== undefined

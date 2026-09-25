@@ -11,8 +11,8 @@ export interface MessagePart {
   params?: Record<string, unknown>
 }
 
-// Exported for the setup diagnostics, which name a path the app could not read and why (card
-// #81, V9: that reason used to reach the screen as its raw wire value).
+// Exported for the setup diagnostics, which name a path the app could not read and why, as a
+// translated key rather than the raw wire value the reason arrives as.
 export const ioReasonKey = (reason: IoReason): Message => {
   switch (reason) {
     case IoReason.NotFound:
