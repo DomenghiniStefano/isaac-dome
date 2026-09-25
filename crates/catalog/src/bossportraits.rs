@@ -1,13 +1,15 @@
-//! `bossportraits.xml`: 103 bosses with literal name and portrait. Two declared
+//! `bossportraits.xml`: bosses with literal name and portrait, 103 in the Repentance+ file
+//! of 2026-09-04 (`tests/real_data.rs`). Two declared
 //! portraits (*The Beast*, *Cadavra*) don't exist in the archives: the catalog reports
 //! them as-is from the file, and it's up to whoever resolves the sprite to find out.
 
 use crate::diagnostics::{Diagnostic, SkipReason, Source};
 use crate::ids::{AchievementId, BossId};
-use crate::items::normalize_root;
 use crate::sprite::SpriteRef;
 use crate::versusscreen::PortraitCrops;
-use crate::xml::{elements, Element};
+use crate::xml::{self, Element};
+
+const SOURCE: Source = Source::BossPortraits;
 
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct Boss {
@@ -18,23 +20,10 @@ pub struct Boss {
 }
 
 pub fn parse(bytes: &[u8], crops: &PortraitCrops, diagnostics: &mut Vec<Diagnostic>) -> Vec<Boss> {
-    let els = match elements(bytes) {
-        Ok(els) => els,
-        Err(_) => {
-            diagnostics.push(Diagnostic::SourceUnreadable {
-                source: Source::BossPortraits,
-            });
-            return Vec::new();
-        }
+    let Some(els) = xml::read(bytes, SOURCE, diagnostics) else {
+        return Vec::new();
     };
-    let root = els
-        .iter()
-        .find(|e| e.name == "bosses")
-        .and_then(|e| e.attr("root"))
-        .map(normalize_root)
-        .filter(|r| !r.is_empty())
-        .unwrap_or_else(|| "gfx/ui/boss".to_string());
-
+    let root = xml::root_attr(&els, "bosses", "root", "gfx/ui/boss");
     els.iter()
         .filter(|e| e.name == "boss")
         .filter_map(|e| boss_from(e, &root, crops, diagnostics))
@@ -47,42 +36,26 @@ fn boss_from(
     crops: &PortraitCrops,
     d: &mut Vec<Diagnostic>,
 ) -> Option<Boss> {
-    let skip = |id: Option<u32>, reason: SkipReason, d: &mut Vec<Diagnostic>| {
-        d.push(Diagnostic::ElementSkipped {
-            source: Source::BossPortraits,
-            id,
-            reason,
-        });
-        None
-    };
-    let Some(raw_id) = e.attr("id") else {
-        return skip(None, SkipReason::MissingId, d);
-    };
-    let Ok(id) = raw_id.parse::<u32>() else {
-        return skip(None, SkipReason::MalformedId, d);
-    };
-    let Some(portrait) = e.attr("portrait") else {
-        return skip(Some(id), SkipReason::MissingSprite, d);
-    };
-    let Some(name) = e.attr("name") else {
-        return skip(Some(id), SkipReason::MissingName, d);
-    };
+    let id = xml::required_id(e, "id", SOURCE, d)?;
+    let portrait = xml::required_attr(e, "portrait", id, SkipReason::MissingSprite, SOURCE, d)?;
+    let name = xml::required_attr(e, "name", id, SkipReason::MissingName, SOURCE, d)?;
     Some(Boss {
         id: BossId(id),
         name: name.to_string(),
-        portrait: {
-            // Not the whole file: six portraits hold the boss and the rubble it climbs out of
-            // side by side, and Mother holds her hands under her (B70). The rectangle is the
-            // one the game's own versus screen cuts, never a size of ours.
-            let path = format!("{root}/{portrait}");
-            let rect = crops.rect_for(&path);
-            SpriteRef { path, rect }
-        },
+        portrait: cropped_portrait(format!("{root}/{portrait}"), crops),
         unlocked_by: e
             .attr("achievement")
             .and_then(|a| a.parse().ok())
             .map(AchievementId),
     })
+}
+
+/// Not the whole file: six portraits hold the boss and the rubble it climbs out of side by
+/// side, and Mother holds her hands under her (B70). The rectangle is the one the game's own
+/// versus screen cuts, never a size of ours.
+fn cropped_portrait(path: String, crops: &PortraitCrops) -> SpriteRef {
+    let rect = crops.rect_for(&path);
+    SpriteRef { path, rect }
 }
 
 #[cfg(test)]
@@ -163,5 +136,59 @@ mod tests {
             id: Some(7),
             reason: SkipReason::MissingSprite
         }));
+    }
+
+    #[test]
+    fn the_skips_come_in_file_order_with_the_portrait_checked_before_the_name() {
+        let mut d = Vec::new();
+        let b = parse(
+            b"<bosses>
+<boss id=\"x\" name=\"A\" portrait=\"a.png\" />
+<boss name=\"B\" portrait=\"b.png\" />
+<boss id=\"3\" />
+<boss id=\"4\" portrait=\"d.png\" />
+</bosses>",
+            &PortraitCrops::default(),
+            &mut d,
+        );
+        assert!(b.is_empty());
+        let skipped = |id, reason| Diagnostic::ElementSkipped {
+            source: Source::BossPortraits,
+            id,
+            reason,
+        };
+        assert_eq!(
+            d,
+            vec![
+                skipped(None, SkipReason::MalformedId),
+                skipped(None, SkipReason::MissingId),
+                skipped(Some(3), SkipReason::MissingSprite),
+                skipped(Some(4), SkipReason::MissingName),
+            ]
+        );
+    }
+
+    #[test]
+    fn without_a_root_the_portrait_takes_the_game_folder() {
+        let mut d = Vec::new();
+        let b = parse(
+            b"<bosses><boss id=\"1\" name=\"M\" portrait=\"m.png\" achievement=\"x\" /></bosses>",
+            &PortraitCrops::default(),
+            &mut d,
+        );
+        assert_eq!(b[0].portrait.path, "gfx/ui/boss/m.png");
+        assert_eq!(b[0].unlocked_by, None, "a malformed link is no link");
+    }
+
+    #[test]
+    fn junk_is_empty_with_one_diagnostic() {
+        let mut d = Vec::new();
+        assert!(parse(b"<bosses><boss", &PortraitCrops::default(), &mut d).is_empty());
+        assert_eq!(
+            d,
+            vec![Diagnostic::SourceUnreadable {
+                source: Source::BossPortraits
+            }]
+        );
     }
 }

@@ -210,7 +210,7 @@ pub struct Rules {
     corrections: Corrections,
 }
 
-/// Written by hand, and it prints counts. The derived version would dump 641 achievements
+/// Written by hand, and it prints counts. The derived version would dump every achievement
 /// with all their refs into whatever message asked for it — a panic line, an `expect_err`,
 /// a log — which is unreadable rather than dangerous, but unreadable is enough.
 impl std::fmt::Debug for Rules {
