@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ChevronRightIcon } from '@lucide/vue'
+import ListEmptyState from '@/components/data-state/ListEmptyState.vue'
 import { computed } from 'vue'
-import EmptyCategory from '@/components/data-state/EmptyCategory.vue'
 import { Button, ButtonSize, ButtonVariant } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
@@ -27,6 +27,7 @@ import { useTabsStore } from '@/stores/tabs'
 import { useWikiStore } from '@/stores/wiki'
 import { wikiView } from './tabView'
 import { pageId } from '@/lib/wiki/wikiLabels'
+import HeroBand from '../HeroBand.vue'
 
 const props = defineProps<{ category: WikiCategory }>()
 const wiki = useWikiStore()
@@ -65,9 +66,7 @@ const noCatalog = computed(
 
 const open = (page: WikiPageRef, event: MouseEvent) => {
   const location = pageLocation(page.target)
-  if (location === null) return
-  if (event.ctrlKey) tabs.open(location)
-  else tabs.navigate(location)
+  if (location !== null) tabs.go(location, event.ctrlKey)
 }
 </script>
 
@@ -77,10 +76,7 @@ const open = (page: WikiPageRef, event: MouseEvent) => {
   <div class="flex h-full min-h-0 flex-col overflow-hidden pb-5">
     <!-- The same band a page opens with (`WikiHero.vue`), at the size a list deserves: the
          category is the subject here, so it carries the icon, the count, and the filter. -->
-    <header
-      class="relative flex flex-wrap items-center gap-4 border-b border-hairline hero-wash px-5.5 py-4"
-    >
-      <span class="pointer-events-none absolute inset-0 hero-grain" />
+    <HeroBand class="flex flex-wrap items-center gap-4 py-4">
       <span
         class="relative grid size-wiki-row-figure shrink-0 place-items-center border border-border tile-wash"
       >
@@ -103,7 +99,7 @@ const open = (page: WikiPageRef, event: MouseEvent) => {
         class="relative w-search"
         @update:model-value="setQuery(String($event))"
       />
-    </header>
+    </HeroBand>
     <div class="flex min-h-0 flex-1 flex-col gap-3 px-5.5 pt-4">
       <p v-if="noCatalog" class="text-caption text-subtle-foreground">
         {{ t('wiki.noCatalog') }}
@@ -149,15 +145,12 @@ const open = (page: WikiPageRef, event: MouseEvent) => {
             <ChevronRightIcon class="shrink-0 text-faint-foreground" />
           </Button>
         </VirtualRows>
-        <div v-else class="flex flex-col items-start gap-3 p-4">
-          <EmptyCategory>{{ t(empty.text) }}</EmptyCategory>
-          <Button
-            v-if="empty.reset"
-            :variant="ButtonVariant.Outline"
-            @click="setQuery('')"
-            >{{ t('wiki.resetFilters') }}</Button
-          >
-        </div>
+        <ListEmptyState
+          v-else
+          :empty="empty"
+          :reset-text="'wiki.resetFilters'"
+          @reset="setQuery('')"
+        />
       </Card>
       <Skeleton v-else class="h-150 w-full" />
     </div>

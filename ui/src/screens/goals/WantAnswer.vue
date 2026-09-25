@@ -11,7 +11,6 @@ import { WantBlockKind } from '@/lib/graph/wantBlocks'
 import type { WantBlock } from '@/lib/graph/wantBlocks'
 import { nodeSlot } from '@/lib/graph/unlockFacets'
 import { WantDiagnostic } from '@/lib/ipc/types'
-import type { TabLocation } from '@/router/routeTable'
 
 defineProps<{
   blocks: WantBlock[]
@@ -21,7 +20,6 @@ defineProps<{
 }>()
 const emit = defineEmits<{
   queue: [achievement: number]
-  navigate: [location: TabLocation, newTab: boolean]
 }>()
 const { t } = useMessages()
 
@@ -75,14 +73,7 @@ const bannerText: Record<WantDiagnostic, Message> = {
           <!-- No `+` on a step: the one offer is the block's own "put it all in the Plan"
                below, because a chain half in the queue is not what you asked for. -->
           <Card class="flex-1 flex-col gap-0 p-0">
-            <GoalRow
-              :model="rowModel(step, t)"
-              :node="step"
-              :busy="busy"
-              @navigate="
-                (location, newTab) => emit('navigate', location, newTab)
-              "
-            />
+            <GoalRow :model="rowModel(step, t)" :node="step" :busy="busy" />
           </Card>
         </li>
         <li class="flex items-start gap-2">
@@ -94,9 +85,6 @@ const bannerText: Record<WantDiagnostic, Message> = {
               :model="rowModel(block.node, t)"
               :node="block.node"
               :busy="busy"
-              @navigate="
-                (location, newTab) => emit('navigate', location, newTab)
-              "
             />
           </Card>
         </li>

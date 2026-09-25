@@ -38,9 +38,7 @@ const location = computed(() =>
 // The app's one gesture: a click navigates the active tab, Ctrl opens the page beside it.
 const open = () => {
   const to = location.value
-  if (!to) return
-  if (ctrl.value) tabs.open(to)
-  else tabs.navigate(to)
+  if (to) tabs.go(to, ctrl.value)
 }
 </script>
 

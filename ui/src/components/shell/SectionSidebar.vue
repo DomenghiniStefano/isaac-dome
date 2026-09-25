@@ -38,14 +38,15 @@ const onPointerUp = () => {
   resizing.value = null
 }
 
+// The arrows move the edge a step; no other key moves it.
+const keyStep: Partial<Record<string, number>> = {
+  [EventKey.ArrowRight]: SidebarWidth.Step,
+  [EventKey.ArrowLeft]: -SidebarWidth.Step,
+}
+
 const onKeydown = (e: KeyboardEvent) => {
-  const step =
-    e.key === EventKey.ArrowRight
-      ? SidebarWidth.Step
-      : e.key === EventKey.ArrowLeft
-        ? -SidebarWidth.Step
-        : 0
-  if (step === 0) return
+  const step = keyStep[e.key]
+  if (step === undefined) return
   e.preventDefault()
   width.value = clampSidebarWidth(width.value + step)
 }
@@ -56,8 +57,8 @@ const onKeydown = (e: KeyboardEvent) => {
        sezione"). The width travels as a CSS variable bound here, never an inline pixel. -->
   <!-- Collapsed to its icons when the shell is too narrow for it, or when somebody asked for it
        (spec 3.13a §6). The inline style above sets the *variable*, never the width, so a variant
-       class wins by ordinary cascade — which is what lets the collapse be pure CSS, and lets the
-       button's own card write `data-sidebar="collapsed"` and touch nothing else. -->
+       class wins by ordinary cascade — which is what lets the collapse be pure CSS, set off by
+       the shell's `data-sidebar="collapsed"` and touching nothing else. -->
   <!-- Folding moves in the sheet's five steps (Motion.dc.html), whichever input asked for it. Not
        while the edge is being dragged: there every pixel of the pointer would become a 200ms
        animation, and the edge would trail the cursor instead of sitting under it. -->
