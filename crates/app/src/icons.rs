@@ -8,7 +8,7 @@
 use tauri::{AppHandle, Manager};
 use unpack::ResourceSet;
 
-use crate::state::{CatalogState, MarkFramesState, ResourcesState};
+use crate::state::{catalog_now, CatalogState, MarkFramesState, ResourcesState};
 
 /// The URL the webview can actually fetch for an icon.
 ///
@@ -69,17 +69,19 @@ pub(crate) fn icon_bytes(app: &AppHandle, path: &str) -> tauri::http::Response<V
             .and_then(|frames| ipc::mark_source(*column, *tier, frames))
             .and_then(|sprite| sprite_bytes(rs, &sprite, trim)),
         // The stand-in for a picture that did not resolve: a file of the game named by the
-        // boundary itself, so there is no catalog row to look it up in (B69).
+        // boundary itself, so there is no catalog row to look it up in.
         ipc::IconRef::Unknown => sprite_bytes(rs, &ipc::unknown_source(), trim),
         ipc::IconRef::Achievement { .. }
         | ipc::IconRef::Item { .. }
         | ipc::IconRef::Head { .. }
         | ipc::IconRef::Page { .. }
         | ipc::IconRef::Room { .. } => {
+            // The catalog is built from the same archives as `rs`: `ResourcesState` opens them once.
             let state = app.state::<CatalogState>();
-            let catalog = state.get_or_build(rs);
-            ipc::icon_source(catalog, state.bosses(Some(catalog)), &reference)
-                .cloned()
+            catalog_now(app, &resources, &state)
+                .and_then(|catalog| {
+                    ipc::icon_source(catalog, state.bosses(Some(catalog)), &reference).cloned()
+                })
                 .and_then(|sprite| sprite_bytes(rs, &sprite, trim))
         }
     };

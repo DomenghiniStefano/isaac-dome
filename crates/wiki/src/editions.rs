@@ -104,6 +104,10 @@ impl Editions {
     /// 31 are the thirty-one sets the switch can produce — the thirty codes cover 1 to 30
     /// and "no restriction" is 31. 0 is the switch's `invalid string!`, so it is `None` and
     /// not an empty set.
+    ///
+    /// Only the tests read a mask this way, to check the codes against the table; the build
+    /// reads a Cargo row through `of_cargo_bits`.
+    #[cfg(feature = "test-api")]
     pub fn of_mask(mask: u8) -> Option<Editions> {
         (1..=31).contains(&mask).then_some(Editions(mask))
     }
@@ -249,20 +253,24 @@ mod tests {
             transitions.push((at?, removes));
             rest = tail;
         }
-        let mut mask = 0u8;
-        let mut present = transitions.first().is_some_and(|(_, removes)| *removes);
-        let mut at = 0usize;
-        for (next, removes) in transitions {
-            if present {
-                mask |= BITS[at..next].iter().map(|(b, _)| b).sum::<u8>();
-            }
-            at = next;
-            present = !removes;
+        // Each transition closes the span since the one before, which holds or not; the span
+        // after the last one runs to the end of the series.
+        let before_first = transitions.first().is_some_and(|(_, removes)| *removes);
+        let (mask, at, present) = transitions.iter().fold(
+            (0u8, 0usize, before_first),
+            |(mask, at, present), &(next, removes)| {
+                (mask | span(present, at, next), next, !removes)
+            },
+        );
+        Some(Editions(mask | span(present, at, BITS.len())))
+    }
+
+    /// The bits of editions `from..to`, if the span holds; none if it does not.
+    fn span(present: bool, from: usize, to: usize) -> u8 {
+        if !present {
+            return 0;
         }
-        if present {
-            mask |= BITS[at..].iter().map(|(b, _)| b).sum::<u8>();
-        }
-        Some(Editions(mask))
+        BITS[from..to].iter().map(|(b, _)| b).sum()
     }
 
     fn index_of(code: &str) -> Option<usize> {

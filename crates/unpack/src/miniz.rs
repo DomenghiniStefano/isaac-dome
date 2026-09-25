@@ -17,6 +17,11 @@ const BLOCK_OUTPUT: usize = 1024;
 
 /// Decompresses the entry starting at `start`. `name_hash_b` is the second name hash,
 /// used to seed ISAAC. Returns `None` (never panics) on any inconsistency.
+///
+/// Its length and nesting are the original's, on purpose: like `isaac.rs` and `lzw.rs` it is
+/// a port, kept in step with `ArchiveEntry.cs` so the two can be read side by side, and it is
+/// excluded from the size rules for that reason. Split into steps of our own, a divergence
+/// from the source would stop being visible line by line.
 pub(crate) fn decompress(
     archive: &[u8],
     start: usize,

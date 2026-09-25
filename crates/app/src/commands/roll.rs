@@ -1,5 +1,5 @@
 //! The draw: read, draw again, change the preset. Three commands, each answering with the
-//! whole `RollView` (N8) — one screen, one round trip, whatever the user just did.
+//! whole `RollView` — one screen, one round trip, whatever the user just did.
 
 use tauri::AppHandle;
 

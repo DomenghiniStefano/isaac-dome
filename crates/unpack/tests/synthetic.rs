@@ -181,3 +181,45 @@ fn two_entries_sharing_a_djb2_are_both_found() {
     assert_eq!(a.entries().len(), 2);
     assert!(a.contains("gfx/items/collectibles/collectibles_001_thesadonion.png"));
 }
+
+/// A record is five little-endian `u32` in this order: djb2, fnv, offset, decompressed length,
+/// checksum. Every field is checked, not only the ones the reader uses.
+#[test]
+fn a_record_is_read_field_by_field_in_the_order_the_format_declares() {
+    let bytes = build(
+        &[(0x0102_0304, 0xA0B0_C0D0, 14, 77, 0xDEAD_BEEF)],
+        &[0u8; 4],
+    );
+    let tmp = tempfile::NamedTempFile::new().unwrap();
+    std::fs::write(tmp.path(), &bytes).unwrap();
+
+    let a = Archive::open(tmp.path()).unwrap();
+    let e = a.entries()[0];
+    assert_eq!(e.key.djb2, 0x0102_0304);
+    assert_eq!(e.key.fnv, 0xA0B0_C0D0);
+    assert_eq!(e.offset, 14);
+    assert_eq!(e.decompressed_len, 77);
+    assert_eq!(e.checksum, 0xDEAD_BEEF);
+}
+
+/// A header that declares more records than the file holds degrades to the records that are
+/// there, whole: a partial trailing record is not one.
+#[test]
+fn an_index_cut_short_keeps_the_whole_records_it_has() {
+    let mut bytes = build(
+        &[(1, 2, 14, 4, 0), (3, 4, 18, 4, 0), (5, 6, 14, 4, 0)],
+        &[0u8; 8],
+    );
+    // Drop the third record and half of the second one's checksum.
+    bytes.truncate(bytes.len() - 20 - 2);
+    let tmp = tempfile::NamedTempFile::new().unwrap();
+    std::fs::write(tmp.path(), &bytes).unwrap();
+
+    let a = Archive::open(tmp.path()).unwrap();
+    let keys: Vec<(u32, u32)> = a
+        .entries()
+        .iter()
+        .map(|e| (e.key.djb2, e.key.fnv))
+        .collect();
+    assert_eq!(keys, vec![(1, 2)]);
+}

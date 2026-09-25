@@ -98,3 +98,42 @@ fn a_folder_with_no_archives_has_nothing_broken() {
     assert!(rs.archives().is_empty());
     assert!(rs.broken().is_empty());
 }
+
+/// The archives that open are listed in precedence order, each with the mode and the entry
+/// count its own header declares, beside the ones that did not open.
+#[test]
+fn the_archives_that_open_are_listed_in_precedence_order_with_their_header() {
+    fn archive(mode: u8, records: u16) -> Vec<u8> {
+        let mut v = b"ARCH000".to_vec();
+        v.push(mode);
+        v.extend_from_slice(&14u32.to_le_bytes());
+        v.extend_from_slice(&records.to_le_bytes());
+        for i in 0..u32::from(records) {
+            for w in [i, i, 0, 1, 0] {
+                v.extend_from_slice(&w.to_le_bytes());
+            }
+        }
+        v
+    }
+    let dir = tempfile::tempdir().unwrap();
+    std::fs::write(dir.path().join("config.a"), archive(1, 2)).unwrap();
+    std::fs::write(dir.path().join("fonts.a"), archive(1, 1)).unwrap();
+    std::fs::write(dir.path().join("music.a"), b"short").unwrap();
+
+    let rs = ResourceSet::open(dir.path());
+
+    let listed: Vec<(&str, unpack::CompressionMode, usize)> = rs
+        .archives()
+        .iter()
+        .map(|a| (a.name.as_str(), a.mode, a.entries))
+        .collect();
+    assert_eq!(
+        listed,
+        vec![
+            ("fonts.a", unpack::CompressionMode::Lzw, 1),
+            ("config.a", unpack::CompressionMode::Lzw, 2),
+        ]
+    );
+    assert_eq!(rs.broken().len(), 1);
+    assert_eq!(rs.broken()[0].name, "music.a");
+}
