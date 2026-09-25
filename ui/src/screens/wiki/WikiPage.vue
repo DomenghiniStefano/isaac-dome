@@ -15,12 +15,12 @@ import { useMessages } from '@/i18n'
 import { achievementNode } from '@/lib/graph/achievementNode'
 import { nodeSlot } from '@/lib/graph/unlockFacets'
 import type { Target } from '@/lib/ipc/types'
-import { canQueue, isQueued, queuedIds } from '@/lib/plan/queueRows'
+import { canQueue, isQueued } from '@/lib/plan/queueRows'
 import { categoryOf, pageLocation } from '@/lib/wiki/category'
 import { parsePageKey } from '@/lib/wiki/pageKey'
 import { RouteName } from '@/router/routeTable'
 import type { WikiCategory } from '@/router/routeTable'
-import { useQueueStore } from '@/stores/queue'
+import { useQueueOffer } from '@/composables/useQueueOffer'
 import { useTabsStore } from '@/stores/tabs'
 import { useGraphStore } from '@/stores/views'
 import { useWikiStore } from '@/stores/wiki'
@@ -37,7 +37,7 @@ const props = defineProps<{
 const wiki = useWikiStore()
 const tabs = useTabsStore()
 const graph = useGraphStore()
-const queue = useQueueStore()
+const { queue, queued, canWrite } = useQueueOffer()
 const { t } = useMessages()
 
 // The key is the tab's; a key that doesn't parse is a page the dataset doesn't know, the
@@ -90,12 +90,10 @@ const back = () => {
 const node = computed(() =>
   achievementNode(graph.view?.unlock ?? null, target.value),
 )
-const queued = computed(() => queuedIds(queue.view))
+
 const canAdd = computed(
   () =>
-    queue.view?.storeAvailable === true &&
-    node.value !== null &&
-    canQueue(node.value, queued.value),
+    canWrite.value && node.value !== null && canQueue(node.value, queued.value),
 )
 </script>
 
