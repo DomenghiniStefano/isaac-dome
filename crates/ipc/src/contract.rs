@@ -151,6 +151,9 @@ fn decl<T: TS + ?Sized + 'static>(cfg: &Config, out: &mut String) {
 /// travel, and one that is reachable only as another's field cannot arrive by accident. An
 /// incomplete list produces a file that does not compile, and `pnpm typecheck` is already in
 /// `scripts/check`.
+///
+/// Long by construction and left so: one line per type, flat, and cutting it into pieces would
+/// split the one registry into several that each look complete.
 pub fn render() -> String {
     let cfg = Config::new().with_large_int("number");
     let mut out = String::with_capacity(32 * 1024);

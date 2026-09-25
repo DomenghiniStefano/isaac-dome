@@ -90,48 +90,28 @@ pub fn want_view(
     target: &Target,
     mut icon: impl FnMut(&IconRef) -> Option<String>,
 ) -> WantView {
-    let unresolved = |d: WantDiagnostic| WantView {
+    resolved(catalog, bosses, view, flags, g, target, &mut icon).unwrap_or_else(|d| WantView {
         wanted: WantedView::Unresolved,
         routes: Vec::new(),
         diagnostics: vec![d],
-    };
+    })
+}
+
+/// The answer, or the one reason there is none.
+fn resolved(
+    catalog: Option<&Catalog>,
+    bosses: &BossKeys,
+    view: &UnlockView,
+    flags: Option<&[bool]>,
+    g: Option<&graph::build::Graph>,
+    target: &Target,
+    icon: &mut impl FnMut(&IconRef) -> Option<String>,
+) -> Result<WantView, WantDiagnostic> {
     if !unlockable(target) {
-        return unresolved(WantDiagnostic::NotUnlockable);
+        return Err(WantDiagnostic::NotUnlockable);
     }
-    let Some(c) = catalog else {
-        return unresolved(WantDiagnostic::NoCatalog);
-    };
-    // Naming an achievement reaches the node directly: it is the only way to ask for what the
-    // catalog models no target for — a mode, an event. *Greedier!* is that case.
-    let (wanted, ids) = match target {
-        Target::Achievement { id } => match node_of(view, *id) {
-            Some(n) => (
-                WantedView::Achievement {
-                    achievement: n.achievement.clone(),
-                },
-                vec![*id],
-            ),
-            None => return unresolved(WantDiagnostic::NothingUnlocks),
-        },
-        Target::Item { .. }
-        | Target::Trinket { .. }
-        | Target::Character { .. }
-        | Target::Challenge { .. }
-        | Target::Entity { .. }
-        | Target::Transformation { .. }
-        | Target::Stage { .. }
-        | Target::Room { .. }
-        | Target::Concept { .. } => {
-            let Some(key) = key_of(c, bosses, target) else {
-                return unresolved(WantDiagnostic::NothingUnlocks);
-            };
-            let ids = crate::queue::achievements_unlocking(c, &key);
-            match crate::graph::resolve_target(c, bosses, &key, None, &mut icon) {
-                Some(t) if !ids.is_empty() => (WantedView::Target { target: t }, ids),
-                _ => return unresolved(WantDiagnostic::NothingUnlocks),
-            }
-        }
-    };
+    let c = catalog.ok_or(WantDiagnostic::NoCatalog)?;
+    let (wanted, ids) = wanted_of(c, bosses, view, target, icon)?;
     let routes: Vec<WantRoute> = ids
         .iter()
         .filter_map(|id| node_of(view, *id))
@@ -141,7 +121,7 @@ pub fn want_view(
         })
         .collect();
     if routes.is_empty() {
-        return unresolved(WantDiagnostic::NothingUnlocks);
+        return Err(WantDiagnostic::NothingUnlocks);
     }
     // The banner and the rows are two readings of one fact, so one produces the other: the
     // screen never has to scan the rows to know whether it may say where you stand.
@@ -151,10 +131,51 @@ pub fn want_view(
         .then_some(WantDiagnostic::NoProfile)
         .into_iter()
         .collect();
-    WantView {
+    Ok(WantView {
         wanted,
         routes,
         diagnostics,
+    })
+}
+
+/// What is wanted, and the achievements that would grant it.
+///
+/// Naming an achievement reaches the node directly: it is the only way to ask for what the
+/// catalog models no target for — a mode, an event. *Greedier!* is that case.
+fn wanted_of(
+    c: &Catalog,
+    bosses: &BossKeys,
+    view: &UnlockView,
+    target: &Target,
+    icon: &mut impl FnMut(&IconRef) -> Option<String>,
+) -> Result<(WantedView, Vec<u32>), WantDiagnostic> {
+    match target {
+        Target::Achievement { id } => node_of(view, *id)
+            .map(|n| {
+                (
+                    WantedView::Achievement {
+                        achievement: n.achievement.clone(),
+                    },
+                    vec![*id],
+                )
+            })
+            .ok_or(WantDiagnostic::NothingUnlocks),
+        Target::Item { .. }
+        | Target::Trinket { .. }
+        | Target::Character { .. }
+        | Target::Challenge { .. }
+        | Target::Entity { .. }
+        | Target::Transformation { .. }
+        | Target::Stage { .. }
+        | Target::Room { .. }
+        | Target::Concept { .. } => {
+            let key = key_of(c, bosses, target).ok_or(WantDiagnostic::NothingUnlocks)?;
+            let ids = crate::queue::achievements_unlocking(c, &key);
+            match crate::graph::resolve_target(c, bosses, &key, None, icon) {
+                Some(t) if !ids.is_empty() => Ok((WantedView::Target { target: t }, ids)),
+                _ => Err(WantDiagnostic::NothingUnlocks),
+            }
+        }
     }
 }
 
@@ -185,30 +206,7 @@ fn route_state(
     let AchievementRef::Known { id, .. } = node.achievement else {
         return WantState::NoProfile;
     };
-    // No graph is not a fifth situation: `unlock_view` already writes `Partial { unknown: 1 }`
-    // for a slot the graph says nothing about, so the chain comes out empty and `unknown`
-    // counts it. The route then reads "I can't tell you the series", never "nothing missing".
-    let chain = g
-        .map(|g| g.missing_chain(AchievementId(id), &graph::evaluate::FlagsOnly(Some(flags))))
-        .unwrap_or_default();
-    // The order is the queue's, asked rather than reinvented: `enqueue` appends the chain,
-    // then the wish, then runs the repair that pulls the prerequisites above it. An empty
-    // throwaway queue makes this preview and the write the Plan performs one computation.
-    let mut rows = chain.clone();
-    rows.push(AchievementId(id));
-    let mut queue = plan::Queue::from_rows(Vec::new());
-    let deps = match g {
-        Some(g) => crate::queue::GraphDeps::new(g, Some(flags), &rows),
-        None => crate::queue::GraphDeps::from_chains([]),
-    };
-    queue.enqueue(AchievementId(id), &chain, &deps);
-    let steps: Vec<UnlockNode> = queue
-        .rows()
-        .iter()
-        .filter(|r| r.achievement != AchievementId(id))
-        .filter_map(|r| node_of(view, r.achievement.0))
-        .cloned()
-        .collect();
+    let steps = planned_steps(AchievementId(id), flags, g, view);
     let unknown = steps
         .iter()
         .chain(std::iter::once(node))
@@ -220,6 +218,41 @@ fn route_state(
         return WantState::AvailableNow;
     }
     WantState::Chain { steps, unknown }
+}
+
+/// The prerequisites of `wanted` in the order the Plan would play them, `wanted` itself left
+/// out.
+///
+/// No graph is not a fifth situation: `unlock_view` already writes `Partial { unknown: 1 }`
+/// for a slot the graph says nothing about, so the chain comes out empty and `unknown`
+/// counts it. The route then reads "I can't tell you the series", never "nothing missing".
+///
+/// The order is the queue's, asked rather than reinvented: `enqueue` appends the chain,
+/// then the wish, then runs the repair that pulls the prerequisites above it. An empty
+/// throwaway queue makes this preview and the write the Plan performs one computation.
+fn planned_steps(
+    wanted: AchievementId,
+    flags: &[bool],
+    g: Option<&graph::build::Graph>,
+    view: &UnlockView,
+) -> Vec<UnlockNode> {
+    let chain = g
+        .map(|g| g.missing_chain(wanted, &graph::evaluate::FlagsOnly(Some(flags))))
+        .unwrap_or_default();
+    let rows: Vec<AchievementId> = chain.iter().copied().chain([wanted]).collect();
+    let deps = match g {
+        Some(g) => crate::queue::GraphDeps::new(g, Some(flags), &rows),
+        None => crate::queue::GraphDeps::from_chains([]),
+    };
+    let mut queue = plan::Queue::from_rows(Vec::new());
+    queue.enqueue(wanted, &chain, &deps);
+    queue
+        .rows()
+        .iter()
+        .filter(|r| r.achievement != wanted)
+        .filter_map(|r| node_of(view, r.achievement.0))
+        .cloned()
+        .collect()
 }
 
 /// The node for an achievement, or nothing: `UnlockView` has one node per save slot, so an

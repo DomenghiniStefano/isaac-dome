@@ -122,49 +122,10 @@ pub fn collection_view(
 
     let mut listed: Vec<&Item> = c.items().filter(|i| i.kind != ItemKind::Trinket).collect();
     listed.sort_by_key(|i| i.id.0);
-
     let rows: Vec<CollectionItem> = listed
         .into_iter()
-        .map(|i| {
-            let kind = kind_view(i.kind);
-            CollectionItem {
-                id: i.id.0,
-                kind,
-                name: c.text(&i.name, Language::English).to_string(),
-                icon_url: icon(&IconRef::Item { kind, id: i.id.0 }),
-                quality: i.quality,
-                pools: distinct_pools(i),
-                origin: i.origin.map(origin_view),
-                in_collection: recorded(items, i.id.0),
-                lock: lock_of(c, dataset, i.unlocked_by, achievements),
-            }
-        })
+        .map(|i| item_row(c, dataset, i, items, achievements, &mut icon))
         .collect();
-    // Only a section that read can end before an item: with no section, every row is unknown
-    // for that reason and `NoCollectionSection` already says so.
-    let beyond = match items {
-        Some(_) => rows.iter().filter(|r| r.in_collection.is_none()).count() as u32,
-        None => 0,
-    };
-
-    let pools = c
-        .pools()
-        .iter()
-        .map(|p| p.name.clone())
-        .filter(|name| rows.iter().any(|r| r.pools.contains(name)))
-        .collect();
-
-    let mut diagnostics = Vec::new();
-    if items.is_none() {
-        diagnostics.push(CollectionDiagnostic::NoCollectionSection);
-    }
-    if achievements.is_none() {
-        diagnostics.push(CollectionDiagnostic::NoAchievementSection);
-    }
-    if beyond > 0 {
-        diagnostics.push(CollectionDiagnostic::ItemsBeyondSlots { count: beyond });
-    }
-
     let in_collection = rows
         .iter()
         .filter(|r| r.in_collection == Some(true))
@@ -175,10 +136,67 @@ pub fn collection_view(
             items: rows.len() as u32,
             in_collection,
         },
+        pools: pools_in_use(c, &rows),
+        diagnostics: diagnostics(&rows, items, achievements),
         items: rows,
-        pools,
-        diagnostics,
     }
+}
+
+fn item_row(
+    c: &Catalog,
+    dataset: Option<&Dataset>,
+    i: &Item,
+    items: Option<&[bool]>,
+    achievements: Option<&[bool]>,
+    icon: &mut impl FnMut(&IconRef) -> Option<String>,
+) -> CollectionItem {
+    let kind = kind_view(i.kind);
+    CollectionItem {
+        id: i.id.0,
+        kind,
+        name: c.text(&i.name, Language::English).to_string(),
+        icon_url: icon(&IconRef::Item { kind, id: i.id.0 }),
+        quality: i.quality,
+        pools: distinct_pools(i),
+        origin: i.origin.map(origin_view),
+        in_collection: recorded(items, i.id.0),
+        lock: lock_of(c, dataset, i.unlocked_by, achievements),
+    }
+}
+
+/// The catalog's pools, in its order, that at least one listed item belongs to.
+fn pools_in_use(c: &Catalog, rows: &[CollectionItem]) -> Vec<String> {
+    c.pools()
+        .iter()
+        .map(|p| p.name.clone())
+        .filter(|name| rows.iter().any(|r| r.pools.contains(name)))
+        .collect()
+}
+
+/// The sections that did not read, then the items the save has no slot for.
+fn diagnostics(
+    rows: &[CollectionItem],
+    items: Option<&[bool]>,
+    achievements: Option<&[bool]>,
+) -> Vec<CollectionDiagnostic> {
+    // Only a section that read can end before an item: with no section, every row is unknown
+    // for that reason and `NoCollectionSection` already says so.
+    let beyond = match items {
+        Some(_) => rows.iter().filter(|r| r.in_collection.is_none()).count() as u32,
+        None => 0,
+    };
+    [
+        items
+            .is_none()
+            .then_some(CollectionDiagnostic::NoCollectionSection),
+        achievements
+            .is_none()
+            .then_some(CollectionDiagnostic::NoAchievementSection),
+        (beyond > 0).then_some(CollectionDiagnostic::ItemsBeyondSlots { count: beyond }),
+    ]
+    .into_iter()
+    .flatten()
+    .collect()
 }
 
 /// A slot past section 1's end reads as not done: the save has no record of it.

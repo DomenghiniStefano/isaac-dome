@@ -348,3 +348,95 @@ mod graph_of {
         ));
     }
 }
+
+/// Every way of not answering is the whole answer: the run as it came, the marks as they came
+/// (none when there is no run), nothing offered, and exactly one diagnostic.
+#[test]
+fn each_way_of_not_answering_carries_the_run_the_marks_and_one_diagnostic() {
+    let matrix = ipc::marks_matrix(&[0u32; 600], None, |_| None);
+    let marks = || Some(ipc::live_marks(&matrix, &[3]));
+    let empty = Vec::new();
+
+    let idle = live_view(None, LiveGraph::Nodes(&empty), marks(), by_name);
+    assert_eq!(
+        (idle.run, idle.marks, idle.opens, idle.diagnostics),
+        (None, None, vec![], vec![LiveDiagnostic::NoRun])
+    );
+
+    let cases = [
+        (
+            open_run(Some("Judas")),
+            LiveGraph::NoProfile,
+            LiveDiagnostic::NoProfile,
+        ),
+        (
+            open_run(Some("Judas")),
+            LiveGraph::NoGraph,
+            LiveDiagnostic::NoGraph,
+        ),
+        (
+            open_run(Some("Judas")),
+            LiveGraph::SaveUnreadable,
+            LiveDiagnostic::SaveUnreadable,
+        ),
+        (
+            open_run(None),
+            LiveGraph::Nodes(&empty),
+            LiveDiagnostic::CharacterNotNamed,
+        ),
+        (
+            open_run(Some("Nobody")),
+            LiveGraph::Nodes(&empty),
+            LiveDiagnostic::UnknownCharacter {
+                name: "Nobody".into(),
+            },
+        ),
+    ];
+    for (run, graph, diagnostic) in cases {
+        let view = live_view(Some(run.clone()), graph, marks(), by_name);
+        assert_eq!(
+            (view.run, view.marks, view.opens, view.diagnostics),
+            (Some(run), marks(), vec![], vec![diagnostic])
+        );
+    }
+}
+
+/// Groups come in the order their cell first appears on the nodes, and a later node needing
+/// an earlier cell joins that group rather than opening a new one.
+#[test]
+fn the_groups_keep_the_order_their_cell_first_appears_in() {
+    let nodes = vec![
+        node(1, vec![mark(3, "Judas", MarkColumnView::MomsHeart)]),
+        node(2, vec![mark(3, "Judas", MarkColumnView::Satan)]),
+        node(3, vec![mark(3, "Judas", MarkColumnView::MomsHeart)]),
+    ];
+    let view = live_view(
+        Some(open_run(Some("Judas"))),
+        LiveGraph::Nodes(&nodes),
+        None,
+        by_name,
+    );
+    let groups: Vec<(MarkColumnView, Vec<u32>)> = view
+        .opens
+        .iter()
+        .map(|o| {
+            (
+                o.column,
+                o.achievements
+                    .iter()
+                    .filter_map(|a| match &a.achievement {
+                        AchievementRef::Known { id, .. } => Some(*id),
+                        AchievementRef::Unknown { .. } => None,
+                    })
+                    .collect(),
+            )
+        })
+        .collect();
+    assert_eq!(
+        groups,
+        vec![
+            (MarkColumnView::MomsHeart, vec![1, 3]),
+            (MarkColumnView::Satan, vec![2]),
+        ]
+    );
+}

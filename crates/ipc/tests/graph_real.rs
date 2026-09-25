@@ -12,7 +12,7 @@ use catalog::{Catalog, ItemKind};
 use core_save::{Kind, Save};
 use ipc::{
     next_steps, resolve_target, unlock_view, AchievementRef, ItemKindView, TargetKey,
-    UnlockDiagnostic, UnlockTarget,
+    UnlockDiagnostic, UnlockInputs, UnlockTarget,
 };
 use unpack::ResourceSet;
 
@@ -63,13 +63,15 @@ fn view_of(c: &Catalog, s: &Save) -> Option<ipc::UnlockView> {
     let progress = ipc::SaveProgress::new(Some(&flags), Some(&counters), Some(c));
     let e = g.evaluate(&progress);
     Some(unlock_view(
-        Some(c),
-        &ipc::for_tests::bosses(c),
-        wiki::Dataset::embedded().ok(),
-        Some(&flags),
-        Some(&g),
-        Some(&e),
-        Some(&progress),
+        UnlockInputs {
+            catalog: Some(c),
+            bosses: &ipc::for_tests::bosses(c),
+            dataset: wiki::Dataset::embedded().ok(),
+            flags: Some(&flags),
+            graph: Some(&g),
+            eval: Some(&e),
+            progress: Some(&progress),
+        },
         |_| None,
     ))
 }
@@ -79,13 +81,15 @@ fn the_real_profile_has_379_done_637_known_and_4_unknown_slots() {
     let Some((c, _, s)) = real() else { return };
     let flags = s.flags(Kind::Achievements).expect("section 1");
     let v = unlock_view(
-        Some(&c),
-        &ipc::for_tests::bosses(&c),
-        None,
-        Some(&flags),
-        None,
-        None,
-        None,
+        UnlockInputs {
+            catalog: Some(&c),
+            bosses: &ipc::for_tests::bosses(&c),
+            dataset: None,
+            flags: Some(&flags),
+            graph: None,
+            eval: None,
+            progress: None,
+        },
         |r: &ipc::IconRef| Some(format!("{}://{}", ipc::ICON_SCHEME, r.to_path())),
     );
     // 642 flags but 641 nodes (slots 1..=641: slot 0 isn't a node); the catalog covers
@@ -127,13 +131,15 @@ fn the_slot_id_junction_is_pinned_by_the_items_seen_in_the_save() {
     let flags = s.flags(Kind::Achievements).expect("section 1");
     let seen = s.flags(Kind::Items).expect("section 4");
     let v = unlock_view(
-        Some(&c),
-        &ipc::for_tests::bosses(&c),
-        None,
-        Some(&flags),
-        None,
-        None,
-        None,
+        UnlockInputs {
+            catalog: Some(&c),
+            bosses: &ipc::for_tests::bosses(&c),
+            dataset: None,
+            flags: Some(&flags),
+            graph: None,
+            eval: None,
+            progress: None,
+        },
         |_| None,
     );
     let done: BTreeSet<u32> = v
@@ -166,13 +172,15 @@ fn next_steps_on_the_real_profile_are_unlockable_now_by_fan_out() {
     let g = graph::build::Graph::build(&c, graph::rules::embedded().expect("embedded rules"));
     let e = g.evaluate(&graph::evaluate::FlagsOnly(Some(&flags)));
     let v = unlock_view(
-        Some(&c),
-        &ipc::for_tests::bosses(&c),
-        None,
-        Some(&flags),
-        Some(&g),
-        Some(&e),
-        None,
+        UnlockInputs {
+            catalog: Some(&c),
+            bosses: &ipc::for_tests::bosses(&c),
+            dataset: None,
+            flags: Some(&flags),
+            graph: Some(&g),
+            eval: Some(&e),
+            progress: None,
+        },
         |r: &ipc::IconRef| Some(format!("{}://{}", ipc::ICON_SCHEME, r.to_path())),
     );
     let steps = next_steps(&v, &Default::default());
@@ -456,13 +464,15 @@ fn a_blocked_node_links_to_the_pages_the_dataset_has() {
     };
 
     let v = unlock_view(
-        Some(&c),
-        &ipc::for_tests::bosses(&c),
-        Some(ds),
-        Some(&flags),
-        Some(&g),
-        Some(&e),
-        None,
+        UnlockInputs {
+            catalog: Some(&c),
+            bosses: &ipc::for_tests::bosses(&c),
+            dataset: Some(ds),
+            flags: Some(&flags),
+            graph: Some(&g),
+            eval: Some(&e),
+            progress: None,
+        },
         |_| None,
     );
     let linked = v
@@ -479,13 +489,15 @@ fn a_blocked_node_links_to_the_pages_the_dataset_has() {
 
     // No dataset: the names still come out, and nothing links.
     let without = unlock_view(
-        Some(&c),
-        &ipc::for_tests::bosses(&c),
-        None,
-        Some(&flags),
-        Some(&g),
-        Some(&e),
-        None,
+        UnlockInputs {
+            catalog: Some(&c),
+            bosses: &ipc::for_tests::bosses(&c),
+            dataset: None,
+            flags: Some(&flags),
+            graph: Some(&g),
+            eval: Some(&e),
+            progress: None,
+        },
         |_| None,
     );
     assert!(without
@@ -518,13 +530,15 @@ fn what_a_node_unlocks_links_to_the_pages_the_dataset_has() {
     };
 
     let v = unlock_view(
-        Some(&c),
-        &ipc::for_tests::bosses(&c),
-        Some(ds),
-        Some(&flags),
-        None,
-        None,
-        None,
+        UnlockInputs {
+            catalog: Some(&c),
+            bosses: &ipc::for_tests::bosses(&c),
+            dataset: Some(ds),
+            flags: Some(&flags),
+            graph: None,
+            eval: None,
+            progress: None,
+        },
         |_| None,
     );
     let targets = || v.nodes.iter().flat_map(|n| n.unlocks.iter());
@@ -544,13 +558,15 @@ fn what_a_node_unlocks_links_to_the_pages_the_dataset_has() {
 
     // No dataset: the names still come out, and nothing links.
     let without = unlock_view(
-        Some(&c),
-        &ipc::for_tests::bosses(&c),
-        None,
-        Some(&flags),
-        None,
-        None,
-        None,
+        UnlockInputs {
+            catalog: Some(&c),
+            bosses: &ipc::for_tests::bosses(&c),
+            dataset: None,
+            flags: Some(&flags),
+            graph: None,
+            eval: None,
+            progress: None,
+        },
         |_| None,
     );
     assert!(without
@@ -686,13 +702,15 @@ fn the_wiki_answers_how_to_get_it_where_the_game_file_is_silent() {
 
     let conditions = |dataset: Option<&wiki::Dataset>| -> Vec<(u32, Option<String>)> {
         unlock_view(
-            Some(&c),
-            &ipc::for_tests::bosses(&c),
-            dataset,
-            Some(&flags),
-            None,
-            None,
-            None,
+            UnlockInputs {
+                catalog: Some(&c),
+                bosses: &ipc::for_tests::bosses(&c),
+                dataset,
+                flags: Some(&flags),
+                graph: None,
+                eval: None,
+                progress: None,
+            },
             |_| None,
         )
         .nodes

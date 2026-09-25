@@ -247,3 +247,77 @@ fn a_goal_is_pending_until_the_queue_holds_the_achievement_that_unlocks_it() {
     // A goal nothing unlocks cannot be stood for by any row: it stays pending.
     assert_eq!(ipc::goals_pending(&c, &[item, unknown], &queued), 1);
 }
+
+/// The order the diagnostics arrive in, every kind a readable queue can raise at once: the
+/// store, the goals still to import, then one `Unresolved` per row in the queue's order, and
+/// the completed rows last, as one count with the wanted ones in the queue's order.
+#[test]
+fn the_diagnostics_of_a_readable_queue_come_in_a_fixed_order() {
+    let c = catalog_with_achievements();
+    let row = |id: u32, wanted: bool| plan::Row {
+        achievement: graph::AchievementId(id),
+        wanted,
+        origins: vec![],
+    };
+    let q = plan::Queue::from_rows(vec![
+        row(900, true),
+        row(1, true),
+        row(950, false),
+        row(2, false),
+    ]);
+    let flags = [false, true, true];
+    let mut i = inputs(Some(&c), Some(&flags), Ok(&q));
+    i.store_reason = Some(ipc::StoreReason::Unreadable);
+    i.goals_pending = 3;
+    let v = ipc::queue_view(i, |_| None);
+    assert!(v.rows.is_empty(), "both known rows are done");
+    assert_eq!(
+        v.diagnostics,
+        vec![
+            QueueDiagnostic::StoreUnavailable {
+                reason: ipc::StoreReason::Unreadable
+            },
+            QueueDiagnostic::GoalsPending { count: 3 },
+            QueueDiagnostic::Unresolved { achievement: 900 },
+            QueueDiagnostic::Unresolved { achievement: 950 },
+            QueueDiagnostic::Completed {
+                count: 2,
+                wanted: vec![1]
+            },
+        ]
+    );
+}
+
+/// When the queue cannot answer at all, what was already known still comes first: the store
+/// and the pending goals, then the one reason there are no rows.
+#[test]
+fn a_queue_that_cannot_answer_keeps_the_diagnostics_that_came_before() {
+    let err = plan::QueueError::Unreadable {
+        reason: "expected value".into(),
+    };
+    let mut unreadable = inputs(None, None, Err(&err));
+    unreadable.store_reason = Some(ipc::StoreReason::Unreadable);
+    unreadable.goals_pending = 1;
+    assert_eq!(
+        ipc::queue_view(unreadable, |_| None).diagnostics,
+        vec![
+            QueueDiagnostic::StoreUnavailable {
+                reason: ipc::StoreReason::Unreadable
+            },
+            QueueDiagnostic::GoalsPending { count: 1 },
+            QueueDiagnostic::Unreadable,
+        ],
+        "an unreadable document wins over a missing catalog"
+    );
+
+    let q = plan::Queue::default();
+    let mut no_catalog = inputs(None, None, Ok(&q));
+    no_catalog.goals_pending = 2;
+    assert_eq!(
+        ipc::queue_view(no_catalog, |_| None).diagnostics,
+        vec![
+            QueueDiagnostic::GoalsPending { count: 2 },
+            QueueDiagnostic::NoCatalog,
+        ]
+    );
+}

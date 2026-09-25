@@ -130,104 +130,108 @@ fn target_view(t: floor::Target) -> TargetView {
 }
 
 /// The join: the painted grid in, the three rankings out.
+///
+/// The diagnostics come in the order the grid is checked: its shape, then whether anything is
+/// painted and whether a start room is, then the rules.
 pub fn floor_view(cells: Vec<Option<RoomKindView>>) -> FloorView {
-    let mut diagnostics = Vec::new();
-
-    let count = cells.len();
+    let count = cells.len() as u32;
     let painted = cells.iter().filter(|c| c.is_some()).count() as u32;
-    let grid = floor::Grid::from_cells(
-        cells
-            .into_iter()
-            .map(|c| match c {
-                None => floor::Cell::Empty,
-                Some(k) => floor::Cell::Room {
-                    kind: kind_of(k),
-                    shape: floor::Shape::Single,
-                },
-            })
-            .collect(),
-    );
-
-    let Some(grid) = grid else {
-        diagnostics.push(FloorDiagnostic::GridMalformed {
-            cells: count as u32,
-        });
-        return FloorView {
-            solutions: Vec::new(),
+    let Some(grid) = floor::Grid::from_cells(cells.into_iter().map(cell_of).collect()) else {
+        return unsolved(
             painted,
-            diagnostics,
-        };
+            vec![FloorDiagnostic::GridMalformed { cells: count }],
+        );
     };
-    if painted == 0 {
-        diagnostics.push(FloorDiagnostic::GridEmpty);
-    }
-    if !floor::distance_from_start(&grid)
+    let has_start = floor::distance_from_start(&grid)
         .iter()
-        .any(Option::is_some)
-    {
-        diagnostics.push(FloorDiagnostic::NoStartRoom);
-    }
-
-    let rules = match floor::Rules::embedded() {
-        Ok(r) => r,
-        Err(_) => {
-            diagnostics.push(FloorDiagnostic::RulesUnreadable);
-            return FloorView {
-                solutions: Vec::new(),
-                painted,
-                diagnostics,
-            };
-        }
+        .any(Option::is_some);
+    let grid_diagnostics = [
+        (painted == 0).then_some(FloorDiagnostic::GridEmpty),
+        (!has_start).then_some(FloorDiagnostic::NoStartRoom),
+    ]
+    .into_iter()
+    .flatten();
+    let Ok(rules) = floor::Rules::embedded() else {
+        return unsolved(
+            painted,
+            grid_diagnostics
+                .chain([FloorDiagnostic::RulesUnreadable])
+                .collect(),
+        );
     };
-
     let solutions = [
         floor::Target::Secret,
         floor::Target::SuperSecret,
         floor::Target::UltraSecret,
     ]
     .into_iter()
-    .map(|t| {
-        let s = floor::solve(&grid, rules, t);
-        FloorSolutionView {
-            target: target_view(s.target),
-            candidates: s
-                .candidates
-                .into_iter()
-                .map(|c| FloorCandidate {
-                    cell: c.cell,
-                    neighbours: c.neighbours,
-                    rank: c.rank,
-                    applied: c
-                        .applied
-                        .into_iter()
-                        .filter_map(|id| {
-                            rules.all().find(|r| r.id == id).map(|r| AppliedRule {
-                                id: r.id.clone(),
-                                quote: r.quote.clone(),
-                                url: r.url.clone(),
-                            })
-                        })
-                        .collect(),
-                })
-                .collect(),
-            unresolved: s
-                .unresolved
-                .into_iter()
-                .map(|u| FloorUnresolved {
-                    rule: u.rule,
-                    note: u.note,
-                    quote: u.quote,
-                    url: u.url,
-                })
-                .collect(),
-        }
-    })
+    .map(|t| solution_view(floor::solve(&grid, rules, t), rules))
     .collect();
-
     FloorView {
         solutions,
         painted,
+        diagnostics: grid_diagnostics.collect(),
+    }
+}
+
+/// A view with no rankings, and why.
+fn unsolved(painted: u32, diagnostics: Vec<FloorDiagnostic>) -> FloorView {
+    FloorView {
+        solutions: Vec::new(),
+        painted,
         diagnostics,
+    }
+}
+
+fn cell_of(c: Option<RoomKindView>) -> floor::Cell {
+    match c {
+        None => floor::Cell::Empty,
+        Some(k) => floor::Cell::Room {
+            kind: kind_of(k),
+            shape: floor::Shape::Single,
+        },
+    }
+}
+
+fn solution_view(s: floor::Solution, rules: &floor::Rules) -> FloorSolutionView {
+    FloorSolutionView {
+        target: target_view(s.target),
+        candidates: s
+            .candidates
+            .into_iter()
+            .map(|c| candidate_view(c, rules))
+            .collect(),
+        unresolved: s
+            .unresolved
+            .into_iter()
+            .map(|u| FloorUnresolved {
+                rule: u.rule,
+                note: u.note,
+                quote: u.quote,
+                url: u.url,
+            })
+            .collect(),
+    }
+}
+
+/// A candidate cell, with the rules that placed it quoted by id. An id the rules file no longer
+/// holds is left out rather than shown without its words.
+fn candidate_view(c: floor::Candidate, rules: &floor::Rules) -> FloorCandidate {
+    FloorCandidate {
+        cell: c.cell,
+        neighbours: c.neighbours,
+        rank: c.rank,
+        applied: c
+            .applied
+            .into_iter()
+            .filter_map(|id| {
+                rules.all().find(|r| r.id == id).map(|r| AppliedRule {
+                    id: r.id.clone(),
+                    quote: r.quote.clone(),
+                    url: r.url.clone(),
+                })
+            })
+            .collect(),
     }
 }
 

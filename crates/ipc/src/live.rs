@@ -122,7 +122,7 @@ pub enum LiveGraph<'a> {
     Nodes(&'a Vec<UnlockNode>),
     NoProfile,
     NoGraph,
-    /// The save would not read — not "no game", which is what it used to be told as.
+    /// The save would not read: not the same sentence as "no game".
     SaveUnreadable,
 }
 
@@ -135,106 +135,131 @@ pub fn live_view(
     marks: Option<LiveMarks>,
     characters: impl Fn(&str, Option<u32>) -> Vec<(u32, String)>,
 ) -> LiveView {
-    let mut diagnostics = Vec::new();
     let Some(run) = run else {
-        return LiveView {
-            run: None,
-            marks: None,
-            opens: Vec::new(),
-            diagnostics: vec![LiveDiagnostic::NoRun],
-        };
+        return unanswered(None, None, LiveDiagnostic::NoRun);
     };
-    let nodes = match nodes {
-        LiveGraph::Nodes(nodes) => nodes,
-        LiveGraph::NoProfile => {
-            return LiveView {
-                run: Some(run),
-                marks,
-                opens: Vec::new(),
-                diagnostics: vec![LiveDiagnostic::NoProfile],
-            }
-        }
-        LiveGraph::NoGraph => {
-            return LiveView {
-                run: Some(run),
-                marks,
-                opens: Vec::new(),
-                diagnostics: vec![LiveDiagnostic::NoGraph],
-            }
-        }
-        LiveGraph::SaveUnreadable => {
-            return LiveView {
-                run: Some(run),
-                marks,
-                opens: Vec::new(),
-                diagnostics: vec![LiveDiagnostic::SaveUnreadable],
-            }
-        }
-    };
-    let Some(name) = run.character.clone() else {
-        return LiveView {
+    match standing(&run, nodes, characters) {
+        Err(diagnostic) => unanswered(Some(run), marks, diagnostic),
+        Ok(Standing { nodes, name, forms }) => LiveView {
+            diagnostics: ambiguity(name, &forms).into_iter().collect(),
+            opens: opens(nodes, &forms),
             run: Some(run),
             marks,
-            opens: Vec::new(),
-            diagnostics: vec![LiveDiagnostic::CharacterNotNamed],
-        };
+        },
+    }
+}
+
+/// What a run needs before this screen can answer for it: the graph's nodes, and the
+/// characters the log's name reaches.
+struct Standing<'a> {
+    nodes: &'a [UnlockNode],
+    name: String,
+    forms: Vec<(u32, String)>,
+}
+
+/// The standing of a run, or the one reason the screen cannot answer for it.
+fn standing<'a>(
+    run: &RunView,
+    nodes: LiveGraph<'a>,
+    characters: impl Fn(&str, Option<u32>) -> Vec<(u32, String)>,
+) -> Result<Standing<'a>, LiveDiagnostic> {
+    let nodes = match nodes {
+        LiveGraph::Nodes(nodes) => nodes,
+        LiveGraph::NoProfile => return Err(LiveDiagnostic::NoProfile),
+        LiveGraph::NoGraph => return Err(LiveDiagnostic::NoGraph),
+        LiveGraph::SaveUnreadable => return Err(LiveDiagnostic::SaveUnreadable),
     };
+    let name = run
+        .character
+        .clone()
+        .ok_or(LiveDiagnostic::CharacterNotNamed)?;
     // The log states the character by id when it says `Initialized player …`, and that is the
     // only source that tells a Tainted form from its base. When it is there nothing is
     // ambiguous; the name is the fallback for a run folded before that line was read.
     let forms = characters(&name, run.character_id);
     if forms.is_empty() {
-        return LiveView {
-            run: Some(run),
-            marks,
-            opens: Vec::new(),
-            diagnostics: vec![LiveDiagnostic::UnknownCharacter { name }],
-        };
+        return Err(LiveDiagnostic::UnknownCharacter { name });
     }
-    if forms.len() > 1 {
-        diagnostics.push(LiveDiagnostic::AmbiguousCharacter {
-            name: name.clone(),
-            forms: forms.len() as u32,
-        });
-    }
+    Ok(Standing { nodes, name, forms })
+}
 
-    // In the order the cells appear on the nodes: the graph's order is the achievements' own,
-    // and inventing one here would put a boss first for a reason nobody could read.
-    let mut opens: Vec<LiveOpen> = Vec::new();
-    for node in nodes.iter().filter(|n| !n.done) {
-        let mut marks = node.missing.iter().filter_map(mark_of);
-        let Some((character, character_name, column, level)) = marks.next() else {
-            continue;
-        };
-        // Everything missing has to be *this* mark: a second requirement of any kind — even a
-        // second mark of the same character — is something this run cannot give.
-        if node.missing.len() != 1 || !forms.iter().any(|(id, _)| *id == character) {
-            continue;
-        }
-        let name = character_name.to_string();
-        match opens
-            .iter_mut()
-            .find(|o| o.character == character && o.column == column && o.level == level)
-        {
-            Some(open) => open.achievements.push(offered(node)),
-            None => opens.push(LiveOpen {
-                character,
-                character_name: name,
-                column,
-                level,
-                second_level: match level {
-                    MarkLevelView::Base => None,
-                    MarkLevelView::Second => Some(second_level(column)),
-                },
-                achievements: vec![offered(node)],
-            }),
-        }
-    }
+/// The screen with nothing to offer, and the one reason why. Never drawn as "this run opens
+/// nothing": that is an answer, and this is the absence of one.
+fn unanswered(
+    run: Option<RunView>,
+    marks: Option<LiveMarks>,
+    diagnostic: LiveDiagnostic,
+) -> LiveView {
     LiveView {
-        run: Some(run),
+        run,
         marks,
-        opens,
-        diagnostics,
+        opens: Vec::new(),
+        diagnostics: vec![diagnostic],
+    }
+}
+
+fn ambiguity(name: String, forms: &[(u32, String)]) -> Option<LiveDiagnostic> {
+    (forms.len() > 1).then_some(LiveDiagnostic::AmbiguousCharacter {
+        name,
+        forms: forms.len() as u32,
+    })
+}
+
+/// One cell of the matrix, as an offer is grouped by it.
+type Cell<'a> = (u32, &'a str, MarkColumnView, MarkLevelView);
+
+/// The cell a node is waiting on, when that cell is **everything** it is missing and belongs to
+/// one of the characters being played. A second requirement of any kind — even a second mark
+/// of the same character — is something this run cannot give.
+fn sole_mark<'a>(node: &'a UnlockNode, forms: &[(u32, String)]) -> Option<Cell<'a>> {
+    let cell = node.missing.iter().find_map(mark_of)?;
+    let (character, ..) = cell;
+    (node.missing.len() == 1 && forms.iter().any(|(id, _)| *id == character)).then_some(cell)
+}
+
+/// Whether two cells are the same one: the name is carried along, not compared.
+fn same_cell(a: &Cell<'_>, b: &Cell<'_>) -> bool {
+    (a.0, a.2, a.3) == (b.0, b.2, b.3)
+}
+
+/// The offers, grouped by the cell they need. In the order the cells first appear on the nodes:
+/// the graph's order is the achievements' own, and inventing one here would put a boss first
+/// for a reason nobody could read.
+fn opens(nodes: &[UnlockNode], forms: &[(u32, String)]) -> Vec<LiveOpen> {
+    let offers: Vec<(Cell<'_>, &UnlockNode)> = nodes
+        .iter()
+        .filter(|n| !n.done)
+        .filter_map(|n| sole_mark(n, forms).map(|cell| (cell, n)))
+        .collect();
+    offers
+        .iter()
+        .enumerate()
+        .filter(|(i, (cell, _))| !offers[..*i].iter().any(|(c, _)| same_cell(c, cell)))
+        .map(|(_, (cell, _))| {
+            let achievements = offers
+                .iter()
+                .filter(|(c, _)| same_cell(c, cell))
+                .map(|(_, n)| offered(n))
+                .collect();
+            open_of(*cell, achievements)
+        })
+        .collect()
+}
+
+fn open_of(
+    (character, character_name, column, level): Cell<'_>,
+    achievements: Vec<LiveAchievement>,
+) -> LiveOpen {
+    LiveOpen {
+        character,
+        character_name: character_name.to_string(),
+        column,
+        level,
+        second_level: match level {
+            MarkLevelView::Base => None,
+            MarkLevelView::Second => Some(second_level(column)),
+        },
+        achievements,
     }
 }
 
@@ -291,10 +316,10 @@ pub fn live_marks(matrix: &crate::marks::MarksMatrix, rows: &[usize]) -> LiveMar
     }
 }
 
-/// Who the log could mean (card #81, V1: this was a closure in the `live` command). Given the
-/// id the log stated, exactly that character; given only a name, everyone who answers to it in
-/// the catalog's English names — which is two whenever a Tainted form is involved, because the
-/// game gives it the base form's name. `live_view` says there were two rather than choosing.
+/// Who the log could mean. Given the id the log stated, exactly that character; given only a
+/// name, everyone who answers to it in the catalog's English names — which is two whenever a
+/// Tainted form is involved, because the game gives it the base form's name. `live_view` says
+/// there were two rather than choosing.
 pub fn characters_named(c: &catalog::Catalog, name: &str, id: Option<u32>) -> Vec<(u32, String)> {
     c.characters()
         .filter(|ch| match id {
@@ -311,7 +336,7 @@ pub fn characters_named(c: &catalog::Catalog, name: &str, id: Option<u32>) -> Ve
 }
 
 /// The rows of the completion matrix for the characters asked for, in the matrix's order —
-/// two rows when a name reached two forms (card #81, V1, out of the `live` command).
+/// two rows when a name reached two forms.
 pub fn live_mark_rows(c: &catalog::Catalog, wanted: &[u32]) -> Vec<usize> {
     (0..crate::marks::ROSTER.len())
         .filter(|row| {
@@ -320,9 +345,9 @@ pub fn live_mark_rows(c: &catalog::Catalog, wanted: &[u32]) -> Vec<usize> {
         .collect()
 }
 
-/// What the graph's answer means to Live (card #80, item 13: this was `Err(_) => NoGraph` in
-/// the `live` command, which told an unreadable save as a missing game). Exhaustive over
-/// `IpcError`, which is ours and closed: a new error has to be placed here.
+/// What the graph's answer means to Live. An unreadable save is not a missing game, and the
+/// screen says which. Exhaustive over `IpcError`, which is ours and closed: a new error has to
+/// be placed here.
 pub fn live_graph<'a>(
     unlocked: Result<&'a crate::graph::UnlockView, &crate::IpcError>,
 ) -> LiveGraph<'a> {

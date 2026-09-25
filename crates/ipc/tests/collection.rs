@@ -271,3 +271,23 @@ fn a_pool_listed_twice_is_named_once_and_no_section_is_not_beyond_it() {
         .iter()
         .any(|d| matches!(d, CollectionDiagnostic::ItemsBeyondSlots { .. })));
 }
+
+/// Two absences at once, in a fixed order: the collection's section, the achievements', and
+/// the items the save has no slot for last.
+#[test]
+fn the_diagnostics_come_in_a_fixed_order() {
+    assert_eq!(
+        view(None, None).diagnostics,
+        vec![
+            CollectionDiagnostic::NoCollectionSection,
+            CollectionDiagnostic::NoAchievementSection,
+        ]
+    );
+    assert_eq!(
+        view(Some(&SLOTS), None).diagnostics,
+        vec![
+            CollectionDiagnostic::NoAchievementSection,
+            CollectionDiagnostic::ItemsBeyondSlots { count: 1 },
+        ]
+    );
+}

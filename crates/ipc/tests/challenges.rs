@@ -178,3 +178,23 @@ fn a_challenges_diagnostic_is_a_bare_string_on_the_wire() {
         json!("noChallengesSection")
     );
 }
+
+/// Every absence at once, in the order the list says them: the two sections, the wiki, and
+/// the catalog last.
+#[test]
+fn the_diagnostics_come_in_a_fixed_order() {
+    let v = challenges_view(None, None, None, None, |_| None);
+    assert_eq!(
+        v.diagnostics,
+        vec![
+            ChallengesDiagnostic::NoChallengesSection,
+            ChallengesDiagnostic::NoAchievementSection,
+            ChallengesDiagnostic::NoWiki,
+            ChallengesDiagnostic::NoCatalog,
+        ]
+    );
+    assert_eq!(
+        (v.totals.slots, v.totals.challenges, v.totals.done),
+        (0, 0, 0)
+    );
+}
