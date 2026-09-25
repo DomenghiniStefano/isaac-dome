@@ -106,7 +106,7 @@ fn an_uncurated_target_counts_as_unknown_on_its_node() {
             &one_ref(
                 2,
                 r#"{"target":{"kind":"stage","name":"Nowhere"},"label":"Nowhere"}"#,
-                r#"{"key":"stage:Nowhere","label":"Nowhere","uses":1,"verdictRequired":true}"#,
+                r#"{"key":"stage:Nowhere","label":"Nowhere","uses":1}"#,
             ),
             r#"{"schemaVersion":2}"#,
         ),
@@ -126,7 +126,7 @@ fn a_gate_edge_comes_from_the_verdict() {
             &one_ref(
                 2,
                 r#"{"target":{"kind":"stage","name":"The Void"},"label":"The Void"}"#,
-                r#"{"key":"stage:The Void","label":"The Void","uses":1,"verdictRequired":true}"#,
+                r#"{"key":"stage:The Void","label":"The Void","uses":1}"#,
             ),
             r#"{"schemaVersion":2,
                 "verdicts":{"stage:The Void":{"behind":{"achievement":1}}}}"#,
@@ -165,7 +165,7 @@ fn a_verdict_pointing_at_an_achievement_that_does_not_exist_is_diagnosed() {
             &one_ref(
                 2,
                 r#"{"target":{"kind":"stage","name":"The Void"},"label":"The Void"}"#,
-                r#"{"key":"stage:The Void","label":"The Void","uses":1,"verdictRequired":true}"#,
+                r#"{"key":"stage:The Void","label":"The Void","uses":1}"#,
             ),
             r#"{"schemaVersion":2,
                 "verdicts":{"stage:The Void":{"behind":{"achievement":999}}}}"#,
@@ -354,4 +354,162 @@ fn a_base_character_is_found_by_id_even_though_its_name_also_resolves() {
         "the sentence names character 0, not whichever \"Isaac\" the index kept; got {:?}",
         node.requirements
     );
+}
+
+// --- one edge per kind of requirement (characterization for card #82, F1) -------------
+
+/// Every kind of prerequisite the catalog can gate: a boss (1), an item (2), a challenge with
+/// one unlocking achievement (3), and one with two (3 and 4) — which is "either of these".
+const EVERY_KIND_ACHIEVEMENTS: &str = r#"<achievements gfxroot="gfx/ui/achievement">
+  <achievement id="1" name="One" text="One" gfx="1.png" />
+  <achievement id="2" name="Two" text="Two" gfx="2.png" />
+  <achievement id="3" name="Three" text="Three" gfx="3.png" />
+  <achievement id="4" name="Four" text="Four" gfx="4.png" />
+  <achievement id="5" name="Five" text="Five" gfx="5.png" />
+</achievements>"#;
+
+fn every_kind_catalog() -> Catalog {
+    Catalog::build(|p| match p {
+        "achievements.xml" => Some(EVERY_KIND_ACHIEVEMENTS.as_bytes().to_vec()),
+        "bossportraits.xml" => Some(
+            br#"<bosses root="gfx/ui/boss/">
+                  <boss id="19" name="Gish" portrait="g.png" achievement="1" />
+                </bosses>"#
+                .to_vec(),
+        ),
+        "items.xml" => Some(
+            br#"<items gfxroot="gfx/">
+                  <active id="35" name="The Bible" gfx="b.png" achievement="2" />
+                </items>"#
+                .to_vec(),
+        ),
+        "challenges.xml" => Some(
+            br#"<challenges>
+                  <challenge name="Single" id="7" achievements="3" />
+                  <challenge name="Either" id="8" achievements="3,4" />
+                </challenges>"#
+                .to_vec(),
+        ),
+        _ => None,
+    })
+}
+
+#[test]
+fn a_boss_an_item_and_a_challenge_each_draw_the_edge_the_game_gives_them() {
+    let c = every_kind_catalog();
+    let requirements = r#"{"schemaVersion":2,
+        "generatedFrom":{"snapshotAt":"","maxRevid":0},
+        "achievements":{"5":{"refs":[
+            {"target":{"kind":"entity","id":43,"variant":0,"subtype":0},"label":"Gish"},
+            {"target":{"kind":"item","id":35},"label":"The Bible"},
+            {"target":{"kind":"challenge","number":7},"label":"Single"}
+        ]}},
+        "targets":[]}"#;
+    let g = Graph::build(&c, &rules(requirements, r#"{"schemaVersion":2}"#));
+    let node = g.node(a(5)).expect("node 5");
+    assert_eq!(node.prerequisites, aa(&[1, 2, 3]));
+    assert!(node.unknown.is_empty(), "got {:?}", node.unknown);
+    assert_eq!(
+        node.requirements.len(),
+        3,
+        "every ref travels as a requirement, edge or not"
+    );
+    assert!(g.diagnostics().is_empty(), "got {:?}", g.diagnostics());
+}
+
+#[test]
+fn a_challenge_unlocked_by_several_achievements_is_unknown_and_diagnosed() {
+    let c = every_kind_catalog();
+    let requirements = r#"{"schemaVersion":2,
+        "generatedFrom":{"snapshotAt":"","maxRevid":0},
+        "achievements":{"5":{"refs":[
+            {"target":{"kind":"challenge","number":8},"label":"Either"},
+            {"target":{"kind":"challenge","number":8},"label":"Either"}
+        ]}},
+        "targets":[]}"#;
+    let g = Graph::build(&c, &rules(requirements, r#"{"schemaVersion":2}"#));
+    let node = g.node(a(5)).expect("node 5");
+    assert!(
+        node.prerequisites.is_empty(),
+        "no edge is picked out of a disjunction, got {:?}",
+        node.prerequisites
+    );
+    assert_eq!(
+        node.unknown,
+        vec!["challenge:8".to_string()],
+        "labelled by its challenge, and named once however often it is referenced"
+    );
+    assert_eq!(
+        g.diagnostics(),
+        &[
+            GraphDiagnostic::Disjunction {
+                node: a(5),
+                count: 2
+            },
+            GraphDiagnostic::Disjunction {
+                node: a(5),
+                count: 2
+            },
+        ],
+        "one diagnostic per reference, in the order they were read"
+    );
+}
+
+#[test]
+fn a_requirement_the_profile_answers_is_neither_an_edge_nor_unknown() {
+    let c = every_kind_catalog();
+    let requirements = r#"{"schemaVersion":2,
+        "generatedFrom":{"snapshotAt":"","maxRevid":0},
+        "achievements":{"5":{"refs":[
+            {"target":{"kind":"stage","name":"The Void"},"label":"The Void"}
+        ]}},
+        "targets":[]}"#;
+    let corrections = r#"{"schemaVersion":2,
+        "verdicts":{"stage:The Void":{"progress":{
+            "counter":{"name":"deliriumKills","atLeast":1}}}}}"#;
+    let g = Graph::build(&c, &rules(requirements, corrections));
+    let node = g.node(a(5)).expect("node 5");
+    assert!(
+        node.prerequisites.is_empty(),
+        "got {:?}",
+        node.prerequisites
+    );
+    assert!(node.unknown.is_empty(), "got {:?}", node.unknown);
+    assert!(
+        matches!(
+            node.requirements.as_slice(),
+            [graph::model::Requirement::Counter { at_least: 1, .. }]
+        ),
+        "got {:?}",
+        node.requirements
+    );
+}
+
+#[test]
+fn every_node_is_found_by_its_id_and_an_absent_one_is_none() {
+    let c = every_kind_catalog();
+    let g = Graph::build(&c, &rules(&one_ref(5, "", ""), r#"{"schemaVersion":2}"#));
+    let ids: Vec<AchievementId> = g.nodes().iter().map(|n| n.achievement).collect();
+    assert_eq!(ids, aa(&[1, 2, 3, 4, 5]), "one node per achievement, by id");
+    assert!(ids
+        .iter()
+        .all(|&id| g.node(id).map(|n| n.achievement) == Some(id)));
+    assert!(g.node(a(6)).is_none());
+    assert!(g.node(a(0)).is_none());
+}
+
+#[test]
+fn a_graph_written_out_of_order_still_finds_every_node() {
+    let g = graph::for_tests::from_edges(&[(3, &[1]), (1, &[]), (2, &[1])], &[]);
+    let ids: Vec<AchievementId> = g.nodes().iter().map(|n| n.achievement).collect();
+    assert_eq!(
+        ids,
+        aa(&[1, 2, 3]),
+        "nodes are kept by id, whatever order they came in"
+    );
+    assert_eq!(
+        g.node(a(3)).map(|n| n.prerequisites.clone()),
+        Some(aa(&[1]))
+    );
+    assert!(g.node(a(4)).is_none());
 }

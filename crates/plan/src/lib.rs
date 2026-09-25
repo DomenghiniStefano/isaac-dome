@@ -5,9 +5,10 @@
 //!
 //! Design: `docs/superpowers/specs/2026-09-07-plan-queue-design.md`.
 
-pub mod edit;
-pub mod model;
-pub mod order;
+// Private modules, so every item has one path: the crate root.
+mod edit;
+mod model;
+mod order;
 
 pub use model::{Queue, QueueError, Row};
 pub use order::Dependencies;
