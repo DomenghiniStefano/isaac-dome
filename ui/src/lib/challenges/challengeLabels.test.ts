@@ -39,15 +39,13 @@ describe('challengeFacetValueLabel', () => {
     ).toBe('99')
   })
 
-  // Pinned as found, not as wanted: an unknown value reads as the negative one instead of as
-  // it came, which is what every other facet does (card #82, noted and kept).
-  it('reads an unknown rewards or blindfolded value as the negative', () => {
+  it('shows an unknown rewards or blindfolded value as it came', () => {
     expect(
       challengeFacetValueLabel(t, ChallengeFacet.Rewards, 'many', names),
-    ).toBe('«challenges.rewardsNone»')
+    ).toBe('many')
     expect(
       challengeFacetValueLabel(t, ChallengeFacet.Blindfolded, 'maybe', names),
-    ).toBe('«challenges.blindfoldedNo»')
+    ).toBe('maybe')
   })
 })
 
