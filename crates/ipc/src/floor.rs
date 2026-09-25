@@ -231,8 +231,10 @@ pub fn floor_view(cells: Vec<Option<RoomKindView>>) -> FloorView {
     }
 }
 
-/// Every room kind, once. Written out rather than derived: the match below makes the compiler
-/// refuse a kind that is missing, which is the only way a list like this stays complete.
+/// Every room kind, once, in the enum's order. Written out by hand, and **no compiler holds it
+/// complete**: the exhaustive matches beside it force a new kind to be named there, not here.
+/// What does is a test, `room_kinds_lists_every_kind_the_wire_declares_and_each_one_round_trips`,
+/// which compares it with the values the wire declares for `RoomKindView`.
 pub const ROOM_KINDS: [RoomKindView; 14] = [
     RoomKindView::Start,
     RoomKindView::Normal,
@@ -252,12 +254,13 @@ pub const ROOM_KINDS: [RoomKindView; 14] = [
 
 /// The name the **game** gives a room kind's minimap icon, when it has one.
 ///
-/// Three kinds answer `None`, and each for a reason of its own:
+/// Two kinds answer `None`, and each for a reason of its own:
 ///
 /// - **Normal** — the game draws nothing on a normal room, and neither do we.
 /// - **Start** — `minimap_icons.anm2` has no icon for it. The starting room is a normal room
 ///   with the player standing in it, and the marker is the player, not the room.
-/// - none of the others.
+///
+/// The other twelve have one.
 ///
 /// **Challenge is a reading, and it is the one that could be wrong.** The file has no
 /// `IconChallengeRoom`: it has `IconAmbushRoom` and `IconBossAmbushRoom`, and the wiki has
@@ -298,7 +301,7 @@ pub struct RoomIconView {
 ///
 /// Answered on its own and not inside `floor_view`: the icons do not depend on what is
 /// painted, and folding them into an answer that is recomputed on every stroke would send the
-/// same fourteen strings back for every cell the pointer crosses.
+/// same fourteen answers — twelve URLs and two `None`s — back for every cell the pointer crosses.
 pub fn room_icons(mut icon: impl FnMut(&IconRef) -> Option<String>) -> Vec<RoomIconView> {
     ROOM_KINDS
         .iter()
