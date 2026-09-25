@@ -107,11 +107,14 @@ fn a_missing_section_flags_only_the_one_that_took_its_place() {
     let unexpected: Vec<_> = save
         .diagnostics
         .iter()
-        .filter_map(|d| match d {
-            Diagnostic::UnexpectedKind {
+        .filter_map(|d| {
+            let Diagnostic::UnexpectedKind {
                 expected, found, ..
-            } => Some((*expected, *found)),
-            _ => None,
+            } = d
+            else {
+                return None;
+            };
+            Some((*expected, *found))
         })
         .collect();
     assert_eq!(unexpected, vec![(2, 3)]);
