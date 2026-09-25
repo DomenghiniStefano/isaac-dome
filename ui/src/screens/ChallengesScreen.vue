@@ -20,10 +20,10 @@ import { challengeEntries } from '@/lib/diagnostics/challenges'
 import { emptyList, isFiltering } from '@/lib/facets/emptyList'
 import type { FacetFilter } from '@/lib/facets/faceting'
 import type { Target } from '@/lib/ipc/types'
-import { queuedIds } from '@/lib/plan/queueRows'
+
 import { pageLocation } from '@/lib/wiki/category'
 import { LoadStatus } from '@/stores/loadStatus'
-import { useQueueStore } from '@/stores/queue'
+import { useQueueOffer } from '@/composables/useQueueOffer'
 import { useTabsStore } from '@/stores/tabs'
 import { useChallengesStore } from '@/stores/views'
 import ScreenHeader from './ScreenHeader.vue'
@@ -41,7 +41,7 @@ import { challengesView } from './challenges/tabView'
 import ProfileError from './profile/ProfileError.vue'
 
 const store = useChallengesStore()
-const queue = useQueueStore()
+const { queue, queued, canWrite } = useQueueOffer()
 const tabs = useTabsStore()
 const { t } = useMessages()
 
@@ -80,11 +80,6 @@ const characterNames = computed(
 )
 const valueLabel = (facet: ChallengeFacet, value: string) =>
   challengeFacetValueLabel(t, facet, value, characterNames.value)
-
-// A queue that could not be read or saved offers nothing: the rows still show, without the
-// button.
-const queued = computed(() => queuedIds(queue.view))
-const canWrite = computed(() => queue.view?.storeAvailable === true)
 
 // A machine without the game answers this view with no challenges at all (`noCatalog`), and an
 // empty list is not a filter that matched nothing.

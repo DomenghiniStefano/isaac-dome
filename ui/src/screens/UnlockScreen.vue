@@ -33,10 +33,10 @@ import {
   unlockFaceting,
 } from '@/lib/graph/unlockFacets'
 import type { UnlockFilter } from '@/lib/graph/unlockFacets'
-import { queuedIds } from '@/lib/plan/queueRows'
+
 import { useGraphStore } from '@/stores/views'
 import { LoadStatus } from '@/stores/loadStatus'
-import { useQueueStore } from '@/stores/queue'
+import { useQueueOffer } from '@/composables/useQueueOffer'
 import ScreenHeader from './ScreenHeader.vue'
 import ProfileError from './profile/ProfileError.vue'
 import FilterBar from '@/components/facets/FilterBar.vue'
@@ -45,7 +45,7 @@ import { unlockEntries } from '@/lib/diagnostics/unlock'
 import UnlockTable from './unlock/UnlockTable.vue'
 
 const graph = useGraphStore()
-const queue = useQueueStore()
+const { queue, queued, canWrite } = useQueueOffer()
 const { t } = useMessages()
 
 useOnActiveProfile(async () => {
@@ -112,11 +112,6 @@ const rows = computed(() =>
     sort.value,
   ),
 )
-
-// A queue that couldn't be read or saved offers nothing: the rows still show, without "in
-// coda" or the button.
-const queued = computed(() => queuedIds(queue.view))
-const canWrite = computed(() => queue.view?.storeAvailable === true)
 
 const setPicks = (facet: FacetId, picked: string[]) => {
   filter.value = {

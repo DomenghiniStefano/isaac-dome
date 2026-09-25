@@ -13,11 +13,11 @@ import { planEntries } from '@/lib/diagnostics/plan'
 import { wantBanner, wantBlocks } from '@/lib/graph/wantBlocks'
 import { wantLocation, wantOf } from '@/lib/graph/wantLocation'
 import type { Target } from '@/lib/ipc/types'
-import { queuedIds } from '@/lib/plan/queueRows'
+
 import { RouteName } from '@/router/routeTable'
 import type { TabLocation } from '@/router/routeTable'
 import { LoadStatus } from '@/stores/loadStatus'
-import { useQueueStore } from '@/stores/queue'
+import { useQueueOffer } from '@/composables/useQueueOffer'
 import { useTabsStore } from '@/stores/tabs'
 import { useGraphStore } from '@/stores/views'
 import AddPane from './goals/AddPane.vue'
@@ -26,7 +26,7 @@ import QueueCard from './plan/QueueCard.vue'
 import ProfileError from './profile/ProfileError.vue'
 
 const graph = useGraphStore()
-const queue = useQueueStore()
+const { queue, queued, canWrite } = useQueueOffer()
 const tabs = useTabsStore()
 const route = useRoute()
 const { t } = useMessages()
@@ -67,11 +67,6 @@ const noCatalog = computed(
   () =>
     graph.view?.unlock.diagnostics.some((d) => d.kind === 'noCatalog') ?? false,
 )
-
-// A queue that couldn't be read or saved offers nothing: the rows still show, without the
-// "in the queue" line or the button.
-const queued = computed(() => queuedIds(queue.view))
-const canWrite = computed(() => queue.view?.storeAvailable === true)
 
 // The suggestions leave out what the queue holds, and Rust decides which ones fill the
 // place (`next_steps`). So when what the queue holds changes — here, from another screen, or
