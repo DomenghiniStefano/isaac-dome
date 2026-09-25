@@ -18,15 +18,12 @@ pub fn path_key(path: &str) -> PathKey {
         .collect::<String>()
         .into_bytes();
 
-    let mut djb2: u32 = 5381;
-    for &b in &normalized {
-        djb2 = djb2.wrapping_mul(33).wrapping_add(b as u32);
-    }
-
-    let mut fnv: u32 = 0x5BB2_220E;
-    for &b in &normalized {
-        fnv = (fnv ^ b as u32).wrapping_mul(0x0100_0193);
-    }
+    let djb2 = normalized
+        .iter()
+        .fold(5381u32, |h, &b| h.wrapping_mul(33).wrapping_add(b as u32));
+    let fnv = normalized.iter().fold(0x5BB2_220Eu32, |h, &b| {
+        (h ^ b as u32).wrapping_mul(0x0100_0193)
+    });
 
     PathKey { djb2, fnv }
 }

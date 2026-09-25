@@ -6,16 +6,8 @@
 use roll::{Document, DocumentError, Drawn, Preset, Selection, Target};
 use store::Store;
 
-fn temp_store() -> (tempfile::TempDir, Store) {
-    let dir = tempfile::tempdir().expect("a temp dir");
-    let store = Store::open(&dir.path().join("isaacdome.db")).expect("a fresh database opens");
-    (dir, store)
-}
-
-#[test]
-fn the_schema_reaches_version_six() {
-    assert_eq!(store::SCHEMA_VERSION, 6);
-}
+mod common;
+use common::temp_store;
 
 #[test]
 fn no_row_reads_as_the_default_document() {

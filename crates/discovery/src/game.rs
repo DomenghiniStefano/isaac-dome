@@ -3,6 +3,8 @@
 use std::collections::BTreeSet;
 use std::path::{Path, PathBuf};
 
+use keyvalues_parser::{Obj, Value};
+
 use crate::edition::{dlcs_from_appids, edition_from_appids};
 use crate::{Diagnostic, GameInstall, Options, SteamInstall};
 
@@ -26,45 +28,36 @@ pub(crate) fn parse_manifest(text: &str) -> Option<Manifest> {
         .parse(text)
         .ok()?;
     let vdf: keyvalues_parser::Vdf<'_> = partial.into();
-
     let app_state = vdf.value.get_obj()?;
 
-    let installdir = app_state
-        .get("installdir")
-        .and_then(|vals| vals.first())
-        .and_then(|v| v.get_str())?
-        .to_owned();
-
-    let mut dlc_appids = BTreeSet::new();
-    if let Some(depots_vals) = app_state.get("InstalledDepots") {
-        if let Some(depots_obj) = depots_vals.first().and_then(|v| v.get_obj()) {
-            for depot_vals in depots_obj.values() {
-                if let Some(depot_obj) = depot_vals.first().and_then(|v| v.get_obj()) {
-                    if let Some(dlcappid_str) = depot_obj
-                        .get("dlcappid")
-                        .and_then(|vals| vals.first())
-                        .and_then(|v| v.get_str())
-                    {
-                        if let Ok(id) = dlcappid_str.parse::<u32>() {
-                            dlc_appids.insert(id);
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    let last_updated = app_state
-        .get("LastUpdated")
-        .and_then(|vals| vals.first())
-        .and_then(|v| v.get_str())
-        .and_then(|s| s.parse::<u64>().ok());
-
     Some(Manifest {
-        installdir,
-        dlc_appids,
-        last_updated,
+        installdir: first_str(app_state, "installdir")?.to_owned(),
+        dlc_appids: dlc_appids(app_state),
+        last_updated: first_str(app_state, "LastUpdated").and_then(|s| s.parse().ok()),
     })
+}
+
+/// The first value under `key`, when it is a string. A VDF key can repeat, and the first one
+/// is the one Steam reads.
+fn first_str<'a>(obj: &'a Obj<'_>, key: &str) -> Option<&'a str> {
+    obj.get(key)?.first()?.get_str()
+}
+
+/// The DLC appids of `InstalledDepots`: every depot that names one it can parse. A depot with
+/// no `dlcappid` is the base game's, and one that doesn't parse is skipped rather than guessed.
+fn dlc_appids(app_state: &Obj<'_>) -> BTreeSet<u32> {
+    app_state
+        .get("InstalledDepots")
+        .and_then(|values| values.first())
+        .and_then(Value::get_obj)
+        .map(|depots| depots.values().filter_map(|d| dlc_appid(d)).collect())
+        .unwrap_or_default()
+}
+
+fn dlc_appid(depot: &[Value<'_>]) -> Option<u32> {
+    first_str(depot.first()?.get_obj()?, "dlcappid")?
+        .parse()
+        .ok()
 }
 
 pub(crate) fn find_game(
@@ -82,61 +75,58 @@ pub(crate) fn find_game(
         return (None, vec![Diagnostic::GameNotFound]);
     };
 
+    // The libraries are asked in order, and the first that holds the game ends the search: what
+    // a later library would have said is never read, so it is never reported either.
     let mut diags = Vec::new();
     for library in &steam.libraries {
-        let manifest = library
-            .join("steamapps")
-            .join(format!("appmanifest_{APPID}.acf"));
-        let text = match std::fs::read_to_string(&manifest) {
-            Ok(text) => text,
-            // Not there: this library does not hold the game, which is normal.
-            Err(e) if e.kind() == std::io::ErrorKind::NotFound => continue,
-            // There and unreadable (card #80, R7): said, like `saves.rs` says a folder it
-            // cannot list, and then the same as a manifest that does not parse.
-            Err(e) => {
-                diags.push(Diagnostic::UnreadablePath {
-                    path: manifest,
-                    kind: e.kind(),
-                });
-                if let Some(game) = canonical_game(library) {
-                    return (Some(game), diags);
-                }
-                continue;
-            }
-        };
-        let Some(parsed) = parse_manifest(&text) else {
-            diags.push(Diagnostic::MalformedManifest { path: manifest });
-            if let Some(game) = canonical_game(library) {
-                return (Some(game), diags);
-            }
-            continue;
-        };
-        let dir = library
-            .join("steamapps")
-            .join("common")
-            .join(&parsed.installdir);
-        // Steam's record says installed; the disk decides. A library on a drive that
-        // isn't plugged in, or an uninstall that left the manifest behind, would
-        // otherwise hand back a path that doesn't exist — and the rest of the app would
-        // go looking for archives inside it and report a failed extraction, when what
-        // actually happened is that the game isn't there. Keep looking instead: another
-        // library may hold it, and if none does, the `GameNotFound` below says so.
-        // The malformed-manifest fallback above already checks the same thing.
-        if !dir.is_dir() {
-            continue;
+        let (game, diag) = look_in(library);
+        diags.extend(diag);
+        if let Some(game) = game {
+            return (Some(game), diags);
         }
-        return (
-            Some(game_from_dir(
-                dir,
-                library.clone(),
-                Some((manifest, parsed)),
-            )),
-            diags,
-        );
     }
-
     diags.push(Diagnostic::GameNotFound);
     (None, diags)
+}
+
+/// One library: the game if it holds it, and what was wrong with its manifest if anything was.
+fn look_in(library: &Path) -> (Option<GameInstall>, Option<Diagnostic>) {
+    let manifest = library
+        .join("steamapps")
+        .join(format!("appmanifest_{APPID}.acf"));
+    let text = match std::fs::read_to_string(&manifest) {
+        Ok(text) => text,
+        // Not there: this library does not hold the game, which is normal.
+        Err(e) if e.kind() == std::io::ErrorKind::NotFound => return (None, None),
+        // There and unreadable (card #80, R7): said, like `saves.rs` says a folder it
+        // cannot list, and then the same as a manifest that does not parse.
+        Err(e) => {
+            let diag = Diagnostic::UnreadablePath {
+                path: manifest,
+                kind: e.kind(),
+            };
+            return (canonical_game(library), Some(diag));
+        }
+    };
+    let Some(parsed) = parse_manifest(&text) else {
+        let diag = Diagnostic::MalformedManifest { path: manifest };
+        return (canonical_game(library), Some(diag));
+    };
+    let dir = library
+        .join("steamapps")
+        .join("common")
+        .join(&parsed.installdir);
+    // Steam's record says installed; the disk decides. A library on a drive that
+    // isn't plugged in, or an uninstall that left the manifest behind, would
+    // otherwise hand back a path that doesn't exist — and the rest of the app would
+    // go looking for archives inside it and report a failed extraction, when what
+    // actually happened is that the game isn't there. Keep looking instead: another
+    // library may hold it, and if none does, the `GameNotFound` the caller adds says so.
+    // The malformed-manifest fallback above already checks the same thing.
+    let game = dir
+        .is_dir()
+        .then(|| game_from_dir(dir, library.to_path_buf(), Some((manifest, parsed))));
+    (game, None)
 }
 
 /// Where the game is when the manifest says nothing — unreadable or malformed: the standard

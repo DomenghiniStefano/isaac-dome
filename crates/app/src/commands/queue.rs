@@ -8,7 +8,9 @@ use store::{store_error, store_unavailable};
 use crate::events::{announce, PLAN_CHANGED};
 use crate::icons::icon_url;
 
-use crate::state::{achievement_flags, CatalogState, GraphState, ResourcesState, StoreState};
+use crate::state::{
+    achievement_flags, catalog_now, CatalogState, GraphState, ResourcesState, StoreState,
+};
 use catalog::Catalog;
 /// What every queue command needs, gathered once so the five read the same way.
 struct QueuePieces<'a> {
@@ -23,8 +25,7 @@ fn queue_pieces<'a>(
     resources: &'a ResourcesState,
     graph: &'a GraphState,
 ) -> Result<QueuePieces<'a>, IpcError> {
-    let rs = resources.get(app);
-    let c = rs.and_then(|rs| catalog.get_or_build(rs));
+    let c = catalog_now(app, resources, catalog);
     Ok(QueuePieces {
         catalog: c,
         graph: c.and_then(|c| graph.get(c)),

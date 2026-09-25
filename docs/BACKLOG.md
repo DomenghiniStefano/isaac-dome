@@ -2684,7 +2684,7 @@ Beast*, *Cadavra*, which the catalog already reports).
 | `Portrait_Mother.png` | 480x440 | the head at the top, the two hands at the bottom |
 
 The measurement is one command away, and the seven files are in `samples/sprites/` next to
-*Monstro* as the 192x192 comparison: `cargo run --example estrai -p unpack -- <paths>` with the
+*Monstro* as the 192x192 comparison: `cargo run --example extract -p unpack -- <paths>` with the
 `portrait=` attributes of `bossportraits.xml`, then each PNG's IHDR at bytes 16 and 20.
 
 The app asks for the file and draws it whole, so a row that everywhere else holds one creature

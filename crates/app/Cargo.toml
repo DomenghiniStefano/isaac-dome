@@ -3,7 +3,7 @@ name = "app"
 version = "0.1.0"
 edition = "2021"
 license.workspace = true
-description = "IsaacDome — applicazione desktop"
+description = "IsaacDome — the desktop app: Tauri wiring, commands and managed state"
 
 [lib]
 name = "app_lib"

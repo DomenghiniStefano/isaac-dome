@@ -8,7 +8,7 @@ use store::{plan_parts, store_error, store_unavailable};
 use crate::events::{announce, PLAN_CHANGED};
 use crate::icons::icon_url;
 
-use crate::state::{CatalogState, ResourcesState, StoreState};
+use crate::state::{catalog_now, CatalogState, ResourcesState, StoreState};
 
 #[tauri::command]
 pub fn plan(
@@ -19,8 +19,7 @@ pub fn plan(
 ) -> Result<ipc::PlanView, IpcError> {
     // The catalog is needed to resolve saved keys into names and icons: without it,
     // the goals are still visible and the view says why they have no name.
-    let resources = resources.get(&app);
-    let c = resources.and_then(|rs| catalog.get_or_build(rs));
+    let c = catalog_now(&app, &resources, &catalog);
     // Database that won't open, or a query that fails: expected cases, the plan comes
     // out empty and says why.
     let (goals, unreadable, unavailable) = match store.lock(&app) {
@@ -48,16 +47,13 @@ pub fn add_goal(
     // The target must exist in the catalog: a goal for a made-up id doesn't get saved.
     // Without a catalog it can't be verified, and the UI needs to be able to say
     // "install the game" instead of "this item doesn't exist".
-    let resources = resources.get(&app);
-    let c = resources.and_then(|rs| catalog.get_or_build(rs));
+    let c = catalog_now(&app, &resources, &catalog);
     match c {
         None => return Err(IpcError::CatalogUnavailable),
         Some(c) if !ipc::target_exists(c, &target) => return Err(IpcError::UnknownTarget),
         Some(_) => {}
     }
-    let since_epoch = std::time::SystemTime::now()
-        .duration_since(std::time::UNIX_EPOCH)
-        .unwrap_or_default();
+    let since_epoch = crate::clock::since_epoch();
     let created_unix = since_epoch.as_secs() as i64;
     let goal = ipc::Goal {
         id: ipc::GoalId::new(created_unix, goal_nonce(since_epoch.subsec_nanos())),
@@ -90,8 +86,7 @@ pub fn remove_goal(
 ) -> Result<ipc::PlanView, IpcError> {
     // Same as `plan`: the view returned carries the remaining goals, and naming them
     // needs the catalog.
-    let resources = resources.get(&app);
-    let c = resources.and_then(|rs| catalog.get_or_build(rs));
+    let c = catalog_now(&app, &resources, &catalog);
     let guard = store.lock(&app).map_err(store_unavailable)?;
     // Idempotent: removing an id that's already gone isn't an error.
     let _removed = guard.remove_goal(&id).map_err(store_error)?;

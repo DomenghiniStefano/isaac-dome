@@ -89,7 +89,7 @@ fn malformed_manifest_without_canonical_dir_continues_to_next_library() {
     let lib1 = tmp.path().join("lib1");
     let steamapps1 = lib1.join("steamapps");
     mkdir(&steamapps1);
-    fs::write(steamapps1.join("appmanifest_250900.acf"), b"spazzatura").unwrap();
+    fs::write(steamapps1.join("appmanifest_250900.acf"), b"garbage").unwrap();
     // We do NOT create the canonical folder in lib1
 
     // Second library: valid .acf + folder present
@@ -255,13 +255,13 @@ fn game_carries_last_updated_from_manifest() {
 fn a_leftover_game_folder_without_a_manifest_is_not_an_installation() {
     let tmp = tempfile::tempdir().unwrap();
     let library = tmp.path().to_path_buf();
-    let residuo = library
+    let leftover = library
         .join("steamapps")
         .join("common")
         .join("The Binding of Isaac Rebirth");
-    mkdir(&residuo);
+    mkdir(&leftover);
     // A plausible leftover: no executable, no `resources\packed`.
-    fs::write(residuo.join("README.txt"), b"resti").unwrap();
+    fs::write(leftover.join("README.txt"), b"what is left").unwrap();
     mkdir(&library.join("steamapps"));
 
     let steam = SteamInstall {
