@@ -6,7 +6,6 @@ use tauri::{AppHandle, Manager};
 use tauri_plugin_autostart::AutoLaunchManager;
 use tauri_plugin_dialog::DialogExt;
 
-use discovery::discover;
 use ipc::{AutostartReason, AutostartView, IpcError, ProfileId, Settings, SetupState};
 
 use crate::events::{announce, PROFILE_CHANGED, SETTINGS_CHANGED};
@@ -24,7 +23,7 @@ fn read_save(path: &std::path::Path) -> Option<core_save::Save> {
 /// choice. Shared by the three commands that answer it, so they cannot drift apart.
 fn state_now(app: &AppHandle) -> SetupState {
     let settings = settings_file::load(app);
-    let d = discover(&settings_file::options(app));
+    let d = crate::state::discovery_now(app);
     ipc::setup_state(
         &d,
         settings.active_profile_id.as_ref(),
@@ -80,7 +79,7 @@ pub async fn choose_saves_folder(app: AppHandle) -> Result<SetupState, IpcError>
 pub fn select_profile(app: AppHandle, id: ProfileId) -> Result<SetupState, IpcError> {
     // The same options `setup_state` answered with: a candidate found in a folder chosen by
     // hand must be choosable, and searching without them here would refuse it as unknown.
-    let d = discover(&settings_file::options(&app));
+    let d = crate::state::discovery_now(&app);
     let views = ipc::candidates(&d.saves);
     if !views.iter().any(|c| c.id == id) {
         return Err(IpcError::UnknownProfile {

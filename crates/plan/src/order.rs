@@ -89,9 +89,9 @@ impl Queue {
             }
         }
 
-        // The floor: one past the last prerequisite left in the list. In a queue that was
-        // valid before the move every prerequisite precedes every dependent, so this is
-        // the only bound the rise has.
+        // The floor: one past the last prerequisite of the moved row left in the list. It
+        // bounds the moved row only; the rows dragged with it can have prerequisites of their
+        // own, and those are placed below.
         let floor = rest
             .iter()
             .rposition(|r| deps.requires(achievement, r.achievement))
@@ -99,11 +99,24 @@ impl Queue {
             .unwrap_or(0);
         let landed = target.clamp(floor, rest.len());
 
-        let mut out = Vec::with_capacity(rest.len() + dragged.len() + 1);
-        let tail = rest.split_off(landed);
-        out.append(&mut rest);
+        // A dragged row lands right below the moved one — unless one of its **own** other
+        // prerequisites is still further down, and then right below that one (card #80,
+        // item 03: `[2, 1, 3]` with 3 needing both, moving 1 to the top used to put 3 above
+        // 2). Walked in the dragged rows' own order, and each one looks at the rows already
+        // placed below as well: a dragged row that needs another dragged row placed lower
+        // follows it there.
+        let mut tail = rest.split_off(landed);
+        let mut out = rest;
         out.push(moved);
-        out.append(&mut dragged);
+        for row in dragged {
+            match tail
+                .iter()
+                .rposition(|r| deps.requires(row.achievement, r.achievement))
+            {
+                Some(last) => tail.insert(last + 1, row),
+                None => out.push(row),
+            }
+        }
         out.extend(tail);
         *self = Queue::from_rows(out);
         landed

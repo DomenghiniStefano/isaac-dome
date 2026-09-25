@@ -1,6 +1,7 @@
 //! Settings I/O: the only state the `app` crate persists, the active profile
-//! choice. A missing, unreadable, or malformed file is treated as "no choice
-//! saved" — never a fatal error, never a silent overwrite of the user's file.
+//! choice. A missing or unreadable file is treated as "no choice saved", a malformed one is
+//! read as no choice and set aside before the next write (card #80, P2) — never a fatal
+//! error, never a silent overwrite of the user's file.
 
 use discovery::Options;
 use ipc::{Settings, SettingsReason};
@@ -46,11 +47,31 @@ pub struct Stored {
 }
 
 fn read_stored(app: &AppHandle) -> Stored {
-    settings_path(app)
+    match read_file(app) {
+        FileRead::Parsed(stored) => stored,
+        FileRead::Absent | FileRead::Malformed => Stored::default(),
+    }
+}
+
+/// What is on disk, told apart: a file that does not parse is **not** the same as no file,
+/// because writing over it would lose the folders it holds (card #80, P2).
+enum FileRead {
+    Absent,
+    Parsed(Stored),
+    Malformed,
+}
+
+fn read_file(app: &AppHandle) -> FileRead {
+    let Some(text) = settings_path(app)
         .ok()
         .and_then(|p| std::fs::read_to_string(p).ok())
-        .and_then(|s| serde_json::from_str(&s).ok())
-        .unwrap_or_default()
+    else {
+        return FileRead::Absent;
+    };
+    match serde_json::from_str(&text) {
+        Ok(stored) => FileRead::Parsed(stored),
+        Err(_) => FileRead::Malformed,
+    }
 }
 
 /// A missing, unreadable, or malformed file is treated as "no choice saved".
@@ -107,5 +128,24 @@ fn write(app: &AppHandle, stored: &Stored) -> Result<(), IpcError> {
     }
     let body =
         serde_json::to_string_pretty(stored).map_err(|_| not_writable(SettingsReason::Encoding))?;
-    std::fs::write(&path, body).map_err(io_failed)
+    // A file that does not parse is put aside before anything is written, never written over
+    // (card #80, P2): it may hold the folders chosen by hand, and "never a silent overwrite of
+    // the user's file" is this module's promise. Named by the second it was set aside, so a
+    // second bad file does not replace the first.
+    if matches!(read_file(app), FileRead::Malformed) {
+        let unix = std::time::SystemTime::now()
+            .duration_since(std::time::UNIX_EPOCH)
+            .map(|d| d.as_secs())
+            .unwrap_or(0);
+        std::fs::rename(
+            &path,
+            path.with_file_name(format!("settings.malformed-{unix}.json")),
+        )
+        .map_err(io_failed)?;
+    }
+    // Atomic: written beside the file and renamed over it, so a crash mid-write leaves the old
+    // file or the new one, never half of each.
+    let temp = path.with_extension("json.tmp");
+    std::fs::write(&temp, body).map_err(io_failed)?;
+    std::fs::rename(&temp, &path).map_err(io_failed)
 }

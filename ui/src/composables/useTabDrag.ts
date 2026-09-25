@@ -16,6 +16,7 @@ import {
   warmPreview,
 } from '@/lib/window/preview'
 import { watchPointer } from '@/lib/window/pointerSource'
+import { useSettingsStore } from '@/stores/settings'
 import type { PointerWatch } from '@/lib/window/pointerSource'
 import { pastTearBand, stripUnderPoint, toDesktop } from '@/lib/window/tearOff'
 import { windowPort } from '@/lib/window/windowPort'
@@ -53,6 +54,8 @@ export interface TabDrag {
 // that follows the cursor, and the release either joins the tab to the window under the point
 // or opens one for it there.
 export const useTabDrag = (options: TabDragOptions): TabDrag => {
+  // The strip band is in rem, so it is measured at the interface's scale (card 80, item 08).
+  const settings = useSettingsStore()
   const detached = ref(false)
   // Read once when the tab leaves: windows do not move while a tab is over them, and asking
   // the backend for the list on every frame would be a command per frame.
@@ -113,7 +116,12 @@ export const useTabDrag = (options: TabDragOptions): TabDrag => {
     // A **strip** under the cursor, not a window: over a window's content there is no landing,
     // so nothing is aimed. Our own strip counts like any other — the tab has already left it,
     // so putting it back there is a landing and not a special case.
-    const target = stripUnderPoint(targets(), p, focusOrder.value)
+    const target = stripUnderPoint(
+      targets(),
+      p,
+      focusOrder.value,
+      settings.scale,
+    )
     tellHovered(target, p)
     // **The card never leaves the cursor until the release** (owner, 2026-09-13). It used to
     // hide itself over a strip, on the grounds that the marker there says the same thing — but

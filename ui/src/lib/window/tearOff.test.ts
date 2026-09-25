@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import {
-  StripBand,
+  stripBandPx,
   holdsPoint,
   inStripBand,
   pastTearBand,
@@ -9,6 +9,9 @@ import {
   stripUnderPoint,
 } from './tearOff'
 import type { WindowBox } from './windowPort'
+import spacing from '@/assets/theme/spacing.css?raw'
+import { remToPx } from '@/lib/scale/rows'
+import { scalePercents } from '@/lib/scale/steps'
 
 const win = (
   label: string,
@@ -50,19 +53,21 @@ describe('which strip a point is over', () => {
   const b = win('b', 500, 300)
 
   it('answers null over the bare desktop', () => {
-    expect(stripUnderPoint([a, b], { x: 5000, y: 5000 }, [])).toBeNull()
-    expect(stripUnderPoint([], { x: 10, y: 10 }, [])).toBeNull()
+    expect(stripUnderPoint([a, b], { x: 5000, y: 5000 }, [], 100)).toBeNull()
+    expect(stripUnderPoint([], { x: 10, y: 10 }, [], 100)).toBeNull()
   })
 
   it('answers the window whose strip holds the point', () => {
-    expect(stripUnderPoint([a, b], { x: 100, y: 10 }, [])).toBe('a')
-    expect(stripUnderPoint([a, b], { x: 700, y: 310 }, [])).toBe('b')
+    expect(stripUnderPoint([a, b], { x: 100, y: 10 }, [], 100)).toBe('a')
+    expect(stripUnderPoint([a, b], { x: 700, y: 310 }, [], 100)).toBe('b')
   })
 
   it('answers null over a window that is not its strip', () => {
     // Deep in a's content, and in b's too: neither is a landing.
-    expect(stripUnderPoint([a, b], { x: 520, y: 400 }, ['a', 'b'])).toBeNull()
-    expect(stripUnderPoint([a, b], { x: 100, y: 400 }, [])).toBeNull()
+    expect(
+      stripUnderPoint([a, b], { x: 520, y: 400 }, ['a', 'b'], 100),
+    ).toBeNull()
+    expect(stripUnderPoint([a, b], { x: 100, y: 400 }, [], 100)).toBeNull()
   })
 
   it('prefers the most recently focused when two strips overlap', () => {
@@ -70,32 +75,42 @@ describe('which strip a point is over', () => {
     // up. Two strips on the same point is the case it does: there is no z-order API
     // (tauri#5656), so the focus order is the only thing that can decide.
     const c = win('c', 500, 300)
-    expect(stripUnderPoint([b, c], { x: 700, y: 310 }, ['c', 'b'])).toBe('c')
-    expect(stripUnderPoint([b, c], { x: 700, y: 310 }, ['b', 'c'])).toBe('b')
+    expect(stripUnderPoint([b, c], { x: 700, y: 310 }, ['c', 'b'], 100)).toBe(
+      'c',
+    )
+    expect(stripUnderPoint([b, c], { x: 700, y: 310 }, ['b', 'c'], 100)).toBe(
+      'b',
+    )
   })
 
   it('ignores a window the order knows but the list does not', () => {
-    expect(stripUnderPoint([a], { x: 100, y: 10 }, ['ghost', 'a'])).toBe('a')
+    expect(stripUnderPoint([a], { x: 100, y: 10 }, ['ghost', 'a'], 100)).toBe(
+      'a',
+    )
   })
 })
 
 describe('the strip band', () => {
   it('is the top of the window, in its own logical pixels', () => {
     const w = win('a', 0, 0, 2)
-    expect(inStripBand(w, { x: 100, y: 10 })).toBe(true)
+    expect(inStripBand(w, { x: 100, y: 10 }, 100)).toBe(true)
     // At 2x the band is StripBand logical pixels, so twice as many physical ones.
-    expect(inStripBand(w, { x: 100, y: StripBand * 2 - 1 })).toBe(true)
-    expect(inStripBand(w, { x: 100, y: StripBand * 2 + 1 })).toBe(false)
+    expect(inStripBand(w, { x: 100, y: stripBandPx(100) * 2 - 1 }, 100)).toBe(
+      true,
+    )
+    expect(inStripBand(w, { x: 100, y: stripBandPx(100) * 2 + 1 }, 100)).toBe(
+      false,
+    )
   })
 
   it('is not a band across the whole desktop', () => {
-    expect(inStripBand(win('a', 0, 0), { x: 4000, y: 10 })).toBe(false)
+    expect(inStripBand(win('a', 0, 0), { x: 4000, y: 10 }, 100)).toBe(false)
   })
 
   it('starts at the window, not at the screen', () => {
     const w = win('a', 500, 300)
-    expect(inStripBand(w, { x: 600, y: 310 })).toBe(true)
-    expect(inStripBand(w, { x: 600, y: 10 })).toBe(false)
+    expect(inStripBand(w, { x: 600, y: 310 }, 100)).toBe(true)
+    expect(inStripBand(w, { x: 600, y: 10 }, 100)).toBe(false)
   })
 })
 
@@ -125,5 +140,36 @@ describe('pastTearBand', () => {
   it('does not tear off sideways: a strip is a line you slide along', () => {
     expect(pastTearBand({ x: -600, y: 20 }, strip)).toBe(false)
     expect(pastTearBand({ x: 4000, y: 20 }, strip)).toBe(false)
+  })
+})
+
+// Card #80, item 08: the band follows the interface's scale. It was 40 logical pixels at any
+// scale while the title bar holding the strip is a rem token, so at 150% the strip was 45px
+// and at 200% 60px against a 40px band: a drop on the lower part of the strip opened a window.
+describe('the strip band at every scale', () => {
+  const titlebarRem = Number(
+    spacing.match(/--spacing-titlebar:\s*([\d.]+)rem;/)?.[1],
+  )
+
+  it('reads the title bar token it has to cover', () => {
+    expect(titlebarRem).toBeGreaterThan(0)
+  })
+
+  it('covers the whole title bar at every step of the scale', () => {
+    for (const percent of scalePercents) {
+      expect(stripBandPx(percent)).toBeGreaterThanOrEqual(
+        remToPx(titlebarRem, percent),
+      )
+    }
+  })
+
+  it('is the 40px it always was at 100%', () => {
+    expect(stripBandPx(100)).toBe(40)
+  })
+
+  it('catches a drop on the lower half of the strip at 200%', () => {
+    const w = win('a', 0, 0)
+    // 55px down: inside a 60px title bar, outside the old 40px band.
+    expect(inStripBand(w, { x: 100, y: 55 }, 200)).toBe(true)
   })
 })

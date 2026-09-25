@@ -23,7 +23,7 @@ pub(crate) fn decompress(
     decompressed_len: usize,
     name_hash_b: u32,
 ) -> Option<Vec<u8>> {
-    let mut out: Vec<u8> = Vec::with_capacity(decompressed_len);
+    let mut out: Vec<u8> = Vec::with_capacity(crate::prealloc(archive, start, decompressed_len));
     let mut cur = start;
     let mut remaining = decompressed_len;
 

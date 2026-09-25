@@ -11,7 +11,7 @@
 /// `[u32 chunkLen][chunkLen byte LZW]` until `decompressed_len` bytes are reached.
 /// Returns `None` (never panics) on any inconsistency or overrun.
 pub(crate) fn decompress(archive: &[u8], start: usize, decompressed_len: usize) -> Option<Vec<u8>> {
-    let mut out = Vec::with_capacity(decompressed_len);
+    let mut out = Vec::with_capacity(crate::prealloc(archive, start, decompressed_len));
     let mut cur = start;
 
     // State shared across chunks (Gibbed: dictionary created once, outside the loop).

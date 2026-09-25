@@ -1,14 +1,16 @@
 <script setup lang="ts">
-import { onMounted, onUnmounted, ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import { selectProfile, setupState } from '@/lib/ipc/setup'
 import { runs } from '@/lib/ipc/runs'
-import { AppEvent, watchAppEvent } from '@/lib/window/appEvents'
+import { AppEvent } from '@/lib/window/appEvents'
+import { useAppEvent } from '@/composables/useAppEvent'
 import { completion, saveSummary } from '@/lib/ipc/save'
 import { extractionReport } from '@/lib/ipc/resources'
 import { graphViews } from '@/lib/ipc/graph'
 import { wikiEntry } from '@/lib/ipc/wiki'
 import type {
   ArchiveMode,
+  ArchiveReason,
   Cell,
   Entry,
   ExtractionReport,
@@ -161,6 +163,21 @@ const modeText = (m: ArchiveMode) => {
   }
 }
 
+// An archive that is there and did not open (card #80, R6). The verification page speaks
+// English, like the rest of it: the IO reason stays the wire value.
+const brokenText = (r: ArchiveReason) => {
+  switch (r.kind) {
+    case 'tooShort':
+      return 'shorter than a header'
+    case 'badMagic':
+      return 'not an ARCH000 archive'
+    case 'io':
+      return `unreadable (${r.reason})`
+    default:
+      return assertNever(r)
+  }
+}
+
 // The steps are what the graph says is unlockable now, most-opening first. The basis
 // travels with them so the screen never has to guess why the order is what it is.
 const basisText = (b: StepsBasis) => {
@@ -217,18 +234,13 @@ const outcomeText = (o: RunOutcomeView) => {
 
 const runKey = (r: RunView) => `${sourceText(r.source)}#${r.ordinal}`
 
-let stopRunsEvent: (() => void) | undefined
-
-onMounted(async () => {
-  await load().catch(handleIpcError)
-  // The archive fills itself in the background: without this the page shows whatever had been
-  // imported by the time it mounted, which on a first launch is nothing.
-  stopRunsEvent = await watchAppEvent(AppEvent.RunsChanged, () => {
-    void loadRuns().catch(handleIpcError)
-  })
+// The archive fills itself in the background: without this the page shows whatever had been
+// imported by the time it mounted, which on a first launch is nothing.
+useAppEvent(AppEvent.RunsChanged, () => {
+  void loadRuns().catch(handleIpcError)
 })
 
-onUnmounted(() => stopRunsEvent?.())
+onMounted(() => load().catch(handleIpcError))
 </script>
 
 <template>
@@ -286,11 +298,21 @@ onUnmounted(() => stopRunsEvent?.())
         Game archives: {{ extraction.archives.length }} open,
         {{ extraction.totalEntries }} entries indexed
       </h2>
-      <p v-if="!extraction.archives.length" class="opacity-muted">
+      <p
+        v-if="!extraction.archives.length && !extraction.broken.length"
+        class="opacity-muted"
+      >
         No archives: the game does not appear to be installed.
       </p>
       <p v-for="a in extraction.archives" :key="a.name">
         {{ a.name }} — {{ modeText(a.mode) }} — {{ a.entries }} entries
+      </p>
+      <p
+        v-for="b in extraction.broken"
+        :key="b.name"
+        class="text-state-unexpected-foreground"
+      >
+        {{ b.name }} — did not open: {{ brokenText(b.reason) }}
       </p>
     </section>
 

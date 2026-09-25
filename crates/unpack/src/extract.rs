@@ -13,8 +13,15 @@ pub struct ExtractReport {
 
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub enum Diagnostic {
-    DecompressFailed { path: String },
-    WriteFailed { path: PathBuf, reason: String },
+    DecompressFailed {
+        path: String,
+    },
+    /// The kind and never the message (card #80, R6): the OS's sentence is not translatable,
+    /// and on Windows it can repeat the path it was given.
+    WriteFailed {
+        path: PathBuf,
+        reason: std::io::ErrorKind,
+    },
 }
 
 /// Joins `rel` under `cache_dir`, accepting only normal path components.
@@ -73,7 +80,7 @@ pub fn extract_subset(archive: &Archive, wanted: &[&str], cache_dir: &Path) -> E
             if let Err(e) = std::fs::create_dir_all(parent) {
                 report.diagnostics.push(Diagnostic::WriteFailed {
                     path: dest.clone(),
-                    reason: e.to_string(),
+                    reason: e.kind(),
                 });
                 continue;
             }
@@ -82,7 +89,7 @@ pub fn extract_subset(archive: &Archive, wanted: &[&str], cache_dir: &Path) -> E
             Ok(()) => report.extracted.push(dest),
             Err(e) => report.diagnostics.push(Diagnostic::WriteFailed {
                 path: dest,
-                reason: e.to_string(),
+                reason: e.kind(),
             }),
         }
     }

@@ -66,6 +66,9 @@ pub enum LiveDiagnostic {
     /// saying so is the difference between "we cannot read your progress" and "the game is
     /// not installed": the run still draws either way.
     NoProfile,
+    /// The profile is chosen and its save would not read: the graph has nothing to stand on,
+    /// and that is a different sentence from a game that is not there.
+    SaveUnreadable,
 }
 
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, ts_rs::TS)]
@@ -119,6 +122,8 @@ pub enum LiveGraph<'a> {
     Nodes(&'a Vec<UnlockNode>),
     NoProfile,
     NoGraph,
+    /// The save would not read — not "no game", which is what it used to be told as.
+    SaveUnreadable,
 }
 
 /// The join. `characters` answers who the catalog says this is: given the id the log stated it
@@ -155,6 +160,14 @@ pub fn live_view(
                 marks,
                 opens: Vec::new(),
                 diagnostics: vec![LiveDiagnostic::NoGraph],
+            }
+        }
+        LiveGraph::SaveUnreadable => {
+            return LiveView {
+                run: Some(run),
+                marks,
+                opens: Vec::new(),
+                diagnostics: vec![LiveDiagnostic::SaveUnreadable],
             }
         }
     };
@@ -305,4 +318,30 @@ pub fn live_mark_rows(c: &catalog::Catalog, wanted: &[u32]) -> Vec<usize> {
             crate::marks::character_for(*row, c).is_some_and(|ch| wanted.contains(&ch.id.0))
         })
         .collect()
+}
+
+/// What the graph's answer means to Live (card #80, item 13: this was `Err(_) => NoGraph` in
+/// the `live` command, which told an unreadable save as a missing game). Exhaustive over
+/// `IpcError`, which is ours and closed: a new error has to be placed here.
+pub fn live_graph<'a>(
+    unlocked: Result<&'a crate::graph::UnlockView, &crate::IpcError>,
+) -> LiveGraph<'a> {
+    use crate::IpcError as E;
+    match unlocked {
+        Ok(view) => LiveGraph::Nodes(&view.nodes),
+        Err(E::NoActiveProfile | E::UnknownProfile { .. }) => LiveGraph::NoProfile,
+        Err(E::UnreadableSave { .. }) => LiveGraph::SaveUnreadable,
+        Err(E::CatalogUnavailable) => LiveGraph::NoGraph,
+        // None of these can come from reading the graph; were one to, "no graph" is what the
+        // screen can honestly say about it.
+        Err(
+            E::SettingsNotWritable { .. }
+            | E::UnknownTarget
+            | E::StoreUnavailable { .. }
+            | E::WikiUnavailable
+            | E::SessionTooLarge
+            | E::AutostartNotWritable { .. }
+            | E::UpdateNotReady,
+        ) => LiveGraph::NoGraph,
+    }
 }

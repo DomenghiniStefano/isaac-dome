@@ -143,7 +143,10 @@ impl Save {
             }
 
             off = data + len;
-            expected += 1;
+            // The next is expected after the one that was found, not after the one that was
+            // expected: one missing section is one diagnostic, not one per section after it
+            // (card #80, P11a).
+            expected = found_kind.saturating_add(1);
         }
 
         if off < end {

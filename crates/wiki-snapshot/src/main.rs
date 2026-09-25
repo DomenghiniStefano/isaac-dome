@@ -300,14 +300,30 @@ fn print_meta(ds: &Dataset) {
         Some(p) => println!("last known patch: {} ({})", p.number, p.date),
         None => println!("last known patch: none"),
     }
-    println!("pages without id: {}", m.diagnostics.pages_without_id);
-    println!(
-        "transformations whose two item lists disagree: {}",
-        m.diagnostics.transformation_sources_disagree
-    );
-    print_diagnostic("unresolved references", &m.diagnostics.unresolved);
-    print_diagnostic("unknown templates", &m.diagnostics.unknown_templates);
-    print_diagnostic("discarded sections", &m.diagnostics.discarded_sections);
+    // Every counter, destructured **without `..`** (card #80, item 14): five of the ten were
+    // never printed, and a counter added later now breaks the build until it is.
+    let wiki::Diagnostics {
+        unresolved,
+        unknown_templates,
+        discarded_sections,
+        pages_without_id,
+        orphan_closers,
+        unknown_dlc_codes,
+        transformation_sources_disagree,
+        unknown_entities,
+        unknown_infoboxes,
+        spans_outside_their_page,
+    } = &m.diagnostics;
+    println!("pages without id: {pages_without_id}");
+    println!("transformations whose two item lists disagree: {transformation_sources_disagree}");
+    println!("orphan closers: {orphan_closers}");
+    println!("spans outside their page: {spans_outside_their_page}");
+    print_diagnostic("unresolved references", unresolved);
+    print_diagnostic("unknown templates", unknown_templates);
+    print_diagnostic("discarded sections", discarded_sections);
+    print_diagnostic("unknown dlc codes", unknown_dlc_codes);
+    print_diagnostic("unknown entities", unknown_entities);
+    print_diagnostic("unknown infoboxes", unknown_infoboxes);
 }
 
 fn build_dataset(raw_dir: &Path, out: &Path, corrections_path: &Path) -> Outcome {

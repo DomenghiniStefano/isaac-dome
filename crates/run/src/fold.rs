@@ -146,6 +146,9 @@ impl Run {
                     if current.as_ref().is_some_and(|run| {
                         run.seed_numeric == seed_numeric && run.outcome == Outcome::Open
                     }) {
+                        // The player line logged before this seed was the resumed run's, which
+                        // already has its character: it is nobody's to keep.
+                        pending_character = None;
                         continue;
                     }
                     if let Some(mut previous) = current.take() {
@@ -173,12 +176,25 @@ impl Run {
                     // begins mid-session, with menu lines and an intro cutscene. The one
                     // exception is the player being initialized, which a solo run logs just
                     // before its seed.
+                    // The **last** player line before a seed names the run it starts: an earlier
+                    // one was another player's — Esau beside Jacob — or the resumed run's.
                     let Some(run) = current.as_mut() else {
                         if let Event::PlayerInitialized { subtype, .. } = other {
-                            pending_character.get_or_insert(subtype);
+                            pending_character = Some(subtype);
                         }
                         continue;
                     };
+                    // A run that already knows its character, off the online table, is over as
+                    // far as a new player line is concerned: on a solo launch the next run's
+                    // line arrives before its seed, while the fold still holds the last run
+                    // (card #80, P1). Online the line repeats for every player at the table,
+                    // and those stay the run's to ignore.
+                    if let Event::PlayerInitialized { subtype, .. } = other {
+                        if run.character_id.is_some() && !matches!(run.seed_kind, SeedKind::Net) {
+                            pending_character = Some(subtype);
+                            continue;
+                        }
+                    }
                     apply(run, other, kinds, &mut starting);
                 }
             }

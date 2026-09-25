@@ -177,6 +177,72 @@ pub enum Dlc {
 }
 
 impl Infobox {
+    /// The same fields as [`Self::inlines_mut`], read-only, destructured the same way and
+    /// **without `..`** (card #80, item 14): the guard over the dataset's text used to name the
+    /// fields it checked by hand, and skipped five of them.
+    pub fn inlines(&self) -> Vec<&Vec<Inline>> {
+        match self {
+            Infobox::Item {
+                quote,
+                template: _,
+                quality: _,
+                tags: _,
+                recharge,
+                devil_price,
+                shop_price,
+                pools,
+            } => vec![quote, recharge, devil_price, shop_price, pools],
+            Infobox::Trinket {
+                quote,
+                tags: _,
+                pools,
+            } => vec![quote, pools],
+            Infobox::Achievement {
+                quote,
+                requirements,
+                notes,
+                unlocks: _,
+            } => vec![quote, requirements, notes],
+            Infobox::Boss {
+                base_hp: _,
+                stage_hp,
+                variant: _,
+                environment,
+                pool,
+            } => vec![stage_hp, environment, pool],
+            Infobox::Challenge {
+                blindfolded: _,
+                has_shops: _,
+                has_treasure_rooms: _,
+                items,
+                trinkets,
+                pickups,
+                health,
+                curse,
+                goal,
+                character: _,
+                unlocks: _,
+            } => vec![items, trinkets, pickups, health, curse, goal],
+            Infobox::Transformation {
+                requires: _,
+                contributors: _,
+                target,
+            } => vec![target],
+            Infobox::Character {
+                health,
+                damage: _,
+                tears: _,
+                range: _,
+                speed: _,
+                luck: _,
+                shot_speed: _,
+                pickups,
+                collectibles,
+                parent: _,
+            } => vec![health, pickups, collectibles],
+        }
+    }
+
     /// Every inline field, so a pass over a page's text does not have to name them one by
     /// one. The match destructures each variant **without `..`**, so a field added later
     /// breaks the build instead of quietly staying outside every such pass.

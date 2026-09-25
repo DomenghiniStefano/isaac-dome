@@ -36,4 +36,17 @@ describe('searchFrom', () => {
     expect(call).not.toHaveBeenCalled()
     expect(state.view.value).toBeNull()
   })
+
+  it('a question that fails does not leave the last answer standing for it', async () => {
+    // Card #80, P10: the answer to "b" is not an answer to "br", and a failed search that
+    // kept it would show it as one.
+    const call = vi
+      .fn()
+      .mockImplementationOnce(() => Promise.resolve(view('b')))
+      .mockImplementationOnce(() => Promise.reject(new Error('down')))
+    const state = searchFrom(call, 10)
+    await state.run('b')
+    await state.run('br')
+    expect(state.view.value).toBeNull()
+  })
 })

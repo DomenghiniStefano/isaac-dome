@@ -1,7 +1,7 @@
 //! Game folder and edition from the appmanifest.
 
 use std::collections::BTreeSet;
-use std::path::PathBuf;
+use std::path::{Path, PathBuf};
 
 use crate::edition::{dlcs_from_appids, edition_from_appids};
 use crate::{Diagnostic, GameInstall, Options, SteamInstall};
@@ -89,20 +89,25 @@ pub(crate) fn find_game(
             .join(format!("appmanifest_{APPID}.acf"));
         let text = match std::fs::read_to_string(&manifest) {
             Ok(text) => text,
-            Err(_) => continue,
+            // Not there: this library does not hold the game, which is normal.
+            Err(e) if e.kind() == std::io::ErrorKind::NotFound => continue,
+            // There and unreadable (card #80, R7): said, like `saves.rs` says a folder it
+            // cannot list, and then the same as a manifest that does not parse.
+            Err(e) => {
+                diags.push(Diagnostic::UnreadablePath {
+                    path: manifest,
+                    kind: e.kind(),
+                });
+                if let Some(game) = canonical_game(library) {
+                    return (Some(game), diags);
+                }
+                continue;
+            }
         };
         let Some(parsed) = parse_manifest(&text) else {
-            diags.push(Diagnostic::MalformedManifest {
-                path: manifest.clone(),
-            });
-            // Fall back to the canonical folder: it's the standard installdir
-            // for appid 250900 and doesn't depend on the machine.
-            let canonical = library
-                .join("steamapps")
-                .join("common")
-                .join(CANONICAL_INSTALLDIR);
-            if canonical.exists() {
-                return (Some(game_from_dir(canonical, library.clone(), None)), diags);
+            diags.push(Diagnostic::MalformedManifest { path: manifest });
+            if let Some(game) = canonical_game(library) {
+                return (Some(game), diags);
             }
             continue;
         };
@@ -134,6 +139,18 @@ pub(crate) fn find_game(
     (None, diags)
 }
 
+/// Where the game is when the manifest says nothing — unreadable or malformed: the standard
+/// installdir for appid 250900, which doesn't depend on the machine. Only if it is there.
+fn canonical_game(library: &Path) -> Option<GameInstall> {
+    let canonical = library
+        .join("steamapps")
+        .join("common")
+        .join(CANONICAL_INSTALLDIR);
+    canonical
+        .is_dir()
+        .then(|| game_from_dir(canonical, library.to_path_buf(), None))
+}
+
 fn game_from_dir(
     dir: PathBuf,
     library: PathBuf,
@@ -144,13 +161,13 @@ fn game_from_dir(
             dir,
             library,
             manifest,
-            edition: edition_from_appids(&m.dlc_appids),
+            edition: Some(edition_from_appids(&m.dlc_appids)),
             dlcs: dlcs_from_appids(&m.dlc_appids),
             updated_unix: m.last_updated,
         },
         None => GameInstall {
             manifest: PathBuf::new(),
-            edition: crate::Edition::Rebirth,
+            edition: None,
             dlcs: Vec::new(),
             updated_unix: None,
             dir,

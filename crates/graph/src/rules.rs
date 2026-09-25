@@ -249,6 +249,14 @@ impl Rules {
                     reason: format!("{key}: a progress verdict with neither half answers nothing"),
                 });
             }
+            // The flag is the file's way of writing a unit variant, and `true` is its only
+            // meaning: `false` would still resolve to no prerequisite, the opposite of what it
+            // reads as (card #80, P11b).
+            if let Verdict::AlwaysAvailable(false) | Verdict::NotAPrerequisite(false) = v {
+                return Err(RulesError::Malformed {
+                    reason: format!("{key}: a verdict written false says nothing"),
+                });
+            }
         }
         Ok(Rules {
             requirements: r,

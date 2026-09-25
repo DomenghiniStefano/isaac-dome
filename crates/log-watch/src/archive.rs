@@ -98,6 +98,22 @@ impl Ingest<'_> {
         (done, errors)
     }
 
+    /// Folds again every source these rules have not folded, from the events already in the
+    /// archive — no file is read. How many were folded, and what failed, collected like
+    /// `backfill`'s: one source that will not fold must not cost the others.
+    pub fn refold_stale(&self) -> (u32, Vec<WatchError>) {
+        let stale = match self.store.stale_sources(self.rules.version()) {
+            Ok(ids) => ids,
+            Err(e) => return (0, vec![e.into()]),
+        };
+        let (folded, failed): (Vec<_>, Vec<_>) = stale
+            .into_iter()
+            .map(|id| self.refold(id))
+            .partition(Result::is_ok);
+        let errors = failed.into_iter().filter_map(Result::err).collect();
+        (folded.len() as u32, errors)
+    }
+
     fn new_log_source(&self, log: &Path) -> Result<i64, WatchError> {
         let prefix = head(log, PREFIX_BYTES)?;
         Ok(self

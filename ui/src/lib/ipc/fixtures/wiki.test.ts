@@ -1,5 +1,9 @@
 import { describe, expect, it } from 'vitest'
-import { wikiEntryAnswer, wikiIndexAnswer } from './wiki'
+import {
+  extractionReportAnswer,
+  wikiEntryAnswer,
+  wikiIndexAnswer,
+} from './wiki'
 
 describe('the wiki fixture', () => {
   const index = wikiIndexAnswer({ withWiki: true })
@@ -55,5 +59,13 @@ describe('the wiki fixture', () => {
     const none = wikiIndexAnswer({ withWiki: false })
     expect(none.info.kind).toBe('missing')
     expect(none.pages).toHaveLength(0)
+  })
+})
+
+describe('the recorded extraction report', () => {
+  it('lists no broken archive, a field it was recorded before', () => {
+    // Card #80, R6: the report carries the archives that did not open. The machine that
+    // recorded it had none, and an absent key would make the verification page throw.
+    expect(extractionReportAnswer()?.broken).toEqual([])
   })
 })

@@ -20,7 +20,7 @@ impl Queue {
     ) {
         let already_queued = self.position(achievement).is_some();
         let mut rows = self.rows().to_vec();
-        for step in chain {
+        for step in &playable_order(chain, deps) {
             match rows.iter_mut().find(|r| r.achievement == *step) {
                 Some(r) => {
                     if !r.origins.contains(&achievement) {
@@ -64,4 +64,23 @@ impl Queue {
         rows.retain(|r| !r.is_orphan());
         *self = Queue::from_rows(rows);
     }
+}
+
+/// The chain in an order it can be played in (card #80, P4). `missing_chain` promises only
+/// increasing ids, and a step with a lower id can need one with a higher id: appended as it
+/// arrived, that step sat above its own prerequisite. Each step goes right before the first
+/// step already placed that needs it — enough, because the relation is transitive — and steps
+/// that need nothing of each other keep the order they came in.
+fn playable_order(chain: &[AchievementId], deps: &impl Dependencies) -> Vec<AchievementId> {
+    let mut ordered: Vec<AchievementId> = Vec::with_capacity(chain.len());
+    for &step in chain {
+        match ordered
+            .iter()
+            .position(|&placed| deps.requires(placed, step))
+        {
+            Some(before) => ordered.insert(before, step),
+            None => ordered.push(step),
+        }
+    }
+    ordered
 }

@@ -163,3 +163,22 @@ fn a_progress_verdict_with_neither_half_is_malformed() {
         "expected Malformed, got {err:?}"
     );
 }
+
+/// `true` is the only value these two verdicts can mean: `false` would read as "judged,
+/// and not always available" and still resolve to no prerequisite at all (card #80,
+/// P11b). The file is refused rather than trusted to mean the opposite of what it says.
+#[test]
+fn a_verdict_written_false_is_malformed() {
+    for verdict in ["alwaysAvailable", "notAPrerequisite"] {
+        let body = format!(
+            r#"{{ "schemaVersion": 2, "verdicts": {{ "entity:Red Heart": {{ "{verdict}": false }} }} }}"#
+        );
+        let r: Requirements = serde_json::from_str(REQS).expect("parses");
+        let c: Corrections = serde_json::from_str(&body).expect("parses");
+        let err = Rules::build(r, c).expect_err("false is not a verdict");
+        assert!(
+            matches!(err, RulesError::Malformed { .. }),
+            "{verdict}: expected Malformed, got {err:?}"
+        );
+    }
+}
