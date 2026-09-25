@@ -1,6 +1,8 @@
 //! The plan queue as the UI sees it: rows already resolved to nodes, and every reason a
 //! row is missing said out loud.
 
+use std::collections::{BTreeMap, BTreeSet};
+
 use catalog::{AchievementId, Catalog};
 use serde::Serialize;
 use wiki::Dataset;
@@ -122,65 +124,59 @@ pub struct QueueInputs<'a> {
     pub store_reason: Option<crate::StoreReason>,
 }
 
+/// The queue as the UI sees it. The diagnostics come out in a fixed order: what is known before
+/// the queue is read — the store, the goals still to import — then whatever reading it met.
 pub fn queue_view(
     inputs: QueueInputs<'_>,
     icon: impl FnMut(&crate::IconRef) -> Option<String>,
 ) -> QueueView {
-    let QueueInputs {
-        catalog,
-        bosses,
-        dataset,
-        flags,
-        graph,
-        eval,
-        progress,
-        queue,
-        goals_pending,
-        store_reason,
-    } = inputs;
-    let mut diagnostics = Vec::new();
-    let store_available = store_reason.is_none();
-    if let Some(reason) = store_reason {
-        diagnostics.push(QueueDiagnostic::StoreUnavailable { reason });
-    }
-    if goals_pending > 0 {
-        diagnostics.push(QueueDiagnostic::GoalsPending {
-            count: goals_pending,
-        });
-    }
-    let empty = |diagnostics| QueueView {
-        rows: Vec::new(),
-        diagnostics,
+    let store_available = inputs.store_reason.is_none();
+    let before = inputs
+        .store_reason
+        .map(|reason| QueueDiagnostic::StoreUnavailable { reason })
+        .into_iter()
+        .chain(
+            (inputs.goals_pending > 0).then_some(QueueDiagnostic::GoalsPending {
+                count: inputs.goals_pending,
+            }),
+        );
+    let (rows, read) = match (inputs.queue, inputs.catalog) {
+        // Unreadable is not empty, and saying which is the whole point.
+        (Err(_), _) => (Vec::new(), vec![QueueDiagnostic::Unreadable]),
+        (Ok(_), None) => (Vec::new(), vec![QueueDiagnostic::NoCatalog]),
+        (Ok(queue), Some(c)) => resolved_rows(&inputs, c, queue, icon),
+    };
+    QueueView {
+        rows,
+        diagnostics: before.chain(read).collect(),
         store_available,
-    };
-    let queue = match queue {
-        Ok(q) => q,
-        Err(_) => {
-            // Unreadable is not empty, and saying which is the whole point.
-            diagnostics.push(QueueDiagnostic::Unreadable);
-            return empty(diagnostics);
-        }
-    };
-    let Some(c) = catalog else {
-        diagnostics.push(QueueDiagnostic::NoCatalog);
-        return empty(diagnostics);
-    };
+    }
+}
 
+/// The rows of a readable queue against a catalog, and every row that did not make it: one
+/// `Unresolved` per row the catalog does not know, in the queue's order, then the completed
+/// ones as one count.
+fn resolved_rows(
+    inputs: &QueueInputs<'_>,
+    c: &Catalog,
+    queue: &plan::Queue,
+    icon: impl FnMut(&crate::IconRef) -> Option<String>,
+) -> (Vec<QueueRow>, Vec<QueueDiagnostic>) {
     // One `unlock_view`, indexed by achievement: a queue row shows **the same node** the
     // Unlock screen shows, so the two can never drift apart.
     let view = unlock_view(
         UnlockInputs {
             catalog: Some(c),
-            bosses,
-            dataset,
-            flags,
-            graph,
-            eval,
-            progress,
+            bosses: inputs.bosses,
+            dataset: inputs.dataset,
+            flags: inputs.flags,
+            graph: inputs.graph,
+            eval: inputs.eval,
+            progress: inputs.progress,
         },
         icon,
     );
-    let by_id: std::collections::BTreeMap<u32, &UnlockNode> = view
+    let by_id: BTreeMap<u32, &UnlockNode> = view
         .nodes
         .iter()
         .filter_map(|n| match &n.achievement {
@@ -188,53 +184,68 @@ pub fn queue_view(
             AchievementRef::Unknown { .. } => None,
         })
         .collect();
-    let queued: std::collections::BTreeSet<AchievementId> =
-        queue.rows().iter().map(|r| r.achievement).collect();
+    let queued: BTreeSet<AchievementId> = queue.rows().iter().map(|r| r.achievement).collect();
+    let placed: Vec<(&plan::Row, Option<&UnlockNode>)> = queue
+        .rows()
+        .iter()
+        .map(|r| (r, by_id.get(&r.achievement.0).copied()))
+        .collect();
 
-    let mut rows = Vec::new();
-    let mut completed = 0u32;
-    let mut completed_wanted = Vec::new();
-    for r in queue.rows() {
-        let Some(node) = by_id.get(&r.achievement.0) else {
-            diagnostics.push(QueueDiagnostic::Unresolved {
-                achievement: r.achievement.0,
-            });
-            continue;
-        };
-        if node.done {
-            completed += 1;
-            if r.wanted {
-                completed_wanted.push(r.achievement.0);
-            }
-            continue;
-        }
-        let steps_not_queued = graph
-            .zip(flags)
-            .map(|(g, f)| {
-                g.missing_chain(r.achievement, &graph::evaluate::FlagsOnly(Some(f)))
-                    .iter()
-                    .filter(|id| !queued.contains(id))
-                    .count() as u32
-            })
-            .unwrap_or(0);
-        rows.push(QueueRow {
-            node: (*node).clone(),
+    let rows = placed
+        .iter()
+        .filter_map(|(r, node)| node.filter(|n| !n.done).map(|n| (*r, n)))
+        .map(|(r, node)| QueueRow {
+            node: node.clone(),
             wanted: r.wanted,
             origins: r.origins.iter().map(|a| a.0).collect(),
-            steps_not_queued,
+            steps_not_queued: steps_not_queued(inputs, r.achievement, &queued),
+        })
+        .collect();
+    let unresolved = placed
+        .iter()
+        .filter(|(_, node)| node.is_none())
+        .map(|(r, _)| QueueDiagnostic::Unresolved {
+            achievement: r.achievement.0,
         });
-    }
-    if completed > 0 {
-        diagnostics.push(QueueDiagnostic::Completed {
-            count: completed,
-            wanted: completed_wanted,
-        });
-    }
-    QueueView {
-        rows,
-        diagnostics,
-        store_available,
-    }
+    let completed: Vec<&plan::Row> = placed
+        .iter()
+        .filter(|(_, node)| node.is_some_and(|n| n.done))
+        .map(|(r, _)| *r)
+        .collect();
+    let diagnostics = unresolved.chain(completed_diagnostic(&completed)).collect();
+    (rows, diagnostics)
+}
+
+/// The rows left out because the profile has completed them, said once: a row never vanishes
+/// without a word.
+fn completed_diagnostic(completed: &[&plan::Row]) -> Option<QueueDiagnostic> {
+    (!completed.is_empty()).then(|| QueueDiagnostic::Completed {
+        count: completed.len() as u32,
+        wanted: completed
+            .iter()
+            .filter(|r| r.wanted)
+            .map(|r| r.achievement.0)
+            .collect(),
+    })
+}
+
+/// The prerequisites this row still needs that the queue does not hold. Zero without a graph
+/// or without section 1, which have nothing to count from.
+fn steps_not_queued(
+    inputs: &QueueInputs<'_>,
+    achievement: AchievementId,
+    queued: &BTreeSet<AchievementId>,
+) -> u32 {
+    inputs
+        .graph
+        .zip(inputs.flags)
+        .map(|(g, f)| {
+            g.missing_chain(achievement, &graph::evaluate::FlagsOnly(Some(f)))
+                .iter()
+                .filter(|id| !queued.contains(id))
+                .count() as u32
+        })
+        .unwrap_or(0)
 }
 
 /// What the queue's ordering rule asks the graph, answered from a table instead of a walk.
