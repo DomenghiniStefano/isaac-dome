@@ -1,10 +1,10 @@
 import { ref, shallowRef } from 'vue'
 import type { Ref } from 'vue'
-import { TabDrag, dropSide, moveIndex } from '@/lib/shell/tabs'
-import type { DropSide } from '@/lib/shell/tabs'
+import { TabDrag, moveIndex, tabDropAt } from '@/lib/shell/tabs'
+import type { TabDrop } from '@/lib/shell/tabs'
 import { useDragList } from '@/composables/useDragList'
 import type { DragList } from '@/composables/useDragList'
-import { Axis, boxAt, boxOf } from '@/lib/drag/dragList'
+import { Axis, boxOf } from '@/lib/drag/dragList'
 import type { Box, Point } from '@/lib/drag/dragList'
 import { focusOrder } from '@/lib/window/focusOrder'
 import { WindowMessageKind } from '@/lib/window/messages'
@@ -21,11 +21,6 @@ import type { PointerWatch } from '@/lib/window/pointerSource'
 import { pastTearBand, stripUnderPoint, toDesktop } from '@/lib/window/tearOff'
 import { windowPort } from '@/lib/window/windowPort'
 import type { WindowBox } from '@/lib/window/windowPort'
-
-export interface TabDrop {
-  index: number
-  side: DropSide
-}
 
 export interface TabDragOptions {
   strip: Ref<HTMLElement | null>
@@ -192,24 +187,25 @@ export const useTabDrag = (options: TabDragOptions): TabDrag => {
     void showPreview(label, desktop).catch(() => undefined)
   }
 
-  const resolve = (p: Point, boxes: Box[], from: number): TabDrop | null => {
+  // The card is built while the drag is still a reorder, so that leaving the strip costs
+  // nothing but showing it. Once per drag, and idempotent besides.
+  const warm = (from: number) => {
+    if (warmed) return
+    warmed = true
+    void warmPreview(options.labelOf(from)).catch(() => undefined)
+  }
+
+  // What a move does beyond aiming a reorder: past the tear band the tab leaves the strip, and
+  // from then on the drag is the window's and no drop inside the strip is resolved.
+  const onMove = (p: Point, from: number): boolean => {
     grabbed = from
-    // The card is built while the drag is still a reorder, so that leaving the strip costs
-    // nothing but showing it. Once per drag, and idempotent besides.
-    if (!warmed) {
-      warmed = true
-      void warmPreview(options.labelOf(from)).catch(() => undefined)
-    }
+    warm(from)
     const strip = stripBox()
     if (!detached.value && strip && pastTearBand(p, strip)) {
       void detach(p)
-      return null
+      return true
     }
-    if (detached.value) return null
-    const index = boxAt(boxes, p, Axis.X)
-    const box = index === null ? undefined : boxes[index]
-    if (index === null || index === from || !box) return null
-    return { index, side: dropSide(p.x, box.left, box.width) }
+    return detached.value
   }
 
   const drag = useDragList<TabDrop>({
@@ -217,7 +213,8 @@ export const useTabDrag = (options: TabDragOptions): TabDrag => {
     container: options.strip,
     items: options.items,
     threshold: TabDrag.Threshold,
-    resolve,
+    onMove,
+    resolve: (p, boxes, from) => tabDropAt(boxes, p, from),
     commit: (from, landing) => {
       // A drag that left the window has already landed the tab, or put it back.
       if (detached.value || !landing) return

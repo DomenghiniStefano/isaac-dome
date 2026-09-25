@@ -30,12 +30,15 @@ const props = defineProps<{
 const emit = defineEmits<{ show: [target: TargetView] }>()
 const { t } = useMessages()
 
-const countOf = computed(() => {
-  const counts = new Map<TargetView, number>()
-  for (const solution of props.solutions)
-    counts.set(solution.target, solution.candidates.length)
-  return counts
-})
+const countOf = computed(
+  () =>
+    new Map<TargetView, number>(
+      props.solutions.map((solution) => [
+        solution.target,
+        solution.candidates.length,
+      ]),
+    ),
+)
 
 // Reka empties a single toggle group when you press the item that is already on. Here that
 // would be a screen with no answer on it, which is a state this control has no reason to have,

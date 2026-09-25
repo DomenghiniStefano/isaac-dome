@@ -4,11 +4,13 @@ import { assertNever } from '@/lib/assertNever'
 import { oneOf } from '@/lib/oneOf'
 import { characterLabel } from '@/lib/graph/characterName'
 import type { CharacterForm } from '@/lib/graph/characterName'
-import { NodeState } from '@/lib/graph/nodeState'
+import { NodeState, stateOrder } from '@/lib/graph/nodeState'
 import { originLabel } from '@/lib/facets/labels'
 import type { FilterBarLabels } from '@/lib/facets/labels'
 import type { FacetSlot } from '@/lib/facets/facetOptions'
-import { FacetId, UnlockSort } from '@/lib/graph/unlockFacets'
+import type { FilterBarDescriptor } from '@/lib/facets/filterBar'
+import { FacetId, UnlockSort, unlockFaceting } from '@/lib/graph/unlockFacets'
+import type { UnlockNode } from '@/lib/ipc/types'
 import { TargetKind } from '@/lib/ipc/values'
 
 export const facetTitle: Record<FacetId, Message> = {
@@ -89,4 +91,19 @@ export const barLabels: FilterBarLabels = {
   rows: 'unlock.rows',
   search: 'unlock.search',
   sortBy: 'unlock.sortBy',
+}
+
+// Unlock's filter bar: everything about it that holds for as long as the screen is open.
+export const unlockBar: FilterBarDescriptor<UnlockNode, FacetId, UnlockSort> = {
+  faceting: unlockFaceting,
+  facets: unlockSlots,
+  state: {
+    facet: FacetId.State,
+    order: stateOrder,
+    dot: stateDot,
+    text: stateText,
+  },
+  title: facetTitle,
+  labels: barLabels,
+  sorts: { order: sortOrder, text: sortText },
 }

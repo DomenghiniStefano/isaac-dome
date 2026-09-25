@@ -15,3 +15,10 @@ export const refsOf = (
     const label = (key === null ? null : titleOf(key)) ?? key ?? ''
     return { kind: 'ref', target, label }
   })
+
+// A single `Target` field becomes a one-reference inline, so it links like any other; no field
+// is no reference, and the row then says "none".
+export const refOf = (
+  target: Target | null,
+  titleOf: (key: string) => string | null,
+): Array<Inline> => (target === null ? [] : refsOf([target], titleOf))

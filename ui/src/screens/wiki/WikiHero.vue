@@ -13,6 +13,7 @@ import type { WikiCategory } from '@/router/routeTable'
 import { useWikiStore } from '@/stores/wiki'
 import { summaryOf } from './heroSummary'
 import { kindText, pageId } from '@/lib/wiki/wikiLabels'
+import HeroBand from '../HeroBand.vue'
 
 // `entry` is `undefined` while the page is being read and `null` when the dataset lacks it:
 // the band is drawn in all three states, because the title, the kind and the figure are the
@@ -73,11 +74,8 @@ const id = computed(() => (props.target ? pageId(props.target) : null))
 
 <template>
   <!-- The band that opens a page (card #57). It is the full width of the page box, because a
-       band that stops short of the window reads as a card that happens to be wide; the
-       screen around it hands it the gutter rather than the band taking it (`WikiPage.vue`).
-       The grain sits above the wash and below everything else, and takes no clicks. -->
-  <header class="relative border-b border-hairline hero-wash px-5.5 py-5">
-    <span class="pointer-events-none absolute inset-0 hero-grain" />
+       band that stops short of the window reads as a card that happens to be wide. -->
+  <HeroBand>
     <div class="relative flex flex-col gap-4 @regular/page:flex-row">
       <WikiFigure
         v-if="target"
@@ -133,5 +131,5 @@ const id = computed(() => (props.target ? pageId(props.target) : null))
         </div>
       </div>
     </div>
-  </header>
+  </HeroBand>
 </template>

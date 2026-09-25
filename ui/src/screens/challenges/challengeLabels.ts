@@ -5,8 +5,11 @@ import {
   BlindfoldedValue,
   ChallengeFacet,
   RewardsValue,
+  challengeFaceting,
 } from '@/lib/challenges/challengeFacets'
 import type { FacetSlot } from '@/lib/facets/facetOptions'
+import type { FilterBarDescriptor } from '@/lib/facets/filterBar'
+import type { ChallengeRow } from '@/lib/ipc/types'
 import { oneOf } from '@/lib/oneOf'
 
 // The four states a challenge can be in, in the order the row shows them: what is behind you,
@@ -76,4 +79,23 @@ export const challengeFacetValueLabel = (
     default:
       return assertNever(facet)
   }
+}
+
+// The Challenges' filter bar: everything about it that holds while the screen is open. No sort:
+// the rows keep the game's order.
+export const challengeBar: FilterBarDescriptor<
+  ChallengeRow,
+  ChallengeFacet,
+  never
+> = {
+  faceting: challengeFaceting,
+  facets: challengeSlots,
+  state: {
+    facet: ChallengeFacet.State,
+    order: challengeStateOrder,
+    dot: challengeStateDot,
+    text: challengeStateText,
+  },
+  title: challengeFacetTitle,
+  labels: barLabels,
 }

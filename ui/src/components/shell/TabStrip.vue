@@ -5,13 +5,12 @@ import { Button, ButtonSize, ButtonVariant } from '@/components/ui/button'
 import { DragGhost } from '@/components/ui/drag'
 import { useTabDrag } from '@/composables/useTabDrag'
 import { useMessages } from '@/i18n'
-import { EventKey } from '@/lib/constants/eventKeys'
-import { Axis, boxAt, boxOf } from '@/lib/drag/dragList'
+import { boxOf } from '@/lib/drag/dragList'
 import type { Point } from '@/lib/drag/dragList'
 import { toClient } from '@/lib/window/tearOff'
 import TabItem from './TabItem.vue'
 import type { IncomingHover, TabView } from '@/lib/shell/tabs'
-import { DropSide, TabRole, dropSide } from '@/lib/shell/tabs'
+import { TabRole, arrivalGap, neighbourIndex } from '@/lib/shell/tabs'
 
 const props = withDefaults(
   defineProps<{
@@ -67,20 +66,13 @@ const grabbed = computed(() =>
 )
 
 // A tab arriving from another window. Only this window can turn the desktop point into a gap
-// in its own strip — it owns the rectangles — and the gap the marker is drawn in **is** where
-// the drop lands: one computation, so what you saw is what you get. The index is handed back
-// so the window can dock there without measuring anything a second time.
+// in its own strip — it owns the rectangles. The index is handed back so the window can dock
+// there without measuring anything a second time.
 const incomingGap = computed((): number | null => {
   const hover = props.incoming
   if (!hover) return null
-  const p = toClient(hover.at, hover.window)
   const boxes = tabElements().map((el) => boxOf(el.getBoundingClientRect()))
-  const index = boxAt(boxes, p, Axis.X)
-  const box = index === null ? undefined : boxes[index]
-  if (index === null || !box) return props.tabs.length
-  return dropSide(p.x, box.left, box.width) === DropSide.Before
-    ? index
-    : index + 1
+  return arrivalGap(boxes, toClient(hover.at, hover.window), props.tabs.length)
 })
 
 watch(incomingGap, (gap) => emit('aim', gap))
@@ -101,17 +93,12 @@ watch(
   { immediate: true },
 )
 
-const neighbour = (key: string): number | null => {
-  const index = props.tabs.findIndex((tab) => tab.id === props.activeId)
-  if (index < 0) return null
-  if (key === EventKey.ArrowRight)
-    return Math.min(index + 1, props.tabs.length - 1)
-  if (key === EventKey.ArrowLeft) return Math.max(index - 1, 0)
-  return null
-}
-
 const onKeydown = (e: KeyboardEvent) => {
-  const next = neighbour(e.key)
+  const next = neighbourIndex(
+    props.tabs.map((tab) => tab.id),
+    props.activeId,
+    e.key,
+  )
   const tab = next === null ? undefined : props.tabs[next]
   if (next === null || !tab) return
   e.preventDefault()

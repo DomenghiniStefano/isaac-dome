@@ -15,17 +15,17 @@ import { cn } from '@/lib/cn'
 import {
   CellStatus,
   MatrixGroup,
-  TallyTone,
   cellReading,
   cellStatusKey,
   columnTallies,
   matrixGroups,
   tallyColumns,
 } from '@/lib/completion/completionView'
-import type { Tally, TallyColumn } from '@/lib/completion/completionView'
+import type { Tally } from '@/lib/completion/completionView'
 import { SecondLevelView } from '@/lib/ipc/types'
 import type { Cell, MarksMatrix } from '@/lib/ipc/types'
 import MarkCell from './MarkCell.vue'
+import TallyCell from './TallyCell.vue'
 import { markArtOf } from './markVisual'
 
 const props = defineProps<{ matrix: MarksMatrix }>()
@@ -71,21 +71,9 @@ const cellState = (cell: Cell, column: number): string => {
   return reading.online ? `${said} · ${t('marks.wonOnline')}` : said
 }
 
-// A number that fills its denominator in the done colour, one with no denominator at all
-// fainter than one that has progress to show. Gold is not used for "almost there": gold
-// means unlockable now, and nothing else. A record over the whole set, so a tone with no
-// colour fails to compile.
-const toneClass: Record<TallyTone, string> = {
-  [TallyTone.Full]: 'text-state-done-foreground',
-  [TallyTone.Partial]: 'text-subtle-foreground',
-  [TallyTone.Unreadable]: 'text-faint-foreground',
-}
-
 // B22 item 4: two number columns, not one slot holding a pair. Each carries its own
 // denominator because each sits under its own heading.
 const columnsOf = (tally: Tally) => tallyColumns(tally)
-const label = (column: TallyColumn): string =>
-  `${column.value}/${column.readable}`
 
 // A row's bar is the same reading its two numbers are, drawn: hard over readable, in the
 // done colour once the row is finished. It carries no figures of its own — the two columns
@@ -112,8 +100,7 @@ const followRows = (event: Event) => {
        also a vertical scroll container with no height, and a header inside it would have
        nothing to pin to. So the header lives outside it, pinned to the page, clipped
        sideways (`overflow-hidden`, which the page's `sticky` still sees through) and moved
-       to the rows' horizontal position by `followRows`. Card #58 got both pins by making
-       the card the one scroll box, at the price of a band that never left the screen.
+       to the rows' horizontal position by `followRows`.
        Nothing here carries a horizontal padding: a sticky cell would slide under it. The
        first and last columns hold their own inset instead, and the rows paint edge to
        edge, the way a banded table wants. -->
@@ -133,9 +120,9 @@ const followRows = (event: Event) => {
           class="sticky left-0 z-raised-corner flex items-end self-stretch justify-self-stretch bg-card pl-3 text-label text-subtle-foreground"
           >{{ t('completion.grid.character') }}</span
         >
-        <!-- The boss is its symbol, and its name is the tooltip (card #85). The names used to
-             stand above the symbols, written vertically, and cost the pinned header 118px of
-             a screen whose subject is the rows under it. -->
+        <!-- The boss is its symbol, and its name is the tooltip (card #85): written vertically
+             above the symbols, the names cost the pinned header 118px of a screen whose subject
+             is the rows under it. -->
         <Tooltip v-for="(boss, b) in matrix.bosses" :key="boss">
           <TooltipTrigger as-child>
             <div tabindex="0" :aria-label="boss" class="flex">
@@ -188,24 +175,14 @@ const followRows = (event: Event) => {
                 >{{ group.unknown }} {{ t('completion.grid.unreadable') }}</span
               >
             </div>
-            <span
-              :class="
-                cn(
-                  'justify-self-end pr-0.5 text-label tabular-nums',
-                  toneClass[columnsOf(group.tally).normal.tone],
-                )
-              "
-              >{{ label(columnsOf(group.tally).normal) }}</span
-            >
-            <span
-              :class="
-                cn(
-                  'justify-self-end pr-3 text-label tabular-nums',
-                  toneClass[columnsOf(group.tally).hard.tone],
-                )
-              "
-              >{{ label(columnsOf(group.tally).hard) }}</span
-            >
+            <TallyCell
+              :column="columnsOf(group.tally).normal"
+              class="justify-self-end pr-0.5 text-label"
+            />
+            <TallyCell
+              :column="columnsOf(group.tally).hard"
+              class="justify-self-end pr-3 text-label"
+            />
           </div>
 
           <div
@@ -266,24 +243,14 @@ const followRows = (event: Event) => {
                 }}</span>
               </TooltipContent>
             </Tooltip>
-            <span
-              :class="
-                cn(
-                  'justify-self-end pr-0.5 text-label tabular-nums',
-                  toneClass[columnsOf(entry.tally).normal.tone],
-                )
-              "
-              >{{ label(columnsOf(entry.tally).normal) }}</span
-            >
-            <span
-              :class="
-                cn(
-                  'justify-self-end pr-3 text-label tabular-nums',
-                  toneClass[columnsOf(entry.tally).hard.tone],
-                )
-              "
-              >{{ label(columnsOf(entry.tally).hard) }}</span
-            >
+            <TallyCell
+              :column="columnsOf(entry.tally).normal"
+              class="justify-self-end pr-0.5 text-label"
+            />
+            <TallyCell
+              :column="columnsOf(entry.tally).hard"
+              class="justify-self-end pr-3 text-label"
+            />
           </div>
         </section>
 
@@ -297,17 +264,12 @@ const followRows = (event: Event) => {
             class="sticky left-0 z-raised justify-self-stretch bg-card pr-1.5 pl-3 text-label text-highlight"
             >{{ t('completion.grid.columnTotals') }}</span
           >
-          <span
+          <TallyCell
             v-for="(tally, b) in totals"
             :key="b"
-            :class="
-              cn(
-                'text-micro tabular-nums',
-                toneClass[columnsOf(tally).normal.tone],
-              )
-            "
-            >{{ label(columnsOf(tally).normal) }}</span
-          >
+            :column="columnsOf(tally).normal"
+            class="text-micro"
+          />
           <span />
           <span />
         </div>
@@ -318,17 +280,12 @@ const followRows = (event: Event) => {
             class="sticky left-0 z-raised justify-self-stretch bg-card pr-1.5 pl-3 text-label text-subtle-foreground"
             >{{ t('completion.grid.columnTotalsHard') }}</span
           >
-          <span
+          <TallyCell
             v-for="(tally, b) in totals"
             :key="b"
-            :class="
-              cn(
-                'text-micro tabular-nums',
-                toneClass[columnsOf(tally).hard.tone],
-              )
-            "
-            >{{ label(columnsOf(tally).hard) }}</span
-          >
+            :column="columnsOf(tally).hard"
+            class="text-micro"
+          />
           <span />
           <span />
         </div>

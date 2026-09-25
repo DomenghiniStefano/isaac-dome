@@ -23,9 +23,7 @@ const { ctrl } = useGestureModifiers()
 
 // The app's one gesture: a click navigates the active tab, Ctrl opens the page beside it.
 const open = (location: TabLocation | null) => {
-  if (!location) return
-  if (ctrl.value) tabs.open(location)
-  else tabs.navigate(location)
+  if (location) tabs.go(location, ctrl.value)
 }
 </script>
 

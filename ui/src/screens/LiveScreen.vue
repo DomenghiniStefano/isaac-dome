@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { vScrollMemory } from '@/directives/scrollMemory'
+import ScreenSkeleton from '@/components/data-state/ScreenSkeleton.vue'
+import { SkeletonBlock } from '@/components/data-state/skeletonBlock'
 import { ActivityIcon } from '@lucide/vue'
 import { computed } from 'vue'
 import DiagnosticsList from '@/components/diagnostics/DiagnosticsList.vue'
@@ -7,7 +9,6 @@ import EmptyCategory from '@/components/data-state/EmptyCategory.vue'
 import KpiTile from '@/components/kpi/KpiTile.vue'
 import { Badge, BadgeVariant } from '@/components/ui/badge'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Skeleton } from '@/components/ui/skeleton'
 import { useMessages } from '@/i18n'
 import { liveEntries } from '@/lib/diagnostics/live'
 import { LoadStatus } from '@/stores/loadStatus'
@@ -142,9 +143,6 @@ const characterName = computed(
         t('live.nothing')
       }}</EmptyCategory>
     </template>
-    <div v-else class="flex flex-col gap-4">
-      <Skeleton class="h-8 w-120" />
-      <Skeleton class="h-40 w-full" />
-    </div>
+    <ScreenSkeleton v-else :blocks="[SkeletonBlock.Card]" />
   </div>
 </template>

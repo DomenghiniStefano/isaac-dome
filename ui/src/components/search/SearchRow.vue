@@ -9,19 +9,12 @@ import { assertNever } from '@/lib/assertNever'
 import { ProgressMark } from '@/lib/ipc/types'
 import type { MessageKey } from '@/i18n/messageKey'
 import type { MessageSchema } from '@/i18n/messages/it'
-import { RowGroup } from '@/lib/search/rows'
+import { rowGroupLabel } from '@/lib/search/rows'
 import type { SearchRow } from '@/lib/search/rows'
 import { sectionText } from '@/lib/wiki/wikiLabels'
 
 const props = defineProps<{ row: SearchRow }>()
 const { t } = useMessages()
-
-const groupLabel: Record<RowGroup, MessageKey<MessageSchema>> = {
-  [RowGroup.Screens]: 'search.groups.screens',
-  [RowGroup.Wiki]: 'search.groups.wiki',
-  [RowGroup.Unlock]: 'search.groups.unlock',
-  [RowGroup.Collection]: 'search.groups.collection',
-}
 
 // What the row is called: a screen's name is a message, everything else is data in English.
 const title = computed(() =>
@@ -118,7 +111,7 @@ const detail = computed((): Detail | null => {
       </span>
     </div>
     <span class="shrink-0 text-caption text-faint-foreground">{{
-      t(groupLabel[row.group])
+      t(rowGroupLabel[row.group])
     }}</span>
     <Badge v-if="mark" :variant="markVariant[mark]">{{
       t(markText[mark])

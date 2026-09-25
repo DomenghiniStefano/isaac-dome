@@ -29,6 +29,7 @@ import {
 import { useTabsStore } from '@/stores/tabs'
 import { useWikiStore } from '@/stores/wiki'
 import ProfileFact from '@/components/data-state/ProfileFact.vue'
+import HeroBand from '../HeroBand.vue'
 
 const wiki = useWikiStore()
 const tabs = useTabsStore()
@@ -58,11 +59,8 @@ const view = computed(() => {
 const categories = Object.values(WikiCategory)
 
 // A category card opens its list in the tab, or beside it with Ctrl, as a sidebar entry does.
-const open = (category: WikiCategory, event: MouseEvent) => {
-  const location = { name: RouteName.Wiki, query: { category } }
-  if (event.ctrlKey) tabs.open(location)
-  else tabs.navigate(location)
-}
+const open = (category: WikiCategory, event: MouseEvent) =>
+  tabs.go({ name: RouteName.Wiki, query: { category } }, event.ctrlKey)
 </script>
 
 <template>
@@ -77,10 +75,7 @@ const open = (category: WikiCategory, event: MouseEvent) => {
     <!-- The landing opens on the same band its pages do, and the categories come straight
          under it: what somebody arriving here wants is a way in, not the provenance of the
          dataset — that stays, and it goes last. -->
-    <header
-      class="relative flex items-center gap-4 border-b border-hairline hero-wash px-5.5 py-5"
-    >
-      <span class="pointer-events-none absolute inset-0 hero-grain" />
+    <HeroBand class="flex items-center gap-4">
       <component
         :is="tabOriginIcon[TabOrigin.Wiki]"
         class="relative size-8 shrink-0 text-foreground-soft"
@@ -91,7 +86,7 @@ const open = (category: WikiCategory, event: MouseEvent) => {
           {{ t('wiki.intro') }}
         </p>
       </div>
-    </header>
+    </HeroBand>
     <div class="flex flex-col px-5.5">
       <Alert
         v-if="info?.kind === 'missing'"

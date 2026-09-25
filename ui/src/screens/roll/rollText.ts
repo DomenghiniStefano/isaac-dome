@@ -2,7 +2,12 @@ import type { Message } from '@/i18n/message'
 import { filter, isEqual, maxBy, sortBy } from 'lodash-es'
 import { assertNever } from '@/lib/assertNever'
 import { StatusView } from '@/lib/ipc/types'
-import type { DeckView, RollRowView, SelectionView } from '@/lib/ipc/types'
+import type {
+  DeckView,
+  DrawnView,
+  RollRowView,
+  SelectionView,
+} from '@/lib/ipc/types'
 import type { FacetOption } from '@/lib/facets/facetOptions'
 
 // Every judgment the Roll screen makes, so a test can see it and no component computes it
@@ -74,3 +79,35 @@ export const rowOptions = (rows: RollRowView[]): FacetOption[] =>
     count: row.targets,
     picked: row.selected,
   }))
+
+// The sentence for each of the four exclusions `emptyDeckReason` can name.
+const emptyDeckKey: Record<EmptyDeckReason, Message> = {
+  [EmptyDeckReason.Taken]: 'roll.emptyDeck.taken',
+  [EmptyDeckReason.Unreadable]: 'roll.emptyDeck.unreadable',
+  [EmptyDeckReason.Locked]: 'roll.emptyDeck.locked',
+  [EmptyDeckReason.Filtered]: 'roll.emptyDeck.filtered',
+}
+
+// What the card slot shows. With no drawn target to draw a `RollCard` from, an empty deck is a
+// first-class state, not a disabled button: it says which exclusion emptied it and how many —
+// or, failing that, that there was never anything to draw in the first place.
+export type CardState =
+  | { kind: 'drawn'; drawn: DrawnView }
+  | { kind: 'emptyDeck'; key: Message; count: number }
+  | { kind: 'nothingToDeck' }
+  | { kind: 'notDrawnYet' }
+
+export const rollCardState = (
+  drawn: DrawnView | null,
+  deck: DeckView,
+): CardState => {
+  if (drawn) return { kind: 'drawn', drawn }
+  const reason = emptyDeckReason(deck)
+  if (reason)
+    return {
+      kind: 'emptyDeck',
+      key: emptyDeckKey[reason],
+      count: deck[reason],
+    }
+  return deck.size === 0 ? { kind: 'nothingToDeck' } : { kind: 'notDrawnYet' }
+}
