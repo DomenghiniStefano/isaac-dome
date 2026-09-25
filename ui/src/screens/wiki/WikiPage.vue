@@ -147,10 +147,12 @@ const canAdd = computed(
       />
       <!-- The card and the index come first in the document and last on a wide page: stacked,
            the facts belong above the prose, and side by side they belong beside it. One
-           `flex-row-reverse` says both, where two orders would need two templates. -->
+           `flex-row-reverse` says both, where two orders would need two templates. Reversed,
+           the row packs from the right, so without `justify-between` the space the capped
+           text leaves lands at the left edge instead of beside the column. -->
       <div
         v-else-if="entry"
-        class="flex flex-col items-start gap-5 @regular/page:flex-row-reverse @regular/page:gap-6"
+        class="flex flex-col items-start gap-5 @regular/page:flex-row-reverse @regular/page:justify-between @regular/page:gap-6"
       >
         <aside
           class="flex w-full flex-col gap-4 @regular/page:sticky @regular/page:top-0 @regular/page:w-wiki-aside @regular/page:shrink-0"
