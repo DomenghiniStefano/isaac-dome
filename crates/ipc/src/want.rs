@@ -271,10 +271,12 @@ fn key_of(c: &Catalog, bosses: &BossKeys, t: &Target) -> Option<crate::goals::Ta
     use crate::goals::TargetKey;
     use catalog::{ChallengeId, CharacterId, ItemId, ItemKind};
     match t {
-        Target::Item { id } => crate::catalog_view::collectible(c, *id).map(|i| TargetKey::Item {
-            item_kind: i.kind,
-            id: i.id.0,
-        }),
+        Target::Item { id } => c
+            .collectible(catalog::ItemId(*id))
+            .map(|i| TargetKey::Item {
+                item_kind: i.kind,
+                id: i.id.0,
+            }),
         Target::Trinket { id } => c
             .item(ItemKind::Trinket, ItemId(*id))
             .map(|i| TargetKey::Item {
