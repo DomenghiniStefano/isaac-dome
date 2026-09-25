@@ -45,7 +45,7 @@ export type UnlockSort = (typeof UnlockSort)[keyof typeof UnlockSort]
 
 export type UnlockFilter = FacetFilter<FacetId>
 
-export const targetKind = (target: UnlockTarget): TargetKind => {
+const targetKind = (target: UnlockTarget): TargetKind => {
   switch (target.kind) {
     case 'item':
       return target.itemKind

@@ -4,7 +4,7 @@ import type { RoomKindView } from '@/lib/ipc/types'
 // The grid the game uses: 13 wide, 13 tall, a cell's index is y * WIDTH + x. The start room
 // is 84, which is what the game prints on every floor.
 export const WIDTH = 13
-export const HEIGHT = 13
+const HEIGHT = 13
 export const CELLS = WIDTH * HEIGHT
 export const START = 84
 
