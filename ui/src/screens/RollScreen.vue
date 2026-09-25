@@ -32,7 +32,7 @@ useAppEvent(AppEvent.RollChanged, () => {
 })
 
 const cardState = computed(() =>
-  store.view ? rollCardState(store.view) : null,
+  store.view ? rollCardState(store.view.drawn, store.view.deck) : null,
 )
 </script>
 

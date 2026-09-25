@@ -7,7 +7,6 @@ import type {
   DeckView,
   DrawnView,
   RollRowView,
-  RollView,
   SelectionView,
 } from '@/lib/ipc/types'
 import type { FacetOption } from '@/lib/facets/facetOptions'
@@ -102,17 +101,16 @@ export type CardState =
   | { kind: 'notDrawnYet' }
 
 export const rollCardState = (
-  view: Pick<RollView, 'drawn' | 'deck'>,
+  drawn: DrawnView | null,
+  deck: DeckView,
 ): CardState => {
-  if (view.drawn) return { kind: 'drawn', drawn: view.drawn }
-  const reason = emptyDeckReason(view.deck)
+  if (drawn) return { kind: 'drawn', drawn }
+  const reason = emptyDeckReason(deck)
   if (reason)
     return {
       kind: 'emptyDeck',
       key: emptyDeckKey[reason],
-      count: view.deck[reason],
+      count: deck[reason],
     }
-  return view.deck.size === 0
-    ? { kind: 'nothingToDeck' }
-    : { kind: 'notDrawnYet' }
+  return deck.size === 0 ? { kind: 'nothingToDeck' } : { kind: 'notDrawnYet' }
 }
