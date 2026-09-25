@@ -8,7 +8,9 @@ use catalog::Catalog;
 use serde::Serialize;
 use wiki::{Dataset, Infobox, Inline, Target};
 
+use crate::flags::{recorded, recorded_done};
 use crate::icon::IconRef;
+use crate::wiki_target::page_of;
 
 #[derive(Debug, Clone, Serialize, ts_rs::TS)]
 #[serde(rename_all = "camelCase")]
@@ -133,21 +135,15 @@ pub fn challenges_view(
     let mut listed: Vec<_> = c.challenges().collect();
     listed.sort_by_key(|ch| ch.id.0);
 
-    let page_of = |t: Target| dataset.and_then(|d| d.entry(&t).map(|_| t));
-
     let rows: Vec<ChallengeRow> = listed
         .iter()
         .map(|ch| {
             let number = ch.id.0;
-            let finished = challenges.and_then(|f| f.get(number as usize).copied());
+            let finished = recorded(challenges, number);
             let missing: Vec<u32> = ch
                 .unlocked_by
                 .iter()
-                .filter(|a| {
-                    !achievements
-                        .and_then(|f| f.get(a.0 as usize).copied())
-                        .unwrap_or(false)
-                })
+                .filter(|a| !achievements.is_some_and(|f| recorded_done(f, a.0)))
                 .map(|a| a.0)
                 .collect();
             let state = match finished {
@@ -191,15 +187,15 @@ pub fn challenges_view(
                         achievement: a.0,
                         text: c.achievement(*a).map(|x| x.text.clone()),
                         icon_url: icon(&IconRef::Achievement { id: a.0 }),
-                        page: page_of(Target::Achievement { id: a.0 }),
-                        done: achievements.and_then(|f| f.get(a.0 as usize).copied()),
+                        page: page_of(dataset, Target::Achievement { id: a.0 }),
+                        done: recorded(achievements, a.0),
                     })
                     .collect(),
                 character,
                 character_name,
                 goal,
                 blindfolded,
-                page: page_of(Target::Challenge { number }),
+                page: page_of(dataset, Target::Challenge { number }),
             }
         })
         .collect();

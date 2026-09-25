@@ -9,6 +9,7 @@ use serde::Serialize;
 use wiki::{Dataset, Target};
 
 use crate::catalog_view::kind_view;
+use crate::flags::{recorded, recorded_done};
 use crate::graph::origin_view;
 use crate::wiki_target;
 use crate::{IconRef, ItemKindView, OriginView};
@@ -126,7 +127,7 @@ pub fn collection_view(
     let mut beyond = 0u32;
     for i in listed {
         let kind = kind_view(i.kind);
-        let in_collection = items.and_then(|f| f.get(i.id.0 as usize).copied());
+        let in_collection = recorded(items, i.id.0);
         if items.is_some() && in_collection.is_none() {
             beyond += 1;
         }
@@ -196,11 +197,8 @@ fn lock_of(
     let achievement = a.0;
     let text = c.achievement(a).map(|x| x.text.clone());
     // A page only when the dataset really has one: never a link that leads nowhere.
-    let target = wiki_target::achievement(a);
-    let page = dataset
-        .filter(|ds| ds.entry(&target).is_some())
-        .map(|_| target);
-    match achievements.map(|f| f.get(achievement as usize).copied().unwrap_or(false)) {
+    let page = wiki_target::page_of(dataset, wiki_target::achievement(a));
+    match achievements.map(|f| recorded_done(f, achievement)) {
         None => LockView::Unknown {
             achievement,
             text,

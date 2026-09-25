@@ -42,9 +42,7 @@ pub fn target_sprite<'a>(c: &'a Catalog, t: &Target) -> TargetSprite<'a> {
     match t {
         // The wiki doesn't distinguish passives, actives and familiars: it just says
         // `Item { id }`. The three share the same id space, so at most one will match.
-        Target::Item { id } => [ItemKind::Passive, ItemKind::Active, ItemKind::Familiar]
-            .iter()
-            .find_map(|k| c.item(*k, ItemId(*id)))
+        Target::Item { id } => crate::catalog_view::collectible(c, *id)
             .map_or(TargetSprite::Unknown, |i| TargetSprite::Found(&i.sprite)),
         Target::Trinket { id } => c
             .item(ItemKind::Trinket, ItemId(*id))

@@ -4,8 +4,10 @@
 //! and the live log has no name to give. Items carry a name only when the catalog is there; an
 //! id with no name says "the game is not installed" rather than showing a blank.
 
-use catalog::{Catalog, ItemId, ItemKind, Language};
+use catalog::{Catalog, ItemKind, Language};
 use serde::Serialize;
+
+use crate::catalog_view::collectible;
 
 /// Where a run came from. Tagged, because one variant carries a name and the other cannot.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, ts_rs::TS)]
@@ -180,24 +182,6 @@ impl run::ItemKinds for CatalogKinds<'_> {
     }
 }
 
-/// The item a log line means by an id.
-///
-/// The catalog is keyed by `(kind, id)` and a trinket can carry the same number as a
-/// collectible — but the line the fold reads is `Adding collectible N`, so the three
-/// collectible kinds are the only ones that can be meant. Looking a trinket up here would put
-/// the wrong name on a run.
-fn collectible(catalog: &Catalog, id: u32) -> Option<&catalog::Item> {
-    collectible_of(catalog, id).map(|(_, item)| item)
-}
-
-/// The kind as well as the item: an icon is addressed by both, and trying the three kinds is
-/// how this crate has always found one — the run only carries the number.
-fn collectible_of(catalog: &Catalog, id: u32) -> Option<(ItemKind, &catalog::Item)> {
-    [ItemKind::Passive, ItemKind::Active, ItemKind::Familiar]
-        .into_iter()
-        .find_map(|kind| catalog.item(kind, ItemId(id)).map(|item| (kind, item)))
-}
-
 pub fn runs_view(
     inputs: RunsInputs<'_>,
     mut icon: impl FnMut(&crate::icon::IconRef) -> Option<String>,
@@ -211,15 +195,17 @@ pub fn runs_view(
         diagnostics.push(RunsDiagnostic::NoCatalog);
     }
     let mut named = |id: u32| -> RunItemRef {
-        let found = catalog.and_then(|c| collectible_of(c, id));
+        // The line the fold reads is `Adding collectible N`: a trinket cannot be meant, and
+        // looking one up would put the wrong name on a run.
+        let found = catalog.and_then(|c| collectible(c, id));
         RunItemRef {
             id,
             name: found
                 .zip(catalog)
-                .map(|((_, item), c)| c.text(&item.name, Language::English).to_string()),
-            icon_url: found.and_then(|(kind, _)| {
+                .map(|(item, c)| c.text(&item.name, Language::English).to_string()),
+            icon_url: found.and_then(|item| {
                 icon(&crate::icon::IconRef::Item {
-                    kind: crate::catalog_view::kind_view(kind),
+                    kind: crate::catalog_view::kind_view(item.kind),
                     id,
                 })
             }),

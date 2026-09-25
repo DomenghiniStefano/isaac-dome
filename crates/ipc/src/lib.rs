@@ -6,6 +6,7 @@ mod challenges;
 mod collection;
 pub mod contract;
 mod error;
+mod flags;
 mod floor;
 #[cfg(feature = "test-api")]
 pub mod for_tests;
