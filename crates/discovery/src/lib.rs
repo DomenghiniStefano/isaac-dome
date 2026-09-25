@@ -68,7 +68,6 @@ pub enum SteamSource {
 #[derive(Debug, Clone)]
 pub struct GameInstall {
     pub dir: PathBuf,
-    pub library: PathBuf,
     pub manifest: PathBuf,
     /// `None` when nothing says which edition this is: a folder chosen by hand has no
     /// appmanifest, and the absence of a file is not evidence of Rebirth.
