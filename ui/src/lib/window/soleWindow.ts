@@ -5,7 +5,7 @@ import type { MonitorArea, WindowBox, WindowPort } from './windowPort'
 // `lib/window/` degrades there instead of throwing (the frontend conventions, rule 3). One
 // window, one monitor the size of it, and messages that go nowhere because there is nobody to
 // send them to. It exists so that `fakeWindows`, the development stand-in with a second window
-// to tear off into, stays out of the production bundle (card #81, V10).
+// to tear off into, stays out of the production bundle.
 //
 // `MainLabel` is read inside the functions and never while this module loads: `windowPort.ts`
 // imports this file, so reading it at the top level would meet it before it is defined.

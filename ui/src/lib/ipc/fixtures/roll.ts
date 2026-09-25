@@ -1,10 +1,9 @@
 import { MarkColumnView, StatusView } from '../types'
 import type { DrawnView, PresetView, RollRowView, RollView } from '../types'
 
-// Development only: the Roll screen on the development server (card #80, item 10 — it threw
-// "no fixture answers roll"). The deck is a handful of rows, not the game's matrix: enough to
-// press Pesca, change the preset and watch the counts follow. It lives for the page's life,
-// like the settings fixture.
+// Development only: the Roll screen on the development server. The deck is a handful of rows,
+// not the game's matrix: enough to press Pesca, change the preset and watch the counts follow.
+// It lives for the page's life, like the settings fixture.
 const characterNames = ['Isaac', 'Magdalene', 'Cain', 'Judas']
 const columnNames = ["Mom's Heart", 'Isaac', 'Satan', 'The Lamb']
 const drawable: MarkColumnView[] = [

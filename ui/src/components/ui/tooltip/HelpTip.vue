@@ -24,8 +24,9 @@ import TooltipTrigger from './TooltipTrigger.vue'
 // that hides the navigation to explain the page is trading one confusion for another.
 //
 // `class` is taken by hand and handed to the trigger: `Tooltip` renders no element of its own, so
-// a class falling through to it lands nowhere. That is how the sidebar's `sidebar-collapsed-hidden`
-// stayed on the mark from 3.13a to card #54 while the sidebar folded round it.
+// a class falling through to it lands nowhere — which left the sidebar's
+// `sidebar-collapsed-hidden` sitting undelivered on the mark while the sidebar folded round it,
+// instead of hiding it.
 const props = defineProps<{ label?: string; class?: HTMLAttributes['class'] }>()
 const { t } = useMessages()
 </script>

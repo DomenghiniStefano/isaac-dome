@@ -21,9 +21,8 @@ describe('gateState', () => {
     expect(gateState(null)).toEqual({ kind: 'waiting' })
   })
 
-  // The three states this file used to check — "choose one of these", "the chain broke here"
-  // and "the read failed" — moved to `welcomeView.test.ts` with the states themselves in
-  // 3.8. They are asserted there, on the function that owns them now, not deleted.
+  // "Choose one of these", "the chain broke here" and "the read failed" are `welcomeView.ts`'s
+  // states, asserted in `welcomeView.test.ts` on the function that owns them.
   it('waits rather than guessing, in the states the welcome now owns', () => {
     const choosing = setupWith({
       kind: 'needsChoice',
