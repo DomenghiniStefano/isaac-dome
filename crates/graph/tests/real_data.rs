@@ -10,7 +10,7 @@ fn available_now_and_blocked_by_never_contradict_each_other() {
     let Some((g, flags)) = support::real_graph_and_flags() else {
         return;
     };
-    let e = g.evaluate(&graph::FlagsOnly(Some(&flags)));
+    let e = g.evaluate(&graph::evaluate::FlagsOnly(Some(&flags)));
     let mut checked = 0;
     for n in g.nodes() {
         let Some(NodeInfo::Computed {
@@ -37,7 +37,7 @@ fn steps_missing_is_zero_exactly_when_the_node_is_done_or_available() {
     let Some((g, flags)) = support::real_graph_and_flags() else {
         return;
     };
-    let e = g.evaluate(&graph::FlagsOnly(Some(&flags)));
+    let e = g.evaluate(&graph::evaluate::FlagsOnly(Some(&flags)));
     let mut checked = 0;
     for n in g.nodes() {
         let Some(NodeInfo::Computed {
