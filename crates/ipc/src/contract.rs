@@ -78,6 +78,7 @@ fn rewrite_line(line: &str) -> Option<String> {
 ///
 /// Reads one line per declaration, which is how `ts-rs` writes a union without field docs;
 /// a union spread over lines has fields, so it cannot be one of these today.
+#[cfg(feature = "test-api")]
 pub fn tagged_fieldless_unions(file: &str) -> Vec<&str> {
     file.lines()
         .filter_map(union_line)
@@ -90,6 +91,7 @@ pub fn tagged_fieldless_unions(file: &str) -> Vec<&str> {
 /// included. The vacuity guard of the contract test: zero means the generator's output is no
 /// longer in a form `is_bare_tag` can see, and an empty `tagged_fieldless_unions` then says
 /// nothing.
+#[cfg(feature = "test-api")]
 pub fn bare_tag_members(file: &str) -> usize {
     file.lines()
         .filter_map(union_line)
@@ -98,6 +100,7 @@ pub fn bare_tag_members(file: &str) -> usize {
 }
 
 /// `export type Name = body;` on one line, as `(name, body)`.
+#[cfg(feature = "test-api")]
 fn union_line(line: &str) -> Option<(&str, &str)> {
     let rest = line.strip_prefix("export type ")?;
     let (name, body) = rest.split_once(" = ")?;
@@ -106,6 +109,7 @@ fn union_line(line: &str) -> Option<(&str, &str)> {
 
 /// `{ "kind": "x" }`, or `{ "kind": "x", }` for a struct variant with no fields. A `|` inside a
 /// field splits a member into fragments, and a fragment is never a bare tag.
+#[cfg(feature = "test-api")]
 fn is_bare_tag(member: &str) -> bool {
     let Some(inner) = member
         .trim()

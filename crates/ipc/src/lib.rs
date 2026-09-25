@@ -70,9 +70,7 @@ pub use live::{
     characters_named, live_graph, live_mark_rows, live_marks, live_view, LiveAchievement,
     LiveDiagnostic, LiveGraph, LiveMarkRow, LiveMarks, LiveOpen, LiveView,
 };
-pub use mark_art::{
-    mark_source, paper_source, widget_source, MarkFrames, WidgetArt, LOBBY_ANM2, WIDGET_ANM2,
-};
+pub use mark_art::{mark_source, widget_source, MarkFrames, WidgetArt, LOBBY_ANM2, WIDGET_ANM2};
 pub use marks::{
     boss_name, character_for, marks_matrix, Cell, CellLevel, CharacterGroup, CharacterRow,
     MarkArtView, MarksMatrix, MarksTotals, RosterRow, SecondLevelView, BOSSES, ROSTER,
@@ -81,6 +79,8 @@ pub use marks::{
 // what `preview_of` counts with — production reaches it inside the crate.
 #[cfg(feature = "test-api")]
 pub use floor::ROOM_KINDS;
+#[cfg(feature = "test-api")]
+pub use mark_art::paper_source;
 #[cfg(feature = "test-api")]
 pub use marks::marks_totals;
 pub use per_save::PerSave;
