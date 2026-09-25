@@ -1174,6 +1174,7 @@ dependencies = [
 name = "floor"
 version = "0.1.0"
 dependencies = [
+ "floor",
  "serde",
  "serde_json",
 ]
