@@ -14,11 +14,6 @@ export const achievementText = (
   return found ? knownText(found) : null
 }
 
-// A step in a narrow column: what it unlocks ("The Lost") reads where "You unlocked…" is cut to
-// "You …"; the achievement's own text when it unlocks nothing catalogued.
-export const proposalLabel = (node: UnlockNode): string | null =>
-  node.unlocks[0]?.name ?? knownText(node)
-
 export const queuedIds = (view: QueueView | null): Set<number> =>
   new Set(view?.rows.map(rowId) ?? [])
 

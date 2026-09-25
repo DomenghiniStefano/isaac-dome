@@ -155,11 +155,6 @@ export const routeIcon: Record<RouteName, Component> = {
   [RouteName.Updates]: RefreshCwIcon,
 }
 
-// Which sub-project brings a screen that is still a placeholder; absent once it's real.
-export const routeArrives: Partial<Record<RouteName, Message>> = {
-  [RouteName.TabsSettings]: 'placeholder.tabs',
-}
-
 export const wikiCategoryTitle: Record<WikiCategory, Message> = {
   [WikiCategory.Items]: 'wikiCategories.items',
   [WikiCategory.Trinkets]: 'wikiCategories.trinkets',

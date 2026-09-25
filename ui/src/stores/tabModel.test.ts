@@ -4,11 +4,9 @@ import type { TabLocation } from '@/router/routeTable'
 import {
   HistoryDepth,
   backTab,
-  canDetach,
   canGoBack,
   canGoForward,
   closeTab,
-  detachTab,
   entryView,
   firstState,
   forwardTab,
@@ -271,25 +269,6 @@ describe('a tab that leaves, and one that arrives', () => {
       'b',
       'c',
     ])
-  })
-
-  it('detaching hands back the tab and the state without it', () => {
-    const out = detachTab(three(), 'b')
-    expect(out?.tab.id).toBe('b')
-    expect(out ? ids(out.state) : null).toEqual(['a', 'c'])
-    // The active tab left, so its right neighbour takes over, exactly as closing does.
-    expect(out?.state.activeId).toBe('c')
-  })
-
-  it('detaching a tab that is not there answers null and changes nothing', () => {
-    expect(detachTab(three(), 'zzz')).toBeNull()
-  })
-
-  it('the last tab does not detach: that window already is that tab', () => {
-    const one: TabsState = { tabs: [someTab('a')], activeId: 'a' }
-    expect(canDetach(one)).toBe(false)
-    expect(detachTab(one, 'a')).toBeNull()
-    expect(canDetach(three())).toBe(true)
   })
 
   it('a seeded window holds what it was given, active where it was told', () => {
