@@ -1,9 +1,9 @@
-//! The three questions `graph::Profile` asks, answered from the save.
+//! The three questions `graph::evaluate::Profile` asks, answered from the save.
 //!
 //! The numbers are the tests' own, so none of this depends on a sample.
 
+use graph::evaluate::Profile;
 use graph::rules::{CounterName, MarkColumn, MarkLevel};
-use graph::Profile;
 use ipc::SaveProgress;
 
 /// Bits 0 and 1 are the mark's two levels. Bit 2 is **not** a level — it is "won online",

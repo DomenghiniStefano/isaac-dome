@@ -8,8 +8,8 @@ use std::collections::BTreeMap;
 
 use catalog::Catalog;
 use core_save::{Kind, Save};
+use graph::build::Graph;
 use graph::evaluate::NodeInfo;
-use graph::Graph;
 
 /// The real catalog, built from the game's archives.
 pub fn real_catalog() -> Option<(Catalog, unpack::ResourceSet)> {
@@ -22,7 +22,7 @@ pub fn real_catalog() -> Option<(Catalog, unpack::ResourceSet)> {
     Some((c, rs))
 }
 
-pub fn embedded_rules() -> &'static graph::Rules {
+pub fn embedded_rules() -> &'static graph::rules::Rules {
     match graph::rules::embedded() {
         Ok(r) => r,
         // Not a skip: the rules are compiled in, so this can only be our own broken file.
@@ -77,7 +77,7 @@ pub fn series_evals() -> Option<Vec<Era>> {
         let Some(flags) = s.flags(Kind::Achievements) else {
             continue;
         };
-        let e = g.evaluate(&graph::FlagsOnly(Some(&flags)));
+        let e = g.evaluate(&graph::evaluate::FlagsOnly(Some(&flags)));
         let infos: BTreeMap<graph::AchievementId, NodeInfo> = g
             .nodes()
             .iter()

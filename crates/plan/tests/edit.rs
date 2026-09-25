@@ -2,7 +2,7 @@
 //! the graph, which is what lets these tests run without a catalog.
 
 use graph::AchievementId;
-use plan::order::Dependencies;
+use plan::Dependencies;
 use plan::{Queue, Row};
 
 fn a(n: u32) -> AchievementId {

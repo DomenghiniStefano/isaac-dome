@@ -6,7 +6,7 @@
 
 use catalog::Catalog;
 use core_save::{Kind, Save};
-use graph::Graph;
+use graph::build::Graph;
 
 /// "a requires b" over the graph's transitive prerequisites, with the chains computed once
 /// for the rows involved. The same shape the app uses; three lines rather than a dependency
@@ -26,7 +26,7 @@ impl GraphDeps {
                 .map(|a| {
                     (
                         *a,
-                        g.missing_chain(*a, &graph::FlagsOnly(flags))
+                        g.missing_chain(*a, &graph::evaluate::FlagsOnly(flags))
                             .into_iter()
                             .collect(),
                     )
