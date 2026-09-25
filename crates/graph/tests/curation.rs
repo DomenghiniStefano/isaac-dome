@@ -18,12 +18,12 @@ fn rules() -> Rules {
 }
 
 #[test]
-fn every_target_that_needs_a_verdict_has_one() {
+fn every_target_has_a_verdict() {
     let rules = rules();
     let missing: Vec<String> = rules
         .targets()
         .iter()
-        .filter(|t| t.verdict_required && rules.verdict(&t.key).is_none())
+        .filter(|t| rules.verdict(&t.key).is_none())
         .map(|t| format!("{} ({} uses)", t.key, t.uses))
         .collect();
     assert!(

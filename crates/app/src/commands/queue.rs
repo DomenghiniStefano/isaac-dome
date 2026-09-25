@@ -15,7 +15,7 @@ use catalog::Catalog;
 /// What every queue command needs, gathered once so the five read the same way.
 struct QueuePieces<'a> {
     catalog: Option<&'a Catalog>,
-    graph: Option<&'a graph::Graph>,
+    graph: Option<&'a graph::build::Graph>,
     flags: Option<Vec<bool>>,
 }
 
@@ -82,7 +82,7 @@ fn queue_mutate(
     app: &AppHandle,
     store: &StoreState,
     pieces: &QueuePieces<'_>,
-    edit: impl FnOnce(&mut plan::Queue, &graph::Graph, Option<&[bool]>),
+    edit: impl FnOnce(&mut plan::Queue, &graph::build::Graph, Option<&[bool]>),
 ) -> Result<(), IpcError> {
     let Some(g) = pieces.graph else {
         // No catalog, no graph, no way to keep the order honest: the queue is left exactly
@@ -144,7 +144,7 @@ pub fn queue_add(
     let achievement = graph::AchievementId(achievement);
     let pieces = queue_pieces(&app, &catalog, &resources, &graph)?;
     queue_mutate(&app, &store, &pieces, |q, g, flags| {
-        let chain = g.missing_chain(achievement, &graph::FlagsOnly(flags));
+        let chain = g.missing_chain(achievement, &graph::evaluate::FlagsOnly(flags));
         let deps = GraphDeps::new(g, flags, &ids_for(q, achievement, &chain));
         q.enqueue(achievement, &chain, &deps);
     })?;
@@ -222,7 +222,7 @@ pub fn queue_import_goals(
             else {
                 continue;
             };
-            let chain = g.missing_chain(achievement, &graph::FlagsOnly(flags));
+            let chain = g.missing_chain(achievement, &graph::evaluate::FlagsOnly(flags));
             let deps = GraphDeps::new(g, flags, &ids_for(q, achievement, &chain));
             q.enqueue(achievement, &chain, &deps);
         }

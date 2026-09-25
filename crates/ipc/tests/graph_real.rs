@@ -59,7 +59,7 @@ fn profile(name: &str) -> Option<(Catalog, Save)> {
 fn view_of(c: &Catalog, s: &Save) -> Option<ipc::UnlockView> {
     let flags = s.flags(Kind::Achievements)?;
     let counters = s.u32s(Kind::Counters)?;
-    let g = graph::Graph::build(c, graph::rules::embedded().expect("embedded rules"));
+    let g = graph::build::Graph::build(c, graph::rules::embedded().expect("embedded rules"));
     let progress = ipc::SaveProgress::new(Some(&flags), Some(&counters), Some(c));
     let e = g.evaluate(&progress);
     Some(unlock_view(
@@ -152,8 +152,8 @@ fn the_slot_id_junction_is_pinned_by_the_items_seen_in_the_save() {
 fn next_steps_on_the_real_profile_are_unlockable_now_by_fan_out() {
     let Some((c, _, s)) = real() else { return };
     let flags = s.flags(Kind::Achievements).expect("section 1");
-    let g = graph::Graph::build(&c, graph::rules::embedded().expect("embedded rules"));
-    let e = g.evaluate(&graph::FlagsOnly(Some(&flags)));
+    let g = graph::build::Graph::build(&c, graph::rules::embedded().expect("embedded rules"));
+    let e = g.evaluate(&graph::evaluate::FlagsOnly(Some(&flags)));
     let v = unlock_view(
         Some(&c),
         None,
@@ -387,8 +387,8 @@ fn the_tainted_form_of_a_character_is_a_different_target_under_the_same_name() {
 fn a_blocked_node_links_to_the_pages_the_dataset_has() {
     let Some((c, _, s)) = real() else { return };
     let flags = s.flags(Kind::Achievements).expect("section 1");
-    let g = graph::Graph::build(&c, graph::rules::embedded().expect("embedded rules"));
-    let e = g.evaluate(&graph::FlagsOnly(Some(&flags)));
+    let g = graph::build::Graph::build(&c, graph::rules::embedded().expect("embedded rules"));
+    let e = g.evaluate(&graph::evaluate::FlagsOnly(Some(&flags)));
     let ds = wiki::Dataset::embedded().expect("the dataset is embedded at build time");
 
     let page_of = |r: &ipc::RequirementView| match r {

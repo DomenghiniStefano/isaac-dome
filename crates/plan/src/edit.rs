@@ -19,30 +19,12 @@ impl Queue {
         deps: &impl Dependencies,
     ) {
         let already_queued = self.position(achievement).is_some();
-        let mut rows = self.rows().to_vec();
-        for step in &playable_order(chain, deps) {
-            match rows.iter_mut().find(|r| r.achievement == *step) {
-                Some(r) => {
-                    if !r.origins.contains(&achievement) {
-                        r.origins.push(achievement);
-                    }
-                }
-                None => rows.push(Row {
-                    achievement: *step,
-                    wanted: false,
-                    origins: vec![achievement],
-                }),
-            }
-        }
-        match rows.iter_mut().find(|r| r.achievement == achievement) {
-            Some(r) => r.wanted = true,
-            None => rows.push(Row {
-                achievement,
-                wanted: true,
-                origins: Vec::new(),
-            }),
-        }
-        *self = Queue::from_rows(rows);
+        let rows = playable_order(chain, deps)
+            .into_iter()
+            .fold(self.rows().to_vec(), |rows, step| {
+                with_step(rows, step, achievement)
+            });
+        *self = Queue::from_rows(with_wish(rows, achievement));
         // Moving the wish onto its own position runs the repair, which pulls the steps
         // just appended above it and leaves everything else alone. A wish that was already
         // in the queue keeps the position you gave it: the repair is about the constraint,
@@ -56,14 +38,51 @@ impl Queue {
     /// Removes a wish. Its steps go only if nothing else keeps them: another wish that
     /// needs them, or your having asked for them yourself.
     pub fn remove(&mut self, achievement: AchievementId) {
-        let mut rows = self.rows().to_vec();
-        for r in rows.iter_mut() {
-            r.origins.retain(|o| *o != achievement);
-        }
-        rows.retain(|r| r.achievement != achievement);
-        rows.retain(|r| !r.is_orphan());
+        let rows = self
+            .rows()
+            .iter()
+            .filter(|r| r.achievement != achievement)
+            .map(|r| Row {
+                origins: r
+                    .origins
+                    .iter()
+                    .copied()
+                    .filter(|o| *o != achievement)
+                    .collect(),
+                ..r.clone()
+            })
+            .filter(|r| !r.is_orphan())
+            .collect();
         *self = Queue::from_rows(rows);
     }
+}
+
+/// `step` in the queue on behalf of `origin`: a row already there gains the origin once, a
+/// missing one is appended as a step that only `origin` wants.
+fn with_step(mut rows: Vec<Row>, step: AchievementId, origin: AchievementId) -> Vec<Row> {
+    match rows.iter_mut().find(|r| r.achievement == step) {
+        Some(r) if r.origins.contains(&origin) => {}
+        Some(r) => r.origins.push(origin),
+        None => rows.push(Row {
+            achievement: step,
+            wanted: false,
+            origins: vec![origin],
+        }),
+    }
+    rows
+}
+
+/// `achievement` wanted for itself: a row already there is marked, a missing one appended.
+fn with_wish(mut rows: Vec<Row>, achievement: AchievementId) -> Vec<Row> {
+    match rows.iter_mut().find(|r| r.achievement == achievement) {
+        Some(r) => r.wanted = true,
+        None => rows.push(Row {
+            achievement,
+            wanted: true,
+            origins: Vec::new(),
+        }),
+    }
+    rows
 }
 
 /// The chain in an order it can be played in (card #80, P4). `missing_chain` promises only
@@ -72,15 +91,16 @@ impl Queue {
 /// step already placed that needs it — enough, because the relation is transitive — and steps
 /// that need nothing of each other keep the order they came in.
 fn playable_order(chain: &[AchievementId], deps: &impl Dependencies) -> Vec<AchievementId> {
-    let mut ordered: Vec<AchievementId> = Vec::with_capacity(chain.len());
-    for &step in chain {
-        match ordered
-            .iter()
-            .position(|&placed| deps.requires(placed, step))
-        {
-            Some(before) => ordered.insert(before, step),
-            None => ordered.push(step),
-        }
-    }
-    ordered
+    chain
+        .iter()
+        .fold(Vec::with_capacity(chain.len()), |mut ordered, &step| {
+            match ordered
+                .iter()
+                .position(|&placed| deps.requires(placed, step))
+            {
+                Some(before) => ordered.insert(before, step),
+                None => ordered.push(step),
+            }
+            ordered
+        })
 }
