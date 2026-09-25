@@ -8,7 +8,7 @@ export interface SessionLedger {
   /** Everything held, by window label: what the writer writes. */
   held: ReadonlyMap<string, StoredWindow>
   /** A window said what it holds. */
-  hold: (label: string, window: StoredWindow) => void
+  hold: (label: string, stored: StoredWindow) => void
   /** A window said it was going: nothing is waited for from it again, nor is it elected. */
   leave: (label: string) => void
   /**
@@ -26,8 +26,8 @@ export const createSessionLedger = (): SessionLedger => {
   const gone = new Set<string>()
   return {
     held,
-    hold: (label, window) => {
-      held.set(label, window)
+    hold: (label, stored) => {
+      held.set(label, stored)
     },
     leave: (label) => {
       gone.add(label)

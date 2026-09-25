@@ -243,9 +243,9 @@ describe('the view a stored entry carries', () => {
         ],
       }),
     )
-    for (const window of stored.windows) {
-      expect(window.tabs[0].entries[0].view).toBeUndefined()
-      expect(window.tabs[0].entries[1].view).toEqual({ sort: 'id' })
+    for (const kept of stored.windows) {
+      expect(kept.tabs[0].entries[0].view).toBeUndefined()
+      expect(kept.tabs[0].entries[1].view).toEqual({ sort: 'id' })
     }
   })
 
