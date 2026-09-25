@@ -557,6 +557,7 @@ export const it = {
         'Può essere stata aggiunta dopo: la copia risale alla data qui sopra e si aggiorna con l’app.',
       noSections: 'Di questa pagina abbiamo solo la scheda, senza testo.',
       failedTitle: 'La Wiki non ha risposto',
+      pageFailedTitle: 'Questa pagina non si è aperta',
       missingTitle: 'La Wiki non si è aperta',
       missing:
         'La copia della wiki dentro l’app non si legge, quindi non c’è nessuna pagina da mostrare. Riavviare l’app di solito basta; se continua, è un problema da segnalare.',
