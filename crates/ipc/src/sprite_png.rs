@@ -104,25 +104,21 @@ pub fn centre_opaque(png: &[u8]) -> Option<Vec<u8>> {
 
 /// The box the opaque pixels occupy, as `(x, y, w, h)`. `None` when there are none.
 fn opaque_box(pixel: &[u8], w: u32, h: u32) -> Option<(u32, u32, u32, u32)> {
-    let (mut left, mut top) = (w, h);
-    let (mut right, mut bottom) = (0, 0);
-    for y in 0..h {
-        for x in 0..w {
-            // Any alpha at all is drawing. A threshold would decide that the faintest edge of
-            // an anti-aliased sprite is margin, and pixel art's edges are the sprite.
-            if pixel[((y * w + x) as usize) * 4 + 3] == 0 {
-                continue;
-            }
-            left = left.min(x);
-            right = right.max(x);
-            top = top.min(y);
-            bottom = bottom.max(y);
-        }
-    }
-    if left > right || top > bottom {
-        return None;
-    }
+    let (left, top, right, bottom) = (0..h)
+        .flat_map(|y| (0..w).map(move |x| (x, y)))
+        // Any alpha at all is drawing. A threshold would decide that the faintest edge of an
+        // anti-aliased sprite is margin, and pixel art's edges are the sprite.
+        .filter(|&(x, y)| pixel[((y * w + x) as usize) * 4 + 3] != 0)
+        .fold(None, |edges, (x, y)| Some(widen(edges, x, y)))?;
     Some((left, top, right - left + 1, bottom - top + 1))
+}
+
+/// `(left, top, right, bottom)` grown to take in the pixel at `(x, y)`.
+fn widen(edges: Option<(u32, u32, u32, u32)>, x: u32, y: u32) -> (u32, u32, u32, u32) {
+    match edges {
+        None => (x, y, x, y),
+        Some((left, top, right, bottom)) => (left.min(x), top.min(y), right.max(x), bottom.max(y)),
+    }
 }
 
 /// The pixels of one rectangle of `pixel`, which is `sheet_w` wide. The rectangle is the
