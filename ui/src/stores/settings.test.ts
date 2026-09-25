@@ -215,4 +215,15 @@ describe.each([
     expect(store.saveError).toBeNull()
     expect(saved()).toBe(true)
   })
+
+  // What the last write said is forgotten the moment the next one starts, not when it lands.
+  it('a write forgets the last failure as it starts', async () => {
+    const store = useSettingsStore()
+    refusal.next = notWritable
+    await set(store, false)
+    const next = set(store, true)
+    expect(store.saveFailed).toBe(false)
+    expect(store.saveError).toBeNull()
+    await next
+  })
 })
