@@ -71,7 +71,7 @@ pub struct GameInstall {
     pub library: PathBuf,
     pub manifest: PathBuf,
     /// `None` when nothing says which edition this is: a folder chosen by hand has no
-    /// appmanifest, and the absence of a file is not evidence of Rebirth (card #80, P9).
+    /// appmanifest, and the absence of a file is not evidence of Rebirth.
     pub edition: Option<Edition>,
     pub dlcs: Vec<Dlc>,
     /// Unix epoch (seconds) of the last update installed, from the

@@ -98,7 +98,7 @@ fn look_in(library: &Path) -> (Option<GameInstall>, Option<Diagnostic>) {
         Ok(text) => text,
         // Not there: this library does not hold the game, which is normal.
         Err(e) if e.kind() == std::io::ErrorKind::NotFound => return (None, None),
-        // There and unreadable (card #80, R7): said, like `saves.rs` says a folder it
+        // There and unreadable: said, like `saves.rs` says a folder it
         // cannot list, and then the same as a manifest that does not parse.
         Err(e) => {
             let diag = Diagnostic::UnreadablePath {

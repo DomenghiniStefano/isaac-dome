@@ -6,7 +6,7 @@
 /// answers that from the source key, before a byte is read.
 #[derive(Debug, Default)]
 pub struct Tail {
-    /// Raw bytes, not decoded text (card #80, P7): a read ends wherever 256 KiB ends, which can
+    /// Raw bytes, not decoded text: a read ends wherever 256 KiB ends, which can
     /// be inside a character, so decoding waits until a line is whole.
     remainder: Vec<u8>,
 }
