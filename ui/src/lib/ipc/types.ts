@@ -373,7 +373,7 @@ export type RollRowView = {
 }
 
 /**
- * The view's mirror of `roll::Preset`. Also `Deserialize`: `set_roll_preset` (Task 7) takes
+ * The view's mirror of `roll::Preset`. Also `Deserialize`: `set_roll_preset` takes
  * one inbound, and it is the only type on this screen that travels inward.
  */
 export type PresetView = {
@@ -632,8 +632,15 @@ export type AchievementRef =
   | { kind: 'unknown'; slot: number }
 
 /**
- * The twelve columns, as a value on the wire. Fieldless, so it is a bare camelCase string
- * and the TypeScript is a union of values — the repo's rule, zero exceptions.
+ * The twelve columns the game's own completion widget draws, in its order.
+ *
+ * **The one definition of the twelve** (card #82, S1). The graph's rules name a column with
+ * it (`graph::rules::MarkColumn`), and it crosses the IPC as `MarkColumnView`: a bare
+ * camelCase string, fieldless, so the TypeScript is a union of values. It used to be three
+ * enums of the same twelve joined by hand-written maps, each one a place for a thirteenth
+ * column to be forgotten.
+ *
+ * Ordered in the game's order, so a column can key a sorted map.
  */
 export const MarkColumnView = {
   MomsHeart: 'momsHeart',
@@ -995,11 +1002,6 @@ export type GoalView = {
   note: string | null
 }
 
-export type PlanStep = { goal: GoalId; node: UnlockNode; done: boolean }
-
-export type PlanExpansion =
-  { kind: 'stub' } | { kind: 'computed'; steps: Array<PlanStep> }
-
 /**
  * The plan degrades and says why. `store_available` is derived from the absence of
  * `StoreUnavailable`: the UI uses it as a gate and reads the diagnostics for the text.
@@ -1014,7 +1016,6 @@ export type PlanDiagnostic =
 
 export type PlanView = {
   goals: Array<GoalView>
-  expansion: PlanExpansion
   /**
    * What couldn't be read from the plan: one row per unreadable goal.
    */

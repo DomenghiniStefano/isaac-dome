@@ -1,5 +1,5 @@
 use core_save::{Kind, Save};
-use ipc::{marks_matrix, Cell, BOSSES, CHARACTERS};
+use ipc::{marks_matrix, Cell, BOSSES, ROSTER};
 use std::collections::HashMap;
 use std::path::{Path, PathBuf};
 use std::process::Command;
@@ -97,10 +97,10 @@ fn rust_matrix_agrees_with_the_python_reference() {
         .expect("the counters section must be present");
     let matrix = marks_matrix(&counters, None, |_| None);
 
-    let compared = CHARACTERS
+    let compared = ROSTER
         .iter()
         .enumerate()
-        .flat_map(|(c, &(name, _))| {
+        .flat_map(|(c, &ipc::RosterRow { name, .. })| {
             BOSSES
                 .iter()
                 .enumerate()
@@ -157,9 +157,9 @@ fn rust_matrix_agrees_with_the_python_reference() {
     // and in neither if somebody ever "fixes" it to require bit 0 as well. The reference
     // carries the values, so it can answer both questions.
     let count_where = |keep: fn(u32) -> bool| {
-        CHARACTERS
+        ROSTER
             .iter()
-            .flat_map(|&(name, _)| BOSSES.iter().map(move |boss| (name, *boss)))
+            .flat_map(|&ipc::RosterRow { name, .. }| BOSSES.iter().map(move |boss| (name, *boss)))
             .filter(|&(name, boss)| {
                 reference
                     .get(boss)

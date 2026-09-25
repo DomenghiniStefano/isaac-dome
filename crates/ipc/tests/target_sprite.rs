@@ -26,7 +26,7 @@ const ACH: &[u8] = br#"<achievements gfxroot="gfx/ui/achievement/"><achievement 
 const PLAYERS: &[u8] =
     br##"<players portraitroot="gfx/ui/boss/"><player id="7" name="#Z_NAME" portrait="z.png" /></players>"##;
 /// The boss rows carry **invented** names, and that is the point: the key of a row the
-/// wiki names is the key of its page, read from the dataset compiled into this binary, so
+/// wiki names is the key of its page, read from the dataset handed to `boss_keys`, so
 /// a fixture called `Chub` would be answering with the real Chub's key (28.0) rather than
 /// with the one written here. Names no page has isolate the fallback these tests are
 /// about — the key the portrait's own file name declares.
@@ -46,7 +46,7 @@ fn catalog_with_art() -> Catalog {
 }
 
 fn path(c: &Catalog, t: &Target) -> String {
-    match target_sprite(c, t) {
+    match target_sprite(c, &ipc::for_tests::bosses(c), t) {
         TargetSprite::Found(s) => s.path.clone(),
         other => panic!("expected a sprite for {t:?}, got {other:?}"),
     }
@@ -76,7 +76,7 @@ fn a_trinket_is_a_separate_id_space_from_the_collectibles() {
         "gfx/items/trinkets/t.png"
     );
     assert!(matches!(
-        target_sprite(&c, &Target::Item { id: 1 }),
+        target_sprite(&c, &ipc::for_tests::bosses(&c), &Target::Item { id: 1 }),
         TargetSprite::Unknown
     ));
 }
@@ -124,6 +124,7 @@ fn a_boss_page_finds_its_portrait_through_the_entity_id_written_in_the_filename(
         matches!(
             target_sprite(
                 &c,
+                &ipc::for_tests::bosses(&c),
                 &Target::Entity {
                     id: 28,
                     variant: 0,
@@ -163,6 +164,7 @@ fn a_portrait_that_does_not_declare_an_entity_is_not_reachable_by_entity() {
     assert!(matches!(
         target_sprite(
             &c,
+            &ipc::for_tests::bosses(&c),
             &Target::Entity {
                 id: 999,
                 variant: 0,
@@ -186,7 +188,11 @@ fn a_challenge_borrows_the_icon_of_the_achievement_it_rewards() {
     // Challenge 2 exists but has no known reward: this is a declared gap, not an
     // unknown id.
     assert!(matches!(
-        target_sprite(&c, &Target::Challenge { number: 2 }),
+        target_sprite(
+            &c,
+            &ipc::for_tests::bosses(&c),
+            &Target::Challenge { number: 2 }
+        ),
         TargetSprite::NoArt
     ));
 }
@@ -198,12 +204,17 @@ fn the_targets_the_game_does_not_illustrate_say_so_instead_of_guessing() {
     // distinction matters for the design: `NoArt` is "there is none", `Unknown` is "I
     // don't know this" — and brief §5.6 asks for two different placeholders.
     assert!(matches!(
-        target_sprite(&c, &Target::Transformation { id: 1 }),
+        target_sprite(
+            &c,
+            &ipc::for_tests::bosses(&c),
+            &Target::Transformation { id: 1 }
+        ),
         TargetSprite::NoArt
     ));
     assert!(matches!(
         target_sprite(
             &c,
+            &ipc::for_tests::bosses(&c),
             &Target::Room {
                 name: "Devil Room".into()
             }
@@ -218,6 +229,7 @@ fn the_targets_the_game_does_not_illustrate_say_so_instead_of_guessing() {
     assert!(matches!(
         target_sprite(
             &c,
+            &ipc::for_tests::bosses(&c),
             &Target::Concept {
                 name: "Black Heart".into()
             }
@@ -227,6 +239,7 @@ fn the_targets_the_game_does_not_illustrate_say_so_instead_of_guessing() {
     assert!(matches!(
         target_sprite(
             &c,
+            &ipc::for_tests::bosses(&c),
             &Target::Stage {
                 name: "Depths".into()
             }
@@ -239,15 +252,27 @@ fn the_targets_the_game_does_not_illustrate_say_so_instead_of_guessing() {
 fn an_unknown_id_is_not_the_same_hole_as_a_missing_picture() {
     let c = catalog_with_art();
     assert!(matches!(
-        target_sprite(&c, &Target::Achievement { id: 900 }),
+        target_sprite(
+            &c,
+            &ipc::for_tests::bosses(&c),
+            &Target::Achievement { id: 900 }
+        ),
         TargetSprite::Unknown
     ));
     assert!(matches!(
-        target_sprite(&c, &Target::Character { id: 900 }),
+        target_sprite(
+            &c,
+            &ipc::for_tests::bosses(&c),
+            &Target::Character { id: 900 }
+        ),
         TargetSprite::Unknown
     ));
     assert!(matches!(
-        target_sprite(&c, &Target::Challenge { number: 900 }),
+        target_sprite(
+            &c,
+            &ipc::for_tests::bosses(&c),
+            &Target::Challenge { number: 900 }
+        ),
         TargetSprite::Unknown
     ));
 }
@@ -274,8 +299,39 @@ fn an_empty_catalog_never_panics_and_never_invents() {
         },
     ] {
         assert!(
-            !matches!(target_sprite(&empty, &t), TargetSprite::Found(_)),
+            !matches!(
+                target_sprite(&empty, &ipc::for_tests::bosses(&empty), &t),
+                TargetSprite::Found(_)
+            ),
             "without a catalog nothing resolves: {t:?}"
         );
     }
+}
+
+/// The dataset is a parameter of the one place the keys are settled (card #82, S3), not a
+/// constant read behind it. A row whose portrait declares no key is reached only through the
+/// page its name is: *Chub* is `28.0.0` in the dataset compiled into this binary, and without
+/// a dataset nothing says so.
+#[test]
+fn a_boss_only_the_wiki_names_is_keyed_by_the_dataset_it_is_given() {
+    const CHUB: &[u8] = br#"<bosses root="resources/gfx/ui/boss/"><boss id="1" name="Chub" portrait="Portrait_Chub.png" /></bosses>"#;
+    let c = Catalog::build(|p| match p {
+        "bossportraits.xml" => Some(CHUB.to_vec()),
+        _ => None,
+    });
+    let chub = Target::Entity {
+        id: 28,
+        variant: 0,
+        subtype: 0,
+    };
+    let with_wiki = ipc::boss_keys(&c, Some(wiki::Dataset::embedded().expect("embedded")));
+    assert!(matches!(
+        target_sprite(&c, &with_wiki, &chub),
+        TargetSprite::Found(s) if s.path.ends_with("Portrait_Chub.png")
+    ));
+    let without = ipc::boss_keys(&c, None);
+    assert!(matches!(
+        target_sprite(&c, &without, &chub),
+        TargetSprite::Unknown
+    ));
 }

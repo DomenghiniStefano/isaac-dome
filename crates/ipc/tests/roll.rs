@@ -45,7 +45,7 @@ fn view_of_error(err: &roll::DocumentError) -> RollView {
 /// Every target the matrix holds, read from the tables that measured it and never written
 /// here as 442.
 fn every_target() -> usize {
-    ipc::CHARACTERS.len() * ipc::BOSSES.len() + ipc::CHARACTERS.len()
+    ipc::ROSTER.len() * ipc::BOSSES.len() + ipc::ROSTER.len()
 }
 
 #[test]
@@ -60,7 +60,7 @@ fn without_a_catalog_the_view_still_answers_and_says_the_catalog_is_missing() {
 fn without_a_catalog_every_row_still_has_an_id_and_a_count() {
     let c = zeroed_counters();
     let v = view(Some(&c), &Document::default());
-    assert_eq!(v.characters.len(), ipc::CHARACTERS.len());
+    assert_eq!(v.characters.len(), ipc::ROSTER.len());
     assert_eq!(v.columns.len(), ipc::BOSSES.len());
     assert!(v
         .characters
@@ -185,7 +185,7 @@ fn a_drawn_mark_names_its_column_and_a_drawn_greedier_says_it_is_one() {
 
 #[test]
 fn without_a_catalog_a_card_carries_a_row_name_and_no_art() {
-    // The names in `CHARACTERS` are the project's own, measured with the layout: they are not
+    // The names in `ROSTER` are the project's own, measured with the layout: they are not
     // the game's translated strings, and they are all this path has.
     let c = zeroed_counters();
     let doc = Document {
@@ -197,7 +197,7 @@ fn without_a_catalog_a_card_carries_a_row_name_and_no_art() {
         ..Document::default()
     };
     let drawn = view(Some(&c), &doc).drawn.expect("a card");
-    assert_eq!(drawn.character, ipc::CHARACTERS[3].0);
+    assert_eq!(drawn.character, ipc::ROSTER[3].name);
     assert_eq!(drawn.head_url, None);
     assert_eq!(drawn.art_url, None);
 }
@@ -348,7 +348,7 @@ fn the_json_shape_is_camel_case_all_the_way_into_the_struct_variants() {
 
 /// Row 0 (`ISAAC`) is unlocked by nothing and always playable; row 1 (`MAGDALENE`) is unlocked
 /// by achievement 5, which `flags` marks as not yet earned. Neither portrait carries the `_b`
-/// token, so both resolve to their non-Tainted form — `character_for` matches `CHARACTER_KEYS`
+/// token, so both resolve to their non-Tainted form — `character_for` matches `ROSTER`'s key
 /// by key and Tainted flag together.
 const PLAYERS: &[u8] = b"<players portraitroot=\"gfx/ui/stage/\"><player id=\"0\" name=\"#ISAAC_NAME\" portrait=\"isaac.png\" /><player id=\"1\" name=\"#MAGDALENE_NAME\" portrait=\"magdalene.png\" achievement=\"5\" /></players>";
 
@@ -457,19 +457,13 @@ fn deck_preset_forces_only_playable_off_when_it_is_not_derivable() {
 
 #[test]
 fn greed_is_where_the_save_layout_expects() {
-    // `roll_space`'s `greed_column()` reads this position from the table on purpose, rather
-    // than writing 7 as a literal, so that a column inserted before it would move the column
-    // read and not silently keep reading Mom's Heart. But its own fallback (`unwrap_or(0)`) is
-    // the guess that comment argues against: if `"Greed"` is ever renamed or removed, every
-    // `Greedier` target quietly starts reading bit 1 of column 0 instead, with no error and
-    // every other test still green. Pinning the position here is what turns that rename into a
-    // loud failure instead of a plausible wrong answer.
-    assert_eq!(
-        ipc::BOSSES.iter().position(|b| *b == "Greed"),
-        Some(7),
-        "\"Greed\" moved (or vanished) in BOSSES: greed_column()'s unwrap_or(0) fallback would \
-         now silently read Mom's Heart's bits for every Greedier target"
-    );
+    // The Greedier target reads bit 1 of Greed's column, which `roll_space` takes from
+    // `Column::Greed.position()` — the column itself since card #82. Until then it was the
+    // name "Greed" looked up in `BOSSES`, with a fallback to column 0 that would have read
+    // Mom's Heart's bits for every Greedier target, with no error and every other test green.
+    // Pinned from the game's widget order: Greed is the eighth column, and the header names it.
+    assert_eq!(core_save::Column::Greed.position(), 7);
+    assert_eq!(ipc::BOSSES[7], "Greed");
 }
 
 #[test]
@@ -543,7 +537,7 @@ fn a_drawn_target_crosses_as_a_translatable_value() {
     );
 }
 
-/// The review of card #81's second block: the lengths of `MARK_COLUMNS` and `BOSSES` are tied by
+/// The review of card #81's second block: the lengths of the drawn columns and `BOSSES` were tied by
 /// a const assertion, but their order was not. Every column, drawn, names the boss of its
 /// position — the pairs below are the matrix's own header, read from `BOSSES`.
 #[test]

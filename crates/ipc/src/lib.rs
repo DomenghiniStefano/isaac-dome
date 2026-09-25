@@ -6,13 +6,13 @@ mod challenges;
 mod collection;
 pub mod contract;
 mod error;
+mod flags;
 mod floor;
 #[cfg(feature = "test-api")]
 pub mod for_tests;
 mod goals;
 mod graph;
 mod icon;
-mod last_input;
 mod live;
 mod mark_art;
 mod marks;
@@ -60,8 +60,8 @@ pub use goals::{target_exists, Goal, GoalId, TargetKey, UnlockTarget};
 pub use graph::{
     graph_views, next_steps, plan_view, resolve_target, target_of, unlock_view, AchievementRef,
     GoalView, GraphInfo, GraphViews, MarkColumnView, MarkLevelView, NextSteps, OriginView,
-    PlanDiagnostic, PlanExpansion, PlanStep, PlanView, RequirementView, StepsBasis, StepsSection,
-    ThresholdItemView, UnlockDiagnostic, UnlockNode, UnlockTotals, UnlockView, STEPS,
+    PlanDiagnostic, PlanView, RequirementView, StepsBasis, StepsSection, ThresholdItemView,
+    UnlockDiagnostic, UnlockNode, UnlockTotals, UnlockView, STEPS,
 };
 pub use icon::{
     icon_source, unknown_source, IconRef, MarkFill, MarkTier, ICON_SCHEME, UNKNOWN_SPRITE,
@@ -74,14 +74,14 @@ pub use mark_art::{
     mark_source, paper_source, widget_source, MarkFrames, WidgetArt, LOBBY_ANM2, WIDGET_ANM2,
 };
 pub use marks::{
-    character_for, marks_matrix, Cell, CellLevel, CharacterGroup, CharacterRow, MarkArtView,
-    MarksMatrix, MarksTotals, SecondLevelView, BOSSES, CHARACTERS,
+    boss_name, character_for, marks_matrix, Cell, CellLevel, CharacterGroup, CharacterRow,
+    MarkArtView, MarksMatrix, MarksTotals, RosterRow, SecondLevelView, BOSSES, ROSTER,
 };
 // Reached only by tests: the layout tables and counter lookups are the crate's own business.
 #[cfg(feature = "test-api")]
 pub use floor::ROOM_KINDS;
 #[cfg(feature = "test-api")]
-pub use marks::{counter_index, marks_totals, CHARACTER_KEYS};
+pub use marks::{counter_index, marks_totals};
 pub use per_save::PerSave;
 pub use preview::{preview_of, CandidatePreview, PreviewCount};
 pub use profile::{
@@ -119,7 +119,7 @@ pub use settings::{
 };
 pub use sprite_png::{centre_opaque, crop_png, decode_rgba, overlay, trim_opaque};
 pub use summary::{save_summary, SaveDiagnostic, SaveSummary, SectionCount};
-pub use target_sprite::{target_sprite, TargetSprite};
+pub use target_sprite::{boss_keys, target_sprite, BossKeys, TargetSprite};
 pub use tray::{tray_action, tray_locale, tray_text, TrayAction, TrayLocale, TrayText};
 pub use update::{UpdateFailure, UpdatePhase, UpdateReason, UpdateState, UpdateView};
 pub use want::{want_view, WantDiagnostic, WantRoute, WantState, WantView, WantedView};

@@ -121,24 +121,10 @@ pub struct ThresholdItemView {
     pub page: Option<Target>,
 }
 
-/// The twelve columns, as a value on the wire. Fieldless, so it is a bare camelCase string
-/// and the TypeScript is a union of values — the repo's rule, zero exceptions.
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, ts_rs::TS)]
-#[serde(rename_all = "camelCase")]
-pub enum MarkColumnView {
-    MomsHeart,
-    Isaac,
-    Satan,
-    BossRush,
-    BlueBaby,
-    TheLamb,
-    MegaSatan,
-    Greed,
-    Hush,
-    Delirium,
-    Mother,
-    TheBeast,
-}
+/// The twelve columns, as a value on the wire: the layout's own enum, which serializes as a
+/// bare camelCase string and is declared to TypeScript under this name (card #82, S1). The
+/// graph's `MarkColumn` is the same type, so a requirement's column crosses as it is.
+pub use core_save::Column as MarkColumnView;
 
 /// A level inside a cell, named for its bit. `Second` is Ultra Greedier in the Greed
 /// column, measured; what it means elsewhere is not, and `hard` would ship that claim.
@@ -330,7 +316,6 @@ pub struct GoalView {
 #[serde(rename_all = "camelCase")]
 pub struct PlanView {
     pub goals: Vec<GoalView>,
-    pub expansion: PlanExpansion,
     /// What couldn't be read from the plan: one row per unreadable goal.
     pub diagnostics: Vec<PlanDiagnostic>,
     /// `false` when `store` failed to open: goals can't be seen or added, and the UI
@@ -364,30 +349,12 @@ pub enum PlanDiagnostic {
     UnresolvedGoal { id: GoalId },
 }
 
-#[derive(Debug, Clone, PartialEq, Eq, Serialize, ts_rs::TS)]
-#[serde(
-    tag = "kind",
-    rename_all = "camelCase",
-    rename_all_fields = "camelCase"
-)]
-pub enum PlanExpansion {
-    Stub,
-    Computed { steps: Vec<PlanStep> },
-}
-
-#[derive(Debug, Clone, PartialEq, Eq, Serialize, ts_rs::TS)]
-#[serde(rename_all = "camelCase")]
-pub struct PlanStep {
-    pub goal: GoalId,
-    pub node: UnlockNode,
-    pub done: bool,
-}
-
 use catalog::{AchievementId, BossId, Catalog, ChallengeId, CharacterId, ItemId, Origin, Unlock};
 
 use crate::catalog_view::{item_kind, kind_view, ItemKindView};
 use crate::icon::IconRef;
-use crate::wiki_target;
+use crate::target_sprite::BossKeys;
+use crate::wiki_target::{self, page_of};
 
 /// How to get an achievement, in one line. The game's `unlock_condition` first — it is the
 /// game's own words about its own unlock — and the wiki's requirement only where the file
@@ -416,13 +383,6 @@ fn condition_of(a: &catalog::Achievement, dataset: Option<&Dataset>) -> Option<S
     (!line.is_empty()).then_some(line)
 }
 
-/// A page, only when the dataset really has one. `Some(target)` is a link the screen can
-/// follow; `None` is a name it draws without one — never a link that leads nowhere.
-fn page_of(dataset: Option<&Dataset>, target: Option<Target>) -> Option<Target> {
-    let (ds, t) = (dataset?, target?);
-    ds.entry(&t).is_some().then_some(t)
-}
-
 /// The Unlock view: one node per slot 1..=N of section 1 of the save. `flags[i]` is
 /// slot i; slot 0 is unused (the `slot[id]` mapping, verified on 2026-09-05: 169 items
 /// out of 171 seen with the achievement done).
@@ -436,16 +396,15 @@ fn page_of(dataset: Option<&Dataset>, target: Option<Target>) -> Option<Target> 
 /// `Requirement::None` never reaches here — it was judged as gating nothing.
 fn missing_view(
     c: &Catalog,
+    bosses: &BossKeys,
     dataset: Option<&Dataset>,
     node: &graph::build::Node,
     flags: &[bool],
     progress: Option<&dyn graph::evaluate::Profile>,
 ) -> Vec<RequirementView> {
     let en = catalog::Language::English;
-    let done = |a: Option<AchievementId>| {
-        a.and_then(|a| flags.get(a.0 as usize).copied())
-            .unwrap_or(false)
-    };
+    let done =
+        |a: Option<AchievementId>| a.is_some_and(|a| crate::flags::recorded_done(flags, a.0));
     let mut out = Vec::new();
     for r in &node.requirements {
         match r {
@@ -467,7 +426,7 @@ fn missing_view(
                     Some(_) => out.push(RequirementView::Mark {
                         character: character.0,
                         character_name: c.text(&ch.name, en).to_string(),
-                        column: column_view(*column),
+                        column: *column,
                         level: level_view(*level),
                     }),
                 }
@@ -492,7 +451,7 @@ fn missing_view(
                         id: id.0,
                         name: c.text(&ch.name, en).to_string(),
                         tainted: ch.tainted,
-                        page: page_of(dataset, Some(wiki_target::character(ch))),
+                        page: page_of(dataset, wiki_target::character(ch)),
                     });
                 }
             }
@@ -502,7 +461,7 @@ fn missing_view(
                     out.push(RequirementView::Boss {
                         id: id.0,
                         name: b.name.clone(),
-                        page: page_of(dataset, wiki_target::boss(c, b)),
+                        page: wiki_target::boss(bosses, b).and_then(|t| page_of(dataset, t)),
                     });
                 }
             }
@@ -513,7 +472,7 @@ fn missing_view(
                     out.push(RequirementView::Challenge {
                         id: id.0,
                         name: ch.name.clone(),
-                        page: page_of(dataset, Some(wiki_target::challenge(ch))),
+                        page: page_of(dataset, wiki_target::challenge(ch)),
                     });
                 }
             }
@@ -526,7 +485,7 @@ fn missing_view(
                         item_kind: kind_view(*kind),
                         id: id.0,
                         name: c.text(&i.name, en).to_string(),
-                        page: page_of(dataset, Some(wiki_target::item(i))),
+                        page: page_of(dataset, wiki_target::item(i)),
                     });
                 }
             }
@@ -546,7 +505,7 @@ fn missing_view(
                             id: t.id.0,
                             name: c.text(&i.name, en).to_string(),
                             unlocked: done(i.unlocked_by),
-                            page: page_of(dataset, Some(wiki_target::item(i))),
+                            page: page_of(dataset, wiki_target::item(i)),
                         })
                     })
                     .collect();
@@ -563,9 +522,9 @@ fn missing_view(
                         unresolved: *unresolved,
                         page: page_of(
                             dataset,
-                            Some(Target::Transformation {
+                            Target::Transformation {
                                 id: *transformation,
-                            }),
+                            },
                         ),
                     });
                 }
@@ -588,8 +547,14 @@ fn missing_view(
 /// `graph` and `eval` travel together or not at all: without a catalog there is no graph,
 /// and a node then carries `Partial` with one unknown — never `Computed`, which would read
 /// as "nothing is in the way".
+///
+/// Eight parameters, one past `clippy::too_many_arguments`: the eighth is the catalog's boss
+/// keys (card #82, S3). Gathering them into an inputs struct, as `QueueInputs` does, is the
+/// restructuring of this module that card #82 leaves to its own item.
+#[allow(clippy::too_many_arguments)]
 pub fn unlock_view(
     catalog: Option<&Catalog>,
+    bosses: &BossKeys,
     dataset: Option<&Dataset>,
     flags: Option<&[bool]>,
     graph: Option<&graph::build::Graph>,
@@ -610,7 +575,7 @@ pub fn unlock_view(
                 let unlocks: Vec<UnlockTarget> = c
                     .unlocks(a.id)
                     .iter()
-                    .map(|u| target_of(c, u, dataset, &mut icon))
+                    .map(|u| target_of(c, bosses, u, dataset, &mut icon))
                     .collect();
                 let origin = first_item_origin(c, c.unlocks(a.id));
                 (
@@ -662,7 +627,7 @@ pub fn unlock_view(
             },
         };
         let missing = match (catalog, graph.and_then(|g| g.node(AchievementId(slot)))) {
-            (Some(c), Some(n)) => missing_view(c, dataset, n, read, progress),
+            (Some(c), Some(n)) => missing_view(c, bosses, dataset, n, read, progress),
             _ => Vec::new(),
         };
         nodes.push(UnlockNode {
@@ -721,6 +686,7 @@ pub fn unlock_view(
 /// key: this is the one place that decides whether a goal resolves.
 pub fn resolve_target(
     c: &Catalog,
+    bosses: &BossKeys,
     key: &TargetKey,
     dataset: Option<&Dataset>,
     icon: &mut impl FnMut(&IconRef) -> Option<String>,
@@ -732,7 +698,7 @@ pub fn resolve_target(
             let i = c.item(item_kind(k), ItemId(id))?;
             resolved.name = c.text(&i.name, english).to_string();
             resolved.icon_url = icon(&IconRef::Item { kind: k, id });
-            resolved.page = page_of(dataset, Some(wiki_target::item(i)));
+            resolved.page = page_of(dataset, wiki_target::item(i));
         }
         TargetKey::Character { id } => {
             let ch = c.character(CharacterId(id))?;
@@ -740,20 +706,20 @@ pub fn resolve_target(
             // The base and Tainted forms carry the same name key: without the flag the two
             // go out as one character (`docs/BACKLOG.md` B28).
             resolved.tainted = ch.tainted;
-            resolved.page = page_of(dataset, Some(wiki_target::character(ch)));
+            resolved.page = page_of(dataset, wiki_target::character(ch));
         }
         TargetKey::Boss { id } => {
             let b = c.boss(BossId(id))?;
             resolved.name = b.name.clone();
             // A row `boss_keys` leaves without a key names no page: `None`, never a guessed
             // variant (`wiki_target::boss`).
-            resolved.page = page_of(dataset, wiki_target::boss(c, b));
+            resolved.page = wiki_target::boss(bosses, b).and_then(|t| page_of(dataset, t));
         }
         TargetKey::Challenge { id } => {
             let ch = c.challenge(ChallengeId(id))?;
             resolved.rewards = ch.rewards.iter().map(|a| a.0).collect();
             resolved.name = ch.name.clone();
-            resolved.page = page_of(dataset, Some(wiki_target::challenge(ch)));
+            resolved.page = page_of(dataset, wiki_target::challenge(ch));
         }
     }
     Some(key.view(resolved))
@@ -764,12 +730,13 @@ pub fn resolve_target(
 /// always there; if one day it weren't, the row stays nameless instead of vanishing.
 pub fn target_of(
     c: &Catalog,
+    bosses: &BossKeys,
     u: &Unlock,
     dataset: Option<&Dataset>,
     icon: &mut impl FnMut(&IconRef) -> Option<String>,
 ) -> UnlockTarget {
     let key = key_of(u);
-    resolve_target(c, &key, dataset, icon)
+    resolve_target(c, bosses, &key, dataset, icon)
         .unwrap_or_else(|| key.view(crate::goals::Resolved::default()))
 }
 
@@ -925,8 +892,7 @@ pub fn next_steps(view: &UnlockView, queued: &BTreeSet<u32>) -> NextSteps {
     NextSteps { sections }
 }
 
-/// The plan: the saved goals resolved against the current catalog, and an expansion
-/// that M3 can't compute yet. The database only keeps the keys, so name and icon are
+/// The plan: the saved goals resolved against the current catalog. The database only keeps the keys, so name and icon are
 /// born here: a goal saved when the game wasn't there shows its name as soon as the
 /// game is. `store_unavailable` is the single source: `store_available` and the
 /// `StoreUnavailable` diagnostic both derive from it and can never contradict each
@@ -937,6 +903,7 @@ pub fn next_steps(view: &UnlockView, queued: &BTreeSet<u32>) -> NextSteps {
 /// explains the least.
 pub fn plan_view(
     catalog: Option<&Catalog>,
+    bosses: &BossKeys,
     dataset: Option<&Dataset>,
     goals: Vec<Goal>,
     unreadable: Vec<GoalId>,
@@ -948,7 +915,8 @@ pub fn plan_view(
     let goals: Vec<GoalView> = goals
         .into_iter()
         .map(|g| {
-            let target = catalog.and_then(|c| resolve_target(c, &g.target, dataset, &mut icon));
+            let target =
+                catalog.and_then(|c| resolve_target(c, bosses, &g.target, dataset, &mut icon));
             // Without a catalog nothing resolves, and `NoCatalog` already says so:
             // flagging every goal would just repeat the same news one row at a time.
             if target.is_none() && catalog.is_some() {
@@ -980,29 +948,8 @@ pub fn plan_view(
         .collect();
     PlanView {
         goals,
-        expansion: PlanExpansion::Stub,
         diagnostics,
         store_available,
-    }
-}
-
-/// The graph's column as the wire's. No `_` arm: the two are the same twelve, and a
-/// thirteenth has to break the build rather than fall into a default.
-fn column_view(c: graph::rules::MarkColumn) -> MarkColumnView {
-    use graph::rules::MarkColumn as M;
-    match c {
-        M::MomsHeart => MarkColumnView::MomsHeart,
-        M::Isaac => MarkColumnView::Isaac,
-        M::Satan => MarkColumnView::Satan,
-        M::BossRush => MarkColumnView::BossRush,
-        M::BlueBaby => MarkColumnView::BlueBaby,
-        M::TheLamb => MarkColumnView::TheLamb,
-        M::MegaSatan => MarkColumnView::MegaSatan,
-        M::Greed => MarkColumnView::Greed,
-        M::Hush => MarkColumnView::Hush,
-        M::Delirium => MarkColumnView::Delirium,
-        M::Mother => MarkColumnView::Mother,
-        M::TheBeast => MarkColumnView::TheBeast,
     }
 }
 
@@ -1014,13 +961,8 @@ fn level_view(l: graph::rules::MarkLevel) -> MarkLevelView {
 }
 
 /// What the screen calls the tally: the boss's English name, because that is what the
-/// player is being asked to go and beat. Not the counter's identifier, which is ours.
+/// player is being asked to go and beat. Not the counter's identifier, which is ours. The
+/// name is the column's, the one the matrix header draws: a tally counts one column's boss.
 fn counter_label(n: graph::rules::CounterName) -> &'static str {
-    use graph::rules::CounterName as C;
-    match n {
-        C::HushKills => "Hush",
-        C::DeliriumKills => "Delirium",
-        C::MotherKills => "Mother",
-        C::BeastKills => "The Beast",
-    }
+    crate::marks::boss_name(n.column())
 }

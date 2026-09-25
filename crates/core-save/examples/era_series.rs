@@ -10,66 +10,32 @@
 
 use std::collections::BTreeMap;
 
-use core_save::marks::{cell_index, counter_index_of, Column, CounterKey, ROWS};
+use core_save::{cell_index, counter_index_of, Column, CounterKey};
 use core_save::{Kind, Save};
 
-const NAMES: [&str; 34] = [
-    "Isaac",
-    "Magdalene",
-    "Cain",
-    "Judas",
-    "BlueBaby",
-    "Eve",
-    "Samson",
-    "Azazel",
-    "Lazarus",
-    "Eden",
-    "TheLost",
-    "Lilith",
-    "Keeper",
-    "Apollyon",
-    "TheForgotten",
-    "Bethany",
-    "Jacob&Esau",
-    "T.Isaac",
-    "T.Magdalene",
-    "T.Cain",
-    "T.Judas",
-    "T.BlueBaby",
-    "T.Eve",
-    "T.Samson",
-    "T.Azazel",
-    "T.Lazarus",
-    "T.Eden",
-    "T.TheLost",
-    "T.Lilith",
-    "T.Keeper",
-    "T.Apollyon",
-    "T.Forgotten",
-    "T.Bethany",
-    "T.Jacob&Esau",
+const TALLIES: [CounterKey; 4] = [
+    CounterKey::HushKills,
+    CounterKey::DeliriumKills,
+    CounterKey::MotherKills,
+    CounterKey::BeastKills,
 ];
 
-/// Every located cell, keyed by its index, so a moved index can name itself.
+/// Every located cell, keyed by its index, so a moved index can name itself. The rows are
+/// named by `ipc`'s roster, the one list of them.
 fn located() -> BTreeMap<usize, String> {
-    let mut m = BTreeMap::new();
-    for (row, name) in NAMES.iter().enumerate().take(ROWS) {
-        for column in Column::ALL {
-            if let Some(i) = cell_index(row, column) {
-                m.insert(i, format!("{name} x {column:?}"));
-            }
-        }
-    }
-    for key in [
-        CounterKey::HushKills,
-        CounterKey::DeliriumKills,
-        CounterKey::MotherKills,
-        CounterKey::BeastKills,
-    ] {
-        m.insert(counter_index_of(key), format!("tally {key:?}"));
-    }
-    m.insert(188, "winners mask".to_string());
-    m
+    let cells = ipc::ROSTER.iter().enumerate().flat_map(|(row, character)| {
+        Column::ALL.into_iter().filter_map(move |column| {
+            let i = cell_index(row, column)?;
+            Some((i, format!("{} x {column:?}", character.name)))
+        })
+    });
+    let tallies = TALLIES
+        .into_iter()
+        .map(|key| (counter_index_of(key), format!("tally {key:?}")));
+    cells
+        .chain(tallies)
+        .chain([(188, "winners mask".to_string())])
+        .collect()
 }
 
 fn load(p: &str) -> Save {

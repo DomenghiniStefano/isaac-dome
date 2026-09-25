@@ -26,7 +26,7 @@ pub(crate) fn unlock(
     // Game not installed is expected: the view goes out without a catalog and says so.
     let catalog = catalog_now(&app, &resources, &state);
     let g = catalog.and_then(|c| graph.get(c));
-    Ok(unlock_of(&save, catalog, g))
+    Ok(unlock_of(&save, catalog, state.bosses(catalog), g))
 }
 
 /// The Unlock view of one save, the catalog and the graph already resolved: the half of
@@ -34,6 +34,7 @@ pub(crate) fn unlock(
 pub(crate) fn unlock_of(
     save: &Save,
     catalog: Option<&Catalog>,
+    bosses: &ipc::BossKeys,
     g: Option<&graph::build::Graph>,
 ) -> ipc::UnlockView {
     let flags = save.flags(Kind::Achievements);
@@ -42,6 +43,7 @@ pub(crate) fn unlock_of(
     let eval = g.map(|g| g.evaluate(&progress));
     ipc::unlock_view(
         catalog,
+        bosses,
         wiki::Dataset::embedded().ok(),
         flags.as_deref(),
         g,
@@ -113,10 +115,11 @@ pub fn want(
     let g = catalog.and_then(|c| graph.get(c));
     // The same Unlock view the Unlock screen reads, from the same function: two copies of the
     // evaluation were two chances to disagree about one profile.
-    let view = unlock_of(&save, catalog, g);
+    let view = unlock_of(&save, catalog, state.bosses(catalog), g);
     let flags = save.flags(Kind::Achievements);
     Ok(ipc::want_view(
         catalog,
+        state.bosses(catalog),
         &view,
         flags.as_deref(),
         g,

@@ -70,12 +70,18 @@ fn a_path_that_is_not_ours_parses_to_nothing() {
 fn a_reference_resolves_to_the_file_the_catalog_names() {
     let c = catalog();
     assert_eq!(
-        icon_source(&c, &IconRef::Achievement { id: 1 }).map(|s| s.path.as_str()),
+        icon_source(
+            &c,
+            &ipc::for_tests::bosses(&c),
+            &IconRef::Achievement { id: 1 }
+        )
+        .map(|s| s.path.as_str()),
         Some("gfx/ui/achievement/1.png")
     );
     assert_eq!(
         icon_source(
             &c,
+            &ipc::for_tests::bosses(&c),
             &IconRef::Item {
                 kind: ItemKindView::Passive,
                 id: 2
@@ -95,6 +101,7 @@ fn the_kind_is_part_of_the_key_not_decoration() {
     let c = catalog();
     assert!(icon_source(
         &c,
+        &ipc::for_tests::bosses(&c),
         &IconRef::Item {
             kind: ItemKindView::Trinket,
             id: 2
@@ -106,7 +113,12 @@ fn the_kind_is_part_of_the_key_not_decoration() {
 #[test]
 fn an_id_the_catalog_does_not_know_resolves_to_nothing() {
     let c = catalog();
-    assert!(icon_source(&c, &IconRef::Achievement { id: 999 }).is_none());
+    assert!(icon_source(
+        &c,
+        &ipc::for_tests::bosses(&c),
+        &IconRef::Achievement { id: 999 }
+    )
+    .is_none());
 }
 
 #[test]
@@ -199,7 +211,7 @@ fn catalog_with_heads() -> Catalog {
 fn a_head_resolves_through_the_matrix_row() {
     let c = catalog_with_heads();
     let at = |row| {
-        icon_source(&c, &IconRef::Head { row })
+        icon_source(&c, &ipc::for_tests::bosses(&c), &IconRef::Head { row })
             .map(|s| (s.path.clone(), s.rect.map(|r| (r.x, r.y, r.w, r.h))))
     };
     // Row 0 is Isaac (id 0, frame 1 = column 1, row 0); row 17 is T. Isaac (id 21, frame 21
@@ -224,6 +236,7 @@ fn a_mark_is_not_in_the_catalog() {
     let c = catalog_with_heads();
     assert!(icon_source(
         &c,
+        &ipc::for_tests::bosses(&c),
         &IconRef::Mark {
             column: 0,
             tier: MarkTier::Hard
@@ -288,6 +301,7 @@ fn a_page_icon_resolves_through_target_sprite() {
     let c = catalog();
     let found = icon_source(
         &c,
+        &ipc::for_tests::bosses(&c),
         &IconRef::Page {
             target: Target::Item { id: 2 },
         },
@@ -298,6 +312,7 @@ fn a_page_icon_resolves_through_target_sprite() {
     );
     assert!(icon_source(
         &c,
+        &ipc::for_tests::bosses(&c),
         &IconRef::Page {
             target: Target::Item { id: 99 }
         }
@@ -306,6 +321,7 @@ fn a_page_icon_resolves_through_target_sprite() {
     // A challenge the catalog doesn't list has no art, and says nothing.
     assert!(icon_source(
         &c,
+        &ipc::for_tests::bosses(&c),
         &IconRef::Page {
             target: Target::Challenge { number: 1 }
         }
