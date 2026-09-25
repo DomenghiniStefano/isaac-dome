@@ -4,21 +4,13 @@
 //! `series`, and a helper that declares on stderr which file it used is exactly the
 //! thing that must not exist twice with two behaviours.
 
-#![allow(dead_code)]
+#![allow(dead_code)] // each test binary uses part of this module; the rest is not dead
 
 use core_save::Save;
 use test_support::dated_series;
 
-/// The historical series in `samples/`, one suffix per edition, slot 1. The files come
-/// from the dated backups the game leaves in `save_backups\`, copied under the name they
-/// already had — `YYYYMMDD.` plus one of these suffixes.
-///
-/// There are two because a comparison only means something **inside** one profile:
-/// `rep_` snapshots are a Repentance profile, `rep+` a Repentance+ one, and laying them
-/// end to end would read a change of profile as progress. Which is also why this is a
-/// list and not a single constant: pinned to `rep+` alone, the three dated Repentance
-/// saves sitting in `samples/` were read by nothing at all.
-pub const SERIES: [&str; 2] = ["rep_persistentgamedata1.dat", "rep+persistentgamedata1.dat"];
+/// The two series, defined once for every crate in `test-support`.
+pub use test_support::SERIES;
 
 /// One series, already parsed, in chronological order — name, raw bytes, parsed save.
 /// Empty if `samples/` holds none: the folder is ignored by git, so whoever clones the
