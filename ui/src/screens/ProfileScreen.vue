@@ -7,10 +7,10 @@ import { SkeletonBlock } from '@/components/data-state/skeletonBlock'
 import { useMessages } from '@/i18n'
 import { LoadStatus } from '@/stores/loadStatus'
 import { useProfileStore } from '@/stores/profile'
-import ScreenHeader from './ScreenHeader.vue'
+import ScreenHeader from '@/components/screen/ScreenHeader.vue'
 import ActiveProfileCard from './profile/ActiveProfileCard.vue'
 import ChainCard from './profile/ChainCard.vue'
-import ProfileError from './profile/ProfileError.vue'
+import ProfileError from '@/components/data-state/ProfileError.vue'
 import SectionsCard from './profile/SectionsCard.vue'
 
 const profile = useProfileStore()

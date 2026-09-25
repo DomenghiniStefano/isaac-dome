@@ -28,7 +28,7 @@ import { useAppEvent } from '@/composables/useAppEvent'
 import { useSettingsStore } from '@/stores/settings'
 import { useUpdateStore } from '@/stores/update'
 import WikiBlocks from '@/components/wiki/WikiBlocks.vue'
-import ScreenHeader from './ScreenHeader.vue'
+import ScreenHeader from '@/components/screen/ScreenHeader.vue'
 
 const settings = useSettingsStore()
 const update = useUpdateStore()

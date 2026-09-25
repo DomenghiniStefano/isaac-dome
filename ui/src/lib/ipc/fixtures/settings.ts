@@ -64,7 +64,7 @@ export const setSessionAnswer = (document: string | null): void => {
 let autostart: { enabled: boolean; refuses: AutostartFailure | null } | null =
   null
 
-export const useAutostartRegistry = (
+export const setAutostartRegistry = (
   registry: { enabled: boolean; refuses: AutostartFailure | null } | null,
 ): void => {
   autostart = registry

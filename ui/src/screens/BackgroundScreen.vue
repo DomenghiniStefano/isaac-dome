@@ -15,7 +15,7 @@ import { computed, onMounted } from 'vue'
 import { autostartFailurePart } from '@/lib/ipc/errorText'
 import { useMessages } from '@/i18n'
 import { useSettingsStore } from '@/stores/settings'
-import ScreenHeader from './ScreenHeader.vue'
+import ScreenHeader from '@/components/screen/ScreenHeader.vue'
 
 const settings = useSettingsStore()
 const { t } = useMessages()

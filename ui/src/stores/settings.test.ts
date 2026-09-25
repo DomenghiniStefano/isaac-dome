@@ -3,7 +3,7 @@ import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { resetFixtures } from '@/lib/ipc/fixtures'
 import {
   settingsAnswer,
-  useAutostartRegistry,
+  setAutostartRegistry,
 } from '@/lib/ipc/fixtures/settings'
 import { AutostartFailure, AutostartReason, IoReason } from '@/lib/ipc/types'
 import type { IpcError } from '@/lib/ipc/types'
@@ -61,7 +61,7 @@ describe('useSettingsStore, starting with Windows', () => {
   })
 
   it('takes the position the registry answered with', async () => {
-    useAutostartRegistry({ enabled: true, refuses: null })
+    setAutostartRegistry({ enabled: true, refuses: null })
     const store = useSettingsStore()
     await store.refreshAutostart()
     expect(store.autostartAvailable).toBe(true)
@@ -69,7 +69,7 @@ describe('useSettingsStore, starting with Windows', () => {
   })
 
   it('moves the switch after the answer and not before', async () => {
-    useAutostartRegistry({ enabled: false, refuses: null })
+    setAutostartRegistry({ enabled: false, refuses: null })
     const store = useSettingsStore()
     await store.refreshAutostart()
     await store.setAutostart(true)
@@ -82,7 +82,7 @@ describe('useSettingsStore, starting with Windows', () => {
     // screen move first and report a failed write, because the app is already behaving that
     // way; this one is about a login that has not happened, so a switch left on would be a
     // promise nothing kept.
-    useAutostartRegistry({
+    setAutostartRegistry({
       enabled: false,
       refuses: AutostartFailure.WriteRefused,
     })
@@ -101,7 +101,7 @@ describe('useSettingsStore, starting with Windows', () => {
     // A write Windows took and then ignored: the value is there and the Startup tab's own
     // switch is off, which no write from here can change. Telling the user "a policy is
     // refusing it" would send them looking in the wrong place.
-    useAutostartRegistry({
+    setAutostartRegistry({
       enabled: false,
       refuses: AutostartFailure.WriteIgnored,
     })

@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { ListChecksIcon } from '@lucide/vue'
 import { useMessages } from '@/i18n'
-import ScreenHeader from '../ScreenHeader.vue'
-import HeroBand from '../HeroBand.vue'
+import ScreenHeader from '@/components/screen/ScreenHeader.vue'
+import HeroBand from '@/components/screen/HeroBand.vue'
 
 const { t } = useMessages()
 </script>

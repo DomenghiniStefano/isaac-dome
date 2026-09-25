@@ -10,7 +10,7 @@ import {
 } from '@/components/ui/alert'
 import { useMessages } from '@/i18n'
 import { useSettingsStore } from '@/stores/settings'
-import ScreenHeader from './ScreenHeader.vue'
+import ScreenHeader from '@/components/screen/ScreenHeader.vue'
 import ScalePreview from './appearance/ScalePreview.vue'
 import ScaleSlider from './appearance/ScaleSlider.vue'
 

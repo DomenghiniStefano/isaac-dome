@@ -28,8 +28,8 @@ import { useTabsStore } from '@/stores/tabs'
 import { useGraphStore } from '@/stores/views'
 import AddPane from './goals/AddPane.vue'
 import GoalsHero from './goals/GoalsHero.vue'
-import QueueCard from './plan/QueueCard.vue'
-import ProfileError from './profile/ProfileError.vue'
+import QueueCard from './goals/QueueCard.vue'
+import ProfileError from '@/components/data-state/ProfileError.vue'
 
 const graph = useGraphStore()
 const { queue, queued, canWrite } = useQueueOffer()

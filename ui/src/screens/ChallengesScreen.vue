@@ -22,14 +22,14 @@ import { emptyList, isFiltering } from '@/lib/facets/emptyList'
 import { LoadStatus } from '@/stores/loadStatus'
 import { useTabsStore } from '@/stores/tabs'
 import { useChallengesStore } from '@/stores/views'
-import ScreenHeader from './ScreenHeader.vue'
+import ScreenHeader from '@/components/screen/ScreenHeader.vue'
 import ChallengesTable from './challenges/ChallengesTable.vue'
 import {
   challengeBar,
   challengeFacetValueLabel,
 } from '@/lib/challenges/challengeLabels'
 import { challengesView } from './challenges/tabView'
-import ProfileError from './profile/ProfileError.vue'
+import ProfileError from '@/components/data-state/ProfileError.vue'
 
 const store = useChallengesStore()
 const { queue, queued, canWrite } = useQueueOffer()

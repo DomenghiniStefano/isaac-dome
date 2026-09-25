@@ -30,7 +30,7 @@ import {
 import { useTabsStore } from '@/stores/tabs'
 import { useWikiStore } from '@/stores/wiki'
 import ProfileFact from '@/components/data-state/ProfileFact.vue'
-import HeroBand from '../HeroBand.vue'
+import HeroBand from '@/components/screen/HeroBand.vue'
 
 const wiki = useWikiStore()
 const tabs = useTabsStore()
