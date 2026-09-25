@@ -295,3 +295,92 @@ fn an_empty_chosen_folder_is_not_the_same_as_finding_nothing_anywhere() {
         "a folder was pointed at, and it holds no save"
     );
 }
+
+// ---------------------------------------------------------------------------
+// A manifest that is there and does not read (card #80, R7)
+// ---------------------------------------------------------------------------
+
+/// A folder where the manifest should be: `read_to_string` fails with a kind other than
+/// `NotFound` on every platform, which is the case R7 is about — a file the library has
+/// and that the app cannot read.
+fn unreadable_manifest(library: &Path) -> std::path::PathBuf {
+    let manifest = library.join("steamapps").join("appmanifest_250900.acf");
+    mkdir(&manifest);
+    manifest
+}
+
+fn unreadable_paths(diags: &[Diagnostic]) -> Vec<&Path> {
+    diags
+        .iter()
+        .filter_map(|d| {
+            let Diagnostic::UnreadablePath { path, kind } = d else {
+                return None;
+            };
+            assert_ne!(*kind, std::io::ErrorKind::NotFound, "{diags:?}");
+            Some(path.as_path())
+        })
+        .collect()
+}
+
+#[test]
+fn an_unreadable_manifest_is_reported_and_falls_back_to_the_canonical_dir() {
+    let tmp = tempfile::tempdir().unwrap();
+    let library = tmp.path().to_path_buf();
+    let manifest = unreadable_manifest(&library);
+    mkdir(
+        &library
+            .join("steamapps")
+            .join("common")
+            .join("The Binding of Isaac Rebirth"),
+    );
+    let steam = SteamInstall {
+        root: library.clone(),
+        source: SteamSource::Override,
+        libraries: vec![library],
+    };
+
+    let (game, diags) = find_game(&Options::default(), Some(&steam));
+
+    // Same as a malformed manifest: the folder is the standard one, and the edition is
+    // what an unread manifest says about the DLCs — nothing.
+    let game = game.expect("must find the game via the canonical fallback");
+    assert_eq!(game.edition, None);
+    assert_eq!(unreadable_paths(&diags), [manifest.as_path()]);
+    assert!(!diags.contains(&Diagnostic::GameNotFound), "{diags:?}");
+}
+
+#[test]
+fn an_unreadable_manifest_without_the_canonical_dir_is_reported_next_to_game_not_found() {
+    let tmp = tempfile::tempdir().unwrap();
+    let library = tmp.path().to_path_buf();
+    let manifest = unreadable_manifest(&library);
+    let steam = SteamInstall {
+        root: library.clone(),
+        source: SteamSource::Override,
+        libraries: vec![library],
+    };
+
+    let (game, diags) = find_game(&Options::default(), Some(&steam));
+
+    assert!(game.is_none());
+    assert_eq!(unreadable_paths(&diags), [manifest.as_path()]);
+    assert!(diags.contains(&Diagnostic::GameNotFound), "{diags:?}");
+}
+
+#[test]
+fn a_library_without_the_manifest_says_nothing_about_it() {
+    // The absence is normal — most libraries do not hold the game — so it is not a
+    // diagnostic: only the manifest that is there and does not read is.
+    let tmp = tempfile::tempdir().unwrap();
+    let library = tmp.path().to_path_buf();
+    mkdir(&library.join("steamapps"));
+    let steam = SteamInstall {
+        root: library.clone(),
+        source: SteamSource::Override,
+        libraries: vec![library],
+    };
+
+    let (_, diags) = find_game(&Options::default(), Some(&steam));
+
+    assert_eq!(diags, [Diagnostic::GameNotFound]);
+}
