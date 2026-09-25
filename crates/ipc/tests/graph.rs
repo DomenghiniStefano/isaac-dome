@@ -1205,3 +1205,40 @@ fn a_queued_node_is_absent_from_both_sections() {
     assert_eq!(slots_of(&s, StepsBasis::FanOut), vec![2]);
     assert!(slots_of(&s, StepsBasis::Closeness).is_empty());
 }
+
+/// The order the plan's doc promises, all four kinds at once: the store, then the unreadable
+/// rows in the order received, then the unresolved keys in the order of the goals.
+#[test]
+fn the_plan_diagnostics_go_from_the_problem_that_explains_the_most_to_the_least() {
+    let c = catalog_with_achievements();
+    let unknown = |id: &str| ipc::Goal {
+        target: ipc::TargetKey::Item {
+            item_kind: ItemKindView::Passive,
+            id: 999_999,
+        },
+        ..goal(id)
+    };
+    let id = |s: &str| ipc::GoalId::from_str_unchecked(s);
+    let p = plan_view(
+        Some(&c),
+        &ipc::for_tests::bosses(&c),
+        None,
+        vec![unknown("g9"), goal("a"), unknown("g8")],
+        vec![id("x"), id("y")],
+        Some(ipc::StoreReason::Unreadable),
+        |_| None,
+    );
+    assert_eq!(
+        p.diagnostics,
+        vec![
+            PlanDiagnostic::StoreUnavailable {
+                reason: ipc::StoreReason::Unreadable
+            },
+            PlanDiagnostic::UnreadableGoal { id: id("x") },
+            PlanDiagnostic::UnreadableGoal { id: id("y") },
+            PlanDiagnostic::UnresolvedGoal { id: id("g9") },
+            PlanDiagnostic::UnresolvedGoal { id: id("g8") },
+        ]
+    );
+    assert_eq!(p.goals.len(), 3, "every goal stays, resolved or not");
+}

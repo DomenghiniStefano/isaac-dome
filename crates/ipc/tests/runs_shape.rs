@@ -222,3 +222,59 @@ fn the_archive_diagnostics_are_tagged_camel_case() {
         serde_json::json!({ "kind": "liveLogUnreadable" })
     );
 }
+
+/// The totals are over every source, not the last one read, and the diagnostics handed in stay
+/// ahead of the one the view adds.
+#[test]
+fn the_totals_add_up_across_sources_and_the_given_diagnostics_come_first() {
+    let view = runs_view(
+        RunsInputs {
+            sources: vec![
+                (
+                    RunSource::Live,
+                    vec![
+                        a_run("AAAA AAAA", Outcome::Open),
+                        a_run("BBBB BBBB", Outcome::Abandoned),
+                    ],
+                ),
+                (
+                    RunSource::Session {
+                        name: "09_12_2026__13_34_26".to_string(),
+                    },
+                    vec![a_run(
+                        "CCCC CCCC",
+                        Outcome::Died {
+                            killer: "9.0".to_string(),
+                        },
+                    )],
+                ),
+                (
+                    RunSource::Session {
+                        name: "09_13_2026__14_48_32".to_string(),
+                    },
+                    vec![],
+                ),
+            ],
+            catalog: None,
+            diagnostics: vec![ipc::RunsDiagnostic::LiveLogUnreadable],
+        },
+        |_| None,
+    );
+    assert_eq!(
+        view.totals,
+        ipc::RunTotals {
+            runs: 3,
+            won: 0,
+            died: 1,
+            abandoned: 1,
+            open: 1,
+        }
+    );
+    assert_eq!(
+        view.diagnostics,
+        vec![
+            ipc::RunsDiagnostic::LiveLogUnreadable,
+            ipc::RunsDiagnostic::NoCatalog
+        ]
+    );
+}
