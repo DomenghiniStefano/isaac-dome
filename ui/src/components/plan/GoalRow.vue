@@ -21,7 +21,7 @@ import { cn } from '@/lib/cn'
 import type { UnlockNode } from '@/lib/ipc/types'
 import type { QueueExtras } from '@/lib/plan/queueExtras'
 import type { RowModel } from '@/lib/plan/rowModel'
-import type { TabLocation } from '@/router/routeTable'
+import { useTabsStore } from '@/stores/tabs'
 
 const props = defineProps<{
   model: RowModel
@@ -42,9 +42,9 @@ const emit = defineEmits<{
   step: [e: KeyboardEvent]
   remove: []
   add: []
-  navigate: [location: TabLocation, newTab: boolean]
 }>()
 const { t } = useMessages()
+const tabs = useTabsStore()
 
 const opensText = computed(() =>
   props.model.fanOut > 0
@@ -52,7 +52,7 @@ const opensText = computed(() =>
     : t('plan.opensNothing'),
 )
 const open = (newTab: boolean) => {
-  if (props.model.location) emit('navigate', props.model.location, newTab)
+  if (props.model.location) tabs.go(props.model.location, newTab)
 }
 </script>
 

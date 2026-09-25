@@ -6,9 +6,8 @@ import {
 } from '@/components/ui/toggle-group'
 import { computed } from 'vue'
 import { useMessages } from '@/i18n'
-import type { MessageKey } from '@/i18n/messageKey'
-import type { MessageSchema } from '@/i18n/messages/it'
-import { RowGroup, rowGroupOrder } from '@/lib/search/rows'
+import { rowGroupLabel, rowGroupOrder } from '@/lib/search/rows'
+import type { RowGroup } from '@/lib/search/rows'
 
 const props = defineProps<{
   counts: Record<RowGroup, number>
@@ -19,13 +18,6 @@ const props = defineProps<{
 }>()
 const emit = defineEmits<{ update: [picked: RowGroup[]] }>()
 const { t } = useMessages()
-
-const groupLabel: Record<RowGroup, MessageKey<MessageSchema>> = {
-  [RowGroup.Screens]: 'search.groups.screens',
-  [RowGroup.Wiki]: 'search.groups.wiki',
-  [RowGroup.Unlock]: 'search.groups.unlock',
-  [RowGroup.Collection]: 'search.groups.collection',
-}
 
 // Only the groups this answer actually has: a toggle reading "Schermate 0" offers a filter
 // that empties the screen, which is the case `docs/BACKLOG.md` B29 removed from the Collection.
@@ -57,7 +49,7 @@ const onUpdate = (value: unknown) =>
         :value="group"
         class="gap-2"
       >
-        {{ t(groupLabel[group]) }}
+        {{ t(rowGroupLabel[group]) }}
         <span class="tabular-nums">{{ counts[group] }}</span>
       </ToggleGroupItem>
     </ToggleGroup>
