@@ -1,13 +1,12 @@
 <script setup lang="ts">
 import { FlagIcon } from '@lucide/vue'
+import ListEmptyState from '@/components/data-state/ListEmptyState.vue'
+import ScreenSkeleton from '@/components/data-state/ScreenSkeleton.vue'
 import { computed } from 'vue'
 import DiagnosticsList from '@/components/diagnostics/DiagnosticsList.vue'
-import EmptyCategory from '@/components/data-state/EmptyCategory.vue'
 import FilterBar from '@/components/facets/FilterBar.vue'
 import QueueError from '@/components/plan/QueueError.vue'
-import { Button, ButtonVariant } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
-import { Skeleton } from '@/components/ui/skeleton'
 import { useOnActiveProfile } from '@/composables/useOnActiveProfile'
 import { useTabView } from '@/composables/useTabView'
 import { vScrollMemory } from '@/directives/scrollMemory'
@@ -159,22 +158,10 @@ const navigate = (target: Target, newTab: boolean) => {
             @add="queue.add"
             @navigate="navigate"
           />
-          <div v-else class="flex flex-col items-start gap-3 p-4">
-            <EmptyCategory>{{ t(empty.text) }}</EmptyCategory>
-            <Button
-              v-if="empty.reset"
-              :variant="ButtonVariant.Outline"
-              @click="reset"
-              >{{ t('filters.reset') }}</Button
-            >
-          </div>
+          <ListEmptyState v-else :empty="empty" @reset="reset" />
         </Card>
       </template>
-      <div v-else class="flex flex-col gap-4">
-        <Skeleton class="h-8 w-120" />
-        <Skeleton class="h-12 w-full" />
-        <Skeleton class="h-150 w-full" />
-      </div>
+      <ScreenSkeleton v-else />
     </div>
   </div>
 </template>

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ChevronRightIcon } from '@lucide/vue'
+import ListEmptyState from '@/components/data-state/ListEmptyState.vue'
 import { computed } from 'vue'
-import EmptyCategory from '@/components/data-state/EmptyCategory.vue'
 import { Button, ButtonSize, ButtonVariant } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
@@ -147,15 +147,12 @@ const open = (page: WikiPageRef, event: MouseEvent) => {
             <ChevronRightIcon class="shrink-0 text-faint-foreground" />
           </Button>
         </VirtualRows>
-        <div v-else class="flex flex-col items-start gap-3 p-4">
-          <EmptyCategory>{{ t(empty.text) }}</EmptyCategory>
-          <Button
-            v-if="empty.reset"
-            :variant="ButtonVariant.Outline"
-            @click="setQuery('')"
-            >{{ t('wiki.resetFilters') }}</Button
-          >
-        </div>
+        <ListEmptyState
+          v-else
+          :empty="empty"
+          :reset-text="'wiki.resetFilters'"
+          @reset="setQuery('')"
+        />
       </Card>
       <Skeleton v-else class="h-150 w-full" />
     </div>

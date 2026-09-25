@@ -5,7 +5,8 @@ import { useRoute } from 'vue-router'
 import DiagnosticsList from '@/components/diagnostics/DiagnosticsList.vue'
 import QueueError from '@/components/plan/QueueError.vue'
 import { Button, ButtonVariant } from '@/components/ui/button'
-import { Skeleton } from '@/components/ui/skeleton'
+import ScreenSkeleton from '@/components/data-state/ScreenSkeleton.vue'
+import { SkeletonBlock } from '@/components/data-state/skeletonBlock'
 import { useOnActiveProfile } from '@/composables/useOnActiveProfile'
 import { useWant } from '@/composables/useWant'
 import { useMessages } from '@/i18n'
@@ -183,9 +184,6 @@ const nodes = computed(() => graph.view?.unlock.nodes ?? [])
         />
       </div>
     </div>
-    <div v-else class="flex flex-col gap-4 px-5.5 pt-4">
-      <Skeleton class="h-8 w-120" />
-      <Skeleton class="h-40 w-full" />
-    </div>
+    <ScreenSkeleton v-else class="px-5.5 pt-4" :blocks="[SkeletonBlock.Card]" />
   </div>
 </template>
