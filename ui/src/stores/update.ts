@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 import { StoreId } from '@/lib/constants/stores'
-import { isIpcError } from '@/lib/ipc/errors'
+import { asIpcError } from '@/lib/ipc/errors'
 import { checkUpdate, installUpdate, updateStatus } from '@/lib/ipc/update'
 import type { IpcError, UpdateView } from '@/lib/ipc/types'
 import { UpdateReason } from '@/lib/ipc/types'
@@ -42,7 +42,7 @@ export const useUpdateStore = defineStore(StoreId.Update, () => {
     try {
       view.value = await checkUpdate()
     } catch (e) {
-      error.value = isIpcError(e) ? e : null
+      error.value = asIpcError(e)
       await read()
     }
   }
@@ -55,7 +55,7 @@ export const useUpdateStore = defineStore(StoreId.Update, () => {
     try {
       await installUpdate()
     } catch (e) {
-      error.value = isIpcError(e) ? e : null
+      error.value = asIpcError(e)
     }
     await read()
   }

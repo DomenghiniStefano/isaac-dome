@@ -1,4 +1,4 @@
-import { isIpcError } from '@/lib/ipc/errors'
+import { asIpcError } from '@/lib/ipc/errors'
 import { LoadStatus } from './loadStatus'
 import type { Ref } from 'vue'
 import type { IpcError } from '@/lib/ipc/types'
@@ -23,7 +23,7 @@ export const tracked = async (
     await read()
     status.value = LoadStatus.Ready
   } catch (e) {
-    error.value = isIpcError(e) ? e : null
+    error.value = asIpcError(e)
     status.value = LoadStatus.Failed
   }
 }

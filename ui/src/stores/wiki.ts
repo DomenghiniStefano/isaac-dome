@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 import { computed, ref } from 'vue'
 import { StoreId } from '@/lib/constants/stores'
-import { isIpcError } from '@/lib/ipc/errors'
+import { asIpcError } from '@/lib/ipc/errors'
 import { wikiEntry, wikiIndex } from '@/lib/ipc/wiki'
 import type {
   Entry,
@@ -87,7 +87,7 @@ export const useWikiStore = defineStore(StoreId.Wiki, () => {
     try {
       entries.value.set(key, await wikiEntry(target))
     } catch (e) {
-      failures.value.set(key, isIpcError(e) ? e : null)
+      failures.value.set(key, asIpcError(e))
     } finally {
       pending.delete(key)
     }
