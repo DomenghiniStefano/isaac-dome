@@ -497,3 +497,19 @@ fn every_node_is_found_by_its_id_and_an_absent_one_is_none() {
     assert!(g.node(a(6)).is_none());
     assert!(g.node(a(0)).is_none());
 }
+
+#[test]
+fn a_graph_written_out_of_order_still_finds_every_node() {
+    let g = graph::for_tests::from_edges(&[(3, &[1]), (1, &[]), (2, &[1])], &[]);
+    let ids: Vec<AchievementId> = g.nodes().iter().map(|n| n.achievement).collect();
+    assert_eq!(
+        ids,
+        aa(&[1, 2, 3]),
+        "nodes are kept by id, whatever order they came in"
+    );
+    assert_eq!(
+        g.node(a(3)).map(|n| n.prerequisites.clone()),
+        Some(aa(&[1]))
+    );
+    assert!(g.node(a(4)).is_none());
+}

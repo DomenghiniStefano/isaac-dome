@@ -57,6 +57,8 @@ pub enum GraphDiagnostic {
 }
 
 pub struct Graph {
+    /// Sorted by achievement id, which lets `node` search it by halves. Every
+    /// constructor goes through `Graph::new`, which makes the order.
     pub(crate) nodes: Vec<Node>,
     pub(crate) diagnostics: Vec<GraphDiagnostic>,
 }
@@ -123,10 +125,15 @@ impl Graph {
             .achievements()
             .map(|a| node_for(c, rules, &index, a.id))
             .unzip();
-        Graph {
-            nodes,
-            diagnostics: diagnostics.into_iter().flatten().collect(),
-        }
+        Graph::new(nodes, diagnostics.into_iter().flatten().collect())
+    }
+
+    /// The one constructor, and where the order `node` relies on is made. The catalog hands
+    /// its achievements over by id already, so for `build` the sort moves nothing; the test
+    /// constructors take whatever order a test writes.
+    fn new(mut nodes: Vec<Node>, diagnostics: Vec<GraphDiagnostic>) -> Graph {
+        nodes.sort_by_key(|n| n.achievement);
+        Graph { nodes, diagnostics }
     }
 
     /// Reachable only through `crate::for_tests`, which is where the reason lives.
@@ -145,27 +152,22 @@ impl Graph {
                     .unwrap_or_default(),
             })
             .collect();
-        Graph {
-            nodes,
-            diagnostics: Vec::new(),
-        }
+        Graph::new(nodes, Vec::new())
     }
 
     /// Reachable only through `crate::for_tests`, which is where the reason lives.
     #[cfg(feature = "test-api")]
     pub(crate) fn from_requirements(rows: &[(u32, Vec<Requirement>)]) -> Graph {
-        Graph {
-            nodes: rows
-                .iter()
-                .map(|(achievement, requirements)| Node {
-                    achievement: AchievementId(*achievement),
-                    requirements: requirements.clone(),
-                    prerequisites: Vec::new(),
-                    unknown: Vec::new(),
-                })
-                .collect(),
-            diagnostics: Vec::new(),
-        }
+        let nodes = rows
+            .iter()
+            .map(|(achievement, requirements)| Node {
+                achievement: AchievementId(*achievement),
+                requirements: requirements.clone(),
+                prerequisites: Vec::new(),
+                unknown: Vec::new(),
+            })
+            .collect();
+        Graph::new(nodes, Vec::new())
     }
 
     pub fn nodes(&self) -> &[Node] {
@@ -173,7 +175,10 @@ impl Graph {
     }
 
     pub fn node(&self, achievement: AchievementId) -> Option<&Node> {
-        self.nodes.iter().find(|n| n.achievement == achievement)
+        self.nodes
+            .binary_search_by_key(&achievement, |n| n.achievement)
+            .ok()
+            .map(|i| &self.nodes[i])
     }
 
     pub fn diagnostics(&self) -> &[GraphDiagnostic] {
