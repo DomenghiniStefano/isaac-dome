@@ -7,9 +7,7 @@
 
 use core_save::Save;
 use ipc::{preview_of, CandidatePreview, PreviewCount};
-use test_support::dated_series;
-
-const SERIES: [&str; 2] = ["rep_persistentgamedata1.dat", "rep+persistentgamedata1.dat"];
+use test_support::{dated_series, SERIES};
 
 fn previews(suffix: &str) -> Vec<CandidatePreview> {
     dated_series(suffix)

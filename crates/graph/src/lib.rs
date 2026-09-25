@@ -18,6 +18,6 @@ pub mod rules;
 // Every item of this crate has one path, through the module that defines it:
 // `graph::build::Graph`, `graph::rules::Rules`. The one re-export is another crate's type.
 //
-// The id every public signature here speaks in (card #81, V12), re-exported so `plan` reads it
+// The id every public signature here speaks in, re-exported so `plan` reads it
 // from the crate it already depends on.
 pub use catalog::AchievementId;

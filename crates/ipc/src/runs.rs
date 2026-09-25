@@ -4,10 +4,8 @@
 //! and the live log has no name to give. Items carry a name only when the catalog is there; an
 //! id with no name says "the game is not installed" rather than showing a blank.
 
-use catalog::{Catalog, ItemKind, Language};
+use catalog::{Catalog, ItemId, ItemKind, Language};
 use serde::Serialize;
-
-use crate::catalog_view::collectible;
 
 /// Where a run came from. Tagged, because one variant carries a name and the other cannot.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, ts_rs::TS)]
@@ -163,14 +161,14 @@ pub struct CatalogKinds<'a>(pub &'a Catalog);
 
 impl run::ItemKinds for CatalogKinds<'_> {
     fn kind_of(&self, id: u32) -> run::ItemKind {
-        match collectible(self.0, id).map(|i| i.kind) {
+        match self.0.collectible(ItemId(id)).map(|i| i.kind) {
             Some(ItemKind::Active) => run::ItemKind::Active,
             Some(ItemKind::Familiar) => run::ItemKind::Familiar,
             Some(ItemKind::Passive) => run::ItemKind::Passive,
             // An item this catalog does not know accumulates rather than replacing: reading an
             // unknown id as an active would silently drop whatever the player was carrying.
             None => run::ItemKind::Passive,
-            // `collectible` looks up the three collectible kinds only, so a trinket cannot come
+            // `Catalog::collectible` looks up the three collectible kinds only, so a trinket cannot come
             // back here; named rather than folded into a wildcard, so a new kind of item has to
             // be decided here instead of counting as a passive in silence.
             Some(ItemKind::Trinket) => run::ItemKind::Passive,
@@ -240,7 +238,7 @@ fn named_item(
     id: u32,
     icon: &mut impl FnMut(&crate::icon::IconRef) -> Option<String>,
 ) -> RunItemRef {
-    let found = catalog.and_then(|c| collectible(c, id));
+    let found = catalog.and_then(|c| c.collectible(ItemId(id)));
     RunItemRef {
         id,
         name: found
@@ -248,7 +246,7 @@ fn named_item(
             .map(|(item, c)| c.text(&item.name, Language::English).to_string()),
         icon_url: found.and_then(|item| {
             icon(&crate::icon::IconRef::Item {
-                kind: crate::catalog_view::kind_view(item.kind),
+                kind: item.kind,
                 id,
             })
         }),

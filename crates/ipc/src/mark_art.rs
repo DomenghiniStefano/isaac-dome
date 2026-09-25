@@ -51,9 +51,9 @@ const fn widget(layer: &'static str) -> MarkLayer {
 /// Lamb is `Cross` by elimination, the one symbol and the one column left once every other
 /// pairing is settled.
 ///
-/// A match over [`Column`] and not an array in its order (card #82, S1): the order used to be
-/// held only by a comment at the end of each line, and a column inserted in the middle would
-/// have shifted every symbol after it onto its neighbour.
+/// A match over [`Column`] and not an array in its order: an array would hold the order only
+/// by position, and a column inserted in the middle would shift every symbol after it onto its
+/// neighbour.
 const fn mark_layer(column: Column) -> MarkLayer {
     match column {
         Column::MomsHeart => widget("Heart"),
@@ -128,26 +128,25 @@ fn sprite_of(anm2: &str, f: &Anm2Frame) -> SpriteRef {
 }
 
 /// The frames of `column`'s layer, and which file they came from.
-fn column_frames(
-    column: usize,
-    frames: &MarkFrames,
-) -> Option<(MarkLayer, &'static str, &[Anm2Frame])> {
-    let m = mark_layer(*Column::ALL.get(column)?);
-    Some(match m.source {
+fn column_frames(column: Column, frames: &MarkFrames) -> (MarkLayer, &'static str, &[Anm2Frame]) {
+    let m = mark_layer(column);
+    match m.source {
         Source::Widget => (m, WIDGET_ANM2, &frames.widget),
         Source::Lobby => (m, LOBBY_ANM2, &frames.lobby),
-    })
+    }
 }
 
 /// The piece that draws `column`'s mark at `tier`. `None` when the layer, the animation or the
 /// frame isn't there: never a neighbour's picture.
-pub fn mark_source(column: usize, tier: MarkTier, frames: &MarkFrames) -> Option<SpriteRef> {
-    let (m, anm2, list) = column_frames(column, frames)?;
+pub fn mark_source(column: Column, tier: MarkTier, frames: &MarkFrames) -> Option<SpriteRef> {
+    let (m, anm2, list) = column_frames(column, frames);
     let f = frame_at(list, m.layer, m.animation, frame_index(tier))?;
     Some(sprite_of(anm2, f))
 }
 
-/// The sheet the marks are laid on, at `tier`. Same file, same frame rule as a symbol.
+/// The sheet the marks are laid on, at `tier`. Same file, same frame rule as a symbol. For the
+/// tests: the app draws the paper through `widget_source`, which picks the tier itself.
+#[cfg(feature = "test-api")]
 pub fn paper_source(tier: MarkTier, frames: &MarkFrames) -> Option<SpriteRef> {
     let f = frame_at(&frames.widget, PAPER_LAYER, None, frame_index(tier))?;
     Some(sprite_of(WIDGET_ANM2, f))
@@ -192,10 +191,10 @@ pub fn widget_source(fills: &[MarkFill; BOSSES.len()], frames: &MarkFrames) -> O
     )?;
     let marks = fills
         .iter()
-        .enumerate()
-        .filter_map(|(column, fill)| {
+        .zip(Column::ALL)
+        .filter_map(|(fill, column)| {
             let tier = fill.tier()?;
-            let (m, _, list) = column_frames(column, frames)?;
+            let (m, _, list) = column_frames(column, frames);
             // Only what this actor places. `Source::Lobby` is another actor's space.
             matches!(m.source, Source::Widget).then_some(())?;
             let f = frame_at(list, m.layer, m.animation, frame_index(tier))?;

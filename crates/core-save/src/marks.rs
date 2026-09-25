@@ -1,9 +1,8 @@
 //! Where the completion marks and the located tallies live inside section 2.
 //!
 //! This is the file's shape, which is why it is here: a cell's index is the same kind of
-//! knowledge as a section header's offset. It used to live in the view-model that draws
-//! the matrix, which made the screen the only place that knew it — and left the graph,
-//! which now has to ask the same question, with nowhere to ask it.
+//! knowledge as a section header's offset, and both the screen that draws the matrix and the
+//! graph that asks about one cell need it.
 //!
 //! Nothing here reads a file. It maps (row, column) and a tally's name onto indices, and
 //! says `None` for the cells nobody has located.
@@ -12,11 +11,10 @@ use serde::{Deserialize, Serialize};
 
 /// The twelve columns the game's own completion widget draws, in its order.
 ///
-/// **The one definition of the twelve** (card #82, S1). The graph's rules name a column with
-/// it (`graph::rules::MarkColumn`), and it crosses the IPC as `MarkColumnView`: a bare
-/// camelCase string, fieldless, so the TypeScript is a union of values. It used to be three
-/// enums of the same twelve joined by hand-written maps, each one a place for a thirteenth
-/// column to be forgotten.
+/// **The one definition of the twelve.** The graph's rules name a column with it
+/// (`graph::rules::MarkColumn`), and it crosses the IPC as `MarkColumnView`: a bare camelCase
+/// string, fieldless, so the TypeScript is a union of values. One enum, so there is no
+/// hand-written map between copies for a thirteenth column to be forgotten in.
 ///
 /// Ordered in the game's order, so a column can key a sorted map.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Serialize, Deserialize, ts_rs::TS)]
@@ -195,14 +193,31 @@ pub fn cell_index(row: usize, column: Column) -> Option<usize> {
 /// The tallies of section 2 whose index is located.
 ///
 /// Typed rather than a string, so the crates that name one cannot drift apart in silence:
-/// a rules file is allowed to carry `"hushKills"` precisely because the number lives here,
-/// and an exhaustive match is what keeps the two spellings joined.
-#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+/// the graph's rules file spells a tally the way this enum serializes (`"hushKills"`), and
+/// the number it sits at stays here. The one definition — `graph::rules::CounterName` is
+/// this type — so a fifth tally is one variant, not two joined by a map.
+///
+/// Ordered, so a tally can key a sorted map.
+#[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
 pub enum CounterKey {
     HushKills,
     DeliriumKills,
     MotherKills,
     BeastKills,
+}
+
+impl CounterKey {
+    /// The column whose boss the tally counts the kills of. Exhaustive, so a fifth tally has
+    /// to say which boss it is about before anything can label it.
+    pub fn column(self) -> Column {
+        match self {
+            CounterKey::HushKills => Column::Hush,
+            CounterKey::DeliriumKills => Column::Delirium,
+            CounterKey::MotherKills => Column::Mother,
+            CounterKey::BeastKills => Column::TheBeast,
+        }
+    }
 }
 
 /// Located on the series: 158 and 187 carry documented REPENTOGON names, 491 and 492 were

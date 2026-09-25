@@ -22,7 +22,7 @@ fn every_column_crops_two_real_symbols() {
         widget: read(WIDGET_ANM2),
         lobby: read(LOBBY_ANM2),
     };
-    for (column, boss) in BOSSES.iter().enumerate() {
+    for (column, boss) in core_save::Column::ALL.into_iter().zip(BOSSES) {
         for tier in [MarkTier::Normal, MarkTier::Hard] {
             let sprite = mark_source(column, tier, &frames)
                 .unwrap_or_else(|| panic!("{boss} {tier:?}: no frame"));

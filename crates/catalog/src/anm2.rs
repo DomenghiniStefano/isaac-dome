@@ -44,7 +44,9 @@ pub struct Anm2Frame {
     pub index: usize,
     /// Invisible frames are marks that have been "turned off" (not yet earned), not
     /// different pieces of the sheet: a normal cutter skips them, but knowing they
-    /// exist matters.
+    /// exist matters. Nothing in production reads it today — every piece the app cuts is
+    /// chosen by layer and index — and it is kept because it is what the file says about
+    /// the frame, the one fact that tells a switched-off mark from a missing one.
     pub visible: bool,
     pub rect: Rect,
     /// Where the layer puts the crop, as `position - pivot` in the actor's own space.
@@ -59,7 +61,9 @@ pub struct Anm2Frame {
     pub origin: Point,
 }
 
-/// The sheets the file cites, in declaration order.
+/// The sheets the file cites, in declaration order. No production reader: a frame carries its
+/// own sheet (`Anm2Frame::sheet`), and this list is what its tests check that against.
+#[cfg(test)]
 pub fn spritesheets(bytes: &[u8]) -> Vec<String> {
     let Ok(els) = elements(bytes) else {
         return Vec::new();
@@ -450,7 +454,7 @@ mod tests {
         // file, the second a sheet that genuinely declares no crops. Flattening both
         // into an empty list would make them indistinguishable to the caller.
         assert_eq!(frames(b"not xml <<<"), None);
-        let vuoto: &[u8] = br#"<AnimatedActor><Content/><Animations/></AnimatedActor>"#;
-        assert_eq!(frames(vuoto), Some(Vec::new()));
+        let empty: &[u8] = br#"<AnimatedActor><Content/><Animations/></AnimatedActor>"#;
+        assert_eq!(frames(empty), Some(Vec::new()));
     }
 }

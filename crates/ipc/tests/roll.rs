@@ -125,7 +125,7 @@ fn only_playable_is_not_applied_without_the_flags_and_the_view_admits_it() {
 fn a_drawn_target_has_its_status_recomputed_from_the_save_and_not_from_the_document() {
     // The card closes itself: nothing is ticked off, and nothing can be ticked off wrongly.
     let mut c = zeroed_counters();
-    c[ipc::counter_index(0, 0).expect("cell (0, 0) is located")] = 1;
+    c[core_save::cell_index(0, core_save::Column::MomsHeart).expect("cell (0, 0) is located")] = 1;
     let doc = Document {
         current: Some(Drawn {
             target: Target::Mark {

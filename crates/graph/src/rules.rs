@@ -122,7 +122,7 @@ pub enum Verdict {
 }
 
 /// The twelve columns of the completion matrix, in the game's own order: the layout's own
-/// enum, not a copy of it (card #82, S1). A rules file spells a column the way the layout
+/// enum, not a copy of it. A rules file spells a column the way the layout
 /// serializes it (`"momsHeart"`), and nothing more of `core-save` is read from here — the
 /// index a cell sits at stays the business of whoever answers `Profile::mark`.
 pub use core_save::Column as MarkColumn;
@@ -137,36 +137,22 @@ pub use core_save::Column as MarkColumn;
 ///
 /// Ordered, `Base` first, so a cell reached at the second level satisfies a requirement
 /// for the base one by `reached >= required`.
-#[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Serialize, Deserialize)]
+///
+/// The one definition of the two levels: a requirement carries it across the IPC as
+/// `MarkLevelView`, a bare camelCase string.
+#[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Serialize, Deserialize, ts_rs::TS)]
+#[ts(rename = "MarkLevelView")]
 #[serde(rename_all = "camelCase")]
 pub enum MarkLevel {
     Base,
     Second,
 }
 
-/// A tally of section 2, named. The index it sits at is `core-save`'s business: a rules
-/// file carrying an offset would be the same mistake as an offset crossing the IPC.
-#[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub enum CounterName {
-    HushKills,
-    DeliriumKills,
-    MotherKills,
-    BeastKills,
-}
-
-impl CounterName {
-    /// The column whose boss the tally counts the kills of. Exhaustive, so a fifth tally has
-    /// to say which boss it is about before anything can label it.
-    pub fn column(self) -> MarkColumn {
-        match self {
-            CounterName::HushKills => MarkColumn::Hush,
-            CounterName::DeliriumKills => MarkColumn::Delirium,
-            CounterName::MotherKills => MarkColumn::Mother,
-            CounterName::BeastKills => MarkColumn::TheBeast,
-        }
-    }
-}
+/// A tally of section 2, named: the layout's own enum, like the column. A rules file spells
+/// it the way the layout serializes it (`"hushKills"`); the index it sits at stays
+/// `core-save`'s business, since a rules file carrying an offset would be the same mistake as
+/// an offset crossing the IPC.
+pub use core_save::CounterKey as CounterName;
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
@@ -247,7 +233,7 @@ impl Rules {
             }
             // The flag is the file's way of writing a unit variant, and `true` is its only
             // meaning: `false` would still resolve to no prerequisite, the opposite of what it
-            // reads as (card #80, P11b).
+            // reads as.
             if let Verdict::AlwaysAvailable(false) | Verdict::NotAPrerequisite(false) = v {
                 return Err(RulesError::Malformed {
                     reason: format!("{key}: a verdict written false says nothing"),
@@ -274,8 +260,9 @@ impl Rules {
         self.corrections.verdicts.get(key)
     }
 
-    /// Every key a verdict was written for. Used to catch verdicts left behind by a
-    /// snapshot that dropped their target.
+    /// Every key a verdict was written for. Used by the curation tests to catch verdicts left
+    /// behind by a snapshot that dropped their target.
+    #[cfg(feature = "test-api")]
     pub fn verdict_keys(&self) -> impl Iterator<Item = &str> {
         self.corrections.verdicts.keys().map(String::as_str)
     }

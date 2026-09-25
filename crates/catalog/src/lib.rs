@@ -6,8 +6,6 @@ mod bossportraits;
 mod catalog;
 mod challenges;
 mod diagnostics;
-#[cfg(feature = "test-api")]
-pub mod for_tests;
 mod heads;
 mod ids;
 mod itempools;
@@ -25,9 +23,11 @@ mod versusscreen;
 mod xml;
 
 pub use achievements::Achievement;
-pub use anm2::{frames as anm2_frames, spritesheets as anm2_spritesheets, Anm2Frame};
+pub use anm2::{frames as anm2_frames, Anm2Frame};
 pub use bossportraits::Boss;
 pub use catalog::Catalog;
+// The list of sources, public for the tests that check every one is asked for.
+#[cfg(feature = "test-api")]
 pub use catalog::SOURCES;
 pub use challenges::Challenge;
 pub use diagnostics::{Diagnostic, SkipReason, Source};
