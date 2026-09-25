@@ -15,52 +15,29 @@ import {
   ToggleGroupType,
 } from '@/components/ui/toggle-group'
 import { useMessages } from '@/i18n'
-import {
-  facetOptions,
-  foldStartsOpen,
-  stateRowCounts,
-} from '@/lib/facets/facetOptions'
-import type { FacetSlot } from '@/lib/facets/facetOptions'
-import type { FacetFilter, Faceting } from '@/lib/facets/faceting'
+import { foldStartsOpen, stateRowCounts } from '@/lib/facets/facetOptions'
+import type { FacetFilter } from '@/lib/facets/faceting'
+import { optionsBySlot } from '@/lib/facets/filterBar'
+import type { FilterBarDescriptor } from '@/lib/facets/filterBar'
 import StateToggle from './StateToggle.vue'
-import type { FilterBarLabels, Label } from '@/lib/facets/labels'
 
 // Every filter a list has, in one place: the state, the search, the controls that matter on
-// this screen, and the rest behind a fold. The screen brings a description of its facets; the
-// judgment — which values are worth offering, whether the fold has to open — lives in
-// `lib/facets/facetOptions.ts`, where a test can see it.
+// this screen, and the rest behind a fold. The screen brings a description of its facets — the
+// `bar`, one object beside its labels; the judgment — which values are worth offering, whether
+// the fold has to open — lives in `lib/facets/facetOptions.ts`, where a test can see it.
 //
 // Generic over the row, the facet and the sort so a call site stays typed end to end: with
 // `string` props each screen would narrow the emitted values back to its own union.
 const props = defineProps<{
-  shown: number
-  total: number
-  query: string
-  // A list with nothing to choose between has no sort group: the Run diary's order is decided
-  // by the archive (`runOrder.ts`), not by the reader, and a single fake option would be a
-  // control that changes nothing.
-  sort?: Sort
-  sorts?: Sort[]
-  sortText?: Record<Sort, Label>
+  bar: FilterBarDescriptor<Row, Facet, Sort>
+  // Every row of the list; the count beside the title is how many of them the filter shows.
   rows: Row[]
-  faceting: Faceting<Row, Facet>
   filter: FacetFilter<Facet>
-  // The facets, in order, each marked as in view at rest or behind the fold.
-  facets: FacetSlot<Facet>[]
-  // The filter that matters more than the others (DESIGN-BRIEF.md §6). The screen brings what
-  // its states are, what they are called and what colour each square carries; the numbers are
-  // the bar's, counted exactly like a dropdown's — see `stateRowCounts`.
-  state: {
-    facet: Facet
-    order: string[]
-    dot: Record<string, string>
-    text: Record<string, Label>
-  }
-  title: Record<Facet, Label>
+  shown: number
+  sort?: Sort
   // A picked value in words: the Character facet stores ids (`docs/BACKLOG.md` B28), so no
   // component can label one on its own.
   valueLabel: (facet: Facet, value: string) => string
-  labels: FilterBarLabels
 }>()
 const emit = defineEmits<{
   'update:query': [query: string]
@@ -70,12 +47,12 @@ const emit = defineEmits<{
 }>()
 const { t } = useMessages()
 
-const open = ref(foldStartsOpen(props.facets, props.filter))
+const open = ref(foldStartsOpen(props.bar.facets, props.filter))
 // A filter arriving from elsewhere — a tab restored, a Search row opening this list already
 // filtered — must not land behind a closed fold. Only opening is automatic: closing it again
 // is the reader's, and a fold that reclosed itself would fight them.
 watch(
-  () => foldStartsOpen(props.facets, props.filter),
+  () => foldStartsOpen(props.bar.facets, props.filter),
   (must) => {
     if (must) open.value = true
   },
@@ -83,34 +60,43 @@ watch(
 
 const stateCounts = computed(() =>
   stateRowCounts(
-    props.faceting,
+    props.bar.faceting,
     props.rows,
     props.filter,
-    props.state.facet,
-    props.state.order,
+    props.bar.state.facet,
+    props.bar.state.order,
   ),
 )
 
-const inView = computed(() => props.facets.filter((slot) => slot.inView))
-const folded = computed(() => props.facets.filter((slot) => !slot.inView))
-const optionsOf = (facet: Facet) =>
-  facetOptions(
-    props.faceting,
+const inView = computed(() => props.bar.facets.filter((slot) => slot.inView))
+const folded = computed(() => props.bar.facets.filter((slot) => !slot.inView))
+const options = computed(() =>
+  optionsBySlot(
+    props.bar.faceting,
     props.rows,
     props.filter,
-    facet,
+    props.bar.facets,
     props.valueLabel,
-  )
+  ),
+)
+const optionsOf = (facet: Facet) => options.value.get(facet) ?? []
+
+// The sort group is drawn only for a list that has one, and a way to word "ordina per".
+const sorts = computed(() =>
+  props.bar.sorts && props.bar.sorts.order.length > 0 && props.bar.labels.sortBy
+    ? { ...props.bar.sorts, by: props.bar.labels.sortBy }
+    : null,
+)
 
 // A single-choice group empties when its chosen item is clicked again; a sort always has one.
 const onSort = (value: unknown) => {
-  const next = props.sorts?.find((s) => s === value)
+  const next = props.bar.sorts?.order.find((s) => s === value)
   if (next) emit('update:sort', next)
 }
 
-const active = computed(() => props.faceting.activeCount(props.filter))
+const active = computed(() => props.bar.faceting.activeCount(props.filter))
 const chips = computed(() =>
-  props.facets.flatMap(({ facet }) =>
+  props.bar.facets.flatMap(({ facet }) =>
     props.filter.picks[facet].map((value) => ({
       facet,
       value,
@@ -130,43 +116,40 @@ const drop = (facet: Facet, value: string) =>
   <CardHeader class="flex-col items-stretch gap-3">
     <div class="flex flex-wrap items-center justify-between gap-2">
       <CardTitle class="tabular-nums"
-        >{{ shown }} / {{ total }} {{ t(labels.rows) }}</CardTitle
+        >{{ shown }} / {{ rows.length }} {{ t(bar.labels.rows) }}</CardTitle
       >
-      <div
-        v-if="sorts && sorts.length > 0 && sortText && labels.sortBy"
-        class="flex flex-wrap items-center gap-2"
-      >
-        <span class="text-label">{{ t(labels.sortBy) }}</span>
+      <div v-if="sorts" class="flex flex-wrap items-center gap-2">
+        <span class="text-label">{{ t(sorts.by) }}</span>
         <ToggleGroup
           :type="ToggleGroupType.Single"
           :model-value="sort"
           @update:model-value="onSort"
         >
-          <ToggleGroupItem v-for="s in sorts" :key="s" :value="s">{{
-            t(sortText[s])
+          <ToggleGroupItem v-for="s in sorts.order" :key="s" :value="s">{{
+            t(sorts.text[s])
           }}</ToggleGroupItem>
         </ToggleGroup>
       </div>
     </div>
     <StateToggle
-      :order="state.order"
+      :order="bar.state.order"
       :counts="stateCounts"
-      :picked="filter.picks[state.facet]"
-      :dot="state.dot"
-      :text="state.text"
-      @update="emit('update:picks', state.facet, $event)"
+      :picked="filter.picks[bar.state.facet]"
+      :dot="bar.state.dot"
+      :text="bar.state.text"
+      @update="emit('update:picks', bar.state.facet, $event)"
     />
     <div class="flex flex-wrap items-center gap-2">
       <Input
-        :model-value="query"
-        :placeholder="t(labels.search)"
+        :model-value="filter.query"
+        :placeholder="t(bar.labels.search)"
         class="w-search"
         @update:model-value="emit('update:query', String($event))"
       />
       <MultiSelect
         v-for="slot in inView"
         :key="slot.facet"
-        :label="t(title[slot.facet])"
+        :label="t(bar.title[slot.facet])"
         :options="optionsOf(slot.facet)"
         :picked="filter.picks[slot.facet]"
         @update:picked="emit('update:picks', slot.facet, $event)"
@@ -186,7 +169,7 @@ const drop = (facet: Facet, value: string) =>
       <MultiSelect
         v-for="slot in folded"
         :key="slot.facet"
-        :label="t(title[slot.facet])"
+        :label="t(bar.title[slot.facet])"
         :options="optionsOf(slot.facet)"
         :picked="filter.picks[slot.facet]"
         @update:picked="emit('update:picks', slot.facet, $event)"

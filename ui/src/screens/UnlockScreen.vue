@@ -1,47 +1,30 @@
 <script setup lang="ts">
 import { LockOpenIcon } from '@lucide/vue'
-import ListEmptyState from '@/components/data-state/ListEmptyState.vue'
-import ScreenSkeleton from '@/components/data-state/ScreenSkeleton.vue'
 import { computed, watch } from 'vue'
 import { useRoute } from 'vue-router'
+import ListEmptyState from '@/components/data-state/ListEmptyState.vue'
+import ScreenSkeleton from '@/components/data-state/ScreenSkeleton.vue'
+import DiagnosticsList from '@/components/diagnostics/DiagnosticsList.vue'
+import FilterBar from '@/components/facets/FilterBar.vue'
 import QueueError from '@/components/plan/QueueError.vue'
 import { Card } from '@/components/ui/card'
+import { useFacetedReading } from '@/composables/useFacetedReading'
 import { useOnActiveProfile } from '@/composables/useOnActiveProfile'
-import { useTabView } from '@/composables/useTabView'
-import type { ScrollOffset } from '@/lib/scale/scrollOffset'
+import { useQueueOffer } from '@/composables/useQueueOffer'
 import { useMessages } from '@/i18n'
-import { singleQuery } from '@/lib/search/queryParam'
+import { unlockEntries } from '@/lib/diagnostics/unlock'
 import { emptyList, isFiltering } from '@/lib/facets/emptyList'
 import { characterForms } from '@/lib/graph/characterName'
 import { stateOrder } from '@/lib/graph/nodeState'
-import {
-  barLabels,
-  facetTitle,
-  facetValueLabel,
-  sortOrder,
-  sortText,
-  stateDot,
-  stateText,
-  unlockSlots,
-} from './unlock/facetLabels'
-import { unlockView } from './unlock/tabView'
-import {
-  FacetId,
-  UnlockSort,
-  sortNodes,
-  unlockFaceting,
-} from '@/lib/graph/unlockFacets'
-import type { UnlockFilter } from '@/lib/graph/unlockFacets'
-
-import { useGraphStore } from '@/stores/views'
+import { FacetId, sortNodes, unlockFaceting } from '@/lib/graph/unlockFacets'
+import { singleQuery } from '@/lib/search/queryParam'
 import { LoadStatus } from '@/stores/loadStatus'
-import { useQueueOffer } from '@/composables/useQueueOffer'
+import { useGraphStore } from '@/stores/views'
 import ScreenHeader from './ScreenHeader.vue'
 import ProfileError from './profile/ProfileError.vue'
-import FilterBar from '@/components/facets/FilterBar.vue'
-import DiagnosticsList from '@/components/diagnostics/DiagnosticsList.vue'
-import { unlockEntries } from '@/lib/diagnostics/unlock'
 import UnlockTable from './unlock/UnlockTable.vue'
+import { facetValueLabel, unlockBar } from './unlock/facetLabels'
+import { unlockView } from './unlock/tabView'
 
 const graph = useGraphStore()
 const { queue, queued, canWrite } = useQueueOffer()
@@ -51,18 +34,8 @@ useOnActiveProfile(async () => {
   await Promise.all([graph.load(), queue.load()])
 })
 
-// The filter and the sort belong to the tab, not to this component: leaving and coming back —
-// through a tear-off, a restart, or the back button — finds them where they were left (B39).
-const reading = useTabView(unlockView)
-const setOffset = (offset: ScrollOffset) => {
-  reading.value = { ...reading.value, offset }
-}
-const filter = computed({
-  get: () => reading.value.filter,
-  set: (value: UnlockFilter) => {
-    reading.value = { ...reading.value, filter: value }
-  },
-})
+const { reading, update, filter, setPicks, setQuery, reset } =
+  useFacetedReading(unlockView, unlockFaceting.empty)
 
 // A Search row opens this list already filtered on the name it found (B3, spec 3.5 Decision 8).
 const route = useRoute()
@@ -70,7 +43,7 @@ watch(
   () => route.query.q,
   (value) => {
     const q = singleQuery(value)
-    if (q !== null) filter.value = { ...filter.value, query: q }
+    if (q !== null) setQuery(q)
   },
   { immediate: true },
 )
@@ -82,20 +55,10 @@ watch(
   (value) => {
     const wanted = singleQuery(value)
     const state = stateOrder.find((s) => s === wanted)
-    if (state)
-      filter.value = {
-        ...filter.value,
-        picks: { ...filter.value.picks, [FacetId.State]: [state] },
-      }
+    if (state) setPicks(FacetId.State, [state])
   },
   { immediate: true },
 )
-const sort = computed({
-  get: () => reading.value.sort,
-  set: (value: UnlockSort) => {
-    reading.value = { ...reading.value, sort: value }
-  },
-})
 
 const nodes = computed(() => graph.view?.unlock.nodes ?? [])
 // The character facet's labels: the value is an id, the name is read from the nodes.
@@ -108,16 +71,10 @@ const valueLabel = (facet: FacetId, value: string) =>
 const rows = computed(() =>
   sortNodes(
     nodes.value.filter((node) => unlockFaceting.matches(node, filter.value)),
-    sort.value,
+    reading.value.sort,
   ),
 )
 
-const setPicks = (facet: FacetId, picked: string[]) => {
-  filter.value = {
-    ...filter.value,
-    picks: { ...filter.value.picks, [facet]: picked },
-  }
-}
 // An empty list is not a filter that matched nothing: a view that came back with no nodes at
 // all has nothing to clear, and offering the button there would undo nothing. Unreachable
 // today — a machine without the game still gets every node, counted as unread — so this is the
@@ -128,15 +85,6 @@ const empty = computed(() =>
     noResults: 'unlock.noResults',
   }),
 )
-const setQuery = (query: string) => {
-  filter.value = { ...filter.value, query }
-}
-const setSort = (next: UnlockSort) => {
-  sort.value = next
-}
-const reset = () => {
-  filter.value = unlockFaceting.empty()
-}
 </script>
 
 <template>
@@ -161,27 +109,14 @@ const reset = () => {
       <QueueError v-if="queue.mutationFailed" :error="queue.mutationError" />
       <Card class="min-h-0 flex-1">
         <FilterBar
-          :shown="rows.length"
-          :total="nodes.length"
-          :query="filter.query"
-          :sort="sort"
-          :sorts="sortOrder"
-          :sort-text="sortText"
+          :bar="unlockBar"
           :rows="nodes"
-          :faceting="unlockFaceting"
           :filter="filter"
-          :facets="unlockSlots"
-          :state="{
-            facet: FacetId.State,
-            order: stateOrder,
-            dot: stateDot,
-            text: stateText,
-          }"
-          :title="facetTitle"
+          :shown="rows.length"
+          :sort="reading.sort"
           :value-label="valueLabel"
-          :labels="barLabels"
           @update:query="setQuery"
-          @update:sort="setSort"
+          @update:sort="update({ sort: $event })"
           @update:picks="setPicks"
           @reset="reset"
         />
@@ -192,7 +127,7 @@ const reset = () => {
           :can-write="canWrite"
           :busy="queue.busy"
           :offset="reading.offset"
-          @offset-change="setOffset"
+          @offset-change="update({ offset: $event })"
           @add="queue.add"
         />
         <ListEmptyState v-else :empty="empty" @reset="reset" />
