@@ -21,6 +21,7 @@ import {
   stepAnchor,
   stepDirection,
 } from '@/lib/plan/queueDrop'
+import type { Anchor } from '@/lib/plan/queueDrop'
 import { queueExtras } from '@/lib/plan/queueExtras'
 import { knownText } from '@/lib/graph/achievementNode'
 import { rowId, stoppedUnder } from '@/lib/plan/queueRows'
@@ -65,6 +66,13 @@ const resolve = (p: Point, boxes: Box[]): Drop | null => {
   return { index, edge: dropEdge(p.y, box.top, box.height) }
 }
 
+// A drag and a key step end the same way: the row at `index` is asked to move under the
+// anchor, and a move that would change nothing asks for nothing.
+const moveTo = (index: number, anchor: Anchor | null) => {
+  const moved = ids.value[index]
+  if (anchor && moved !== undefined) emit('move', moved, anchor.after)
+}
+
 const drag = useDragList<Drop>({
   axis: Axis.Y,
   container: list,
@@ -75,8 +83,7 @@ const drag = useDragList<Drop>({
     const anchor = landing
       ? dropAnchor(ids.value, from, landing.index, landing.edge)
       : null
-    const moved = ids.value[from]
-    if (anchor && moved !== undefined) emit('move', moved, anchor.after)
+    moveTo(from, anchor)
   },
 })
 
@@ -108,9 +115,7 @@ const onStep = (index: number, e: KeyboardEvent) => {
   const direction = stepDirection(e.key, e.altKey)
   if (!direction || props.busy) return
   e.preventDefault()
-  const anchor = stepAnchor(ids.value, index, direction)
-  const moved = ids.value[index]
-  if (anchor && moved !== undefined) emit('move', moved, anchor.after)
+  moveTo(index, stepAnchor(ids.value, index, direction))
 }
 
 // What the band says: how to drag, what a drop will do, or where the last move stopped and why.
