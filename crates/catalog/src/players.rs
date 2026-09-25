@@ -5,10 +5,11 @@
 
 use crate::diagnostics::{Diagnostic, SkipReason, Source};
 use crate::ids::{AchievementId, CharacterId};
-use crate::items::normalize_root;
 use crate::sprite::SpriteRef;
 use crate::text::Text;
-use crate::xml::{elements, Element};
+use crate::xml::{self, Element};
+
+const SOURCE: Source = Source::Players;
 
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct Character {
@@ -22,23 +23,10 @@ pub struct Character {
 }
 
 pub fn parse(bytes: &[u8], diagnostics: &mut Vec<Diagnostic>) -> Vec<Character> {
-    let els = match elements(bytes) {
-        Ok(els) => els,
-        Err(_) => {
-            diagnostics.push(Diagnostic::SourceUnreadable {
-                source: Source::Players,
-            });
-            return Vec::new();
-        }
+    let Some(els) = xml::read(bytes, SOURCE, diagnostics) else {
+        return Vec::new();
     };
-    let portraitroot = els
-        .iter()
-        .find(|e| e.name == "players")
-        .and_then(|e| e.attr("portraitroot"))
-        .map(normalize_root)
-        .filter(|r| !r.is_empty())
-        .unwrap_or_else(|| "gfx/ui/stage".to_string());
-
+    let portraitroot = xml::root_attr(&els, "players", "portraitroot", "gfx/ui/stage");
     els.iter()
         .filter(|e| e.name == "player")
         .filter_map(|e| character_from(e, &portraitroot, diagnostics))
@@ -55,27 +43,9 @@ fn is_tainted_portrait(portrait: &str) -> bool {
 }
 
 fn character_from(e: &Element, portraitroot: &str, d: &mut Vec<Diagnostic>) -> Option<Character> {
-    let skip = |id: Option<u32>, reason: SkipReason, d: &mut Vec<Diagnostic>| {
-        d.push(Diagnostic::ElementSkipped {
-            source: Source::Players,
-            id,
-            reason,
-        });
-        None
-    };
-    let Some(raw_id) = e.attr("id") else {
-        return skip(None, SkipReason::MissingId, d);
-    };
-    let Ok(id) = raw_id.parse::<u32>() else {
-        return skip(None, SkipReason::MalformedId, d);
-    };
-    let Some(portrait) = e.attr("portrait") else {
-        return skip(Some(id), SkipReason::MissingSprite, d);
-    };
-    let Some(name) = e.attr("name") else {
-        return skip(Some(id), SkipReason::MissingName, d);
-    };
-
+    let id = xml::required_id(e, "id", SOURCE, d)?;
+    let portrait = xml::required_attr(e, "portrait", id, SkipReason::MissingSprite, SOURCE, d)?;
+    let name = xml::required_attr(e, "name", id, SkipReason::MissingName, SOURCE, d)?;
     Some(Character {
         id: CharacterId(id),
         name: Text::from_attr(name),
@@ -155,5 +125,55 @@ mod tests {
             id: Some(9),
             reason: SkipReason::MissingSprite
         }));
+    }
+
+    #[test]
+    fn the_portrait_is_checked_before_the_name_and_a_malformed_id_carries_no_id() {
+        let mut d = Vec::new();
+        let c = parse(
+            b"<players>
+<player id=\"x\" name=\"#A\" portrait=\"a.png\" />
+<player id=\"4\" />
+<player id=\"5\" portrait=\"b.png\" />
+</players>",
+            &mut d,
+        );
+        assert!(c.is_empty());
+        let skipped = |id, reason| Diagnostic::ElementSkipped {
+            source: Source::Players,
+            id,
+            reason,
+        };
+        assert_eq!(
+            d,
+            vec![
+                skipped(None, SkipReason::MalformedId),
+                skipped(Some(4), SkipReason::MissingSprite),
+                skipped(Some(5), SkipReason::MissingName),
+            ]
+        );
+    }
+
+    #[test]
+    fn without_a_portraitroot_the_portrait_takes_the_game_folder() {
+        let mut d = Vec::new();
+        let c = parse(
+            b"<players portraitroot=\"resources/\"><player id=\"0\" name=\"#I\" portrait=\"p.png\" achievement=\"x\" /></players>",
+            &mut d,
+        );
+        assert_eq!(c[0].portrait.path, "gfx/ui/stage/p.png");
+        assert_eq!(c[0].unlocked_by, None, "a malformed link is no link");
+    }
+
+    #[test]
+    fn junk_is_empty_with_one_diagnostic() {
+        let mut d = Vec::new();
+        assert!(parse(b"<players><player", &mut d).is_empty());
+        assert_eq!(
+            d,
+            vec![Diagnostic::SourceUnreadable {
+                source: Source::Players
+            }]
+        );
     }
 }

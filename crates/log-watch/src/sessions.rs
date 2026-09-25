@@ -17,22 +17,25 @@ use std::path::{Path, PathBuf};
 /// Every session folder under `online_logs`, in a stable order. A folder counts only if it
 /// holds a `log.txt`: the folder's own name is its identity, and the file is the run.
 pub fn sessions(online_logs: &Path) -> Vec<PathBuf> {
-    let mut out = Vec::new();
-    for holder in [
+    let mut found: Vec<PathBuf> = [
         online_logs.join("sessions"),
         online_logs.join("desyncs").join("sessions"),
-    ] {
-        let Ok(entries) = std::fs::read_dir(&holder) else {
-            // Not there is not an error: a machine that never played online has neither folder.
-            continue;
-        };
-        for entry in entries.flatten() {
-            let dir = entry.path();
-            if dir.join("log.txt").is_file() {
-                out.push(dir);
-            }
-        }
-    }
-    out.sort();
-    out
+    ]
+    .iter()
+    .flat_map(|holder| session_folders(holder))
+    .collect();
+    found.sort();
+    found
+}
+
+/// The folders directly under `holder` that hold a `log.txt`. A holder that is not there is no
+/// folders and not an error: a machine that never played online has neither.
+fn session_folders(holder: &Path) -> Vec<PathBuf> {
+    std::fs::read_dir(holder)
+        .into_iter()
+        .flatten()
+        .flatten()
+        .map(|entry| entry.path())
+        .filter(|dir| dir.join("log.txt").is_file())
+        .collect()
 }

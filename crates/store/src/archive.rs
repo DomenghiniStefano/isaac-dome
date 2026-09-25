@@ -99,13 +99,17 @@ fn unhex(raw: &str) -> Option<u64> {
     u64::from_str_radix(raw, 16).ok()
 }
 
+/// The columns every read of a source selects, in the order `source_row` reads them by index:
+/// the two are one contract, which is why the list is written once.
+const SELECT_SOURCE: &str =
+    "SELECT id, kind, key, prefix_hash, prefix_len, anchor_hash, read_offset FROM sources";
+
 impl Store {
     /// The source of an online session, by the folder's name.
     pub fn session_source(&self, name: &str) -> Result<Option<StoredSource>, StoreError> {
         self.conn
             .query_row(
-                "SELECT id, kind, key, prefix_hash, prefix_len, anchor_hash, read_offset
-                 FROM sources WHERE kind = 'session' AND key = ?1",
+                &format!("{SELECT_SOURCE} WHERE kind = 'session' AND key = ?1"),
                 params![name],
                 source_row,
             )
@@ -119,8 +123,7 @@ impl Store {
     pub fn latest_log_source(&self) -> Result<Option<StoredSource>, StoreError> {
         self.conn
             .query_row(
-                "SELECT id, kind, key, prefix_hash, prefix_len, anchor_hash, read_offset
-                 FROM sources WHERE kind = 'log' ORDER BY id DESC LIMIT 1",
+                &format!("{SELECT_SOURCE} WHERE kind = 'log' ORDER BY id DESC LIMIT 1"),
                 [],
                 source_row,
             )
@@ -129,26 +132,19 @@ impl Store {
             .map(|r| r.flatten())
     }
 
-    /// Every source, oldest first. The order the archive is shown in.
+    /// Every source, oldest first. The order the archive is shown in. A row this binary cannot
+    /// read is skipped, not fatal.
     pub fn sources(&self) -> Result<Vec<StoredSource>, StoreError> {
         let mut stmt = self
             .conn
-            .prepare(
-                "SELECT id, kind, key, prefix_hash, prefix_len, anchor_hash, read_offset
-                 FROM sources ORDER BY id",
-            )
+            .prepare(&format!("{SELECT_SOURCE} ORDER BY id"))
             .map_err(StoreError::from_sqlite)?;
         let rows = stmt
             .query_map([], source_row)
+            .map_err(StoreError::from_sqlite)?
+            .collect::<Result<Vec<_>, _>>()
             .map_err(StoreError::from_sqlite)?;
-        let mut out = Vec::new();
-        for row in rows {
-            // A row this binary cannot read is skipped, not fatal.
-            if let Some(source) = row.map_err(StoreError::from_sqlite)? {
-                out.push(source);
-            }
-        }
-        Ok(out)
+        Ok(rows.into_iter().flatten().collect())
     }
 
     /// A launch of `log.txt` nobody has read yet.
@@ -232,18 +228,21 @@ impl Store {
             .conn
             .prepare_cached("INSERT INTO events (source_id, seq, event_json) VALUES (?1, ?2, ?3)")
             .map_err(StoreError::from_sqlite)?;
-        let mut written = 0;
-        for (i, event) in events.iter().enumerate() {
-            // An event that will not serialize cannot happen (no maps, no floats), and if it
-            // ever did it would cost one row and not the whole read.
-            let Ok(json) = serde_json::to_string(event) else {
-                continue;
-            };
-            stmt.execute(params![source_id, next + i as i64, json])
-                .map_err(StoreError::from_sqlite)?;
-            written += 1;
-        }
-        Ok(written)
+        // An event that will not serialize cannot happen (no maps, no floats), and if it ever
+        // did it would cost one row and not the whole read. Its sequence number is left unused.
+        events
+            .iter()
+            .enumerate()
+            .filter_map(|(i, event)| {
+                serde_json::to_string(event)
+                    .ok()
+                    .map(|json| (next + i as i64, json))
+            })
+            .try_fold(0, |written, (seq, json)| {
+                stmt.execute(params![source_id, seq, json])
+                    .map(|_| written + 1)
+            })
+            .map_err(StoreError::from_sqlite)
     }
 
     /// Every event of a source, in the order the log wrote them.
@@ -252,18 +251,16 @@ impl Store {
             .conn
             .prepare("SELECT event_json FROM events WHERE source_id = ?1 ORDER BY seq")
             .map_err(StoreError::from_sqlite)?;
-        let rows = stmt
+        let parsed: Vec<Option<Event>> = stmt
             .query_map(params![source_id], |r| r.get::<_, String>(0))
+            .map_err(StoreError::from_sqlite)?
+            .map(|row| row.map(|json| serde_json::from_str(&json).ok()))
+            .collect::<Result<_, _>>()
             .map_err(StoreError::from_sqlite)?;
-        let mut out = EventsRead::default();
-        for row in rows {
-            let json = row.map_err(StoreError::from_sqlite)?;
-            match serde_json::from_str::<Event>(&json) {
-                Ok(e) => out.events.push(e),
-                Err(_) => out.unreadable += 1,
-            }
-        }
-        Ok(out)
+        Ok(EventsRead {
+            unreadable: parsed.iter().filter(|e| e.is_none()).count() as u32,
+            events: parsed.into_iter().flatten().collect(),
+        })
     }
 
     /// Replaces the fold of this source. The ordinal is the position in the log.
@@ -328,19 +325,17 @@ impl Store {
                  ORDER BY ordinal",
             )
             .map_err(StoreError::from_sqlite)?;
-        let rows = stmt
+        // A cache row that will not parse is a cache row: the first one throws the cache away
+        // (`None`) and the caller folds again. Both collects stop at the first failure.
+        let cached: Option<Vec<Run>> = stmt
             .query_map(params![source_id, rules_version], |r| r.get::<_, String>(0))
+            .map_err(StoreError::from_sqlite)?
+            .map(|row| row.map(|json| serde_json::from_str::<Run>(&json).ok()))
+            .collect::<Result<_, _>>()
             .map_err(StoreError::from_sqlite)?;
-        let mut runs = Vec::new();
-        for row in rows {
-            let json = row.map_err(StoreError::from_sqlite)?;
-            match serde_json::from_str::<Run>(&json) {
-                Ok(r) => runs.push(r),
-                // A cache row that will not parse is a cache row: throw the cache away and let
-                // the caller fold again.
-                Err(_) => return Ok(None),
-            }
-        }
+        let Some(runs) = cached else {
+            return Ok(None);
+        };
         if !runs.is_empty() {
             return Ok(Some(runs));
         }

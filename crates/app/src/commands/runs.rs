@@ -9,8 +9,8 @@ use ipc::{IpcError, RunSource, RunView, RunsDiagnostic, RunsInputs, RunsView};
 
 use crate::commands::graph::unlock_of;
 use crate::state::{
-    active_save, progress_sections, ArchiveState, CatalogState, GraphState, LiveUnlockState,
-    ResourcesState, StoreState,
+    active_save, catalog_now, progress_sections, ArchiveState, CatalogState, GraphState,
+    LiveUnlockState, ResourcesState, StoreState,
 };
 
 #[tauri::command]
@@ -21,25 +21,15 @@ pub(crate) fn runs(
     resources: tauri::State<'_, ResourcesState>,
     archive: tauri::State<'_, ArchiveState>,
 ) -> Result<RunsView, IpcError> {
-    let rs = resources.get(&app);
-    let catalog = rs.and_then(|rs| catalog.get_or_build(rs));
+    let catalog = catalog_now(&app, &resources, &catalog);
+    let (sources, read) = archived_sources(&app, &store, &archive);
     // What the archive's own reading met comes first: it is why the list may be short.
-    let mut diagnostics = archive.health().diagnostics();
-    let mut sources = Vec::new();
-
-    match store.lock(&app) {
-        Ok(guard) => match guard.archived_runs(archive.rules().version()) {
-            Ok(archived) => {
-                diagnostics.extend(archived.diagnostics());
-                sources = archived.sources;
-            }
-            Err(e) => diagnostics.push(RunsDiagnostic::StoreUnavailable {
-                reason: (&e).into(),
-            }),
-        },
-        Err(reason) => diagnostics.push(RunsDiagnostic::StoreUnavailable { reason }),
-    }
-
+    let diagnostics = archive
+        .health()
+        .diagnostics()
+        .into_iter()
+        .chain(read)
+        .collect();
     Ok(ipc::runs_view(
         RunsInputs {
             sources,
@@ -48,6 +38,30 @@ pub(crate) fn runs(
         },
         crate::icons::icon_url,
     ))
+}
+
+/// Every source's cached runs, and what reading them met. A database that will not open or
+/// will not answer is no runs and one diagnostic, never an `Err`: the screen still draws.
+fn archived_sources(
+    app: &AppHandle,
+    store: &StoreState,
+    archive: &ArchiveState,
+) -> (Vec<(RunSource, Vec<run::Run>)>, Vec<RunsDiagnostic>) {
+    let read = store.lock(app).and_then(|guard| {
+        guard
+            .archived_runs(archive.rules().version())
+            .map_err(|e| (&e).into())
+    });
+    match read {
+        Ok(archived) => {
+            let diagnostics = archived.diagnostics();
+            (archived.sources, diagnostics)
+        }
+        Err(reason) => (
+            Vec::new(),
+            vec![RunsDiagnostic::StoreUnavailable { reason }],
+        ),
+    }
 }
 
 /// What the run being watched would open (M4 2b). One command, because the archive's open run
@@ -66,34 +80,38 @@ pub(crate) fn live(
     graph: tauri::State<'_, GraphState>,
     live_unlock: tauri::State<'_, LiveUnlockState>,
 ) -> Result<ipc::LiveView, IpcError> {
-    let cat = resources.get(&app).and_then(|rs| catalog.get_or_build(rs));
+    let cat = catalog_now(&app, &resources, &catalog);
     let open = open_run(&app, &store, &archive, cat);
     let unlocked = live_unlock_view(&app, &live_unlock, cat, cat.and_then(|c| graph.get(c)));
     let nodes = ipc::live_graph(unlocked.as_deref());
+    let marks = cat.and_then(|c| live_marks(&app, open.as_ref(), c));
+    Ok(ipc::live_view(open, nodes, marks, |name, id| {
+        characters_named(cat, name, id)
+    }))
+}
 
-    let by_name = |name: &str, id: Option<u32>| -> Vec<(u32, String)> {
-        cat.map(|c| ipc::characters_named(c, name, id))
-            .unwrap_or_default()
-    };
+/// The characters a run's name and id reach, or none without the catalog to look them up in.
+fn characters_named(catalog: Option<&Catalog>, name: &str, id: Option<u32>) -> Vec<(u32, String)> {
+    catalog
+        .map(|c| ipc::characters_named(c, name, id))
+        .unwrap_or_default()
+}
 
-    // The row of the completion matrix for whoever is being played — two rows when the name
-    // reaches two forms. Built from the same counters the Completion screen reads, through the
-    // same function: a second reading would be a second chance to disagree with it.
-    let marks = match (open.as_ref().and_then(|r| r.character.as_deref()), cat) {
-        (Some(name), Some(c)) => progress_sections(&app).ok().and_then(|(_, counters)| {
-            let counters = counters?;
-            let matrix = ipc::marks_matrix(&counters, Some(c), crate::icons::icon_url);
-            let wanted: Vec<u32> = by_name(name, open.as_ref().and_then(|r| r.character_id))
-                .into_iter()
-                .map(|(id, _)| id)
-                .collect();
-            let rows = ipc::live_mark_rows(c, &wanted);
-            (!rows.is_empty()).then(|| ipc::live_marks(&matrix, &rows))
-        }),
-        _ => None,
-    };
-
-    Ok(ipc::live_view(open, nodes, marks, by_name))
+/// The row of the completion matrix for whoever is being played — two rows when the name
+/// reaches two forms. Built from the same counters the Completion screen reads, through the
+/// same function: a second reading would be a second chance to disagree with it. `None` with no
+/// open run, no character named yet, no counters, or no row that matches.
+fn live_marks(app: &AppHandle, open: Option<&RunView>, c: &Catalog) -> Option<ipc::LiveMarks> {
+    let run = open?;
+    let name = run.character.as_deref()?;
+    let (_, counters) = progress_sections(app).ok()?;
+    let matrix = ipc::marks_matrix(&counters?, Some(c), crate::icons::icon_url);
+    let wanted: Vec<u32> = ipc::characters_named(c, name, run.character_id)
+        .into_iter()
+        .map(|(id, _)| id)
+        .collect();
+    let rows = ipc::live_mark_rows(c, &wanted);
+    (!rows.is_empty()).then(|| ipc::live_marks(&matrix, &rows))
 }
 
 /// The open run of the launch being followed, from that launch's own cached fold (card #80,

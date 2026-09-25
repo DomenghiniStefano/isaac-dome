@@ -2,7 +2,7 @@ use std::path::Path;
 
 use serde::Serialize;
 
-use crate::section::Section;
+use crate::section::{Kind, Section};
 
 /// The 14 significant bytes of the signature (followed by 2 padding spaces in the file).
 pub const MAGIC: &[u8; 14] = b"ISAACNGSAVE09R";
@@ -55,6 +55,108 @@ fn read_u32(bytes: &[u8], off: usize) -> u32 {
     u32::from_le_bytes([bytes[off], bytes[off + 1], bytes[off + 2], bytes[off + 3]])
 }
 
+/// Where the first section header is: after the 16-byte signature and the `u32` at 0x10.
+const FIRST_HEADER: usize = 0x14;
+
+/// What reading the header at one offset came to.
+enum Step {
+    /// No room for another header before the checksum: the reading is over.
+    Done,
+    /// A section read whole, and where the next header is.
+    Next {
+        section: Section,
+        diagnostics: Vec<Diagnostic>,
+        next: usize,
+    },
+    /// The reading stops here: a kind with no known entry size, or a section cut short —
+    /// kept, truncated, because what it holds is still worth reading, but nothing after it
+    /// can be trusted.
+    Stop {
+        section: Option<Section>,
+        diagnostics: Vec<Diagnostic>,
+    },
+}
+
+/// The section whose header is at `off`. `body` is the file without its checksum, so nothing
+/// read here can reach into it. Every read is a `.get()`: a header or a section the file is too
+/// short for is a `Step`, never a panic.
+fn read_section(body: &[u8], off: usize, expected: u32) -> Step {
+    let Some(header) = body.get(off..).and_then(|rest| rest.first_chunk::<12>()) else {
+        return Step::Done;
+    };
+    let found_kind = u32::from_le_bytes([header[0], header[1], header[2], header[3]]);
+    let declared_size = u32::from_le_bytes([header[4], header[5], header[6], header[7]]);
+    let count = u32::from_le_bytes([header[8], header[9], header[10], header[11]]);
+    let unexpected = Diagnostic::UnexpectedKind {
+        at: off,
+        expected,
+        found: found_kind,
+    };
+
+    let Some(kind) = Kind::from_number(found_kind) else {
+        // Unknown kind: we don't know the entry size, so we stop here.
+        return Step::Stop {
+            section: None,
+            diagnostics: vec![unexpected],
+        };
+    };
+    // The bestiary (the only variable-length section) doesn't rely on the sequence number to
+    // be sized, and by format it's always the last section; we exempt it from the sequence
+    // check so it doesn't raise a spurious UnexpectedKind when it shows up on its own (e.g. in
+    // fixtures).
+    let out_of_sequence = (found_kind != expected && kind.bytes_per_entry().is_some())
+        .then_some(unexpected)
+        .into_iter();
+
+    let data = off + header.len();
+    let available = body.len().saturating_sub(data);
+    let wanted = match kind.bytes_per_entry() {
+        None => available, // bestiary: up to end-4
+        Some(sz) => (count as usize).saturating_mul(sz),
+    };
+    let len = wanted.min(available);
+    let section = Section {
+        kind,
+        count,
+        declared_size,
+        offset: data,
+        bytes: body
+            .get(data..data + len)
+            .map(<[u8]>::to_vec)
+            .unwrap_or_default(),
+    };
+
+    if wanted > available {
+        let overrun = Diagnostic::SectionOverrun {
+            kind: found_kind,
+            at: data,
+            needed: wanted,
+            available,
+        };
+        // Truncated: we can't trust the rest.
+        return Step::Stop {
+            section: Some(section),
+            diagnostics: out_of_sequence.chain([overrun]).collect(),
+        };
+    }
+    Step::Next {
+        section,
+        diagnostics: out_of_sequence.collect(),
+        next: data + len,
+    }
+}
+
+/// How far the section headers have been read, and what they held.
+struct Reading {
+    off: usize,
+    /// The kind the next header should carry: one after the kind the last one **did** carry,
+    /// not after the one that was expected — one missing section is one diagnostic, not one
+    /// per section after it (card #80, P11a).
+    expected: u32,
+    sections: Vec<Section>,
+    diagnostics: Vec<Diagnostic>,
+}
+
 impl Save {
     /// Reads and interprets a file. Read-only.
     pub fn open(path: impl AsRef<Path>) -> Result<Save, OpenError> {
@@ -75,91 +177,50 @@ impl Save {
         }
         let unknown_0x10 = read_u32(bytes, 0x10);
 
-        let end = bytes.len() - 4;
-        let mut off = 0x14usize;
-        let mut sections = Vec::new();
-        let mut diagnostics = Vec::new();
-        let mut expected = 1u32;
-
-        while off + 12 <= end {
-            let found_kind = read_u32(bytes, off);
-            let f2 = read_u32(bytes, off + 4);
-            let count = read_u32(bytes, off + 8);
-
-            let kind = match crate::section::Kind::from_number(found_kind) {
-                Some(k) => k,
-                None => {
-                    // Unknown kind: we don't know the entry size, so we stop here.
-                    diagnostics.push(Diagnostic::UnexpectedKind {
-                        at: off,
-                        expected,
-                        found: found_kind,
-                    });
+        // The last four bytes are the checksum, never a section.
+        let body = &bytes[..bytes.len() - 4];
+        let mut reading = Reading {
+            off: FIRST_HEADER,
+            expected: 1,
+            sections: Vec::new(),
+            diagnostics: Vec::new(),
+        };
+        loop {
+            match read_section(body, reading.off, reading.expected) {
+                Step::Done => break,
+                Step::Next {
+                    section,
+                    diagnostics,
+                    next,
+                } => {
+                    reading.expected = section.kind.number().saturating_add(1);
+                    reading.sections.push(section);
+                    reading.diagnostics.extend(diagnostics);
+                    reading.off = next;
+                }
+                Step::Stop {
+                    section,
+                    diagnostics,
+                } => {
+                    reading.sections.extend(section);
+                    reading.diagnostics.extend(diagnostics);
                     break;
                 }
-            };
-
-            // The bestiary (the only variable-length section) doesn't rely on the
-            // sequence number to be sized, and by format it's always the last
-            // section; we exempt it from the sequence check so it doesn't raise a
-            // spurious UnexpectedKind when it shows up on its own (e.g. in fixtures).
-            if found_kind != expected && kind.bytes_per_entry().is_some() {
-                diagnostics.push(Diagnostic::UnexpectedKind {
-                    at: off,
-                    expected,
-                    found: found_kind,
-                });
             }
-
-            let data = off + 12;
-            let available = end - data;
-            let wanted = match kind.bytes_per_entry() {
-                None => available, // bestiary: up to end-4
-                Some(sz) => (count as usize).saturating_mul(sz),
-            };
-
-            let len = if wanted > available {
-                diagnostics.push(Diagnostic::SectionOverrun {
-                    kind: found_kind,
-                    at: data,
-                    needed: wanted,
-                    available,
-                });
-                available
-            } else {
-                wanted
-            };
-
-            sections.push(Section {
-                kind,
-                count,
-                f2,
-                offset: data,
-                bytes: bytes[data..data + len].to_vec(),
-            });
-
-            if len != wanted {
-                break; // truncated: we can't trust the rest
-            }
-
-            off = data + len;
-            // The next is expected after the one that was found, not after the one that was
-            // expected: one missing section is one diagnostic, not one per section after it
-            // (card #80, P11a).
-            expected = found_kind.saturating_add(1);
         }
 
-        if off < end {
-            diagnostics.push(Diagnostic::TrailingBytes {
-                at: off,
-                len: end - off,
+        // Whatever the headers did not account for, from the header the reading stopped at.
+        if reading.off < body.len() {
+            reading.diagnostics.push(Diagnostic::TrailingBytes {
+                at: reading.off,
+                len: body.len() - reading.off,
             });
         }
 
         Ok(Save {
             unknown_0x10,
-            sections,
-            diagnostics,
+            sections: reading.sections,
+            diagnostics: reading.diagnostics,
         })
     }
 }
@@ -205,7 +266,7 @@ impl Save {
 
     /// The bestiary read as the tallies it declares. `None` when the section is absent
     /// or too short to carry a header; a section that is present but malformed comes
-    /// back with what could be read and the rest counted in `unread_words`.
+    /// back with what could be read and the rest kept, as values, in `Bestiary::trailing`.
     pub fn bestiary_tallies(&self) -> Option<crate::bestiary::Bestiary> {
         self.bestiary().and_then(crate::bestiary::read)
     }

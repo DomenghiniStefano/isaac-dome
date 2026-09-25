@@ -9,7 +9,7 @@
 //! Real files come in three different shapes, and this module treats them all the same
 //! way because they're the same thing seen from different angles:
 //!
-//! - `minimap_icons.anm2`: 41 one-frame animations — the animation name **is** the
+//! - `minimap_icons.anm2`: one-frame animations — the animation name **is** the
 //!   icon's name (`IconShop`, `IconDevilRoom`…);
 //! - `hudstats.anm2`: two nine-frame animations — the name lives on the animation, and
 //!   the individual piece is told apart by position;
@@ -24,8 +24,7 @@
 //! contain it. It's up to the caller to decide what to do with it.
 
 use crate::sprite::{Point, Rect};
-use crate::strings::children_named;
-use crate::xml::{elements, Element};
+use crate::xml::{children_named, elements, Element};
 
 /// A frame of an `.anm2`: a crop, and where it comes from.
 #[derive(Debug, Clone, PartialEq, Eq)]
@@ -81,39 +80,83 @@ pub fn spritesheets(bytes: &[u8]) -> Vec<String> {
 /// catalog source to attribute a diagnostic to: the caller knows which file it opened.
 pub fn frames(bytes: &[u8]) -> Option<Vec<Anm2Frame>> {
     let els = elements(bytes).ok()?;
-    let layers = layer_names(&els);
-    let sheets = sheet_paths(&els);
-    let mut out = Vec::new();
-    for (i, e) in els.iter().enumerate() {
-        if e.name != "LayerAnimation" {
-            continue;
-        }
-        let animation = animation_of(&els, i).unwrap_or_default();
-        let declared = e
-            .attr("LayerId")
-            .and_then(|id| layers.iter().find(|(k, _, _)| k == id));
-        let layer = declared.map(|(_, n, _)| n.clone()).unwrap_or_default();
-        // The layer's sheet; if the layer doesn't declare one, the file's first — the
-        // only case where "the first one" is the right answer.
-        let sheet = declared
-            .and_then(|(_, _, s)| sheets.iter().find(|(k, _)| k == s))
-            .map(|(_, p)| p.clone())
-            .or_else(|| sheets.first().map(|(_, p)| p.clone()))
-            .unwrap_or_default();
-        for (index, f) in children_named(&els, i, "Frame").into_iter().enumerate() {
-            let Some(rect) = rect_of(f) else { continue };
-            out.push(Anm2Frame {
+    Some(
+        layer_animations(&els)
+            .into_iter()
+            .flat_map(crops_of)
+            .collect(),
+    )
+}
+
+/// A `<LayerAnimation>` as the file declares it: the animation that holds it, the layer and
+/// sheet it draws, and **every** `<Frame>` it has, crop or not, in order.
+///
+/// Shared by [`frames`], which keeps the crops, and `heads`, which needs the frames without
+/// one too: its map indexes a layer by position.
+pub(crate) struct LayerAnimation<'a> {
+    pub animation: String,
+    /// The `LayerId` attribute as written, `None` when there is none.
+    pub layer_id: Option<&'a str>,
+    pub layer: String,
+    pub sheet: String,
+    pub frames: Vec<&'a Element>,
+}
+
+/// Every `<LayerAnimation>` of `els`, in document order.
+pub(crate) fn layer_animations(els: &[Element]) -> Vec<LayerAnimation<'_>> {
+    let layers = layer_names(els);
+    let sheets = sheet_paths(els);
+    els.iter()
+        .enumerate()
+        .filter(|(_, e)| e.name == "LayerAnimation")
+        .map(|(i, e)| {
+            let layer_id = e.attr("LayerId");
+            let declared = layer_id.and_then(|id| layers.iter().find(|(k, _, _)| k == id));
+            LayerAnimation {
+                animation: animation_of(els, i).unwrap_or_default(),
+                layer_id,
+                layer: declared.map(|(_, n, _)| n.clone()).unwrap_or_default(),
+                sheet: sheet_of(declared.map(|(_, _, s)| s.as_str()), &sheets),
+                frames: children_named(els, i, "Frame"),
+            }
+        })
+        .collect()
+}
+
+/// The layer's sheet; if the layer doesn't declare one, the file's first — the only case
+/// where "the first one" is the right answer.
+fn sheet_of(declared: Option<&str>, sheets: &[(String, String)]) -> String {
+    declared
+        .and_then(|s| sheets.iter().find(|(k, _)| k == s))
+        .or_else(|| sheets.first())
+        .map(|(_, p)| p.clone())
+        .unwrap_or_default()
+}
+
+/// The crops of one layer animation. `index` counts every frame, the ones left out
+/// included: it is the frame's position in its layer.
+fn crops_of(la: LayerAnimation<'_>) -> impl Iterator<Item = Anm2Frame> + '_ {
+    let LayerAnimation {
+        animation,
+        layer,
+        sheet,
+        frames,
+        ..
+    } = la;
+    frames
+        .into_iter()
+        .enumerate()
+        .filter_map(move |(index, f)| {
+            Some(Anm2Frame {
                 animation: animation.clone(),
                 layer: layer.clone(),
                 sheet: sheet.clone(),
                 index,
                 visible: f.attr("Visible") != Some("false"),
-                rect,
+                rect: rect_of(f)?,
                 origin: origin_of(f),
-            });
-        }
-    }
-    Some(out)
+            })
+        })
 }
 
 /// `(id, name, sheet id)` of the layers declared in `<Layers>`.
@@ -168,7 +211,9 @@ fn origin_of(e: &Element) -> Point {
     }
 }
 
-fn rect_of(e: &Element) -> Option<Rect> {
+/// The piece of the sheet a frame draws: all four of `XCrop`, `YCrop`, `Width`, `Height`,
+/// or none — a frame missing one is not a crop.
+pub(crate) fn rect_of(e: &Element) -> Option<Rect> {
     let n = |name: &str| e.attr(name).and_then(|v| v.parse::<u32>().ok());
     Some(Rect {
         x: n("XCrop")?,
@@ -330,6 +375,73 @@ mod tests {
     fn the_sheet_to_cut_is_read_from_the_file() {
         assert_eq!(spritesheets(PER_LAYER), vec!["completion_widget.png"]);
         assert_eq!(spritesheets(PER_ANIMATION), vec!["minimap_icons.png"]);
+    }
+
+    /// A layer animation naming a layer nobody declared, one outside any `<Animation>`, a
+    /// frame without `Visible`, and a frame nested one level too deep to be the layer's.
+    const LOOSE: &[u8] = br#"<AnimatedActor>
+<Content><Spritesheets><Spritesheet Id="5" Path="first.png"/><Spritesheet Id="6" Path="second.png"/></Spritesheets>
+<Layers><Layer Id="0" Name="Known" SpritesheetId="9"/><Layer Name="NoId"/></Layers></Content>
+<LayerAnimation LayerId="0"><Frame XCrop="1" YCrop="1" Width="1" Height="1"/></LayerAnimation>
+<Animations><Animation Name="A"><LayerAnimations>
+<LayerAnimation LayerId="42"><Frame XCrop="2" YCrop="2" Width="2" Height="2" Visible="False"/><Group><Frame XCrop="9" YCrop="9" Width="9" Height="9"/></Group></LayerAnimation>
+<LayerAnimation><Frame XCrop="3" YCrop="3" Width="3" Height="3" XPosition="x"/></LayerAnimation>
+</LayerAnimations></Animation></Animations></AnimatedActor>"#;
+
+    #[test]
+    fn what_a_file_leaves_undeclared_reads_as_empty_names_and_the_first_sheet() {
+        let f = frames(LOOSE).expect("valid XML");
+        let seen: Vec<(&str, &str, &str, usize, bool, u32)> = f
+            .iter()
+            .map(|f| {
+                (
+                    f.animation.as_str(),
+                    f.layer.as_str(),
+                    f.sheet.as_str(),
+                    f.index,
+                    f.visible,
+                    f.rect.x,
+                )
+            })
+            .collect();
+        assert_eq!(
+            seen,
+            vec![
+                // Outside any animation; its layer's sheet id names no sheet.
+                ("", "Known", "first.png", 0, true, 1),
+                // A layer nobody declared; `Visible` is only `false` when it says so.
+                ("A", "", "first.png", 0, true, 2),
+                // No `LayerId` at all.
+                ("A", "", "first.png", 0, true, 3),
+            ],
+            "the nested frame is not the layer's"
+        );
+        assert_eq!(
+            f[2].origin,
+            Point { x: 0, y: 0 },
+            "a malformed position is 0"
+        );
+    }
+
+    #[test]
+    fn a_crop_with_a_malformed_coordinate_is_not_a_crop() {
+        let bad: &[u8] = br#"<AnimatedActor><Animations><Animation Name="A"><LayerAnimations>
+<LayerAnimation LayerId="0"><Frame XCrop="-1" YCrop="0" Width="4" Height="4"/><Frame XCrop="0" YCrop="0" Width="4" Height="4"/></LayerAnimation>
+</LayerAnimations></Animation></Animations></AnimatedActor>"#;
+        let f = frames(bad).expect("valid XML");
+        assert_eq!(f.len(), 1);
+        assert_eq!(f[0].index, 1, "the index still counts the frame left out");
+        assert_eq!(f[0].sheet, "", "no sheet declared at all");
+    }
+
+    #[test]
+    fn an_unreadable_file_has_no_spritesheets() {
+        assert!(spritesheets(b"not xml <<<").is_empty());
+        assert_eq!(
+            spritesheets(LOOSE),
+            vec!["first.png", "second.png"],
+            "declaration order"
+        );
     }
 
     #[test]

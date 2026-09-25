@@ -92,8 +92,15 @@ impl Kind {
 #[derive(Debug, Clone)]
 pub struct Section {
     pub kind: Kind,
+    /// The header's third word: the number of entries. Not the bestiary's, whose `count` counts
+    /// something else (`docs/save-format.md`).
     pub count: u32,
-    pub f2: u32,
+    /// The header's second word, the size the section declares for itself: `count × 4` on every
+    /// save measured — the size in memory, which is not the size on disk for the one-byte
+    /// sections (`docs/save-format.md`). Carried as read and never used to size anything: the
+    /// bytes on disk are sized from `count` and `Kind::bytes_per_entry`.
+    pub declared_size: u32,
+    /// Where the section's data starts in the file, just after its twelve-byte header.
     pub offset: usize,
     pub bytes: Vec<u8>,
 }

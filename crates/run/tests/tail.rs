@@ -1,4 +1,4 @@
-//! Bytes arrive in chunks that do not respect line endings, and the game relaunches.
+//! Bytes arrive in chunks that do not respect line endings.
 
 use run::Tail;
 
@@ -30,24 +30,27 @@ fn a_chunk_with_no_newline_yields_nothing_and_loses_nothing() {
 }
 
 #[test]
-fn a_shorter_file_is_a_new_launch() {
-    let mut tail = Tail::default();
-    tail.advance(b"aaaa\nbbbb\n");
-    assert!(
-        tail.restarted(4),
-        "10 bytes read, file is 4: the game relaunched"
-    );
-    assert!(!tail.restarted(10), "same length: the same launch");
-    assert!(!tail.restarted(99), "longer: it just grew");
+fn wherever_a_read_ends_the_lines_that_come_out_are_the_same() {
+    // A property over every split point, not a pinned value: a read ends wherever 256 KiB ends,
+    // and the lines must not depend on where that was.
+    let log = b"[INFO] - first\r\nsecond\n\n[INFO] - fourth\n";
+    let whole: Vec<String> = Tail::default().advance(log);
+    assert_eq!(whole.len(), 4, "the property below needs lines to compare");
+    for split in 0..=log.len() {
+        let mut tail = Tail::default();
+        let mut lines = tail.advance(&log[..split]);
+        lines.extend(tail.advance(&log[split..]));
+        assert_eq!(lines, whole, "split at byte {split}");
+        assert_eq!(tail.pending(), 0, "split at byte {split}");
+    }
 }
 
 #[test]
-fn a_relaunch_drops_the_remainder_of_the_old_file() {
-    // Otherwise the first line of the new log arrives glued to half a line of the old one.
+fn an_empty_line_is_a_line_and_not_skipped() {
+    // Dropping a blank line would be a judgment about what it means, and every
+    // judgment belongs to the fold.
     let mut tail = Tail::default();
-    tail.advance(b"old half");
-    tail.restart();
-    assert_eq!(tail.advance(b"[INFO] - new\n"), vec!["[INFO] - new"]);
+    assert_eq!(tail.advance(b"a\n\nb\n"), vec!["a", "", "b"]);
 }
 
 #[test]

@@ -11,9 +11,8 @@ struct File {
     patterns: BTreeMap<String, String>,
 }
 
-/// Why a rules file could not be used. Typed rather than a `String` because the caller reports
-/// it to the user and then falls back to the embedded file: "which pattern" is the only part
-/// worth saying, and a sentence built with `format!` is not translatable.
+/// Why a rules file could not be used. Typed rather than a `String` so a test can tell which
+/// part failed: "which pattern" is the only part worth saying.
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub enum RulesError {
     /// The file is not the JSON this expects.
@@ -88,8 +87,9 @@ impl Rules {
             .expect("the embedded rules file is part of the build")
     }
 
-    /// A rules file supplied by the user. Never panics: the caller reports the error and keeps
-    /// the embedded rules.
+    /// A rules file, parsed. The app only ever parses the embedded one (`embedded`); this is
+    /// public so the tests can hand it files of their own, and it never panics, so a file that
+    /// does not parse is an error the caller can name.
     pub fn parse(text: &str) -> Result<Self, RulesError> {
         let file: File = serde_json::from_str(text).map_err(|e| RulesError::Json(e.to_string()))?;
         let mut patterns = Vec::new();

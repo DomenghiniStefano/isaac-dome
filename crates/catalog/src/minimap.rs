@@ -1,6 +1,7 @@
 //! `gfx/ui/minimap_icons.anm2`: the icons the game draws on its own minimap.
 //!
-//! Forty-one one-frame animations on one sheet, and **the animation's name is the icon's
+//! One-frame animations on one sheet — forty-one when this module was written, on
+//! 2026-09-20 — and **the animation's name is the icon's
 //! name** — `IconShop`, `IconBoss`, `IconSecretRoom`. That is the whole index: there is no
 //! numbering to get wrong and no order to depend on, so a patch that adds an icon adds a name
 //! and nothing here has to move.
@@ -29,17 +30,16 @@ pub fn parse(bytes: &[u8], diagnostics: &mut Vec<Diagnostic>) -> BTreeMap<String
         });
         return BTreeMap::new();
     };
-    let mut out: BTreeMap<String, SpriteRef> = BTreeMap::new();
-    for frame in frames {
-        if frame.animation.is_empty() {
-            continue;
-        }
-        out.entry(frame.animation).or_insert(SpriteRef {
-            path: SHEET.to_string(),
-            rect: Some(frame.rect),
-        });
-    }
-    out
+    frames
+        .into_iter()
+        .filter(|frame| !frame.animation.is_empty())
+        .fold(BTreeMap::new(), |mut icons, frame| {
+            icons.entry(frame.animation).or_insert(SpriteRef {
+                path: SHEET.to_string(),
+                rect: Some(frame.rect),
+            });
+            icons
+        })
 }
 
 #[cfg(test)]

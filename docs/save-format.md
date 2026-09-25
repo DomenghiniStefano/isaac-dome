@@ -56,7 +56,7 @@ Two things this touches, neither of them a defect today:
 offset 16 over that series says whether zero is a 2024 shape or a general one. Until then this is
 a measurement on the series that was read, which is exactly as far as it goes.
 
-Section header: three little-endian `u32`s — `kind` (sequential 1..10), `f2` (= count × 4,
+Section header: three little-endian `u32`s — `kind` (sequential 1..10), `declared_size` (= count × 4,
 the "in-memory" size), `count`. Then the data: `count` entries, whose **on-disk** size
 depends on the section.
 
@@ -274,7 +274,7 @@ moving, and 493–522 is a family of counters that move several per session.
 
 Unlike every other section, it **describes itself** — read the declarations, don't assume
 the shape. Measured 2026-09-09 on four saves across two editions; the header's `count=80` /
-`f2=320` describe nothing in this layout and are ignored.
+`declared_size=320` describe nothing in this layout and are ignored.
 
 ```
 words[0..19]   twenty zeros
