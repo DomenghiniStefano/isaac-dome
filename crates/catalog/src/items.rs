@@ -8,7 +8,9 @@ use crate::itempools::PoolMembership;
 use crate::origin::{self, Origin};
 use crate::sprite::SpriteRef;
 use crate::text::Text;
-use crate::xml::{elements, Element};
+use crate::xml::{self, Element};
+
+const SOURCE: Source = Source::Items;
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash, Serialize)]
 #[serde(rename_all = "camelCase")]
@@ -54,23 +56,10 @@ pub struct Item {
 }
 
 pub fn parse(bytes: &[u8], diagnostics: &mut Vec<Diagnostic>) -> Vec<Item> {
-    let els = match elements(bytes) {
-        Ok(els) => els,
-        Err(_) => {
-            diagnostics.push(Diagnostic::SourceUnreadable {
-                source: Source::Items,
-            });
-            return Vec::new();
-        }
+    let Some(els) = xml::read(bytes, SOURCE, diagnostics) else {
+        return Vec::new();
     };
-    let gfxroot = els
-        .iter()
-        .find(|e| e.name == "items")
-        .and_then(|e| e.attr("gfxroot"))
-        .map(normalize_root)
-        .filter(|r| !r.is_empty())
-        .unwrap_or_else(|| "gfx/items".to_string());
-
+    let gfxroot = xml::root_attr(&els, "items", "gfxroot", "gfx/items");
     els.iter()
         .filter_map(|e| ItemKind::from_tag(&e.name).map(|k| (e, k)))
         .filter_map(|(e, kind)| item_from(e, kind, &gfxroot, diagnostics))
@@ -78,27 +67,9 @@ pub fn parse(bytes: &[u8], diagnostics: &mut Vec<Diagnostic>) -> Vec<Item> {
 }
 
 fn item_from(e: &Element, kind: ItemKind, gfxroot: &str, d: &mut Vec<Diagnostic>) -> Option<Item> {
-    let skip = |id: Option<u32>, reason: SkipReason, d: &mut Vec<Diagnostic>| {
-        d.push(Diagnostic::ElementSkipped {
-            source: Source::Items,
-            id,
-            reason,
-        });
-        None
-    };
-    let Some(raw_id) = e.attr("id") else {
-        return skip(None, SkipReason::MissingId, d);
-    };
-    let Ok(id) = raw_id.parse::<u32>() else {
-        return skip(None, SkipReason::MalformedId, d);
-    };
-    let Some(gfx) = e.attr("gfx") else {
-        return skip(Some(id), SkipReason::MissingSprite, d);
-    };
-    let Some(name) = e.attr("name") else {
-        return skip(Some(id), SkipReason::MissingName, d);
-    };
-
+    let id = xml::required_id(e, "id", SOURCE, d)?;
+    let gfx = xml::required_attr(e, "gfx", id, SkipReason::MissingSprite, SOURCE, d)?;
+    let name = xml::required_attr(e, "name", id, SkipReason::MissingName, SOURCE, d)?;
     Some(Item {
         id: ItemId(id),
         kind,
@@ -115,13 +86,6 @@ fn item_from(e: &Element, kind: ItemKind, gfxroot: &str, d: &mut Vec<Diagnostic>
         pools: Vec::new(),
         origin: origin::origin_of(kind, ItemId(id)),
     })
-}
-
-/// `resources/gfx/items/` or `gfx/items/` -> `gfx/items`: no archive root or trailing slash.
-pub(crate) fn normalize_root(root: &str) -> String {
-    let r = root.replace('\\', "/");
-    let r = r.strip_prefix("resources/").unwrap_or(&r);
-    r.trim_matches('/').to_string()
 }
 
 #[cfg(test)]
@@ -277,14 +241,6 @@ mod tests {
                 source: Source::Items
             }]
         );
-    }
-
-    #[test]
-    fn normalize_root_strips_the_archive_prefix_backslashes_and_trailing_slashes() {
-        assert_eq!(normalize_root("resources/gfx/items/"), "gfx/items");
-        assert_eq!(normalize_root("gfx/items"), "gfx/items");
-        assert_eq!(normalize_root("gfx\\items\\"), "gfx/items");
-        assert_eq!(normalize_root(""), "");
     }
 
     #[test]

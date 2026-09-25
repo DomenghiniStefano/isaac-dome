@@ -5,8 +5,9 @@
 
 use crate::diagnostics::{Diagnostic, SkipReason, Source};
 use crate::ids::ItemId;
-use crate::strings::children_named;
-use crate::xml::{elements, Element};
+use crate::xml::{self, Element};
+
+const SOURCE: Source = Source::ItemPools;
 
 #[derive(Debug, Clone, PartialEq)]
 pub struct PoolEntry {
@@ -30,45 +31,34 @@ pub struct PoolMembership {
 }
 
 pub fn parse(bytes: &[u8], diagnostics: &mut Vec<Diagnostic>) -> Vec<Pool> {
-    let els = match elements(bytes) {
-        Ok(els) => els,
-        Err(_) => {
-            diagnostics.push(Diagnostic::SourceUnreadable {
-                source: Source::ItemPools,
-            });
-            return Vec::new();
-        }
+    let Some(els) = xml::read(bytes, SOURCE, diagnostics) else {
+        return Vec::new();
     };
-    let mut pools = Vec::new();
-    for (i, e) in els.iter().enumerate() {
-        if e.name != "Pool" {
-            continue;
-        }
-        let Some(name) = e.attr("Name") else {
-            diagnostics.push(skipped(None, SkipReason::MissingName));
-            continue;
-        };
-        let entries = children_named(&els, i, "Item")
-            .into_iter()
-            .filter_map(|item| entry_from(item, diagnostics))
-            .collect();
-        pools.push(Pool {
-            name: name.to_string(),
-            entries,
-        });
-    }
-    pools
+    els.iter()
+        .enumerate()
+        .filter(|(_, e)| e.name == "Pool")
+        .filter_map(|(i, _)| pool_from(&els, i, diagnostics))
+        .collect()
+}
+
+/// The pool at `els[i]`. A pool without a name is skipped whole: its entries are not read,
+/// so they are not diagnosed either.
+fn pool_from(els: &[Element], i: usize, d: &mut Vec<Diagnostic>) -> Option<Pool> {
+    let Some(name) = els[i].attr("Name") else {
+        return xml::skip(SOURCE, None, SkipReason::MissingName, d);
+    };
+    let entries = xml::children_named(els, i, "Item")
+        .into_iter()
+        .filter_map(|item| entry_from(item, d))
+        .collect();
+    Some(Pool {
+        name: name.to_string(),
+        entries,
+    })
 }
 
 fn entry_from(e: &Element, d: &mut Vec<Diagnostic>) -> Option<PoolEntry> {
-    let Some(raw_id) = e.attr("Id") else {
-        d.push(skipped(None, SkipReason::MissingId));
-        return None;
-    };
-    let Ok(id) = raw_id.parse::<u32>() else {
-        d.push(skipped(None, SkipReason::MalformedId));
-        return None;
-    };
+    let id = xml::required_id(e, "Id", SOURCE, d)?;
     let num =
         |name: &str, default: f32| e.attr(name).and_then(|v| v.parse().ok()).unwrap_or(default);
     Some(PoolEntry {
@@ -77,14 +67,6 @@ fn entry_from(e: &Element, d: &mut Vec<Diagnostic>) -> Option<PoolEntry> {
         decrease_by: num("DecreaseBy", 1.0),
         remove_on: num("RemoveOn", 0.1),
     })
-}
-
-fn skipped(id: Option<u32>, reason: SkipReason) -> Diagnostic {
-    Diagnostic::ElementSkipped {
-        source: Source::ItemPools,
-        id,
-        reason,
-    }
 }
 
 #[cfg(test)]

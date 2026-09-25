@@ -24,8 +24,7 @@
 //! contain it. It's up to the caller to decide what to do with it.
 
 use crate::sprite::{Point, Rect};
-use crate::strings::children_named;
-use crate::xml::{elements, Element};
+use crate::xml::{children_named, elements, Element};
 
 /// A frame of an `.anm2`: a crop, and where it comes from.
 #[derive(Debug, Clone, PartialEq, Eq)]
@@ -81,39 +80,83 @@ pub fn spritesheets(bytes: &[u8]) -> Vec<String> {
 /// catalog source to attribute a diagnostic to: the caller knows which file it opened.
 pub fn frames(bytes: &[u8]) -> Option<Vec<Anm2Frame>> {
     let els = elements(bytes).ok()?;
-    let layers = layer_names(&els);
-    let sheets = sheet_paths(&els);
-    let mut out = Vec::new();
-    for (i, e) in els.iter().enumerate() {
-        if e.name != "LayerAnimation" {
-            continue;
-        }
-        let animation = animation_of(&els, i).unwrap_or_default();
-        let declared = e
-            .attr("LayerId")
-            .and_then(|id| layers.iter().find(|(k, _, _)| k == id));
-        let layer = declared.map(|(_, n, _)| n.clone()).unwrap_or_default();
-        // The layer's sheet; if the layer doesn't declare one, the file's first — the
-        // only case where "the first one" is the right answer.
-        let sheet = declared
-            .and_then(|(_, _, s)| sheets.iter().find(|(k, _)| k == s))
-            .map(|(_, p)| p.clone())
-            .or_else(|| sheets.first().map(|(_, p)| p.clone()))
-            .unwrap_or_default();
-        for (index, f) in children_named(&els, i, "Frame").into_iter().enumerate() {
-            let Some(rect) = rect_of(f) else { continue };
-            out.push(Anm2Frame {
+    Some(
+        layer_animations(&els)
+            .into_iter()
+            .flat_map(crops_of)
+            .collect(),
+    )
+}
+
+/// A `<LayerAnimation>` as the file declares it: the animation that holds it, the layer and
+/// sheet it draws, and **every** `<Frame>` it has, crop or not, in order.
+///
+/// Shared by [`frames`], which keeps the crops, and `heads`, which needs the frames without
+/// one too: its map indexes a layer by position.
+pub(crate) struct LayerAnimation<'a> {
+    pub animation: String,
+    /// The `LayerId` attribute as written, `None` when there is none.
+    pub layer_id: Option<&'a str>,
+    pub layer: String,
+    pub sheet: String,
+    pub frames: Vec<&'a Element>,
+}
+
+/// Every `<LayerAnimation>` of `els`, in document order.
+pub(crate) fn layer_animations(els: &[Element]) -> Vec<LayerAnimation<'_>> {
+    let layers = layer_names(els);
+    let sheets = sheet_paths(els);
+    els.iter()
+        .enumerate()
+        .filter(|(_, e)| e.name == "LayerAnimation")
+        .map(|(i, e)| {
+            let layer_id = e.attr("LayerId");
+            let declared = layer_id.and_then(|id| layers.iter().find(|(k, _, _)| k == id));
+            LayerAnimation {
+                animation: animation_of(els, i).unwrap_or_default(),
+                layer_id,
+                layer: declared.map(|(_, n, _)| n.clone()).unwrap_or_default(),
+                sheet: sheet_of(declared.map(|(_, _, s)| s.as_str()), &sheets),
+                frames: children_named(els, i, "Frame"),
+            }
+        })
+        .collect()
+}
+
+/// The layer's sheet; if the layer doesn't declare one, the file's first — the only case
+/// where "the first one" is the right answer.
+fn sheet_of(declared: Option<&str>, sheets: &[(String, String)]) -> String {
+    declared
+        .and_then(|s| sheets.iter().find(|(k, _)| k == s))
+        .or_else(|| sheets.first())
+        .map(|(_, p)| p.clone())
+        .unwrap_or_default()
+}
+
+/// The crops of one layer animation. `index` counts every frame, the ones left out
+/// included: it is the frame's position in its layer.
+fn crops_of(la: LayerAnimation<'_>) -> impl Iterator<Item = Anm2Frame> + '_ {
+    let LayerAnimation {
+        animation,
+        layer,
+        sheet,
+        frames,
+        ..
+    } = la;
+    frames
+        .into_iter()
+        .enumerate()
+        .filter_map(move |(index, f)| {
+            Some(Anm2Frame {
                 animation: animation.clone(),
                 layer: layer.clone(),
                 sheet: sheet.clone(),
                 index,
                 visible: f.attr("Visible") != Some("false"),
-                rect,
+                rect: rect_of(f)?,
                 origin: origin_of(f),
-            });
-        }
-    }
-    Some(out)
+            })
+        })
 }
 
 /// `(id, name, sheet id)` of the layers declared in `<Layers>`.
@@ -168,7 +211,9 @@ fn origin_of(e: &Element) -> Point {
     }
 }
 
-fn rect_of(e: &Element) -> Option<Rect> {
+/// The piece of the sheet a frame draws: all four of `XCrop`, `YCrop`, `Width`, `Height`,
+/// or none — a frame missing one is not a crop.
+pub(crate) fn rect_of(e: &Element) -> Option<Rect> {
     let n = |name: &str| e.attr(name).and_then(|v| v.parse::<u32>().ok());
     Some(Rect {
         x: n("XCrop")?,
