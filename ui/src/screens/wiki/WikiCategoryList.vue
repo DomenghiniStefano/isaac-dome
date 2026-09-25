@@ -13,7 +13,6 @@ import { useTabView } from '@/composables/useTabView'
 import { useMessages } from '@/i18n'
 import type { WikiPageRef } from '@/lib/ipc/types'
 import { rowWikiPx } from '@/lib/scale/rows'
-import { pageLocation } from '@/lib/wiki/category'
 import { emptyList, queryTyped } from '@/lib/facets/emptyList'
 import { filterPages } from '@/lib/wiki/listFilter'
 import type { ScrollOffset } from '@/lib/scale/scrollOffset'
@@ -64,10 +63,8 @@ const noCatalog = computed(
   () => all.value.length > 0 && all.value.every((p) => p.iconUrl === null),
 )
 
-const open = (page: WikiPageRef, event: MouseEvent) => {
-  const location = pageLocation(page.target)
-  if (location !== null) tabs.go(location, event.ctrlKey)
-}
+const open = (page: WikiPageRef, event: MouseEvent) =>
+  tabs.openPage(page.target, event.ctrlKey)
 </script>
 
 <template>

@@ -9,7 +9,6 @@ import { NodeState, nodeState } from '@/lib/graph/nodeState'
 import { nodeUnlocks } from '@/lib/graph/nodeUnlocks'
 import { nodeWhy } from '@/lib/graph/whyMenu'
 import type { UnlockNode } from '@/lib/ipc/types'
-import type { TabLocation } from '@/router/routeTable'
 import { useTabsStore } from '@/stores/tabs'
 
 const props = defineProps<{
@@ -51,10 +50,6 @@ const opensText = computed(() => {
     ? t('profileBlock.opens', { count })
     : t('profileBlock.opensNothing')
 })
-
-const open = (location: TabLocation | null, newTab: boolean) => {
-  if (location) tabs.go(location, newTab)
-}
 </script>
 
 <template>
@@ -84,7 +79,7 @@ const open = (location: TabLocation | null, newTab: boolean) => {
               v-if="entry.location"
               :variant="ButtonVariant.Ref"
               :size="ButtonSize.Inline"
-              @click="open(entry.location, $event.ctrlKey)"
+              @click="tabs.go(entry.location, $event.ctrlKey)"
               >{{ entry.name }}</Button
             >
             <!-- Nowhere to read about it: the name shows, and does not pretend to link. -->
@@ -107,7 +102,7 @@ const open = (location: TabLocation | null, newTab: boolean) => {
               v-if="entry.location"
               :variant="ButtonVariant.Ref"
               :size="ButtonSize.Inline"
-              @click="open(entry.location, $event.ctrlKey)"
+              @click="tabs.go(entry.location, $event.ctrlKey)"
             >
               <img
                 v-if="entry.iconUrl"

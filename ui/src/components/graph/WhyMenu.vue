@@ -9,7 +9,6 @@ import {
 import { useGestureModifiers } from '@/composables/useGestureModifiers'
 import { useMessages } from '@/i18n'
 import type { WhyGroup } from '@/lib/graph/whyMenu'
-import type { TabLocation } from '@/router/routeTable'
 import { useTabsStore } from '@/stores/tabs'
 
 const props = defineProps<{ groups: WhyGroup[]; label: string }>()
@@ -20,11 +19,6 @@ const tabs = useTabsStore()
 // the click instead fires twice, because Reka replays it on the item. So the modifier of the
 // gesture comes from the window, exactly as the search palette reads it.
 const { ctrl } = useGestureModifiers()
-
-// The app's one gesture: a click navigates the active tab, Ctrl opens the page beside it.
-const open = (location: TabLocation | null) => {
-  if (location) tabs.go(location, ctrl.value)
-}
 </script>
 
 <template>
@@ -42,7 +36,7 @@ const open = (location: TabLocation | null) => {
           v-for="entry in group.entries"
           :key="entry.key"
           :disabled="entry.location === null"
-          @select="open(entry.location)"
+          @select="tabs.go(entry.location, ctrl)"
           >{{ entry.name }}</DropdownMenuItem
         >
       </template>
