@@ -11,10 +11,12 @@
 //! everything else.
 
 use std::collections::{HashMap, HashSet};
-use std::sync::OnceLock;
+use std::sync::{Arc, OnceLock};
 
 use catalog::{AchievementId, Catalog, ChallengeId, CharacterId, ItemId, ItemKind, SpriteRef};
 use wiki::Target;
+
+use crate::last_input::LastInput;
 
 /// The outcome of the resolution. Three cases, not an `Option`, because the two ways of
 /// having no image are meant to be drawn differently: brief §5.6 asks for one placeholder
@@ -63,7 +65,7 @@ pub fn target_sprite<'a>(c: &'a Catalog, t: &Target) -> TargetSprite<'a> {
             },
         },
         // The boss: the portrait of the row `boss_keys` gives this type and variant to.
-        Target::Entity { id, variant, .. } => match entity_portraits(c).get(&(*id, *variant)) {
+        Target::Entity { id, variant, .. } => match entity_portrait(c, (*id, *variant)) {
             Some(s) => TargetSprite::Found(s),
             None => TargetSprite::Unknown,
         },
@@ -74,15 +76,17 @@ pub fn target_sprite<'a>(c: &'a Catalog, t: &Target) -> TargetSprite<'a> {
     }
 }
 
-/// The `(type, variant) → portrait` index, over the keys `boss_keys` settles.
+/// The portrait of the row `boss_keys` gives `(type, variant)` to. The last such row, as the
+/// index this replaces kept it — a map collected over the roster, built on every lookup.
 ///
 /// The subtype takes no part: portraits are declared by type and variant only, and a
 /// different subtype is still the same boss (its champion versions).
-fn entity_portraits(c: &Catalog) -> HashMap<(u32, u32), &SpriteRef> {
+fn entity_portrait(c: &Catalog, key: (u32, u32)) -> Option<&SpriteRef> {
     let keys = boss_keys(c);
     c.bosses()
-        .filter_map(|b| Some((*keys.get(b.name.as_str())?, &b.portrait)))
-        .collect()
+        .filter(|b| keys.get(b.name.as_str()) == Some(&key))
+        .last()
+        .map(|b| &b.portrait)
 }
 
 /// The entity key of every row of `bossportraits.xml`, by the row's name.
@@ -104,12 +108,40 @@ fn entity_portraits(c: &Catalog) -> HashMap<(u32, u32), &SpriteRef> {
 /// leading `the` with them, and a name has to be claimed by exactly one page and one row.
 /// That is the distinction this module used to miss when it said no fallback recovers
 /// the unkeyed portraits — true of a fuzzy one, false of this.
-pub(crate) fn boss_keys(c: &Catalog) -> HashMap<&str, (u32, u32)> {
-    let rows: Vec<(&str, &str)> = c
-        .bosses()
+///
+/// Settled once per roster (card #80, R10), not once per lookup: the roster is the installed
+/// game's and does not change while the process lives.
+pub(crate) fn boss_keys(c: &Catalog) -> Arc<BossKeys> {
+    static SETTLED: LastInput<BossRows, BossKeys> = LastInput::new();
+    SETTLED.get(|rows| same_rows(rows, c), || settle(c))
+}
+
+/// A boss row as `merge_keys` reads it: `(name, portrait path)`.
+type BossRows = Vec<(String, String)>;
+/// The entity key of each row, by the row's name.
+pub(crate) type BossKeys = HashMap<String, (u32, u32)>;
+
+fn rows_of(c: &Catalog) -> impl Iterator<Item = (&str, &str)> {
+    c.bosses()
         .map(|b| (b.name.as_str(), b.portrait.path.as_str()))
+}
+
+// Compared in place: the point of keeping the keys is not to pay for the roster again.
+fn same_rows(rows: &BossRows, c: &Catalog) -> bool {
+    rows_of(c).eq(rows.iter().map(|(n, p)| (n.as_str(), p.as_str())))
+}
+
+fn settle(c: &Catalog) -> (BossRows, BossKeys) {
+    let rows: Vec<(&str, &str)> = rows_of(c).collect();
+    let keys = merge_keys(&rows, wiki_boss_keys())
+        .into_iter()
+        .map(|(name, key)| (name.to_string(), key))
         .collect();
-    merge_keys(&rows, wiki_boss_keys())
+    let owned = rows
+        .into_iter()
+        .map(|(n, p)| (n.to_string(), p.to_string()))
+        .collect();
+    (owned, keys)
 }
 
 /// The rules, apart from the catalog so they can be read and tested on rows written by
