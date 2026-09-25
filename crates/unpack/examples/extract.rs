@@ -14,10 +14,10 @@ fn main() {
     std::fs::create_dir_all(&out).expect("creates the folder");
     for arg in std::env::args().skip(1) {
         match rs.read_with_source(&arg) {
-            Some((bytes, da)) => {
+            Some((bytes, source)) => {
                 let leaf = arg.rsplit('/').next().unwrap().replace(' ', "_");
                 std::fs::write(out.join(&leaf), &bytes).expect("writes");
-                println!("{arg} -> {leaf} ({} bytes, from {da})", bytes.len());
+                println!("{arg} -> {leaf} ({} bytes, from {source})", bytes.len());
             }
             None => println!("{arg}: not found"),
         }

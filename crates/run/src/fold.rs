@@ -118,93 +118,125 @@ impl Run {
     /// Every run in a stream of events, in the order they were played.
     ///
     /// This is where every judgment lives. The rules file says what a line *is*; what a line
-    /// *means* is decided here, where it can be tested without a game.
+    /// *means* is decided here, where it can be tested without a game. The stream is folded into
+    /// a [`Fold`], whose fields are everything one event hands to the next.
     pub fn fold(events: impl Iterator<Item = Event>, kinds: &dyn ItemKinds) -> Vec<Run> {
-        let mut done: Vec<Run> = Vec::new();
-        let mut current: Option<Run> = None;
-        // The starting window: open from the seed line to the first room transition. Inside it
-        // an `ItemAdded` is the character's own gift, whatever pool the line claims.
-        let mut starting = false;
-        // A solo run initializes its player **before** the seed line and an online one after
-        // it, measured on this machine's logs (2026-09-15). An init with no run yet is held
-        // for the run about to start, and taken by it — a run that states its own wins.
-        let mut pending_character: Option<u32> = None;
-
-        for event in events {
-            match event {
-                Event::RunStarted {
-                    seed_words,
-                    seed_numeric,
-                    kind,
-                } => {
-                    // The same seed on a run that is **still open** is that run resumed — the
-                    // game logs `[Continue, 1]` with the seed it already had. The seed decides
-                    // and not the label, because a label can be a word we have never met.
-                    // `Open` is load-bearing: a seed can be replayed deliberately, and a run
-                    // that already ended is closed, so the same number arriving again starts a
-                    // second run rather than reopening the first.
-                    if current.as_ref().is_some_and(|run| {
-                        run.seed_numeric == seed_numeric && run.outcome == Outcome::Open
-                    }) {
-                        // The player line logged before this seed was the resumed run's, which
-                        // already has its character: it is nobody's to keep.
-                        pending_character = None;
-                        continue;
-                    }
-                    if let Some(mut previous) = current.take() {
-                        if previous.outcome == Outcome::Open {
-                            previous.outcome = Outcome::Abandoned;
-                        }
-                        done.push(previous);
-                    }
-                    let mut run = Run::open(seed_words, seed_numeric, kind);
-                    run.character_id = pending_character.take();
-                    current = Some(run);
-                    starting = true;
-                }
-                other @ (Event::FloorEntered { .. }
-                | Event::RoomsGenerated { .. }
-                | Event::RoomEntered { .. }
-                | Event::RoomTransition
-                | Event::ItemAdded { .. }
-                | Event::Died { .. }
-                | Event::Ended { .. }
-                | Event::AchievementUnlocked { .. }
-                | Event::SaveWritten { .. }
-                | Event::PlayerInitialized { .. }) => {
-                    // Events arriving before the first seed line belong to no run: a log
-                    // begins mid-session, with menu lines and an intro cutscene. The one
-                    // exception is the player being initialized, which a solo run logs just
-                    // before its seed.
-                    // The **last** player line before a seed names the run it starts: an earlier
-                    // one was another player's — Esau beside Jacob — or the resumed run's.
-                    let Some(run) = current.as_mut() else {
-                        if let Event::PlayerInitialized { subtype, .. } = other {
-                            pending_character = Some(subtype);
-                        }
-                        continue;
-                    };
-                    // A run that already knows its character, off the online table, is over as
-                    // far as a new player line is concerned: on a solo launch the next run's
-                    // line arrives before its seed, while the fold still holds the last run
-                    // (card #80, P1). Online the line repeats for every player at the table,
-                    // and those stay the run's to ignore.
-                    if let Event::PlayerInitialized { subtype, .. } = other {
-                        if run.character_id.is_some() && !matches!(run.seed_kind, SeedKind::Net) {
-                            pending_character = Some(subtype);
-                            continue;
-                        }
-                    }
-                    apply(run, other, kinds, &mut starting);
-                }
-            }
-        }
-
-        if let Some(run) = current.take() {
-            done.push(run);
-        }
-        done
+        events
+            .fold(Fold::default(), |fold, event| fold.step(event, kinds))
+            .finish()
     }
+}
+
+/// What the fold carries from one event to the next.
+#[derive(Default)]
+struct Fold {
+    /// Runs that are over, in the order they were played.
+    done: Vec<Run>,
+    /// The run the stream is inside, if any.
+    current: Option<Run>,
+    /// The starting window: open from the seed line to the first room transition. Inside it an
+    /// `ItemAdded` is the character's own gift, whatever pool the line claims.
+    starting: bool,
+    /// A solo run initializes its player **before** the seed line and an online one after it,
+    /// measured on this machine's logs (2026-09-15). An init with no run yet is held for the run
+    /// about to start, and taken by it — a run that states its own wins.
+    pending_character: Option<u32>,
+}
+
+impl Fold {
+    fn step(mut self, event: Event, kinds: &dyn ItemKinds) -> Self {
+        match event {
+            Event::RunStarted {
+                seed_words,
+                seed_numeric,
+                kind,
+            } => self.run_started(seed_words, seed_numeric, kind),
+            other @ (Event::FloorEntered { .. }
+            | Event::RoomsGenerated { .. }
+            | Event::RoomEntered { .. }
+            | Event::RoomTransition
+            | Event::ItemAdded { .. }
+            | Event::Died { .. }
+            | Event::Ended { .. }
+            | Event::AchievementUnlocked { .. }
+            | Event::SaveWritten { .. }
+            | Event::PlayerInitialized { .. }) => self.inside_run(other, kinds),
+        }
+        self
+    }
+
+    fn run_started(&mut self, seed_words: String, seed_numeric: u32, kind: SeedKind) {
+        // The same seed on a run that is **still open** is that run resumed — the game logs
+        // `[Continue, 1]` with the seed it already had. The seed decides and not the label,
+        // because a label can be a word we have never met. `Open` is load-bearing: a seed can
+        // be replayed deliberately, and a run that already ended is closed, so the same number
+        // arriving again starts a second run rather than reopening the first.
+        if self
+            .current
+            .as_ref()
+            .is_some_and(|run| run.seed_numeric == seed_numeric && run.outcome == Outcome::Open)
+        {
+            // The player line logged before this seed was the resumed run's, which already has
+            // its character: it is nobody's to keep.
+            self.pending_character = None;
+            return;
+        }
+        self.abandon_current();
+        let mut run = Run::open(seed_words, seed_numeric, kind);
+        run.character_id = self.pending_character.take();
+        self.current = Some(run);
+        self.starting = true;
+    }
+
+    /// A new seed arrived: the run before it is over, and if the log never said how, it was
+    /// abandoned.
+    fn abandon_current(&mut self) {
+        if let Some(mut previous) = self.current.take() {
+            if previous.outcome == Outcome::Open {
+                previous.outcome = Outcome::Abandoned;
+            }
+            self.done.push(previous);
+        }
+    }
+
+    fn inside_run(&mut self, event: Event, kinds: &dyn ItemKinds) {
+        // Events arriving before the first seed line belong to no run: a log begins
+        // mid-session, with menu lines and an intro cutscene. The one exception is the player
+        // being initialized, which a solo run logs just before its seed. The **last** player
+        // line before a seed names the run it starts: an earlier one was another player's —
+        // Esau beside Jacob — or the resumed run's.
+        let Some(run) = self.current.as_mut() else {
+            if let Event::PlayerInitialized { subtype, .. } = event {
+                self.pending_character = Some(subtype);
+            }
+            return;
+        };
+        if let Some(subtype) = next_runs_player(run, &event) {
+            self.pending_character = Some(subtype);
+            return;
+        }
+        apply(run, event, kinds, &mut self.starting);
+    }
+
+    /// The stream ended. The run it was inside stays `Open`: it is the one being played, or a
+    /// log that ends mid-run, and neither is a failure.
+    fn finish(mut self) -> Vec<Run> {
+        self.done.extend(self.current);
+        self.done
+    }
+}
+
+/// A player line that belongs to the run about to start rather than to the one being folded.
+///
+/// A run that already knows its character, off the online table, is over as far as a new
+/// player line is concerned: on a solo launch the next run's line arrives before its seed,
+/// while the fold still holds the last run (card #80, P1). Online the line repeats for every
+/// player at the table, and those stay the run's to ignore.
+fn next_runs_player(run: &Run, event: &Event) -> Option<u32> {
+    let Event::PlayerInitialized { subtype, .. } = event else {
+        return None;
+    };
+    (run.character_id.is_some() && !matches!(run.seed_kind, SeedKind::Net)).then_some(*subtype)
 }
 
 fn apply(run: &mut Run, event: Event, kinds: &dyn ItemKinds, starting: &mut bool) {
@@ -227,26 +259,8 @@ fn apply(run: &mut Run, event: Event, kinds: &dyn ItemKinds, starting: &mut bool
         // case, and inventing a floor for it would put a stage nobody played in the archive.
         Event::RoomsGenerated { rooms, loops } => {
             if let Some(floor) = run.floors.last_mut() {
-                floor.generated = match std::mem::replace(&mut floor.generated, Generated::NotSaid)
-                {
-                    Generated::NotSaid => Generated::Once { rooms, loops },
-                    Generated::Once {
-                        rooms: first,
-                        loops: first_loops,
-                    } => Generated::Several {
-                        passes: vec![
-                            Pass {
-                                rooms: first,
-                                loops: first_loops,
-                            },
-                            Pass { rooms, loops },
-                        ],
-                    },
-                    Generated::Several { mut passes } => {
-                        passes.push(Pass { rooms, loops });
-                        Generated::Several { passes }
-                    }
-                };
+                let said = std::mem::replace(&mut floor.generated, Generated::NotSaid);
+                floor.generated = with_pass(said, Pass { rooms, loops });
             }
         }
         // Kept for the rules to be complete; nothing is read from it yet.
@@ -277,6 +291,24 @@ fn apply(run: &mut Run, event: Event, kinds: &dyn ItemKinds, starting: &mut bool
         // table, and this app speaks about the profile it reads.
         Event::PlayerInitialized { subtype, .. } => {
             run.character_id.get_or_insert(subtype);
+        }
+    }
+}
+
+/// What a floor's generation says once one more pass is read under it: none becomes one, one
+/// becomes several, and several grow in the order the log wrote them.
+fn with_pass(said: Generated, pass: Pass) -> Generated {
+    match said {
+        Generated::NotSaid => Generated::Once {
+            rooms: pass.rooms,
+            loops: pass.loops,
+        },
+        Generated::Once { rooms, loops } => Generated::Several {
+            passes: vec![Pass { rooms, loops }, pass],
+        },
+        Generated::Several { mut passes } => {
+            passes.push(pass);
+            Generated::Several { passes }
         }
     }
 }

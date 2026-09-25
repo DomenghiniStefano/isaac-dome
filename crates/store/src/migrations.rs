@@ -112,18 +112,22 @@ pub fn apply(conn: &Connection, found: u32) -> Result<(), StoreError> {
             supported: SCHEMA_VERSION,
         });
     }
-    for (i, sql) in MIGRATIONS.iter().enumerate() {
-        let target = i as u32 + 1;
-        if target <= found {
-            continue;
-        }
-        let tx = conn
-            .unchecked_transaction()
-            .map_err(StoreError::from_sqlite)?;
-        tx.execute_batch(sql).map_err(StoreError::from_sqlite)?;
-        tx.pragma_update(None, "user_version", target)
-            .map_err(StoreError::from_sqlite)?;
-        tx.commit().map_err(StoreError::from_sqlite)?;
-    }
-    Ok(())
+    // Index = version − 1, so `zip(1..)` names each migration by the version it reaches.
+    MIGRATIONS
+        .iter()
+        .zip(1u32..)
+        .filter(|(_, target)| *target > found)
+        .try_for_each(|(sql, target)| migrate(conn, sql, target))
+}
+
+/// One migration and the version it reaches, in one transaction: a file is never left at a
+/// version whose tables are half there.
+fn migrate(conn: &Connection, sql: &str, target: u32) -> Result<(), StoreError> {
+    let tx = conn
+        .unchecked_transaction()
+        .map_err(StoreError::from_sqlite)?;
+    tx.execute_batch(sql).map_err(StoreError::from_sqlite)?;
+    tx.pragma_update(None, "user_version", target)
+        .map_err(StoreError::from_sqlite)?;
+    tx.commit().map_err(StoreError::from_sqlite)
 }

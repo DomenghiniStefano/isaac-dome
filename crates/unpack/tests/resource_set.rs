@@ -61,7 +61,7 @@ fn the_newest_dlc_wins() {
 #[test]
 fn a_missing_resource_is_none_not_a_panic() {
     let Some(rs) = open_or_skip() else { return };
-    assert!(rs.read("gfx/non/esiste/proprio.png").is_none());
+    assert!(rs.read("gfx/does/not/exist.png").is_none());
     assert!(rs.read("").is_none());
 }
 
