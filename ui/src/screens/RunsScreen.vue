@@ -19,11 +19,11 @@ import { runFacetValueLabel, runsBar } from '@/lib/runs/runLabels'
 import { orderRuns } from '@/lib/runs/runOrder'
 import { LoadStatus } from '@/stores/loadStatus'
 import { useRunsStore } from '@/stores/views'
-import ProfileError from './profile/ProfileError.vue'
+import ProfileError from '@/components/data-state/ProfileError.vue'
 import RunDetail from './runs/RunDetail.vue'
 import RunsTable from './runs/RunsTable.vue'
 import { runsView } from './runs/tabView'
-import ScreenHeader from './ScreenHeader.vue'
+import ScreenHeader from '@/components/screen/ScreenHeader.vue'
 
 const store = useRunsStore()
 const { t } = useMessages()

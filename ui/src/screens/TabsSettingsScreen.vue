@@ -14,7 +14,7 @@ import { HelpTip } from '@/components/ui/tooltip'
 import { useMessages } from '@/i18n'
 import { sessionStopped } from '@/lib/window/sessionHealth'
 import { useSettingsStore } from '@/stores/settings'
-import ScreenHeader from './ScreenHeader.vue'
+import ScreenHeader from '@/components/screen/ScreenHeader.vue'
 
 // The session's one honest place: the switch that decides whether it is kept, and what it holds
 // when it is. The switch came from the Background screen, whose subject is the tray — an intro

@@ -26,7 +26,7 @@ import { useTabsStore } from '@/stores/tabs'
 import { useWikiStore } from '@/stores/wiki'
 import { wikiView } from './tabView'
 import { pageId } from '@/lib/wiki/wikiLabels'
-import HeroBand from '../HeroBand.vue'
+import HeroBand from '@/components/screen/HeroBand.vue'
 
 const props = defineProps<{ category: WikiCategory }>()
 const wiki = useWikiStore()

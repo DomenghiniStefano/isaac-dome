@@ -12,7 +12,7 @@ import { useCompletionStore } from '@/stores/views'
 import { LoadStatus } from '@/stores/loadStatus'
 import CompletionHero from './completion/CompletionHero.vue'
 import MarksMatrixCard from './completion/MarksMatrixCard.vue'
-import ProfileError from './profile/ProfileError.vue'
+import ProfileError from '@/components/data-state/ProfileError.vue'
 
 const completion = useCompletionStore()
 const { t } = useMessages()

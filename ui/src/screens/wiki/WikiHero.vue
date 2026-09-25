@@ -13,7 +13,7 @@ import type { WikiCategory } from '@/router/routeTable'
 import { useWikiStore } from '@/stores/wiki'
 import { summaryOf } from './heroSummary'
 import { kindText, pageId } from '@/lib/wiki/wikiLabels'
-import HeroBand from '../HeroBand.vue'
+import HeroBand from '@/components/screen/HeroBand.vue'
 
 // `entry` is `undefined` while the page is being read and `null` when the dataset lacks it:
 // the band is drawn in all three states, because the title, the kind and the figure are the
