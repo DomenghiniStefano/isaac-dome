@@ -359,6 +359,21 @@ impl Store {
         Ok((folded == Some(rules_version)).then(Vec::new))
     }
 
+    /// The sources `rules_version` has not folded — never folded, or folded by other rules —
+    /// oldest first. What a new rules file has to fold again: a session is imported once and
+    /// never read again, so this is the only moment it meets them.
+    pub fn stale_sources(&self, rules_version: u32) -> Result<Vec<i64>, StoreError> {
+        let mut stmt = self
+            .conn
+            .prepare("SELECT id FROM sources WHERE folded_rules_version IS NOT ?1 ORDER BY id")
+            .map_err(StoreError::from_sqlite)?;
+        let rows = stmt
+            .query_map(params![rules_version], |r| r.get::<_, i64>(0))
+            .map_err(StoreError::from_sqlite)?;
+        rows.collect::<Result<_, _>>()
+            .map_err(StoreError::from_sqlite)
+    }
+
     /// The cached runs of the launch the watcher follows — the latest `log.txt` — under
     /// `rules_version`, and no other source's (card #80, R10). What Live reads on every line the
     /// watcher reports: the whole archive would be every session ever played, read to keep one
@@ -372,7 +387,8 @@ impl Store {
 
     /// Every source's cached runs under `rules_version`, named, oldest source first (card #81,
     /// V1: this was the body of the `runs` command). A source nobody folded under these rules
-    /// contributes no row — it is folded again the next time its log is read — and an empty
+    /// contributes no row — `stale_sources` names it, and the archive folds it again at the next
+    /// launch, since a session's log is never read twice — and an empty
     /// fold contributes a row with no run in it, which adds nothing to any total.
     pub fn archived_runs(&self, rules_version: u32) -> Result<ArchivedRuns, StoreError> {
         let mut archived = ArchivedRuns::default();

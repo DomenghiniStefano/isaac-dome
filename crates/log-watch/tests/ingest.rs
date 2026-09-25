@@ -265,3 +265,79 @@ fn a_launch_with_no_run_in_it_caches_an_empty_list_and_not_nothing() {
         "folded into nothing, which is not the same as never folded"
     );
 }
+
+// ---------------------------------------------------------------------------
+// A new rules file folds the archive again (review of card #80)
+// ---------------------------------------------------------------------------
+
+/// The embedded rules under another version number: what a release that edits `events.json`
+/// hands to an archive folded by the one before it.
+fn rules_after(rules: &Rules) -> Rules {
+    let text = include_str!("../../run/rules/events.json").replacen(
+        &format!("\"version\": {}", rules.version()),
+        &format!("\"version\": {}", rules.version() + 1),
+        1,
+    );
+    let next = Rules::parse(&text).unwrap();
+    assert_eq!(
+        next.version(),
+        rules.version() + 1,
+        "the version was replaced"
+    );
+    next
+}
+
+#[test]
+fn a_session_folded_under_older_rules_is_folded_again_under_the_new_ones() {
+    // A session is imported once and never read again, so it only meets new rules here. Without
+    // this, a release that bumps the rules empties the Runs screen of every session but the
+    // current launch, and nothing says why.
+    let (_d, store) = open();
+    let old = Rules::embedded();
+    let tmp = tempfile::tempdir().unwrap();
+    let folder = session_folder(
+        tmp.path(),
+        "09_12_2026__13_34_26",
+        &log_text("AAAA AAAA", "Sheol"),
+    );
+    let imported = ingest(&store, &old, &Table)
+        .session(&folder)
+        .unwrap()
+        .unwrap();
+    let new = rules_after(&old);
+    assert_eq!(
+        store
+            .cached_runs(imported.source_id, new.version())
+            .unwrap(),
+        None
+    );
+
+    let (refolded, errors) = ingest(&store, &new, &Table).refold_stale();
+
+    assert!(errors.is_empty(), "{errors:?}");
+    assert_eq!(refolded, 1);
+    let runs = store
+        .cached_runs(imported.source_id, new.version())
+        .unwrap()
+        .expect("folded under the new rules");
+    assert_eq!(runs.len(), 1);
+    assert_eq!(runs[0].character.as_deref(), Some("Judas"));
+}
+
+#[test]
+fn a_source_already_folded_under_these_rules_is_left_alone() {
+    let (_d, store) = open();
+    let rules = Rules::embedded();
+    let tmp = tempfile::tempdir().unwrap();
+    let folder = session_folder(
+        tmp.path(),
+        "09_12_2026__13_34_26",
+        &log_text("AAAA AAAA", "Sheol"),
+    );
+    ingest(&store, &rules, &Table).session(&folder).unwrap();
+
+    let (refolded, errors) = ingest(&store, &rules, &Table).refold_stale();
+
+    assert!(errors.is_empty(), "{errors:?}");
+    assert_eq!(refolded, 0);
+}
