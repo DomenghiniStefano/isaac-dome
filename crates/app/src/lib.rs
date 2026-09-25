@@ -205,6 +205,11 @@ fn start_archive(app: tauri::AppHandle) {
             events::announce(&app, events::RUNS_CHANGED);
             return;
         };
+        // A release that edits the rules finds an archive folded by the ones before: fold it
+        // again from the events it already holds, or every session but the current launch
+        // drops out of Runs. A source that will not fold is a database that will not answer,
+        // which the runs command reports on its own.
+        ingest_with(&app, |i| i.refold_stale());
         if let Some(online) = &data.online_logs {
             // One lock per session and not one for them all (card #80, R3): a first launch
             // reads twenty-eight folders, and the queue, the plan, the runs and the window

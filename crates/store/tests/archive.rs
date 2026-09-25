@@ -486,3 +486,16 @@ fn the_latest_launch_folded_under_other_rules_has_no_live_runs() {
 
     assert_eq!(store.live_runs(2).unwrap(), None);
 }
+
+#[test]
+fn a_source_is_stale_when_these_rules_did_not_fold_it() {
+    // Never folded, folded by other rules, folded by these: only the last is current.
+    let (_d, store) = open();
+    let never = store.insert_log_source(&key(0)).unwrap();
+    let other = store.insert_log_source(&key(0)).unwrap();
+    store.cache_runs(other, 1, &[run_of("AAA AAA")]).unwrap();
+    let current = store.insert_log_source(&key(0)).unwrap();
+    store.cache_runs(current, 2, &[]).unwrap();
+
+    assert_eq!(store.stale_sources(2).unwrap(), vec![never, other]);
+}
