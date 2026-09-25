@@ -9,7 +9,8 @@ import { useSettingsStore } from '@/stores/settings'
 // in the fixed 40. Watching the scale is the other half of that fix: the row's height is a
 // token, so the scale is what says when to measure again.
 //
-// Pure, and separate, so it can be stated in a test without a DOM.
+// Not pure — it installs a `watch` — but separate from the virtualizer, so it can be stated in a
+// test without a DOM.
 export const remeasureOnScale = (
   scale: Ref<number> | ComputedRef<number>,
   measure: () => void,

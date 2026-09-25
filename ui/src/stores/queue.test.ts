@@ -1,9 +1,9 @@
 import { createPinia, setActivePinia } from 'pinia'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { resetFixtures } from '@/lib/ipc/fixtures'
-// The queue's fixtures read the Unlock fixture's nodes, which the fixtures import on first use
-// together with some 1,500 pack images. Imported here, the cost is paid while the file loads,
-// not inside the first test's five seconds.
+// The queue's fixtures read the Unlock fixture's nodes, which the fixtures import on first use,
+// and parsing the recorded payload is not free. Imported here, the cost is paid while the file
+// loads, not inside the first test's five seconds.
 import '@/lib/ipc/fixtures/graph'
 import { LoadStatus } from './loadStatus'
 import { useQueueStore } from './queue'

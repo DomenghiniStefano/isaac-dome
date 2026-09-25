@@ -61,9 +61,6 @@ const routeNames: readonly string[] = Object.values(RouteName)
 const isRouteName = (value: unknown): value is RouteName =>
   typeof value === 'string' && routeNames.includes(value)
 
-// A location we can still open. The query is carried as it was written: a filter or a page that
-// no longer resolves is the screen's business, and every screen already says so (B6). What is
-// checked here is the one thing that decides whether the tab can exist at all.
 // Screens that merged into another. A stored tab on one of these is **carried**, not dropped:
 // the reader further down says eight tabs do not vanish because one screen was renamed, and
 // losing the ninth quietly is the same failure at a smaller size. The Plan became the queue
@@ -72,6 +69,9 @@ const RETIRED_ROUTE_NAMES: Readonly<Record<string, RouteName>> = {
   plan: RouteName.Goals,
 }
 
+// A location we can still open. The query is carried as it was written: a filter or a page that
+// no longer resolves is the screen's business, and every screen already says so (B6). What is
+// checked here is the one thing that decides whether the tab can exist at all.
 const readLocation = (value: unknown): TabLocation | null => {
   if (typeof value !== 'object' || value === null) return null
   const { name, query } = value as { name?: unknown; query?: unknown }
