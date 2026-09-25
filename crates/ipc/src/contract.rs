@@ -8,48 +8,36 @@
 
 /// `steamNotFound` → `SteamNotFound`, `rep_plus` → `RepPlus`.
 pub fn pascal_case(value: &str) -> String {
-    let mut out = String::with_capacity(value.len());
-    let mut upper = true;
-    for c in value.chars() {
-        if c == '_' {
-            upper = true;
-        } else if upper {
-            out.extend(c.to_uppercase());
-            upper = false;
-        } else {
-            out.push(c);
-        }
-    }
-    out
+    value.split('_').map(capitalized).collect()
+}
+
+/// `word` with its first letter upper-cased and the rest as written.
+fn capitalized(word: &str) -> String {
+    let mut chars = word.chars();
+    chars
+        .next()
+        .map(|first| first.to_uppercase().chain(chars).collect())
+        .unwrap_or_default()
 }
 
 /// The string literals of a union, or `None` if any member is something else.
 fn string_members(body: &str) -> Option<Vec<&str>> {
-    let mut members = Vec::new();
-    for part in body.split('|') {
-        let part = part.trim();
-        let inner = part.strip_prefix('"')?.strip_suffix('"')?;
-        if inner.contains('"') {
-            return None;
-        }
-        members.push(inner);
-    }
+    let members: Vec<&str> = body.split('|').map(string_literal).collect::<Option<_>>()?;
     (!members.is_empty()).then_some(members)
+}
+
+/// `"x"` → `x`, or `None` if the member is anything but one string literal.
+fn string_literal(member: &str) -> Option<&str> {
+    let inner = member.trim().strip_prefix('"')?.strip_suffix('"')?;
+    (!inner.contains('"')).then_some(inner)
 }
 
 /// Rewrite every union of string literals in `file` into the `const … as const` pair.
 pub fn to_const_enums(file: &str) -> String {
-    let mut out = String::with_capacity(file.len());
-    for (i, line) in file.lines().enumerate() {
-        if i > 0 {
-            out.push('\n');
-        }
-        match rewrite_line(line) {
-            Some(pair) => out.push_str(&pair),
-            None => out.push_str(line),
-        }
-    }
-    out
+    file.lines()
+        .map(|line| rewrite_line(line).unwrap_or_else(|| line.to_string()))
+        .collect::<Vec<_>>()
+        .join("\n")
 }
 
 fn rewrite_line(line: &str) -> Option<String> {
@@ -58,15 +46,14 @@ fn rewrite_line(line: &str) -> Option<String> {
     let body = body.strip_suffix(';')?;
     let members = string_members(body)?;
 
-    let mut pair = format!("export const {name} = {{\n");
-    for m in &members {
-        pair.push_str(&format!("  {}: \"{m}\",\n", pascal_case(m)));
-    }
-    pair.push_str("} as const;\n");
-    pair.push_str(&format!(
-        "export type {name} = (typeof {name})[keyof typeof {name}];"
-    ));
-    Some(pair)
+    let entries: String = members
+        .iter()
+        .map(|m| format!("  {}: \"{m}\",\n", pascal_case(m)))
+        .collect();
+    Some(format!(
+        "export const {name} = {{\n{entries}}} as const;\n\
+         export type {name} = (typeof {name})[keyof typeof {name}];"
+    ))
 }
 
 /// The unions whose every member is a bare tag, `{ "kind": "…" }` and nothing else.
