@@ -26,9 +26,8 @@ const { t } = useMessages()
 const reward = computed(() => props.row.rewards[0] ?? null)
 const more = computed(() => Math.max(0, props.row.rewards.length - 1))
 const done = computed(() => props.row.state.kind === 'done')
-// Known defect, kept as found (card #82): the name never reads the click's Ctrl, so a
-// Ctrl-click replaces this tab instead of opening the page beside it. The fix is this line.
-const openName = (page: Target) => emit('navigate', page, false)
+const openName = (page: Target, ctrlKey: boolean) =>
+  emit('navigate', page, ctrlKey)
 </script>
 
 <template>
@@ -44,7 +43,7 @@ const openName = (page: Target) => emit('navigate', page, false)
       :variant="ButtonVariant.Link"
       :size="ButtonSize.Compact"
       :class="cn('justify-start truncate', done && 'text-subtle-foreground')"
-      @click="openName(row.page)"
+      @click="openName(row.page, $event.ctrlKey)"
       >{{ row.name }}</Button
     >
     <span
@@ -77,12 +76,14 @@ const openName = (page: Target) => emit('navigate', page, false)
     <EmptyValue v-else>{{ t('challenges.noCondition') }}</EmptyValue>
   </span>
   <span class="flex min-w-0 items-center gap-1.5 px-2 @max-compact/page:hidden">
-    <WikiInline
-      v-if="row.goal"
-      :inline="row.goal"
-      class="min-w-0 truncate text-caption"
-      @navigate="(target, newTab) => emit('navigate', target, newTab)"
-    />
+    <!-- `WikiInline` is a fragment and takes no class of its own: this span sets the measure
+         and the truncation, the way every other caller wraps it. -->
+    <span v-if="row.goal" class="min-w-0 truncate text-caption">
+      <WikiInline
+        :inline="row.goal"
+        @navigate="(target, newTab) => emit('navigate', target, newTab)"
+      />
+    </span>
     <EmptyValue v-else>{{ t('challenges.noCondition') }}</EmptyValue>
     <span
       v-if="row.blindfolded"

@@ -78,14 +78,20 @@ export const challengeFacetValueLabel = (
     }
     case ChallengeFacet.Character:
       return characterNames.get(value) ?? value
-    case ChallengeFacet.Rewards:
-      return oneOf(RewardsValue, value) === RewardsValue.Some
-        ? t('challenges.rewardsSome')
-        : t('challenges.rewardsNone')
-    case ChallengeFacet.Blindfolded:
-      return oneOf(BlindfoldedValue, value) === BlindfoldedValue.Yes
-        ? t('challenges.blindfoldedYes')
-        : t('challenges.blindfoldedNo')
+    case ChallengeFacet.Rewards: {
+      const rewards = oneOf(RewardsValue, value)
+      if (rewards === RewardsValue.Some) return t('challenges.rewardsSome')
+      if (rewards === RewardsValue.None) return t('challenges.rewardsNone')
+      return value
+    }
+    case ChallengeFacet.Blindfolded: {
+      const blindfolded = oneOf(BlindfoldedValue, value)
+      if (blindfolded === BlindfoldedValue.Yes)
+        return t('challenges.blindfoldedYes')
+      if (blindfolded === BlindfoldedValue.No)
+        return t('challenges.blindfoldedNo')
+      return value
+    }
     default:
       return assertNever(facet)
   }

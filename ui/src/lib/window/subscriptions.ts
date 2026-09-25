@@ -22,10 +22,10 @@ const begin = (start: () => Promise<Stop>): Begun => {
 }
 
 /**
- * A subscription that can be stopped before it has started (card #80, R8). The pattern it
- * replaces — `stop = await listen(…)` in `onMounted`, `stop?.()` in `onUnmounted` — leaks
- * whenever the view unmounts while `listen` is still resolving: `stop` is still unset when the
- * teardown runs, and the listener outlives the view it was for.
+ * A subscription that can be stopped before it has started. The pattern it replaces —
+ * `stop = await listen(…)` in `onMounted`, `stop?.()` in `onUnmounted` — leaks whenever the
+ * view unmounts while `listen` is still resolving: `stop` is still unset when the teardown
+ * runs, and the listener outlives the view it was for.
  */
 export const subscription = (start: () => Promise<Stop>): Stop =>
   begin(start).stop

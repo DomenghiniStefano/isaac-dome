@@ -33,8 +33,9 @@ interface StoredRow {
   stepsNotQueued: number
 }
 
-// The two cases `crates/app/src/lib.rs` answers with, as the variants they are since N2:
-// the fixture no longer carries a sentence the app used to build in Rust.
+// The two cases `crates/app/src/lib.rs` answers with, as their own variants: the fixture
+// carries no sentence, because the reason travels as structured data for the frontend to word,
+// not a string built in Rust.
 const newerDatabase: StoreReason = {
   kind: 'newerSchema',
   found: 3,

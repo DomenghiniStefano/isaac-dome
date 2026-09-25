@@ -174,7 +174,7 @@ useShortcut((event) => {
 })
 
 // The date moves at midnight, so "today" on the indicator becomes "yesterday" without a
-// relaunch (card #80, P10).
+// relaunch.
 const today = useToday()
 const indicatorView = computed(() =>
   profile.setup
@@ -245,7 +245,7 @@ const takeover = computed(() => welcome.value.kind !== 'hidden')
              oscillate (spec 3.13a §6). -->
         <!-- `group/shell` is the sidebar's second input: the shell carries `data-sidebar` while
              `sidebarCollapsed` is on — whether the edge tab or `Ctrl+B` set it — and the CSS does
-             the folding (spec 3.13a §6, card #54). -->
+             the folding (spec 3.13a §6). -->
         <div
           :data-sidebar="sidebarCollapsed ? 'collapsed' : undefined"
           class="group/shell @container/shell flex min-h-0 flex-1"
@@ -274,10 +274,10 @@ const takeover = computed(() => welcome.value.kind !== 'hidden')
             </SidebarItem>
           </SectionSidebar>
           <!-- The page box (spec 3.13a §4): it scrolls nothing and pads nothing. The padding is
-               the screen's, on the box that scrolls, so every scrollbar sits on the window's edge
-               (card #63). It is also the `page` container every threshold is measured against. -->
+               the screen's, on the box that scrolls, so every scrollbar sits on the window's edge.
+               It is also the `page` container every threshold is measured against. -->
           <main class="@container/page min-h-0 min-w-0 flex-1 overflow-hidden">
-            <!-- **One instance of a screen per history entry of a tab** (#79): without the key the
+            <!-- **One instance of a screen per history entry of a tab**: without the key the
                  router reuses one component for every tab on the same route, and what a screen
                  holds locally walks from one tab into the next. The index is safe in the key
                  because typing does not move it: a refinement of the same view replaces the entry
