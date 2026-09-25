@@ -3,6 +3,7 @@ import type { TabLocation } from '@/router/routeTable'
 import type { Entry, EntryScroll, TabSeed } from '@/stores/tabModel'
 import { findLastIndex } from 'lodash-es'
 import { whenTrue, withOptional } from '@/lib/withOptional'
+import type { Layout } from './layout'
 
 // The document's version. It is bumped when an older app could read the new shape and be wrong
 // about it — never for a part it can simply ignore. An entry gaining a `view` is such a part, so
@@ -230,7 +231,7 @@ export const readSession = (raw: string | null): StoredSession | null => {
   if (version !== Version || !Array.isArray(windows)) return null
   const kept = windows
     .map(readWindow)
-    .filter((window): window is StoredWindow => window !== null)
+    .filter((held): held is StoredWindow => held !== null)
   if (kept.length === 0) return null
   // A number, and nothing more: the bounds are the sidebar's own and are enforced where it is
   // drawn (`clampSidebarWidth`). A parser that knew 168 and 420 would be a parser holding the
@@ -258,13 +259,24 @@ const stored = (tab: TabSeed): TabSeed => ({
   ),
 })
 
+// The session as it is written: the windows, and the sidebar beside them — its width only once
+// somebody sized it, folded only when somebody folded it.
+export const storedSession = (
+  windows: StoredWindow[],
+  layout: Layout,
+): StoredSession => ({
+  windows,
+  ...withOptional('sidebarWidth', layout.sidebarWidth ?? undefined),
+  ...withOptional('sidebarCollapsed', whenTrue(layout.sidebarCollapsed)),
+})
+
 export const writeSession = (session: StoredSession): string =>
   JSON.stringify({
     version: Version,
-    windows: session.windows.map((window) => ({
-      tabs: window.tabs.map(stored),
-      activeIndex: window.activeIndex,
-      ...withOptional('box', window.box),
+    windows: session.windows.map((held) => ({
+      tabs: held.tabs.map(stored),
+      activeIndex: held.activeIndex,
+      ...withOptional('box', held.box),
     })),
     // Absent rather than `null` when nobody ever sized the sidebar: a key that is there and means
     // nothing is a key every reader has to ask about.
