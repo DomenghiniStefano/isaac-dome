@@ -382,12 +382,31 @@ fn document_diagnostic(err: &roll::DocumentError) -> RollDiagnostic {
     }
 }
 
-fn row_view(id: usize, name: &str, selected: bool, targets: usize) -> RollRowView {
-    RollRowView {
-        id: id as u8,
-        name: name.to_string(),
-        selected,
-        targets,
+/// One axis of the preset as rows: each name in its table's order, whether the preset ticks
+/// it, and how many targets ticking it would put in the deck.
+fn row_views<'a>(
+    names: impl Iterator<Item = &'a str>,
+    selection: &roll::Selection,
+    targets: &[usize],
+) -> Vec<RollRowView> {
+    names
+        .enumerate()
+        .map(|(i, name)| RollRowView {
+            id: i as u8,
+            name: name.to_string(),
+            selected: selection.has(i as u8),
+            targets: targets.get(i).copied().unwrap_or(0),
+        })
+        .collect()
+}
+
+fn deck_view(deck: &roll::Deck) -> DeckView {
+    DeckView {
+        size: deck.targets.len(),
+        taken: deck.excluded.taken,
+        unreadable: deck.excluded.unreadable,
+        locked: deck.excluded.locked,
+        filtered: deck.excluded.filtered,
     }
 }
 
@@ -406,79 +425,43 @@ pub fn roll_view(
         store_reason,
     } = inputs;
 
-    let mut diagnostics = Vec::new();
-    let document = match document {
-        Ok(d) => d.clone(),
-        Err(e) => {
-            diagnostics.push(document_diagnostic(e));
-            roll::Document::default()
-        }
-    };
-    if counters.is_none() {
-        diagnostics.push(RollDiagnostic::NoCounterSection);
-    }
-    if catalog.is_none() {
-        diagnostics.push(RollDiagnostic::NoCatalog);
-    }
-
+    let unreadable_document = document.err().map(document_diagnostic);
+    let document = document.ok().cloned().unwrap_or_default();
     let (space, playability_known) = roll_space(counters, flags, catalog);
-    if !playability_known {
-        diagnostics.push(RollDiagnostic::PlayabilityUnknown);
-    }
-    if let Some(reason) = store_reason {
-        diagnostics.push(RollDiagnostic::StoreUnavailable { reason });
-    }
-
     // The document's own choice always shows in `preset`; only the deck build is forced off
     // when playability cannot be determined.
     let effective = deck_preset(&document.preset, playability_known);
     let deck = roll::deck(&space, &effective);
     let contributions = roll::contributions(&space, &effective);
 
-    let characters = ROSTER
-        .iter()
-        .enumerate()
-        .map(|(i, row)| {
-            row_view(
-                i,
-                row.name,
-                document.preset.characters.has(i as u8),
-                contributions.characters.get(i).copied().unwrap_or(0),
-            )
-        })
+    let diagnostics = unreadable_document
+        .into_iter()
+        .chain(
+            counters
+                .is_none()
+                .then_some(RollDiagnostic::NoCounterSection),
+        )
+        .chain(catalog.is_none().then_some(RollDiagnostic::NoCatalog))
+        .chain((!playability_known).then_some(RollDiagnostic::PlayabilityUnknown))
+        .chain(store_reason.map(|reason| RollDiagnostic::StoreUnavailable { reason }))
+        // Last, and only when the deck actually is empty: whether or not any diagnostic above
+        // is why, an empty deck is its own thing to say.
+        .chain(deck.targets.is_empty().then_some(RollDiagnostic::EmptyDeck))
         .collect();
-    let columns = BOSSES
-        .iter()
-        .enumerate()
-        .map(|(i, &name)| {
-            row_view(
-                i,
-                name,
-                document.preset.columns.has(i as u8),
-                contributions.columns.get(i).copied().unwrap_or(0),
-            )
-        })
-        .collect();
-
-    let drawn = drawn_view(document.current.as_ref(), &space, catalog, &mut icon);
-
-    // Last, and only when the deck actually is empty: whether or not any diagnostic above is
-    // why, an empty deck is its own thing to say.
-    if deck.targets.is_empty() {
-        diagnostics.push(RollDiagnostic::EmptyDeck);
-    }
 
     RollView {
-        drawn,
-        deck: DeckView {
-            size: deck.targets.len(),
-            taken: deck.excluded.taken,
-            unreadable: deck.excluded.unreadable,
-            locked: deck.excluded.locked,
-            filtered: deck.excluded.filtered,
-        },
-        characters,
-        columns,
+        drawn: drawn_view(document.current.as_ref(), &space, catalog, &mut icon),
+        deck: deck_view(&deck),
+        characters: row_views(
+            ROSTER.iter().map(|row| row.name),
+            &document.preset.characters,
+            &contributions.characters,
+        ),
+        columns: row_views(
+            BOSSES.iter().copied(),
+            &document.preset.columns,
+            &contributions.columns,
+        ),
         preset: preset_view(&document.preset),
         diagnostics,
     }
