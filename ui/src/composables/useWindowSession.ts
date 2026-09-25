@@ -1,6 +1,7 @@
 import { onBeforeUnmount, onMounted, watch } from 'vue'
 import { assertNever } from '@/lib/assertNever'
 import { setWindowSession, windowSession } from '@/lib/ipc/session'
+import { withOptional } from '@/lib/withOptional'
 import { useTabsStore } from '@/stores/tabs'
 import { watchWindowBox, watchWindowFocus } from '@/lib/window/appWindow'
 import { focusOrder, rememberFocus } from '@/lib/window/focusOrder'
@@ -103,7 +104,7 @@ export const useWindowSession = (): void => {
   // What this window holds, for the ledger and for the broadcast.
   const mine = (): StoredWindow => {
     const { tabs: seeds, activeIndex } = tabs.session
-    return { tabs: seeds, activeIndex, ...(box ? { box } : {}) }
+    return { tabs: seeds, activeIndex, ...withOptional('box', box) }
   }
 
   const announce = (): void => {
@@ -114,7 +115,7 @@ export const useWindowSession = (): void => {
       label: windowPort.label(),
       tabs: held.tabs,
       activeIndex: held.activeIndex,
-      ...(held.box ? { box: held.box } : {}),
+      ...withOptional('box', held.box),
     })
   }
 
@@ -260,7 +261,7 @@ export const useWindowSession = (): void => {
         ledger.set(m.label, {
           tabs: m.tabs,
           activeIndex: m.activeIndex,
-          ...(m.box ? { box: m.box } : {}),
+          ...withOptional('box', m.box),
         })
         remember()
         return

@@ -1,4 +1,5 @@
 import type { Message } from '@/i18n/message'
+import { withOptional } from '@/lib/withOptional'
 import type { MessagePart } from '@/lib/ipc/errorText'
 
 // How loudly a diagnostic is drawn. A `note` is a line under the rows — it coexists with
@@ -65,7 +66,7 @@ export const entriesFrom = <D extends { kind: string }>(
         severity: row.severity,
         title: row.title ? [{ key: row.title, params }] : [],
         body: [{ key: row.body, params }],
-        ...(row.action ? { action: row.action } : {}),
+        ...withOptional('action', row.action),
       },
     ]
   })
