@@ -317,8 +317,9 @@ pub fn live_marks(matrix: &crate::marks::MarksMatrix, rows: &[usize]) -> LiveMar
 }
 
 /// Who the log could mean. Given the id the log stated, exactly that character; given only a
-/// name, everyone who answers to it in the catalog's English names — which is two whenever a Tainted form is involved, because the
-/// game gives it the base form's name. `live_view` says there were two rather than choosing.
+/// name, everyone who answers to it in the catalog's English names — which is two whenever a
+/// Tainted form is involved, because the game gives it the base form's name. `live_view` says
+/// there were two rather than choosing.
 pub fn characters_named(c: &catalog::Catalog, name: &str, id: Option<u32>) -> Vec<(u32, String)> {
     c.characters()
         .filter(|ch| match id {
