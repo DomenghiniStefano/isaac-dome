@@ -1,8 +1,19 @@
 {
   "title": "The D6",
   "revid": 267421,
+  "description": [],
+  "dlc": [],
+  "unlockedBy": null,
   "infobox": {
-    "kind": "item"
+    "kind": "item",
+    "quote": [],
+    "template": "passive",
+    "quality": null,
+    "tags": [],
+    "recharge": [],
+    "devilPrice": [],
+    "shopPrice": [],
+    "pools": []
   },
   "sections": [
     {

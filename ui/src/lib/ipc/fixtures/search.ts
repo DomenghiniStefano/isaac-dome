@@ -12,6 +12,7 @@ import type {
   Target,
 } from '../types'
 import { samplePages, wikiConditions, wikiPages } from './wiki'
+import { warnOnce } from './warnOnce'
 
 // Development only, and **synthetic**: the ranking that counts is Rust's
 // (`crates/ipc/src/search.rs`). This exists so the palette and the Search screen can be looked
@@ -164,19 +165,16 @@ export interface SearchAnswerOptions {
   withWiki: boolean
 }
 
-let warned = false
+const warnSynthetic = warnOnce(
+  'search fixture: the ranking is synthetic; the real one lives in crates/ipc',
+)
 
 export const searchAnswer = (
   { withCatalog, withWiki }: SearchAnswerOptions,
   query: string,
   limit: number,
 ): SearchView => {
-  if (!warned) {
-    warned = true
-    console.warn(
-      'search fixture: the ranking is synthetic; the real one lives in crates/ipc',
-    )
-  }
+  warnSynthetic()
   const conditions = wikiConditions()
   const diagnostics: SearchDiagnostic[] = [
     ...(withCatalog ? [] : (['noCatalog'] as const)),

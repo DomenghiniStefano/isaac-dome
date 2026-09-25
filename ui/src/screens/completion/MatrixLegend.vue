@@ -1,9 +1,8 @@
 <script setup lang="ts">
+import type { Message } from '@/i18n/message'
 import MarkCell from '@/components/marks/MarkCell.vue'
 import type { MarkArt } from '@/components/marks/markVisual'
 import { useMessages } from '@/i18n'
-import type { MessageKey } from '@/i18n/messageKey'
-import type { MessageSchema } from '@/i18n/messages/it'
 import { CellLevel, type Cell } from '@/lib/ipc/types'
 
 defineProps<{ art: MarkArt | null }>()
@@ -14,7 +13,7 @@ const { t } = useMessages()
 //
 // Each entry states its reading rather than a mask to be decoded: these are examples of
 // what the IPC sends, and `bits` is the value a real cell in that state would carry.
-const entries: { cell: Cell; label: MessageKey<MessageSchema> }[] = [
+const entries: { cell: Cell; label: Message }[] = [
   {
     cell: { kind: 'known', bits: 0, level: CellLevel.Empty, online: false },
     label: 'completion.legend.empty',

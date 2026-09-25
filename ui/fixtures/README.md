@@ -1,9 +1,18 @@
 # Fixtures
 
 What `pnpm ui:dev` and `pnpm ui:test` read when there is no backend behind them. Everything
-here is **data recorded once**, never regenerated: nothing in the repository produces it any
-more, so a field a payload predates is filled in by the fixture that reads it, in
-`src/lib/ipc/fixtures/`, and said once on the console.
+here is **data recorded once**: nothing in the repository produces it any more, so a field a
+payload predates is filled in by the fixture that reads it, in `src/lib/ipc/fixtures/`, and
+said once on the console.
+
+**Brought forward once, on 2026-09-25** (card #82). The fillers the fixtures had grown were
+written into the files, with exactly the values they filled in, and deleted: the pages a target
+and a requirement link to (`null`), a character's `tainted` (`false`), `next_steps.json`'s
+sections (its flat list, as its one basis), the extraction report's `broken` (`[]`), and every
+field of a wiki page's `Entry` and infobox (empty). Two of those values are a choice and not a
+recording — `tainted: false` reads every character as its base form, and every collectible's
+`template` is `passive`, which hides the recharge row rather than drawing an empty one. What is
+still filled on read is the achievement's `condition`, from the payload's older `hint`.
 
 | file                             | what it is                                                                                                           | who reads it               |
 | -------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------- |

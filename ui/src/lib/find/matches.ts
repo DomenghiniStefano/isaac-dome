@@ -19,11 +19,11 @@ export interface FindRow {
   readonly text: string
 }
 
-export const Direction = {
+export const FindDirection = {
   Next: 'next',
   Previous: 'previous',
 } as const
-export type Direction = (typeof Direction)[keyof typeof Direction]
+export type FindDirection = (typeof FindDirection)[keyof typeof FindDirection]
 
 export interface FindState {
   /** The keys of the matching rows, in the order the screen gave them. */
@@ -76,11 +76,11 @@ export const findMatches = (
 
 export const stepMatch = (
   state: FindState,
-  direction: Direction,
+  direction: FindDirection,
 ): FindState => {
   if (state.total === 0) return empty
   const at = state.current === null ? -1 : state.matches.indexOf(state.current)
-  const step = direction === Direction.Next ? 1 : -1
+  const step = direction === FindDirection.Next ? 1 : -1
   // Wrapping in both directions, so the last hit leads back to the first and the first back to
   // the last. A find that stops at the end makes you guess whether it is over or broken.
   const next =

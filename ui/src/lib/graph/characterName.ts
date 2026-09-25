@@ -1,11 +1,5 @@
-import type { MessageKey } from '@/i18n/messageKey'
-import type { MessageSchema } from '@/i18n/messages/it'
+import type { Translate } from '@/i18n/message'
 import type { UnlockNode, UnlockTarget } from '@/lib/ipc/types'
-
-type Translate = (
-  key: MessageKey<MessageSchema>,
-  params?: Record<string, unknown>,
-) => string
 
 // The two forms of a character, base and Tainted, carry the same name: `achievements.xml`
 // writes `You unlocked "The Lost"` for both, and `players.xml` tells them apart by the `b`
@@ -30,19 +24,21 @@ export const characterValue = (character: { id: number }): string =>
 // into names.
 export const characterForms = (
   nodes: UnlockNode[],
-): Map<string, CharacterForm> => {
-  const forms = new Map<string, CharacterForm>()
-  for (const node of nodes) {
-    for (const requirement of node.missing) {
-      if (requirement.kind !== 'character') continue
-      forms.set(characterValue(requirement), {
-        name: requirement.name,
-        tainted: requirement.tainted,
-      })
-    }
-  }
-  return forms
-}
+): Map<string, CharacterForm> =>
+  new Map(
+    nodes.flatMap((node) =>
+      node.missing.flatMap((requirement) =>
+        requirement.kind === 'character'
+          ? [
+              [
+                characterValue(requirement),
+                { name: requirement.name, tainted: requirement.tainted },
+              ] as const,
+            ]
+          : [],
+      ),
+    ),
+  )
 
 // What a target is called on screen. Every kind but one is the game's own name; a character
 // needs its form as well, or the Tainted one reads as the base.

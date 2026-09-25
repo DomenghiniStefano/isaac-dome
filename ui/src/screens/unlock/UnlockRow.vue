@@ -9,6 +9,7 @@ import PixelSprite from '@/components/sprite/PixelSprite.vue'
 import { Button, ButtonSize, ButtonVariant } from '@/components/ui/button'
 import { useMessages } from '@/i18n'
 import { cn } from '@/lib/cn'
+import { knownAchievement } from '@/lib/graph/achievementNode'
 import { targetName } from '@/lib/graph/characterName'
 import { nodeSlot } from '@/lib/graph/unlockFacets'
 import type { UnlockNode } from '@/lib/ipc/types'
@@ -22,9 +23,7 @@ const props = defineProps<{
 const emit = defineEmits<{ add: [] }>()
 const { t } = useMessages()
 
-const known = computed(() =>
-  props.node.achievement.kind === 'known' ? props.node.achievement : null,
-)
+const known = computed(() => knownAchievement(props.node))
 const text = computed(() => known.value?.text ?? t('graph.unknownAchievement'))
 const first = computed(() => props.node.unlocks[0] ?? null)
 const more = computed(() => Math.max(0, props.node.unlocks.length - 1))

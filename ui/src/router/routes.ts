@@ -1,13 +1,10 @@
+import type { Message } from '@/i18n/message'
 import type { Component } from 'vue'
 import type { RouteComponent, RouteRecordRaw } from 'vue-router'
 import { TabOrigin } from '@/lib/shell/tabs'
-import type { MessageKey } from '@/i18n/messageKey'
-import type { MessageSchema } from '@/i18n/messages/it'
 import CompletionScreen from '@/screens/CompletionScreen.vue'
-import PlaceholderScreen from '@/screens/PlaceholderScreen.vue'
 import {
   RouteName,
-  routeArrives,
   routeIcon,
   routeOrigin,
   routePath,
@@ -17,21 +14,22 @@ import {
 declare module 'vue-router' {
   interface RouteMeta {
     origin: TabOrigin
-    title: MessageKey<MessageSchema>
+    title: Message
     icon: Component
     needsProfile: boolean
-    arrives?: MessageKey<MessageSchema>
   }
 }
 
-// The screens that exist. Every other route renders its placeholder until its sub-project.
+// One screen per route, and the `Record` holds every one: a route added to `RouteName` without
+// its screen fails the build here instead of rendering nothing.
 //
 // **Each loads when it is first opened**, except the one the app opens on: sixteen screens
 // imported up front made one 725 kB chunk that every launch parsed whole, for a first paint
 // that draws one of them. Completamento stays in the entry chunk so the first screen does not
 // wait on a second file.
-const screens: Partial<
-  Record<RouteName, RouteComponent | (() => Promise<RouteComponent>)>
+const screens: Record<
+  RouteName,
+  RouteComponent | (() => Promise<RouteComponent>)
 > = {
   [RouteName.Completion]: CompletionScreen,
   [RouteName.Goals]: () => import('@/screens/GoalsScreen.vue'),
@@ -55,20 +53,19 @@ export const routes: RouteRecordRaw[] = [
   { path: '/', redirect: { name: RouteName.Completion } },
   // The URL a link or a bookmark may still carry, from when the Plan was a screen of its own.
   // **No `name`**, so it is not a location and cannot become a tab: a stored tab is carried by
-  // `sessionDocument`'s retired-name map, which is a different mechanism because it answers a
+  // `sessionDocument`'s `routeMergedInto`, which is a different mechanism because it answers a
   // different question — one is an address somebody typed, the other is a window somebody left
   // open. The path is written out because it no longer has an entry in `routePath` to read.
   { path: '/progress/plan', redirect: { name: RouteName.Goals } },
   ...Object.values(RouteName).map((name): RouteRecordRaw => ({
     path: routePath[name],
     name,
-    component: screens[name] ?? PlaceholderScreen,
+    component: screens[name],
     meta: {
       origin: routeOrigin[name],
       title: routeTitle[name],
       icon: routeIcon[name],
       needsProfile: routeOrigin[name] === TabOrigin.Progress,
-      arrives: routeArrives[name],
     },
   })),
 ]

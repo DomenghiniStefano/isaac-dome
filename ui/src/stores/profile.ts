@@ -12,6 +12,7 @@ import {
   setupState,
 } from '@/lib/ipc/setup'
 import type { IpcError, SaveSummary, SetupState } from '@/lib/ipc/types'
+import { settledProfile } from '@/lib/profile/settledProfile'
 
 // The active profile is the window's, never a tab's (DESIGN-BRIEF.md §4.1, §4.2): one store,
 // read by the indicator, the gate and the profile screen alike.
@@ -26,7 +27,8 @@ export const useProfileStore = defineStore(StoreId.Profile, () => {
   // app's and one answer settles every window.
   const picking = ref(false)
 
-  const isActive = computed(() => setup.value?.active.kind === 'active')
+  const activeProfile = computed(() => settledProfile(setup.value))
+  const isActive = computed(() => activeProfile.value !== null)
 
   // No active profile means no summary, not an error.
   const readSummary = async (): Promise<void> => {
@@ -72,6 +74,7 @@ export const useProfileStore = defineStore(StoreId.Profile, () => {
     summary,
     status,
     error,
+    activeProfile,
     isActive,
     picking,
     load,

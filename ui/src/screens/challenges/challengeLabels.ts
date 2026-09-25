@@ -1,6 +1,5 @@
+import type { Message, Translate } from '@/i18n/message'
 import type { FilterBarLabels } from '@/lib/facets/labels'
-import type { MessageKey } from '@/i18n/messageKey'
-import type { MessageSchema } from '@/i18n/messages/it'
 import { assertNever } from '@/lib/assertNever'
 import {
   BlindfoldedValue,
@@ -13,13 +12,11 @@ import type { FilterBarDescriptor } from '@/lib/facets/filterBar'
 import type { ChallengeRow } from '@/lib/ipc/types'
 import { oneOf } from '@/lib/oneOf'
 
-type Key = MessageKey<MessageSchema>
-
 // The four states a challenge can be in, in the order the row shows them: what is behind you,
 // what you can play now, what is not offered yet, and what could not be read.
 export const challengeStateOrder = ['done', 'available', 'blocked', 'unknown']
 
-export const challengeStateText: Record<string, Key> = {
+export const challengeStateText: Record<string, Message> = {
   done: 'challenges.state.done',
   available: 'challenges.state.available',
   blocked: 'challenges.state.blocked',
@@ -35,7 +32,7 @@ export const challengeStateDot: Record<string, string> = {
   unknown: 'hatch-unknown border border-dashed border-state-unknown',
 }
 
-export const challengeFacetTitle: Record<ChallengeFacet, Key> = {
+export const challengeFacetTitle: Record<ChallengeFacet, Message> = {
   [ChallengeFacet.State]: 'challenges.facet.state',
   [ChallengeFacet.Character]: 'challenges.facet.character',
   [ChallengeFacet.Rewards]: 'challenges.facet.rewards',
@@ -61,7 +58,7 @@ export const barLabels: FilterBarLabels = {
  * only place that can name it — it holds the rows the names come from.
  */
 export const challengeFacetValueLabel = (
-  t: (key: Key, params?: Record<string, unknown>) => string,
+  t: Translate,
   facet: ChallengeFacet,
   value: string,
   characterNames: Map<string, string>,

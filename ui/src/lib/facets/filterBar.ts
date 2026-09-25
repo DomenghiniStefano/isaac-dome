@@ -1,7 +1,8 @@
 import type { FacetFilter, Faceting } from './faceting'
 import { facetOptions } from './facetOptions'
 import type { FacetOption, FacetSlot } from './facetOptions'
-import type { FilterBarLabels, Label } from './labels'
+import type { Message } from '@/i18n/message'
+import type { FilterBarLabels } from './labels'
 
 // Everything a screen's filter bar is made of that does not change while the screen is read:
 // the faceting, where each facet sits, the state row, the words. One object per screen, beside
@@ -14,7 +15,7 @@ export interface StateRow<Facet extends string> {
   facet: Facet
   order: string[]
   dot: Record<string, string>
-  text: Record<string, Label>
+  text: Record<string, Message>
 }
 
 // A list with nothing to choose between has no sort: the Run diary's order is decided by the
@@ -22,7 +23,7 @@ export interface StateRow<Facet extends string> {
 // changes nothing.
 export interface SortChoice<Sort extends string> {
   order: Sort[]
-  text: Record<Sort, Label>
+  text: Record<Sort, Message>
 }
 
 export interface FilterBarDescriptor<
@@ -34,7 +35,7 @@ export interface FilterBarDescriptor<
   // The facets, in order, each marked as in view at rest or behind the fold.
   facets: FacetSlot<Facet>[]
   state: StateRow<Facet>
-  title: Record<Facet, Label>
+  title: Record<Facet, Message>
   labels: FilterBarLabels
   sorts?: SortChoice<Sort>
 }

@@ -1,15 +1,9 @@
-import type { MessageKey } from '@/i18n/messageKey'
-import type { MessageSchema } from '@/i18n/messages/it'
+import type { Translate } from '@/i18n/message'
 import { targetName } from '@/lib/graph/characterName'
 import { NodeState, nodeState } from '@/lib/graph/nodeState'
 import type { UnlockNode } from '@/lib/ipc/types'
 import { pageLocation } from '@/lib/wiki/category'
 import type { TabLocation } from '@/router/routeTable'
-
-type Translate = (
-  key: MessageKey<MessageSchema>,
-  params?: Record<string, unknown>,
-) => string
 
 // More than one thing out of one achievement is rare and real — a challenge's rewards — so
 // the names are listed, never counted.

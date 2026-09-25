@@ -1,14 +1,8 @@
-import type { MessageKey } from '@/i18n/messageKey'
-import type { MessageSchema } from '@/i18n/messages/it'
+import type { Translate } from '@/i18n/message'
 import type { UnlockNode, UnlockTarget } from '@/lib/ipc/types'
 import { pageLocation } from '@/lib/wiki/category'
 import type { TabLocation } from '@/router/routeTable'
 import { targetName } from './characterName'
-
-type Translate = (
-  key: MessageKey<MessageSchema>,
-  params?: Record<string, unknown>,
-) => string
 
 // What an achievement gives you, with somewhere to read about it. The sibling of
 // `missingGroups`: that one says what is in the way, this one what comes out — and both

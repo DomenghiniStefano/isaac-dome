@@ -728,9 +728,7 @@ export const it = {
       "Le immagini del gioco non sono incluse né distribuite con l'app. Vengono estratte direttamente dalla copia del gioco dell'utente.",
     font: 'Il carattere Determination Mono è distribuito con licenza CC BY 3.0.',
   },
-  placeholder: {
-    tabs: 'Arriva con le tab che sopravvivono alla chiusura.',
-  },
+
   plan: {
     intro:
       'L’ordine in cui vuoi fare le cose: quelle che hai aggiunto tu, più quello che serve prima. Trascina una riga dove vuoi — se le manca un prerequisito si ferma appena sotto, invece di rifiutare lo spostamento.',

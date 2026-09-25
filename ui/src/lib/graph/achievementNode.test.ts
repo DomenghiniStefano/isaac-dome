@@ -1,6 +1,12 @@
 import { describe, expect, it } from 'vitest'
 import type { UnlockNode, UnlockView } from '@/lib/ipc/types'
-import { achievementNode } from './achievementNode'
+import {
+  achievementNode,
+  knownAchievement,
+  knownId,
+  knownText,
+  nodeWithId,
+} from './achievementNode'
 
 const node = (id: number): UnlockNode => ({
   achievement: {
@@ -76,5 +82,29 @@ describe('achievementNode', () => {
     expect(
       achievementNode(view([unknown]), { kind: 'achievement', id: 640 }),
     ).toBeNull()
+  })
+})
+
+describe('a known achievement', () => {
+  const unknown: UnlockNode = {
+    ...node(3),
+    achievement: { kind: 'unknown', slot: 3 },
+  }
+
+  it('answers its reference, id and text', () => {
+    expect(knownAchievement(node(19))).toStrictEqual(node(19).achievement)
+    expect(knownId(node(19))).toBe(19)
+    expect(knownText(node(19))).toBe('t19')
+  })
+
+  it('an unknown slot has none of the three', () => {
+    expect(knownAchievement(unknown)).toBeNull()
+    expect(knownId(unknown)).toBeNull()
+    expect(knownText(unknown)).toBeNull()
+  })
+
+  it('is found by its id, and a slot carrying the same number is not it', () => {
+    expect(nodeWithId([unknown, node(1), node(3)], 3)).toStrictEqual(node(3))
+    expect(nodeWithId([unknown], 3)).toBeNull()
   })
 })

@@ -1,6 +1,6 @@
 import { TargetView } from '@/lib/ipc/types'
 import type { FloorSolutionView } from '@/lib/ipc/types'
-import { WIDTH, xy } from './painting'
+import { xy } from './painting'
 
 // What one cell of the grid is allowed to say (B64).
 //
@@ -76,10 +76,4 @@ export interface CellPosition {
 export const cellPosition = (cell: number): CellPosition => {
   const { x, y } = xy(cell)
   return { row: y + 1, column: x + 1 }
-}
-
-/** The cells of one row, left to right — what a row of the grid is made of. */
-export const rowOf = (cell: number): number[] => {
-  const start = Math.floor(cell / WIDTH) * WIDTH
-  return Array.from({ length: WIDTH }, (_, i) => start + i)
 }

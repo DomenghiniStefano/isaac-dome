@@ -1,8 +1,6 @@
+import type { Message } from '@/i18n/message'
+import { withOptional } from '@/lib/withOptional'
 import type { MessagePart } from '@/lib/ipc/errorText'
-import type { MessageKey } from '@/i18n/messageKey'
-import type { MessageSchema } from '@/i18n/messages/it'
-
-export type Message = MessageKey<MessageSchema>
 
 // How loudly a diagnostic is drawn. A `note` is a line under the rows — it coexists with
 // real content and is not a failure; `info` and `warning` are alerts that stand in for the
@@ -68,7 +66,7 @@ export const entriesFrom = <D extends { kind: string }>(
         severity: row.severity,
         title: row.title ? [{ key: row.title, params }] : [],
         body: [{ key: row.body, params }],
-        ...(row.action ? { action: row.action } : {}),
+        ...withOptional('action', row.action),
       },
     ]
   })

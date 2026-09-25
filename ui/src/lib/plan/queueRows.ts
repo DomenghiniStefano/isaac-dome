@@ -1,3 +1,4 @@
+import { knownId, knownText, nodeWithId } from '@/lib/graph/achievementNode'
 import { nodeSlot } from '@/lib/graph/unlockFacets'
 import type { QueueRow, QueueView, UnlockNode } from '@/lib/ipc/types'
 
@@ -5,33 +6,25 @@ import type { QueueRow, QueueView, UnlockNode } from '@/lib/ipc/types'
 // is its id.
 export const rowId = (row: QueueRow): number => nodeSlot(row.node)
 
-export const knownText = (node: UnlockNode): string | null =>
-  node.achievement.kind === 'known' ? node.achievement.text : null
-
 export const achievementText = (
   nodes: UnlockNode[],
   id: number,
 ): string | null => {
-  const found = nodes.find(
-    (n) => n.achievement.kind === 'known' && n.achievement.id === id,
-  )
+  const found = nodeWithId(nodes, id)
   return found ? knownText(found) : null
 }
-
-// A step in a narrow column: what it unlocks ("The Lost") reads where "You unlocked…" is cut to
-// "You …"; the achievement's own text when it unlocks nothing catalogued.
-export const proposalLabel = (node: UnlockNode): string | null =>
-  node.unlocks[0]?.name ?? knownText(node)
 
 export const queuedIds = (view: QueueView | null): Set<number> =>
   new Set(view?.rows.map(rowId) ?? [])
 
-export const isQueued = (node: UnlockNode, queued: Set<number>): boolean =>
-  node.achievement.kind === 'known' && queued.has(node.achievement.id)
+export const isQueued = (node: UnlockNode, queued: Set<number>): boolean => {
+  const id = knownId(node)
+  return id !== null && queued.has(id)
+}
 
 // What can be put in the queue: a known achievement, not done, not already there.
 export const canQueue = (node: UnlockNode, queued: Set<number>): boolean =>
-  node.achievement.kind === 'known' && !node.done && !isQueued(node, queued)
+  knownId(node) !== null && !node.done && !isQueued(node, queued)
 
 export interface OriginRow {
   id: number

@@ -1,5 +1,4 @@
-import type { MessageSchema } from '@/i18n/messages/it'
-import type { MessageKey } from '@/i18n/messageKey'
+import type { Message } from '@/i18n/message'
 import { assertNever } from '@/lib/assertNever'
 import { AutostartFailure, IoReason } from './types'
 import type { IpcError, SaveReason, SettingsReason, StoreReason } from './types'
@@ -8,13 +7,13 @@ import type { IpcError, SaveReason, SettingsReason, StoreReason } from './types'
 // order around a value is the translation's business, which is why the values travel as
 // values and not inside a string built in Rust.
 export interface MessagePart {
-  key: MessageKey<MessageSchema>
+  key: Message
   params?: Record<string, unknown>
 }
 
 // Exported for the setup diagnostics, which name a path the app could not read and why (card
 // #81, V9: that reason used to reach the screen as its raw wire value).
-export const ioReasonKey = (reason: IoReason): MessageKey<MessageSchema> => {
+export const ioReasonKey = (reason: IoReason): Message => {
   switch (reason) {
     case IoReason.NotFound:
       return 'ipcReasons.ioNotFound'

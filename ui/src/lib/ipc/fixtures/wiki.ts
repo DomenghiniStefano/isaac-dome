@@ -1,8 +1,5 @@
-import { CollectibleTemplate } from '../types'
-import { assertNever } from '@/lib/assertNever'
 import type {
   Entry,
-  Infobox,
   ExtractionReport,
   Target,
   UnlockView,
@@ -11,7 +8,7 @@ import type {
   WikiPageRef,
 } from '../types'
 import { pageKey, parsePageKey } from '@/lib/wiki/pageKey'
-import { once } from 'lodash-es'
+import { warnOnce } from './warnOnce'
 
 // Development only. The dataset as the fixtures can stand in for it: every page's identity
 // and title from the index (items, trinkets, achievements, bosses, characters — real names,
@@ -204,170 +201,22 @@ export const wikiIndexAnswer = ({ withWiki }: WikiAnswerOptions): WikiIndex => {
   return { info: infoOf(list), pages: refs }
 }
 
-// The recorded pages predate most of the fields `Entry` has gained since (`fixtures/README.md`:
-// "a field a payload predates is filled in by the fixture that reads it"). An item's infobox in
-// there is literally `{ kind: 'item' }` — no quote, no quality, no prices — and a page has no
-// `description`, no `dlc` and no `unlockedBy` at all. Completed here to today's shape, with
-// **empty** values and never invented ones: empty is the state the app already draws as "the
-// dataset didn't fill this", so what is missing reads as missing instead of as a fact.
-//
-// The one value that is a choice rather than an absence is a collectible's `template`: there is
-// no empty for it, and `passive` is the reading that hides the recharge row rather than showing
-// an empty one. The warning below says so, because on this server every item reads as passive.
-// A recorded value read as what it is: a file written before the type grew. TypeScript is told
-// the truth here — every field may be absent — so the fallbacks below are answers and not dead
-// code the spread would overwrite.
-type Recorded<T> = { [K in keyof T]?: T[K] }
-type Box<K extends Infobox['kind']> = Recorded<Extract<Infobox, { kind: K }>>
-
-const filledInfobox = (infobox: Infobox): Infobox => {
-  switch (infobox.kind) {
-    case 'item': {
-      const box = infobox as Box<'item'>
-      return {
-        kind: 'item',
-        quote: box.quote ?? [],
-        template: box.template ?? CollectibleTemplate.Passive,
-        quality: box.quality ?? null,
-        tags: box.tags ?? [],
-        recharge: box.recharge ?? [],
-        devilPrice: box.devilPrice ?? [],
-        shopPrice: box.shopPrice ?? [],
-        pools: box.pools ?? [],
-      }
-    }
-    case 'trinket': {
-      const box = infobox as Box<'trinket'>
-      return {
-        kind: 'trinket',
-        quote: box.quote ?? [],
-        tags: box.tags ?? [],
-        pools: box.pools ?? [],
-      }
-    }
-    case 'achievement': {
-      const box = infobox as Box<'achievement'>
-      return {
-        kind: 'achievement',
-        quote: box.quote ?? [],
-        requirements: box.requirements ?? [],
-        notes: box.notes ?? [],
-        unlocks: box.unlocks ?? null,
-      }
-    }
-    case 'boss': {
-      const box = infobox as Box<'boss'>
-      return {
-        kind: 'boss',
-        baseHp: box.baseHp ?? null,
-        stageHp: box.stageHp ?? [],
-        variant: box.variant ?? null,
-        environment: box.environment ?? [],
-        pool: box.pool ?? [],
-      }
-    }
-    case 'challenge': {
-      const box = infobox as Box<'challenge'>
-      return {
-        kind: 'challenge',
-        blindfolded: box.blindfolded ?? false,
-        hasShops: box.hasShops ?? true,
-        hasTreasureRooms: box.hasTreasureRooms ?? true,
-        items: box.items ?? [],
-        trinkets: box.trinkets ?? [],
-        pickups: box.pickups ?? [],
-        health: box.health ?? [],
-        curse: box.curse ?? [],
-        goal: box.goal ?? [],
-        character: box.character ?? null,
-        unlocks: box.unlocks ?? null,
-      }
-    }
-    case 'transformation': {
-      const box = infobox as Box<'transformation'>
-      return {
-        kind: 'transformation',
-        requires: box.requires ?? null,
-        contributors: box.contributors ?? [],
-        target: box.target ?? [],
-      }
-    }
-    case 'character': {
-      const box = infobox as Box<'character'>
-      return {
-        kind: 'character',
-        health: box.health ?? [],
-        damage: box.damage ?? '',
-        tears: box.tears ?? '',
-        range: box.range ?? '',
-        speed: box.speed ?? '',
-        luck: box.luck ?? '',
-        shotSpeed: box.shotSpeed ?? '',
-        pickups: box.pickups ?? [],
-        collectibles: box.collectibles ?? [],
-        parent: box.parent ?? null,
-      }
-    }
-    default:
-      return assertNever(infobox)
-  }
-}
-
-const filled = (recorded: Entry): Entry => {
-  const entry = recorded as Recorded<Entry>
-  return {
-    title: entry.title ?? '',
-    revid: entry.revid ?? 0,
-    description: entry.description ?? [],
-    dlc: entry.dlc ?? [],
-    unlockedBy: entry.unlockedBy ?? null,
-    infobox: filledInfobox(recorded.infobox),
-    sections: entry.sections ?? [],
-  }
-}
-
-let warned = false
+const warnSamples = warnOnce(
+  `wiki fixture: ${samplePages.size} sample pages are recorded; every other page reads as unknown`,
+)
 
 // The eleven sample pages answer with their real text; every other page is one the fixtures
 // don't carry, answered the way the app answers a page the dataset lacks.
 export const wikiEntryAnswer = (target: Target): Entry | null => {
-  if (!warned) {
-    warned = true
-    console.warn(
-      `wiki fixture: ${samplePages.size} sample pages are recorded; every other page reads as unknown`,
-    )
-    console.warn(
-      'wiki fixture: the pages predate the summary, the editions and every field of an item’s card; those read as empty here, and every collectible reads as passive',
-    )
-  }
+  warnSamples()
   const key = pageKey(target)
   if (key === null) return null
   // Round-tripping the key guards the sample names against a target the app never writes.
   const sample = parsePageKey(key) === null ? undefined : samplePages.get(key)
-  return sample === undefined ? null : filled(sample)
+  return sample ?? null
 }
 
 // The recorded extraction report, as the development-only verification page asks for it
 // (card #80, item 10). A machine that recorded none answers the empty report it would have.
-// The payload predates the archives that did not open (card #80, R6); the machine that
-// recorded it had none, which is what the empty list says. Declared once in the console.
-const warnBrokenPredated = once(() =>
-  console.warn(
-    'wiki fixture: extraction_report.json predates the broken archives; it lists none',
-  ),
-)
-
-const predatesBroken = (report: ExtractionReport): boolean =>
-  !Array.isArray(report.broken)
-
-const withBroken = (report: ExtractionReport): ExtractionReport => ({
-  ...report,
-  broken: [],
-})
-
-export const extractionReportAnswer = (): ExtractionReport | undefined => {
-  const report = Object.values(reports)[0]
-  if (report === undefined || !predatesBroken(report)) return report
-  warnBrokenPredated()
-  return withBroken(report)
-}
+export const extractionReportAnswer = (): ExtractionReport | undefined =>
+  Object.values(reports)[0]

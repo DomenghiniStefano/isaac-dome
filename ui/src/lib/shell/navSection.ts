@@ -1,6 +1,5 @@
+import type { Message } from '@/i18n/message'
 import type { Component } from 'vue'
-import type { MessageKey } from '@/i18n/messageKey'
-import type { MessageSchema } from '@/i18n/messages/it'
 import { TabOrigin } from '@/lib/shell/tabs'
 import { tabOriginIcon } from '@/lib/shell/tabOriginIcon'
 
@@ -23,7 +22,7 @@ export const navSectionIcon: Record<NavSection, Component> = {
   [NavSection.Wiki]: tabOriginIcon[TabOrigin.Wiki],
 }
 
-export const navSectionLabel: Record<NavSection, MessageKey<MessageSchema>> = {
+export const navSectionLabel: Record<NavSection, Message> = {
   [NavSection.Progress]: 'shell.sections.progress',
   [NavSection.Tool]: 'shell.sections.tool',
   [NavSection.Wiki]: 'shell.sections.wiki',

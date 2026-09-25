@@ -1,17 +1,11 @@
+import type { Translate } from '@/i18n/message'
 import { groupBy } from 'lodash-es'
-import type { MessageKey } from '@/i18n/messageKey'
-import type { MessageSchema } from '@/i18n/messages/it'
 import { assertNever } from '@/lib/assertNever'
 import { MarkColumnView } from '@/lib/ipc/types'
 import type { RequirementView, UnlockNode } from '@/lib/ipc/types'
 import { pageLocation } from '@/lib/wiki/category'
 import type { TabLocation } from '@/router/routeTable'
 import { characterLabel } from './characterName'
-
-type Translate = (
-  key: MessageKey<MessageSchema>,
-  params?: Record<string, unknown>,
-) => string
 
 // What a node is, one answer for every screen that draws it (DESIGN-BRIEF.md §7.1). A partial
 // node is never unlockable: the graph couldn't interpret at least one of its requirements.

@@ -23,6 +23,20 @@ describe('segments', () => {
     })
   })
 
+  it('handles a match that closes the text, with nothing after it', () => {
+    expect(segments('Heart of Gold', 'gold')).toEqual([
+      { text: 'Heart of ', match: false },
+      { text: 'Gold', match: true },
+    ])
+  })
+
+  it('marks two occurrences that touch as two', () => {
+    expect(segments('abab', 'ab')).toEqual([
+      { text: 'ab', match: true },
+      { text: 'ab', match: true },
+    ])
+  })
+
   it('marks every occurrence, not only the first', () => {
     expect(segments('Brim Brim', 'brim')).toEqual([
       { text: 'Brim', match: true },

@@ -4,8 +4,9 @@ import { AutostartFailure, AutostartReason } from '../types'
 
 // Development only: the settings the app would have persisted, and the session it would have
 // stored. There is no file and no database on the development server, so these live for the
-// page's life — enough to look at the slider and see the whole interface follow it, and to
-// reload the page and find the tabs where they were.
+// page's life — enough to look at the slider and see the whole interface follow it. A reload
+// of the page starts them over: what the app keeps across a restart, this keeps only while the
+// page is open.
 let scale = DefaultScale
 let stayInBackground = true
 let resumeTabs = true
