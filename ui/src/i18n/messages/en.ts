@@ -41,7 +41,6 @@ export const en: MessageSchema = {
     goals: 'Goals',
     completion: 'Completion',
     unlock: 'Unlock',
-    plan: 'Plan',
     collection: 'Collection',
     challenges: 'Challenges',
     roll: 'Tonight',
@@ -54,7 +53,6 @@ export const en: MessageSchema = {
     background: 'Background',
     tabsSettings: 'Tabs',
     updates: 'Updates',
-    about: 'About',
   },
   wikiCategories: {
     items: 'Items',
@@ -79,9 +77,7 @@ export const en: MessageSchema = {
   live: {
     intro:
       'What you are playing now, and what finishing it would open. The app has to be running while you play: the game rewrites the log on every launch.',
-    run: 'The run in progress',
     floors: 'floors',
-    heldActive: 'held',
     collected: 'collected',
     wouldOpen: 'If you finish this run',
     missing: 'marks still to take',
@@ -103,7 +99,6 @@ export const en: MessageSchema = {
     unlockedHere: 'Unlocked in this run',
     opens: 'opens {count}',
     opensNothingMore: 'opens nothing more',
-    beat: 'Beat {column} with {character}',
     nothing:
       'Nothing this run can open on its own: what the achievements are missing is not a mark for this character.',
     diagnostic: {
@@ -257,7 +252,6 @@ export const en: MessageSchema = {
       won: 'won',
       died: 'died',
       abandoned: 'abandoned',
-      open: 'in progress',
     },
     column: {
       character: 'Character',
@@ -270,7 +264,6 @@ export const en: MessageSchema = {
     noItems: 'none',
     openPage: 'Click for the page, Ctrl-click to open it beside',
     itemId: 'item {id}',
-    floors: 'floors',
     killedBy: 'killed by {killer}',
     endedWith: 'ending {ending}',
     startingItems: 'Starting items',
@@ -723,14 +716,11 @@ export const en: MessageSchema = {
   },
 
   plan: {
-    intro:
-      'The order you mean to do things in: what you added, plus what has to come first. Drag a row wherever you like — if something it needs is still missing it settles just below, instead of refusing the move.',
     opens: 'opens {count}',
     opensNothing: 'opens nothing',
     detail: 'Show the detail',
     queueCount: 'Your queue',
     addPane: 'Suggested goals',
-    queueTitle: 'The queue',
     hint: {
       idle: 'drag to reorder — no move is ever refused',
       dragging: 'drop it anywhere: the queue sorts itself out',
@@ -740,10 +730,7 @@ export const en: MessageSchema = {
       move: 'Move the row (Alt and the up or down arrow)',
       wanted: 'added by you',
       serves: 'needed for «{name}»',
-      unlocks: 'unlocks',
-      fanOut: 'unlocks',
       outsideQueue: 'prerequisites not queued',
-      condition: 'how to get it:',
     },
     achievementNumbered: 'achievement {id}',
     empty: 'The queue is empty.',
@@ -766,12 +753,6 @@ export const en: MessageSchema = {
       goalsPending:
         'Goals saved before the queue existed: nothing moves them in on its own.',
       import: 'Import into the queue',
-    },
-    aside: {
-      title: 'Next steps',
-      intro:
-        'Rows unlockable right now, ordered by how much they open. Not your queue: the proposal.',
-      empty: 'Nothing to propose right now.',
     },
   },
   completion: {
@@ -831,11 +812,7 @@ export const en: MessageSchema = {
       'What to unlock and in what order: take from the suggestions, or ask for what you want, and queue it.',
     fanOut: 'They open the most',
     closeness: 'Almost there',
-    inPlan: 'In your Plan',
-    openPlan: 'Open the Plan',
     seeAll: 'See them all',
-    opens: 'Opens {count} more things',
-    opensNothing: 'Opens nothing else',
     noCatalogTitle: "We can't find the game",
     noCatalog:
       "IsaacDome reads The Binding of Isaac's own files to know which achievement unlocks what, and it cannot find them on this computer. Install the game from Steam and reopen the app: this is where you'll find what's worth playing tonight.",
@@ -1036,21 +1013,6 @@ export const en: MessageSchema = {
       unreadablePath: 'Unreadable path · {name} · {reason}',
       malformedManifest: 'Unreadable Steam manifest · {name}',
     },
-    pick: {
-      title: 'A choice is needed',
-      summary: 'until you choose, no profile is active',
-      savedGone:
-        "The profile you used no longer exists where it was. We didn't pick another in its place: a different profile's numbers, shown without saying so, are the error you never notice you have.",
-      edition: 'Edition',
-      slot: 'Slot',
-      foundIn: 'Found here',
-      modified: 'Modified',
-      size: 'Size',
-      suggested: 'most recent',
-      hint: 'The most recent is only a suggestion: you choose which profile to read.',
-      use: 'Use this profile',
-      cancel: 'Cancel',
-    },
     sources: {
       steamCloud: 'Steam Cloud',
       documents: 'Documents',
@@ -1098,7 +1060,6 @@ export const en: MessageSchema = {
     inQueue: 'queued',
     inPlan: "already in the Plan's queue",
     add: 'Add to the queue',
-    addShort: 'Add',
     remove: 'Remove from the queue',
     removeShort: 'Remove from the queue',
     errorTitle: "The queue didn't change",
