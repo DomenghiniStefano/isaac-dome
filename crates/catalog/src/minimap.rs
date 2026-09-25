@@ -29,17 +29,16 @@ pub fn parse(bytes: &[u8], diagnostics: &mut Vec<Diagnostic>) -> BTreeMap<String
         });
         return BTreeMap::new();
     };
-    let mut out: BTreeMap<String, SpriteRef> = BTreeMap::new();
-    for frame in frames {
-        if frame.animation.is_empty() {
-            continue;
-        }
-        out.entry(frame.animation).or_insert(SpriteRef {
-            path: SHEET.to_string(),
-            rect: Some(frame.rect),
-        });
-    }
-    out
+    frames
+        .into_iter()
+        .filter(|frame| !frame.animation.is_empty())
+        .fold(BTreeMap::new(), |mut icons, frame| {
+            icons.entry(frame.animation).or_insert(SpriteRef {
+                path: SHEET.to_string(),
+                rect: Some(frame.rect),
+            });
+            icons
+        })
 }
 
 #[cfg(test)]
