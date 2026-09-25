@@ -12,7 +12,7 @@
 use catalog::{AchievementId, Catalog, ItemId, SpriteRef};
 use wiki::Target;
 
-use crate::catalog_view::{item_kind, ItemKindView};
+use crate::catalog_view::ItemKindView;
 use crate::floor::{minimap_icon_name, RoomKindView, ROOM_KINDS};
 use crate::marks::{character_for, BOSSES, ROSTER};
 use crate::target_sprite::{target_sprite, BossKeys, TargetSprite};
@@ -110,27 +110,6 @@ pub enum IconRef {
     },
 }
 
-fn kind_token(k: ItemKindView) -> &'static str {
-    match k {
-        ItemKindView::Passive => "passive",
-        ItemKindView::Active => "active",
-        ItemKindView::Familiar => "familiar",
-        ItemKindView::Trinket => "trinket",
-    }
-}
-
-fn kind_from_token(s: &str) -> Option<ItemKindView> {
-    match s {
-        "passive" => Some(ItemKindView::Passive),
-        "active" => Some(ItemKindView::Active),
-        "familiar" => Some(ItemKindView::Familiar),
-        "trinket" => Some(ItemKindView::Trinket),
-        // Exhaustive by construction above: a new variant of `ItemKindView` breaks
-        // `kind_token`, which is the pair of this one, so it can't be forgotten silently.
-        _ => None,
-    }
-}
-
 /// The token a room kind travels as. The same strings `serde` writes for `RoomKindView`, so a
 /// URL and a payload say the same word for the same thing.
 fn room_token(k: RoomKindView) -> &'static str {
@@ -198,7 +177,7 @@ fn tier_from_token(s: &str) -> Option<MarkTier> {
     match s {
         "normal" => Some(MarkTier::Normal),
         "hard" => Some(MarkTier::Hard),
-        // A string a webview handed us, paired with `tier_token` like the kinds above.
+        // A string a webview handed us, paired with `tier_token`.
         _ => None,
     }
 }
@@ -209,7 +188,7 @@ impl IconRef {
     pub fn to_path(&self) -> String {
         match self {
             IconRef::Achievement { id } => format!("achievement/{id}"),
-            IconRef::Item { kind, id } => format!("item/{}/{id}", kind_token(*kind)),
+            IconRef::Item { kind, id } => format!("item/{}/{id}", kind.name()),
             IconRef::Mark { column, tier } => format!("mark/{column}/{}", tier_token(*tier)),
             IconRef::Widget { fills } => {
                 format!(
@@ -249,7 +228,7 @@ impl IconRef {
                 id: id.parse().ok()?,
             },
             ("item", kind, Some(id)) => IconRef::Item {
-                kind: kind_from_token(kind)?,
+                kind: ItemKindView::from_name(kind)?,
                 id: id.parse().ok()?,
             },
             ("mark", column, Some(tier)) => IconRef::Mark {
@@ -355,7 +334,7 @@ fn page_target<'a>(
             variant: number(rest.next()?)?,
             subtype: number(rest.next()?)?,
         },
-        // A string a webview handed us, paired with `page_path` like the kinds above.
+        // A string a webview handed us, paired with `page_path`.
         _ => return None,
     };
     rest.next().is_none().then_some(IconRef::Page { target })
@@ -368,7 +347,7 @@ fn page_target<'a>(
 pub fn icon_source<'a>(c: &'a Catalog, bosses: &BossKeys, r: &IconRef) -> Option<&'a SpriteRef> {
     match r {
         IconRef::Achievement { id } => c.achievement(AchievementId(*id)).map(|a| &a.sprite),
-        IconRef::Item { kind, id } => c.item(item_kind(*kind), ItemId(*id)).map(|i| &i.sprite),
+        IconRef::Item { kind, id } => c.item(*kind, ItemId(*id)).map(|i| &i.sprite),
         IconRef::Head { row } => character_for(*row, c).and_then(|ch| ch.head.as_ref()),
         // A page's figure is whatever `target_sprite` finds for the page's identity; "no art"
         // and "unknown id" both draw the placeholder.

@@ -473,6 +473,7 @@ dependencies = [
  "quick-xml 0.42.0",
  "serde",
  "test-support",
+ "ts-rs",
  "unpack",
 ]
 

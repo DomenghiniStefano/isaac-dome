@@ -267,12 +267,12 @@ fn node_of(view: &UnlockView, achievement: u32) -> Option<&UnlockNode> {
 /// and not on the frontend: an item's kind and a boss's entity triple are things only the
 /// catalog knows, and a key assembled from a page identity would be a second mapping.
 fn key_of(c: &Catalog, bosses: &BossKeys, t: &Target) -> Option<crate::goals::TargetKey> {
-    use crate::catalog_view::{kind_view, ItemKindView};
+    use crate::catalog_view::ItemKindView;
     use crate::goals::TargetKey;
     use catalog::{ChallengeId, CharacterId, ItemId, ItemKind};
     match t {
         Target::Item { id } => crate::catalog_view::collectible(c, *id).map(|i| TargetKey::Item {
-            item_kind: kind_view(i.kind),
+            item_kind: i.kind,
             id: i.id.0,
         }),
         Target::Trinket { id } => c

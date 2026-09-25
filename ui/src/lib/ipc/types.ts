@@ -668,11 +668,14 @@ export const MarkLevelView = {
 export type MarkLevelView = (typeof MarkLevelView)[keyof typeof MarkLevelView]
 
 /**
+ * The four kinds `items.xml` files an item under, and the one definition of them: it crosses
+ * the IPC as `ItemKindView`, and an icon URL spells it with the same word
+ * ([`ItemKind::name`]).
+ *
  * A fieldless enum: on the wire it's a bare camelCase string (`"passive"`), like
- * `OriginView`. The tag exists to distinguish variants that carry different data, and
- * here there are none: `{"kind":"passive"}` would cost a key on every row and say
- * nothing more. The day a variant gains a field, the enum becomes tagged and the
- * TypeScript side follows.
+ * `OriginView`. The tag exists to distinguish variants that carry different data, and here
+ * there are none: `{"kind":"passive"}` would cost a key on every row and say nothing more.
+ * The day a variant gains a field, the enum becomes tagged and the TypeScript side follows.
  */
 export const ItemKindView = {
   Passive: 'passive',

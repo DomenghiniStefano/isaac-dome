@@ -248,7 +248,7 @@ fn named_item(
             .map(|(item, c)| c.text(&item.name, Language::English).to_string()),
         icon_url: found.and_then(|item| {
             icon(&crate::icon::IconRef::Item {
-                kind: crate::catalog_view::kind_view(item.kind),
+                kind: item.kind,
                 id,
             })
         }),
