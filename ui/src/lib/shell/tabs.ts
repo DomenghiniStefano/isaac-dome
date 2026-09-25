@@ -86,3 +86,21 @@ export const neighbourIndex = (
   if (key === EventKey.ArrowLeft) return Math.max(index - 1, 0)
   return null
 }
+
+// Where a tab being reordered would land: a side of the tab under the pointer. Nothing over the
+// tab being moved, which is where it already is, nor past the strip's tabs.
+export interface TabDrop {
+  index: number
+  side: DropSide
+}
+
+export const tabDropAt = (
+  boxes: Box[],
+  p: Point,
+  from: number,
+): TabDrop | null => {
+  const index = boxAt(boxes, p, Axis.X)
+  const box = index === null ? undefined : boxes[index]
+  if (index === null || index === from || !box) return null
+  return { index, side: dropSide(p.x, box.left, box.width) }
+}

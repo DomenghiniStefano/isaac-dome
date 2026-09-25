@@ -6,6 +6,7 @@ import {
   arrivalGap,
   moveIndex,
   neighbourIndex,
+  tabDropAt,
 } from './tabs'
 
 describe('dropSide', () => {
@@ -83,5 +84,24 @@ describe('neighbourIndex', () => {
   it('answers nothing for another key, or with no active tab in the strip', () => {
     expect(neighbourIndex(ids, 'b', EventKey.Enter)).toBeNull()
     expect(neighbourIndex(ids, null, EventKey.ArrowRight)).toBeNull()
+  })
+})
+
+// A reorder inside the strip: beside the tab under the pointer, never onto the one being moved.
+describe('tabDropAt', () => {
+  it('lands on a side of the tab under the pointer', () => {
+    expect(tabDropAt(strip, { x: 210, y: 10 }, 0)).toEqual({
+      index: 2,
+      side: DropSide.Before,
+    })
+    expect(tabDropAt(strip, { x: 290, y: 10 }, 0)).toEqual({
+      index: 2,
+      side: DropSide.After,
+    })
+  })
+
+  it('is no drop over the tab being moved, or over no tab at all', () => {
+    expect(tabDropAt(strip, { x: 50, y: 10 }, 0)).toBeNull()
+    expect(tabDropAt(strip, { x: 900, y: 10 }, 0)).toBeNull()
   })
 })
