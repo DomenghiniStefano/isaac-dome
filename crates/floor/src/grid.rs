@@ -5,7 +5,9 @@ pub const WIDTH: u16 = 13;
 pub const HEIGHT: u16 = 13;
 pub const CELLS: usize = (WIDTH * HEIGHT) as usize;
 
-/// Where the game says a run starts: `CURRENT ROOM INDEX 84`, printed once per floor.
+/// Where the game says a run starts: `CURRENT ROOM INDEX 84`, printed once per floor. Only the
+/// tests name it; the crate reads the start from the room the user painted as one.
+#[cfg(feature = "test-api")]
 pub const START: u16 = 84;
 
 /// The cells that touch `cell`, orthogonally. Never wraps a row, and answers nothing for an

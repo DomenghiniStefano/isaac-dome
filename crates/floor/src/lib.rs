@@ -9,7 +9,9 @@ mod room;
 mod rules;
 mod solve;
 
-pub use grid::{neighbours, Grid, CELLS, HEIGHT, START, WIDTH};
+pub use grid::{neighbours, Grid, CELLS, HEIGHT, WIDTH};
+#[cfg(feature = "test-api")]
+pub use grid::START;
 pub use room::{Cell, RoomKind, Shape};
 pub use rules::{is_special, Constraint, Rule, Rules, RulesError, Target, SPECIAL_KINDS};
 pub use solve::{distance_from_start, solve, Candidate, Solution, Unresolved};
