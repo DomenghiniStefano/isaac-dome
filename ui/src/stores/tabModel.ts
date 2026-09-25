@@ -136,25 +136,6 @@ export const removeTab = (state: TabsState, id: string): Removed | null => {
   return { seed: tabSeed(tab), index, state: { tabs, activeId } }
 }
 
-// A window holding one tab *is* that tab: taking it out would leave a bar with nothing in it.
-// Kept for the gestures that must refuse it; **tearing off is no longer one of them** (owner,
-// 2026-09-13): a tab can be dragged out of a window that holds only it.
-export const canDetach = (state: TabsState): boolean => state.tabs.length > 1
-
-export interface Detached {
-  tab: Tab
-  state: TabsState
-}
-
-export const detachTab = (state: TabsState, id: string): Detached | null => {
-  if (!canDetach(state)) return null
-  const tab = state.tabs.find((t) => t.id === id)
-  if (!tab) return null
-  // As far as what is left behind is concerned, leaving is closing: the same neighbour rule.
-  // `fresh` is never reached — `canDetach` has already refused the last tab.
-  return { tab, state: closeTab(state, id, () => tab) }
-}
-
 // Everything a tab is except its identity: what crosses to another window, which mints ids of
 // its own. Written by subtraction so that a tab gaining a field needs no line here.
 export type TabSeed = Omit<Tab, 'id'>

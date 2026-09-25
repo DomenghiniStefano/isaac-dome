@@ -3,10 +3,8 @@ import type { Component } from 'vue'
 import type { RouteComponent, RouteRecordRaw } from 'vue-router'
 import { TabOrigin } from '@/lib/shell/tabs'
 import CompletionScreen from '@/screens/CompletionScreen.vue'
-import PlaceholderScreen from '@/screens/PlaceholderScreen.vue'
 import {
   RouteName,
-  routeArrives,
   routeIcon,
   routeOrigin,
   routePath,
@@ -19,18 +17,19 @@ declare module 'vue-router' {
     title: Message
     icon: Component
     needsProfile: boolean
-    arrives?: Message
   }
 }
 
-// The screens that exist. Every other route renders its placeholder until its sub-project.
+// One screen per route, and the `Record` holds every one: a route added to `RouteName` without
+// its screen fails the build here instead of rendering nothing.
 //
 // **Each loads when it is first opened**, except the one the app opens on: sixteen screens
 // imported up front made one 725 kB chunk that every launch parsed whole, for a first paint
 // that draws one of them. Completamento stays in the entry chunk so the first screen does not
 // wait on a second file.
-const screens: Partial<
-  Record<RouteName, RouteComponent | (() => Promise<RouteComponent>)>
+const screens: Record<
+  RouteName,
+  RouteComponent | (() => Promise<RouteComponent>)
 > = {
   [RouteName.Completion]: CompletionScreen,
   [RouteName.Goals]: () => import('@/screens/GoalsScreen.vue'),
@@ -61,13 +60,12 @@ export const routes: RouteRecordRaw[] = [
   ...Object.values(RouteName).map((name): RouteRecordRaw => ({
     path: routePath[name],
     name,
-    component: screens[name] ?? PlaceholderScreen,
+    component: screens[name],
     meta: {
       origin: routeOrigin[name],
       title: routeTitle[name],
       icon: routeIcon[name],
       needsProfile: routeOrigin[name] === TabOrigin.Progress,
-      arrives: routeArrives[name],
     },
   })),
 ]

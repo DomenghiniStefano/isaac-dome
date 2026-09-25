@@ -721,9 +721,7 @@ export const en: MessageSchema = {
       "The game's images are neither included nor distributed with the app. They are extracted from the user's own copy of the game.",
     font: 'The Determination Mono typeface is licensed CC BY 3.0.',
   },
-  placeholder: {
-    tabs: 'Arrives with tabs that survive closing.',
-  },
+
   plan: {
     intro:
       'The order you mean to do things in: what you added, plus what has to come first. Drag a row wherever you like — if something it needs is still missing it settles just below, instead of refusing the move.',
