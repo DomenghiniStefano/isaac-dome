@@ -1,5 +1,5 @@
-import type { MessageKey } from '@/i18n/messageKey'
-import type { MessageSchema } from '@/i18n/messages/it'
+import { compact } from 'lodash-es'
+import type { Message } from '@/i18n/message'
 import type { SearchHit } from '@/lib/ipc/types'
 import { pageLocation } from '@/lib/wiki/category'
 import {
@@ -9,8 +9,6 @@ import {
   wikiCategoryTitle,
 } from '@/router/routeTable'
 import type { TabLocation } from '@/router/routeTable'
-
-type Message = MessageKey<MessageSchema>
 
 // A result is not a row: it is the **destinations** it can open. "Brimstone" is a wiki page
 // and a Collection row, and the two are different places (DESIGN-BRIEF.md §4.2).
@@ -100,35 +98,36 @@ export interface RowOptions {
   cap: number | null
 }
 
+// Where one hit can take you, in the order the groups read: its page, then — only with the game
+// there to name what they filter by — the screen that lists it.
 const destinations = (hit: SearchHit, catalog: boolean): SearchRow[] => {
-  const rows: SearchRow[] = []
   const page = pageLocation(hit.target)
-  if (hit.hasPage && page)
-    rows.push({
-      kind: 'hit',
-      key: `wiki-${hit.title}`,
-      group: RowGroup.Wiki,
-      hit,
-      location: page,
-    })
-  if (!catalog) return rows
-  if (hit.target.kind === 'achievement')
-    rows.push({
-      kind: 'hit',
-      key: `unlock-${hit.title}`,
-      group: RowGroup.Unlock,
-      hit,
-      location: { name: RouteName.Unlock, query: { q: hit.title } },
-    })
-  if (hit.target.kind === 'item')
-    rows.push({
-      kind: 'hit',
-      key: `collection-${hit.title}`,
-      group: RowGroup.Collection,
-      hit,
-      location: { name: RouteName.Collection, query: { q: hit.title } },
-    })
-  return rows
+  return compact<SearchRow>([
+    hit.hasPage &&
+      page && {
+        kind: 'hit',
+        key: `wiki-${hit.title}`,
+        group: RowGroup.Wiki,
+        hit,
+        location: page,
+      },
+    catalog &&
+      hit.target.kind === 'achievement' && {
+        kind: 'hit',
+        key: `unlock-${hit.title}`,
+        group: RowGroup.Unlock,
+        hit,
+        location: { name: RouteName.Unlock, query: { q: hit.title } },
+      },
+    catalog &&
+      hit.target.kind === 'item' && {
+        kind: 'hit',
+        key: `collection-${hit.title}`,
+        group: RowGroup.Collection,
+        hit,
+        location: { name: RouteName.Collection, query: { q: hit.title } },
+      },
+  ])
 }
 
 export const searchRows = (

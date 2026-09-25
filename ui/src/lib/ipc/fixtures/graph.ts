@@ -1,10 +1,9 @@
 import { assertNever } from '@/lib/assertNever'
+import { knownId } from '@/lib/graph/achievementNode'
+import { warnOnce } from './warnOnce'
 import { WantDiagnostic } from '../types'
 import type {
   NextSteps,
-  RequirementView,
-  StepsBasis,
-  StepsSection,
   Target,
   UnlockNode,
   UnlockTarget,
@@ -39,89 +38,19 @@ const payload = <T>(name: string): T => {
 const targetWithoutIcon = (target: UnlockTarget): UnlockTarget =>
   target.kind === 'item' ? { ...target, iconUrl: null } : target
 
-// The same story as `withPage` below, on the other half of the row (B35): a payload written
-// before a target carried its page has none, and an absent key would read in a template
-// exactly like "the dataset has no page". Filled with `null` — which is that sentence, said
-// on purpose — and declared once in the console. All four variants, because all four carry it.
-let warnedAboutTargetPages = false
-const targetWithPage = (target: UnlockTarget): UnlockTarget => {
-  if (target.page !== undefined) return target
-  if (!warnedAboutTargetPages) {
-    warnedAboutTargetPages = true
-    console.warn(
-      'graph fixture: unlock.json predates the page a target links to; nothing a node unlocks links on the development server',
-    )
-  }
-  return { ...target, page: null }
-}
-
-// The payload was written before a character carried its form (`docs/BACKLOG.md` B28), so
-// the field is absent there: absent reads as the base form, which is right for every base
-// character and wrong for the Tainted ones. Declared once in the console.
-let warnedAboutForms = false
-const withForm = <T extends { kind: string; tainted?: boolean }>(
-  value: T,
-): T => {
-  if (value.kind !== 'character' || typeof value.tainted === 'boolean')
-    return value
-  if (!warnedAboutForms) {
-    warnedAboutForms = true
-    console.warn(
-      "graph fixture: unlock.json predates the character's tainted flag; every character reads as its base form",
-    )
-  }
-  return { ...value, tainted: false }
-}
-
-// Same story for the page a requirement links to (spec 3.5d): a payload written before the
-// field has none, and an absent key would read in a template exactly like "the dataset has no
-// page". It is filled with `null` — which is that sentence, said on purpose — and declared
-// once on the console.
-let warnedAboutPages = false
-const withPage = (requirement: RequirementView): RequirementView => {
-  switch (requirement.kind) {
-    case 'gate':
-    case 'mark':
-    case 'counter':
-    case 'unknown':
-      return requirement
-    // A payload written before the transformations has no threshold in it at all, so there
-    // is nothing to fill in: what arrives already carries its own page.
-    case 'threshold':
-      return requirement
-    case 'character':
-    case 'boss':
-    case 'challenge':
-    case 'item':
-      if (requirement.page !== undefined) return requirement
-      if (!warnedAboutPages) {
-        warnedAboutPages = true
-        console.warn(
-          "graph fixture: unlock.json predates the requirement's page; nothing links on the development server",
-        )
-      }
-      return { ...requirement, page: null }
-    default:
-      return assertNever(requirement)
-  }
-}
-
 // The payload predates the resolved condition: it carries the game file's `hint`, and
 // the wiki's requirement is filled in by Rust, which the fixtures do not run. So the old key
 // becomes the new one where it has something to say — and where the file was silent the line
 // is `null`, which is a real state of the card, only far more common here than in the app:
 // measured 2026-09-13, the file answers for 283 of 637 achievements and the wiki for the rest.
-let warnedAboutConditions = false
+const warnAboutConditions = warnOnce(
+  'graph fixture: the payloads predate the resolved condition; only the achievements the game file itself describes show one, where the app shows all of them',
+)
 const withCondition = (
   a: UnlockNode['achievement'],
 ): UnlockNode['achievement'] => {
   if (a.kind !== 'known' || a.condition !== undefined) return a
-  if (!warnedAboutConditions) {
-    warnedAboutConditions = true
-    console.warn(
-      'graph fixture: the payloads predate the resolved condition; only the achievements the game file itself describes show one, where the app shows all of them',
-    )
-  }
+  warnAboutConditions()
   const { hint } = a as unknown as { hint: string | null | undefined }
   return { ...a, condition: hint ?? null }
 }
@@ -132,10 +61,7 @@ const nodeResolved = (node: UnlockNode): UnlockNode => ({
     node.achievement.kind === 'known'
       ? withCondition({ ...node.achievement, iconUrl: null })
       : node.achievement,
-  unlocks: node.unlocks.map((t) =>
-    targetWithPage(withForm(targetWithoutIcon(t))),
-  ),
-  missing: node.missing.map((r) => withPage(withForm(r))),
+  unlocks: node.unlocks.map(targetWithoutIcon),
 })
 
 const slotOf = (node: UnlockNode): number =>
@@ -173,32 +99,11 @@ export interface GraphAnswers {
   steps: NextSteps
 }
 
-// The payload predates the sections: it is one flat list and the basis that made it. That
-// shape *is* one section — the one it always was — so it is read as such and declared once.
-interface FlatNextSteps {
-  steps: UnlockNode[]
-  basis: StepsBasis
-}
-let warnedAboutSections = false
-const sectionsOf = (value: NextSteps | FlatNextSteps): StepsSection[] => {
-  if ('sections' in value) return value.sections
-  if (!warnedAboutSections) {
-    warnedAboutSections = true
-    console.warn(
-      "graph fixture: next_steps.json predates the steps' sections; the whole list reads as its one basis",
-    )
-  }
-  // Never a heading over nothing: an empty list is no section, exactly as in Rust.
-  return value.steps.length === 0
-    ? []
-    : [{ basis: value.basis, steps: value.steps }]
-}
-
 export const graphAnswers = ({
   withCatalog,
 }: GraphAnswerOptions): GraphAnswers => {
   const unlock = payload<UnlockView>('unlock')
-  const sections = sectionsOf(payload<NextSteps | FlatNextSteps>('next_steps'))
+  const { sections } = payload<NextSteps>('next_steps')
   // No catalog, nothing to recommend: no sections at all, which is what Rust answers too.
   if (!withCatalog)
     return { unlock: withoutCatalog(unlock), steps: { sections: [] } }
@@ -221,10 +126,7 @@ export const graphAnswers = ({
 // first two not-done nodes as the chain — but it never invents a state: done is done, and
 // without a catalog nothing resolves, exactly as Rust answers.
 const namesTarget = (node: UnlockNode, target: Target): boolean => {
-  if (target.kind === 'achievement')
-    return (
-      node.achievement.kind === 'known' && node.achievement.id === target.id
-    )
+  if (target.kind === 'achievement') return knownId(node) === target.id
   return node.unlocks.some((u) => {
     switch (u.kind) {
       case 'item':

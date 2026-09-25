@@ -1,6 +1,7 @@
 import { onBeforeUnmount, onMounted, watch } from 'vue'
 import { assertNever } from '@/lib/assertNever'
 import { setWindowSession, windowSession } from '@/lib/ipc/session'
+import { withOptional } from '@/lib/withOptional'
 import { useTabsStore } from '@/stores/tabs'
 import { watchWindowBox, watchWindowFocus } from '@/lib/window/appWindow'
 import { focusOrder, rememberFocus } from '@/lib/window/focusOrder'
@@ -103,7 +104,7 @@ export const useWindowSession = (): void => {
   // What this window holds, for the ledger and for the broadcast.
   const mine = (): StoredWindow => {
     const { tabs: seeds, activeIndex } = tabs.session
-    return { tabs: seeds, activeIndex, ...(box ? { box } : {}) }
+    return { tabs: seeds, activeIndex, ...withOptional('box', box) }
   }
 
   const announce = (): void => {
@@ -114,7 +115,7 @@ export const useWindowSession = (): void => {
       label: windowPort.label(),
       tabs: held.tabs,
       activeIndex: held.activeIndex,
-      ...(held.box ? { box: held.box } : {}),
+      ...withOptional('box', held.box),
     })
   }
 
@@ -199,8 +200,10 @@ export const useWindowSession = (): void => {
     if ((await windowPort.labels()).length > 1) return
     const monitors = await windowPort.monitors()
     const self = await windowPort.self()
-    for (const [index, window] of rest.entries()) {
-      const step = index + 1
+    const reopenOne = async (
+      window: StoredWindow,
+      step: number,
+    ): Promise<void> => {
       const wanted = window.box ?? {
         left: self.left + CascadeStep * step,
         top: self.top + CascadeStep * step,
@@ -221,6 +224,17 @@ export const useWindowSession = (): void => {
       )
       await paid
     }
+    // One after the other, each a cascade step further than the last.
+    const reopenFrom = async (
+      windows: readonly StoredWindow[],
+      step: number,
+    ): Promise<void> => {
+      const [first, ...others] = windows
+      if (!first) return
+      await reopenOne(first, step)
+      await reopenFrom(others, step + 1)
+    }
+    await reopenFrom(rest, 1)
   }
 
   const onMessage = (m: WindowMessage) => {
@@ -259,7 +273,7 @@ export const useWindowSession = (): void => {
         ledger.set(m.label, {
           tabs: m.tabs,
           activeIndex: m.activeIndex,
-          ...(m.box ? { box: m.box } : {}),
+          ...withOptional('box', m.box),
         })
         remember()
         return
@@ -288,12 +302,15 @@ export const useWindowSession = (): void => {
   // Where this window is, is the other half of what the session stores about it. A window that
   // cannot say where it is still has tabs worth storing, so this never throws upward: the
   // document simply carries no box for it, and the restore cascades it instead.
-  const readBox = async (): Promise<void> => {
+  const measuredBox = async (): Promise<StoredBox | undefined> => {
     try {
-      box = boxOf(await windowPort.self())
+      return boxOf(await windowPort.self())
     } catch {
-      box = undefined
+      return undefined
     }
+  }
+  const readBox = async (): Promise<void> => {
+    box = await measuredBox()
   }
 
   // Everything this window listens to for as long as it lives: its own tabs and layout, the

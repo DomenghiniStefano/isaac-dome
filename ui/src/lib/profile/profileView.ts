@@ -1,11 +1,8 @@
-import type { MessageKey } from '@/i18n/messageKey'
-import type { MessageSchema } from '@/i18n/messages/it'
+import type { Message } from '@/i18n/message'
 import type { Locale } from '@/i18n/locale'
 import { assertNever } from '@/lib/assertNever'
 import { SavePrefix } from '@/lib/ipc/types'
 import type { ActiveProfile, CandidateView, SetupState } from '@/lib/ipc/types'
-
-type Message = MessageKey<MessageSchema>
 
 // The chain the profile screen draws (Schermate.dc.html): each link can be missing alone.
 export const ChainLink = {

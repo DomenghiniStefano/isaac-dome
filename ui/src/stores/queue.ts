@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 import { StoreId } from '@/lib/constants/stores'
-import { isIpcError } from '@/lib/ipc/errors'
+import { asIpcError } from '@/lib/ipc/errors'
 import {
   queue as readQueue,
   queueAdd,
@@ -53,7 +53,7 @@ export const useQueueStore = defineStore(StoreId.Queue, () => {
       return true
     } catch (e) {
       mutationFailed.value = true
-      mutationError.value = isIpcError(e) ? e : null
+      mutationError.value = asIpcError(e)
       return false
     } finally {
       busy.value = false

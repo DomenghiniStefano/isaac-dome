@@ -1,15 +1,9 @@
-import type { MessageKey } from '@/i18n/messageKey'
-import type { MessageSchema } from '@/i18n/messages/it'
+import type { Message, Translate } from '@/i18n/message'
 import { assertNever } from '@/lib/assertNever'
 import type { LockView, UnlockNode } from '@/lib/ipc/types'
 import { pageLocation } from '@/lib/wiki/category'
 import type { TabLocation } from '@/router/routeTable'
 import { RequirementKind, missingGroups } from './nodeState'
-
-type Translate = (
-  key: MessageKey<MessageSchema>,
-  params?: Record<string, unknown>,
-) => string
 
 // The menu behind a badge, as data: one group per kind, one entry per thing in the way, and
 // for each the place that says how *it* is unlocked. Pure, so the model is what gets tested
@@ -22,11 +16,11 @@ export interface WhyEntry {
 }
 
 export interface WhyGroup {
-  label: MessageKey<MessageSchema>
+  label: Message
   entries: WhyEntry[]
 }
 
-const kindLabel: Record<RequirementKind, MessageKey<MessageSchema>> = {
+const kindLabel: Record<RequirementKind, Message> = {
   [RequirementKind.Character]: 'graph.why.character',
   [RequirementKind.Boss]: 'graph.why.boss',
   [RequirementKind.Challenge]: 'graph.why.challenge',

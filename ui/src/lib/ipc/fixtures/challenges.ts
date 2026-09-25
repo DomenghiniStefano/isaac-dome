@@ -1,19 +1,15 @@
 import { ChallengesDiagnostic, Style } from '../types'
 import type { ChallengeRow, ChallengesView, Inline } from '../types'
+import { warnOnce } from './warnOnce'
 
 // Development only. The challenges are hand-written — no recorded payload carries them, and
 // nothing in the repository writes one — and the point of the fixture is the one thing a
 // real profile cannot show all at once: **every state on screen
 // together**, including the two a screen gets wrong — a blocked row that has to name its
 // gates, and a row the wiki knows nothing about.
-let warned = false
-const declare = () => {
-  if (warned) return
-  warned = true
-  console.warn(
-    'Challenges fixture: names, goals and gates are hand-written; no recorded payload carries them',
-  )
-}
+const declare = warnOnce(
+  'Challenges fixture: names, goals and gates are hand-written; no recorded payload carries them',
+)
 
 const row = (
   number: number,

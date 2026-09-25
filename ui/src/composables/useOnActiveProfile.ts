@@ -5,10 +5,7 @@ import { useProfileStore } from '@/stores/profile'
 // belongs to one profile and is never left on screen under another.
 export const useOnActiveProfile = (load: () => Promise<void>): void => {
   const profile = useProfileStore()
-  const activeId = computed(() => {
-    const active = profile.setup?.active
-    return active?.kind === 'active' ? active.profile.id : null
-  })
+  const activeId = computed(() => profile.activeProfile?.profile.id ?? null)
   watch(
     activeId,
     (id) => {

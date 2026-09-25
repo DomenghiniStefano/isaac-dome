@@ -10,7 +10,7 @@ import { computed } from 'vue'
 import { Button, ButtonSize, ButtonVariant } from '@/components/ui/button'
 import { HelpTip } from '@/components/ui/tooltip'
 import { useMessages } from '@/i18n'
-import { Direction, shift } from '@/lib/floor/painting'
+import { ShiftDirection, shift } from '@/lib/floor/painting'
 import type { PaintedCells } from '@/lib/floor/painting'
 
 // Four arrows under the grid, laid out as a pad: the whole drawing, one cell over.
@@ -37,28 +37,29 @@ const { t } = useMessages()
 
 // Each arrow's place on the pad, where it points: the up arrow on top, the down one at the
 // bottom, left and right either side of the empty middle.
-const arrows: { direction: Direction; icon: Component; place: string }[] = [
-  {
-    direction: Direction.Up,
-    icon: ArrowUpIcon,
-    place: 'col-start-2 row-start-1',
-  },
-  {
-    direction: Direction.Left,
-    icon: ArrowLeftIcon,
-    place: 'col-start-1 row-start-2',
-  },
-  {
-    direction: Direction.Right,
-    icon: ArrowRightIcon,
-    place: 'col-start-3 row-start-2',
-  },
-  {
-    direction: Direction.Down,
-    icon: ArrowDownIcon,
-    place: 'col-start-2 row-start-3',
-  },
-]
+const arrows: { direction: ShiftDirection; icon: Component; place: string }[] =
+  [
+    {
+      direction: ShiftDirection.Up,
+      icon: ArrowUpIcon,
+      place: 'col-start-2 row-start-1',
+    },
+    {
+      direction: ShiftDirection.Left,
+      icon: ArrowLeftIcon,
+      place: 'col-start-1 row-start-2',
+    },
+    {
+      direction: ShiftDirection.Right,
+      icon: ArrowRightIcon,
+      place: 'col-start-3 row-start-2',
+    },
+    {
+      direction: ShiftDirection.Down,
+      icon: ArrowDownIcon,
+      place: 'col-start-2 row-start-3',
+    },
+  ]
 
 // The four answers, worked out once per drawing rather than twice per arrow: the button needs
 // to know whether the move is possible and, if it is, what it lands on, and asking the same

@@ -13,7 +13,9 @@
         {
           "kind": "character",
           "id": 1,
-          "name": "Magdalene"
+          "name": "Magdalene",
+          "tainted": false,
+          "page": null
         },
         {
           "kind": "challenge",
@@ -21,7 +23,8 @@
           "name": "The Tank",
           "rewards": [
             93
-          ]
+          ],
+          "page": null
         },
         {
           "kind": "challenge",
@@ -29,7 +32,8 @@
           "name": "Cursed!",
           "rewards": [
             98
-          ]
+          ],
+          "page": null
         }
       ],
       "origin": null,
@@ -55,7 +59,9 @@
         {
           "kind": "character",
           "id": 2,
-          "name": "Cain"
+          "name": "Cain",
+          "tainted": false,
+          "page": null
         }
       ],
       "origin": null,
@@ -81,7 +87,9 @@
         {
           "kind": "character",
           "id": 3,
-          "name": "Judas"
+          "name": "Judas",
+          "tainted": false,
+          "page": null
         },
         {
           "kind": "challenge",
@@ -89,7 +97,8 @@
           "name": "Glass Cannon",
           "rewards": [
             99
-          ]
+          ],
+          "page": null
         },
         {
           "kind": "challenge",
@@ -97,7 +106,8 @@
           "name": "Onan's Streak",
           "rewards": [
             232
-          ]
+          ],
+          "page": null
         }
       ],
       "origin": null,
@@ -126,7 +136,8 @@
           "name": "Purist",
           "rewards": [
             105
-          ]
+          ],
+          "page": null
         },
         {
           "kind": "challenge",
@@ -134,7 +145,8 @@
           "name": "XXXXXXXXL",
           "rewards": [
             224
-          ]
+          ],
+          "page": null
         },
         {
           "kind": "challenge",
@@ -142,7 +154,8 @@
           "name": "SPEED!",
           "rewards": [
             225
-          ]
+          ],
+          "page": null
         },
         {
           "kind": "challenge",
@@ -150,7 +163,8 @@
           "name": "Have a heart",
           "rewards": [
             228
-          ]
+          ],
+          "page": null
         },
         {
           "kind": "challenge",
@@ -158,7 +172,8 @@
           "name": "PRIDE DAY!",
           "rewards": [
             231
-          ]
+          ],
+          "page": null
         },
         {
           "kind": "challenge",
@@ -166,13 +181,15 @@
           "name": "The Guardian",
           "rewards": [
             233
-          ]
+          ],
+          "page": null
         },
         {
           "kind": "challenge",
           "id": 32,
           "name": "Aprils fool",
-          "rewards": []
+          "rewards": [],
+          "page": null
         }
       ],
       "origin": null,
@@ -198,27 +215,32 @@
         {
           "kind": "boss",
           "id": 9,
-          "name": "Famine"
+          "name": "Famine",
+          "page": null
         },
         {
           "kind": "boss",
           "id": 10,
-          "name": "Pestilence"
+          "name": "Pestilence",
+          "page": null
         },
         {
           "kind": "boss",
           "id": 11,
-          "name": "War"
+          "name": "War",
+          "page": null
         },
         {
           "kind": "boss",
           "id": 12,
-          "name": "Death"
+          "name": "Death",
+          "page": null
         },
         {
           "kind": "boss",
           "id": 22,
-          "name": "Headless Horseman"
+          "name": "Headless Horseman",
+          "page": null
         }
       ],
       "origin": null,
@@ -246,14 +268,16 @@
           "itemKind": "familiar",
           "id": 73,
           "name": "Cube of Meat",
-          "iconUrl": "isaac://item/familiar/73"
+          "iconUrl": "isaac://item/familiar/73",
+          "page": null
         },
         {
           "kind": "item",
           "itemKind": "familiar",
           "id": 207,
           "name": "Ball of Bandages",
-          "iconUrl": "isaac://item/familiar/207"
+          "iconUrl": "isaac://item/familiar/207",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -281,7 +305,8 @@
           "itemKind": "active",
           "id": 78,
           "name": "Book of Revelations",
-          "iconUrl": "isaac://item/active/78"
+          "iconUrl": "isaac://item/active/78",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -309,7 +334,8 @@
           "itemKind": "passive",
           "id": 20,
           "name": "Transcendence",
-          "iconUrl": "isaac://item/passive/20"
+          "iconUrl": "isaac://item/passive/20",
+          "page": null
         },
         {
           "kind": "challenge",
@@ -317,7 +343,8 @@
           "name": "Solar System",
           "rewards": [
             94
-          ]
+          ],
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -345,7 +372,8 @@
           "itemKind": "active",
           "id": 83,
           "name": "The Nail",
-          "iconUrl": "isaac://item/active/83"
+          "iconUrl": "isaac://item/active/83",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -373,7 +401,8 @@
           "itemKind": "passive",
           "id": 74,
           "name": "A Quarter",
-          "iconUrl": "isaac://item/passive/74"
+          "iconUrl": "isaac://item/passive/74",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -401,7 +430,8 @@
           "itemKind": "passive",
           "id": 52,
           "name": "Dr. Fetus",
-          "iconUrl": "isaac://item/passive/52"
+          "iconUrl": "isaac://item/passive/52",
+          "page": null
         },
         {
           "kind": "challenge",
@@ -409,7 +439,8 @@
           "name": "Demo Man",
           "rewards": [
             97
-          ]
+          ],
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -437,7 +468,8 @@
           "itemKind": "passive",
           "id": 90,
           "name": "The Small Rock",
-          "iconUrl": "isaac://item/passive/90"
+          "iconUrl": "isaac://item/passive/90",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -465,7 +497,8 @@
           "itemKind": "active",
           "id": 86,
           "name": "Monstro's Tooth",
-          "iconUrl": "isaac://item/active/86"
+          "iconUrl": "isaac://item/active/86",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -493,7 +526,8 @@
           "itemKind": "familiar",
           "id": 88,
           "name": "Little Chubby",
-          "iconUrl": "isaac://item/familiar/88"
+          "iconUrl": "isaac://item/familiar/88",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -521,7 +555,8 @@
           "itemKind": "passive",
           "id": 87,
           "name": "Loki's Horns",
-          "iconUrl": "isaac://item/passive/87"
+          "iconUrl": "isaac://item/passive/87",
+          "page": null
         },
         {
           "kind": "challenge",
@@ -529,7 +564,8 @@
           "name": "Glass Cannon",
           "rewards": [
             99
-          ]
+          ],
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -555,7 +591,8 @@
         {
           "kind": "boss",
           "id": 20,
-          "name": "Steven"
+          "name": "Steven",
+          "page": null
         }
       ],
       "origin": null,
@@ -581,7 +618,8 @@
         {
           "kind": "boss",
           "id": 21,
-          "name": "C.H.A.D."
+          "name": "C.H.A.D.",
+          "page": null
         }
       ],
       "origin": null,
@@ -607,7 +645,8 @@
         {
           "kind": "boss",
           "id": 19,
-          "name": "Gish"
+          "name": "Gish",
+          "page": null
         }
       ],
       "origin": null,
@@ -635,7 +674,8 @@
           "itemKind": "passive",
           "id": 92,
           "name": "Super Bandage",
-          "iconUrl": "isaac://item/passive/92"
+          "iconUrl": "isaac://item/passive/92",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -663,7 +703,8 @@
           "itemKind": "familiar",
           "id": 98,
           "name": "The Relic",
-          "iconUrl": "isaac://item/familiar/98"
+          "iconUrl": "isaac://item/familiar/98",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -691,7 +732,8 @@
           "itemKind": "familiar",
           "id": 94,
           "name": "Sack of Pennies",
-          "iconUrl": "isaac://item/familiar/94"
+          "iconUrl": "isaac://item/familiar/94",
+          "page": null
         },
         {
           "kind": "challenge",
@@ -699,7 +741,8 @@
           "name": "PAY TO PLAY",
           "rewards": [
             227
-          ]
+          ],
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -727,7 +770,8 @@
           "itemKind": "active",
           "id": 97,
           "name": "The Book of Sin",
-          "iconUrl": "isaac://item/active/97"
+          "iconUrl": "isaac://item/active/97",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -755,7 +799,8 @@
           "itemKind": "familiar",
           "id": 99,
           "name": "Little Gish",
-          "iconUrl": "isaac://item/familiar/99"
+          "iconUrl": "isaac://item/familiar/99",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -783,7 +828,8 @@
           "itemKind": "familiar",
           "id": 100,
           "name": "Little Steven",
-          "iconUrl": "isaac://item/familiar/100"
+          "iconUrl": "isaac://item/familiar/100",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -811,7 +857,8 @@
           "itemKind": "familiar",
           "id": 96,
           "name": "Little C.H.A.D.",
-          "iconUrl": "isaac://item/familiar/96"
+          "iconUrl": "isaac://item/familiar/96",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -839,7 +886,8 @@
           "itemKind": "active",
           "id": 93,
           "name": "The Gamekid",
-          "iconUrl": "isaac://item/active/93"
+          "iconUrl": "isaac://item/active/93",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -867,7 +915,8 @@
           "itemKind": "passive",
           "id": 101,
           "name": "The Halo",
-          "iconUrl": "isaac://item/passive/101"
+          "iconUrl": "isaac://item/passive/101",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -876,7 +925,8 @@
           "kind": "item",
           "itemKind": "active",
           "id": 33,
-          "name": "The Bible"
+          "name": "The Bible",
+          "page": null
         }
       ],
       "graph": {
@@ -902,7 +952,8 @@
           "itemKind": "passive",
           "id": 106,
           "name": "Mr. Mega",
-          "iconUrl": "isaac://item/passive/106"
+          "iconUrl": "isaac://item/passive/106",
+          "page": null
         },
         {
           "kind": "challenge",
@@ -910,7 +961,8 @@
           "name": "Blue Bomber",
           "rewards": [
             226
-          ]
+          ],
+          "page": null
         },
         {
           "kind": "challenge",
@@ -918,7 +970,8 @@
           "name": "PAY TO PLAY",
           "rewards": [
             227
-          ]
+          ],
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -946,7 +999,8 @@
           "itemKind": "active",
           "id": 105,
           "name": "The D6",
-          "iconUrl": "isaac://item/active/105"
+          "iconUrl": "isaac://item/active/105",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -974,7 +1028,8 @@
           "itemKind": "active",
           "id": 325,
           "name": "Scissors",
-          "iconUrl": "isaac://item/active/325"
+          "iconUrl": "isaac://item/active/325",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -1002,7 +1057,8 @@
           "itemKind": "passive",
           "id": 104,
           "name": "The Parasite",
-          "iconUrl": "isaac://item/passive/104"
+          "iconUrl": "isaac://item/passive/104",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -1028,7 +1084,9 @@
         {
           "kind": "character",
           "id": 4,
-          "name": "???"
+          "name": "???",
+          "tainted": false,
+          "page": null
         }
       ],
       "origin": null,
@@ -1074,7 +1132,8 @@
         {
           "kind": "boss",
           "id": 25,
-          "name": "It Lives!"
+          "name": "It Lives!",
+          "page": null
         },
         {
           "kind": "challenge",
@@ -1082,7 +1141,8 @@
           "name": "Darkness Falls",
           "rewards": [
             92
-          ]
+          ],
+          "page": null
         },
         {
           "kind": "challenge",
@@ -1090,7 +1150,8 @@
           "name": "Suicide King",
           "rewards": [
             95
-          ]
+          ],
+          "page": null
         },
         {
           "kind": "challenge",
@@ -1098,7 +1159,8 @@
           "name": "Glass Cannon",
           "rewards": [
             99
-          ]
+          ],
+          "page": null
         },
         {
           "kind": "challenge",
@@ -1106,7 +1168,8 @@
           "name": "The Family Man",
           "rewards": [
             62
-          ]
+          ],
+          "page": null
         },
         {
           "kind": "challenge",
@@ -1114,7 +1177,8 @@
           "name": "Blue Bomber",
           "rewards": [
             226
-          ]
+          ],
+          "page": null
         },
         {
           "kind": "challenge",
@@ -1122,13 +1186,15 @@
           "name": "Onan's Streak",
           "rewards": [
             232
-          ]
+          ],
+          "page": null
         },
         {
           "kind": "challenge",
           "id": 33,
           "name": "Pokey mans",
-          "rewards": []
+          "rewards": [],
+          "page": null
         },
         {
           "kind": "challenge",
@@ -1136,7 +1202,8 @@
           "name": "Bloody Mary",
           "rewards": [
             518
-          ]
+          ],
+          "page": null
         },
         {
           "kind": "challenge",
@@ -1144,7 +1211,8 @@
           "name": "Baptism by Fire",
           "rewards": [
             519
-          ]
+          ],
+          "page": null
         },
         {
           "kind": "challenge",
@@ -1152,7 +1220,8 @@
           "name": "Pica Run",
           "rewards": [
             522
-          ]
+          ],
+          "page": null
         }
       ],
       "origin": null,
@@ -1180,7 +1249,8 @@
           "itemKind": "passive",
           "id": 110,
           "name": "Mom's Contacts",
-          "iconUrl": "isaac://item/passive/110"
+          "iconUrl": "isaac://item/passive/110",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -1208,7 +1278,8 @@
           "itemKind": "active",
           "id": 35,
           "name": "The Necronomicon",
-          "iconUrl": "isaac://item/active/35"
+          "iconUrl": "isaac://item/active/35",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -1334,7 +1405,9 @@
         {
           "kind": "character",
           "id": 5,
-          "name": "Eve"
+          "name": "Eve",
+          "tainted": false,
+          "page": null
         },
         {
           "kind": "challenge",
@@ -1342,7 +1415,8 @@
           "name": "Darkness Falls",
           "rewards": [
             92
-          ]
+          ],
+          "page": null
         }
       ],
       "origin": null,
@@ -1370,7 +1444,8 @@
           "itemKind": "passive",
           "id": 114,
           "name": "Mom's Knife",
-          "iconUrl": "isaac://item/passive/114"
+          "iconUrl": "isaac://item/passive/114",
+          "page": null
         },
         {
           "kind": "challenge",
@@ -1378,7 +1453,8 @@
           "name": "I RULE!",
           "rewards": [
             229
-          ]
+          ],
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -1406,7 +1482,8 @@
           "itemKind": "active",
           "id": 126,
           "name": "Razor Blade",
-          "iconUrl": "isaac://item/active/126"
+          "iconUrl": "isaac://item/active/126",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -1414,7 +1491,9 @@
         {
           "kind": "character",
           "id": 26,
-          "name": "Eve"
+          "name": "Eve",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -1440,7 +1519,8 @@
           "itemKind": "familiar",
           "id": 112,
           "name": "Guardian Angel",
-          "iconUrl": "isaac://item/familiar/112"
+          "iconUrl": "isaac://item/familiar/112",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -1468,7 +1548,8 @@
           "itemKind": "familiar",
           "id": 131,
           "name": "Bomb Bag",
-          "iconUrl": "isaac://item/familiar/131"
+          "iconUrl": "isaac://item/familiar/131",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -1496,7 +1577,8 @@
           "itemKind": "familiar",
           "id": 113,
           "name": "Demon Baby",
-          "iconUrl": "isaac://item/familiar/113"
+          "iconUrl": "isaac://item/familiar/113",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -1524,7 +1606,8 @@
           "itemKind": "active",
           "id": 127,
           "name": "Forget Me Now",
-          "iconUrl": "isaac://item/active/127"
+          "iconUrl": "isaac://item/active/127",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -1552,7 +1635,8 @@
           "itemKind": "active",
           "id": 166,
           "name": "D20",
-          "iconUrl": "isaac://item/active/166"
+          "iconUrl": "isaac://item/active/166",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -1580,7 +1664,8 @@
           "itemKind": "passive",
           "id": 162,
           "name": "Celtic Cross",
-          "iconUrl": "isaac://item/passive/162"
+          "iconUrl": "isaac://item/passive/162",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -1608,7 +1693,8 @@
           "itemKind": "familiar",
           "id": 188,
           "name": "Abel",
-          "iconUrl": "isaac://item/familiar/188"
+          "iconUrl": "isaac://item/familiar/188",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -1636,7 +1722,8 @@
           "itemKind": "trinket",
           "id": 35,
           "name": "Curved Horn",
-          "iconUrl": "isaac://item/trinket/35"
+          "iconUrl": "isaac://item/trinket/35",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -1664,7 +1751,8 @@
           "itemKind": "familiar",
           "id": 172,
           "name": "Sacrificial Dagger",
-          "iconUrl": "isaac://item/familiar/172"
+          "iconUrl": "isaac://item/familiar/172",
+          "page": null
         },
         {
           "kind": "challenge",
@@ -1672,7 +1760,8 @@
           "name": "Darkness Falls",
           "rewards": [
             92
-          ]
+          ],
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -1680,7 +1769,9 @@
         {
           "kind": "character",
           "id": 26,
-          "name": "Eve"
+          "name": "Eve",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -1706,7 +1797,8 @@
           "itemKind": "passive",
           "id": 157,
           "name": "Bloody Lust",
-          "iconUrl": "isaac://item/passive/157"
+          "iconUrl": "isaac://item/passive/157",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -1714,7 +1806,9 @@
         {
           "kind": "character",
           "id": 27,
-          "name": "Samson"
+          "name": "Samson",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -1740,7 +1834,8 @@
           "itemKind": "trinket",
           "id": 49,
           "name": "Bloody Penny",
-          "iconUrl": "isaac://item/trinket/49"
+          "iconUrl": "isaac://item/trinket/49",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -1748,7 +1843,9 @@
         {
           "kind": "character",
           "id": 27,
-          "name": "Samson"
+          "name": "Samson",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -1774,7 +1871,8 @@
           "itemKind": "active",
           "id": 186,
           "name": "Blood Rights",
-          "iconUrl": "isaac://item/active/186"
+          "iconUrl": "isaac://item/active/186",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -1782,7 +1880,9 @@
         {
           "kind": "character",
           "id": 27,
-          "name": "Samson"
+          "name": "Samson",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -1808,7 +1908,8 @@
           "itemKind": "passive",
           "id": 327,
           "name": "The Polaroid",
-          "iconUrl": "isaac://item/passive/327"
+          "iconUrl": "isaac://item/passive/327",
+          "page": null
         },
         {
           "kind": "challenge",
@@ -1816,13 +1917,15 @@
           "name": "BRAINS!",
           "rewards": [
             230
-          ]
+          ],
+          "page": null
         },
         {
           "kind": "challenge",
           "id": 35,
           "name": "PONG",
-          "rewards": []
+          "rewards": [],
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -1850,7 +1953,8 @@
           "itemKind": "active",
           "id": 175,
           "name": "Dad's Key",
-          "iconUrl": "isaac://item/active/175"
+          "iconUrl": "isaac://item/active/175",
+          "page": null
         },
         {
           "kind": "challenge",
@@ -1858,7 +1962,8 @@
           "name": "The Family Man",
           "rewards": [
             62
-          ]
+          ],
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -1886,7 +1991,8 @@
           "itemKind": "active",
           "id": 164,
           "name": "The Candle",
-          "iconUrl": "isaac://item/active/164"
+          "iconUrl": "isaac://item/active/164",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -1914,7 +2020,8 @@
           "itemKind": "trinket",
           "id": 50,
           "name": "Burnt Penny",
-          "iconUrl": "isaac://item/trinket/50"
+          "iconUrl": "isaac://item/trinket/50",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -1942,7 +2049,8 @@
           "itemKind": "trinket",
           "id": 42,
           "name": "Lucky Toe",
-          "iconUrl": "isaac://item/trinket/42"
+          "iconUrl": "isaac://item/trinket/42",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -1970,7 +2078,8 @@
           "itemKind": "passive",
           "id": 168,
           "name": "Epic Fetus",
-          "iconUrl": "isaac://item/passive/168"
+          "iconUrl": "isaac://item/passive/168",
+          "page": null
         },
         {
           "kind": "challenge",
@@ -1978,7 +2087,8 @@
           "name": "Glass Cannon",
           "rewards": [
             99
-          ]
+          ],
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -2005,7 +2115,8 @@
           "itemKind": "passive",
           "id": 189,
           "name": "SMB Super Fan",
-          "iconUrl": "isaac://item/passive/189"
+          "iconUrl": "isaac://item/passive/189",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -2033,7 +2144,8 @@
           "itemKind": "trinket",
           "id": 52,
           "name": "Counterfeit Penny",
-          "iconUrl": "isaac://item/trinket/52"
+          "iconUrl": "isaac://item/trinket/52",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -2061,7 +2173,8 @@
           "itemKind": "familiar",
           "id": 187,
           "name": "Guppy's Hairball",
-          "iconUrl": "isaac://item/familiar/187"
+          "iconUrl": "isaac://item/familiar/187",
+          "page": null
         },
         {
           "kind": "challenge",
@@ -2069,7 +2182,8 @@
           "name": "Cat Got Your Tongue",
           "rewards": [
             96
-          ]
+          ],
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -2100,7 +2214,8 @@
         {
           "kind": "boss",
           "id": 38,
-          "name": "Conquest"
+          "name": "Conquest",
+          "page": null
         }
       ],
       "origin": null,
@@ -2126,7 +2241,9 @@
         {
           "kind": "character",
           "id": 6,
-          "name": "Samson"
+          "name": "Samson",
+          "tainted": false,
+          "page": null
         }
       ],
       "origin": null,
@@ -2152,7 +2269,8 @@
         {
           "kind": "boss",
           "id": 42,
-          "name": "Triachnid"
+          "name": "Triachnid",
+          "page": null
         }
       ],
       "origin": null,
@@ -2188,7 +2306,9 @@
         {
           "kind": "character",
           "id": 31,
-          "name": "The Lost"
+          "name": "The Lost",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -2213,7 +2333,8 @@
           "itemKind": "trinket",
           "id": 54,
           "name": "Isaac's Head",
-          "iconUrl": "isaac://item/trinket/54"
+          "iconUrl": "isaac://item/trinket/54",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -2241,7 +2362,8 @@
           "itemKind": "trinket",
           "id": 55,
           "name": "Maggy's Faith",
-          "iconUrl": "isaac://item/trinket/55"
+          "iconUrl": "isaac://item/trinket/55",
+          "page": null
         },
         {
           "kind": "challenge",
@@ -2249,7 +2371,8 @@
           "name": "Baptism by Fire",
           "rewards": [
             519
-          ]
+          ],
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -2277,7 +2400,8 @@
           "itemKind": "trinket",
           "id": 56,
           "name": "Judas' Tongue",
-          "iconUrl": "isaac://item/trinket/56"
+          "iconUrl": "isaac://item/trinket/56",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -2305,7 +2429,8 @@
           "itemKind": "trinket",
           "id": 57,
           "name": "???'s Soul",
-          "iconUrl": "isaac://item/trinket/57"
+          "iconUrl": "isaac://item/trinket/57",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -2333,7 +2458,8 @@
           "itemKind": "trinket",
           "id": 58,
           "name": "Samson's Lock",
-          "iconUrl": "isaac://item/trinket/58"
+          "iconUrl": "isaac://item/trinket/58",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -2341,7 +2467,9 @@
         {
           "kind": "character",
           "id": 27,
-          "name": "Samson"
+          "name": "Samson",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -2367,7 +2495,8 @@
           "itemKind": "trinket",
           "id": 59,
           "name": "Cain's Eye",
-          "iconUrl": "isaac://item/trinket/59"
+          "iconUrl": "isaac://item/trinket/59",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -2395,7 +2524,8 @@
           "itemKind": "trinket",
           "id": 60,
           "name": "Eve's Bird Foot",
-          "iconUrl": "isaac://item/trinket/60"
+          "iconUrl": "isaac://item/trinket/60",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -2403,7 +2533,9 @@
         {
           "kind": "character",
           "id": 26,
-          "name": "Eve"
+          "name": "Eve",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -2429,7 +2561,8 @@
           "itemKind": "trinket",
           "id": 61,
           "name": "The Left Hand",
-          "iconUrl": "isaac://item/trinket/61"
+          "iconUrl": "isaac://item/trinket/61",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -2457,7 +2590,8 @@
           "itemKind": "passive",
           "id": 328,
           "name": "The Negative",
-          "iconUrl": "isaac://item/passive/328"
+          "iconUrl": "isaac://item/passive/328",
+          "page": null
         },
         {
           "kind": "challenge",
@@ -2465,19 +2599,22 @@
           "name": "I RULE!",
           "rewards": [
             229
-          ]
+          ],
+          "page": null
         },
         {
           "kind": "challenge",
           "id": 31,
           "name": "Backasswards",
-          "rewards": []
+          "rewards": [],
+          "page": null
         },
         {
           "kind": "challenge",
           "id": 34,
           "name": "Ultra hard",
-          "rewards": []
+          "rewards": [],
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -2503,7 +2640,9 @@
         {
           "kind": "character",
           "id": 7,
-          "name": "Azazel"
+          "name": "Azazel",
+          "tainted": false,
+          "page": null
         }
       ],
       "origin": null,
@@ -2529,12 +2668,16 @@
         {
           "kind": "character",
           "id": 8,
-          "name": "Lazarus"
+          "name": "Lazarus",
+          "tainted": false,
+          "page": null
         },
         {
           "kind": "character",
           "id": 11,
-          "name": "Lazarus"
+          "name": "Lazarus",
+          "tainted": false,
+          "page": null
         },
         {
           "kind": "challenge",
@@ -2542,7 +2685,8 @@
           "name": "Suicide King",
           "rewards": [
             95
-          ]
+          ],
+          "page": null
         }
       ],
       "origin": null,
@@ -2568,7 +2712,9 @@
         {
           "kind": "character",
           "id": 9,
-          "name": "Eden"
+          "name": "Eden",
+          "tainted": false,
+          "page": null
         }
       ],
       "origin": null,
@@ -2594,7 +2740,9 @@
         {
           "kind": "character",
           "id": 10,
-          "name": "The Lost"
+          "name": "The Lost",
+          "tainted": false,
+          "page": null
         }
       ],
       "origin": null,
@@ -2670,7 +2818,8 @@
           "itemKind": "trinket",
           "id": 15,
           "name": "Lucky Rock",
-          "iconUrl": "isaac://item/trinket/15"
+          "iconUrl": "isaac://item/trinket/15",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -2997,7 +3146,8 @@
           "itemKind": "trinket",
           "id": 1,
           "name": "Swallowed Penny",
-          "iconUrl": "isaac://item/trinket/1"
+          "iconUrl": "isaac://item/trinket/1",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -3025,7 +3175,8 @@
           "itemKind": "familiar",
           "id": 267,
           "name": "Robo-Baby 2.0",
-          "iconUrl": "isaac://item/familiar/267"
+          "iconUrl": "isaac://item/familiar/267",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -3053,7 +3204,8 @@
           "itemKind": "passive",
           "id": 237,
           "name": "Death's Touch",
-          "iconUrl": "isaac://item/passive/237"
+          "iconUrl": "isaac://item/passive/237",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -3081,7 +3233,8 @@
           "itemKind": "passive",
           "id": 244,
           "name": "Tech.5",
-          "iconUrl": "isaac://item/passive/244"
+          "iconUrl": "isaac://item/passive/244",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -3109,7 +3262,8 @@
           "itemKind": "passive",
           "id": 258,
           "name": "Missing No.",
-          "iconUrl": "isaac://item/passive/258"
+          "iconUrl": "isaac://item/passive/258",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -3117,7 +3271,9 @@
         {
           "kind": "character",
           "id": 38,
-          "name": "Lazarus"
+          "name": "Lazarus",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -3143,7 +3299,8 @@
           "itemKind": "active",
           "id": 323,
           "name": "Isaac's Tears",
-          "iconUrl": "isaac://item/active/323"
+          "iconUrl": "isaac://item/active/323",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -3171,7 +3328,8 @@
           "itemKind": "familiar",
           "id": 206,
           "name": "Guillotine",
-          "iconUrl": "isaac://item/familiar/206"
+          "iconUrl": "isaac://item/familiar/206",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -3199,12 +3357,15 @@
           "itemKind": "passive",
           "id": 311,
           "name": "Judas' Shadow",
-          "iconUrl": "isaac://item/passive/311"
+          "iconUrl": "isaac://item/passive/311",
+          "page": null
         },
         {
           "kind": "character",
           "id": 12,
-          "name": "Black Judas"
+          "name": "Black Judas",
+          "tainted": false,
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -3232,7 +3393,8 @@
           "itemKind": "passive",
           "id": 312,
           "name": "Maggy's Bow",
-          "iconUrl": "isaac://item/passive/312"
+          "iconUrl": "isaac://item/passive/312",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -3260,7 +3422,8 @@
           "itemKind": "familiar",
           "id": 319,
           "name": "Cain's Other Eye",
-          "iconUrl": "isaac://item/familiar/319"
+          "iconUrl": "isaac://item/familiar/319",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -3288,7 +3451,8 @@
           "itemKind": "trinket",
           "id": 17,
           "name": "Black Lipstick",
-          "iconUrl": "isaac://item/trinket/17"
+          "iconUrl": "isaac://item/trinket/17",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -3296,7 +3460,9 @@
         {
           "kind": "character",
           "id": 26,
-          "name": "Eve"
+          "name": "Eve",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -3322,7 +3488,8 @@
           "itemKind": "passive",
           "id": 310,
           "name": "Eve's Mascara",
-          "iconUrl": "isaac://item/passive/310"
+          "iconUrl": "isaac://item/passive/310",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -3330,7 +3497,9 @@
         {
           "kind": "character",
           "id": 26,
-          "name": "Eve"
+          "name": "Eve",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -3356,7 +3525,8 @@
           "itemKind": "passive",
           "id": 179,
           "name": "Fate",
-          "iconUrl": "isaac://item/passive/179"
+          "iconUrl": "isaac://item/passive/179",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -3384,7 +3554,8 @@
           "itemKind": "familiar",
           "id": 320,
           "name": "???'s Only Friend",
-          "iconUrl": "isaac://item/familiar/320"
+          "iconUrl": "isaac://item/familiar/320",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -3412,7 +3583,8 @@
           "itemKind": "familiar",
           "id": 321,
           "name": "Samson's Chains",
-          "iconUrl": "isaac://item/familiar/321"
+          "iconUrl": "isaac://item/familiar/321",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -3420,7 +3592,9 @@
         {
           "kind": "character",
           "id": 27,
-          "name": "Samson"
+          "name": "Samson",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -3446,7 +3620,8 @@
           "itemKind": "passive",
           "id": 332,
           "name": "Lazarus' Rags",
-          "iconUrl": "isaac://item/passive/332"
+          "iconUrl": "isaac://item/passive/332",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -3454,7 +3629,9 @@
         {
           "kind": "character",
           "id": 38,
-          "name": "Lazarus"
+          "name": "Lazarus",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -3480,7 +3657,8 @@
           "itemKind": "trinket",
           "id": 28,
           "name": "Broken Ankh",
-          "iconUrl": "isaac://item/trinket/28"
+          "iconUrl": "isaac://item/trinket/28",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -3488,7 +3666,9 @@
         {
           "kind": "character",
           "id": 38,
-          "name": "Lazarus"
+          "name": "Lazarus",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -3514,7 +3694,8 @@
           "itemKind": "trinket",
           "id": 13,
           "name": "Store Credit",
-          "iconUrl": "isaac://item/trinket/13"
+          "iconUrl": "isaac://item/trinket/13",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -3522,7 +3703,9 @@
         {
           "kind": "character",
           "id": 38,
-          "name": "Lazarus"
+          "name": "Lazarus",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -3548,7 +3731,8 @@
           "itemKind": "active",
           "id": 297,
           "name": "Pandora's Box",
-          "iconUrl": "isaac://item/active/297"
+          "iconUrl": "isaac://item/active/297",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -3556,7 +3740,9 @@
         {
           "kind": "character",
           "id": 38,
-          "name": "Lazarus"
+          "name": "Lazarus",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -3602,7 +3788,8 @@
           "itemKind": "active",
           "id": 286,
           "name": "Blank Card",
-          "iconUrl": "isaac://item/active/286"
+          "iconUrl": "isaac://item/active/286",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -3630,7 +3817,8 @@
           "itemKind": "active",
           "id": 287,
           "name": "Book of Secrets",
-          "iconUrl": "isaac://item/active/287"
+          "iconUrl": "isaac://item/active/287",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -3658,7 +3846,8 @@
           "itemKind": "trinket",
           "id": 21,
           "name": "Mysterious Paper",
-          "iconUrl": "isaac://item/trinket/21"
+          "iconUrl": "isaac://item/trinket/21",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -3686,7 +3875,8 @@
           "itemKind": "familiar",
           "id": 271,
           "name": "Mystery Sack",
-          "iconUrl": "isaac://item/familiar/271"
+          "iconUrl": "isaac://item/familiar/271",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -3714,7 +3904,8 @@
           "itemKind": "active",
           "id": 324,
           "name": "Undefined",
-          "iconUrl": "isaac://item/active/324"
+          "iconUrl": "isaac://item/active/324",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -3742,7 +3933,8 @@
           "itemKind": "active",
           "id": 292,
           "name": "Satanic Bible",
-          "iconUrl": "isaac://item/active/292"
+          "iconUrl": "isaac://item/active/292",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -3770,7 +3962,8 @@
           "itemKind": "trinket",
           "id": 22,
           "name": "Daemon's Tail",
-          "iconUrl": "isaac://item/trinket/22"
+          "iconUrl": "isaac://item/trinket/22",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -3798,7 +3991,8 @@
           "itemKind": "passive",
           "id": 230,
           "name": "Abaddon",
-          "iconUrl": "isaac://item/passive/230"
+          "iconUrl": "isaac://item/passive/230",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -3826,7 +4020,8 @@
           "itemKind": "familiar",
           "id": 276,
           "name": "Isaac's Heart",
-          "iconUrl": "isaac://item/familiar/276"
+          "iconUrl": "isaac://item/familiar/276",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -3834,7 +4029,9 @@
         {
           "kind": "character",
           "id": 31,
-          "name": "The Lost"
+          "name": "The Lost",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -3860,7 +4057,8 @@
           "itemKind": "passive",
           "id": 333,
           "name": "The Mind",
-          "iconUrl": "isaac://item/passive/333"
+          "iconUrl": "isaac://item/passive/333",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -3868,7 +4066,9 @@
         {
           "kind": "character",
           "id": 31,
-          "name": "The Lost"
+          "name": "The Lost",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -3894,7 +4094,8 @@
           "itemKind": "passive",
           "id": 334,
           "name": "The Body",
-          "iconUrl": "isaac://item/passive/334"
+          "iconUrl": "isaac://item/passive/334",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -3902,7 +4103,9 @@
         {
           "kind": "character",
           "id": 31,
-          "name": "The Lost"
+          "name": "The Lost",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -3928,7 +4131,8 @@
           "itemKind": "passive",
           "id": 335,
           "name": "The Soul",
-          "iconUrl": "isaac://item/passive/335"
+          "iconUrl": "isaac://item/passive/335",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -3936,7 +4140,9 @@
         {
           "kind": "character",
           "id": 31,
-          "name": "The Lost"
+          "name": "The Lost",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -3962,7 +4168,8 @@
           "itemKind": "active",
           "id": 283,
           "name": "D100",
-          "iconUrl": "isaac://item/active/283"
+          "iconUrl": "isaac://item/active/283",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -3970,7 +4177,9 @@
         {
           "kind": "character",
           "id": 31,
-          "name": "The Lost"
+          "name": "The Lost",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -3996,7 +4205,8 @@
           "itemKind": "passive",
           "id": 246,
           "name": "Blue Map",
-          "iconUrl": "isaac://item/passive/246"
+          "iconUrl": "isaac://item/passive/246",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -4024,14 +4234,16 @@
           "itemKind": "passive",
           "id": 249,
           "name": "There's Options",
-          "iconUrl": "isaac://item/passive/249"
+          "iconUrl": "isaac://item/passive/249",
+          "page": null
         },
         {
           "kind": "item",
           "itemKind": "passive",
           "id": 414,
           "name": "More Options",
-          "iconUrl": "isaac://item/passive/414"
+          "iconUrl": "isaac://item/passive/414",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -4059,7 +4271,8 @@
           "itemKind": "passive",
           "id": 260,
           "name": "Black Candle",
-          "iconUrl": "isaac://item/passive/260"
+          "iconUrl": "isaac://item/passive/260",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -4087,7 +4300,8 @@
           "itemKind": "active",
           "id": 289,
           "name": "Red Candle",
-          "iconUrl": "isaac://item/active/289"
+          "iconUrl": "isaac://item/active/289",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -4115,7 +4329,8 @@
           "itemKind": "passive",
           "id": 232,
           "name": "Stop Watch",
-          "iconUrl": "isaac://item/passive/232"
+          "iconUrl": "isaac://item/passive/232",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -4143,7 +4358,8 @@
           "itemKind": "passive",
           "id": 32,
           "name": "Wire Coat Hanger",
-          "iconUrl": "isaac://item/passive/32"
+          "iconUrl": "isaac://item/passive/32",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -4171,7 +4387,8 @@
           "itemKind": "passive",
           "id": 149,
           "name": "Ipecac",
-          "iconUrl": "isaac://item/passive/149"
+          "iconUrl": "isaac://item/passive/149",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -4199,7 +4416,8 @@
           "itemKind": "passive",
           "id": 240,
           "name": "Experimental Treatment",
-          "iconUrl": "isaac://item/passive/240"
+          "iconUrl": "isaac://item/passive/240",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -4247,7 +4465,8 @@
           "itemKind": "active",
           "id": 293,
           "name": "Head of Krampus",
-          "iconUrl": "isaac://item/active/293"
+          "iconUrl": "isaac://item/active/293",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -4295,7 +4514,8 @@
           "itemKind": "active",
           "id": 294,
           "name": "Butter Bean",
-          "iconUrl": "isaac://item/active/294"
+          "iconUrl": "isaac://item/active/294",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -4323,7 +4543,8 @@
           "itemKind": "passive",
           "id": 252,
           "name": "Little Baggy",
-          "iconUrl": "isaac://item/passive/252"
+          "iconUrl": "isaac://item/passive/252",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -4351,7 +4572,8 @@
           "itemKind": "passive",
           "id": 119,
           "name": "Blood Bag",
-          "iconUrl": "isaac://item/passive/119"
+          "iconUrl": "isaac://item/passive/119",
+          "page": null
         },
         {
           "kind": "challenge",
@@ -4359,7 +4581,8 @@
           "name": "Bloody Mary",
           "rewards": [
             518
-          ]
+          ],
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -4387,7 +4610,8 @@
           "itemKind": "active",
           "id": 284,
           "name": "D4",
-          "iconUrl": "isaac://item/active/284"
+          "iconUrl": "isaac://item/active/284",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -4415,7 +4639,8 @@
           "itemKind": "trinket",
           "id": 23,
           "name": "Missing Poster",
-          "iconUrl": "isaac://item/trinket/23"
+          "iconUrl": "isaac://item/trinket/23",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -4443,7 +4668,8 @@
           "itemKind": "passive",
           "id": 221,
           "name": "Rubber Cement",
-          "iconUrl": "isaac://item/passive/221"
+          "iconUrl": "isaac://item/passive/221",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -4571,7 +4797,8 @@
           "itemKind": "passive",
           "id": 331,
           "name": "Godhead",
-          "iconUrl": "isaac://item/passive/331"
+          "iconUrl": "isaac://item/passive/331",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -4579,7 +4806,9 @@
         {
           "kind": "character",
           "id": 31,
-          "name": "The Lost"
+          "name": "The Lost",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -4605,12 +4834,16 @@
         {
           "kind": "character",
           "id": 26,
-          "name": "Eve"
+          "name": "Eve",
+          "tainted": false,
+          "page": null
         },
         {
           "kind": "character",
           "id": 26,
-          "name": "Eve"
+          "name": "Eve",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -4676,7 +4909,9 @@
         {
           "kind": "character",
           "id": 38,
-          "name": "Lazarus"
+          "name": "Lazarus",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -4866,7 +5101,9 @@
         {
           "kind": "character",
           "id": 26,
-          "name": "Eve"
+          "name": "Eve",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -4932,7 +5169,9 @@
         {
           "kind": "character",
           "id": 38,
-          "name": "Lazarus"
+          "name": "Lazarus",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -4958,7 +5197,9 @@
         {
           "kind": "character",
           "id": 38,
-          "name": "Lazarus"
+          "name": "Lazarus",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -5004,7 +5245,9 @@
         {
           "kind": "character",
           "id": 31,
-          "name": "The Lost"
+          "name": "The Lost",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -5050,7 +5293,9 @@
         {
           "kind": "character",
           "id": 27,
-          "name": "Samson"
+          "name": "Samson",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -5101,7 +5346,8 @@
           "itemKind": "familiar",
           "id": 404,
           "name": "Farting Baby",
-          "iconUrl": "isaac://item/familiar/404"
+          "iconUrl": "isaac://item/familiar/404",
+          "page": null
         }
       ],
       "origin": "afterbirth",
@@ -5134,7 +5380,8 @@
           "itemKind": "passive",
           "id": 407,
           "name": "Purity",
-          "iconUrl": "isaac://item/passive/407"
+          "iconUrl": "isaac://item/passive/407",
+          "page": null
         }
       ],
       "origin": "afterbirth",
@@ -5167,7 +5414,8 @@
           "itemKind": "active",
           "id": 386,
           "name": "D12",
-          "iconUrl": "isaac://item/active/386"
+          "iconUrl": "isaac://item/active/386",
+          "page": null
         }
       ],
       "origin": "afterbirth",
@@ -5200,7 +5448,8 @@
           "itemKind": "passive",
           "id": 391,
           "name": "Betrayal",
-          "iconUrl": "isaac://item/passive/391"
+          "iconUrl": "isaac://item/passive/391",
+          "page": null
         }
       ],
       "origin": "afterbirth",
@@ -5233,7 +5482,8 @@
           "itemKind": "familiar",
           "id": 361,
           "name": "Fate's Reward",
-          "iconUrl": "isaac://item/familiar/361"
+          "iconUrl": "isaac://item/familiar/361",
+          "page": null
         }
       ],
       "origin": "afterbirth",
@@ -5266,7 +5516,8 @@
           "itemKind": "passive",
           "id": 408,
           "name": "Athame",
-          "iconUrl": "isaac://item/passive/408"
+          "iconUrl": "isaac://item/passive/408",
+          "page": null
         }
       ],
       "origin": "afterbirth",
@@ -5278,7 +5529,9 @@
         {
           "kind": "character",
           "id": 26,
-          "name": "Eve"
+          "name": "Eve",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -5304,7 +5557,8 @@
           "itemKind": "trinket",
           "id": 81,
           "name": "Blind Rage",
-          "iconUrl": "isaac://item/trinket/81"
+          "iconUrl": "isaac://item/trinket/81",
+          "page": null
         }
       ],
       "origin": "afterbirth",
@@ -5316,7 +5570,9 @@
         {
           "kind": "character",
           "id": 27,
-          "name": "Samson"
+          "name": "Samson",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -5342,7 +5598,8 @@
           "itemKind": "passive",
           "id": 399,
           "name": "Maw Of The Void",
-          "iconUrl": "isaac://item/passive/399"
+          "iconUrl": "isaac://item/passive/399",
+          "page": null
         }
       ],
       "origin": "afterbirth",
@@ -5375,7 +5632,8 @@
           "itemKind": "passive",
           "id": 409,
           "name": "Empty Vessel",
-          "iconUrl": "isaac://item/passive/409"
+          "iconUrl": "isaac://item/passive/409",
+          "page": null
         }
       ],
       "origin": "afterbirth",
@@ -5387,7 +5645,9 @@
         {
           "kind": "character",
           "id": 38,
-          "name": "Lazarus"
+          "name": "Lazarus",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -5413,7 +5673,8 @@
           "itemKind": "passive",
           "id": 381,
           "name": "Eden's Blessing",
-          "iconUrl": "isaac://item/passive/381"
+          "iconUrl": "isaac://item/passive/381",
+          "page": null
         }
       ],
       "origin": "afterbirth",
@@ -5446,7 +5707,8 @@
           "itemKind": "familiar",
           "id": 363,
           "name": "Sworn Protector",
-          "iconUrl": "isaac://item/familiar/363"
+          "iconUrl": "isaac://item/familiar/363",
+          "page": null
         }
       ],
       "origin": "afterbirth",
@@ -5458,7 +5720,9 @@
         {
           "kind": "character",
           "id": 31,
-          "name": "The Lost"
+          "name": "The Lost",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -5484,7 +5748,8 @@
           "itemKind": "familiar",
           "id": 360,
           "name": "Incubus",
-          "iconUrl": "isaac://item/familiar/360"
+          "iconUrl": "isaac://item/familiar/360",
+          "page": null
         }
       ],
       "origin": "afterbirth",
@@ -5496,7 +5761,9 @@
         {
           "kind": "character",
           "id": 32,
-          "name": "Lilith"
+          "name": "Lilith",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -5526,7 +5793,9 @@
         {
           "kind": "character",
           "id": 33,
-          "name": "Keeper"
+          "name": "Keeper",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -5552,7 +5821,8 @@
           "itemKind": "familiar",
           "id": 362,
           "name": "Lil Chest",
-          "iconUrl": "isaac://item/familiar/362"
+          "iconUrl": "isaac://item/familiar/362",
+          "page": null
         }
       ],
       "origin": "afterbirth",
@@ -5580,7 +5850,8 @@
           "itemKind": "familiar",
           "id": 387,
           "name": "Censer",
-          "iconUrl": "isaac://item/familiar/387"
+          "iconUrl": "isaac://item/familiar/387",
+          "page": null
         }
       ],
       "origin": "afterbirth",
@@ -5608,7 +5879,8 @@
           "itemKind": "passive",
           "id": 410,
           "name": "Evil Eye",
-          "iconUrl": "isaac://item/passive/410"
+          "iconUrl": "isaac://item/passive/410",
+          "page": null
         }
       ],
       "origin": "afterbirth",
@@ -5636,7 +5908,8 @@
           "itemKind": "familiar",
           "id": 433,
           "name": "My Shadow",
-          "iconUrl": "isaac://item/familiar/433"
+          "iconUrl": "isaac://item/familiar/433",
+          "page": null
         }
       ],
       "origin": "afterbirth",
@@ -5664,7 +5937,8 @@
           "itemKind": "trinket",
           "id": 67,
           "name": "Cracked Dice",
-          "iconUrl": "isaac://item/trinket/67"
+          "iconUrl": "isaac://item/trinket/67",
+          "page": null
         }
       ],
       "origin": "afterbirth",
@@ -5692,7 +5966,8 @@
           "itemKind": "trinket",
           "id": 80,
           "name": "Black Feather",
-          "iconUrl": "isaac://item/trinket/80"
+          "iconUrl": "isaac://item/trinket/80",
+          "page": null
         }
       ],
       "origin": "afterbirth",
@@ -5700,7 +5975,9 @@
         {
           "kind": "character",
           "id": 26,
-          "name": "Eve"
+          "name": "Eve",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -5726,7 +6003,8 @@
           "itemKind": "passive",
           "id": 411,
           "name": "Lusty Blood",
-          "iconUrl": "isaac://item/passive/411"
+          "iconUrl": "isaac://item/passive/411",
+          "page": null
         }
       ],
       "origin": "afterbirth",
@@ -5734,7 +6012,9 @@
         {
           "kind": "character",
           "id": 27,
-          "name": "Samson"
+          "name": "Samson",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -5758,7 +6038,9 @@
         {
           "kind": "character",
           "id": 13,
-          "name": "Lilith"
+          "name": "Lilith",
+          "tainted": false,
+          "page": null
         }
       ],
       "origin": null,
@@ -5786,7 +6068,8 @@
           "itemKind": "familiar",
           "id": 388,
           "name": "Key Bum",
-          "iconUrl": "isaac://item/familiar/388"
+          "iconUrl": "isaac://item/familiar/388",
+          "page": null
         }
       ],
       "origin": "afterbirth",
@@ -5794,7 +6077,9 @@
         {
           "kind": "character",
           "id": 38,
-          "name": "Lazarus"
+          "name": "Lazarus",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -5820,7 +6105,8 @@
           "itemKind": "familiar",
           "id": 405,
           "name": "GB Bug",
-          "iconUrl": "isaac://item/familiar/405"
+          "iconUrl": "isaac://item/familiar/405",
+          "page": null
         }
       ],
       "origin": "afterbirth",
@@ -5848,7 +6134,8 @@
           "itemKind": "passive",
           "id": 392,
           "name": "Zodiac",
-          "iconUrl": "isaac://item/passive/392"
+          "iconUrl": "isaac://item/passive/392",
+          "page": null
         }
       ],
       "origin": "afterbirth",
@@ -5856,7 +6143,9 @@
         {
           "kind": "character",
           "id": 31,
-          "name": "The Lost"
+          "name": "The Lost",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -5882,7 +6171,8 @@
           "itemKind": "active",
           "id": 357,
           "name": "Box of Friends",
-          "iconUrl": "isaac://item/active/357"
+          "iconUrl": "isaac://item/active/357",
+          "page": null
         }
       ],
       "origin": "afterbirth",
@@ -5890,7 +6180,9 @@
         {
           "kind": "character",
           "id": 32,
-          "name": "Lilith"
+          "name": "Lilith",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -5916,7 +6208,8 @@
           "itemKind": "trinket",
           "id": 84,
           "name": "Rib of Greed",
-          "iconUrl": "isaac://item/trinket/84"
+          "iconUrl": "isaac://item/trinket/84",
+          "page": null
         }
       ],
       "origin": "afterbirth",
@@ -5924,7 +6217,9 @@
         {
           "kind": "character",
           "id": 33,
-          "name": "Keeper"
+          "name": "Keeper",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -6050,7 +6345,9 @@
         {
           "kind": "character",
           "id": 26,
-          "name": "Eve"
+          "name": "Eve",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -6076,7 +6373,9 @@
         {
           "kind": "character",
           "id": 27,
-          "name": "Samson"
+          "name": "Samson",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -6122,7 +6421,9 @@
         {
           "kind": "character",
           "id": 38,
-          "name": "Lazarus"
+          "name": "Lazarus",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -6168,7 +6469,9 @@
         {
           "kind": "character",
           "id": 31,
-          "name": "The Lost"
+          "name": "The Lost",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -6194,7 +6497,9 @@
         {
           "kind": "character",
           "id": 32,
-          "name": "Lilith"
+          "name": "Lilith",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -6220,7 +6525,9 @@
         {
           "kind": "character",
           "id": 33,
-          "name": "Keeper"
+          "name": "Keeper",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -6246,7 +6553,8 @@
           "itemKind": "familiar",
           "id": 389,
           "name": "Rune Bag",
-          "iconUrl": "isaac://item/familiar/389"
+          "iconUrl": "isaac://item/familiar/389",
+          "page": null
         }
       ],
       "origin": "afterbirth",
@@ -6254,7 +6562,9 @@
         {
           "kind": "character",
           "id": 32,
-          "name": "Lilith"
+          "name": "Lilith",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -6280,7 +6590,8 @@
           "itemKind": "passive",
           "id": 412,
           "name": "Cambion Conception",
-          "iconUrl": "isaac://item/passive/412"
+          "iconUrl": "isaac://item/passive/412",
+          "page": null
         }
       ],
       "origin": "afterbirth",
@@ -6288,7 +6599,9 @@
         {
           "kind": "character",
           "id": 32,
-          "name": "Lilith"
+          "name": "Lilith",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -6314,7 +6627,8 @@
           "itemKind": "passive",
           "id": 393,
           "name": "Serpent's Kiss",
-          "iconUrl": "isaac://item/passive/393"
+          "iconUrl": "isaac://item/passive/393",
+          "page": null
         }
       ],
       "origin": "afterbirth",
@@ -6322,7 +6636,9 @@
         {
           "kind": "character",
           "id": 32,
-          "name": "Lilith"
+          "name": "Lilith",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -6348,7 +6664,8 @@
           "itemKind": "familiar",
           "id": 417,
           "name": "Succubus",
-          "iconUrl": "isaac://item/familiar/417"
+          "iconUrl": "isaac://item/familiar/417",
+          "page": null
         }
       ],
       "origin": "afterbirth",
@@ -6356,7 +6673,9 @@
         {
           "kind": "character",
           "id": 32,
-          "name": "Lilith"
+          "name": "Lilith",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -6382,7 +6701,8 @@
           "itemKind": "passive",
           "id": 413,
           "name": "Immaculate Conception",
-          "iconUrl": "isaac://item/passive/413"
+          "iconUrl": "isaac://item/passive/413",
+          "page": null
         }
       ],
       "origin": "afterbirth",
@@ -6390,7 +6710,9 @@
         {
           "kind": "character",
           "id": 32,
-          "name": "Lilith"
+          "name": "Lilith",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -6416,7 +6738,9 @@
         {
           "kind": "character",
           "id": 32,
-          "name": "Lilith"
+          "name": "Lilith",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -6503,7 +6827,8 @@
           "kind": "item",
           "itemKind": "passive",
           "id": 380,
-          "name": "Pay To Play"
+          "name": "Pay To Play",
+          "page": null
         }
       ],
       "graph": {
@@ -6549,7 +6874,8 @@
           "itemKind": "trinket",
           "id": 76,
           "name": "Poker Chip",
-          "iconUrl": "isaac://item/trinket/76"
+          "iconUrl": "isaac://item/trinket/76",
+          "page": null
         }
       ],
       "origin": "afterbirth",
@@ -6576,7 +6902,8 @@
           "itemKind": "trinket",
           "id": 74,
           "name": "Stud Finder",
-          "iconUrl": "isaac://item/trinket/74"
+          "iconUrl": "isaac://item/trinket/74",
+          "page": null
         }
       ],
       "origin": "afterbirth",
@@ -6604,7 +6931,8 @@
           "itemKind": "active",
           "id": 406,
           "name": "D8",
-          "iconUrl": "isaac://item/active/406"
+          "iconUrl": "isaac://item/active/406",
+          "page": null
         }
       ],
       "origin": "afterbirth",
@@ -6632,7 +6960,8 @@
           "itemKind": "passive",
           "id": 440,
           "name": "Kidney Stone",
-          "iconUrl": "isaac://item/passive/440"
+          "iconUrl": "isaac://item/passive/440",
+          "page": null
         }
       ],
       "origin": "afterbirth",
@@ -6659,7 +6988,8 @@
           "itemKind": "active",
           "id": 263,
           "name": "Clear Rune",
-          "iconUrl": "isaac://item/active/263"
+          "iconUrl": "isaac://item/active/263",
+          "page": null
         }
       ],
       "origin": "rebirth",
@@ -6735,7 +7065,9 @@
         {
           "kind": "character",
           "id": 33,
-          "name": "Keeper"
+          "name": "Keeper",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -6761,7 +7093,9 @@
         {
           "kind": "character",
           "id": 33,
-          "name": "Keeper"
+          "name": "Keeper",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -6787,7 +7121,8 @@
           "itemKind": "passive",
           "id": 416,
           "name": "Deep Pockets",
-          "iconUrl": "isaac://item/passive/416"
+          "iconUrl": "isaac://item/passive/416",
+          "page": null
         }
       ],
       "origin": "afterbirth",
@@ -6795,7 +7130,9 @@
         {
           "kind": "character",
           "id": 33,
-          "name": "Keeper"
+          "name": "Keeper",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -6821,7 +7158,8 @@
           "itemKind": "trinket",
           "id": 85,
           "name": "Karma",
-          "iconUrl": "isaac://item/trinket/85"
+          "iconUrl": "isaac://item/trinket/85",
+          "page": null
         }
       ],
       "origin": "afterbirth",
@@ -6829,7 +7167,9 @@
         {
           "kind": "character",
           "id": 33,
-          "name": "Keeper"
+          "name": "Keeper",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -6855,7 +7195,9 @@
         {
           "kind": "character",
           "id": 33,
-          "name": "Keeper"
+          "name": "Keeper",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -6881,7 +7223,9 @@
         {
           "kind": "character",
           "id": 33,
-          "name": "Keeper"
+          "name": "Keeper",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -6947,7 +7291,8 @@
           "itemKind": "active",
           "id": 349,
           "name": "Wooden Nickel",
-          "iconUrl": "isaac://item/active/349"
+          "iconUrl": "isaac://item/active/349",
+          "page": null
         }
       ],
       "origin": "afterbirth",
@@ -7055,7 +7400,8 @@
           "itemKind": "trinket",
           "id": 83,
           "name": "Store Key",
-          "iconUrl": "isaac://item/trinket/83"
+          "iconUrl": "isaac://item/trinket/83",
+          "page": null
         }
       ],
       "origin": "afterbirth",
@@ -7101,7 +7447,9 @@
         {
           "kind": "character",
           "id": 14,
-          "name": "Keeper"
+          "name": "Keeper",
+          "tainted": false,
+          "page": null
         }
       ],
       "origin": null,
@@ -7189,7 +7537,9 @@
         {
           "kind": "character",
           "id": 26,
-          "name": "Eve"
+          "name": "Eve",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -7235,7 +7585,9 @@
         {
           "kind": "character",
           "id": 38,
-          "name": "Lazarus"
+          "name": "Lazarus",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -7301,7 +7653,9 @@
         {
           "kind": "character",
           "id": 32,
-          "name": "Lilith"
+          "name": "Lilith",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -7347,7 +7701,9 @@
         {
           "kind": "character",
           "id": 27,
-          "name": "Samson"
+          "name": "Samson",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -7393,7 +7749,9 @@
         {
           "kind": "character",
           "id": 33,
-          "name": "Keeper"
+          "name": "Keeper",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -7639,7 +7997,8 @@
           "itemKind": "active",
           "id": 441,
           "name": "Mega Blast",
-          "iconUrl": "isaac://item/active/441"
+          "iconUrl": "isaac://item/active/441",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -7771,7 +8130,8 @@
           "itemKind": "active",
           "id": 489,
           "name": "D infinity",
-          "iconUrl": "isaac://item/active/489"
+          "iconUrl": "isaac://item/active/489",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -7804,7 +8164,8 @@
           "itemKind": "passive",
           "id": 499,
           "name": "Eucharist",
-          "iconUrl": "isaac://item/passive/499"
+          "iconUrl": "isaac://item/passive/499",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -7837,7 +8198,8 @@
           "itemKind": "trinket",
           "id": 110,
           "name": "Silver Dollar",
-          "iconUrl": "isaac://item/trinket/110"
+          "iconUrl": "isaac://item/trinket/110",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -7870,7 +8232,8 @@
           "itemKind": "familiar",
           "id": 468,
           "name": "Shade",
-          "iconUrl": "isaac://item/familiar/468"
+          "iconUrl": "isaac://item/familiar/468",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -7903,7 +8266,8 @@
           "itemKind": "familiar",
           "id": 472,
           "name": "King Baby",
-          "iconUrl": "isaac://item/familiar/472"
+          "iconUrl": "isaac://item/familiar/472",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -7936,7 +8300,8 @@
           "itemKind": "trinket",
           "id": 111,
           "name": "Bloody Crown",
-          "iconUrl": "isaac://item/trinket/111"
+          "iconUrl": "isaac://item/trinket/111",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -7948,7 +8313,9 @@
         {
           "kind": "character",
           "id": 27,
-          "name": "Samson"
+          "name": "Samson",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -7974,7 +8341,8 @@
           "itemKind": "active",
           "id": 486,
           "name": "Dull Razor",
-          "iconUrl": "isaac://item/active/486"
+          "iconUrl": "isaac://item/active/486",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -7986,7 +8354,9 @@
         {
           "kind": "character",
           "id": 26,
-          "name": "Eve"
+          "name": "Eve",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -8012,7 +8382,8 @@
           "itemKind": "active",
           "id": 490,
           "name": "Eden's Soul",
-          "iconUrl": "isaac://item/active/490"
+          "iconUrl": "isaac://item/active/490",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -8045,7 +8416,8 @@
           "itemKind": "passive",
           "id": 442,
           "name": "Dark Prince's Crown",
-          "iconUrl": "isaac://item/passive/442"
+          "iconUrl": "isaac://item/passive/442",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -8078,7 +8450,8 @@
           "itemKind": "passive",
           "id": 453,
           "name": "Compound Fracture",
-          "iconUrl": "isaac://item/passive/453"
+          "iconUrl": "isaac://item/passive/453",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -8090,7 +8463,9 @@
         {
           "kind": "character",
           "id": 38,
-          "name": "Lazarus"
+          "name": "Lazarus",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -8116,7 +8491,8 @@
           "itemKind": "passive",
           "id": 496,
           "name": "Euthanasia",
-          "iconUrl": "isaac://item/passive/496"
+          "iconUrl": "isaac://item/passive/496",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -8128,7 +8504,9 @@
         {
           "kind": "character",
           "id": 32,
-          "name": "Lilith"
+          "name": "Lilith",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -8158,7 +8536,9 @@
         {
           "kind": "character",
           "id": 31,
-          "name": "The Lost"
+          "name": "The Lost",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -8184,7 +8564,8 @@
           "itemKind": "active",
           "id": 485,
           "name": "Crooked Penny",
-          "iconUrl": "isaac://item/active/485"
+          "iconUrl": "isaac://item/active/485",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -8196,7 +8577,9 @@
         {
           "kind": "character",
           "id": 33,
-          "name": "Keeper"
+          "name": "Keeper",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -8222,7 +8605,8 @@
           "itemKind": "active",
           "id": 477,
           "name": "Void",
-          "iconUrl": "isaac://item/active/477"
+          "iconUrl": "isaac://item/active/477",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -8234,7 +8618,9 @@
         {
           "kind": "character",
           "id": 34,
-          "name": "Apollyon"
+          "name": "Apollyon",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -8260,7 +8646,8 @@
           "itemKind": "active",
           "id": 476,
           "name": "D1",
-          "iconUrl": "isaac://item/active/476"
+          "iconUrl": "isaac://item/active/476",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -8293,7 +8680,8 @@
           "itemKind": "passive",
           "id": 464,
           "name": "Glyph of Balance",
-          "iconUrl": "isaac://item/passive/464"
+          "iconUrl": "isaac://item/passive/464",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -8326,7 +8714,8 @@
           "itemKind": "familiar",
           "id": 500,
           "name": "Sack of Sacks",
-          "iconUrl": "isaac://item/familiar/500"
+          "iconUrl": "isaac://item/familiar/500",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -8359,7 +8748,8 @@
           "itemKind": "passive",
           "id": 462,
           "name": "Eye of Belial",
-          "iconUrl": "isaac://item/passive/462"
+          "iconUrl": "isaac://item/passive/462",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -8392,7 +8782,8 @@
           "itemKind": "trinket",
           "id": 91,
           "name": "Meconium",
-          "iconUrl": "isaac://item/trinket/91"
+          "iconUrl": "isaac://item/trinket/91",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -8425,7 +8816,8 @@
           "itemKind": "trinket",
           "id": 119,
           "name": "Stem Cell",
-          "iconUrl": "isaac://item/trinket/119"
+          "iconUrl": "isaac://item/trinket/119",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -8437,7 +8829,9 @@
         {
           "kind": "character",
           "id": 27,
-          "name": "Samson"
+          "name": "Samson",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -8463,7 +8857,8 @@
           "itemKind": "trinket",
           "id": 107,
           "name": "Crow Heart",
-          "iconUrl": "isaac://item/trinket/107"
+          "iconUrl": "isaac://item/trinket/107",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -8475,7 +8870,9 @@
         {
           "kind": "character",
           "id": 26,
-          "name": "Eve"
+          "name": "Eve",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -8501,7 +8898,8 @@
           "itemKind": "active",
           "id": 488,
           "name": "Metronome",
-          "iconUrl": "isaac://item/active/488"
+          "iconUrl": "isaac://item/active/488",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -8534,7 +8932,8 @@
           "itemKind": "trinket",
           "id": 118,
           "name": "Bat Wing",
-          "iconUrl": "isaac://item/trinket/118"
+          "iconUrl": "isaac://item/trinket/118",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -8567,7 +8966,8 @@
           "itemKind": "active",
           "id": 475,
           "name": "Plan C",
-          "iconUrl": "isaac://item/active/475"
+          "iconUrl": "isaac://item/active/475",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -8579,7 +8979,9 @@
         {
           "kind": "character",
           "id": 38,
-          "name": "Lazarus"
+          "name": "Lazarus",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -8605,7 +9007,8 @@
           "itemKind": "passive",
           "id": 498,
           "name": "Duality",
-          "iconUrl": "isaac://item/passive/498"
+          "iconUrl": "isaac://item/passive/498",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -8617,7 +9020,9 @@
         {
           "kind": "character",
           "id": 32,
-          "name": "Lilith"
+          "name": "Lilith",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -8643,7 +9048,8 @@
           "itemKind": "passive",
           "id": 455,
           "name": "Dad's Lost Coin",
-          "iconUrl": "isaac://item/passive/455"
+          "iconUrl": "isaac://item/passive/455",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -8655,7 +9061,9 @@
         {
           "kind": "character",
           "id": 31,
-          "name": "The Lost"
+          "name": "The Lost",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -8681,7 +9089,8 @@
           "itemKind": "passive",
           "id": 450,
           "name": "Eye of Greed",
-          "iconUrl": "isaac://item/passive/450"
+          "iconUrl": "isaac://item/passive/450",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -8693,7 +9102,9 @@
         {
           "kind": "character",
           "id": 33,
-          "name": "Keeper"
+          "name": "Keeper",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -8723,7 +9134,9 @@
         {
           "kind": "character",
           "id": 34,
-          "name": "Apollyon"
+          "name": "Apollyon",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -8749,7 +9162,8 @@
           "itemKind": "trinket",
           "id": 113,
           "name": "Locust of War",
-          "iconUrl": "isaac://item/trinket/113"
+          "iconUrl": "isaac://item/trinket/113",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -8757,7 +9171,9 @@
         {
           "kind": "character",
           "id": 34,
-          "name": "Apollyon"
+          "name": "Apollyon",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -8783,7 +9199,8 @@
           "itemKind": "trinket",
           "id": 114,
           "name": "Locust of Pestilence",
-          "iconUrl": "isaac://item/trinket/114"
+          "iconUrl": "isaac://item/trinket/114",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -8791,7 +9208,9 @@
         {
           "kind": "character",
           "id": 34,
-          "name": "Apollyon"
+          "name": "Apollyon",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -8817,7 +9236,8 @@
           "itemKind": "trinket",
           "id": 115,
           "name": "Locust of Famine",
-          "iconUrl": "isaac://item/trinket/115"
+          "iconUrl": "isaac://item/trinket/115",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -8825,7 +9245,9 @@
         {
           "kind": "character",
           "id": 34,
-          "name": "Apollyon"
+          "name": "Apollyon",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -8851,7 +9273,8 @@
           "itemKind": "trinket",
           "id": 116,
           "name": "Locust of Death",
-          "iconUrl": "isaac://item/trinket/116"
+          "iconUrl": "isaac://item/trinket/116",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -8859,7 +9282,9 @@
         {
           "kind": "character",
           "id": 34,
-          "name": "Apollyon"
+          "name": "Apollyon",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -8885,7 +9310,8 @@
           "itemKind": "trinket",
           "id": 117,
           "name": "Locust of Conquest",
-          "iconUrl": "isaac://item/trinket/117"
+          "iconUrl": "isaac://item/trinket/117",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -8893,7 +9319,9 @@
         {
           "kind": "character",
           "id": 34,
-          "name": "Apollyon"
+          "name": "Apollyon",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -8919,7 +9347,8 @@
           "itemKind": "familiar",
           "id": 470,
           "name": "Hushy",
-          "iconUrl": "isaac://item/familiar/470"
+          "iconUrl": "isaac://item/familiar/470",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -8931,7 +9360,9 @@
         {
           "kind": "character",
           "id": 34,
-          "name": "Apollyon"
+          "name": "Apollyon",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -8957,7 +9388,8 @@
           "itemKind": "active",
           "id": 504,
           "name": "Brown Nugget",
-          "iconUrl": "isaac://item/active/504"
+          "iconUrl": "isaac://item/active/504",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -8965,7 +9397,9 @@
         {
           "kind": "character",
           "id": 34,
-          "name": "Apollyon"
+          "name": "Apollyon",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -8991,7 +9425,9 @@
         {
           "kind": "character",
           "id": 34,
-          "name": "Apollyon"
+          "name": "Apollyon",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -9017,7 +9453,8 @@
           "itemKind": "active",
           "id": 479,
           "name": "Smelter",
-          "iconUrl": "isaac://item/active/479"
+          "iconUrl": "isaac://item/active/479",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -9025,7 +9462,9 @@
         {
           "kind": "character",
           "id": 34,
-          "name": "Apollyon"
+          "name": "Apollyon",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -9051,7 +9490,9 @@
         {
           "kind": "character",
           "id": 34,
-          "name": "Apollyon"
+          "name": "Apollyon",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -9266,7 +9707,9 @@
         {
           "kind": "character",
           "id": 31,
-          "name": "The Lost"
+          "name": "The Lost",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -9390,7 +9833,8 @@
           "itemKind": "passive",
           "id": 501,
           "name": "Greed's Gullet",
-          "iconUrl": "isaac://item/passive/501"
+          "iconUrl": "isaac://item/passive/501",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -9418,7 +9862,8 @@
           "itemKind": "trinket",
           "id": 92,
           "name": "Cracked Crown",
-          "iconUrl": "isaac://item/trinket/92"
+          "iconUrl": "isaac://item/trinket/92",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -9466,7 +9911,8 @@
           "itemKind": "active",
           "id": 510,
           "name": "Delirious",
-          "iconUrl": "isaac://item/active/510"
+          "iconUrl": "isaac://item/active/510",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -9529,7 +9975,9 @@
         {
           "kind": "character",
           "id": 15,
-          "name": "Apollyon"
+          "name": "Apollyon",
+          "tainted": false,
+          "page": null
         },
         {
           "kind": "challenge",
@@ -9537,19 +9985,22 @@
           "name": "I RULE!",
           "rewards": [
             229
-          ]
+          ],
+          "page": null
         },
         {
           "kind": "challenge",
           "id": 31,
           "name": "Backasswards",
-          "rewards": []
+          "rewards": [],
+          "page": null
         },
         {
           "kind": "challenge",
           "id": 34,
           "name": "Ultra hard",
-          "rewards": []
+          "rewards": [],
+          "page": null
         }
       ],
       "origin": null,
@@ -9675,42 +10126,50 @@
         {
           "kind": "boss",
           "id": 57,
-          "name": "The Stain"
+          "name": "The Stain",
+          "page": null
         },
         {
           "kind": "boss",
           "id": 58,
-          "name": "Brownie"
+          "name": "Brownie",
+          "page": null
         },
         {
           "kind": "boss",
           "id": 59,
-          "name": "The Forsaken"
+          "name": "The Forsaken",
+          "page": null
         },
         {
           "kind": "boss",
           "id": 60,
-          "name": "Little Horn"
+          "name": "Little Horn",
+          "page": null
         },
         {
           "kind": "boss",
           "id": 61,
-          "name": "Rag Man"
+          "name": "Rag Man",
+          "page": null
         },
         {
           "kind": "boss",
           "id": 64,
-          "name": "Dangle"
+          "name": "Dangle",
+          "page": null
         },
         {
           "kind": "boss",
           "id": 65,
-          "name": "Turdling"
+          "name": "Turdling",
+          "page": null
         },
         {
           "kind": "boss",
           "id": 66,
-          "name": "The Frail"
+          "name": "The Frail",
+          "page": null
         }
       ],
       "origin": null,
@@ -9736,42 +10195,50 @@
         {
           "kind": "boss",
           "id": 67,
-          "name": "Rag Mega"
+          "name": "Rag Mega",
+          "page": null
         },
         {
           "kind": "boss",
           "id": 68,
-          "name": "Sisters Vis"
+          "name": "Sisters Vis",
+          "page": null
         },
         {
           "kind": "boss",
           "id": 69,
-          "name": "Big Horn"
+          "name": "Big Horn",
+          "page": null
         },
         {
           "kind": "boss",
           "id": 72,
-          "name": "The Matriarch"
+          "name": "The Matriarch",
+          "page": null
         },
         {
           "kind": "boss",
           "id": 73,
-          "name": "The Pile"
+          "name": "The Pile",
+          "page": null
         },
         {
           "kind": "boss",
           "id": 74,
-          "name": "Reap Creep"
+          "name": "Reap Creep",
+          "page": null
         },
         {
           "kind": "boss",
           "id": 84,
-          "name": "Baby Plum"
+          "name": "Baby Plum",
+          "page": null
         },
         {
           "kind": "boss",
           "id": 94,
-          "name": "Bumbino"
+          "name": "Bumbino",
+          "page": null
         }
       ],
       "origin": null,
@@ -9819,7 +10286,8 @@
           "itemKind": "active",
           "id": 512,
           "name": "Black Hole",
-          "iconUrl": "isaac://item/active/512"
+          "iconUrl": "isaac://item/active/512",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -9847,7 +10315,8 @@
           "itemKind": "active",
           "id": 515,
           "name": "Mystery Gift",
-          "iconUrl": "isaac://item/active/515"
+          "iconUrl": "isaac://item/active/515",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -9875,7 +10344,8 @@
           "itemKind": "active",
           "id": 516,
           "name": "Sprinkler",
-          "iconUrl": "isaac://item/active/516"
+          "iconUrl": "isaac://item/active/516",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -9903,7 +10373,8 @@
           "itemKind": "familiar",
           "id": 511,
           "name": "Angry Fly",
-          "iconUrl": "isaac://item/familiar/511"
+          "iconUrl": "isaac://item/familiar/511",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -9936,7 +10407,8 @@
           "itemKind": "passive",
           "id": 513,
           "name": "Bozo",
-          "iconUrl": "isaac://item/passive/513"
+          "iconUrl": "isaac://item/passive/513",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -9964,7 +10436,8 @@
           "itemKind": "passive",
           "id": 514,
           "name": "Broken Modem",
-          "iconUrl": "isaac://item/passive/514"
+          "iconUrl": "isaac://item/passive/514",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -9992,7 +10465,8 @@
           "itemKind": "familiar",
           "id": 518,
           "name": "Buddy in a Box",
-          "iconUrl": "isaac://item/familiar/518"
+          "iconUrl": "isaac://item/familiar/518",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -10020,7 +10494,8 @@
           "itemKind": "passive",
           "id": 517,
           "name": "Fast Bombs",
-          "iconUrl": "isaac://item/passive/517"
+          "iconUrl": "isaac://item/passive/517",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -10048,7 +10523,8 @@
           "itemKind": "familiar",
           "id": 519,
           "name": "Lil Delirium",
-          "iconUrl": "isaac://item/familiar/519"
+          "iconUrl": "isaac://item/familiar/519",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -10081,7 +10557,8 @@
           "itemKind": "trinket",
           "id": 120,
           "name": "Hairpin",
-          "iconUrl": "isaac://item/trinket/120"
+          "iconUrl": "isaac://item/trinket/120",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -10109,7 +10586,8 @@
           "itemKind": "trinket",
           "id": 121,
           "name": "Wooden Cross",
-          "iconUrl": "isaac://item/trinket/121"
+          "iconUrl": "isaac://item/trinket/121",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -10137,7 +10615,8 @@
           "itemKind": "trinket",
           "id": 122,
           "name": "Butter!",
-          "iconUrl": "isaac://item/trinket/122"
+          "iconUrl": "isaac://item/trinket/122",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -10206,7 +10685,8 @@
           "kind": "item",
           "itemKind": "passive",
           "id": 337,
-          "name": "Broken Watch"
+          "name": "Broken Watch",
+          "page": null
         },
         {
           "kind": "unknown",
@@ -10236,7 +10716,8 @@
           "itemKind": "active",
           "id": 521,
           "name": "Coupon",
-          "iconUrl": "isaac://item/active/521"
+          "iconUrl": "isaac://item/active/521",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -10264,7 +10745,8 @@
           "itemKind": "active",
           "id": 522,
           "name": "Telekinesis",
-          "iconUrl": "isaac://item/active/522"
+          "iconUrl": "isaac://item/active/522",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -10292,7 +10774,8 @@
           "itemKind": "active",
           "id": 523,
           "name": "Moving Box",
-          "iconUrl": "isaac://item/active/523"
+          "iconUrl": "isaac://item/active/523",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -10320,7 +10803,8 @@
           "itemKind": "passive",
           "id": 520,
           "name": "Jumper Cables",
-          "iconUrl": "isaac://item/passive/520"
+          "iconUrl": "isaac://item/passive/520",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -10348,7 +10832,8 @@
           "itemKind": "familiar",
           "id": 525,
           "name": "Leprosy",
-          "iconUrl": "isaac://item/familiar/525"
+          "iconUrl": "isaac://item/familiar/525",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -10376,7 +10861,8 @@
           "itemKind": "passive",
           "id": 524,
           "name": "Technology Zero",
-          "iconUrl": "isaac://item/passive/524"
+          "iconUrl": "isaac://item/passive/524",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -10404,7 +10890,8 @@
           "itemKind": "trinket",
           "id": 123,
           "name": "Filigree Feather",
-          "iconUrl": "isaac://item/trinket/123"
+          "iconUrl": "isaac://item/trinket/123",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -10413,13 +10900,15 @@
           "kind": "item",
           "itemKind": "familiar",
           "id": 238,
-          "name": "Key Piece 1"
+          "name": "Key Piece 1",
+          "page": null
         },
         {
           "kind": "item",
           "itemKind": "familiar",
           "id": 239,
-          "name": "Key Piece 2"
+          "name": "Key Piece 2",
+          "page": null
         }
       ],
       "graph": {
@@ -10445,7 +10934,8 @@
           "itemKind": "active",
           "id": 527,
           "name": "Mr. ME!",
-          "iconUrl": "isaac://item/active/527"
+          "iconUrl": "isaac://item/active/527",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -10473,7 +10963,8 @@
           "itemKind": "familiar",
           "id": 526,
           "name": "7 Seals",
-          "iconUrl": "isaac://item/familiar/526"
+          "iconUrl": "isaac://item/familiar/526",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -10501,7 +10992,8 @@
           "itemKind": "familiar",
           "id": 528,
           "name": "Angelic Prism",
-          "iconUrl": "isaac://item/familiar/528"
+          "iconUrl": "isaac://item/familiar/528",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -10529,7 +11021,8 @@
           "itemKind": "passive",
           "id": 529,
           "name": "Pop!",
-          "iconUrl": "isaac://item/passive/529"
+          "iconUrl": "isaac://item/passive/529",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -10557,7 +11050,8 @@
           "itemKind": "trinket",
           "id": 124,
           "name": "Door Stop",
-          "iconUrl": "isaac://item/trinket/124"
+          "iconUrl": "isaac://item/trinket/124",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -10585,7 +11079,8 @@
           "itemKind": "passive",
           "id": 530,
           "name": "Death's List",
-          "iconUrl": "isaac://item/passive/530"
+          "iconUrl": "isaac://item/passive/530",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -10613,7 +11108,8 @@
           "itemKind": "passive",
           "id": 531,
           "name": "Haemolacria",
-          "iconUrl": "isaac://item/passive/531"
+          "iconUrl": "isaac://item/passive/531",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -10622,7 +11118,8 @@
           "kind": "item",
           "itemKind": "passive",
           "id": 254,
-          "name": "Blood Clot"
+          "name": "Blood Clot",
+          "page": null
         }
       ],
       "graph": {
@@ -10648,7 +11145,8 @@
           "itemKind": "passive",
           "id": 532,
           "name": "Lachryphagy",
-          "iconUrl": "isaac://item/passive/532"
+          "iconUrl": "isaac://item/passive/532",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -10676,7 +11174,8 @@
           "itemKind": "passive",
           "id": 534,
           "name": "Schoolbag",
-          "iconUrl": "isaac://item/passive/534"
+          "iconUrl": "isaac://item/passive/534",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -10704,7 +11203,8 @@
           "itemKind": "passive",
           "id": 533,
           "name": "Trisagion",
-          "iconUrl": "isaac://item/passive/533"
+          "iconUrl": "isaac://item/passive/533",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -10732,7 +11232,8 @@
           "itemKind": "trinket",
           "id": 125,
           "name": "Extension Cord",
-          "iconUrl": "isaac://item/trinket/125"
+          "iconUrl": "isaac://item/trinket/125",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -10741,19 +11242,22 @@
           "kind": "item",
           "itemKind": "passive",
           "id": 63,
-          "name": "The Battery"
+          "name": "The Battery",
+          "page": null
         },
         {
           "kind": "item",
           "itemKind": "passive",
           "id": 116,
-          "name": "9 Volt"
+          "name": "9 Volt",
+          "page": null
         },
         {
           "kind": "item",
           "itemKind": "passive",
           "id": 356,
-          "name": "Car Battery"
+          "name": "Car Battery",
+          "page": null
         }
       ],
       "graph": {
@@ -10779,7 +11283,8 @@
           "itemKind": "passive",
           "id": 540,
           "name": "Flat Stone",
-          "iconUrl": "isaac://item/passive/540"
+          "iconUrl": "isaac://item/passive/540",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -10807,7 +11312,8 @@
           "itemKind": "active",
           "id": 536,
           "name": "Sacrificial Altar",
-          "iconUrl": "isaac://item/active/536"
+          "iconUrl": "isaac://item/active/536",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -10835,7 +11341,8 @@
           "itemKind": "familiar",
           "id": 537,
           "name": "Lil Spewer",
-          "iconUrl": "isaac://item/familiar/537"
+          "iconUrl": "isaac://item/familiar/537",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -10844,25 +11351,29 @@
           "kind": "item",
           "itemKind": "active",
           "id": 42,
-          "name": "Bob's Rotten Head"
+          "name": "Bob's Rotten Head",
+          "page": null
         },
         {
           "kind": "item",
           "itemKind": "passive",
           "id": 257,
-          "name": "Fire Mind"
+          "name": "Fire Mind",
+          "page": null
         },
         {
           "kind": "item",
           "itemKind": "passive",
           "id": 401,
-          "name": "Explosivo"
+          "name": "Explosivo",
+          "page": null
         },
         {
           "kind": "item",
           "itemKind": "passive",
           "id": 305,
-          "name": "Scorpio"
+          "name": "Scorpio",
+          "page": null
         }
       ],
       "graph": {
@@ -10888,7 +11399,8 @@
           "itemKind": "passive",
           "id": 535,
           "name": "Blanket",
-          "iconUrl": "isaac://item/passive/535"
+          "iconUrl": "isaac://item/passive/535",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -10916,7 +11428,8 @@
           "itemKind": "passive",
           "id": 538,
           "name": "Marbles",
-          "iconUrl": "isaac://item/passive/538"
+          "iconUrl": "isaac://item/passive/538",
+          "page": null
         },
         {
           "kind": "challenge",
@@ -10924,7 +11437,8 @@
           "name": "Pica Run",
           "rewards": [
             522
-          ]
+          ],
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -10952,7 +11466,8 @@
           "itemKind": "familiar",
           "id": 539,
           "name": "Mystery Egg",
-          "iconUrl": "isaac://item/familiar/539"
+          "iconUrl": "isaac://item/familiar/539",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -10980,7 +11495,8 @@
           "itemKind": "trinket",
           "id": 126,
           "name": "Rotten Penny",
-          "iconUrl": "isaac://item/trinket/126"
+          "iconUrl": "isaac://item/trinket/126",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -11008,7 +11524,8 @@
           "itemKind": "trinket",
           "id": 127,
           "name": "Baby-Bender",
-          "iconUrl": "isaac://item/trinket/127"
+          "iconUrl": "isaac://item/trinket/127",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -11017,7 +11534,8 @@
           "kind": "item",
           "itemKind": "active",
           "id": 192,
-          "name": "Telepathy For Dummies"
+          "name": "Telepathy For Dummies",
+          "page": null
         }
       ],
       "graph": {
@@ -11041,7 +11559,9 @@
         {
           "kind": "character",
           "id": 16,
-          "name": "The Forgotten"
+          "name": "The Forgotten",
+          "tainted": false,
+          "page": null
         }
       ],
       "origin": null,
@@ -11089,7 +11609,8 @@
           "itemKind": "passive",
           "id": 541,
           "name": "Marrow",
-          "iconUrl": "isaac://item/passive/541"
+          "iconUrl": "isaac://item/passive/541",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -11097,7 +11618,9 @@
         {
           "kind": "character",
           "id": 35,
-          "name": "The Forgotten"
+          "name": "The Forgotten",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -11123,7 +11646,8 @@
           "itemKind": "familiar",
           "id": 542,
           "name": "Slipped Rib",
-          "iconUrl": "isaac://item/familiar/542"
+          "iconUrl": "isaac://item/familiar/542",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -11131,7 +11655,9 @@
         {
           "kind": "character",
           "id": 35,
-          "name": "The Forgotten"
+          "name": "The Forgotten",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -11157,7 +11683,8 @@
           "itemKind": "familiar",
           "id": 544,
           "name": "Pointy Rib",
-          "iconUrl": "isaac://item/familiar/544"
+          "iconUrl": "isaac://item/familiar/544",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -11165,7 +11692,9 @@
         {
           "kind": "character",
           "id": 35,
-          "name": "The Forgotten"
+          "name": "The Forgotten",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -11191,7 +11720,8 @@
           "itemKind": "familiar",
           "id": 548,
           "name": "Jaw Bone",
-          "iconUrl": "isaac://item/familiar/548"
+          "iconUrl": "isaac://item/familiar/548",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -11199,7 +11729,9 @@
         {
           "kind": "character",
           "id": 35,
-          "name": "The Forgotten"
+          "name": "The Forgotten",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -11225,7 +11757,8 @@
           "itemKind": "passive",
           "id": 549,
           "name": "Brittle Bones",
-          "iconUrl": "isaac://item/passive/549"
+          "iconUrl": "isaac://item/passive/549",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -11233,7 +11766,9 @@
         {
           "kind": "character",
           "id": 35,
-          "name": "The Forgotten"
+          "name": "The Forgotten",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -11259,7 +11794,8 @@
           "itemKind": "passive",
           "id": 547,
           "name": "Divorce Papers",
-          "iconUrl": "isaac://item/passive/547"
+          "iconUrl": "isaac://item/passive/547",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -11267,7 +11803,9 @@
         {
           "kind": "character",
           "id": 35,
-          "name": "The Forgotten"
+          "name": "The Forgotten",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -11293,7 +11831,8 @@
           "itemKind": "familiar",
           "id": 543,
           "name": "Hallowed Ground",
-          "iconUrl": "isaac://item/familiar/543"
+          "iconUrl": "isaac://item/familiar/543",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -11305,7 +11844,9 @@
         {
           "kind": "character",
           "id": 35,
-          "name": "The Forgotten"
+          "name": "The Forgotten",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -11331,7 +11872,8 @@
           "itemKind": "trinket",
           "id": 128,
           "name": "Finger Bone",
-          "iconUrl": "isaac://item/trinket/128"
+          "iconUrl": "isaac://item/trinket/128",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -11339,7 +11881,9 @@
         {
           "kind": "character",
           "id": 35,
-          "name": "The Forgotten"
+          "name": "The Forgotten",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -11365,7 +11909,8 @@
           "itemKind": "passive",
           "id": 546,
           "name": "Dad's Ring",
-          "iconUrl": "isaac://item/passive/546"
+          "iconUrl": "isaac://item/passive/546",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -11377,7 +11922,9 @@
         {
           "kind": "character",
           "id": 35,
-          "name": "The Forgotten"
+          "name": "The Forgotten",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -11403,7 +11950,8 @@
           "itemKind": "active",
           "id": 545,
           "name": "Book of the Dead",
-          "iconUrl": "isaac://item/active/545"
+          "iconUrl": "isaac://item/active/545",
+          "page": null
         }
       ],
       "origin": "afterbirthPlus",
@@ -11415,7 +11963,9 @@
         {
           "kind": "character",
           "id": 35,
-          "name": "The Forgotten"
+          "name": "The Forgotten",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -11441,7 +11991,9 @@
         {
           "kind": "character",
           "id": 35,
-          "name": "The Forgotten"
+          "name": "The Forgotten",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -11467,7 +12019,9 @@
         {
           "kind": "character",
           "id": 35,
-          "name": "The Forgotten"
+          "name": "The Forgotten",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -11491,7 +12045,9 @@
         {
           "kind": "character",
           "id": 18,
-          "name": "Bethany"
+          "name": "Bethany",
+          "tainted": false,
+          "page": null
         },
         {
           "kind": "challenge",
@@ -11499,7 +12055,8 @@
           "name": "Bloody Mary",
           "rewards": [
             518
-          ]
+          ],
+          "page": null
         },
         {
           "kind": "challenge",
@@ -11507,7 +12064,8 @@
           "name": "Baptism by Fire",
           "rewards": [
             519
-          ]
+          ],
+          "page": null
         }
       ],
       "origin": null,
@@ -11515,7 +12073,9 @@
         {
           "kind": "character",
           "id": 38,
-          "name": "Lazarus"
+          "name": "Lazarus",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -11539,7 +12099,9 @@
         {
           "kind": "character",
           "id": 19,
-          "name": "Jacob"
+          "name": "Jacob",
+          "tainted": false,
+          "page": null
         },
         {
           "kind": "challenge",
@@ -11547,7 +12109,8 @@
           "name": "Isaac's Awakening",
           "rewards": [
             520
-          ]
+          ],
+          "page": null
         },
         {
           "kind": "challenge",
@@ -11555,7 +12118,8 @@
           "name": "Seeing Double",
           "rewards": [
             521
-          ]
+          ],
+          "page": null
         }
       ],
       "origin": null,
@@ -11588,7 +12152,8 @@
           "itemKind": "trinket",
           "id": 152,
           "name": "Telescope Lens",
-          "iconUrl": "isaac://item/trinket/152"
+          "iconUrl": "isaac://item/trinket/152",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -11641,7 +12206,8 @@
           "itemKind": "trinket",
           "id": 141,
           "name": "Forgotten Lullaby",
-          "iconUrl": "isaac://item/trinket/141"
+          "iconUrl": "isaac://item/trinket/141",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -11669,7 +12235,8 @@
           "itemKind": "familiar",
           "id": 649,
           "name": "Fruity Plum",
-          "iconUrl": "isaac://item/familiar/649"
+          "iconUrl": "isaac://item/familiar/649",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -11697,7 +12264,8 @@
           "itemKind": "active",
           "id": 650,
           "name": "Plum Flute",
-          "iconUrl": "isaac://item/active/650"
+          "iconUrl": "isaac://item/active/650",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -11805,7 +12373,8 @@
           "itemKind": "active",
           "id": 580,
           "name": "Red Key",
-          "iconUrl": "isaac://item/active/580"
+          "iconUrl": "isaac://item/active/580",
+          "page": null
         },
         {
           "kind": "challenge",
@@ -11813,7 +12382,8 @@
           "name": "Red Redemption",
           "rewards": [
             533
-          ]
+          ],
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -11841,7 +12411,9 @@
         {
           "kind": "character",
           "id": 36,
-          "name": "Bethany"
+          "name": "Bethany",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -11867,7 +12439,8 @@
           "itemKind": "passive",
           "id": 584,
           "name": "Book of Virtues",
-          "iconUrl": "isaac://item/passive/584"
+          "iconUrl": "isaac://item/passive/584",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -11875,7 +12448,9 @@
         {
           "kind": "character",
           "id": 36,
-          "name": "Bethany"
+          "name": "Bethany",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -11901,7 +12476,8 @@
           "itemKind": "active",
           "id": 640,
           "name": "Urn of Souls",
-          "iconUrl": "isaac://item/active/640"
+          "iconUrl": "isaac://item/active/640",
+          "page": null
         },
         {
           "kind": "challenge",
@@ -11909,7 +12485,8 @@
           "name": "Baptism by Fire",
           "rewards": [
             519
-          ]
+          ],
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -11917,7 +12494,9 @@
         {
           "kind": "character",
           "id": 36,
-          "name": "Bethany"
+          "name": "Bethany",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -11943,7 +12522,8 @@
           "itemKind": "trinket",
           "id": 131,
           "name": "Blessed Penny",
-          "iconUrl": "isaac://item/trinket/131"
+          "iconUrl": "isaac://item/trinket/131",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -11951,7 +12531,9 @@
         {
           "kind": "character",
           "id": 36,
-          "name": "Bethany"
+          "name": "Bethany",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -11977,7 +12559,8 @@
           "itemKind": "active",
           "id": 585,
           "name": "Alabaster Box",
-          "iconUrl": "isaac://item/active/585"
+          "iconUrl": "isaac://item/active/585",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -11985,7 +12568,9 @@
         {
           "kind": "character",
           "id": 36,
-          "name": "Bethany"
+          "name": "Bethany",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -12011,7 +12596,8 @@
           "itemKind": "trinket",
           "id": 142,
           "name": "Beth's Faith",
-          "iconUrl": "isaac://item/trinket/142"
+          "iconUrl": "isaac://item/trinket/142",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -12019,7 +12605,9 @@
         {
           "kind": "character",
           "id": 36,
-          "name": "Bethany"
+          "name": "Bethany",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -12045,7 +12633,8 @@
           "itemKind": "passive",
           "id": 686,
           "name": "Soul Locket",
-          "iconUrl": "isaac://item/passive/686"
+          "iconUrl": "isaac://item/passive/686",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -12053,7 +12642,9 @@
         {
           "kind": "character",
           "id": 36,
-          "name": "Bethany"
+          "name": "Bethany",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -12079,7 +12670,8 @@
           "itemKind": "passive",
           "id": 568,
           "name": "Divine Intervention",
-          "iconUrl": "isaac://item/passive/568"
+          "iconUrl": "isaac://item/passive/568",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -12091,7 +12683,9 @@
         {
           "kind": "character",
           "id": 36,
-          "name": "Bethany"
+          "name": "Bethany",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -12117,7 +12711,8 @@
           "itemKind": "active",
           "id": 653,
           "name": "Vade Retro",
-          "iconUrl": "isaac://item/active/653"
+          "iconUrl": "isaac://item/active/653",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -12129,7 +12724,9 @@
         {
           "kind": "character",
           "id": 36,
-          "name": "Bethany"
+          "name": "Bethany",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -12155,7 +12752,8 @@
           "itemKind": "familiar",
           "id": 651,
           "name": "Star of Bethlehem",
-          "iconUrl": "isaac://item/familiar/651"
+          "iconUrl": "isaac://item/familiar/651",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -12167,7 +12765,9 @@
         {
           "kind": "character",
           "id": 36,
-          "name": "Bethany"
+          "name": "Bethany",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -12193,7 +12793,9 @@
         {
           "kind": "character",
           "id": 36,
-          "name": "Bethany"
+          "name": "Bethany",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -12219,7 +12821,9 @@
         {
           "kind": "character",
           "id": 36,
-          "name": "Bethany"
+          "name": "Bethany",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -12265,7 +12869,8 @@
           "itemKind": "passive",
           "id": 586,
           "name": "The Stairway",
-          "iconUrl": "isaac://item/passive/586"
+          "iconUrl": "isaac://item/passive/586",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -12293,7 +12898,8 @@
           "itemKind": "passive",
           "id": 621,
           "name": "Red Stew",
-          "iconUrl": "isaac://item/passive/621"
+          "iconUrl": "isaac://item/passive/621",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -12321,7 +12927,8 @@
           "itemKind": "passive",
           "id": 619,
           "name": "Birthright",
-          "iconUrl": "isaac://item/passive/619"
+          "iconUrl": "isaac://item/passive/619",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -12349,14 +12956,16 @@
           "itemKind": "active",
           "id": 577,
           "name": "Damocles",
-          "iconUrl": "isaac://item/active/577"
+          "iconUrl": "isaac://item/active/577",
+          "page": null
         },
         {
           "kind": "item",
           "itemKind": "familiar",
           "id": 656,
           "name": "Damocles",
-          "iconUrl": "isaac://item/familiar/656"
+          "iconUrl": "isaac://item/familiar/656",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -12384,7 +12993,8 @@
           "itemKind": "passive",
           "id": 562,
           "name": "Rock Bottom",
-          "iconUrl": "isaac://item/passive/562"
+          "iconUrl": "isaac://item/passive/562",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -12412,7 +13022,8 @@
           "itemKind": "passive",
           "id": 688,
           "name": "Inner Child",
-          "iconUrl": "isaac://item/passive/688"
+          "iconUrl": "isaac://item/passive/688",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -12440,7 +13051,8 @@
           "itemKind": "familiar",
           "id": 697,
           "name": "Vanishing Twin",
-          "iconUrl": "isaac://item/familiar/697"
+          "iconUrl": "isaac://item/familiar/697",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -12473,7 +13085,8 @@
           "itemKind": "active",
           "id": 622,
           "name": "Genesis",
-          "iconUrl": "isaac://item/active/622"
+          "iconUrl": "isaac://item/active/622",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -12506,7 +13119,8 @@
           "itemKind": "active",
           "id": 709,
           "name": "Suplex!",
-          "iconUrl": "isaac://item/active/709"
+          "iconUrl": "isaac://item/active/709",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -12579,7 +13193,8 @@
           "itemKind": "active",
           "id": 631,
           "name": "Meat Cleaver",
-          "iconUrl": "isaac://item/active/631"
+          "iconUrl": "isaac://item/active/631",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -12612,7 +13227,8 @@
           "itemKind": "passive",
           "id": 670,
           "name": "Options?",
-          "iconUrl": "isaac://item/passive/670"
+          "iconUrl": "isaac://item/passive/670",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -12645,7 +13261,8 @@
           "itemKind": "active",
           "id": 639,
           "name": "Yuck Heart",
-          "iconUrl": "isaac://item/active/639"
+          "iconUrl": "isaac://item/active/639",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -12678,7 +13295,8 @@
           "itemKind": "passive",
           "id": 671,
           "name": "Candy Heart",
-          "iconUrl": "isaac://item/passive/671"
+          "iconUrl": "isaac://item/passive/671",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -12711,7 +13329,8 @@
           "itemKind": "passive",
           "id": 665,
           "name": "Guppy's Eye",
-          "iconUrl": "isaac://item/passive/665"
+          "iconUrl": "isaac://item/passive/665",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -12744,7 +13363,8 @@
           "itemKind": "passive",
           "id": 672,
           "name": "A Pound of Flesh",
-          "iconUrl": "isaac://item/passive/672"
+          "iconUrl": "isaac://item/passive/672",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -12777,7 +13397,8 @@
           "itemKind": "passive",
           "id": 641,
           "name": "Akeldama",
-          "iconUrl": "isaac://item/passive/641"
+          "iconUrl": "isaac://item/passive/641",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -12810,7 +13431,8 @@
           "itemKind": "passive",
           "id": 673,
           "name": "Redemption",
-          "iconUrl": "isaac://item/passive/673"
+          "iconUrl": "isaac://item/passive/673",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -12843,7 +13465,8 @@
           "itemKind": "active",
           "id": 609,
           "name": "Eternal D6",
-          "iconUrl": "isaac://item/active/609"
+          "iconUrl": "isaac://item/active/609",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -12876,7 +13499,8 @@
           "itemKind": "passive",
           "id": 680,
           "name": "Montezuma's Revenge",
-          "iconUrl": "isaac://item/passive/680"
+          "iconUrl": "isaac://item/passive/680",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -12909,7 +13533,8 @@
           "itemKind": "familiar",
           "id": 610,
           "name": "Bird Cage",
-          "iconUrl": "isaac://item/familiar/610"
+          "iconUrl": "isaac://item/familiar/610",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -12921,7 +13546,9 @@
         {
           "kind": "character",
           "id": 26,
-          "name": "Eve"
+          "name": "Eve",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -12947,7 +13574,8 @@
           "itemKind": "passive",
           "id": 675,
           "name": "Cracked Orb",
-          "iconUrl": "isaac://item/passive/675"
+          "iconUrl": "isaac://item/passive/675",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -12959,7 +13587,9 @@
         {
           "kind": "character",
           "id": 26,
-          "name": "Eve"
+          "name": "Eve",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -12985,7 +13615,8 @@
           "itemKind": "passive",
           "id": 695,
           "name": "Bloody Gust",
-          "iconUrl": "isaac://item/passive/695"
+          "iconUrl": "isaac://item/passive/695",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -12997,7 +13628,9 @@
         {
           "kind": "character",
           "id": 27,
-          "name": "Samson"
+          "name": "Samson",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -13023,7 +13656,8 @@
           "itemKind": "passive",
           "id": 676,
           "name": "Empty Heart",
-          "iconUrl": "isaac://item/passive/676"
+          "iconUrl": "isaac://item/passive/676",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -13035,7 +13669,9 @@
         {
           "kind": "character",
           "id": 27,
-          "name": "Samson"
+          "name": "Samson",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -13061,7 +13697,8 @@
           "itemKind": "trinket",
           "id": 146,
           "name": "Devil's Crown",
-          "iconUrl": "isaac://item/trinket/146"
+          "iconUrl": "isaac://item/trinket/146",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -13094,7 +13731,8 @@
           "itemKind": "familiar",
           "id": 679,
           "name": "Lil Abaddon",
-          "iconUrl": "isaac://item/familiar/679"
+          "iconUrl": "isaac://item/familiar/679",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -13127,7 +13765,8 @@
           "itemKind": "familiar",
           "id": 645,
           "name": "Tinytoma",
-          "iconUrl": "isaac://item/familiar/645"
+          "iconUrl": "isaac://item/familiar/645",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -13139,7 +13778,9 @@
         {
           "kind": "character",
           "id": 38,
-          "name": "Lazarus"
+          "name": "Lazarus",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -13165,7 +13806,8 @@
           "itemKind": "passive",
           "id": 677,
           "name": "Astral Projection",
-          "iconUrl": "isaac://item/passive/677"
+          "iconUrl": "isaac://item/passive/677",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -13177,7 +13819,9 @@
         {
           "kind": "character",
           "id": 38,
-          "name": "Lazarus"
+          "name": "Lazarus",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -13203,7 +13847,8 @@
           "itemKind": "trinket",
           "id": 138,
           "name": "'M",
-          "iconUrl": "isaac://item/trinket/138"
+          "iconUrl": "isaac://item/trinket/138",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -13236,7 +13881,8 @@
           "itemKind": "active",
           "id": 720,
           "name": "Everything Jar",
-          "iconUrl": "isaac://item/active/720"
+          "iconUrl": "isaac://item/active/720",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -13269,7 +13915,8 @@
           "itemKind": "familiar",
           "id": 612,
           "name": "Lost Soul",
-          "iconUrl": "isaac://item/familiar/612"
+          "iconUrl": "isaac://item/familiar/612",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -13281,7 +13928,9 @@
         {
           "kind": "character",
           "id": 31,
-          "name": "The Lost"
+          "name": "The Lost",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -13307,7 +13956,8 @@
           "itemKind": "passive",
           "id": 684,
           "name": "Hungry Soul",
-          "iconUrl": "isaac://item/passive/684"
+          "iconUrl": "isaac://item/passive/684",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -13319,7 +13969,9 @@
         {
           "kind": "character",
           "id": 31,
-          "name": "The Lost"
+          "name": "The Lost",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -13345,7 +13997,8 @@
           "itemKind": "familiar",
           "id": 565,
           "name": "Blood Puppy",
-          "iconUrl": "isaac://item/familiar/565"
+          "iconUrl": "isaac://item/familiar/565",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -13357,7 +14010,9 @@
         {
           "kind": "character",
           "id": 32,
-          "name": "Lilith"
+          "name": "Lilith",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -13383,7 +14038,8 @@
           "itemKind": "passive",
           "id": 678,
           "name": "C Section",
-          "iconUrl": "isaac://item/passive/678"
+          "iconUrl": "isaac://item/passive/678",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -13395,7 +14051,9 @@
         {
           "kind": "character",
           "id": 32,
-          "name": "Lilith"
+          "name": "Lilith",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -13421,7 +14079,8 @@
           "itemKind": "passive",
           "id": 716,
           "name": "Keeper's Sack",
-          "iconUrl": "isaac://item/passive/716"
+          "iconUrl": "isaac://item/passive/716",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -13433,7 +14092,9 @@
         {
           "kind": "character",
           "id": 33,
-          "name": "Keeper"
+          "name": "Keeper",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -13459,7 +14120,8 @@
           "itemKind": "active",
           "id": 719,
           "name": "Keeper's Box",
-          "iconUrl": "isaac://item/active/719"
+          "iconUrl": "isaac://item/active/719",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -13471,7 +14133,9 @@
         {
           "kind": "character",
           "id": 33,
-          "name": "Keeper"
+          "name": "Keeper",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -13497,7 +14161,8 @@
           "itemKind": "familiar",
           "id": 681,
           "name": "Lil Portal",
-          "iconUrl": "isaac://item/familiar/681"
+          "iconUrl": "isaac://item/familiar/681",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -13509,7 +14174,9 @@
         {
           "kind": "character",
           "id": 34,
-          "name": "Apollyon"
+          "name": "Apollyon",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -13535,7 +14202,8 @@
           "itemKind": "familiar",
           "id": 682,
           "name": "Worm Friend",
-          "iconUrl": "isaac://item/familiar/682"
+          "iconUrl": "isaac://item/familiar/682",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -13547,7 +14215,9 @@
         {
           "kind": "character",
           "id": 34,
-          "name": "Apollyon"
+          "name": "Apollyon",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -13573,7 +14243,8 @@
           "itemKind": "passive",
           "id": 683,
           "name": "Bone Spurs",
-          "iconUrl": "isaac://item/passive/683"
+          "iconUrl": "isaac://item/passive/683",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -13585,7 +14256,9 @@
         {
           "kind": "character",
           "id": 35,
-          "name": "The Forgotten"
+          "name": "The Forgotten",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -13611,7 +14284,8 @@
           "itemKind": "passive",
           "id": 674,
           "name": "Spirit Shackles",
-          "iconUrl": "isaac://item/passive/674"
+          "iconUrl": "isaac://item/passive/674",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -13623,7 +14297,9 @@
         {
           "kind": "character",
           "id": 35,
-          "name": "The Forgotten"
+          "name": "The Forgotten",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -13649,7 +14325,8 @@
           "itemKind": "passive",
           "id": 643,
           "name": "Revelation",
-          "iconUrl": "isaac://item/passive/643"
+          "iconUrl": "isaac://item/passive/643",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -13661,7 +14338,9 @@
         {
           "kind": "character",
           "id": 36,
-          "name": "Bethany"
+          "name": "Bethany",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -13687,7 +14366,8 @@
           "itemKind": "active",
           "id": 685,
           "name": "Jar of Wisps",
-          "iconUrl": "isaac://item/active/685"
+          "iconUrl": "isaac://item/active/685",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -13699,7 +14379,9 @@
         {
           "kind": "character",
           "id": 36,
-          "name": "Bethany"
+          "name": "Bethany",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -13725,7 +14407,8 @@
           "itemKind": "active",
           "id": 642,
           "name": "Magic Skin",
-          "iconUrl": "isaac://item/active/642"
+          "iconUrl": "isaac://item/active/642",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -13758,7 +14441,8 @@
           "itemKind": "active",
           "id": 687,
           "name": "Friend Finder",
-          "iconUrl": "isaac://item/active/687"
+          "iconUrl": "isaac://item/active/687",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -13789,7 +14473,9 @@
         {
           "kind": "character",
           "id": 21,
-          "name": "Isaac"
+          "name": "Isaac",
+          "tainted": false,
+          "page": null
         }
       ],
       "origin": null,
@@ -13815,7 +14501,9 @@
         {
           "kind": "character",
           "id": 22,
-          "name": "Magdalene"
+          "name": "Magdalene",
+          "tainted": false,
+          "page": null
         }
       ],
       "origin": null,
@@ -13841,7 +14529,9 @@
         {
           "kind": "character",
           "id": 23,
-          "name": "Cain"
+          "name": "Cain",
+          "tainted": false,
+          "page": null
         },
         {
           "kind": "challenge",
@@ -13849,7 +14539,8 @@
           "name": "Cantripped!",
           "rewards": [
             532
-          ]
+          ],
+          "page": null
         }
       ],
       "origin": null,
@@ -13875,7 +14566,9 @@
         {
           "kind": "character",
           "id": 24,
-          "name": "Judas"
+          "name": "Judas",
+          "tainted": false,
+          "page": null
         }
       ],
       "origin": null,
@@ -13901,7 +14594,9 @@
         {
           "kind": "character",
           "id": 25,
-          "name": "???"
+          "name": "???",
+          "tainted": false,
+          "page": null
         }
       ],
       "origin": null,
@@ -13927,7 +14622,9 @@
         {
           "kind": "character",
           "id": 26,
-          "name": "Eve"
+          "name": "Eve",
+          "tainted": false,
+          "page": null
         }
       ],
       "origin": null,
@@ -13935,7 +14632,9 @@
         {
           "kind": "character",
           "id": 26,
-          "name": "Eve"
+          "name": "Eve",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -13959,7 +14658,9 @@
         {
           "kind": "character",
           "id": 27,
-          "name": "Samson"
+          "name": "Samson",
+          "tainted": false,
+          "page": null
         }
       ],
       "origin": null,
@@ -13967,7 +14668,9 @@
         {
           "kind": "character",
           "id": 27,
-          "name": "Samson"
+          "name": "Samson",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -13991,7 +14694,9 @@
         {
           "kind": "character",
           "id": 28,
-          "name": "Azazel"
+          "name": "Azazel",
+          "tainted": false,
+          "page": null
         }
       ],
       "origin": null,
@@ -14017,7 +14722,9 @@
         {
           "kind": "character",
           "id": 29,
-          "name": "Lazarus"
+          "name": "Lazarus",
+          "tainted": false,
+          "page": null
         }
       ],
       "origin": null,
@@ -14025,7 +14732,9 @@
         {
           "kind": "character",
           "id": 38,
-          "name": "Lazarus"
+          "name": "Lazarus",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -14049,13 +14758,16 @@
         {
           "kind": "character",
           "id": 30,
-          "name": "Eden"
+          "name": "Eden",
+          "tainted": false,
+          "page": null
         },
         {
           "kind": "challenge",
           "id": 45,
           "name": "",
-          "rewards": []
+          "rewards": [],
+          "page": null
         }
       ],
       "origin": null,
@@ -14081,7 +14793,9 @@
         {
           "kind": "character",
           "id": 31,
-          "name": "The Lost"
+          "name": "The Lost",
+          "tainted": false,
+          "page": null
         }
       ],
       "origin": null,
@@ -14089,7 +14803,9 @@
         {
           "kind": "character",
           "id": 31,
-          "name": "The Lost"
+          "name": "The Lost",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -14113,7 +14829,9 @@
         {
           "kind": "character",
           "id": 32,
-          "name": "Lilith"
+          "name": "Lilith",
+          "tainted": false,
+          "page": null
         }
       ],
       "origin": null,
@@ -14121,7 +14839,9 @@
         {
           "kind": "character",
           "id": 32,
-          "name": "Lilith"
+          "name": "Lilith",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -14145,7 +14865,9 @@
         {
           "kind": "character",
           "id": 33,
-          "name": "Keeper"
+          "name": "Keeper",
+          "tainted": false,
+          "page": null
         }
       ],
       "origin": null,
@@ -14153,7 +14875,9 @@
         {
           "kind": "character",
           "id": 33,
-          "name": "Keeper"
+          "name": "Keeper",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -14177,7 +14901,9 @@
         {
           "kind": "character",
           "id": 34,
-          "name": "Apollyon"
+          "name": "Apollyon",
+          "tainted": false,
+          "page": null
         }
       ],
       "origin": null,
@@ -14185,7 +14911,9 @@
         {
           "kind": "character",
           "id": 34,
-          "name": "Apollyon"
+          "name": "Apollyon",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -14209,7 +14937,9 @@
         {
           "kind": "character",
           "id": 35,
-          "name": "The Forgotten"
+          "name": "The Forgotten",
+          "tainted": false,
+          "page": null
         },
         {
           "kind": "challenge",
@@ -14217,7 +14947,8 @@
           "name": "Hot Potato",
           "rewards": [
             531
-          ]
+          ],
+          "page": null
         }
       ],
       "origin": null,
@@ -14225,7 +14956,9 @@
         {
           "kind": "character",
           "id": 35,
-          "name": "The Forgotten"
+          "name": "The Forgotten",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -14249,7 +14982,9 @@
         {
           "kind": "character",
           "id": 36,
-          "name": "Bethany"
+          "name": "Bethany",
+          "tainted": false,
+          "page": null
         }
       ],
       "origin": null,
@@ -14257,7 +14992,9 @@
         {
           "kind": "character",
           "id": 36,
-          "name": "Bethany"
+          "name": "Bethany",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -14281,7 +15018,9 @@
         {
           "kind": "character",
           "id": 37,
-          "name": "Jacob"
+          "name": "Jacob",
+          "tainted": false,
+          "page": null
         },
         {
           "kind": "challenge",
@@ -14289,7 +15028,8 @@
           "name": "Red Redemption",
           "rewards": [
             533
-          ]
+          ],
+          "page": null
         }
       ],
       "origin": null,
@@ -14317,7 +15057,8 @@
           "itemKind": "passive",
           "id": 689,
           "name": "Glitched Crown",
-          "iconUrl": "isaac://item/passive/689"
+          "iconUrl": "isaac://item/passive/689",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -14350,7 +15091,8 @@
           "itemKind": "passive",
           "id": 690,
           "name": "Belly Jelly",
-          "iconUrl": "isaac://item/passive/690"
+          "iconUrl": "isaac://item/passive/690",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -14383,7 +15125,8 @@
           "itemKind": "trinket",
           "id": 150,
           "name": "Blue Key",
-          "iconUrl": "isaac://item/trinket/150"
+          "iconUrl": "isaac://item/trinket/150",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -14416,7 +15159,8 @@
           "itemKind": "passive",
           "id": 692,
           "name": "Sanguine Bond",
-          "iconUrl": "isaac://item/passive/692"
+          "iconUrl": "isaac://item/passive/692",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -14449,7 +15193,8 @@
           "itemKind": "passive",
           "id": 693,
           "name": "The Swarm",
-          "iconUrl": "isaac://item/passive/693"
+          "iconUrl": "isaac://item/passive/693",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -14482,7 +15227,8 @@
           "itemKind": "passive",
           "id": 694,
           "name": "Heartbreak",
-          "iconUrl": "isaac://item/passive/694"
+          "iconUrl": "isaac://item/passive/694",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -14494,7 +15240,9 @@
         {
           "kind": "character",
           "id": 26,
-          "name": "Eve"
+          "name": "Eve",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -14520,7 +15268,8 @@
           "itemKind": "active",
           "id": 611,
           "name": "Larynx",
-          "iconUrl": "isaac://item/active/611"
+          "iconUrl": "isaac://item/active/611",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -14532,7 +15281,9 @@
         {
           "kind": "character",
           "id": 27,
-          "name": "Samson"
+          "name": "Samson",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -14558,7 +15309,8 @@
           "itemKind": "passive",
           "id": 699,
           "name": "Azazel's Rage",
-          "iconUrl": "isaac://item/passive/699"
+          "iconUrl": "isaac://item/passive/699",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -14591,7 +15343,8 @@
           "itemKind": "passive",
           "id": 696,
           "name": "Salvation",
-          "iconUrl": "isaac://item/passive/696"
+          "iconUrl": "isaac://item/passive/696",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -14624,7 +15377,8 @@
           "itemKind": "passive",
           "id": 721,
           "name": "TMTRAINER",
-          "iconUrl": "isaac://item/passive/721"
+          "iconUrl": "isaac://item/passive/721",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -14657,7 +15411,8 @@
           "itemKind": "passive",
           "id": 691,
           "name": "Sacred Orb",
-          "iconUrl": "isaac://item/passive/691"
+          "iconUrl": "isaac://item/passive/691",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -14669,7 +15424,9 @@
         {
           "kind": "character",
           "id": 31,
-          "name": "The Lost"
+          "name": "The Lost",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -14695,7 +15452,8 @@
           "itemKind": "familiar",
           "id": 698,
           "name": "Twisted Pair",
-          "iconUrl": "isaac://item/familiar/698"
+          "iconUrl": "isaac://item/familiar/698",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -14707,7 +15465,9 @@
         {
           "kind": "character",
           "id": 32,
-          "name": "Lilith"
+          "name": "Lilith",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -14733,7 +15493,8 @@
           "itemKind": "familiar",
           "id": 667,
           "name": "Strawman",
-          "iconUrl": "isaac://item/familiar/667"
+          "iconUrl": "isaac://item/familiar/667",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -14745,7 +15506,9 @@
         {
           "kind": "character",
           "id": 33,
-          "name": "Keeper"
+          "name": "Keeper",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -14771,7 +15534,8 @@
           "itemKind": "passive",
           "id": 700,
           "name": "Echo Chamber",
-          "iconUrl": "isaac://item/passive/700"
+          "iconUrl": "isaac://item/passive/700",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -14783,7 +15547,9 @@
         {
           "kind": "character",
           "id": 34,
-          "name": "Apollyon"
+          "name": "Apollyon",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -14809,7 +15575,8 @@
           "itemKind": "passive",
           "id": 701,
           "name": "Isaac's Tomb",
-          "iconUrl": "isaac://item/passive/701"
+          "iconUrl": "isaac://item/passive/701",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -14821,7 +15588,9 @@
         {
           "kind": "character",
           "id": 35,
-          "name": "The Forgotten"
+          "name": "The Forgotten",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -14847,7 +15616,8 @@
           "itemKind": "passive",
           "id": 702,
           "name": "Vengeful Spirit",
-          "iconUrl": "isaac://item/passive/702"
+          "iconUrl": "isaac://item/passive/702",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -14859,7 +15629,9 @@
         {
           "kind": "character",
           "id": 36,
-          "name": "Bethany"
+          "name": "Bethany",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -14885,7 +15657,8 @@
           "itemKind": "active",
           "id": 703,
           "name": "Esau Jr.",
-          "iconUrl": "isaac://item/active/703"
+          "iconUrl": "isaac://item/active/703",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -14897,7 +15670,9 @@
         {
           "kind": "character",
           "id": 37,
-          "name": "Jacob"
+          "name": "Jacob",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -14923,7 +15698,9 @@
         {
           "kind": "character",
           "id": 36,
-          "name": "Bethany"
+          "name": "Bethany",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -14949,7 +15726,9 @@
         {
           "kind": "character",
           "id": 36,
-          "name": "Bethany"
+          "name": "Bethany",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -15026,7 +15805,8 @@
           "kind": "item",
           "itemKind": "passive",
           "id": 538,
-          "name": "Marbles"
+          "name": "Marbles",
+          "page": null
         }
       ],
       "graph": {
@@ -15052,7 +15832,9 @@
         {
           "kind": "character",
           "id": 35,
-          "name": "The Forgotten"
+          "name": "The Forgotten",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -15098,7 +15880,9 @@
         {
           "kind": "character",
           "id": 37,
-          "name": "Jacob"
+          "name": "Jacob",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -15144,7 +15928,8 @@
           "itemKind": "passive",
           "id": 576,
           "name": "Dirty Mind",
-          "iconUrl": "isaac://item/passive/576"
+          "iconUrl": "isaac://item/passive/576",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -15172,7 +15957,8 @@
           "itemKind": "trinket",
           "id": 189,
           "name": "Sigil of Baphomet",
-          "iconUrl": "isaac://item/trinket/189"
+          "iconUrl": "isaac://item/trinket/189",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -15199,7 +15985,8 @@
           "itemKind": "passive",
           "id": 634,
           "name": "Purgatory",
-          "iconUrl": "isaac://item/passive/634"
+          "iconUrl": "isaac://item/passive/634",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -15226,7 +16013,8 @@
           "itemKind": "passive",
           "id": 579,
           "name": "Spirit Sword",
-          "iconUrl": "isaac://item/passive/579"
+          "iconUrl": "isaac://item/passive/579",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -15254,7 +16042,8 @@
           "itemKind": "trinket",
           "id": 187,
           "name": "Broken Glasses",
-          "iconUrl": "isaac://item/trinket/187"
+          "iconUrl": "isaac://item/trinket/187",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -15282,7 +16071,8 @@
           "itemKind": "trinket",
           "id": 188,
           "name": "Ice Cube",
-          "iconUrl": "isaac://item/trinket/188"
+          "iconUrl": "isaac://item/trinket/188",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -15309,7 +16099,8 @@
           "itemKind": "trinket",
           "id": 147,
           "name": "Charged Penny",
-          "iconUrl": "isaac://item/trinket/147"
+          "iconUrl": "isaac://item/trinket/147",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -15341,7 +16132,9 @@
         {
           "kind": "character",
           "id": 31,
-          "name": "The Lost"
+          "name": "The Lost",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -15396,7 +16189,9 @@
         {
           "kind": "character",
           "id": 32,
-          "name": "Lilith"
+          "name": "Lilith",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -15426,7 +16221,9 @@
         {
           "kind": "character",
           "id": 26,
-          "name": "Eve"
+          "name": "Eve",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -15481,7 +16278,9 @@
         {
           "kind": "character",
           "id": 36,
-          "name": "Bethany"
+          "name": "Bethany",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -15532,7 +16331,8 @@
         {
           "kind": "challenge",
           "id": 42,
-          "name": "Hot Potato"
+          "name": "Hot Potato",
+          "page": null
         }
       ],
       "graph": {
@@ -15626,7 +16426,9 @@
         {
           "kind": "character",
           "id": 27,
-          "name": "Samson"
+          "name": "Samson",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -15656,7 +16458,9 @@
         {
           "kind": "character",
           "id": 33,
-          "name": "Keeper"
+          "name": "Keeper",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -15686,7 +16490,9 @@
         {
           "kind": "character",
           "id": 35,
-          "name": "The Forgotten"
+          "name": "The Forgotten",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -15761,7 +16567,9 @@
         {
           "kind": "character",
           "id": 34,
-          "name": "Apollyon"
+          "name": "Apollyon",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -15816,7 +16624,9 @@
         {
           "kind": "character",
           "id": 37,
-          "name": "Jacob"
+          "name": "Jacob",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -15892,7 +16702,8 @@
           "itemKind": "trinket",
           "id": 143,
           "name": "Old Capacitor",
-          "iconUrl": "isaac://item/trinket/143"
+          "iconUrl": "isaac://item/trinket/143",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -15920,7 +16731,8 @@
           "itemKind": "passive",
           "id": 646,
           "name": "Brimstone Bombs",
-          "iconUrl": "isaac://item/passive/646"
+          "iconUrl": "isaac://item/passive/646",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -15948,7 +16760,8 @@
           "itemKind": "active",
           "id": 625,
           "name": "Mega Mush",
-          "iconUrl": "isaac://item/active/625"
+          "iconUrl": "isaac://item/active/625",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -15976,7 +16789,8 @@
           "itemKind": "trinket",
           "id": 153,
           "name": "Mom's Lock",
-          "iconUrl": "isaac://item/trinket/153"
+          "iconUrl": "isaac://item/trinket/153",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -16004,7 +16818,8 @@
           "itemKind": "trinket",
           "id": 154,
           "name": "Dice Bag",
-          "iconUrl": "isaac://item/trinket/154"
+          "iconUrl": "isaac://item/trinket/154",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -16037,7 +16852,8 @@
           "itemKind": "trinket",
           "id": 155,
           "name": "Holy Crown",
-          "iconUrl": "isaac://item/trinket/155"
+          "iconUrl": "isaac://item/trinket/155",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -16065,7 +16881,8 @@
           "itemKind": "trinket",
           "id": 156,
           "name": "Mother's Kiss",
-          "iconUrl": "isaac://item/trinket/156"
+          "iconUrl": "isaac://item/trinket/156",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -16098,7 +16915,8 @@
           "itemKind": "trinket",
           "id": 159,
           "name": "Gilded Key",
-          "iconUrl": "isaac://item/trinket/159"
+          "iconUrl": "isaac://item/trinket/159",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -16126,7 +16944,8 @@
           "itemKind": "trinket",
           "id": 160,
           "name": "Lucky Sack",
-          "iconUrl": "isaac://item/trinket/160"
+          "iconUrl": "isaac://item/trinket/160",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -16159,7 +16978,8 @@
           "itemKind": "trinket",
           "id": 173,
           "name": "Your Soul",
-          "iconUrl": "isaac://item/trinket/173"
+          "iconUrl": "isaac://item/trinket/173",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -16187,7 +17007,8 @@
           "itemKind": "trinket",
           "id": 174,
           "name": "Number Magnet",
-          "iconUrl": "isaac://item/trinket/174"
+          "iconUrl": "isaac://item/trinket/174",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -16220,7 +17041,8 @@
           "itemKind": "trinket",
           "id": 163,
           "name": "Dingle Berry",
-          "iconUrl": "isaac://item/trinket/163"
+          "iconUrl": "isaac://item/trinket/163",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -16248,7 +17070,8 @@
           "itemKind": "trinket",
           "id": 164,
           "name": "Ring Cap",
-          "iconUrl": "isaac://item/trinket/164"
+          "iconUrl": "isaac://item/trinket/164",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -16281,7 +17104,8 @@
           "itemKind": "trinket",
           "id": 175,
           "name": "Strange Key",
-          "iconUrl": "isaac://item/trinket/175"
+          "iconUrl": "isaac://item/trinket/175",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -16289,7 +17113,9 @@
         {
           "kind": "character",
           "id": 26,
-          "name": "Eve"
+          "name": "Eve",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -16315,7 +17141,8 @@
           "itemKind": "trinket",
           "id": 176,
           "name": "Lil Clot",
-          "iconUrl": "isaac://item/trinket/176"
+          "iconUrl": "isaac://item/trinket/176",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -16327,7 +17154,9 @@
         {
           "kind": "character",
           "id": 26,
-          "name": "Eve"
+          "name": "Eve",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -16353,7 +17182,8 @@
           "itemKind": "trinket",
           "id": 177,
           "name": "Temporary Tattoo",
-          "iconUrl": "isaac://item/trinket/177"
+          "iconUrl": "isaac://item/trinket/177",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -16361,7 +17191,9 @@
         {
           "kind": "character",
           "id": 27,
-          "name": "Samson"
+          "name": "Samson",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -16387,7 +17219,8 @@
           "itemKind": "trinket",
           "id": 178,
           "name": "Swallowed M80",
-          "iconUrl": "isaac://item/trinket/178"
+          "iconUrl": "isaac://item/trinket/178",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -16399,7 +17232,9 @@
         {
           "kind": "character",
           "id": 27,
-          "name": "Samson"
+          "name": "Samson",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -16425,7 +17260,8 @@
           "itemKind": "trinket",
           "id": 161,
           "name": "Wicked Crown",
-          "iconUrl": "isaac://item/trinket/161"
+          "iconUrl": "isaac://item/trinket/161",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -16453,7 +17289,8 @@
           "itemKind": "trinket",
           "id": 162,
           "name": "Azazel's Stump",
-          "iconUrl": "isaac://item/trinket/162"
+          "iconUrl": "isaac://item/trinket/162",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -16486,7 +17323,8 @@
           "itemKind": "trinket",
           "id": 158,
           "name": "Torn Pocket",
-          "iconUrl": "isaac://item/trinket/158"
+          "iconUrl": "isaac://item/trinket/158",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -16514,7 +17352,8 @@
           "itemKind": "trinket",
           "id": 157,
           "name": "Torn Card",
-          "iconUrl": "isaac://item/trinket/157"
+          "iconUrl": "isaac://item/trinket/157",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -16547,7 +17386,8 @@
           "itemKind": "trinket",
           "id": 165,
           "name": "Nuh Uh!",
-          "iconUrl": "isaac://item/trinket/165"
+          "iconUrl": "isaac://item/trinket/165",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -16575,7 +17415,8 @@
           "itemKind": "trinket",
           "id": 166,
           "name": "Modeling Clay",
-          "iconUrl": "isaac://item/trinket/166"
+          "iconUrl": "isaac://item/trinket/166",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -16608,7 +17449,8 @@
           "itemKind": "trinket",
           "id": 169,
           "name": "Kid's Drawing",
-          "iconUrl": "isaac://item/trinket/169"
+          "iconUrl": "isaac://item/trinket/169",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -16616,7 +17458,9 @@
         {
           "kind": "character",
           "id": 31,
-          "name": "The Lost"
+          "name": "The Lost",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -16642,7 +17486,8 @@
           "itemKind": "trinket",
           "id": 170,
           "name": "Crystal Key",
-          "iconUrl": "isaac://item/trinket/170"
+          "iconUrl": "isaac://item/trinket/170",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -16654,7 +17499,9 @@
         {
           "kind": "character",
           "id": 31,
-          "name": "The Lost"
+          "name": "The Lost",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -16680,7 +17527,8 @@
           "itemKind": "trinket",
           "id": 183,
           "name": "The Twins",
-          "iconUrl": "isaac://item/trinket/183"
+          "iconUrl": "isaac://item/trinket/183",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -16688,7 +17536,9 @@
         {
           "kind": "character",
           "id": 32,
-          "name": "Lilith"
+          "name": "Lilith",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -16714,7 +17564,8 @@
           "itemKind": "trinket",
           "id": 184,
           "name": "Adoption Papers",
-          "iconUrl": "isaac://item/trinket/184"
+          "iconUrl": "isaac://item/trinket/184",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -16726,7 +17577,9 @@
         {
           "kind": "character",
           "id": 32,
-          "name": "Lilith"
+          "name": "Lilith",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -16752,7 +17605,8 @@
           "itemKind": "trinket",
           "id": 171,
           "name": "Keeper's Bargain",
-          "iconUrl": "isaac://item/trinket/171"
+          "iconUrl": "isaac://item/trinket/171",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -16760,7 +17614,9 @@
         {
           "kind": "character",
           "id": 33,
-          "name": "Keeper"
+          "name": "Keeper",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -16786,7 +17642,8 @@
           "itemKind": "trinket",
           "id": 172,
           "name": "Cursed Penny",
-          "iconUrl": "isaac://item/trinket/172"
+          "iconUrl": "isaac://item/trinket/172",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -16798,7 +17655,9 @@
         {
           "kind": "character",
           "id": 33,
-          "name": "Keeper"
+          "name": "Keeper",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -16824,7 +17683,8 @@
           "itemKind": "trinket",
           "id": 185,
           "name": "Cricket Leg",
-          "iconUrl": "isaac://item/trinket/185"
+          "iconUrl": "isaac://item/trinket/185",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -16832,7 +17692,9 @@
         {
           "kind": "character",
           "id": 34,
-          "name": "Apollyon"
+          "name": "Apollyon",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -16858,7 +17720,8 @@
           "itemKind": "trinket",
           "id": 186,
           "name": "Apollyon's Best Friend",
-          "iconUrl": "isaac://item/trinket/186"
+          "iconUrl": "isaac://item/trinket/186",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -16870,7 +17733,9 @@
         {
           "kind": "character",
           "id": 34,
-          "name": "Apollyon"
+          "name": "Apollyon",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -16896,7 +17761,8 @@
           "itemKind": "trinket",
           "id": 167,
           "name": "Polished Bone",
-          "iconUrl": "isaac://item/trinket/167"
+          "iconUrl": "isaac://item/trinket/167",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -16904,7 +17770,9 @@
         {
           "kind": "character",
           "id": 35,
-          "name": "The Forgotten"
+          "name": "The Forgotten",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -16930,7 +17798,8 @@
           "itemKind": "trinket",
           "id": 168,
           "name": "Hollow Heart",
-          "iconUrl": "isaac://item/trinket/168"
+          "iconUrl": "isaac://item/trinket/168",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -16942,7 +17811,9 @@
         {
           "kind": "character",
           "id": 35,
-          "name": "The Forgotten"
+          "name": "The Forgotten",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -16968,7 +17839,8 @@
           "itemKind": "trinket",
           "id": 181,
           "name": "Expansion Pack",
-          "iconUrl": "isaac://item/trinket/181"
+          "iconUrl": "isaac://item/trinket/181",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -16976,7 +17848,9 @@
         {
           "kind": "character",
           "id": 36,
-          "name": "Bethany"
+          "name": "Bethany",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -17002,7 +17876,8 @@
           "itemKind": "trinket",
           "id": 182,
           "name": "Beth's Essence",
-          "iconUrl": "isaac://item/trinket/182"
+          "iconUrl": "isaac://item/trinket/182",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -17014,7 +17889,9 @@
         {
           "kind": "character",
           "id": 36,
-          "name": "Bethany"
+          "name": "Bethany",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -17040,7 +17917,8 @@
           "itemKind": "trinket",
           "id": 179,
           "name": "RC Remote",
-          "iconUrl": "isaac://item/trinket/179"
+          "iconUrl": "isaac://item/trinket/179",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -17048,7 +17926,9 @@
         {
           "kind": "character",
           "id": 37,
-          "name": "Jacob"
+          "name": "Jacob",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -17074,7 +17954,8 @@
           "itemKind": "trinket",
           "id": 180,
           "name": "Found Soul",
-          "iconUrl": "isaac://item/trinket/180"
+          "iconUrl": "isaac://item/trinket/180",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -17086,7 +17967,9 @@
         {
           "kind": "character",
           "id": 37,
-          "name": "Jacob"
+          "name": "Jacob",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -17112,7 +17995,8 @@
           "itemKind": "passive",
           "id": 602,
           "name": "Member Card",
-          "iconUrl": "isaac://item/passive/602"
+          "iconUrl": "isaac://item/passive/602",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -17140,7 +18024,8 @@
           "itemKind": "active",
           "id": 555,
           "name": "Golden Razor",
-          "iconUrl": "isaac://item/active/555"
+          "iconUrl": "isaac://item/active/555",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -17168,7 +18053,8 @@
           "itemKind": "active",
           "id": 723,
           "name": "Spindown Dice",
-          "iconUrl": "isaac://item/active/723"
+          "iconUrl": "isaac://item/active/723",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -17201,7 +18087,8 @@
           "itemKind": "passive",
           "id": 724,
           "name": "Hypercoagulation",
-          "iconUrl": "isaac://item/passive/724"
+          "iconUrl": "isaac://item/passive/724",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -17234,7 +18121,8 @@
           "itemKind": "active",
           "id": 710,
           "name": "Bag of Crafting",
-          "iconUrl": "isaac://item/active/710"
+          "iconUrl": "isaac://item/active/710",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -17267,7 +18155,8 @@
           "itemKind": "active",
           "id": 705,
           "name": "Dark Arts",
-          "iconUrl": "isaac://item/active/705"
+          "iconUrl": "isaac://item/active/705",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -17300,7 +18189,8 @@
           "itemKind": "passive",
           "id": 725,
           "name": "IBS",
-          "iconUrl": "isaac://item/passive/725"
+          "iconUrl": "isaac://item/passive/725",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -17333,7 +18223,8 @@
           "itemKind": "active",
           "id": 713,
           "name": "Sumptorium",
-          "iconUrl": "isaac://item/active/713"
+          "iconUrl": "isaac://item/active/713",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -17345,7 +18236,9 @@
         {
           "kind": "character",
           "id": 26,
-          "name": "Eve"
+          "name": "Eve",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -17371,7 +18264,8 @@
           "itemKind": "active",
           "id": 704,
           "name": "Berserk!",
-          "iconUrl": "isaac://item/active/704"
+          "iconUrl": "isaac://item/active/704",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -17383,7 +18277,9 @@
         {
           "kind": "character",
           "id": 27,
-          "name": "Samson"
+          "name": "Samson",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -17409,7 +18305,8 @@
           "itemKind": "passive",
           "id": 726,
           "name": "Hemoptysis",
-          "iconUrl": "isaac://item/passive/726"
+          "iconUrl": "isaac://item/passive/726",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -17442,7 +18339,8 @@
           "itemKind": "active",
           "id": 711,
           "name": "Flip",
-          "iconUrl": "isaac://item/active/711"
+          "iconUrl": "isaac://item/active/711",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -17500,7 +18398,8 @@
           "itemKind": "passive",
           "id": 727,
           "name": "Ghost Bombs",
-          "iconUrl": "isaac://item/passive/727"
+          "iconUrl": "isaac://item/passive/727",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -17512,7 +18411,9 @@
         {
           "kind": "character",
           "id": 31,
-          "name": "The Lost"
+          "name": "The Lost",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -17538,7 +18439,8 @@
           "itemKind": "active",
           "id": 728,
           "name": "Gello",
-          "iconUrl": "isaac://item/active/728"
+          "iconUrl": "isaac://item/active/728",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -17550,7 +18452,9 @@
         {
           "kind": "character",
           "id": 32,
-          "name": "Lilith"
+          "name": "Lilith",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -17576,7 +18480,8 @@
           "itemKind": "passive",
           "id": 717,
           "name": "Keeper's Kin",
-          "iconUrl": "isaac://item/passive/717"
+          "iconUrl": "isaac://item/passive/717",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -17588,7 +18493,9 @@
         {
           "kind": "character",
           "id": 33,
-          "name": "Keeper"
+          "name": "Keeper",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -17614,7 +18521,8 @@
           "itemKind": "active",
           "id": 706,
           "name": "Abyss",
-          "iconUrl": "isaac://item/active/706"
+          "iconUrl": "isaac://item/active/706",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -17626,7 +18534,9 @@
         {
           "kind": "character",
           "id": 34,
-          "name": "Apollyon"
+          "name": "Apollyon",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -17652,7 +18562,8 @@
           "itemKind": "active",
           "id": 729,
           "name": "Decap Attack",
-          "iconUrl": "isaac://item/active/729"
+          "iconUrl": "isaac://item/active/729",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -17664,7 +18575,9 @@
         {
           "kind": "character",
           "id": 35,
-          "name": "The Forgotten"
+          "name": "The Forgotten",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -17690,7 +18603,8 @@
           "itemKind": "active",
           "id": 712,
           "name": "Lemegeton",
-          "iconUrl": "isaac://item/active/712"
+          "iconUrl": "isaac://item/active/712",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -17702,7 +18616,9 @@
         {
           "kind": "character",
           "id": 36,
-          "name": "Bethany"
+          "name": "Bethany",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -17728,7 +18644,8 @@
           "itemKind": "active",
           "id": 722,
           "name": "Anima Sola",
-          "iconUrl": "isaac://item/active/722"
+          "iconUrl": "isaac://item/active/722",
+          "page": null
         }
       ],
       "origin": "repentance",
@@ -17740,7 +18657,9 @@
         {
           "kind": "character",
           "id": 37,
-          "name": "Jacob"
+          "name": "Jacob",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -17866,7 +18785,9 @@
         {
           "kind": "character",
           "id": 26,
-          "name": "Eve"
+          "name": "Eve",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -17892,7 +18813,9 @@
         {
           "kind": "character",
           "id": 27,
-          "name": "Samson"
+          "name": "Samson",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -17978,7 +18901,9 @@
         {
           "kind": "character",
           "id": 31,
-          "name": "The Lost"
+          "name": "The Lost",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -18004,7 +18929,9 @@
         {
           "kind": "character",
           "id": 32,
-          "name": "Lilith"
+          "name": "Lilith",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -18030,7 +18957,9 @@
         {
           "kind": "character",
           "id": 33,
-          "name": "Keeper"
+          "name": "Keeper",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -18056,7 +18985,9 @@
         {
           "kind": "character",
           "id": 34,
-          "name": "Apollyon"
+          "name": "Apollyon",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -18082,7 +19013,9 @@
         {
           "kind": "character",
           "id": 35,
-          "name": "The Forgotten"
+          "name": "The Forgotten",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -18108,7 +19041,9 @@
         {
           "kind": "character",
           "id": 36,
-          "name": "Bethany"
+          "name": "Bethany",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -18134,7 +19069,9 @@
         {
           "kind": "character",
           "id": 37,
-          "name": "Jacob"
+          "name": "Jacob",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -18289,7 +19226,9 @@
         {
           "kind": "character",
           "id": 26,
-          "name": "Eve"
+          "name": "Eve",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -18319,7 +19258,9 @@
         {
           "kind": "character",
           "id": 27,
-          "name": "Samson"
+          "name": "Samson",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -18424,7 +19365,9 @@
         {
           "kind": "character",
           "id": 31,
-          "name": "The Lost"
+          "name": "The Lost",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -18454,7 +19397,9 @@
         {
           "kind": "character",
           "id": 32,
-          "name": "Lilith"
+          "name": "Lilith",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -18484,7 +19429,9 @@
         {
           "kind": "character",
           "id": 33,
-          "name": "Keeper"
+          "name": "Keeper",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -18514,7 +19461,9 @@
         {
           "kind": "character",
           "id": 34,
-          "name": "Apollyon"
+          "name": "Apollyon",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -18544,7 +19493,9 @@
         {
           "kind": "character",
           "id": 35,
-          "name": "The Forgotten"
+          "name": "The Forgotten",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -18574,7 +19525,9 @@
         {
           "kind": "character",
           "id": 36,
-          "name": "Bethany"
+          "name": "Bethany",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -18604,7 +19557,9 @@
         {
           "kind": "character",
           "id": 37,
-          "name": "Jacob"
+          "name": "Jacob",
+          "tainted": false,
+          "page": null
         }
       ],
       "graph": {
@@ -18655,7 +19610,8 @@
           "itemKind": "active",
           "id": 628,
           "name": "Death Certificate",
-          "iconUrl": "isaac://item/active/628"
+          "iconUrl": "isaac://item/active/628",
+          "page": null
         }
       ],
       "origin": "repentance",

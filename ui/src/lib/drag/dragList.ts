@@ -22,6 +22,16 @@ export interface Box {
   height: number
 }
 
+// The box of a measured rectangle, and nothing else of it: a `DOMRect` also carries `x`, `y`,
+// `right`, `bottom` and `toJSON`, and a snapshot is the four numbers a hit test reads. The
+// caller measures (`el.getBoundingClientRect()`); this only copies.
+export const boxOf = (r: Box): Box => ({
+  left: r.left,
+  top: r.top,
+  width: r.width,
+  height: r.height,
+})
+
 // Where the lifted copy is drawn, in client pixels.
 export type GhostBox = Box
 
@@ -54,9 +64,8 @@ const holds = (box: Box, p: Point, axis: Axis): boolean => {
 // Which snapshotted box the point falls in, along the list's axis only. Null between the items
 // or past the ends, which is a real answer: a drop there means something else.
 export const boxAt = (boxes: Box[], p: Point, axis: Axis): number | null => {
-  for (const [index, box] of boxes.entries())
-    if (holds(box, p, axis)) return index
-  return null
+  const index = boxes.findIndex((box) => holds(box, p, axis))
+  return index < 0 ? null : index
 }
 
 // Where inside the grabbed item the press landed, and the top-left that keeps it there while the

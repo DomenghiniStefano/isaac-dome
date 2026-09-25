@@ -1,9 +1,6 @@
-import type { MessageKey } from '@/i18n/messageKey'
-import type { MessageSchema } from '@/i18n/messages/it'
+import type { Message } from '@/i18n/message'
 import { CandidateSource, MissingReason } from '@/lib/ipc/types'
 import { ChainLink, LinkState } from './profileView'
-
-type Message = MessageKey<MessageSchema>
 
 // Records over closed sets: a new value with no message fails to compile.
 export const candidateSourceLabel: Record<CandidateSource, Message> = {

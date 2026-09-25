@@ -1,3 +1,4 @@
+import { uniq } from 'lodash-es'
 import type { RunView } from '@/lib/ipc/types'
 
 // The order of the diary, and the reason it is not "by date".
@@ -28,9 +29,11 @@ export const sessionTime = (name: string): number | null => {
   return rolled ? null : at
 }
 
+const LiveKey = 'live'
+
 /** Every run of one source keeps its own place; a source is ordered once. */
 const sourceKey = (run: RunView): string =>
-  run.source.kind === 'live' ? 'live' : `session:${run.source.name}`
+  run.source.kind === 'live' ? LiveKey : `session:${run.source.name}`
 
 /**
  * The list as the screen draws it: the watched launch, then the sessions whose name is a
@@ -41,13 +44,9 @@ const sourceKey = (run: RunView): string =>
  */
 export const orderRuns = (runs: RunView[]): RunView[] => {
   // The sources in the order the archive gave them, each once.
-  const sources: string[] = []
-  const live: string[] = []
-  for (const run of runs) {
-    const key = sourceKey(run)
-    if (sources.includes(key) || live.includes(key)) continue
-    ;(run.source.kind === 'live' ? live : sources).push(key)
-  }
+  const keys = uniq(runs.map(sourceKey))
+  const live = keys.filter((key) => key === LiveKey)
+  const sources = keys.filter((key) => key !== LiveKey)
 
   // Only the names that are a clock are sorted, and they are sorted **into the slots they
   // already occupy**: a name we cannot read keeps its position instead of being pushed to
@@ -61,11 +60,12 @@ export const orderRuns = (runs: RunView[]): RunView[] => {
       time: sessionTime(key.slice('session:'.length)),
     }))
     .filter((s) => s.time !== null)
-  const slots = timed.map((s) => s.at)
   const byTime = [...timed].sort((a, b) => (b.time ?? 0) - (a.time ?? 0))
-  const ordered = [...sources]
-  slots.forEach((at, i) => {
-    ordered[at] = byTime[i].key
+  // The i-th slot a clock occupies takes the i-th newest clock.
+  const slot = new Map(timed.map((s, i) => [s.at, i]))
+  const ordered = sources.map((key, at) => {
+    const i = slot.get(at)
+    return i === undefined ? key : byTime[i].key
   })
 
   const rank = new Map([...live, ...ordered].map((key, at) => [key, at]))

@@ -1,6 +1,5 @@
+import type { Message } from '@/i18n/message'
 import { filter, isEqual, maxBy, sortBy } from 'lodash-es'
-import type { MessageKey } from '@/i18n/messageKey'
-import type { MessageSchema } from '@/i18n/messages/it'
 import { assertNever } from '@/lib/assertNever'
 import { StatusView } from '@/lib/ipc/types'
 import type {
@@ -10,8 +9,6 @@ import type {
   SelectionView,
 } from '@/lib/ipc/types'
 import type { FacetOption } from '@/lib/facets/facetOptions'
-
-type Message = MessageKey<MessageSchema>
 
 // Every judgment the Roll screen makes, so a test can see it and no component computes it
 // inline.

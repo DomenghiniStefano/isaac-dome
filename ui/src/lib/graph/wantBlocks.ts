@@ -1,4 +1,5 @@
 import { assertNever } from '@/lib/assertNever'
+import { knownId } from './achievementNode'
 import type {
   UnlockNode,
   WantDiagnostic,
@@ -26,13 +27,8 @@ export interface WantBlock {
   queueable: boolean
 }
 
-// A node the catalog doesn't know has no id to queue. `null` and not `-1`: a sentinel number
-// would be a valid argument to the queue command.
-const idOf = (node: UnlockNode): number | null =>
-  node.achievement.kind === 'known' ? node.achievement.id : null
-
 const blockOf = (route: WantRoute, queued: Set<number>): WantBlock => {
-  const achievement = idOf(route.node)
+  const achievement = knownId(route.node)
   const offers = achievement !== null && !queued.has(achievement)
   const base = {
     achievement,
