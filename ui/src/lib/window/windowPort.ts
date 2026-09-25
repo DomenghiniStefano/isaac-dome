@@ -61,9 +61,21 @@ export interface WindowPort {
   self: () => Promise<WindowBox>
 }
 
-// A label nothing else holds: two windows are created in the same millisecond only if the user
-// has two hands. Base 36 keeps it short enough to read in a log.
-export const newWindowLabel = (): string => `win-${Date.now().toString(36)}`
+// The time a label is minted at: the clock, or one past the last label when the clock has not
+// moved (card #80, R8). Two in the same millisecond are not a user with two hands — `reopen`
+// mints one per restored window in a loop — and the same label twice is a window Tauri refuses.
+// A counter in the label would do the same and break its shape, which the session's order and
+// the tray (`crates/ipc/src/tray.rs`) both read.
+export const nextMint = (now: number, last: number): number =>
+  Math.max(now, last + 1)
+
+const minted = { last: 0 }
+
+// A label nothing else in this window has minted. Base 36 keeps it short enough to read in a log.
+export const newWindowLabel = (): string => {
+  minted.last = nextMint(Date.now(), minted.last)
+  return `win-${minted.last.toString(36)}`
+}
 
 interface Measurable {
   label: string
