@@ -103,46 +103,15 @@ pub fn challenges_view(
     mut icon: impl FnMut(&IconRef) -> Option<String>,
 ) -> ChallengesView {
     let slots = challenges.map_or(0, |f| f.len() as u32);
-    let diagnostics = [
-        challenges
-            .is_none()
-            .then_some(ChallengesDiagnostic::NoChallengesSection),
-        achievements
-            .is_none()
-            .then_some(ChallengesDiagnostic::NoAchievementSection),
-        dataset.is_none().then_some(ChallengesDiagnostic::NoWiki),
-        catalog.is_none().then_some(ChallengesDiagnostic::NoCatalog),
-    ]
-    .into_iter()
-    .flatten()
-    .collect();
-
+    let diagnostics = diagnostics_of(catalog, dataset, challenges, achievements);
     let Some(c) = catalog else {
-        // No names and no ids to list; the cells are still countable, and saying so is the
-        // difference between "we could not read the game" and "you have done none".
-        // Cell 0 is no challenge, exactly as slot 0 is no item.
-        let set_cells = challenges.map_or(0, |f| f.iter().skip(1).filter(|b| **b).count() as u32);
-        return ChallengesView {
-            challenges: Vec::new(),
-            totals: ChallengeTotals {
-                slots,
-                challenges: 0,
-                done: set_cells,
-            },
-            diagnostics,
-        };
+        return uncatalogued(slots, challenges, diagnostics);
     };
-
-    let mut listed: Vec<_> = c.challenges().collect();
-    listed.sort_by_key(|ch| ch.id.0);
     let profile = Profile {
         challenges,
         achievements,
     };
-    let rows: Vec<ChallengeRow> = listed
-        .iter()
-        .map(|ch| challenge_row(c, dataset, profile, ch, &mut icon))
-        .collect();
+    let rows = challenge_rows(c, dataset, profile, &mut icon);
     let done = rows
         .iter()
         .filter(|r| r.state == ChallengeStateView::Done)
@@ -156,6 +125,63 @@ pub fn challenges_view(
         challenges: rows,
         diagnostics,
     }
+}
+
+/// One diagnostic per input that was not there, in the order the screen lists them.
+fn diagnostics_of(
+    catalog: Option<&Catalog>,
+    dataset: Option<&Dataset>,
+    challenges: Option<&[bool]>,
+    achievements: Option<&[bool]>,
+) -> Vec<ChallengesDiagnostic> {
+    [
+        challenges
+            .is_none()
+            .then_some(ChallengesDiagnostic::NoChallengesSection),
+        achievements
+            .is_none()
+            .then_some(ChallengesDiagnostic::NoAchievementSection),
+        dataset.is_none().then_some(ChallengesDiagnostic::NoWiki),
+        catalog.is_none().then_some(ChallengesDiagnostic::NoCatalog),
+    ]
+    .into_iter()
+    .flatten()
+    .collect()
+}
+
+/// The view without a catalog: no names and no ids to list, but the cells are still countable,
+/// and saying so is the difference between "we could not read the game" and "you have done
+/// none". Cell 0 is no challenge, exactly as slot 0 is no item.
+fn uncatalogued(
+    slots: u32,
+    challenges: Option<&[bool]>,
+    diagnostics: Vec<ChallengesDiagnostic>,
+) -> ChallengesView {
+    let set_cells = challenges.map_or(0, |f| f.iter().skip(1).filter(|b| **b).count() as u32);
+    ChallengesView {
+        challenges: Vec::new(),
+        totals: ChallengeTotals {
+            slots,
+            challenges: 0,
+            done: set_cells,
+        },
+        diagnostics,
+    }
+}
+
+/// Every challenge of the catalog, by number, as a row.
+fn challenge_rows(
+    c: &Catalog,
+    dataset: Option<&Dataset>,
+    profile: Profile<'_>,
+    icon: &mut impl FnMut(&IconRef) -> Option<String>,
+) -> Vec<ChallengeRow> {
+    let mut listed: Vec<_> = c.challenges().collect();
+    listed.sort_by_key(|ch| ch.id.0);
+    listed
+        .iter()
+        .map(|ch| challenge_row(c, dataset, profile, ch, icon))
+        .collect()
 }
 
 /// The two sections a row is read against, either of which may not have been read.
