@@ -1,17 +1,16 @@
 <script setup lang="ts">
 import { PlayIcon } from '@lucide/vue'
+import ListEmptyState from '@/components/data-state/ListEmptyState.vue'
+import ScreenSkeleton from '@/components/data-state/ScreenSkeleton.vue'
 import { computed } from 'vue'
 import DiagnosticsList from '@/components/diagnostics/DiagnosticsList.vue'
-import EmptyCategory from '@/components/data-state/EmptyCategory.vue'
 import FilterBar from '@/components/facets/FilterBar.vue'
-import { Button, ButtonVariant } from '@/components/ui/button'
 import KpiTile from '@/components/kpi/KpiTile.vue'
 import { Card } from '@/components/ui/card'
-import { Skeleton } from '@/components/ui/skeleton'
 import { useMessages } from '@/i18n'
 import { useTabView } from '@/composables/useTabView'
 import type { ScrollOffset } from '@/lib/scale/scrollOffset'
-import { emptyFilter } from '@/lib/facets/faceting'
+import { emptyList, isFiltering } from '@/lib/facets/emptyList'
 import type { FacetFilter } from '@/lib/facets/faceting'
 import type { RunView } from '@/lib/ipc/types'
 import { runsEntries } from '@/lib/diagnostics/runs'
@@ -41,7 +40,6 @@ const { t } = useMessages()
 // read while nobody was watching. So it loads on mount and not on a profile becoming active.
 void store.load()
 
-const facetOrder = Object.values(RunFacet)
 // The filter and the selection belong to the tab, not to this component: leaving and coming
 // back — through a tear-off, a restart, or the back button — finds them where they were left
 // (B39).
@@ -75,6 +73,14 @@ const selected = computed(
 )
 const totals = computed(() => store.view?.totals ?? null)
 
+// An archive that holds no run is not a filter that matched nothing, as on every other list.
+const empty = computed(() =>
+  emptyList(all.value.length, isFiltering(filter.value), {
+    empty: 'runs.empty',
+    noResults: 'runs.noMatch',
+  }),
+)
+
 const valueLabel = (facet: RunFacet, value: string) =>
   facetValueLabel(t, facet, value)
 
@@ -88,7 +94,7 @@ const setQuery = (query: string) => {
   filter.value = { ...filter.value, query }
 }
 const reset = () => {
-  filter.value = emptyFilter<RunFacet>(facetOrder)
+  filter.value = runFaceting.empty()
 }
 const select = (run: RunView) => {
   selectedKey.value = runKey(run)
@@ -162,24 +168,10 @@ const select = (run: RunView) => {
           @offset-change="setOffset"
           @select="select"
         />
-        <div v-else class="flex flex-col items-start gap-3 p-4">
-          <EmptyCategory>{{
-            all.length === 0 ? t('runs.empty') : t('runs.noMatch')
-          }}</EmptyCategory>
-          <Button
-            v-if="all.length > 0"
-            :variant="ButtonVariant.Outline"
-            @click="reset"
-            >{{ t('filters.reset') }}</Button
-          >
-        </div>
+        <ListEmptyState v-else :empty="empty" @reset="reset" />
       </Card>
       <RunDetail v-if="selected !== null" :run="selected" />
     </template>
-    <div v-else class="flex flex-col gap-4">
-      <Skeleton class="h-8 w-120" />
-      <Skeleton class="h-12 w-full" />
-      <Skeleton class="h-150 w-full" />
-    </div>
+    <ScreenSkeleton v-else />
   </div>
 </template>

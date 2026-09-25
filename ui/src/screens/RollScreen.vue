@@ -1,11 +1,12 @@
 <script setup lang="ts">
 import { vScrollMemory } from '@/directives/scrollMemory'
+import ScreenSkeleton from '@/components/data-state/ScreenSkeleton.vue'
+import { SkeletonBlock } from '@/components/data-state/skeletonBlock'
 import { DicesIcon } from '@lucide/vue'
 import { computed } from 'vue'
 import EmptyCategory from '@/components/data-state/EmptyCategory.vue'
 import DiagnosticsList from '@/components/diagnostics/DiagnosticsList.vue'
 import { Button } from '@/components/ui/button'
-import { Skeleton } from '@/components/ui/skeleton'
 import { useOnActiveProfile } from '@/composables/useOnActiveProfile'
 import { useMessages } from '@/i18n'
 import type { MessageKey } from '@/i18n/messageKey'
@@ -106,10 +107,9 @@ const cardState = computed((): CardState | null => {
       />
       <DiagnosticsList :entries="rollEntries(store.view.diagnostics)" />
     </template>
-    <div v-else class="flex flex-col gap-4">
-      <Skeleton class="h-8 w-120" />
-      <Skeleton class="h-32 w-full" />
-      <Skeleton class="h-40 w-full" />
-    </div>
+    <ScreenSkeleton
+      v-else
+      :blocks="[SkeletonBlock.ShortCard, SkeletonBlock.Card]"
+    />
   </div>
 </template>
