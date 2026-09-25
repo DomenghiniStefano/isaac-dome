@@ -581,3 +581,39 @@ fn every_drawn_column_names_the_boss_of_its_position() {
         );
     }
 }
+
+/// Every diagnostic the view can raise, at once and in the order it raises them: the document,
+/// the counters, the catalog, playability, the store, and the empty deck last.
+#[test]
+fn the_diagnostics_come_in_a_fixed_order_with_the_empty_deck_last() {
+    let err = roll::DocumentError::FromTheFuture {
+        version: 9,
+        supported: 1,
+    };
+    let v = roll_view(
+        RollInputs {
+            counters: None,
+            flags: None,
+            catalog: None,
+            document: Err(&err),
+            store_reason: Some(ipc::StoreReason::Unreadable),
+        },
+        |_| None,
+    );
+    assert_eq!(
+        v.diagnostics,
+        vec![
+            RollDiagnostic::DocumentFromTheFuture {
+                version: 9,
+                supported: 1
+            },
+            RollDiagnostic::NoCounterSection,
+            RollDiagnostic::NoCatalog,
+            RollDiagnostic::PlayabilityUnknown,
+            RollDiagnostic::StoreUnavailable {
+                reason: ipc::StoreReason::Unreadable
+            },
+            RollDiagnostic::EmptyDeck,
+        ]
+    );
+}

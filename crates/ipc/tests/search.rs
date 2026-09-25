@@ -498,3 +498,79 @@ fn a_transformation_is_a_document_of_the_search_index() {
         "the transformation is a document"
     );
 }
+
+/// The whole ranking at once: the tier first, then where the profile stands, then the folded
+/// name, and the target last.
+///
+/// Six tiers — the title equal to the query, starting with it, a word of it starting with it,
+/// merely holding it; then the achievement's condition; then a section of the page.
+#[test]
+fn the_ranking_is_tier_then_profile_then_name_then_target() {
+    let mut ds = wiki::for_tests::empty_dataset();
+    for (id, title) in [
+        (1, "Heart"),
+        (2, "Heartbreak"),
+        (3, "Mom's Heart"),
+        (4, "Sweetheart"),
+        (6, "Heart"),
+        (8, "Aheart"),
+    ] {
+        ds.items.insert(id, entry_with(title, empty_item(), vec![]));
+    }
+    ds.items.insert(
+        5,
+        entry_with(
+            "Bomb",
+            empty_item(),
+            vec![Section {
+                kind: SectionKind::Effects,
+                blocks: vec![Block::Paragraph {
+                    inline: vec![text("Heals half a heart")],
+                }],
+            }],
+        ),
+    );
+    ds.trinkets
+        .insert(7, entry_with("Heart", empty_trinket(), vec![]));
+    let index = SearchIndex::build(Ok(&ds));
+    // Only the achievement: its condition is "Defeat Mom's Heart 10 times", its title is not.
+    let c = Catalog::build(|p| match p {
+        "achievements.xml" => Some(ACH.to_vec()),
+        _ => None,
+    });
+    // Items 1 and 6 are in the collection: done, so a trinket — which has no mark — goes
+    // ahead of them inside the first tier, while every weaker tier still comes after.
+    let mut owned = [false; 9];
+    owned[1] = true;
+    owned[6] = true;
+    let flags = SaveFlags {
+        achievements: Some(&[]),
+        items: Some(&owned),
+    };
+    let v = search(
+        &index,
+        Some(&c),
+        &for_tests::bosses(&c),
+        Some(flags),
+        "heart",
+        20,
+        link,
+    );
+    let targets: Vec<Target> = v.hits.iter().map(|h| h.target.clone()).collect();
+    assert_eq!(
+        targets,
+        vec![
+            Target::Trinket { id: 7 },
+            Target::Item { id: 1 },
+            Target::Item { id: 6 },
+            Target::Item { id: 2 },
+            Target::Item { id: 3 },
+            Target::Item { id: 8 },
+            Target::Item { id: 4 },
+            Target::Achievement { id: 1 },
+            Target::Item { id: 5 },
+        ]
+    );
+    assert!(matches!(v.hits[7].matched, SearchMatch::Condition { .. }));
+    assert!(matches!(v.hits[8].matched, SearchMatch::Section { .. }));
+}
