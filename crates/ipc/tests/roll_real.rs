@@ -4,17 +4,13 @@
 //! holds whatever the profile does next and whatever era the file is from, which a fixed 442
 //! would not. The totals themselves come from the tables that measured them.
 
-use core_save::{Kind, Save};
-use test_support::dated_series;
+mod support;
+
+use support::counters;
+use test_support::{dated_series, SERIES};
 
 /// The two editions walked separately: they are two profiles, and a jump between them would
 /// read as progress. Same table as `marks_real.rs`, same reason.
-const SERIES: [&str; 2] = ["rep_persistentgamedata1.dat", "rep+persistentgamedata1.dat"];
-
-fn counters(path: &std::path::Path) -> Option<Vec<u32>> {
-    Save::open(path).ok()?.u32s(Kind::Counters)
-}
-
 fn deck_of(counters: &[u32], include_taken: bool) -> ipc::DeckView {
     let doc = roll::Document {
         preset: roll::Preset {

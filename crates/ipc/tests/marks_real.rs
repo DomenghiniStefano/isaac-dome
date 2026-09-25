@@ -11,9 +11,11 @@
 //! base is off by one, because a wrong base reads a neighbour's cell and lights up on the
 //! wrong day.
 
-use core_save::{Kind, Save};
+mod support;
+
 use ipc::{counter_index, BOSSES, ROSTER};
-use test_support::dated_series;
+use support::counters;
+use test_support::{dated_series, SERIES};
 
 /// The dated series `samples/` can hold, **each walked on its own**. Never one series
 /// spanning both: the two editions are two profiles, and a jump between them would read
@@ -31,8 +33,6 @@ use test_support::dated_series;
 /// the next, so 641 is bracketed rather than assumed. It is an inference from two measured
 /// eras and not a third measurement, which is the most a machine with one 641-era snapshot
 /// can say.
-const SERIES: [&str; 2] = ["rep_persistentgamedata1.dat", "rep+persistentgamedata1.dat"];
-
 /// The columns whose position was derived, and the counter that counts that boss's
 /// kills. Only these three: the other nine columns have no single kill counter to check
 /// against (Mom's Heart and Greed have none at all), and this test exists for the ones
@@ -42,10 +42,6 @@ const KILLS: [(usize, &str, usize); 3] = [
     (10, "Mother", 491),
     (11, "The Beast", 492),
 ];
-
-fn counters(path: &std::path::Path) -> Option<Vec<u32>> {
-    Save::open(path).ok()?.u32s(Kind::Counters)
-}
 
 /// Every snapshot of one series, as `(file name, section 2)`. Empty when the series isn't
 /// stocked — `dated_series` has already declared why on stderr.

@@ -5,18 +5,12 @@
 //! names is earned" have to agree. Not a pinned number — it holds whatever the profile does
 //! next, and it goes red if the mapping ever shifts by one.
 
-use catalog::Catalog;
+mod support;
+
 use core_save::{Kind, Save};
 use ipc::{challenges_view, ChallengeStateView};
-use test_support::dated_series;
-
-const SERIES: &str = "rep+persistentgamedata1.dat";
-
-fn real_catalog() -> Option<Catalog> {
-    let packed = test_support::packed_dir()?;
-    let rs = unpack::ResourceSet::open(&packed);
-    Some(Catalog::build(|p| rs.read(p)))
-}
+use support::real_catalog;
+use test_support::{dated_series, REP_PLUS_SERIES};
 
 #[test]
 fn a_finished_challenge_has_earned_every_achievement_it_rewards() {
@@ -24,7 +18,7 @@ fn a_finished_challenge_has_earned_every_achievement_it_rewards() {
         test_support::skip("samples/packed is missing, no catalog to join");
         return;
     };
-    let files = dated_series(SERIES);
+    let files = dated_series(REP_PLUS_SERIES);
     let Some(path) = files.last() else {
         test_support::skip("no rep+ sample: the mapping has nothing to check");
         return;

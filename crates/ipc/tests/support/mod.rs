@@ -38,3 +38,18 @@ pub fn catalog_with_only(paths: &[&str]) -> Catalog {
 pub fn empty_view() -> ipc::UnlockView {
     ipc::for_tests::unlock_view_of(vec![])
 }
+
+/// The real catalog, built from the game's archives. `None` when `samples/packed` is missing,
+/// which `packed_dir` has already declared.
+pub fn real_catalog() -> Option<Catalog> {
+    let packed = test_support::packed_dir()?;
+    let rs = unpack::ResourceSet::open(&packed);
+    Some(Catalog::build(|p| rs.read(p)))
+}
+
+/// Section 2 of a save, or `None` when the file does not open or has no such section.
+pub fn counters(path: &std::path::Path) -> Option<Vec<u32>> {
+    core_save::Save::open(path)
+        .ok()?
+        .u32s(core_save::Kind::Counters)
+}
