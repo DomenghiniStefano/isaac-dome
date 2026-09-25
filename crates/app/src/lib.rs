@@ -13,8 +13,8 @@ use crate::commands::{
 };
 use crate::icons::icon_bytes;
 use crate::state::{
-    AllPassive, ArchiveState, CatalogState, GraphState, MarkFramesState, ResourcesState, SaveState,
-    SearchState, StoreState,
+    AllPassive, ArchiveState, CatalogState, GraphState, LiveUnlockState, MarkFramesState,
+    ResourcesState, SaveState, SearchState, StoreState,
 };
 
 use tauri::Manager;
@@ -39,6 +39,7 @@ pub fn run() {
         .plugin(tauri_plugin_dialog::init())
         .manage(CatalogState::default())
         .manage(GraphState::default())
+        .manage(LiveUnlockState::default())
         .manage(StoreState::default())
         .manage(ResourcesState::default())
         .manage(MarkFramesState::default())

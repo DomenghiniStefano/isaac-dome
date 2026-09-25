@@ -4,7 +4,8 @@ use std::collections::BTreeSet;
 
 use tauri::AppHandle;
 
-use core_save::Kind;
+use catalog::Catalog;
+use core_save::{Kind, Save};
 use ipc::IpcError;
 
 use crate::icons::icon_url;
@@ -21,14 +22,26 @@ pub(crate) fn unlock(
     resources: tauri::State<'_, ResourcesState>,
     graph: tauri::State<'_, GraphState>,
 ) -> Result<ipc::UnlockView, IpcError> {
-    let (flags, counters) = progress_sections(&app)?;
+    let (_, save) = active_save(&app)?;
     // Game not installed is expected: the view goes out without a catalog and says so.
     let resources = resources.get(&app);
     let catalog = resources.and_then(|rs| state.get_or_build(rs));
     let g = catalog.and_then(|c| graph.get(c));
+    Ok(unlock_of(&save, catalog, g))
+}
+
+/// The Unlock view of one save, the catalog and the graph already resolved: the half of
+/// `unlock` that Live keeps between two lines of the log (card #80, R10).
+pub(crate) fn unlock_of(
+    save: &Save,
+    catalog: Option<&Catalog>,
+    g: Option<&graph::Graph>,
+) -> ipc::UnlockView {
+    let flags = save.flags(Kind::Achievements);
+    let counters = save.u32s(Kind::Counters);
     let progress = ipc::SaveProgress::new(flags.as_deref(), counters.as_deref(), catalog);
     let eval = g.map(|g| g.evaluate(&progress));
-    Ok(ipc::unlock_view(
+    ipc::unlock_view(
         catalog,
         wiki::Dataset::embedded().ok(),
         flags.as_deref(),
@@ -36,7 +49,7 @@ pub(crate) fn unlock(
         eval.as_ref(),
         Some(&progress),
         icon_url,
-    ))
+    )
 }
 
 /// Both graph screens in one answer (N8). They used to be two commands, which the frontend
