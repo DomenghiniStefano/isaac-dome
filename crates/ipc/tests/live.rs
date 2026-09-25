@@ -312,18 +312,18 @@ mod graph_of {
 
     #[test]
     fn the_nodes_when_the_graph_answered() {
-        let ok = Ok(view());
-        assert!(matches!(live_graph(&ok), LiveGraph::Nodes(_)));
+        let view = view();
+        assert!(matches!(live_graph(Ok(&view)), LiveGraph::Nodes(_)));
     }
 
     #[test]
     fn no_profile_when_there_is_no_profile_to_read() {
         assert!(matches!(
-            live_graph(&Err(IpcError::NoActiveProfile)),
+            live_graph(Err(&IpcError::NoActiveProfile)),
             LiveGraph::NoProfile
         ));
         assert!(matches!(
-            live_graph(&Err(IpcError::UnknownProfile {
+            live_graph(Err(&IpcError::UnknownProfile {
                 id: "gone".to_string()
             })),
             LiveGraph::NoProfile
@@ -333,7 +333,7 @@ mod graph_of {
     #[test]
     fn an_unreadable_save_is_said_as_such_and_not_as_a_missing_game() {
         assert!(matches!(
-            live_graph(&Err(IpcError::UnreadableSave {
+            live_graph(Err(&IpcError::UnreadableSave {
                 reason: SaveReason::TooShort
             })),
             LiveGraph::SaveUnreadable
@@ -343,7 +343,7 @@ mod graph_of {
     #[test]
     fn no_graph_when_the_catalog_is_missing() {
         assert!(matches!(
-            live_graph(&Err(IpcError::CatalogUnavailable)),
+            live_graph(Err(&IpcError::CatalogUnavailable)),
             LiveGraph::NoGraph
         ));
     }

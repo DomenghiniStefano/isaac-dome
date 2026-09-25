@@ -359,6 +359,17 @@ impl Store {
         Ok((folded == Some(rules_version)).then(Vec::new))
     }
 
+    /// The cached runs of the launch the watcher follows — the latest `log.txt` — under
+    /// `rules_version`, and no other source's (card #80, R10). What Live reads on every line the
+    /// watcher reports: the whole archive would be every session ever played, read to keep one
+    /// run. `None` when there is no launch, or when these rules have not folded it.
+    pub fn live_runs(&self, rules_version: u32) -> Result<Option<Vec<Run>>, StoreError> {
+        match self.latest_log_source()? {
+            Some(source) => self.cached_runs(source.id, rules_version),
+            None => Ok(None),
+        }
+    }
+
     /// Every source's cached runs under `rules_version`, named, oldest source first (card #81,
     /// V1: this was the body of the `runs` command). A source nobody folded under these rules
     /// contributes no row — it is folded again the next time its log is read — and an empty

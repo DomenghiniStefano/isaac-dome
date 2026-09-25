@@ -1,11 +1,16 @@
 //! The run archive, read out of the store. Wiring: the fold happened when the log was read.
 
+use std::sync::Arc;
+
 use tauri::AppHandle;
 
-use ipc::{IpcError, RunSource, RunsDiagnostic, RunsInputs, RunsView};
+use catalog::Catalog;
+use ipc::{IpcError, RunSource, RunView, RunsDiagnostic, RunsInputs, RunsView};
 
+use crate::commands::graph::unlock_of;
 use crate::state::{
-    progress_sections, ArchiveState, CatalogState, GraphState, ResourcesState, StoreState,
+    active_save, progress_sections, ArchiveState, CatalogState, GraphState, LiveUnlockState,
+    ResourcesState, StoreState,
 };
 
 #[tauri::command]
@@ -59,24 +64,12 @@ pub(crate) fn live(
     resources: tauri::State<'_, ResourcesState>,
     archive: tauri::State<'_, ArchiveState>,
     graph: tauri::State<'_, GraphState>,
+    live_unlock: tauri::State<'_, LiveUnlockState>,
 ) -> Result<ipc::LiveView, IpcError> {
-    let app_for_marks = app.clone();
-    let archive_view = runs(
-        app.clone(),
-        store,
-        catalog.clone(),
-        resources.clone(),
-        archive,
-    )?;
-    // At most one: the fold never leaves two runs open on the launch it is following.
-    let open = archive_view.runs.into_iter().find(|r| {
-        matches!(r.source, RunSource::Live) && matches!(r.outcome, ipc::RunOutcomeView::Open)
-    });
-
-    let rs = resources.get(&app);
-    let cat = rs.and_then(|rs| catalog.get_or_build(rs));
-    let unlocked = crate::commands::graph::unlock(app, catalog.clone(), resources.clone(), graph);
-    let nodes = ipc::live_graph(&unlocked);
+    let cat = resources.get(&app).and_then(|rs| catalog.get_or_build(rs));
+    let open = open_run(&app, &store, &archive, cat);
+    let unlocked = live_unlock_view(&app, &live_unlock, cat, cat.and_then(|c| graph.get(c)));
+    let nodes = ipc::live_graph(unlocked.as_deref());
 
     let by_name = |name: &str, id: Option<u32>| -> Vec<(u32, String)> {
         cat.map(|c| ipc::characters_named(c, name, id))
@@ -87,23 +80,59 @@ pub(crate) fn live(
     // reaches two forms. Built from the same counters the Completion screen reads, through the
     // same function: a second reading would be a second chance to disagree with it.
     let marks = match (open.as_ref().and_then(|r| r.character.as_deref()), cat) {
-        (Some(name), Some(c)) => {
-            progress_sections(&app_for_marks)
-                .ok()
-                .and_then(|(_, counters)| {
-                    let counters = counters?;
-                    let matrix = ipc::marks_matrix(&counters, Some(c), crate::icons::icon_url);
-                    let wanted: Vec<u32> =
-                        by_name(name, open.as_ref().and_then(|r| r.character_id))
-                            .into_iter()
-                            .map(|(id, _)| id)
-                            .collect();
-                    let rows = ipc::live_mark_rows(c, &wanted);
-                    (!rows.is_empty()).then(|| ipc::live_marks(&matrix, &rows))
-                })
-        }
+        (Some(name), Some(c)) => progress_sections(&app).ok().and_then(|(_, counters)| {
+            let counters = counters?;
+            let matrix = ipc::marks_matrix(&counters, Some(c), crate::icons::icon_url);
+            let wanted: Vec<u32> = by_name(name, open.as_ref().and_then(|r| r.character_id))
+                .into_iter()
+                .map(|(id, _)| id)
+                .collect();
+            let rows = ipc::live_mark_rows(c, &wanted);
+            (!rows.is_empty()).then(|| ipc::live_marks(&matrix, &rows))
+        }),
         _ => None,
     };
 
     Ok(ipc::live_view(open, nodes, marks, by_name))
+}
+
+/// The open run of the launch being followed, from that launch's own cached fold (card #80,
+/// R10: this was the whole archive, read on every line the watcher reported). At most one: the
+/// fold never leaves two runs open on the launch it is following. A store that cannot be read
+/// is no run to show, the way it was when this read went through `runs`.
+fn open_run(
+    app: &AppHandle,
+    store: &StoreState,
+    archive: &ArchiveState,
+    catalog: Option<&Catalog>,
+) -> Option<RunView> {
+    let guard = store.lock(app).ok()?;
+    let runs = guard.live_runs(archive.rules().version()).ok()??;
+    let inputs = RunsInputs {
+        sources: vec![(RunSource::Live, runs)],
+        catalog,
+        diagnostics: Vec::new(),
+    };
+    ipc::runs_view(inputs, crate::icons::icon_url)
+        .runs
+        .into_iter()
+        .find(|r| matches!(r.outcome, ipc::RunOutcomeView::Open))
+}
+
+/// The Unlock view Live compares the run against, evaluated once per read of the save rather
+/// than once per line of the log. Without the catalog or the graph it is built every time:
+/// "the game isn't installed" is never kept, so installing it mid-run is seen at the next line.
+fn live_unlock_view(
+    app: &AppHandle,
+    state: &LiveUnlockState,
+    catalog: Option<&Catalog>,
+    g: Option<&graph::Graph>,
+) -> Result<Arc<ipc::UnlockView>, IpcError> {
+    let (_, save) = active_save(app)?;
+    if let (Some(c), Some(g)) = (catalog, g) {
+        return state
+            .0
+            .get(&save, || Ok(unlock_of(&save, Some(c), Some(g))));
+    }
+    Ok(Arc::new(unlock_of(&save, catalog, g)))
 }

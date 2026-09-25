@@ -31,6 +31,12 @@ impl CatalogState {
     }
 }
 
+/// The Unlock view Live reads, kept until the save it was evaluated on is read again (card #80,
+/// R10): the watcher reports a line every two seconds during a run, and the profile moves only
+/// when the game writes the `.dat`. When to build is `ipc::PerSave`'s rule, tested there.
+#[derive(Default)]
+pub(crate) struct LiveUnlockState(pub(crate) ipc::PerSave<Save, ipc::UnlockView>);
+
 /// The unlock graph, built once from the catalog and the rules compiled into the binary.
 /// Same shape as `CatalogState`: expensive to build, cheap to consult. Rules that don't
 /// parse can only be our own broken file, and they degrade like everything else — the

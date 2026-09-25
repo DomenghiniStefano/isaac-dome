@@ -15,6 +15,7 @@ mod icon;
 mod live;
 mod mark_art;
 mod marks;
+mod per_save;
 mod preview;
 mod profile;
 mod progress;
@@ -80,6 +81,7 @@ pub use marks::{
 pub use floor::ROOM_KINDS;
 #[cfg(feature = "test-api")]
 pub use marks::{counter_index, marks_totals, CHARACTER_KEYS};
+pub use per_save::PerSave;
 pub use preview::{preview_of, CandidatePreview, PreviewCount};
 pub use profile::{
     candidates, profile_id, resolve_active, setup_state, ActiveProfile, CandidateSource,

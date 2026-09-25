@@ -323,7 +323,9 @@ pub fn live_mark_rows(c: &catalog::Catalog, wanted: &[u32]) -> Vec<usize> {
 /// What the graph's answer means to Live (card #80, item 13: this was `Err(_) => NoGraph` in
 /// the `live` command, which told an unreadable save as a missing game). Exhaustive over
 /// `IpcError`, which is ours and closed: a new error has to be placed here.
-pub fn live_graph(unlocked: &Result<crate::graph::UnlockView, crate::IpcError>) -> LiveGraph<'_> {
+pub fn live_graph<'a>(
+    unlocked: Result<&'a crate::graph::UnlockView, &crate::IpcError>,
+) -> LiveGraph<'a> {
     use crate::IpcError as E;
     match unlocked {
         Ok(view) => LiveGraph::Nodes(&view.nodes),
