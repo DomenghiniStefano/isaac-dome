@@ -77,11 +77,12 @@ pub use marks::{
     boss_name, character_for, marks_matrix, Cell, CellLevel, CharacterGroup, CharacterRow,
     MarkArtView, MarksMatrix, MarksTotals, RosterRow, SecondLevelView, BOSSES, ROSTER,
 };
-// Reached only by tests: the layout tables and counter lookups are the crate's own business.
+// Public only for the tests: the room kinds are the crate's own table, and `marks_totals` is
+// what `preview_of` counts with — production reaches it inside the crate.
 #[cfg(feature = "test-api")]
 pub use floor::ROOM_KINDS;
 #[cfg(feature = "test-api")]
-pub use marks::{counter_index, marks_totals};
+pub use marks::marks_totals;
 pub use per_save::PerSave;
 pub use preview::{preview_of, CandidatePreview, PreviewCount};
 pub use profile::{

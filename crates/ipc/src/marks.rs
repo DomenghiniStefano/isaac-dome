@@ -153,17 +153,6 @@ pub fn character_for(row: usize, catalog: &catalog::Catalog) -> Option<&catalog:
     })
 }
 
-/// Index into the counters section for the (character, boss) cell, where `boss` is a
-/// position in [`BOSSES`]. `None` when the cell isn't located, or either index is out of
-/// range.
-///
-/// The tables themselves live in `core_save::marks`: a cell's index is the shape of the
-/// save file, and this module draws a screen. What stays here is the translation from the
-/// screen's parallel arrays to the layout's typed column.
-pub fn counter_index(character: usize, boss: usize) -> Option<usize> {
-    core_save::cell_index(character, *core_save::Column::ALL.get(boss)?)
-}
-
 /// The level a cell's mark reached. Fieldless, so it crosses as a bare camelCase string
 /// and the TypeScript is a union of values: a tag distinguishes variants that carry
 /// different data, and there is none here (CLAUDE.md, "Enums on the IPC").
@@ -382,7 +371,9 @@ pub fn marks_matrix(
             character: row.name.to_string(),
             group: row.group,
             tainted: row.tainted,
-            cells: (0..BOSSES.len()).map(|b| cell_at(counters, c, b)).collect(),
+            cells: Column::ALL
+                .map(|column| cell_at(counters, c, column))
+                .to_vec(),
             head_url: catalog
                 .and_then(|cat| character_for(c, cat))
                 .and_then(|ch| ch.head.as_ref())
@@ -426,8 +417,11 @@ pub fn marks_matrix(
 // `pub(crate)`, not private: `crate::roll::roll_space` reads the same cell the matrix
 // draws. A second definition of "what a cell holds" would drift from the matrix the
 // Completion screen draws, the same argument `marks_totals` already carries.
-pub(crate) fn cell_at(counters: &[u32], character: usize, boss: usize) -> Cell {
-    match counter_index(character, boss).and_then(|i| counters.get(i)) {
+//
+// The index is the layout's (`core_save::cell_index`): a cell's place is the shape of the save
+// file, and this module draws a screen.
+pub(crate) fn cell_at(counters: &[u32], character: usize, column: Column) -> Cell {
+    match core_save::cell_index(character, column).and_then(|i| counters.get(i)) {
         None => Cell::Unknown,
         Some(&value) if value <= 7 => {
             let bits = value as u8;
@@ -458,7 +452,7 @@ fn level_of(bits: u8) -> CellLevel {
 /// definition of "a mark is taken" would drift from this one.
 pub fn marks_totals(counters: &[u32]) -> MarksTotals {
     let cells: Vec<Cell> = (0..ROSTER.len())
-        .flat_map(|c| (0..BOSSES.len()).map(move |b| cell_at(counters, c, b)))
+        .flat_map(|c| Column::ALL.map(|column| cell_at(counters, c, column)))
         .collect();
     totals_from(&cells)
 }
