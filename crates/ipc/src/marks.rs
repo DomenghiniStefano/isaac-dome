@@ -1,139 +1,155 @@
-use core_save::marks::Column;
+use core_save::marks::{group_of, Column, ROWS};
 use serde::Serialize;
 
-/// The twelve columns the game's own completion widget draws. Mother and The Beast were
+/// The English name the matrix header draws for a column, and the one a tally is labelled
+/// with. Exhaustive, so a thirteenth column cannot be drawn without a name.
+pub const fn boss_name(column: Column) -> &'static str {
+    match column {
+        Column::MomsHeart => "Mom's Heart",
+        Column::Isaac => "Isaac",
+        Column::Satan => "Satan",
+        Column::BossRush => "Boss Rush",
+        Column::BlueBaby => "Blue Baby",
+        Column::TheLamb => "The Lamb",
+        Column::MegaSatan => "Mega Satan",
+        Column::Greed => "Greed",
+        Column::Hush => "Hush",
+        Column::Delirium => "Delirium",
+        Column::Mother => "Mother",
+        Column::TheBeast => "The Beast",
+    }
+}
+
+/// The twelve columns the game's own completion widget draws, by name, in the order of
+/// [`Column::ALL`] — which is the one list of them (card #82, S1). Mother and The Beast were
 /// located on 2026-09-08, on the historical series: for the 14 original characters they
 /// are as verified as the other ten. For The Forgotten and the 19 later characters Mother
 /// was located on 2026-09-20 and The Beast is still unlocated — see `FORGOTTEN` and
 /// `BLOCKS_19` in `core_save::marks`.
-pub const BOSSES: [&str; 12] = [
-    "Mom's Heart",
-    "Isaac",
-    "Satan",
-    "Boss Rush",
-    "Blue Baby",
-    "The Lamb",
-    "Mega Satan",
-    "Greed",
-    "Hush",
-    "Delirium",
-    "Mother",
-    "The Beast",
-];
-
-/// The same twelve columns as the value the UI translates, in the order of [`BOSSES`] (card
-/// #81, V3: a drawn mark crossed as the English name). The assertion below ties the two
-/// lengths, so a thirteenth column added to one and not the other does not compile.
-pub(crate) const MARK_COLUMNS: [crate::graph::MarkColumnView; 12] = {
-    use crate::graph::MarkColumnView as C;
-    [
-        C::MomsHeart,
-        C::Isaac,
-        C::Satan,
-        C::BossRush,
-        C::BlueBaby,
-        C::TheLamb,
-        C::MegaSatan,
-        C::Greed,
-        C::Hush,
-        C::Delirium,
-        C::Mother,
-        C::TheBeast,
-    ]
+pub const BOSSES: [&str; Column::ALL.len()] = {
+    // A `const` cannot call `array::map` or an iterator: an index walk is the only way to
+    // derive the array at compile time, where its length is a type.
+    let mut names = [""; Column::ALL.len()];
+    let mut i = 0;
+    while i < names.len() {
+        names[i] = boss_name(Column::ALL[i]);
+        i += 1;
+    }
+    names
 };
-const _: () = assert!(MARK_COLUMNS.len() == BOSSES.len());
 
 /// Which block family a row belongs to. Defined with the layout, because that is what it
 /// describes; re-exported here because it crosses the IPC as part of a `CharacterRow`.
 pub use core_save::marks::CharacterGroup;
 
-pub const CHARACTERS: [(&str, CharacterGroup); 34] = [
-    ("Isaac", CharacterGroup::Original),
-    ("Magdalene", CharacterGroup::Original),
-    ("Cain", CharacterGroup::Original),
-    ("Judas", CharacterGroup::Original),
-    ("Blue Baby", CharacterGroup::Original),
-    ("Eve", CharacterGroup::Original),
-    ("Samson", CharacterGroup::Original),
-    ("Azazel", CharacterGroup::Original),
-    ("Lazarus", CharacterGroup::Original),
-    ("Eden", CharacterGroup::Original),
-    ("The Lost", CharacterGroup::Original),
-    ("Lilith", CharacterGroup::Original),
-    ("Keeper", CharacterGroup::Original),
-    ("Apollyon", CharacterGroup::Original),
-    ("The Forgotten", CharacterGroup::Forgotten),
-    ("Bethany", CharacterGroup::Later),
-    ("Jacob & Esau", CharacterGroup::Later),
-    ("T. Isaac", CharacterGroup::Later),
-    ("T. Magdalene", CharacterGroup::Later),
-    ("T. Cain", CharacterGroup::Later),
-    ("T. Judas", CharacterGroup::Later),
-    ("T. Blue Baby", CharacterGroup::Later),
-    ("T. Eve", CharacterGroup::Later),
-    ("T. Samson", CharacterGroup::Later),
-    ("T. Azazel", CharacterGroup::Later),
-    ("T. Lazarus", CharacterGroup::Later),
-    ("T. Eden", CharacterGroup::Later),
-    ("T. The Lost", CharacterGroup::Later),
-    ("T. Lilith", CharacterGroup::Later),
-    ("T. Keeper", CharacterGroup::Later),
-    ("T. Apollyon", CharacterGroup::Later),
-    ("T. Forgotten", CharacterGroup::Later),
-    ("T. Bethany", CharacterGroup::Later),
-    ("T. Jacob & Esau", CharacterGroup::Later),
-];
+/// One row of the completion matrix: who the layout's row is, and how the catalog names it.
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub struct RosterRow {
+    /// The name the matrix draws. The project's own, measured with the layout.
+    pub name: &'static str,
+    /// The file's block family. The same one [`group_of`] gives the row, which the
+    /// assertion under [`ROSTER`] holds at compile time.
+    pub group: CharacterGroup,
+    /// The name key in `players.xml`, without `#` and without `_NAME`. Keys repeat between
+    /// the normal and Tainted forms: it's the pair with `tainted` that identifies the
+    /// character. Verified against the file on 2026-09-03.
+    pub key: &'static str,
+    /// The Tainted form.
+    pub tainted: bool,
+}
 
-/// For each row of `CHARACTERS`, the name key in `players.xml` (without `#` and without
-/// `_NAME`) and whether the row is the Tainted form. Keys repeat between the normal and
-/// Tainted forms: it's the pair that identifies the character. Verified against the
-/// file on 2026-09-03.
-pub const CHARACTER_KEYS: [(&str, bool); 34] = [
-    ("ISAAC", false),
-    ("MAGDALENE", false),
-    ("CAIN", false),
-    ("JUDAS", false),
-    ("BLUEBABY", false),
-    ("EVE", false),
-    ("SAMSON", false),
-    ("AZAZEL", false),
-    ("LAZARUS", false),
-    ("EDEN", false),
-    ("THE_LOST", false),
-    ("LILITH", false),
-    ("KEEPER", false),
-    ("APOLLYON", false),
-    ("THE_FORGOTTEN", false),
-    ("BETHANY", false),
-    ("JACOB", false),
-    ("ISAAC", true),
-    ("MAGDALENE", true),
-    ("CAIN", true),
-    ("JUDAS", true),
-    ("BLUEBABY", true),
-    ("EVE", true),
-    ("SAMSON", true),
-    ("AZAZEL", true),
-    ("LAZARUS", true),
-    ("EDEN", true),
-    ("THE_LOST", true),
-    ("LILITH", true),
-    ("KEEPER", true),
-    ("APOLLYON", true),
-    ("THE_FORGOTTEN", true),
-    ("BETHANY", true),
-    ("JACOB", true),
-];
+const fn base(name: &'static str, group: CharacterGroup, key: &'static str) -> RosterRow {
+    RosterRow {
+        name,
+        group,
+        key,
+        tainted: false,
+    }
+}
+
+/// Every Tainted row is one of the 19-cell blocks.
+const fn tainted(name: &'static str, key: &'static str) -> RosterRow {
+    RosterRow {
+        name,
+        group: CharacterGroup::Later,
+        key,
+        tainted: true,
+    }
+}
+
+/// The 34 rows of the matrix, in the layout's order: one table, where a name and its key used
+/// to be two parallel arrays that only a test kept in step (card #82, S2). Its length is the
+/// layout's [`ROWS`], so a row added to one and not the other does not compile.
+pub const ROSTER: [RosterRow; ROWS] = {
+    use CharacterGroup::{Forgotten, Later, Original};
+    [
+        base("Isaac", Original, "ISAAC"),
+        base("Magdalene", Original, "MAGDALENE"),
+        base("Cain", Original, "CAIN"),
+        base("Judas", Original, "JUDAS"),
+        base("Blue Baby", Original, "BLUEBABY"),
+        base("Eve", Original, "EVE"),
+        base("Samson", Original, "SAMSON"),
+        base("Azazel", Original, "AZAZEL"),
+        base("Lazarus", Original, "LAZARUS"),
+        base("Eden", Original, "EDEN"),
+        base("The Lost", Original, "THE_LOST"),
+        base("Lilith", Original, "LILITH"),
+        base("Keeper", Original, "KEEPER"),
+        base("Apollyon", Original, "APOLLYON"),
+        base("The Forgotten", Forgotten, "THE_FORGOTTEN"),
+        base("Bethany", Later, "BETHANY"),
+        base("Jacob & Esau", Later, "JACOB"),
+        tainted("T. Isaac", "ISAAC"),
+        tainted("T. Magdalene", "MAGDALENE"),
+        tainted("T. Cain", "CAIN"),
+        tainted("T. Judas", "JUDAS"),
+        tainted("T. Blue Baby", "BLUEBABY"),
+        tainted("T. Eve", "EVE"),
+        tainted("T. Samson", "SAMSON"),
+        tainted("T. Azazel", "AZAZEL"),
+        tainted("T. Lazarus", "LAZARUS"),
+        tainted("T. Eden", "EDEN"),
+        tainted("T. The Lost", "THE_LOST"),
+        tainted("T. Lilith", "LILITH"),
+        tainted("T. Keeper", "KEEPER"),
+        tainted("T. Apollyon", "APOLLYON"),
+        tainted("T. Forgotten", "THE_FORGOTTEN"),
+        tainted("T. Bethany", "BETHANY"),
+        tainted("T. Jacob & Esau", "JACOB"),
+    ]
+};
+
+/// Whether `a` and `b` are the same family, in a form a `const` can evaluate.
+const fn same_group(a: CharacterGroup, b: CharacterGroup) -> bool {
+    use CharacterGroup::{Forgotten, Later, Original};
+    matches!(
+        (a, b),
+        (Original, Original) | (Forgotten, Forgotten) | (Later, Later)
+    )
+}
+
+/// Every row's family is the one the layout gives its index: the roster names the rows, the
+/// layout decides where their cells are, and the two cannot disagree without failing to build.
+const _: () = {
+    // An index walk for the same reason as `BOSSES`: iterators do not run in a `const`.
+    let mut row = 0;
+    while row < ROSTER.len() {
+        assert!(matches!(group_of(row), Some(g) if same_group(g, ROSTER[row].group)));
+        row += 1;
+    }
+};
 
 /// The catalog character for row `row` of the matrix: the **first** one with that key
 /// and that Tainted flag, in id order. The hidden forms (Lazarus 2, Black Judas, The
 /// Soul) have their own keys and don't interfere; Esau has his own key, and the "Jacob &
 /// Esau" row takes Jacob.
 pub fn character_for(row: usize, catalog: &catalog::Catalog) -> Option<&catalog::Character> {
-    let (key, tainted) = *CHARACTER_KEYS.get(row)?;
-    let wanted = format!("{key}_NAME");
+    let wanted_row = ROSTER.get(row)?;
+    let wanted = format!("{}_NAME", wanted_row.key);
     catalog.characters().find(|c| {
-        c.tainted == tainted && matches!(&c.name, catalog::Text::Key { key: k } if *k == wanted)
+        c.tainted == wanted_row.tainted
+            && matches!(&c.name, catalog::Text::Key { key: k } if *k == wanted)
     })
 }
 
@@ -277,27 +293,6 @@ pub fn second_level(column: Column) -> SecondLevelView {
     }
 }
 
-/// The same word for a column as the graph names it, so Live says what Completion says.
-/// A translation onto the layout's column and not a second rule: which column is Greed is
-/// decided once, in [`second_level`].
-pub(crate) fn second_level_of_view(column: crate::graph::MarkColumnView) -> SecondLevelView {
-    use crate::graph::MarkColumnView as V;
-    second_level(match column {
-        V::MomsHeart => Column::MomsHeart,
-        V::Isaac => Column::Isaac,
-        V::Satan => Column::Satan,
-        V::BossRush => Column::BossRush,
-        V::BlueBaby => Column::BlueBaby,
-        V::TheLamb => Column::TheLamb,
-        V::MegaSatan => Column::MegaSatan,
-        V::Greed => Column::Greed,
-        V::Hush => Column::Hush,
-        V::Delirium => Column::Delirium,
-        V::Mother => Column::Mother,
-        V::TheBeast => Column::TheBeast,
-    })
-}
-
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, ts_rs::TS)]
 #[serde(rename_all = "camelCase")]
 pub struct MarksTotals {
@@ -344,28 +339,25 @@ pub struct MarksMatrix {
 /// denominator.
 fn column_fill(rows: &[CharacterRow], column: usize) -> crate::icon::MarkFill {
     use crate::icon::MarkFill;
-    let cells = rows.iter().filter_map(|r| r.cells.get(column));
-    let (mut readable, mut levelled, mut hard) = (0usize, 0usize, 0usize);
-    for cell in cells {
-        let Cell::Known { level, .. } = cell else {
-            continue;
-        };
-        readable += 1;
-        match level {
-            CellLevel::Empty => {}
-            CellLevel::Normal => levelled += 1,
-            CellLevel::Hard => {
-                levelled += 1;
-                hard += 1;
-            }
-        }
-    }
-    if readable > 0 && hard == readable {
+    let readable: Vec<CellLevel> = rows
+        .iter()
+        .filter_map(|r| r.cells.get(column).and_then(readable_level))
+        .collect();
+    let all_hard = readable.iter().all(|&l| l == CellLevel::Hard);
+    if !readable.is_empty() && all_hard {
         MarkFill::Hard
-    } else if levelled > 0 {
+    } else if readable.iter().any(|l| l.reached()) {
         MarkFill::Normal
     } else {
         MarkFill::None
+    }
+}
+
+/// The level of a cell the save could be read for; `None` for the ones it could not.
+fn readable_level(cell: &Cell) -> Option<CellLevel> {
+    match cell {
+        Cell::Known { level, .. } => Some(*level),
+        Cell::Unknown | Cell::Unexpected { .. } => None,
     }
 }
 
@@ -382,13 +374,13 @@ pub fn marks_matrix(
 ) -> MarksMatrix {
     use crate::icon::{IconRef, MarkTier};
 
-    let rows: Vec<CharacterRow> = CHARACTERS
+    let rows: Vec<CharacterRow> = ROSTER
         .iter()
         .enumerate()
-        .map(|(c, &(name, group))| CharacterRow {
-            character: name.to_string(),
-            group,
-            tainted: CHARACTER_KEYS.get(c).is_some_and(|&(_, tainted)| tainted),
+        .map(|(c, row)| CharacterRow {
+            character: row.name.to_string(),
+            group: row.group,
+            tainted: row.tainted,
             cells: (0..BOSSES.len()).map(|b| cell_at(counters, c, b)).collect(),
             head_url: catalog
                 .and_then(|cat| character_for(c, cat))
@@ -417,10 +409,7 @@ pub fn marks_matrix(
 
     let totals = totals_of(&rows);
     let widget_url = catalog.and_then(|_| {
-        let mut fills = [crate::icon::MarkFill::None; BOSSES.len()];
-        for (column, slot) in fills.iter_mut().enumerate() {
-            *slot = column_fill(&rows, column);
-        }
+        let fills = std::array::from_fn(|column| column_fill(&rows, column));
         icon(&IconRef::Widget { fills })
     });
     MarksMatrix {
@@ -467,7 +456,7 @@ fn level_of(bits: u8) -> CellLevel {
 /// the art (`docs/superpowers/specs/2026-09-17-welcome-flow-design.md` §4), and a second
 /// definition of "a mark is taken" would drift from this one.
 pub fn marks_totals(counters: &[u32]) -> MarksTotals {
-    let cells: Vec<Cell> = (0..CHARACTERS.len())
+    let cells: Vec<Cell> = (0..ROSTER.len())
         .flat_map(|c| (0..BOSSES.len()).map(move |b| cell_at(counters, c, b)))
         .collect();
     totals_from(&cells)

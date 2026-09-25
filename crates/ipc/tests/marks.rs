@@ -1,7 +1,8 @@
 use catalog::Catalog;
+use core_save::marks::{cell_index, Column};
 use ipc::{
     counter_index, marks_matrix, Cell, CellLevel, CharacterGroup, IconRef, MarkArtView,
-    SecondLevelView, BOSSES, CHARACTERS,
+    SecondLevelView, BOSSES, ROSTER,
 };
 
 #[test]
@@ -11,80 +12,65 @@ fn tables_have_the_expected_shape() {
         12,
         "the widget the game draws has twelve columns"
     );
-    assert_eq!(CHARACTERS.len(), 34);
+    assert_eq!(ROSTER.len(), 34);
     assert_eq!(BOSSES[0], "Mom's Heart");
     assert_eq!(BOSSES[9], "Delirium");
     assert_eq!(BOSSES[10], "Mother");
     assert_eq!(BOSSES[11], "The Beast");
-    assert_eq!(CHARACTERS[0], ("Isaac", CharacterGroup::Original));
-    assert_eq!(CHARACTERS[14], ("The Forgotten", CharacterGroup::Forgotten));
-    assert_eq!(CHARACTERS[15], ("Bethany", CharacterGroup::Later));
-    assert_eq!(CHARACTERS[33], ("T. Jacob & Esau", CharacterGroup::Later));
-}
-
-#[test]
-fn original_characters_use_the_verified_blocks() {
-    // Mom's Heart starts at 27; Isaac is the first of the 14.
-    assert_eq!(counter_index(0, 0), Some(27));
-    // Apollyon is the fourteenth: 27 + 13.
-    assert_eq!(counter_index(13, 0), Some(40));
-    // Delirium for the 14 originals starts at 173.
-    assert_eq!(counter_index(0, 9), Some(173));
-    // Mother and The Beast, located on 2026-09-08 on the historical series. The base of
-    // each block is pinned by two characters read off the winner mask at index 188:
-    // Magdalene (+1) and Cain (+2) on the days their mark appeared.
-    assert_eq!(counter_index(0, 10), Some(423)); // Isaac × Mother
-    assert_eq!(counter_index(1, 10), Some(424)); // Magdalene
-    assert_eq!(counter_index(2, 10), Some(425)); // Cain
-    assert_eq!(counter_index(13, 10), Some(436)); // Apollyon, last of the 14
-    assert_eq!(counter_index(0, 11), Some(457)); // Isaac × The Beast
-    assert_eq!(counter_index(1, 11), Some(458)); // Magdalene
-    assert_eq!(counter_index(2, 11), Some(459)); // Cain
-    assert_eq!(counter_index(13, 11), Some(470)); // Apollyon
-}
-
-#[test]
-fn the_forgotten_uses_single_cells() {
-    assert_eq!(counter_index(14, 0), Some(203)); // Mom's Heart
-    assert_eq!(counter_index(14, 8), Some(211)); // Hush
-                                                 // Delirium: 212 belongs to another family.
-    assert_eq!(counter_index(14, 9), Some(213));
-    // Mother closed on 2026-09-20: T. Eden's cell moved at 449, which puts the 19-block at
-    // 438 and leaves 437 — the one cell over — to The Forgotten.
-    assert_eq!(counter_index(14, 10), Some(437));
-    // The Beast is still derived from the spacing and never observed moving, so it stays
-    // unlocated rather than pointing at a guess.
-    assert_eq!(counter_index(14, 11), None);
-}
-
-#[test]
-fn later_characters_now_reach_delirium() {
-    assert_eq!(counter_index(15, 0), Some(214)); // Bethany, Mom's Heart
-                                                 // T. Jacob & Esau, Hush = 366 + 18.
-    assert_eq!(counter_index(33, 8), Some(384));
-    // The column that used to be the hole. Four characters pin the base at 404:
-    // Bethany (+0), Jacob & Esau (+1), T. Cain (+4) and T. Azazel (+9), each on the day
-    // its cell appeared together with a Delirium kill.
-    assert_eq!(counter_index(15, 9), Some(404)); // Bethany
-    assert_eq!(counter_index(16, 9), Some(405)); // Jacob & Esau
-    assert_eq!(counter_index(19, 9), Some(408)); // T. Cain
-    assert_eq!(counter_index(24, 9), Some(413)); // T. Azazel
-    assert_eq!(counter_index(33, 9), Some(422)); // T. Jacob & Esau, last of the 19
-}
-
-#[test]
-fn exactly_twenty_cells_are_unlocated() {
-    let unlocated = (0..CHARACTERS.len())
-        .flat_map(|c| (0..BOSSES.len()).map(move |b| (c, b)))
-        .filter(|&(c, b)| counter_index(c, b).is_none())
-        .count();
     assert_eq!(
-        unlocated, 20,
-        "The Forgotten and the 19 later characters, for The Beast alone: 20 cells whose \
-         position is derived from the spacing and confirmed by nothing. It was 40 until \
-         2026-09-20, when a window on T. Eden beating Mother closed that half; what closes \
-         this one is the same run against The Beast"
+        (ROSTER[0].name, ROSTER[0].group),
+        ("Isaac", CharacterGroup::Original)
     );
+    assert_eq!(
+        (ROSTER[14].name, ROSTER[14].group),
+        ("The Forgotten", CharacterGroup::Forgotten)
+    );
+    assert_eq!(
+        (ROSTER[15].name, ROSTER[15].group),
+        ("Bethany", CharacterGroup::Later)
+    );
+    assert_eq!(
+        (ROSTER[33].name, ROSTER[33].group),
+        ("T. Jacob & Esau", CharacterGroup::Later)
+    );
+}
+
+/// A row's name and its `players.xml` key are one table since card #82 (S2); these anchors pin
+/// the pair at the rows where the two used to be easiest to shift apart — the Jacob & Esau row
+/// that takes Jacob's key, the first Tainted row, and The Forgotten in both forms. Verified
+/// against the file on 2026-09-03.
+#[test]
+fn the_roster_carries_each_rows_key_and_form() {
+    let key_of = |row: usize| (ROSTER[row].name, ROSTER[row].key, ROSTER[row].tainted);
+    assert_eq!(key_of(0), ("Isaac", "ISAAC", false));
+    assert_eq!(key_of(14), ("The Forgotten", "THE_FORGOTTEN", false));
+    assert_eq!(key_of(16), ("Jacob & Esau", "JACOB", false));
+    assert_eq!(key_of(17), ("T. Isaac", "ISAAC", true));
+    assert_eq!(key_of(31), ("T. Forgotten", "THE_FORGOTTEN", true));
+    assert_eq!(key_of(33), ("T. Jacob & Esau", "JACOB", true));
+    assert_eq!(
+        ROSTER.iter().filter(|r| r.tainted).count(),
+        17,
+        "the seventeen Tainted"
+    );
+}
+
+/// The layout's indices are pinned in `core-save`'s own tests (`marks_layout.rs`), where the
+/// layout is. What this crate adds is the screen's translation, a column's index in `BOSSES`
+/// onto the layout's `Column`, and that is what is held here: every cell, and nothing past the
+/// twelfth column.
+#[test]
+fn counter_index_is_the_layouts_cell_at_the_columns_position() {
+    for row in 0..ROSTER.len() {
+        for (b, column) in Column::ALL.into_iter().enumerate() {
+            assert_eq!(
+                counter_index(row, b),
+                cell_index(row, column),
+                "{row} x {column:?}"
+            );
+        }
+    }
+    assert_eq!(counter_index(0, BOSSES.len()), None, "a thirteenth column");
 }
 
 /// A fake counters section, as long as a real save, all zero
@@ -500,7 +486,7 @@ const HARD: u32 = 3;
 
 /// Every cell of `column` set to `value`, for the rows that have one.
 fn whole_column(column: usize, value: u32) -> Vec<(usize, u32)> {
-    (0..CHARACTERS.len())
+    (0..ROSTER.len())
         .filter_map(|row| counter_index(row, column).map(|i| (i, value)))
         .collect()
 }

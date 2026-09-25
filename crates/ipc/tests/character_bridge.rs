@@ -1,5 +1,5 @@
 use catalog::CharacterId;
-use ipc::{character_for, CHARACTERS};
+use ipc::{character_for, ROSTER};
 
 #[test]
 fn every_matrix_row_finds_exactly_one_character() {
@@ -9,7 +9,7 @@ fn every_matrix_row_finds_exactly_one_character() {
     let rs = unpack::ResourceSet::open(&dir);
     let c = catalog::Catalog::build(|p| rs.read(p));
     let mut seen = std::collections::HashSet::new();
-    for (row, (label, _)) in CHARACTERS.iter().enumerate() {
+    for (row, label) in ROSTER.iter().map(|r| r.name).enumerate() {
         let ch = character_for(row, &c).unwrap_or_else(|| panic!("no character for {label}"));
         assert!(
             seen.insert(ch.id),
@@ -19,7 +19,7 @@ fn every_matrix_row_finds_exactly_one_character() {
     }
 }
 
-/// "34 distinct" isn't enough: if the two tables (`CHARACTERS`, `CHARACTER_KEYS`) drift
+/// "34 distinct" isn't enough: if the name and the key of a row (`ROSTER`) drift
 /// out of sync with each other, the test above stays green regardless (rows still
 /// distinct, just shifted). These anchors pin the row -> `CharacterId` identity at known
 /// points, verified against the real catalog: a silent shift breaks them.
@@ -38,7 +38,7 @@ fn matrix_row_anchors_point_at_the_expected_character_ids() {
         (33, "T. Jacob & Esau", CharacterId(37)),
     ];
     for (row, label, expected_id) in anchors {
-        assert_eq!(CHARACTERS[row].0, label, "row {row} is no longer {label}");
+        assert_eq!(ROSTER[row].name, label, "row {row} is no longer {label}");
         let ch = character_for(row, &c).unwrap_or_else(|| panic!("no character for {label}"));
         assert_eq!(
             ch.id, expected_id,

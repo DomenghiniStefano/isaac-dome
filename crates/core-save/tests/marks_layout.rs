@@ -7,7 +7,7 @@
 //! Row numbers are positions in the 34-row order — Magdalene 1, Cain 2, Keeper 12, The
 //! Forgotten 14, Bethany 15, T. Jacob 33.
 
-use core_save::marks::{cell_index, counter_index_of, Column, CounterKey};
+use core_save::marks::{cell_index, counter_index_of, Column, CounterKey, ROWS};
 
 /// The bases pinned on 2026-09-08 and re-derived independently on 2026-09-12 by walking
 /// the days an achievement flipped (spec 2026-09-12, §2.3). Values, not a formula: a
@@ -213,5 +213,73 @@ fn the_three_derived_blocks_tile_against_their_neighbours() {
         counter_index_of(CounterKey::MotherKills) + 1,
         counter_index_of(CounterKey::BeastKills),
         "the two tallies are adjacent, which is how they were found"
+    );
+}
+
+// The four below were pinned in `ipc`'s tests, through the screen's `(row, column index)`
+// translation, until card #82 (D7) moved them here: they are the layout's indices, and this is
+// the crate that holds the layout.
+
+#[test]
+fn original_characters_use_the_verified_blocks() {
+    // Mom's Heart starts at 27; Isaac is the first of the 14.
+    assert_eq!(cell_index(0, Column::MomsHeart), Some(27));
+    // Apollyon is the fourteenth: 27 + 13.
+    assert_eq!(cell_index(13, Column::MomsHeart), Some(40));
+    // Delirium for the 14 originals starts at 173.
+    assert_eq!(cell_index(0, Column::Delirium), Some(173));
+    // Mother and The Beast, located on 2026-09-08 on the historical series. The base of
+    // each block is pinned by two characters read off the winner mask at index 188:
+    // Magdalene (+1) and Cain (+2) on the days their mark appeared.
+    assert_eq!(cell_index(0, Column::Mother), Some(423)); // Isaac × Mother
+    assert_eq!(cell_index(1, Column::Mother), Some(424)); // Magdalene
+    assert_eq!(cell_index(2, Column::Mother), Some(425)); // Cain
+    assert_eq!(cell_index(13, Column::Mother), Some(436)); // Apollyon, last of the 14
+    assert_eq!(cell_index(0, Column::TheBeast), Some(457)); // Isaac × The Beast
+    assert_eq!(cell_index(1, Column::TheBeast), Some(458)); // Magdalene
+    assert_eq!(cell_index(2, Column::TheBeast), Some(459)); // Cain
+    assert_eq!(cell_index(13, Column::TheBeast), Some(470)); // Apollyon
+}
+
+#[test]
+fn the_forgotten_uses_single_cells() {
+    assert_eq!(cell_index(14, Column::MomsHeart), Some(203));
+    assert_eq!(cell_index(14, Column::Hush), Some(211));
+    // Delirium: 212 belongs to another family.
+    assert_eq!(cell_index(14, Column::Delirium), Some(213));
+    // Mother closed on 2026-09-20: T. Eden's cell moved at 449, which puts the 19-block at
+    // 438 and leaves 437 — the one cell over — to The Forgotten.
+    assert_eq!(cell_index(14, Column::Mother), Some(437));
+    // The Beast is still derived from the spacing and never observed moving, so it stays
+    // unlocated rather than pointing at a guess.
+    assert_eq!(cell_index(14, Column::TheBeast), None);
+}
+
+#[test]
+fn later_characters_now_reach_delirium() {
+    assert_eq!(cell_index(15, Column::MomsHeart), Some(214)); // Bethany
+    assert_eq!(cell_index(33, Column::Hush), Some(384)); // T. Jacob & Esau = 366 + 18
+                                                         // The column that used to be the hole. Four characters pin the base at 404:
+                                                         // Bethany (+0), Jacob & Esau (+1), T. Cain (+4) and T. Azazel (+9), each on the day
+                                                         // its cell appeared together with a Delirium kill.
+    assert_eq!(cell_index(15, Column::Delirium), Some(404)); // Bethany
+    assert_eq!(cell_index(16, Column::Delirium), Some(405)); // Jacob & Esau
+    assert_eq!(cell_index(19, Column::Delirium), Some(408)); // T. Cain
+    assert_eq!(cell_index(24, Column::Delirium), Some(413)); // T. Azazel
+    assert_eq!(cell_index(33, Column::Delirium), Some(422)); // T. Jacob & Esau, last of the 19
+}
+
+#[test]
+fn exactly_twenty_cells_are_unlocated() {
+    let unlocated = (0..ROWS)
+        .flat_map(|row| Column::ALL.map(|column| (row, column)))
+        .filter(|&(row, column)| cell_index(row, column).is_none())
+        .count();
+    assert_eq!(
+        unlocated, 20,
+        "The Forgotten and the 19 later characters, for The Beast alone: 20 cells whose \
+         position is derived from the spacing and confirmed by nothing. It was 40 until \
+         2026-09-20, when a window on T. Eden beating Mother closed that half; what closes \
+         this one is the same run against The Beast"
     );
 }

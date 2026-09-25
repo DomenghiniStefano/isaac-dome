@@ -74,14 +74,14 @@ pub use mark_art::{
     mark_source, paper_source, widget_source, MarkFrames, WidgetArt, LOBBY_ANM2, WIDGET_ANM2,
 };
 pub use marks::{
-    character_for, marks_matrix, Cell, CellLevel, CharacterGroup, CharacterRow, MarkArtView,
-    MarksMatrix, MarksTotals, SecondLevelView, BOSSES, CHARACTERS,
+    boss_name, character_for, marks_matrix, Cell, CellLevel, CharacterGroup, CharacterRow,
+    MarkArtView, MarksMatrix, MarksTotals, RosterRow, SecondLevelView, BOSSES, ROSTER,
 };
 // Reached only by tests: the layout tables and counter lookups are the crate's own business.
 #[cfg(feature = "test-api")]
 pub use floor::ROOM_KINDS;
 #[cfg(feature = "test-api")]
-pub use marks::{counter_index, marks_totals, CHARACTER_KEYS};
+pub use marks::{counter_index, marks_totals};
 pub use per_save::PerSave;
 pub use preview::{preview_of, CandidatePreview, PreviewCount};
 pub use profile::{

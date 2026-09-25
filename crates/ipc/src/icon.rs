@@ -14,7 +14,7 @@ use wiki::Target;
 
 use crate::catalog_view::{item_kind, ItemKindView};
 use crate::floor::{minimap_icon_name, RoomKindView, ROOM_KINDS};
-use crate::marks::{character_for, BOSSES, CHARACTERS};
+use crate::marks::{character_for, BOSSES, ROSTER};
 use crate::target_sprite::{target_sprite, TargetSprite};
 
 /// The two levels of a mark. The game draws them as two different symbols, not one tinted
@@ -190,12 +190,8 @@ fn fill_from_token(c: char) -> Option<MarkFill> {
 /// Exactly twelve: a shorter string would compose a picture missing a mark and look like a
 /// profile that has not got it, which is a plausible wrong answer and the worst kind.
 fn fills_from_token(s: &str) -> Option<[MarkFill; BOSSES.len()]> {
-    let mut out = [MarkFill::None; BOSSES.len()];
-    let mut chars = s.chars();
-    for slot in out.iter_mut() {
-        *slot = fill_from_token(chars.next()?)?;
-    }
-    chars.next().is_none().then_some(out)
+    let fills: Vec<MarkFill> = s.chars().map(fill_from_token).collect::<Option<_>>()?;
+    fills.try_into().ok()
 }
 
 fn tier_from_token(s: &str) -> Option<MarkTier> {
@@ -267,10 +263,7 @@ impl IconRef {
                 kind: room_from_token(kind)?,
             },
             ("head", row, None) => IconRef::Head {
-                row: row
-                    .parse::<usize>()
-                    .ok()
-                    .filter(|&r| r < CHARACTERS.len())?,
+                row: row.parse::<usize>().ok().filter(|&r| r < ROSTER.len())?,
             },
             // A page's path has its own number of segments per kind: the rest of the
             // string is read by `page_target`, which also refuses a trailing segment.

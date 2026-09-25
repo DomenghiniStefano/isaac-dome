@@ -13,71 +13,36 @@
 //! that mask ever names two characters — and the reason `marks_real.rs` skips those
 //! windows when it pins the bases by identity.
 
+use core_save::marks::{cell_index, Column};
 use core_save::{Kind, Save};
 
-const BLOCKS_14: &[usize] = &[27, 41, 55, 69, 83, 97, 116, 130, 144, 173];
-const BLOCKS_19: &[usize] = &[214, 233, 252, 271, 290, 309, 328, 347, 366];
-const CHARS_14: [&str; 14] = [
-    "Isaac",
-    "Magdalene",
-    "Cain",
-    "Judas",
-    "Blue Baby",
-    "Eve",
-    "Samson",
-    "Azazel",
-    "Lazarus",
-    "Eden",
-    "The Lost",
-    "Lilith",
-    "Keeper",
-    "Apollyon",
-];
-const CHARS_19: [&str; 19] = [
-    "Bethany",
-    "Jacob & Esau",
-    "T. Isaac",
-    "T. Magdalene",
-    "T. Cain",
-    "T. Judas",
-    "T. Blue Baby",
-    "T. Eve",
-    "T. Samson",
-    "T. Azazel",
-    "T. Lazarus",
-    "T. Eden",
-    "T. The Lost",
-    "T. Lilith",
-    "T. Keeper",
-    "T. Apollyon",
-    "T. Forgotten",
-    "T. Bethany",
-    "T. Jacob",
-];
 /// Index 188, `CHARACTER_LAST_RUN_WIN`: which characters won the most recent run.
 const WINNER_MASK: usize = 188;
 
+/// The character whose mark sits at index `i`, read off the layout and named by `ipc`'s
+/// roster — every located cell, not the first blocks this probe was written against.
 fn who(i: usize) -> Option<&'static str> {
-    for base in BLOCKS_14 {
-        if i >= *base && i < base + 14 {
-            return Some(CHARS_14[i - base]);
-        }
-    }
-    for base in BLOCKS_19 {
-        if i >= *base && i < base + 19 {
-            return Some(CHARS_19[i - base]);
-        }
-    }
-    None
+    (0..ipc::ROSTER.len())
+        .find(|&row| {
+            Column::ALL
+                .into_iter()
+                .any(|c| cell_index(row, c) == Some(i))
+        })
+        .map(|row| ipc::ROSTER[row].name)
 }
+
+/// The first row of the 19 later characters: where bit 19 of the mask lands.
+const FIRST_LATER_ROW: usize = 15;
 
 /// The map the series fits, not the one the matrix rows use: 0..13 then a gap then 19...
 fn winner(bit: u32) -> &'static str {
-    match bit {
-        0..=13 => CHARS_14[bit as usize],
-        19..=37 => CHARS_19[bit as usize - 19],
-        _ => "?",
-    }
+    let row = match bit {
+        0..=13 => Some(bit as usize),
+        19..=37 => Some(bit as usize - 19 + FIRST_LATER_ROW),
+        _ => None,
+    };
+    row.and_then(|r| ipc::ROSTER.get(r))
+        .map_or("?", |character| character.name)
 }
 
 fn counters(s: &Save) -> Vec<u32> {

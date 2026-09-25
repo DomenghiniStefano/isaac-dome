@@ -1,6 +1,6 @@
 //! Which piece of which game sheet draws a column's mark.
 //!
-//! Domain knowledge, so it sits beside `BOSSES` and follows its order (DESIGN-BRIEF.md §5.6,
+//! Domain knowledge, so it sits beside `BOSSES` and is keyed by the same `Column` (DESIGN-BRIEF.md §5.6,
 //! backlog B13). It lived in `crates/design-export`'s `marks.json` while only the design pack
 //! needed it; the app serves the symbols now, and one map in two places drifts.
 //!
@@ -12,6 +12,7 @@ use catalog::{Anm2Frame, SpriteRef};
 
 use crate::icon::{MarkFill, MarkTier};
 use crate::marks::BOSSES;
+use core_save::marks::Column;
 
 pub const WIDGET_ANM2: &str = "gfx/ui/completion_widget.anm2";
 pub const LOBBY_ANM2: &str = "gfx/ui/main menu/onlinelobby.anm2";
@@ -30,6 +31,7 @@ enum Source {
     Lobby,
 }
 
+#[derive(Debug, Clone, Copy)]
 struct MarkLayer {
     source: Source,
     /// `None` where the file has a single animation and the layer alone is unique.
@@ -45,28 +47,34 @@ const fn widget(layer: &'static str) -> MarkLayer {
     }
 }
 
-/// One row per column of `BOSSES`, in its order. Every row but The Lamb is read from a layer
-/// name; The Lamb is `Cross` by elimination, the one symbol and the one column left once every
-/// other pairing is settled.
-const MARK_LAYERS: [MarkLayer; 12] = [
-    widget("Heart"),           // Mom's Heart
-    widget("Polaroid"),        // Isaac
-    widget("UpsideDownCross"), // Satan
-    widget("Star"),            // Boss Rush
-    widget("Negative"),        // Blue Baby
-    widget("Cross"),           // The Lamb, by elimination
-    widget("MegaSatan"),       // Mega Satan
-    widget("Greed"),           // Greed
-    widget("Hush"),            // Hush
-    // Delirium: the online lobby's background, not its player card.
-    MarkLayer {
-        source: Source::Lobby,
-        animation: Some("Background"),
-        layer: "Completion_Delirium",
-    },
-    widget("Knife"),    // Mother
-    widget("DadsNote"), // The Beast
-];
+/// The layer that draws each column. Every column but The Lamb is read from a layer name; The
+/// Lamb is `Cross` by elimination, the one symbol and the one column left once every other
+/// pairing is settled.
+///
+/// A match over [`Column`] and not an array in its order (card #82, S1): the order used to be
+/// held only by a comment at the end of each line, and a column inserted in the middle would
+/// have shifted every symbol after it onto its neighbour.
+const fn mark_layer(column: Column) -> MarkLayer {
+    match column {
+        Column::MomsHeart => widget("Heart"),
+        Column::Isaac => widget("Polaroid"),
+        Column::Satan => widget("UpsideDownCross"),
+        Column::BossRush => widget("Star"),
+        Column::BlueBaby => widget("Negative"),
+        Column::TheLamb => widget("Cross"),
+        Column::MegaSatan => widget("MegaSatan"),
+        Column::Greed => widget("Greed"),
+        Column::Hush => widget("Hush"),
+        // The online lobby's background, not its player card.
+        Column::Delirium => MarkLayer {
+            source: Source::Lobby,
+            animation: Some("Background"),
+            layer: "Completion_Delirium",
+        },
+        Column::Mother => widget("Knife"),
+        Column::TheBeast => widget("DadsNote"),
+    }
+}
 
 /// The frames of the two anm2 files, as `catalog::anm2_frames` reads them.
 #[derive(Debug, Clone, Default)]
@@ -123,8 +131,8 @@ fn sprite_of(anm2: &str, f: &Anm2Frame) -> SpriteRef {
 fn column_frames(
     column: usize,
     frames: &MarkFrames,
-) -> Option<(&'static MarkLayer, &'static str, &[Anm2Frame])> {
-    let m = MARK_LAYERS.get(column)?;
+) -> Option<(MarkLayer, &'static str, &[Anm2Frame])> {
+    let m = mark_layer(*Column::ALL.get(column)?);
     Some(match m.source {
         Source::Widget => (m, WIDGET_ANM2, &frames.widget),
         Source::Lobby => (m, LOBBY_ANM2, &frames.lobby),

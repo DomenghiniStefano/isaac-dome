@@ -121,24 +121,10 @@ pub struct ThresholdItemView {
     pub page: Option<Target>,
 }
 
-/// The twelve columns, as a value on the wire. Fieldless, so it is a bare camelCase string
-/// and the TypeScript is a union of values — the repo's rule, zero exceptions.
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, ts_rs::TS)]
-#[serde(rename_all = "camelCase")]
-pub enum MarkColumnView {
-    MomsHeart,
-    Isaac,
-    Satan,
-    BossRush,
-    BlueBaby,
-    TheLamb,
-    MegaSatan,
-    Greed,
-    Hush,
-    Delirium,
-    Mother,
-    TheBeast,
-}
+/// The twelve columns, as a value on the wire: the layout's own enum, which serializes as a
+/// bare camelCase string and is declared to TypeScript under this name (card #82, S1). The
+/// graph's `MarkColumn` is the same type, so a requirement's column crosses as it is.
+pub use core_save::marks::Column as MarkColumnView;
 
 /// A level inside a cell, named for its bit. `Second` is Ultra Greedier in the Greed
 /// column, measured; what it means elsewhere is not, and `hard` would ship that claim.
@@ -467,7 +453,7 @@ fn missing_view(
                     Some(_) => out.push(RequirementView::Mark {
                         character: character.0,
                         character_name: c.text(&ch.name, en).to_string(),
-                        column: column_view(*column),
+                        column: *column,
                         level: level_view(*level),
                     }),
                 }
@@ -986,26 +972,6 @@ pub fn plan_view(
     }
 }
 
-/// The graph's column as the wire's. No `_` arm: the two are the same twelve, and a
-/// thirteenth has to break the build rather than fall into a default.
-fn column_view(c: graph::rules::MarkColumn) -> MarkColumnView {
-    use graph::rules::MarkColumn as M;
-    match c {
-        M::MomsHeart => MarkColumnView::MomsHeart,
-        M::Isaac => MarkColumnView::Isaac,
-        M::Satan => MarkColumnView::Satan,
-        M::BossRush => MarkColumnView::BossRush,
-        M::BlueBaby => MarkColumnView::BlueBaby,
-        M::TheLamb => MarkColumnView::TheLamb,
-        M::MegaSatan => MarkColumnView::MegaSatan,
-        M::Greed => MarkColumnView::Greed,
-        M::Hush => MarkColumnView::Hush,
-        M::Delirium => MarkColumnView::Delirium,
-        M::Mother => MarkColumnView::Mother,
-        M::TheBeast => MarkColumnView::TheBeast,
-    }
-}
-
 fn level_view(l: graph::rules::MarkLevel) -> MarkLevelView {
     match l {
         graph::rules::MarkLevel::Base => MarkLevelView::Base,
@@ -1014,13 +980,8 @@ fn level_view(l: graph::rules::MarkLevel) -> MarkLevelView {
 }
 
 /// What the screen calls the tally: the boss's English name, because that is what the
-/// player is being asked to go and beat. Not the counter's identifier, which is ours.
+/// player is being asked to go and beat. Not the counter's identifier, which is ours. The
+/// name is the column's, the one the matrix header draws: a tally counts one column's boss.
 fn counter_label(n: graph::rules::CounterName) -> &'static str {
-    use graph::rules::CounterName as C;
-    match n {
-        C::HushKills => "Hush",
-        C::DeliriumKills => "Delirium",
-        C::MotherKills => "Mother",
-        C::BeastKills => "The Beast",
-    }
+    crate::marks::boss_name(n.column())
 }
