@@ -316,9 +316,8 @@ pub fn live_marks(matrix: &crate::marks::MarksMatrix, rows: &[usize]) -> LiveMar
     }
 }
 
-/// Who the log could mean (card #81, V1: this was a closure in the `live` command). Given the
-/// id the log stated, exactly that character; given only a name, everyone who answers to it in
-/// the catalog's English names — which is two whenever a Tainted form is involved, because the
+/// Who the log could mean. Given the id the log stated, exactly that character; given only a
+/// name, everyone who answers to it in the catalog's English names — which is two whenever a Tainted form is involved, because the
 /// game gives it the base form's name. `live_view` says there were two rather than choosing.
 pub fn characters_named(c: &catalog::Catalog, name: &str, id: Option<u32>) -> Vec<(u32, String)> {
     c.characters()
@@ -336,7 +335,7 @@ pub fn characters_named(c: &catalog::Catalog, name: &str, id: Option<u32>) -> Ve
 }
 
 /// The rows of the completion matrix for the characters asked for, in the matrix's order —
-/// two rows when a name reached two forms (card #81, V1, out of the `live` command).
+/// two rows when a name reached two forms.
 pub fn live_mark_rows(c: &catalog::Catalog, wanted: &[u32]) -> Vec<usize> {
     (0..crate::marks::ROSTER.len())
         .filter(|row| {
@@ -345,9 +344,9 @@ pub fn live_mark_rows(c: &catalog::Catalog, wanted: &[u32]) -> Vec<usize> {
         .collect()
 }
 
-/// What the graph's answer means to Live (card #80, item 13: this was `Err(_) => NoGraph` in
-/// the `live` command, which told an unreadable save as a missing game). Exhaustive over
-/// `IpcError`, which is ours and closed: a new error has to be placed here.
+/// What the graph's answer means to Live. An unreadable save is not a missing game, and the
+/// screen says which. Exhaustive over `IpcError`, which is ours and closed: a new error has to
+/// be placed here.
 pub fn live_graph<'a>(
     unlocked: Result<&'a crate::graph::UnlockView, &crate::IpcError>,
 ) -> LiveGraph<'a> {

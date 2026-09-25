@@ -294,8 +294,7 @@ impl plan::Dependencies for GraphDeps {
     }
 }
 
-/// How many goals nothing in the queue stands for yet (card #81, V1: this was a filter inside
-/// the `queue` command). A goal whose target no achievement unlocks can never be stood for, so
+/// How many goals nothing in the queue stands for yet. A goal whose target no achievement unlocks can never be stood for, so
 /// it stays pending — the queue has no row that would mean it.
 pub fn goals_pending(
     c: &Catalog,
