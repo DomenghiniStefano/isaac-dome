@@ -72,11 +72,12 @@ impl<T> SaveCache<T> {
             }
         }
         let (profile, path) = resolve()?;
-        let value = Arc::new(load(&path)?);
-        // The time is read **after** the load: a file written during the read is then
-        // already stale, and the next command reads it again rather than trusting a value
-        // that saw half of each version.
+        // The time is read **before** the load (card #80, item 05). A file written during the
+        // read then carries a newer time than the one kept here, so the next command sees it
+        // moved and reads it again rather than trusting a value that saw half of each version.
+        // Read after, it was the new time on the old content, and passed as fresh.
         let modified = stat(&path);
+        let value = Arc::new(load(&path)?);
         *slot = Some(Entry {
             profile: profile.clone(),
             path,

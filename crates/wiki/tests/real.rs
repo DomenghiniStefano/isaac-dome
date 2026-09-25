@@ -331,60 +331,18 @@ fn raw_brace_texts_in_blocks(blocks: &[Block], out: &mut Vec<String>) {
     }
 }
 
-/// The infoboxes' `Vec<Inline>` fields: the only ones that can carry text from the wikitext.
+/// Every inline field of the infobox, through `Infobox::inlines` (card #80, item 14): this
+/// used to name the fields by hand and skipped five of them — the quotes, `notes`,
+/// `stage_hp` — and the entry's `description` besides.
 fn raw_brace_texts_in_infobox(infobox: &Infobox, out: &mut Vec<String>) {
-    match infobox {
-        Infobox::Item {
-            recharge,
-            devil_price,
-            shop_price,
-            pools,
-            ..
-        } => {
-            raw_brace_texts(recharge, out);
-            raw_brace_texts(devil_price, out);
-            raw_brace_texts(shop_price, out);
-            raw_brace_texts(pools, out);
-        }
-        Infobox::Trinket { pools, .. } => raw_brace_texts(pools, out),
-        Infobox::Achievement { requirements, .. } => raw_brace_texts(requirements, out),
-        Infobox::Boss {
-            environment, pool, ..
-        } => {
-            raw_brace_texts(environment, out);
-            raw_brace_texts(pool, out);
-        }
-        Infobox::Challenge {
-            items,
-            trinkets,
-            pickups,
-            health,
-            curse,
-            goal,
-            ..
-        } => {
-            for v in [items, trinkets, pickups, health, curse, goal] {
-                raw_brace_texts(v, out);
-            }
-        }
-        Infobox::Character {
-            health,
-            pickups,
-            collectibles,
-            ..
-        } => {
-            for v in [health, pickups, collectibles] {
-                raw_brace_texts(v, out);
-            }
-        }
-        // `contributors` is a list of resolved targets, not text, and `requires` a number:
-        // `target` is the only field here that can carry wikitext through.
-        Infobox::Transformation { target, .. } => raw_brace_texts(target, out),
+    for field in infobox.inlines() {
+        raw_brace_texts(field, out);
     }
 }
 
 fn raw_brace_texts_in_entry(e: &Entry, out: &mut Vec<String>) {
     raw_brace_texts_in_infobox(&e.infobox, out);
+    raw_brace_texts(&e.description, out);
     for s in &e.sections {
         raw_brace_texts_in_blocks(&s.blocks, out);
     }

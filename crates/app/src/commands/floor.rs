@@ -23,9 +23,10 @@ pub(crate) fn floor_candidates(cells: Vec<Option<RoomKindView>>) -> Result<Floor
 /// again with the symbol, on a machine that never had the picture to begin with.
 #[tauri::command]
 pub(crate) fn room_icons(
+    app: tauri::AppHandle,
     resources: tauri::State<'_, ResourcesState>,
 ) -> Result<Vec<RoomIconView>, IpcError> {
-    let installed = resources.get().is_some();
+    let installed = resources.get(&app).is_some();
     Ok(ipc::room_icons(
         |r| {
             if installed {

@@ -182,3 +182,24 @@ fn empty_holds_nothing_to_draw() {
     assert_eq!(d.excluded.locked, 0);
     assert_eq!(d.excluded.filtered, 0);
 }
+
+/// A target names its row and column in a `u8`, so a space past 256 of either cannot be
+/// addressed: row 256 would be drawn as row 0 (card #80, P11c). Refused, not wrapped.
+#[test]
+fn a_space_wider_than_a_target_can_name_is_refused() {
+    assert_eq!(
+        Space::new(257, 1, 0, vec![known(0); 257], vec![true; 257]),
+        Err(SpaceError::TooLarge {
+            rows: 257,
+            columns: 1
+        })
+    );
+    assert_eq!(
+        Space::new(1, 257, 0, vec![known(0); 257], vec![true]),
+        Err(SpaceError::TooLarge {
+            rows: 1,
+            columns: 257
+        })
+    );
+    assert!(Space::new(256, 1, 0, vec![known(0); 256], vec![true; 256]).is_ok());
+}

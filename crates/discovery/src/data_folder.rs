@@ -55,10 +55,17 @@ pub(crate) fn parse_save_data_path(contents: &str) -> Option<PathBuf> {
 ///
 /// Each of the three things inside is reported only if it exists: a fresh install has none of
 /// them and that is not a failure.
-pub(crate) fn scan_game_data(documents: &Path, declared: Option<&Path>) -> Option<GameDataFolder> {
-    let searched = FOLDERS
-        .iter()
-        .map(|folder| documents.join("My Games").join(folder));
+pub(crate) fn scan_game_data(
+    documents: Option<&Path>,
+    declared: Option<&Path>,
+) -> Option<GameDataFolder> {
+    // Without a Documents folder there is nothing to search, and the declared folder is still
+    // its own answer (card #80, P9).
+    let searched = documents.into_iter().flat_map(|documents| {
+        FOLDERS
+            .iter()
+            .map(move |folder| documents.join("My Games").join(folder))
+    });
     declared
         .map(Path::to_path_buf)
         .into_iter()

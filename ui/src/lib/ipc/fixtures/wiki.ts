@@ -11,6 +11,7 @@ import type {
   WikiPageRef,
 } from '../types'
 import { pageKey, parsePageKey } from '@/lib/wiki/pageKey'
+import { once } from 'lodash-es'
 
 // Development only. The dataset as the fixtures can stand in for it: every page's identity
 // and title from the index (items, trinkets, achievements, bosses, characters — real names,
@@ -344,4 +345,29 @@ export const wikiEntryAnswer = (target: Target): Entry | null => {
   // Round-tripping the key guards the sample names against a target the app never writes.
   const sample = parsePageKey(key) === null ? undefined : samplePages.get(key)
   return sample === undefined ? null : filled(sample)
+}
+
+// The recorded extraction report, as the development-only verification page asks for it
+// (card #80, item 10). A machine that recorded none answers the empty report it would have.
+// The payload predates the archives that did not open (card #80, R6); the machine that
+// recorded it had none, which is what the empty list says. Declared once in the console.
+const warnBrokenPredated = once(() =>
+  console.warn(
+    'wiki fixture: extraction_report.json predates the broken archives; it lists none',
+  ),
+)
+
+const predatesBroken = (report: ExtractionReport): boolean =>
+  !Array.isArray(report.broken)
+
+const withBroken = (report: ExtractionReport): ExtractionReport => ({
+  ...report,
+  broken: [],
+})
+
+export const extractionReportAnswer = (): ExtractionReport | undefined => {
+  const report = Object.values(reports)[0]
+  if (report === undefined || !predatesBroken(report)) return report
+  warnBrokenPredated()
+  return withBroken(report)
 }

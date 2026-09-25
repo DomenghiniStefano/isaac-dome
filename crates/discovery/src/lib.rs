@@ -70,7 +70,9 @@ pub struct GameInstall {
     pub dir: PathBuf,
     pub library: PathBuf,
     pub manifest: PathBuf,
-    pub edition: Edition,
+    /// `None` when nothing says which edition this is: a folder chosen by hand has no
+    /// appmanifest, and the absence of a file is not evidence of Rebirth (card #80, P9).
+    pub edition: Option<Edition>,
     pub dlcs: Vec<Dlc>,
     /// Unix epoch (seconds) of the last update installed, from the
     /// appmanifest's `LastUpdated`. `None` without a manifest or without the key.
@@ -188,13 +190,13 @@ pub fn discover(opts: &Options) -> Discovery {
     let declared = game
         .as_ref()
         .and_then(|g| data_folder::declared_game_data(&g.dir));
-    let mut game_data = None;
-    if let Some(documents) = dirs::document_dir() {
-        let (mut c, mut d) = saves::scan_documents(&documents);
+    let documents = dirs::document_dir();
+    if let Some(documents) = &documents {
+        let (mut c, mut d) = saves::scan_documents(documents);
         saves.append(&mut c);
         diagnostics.append(&mut d);
-        game_data = data_folder::scan_game_data(&documents, declared.as_deref());
     }
+    let game_data = data_folder::scan_game_data(documents.as_deref(), declared.as_deref());
 
     if saves.is_empty() {
         diagnostics.push(no_saves(opts.save_dir.is_some()));
@@ -221,7 +223,7 @@ pub mod for_tests {
     use crate::{Dlc, Edition};
 
     pub fn scan_game_data(
-        documents: &std::path::Path,
+        documents: Option<&std::path::Path>,
         declared: Option<&std::path::Path>,
     ) -> Option<crate::GameDataFolder> {
         crate::data_folder::scan_game_data(documents, declared)

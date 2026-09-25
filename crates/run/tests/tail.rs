@@ -61,3 +61,35 @@ fn a_half_written_line_is_counted_as_not_yet_read() {
     tail.advance(b"rd\n");
     assert_eq!(tail.pending(), 0);
 }
+
+/// Card #80, P7: a read ends wherever 256 KiB ends, and that can be inside a character. Each
+/// chunk used to be decoded on its own, so an "é" split across two reads became two U+FFFD;
+/// and the bytes held back were counted after decoding, so the offset the watcher stores moved
+/// by the difference.
+#[test]
+fn a_character_split_across_two_reads_comes_out_whole() {
+    let mut t = run::Tail::default();
+    assert!(t.advance(b"Adding collectible 1 (Caf\xC3").is_empty());
+    let lines = t.advance(b"\xA9)\n");
+    assert_eq!(lines, vec!["Adding collectible 1 (Café)".to_string()]);
+}
+
+#[test]
+fn the_bytes_held_back_are_bytes_of_the_file() {
+    let mut t = run::Tail::default();
+    // A finished line, then three raw bytes of an unfinished one ending mid-character.
+    t.advance(b"done\nab\xC3");
+    assert_eq!(
+        t.pending(),
+        3,
+        "what was read and not yet returned, as the file counts it"
+    );
+}
+
+#[test]
+fn a_byte_that_is_not_utf8_still_costs_only_its_own_line() {
+    let mut t = run::Tail::default();
+    let lines = t.advance(b"bad \xFF byte\ngood line\n");
+    assert_eq!(lines.len(), 2);
+    assert_eq!(lines[1], "good line");
+}

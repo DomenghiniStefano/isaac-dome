@@ -22,6 +22,11 @@ const table: Record<LiveDiagnostic['kind'], DiagnosticRow> = {
   },
   noGraph: { severity: Severity.Info, body: 'live.diagnostic.noGraph' },
   noProfile: { severity: Severity.Info, body: 'live.diagnostic.noProfile' },
+  // A save that would not read is the one of these that is not ordinary: it is a warning.
+  saveUnreadable: {
+    severity: Severity.Warning,
+    body: 'live.diagnostic.saveUnreadable',
+  },
 }
 
 export const liveEntries = (diagnostics: LiveDiagnostic[]): DiagnosticEntry[] =>

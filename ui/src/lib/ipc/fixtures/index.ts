@@ -15,7 +15,15 @@ import {
   setSessionAnswer,
   setStayInBackgroundAnswer,
   settingsAnswer,
+  setAutoUpdateAnswer,
 } from './settings'
+import {
+  resetRollFixture,
+  rollAnswer,
+  rollDrawAnswer,
+  setRollPresetAnswer,
+} from './roll'
+import type { PresetView } from '../types'
 import type { QueueOptions } from './queue'
 import {
   QueueScenario,
@@ -91,6 +99,7 @@ export const resetFixtures = (): void => {
   chosenId = null
   resetQueue()
   resetSettingsFixture()
+  resetRollFixture()
 }
 
 const activeOn = (id: string): SetupState => {
@@ -125,6 +134,7 @@ const setupFor = (scenario: FixtureScenario): SetupState => {
 
 const noActiveProfile: IpcError = { kind: 'noActiveProfile' }
 const wikiUnavailable: IpcError = { kind: 'wikiUnavailable' }
+const updateNotReady: IpcError = { kind: 'updateNotReady' }
 
 // Every command that reads the save answers only with an active profile, as the backend does.
 const whenActive = (scenario: FixtureScenario, read: () => unknown): unknown =>
@@ -189,6 +199,16 @@ const handlers: Partial<Record<CommandName, Handler>> = {
   [Command.SetResumeTabs]: (args) => setResumeTabsAnswer(Boolean(args?.resume)),
   [Command.Autostart]: () => autostartAnswer(),
   [Command.SetAutostart]: (args) => setAutostartAnswer(Boolean(args?.on)),
+  [Command.SetAutoUpdate]: (args) => setAutoUpdateAnswer(Boolean(args?.on)),
+  // There is nothing to install on the development server: the answer the app gives when the
+  // bytes are not there.
+  [Command.InstallUpdate]: () => Promise.reject(updateNotReady),
+  [Command.Roll]: () => rollAnswer(),
+  [Command.RollDraw]: () => rollDrawAnswer(),
+  [Command.SetRollPreset]: (args) =>
+    setRollPresetAnswer(args?.preset as PresetView),
+  [Command.ExtractionReport]: async () =>
+    (await import('./wiki')).extractionReportAnswer(),
   [Command.WindowSession]: () => sessionAnswer(),
   [Command.SetWindowSession]: (args) => {
     setSessionAnswer((args?.document as string | null) ?? null)
@@ -199,6 +219,10 @@ const handlers: Partial<Record<CommandName, Handler>> = {
     chosenId = String(args?.id ?? '')
     return setupFor(scenario)
   },
+  // A browser has no folder dialog to open: the state is answered as it stands, which is what
+  // the app answers when the dialog is cancelled.
+  [Command.ChooseGameFolder]: (_args, scenario) => setupFor(scenario),
+  [Command.ChooseSavesFolder]: (_args, scenario) => setupFor(scenario),
   [Command.SaveSummary]: (_args, scenario) =>
     whenActive(scenario, () => summary),
   [Command.Completion]: (_args, scenario) =>
@@ -271,3 +295,8 @@ export const answer = async <T>(
   if (!handler) throw new Error(`no fixture answers ${command}`)
   return (await handler(args, scenario)) as T
 }
+
+// Whether the development server can answer a command at all. Read by the test that holds the
+// fixtures to every command a wrapper in `lib/ipc/` can send (card #80, item 10).
+export const hasFixture = (command: CommandName): boolean =>
+  handlers[command] !== undefined

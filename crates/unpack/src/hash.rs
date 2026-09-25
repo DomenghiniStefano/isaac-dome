@@ -3,7 +3,7 @@
 use serde::Serialize;
 
 /// The two hashes that identify a file in the archive.
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, Serialize)]
 pub struct PathKey {
     pub djb2: u32,
     pub fnv: u32,

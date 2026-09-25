@@ -131,3 +131,31 @@ fn extract_subset_refuses_paths_escaping_cache() {
         "the absolute POSIX path must not have been created"
     );
 }
+
+/// A write that fails says how by its `io::ErrorKind` (card #80, R6): the OS's own sentence
+/// is not translatable, and on Windows it can name the path, the username with it.
+#[test]
+fn a_write_that_fails_is_reported_by_its_kind() {
+    let Some(path) = test_support::sample("config.a") else {
+        return;
+    };
+    let Ok(a) = Archive::open(&path) else {
+        test_support::skip("samples/config.a present but doesn't open");
+        return;
+    };
+    let tmp = tempfile::tempdir().unwrap();
+    // A file where the folder has to go: the folder cannot be made.
+    std::fs::write(tmp.path().join("resources"), b"in the way").unwrap();
+    let report = extract_subset(&a, &["resources/achievements.xml"], tmp.path());
+
+    assert!(report.extracted.is_empty());
+    let kinds: Vec<std::io::ErrorKind> = report
+        .diagnostics
+        .iter()
+        .filter_map(|d| match d {
+            unpack::Diagnostic::WriteFailed { reason, .. } => Some(*reason),
+            unpack::Diagnostic::DecompressFailed { .. } => None,
+        })
+        .collect();
+    assert_eq!(kinds.len(), 1, "{:?}", report.diagnostics);
+}

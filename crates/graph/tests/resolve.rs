@@ -427,3 +427,84 @@ fn a_game_gated_boss_still_wins_over_a_progress_verdict() {
         "the game's own unlocked_by is stronger evidence than our curation"
     );
 }
+
+/// Card #80, item 04: passives and trinkets have separate id spaces, so 46 is two different
+/// things. A reference says which space it means, and resolution stays in it: a trinket is
+/// only ever a trinket, an item only one of the three collectible kinds.
+const SHARED_ID: &str = r#"<items gfxroot="gfx/">
+  <passive id="46" name="Lucky Foot" gfx="a.png" />
+  <trinket id="46" name="Polished Bone" gfx="t.png" />
+  <trinket id="47" name="Only A Trinket" gfx="u.png" />
+</items>"#;
+
+fn catalog_sharing_an_id() -> Catalog {
+    Catalog::build(|p| match p {
+        "items.xml" => Some(SHARED_ID.as_bytes().to_vec()),
+        _ => None,
+    })
+}
+
+#[test]
+fn a_trinket_resolves_to_the_trinket_and_an_item_to_the_collectible() {
+    let c = catalog_sharing_an_id();
+    let r = rules(r#"{"schemaVersion":2}"#);
+    // A label no name index knows, so the id is what decides.
+    assert_eq!(
+        requirement(
+            &c,
+            &r,
+            &row(Target::Trinket { id: 46 }, "no such name"),
+            None
+        ),
+        Requirement::Item {
+            kind: ItemKind::Trinket,
+            id: ItemId(46)
+        }
+    );
+    assert_eq!(
+        requirement(&c, &r, &row(Target::Item { id: 46 }, "no such name"), None),
+        Requirement::Item {
+            kind: ItemKind::Passive,
+            id: ItemId(46)
+        }
+    );
+}
+
+#[test]
+fn an_item_id_that_only_a_trinket_has_is_not_an_item() {
+    let c = catalog_sharing_an_id();
+    let r = rules(r#"{"schemaVersion":2}"#);
+    assert!(
+        !matches!(
+            requirement(&c, &r, &row(Target::Item { id: 47 }, "no such name"), None),
+            Requirement::Item { .. }
+        ),
+        "item 47 does not exist; trinket 47 is another thing"
+    );
+}
+
+#[test]
+fn a_transformation_contributor_stays_in_its_own_id_space() {
+    let c = catalog_sharing_an_id();
+    let rules = rules_with_transformation(
+        "1",
+        r#"[{"kind":"trinket","id":46},{"kind":"item","id":46},{"kind":"item","id":47}]"#,
+    );
+    let Requirement::Threshold { of, unresolved, .. } = requirement(
+        &c,
+        &rules,
+        &row(Target::Transformation { id: 0 }, "Guppy"),
+        None,
+    ) else {
+        panic!("expected a threshold")
+    };
+    let kinds: Vec<(ItemKind, u32)> = of.iter().map(|i| (i.kind, i.id.0)).collect();
+    assert_eq!(
+        kinds,
+        vec![(ItemKind::Trinket, 46), (ItemKind::Passive, 46)]
+    );
+    assert_eq!(
+        unresolved, 1,
+        "item 47 is not a collectible, and is counted as unresolved"
+    );
+}

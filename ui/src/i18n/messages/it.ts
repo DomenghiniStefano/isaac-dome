@@ -120,6 +120,8 @@ export const it = {
         'Il log scrive «{name}», e il gioco chiama così {forms} personaggi: la forma base e quella Tainted. Sotto trovi entrambe, perché indovinare quale sia sarebbe un’ipotesi.',
       noGraph: 'Senza il gioco installato non sappiamo cosa aprirebbe.',
       noProfile: 'Senza un salvataggio scelto non sappiamo cosa ti manca.',
+      saveUnreadable:
+        'Il salvataggio scelto non si legge, quindi non sappiamo cosa ti manca. La partita resta qui.',
     },
   },
   floor: {
@@ -291,6 +293,10 @@ export const it = {
         'Il database dell’app non si apre, quindi l’archivio non si può leggere.',
       unreadableEvents:
         '{count} righe del log non sono state capite: le run che le contengono possono essere incomplete.',
+      unreadableSessions:
+        '{count} sessioni online non si sono lette: le run che contengono non sono nell’archivio.',
+      liveLogUnreadable:
+        'Il log che il gioco sta scrivendo non si legge: la run in corso non è nell’archivio.',
       noCatalog:
         'Il gioco non è installato: gli oggetti hanno il loro numero e non il nome.',
     },
@@ -551,6 +557,7 @@ export const it = {
         'Può essere stata aggiunta dopo: la copia risale alla data qui sopra e si aggiorna con l’app.',
       noSections: 'Di questa pagina abbiamo solo la scheda, senza testo.',
       failedTitle: 'La Wiki non ha risposto',
+      pageFailedTitle: 'Questa pagina non si è aperta',
       missingTitle: 'La Wiki non si è aperta',
       missing:
         'La copia della wiki dentro l’app non si legge, quindi non c’è nessuna pagina da mostrare. Riavviare l’app di solito basta; se continua, è un problema da segnalare.',

@@ -1,10 +1,17 @@
 import type { Box, Point } from '@/lib/drag/dragList'
+import { remToPx } from '@/lib/scale/rows'
 import type { WindowBox } from './windowPort'
 
-// The top of a window, in its own logical pixels: where its tab strip is drawn. **This band is
-// the only landing a window offers** — a drop lower down is a drop on content, and content has
-// no place to put a tab (see `stripUnderPoint`).
-export const StripBand = 40
+// The top of a window: where its tab strip is drawn. **This band is the only landing a window
+// offers** — a drop lower down is a drop on content, and content has no place to put a tab (see
+// `stripUnderPoint`). In rem, like the title bar it has to cover (`--spacing-titlebar`): a fixed
+// 40px was covered by a 45px strip at 150% and a 60px one at 200%, so a drop on the lower part
+// of the strip opened a window (card 80, item 08). 2.5rem is the 40px it was at 100%.
+export const StripBandRem = 2.5
+
+// The band at the interface's scale, in logical pixels.
+export const stripBandPx = (percent: number): number =>
+  remToPx(StripBandRem, percent)
 
 // How far from the strip the pointer travels before the tab leaves the window. Only
 // perpendicular travel counts: sliding far along the strip is how you reach its far end.
@@ -29,8 +36,8 @@ export const holdsPoint = (w: WindowBox, p: Point): boolean =>
   p.y >= w.top &&
   p.y < w.top + w.height
 
-export const inStripBand = (w: WindowBox, p: Point): boolean =>
-  holdsPoint(w, p) && p.y < w.top + StripBand * w.scaleFactor
+export const inStripBand = (w: WindowBox, p: Point, percent: number): boolean =>
+  holdsPoint(w, p) && p.y < w.top + stripBandPx(percent) * w.scaleFactor
 
 const rank = (order: string[], label: string): number => {
   const at = order.indexOf(label)
@@ -50,8 +57,9 @@ export const stripUnderPoint = (
   windows: WindowBox[],
   p: Point,
   order: string[],
+  percent: number,
 ): string | null => {
-  const strips = windows.filter((w) => inStripBand(w, p))
+  const strips = windows.filter((w) => inStripBand(w, p, percent))
   if (strips.length === 0) return null
   const ranked = [...strips].sort(
     (a, b) => rank(order, a.label) - rank(order, b.label),

@@ -439,3 +439,63 @@ fn unreadable_caches_are_counted_in_one_diagnostic_and_none_says_nothing() {
         vec![RunsDiagnostic::UnreadableEvents { count: 2 }]
     );
 }
+
+// ---------------------------------------------------------------------------
+// The launch Live follows (card #80, R10)
+// ---------------------------------------------------------------------------
+
+#[test]
+fn the_live_runs_are_the_latest_launchs_and_no_one_elses() {
+    // `live` used to read the whole archive — every session, every launch — every time the
+    // watcher said a line arrived, to keep one run of one source.
+    let (_d, store) = open();
+    let old = store.insert_log_source(&key(0)).unwrap();
+    store.cache_runs(old, 1, &[run_of("AAA AAA")]).unwrap();
+    let session = store
+        .import_session("09_12_2026__13_34_26", &key(0), &[started("SSS SSS")])
+        .unwrap();
+    store.cache_runs(session, 1, &[run_of("SSS SSS")]).unwrap();
+    let latest = store.insert_log_source(&key(0)).unwrap();
+    store
+        .cache_runs(latest, 1, &[run_of("BBB BBB"), run_of("CCC CCC")])
+        .unwrap();
+
+    assert_eq!(
+        store.live_runs(1).unwrap(),
+        Some(vec![run_of("BBB BBB"), run_of("CCC CCC")])
+    );
+}
+
+#[test]
+fn there_are_no_live_runs_before_any_launch_was_read() {
+    let (_d, store) = open();
+    let session = store
+        .import_session("09_12_2026__13_34_26", &key(0), &[started("SSS SSS")])
+        .unwrap();
+    store.cache_runs(session, 1, &[run_of("SSS SSS")]).unwrap();
+
+    assert_eq!(store.live_runs(1).unwrap(), None);
+}
+
+#[test]
+fn the_latest_launch_folded_under_other_rules_has_no_live_runs() {
+    // The same rule `cached_runs` keeps: a fold another rules file produced is not an answer.
+    let (_d, store) = open();
+    let latest = store.insert_log_source(&key(0)).unwrap();
+    store.cache_runs(latest, 1, &[run_of("AAA AAA")]).unwrap();
+
+    assert_eq!(store.live_runs(2).unwrap(), None);
+}
+
+#[test]
+fn a_source_is_stale_when_these_rules_did_not_fold_it() {
+    // Never folded, folded by other rules, folded by these: only the last is current.
+    let (_d, store) = open();
+    let never = store.insert_log_source(&key(0)).unwrap();
+    let other = store.insert_log_source(&key(0)).unwrap();
+    store.cache_runs(other, 1, &[run_of("AAA AAA")]).unwrap();
+    let current = store.insert_log_source(&key(0)).unwrap();
+    store.cache_runs(current, 2, &[]).unwrap();
+
+    assert_eq!(store.stale_sources(2).unwrap(), vec![never, other]);
+}

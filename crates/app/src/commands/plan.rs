@@ -19,7 +19,7 @@ pub fn plan(
 ) -> Result<ipc::PlanView, IpcError> {
     // The catalog is needed to resolve saved keys into names and icons: without it,
     // the goals are still visible and the view says why they have no name.
-    let resources = resources.get();
+    let resources = resources.get(&app);
     let c = resources.and_then(|rs| catalog.get_or_build(rs));
     // Database that won't open, or a query that fails: expected cases, the plan comes
     // out empty and says why.
@@ -48,7 +48,7 @@ pub fn add_goal(
     // The target must exist in the catalog: a goal for a made-up id doesn't get saved.
     // Without a catalog it can't be verified, and the UI needs to be able to say
     // "install the game" instead of "this item doesn't exist".
-    let resources = resources.get();
+    let resources = resources.get(&app);
     let c = resources.and_then(|rs| catalog.get_or_build(rs));
     match c {
         None => return Err(IpcError::CatalogUnavailable),
@@ -90,7 +90,7 @@ pub fn remove_goal(
 ) -> Result<ipc::PlanView, IpcError> {
     // Same as `plan`: the view returned carries the remaining goals, and naming them
     // needs the catalog.
-    let resources = resources.get();
+    let resources = resources.get(&app);
     let c = resources.and_then(|rs| catalog.get_or_build(rs));
     let guard = store.lock(&app).map_err(store_unavailable)?;
     // Idempotent: removing an id that's already gone isn't an error.

@@ -98,6 +98,47 @@ pub enum RunsDiagnostic {
     UnreadableEvents { count: u32 },
     /// No catalog, so items have ids and no names.
     NoCatalog,
+    /// Session folders the archive could not read: the runs inside them are not in it.
+    UnreadableSessions { count: u32 },
+    /// The log the game is writing could not be read: the run being played is not in it.
+    LiveLogUnreadable,
+}
+
+/// What the archive's own reading met, kept by the app between one reading and the next
+/// (card #80, R4). It used to be dropped — `let _ =` on the live log, a backfill's errors
+/// thrown away, `NoLogFolder` declared and never sent — and an archive that could not be read
+/// then looked exactly like one with nothing in it.
+#[derive(Debug, Clone, Default, PartialEq, Eq)]
+pub struct ArchiveHealth {
+    /// Discovery found no folder the game writes its logs to.
+    pub no_log_folder: bool,
+    /// Session folders the last backfill could not read.
+    pub unreadable_sessions: u32,
+    /// The last reading of the live log failed.
+    pub live_log_unreadable: bool,
+}
+
+impl ArchiveHealth {
+    pub fn diagnostics(&self) -> Vec<RunsDiagnostic> {
+        let ArchiveHealth {
+            no_log_folder,
+            unreadable_sessions,
+            live_log_unreadable,
+        } = *self;
+        let mut out = Vec::new();
+        if no_log_folder {
+            out.push(RunsDiagnostic::NoLogFolder);
+        }
+        if unreadable_sessions > 0 {
+            out.push(RunsDiagnostic::UnreadableSessions {
+                count: unreadable_sessions,
+            });
+        }
+        if live_log_unreadable {
+            out.push(RunsDiagnostic::LiveLogUnreadable);
+        }
+        out
+    }
 }
 
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, ts_rs::TS)]
@@ -110,7 +151,9 @@ pub struct RunsView {
 
 /// What the command gathers before this crate can answer.
 pub struct RunsInputs<'a> {
-    /// Each source with its folded runs, in the order they should be shown.
+    /// Each source with its folded runs, in the order the archive took them in — not the order
+    /// they are shown in: that is `ui/src/lib/runs/runOrder.ts`, which reads the one clock the
+    /// archive has, a session folder's name (card #80, P8).
     pub sources: Vec<(RunSource, Vec<run::Run>)>,
     pub catalog: Option<&'a Catalog>,
     pub diagnostics: Vec<RunsDiagnostic>,
@@ -125,9 +168,14 @@ impl run::ItemKinds for CatalogKinds<'_> {
         match collectible(self.0, id).map(|i| i.kind) {
             Some(ItemKind::Active) => run::ItemKind::Active,
             Some(ItemKind::Familiar) => run::ItemKind::Familiar,
+            Some(ItemKind::Passive) => run::ItemKind::Passive,
             // An item this catalog does not know accumulates rather than replacing: reading an
             // unknown id as an active would silently drop whatever the player was carrying.
-            _ => run::ItemKind::Passive,
+            None => run::ItemKind::Passive,
+            // `collectible` looks up the three collectible kinds only, so a trinket cannot come
+            // back here; named rather than folded into a wildcard (card #80, item 12), so a new
+            // kind of item has to be decided here instead of counting as a passive in silence.
+            Some(ItemKind::Trinket) => run::ItemKind::Passive,
         }
     }
 }

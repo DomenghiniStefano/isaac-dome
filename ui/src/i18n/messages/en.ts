@@ -116,6 +116,8 @@ export const en: MessageSchema = {
         'The log writes “{name}”, and the game calls {forms} characters that: the base form and the Tainted one. Both are below, because guessing which would be an inference.',
       noGraph: 'Without the game installed we do not know what it would open.',
       noProfile: 'Without a save chosen we do not know what you are missing.',
+      saveUnreadable:
+        'The chosen save does not read, so we do not know what you are missing. The run stays here.',
     },
   },
   floor: {
@@ -285,6 +287,10 @@ export const en: MessageSchema = {
         'The app’s database will not open, so the archive cannot be read.',
       unreadableEvents:
         '{count} log lines were not understood: the runs holding them may be incomplete.',
+      unreadableSessions:
+        '{count} online sessions could not be read: the runs inside them are not in the archive.',
+      liveLogUnreadable:
+        'The log the game is writing cannot be read: the run being played is not in the archive.',
       noCatalog:
         'The game is not installed: items carry their number and not their name.',
     },
@@ -544,6 +550,7 @@ export const en: MessageSchema = {
         'It may have been added since: the copy is from the date above, and it updates with the app.',
       noSections: 'For this page we only have the card, with no text.',
       failedTitle: "The Wiki didn't answer",
+      pageFailedTitle: "This page didn't open",
       missingTitle: "The Wiki didn't open",
       missing:
         'The copy of the wiki inside the app will not read, so there are no pages to show. Restarting the app usually clears it; if it does not, it is worth reporting.',

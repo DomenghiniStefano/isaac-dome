@@ -26,6 +26,7 @@ import { TooltipProvider } from '@/components/ui/tooltip'
 import { usePointerShortcut } from '@/composables/usePointerShortcut'
 import { useShortcut } from '@/composables/useShortcut'
 import { useFormat } from '@/composables/useFormat'
+import { useToday } from '@/composables/useToday'
 import { useMessages } from '@/i18n'
 import type { Point } from '@/lib/drag/dragList'
 import { indicator } from '@/lib/profile/profileView'
@@ -44,7 +45,9 @@ import {
   watchWindowFocus,
   windowSize,
 } from '@/lib/window/appWindow'
-import { AppEvent, watchAppEvents } from '@/lib/window/appEvents'
+import { appEventHandlers } from '@/lib/window/appEventHandlers'
+import { watchAppEvents } from '@/lib/window/appEvents'
+import { subscriptions } from '@/lib/window/subscriptions'
 import {
   setSidebarCollapsed,
   setSidebarWidth,
@@ -60,6 +63,7 @@ import { useQueueStore } from '@/stores/queue'
 import { useSettingsStore } from '@/stores/settings'
 import { tabLabel, tabLocation } from '@/stores/tabModel'
 import { useTabsStore } from '@/stores/tabs'
+import { useLiveStore, useRunsStore } from '@/stores/views'
 import { useWikiStore } from '@/stores/wiki'
 
 const router = useRouter()
@@ -79,43 +83,28 @@ const fmt = useFormat()
 useWindowSession()
 
 const focused = ref(true)
-let stopWatchingFocus: (() => void) | undefined
-let stopAppEvents: (() => void) | undefined
+const listening = subscriptions()
 onMounted(async () => {
   void profile.load()
-  stopWatchingFocus = await watchWindowFocus((value) => {
-    focused.value = value
-  })
-  // A window never learns of a write it did not make, so it is told. The profile carries
-  // through to every screen that reads the save (`useOnActiveProfile`); the queue store is
-  // read again wherever it is mounted.
-  stopAppEvents = await watchAppEvents({
-    // One answer settles every window: a picker this window opened on purpose closes when
-    // another window chooses, because the settled profile is the app's and not the window's.
-    [AppEvent.ProfileChanged]: () => {
-      profile.stopPicking()
-      void profile.load()
-    },
-    [AppEvent.SettingsChanged]: () => void settings.load(),
-    [AppEvent.PlanChanged]: () => void queue.load(),
-    // The run archive has no screen yet (M4 keeps `Live` and `Runs` placeholders on purpose):
-    // the only thing that draws it is the development-only verification page, which listens
-    // for itself. The entry stays so that every event is accounted for here.
-    [AppEvent.RunsChanged]: () => undefined,
-    // The Roll screen listens for this one itself (`RollScreen.vue`'s own `watchAppEvent`),
-    // so that two windows agree through a draw made in either. The entry stays here so that
-    // every event is accounted for in this one registry, exactly like `RunsChanged` above.
-    [AppEvent.RollChanged]: () => undefined,
-    // The Updates screen listens for this one itself, like the Roll screen: a download tells
-    // every window a hundred times, and a window with that screen closed has nothing to draw
-    // with it. The entry stays here so that every event is accounted for in this one registry.
-    [AppEvent.UpdateChanged]: () => undefined,
-  })
+  await listening.add(() =>
+    watchWindowFocus((value) => {
+      focused.value = value
+    }),
+  )
+  // What each event does is `appEventHandlers`' to say, where it is tested.
+  await listening.add(() =>
+    watchAppEvents(
+      appEventHandlers({
+        profile,
+        settings,
+        queue,
+        runs: useRunsStore(),
+        live: useLiveStore(),
+      }),
+    ),
+  )
 })
-onUnmounted(() => {
-  stopWatchingFocus?.()
-  stopAppEvents?.()
-})
+onUnmounted(listening.stop)
 
 // A tab torn out of the strip. It leaves the bar at once and belongs to nobody until the drag
 // ends: the store keeps it in flight, and the two endings below dispose of it.
@@ -240,9 +229,12 @@ useShortcut((event) => {
   return true
 })
 
+// The date moves at midnight, so "today" on the indicator becomes "yesterday" without a
+// relaunch (card #80, P10).
+const today = useToday()
 const indicatorView = computed(() =>
   profile.setup
-    ? indicator(profile.setup.active, new Date(), fmt.locale())
+    ? indicator(profile.setup.active, today.value, fmt.locale())
     : null,
 )
 

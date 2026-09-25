@@ -138,3 +138,17 @@ fn removing_something_absent_is_a_no_op() {
     q.remove(a(999));
     assert_eq!(ids(&q), vec![41]);
 }
+
+/// Card #80, P4: `missing_chain` promises only increasing ids, not an order the steps can be
+/// played in, and a step with a lower id can need one with a higher id. The queue must come
+/// out valid whatever order the chain arrives in.
+#[test]
+fn the_chain_is_placed_in_playable_order_whatever_order_it_arrives_in() {
+    // 41 needs 7 and 12, and 7 needs 12: the playable order is 12, 7, 41.
+    let deps = Deps(&[(41, 7), (41, 12), (7, 12)]);
+    for chain in [[7u32, 12], [12, 7]] {
+        let mut q = Queue::default();
+        q.enqueue(a(41), &aa(&chain), &deps);
+        assert_eq!(ids(&q), vec![12, 7, 41], "chain arrived as {chain:?}");
+    }
+}

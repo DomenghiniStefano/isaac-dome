@@ -12,9 +12,11 @@ pub mod for_tests;
 mod goals;
 mod graph;
 mod icon;
+mod last_input;
 mod live;
 mod mark_art;
 mod marks;
+mod per_save;
 mod preview;
 mod profile;
 mod progress;
@@ -65,8 +67,8 @@ pub use icon::{
     icon_source, unknown_source, IconRef, MarkFill, MarkTier, ICON_SCHEME, UNKNOWN_SPRITE,
 };
 pub use live::{
-    characters_named, live_mark_rows, live_marks, live_view, LiveAchievement, LiveDiagnostic,
-    LiveGraph, LiveMarkRow, LiveMarks, LiveOpen, LiveView,
+    characters_named, live_graph, live_mark_rows, live_marks, live_view, LiveAchievement,
+    LiveDiagnostic, LiveGraph, LiveMarkRow, LiveMarks, LiveOpen, LiveView,
 };
 pub use mark_art::{
     mark_source, paper_source, widget_source, MarkFrames, WidgetArt, LOBBY_ANM2, WIDGET_ANM2,
@@ -80,6 +82,7 @@ pub use marks::{
 pub use floor::ROOM_KINDS;
 #[cfg(feature = "test-api")]
 pub use marks::{counter_index, marks_totals, CHARACTER_KEYS};
+pub use per_save::PerSave;
 pub use preview::{preview_of, CandidatePreview, PreviewCount};
 pub use profile::{
     candidates, profile_id, resolve_active, setup_state, ActiveProfile, CandidateSource,
@@ -94,8 +97,8 @@ pub use queue::{
 pub use reasons::{IoReason, SaveReason, SettingsReason, StoreReason};
 pub use release_notes::release_notes;
 pub use resources::{
-    archive_views, data_url, extraction_report, ArchiveMode, ArchiveView, ExtractionReport,
-    SpriteView,
+    archive_views, broken_archive_views, data_url, extraction_report, ArchiveMode, ArchiveReason,
+    ArchiveView, BrokenArchiveView, ExtractionReport, SpriteView,
 };
 pub use roll::{
     deck_preset, drawn_document, preset_from_view, preset_view, roll_space, roll_view, DeckView,
@@ -103,8 +106,8 @@ pub use roll::{
     SelectionView, StatusView,
 };
 pub use runs::{
-    runs_view, CatalogKinds, RunItemRef, RunOutcomeView, RunSource, RunTotals, RunView,
-    RunsDiagnostic, RunsInputs, RunsView,
+    runs_view, ArchiveHealth, CatalogKinds, RunItemRef, RunOutcomeView, RunSource, RunTotals,
+    RunView, RunsDiagnostic, RunsInputs, RunsView,
 };
 pub use save_cache::SaveCache;
 pub use search::{

@@ -56,7 +56,9 @@ impl CompressionMode {
 pub struct Archive {
     file: std::fs::File,
     entries: Vec<Entry>,
-    index: std::collections::HashMap<u32, usize>,
+    /// Keyed on both hashes (card #80, R6): two paths whose djb2 collide are two files, and
+    /// an index on djb2 alone kept only the last one read.
+    index: std::collections::HashMap<PathKey, usize>,
     /// Where each entry's data ends, in the same order as `entries`.
     ///
     /// The index says where an entry **starts**, never how long it is compressed: the
@@ -155,7 +157,7 @@ impl Archive {
                 decompressed_len: word(3),
                 checksum: word(4),
             };
-            index.insert(entry.key.djb2, entries.len());
+            index.insert(entry.key, entries.len());
             entries.push(entry);
         }
 
@@ -174,12 +176,8 @@ impl Archive {
     }
 
     pub fn contains(&self, resource_path: &str) -> bool {
-        let key = crate::hash::path_key(resource_path);
         self.index
-            .get(&key.djb2)
-            .and_then(|&i| self.entries.get(i))
-            .map(|e| e.key.fnv == key.fnv)
-            .unwrap_or(false)
+            .contains_key(&crate::hash::path_key(resource_path))
     }
 
     /// Compression mode declared by the header, read from the file.
@@ -188,11 +186,7 @@ impl Archive {
     }
 
     pub fn read(&self, resource_path: &str) -> Option<Vec<u8>> {
-        let key = crate::hash::path_key(resource_path);
-        let &i = self.index.get(&key.djb2)?;
-        if self.entries.get(i)?.key.fnv != key.fnv {
-            return None; // anti-collision guard
-        }
+        let &i = self.index.get(&crate::hash::path_key(resource_path))?;
         self.read_entry(i)
     }
 

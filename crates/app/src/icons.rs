@@ -50,7 +50,7 @@ pub(crate) fn icon_bytes(app: &AppHandle, path: &str) -> tauri::http::Response<V
         return no_icon(400);
     };
     let resources = app.state::<ResourcesState>();
-    let Some(rs) = resources.get() else {
+    let Some(rs) = resources.get(app) else {
         // The game isn't installed: expected, not an error worth logging.
         return no_icon(404);
     };

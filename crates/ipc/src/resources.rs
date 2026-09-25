@@ -3,9 +3,10 @@
 //! Like everything else in `ipc`: pure logic, no I/O. The bytes are read by the caller.
 
 use serde::Serialize;
-use unpack::{ArchiveInfo, CompressionMode};
+use unpack::{ArchiveFault, ArchiveInfo, BrokenArchive, CompressionMode};
 
 use crate::catalog_view::CatalogView;
+use crate::reasons::IoReason;
 use crate::wiki::WikiInfo;
 
 /// An archive as the UI sees it.
@@ -53,6 +54,56 @@ pub fn archive_views(archives: &[ArchiveInfo]) -> Vec<ArchiveView> {
         .collect()
 }
 
+/// An archive the install has and that did not open (card #80, R6). Its name is one of the
+/// game's own archive names, never a path.
+#[derive(Debug, Clone, Serialize, ts_rs::TS)]
+#[serde(rename_all = "camelCase")]
+pub struct BrokenArchiveView {
+    pub name: String,
+    pub reason: ArchiveReason,
+}
+
+/// Why an archive that is there did not open: the three cases a save has (`SaveReason`),
+/// because they are the three things a file can do.
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, ts_rs::TS)]
+#[serde(
+    tag = "kind",
+    rename_all = "camelCase",
+    rename_all_fields = "camelCase"
+)]
+pub enum ArchiveReason {
+    /// Shorter than an archive header.
+    TooShort,
+    /// The `ARCH000` signature isn't there. The bytes found are not carried.
+    BadMagic,
+    Io {
+        reason: IoReason,
+    },
+}
+
+impl From<&ArchiveFault> for ArchiveReason {
+    fn from(fault: &ArchiveFault) -> Self {
+        match fault {
+            ArchiveFault::TooShort => ArchiveReason::TooShort,
+            ArchiveFault::BadMagic => ArchiveReason::BadMagic,
+            ArchiveFault::Io { kind } => ArchiveReason::Io {
+                reason: (*kind).into(),
+            },
+        }
+    }
+}
+
+/// Translates the archives that did not open into view-models.
+pub fn broken_archive_views(broken: &[BrokenArchive]) -> Vec<BrokenArchiveView> {
+    broken
+        .iter()
+        .map(|b| BrokenArchiveView {
+            name: b.name.clone(),
+            reason: (&b.fault).into(),
+        })
+        .collect()
+}
+
 /// Wraps a PNG's bytes in a `data:` URL, ready for an `<img>`.
 pub fn data_url(png: &[u8]) -> String {
     format!("data:image/png;base64,{}", base64(png))
@@ -87,6 +138,8 @@ fn base64(data: &[u8]) -> String {
 #[serde(rename_all = "camelCase")]
 pub struct ExtractionReport {
     pub archives: Vec<ArchiveView>,
+    /// The archives that are there and did not open: not in `archives`, not in the total.
+    pub broken: Vec<BrokenArchiveView>,
     /// Total entries across the indexes of the opened archives.
     pub total_entries: usize,
     /// `None` when the catalog couldn't be read: game absent, or `items.xml` unreadable.
@@ -109,6 +162,7 @@ pub struct SpriteView {
 /// Assembles the report. The icons arrive already extracted: nothing here touches disk.
 pub fn extraction_report(
     archives: Vec<ArchiveView>,
+    broken: Vec<BrokenArchiveView>,
     catalog: Option<CatalogView>,
     sprites: Vec<(u32, String, String)>,
     wiki: WikiInfo,
@@ -116,6 +170,7 @@ pub fn extraction_report(
     ExtractionReport {
         total_entries: archives.iter().map(|a| a.entries).sum(),
         archives,
+        broken,
         catalog,
         sprites: sprites
             .into_iter()

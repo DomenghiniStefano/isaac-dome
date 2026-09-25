@@ -275,3 +275,46 @@ fn after_any_move_after_the_queue_never_contradicts_the_graph() {
         assert_consistent(&ids(&q), round);
     }
 }
+
+/// Card #80, item 03: a dragged dependent keeps its **own** prerequisites above it. Traced by
+/// hand in the review: `[2, 1, 3]`, 3 requiring both 1 and 2 (and 1, 2 independent of each
+/// other), `move_row(1, 0)` dragged 3 up to right below 1, above 2 — which it requires.
+#[test]
+fn a_dragged_dependent_does_not_rise_above_its_other_prerequisite() {
+    let deps = Deps(&[(3, 1), (3, 2)]);
+    let mut q = queue(&[2, 1, 3]);
+    q.move_row(a(1), 0, &deps);
+    let order = ids(&q);
+    let at = |x: u32| order.iter().position(|y| *y == x).expect("present");
+    assert!(at(2) < at(3), "3 requires 2 and sits above it: {order:?}");
+    assert!(at(1) < at(3), "3 requires 1 and sits above it: {order:?}");
+    assert_eq!(
+        at(1),
+        0,
+        "the moved row lands where it was dropped: {order:?}"
+    );
+}
+
+/// The same property as the randomized test above, over a relation with two independent
+/// prerequisites of one row — the shape the first `PAIRS` could not produce.
+const INDEPENDENT: &[(u32, u32)] = &[(3, 1), (3, 2), (5, 4)];
+
+#[test]
+fn after_any_move_two_independent_prerequisites_both_stay_above() {
+    let deps = Deps(INDEPENDENT);
+    let mut next = lcg(777);
+    for round in 0..500 {
+        let mut q = queue(&[1, 2, 3, 4, 5]);
+        for _ in 0..4 {
+            let who = [1u32, 2, 3, 4, 5][next() % 5];
+            q.move_row(a(who), next() % 5, &deps);
+        }
+        let order = ids(&q);
+        for (x, y) in INDEPENDENT {
+            let ix = order.iter().position(|v| v == x).expect("present");
+            let iy = order.iter().position(|v| v == y).expect("present");
+            assert!(iy < ix, "round {round}: {x} requires {y}: {order:?}");
+        }
+        assert_eq!(order.len(), 5, "round {round}: a row lost or duplicated");
+    }
+}
