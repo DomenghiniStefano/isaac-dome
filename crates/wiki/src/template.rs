@@ -65,40 +65,96 @@ pub fn parse_template_at(s: &str, at: usize) -> Option<(Template, usize)> {
     None
 }
 
+/// A piece of wikitext as [`template_segments`] cuts it.
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub(crate) enum Segment<'a> {
+    /// Text between templates, verbatim. A `{{` that opens nothing is text as well.
+    Text(&'a str),
+    /// A top-level template: parsed, the source it was parsed from, and everything after it.
+    Template {
+        template: Template,
+        source: &'a str,
+        after: &'a str,
+    },
+}
+
+/// `text` cut into its top-level templates and the text between them, in order. Laid end to
+/// end, the segments' `Text` and `source` give `text` back byte for byte.
+///
+/// It is the one answer to "where does each template begin and end", which a line-by-line pass
+/// cannot give: an infobox spans a dozen lines. Four passes each carried their own loop of
+/// "find `{{`, try `parse_template_at`, step over a `{{` that closes nothing" — the infobox
+/// extraction, the preamble's cleanup, the block wrappers and the heading normalization. A
+/// template nested inside another one is part of the outer one's `source`, never a segment.
+pub(crate) fn template_segments(text: &str) -> impl Iterator<Item = Segment<'_>> {
+    let mut cursor = 0;
+    std::iter::from_fn(move || {
+        let (segment, len) = segment_at(text, cursor)?;
+        cursor += len;
+        Some(segment)
+    })
+}
+
+/// The segment that starts at `at`, and how many bytes it spans; `None` at the end of `text`.
+fn segment_at(text: &str, at: usize) -> Option<(Segment<'_>, usize)> {
+    let rest = text.get(at..).filter(|rest| !rest.is_empty())?;
+    Some(match rest.find("{{") {
+        None => (Segment::Text(rest), rest.len()),
+        Some(0) => match parse_template_at(text, at) {
+            Some((template, end)) => (
+                Segment::Template {
+                    template,
+                    source: text.get(at..end)?,
+                    after: text.get(end..)?,
+                },
+                end - at,
+            ),
+            // A `{{` with no close: text, and the scan resumes right after it.
+            None => (Segment::Text(rest.get(..2)?), 2),
+        },
+        Some(pos) => (Segment::Text(rest.get(..pos)?), pos),
+    })
+}
+
 fn assemble(parts: Vec<String>) -> Template {
     let mut it = parts.into_iter();
     let name = it.next().unwrap_or_default().trim().to_lowercase();
     let mut args = Vec::new();
     let mut named = BTreeMap::new();
     for p in it {
-        // `k=v` only if `k` doesn't contain `{{`/`[[`: an `=` inside a link isn't a name.
-        match p.split_once('=') {
-            Some((k, v)) if !k.contains("{{") && !k.contains("[[") && !k.trim().is_empty() => {
-                let k = k.trim();
-                let v = v.trim().to_string();
-                // A name that is a number is MediaWiki's explicit positional syntax:
-                // `{{i|1=Bird's Eye}}` is `{{i|Bird's Eye}}`. Filed under `named` instead,
-                // it leaves `args` empty and the resolver with nothing to resolve.
-                //
-                // Accepted only for the slot right after the last one, or one already
-                // filled. The index comes from external wikitext, and a rule that
-                // honoured any number would let `{{x|999999999=y}}` ask for a vector of a
-                // billion empty slots. An index that leaves a gap keeps its named form,
-                // which is what it looks like anyway — degrade, don't allocate.
-                match k.parse::<usize>() {
-                    Ok(n) if (1..=args.len() + 1).contains(&n) => match args.get_mut(n - 1) {
-                        Some(slot) => *slot = v,
-                        None => args.push(v),
-                    },
-                    _ => {
-                        named.insert(k.to_lowercase(), v);
-                    }
-                }
-            }
-            _ => args.push(p.trim().to_string()),
+        match named_part(&p) {
+            Some((k, v)) => place_named(&mut args, &mut named, k, v),
+            None => args.push(p.trim().to_string()),
         }
     }
     Template { name, args, named }
+}
+
+/// `k=v`, trimmed, only if `k` doesn't contain `{{`/`[[`: an `=` inside a link isn't a name.
+fn named_part(part: &str) -> Option<(&str, String)> {
+    let (k, v) = part.split_once('=')?;
+    (!k.contains("{{") && !k.contains("[[") && !k.trim().is_empty())
+        .then(|| (k.trim(), v.trim().to_string()))
+}
+
+/// A named argument, filed. A name that is a number is MediaWiki's explicit positional
+/// syntax: `{{i|1=Bird's Eye}}` is `{{i|Bird's Eye}}`. Filed under `named` instead, it leaves
+/// `args` empty and the resolver with nothing to resolve.
+///
+/// Accepted only for the slot right after the last one, or one already filled. The index
+/// comes from external wikitext, and a rule that honoured any number would let
+/// `{{x|999999999=y}}` ask for a vector of a billion empty slots. An index that leaves a gap
+/// keeps its named form, which is what it looks like anyway — degrade, don't allocate.
+fn place_named(args: &mut Vec<String>, named: &mut BTreeMap<String, String>, k: &str, v: String) {
+    match k.parse::<usize>() {
+        Ok(n) if (1..=args.len() + 1).contains(&n) => match args.get_mut(n - 1) {
+            Some(slot) => *slot = v,
+            None => args.push(v),
+        },
+        _ => {
+            named.insert(k.to_lowercase(), v);
+        }
+    }
 }
 
 #[cfg(test)]
@@ -185,6 +241,54 @@ mod tests {
         assert!(parse_template_at("{{i|x}}", 99).is_none());
         // `at` in the middle of a multibyte character: must not panic
         assert!(parse_template_at("é{{i|x}}", 1).is_none());
+    }
+
+    fn joined(text: &str) -> String {
+        template_segments(text)
+            .map(|s| match s {
+                Segment::Text(t) => t,
+                Segment::Template { source, .. } => source,
+            })
+            .collect()
+    }
+
+    /// The segments are a cut, not a rewrite: laid end to end they are the input, whatever
+    /// the input — a nested template, an unclosed one, a multibyte character next to a brace.
+    #[test]
+    fn the_segments_laid_end_to_end_are_the_text() {
+        for text in [
+            "",
+            "plain",
+            "a {{i|x}} b {{dlc|r|{{i|y}}}} c",
+            "{{i|Breakfast",
+            "é{{ {{i|x}}}} }}é",
+            "{{infobox boss\n | id = 1\n}}\n'''Hush'''",
+        ] {
+            assert_eq!(joined(text), text, "{text:?}");
+        }
+    }
+
+    /// Only top-level templates are segments, each with what follows it; a `{{` that closes
+    /// nothing is text, and the template after it is still found.
+    #[test]
+    fn a_segment_is_a_top_level_template_or_the_text_around_it() {
+        let segments: Vec<Segment> = template_segments("a {{bug|{{i|x}}}} {{ b {{i|y}}").collect();
+        let names: Vec<&str> = segments
+            .iter()
+            .filter_map(|s| match s {
+                Segment::Template { template, .. } => Some(template.name.as_str()),
+                Segment::Text(_) => None,
+            })
+            .collect();
+        assert_eq!(names, vec!["bug", "i"]);
+        assert!(matches!(
+            &segments[1],
+            Segment::Template {
+                source: "{{bug|{{i|x}}}}",
+                after: " {{ b {{i|y}}",
+                ..
+            }
+        ));
     }
 
     #[test]

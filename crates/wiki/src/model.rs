@@ -176,6 +176,110 @@ pub enum Dlc {
     RepentancePlus,
 }
 
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize, ts_rs::TS)]
+#[serde(
+    tag = "kind",
+    rename_all = "camelCase",
+    rename_all_fields = "camelCase"
+)]
+pub enum Infobox {
+    Item {
+        /// The pickup quote. Inline, not a string: 78 of 719 carry edition markup
+        /// (`Boomerang tears {{dlc|r|+ DMG up + luck down}}`), and read as raw text they
+        /// put wikitext on screen. Flattened, it is `items.xml`'s `description` attribute —
+        /// which `wiki_agrees_with_catalog` checks rather than assumes.
+        quote: Vec<Inline>,
+        /// From the template name: the wiki has `infobox passive collectible` and
+        /// `infobox activated collectible`, and until 2026-09-13 we merged the two.
+        template: CollectibleTemplate,
+        /// `-1..=4`, as `catalog::Metadata::quality`.
+        quality: Option<i8>,
+        /// The game's vocabulary, open by nature: a closed enum breaks the day it grows.
+        tags: Vec<String>,
+        /// Not a number. The real values include `unlimited`, `one time`, `4s` and
+        /// `{{dlcalt|6|r=4}}`; a numeric parse would discard about a third of them.
+        recharge: Vec<Inline>,
+        /// Not a number either: 36 of the 56 real `devil price` values are per-edition.
+        devil_price: Vec<Inline>,
+        shop_price: Vec<Inline>,
+        /// What the wiki says about the pools. Present on only 45 of 720 pages: the
+        /// game's `itempools.xml` is the source that knows them all.
+        pools: Vec<Inline>,
+    },
+    Trinket {
+        quote: Vec<Inline>,
+        tags: Vec<String>,
+        pools: Vec<Inline>,
+    },
+    Achievement {
+        /// The line on the game's unlock paper, which the wiki files under `description`:
+        /// "Just Stop!", "OMG!". It is the game's voice and not a description, so it is the
+        /// quote, the way an item's pickup line is. Empty where the wiki wrote a placeholder
+        /// ("???" on 136 rows) or nothing.
+        quote: Vec<Inline>,
+        requirements: Vec<Inline>,
+        /// Caveats on the requirement ("Possession of The Polaroid is required…"). An
+        /// achievement is a row on a storage page and carries no sections of its own, so
+        /// this is the only prose it has beyond `quote` and `requirements`.
+        notes: Vec<Inline>,
+        /// The thing this achievement unlocks. It does NOT rise to `Entry`: it points the
+        /// opposite way from `unlocked_by`, and putting the two in one place is a trap.
+        unlocks: Option<Target>,
+    },
+    Boss {
+        base_hp: Option<u32>,
+        /// Inline, not a number: the two real values are per-stage notes, not a scalar.
+        stage_hp: Vec<Inline>,
+        /// The bestiary variant, when the infobox states one.
+        variant: Option<u32>,
+        environment: Vec<Inline>,
+        pool: Vec<Inline>,
+    },
+    Challenge {
+        blindfolded: bool,
+        has_shops: bool,
+        has_treasure_rooms: bool,
+        items: Vec<Inline>,
+        trinkets: Vec<Inline>,
+        pickups: Vec<Inline>,
+        health: Vec<Inline>,
+        curse: Vec<Inline>,
+        goal: Vec<Inline>,
+        /// The character the challenge is played as, when it forces one.
+        character: Option<Target>,
+        unlocks: Option<Target>,
+    },
+    /// A transformation, and the only variant completed from outside its own infobox: the
+    /// count and the set are stated in the page body, not in the box (spec §2.2, §2.4).
+    Transformation {
+        /// How many of `contributors` are needed. `None` when the page does not say it in a
+        /// form we can read — never defaulted to three, which is what every page that does
+        /// say it says, and therefore what a wrong default would be invisible against.
+        requires: Option<u32>,
+        /// The items and trinkets that count, in page order, deduplicated. The union of the
+        /// infobox's `items` and the body's own tables: each loses something the other has.
+        contributors: Vec<Target>,
+        /// What the transformation acts on ("Isaac's bums"). Kept because the Cargo table
+        /// declares it, and `no_silent_parameter` fails on a parameter that is neither a
+        /// field nor deliberately ignored.
+        target: Vec<Inline>,
+    },
+    Character {
+        health: Vec<Inline>,
+        damage: String,
+        /// The fire-rate stat. It was the only one of the six the type did not carry.
+        tears: String,
+        range: String,
+        speed: String,
+        luck: String,
+        shot_speed: String,
+        pickups: Vec<Inline>,
+        collectibles: Vec<Inline>,
+        /// The character this one is a variant of (Lazarus Risen's Lazarus, Tainted's base).
+        parent: Option<Target>,
+    },
+}
+
 impl Infobox {
     /// The same fields as [`Self::inlines_mut`], read-only, destructured the same way and
     /// **without `..`** (card #80, item 14): the guard over the dataset's text used to name the
@@ -308,110 +412,6 @@ impl Infobox {
             } => vec![health, pickups, collectibles],
         }
     }
-}
-
-#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize, ts_rs::TS)]
-#[serde(
-    tag = "kind",
-    rename_all = "camelCase",
-    rename_all_fields = "camelCase"
-)]
-pub enum Infobox {
-    Item {
-        /// The pickup quote. Inline, not a string: 78 of 719 carry edition markup
-        /// (`Boomerang tears {{dlc|r|+ DMG up + luck down}}`), and read as raw text they
-        /// put wikitext on screen. Flattened, it is `items.xml`'s `description` attribute —
-        /// which `wiki_agrees_with_catalog` checks rather than assumes.
-        quote: Vec<Inline>,
-        /// From the template name: the wiki has `infobox passive collectible` and
-        /// `infobox activated collectible`, and until 2026-09-13 we merged the two.
-        template: CollectibleTemplate,
-        /// `-1..=4`, as `catalog::Metadata::quality`.
-        quality: Option<i8>,
-        /// The game's vocabulary, open by nature: a closed enum breaks the day it grows.
-        tags: Vec<String>,
-        /// Not a number. The real values include `unlimited`, `one time`, `4s` and
-        /// `{{dlcalt|6|r=4}}`; a numeric parse would discard about a third of them.
-        recharge: Vec<Inline>,
-        /// Not a number either: 36 of the 56 real `devil price` values are per-edition.
-        devil_price: Vec<Inline>,
-        shop_price: Vec<Inline>,
-        /// What the wiki says about the pools. Present on only 45 of 720 pages: the
-        /// game's `itempools.xml` is the source that knows them all.
-        pools: Vec<Inline>,
-    },
-    Trinket {
-        quote: Vec<Inline>,
-        tags: Vec<String>,
-        pools: Vec<Inline>,
-    },
-    Achievement {
-        /// The line on the game's unlock paper, which the wiki files under `description`:
-        /// "Just Stop!", "OMG!". It is the game's voice and not a description, so it is the
-        /// quote, the way an item's pickup line is. Empty where the wiki wrote a placeholder
-        /// ("???" on 136 rows) or nothing.
-        quote: Vec<Inline>,
-        requirements: Vec<Inline>,
-        /// Caveats on the requirement ("Possession of The Polaroid is required…"). An
-        /// achievement is a row on a storage page and carries no sections of its own, so
-        /// this is the only prose it has beyond `quote` and `requirements`.
-        notes: Vec<Inline>,
-        /// The thing this achievement unlocks. It does NOT rise to `Entry`: it points the
-        /// opposite way from `unlocked_by`, and putting the two in one place is a trap.
-        unlocks: Option<Target>,
-    },
-    Boss {
-        base_hp: Option<u32>,
-        /// Inline, not a number: the two real values are per-stage notes, not a scalar.
-        stage_hp: Vec<Inline>,
-        /// The bestiary variant, when the infobox states one.
-        variant: Option<u32>,
-        environment: Vec<Inline>,
-        pool: Vec<Inline>,
-    },
-    Challenge {
-        blindfolded: bool,
-        has_shops: bool,
-        has_treasure_rooms: bool,
-        items: Vec<Inline>,
-        trinkets: Vec<Inline>,
-        pickups: Vec<Inline>,
-        health: Vec<Inline>,
-        curse: Vec<Inline>,
-        goal: Vec<Inline>,
-        /// The character the challenge is played as, when it forces one.
-        character: Option<Target>,
-        unlocks: Option<Target>,
-    },
-    /// A transformation, and the only variant completed from outside its own infobox: the
-    /// count and the set are stated in the page body, not in the box (spec §2.2, §2.4).
-    Transformation {
-        /// How many of `contributors` are needed. `None` when the page does not say it in a
-        /// form we can read — never defaulted to three, which is what every page that does
-        /// say it says, and therefore what a wrong default would be invisible against.
-        requires: Option<u32>,
-        /// The items and trinkets that count, in page order, deduplicated. The union of the
-        /// infobox's `items` and the body's own tables: each loses something the other has.
-        contributors: Vec<Target>,
-        /// What the transformation acts on ("Isaac's bums"). Kept because the Cargo table
-        /// declares it, and `no_silent_parameter` fails on a parameter that is neither a
-        /// field nor deliberately ignored.
-        target: Vec<Inline>,
-    },
-    Character {
-        health: Vec<Inline>,
-        damage: String,
-        /// The fire-rate stat. It was the only one of the six the type did not carry.
-        tears: String,
-        range: String,
-        speed: String,
-        luck: String,
-        shot_speed: String,
-        pickups: Vec<Inline>,
-        collectibles: Vec<Inline>,
-        /// The character this one is a variant of (Lazarus Risen's Lazarus, Tainted's base).
-        parent: Option<Target>,
-    },
 }
 
 #[cfg(test)]

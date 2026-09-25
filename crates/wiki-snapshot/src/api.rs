@@ -4,11 +4,11 @@
 use std::collections::{BTreeMap, BTreeSet};
 
 use serde_json::Value;
-use wiki::Row;
+use wiki::{Row, HOST};
 
-pub const HOST: &str = "https://bindingofisaacrebirth.wiki.gg";
-
-/// The Cargo tables to download, with the fields the `wiki` crate reads.
+/// The Cargo tables to download, with the fields the `wiki` crate reads. Every one of them is a
+/// table `Raw::load` opens: `stage` was downloaded here for months and read by nothing (card
+/// #82, D1), which is a download that costs requests and a file that looks like data.
 pub const TABLES: &[(&str, &str)] = &[
     (
         "collectible",
@@ -28,7 +28,6 @@ pub const TABLES: &[(&str, &str)] = &[
         "_pageName,number,alias,dlc,unlocked_by,unlocks",
     ),
     ("player", "_pageName,id,alias,dlc,parent"),
-    ("stage", "_pageName,alias,chapter,dlc"),
     (
         "transformation",
         "_pageName,id,alias,dlc,requirement,items,description,target,appearance",

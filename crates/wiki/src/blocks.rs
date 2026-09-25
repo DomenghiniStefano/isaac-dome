@@ -7,6 +7,7 @@
 
 use crate::inline::parse_inline;
 use crate::resolver::Resolver;
+use crate::template::{template_segments, Segment, Template};
 use crate::{Block, Diagnostics, Inline, ListItem};
 
 /// A list item still to be built: depth, whether the last marker is `#`, text.
@@ -85,66 +86,55 @@ fn push_content(out: &mut String, content: Option<&String>, after: &str) {
 }
 
 /// The body with those wrappers replaced by what the line pass can read, and nothing else
-/// touched. `parse_template_at` is what says where one ends: a line-by-line pass cannot.
+/// touched. `template_segments` is what says where one ends: a line-by-line pass cannot.
 fn unwrapped(body: &str) -> String {
-    let mut out = String::new();
-    let mut i = 0;
-    while let Some(pos) = body.get(i..).and_then(|rest| rest.find("{{")) {
-        let at = i + pos;
-        out.push_str(&body[i..at]);
-        match crate::template::parse_template_at(body, at) {
-            // Only a template that spans lines. One that closes where it opened is already
-            // visible to the pass, and moving its content onto a line of its own would cut
-            // the list item it sits in — which is where 538 of the 547 `{{bug|…}}` live.
-            Some((t, end)) if body[at..end].contains('\n') => {
-                match wrapper(&t.name) {
-                    Some(Wrapper::Layout { param }) => {
-                        push_content(&mut out, t.named.get(param), &body[end..]);
-                    }
-                    Some(Wrapper::Transparent) => {
-                        push_content(&mut out, t.args.first(), &body[end..]);
-                    }
-                    // The sentence goes back inside a template that closes on its line, so
-                    // the inline pass reads it; everything after the first newline is
-                    // already the lines it introduced.
-                    Some(Wrapper::Headed { param }) => {
-                        match t.named.get(param).and_then(|v| v.split_once('\n')) {
-                            Some((head, rest)) => {
-                                out.push_str("{{");
-                                out.push_str(&t.name);
-                                out.push('|');
-                                out.push_str(param);
-                                out.push('=');
-                                out.push_str(head.trim_end());
-                                out.push_str("}}\n");
-                                out.push_str(rest);
-                                if !body[end..].starts_with('\n') {
-                                    out.push('\n');
-                                }
-                            }
-                            // A headed wrapper whose sentence holds no newline of its own
-                            // spans lines for some other reason: left as it is rather than
-                            // reshaped on a guess.
-                            None => out.push_str(&body[at..end]),
-                        }
-                    }
-                    None => out.push_str(&body[at..end]),
-                }
-                i = end;
-            }
-            // Every other template is content: it belongs to the line it is on.
-            Some((_, end)) => {
-                out.push_str(&body[at..end]);
-                i = end;
-            }
-            None => {
-                out.push_str("{{");
-                i = at + 2;
-            }
+    template_segments(body).fold(String::new(), |mut out, segment| {
+        match segment {
+            Segment::Text(text) => out.push_str(text),
+            Segment::Template {
+                template,
+                source,
+                after,
+            } => push_template(&mut out, &template, source, after),
         }
+        out
+    })
+}
+
+/// One top-level template, unwrapped if it is a block-level wrapper that spans lines.
+///
+/// Only a template that spans lines. One that closes where it opened is already visible to the
+/// pass, and moving its content onto a line of its own would cut the list item it sits in —
+/// which is where 538 of the 547 `{{bug|…}}` live. Every other template is content: it belongs
+/// to the line it is on.
+fn push_template(out: &mut String, t: &Template, source: &str, after: &str) {
+    if !source.contains('\n') {
+        out.push_str(source);
+        return;
     }
-    out.push_str(&body[i..]);
-    out
+    match wrapper(&t.name) {
+        Some(Wrapper::Layout { param }) => push_content(out, t.named.get(param), after),
+        Some(Wrapper::Transparent) => push_content(out, t.args.first(), after),
+        Some(Wrapper::Headed { param }) => push_headed(out, t, param, source, after),
+        None => out.push_str(source),
+    }
+}
+
+/// A headed wrapper: the sentence goes back inside a template that closes on its line, so the
+/// inline pass reads it; everything after the first newline is already the lines it introduced.
+///
+/// A headed wrapper whose sentence holds no newline of its own spans lines for some other
+/// reason: left as it is rather than reshaped on a guess.
+fn push_headed(out: &mut String, t: &Template, param: &str, source: &str, after: &str) {
+    let Some((head, rest)) = t.named.get(param).and_then(|v| v.split_once('\n')) else {
+        out.push_str(source);
+        return;
+    };
+    out.push_str(&format!("{{{{{}|{param}={}}}}}\n", t.name, head.trim_end()));
+    out.push_str(rest);
+    if !after.starts_with('\n') {
+        out.push('\n');
+    }
 }
 
 pub fn parse_blocks(body: &str, r: &Resolver, d: &mut Diagnostics) -> Vec<Block> {
@@ -163,14 +153,12 @@ pub fn parse_blocks(body: &str, r: &Resolver, d: &mut Diagnostics) -> Vec<Block>
 }
 
 impl Parser<'_> {
+    /// One line, into the state it belongs to. Each kind of line closes the states it does not
+    /// belong to and opens its own; the order of the checks is the precedence.
     fn line(&mut self, line: &str) {
         // Inside a table every line belongs to it, until `|}`.
-        if let Some(rows) = self.table.as_mut() {
-            if line.trim_start().starts_with("|}") {
-                self.close_table();
-            } else {
-                rows.push(line.to_string());
-            }
+        if self.table.is_some() {
+            self.table_line(line);
             return;
         }
         let trimmed = line.trim_start();
@@ -187,19 +175,9 @@ impl Parser<'_> {
             self.out.push(Block::Heading { level, inline });
             return;
         }
-        let markers = trimmed
-            .chars()
-            .take_while(|c| *c == '*' || *c == '#')
-            .count();
-        if markers > 0 {
+        if let Some(item) = list_item(trimmed) {
             self.flush_para();
-            let ordered = trimmed.chars().nth(markers - 1) == Some('#');
-            let text = trimmed.get(markers..).unwrap_or_default().trim();
-            self.list.push(RawItem {
-                depth: markers,
-                ordered,
-                text: text.to_string(),
-            });
+            self.list.push(item);
             return;
         }
         // A line that is nothing but closing braces belongs to a template opened further
@@ -213,11 +191,24 @@ impl Parser<'_> {
             return;
         }
         self.flush_list();
+        self.paragraph_line(trimmed);
+    }
+
+    fn table_line(&mut self, line: &str) {
+        if line.trim_start().starts_with("|}") {
+            self.close_table();
+        } else if let Some(rows) = self.table.as_mut() {
+            rows.push(line.to_string());
+        }
+    }
+
+    /// A line of prose. A blank one ends the paragraph; `:` and `;` (definitions and indents)
+    /// are paragraphs like any other; `__TOC__` is a magic word and never prose.
+    fn paragraph_line(&mut self, trimmed: &str) {
         if trimmed.is_empty() {
             self.flush_para();
             return;
         }
-        // `:` and `;` (definitions and indents) are paragraphs like any other.
         let text = trimmed
             .strip_prefix(':')
             .or_else(|| trimmed.strip_prefix(';'))
@@ -264,6 +255,27 @@ impl Parser<'_> {
             self.out.push(table);
         }
     }
+}
+
+/// `** text` → an item at depth 2; `*#` is ordered, because the last marker decides. `None`
+/// for a line with no marker.
+fn list_item(trimmed: &str) -> Option<RawItem> {
+    let markers = trimmed
+        .chars()
+        .take_while(|c| *c == '*' || *c == '#')
+        .count();
+    if markers == 0 {
+        return None;
+    }
+    Some(RawItem {
+        depth: markers,
+        ordered: trimmed.chars().nth(markers - 1) == Some('#'),
+        text: trimmed
+            .get(markers..)
+            .unwrap_or_default()
+            .trim()
+            .to_string(),
+    })
 }
 
 /// `=== T ===` → `(3, "T")`, `==== T ====` → `(4, "T")`. Level 2 never appears here: the
