@@ -2,7 +2,7 @@ import { RouteName } from '@/router/routeTable'
 import type { TabLocation } from '@/router/routeTable'
 import type { Entry, EntryScroll, TabSeed } from '@/stores/tabModel'
 import { findLastIndex } from 'lodash-es'
-import { withOptional } from '@/lib/withOptional'
+import { whenTrue, withOptional } from '@/lib/withOptional'
 
 // The document's version. It is bumped when an older app could read the new shape and be wrong
 // about it — never for a part it can simply ignore. An entry gaining a `view` is such a part, so
@@ -238,8 +238,11 @@ export const readSession = (raw: string | null): StoredSession | null => {
   // sidebar anybody folded.
   return {
     windows: kept,
-    ...(isFiniteNumber(sidebarWidth) ? { sidebarWidth } : {}),
-    ...(sidebarCollapsed === true ? { sidebarCollapsed } : {}),
+    ...withOptional(
+      'sidebarWidth',
+      isFiniteNumber(sidebarWidth) ? sidebarWidth : undefined,
+    ),
+    ...withOptional('sidebarCollapsed', whenTrue(sidebarCollapsed === true)),
   }
 }
 
@@ -266,5 +269,5 @@ export const writeSession = (session: StoredSession): string =>
     // Absent rather than `null` when nobody ever sized the sidebar: a key that is there and means
     // nothing is a key every reader has to ask about.
     ...withOptional('sidebarWidth', session.sidebarWidth),
-    ...(session.sidebarCollapsed ? { sidebarCollapsed: true } : {}),
+    ...withOptional('sidebarCollapsed', session.sidebarCollapsed),
   })

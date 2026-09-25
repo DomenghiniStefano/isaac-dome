@@ -1,7 +1,7 @@
 import { onBeforeUnmount, onMounted, watch } from 'vue'
 import { assertNever } from '@/lib/assertNever'
 import { setWindowSession, windowSession } from '@/lib/ipc/session'
-import { withOptional } from '@/lib/withOptional'
+import { whenTrue, withOptional } from '@/lib/withOptional'
 import { useTabsStore } from '@/stores/tabs'
 import { watchWindowBox, watchWindowFocus } from '@/lib/window/appWindow'
 import { focusOrder, rememberFocus } from '@/lib/window/focusOrder'
@@ -149,10 +149,11 @@ export const useWindowSession = (): void => {
           await setWindowSession(
             writeSession({
               windows: decision.windows,
-              ...(sidebarWidth.value === null
-                ? {}
-                : { sidebarWidth: sidebarWidth.value }),
-              ...(sidebarCollapsed.value ? { sidebarCollapsed: true } : {}),
+              ...withOptional('sidebarWidth', sidebarWidth.value ?? undefined),
+              ...withOptional(
+                'sidebarCollapsed',
+                whenTrue(sidebarCollapsed.value),
+              ),
             }),
           )
         } catch (e) {
