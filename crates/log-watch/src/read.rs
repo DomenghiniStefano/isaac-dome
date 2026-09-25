@@ -37,16 +37,11 @@ pub fn window_ending_at(path: &Path, offset: u64, n: usize) -> Result<Vec<u8>, W
 pub fn chunk(path: &Path, offset: u64, max: usize) -> Result<Vec<u8>, WatchError> {
     let mut file = File::open(path).map_err(WatchError::io)?;
     file.seek(SeekFrom::Start(offset)).map_err(WatchError::io)?;
-    let mut buf = vec![0u8; max];
-    let mut filled = 0;
-    while filled < max {
-        match file.read(&mut buf[filled..]) {
-            Ok(0) => break,
-            Ok(n) => filled += n,
-            Err(e) if e.kind() == std::io::ErrorKind::Interrupted => continue,
-            Err(e) => return Err(WatchError::io(e)),
-        }
-    }
-    buf.truncate(filled);
+    // As many reads as it takes, an interrupted one retried (`read_to_end`), and never more than
+    // `max` bytes however far the file has grown (`take`).
+    let mut buf = Vec::with_capacity(max);
+    file.take(max as u64)
+        .read_to_end(&mut buf)
+        .map_err(WatchError::io)?;
     Ok(buf)
 }

@@ -253,7 +253,7 @@ fn from_verdict(
 fn item_kinds_of(t: &Target) -> &'static [ItemKind] {
     match t {
         Target::Trinket { .. } => &[ItemKind::Trinket],
-        Target::Item { .. } => &[ItemKind::Passive, ItemKind::Active, ItemKind::Familiar],
+        Target::Item { .. } => &ItemKind::COLLECTIBLES,
         Target::Character { .. }
         | Target::Achievement { .. }
         | Target::Challenge { .. }

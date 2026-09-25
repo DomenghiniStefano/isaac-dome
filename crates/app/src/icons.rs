@@ -75,11 +75,11 @@ pub(crate) fn icon_bytes(app: &AppHandle, path: &str) -> tauri::http::Response<V
         | ipc::IconRef::Item { .. }
         | ipc::IconRef::Head { .. }
         | ipc::IconRef::Page { .. }
-        | ipc::IconRef::Room { .. } => app
-            .state::<CatalogState>()
-            .get_or_build(rs)
-            .and_then(|c| ipc::icon_source(c, &reference).cloned())
-            .and_then(|sprite| sprite_bytes(rs, &sprite, trim)),
+        | ipc::IconRef::Room { .. } => {
+            ipc::icon_source(app.state::<CatalogState>().get_or_build(rs), &reference)
+                .cloned()
+                .and_then(|sprite| sprite_bytes(rs, &sprite, trim))
+        }
     };
     let Some(png) = png else {
         return no_icon(404);

@@ -1,7 +1,8 @@
-//! Settings I/O: the only state the `app` crate persists, the active profile
-//! choice. A missing or unreadable file is treated as "no choice saved", a malformed one is
-//! read as no choice and set aside before the next write (card #80, P2) — never a fatal
-//! error, never a silent overwrite of the user's file.
+//! The settings file, `settings.json` in the config folder: the `ipc::Settings` the screens read
+//! and write — the active profile, the scale, the switches — plus the two folders chosen by hand,
+//! which never cross the IPC. A missing or unreadable file is read as the defaults; a malformed
+//! one is read as the defaults too and set aside before the next write (card #80, P2) — never a
+//! fatal error, never a silent overwrite of the user's file.
 
 use discovery::Options;
 use ipc::{Settings, SettingsReason};
@@ -133,10 +134,7 @@ fn write(app: &AppHandle, stored: &Stored) -> Result<(), IpcError> {
     // the user's file" is this module's promise. Named by the second it was set aside, so a
     // second bad file does not replace the first.
     if matches!(read_file(app), FileRead::Malformed) {
-        let unix = std::time::SystemTime::now()
-            .duration_since(std::time::UNIX_EPOCH)
-            .map(|d| d.as_secs())
-            .unwrap_or(0);
+        let unix = crate::clock::now_unix();
         std::fs::rename(
             &path,
             path.with_file_name(format!("settings.malformed-{unix}.json")),

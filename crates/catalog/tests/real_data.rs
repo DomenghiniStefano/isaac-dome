@@ -14,25 +14,36 @@ fn build_or_skip() -> Option<(Catalog, ResourceSet)> {
     Some((c, rs))
 }
 
+/// `n` within `floor..=ceiling`, saying which count left it. The floor of every band below is
+/// the count the 2026-09-03/04 files held: a patch has so far only added entries (the save
+/// went from 641 achievement slots to 642). The ceiling is derived at each call.
+fn assert_band(what: &str, n: usize, floor: usize, ceiling: usize) {
+    assert!(
+        (floor..=ceiling).contains(&n),
+        "{what}: {n}, outside {floor}..={ceiling}"
+    );
+}
+
 #[test]
-fn item_counts_by_kind_match_the_repentance_file() {
+fn item_counts_by_kind_stay_within_what_the_known_ids_allow() {
     let Some((c, _)) = build_or_skip() else {
         return;
     };
     let n = |k: ItemKind| c.items().filter(|i| i.kind == k).count();
-    // items.xml from repentance.a, measured with quick-xml on 2026-09-03: 909 elements.
-    // A text grep gave 911, because it counted two commented-out elements in the file
-    // (PILLS_HERE_NAME and TAROT_CARD_NAME, lines 44 and 62): quick-xml ignores them,
-    // correctly.
-    assert_eq!(
-        (
-            n(ItemKind::Passive),
-            n(ItemKind::Active),
-            n(ItemKind::Familiar),
-            n(ItemKind::Trinket)
-        ),
-        (425, 170, 126, 188)
-    );
+    // items.xml from repentance.a, measured with quick-xml on 2026-09-03: 909 elements —
+    // 425 passives, 170 actives, 126 familiars, 188 trinkets. A text grep gave 911, because
+    // it counted two commented-out elements in the file (PILLS_HERE_NAME and
+    // TAROT_CARD_NAME, lines 44 and 62): quick-xml ignores them, correctly.
+    //
+    // The ceilings are the highest ids `origin.rs` knows, 732 for collectibles and 189 for
+    // trinkets: ids are unique within each space and start at 1, and an item past them has
+    // no origin, which `origin_matches_the_known_boundaries_on_the_real_file` refuses.
+    assert_band("passives", n(ItemKind::Passive), 425, 732);
+    assert_band("actives", n(ItemKind::Active), 170, 732);
+    assert_band("familiars", n(ItemKind::Familiar), 126, 732);
+    let collectibles = ItemKind::COLLECTIBLES.iter().map(|&k| n(k)).sum();
+    assert_band("collectibles", collectibles, 721, 732);
+    assert_band("trinkets", n(ItemKind::Trinket), 188, 189);
 }
 
 #[test]
@@ -186,30 +197,47 @@ fn every_item_has_quality_and_the_distribution_matches_the_metadata_file() {
     }
     // items_metadata.xml: no item has quality="-1". The two textual occurrences of
     // "quality=\"-1\"" are actually the craftquality="-1" attribute (id 422 and 710): a
-    // text grep had confused them with quality, quick-xml did not. Real distribution:
-    // 0:239, 1:197, 2:249, 3:184, 4:40, sum 909.
+    // text grep had confused them with quality, quick-xml did not. Distribution on
+    // 2026-09-04: 0:239, 1:197, 2:249, 3:184, 4:40, sum 909.
+    //
+    // Not pinned per grade: a patch can move an item from one grade to another in either
+    // direction, so no floor holds per grade. What holds is the shape — every item graded,
+    // on the game's 0..=4 scale, every grade used.
     assert_eq!(by_quality.get(&None), None, "every item has a quality");
-    assert_eq!(by_quality.get(&Some(-1)), None, "no item has quality -1");
-    assert_eq!(by_quality[&Some(0)], 239);
-    assert_eq!(by_quality[&Some(1)], 197);
-    assert_eq!(by_quality[&Some(2)], 249);
-    assert_eq!(by_quality[&Some(3)], 184);
-    assert_eq!(by_quality[&Some(4)], 40);
-    assert_eq!(by_quality.values().sum::<usize>(), 909);
+    assert_eq!(
+        by_quality.keys().copied().collect::<Vec<_>>(),
+        (0..=4).map(Some).collect::<Vec<_>>(),
+        "every grade of 0..=4 is used, and nothing else (no -1)"
+    );
+    assert_eq!(by_quality.values().sum::<usize>(), c.items().count());
+    assert_band("graded items", c.items().count(), 909, 732 + 189);
 }
 
 #[test]
-fn achievements_are_637_contiguous_and_283_carry_a_condition() {
+fn achievements_are_contiguous_from_one_and_hundreds_carry_a_condition() {
     let Some((c, _)) = build_or_skip() else {
         return;
     };
     let ids: Vec<u32> = c.achievements().map(|a| a.id.0).collect();
-    assert_eq!(ids, (1..=637).collect::<Vec<u32>>());
+    // 637 on 2026-09-04. The ceiling is the 642 achievement slots the 2026 saves declare:
+    // `the_catalog_ids_are_a_subset_of_the_save_slots_and_the_holes_are_the_missing_ids`
+    // refuses an achievement past the save's slots.
+    assert_band("achievements", ids.len(), 637, 642);
     assert_eq!(
-        c.achievements()
-            .filter(|a| a.unlock_condition.is_some())
-            .count(),
-        283
+        ids,
+        (1..=ids.len() as u32).collect::<Vec<u32>>(),
+        "contiguous from 1"
+    );
+    let with_condition = c
+        .achievements()
+        .filter(|a| a.unlock_condition.is_some())
+        .count();
+    // 283 on 2026-09-04; at most one per achievement.
+    assert_band(
+        "achievements with a condition",
+        with_condition,
+        283,
+        ids.len(),
     );
     let first = c.achievement(AchievementId(1)).unwrap();
     assert_eq!(first.text, "You unlocked \"Magdalene\"");
@@ -231,23 +259,18 @@ fn pools_are_31_every_entry_is_a_known_item_and_24_items_are_in_none() {
     );
     let in_no_pool = c
         .items()
-        .filter(|i| {
-            matches!(
-                i.kind,
-                ItemKind::Passive | ItemKind::Active | ItemKind::Familiar
-            )
-        })
+        .filter(|i| ItemKind::COLLECTIBLES.contains(&i.kind))
         .filter(|i| i.pools.is_empty())
         .count();
     // 26 on the first pass, measured with a text grep on items.xml: it was also
     // counting the two commented-out elements id 43 and 61 (PILLS_HERE_NAME and
-    // TAROT_CARD_NAME, see item_counts_by_kind_match_the_repentance_file). The catalog,
+    // TAROT_CARD_NAME, see item_counts_by_kind_stay_within_what_the_known_ids_allow). The catalog,
     // which ignores those two in items() and so doesn't have 43/61 among the
     // collectibles, finds 24.
     assert_eq!(in_no_pool, 24);
     for p in c.pools() {
         for e in &p.entries {
-            let known = [ItemKind::Passive, ItemKind::Active, ItemKind::Familiar]
+            let known = ItemKind::COLLECTIBLES
                 .iter()
                 .any(|&k| c.item(k, e.item).is_some());
             assert!(
@@ -336,7 +359,7 @@ fn the_catalog_ids_are_a_subset_of_the_save_slots_and_the_holes_are_the_missing_
     // The save declares 733 slots for items and 642 for achievements. The catalog's
     // collectibles (kind other than Trinket) are 721, not 723: 723 was a grep count
     // that included the two commented-out elements id 43 and 61 (see
-    // item_counts_by_kind_match_the_repentance_file). 733 slots - 721 items - slot 0:
+    // item_counts_by_kind_stay_within_what_the_known_ids_allow). 733 slots - 721 items - slot 0:
     // 11 unused ids between 1 and 732, 43 and 61 included.
     let Some((c, _)) = build_or_skip() else {
         return;

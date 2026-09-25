@@ -58,3 +58,24 @@ fn a_file_that_is_not_there_is_an_error_with_a_kind_and_not_a_message() {
         other => panic!("expected Io, got {other:?}"),
     }
 }
+
+#[test]
+fn a_chunk_larger_than_one_read_of_the_os_comes_back_whole() {
+    // One `read` call may return fewer bytes than asked; a chunk is every byte up to `max`,
+    // however many calls that takes. `CHUNK` is the size the ingest asks for.
+    let tmp = tempfile::tempdir().unwrap();
+    let p = tmp.path().join("log.txt");
+    let body: Vec<u8> = (0..(log_watch::CHUNK * 2 + 17))
+        .map(|i| (i % 251) as u8)
+        .collect();
+    fs::write(&p, &body).unwrap();
+    let from = 11;
+    assert_eq!(
+        log_watch::chunk(&p, from as u64, log_watch::CHUNK).unwrap(),
+        &body[from..from + log_watch::CHUNK]
+    );
+    assert_eq!(
+        log_watch::chunk(&p, (body.len() - 5) as u64, log_watch::CHUNK).unwrap(),
+        &body[body.len() - 5..]
+    );
+}
