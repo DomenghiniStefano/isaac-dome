@@ -1,3 +1,5 @@
+mod support;
+
 use catalog::Catalog;
 use ipc::{
     next_steps, plan_view, unlock_view, AchievementRef, GraphInfo, IconRef, ItemKindView,
@@ -218,20 +220,11 @@ fn store_available_and_the_store_diagnostic_cannot_disagree() {
     }
 }
 
-const ITEMS_WITH_ACHIEVEMENTS: &[u8] = b"<items gfxroot=\"gfx/items/\"><passive id=\"2\" gfx=\"a.png\" name=\"A\" achievement=\"1\" /><trinket id=\"1\" gfx=\"t.png\" name=\"T\" achievement=\"3\" /></items>";
-const ACH: &[u8] = b"<achievements gfxroot=\"gfx/ui/achievement/\"><!-- c1 --><achievement id=\"1\" text=\"t1\" gfx=\"1.png\" /><achievement id=\"2\" text=\"t2\" gfx=\"2.png\" /><achievement id=\"3\" text=\"t3\" gfx=\"3.png\" /></achievements>";
-const PLAYERS: &[u8] = b"<players portraitroot=\"gfx/ui/stage/\"><player id=\"7\" name=\"#Z_NAME\" portrait=\"z.png\" achievement=\"2\" /></players>";
-
-/// Test catalog for the graph: every item and every character points to an
-/// achievement, which is the relationship these views show. Not the catalog from
-/// `catalog_view.rs`, which exists to test name resolution.
+/// Test catalog for the graph: every item and every character points to an achievement, which
+/// is the relationship these views show. The shared fixture without its challenge, which would
+/// be a second unlock of achievement 1.
 fn catalog_with_achievements() -> Catalog {
-    Catalog::build(|p| match p {
-        "items.xml" => Some(ITEMS_WITH_ACHIEVEMENTS.to_vec()),
-        "achievements.xml" => Some(ACH.to_vec()),
-        "players.xml" => Some(PLAYERS.to_vec()),
-        _ => None,
-    })
+    support::catalog_with_only(&["items.xml", "achievements.xml", "players.xml"])
 }
 
 #[test]
