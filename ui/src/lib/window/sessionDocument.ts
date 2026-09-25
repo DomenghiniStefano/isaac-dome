@@ -1,6 +1,7 @@
 import { RouteName } from '@/router/routeTable'
 import type { TabLocation } from '@/router/routeTable'
 import type { Entry, EntryScroll, TabSeed } from '@/stores/tabModel'
+import { withOptional } from '@/lib/withOptional'
 
 // The document's version. It is bumped when an older app could read the new shape and be wrong
 // about it — never for a part it can simply ignore. An entry gaining a `view` is such a part, so
@@ -124,8 +125,8 @@ const readEntry = (value: unknown): Entry | null => {
   const positions = readScroll(scroll)
   return {
     location: read,
-    ...(kept === undefined ? {} : { view: kept }),
-    ...(positions === undefined ? {} : { scroll: positions }),
+    ...withOptional('view', kept),
+    ...withOptional('scroll', positions),
   }
 }
 
@@ -186,7 +187,7 @@ const readWindow = (value: unknown): StoredWindow | null => {
   const read = readTabs(tabs, activeIndex)
   if (read === null) return null
   const where = readBox(box)
-  return where === undefined ? read : { ...read, box: where }
+  return { ...read, ...withOptional('box', where) }
 }
 
 // What was stored, as far as it can be read: the windows, in the order they were written, `main`
@@ -251,12 +252,10 @@ export const writeSession = (session: StoredSession): string =>
     windows: session.windows.map((window) => ({
       tabs: window.tabs.map(stored),
       activeIndex: window.activeIndex,
-      ...(window.box ? { box: window.box } : {}),
+      ...withOptional('box', window.box),
     })),
     // Absent rather than `null` when nobody ever sized the sidebar: a key that is there and means
     // nothing is a key every reader has to ask about.
-    ...(session.sidebarWidth === undefined
-      ? {}
-      : { sidebarWidth: session.sidebarWidth }),
+    ...withOptional('sidebarWidth', session.sidebarWidth),
     ...(session.sidebarCollapsed ? { sidebarCollapsed: true } : {}),
   })
