@@ -6,7 +6,7 @@ import { DragGhost } from '@/components/ui/drag'
 import { useTabDrag } from '@/composables/useTabDrag'
 import { useMessages } from '@/i18n'
 import { EventKey } from '@/lib/constants/eventKeys'
-import { Axis, boxAt } from '@/lib/drag/dragList'
+import { Axis, boxAt, boxOf } from '@/lib/drag/dragList'
 import type { Point } from '@/lib/drag/dragList'
 import { toClient } from '@/lib/window/tearOff'
 import TabItem from './TabItem.vue'
@@ -74,10 +74,7 @@ const incomingGap = computed((): number | null => {
   const hover = props.incoming
   if (!hover) return null
   const p = toClient(hover.at, hover.window)
-  const boxes = tabElements().map((el) => {
-    const r = el.getBoundingClientRect()
-    return { left: r.left, top: r.top, width: r.width, height: r.height }
-  })
+  const boxes = tabElements().map((el) => boxOf(el.getBoundingClientRect()))
   const index = boxAt(boxes, p, Axis.X)
   const box = index === null ? undefined : boxes[index]
   if (index === null || !box) return props.tabs.length

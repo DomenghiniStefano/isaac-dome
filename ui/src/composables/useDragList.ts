@@ -4,6 +4,7 @@ import { EventKey } from '@/lib/constants/eventKeys'
 import type { Axis, Box, GhostBox, Point } from '@/lib/drag/dragList'
 import {
   DragThreshold,
+  boxOf,
   crossedThreshold,
   ghostOrigin,
   grabOffset,
@@ -45,10 +46,7 @@ export interface DragList<D> {
   cancel: () => void
 }
 
-const boxOf = (el: HTMLElement): Box => {
-  const r = el.getBoundingClientRect()
-  return { left: r.left, top: r.top, width: r.width, height: r.height }
-}
+const measure = (el: HTMLElement): Box => boxOf(el.getBoundingClientRect())
 
 export const useDragList = <D>(options: DragListOptions<D>): DragList<D> => {
   const moving = ref(false)
@@ -90,8 +88,8 @@ export const useDragList = <D>(options: DragListOptions<D>): DragList<D> => {
     const index = from.value
     const el = index === null ? undefined : options.items()[index]
     if (index === null || !el) return clear()
-    boxes = options.items().map(boxOf)
-    const box = boxOf(el)
+    boxes = options.items().map(measure)
+    const box = measure(el)
     offset = grabOffset(box, press ?? p)
     size = { x: box.width, y: box.height }
     moving.value = true

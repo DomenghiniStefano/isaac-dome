@@ -22,6 +22,16 @@ export interface Box {
   height: number
 }
 
+// The box of a measured rectangle, and nothing else of it: a `DOMRect` also carries `x`, `y`,
+// `right`, `bottom` and `toJSON`, and a snapshot is the four numbers a hit test reads. The
+// caller measures (`el.getBoundingClientRect()`); this only copies.
+export const boxOf = (r: Box): Box => ({
+  left: r.left,
+  top: r.top,
+  width: r.width,
+  height: r.height,
+})
+
 // Where the lifted copy is drawn, in client pixels.
 export type GhostBox = Box
 
