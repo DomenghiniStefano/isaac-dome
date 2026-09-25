@@ -111,19 +111,9 @@ pub fn requirement_with(
             .challenge(ChallengeId(*number))
             .map(|ch| Requirement::Challenge { id: ch.id })
             .unwrap_or_else(unknown),
-        Target::Item { id } | Target::Trinket { id } => {
-            let kinds = item_kinds_of(&row.target);
-            index
-                .item(&label)
-                .filter(|(kind, _)| kinds.contains(kind))
-                .or_else(|| {
-                    kinds
-                        .iter()
-                        .find_map(|k| c.item(*k, ItemId(*id)).map(|i| (i.kind, i.id)))
-                })
-                .map(|(kind, id)| Requirement::Item { kind, id })
-                .unwrap_or_else(unknown)
-        }
+        Target::Item { id } | Target::Trinket { id } => item(c, index, &row.target, *id, &label)
+            .map(|(kind, id)| Requirement::Item { kind, id })
+            .unwrap_or_else(unknown),
         // An achievement referenced directly is already a node. It travels as a gate key
         // so that `build` has one place that turns requirements into edges.
         Target::Achievement { id } => Requirement::Gate {
@@ -136,6 +126,26 @@ pub fn requirement_with(
             from_verdict(rules, &verdict_key, character, unknown)
         }
     }
+}
+
+/// An item or trinket reference: by name within the id space the reference names, then by
+/// its id in that same space.
+fn item(
+    c: &Catalog,
+    index: &NameIndex,
+    target: &Target,
+    id: u32,
+    label: &str,
+) -> Option<(ItemKind, ItemId)> {
+    let kinds = item_kinds_of(target);
+    index
+        .item(label)
+        .filter(|(kind, _)| kinds.contains(kind))
+        .or_else(|| {
+            kinds
+                .iter()
+                .find_map(|k| c.item(*k, ItemId(id)).map(|i| (i.kind, i.id)))
+        })
 }
 
 /// One contributor of a transformation, by **id alone**. Unlike a reference in a sentence
