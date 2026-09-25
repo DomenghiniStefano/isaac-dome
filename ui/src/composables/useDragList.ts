@@ -24,6 +24,10 @@ export interface DragListOptions<D> {
   items: () => HTMLElement[]
   resolve: (p: Point, boxes: Box[], from: number) => D | null
   commit: (from: number, drop: D | null) => void
+  // Every move of a running drag, before `resolve`: the place for what a move *does* beyond
+  // aiming a drop — the tab strip's tear-off. True when it took the move over, and there is then
+  // no drop to resolve: `resolve` stays a plain function of the point and the rectangles.
+  onMove?: (p: Point, from: number) => boolean
   // The drag was **called off** — Escape, or the pointer cancelled — as opposed to released.
   // The two cannot be told apart by watching whether a drag is still running: that goes false
   // either way, and a caller who guessed from it undid its own successful drops. Measured on
@@ -108,6 +112,9 @@ export const useDragList = <D>(options: DragListOptions<D>): DragList<D> => {
     }
   }
 
+  const takenOver = (p: Point, index: number): boolean =>
+    options.onMove?.(p, index) === true
+
   const start = (index: number, e: PointerEvent) => {
     if (e.button !== 0 || options.enabled?.() === false) return
     from.value = index
@@ -126,7 +133,9 @@ export const useDragList = <D>(options: DragListOptions<D>): DragList<D> => {
       captured = e.pointerId
     }
     draw(p)
-    drop.value = options.resolve(p, boxes, from.value)
+    drop.value = takenOver(p, from.value)
+      ? null
+      : options.resolve(p, boxes, from.value)
   }
 
   const end = () => {
