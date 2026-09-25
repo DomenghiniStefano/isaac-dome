@@ -38,7 +38,7 @@ pub use page::{parse_page, EntryKey, PageKind};
 pub use raw::{page_file_name, IndexEntry, Raw, RawError, RawPage};
 pub use resolver::{
     in_current_edition, is_layout_template, key, Corrections, Resolution, Resolver, Row, Tables,
-    CORRECTED_TABLES, DLC_REPENTANCE_PLUS,
+    CORRECTED_TABLES,
 };
 pub use sections::{normalize_title, section_kind, split_page, RawSection};
 pub use template::{parse_template_at, Template};

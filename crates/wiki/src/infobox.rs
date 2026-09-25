@@ -2,6 +2,7 @@
 
 use std::collections::BTreeMap;
 
+use crate::editions::declared_range;
 use crate::inline::parse_inline;
 use crate::resolver::Resolver;
 use crate::template::{template_segments, Segment, Template};
@@ -192,23 +193,6 @@ fn paper_line(inline: Vec<Inline>) -> Vec<Inline> {
     }
 }
 
-/// The `dlc` parameter as the editions it names. Absent is the one value that stays empty:
-/// the page declares no range, which `Editions::of` then reads back as "narrows nothing".
-/// An unreadable code is counted by `parse_code` and also leaves the entry declaring
-/// nothing, since the wiki itself answers `0` there.
-fn dlc_range(code: &str, d: &mut Diagnostics) -> Vec<Dlc> {
-    if code.trim().is_empty() {
-        return Vec::new();
-    }
-    match crate::editions::Editions::parse(code) {
-        Some(e) => e.list(),
-        None => {
-            d.unknown_dlc_code(code.trim());
-            Vec::new()
-        }
-    }
-}
-
 fn yes(ib: &RawInfobox, name: &str) -> bool {
     param(ib, name).trim().eq_ignore_ascii_case("yes")
 }
@@ -255,7 +239,7 @@ pub struct EntryFacts {
 pub fn entry_facts(ib: &RawInfobox, r: &Resolver, d: &mut Diagnostics) -> EntryFacts {
     EntryFacts {
         description: inline(ib, "description", r, d),
-        dlc: dlc_range(param(ib, "dlc"), d),
+        dlc: declared_range(param(ib, "dlc"), d),
         unlocked_by: r.achievement_by_name(param(ib, "unlocked by")),
     }
 }

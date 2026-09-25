@@ -4,6 +4,7 @@
 //! The input is external data: no path may panic. Every malformed construct (an
 //! unclosed template, an open link, a tag with no `>`) degrades to text.
 
+use crate::editions::span_restriction;
 use crate::resolver::{Resolution, Resolver};
 use crate::template::{parse_template_at, Template};
 use crate::{Diagnostics, Dlc, Inline, Style};
@@ -114,7 +115,7 @@ impl Out {
 
     /// Closes the innermost `Edition`; does nothing without any open frame. An edition with
     /// no content is not emitted — and neither is one whose `only` is empty, which is how
-    /// `dlc_codes` says the code restricts **nothing**: either it named every edition, or it
+    /// `span_restriction` says the code restricts **nothing**: either it named every edition, or it
     /// could not be read and was counted. Either way the words go back to the parent, since
     /// a node declaring its text valid in no edition at all is worse than the text on its
     /// own.
@@ -144,27 +145,6 @@ impl Out {
         self.flush();
         self.frames.pop().map(|f| f.1).unwrap_or_default()
     }
-}
-
-/// The editions a `{{dlc|…}}` code restricts its span to, or an **empty** list when it
-/// restricts nothing — which `Out::close` unwraps instead of emitting, because a badge
-/// naming every edition says as much as no badge at all.
-///
-/// Two things land on that empty list, and only one of them is a gap. `n`, `x` and a blank
-/// argument are the wiki's own row 31, "no restriction", and are silent. A code outside the
-/// switch is counted, because the wiki answers `0 <!-- invalid string! -->` there and a
-/// thirty-first code has to be visible rather than shipped.
-///
-/// Whole codes only: the argument is one code, never a list. 1734 of the uses in the
-/// wikitext were read one code at a time until 2026-09-15 — `nr` as nothing, `a+nr` as
-/// three editions including the two the `n` removes — and each opened a span valid in no
-/// edition at all.
-fn dlc_codes(s: &str, d: &mut Diagnostics) -> Vec<Dlc> {
-    let editions = crate::editions::parse_code(s, d);
-    if editions.is_all() {
-        return Vec::new();
-    }
-    editions.list()
 }
 
 /// A closed list, and deliberately not a general HTML-entity decoder: the input is
@@ -355,11 +335,11 @@ fn template(t: &Template, r: &Resolver, d: &mut Diagnostics, out: &mut Out, dept
         // spans across the snapshot lost their words without a diagnostic.
         "dlc+" | "dlc" => match t.args.get(1) {
             Some(content) => {
-                out.open(dlc_codes(&arg, d));
+                out.open(span_restriction(&arg, d));
                 recurse_into_arg(content, r, d, out, depth);
                 out.close();
             }
-            None => out.open_marker(dlc_codes(&arg, d)),
+            None => out.open_marker(span_restriction(&arg, d)),
         },
         "dlc-" => out.close(),
         "dlcalt" => {
@@ -368,7 +348,7 @@ fn template(t: &Template, r: &Resolver, d: &mut Diagnostics, out: &mut Out, dept
             // same recursion as unknown templates, not raw text.
             recurse_into_arg(&arg, r, d, out, depth);
             for (code, text) in &t.named {
-                out.open(dlc_codes(code, d));
+                out.open(span_restriction(code, d));
                 out.buf.push(' ');
                 recurse_into_arg(text, r, d, out, depth);
                 out.close();
@@ -384,7 +364,7 @@ fn template(t: &Template, r: &Resolver, d: &mut Diagnostics, out: &mut Out, dept
         // kept verbatim and nothing is invented around it. `dlc=` makes the variant belong
         // to one edition, which is what `Inline::Edition` already says.
         "bc" => {
-            let edition = t.named.get("dlc").map(|c| dlc_codes(c, d));
+            let edition = t.named.get("dlc").map(|c| span_restriction(c, d));
             if let Some(only) = edition.clone() {
                 out.open(only);
             }
@@ -456,7 +436,7 @@ fn template(t: &Template, r: &Resolver, d: &mut Diagnostics, out: &mut Out, dept
             // `rows` takes an optional `dlc =`: Conjoined splits its list by edition, one
             // `rows` each under a shared header, and those items count only in that
             // edition — which is what `Inline::Edition` says everywhere else.
-            let edition = t.named.get("dlc").map(|c| dlc_codes(c, d));
+            let edition = t.named.get("dlc").map(|c| span_restriction(c, d));
             if let Some(only) = edition.clone() {
                 out.open(only);
             }
@@ -497,7 +477,7 @@ fn template(t: &Template, r: &Resolver, d: &mut Diagnostics, out: &mut Out, dept
             out.open(
                 t.named
                     .get("dlc")
-                    .map_or_else(Vec::new, |c| dlc_codes(c, d)),
+                    .map_or_else(Vec::new, |c| span_restriction(c, d)),
             );
             recurse_into_arg(&arg, r, d, out, depth);
             out.close();
