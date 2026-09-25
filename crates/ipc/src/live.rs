@@ -296,24 +296,21 @@ pub fn live_marks(matrix: &crate::marks::MarksMatrix, rows: &[usize]) -> LiveMar
         rows: rows
             .iter()
             .filter_map(|r| matrix.characters.get(*r))
-            .map(|row| {
-                LiveMarkRow {
+            .map(|row| LiveMarkRow {
                 character: row.character.clone(),
                 head_url: row.head_url.clone(),
-                missing: row
-                    .cells
-                    .iter()
-                    // A cell that reached no level, read off `level` and not off a bare 0:
-                    // the online bit alone is not a mark, so a 4 is still a boss to beat.
-                    .filter(|c| {
-                        matches!(c, crate::marks::Cell::Known { level, .. } if !level.reached())
-                    })
-                    .count() as u32,
+                missing: row.cells.iter().filter(|c| is_missing(c)).count() as u32,
                 cells: row.cells.clone(),
-            }
             })
             .collect(),
     }
+}
+
+/// A cell read and reaching no level, read off `level` and not off a bare 0: the online bit
+/// alone is not a mark, so a 4 is still a boss to beat. An unread cell is not counted either
+/// way.
+fn is_missing(cell: &crate::marks::Cell) -> bool {
+    matches!(cell, crate::marks::Cell::Known { level, .. } if !level.reached())
 }
 
 /// Who the log could mean. Given the id the log stated, exactly that character; given only a
