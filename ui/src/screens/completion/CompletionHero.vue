@@ -13,19 +13,15 @@ import {
 import { useMessages } from '@/i18n'
 import type { CompletionKpis as Kpis } from '@/lib/completion/completionView'
 import ScreenHeader from '../ScreenHeader.vue'
+import HeroBand from '../HeroBand.vue'
 
 defineProps<{ kpis: Kpis; widgetUrl: string | null }>()
 const { t } = useMessages()
 </script>
 
 <template>
-  <!-- The band the screen opens on (card #58), the same grammar as a wiki page's
-       (`WikiHero.vue`): the light comes from the corner the picture sits in and falls back
-       into the page, and the grain stands in for the shadow the skin does not have. It is
-       the full width of the page box — the screen hands it the gutter rather than the band
-       taking it, which is the one thing `WikiLanding` paid for the hard way. -->
-  <header class="relative border-b border-hairline hero-wash px-5.5 py-5">
-    <span class="pointer-events-none absolute inset-0 hero-grain" />
+  <!-- The band the screen opens on (card #58), the same one a wiki page opens on. -->
+  <HeroBand>
     <div class="relative flex flex-col gap-5 @regular/page:flex-row">
       <!-- The game's own completion widget, composed by the icon protocol out of the paper
            and the symbols the columns have earned (`ipc::widget_source`).
@@ -112,5 +108,5 @@ const { t } = useMessages()
         </div>
       </div>
     </div>
-  </header>
+  </HeroBand>
 </template>
