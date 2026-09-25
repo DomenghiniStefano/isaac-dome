@@ -1,7 +1,8 @@
-//! `achievements.xml`: 637 entries with literal English text (two quote styles, which
-//! quick-xml normalizes) and, for 283 of them, the unlock condition in the XML comment
-//! that precedes the element. The condition is data: it's kept raw, and the graph (M2)
-//! interprets it, not this crate.
+//! `achievements.xml`: entries with literal English text (two quote styles, which
+//! quick-xml normalizes) and, for some of them, the unlock condition in the XML comment
+//! that precedes the element — 637 entries and 283 conditions in the Repentance+ file of
+//! 2026-09-04 (`tests/real_data.rs`). The condition is data: it's kept raw, and the graph
+//! (M2) interprets it, not this crate.
 
 use crate::diagnostics::{Diagnostic, SkipReason, Source};
 use crate::ids::AchievementId;

@@ -1,4 +1,5 @@
-//! `challenges.xml`: 45 challenges with literal names. The unlock link here is
+//! `challenges.xml`: challenges with literal names, 45 in the Repentance+ file of
+//! 2026-09-04 (`tests/real_data.rs`). The unlock link here is
 //! **plural** (`achievements="42,34,53"`): a list, not a single id. In the real file
 //! the lists aren't always comma-separated: challenge 44 ("Red Redemption") has
 //! `achievements="490 415"`, space-separated. And `startingitems` can contain

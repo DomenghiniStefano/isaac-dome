@@ -1,4 +1,5 @@
-//! `bossportraits.xml`: 103 bosses with literal name and portrait. Two declared
+//! `bossportraits.xml`: bosses with literal name and portrait, 103 in the Repentance+ file
+//! of 2026-09-04 (`tests/real_data.rs`). Two declared
 //! portraits (*The Beast*, *Cadavra*) don't exist in the archives: the catalog reports
 //! them as-is from the file, and it's up to whoever resolves the sprite to find out.
 

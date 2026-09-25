@@ -1,7 +1,7 @@
-//! `itempools.xml`: which pool each item appears in and with what weight. 31 pools in
-//! the Repentance file, 2,058 entries; every `Id` exists in `items.xml`, and 24
-//! collectibles are in no pool at all (that's data, not a defect; trinkets are never in
-//! pools by construction).
+//! `itempools.xml`: which pool each item appears in and with what weight. In the
+//! Repentance+ file of 2026-09-04 (`tests/real_data.rs`): 31 pools, 2,058 entries, every
+//! `Id` in `items.xml`, and 24 collectibles in no pool at all (that's data, not a defect;
+//! trinkets are never in pools by construction).
 
 use crate::diagnostics::{Diagnostic, SkipReason, Source};
 use crate::ids::ItemId;
