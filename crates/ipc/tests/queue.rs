@@ -1,20 +1,12 @@
 //! The queue as the UI sees it. The tests that matter are the ones that keep the four
 //! ways a row can be absent from collapsing into one silent "not there".
 
+mod support;
+
 use catalog::Catalog;
 use ipc::{QueueDiagnostic, QueueInputs};
 use serde_json::{json, to_value};
-
-const ITEMS: &[u8] = b"<items gfxroot=\"gfx/items/\"><passive id=\"2\" gfx=\"a.png\" name=\"A\" achievement=\"1\" /></items>";
-const ACH: &[u8] = b"<achievements gfxroot=\"gfx/ui/achievement/\"><achievement id=\"1\" text=\"t1\" gfx=\"1.png\" /><achievement id=\"2\" text=\"t2\" gfx=\"2.png\" /></achievements>";
-
-fn catalog_with_achievements() -> Catalog {
-    Catalog::build(|p| match p {
-        "items.xml" => Some(ITEMS.to_vec()),
-        "achievements.xml" => Some(ACH.to_vec()),
-        _ => None,
-    })
-}
+use support::catalog_with_achievements;
 
 fn inputs<'a>(
     catalog: Option<&'a Catalog>,
@@ -199,16 +191,8 @@ fn a_target_named_by_two_achievements_has_two_routes() {
     // A challenge's `achievements` attribute is a list, so a target really can have two ways
     // in. `achievement_unlocking` answers with the first and says nothing about the second;
     // a view that promises to say *how* you get a thing has to be able to show both.
-    let c = Catalog::build(|p| {
-        match p {
-        "achievements.xml" => Some(ACH.to_vec()),
-        "challenges.xml" => Some(
-            b"<challenges version=\"1\"><challenge id=\"4\" name=\"Both\" achievements=\"1,2\" endstage=\"1\" /></challenges>"
-                .to_vec(),
-        ),
-        _ => None,
-    }
-    });
+    // Challenge 4 of the shared fixture is named by achievements 1 and 2.
+    let c = catalog_with_achievements();
     let key = TargetKey::Challenge { id: 4 };
     assert_eq!(ipc::achievements_unlocking(&c, &key), vec![1, 2]);
     // The old function keeps its contract: the first, and only the first.
