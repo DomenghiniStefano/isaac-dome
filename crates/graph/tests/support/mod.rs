@@ -59,11 +59,11 @@ pub fn real_graph_and_flags() -> Option<(Graph, Vec<bool>)> {
     Some((Graph::build(&catalog, embedded_rules()), flags))
 }
 
-/// One entry per dated save, oldest first: file name, the evaluation, and the flags.
-/// Skips when fewer than two eras are present — a comparison needs two.
 /// A profile at one moment: the file it came from, its evaluation, and its flags.
 pub type Era = (String, BTreeMap<graph::AchievementId, NodeInfo>, Vec<bool>);
 
+/// One era per dated save that opens and carries section 1, oldest first. Skips when fewer
+/// than two eras are left — a comparison needs two.
 pub fn series_evals() -> Option<Vec<Era>> {
     let (catalog, _rs) = real_catalog()?;
     let g = Graph::build(&catalog, embedded_rules());
