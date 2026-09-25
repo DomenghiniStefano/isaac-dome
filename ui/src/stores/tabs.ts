@@ -4,7 +4,6 @@ import { StoreId } from '@/lib/constants/stores'
 import type { Point } from '@/lib/drag/dragList'
 import { oweSeed } from '@/lib/window/seeds'
 import { newWindowLabel, windowPort } from '@/lib/window/windowPort'
-import type { WindowBox } from '@/lib/window/windowPort'
 import type { Target } from '@/lib/ipc/types'
 import { pageLocation } from '@/lib/wiki/category'
 import { defaultLocation } from '@/router/routeTable'
@@ -34,7 +33,7 @@ import {
 import type { EntryAddress, Tab, TabSeed, TabsState } from './tabModel'
 
 // The open tabs, window-wide. The rules are tabModel's; this holds the result. What a window
-// holds is saved and restored by `lib/window/session.ts` (part of 3.7, landed with the tray).
+// holds is saved and restored by `composables/useWindowSession.ts`.
 export const useTabsStore = defineStore(StoreId.Tabs, () => {
   let counter = 0
   const nextId = (): string => `tab-${++counter}`
@@ -44,13 +43,13 @@ export const useTabsStore = defineStore(StoreId.Tabs, () => {
     index: 0,
   })
 
-  // **Every window starts empty and waits to be told what it holds** (`lib/window/session.ts`).
-  // A window born from a tear-off is told by the window that created it; `main` is told by its
-  // own last session. Neither ever travels in a URL.
+  // **Every window starts empty and waits to be told what it holds**
+  // (`composables/useWindowSession.ts`). A window born from a tear-off is told by the window
+  // that created it; `main` is told by its own last session. Neither ever travels in a URL.
   //
-  // `main` used to start on its landing tab instead. It doesn't any more because the landing
-  // tab would then be painted and replaced a moment later by the session — a tab appearing and
-  // vanishing, which is worse than a bar that is empty for the length of one read.
+  // Starting `main` on its landing tab instead would paint it and replace it a moment later
+  // with the session — a tab appearing and vanishing, which is worse than a bar that is empty
+  // for the length of one read.
   const empty: TabsState = { tabs: [], activeId: '' }
   const state = ref<TabsState>(empty)
   const pending = ref(true)
@@ -74,8 +73,8 @@ export const useTabsStore = defineStore(StoreId.Tabs, () => {
     state.value = selectTab(state.value, id)
   }
   // Closing the last tab of a secondary window closes the window: that window *is* its tabs,
-  // and an empty one has nothing to be (owner, 2026-09-13). The first window keeps its landing
-  // tab instead — the app is still running, and its bar is never empty.
+  // and an empty one has nothing to be. The first window keeps its landing tab instead — the
+  // app is still running, and its bar is never empty.
   const close = async (id: string): Promise<void> => {
     if (state.value.tabs.length === 1 && !windowPort.isMain()) {
       await windowPort.closeSelf()
@@ -164,10 +163,9 @@ export const useTabsStore = defineStore(StoreId.Tabs, () => {
   }
 
   // A tab that has left the strip and has not landed yet. It leaves the moment the drag tears
-  // it off, not at the release (owner, 2026-09-13): what you are dragging is no longer in the
-  // bar, which is what a browser does and what the owner asked for. Until the drag ends it
-  // belongs to nobody, and the window it left stays open — even empty — because it can still
-  // come back.
+  // it off, not at the release: what you are dragging is no longer in the bar, which is what a
+  // browser does. Until the drag ends it belongs to nobody, and the window it left stays open —
+  // even empty — because it can still come back.
   const inFlight = ref<{ seed: TabSeed; index: number } | null>(null)
 
   const liftOut = (id: string): boolean => {
@@ -233,15 +231,16 @@ export const useTabsStore = defineStore(StoreId.Tabs, () => {
   // and the gap the marker is drawn in is the gap the tab is docked into: one computation.
   const aimed = ref<number | null>(null)
 
-  // This window's geometry for the hover: the one already read, or read now on its first point.
-  const hoverGeometry = async (): Promise<WindowBox> => {
-    const known = incoming.value?.window
-    if (known) return known
-    return windowPort.self()
-  }
-
+  // This window's geometry for the hover: the one already read, kept without an `await` so a
+  // `Hovering` followed by a `HoverLeft` in the same macrotask never finds `incoming` stale from
+  // a microtask it did not need — or read now, on its first point.
   const aimIncoming = async (at: Point): Promise<void> => {
-    const geometry = await hoverGeometry()
+    const known = incoming.value?.window
+    if (known) {
+      incoming.value = { at, window: known }
+      return
+    }
+    const geometry = await windowPort.self()
     incoming.value = { at, window: geometry }
   }
 

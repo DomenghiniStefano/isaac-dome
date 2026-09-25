@@ -23,9 +23,9 @@ const { t } = useMessages()
 </script>
 
 <template>
-  <!-- The label sits above its value, not beside it (card #57): the card lives in a column
-       beside the page's text, and a 128px label in a 272px column left the values wrapping
-       every second row. Stacked, the value gets the whole width at every size. -->
+  <!-- The label sits above its value, not beside it: the card lives in a column beside the
+       page's text, and a 128px label in a 272px column left the values wrapping every second
+       row. Stacked, the value gets the whole width at every size. -->
   <div
     :class="
       cn(

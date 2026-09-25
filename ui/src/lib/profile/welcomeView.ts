@@ -10,8 +10,9 @@ import { settledProfile } from './settledProfile'
  * document stores a window's tabs by location — a tab pointing at the welcome would be saved
  * and restored, which puts a state inside a document that describes contents.
  *
- * It owns two of the states the gate used to flatten (`needsChoice` and `none`), which is why
- * `gateState` no longer has them: with no profile settled the shell is not drawn at all.
+ * It owns two states `gateState` does not carry — `needsChoice` and `none` — because with no
+ * profile settled the shell is not drawn at all: `gateState` has only what is left once this
+ * file takes the rest.
  */
 export type WelcomeState =
   /** The shell draws — a profile is settled, or nothing is known yet and a guess would flash. */

@@ -438,7 +438,7 @@
                         {
                           "kind": "ref",
                           "target": {
-                            "kind": "pickup",
+                            "kind": "concept",
                             "name": "Algiz"
                           },
                           "label": "Algiz"

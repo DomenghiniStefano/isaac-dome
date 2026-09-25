@@ -84,3 +84,21 @@ describe('openPage: a wiki reference, here or in a new tab', () => {
     expect(tabs.location).toEqual({ name: RouteName.Floor })
   })
 })
+
+// A tab dragged over this strip and away again in the same tick must never leave a stale
+// `incoming` behind: once the window's geometry is known, setting it is synchronous.
+describe('aimIncoming: the geometry read once', () => {
+  it('sets incoming synchronously once the window is already known, so a hover leaving in the same tick clears it', async () => {
+    const tabs = useTabsStore()
+    await tabs.aimIncoming({ x: 0, y: 0 })
+    expect(tabs.incoming).not.toBeNull()
+
+    void tabs.aimIncoming({ x: 10, y: 10 })
+    tabs.clearIncoming()
+
+    // Nothing the first call left pending should still be able to write `incoming` after it.
+    await Promise.resolve()
+    await Promise.resolve()
+    expect(tabs.incoming).toBeNull()
+  })
+})

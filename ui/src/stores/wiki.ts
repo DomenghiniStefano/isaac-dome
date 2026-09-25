@@ -77,8 +77,8 @@ export const useWikiStore = defineStore(StoreId.Wiki, () => {
     failures.value.get(key) ?? null
 
   // Not `tracked`, and deliberately: the status and the error `tracked` writes belong to the
-  // index. A page keeps its own failure (card #80, R9), and asking again reads it again —
-  // `entries` never took the key, so nothing stands in the way.
+  // index. A page keeps its own failure, and asking again reads it again — `entries` never
+  // took the key, so nothing stands in the way.
   const loadEntry = async (target: Target): Promise<void> => {
     const key = pageKey(target)
     if (key === null || entries.value.has(key) || pending.has(key)) return

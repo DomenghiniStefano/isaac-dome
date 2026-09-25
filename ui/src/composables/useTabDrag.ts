@@ -146,10 +146,10 @@ export const useTabDrag = (options: TabDragOptions): TabDrag => {
       settings.scale,
     )
     tellHovered(target, p)
-    // **The card never leaves the cursor until the release** (owner, 2026-09-13). It used to
-    // hide itself over a strip, on the grounds that the marker there says the same thing — but
-    // the two say different things: the marker says *where among these tabs*, the card says
-    // *what you are holding*, and the hand holding it should never look empty.
+    // **The card never leaves the cursor until the release.** Hiding it over a strip on the
+    // grounds that the marker there says the same thing would be wrong: the marker says *where
+    // among these tabs*, the card says *what you are holding*, and the hand holding it should
+    // never look empty.
     void movePreview(p)
   }
 

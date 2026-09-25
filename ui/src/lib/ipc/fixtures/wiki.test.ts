@@ -1,6 +1,8 @@
 import { describe, expect, it } from 'vitest'
 import {
   extractionReportAnswer,
+  samplePages,
+  wikiConditions,
   wikiEntryAnswer,
   wikiIndexAnswer,
 } from './wiki'
@@ -59,6 +61,58 @@ describe('the wiki fixture', () => {
     const none = wikiIndexAnswer({ withWiki: false })
     expect(none.info.kind).toBe('missing')
     expect(none.pages).toHaveLength(0)
+  })
+})
+
+describe('wikiConditions', () => {
+  it('names the game file condition for the achievements it recorded one for', () => {
+    const conditions = wikiConditions()
+    expect(conditions.size).toBe(283)
+    expect(conditions.get(1)).toBe('have 7 or more max red hearts at one time')
+  })
+})
+
+// The kinds `Target` (ui/src/lib/ipc/types.ts) knows. A ref target outside this set is what
+// `assertNever` in `lib/wiki/pageKey.ts` throws on, which blanks the page it is read from.
+const targetKinds = new Set([
+  'item',
+  'trinket',
+  'character',
+  'achievement',
+  'challenge',
+  'entity',
+  'transformation',
+  'stage',
+  'room',
+  'concept',
+])
+
+// A `ref` inline's `target` is the only shape carrying a `Target`; walking every object that
+// has one, anywhere in the recorded page, needs no knowledge of where in the tree it sits.
+const targetKindsIn = (value: unknown, found: string[]): void => {
+  if (Array.isArray(value)) {
+    value.forEach((v) => targetKindsIn(v, found))
+    return
+  }
+  if (value === null || typeof value !== 'object') return
+  const obj = value as Record<string, unknown>
+  const target = obj.target
+  if (
+    target !== null &&
+    typeof target === 'object' &&
+    typeof (target as Record<string, unknown>).kind === 'string'
+  ) {
+    found.push((target as Record<string, unknown>).kind as string)
+  }
+  Object.values(obj).forEach((v) => targetKindsIn(v, found))
+}
+
+describe('every recorded sample page', () => {
+  it('names a ref target the Target union still knows', () => {
+    const kinds: string[] = []
+    for (const entry of samplePages.values()) targetKindsIn(entry, kinds)
+    expect(kinds.length).toBeGreaterThan(0)
+    expect(kinds.filter((k) => !targetKinds.has(k))).toEqual([])
   })
 })
 
