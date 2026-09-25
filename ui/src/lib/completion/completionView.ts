@@ -1,7 +1,6 @@
+import type { Message } from '@/i18n/message'
 import { compact, first, last } from 'lodash-es'
 import { assertNever } from '@/lib/assertNever'
-import type { MessageKey } from '@/i18n/messageKey'
-import type { MessageSchema } from '@/i18n/messages/it'
 import {
   CellLevel,
   SecondLevelView,
@@ -54,7 +53,7 @@ const levelStatus = (level: CellLevel): CellStatus => {
   }
 }
 
-const statusText: Record<CellStatus, MessageKey<MessageSchema>> = {
+const statusText: Record<CellStatus, Message> = {
   [CellStatus.Empty]: 'completion.cell.empty',
   [CellStatus.Normal]: 'completion.cell.normal',
   [CellStatus.Hard]: 'completion.cell.hard',
@@ -62,7 +61,7 @@ const statusText: Record<CellStatus, MessageKey<MessageSchema>> = {
   [CellStatus.Unexpected]: 'completion.cell.unexpected',
 }
 
-const secondLevelText: Record<SecondLevelView, MessageKey<MessageSchema>> = {
+const secondLevelText: Record<SecondLevelView, Message> = {
   [SecondLevelView.Hard]: 'completion.cell.hard',
   [SecondLevelView.UltraGreedier]: 'completion.cell.ultraGreedier',
 }
@@ -73,7 +72,7 @@ const secondLevelText: Record<SecondLevelView, MessageKey<MessageSchema>> = {
 export const cellStatusKey = (
   status: CellStatus,
   second: SecondLevelView,
-): MessageKey<MessageSchema> =>
+): Message =>
   status === CellStatus.Hard ? secondLevelText[second] : statusText[status]
 
 export const cellReading = (cell: Cell): CellReading => {

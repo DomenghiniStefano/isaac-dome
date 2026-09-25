@@ -1,6 +1,6 @@
 import { createI18n, useI18n } from 'vue-i18n'
 import { Locale, resolveLocale } from './locale'
-import type { MessageKey } from './messageKey'
+import type { Translate } from './message'
 import { en } from './messages/en'
 import { it, type MessageSchema } from './messages/it'
 
@@ -16,12 +16,9 @@ export const i18n = createI18n<[MessageSchema], Locale, false>({
 // Global scope, so no component needs a local i18n instance.
 // A message with a value in it (`{name}`) takes the values as a second argument: the word
 // order around the value is the translation's business, not the caller's.
-export const useMessages = () => {
+export const useMessages = (): { t: Translate } => {
   const { t } = useI18n({ useScope: 'global' })
   return {
-    t: (
-      key: MessageKey<MessageSchema>,
-      params?: Record<string, unknown>,
-    ): string => (params ? t(key, params) : t(key)),
+    t: (key, params) => (params ? t(key, params) : t(key)),
   }
 }

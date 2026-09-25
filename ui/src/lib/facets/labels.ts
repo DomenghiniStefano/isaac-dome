@@ -1,13 +1,10 @@
+import type { Message, Translate } from '@/i18n/message'
 import { dlcNames } from '@/lib/wiki/dlcNames'
-import type { MessageKey } from '@/i18n/messageKey'
-import type { MessageSchema } from '@/i18n/messages/it'
 import { Dlc } from '@/lib/ipc/types'
 import { OriginValue } from '@/lib/ipc/values'
 import { oneOf } from '@/lib/oneOf'
 
-export type Label = MessageKey<MessageSchema>
-
-export type Translate = (key: Label, params?: Record<string, unknown>) => string
+export type Label = Message
 
 // The words a faceted list needs, passed as message keys and never as a prefix to build them
 // from. `t(`${prefix}.rows`)` would be a key neither the i18n types nor `pnpm scan` can see: a

@@ -1,6 +1,6 @@
+import type { Message } from '@/i18n/message'
 import { camelCase } from 'lodash-es'
-import type { MessageKey } from '@/i18n/messageKey'
-import { it, type MessageSchema } from '@/i18n/messages/it'
+import { it } from '@/i18n/messages/it'
 
 // A rule's sentence in the language of the app.
 //
@@ -15,21 +15,19 @@ import { it, type MessageSchema } from '@/i18n/messages/it'
 // there prints the key itself, and a dotted path on screen is worse than an English sentence.
 // The caller shows the quote instead.
 
-type Key = MessageKey<MessageSchema>
-
 const keyIn = (
   tree: Record<string, string>,
   prefix: string,
   id: string,
-): Key | null => {
+): Message | null => {
   const name = camelCase(id)
-  return Object.hasOwn(tree, name) ? (`${prefix}.${name}` as Key) : null
+  return Object.hasOwn(tree, name) ? (`${prefix}.${name}` as Message) : null
 }
 
 /** The key of what the rule says, or `null` when it has no translation. */
-export const ruleTextKey = (id: string): Key | null =>
+export const ruleTextKey = (id: string): Message | null =>
   keyIn(it.floor.ruleText, 'floor.ruleText', id)
 
 /** The key of why the grid cannot judge the rule, or `null` when it has none. */
-export const ruleNoteKey = (id: string): Key | null =>
+export const ruleNoteKey = (id: string): Message | null =>
   keyIn(it.floor.ruleNote, 'floor.ruleNote', id)

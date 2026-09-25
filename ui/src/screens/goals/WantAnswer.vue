@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import type { Message } from '@/i18n/message'
 import { InfoIcon } from '@lucide/vue'
 import GoalRow from '@/components/plan/GoalRow.vue'
 import { Alert, AlertDescription } from '@/components/ui/alert'
@@ -10,11 +11,7 @@ import { WantBlockKind } from '@/lib/graph/wantBlocks'
 import type { WantBlock } from '@/lib/graph/wantBlocks'
 import { nodeSlot } from '@/lib/graph/unlockFacets'
 import { WantDiagnostic } from '@/lib/ipc/types'
-import type { MessageKey } from '@/i18n/messageKey'
-import type { MessageSchema } from '@/i18n/messages/it'
 import type { TabLocation } from '@/router/routeTable'
-
-type Message = MessageKey<MessageSchema>
 
 defineProps<{
   blocks: WantBlock[]
