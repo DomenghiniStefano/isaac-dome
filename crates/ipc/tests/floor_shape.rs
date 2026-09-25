@@ -119,3 +119,41 @@ fn room_kinds_lists_every_kind_the_wire_declares_and_each_one_round_trips() {
         assert!(ipc::ROOM_KINDS.contains(&kind), "{value}");
     }
 }
+
+/// The diagnostics, exactly, in the order the grid is checked: its shape first and alone, then
+/// whether anything is painted, then whether a start room is. The rankings still come for a
+/// grid of the right size, painted or not.
+#[test]
+fn the_diagnostics_are_exactly_what_the_grid_lacks_in_a_fixed_order() {
+    use ipc::FloorDiagnostic;
+
+    let malformed = floor_view(vec![Some(RoomKindView::Start); 3]);
+    assert_eq!(
+        (
+            malformed.painted,
+            malformed.solutions.len(),
+            malformed.diagnostics
+        ),
+        (3, 0, vec![FloorDiagnostic::GridMalformed { cells: 3 }])
+    );
+
+    let empty = floor_view(empty_cells());
+    assert_eq!(
+        empty.diagnostics,
+        vec![FloorDiagnostic::GridEmpty, FloorDiagnostic::NoStartRoom]
+    );
+    assert_eq!(empty.solutions.len(), 3, "one ranking per kind of secret");
+
+    let mut no_start = empty_cells();
+    no_start[84] = Some(RoomKindView::Normal);
+    assert_eq!(
+        floor_view(no_start).diagnostics,
+        vec![FloorDiagnostic::NoStartRoom]
+    );
+
+    let mut started = empty_cells();
+    started[84] = Some(RoomKindView::Start);
+    let v = floor_view(started);
+    assert_eq!(v.painted, 1);
+    assert!(v.diagnostics.is_empty(), "{:?}", v.diagnostics);
+}

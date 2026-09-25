@@ -2,7 +2,7 @@ use catalog::Catalog;
 use ipc::{
     next_steps, plan_view, unlock_view, AchievementRef, GraphInfo, IconRef, ItemKindView,
     NextSteps, OriginView, PlanDiagnostic, RequirementView, StepsBasis, StepsSection, Target,
-    UnlockDiagnostic, UnlockNode, UnlockTarget, UnlockTotals, UnlockView, STEPS,
+    UnlockDiagnostic, UnlockInputs, UnlockNode, UnlockTarget, UnlockTotals, UnlockView, STEPS,
 };
 use serde_json::{json, to_value, Value};
 
@@ -239,13 +239,15 @@ fn unlock_view_maps_slots_to_achievements_and_marks_the_ones_beyond_the_catalog(
     // 6 slots: 0 unused, 1..=3 known, 4..=5 beyond the catalog.
     let flags = [false, true, false, true, true, false];
     let v = unlock_view(
-        Some(&catalog_with_achievements()),
-        &ipc::for_tests::bosses(&catalog_with_achievements()),
-        None,
-        Some(&flags),
-        None,
-        None,
-        None,
+        UnlockInputs {
+            catalog: Some(&catalog_with_achievements()),
+            bosses: &ipc::for_tests::bosses(&catalog_with_achievements()),
+            dataset: None,
+            flags: Some(&flags),
+            graph: None,
+            eval: None,
+            progress: None,
+        },
         |_| None,
     );
     assert_eq!(v.nodes.len(), 5, "one per slot 1..=5");
@@ -290,13 +292,15 @@ fn unlock_view_maps_slots_to_achievements_and_marks_the_ones_beyond_the_catalog(
 fn unlocks_and_origin_come_from_the_catalog_and_icons_only_when_they_resolve() {
     let flags = [false, false, false, false];
     let v = unlock_view(
-        Some(&catalog_with_achievements()),
-        &ipc::for_tests::bosses(&catalog_with_achievements()),
-        None,
-        Some(&flags),
-        None,
-        None,
-        None,
+        UnlockInputs {
+            catalog: Some(&catalog_with_achievements()),
+            bosses: &ipc::for_tests::bosses(&catalog_with_achievements()),
+            dataset: None,
+            flags: Some(&flags),
+            graph: None,
+            eval: None,
+            progress: None,
+        },
         // Only one reference resolves. The row for the other one still has to exist, with
         // `iconUrl: null`: an item we can't picture is not an item we hide.
         |r| {
@@ -342,13 +346,15 @@ fn unlocks_and_origin_come_from_the_catalog_and_icons_only_when_they_resolve() {
 #[test]
 fn catalog_beyond_slots_and_no_catalog_degrade_with_a_diagnostic() {
     let v = unlock_view(
-        Some(&catalog_with_achievements()),
-        &ipc::for_tests::bosses(&catalog_with_achievements()),
-        None,
-        Some(&[false, true]),
-        None,
-        None,
-        None,
+        UnlockInputs {
+            catalog: Some(&catalog_with_achievements()),
+            bosses: &ipc::for_tests::bosses(&catalog_with_achievements()),
+            dataset: None,
+            flags: Some(&[false, true]),
+            graph: None,
+            eval: None,
+            progress: None,
+        },
         |_| None,
     );
     assert_eq!(v.nodes.len(), 1);
@@ -358,13 +364,15 @@ fn catalog_beyond_slots_and_no_catalog_degrade_with_a_diagnostic() {
     );
 
     let v = unlock_view(
-        None,
-        ipc::BossKeys::NONE,
-        None,
-        Some(&[false, true, true]),
-        None,
-        None,
-        None,
+        UnlockInputs {
+            catalog: None,
+            bosses: ipc::BossKeys::NONE,
+            dataset: None,
+            flags: Some(&[false, true, true]),
+            graph: None,
+            eval: None,
+            progress: None,
+        },
         |_| None,
     );
     assert_eq!(v.nodes.len(), 2);
@@ -382,13 +390,15 @@ fn catalog_beyond_slots_and_no_catalog_degrade_with_a_diagnostic() {
 #[test]
 fn a_missing_achievement_section_is_declared_and_compares_nothing() {
     let v = unlock_view(
-        Some(&catalog_with_achievements()),
-        &ipc::for_tests::bosses(&catalog_with_achievements()),
-        None,
-        None,
-        None,
-        None,
-        None,
+        UnlockInputs {
+            catalog: Some(&catalog_with_achievements()),
+            bosses: &ipc::for_tests::bosses(&catalog_with_achievements()),
+            dataset: None,
+            flags: None,
+            graph: None,
+            eval: None,
+            progress: None,
+        },
         |_| None,
     );
     assert!(v.nodes.is_empty());
@@ -412,13 +422,15 @@ fn a_missing_achievement_section_is_declared_and_compares_nothing() {
     );
     // No catalog and no section: two different pieces of news, two diagnostics.
     let v = unlock_view(
-        None,
-        ipc::BossKeys::NONE,
-        None,
-        None,
-        None,
-        None,
-        None,
+        UnlockInputs {
+            catalog: None,
+            bosses: ipc::BossKeys::NONE,
+            dataset: None,
+            flags: None,
+            graph: None,
+            eval: None,
+            progress: None,
+        },
         |_| None,
     );
     assert_eq!(
@@ -435,13 +447,15 @@ fn a_missing_achievement_section_is_declared_and_compares_nothing() {
 #[test]
 fn an_empty_but_present_section_still_compares_with_the_catalog() {
     let v = unlock_view(
-        Some(&catalog_with_achievements()),
-        &ipc::for_tests::bosses(&catalog_with_achievements()),
-        None,
-        Some(&[]),
-        None,
-        None,
-        None,
+        UnlockInputs {
+            catalog: Some(&catalog_with_achievements()),
+            bosses: &ipc::for_tests::bosses(&catalog_with_achievements()),
+            dataset: None,
+            flags: Some(&[]),
+            graph: None,
+            eval: None,
+            progress: None,
+        },
         |_| None,
     );
     assert!(v.nodes.is_empty());
@@ -459,13 +473,15 @@ fn without_a_graph_there_are_no_next_steps_to_suggest() {
     flags[2] = true;
     flags[5] = true;
     let v = unlock_view(
-        None,
-        ipc::BossKeys::NONE,
-        None,
-        Some(&flags),
-        None,
-        None,
-        None,
+        UnlockInputs {
+            catalog: None,
+            bosses: ipc::BossKeys::NONE,
+            dataset: None,
+            flags: Some(&flags),
+            graph: None,
+            eval: None,
+            progress: None,
+        },
         |_| None,
     );
     assert!(
@@ -734,13 +750,15 @@ fn a_challenge_target_carries_the_achievements_it_rewards() {
         _ => None,
     });
     let v = unlock_view(
-        Some(&c),
-        &ipc::for_tests::bosses(&c),
-        None,
-        Some(&[false, false, false, false]),
-        None,
-        None,
-        None,
+        UnlockInputs {
+            catalog: Some(&c),
+            bosses: &ipc::for_tests::bosses(&c),
+            dataset: None,
+            flags: Some(&[false, false, false, false]),
+            graph: None,
+            eval: None,
+            progress: None,
+        },
         |_| None,
     );
     assert_eq!(
@@ -919,13 +937,15 @@ fn without_a_dataset_no_target_carries_a_page() {
     let c = catalog_with_achievements();
     let flags = [false, true, true, true];
     let v = unlock_view(
-        Some(&c),
-        &ipc::for_tests::bosses(&c),
-        None,
-        Some(&flags),
-        None,
-        None,
-        None,
+        UnlockInputs {
+            catalog: Some(&c),
+            bosses: &ipc::for_tests::bosses(&c),
+            dataset: None,
+            flags: Some(&flags),
+            graph: None,
+            eval: None,
+            progress: None,
+        },
         |_| None,
     );
     let pages: Vec<Option<&Target>> = v
@@ -1039,13 +1059,15 @@ fn a_section_with_no_steps_is_not_emitted() {
     let mut flags = vec![false; 10];
     flags[2] = true;
     let v = unlock_view(
-        None,
-        ipc::BossKeys::NONE,
-        None,
-        Some(&flags),
-        None,
-        None,
-        None,
+        UnlockInputs {
+            catalog: None,
+            bosses: ipc::BossKeys::NONE,
+            dataset: None,
+            flags: Some(&flags),
+            graph: None,
+            eval: None,
+            progress: None,
+        },
         |_| None,
     );
     assert!(next_steps(&v, &Default::default()).sections.is_empty());
@@ -1130,13 +1152,15 @@ fn the_pair_carries_the_steps_of_the_view_it_travels_with() {
     let mut flags = vec![false; 10];
     flags[2] = true;
     let view = unlock_view(
-        None,
-        ipc::BossKeys::NONE,
-        None,
-        Some(&flags),
-        None,
-        None,
-        None,
+        UnlockInputs {
+            catalog: None,
+            bosses: ipc::BossKeys::NONE,
+            dataset: None,
+            flags: Some(&flags),
+            graph: None,
+            eval: None,
+            progress: None,
+        },
         |_| None,
     );
     let pair = ipc::graph_views(view.clone(), &Default::default());
@@ -1204,4 +1228,41 @@ fn a_queued_node_is_absent_from_both_sections() {
     let s = next_steps(&v, &std::collections::BTreeSet::from([1]));
     assert_eq!(slots_of(&s, StepsBasis::FanOut), vec![2]);
     assert!(slots_of(&s, StepsBasis::Closeness).is_empty());
+}
+
+/// The order the plan's doc promises, all four kinds at once: the store, then the unreadable
+/// rows in the order received, then the unresolved keys in the order of the goals.
+#[test]
+fn the_plan_diagnostics_go_from_the_problem_that_explains_the_most_to_the_least() {
+    let c = catalog_with_achievements();
+    let unknown = |id: &str| ipc::Goal {
+        target: ipc::TargetKey::Item {
+            item_kind: ItemKindView::Passive,
+            id: 999_999,
+        },
+        ..goal(id)
+    };
+    let id = |s: &str| ipc::GoalId::from_str_unchecked(s);
+    let p = plan_view(
+        Some(&c),
+        &ipc::for_tests::bosses(&c),
+        None,
+        vec![unknown("g9"), goal("a"), unknown("g8")],
+        vec![id("x"), id("y")],
+        Some(ipc::StoreReason::Unreadable),
+        |_| None,
+    );
+    assert_eq!(
+        p.diagnostics,
+        vec![
+            PlanDiagnostic::StoreUnavailable {
+                reason: ipc::StoreReason::Unreadable
+            },
+            PlanDiagnostic::UnreadableGoal { id: id("x") },
+            PlanDiagnostic::UnreadableGoal { id: id("y") },
+            PlanDiagnostic::UnresolvedGoal { id: id("g9") },
+            PlanDiagnostic::UnresolvedGoal { id: id("g8") },
+        ]
+    );
+    assert_eq!(p.goals.len(), 3, "every goal stays, resolved or not");
 }

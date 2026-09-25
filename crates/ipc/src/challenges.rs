@@ -103,24 +103,25 @@ pub fn challenges_view(
     mut icon: impl FnMut(&IconRef) -> Option<String>,
 ) -> ChallengesView {
     let slots = challenges.map_or(0, |f| f.len() as u32);
-    // Cell 0 is no challenge, exactly as slot 0 is no item.
-    let set_cells = challenges.map_or(0, |f| f.iter().skip(1).filter(|b| **b).count() as u32);
-
-    let mut diagnostics = Vec::new();
-    if challenges.is_none() {
-        diagnostics.push(ChallengesDiagnostic::NoChallengesSection);
-    }
-    if achievements.is_none() {
-        diagnostics.push(ChallengesDiagnostic::NoAchievementSection);
-    }
-    if dataset.is_none() {
-        diagnostics.push(ChallengesDiagnostic::NoWiki);
-    }
+    let diagnostics = [
+        challenges
+            .is_none()
+            .then_some(ChallengesDiagnostic::NoChallengesSection),
+        achievements
+            .is_none()
+            .then_some(ChallengesDiagnostic::NoAchievementSection),
+        dataset.is_none().then_some(ChallengesDiagnostic::NoWiki),
+        catalog.is_none().then_some(ChallengesDiagnostic::NoCatalog),
+    ]
+    .into_iter()
+    .flatten()
+    .collect();
 
     let Some(c) = catalog else {
         // No names and no ids to list; the cells are still countable, and saying so is the
         // difference between "we could not read the game" and "you have done none".
-        diagnostics.push(ChallengesDiagnostic::NoCatalog);
+        // Cell 0 is no challenge, exactly as slot 0 is no item.
+        let set_cells = challenges.map_or(0, |f| f.iter().skip(1).filter(|b| **b).count() as u32);
         return ChallengesView {
             challenges: Vec::new(),
             totals: ChallengeTotals {
@@ -134,59 +135,14 @@ pub fn challenges_view(
 
     let mut listed: Vec<_> = c.challenges().collect();
     listed.sort_by_key(|ch| ch.id.0);
-
+    let profile = Profile {
+        challenges,
+        achievements,
+    };
     let rows: Vec<ChallengeRow> = listed
         .iter()
-        .map(|ch| {
-            let number = ch.id.0;
-            let finished = recorded(challenges, number);
-            let missing: Vec<u32> = ch
-                .unlocked_by
-                .iter()
-                .filter(|a| !achievements.is_some_and(|f| recorded_done(f, a.0)))
-                .map(|a| a.0)
-                .collect();
-            let state = match finished {
-                None => ChallengeStateView::Unknown,
-                Some(true) => ChallengeStateView::Done,
-                Some(false) if missing.is_empty() => ChallengeStateView::Available,
-                Some(false) => ChallengeStateView::Blocked { missing },
-            };
-
-            let facts = challenge_facts(dataset, number);
-            let character = facts.as_ref().and_then(|f| f.character.clone());
-            let goal = facts.as_ref().map(|f| f.goal.clone());
-            let blindfolded = facts.as_ref().map(|f| f.blindfolded);
-
-            let character_name = character
-                .as_ref()
-                .and_then(|t| dataset.and_then(|d| d.entry(t)))
-                .map(|e| e.title.clone());
-
-            ChallengeRow {
-                number,
-                name: ch.name.clone(),
-                state,
-                rewards: ch
-                    .rewards
-                    .iter()
-                    .map(|a| RewardView {
-                        achievement: a.0,
-                        text: c.achievement(*a).map(|x| x.text.clone()),
-                        icon_url: icon(&IconRef::Achievement { id: a.0 }),
-                        page: page_of(dataset, Target::Achievement { id: a.0 }),
-                        done: recorded(achievements, a.0),
-                    })
-                    .collect(),
-                character,
-                character_name,
-                goal,
-                blindfolded,
-                page: page_of(dataset, Target::Challenge { number }),
-            }
-        })
+        .map(|ch| challenge_row(c, dataset, profile, ch, &mut icon))
         .collect();
-
     let done = rows
         .iter()
         .filter(|r| r.state == ChallengeStateView::Done)
@@ -199,6 +155,77 @@ pub fn challenges_view(
         },
         challenges: rows,
         diagnostics,
+    }
+}
+
+/// The two sections a row is read against, either of which may not have been read.
+#[derive(Clone, Copy)]
+struct Profile<'a> {
+    challenges: Option<&'a [bool]>,
+    achievements: Option<&'a [bool]>,
+}
+
+fn challenge_row(
+    c: &Catalog,
+    dataset: Option<&Dataset>,
+    profile: Profile<'_>,
+    ch: &catalog::Challenge,
+    icon: &mut impl FnMut(&IconRef) -> Option<String>,
+) -> ChallengeRow {
+    let number = ch.id.0;
+    let facts = challenge_facts(dataset, number);
+    let character = facts.as_ref().and_then(|f| f.character.clone());
+    let character_name = character
+        .as_ref()
+        .and_then(|t| dataset.and_then(|d| d.entry(t)))
+        .map(|e| e.title.clone());
+    ChallengeRow {
+        number,
+        name: ch.name.clone(),
+        state: state_of(ch, profile),
+        rewards: ch
+            .rewards
+            .iter()
+            .map(|a| reward_view(c, dataset, profile.achievements, *a, icon))
+            .collect(),
+        character,
+        character_name,
+        goal: facts.as_ref().map(|f| f.goal.clone()),
+        blindfolded: facts.as_ref().map(|f| f.blindfolded),
+        page: page_of(dataset, Target::Challenge { number }),
+    }
+}
+
+/// Unread is `Unknown`, never "not done"; a challenge not done is available when every
+/// achievement gating it is done, and blocked by the ones that are not.
+fn state_of(ch: &catalog::Challenge, profile: Profile<'_>) -> ChallengeStateView {
+    let missing: Vec<u32> = ch
+        .unlocked_by
+        .iter()
+        .filter(|a| !profile.achievements.is_some_and(|f| recorded_done(f, a.0)))
+        .map(|a| a.0)
+        .collect();
+    match recorded(profile.challenges, ch.id.0) {
+        None => ChallengeStateView::Unknown,
+        Some(true) => ChallengeStateView::Done,
+        Some(false) if missing.is_empty() => ChallengeStateView::Available,
+        Some(false) => ChallengeStateView::Blocked { missing },
+    }
+}
+
+fn reward_view(
+    c: &Catalog,
+    dataset: Option<&Dataset>,
+    achievements: Option<&[bool]>,
+    a: catalog::AchievementId,
+    icon: &mut impl FnMut(&IconRef) -> Option<String>,
+) -> RewardView {
+    RewardView {
+        achievement: a.0,
+        text: c.achievement(a).map(|x| x.text.clone()),
+        icon_url: icon(&IconRef::Achievement { id: a.0 }),
+        page: page_of(dataset, Target::Achievement { id: a.0 }),
+        done: recorded(achievements, a.0),
     }
 }
 

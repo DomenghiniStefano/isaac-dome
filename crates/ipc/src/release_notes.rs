@@ -28,8 +28,9 @@ pub fn release_notes(markdown: &str) -> Vec<Block> {
             });
         } else if let Some((ordered, first)) = list_item(text) {
             reader.item(ordered, first);
-        } else if line.starts_with(char::is_whitespace) && reader.continues_item(text) {
+        } else if line.starts_with(char::is_whitespace) && reader.in_item() {
             // An indented line under an item is that item wrapping, not a new paragraph.
+            reader.wrap_item(text);
         } else {
             reader.end_list();
             reader.paragraph.push(text.to_string());
@@ -60,14 +61,17 @@ impl Reader {
         }
     }
 
-    fn continues_item(&mut self, text: &str) -> bool {
-        match self.list.as_mut().and_then(|(_, items)| items.last_mut()) {
-            Some(last) => {
-                last.push(' ');
-                last.push_str(text);
-                true
-            }
-            None => false,
+    /// Whether a list item is open for an indented line to continue.
+    fn in_item(&self) -> bool {
+        self.list
+            .as_ref()
+            .is_some_and(|(_, items)| !items.is_empty())
+    }
+
+    fn wrap_item(&mut self, text: &str) {
+        if let Some(last) = self.list.as_mut().and_then(|(_, items)| items.last_mut()) {
+            last.push(' ');
+            last.push_str(text);
         }
     }
 
