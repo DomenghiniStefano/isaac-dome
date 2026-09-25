@@ -1,7 +1,10 @@
 //! The view-model of "what we managed to extract".
 
-use ipc::{archive_views, data_url, ArchiveMode};
-use unpack::{ArchiveInfo, CompressionMode};
+use ipc::{
+    archive_views, broken_archive_views, data_url, extraction_report, wiki_info, ArchiveMode,
+    ArchiveReason, IoReason,
+};
+use unpack::{ArchiveFault, ArchiveInfo, BrokenArchive, CompressionMode};
 
 fn info(name: &str, mode: CompressionMode, entries: usize) -> ArchiveInfo {
     ArchiveInfo {
@@ -74,4 +77,91 @@ fn base64_matches_the_known_vectors() {
         data_url(&[0xfb, 0xff, 0xfe]).replace("data:image/png;base64,", ""),
         "+//+"
     );
+}
+
+fn broken(name: &str, fault: ArchiveFault) -> BrokenArchive {
+    BrokenArchive {
+        name: name.to_string(),
+        fault,
+    }
+}
+
+#[test]
+fn a_broken_archive_says_which_case_it_is() {
+    // Card #80, R6: an archive that is there and does not open reaches the report, with the
+    // same shape a save that does not open already has (`SaveReason`).
+    let views = broken_archive_views(&[
+        broken("repentance.a", ArchiveFault::TooShort),
+        broken("graphics.a", ArchiveFault::BadMagic),
+        broken(
+            "music.a",
+            ArchiveFault::Io {
+                kind: std::io::ErrorKind::PermissionDenied,
+            },
+        ),
+        broken(
+            "fonts.a",
+            ArchiveFault::Io {
+                kind: std::io::ErrorKind::UnexpectedEof,
+            },
+        ),
+    ]);
+    assert_eq!(
+        views.iter().map(|v| v.name.as_str()).collect::<Vec<_>>(),
+        ["repentance.a", "graphics.a", "music.a", "fonts.a"]
+    );
+    assert_eq!(views[0].reason, ArchiveReason::TooShort);
+    assert_eq!(views[1].reason, ArchiveReason::BadMagic);
+    assert_eq!(
+        views[2].reason,
+        ArchiveReason::Io {
+            reason: IoReason::PermissionDenied
+        }
+    );
+    assert_eq!(
+        views[3].reason,
+        ArchiveReason::Io {
+            reason: IoReason::Other
+        }
+    );
+}
+
+#[test]
+fn broken_archive_json_shape_is_pinned() {
+    let views = broken_archive_views(&[broken(
+        "music.a",
+        ArchiveFault::Io {
+            kind: std::io::ErrorKind::PermissionDenied,
+        },
+    )]);
+    let v = serde_json::to_value(&views[0]).expect("serializes");
+    assert_eq!(v["name"], "music.a");
+    assert_eq!(v["reason"]["kind"], "io");
+    assert_eq!(v["reason"]["reason"], "permissionDenied");
+    let kind = |f: ArchiveFault| {
+        serde_json::to_value(&broken_archive_views(&[broken("x.a", f)])[0]).unwrap()["reason"]
+            ["kind"]
+            .as_str()
+            .unwrap()
+            .to_string()
+    };
+    assert_eq!(kind(ArchiveFault::TooShort), "tooShort");
+    assert_eq!(kind(ArchiveFault::BadMagic), "badMagic");
+}
+
+#[test]
+fn the_report_carries_the_broken_archives_next_to_the_open_ones() {
+    let report = extraction_report(
+        archive_views(&[info("config.a", CompressionMode::Lzw, 24)]),
+        broken_archive_views(&[broken("repentance.a", ArchiveFault::BadMagic)]),
+        None,
+        Vec::new(),
+        wiki_info(wiki::Dataset::embedded(), None),
+    );
+    let v = serde_json::to_value(&report).expect("serializes");
+    assert_eq!(v["archives"].as_array().map(Vec::len), Some(1));
+    assert_eq!(v["broken"][0]["name"], "repentance.a");
+    assert_eq!(v["broken"][0]["reason"]["kind"], "badMagic");
+    // A broken archive indexes nothing: the total counts the open ones only.
+    assert_eq!(v["totalEntries"], 24);
 }

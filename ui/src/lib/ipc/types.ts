@@ -543,6 +543,19 @@ export type ArchiveMode =
  */
 export type ArchiveView = { name: string; mode: ArchiveMode; entries: number }
 
+/**
+ * Why an archive that is there did not open: the three cases a save has (`SaveReason`),
+ * because they are the three things a file can do.
+ */
+export type ArchiveReason =
+  { kind: 'tooShort' } | { kind: 'badMagic' } | { kind: 'io'; reason: IoReason }
+
+/**
+ * An archive the install has and that did not open (card #80, R6). Its name is one of the
+ * game's own archive names, never a path.
+ */
+export type BrokenArchiveView = { name: string; reason: ArchiveReason }
+
 export type KindCounts = {
   passives: number
   actives: number
@@ -571,6 +584,10 @@ export type SpriteView = { id: number; name: string; dataUrl: string }
  */
 export type ExtractionReport = {
   archives: Array<ArchiveView>
+  /**
+   * The archives that are there and did not open: not in `archives`, not in the total.
+   */
+  broken: Array<BrokenArchiveView>
   /**
    * Total entries across the indexes of the opened archives.
    */
