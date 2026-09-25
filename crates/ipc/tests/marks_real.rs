@@ -13,8 +13,8 @@
 
 mod support;
 
-use ipc::{counter_index, BOSSES, ROSTER};
-use support::counters;
+use ipc::{BOSSES, ROSTER};
+use support::{cell_at_position, counters};
 use test_support::{dated_series, SERIES};
 
 /// The dated series `samples/` can hold, **each walked on its own**. Never one series
@@ -65,7 +65,7 @@ fn no_mark_appears_without_a_kill_of_that_boss() {
             for (column, boss, kill_index) in KILLS {
                 let appeared: Vec<&str> = (0..ROSTER.len())
                     .filter(|&row| {
-                        counter_index(row, column)
+                        cell_at_position(row, column)
                             .and_then(|i| Some((*before.get(i)?, *after.get(i)?)))
                             .is_some_and(|(was, now)| was == 0 && now != 0)
                     })
@@ -120,7 +120,7 @@ fn the_character_that_won_is_the_character_whose_mark_appeared() {
             let rows: std::collections::BTreeSet<usize> = (0..14)
                 .filter(|&row| {
                     (0..BOSSES.len()).any(|column| {
-                        counter_index(row, column)
+                        cell_at_position(row, column)
                             .and_then(|i| Some((*before.get(i)?, *after.get(i)?)))
                             .is_some_and(|(was, now)| was == 0 && now != 0)
                     })
@@ -173,7 +173,7 @@ fn the_three_located_columns_are_not_dead_cells() {
         };
         for (column, boss, kill_index) in KILLS {
             let started = (0..ROSTER.len())
-                .filter_map(|row| counter_index(row, column))
+                .filter_map(|row| cell_at_position(row, column))
                 .filter(|&i| last.get(i).is_some_and(|&v| v != 0))
                 .count();
             let kills = last.get(kill_index).copied().unwrap_or(0);
@@ -237,7 +237,7 @@ fn the_online_bit_never_stands_without_the_first_level_bit() {
         for (name, values) in &series {
             for (row, character) in ROSTER.iter().map(|r| r.name).enumerate() {
                 for (column, boss) in BOSSES.iter().enumerate() {
-                    let Some(v) = counter_index(row, column).and_then(|i| values.get(i)) else {
+                    let Some(v) = cell_at_position(row, column).and_then(|i| values.get(i)) else {
                         continue;
                     };
                     checked += 1;
@@ -302,7 +302,7 @@ fn the_online_run_lit_the_cell_it_took_and_no_other() {
     let gained: Vec<(&str, &str)> = (0..ROSTER.len())
         .flat_map(|row| (0..BOSSES.len()).map(move |column| (row, column)))
         .filter(|&(row, column)| {
-            counter_index(row, column)
+            cell_at_position(row, column)
                 .and_then(|i| Some((*before.get(i)?, *after.get(i)?)))
                 .is_some_and(|(was, now)| was & 4 == 0 && now & 4 != 0)
         })
@@ -344,7 +344,7 @@ fn a_mark_taken_the_same_day_can_lack_the_online_bit() {
                 (0..ROSTER.len())
                     .flat_map(|row| (0..BOSSES.len()).map(move |column| (row, column)))
                     .filter(|&(row, column)| {
-                        counter_index(row, column)
+                        cell_at_position(row, column)
                             .and_then(|i| Some((*before.get(i)?, *after.get(i)?)))
                             .is_some_and(|(was, now)| keep(was, now))
                     })

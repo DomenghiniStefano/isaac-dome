@@ -1,8 +1,8 @@
 use catalog::Catalog;
 use core_save::{cell_index, Column};
 use ipc::{
-    counter_index, marks_matrix, Cell, CellLevel, CharacterGroup, IconRef, MarkArtView,
-    SecondLevelView, BOSSES, ROSTER,
+    marks_matrix, Cell, CellLevel, CharacterGroup, IconRef, MarkArtView, SecondLevelView, BOSSES,
+    ROSTER,
 };
 
 #[test]
@@ -56,21 +56,31 @@ fn the_roster_carries_each_rows_key_and_form() {
 }
 
 /// The layout's indices are pinned in `core-save`'s own tests (`marks_layout.rs`), where the
-/// layout is. What this crate adds is the screen's translation, a column's index in `BOSSES`
-/// onto the layout's `Column`, and that is what is held here: every cell, and nothing past the
-/// twelfth column.
+/// layout is. What this crate adds is the screen's translation, the layout's `Column` onto a
+/// position in `BOSSES`, and that is what is held here: every located cell is drawn where its
+/// column is named, and a row has no cell past the twelfth column.
 #[test]
-fn counter_index_is_the_layouts_cell_at_the_columns_position() {
+fn the_matrix_draws_the_layouts_cell_at_the_columns_position() {
     for row in 0..ROSTER.len() {
         for (b, column) in Column::ALL.into_iter().enumerate() {
-            assert_eq!(
-                counter_index(row, b),
-                cell_index(row, column),
+            let Some(i) = cell_index(row, column) else {
+                continue;
+            };
+            let m = marks_matrix(&counters(523, &[(i, NORMAL)]), None, |_| None);
+            let cells = &m.characters[row].cells;
+            assert_eq!(cells.len(), BOSSES.len(), "a thirteenth column");
+            assert!(
+                matches!(
+                    cells[b],
+                    Cell::Known {
+                        level: CellLevel::Normal,
+                        ..
+                    }
+                ),
                 "{row} x {column:?}"
             );
         }
     }
-    assert_eq!(counter_index(0, BOSSES.len()), None, "a thirteenth column");
 }
 
 /// A fake counters section, as long as a real save, all zero
@@ -487,7 +497,7 @@ const HARD: u32 = 3;
 /// Every cell of `column` set to `value`, for the rows that have one.
 fn whole_column(column: usize, value: u32) -> Vec<(usize, u32)> {
     (0..ROSTER.len())
-        .filter_map(|row| counter_index(row, column).map(|i| (i, value)))
+        .filter_map(|row| cell_index(row, Column::ALL[column]).map(|i| (i, value)))
         .collect()
 }
 
@@ -516,7 +526,7 @@ fn a_column_reaches_hard_only_when_every_readable_cell_does() {
     let c = catalog_with_heads();
     // One character on hard is not the column: thirty-three others have not done it.
     let one = marks_matrix(
-        &counters(523, &[(counter_index(0, 0).unwrap(), HARD)]),
+        &counters(523, &[(cell_index(0, Column::MomsHeart).unwrap(), HARD)]),
         Some(&c),
         |r| Some(r.to_path()),
     );

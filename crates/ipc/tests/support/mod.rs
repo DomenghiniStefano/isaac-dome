@@ -53,3 +53,9 @@ pub fn counters(path: &std::path::Path) -> Option<Vec<u32>> {
         .ok()?
         .u32s(core_save::Kind::Counters)
 }
+
+/// The counters index of the cell at `row` and the column at `position` in `BOSSES`: the
+/// tests walk the matrix by position, the layout names a column by type.
+pub fn cell_at_position(row: usize, position: usize) -> Option<usize> {
+    core_save::cell_index(row, *core_save::Column::ALL.get(position)?)
+}

@@ -46,7 +46,7 @@ impl<'a> SaveProgress<'a> {
     /// "won online", measured 2026-09-12, not a level — is left out here for the same reason
     /// it is left out of a drawn cell's level.
     pub fn level_at(&self, row: usize, column: MarkColumn) -> Option<Option<MarkLevel>> {
-        match cell_at(self.counters?, row, column.position()) {
+        match cell_at(self.counters?, row, column) {
             Cell::Known { level, .. } => Some(reached_level(level)),
             // Not located, past the end of the section, or outside the mask's range: a level
             // read out of any of them would be invented.

@@ -3,6 +3,7 @@
 //! game.
 
 use catalog::{anm2_frames, SpriteRef};
+use core_save::Column;
 use ipc::{mark_source, paper_source, widget_source, MarkFill, MarkFrames, MarkTier, BOSSES};
 
 const WIDGET_LAYERS: [&str; 11] = [
@@ -116,7 +117,7 @@ const WIDGET: &str = "gfx/ui/completion_widget.png";
 #[test]
 fn every_column_resolves_to_two_different_tiers() {
     let f = frames();
-    for (column, boss) in BOSSES.iter().enumerate() {
+    for (column, boss) in Column::ALL.into_iter().zip(BOSSES) {
         let normal = place(mark_source(column, MarkTier::Normal, &f));
         let hard = place(mark_source(column, MarkTier::Hard, &f));
         assert!(normal.is_some() && hard.is_some(), "{boss} has no symbol");
@@ -127,7 +128,7 @@ fn every_column_resolves_to_two_different_tiers() {
 #[test]
 fn a_tier_is_a_frame_of_its_column_layer() {
     let f = frames();
-    let at = |column, tier| place(mark_source(column, tier, &f));
+    let at = |column: usize, tier| place(mark_source(Column::ALL[column], tier, &f));
     // Mom's Heart is Heart (layer 0): frame 0 for normal, frame 2 for hard.
     assert_eq!(at(0, MarkTier::Normal), Some((WIDGET.to_string(), 0, 0)));
     assert_eq!(at(0, MarkTier::Hard), Some((WIDGET.to_string(), 0, 32)));
@@ -143,11 +144,11 @@ fn delirium_reads_the_lobby_background_not_the_player_card() {
     let f = frames();
     let lobby = "gfx/ui/main menu/online_lobby.png".to_string();
     assert_eq!(
-        place(mark_source(9, MarkTier::Normal, &f)),
+        place(mark_source(Column::ALL[9], MarkTier::Normal, &f)),
         Some((lobby.clone(), 224, 0))
     );
     assert_eq!(
-        place(mark_source(9, MarkTier::Hard, &f)),
+        place(mark_source(Column::ALL[9], MarkTier::Hard, &f)),
         Some((lobby, 224, 64))
     );
 }
@@ -161,24 +162,20 @@ fn a_missing_layer_or_frame_is_nothing_not_a_neighbour() {
         .expect("valid XML"),
         lobby: Vec::new(),
     };
-    assert!(mark_source(0, MarkTier::Normal, &only_heart_frame_0).is_some());
+    assert!(mark_source(Column::ALL[0], MarkTier::Normal, &only_heart_frame_0).is_some());
     assert!(
-        mark_source(0, MarkTier::Hard, &only_heart_frame_0).is_none(),
+        mark_source(Column::ALL[0], MarkTier::Hard, &only_heart_frame_0).is_none(),
         "no frame 2"
     );
     assert!(
-        mark_source(1, MarkTier::Normal, &only_heart_frame_0).is_none(),
+        mark_source(Column::ALL[1], MarkTier::Normal, &only_heart_frame_0).is_none(),
         "no Polaroid layer"
     );
     assert!(
-        mark_source(9, MarkTier::Hard, &only_heart_frame_0).is_none(),
+        mark_source(Column::ALL[9], MarkTier::Hard, &only_heart_frame_0).is_none(),
         "no lobby"
     );
-    assert!(
-        mark_source(12, MarkTier::Hard, &frames()).is_none(),
-        "no thirteenth column"
-    );
-    assert!(mark_source(0, MarkTier::Hard, &MarkFrames::default()).is_none());
+    assert!(mark_source(Column::ALL[0], MarkTier::Hard, &MarkFrames::default()).is_none());
 }
 
 // The widget's own picture: one paper with the marks laid on it, which is how the game draws
@@ -275,7 +272,7 @@ fn delirium_is_not_on_the_widgets_paper() {
     fills[9] = MarkFill::Hard;
     assert_eq!(widget_source(&fills, &f).expect("a paper").marks.len(), 0);
     assert!(
-        mark_source(9, MarkTier::Hard, &f).is_some(),
+        mark_source(Column::ALL[9], MarkTier::Hard, &f).is_some(),
         "and it still has a symbol of its own"
     );
 }

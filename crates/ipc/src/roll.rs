@@ -186,8 +186,8 @@ fn playable_rows(catalog: Option<&Catalog>, flags: Option<&[bool]>) -> Option<Ve
 /// `Cell::Unknown` and `Cell::Unexpected` both become `Unreadable` — a draw does not need to
 /// tell "not located" from "suspicious value" apart, only `ipc::Cell`'s diagnostics screen
 /// does.
-fn cell_value(counters: Option<&[u32]>, character: usize, boss: usize) -> roll::CellValue {
-    match counters.map(|c| cell_at(c, character, boss)) {
+fn cell_value(counters: Option<&[u32]>, character: usize, column: Column) -> roll::CellValue {
+    match counters.map(|c| cell_at(c, character, column)) {
         Some(crate::Cell::Known { bits, .. }) => roll::CellValue::Known { bits },
         Some(crate::Cell::Unknown) | Some(crate::Cell::Unexpected { .. }) | None => {
             roll::CellValue::Unreadable
@@ -243,8 +243,7 @@ pub fn roll_space(
     let columns = BOSSES.len();
     let greed = Column::Greed.position();
     let cells: Vec<roll::CellValue> = (0..rows)
-        .flat_map(|r| (0..columns).map(move |c| (r, c)))
-        .map(|(r, c)| cell_value(counters, r, c))
+        .flat_map(|r| Column::ALL.map(|column| cell_value(counters, r, column)))
         .collect();
     let known = playable_rows(catalog, flags);
     let playability_known = known.is_some();
