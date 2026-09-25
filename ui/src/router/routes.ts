@@ -53,7 +53,7 @@ export const routes: RouteRecordRaw[] = [
   { path: '/', redirect: { name: RouteName.Completion } },
   // The URL a link or a bookmark may still carry, from when the Plan was a screen of its own.
   // **No `name`**, so it is not a location and cannot become a tab: a stored tab is carried by
-  // `sessionDocument`'s retired-name map, which is a different mechanism because it answers a
+  // `sessionDocument`'s `routeMergedInto`, which is a different mechanism because it answers a
   // different question — one is an address somebody typed, the other is a window somebody left
   // open. The path is written out because it no longer has an entry in `routePath` to read.
   { path: '/progress/plan', redirect: { name: RouteName.Goals } },
