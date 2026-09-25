@@ -2,12 +2,9 @@ import { TargetView } from '@/lib/ipc/types'
 import type { FloorSolutionView } from '@/lib/ipc/types'
 import { xy } from './painting'
 
-// What one cell of the grid is allowed to say (B64).
-//
-// Before this, a cell said one thing: a rank, or "painted", or "empty" — so fourteen room
-// kinds came out as one grey square, and of the three targets only the Secret Room ever
-// reached the map. It now says two: **what you drew** (a colour and a drawing, both in the
-// component) and **what the rules make of it**, which is this file.
+// What one cell of the grid is allowed to say (B64): **what you drew** (a colour and a drawing,
+// both in the component) and **what the rules make of it**, which is this file. A cell that said
+// only one of the two drew fourteen room kinds as one grey square.
 //
 // Two shapes were tried and thrown away in front of a real window, and both failed for the
 // same reason — a 2rem square is not enough room to print a number in. First four pips in the

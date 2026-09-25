@@ -15,20 +15,9 @@ import FloorRank from './FloorRank.vue'
 import RoomSymbol from './RoomSymbol.vue'
 
 // The grid says two things at once, and keeping them apart is the whole design: the **fill and
-// the drawing** are what you painted, the **level** is what the rules make of it. Before this
-// it said one — a rank, or "painted", or "empty" — so fourteen room kinds came out one grey
-// square and only the Secret Room's answer ever reached the map.
-//
-// The rules' half went through two shapes in front of a real window and both failed the same
-// way. Four pips in the corners, one per target with its rank printed inside: four numbers
-// that small are four numbers nobody reads. Then the cell split into a band per target, the
-// rank still printed: better, still a number in a 2rem square, and still three answers laid
-// over one cell.
-//
-// **One target at a time, and the rank is not written down.** A cell the rules allow fills
-// with that target's colour, to the brim for the best place and less for each step after it.
-// There is nothing to read: a fuller square is a better place, which is the sentence the
-// screen exists to say.
+// the drawing** are what you painted, the **level** is what the rules make of it — one target
+// at a time, a fuller square for a better place. Why the rank is a fill and never a number is
+// `lib/floor/cellView.ts`'s to say.
 
 const props = defineProps<{
   cells: PaintedCells

@@ -26,8 +26,8 @@ export interface ViewStore<T> {
   refresh: () => Promise<void>
 }
 
-// Every store below wrote the same `view` / `status` / `error` triad and the same `try` /
-// `catch`; only the call in the middle changed. This is the middle, taken as an argument.
+// A store that is a `view` / `status` / `error` triad around one read: the read is the
+// argument, and everything else is the same for every store below.
 //
 // The view is cleared **before** the read, not after it: a view belongs to one profile, and
 // showing the old one for the length of a command would show it under a profile it was never
