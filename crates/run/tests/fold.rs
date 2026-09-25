@@ -518,3 +518,60 @@ fn the_init_after_a_run_ends_is_the_next_runs() {
     assert_eq!(runs[0].character_id, Some(3));
     assert_eq!(runs[1].character_id, Some(8), "run 2 is played by 8");
 }
+
+fn init(subtype: u32) -> Event {
+    Event::PlayerInitialized {
+        variant: 0,
+        subtype,
+    }
+}
+
+fn died() -> Event {
+    Event::Died {
+        killer: "Monstro".to_string(),
+        spawner: String::new(),
+    }
+}
+
+/// Review of card #80, P1: a run resumed with `Continue` logs its player line before its seed,
+/// like a fresh one. That line is the **resumed** run's, and it must not be kept for the run
+/// after: the next run is played by whoever its own line names.
+#[test]
+fn the_init_of_a_resumed_run_is_not_kept_for_the_next_one() {
+    let runs = Run::fold(
+        [
+            init(8),
+            seed(1, SeedKind::New),
+            init(8),
+            seed(1, SeedKind::Continue),
+            died(),
+            init(5),
+            seed(2, SeedKind::New),
+        ]
+        .into_iter(),
+        &Kinds(&[]),
+    );
+    assert_eq!(runs.len(), 2, "the Continue resumed run 1");
+    assert_eq!(runs[0].character_id, Some(8));
+    assert_eq!(runs[1].character_id, Some(5), "run 2 is played by 5");
+}
+
+/// A second player line in the middle of a solo run — Esau beside Jacob, a Strawman — is not the
+/// next run's either: the next run's own line comes after it, and that one names who plays.
+#[test]
+fn the_last_init_before_a_seed_names_the_run() {
+    let runs = Run::fold(
+        [
+            init(19),
+            seed(1, SeedKind::New),
+            init(20),
+            died(),
+            init(0),
+            seed(2, SeedKind::New),
+        ]
+        .into_iter(),
+        &Kinds(&[]),
+    );
+    assert_eq!(runs[0].character_id, Some(19));
+    assert_eq!(runs[1].character_id, Some(0), "run 2 is played by 0");
+}
