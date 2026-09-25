@@ -39,7 +39,7 @@
         "default-src": "'self'",
         "script-src": "'self'",
         "style-src": "'self' 'unsafe-inline'",
-        "img-src": "'self' isaac: http://isaac.localhost",
+        "img-src": "'self' isaac: http://isaac.localhost data:",
         "font-src": "'self'",
         "connect-src": "ipc: http://ipc.localhost ws://localhost:1420",
         "object-src": "'none'",
