@@ -27,8 +27,8 @@ impl SeedKind {
 }
 
 /// One thing the log said, with nothing read into it. Every judgment belongs to the fold: the
-/// rules file is data a user can edit, and a rule that could decide meaning would put
-/// untestable logic outside the crate that is tested.
+/// rules file is data — regexes in a JSON file, embedded at build time — and a rule that could
+/// decide meaning would put logic where no test reads it as logic.
 ///
 /// Stored as a JSON row by `store`, which is why it serializes. **A storage format, not a wire
 /// one**: it never reaches TypeScript, so it does not carry the IPC's `camelCase` rules.
