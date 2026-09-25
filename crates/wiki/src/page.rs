@@ -8,12 +8,15 @@
 use serde::{Deserialize, Serialize};
 
 use crate::blocks::parse_blocks;
+use crate::editions::Editions;
 use crate::infobox::{
     entry_facts, extract_infoboxes, infobox_from, leading_number, InfoboxKind, RawInfobox,
 };
+use crate::inline::plain;
 use crate::resolver::{is_layout_template, Resolver};
 use crate::sections::{section_kind, split_page};
-use crate::{Diagnostics, Entry, Section};
+use crate::template::{template_segments, Segment};
+use crate::{Block, Diagnostics, Entry, Inline, Section, Style};
 
 /// The page kind, as `index.json` classifies it: decides the folder in `raw/` and the
 /// template the page was listed from. It does not decide the entries' kind: each infobox
@@ -134,42 +137,40 @@ fn entry_key(kind: InfoboxKind, title: &str, ib: &RawInfobox, r: &Resolver) -> O
 /// pages open with several paragraphs — Isaac's runs on into his stats — and 24 carry that
 /// magic word, which draws the table of contents and is never prose. No transformation
 /// opens with more than one, so B51 reads the same sentence it always did.
-fn preamble(text: &str, r: &Resolver, d: &mut Diagnostics) -> Vec<crate::Inline> {
+fn preamble(text: &str, r: &Resolver, d: &mut Diagnostics) -> Vec<Inline> {
     let (pre, _) = split_page(text);
     let pre = without_the_boxes(&pre).replace("__TOC__", "");
     // The first paragraph that *says* something: on 19 character pages the first one is an
     // image or a layout template, which parses to nothing.
     pre.split("\n\n")
         .map(|p| one_line(parse_blocks(p.trim(), r, d)))
-        .find(|inline| !crate::plain(inline).trim().is_empty())
+        .find(|inline| !plain(inline).trim().is_empty())
         .unwrap_or_default()
 }
 
 /// A paragraph's blocks as one line of inline text. Parsed as blocks, a list's lines are
 /// each their own span — so a `{{dlc|…}}` marker ends with its line — and the `*` is gone;
 /// then everything is joined by one space, because a summary is drawn as a single line.
-fn one_line(blocks: Vec<crate::Block>) -> Vec<crate::Inline> {
-    fn walk(blocks: Vec<crate::Block>, out: &mut Vec<crate::Inline>) {
+fn one_line(blocks: Vec<Block>) -> Vec<Inline> {
+    fn walk(blocks: Vec<Block>, out: &mut Vec<Inline>) {
         for block in blocks {
             match block {
-                crate::Block::Paragraph { inline } | crate::Block::Heading { inline, .. } => {
-                    piece(inline, out)
-                }
-                crate::Block::List { items, .. } => {
+                Block::Paragraph { inline } | Block::Heading { inline, .. } => piece(inline, out),
+                Block::List { items, .. } => {
                     for item in items {
                         piece(item.inline, out);
                         walk(item.children, out);
                     }
                 }
                 // A table is not a sentence: nothing in a summary reads one out.
-                crate::Block::Table { .. } => {}
+                Block::Table { .. } => {}
             }
         }
     }
-    fn piece(inline: Vec<crate::Inline>, out: &mut Vec<crate::Inline>) {
-        out.push(crate::Inline::Text {
+    fn piece(inline: Vec<Inline>, out: &mut Vec<Inline>) {
+        out.push(Inline::Text {
             text: " ".to_string(),
-            style: crate::Style::Plain,
+            style: Style::Plain,
         });
         out.extend(inline);
     }
@@ -177,66 +178,58 @@ fn one_line(blocks: Vec<crate::Block>) -> Vec<crate::Inline> {
     walk(blocks, &mut out);
     let mut space = true;
     squeeze(&mut out, &mut space);
-    if let Some(crate::Inline::Text { text, .. }) = out.last_mut() {
+    if let Some(Inline::Text { text, .. }) = out.last_mut() {
         text.truncate(text.trim_end().len());
     }
-    out.retain(|i| !matches!(i, crate::Inline::Text { text, .. } if text.is_empty()));
+    out.retain(|i| !matches!(i, Inline::Text { text, .. } if text.is_empty()));
     out
 }
 
 /// Every run of whitespace becomes one space, across node boundaries and into editions, and
 /// none is left at the start: `space` says whether the text so far ends in one.
-fn squeeze(inline: &mut [crate::Inline], space: &mut bool) {
+fn squeeze(inline: &mut [Inline], space: &mut bool) {
     for node in inline {
         match node {
-            crate::Inline::Text { text, .. } => {
-                let mut out = String::with_capacity(text.len());
-                for ch in text.chars() {
-                    if ch.is_whitespace() {
-                        if !*space {
-                            out.push(' ');
-                        }
-                        *space = true;
-                    } else {
-                        out.push(ch);
-                        *space = false;
-                    }
-                }
-                *text = out;
-            }
-            crate::Inline::Edition { inline, .. } => squeeze(inline, space),
-            crate::Inline::Ref { .. } | crate::Inline::Concept { .. } => *space = false,
+            Inline::Text { text, .. } => *text = squeezed(text, space),
+            Inline::Edition { inline, .. } => squeeze(inline, space),
+            Inline::Ref { .. } | Inline::Concept { .. } => *space = false,
         }
     }
 }
 
+/// One text node, squeezed: `space` comes in saying whether the text before it ends in one,
+/// and goes out saying whether this one does.
+fn squeezed(text: &str, space: &mut bool) -> String {
+    text.chars()
+        .fold(String::with_capacity(text.len()), |mut out, ch| {
+            if !ch.is_whitespace() {
+                out.push(ch);
+                *space = false;
+            } else if !*space {
+                out.push(' ');
+                *space = true;
+            }
+            out
+        })
+}
+
 /// The preamble text with the infobox and the page header taken out, and **nothing else**:
-/// a `{{i|Flip}}` in the same sentence is a reference the prose needs. `parse_template_at`
+/// a `{{i|Flip}}` in the same sentence is a reference the prose needs. `template_segments`
 /// is what says where a template ends, which a line-by-line pass cannot — an infobox spans
 /// a dozen lines and a header one.
 fn without_the_boxes(text: &str) -> String {
-    let mut out = String::new();
-    let mut i = 0;
-    while let Some(pos) = text.get(i..).and_then(|rest| rest.find("{{")) {
-        let at = i + pos;
-        out.push_str(&text[i..at]);
-        match crate::template::parse_template_at(text, at) {
-            Some((t, end)) if t.name.starts_with("infobox") || is_layout_template(&t.name) => {
-                i = end
+    template_segments(text)
+        .map(|segment| match segment {
+            Segment::Text(text) => text,
+            Segment::Template { template, .. }
+                if template.name.starts_with("infobox") || is_layout_template(&template.name) =>
+            {
+                ""
             }
             // Any other template is prose: leave it for `parse_inline` to resolve.
-            Some((_, end)) => {
-                out.push_str(&text[at..end]);
-                i = end;
-            }
-            None => {
-                out.push_str("{{");
-                i = at + 2;
-            }
-        }
-    }
-    out.push_str(&text[i..]);
-    out
+            Segment::Template { source, .. } => source,
+        })
+        .collect()
 }
 
 /// The page's edition context: the range the **first** infobox declares, and not each
@@ -251,17 +244,17 @@ fn without_the_boxes(text: &str) -> String {
 /// nothing in common with Ultra Greedier's `a+` and is thrown away; it is the one span in
 /// 4831 that the counter caught the first time this pass ran.
 #[cfg(test)]
-fn page_editions(text: &str) -> crate::editions::Editions {
+fn page_editions(text: &str) -> Editions {
     page_editions_of(&extract_infoboxes(text))
 }
 
 /// The page's range from infoboxes already extracted: `parse_page` reads them once and hands
 /// the list here, rather than extracting them a second time (card #80, P6).
-fn page_editions_of(infoboxes: &[RawInfobox]) -> crate::editions::Editions {
+fn page_editions_of(infoboxes: &[RawInfobox]) -> Editions {
     infoboxes
         .first()
-        .and_then(|ib| crate::editions::Editions::parse(ib.params.get("dlc")?))
-        .unwrap_or(crate::editions::Editions::ALL)
+        .and_then(|ib| Editions::parse(ib.params.get("dlc")?))
+        .unwrap_or(Editions::ALL)
 }
 
 /// Narrows every `{{dlc|…}}` span on an entry by the page's range, the way the wiki's
@@ -282,7 +275,7 @@ fn page_editions_of(infoboxes: &[RawInfobox]) -> crate::editions::Editions {
 /// (`narrow_sections`): narrowed here, on each entry's copy, one span was counted once per
 /// infobox (card #80, P6). The description may carry the preamble; narrowing it again changes
 /// nothing and counts nothing, because a narrowed span already fits the page.
-fn narrow_to_page(entry: &mut Entry, page: crate::editions::Editions, d: &mut Diagnostics) {
+fn narrow_to_page(entry: &mut Entry, page: Editions, d: &mut Diagnostics) {
     if page.is_all() {
         return;
     }
@@ -293,12 +286,7 @@ fn narrow_to_page(entry: &mut Entry, page: crate::editions::Editions, d: &mut Di
 }
 
 /// The page's preamble, narrowed once like its sections: every entry that takes it shares it.
-fn narrowed_preamble(
-    text: &str,
-    page: crate::editions::Editions,
-    r: &Resolver,
-    d: &mut Diagnostics,
-) -> Vec<crate::Inline> {
+fn narrowed_preamble(text: &str, page: Editions, r: &Resolver, d: &mut Diagnostics) -> Vec<Inline> {
     let mut read = preamble(text, r, d);
     if !page.is_all() {
         narrow_inline(&mut read, page, d);
@@ -306,7 +294,7 @@ fn narrowed_preamble(
     read
 }
 
-fn narrow_sections(sections: &mut [Section], page: crate::editions::Editions, d: &mut Diagnostics) {
+fn narrow_sections(sections: &mut [Section], page: Editions, d: &mut Diagnostics) {
     if page.is_all() {
         return;
     }
@@ -317,12 +305,12 @@ fn narrow_sections(sections: &mut [Section], page: crate::editions::Editions, d:
     }
 }
 
-fn narrow_block(block: &mut crate::Block, page: crate::editions::Editions, d: &mut Diagnostics) {
+fn narrow_block(block: &mut Block, page: Editions, d: &mut Diagnostics) {
     match block {
-        crate::Block::Paragraph { inline } | crate::Block::Heading { inline, level: _ } => {
+        Block::Paragraph { inline } | Block::Heading { inline, level: _ } => {
             narrow_inline(inline, page, d)
         }
-        crate::Block::List { ordered: _, items } => {
+        Block::List { ordered: _, items } => {
             for item in items {
                 narrow_inline(&mut item.inline, page, d);
                 for child in &mut item.children {
@@ -330,7 +318,7 @@ fn narrow_block(block: &mut crate::Block, page: crate::editions::Editions, d: &m
                 }
             }
         }
-        crate::Block::Table { header, rows } => {
+        Block::Table { header, rows } => {
             for cell in header {
                 narrow_inline(cell, page, d);
             }
@@ -345,30 +333,26 @@ fn narrow_block(block: &mut crate::Block, page: crate::editions::Editions, d: &m
 
 /// An `Edition` whose range survives narrowing keeps it; one left with nothing is unwrapped
 /// into its parent, words and all, exactly as an unreadable code is.
-fn narrow_inline(
-    inline: &mut Vec<crate::Inline>,
-    page: crate::editions::Editions,
-    d: &mut Diagnostics,
-) {
+fn narrow_inline(inline: &mut Vec<Inline>, page: Editions, d: &mut Diagnostics) {
     let mut out = Vec::with_capacity(inline.len());
     for node in std::mem::take(inline) {
         match node {
-            crate::Inline::Edition { only, mut inline } => {
+            Inline::Edition { only, mut inline } => {
                 narrow_inline(&mut inline, page, d);
-                let narrowed = crate::editions::Editions::of(&only).intersect(page);
+                let narrowed = Editions::of(&only).intersect(page);
                 if narrowed.is_empty() {
                     d.spans_outside_their_page += 1;
                     out.extend(inline);
                 } else {
-                    out.push(crate::Inline::Edition {
+                    out.push(Inline::Edition {
                         only: narrowed.list(),
                         inline,
                     });
                 }
             }
-            other @ (crate::Inline::Text { .. }
-            | crate::Inline::Ref { .. }
-            | crate::Inline::Concept { .. }) => out.push(other),
+            other @ (Inline::Text { .. } | Inline::Ref { .. } | Inline::Concept { .. }) => {
+                out.push(other)
+            }
         }
     }
     *inline = out;
@@ -428,6 +412,43 @@ fn entry_title(kind: InfoboxKind, title: &str, ib: &RawInfobox, r: &Resolver) ->
     }
 }
 
+/// A page as its entries see it: what they all carry (title, revision, text, edition range),
+/// and the two readings they share, each made at most once.
+///
+/// Lazily, because an achievement page takes neither the sections nor the preamble; and at
+/// most once, because a page with two infoboxes has one of each, and reading either twice
+/// would count its diagnostics twice.
+struct Page<'a> {
+    title: &'a str,
+    revid: u64,
+    text: &'a str,
+    editions: Editions,
+    sections: Option<Vec<Section>>,
+    preamble: Option<Vec<Inline>>,
+}
+
+impl Page<'_> {
+    /// The kept sections, narrowed to the page's range.
+    fn sections(&mut self, r: &Resolver, d: &mut Diagnostics) -> Vec<Section> {
+        let (text, editions) = (self.text, self.editions);
+        self.sections
+            .get_or_insert_with(|| {
+                let mut read = sections(text, r, d);
+                narrow_sections(&mut read, editions, d);
+                read
+            })
+            .clone()
+    }
+
+    /// The opening paragraph, narrowed to the page's range.
+    fn preamble(&mut self, r: &Resolver, d: &mut Diagnostics) -> Vec<Inline> {
+        let (text, editions) = (self.text, self.editions);
+        self.preamble
+            .get_or_insert_with(|| narrowed_preamble(text, editions, r, d))
+            .clone()
+    }
+}
+
 /// The entries of a page, one per recognized infobox, each of its own infobox's kind.
 /// The page's sections go to every entry except achievements, which are containers with
 /// no text of their own; they're parsed once. An infobox with no key is counted in
@@ -439,95 +460,119 @@ pub fn parse_page(
     r: &Resolver,
     d: &mut Diagnostics,
 ) -> Vec<(EntryKey, Entry)> {
-    let mut out = Vec::new();
-    let mut page_sections: Option<Vec<Section>> = None;
-    // Parsed once, like the sections: a page with two infoboxes has one preamble, and
-    // reading it twice would count its diagnostics twice.
-    let mut page_preamble: Option<Vec<crate::Inline>> = None;
     let infoboxes = extract_infoboxes(text);
-    let page = page_editions_of(&infoboxes);
-    for ib in infoboxes {
-        let Some(kind) = InfoboxKind::of(&ib.name) else {
-            d.unknown_infobox(&ib.name);
-            continue;
-        };
-        let Some(key) = entry_key(kind, title, &ib, r) else {
-            d.pages_without_id += 1;
-            continue;
-        };
-        let sections = match kind {
-            InfoboxKind::Achievement => Vec::new(),
-            InfoboxKind::Passive
-            | InfoboxKind::Activated
-            | InfoboxKind::Trinket
-            | InfoboxKind::Boss
-            | InfoboxKind::Challenge
-            | InfoboxKind::Character
-            | InfoboxKind::Transformation => page_sections
-                .get_or_insert_with(|| {
-                    let mut read = sections(text, r, d);
-                    narrow_sections(&mut read, page, d);
-                    read
-                })
-                .clone(),
-        };
-        let facts = entry_facts(&ib, r, d);
-        let description = match kind {
-            // B51: a transformation's preamble is the only place the wiki says **how you
-            // become one** — Adult's "upon taking three Puberty pills" is there and nowhere
-            // else on the page — so for this kind alone the discarded sentence is kept, in
-            // front of the infobox's own `description`. That parameter restates the Effects
-            // section on all sixteen pages (Guppy's is empty) and on none of them says how
-            // the transformation happens, so nothing is dropped by putting it second.
-            InfoboxKind::Transformation => {
-                let mut out = page_preamble
-                    .get_or_insert_with(|| narrowed_preamble(text, page, r, d))
-                    .clone();
-                // Two sentences written in two places meet in one field, and nothing in
-                // either carries the space between them.
-                if !out.is_empty() && !facts.description.is_empty() {
-                    out.push(crate::Inline::Text {
-                        text: " ".to_string(),
-                        style: crate::Style::Plain,
-                    });
-                }
-                out.extend(facts.description);
-                out
-            }
-            // Bosses and characters have no `description` parameter, and 27 of 45 challenges
-            // leave it out: the opening paragraph is the only summary those pages write. It
-            // stands in when the infobox is silent, never alongside it.
-            InfoboxKind::Boss | InfoboxKind::Challenge | InfoboxKind::Character
-                if facts.description.is_empty() =>
-            {
-                page_preamble
-                    .get_or_insert_with(|| narrowed_preamble(text, page, r, d))
-                    .clone()
-            }
-            // What the wiki files as an achievement's `description` is the unlock paper's
-            // line, and it went to the infobox's `quote`: it is not a summary, and read as
-            // one it put "???" under 136 titles.
-            InfoboxKind::Achievement => Vec::new(),
-            InfoboxKind::Passive
-            | InfoboxKind::Activated
-            | InfoboxKind::Trinket
-            | InfoboxKind::Boss
-            | InfoboxKind::Challenge
-            | InfoboxKind::Character => facts.description,
-        };
-        let mut entry = Entry {
-            title: entry_title(kind, title, &ib, r),
-            revid,
-            description,
-            dlc: facts.dlc,
-            unlocked_by: facts.unlocked_by,
-            infobox: infobox_from(kind, &ib, text, r, d),
-            sections,
-        };
-        narrow_to_page(&mut entry, page, d);
-        out.push((key, entry));
+    let mut page = Page {
+        title,
+        revid,
+        text,
+        editions: page_editions_of(&infoboxes),
+        sections: None,
+        preamble: None,
+    };
+    infoboxes
+        .into_iter()
+        .filter_map(|ib| entry_of(&ib, &mut page, r, d))
+        .collect()
+}
+
+/// The entry one infobox gives, or `None` — counted — for an infobox of no kind, or of a kind
+/// whose key the page does not state.
+fn entry_of(
+    ib: &RawInfobox,
+    page: &mut Page,
+    r: &Resolver,
+    d: &mut Diagnostics,
+) -> Option<(EntryKey, Entry)> {
+    let Some(kind) = InfoboxKind::of(&ib.name) else {
+        d.unknown_infobox(&ib.name);
+        return None;
+    };
+    let Some(key) = entry_key(kind, page.title, ib, r) else {
+        d.pages_without_id += 1;
+        return None;
+    };
+    let sections = entry_sections(kind, page, r, d);
+    let facts = entry_facts(ib, r, d);
+    let description = entry_description(kind, facts.description, page, r, d);
+    let mut entry = Entry {
+        title: entry_title(kind, page.title, ib, r),
+        revid: page.revid,
+        description,
+        dlc: facts.dlc,
+        unlocked_by: facts.unlocked_by,
+        infobox: infobox_from(kind, ib, page.text, r, d),
+        sections,
+    };
+    narrow_to_page(&mut entry, page.editions, d);
+    Some((key, entry))
+}
+
+/// The page's sections, for every kind but an achievement: a row on a storage page, with no
+/// text of its own.
+fn entry_sections(
+    kind: InfoboxKind,
+    page: &mut Page,
+    r: &Resolver,
+    d: &mut Diagnostics,
+) -> Vec<Section> {
+    match kind {
+        InfoboxKind::Achievement => Vec::new(),
+        InfoboxKind::Passive
+        | InfoboxKind::Activated
+        | InfoboxKind::Trinket
+        | InfoboxKind::Boss
+        | InfoboxKind::Challenge
+        | InfoboxKind::Character
+        | InfoboxKind::Transformation => page.sections(r, d),
     }
-    out
+}
+
+/// The entry's summary, from the infobox's own `description` (`own`) and the page's opening
+/// paragraph, by kind.
+fn entry_description(
+    kind: InfoboxKind,
+    own: Vec<Inline>,
+    page: &mut Page,
+    r: &Resolver,
+    d: &mut Diagnostics,
+) -> Vec<Inline> {
+    match kind {
+        // B51: a transformation's preamble is the only place the wiki says **how you become
+        // one** — Adult's "upon taking three Puberty pills" is there and nowhere else on the
+        // page — so for this kind alone the discarded sentence is kept, in front of the
+        // infobox's own `description`. That parameter restates the Effects section on all
+        // sixteen pages (Guppy's is empty) and on none of them says how the transformation
+        // happens, so nothing is dropped by putting it second.
+        InfoboxKind::Transformation => {
+            let mut out = page.preamble(r, d);
+            // Two sentences written in two places meet in one field, and nothing in either
+            // carries the space between them.
+            if !out.is_empty() && !own.is_empty() {
+                out.push(Inline::Text {
+                    text: " ".to_string(),
+                    style: Style::Plain,
+                });
+            }
+            out.extend(own);
+            out
+        }
+        // Bosses and characters have no `description` parameter, and 27 of 45 challenges
+        // leave it out: the opening paragraph is the only summary those pages write. It
+        // stands in when the infobox is silent, never alongside it.
+        InfoboxKind::Boss | InfoboxKind::Challenge | InfoboxKind::Character if own.is_empty() => {
+            page.preamble(r, d)
+        }
+        // What the wiki files as an achievement's `description` is the unlock paper's line,
+        // and it went to the infobox's `quote`: it is not a summary, and read as one it put
+        // "???" under 136 titles.
+        InfoboxKind::Achievement => Vec::new(),
+        InfoboxKind::Passive
+        | InfoboxKind::Activated
+        | InfoboxKind::Trinket
+        | InfoboxKind::Boss
+        | InfoboxKind::Challenge
+        | InfoboxKind::Character => own,
+    }
 }
 
 // Tests extract one variant and panic on the rest: the wildcard is the assertion.
@@ -536,7 +581,7 @@ pub fn parse_page(
 mod tests {
     use super::*;
     use crate::resolver::fixtures::test_resolver;
-    use crate::{Block, Diagnostics, SectionKind};
+    use crate::{Block, Diagnostics, Dlc, Infobox, SectionKind, Target};
 
     /// Measured on 2026-09-13: `Template:Infobox transformation` exists and is transcluded by
     /// exactly the sixteen pages the Cargo table has rows for. The kind is declared like the
@@ -566,7 +611,7 @@ mod tests {
 ";
         let mut d = Diagnostics::default();
         let v = parse_page("Beelzebub", 7, src, &test_resolver(), &mut d);
-        let text = crate::plain(&v[0].1.description);
+        let text = plain(&v[0].1.description);
         assert!(
             text.starts_with("Beelzebub is a transformation, turning Isaac into a fly after picking up 3 fly items."),
             "{text}"
@@ -585,7 +630,7 @@ mod tests {
     fn a_boss_character_or_challenge_without_a_description_takes_the_preamble() {
         let desc = |title: &str, src: &str| {
             let v = parse_page(title, 1, src, &test_resolver(), &mut Diagnostics::default());
-            crate::plain(&v[0].1.description)
+            plain(&v[0].1.description)
         };
         assert_eq!(
             desc(
@@ -643,13 +688,13 @@ mod tests {
         let v = parse_page("Mom", 1, src, &test_resolver(), &mut Diagnostics::default());
         let description = &v[0].1.description;
         assert_eq!(
-            crate::plain(description),
+            plain(description),
             "Mom can appear: In the Depths. Only in the Mausoleum."
         );
-        let editions: Vec<&Vec<crate::Dlc>> = description
+        let editions: Vec<&Vec<Dlc>> = description
             .iter()
             .filter_map(|i| match i {
-                crate::Inline::Edition { only, .. } => Some(only),
+                Inline::Edition { only, .. } => Some(only),
                 _ => None,
             })
             .collect();
@@ -722,22 +767,19 @@ mod tests {
         let v = parse_page("Breakfast", 7, src, &test_resolver(), &mut d);
         let e = &v[0].1;
         // `r` is "added in Repentance", so it names Repentance **and** Repentance+.
-        assert_eq!(
-            e.dlc,
-            vec![crate::Dlc::Repentance, crate::Dlc::RepentancePlus]
-        );
-        assert_eq!(e.unlocked_by, Some(crate::Target::Achievement { id: 62 }));
+        assert_eq!(e.dlc, vec![Dlc::Repentance, Dlc::RepentancePlus]);
+        assert_eq!(e.unlocked_by, Some(Target::Achievement { id: 62 }));
         assert!(matches!(
             e.description.first(),
-            Some(crate::Inline::Text { text, .. }) if text.contains("Tears up")
+            Some(Inline::Text { text, .. }) if text.contains("Tears up")
         ));
     }
 
     /// The editions of every `Edition` node under an entry, in the order they are found.
-    fn edition_nodes(inline: &[crate::Inline]) -> Vec<Vec<crate::Dlc>> {
+    fn edition_nodes(inline: &[Inline]) -> Vec<Vec<Dlc>> {
         let mut out = Vec::new();
         for i in inline {
-            if let crate::Inline::Edition { only, inline } = i {
+            if let Inline::Edition { only, inline } = i {
                 out.push(only.clone());
                 out.extend(edition_nodes(inline));
             }
@@ -745,11 +787,11 @@ mod tests {
         out
     }
 
-    fn entry_editions(e: &Entry) -> Vec<Vec<crate::Dlc>> {
+    fn entry_editions(e: &Entry) -> Vec<Vec<Dlc>> {
         let mut out = edition_nodes(&e.description);
         for s in &e.sections {
             for b in &s.blocks {
-                if let crate::Block::List { items, .. } = b {
+                if let Block::List { items, .. } = b {
                     for item in items {
                         out.extend(edition_nodes(&item.inline));
                     }
@@ -774,14 +816,14 @@ mod tests {
         let v = parse_page("Breakfast", 7, src, &test_resolver(), &mut d);
         assert_eq!(
             entry_editions(&v[0].1),
-            vec![vec![crate::Dlc::Repentance]],
+            vec![vec![Dlc::Repentance]],
             "the body's span"
         );
         // The infobox's fields go through the same pass: a quote carries editions too.
-        let crate::Infobox::Item { quote, .. } = &v[0].1.infobox else {
+        let Infobox::Item { quote, .. } = &v[0].1.infobox else {
             panic!("a collectible page carries an item infobox")
         };
-        assert_eq!(edition_nodes(quote), vec![vec![crate::Dlc::Repentance]]);
+        assert_eq!(edition_nodes(quote), vec![vec![Dlc::Repentance]]);
         assert_eq!(d.spans_outside_their_page, 0);
     }
 
@@ -797,10 +839,10 @@ mod tests {
         assert_eq!(
             page_editions(src).list(),
             vec![
-                crate::Dlc::Afterbirth,
-                crate::Dlc::AfterbirthPlus,
-                crate::Dlc::Repentance,
-                crate::Dlc::RepentancePlus
+                Dlc::Afterbirth,
+                Dlc::AfterbirthPlus,
+                Dlc::Repentance,
+                Dlc::RepentancePlus
             ]
         );
     }
@@ -813,10 +855,7 @@ mod tests {
         let src = "{{infobox passive collectible\n | id = 25\n}}\n== Effects ==\n* {{dlc|r+|only the last}}\n";
         let mut d = Diagnostics::default();
         let v = parse_page("Breakfast", 7, src, &test_resolver(), &mut d);
-        assert_eq!(
-            entry_editions(&v[0].1),
-            vec![vec![crate::Dlc::RepentancePlus]]
-        );
+        assert_eq!(entry_editions(&v[0].1), vec![vec![Dlc::RepentancePlus]]);
     }
 
     /// When the two ranges share no edition the wiki draws its own error, so the span is a
@@ -833,15 +872,15 @@ mod tests {
             "a badge naming no edition: {:?}",
             v[0].1.sections
         );
-        let crate::Block::List { items, .. } = &v[0].1.sections[0].blocks[0] else {
+        let Block::List { items, .. } = &v[0].1.sections[0].blocks[0] else {
             panic!("the Effects section holds a list")
         };
         assert!(
+            items[0].inline.iter().any(
+                |i| matches!(i, Inline::Text { text, .. } if text.contains("only in Rebirth"))
+            ),
+            "the words went with it: {:?}",
             items[0]
-                .inline
-                .iter()
-                .any(|i| matches!(i, crate::Inline::Text { text, .. } if text.contains("only in Rebirth"))),
-            "the words went with it: {:?}", items[0]
         );
         assert_eq!(d.spans_outside_their_page, 1);
     }

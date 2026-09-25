@@ -13,7 +13,8 @@ use tauri::{AppHandle, Emitter};
 /// The active profile changed: every window's indicator, gate and progress screens follow.
 pub const PROFILE_CHANGED: &str = "profile-changed";
 
-/// The settings changed — today that means the interface's size.
+/// The settings changed: the interface's size, or one of the switches beside it (staying in the
+/// background, updating on launch, resuming the tabs).
 pub const SETTINGS_CHANGED: &str = "settings-changed";
 
 /// The plan changed: the queue or the goals, which are one screen.

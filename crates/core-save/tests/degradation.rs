@@ -1,7 +1,7 @@
 use core_save::{Diagnostic, Kind, Save};
 
 /// Assembles a synthetic `.dat`. Each section: (kind, declared count, raw data).
-/// `f2` is written as count*4, as in the real format.
+/// `declared_size` is written as count*4, as in the real format.
 fn build(unknown: u32, sections: &[(u32, u32, &[u8])]) -> Vec<u8> {
     let mut v = Vec::new();
     v.extend_from_slice(b"ISAACNGSAVE09R  ");
@@ -180,4 +180,59 @@ fn diff_reports_newly_set_flags_and_changed_counters() {
     assert_eq!(d.achievements, vec![2]);
     assert_eq!(d.items, Vec::<usize>::new());
     assert_eq!(d.counters, vec![(1, 1, 9)]);
+}
+
+#[test]
+fn a_kind_outside_the_ten_stops_the_reading_and_the_rest_is_trailing() {
+    // Kind 11 has no entry size, so nothing after its header can be sized: the reading stops
+    // there, names the kind, and reports everything from that header on as unread.
+    let bytes = build(0, &[(1, 1, &[1]), (11, 2, &[5, 5]), (2, 1, &[0, 0, 0, 0])]);
+
+    let save = Save::parse(&bytes).unwrap();
+    assert_eq!(save.sections.len(), 1);
+    let header_at = 0x14 + 12 + 1;
+    let end = bytes.len() - 4;
+    assert_eq!(
+        save.diagnostics,
+        vec![
+            Diagnostic::UnexpectedKind {
+                at: header_at,
+                expected: 2,
+                found: 11,
+            },
+            Diagnostic::TrailingBytes {
+                at: header_at,
+                len: end - header_at,
+            },
+        ]
+    );
+}
+
+#[test]
+fn a_section_carries_its_header_as_read_and_where_its_data_starts() {
+    let counters: Vec<u8> = [7u32, 42u32].iter().flat_map(|v| v.to_le_bytes()).collect();
+    let bytes = build(0, &[(1, 3, &[1, 0, 1]), (2, 2, &counters)]);
+
+    let save = Save::parse(&bytes).unwrap();
+    // `build` writes the second header word as count × 4, the way the game does.
+    assert_eq!(save.sections[0].declared_size, 12);
+    assert_eq!(save.sections[1].declared_size, 8);
+    assert_eq!(save.sections[0].offset, 0x14 + 12);
+    assert_eq!(save.sections[1].offset, 0x14 + 12 + 3 + 12);
+}
+
+#[test]
+fn fewer_bytes_than_a_header_after_the_last_section_are_trailing() {
+    // Eight bytes cannot hold a twelve-byte header: they are reported, never read as one.
+    let bytes = build(0, &[(1, 2, &[0, 0, 1, 2, 3, 4, 5, 6, 7, 8])]);
+
+    let save = Save::parse(&bytes).unwrap();
+    assert_eq!(save.sections.len(), 1);
+    assert_eq!(
+        save.diagnostics,
+        vec![Diagnostic::TrailingBytes {
+            at: 0x14 + 12 + 2,
+            len: 8,
+        }]
+    );
 }

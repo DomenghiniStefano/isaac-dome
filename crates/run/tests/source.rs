@@ -52,7 +52,7 @@ fn the_same_banner_over_different_bytes_at_the_offset_is_a_new_launch() {
 
 #[test]
 fn a_file_shorter_than_what_we_read_is_a_new_launch() {
-    // `Tail::restarted`'s reasoning, applied before a single byte is read: the game rewrites
+    // Decided before a single byte is read: the game rewrites
     // log.txt from scratch on every launch.
     let consumed = window("Level::Init m_Stage 2");
     let stored = SourceKey::new(&banner(), &consumed, 40_000);

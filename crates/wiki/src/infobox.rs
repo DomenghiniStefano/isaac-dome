@@ -2,9 +2,10 @@
 
 use std::collections::BTreeMap;
 
+use crate::editions::declared_range;
 use crate::inline::parse_inline;
 use crate::resolver::Resolver;
-use crate::template::parse_template_at;
+use crate::template::{template_segments, Segment, Template};
 use crate::{CollectibleTemplate, Diagnostics, Dlc, Infobox, Inline, Target};
 
 /// An `{{infobox …}}` template as-is: lowercase name and raw named parameters.
@@ -66,26 +67,27 @@ fn character_forms(params: BTreeMap<String, String>) -> [RawInfobox; 2] {
 /// Every top-level `{{infobox …}}`, in the order they appear. Other templates are
 /// skipped whole, so an infobox nested inside another template does not count.
 pub fn extract_infoboxes(text: &str) -> Vec<RawInfobox> {
-    let mut out = Vec::new();
-    let mut i = 0;
-    while let Some(pos) = text.get(i..).and_then(|rest| rest.find("{{")) {
-        let at = i + pos;
-        match parse_template_at(text, at) {
-            Some((t, end)) => {
-                if t.name == PLURAL_CHARACTER {
-                    out.extend(character_forms(t.named));
-                } else if t.name.starts_with("infobox") {
-                    out.push(RawInfobox {
-                        name: t.name,
-                        params: t.named,
-                    });
-                }
-                i = end;
-            }
-            None => i = at + 2, // `{{` with no close: resume from the next character
-        }
+    template_segments(text)
+        .flat_map(|segment| match segment {
+            Segment::Template { template, .. } => infoboxes_in(template),
+            Segment::Text(_) => Vec::new(),
+        })
+        .collect()
+}
+
+/// The infoboxes one top-level template stands for: two for the plural character template,
+/// one for any other `infobox …`, none for everything else.
+fn infoboxes_in(t: Template) -> Vec<RawInfobox> {
+    if t.name == PLURAL_CHARACTER {
+        return character_forms(t.named).into();
     }
-    out
+    if t.name.starts_with("infobox") {
+        return vec![RawInfobox {
+            name: t.name,
+            params: t.named,
+        }];
+    }
+    Vec::new()
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
@@ -191,23 +193,6 @@ fn paper_line(inline: Vec<Inline>) -> Vec<Inline> {
     }
 }
 
-/// The `dlc` parameter as the editions it names. Absent is the one value that stays empty:
-/// the page declares no range, which `Editions::of` then reads back as "narrows nothing".
-/// An unreadable code is counted by `parse_code` and also leaves the entry declaring
-/// nothing, since the wiki itself answers `0` there.
-fn dlc_range(code: &str, d: &mut Diagnostics) -> Vec<Dlc> {
-    if code.trim().is_empty() {
-        return Vec::new();
-    }
-    match crate::editions::Editions::parse(code) {
-        Some(e) => e.list(),
-        None => {
-            d.unknown_dlc_code(code.trim());
-            Vec::new()
-        }
-    }
-}
-
 fn yes(ib: &RawInfobox, name: &str) -> bool {
     param(ib, name).trim().eq_ignore_ascii_case("yes")
 }
@@ -254,7 +239,7 @@ pub struct EntryFacts {
 pub fn entry_facts(ib: &RawInfobox, r: &Resolver, d: &mut Diagnostics) -> EntryFacts {
     EntryFacts {
         description: inline(ib, "description", r, d),
-        dlc: dlc_range(param(ib, "dlc"), d),
+        dlc: declared_range(param(ib, "dlc"), d),
         unlocked_by: r.achievement_by_name(param(ib, "unlocked by")),
     }
 }
@@ -318,22 +303,7 @@ pub fn infobox_from(
             environment: inline(ib, "environment", r, d),
             pool: inline(ib, "pool", r, d),
         },
-        InfoboxKind::Challenge => Infobox::Challenge {
-            blindfolded: yes(ib, "blindfolded"),
-            has_shops: yes(ib, "has shops"),
-            has_treasure_rooms: yes(ib, "has treasure rooms"),
-            items: inline(ib, "item", r, d),
-            trinkets: inline(ib, "trinket", r, d),
-            pickups: inline(ib, "pickup", r, d),
-            health: inline(ib, "health", r, d),
-            curse: inline(ib, "curse", r, d),
-            goal: inline(ib, "goal", r, d),
-            character: r.by_page_title(param(ib, "character")),
-            // `unlocks` is usually a page title; for achievements it's the name.
-            unlocks: r
-                .by_page_title(param(ib, "unlocks"))
-                .or_else(|| r.achievement_by_name(param(ib, "unlocks"))),
-        },
+        InfoboxKind::Challenge => challenge_from(ib, r, d),
         InfoboxKind::Transformation => {
             let c = crate::transformation::contributors(ib, page, r, d);
             Infobox::Transformation {
@@ -342,18 +312,41 @@ pub fn infobox_from(
                 target: inline(ib, "target", r, d),
             }
         }
-        InfoboxKind::Character => Infobox::Character {
-            health: inline(ib, "health", r, d),
-            damage: text(ib, "damage"),
-            tears: text(ib, "tears"),
-            range: text(ib, "range"),
-            speed: text(ib, "speed"),
-            luck: text(ib, "luck"),
-            shot_speed: text(ib, "shot speed"),
-            pickups: inline(ib, "pickups", r, d),
-            collectibles: inline(ib, "collectibles", r, d),
-            parent: r.by_page_title(param(ib, "parent")),
-        },
+        InfoboxKind::Character => character_from(ib, r, d),
+    }
+}
+
+fn challenge_from(ib: &RawInfobox, r: &Resolver, d: &mut Diagnostics) -> Infobox {
+    Infobox::Challenge {
+        blindfolded: yes(ib, "blindfolded"),
+        has_shops: yes(ib, "has shops"),
+        has_treasure_rooms: yes(ib, "has treasure rooms"),
+        items: inline(ib, "item", r, d),
+        trinkets: inline(ib, "trinket", r, d),
+        pickups: inline(ib, "pickup", r, d),
+        health: inline(ib, "health", r, d),
+        curse: inline(ib, "curse", r, d),
+        goal: inline(ib, "goal", r, d),
+        character: r.by_page_title(param(ib, "character")),
+        // `unlocks` is usually a page title; for achievements it's the name.
+        unlocks: r
+            .by_page_title(param(ib, "unlocks"))
+            .or_else(|| r.achievement_by_name(param(ib, "unlocks"))),
+    }
+}
+
+fn character_from(ib: &RawInfobox, r: &Resolver, d: &mut Diagnostics) -> Infobox {
+    Infobox::Character {
+        health: inline(ib, "health", r, d),
+        damage: text(ib, "damage"),
+        tears: text(ib, "tears"),
+        range: text(ib, "range"),
+        speed: text(ib, "speed"),
+        luck: text(ib, "luck"),
+        shot_speed: text(ib, "shot speed"),
+        pickups: inline(ib, "pickups", r, d),
+        collectibles: inline(ib, "collectibles", r, d),
+        parent: r.by_page_title(param(ib, "parent")),
     }
 }
 
@@ -399,7 +392,7 @@ mod tests {
             target,
         } = infobox_from(InfoboxKind::Transformation, &ib, "", &r, &mut d)
         else {
-            panic!()
+            panic!("a transformation infobox gives Infobox::Transformation")
         };
         assert_eq!(requires, None);
         assert!(contributors.is_empty());
@@ -423,7 +416,7 @@ mod tests {
             ..
         } = infobox_from(InfoboxKind::Transformation, &ib, text, &r, &mut d)
         else {
-            panic!()
+            panic!("a transformation infobox gives Infobox::Transformation")
         };
         assert_eq!(requires, Some(3));
         assert_eq!(contributors, vec![Target::Item { id: 25 }]);
@@ -532,7 +525,7 @@ mod tests {
             pools,
         } = infobox_from(InfoboxKind::Passive, &ib, "", &r, &mut d)
         else {
-            panic!()
+            panic!("a passive collectible infobox gives Infobox::Item")
         };
         assert!(matches!(
             quote.first(),
@@ -560,7 +553,7 @@ mod tests {
             template, recharge, ..
         } = infobox_from(InfoboxKind::Activated, &ib, "", &r, &mut d)
         else {
-            panic!()
+            panic!("an activated collectible infobox gives Infobox::Item")
         };
         assert_eq!(template, CollectibleTemplate::Activated);
         assert!(!recharge.is_empty());
@@ -577,7 +570,7 @@ mod tests {
         let Infobox::Trinket { quote, tags, pools } =
             infobox_from(InfoboxKind::Trinket, &ib, "", &r, &mut d)
         else {
-            panic!()
+            panic!("a trinket infobox gives Infobox::Trinket")
         };
         assert!(matches!(
             quote.first(),
@@ -624,7 +617,7 @@ mod tests {
             unlocks,
         } = infobox_from(InfoboxKind::Achievement, &ib, "", &r, &mut d)
         else {
-            panic!()
+            panic!("an achievement infobox gives Infobox::Achievement")
         };
         // `description` is no longer here: it rose to `Entry`, and `entry_facts` reads it.
         // An achievement's is plain text, so it arrives as a single `Inline::Text`.
@@ -649,7 +642,7 @@ mod tests {
         );
         let Infobox::Boss { base_hp, .. } = infobox_from(InfoboxKind::Boss, &ib, "", &r, &mut d)
         else {
-            panic!()
+            panic!("a boss infobox gives Infobox::Boss")
         };
         assert_eq!(base_hp, Some(250));
         // Same move: the boss's `unlocked by` is now one of the three common facts.
@@ -676,7 +669,7 @@ mod tests {
                 &r,
                 &mut Diagnostics::default(),
             ) else {
-                panic!()
+                panic!("an achievement infobox gives Infobox::Achievement")
             };
             crate::plain(&quote)
         };
@@ -791,7 +784,7 @@ mod tests {
             variant, stage_hp, ..
         } = infobox_from(InfoboxKind::Boss, &ib, "", &r, &mut d)
         else {
-            panic!()
+            panic!("a boss infobox gives Infobox::Boss")
         };
         assert_eq!(variant, Some(1));
         assert!(!stage_hp.is_empty());
@@ -802,7 +795,7 @@ mod tests {
         let Infobox::Challenge { character, .. } =
             infobox_from(InfoboxKind::Challenge, &ib, "", &r, &mut d)
         else {
-            panic!()
+            panic!("a challenge infobox gives Infobox::Challenge")
         };
         assert_eq!(character, Some(Target::Character { id: 0 }));
 
@@ -813,7 +806,7 @@ mod tests {
         let Infobox::Character { tears, parent, .. } =
             infobox_from(InfoboxKind::Character, &ib, "", &r, &mut d)
         else {
-            panic!()
+            panic!("a character infobox gives Infobox::Character")
         };
         assert_eq!(tears, "2.73");
         assert_eq!(parent, Some(Target::Character { id: 21 }));
@@ -839,7 +832,7 @@ mod tests {
             ..
         } = infobox_from(InfoboxKind::Challenge, &ib, "", &r, &mut d)
         else {
-            panic!()
+            panic!("a challenge infobox gives Infobox::Challenge")
         };
         assert!(blindfolded);
         assert!(!has_shops);

@@ -673,7 +673,7 @@ fn a_save() -> core_save::Save {
         sections: vec![core_save::Section {
             kind: core_save::Kind::Achievements,
             count: 4,
-            f2: 0,
+            declared_size: 0,
             offset: 0,
             bytes: vec![1, 1, 0, 1],
         }],

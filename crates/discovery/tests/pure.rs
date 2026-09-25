@@ -132,3 +132,38 @@ fn malformed_acf_returns_none() {
         None
     );
 }
+
+#[test]
+fn a_depot_whose_dlcappid_is_not_a_number_is_skipped_and_the_others_still_read() {
+    let acf = r#"
+"AppState"
+{
+	"installdir"		"X"
+	"InstalledDepots"
+	{
+		"1" { "dlcappid" "not-a-number" }
+		"2" { "dlcappid" "401920" }
+		"3" { "manifest" "7" }
+	}
+}
+"#;
+    let (_, dlcs) = discovery::for_tests::parse_manifest_fields(acf).expect("valid manifest");
+    assert_eq!(dlcs, [401920u32].into_iter().collect());
+}
+
+#[test]
+fn a_manifest_with_no_installed_depots_owns_no_dlc() {
+    let acf = "\"AppState\"\n{\n\t\"installdir\"\t\t\"X\"\n}\n";
+    let (installdir, dlcs) =
+        discovery::for_tests::parse_manifest_fields(acf).expect("valid manifest");
+    assert_eq!(installdir, "X");
+    assert!(dlcs.is_empty());
+}
+
+#[test]
+fn a_manifest_with_no_installdir_is_not_a_manifest() {
+    // Without the folder name there is nowhere to look for the game, so nothing else in the
+    // file is worth reading.
+    let acf = "\"AppState\"\n{\n\t\"appid\"\t\t\"250900\"\n}\n";
+    assert_eq!(discovery::for_tests::parse_manifest_fields(acf), None);
+}

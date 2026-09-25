@@ -19,11 +19,11 @@ fn main() {
     let mut last = 0usize;
     for s in &save.sections {
         println!(
-            "kind {:?} (n={}) count={} f2={} data={} bytes at {}",
+            "kind {:?} (n={}) count={} declared_size={} data={} bytes at {}",
             s.kind,
             s.kind.number(),
             s.count,
-            s.f2,
+            s.declared_size,
             s.bytes.len(),
             s.offset
         );
@@ -39,16 +39,16 @@ fn main() {
         );
         let tail = bytes.len().saturating_sub(4);
         for p in last..tail.saturating_sub(12) {
-            let (Some(k), Some(f2), Some(c)) = (
+            let (Some(k), Some(declared_size), Some(c)) = (
                 u32_at(&bytes, p),
                 u32_at(&bytes, p + 4),
                 u32_at(&bytes, p + 8),
             ) else {
                 break;
             };
-            if (1..=20).contains(&k) && c > 0 && c < 100_000 && f2 == c * 4 {
+            if (1..=20).contains(&k) && c > 0 && c < 100_000 && declared_size == c * 4 {
                 println!(
-                    "at {p} (= section 10 start + {}): kind={k} f2={f2} count={c}",
+                    "at {p} (= section 10 start + {}): kind={k} declared_size={declared_size} count={c}",
                     p - last
                 );
             }
@@ -58,22 +58,22 @@ fn main() {
     let end = bytes.len().saturating_sub(4);
     println!("\n--- walking on from {off} (end of section 10's declared 320 bytes) ---");
     while off + 12 <= end {
-        let (k, f2, count) = (
+        let (k, declared_size, count) = (
             u32_at(&bytes, off),
             u32_at(&bytes, off + 4),
             u32_at(&bytes, off + 8),
         );
-        let (Some(k), Some(f2), Some(count)) = (k, f2, count) else {
+        let (Some(k), Some(declared_size), Some(count)) = (k, declared_size, count) else {
             break;
         };
         println!(
-            "at {off}: kind={k} f2={f2} count={count}  (remaining {})",
+            "at {off}: kind={k} declared_size={declared_size} count={count}  (remaining {})",
             end - off
         );
         if count == 0 || count > 100_000 {
             break;
         }
-        let per = if f2 == count * 4 { 4 } else { 1 };
+        let per = if declared_size == count * 4 { 4 } else { 1 };
         off += 12 + (count as usize) * per;
     }
 }

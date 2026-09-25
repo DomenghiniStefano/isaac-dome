@@ -5,18 +5,17 @@ use std::collections::{BTreeMap, BTreeSet};
 
 use serde::{Deserialize, Serialize};
 
-use crate::Target;
+use crate::editions::Editions;
+use crate::{Dlc, Target};
 
-/// The Repentance+ bit in the `dlc` field of the Cargo tables, a bitmask: 1 Rebirth,
-/// 2 Afterbirth, 4 Afterbirth+, 8 Repentance, 16 Repentance+.
-pub const DLC_REPENTANCE_PLUS: u32 = 16;
-
-/// True if the row is valid in the current edition. A row with no `dlc`, or with a `dlc`
-/// that isn't an integer, is kept: the filter only excludes what the wiki declares to
-/// belong to another edition (Afterbirth+'s collectible 474 "Tonsil", `dlc = 4`).
+/// True if the row is valid in the current edition, Repentance+. The `dlc` field of the Cargo
+/// tables is a bitmask, read by [`Editions`] like every other statement of an edition. A row
+/// with no `dlc`, or with a `dlc` that isn't an integer, is kept: the filter only excludes
+/// what the wiki declares to belong to another edition (Afterbirth+'s collectible 474
+/// "Tonsil", `dlc = 4`).
 pub fn in_current_edition(row: &Row) -> bool {
     match row.get("dlc").and_then(|s| s.trim().parse::<u32>().ok()) {
-        Some(mask) => mask & DLC_REPENTANCE_PLUS != 0,
+        Some(mask) => Editions::of_cargo_bits(mask).contains(Dlc::RepentancePlus),
         None => true,
     }
 }
@@ -212,7 +211,45 @@ fn get<'a>(row: &'a Row, field: &str) -> Option<&'a str> {
         .filter(|s| !s.trim().is_empty())
 }
 
+/// A row's title and alias into one name map. The title enters only if no earlier row took
+/// that key; the alias always does, over whatever was there. That is the rule of every table
+/// read this way — collectibles, trinkets, challenges, entities, transformations — and it is
+/// one rule, so it is written once.
+fn index_by_title_and_alias<V: Clone>(map: &mut BTreeMap<String, V>, row: &Row, value: V) {
+    if let Some(title) = get(row, "_pageName") {
+        map.entry(key(title)).or_insert_with(|| value.clone());
+    }
+    if let Some(alias) = get(row, "alias") {
+        map.insert(key(alias), value);
+    }
+}
+
+/// Collectibles and trinkets, which read alike: a row needs a title and an id, the id is the
+/// one `corrections.json` gives for `table`, and the title also enters the by-title map that
+/// keeps every id a page carries.
+fn index_numbered_pages(
+    rows: &[Row],
+    table: &str,
+    corrections: &Corrections,
+    by_title: &mut BTreeMap<String, BTreeSet<u32>>,
+    names: &mut BTreeMap<String, u32>,
+) {
+    for (row, title, id) in
+        current(rows).filter_map(|row| Some((row, get(row, "_pageName")?, num(row, "id")?)))
+    {
+        let id = corrections.apply(table, title, id);
+        by_title.entry(key(title)).or_default().insert(id);
+        index_by_title_and_alias(names, row, id);
+    }
+}
+
+/// An entity row's `id`, `variant` and `subtype`, all three or nothing.
+fn bestiary_triple(row: &Row) -> Option<(u32, u32, u32)> {
+    Some((num(row, "id")?, num(row, "variant")?, num(row, "subtype")?))
+}
+
 impl Resolver {
+    /// The maps, one table at a time. Rows from past editions enter none of them.
     pub fn new(
         tables: &Tables,
         characters: &BTreeMap<String, u32>,
@@ -222,105 +259,96 @@ impl Resolver {
             corrections: corrections.clone(),
             ..Resolver::default()
         };
-        for row in current(&tables.collectible) {
-            let (Some(title), Some(id)) = (get(row, "_pageName"), num(row, "id")) else {
-                continue;
-            };
-            let id = corrections.apply("collectible", title, id);
-            r.items_by_title.entry(key(title)).or_default().insert(id);
-            r.items.entry(key(title)).or_insert(id);
-            if let Some(a) = get(row, "alias") {
-                r.items.insert(key(a), id);
-            }
-        }
-        for row in current(&tables.trinket) {
-            let (Some(title), Some(id)) = (get(row, "_pageName"), num(row, "id")) else {
-                continue;
-            };
-            let id = corrections.apply("trinket", title, id);
-            r.trinkets_by_title
-                .entry(key(title))
-                .or_default()
-                .insert(id);
-            r.trinkets.entry(key(title)).or_insert(id);
-            if let Some(a) = get(row, "alias") {
-                r.trinkets.insert(key(a), id);
-            }
-        }
-        for row in current(&tables.achievement) {
-            let Some(id) = num(row, "id") else {
-                continue;
-            };
+        index_numbered_pages(
+            &tables.collectible,
+            "collectible",
+            corrections,
+            &mut r.items_by_title,
+            &mut r.items,
+        );
+        index_numbered_pages(
+            &tables.trinket,
+            "trinket",
+            corrections,
+            &mut r.trinkets_by_title,
+            &mut r.trinkets,
+        );
+        r.index_achievements(&tables.achievement);
+        r.index_challenges(&tables.challenge);
+        r.index_entities(&tables.entity);
+        r.index_transformations(&tables.transformation);
+        r.index_pickups(&tables.pickup);
+        r.index_players(&tables.player);
+        r.index_characters(characters, corrections);
+        r
+    }
+
+    /// The reverse of the title rule: an achievement's `name` always enters, its alias only
+    /// if nothing took that key.
+    fn index_achievements(&mut self, rows: &[Row]) {
+        for (row, id) in current(rows).filter_map(|row| Some((row, num(row, "id")?))) {
             if let Some(n) = get(row, "name") {
-                r.achievements.insert(key(n), id);
+                self.achievements.insert(key(n), id);
             }
             if let Some(a) = get(row, "alias") {
-                r.achievements.entry(key(a)).or_insert(id);
+                self.achievements.entry(key(a)).or_insert(id);
             }
         }
-        for row in current(&tables.challenge) {
-            let Some(n) = num(row, "number") else {
-                continue;
-            };
+    }
+
+    /// A challenge is also found by its number, written as text.
+    fn index_challenges(&mut self, rows: &[Row]) {
+        for (row, n) in current(rows).filter_map(|row| Some((row, num(row, "number")?))) {
             if let Some(t) = get(row, "_pageName") {
-                r.challenges_by_title.insert(key(t), n);
-                r.challenges.entry(key(t)).or_insert(n);
+                self.challenges_by_title.insert(key(t), n);
             }
-            if let Some(a) = get(row, "alias") {
-                r.challenges.insert(key(a), n);
-            }
-            r.challenges.insert(n.to_string(), n);
+            index_by_title_and_alias(&mut self.challenges, row, n);
+            self.challenges.insert(n.to_string(), n);
         }
-        for row in current(&tables.entity) {
-            let (Some(id), Some(v), Some(s)) =
-                (num(row, "id"), num(row, "variant"), num(row, "subtype"))
-            else {
-                continue;
-            };
-            let title = get(row, "_pageName");
-            if let Some(t) = title {
-                r.entities.entry(key(t)).or_insert((id, v, s));
-            }
-            if let Some(a) = get(row, "alias") {
-                r.entities.insert(key(a), (id, v, s));
-            }
-            if get(row, "type") == Some("boss") {
-                if let Some(t) = title {
-                    r.bosses_by_title.entry(key(t)).or_insert((id, v, s));
-                }
+    }
+
+    /// Every entity by name; the bosses, by title alone, into the bestiary map as well.
+    fn index_entities(&mut self, rows: &[Row]) {
+        for (row, triple) in current(rows).filter_map(|row| Some((row, bestiary_triple(row)?))) {
+            index_by_title_and_alias(&mut self.entities, row, triple);
+            if let (Some("boss"), Some(t)) = (get(row, "type"), get(row, "_pageName")) {
+                self.bosses_by_title.entry(key(t)).or_insert(triple);
             }
         }
-        for row in current(&tables.transformation) {
-            let Some(id) = num(row, "id") else {
-                continue;
-            };
-            if let Some(t) = get(row, "_pageName") {
-                r.transformations.entry(key(t)).or_insert(id);
-            }
-            if let Some(a) = get(row, "alias") {
-                r.transformations.insert(key(a), id);
-            }
+    }
+
+    fn index_transformations(&mut self, rows: &[Row]) {
+        for (row, id) in current(rows).filter_map(|row| Some((row, num(row, "id")?))) {
+            index_by_title_and_alias(&mut self.transformations, row, id);
         }
-        for row in current(&tables.pickup) {
-            if let Some(a) = get(row, "alias") {
-                r.pickups.insert(key(a), a.to_string());
-            }
+    }
+
+    fn index_pickups(&mut self, rows: &[Row]) {
+        for a in current(rows).filter_map(|row| get(row, "alias")) {
+            self.pickups.insert(key(a), a.to_string());
         }
-        for row in current(&tables.player) {
+    }
+
+    /// Each form's `parent`, raw, by its alias; the first row for an alias wins.
+    fn index_players(&mut self, rows: &[Row]) {
+        for row in current(rows) {
             if let Some(a) = get(row, "alias") {
-                r.player_parent
+                self.player_parent
                     .entry(key(a))
                     .or_insert_with(|| get(row, "parent").unwrap_or("").to_string());
             }
         }
+    }
+
+    /// The ids derived from the pages, then our own map over them, which also gives the name.
+    fn index_characters(&mut self, characters: &BTreeMap<String, u32>, corrections: &Corrections) {
         for (name, id) in characters {
-            r.characters.insert(key(name), *id);
+            self.characters.insert(key(name), *id);
         }
         for (name, id) in &corrections.characters {
-            r.characters.insert(key(name), *id);
-            r.character_names.insert(key(name), name.clone());
+            self.characters.insert(key(name), *id);
+            self.character_names.insert(key(name), name.clone());
         }
-        r
     }
 
     /// The character of a page or an infobox: id and canonical name (the one from our own
@@ -337,7 +365,11 @@ impl Resolver {
         Some((id, canonical))
     }
 
-    /// `template` already lowercase; `arg` the first raw argument.
+    /// `template` in any case and with any spacing: it is trimmed and lowercased here, since
+    /// the name comes from the wikitext. `arg` is the first raw argument.
+    ///
+    /// Long, and flat on purpose: one arm per template the wiki uses for a link, each saying
+    /// which map answers it. Split up, the list of link templates would stop being one list.
     pub fn resolve(&self, template: &str, arg: &str) -> Resolution {
         let t = template.trim().to_lowercase();
         if is_layout_template(&t) {

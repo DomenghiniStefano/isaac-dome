@@ -93,33 +93,23 @@ impl Store {
             .conn
             .prepare("SELECT id, target_json, created_unix, note FROM goals ORDER BY seq")
             .map_err(StoreError::from_sqlite)?;
-        let rows = stmt
+        let rows: Vec<Result<Goal, GoalId>> = stmt
             .query_map([], |r| {
-                Ok((
+                Ok(goal_row(
                     r.get::<_, String>(0)?,
                     r.get::<_, String>(1)?,
                     r.get::<_, i64>(2)?,
                     r.get::<_, Option<String>>(3)?,
                 ))
             })
+            .map_err(StoreError::from_sqlite)?
+            .collect::<Result<_, _>>()
             .map_err(StoreError::from_sqlite)?;
-        let mut out = GoalsRead::default();
-        for row in rows {
-            let (id, target_json, created_unix, note) = row.map_err(StoreError::from_sqlite)?;
-            let id = GoalId::from_str_unchecked(&id);
-            match serde_json::from_str::<TargetKey>(&target_json) {
-                Ok(target) => out.goals.push(Goal {
-                    id,
-                    target,
-                    created_unix,
-                    note,
-                }),
-                // Written by a version that knows about targets this one can't parse:
-                // it stays in the file, gets named, and is left untouched.
-                Err(_) => out.unreadable.push(id),
-            }
-        }
-        Ok(out)
+        let (goals, unreadable): (Vec<_>, Vec<_>) = rows.into_iter().partition(Result::is_ok);
+        Ok(GoalsRead {
+            goals: goals.into_iter().filter_map(Result::ok).collect(),
+            unreadable: unreadable.into_iter().filter_map(Result::err).collect(),
+        })
     }
 
     /// Inserts a new goal. An id that already exists is an error, not an update: ids
@@ -256,5 +246,25 @@ impl Store {
             )
             .map(|_| ())
             .map_err(StoreError::from_sqlite)
+    }
+}
+
+/// One row of `goals`, or its id when the target does not parse: written by a version that knows
+/// about targets this one can't parse, it stays in the file, gets named, and is left untouched.
+fn goal_row(
+    id: String,
+    target_json: String,
+    created_unix: i64,
+    note: Option<String>,
+) -> Result<Goal, GoalId> {
+    let id = GoalId::from_str_unchecked(&id);
+    match serde_json::from_str::<TargetKey>(&target_json) {
+        Ok(target) => Ok(Goal {
+            id,
+            target,
+            created_unix,
+            note,
+        }),
+        Err(_) => Err(id),
     }
 }
