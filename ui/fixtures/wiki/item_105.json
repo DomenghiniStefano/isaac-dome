@@ -717,7 +717,7 @@
                 {
                   "kind": "ref",
                   "target": {
-                    "kind": "pickup",
+                    "kind": "concept",
                     "name": "Soul of Isaac"
                   },
                   "label": "Soul of Isaac"

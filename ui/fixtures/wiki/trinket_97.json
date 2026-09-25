@@ -218,7 +218,7 @@
                 {
                   "kind": "ref",
                   "target": {
-                    "kind": "pickup",
+                    "kind": "concept",
                     "name": "Holy Card"
                   },
                   "label": "Holy Card"
