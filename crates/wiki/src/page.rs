@@ -13,6 +13,7 @@ use crate::infobox::{
 };
 use crate::resolver::{is_layout_template, Resolver};
 use crate::sections::{section_kind, split_page};
+use crate::template::{template_segments, Segment};
 use crate::{Diagnostics, Entry, Section};
 
 /// The page kind, as `index.json` classifies it: decides the folder in `raw/` and the
@@ -211,32 +212,22 @@ fn squeeze(inline: &mut [crate::Inline], space: &mut bool) {
 }
 
 /// The preamble text with the infobox and the page header taken out, and **nothing else**:
-/// a `{{i|Flip}}` in the same sentence is a reference the prose needs. `parse_template_at`
+/// a `{{i|Flip}}` in the same sentence is a reference the prose needs. `template_segments`
 /// is what says where a template ends, which a line-by-line pass cannot — an infobox spans
 /// a dozen lines and a header one.
 fn without_the_boxes(text: &str) -> String {
-    let mut out = String::new();
-    let mut i = 0;
-    while let Some(pos) = text.get(i..).and_then(|rest| rest.find("{{")) {
-        let at = i + pos;
-        out.push_str(&text[i..at]);
-        match crate::template::parse_template_at(text, at) {
-            Some((t, end)) if t.name.starts_with("infobox") || is_layout_template(&t.name) => {
-                i = end
+    template_segments(text)
+        .map(|segment| match segment {
+            Segment::Text(text) => text,
+            Segment::Template { template, .. }
+                if template.name.starts_with("infobox") || is_layout_template(&template.name) =>
+            {
+                ""
             }
             // Any other template is prose: leave it for `parse_inline` to resolve.
-            Some((_, end)) => {
-                out.push_str(&text[at..end]);
-                i = end;
-            }
-            None => {
-                out.push_str("{{");
-                i = at + 2;
-            }
-        }
-    }
-    out.push_str(&text[i..]);
-    out
+            Segment::Template { source, .. } => source,
+        })
+        .collect()
 }
 
 /// The page's edition context: the range the **first** infobox declares, and not each

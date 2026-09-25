@@ -4,7 +4,7 @@ use std::collections::BTreeMap;
 
 use crate::inline::parse_inline;
 use crate::resolver::Resolver;
-use crate::template::parse_template_at;
+use crate::template::{template_segments, Segment, Template};
 use crate::{CollectibleTemplate, Diagnostics, Dlc, Infobox, Inline, Target};
 
 /// An `{{infobox …}}` template as-is: lowercase name and raw named parameters.
@@ -66,26 +66,27 @@ fn character_forms(params: BTreeMap<String, String>) -> [RawInfobox; 2] {
 /// Every top-level `{{infobox …}}`, in the order they appear. Other templates are
 /// skipped whole, so an infobox nested inside another template does not count.
 pub fn extract_infoboxes(text: &str) -> Vec<RawInfobox> {
-    let mut out = Vec::new();
-    let mut i = 0;
-    while let Some(pos) = text.get(i..).and_then(|rest| rest.find("{{")) {
-        let at = i + pos;
-        match parse_template_at(text, at) {
-            Some((t, end)) => {
-                if t.name == PLURAL_CHARACTER {
-                    out.extend(character_forms(t.named));
-                } else if t.name.starts_with("infobox") {
-                    out.push(RawInfobox {
-                        name: t.name,
-                        params: t.named,
-                    });
-                }
-                i = end;
-            }
-            None => i = at + 2, // `{{` with no close: resume from the next character
-        }
+    template_segments(text)
+        .flat_map(|segment| match segment {
+            Segment::Template { template, .. } => infoboxes_in(template),
+            Segment::Text(_) => Vec::new(),
+        })
+        .collect()
+}
+
+/// The infoboxes one top-level template stands for: two for the plural character template,
+/// one for any other `infobox …`, none for everything else.
+fn infoboxes_in(t: Template) -> Vec<RawInfobox> {
+    if t.name == PLURAL_CHARACTER {
+        return character_forms(t.named).into();
     }
-    out
+    if t.name.starts_with("infobox") {
+        return vec![RawInfobox {
+            name: t.name,
+            params: t.named,
+        }];
+    }
+    Vec::new()
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]

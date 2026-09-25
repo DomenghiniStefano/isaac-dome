@@ -7,6 +7,7 @@
 
 use crate::inline::parse_inline;
 use crate::resolver::Resolver;
+use crate::template::{template_segments, Segment, Template};
 use crate::{Block, Diagnostics, Inline, ListItem};
 
 /// A list item still to be built: depth, whether the last marker is `#`, text.
@@ -85,66 +86,55 @@ fn push_content(out: &mut String, content: Option<&String>, after: &str) {
 }
 
 /// The body with those wrappers replaced by what the line pass can read, and nothing else
-/// touched. `parse_template_at` is what says where one ends: a line-by-line pass cannot.
+/// touched. `template_segments` is what says where one ends: a line-by-line pass cannot.
 fn unwrapped(body: &str) -> String {
-    let mut out = String::new();
-    let mut i = 0;
-    while let Some(pos) = body.get(i..).and_then(|rest| rest.find("{{")) {
-        let at = i + pos;
-        out.push_str(&body[i..at]);
-        match crate::template::parse_template_at(body, at) {
-            // Only a template that spans lines. One that closes where it opened is already
-            // visible to the pass, and moving its content onto a line of its own would cut
-            // the list item it sits in — which is where 538 of the 547 `{{bug|…}}` live.
-            Some((t, end)) if body[at..end].contains('\n') => {
-                match wrapper(&t.name) {
-                    Some(Wrapper::Layout { param }) => {
-                        push_content(&mut out, t.named.get(param), &body[end..]);
-                    }
-                    Some(Wrapper::Transparent) => {
-                        push_content(&mut out, t.args.first(), &body[end..]);
-                    }
-                    // The sentence goes back inside a template that closes on its line, so
-                    // the inline pass reads it; everything after the first newline is
-                    // already the lines it introduced.
-                    Some(Wrapper::Headed { param }) => {
-                        match t.named.get(param).and_then(|v| v.split_once('\n')) {
-                            Some((head, rest)) => {
-                                out.push_str("{{");
-                                out.push_str(&t.name);
-                                out.push('|');
-                                out.push_str(param);
-                                out.push('=');
-                                out.push_str(head.trim_end());
-                                out.push_str("}}\n");
-                                out.push_str(rest);
-                                if !body[end..].starts_with('\n') {
-                                    out.push('\n');
-                                }
-                            }
-                            // A headed wrapper whose sentence holds no newline of its own
-                            // spans lines for some other reason: left as it is rather than
-                            // reshaped on a guess.
-                            None => out.push_str(&body[at..end]),
-                        }
-                    }
-                    None => out.push_str(&body[at..end]),
-                }
-                i = end;
-            }
-            // Every other template is content: it belongs to the line it is on.
-            Some((_, end)) => {
-                out.push_str(&body[at..end]);
-                i = end;
-            }
-            None => {
-                out.push_str("{{");
-                i = at + 2;
-            }
+    template_segments(body).fold(String::new(), |mut out, segment| {
+        match segment {
+            Segment::Text(text) => out.push_str(text),
+            Segment::Template {
+                template,
+                source,
+                after,
+            } => push_template(&mut out, &template, source, after),
         }
+        out
+    })
+}
+
+/// One top-level template, unwrapped if it is a block-level wrapper that spans lines.
+///
+/// Only a template that spans lines. One that closes where it opened is already visible to the
+/// pass, and moving its content onto a line of its own would cut the list item it sits in —
+/// which is where 538 of the 547 `{{bug|…}}` live. Every other template is content: it belongs
+/// to the line it is on.
+fn push_template(out: &mut String, t: &Template, source: &str, after: &str) {
+    if !source.contains('\n') {
+        out.push_str(source);
+        return;
     }
-    out.push_str(&body[i..]);
-    out
+    match wrapper(&t.name) {
+        Some(Wrapper::Layout { param }) => push_content(out, t.named.get(param), after),
+        Some(Wrapper::Transparent) => push_content(out, t.args.first(), after),
+        Some(Wrapper::Headed { param }) => push_headed(out, t, param, source, after),
+        None => out.push_str(source),
+    }
+}
+
+/// A headed wrapper: the sentence goes back inside a template that closes on its line, so the
+/// inline pass reads it; everything after the first newline is already the lines it introduced.
+///
+/// A headed wrapper whose sentence holds no newline of its own spans lines for some other
+/// reason: left as it is rather than reshaped on a guess.
+fn push_headed(out: &mut String, t: &Template, param: &str, source: &str, after: &str) {
+    let Some((head, rest)) = t.named.get(param).and_then(|v| v.split_once('\n')) else {
+        out.push_str(source);
+        return;
+    };
+    out.push_str(&format!("{{{{{}|{param}={}}}}}\n", t.name, head.trim_end()));
+    out.push_str(rest);
+    if !after.starts_with('\n') {
+        out.push('\n');
+    }
 }
 
 pub fn parse_blocks(body: &str, r: &Resolver, d: &mut Diagnostics) -> Vec<Block> {
