@@ -105,7 +105,7 @@ pub fn remove_goal(
     ))
 }
 
-/// The entropy a goal id is hashed from, drawn here because `ipc` reads no clock (card #81, V2):
+/// The entropy a goal id is hashed from, drawn here because `ipc` reads no clock:
 /// the clock's nanoseconds, the pid, the address of a fresh allocation, and a counter, so two
 /// goals added within one nanosecond of each other still differ.
 fn goal_nonce(nanos: u32) -> u64 {
