@@ -65,22 +65,17 @@ pub struct RefRow {
     pub label: String,
 }
 
+/// One target of the inventory. **Every one of them needs a verdict**, entities included: an
+/// entity only escapes the verdict table when it resolves to a boss the game itself gates by
+/// an achievement — 27 of 103 bosses — and the other 76 have to be judged, or a node behind
+/// Delirium would read as "nothing in the way". Judging them all costs a handful of verdicts
+/// that are never read; exempting entities left a silent hole, found on 2026-09-07.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct TargetRow {
     pub key: String,
     pub label: String,
     pub uses: u32,
-    /// Whether a verdict is always consulted for this target, and therefore has to exist.
-    ///
-    /// It is false for entities only. An entity ref usually resolves to a boss by name —
-    /// and then no verdict is read — but whether it resolves depends on the catalog the
-    /// user has, which this file deliberately knows nothing about. So the file-level check
-    /// covers the kinds that can never resolve (stage, room, pickup, transformation), and
-    /// the stronger check — nothing left unknown against the real catalog — belongs to the
-    /// tests that have the game. An entity that neither resolves nor has a verdict still
-    /// ends up `Unknown`: the honesty chain doesn't depend on this flag.
-    pub verdict_required: bool,
 }
 
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]

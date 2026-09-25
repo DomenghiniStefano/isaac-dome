@@ -106,7 +106,7 @@ fn an_uncurated_target_counts_as_unknown_on_its_node() {
             &one_ref(
                 2,
                 r#"{"target":{"kind":"stage","name":"Nowhere"},"label":"Nowhere"}"#,
-                r#"{"key":"stage:Nowhere","label":"Nowhere","uses":1,"verdictRequired":true}"#,
+                r#"{"key":"stage:Nowhere","label":"Nowhere","uses":1}"#,
             ),
             r#"{"schemaVersion":2}"#,
         ),
@@ -126,7 +126,7 @@ fn a_gate_edge_comes_from_the_verdict() {
             &one_ref(
                 2,
                 r#"{"target":{"kind":"stage","name":"The Void"},"label":"The Void"}"#,
-                r#"{"key":"stage:The Void","label":"The Void","uses":1,"verdictRequired":true}"#,
+                r#"{"key":"stage:The Void","label":"The Void","uses":1}"#,
             ),
             r#"{"schemaVersion":2,
                 "verdicts":{"stage:The Void":{"behind":{"achievement":1}}}}"#,
@@ -165,7 +165,7 @@ fn a_verdict_pointing_at_an_achievement_that_does_not_exist_is_diagnosed() {
             &one_ref(
                 2,
                 r#"{"target":{"kind":"stage","name":"The Void"},"label":"The Void"}"#,
-                r#"{"key":"stage:The Void","label":"The Void","uses":1,"verdictRequired":true}"#,
+                r#"{"key":"stage:The Void","label":"The Void","uses":1}"#,
             ),
             r#"{"schemaVersion":2,
                 "verdicts":{"stage:The Void":{"behind":{"achievement":999}}}}"#,
