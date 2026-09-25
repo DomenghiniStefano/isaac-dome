@@ -1,9 +1,8 @@
 <script setup lang="ts">
+import type { Message } from '@/i18n/message'
 import { computed } from 'vue'
 import { Badge, BadgeVariant } from '@/components/ui/badge'
 import { useMessages } from '@/i18n'
-import type { MessageKey } from '@/i18n/messageKey'
-import type { MessageSchema } from '@/i18n/messages/it'
 import { NodeState, nodeState } from '@/lib/graph/nodeState'
 import { nodeWhy } from '@/lib/graph/whyMenu'
 import type { UnlockNode } from '@/lib/ipc/types'
@@ -22,7 +21,7 @@ const variant: Record<NodeState, BadgeVariant> = {
   [NodeState.Partial]: BadgeVariant.Partial,
 }
 
-const stateText: Record<NodeState, MessageKey<MessageSchema>> = {
+const stateText: Record<NodeState, Message> = {
   [NodeState.Done]: 'graph.state.done',
   [NodeState.Now]: 'graph.state.now',
   [NodeState.Blocked]: 'graph.state.blocked',
