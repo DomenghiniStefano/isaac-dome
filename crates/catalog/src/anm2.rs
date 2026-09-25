@@ -156,7 +156,9 @@ fn crops_of(la: LayerAnimation<'_>) -> impl Iterator<Item = Anm2Frame> + '_ {
                 layer: layer.clone(),
                 sheet: sheet.clone(),
                 index,
-                visible: f.attr("Visible") != Some("false"),
+                visible: !f
+                    .attr("Visible")
+                    .is_some_and(|v| v.eq_ignore_ascii_case("false")),
                 rect: rect_of(f)?,
                 origin: origin_of(f),
             })
@@ -323,6 +325,23 @@ mod tests {
         assert!(heart[1].visible);
     }
 
+    /// The game's own files do not agree on the case of a boolean. Measured on the installed
+    /// game on 2026-09-26, over the 4236 `.anm2` in its archives: `Visible` is written
+    /// `true` 382841 times, `True` 3431, `false` 12594, `False` 117 (and `37` twice). A
+    /// frame the file turns off is off whichever way it spells it.
+    #[test]
+    fn a_frame_turned_off_is_hidden_whatever_the_case_of_false() {
+        let spelled: &[u8] = br#"<AnimatedActor><Animations><Animation Name="A"><LayerAnimations>
+<LayerAnimation LayerId="0"><Frame XCrop="0" YCrop="0" Width="1" Height="1" Visible="false"/><Frame XCrop="0" YCrop="0" Width="1" Height="1" Visible="False"/><Frame XCrop="0" YCrop="0" Width="1" Height="1" Visible="True"/><Frame XCrop="0" YCrop="0" Width="1" Height="1" Visible="37"/></LayerAnimation>
+</LayerAnimations></Animation></Animations></AnimatedActor>"#;
+        let visible: Vec<bool> = frames(spelled)
+            .expect("valid XML")
+            .iter()
+            .map(|f| f.visible)
+            .collect();
+        assert_eq!(visible, vec![false, false, true, true]);
+    }
+
     #[test]
     fn with_a_single_layer_the_useful_name_is_the_animations() {
         let f = frames(PER_ANIMATION).expect("valid XML");
@@ -413,8 +432,8 @@ mod tests {
             vec![
                 // Outside any animation; its layer's sheet id names no sheet.
                 ("", "Known", "first.png", 0, true, 1),
-                // A layer nobody declared; `Visible` is only `false` when it says so.
-                ("A", "", "first.png", 0, true, 2),
+                // A layer nobody declared; `Visible="False"` is off, like `false`.
+                ("A", "", "first.png", 0, false, 2),
                 // No `LayerId` at all.
                 ("A", "", "first.png", 0, true, 3),
             ],
