@@ -152,6 +152,16 @@ impl Catalog {
         self.items.get(&(kind, id))
     }
 
+    /// The collectible numbered `id`, whichever of the three collectible kinds it is.
+    ///
+    /// The wiki's `Item { id }`, a run's `Adding collectible N` and a pool entry all name one
+    /// by number alone. Passives, actives and familiars share one id space, so at most one
+    /// kind matches; a trinket never does, because it can carry the same number as a
+    /// collectible and is not the thing any of them means.
+    pub fn collectible(&self, id: ItemId) -> Option<&Item> {
+        self.items.get(&(collectible_kind(&self.items, id)?, id))
+    }
+
     /// All the items, ordered by kind and then by id.
     pub fn items(&self) -> impl Iterator<Item = &Item> {
         self.items.values()
@@ -309,14 +319,18 @@ fn attach_pools(items: &mut Items, pools: &[Pool]) {
     }
 }
 
-/// The collectible with a bare id. Pools only contain collectibles (passives, actives,
-/// familiars), never trinkets: the three kinds are searched in order and the first one found
-/// is the one.
+/// The collectible with a bare id, for writing while the catalog is built. Pools only
+/// contain collectibles, never trinkets.
 fn collectible_mut(items: &mut Items, id: ItemId) -> Option<&mut Item> {
-    let kind = ItemKind::COLLECTIBLES
+    items.get_mut(&(collectible_kind(items, id)?, id))
+}
+
+/// Which of the three collectible kinds carries `id`: they are searched in order and the
+/// first one found is the one. The one lookup behind [`Catalog::collectible`] and the pools.
+fn collectible_kind(items: &Items, id: ItemId) -> Option<ItemKind> {
+    ItemKind::COLLECTIBLES
         .into_iter()
-        .find(|&kind| items.contains_key(&(kind, id)))?;
-    items.get_mut(&(kind, id))
+        .find(|&kind| items.contains_key(&(kind, id)))
 }
 
 /// Each character's cell of `coop menu.png`, where the map has one and the sheet holds it.
