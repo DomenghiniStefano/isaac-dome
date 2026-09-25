@@ -153,23 +153,10 @@ pub fn challenges_view(
                 Some(false) => ChallengeStateView::Blocked { missing },
             };
 
-            // `if let` and not a `match` with a `_` arm: this reads one variant of an open
-            // catalogue of infoboxes, it does not claim to enumerate them.
-            let entry = dataset.and_then(|d| d.entry(&Target::Challenge { number }));
-            let mut character = None;
-            let mut goal = None;
-            let mut blindfolded = None;
-            if let Some(Infobox::Challenge {
-                character: ch_character,
-                goal: ch_goal,
-                blindfolded: ch_blindfolded,
-                ..
-            }) = entry.map(|e| &e.infobox)
-            {
-                character = ch_character.clone();
-                goal = Some(ch_goal.clone());
-                blindfolded = Some(*ch_blindfolded);
-            }
+            let facts = challenge_facts(dataset, number);
+            let character = facts.as_ref().and_then(|f| f.character.clone());
+            let goal = facts.as_ref().map(|f| f.goal.clone());
+            let blindfolded = facts.as_ref().map(|f| f.blindfolded);
 
             let character_name = character
                 .as_ref()
@@ -213,4 +200,33 @@ pub fn challenges_view(
         challenges: rows,
         diagnostics,
     }
+}
+
+/// What the wiki's challenge infobox says about one challenge.
+struct ChallengeFacts {
+    character: Option<Target>,
+    goal: Vec<Inline>,
+    blindfolded: bool,
+}
+
+/// The challenge's own infobox, when the dataset has the page and the page has one.
+///
+/// `let … else` and not a `match` with a `_` arm: this reads one variant of an open
+/// catalogue of infoboxes, it does not claim to enumerate them.
+fn challenge_facts(dataset: Option<&Dataset>, number: u32) -> Option<ChallengeFacts> {
+    let entry = dataset?.entry(&Target::Challenge { number })?;
+    let Infobox::Challenge {
+        character,
+        goal,
+        blindfolded,
+        ..
+    } = &entry.infobox
+    else {
+        return None;
+    };
+    Some(ChallengeFacts {
+        character: character.clone(),
+        goal: goal.clone(),
+        blindfolded: *blindfolded,
+    })
 }

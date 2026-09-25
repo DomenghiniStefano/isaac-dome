@@ -121,7 +121,10 @@ fn redacted_path(path: &Path, source: &SaveSource) -> String {
     }
 }
 
-/// Replaces the segment that follows `Users` with `<utente>`, and touches nothing
+/// What stands where the username was: the gap is declared, not silently removed.
+const USER_PLACEHOLDER: &str = "<user>";
+
+/// Replaces the segment that follows `Users` with [`USER_PLACEHOLDER`], and touches nothing
 /// else: `path_hint` exists to say "found here", and a path reduced entirely to a
 /// placeholder would no longer orient anyone.
 ///
@@ -130,27 +133,21 @@ fn redacted_path(path: &Path, source: &SaveSource) -> String {
 /// Both separators are accepted: the path comes from disk on Windows, but the tests
 /// write it with `/`.
 fn mask_user_dir(path: &str) -> String {
-    let mut out = String::with_capacity(path.len());
-    let mut mask_next = false;
-    for segment in path.split_inclusive(['/', '\\']) {
-        let name = segment.trim_end_matches(['/', '\\']);
-        let separator = &segment[name.len()..];
-        if name.is_empty() {
-            // Consecutive separators (`\\?\`, UNC roots): not a segment, and they must
-            // not consume a pending mask.
-            out.push_str(separator);
-            continue;
-        }
-        if mask_next {
-            out.push_str("<utente>");
-            mask_next = false;
-        } else {
-            out.push_str(name);
-            mask_next = name.eq_ignore_ascii_case("users");
-        }
-        out.push_str(separator);
-    }
-    out
+    path.split_inclusive(['/', '\\'])
+        .scan(false, |after_users, segment| {
+            let name = segment.trim_end_matches(['/', '\\']);
+            let separator = &segment[name.len()..];
+            if name.is_empty() {
+                // Consecutive separators (`\\?\`, UNC roots): not a segment, and they must
+                // not consume a pending mask.
+                return Some(["", separator]);
+            }
+            let shown = if *after_users { USER_PLACEHOLDER } else { name };
+            *after_users = !*after_users && name.eq_ignore_ascii_case("users");
+            Some([shown, separator])
+        })
+        .flatten()
+        .collect()
 }
 
 fn source_of(source: &SaveSource) -> CandidateSource {
