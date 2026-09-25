@@ -17,18 +17,21 @@ pub fn parse(bytes: &[u8], diagnostics: &mut Vec<Diagnostic>) -> Vec<Option<Rect
     let Some(els) = xml::read(bytes, Source::CoopMenuAnm2, diagnostics) else {
         return Vec::new();
     };
-    let Some(main) = els
-        .iter()
-        .position(|e| e.name == "Animation" && e.attr("Name") == Some("Main"))
-    else {
-        return Vec::new();
-    };
-    // The first <LayerAnimation LayerId="0"> inside the (first) Main animation.
-    anm2::layer_animations(xml::subtree(&els, main))
-        .into_iter()
-        .find(|la| la.layer_id == Some("0"))
+    main_layer_zero(&els)
         .map(|la| la.frames.into_iter().map(anm2::rect_of).collect())
         .unwrap_or_default()
+}
+
+/// The first `<LayerAnimation LayerId="0">` inside the (first) `Main` animation.
+fn main_layer_zero(els: &[xml::Element]) -> Option<anm2::LayerAnimation<'_>> {
+    let main = els
+        .iter()
+        .position(|e| e.name == "Animation" && e.attr("Name") == Some("Main"))?;
+    // The whole document, not Main's subtree: the layer's name and sheet are declared under
+    // `<Content>`, outside it.
+    anm2::layer_animations(els)
+        .into_iter()
+        .find(|la| la.animation_at == Some(main) && la.layer_id == Some("0"))
 }
 
 /// The frame that portrays the character.
@@ -135,6 +138,21 @@ mod tests {
             })
         );
         assert!(d.is_empty());
+    }
+
+    /// The real `coop menu.anm2` declares its layers and sheets under `<Content>`, a sibling
+    /// of `<Animations>` (read from the installed game on 2026-09-26), and `ANM2` mirrors
+    /// that split. Looking only inside `Main` for those declarations found none, so the layer
+    /// came back with an empty name and no sheet: harmless while `parse` reads the frames
+    /// alone, and a wrong answer waiting for the first caller that reads the rest.
+    #[test]
+    fn main_layer_zero_carries_the_name_and_sheet_content_declares() {
+        let els = xml::elements(ANM2).expect("valid XML");
+        let la = main_layer_zero(&els).expect("Main has a layer 0");
+        assert_eq!(la.animation, "Main");
+        assert_eq!(la.layer, "Main");
+        assert_eq!(la.sheet, "coop menu.png");
+        assert_eq!(la.frames.len(), 3);
     }
 
     #[test]
