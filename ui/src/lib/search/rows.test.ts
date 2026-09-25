@@ -1,7 +1,13 @@
 import { describe, expect, it } from 'vitest'
 import type { SearchHit } from '@/lib/ipc/types'
 import { RouteName } from '@/router/routeTable'
-import { RowGroup, filterGroups, groupCounts, searchRows } from './rows'
+import {
+  RowGroup,
+  filterGroups,
+  groupCounts,
+  groupedRows,
+  searchRows,
+} from './rows'
 import type { ScreenEntry } from './rows'
 
 const hit = (over: Partial<SearchHit>): SearchHit => ({
@@ -87,5 +93,26 @@ describe('searchRows', () => {
     expect(filterGroups(rows, [RowGroup.Wiki]).map((r) => r.group)).toEqual([
       RowGroup.Wiki,
     ])
+  })
+})
+
+// The palette draws one heading per group, in the groups' order, and none over nothing.
+describe('groupedRows', () => {
+  it('splits the rows by group, in order, and leaves out an empty group', () => {
+    const rows = searchRows([hit({})], screens, { catalog: true, cap: null })
+    const grouped = groupedRows(rows)
+    expect(grouped.map((g) => g.group)).toEqual([
+      RowGroup.Screens,
+      RowGroup.Wiki,
+      RowGroup.Collection,
+    ])
+    expect(grouped.flatMap((g) => g.rows)).toEqual(rows)
+    expect(grouped.every((g) => g.rows.every((r) => r.group === g.group))).toBe(
+      true,
+    )
+  })
+
+  it('has no group for no rows', () => {
+    expect(groupedRows([])).toEqual([])
   })
 })

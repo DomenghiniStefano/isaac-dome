@@ -5,7 +5,8 @@ import { useRoute } from 'vue-router'
 import DiagnosticsList from '@/components/diagnostics/DiagnosticsList.vue'
 import QueueError from '@/components/plan/QueueError.vue'
 import { Button, ButtonVariant } from '@/components/ui/button'
-import { Skeleton } from '@/components/ui/skeleton'
+import ScreenSkeleton from '@/components/data-state/ScreenSkeleton.vue'
+import { SkeletonBlock } from '@/components/data-state/skeletonBlock'
 import { useOnActiveProfile } from '@/composables/useOnActiveProfile'
 import { useWant } from '@/composables/useWant'
 import { useMessages } from '@/i18n'
@@ -13,11 +14,16 @@ import { planEntries } from '@/lib/diagnostics/plan'
 import { wantBanner, wantBlocks } from '@/lib/graph/wantBlocks'
 import { wantLocation, wantOf } from '@/lib/graph/wantLocation'
 import type { Target } from '@/lib/ipc/types'
-import { queuedIds } from '@/lib/plan/queueRows'
+
+import {
+  membershipChanged,
+  queueMembership,
+  queueReadable,
+} from '@/lib/plan/queueView'
 import { RouteName } from '@/router/routeTable'
 import type { TabLocation } from '@/router/routeTable'
 import { LoadStatus } from '@/stores/loadStatus'
-import { useQueueStore } from '@/stores/queue'
+import { useQueueOffer } from '@/composables/useQueueOffer'
 import { useTabsStore } from '@/stores/tabs'
 import { useGraphStore } from '@/stores/views'
 import AddPane from './goals/AddPane.vue'
@@ -26,7 +32,7 @@ import QueueCard from './plan/QueueCard.vue'
 import ProfileError from './profile/ProfileError.vue'
 
 const graph = useGraphStore()
-const queue = useQueueStore()
+const { queue, queued, canWrite } = useQueueOffer()
 const tabs = useTabsStore()
 const route = useRoute()
 const { t } = useMessages()
@@ -68,42 +74,20 @@ const noCatalog = computed(
     graph.view?.unlock.diagnostics.some((d) => d.kind === 'noCatalog') ?? false,
 )
 
-// A queue that couldn't be read or saved offers nothing: the rows still show, without the
-// "in the queue" line or the button.
-const queued = computed(() => queuedIds(queue.view))
-const canWrite = computed(() => queue.view?.storeAvailable === true)
-
 // The suggestions leave out what the queue holds, and Rust decides which ones fill the
 // place (`next_steps`). So when what the queue holds changes — here, from another screen, or
 // from another window through `plan-changed` — the suggestions are asked again. A reorder
 // changes nothing they depend on, and a queue arriving with the profile arrives with the
 // graph beside it: neither asks.
-const queuedKey = computed(() =>
-  queue.view === null
-    ? null
-    : [...queued.value].sort((a, b) => a - b).join(','),
+watch(
+  () => queueMembership(queue.view),
+  (now, before) => {
+    if (membershipChanged(now, before)) void graph.refresh()
+  },
 )
-watch(queuedKey, (now, before) => {
-  if (now !== null && before !== null && now !== before) void graph.refresh()
-})
 
-// The queue card needs a queue that could be read: no database, an unreadable document and no
-// catalog each say so in an alert instead of an empty list.
-const readable = computed((): boolean => {
-  const view = queue.view
-  return (
-    view !== null &&
-    view.storeAvailable &&
-    !view.diagnostics.some(
-      (d) => d.kind === 'unreadable' || d.kind === 'noCatalog',
-    )
-  )
-})
+const readable = computed(() => queueReadable(queue.view))
 const nodes = computed(() => graph.view?.unlock.nodes ?? [])
-const open = (location: TabLocation, newTab: boolean) => {
-  if (newTab) tabs.open(location)
-  else tabs.navigate(location)
-}
 </script>
 
 <template>
@@ -173,7 +157,6 @@ const open = (location: TabLocation, newTab: boolean) => {
             :last-move="queue.lastMove"
             @move="queue.move"
             @remove="queue.remove"
-            @navigate="open"
           />
         </div>
         <AddPane
@@ -190,13 +173,9 @@ const open = (location: TabLocation, newTab: boolean) => {
           @add="queue.add($event)"
           @pick="ask"
           @clear="stopAsking"
-          @navigate="open"
         />
       </div>
     </div>
-    <div v-else class="flex flex-col gap-4 px-5.5 pt-4">
-      <Skeleton class="h-8 w-120" />
-      <Skeleton class="h-40 w-full" />
-    </div>
+    <ScreenSkeleton v-else class="px-5.5 pt-4" :blocks="[SkeletonBlock.Card]" />
   </div>
 </template>

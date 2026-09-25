@@ -6,13 +6,16 @@ import { oneOf } from '@/lib/oneOf'
 import { originLabel } from '@/lib/facets/labels'
 import type { FilterBarLabels, Translate } from '@/lib/facets/labels'
 import type { FacetSlot } from '@/lib/facets/facetOptions'
+import type { Faceting } from '@/lib/facets/faceting'
+import type { FilterBarDescriptor } from '@/lib/facets/filterBar'
+import type { CollectionItem } from '@/lib/ipc/types'
 import {
   CollectionFacet,
   CollectionSort,
   NoPool,
   QualityValue,
 } from '@/lib/collection/collectionFacets'
-import { ItemState } from '@/lib/collection/itemState'
+import { ItemState, itemStateOrder } from '@/lib/collection/itemState'
 import { TargetKind } from '@/lib/ipc/values'
 
 export const collectionFacetTitle: Record<
@@ -98,3 +101,21 @@ export const barLabels: FilterBarLabels = {
   search: 'collection.search',
   sortBy: 'collection.sortBy',
 }
+
+// The Collection's filter bar. Built from the faceting rather than holding it: the pools arrive
+// with the view, so the faceting does too.
+export const collectionBar = (
+  faceting: Faceting<CollectionItem, CollectionFacet>,
+): FilterBarDescriptor<CollectionItem, CollectionFacet, CollectionSort> => ({
+  faceting,
+  facets: collectionSlots,
+  state: {
+    facet: CollectionFacet.State,
+    order: itemStateOrder,
+    dot: itemStateDot,
+    text: itemStateText,
+  },
+  title: collectionFacetTitle,
+  labels: barLabels,
+  sorts: { order: sortOrder, text: sortText },
+})

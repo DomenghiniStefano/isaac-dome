@@ -1,36 +1,28 @@
 <script setup lang="ts">
 import { PlayIcon } from '@lucide/vue'
 import { computed } from 'vue'
+import ListEmptyState from '@/components/data-state/ListEmptyState.vue'
+import ScreenSkeleton from '@/components/data-state/ScreenSkeleton.vue'
 import DiagnosticsList from '@/components/diagnostics/DiagnosticsList.vue'
-import EmptyCategory from '@/components/data-state/EmptyCategory.vue'
 import FilterBar from '@/components/facets/FilterBar.vue'
-import { Button, ButtonVariant } from '@/components/ui/button'
 import KpiTile from '@/components/kpi/KpiTile.vue'
 import { Card } from '@/components/ui/card'
-import { Skeleton } from '@/components/ui/skeleton'
+import { useFacetedReading } from '@/composables/useFacetedReading'
 import { useMessages } from '@/i18n'
-import { useTabView } from '@/composables/useTabView'
-import type { ScrollOffset } from '@/lib/scale/scrollOffset'
-import { emptyFilter } from '@/lib/facets/faceting'
-import type { FacetFilter } from '@/lib/facets/faceting'
-import type { RunView } from '@/lib/ipc/types'
 import { runsEntries } from '@/lib/diagnostics/runs'
-import { orderRuns } from '@/lib/runs/runOrder'
+import { emptyList, isFiltering } from '@/lib/facets/emptyList'
+import type { RunView } from '@/lib/ipc/types'
+import { runFaceting } from '@/lib/runs/runFacets'
+import type { RunFacet } from '@/lib/runs/runFacets'
 import { runKey } from '@/lib/runs/runKey'
-import { RunFacet, outcomeOrder, runFaceting } from '@/lib/runs/runFacets'
-import {
-  barLabels,
-  facetTitle,
-  facetValueLabel,
-  outcomeDot,
-  outcomeTextByKind,
-  runSlots,
-} from '@/lib/runs/runLabels'
+import { facetValueLabel } from '@/lib/runs/runLabels'
+import { orderRuns } from '@/lib/runs/runOrder'
 import { LoadStatus } from '@/stores/loadStatus'
 import { useRunsStore } from '@/stores/views'
 import ProfileError from './profile/ProfileError.vue'
 import RunDetail from './runs/RunDetail.vue'
 import RunsTable from './runs/RunsTable.vue'
+import { runsBar } from './runs/runsBar'
 import { runsView } from './runs/tabView'
 import ScreenHeader from './ScreenHeader.vue'
 
@@ -41,20 +33,8 @@ const { t } = useMessages()
 // read while nobody was watching. So it loads on mount and not on a profile becoming active.
 void store.load()
 
-const facetOrder = Object.values(RunFacet)
-// The filter and the selection belong to the tab, not to this component: leaving and coming
-// back — through a tear-off, a restart, or the back button — finds them where they were left
-// (B39).
-const reading = useTabView(runsView)
-const setOffset = (offset: ScrollOffset) => {
-  reading.value = { ...reading.value, offset }
-}
-const filter = computed({
-  get: () => reading.value.filter,
-  set: (value: FacetFilter<RunFacet>) => {
-    reading.value = { ...reading.value, filter: value }
-  },
-})
+const { reading, update, filter, setPicks, setQuery, reset } =
+  useFacetedReading(runsView, runFaceting.empty)
 
 const all = computed(() => store.view?.runs ?? [])
 const rows = computed(() =>
@@ -64,35 +44,23 @@ const rows = computed(() =>
 // moment, and a stored one would come back describing a run the fold has since re-derived. A
 // key that matches nothing — the run was filtered away, or the archive grew — is simply no
 // selection, which is what the screen already draws.
-const selectedKey = computed({
-  get: () => reading.value.selected,
-  set: (value: string | null) => {
-    reading.value = { ...reading.value, selected: value }
-  },
-})
 const selected = computed(
-  () => rows.value.find((run) => runKey(run) === selectedKey.value) ?? null,
+  () =>
+    rows.value.find((run) => runKey(run) === reading.value.selected) ?? null,
 )
+const select = (run: RunView) => update({ selected: runKey(run) })
 const totals = computed(() => store.view?.totals ?? null)
+
+// An archive that holds no run is not a filter that matched nothing, as on every other list.
+const empty = computed(() =>
+  emptyList(all.value.length, isFiltering(filter.value), {
+    empty: 'runs.empty',
+    noResults: 'runs.noMatch',
+  }),
+)
 
 const valueLabel = (facet: RunFacet, value: string) =>
   facetValueLabel(t, facet, value)
-
-const setPicks = (facet: RunFacet, picked: string[]) => {
-  filter.value = {
-    ...filter.value,
-    picks: { ...filter.value.picks, [facet]: picked },
-  }
-}
-const setQuery = (query: string) => {
-  filter.value = { ...filter.value, query }
-}
-const reset = () => {
-  filter.value = emptyFilter<RunFacet>(facetOrder)
-}
-const select = (run: RunView) => {
-  selectedKey.value = runKey(run)
-}
 </script>
 
 <template>
@@ -134,22 +102,11 @@ const select = (run: RunView) => {
       </div>
       <Card class="min-h-0 flex-1">
         <FilterBar
-          :shown="rows.length"
-          :total="all.length"
-          :query="filter.query"
+          :bar="runsBar"
           :rows="all"
-          :faceting="runFaceting"
           :filter="filter"
-          :facets="runSlots"
-          :state="{
-            facet: RunFacet.Outcome,
-            order: outcomeOrder,
-            dot: outcomeDot,
-            text: outcomeTextByKind,
-          }"
-          :title="facetTitle"
+          :shown="rows.length"
           :value-label="valueLabel"
-          :labels="barLabels"
           @update:query="setQuery"
           @update:picks="setPicks"
           @reset="reset"
@@ -159,27 +116,13 @@ const select = (run: RunView) => {
           :runs="rows"
           :selected="selected"
           :offset="reading.offset"
-          @offset-change="setOffset"
+          @offset-change="update({ offset: $event })"
           @select="select"
         />
-        <div v-else class="flex flex-col items-start gap-3 p-4">
-          <EmptyCategory>{{
-            all.length === 0 ? t('runs.empty') : t('runs.noMatch')
-          }}</EmptyCategory>
-          <Button
-            v-if="all.length > 0"
-            :variant="ButtonVariant.Outline"
-            @click="reset"
-            >{{ t('filters.reset') }}</Button
-          >
-        </div>
+        <ListEmptyState v-else :empty="empty" @reset="reset" />
       </Card>
       <RunDetail v-if="selected !== null" :run="selected" />
     </template>
-    <div v-else class="flex flex-col gap-4">
-      <Skeleton class="h-8 w-120" />
-      <Skeleton class="h-12 w-full" />
-      <Skeleton class="h-150 w-full" />
-    </div>
+    <ScreenSkeleton v-else />
   </div>
 </template>
