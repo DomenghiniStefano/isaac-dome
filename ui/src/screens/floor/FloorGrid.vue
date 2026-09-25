@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, shallowRef } from 'vue'
 import { Button, ButtonSize, ButtonVariant } from '@/components/ui/button'
 import { useMessages } from '@/i18n'
 import { candidateFor, cellPosition } from '@/lib/floor/cellView'
@@ -82,27 +82,23 @@ const nameOf = (cell: number): string => {
 // A stroke is one press and everything the pointer crossed before release, so dragging paints
 // a corridor.
 //
-// **The paint lands as the pointer passes, not when it lifts.** It used to collect the path
-// and hand it over whole, so a drag across ten cells was ten cells appearing at once at the
-// end — the corridor was drawn blind, and a hand that had gone one cell too far only found out
-// after letting go.
-//
-// What is still handed over once is the *question*: the rules are asked on release, in a
-// single `settle`. Asking them per cell would be a round trip to Rust for every cell the
-// pointer brushes past, and the answer for a corridor half-drawn is not an answer anyone is
-// reading — the hand is still moving.
-let painting = false
+// **The paint lands as the pointer passes, not when it lifts**: a path handed over whole at the
+// release is a corridor drawn blind, and a hand that went one cell too far only finds out after
+// letting go. What is handed over once is the *question*: the rules are asked on release, in a
+// single `settle`, because asking per cell is a round trip to Rust for every cell the pointer
+// brushes past, answering a corridor nobody is reading yet.
+const painting = shallowRef(false)
 
 const start = (cell: number): void => {
-  painting = true
+  painting.value = true
   emit('paint', [cell])
 }
 const over = (cell: number): void => {
-  if (painting) emit('paint', [cell])
+  if (painting.value) emit('paint', [cell])
 }
 const end = (): void => {
-  if (!painting) return
-  painting = false
+  if (!painting.value) return
+  painting.value = false
   emit('settle')
 }
 
@@ -110,7 +106,7 @@ const end = (): void => {
 // palette still works and is the keyboard's way in; this is the one the hand reaches for, and
 // it costs a trip to the palette and back for every correction if it is not there.
 const rub = (cell: number): void => {
-  painting = false
+  painting.value = false
   emit('erase', cell)
 }
 </script>
