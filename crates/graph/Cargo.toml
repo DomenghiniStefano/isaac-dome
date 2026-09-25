@@ -8,6 +8,7 @@ description = "Unlock graph: typed requirements, curated verdicts, evaluation ag
 [dependencies]
 catalog = { path = "../catalog" }
 wiki = { path = "../wiki" }
+core-save = { path = "../core-save" }
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
 
@@ -19,7 +20,6 @@ test-api = []
 [dev-dependencies]
 wiki = { path = "../wiki", features = ["test-api"] }
 graph = { path = ".", features = ["test-api"] }
-core-save = { path = "../core-save" }
 test-support = { path = "../test-support" }
 unpack = { path = "../unpack" }
 

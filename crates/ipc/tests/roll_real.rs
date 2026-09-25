@@ -37,7 +37,7 @@ fn deck_of(counters: &[u32], include_taken: bool) -> ipc::DeckView {
 }
 
 fn every_target() -> usize {
-    ipc::CHARACTERS.len() * ipc::BOSSES.len() + ipc::CHARACTERS.len()
+    ipc::ROSTER.len() * ipc::BOSSES.len() + ipc::ROSTER.len()
 }
 
 #[test]

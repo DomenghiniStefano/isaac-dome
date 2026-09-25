@@ -8,13 +8,14 @@
 //! `PlayabilityUnknown` fire on every load, and the screen still has to answer: a target is an
 //! index pair, not a sprite.
 
-use catalog::Catalog;
-use serde::{Deserialize, Serialize};
-
+use crate::flags::playable_unless_locked;
 use crate::graph::MarkColumnView;
 use crate::icon::{IconRef, MarkTier};
-use crate::marks::{cell_at, character_for, BOSSES, CHARACTERS, MARK_COLUMNS};
+use crate::marks::{cell_at, character_for, BOSSES, ROSTER};
 use crate::StoreReason;
+use catalog::Catalog;
+use core_save::Column;
+use serde::{Deserialize, Serialize};
 
 /// One target as the card names it: a mark names its column, a Greedier says so it is one —
 /// there is no level number, because the second level only exists in the Greed column
@@ -95,7 +96,7 @@ pub enum SelectionView {
     Only { ids: Vec<u8> },
 }
 
-/// The view's mirror of `roll::Preset`. Also `Deserialize`: `set_roll_preset` (Task 7) takes
+/// The view's mirror of `roll::Preset`. Also `Deserialize`: `set_roll_preset` takes
 /// one inbound, and it is the only type on this screen that travels inward.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize, ts_rs::TS)]
 #[serde(rename_all = "camelCase")]
@@ -156,12 +157,6 @@ pub struct RollView {
     pub diagnostics: Vec<RollDiagnostic>,
 }
 
-/// The Greed column's position in [`BOSSES`]. Read from the table rather than written as 7:
-/// a column inserted before it moves it, and a literal would move nothing.
-fn greed_column() -> usize {
-    BOSSES.iter().position(|b| *b == "Greed").unwrap_or(0)
-}
-
 /// A row the catalog does not name is playable: unknown must never hide a row. A character
 /// unlocked by nothing (Isaac) is playable by definition; otherwise the flag decides, and an
 /// achievement id past the end of the flags reads the same as "unknown" — playable.
@@ -171,7 +166,7 @@ fn row_playable(row: usize, catalog: &Catalog, flags: &[bool]) -> bool {
     };
     match character.unlocked_by {
         None => true,
-        Some(id) => flags.get(id.0 as usize).copied().unwrap_or(true),
+        Some(id) => playable_unless_locked(flags, id.0),
     }
 }
 
@@ -181,7 +176,7 @@ fn row_playable(row: usize, catalog: &Catalog, flags: &[bool]) -> bool {
 fn playable_rows(catalog: Option<&Catalog>, flags: Option<&[bool]>) -> Option<Vec<bool>> {
     let (catalog, flags) = (catalog?, flags?);
     Some(
-        (0..CHARACTERS.len())
+        (0..ROSTER.len())
             .map(|row| row_playable(row, catalog, flags))
             .collect(),
     )
@@ -234,17 +229,19 @@ pub fn deck_preset(preset: &roll::Preset, playability_known: bool) -> roll::Pres
 
 /// The matrix as a `roll::Space`, and whether playability could be determined at all.
 ///
-/// `CHARACTERS.len()` x `BOSSES.len()`, at [`greed_column`]: the lengths come from the same
-/// tables `ipc::marks` measured, so `Space::new` cannot fail here — the fallback exists for
+/// `ROSTER.len()` x `BOSSES.len()`, with Greed at its own `Column::position` — the column
+/// itself, not a name looked up in a table of names, which is what it was until card #82 and
+/// fell back to Mom's Heart on a miss. The lengths come from the same tables `ipc::marks`
+/// measured, so `Space::new` cannot fail here — the fallback exists for
 /// the case that never happens, not for a panic to stand in its place.
 pub fn roll_space(
     counters: Option<&[u32]>,
     flags: Option<&[bool]>,
     catalog: Option<&Catalog>,
 ) -> (roll::Space, bool) {
-    let rows = CHARACTERS.len();
+    let rows = ROSTER.len();
     let columns = BOSSES.len();
-    let greed = greed_column();
+    let greed = Column::Greed.position();
     let cells: Vec<roll::CellValue> = (0..rows)
         .flat_map(|r| (0..columns).map(move |c| (r, c)))
         .map(|(r, c)| cell_value(counters, r, c))
@@ -265,7 +262,7 @@ fn selection_view(selection: &roll::Selection) -> SelectionView {
 }
 
 /// The view's mirror of a `roll::Preset`, named so its inbound twin `preset_from_view`
-/// (Task 7) can sit beside it — the two halves of one mapping.
+/// can sit beside it — the two halves of one mapping.
 pub fn preset_view(preset: &roll::Preset) -> PresetView {
     PresetView {
         characters: selection_view(&preset.characters),
@@ -283,7 +280,7 @@ fn selection_from_view(view: &SelectionView) -> roll::Selection {
 }
 
 /// The inbound half of the mapping `preset_view` makes outbound: what `set_roll_preset`
-/// (Task 7) receives from the client, turned into the type `roll` actually works with.
+/// receives from the client, turned into the type `roll` actually works with.
 pub fn preset_from_view(view: &PresetView) -> roll::Preset {
     roll::Preset {
         characters: selection_from_view(&view.characters),
@@ -306,7 +303,7 @@ fn status_view(status: roll::Status) -> StatusView {
 /// `get` rather than trusted.
 fn target_view(target: roll::Target) -> Option<DrawnTargetView> {
     match target {
-        roll::Target::Mark { column, .. } => MARK_COLUMNS
+        roll::Target::Mark { column, .. } => Column::ALL
             .get(column as usize)
             .map(|&column| DrawnTargetView::Mark { column }),
         roll::Target::Greedier { .. } => Some(DrawnTargetView::Greedier),
@@ -361,7 +358,7 @@ fn drawn_view(
     let art_url = catalog.and_then(|_| icon(&target_icon(drawn.target, space.greed_column())));
     Some(DrawnView {
         target: target_view(drawn.target)?,
-        character: CHARACTERS[character as usize].0.to_string(),
+        character: ROSTER[character as usize].name.to_string(),
         head_url,
         art_url,
         status: status_view(status),
@@ -438,13 +435,13 @@ pub fn roll_view(
     let deck = roll::deck(&space, &effective);
     let contributions = roll::contributions(&space, &effective);
 
-    let characters = CHARACTERS
+    let characters = ROSTER
         .iter()
         .enumerate()
-        .map(|(i, &(name, _group))| {
+        .map(|(i, row)| {
             row_view(
                 i,
-                name,
+                row.name,
                 document.preset.characters.has(i as u8),
                 contributions.characters.get(i).copied().unwrap_or(0),
             )

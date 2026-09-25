@@ -12,7 +12,7 @@
 //! wrong day.
 
 use core_save::{Kind, Save};
-use ipc::{counter_index, BOSSES, CHARACTERS};
+use ipc::{counter_index, BOSSES, ROSTER};
 use test_support::dated_series;
 
 /// The dated series `samples/` can hold, **each walked on its own**. Never one series
@@ -67,13 +67,13 @@ fn no_mark_appears_without_a_kill_of_that_boss() {
             let (before_name, before) = &pair[0];
             let (after_name, after) = &pair[1];
             for (column, boss, kill_index) in KILLS {
-                let appeared: Vec<&str> = (0..CHARACTERS.len())
+                let appeared: Vec<&str> = (0..ROSTER.len())
                     .filter(|&row| {
                         counter_index(row, column)
                             .and_then(|i| Some((*before.get(i)?, *after.get(i)?)))
                             .is_some_and(|(was, now)| was == 0 && now != 0)
                     })
-                    .map(|row| CHARACTERS[row].0)
+                    .map(|row| ROSTER[row].name)
                     .collect();
                 let kills = after
                     .get(kill_index)
@@ -141,7 +141,7 @@ fn the_character_that_won_is_the_character_whose_mark_appeared() {
                 "{before_name} → {after_name}: the mark that appeared belongs to row \
                  {row} ({}), but the winner mask names {winner} ({}). One of the two \
                  tables is off.",
-                CHARACTERS[row].0, CHARACTERS[winner].0,
+                ROSTER[row].name, ROSTER[winner].name,
             );
             agreed += 1;
         }
@@ -176,7 +176,7 @@ fn the_three_located_columns_are_not_dead_cells() {
             continue; // already declared on stderr
         };
         for (column, boss, kill_index) in KILLS {
-            let started = (0..CHARACTERS.len())
+            let started = (0..ROSTER.len())
                 .filter_map(|row| counter_index(row, column))
                 .filter(|&i| last.get(i).is_some_and(|&v| v != 0))
                 .count();
@@ -239,7 +239,7 @@ fn the_online_bit_never_stands_without_the_first_level_bit() {
         let series = series_of(suffix);
         read += series.len();
         for (name, values) in &series {
-            for (row, (character, _)) in CHARACTERS.iter().enumerate() {
+            for (row, character) in ROSTER.iter().map(|r| r.name).enumerate() {
                 for (column, boss) in BOSSES.iter().enumerate() {
                     let Some(v) = counter_index(row, column).and_then(|i| values.get(i)) else {
                         continue;
@@ -303,14 +303,14 @@ fn the_online_run_lit_the_cell_it_took_and_no_other() {
         return;
     };
 
-    let gained: Vec<(&str, &str)> = (0..CHARACTERS.len())
+    let gained: Vec<(&str, &str)> = (0..ROSTER.len())
         .flat_map(|row| (0..BOSSES.len()).map(move |column| (row, column)))
         .filter(|&(row, column)| {
             counter_index(row, column)
                 .and_then(|i| Some((*before.get(i)?, *after.get(i)?)))
                 .is_some_and(|(was, now)| was & 4 == 0 && now & 4 != 0)
         })
-        .map(|(row, column)| (CHARACTERS[row].0, BOSSES[column]))
+        .map(|(row, column)| (ROSTER[row].name, BOSSES[column]))
         .collect();
 
     assert_eq!(
@@ -345,14 +345,14 @@ fn a_mark_taken_the_same_day_can_lack_the_online_bit() {
             let (before_name, before) = &pair[0];
             let (after_name, after) = &pair[1];
             let moved = |keep: fn(u32, u32) -> bool| -> Vec<(&str, &str)> {
-                (0..CHARACTERS.len())
+                (0..ROSTER.len())
                     .flat_map(|row| (0..BOSSES.len()).map(move |column| (row, column)))
                     .filter(|&(row, column)| {
                         counter_index(row, column)
                             .and_then(|i| Some((*before.get(i)?, *after.get(i)?)))
                             .is_some_and(|(was, now)| keep(was, now))
                     })
-                    .map(|(row, column)| (CHARACTERS[row].0, BOSSES[column]))
+                    .map(|(row, column)| (ROSTER[row].name, BOSSES[column]))
                     .collect()
             };
             // The bit arriving on some cell, and a level arriving on another without it.

@@ -18,6 +18,7 @@ use std::io::Write;
 use std::path::PathBuf;
 use std::time::{Duration, Instant};
 
+use core_save::{cell_index, CharacterGroup, Column};
 use core_save::{diff, Kind, Save};
 
 /// Cheap content fingerprint. Not a checksum of the format — just "did these bytes move".
@@ -172,50 +173,14 @@ fn main() {
     }
 }
 
-// --- counter labels, ported from `reference/isaac_counters.py` ---
+// --- counter labels ---
 //
-// Only so the live stream reads as actions instead of indices. A label derived from the
-// regular block pattern rather than documented by REPENTOGON is prefixed `~`, because that
-// pattern is known to break down past Hush and a guess must never look like a fact.
-
-const CHARS_14: [&str; 14] = [
-    "Isaac",
-    "Magdalene",
-    "Cain",
-    "Judas",
-    "Blue Baby",
-    "Eve",
-    "Samson",
-    "Azazel",
-    "Lazarus",
-    "Eden",
-    "The Lost",
-    "Lilith",
-    "Keeper",
-    "Apollyon",
-];
-
-const CHARS_19: [&str; 19] = [
-    "Bethany",
-    "Jacob & Esau",
-    "T. Isaac",
-    "T. Magdalene",
-    "T. Cain",
-    "T. Judas",
-    "T. Blue Baby",
-    "T. Eve",
-    "T. Samson",
-    "T. Azazel",
-    "T. Lazarus",
-    "T. Eden",
-    "T. The Lost",
-    "T. Lilith",
-    "T. Keeper",
-    "T. Apollyon",
-    "T. Forgotten",
-    "T. Bethany",
-    "T. Jacob & Esau",
-];
+// Only so the live stream reads as actions instead of indices. The tallies are ported from
+// `reference/isaac_counters.py`; the marks are read off the layout itself
+// (`core_save::cell_index`) and named by `ipc`'s roster and headers, so a cell located
+// after this probe was written is named here too. A mark in one of the 19-cell blocks is
+// prefixed `~`: those bases were derived from the regular pattern and corroborated, not
+// documented, and a guess must never look like a fact.
 
 const DOCUMENTED: &[(usize, &str)] = &[
     (0, "NULL"),
@@ -270,65 +235,29 @@ const DOCUMENTED: &[(usize, &str)] = &[
     (212, "GREED_COINS_DONATED_FORGOTTEN"),
 ];
 
-/// One cell per original character, for each boss.
-const BLOCKS_14: &[(&str, usize)] = &[
-    ("Mom's Heart", 27),
-    ("Isaac", 41),
-    ("Satan", 55),
-    ("Boss Rush", 69),
-    ("Blue Baby", 83),
-    ("The Lamb", 97),
-    ("Mega Satan", 116),
-    ("Greed", 130),
-    ("Hush", 144),
-    ("Delirium", 173),
-];
-
-/// The Forgotten's own cells, added after the original fourteen.
-const FORGOTTEN: &[(usize, &str)] = &[
-    (203, "Mom's Heart"),
-    (204, "Isaac"),
-    (205, "Satan"),
-    (206, "Boss Rush"),
-    (207, "Blue Baby"),
-    (208, "The Lamb"),
-    (209, "Mega Satan"),
-    (210, "Greed"),
-    (211, "Hush"),
-    (213, "Delirium"),
-];
-
-/// Bethany, Jacob & Esau and the seventeen Tainted. Derived from the pattern, not
-/// documented: the regularity is known to break down past Hush.
-const BLOCKS_19: &[(&str, usize)] = &[
-    ("Mom's Heart", 214),
-    ("Isaac", 233),
-    ("Satan", 252),
-    ("Boss Rush", 271),
-    ("Blue Baby", 290),
-    ("The Lamb", 309),
-    ("Mega Satan", 328),
-    ("Greed", 347),
-    ("Hush", 366),
-];
+/// The matrix cell at index `i` of section 2, if the layout locates one there.
+fn mark_at(i: usize) -> Option<(usize, Column)> {
+    (0..ipc::ROSTER.len())
+        .flat_map(|row| Column::ALL.map(|column| (row, column)))
+        .find(|&(row, column)| cell_index(row, column) == Some(i))
+}
 
 fn label(i: usize) -> String {
     if let Some((_, n)) = DOCUMENTED.iter().find(|(k, _)| *k == i) {
         return (*n).to_string();
     }
-    if let Some((_, boss)) = FORGOTTEN.iter().find(|(k, _)| *k == i) {
-        return format!("MARK/{boss}/The Forgotten");
-    }
-    for (boss, base) in BLOCKS_14 {
-        if i >= *base && i < base + CHARS_14.len() {
-            return format!("MARK/{boss}/{}", CHARS_14[i - base]);
-        }
-    }
-    for (boss, base) in BLOCKS_19 {
-        if i >= *base && i < base + CHARS_19.len() {
-            return format!("~MARK/{boss}/{}", CHARS_19[i - base]);
-        }
-    }
-    // 385 and the 404-522 tail have no label anyone has confirmed.
-    "?".to_string()
+    let Some((row, column)) = mark_at(i) else {
+        // What the layout does not locate, nobody has confirmed.
+        return "?".to_string();
+    };
+    let character = ipc::ROSTER[row];
+    let derived = match character.group {
+        CharacterGroup::Later => "~",
+        CharacterGroup::Original | CharacterGroup::Forgotten => "",
+    };
+    format!(
+        "{derived}MARK/{}/{}",
+        ipc::boss_name(column),
+        character.name
+    )
 }

@@ -614,6 +614,7 @@ dependencies = [
 name = "core-save"
 version = "0.1.0"
 dependencies = [
+ "ipc",
  "serde",
  "test-support",
  "ts-rs",

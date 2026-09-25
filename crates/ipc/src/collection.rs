@@ -9,6 +9,7 @@ use serde::Serialize;
 use wiki::{Dataset, Target};
 
 use crate::catalog_view::kind_view;
+use crate::flags::{recorded, recorded_done};
 use crate::graph::origin_view;
 use crate::wiki_target;
 use crate::{IconRef, ItemKindView, OriginView};
@@ -122,32 +123,29 @@ pub fn collection_view(
     let mut listed: Vec<&Item> = c.items().filter(|i| i.kind != ItemKind::Trinket).collect();
     listed.sort_by_key(|i| i.id.0);
 
-    let mut rows = Vec::with_capacity(listed.len());
-    let mut beyond = 0u32;
-    for i in listed {
-        let kind = kind_view(i.kind);
-        let in_collection = items.and_then(|f| f.get(i.id.0 as usize).copied());
-        if items.is_some() && in_collection.is_none() {
-            beyond += 1;
-        }
-        let mut pools: Vec<String> = Vec::new();
-        for m in &i.pools {
-            if !pools.contains(&m.pool) {
-                pools.push(m.pool.clone());
+    let rows: Vec<CollectionItem> = listed
+        .into_iter()
+        .map(|i| {
+            let kind = kind_view(i.kind);
+            CollectionItem {
+                id: i.id.0,
+                kind,
+                name: c.text(&i.name, Language::English).to_string(),
+                icon_url: icon(&IconRef::Item { kind, id: i.id.0 }),
+                quality: i.quality,
+                pools: distinct_pools(i),
+                origin: i.origin.map(origin_view),
+                in_collection: recorded(items, i.id.0),
+                lock: lock_of(c, dataset, i.unlocked_by, achievements),
             }
-        }
-        rows.push(CollectionItem {
-            id: i.id.0,
-            kind,
-            name: c.text(&i.name, Language::English).to_string(),
-            icon_url: icon(&IconRef::Item { kind, id: i.id.0 }),
-            quality: i.quality,
-            pools,
-            origin: i.origin.map(origin_view),
-            in_collection,
-            lock: lock_of(c, dataset, i.unlocked_by, achievements),
-        });
-    }
+        })
+        .collect();
+    // Only a section that read can end before an item: with no section, every row is unknown
+    // for that reason and `NoCollectionSection` already says so.
+    let beyond = match items {
+        Some(_) => rows.iter().filter(|r| r.in_collection.is_none()).count() as u32,
+        None => 0,
+    };
 
     let pools = c
         .pools()
@@ -196,11 +194,8 @@ fn lock_of(
     let achievement = a.0;
     let text = c.achievement(a).map(|x| x.text.clone());
     // A page only when the dataset really has one: never a link that leads nowhere.
-    let target = wiki_target::achievement(a);
-    let page = dataset
-        .filter(|ds| ds.entry(&target).is_some())
-        .map(|_| target);
-    match achievements.map(|f| f.get(achievement as usize).copied().unwrap_or(false)) {
+    let page = wiki_target::page_of(dataset, wiki_target::achievement(a));
+    match achievements.map(|f| recorded_done(f, achievement)) {
         None => LockView::Unknown {
             achievement,
             text,
@@ -217,4 +212,15 @@ fn lock_of(
             page,
         },
     }
+}
+
+/// The pools an item is found in, once each, in the order the item lists them: the catalog
+/// can list one pool more than once for an item, and the screen filters by name.
+fn distinct_pools(i: &Item) -> Vec<String> {
+    i.pools
+        .iter()
+        .enumerate()
+        .filter(|(n, m)| !i.pools[..*n].iter().any(|seen| seen.pool == m.pool))
+        .map(|(_, m)| m.pool.clone())
+        .collect()
 }

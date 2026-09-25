@@ -4,7 +4,7 @@
 
 use std::collections::BTreeMap;
 
-use core_save::marks::{cell_index, Column};
+use core_save::{cell_index, Column};
 use core_save::{Kind, Save};
 
 fn main() {

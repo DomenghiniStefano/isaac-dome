@@ -31,7 +31,11 @@ fn catalog() -> Catalog {
 #[test]
 fn the_catalog_entities_are_keyed_by_their_wiki_target() {
     let ds = wiki::for_tests::empty_dataset();
-    let docs = ipc::for_tests::documents(&SearchIndex::build(Ok(&ds)), Some(&catalog()));
+    let docs = ipc::for_tests::documents(
+        &SearchIndex::build(Ok(&ds)),
+        Some(&catalog()),
+        &ipc::for_tests::bosses(&catalog()),
+    );
     let keys: Vec<&Target> = docs.keys().collect();
 
     assert!(

@@ -10,13 +10,10 @@
 //! bytes: reading them is I/O, done by the caller, with the same `ResourceSet` as
 //! everything else.
 
-use std::collections::{HashMap, HashSet};
-use std::sync::{Arc, OnceLock};
+use std::collections::{BTreeMap, HashMap, HashSet};
 
 use catalog::{AchievementId, Catalog, ChallengeId, CharacterId, ItemId, ItemKind, SpriteRef};
-use wiki::Target;
-
-use crate::last_input::LastInput;
+use wiki::{Dataset, Target};
 
 /// The outcome of the resolution. Three cases, not an `Option`, because the two ways of
 /// having no image are meant to be drawn differently: brief §5.6 asks for one placeholder
@@ -34,17 +31,16 @@ pub enum TargetSprite<'a> {
     Unknown,
 }
 
-/// The image for a wiki reference, if the catalog knows which one it is.
+/// The image for a wiki reference, if the catalog knows which one it is. `bosses` is the
+/// catalog's [`boss_keys`], settled once by whoever holds the catalog.
 ///
 /// Exhaustive over `Target`: a new variant added to the wiki must break the build here,
 /// not silently turn into a page with no figure.
-pub fn target_sprite<'a>(c: &'a Catalog, t: &Target) -> TargetSprite<'a> {
+pub fn target_sprite<'a>(c: &'a Catalog, bosses: &BossKeys, t: &Target) -> TargetSprite<'a> {
     match t {
         // The wiki doesn't distinguish passives, actives and familiars: it just says
         // `Item { id }`. The three share the same id space, so at most one will match.
-        Target::Item { id } => [ItemKind::Passive, ItemKind::Active, ItemKind::Familiar]
-            .iter()
-            .find_map(|k| c.item(*k, ItemId(*id)))
+        Target::Item { id } => crate::catalog_view::collectible(c, *id)
             .map_or(TargetSprite::Unknown, |i| TargetSprite::Found(&i.sprite)),
         Target::Trinket { id } => c
             .item(ItemKind::Trinket, ItemId(*id))
@@ -64,8 +60,8 @@ pub fn target_sprite<'a>(c: &'a Catalog, t: &Target) -> TargetSprite<'a> {
                 None => TargetSprite::NoArt,
             },
         },
-        // The boss: the portrait of the row `boss_keys` gives this type and variant to.
-        Target::Entity { id, variant, .. } => match entity_portrait(c, (*id, *variant)) {
+        // The boss: the portrait of the row `bosses` gives this type and variant to.
+        Target::Entity { id, variant, .. } => match entity_portrait(c, bosses, (*id, *variant)) {
             Some(s) => TargetSprite::Found(s),
             None => TargetSprite::Unknown,
         },
@@ -76,17 +72,35 @@ pub fn target_sprite<'a>(c: &'a Catalog, t: &Target) -> TargetSprite<'a> {
     }
 }
 
-/// The portrait of the row `boss_keys` gives `(type, variant)` to. The last such row, as the
-/// index this replaces kept it — a map collected over the roster, built on every lookup.
+/// The portrait of the row `bosses` gives `(type, variant)` to. A key is given to one row at
+/// most, so there is at most one.
 ///
 /// The subtype takes no part: portraits are declared by type and variant only, and a
 /// different subtype is still the same boss (its champion versions).
-fn entity_portrait(c: &Catalog, key: (u32, u32)) -> Option<&SpriteRef> {
-    let keys = boss_keys(c);
+fn entity_portrait<'a>(
+    c: &'a Catalog,
+    bosses: &BossKeys,
+    key: (u32, u32),
+) -> Option<&'a SpriteRef> {
     c.bosses()
-        .filter(|b| keys.get(b.name.as_str()) == Some(&key))
+        .filter(|b| bosses.get(&b.name) == Some(key))
         .last()
         .map(|b| &b.portrait)
+}
+
+/// The entity key of every row of `bossportraits.xml`, by the row's name: what links a boss
+/// to its page and draws it with its portrait, the same decision taken once.
+#[derive(Debug, Clone, Default, PartialEq, Eq)]
+pub struct BossKeys(BTreeMap<String, (u32, u32)>);
+
+impl BossKeys {
+    /// No row keyed: what a caller without a catalog hands on, where there is no boss to key.
+    pub const NONE: &'static BossKeys = &BossKeys(BTreeMap::new());
+
+    /// The key settled for the row named `name`, if one was.
+    pub(crate) fn get(&self, name: &str) -> Option<(u32, u32)> {
+        self.0.get(name).copied()
+    }
 }
 
 /// The entity key of every row of `bossportraits.xml`, by the row's name.
@@ -109,39 +123,23 @@ fn entity_portrait(c: &Catalog, key: (u32, u32)) -> Option<&SpriteRef> {
 /// That is the distinction this module used to miss when it said no fallback recovers
 /// the unkeyed portraits — true of a fuzzy one, false of this.
 ///
-/// Settled once per roster (card #80, R10), not once per lookup: the roster is the installed
-/// game's and does not change while the process lives.
-pub(crate) fn boss_keys(c: &Catalog) -> Arc<BossKeys> {
-    static SETTLED: LastInput<BossRows, BossKeys> = LastInput::new();
-    SETTLED.get(|rows| same_rows(rows, c), || settle(c))
-}
-
-/// A boss row as `merge_keys` reads it: `(name, portrait path)`.
-type BossRows = Vec<(String, String)>;
-/// The entity key of each row, by the row's name.
-pub(crate) type BossKeys = HashMap<String, (u32, u32)>;
-
-fn rows_of(c: &Catalog) -> impl Iterator<Item = (&str, &str)> {
-    c.bosses()
+/// **Settled once per catalog, by whoever holds it** — the app keeps it beside the catalog —
+/// and handed to every lookup (card #82, S3). It used to be settled behind a process-wide
+/// cache compared on every lookup (card #80, R10), with the dataset read from the binary
+/// behind a `OnceLock`: the dataset is a parameter now, and without one only the portraits'
+/// file names speak.
+pub fn boss_keys(c: &Catalog, dataset: Option<&Dataset>) -> BossKeys {
+    let rows: Vec<(&str, &str)> = c
+        .bosses()
         .map(|b| (b.name.as_str(), b.portrait.path.as_str()))
-}
-
-// Compared in place: the point of keeping the keys is not to pay for the roster again.
-fn same_rows(rows: &BossRows, c: &Catalog) -> bool {
-    rows_of(c).eq(rows.iter().map(|(n, p)| (n.as_str(), p.as_str())))
-}
-
-fn settle(c: &Catalog) -> (BossRows, BossKeys) {
-    let rows: Vec<(&str, &str)> = rows_of(c).collect();
-    let keys = merge_keys(&rows, wiki_boss_keys())
-        .into_iter()
-        .map(|(name, key)| (name.to_string(), key))
         .collect();
-    let owned = rows
-        .into_iter()
-        .map(|(n, p)| (n.to_string(), p.to_string()))
-        .collect();
-    (owned, keys)
+    let pages = dataset.map(wiki_boss_keys).unwrap_or_default();
+    BossKeys(
+        merge_keys(&rows, &pages)
+            .into_iter()
+            .map(|(name, key)| (name.to_string(), key))
+            .collect(),
+    )
 }
 
 /// The rules, apart from the catalog so they can be read and tested on rows written by
@@ -192,31 +190,30 @@ fn merge_keys<'a>(
 }
 
 /// The dataset's boss pages as `normalized title → (type, variant)`. A title two pages
-/// share names neither of them.
-///
-/// Read from the dataset compiled into this binary: no I/O, and the same constant for the
-/// whole process, which is why it is built once. The subtype is dropped here, as it is in
-/// the lookup.
-fn wiki_boss_keys() -> &'static HashMap<String, (u32, u32)> {
-    static KEYS: OnceLock<HashMap<String, (u32, u32)>> = OnceLock::new();
-    KEYS.get_or_init(|| {
-        let Ok(ds) = wiki::Dataset::embedded() else {
-            return HashMap::new();
-        };
-        let mut seen: HashMap<String, Option<(u32, u32)>> = HashMap::new();
-        for (key, entry) in &ds.bosses {
-            let mut parts = key.split('.').map(|n| n.parse::<u32>());
-            let (Some(Ok(id)), Some(Ok(variant))) = (parts.next(), parts.next()) else {
-                continue;
-            };
-            seen.entry(normalized(&entry.title))
+/// share names neither of them. The subtype is dropped here, as it is in the lookup.
+fn wiki_boss_keys(ds: &Dataset) -> HashMap<String, (u32, u32)> {
+    let titled = ds
+        .bosses
+        .iter()
+        .filter_map(|(key, entry)| Some((normalized(&entry.title), type_and_variant(key)?)));
+    let seen = titled.fold(
+        HashMap::<String, Option<(u32, u32)>>::new(),
+        |mut seen, (title, key)| {
+            seen.entry(title)
                 .and_modify(|v| *v = None)
-                .or_insert(Some((id, variant)));
-        }
-        seen.into_iter()
-            .filter_map(|(t, k)| Some((t, k?)))
-            .collect()
-    })
+                .or_insert(Some(key));
+            seen
+        },
+    );
+    seen.into_iter()
+        .filter_map(|(t, k)| Some((t, k?)))
+        .collect()
+}
+
+/// `"20.0.0"` → `(20, 0)`: the first two numbers of a dataset boss key.
+fn type_and_variant(key: &str) -> Option<(u32, u32)> {
+    let mut parts = key.split('.').map(|n| n.parse::<u32>().ok());
+    Some((parts.next()??, parts.next()??))
 }
 
 /// Case, spaces and punctuation dropped, and a leading `the` with them: the wiki writes

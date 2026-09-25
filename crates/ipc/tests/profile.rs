@@ -175,7 +175,7 @@ fn documents_source_hides_the_windows_username() {
         "the part that orients the user stays readable"
     );
     assert!(
-        views[0].path_hint.contains("<utente>"),
+        views[0].path_hint.contains("<user>"),
         "the gap is declared, not silently removed"
     );
 }
@@ -200,6 +200,26 @@ fn the_username_is_masked_whatever_the_source() {
 }
 
 #[test]
+fn the_mask_takes_the_one_segment_after_users_and_keeps_every_separator() {
+    // A verbatim prefix (`\\?\`) and a doubled separator are runs of separators, not
+    // segments: they are kept as they are and do not consume the mask, so the name after
+    // `Users` is still the one replaced.
+    let verbatim = SaveCandidate {
+        path: PathBuf::from(r"\\?\C:\Users\\Alice\Documents\rep+persistentgamedata1.dat"),
+        slot: 1,
+        source: SaveSource::Override,
+        prefix: SavePrefix::RepPlus,
+        modified: Some(SystemTime::UNIX_EPOCH + Duration::from_secs(1)),
+        size: 14491,
+    };
+    let views = candidates(&[verbatim]);
+    assert_eq!(
+        views[0].path_hint,
+        r"\\?\C:\Users\\<user>\Documents\rep+persistentgamedata1.dat"
+    );
+}
+
+#[test]
 fn a_path_without_a_user_directory_is_left_alone() {
     // A game on a second library doesn't go through `Users\`: there's nothing to mask
     // and the path must not be mangled.
@@ -213,7 +233,7 @@ fn a_path_without_a_user_directory_is_left_alone() {
     };
     let views = candidates(&[second_library]);
     assert!(
-        !views[0].path_hint.contains("<utente>"),
+        !views[0].path_hint.contains("<user>"),
         "nothing to mask, no placeholder"
     );
     assert!(views[0].path_hint.contains("steamlibrary"));

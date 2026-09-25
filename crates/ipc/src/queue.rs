@@ -6,6 +6,7 @@ use serde::Serialize;
 use wiki::Dataset;
 
 use crate::graph::{unlock_view, AchievementRef, UnlockNode};
+use crate::target_sprite::BossKeys;
 
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, ts_rs::TS)]
 #[serde(rename_all = "camelCase")]
@@ -103,6 +104,8 @@ pub fn achievement_unlocking(c: &Catalog, key: &crate::goals::TargetKey) -> Opti
 /// anyway.
 pub struct QueueInputs<'a> {
     pub catalog: Option<&'a Catalog>,
+    /// The catalog's boss keys (`boss_keys`), settled once beside it.
+    pub bosses: &'a BossKeys,
     /// The embedded wiki dataset, for the page a requirement links to. `None` links nothing.
     pub dataset: Option<&'a Dataset>,
     pub flags: Option<&'a [bool]>,
@@ -125,6 +128,7 @@ pub fn queue_view(
 ) -> QueueView {
     let QueueInputs {
         catalog,
+        bosses,
         dataset,
         flags,
         graph,
@@ -164,7 +168,7 @@ pub fn queue_view(
 
     // One `unlock_view`, indexed by achievement: a queue row shows **the same node** the
     // Unlock screen shows, so the two can never drift apart.
-    let view = unlock_view(Some(c), dataset, flags, graph, eval, progress, icon);
+    let view = unlock_view(Some(c), bosses, dataset, flags, graph, eval, progress, icon);
     let by_id: std::collections::BTreeMap<u32, &UnlockNode> = view
         .nodes
         .iter()

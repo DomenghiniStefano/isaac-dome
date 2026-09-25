@@ -1,3 +1,11 @@
+//! The space a draw picks from: the completion matrix as a grid of cells, with its shape,
+//! the one column that carries a second level, and which rows are a run you could start.
+//!
+//! The shape is the caller's, checked once in [`Space::new`] and never assumed: this crate
+//! knows no count of the game's, and a shape that does not describe its cells is an error,
+//! not a short deck. What a target's status is — missing, taken, unreadable — is read here,
+//! from the cell's bits.
+
 use crate::target::{Status, Target};
 
 /// A cell of the space. Two variants and not three: `ipc::Cell` tells "not located" from
@@ -113,11 +121,10 @@ impl Space {
         })
     }
 
-    /// The one shape with nothing to draw, built directly rather than through `new` — no rows,
-    /// no columns, no cells. Infallible on purpose: the caller of this is exactly the path
-    /// where a `Result` would have nothing sane to do with an `Err` (`ipc::unreadable_space`'s
-    /// fallback of a fallback), and "degrade, never fail" cannot spend a stack frame per retry
-    /// on a branch that is already provably unreachable.
+    /// The one shape with nothing to draw — no rows, no columns, no cells — built directly
+    /// rather than through `new`, so it cannot fail. Its one caller is the last fallback in
+    /// `ipc::unreadable_space`, reached only if `new` refused a shape `ipc` built from its own
+    /// tables: at that point there is no error left to report and no shape left to try.
     pub fn empty() -> Space {
         Space {
             rows: 0,

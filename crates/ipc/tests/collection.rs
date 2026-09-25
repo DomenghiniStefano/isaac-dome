@@ -252,3 +252,22 @@ fn a_lock_carries_the_achievement_page_only_when_the_dataset_has_it() {
         | LockView::Unknown { page, .. } => page.is_none(),
     }));
 }
+
+/// A pool that lists an item twice still names the pool once on the item, in the order the
+/// pools list it; and with no collection section, no row is counted as past its end — every
+/// row is unknown for the reason `NoCollectionSection` already gives.
+#[test]
+fn a_pool_listed_twice_is_named_once_and_no_section_is_not_beyond_it() {
+    const TWICE: &[u8] = b"<ItemPools><Pool Name=\"boss\"><Item Id=\"1\" Weight=\"1\" DecreaseBy=\"1\" RemoveOn=\"0.1\"/></Pool><Pool Name=\"treasure\"><Item Id=\"1\" Weight=\"1\" DecreaseBy=\"1\" RemoveOn=\"0.1\"/><Item Id=\"1\" Weight=\"2\" DecreaseBy=\"1\" RemoveOn=\"0.1\"/></Pool><Pool Name=\"boss\"><Item Id=\"1\" Weight=\"1\" DecreaseBy=\"1\" RemoveOn=\"0.1\"/></Pool></ItemPools>";
+    let c = Catalog::build(|p| match p {
+        "items.xml" => Some(ITEMS.to_vec()),
+        "itempools.xml" => Some(TWICE.to_vec()),
+        _ => None,
+    });
+    let v = collection_view(Some(&c), None, None, None, |_| None);
+    assert_eq!(v.items[0].pools, vec!["boss", "treasure"]);
+    assert!(!v
+        .diagnostics
+        .iter()
+        .any(|d| matches!(d, CollectionDiagnostic::ItemsBeyondSlots { .. })));
+}
