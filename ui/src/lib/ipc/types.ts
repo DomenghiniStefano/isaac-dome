@@ -620,9 +620,7 @@ export type AchievementRef =
        *
        * Two sources, because the file alone is not enough. Measured 2026-09-13 on the
        * reference profile: of 637 known achievements the file answers for 283, and among
-       * the 119 unlockable *now* — what the landing page draws from — for only 16. It was
-       * called `hint` while it was only the file's; the name changed with the meaning, so
-       * that every reader had to be revisited rather than silently widened.
+       * the 119 unlockable *now* — what the landing page draws from — for only 16.
        *
        * The game's words win where it has any: the wiki is the fallback, never a rewrite.
        */
@@ -762,9 +760,7 @@ export const OriginView = {
 export type OriginView = (typeof OriginView)[keyof typeof OriginView]
 
 /**
- * `Partial` carries no count of the steps still missing, on purpose: with a requirement
- * uninterpreted, or a node caught in a cycle, the transitive count is not knowable, and a zero
- * would read as "nothing in the way". A node that is `Partial` must never be drawn as
+ * What the graph knows about one node. A node that is `Partial` must never be drawn as
  * unlockable.
  */
 export type GraphInfo =
@@ -924,18 +920,15 @@ export type StepsSection = { basis: StepsBasis; steps: Array<UnlockNode> }
 export type NextSteps = { sections: Array<StepsSection> }
 
 /**
- * Both answers the graph's screens need, from one reading of the profile (N8).
+ * Both answers the graph's screens need, from one reading of the profile.
  *
- * They were two commands, and the frontend asked for them together — with a comment saying
- * why: *"one read, because both answers belong to the same profile and asking twice could
- * straddle a change"*. Two commands could not keep that promise. Each rebuilt the whole
- * pipeline behind it: the settings file, a walk of the Steam libraries, the `.dat` read
- * whole, its parse, 642 nodes and the evaluation — **twice for one screen load**, and
- * across two moments, so a save written in between made the steps disagree with the list
- * they are a filter over.
+ * One answer and not two, because the steps are a filter over the list: two readings could
+ * straddle a save written in between, and the steps would then disagree with the list they
+ * filter. Each reading also rebuilds the whole pipeline behind it — the settings file, a walk
+ * of the Steam libraries, the `.dat` read and parsed, 642 nodes and the evaluation.
  *
- * One command is not a cache: there is nothing to invalidate, and nothing is remembered
- * between calls. The steps stay a pure function of the view here, as they always were.
+ * It is not a cache: nothing is remembered between calls, and the steps stay a pure function
+ * of the view.
  */
 export type GraphViews = { unlock: UnlockView; steps: NextSteps }
 
