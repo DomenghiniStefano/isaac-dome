@@ -22,7 +22,7 @@ mod transformation;
 
 pub use blocks::parse_blocks;
 pub use build::build;
-pub use dataset::{Counts, Dataset, DatasetError, Meta, Patch, Source, SCHEMA_VERSION};
+pub use dataset::{Counts, Dataset, DatasetError, Meta, Patch, Source, HOST, SCHEMA_VERSION};
 pub use diagnostics::Diagnostics;
 pub use editions::{parse_code, Editions};
 pub use infobox::{
@@ -38,7 +38,7 @@ pub use page::{parse_page, EntryKey, PageKind};
 pub use raw::{page_file_name, IndexEntry, Raw, RawError, RawPage};
 pub use resolver::{
     in_current_edition, is_layout_template, key, Corrections, Resolution, Resolver, Row, Tables,
-    CORRECTED_TABLES, DLC_REPENTANCE_PLUS,
+    CORRECTED_TABLES,
 };
 pub use sections::{normalize_title, section_kind, split_page, RawSection};
 pub use template::{parse_template_at, Template};

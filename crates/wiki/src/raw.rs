@@ -100,47 +100,59 @@ fn read_table(path: &Path) -> Result<Option<Vec<Row>>, RawError> {
         .map_err(|e| RawError::Unreadable(path.to_path_buf(), e.to_string()))
 }
 
+/// A Cargo table that may be missing: the wiki might not have it, and the vector stays empty.
+fn optional_table(cargo: &Path, name: &str) -> Result<Vec<Row>, RawError> {
+    Ok(read_table(&cargo.join(format!("{name}.json")))?.unwrap_or_default())
+}
+
+/// Every page `index.json` lists, with its text. A listed page absent on disk is an error:
+/// the snapshot is incomplete.
+fn load_pages(dir: &Path) -> Result<Vec<RawPage>, RawError> {
+    let index: BTreeMap<String, IndexEntry> =
+        serde_json::from_str(&read_text(&dir.join("index.json"))?)
+            .map_err(|e| RawError::BadIndex(e.to_string()))?;
+    index
+        .into_iter()
+        .map(|(title, index)| {
+            let path = dir
+                .join("pages")
+                .join(index.kind.dir())
+                .join(format!("{}.wikitext", page_file_name(&title)));
+            Ok(RawPage {
+                text: read_text(&path)?,
+                title,
+                index,
+            })
+        })
+        .collect()
+}
+
+/// The tables the resolver reads. `collectible` is the one that must exist.
+fn load_tables(cargo: &Path) -> Result<Tables, RawError> {
+    let collectible_path = cargo.join("collectible.json");
+    let collectible = read_table(&collectible_path)?.ok_or(RawError::Missing(collectible_path))?;
+    Ok(Tables {
+        collectible,
+        trinket: optional_table(cargo, "trinket")?,
+        achievement: optional_table(cargo, "achievement")?,
+        entity: optional_table(cargo, "entity")?,
+        challenge: optional_table(cargo, "challenge")?,
+        player: optional_table(cargo, "player")?,
+        transformation: optional_table(cargo, "transformation")?,
+        pickup: optional_table(cargo, "pickup")?,
+    })
+}
+
 impl Raw {
     /// Reads the snapshot in `dir`. Cargo tables other than `collectible` may be missing
     /// (the wiki might not have them): the vector stays empty. A page listed in the index
     /// but absent on disk is an error: the snapshot is incomplete.
     pub fn load(dir: &Path) -> Result<Raw, RawError> {
-        let index_path = dir.join("index.json");
-        let index: BTreeMap<String, IndexEntry> = serde_json::from_str(&read_text(&index_path)?)
-            .map_err(|e| RawError::BadIndex(e.to_string()))?;
-        let mut pages = Vec::with_capacity(index.len());
-        for (title, entry) in index {
-            let path = dir
-                .join("pages")
-                .join(entry.kind.dir())
-                .join(format!("{}.wikitext", page_file_name(&title)));
-            pages.push(RawPage {
-                title,
-                index: entry,
-                text: read_text(&path)?,
-            });
-        }
         let cargo = dir.join("cargo");
-        let table = |name: &str| -> Result<Vec<Row>, RawError> {
-            Ok(read_table(&cargo.join(format!("{name}.json")))?.unwrap_or_default())
-        };
-        let collectible_path = cargo.join("collectible.json");
-        let collectible =
-            read_table(&collectible_path)?.ok_or(RawError::Missing(collectible_path))?;
-        let tables = Tables {
-            collectible,
-            trinket: table("trinket")?,
-            achievement: table("achievement")?,
-            entity: table("entity")?,
-            challenge: table("challenge")?,
-            player: table("player")?,
-            transformation: table("transformation")?,
-            pickup: table("pickup")?,
-        };
         Ok(Raw {
-            pages,
-            tables,
-            versions: table("version")?,
+            pages: load_pages(dir)?,
+            tables: load_tables(&cargo)?,
+            versions: optional_table(&cargo, "version")?,
         })
     }
 }
