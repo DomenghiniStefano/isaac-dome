@@ -177,11 +177,12 @@ export type SetupDiagnostic =
  * Two levels and not three: bit 2 is not one of them. It says where a mark was taken,
  * which is why it travels beside this enum and not inside it.
  *
- * Not to be confused with `graph::MarkLevelView`, which names the same two bits `base`
- * and `second`. That one describes a *target* — "go and take this cell at this level" —
- * and refuses `hard` on purpose, because what bit 1 means outside Greed is unmeasured.
- * Here the matrix is being drawn and `normal`/`hard` is the vocabulary its own totals
- * have carried since B22; the two names are one measurement away from becoming one.
+ * Not to be confused with `graph::rules::MarkLevel` (`MarkLevelView` on the wire), which
+ * names the same two bits `base` and `second`. That one describes a *target* — "go and take
+ * this cell at this level" — and refuses `hard` on purpose, because what bit 1 means outside
+ * Greed is unmeasured. Here the matrix is being drawn and `normal`/`hard` is the vocabulary
+ * its own totals have carried since B22; the two names are one measurement away from
+ * becoming one.
  */
 export const CellLevel = {
   Empty: 'empty',
@@ -551,8 +552,8 @@ export type ArchiveReason =
   { kind: 'tooShort' } | { kind: 'badMagic' } | { kind: 'io'; reason: IoReason }
 
 /**
- * An archive the install has and that did not open (card #80, R6). Its name is one of the
- * game's own archive names, never a path.
+ * An archive the install has and that did not open. Its name is one of the game's own
+ * archive names, never a path.
  */
 export type BrokenArchiveView = { name: string; reason: ArchiveReason }
 
@@ -632,11 +633,10 @@ export type AchievementRef =
 /**
  * The twelve columns the game's own completion widget draws, in its order.
  *
- * **The one definition of the twelve** (card #82, S1). The graph's rules name a column with
- * it (`graph::rules::MarkColumn`), and it crosses the IPC as `MarkColumnView`: a bare
- * camelCase string, fieldless, so the TypeScript is a union of values. It used to be three
- * enums of the same twelve joined by hand-written maps, each one a place for a thirteenth
- * column to be forgotten.
+ * **The one definition of the twelve.** The graph's rules name a column with it
+ * (`graph::rules::MarkColumn`), and it crosses the IPC as `MarkColumnView`: a bare camelCase
+ * string, fieldless, so the TypeScript is a union of values. One enum, so there is no
+ * hand-written map between copies for a thirteenth column to be forgotten in.
  *
  * Ordered in the game's order, so a column can key a sorted map.
  */
@@ -658,8 +658,19 @@ export type MarkColumnView =
   (typeof MarkColumnView)[keyof typeof MarkColumnView]
 
 /**
- * A level inside a cell, named for its bit. `Second` is Ultra Greedier in the Greed
- * column, measured; what it means elsewhere is not, and `hard` would ship that claim.
+ * A level within a cell, **named for the bit and not for a meaning**. Bit 0 is `Base`,
+ * bit 1 is `Second`.
+ *
+ * In the Greed column `Second` is Ultra Greedier, measured 2026-09-12 on three days and
+ * three characters. What bit 1 means in the other eleven columns is *not* measured, so a
+ * name like `Hard` would assert exactly what this repository has already paid for twice
+ * (sections 3 and 6, a mark's bit 2).
+ *
+ * Ordered, `Base` first, so a cell reached at the second level satisfies a requirement
+ * for the base one by `reached >= required`.
+ *
+ * The one definition of the two levels: a requirement carries it across the IPC as
+ * `MarkLevelView`, a bare camelCase string.
  */
 export const MarkLevelView = {
   Base: 'base',
@@ -668,11 +679,14 @@ export const MarkLevelView = {
 export type MarkLevelView = (typeof MarkLevelView)[keyof typeof MarkLevelView]
 
 /**
+ * The four kinds `items.xml` files an item under, and the one definition of them: it crosses
+ * the IPC as `ItemKindView`, and an icon URL spells it with the same word
+ * ([`ItemKind::name`]).
+ *
  * A fieldless enum: on the wire it's a bare camelCase string (`"passive"`), like
- * `OriginView`. The tag exists to distinguish variants that carry different data, and
- * here there are none: `{"kind":"passive"}` would cost a key on every row and say
- * nothing more. The day a variant gains a field, the enum becomes tagged and the
- * TypeScript side follows.
+ * `OriginView`. The tag exists to distinguish variants that carry different data, and here
+ * there are none: `{"kind":"passive"}` would cost a key on every row and say nothing more.
+ * The day a variant gains a field, the enum becomes tagged and the TypeScript side follows.
  */
 export const ItemKindView = {
   Passive: 'passive',
@@ -749,7 +763,8 @@ export type UnlockTarget =
     }
 
 /**
- * `catalog::Origin` doesn't cross the IPC boundary: this is its view, like `ItemKindView` for `ItemKind`.
+ * The edition that introduced an item. The one definition: it crosses the IPC as
+ * `OriginView`, a bare camelCase string like `ItemKindView`.
  */
 export const OriginView = {
   Rebirth: 'rebirth',

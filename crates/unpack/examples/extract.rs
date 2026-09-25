@@ -2,15 +2,9 @@
 
 use unpack::ResourceSet;
 
-/// The repo's `samples/` folder, through `test-support`: `packed` is a junction to the
-/// game's folder there.
-fn samples(name: &str) -> std::path::PathBuf {
-    test_support::samples_dir().join(name)
-}
-
 fn main() {
-    let rs = ResourceSet::open(&samples("packed"));
-    let out = samples("sprites");
+    let rs = ResourceSet::open(&test_support::sample_path("packed"));
+    let out = test_support::sample_path("sprites");
     std::fs::create_dir_all(&out).expect("creates the folder");
     for arg in std::env::args().skip(1) {
         match rs.read_with_source(&arg) {

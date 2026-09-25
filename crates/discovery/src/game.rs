@@ -65,10 +65,7 @@ pub(crate) fn find_game(
     steam: Option<&SteamInstall>,
 ) -> (Option<GameInstall>, Vec<Diagnostic>) {
     if let Some(dir) = &opts.game_dir {
-        return (
-            Some(game_from_dir(dir.clone(), dir.clone(), None)),
-            Vec::new(),
-        );
+        return (Some(game_from_dir(dir.clone(), None)), Vec::new());
     }
 
     let Some(steam) = steam else {
@@ -98,7 +95,7 @@ fn look_in(library: &Path) -> (Option<GameInstall>, Option<Diagnostic>) {
         Ok(text) => text,
         // Not there: this library does not hold the game, which is normal.
         Err(e) if e.kind() == std::io::ErrorKind::NotFound => return (None, None),
-        // There and unreadable (card #80, R7): said, like `saves.rs` says a folder it
+        // There and unreadable: said, like `saves.rs` says a folder it
         // cannot list, and then the same as a manifest that does not parse.
         Err(e) => {
             let diag = Diagnostic::UnreadablePath {
@@ -125,7 +122,7 @@ fn look_in(library: &Path) -> (Option<GameInstall>, Option<Diagnostic>) {
     // The malformed-manifest fallback above already checks the same thing.
     let game = dir
         .is_dir()
-        .then(|| game_from_dir(dir, library.to_path_buf(), Some((manifest, parsed))));
+        .then(|| game_from_dir(dir, Some((manifest, parsed))));
     (game, None)
 }
 
@@ -136,20 +133,13 @@ fn canonical_game(library: &Path) -> Option<GameInstall> {
         .join("steamapps")
         .join("common")
         .join(CANONICAL_INSTALLDIR);
-    canonical
-        .is_dir()
-        .then(|| game_from_dir(canonical, library.to_path_buf(), None))
+    canonical.is_dir().then(|| game_from_dir(canonical, None))
 }
 
-fn game_from_dir(
-    dir: PathBuf,
-    library: PathBuf,
-    parsed: Option<(PathBuf, Manifest)>,
-) -> GameInstall {
+fn game_from_dir(dir: PathBuf, parsed: Option<(PathBuf, Manifest)>) -> GameInstall {
     match parsed {
         Some((manifest, m)) => GameInstall {
             dir,
-            library,
             manifest,
             edition: Some(edition_from_appids(&m.dlc_appids)),
             dlcs: dlcs_from_appids(&m.dlc_appids),
@@ -161,7 +151,6 @@ fn game_from_dir(
             dlcs: Vec::new(),
             updated_unix: None,
             dir,
-            library,
         },
     }
 }

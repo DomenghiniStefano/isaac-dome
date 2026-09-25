@@ -199,6 +199,22 @@ impl Dataset {
         format!("{id}.{variant}.{subtype}")
     }
 
+    /// The inverse of [`Dataset::boss_key`]: `"20.0.0"` → `(20, 0, 0)`. Strict: a key that is
+    /// not exactly three numbers is one the build never wrote.
+    pub fn parse_boss_key(key: &str) -> Option<(u32, u32, u32)> {
+        let mut n = boss_key_numbers(key);
+        let parsed = (n.next()??, n.next()??, n.next()??);
+        n.next().is_none().then_some(parsed)
+    }
+
+    /// The type and variant of a boss key, whatever follows them: `"20.0.0"` → `(20, 0)`.
+    /// Loose on purpose, for a caller that drops the subtype — a portrait is declared by type
+    /// and variant only.
+    pub fn boss_key_type_and_variant(key: &str) -> Option<(u32, u32)> {
+        let mut n = boss_key_numbers(key);
+        Some((n.next()??, n.next()??))
+    }
+
     /// The entry under `key` in the collection `wiki.json` calls `collection`: how
     /// `corrections.json` names one, since the file is written against the JSON.
     pub(crate) fn entry_by_key_mut(&mut self, collection: &str, key: &str) -> Option<&mut Entry> {
@@ -209,6 +225,7 @@ impl Dataset {
     }
 
     /// Whether [`Dataset::entry_by_key_mut`] would find an entry.
+    #[cfg(feature = "test-api")]
     pub fn has_key(&self, collection: &str, key: &str) -> bool {
         let Ok(collection) = collection.parse() else {
             return false;
@@ -222,6 +239,7 @@ impl Dataset {
         }
     }
 
+    #[cfg(feature = "test-api")]
     fn shelf(&self, collection: Collection) -> Shelf<&Numbered, &Bosses> {
         match collection {
             Collection::Items => Shelf::Numbered(&self.items),
@@ -353,4 +371,10 @@ mod tests {
         assert_eq!(ds.meta.schema_version, SCHEMA_VERSION);
         assert_eq!(ds.meta.counts.trinkets, 188);
     }
+}
+
+/// The dot-separated numbers of a boss key, each `None` where it is not a number: the one
+/// reading of the notation [`Dataset::boss_key`] writes.
+fn boss_key_numbers(key: &str) -> impl Iterator<Item = Option<u32>> + '_ {
+    key.split('.').map(|n| n.parse().ok())
 }

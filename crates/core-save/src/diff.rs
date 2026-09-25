@@ -4,6 +4,9 @@ use crate::parse::Save;
 use crate::section::Kind;
 
 /// What changed going from save `a` to save `b`.
+///
+/// No screen reads it: it is kept for the measuring examples (`live_probe`, `matched_window`),
+/// the instruments the save format is learned with.
 #[derive(Debug, Clone, Default, PartialEq, Eq, Serialize)]
 pub struct SaveDiff {
     /// Indices that flipped from off to on in `b`.

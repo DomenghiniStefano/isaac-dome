@@ -60,7 +60,7 @@ pub(crate) fn scan_game_data(
     declared: Option<&Path>,
 ) -> Option<GameDataFolder> {
     // Without a Documents folder there is nothing to search, and the declared folder is still
-    // its own answer (card #80, P9).
+    // its own answer.
     let searched = documents.into_iter().flat_map(|documents| {
         FOLDERS
             .iter()

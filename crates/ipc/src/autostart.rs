@@ -104,8 +104,8 @@ pub struct AutostartView {
     pub unavailable: Option<AutostartReason>,
 }
 
-/// What `set_autostart` answers (card #81, V1: this was decided inside the command). `wrote` is
-/// whether the plugin accepted the write — `None` when there is no plugin to ask. The answer is
+/// What `set_autostart` answers, decided here so the command only wires it. `wrote` is whether
+/// the plugin accepted the write — `None` when there is no plugin to ask. The answer is
 /// **the read-back**, never what was asked for; when the two disagree, whether the write was
 /// accepted is what tells a system that undid it from a plugin that refused it.
 ///

@@ -16,7 +16,7 @@
 //! accident on names it was never actually comparing (`Tainted Bethany`'s real id 36
 //! colliding with `player`'s row for `Tainted Soul`).
 
-use crate::infobox::{extract_infoboxes, infobox_from, InfoboxKind};
+use crate::infobox::{extract_infoboxes, infobox_from, InfoboxKind, RawInfobox};
 use crate::page::PageKind;
 use crate::raw::RawPage;
 use crate::resolver::Resolver;
@@ -53,48 +53,57 @@ pub struct ParentCrossCheck {
 /// has no row for is left out of `compared`, not counted as a mismatch: there is nothing on
 /// that side to disagree with (see the module doc).
 pub fn cross_check_character_parents(pages: &[RawPage], r: &Resolver) -> ParentCrossCheck {
-    let mut out = ParentCrossCheck::default();
-    for p in pages.iter().filter(|p| p.index.kind == PageKind::Character) {
-        for ib in extract_infoboxes(&p.text) {
-            if InfoboxKind::of(&ib.name) != Some(InfoboxKind::Character) {
-                continue;
-            }
-            let name = ib
-                .params
-                .get("name")
-                .map(|s| s.trim())
-                .filter(|s| !s.is_empty())
-                .map(str::to_string)
-                .unwrap_or_else(|| p.title.clone());
-            let Some(player_parent) = r.player_table_parent(&name) else {
-                continue;
-            };
-            let mut d = Diagnostics::default();
-            let infobox = infobox_from(InfoboxKind::Character, &ib, &p.text, r, &mut d);
-            let Infobox::Character {
-                parent: wiki_parent,
-                ..
-            } = infobox
-            else {
-                continue;
-            };
-            out.compared += 1;
-            if wiki_parent != player_parent {
-                let differing = ParentMismatch {
-                    name,
-                    wiki_parent,
-                    player_parent,
-                };
-                match (&differing.wiki_parent, &differing.player_parent) {
-                    (Some(_), Some(_)) => out.mismatches.push(differing),
-                    (Some(_), None) | (None, Some(_)) | (None, None) => {
-                        out.stated_by_one.push(differing)
-                    }
-                }
-            }
-        }
+    let compared: Vec<ParentMismatch> = pages
+        .iter()
+        .filter(|p| p.index.kind == PageKind::Character)
+        .flat_map(|p| {
+            extract_infoboxes(&p.text)
+                .into_iter()
+                .map(move |ib| (p, ib))
+        })
+        .filter(|(_, ib)| InfoboxKind::of(&ib.name) == Some(InfoboxKind::Character))
+        .filter_map(|(p, ib)| compare(p, &ib, r))
+        .collect();
+    let count = compared.len() as u32;
+    let (mismatches, stated_by_one) = compared
+        .into_iter()
+        .filter(|c| c.wiki_parent != c.player_parent)
+        .partition(|c| c.wiki_parent.is_some() && c.player_parent.is_some());
+    ParentCrossCheck {
+        compared: count,
+        mismatches,
+        stated_by_one,
     }
-    out
+}
+
+/// The two parents one character-infobox is compared on, agreeing or not; `None` when
+/// `player` has no row for its name.
+fn compare(p: &RawPage, ib: &RawInfobox, r: &Resolver) -> Option<ParentMismatch> {
+    let name = form_name(p, ib);
+    let player_parent = r.player_table_parent(&name)?;
+    let mut d = Diagnostics::default();
+    let Infobox::Character {
+        parent: wiki_parent,
+        ..
+    } = infobox_from(InfoboxKind::Character, ib, &p.text, r, &mut d)
+    else {
+        return None;
+    };
+    Some(ParentMismatch {
+        name,
+        wiki_parent,
+        player_parent,
+    })
+}
+
+/// The infobox's `name` parameter, or the page title when it carries none.
+fn form_name(p: &RawPage, ib: &RawInfobox) -> String {
+    ib.params
+        .get("name")
+        .map(|s| s.trim())
+        .filter(|s| !s.is_empty())
+        .map(str::to_string)
+        .unwrap_or_else(|| p.title.clone())
 }
 
 #[cfg(test)]

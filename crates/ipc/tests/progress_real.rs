@@ -14,19 +14,14 @@
 // the wildcard *is* the assertion, and it fails loudly on a new variant instead of hiding it.
 #![allow(clippy::wildcard_enum_match_arm)]
 
+mod support;
+
 use catalog::Catalog;
 use core_save::{cell_index, Column};
 use core_save::{Kind, Save};
 use graph::rules::target_key;
-use test_support::dated_series;
-
-const SERIES: &str = "rep+persistentgamedata1.dat";
-
-fn real_catalog() -> Option<Catalog> {
-    let packed = test_support::packed_dir()?;
-    let rs = unpack::ResourceSet::open(&packed);
-    Some(Catalog::build(|p| rs.read(p)))
-}
+use support::real_catalog;
+use test_support::{dated_series, REP_PLUS_SERIES};
 
 /// The character a reference names, resolved the way `Graph::build` resolves it: **by the
 /// wiki's id first**, and only then by name. The two forms of a character share the game's
@@ -61,7 +56,7 @@ fn pair(rules: &graph::rules::Rules, id: u32, boss: &str) -> Option<(String, u32
 /// are (`entity:Ultra Greedier`, character *X*) flipped, *X*'s Greed cell gained bit 1.
 #[test]
 fn winning_greedier_sets_the_second_bit_of_that_characters_greed_cell() {
-    let series = dated_series(SERIES);
+    let series = dated_series(REP_PLUS_SERIES);
     if series.len() < 2 {
         return; // dated_series has already declared why
     }
@@ -121,7 +116,7 @@ fn winning_greedier_sets_the_second_bit_of_that_characters_greed_cell() {
 /// finds would not be the cell that moved.
 #[test]
 fn beating_mother_or_the_beast_moves_that_characters_own_cell() {
-    let series = dated_series(SERIES);
+    let series = dated_series(REP_PLUS_SERIES);
     if series.len() < 2 {
         return;
     }

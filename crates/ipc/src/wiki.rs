@@ -65,7 +65,7 @@ pub fn wiki_index(
 }
 
 /// Every page of the dataset with its identity, by kind and then by id: the one walk the
-/// index and the search both read (card #82, S4). Two walks is how B46 happened — the sixteen
+/// index and the search both read. Two walks is how B46 happened — the sixteen
 /// transformations entered the dataset on 2026-09-13 and one of the two lists did not learn
 /// about them, and a page that exists and cannot be found reads exactly like a page that
 /// does not exist.
@@ -107,13 +107,12 @@ pub(crate) fn pages(ds: &Dataset) -> impl Iterator<Item = (Target, &Entry)> {
 /// The inverse of `Dataset::boss_key`: `"20.0.0"` → the entity. A key that isn't three
 /// numbers is one the build never wrote, and the page is left out rather than guessed.
 fn boss_target(key: &str) -> Option<Target> {
-    let mut parts = key.split('.').map(|s| s.parse::<u32>().ok());
-    let target = Target::Entity {
-        id: parts.next()??,
-        variant: parts.next()??,
-        subtype: parts.next()??,
-    };
-    parts.next().is_none().then_some(target)
+    let (id, variant, subtype) = Dataset::parse_boss_key(key)?;
+    Some(Target::Entity {
+        id,
+        variant,
+        subtype,
+    })
 }
 
 /// A game patch, as the wiki knows it.
@@ -264,6 +263,32 @@ fn days_from_civil(y: i64, m: i64, d: i64) -> i64 {
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    /// Strict: exactly the three numbers `Dataset::boss_key` writes, and nothing else.
+    #[test]
+    fn a_boss_page_key_is_three_numbers_and_nothing_else() {
+        assert_eq!(
+            boss_target("20.0.0"),
+            Some(Target::Entity {
+                id: 20,
+                variant: 0,
+                subtype: 0
+            })
+        );
+        assert_eq!(
+            boss_target("19.2.1"),
+            Some(Target::Entity {
+                id: 19,
+                variant: 2,
+                subtype: 1
+            })
+        );
+        for refused in [
+            "20.0", "20.0.0.0", "20.0.x", "x.0.0", "20..0", "", "20.0.0.",
+        ] {
+            assert_eq!(boss_target(refused), None, "{refused:?}");
+        }
+    }
 
     #[test]
     fn rfc3339() {

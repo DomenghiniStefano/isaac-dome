@@ -13,6 +13,9 @@ const SOURCE: Source = Source::ItemPools;
 pub struct PoolEntry {
     pub item: ItemId,
     pub weight: f32,
+    /// `DecreaseBy` and `RemoveOn`, as the file writes them (defaults 1 and 0.1). Kept as read
+    /// and not interpreted: no screen draws a pool's odds yet, and what the game does with the
+    /// two numbers is not measured here.
     pub decrease_by: f32,
     pub remove_on: f32,
 }

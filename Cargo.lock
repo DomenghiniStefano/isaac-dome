@@ -473,6 +473,7 @@ dependencies = [
  "quick-xml 0.42.0",
  "serde",
  "test-support",
+ "ts-rs",
  "unpack",
 ]
 
@@ -1174,6 +1175,7 @@ dependencies = [
 name = "floor"
 version = "0.1.0"
 dependencies = [
+ "floor",
  "serde",
  "serde_json",
 ]
@@ -1568,6 +1570,7 @@ dependencies = [
  "serde",
  "serde_json",
  "test-support",
+ "ts-rs",
  "unpack",
  "wiki",
 ]
@@ -3379,6 +3382,7 @@ dependencies = [
 name = "roll"
 version = "0.1.0"
 dependencies = [
+ "roll",
  "serde",
  "serde_json",
 ]

@@ -2,7 +2,7 @@
 //! already in the right shape: resolved names, no keys, no paths.
 
 use catalog::{Catalog, Diagnostic, ItemKind, Language};
-use serde::{Deserialize, Serialize};
+use serde::Serialize;
 
 use crate::resources::data_url;
 
@@ -26,19 +26,9 @@ pub struct CatalogView {
     pub languages: Vec<String>,
 }
 
-/// A fieldless enum: on the wire it's a bare camelCase string (`"passive"`), like
-/// `OriginView`. The tag exists to distinguish variants that carry different data, and
-/// here there are none: `{"kind":"passive"}` would cost a key on every row and say
-/// nothing more. The day a variant gains a field, the enum becomes tagged and the
-/// TypeScript side follows.
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, Serialize, Deserialize, ts_rs::TS)]
-#[serde(rename_all = "camelCase")]
-pub enum ItemKindView {
-    Passive,
-    Active,
-    Familiar,
-    Trinket,
-}
+/// The catalog's own kind, under the name the boundary has always used: one definition, so
+/// the wire, the icon URL and the XML cannot spell a kind three ways.
+pub use catalog::ItemKind as ItemKindView;
 
 #[derive(Debug, Clone, Serialize, ts_rs::TS)]
 #[serde(rename_all = "camelCase")]
@@ -78,44 +68,11 @@ pub fn item_views(
         .take(limit)
         .map(|i| ItemView {
             id: i.id.0,
-            kind: kind_view(i.kind),
+            kind: i.kind,
             name: c.text(&i.name, Language::English).to_string(),
             data_url: sprite(&i.sprite.path).map(|png| data_url(&png)),
         })
         .collect()
-}
-
-/// `ItemKind` doesn't cross the IPC boundary: this is its view, shared with `graph::target_of`.
-pub(crate) fn kind_view(k: ItemKind) -> ItemKindView {
-    match k {
-        ItemKind::Passive => ItemKindView::Passive,
-        ItemKind::Active => ItemKindView::Active,
-        ItemKind::Familiar => ItemKindView::Familiar,
-        ItemKind::Trinket => ItemKindView::Trinket,
-    }
-}
-
-/// The inverse of `kind_view`: a target arriving from the frontend maps back to the
-/// catalog's type. Exhaustive: an extra variant on either side breaks the build.
-pub(crate) fn item_kind(v: ItemKindView) -> ItemKind {
-    match v {
-        ItemKindView::Passive => ItemKind::Passive,
-        ItemKindView::Active => ItemKind::Active,
-        ItemKindView::Familiar => ItemKind::Familiar,
-        ItemKindView::Trinket => ItemKind::Trinket,
-    }
-}
-
-/// The collectible numbered `id`, whichever of the three collectible kinds it is.
-///
-/// The wiki's `Item { id }` and a run's `Adding collectible N` both name one by number alone.
-/// Passives, actives and familiars share one id space, so at most one kind matches; a trinket
-/// never does, because it can carry the same number as a collectible and is not the thing
-/// either of them means. One helper where there were three copies (card #82, S4).
-pub(crate) fn collectible(c: &Catalog, id: u32) -> Option<&catalog::Item> {
-    [ItemKind::Passive, ItemKind::Active, ItemKind::Familiar]
-        .into_iter()
-        .find_map(|kind| c.item(kind, catalog::ItemId(id)))
 }
 
 fn language_label(l: Language) -> String {
@@ -136,29 +93,19 @@ fn language_label(l: Language) -> String {
 mod tests {
     use super::*;
 
-    /// `kind_view` and `item_kind` are each other's inverse. The two maps are hand
-    /// written and are the joint that the `(kind, id)` key of `TargetKey` rests on: a
-    /// swapped row would silently save a goal against the wrong item. A pure test,
-    /// always run; it lives here and not in `tests/` because the two functions aren't
-    /// public.
+    /// A kind's one word is the one `serde` writes: the icon URL (`item/passive/92`), the XML
+    /// element and the payload say the same thing, and `from_name` reads it back. The joint
+    /// the `(kind, id)` key of `TargetKey` rests on: a swapped row would silently save a goal
+    /// against the wrong item.
     #[test]
-    fn the_view_of_an_item_kind_maps_back_to_it() {
-        for k in [
-            ItemKind::Passive,
-            ItemKind::Active,
-            ItemKind::Familiar,
-            ItemKind::Trinket,
-        ] {
-            assert_eq!(item_kind(kind_view(k)), k, "{k:?}");
+    fn a_kinds_name_is_its_wire_string_and_reads_back() {
+        for k in ItemKind::ALL {
+            let wire = serde_json::to_value(k).expect("serialises");
+            assert_eq!(wire, serde_json::json!(k.name()), "{k:?}");
+            assert_eq!(ItemKind::from_name(k.name()), Some(k), "{k:?}");
+            let back: ItemKindView = serde_json::from_value(wire).expect("deserialises");
+            assert_eq!(back, k, "{k:?}");
         }
-        // And the other way around: no view ends up on the wrong type.
-        for v in [
-            ItemKindView::Passive,
-            ItemKindView::Active,
-            ItemKindView::Familiar,
-            ItemKindView::Trinket,
-        ] {
-            assert_eq!(kind_view(item_kind(v)), v, "{v:?}");
-        }
+        assert_eq!(ItemKind::from_name("passives"), None);
     }
 }

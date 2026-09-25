@@ -1,5 +1,4 @@
-//! A view derived from the save, kept for as long as the save it was derived from (card #80,
-//! R10).
+//! A view derived from the save, kept for as long as the save it was derived from.
 //!
 //! Live asks for the graph's answer every time the watcher reports a line — every two seconds
 //! while a run is played — and the graph's answer is 642 nodes evaluated against the profile.

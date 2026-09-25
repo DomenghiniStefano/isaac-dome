@@ -77,23 +77,48 @@ enum Step {
     },
 }
 
+const HEADER_LEN: usize = 12;
+
+/// The three `u32` of a section header, as the file wrote them.
+struct Header {
+    kind: u32,
+    declared_size: u32,
+    count: u32,
+}
+
+/// The header at `off`, or `None` when fewer than 12 bytes are left before the checksum.
+fn read_header(body: &[u8], off: usize) -> Option<Header> {
+    let raw = body.get(off..)?.first_chunk::<HEADER_LEN>()?;
+    let word = |i: usize| u32::from_le_bytes([raw[i], raw[i + 1], raw[i + 2], raw[i + 3]]);
+    Some(Header {
+        kind: word(0),
+        declared_size: word(4),
+        count: word(8),
+    })
+}
+
+/// How many bytes a section of `kind` asks for, given the `available` ones before the checksum.
+/// The bestiary has no fixed entry size and runs to the checksum.
+fn wanted_len(kind: Kind, count: u32, available: usize) -> usize {
+    match kind.bytes_per_entry() {
+        None => available,
+        Some(size) => (count as usize).saturating_mul(size),
+    }
+}
+
 /// The section whose header is at `off`. `body` is the file without its checksum, so nothing
 /// read here can reach into it. Every read is a `.get()`: a header or a section the file is too
 /// short for is a `Step`, never a panic.
 fn read_section(body: &[u8], off: usize, expected: u32) -> Step {
-    let Some(header) = body.get(off..).and_then(|rest| rest.first_chunk::<12>()) else {
+    let Some(header) = read_header(body, off) else {
         return Step::Done;
     };
-    let found_kind = u32::from_le_bytes([header[0], header[1], header[2], header[3]]);
-    let declared_size = u32::from_le_bytes([header[4], header[5], header[6], header[7]]);
-    let count = u32::from_le_bytes([header[8], header[9], header[10], header[11]]);
     let unexpected = Diagnostic::UnexpectedKind {
         at: off,
         expected,
-        found: found_kind,
+        found: header.kind,
     };
-
-    let Some(kind) = Kind::from_number(found_kind) else {
+    let Some(kind) = Kind::from_number(header.kind) else {
         // Unknown kind: we don't know the entry size, so we stop here.
         return Step::Stop {
             section: None,
@@ -104,21 +129,18 @@ fn read_section(body: &[u8], off: usize, expected: u32) -> Step {
     // be sized, and by format it's always the last section; we exempt it from the sequence
     // check so it doesn't raise a spurious UnexpectedKind when it shows up on its own (e.g. in
     // fixtures).
-    let out_of_sequence = (found_kind != expected && kind.bytes_per_entry().is_some())
+    let out_of_sequence = (header.kind != expected && kind.bytes_per_entry().is_some())
         .then_some(unexpected)
         .into_iter();
 
-    let data = off + header.len();
+    let data = off + HEADER_LEN;
     let available = body.len().saturating_sub(data);
-    let wanted = match kind.bytes_per_entry() {
-        None => available, // bestiary: up to end-4
-        Some(sz) => (count as usize).saturating_mul(sz),
-    };
+    let wanted = wanted_len(kind, header.count, available);
     let len = wanted.min(available);
     let section = Section {
         kind,
-        count,
-        declared_size,
+        count: header.count,
+        declared_size: header.declared_size,
         offset: data,
         bytes: body
             .get(data..data + len)
@@ -128,7 +150,7 @@ fn read_section(body: &[u8], off: usize, expected: u32) -> Step {
 
     if wanted > available {
         let overrun = Diagnostic::SectionOverrun {
-            kind: found_kind,
+            kind: header.kind,
             at: data,
             needed: wanted,
             available,
@@ -150,11 +172,78 @@ fn read_section(body: &[u8], off: usize, expected: u32) -> Step {
 struct Reading {
     off: usize,
     /// The kind the next header should carry: one after the kind the last one **did** carry,
-    /// not after the one that was expected — one missing section is one diagnostic, not one
-    /// per section after it (card #80, P11a).
+    /// not after the one that was expected — so one missing section is one diagnostic, not one
+    /// per section after it.
     expected: u32,
     sections: Vec<Section>,
     diagnostics: Vec<Diagnostic>,
+}
+
+impl Reading {
+    fn start() -> Reading {
+        Reading {
+            off: FIRST_HEADER,
+            expected: 1,
+            sections: Vec::new(),
+            diagnostics: Vec::new(),
+        }
+    }
+
+    /// The reading after taking in `step`, and whether it goes on.
+    fn take(mut self, step: Step) -> (Reading, bool) {
+        match step {
+            Step::Done => (self, false),
+            Step::Next {
+                section,
+                diagnostics,
+                next,
+            } => {
+                self.expected = section.kind.number().saturating_add(1);
+                self.sections.push(section);
+                self.diagnostics.extend(diagnostics);
+                self.off = next;
+                (self, true)
+            }
+            Step::Stop {
+                section,
+                diagnostics,
+            } => {
+                self.sections.extend(section);
+                self.diagnostics.extend(diagnostics);
+                (self, false)
+            }
+        }
+    }
+
+    /// Whatever the headers did not account for, from the header the reading stopped at.
+    fn trailing(&self, body: &[u8]) -> Option<Diagnostic> {
+        (self.off < body.len()).then(|| Diagnostic::TrailingBytes {
+            at: self.off,
+            len: body.len() - self.off,
+        })
+    }
+}
+
+/// Every section header from `reading` on, until one says the reading is over.
+fn read_sections(body: &[u8], reading: Reading) -> Reading {
+    let step = read_section(body, reading.off, reading.expected);
+    match reading.take(step) {
+        (reading, true) => read_sections(body, reading),
+        (reading, false) => reading,
+    }
+}
+
+/// The signature check: too short to hold a signature and a checksum, or the wrong signature.
+fn check_magic(bytes: &[u8]) -> Result<(), OpenError> {
+    if bytes.len() < 20 {
+        return Err(OpenError::TooShort);
+    }
+    if &bytes[0..14] != MAGIC.as_slice() {
+        let mut found = [0u8; 16];
+        found.copy_from_slice(&bytes[0..16]);
+        return Err(OpenError::BadMagic { found });
+    }
+    Ok(())
 }
 
 impl Save {
@@ -167,60 +256,16 @@ impl Save {
     /// Interprets a buffer already in memory. Errors only on magic/length;
     /// every other inconsistency becomes a `Diagnostic`.
     pub fn parse(bytes: &[u8]) -> Result<Save, OpenError> {
-        if bytes.len() < 20 {
-            return Err(OpenError::TooShort);
-        }
-        if &bytes[0..14] != MAGIC.as_slice() {
-            let mut found = [0u8; 16];
-            found.copy_from_slice(&bytes[0..16]);
-            return Err(OpenError::BadMagic { found });
-        }
+        check_magic(bytes)?;
         let unknown_0x10 = read_u32(bytes, 0x10);
-
         // The last four bytes are the checksum, never a section.
         let body = &bytes[..bytes.len() - 4];
-        let mut reading = Reading {
-            off: FIRST_HEADER,
-            expected: 1,
-            sections: Vec::new(),
-            diagnostics: Vec::new(),
-        };
-        loop {
-            match read_section(body, reading.off, reading.expected) {
-                Step::Done => break,
-                Step::Next {
-                    section,
-                    diagnostics,
-                    next,
-                } => {
-                    reading.expected = section.kind.number().saturating_add(1);
-                    reading.sections.push(section);
-                    reading.diagnostics.extend(diagnostics);
-                    reading.off = next;
-                }
-                Step::Stop {
-                    section,
-                    diagnostics,
-                } => {
-                    reading.sections.extend(section);
-                    reading.diagnostics.extend(diagnostics);
-                    break;
-                }
-            }
-        }
-
-        // Whatever the headers did not account for, from the header the reading stopped at.
-        if reading.off < body.len() {
-            reading.diagnostics.push(Diagnostic::TrailingBytes {
-                at: reading.off,
-                len: body.len() - reading.off,
-            });
-        }
-
+        let reading = read_sections(body, Reading::start());
+        let trailing = reading.trailing(body);
         Ok(Save {
             unknown_0x10,
             sections: reading.sections,
-            diagnostics: reading.diagnostics,
+            diagnostics: reading.diagnostics.into_iter().chain(trailing).collect(),
         })
     }
 }

@@ -87,7 +87,7 @@ impl Ingest<'_> {
     /// Every session on the disk that is not in the archive yet. Errors are collected, never
     /// raised: one unreadable folder must not cost the other twenty-seven.
     ///
-    /// Only the tests call it (card #81, C8): the app walks `sessions()` itself and ingests each
+    /// Only the tests call it: the app walks `sessions()` itself and ingests each
     /// folder under a lock of its own, so the database is never held for the whole backfill.
     #[cfg(feature = "test-api")]
     pub fn backfill(&self, online_logs: &Path) -> (Vec<Ingested>, Vec<WatchError>) {
@@ -137,11 +137,11 @@ impl Ingest<'_> {
                 break;
             }
             offset += bytes.len() as u64;
-            for line in tail.advance(&bytes) {
-                if let Some(event) = self.rules.event(&line) {
-                    events.push(event);
-                }
-            }
+            events.extend(
+                tail.advance(&bytes)
+                    .iter()
+                    .filter_map(|line| self.rules.event(line)),
+            );
         }
         Ok((events, offset - tail.pending() as u64))
     }

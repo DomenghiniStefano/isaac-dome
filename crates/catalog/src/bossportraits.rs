@@ -43,10 +43,7 @@ fn boss_from(
         id: BossId(id),
         name: name.to_string(),
         portrait: cropped_portrait(format!("{root}/{portrait}"), crops),
-        unlocked_by: e
-            .attr("achievement")
-            .and_then(|a| a.parse().ok())
-            .map(AchievementId),
+        unlocked_by: xml::unlocked_by(e),
     })
 }
 

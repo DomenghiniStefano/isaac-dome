@@ -148,7 +148,8 @@ impl Space {
     }
 
     /// Every target the space holds: one per cell, plus one `Greedier` per row. This is the
-    /// total the deck's accounting is checked against.
+    /// total the deck's accounting is checked against, in the tests.
+    #[cfg(feature = "test-api")]
     pub fn target_count(&self) -> usize {
         self.rows * self.columns + self.rows
     }
@@ -173,7 +174,9 @@ impl Space {
                 match self.cell(character as usize, column as usize)? {
                     // Any non-zero value: a cell's bits replace one another rather than
                     // accumulating (`docs/save-format.md`), so there is no bit that means
-                    // "cleared" and every value but zero is a mark that was taken.
+                    // "cleared" and every value but zero is a mark that was taken. That
+                    // includes bit 2 alone ("won online"), which `ipc`'s matrix draws as no
+                    // level: the two readings disagree on that one value, knowingly.
                     CellValue::Known { bits: 0 } => Some(Status::Missing),
                     CellValue::Known { .. } => Some(Status::Taken),
                     CellValue::Unreadable => Some(Status::Unreadable),
