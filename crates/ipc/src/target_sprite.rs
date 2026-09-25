@@ -358,6 +358,54 @@ mod tests {
         assert!(keys.is_empty());
     }
 
+    /// Loose: the type and variant of a dataset key, whatever follows them — the subtype takes
+    /// no part in finding a portrait.
+    #[test]
+    fn a_dataset_key_gives_its_first_two_numbers_whatever_follows() {
+        assert_eq!(type_and_variant("20.0.0"), Some((20, 0)));
+        assert_eq!(type_and_variant("19.2.1"), Some((19, 2)));
+        assert_eq!(type_and_variant("20.0"), Some((20, 0)));
+        assert_eq!(type_and_variant("20.0.x"), Some((20, 0)));
+        assert_eq!(type_and_variant("20.0.0.0"), Some((20, 0)));
+        for refused in ["20", "x.0.0", "20.x.0", "", ".0.0"] {
+            assert_eq!(type_and_variant(refused), None, "{refused:?}");
+        }
+    }
+
+    /// The key a portrait's file name declares: the two numbers before the first `_`.
+    #[test]
+    fn a_portrait_declares_its_key_before_the_first_underscore() {
+        assert_eq!(
+            entity_key("gfx/ui/boss/Portrait_902.0_Wormwood.png"),
+            Some((902, 0))
+        );
+        assert_eq!(
+            entity_key(r"gfx\ui\boss\Portrait_19.100_TuffTwins.png"),
+            Some((19, 100))
+        );
+        // No `_` after the key: the whole rest is read, `.png` included, and it is no key.
+        assert_eq!(entity_key("gfx/ui/boss/Portrait_20.0.png"), None);
+        assert_eq!(entity_key("gfx/ui/boss/Portrait_20.0"), Some((20, 0)));
+        assert_eq!(entity_key("gfx/ui/boss/Portrait_Dogma.png"), None);
+        assert_eq!(entity_key("gfx/ui/boss/Portrait_1.2.3_X.png"), None);
+        assert_eq!(entity_key("gfx/ui/boss/20.0_Monstro.png"), None);
+    }
+
+    #[test]
+    fn the_stem_keeps_a_head_that_is_not_a_key() {
+        // A head with three numbers is not a key, so the stem is the whole rest.
+        assert_eq!(
+            portrait_stem("gfx/ui/boss/Portrait_1.2.3_X.png"),
+            Some("1.2.3_X")
+        );
+        assert_eq!(
+            portrait_stem("gfx/ui/boss/Portrait_Big_Horn.png"),
+            Some("Big_Horn")
+        );
+        assert_eq!(portrait_stem("Portrait_20.0.png"), Some("20.0"));
+        assert_eq!(portrait_stem("gfx/ui/boss/Portrait_Shell"), Some("Shell"));
+    }
+
     #[test]
     fn the_stem_is_the_name_after_the_key_when_there_is_one() {
         assert_eq!(

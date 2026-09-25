@@ -265,6 +265,32 @@ fn days_from_civil(y: i64, m: i64, d: i64) -> i64 {
 mod tests {
     use super::*;
 
+    /// Strict: exactly the three numbers `Dataset::boss_key` writes, and nothing else.
+    #[test]
+    fn a_boss_page_key_is_three_numbers_and_nothing_else() {
+        assert_eq!(
+            boss_target("20.0.0"),
+            Some(Target::Entity {
+                id: 20,
+                variant: 0,
+                subtype: 0
+            })
+        );
+        assert_eq!(
+            boss_target("19.2.1"),
+            Some(Target::Entity {
+                id: 19,
+                variant: 2,
+                subtype: 1
+            })
+        );
+        for refused in [
+            "20.0", "20.0.0.0", "20.0.x", "x.0.0", "20..0", "", "20.0.0.",
+        ] {
+            assert_eq!(boss_target(refused), None, "{refused:?}");
+        }
+    }
+
     #[test]
     fn rfc3339() {
         assert_eq!(rfc3339_to_unix("1970-01-01T00:00:00Z"), Some(0));
