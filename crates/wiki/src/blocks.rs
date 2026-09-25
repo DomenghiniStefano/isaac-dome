@@ -153,14 +153,12 @@ pub fn parse_blocks(body: &str, r: &Resolver, d: &mut Diagnostics) -> Vec<Block>
 }
 
 impl Parser<'_> {
+    /// One line, into the state it belongs to. Each kind of line closes the states it does not
+    /// belong to and opens its own; the order of the checks is the precedence.
     fn line(&mut self, line: &str) {
         // Inside a table every line belongs to it, until `|}`.
-        if let Some(rows) = self.table.as_mut() {
-            if line.trim_start().starts_with("|}") {
-                self.close_table();
-            } else {
-                rows.push(line.to_string());
-            }
+        if self.table.is_some() {
+            self.table_line(line);
             return;
         }
         let trimmed = line.trim_start();
@@ -177,19 +175,9 @@ impl Parser<'_> {
             self.out.push(Block::Heading { level, inline });
             return;
         }
-        let markers = trimmed
-            .chars()
-            .take_while(|c| *c == '*' || *c == '#')
-            .count();
-        if markers > 0 {
+        if let Some(item) = list_item(trimmed) {
             self.flush_para();
-            let ordered = trimmed.chars().nth(markers - 1) == Some('#');
-            let text = trimmed.get(markers..).unwrap_or_default().trim();
-            self.list.push(RawItem {
-                depth: markers,
-                ordered,
-                text: text.to_string(),
-            });
+            self.list.push(item);
             return;
         }
         // A line that is nothing but closing braces belongs to a template opened further
@@ -203,11 +191,24 @@ impl Parser<'_> {
             return;
         }
         self.flush_list();
+        self.paragraph_line(trimmed);
+    }
+
+    fn table_line(&mut self, line: &str) {
+        if line.trim_start().starts_with("|}") {
+            self.close_table();
+        } else if let Some(rows) = self.table.as_mut() {
+            rows.push(line.to_string());
+        }
+    }
+
+    /// A line of prose. A blank one ends the paragraph; `:` and `;` (definitions and indents)
+    /// are paragraphs like any other; `__TOC__` is a magic word and never prose.
+    fn paragraph_line(&mut self, trimmed: &str) {
         if trimmed.is_empty() {
             self.flush_para();
             return;
         }
-        // `:` and `;` (definitions and indents) are paragraphs like any other.
         let text = trimmed
             .strip_prefix(':')
             .or_else(|| trimmed.strip_prefix(';'))
@@ -254,6 +255,27 @@ impl Parser<'_> {
             self.out.push(table);
         }
     }
+}
+
+/// `** text` → an item at depth 2; `*#` is ordered, because the last marker decides. `None`
+/// for a line with no marker.
+fn list_item(trimmed: &str) -> Option<RawItem> {
+    let markers = trimmed
+        .chars()
+        .take_while(|c| *c == '*' || *c == '#')
+        .count();
+    if markers == 0 {
+        return None;
+    }
+    Some(RawItem {
+        depth: markers,
+        ordered: trimmed.chars().nth(markers - 1) == Some('#'),
+        text: trimmed
+            .get(markers..)
+            .unwrap_or_default()
+            .trim()
+            .to_string(),
+    })
 }
 
 /// `=== T ===` → `(3, "T")`, `==== T ====` → `(4, "T")`. Level 2 never appears here: the

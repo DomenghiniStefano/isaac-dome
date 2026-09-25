@@ -367,6 +367,9 @@ impl Resolver {
 
     /// `template` in any case and with any spacing: it is trimmed and lowercased here, since
     /// the name comes from the wikitext. `arg` is the first raw argument.
+    ///
+    /// Long, and flat on purpose: one arm per template the wiki uses for a link, each saying
+    /// which map answers it. Split up, the list of link templates would stop being one list.
     pub fn resolve(&self, template: &str, arg: &str) -> Resolution {
         let t = template.trim().to_lowercase();
         if is_layout_template(&t) {
