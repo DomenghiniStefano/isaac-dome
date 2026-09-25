@@ -19,22 +19,20 @@ import { EventKey } from '@/lib/constants/eventKeys'
 import { KeyName } from '@/lib/constants/keyNames'
 import { SearchLimit } from '@/lib/ipc/search'
 import { SearchDiagnostic } from '@/lib/ipc/types'
-import type { MessageKey } from '@/i18n/messageKey'
-import type { MessageSchema } from '@/i18n/messages/it'
 import { keyAfterAnswer } from '@/lib/search/highlight'
 import { queryToRecall } from '@/lib/search/recall'
 import {
-  RowGroup,
+  groupedRows,
   matchingScreens,
-  rowGroupOrder,
+  rowGroupLabel,
   screenEntries,
   searchRows,
 } from '@/lib/search/rows'
-import type { SearchRow } from '@/lib/search/rows'
+import type { SearchRow as Row } from '@/lib/search/rows'
 import { RouteName } from '@/router/routeTable'
 import type { TabLocation } from '@/router/routeTable'
 import { useTabsStore } from '@/stores/tabs'
-import SearchRowContent from './SearchRow.vue'
+import SearchRow from './SearchRow.vue'
 
 const open = defineModel<boolean>('open', { required: true })
 const tabs = useTabsStore()
@@ -84,21 +82,7 @@ const rows = computed(() =>
   ),
 )
 
-const groups = computed(() =>
-  rowGroupOrder
-    .map((group) => ({
-      group,
-      rows: rows.value.filter((row) => row.group === group),
-    }))
-    .filter((g) => g.rows.length > 0),
-)
-
-const groupLabel: Record<RowGroup, MessageKey<MessageSchema>> = {
-  [RowGroup.Screens]: 'search.groups.screens',
-  [RowGroup.Wiki]: 'search.groups.wiki',
-  [RowGroup.Unlock]: 'search.groups.unlock',
-  [RowGroup.Collection]: 'search.groups.collection',
-}
+const groups = computed(() => groupedRows(rows.value))
 
 const total = computed(() => view.value?.total ?? 0)
 const hasQuery = computed(() => typed.value.trim() !== '')
@@ -114,7 +98,7 @@ const openAt = (location: TabLocation, newTab: boolean) => {
   open.value = false
 }
 
-const go = (row: SearchRow) => openAt(row.location, ctrl.value)
+const go = (row: Row) => openAt(row.location, ctrl.value)
 
 // The last row of the list, and the only one that is not in `rows`: it goes to the Search
 // screen with the query, rather than to a result.
@@ -188,7 +172,7 @@ const onKeydown = (event: KeyboardEvent) => {
       <CommandGroup
         v-for="group in groups"
         :key="group.group"
-        :heading="t(groupLabel[group.group])"
+        :heading="t(rowGroupLabel[group.group])"
       >
         <CommandItem
           v-for="row in group.rows"
@@ -196,7 +180,7 @@ const onKeydown = (event: KeyboardEvent) => {
           :value="row.key"
           @select="go(row)"
         >
-          <SearchRowContent :row="row" />
+          <SearchRow :row="row" />
         </CommandItem>
       </CommandGroup>
       <CommandGroup v-if="hasQuery && total > 0">
