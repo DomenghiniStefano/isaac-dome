@@ -34,7 +34,7 @@ pub(crate) fn unlock(
 pub(crate) fn unlock_of(
     save: &Save,
     catalog: Option<&Catalog>,
-    g: Option<&graph::Graph>,
+    g: Option<&graph::build::Graph>,
 ) -> ipc::UnlockView {
     let flags = save.flags(Kind::Achievements);
     let counters = save.u32s(Kind::Counters);

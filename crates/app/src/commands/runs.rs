@@ -144,7 +144,7 @@ fn live_unlock_view(
     app: &AppHandle,
     state: &LiveUnlockState,
     catalog: Option<&Catalog>,
-    g: Option<&graph::Graph>,
+    g: Option<&graph::build::Graph>,
 ) -> Result<Arc<ipc::UnlockView>, IpcError> {
     let (_, save) = active_save(app)?;
     if let (Some(c), Some(g)) = (catalog, g) {

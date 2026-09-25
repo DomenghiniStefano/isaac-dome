@@ -4,168 +4,13 @@
 //! The input is external data: no path may panic. Every malformed construct (an
 //! unclosed template, an open link, a tag with no `>`) degrades to text.
 
+mod out;
+
+use crate::editions::span_restriction;
 use crate::resolver::{Resolution, Resolver};
 use crate::template::{parse_template_at, Template};
-use crate::{Diagnostics, Dlc, Inline, Style};
-
-/// The output builder: a stack of frames, where the bottom is the top level and every
-/// frame above it is an open `Edition` with its own codes.
-struct Out {
-    frames: Vec<(Vec<Dlc>, Vec<Inline>)>,
-    /// One per frame above the bottom: the parenthesis depth a marker was opened at, when it
-    /// was opened inside one. The `)` that brings the text back to that depth closes it.
-    closes_at: Vec<Option<u32>>,
-    /// Parentheses open in the text so far.
-    paren: u32,
-    buf: String,
-    bold: bool,
-    italic: bool,
-}
-
-impl Out {
-    fn new() -> Out {
-        Out {
-            frames: vec![(Vec::new(), Vec::new())],
-            closes_at: Vec::new(),
-            paren: 0,
-            buf: String::new(),
-            bold: false,
-            italic: false,
-        }
-    }
-
-    /// A character of plain text. A `)` that closes a parenthesis opened *before* the
-    /// innermost marker closes the marker first, so the parenthesis stays outside it.
-    fn text_char(&mut self, ch: char) {
-        match ch {
-            '(' => self.paren += 1,
-            ')' => {
-                if self.paren > 0 && self.closes_at.last() == Some(&Some(self.paren)) {
-                    self.close();
-                }
-                self.paren = self.paren.saturating_sub(1);
-            }
-            _ => {}
-        }
-        self.buf.push(ch);
-    }
-
-    /// `{{dlc|r}}` with no text of its own: a scope that runs to the end of the value, to
-    /// `{{dlc-}}`, or — opened inside a parenthesis — to the `)` that closes it.
-    fn open_marker(&mut self, only: Vec<Dlc>) {
-        self.open(only);
-        if let Some(last) = self.closes_at.last_mut() {
-            *last = (self.paren > 0).then_some(self.paren);
-        }
-    }
-
-    /// Bold wins if both are open.
-    fn style(&self) -> Style {
-        if self.bold {
-            Style::Bold
-        } else if self.italic {
-            Style::Italic
-        } else {
-            Style::Plain
-        }
-    }
-
-    /// Emits the accumulated text, merging it with the previous `Text` if it has the same style.
-    fn flush(&mut self) {
-        if self.buf.is_empty() {
-            return;
-        }
-        let style = self.style();
-        let text = std::mem::take(&mut self.buf);
-        let Some((_, top)) = self.frames.last_mut() else {
-            return;
-        };
-        match top.last_mut() {
-            Some(Inline::Text { text: t, style: s }) if *s == style => t.push_str(&text),
-            // A different style, another kind of node, or nothing yet: a new text node.
-            Some(_) | None => top.push(Inline::Text { text, style }),
-        }
-    }
-
-    /// Merges with the last node if both are `Text` with the same style: recursion into
-    /// unknown templates (`recurse_into_arg`) can return an opening `Text`, and without
-    /// this it would split away from the text just accumulated before the template.
-    fn push(&mut self, node: Inline) {
-        self.flush();
-        let Some((_, top)) = self.frames.last_mut() else {
-            return;
-        };
-        match (&node, top.last_mut()) {
-            (Inline::Text { text, style }, Some(Inline::Text { text: t, style: s }))
-                if style == s =>
-            {
-                t.push_str(text);
-            }
-            // Anything else is a new node: two texts of different styles, or not two texts.
-            (_, Some(_) | None) => top.push(node),
-        }
-    }
-
-    fn open(&mut self, only: Vec<Dlc>) {
-        self.flush();
-        self.frames.push((only, Vec::new()));
-        self.closes_at.push(None);
-    }
-
-    /// Closes the innermost `Edition`; does nothing without any open frame. An edition with
-    /// no content is not emitted — and neither is one whose `only` is empty, which is how
-    /// `dlc_codes` says the code restricts **nothing**: either it named every edition, or it
-    /// could not be read and was counted. Either way the words go back to the parent, since
-    /// a node declaring its text valid in no edition at all is worse than the text on its
-    /// own.
-    ///
-    /// The frame is opened either way: `{{dlc+|…}}` is closed by a later `{{dlc-}}`, so
-    /// skipping the open would leave the close popping somebody else's frame.
-    fn close(&mut self) {
-        self.flush();
-        if self.frames.len() > 1 {
-            self.closes_at.pop();
-            if let Some((only, inline)) = self.frames.pop() {
-                if only.is_empty() {
-                    for node in inline {
-                        self.push(node);
-                    }
-                } else if !inline.is_empty() {
-                    self.push(Inline::Edition { only, inline });
-                }
-            }
-        }
-    }
-
-    fn finish(mut self) -> Vec<Inline> {
-        while self.frames.len() > 1 {
-            self.close();
-        }
-        self.flush();
-        self.frames.pop().map(|f| f.1).unwrap_or_default()
-    }
-}
-
-/// The editions a `{{dlc|…}}` code restricts its span to, or an **empty** list when it
-/// restricts nothing — which `Out::close` unwraps instead of emitting, because a badge
-/// naming every edition says as much as no badge at all.
-///
-/// Two things land on that empty list, and only one of them is a gap. `n`, `x` and a blank
-/// argument are the wiki's own row 31, "no restriction", and are silent. A code outside the
-/// switch is counted, because the wiki answers `0 <!-- invalid string! -->` there and a
-/// thirty-first code has to be visible rather than shipped.
-///
-/// Whole codes only: the argument is one code, never a list. 1734 of the uses in the
-/// wikitext were read one code at a time until 2026-09-15 — `nr` as nothing, `a+nr` as
-/// three editions including the two the `n` removes — and each opened a span valid in no
-/// edition at all.
-fn dlc_codes(s: &str, d: &mut Diagnostics) -> Vec<Dlc> {
-    let editions = crate::editions::parse_code(s, d);
-    if editions.is_all() {
-        return Vec::new();
-    }
-    editions.list()
-}
+use crate::{Diagnostics, Inline, Target};
+use out::Out;
 
 /// A closed list, and deliberately not a general HTML-entity decoder: the input is
 /// wikitext, not HTML, and a decoder that also ate `&amp;lt;` would be inventing a rule
@@ -251,97 +96,147 @@ pub fn parse_inline(src: &str, r: &Resolver, d: &mut Diagnostics) -> Vec<Inline>
 fn parse_inline_at(src: &str, r: &Resolver, d: &mut Diagnostics, depth: u32) -> Vec<Inline> {
     let mut out = Out::new();
     let mut i = 0;
-    while let Some(rest) = src.get(i..).filter(|s| !s.is_empty()) {
-        // Comments first: the template parser doesn't know about them.
-        if let Some(end) = rest.strip_prefix("<!--").and_then(|t| t.find("-->")) {
-            i += "<!--".len() + end + "-->".len();
-            continue;
-        }
-        if rest.starts_with("'''") {
-            out.flush();
-            out.bold = !out.bold;
-            i += 3;
-            continue;
-        }
-        if rest.starts_with("''") {
-            out.flush();
-            out.italic = !out.italic;
-            i += 2;
-            continue;
-        }
-        if rest.starts_with("{{") {
-            if let Some((t, end)) = parse_template_at(src, i) {
-                i = end;
-                template(&t, r, d, &mut out, depth);
-                continue;
-            }
-            out.buf.push_str("{{");
-            i += 2;
-            continue;
-        }
-        if rest.starts_with("[[") {
-            if let Some((inner, end)) = rest
-                .find("]]")
-                .and_then(|end| Some((rest.get(2..end)?, end)))
-            {
-                i += end + 2;
-                link(inner, r, &mut out);
-                continue;
-            }
-            out.buf.push_str("[[");
-            i += 2;
-            continue;
-        }
-        if rest.starts_with('<') {
-            if let Some((tag, end)) = rest
-                .find('>')
-                .and_then(|end| Some((rest.get(1..end)?, end)))
-            {
-                let name = tag_name(tag);
-                if !name.is_empty() {
-                    i += end + 1;
-                    if name == "br" {
-                        out.buf.push(' ');
-                    } else if name == "ref" && !tag.ends_with('/') && !tag.starts_with('/') {
-                        // `<ref>…</ref>` disappears whole; without a closing tag only the tag disappears.
-                        if let Some(close) = src.get(i..).and_then(|s| s.find("</ref>")) {
-                            i += close + "</ref>".len();
-                        }
-                    }
-                    // every other tag: gone, the content stays
-                    continue;
-                }
-            }
-        }
-        if rest.starts_with('&') {
-            if let Some((name, end)) = rest
-                .get(1..)
-                .and_then(|s| s.find(';'))
-                .filter(|e| *e <= 8)
-                .and_then(|end| Some((rest.get(1..1 + end)?, end)))
-                .filter(|(name, _)| looks_like_entity_name(name))
-            {
-                match entity(name) {
-                    Some(rep) => {
-                        out.buf.push_str(rep);
-                        i += end + 2;
-                        continue;
-                    }
-                    // Counted, and the text kept: it is the wiki's content, and dropping a
-                    // run because we do not know one name in it would destroy more than it
-                    // fixes. The counter is what makes the next one visible instead of
-                    // shipped — which is how the three below it shipped.
-                    None => d.unknown_entity(name),
-                }
-            }
-        }
-        let Some(ch) = rest.chars().next() else {
-            break;
-        };
-        out.text_char(ch);
-        i += ch.len_utf8();
+    while i < src.len() {
+        i += step(src, i, r, d, depth, &mut out);
     }
     out.finish()
+}
+
+/// The construct that starts at `at`, pushed into `out`, and how many bytes it took. The
+/// order is the rule: comments first, because the template parser doesn't know about them;
+/// a character of plain text when nothing else matches.
+fn step(
+    src: &str,
+    at: usize,
+    r: &Resolver,
+    d: &mut Diagnostics,
+    depth: u32,
+    out: &mut Out,
+) -> usize {
+    let Some(rest) = src.get(at..).filter(|rest| !rest.is_empty()) else {
+        return src.len().saturating_sub(at).max(1);
+    };
+    try_comment(rest)
+        .or_else(|| try_style(rest, out))
+        .or_else(|| try_template(src, at, r, d, out, depth))
+        .or_else(|| try_link(rest, r, out))
+        .or_else(|| try_tag(rest, out))
+        .or_else(|| try_entity(rest, d, out))
+        .unwrap_or_else(|| text_char(rest, out))
+}
+
+/// `<!-- … -->`, dropped whole. An unclosed one is text.
+fn try_comment(rest: &str) -> Option<usize> {
+    let end = rest.strip_prefix("<!--")?.find("-->")?;
+    Some("<!--".len() + end + "-->".len())
+}
+
+/// Three quotes toggle bold, two italic; the text so far keeps the style it was written in.
+fn try_style(rest: &str, out: &mut Out) -> Option<usize> {
+    if rest.starts_with("'''") {
+        out.flush();
+        out.bold = !out.bold;
+        return Some(3);
+    }
+    if rest.starts_with("''") {
+        out.flush();
+        out.italic = !out.italic;
+        return Some(2);
+    }
+    None
+}
+
+/// A template at `at`. A `{{` that closes nothing is text, and the scan resumes after it.
+fn try_template(
+    src: &str,
+    at: usize,
+    r: &Resolver,
+    d: &mut Diagnostics,
+    out: &mut Out,
+    depth: u32,
+) -> Option<usize> {
+    if !src.get(at..)?.starts_with("{{") {
+        return None;
+    }
+    let Some((t, end)) = parse_template_at(src, at) else {
+        out.buf.push_str("{{");
+        return Some(2);
+    };
+    template(&t, r, d, out, depth);
+    Some(end - at)
+}
+
+/// `[[…]]`, up to the first `]]`. A `[[` that closes nothing is text.
+fn try_link(rest: &str, r: &Resolver, out: &mut Out) -> Option<usize> {
+    if !rest.starts_with("[[") {
+        return None;
+    }
+    let Some((inner, end)) = rest
+        .find("]]")
+        .and_then(|end| Some((rest.get(2..end)?, end)))
+    else {
+        out.buf.push_str("[[");
+        return Some(2);
+    };
+    link(inner, r, out);
+    Some(end + 2)
+}
+
+/// An HTML tag: `<br>` is a space, `<ref>…</ref>` disappears whole (without a closing tag only
+/// the tag does), and every other tag is gone while its content stays. Something between `<`
+/// and `>` that is not a tag's name (`< 10`) is text.
+fn try_tag(rest: &str, out: &mut Out) -> Option<usize> {
+    if !rest.starts_with('<') {
+        return None;
+    }
+    let end = rest.find('>')?;
+    let tag = rest.get(1..end)?;
+    let name = tag_name(tag);
+    if name.is_empty() {
+        return None;
+    }
+    let after_tag = end + 1;
+    if name == "br" {
+        out.buf.push(' ');
+        return Some(after_tag);
+    }
+    if name == "ref" && !tag.ends_with('/') && !tag.starts_with('/') {
+        let close = rest.get(after_tag..).and_then(|s| s.find("</ref>"));
+        return Some(close.map_or(after_tag, |close| after_tag + close + "</ref>".len()));
+    }
+    Some(after_tag)
+}
+
+/// `&name;` from the closed list, decoded. One shaped like an entity and outside the list is
+/// counted, and its text kept: it is the wiki's content, and dropping a run because we do not
+/// know one name in it would destroy more than it fixes. The counter is what makes the next
+/// one visible instead of shipped — which is how the three at the bottom of the list shipped.
+fn try_entity(rest: &str, d: &mut Diagnostics, out: &mut Out) -> Option<usize> {
+    let end = rest.strip_prefix('&')?.find(';').filter(|e| *e <= 8)?;
+    let name = rest
+        .get(1..1 + end)
+        .filter(|name| looks_like_entity_name(name))?;
+    match entity(name) {
+        Some(rep) => {
+            out.buf.push_str(rep);
+            Some(end + 2)
+        }
+        None => {
+            d.unknown_entity(name);
+            None
+        }
+    }
+}
+
+/// One character of plain text.
+fn text_char(rest: &str, out: &mut Out) -> usize {
+    match rest.chars().next() {
+        Some(ch) => {
+            out.text_char(ch);
+            ch.len_utf8()
+        }
+        None => rest.len().max(1),
+    }
 }
 
 /// An already-parsed template: editions, `{{!}}`, or a reference passed to the resolver.
@@ -355,139 +250,30 @@ fn template(t: &Template, r: &Resolver, d: &mut Diagnostics, out: &mut Out, dept
         // spans across the snapshot lost their words without a diagnostic.
         "dlc+" | "dlc" => match t.args.get(1) {
             Some(content) => {
-                out.open(dlc_codes(&arg, d));
+                out.open(span_restriction(&arg, d));
                 recurse_into_arg(content, r, d, out, depth);
                 out.close();
             }
-            None => out.open_marker(dlc_codes(&arg, d)),
+            None => out.open_marker(span_restriction(&arg, d)),
         },
         "dlc-" => out.close(),
-        "dlcalt" => {
-            // Both the positional argument and every per-edition variant are content
-            // (the wiki nests other templates in them, `{{p|Soul of Lazarus}}` included):
-            // same recursion as unknown templates, not raw text.
-            recurse_into_arg(&arg, r, d, out, depth);
-            for (code, text) in &t.named {
-                out.open(dlc_codes(code, d));
-                out.buf.push(' ');
-                recurse_into_arg(text, r, d, out, depth);
-                out.close();
-            }
-        }
-        // The text is in a *named* parameter, which neither `resolve` nor the positional
-        // recursion reaches: 157 of these sentences used to arrive empty. The item is named
-        // too, because the template's meaning is "with Book of Virtues, this happens" and a
-        // section shown on its own would otherwise lose the half that says with what.
-        // A boss's champion variant, always under `== Champion Versions ==`. The number is
-        // the variant's index; which colour each index is lives in the wiki's own template
-        // and nowhere we can read, and `catalog` has no champion table — so the index is
-        // kept verbatim and nothing is invented around it. `dlc=` makes the variant belong
-        // to one edition, which is what `Inline::Edition` already says.
-        "bc" => {
-            let edition = t.named.get("dlc").map(|c| dlc_codes(c, d));
-            if let Some(only) = edition.clone() {
-                out.open(only);
-            }
-            let index = arg.trim();
-            out.push(Inline::Concept {
-                page: "Champion".to_string(),
-                label: format!("Champion {index}"),
-            });
-            if edition.is_some() {
-                out.close();
-            }
-        }
+        "dlcalt" => dlcalt(t, &arg, r, d, out, depth),
+        "bc" => champion(t, &arg, d, out),
         // Two templates, one shape: the item is in the name and the text is in a `description`
         // parameter, spelled that way in all 197 uses. The label is written out per arm rather
         // than derived from the name, so a third "X synergy" template cannot silently inherit
         // the wrong item.
-        name @ ("book of virtues synergy" | "book of belial synergy") => {
-            let label = if name == "book of virtues synergy" {
-                "Book of Virtues"
-            } else {
-                // With the article: the item's page is "The Book of Belial", and without it
-                // the resolver answers nothing — 33 uses lost the reference, and the ": "
-                // that introduces the description with it.
-                "The Book of Belial"
-            };
-            if let Resolution::Target(target) = r.resolve("i", label) {
-                out.push(Inline::Ref {
-                    target,
-                    label: label.to_string(),
-                });
-                out.buf.push_str(": ");
-            }
-            if let Some(description) = t.named.get("description") {
-                recurse_into_arg(description, r, d, out, depth);
-            }
-        }
-        // The only template whose argument is a *list*: a boss page names the achievements
-        // that boss unlocks, comma-separated. `resolve` answers with one `Resolution`, so
-        // this cannot go through it — it has to push a node per name.
-        "achievement text" => {
-            for (n, name) in arg.split(',').enumerate() {
-                let name = name.trim();
-                if name.is_empty() {
-                    continue;
-                }
-                if n > 0 {
-                    out.buf.push_str(", ");
-                }
-                match r.achievement_by_name(name) {
-                    Some(target) => out.push(Inline::Ref {
-                        target,
-                        label: name.to_string(),
-                    }),
-                    // Not dropped: a name we cannot resolve is still what the page says.
-                    None => out.buf.push_str(name),
-                }
-            }
-        }
-        // Two more list templates, and the same reason as `achievement text`: the argument
-        // is a comma-separated list of names, and `resolve` answers with one target. They
-        // are how a transformation page states what counts toward it, which is the only
-        // complete statement of that set — the infobox's `items` misses Guppy's trinket.
-        k @ ("collectible table" | "collectible rows" | "trinket table" | "trinket rows") => {
-            let kind = if k.starts_with("collectible") {
-                "i"
-            } else {
-                "t"
-            };
-            // `rows` takes an optional `dlc =`: Conjoined splits its list by edition, one
-            // `rows` each under a shared header, and those items count only in that
-            // edition — which is what `Inline::Edition` says everywhere else.
-            let edition = t.named.get("dlc").map(|c| dlc_codes(c, d));
-            if let Some(only) = edition.clone() {
-                out.open(only);
-            }
-            for (n, item) in arg.split(',').enumerate() {
-                let item = item.trim();
-                if item.is_empty() {
-                    continue;
-                }
-                if n > 0 {
-                    out.buf.push_str(", ");
-                }
-                match r.resolve(kind, item) {
-                    Resolution::Target(target) => out.push(Inline::Ref {
-                        target,
-                        label: item.to_string(),
-                    }),
-                    // Not dropped: a name we cannot resolve is still what the page says,
-                    // and the miss is counted where every other failed lookup is counted.
-                    Resolution::Concept
-                    | Resolution::Unresolved
-                    | Resolution::Ignore
-                    | Resolution::Unknown => {
-                        d.unresolved(kind);
-                        out.buf.push_str(item);
-                    }
-                }
-            }
-            if edition.is_some() {
-                out.close();
-            }
-        }
+        "book of virtues synergy" => synergy("Book of Virtues", t, r, d, out, depth),
+        // With the article: the item's page is "The Book of Belial", and without it the
+        // resolver answers nothing — 33 uses lost the reference, and the ": " that introduces
+        // the description with it.
+        "book of belial synergy" => synergy("The Book of Belial", t, r, d, out, depth),
+        // The only template whose argument is a *list* of achievements: a boss page names the
+        // achievements that boss unlocks, comma-separated. `resolve` answers with one
+        // `Resolution`, so this cannot go through it — it has to push a node per name.
+        "achievement text" => push_name_list(out, &arg, |name| r.achievement_by_name(name)),
+        "collectible table" | "collectible rows" => collectible_list("i", t, &arg, r, d, out),
+        "trinket table" | "trinket rows" => collectible_list("t", t, &arg, r, d, out),
         // 204 of the 547 `{{bug|…}}` carry a `dlc`, and until 2026-09-15 this arm recursed
         // into the positional argument and read no named one: a defect that exists in one
         // edition was shown to every reader as theirs. The 130 whose code this parser
@@ -497,31 +283,160 @@ fn template(t: &Template, r: &Resolver, d: &mut Diagnostics, out: &mut Out, dept
             out.open(
                 t.named
                     .get("dlc")
-                    .map_or_else(Vec::new, |c| dlc_codes(c, d)),
+                    .map_or_else(Vec::new, |c| span_restriction(c, d)),
             );
             recurse_into_arg(&arg, r, d, out, depth);
             out.close();
         }
-        name => match r.resolve(name, &arg) {
-            Resolution::Target(target) => {
-                let label = label_of(t, &arg);
-                out.push(Inline::Ref { target, label });
+        name => reference(name, t, arg, r, d, out, depth),
+    }
+}
+
+/// `{{dlcalt|…|r=…}}`. Both the positional argument and every per-edition variant are content
+/// (the wiki nests other templates in them, `{{p|Soul of Lazarus}}` included): same recursion
+/// as unknown templates, not raw text.
+fn dlcalt(t: &Template, arg: &str, r: &Resolver, d: &mut Diagnostics, out: &mut Out, depth: u32) {
+    recurse_into_arg(arg, r, d, out, depth);
+    for (code, text) in &t.named {
+        out.open(span_restriction(code, d));
+        out.buf.push(' ');
+        recurse_into_arg(text, r, d, out, depth);
+        out.close();
+    }
+}
+
+/// `{{bc|…}}`, a boss's champion variant, always under `== Champion Versions ==`. The number is
+/// the variant's index; which colour each index is lives in the wiki's own template and nowhere
+/// we can read, and `catalog` has no champion table — so the index is kept verbatim and nothing
+/// is invented around it. `dlc=` makes the variant belong to one edition, which is what
+/// `Inline::Edition` already says.
+fn champion(t: &Template, arg: &str, d: &mut Diagnostics, out: &mut Out) {
+    let index = arg.trim();
+    with_optional_edition(out, d, t.named.get("dlc"), |out, _| {
+        out.push(Inline::Concept {
+            page: "Champion".to_string(),
+            label: format!("Champion {index}"),
+        })
+    });
+}
+
+/// `{{Book of Virtues synergy|description=…}}` and its twin. The text is in a *named*
+/// parameter, which neither `resolve` nor the positional recursion reaches: 157 of these
+/// sentences used to arrive empty. The item is named too, because the template's meaning is
+/// "with Book of Virtues, this happens" and a section shown on its own would otherwise lose the
+/// half that says with what.
+fn synergy(item: &str, t: &Template, r: &Resolver, d: &mut Diagnostics, out: &mut Out, depth: u32) {
+    if let Resolution::Target(target) = r.resolve("i", item) {
+        out.push(Inline::Ref {
+            target,
+            label: item.to_string(),
+        });
+        out.buf.push_str(": ");
+    }
+    if let Some(description) = t.named.get("description") {
+        recurse_into_arg(description, r, d, out, depth);
+    }
+}
+
+/// `{{collectible table|…}}` and its three siblings, with the same reason as
+/// `achievement text`: the argument is a comma-separated list of names, and `resolve` answers
+/// with one target. They are how a transformation page states what counts toward it, which is
+/// the only complete statement of that set — the infobox's `items` misses Guppy's trinket.
+///
+/// `rows` takes an optional `dlc =`: Conjoined splits its list by edition, one `rows` each
+/// under a shared header, and those items count only in that edition — which is what
+/// `Inline::Edition` says everywhere else. A name that does not resolve is counted where every
+/// other failed lookup is counted.
+fn collectible_list(
+    kind: &str,
+    t: &Template,
+    arg: &str,
+    r: &Resolver,
+    d: &mut Diagnostics,
+    out: &mut Out,
+) {
+    with_optional_edition(out, d, t.named.get("dlc"), |out, d| {
+        push_name_list(out, arg, |item| match r.resolve(kind, item) {
+            Resolution::Target(target) => Some(target),
+            Resolution::Concept
+            | Resolution::Unresolved
+            | Resolution::Ignore
+            | Resolution::Unknown => {
+                d.unresolved(kind);
+                None
             }
-            Resolution::Concept => {
-                let label = label_of(t, &arg);
-                out.push(Inline::Concept { page: arg, label });
-            }
-            Resolution::Unresolved => {
-                d.unresolved(name);
-                let label = label_of(t, &arg);
-                out.push(Inline::Concept { page: arg, label });
-            }
-            Resolution::Unknown => {
-                d.unknown_template(name);
-                recurse_into_arg(&arg, r, d, out, depth);
-            }
-            Resolution::Ignore => {}
-        },
+        })
+    });
+}
+
+/// A comma-separated list of names, one node per name: a reference where `resolve` finds one,
+/// the name as text where it does not — not dropped, because a name we cannot resolve is still
+/// what the page says. Empty names are skipped; the separator is the list's own.
+fn push_name_list(out: &mut Out, list: &str, mut resolve: impl FnMut(&str) -> Option<Target>) {
+    for (n, name) in list.split(',').enumerate() {
+        let name = name.trim();
+        if name.is_empty() {
+            continue;
+        }
+        if n > 0 {
+            out.buf.push_str(", ");
+        }
+        match resolve(name) {
+            Some(target) => out.push(Inline::Ref {
+                target,
+                label: name.to_string(),
+            }),
+            None => out.buf.push_str(name),
+        }
+    }
+}
+
+/// `body` inside the edition `code` names, or on its own when there is no code.
+fn with_optional_edition(
+    out: &mut Out,
+    d: &mut Diagnostics,
+    code: Option<&String>,
+    body: impl FnOnce(&mut Out, &mut Diagnostics),
+) {
+    let Some(code) = code else {
+        body(out, d);
+        return;
+    };
+    out.open(span_restriction(code, d));
+    body(out, d);
+    out.close();
+}
+
+/// Any other template, handed to the resolver: a reference, a concept, a miss that is counted,
+/// or an unknown template whose argument is read as content.
+fn reference(
+    name: &str,
+    t: &Template,
+    arg: String,
+    r: &Resolver,
+    d: &mut Diagnostics,
+    out: &mut Out,
+    depth: u32,
+) {
+    match r.resolve(name, &arg) {
+        Resolution::Target(target) => {
+            let label = label_of(t, &arg);
+            out.push(Inline::Ref { target, label });
+        }
+        Resolution::Concept => {
+            let label = label_of(t, &arg);
+            out.push(Inline::Concept { page: arg, label });
+        }
+        Resolution::Unresolved => {
+            d.unresolved(name);
+            let label = label_of(t, &arg);
+            out.push(Inline::Concept { page: arg, label });
+        }
+        Resolution::Unknown => {
+            d.unknown_template(name);
+            recurse_into_arg(&arg, r, d, out, depth);
+        }
+        Resolution::Ignore => {}
     }
 }
 

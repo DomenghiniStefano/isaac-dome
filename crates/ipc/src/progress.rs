@@ -72,7 +72,7 @@ fn reached_level(level: CellLevel) -> Option<MarkLevel> {
     }
 }
 
-impl graph::Profile for SaveProgress<'_> {
+impl graph::evaluate::Profile for SaveProgress<'_> {
     fn done(&self) -> Option<&[bool]> {
         self.flags
     }

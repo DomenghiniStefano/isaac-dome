@@ -70,7 +70,7 @@ fn zero_prerequisites_is_not_the_same_as_available_now() {
     let Some((g, flags)) = support::real_graph_and_flags() else {
         return;
     };
-    let e = g.evaluate(&graph::FlagsOnly(Some(&flags)));
+    let e = g.evaluate(&graph::evaluate::FlagsOnly(Some(&flags)));
     let (mut done, mut available, mut blocked, mut partial) = (0u32, 0u32, 0u32, 0u32);
     let mut zero_but_partial = 0u32;
     for n in g.nodes() {
