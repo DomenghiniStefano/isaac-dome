@@ -225,8 +225,10 @@ const readsTokenInString = (body) =>
     )
 
 // Card #81, C6. `a ?? await b()` awaits only on one branch, and the reader has to work out which
-// half of the expression suspends; the await goes on its own line, in a `const`.
-const CONDITIONAL_AWAIT = /(?:\?\?|\|\||&&|[^?.]\?)\s*await\b/
+// half of the expression suspends; the await goes on its own line, in a `const`. Parentheses
+// around the await change nothing about which half suspends, so `a ?? (await b())` is the same
+// shape (card #82: `stores/tabs.ts` had one, and the pattern could not see it).
+const CONDITIONAL_AWAIT = /(?:\?\?|\|\||&&|[^?.]\?)\s*\(?\s*await\b/
 
 // The body of every `switch (subject) { … }`, found by counting braces from the opening one.
 // Not a parser: a brace inside a string would miscount, and no switch in `src/` has one.
@@ -587,6 +589,30 @@ const FIXTURES = [
     file: 'src/stores/fixture.ts',
     body: 'const w = cached ?? await open()\n',
     expect: ['an await inside a conditional expression'],
+  },
+  {
+    name: 'an await in parentheses on one side of ?? is caught',
+    file: 'src/stores/fixture.ts',
+    body: 'const w = cached ?? (await open())\n',
+    expect: ['an await inside a conditional expression'],
+  },
+  {
+    name: 'an await in parentheses on one side of || is caught',
+    file: 'src/stores/fixture.ts',
+    body: 'const w = cached || ( await open())\n',
+    expect: ['an await inside a conditional expression'],
+  },
+  {
+    name: 'an await in parentheses in a ternary branch is caught',
+    file: 'src/stores/fixture.ts',
+    body: 'const w = ready ? (await open()) : null\n',
+    expect: ['an await inside a conditional expression'],
+  },
+  {
+    name: 'an awaited call handed to a function is not a conditional',
+    file: 'src/stores/fixture.ts',
+    body: 'const w = await open()\nuse(await read(w))\n',
+    expect: [],
   },
   {
     name: 'an await in a ternary branch is caught',

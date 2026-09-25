@@ -4,6 +4,7 @@ import { StoreId } from '@/lib/constants/stores'
 import type { Point } from '@/lib/drag/dragList'
 import { oweSeed } from '@/lib/window/seeds'
 import { newWindowLabel, windowPort } from '@/lib/window/windowPort'
+import type { WindowBox } from '@/lib/window/windowPort'
 import type { Target } from '@/lib/ipc/types'
 import { pageLocation } from '@/lib/wiki/category'
 import { defaultLocation } from '@/router/routeTable'
@@ -232,9 +233,16 @@ export const useTabsStore = defineStore(StoreId.Tabs, () => {
   // and the gap the marker is drawn in is the gap the tab is docked into: one computation.
   const aimed = ref<number | null>(null)
 
+  // This window's geometry for the hover: the one already read, or read now on its first point.
+  const hoverGeometry = async (): Promise<WindowBox> => {
+    const known = incoming.value?.window
+    if (known) return known
+    return windowPort.self()
+  }
+
   const aimIncoming = async (at: Point): Promise<void> => {
-    const window = incoming.value?.window ?? (await windowPort.self())
-    incoming.value = { at, window }
+    const geometry = await hoverGeometry()
+    incoming.value = { at, window: geometry }
   }
 
   const clearIncoming = (): void => {
