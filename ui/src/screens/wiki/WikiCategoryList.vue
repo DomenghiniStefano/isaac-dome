@@ -27,6 +27,7 @@ import { useTabsStore } from '@/stores/tabs'
 import { useWikiStore } from '@/stores/wiki'
 import { wikiView } from './tabView'
 import { pageId } from '@/lib/wiki/wikiLabels'
+import HeroBand from '../HeroBand.vue'
 
 const props = defineProps<{ category: WikiCategory }>()
 const wiki = useWikiStore()
@@ -75,10 +76,7 @@ const open = (page: WikiPageRef, event: MouseEvent) => {
   <div class="flex h-full min-h-0 flex-col overflow-hidden pb-5">
     <!-- The same band a page opens with (`WikiHero.vue`), at the size a list deserves: the
          category is the subject here, so it carries the icon, the count, and the filter. -->
-    <header
-      class="relative flex flex-wrap items-center gap-4 border-b border-hairline hero-wash px-5.5 py-4"
-    >
-      <span class="pointer-events-none absolute inset-0 hero-grain" />
+    <HeroBand class="flex flex-wrap items-center gap-4 py-4">
       <span
         class="relative grid size-wiki-row-figure shrink-0 place-items-center border border-border tile-wash"
       >
@@ -101,7 +99,7 @@ const open = (page: WikiPageRef, event: MouseEvent) => {
         class="relative w-search"
         @update:model-value="setQuery(String($event))"
       />
-    </header>
+    </HeroBand>
     <div class="flex min-h-0 flex-1 flex-col gap-3 px-5.5 pt-4">
       <p v-if="noCatalog" class="text-caption text-subtle-foreground">
         {{ t('wiki.noCatalog') }}
