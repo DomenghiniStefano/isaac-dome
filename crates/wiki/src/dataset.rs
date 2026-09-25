@@ -3,11 +3,13 @@
 
 use std::collections::BTreeMap;
 use std::fmt;
+use std::str::FromStr;
 #[cfg(feature = "embedded")]
 use std::sync::OnceLock;
 
 use serde::{Deserialize, Serialize};
 
+use crate::page::EntryKey;
 use crate::{Diagnostics, Entry, Target};
 
 /// The version of the JSON shape. Changes whenever a dataset struct changes, so a file
@@ -109,6 +111,46 @@ struct HeadMeta {
     schema_version: u32,
 }
 
+/// A collection of `wiki.json`, parsed from the name the file gives it — which is how
+/// `corrections.json` names one, since that file is written against the JSON.
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+enum Collection {
+    Items,
+    Trinkets,
+    Achievements,
+    Bosses,
+    Challenges,
+    Characters,
+    Transformations,
+}
+
+impl FromStr for Collection {
+    type Err = ();
+
+    fn from_str(name: &str) -> Result<Collection, ()> {
+        Ok(match name {
+            "items" => Collection::Items,
+            "trinkets" => Collection::Trinkets,
+            "achievements" => Collection::Achievements,
+            "bosses" => Collection::Bosses,
+            "challenges" => Collection::Challenges,
+            "characters" => Collection::Characters,
+            "transformations" => Collection::Transformations,
+            _ => return Err(()), // allowed: a name from a hand-written file, an open-ended string
+        })
+    }
+}
+
+type Numbered = BTreeMap<u32, Entry>;
+type Bosses = BTreeMap<String, Entry>;
+
+/// One collection's map, told apart by the shape of its key: a number everywhere but the
+/// bosses, which are keyed by their bestiary triple.
+enum Shelf<N, B> {
+    Numbered(N),
+    Bosses(B),
+}
+
 #[cfg(feature = "embedded")]
 static EMBEDDED: OnceLock<Result<Dataset, DatasetError>> = OnceLock::new();
 
@@ -156,37 +198,78 @@ impl Dataset {
     /// The entry under `key` in the collection `wiki.json` calls `collection`: how
     /// `corrections.json` names one, since the file is written against the JSON.
     pub(crate) fn entry_by_key_mut(&mut self, collection: &str, key: &str) -> Option<&mut Entry> {
-        fn by_number<'a>(map: &'a mut BTreeMap<u32, Entry>, key: &str) -> Option<&'a mut Entry> {
-            map.get_mut(&key.parse::<u32>().ok()?)
-        }
-        match collection {
-            "items" => by_number(&mut self.items, key),
-            "trinkets" => by_number(&mut self.trinkets, key),
-            "achievements" => by_number(&mut self.achievements, key),
-            "bosses" => self.bosses.get_mut(key),
-            "challenges" => by_number(&mut self.challenges, key),
-            "characters" => by_number(&mut self.characters, key),
-            "transformations" => by_number(&mut self.transformations, key),
-            _ => None, // allowed: a name from a hand-written file, an open-ended string
+        match self.shelf_mut(collection.parse().ok()?) {
+            Shelf::Numbered(map) => map.get_mut(&key.parse::<u32>().ok()?),
+            Shelf::Bosses(map) => map.get_mut(key),
         }
     }
 
     /// Whether [`Dataset::entry_by_key_mut`] would find an entry.
     pub fn has_key(&self, collection: &str, key: &str) -> bool {
-        let by_number = |map: &BTreeMap<u32, Entry>| {
-            key.parse::<u32>()
-                .ok()
-                .is_some_and(|n| map.contains_key(&n))
+        let Ok(collection) = collection.parse() else {
+            return false;
         };
+        match self.shelf(collection) {
+            Shelf::Numbered(map) => key
+                .parse::<u32>()
+                .ok()
+                .is_some_and(|n| map.contains_key(&n)),
+            Shelf::Bosses(map) => map.contains_key(key),
+        }
+    }
+
+    fn shelf(&self, collection: Collection) -> Shelf<&Numbered, &Bosses> {
         match collection {
-            "items" => by_number(&self.items),
-            "trinkets" => by_number(&self.trinkets),
-            "achievements" => by_number(&self.achievements),
-            "bosses" => self.bosses.contains_key(key),
-            "challenges" => by_number(&self.challenges),
-            "characters" => by_number(&self.characters),
-            "transformations" => by_number(&self.transformations),
-            _ => false, // allowed: a name from a hand-written file, an open-ended string
+            Collection::Items => Shelf::Numbered(&self.items),
+            Collection::Trinkets => Shelf::Numbered(&self.trinkets),
+            Collection::Achievements => Shelf::Numbered(&self.achievements),
+            Collection::Bosses => Shelf::Bosses(&self.bosses),
+            Collection::Challenges => Shelf::Numbered(&self.challenges),
+            Collection::Characters => Shelf::Numbered(&self.characters),
+            Collection::Transformations => Shelf::Numbered(&self.transformations),
+        }
+    }
+
+    fn shelf_mut(&mut self, collection: Collection) -> Shelf<&mut Numbered, &mut Bosses> {
+        match collection {
+            Collection::Items => Shelf::Numbered(&mut self.items),
+            Collection::Trinkets => Shelf::Numbered(&mut self.trinkets),
+            Collection::Achievements => Shelf::Numbered(&mut self.achievements),
+            Collection::Bosses => Shelf::Bosses(&mut self.bosses),
+            Collection::Challenges => Shelf::Numbered(&mut self.challenges),
+            Collection::Characters => Shelf::Numbered(&mut self.characters),
+            Collection::Transformations => Shelf::Numbered(&mut self.transformations),
+        }
+    }
+
+    /// Files a page's entry under its key. A key that recurs keeps the first entry, which is
+    /// what makes the visiting order of `build` part of the result.
+    pub(crate) fn insert_first(&mut self, key: EntryKey, entry: Entry) {
+        match key {
+            EntryKey::Item(id) => self.items.entry(id).or_insert(entry),
+            EntryKey::Trinket(id) => self.trinkets.entry(id).or_insert(entry),
+            EntryKey::Achievement(id) => self.achievements.entry(id).or_insert(entry),
+            EntryKey::Boss(id, variant, subtype) => self
+                .bosses
+                .entry(Dataset::boss_key(id, variant, subtype))
+                .or_insert(entry),
+            EntryKey::Challenge(number) => self.challenges.entry(number).or_insert(entry),
+            EntryKey::Character(id) => self.characters.entry(id).or_insert(entry),
+            EntryKey::Transformation(id) => self.transformations.entry(id).or_insert(entry),
+        };
+    }
+
+    /// How many entries each collection holds, as `meta` reports them.
+    pub(crate) fn counts(&self) -> Counts {
+        let n = |len: usize| u32::try_from(len).unwrap_or(u32::MAX);
+        Counts {
+            items: n(self.items.len()),
+            trinkets: n(self.trinkets.len()),
+            achievements: n(self.achievements.len()),
+            bosses: n(self.bosses.len()),
+            challenges: n(self.challenges.len()),
+            characters: n(self.characters.len()),
+            transformations: n(self.transformations.len()),
         }
     }
 
