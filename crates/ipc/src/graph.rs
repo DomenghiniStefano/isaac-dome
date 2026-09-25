@@ -316,7 +316,6 @@ pub struct GoalView {
 #[serde(rename_all = "camelCase")]
 pub struct PlanView {
     pub goals: Vec<GoalView>,
-    pub expansion: PlanExpansion,
     /// What couldn't be read from the plan: one row per unreadable goal.
     pub diagnostics: Vec<PlanDiagnostic>,
     /// `false` when `store` failed to open: goals can't be seen or added, and the UI
@@ -348,25 +347,6 @@ pub enum PlanDiagnostic {
     /// The catalog exists but no longer knows this key: an id a patch has removed, or
     /// a game file that can't be read today. The goal stays.
     UnresolvedGoal { id: GoalId },
-}
-
-#[derive(Debug, Clone, PartialEq, Eq, Serialize, ts_rs::TS)]
-#[serde(
-    tag = "kind",
-    rename_all = "camelCase",
-    rename_all_fields = "camelCase"
-)]
-pub enum PlanExpansion {
-    Stub,
-    Computed { steps: Vec<PlanStep> },
-}
-
-#[derive(Debug, Clone, PartialEq, Eq, Serialize, ts_rs::TS)]
-#[serde(rename_all = "camelCase")]
-pub struct PlanStep {
-    pub goal: GoalId,
-    pub node: UnlockNode,
-    pub done: bool,
 }
 
 use catalog::{AchievementId, BossId, Catalog, ChallengeId, CharacterId, ItemId, Origin, Unlock};
@@ -902,8 +882,7 @@ pub fn next_steps(view: &UnlockView, queued: &BTreeSet<u32>) -> NextSteps {
     NextSteps { sections }
 }
 
-/// The plan: the saved goals resolved against the current catalog, and an expansion
-/// that M3 can't compute yet. The database only keeps the keys, so name and icon are
+/// The plan: the saved goals resolved against the current catalog. The database only keeps the keys, so name and icon are
 /// born here: a goal saved when the game wasn't there shows its name as soon as the
 /// game is. `store_unavailable` is the single source: `store_available` and the
 /// `StoreUnavailable` diagnostic both derive from it and can never contradict each
@@ -957,7 +936,6 @@ pub fn plan_view(
         .collect();
     PlanView {
         goals,
-        expansion: PlanExpansion::Stub,
         diagnostics,
         store_available,
     }

@@ -1,7 +1,7 @@
 use ipc::{
     AchievementRef, GraphInfo, IconRef, ItemKindView, NextSteps, OriginView, PlanDiagnostic,
-    PlanExpansion, RequirementView, StepsBasis, StepsSection, Target, UnlockDiagnostic, UnlockNode,
-    UnlockTarget, UnlockTotals, UnlockView, STEPS,
+    RequirementView, StepsBasis, StepsSection, Target, UnlockDiagnostic, UnlockNode, UnlockTarget,
+    UnlockTotals, UnlockView, STEPS,
 };
 use serde_json::{json, to_value, Value};
 
@@ -143,7 +143,6 @@ fn views_and_diagnostics_are_pinned() {
     // diagnostic are born from the same argument and can never contradict each other.
     let c = catalog_with_achievements();
     let v = to_value(plan_view(Some(&c), None, vec![], vec![], None, |_| None)).unwrap();
-    assert_eq!(v["expansion"], json!({ "kind": "stub" }));
     assert_eq!(v["diagnostics"], json!([]));
     assert_eq!(v["storeAvailable"], true);
 
@@ -514,7 +513,6 @@ fn plan_view_keeps_goal_order_and_reports_the_store() {
         p.goals.iter().map(|g| g.id.as_str()).collect::<Vec<_>>(),
         vec!["b", "a"]
     );
-    assert_eq!(p.expansion, PlanExpansion::Stub);
     assert!(p.store_available);
     assert!(p.diagnostics.is_empty());
     assert!(
@@ -628,34 +626,22 @@ fn a_key_the_catalog_does_not_know_is_named_not_dropped() {
     );
 }
 
-/// The shape of M3, pinned before M3 exists: when `expansion` stops being `stub` the
-/// frontend will receive this, and the components drawn today don't change.
+/// The plan's wire shape, key by key. It carried an `expansion` that was always `stub` — the
+/// place a computed plan (M3) was to arrive — until card #82 (D1) removed it with the unused
+/// `Computed` variant and `PlanStep`: a field nothing computes and nothing reads is a promise
+/// on the wire, and the UI never read it.
 #[test]
-fn the_computed_plan_expansion_and_its_steps_are_pinned() {
-    let e = PlanExpansion::Computed {
-        steps: vec![ipc::PlanStep {
-            goal: ipc::GoalId::from_str_unchecked("g1"),
-            node: node(false),
-            done: false,
-        }],
-    };
-    let v = to_value(&e).unwrap();
-    assert_eq!(v["kind"], "computed");
-    assert_eq!(
-        v["steps"][0]["goal"], "g1",
-        "the step cites the goal by id, it doesn't copy it"
-    );
-    assert_eq!(v["steps"][0]["done"], false);
-    assert_eq!(v["steps"][0]["node"]["achievement"]["kind"], "known");
-    // A plan step carries a whole node, graph info included: after M2 that is real, and
-    // `stub` is gone from the wire. The plan's own `expansion` is still stubbed — that's
-    // M3, and it is a different field.
-    assert_eq!(v["steps"][0]["node"]["graph"]["kind"], "computed");
-    assert_eq!(
-        v["steps"][0].as_object().unwrap().len(),
-        3,
-        "goal, node, done"
-    );
+fn the_plan_view_carries_its_goals_its_diagnostics_and_the_store_and_nothing_else() {
+    let c = catalog_with_achievements();
+    let v = to_value(plan_view(Some(&c), None, vec![], vec![], None, |_| None)).unwrap();
+    let mut keys: Vec<&str> = v
+        .as_object()
+        .expect("an object")
+        .keys()
+        .map(String::as_str)
+        .collect();
+    keys.sort_unstable();
+    assert_eq!(keys, vec!["diagnostics", "goals", "storeAvailable"]);
 }
 
 /// A challenge among an achievement's `unlocks` carries its reward: the ids of the
