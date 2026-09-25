@@ -13,5 +13,5 @@ mod order;
 pub use model::{Queue, QueueError, Row};
 pub use order::Dependencies;
 // The type of `Row::achievement` and `Row::origins`, so a reader of the queue needs no second
-// crate to name it (card #81, V12).
+// crate to name it.
 pub use graph::AchievementId;

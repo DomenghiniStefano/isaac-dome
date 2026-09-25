@@ -21,7 +21,7 @@ pub const fn boss_name(column: Column) -> &'static str {
 }
 
 /// The twelve columns the game's own completion widget draws, by name, in the order of
-/// [`Column::ALL`] — which is the one list of them (card #82, S1). Mother and The Beast were
+/// [`Column::ALL`], which is the one list of them. Mother and The Beast were
 /// located on 2026-09-08, on the historical series: for the 14 original characters they
 /// are as verified as the other ten. For The Forgotten and the 19 later characters Mother
 /// was located on 2026-09-20 and The Beast is still unlocated — see `FORGOTTEN` and
@@ -77,9 +77,9 @@ const fn tainted(name: &'static str, key: &'static str) -> RosterRow {
     }
 }
 
-/// The 34 rows of the matrix, in the layout's order: one table, where a name and its key used
-/// to be two parallel arrays that only a test kept in step (card #82, S2). Its length is the
-/// layout's [`ROWS`], so a row added to one and not the other does not compile.
+/// The 34 rows of the matrix, in the layout's order: one table, so a row's name and its key
+/// cannot fall out of step. Its length is the layout's [`ROWS`], so a row added to one and not
+/// the other does not compile.
 pub const ROSTER: [RosterRow; ROWS] = {
     use CharacterGroup::{Forgotten, Later, Original};
     [
@@ -414,9 +414,10 @@ pub fn marks_matrix(
     }
 }
 
-// `pub(crate)`, not private: `crate::roll::roll_space` reads the same cell the matrix
-// draws. A second definition of "what a cell holds" would drift from the matrix the
-// Completion screen draws, the same argument `marks_totals` already carries.
+// `pub(crate)`, not private: `crate::roll::roll_space` and `crate::progress` read a cell with
+// this decoder. A second definition of "what a cell holds" would drift from the matrix the
+// Completion screen draws, the same argument `marks_totals` already carries. How a draw then
+// *judges* the bits is `roll`'s, and it differs on one value (see `crate::roll::cell_value`).
 //
 // The index is the layout's (`core_save::cell_index`): a cell's place is the shape of the save
 // file, and this module draws a screen.

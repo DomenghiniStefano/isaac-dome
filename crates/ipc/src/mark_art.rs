@@ -51,9 +51,9 @@ const fn widget(layer: &'static str) -> MarkLayer {
 /// Lamb is `Cross` by elimination, the one symbol and the one column left once every other
 /// pairing is settled.
 ///
-/// A match over [`Column`] and not an array in its order (card #82, S1): the order used to be
-/// held only by a comment at the end of each line, and a column inserted in the middle would
-/// have shifted every symbol after it onto its neighbour.
+/// A match over [`Column`] and not an array in its order: an array would hold the order only
+/// by position, and a column inserted in the middle would shift every symbol after it onto its
+/// neighbour.
 const fn mark_layer(column: Column) -> MarkLayer {
     match column {
         Column::MomsHeart => widget("Heart"),

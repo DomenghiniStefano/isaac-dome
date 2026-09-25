@@ -2,9 +2,7 @@
 //!
 //! The game ships some pictures joined in one sheet — `completion_widget.png`, the co-op
 //! menu's heads — and the anm2 files say where to cut. The app serves those pieces through
-//! its icon protocol, so the cut lives in this pure crate: bytes in, bytes out. It moved
-//! here from `crates/design-export`, which imported it back until that crate was removed
-//! on 2026-09-20.
+//! its icon protocol, so the cut lives in this pure crate: bytes in, bytes out.
 
 /// Decodes a PNG to 8-bit RGBA, whatever its internal format (palette, grayscale, no alpha
 /// channel): the game's sprites aren't all the same type. `(width, height, pixels)`.

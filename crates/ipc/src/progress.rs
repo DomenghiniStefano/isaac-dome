@@ -42,7 +42,7 @@ impl<'a> SaveProgress<'a> {
     /// that far, or the value isn't a mask. `Some(None)` — read, nothing reached.
     /// `Some(Some(level))` — the highest level its bits show.
     ///
-    /// Read through [`cell_at`], the decoder the matrix draws with (card #82, S3), so bit 2 —
+    /// Read through [`cell_at`], the decoder the matrix draws with, so bit 2 —
     /// "won online", measured 2026-09-12, not a level — is left out here for the same reason
     /// it is left out of a drawn cell's level.
     pub fn level_at(&self, row: usize, column: MarkColumn) -> Option<Option<MarkLevel>> {
