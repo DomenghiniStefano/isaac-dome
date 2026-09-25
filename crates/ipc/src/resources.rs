@@ -112,25 +112,23 @@ pub fn data_url(png: &[u8]) -> String {
 /// Standard base64 with padding. Twenty lines instead of one more dependency,
 /// for the one use we make of it.
 fn base64(data: &[u8]) -> String {
-    const ALFABETO: &[u8; 64] = b"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
-    let mut out = String::with_capacity(data.len().div_ceil(3) * 4);
-    for blocco in data.chunks(3) {
-        let b = [
-            blocco[0],
-            blocco.get(1).copied().unwrap_or(0),
-            blocco.get(2).copied().unwrap_or(0),
-        ];
-        let n = u32::from_be_bytes([0, b[0], b[1], b[2]]);
-        for i in 0..4 {
-            if i <= blocco.len() {
-                let sestetto = (n >> (18 - 6 * i)) & 0x3F;
-                out.push(ALFABETO[sestetto as usize] as char);
-            } else {
-                out.push('=');
-            }
-        }
-    }
-    out
+    const ALPHABET: &[u8; 64] = b"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+    data.chunks(3)
+        .flat_map(|chunk| {
+            // A chunk of `chunks(3)` is never empty; the missing bytes of the last one are
+            // zero, and the characters they would have produced are padding.
+            let byte = |i: usize| chunk.get(i).copied().unwrap_or(0);
+            let n = u32::from_be_bytes([0, byte(0), byte(1), byte(2)]);
+            (0..4).map(move |i| {
+                if i <= chunk.len() {
+                    let sextet = (n >> (18 - 6 * i)) & 0x3F;
+                    ALPHABET[sextet as usize] as char
+                } else {
+                    '='
+                }
+            })
+        })
+        .collect()
 }
 
 /// Everything the verification screen shows about the extraction.
