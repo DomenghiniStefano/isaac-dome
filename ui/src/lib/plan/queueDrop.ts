@@ -1,3 +1,4 @@
+import { EventKey } from '@/lib/constants/eventKeys'
 import { assertNever } from '@/lib/assertNever'
 
 // Where a dragged row goes, named the way the backend takes it: right below a row, or the top.
@@ -49,4 +50,16 @@ export const stepAnchor = (
     default:
       return assertNever(direction)
   }
+}
+
+// The keyboard's drag: Alt with an arrow moves the row one step. A bare arrow is not a move —
+// it scrolls the page, as it would anywhere else.
+export const stepDirection = (
+  key: string,
+  alt: boolean,
+): StepDirection | null => {
+  if (!alt) return null
+  if (key === EventKey.ArrowUp) return StepDirection.Up
+  if (key === EventKey.ArrowDown) return StepDirection.Down
+  return null
 }
