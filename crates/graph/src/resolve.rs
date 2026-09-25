@@ -23,23 +23,19 @@ fn key(s: &str) -> String {
 
 impl NameIndex {
     pub fn new(c: &Catalog) -> NameIndex {
+        // Collected in catalog order: where two entries share a name, the later one keeps the
+        // key, exactly as successive inserts would.
         let en = Language::English;
-        let mut characters = HashMap::new();
-        for ch in c.characters() {
-            characters.insert(key(c.text(&ch.name, en)), ch.id);
-        }
-        let mut bosses = HashMap::new();
-        for b in c.bosses() {
-            bosses.insert(key(&b.name), b.id);
-        }
-        let mut items = HashMap::new();
-        for i in c.items() {
-            items.insert(key(c.text(&i.name, en)), (i.kind, i.id));
-        }
         NameIndex {
-            characters,
-            bosses,
-            items,
+            characters: c
+                .characters()
+                .map(|ch| (key(c.text(&ch.name, en)), ch.id))
+                .collect(),
+            bosses: c.bosses().map(|b| (key(&b.name), b.id)).collect(),
+            items: c
+                .items()
+                .map(|i| (key(c.text(&i.name, en)), (i.kind, i.id)))
+                .collect(),
         }
     }
 
@@ -194,20 +190,14 @@ fn threshold(
     if (row.items.len() as u32) < at_least {
         return unknown();
     }
-    let mut of = Vec::new();
-    let mut unresolved = 0;
-    for t in &row.items {
-        match contributor(c, t) {
-            Some(item) => of.push(item),
-            None => unresolved += 1,
-        }
-    }
+    let contributors: Vec<Option<ThresholdItem>> =
+        row.items.iter().map(|t| contributor(c, t)).collect();
     Requirement::Threshold {
         transformation: id,
         label: label.to_string(),
         at_least,
-        of,
-        unresolved,
+        unresolved: contributors.iter().filter(|i| i.is_none()).count() as u32,
+        of: contributors.into_iter().flatten().collect(),
     }
 }
 
