@@ -32,7 +32,7 @@ const EXEMPTIONS = [
   // Card #82 (2026-09-25) split two ipc files into modules and removed dead code; the dated
   // specs name the files they were written against.
   {
-    path: 'ui/src/screens/PlaceholderScreen.vue',
+    path: 'screens/PlaceholderScreen.vue',
     why: 'the router placeholder machinery was removed once every route had a screen; the 2026-09-11 shell spec designed it',
   },
   {
