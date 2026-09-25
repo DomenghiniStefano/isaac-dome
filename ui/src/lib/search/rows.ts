@@ -29,6 +29,15 @@ export const rowGroupOrder: RowGroup[] = [
   RowGroup.Collection,
 ]
 
+// What a group is called, on the palette's headings, on a row's tag and on the Search screen's
+// toggles alike: three places that each kept their own copy of this table.
+export const rowGroupLabel: Record<RowGroup, Message> = {
+  [RowGroup.Screens]: 'search.groups.screens',
+  [RowGroup.Wiki]: 'search.groups.wiki',
+  [RowGroup.Unlock]: 'search.groups.unlock',
+  [RowGroup.Collection]: 'search.groups.collection',
+}
+
 export interface ScreenEntry {
   key: string
   label: Message
@@ -150,6 +159,17 @@ export const filterGroups = (
   picked: RowGroup[],
 ): SearchRow[] =>
   picked.length === 0 ? rows : rows.filter((r) => picked.includes(r.group))
+
+// The rows under one heading per group, in the groups' order, and no heading over nothing.
+export const groupedRows = (
+  rows: SearchRow[],
+): { group: RowGroup; rows: SearchRow[] }[] =>
+  rowGroupOrder
+    .map((group) => ({
+      group,
+      rows: rows.filter((row) => row.group === group),
+    }))
+    .filter((g) => g.rows.length > 0)
 
 export const groupCounts = (rows: SearchRow[]): Record<RowGroup, number> =>
   Object.fromEntries(
