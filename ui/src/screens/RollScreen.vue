@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { vScrollMemory } from '@/directives/scrollMemory'
 import { DicesIcon } from '@lucide/vue'
-import { computed, onMounted, onUnmounted } from 'vue'
+import { computed } from 'vue'
 import EmptyCategory from '@/components/data-state/EmptyCategory.vue'
 import DiagnosticsList from '@/components/diagnostics/DiagnosticsList.vue'
 import { Button } from '@/components/ui/button'
@@ -12,7 +12,8 @@ import type { MessageKey } from '@/i18n/messageKey'
 import type { MessageSchema } from '@/i18n/messages/it'
 import { rollEntries } from '@/lib/diagnostics/roll'
 import type { DrawnView } from '@/lib/ipc/types'
-import { AppEvent, watchAppEvent } from '@/lib/window/appEvents'
+import { AppEvent } from '@/lib/window/appEvents'
+import { useAppEvent } from '@/composables/useAppEvent'
 import { LoadStatus } from '@/stores/loadStatus'
 import { useRollStore } from '@/stores/roll'
 import ProfileError from './profile/ProfileError.vue'
@@ -28,13 +29,9 @@ useOnActiveProfile(() => store.load())
 
 // A draw made in another window is a read in this one: the document is one row, and the two
 // windows must never show two different cards for it.
-let stopRollEvent: (() => void) | undefined
-onMounted(async () => {
-  stopRollEvent = await watchAppEvent(AppEvent.RollChanged, () => {
-    void store.load()
-  })
+useAppEvent(AppEvent.RollChanged, () => {
+  void store.load()
 })
-onUnmounted(() => stopRollEvent?.())
 
 // The key for each of the four exclusions `emptyDeckReason` can name. A presentational lookup,
 // not a judgment: which reason it is comes from the tested pure function, this only routes it

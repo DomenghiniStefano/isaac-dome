@@ -13,7 +13,7 @@ import { Field, FieldDescription, FieldLabel } from '@/components/ui/field'
 import { Progress } from '@/components/ui/progress'
 import { Switch } from '@/components/ui/switch'
 import { HelpTip } from '@/components/ui/tooltip'
-import { computed, onMounted, onUnmounted } from 'vue'
+import { computed, onMounted } from 'vue'
 import { useMessages } from '@/i18n'
 import { ipcErrorParts } from '@/lib/ipc/errorText'
 import {
@@ -23,7 +23,8 @@ import {
   progressPercent,
   releaseNotes,
 } from '@/lib/update/phase'
-import { AppEvent, watchAppEvent } from '@/lib/window/appEvents'
+import { AppEvent } from '@/lib/window/appEvents'
+import { useAppEvent } from '@/composables/useAppEvent'
 import { useSettingsStore } from '@/stores/settings'
 import { useUpdateStore } from '@/stores/update'
 import WikiBlocks from '@/components/wiki/WikiBlocks.vue'
@@ -35,14 +36,10 @@ const { t } = useMessages()
 
 // Listened for here rather than in `App.vue`: a download tells every window at every whole
 // percentage point, and a window with this screen closed has nothing to draw with it.
-let stopWatching: (() => void) | undefined
-onMounted(async () => {
-  await update.read()
-  stopWatching = await watchAppEvent(AppEvent.UpdateChanged, () => {
-    void update.read()
-  })
+useAppEvent(AppEvent.UpdateChanged, () => {
+  void update.read()
 })
-onUnmounted(() => stopWatching?.())
+onMounted(() => update.read())
 
 const phase = computed(() => phasePart(update.view))
 const percent = computed(() => progressPercent(update.view))

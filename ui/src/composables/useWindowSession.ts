@@ -24,6 +24,7 @@ import type {
 } from '@/lib/window/sessionDocument'
 import { noteSessionError } from '@/lib/window/sessionHealth'
 import { SessionAction, decideSessionWrite } from '@/lib/window/sessionWriter'
+import { subscriptions } from '@/lib/window/subscriptions'
 import { newWindowLabel, windowPort } from '@/lib/window/windowPort'
 import type { WindowBox } from '@/lib/window/windowPort'
 
@@ -66,9 +67,8 @@ const boxOf = (w: WindowBox): StoredBox => ({
 // App.vue. Docking and hovering fill the arms that are empty here.
 export const useWindowSession = (): void => {
   const tabs = useTabsStore()
-  let stop: (() => void) | null = null
-  let stopFocus: (() => void) | null = null
-  let stopBox: (() => void) | null = null
+  // Made one after another across the awaits below, and a window can close between any two.
+  const listening = subscriptions()
   let timer: number | null = null
   let saving: number | null = null
 
@@ -300,16 +300,18 @@ export const useWindowSession = (): void => {
       }
       remember()
     })
-    stop = await windowPort.listen(onMessage)
+    await listening.add(() => windowPort.listen(onMessage))
     // Who is in front, told by the only thing that observes it: this window's own focus.
     // Broadcast, so every window keeps the same order and the hit test agrees everywhere.
-    stopFocus = await watchWindowFocus((focused) => {
-      if (!focused) return
-      void windowPort.broadcast({
-        kind: WindowMessageKind.Focused,
-        label: windowPort.label(),
-      })
-    })
+    await listening.add(() =>
+      watchWindowFocus((focused) => {
+        if (!focused) return
+        void windowPort.broadcast({
+          kind: WindowMessageKind.Focused,
+          label: windowPort.label(),
+        })
+      }),
+    )
     // Where this window is, is the other half of what the session stores about it. A window that
     // cannot say where it is still has tabs worth storing, so this never throws upward: the
     // document simply carries no box for it, and the restore cascades it instead.
@@ -321,9 +323,11 @@ export const useWindowSession = (): void => {
       }
     }
     await readBox()
-    stopBox = await watchWindowBox(() => {
-      void readBox().then(held)
-    })
+    await listening.add(() =>
+      watchWindowBox(() => {
+        void readBox().then(held)
+      }),
+    )
     if (!tabs.pending) {
       held()
       return
@@ -372,9 +376,7 @@ export const useWindowSession = (): void => {
   })
 
   onBeforeUnmount(() => {
-    stop?.()
-    stopFocus?.()
-    stopBox?.()
+    listening.stop()
     if (saving !== null) window.clearTimeout(saving)
     forget()
     // Not a write — the webview is being torn down. A word to the survivors, whose own write is

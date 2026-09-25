@@ -47,6 +47,7 @@ import {
 } from '@/lib/window/appWindow'
 import { appEventHandlers } from '@/lib/window/appEventHandlers'
 import { watchAppEvents } from '@/lib/window/appEvents'
+import { subscriptions } from '@/lib/window/subscriptions'
 import {
   setSidebarCollapsed,
   setSidebarWidth,
@@ -82,28 +83,28 @@ const fmt = useFormat()
 useWindowSession()
 
 const focused = ref(true)
-let stopWatchingFocus: (() => void) | undefined
-let stopAppEvents: (() => void) | undefined
+const listening = subscriptions()
 onMounted(async () => {
   void profile.load()
-  stopWatchingFocus = await watchWindowFocus((value) => {
-    focused.value = value
-  })
-  // What each event does is `appEventHandlers`' to say, where it is tested.
-  stopAppEvents = await watchAppEvents(
-    appEventHandlers({
-      profile,
-      settings,
-      queue,
-      runs: useRunsStore(),
-      live: useLiveStore(),
+  await listening.add(() =>
+    watchWindowFocus((value) => {
+      focused.value = value
     }),
   )
+  // What each event does is `appEventHandlers`' to say, where it is tested.
+  await listening.add(() =>
+    watchAppEvents(
+      appEventHandlers({
+        profile,
+        settings,
+        queue,
+        runs: useRunsStore(),
+        live: useLiveStore(),
+      }),
+    ),
+  )
 })
-onUnmounted(() => {
-  stopWatchingFocus?.()
-  stopAppEvents?.()
-})
+onUnmounted(listening.stop)
 
 // A tab torn out of the strip. It leaves the bar at once and belongs to nobody until the drag
 // ends: the store keeps it in flight, and the two endings below dispose of it.

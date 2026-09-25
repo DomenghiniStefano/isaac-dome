@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import { onMounted, onUnmounted, ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import { selectProfile, setupState } from '@/lib/ipc/setup'
 import { runs } from '@/lib/ipc/runs'
-import { AppEvent, watchAppEvent } from '@/lib/window/appEvents'
+import { AppEvent } from '@/lib/window/appEvents'
+import { useAppEvent } from '@/composables/useAppEvent'
 import { completion, saveSummary } from '@/lib/ipc/save'
 import { extractionReport } from '@/lib/ipc/resources'
 import { graphViews } from '@/lib/ipc/graph'
@@ -233,18 +234,13 @@ const outcomeText = (o: RunOutcomeView) => {
 
 const runKey = (r: RunView) => `${sourceText(r.source)}#${r.ordinal}`
 
-let stopRunsEvent: (() => void) | undefined
-
-onMounted(async () => {
-  await load().catch(handleIpcError)
-  // The archive fills itself in the background: without this the page shows whatever had been
-  // imported by the time it mounted, which on a first launch is nothing.
-  stopRunsEvent = await watchAppEvent(AppEvent.RunsChanged, () => {
-    void loadRuns().catch(handleIpcError)
-  })
+// The archive fills itself in the background: without this the page shows whatever had been
+// imported by the time it mounted, which on a first launch is nothing.
+useAppEvent(AppEvent.RunsChanged, () => {
+  void loadRuns().catch(handleIpcError)
 })
 
-onUnmounted(() => stopRunsEvent?.())
+onMounted(() => load().catch(handleIpcError))
 </script>
 
 <template>
