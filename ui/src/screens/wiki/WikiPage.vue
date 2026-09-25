@@ -24,6 +24,7 @@ import { useQueueStore } from '@/stores/queue'
 import { useTabsStore } from '@/stores/tabs'
 import { useGraphStore } from '@/stores/views'
 import { useWikiStore } from '@/stores/wiki'
+import ProfileError from '../profile/ProfileError.vue'
 import WikiHero from './WikiHero.vue'
 import WikiInfobox from './WikiInfobox.vue'
 import WikiOutline from './WikiOutline.vue'
@@ -73,6 +74,11 @@ const onNavigate = (next: Target, newTab: boolean) => {
   if (location === null) return
   if (newTab) tabs.open(location)
   else tabs.navigate(location)
+}
+// A page that would not load is this page's failure, not the wiki's (card #80, R9): the retry
+// asks for this page again, and every other tab keeps what it shows.
+const retry = () => {
+  if (target.value) void wiki.loadEntry(target.value)
 }
 const back = () => {
   if (category.value)
@@ -143,6 +149,12 @@ const onOpen = (location: TabLocation, newTab: boolean) => {
           >{{ t('wiki.back') }}</Button
         >
       </template>
+      <ProfileError
+        v-else-if="wiki.pageFailed(pageKey)"
+        :error="wiki.pageError(pageKey)"
+        :title="t('wiki.states.pageFailedTitle')"
+        @retry="retry"
+      />
       <div v-else-if="entry === undefined" class="flex flex-col gap-4">
         <Skeleton class="h-40 w-full" />
         <Skeleton class="h-40 w-full" />

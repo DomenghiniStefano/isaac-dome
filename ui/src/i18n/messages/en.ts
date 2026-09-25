@@ -550,6 +550,7 @@ export const en: MessageSchema = {
         'It may have been added since: the copy is from the date above, and it updates with the app.',
       noSections: 'For this page we only have the card, with no text.',
       failedTitle: "The Wiki didn't answer",
+      pageFailedTitle: "This page didn't open",
       missingTitle: "The Wiki didn't open",
       missing:
         'The copy of the wiki inside the app will not read, so there are no pages to show. Restarting the app usually clears it; if it does not, it is worth reporting.',

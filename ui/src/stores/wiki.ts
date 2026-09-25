@@ -23,6 +23,9 @@ export const useWikiStore = defineStore(StoreId.Wiki, () => {
   // A page read once stays read; `null` is an answer too (the dataset lacks it), so a
   // second look doesn't ask again.
   const entries = ref(new Map<string, Entry | null>())
+  // A page whose read failed, with the error if it is ours (`null` if not). Its own map, not
+  // the index's `status`: one page that would not load says nothing about the others.
+  const failures = ref(new Map<string, IpcError | null>())
   const pending = new Set<string>()
 
   const byKey = computed(
@@ -68,20 +71,23 @@ export const useWikiStore = defineStore(StoreId.Wiki, () => {
   const entry = (key: string): Entry | null | undefined =>
     entries.value.get(key)
 
-  // The one read here that is **not** `tracked`, and deliberately: a page that arrives must
-  // not set the status to `Ready`, because the status belongs to the index. This reports a
-  // failure without ever claiming a success, which is a shape `tracked` cannot express.
-  //
-  // That a page's failure lands on the index's `error` is inherited, not decided here.
+  const pageFailed = (key: string): boolean => failures.value.has(key)
+
+  const pageError = (key: string): IpcError | null =>
+    failures.value.get(key) ?? null
+
+  // Not `tracked`, and deliberately: the status and the error `tracked` writes belong to the
+  // index. A page keeps its own failure (card #80, R9), and asking again reads it again —
+  // `entries` never took the key, so nothing stands in the way.
   const loadEntry = async (target: Target): Promise<void> => {
     const key = pageKey(target)
     if (key === null || entries.value.has(key) || pending.has(key)) return
     pending.add(key)
+    failures.value.delete(key)
     try {
       entries.value.set(key, await wikiEntry(target))
     } catch (e) {
-      error.value = isIpcError(e) ? e : null
-      status.value = LoadStatus.Failed
+      failures.value.set(key, isIpcError(e) ? e : null)
     } finally {
       pending.delete(key)
     }
@@ -96,6 +102,8 @@ export const useWikiStore = defineStore(StoreId.Wiki, () => {
     iconFor,
     hasPage,
     entry,
+    pageFailed,
+    pageError,
     loadEntry,
   }
 })
