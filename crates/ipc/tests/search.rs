@@ -152,7 +152,7 @@ fn catalog() -> Catalog {
 fn a_target_both_sides_know_is_one_document_with_the_catalog_name_as_its_title() {
     let ds = dataset();
     let index = SearchIndex::build(Ok(&ds));
-    let docs = for_tests::documents(&index, Some(&catalog()));
+    let docs = for_tests::documents(&index, Some(&catalog()), &for_tests::bosses(&catalog()));
     let d6 = docs
         .get(&Target::Item { id: 105 })
         .expect("the item is on both sides");
@@ -205,7 +205,7 @@ fn an_empty_catalog_name_does_not_replace_the_wiki_title() {
         _ => None,
     }
     });
-    let docs = for_tests::documents(&index, Some(&catalog));
+    let docs = for_tests::documents(&index, Some(&catalog), &for_tests::bosses(&catalog));
     let dead_god = docs
         .get(&Target::Achievement { id: 637 })
         .expect("the achievement is on both sides");
@@ -217,7 +217,7 @@ fn an_empty_catalog_name_does_not_replace_the_wiki_title() {
 fn without_a_catalog_the_documents_are_the_wiki_pages_alone() {
     let ds = dataset();
     let index = SearchIndex::build(Ok(&ds));
-    let docs = for_tests::documents(&index, None);
+    let docs = for_tests::documents(&index, None, ipc::BossKeys::NONE);
     assert_eq!(docs.len(), index.len());
     assert_eq!(
         docs.get(&Target::Trinket { id: 97 })
@@ -278,6 +278,7 @@ fn view(query: &str, limit: usize, with_catalog: bool, flags: Option<SaveFlags<'
     search(
         &index,
         with_catalog.then_some(&c),
+        &ipc::for_tests::bosses(&c),
         flags,
         query,
         limit,
@@ -375,7 +376,7 @@ fn the_six_tiers_order_the_answer() {
         ds.items.insert(id, entry_with(title, empty_item(), vec![]));
     }
     let index = SearchIndex::build(Ok(&ds));
-    let v = search(&index, None, None, "the", 10, link);
+    let v = search(&index, None, ipc::BossKeys::NONE, None, "the", 10, link);
     let titles: Vec<&str> = v.hits.iter().map(|h| h.title.as_str()).collect();
     assert_eq!(titles, vec!["The", "The Bible", "Of the", "Mother"]);
 }
@@ -394,7 +395,15 @@ fn not_done_comes_before_done_inside_a_tier() {
         achievements: Some(&[]),
         items: Some(&owned),
     };
-    let v = search(&index, None, Some(flags), "bomb", 10, link);
+    let v = search(
+        &index,
+        None,
+        ipc::BossKeys::NONE,
+        Some(flags),
+        "bomb",
+        10,
+        link,
+    );
     let titles: Vec<&str> = v.hits.iter().map(|h| h.title.as_str()).collect();
     assert_eq!(titles, vec!["Bomb Two", "Bomb One"]);
 }
@@ -407,7 +416,7 @@ fn the_limit_cuts_the_hits_and_total_says_how_many_there_were() {
             .insert(id, entry_with(&format!("Bomb {id}"), empty_item(), vec![]));
     }
     let index = SearchIndex::build(Ok(&ds));
-    let v = search(&index, None, None, "bomb", 2, link);
+    let v = search(&index, None, ipc::BossKeys::NONE, None, "bomb", 2, link);
     assert_eq!(v.hits.len(), 2);
     assert_eq!(v.total, 5);
 }
@@ -441,7 +450,15 @@ fn the_five_diagnostics_say_what_is_missing() {
     let e = DatasetError::Malformed { reason: "x".into() };
     let index = SearchIndex::build(Err(&e));
     let c = catalog();
-    let v = search(&index, Some(&c), None, "d6", 10, link);
+    let v = search(
+        &index,
+        Some(&c),
+        &ipc::for_tests::bosses(&c),
+        None,
+        "d6",
+        10,
+        link,
+    );
     assert!(v.diagnostics.contains(&SearchDiagnostic::NoWiki));
     assert!(v.hits.iter().all(|h| !h.has_page));
     assert!(!v.hits.is_empty(), "the catalog still answers by name");

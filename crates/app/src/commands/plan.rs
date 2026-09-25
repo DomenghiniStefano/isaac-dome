@@ -28,6 +28,7 @@ pub fn plan(
     };
     Ok(ipc::plan_view(
         c,
+        catalog.bosses(c),
         wiki::Dataset::embedded().ok(),
         goals,
         unreadable,
@@ -68,6 +69,7 @@ pub fn add_goal(
     let read = guard.goals().map_err(store_error)?;
     Ok(ipc::plan_view(
         c,
+        catalog.bosses(c),
         wiki::Dataset::embedded().ok(),
         read.goals,
         read.unreadable,
@@ -94,6 +96,7 @@ pub fn remove_goal(
     let read = guard.goals().map_err(store_error)?;
     Ok(ipc::plan_view(
         c,
+        catalog.bosses(c),
         wiki::Dataset::embedded().ok(),
         read.goals,
         read.unreadable,

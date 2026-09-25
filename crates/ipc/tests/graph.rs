@@ -143,12 +143,22 @@ fn views_and_diagnostics_are_pinned() {
     // The plan is only ever built via `plan_view`: `storeAvailable` and the store
     // diagnostic are born from the same argument and can never contradict each other.
     let c = catalog_with_achievements();
-    let v = to_value(plan_view(Some(&c), None, vec![], vec![], None, |_| None)).unwrap();
+    let v = to_value(plan_view(
+        Some(&c),
+        &ipc::for_tests::bosses(&c),
+        None,
+        vec![],
+        vec![],
+        None,
+        |_| None,
+    ))
+    .unwrap();
     assert_eq!(v["diagnostics"], json!([]));
     assert_eq!(v["storeAvailable"], true);
 
     let v = to_value(plan_view(
         Some(&c),
+        &ipc::for_tests::bosses(&c),
         None,
         vec![],
         vec![],
@@ -171,6 +181,7 @@ fn views_and_diagnostics_are_pinned() {
     // A database row that fails to read: the UI receives the id, not the broken JSON.
     let v = to_value(plan_view(
         Some(&c),
+        &ipc::for_tests::bosses(&c),
         None,
         vec![],
         vec![ipc::GoalId::from_str_unchecked("g9")],
@@ -189,7 +200,15 @@ fn views_and_diagnostics_are_pinned() {
 fn store_available_and_the_store_diagnostic_cannot_disagree() {
     let c = catalog_with_achievements();
     for reason in [None, Some(ipc::StoreReason::Unreadable)] {
-        let p = plan_view(Some(&c), None, vec![], vec![], reason, |_| None);
+        let p = plan_view(
+            Some(&c),
+            &ipc::for_tests::bosses(&c),
+            None,
+            vec![],
+            vec![],
+            reason,
+            |_| None,
+        );
         let says_unavailable = p
             .diagnostics
             .iter()
@@ -221,6 +240,7 @@ fn unlock_view_maps_slots_to_achievements_and_marks_the_ones_beyond_the_catalog(
     let flags = [false, true, false, true, true, false];
     let v = unlock_view(
         Some(&catalog_with_achievements()),
+        &ipc::for_tests::bosses(&catalog_with_achievements()),
         None,
         Some(&flags),
         None,
@@ -271,6 +291,7 @@ fn unlocks_and_origin_come_from_the_catalog_and_icons_only_when_they_resolve() {
     let flags = [false, false, false, false];
     let v = unlock_view(
         Some(&catalog_with_achievements()),
+        &ipc::for_tests::bosses(&catalog_with_achievements()),
         None,
         Some(&flags),
         None,
@@ -322,6 +343,7 @@ fn unlocks_and_origin_come_from_the_catalog_and_icons_only_when_they_resolve() {
 fn catalog_beyond_slots_and_no_catalog_degrade_with_a_diagnostic() {
     let v = unlock_view(
         Some(&catalog_with_achievements()),
+        &ipc::for_tests::bosses(&catalog_with_achievements()),
         None,
         Some(&[false, true]),
         None,
@@ -337,6 +359,7 @@ fn catalog_beyond_slots_and_no_catalog_degrade_with_a_diagnostic() {
 
     let v = unlock_view(
         None,
+        ipc::BossKeys::NONE,
         None,
         Some(&[false, true, true]),
         None,
@@ -360,6 +383,7 @@ fn catalog_beyond_slots_and_no_catalog_degrade_with_a_diagnostic() {
 fn a_missing_achievement_section_is_declared_and_compares_nothing() {
     let v = unlock_view(
         Some(&catalog_with_achievements()),
+        &ipc::for_tests::bosses(&catalog_with_achievements()),
         None,
         None,
         None,
@@ -387,7 +411,16 @@ fn a_missing_achievement_section_is_declared_and_compares_nothing() {
         json!([{ "kind": "noAchievementSection" }])
     );
     // No catalog and no section: two different pieces of news, two diagnostics.
-    let v = unlock_view(None, None, None, None, None, None, |_| None);
+    let v = unlock_view(
+        None,
+        ipc::BossKeys::NONE,
+        None,
+        None,
+        None,
+        None,
+        None,
+        |_| None,
+    );
     assert_eq!(
         v.diagnostics,
         vec![
@@ -403,6 +436,7 @@ fn a_missing_achievement_section_is_declared_and_compares_nothing() {
 fn an_empty_but_present_section_still_compares_with_the_catalog() {
     let v = unlock_view(
         Some(&catalog_with_achievements()),
+        &ipc::for_tests::bosses(&catalog_with_achievements()),
         None,
         Some(&[]),
         None,
@@ -424,7 +458,16 @@ fn without_a_graph_there_are_no_next_steps_to_suggest() {
     let mut flags = vec![false; 10];
     flags[2] = true;
     flags[5] = true;
-    let v = unlock_view(None, None, Some(&flags), None, None, None, |_| None);
+    let v = unlock_view(
+        None,
+        ipc::BossKeys::NONE,
+        None,
+        Some(&flags),
+        None,
+        None,
+        None,
+        |_| None,
+    );
     assert!(
         next_steps(&v, &Default::default()).sections.is_empty(),
         "not-done is not the same as unlockable: with no graph the app has nothing to \
@@ -501,6 +544,7 @@ fn plan_view_keeps_goal_order_and_reports_the_store() {
     let c = catalog_with_achievements();
     let p = plan_view(
         Some(&c),
+        &ipc::for_tests::bosses(&c),
         None,
         vec![goal("b"), goal("a")],
         vec![],
@@ -516,6 +560,7 @@ fn plan_view_keeps_goal_order_and_reports_the_store() {
     assert!(
         !plan_view(
             Some(&c),
+            &ipc::for_tests::bosses(&c),
             None,
             vec![],
             vec![],
@@ -528,6 +573,7 @@ fn plan_view_keeps_goal_order_and_reports_the_store() {
     let bad = |s: &str| ipc::GoalId::from_str_unchecked(s);
     let p = plan_view(
         Some(&c),
+        &ipc::for_tests::bosses(&c),
         None,
         vec![goal("a")],
         vec![bad("x"), bad("y")],
@@ -547,9 +593,15 @@ fn plan_view_keeps_goal_order_and_reports_the_store() {
 #[test]
 fn a_goal_carries_its_key_and_the_target_resolved_now() {
     let c = catalog_with_achievements();
-    let p = plan_view(Some(&c), None, vec![goal("g1")], vec![], None, |r| {
-        Some(format!("{}://{}", ipc::ICON_SCHEME, r.to_path()))
-    });
+    let p = plan_view(
+        Some(&c),
+        &ipc::for_tests::bosses(&c),
+        None,
+        vec![goal("g1")],
+        vec![],
+        None,
+        |r| Some(format!("{}://{}", ipc::ICON_SCHEME, r.to_path())),
+    );
     let v = to_value(&p).unwrap();
     assert_eq!(v["goals"][0]["id"], "g1");
     assert_eq!(
@@ -576,9 +628,15 @@ fn a_goal_carries_its_key_and_the_target_resolved_now() {
 /// once: this is the "game not installed" case, not "goal vanished".
 #[test]
 fn without_a_catalog_no_goal_resolves_and_one_diagnostic_says_it() {
-    let p = plan_view(None, None, vec![goal("a"), goal("b")], vec![], None, |_| {
-        None
-    });
+    let p = plan_view(
+        None,
+        ipc::BossKeys::NONE,
+        None,
+        vec![goal("a"), goal("b")],
+        vec![],
+        None,
+        |_| None,
+    );
     assert_eq!(p.goals.len(), 2);
     assert!(p.goals.iter().all(|g| g.target.is_none()));
     assert_eq!(
@@ -609,7 +667,15 @@ fn a_key_the_catalog_does_not_know_is_named_not_dropped() {
         item_kind: ItemKindView::Passive,
         id: 999_999,
     };
-    let p = plan_view(Some(&c), None, vec![g], vec![], None, |_| None);
+    let p = plan_view(
+        Some(&c),
+        &ipc::for_tests::bosses(&c),
+        None,
+        vec![g],
+        vec![],
+        None,
+        |_| None,
+    );
     assert_eq!(p.goals.len(), 1);
     assert!(p.goals[0].target.is_none());
     assert_eq!(
@@ -631,7 +697,16 @@ fn a_key_the_catalog_does_not_know_is_named_not_dropped() {
 #[test]
 fn the_plan_view_carries_its_goals_its_diagnostics_and_the_store_and_nothing_else() {
     let c = catalog_with_achievements();
-    let v = to_value(plan_view(Some(&c), None, vec![], vec![], None, |_| None)).unwrap();
+    let v = to_value(plan_view(
+        Some(&c),
+        &ipc::for_tests::bosses(&c),
+        None,
+        vec![],
+        vec![],
+        None,
+        |_| None,
+    ))
+    .unwrap();
     let mut keys: Vec<&str> = v
         .as_object()
         .expect("an object")
@@ -660,6 +735,7 @@ fn a_challenge_target_carries_the_achievements_it_rewards() {
     });
     let v = unlock_view(
         Some(&c),
+        &ipc::for_tests::bosses(&c),
         None,
         Some(&[false, false, false, false]),
         None,
@@ -808,10 +884,22 @@ fn the_tainted_form_travels_as_a_flag_beside_the_shared_name() {
         _ => None,
     });
     let mut icon = |_: &ipc::IconRef| None;
-    let base =
-        resolve_target(&c, &TargetKey::Character { id: 10 }, None, &mut icon).expect("player 10");
-    let tainted =
-        resolve_target(&c, &TargetKey::Character { id: 31 }, None, &mut icon).expect("player 31");
+    let base = resolve_target(
+        &c,
+        &ipc::for_tests::bosses(&c),
+        &TargetKey::Character { id: 10 },
+        None,
+        &mut icon,
+    )
+    .expect("player 10");
+    let tainted = resolve_target(
+        &c,
+        &ipc::for_tests::bosses(&c),
+        &TargetKey::Character { id: 31 },
+        None,
+        &mut icon,
+    )
+    .expect("player 31");
     let v = to_value(&tainted).unwrap();
     assert_eq!(v["kind"], "character");
     assert_eq!(v["tainted"], true);
@@ -830,7 +918,16 @@ fn the_tainted_form_travels_as_a_flag_beside_the_shared_name() {
 fn without_a_dataset_no_target_carries_a_page() {
     let c = catalog_with_achievements();
     let flags = [false, true, true, true];
-    let v = unlock_view(Some(&c), None, Some(&flags), None, None, None, |_| None);
+    let v = unlock_view(
+        Some(&c),
+        &ipc::for_tests::bosses(&c),
+        None,
+        Some(&flags),
+        None,
+        None,
+        None,
+        |_| None,
+    );
     let pages: Vec<Option<&Target>> = v
         .nodes
         .iter()
@@ -941,7 +1038,16 @@ fn the_two_sections_never_name_the_same_node() {
 fn a_section_with_no_steps_is_not_emitted() {
     let mut flags = vec![false; 10];
     flags[2] = true;
-    let v = unlock_view(None, None, Some(&flags), None, None, None, |_| None);
+    let v = unlock_view(
+        None,
+        ipc::BossKeys::NONE,
+        None,
+        Some(&flags),
+        None,
+        None,
+        None,
+        |_| None,
+    );
     assert!(next_steps(&v, &Default::default()).sections.is_empty());
 }
 
@@ -1023,7 +1129,16 @@ fn the_threshold_view_is_camel_case_on_the_wire() {
 fn the_pair_carries_the_steps_of_the_view_it_travels_with() {
     let mut flags = vec![false; 10];
     flags[2] = true;
-    let view = unlock_view(None, None, Some(&flags), None, None, None, |_| None);
+    let view = unlock_view(
+        None,
+        ipc::BossKeys::NONE,
+        None,
+        Some(&flags),
+        None,
+        None,
+        None,
+        |_| None,
+    );
     let pair = ipc::graph_views(view.clone(), &Default::default());
     assert_eq!(pair.unlock, view);
     assert_eq!(pair.steps, next_steps(&view, &Default::default()));

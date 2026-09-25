@@ -15,8 +15,12 @@ pub use crate::search::Doc;
 
 /// The two halves a query is built on, reachable from the integration test: a test that
 /// could only see the ranked answer would say nothing about them.
-pub fn documents(index: &SearchIndex, catalog: Option<&Catalog>) -> BTreeMap<Target, Doc> {
-    search::documents(index, catalog)
+pub fn documents(
+    index: &SearchIndex,
+    catalog: Option<&Catalog>,
+    bosses: &crate::BossKeys,
+) -> BTreeMap<Target, Doc> {
+    search::documents(index, catalog, bosses)
 }
 
 pub fn progress(target: &Target, flags: Option<SaveFlags<'_>>) -> ProgressMark {
@@ -44,4 +48,10 @@ pub fn unlock_view_of(nodes: Vec<crate::UnlockNode>) -> crate::UnlockView {
 /// somewhere else — "a check is allowed from here", "a late chunk changes nothing there".
 pub fn update_at(phase: crate::UpdatePhase) -> crate::UpdateState {
     crate::UpdateState::at(phase)
+}
+
+/// The catalog's boss keys as the app settles them, with the dataset compiled into the binary:
+/// what every boss lookup read before the keys became a parameter (card #82, S3).
+pub fn bosses(catalog: &Catalog) -> crate::BossKeys {
+    crate::boss_keys(catalog, wiki::Dataset::embedded().ok())
 }

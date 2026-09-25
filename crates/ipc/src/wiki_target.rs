@@ -4,10 +4,10 @@
 //! challenge's number what the catalog calls its id. Search keys its documents by this, and a
 //! requirement links by it; a second copy would be wrong within a release.
 
-use catalog::{AchievementId, Boss, Catalog, Challenge, Character, Item, ItemKind};
+use catalog::{AchievementId, Boss, Challenge, Character, Item, ItemKind};
 use wiki::{Dataset, Target};
 
-use crate::target_sprite::boss_keys;
+use crate::target_sprite::BossKeys;
 
 /// `items.xml` keeps collectibles and trinkets in one file; the dataset gives them two page
 /// kinds.
@@ -33,17 +33,15 @@ pub(crate) fn challenge(c: &Challenge) -> Target {
 /// page names the row, the portrait's file name otherwise — so the page a boss links to and
 /// the picture it is drawn with are the same decision, taken once.
 ///
-/// It takes the catalog because the rules are about the roster, not the row: a key two rows
-/// declare belongs to neither, and that cannot be seen from one of them. A row left without a
-/// key names no page: `None`, never a guessed variant.
-pub(crate) fn boss(c: &Catalog, b: &Boss) -> Option<Target> {
-    boss_keys(c)
-        .get(b.name.as_str())
-        .map(|(id, variant)| Target::Entity {
-            id: *id,
-            variant: *variant,
-            subtype: 0,
-        })
+/// It takes the roster's keys and not the row alone because the rules are about the roster: a
+/// key two rows declare belongs to neither, and that cannot be seen from one of them. A row
+/// left without a key names no page: `None`, never a guessed variant.
+pub(crate) fn boss(bosses: &BossKeys, b: &Boss) -> Option<Target> {
+    bosses.get(&b.name).map(|(id, variant)| Target::Entity {
+        id,
+        variant,
+        subtype: 0,
+    })
 }
 
 pub(crate) fn achievement(id: AchievementId) -> Target {

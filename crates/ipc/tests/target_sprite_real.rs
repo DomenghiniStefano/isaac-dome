@@ -89,7 +89,7 @@ fn page_coverage(c: &Catalog) -> BTreeMap<&'static str, Counts> {
     let mut per_family: BTreeMap<&'static str, Counts> = BTreeMap::new();
     for t in pages() {
         let entry = per_family.entry(family(&t)).or_default();
-        match target_sprite(c, &t) {
+        match target_sprite(c, &ipc::for_tests::bosses(c), &t) {
             TargetSprite::Found(_) => entry.found += 1,
             TargetSprite::NoArt => entry.no_art += 1,
             TargetSprite::Unknown => entry.unknown += 1,
@@ -220,7 +220,7 @@ fn a_contested_key_draws_the_boss_whose_page_it_is_and_not_its_neighbour() {
             variant,
             subtype: 0,
         };
-        let path = match target_sprite(&c, &t) {
+        let path = match target_sprite(&c, &ipc::for_tests::bosses(&c), &t) {
             TargetSprite::Found(s) => s.path.clone(),
             other => panic!("{}.{} ({}) resolved to {other:?}", id, variant, page.title),
         };
@@ -272,6 +272,7 @@ fn the_pages_a_portrait_file_name_cannot_reach_are_reached_by_the_title() {
         }
         match target_sprite(
             &c,
+            &ipc::for_tests::bosses(&c),
             &Target::Entity {
                 id,
                 variant,

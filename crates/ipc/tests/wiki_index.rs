@@ -38,7 +38,7 @@ fn link(r: &IconRef) -> Option<String> {
 #[test]
 fn the_shape_is_pinned_and_icons_are_null_without_a_catalog() {
     let ds = dataset();
-    let index = wiki_index(Ok(&ds), None, None, link);
+    let index = wiki_index(Ok(&ds), None, ipc::BossKeys::NONE, None, link);
     let v = to_value(&index).unwrap();
     assert_eq!(v["info"]["kind"], "loaded");
     assert_eq!(
@@ -52,7 +52,7 @@ fn the_shape_is_pinned_and_icons_are_null_without_a_catalog() {
 fn pages_come_out_by_kind_then_by_id_and_carry_the_catalog_s_icon() {
     let ds = dataset();
     let c = catalog();
-    let index: WikiIndex = wiki_index(Ok(&ds), Some(&c), None, link);
+    let index: WikiIndex = wiki_index(Ok(&ds), Some(&c), &ipc::for_tests::bosses(&c), None, link);
     let targets: Vec<&Target> = index.pages.iter().map(|p| &p.target).collect();
     assert_eq!(
         targets,
@@ -78,7 +78,7 @@ fn pages_come_out_by_kind_then_by_id_and_carry_the_catalog_s_icon() {
 #[test]
 fn a_missing_dataset_is_an_empty_index_that_says_why() {
     let err = wiki::DatasetError::Malformed { reason: "x".into() };
-    let index = wiki_index(Err(&err), None, None, link);
+    let index = wiki_index(Err(&err), None, ipc::BossKeys::NONE, None, link);
     assert!(index.pages.is_empty());
     assert_eq!(to_value(&index.info).unwrap()["kind"], "missing");
 }
@@ -88,14 +88,14 @@ fn a_boss_key_that_is_not_three_numbers_is_left_out_not_guessed() {
     let mut ds = dataset();
     ds.bosses
         .insert("Cadavra".to_string(), entry("Cadavra", empty_item()));
-    let index = wiki_index(Ok(&ds), None, None, link);
+    let index = wiki_index(Ok(&ds), None, ipc::BossKeys::NONE, None, link);
     assert_eq!(index.pages.len(), 4);
 }
 
 #[test]
 fn the_embedded_index_counts_match_its_meta_and_stay_small() {
     let ds = Dataset::embedded().expect("embedded dataset");
-    let index = wiki_index(Ok(ds), None, None, link);
+    let index = wiki_index(Ok(ds), None, ipc::BossKeys::NONE, None, link);
     let counts = &ds.meta.counts;
     // Every kind the dataset counts, and the sum is the point: this test could have caught
     // B46 the day the transformations entered the dataset, and did not, because the sum
@@ -136,7 +136,7 @@ fn a_transformation_is_a_page_of_the_index() {
         ),
     );
     ds.meta.counts.transformations = 1;
-    let index: WikiIndex = wiki_index(Ok(&ds), None, None, link);
+    let index: WikiIndex = wiki_index(Ok(&ds), None, ipc::BossKeys::NONE, None, link);
     let page = index
         .pages
         .iter()

@@ -353,6 +353,7 @@ use catalog::{AchievementId, BossId, Catalog, ChallengeId, CharacterId, ItemId, 
 
 use crate::catalog_view::{item_kind, kind_view, ItemKindView};
 use crate::icon::IconRef;
+use crate::target_sprite::BossKeys;
 use crate::wiki_target::{self, page_of};
 
 /// How to get an achievement, in one line. The game's `unlock_condition` first — it is the
@@ -395,6 +396,7 @@ fn condition_of(a: &catalog::Achievement, dataset: Option<&Dataset>) -> Option<S
 /// `Requirement::None` never reaches here — it was judged as gating nothing.
 fn missing_view(
     c: &Catalog,
+    bosses: &BossKeys,
     dataset: Option<&Dataset>,
     node: &graph::build::Node,
     flags: &[bool],
@@ -459,7 +461,7 @@ fn missing_view(
                     out.push(RequirementView::Boss {
                         id: id.0,
                         name: b.name.clone(),
-                        page: wiki_target::boss(c, b).and_then(|t| page_of(dataset, t)),
+                        page: wiki_target::boss(bosses, b).and_then(|t| page_of(dataset, t)),
                     });
                 }
             }
@@ -545,8 +547,14 @@ fn missing_view(
 /// `graph` and `eval` travel together or not at all: without a catalog there is no graph,
 /// and a node then carries `Partial` with one unknown — never `Computed`, which would read
 /// as "nothing is in the way".
+///
+/// Eight parameters, one past `clippy::too_many_arguments`: the eighth is the catalog's boss
+/// keys (card #82, S3). Gathering them into an inputs struct, as `QueueInputs` does, is the
+/// restructuring of this module that card #82 leaves to its own item.
+#[allow(clippy::too_many_arguments)]
 pub fn unlock_view(
     catalog: Option<&Catalog>,
+    bosses: &BossKeys,
     dataset: Option<&Dataset>,
     flags: Option<&[bool]>,
     graph: Option<&graph::build::Graph>,
@@ -567,7 +575,7 @@ pub fn unlock_view(
                 let unlocks: Vec<UnlockTarget> = c
                     .unlocks(a.id)
                     .iter()
-                    .map(|u| target_of(c, u, dataset, &mut icon))
+                    .map(|u| target_of(c, bosses, u, dataset, &mut icon))
                     .collect();
                 let origin = first_item_origin(c, c.unlocks(a.id));
                 (
@@ -619,7 +627,7 @@ pub fn unlock_view(
             },
         };
         let missing = match (catalog, graph.and_then(|g| g.node(AchievementId(slot)))) {
-            (Some(c), Some(n)) => missing_view(c, dataset, n, read, progress),
+            (Some(c), Some(n)) => missing_view(c, bosses, dataset, n, read, progress),
             _ => Vec::new(),
         };
         nodes.push(UnlockNode {
@@ -678,6 +686,7 @@ pub fn unlock_view(
 /// key: this is the one place that decides whether a goal resolves.
 pub fn resolve_target(
     c: &Catalog,
+    bosses: &BossKeys,
     key: &TargetKey,
     dataset: Option<&Dataset>,
     icon: &mut impl FnMut(&IconRef) -> Option<String>,
@@ -704,7 +713,7 @@ pub fn resolve_target(
             resolved.name = b.name.clone();
             // A row `boss_keys` leaves without a key names no page: `None`, never a guessed
             // variant (`wiki_target::boss`).
-            resolved.page = wiki_target::boss(c, b).and_then(|t| page_of(dataset, t));
+            resolved.page = wiki_target::boss(bosses, b).and_then(|t| page_of(dataset, t));
         }
         TargetKey::Challenge { id } => {
             let ch = c.challenge(ChallengeId(id))?;
@@ -721,12 +730,13 @@ pub fn resolve_target(
 /// always there; if one day it weren't, the row stays nameless instead of vanishing.
 pub fn target_of(
     c: &Catalog,
+    bosses: &BossKeys,
     u: &Unlock,
     dataset: Option<&Dataset>,
     icon: &mut impl FnMut(&IconRef) -> Option<String>,
 ) -> UnlockTarget {
     let key = key_of(u);
-    resolve_target(c, &key, dataset, icon)
+    resolve_target(c, bosses, &key, dataset, icon)
         .unwrap_or_else(|| key.view(crate::goals::Resolved::default()))
 }
 
@@ -893,6 +903,7 @@ pub fn next_steps(view: &UnlockView, queued: &BTreeSet<u32>) -> NextSteps {
 /// explains the least.
 pub fn plan_view(
     catalog: Option<&Catalog>,
+    bosses: &BossKeys,
     dataset: Option<&Dataset>,
     goals: Vec<Goal>,
     unreadable: Vec<GoalId>,
@@ -904,7 +915,8 @@ pub fn plan_view(
     let goals: Vec<GoalView> = goals
         .into_iter()
         .map(|g| {
-            let target = catalog.and_then(|c| resolve_target(c, &g.target, dataset, &mut icon));
+            let target =
+                catalog.and_then(|c| resolve_target(c, bosses, &g.target, dataset, &mut icon));
             // Without a catalog nothing resolves, and `NoCatalog` already says so:
             // flagging every goal would just repeat the same news one row at a time.
             if target.is_none() && catalog.is_some() {

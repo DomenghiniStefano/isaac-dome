@@ -54,6 +54,7 @@ fn setup(name: &str) -> Option<(Catalog, graph::build::Graph, Vec<bool>, UnlockV
     let e = g.evaluate(&progress);
     let view = ipc::unlock_view(
         Some(&c),
+        &ipc::for_tests::bosses(&c),
         wiki::Dataset::embedded().ok(),
         Some(&flags),
         Some(&g),
@@ -135,7 +136,15 @@ fn a_wants_chain_is_what_the_queue_would_hold() {
         // the achievement names the same node.
         Some(ipc::UnlockTarget::Boss { .. }) | None => wiki::Target::Achievement { id },
     };
-    let w = ipc::want_view(Some(&c), &view, Some(&flags), Some(&g), &target, |_| None);
+    let w = ipc::want_view(
+        Some(&c),
+        &ipc::for_tests::bosses(&c),
+        &view,
+        Some(&flags),
+        Some(&g),
+        &target,
+        |_| None,
+    );
     let route = w
         .routes
         .iter()

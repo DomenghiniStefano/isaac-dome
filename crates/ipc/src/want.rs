@@ -10,6 +10,7 @@ use wiki::Target;
 
 use crate::graph::{AchievementRef, UnlockNode, UnlockTarget, UnlockView};
 use crate::icon::IconRef;
+use crate::target_sprite::BossKeys;
 
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, ts_rs::TS)]
 #[serde(rename_all = "camelCase")]
@@ -82,6 +83,7 @@ pub enum WantDiagnostic {
 
 pub fn want_view(
     catalog: Option<&Catalog>,
+    bosses: &BossKeys,
     view: &UnlockView,
     flags: Option<&[bool]>,
     g: Option<&graph::build::Graph>,
@@ -120,11 +122,11 @@ pub fn want_view(
         | Target::Stage { .. }
         | Target::Room { .. }
         | Target::Concept { .. } => {
-            let Some(key) = key_of(c, target) else {
+            let Some(key) = key_of(c, bosses, target) else {
                 return unresolved(WantDiagnostic::NothingUnlocks);
             };
             let ids = crate::queue::achievements_unlocking(c, &key);
-            match crate::graph::resolve_target(c, &key, None, &mut icon) {
+            match crate::graph::resolve_target(c, bosses, &key, None, &mut icon) {
                 Some(t) if !ids.is_empty() => (WantedView::Target { target: t }, ids),
                 _ => return unresolved(WantDiagnostic::NothingUnlocks),
             }
@@ -231,7 +233,7 @@ fn node_of(view: &UnlockView, achievement: u32) -> Option<&UnlockNode> {
 /// The name you typed, as the key the catalog indexes unlocks by. The conversion lives here
 /// and not on the frontend: an item's kind and a boss's entity triple are things only the
 /// catalog knows, and a key assembled from a page identity would be a second mapping.
-fn key_of(c: &Catalog, t: &Target) -> Option<crate::goals::TargetKey> {
+fn key_of(c: &Catalog, bosses: &BossKeys, t: &Target) -> Option<crate::goals::TargetKey> {
     use crate::catalog_view::{kind_view, ItemKindView};
     use crate::goals::TargetKey;
     use catalog::{ChallengeId, CharacterId, ItemId, ItemKind};
@@ -256,7 +258,7 @@ fn key_of(c: &Catalog, t: &Target) -> Option<crate::goals::TargetKey> {
         // directions, so a row and its page can never disagree about which is which.
         Target::Entity { .. } => c
             .bosses()
-            .find(|b| crate::wiki_target::boss(c, b).as_ref() == Some(t))
+            .find(|b| crate::wiki_target::boss(bosses, b).as_ref() == Some(t))
             .map(|b| TargetKey::Boss { id: b.id.0 }),
         Target::Achievement { .. }
         | Target::Transformation { .. }

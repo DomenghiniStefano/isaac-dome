@@ -23,6 +23,8 @@ fn inputs<'a>(
 ) -> QueueInputs<'a> {
     QueueInputs {
         catalog,
+        // The fixture has no bosses, so no key is lost by settling none.
+        bosses: ipc::BossKeys::NONE,
         dataset: None,
         flags,
         graph: None,
