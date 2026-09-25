@@ -224,10 +224,11 @@ fn every_achievement_in_the_catalog_is_a_node_even_with_no_requirements() {
 
 #[test]
 fn a_node_is_never_its_own_prerequisite() {
-    // Real case, 17 of them on the live catalog (the Tainted block, 474-489): the
-    // achievement that unlocks Tainted Isaac lists Tainted Isaac among its requirements.
-    // That is not a cycle to declare, it is an edge with no meaning — and left in, it
-    // poisons every node downstream with "not knowable".
+    // Real case, 2 of them on the live catalog (82 and 390): the achievement that unlocks
+    // The Lost names The Lost among its requirements. That is not a cycle to declare, it is
+    // an edge with no meaning — and left in, it poisons every node downstream with "not
+    // knowable". There were 17 until 2026-09-26, the Tainted block 474-489 among them, and
+    // those 15 were not real: "Isaac" resolved by name to Tainted Isaac (card #82, F1).
     let c = Catalog::build(|p| match p {
         "players.xml" => Some(
             br#"<players root="gfx/" portraitroot="gfx/ui/stage/">

@@ -53,8 +53,8 @@ export const facetOptions = <Row, Facet extends string>(
 // It is the same count as a dropdown's and for the same reason: the row sits in the same bar,
 // and two kinds of number side by side read as a mistake. So it says what the *rest* of the
 // filter leaves, and never counts its own picks — a row where picking one value zeroed the
-// others could never be used to pick a second one. Until 2026-09-17 each screen counted every
-// row instead, which made the row sum to more than the list under it.
+// others could never be used to pick a second one, and counting every row instead makes the
+// row sum to more than the list under it.
 export const stateRowCounts = <Row, Facet extends string>(
   faceting: Faceting<Row, Facet>,
   rows: Row[],

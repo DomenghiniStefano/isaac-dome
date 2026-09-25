@@ -53,10 +53,25 @@ fn no_verdict_names_a_target_that_no_longer_exists() {
 }
 
 #[test]
-fn the_alias_that_carries_fifteen_refs_is_there() {
-    // The wiki writes "Jacob and Esau", the game writes "Jacob & Esau": 15 refs hang on
-    // this one line, measured on 2026-09-07 against snapshot 2026-09-04T17:33:31Z.
-    assert_eq!(rules().alias("Jacob and Esau"), "Jacob & Esau");
+fn no_alias_restates_what_the_name_key_already_matches() {
+    // Names are compared by `wiki::key`, which reads `&` as `and` and collapses whitespace:
+    // an alias whose two sides share a key is dead weight that reads as a needed bridge.
+    // "Jacob and Esau" -> "Jacob & Esau" was one, carrying fifteen refs, until card #82 (F4)
+    // gave the graph the wiki's key. An empty table holds this trivially, and that is fine:
+    // the check is on what a person adds, not on a series.
+    let dir = Path::new(env!("CARGO_MANIFEST_DIR")).join("rules");
+    let c: Corrections =
+        serde_json::from_str(&std::fs::read_to_string(dir.join("corrections.json")).expect("read"))
+            .expect("corrections.json parses");
+    let dead: Vec<(&String, &String)> = c
+        .aliases
+        .iter()
+        .filter(|(from, to)| wiki::key(from) == wiki::key(to))
+        .collect();
+    assert!(
+        dead.is_empty(),
+        "aliases the name key already covers: {dead:?}"
+    );
 }
 
 // --- the five targets the profile answers (spec 2026-09-12, §4.2) ---------------------

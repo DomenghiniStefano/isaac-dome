@@ -253,3 +253,39 @@ fn the_four_transformation_nodes_are_answered_and_not_uninterpreted() {
          threshold: {thresholds} did"
     );
 }
+
+/// Every character reference whose wiki id the catalog has resolves to **that** id. The wiki
+/// numbers characters the way `players.xml` does, and the name cannot stand in for it: base
+/// and Tainted forms share one. Measured 2026-09-26 before the fix: 255 of the 396 character
+/// references resolved to the Tainted form, each drawing its edge to the Tainted unlock
+/// (474-489) instead of the base one (card #82, review F1).
+#[test]
+fn a_character_reference_resolves_to_the_character_its_wiki_id_names() {
+    let Some((c, g)) = support::real_graph() else {
+        return;
+    };
+    let rules = support::embedded_rules();
+    let mut checked = 0;
+    for n in g.nodes() {
+        for (r, req) in rules.refs(n.achievement).iter().zip(&n.requirements) {
+            let wiki::Target::Character { id } = &r.target else {
+                continue;
+            };
+            let Some(expected) = c.character(catalog::CharacterId(*id)) else {
+                continue;
+            };
+            checked += 1;
+            assert_eq!(
+                req,
+                &graph::model::Requirement::Character { id: expected.id },
+                "node {}: \"{}\" is wiki character {id}",
+                n.achievement,
+                r.label
+            );
+        }
+    }
+    assert!(
+        checked > 0,
+        "no character reference the catalog has an id for"
+    );
+}

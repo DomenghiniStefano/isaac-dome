@@ -8,9 +8,9 @@ interface Creating {
 }
 
 /**
- * Settles when Tauri has made the window, or said it could not (card #80, R8). Waiting on
- * `tauri://created` alone is waiting for ever on a window that failed: whoever awaited it —
- * a drag, a tear-off — hangs with it.
+ * Settles when Tauri has made the window, or said it could not. Waiting on `tauri://created`
+ * alone is waiting for ever on a window that failed: whoever awaited it — a drag, a tear-off —
+ * hangs with it.
  */
 export const windowCreated = (w: Creating): Promise<void> =>
   new Promise<void>((resolve, reject) => {

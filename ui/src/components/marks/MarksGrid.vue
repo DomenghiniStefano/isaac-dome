@@ -88,8 +88,8 @@ const cellState = (cell: Cell, column: number): string => {
 const barTone = (tally: Tally): ProgressTone =>
   tally.complete ? ProgressTone.Done : ProgressTone.Primary
 
-// The boss header is a strip of its own, outside the box that scrolls sideways (card #85), so
-// it follows that box's horizontal position instead of scrolling with it.
+// The boss header is a strip of its own, outside the box that scrolls sideways, so it follows
+// that box's horizontal position instead of scrolling with it.
 const head = useTemplateRef('head')
 const followRows = (event: Event) => {
   if (head.value && event.target instanceof HTMLElement)
@@ -101,7 +101,7 @@ const followRows = (event: Event) => {
   <!-- Schermate.dc.html, "Matrice dei marchi": the name column, one cell per boss, the row's
        levels over readable, then each boss's in the footer.
        **The page scrolls vertically, the rows scroll sideways, and the header is a strip of
-       its own between the two** (card #85). The header has to pin to the top of the
+       its own between the two.** The header has to pin to the top of the
        *screen*, and a `sticky top-0` holds on to the nearest scroll container. In CSS an
        axis that is not `visible` makes the other one `auto` too, so the rows' sideways box is
        also a vertical scroll container with no height, and a header inside it would have
@@ -127,9 +127,9 @@ const followRows = (event: Event) => {
           class="sticky left-0 z-raised-corner flex items-end self-stretch justify-self-stretch bg-card pl-3 text-label text-subtle-foreground"
           >{{ t('completion.grid.character') }}</span
         >
-        <!-- The boss is its symbol, and its name is the tooltip (card #85): written vertically
-             above the symbols, the names cost the pinned header 118px of a screen whose subject
-             is the rows under it. -->
+        <!-- The boss is its symbol, and its name is the tooltip: written vertically above the
+             symbols, the names cost the pinned header 118px of a screen whose subject is the
+             rows under it. -->
         <Tooltip v-for="(boss, b) in matrix.bosses" :key="boss">
           <TooltipTrigger as-child>
             <div tabindex="0" :aria-label="boss" class="flex">

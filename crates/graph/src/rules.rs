@@ -246,8 +246,9 @@ impl Rules {
         })
     }
 
-    /// The label the catalog is searched by. The wiki writes "Jacob and Esau", the game
-    /// writes "Jacob & Esau": one alias carries fifteen refs.
+    /// The label the catalog is searched by. Only for a name the comparison key cannot bridge:
+    /// "Jacob and Esau" against the game's "Jacob & Esau" needs none, since `wiki::key` reads
+    /// `&` as `and` (card #82, F4), and the table is empty today.
     pub fn alias<'a>(&'a self, label: &'a str) -> &'a str {
         self.corrections
             .aliases

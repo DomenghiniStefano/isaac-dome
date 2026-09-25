@@ -92,8 +92,8 @@ export const setAutostartAnswer = (on: boolean): AutostartView => {
   return autostartAnswer()
 }
 
-// The auto-update switch, which the fixture carried and nothing could write (card #80,
-// item 10).
+// The auto-update switch: unlike autostart, always takes the write — there is no registry to
+// refuse it.
 export const setAutoUpdateAnswer = (on: boolean): Settings => {
   autoUpdate = on
   return settingsAnswer()

@@ -28,11 +28,11 @@ const kpis = computed(() =>
   <!-- The gutter is the children's, so the band can be the full width of the page without
        overflowing it — the same shape as the wiki's screens, and `WikiLanding.vue` records
        what doing it the other way round cost.
-       **The screen flows and scrolls, the matrix does not scroll on its own** (card #85). It
-       used to be the other way round (card #58): the band stayed and the matrix scrolled in
-       the height left under it, which on a small window was three rows under a band that
-       never moved. Now the band, the card's title and the legend scroll away with the page,
-       and the boss header is the one thing that stays, pinned to the top of the screen. -->
+       **The screen flows and scrolls, the matrix does not scroll on its own.** The band
+       staying fixed while the matrix scrolled in the height left under it would leave three
+       rows visible under a band that never moved, on a small window. So the band, the card's
+       title and the legend scroll away with the page, and the boss header is the one thing
+       that stays, pinned to the top of the screen. -->
   <div v-scroll-memory="'page'" class="flex h-full flex-col overflow-y-auto">
     <div v-if="completion.status === LoadStatus.Failed" class="px-5.5 pt-5">
       <ProfileError :error="completion.error" @retry="completion.load()" />
