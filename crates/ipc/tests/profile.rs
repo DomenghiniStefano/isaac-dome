@@ -501,7 +501,6 @@ fn setup_state_with_two_candidates_needs_a_choice_and_hides_library_paths() {
     };
     let game = GameInstall {
         dir: PathBuf::from("c:/program files (x86)/steam/steamapps/common/the binding of isaac"),
-        library: PathBuf::from("c:/program files (x86)/steam/steamapps"),
         manifest: PathBuf::from("c:/program files (x86)/steam/steamapps/appmanifest_250900.acf"),
         edition: Some(Edition::RepentancePlus),
         dlcs: vec![Dlc::Repentance, Dlc::RepentancePlus],
@@ -654,7 +653,6 @@ fn setup_state_hides_the_username_in_the_steam_and_game_hints() {
     };
     let game = GameInstall {
         dir: PathBuf::from("c:/users/carol/steam/steamapps/common/the binding of isaac"),
-        library: PathBuf::from("c:/users/carol/steam/steamapps"),
         manifest: PathBuf::from("c:/users/carol/steam/steamapps/appmanifest_250900.acf"),
         edition: Some(Edition::RepentancePlus),
         dlcs: vec![Dlc::RepentancePlus],
@@ -814,7 +812,6 @@ fn a_folder_you_pointed_at_that_holds_no_save_is_a_different_sentence() {
         }),
         game: Some(GameInstall {
             dir: PathBuf::from("c:/steam/game"),
-            library: PathBuf::from("c:/steam"),
             manifest: PathBuf::from("c:/steam/appmanifest_250900.acf"),
             edition: Some(Edition::Repentance),
             dlcs: vec![],
@@ -839,7 +836,6 @@ fn an_icon(r: &IconRef) -> Option<String> {
 fn a_game() -> GameInstall {
     GameInstall {
         dir: PathBuf::from("c:/steam/game"),
-        library: PathBuf::from("c:/steam"),
         manifest: PathBuf::from("c:/steam/appmanifest_250900.acf"),
         edition: Some(Edition::Repentance),
         dlcs: vec![],

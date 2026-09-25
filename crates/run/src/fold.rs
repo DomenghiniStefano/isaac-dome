@@ -230,7 +230,7 @@ impl Fold {
 ///
 /// A run that already knows its character, off the online table, is over as far as a new
 /// player line is concerned: on a solo launch the next run's line arrives before its seed,
-/// while the fold still holds the last run (card #80, P1). Online the line repeats for every
+/// while the fold still holds the last run. Online the line repeats for every
 /// player at the table, and those stay the run's to ignore.
 fn next_runs_player(run: &Run, event: &Event) -> Option<u32> {
     let Event::PlayerInitialized { subtype, .. } = event else {
@@ -257,29 +257,13 @@ fn apply(run: &mut Run, event: Event, kinds: &dyn ItemKinds, starting: &mut bool
         // to it is dropped rather than made into one: a read begins wherever the last one
         // stopped, so a pass whose `Level::Init` was taken by an earlier read is the ordinary
         // case, and inventing a floor for it would put a stage nobody played in the archive.
-        Event::RoomsGenerated { rooms, loops } => {
-            if let Some(floor) = run.floors.last_mut() {
-                let said = std::mem::replace(&mut floor.generated, Generated::NotSaid);
-                floor.generated = with_pass(said, Pass { rooms, loops });
-            }
-        }
+        Event::RoomsGenerated { rooms, loops } => add_pass(run, Pass { rooms, loops }),
         // Kept for the rules to be complete; nothing is read from it yet.
         Event::RoomEntered { .. } => {}
         Event::RoomTransition => *starting = false,
         Event::ItemAdded { id, character, .. } => {
-            if run.character.is_none() {
-                run.character = Some(character);
-            }
-            if *starting {
-                run.starting_items.push(id);
-            } else {
-                run.collected.push(id);
-            }
-            match kinds.kind_of(id) {
-                ItemKind::Passive => run.passives.push(id),
-                ItemKind::Familiar => run.familiars.push(id),
-                ItemKind::Active => run.held_active = Some(id),
-            }
+            run.character.get_or_insert(character);
+            add_item(run, id, kinds.kind_of(id), *starting);
         }
         Event::Died { killer, .. } => run.outcome = Outcome::Died { killer },
         Event::Ended { name, .. } => run.outcome = Outcome::Won { ending: name },
@@ -292,6 +276,29 @@ fn apply(run: &mut Run, event: Event, kinds: &dyn ItemKinds, starting: &mut bool
         Event::PlayerInitialized { subtype, .. } => {
             run.character_id.get_or_insert(subtype);
         }
+    }
+}
+
+/// One more generation pass, under the floor the game last announced.
+fn add_pass(run: &mut Run, pass: Pass) {
+    if let Some(floor) = run.floors.last_mut() {
+        let said = std::mem::replace(&mut floor.generated, Generated::NotSaid);
+        floor.generated = with_pass(said, pass);
+    }
+}
+
+/// An item picked up: among the starting items until the first room transition, collected
+/// after it, and filed by its kind — an active replaces the one held.
+fn add_item(run: &mut Run, id: u32, kind: ItemKind, starting: bool) {
+    if starting {
+        run.starting_items.push(id);
+    } else {
+        run.collected.push(id);
+    }
+    match kind {
+        ItemKind::Passive => run.passives.push(id),
+        ItemKind::Familiar => run.familiars.push(id),
+        ItemKind::Active => run.held_active = Some(id),
     }
 }
 

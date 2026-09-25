@@ -64,17 +64,16 @@ impl std::error::Error for RawError {}
 /// A page's file name: spaces → `_`, characters forbidden on Windows or ambiguous in a
 /// path (`? : * " < > | / \ %`) → `%XX`. Reversible and stable across systems.
 pub fn page_file_name(title: &str) -> String {
-    let mut out = String::with_capacity(title.len());
-    for c in title.chars() {
-        match c {
-            ' ' => out.push('_'),
-            '?' | ':' | '*' | '"' | '<' | '>' | '|' | '/' | '\\' | '%' => {
-                out.push_str(&format!("%{:02X}", c as u32));
-            }
-            _ => out.push(c),
-        }
+    title.chars().map(file_name_char).collect()
+}
+
+/// One character of a title as a file name spells it.
+fn file_name_char(c: char) -> String {
+    match c {
+        ' ' => "_".to_string(),
+        '?' | ':' | '*' | '"' | '<' | '>' | '|' | '/' | '\\' | '%' => format!("%{:02X}", c as u32),
+        _ => c.to_string(),
     }
-    out
 }
 
 /// Reads a text file; `Missing` if it doesn't exist, `Unreadable` for every other error.
