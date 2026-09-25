@@ -124,7 +124,7 @@ pub struct ThresholdItemView {
 /// The twelve columns, as a value on the wire: the layout's own enum, which serializes as a
 /// bare camelCase string and is declared to TypeScript under this name (card #82, S1). The
 /// graph's `MarkColumn` is the same type, so a requirement's column crosses as it is.
-pub use core_save::marks::Column as MarkColumnView;
+pub use core_save::Column as MarkColumnView;
 
 /// A level inside a cell, named for its bit. `Second` is Ultra Greedier in the Greed
 /// column, measured; what it means elsewhere is not, and `hard` would ship that claim.

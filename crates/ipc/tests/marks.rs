@@ -1,5 +1,5 @@
 use catalog::Catalog;
-use core_save::marks::{cell_index, Column};
+use core_save::{cell_index, Column};
 use ipc::{
     counter_index, marks_matrix, Cell, CellLevel, CharacterGroup, IconRef, MarkArtView,
     SecondLevelView, BOSSES, ROSTER,

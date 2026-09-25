@@ -18,7 +18,7 @@ use std::io::Write;
 use std::path::PathBuf;
 use std::time::{Duration, Instant};
 
-use core_save::marks::{cell_index, CharacterGroup, Column};
+use core_save::{cell_index, CharacterGroup, Column};
 use core_save::{diff, Kind, Save};
 
 /// Cheap content fingerprint. Not a checksum of the format — just "did these bytes move".
@@ -177,7 +177,7 @@ fn main() {
 //
 // Only so the live stream reads as actions instead of indices. The tallies are ported from
 // `reference/isaac_counters.py`; the marks are read off the layout itself
-// (`core_save::marks::cell_index`) and named by `ipc`'s roster and headers, so a cell located
+// (`core_save::cell_index`) and named by `ipc`'s roster and headers, so a cell located
 // after this probe was written is named here too. A mark in one of the 19-cell blocks is
 // prefixed `~`: those bases were derived from the regular pattern and corroborated, not
 // documented, and a guess must never look like a fact.

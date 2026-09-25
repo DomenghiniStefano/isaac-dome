@@ -12,7 +12,7 @@ use catalog::{Anm2Frame, SpriteRef};
 
 use crate::icon::{MarkFill, MarkTier};
 use crate::marks::BOSSES;
-use core_save::marks::Column;
+use core_save::Column;
 
 pub const WIDGET_ANM2: &str = "gfx/ui/completion_widget.anm2";
 pub const LOBBY_ANM2: &str = "gfx/ui/main menu/onlinelobby.anm2";

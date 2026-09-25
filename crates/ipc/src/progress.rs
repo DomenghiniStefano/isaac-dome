@@ -12,7 +12,7 @@
 use std::collections::BTreeMap;
 
 use catalog::{Catalog, CharacterId};
-use core_save::marks::{counter_index_of, CounterKey};
+use core_save::{counter_index_of, CounterKey};
 use graph::rules::{CounterName, MarkColumn, MarkLevel};
 
 use crate::marks::{cell_at, character_for, Cell, CellLevel, ROSTER};

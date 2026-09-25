@@ -174,7 +174,7 @@ pub fn render() -> String {
     decl::<crate::SetupDiagnostic>(&cfg, &mut out);
     decl::<crate::CellLevel>(&cfg, &mut out);
     decl::<crate::Cell>(&cfg, &mut out);
-    decl::<core_save::marks::CharacterGroup>(&cfg, &mut out);
+    decl::<core_save::CharacterGroup>(&cfg, &mut out);
     decl::<crate::CharacterRow>(&cfg, &mut out);
     decl::<crate::MarkArtView>(&cfg, &mut out);
     decl::<crate::SecondLevelView>(&cfg, &mut out);

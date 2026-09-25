@@ -1,4 +1,4 @@
-use core_save::marks::{group_of, Column, ROWS};
+use core_save::{group_of, Column, ROWS};
 use serde::Serialize;
 
 /// The English name the matrix header draws for a column, and the one a tally is labelled
@@ -40,7 +40,7 @@ pub const BOSSES: [&str; Column::ALL.len()] = {
 
 /// Which block family a row belongs to. Defined with the layout, because that is what it
 /// describes; re-exported here because it crosses the IPC as part of a `CharacterRow`.
-pub use core_save::marks::CharacterGroup;
+pub use core_save::CharacterGroup;
 
 /// One row of the completion matrix: who the layout's row is, and how the catalog names it.
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
@@ -161,7 +161,7 @@ pub fn character_for(row: usize, catalog: &catalog::Catalog) -> Option<&catalog:
 /// save file, and this module draws a screen. What stays here is the translation from the
 /// screen's parallel arrays to the layout's typed column.
 pub fn counter_index(character: usize, boss: usize) -> Option<usize> {
-    core_save::marks::cell_index(character, *core_save::marks::Column::ALL.get(boss)?)
+    core_save::cell_index(character, *core_save::Column::ALL.get(boss)?)
 }
 
 /// The level a cell's mark reached. Fieldless, so it crosses as a bare camelCase string

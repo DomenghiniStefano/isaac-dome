@@ -130,7 +130,7 @@ pub enum Verdict {
 /// enum, not a copy of it (card #82, S1). A rules file spells a column the way the layout
 /// serializes it (`"momsHeart"`), and nothing more of `core-save` is read from here — the
 /// index a cell sits at stays the business of whoever answers `Profile::mark`.
-pub use core_save::marks::Column as MarkColumn;
+pub use core_save::Column as MarkColumn;
 
 /// A level within a cell, **named for the bit and not for a meaning**. Bit 0 is `Base`,
 /// bit 1 is `Second`.

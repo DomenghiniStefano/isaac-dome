@@ -13,7 +13,7 @@
 //! that mask ever names two characters — and the reason `marks_real.rs` skips those
 //! windows when it pins the bases by identity.
 
-use core_save::marks::{cell_index, Column};
+use core_save::{cell_index, Column};
 use core_save::{Kind, Save};
 
 /// Index 188, `CHARACTER_LAST_RUN_WIN`: which characters won the most recent run.

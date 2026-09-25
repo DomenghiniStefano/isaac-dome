@@ -10,7 +10,7 @@
 
 use std::collections::BTreeMap;
 
-use core_save::marks::{cell_index, counter_index_of, Column, CounterKey};
+use core_save::{cell_index, counter_index_of, Column, CounterKey};
 use core_save::{Kind, Save};
 
 const TALLIES: [CounterKey; 4] = [

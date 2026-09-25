@@ -218,7 +218,7 @@ flowchart TD
 `discovery`, `core-save` and `unpack`: it reads their *types* and shapes them, it opens nothing.
 That distinction is what lets `ipc` be a crate whose return values are all worth checking.
 `graph` depends on `core-save` for one type, the twelve columns of the completion matrix
-(`core_save::marks::Column`, card #82): its rules name a column with the layout's own enum
+(`core_save::Column`, card #82): its rules name a column with the layout's own enum
 rather than a copy joined to it by hand, and where a cell sits in the file stays `ipc`'s to ask.
 
 **`app` depends on twelve crates, and only three edges are drawn.** `ipc`, `store` and

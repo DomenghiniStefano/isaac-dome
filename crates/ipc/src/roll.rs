@@ -14,7 +14,7 @@ use crate::icon::{IconRef, MarkTier};
 use crate::marks::{cell_at, character_for, BOSSES, ROSTER};
 use crate::StoreReason;
 use catalog::Catalog;
-use core_save::marks::Column;
+use core_save::Column;
 use serde::{Deserialize, Serialize};
 
 /// One target as the card names it: a mark names its column, a Greedier says so it is one —
