@@ -152,37 +152,42 @@ fn preamble(text: &str, r: &Resolver, d: &mut Diagnostics) -> Vec<Inline> {
 /// each their own span — so a `{{dlc|…}}` marker ends with its line — and the `*` is gone;
 /// then everything is joined by one space, because a summary is drawn as a single line.
 fn one_line(blocks: Vec<Block>) -> Vec<Inline> {
-    fn walk(blocks: Vec<Block>, out: &mut Vec<Inline>) {
-        for block in blocks {
-            match block {
-                Block::Paragraph { inline } | Block::Heading { inline, .. } => piece(inline, out),
-                Block::List { items, .. } => {
-                    for item in items {
-                        piece(item.inline, out);
-                        walk(item.children, out);
-                    }
-                }
-                // A table is not a sentence: nothing in a summary reads one out.
-                Block::Table { .. } => {}
-            }
-        }
-    }
-    fn piece(inline: Vec<Inline>, out: &mut Vec<Inline>) {
-        out.push(Inline::Text {
-            text: " ".to_string(),
-            style: Style::Plain,
-        });
-        out.extend(inline);
-    }
-    let mut out = Vec::new();
-    walk(blocks, &mut out);
-    let mut space = true;
-    squeeze(&mut out, &mut space);
+    let mut out: Vec<Inline> = lines(blocks)
+        .into_iter()
+        .flat_map(|line| std::iter::once(plain_space()).chain(line))
+        .collect();
+    // Nothing comes before the first line, so the space in front of it goes too.
+    squeeze(&mut out, &mut true);
     if let Some(Inline::Text { text, .. }) = out.last_mut() {
         text.truncate(text.trim_end().len());
     }
     out.retain(|i| !matches!(i, Inline::Text { text, .. } if text.is_empty()));
     out
+}
+
+/// Every line of text in `blocks`, in reading order: a paragraph or a heading is one, a list
+/// is each item's own line followed by its children's.
+fn lines(blocks: Vec<Block>) -> Vec<Vec<Inline>> {
+    blocks.into_iter().flat_map(block_lines).collect()
+}
+
+fn block_lines(block: Block) -> Vec<Vec<Inline>> {
+    match block {
+        Block::Paragraph { inline } | Block::Heading { inline, .. } => vec![inline],
+        Block::List { items, .. } => items
+            .into_iter()
+            .flat_map(|item| std::iter::once(item.inline).chain(lines(item.children)))
+            .collect(),
+        // A table is not a sentence: nothing in a summary reads one out.
+        Block::Table { .. } => Vec::new(),
+    }
+}
+
+fn plain_space() -> Inline {
+    Inline::Text {
+        text: " ".to_string(),
+        style: Style::Plain,
+    }
 }
 
 /// Every run of whitespace becomes one space, across node boundaries and into editions, and
@@ -249,7 +254,7 @@ fn page_editions(text: &str) -> Editions {
 }
 
 /// The page's range from infoboxes already extracted: `parse_page` reads them once and hands
-/// the list here, rather than extracting them a second time (card #80, P6).
+/// the list here, rather than extracting them a second time.
 fn page_editions_of(infoboxes: &[RawInfobox]) -> Editions {
     infoboxes
         .first()
@@ -273,7 +278,7 @@ fn page_editions_of(infoboxes: &[RawInfobox]) -> Editions {
 /// **The entry's own fields only.** The sections and the preamble belong to the page and are
 /// shared by every entry on it, so they are narrowed once, where they are read
 /// (`narrow_sections`): narrowed here, on each entry's copy, one span was counted once per
-/// infobox (card #80, P6). The description may carry the preamble; narrowing it again changes
+/// infobox. The description may carry the preamble; narrowing it again changes
 /// nothing and counts nothing, because a narrowed span already fits the page.
 fn narrow_to_page(entry: &mut Entry, page: Editions, d: &mut Diagnostics) {
     if page.is_all() {
@@ -334,28 +339,29 @@ fn narrow_block(block: &mut Block, page: Editions, d: &mut Diagnostics) {
 /// An `Edition` whose range survives narrowing keeps it; one left with nothing is unwrapped
 /// into its parent, words and all, exactly as an unreadable code is.
 fn narrow_inline(inline: &mut Vec<Inline>, page: Editions, d: &mut Diagnostics) {
-    let mut out = Vec::with_capacity(inline.len());
-    for node in std::mem::take(inline) {
-        match node {
-            Inline::Edition { only, mut inline } => {
-                narrow_inline(&mut inline, page, d);
-                let narrowed = Editions::of(&only).intersect(page);
-                if narrowed.is_empty() {
-                    d.spans_outside_their_page += 1;
-                    out.extend(inline);
-                } else {
-                    out.push(Inline::Edition {
-                        only: narrowed.list(),
-                        inline,
-                    });
-                }
+    *inline = std::mem::take(inline)
+        .into_iter()
+        .flat_map(|node| narrow_node(node, page, d))
+        .collect();
+}
+
+/// One node narrowed: the nodes that take its place.
+fn narrow_node(node: Inline, page: Editions, d: &mut Diagnostics) -> Vec<Inline> {
+    match node {
+        Inline::Edition { only, mut inline } => {
+            narrow_inline(&mut inline, page, d);
+            let narrowed = Editions::of(&only).intersect(page);
+            if narrowed.is_empty() {
+                d.spans_outside_their_page += 1;
+                return inline;
             }
-            other @ (Inline::Text { .. } | Inline::Ref { .. } | Inline::Concept { .. }) => {
-                out.push(other)
-            }
+            vec![Inline::Edition {
+                only: narrowed.list(),
+                inline,
+            }]
         }
+        other @ (Inline::Text { .. } | Inline::Ref { .. } | Inline::Concept { .. }) => vec![other],
     }
-    *inline = out;
 }
 
 /// The page's kept sections, in the order they appear; ones with an unrecognized title
