@@ -24,19 +24,21 @@ export const characterValue = (character: { id: number }): string =>
 // into names.
 export const characterForms = (
   nodes: UnlockNode[],
-): Map<string, CharacterForm> => {
-  const forms = new Map<string, CharacterForm>()
-  for (const node of nodes) {
-    for (const requirement of node.missing) {
-      if (requirement.kind !== 'character') continue
-      forms.set(characterValue(requirement), {
-        name: requirement.name,
-        tainted: requirement.tainted,
-      })
-    }
-  }
-  return forms
-}
+): Map<string, CharacterForm> =>
+  new Map(
+    nodes.flatMap((node) =>
+      node.missing.flatMap((requirement) =>
+        requirement.kind === 'character'
+          ? [
+              [
+                characterValue(requirement),
+                { name: requirement.name, tainted: requirement.tainted },
+              ] as const,
+            ]
+          : [],
+      ),
+    ),
+  )
 
 // What a target is called on screen. Every kind but one is the game's own name; a character
 // needs its form as well, or the Tainted one reads as the base.

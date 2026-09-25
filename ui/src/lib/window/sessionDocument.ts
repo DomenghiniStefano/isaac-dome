@@ -1,6 +1,7 @@
 import { RouteName } from '@/router/routeTable'
 import type { TabLocation } from '@/router/routeTable'
 import type { Entry, EntryScroll, TabSeed } from '@/stores/tabModel'
+import { findLastIndex } from 'lodash-es'
 import { withOptional } from '@/lib/withOptional'
 
 // The document's version. It is bumped when an older app could read the new shape and be wrong
@@ -167,18 +168,18 @@ const readBox = (value: unknown): StoredBox | undefined => {
 const readTabs = (tabs: unknown, activeIndex: unknown): StoredWindow | null => {
   if (!Array.isArray(tabs)) return null
   const wanted = typeof activeIndex === 'number' ? activeIndex : 0
-  const kept: TabSeed[] = []
-  let active = 0
-  tabs.forEach((value, at) => {
+  const kept = tabs.flatMap((value, at) => {
     const tab = readTab(value)
-    if (!tab) return
-    // The active tab is the last kept one at or before where it was: if the tab that was
-    // active is the one that dropped, the selection lands on its neighbour rather than on the
-    // first tab.
-    if (at <= wanted) active = kept.length
-    kept.push(tab)
+    return tab ? [{ tab, at }] : []
   })
-  return kept.length === 0 ? null : { tabs: kept, activeIndex: active }
+  if (kept.length === 0) return null
+  // The active tab is the last kept one at or before where it was: if the tab that was active
+  // is the one that dropped, the selection lands on its neighbour rather than on the first tab.
+  const active = Math.max(
+    0,
+    findLastIndex(kept, ({ at }) => at <= wanted),
+  )
+  return { tabs: kept.map(({ tab }) => tab), activeIndex: active }
 }
 
 const readWindow = (value: unknown): StoredWindow | null => {
@@ -190,6 +191,16 @@ const readWindow = (value: unknown): StoredWindow | null => {
   return { ...read, ...withOptional('box', where) }
 }
 
+// Text that is not JSON reads as `null`, which the reader already refuses along with every other
+// value that is not an object: one refusal, not two.
+const parsedOrNull = (raw: string): unknown => {
+  try {
+    return JSON.parse(raw)
+  } catch {
+    return null
+  }
+}
+
 // What was stored, as far as it can be read: the windows, in the order they were written, `main`
 // first. `null` means "nothing usable", which the caller turns into one window on its landing
 // tab. A window whose every tab dropped is dropped **whole** rather than restored empty: an empty
@@ -197,12 +208,7 @@ const readWindow = (value: unknown): StoredWindow | null => {
 // they did not leave there.
 export const readSession = (raw: string | null): StoredSession | null => {
   if (raw === null) return null
-  let parsed: unknown
-  try {
-    parsed = JSON.parse(raw)
-  } catch {
-    return null
-  }
+  const parsed = parsedOrNull(raw)
   if (typeof parsed !== 'object' || parsed === null) return null
   const {
     version,
