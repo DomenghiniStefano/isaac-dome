@@ -61,7 +61,7 @@ pub use graph::{
     graph_views, next_steps, plan_view, resolve_target, target_of, unlock_view, AchievementRef,
     GoalView, GraphInfo, GraphViews, MarkColumnView, MarkLevelView, NextSteps, OriginView,
     PlanDiagnostic, PlanView, RequirementView, StepsBasis, StepsSection, ThresholdItemView,
-    UnlockDiagnostic, UnlockNode, UnlockTotals, UnlockView, STEPS,
+    UnlockDiagnostic, UnlockInputs, UnlockNode, UnlockTotals, UnlockView, STEPS,
 };
 pub use icon::{
     icon_source, unknown_source, IconRef, MarkFill, MarkTier, ICON_SCHEME, UNKNOWN_SPRITE,

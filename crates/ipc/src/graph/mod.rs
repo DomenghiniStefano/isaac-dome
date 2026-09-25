@@ -20,4 +20,4 @@ pub use types::{
     ThresholdItemView, UnlockDiagnostic, UnlockNode, UnlockTotals, UnlockView,
 };
 pub(crate) use unlock::origin_view;
-pub use unlock::unlock_view;
+pub use unlock::{unlock_view, UnlockInputs};

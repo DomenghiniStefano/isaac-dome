@@ -53,13 +53,15 @@ fn setup(name: &str) -> Option<(Catalog, graph::build::Graph, Vec<bool>, UnlockV
     let progress = ipc::SaveProgress::new(Some(&flags), Some(&counters), Some(&c));
     let e = g.evaluate(&progress);
     let view = ipc::unlock_view(
-        Some(&c),
-        &ipc::for_tests::bosses(&c),
-        wiki::Dataset::embedded().ok(),
-        Some(&flags),
-        Some(&g),
-        Some(&e),
-        Some(&progress),
+        ipc::UnlockInputs {
+            catalog: Some(&c),
+            bosses: &ipc::for_tests::bosses(&c),
+            dataset: wiki::Dataset::embedded().ok(),
+            flags: Some(&flags),
+            graph: Some(&g),
+            eval: Some(&e),
+            progress: Some(&progress),
+        },
         |_| None,
     );
     Some((c, g, flags, view))
