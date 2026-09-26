@@ -294,7 +294,7 @@ outside it.
 | Runs | `/tool/runs` | tool | `views` | `runs` |
 | Live | `/tool/live` | tool | `views` | `live` |
 | Floor | `/tool/floor` | tool | `floor` | `floor_candidates`, `room_icons` |
-| Wiki | `/wiki` | wiki | `wiki` | `wiki_entry`, `wiki_index` |
+| Wiki | `/wiki` | wiki | `wiki`, `views`, `queue` | `wiki_entry`, `wiki_index`, and `graph_views` when nobody has read the graph in this window |
 | Profile | `/settings/profile` | settings | `profile` | `setup_state`, `select_profile`, `save_summary`, `completion` |
 | Appearance | `/settings/appearance` | settings | `settings` | the six below |
 | Background | `/settings/background` | settings | `settings` | the six below |

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { vScrollMemory } from '@/directives/scrollMemory'
 import { InfoIcon } from '@lucide/vue'
-import { computed, watch } from 'vue'
+import { computed, onMounted, watch } from 'vue'
 import EmptyCategory from '@/components/data-state/EmptyCategory.vue'
 import ProfileBlock from '@/components/graph/ProfileBlock.vue'
 import { Button, ButtonVariant } from '@/components/ui/button'
@@ -17,6 +17,7 @@ import { achievementNode } from '@/lib/graph/achievementNode'
 import { nodeNumber } from '@/lib/graph/achievementNode'
 import { canQueue, isQueued } from '@/lib/plan/queueRows'
 import { categoryOf } from '@/lib/wiki/category'
+import { wikiReadsGraph } from '@/lib/wiki/graphRead'
 import { parsePageKey } from '@/lib/wiki/pageKey'
 import { RouteName } from '@/router/routeTable'
 import type { Target } from '@/lib/ipc/types'
@@ -78,16 +79,17 @@ const back = () => {
     tabs.navigate({ name: RouteName.Wiki, query: { category: category.value } })
 }
 
-// The profile's half of an achievement page (spec §3). This screen deliberately does **not**
-// load the graph: the wiki is reachable without a profile, and a wiki tab must not pull a
-// profile-shaped command. It reads what the progress screens have already put there, and
-// `achievementNode` answers `null` for every state where the block would lie.
+// The profile's half of a page: the block on an achievement's own page (spec §3) and the state
+// beside every achievement a list of names shows. Where there is a save it is shown in the wiki
+// too, so the page reads the graph when nobody has read it in this window (`wikiReadsGraph`);
+// without a profile the read fails and nothing is said, and `achievementNode` answers `null`
+// for every state where the page would lie.
+onMounted(() => {
+  if (wikiReadsGraph(graph.status)) void graph.load()
+})
 const node = computed(() =>
   achievementNode(graph.view?.unlock ?? null, target.value),
 )
-
-// The same reading for every achievement a page lists, so a list of names can say which ones
-// the profile has — under the same rule: nothing loaded, nothing said.
 const nodeFor = (other: Target) =>
   achievementNode(graph.view?.unlock ?? null, other)
 
