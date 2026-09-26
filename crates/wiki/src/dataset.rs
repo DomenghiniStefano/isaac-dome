@@ -3,6 +3,8 @@
 
 use std::collections::BTreeMap;
 use std::fmt;
+use std::io;
+use std::path::Path;
 use std::str::FromStr;
 #[cfg(feature = "embedded")]
 use std::sync::OnceLock;
@@ -115,8 +117,8 @@ struct HeadMeta {
     schema_version: u32,
 }
 
-/// A collection of `wiki.json`, parsed from the name the file gives it — which is how
-/// `corrections.json` names one, since that file is written against the JSON.
+/// A collection under `dataset/wiki/`, parsed from its file's name — which is how
+/// `corrections.json` names one, since that file is written against the dataset's keys.
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 enum Collection {
     Items,
@@ -145,6 +147,40 @@ impl FromStr for Collection {
     }
 }
 
+impl Collection {
+    /// Every collection, in the order [`Dataset::write_dir`] and [`Dataset::read_dir`] walk
+    /// them (`meta.json` comes first and separately, not through this list): the one place
+    /// that list is written down, so neither function nor `build.rs`'s generic merge has to
+    /// repeat it. A new collection still touches the usual per-field spots (the struct
+    /// field, `Counts`, `EntryKey`, `entries`/`entries_mut`, `insert_first`) plus this array
+    /// and the two matches below (`file_name`, `shelf`/`shelf_mut`) — the fields differ in
+    /// type, so those can't collapse into the array itself.
+    const ALL: [Collection; 7] = [
+        Collection::Items,
+        Collection::Trinkets,
+        Collection::Achievements,
+        Collection::Bosses,
+        Collection::Challenges,
+        Collection::Characters,
+        Collection::Transformations,
+    ];
+
+    /// The file this collection is written to under `dataset/wiki/`, without the `.json`
+    /// extension: the same name `FromStr` reads back, and `corrections.json` names its
+    /// collections by.
+    fn file_name(self) -> &'static str {
+        match self {
+            Collection::Items => "items",
+            Collection::Trinkets => "trinkets",
+            Collection::Achievements => "achievements",
+            Collection::Bosses => "bosses",
+            Collection::Challenges => "challenges",
+            Collection::Characters => "characters",
+            Collection::Transformations => "transformations",
+        }
+    }
+}
+
 type Numbered = BTreeMap<u32, Entry>;
 type Bosses = BTreeMap<String, Entry>;
 
@@ -157,6 +193,20 @@ enum Shelf<N, B> {
 
 #[cfg(feature = "embedded")]
 static EMBEDDED: OnceLock<Result<Dataset, DatasetError>> = OnceLock::new();
+
+/// The deflated blob `build.rs` writes: `dataset/wiki/`'s files, merged into one compact
+/// JSON object and compressed. Named once, so [`Dataset::inflate_embedded`] and
+/// [`embedded_len`] read the same bytes instead of embedding them twice.
+#[cfg(feature = "embedded")]
+const EMBEDDED_DEFLATE: &[u8] = include_bytes!(concat!(env!("OUT_DIR"), "/wiki.json.deflate"));
+
+/// The size of the embedded deflate, in bytes: what the package ships. Test-only — a
+/// production build has no reason to ask — so the ceiling test in `tests/embedded_size.rs`
+/// is the one caller.
+#[cfg(all(feature = "embedded", feature = "test-api"))]
+pub fn embedded_len() -> usize {
+    EMBEDDED_DEFLATE.len()
+}
 
 impl Dataset {
     /// A dataset with no entries, with the current schema and the rest of `meta` empty:
@@ -215,8 +265,8 @@ impl Dataset {
         Some((n.next()??, n.next()??))
     }
 
-    /// The entry under `key` in the collection `wiki.json` calls `collection`: how
-    /// `corrections.json` names one, since the file is written against the JSON.
+    /// The entry under `key` in the collection named `collection` — the same name
+    /// `dataset/wiki/` files it under, and `corrections.json` is written against it.
     pub(crate) fn entry_by_key_mut(&mut self, collection: &str, key: &str) -> Option<&mut Entry> {
         match self.shelf_mut(collection.parse().ok()?) {
             Shelf::Numbered(map) => map.get_mut(&key.parse::<u32>().ok()?),
@@ -239,7 +289,8 @@ impl Dataset {
         }
     }
 
-    #[cfg(feature = "test-api")]
+    /// The read-only twin of [`Dataset::shelf_mut`]: not test-only any more, since
+    /// [`Dataset::write_dir`] reads every collection through it.
     fn shelf(&self, collection: Collection) -> Shelf<&Numbered, &Bosses> {
         match collection {
             Collection::Items => Shelf::Numbered(&self.items),
@@ -340,8 +391,9 @@ impl Dataset {
         }
     }
 
-    /// The dataset compiled into the binary: `dataset/wiki.json` compressed by `build.rs`,
-    /// inflated and read once. Only with the `embedded` feature (on by default).
+    /// The dataset compiled into the binary: `dataset/wiki/` merged compact and compressed
+    /// by `build.rs`, inflated and read once. Only with the `embedded` feature (on by
+    /// default).
     #[cfg(feature = "embedded")]
     pub fn embedded() -> Result<&'static Dataset, &'static DatasetError> {
         EMBEDDED.get_or_init(Dataset::inflate_embedded).as_ref()
@@ -349,8 +401,7 @@ impl Dataset {
 
     #[cfg(feature = "embedded")]
     fn inflate_embedded() -> Result<Dataset, DatasetError> {
-        let deflated: &[u8] = include_bytes!(concat!(env!("OUT_DIR"), "/wiki.json.deflate"));
-        let bytes = miniz_oxide::inflate::decompress_to_vec(deflated).map_err(|e| {
+        let bytes = miniz_oxide::inflate::decompress_to_vec(EMBEDDED_DEFLATE).map_err(|e| {
             DatasetError::Malformed {
                 reason: format!("embedded blob does not inflate: {e}"),
             }
@@ -375,14 +426,101 @@ impl Dataset {
         serde_json::from_str(s).map_err(malformed)
     }
 
-    /// Readable JSON, with a trailing newline: this is the file that ends up in the repo.
-    pub fn to_json(&self) -> String {
-        // In-memory data, of our own types, with map keys that serde_json knows how to
-        // write (integers and strings): serialization has no way to fail, and the `Err`
-        // branch is dead. The empty default is there only to avoid an `unwrap` in the crate.
-        let mut s = serde_json::to_string_pretty(self).unwrap_or_default();
-        s.push('\n');
-        s
+    /// Writes one pretty JSON file per collection under `dir`, plus `meta.json`, each only
+    /// rewritten if its content changed. Returns every file's name and whether it was
+    /// written, `meta.json` first and then in [`Collection::ALL`] order — what
+    /// `wiki-snapshot build` prints, the same way it used to report the single file.
+    pub fn write_dir(&self, dir: &Path) -> io::Result<Vec<(String, bool)>> {
+        let mut report = Vec::new();
+        let written =
+            write_if_changed(&dir.join("meta.json"), pretty_string(&self.meta).as_bytes())?;
+        report.push(("meta.json".to_string(), written));
+        for collection in Collection::ALL {
+            let file = format!("{}.json", collection.file_name());
+            let bytes = match self.shelf(collection) {
+                Shelf::Numbered(map) => pretty_string(map),
+                Shelf::Bosses(map) => pretty_string(map),
+            };
+            let written = write_if_changed(&dir.join(&file), bytes.as_bytes())?;
+            report.push((file, written));
+        }
+        Ok(report)
+    }
+
+    /// The inverse of [`Dataset::write_dir`]: reads `meta.json` and every collection file
+    /// under `dir`. The schema is checked from `meta.json` alone, before the rest is read,
+    /// the same reason [`Dataset::from_json`] reads its `Head` first.
+    pub fn read_dir(dir: &Path) -> Result<Dataset, DatasetError> {
+        let meta_path = dir.join("meta.json");
+        let meta: Meta =
+            serde_json::from_str(&read_to_string(&meta_path)?).map_err(malformed_at(&meta_path))?;
+        if meta.schema_version != SCHEMA_VERSION {
+            return Err(DatasetError::SchemaMismatch {
+                found: meta.schema_version,
+                expected: SCHEMA_VERSION,
+            });
+        }
+        let mut ds = Dataset::empty();
+        ds.meta = meta;
+        for collection in Collection::ALL {
+            let path = dir.join(format!("{}.json", collection.file_name()));
+            let text = read_to_string(&path)?;
+            match ds.shelf_mut(collection) {
+                Shelf::Numbered(map) => {
+                    *map = serde_json::from_str(&text).map_err(malformed_at(&path))?
+                }
+                Shelf::Bosses(map) => {
+                    *map = serde_json::from_str(&text).map_err(malformed_at(&path))?
+                }
+            }
+        }
+        Ok(ds)
+    }
+}
+
+/// Pretty JSON of any of our own serializable types, with a trailing newline: the shared
+/// format of `wiki.json` before the split, and of every file under `dataset/wiki/` now.
+fn pretty_string<T: Serialize>(value: &T) -> String {
+    // In-memory data, of our own types, with map keys that serde_json knows how to write
+    // (integers and strings): serialization has no way to fail, and the `Err` branch is
+    // dead. The empty default is there only to avoid an `unwrap` in the crate.
+    let mut s = serde_json::to_string_pretty(value).unwrap_or_default();
+    s.push('\n');
+    s
+}
+
+/// Writes only if the content differs from what's already on disk, creating any missing
+/// directories, and says whether it wrote. Shared, not duplicated: `wiki-snapshot` writes
+/// every other file of the snapshot (pages, Cargo tables, the index) the same idempotent
+/// way, and re-exports this instead of keeping its own copy — the dependency only runs one
+/// way, from `wiki-snapshot` to `wiki`.
+pub fn write_if_changed(path: &Path, content: &[u8]) -> io::Result<bool> {
+    match std::fs::read(path) {
+        Ok(existing) if existing == content => return Ok(false),
+        Ok(_) => {}
+        Err(e) if e.kind() == io::ErrorKind::NotFound => {}
+        Err(e) => return Err(e),
+    }
+    if let Some(parent) = path.parent() {
+        std::fs::create_dir_all(parent)?;
+    }
+    std::fs::write(path, content)?;
+    Ok(true)
+}
+
+/// A text file, as a [`DatasetError`]: [`Dataset::read_dir`]'s own reads have no `Missing`
+/// vs `Unreadable` distinction the way `raw::RawError` does, because a directory built by
+/// `write_dir` either has every file or is not a dataset at all.
+fn read_to_string(path: &Path) -> Result<String, DatasetError> {
+    std::fs::read_to_string(path).map_err(|e| DatasetError::Malformed {
+        reason: format!("{}: {e}", path.display()),
+    })
+}
+
+/// A JSON parse error, named by the file it came from.
+fn malformed_at(path: &Path) -> impl Fn(serde_json::Error) -> DatasetError + '_ {
+    move |e| DatasetError::Malformed {
+        reason: format!("{}: {e}", path.display()),
     }
 }
 

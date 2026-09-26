@@ -341,7 +341,10 @@ mod tests {
     #[test]
     fn json_roundtrip_and_schema_check() {
         let ds = build(&raw(), &Corrections::default());
-        let s = ds.to_json();
+        // `from_json` reads whatever pretty JSON serde produces for the whole `Dataset`; no
+        // production code serializes it that way any more (`write_dir` writes one file per
+        // collection), so the test builds its own input instead of a removed `to_json`.
+        let s = serde_json::to_string_pretty(&ds).unwrap();
         assert_eq!(Dataset::from_json(&s).unwrap(), ds);
         // Written against the constant, not against the literal it happens to hold: this
         // test used to pin `"schemaVersion": 1` and went silently no-op the day the schema

@@ -1,4 +1,4 @@
-//! One pass from `dataset/wiki.json` to `requirements.json`. Runs offline, once per
+//! One pass from `dataset/wiki/` to `requirements.json`. Runs offline, once per
 //! snapshot, never from the app.
 
 use catalog::AchievementId;

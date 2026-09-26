@@ -1,24 +1,13 @@
 //! Idempotent writing of the snapshot: a file is rewritten only if it changes, so `git
-//! status` after a `fetch` shows only the pages that actually changed.
+//! status` after a `fetch` shows only the pages that actually changed. The write itself
+//! (`write_if_changed`) is `wiki::write_if_changed`, re-exported here: `Dataset::write_dir`
+//! needs the same idempotent write for `dataset/wiki/`, and the dependency only runs one way
+//! (this crate depends on `wiki`), so the one definition lives there.
 
 use std::collections::BTreeSet;
 use std::path::Path;
 
-/// Writes only if the content changes, creating any missing directories. Returns true if
-/// it wrote.
-pub fn write_if_changed(path: &Path, content: &[u8]) -> std::io::Result<bool> {
-    match std::fs::read(path) {
-        Ok(existing) if existing == content => return Ok(false),
-        Ok(_) => {}
-        Err(e) if e.kind() == std::io::ErrorKind::NotFound => {}
-        Err(e) => return Err(e),
-    }
-    if let Some(parent) = path.parent() {
-        std::fs::create_dir_all(parent)?;
-    }
-    std::fs::write(path, content)?;
-    Ok(true)
-}
+pub use wiki::write_if_changed;
 
 /// Deletes the files in `dir` not present in `keep`; returns the deleted names, in order.
 /// A directory that doesn't exist has nothing to delete. Subdirectories are ignored.

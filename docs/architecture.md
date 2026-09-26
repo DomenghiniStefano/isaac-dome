@@ -44,7 +44,7 @@ flowchart LR
   end
 
   subgraph shipped["Shipped inside the binary"]
-    wikijson["dataset/wiki.json"]
+    wikijson["dataset/wiki/"]
     rulesjson["crates/graph/rules/"]
   end
 
@@ -332,7 +332,7 @@ flowchart TD
   subgraph generated["Generated, never edited by hand"]
     types["ui/src/lib/ipc/types.ts<br/>pnpm ipc:types"]
     reqs["crates/graph/rules/requirements.json<br/>pnpm graph:rules"]
-    ds["dataset/wiki.json<br/>pnpm wiki:build"]
+    ds["dataset/wiki/<br/>pnpm wiki:build"]
   end
 
   net(["wiki.gg — the only network call in the repo"])
