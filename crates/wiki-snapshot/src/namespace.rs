@@ -54,14 +54,22 @@ pub fn allpages_url(cont: &Continue) -> String {
 }
 
 /// The URL that lists every redirect of namespace 0 together with its target: the
-/// generator lists the redirect pages, `redirects=1` resolves each one and the response's
-/// `query.redirects` carries the `from`/`to` pairs ([`parse_redirects`]). No `prop` is
-/// asked: the map is the whole answer, so this is a titles-only request
-/// (`TITLES_PER_REQUEST`), a tenth the size of a content one for the same page count.
+/// generator lists the *non*-redirect pages (`gapfilterredir=nonredirects`) and `prop=redirects`
+/// attaches, to each one, the redirects that point at it ([`parse_redirects`]).
+/// `action=query`'s own `redirects=1` (resolving a title *through* its redirect) refuses
+/// this combination — `"Use \"gapfilterredir=nonredirects\" instead of \"redirects\" when
+/// using \"allpages\" as a generator"` — because `redirects=1` follows a single title, and a
+/// generator already produces many; `prop=redirects` is the list form of the same fact,
+/// read the other way round (target → its incoming redirects, not redirect → its target).
+/// `rdprop=title` only: no fragment is asked, since decision 1 drops it regardless of
+/// where the redirect points. Still a titles-only cost (`TITLES_PER_REQUEST`, confirmed by
+/// the response's own `limits.allpages` and `limits.redirects`, both 500): `prop=redirects`
+/// never touches wikitext, unlike `prop=revisions`.
 pub fn redirects_url(cont: &Continue) -> String {
     let base = format!(
         "{HOST}/api.php?action=query&generator=allpages&gapnamespace=0\
-         &gapfilterredir=redirects&gaplimit={TITLES_PER_REQUEST}&redirects=1\
+         &gapfilterredir=nonredirects&gaplimit={TITLES_PER_REQUEST}&prop=redirects\
+         &rdprop=title&rdnamespace=0&rdlimit={TITLES_PER_REQUEST}\
          &format=json&formatversion=2&maxlag=5"
     );
     with_continuation(base, cont)
@@ -100,29 +108,36 @@ pub struct RedirectBatch {
     pub cont: Option<Continue>,
 }
 
-/// The `from`/`to` pairs from a `redirects_url` response. A batch that resolved no redirect
-/// (every title `gapcontinue` still had to walk before landing on one, or the fetch is on
-/// its last, empty batch) omits `query.redirects` entirely, the same way `query` itself is
-/// omitted with no results at all.
+/// The `from`/`to` pairs from a `redirects_url` response: `query.pages` is the generator's
+/// non-redirect pages (each one a `to`), and a page's own `redirects` array, when present,
+/// lists the titles that point at it (each one a `from`). A page with no incoming redirect
+/// omits the `redirects` key entirely, the same way `query` itself is omitted with no
+/// results at all. The response can exhaust its `prop=redirects` budget before the
+/// generator's own page batch — `response_continue` reads whatever `continue` object comes
+/// back, `rdcontinue` alone or together with `gapcontinue`, and `with_continuation` sends
+/// it back unchanged, which is the whole of what a generator-plus-prop continuation needs.
 pub fn parse_redirects(json: &str) -> Result<RedirectBatch, String> {
     let v = parse_response(json)?;
     let mut batch = RedirectBatch {
         cont: response_continue(&v)?,
         ..RedirectBatch::default()
     };
-    let Some(raw) = v
+    let Some(pages) = v
         .get("query")
-        .and_then(|q| q.get("redirects"))
+        .and_then(|q| q.get("pages"))
         .and_then(Value::as_array)
     else {
         return Ok(batch);
     };
-    for r in raw {
-        let from = canonical_title(&str_field(r, "from", "redirect")?);
-        let to = canonical_title(&str_field(r, "to", "redirect")?);
-        // `tofragment` (a redirect to `Page#Section`) is read and dropped on purpose: the
-        // link resolves to the page, decision 1 says nothing about the section.
-        batch.redirects.push((from, to));
+    for page in pages {
+        let to = canonical_title(&str_field(page, "title", "page")?);
+        let Some(redirects) = page.get("redirects").and_then(Value::as_array) else {
+            continue;
+        };
+        for r in redirects {
+            let from = canonical_title(&str_field(r, "title", "redirect")?);
+            batch.redirects.push((from, to.clone()));
+        }
     }
     Ok(batch)
 }
@@ -178,7 +193,8 @@ mod tests {
         assert!(allpages_url(&c).ends_with("&continue=gapcontinue%7C%7C&gapcontinue=Hush"));
 
         let u = redirects_url(&BTreeMap::new());
-        assert!(u.contains("&gapfilterredir=redirects&gaplimit=500&redirects=1"));
+        assert!(u.contains("&gapfilterredir=nonredirects&gaplimit=500&prop=redirects"));
+        assert!(u.contains("&rdprop=title&rdnamespace=0&rdlimit=500"));
         assert!(!u.contains("prop=revisions"), "a titles-only request: {u}");
 
         let u = embeddedin_titles_url("Template:Infobox card", &BTreeMap::new());
@@ -190,17 +206,27 @@ mod tests {
         assert!(u.contains("rvslots=main") && !u.contains("generator="));
     }
 
+    /// Trimmed from a real `redirects_url` response (2026-09-26): a page with two incoming
+    /// redirects next to one with none, and a `continue` object carrying `rdcontinue`
+    /// alone — the generator's own page batch (`gapcontinue`) hadn't been exhausted yet,
+    /// `prop=redirects` had.
     #[test]
-    fn parse_redirects_response_canonicalizes_and_drops_the_fragment() {
-        let j = r#"{"continue":{"gapcontinue":"x","continue":"gapcontinue||"},"query":{"redirects":[{"from":"soul_hearts","to":"health","tofragment":"Soul Hearts"}],"pages":[{"pageid":1,"title":"Health"}]}}"#;
+    fn parse_redirects_response_reads_each_pages_incoming_redirects() {
+        let j = r#"{"continue":{"rdcontinue":"Debug_Console|17434","continue":"||"},"limits":{"allpages":500,"redirects":500},"query":{"pages":[{"pageid":7,"ns":0,"title":"Ball and Chain","redirects":[{"ns":0,"title":"Spikeball"},{"ns":0,"title":"Singe's Ball"}]},{"pageid":128,"ns":0,"title":"4.5 Volt"}]}}"#;
         let b = parse_redirects(j).unwrap();
         assert_eq!(
             b.redirects,
-            vec![("Soul hearts".to_string(), "Health".to_string())]
+            vec![
+                ("Spikeball".to_string(), "Ball and Chain".to_string()),
+                ("Singe's Ball".to_string(), "Ball and Chain".to_string()),
+            ]
         );
-        assert!(b.cont.is_some());
-        // No redirects in this batch: `query.redirects` is absent, same as `parse_pages`
-        // treats an empty `query`.
+        assert_eq!(
+            b.cont.as_ref().and_then(|c| c.get("rdcontinue")).cloned(),
+            Some("Debug_Console|17434".to_string())
+        );
+        // No page in this batch has an incoming redirect: every `redirects` key is absent,
+        // same as `parse_pages` treats an empty `query`.
         let b = parse_redirects(r#"{"batchcomplete":true,"query":{"pages":[]}}"#).unwrap();
         assert!(b.redirects.is_empty() && b.cont.is_none());
         let b = parse_redirects(r#"{"batchcomplete":true}"#).unwrap();

@@ -4,6 +4,7 @@
 //! `dataset/wiki/`, one file per collection, which the `wiki` crate merges and embeds
 //! into the binary.
 
+mod admit;
 mod api;
 mod fetch;
 mod http;

@@ -1,90 +1,30 @@
 //! The `fetch` command: downloads every page, Cargo table, redirect and template default
 //! from the wiki into `dataset/raw/` (`crate::store` writes them, `crate::http` talks to
 //! the network). `crate::main`'s `build` command reads what this writes; it never runs
-//! from here.
+//! from here. Where a downloaded page is filed is `crate::admit`'s decision, not this
+//! module's: this one drives the request loops and reports what they did.
 
-use std::collections::{BTreeMap, BTreeSet};
+use std::collections::BTreeMap;
 use std::path::Path;
 
 use wiki::{page_file_name, ArticleCategory, IndexEntry, PageKind, Row};
 
+use crate::admit::{file_page, KindFetch};
 use crate::api::{
-    cargo_url, is_translation_subpage, pages_url, parse_cargo, parse_pages, sort_rows, FetchedPage,
-    Pending, ROWS_PER_REQUEST, TABLES,
+    cargo_url, pages_url, parse_cargo, parse_pages, sort_rows, Pending, ROWS_PER_REQUEST, TABLES,
 };
 use crate::namespace::{
-    allpages_url, embeddedin_titles_url, is_own_wiki_page, parse_embeddedin_titles,
-    parse_redirects, redirects_url, template_wikitext_url,
+    allpages_url, embeddedin_titles_url, parse_embeddedin_titles, parse_redirects, redirects_url,
+    template_wikitext_url,
 };
 use crate::store::{prune, write_if_changed};
 use crate::{io_error, Failure, Outcome};
 
 /// A page's text as it goes to disk: LF line endings, because the repo forces LF in the
-/// working copy and a downloaded CRLF would get rewritten on every `fetch`.
-fn page_bytes(text: &str) -> Vec<u8> {
+/// working copy and a downloaded CRLF would get rewritten on every `fetch`. `pub(crate)`:
+/// `crate::admit::file_page` writes a page's own text the same way.
+pub(crate) fn page_bytes(text: &str) -> Vec<u8> {
     text.replace("\r\n", "\n").into_bytes()
-}
-
-/// What fetching one kind leaves behind: how many files it wrote, and the names it wrote or
-/// confirmed — the ones the directory's `prune` keeps, and whose count is the kind's page
-/// count. It also remembers each file name's lowercase spelling, for [`admit`].
-#[derive(Debug, Default)]
-struct KindFetch {
-    written: usize,
-    keep: BTreeSet<String>,
-    /// `page_file_name` is injective, but Windows's filesystem is case-insensitive: two
-    /// titles that collide would keep the first one and warn about it. Lowercase file name →
-    /// the title that took it.
-    titles_by_lower_name: BTreeMap<String, String>,
-}
-
-/// Whether a page that arrived with text is filed under the kind being fetched.
-#[derive(Debug, PartialEq, Eq)]
-enum Admission {
-    /// Filed, under this file name.
-    Admit(String),
-    /// A translation (`Steven/de`): it transcludes the same infobox, and it is not a page of ours.
-    Translation,
-    /// One of the wiki's own pages (`is_own_wiki_page`): a portal, not a page about the game.
-    OwnWikiPage,
-    /// Already filed under another kind, which keeps it — the precedence decision 1 asks
-    /// for: whichever kind claims a title first is the one it stays under, so a page
-    /// transcluding both a collectible infobox and an entity one is the collectible it was
-    /// filed as first, never re-filed as the entity `PageKind::ALL` reaches afterward.
-    OtherKind(PageKind),
-    /// Another title already took the same file name on a case-insensitive filesystem.
-    SameFileAs(String),
-}
-
-/// Where a page goes, from what is already filed. Pure: the warnings and the writes are the
-/// caller's. A page that reappears with text within the same kind is admitted again and
-/// silently replaces its entry; the same page under a different kind stays with the first —
-/// which kind runs first over `PageKind::ALL` (or, for `Article`, running last of all, after
-/// `fetch`'s whole per-template pass) is what decides precedence.
-fn admit(
-    title: &str,
-    kind: PageKind,
-    index: &BTreeMap<String, IndexEntry>,
-    fetched: &KindFetch,
-) -> Admission {
-    if is_translation_subpage(title) {
-        return Admission::Translation;
-    }
-    if is_own_wiki_page(title) {
-        return Admission::OwnWikiPage;
-    }
-    if let Some(prev) = index.get(title).filter(|prev| prev.kind != kind) {
-        return Admission::OtherKind(prev.kind);
-    }
-    let name = format!("{}.wikitext", page_file_name(title));
-    match fetched
-        .titles_by_lower_name
-        .get(&name.to_lowercase())
-        .filter(|first| *first != title)
-    {
-        Some(first) => Admission::SameFileAs(first.clone()),
-        None => Admission::Admit(name),
-    }
 }
 
 /// Downloads all pages of one kind, writes them and updates the index.
@@ -254,58 +194,6 @@ fn fetch_template_wikitext(title: &str) -> Result<String, Failure> {
         .ok_or_else(|| Failure::Error(format!("{title}: no page in the response")))
 }
 
-/// Writes one page and files it in the index, or says why it is not filed. `category` is
-/// `Some` only when filing an `Article` that transcludes one of `CATEGORY_TEMPLATES`.
-fn file_page(
-    page: FetchedPage,
-    kind: PageKind,
-    dir: &Path,
-    index: &mut BTreeMap<String, IndexEntry>,
-    fetched: &mut KindFetch,
-    category: Option<ArticleCategory>,
-) -> Outcome {
-    let name = match admit(&page.title, kind, index, fetched) {
-        Admission::Admit(name) => name,
-        Admission::Translation | Admission::OwnWikiPage => return Ok(()),
-        Admission::OtherKind(prev) => {
-            eprintln!(
-                "  warning: «{}» is already of kind {}; ignored as {}",
-                page.title,
-                prev.dir(),
-                kind.dir()
-            );
-            return Ok(());
-        }
-        Admission::SameFileAs(first) => {
-            eprintln!(
-                "  warning: «{}» and «{}» have the same file name on a case-insensitive \
-                 filesystem; keeping the first one",
-                first, page.title
-            );
-            return Ok(());
-        }
-    };
-    fetched
-        .titles_by_lower_name
-        .insert(name.to_lowercase(), page.title.clone());
-    let path = dir.join(&name);
-    if write_if_changed(&path, &page_bytes(&page.text)).map_err(|e| io_error(&path, e))? {
-        fetched.written += 1;
-    }
-    fetched.keep.insert(name);
-    index.insert(
-        page.title,
-        IndexEntry {
-            kind,
-            pageid: page.pageid,
-            revid: page.revid,
-            timestamp: page.timestamp,
-            category,
-        },
-    );
-    Ok(())
-}
-
 /// Downloads a whole Cargo table, in pages of `ROWS_PER_REQUEST` rows.
 fn fetch_table(table: &str, fields: &str) -> Result<Vec<Row>, Failure> {
     let mut rows = Vec::new();
@@ -333,6 +221,7 @@ fn pretty_json<T: serde::Serialize>(value: &T) -> Result<Vec<u8>, Failure> {
 
 /// Prunes `dir` to `fetched.keep` and prints the three counts every kind's fetch ends with
 /// (pages kept, written, deleted): the one report every kind gives, template-fetched or not.
+/// A non-zero `already_filed` — only ever `fetch_allpages`'s — adds the fourth line.
 fn report_fetch(label: &str, dir: &Path, fetched: &KindFetch) -> Outcome {
     let removed = prune(dir, &fetched.keep).map_err(|e| io_error(dir, e))?;
     for name in &removed {
@@ -344,6 +233,25 @@ fn report_fetch(label: &str, dir: &Path, fetched: &KindFetch) -> Outcome {
         fetched.written,
         removed.len()
     );
+    if fetched.already_filed > 0 {
+        println!(
+            "{label}: {} pages already filed under another kind",
+            fetched.already_filed
+        );
+    }
+    Ok(())
+}
+
+/// Writes `index.json`, the same way `fetch` does at the end: called after every kind's
+/// pages are fetched and its directory pruned, not only once `fetch` as a whole succeeds.
+/// A kind's directory on disk and `index.json`'s entries for it are written by two
+/// different steps (`report_fetch` prunes, this writes the map); an error partway through a
+/// *later* kind — or the tables, redirects, or template fetch that follow — must not leave
+/// the directories of every *earlier* one ahead of an `index.json` that still describes the
+/// snapshot before this run.
+fn write_index(out: &Path, index: &BTreeMap<String, IndexEntry>) -> Outcome {
+    let path = out.join("index.json");
+    write_if_changed(&path, &pretty_json(index)?).map_err(|e| io_error(&path, e))?;
     Ok(())
 }
 
@@ -362,12 +270,14 @@ pub fn fetch(out: &Path) -> Outcome {
         let dir = out.join("pages").join(kind.dir());
         let fetched = fetch_kind(kind, &dir, &mut index)?;
         report_fetch(kind.dir(), &dir, &fetched)?;
+        write_index(out, &index)?;
     }
 
     let categories = fetch_categories()?;
     let article_dir = out.join("pages").join(PageKind::Article.dir());
     let fetched = fetch_allpages(&article_dir, &mut index, &categories)?;
     report_fetch(PageKind::Article.dir(), &article_dir, &fetched)?;
+    write_index(out, &index)?;
 
     for (table, fields) in TABLES {
         let rows = fetch_table(table, fields)?;
@@ -393,8 +303,7 @@ pub fn fetch(out: &Path) -> Outcome {
         if changed { "written" } else { "unchanged" }
     );
 
-    let path = out.join("index.json");
-    write_if_changed(&path, &pretty_json(&index)?).map_err(|e| io_error(&path, e))?;
+    write_index(out, &index)?;
     println!("index.json: {} pages", index.len());
     Ok(())
 }
@@ -406,124 +315,5 @@ mod tests {
     #[test]
     fn page_bytes_normalise_line_endings() {
         assert_eq!(page_bytes("a\r\nb\n"), b"a\nb\n");
-    }
-
-    fn entry(kind: PageKind) -> IndexEntry {
-        IndexEntry {
-            kind,
-            pageid: 1,
-            revid: 1,
-            timestamp: String::new(),
-            category: None,
-        }
-    }
-
-    /// A page is filed under the kind being fetched unless it is a translation, belongs to
-    /// another kind already, or would share a file name with another title on a
-    /// case-insensitive filesystem. The same title twice is the server relisting it, and it
-    /// is filed again.
-    #[test]
-    fn admission_decides_where_a_page_goes() {
-        let mut index = BTreeMap::new();
-        index.insert("Cain".to_string(), entry(PageKind::Character));
-        let mut fetched = KindFetch::default();
-        fetched
-            .titles_by_lower_name
-            .insert("the_d6.wikitext".into(), "The D6".into());
-
-        let kind = PageKind::Collectible;
-        assert_eq!(
-            admit("Steven/de", kind, &index, &fetched),
-            Admission::Translation
-        );
-        assert_eq!(
-            admit("Cain", kind, &index, &fetched),
-            Admission::OtherKind(PageKind::Character)
-        );
-        assert_eq!(
-            admit("The d6", kind, &index, &fetched),
-            Admission::SameFileAs("The D6".into())
-        );
-        assert_eq!(
-            admit("The D6", kind, &index, &fetched),
-            Admission::Admit("The_D6.wikitext".into())
-        );
-        assert_eq!(
-            admit("Cain", PageKind::Character, &index, &fetched),
-            Admission::Admit("Cain.wikitext".into())
-        );
-    }
-
-    #[test]
-    fn a_wiki_own_page_is_never_admitted() {
-        let index = BTreeMap::new();
-        let fetched = KindFetch::default();
-        assert_eq!(
-            admit(
-                "Binding of Isaac: Rebirth Wiki",
-                PageKind::Article,
-                &index,
-                &fetched
-            ),
-            Admission::OwnWikiPage
-        );
-        assert_eq!(
-            admit(
-                "Binding of Isaac: Rebirth Wiki/Rules",
-                PageKind::Article,
-                &index,
-                &fetched
-            ),
-            Admission::OwnWikiPage
-        );
-    }
-
-    /// Decision 1's precedence: a page that transcludes both a collectible infobox and an
-    /// entity one — `Entity`'s two templates run last of `PageKind::ALL`'s template-fetched
-    /// kinds — keeps the collectible it was filed as first when `Entity`'s own run reaches
-    /// the same title, and the same holds one step further out, against `Article`, which
-    /// runs last of all (`fetch`'s doc comment on the `Article` skip).
-    #[test]
-    fn a_page_of_two_infoboxes_keeps_the_first_kind_that_claimed_it() {
-        let mut index = BTreeMap::new();
-        index.insert("Tonsil".to_string(), entry(PageKind::Collectible));
-        let fetched = KindFetch::default();
-        assert_eq!(
-            admit("Tonsil", PageKind::Entity, &index, &fetched),
-            Admission::OtherKind(PageKind::Collectible)
-        );
-        assert_eq!(
-            admit("Tonsil", PageKind::Article, &index, &fetched),
-            Admission::OtherKind(PageKind::Collectible)
-        );
-    }
-
-    /// `file_page` writes an `Article`'s `category` into its index entry; every other kind
-    /// files with `None`, since only `fetch_allpages` ever passes `Some`.
-    #[test]
-    fn file_page_records_an_articles_category() {
-        let dir = tempfile::tempdir().unwrap();
-        let mut index = BTreeMap::new();
-        let mut fetched = KindFetch::default();
-        let page = FetchedPage {
-            title: "0 - The Fool".to_string(),
-            pageid: 1,
-            revid: 1,
-            timestamp: "2026-01-01T00:00:00Z".into(),
-            text: "text".into(),
-        };
-        file_page(
-            page,
-            PageKind::Article,
-            dir.path(),
-            &mut index,
-            &mut fetched,
-            Some(ArticleCategory::Card),
-        )
-        .unwrap();
-        assert_eq!(
-            index.get("0 - The Fool").and_then(|e| e.category),
-            Some(ArticleCategory::Card)
-        );
     }
 }
