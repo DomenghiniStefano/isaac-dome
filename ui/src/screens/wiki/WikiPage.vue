@@ -105,7 +105,6 @@ const canAdd = computed(
       :category="category"
       :entry="entry"
       :page-key="pageKey"
-      :icon-for="wiki.iconFor"
       :can-open="wiki.hasPage"
       @navigate="tabs.openPage"
     />
@@ -159,7 +158,6 @@ const canAdd = computed(
         >
           <WikiInfobox
             :entry="entry"
-            :icon-for="wiki.iconFor"
             :can-open="wiki.hasPage"
             @navigate="tabs.openPage"
           />

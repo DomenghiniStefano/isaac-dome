@@ -22,7 +22,6 @@ import { hasCard } from './transformationCard'
 // on the entry, because they are not specific to a kind.
 const props = defineProps<{
   entry: Entry
-  iconFor?: (target: Target) => string | null
   canOpen?: (target: Target) => boolean
 }>()
 const infobox = computed(() => props.entry.infobox)
@@ -30,12 +29,9 @@ const emit = defineEmits<{ navigate: [target: Target, newTab: boolean] }>()
 const wiki = useWikiStore()
 const { t } = useMessages()
 
-// What every row receives, however deep the kind's body draws it: the two resolvers and the
-// way back up. Getters, so a row reads the props as they are now.
+// What every row receives, however deep the kind's body draws it: whether a reference opens
+// and the way back up. Getters, so a row reads the props as they are now.
 provide(infoboxLinksKey, {
-  get iconFor() {
-    return props.iconFor
-  },
   get canOpen() {
     return props.canOpen
   },
