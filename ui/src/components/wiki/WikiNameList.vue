@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { computed } from 'vue'
+import { cn } from '@/lib/cn'
 import type { ListItem, Target } from '@/lib/ipc/types'
-import { nameOf } from './nameList'
+import { nameOf, RefArt, refArt } from './nameList'
 import WikiBlocks from './WikiBlocks.vue'
 import WikiInline from './WikiInline.vue'
 import WikiNameIcon from './WikiNameIcon.vue'
@@ -21,6 +22,9 @@ const rows = computed(() =>
       item,
       target: name?.target ?? null,
       icon: name ? (props.iconFor?.(name.target) ?? null) : null,
+      // As tall as the picture beside it: a drawing is 48, a sprite 32.
+      height:
+        name && refArt(name.target) === RefArt.Drawing ? 'min-h-12' : 'min-h-8',
     }
   }),
 )
@@ -33,16 +37,19 @@ const navigate = (target: Target, newTab: boolean) =>
   <!-- A list of names is a column of pictures with the names beside them, as the wiki draws
        `{{achievement text}}`: the picture is the bullet. What sits under a name — how the
        achievement is unlocked — lines up with the name, not with the picture, and reads a step
-       quieter. Every picture sits in one column as wide as an achievement drawing, sprites
-       centred in it, so the names of every list on a page start at the same edge. The text
-       column is at least as tall as the picture, so a name alone sits level with it and a long
-       condition runs down from its top. -->
+       quieter: its references are the quiet kind, so the name stays the loudest thing on the
+       row. Every picture sits in one column as wide as an achievement drawing, sprites centred
+       in it, so the names of every list on a page start at the same edge. The text column is at
+       least as tall as the picture, so a name alone sits level with it and a long condition runs
+       down from its top. -->
   <ul class="flex flex-col gap-3">
     <li v-for="(row, i) in rows" :key="i" class="flex items-start gap-3">
-      <span class="flex min-w-achievement-thumb shrink-0 justify-center">
+      <span class="flex min-w-wiki-name-art shrink-0 justify-center">
         <WikiNameIcon v-if="row.target" :src="row.icon" :target="row.target" />
       </span>
-      <div class="flex min-h-8 min-w-0 flex-col justify-center gap-0.5">
+      <div
+        :class="cn('flex min-w-0 flex-col justify-center gap-0.5', row.height)"
+      >
         <span class="text-body">
           <WikiInline
             :inline="row.item.inline"
@@ -55,6 +62,7 @@ const navigate = (target: Target, newTab: boolean) =>
             <WikiInline
               :inline="child.inline"
               :can-open="canOpen"
+              quiet
               @navigate="navigate"
             />
           </p>

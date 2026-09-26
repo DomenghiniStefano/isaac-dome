@@ -15,6 +15,10 @@ export const ButtonVariant = {
   Nav: 'nav',
   Section: 'section',
   Ref: 'ref',
+  // A reference inside supporting text — the line under a name that says how it is unlocked —
+  // where the loud one, repeated on every row, would outshout the name it supports. Still a
+  // solid underline, so it reads as something that opens and not as a concept's dotted one.
+  RefQuiet: 'refQuiet',
   Chrome: 'chrome',
   ChromeDanger: 'chromeDanger',
   Field: 'field',
@@ -78,6 +82,8 @@ export const buttonVariants = cva(
         // A resolved wiki reference: cream over a solid underline edge.
         [ButtonVariant.Ref]:
           'border-0 border-b border-secondary-edge bg-transparent text-highlight hover:border-highlight',
+        [ButtonVariant.RefQuiet]:
+          'border-0 border-b border-hairline-lit bg-transparent text-foreground-soft hover:border-highlight hover:text-highlight',
         // Disabled keeps the chrome's transparency: a filled square inside the navbar or
         // the title bar would read as a surface, and the bar has none.
         [ButtonVariant.Chrome]:
