@@ -504,6 +504,7 @@ export const it = {
       difficulty: 'Difficoltà',
       reward: 'Ricompensa',
       unlockable: 'Sbloccabile',
+      startingItems: 'Oggetti iniziali sbloccabili',
     },
     infobox: {
       title: 'Scheda',

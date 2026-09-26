@@ -19,6 +19,7 @@ mod resolver;
 mod sections;
 mod template;
 mod transformation;
+mod unlock_condition;
 
 pub use blocks::parse_blocks;
 pub use build::build;
