@@ -1,0 +1,12 @@
+{{page dlc|r}}
+
+Items with this [[Item Tags|tag]] contribute toward the {{tf|Leviathan}} transformation.
+
+== Activated Collectibles ==
+{{collectible table | tag = devil | type = activated }}
+
+== Passive Collectibles ==
+{{collectible table | tag = devil | type = passive }}
+
+{{nav|fr=Balise devil}}
+[[Category:Item tags]]

@@ -1,0 +1,132 @@
+{{header attributes}}
+
+[[File:Attribute luck icon.png|50px|link=]]
+'''Luck''' affects a variety of chance-based effects and is represented by a 3-leaf clover.
+
+The large majority of characters have a base Luck of 0. The following characters are exceptions:
+
+{| class="wikitable striped"
+ |-
+ ! Character
+ ! Luck
+ |-
+ | {{C|Keeper}} {{C|Dead Tainted Lazarus}} {{C|Tainted Keeper}}
+ | -2
+ |-
+ | {{C|Lazarus}} {{C|Esau}}
+ | -1
+ |-
+ | {{C|Jacob}}
+ | 1
+|}
+* {{C|Eden}} and {{C|Tainted Eden}}: varies between -1 and 1, inclusive (including decimal values).
+* {{C|Cain}}'s base Luck is technically 0, but he starts with {{i|Lucky Foot}}, increasing his luck to 1.
+
+== Effects of Luck ==
+Luck influences many different elements:
+* '''[[Room Clear Awards|Room drops]]:''' For calculating room drops, luck is capped between 0 and 10, with higher luck not only resulting in higher amounts of drops but also higher quality drops such as chests.
+** Room drop rates are otherwise identical in Normal and Hard game modes, but Hard mode removes {{dlc|nr}} 66%/{{Dlc|r}} 33% of heart-type drops, replacing them with nothing.
+** {{Dlc|r}} If there is more than one playable character on screen (Jacob and Esau, Co-op, using the item {{i|Strawman}}, etc.) the room drop rate depends on the total luck the 2 characters have.
+* '''Tear effect chance:''' The chance of shooting [[Status Effects|tears with status effects]] becomes more likely as Luck goes up. This scales up to 100% chance per tear in most cases with enough Luck.
+** Most of the status inflicting effects require high Luck to activate on every tear.
+*** Since these effects persist on the enemies for a set amount of time regardless of the Tears stat, a fast rate of fire is often enough to affect an enemy indefinitely.
+** Most tear effect chances scale exponentially with luck, while a few others scale linearly with luck, meaning that it can take a lot of luck to notice a significant increase in activation rates in most cases.
+** However not all effects scale up to 100%, and some items have the rates capped at a lower percentage. If the maximum activation rate is not 100% for an item, the true maximum rate will be listed instead.
+** {{Anchor|Luck-based tear effects|Tear items affected by Luck}} are:
+*** {{i|Abaddon}} (Tears cause fear) - 100% at 85 Luck
+*** {{i|Apple!}} (Razor tears) - 100% at 14 Luck
+*** {{i|Ball of Tar}} (Tears slow enemies) - 100% at 18 Luck
+*** {{I|Bird's Eye}} (Fire produced along with tear) - 50% at 10 Luck
+*** {{i|The Common Cold}} (Poison tears) - 100% at 12 Luck
+*** {{i|Dark Matter}} (Tears cause fear) - 100% at 20 Luck
+*** {{dlc+|r}} {{i|Dr. Fetus}} has luck based effects with certain bomb items
+**** {{i|Brimstone Bombs}} (Bombs create {{i|Brimstone}} beams) - 100% at 29.67 Luck
+**** {{i|Butt Bombs}} (Bombs damage and confuse every enemy) - 100% at 27 Luck
+**** {{i|Hot Bombs}} (Bombs damage on contact and leave a fire) - 100% at 12.34 Luck
+**** {{i|Ghost Bombs}} (Bombs spawn ghosts) - 100% at 8.25 Luck
+**** {{i|Sad Bombs}} (Bombs burst into tears) - 100% at 29.67 Luck
+**** {{i|Scatter Bombs}} (Bombs explode into smaller bombs) - 100% at 8.25 Luck{{dlc-}}
+*** {{i|Euthanasia}} (Needle tears) - {{dlc|nr}} 100% at 14.5 Luck / {{dlc|r}} 25% at 13 Luck
+*** {{i|Evil Eye}} (Eye tears) - 10% at 20 Luck
+*** {{i|Fire Mind}} (Chance that tears explode) - 100% at 13 Luck
+*** {{i|Ghost Pepper|dlc=r}} (Fire produced along with tear) - 50% at 10 Luck
+*** {{i|Holy Light}} (Tears inflict {{i|Crack the Sky}} effect) - 50% at 8.89 Luck
+*** {{i|Iron Bar}} (Tears confuse enemies) - 100% at 26.95 Luck
+*** {{i|Knockout Drops}} (Tears knock back enemies significantly) - 100% at 8.01 Luck
+*** {{i|Little Horn}} (Instant death tears) - 20% at 15 Luck
+*** {{i|Lodestone}} (Tears cause enemy to become magnetized) - 100% at 5 Luck
+*** {{i|Loki's Horns}} (4-way tears) - {{dlc|nr}} 100% at 7 Luck / {{dlc|r}} 100% at 15 Luck
+**** {{dlc|a}} '''Loki's Horns''' + {{i|The Ludovico Technique}} - Maximizes at 20 Luck
+*** {{i|Mom's Contacts}} (Tears petrify enemies) - 50% at 20 Luck
+*** {{i|Mom's Eye}} (Forwards and backwards tears) - {{dlc|nr}} 100% at 2 Luck / {{dlc|r}} 100% at 5 Luck
+**** {{dlc|a}} '''Mom's Eye''' + {{i|The Ludovico Technique}} - Maximizes at 10 Luck
+*** {{i|Mom's Eyeshadow}} (Tears charm enemies) - 100% at 26.95 Luck
+*** {{i|Mom's Perfume}} (Tears cause fear) - 100% at 85 Luck
+*** {{i|Mom's Wig}} (Spawn [[blue spider]]s while shooting) - 100% at 9.5 Luck
+*** {{I|Ocular Rift}} (Tears create rifts) - 20% at 15 Luck
+*** {{i|Parasitoid}} (Egg tears) - 50% at 5 Luck
+*** {{i|Rotten Tomato}} (Tears mark enemies) - 100% at 4.01 Luck
+*** {{i|Spider Bite}} (Tears slow enemies) - 100% at 15 Luck
+*** {{i|Tough Love}} (Teeth instead of tears) - 100% at 9 Luck
+** [[Trinket]]s affected by Luck are:
+*** {{t|Black Tooth}} (Poisonous double damage tear) - 100% at 32 Luck
+*** {{t|Cain's Eye|a+}} ({{i|The Compass}} effect) - 100% at 3 Luck
+*** {{t|Cartridge}} ({{i|The Gamekid}} effect when hit) - 100% at 38 Luck
+*** {{t|Chewed Pen}} (Tears slow enemies) - 100% at 18 Luck
+*** {{t|Eve's Bird Foot}} (Spawn a dead bird on killing an enemy) - 100% at 7.6 Luck
+*** {{t|Ice Cube}} (Chance for each enemy to be frozen upon entering a room) - 100% at 40 Luck
+*** {{t|Isaac's Fork}} (Heal half a heart on clearing a room) - 100% at 18 Luck
+*** {{t|Jawbreaker}} (Chance for tooth shot dealing x3.2 damage) - 100% at 9 Luck
+*** {{t|A Lighter}} (Chance for each enemy to be lit on fire upon entering a room) - 100% at 40 Luck
+*** {{t|A Missing Page}} ({{i|The Necronomicon}} effect) - 50% at 60 Luck
+*** {{t|Old Capacitor}} - 33% at 4.34 Luck
+*** {{t|Ouroboros Worm}} (Chance to shoot [[homing tears]]) - 100% at 9 Luck
+*** {{t|Pinky Eye}} (Poison tears) - 100% at 18 Luck
+*** {{t|Push Pin}} (Spectral + Piercing tears) - 100% at 18 Luck
+*** {{t|Red Patch}} (+1.8 Damage Up on taking damage) - 100% at 8 Luck
+*** {{t|Samson's Lock}} (Chance for +0.5 Damage Up on killing an enemy) - 100% at 9.34 Luck
+** Other items affected by Luck include:
+*** {{i|Athame|r}}: Black brimstone circles are created more often with higher luck, up to 100% of the time at 30 Luck.
+*** {{i|Broken Modem}}: Higher luck increases the rate of freezing enemies and their shots.
+*** {{i|Celtic Cross}}: The Celtic Cross grants its invulnerability more often with higher Luck, topping out at 100% at 26.67 Luck.
+*** {{i|Gimpy}}: The Soul Heart drop chance upon taking damage increases with higher Luck, topping out at {{dlc|nr}}50% with 20 Luck / {{dlc|r}}100% at 46 Luck.
+*** {{i|Midas' Touch}}: Poops generated by Isaac's actions have a chance to turn into Golden Poop, with the chance depending on the source.
+**** {{p|A Card Against Humanity}}: 10% at 0 Luck to 100% at 18 Luck.
+**** {{i|The Poop}}: {{dlc|nr}} 50% at 0 Luck to 100% at 5 Luck. {{dlc|r}} 33% at 0 Luck and 100% at 6.7 Luck.
+**** [[Pills#Re-Lax|Re-Lax]]: 25% at 0 Luck to 100% at 7.5 Luck.
+*** {{i|Mystery Gift}}: Higher luck results in a lower chance of getting {{i|The Poop}} or {{i|A Lump of Coal}}.
+*** {{i|Old Bandage}}: The Red Heart drop chance when you take a hit increases with higher Luck, topping out at {{dlc|nr}}50% with 26.67 Luck / {{dlc|r}}100% at 80 Luck.
+*** {{i|Virgo}}: The shield activation chance increases with Luck, topping out at 100% at 10 Luck.
+*** {{i|Dirty Mind}}: Rocks can be replaced by poops depending of Luck, capping at 10% with 7.5 Luck.
+
+However, Luck doesn't affect:
+
+* '''{{M|Fortune Telling Machine}}, {{i|Portable Slot}}, {{M|Shell Game}}, {{M|Slot Machine}}:''' Their chance of giving a consumable doesn't increase with Luck. Only {{i|Lucky Foot}} increases the winning chances with these machines.
+* '''The activation chance of:''' {{i|Fanny Pack}}, {{i|Dry Baby}}, {{i|The Mulligan}}, {{i|Broken Watch}}, {{i|Infamy}}, {{i|Tech.5}}, {{i|Guppy's Collar}}, {{i|Undefined}} (for {{R|I AM ERROR}} or {{R|Black Market}} teleports), {{i|We Need To Go Deeper!}} (Crawl Spaces | {{Dlc|r}}Only on specific floor tiles), {{i|Pandora's Box}} (as its effects are predetermined depending on which floor it's used on), and {{i|Missing Page 2}}.
+* Content from Chests, Pots, Mushrooms, Skulls, Fires, {{R|Devil Room}}s, and {{R|Angel Room}}s.
+* {{M|Beggar}}s, {{M|Devil Beggar}}s, {{M|Key Master}}s, and {{M|Bomb Bum}}s aren't affected by Luck.
+
+== Items that affect Luck ==
+=== Activated Items ===
+{{collectible table | Dataminer, Mom's Box, Void }}
+
+=== Passive Items ===
+{{collectible table | Binge Eater, Candy Heart, Death's List, Evil Charm, Experimental Treatment, Glass Eye, Latch Key, Lucky Foot, Magic Scab, Missing No., Mom's Pearls, My Reflection, Sausage, Sol, Soul Locket, YO LISTEN! }}
+
+=== Trinkets ===
+{{trinket table | Broken Syringe, Dim Bulb, Lucky Toe, Mom's Lock, Perfection, Vibrant Bulb }}
+
+=== Other ===
+* "Luck Up" [[pill]]s increase luck by 1, and "Luck Down" pills decrease Luck by 1.
+* Putting a coin in the {{M|Donation Machine}} has a 2% chance to increase Luck by 1.
+** {{dlc|r}} Having {{t|Karma|n}} increases this chance.
+* {{dlc+|a}} {{E|Lucky Penny|text=Lucky Pennies}} increase Luck by 1.{{dlc-}}
+* {{dlc|a}} In co-op, [[Green Baby]] will occasionally briefly increase Luck by 2. [[Dark Baby]] will occasionally briefly increase all stats, including Luck.
+* {{dlc|a+}} Absorbing an item using {{p|Black Rune|n}} can increase Luck by 1.
+* {{dlc+|r}} Certain [[Familiar#Wisps|wisps]] (such as those generated by {{i|Fortune Cookie}} + {{i|Book of Virtues}} synergy) increase Luck by 0.2 per wisp.{{dlc-}}
+
+== Trivia ==
+* Unlike the most common representation, the in-game icon for Luck has 3 leaves instead of 4.
+
+{{nav|fr=Chance}}
+[[Category:Mechanics]]

@@ -1,0 +1,280 @@
+{{C|The Lost}} has no health, dying by any damage taken. Therefore, he needs to be played with extreme care. Although possible, it is extremely difficult to finish a full playthrough without getting hit at all. Powerful item combinations are often necessary for a successful run.
+
+__TOC__
+
+== General Tips ==
+* {{dlc|a}} It is strongly recommended to unlock The Lost's intrinsic {{I|Holy Mantle}} before playing as him. This can be done by donating 879 coins to the {{M|Greed Donation Machine}}.
+** Getting other helpful unlocks for The Lost will also make him easier (and more fun) to play.
+* It is recommended to have experience with all types of rooms, champions, and enemies.
+* The Lost's ability to [[Flight|fly]] can be used to hide safely above [[obstacle]]s and pits, avoiding enemies and projectiles.
+* Defeating bosses on hard mode provides completion marks for both normal and hard mode, and The Lost must obtain every completion mark on hard mode to [[The Lost#Unlockable items|unlock]] {{i|Godhead}}. If Repentance is not installed, the changes provided by hard mode affect The Lost very little, so playing on hard mode is largely risk free.
+** {{Dlc|r}} In Repentance, more mechanics are added to hard mode, and certain enemies and bosses have increased shot and movement speed. It's recommended to have some experience on hard mode before trying with The Lost.
+* Means of escaping or mitigating especially difficult rooms, such as teleportation or invincibility, can save runs. Doors between [[Rooms#Normal Rooms|normal rooms]] and some others can be bombed open in a pinch.
+* {{t|Perfection}} grants +10 luck and is guaranteed to spawn after 3 consecutive floors are cleared without taking damage. If The Lost can avoid losing the trinket by not taking damage (which he can only do without the run ending entirely if he has extra lives), he can benefit from luck-based items much more than other characters.
+* The Lost will absorb {{e|Soul Heart}}s, {{e|Black Heart}}s, and {{e|Eternal Heart}}s by picking them up, but will not gain any health from them. It is recommended to avoid picking them up in case the {{I|D20}}, a {{R|Dice Room}} (with 3 pips, 2 if the hearts spawn in the Dice Room), or a {{P|Dice Shard}} is found later on.
+** The same applies to [[#Useless items|useless items]], if The Lost is not already rerolling them with the {{i|Eternal D6}}.
+** {{Dlc+|r}} If the Lost picks up soul hearts within the small timeframe of invincibility granted by {{I|Astral Projection}} after getting hit, he will survive after clearing the room. {{dlc-}}
+** {{Dlc+|r}} The Lost can also do this while defying death using {{I|Berserk!}}.{{dlc-}}
+* Three [[orbital familiar|orbitals]] of any kind absorb nearly all projectiles. It is recommended to use {{M|Slot Machine}}s as much as possible to obtain [[Pretty Fly|Pretty Flies]].
+* The Lost does not receive Bad Trip or Health Down pills. This makes pills more useful since the pill pool is more likely to have positive effects.
+* {{dlc|a}} With the {{t|Missing Poster}}, a run may be taken to the end with an easier character and finished as The Lost by dying on purpose, granting the unlock for The Lost without doing a full run.
+* {{dlc|a}} Since The Lost does not take damage from the [[Greed Mode]] button, you can dramatically limit the number of enemies you have to face at a given time by stepping back onto the button after activating it.
+* The Holy Mantle will not prevent The Lost from dying upon touching a {{M|Blood Donation Machine}} or a {{M|Devil Beggar}}. He can only safely use them if he has invincibility (e.g. from {{P|Algiz}}).
+
+== "The Still Statue" ==
+This strategy is very safe and easily played. It combines {{i|Gnawed Leaf}} with any '''automatically''' damaging [[familiar]]. This allows The Lost to enter a room, become invulnerable, and let its familiar clear the room. There are almost no rooms where The Lost gets hit before it enters statue form. This strategy requires a lot of patience.
+
+Although many familiars are not able to clear all types of enemies or rooms, it is still recommended to get any type of familiar the player finds. Some examples are:
+* {{i|7 Seals}}: Extremely powerful, as the harbingers will travel anywhere across a room while spawning locusts and leaving trails of creep. The War and Death harbingers will also chase enemies.
+* {{i|Daddy Longlegs}}: Extremely powerful, because it reaches any enemy and will eventually clear the room against any type of hostiles.
+* {{i|Demon Baby}} and {{i|Gemini}}: Reliably take out enemies nearby, but will not target foes far away.
+* {{i|Leech}}: Can chase after enemies like Lil Haunt, but due to its poor programming, it often gets stuck, causing you to have to move to kill an enemy. It is also unable to pass over pits.
+* {{i|Lil Haunt}}: While not as powerful as Daddy Longlegs, it's one of the few familiars that chase enemies (and don't require you to take damage to summon).
+* {{i|Midas' Touch}}: Still dealing damages when {{i|Gnawed Leaf}} is active, maybe useless against bosses who stay away from The Lost.
+* [[orbital familiar|Orbitals]]: Provide decent damage against chasing enemies, but are useless against enemies that stay on distance.
+* {{i|The Peeper}}: It reaches any spot of a room and will be able to take out most enemies. A lot of time is required, though.
+* {{i|Robo-Baby 2.0}}: Shoots only horizontal and vertical, not reaching enemies that stay diagonally. Robo-Baby 2.0 will still clear most rooms. If Robo-Baby 2.0 is moved, a statue form will be exited.
+* {{i|Rotten Baby}} and {{i|Sissy Longlegs}}: [[Blue Fly|Blue Flies]] and [[Blue Spider|Spiders]] target most enemies inside a room. The flies may not attack foes far away, the spiders are unable to pass over pits.
+* {{i|Succubus}}: Similar to The Peeper, but with a much larger area of effect. Still has trouble with large rooms, however.
+* {{i|The Virus}}: Similar to Midas' Touch, enemies that touch The Lost when {{i|Gnawed Leaf}} is active will be poisoned, but is useless against foes and bosses who stay away from The Lost.
+
+=== Issues ===
+Although the strategy is quite safe, game-ending issues likely occur. Some example scenarios are:
+* The Lost fights {{E|Loki}} with a {{E|Poky}} inside the room. The boss will always stay at distance, making familiars like {{i|Distant Admiration}} useless. Poky pushes constantly against The Lost, forcing him not to move.
+* The Lost fights a room full of {{E|Mask + Heart}}, the Hearts being behind a pit. Familiars like Leech are useless, while The Lost is constantly attacked by a Mask.
+* The Lost fights {{E|Globin}}s, while his follower is not doing enough damage to finish them off after they fell into goo. One Globin is always alive at a time and attacking The Lost.
+It is required to have an [[#Emergency Options|emergency option]] if a room cannot be cleared as intended in such scenarios. Spacebar [[item]]s, [[card]]s and [[pill]]s can be safely activated, even if The Lost in statue form currently has enemy contact. Another option is to exit the run and reenter it by pressing the continue button. This will place the player at the start of the room but all monsters killed would have to be killed again if the player did not clear the room first.
+
+=== Boss Rush ===
+The method may be perfect for the {{R|Boss Rush}} fight itself, however, the player will probably be progressing too slow, not finishing {{e|Mom}} in time. Therefore this method is not recommended to attain the Boss Rush.
+
+=== Execution ===
+The game is restarted until {{i|Gnawed Leaf}} is found in a treasure room adjacent to spawn. Then, the player has to rely on finding proper familiars later on.
+
+== "Getting Carried" ==
+This strategy is very general, though leading often to success. The goal is to gain a massive offensive potential, killing enemies before they can hurt The Lost. To survive game-ending mistakes, The Lost also tries to find [[shield]]ing, [[invulnerability]] or reviving items. The strategy bases a lot on item luck because some of the most powerful items in the game need to be found early on.
+
+=== Key Items ===
+; Offensive
+* {{i|Brimstone}}: Grants massive power, is [[piercing tears|piercing]] and [[spectral tears|spectral]], can be charged in the preceding room and instantly fired.
+* {{i|Glass Cannon}}: Shoots a giant damaging tear with no downside.
+* {{i|Mom's Knife}}: Offers massive damage, is piercing and spectral.
+* {{i|Polyphemus}} Increases tear damage more than most other items. If combined with other damage increasing items, it makes most enemies in the first chapters one-shot and shortens boss fights significantly.
+* The {{tf|Guppy}} transformation increases the Lost's offensive potential significantly, and several of the items required for it are useful to the Lost in their own rights.
+
+; Defensive
+* {{i|Dead Cat}}: Gives The Lost nine lives.
+* {{i|Holy Mantle}}: Absorbs the first hit in each room, nullifying a game-ending mistake once per room. It also allows the Lost to enter {{R|Curse Room}}s and open {{E|Spiked Chest}}s and {{E|Mimic Chest}}s.
+** Care must still be taken when making use of curse rooms, as any damage taken inside of it will nullify the Holy Mantle charge, trapping the Lost inside unless he has some way to generate a shield, teleport out, or extra lives.
+** {{dlc|a}} The Holy Mantle as a starting item can be unlocked by donating 879 coins to the {{M|Greed Donation Machine}}.
+* {{i|Host Hat}}, {{i|Infamy}}, and {{i|Metal Plate}}: Have a chance of blocking or deflecting projectiles that come into contact with the Lost.
+** Also, {{i|Host Hat}} will also make the Lost immune to explosions and {{Dlc|nr}}stomp attacks, increasing his survivability further and allowing safer use of items like {{i|Ipecac}} and {{i|Dr. Fetus}}.
+* {{i|Lost Contact}} Destroys bullets upon contact with tears. It makes "bullet-hell" boss fights like {{E|It Lives!}} significantly easier.
+The goal is to obtain at least one offensive and one defensive item early in the run, additional ones later on. If they are combined with further helpful items, a run becomes very promising.
+
+''Note: {{i|Godhead}} and {{i|Sacred Heart}} are also major offensive key items. However, it is assumed the player has not yet unlocked Godhead. Sacred Heart can earliest be found on the third floor {{dlc|nr}} with very low chances, is therefore not mentioned.''
+
+=== Issues ===
+* Although you can restart a game until you find a key item in the first treasure room, you are still dependent on item luck later in the run.
+* {{dlc|nr}} Many key items are [[special item]]s, lowering the chances of finding such combinations.
+* Running only with key items may not be enough, therefore additional damage ups or [[#Emergency Options|emergency options]] may be necessary.
+
+=== Boss Rush ===
+This method is well suited for the {{R|Boss Rush}} because The Lost can progress quite fast with his massive damage output. The Boss Rush fight itself shall be done with extreme care because many defensive Items lose most of their value in a long fight:
+* {{i|Dead Cat}} would revive you outside, ruining the attempt.
+* {{i|Holy Mantle}} will still trigger once in the Boss Rush fight, but that may not be enough for the whole duration of the fight.
+
+=== Execution ===
+The game is restarted until one of the key items is found in a {{R|Treasure Room}} adjacent to spawn. Afterward, the player has to rely on finding additional key items and synergies later on.
+
+Note that {{i|Brimstone}} can only be found in {{R|Devil Room}}s, and {{i|Dead Cat}} only in {{R|Curse Room}}s, {{R|Devil Room}}s and {{e|Red Chest}}s. The player may decide if they want to check on these opportunities or rather restart instantly.
+
+Some players enter a {{R|Curse Room}} if it is located adjacent to the start. {{dlc|na}} This will usually be fatal. Rarely, though, a {{i|Dead Cat}} can be found in it. This behavior can make sense, as the run would anyway have gotten restarted without a {{R|Treasure Room}} next to the spawn.
+
+== "Remote Control" ==
+This method bases around any remotely controlled damage source, such as {{i|The Ludovico Technique}}, {{i|???'s Only Friend}}, or {{i|Robo-Baby 2.0}}. After entering a room, The Lost tries to find a safe hiding spot as soon as possible, like above an [[obstacle]]. After being safe, he uses his remote damage source to finish the room.
+Acquiring both {{i|The Ludovico Technique}} and {{i|Lost Contact}} can help immensely, especially during the fights against {{E|Isaac}} and {{E|???}}, as the tear can easily block all enemy shots. Acquiring {{i|The Ludovico Technique}} and {{i|Strange Attractor}} can also be very helpful as enemies can be pulled away from The Lost.
+
+=== Issues ===
+* Many rooms do not contain any safe spot, quickly making the method counterproductive.
+* Flying enemies can reach any spot in the room. Jumping enemies like {{E|Hopper}}s can also jump over obstacles if they find a landing spot behind.
+* {{i|The Ludovico Technique}} prevents The Lost from firing normal tears, which may be fatal in rooms without hiding places.
+* The player may focus on their controlled tear/familiar, rather than watching The Lost, overlooking a deadly danger.
+
+=== Boss Rush ===
+If the player manages to reach the {{R|Boss Rush}} room, their odds of beating it are quite good. The Boss Rush room offers some rocks as hiding spots, and many bosses stay quite calm. This allows for a nice damage output with the remotely controlled familiars.
+
+Flying, fast or mobile bosses, like {{E|Fistula}}, may still become problematic, and therefore treated with extreme care. Also, the variety of {{I|Brimstone}} and explosive attacks are very dangerous.
+
+=== Execution ===
+The game is restarted until one of the above items is found in a {{R|Treasure Room}} adjacent to spawn.
+
+== Emergency Options ==
+The Lost should always be prepared for the unexpected by having an emergency option.<br />
+''Note: {{i|9 Volt}} ,{{i|The Battery}} and {{i|4.5 Volt}}'' ''allow a much more flexible use of active items and are generally recommended.''
+
+=== Shield and Invulnerability ===
+Becoming invulnerable is often avoiding deadly situations, therefore having such a card or active item is highly recommended.
+
+* {{P|Algiz}} offers a [[shield]] for {{dlc|nr}}30 seconds {{dlc|r}}20 seconds. Combined with the {{dlc|nr}}{{i|Blank Card}} {{I|Clear Rune}}, it forms one of the best defensive item combinations.
+* {{i|Book of Shadows}} offers a shield for 10 seconds.
+* {{i|The Gamekid}} fears all enemies, deals contact damage and offers invulnerability for five seconds.
+* {{i|My Little Unicorn}} and {{P|VII - The Chariot}} grant [[invulnerability]] and contact damage for five seconds. {{I|Taurus}} has a similar effect, but is not completely controllable.
+* {{i|Unicorn Stump}} grants a 5-second invulnerability, letting The Lost reposition himself safely. It comes with only one charge, thus can be used often.
+* {{i|Car Battery}} double-activates 'invulnerable' active items, which means doubling invulnerable durations.
+* {{i|Mega Mush}} turns The Lost into an invulnerable killing machine for 30 seconds.
+* {{i|Echo Chamber}} copies all 'invulnerable' cards and runes to the last 3 cards, pills and runes used.
+* {{i|4.5 Volt}} makes The Lost able to recharge the active item and uses them multiple times during a hard fight.
+* {{t|Panic Button}} will always automatically activate the active item (If it's available to use) when The Lost is about to take damage, which makes good synergies with all 'invulnerable' items (Including {{i|Butter Bean}} and {{i|How to Jump}}).
+
+=== Teleport ===
+Teleportation can be used to avoid run-ending situations by just leaving the room on demand. However, depending on the method used the floor on which it is used, the player may end up in a more dangerous room. There may also be a chance of landing in the {{R|I AM ERROR}} room, which forces the player to leave items and pickups behind and potentially forces the player to skip a completion mark.
+
+* Any [[card]] providing teleportation, optionally combined with {{i|Blank Card}}.
+* {{t|Broken Remote}}: If combined with a no-cooldown spacebar item, such as {{I|How to Jump}}, it provides infinite teleportation.
+* [[Telepills]]
+* {{i|Teleport!}}
+* {{i|Undefined}}
+* {{t|Door Stop}}: Allows you to walk out of any room.
+* {{I|Mercurius}}
+
+=== Hard Removal ===
+Hard Removal describes the option to clear a dangerous room instantaneously on demand. Items offering hard removal are:
+* {{P|Chaos Card}} kills any enemy in its path, including bosses (not including {{e|Delirium}} and {{E|The Beast}}), in one hit. It is very useful for single-targets but doesn't have the area of effect for massive enemy horde rooms.
+* {{i|Flush!}} clears a room instantly, but doesn't work against bosses, except {{E|Brownie}}, {{E|Clog}}, {{E|Dingle}}, and {{E|Dangle}}.
+* {{i|Head of Krampus}} deals massive damage in a cross-pattern, killing all non-boss enemies in its path, and severely damaging bosses.
+* {{i|Magic Fingers}} can clear a whole room extremely fast if the item is spammed, the damage is high enough and if enough coins are available.
+* {{i|The Necronomicon}} and {{p|XIII - Death}} kill most non-boss enemies in a room.
+* {{i|Toxic Shock}} deals 2x tear damage to all enemies when entering a room.
+
+=== Resurrection Items ===
+These items do still work with The Lost, {{dlc|nr}} although the life number does not appear on the HUD. They give the player another chance if a fatal mistake was made.
+* {{i|1up!}} and {{i|Inner Child}} offer one life.
+* {{i|Dead Cat}} offers nine lives.
+* {{i|Guppy's Collar}} has a 50% chance of reviving The Lost.
+* {{p|Soul of Lazarus}} acts like Inner Child if dead while holding it.
+
+== Angel & Devil Rooms ==
+{{R|Devil Room}}s and {{R|Angel Room}}s appear quite frequently to The Lost because he is not allowed to take damage. {{dlc|nr}}The Lost can take [[Devil deal]]s for free. However, {{R|Angel Room}}s offer some of the most helpful items for The Lost.
+
+{{dlc|r}}The Lost can only choose one of the available [[Devil deal]]s.
+
+It is generally recommended to go for Devil deals, and thus hinder Angel Rooms to appear, though the player is free to pursue Angel Rooms if they find them more attractive.
+{{i|Goat Head}} is a strong item to obtain early as it will ensure that The Lost can visit a Devil or Angel Room on every floor except for {{S|Basement}}/{{S|Cellar}}/{{S|Burning Basement}} I and everything past {{S|Womb}}/{{S|Utero}}/{{S|Scarred Womb}} II. {{dlc|na}}{{i|The Book of Belial}} fulfills a similar effect, however, another spacebar item may be preferred.
+
+=== Devil Room ===
+Although the Devil Room may only contain {{e|Black Heart}}s or {{e|Red Chest}}s that only contain {{e|Soul Heart}}s, {{e|Troll Bomb}}s or enemy {{E|Spider}}s, it usually has helpful items, though some such as {{dlc|nr}}{{i|Dark Bum}}/{{dlc|r}}{{i|Bloody Lust}} or {{dlc|nr}}{{i|Razor Blade}}/{{dlc|r}}{{i|Blood Rights}} can be either useless or dangerous. Some of the most valuable are:
+* {{i|Dead Cat}} ({{e|Red Chest}}s and {{R|Curse Room}}s can also contain it and other {{tf|Guppy}} items)
+* {{i|Brimstone}}
+* {{i|Mom's Knife}}
+* {{i|Goat Head}}
+* {{i|Empty Vessel}}
+* {{i|Damocles}}, because since The Lost will immediately die to any damage, and Damocles will never fall from losing Holy Mantle, you would only get the positive effects. It is only negative if you resurrect because dying by taking a hit activates Damocles.
+* Many damage ups
+* Items granting [[fear]] tears
+For a full list of Devil Room items see [[Devil Room (Item Pool)|Devil Room item pool]].
+
+=== Angel Room ===
+Since the Lost can't play the {{r|Sacrifice Room}} without dying, fighting the [[Angel]]s is the easiest way for him to acquire [[Key Piece]]s. Many Angel Room items are of no use, such as {{i|Prayer Card}} or {{i|Celtic Cross}}, and some such as {{i|Dead Sea Scrolls}} or {{i|Breath of Life}} can actually be dangerous. However, with luck, one may find a very valuable item, such as:
+* {{i|Sacred Heart}}
+* {{i|Censer}}
+* {{i|Circle of Protection}}
+* {{i|Crown Of Light}}
+* {{i|Guardian Angel}}
+* {{i|Holy Mantle}} {{dlc+|a}}(if the player has not yet donated 879 coins to the {{M|Greed Donation Machine}}){{dlc-}}
+* {{i|Immaculate Conception}} (gives The Lost a use for soul and black hearts)
+* {{i|The Mind}} (if the player has already defeated {{E|Satan}} as The Lost)
+* {{i|The Soul}} (if the player has already defeated {{E|The Lamb}} as The Lost)
+* {{i|Sworn Protector}} (if the player has already defeated {{E|Hush|dlc=n}} as The Lost)
+* {{i|Godhead}} (if the player has already acquired every single completion mark on hard as The Lost)
+* {{i|Trinity Shield}}
+* {{i|Sacred Orb}}
+* {{i|Revelation}}
+* {{i|Star of Bethlehem}}
+
+For all Angel Room items see [[Angel Room (Item Pool)|Angel Room item pool]].
+
+== Items ==
+=== Positive Items ===
+Aside from the already mentioned items, the following are of great use:
+* The {{i|Stop Watch}}, unlocked by donating 999 coins to the {{M|Donation Machine}} slows down all enemies in the room, all projectiles, and makes enemies that charge for an attack charge forward very slowly.
+** {{dlc|a}} The Stopwatch was nerfed to only work upon taking damage, though a later update made it work when the Holy Mantle's shield is depleted.
+*** {{Dlc|r}} Although not as powerful as before, Stopwatch always slows everything down again.
+* {{dlc+|r}} Luck-based items synergize well with the +10 [[Luck]] granted by {{t|Perfection}}:
+** {{i|Tough Love}}: At 9+ Luck, all tears are replaced with teeth, essentially giving a 3.2x damage multiplier.
+** {{i|Ghost Pepper}} or {{i|Bird's Eye}}: At 10+ Luck, The Lost has a 50% chance per tear to shoot a flame which blocks enemy projectiles and deals damage, up from 8.33% at 0 luck.
+** {{I|Knockout Drops}}: At 8+ luck, 100% of tears will knock enemies back, which is useful for keeping contact damage enemies away from The Lost.
+** {{i|Little Horn}} has a 10% chance to proc at 10 luck, which rises to 20% at an achievable 15+ luck.{{dlc-}}
+* Items that inflict crowd control status effects such as [[fear]], [[slow]] or [[petrification]] can be useful. On the other hand, some players dislike these items because they can make enemies move in unpredictable ways.
+* {{i|Black Candle}} removes [[curse]]s.
+* The {{i|Red Candle}}'s properties make it one of the most useful items for defeating the waves of mobs and bosses in [[Greed Mode]]. Filling the room with flames before pushing the button to start a new wave, although very time-consuming, virtually guarantees a swift victory with very little risk.
+** {{Dlc|r}} This is no longer effective in Repentance because Red Candle's flames now extinguish after a couple of seconds.
+** After multiple re-rolls, the D4 and D100 can be counterproductive. If the item pools are depleted, they will only give The Lost {{I|Breakfast}}.
+* {{i|There's Options}} and {{i|More Options}} increase the chances of the Lost finding useful items.
+* {{i|Pyromaniac}} and {{i|Host Hat}} grant immunity to explosions, making them especially useful if the player have explosive items such as {{i|Ipecac}} or {{i|Epic Fetus}}.
+* Items revealing the map are very useful to avoid unnecessary rooms.
+* {{i|Whore of Babylon}} is always active.
+* {{i|Crown Of Light}} is essentially permanent double damage, as it cannot be deactivated.
+* {{i|Glass Cannon}} can greatly increase The Lost's damage output without any negative effects.
+* {{Dlc|a}}{{t|Missing Poster}} effectively acts as a {{i|1up!}} on The Lost.
+* {{i|Empty Vessel}} is always active for The Lost. The Lost will benefit from the periodic invincibility it grants.
+* {{t|Safety Scissors}} neutralizes the threat of {{e|Troll Bomb}}s and grants additional bomb pickups.
+* {{i|Void}} can convert health ups or otherwise useless items into stat boosts.
+* {{i|Little Horn}} and {{i|Euthanasia}} can destroy almost all 'invulnerable' enemies (such as {{E|Poky}} and {{E|Stone Grimace}}) before they can hurt The Lost. {{E|Ball and Chain}} are still invulnerable and dangerous.
+* {{i|Sulfuric Acid}} and {{i|Terra}} can destroy [[Rocks|Spiked Rocks]] without making explosions.
+* {{t|Flat File}} retracts almost all spikes.
+* {{T|Apple of Sodom}} converts red hearts into blue spiders.
+** Despite red heart-dropping items normally being useless for The Lost, they can be synergized with this item to farm for blue spiders.
+* {{p|VI - The Lovers?}} has no downside for The Lost, generating free items with no loss of durability or risk of death.
+* {{I|Birthright}} allows {{C|The Lost}} to remove useless item from item pool similar to {{C|Tainted Lost}}, but still allows the player to find strong defensive items like {{I|Dead Cat}}.
+* {{i|Psy Fly}} helps greatly with protecting The Lost from bullets, making bullet-heavy bosses like {{E|Hush|dlc=n}} and {{E|Mother|dlc=n}} much more bearable.
+* {{I|Paschal Candle}} stays at maximum level, as it cannot be deactivated.
+* {{I|Heartbreak}} prevents The Lost from fatal damage for 4 times.
+* {{I|Spirit Shackles}}, along with a way to generate soul hearts like {{I|Book of Revelations}} can essentially act as an extra life with a room charge and also make soul hearts no longer useless.
+* {{I|Berserk!}} and {{P|Soul of Samson}} allow the Lost to survive taking damage.
+* {{i|Binge Eater}} makes HP ups useful as each will give one stat up depending on the item and temporary damage up at a cost of a very small speed down.
+* {{i|Lil Dumpy|r}}: Acts like a renewable second layer of {{i|Holy Mantle}}-like protection. However, it does not block certain types of damage.
+
+=== Useless Items ===
+The following list includes items and trinkets that only affect health, only grant flight, only grant spectral tears, use damage as a trigger or contain a combination of what's listed with no other positive effect. It's advised to pick them after a floor has been explored in case a {{i|D4}}, {{i|D100}}, or a {{R|Dice Room}} (with 1 or 6 dots) are found later on during the run.
+{{collectible table | Converter, The Jar, Prayer Card, Yum Heart, Potato Peeler, IV Bag, Razor Blade, Blood Rights, Yuck Heart, Sumptorium}}
+{{collectible table |<3, A Snack, Athame, Black Lotus, Bloody Lust, The Body, Breakfast, Cambion Conception, Cancer, Celtic Cross,  Curse of the Tower, Dead Bird, Dead Dove, Dessert, Dinner, Fanny Pack, Fate, Gimpy, Habit, Holy Grail, It Hurts, Infestation, Charm of the Vampire, The Ladder, Little C.H.A.D., Lunch, Maggy's Bow, Milk!, Missing Page 2, Mitre, My Shadow, Old Bandage, Ouija Board, Placenta, PJs, Raw Liver, The Relic, Rotten Meat, Scapular, Sharp Plug, Spiderbaby, Spirit of the Night, Super Bandage, Transcendence, The Wafer, Shard of Glass, Varicose Veins, Betrayal, Midnight Snack, Dark Prince's Crown, Greed's Gullet, Hallowed Ground, Leprosy, Marrow, Mystery Egg, Blood Oath, Bird Cage, Sanguine Bond, Supper, Candy Heart, Cracked Orb, Empty Heart, Astral Projection, Bloody Gust, Giant Cell, Hypercoagulation, Orphan Socks, Vengeful Spirit}}
+{{trinket table | A Missing Page, Blind Rage, Bloody Penny, Callus, Child's Heart, Cracked Dice, Cursed Skull, Fish Head, Isaac's Fork, Judas' Tongue, Maggy's Faith, Mom's Locket, Mom's Pearl, Monkey Paw, Mysterious Paper, Red Patch, Swallowed Penny, Umbilical Cord, Wish Bone, Bag Lunch, Crow Heart, Walnut, Finger Bone, Mother's Kiss, Torn Pocket, Swallowed M80, Hollow Heart}}
+
+'''Notes on item selection'''
+* {{i|Best Bud}}, {{i|Guppy's Paw}}, {{i|Infestation}} and {{i|Adrenaline}} are not included because while they do not provide any passive benefit, they do count for [[transformation]]s.
+* Listed items that generate heart pickups of any kind are useless in most scenarios, but can be converted to other types of pickups if The Lost is holding the {{I|D20}} or {{I|D100}}.
+* {{i|Bloody Lust}} will increase damage if The Lost has multiple lives.
+* Items that activate a {{I|The Necronomicon}}-like effect upon getting hit have a ''very'' limited use, as they can deal the last bit of damage needed to kill a boss, or clear a room if The Lost has multiple lives.
+* {{i|Rosary}} is mostly useless, but not completely, as it raises the chance of finding {{I|The Bible}}.
+** {{Dlc|r}} Rosary now gives a tears up as well, making it more useful.
+* {{dlc|a}}{{t|Missing Poster}} is no longer useless for the Lost. So is {{T|Mysterious Paper}} as it has a small chance to trigger its effect.
+* {{dlc|a}}{{I|Ouija Board}}, {{I|Dead Dove}} and {{I|Spirit of the Night}} are useless in Afterbirth because The Lost now starts with spectral tears. They are still useful items in Rebirth.
+** {{Dlc|r}} Ouija Board now gives a tears up as well, making it actually useful.
+* {{T|Blind Rage}} is only useless if the player has not unlocked {{i|Holy Mantle}} as The Lost's starting item.
+* {{dlc|a}}Items that increase your chances of finding Soul Hearts or Black Hearts gain some use when combined with {{i|Immaculate Conception}} or {{i|Soul Locket}}.
+* {{i|Dull Razor}} allows The Lost to activate otherwise useless damage-triggered items such as {{i|Bloody Lust}}.
+* {{Dlc|r}}{{I|Charm of the Vampire}} is no longer useless as it now gives a small damage up.
+* {{Dlc|r}}{{I|Athame}}, {{I|My Shadow}} and {{I|Betrayal}} are no longer useless since they don't require getting hit to activate anymore.
+
+=== Negative items ===
+* {{dlc|anr}} The {{i|D4}} and the {{i|D100}} will reroll the Holy Mantle The Lost starts with after giving the Greed Machine 879 coins.
+** {{Dlc|r}}If {{Achievement|Lost holds Holy Mantle}} is unlocked, the starting Holy Mantle cannot be rerolled anymore.
+* {{i|Ankh}}, {{t|Broken Ankh}}, {{i|Judas' Shadow}} and {{i|Lazarus' Rags}} grant extra lives but respawn The Lost as {{C|???}}, {{C|Black Judas}}, or {{C|Lazarus Risen}} respectively, which will cause the game to treat them as these characters instead of The Lost. It is suggested to avoid these three items altogether if the player is interested in gaining The Lost exclusive achievements and/or completion marks.
+* {{i|Dark Bum}} no longer maintains its main benefit of providing {{e|Soul Heart}}s as they are now useless. While it may spawn a friendly spider, it is also likely to spawn an enemy spider, which can instantly kill The Lost if the player is not careful.
+** {{Dlc|r}} Dark Bum now has a 20% chance to spawn a random pill, card or rune, making it slightly more useful for The Lost.
+** With {{i|Immaculate Conception}}, Dark Bum will be useful to convert useless Red Hearts to useful Soul Hearts. However, the player must still be careful of {{E|Spider}}s.
+* {{i|Isaac's Heart}}, while having many useful synergies {{dlc|na}} as well as the added benefit of immunity to Brimstone lasers, makes dodging more difficult in many scenarios, leading many players to take damage when they otherwise would not have. It is also very difficult to avoid a stray laser from an {{E|Eye}}, as The Lost cannot block this shot and protect Isaac's Heart from it. Also, there is a chance it can spawn atop an Eye in the It Lives! fight, leading to a very cheap and unavoidable death.
+* Any explosive items, such as {{i|Anarchist Cookbook}}, {{i|Curse of the Tower}}, or {{i|Ipecac}} should be used with extreme care.
+** If the player chooses to pick up {{i|Ipecac}}, they should not pick up {{i|Loki's Horns}} or {{i|Mom's Eye}}, as an unexpected shot against a wall will lead to instant death. {{i|Lost Contact}} is also problematic as it can cause explosions to happen in closer proximity to the player than desired.
+* Items that work by causing self-damage, such as the {{i|IV Bag}}, {{i|Blood Rights}} or {{i|Razor Blade}} will end the run if used and must be avoided. {{i|Dead Sea Scrolls}} also has the potential to prematurely end a run if {{i|Kamikaze!}} is triggered and the player doesn't have its Holy Mantle active. {{Dlc|nr}}{{i|Isaac's Heart}} will allow The Lost to use these items without taking damage.
+* {{i|Bucket of Lard}} reduces speed by 0.2 and does not provide any benefit.
+* {{i|Glyph of Balance|dlc=nr}} will replace all room clear and champion drops with soul hearts, resulting in much less pickups throughout the run.
+* {{i|Leo}} and {{i|Thunder Thighs}} are not great as they remove The Lost's ability to use [[obstacle]]s to his advantage, as they can break these obstacles. Also, stepping on a [[Rocks#Mushrooms|poisonous mushroom]], or carelessly stepping on a [[Bomb Rock]] can end a run. The only benefit is the small chance of finding a trapdoor or items like {{i|Dry Baby}} or {{i|The Small Rock}} when breaking said obstacles.
+* {{i|Strange Attractor}}: Unpredictably pulls enemies towards The Lost, especially floating enemies like {{E|Boom Fly|text=Boom Flies}}. It's advised to avoid this item unless The Lost has {{i|The Ludovico Technique}}, as both items combined may create a powerful synergy.
+** {{Dlc|r}} Strange Attractor now pulls enemies towards where the magnetic tear lands, making it safer to take.
+* {{I|Proptosis}} may seem useful because it doubles your damage, but it requires you to get closer to enemies, resulting in you being more likely to get hit.
+** {{I|Lost Contact}} / [[Familiar|Orbitals]] nullify this a bit, but you still have to get close to enemies.
+* {{i|Ocular Rift}}, as it can uncontrollably pull enemies around, especially with items like {{I|Loki's Horns}} or {{I|Mom's Eye}}, though it can also be very useful in avoiding damage when played right.
+
+{{nav|fr=L'Égaré (Stratégie)}}

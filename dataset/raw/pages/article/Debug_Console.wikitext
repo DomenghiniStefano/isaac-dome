@@ -1,0 +1,794 @@
+{{page dlc|a+}}
+
+The '''debug console''' is accessible in ''[[The Binding of Isaac: Afterbirth †]]'' and ''[[The Binding of Isaac: Repentance]]''. It is an extremely useful way to verify a particular game mechanic, explore a seed, test [[Launch Options|launch options]], or test various things about the game. Or, if you are a mod developer, you can use it to quickly test various things in your mods. It is inaccessable on Console Editions.
+
+__TOC__
+
+{{dlc|nr}} The debug console is only accessible if one or more [[mod]]s are enabled. If you don't have any mods to enable, download one from Steam Workshop, or simply create an empty folder in your mods directory. Note that achievements will be disabled if {{E|Mom}} has not been defeated on the savefile, and consequently unlocks will not happen, donation machines can't be filled nor will the item collection page record anything. While many "enable debug console" mods exist on Steam Workshop, these do not explicitly enable the console or are required to enable it. '''ANY''' mod will enable the console, regardless of what the mod is named.
+
+{{dlc|r}} The debug console is only accessible by editing <code>options.ini</code> in the configuration directory and setting the <code>EnableDebugConsole</code> option to <code>1</code>.
+
+<div style="border: 1px solid white; padding: 0 0.5em 0.5em 0.5em; border-radius: 0.5em;">
+The directory which contains the game data and mods directories varies by OS and, where appropriate, compatibility layer.
+* Windows: <code>C:\Users\%username%\Documents\My Games</code>
+** The directory above can be accessed by inputting this line to Address Bar in Exporer, Run command or CMD: <code>%USERPROFILE%\Documents\My Games</code>
+** Windows 11: Searching for Users folder may be required first
+* Linux native: <code>~/.local/share</code>
+* Linux, via Proton: <code>''/path/to/Steam''/steamapps/compatdata/250900/pfx/drive_c/users/steamuser/Documents/My Games</code>
+* Mac OS native: <code>~/Library/Application Support/Binding of Isaac Rebirth</code>
+<!-- somebody verify the Mac info and add info about Wine, Crossover etc. -->
+
+The directory names within that directory are as follows:
+* Configuration & save data:
+** <code>Binding of Isaac Afterbirth+</code>
+** <code>binding of isaac afterbirth+</code> (Linux native)
+** <code>Binding of Isaac Repentance</code>
+** <code>Binding of Isaac Repentance+</code>
+* Mods:
+** <code>Binding of Isaac Afterbirth+ Mods</code>
+** <code>binding of isaac afterbirth+ mods</code> (Linux native)
+</div>
+
+== Using the Debug Console ==
+To open the console, press the grave/tilde (<code>~</code>) key while in a run, or the appropriate key according to the keyboard used, as shown below.
+{| class="wikitable"
+ ! Language !! Keyboard !! Key
+ |-
+ | English (US) || QWERTY || ` (grave) or ~
+ |-
+ | English (UK) || QWERTY || ' (apostrophe) or @
+ |-
+ | Danish || QWERTY || æ
+|-
+|Estonian
+|QWERTY
+|ü
+|-
+ | Finnish || QWERTY || ö
+ |-
+ | French || AZERTY || ù
+ |-
+ | German || QWERTZ || ö
+|-
+|Hebrew
+|/'קראט
+|;
+|-
+ | Hungarian|| QWERTZ || ö
+|-
+|Icelandic
+|QWERTY
+|æ
+|-
+ | Italian || QWERTY || ò
+|-
+|Japanese
+|QWERTY
+|@
+|-
+ | Portuguese || QWERTY || ' or ç
+ |-
+ | Russian (Русский) || ЙЦУКЕН || ё
+ |-
+ | Spanish || QWERTY || ñ
+ |-
+ | Swedish || QWERTY || ö
+|-
+|Swiss
+|QWERTZ
+|" ] !
+|-
+|Turkish
+|QWERTY
+|"
+|-
+|Turkish
+|FGĞIOD
+|  +
+|-
+|}
+
+To hide the console, hit <code>Enter</code> without typing anything or <code>Esc</code>.
+
+Pressing the up arrow key will bring up the last command used.
+
+Pressing the down arrow key will clear the command line.
+
+== Listed Commands ==
+Commands are listed below in the order that they appear ingame.
+
+{| class="wikitable"
+! Name !! Syntax !! Description
+|-
+| {{dlc|nr}} achievement || <pre>achievement 300
+achievement meconium
+achievement *</pre> || Unlocks the [[achievement]] of the specified id.
+
+'''WARNING:''' This CANNOT be undone, and will unlock steam achievements!
+|-
+| challenge || <pre>challenge 20</pre> || Starts a new run on a random seed on the given challenge id.
+
+0 will start a run without any challenge active.
+
+'''WARNING:''' Starting a run in an invalid challenge will crash the game!
+|-
+| clear ||<pre>clear</pre> || Clears the console. Useful for video recording purposes or if you want to dispose of incriminating evidence.
+|-
+| clearcache || <pre>clearcache</pre> || Clears the game's sprite cache. Can be useful for dealing with memory issues. As a consequence, also allows to reload modified sprites without having to relaunch the game.
+|-
+| clearseeds || <pre>clearseeds</pre> || Removes all easter egg effects from the current run.
+|-
+| combo || <pre>combo 0.69</pre> || Gives you an amount of random items from a specified item pool.
+
+The decimal format's syntax is as follows:<br>
+<pre>[itempool #].[number of random items]</pre>
+|-
+| copy ||<pre>copy 3</pre> || Copies a specified amount of previous console commands to your clipboard.
+
+The commands can be pasted into a text editor and/or into the game again, triggering the commands which have been copied.
+|-
+| costumetest || <pre>costumetest
+costumetest 33</pre> || Gives Isaac a random amount of random costumes, without having the associated items.
+
+A number can be provided to gain a specific amount of random costumes.
+|-
+| curse || <pre>curse 2
+curse 16
+curse 127</pre>|| Sets a value corresponding to the sum of the desired curses.
+
+{{dlc|nr}} Doesn't work.
+|-
+| cutscene || <pre>cutscene 1</pre> || Plays the specified cutscene.
+|-
+| debug || <pre>debug 8</pre> || Enables various cheats. Click Expand to view the full details.
+<div class="mw-collapsible mw-collapsed">
+* '''debug 1''': "Entity Positions" - Draws a marker on the screen at the position of each entity.
+* '''debug 2''': "Grid" - Shows the grid cost of the corresponding grid tile. (The grid cost is used when calculating pathing and collision.)
+* '''debug 3''': "Infinite HP" - Taking damage does not decrease the player's health.
+* '''debug 4''': "High Damage" - +40 damage
+* '''debug 5''': "Show Room Info" - Displays text at the bottom of the screen about the current room.
+* '''debug 6''': "Textual Map" - Unknown, no visible effect.
+* '''debug 6''': {{dlc|r}} "Show Hitspheres" - Draws red circles on the screen that represent an entity's damage hitbox.
+* '''debug 7''': "Show Damage Values" - Displays how much damage is taken by entities. (Similar to {{i|Spider Mod}}, but leaves the damage as their raw values and also includes player damage.)
+* '''debug 8''': "Infinite Item Charges" - The player's active item is always fully charged.
+* '''debug 9''': "High Luck" - +50 luck
+* '''debug 10''': "Quick Kill" - All enemies take constant and rapid damage.
+* '''debug 11''': "Grid Info" - Displays the coordinates for each tile on the grid.
+* '''debug 12''': {{dlc|r}} "Player Item Info" - Displays held collectibles and temporary collectible effects.
+* '''debug 13''': {{dlc|r}} "Show Grid Collision Points" - Draws dots under entities that collides with walls or obstacles that represent their collision hitbox.
+* '''debug 14''': {{dlc|r+}} "Show Lua Memory Usage" - Displays a graph that tracks the memory usage by Lua.
+</div>
+|-
+| {{dlc|r}} delirious ||{{dlc|r}} <code>delirious 1</code><br>{{dlc|r+}}<code>delirious 20.0</code> <code>delirious Monstro</code> || This guarantees the next boss chosen when using {{i|Delirious}} (for debugging purposes).<br>{{dlc|rnr+}} This command doesn't work.
+|-
+| eggs || <pre>eggs</pre> || Unlocks all Easter Eggs in the menu.
+
+Any unwanted Easter Eggs can be removed with Q+E+Tab in the Easter Eggs menu.
+|-
+| giveitem<br />g ||<pre>giveitem dr. fetus
+giveitem c15
+giveitem Petrified Poop
+giveitem t15
+giveitem ipec
+giveitem mutant sp
+g soy milk
+giveitem p0
+g p22
+giveitem k1
+giveitem c6
+g k45</pre> || Gives [[item]]s, [[trinket]]s, [[card]]s, and [[pill]]s.
+
+Ids are prefixed with c for items, t for trinkets, p for pill effects, and k for cards. [[Rune]]s and other pocket items use card ids.
+|-
+| goto || <pre>goto d.10
+goto s.error.21
+goto 6 6 0</pre> || Teleports Isaac to room layouts which are possible to generate in the current floor.
+
+* The "d.[number]" syntax means a "normal" room with the corresponding number as a variant.
+* The "s.[type].[number]" syntax means a special room of the specified type and variant.
+* The "[number] [number] [number]" syntax means to go to the existing room at the specified coordinates. The first number is the X coordinate, the second number is the Y coordinate, and the third number is the dimension, which corresponds to the Dimension enum.
+
+The first two goto formats will put Isaac in the GridRooms.ROOM_DEBUG_IDX (-1) room. Attempting to enter a room that does not exist will print the message "Error changing room." to the console.
+|-
+| gridspawn || <pre>gridspawn 1000
+gridspawn 1494
+gridspawn 9000
+gridspawn 9100
+gridspawn 1000 28</pre> || Spawns a grid entity with the given ID at a random place in the room.
+
+The secondary argument is optional and can be used to set the grid tile location where the grid entity will be spawned. The ids can be seen with the "debug 11" command.
+|-
+| listcollectibles || <pre>listcollectibles</pre> || Prints to the console a list of all items in Isaac's possession, and how many of each.
+|-
+| lua<br>l || <pre>lua print("Hello World!")
+
+l for _,v in pairs(Isaac.GetRoomEntities()) do if v.MaxHitPoints > 0 then print(v.HitPoints.."/"..v.MaxHitPoints) end end</pre>|| Directly runs a line of Lua code.
+
+The first example simply prints "Hello World!" to the console, while the second prints the current HP and max HP of every entity that has hitpoints. There are also further [[Debug Console/Lua Debug Snippets|Lua debug snippets]] leveraging the Modding API to find out information about otherwise hidden details.
+|-
+| luamem || <pre>luamem</pre>|| Reports memory usage for Lua.
+|-
+| luamod || <pre>luamod mygreatmod</pre>|| Takes a mod folder name and runs the main.lua for it. This can be used to reload a mod without relaunching the game.
+|-
+| luarun || <pre>luarun /full_path/hello.lua
+luarun relative_path/hello.lua</pre>|| Takes a path to a lua file and runs it immediately. Paths are relative to the folder where the game is installed.
+|-
+| macro<br>m || <pre>macro mom
+macro momh
+macro hush
+macro bigchest
+macro hud
+macro fc
+macro ms
+macro mss
+macro ug
+macro ugg
+macro qk
+macro beast</pre> ||Triggers a set of commands. Click Expand to view the full details.
+<div class="mw-collapsible mw-collapsed">
+* <code>mom</code>: Sets the stage to {{s|Depths}}, gives Isaac {{i|The Bible}}, {{p|IV - The Emperor}}, damage immunity, and +40 damage.
+<pre>stage 6
+g Bible
+g k5
+debug 3
+debug 4</pre>
+
+* <code>momh</code>: Sets the stage to {{s|Womb}}, gives Isaac {{i|The Bible}}, {{p|IV - The Emperor}}, damage immunity, and +40 damage.
+<pre>stage 8
+g Bible
+g k5
+debug 3
+debug 4</pre>
+
+* <code>hush</code>: Sets the stage to {{s|???}}, gives Isaac {{p|IV - The Emperor}}, 8 [[Treasure Room (Item Pool)|Treasure Room]] items, 8 [[Boss (Item Pool)|Boss]] items, 3 [[Shop (Item Pool)|Shop]] items, and 3 [[Angel Room (Item Pool)|Angel Room]] items.
+<pre>stage 9
+g k5
+combo 0.8
+combo 2.8
+combo 1.3
+combo 4.3</pre>
+
+* <code>bigchest</code>: Sets the stage to {{s|Cathedral}}, gives Isaac {{i|The Polaroid}}, {{i|The Negative}}, damage immunity, +40 damage, {{i|Mutant Spider}}, {{i|Soy Milk}}, 6 copies of {{i|The Belt}}, {{i|Lord of the Pit}}, and {{p|IV - The Emperor}}.
+<pre>stage 10a
+g Polaroid
+g Negative
+debug 3
+debug 4
+g Mutant
+g Soy
+giveitem Belt
+repeat 5
+giveitem Lord of the Pit
+debug 10
+g k5</pre>
+
+* <code>hud</code>: Gives Isaac 3 copies of {{i|Dead Cat}}, {{i|Guppy's Collar}}, 13 copies of {{i|MEAT!}}, {{i|The Compass}}, {{i|Blue Map}}, {{i|Treasure Map}}, {{i|Little Baggy}}, a [[Balls of Steel]] pill, a [[Bombs Are Key]] pill, {{i|Mom's Purse}}, {{t|Paper Clip}}, {{t|Petrified Poop}}, and {{i|My Little Unicorn}}.
+<pre>giveitem Dead Cat
+repeat 2
+giveitem Guppy's Collar
+giveitem MEAT!
+repeat 12
+giveitem Compass
+giveitem Blue Map
+giveitem Treasure Map
+giveitem Baggy
+giveitem p2
+giveitem p3
+giveitem Purse
+giveitem Paper Clip
+giveitem Petrified
+giveitem My Little Unicorn</pre>
+
+* <code>fc</code>: Gives Isaac {{i|Soy Milk}}, {{i|Iron Bar}}, {{i|Mom's Pad}}, activates debug flags for infinite health, unlimited charges and high luck. Was used for testing the fear status effect.
+<pre>debug 3
+debug 8
+debug 9
+giveitem Soy
+giveitem Bar
+giveitem Pad</pre>
+
+* <code>ms</code>: Teleports Isaac to the {{E|Mega Satan}} boss room.
+<pre>goto s.boss.5000</pre>
+
+* <code>mss</code>: Teleports Isaac to the {{E|Mega Satan}} boss room, but also gives high damage, infinite health, {{i|Soy Milk}} and {{i|Mutant Spider}}.
+<pre>goto s.boss.5000
+giveitem Soy
+giveitem Mutant
+debug 3
+debug 4</pre>
+
+* <code>ug</code>: Teleports Isaac to {{S|Chest}} and attempts to load boss room with id 6000 which does not exist. Was used for Ultra Greed testing.
+** {{dlc|r}} Room with id 6000 is now used so the macro teleports Isaac to it instead.
+<pre>stage 11a
+goto s.boss.6000</pre>
+
+* <code>ugg</code>: Teleports Isaac to {{S|Chest}}, gives two {{i|The Sad Onion}}, two {{i|Torn Photo}}, {{i|Mutant Spider}}, {{i|Pentagram}}, {{i|A Dollar}} and {{i|Pyro}}, attempts to load boss room with id 6000 which does not exist. Was used for Ultra Greed testing.
+** {{dlc|r}} Room with id 6000 is now used so the macro teleports Isaac to it instead.
+<pre>stage 11a
+goto s.boss.6000
+giveitem Sad Onion
+giveitem Sad Onion
+giveitem Torn
+giveitem Torn
+giveitem Mutant
+giveitem Pentagram
+giveitem A Dollar
+giveitem Pyro
+debug 3</pre>
+
+* <code>qk</code>: Gives Isaac 6 of {{i|The Belt}}, {{i|Lord of the Pit}}, {{i|Treasure Map}}, {{i|Blue Map}}, {{i|The Compass}}, {{i|Black Candle}}, {{i|X-Ray Vision}}, {{i|We Need To Go Deeper!}}, {{i|A Dollar}}, {{i|Pyro}} and {{i|Skeleton Key}}, enables infinite health, unlimited charges and quick kill debug flags.
+<pre>giveitem Belt
+repeat 5
+giveitem Lord of the Pit
+giveitem Treasure Map
+giveitem Blue Map
+giveitem Compass
+giveitem Black Candle
+giveitem X-Ray
+giveitem We Need To Go Deeper
+debug 8
+giveitem Dollar
+giveitem Pyro
+giveitem Skeleton Key
+debug 3
+debug 10</pre>
+
+* {{dlc|nr}} <code>sg</code>: Unusable, crashes the game on any game mode.
+** {{dlc|r}} This macro was removed.
+
+* {{dlc|r}} <code>beast</code>: Teleports Isaac to the {{s|Home}}, loads {{E|The Beast}} fight room, then gives Isaac 8 treasure room items, 8 boss items and 3 angel room items. This macro has been added after the initial release.
+<pre>stage 13
+goto x.itemdungeon.666
+combo 0.8
+combo 2.8
+combo 4.3</pre>
+
+</div>
+|-
+| {{dlc|r}} metro ||<pre>metro c1</pre> || This guarantees the next item chosen when using {{i|Metronome}} (for debugging purposes).
+|-
+| playsfx || <pre>playsfx 1
+playsfx 1 0.5</pre> || Plays the specified sound effect id. Pitch can be specified in the second argument.
+|-
+| remove<br>r || <pre>remove t53
+remove soy milk
+remove cursed eye
+r bob's brain
+r experi
+remove *</pre> || Removes items.
+
+An asterisk (*) can be input to remove one copy of all items and trinkets from Isaac.
+|-
+| {{dlc|r}} reloadfx ||<pre>reloadfx</pre> || Reloads the floor effects layer (overlays).
+|-
+| reloadshaders || <pre>reloadshaders</pre> || Reloads the graphical shaders. (Has no discernible in-game effect.)
+|-
+| repeat || <pre>spawn 10
+repeat 50
+giveitem meat!
+repeat 100
+repeat 100</pre> || Repeats the last given command a number of times. Caps at 10000 repeats.
+|-
+| reseed || <pre>reseed</pre> || Generates a new layout for the current floor with a new floor seed.
+|-
+| restart || <pre>restart
+restart 6</pre> || Resets the game back to the beginning of a new run.
+
+A number can be provided to start a new run as a specific character.
+
+'''WARNING:''' Starting a run as an invalid character can lead to unexpected results and can crash the game!
+List of valid characters:
+{| class="wikitable mw-collapsible mw-collapsed sortable"
+!Character !! ID
+|-
+|Isaac || 0
+|-
+|Magdalene || 1
+|-
+|Cain || 2
+|-
+|Judas || 3
+|-
+|Blue Baby || 4
+|-
+|Eve || 5
+|-
+|Samson || 6
+|-
+|Azazel || 7
+|-
+|Lazarus || 8
+|-
+|Eden || 9
+|-
+|The Lost || 10
+|-
+|Lazarus Risen || 11
+|-
+|Black Judas || 12
+|-
+|Lilith || 13
+|-
+|Keeper || 14
+|-
+|Apollyon || 15
+|-
+|The Forgotten And The Soul || 16
+|-
+|The Soul And The Forgotten (Start as The Soul) || 17
+|-
+|Bethany || 18
+|-
+|Jacob And Esau || 19
+|-
+|Only Esau || 20
+|-
+|Tainted Isaac || 21
+|-
+|Tainted Magdalene || 22
+|-
+|Tainted Cain || 23
+|-
+|Tainted Judas || 24
+|-
+|Tainted Blue Baby || 25
+|-
+|Tainted Eve || 26
+|-
+|Tainted Samson || 27
+|-
+|Tainted Azazel || 28
+|-
+|Tainted Lazarus || 29
+|-
+|Tainted Eden || 30
+|-
+|Tainted Lost || 31
+|-
+|Tainted Lilith || 32
+|-
+|Tainted Keeper || 33
+|-
+|Tainted Apollyon || 34
+|-
+|Tainted Forgotten And Soul || 35
+|-
+|Tainted Bethany || 36
+|-
+|Tainted Jacob || 37
+|-
+|Dead Tainted Lazarus<br>(Can't swap to Tainted Lazarus; pocket Flip still works on items) || 38
+|-
+|Tainted Jacob Ghostly || 39
+|-
+|Tainted Soul (Can't attack) || 40
+|}
+|-
+| seed || <pre>seed GGGG GGGG
+seed T1MM AY48</pre> || Starts a new run with the inputted seed.
+|-
+| spawn || <pre>spawn mega maw
+spawn 20
+spawn 10.1
+spawn 10.2.0.4</pre> || Spawns an entity at the center of the room.
+
+The decimal format's syntax is as follows:
+<pre>[type].[variant].[subtype].[champion]</pre>
+
+'''WARNING:''' Spawning invalid entities can lead to unexpected results and can crash the game!
+
+'''WARNING:''' Using the "spawn coplayer" command will crash the game and can sometimes corrupt save data!
+|-
+| stage || <pre>stage 1
+stage 10a
+stage 3b</pre> || Teleports Isaac to another floor.
+
+Letters appended to the stage numbers give different alternate versions, e.g. 1 for Basement, 1a for Cellar, 1b for Burning Basement, {{dlc|r}} 1c for Downpour and 1d for Dross.
+
+Letters not matching to any alternate stage are ignored.
+
+'''WARNING:''' Entering non-existent floors can lead to unexpected results and can crash the game! E.g. floors 14 +15.
+|-
+| time || <pre>time</pre> || Prints the total amount of time passed on the run (based on "game" frames / the in-game timer).
+|}
+
+== Unlisted Commands ==
+These commands do not appear in the console but can still be used.
+
+{| class="wikitable"
+ ! Name
+ ! Syntax
+ ! Description
+ |-
+ | {{dlc|r}} addplayer
+ | <pre>addplayer 1
+addplayer 6 1</pre>
+ | Spawns a new player entity (Isaac by default) with controls set to id 0 by default. You can specify player type and controller id in the command. If the player type is -1, the game will instead assign control to a random enemy in the room, similarly to the {{i|Friend Finder|n}} item.
+ |-
+ | {{dlc|r}} forceroom
+ | <pre>forceroom s.boss.1010</pre>
+ | Allows to set any room as "forced room". Said room gets weight of 1000, making it easier for it to appear on floor with <code>reseed</code> command. There are many situations where it would not work though (e.g. if room has lots of disabled doors or difficulty does not allow it to appear).
+ |-
+ | {{dlc|r}} giveitem2
+g2
+ | <pre>giveitem2 c105
+g2 ipecac</pre>
+ | Same as ''giveitem'' but for a secondary character such as Esau.
+ |-
+ | {{dlc|r}} netdelay
+ | <pre>netdelay 2</pre>
+ | Changes network delay to a specified value. Can be useful if you see stutters during online gameplay.
+ |-
+ | {{dlc|r}} netstart
+ | <pre>netstart <steam_user_id1> <steam_user_id2> <steam_user_id3></pre>
+ | Connects player(s) with specified Steam ID to your game (online multiplayer). Allows up to 4 players. You can also use aliases if you add them in steamids.txt file in your local savedata (where options.ini is stored) folder in following format:<pre>alias id
+alias id
+alias id
+(...)</pre>
+You and all other players should have Repentance opened (with—networktest parameter specified when launching the game). Can be unstable at times, so be careful.
+ |-
+ | {{dlc|r}} remove2
+r2
+ | <pre>remove2 c1
+r2 soy milk</pre>
+ | Same as ''remove'' but for a secondary character such as Esau.
+ |-
+ | {{dlc|r}} reloadwisps
+ | <pre>reloadwisps</pre>
+ | Reloads wisps spawned by {{i|Book of Virtues|n}} and locusts spawned by {{i|Abyss|n}}.
+ |-
+ | restock
+ | <pre>restock</pre>
+ | Restocks all shops.
+ |-
+ | {{dlc|r}} rewind
+ | <pre>rewind</pre>
+ | Makes the game forget about the changes in current room and teleports Isaac back to previous room. Can be used to fix desynchronization issues if you use this command in a room where it happened. (Glowing Hourglass-like effect)
+ |-
+ | {{dlc|r}} testbosspool
+ | <pre>testbosspool</pre>
+ | Prints a list of boss names and percentage chance (100%=10000) for current floor.
+ |}
+
+== Unused Commands ==
+{| class="wikitable"
+ ! Name
+ ! Description
+ |-
+ | {{dlc|nr}} prof
+ | Used to start profiling and write data to a table file in the working directory (game files location). Was removed because of sandbox security concerns.
+ |-
+ | {{dlc|nr}} profstop
+ | Used to stop profiling. Was removed because of sandbox security concerns.
+ |}
+
+== Delirious Bosses ==
+{{dlc|rnr+}} The <code>delirious</code> command uses the following ID mapping:
+
+{| class="wikitable mw-collapsible mw-collapsed"
+ ! ID
+ ! Description
+ |-
+ | 0
+ | None
+ |-
+ | 1
+ | {{E|Monstro}}
+ |-
+ | 2
+ | {{E|Larry Jr.}}
+ |-
+ | 3
+ | {{E|Chub}}
+ |-
+ | 4
+ | {{E|Gurdy}}
+ |-
+ | 5
+ | {{E|Monstro II}}
+ |-
+ | 6
+ | {{E|Scolex}}
+ |-
+ | 7
+ | {{E|Famine}}
+ |-
+ | 8
+ | {{E|Pestilence}}
+ |-
+ | 9
+ | {{E|War}}
+ |-
+ | 10
+ | {{E|Death}}
+ |-
+ | 11
+ | {{E|The Duke of Flies}}
+ |-
+ | 12
+ | {{E|Peep}}
+ |-
+ | 13
+ | {{E|Loki}}
+ |-
+ | 14
+ | {{E|Blastocyst}}
+ |-
+ | 15
+ | {{E|Gemini}}
+ |-
+ | 16
+ | {{E|Fistula}}
+ |-
+ | 17
+ | {{E|Gish}}
+ |-
+ | 18
+ | {{E|Steven}}
+ |-
+ | 19
+ | {{E|C.H.A.D.}}
+ |-
+ | 20
+ | {{E|Headless Horseman}}
+ |-
+ | 21
+ | {{E|The Fallen}}
+ |-
+ | 22
+ | {{E|The Hollow}}
+ |-
+ | 23
+ | {{E|Carrion Queen}}
+ |-
+ | 24
+ | {{E|Gurdy Jr.}}
+ |-
+ | 25
+ | {{E|The Husk}}
+ |-
+ | 26
+ | {{E|The Bloat}}
+ |-
+ | 27
+ | {{E|Lokii}}
+ |-
+ | 28
+ | {{E|Blighted Ovum}}
+ |-
+ | 29
+ | {{E|Teratoma}}
+ |-
+ | 30
+ | {{E|Widow}}
+ |-
+ | 31
+ | {{E|Mask of Infamy}}
+ |-
+ | 32
+ | {{E|The Wretched}}
+ |-
+ | 33
+ | {{E|Pin}}
+ |-
+ | 34
+ | {{E|Conquest}}
+ |-
+ | 35
+ | {{E|Daddy Long Legs}}
+ |-
+ | 36
+ | {{E|Triachnid}}
+ |-
+ | 37
+ | {{E|The Haunt}}
+ |-
+ | 38
+ | {{E|Dingle}}
+ |-
+ | 39
+ | {{E|Mega Maw}}
+ |-
+ | 40
+ | {{E|The Gate}}
+ |-
+ | 41
+ | {{E|Mega Fatty}}
+ |-
+ | 42
+ | {{E|The Cage}}
+ |-
+ | 43
+ | {{E|Mama Gurdy}}
+ |-
+ | 44
+ | {{E|Dark One}}
+ |-
+ | 45
+ | {{E|The Adversary}}
+ |-
+ | 46
+ | {{E|Polycephalus}}
+ |-
+ | 47
+ | {{E|Mr. Fred}}
+ |-
+ | 48
+ | {{E|Mega Satan}}
+ |-
+ | 49
+ | {{E|Gurglings}}
+ |-
+ | 50
+ | {{E|The Stain}}
+ |-
+ | 51
+ | {{E|Brownie}}
+ |-
+ | 52
+ | {{E|The Forsaken}}
+ |-
+ | 53
+ | {{E|Little Horn}}
+ |-
+ | 54
+ | {{E|Rag Man}}
+ |-
+ | 55
+ | {{E|Hush}}
+ |-
+ | 56
+ | {{E|Dangle}}
+ |-
+ | 57
+ | {{E|Turdlings}}
+ |-
+ | 58
+ | {{E|The Frail}}
+ |-
+ | 59
+ | {{E|Rag Mega}}
+ |-
+ | 60
+ | {{E|Sisters Vis}}
+ |-
+ | 61
+ | {{E|Big Horn}}
+ |}
+
+{{dlc|r+}} The <code>delirious</code> command accept boss IDs or their name.
+
+== Trivia ==
+* {{dlc|r}} In Repentance, going to non-standard stages will crash the game.
+* {{dlc|nr}} In Afterbirth+, going to non-standard stages will crash the game, with the exception of stage 13. It consists of 2x1 vertical rooms that have doors that only sometimes close, minimal enemies (usually a few of the same type), and uses {{s|Caves}} background. The music is a single layer of either the {{s|???}}, {{s|Cellar}}, {{S|Basement}} or the {{s|Burning Basement}} music, and only plays when enemies are in the room. The boss is always {{E|The Duke of Flies}}, and no trapdoor or items spawn when the boss is defeated.
+** Stage 13a is the same, but with {{s|Depths}} background. The boss is always {{E|Monstro II}}.
+** Stage 13b is the same, but with {{s|Womb}} background. The boss is always {{E|The Duke of Flies}}.
+** The enemy spawn patterns are the same as the waves in Greed mode, suggesting that this stage is used to store the waves in the game.
+** The name display while holding Tab on PC/Back on Xbox 360/Touchpad or L2 on PS4/Minus on Switch will show up their respective overlay's stage name, but without the I or II, e.g. Normally it's Caves II, but in this stage is referred to only Caves, just like {{S|Cathedral}}, {{S|Sheol}}, {{S|???}}, {{S|Chest}}, {{S|Dark Room}} and {{S|The Void}}, i.e Chapters 4.5 and above.
+* {{dlc|nr}} Entering "stage 8" in Greed or Greedier mode will grant access to {{s|The Void}}. The rooms have random backdrops and the music is the same as The Void in regular mode, but the boss is {{E|Ultra Greed}} and will drop the Final Boss Chest. Entering The Chest will play the final ending instead of ending 18 or 19.
+* {{dlc+|r}} In Greed/Greedier Mode, there are odd, secret additional stage layouts that use Stage IDs further than 8, and are variants of existing floors. Some are based off the new Repentance path's floors. Stage 8 is a blank floor with no walls and music, Stage 9 is the Ultra Greed floor but with {{s|???}}'s doorways, stage 10 is the Ultra Greed floor but with a sick-green and cleaner version of {{s|Dross}} and stage 11 is the Ultra Greed floor with the backdrop of {{s|Mausoleum}}.
+** Any further values will crash the game.
+** There are some that use the 'a' and 'b' ID variation, and are alternate versions of the existing but some are of the hidden floors.
+*** Stage 5a will have the {{s|Sheol}} backdrop with a light effect coming from above, and entering Stage 5b is the same as the Stage 5a, but the backdrop's walls can be a little bit brighter, or as dim as the original Stage 5's.
+*** Stage 6b and 7b will have the {{S|The Shop}}/{{S|Ultra Greed}} backdrop with a warmer color than normal Stage 6 and 7. Stage 6c and 7c will have the {{S|The Shop}}/{{S|Ultra Greed}} backdrop but with a blue tint.
+*** Stage 8a is the same Stage 8, but can have the floor of the {{S|Basement}}.
+*** Stage 8b can be the same Stage 7b but can sometimes come with no music at all.
+*** Stage 9a comes with a random backdrop and the music of {{s|The Void}}, but it has the doorways of {{S|???}}. The Final Boss Chest will play ending 20 instead of Ending 18 or 19 depending on the mode selected.
+*** Stage 9b comes with a brownish version of {{S|Downpour}}'s backdrop. It has the doorways of {{S|???}}.
+*** Stage 10a has the backdrop of the {{S|Mines}}.
+*** Stage 10b comes with a reddish version of the {{S|Ashpit}}'s backdrop.
+*** Stage 11a has the backdrop of {{S|Gehenna}}.
+*** Stage 11b comes with a reddish version of {{S|Corpse}}'s backdrop.{{dlc-}}
+
+* Attempting to give yourself all the items using "giveitem *" will print the message "What are you trying to do?" to the console and will give nothing.
+* Monster champion types go up to 48590, with anything beyond the 24 used types resulting in a monster that has double (maximum) HP, no other special abilities and often exotic color palettes not normally seen. Any higher will crash the game.
+** {{dlc|r}} Champions types above the 26 defined ones are mostly invisible and have no clear upper number, but may cause a crash at any time.
+
+== Bugs ==
+{{bug|If a champion is spawned via the "spawn" command, it will have the same amount of health as the non-champion version of that monster, unless the spawned champion variant has decreased amount of health.}}
+{{bug|If the player has debug 10 enabled and starts the sequence to begin the Dogma fight, Dogma will instantly die without continuing the sequence, softlocking Isaac in the room without returning control to the player. This is fixed after exiting and continuing the game.}}
+{{Bug|dlc=r|Using the "rewind" command disables all debug flags.}}
+{{Bug|Debug Console may rarely break, and will not turn off.}}
+{{bug|dlc=r|Using debug 12 during the {{i|Knife Piece 2}} sequence in Mines/Ashpit II will crash the game.}}
+
+{{nav|modding|fr=Console de débogage}}

@@ -1,0 +1,281 @@
+{{header bosses}}
+
+== Bosses ==
+{| style="width: 100%; text-align: center"
+ | [[File:Boss Monstro portrait.png|center|link=Monstro]]
+ | [[File:Boss Gemini portrait.png|center|link=Gemini]]
+ | [[File:Boss Steven portrait.png|center|link=Steven]]
+ | [[File:Boss Dingle portrait.png|link=Dingle]]
+ |-
+ | [[Monstro]]
+ | [[Gemini]]
+ | [[Steven]] {{Unlockable}}
+ | [[Dingle]]
+ |-
+ |[[File:Boss Gurglings portrait.png|center|link=Gurglings]]
+ |[[File:Boss Larry Jr. portrait.png|center|link=Larry Jr.]]
+ |[[File:Boss The Duke of Flies portrait.png|center|link=The Duke of Flies]]
+ |[[File:Boss Widow portrait.png|link=Widow]]
+ |-
+ |[[Gurglings]]
+ |[[Larry Jr.]]
+ |[[The Duke of Flies]]
+ |[[Widow]]
+ |-
+ |[[File:Boss Blighted Ovum portrait.png|link=Blighted Ovum]]
+ |[[File:Boss The Haunt portrait.png|center|link=The Haunt]]
+ |[[File:Boss Pin portrait.png|link=Pin]]
+ |[[File:Boss Famine portrait.png|center|link=Famine]]
+ |-
+ |[[Blighted Ovum]]
+ |[[The Haunt]]
+ |[[Pin]]
+ |[[Famine]] {{unlockable}}
+ |-
+ |[[File:Boss Fistula portrait.png|center|link=Fistula]]
+ |[[File:Boss Chub portrait.png|center|link=Chub]]
+ |[[File:Boss C.H.A.D. portrait.png|center|link=C.H.A.D.]]
+ |[[File:Boss Gurdy portrait.png|center|link=Gurdy]]
+ |-
+ |[[Fistula]]
+ |[[Chub]]
+ |[[C.H.A.D.]] {{Unlockable}}
+ |[[Gurdy]]
+ |-
+ |[[File:Boss Mega Fatty portrait.png|center|link=Mega Fatty]]
+ |[[File:Boss Mega Maw portrait.png|link=Mega Maw]]
+ |[[File:Boss Gurdy Jr. portrait.png|center|link=Gurdy Jr.]]
+ |[[File:Boss Peep portrait.png|center|link=Peep]]
+ |-
+ |[[Mega Fatty]]
+ |[[Mega Maw]]
+ |[[Gurdy Jr.]]
+ |[[Peep]]
+ |-
+ |[[File:Boss The Husk portrait.png|center|link=The Husk]]
+ |[[File:Boss The Hollow portrait.png|center|link=The Hollow]]
+ |[[File:Boss Carrion Queen portrait.png|center|link=Carrion Queen]]
+ |[[File:Boss Dark One portrait.png|center|link=Dark One]]
+ |-
+ |[[The Husk]]
+ |[[The Hollow]]
+ |[[Carrion Queen]]
+ |[[Dark One]]
+ |-
+ |[[File:Boss Polycephalus portrait.png|center|link=Polycephalus]]
+ |[[File:Boss The Wretched portrait.png|center|link=The Wretched]]
+ |[[File:Boss Pestilence portrait.png|center|link=Pestilence]]
+ |[[File:Boss Monstro II portrait.png|center|link=Monstro II]]
+ |-
+ |[[Polycephalus]]
+ |[[The Wretched]]
+ |[[Pestilence]] {{unlockable}}
+ |[[Monstro II]]
+ |-
+ |[[File:Boss Gish portrait.png|center|link=Gish]]
+ |[[File:Boss The Cage portrait.png|center|link=The Cage]]
+ |[[File:Boss The Gate portrait.png|center|link=The Gate]]
+ |[[File:Boss Loki portrait.png|center|link=Loki]]
+ |-
+ |[[Gish]] {{Unlockable}}
+ |[[The Cage]]
+ |[[The Gate]]
+ |[[Loki]]
+ |-
+ |[[File:Boss The Adversary portrait.png|center|link=The Adversary]]
+ |[[File:Boss The Bloat portrait.png|center|link=The Bloat]]
+ |[[file:boss Mask of Infamy portrait.png|center|link=Mask Of Infamy]]
+ |[[File:Boss War portrait.png|center|link=War]]
+ |-
+ |[[The Adversary]]
+ |[[The Bloat]]
+ |[[Mask Of Infamy]]
+ |[[War]] {{unlockable}}
+ |-
+ |[[File:Boss Blastocyst portrait.png|center|link=Blastocyst]]
+ |[[File:Boss Mama Gurdy portrait.png|center|link=Mama Gurdy]]
+ |[[File:Boss Scolex portrait.png|center|link=Scolex]]
+ |[[File:Boss Mr. Fred portrait.png|center|link=Mr. Fred]]
+ |-
+ |[[Blastocyst]]
+ |[[Mama Gurdy]]
+ |[[Scolex]]
+ |[[Mr. Fred]]
+ |-
+ |[[File:Boss Lokii portrait.png|center|link=Lokii]]
+ |[[File:Boss Daddy Long Legs portrait.png|center|link=Daddy Long Legs]]
+ |[[File:Boss Triachnid portrait.png|center|link=Triachnid]]
+ |[[File:Boss Teratoma portrait.png|center|link=Teratoma]]
+ |-
+ |[[Lokii]]
+ |[[Daddy Long Legs]]
+ |[[Triachnid]] {{Unlockable}}
+ |[[Teratoma]]
+ |-
+ |[[File:Boss Death portrait.png|center|link=Death (Boss)]]
+ |[[File:Boss Conquest portrait.png|center|link=Conquest]]
+ |[[File:Boss Headless Horseman portrait.png|center|link=Headless Horseman]]
+ | colspan="4" |[[File:Boss The Fallen portrait.png|center|link=The Fallen]]
+ |-
+ |[[Death (Boss)|Death]] {{unlockable}}
+ |[[Conquest]] {{unlockable}}
+ |[[Headless Horseman]] {{unlockable}}
+ | colspan="4" |[[The Fallen]] {{room|Devil}}
+ |-
+ |}
+
+=== [[The Binding of Isaac: Afterbirth|''Afterbirth'']] {{dlc|a}} ===
+{| style="width: 100%; text-align: center"
+ | [[File:Boss Dangle portrait.png|center|link=Dangle]]
+ |[[File:Boss Turdlings portrait.png|center|link=Turdlings]]
+ |[[File:Boss Little Horn portrait.png|center|link=Little Horn]]
+ | [[File:Boss Rag Man portrait.png|center|link=Rag Man]]
+ |-
+ |[[Dangle]] {{unlockable}}
+ |[[Turdlings]] {{unlockable}}
+ |[[Little Horn]] {{unlockable}}
+ |[[Rag Man]] {{unlockable}}
+ |-
+ |[[File:Boss The Stain portrait.png|center|link=The Stain]]
+ |[[File:Boss The Forsaken portrait.png|center|link=The Forsaken]]
+ |[[File:Boss The Frail portrait.png|center|link=The Frail]]
+ |[[File:Boss Brownie portrait.png|center|link=Brownie]]
+ |-
+ |[[The Stain]] {{unlockable}}
+ |[[The Forsaken]] {{unlockable}}
+ |[[The Frail]] {{unlockable}}
+ |[[Brownie]] {{unlockable}}
+ |}
+
+=== [[The Binding of Isaac: Afterbirth †|''Afterbirth+'']] {{dlc|a+}} ===
+{| style="width: 100%; text-align: center"
+ |[[File:Boss Big Horn portrait.png|center|link=Big Horn]]
+ |[[File:Boss Rag Mega portrait.png|center|link=Rag Mega]]
+ |[[File:Boss Sisters Vis portrait.png|center|link=Sisters Vis]]
+ |[[File:Boss The Matriarch portrait.png|center|link=The Matriarch]]
+ |-
+ |[[Big Horn]] {{unlockable}}
+ |[[Rag Mega]] {{unlockable}}
+ |[[Sisters Vis]] {{unlockable}}
+ |[[The Matriarch]] {{unlockable}}
+ |}
+
+=== ''[[Repentance]]'' {{dlc|r}} ===
+{| style="width: 100%; text-align: center"
+ |[[File:Boss Baby Plum portrait.png|center|link=Baby Plum]]
+ |[[File:Boss Bumbino portrait.png|center|link=Bumbino]]
+ |[[File:Boss Reap Creep portrait.png|center|link=Reap Creep]]
+ |[[File:Boss The Pile portrait.png|center|link=The Pile]]
+ |-
+ |[[Baby Plum]] {{unlockable}}
+ |[[Bumbino]] {{unlockable}}
+ |[[Reap Creep]] {{unlockable}}
+ |[[The Pile]] {{unlockable}}
+ |-
+ |[[File:Boss The Rainmaker portrait.png|center|link=The Rainmaker]]
+ |[[File:Boss Min-Min portrait.png|center|link=Min-Min]]
+ |[[File:Boss Lil Blub (Downpour) portrait.png|center|link=Lil Blub]]
+ |[[File:Boss Wormwood (Downpour) portrait.png|center|link=Wormwood]]
+ |-
+ |[[The Rainmaker]] {{unlockable}}
+ |[[Min-Min]] {{unlockable}}
+ |[[Lil Blub]] {{unlockable}}
+ |[[Wormwood]] {{unlockable}}
+ |-
+ |[[File:Boss Clog portrait.png|center|link=Clog]]
+ |[[File:Boss Colostomia portrait.png|center|link=Colostomia]]
+ |[[File:Boss Turdlet portrait.png|center|link=Turdlet]]
+ |[[File:Boss Tuff Twins portrait.png|center|link=Tuff Twins]]
+ |-
+ |[[Clog]] {{unlockable}}
+ |[[Colostomia]] {{unlockable}}
+ |[[Turdlet]] {{unlockable}}
+ |[[Tuff Twins]] {{unlockable}}
+ |-
+ |[[File:Boss Hornfel portrait.png|center|link=Hornfel]]
+ |[[File:Boss Great Gideon portrait.png|center|link=Great Gideon]]
+ |[[File:Boss Singe portrait.png|center|link=Singe]]
+ |[[File:Boss The Shell portrait.png|center|link=The Shell]]
+ |-
+ |[[Hornfel]] {{unlockable}}
+ |[[Great Gideon]] {{unlockable}}
+ |[[Singe]] {{unlockable}}
+ |[[The Shell]] {{unlockable}}
+ |-
+ |[[File:Boss Clutch portrait.png|center|link=Clutch]]
+ |[[File:Boss The Siren portrait.png|center|link=The Siren]]
+ |[[File:Boss The Heretic portrait.png|center|link=The Heretic]]
+ |[[File:Boss The Visage portrait.png|center|link=The Visage]]
+ |-
+ |[[Clutch]] {{unlockable}}
+ |[[The Siren]] {{unlockable}}
+ |[[The Heretic]] {{unlockable}}
+ |[[The Visage]] {{unlockable}}
+ |-
+ |[[File:Boss The Horny Boys portrait.png|center|link=The Horny Boys]]
+ |[[File:Boss Chimera portrait.png|center|link=Chimera]]
+ |[[File:Boss The Scourge portrait.png|center|link=The Scourge]]
+ |[[File:Boss Rotgut portrait.png|center|link=Rotgut]]
+ |-
+ |[[The Horny Boys]] {{unlockable}}
+ |[[Chimera]] {{unlockable}}
+ |[[The Scourge]] {{unlockable}}
+ |[[Rotgut]] {{unlockable}}
+ |-
+ |[[File:Boss Ultra Famine ingame.png|center|link=Ultra Famine]]
+ |[[File:Boss Ultra Pestilence ingame.png|center|link=Ultra Pestilence]]
+ |[[File:Boss Ultra War ingame.png|center|link=Ultra War]]
+ |[[File:Boss Ultra Death ingame.png|center|link=Ultra Death]]
+ |-
+ |[[Ultra Famine]] {{unlockable}}
+ |[[Ultra Pestilence]] {{unlockable}}
+ |[[Ultra War]] {{unlockable}}
+ |[[Ultra Death]] {{unlockable}}
+ |-
+ |[[File:Boss Dogma portrait.png|center|link=Dogma]]
+ |-
+ |[[Dogma]] {{unlockable}}
+ |}
+
+== Final Bosses ==
+{| style="width: 100%; text-align: center"
+ |[[File:Boss Mom portrait.png|center|link=Mom]]
+ |[[File:Boss Mom's Heart portrait.png|center|link=Mom's Heart]]
+ |[[file:Boss It Lives! portrait.png|center|link=It Lives!]]
+ |[[File:Boss Satan portrait.png|center|link=Satan]]
+ |-
+ |[[Mom]]
+ |[[Mom's Heart]] {{unlockable}}
+ |[[It Lives!]] {{unlockable}}
+ |[[Satan]] {{unlockable}}
+ |-
+ |[[File:Boss Isaac portrait.png|center|link=Isaac (Boss)]]
+ |[[File:Boss The Lamb portrait.png|center|link=The Lamb]]
+ |[[File:Boss ??? portrait.png |center|link=??? (Boss)|???]]
+ |[[File:Boss Mega Satan portrait.png|center|link=Mega Satan]]
+ |-
+ |[[Isaac (Boss)|Isaac]] {{unlockable}}
+ |[[The Lamb]] {{unlockable}}
+ |[[??? (Boss)|???]] {{unlockable}}
+ |[[Mega Satan]] {{unlockable}}
+ |}
+{| style="width: 100%; text-align: center"
+ |[[File:Boss Hush portrait.png|center|link=Hush]]
+ |[[File:Boss Delirium portrait.png|center|link=Delirium]]
+ |[[File:Boss Mother portrait.png|center|link=Mother]]
+ |-
+ |[[Hush]] {{dlc|a}} {{unlockable}}
+ |[[Delirium]] {{dlc|a+}} {{unlockable}}
+ |[[Mother]] {{dlc|r}} {{unlockable}}
+ |-
+ |[[File:Boss The Beast ingame.png|172px|center|link=The Beast]]
+ |[[File:Boss Ultra Greed portrait.png|center|link=Ultra Greed]]
+ |[[File:Boss Ultra Greedier ingame.png|172px|center|link=Ultra Greedier]]
+ |-
+ |[[The Beast]] {{dlc|r}} {{unlockable}}
+ |[[Ultra Greed]] {{dlc|a}}
+ |[[Ultra Greedier]] {{dlc|a+}} {{unlockable}}
+ |}
+
+{{nav|boss|fr=Tous les Boss}}
+[[Category:Bosses]]

@@ -1,0 +1,12 @@
+{{page dlc|r}}
+
+Items with this [[Item Tags|tag]] are familiars which are unique and cannot be duplicated by {{i|Box of Friends}} or {{t|The Twins}}, and {{p|Soul of Lilith}} can grant them only once. Note that this does not prevent getting multiple copies of the items through duplication effects such as {{i|Diplopia}}.
+
+== Activated Collectibles ==
+{{collectible table | tag = uniquefamiliar | type = activated }}
+
+== Passive Collectibles ==
+{{collectible table | tag = uniquefamiliar | type = passive }}
+
+{{nav|fr=Balise uniquefamiliar}}
+[[Category:Item tags]]

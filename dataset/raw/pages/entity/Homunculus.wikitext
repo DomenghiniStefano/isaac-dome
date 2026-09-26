@@ -1,0 +1,54 @@
+{{infobox monster
+ | id          = 228
+ | image name  = * {{dlc|nr|Rebirth}}
+ | base hp     = 36
+ | environment = {{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{room|boss}}
+ | behavior    = Starts attached to the wall or an {{dlc|a+}} obstacle. After a while, it detaches, shooting 6 blood shots in all directions, leaving a puddle of Red Creep and chasing Isaac. If it dies while still attached, it will still leave a puddle of Red Creep.
+}}
+
+'''Homunculi''' attempt to chase Isaac but have a limited range of movement due to spawning attached to a wall or an {{dlc|a+}} [[Obstacles|Obstacle]]. Given enough time it will detach, spawning a small pool of [[Creep#Red Creep|Red Creep]] and shooting 6 projectiles in all directions and chasing quickly after Isaac. It also leaves a small pool of Red Creep upon death.
+
+Destroying the obstacle that a Homunculus is attached to will prematurely release it.
+
+==== Notes ====
+* The Homunculi encountered in the {{E|Mr. Fred}} boss fight can only detach under Mr. Fred's command, not at free will. If there are any remaining Homunculi after Mr. Fred is killed they will remain permanently attached.
+__TOC__
+{{Clear}}
+
+== Variations ==
+=== Begotten ===
+{{infobox monster
+ | name        = Begotten
+ | image name  = * {{dlc|nr|Rebirth}}
+ | id          = 251
+ | base hp     = 60
+ | environment = {{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Mausoleum}}{{floor|Gehenna}}<br>{{floor|Sheol}}<br>{{floor|Dark Room}}<br>{{room|challenge}}{{room|devil}}<br>{{dlc|a+}} Spawned by {{E|Sisters Vis|n}}
+ | behavior    = Starts attached to the wall or an {{dlc|a+}} obstacle. After a while, it detaches, firing 6 blood shots in all directions, turning the room dark, becoming invisible and chasing Isaac. Briefly becomes visible upon getting hit.
+}}
+
+'''Begottens''' behave like Homunculi but do not spawn any Red Creep. When it detaches from the wall or {{dlc|a+}} [[Obstacles|Obstacle]], it fires 6 blood shots in all directions, turns the room dark and becomes invisible. Attacking it causes it to temporarily become visible.
+
+=== Notes ===
+* They can spawn in unique {{R|Devil Room}} layouts if Isaac is holding the {{t|Number Magnet}}.
+{{clear}}
+
+== Gallery ==
+<gallery>
+File:Begotten Unused.png|[[Cut Content#Cut Afterbirth .E2.80.A0 Content|Unused]] pre-release sprite of Begotten found among the Room Editor files.
+</gallery>
+
+== Trivia ==
+* A [[wikipedia:homunculus|homunculus]] is a very small human or humanoid creature.
+** In medieval art, the infant Jesus Christ was often portrayed as a homunculus, with a man's face on a baby's body, to signify being perfectly formed at birth.<ref>https://factsandhistory.com/why-do-babies-in-medieval-art-look-like-creepy-adults/</ref>
+* Similar to {{E|Frowning Gaper}}s and {{E|Nulls}}, Homunculi and Begottens are seen in a sleep-like state at the start of a room before they immediately open their eyes and attempt to pursue the player.
+* Begottens are the only non-boss enemies that can cast a "curse of darkness" effect.
+* Homunculi will still leave behind creep if re-rolled with {{i|D10}}.
+
+== Bugs ==
+{{bug|dlc=anr|If an {{i|Explosivo}} tear is stuck to a Begotten, when it becomes invisible, the tear will fall to the ground.}}
+{{bug|dlc=a+|In the "RoomEditor" modding tool, Homunculi cannot be placed.}}
+
+== References ==
+{{reflist}}
+
+{{nav|fr=Homoncule}}

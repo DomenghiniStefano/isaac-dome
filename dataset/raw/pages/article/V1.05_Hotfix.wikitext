@@ -1,0 +1,13 @@
+{{infobox version
+ | date = 2015-02-11
+}}
+
+== Undocumented changes ==
+=== Changes ===
+* Removed the [[Curse of the Maze]]'s visual effect and replaced it with a sound effect.
+
+=== Fixes ===
+* Fixed {{i|Ipecac}} not destroying objects.
+* Fixed {{i|Ipecac}} + {{i|Pyromaniac}} synergy.
+
+{{nav|version}}

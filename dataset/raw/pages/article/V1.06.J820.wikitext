@@ -1,0 +1,11 @@
+{{infobox version
+ | dlc    = r
+ | date   = 2021-05-21
+}}
+
+== Undocumented Changes ==
+* Hotfixes to mod api
+* Fixed daily runs being accessible with mods enabled
+* Fixed Steam achievements not unlocking with mods enabled, despite ingame ones unlocking normally
+
+{{nav|version}}

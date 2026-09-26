@@ -1,0 +1,9 @@
+{{page dlc|r}}
+
+Items with this [[Item Tags|tag]] contribute toward the {{tf|Bookworm}} transformation.
+
+== Activated Collectibles ==
+{{collectible table | tag = book | type = activated }}
+
+{{nav|fr=Balise book}}
+[[Category:Item tags]]

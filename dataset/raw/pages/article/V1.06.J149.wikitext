@@ -1,0 +1,713 @@
+{{infobox version
+ | dlc  = a+
+ | name = Booster Pack #5
+ | date = 2018-04-30
+ | blog = 173459905199
+}}
+
+''This was the initial version of Booster Pack #5 for the [[Afterbirth †]] DLC expansion. For an overview on content, see [[Booster Packs]].''
+
+== Documented Changes ==
+=== New Items ===
+* {{i|Blanket}} (535), which is based on [https://steamcommunity.com/sharedfiles/filedetails/?id=1090362016 this Steam Workshop item] by Ratlah.
+* {{i|Sacrificial Altar}} (536), which is based on [https://steamcommunity.com/sharedfiles/filedetails/?id=1100921193 this Steam Workshop item] by Niro.
+* {{i|Lil Spewer}} (537), which is based on [https://steamcommunity.com/sharedfiles/filedetails/?id=1108638164 this Steam Workshop item] by Strawrat and CupertinoEffect.
+* {{i|Marbles}} (538), which is based on [https://steamcommunity.com/sharedfiles/filedetails/?id=948825958 this Steam Workshop item] by Amethyst and Bustin Blotch.
+* {{i|Mystery Egg}} (539), which is based on [https://steamcommunity.com/sharedfiles/filedetails/?id=1016223447 this Steam Workshop item] by Strawrat and CupertinoEffect.
+* {{i|Flat Stone}} (540), which is based on [https://steamcommunity.com/sharedfiles/filedetails/?id=924939304 this Steam Workshop item] by Maddogs and Joe.
+
+=== New Trinkets ===
+* {{t|Rotten Penny}} (126), which is based on [https://steamcommunity.com/sharedfiles/filedetails/?id=850129854 this Steam Workshop trinket] by Eufuu.
+* {{t|Baby-Bender}} (127), which is based on [https://steamcommunity.com/sharedfiles/filedetails/?id=925882166 this Steam Workshop trinket] by Ink Tears and Del.
+
+=== New Enemies ===
+* {{E|Crispy}}
+* {{E|Dank Charger}}
+* {{E|Leper}}
+* {{E|Mr. Mine}}
+* {{E|Mr. Red Maw}}
+* {{E|Cross Stoney}}
+
+=== New Bosses ===
+* {{E|The Matriarch}}
+
+=== New Achievements ===
+* 64 new achievements.
+** 36 are from the Switch version.
+
+=== Room Changes ===
+* 817 new rooms by Nik @LethalLeather
+* Rooms made for the Afterbirth alt floors after Booster #4 will no longer be subjected to random rock replacements.
+
+=== Graphical Changes ===
+* Added many graphical fixes and changes from [https://steamcommunity.com/sharedfiles/filedetails/?id=1158478342 this Steam Workshop mod] by This Guy, Stewartisme, piber20, Xalum, BeGrapa, PJJLegend, Dat Frodo, a heckin yowler, Super-Colliding Super Button, TitaniumGrunt7, THX, JonTheRealJon, blor, Mr. Gummy Kitten, and I_D30_I.
+** Includes fixed pit seams from [https://steamcommunity.com/sharedfiles/filedetails/?id=893379383 this Steam Workshop mod] by BeGrapa.
+** {{i|Farting Baby}}'s collectible sprite now matches its familiar sprite. Fixed by [https://steamcommunity.com/sharedfiles/filedetails/?id=1220279987 this Steam Workshop mod] by Dat Frodo.
+** Includes smoother loading images from [https://steamcommunity.com/sharedfiles/filedetails/?id=837230415 this Steam Workshop mod] by Super-Colliding Super Button.
+** {{i|YO LISTEN!}}'s familiar sprite is now more pixelated. From [https://steamcommunity.com/sharedfiles/filedetails/?id=1162403663 this Steam Workshop mod] by piber20.
+** Added some backdrop tiling fixes from [https://steamcommunity.com/sharedfiles/filedetails/?id=835624219 this Steam Workshop mod] by piber20.
+** Blood on costumes are now consistently the same color. From [https://steamcommunity.com/sharedfiles/filedetails/?id=1097187643 this Steam Workshop mod] by Xalum.
+** {{t|Lazy Worm}}'s trinket sprite was changed.
+* Added more dirt sprites for burrowing enemies from [https://steamcommunity.com/sharedfiles/filedetails/?id=1201700604 this Steam Workshop mod] by piber20.
+** [[Lump]]'s body is now red when in the [[Scarred Womb]].
+* Added many graphical fixes and changes from [https://antibirth.com/ Antibirth].
+** Changed the lightest shade of the palette of red costumes.
+** {{i|Pentagram}}'s collectible sprite was changed.
+** {{i|Caffeine Pill}}'s collectible sprite was changed.
+** {{i|Isaac's Tears}}' collectible sprite was changed.
+** {{i|Proptosis}}' collectible sprite was changed.
+** {{i|Abaddon}}'s collectible sprite was changed.
+** {{i|SMB Super Fan}}'s collectible sprite was changed.
+** {{i|Polyphemus}}' collectible sprite was changed.
+** {{i|We Need To Go Deeper!}}'s collectible sprite was changed.
+** {{i|The Peeper}}'s collectible sprite was changed.
+** {{i|The Compass}}' collectible sprite was changed.
+** {{i|Mom's Eye}}'s collectible sprite was changed.
+** {{i|Distant Admiration}}'s collectible sprite was changed.
+** {{i|Mom's Contacts}}' collectible sprite was changed.
+** {{i|Forever alone}}'s collectible sprite was changed.
+** {{i|Anemic}}'s collectible sprite was changed.
+** {{t|Cain's Eye}}'s trinket sprite was changed.
+** {{t|Mom's Pearl}}'s trinket sprite was changed.
+** [[Credit Card]] was given a unique card back.
+** [[Chaos Card]], and by extension; [[Huge Growth]], [[Ancient Recall]], and [[Era Walk]], were given a unique card back.
+** [[A Card Against Humanity]] was given a unique card back.
+** Updated Isaac's [[Cathedral]] transition animation.
+* {{i|Money Power}}'s collectible sprite was changed.
+* {{i|Fast Bombs}}' collectible sprite was changed.
+* {{t|NO!}}'s trinket sprite was changed.
+* {{t|Karma}}'s trinket sprite was changed.
+* {{t|Endless Nameless}}' trinket sprite was changed.
+* {{t|Second Hand}}'s trinket sprite was changed.
+* {{i|Pop!}}'s tear sprites were changed.
+* {{i|Haemolacria}}'s tears got a visual overhaul.
+* {{i|Shade}}'s familiar animations were changed.
+* [[Get out of Jail Free Card]] was given a unique card back.
+* [[Holy Card]] was given a unique card back.
+* Fixed some stray pixels in [[Rag Mega]]'s animation.
+* [[Eve]] now leaves a pool of blood behind instead of pee when walking between rooms at low HP.
+* Added a new unique jumping animation to [[Ministro]].
+* [[Charged Key]]'s appearance got an overhaul.
+* Fixed [[Nerve Ending 2]] having a 2 pixel thick outline at the base of their tentacle during their attack animation.
+* Fixed lvl 3 and 4 [[Meat Boy]] having inconsistent head and body color (and lvl 3 and 4 [[Bandage Girl]], to a lesser extent)
+* {{i|My Little Unicorn}}'s costume was given color alts.
+* {{i|Piggy Bank}}'s costume was given color alts.
+* {{i|BOGO Bombs}}' costume was given color alts.
+* {{i|Lord of the Pit}}'s costume was given color alts.
+* {{i|Holy Grail}}'s costume was given color alts.
+* {{i|Fate}}'s costume was given color alts.
+* {{i|Cancer}}'s costume was given color alts.
+* {{i|Sagittarius}}' costume was given color alts.
+* {{i|Synthoil}}'s costume was given color alts.
+* {{i|The Body}}'s costume was given color alts.
+* {{i|Bursting Sack}}'s costume was given color alts.
+* {{i|Betrayal}}'s costume was given color alts.
+* {{i|Lusty Blood}}'s costume was given color alts.
+* {{i|Sticky Bombs}}' costume was given color alts.
+* {{i|Polydactyly}}'s costume was given color alts.
+* [[Yes Mother?|Mom Transformation]]'s costume was given color alts.
+* [[Spun|Spun Transformation]]'s costume was given color alts.
+* [[Conjoined|Conjoined Transformation]]'s costume was given color alts.
+* [[Spider Baby|Spider Baby Transformation]]'s costume was given color alts.
+* {{i|Broken Modem}}'s costume sprite was changed.
+* Added support for per-character alt spritesheets for item costumes. (used by [[The Forgotten]])
+* Fixed {{i|Ouija Board}} costume overwriting the player's skin color to pink instead of white.
+* Directional tear variants (i.e. {{i|Cupid's Arrow}}) now take their falling speed into account when computing sprite rotation.
+* Added minimap icons for [[Half Red Heart]]s, [[Half Soul Heart]]s, [[Blended Heart]]s and [[Gold Heart]]s.
+* Improved some of the existing minimap icons. (notably sacrifice rooms)
+* [[Spider]]s and [[Big Spider]]s will no longer blink when the player has {{i|Bursting Sack}}.
+* [[Red creep]] will no longer be darkened in the [[Scarred Womb]].
+* Adjusted the [[stat]]s of each [[character]] in the character selection menu to better reflect their actual in-game stats.
+* Added a charge bar to {{i|Mom's Knife}} and {{i|Lil Gurdy}}.
+* [[Stone Grimace]]s no longer play their appear animation if encountered in an already cleared room.
+* Adjusted Isaac's pickup animation so items no longer obstruct his face.
+* {{i|Ventricle Razor}}'s portals got a few minor visual tweaks.
+* {{i|Ventricle Razor}}'s portals will now appear closed if they have no connected portal.
+* Items dropped by [[chest]]s or [[Slot Machine]]s no longer revert to their generic stone pedestal look upon leaving and reentering the room.
+
+=== Other Changes ===
+* Slightly improved navigation in the collection menu. (faster and loops back on itself when scrolling vertically)
+* Updated game over sprites for some of the items from Booster #4.
+* {{i|Shade}}'s behavior got minor changes.
+* {{i|Haemolacria}} now uses the same tear delay calculation as {{i|Ipecac}}.
+* {{i|Lil Monstro}}'s shooting sound effect was replaced with a more appropriate one.
+* [[Stoney|Stonies]] now have a brief death animation and break into rock debris.
+* Slightly toned down the tear delay penalty from {{i|Haemolacria}} + {{i|Monstro's Lung}} + {{i|Brimstone}}/{{i|Dr. Fetus}}
+* {{i|Betrayal}} will no longer trigger if there are less than 2 enemies in the room.
+* [[Spikes]] will now start (and remain) in their lowered position when entering a cleared [[Pressure Plate]] room.
+* [[Charm]]ed enemies will now prioritize non charmed enemies unless there aren't any.
+* [[Nerve Ending 2]] now plays a sound when attacking.
+* [[Nerve Ending 2]] can never replace [[Nerve Ending]]s next to doors.
+* [[Swinger]]s now spawn with their head retracted and extend over 2 seconds. (so the head is less likely to spawn right on top of the player with no warning)
+* Decreased the damage rate of Level 3 and 4 [[Bandage Girl]] to match [[Meat Boy]] (it was way too high before)
+* Increased the damage rate of {{i|Angry Fly}} to match other fly orbitals.
+* [[Stoney|Stonies]] now roar less often and will stop doing it while catching their breath.
+* Halved the damage of {{i|Shoop da Whoop!}} to compensate for the fix applied to it. (total damage remains the same, but it will be inflicted over a slightly longer period of time)
+* [[Pickup]]s can now be picked up as soon as they hit the ground.
+* [[Eternal Heart]]s will now take half a heart worth of damage from any lethal hit taken with only [[Soul Heart]]s.
+* Permanently [[charm]]ed enemies will no longer try to go after {{i|Punching Bag}}.
+* {{i|Number One}} and {{i|Kidney Stone}} now cause Isaac to fire "tears" from the middle instead of from his eyes, and at a slightly lower height.
+* {{i|Glowing Hourglass}} now rewinds event counters as well. (this includes [[Donation Machine|Donation]]s and {{i|Eden's Blessing}}s)
+* Using [[? Card]] with {{i|Glowing Hourglass}} will now consume the card.
+* Removed the 5 uses limit from {{i|Glowing Hourglass}} as all (or most) known game breaking exploits have been fixed.
+* {{i|Lost Contact}} now only affects the player's tears. (and tears shot by {{i|Incubus}})
+* Reduced base HP of [[Blue Gaper]]s and added stage HP so they have slightly more reasonable health when encountered early.
+* [[Reward Plate]]s that spawn enemies will now close the doors as well.
+* {{i|Breath of Life}} will now immediately give invincibility frames when triggered by {{i|Void}}. (previous behavior made it extremely exploitable)
+* Added some visual feedback when {{i|Breath of Life}} provides its invincibility.
+* {{i|Breath of Life}} can now be held down between rooms.
+* Spectral tears will no longer bounce off rocks with {{i|Rubber Cement}}.
+* Added a visual cue to {{t|Hairpin}} when it recharges the player's active item upon entering a boss room, audio cue now plays after boss intro instead of before.
+* {{i|BFFS!}} now increases spawner familiar spawn rates.
+* {{i|Glowing Hourglass}} will now also revert the player's [[character]] if it was changed by an item during the current room.
+* [[Donation Machine|Donation]] will now gradually accelerate if the player stays in contact with the donation machine. (applies to [[Greed Machine|Greed donations]] as well)
+* [[Achievement]] popups can now be fast forwarded by tapping Start.
+* Updated charge bars to be less visually intrusive.
+* Added extra sounds and effects to [[creep]] attacks. (from [[Conjoined Fatty|Conjoined Fatties]] and [[Meatball]]s)
+* Following [[familiar]]s are no longer pushed back when very close to the player. (behavior more consistent with Rebirth)
+* [[Co-op]] babies are now saved and restored by {{i|Glowing Hourglass}}.
+* Added unique sounds for [[Gold Heart]]s, [[Black Heart]]s and [[Golden Bomb]]s.
+* Added better visual feedback for [[Gold Heart]]s when breaking.
+* [[Gold Heart]]s will now turn nearby enemies to gold when breaking.
+* [[Eden]] can now be randomed if the player has Eden tokens.
+* Reward Plates will now lock the room when spawning enemies.
+* Afterbirth floor exclusive enemies (i.e. burning/flooded/dank) will no longer appear in Rebirth floors.
+* [[Homunculus]] and [[Begotten]] will now be chained to an adjacent rock if the nearest wall is more than 1 grid cell away.
+* The [[Forsaken]] will now move to a more appropriate place to perform his Brimstone attack in L shaped rooms.
+* Multiple [[Forsaken]]s in the same room will now be able to spawn their own bony each and will always spin their Brimstone attack in the same direction at the same speed.
+* Most sources of [[Blue Spider]]s will now throw those spiders out instead of spawning them on the ground.
+* [[Red Chest]]s inside a [[Devil Room]] will no longer teleport the player to the Devil Room.
+* {{i|Moving Box}} is now unlocked by using {{i|Pandora's Box}} in the [[Dark Room]]. (as it seems to have been originally intended)
+* [[Co-op]] babies can no longer drop out while the player is playing a pickup animation. (could be used to exploit devil deals)
+* [[Poop]]s spawned by {{i|E. Coli}} and {{i|Flush!}} now react to damage similarly to regular poops.
+* Movable [[TNT|TNT barrels]] now take damage exactly like their regular counterparts. (they will take less shots to destroy at base damage)
+* {{i|Mine Crafter}} will now spawn a [[TNT|TNT barrel]] directly at the player's position rather than on a nearby free tile.
+* All variants of [[Stone Grimace]]s now explode into rock debris when killed with [[Chaos Card]] or {{i|Little Horn}} and will no longer respawn when reentering the room if killed.
+* {{i|Head of Krampus}} no longer has a chance to rotate.
+* Achievements related to sleeping in [[bed]]s ({{t|Wooden Cross}}, {{i|Blanket}}) will now be unlocked after the sleeping animation rather than before.
+* Bombs spawned from {{i|Scatter Bombs}} will now actually scatter around.
+* Small bombs from {{i|Scatter Bombs}} now leave smaller craters.
+
+=== Bug Fixes ===
+* Fixed [[Mr. Fred]] not creating a blood explosion on death.
+* Fixed some minor graphical issues in the main menu.
+* Fixed special rocks (ie pots and mushrooms) not playing the appropriate sound in some floors.
+* Fixed boil rocks giving the wrong drops when destroyed in the [[Blue Womb]].
+* Fixed [[The Haunt]]'s champion variants and [[Delirium]]'s Haunt form not being transparent during their first phase.
+* [[Delirium]]'s [[Brownie]] form no longer transitions into the second phase (turning into a weakened [[Dangle]]) when at low health.
+** This also applies to Delirium's black Brownie form (this prevents Delirium from dying earlier than intended without properly playing its death animation, since black Brownie spawns two [[Dank Squirt]]s upon death).
+* Fixed [[Delirium]] turning into a [[Lil' Haunt]].
+* Fixed multidimensional tears not scaling properly. (only one of the two layers would scale)
+* Fixed [[The Magician]] and [[Judgement]] having unwanted transparent pixels.
+* Fixed {{i|Lil Monstro}} not playing its shooting animation.
+* Laser familiars like {{i|Robo-Baby}} and {{i|Lil Brimstone}} can now damage [[fireplace]]s and [[poop]]s.
+* Fixed [[Stone Grimace]]s not closing their eyes when the room is cleared.
+* Fixed a broken interaction between {{i|Lachryphagy}} and {{i|Death's Touch}}.
+* Fixed an infinite recursion issue with {{i|Haemolacria}} + {{i|Lead Pencil}} and {{i|Haemolacria}} + {{i|Dr. Fetus}} + {{i|Sad Bombs}}.
+* Fixed [[The Cage]]'s grey creep not blinking like damaging creep normally does.
+* Fixed [[The Cage]]'s rolling attack ending as soon as it begins.
+* Fixed Level 4 {{i|Bumbo}} occasionally getting stuck trying to pick up a [[coin]].
+* Fixed [[Mushroom (Enemy)|Mushroom]]s not displaying [[status effect]]s, not playing their hiding animation, and moving around way too much when shot.
+* Added a generic firing animation to {{i|Brimstone}} for combos that keep its appearance but removes its ability to charge (i.e. {{i|Haemolacria}}).
+* [[Troll Bomb]]s now play their drop sound when they hit the ground, not when they spawn.
+* Fixed [[Charm]]ed enemies not being able to deal contact damage to a charmed target.
+* Fixed [[Pressure Plate]] rooms granting a charge when bombing out of them.
+* Fixed [[Spikes]] rarely staying in their raised position when clearing [[Pressure Plate]] rooms.
+* Fixed boss HP bar counting negative boss HP, causing it to report inaccurate values or even disappear when bosses are killed with very high damage.
+* Fixed {{i|Razor Blade}} always giving blood tears when held instead of only when activated.
+* Fixed mushroom items not playing their unique pickup sound.
+* Fixed {{i|Euthanasia}} being able to kill [[Ultra Greed]] during his transformation into [[Ultra Greedier]].
+* Fixed the [[Greed]] fight before [[Ultra Greed]] not triggering the victory jingle when cleared.
+* Fixed [[Mega Clotty|Mega Clotties]] not making any sound when stomping.
+* Fixed a glitch which caused {{i|Shoop da Whoop!}} to only deal damage during its first few frames, and gave it a flickering impact effect.
+* [[Death's Head]]s no longer deal contact damage during their death animation.
+* Fixed bosses spawned by {{i|Delirious}} dropping key pieces when killed in angel rooms.
+* Fixed {{i|Succubus}} not granting its damage bonus when obtained via {{i|Cambion Conception}}.
+* Fixed [[Devil deal]]s costing [[Soul Heart]]s instead of [[Red Heart]]s if all of the player’s heart containers are empty.
+* Fixed orbitals jittering when spawning or entering a new room.
+* Fixed the {{i|Glowing Hourglass}} not discharging on use when overcharged.
+* Fixed an exploit involving the {{i|Glowing Hourglass}} and the {{i|Schoolbag}}.
+* Fixed permanently [[charm]]ed enemies not being able to shoot projectiles through each other.
+* Fixed use animation not playing when activating {{i|Satanic Bible}}.
+* Fixed {{i|Glowing Hourglass}} duplicating expendable familiars (blue flies/spiders) and perma-[[charm]]ed enemies.
+* Fixed projectiles from perma-[[charm]]ed enemies being blocked by familiars.
+* [[Dressing Table]] will no longer spawn locked items or items that were previously picked up.
+* Fixed [[Dressing Table]] visually duplicating itself when dropping a collectible after being bombed.
+* Fixed [[Rag Man]]'s appear animation lasting much longer than intended.
+* Fixed [[The Fallen]]'s brimstone attack being delayed due to previous changes to [[Krampus]]' AI.
+* Fixed [[Krampus]]' brimstone attack animation not matching the timing of the actual attack.
+* Fixed [[Famine]] starting his dash later than he's supposed to, resulting in a weird looking animation.
+* Fixed blue [[Famine]]'s head playing its attack animation with the wrong timing.
+* Fixed surprise minibosses such as [[Greed]] and [[angel]]s not playing the alternate boss music when they should.
+** This also applies to [[The Fallen]] that appears before [[Satan]].
+* Fixed [[The Hollow]] occasionally getting stuck along a wall.
+* Fixed [[The Hollow]]'s champion variants often not dropping what they're supposed to drop.
+* Fixed [[Fred]]s looking jittery when jumping over obstacles.
+* Some [[transformation]]s will now properly override the player's skin color ([[Leviathan]], [[Bob]] and [[Fun Guy]])
+* Fixed {{i|Hive Mind}} head costume not showing up in game
+* Fixed an issue where rebuilding the player's costume map would cause visual issues with costumes containing multiple head layers with different spritesheets (such as {{i|Mysterious Liquid}})
+* [[Rune]]s and [[Dice Shard]] no longer play a paper sound on pickup.
+* Fixed [[Backasswards]] having a chance to give items that weren't unlocked yet or multiple copies of the same item, and allowing starting items to appear again during the run.
+* Fixed [[Mulligan]]s and all variants instantly exploding if killed during their spawn animation.
+* Fixed [[Cod Worm]]s being briefly vulnerable during their spawn animation.
+* Fixed [[Knight]]s and [[Eye]]s being completely invincible during their spawn animation. (Knights will still block tears from the front and sides)
+* Fixed [[Blastocyst]] not splitting when killed while poisoned. (and awkwardly sliding towards the player during its splitting animation sometimes)
+* Added a small random delay before [[Gusher]]s, [[Splasher]]s and [[Blubber]]s can shoot projectiles (so they don't immediately shoot as soon as an enemy turns into them)
+* Fixed [[Dople]]s firing their first shot from the middle of the room when the player enters the room while firing.
+* Fixed [[The Lamb]]'s body not triggering the boss victory jingle if killed last.
+* Fixed [[Suture]] not making a small grunt when it detaches after Contusion is killed.
+* {{i|Mom's Knife}} now applies status effects in a more consistent way.
+* Fixed [[Big Horn]] getting instantly killed by {{i|Sharp Straw}} (among with other minor animation fixes)
+* Added interpolation to enemy projectiles with wiggling effects (they will now look much smoother in motion)
+* Fixed [[Slot Machine|slot machines]] appearing as [[battery|batteries]] in the minimap if a battery is present in the same room.
+* Fixed [[Rag Mega]]'s invincibility ending later than what his animation would suggest.
+* Fixed [[Mimic Chest]]s instantly opening and damaging the player if they spawn at their position when clearing a room.
+* Fixed [[Greed Machine]]s jamming even when the HUD displays a jamming rate of 0%.
+* [[Blue Gaper]]s and [[Greed Gaper]]s will now have a proper appear animation if spawned by a room rather than by a boss.
+* Fixed [[Portal]]s being able to spawn two enemies in very quick succession upon entering a room.
+* Fixed some champion types rarely spawning what they're supposed to spawn in hard mode. (such as splitting champions)
+* Fixed enemies spawned from splitting champions sometimes appearing too far away from the original enemy.
+* Exploding champions will no longer explode if killed very close to the player 1 second within entering the room.
+* Unlockable pickups (i.e. [[Golden Bomb]]s) will be replaced with a random variant if they haven't been unlocked yet.
+* Made [[Rage Creep]]'s attack animation slightly longer so it won't start moving until its laser has fully disappeared.
+* Fixed {{i|Technology 2}} beam being deleted and respawned twice if maintained during a room transition.
+* Fixed not being able to pick up a [[trinket]] if the player has that trinket's effect via the {{t|Error}} trinket.
+* Fixed {{i|Death's List}} streak ending if a perma-[[charm]]ed enemy dies.
+* Fixed spawner familiars (i.e. [[sack]]s) not playing their floating animation until they spawn something.
+* Fixed {{i|Little C.H.A.D.}} having missing animation frames.
+* Fixed {{i|Little C.H.A.D.}} playing its kissing sound every room cleared instead of only when it spawns hearts.
+* Spawner familiars now have a more consistent spawning algorithm.
+* Fixed the {{t|The Left Hand}} not affecting [[Bomb Chest]]s.
+* Fixed {{i|Lil Gurdy}} being excessively loud when hitting walls.
+* Fixed some minor visual issues when turning back time with {{i|Glowing Hourglass}}. (such as fires being invisible during the teleport in animation)
+* [[Champion]] enemies will no longer deal contact damage if the non-champion version doesn't.
+* [[Charm]]ed [[Portal]]s will now spawn permanently charmed enemies.
+* Fixed {{i|Spear Of Destiny}} hit detection being shifted up by several pixels.
+* Fixed the [[Bestiary]] not counting kills for [[Ultra Greed]] and [[Ultra Greedier]]
+* Fixed {{i|Glaucoma}} blood tears being completely invisible.
+* Fixed {{i|Multidimensional Baby}} not working properly with Anti Gravity tears.
+* Fixed miniboss rooms not displaying the right [[character]] name if the player's character was changed via an item.
+* Fixed [[pickup]]s not showing up in the [[Shop]] in the minimap.
+* Fixed [[red creep]] not being darkened in {{s|Womb}} when playing [[Greed Mode]].
+* Fixed [[Eve]] not starting with the {{i|Razor Blade}} if the item itself hasn't been unlocked yet.
+* {{i|Holy Mantle}} will no longer be restored if the player saves and continues after losing it.
+* Fixed [[Famine]]’s charge and [[Ultra Greed]]’s dash being able to instantly kill the player in some cases.
+* [[Boss]] [[heart]] drops now depend on the room seed. (they no longer depend on the order in which the bosses are killed)
+* Fixed [[Daily Challenges|daily]] related [[achievement]]s incorrectly notifying that all challenges have been unlocked.
+* Fixed a memory leak occurring when exiting a run while a [[Co-op]] baby is still on screen.
+* Fixed up some code related to [[Co-op]] babies to make them work better with {{i|Glowing Hourglass}}
+* Fixed [[Lil Haunt]]s having an incorrect sprite on the death screen (and in the [[bestiary]])
+* Fixed a bug which caused certain [[Greed mode]] waves to be much more common than others.
+* Fixed missing animation warning spam caused by [[Stoney|Stonies]].
+* Fixed blue and purple [[fireplace]]s having a chance to drop multiple [[Soul Heart]]s if extinguished by multiple simultaneous explosions.
+* Fixed {{i|Incubus}}' charge bar being incorrect with {{i|Mom's Knife}}.
+* Fixed some special [[Co-op]] babies giving the wrong amount of hearts back to the player when removed.
+* Fixed items that lock the player's aim completely overriding the blink animation
+* Fixed a softlock with [[Mega Satan]] caused by {{i|Mine Crafter}}
+* Fixed [[sack]]s dropping [[Battery|batteries]] and [[tarot card]]s way more often than intended.
+* Boosted announcer lines for the new [[card]]s and [[pill]]s so they are consistent with the rest.
+* {{i|Parasitoid}} will no longer spawn spiders/flies when hitting invincible enemies such as stone grimaces.
+* Fixed using {{i|Mr. ME!}} with {{i|Car Battery}} causing stolen items to become non-solid.
+* Fixed {{i|Marked}} crosshair not blinking.
+* Fixed the inner part of the boss health bar casting a visible extra shadow.
+* Fixed some more enemies not having overlay effect attachment points.
+* Fixed the character selection wheel decelerating too early when randoming, cycling through characters at minimum speed until reaching the desired character
+* Added a failsafe to prevent crashes when too many entity queries are done in a single frame (this fixes a few crashes that occur when a lot of entities are on screen)
+* [[Lil Haunt]]s are no longer considered bosses (meaning they can be caught with {{i|Friendly Ball}}) and now have a unique death portrait.
+* Fixed a bunch of [[bestiary]] entries using the wrong portrait.
+* [[Locust]]s will now only spawn when a room has been entered for the first time. (prevents farming them using {{t|Door Stop}})
+* Fixed {{i|Samson's Chains}}' links not being positioned properly with {{i|BFFS!}}.
+* Fixed {{i|Gemini}} familiar chain not being properly interpolated.
+* Fixed {{i|Gemini}} familiar not scaling with {{i|BFFS!}}.
+* Fixed {{t|Pay to Win}} overriding {{i|More Options}}.
+* [[Co-op]] babies can no longer borrow {{i|Guillotine}} from the player. (very buggy interaction)
+* Fixed rock waves from {{i|Wait What?}} and {{i|Mega Bean}} being able to hurt {{i|Isaac's Heart}} and co-op babies
+* Fixed some pills not playing the correct sad/happy animation.
+* Fixed being able to clip through item pedestals by running into them.
+* {{i|Incubus}} will no longer play sounds when firing {{i|Tech X}}. (was particularly annoying with Brimstone)
+* Fixed [[Scarred Para-Bite]]s sometimes spawning a projectile at the player's position when killed during their appear animation.
+* Fixed achievement popups being unnecessarily delayed once the player has played 31 or more dailies.
+* Fixed {{i|Adrenaline}} not updating when taking certain health affecting pills (such as [[Hematemesis]])
+* Fixed {{i|Dark Prince's Crown}} only reapplying its buff 1 frame after entering a new room, triggering Found HUD each time.
+* Bombs swallowed by [[Chub]] will now do their proper explosion effects.
+* Fixed {{i|Flush!}} and {{i|Brimstone}}+{{i|The Ludovico Technique}} affecting friendly enemies.
+* Added safeguards to prevent boss champions that double themselves (i.e. red [[Monstro]], pink [[The Cage]] and blue [[Gurdy Jr.]]) from spawning on top of the player upon entering the room.
+* Fixed {{i|Guillotine}} not firing from the right position with {{t|Duct Tape}}.
+* Fixed some {{s|Caves}}/{{s|Depths}} rooms containing [[Wall Creep]]s being slightly broken since Booster #4.
+* Fixed a corner wall entity not being generated in one of the L room shapes. (shape 12, causes some issues, notably with [[A Card Against Humanity]])
+* Fixed being able to fire infinite rockets when using {{i|Doctor's Remote}} with {{i|Marked}}.
+* Fixed [[sack]]s dropped from {{i|Sack of Sacks}} often containing identical [[card]]s.
+* Fixed being able to teleport into an Error room on top of a hazard. (i.e. a [[Spiked Chest]]s)
+* {{i|Parasitoid}} tears now spawn blue flies/spiders at their position rather than the player's. (spawned flies and spiders will be thrown towards the player before targeting enemies)
+* Fixed {{i|Athame}} and {{i|Maw Of The Void}} being able to spawn many [[Black Heart]]s when damaging enemies with damage resistance. (i.e. [[Mushroom (Enemy)|Mushrooms]])
+* Fixed some on-kill effects (such as {{i|Gimpy}} and {{i|Infestation 2}}) triggering more than once when an enemy is killed by simultaneous damage sources.
+* Fixed [[Envy]]'s split parts sharing the same drop seed.
+* {{i|Mine Crafter}} will now spawn two [[TNT|TNT barrels]] with {{i|Car Battery}} instead of spawning one and then immediately detonating it.
+* [[Chaos Card]] and {{i|Little Horn}} will now properly kill [[fireplace]]s without a blood effect.
+* Fixed being able to force a revival with {{i|Guppy's Collar}} or {{t|Broken Ankh}} by saving and resuming the run after dying.
+* Fixed portals from {{i|Ventricle Razor}} sometimes not appearing when created in a large room which is then reentered from a different door.
+* Fixed not being able to enter {{i|Ventricle Razor}} portals within the same room if the player is in an off screen room. (i.e. [[Devil Room]])
+* Fixed [[Devil Room]] doors not having proper door animations and disappearing when closed.
+* Fixed {{i|Mom's Wig}} spawning [[Blue Spider]]s way too frequently when the player has a charged attack.
+* Fixed {{i|Kidney Stone}} not updating the player's firerate on the final tick of the tear burst. (effectively leaving the player with -1 tear delay until the tear state is updated)
+* Fixed being able to keep the firerate buff from {{i|Kidney Stone}} permanently by picking up an item that changes Isaac's attack type during the tear burst.
+* Fixed {{i|Eden's Soul}} copying the charge of the previously held active item instead of starting at 0 charge.
+* Credits and epilogue will now adapt to the game's volume settings instead of always playing at max volume.
+* Familiars will now be teleported to the player's new position if it was changed by a boss such as [[Gurdy]] or [[Mom's Heart]].
+* Fixed shadow layer not being loaded correctly in any room that doesn't have the standard 1x1 shape.
+* FX layers with parallax will now smoothly transition to their new position upon teleporting across the room.
+* Fixed {{i|A Lump of Coal}} and {{i|The Ludovico Technique}} tears looking odd due to always using the biggest tear sprite.
+
+== Mod Support ==
+* Fixed alt skin color spritesheets not loading for mod items.
+* Fixed a crash when disabling a mod that contains custom characters.
+* Character selection ring now has a perspective effect which scales with the number of characters so it never looks cluttered.
+* Custom characters will now be placed before Random rather than after.
+* Added a custom implementation for the Lua print() function which outputs to the debug console.
+* Fixed Player:GetName() causing crashes with [[co-op]] babies.
+* Added MC_PRE_ROOM_ENTITY_SPAWN Lua callback for entities spawned as part of a room's layout (int type, int variant, int subtype, int gridindex, int seed) -> int type, int variant, int subtype.
+* Fixed some mod callbacks crashing if anything other than a table is returned.
+
+== Debug Console Changes ==
+* Fixed spawn command ignoring subtype when spawning entities by name. (i.e. heart pickups)
+* Console now slides in and out faster and more smoothly, accepts input even while sliding in, and can be closed with Esc.
+* Added support for non QWERTY keyboard layouts.
+* Backspace can now be held to delete characters quickly.
+* Text cursor can now be moved left and right in the console.
+* Home and End will now move the cursor to the beginning/end of the current command.
+* Ctrl+Home and Ctrl+End will scroll to the beginning and end of the history.
+* Numpad Enter can now be used to run commands.
+* Added "clear" command to clear the history.
+* Clamped console history to 1024 entries to limit memory usage.
+* Clamped command buffer to 64 entries to limit memory usage.
+* Commands rerun from the command buffer will now be moved rather than copied to the front. (so running the same command multiple times doesn't clutter the command buffer)
+* Condensed errors printed by the "lua" command so there is less useless junk at the beginning of the error string.
+* Lua errors will now be printed to the console.
+* Added automatic text wrapping to both the console history and input.
+* Added ConsoleFont parameter to options.ini, set to 1 to use a smaller font. (0 by default, can also be switched in game using Ctrl-Numpad+ and Ctrl-Numpad-)
+* Added FadedConsoleDisplay toggle to options.ini, shows recent console on screen even if the console is closed. (disabled by default)
+* Added SaveCommandHistory toggle to options.ini, enables or disables saving the console command history between sessions. (enabled by default)
+* Debug 4 (high damage) will now actually increase the player's damage stat so it applies to all attack types.
+* Debug 5 now shows information about the current room. (notably the room ID)
+* Fixed luamod reporting a success if Lua errors were encountered while loading a mod.
+
+== Undocumented Changes ==
+=== New Characters ===
+* [[The Forgotten]]
+
+=== New Items ===
+* {{i|Marrow}} (541)
+* {{i|Slipped Rib}} (542)
+* {{i|Hallowed Ground}} (543)
+* {{i|Pointy Rib}} (544)
+* {{i|Book of the Dead}} (545)
+* {{i|Dad's Ring}} (546)
+* {{i|Divorce Papers}} (547)
+* {{i|Jaw Bone}} (548)
+* {{i|Brittle Bones}} (549)
+* {{i|Broken Shovel 1}} (550)
+* {{i|Broken Shovel 2}} (551)
+* {{i|Mom's Shovel}} (552)
+
+=== New Trinkets ===
+* {{t|Finger Bone}} (128)
+
+=== New Pickups ===
+* [[Bone Heart]]
+
+=== New Objects ===
+* [[Holy Poop]]
+
+=== New Synergies ===
+* {{i|Mom's Knife}} will now synergize with {{i|Holy Light}}.
+* {{i|Mom's Knife}} will now synergize with {{i|Mysterious Liquid}}.
+
+=== Bug Fixes ===
+* Fixed the bug where [[Super Envy]] dropped {{i|Shoop da Whoop!}} instead of {{i|Forever alone}}. (According to the developers, this was always intended, but has been bugged since the initial port of the game.)
+* Fixed the bug where the {{t|Walnut}} trinket broke when touching a shopkeeper.
+* Fixed the bug where {{i|X-Ray Vision}} would not work properly on {{s|The Void}}.
+* Fixed the bug where saving and quitting would duplicate a multi-segment boss spawned by {{i|Delirious}}.
+* Fixed the bug where {{i|Delirious}} would spawn a [[Mega Satan]] head and it would do nothing. (It is no longer possible to spawn a [[Mega Satan]] head.)
+* Fixed the bug where you could take damage from {{i|Jacob's Ladder}} lasers that stayed on the screen during a room transition.
+
+=== Graphical Changes ===
+* Added a shooting animation to [[Blister (Enemy)|Blisters]] from [https://steamcommunity.com/sharedfiles/filedetails/?id=918695562 this Steam Workshop mod] by TheShadyOne.
+* Womb trapdoors have a new sprite for when they are closed.
+* [[Lucky penny]] was given a green shine from [https://steamcommunity.com/sharedfiles/filedetails/?id=1173905740 this Steam Workshop mod] by piber20.
+* [[Scared Heart]] was given a faster animation from [https://steamcommunity.com/sharedfiles/filedetails/?id=1173905740 this Steam Workshop mod] by piber20.
+* {{i|The Jar}}'s appearance now changes based on how many hearts it contains. Based on [https://steamcommunity.com/sharedfiles/filedetails/?id=1207615661 this Steam Workshop mod] by O_o.
+
+=== Room Changes ===
+; Miscellaneous
+* Deleted/moved props in MANY rooms.
+* Changed difficulty for many rooms from easy values to harder values.
+; Special rooms:
+* Moved the TNT barrels one square away from the entrances in Treasure Room #13 (to prevent unavoidable with Mama Mega).
+* Fixed misc. doors in I AM ERROR rooms.
+* Replaced Lovers Cards with Black Runes in I AM ERROR room #23.
+* 2x Attack Flies were moved away from the door in I AM ERROR room #17.
+* 3x soul heart Super Secret Room is now weight 0.1 (from 1.0).
+* 3x black heart Super Secret Room is now weight 0.1 (from 1.0).
+* 5x rune Super Secret Room is now weight 0.25 (from 1.0).
+* 8x random pickup Super Secret Room is now weight 0.25 (from 1.0).
+* 2x black heart Curse Room is now weight 0.25 (from 1.0).
+* Replaced the Lovers Card with a Black Rune in Curse Room #21.
+* Replaced a Rag Man with a Null in Dirty Bedroom #14.
+* Monstro room #1015 had difficulty changed from 10 to 1.
+* Moved 2x Blastocyst closer to the center of the room in room #2042.
+
+; {{s|Basement}}
+* Changed some Sleepy Gapers to normal Gapers in a bunch of rooms.
+* Changed some Flaming Fatties to normal Fatties in a bunch of rooms.
+* Deleted 2x poops in narrow room #1030.
+* Deleted 2x pots in narrow room #722.
+* Changed the Rag Man to a Ragling in narrow room #755.
+* Moved 3x Mega Troll Bombs behind all of the flies in narrow room #753.
+* Deleted some fires and changed some Flaming Hoppers to Hoppers in room #691.
+* Changed one Gaper to a pot in narrow room #616.
+* Moved the TNT barrels one square away from the doors in room #274.
+* Deleted two duplicate misplaced entities in room #281.
+* Deleted two null rooms.
+
+; {{s|Cellar}}
+* Changed some Sleepy Gapers to normal Gapers in a bunch of rooms.
+* Changed some Flaming Fatties to normal Fatties in a bunch of rooms.
+* Moved a Mulliboom by 1 square in room #61.
+* Moved both Mullibooms by 1 square in room #62.
+* Added 2x spider web stacked entities to room #87.
+* Deleted 2x spiders from room #99.
+* Removing two rocks from room #106.
+* Moved 2x spiders away from the doors by 1 square in room #110.
+* Moved 2x spiders away from the doors by 1 square in room #113.
+* Moved 2x spiders to the opposite corners in room #114.
+
+; {{s|Burning Basement}}
+* Deleted two null rooms.
+
+; {{s|Caves}}
+* Changed some Drowned Chargers to Chargers in a bunch of rooms.
+* Changed some Drowned Hives to Hives in a bunch of rooms.
+* Changed some Drowned Boom Flies to Boom Flies in a bunch of rooms.
+* Deleted 2x Pale Fatties and changed 2x Pale Fatties to 2x Fatties in room #917.
+* Deleted 6x Troll Bombs from room #875.
+* Deleted 3x Blue Gapers from room #885.
+* Deleted 8x Pale Fatties and changed 1x Pale Fatty to 1x Fatty in room #843.
+* Deleted 6x Pale Fatties in room #850.
+* Deleted 6x Pale Fatties and changed 4x Pale Fatty to 4x Fatty in room #854.
+* Deleted 2x Pale Fatties and changed 4x Pale Fatty to 4x Fatty in room #805.
+* Deleted 2x Pale Fatties and changed 4x pits with 3x rocks in room #798.
+* Deleted 2x Pale Fatties and changed 4x pits with 3x rocks in room #818.
+* Deleted 1x Pale Fatty and changed 6x Pale Fatties to 6x Fatties in L room #760.
+* Moved 2x Pale Fatties to be closer to the center in L room #739.
+* Changed 4x Pale Fatties to 4x Fatties in 2x1 room #720.
+* Deleted 6x Troll Bombs from narrow room #690.
+* Deleted 1x Pale Fatty and 1x Blubber from room #596.
+* Deleted 1x Conjoined Fatty from room #540.
+* Redesigned room #60 so that it only has 2 doors instead of 4.
+* Changed 2x Pits to 2x rocks in room #61.
+* Deleted 6x Pits to room #66.
+* Deleted 8x Pits to room #67.
+* Deleted 4x Pits to room #72.
+* Deleted 2x Spitties from room #74.
+* Added 2x cobwebs to room #75.
+* Moved 2x Spitties in room #79.
+* Deleted 2x pits in room #80.
+* Deleted 2x Chargers from room #87.
+* Deleted 1x Moter from room #110.
+* Deleted 1x Red Host from room #164.
+* Deleted 4x Pits and moved 4x Maws to the empty spaces on room #363 (to stop the bug where they would glitch out of the wall upon first spawning).
+* Changed 2x Squirt to 2x Corn in room #938.
+
+; {{s|Catacombs}}
+* Changed some Drowned Chargers to Chargers in a bunch of rooms.
+* Changed some Drowned Hives to Hives in a bunch of rooms.
+* Changed some Drowned Boom Flies to Boom Flies in a bunch of rooms.
+* Deleted 8x Pale Fatties in room #843.
+* Deleted 5x Pale Fatties in room #850.
+* Deleted 6x Pale Fatties and changed 4x Pale Fatty to 4x Fatty in room #854.
+* Deleted 4x Pale Fatties in room #805.
+* Deleted 2x Pale Fatties in room #798.
+* Reworked room #818 to only have half of the enemies.
+* Deleted 1x Pale Fatty and changed 6x Pale Fatties to 6x Fatties in L room #760.
+* Moved 2x Pale Fatties to be closer to the center in L room #739.
+* Deleted 6x Troll Bombs from narrow room #690.
+* Deleted 1x Pale Fatty and 1x Blubber from room #596.
+* Deleted 1x Conjoined Fatty from room #540.
+* Deleted 2x Splasher from room #213.
+* Deleted 4x Pits and moved 4x Maws to the empty spaces on room #363 (to stop the bug where they would glitch out of the wall upon first spawning).
+
+; {{s|Flooded Caves}}
+* Deleted 2x Pale Fatties in room #917.
+* Deleted 6x Troll Bombs from room #875.
+* Deleted 3x Blue Gapers from room #885.
+* Deleted 8x Pale Fatties and changed 1x Pale Fatty to 1x Fatty in room #843.
+* Deleted 6x Pale Fatties in room #850.
+* Deleted 6x Pale Fatties and changed 4x Pale Fatty to 4x Fatty in room #854.
+* Deleted 2x Pale Fatties and changed 4x Pale Fatty to 4x Fatty in room #805.
+* Deleted 2x Pale Fatties and changed 4x pits with 3x rocks in room #798.
+* Deleted 2x Pale Fatties and changed 4x pits with 3x rocks in room #818.
+* Deleted 1x Pale Fatty and changed 6x Pale Fatties to 6x Fatties in L room #760.
+* Moved 2x Pale Fatties to be closer to the center in L room #739.
+* Changed 4x Pale Fatties to 4x Fatties in 2x1 room #720.
+* Deleted 6x Troll Bombs from narrow room #690.
+* Deleted 1x Pale Fatty and 1x Blubber from room #596.
+* Deleted 1x Conjoined Fatty from room #540.
+* Deleted 4x Pits and moved 4x Maws to the empty spaces on room #363 (to stop the bug where they would glitch out of the wall upon first spawning).
+* Deleted 1x Cross Turret in room #979.
+* Deleted 1x Cross Turret in room #980.
+* Deleted 1x Cross Turret in room #984.
+* Deleted 1x Cross Turret in room #985.
+* Deleted 1x Cross Turret in room #986.
+* Deleted 1x Cross Turret in room #987.
+* Changed 2x Cross Turrets with rocks in room #988.
+
+; {{s|Depths}}
+* Changed some Dank Globins to Globins in a bunch of rooms.
+* Changed some Dank Squirts to Squirts in a bunch of rooms.
+* Changed some Dank Death's Heads to Death's Heads in a bunch of rooms.
+* Deleted a bugged stacked Blister and changed 2x Blisters to 2x Keepers in room #898.
+* Reworked room #799 to only have 2x Blue Gapers.
+* Deleted 2x Trolls Bombs and moved 2x Trolls Bombs in room #699.
+* Changed 1x Magician card to 1x random card in room #286.
+* Moved 1x Begotten from the bottom to the center in room #316.
+* Deleted empty room #378 entirely.
+* Deleted the bugged stacked rock in room #430.
+* Moved 1x Rage Creep up one square in room #457 (it was bugged and killing the other two Rage Creeps on spawn).
+* Moved 4x Corns closer to the center in room #912.
+* Deleted 1x Cross Turret and 1x Vis in room #914.
+
+; {{s|Necropolis}}
+* Changed some Dank Globins to Globins in a bunch of rooms.
+* Changed some Dank Squirts to Squirts in a bunch of rooms.
+* Changed some Dank Death's Heads to Death's Heads in a bunch of rooms.
+* Deleted a bugged stacked Blister in room #898.
+* Deleted 1x Heart and 1x Mask in room #4.
+* Reorganized room #10 to have 2 doors instead of 4 and have 4 Gurgles instead of 6.
+* Changed 1x Magician card to 1x random card in room #286.
+* Moved 1x Begotten from the bottom to the center in room #316.
+* Added 2x Sacks offscreen to the left in room #423.
+* Deleted the bugged stacked rock in room #430.
+* Deleted 1x Cross Turret in room #910.
+* Deleted 1x Cross Turret in room #912.
+* Moved 1x Cross Turret and 1x Brain in room #915.
+* Deleted 1x Cross Turret in room #917.
+* Changed 4x Spikes to 4x Retracting Spikes in room #918.
+* Changed 2x Cross Turrets to 2x rocks in room #919.
+* Added an explicit chance for each Host in narrow room #922 to spawn as a Red Host.
+* Deleted 1x Cross Turret in room #923.
+* Deleted 1x Cross Turret in room #924.
+* Deleted 2x Squirt in room #925.
+* Deleted 1x Cross Turret and added 8x rocks around the other 2 Cross Turrets in L room #926.
+* Deleted 1x Cross Turret in room #927.
+* Deleted 1x Cross Turret and added 4x rocks to room #929.
+* Changed 2x Cross Turrets to 2x skulls in room #932.
+* Added 2x blocks and 4x skulls and 9x rocks to room #933.
+* Added 6x rocks in room #934.
+* Added 6x rocks in room #935.
+* Added 4x rocks in room #938.
+* Deleted 1x Cross Turret in room #940.
+* Changed 1x Cross Turret with 1x Constant Stone Shooter (Down) in room #941.
+* Deleted 2x Cross Turret and 1x Mobile Host in room #942.
+* Deleted 1x Cross Turret and 1x Squirt and 2x poops and added 2x Dips in room #944.
+* Added a chance for each Cross Turret to be a rock in room #953.
+* Deleted 1x Cross Turret in room #954.
+
+; {{s|Dank Depths}}
+* Deleted a bugged stacked Blister and changed 2x Blisters to 2x Keepers in room #898.
+* Reworked room #799 to only have 2x Blue Gapers.
+* Deleted 2x Trolls Bombs and moved 2x Trolls Bombs in room #699.
+* Changed 1x Magician card to 1x random card in room #286.
+* Moved 1x Begotten from the bottom to the center in room #316.
+* Deleted empty room #378 entirely.
+* Deleted the bugged stacked rock in room #430.
+* Moved 1x Rage Creep up one square in room #457 (it was bugged and killing the other two Rage Creeps on spawn).
+
+; {{s|Womb}}
+* Changed some Scarred Guts to Guts in a bunch of rooms.
+* Changed some Scarred Para-Bite to Para-Bite in a bunch of rooms.
+* Deleted 1x Nerve Ending in narrow room #825.
+* Changed 4x Magician Card to 4x random card in narrow room #687.
+* Added 2x Polyps to 2x2 room #424 to prevent unavoidable damage when entering from the bottom-left door.
+* Changed 2x Spikes to 2x Retracting Spikes in 2x1 room #841.
+* Deleted 1x Cross Turret and added 2x rocks and 1x Leech to room #842.
+* Reworked room #844 to have 1x Cross Turret (instead of 2) and other hazards.
+* Deleted 1x Cross Turret from room #845.
+* Moved 2x Cross Turret upwards in room #846 (to make the room easier).
+
+; {{s|Utero}}
+* Changed some Scarred Guts to Guts in a bunch of rooms.
+* Changed some Scarred Para-Bite to Para-Bite in a bunch of rooms.
+* Deleted 1x Nerve Ending in narrow room #825.
+* Reworked narrow room #693 to have 1x Bloodshot Eye (instead of 2) protected by 1x Red Poop.
+* Deleted 1x Bloodshot Eye in narrow room #609.
+* Added 2x Polyps to 2x2 room #424 to prevent unavoidable damage when entering from the bottom-left door.
+* Changed 2x Gaping Maws to 2x Red Poops in room #424.
+* Deleted 1x Cross Turret and added 2x rocks to room #845.
+* Deleted 1x Cross Turret to L room #847.
+* Changed 2x Blue Fires to 2x Red Poops in room #853.
+* Reworked room #854 to have 1x Cross Turrets (instead of 2).
+* Deleted 2x Cross Turrets and added 2x Flesh Mobile Hosts to 2x2 room #859.
+
+; {{s|Scarred Womb}}
+* Deleted 1x Nerve Ending in narrow room #825.
+* Changed 4x Magician Card to 4x random card in narrow room #687.
+* Added 2x Polyps to 2x2 room #424 to prevent unavoidable damage when entering from the bottom-left door.
+
+; {{s|Cathedral}}
+* Deleted 1x Cross Turret from room #342.
+* Added 8x rocks to surround the 2x Cross Turrets in room #344.
+* Moved 2x Cross Turrets and 2x Boneys in room #321.
+* Moved 2x Cross Turrets and 4x rocks in room #322.
+* Moved 4x Cross Turrets in room #323.
+* Added 16x rocks to surround the 4x Cross Turrets in room #324.
+* Moved 2x Cross Turrets to be closer together in narrow room #326.
+* Room #327 (with 1x Cross Turret and 2x Portal and 2x Death's Head) is only half as likely to appear now.
+* Added 4x rocks to surround the 2x Cross Turrets in room #331.
+* Deleted 2x Boneys and changed 2x rocks with 2x pits in room #333.
+
+; {{s|Sheol}}
+* Deleted 2x Nulls from narrow room #361.
+* Changed 1x bugged Begotten Chain to 1x Begotten in room #334.
+* Changed 2x bugged Begotten Chain to 2x Begotten in room #341.
+* Changed 2x bugged Begotten Chain to 2x Begotten in room #269.
+* Changed 1x bugged Begotten Chain to 1x Begotten in room #255.
+* Moved 1x Begotten one square upward in room #184.
+* Moved 2x Begotten from the center blocks to the top blocks in 2x2 room #224.
+* Moved 2x Cross Turrets and added 2x rocks in room #406.
+* Moved 2x Brimstone Heads in room #407.
+* Deleted 1x Cross Turret from room #408.
+* Added 2x Golden Chest to narrow room #409.
+* Moved 2x Cross Turrets in room #416.
+* Moved 2x Cross Turrets in room #418.
+* Added x8 rocks around the Cross Turrets in room #419.
+* Moved 2x Cross Turrets closer together in room #423.
+* Added x6 rocks around the Cross Turrets in room #425.
+
+; {{s|Chest}}
+* Moved 2x Sisters Vis in room #94 to prevent unavoidable damage.
+* Moved 2x The Forsaken in room #296 closer to the center of the room.
+* Deleted the room with 1x Bony and 1x Lil' Haunt (#31).
+
+; {{s|Dark Room}}
+* Changed 3x High Priestess card to x3 random rune in narrow room #291.
+* Changed 1x The Forsaken with x2 Lokii in narrow room #263.
+* Changed 1x Super Wrath with x1 Wrath in room #29.
+
+{{s|The Shop}}
+* Added x1 fly from room #242 (so that there would be at least 1 enemy in the wave).
+
+=== Other Changes ===
+* Completing [[Greedier Mode]] unlocks achievements from the [[Greed Mode]] too.
+* Added 41 new [[co-op]] babies.
+* Monster replacements will now only occur with enemies spawned as part of the room layout.
+** As a result of this, [[Mushroom (Enemy)|Mushrooms]] no longer spawn after destroying [[Skull]]s.
+** [[Greed]] will no longer spawn [[Ministro]]s because of this.
+** [[Super Greed]], [[Ultra Greed]] and [[Mom#Champion Variants|Blue Champion Mom]] no longer summon [[Blister (Enemy)|Blisters]].
+** [[Meatball]]s no longer spawn [[Mushroom (Enemy)|Mushrooms]] upon death.
+** [[Nest]]s will no longer spawn [[Ministro]]s upon death.
+** [[Chub]] and [[The Stain]] will no longer spawn [[Maggot#Drowned Charger|Drowned Chargers]]. (This used to happen if they were fought in the [[Flooded Caves]])
+** [[Polycephalus#Champion Versions|Red Champion Polycephalus]] will no longer spawn [[Scarred Para-Bite]]s. (This used to happen if it was fought in the [[Scarred Womb]])
+** [[Globin]]s spawned by [[Mom]] no longer become [[Dank Globin]]s (This used to happen if she was fought in the [[Dank Depths]]).
+
+{{nav|version}}
+[[Category:Added in Booster Pack 5]]

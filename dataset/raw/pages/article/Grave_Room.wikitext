@@ -1,0 +1,50 @@
+{{page dlc|a+}}
+A '''Grave Room''' is a room added in [[Afterbirth+]]'s [[Booster Pack #5]] which only appears in the {{s|Dark Room}}. Grave Rooms are part of [[The Forgotten]]'s [[The Forgotten#Unlocking the Forgotten|unlock quest]].
+
+== Layouts ==
+The following room maps were made using [https://github.com/Basement-Renovator/basement-renovator Basement Renovator] for cleaner viewing.
+
+{| class="wikitable sortable mw-collapsible mw-collapsed" style="text-align: center"
+ ! scope="col" | Weight
+ ! scope="col" class="unsortable" | Notes
+ ! scope="col" class="unsortable" | Image preview
+ |-
+ | 1
+ | style="text-align: left" | This room appears only before unlocking The Forgotten.
+ | [[File:Grave Room 1.png|350px]]
+ |-
+ | 1
+ |
+ | [[File:Grave Room 2.png|350px]]
+ |-
+ | 1
+ |
+ | [[File:Grave Room 3.png|350px]]
+ |-
+ | 1
+ |
+ | [[File:Grave Room 4.png|350px]]
+ |-
+ | 1
+ |
+ | [[File:Grave Room 5.png|350px]]
+ |-
+ | 0.5
+ |
+ | [[File:Grave Room 6.png|350px]]
+ |-
+ | 0.1
+ |
+ | [[File:Grave Room 7.png|350px]]
+|}
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | The Forgotten, Bone Heart }}
+
+== Gallery ==
+<gallery>
+DarkRoomTreasure opened.jpg | A Grave Room, but after the [[Dirt Patch]] was opened with {{i|Mom's Shovel}}.
+</gallery>
+
+{{nav|booster pack|room|fr=Cimetière}}
+[[Category:Added in Booster Pack 5]]

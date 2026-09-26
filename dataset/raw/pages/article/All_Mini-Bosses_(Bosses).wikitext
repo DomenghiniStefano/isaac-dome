@@ -1,0 +1,98 @@
+{{header bosses}}
+
+== The Seven Deadly Sins ==
+{| style="width: 70%; text-align: center"
+ | [[file:Envy.png|64px|center|link=Envy]]
+ | [[file:Gluttony.png|64px|center|link=Gluttony]]
+ | [[file:Wrath.png|64px|center|link=Wrath]]
+ |-
+ | [[Envy]]
+ | [[Gluttony]]
+ | [[Wrath]]
+ |-
+ | [[file:Pride.png|64px|center|link=Pride]]
+ | [[file:Lust.png|64px|center|link=Lust]]
+ | [[file:Greed.png|64px|center|link=Greed]]
+ |-
+ | [[Pride]]
+ | [[Lust]]
+ | [[Greed]]
+ |-
+ | colspan=3|[[file:Sloth.png|64px|center|link=Sloth]]
+ |-
+ | colspan=3|[[Sloth]]
+ |}
+
+== The Seven Super Deadly Sins ==
+{| style="width: 70%; text-align: center"
+ | [[file:Super Envy.png|80px|center|link=Super Envy]]
+ | [[file:Super Gluttony.png|80px|center|link=Super Gluttony]]
+ | [[file:Super Wrath.png|80px|center|link=Super Wrath]]
+ |-
+ | [[Super Envy]]
+ | [[Super Gluttony]]
+ | [[Super Wrath]]
+ |-
+ | [[file:Super Pride.png|80px|center|link=Super Pride]]
+ | [[file:Super Lust.png|80px|center|link=Super Lust]]
+ | [[file:Super Greed.png|80px|center|link=Super Greed]]
+ |-
+ | [[Super Pride]]
+ | [[Super Lust]]
+ | [[Super Greed]]
+ |-
+ | colspan=3|[[file:Super Sloth.png|80px|center|link=Super Sloth]]
+ |-
+ | colspan=3|[[Super Sloth]]
+ |}
+
+== Ultra Pride ==
+{| style="width: 70%; text-align: center"
+ | [[file:Ultra Pride.png|128px|center|link=Ultra Pride]]
+ |-
+ | [[Ultra Pride]]
+ |}
+
+== Krampus ==
+{| style="width: 70%; text-align: center"
+ | [[file:Boss Krampus ingame.png|172px|center|link=Krampus]]
+ |-
+ | [[Krampus]] {{unlockable}}
+ |}
+
+== Angels ==
+{| style="width: 70%; text-align: center"
+ | [[file:boss Angel.png|center|link=Uriel]]
+ | [[file:boss Angel2.png|center|link=Gabriel]]
+ |-
+ | [[Uriel]] {{unlockable}}
+ | [[Gabriel]] {{unlockable}}
+ |}
+
+== Fallen Angels ==
+{| style="width: 70%; text-align: center"
+ | [[file:Fallen Uriel.png|362px|center|link=Uriel]]
+ | [[file:Fallen Gabriel.png|362px|center|link=Gabriel]]
+ |-
+ | [[Uriel|Fallen Uriel]] {{unlockable}}
+ | [[Gabriel|Fallen Gabriel]] {{unlockable}}
+ |}
+
+== {{dlc|r}} Mother's Shadow ==
+{| style="width: 70%; text-align: center"
+ | [[file:Mother's Shadow.png|236px|center|link=Mother's Shadow]]
+ |-
+ | [[Mother's Shadow]] {{unlockable}}
+ |}
+
+== {{dlc|r}} Dark Esau ==
+{| style="width: 70%; text-align: center"
+ | [[file:Dark Esau.png|64px|center|link=Dark Esau]]
+ |-
+ |[[Tainted Jacob|Dark Esau]] {{unlockable}}
+ |}
+
+{{nav|boss|fr=Tous les Mini-Boss}}
+
+[[Category:Bosses| ]]
+[[Category:Mini-bosses| ]]

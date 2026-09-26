@@ -1,0 +1,251 @@
+<noinclude>{{page dlc|a+nr}}</noinclude>
+
+== Mechanics ==
+=== HUD ===
+; Found HUD
+* Found HUD is a HUD addition that appears on the left side of the screen that gives numerical values to the player's current stats (e.g., damage, luck, speed, devil room chance). It can be enabled through the options menu.
+* It is based on the Missing HUD mod for Rebirth and Afterbirth.
+
+=== Victory Lap ===
+* A Victory Lap allows you to start a new run with almost all of your final items after completing the [[Dark Room]]. Multiple laps can be made as long as the Dark Room is cleared each time.
+** [[Completion Mark]]s and most [[achievement]]s cannot be earned.
+** Isaac will take a full heart of damage on all floors after beginning a victory lap (unless he has [[The Wafer]]).
+** Some [[item]]s are lost upon starting a victory lap. Items lost this way are added back into their respective item pools and can be acquired again.
+** If the initial run was on normal difficulty, all victory laps will be on hard difficulty.
+** On the third and subsequent victory laps, the character will turn into [[The Lost]]. This version of The Lost does not get a [[Holy Mantle]] or [[D4]].  However, if the run was started as The Lost (or if the Holy Mantle was found) it is possible to keep the Holy Mantle from the previous run.
+** On the third and subsequent victory laps, [[Shop]]s will no longer appear.
+** On the third and subsequent victory laps, [[Red Chest]]s in the [[Dark Room]] will turn into [[Chest]]s and [[Locked Chest]]s.
+** Killing any final boss aside from [[The Lamb]] will end the game, and the run will not be continued further.
+
+== Menus ==
+=== Options ===
+; Charge bars
+* Added a new "charge bars" option in the menu, for passive items that need to be charged up before usage.
+* This includes:
+** {{i|Brimstone}} (collectible and Azazel)
+** {{i|Chocolate Milk}}
+** {{i|Cursed Eye}}
+** {{i|Lil Brimstone}}
+** {{i|Lil Delirium}}
+** {{i|Lil Gurdy}}
+** {{i|Lil Monstro}}
+** {{i|Maw Of The Void}}
+** {{i|Mom's Knife}}
+** {{i|Monstro's Lung}}
+** {{i|Tech X}}
+** Bone Club ([[The Forgotten]]'s throwable weapon)
+
+; [[RERUN]]
+* RERUN is unlocked after completing the RERUN [[achievement]].
+* After winning a run the ''Continue'' option in the main menu will be replaced by ''Rerun''. Selecting it starts a new run using most of the previous won run's items. Isaac will take full heart damage on all floors.
+
+== Player ==
+=== Characters ===
+{| style="border-spacing:2px" cellpadding="4" data-description="Character Overview Table" width="500px"
+|- style="text-align:center; vertical-align:bottom; background:#142e59"
+! rowspan="2" style="width:125px" | Character
+! rowspan="2" style="width:125px" | [[File:Character Apollyon appearance.png|82px|link=Apollyon]]<br>{{c|Apollyon}}
+! colspan="2" style="width:250px" | [[File:Character The Forgotten appearance.png|82px|link=The Forgotten]]<br>{{c|The Forgotten}}
+|- style="background: #142e59"
+! style="width:125px" | [[The Forgotten]]
+! style="width:125px" | {{c|The Soul}}
+
+|- style="text-align:center; background:#4a3026"
+! {{attribute|Health}}
+| {{heart|red}}{{heart|red}} || {{heart|bone}}{{heart|bone}} || {{heart|soul}}
+
+|- style="text-align:center; background:#4a3026"
+! {{attribute|Damage}}
+| 3.5 (*1.00) || 3.50 (*1.50) || 3.50 (*1.00)
+
+|- style="text-align:center; background:#4a3026"
+! {{attribute|Tears}}
+| +0 || +0, x1/2 || +0
+
+|- style="text-align:center; background:#4a3026"
+! {{attribute|Shot speed}}
+| 1 || 1 || 1
+
+|- style="text-align:center; background:#4a3026"
+! {{attribute|Range}}
+| 23.75 || 23.75 || 23.75
+
+|- style="text-align:center; background:#4a3026"
+! {{attribute|Speed}}
+| 1.0 || 1.00 || 1.30
+
+|- style="text-align:center; background:#4a3026"
+! {{attribute|Luck}}
+| 0 || 0 || 0
+
+|- style="text-align:center; background:#4a3026"
+! [[File:Starting Item Icon.png|16px]] Starting Pickups
+| None || None || None
+
+|- style="text-align:center; background:#4a3026"
+! [[File:Starting Item Icon.png|16px]] Starting Item(s)
+| {{i|Void}} || Bone Club || [[Flight]]<br><br>[[Spectral tears]]
+|}
+
+=== Transformations ===
+{{transformation table | where = not transformation.dlc & {{dlcset|na+}} }}
+
+=== Co-op ===
+{{afterbirth† Babies|1}}
+
+== Items ==
+109 new items were added in the expansion: 29 activated items and 80 passive items.
+
+=== Activated Collectibles ===
+{{collectible table | type = activated | where = not collectible.dlc & {{dlcset|na+}} }}
+
+=== Passive Collectibles ===
+{{collectible table | type = passive | where = not collectible.dlc & {{dlcset|na+}} }}
+
+== Trinkets ==
+38 new trinkets were added in the expansion.
+{{trinket table | where = not trinket.dlc & {{dlcset|na+}} }}
+
+== Pickups ==
+=== Hearts ===
+{| class="wikitable mw-collapsible striped sortable" style="text-align: center"
+ ! style="width: 120px" | Heart
+ ! style="width: 10px" | ID
+ ! class="unsortable" style="width: 60px" | Image
+ ! class="unsortable" style="width: 90px" | Worth
+ ! class="unsortable" | Additional Info
+ ! class="unsortable" | Unlocked By
+ |-
+ | Scared Heart
+ | 9
+ | [[file:Red Heart.png|48px|link=]]
+ | {{heart|red}}
+ | Identical to the standard Red Heart, but will run away as the player moves towards it.<br>Heals {{hearts|red=2}} with {{i|Maggy's Bow}}.<br>{{i|Humbleing Bundle}} and {{t|Equality!}} will '''not''' double this.
+ |
+ |-
+ | Half Soul Heart
+ | 8
+ | [[file:Half Soul Heart.png|48px|link=]]
+ | {{heart|soul|half}}
+ |
+ | {{achievement unlock|Mr. Resetter!}}
+ |-
+ | Blended Heart
+ | 10
+ | [[file:Blended Heart.png|48px|link=]]
+ | {{heart|red}}/{{heart|soul}}/{{heart|red|half}}{{heart|soul|half}}
+ | Fills up a full red Heart Container, but will act as a Soul Heart when no Containers are free. If Isaac is only missing half a Red Heart, it will fill that half, and give him half a soul heart as well.<br>{{i|Dark Bum}} and {{i|The Jar}} will '''not''' collect this.
+ |
+ |-
+ | Bone Heart
+ | 11
+ | [[file:Bone Heart.png|48px|link=]]
+ | {{heart|bone|empty}}
+ | Takes three hits to deplete and can be refilled with red hearts, but disappears permanently upon depleting.
+ | {{achievement unlock|Bone Heart}}
+ |}
+
+=== Keys ===
+{| class="wikitable mw-collapsible striped sortable" style="text-align: center"
+ ! style="width: 120px" | Key
+ ! style="width: 10px" | ID
+ ! class="unsortable" style="width: 60px" | Image
+ ! style="width: 90px" | Worth
+ ! class="unsortable" | Additional Info
+ ! class="unsortable" | Unlocked By
+ |-
+ | Charged Key
+ | 4
+ | [[file:Charged Key.gif|25px|link=]]
+ | 1
+ | Fully charges your currently held active item upon pickup.<br>[[Key Bum]] will pick this up, but will not give Isaac any active charge.
+ | {{achievement unlock|Charged Key}}
+ |}
+
+=== Pills ===
+{| class="mw-collapsible wikitable striped" style="text-align: center"
+ ! style="width: 30px" | '''ID'''
+ ! style="width: 130px" | '''Pill'''
+ ! '''Effect'''
+ |-
+ | 39 || X-Lax ||<p style="text-align: left;">Creates a pool of slippery brown creep underneath Isaac.</p>
+ |-
+ | 40 || Something's wrong... || <p style="text-align: left;">Creates a pool of black creep beneath Isaac.</p>
+ |-
+ | 41 || I'm Drowsy... ||<p style="text-align: left;">Upon use, slows all enemies for the duration of the room.</p>
+ |-
+ | 42 || I'm Excited!!! || <p style="text-align: left;">Upon use, increases the speed of all enemies for the duration of the room. The effect triggers again 30 seconds after use and 60 seconds after use.</p>
+ |-
+ | 43 || {{unlockable}} Gulp!|| <p style="text-align: left;">Upon use, any trinkets that the player is holding are destroyed, and their effects are permanently applied to the player.<br>Unlocked by acquiring the [[Achievements|Once More With Feeling!]] achievement.</p>
+ |-
+ | 44 || {{unlockable}} Horf! || <p style="text-align: left;">Upon use, Isaac shoots an explosive tear with the {{i|Ipecac}} effect that always deals 200 damage.
+<br>Unlocked by acquiring the [[Achievements|Dedication]] achievement.</p>
+ |-
+ | 45 || {{unlockable}} Feels like I'm walking on sunshine! || <p style="text-align: left;">Temporarily makes Isaac invincible, similar to {{i|Unicorn Stump}}.<br>Unlocked by acquiring the [[Achievements|Sin Collector]] achievement.</p>
+ |-
+ | 46 || {{unlockable}} Vurp! || <p style="text-align: left;">Throws up the last pill you used. Will spawn itself if no other pills were taken beforehand.<br>Unlocked by acquiring the [[Achievements|U Broke It!]] achievement.</p>
+ |}
+
+=== Cards ===
+{{pickup table | where = not pickup.dlc & {{dlcset|na+}} and type within 'card' }}
+
+=== Runes ===
+{{pickup table | where = not pickup.dlc & {{dlcset|na+}} and type within 'rune' }}
+
+=== Chests ===
+; [[file:Mimic Chest.png|link=Mimic Chest]] [[Mimic Chest]]s
+* Mimic Chests appear similar to Brown Chests until Isaac moves near, at which point they sprout spikes that damage the player as a Spike Chest would. They can be distinguished from Brown Chests by their darker, purplish-brown coloring, the grayish spot on each side of the latch where the spikes will sprout from and the bloodstain.
+
+== Entities ==
+=== Monsters ===
+{{entity table | where = not entity.dlc & {{dlcset|na+}} and type within 'monster' }}
+
+=== Bosses ===
+5 bosses were added in Afterbirth †. Additionally, [[Ultra Greed]] received a second form in Greed Mode's hard mode.
+
+{| style="width:70%; align:left; padding-right:2em"
+| style="text-align:center" | [[File:Boss_Rag Mega portrait.png|center|link=Rag Mega]]
+| style="text-align:center" | [[File:Boss_Big Horn portrait.png|center|link=Big Horn]]
+| style="text-align:center" | [[File:Boss_Sisters Vis portrait.png|center|link=Sisters Vis]]
+| style="text-align:center" | [[File:Boss_The Matriarch portrait.png|link=The Matriarch]]
+|-
+| style="text-align:center" | [[Rag Mega]]
+| style="text-align:center" | [[Big Horn]]
+| style="text-align:center" | [[Sisters Vis]]
+| style="text-align:center" | [[The Matriarch]]
+|}
+{| style="width:70%; align:left; padding-right:2em"
+| style="text-align:center" | [[File:Boss_Delirium portrait.png|center|link=Delirium]]
+| style="text-align:center" | [[File:Boss_Ultra_Greedier ingame.png|center|link=Ultra Greedier]]
+|-
+| style="text-align:center" | [[Delirium]]
+| style="text-align:center" | [[Ultra Greedier]]
+|}
+
+== Environment ==
+=== Chapters ===
+{| style="width: 80%; align: left"
+| style="text-align: center;" | {{stage image|The Void}}
+|-
+| style="text-align: center;" | {{s|The Void}}
+|}
+
+=== Obstacles ===
+; [[File:Super Special Rocks.png|link=Super special rock]] [[Super special rock]]
+* Super special rocks are tinted rock variants which are much harder to spot, as they have a smaller mark and are not discolored. Super special rocks takes two bombs to blow up, and drop the contents of two tinted rocks.
+; [[File:White Poop.png|link=White poop]] [[White poop]]
+* White poop is surrounded by an aura that halves tear delay and has a high chance to block damage like the {{i|Cone Head}} item while Isaac stands within it. The aura disappears if the poop is destroyed.
+; [[File:Dirt Patch.png|link=Dirt Patch]][[File:Dirt Patch Forgotten.png|link=Dirt Patch]] [[Dirt Patch]]
+* Dirt Patches are a small mound of dirt that can be dug into with certain items. Using {{i|Mom's Shovel}} on top of a Dirt Patch will reveal a skeleton and unlock [[The Forgotten]]. Once The Forgotten is unlocked, using Mom's Shovel, {{i|We Need To Go Deeper!}}, or {{p|Ehwaz}} on top of a Dirt Patch will dig up a random [[chest]].
+
+=== Machines ===
+; [[File:Mom's Dressing Table.png|link=]] [[Mom's Dressing Table]]
+* It appears in the starting room of a floor if Isaac has 8 or more items.
+* If Isaac bumps into Mom's Dressing Table, his appearance will be randomly changed so that only a few of his items are displayed.
+* Hitting Mom's Dressing Table with an explosive will cause it to vanish and drop 1-4 pills. There is a 1% chance to spawn one of the following items instead: [[Mom's Underwear]], [[Mom's Heels]], [[Mom's Lipstick]], [[Mom's Bra]], [[Mom's Pad]], [[Mom's Eyeshadow]], [[Mom's Contacts]], [[Mom's Wig]], [[Mom's Perfume]] or [[Mom's Pearls]].
+
+== Challenges ==
+{{challenge table | where = not challenge.dlc & {{dlcset|na+}} }}
+
+== Achievements ==
+{{achievement table | where = not achievement.dlc & {{dlcset|na+}} }}

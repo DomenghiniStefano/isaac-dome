@@ -1,0 +1,12 @@
+{{header normal bosses}}
+{{page dlc|a}}
+
+== [[??? (Floor)|???]] {{Unlockable}} ==
+{| style="width: 70%; text-align: center"
+ | [[File:Boss Hush portrait.png|center|link=Hush]]
+ |-
+ | [[Hush]]
+ |}
+
+{{nav|boss|fr=Chapitre 4.5 (Boss)}}
+[[Category:Bosses| ]]

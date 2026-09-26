@@ -1,0 +1,405 @@
+'''Custom Challenges''' are player-made [[challenge]]s that can be accessed by pressing TAB in the in-game Challenges menu.
+
+These challenges can be defined in a <code>challenges.xml</code> file placed in a mod's <code>content</code> folder. An example of such a folder is <code>steamapps/common/The Binding of Isaac Rebirth/mods/YOUR MOD/content</code>.
+
+{{#ev:youtube|8BVOEu6kYWQ}}
+
+== General Format ==
+* The <code>challenges.xml</code> file uses <code><challenge></code> elements placed in a root <code><challenges></code> element.
+* Here's a general template that can be used in order to create custom challenges:
+ <challenges version="1">
+     <challenge name="My Custom Challenge" />
+ </challenges>
+* Multiple <code><challenge></code> elements can be added, each one a new line.
+* Each challenge is defined by using a set of attributes between the <code><challenge></code> tags that control the game's mechanics, such as starting items, trinkets, cards, pills, end stage, amount of heart containers, curses, rooms that will be spawned, etc.
+
+== Attributes ==
+* This is the full set of attributes that can be used to define the custom challenge rules.
+{| class="wikitable"
+ ! Attribute !! Value type !! Explanation !! Default value
+!Possible Values
+ |-
+ | name || string || The name that's going to show in the Custom Challenges menu. ||''n/a''
+|Arbitrary unique string.
+ |-
+ | id || integer || Unique challenge ID.<br>This is used if you want to apply special behavior to the challenge using a mod, i.e. via [[:Category:Lua reference|Lua scripts]].<br>The ID must be a unique number that's not used by any other default or custom challenge.||<code>0</code>
+|Arbitrary unique integer (i.e. whole number).
+ |-
+ | startingitems || integer list ||[[Item]] ids that the player will receive in the beginning.<br>Each id must be separated with a comma (no spaces).||''n/a''
+|See [[Items]] for all item IDs.
+ |-
+ | startingtrinkets || integer list ||[[Trinket]] ids that the player will receive in the beginning.<br>Each ID must be separated with a comma (no spaces).||''n/a''
+|See [[Trinkets]] for all trinket IDs.
+ |-
+ | startingpill || integer || Effect ID of the [[pill]] that the player will receive in the beginning. ||<code>-1</code>
+|See [[Pills#Pill Effects|Pills]] for all IDs.
+<code>-1</code> means no pill.
+ |-
+ | startingcard || integer || ID of the [[Cards and Runes|card]] that the player will receive in the beginning.<br>This can also be a rune or other card-like pickup. ||<code>0</code>
+|See [[Cards and Runes]] for all IDs.
+<code>0</code> means no card/rune.
+
+<code>-1</code> can be used for a random tarot card.
+ |-
+ |[[Custom Challenges#Characters .28playertype.29|playertype]]|| integer || ID of the character that will be used in the challenge. ||<code>0</code>
+|See the [[Custom Challenges#Characters .28playertype.29|Characters list]] below for all IDs.
+<code>0</code> means Isaac.
+ |-
+ |[[Custom Challenges#End Stage .28endstage.29|endstage]]|| integer || The final stage of the challenge. This is where the trophy will spawn.<br>The trophy will also spawn on any next floor in case the player manages to continue. ||<code>0</code>
+|See the [[Custom Challenges#End Stage .28endstage.29|End Stage list]] below.
+ |-
+ |[[Custom Challenges#Room Filters .28roomfilter.29|roomfilter]]|| integer list || List of [[room]] IDs (separated by commas) not to be generated. ||''n/a''
+|See the [[Custom Challenges#Room Filters .28roomfilter.29|Room Filters list]] below for all IDs.
+<code>roomfilter="4"</code> means no Treasure Rooms. <code>roomfilter="4,2"</code> means no Shops or Treasure Rooms.
+ |-
+ |[[Custom Challenges#Curses .28cursefilter .26 getcurse.29|cursefilter]]|| integer || Bitmask for [[curse]]s that won't appear in the challenge. ||<code>0</code>
+|Either a single curse number, or a number which combines all banned curses.
+See [[Custom Challenges#Curses|Curses list]] below for details.
+ |-
+ |[[Custom Challenges#Curses .28cursefilter .26 getcurse.29|getcurse]]|| integer || Bitmask for [[curse]]s that will be forced all the time. ||<code>0</code>
+|Either a single curse number, or a number which combines all forced curses.
+See [[Custom Challenges#Curses .28cursefilter .26 getcurse.29|Curses list]] below for details.
+ |-
+ | achievements || integer list || List of [[achievement]] IDs required in order to play the challenge.
+Each ID must be separated with a comma (no spaces).
+|''n/a''
+|IDs correspond to the in-game secret numbers, listed in the [[Achievements#All Achievements|Achievements table]]
+ |-
+ | altpath || boolean || Alternative floor for light/dark path ({{e|Isaac}} / {{e|Satan}}). ||<code>false</code>
+|<code>true</code> = go to the {{s|Chest}}<br><code>false</code> = go to the {{s|Dark Room}}
+ |-
+ | canshoot || boolean || If set to <code>false</code> the player will be [[blindfolded]] and unable to shoot. ||<code>true</code>
+|<code>true</code> = Player can shoot tears<br><code>false</code> = Player cannot shoot, and must rely on familiars, melee weapons, or other destructive items.
+ |-
+ | redhp || integer || Fills a specified amount of red heart containers.<br>This does not add new containers.<br>Uses half hearts as a measure so 1 full heart container is equal to 2.
+This number can be negative.
+|<code>0</code>
+|An integer between <code>-24</code> (12 empty heart containers) and <code>24</code> (12 full heart containers).
+E.g., to make a character who starts with 3 empty red hearts, use <code>-6</code>.
+ |-
+ | maxhp || integer || Adds a specified amount of [[Health#Red Heart Containers|red heart containers]].<br>Uses half hearts as a measure so 1 full heart container is equal to 2. ||<code>0</code>
+|Between  <code>0</code> (no red hearts) and <code>24</code> (12 red hearts)
+ |-
+ | soulhp || integer || Adds a specified amount of {{e|Soul Heart}}s.<br>Uses half hearts as a measure so 1 full heart container is equal to 2. ||<code>0</code>
+|Between  <code>0</code> (no soul hearts) and <code>24</code> (12 soul hearts)
+ |-
+ | blackhp || integer || Adds a specified amount of {{e|Black Heart}}s.<br>Uses half hearts as a measure so 1 full heart container is equal to 2. ||<code>0</code>
+|Between <code>0</code> (no black hearts) and <code>24</code> (12 black hearts)
+ |-
+ | coins || integer || Adds a specified amount of coins. ||<code>0</code>
+|Between <code>0</code> and <code>99</code>, or up to <code>999</code> if the player starts with {{I|Deep Pockets}} (ID: 416)
+ |-
+ | maxdamage || boolean || Setting this to true will fix the player's [[damage]] to <code>100</code>, preventing any [[Damage#Items that affect damage|damage-modifying items]] from affecting it. ||<code>false</code>
+|<code>true</code>  = Cap max damage at 100
+<code>false</code> = No cap
+ |-
+ | adddamage || float || Modifies the player's damage by a specified amount. ||<code>0.0</code>
+|Any floating point number (i.e., a decimal number, such as <code>1.5</code> or <code>2.0</code>)
+ |-
+ | minfirerate || float || Fixes the player's [[Tears|tear delay]] to a specified amount, preventing any [[Tears#Items that affect tears|tear-delay-modifying items]] from affecting it ||<code>0.0</code>
+|Any floating point number (i.e., a decimal number, such as <code>1.5</code> or <code>2.0</code>)
+ |-
+ | minshotspeed || boolean || Setting this to true will fix the player's [[shot speed]] to <code>1</code>, preventing any [[Shot Speed#Items that affect shot speed|shot-speed-modifying items]] from affecting it. ||<code>false</code>
+|<code>true</code>  = Cap max shot speed at 1
+<code>false</code> = No cap
+ |-
+ | bigrange || boolean || If set to <code>true</code>, adds +10 [[range]] to the player. ||<code>false</code>
+|<code>true</code>  = Add +10 range
+<code>false</code> = No change
+ |-
+ | difficulty || integer || Game difficulty (<code>0</code> = normal; <code>1</code> = [[Hard mode|hard]]; <code>2</code> = [[Greed mode|greed]]; <code>3</code> = [[Greedier Mode|greedier]]). ||<code>0</code>
+|<code>0</code> = Normal Mode
+<code>1</code> = [[Hard Mode]]
+<code>2</code> = [[Greed Mode]]
+<code>3</code> = [[Greedier Mode]]
+ |-
+ | megasatan || boolean || If set to true, the challenge will to go to {{e|Mega Satan}}.<br>This will also give {{i|Key Piece 1}} and {{i|Key Piece 2}} required to open the door. ||<code>false</code>
+|<code>true</code>  = Player must defeat {{e|Mega Satan}}. The end stage must be set to <code>11</code> ({{s|Dark Room}} or {{s|Chest}}), with <code>endstage="11"</code>
+<code>false</code> = No change
+ |-
+ | {{dlc+|r}} secretpath || boolean || If set to true, the challenge will be forced to use the Repentance alt path.<br>The player will still be required to manually collect {{i|Knife Piece 1}} and {{i|Knife Piece 2}}. ||<code>false</code>
+|<code>true</code>  = Player must defeat {{e|Mother}}. The end stage must be set to <code>8</code> (Corpse), with <code>endstage="8"</code>
+<code>false</code> = No change{{dlc-}}
+ |-
+|}
+
+=== Characters (<code>playertype</code>) ===
+A list of [[Characters|character]] IDs, for use with the <code>playertype</code> attribute.
+{| class="wikitable"
+!Character!!playertype ID
+|-
+|{{c|Isaac}}|| 0
+|-
+|{{c|Magdalene}}||1
+|-
+|{{c|Cain}}||2
+|-
+|{{c|Judas}}||3
+|-
+|{{c|???}}||4
+|-
+|{{c|Eve}}||5
+|-
+|{{c|Samson}}||6
+|-
+|{{c|Azazel}}|| 7
+|-
+|{{c|Lazarus}}||8
+|-
+|{{c|Eden}}|| 9
+|-
+|{{c|The Lost}}||10
+|-
+|{{c|Lazarus Risen}}
+|11
+|-
+|{{c|Black Judas}}
+|12
+|-
+|{{c|Lilith}}||13
+|-
+|{{c|Keeper}}||14
+|-
+|{{c|Apollyon}}||15
+|-
+|{{c|The Forgotten}}||16
+|-
+|{{c|The Soul}}||17
+|-
+|{{c|Bethany}}||18
+|-
+|{{c|Jacob}}||19
+|-
+|{{c|Esau}}||20
+|-
+|{{c|Tainted Isaac}}||21
+|-
+|{{c|Tainted Magdalene}}||22
+|-
+|{{c|Tainted Cain}}||23
+|-
+|{{c|Tainted Judas}}||24
+|-
+|{{c|Tainted ???}}||25
+|-
+|{{c|Tainted Eve}}||26
+|-
+|{{c|Tainted Samson}}||27
+|-
+|{{c|Tainted Azazel}}||28
+|-
+|{{c|Tainted Lazarus}}||29
+|-
+|{{c|Tainted Eden}}||30
+|-
+|{{c|Tainted Lost}}||31
+|-
+|{{c|Tainted Lilith}}||32
+|-
+|{{c|Tainted Keeper}}||33
+|-
+|{{c|Tainted Apollyon}}||34
+|-
+|{{c|Tainted Forgotten}}||35
+|-
+|{{c|Tainted Bethany}}||36
+|-
+|{{c|Tainted Jacob}}||37
+|-
+|{{c|Dead Tainted Lazarus}}||38
+|-
+|{{c|Tainted Jacob}} 2||39
+|-
+|{{c|Tainted Soul}}
+|40
+|}
+
+=== End Stage (<code>endstage</code>) ===
+A list of stage IDs, which correspond to various [[chapter]]s, for use with the <code>endstage</code> attribute.
+
+This attribute sets the final stage of the challenge. This is where the trophy will spawn, after the floor boss is defeated. The trophy will also spawn on any next floor in case the player manages to continue.
+
+* Setting the end stage to Chapter 9 ({{s|???}}) will prevent the trapdoor and light beam from spawning after defeating {{e|It Lives!}}, but unless the player has a {{t|Strange Key}} or the timer is under 30 minutes, the door to the Hush floor will not open, softlocking the run.
+** Additionally, after defeating {{e|Hush}}, the portal to {{s|The Void}} will not open.
+{| class="wikitable"
+!Stages
+!endstage ID
+!Chapter
+|-
+|{{s|Basement}} <br> {{s|Cellar}} <br> {{s|Burning Basement}} <br> {{s|Downpour}} <br> {{s|Dross}}
+|<code>1</code> / <code>2</code>
+|Chapter 1
+|-
+|{{s|Caves}} <br> {{s|Catacombs}} <br> {{s|Flooded Caves}} <br> {{s|Mines}} <br> {{s|Ashpit}}
+|<code>3</code> / <code>4</code>
+|Chapter 2
+|-
+|{{s|Depths}} <br> {{s|Necropolis}} <br> {{s|Dank Depths}} <br> {{s|Mausoleum}} <br> {{s|Gehenna}}
+|<code>5</code> / <code>6</code>
+|Chapter 3
+|-
+|{{s|Womb}} <br> {{s|Utero}} <br> {{s|Scarred Womb}} <br> {{s|Corpse}}
+|<code>7</code> / <code>8</code>
+|Chapter 4
+|-
+|{{s|???}}
+|<code>9</code>
+|Chapter 4.5
+|-
+|{{s|Cathedral}} <br> {{s|Sheol}}
+|<code>10</code>
+|Chapter 5
+|-
+|{{s|Chest}} <br> {{s|Dark Room}}
+|<code>11</code>
+|Chapter 6
+|-
+|{{s|The Void}}
+|<code>12</code>
+|Endgame
+|-
+|{{s|Home}}
+|<code>13</code>
+|Endgame
+|}
+
+=== Room Filters (<code>roomfilter</code>) ===
+A list of [[room]] IDs, for use with the <code>roomfilter</code> attribute.
+
+This attribute sets a list of rooms IDs, separated by commas, which should not be generated.
+
+For example, to disable both {{R|Treasure Room}}s and {{R|Shop}}s, use <code>roomfilter="2,4"</code>
+{| class="wikitable"
+!Room
+!ID
+|-
+|[[Normal room|Normal]]
+|1
+|-
+|{{R|Shop}}
+|2
+|-
+|{{R|I AM ERROR}}
+|3
+|-
+|{{R|Treasure Room}}
+|4
+|-
+|{{R|Boss Room}}
+|5
+|-
+|{{R|Mini-Boss Room}}
+|6
+|-
+|{{R|Secret Room}}
+|7
+|-
+|{{R|Super Secret Room}}
+|8
+|-
+|{{R|Arcade}}
+|9
+|-
+|{{R|Curse Room}}
+|10
+|-
+|{{R|Challenge Room}}
+|11
+|-
+|{{R|Library}}
+|12
+|-
+|{{R|Sacrifice Room}}
+|13
+|-
+|{{R|Devil Room}}
+|14
+|-
+|{{R|Angel Room}}
+|15
+|-
+|{{R|Boss Challenge Room}}
+|16
+|-
+|{{R|Boss Rush}}
+|17
+|-
+|{{R|Clean Bedroom}}
+|18
+|-
+|{{R|Dirty Bedroom}}
+|19
+|-
+|{{R|Vault}}
+|20
+|-
+|{{R|Dice Room}}
+|21
+|-
+|{{R|Black Market}}
+|22
+|-
+|[[Greed mode|Greed mode Exit]]
+|23
+|-
+|{{R|Planetarium}}
+|24
+|-
+|[[Teleporters|Teleporter]]
+|25
+|-
+|[[Teleporters|Teleporter Exit]]
+|26
+|-
+|Secret Exit
+|27
+|-
+|[[Blue Key#Effects|Blue]]
+|28
+|-
+|{{R|Ultra Secret Room}}
+|29
+|}
+
+=== Curses (<code>cursefilter</code> & <code>getcurse</code>) ===
+A list of [[curse]] bitmasks, for use with the <code>cursefilter</code> and <code>getcurse</code> attributes.
+
+Unlike other attributes which accept a comma-separated list, the two curse attributes accept a '''single number''', which is the combined total of all applicable curses.
+
+For example, to apply Curse of the Labyrinth (<code>2</code>) and Curse of the Maze (<code>32</code>), the attribute value would be <code>34</code> (which is 32 + 2).
+{| class="wikitable"
+!Curse
+!Bitmask
+|-
+|{{cu|Darkness}}
+|1
+|-
+|{{cu|Labyrinth}}
+|2
+|-
+|{{cu|Lost}}
+|4
+|-
+|{{cu|Unknown}}
+|8
+|-
+|{{cu|Cursed}}
+|16
+|-
+|{{cu|Maze}}
+|32
+|-
+|{{cu|Blind}}
+|64
+|-
+|{{cu|Giant|dlc=r}}
+|128
+|}
+
+== Bugs ==
+{{bug|Using "roomfilter" to prevent {{r|Treasure Room}}s from spawning will still make a Treasure Room spawn in {{s|Downpour}} / {{s|Dross}} 2. This is due of the fact that a Treasure Room must be generated in the mirrored world in order to spawn {{i|Knife Piece 1}}.}}
+{{bug|Using the "canshoot" attribute in combination with "secretpath" can lead to a softlock in the {{i|Knife Piece 2}} area because the player will not be able to shoot along with not having any items from the challenge itself. Often times room layouts will contain a poop that needs to be broken in order to open up a path.}}
+{{Bug|Angel Rooms can still appear while holding the {{i|Book of Virtues}}, even if they've been disabled with "roomfilter".}}
+{{Bug|dlc=r|Creating a challenge in Greed/Greedier mode will cause the trapdoor to the next floor to not spawn, and be replaced with a cobweb instead.}}
+
+{{nav|modding|fr=Défis personnalisés}}

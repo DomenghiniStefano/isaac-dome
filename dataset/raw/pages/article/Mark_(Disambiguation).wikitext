@@ -1,0 +1,10 @@
+{{disambiguation}}
+
+'''Mark''' may refer to:
+
+* A [[completion mark]], a game progession indicator earned by completing a specific objective.
+* {{dlc+|r}} [[Status Effects#Mark|Mark]], a status effect that forces enemies to attack the target, applied by {{i|Rotten Tomato}}.{{dlc-}}
+* {{i|The Mark}}, a [[passive collectible]] that increases [[damage]] and [[speed]] and grants a {{dlcalt|{{e|Soul Heart}}|r={{e|Black Heart}}}}.
+* {{i|Marked}}, a [[passive collectible]] that increases [[tears]] and [[range]] and forces Isaac to fire towards an aimable crosshair.
+
+{{nav}}

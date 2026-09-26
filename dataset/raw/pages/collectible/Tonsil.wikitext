@@ -24,6 +24,7 @@
 * When the familiar is generated, Isaac will gain the familiar permanently as a passive item. This allows Isaac to drop the trinket while keeping the familiar.
 ** {{dlc|nr}} The passive Tonsil item does not exist in any item pool; thus, this is the only way to find it and make it appear in the [[Collection Page (Afterbirth †)#Page 4|Collection Page]] aside from starting with it as {{C|Eden}}.
 *** {{dlc|nr}} If Eden starts with the passive tonsil item and picks up the trinket, the trinket will spawn only one familiar before being consumed.
+* {{dlc+|r}} The passive item form of Tonsil no longer exists; its ID has been taken by {{i|Broken Glass Cannon}} and no longer appears in the Collection Page, nor can it be obtained by Eden as a starting item.{{dlc-}}
 * Sources of self-inflicted damage, like {{I|IV Bag}} or {{M|Blood Donation Machine}}s, can spawn a familiar.
 * Damage that is blocked by {{I|Holy Mantle}} or the {{p|Holy Card}} does not count to the number of hits that are needed for the tonsil familiar to spawn.
 * {{dlc|r}} [[Familiar]]s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with Tonsil having the lowest priority at 6th and thus being farther from Isaac than familiars of different priorities.
@@ -39,8 +40,8 @@
 
 == Trivia ==
 * [[wikipedia:Tonsil|Tonsil]]s are soft tissue located near the back of the throat which, in the event of inflammation to the point of obstructing the throat, can be removed without much noticeable difference.
-* {{dlc|r}} The passive item form of Tonsil is technically the only item to be removed from the game.
-** {{i|Broken Glass Cannon}} has the same ID that the passive item form of Tonsil used to have.
+* {{dlc+|r}} The passive item form of Tonsil is technically the only item to be removed from the game.
+** {{i|Broken Glass Cannon}} has the same ID that the passive item form of Tonsil used to have.{{dlc-}}
 
 {{nav|fr=Amygdale}}
 [[Category:Damage-triggered items]]

@@ -1,0 +1,11 @@
+{{disambiguation}}
+
+'''Cross''' may refer to:
+* A [[completion mark]] obtained after defeating {{e|Isaac}}.
+* {{a|A Cross}}, an [[achievement]] unlocking {{i|The Relic}}.
+* {{i|Celtic Cross}}, an unlockable [[passive collectible]] found in {{r|Treasure Rooms}} and {{r|Angel Rooms}}.
+* {{t|Wooden Cross}}, an unlockable [[trinket]].
+* {{e|Cross Stone Shooter}}, an invincible [[monster]] found in chapters [[chapter 3|3]] and [[chapter 4|4]].
+* {{e|Cross Stoney}}, an invincible [[monster]] found in {{chal|Aprils Fool|n}}.
+
+{{nav}}

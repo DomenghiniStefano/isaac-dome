@@ -1,0 +1,18 @@
+{{page dlc|r}}
+
+Items with this [[Item Tags|tag]] contribute toward the {{tf|Yes Mother?}} transformation.
+
+== Activated Collectibles ==
+{{collectible table | tag = mom | type = activated }}
+
+== Passive Collectibles ==
+{{collectible table | tag = mom | type = passive }}
+
+== Trinkets ==
+{{Trinket table | tag = mom }}
+
+== Bugs ==
+{{bug|dlc=nr+|"Mom" trinkets will not contribute to the Yes Mother? transformation nor unlocking {{i|Mom's Contacts}} despite having the item tag.}}
+
+{{nav|fr=Balise mom}}
+[[Category:Item tags]]

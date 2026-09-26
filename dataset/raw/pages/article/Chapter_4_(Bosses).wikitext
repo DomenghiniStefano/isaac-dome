@@ -1,0 +1,211 @@
+{{header normal bosses}}
+
+== {{s|Womb}} ==
+{| style="width: 70%; text-align: center"
+ | [[file:Boss Blastocyst portrait.png|center|link=Blastocyst]]
+ | [[file:Boss Lokii portrait.png|center|link=Lokii]]
+ | [[file:Boss Mama Gurdy portrait.png|center|link=Mama Gurdy]]
+ | [[file:Boss Mr. Fred portrait.png|center|link=Mr. Fred]]
+ |-
+ | [[Blastocyst]]
+ | [[Lokii]]
+ | [[Mama Gurdy]]
+ | [[Mr. Fred]]
+ |-
+ |[[file:Boss Scolex portrait.png|center|link=Scolex]]
+ |[[file:Boss The Bloat portrait.png|center|link=The Bloat]]
+ |[[file:Boss Daddy Long Legs portrait.png|center|link=Daddy Long Legs]]
+ |[[file:Boss Triachnid portrait.png|center|link=Triachnid]]
+ |-
+ |[[Scolex]]
+ |[[The Bloat]] {{dlc|nr}}
+ |[[Daddy Long Legs]] {{dlc|nr}}
+ |[[Triachnid]] {{dlc|nr}} {{Unlockable}}
+ |-
+ |[[file:Boss Teratoma portrait.png|center|link=Teratoma]]
+ |[[file:Boss Death portrait.png|center|link=Death (Boss)]]
+ |[[file:Boss Conquest portrait.png|center|link=Conquest]]
+ |[[file:Boss Headless Horseman portrait.png|center|link=Headless Horseman]]
+ |-
+ |[[Teratoma]] {{dlc|nr}}
+ |[[Death (Boss)|Death]] {{unlockable}}
+ |[[Conquest]] {{Unlockable}}
+ |[[Headless Horseman]] {{unlockable}}
+ |-
+ | colspan="4" style="padding: 0" |
+{| style="width: 100%"
+ |[[file:Boss The Fallen portrait.png|center|link=The Fallen]]
+ |[[file:Boss The Matriarch portrait.png|center|link=The Matriarch]]
+ |[[file:Boss Sisters Vis portrait.png|center|link=Sisters Vis]]
+ |-
+ |[[The Fallen]] {{room|Devil}}
+ |[[The Matriarch]] {{dlc|a+}} {{unlockable}}
+ |[[Sisters Vis]] {{dlc|a+nr}} {{unlockable}}
+ |}
+|}
+
+=== Double Trouble ===
+{| class="mw-collapsible mw-collapsed wikitable"
+ !Double Trouble Bosses
+ |-
+ | style="padding: 0; text-align: center" |
+ {| style="width: 100%"
+  |[[file:Boss Dingle portrait.png|center|link=Dingle]]
+  |[[file:Boss The Cage portrait.png|center|link=The Cage]]
+  |[[file:Boss The Fallen portrait.png|center|link=The Fallen]]
+  |[[file:Boss The Gate portrait.png|center|link=The Gate]]
+  |-
+  |(Double Trouble)<br>[[Dingle]]
+  |(Double Trouble)<br>[[The Cage]]
+  |(Double Trouble)<br>[[The Fallen]]
+  |(Double Trouble)<br>[[The Gate]]
+  |}
+ {| style="width: 100%"
+  |[[file:Boss Gurdy portrait.png|center|link=Gurdy]]
+  |[[file:Boss Dangle portrait.png|center|link=Dangle]]
+  |[[file:Boss Little Horn portrait.png|center|link=Little Horn]]
+  |-
+  |(Double Trouble)<br>[[Gurdy]]
+  | (Double Trouble)<br>[[Dangle]] {{dlc|a}} {{unlockable}}
+  |(Double Trouble)<br>[[Little Horn]] {{dlc|a}} {{unlockable}}
+  |}
+ |}
+
+== {{s|Utero}} ==
+{| style="width: 70%; text-align: center"
+ |[[file:Boss Lokii portrait.png|center|link=Lokii]]
+ |[[file:Boss The Bloat portrait.png|center|link=The Bloat]]
+ |[[file:Boss Daddy Long Legs portrait.png|center|link=Daddy Long Legs]]
+ |[[file:Boss Triachnid portrait.png|center|link=Triachnid]]
+ |-
+ |[[Lokii]]
+ |[[The Bloat]]
+ |[[Daddy Long Legs]]
+ |[[Triachnid]] {{Unlockable}}
+ |-
+ |[[file:Boss Teratoma portrait.png|center|link=Teratoma]]
+ |[[file:Boss Mr. Fred portrait.png|center|link=Mr. Fred]]
+ |[[file:Boss Mama Gurdy portrait.png|center|link=Mama Gurdy]]
+ |[[file:Boss Blastocyst portrait.png|center|link=Blastocyst]]
+ |-
+ |[[Teratoma]]
+ |[[Mr. Fred]] {{dlc|nr}}
+ |[[Mama Gurdy]] {{dlc|nr}}
+ |[[Blastocyst]] {{dlc|nr}}
+ |-
+ |[[file:Boss Death portrait.png|center|link=Death (Boss)]]
+ |[[file:Boss Conquest portrait.png|center|link=Conquest]]
+ |[[file:Boss Headless Horseman portrait.png|center|link=Headless Horseman]]
+ |[[file:Boss The Fallen portrait.png|center|link=The Fallen]]
+ |-
+ |[[Death (Boss)|Death]] {{unlockable}}
+ |[[Conquest]] {{unlockable}}
+ |[[Headless Horseman]] {{unlockable}}
+ |[[The Fallen]] {{room|Devil}}
+ |-
+ | colspan="2" |[[file:Boss Sisters Vis portrait.png|center|link=Sisters Vis]]
+ | colspan="2" |[[file:Boss The Matriarch portrait.png|center|link=The Matriarch]]
+ |-
+ | colspan="2" |[[Sisters Vis]] {{dlc|a+nr}} {{unlockable}}
+ | colspan="2" |[[The Matriarch]] {{dlc|a+nr}} {{unlockable}}
+ |}
+
+=== Double Trouble ===
+{| class="mw-collapsible mw-collapsed wikitable"
+ !Double Trouble Bosses
+ |-
+ | style="padding: 0; text-align: center" |
+ {| style="width: 100%"
+  |[[file:Boss The Cage portrait.png|center|link=The Cage]]
+  |[[file:Boss The Fallen portrait.png|center|link=The Fallen]]
+  |[[file:Boss The Gate portrait.png|center|link=The Gate]]
+  |-
+  |(Double Trouble)<br>[[The Cage]]
+  |(Double Trouble)<br>[[The Fallen]]
+  |(Double Trouble)<br>[[The Gate]]
+  |}
+ {| style="width: 100%"
+  |[[file:Boss Gurdy portrait.png|center|link=Gurdy]]
+  |[[file:Boss Loki portrait.png|center|link=Loki]]
+  |[[file:Boss Little Horn portrait.png|center|link=Little Horn]]
+  |-
+  |(Double Trouble)<br>[[Gurdy]]
+  |(Double Trouble)<br>[[Loki]]
+  | (Double Trouble)<br>[[Little Horn]] {{dlc|a}} {{unlockable}}
+  |}
+ |}
+
+== {{s|Scarred Womb}} ==
+{| style="width: 70%; text-align: center"
+ |[[file:Boss Blastocyst portrait.png|center|link=Blastocyst]]
+ |[[file:Boss Mama Gurdy portrait.png|center|link=Mama Gurdy]]
+ |[[file:Boss Scolex portrait.png|center|link=Scolex]]
+ |[[file:Boss Triachnid portrait.png|center|link=Triachnid]]
+ |-
+ |[[Blastocyst]]
+ |[[Mama Gurdy]]
+ |[[Scolex]]
+ |[[Triachnid]] {{Unlockable}}
+ |-
+ |[[file:Boss Daddy Long Legs portrait.png|center|link=Daddy Long Legs]]
+ |[[file:Boss Teratoma portrait.png|center|link=Teratoma]]
+ |[[file:Boss The Bloat portrait.png|center|link=The Bloat]]
+ |[[file:Boss Death portrait.png|center|link=Death (Boss)]]
+ |-
+ |[[Daddy Long Legs]] {{dlc|nr}}
+ |[[Teratoma]] {{dlc|nr}}
+ |[[The Bloat]] {{dlc|nr}}
+ |[[Death (Boss)|Death]] {{unlockable}}
+ |-
+ |[[file:Boss Conquest portrait.png|center|link=Conquest]]
+ |[[file:Boss Headless Horseman portrait.png|center|link=Headless Horseman]]
+ |[[file:Boss The Fallen portrait.png|center|link=The Fallen]]
+ |[[file:Boss The Matriarch portrait.png|center|link=The Matriarch]]
+ |-
+ |[[Conquest]] {{unlockable}}
+ |[[Headless Horseman]] {{unlockable}}
+ |[[The Fallen]] {{room|Devil}}
+ |[[The Matriarch]] {{dlc|a+}} {{unlockable}}
+ |-
+ | colspan="4" style="padding: 0" |
+{| style="width: 100%"
+ |[[file:Boss Sisters Vis portrait.png|center|link=Sisters Vis]]
+ |[[File:Boss Lokii portrait.png|center|link=Lokii]]
+ |[[File:Boss Mr. Fred portrait.png|center|link=Mr. Fred]]
+ |-
+ |[[Sisters Vis]] {{dlc|a+nr}} {{unlockable}}
+ |[[Lokii]] {{dlc|r}}
+ |[[Mr. Fred]] {{dlc|r}}
+ |}
+|}
+
+=== Double Trouble ===
+{| class="mw-collapsible mw-collapsed wikitable"
+ !Double Trouble Bosses
+ |-
+ | style="padding: 0; text-align: center" |
+ {| style="width: 100%"
+  |[[file:Boss Gurdy portrait.png|center|link=Gurdy]]
+  |-
+  |(Double Trouble)<br>[[Gurdy]]
+  |}
+ |}
+
+== Final Boss ==
+{{e|Mom's Heart}} will always appear in the second floor of this chapter or in the last boss room if {{curse|Labyrinth}} is active. Once {{e|It Lives!}} is unlocked, it will appear instead of Mom's Heart.
+{| style="width: 70%; text-align: center"
+ |[[file:Boss Mom's Heart portrait.png|center|link=Mom's Heart]]
+ |[[file:boss It Lives! portrait.png|center|link=It Lives!]]
+ |-
+ |[[Mom's Heart]]
+ |[[It Lives!]] {{unlockable}}
+ |}
+
+== Notes ==
+* {{e|The Fallen}} and {{e|Headless Horseman}} are universal bosses.
+
+{{nav|boss|fr=Chapitre 4 (Boss)}}
+[[Category:Modified in Afterbirth]]
+[[Category:Modified in Afterbirth+]]
+[[Category:Modified in Repentance]]
+[[Category:Bosses| ]]

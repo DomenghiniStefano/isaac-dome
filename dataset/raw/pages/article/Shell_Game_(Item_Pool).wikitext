@@ -1,0 +1,18 @@
+{{header item pools}}
+{{item pool
+ | dlc = r
+}}
+
+Despite its name, this item pool is only used by {{i|Bag of Crafting}}. The {{m|Shell Game}} has only {{i|Skatole}} as a fixed drop.
+
+== Activated Collectibles ==
+{{item pool/header}}
+{{pool items | Brown Nugget, The Poop }}
+|}
+
+== Passive Collectibles ==
+{{item pool/header}}
+{{pool items | Butt Bombs, Dirty Mind, No. 2, Skatole }}
+|}
+
+{{nav|fr=Bonneteau (Banque d'Objets)}}

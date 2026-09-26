@@ -1,0 +1,12 @@
+{{page dlc|r}}
+
+Items with this [[Item Tags|tag]] contribute toward the unlock of {{r|Planetarium}}s and {{t|Telescope Lens}}.
+
+== Activated Collectibles ==
+{{collectible table | tag = stars | type = activated }}
+
+== Passive Collectibles ==
+{{collectible table | tag = stars | type = passive }}
+
+{{nav|fr=Balise stars}}
+[[Category:Item tags]]

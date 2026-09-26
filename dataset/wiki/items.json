@@ -39565,7 +39565,7 @@
   },
   "75": {
     "title": "PHD",
-    "revid": 262718,
+    "revid": 269715,
     "description": [
       {
         "kind": "text",
@@ -40862,7 +40862,37 @@
                     "style": "plain"
                   }
                 ],
-                "children": []
+                "children": [
+                  {
+                    "kind": "list",
+                    "ordered": false,
+                    "items": [
+                      {
+                        "inline": [
+                          {
+                            "kind": "text",
+                            "text": "Rerolling an owned passive item into PHD through effects such as ",
+                            "style": "plain"
+                          },
+                          {
+                            "kind": "ref",
+                            "target": {
+                              "kind": "item",
+                              "id": 284
+                            },
+                            "label": "D4"
+                          },
+                          {
+                            "kind": "text",
+                            "text": " will not identify pills, but will convert negative pills into positive ones.",
+                            "style": "plain"
+                          }
+                        ],
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
               },
               {
                 "inline": [
@@ -50257,7 +50287,7 @@
   },
   "93": {
     "title": "The Gamekid",
-    "revid": 266656,
+    "revid": 269426,
     "description": [
       {
         "kind": "text",
@@ -64282,7 +64312,7 @@
   },
   "118": {
     "title": "Brimstone",
-    "revid": 265889,
+    "revid": 269708,
     "description": [
       {
         "kind": "text",
@@ -84164,7 +84194,7 @@
   },
   "144": {
     "title": "Bum Friend",
-    "revid": 266959,
+    "revid": 269526,
     "description": [
       {
         "kind": "text",
@@ -129672,7 +129702,7 @@
   },
   "227": {
     "title": "Piggy Bank",
-    "revid": 267062,
+    "revid": 269528,
     "description": [
       {
         "kind": "text",
@@ -129880,6 +129910,21 @@
                   {
                     "kind": "text",
                     "text": ": Multiple copies will only add 3 more coins on pickup, with no additional coins dropping on taking damage.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "concept",
+                    "page": "Swallows Penny",
+                    "label": "Swallows Penny"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ": More coins are dropped, due to identical function.",
                     "style": "plain"
                   }
                 ],
@@ -137919,7 +137964,22 @@
                       },
                       {
                         "kind": "text",
-                        "text": "s in one run",
+                        "text": "s in one run and defeat ",
+                        "style": "plain"
+                      },
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "entity",
+                          "id": 78,
+                          "variant": 0,
+                          "subtype": 0
+                        },
+                        "label": "Mom's Heart"
+                      },
+                      {
+                        "kind": "text",
+                        "text": " 11 times",
                         "style": "plain"
                       }
                     ]
@@ -138593,7 +138653,22 @@
                       },
                       {
                         "kind": "text",
-                        "text": "s in one run",
+                        "text": "s in one run and defeat ",
+                        "style": "plain"
+                      },
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "entity",
+                          "id": 78,
+                          "variant": 0,
+                          "subtype": 0
+                        },
+                        "label": "Mom's Heart"
+                      },
+                      {
+                        "kind": "text",
+                        "text": " 11 times",
                         "style": "plain"
                       }
                     ]
@@ -169590,7 +169665,7 @@
   },
   "290": {
     "title": "The Jar",
-    "revid": 266658,
+    "revid": 269628,
     "description": [
       {
         "kind": "text",
@@ -190336,7 +190411,7 @@
   },
   "321": {
     "title": "Samson's Chains",
-    "revid": 268570,
+    "revid": 269384,
     "description": [
       {
         "kind": "text",
@@ -190432,6 +190507,54 @@
                   {
                     "kind": "text",
                     "text": "Despite its appearance, the item does not slow Isaac's movement.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "Can be charmed by ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "entity",
+                      "id": 904,
+                      "variant": 0,
+                      "subtype": 0
+                    },
+                    "label": "The Siren"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ", chaining itself to her until damaged enough to return to Isaac.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "Is ignored by ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 536
+                    },
+                    "label": "Sacrificial Altar"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ".",
                     "style": "plain"
                   }
                 ],
@@ -202130,7 +202253,7 @@
   },
   "332": {
     "title": "Lazarus' Rags",
-    "revid": 267270,
+    "revid": 269645,
     "description": [
       {
         "kind": "edition",
@@ -202666,50 +202789,91 @@
               {
                 "inline": [
                   {
-                    "kind": "ref",
-                    "target": {
-                      "kind": "item",
-                      "id": 475
-                    },
-                    "label": "Plan C"
-                  },
-                  {
-                    "kind": "text",
-                    "text": ": Isaac can use Plan C on end-game bosses (e.g. ",
-                    "style": "plain"
-                  },
-                  {
-                    "kind": "ref",
-                    "target": {
-                      "kind": "entity",
-                      "id": 407,
-                      "variant": 0,
-                      "subtype": 0
-                    },
-                    "label": "n"
-                  },
-                  {
-                    "kind": "text",
-                    "text": ", ",
-                    "style": "plain"
-                  },
-                  {
-                    "kind": "ref",
-                    "target": {
-                      "kind": "entity",
-                      "id": 412,
-                      "variant": 0,
-                      "subtype": 0
-                    },
-                    "label": "n"
-                  },
-                  {
-                    "kind": "text",
-                    "text": ") and survive, although, if going for unlocks, he will get Lazarus's post-it notes instead.",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus",
+                      "repentance"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": " ",
+                        "style": "plain"
+                      },
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 475
+                        },
+                        "label": "Plan C"
+                      },
+                      {
+                        "kind": "text",
+                        "text": ": Isaac can use Plan C on end-game bosses (e.g. ",
+                        "style": "plain"
+                      },
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "entity",
+                          "id": 407,
+                          "variant": 0,
+                          "subtype": 0
+                        },
+                        "label": "n"
+                      },
+                      {
+                        "kind": "text",
+                        "text": ", ",
+                        "style": "plain"
+                      },
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "entity",
+                          "id": 412,
+                          "variant": 0,
+                          "subtype": 0
+                        },
+                        "label": "n"
+                      },
+                      {
+                        "kind": "text",
+                        "text": ") and survive, although, if going for unlocks, he will get Lazarus's post-it notes instead.",
+                        "style": "plain"
+                      }
+                    ]
                   }
                 ],
-                "children": []
+                "children": [
+                  {
+                    "kind": "list",
+                    "ordered": false,
+                    "items": [
+                      {
+                        "inline": [
+                          {
+                            "kind": "edition",
+                            "only": [
+                              "repentancePlus"
+                            ],
+                            "inline": [
+                              {
+                                "kind": "text",
+                                "text": " Plan C Takes longer to kill the player character, effectively allowing Delirium to fully die to get the achievement, before changing character to Lazarus Risen.",
+                                "style": "plain"
+                              }
+                            ]
+                          }
+                        ],
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
               }
             ]
           }
@@ -218684,7 +218848,7 @@
   },
   "357": {
     "title": "Box of Friends",
-    "revid": 266530,
+    "revid": 269361,
     "description": [
       {
         "kind": "text",
@@ -246770,7 +246934,7 @@
   },
   "394": {
     "title": "Marked",
-    "revid": 267281,
+    "revid": 269342,
     "description": [
       {
         "kind": "text",
@@ -247502,6 +247666,38 @@
                         "kind": "ref",
                         "target": {
                           "kind": "character",
+                          "id": 13
+                        },
+                        "label": "nr"
+                      },
+                      {
+                        "kind": "text",
+                        "text": " : Marked gives both the stat upgrades and the mark as expected.",
+                        "style": "plain"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": " ",
+                        "style": "plain"
+                      },
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "character",
                           "id": 32
                         },
                         "label": "Tainted Lilith"
@@ -247894,6 +248090,24 @@
                     ]
                   }
                 ]
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 575
+                    },
+                    "label": "The Intruder"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " Shots from The Intruder will ignore the mark, only firing in cardinal directions.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
               },
               {
                 "inline": [
@@ -273315,7 +273529,7 @@
   },
   "423": {
     "title": "Circle of Protection",
-    "revid": 253117,
+    "revid": 269465,
     "description": [
       {
         "kind": "text",
@@ -276391,7 +276605,7 @@
   },
   "430": {
     "title": "Papa Fly",
-    "revid": 265968,
+    "revid": 269427,
     "description": [
       {
         "kind": "text",
@@ -276558,49 +276772,6 @@
                     "kind": "text",
                     "text": ") will prove benefitial.",
                     "style": "plain"
-                  }
-                ],
-                "children": []
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "kind": "synergies",
-        "blocks": [
-          {
-            "kind": "list",
-            "ordered": false,
-            "items": [
-              {
-                "inline": [
-                  {
-                    "kind": "edition",
-                    "only": [
-                      "repentance",
-                      "repentancePlus"
-                    ],
-                    "inline": [
-                      {
-                        "kind": "text",
-                        "text": " ",
-                        "style": "plain"
-                      },
-                      {
-                        "kind": "ref",
-                        "target": {
-                          "kind": "item",
-                          "id": 431
-                        },
-                        "label": "Multidimensional Baby"
-                      },
-                      {
-                        "kind": "text",
-                        "text": ": Papa Fly will always shoot two shots due to both of them having the same movement delay.",
-                        "style": "plain"
-                      }
-                    ]
                   }
                 ],
                 "children": []
@@ -279174,7 +279345,7 @@
   },
   "434": {
     "title": "Jar of Flies",
-    "revid": 266587,
+    "revid": 269630,
     "description": [
       {
         "kind": "text",
@@ -291834,7 +292005,7 @@
   },
   "448": {
     "title": "Shard of Glass",
-    "revid": 262057,
+    "revid": 269379,
     "description": [
       {
         "kind": "edition",
@@ -292610,13 +292781,7 @@
                   }
                 ],
                 "children": []
-              }
-            ]
-          },
-          {
-            "kind": "list",
-            "ordered": false,
-            "items": [
+              },
               {
                 "inline": [
                   {
@@ -292648,6 +292813,137 @@
                   }
                 ],
                 "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 412
+                    },
+                    "label": "Cambion Conception"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " / ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 671
+                    },
+                    "label": "Candy Heart"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " / ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 413
+                    },
+                    "label": "Immaculate Conception"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " / ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 204
+                    },
+                    "label": "Fanny Pack"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " / ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 227
+                    },
+                    "label": "Piggy Bank"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ": Isaac can get the rewards from items that give items/resources on hit by intentionally taking damage with something like a fire and grabbing the hearts, for essentially half the cost (as every 4 hits generates 1 full heart on average, which let isaac take 2 more hits)",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 135
+                    },
+                    "label": "IV Bag"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ": Lets Isaac generate large amounts of money",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 312
+                    },
+                    "label": "Maggy's Bow"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ": Doubles the healing received from the hearts spawned, letting isaac effectively take infinite red heart damage (on average) if each hit takes half a heart.",
+                    "style": "plain"
+                  }
+                ],
+                "children": [
+                  {
+                    "kind": "list",
+                    "ordered": false,
+                    "items": [
+                      {
+                        "inline": [
+                          {
+                            "kind": "ref",
+                            "target": {
+                              "kind": "item",
+                              "id": 203
+                            },
+                            "label": "Humbleing Bundle"
+                          },
+                          {
+                            "kind": "text",
+                            "text": " generates 3 hits of health on average for every 4 taken.",
+                            "style": "plain"
+                          }
+                        ],
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
               }
             ]
           }
@@ -303608,7 +303904,7 @@
   },
   "464": {
     "title": "Glyph of Balance",
-    "revid": 269241,
+    "revid": 269353,
     "description": [
       {
         "kind": "text",
@@ -304131,7 +304427,7 @@
                     "inline": [
                       {
                         "kind": "text",
-                        "text": " Staying at low luck (but not below 0) is recommended to take full advantage of Glyph of Balance, as higher luck will make chest drops more common and override the effect of the Glyph.",
+                        "text": " Staying at low luck is recommended to take full advantage of Glyph of Balance, as higher luck will make chest drops more common and override the effect of the Glyph.",
                         "style": "plain"
                       }
                     ]
@@ -341033,7 +341329,7 @@
   },
   "517": {
     "title": "Fast Bombs",
-    "revid": 262686,
+    "revid": 269402,
     "description": [
       {
         "kind": "text",
@@ -369189,7 +369485,7 @@
   },
   "550": {
     "title": "Broken Shovel",
-    "revid": 266533,
+    "revid": 269359,
     "description": [
       {
         "kind": "text",
@@ -369352,7 +369648,7 @@
   },
   "551": {
     "title": "Broken Shovel",
-    "revid": 266533,
+    "revid": 269359,
     "description": [
       {
         "kind": "text",
@@ -384402,7 +384698,7 @@
   },
   "577": {
     "title": "Damocles",
-    "revid": 266978,
+    "revid": 269337,
     "description": [
       {
         "kind": "text",
@@ -385500,7 +385796,7 @@
                   },
                   {
                     "kind": "text",
-                    "text": ": When activated, protected from falling Damocles.",
+                    "text": ": When activated, protects from falling Damocles.",
                     "style": "plain"
                   }
                 ],
@@ -452949,7 +453245,7 @@
   },
   "677": {
     "title": "Astral Projection",
-    "revid": 261648,
+    "revid": 269637,
     "description": [
       {
         "kind": "text",
@@ -453231,22 +453527,30 @@
               {
                 "inline": [
                   {
-                    "kind": "text",
-                    "text": "Astral Projection cannot be triggered inside of ",
-                    "style": "plain"
-                  },
-                  {
-                    "kind": "ref",
-                    "target": {
-                      "kind": "room",
-                      "name": "Boss Rush"
-                    },
-                    "label": "Boss Rush"
-                  },
-                  {
-                    "kind": "text",
-                    "text": ".",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "repentance"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": " Astral Projection cannot be triggered inside of ",
+                        "style": "plain"
+                      },
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "room",
+                          "name": "Boss Rush"
+                        },
+                        "label": "Boss Rush"
+                      },
+                      {
+                        "kind": "text",
+                        "text": ".",
+                        "style": "plain"
+                      }
+                    ]
                   }
                 ],
                 "children": []
@@ -459501,7 +459805,7 @@
   },
   "685": {
     "title": "Jar of Wisps",
-    "revid": 266588,
+    "revid": 269633,
     "description": [
       {
         "kind": "text",
@@ -461558,7 +461862,7 @@
   },
   "688": {
     "title": "Inner Child",
-    "revid": 267230,
+    "revid": 269522,
     "description": [
       {
         "kind": "text",
@@ -461944,7 +462248,54 @@
                             "style": "plain"
                           }
                         ],
-                        "children": []
+                        "children": [
+                          {
+                            "kind": "list",
+                            "ordered": false,
+                            "items": [
+                              {
+                                "inline": [
+                                  {
+                                    "kind": "text",
+                                    "text": "If Isaac's health consists of only ",
+                                    "style": "plain"
+                                  },
+                                  {
+                                    "kind": "ref",
+                                    "target": {
+                                      "kind": "entity",
+                                      "id": 5,
+                                      "variant": 10,
+                                      "subtype": 1
+                                    },
+                                    "label": "Red Heart"
+                                  },
+                                  {
+                                    "kind": "text",
+                                    "text": "s, a safer strategy may be to use bombs to die in the starting room of Home to trigger the item's effects and then use the bed in that room to recover all ",
+                                    "style": "plain"
+                                  },
+                                  {
+                                    "kind": "ref",
+                                    "target": {
+                                      "kind": "entity",
+                                      "id": 5,
+                                      "variant": 10,
+                                      "subtype": 1
+                                    },
+                                    "label": "Red Heart"
+                                  },
+                                  {
+                                    "kind": "text",
+                                    "text": "s back.",
+                                    "style": "plain"
+                                  }
+                                ],
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
                       }
                     ]
                   }
@@ -467365,7 +467716,7 @@
   },
   "700": {
     "title": "Echo Chamber",
-    "revid": 251641,
+    "revid": 269464,
     "description": [
       {
         "kind": "text",
@@ -467626,16 +467977,6 @@
                           }
                         ],
                         "children": []
-                      },
-                      {
-                        "inline": [
-                          {
-                            "kind": "text",
-                            "text": "If playing co-op with another character, the player without Echo Chamber can use unidentified pills to identify them and, if found later, can give them to the player with Echo Chamber to propagate its positive effects for the next three consumables.",
-                            "style": "plain"
-                          }
-                        ],
-                        "children": []
                       }
                     ]
                   }
@@ -467652,13 +467993,26 @@
                     "kind": "ref",
                     "target": {
                       "kind": "character",
+                      "id": 19
+                    },
+                    "label": "Jacob and Esau"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " / ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "character",
                       "id": 29
                     },
                     "label": "Tainted Lazarus"
                   },
                   {
                     "kind": "text",
-                    "text": ", Echo Chamber will only duplicate the last three cards or pills previously used on the Lazarus state with Echo Chamber. As a result, teleport cards or Telepills can be freely used on the Lazarus state without Echo Chamber.",
+                    "text": ", Echo Chamber will only duplicate the last three cards or pills previously used on the character with Echo Chamber. As a result, the character without Echo Chamber can safely use teleport cards or unidentified pills.",
                     "style": "plain"
                   }
                 ],
@@ -475046,7 +475400,7 @@
   },
   "710": {
     "title": "Bag of Crafting",
-    "revid": 268577,
+    "revid": 269340,
     "description": [
       {
         "kind": "text",
@@ -483634,7 +483988,7 @@
   },
   "723": {
     "title": "Spindown Dice",
-    "revid": 266637,
+    "revid": 269344,
     "description": [
       {
         "kind": "text",
@@ -483688,7 +484042,7 @@
                 "inline": [
                   {
                     "kind": "text",
-                    "text": "Rerolls all pedestal items in a room by subtracting their internal ID number by one until a valid item is rolled. This effect occurs per item and is independent of any other items in the room.",
+                    "text": "Rerolls all pedestal items in a room by decreasing their internal ID number by one until a valid item is rolled. This effect occurs per item and is independent of any other items in the room.",
                     "style": "plain"
                   }
                 ],

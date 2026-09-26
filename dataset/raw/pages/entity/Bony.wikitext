@@ -1,0 +1,110 @@
+{{infobox monster
+ | image name  = * {{dlc|nr|Rebirth}}
+ | id          = 227
+ | base hp     = 8
+ | stage hp    = 2
+ | environment = {{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Mines}}{{floor|Ashpit}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Mausoleum}}{{floor|Gehenna}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|Sheol}}{{floor|Cathedral}}<br>{{floor|Dark Room}}{{floor|Chest}}<br>{{room|boss}}{{room|challenge}}
+ | behavior    = Wanders around the room and briefly stands still to throw a bone at Isaac when he is in sight.
+}}
+
+'''Bonies''' are skeleton enemies which wander around the room and quickly throw bone projectiles at Isaac when he lines up with them.
+
+__TOC__
+{{clear}}
+
+== Variants ==
+=== Black Bony ===
+{{infobox monster
+ | dlc         = a
+ | name        = Black Bony
+ | image name  = * {{dlc|nr|Afterbirth}}
+ | variant     = 1
+ | base hp     = 8
+ | stage hp    = 2
+ | environment = {{floor|Mines}}{{floor|Ashpit}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Sheol}}<br>{{floor|Dark Room}}<br>{{room|challenge}}
+ | behavior    = Wanders around the room and stands still to throw three bones in a row at Isaac when he is in sight. Explodes upon death.
+}}
+
+'''Black Bonies''' are harder versions of Bonies that behave identically to regular Bonies, but fire three bones in a row and explode upon death. The first bone will be fired when Isaac lines up, but the second and third one may be fired at an angle towards him.
+{{clear}}
+
+=== Revenant ===
+{{infobox monster
+ | dlc         = r
+ | name        = Revenant
+ | id          = 841
+ | base hp     = 20
+ | stage hp    = 3
+ | environment = {{floor|Mausoleum}}{{floor|Gehenna}}<br>{{room|challenge}}
+ | behavior    = Slowly wanders around the room, stopping to fire a large line of fire at the player.
+}}
+
+'''Revenants''' are variants of Bonies that appear in the {{s|Mausoleum}} and {{s|Gehenna}}. Revenants wander around the room randomly, occasionally stopping to shoot a stream of flames at Isaac. These flames have limited range, and are blocked by [[obstacle]]s.
+{{clear}}
+
+=== Quad Revenant ===
+{{infobox monster
+ | dlc         = r
+ | name        = Quad Revenant
+ | variant     = 1
+ | base hp     = 35
+ | stage hp    = 4
+ | environment = {{floor|Mausoleum}}{{floor|Gehenna}}
+ | behavior    = Wanders around the room slowly, stopping to fire lines of flames in the cardinal or ordinal directions, rotating in an attempt to hit Isaac.
+}}
+
+'''Quad Revenants''' act similarly to normal Revenants, but they shoot a 4-way flamethrower that rotates slowly.
+{{clear}}
+
+=== Maze Roamer ===
+{{infobox monster
+ | dlc         = r
+ | name        = Maze Roamer
+ | id          = 890
+ | base hp     = 12
+ | stage hp    = 3
+ | environment = {{floor|Gehenna}}<br>{{room|challenge}}
+ | behavior    = Wanders around the room and shoots an eyeball at Isaac when he is in sight. Has a clone of itself on the other side of the room that mimics its movement and shots. If one dies, the other starts actively pursuing Isaac.
+}}
+
+'''Maze Roamers''' are {{s|Gehenna}}-exclusive variants of Bonies that shoot eyeballs at Isaac when lined up. They always spawn in pairs, with their movements and attacks being mirrored between each other. When one dies, the other becomes angry and begins directly pursuing Isaac. The opposite Maze Roamer can be determined by its blood stained rags and mirrored eye socket.
+{{clear}}
+
+=== Holy Bony ===
+{{infobox monster
+ | dlc         = r
+ | name        = Holy Bony
+ | id          = 227
+ | variant     = 1
+ | base hp     = 60
+ | stage hp    = 14
+ | environment = {{floor|Cathedral}}<br>{{room|challenge}}
+ | behavior    = Wanders around the room, throwing a bone at Isaac when he is in sight. The thrown bone leaves behind a blue flame that deals contact damage, blocks Isaac’s shots, and despawns after some time.
+}}
+'''Holy Bonies''' are larger and tougher versions of Bonies that were introduced in ''[[The Binding of Isaac: Repentance]]''. Its bone projectiles travel in an arc and create a blue flame at its landing spot that blocks shots, deals contact damage, and despawns after some time.
+{{clear}}{{dlc clear}}
+
+== Gallery ==
+<gallery>
+File:Bony Mausoleum.png|A Bony's appearance in Mausoleum and Gehenna.
+File:Revenant Gehenna.png|A Revenant's appearance in Gehenna.
+File:Quad Revenant Gehenna.png|A Quad Revenant's appearance in Gehenna.
+File:Maze Roamer 2.png|Mirrored Maze Roamer.
+File:Bony Concept.jpg|Concept art for the Bony.
+File:Holy Bony Concept.png|Concept art for the Holy Bony.
+</gallery>
+
+== Trivia ==
+* {{dlc|na}} Despite Bonies being made entirely of bones, they leave bloodstains behind upon death.
+** {{dlc|a}} They only leave behind bones when killed.
+* Bonies are one of a few enemies in-game to have their own unique projectile type.
+* Bonies were confirmed to be the [[boisite:84188046989|first enemy]] '''not designed''' by Edmund McMillen. He also confirmed that it was designed by Matt, the lead artist for ''The Binding Of Isaac: Rebirth'', and that Edmund loved the simplicity of the AI, fitting "perfectly into the Isaac world."
+* {{dlc+|a}} Bonies are spawned by {{e|The Forsaken}}, and Black Bonies are spawned by its [[The Forsaken#Champion Versions|Black Champion version]].{{dlc-}}
+* {{dlc+|r}} Holy Bonies, {{e|Holy Mulligan}}s, and {{e|Holy Eye}}s originated as cards from the card game ''The Binding of Isaac: Four Souls''.{{dlc-}}
+* Holy Bonies have the highest [[Stage HP]] among regular Monsters in the game.
+* If a Maze Roamer spawns as a [[Champion]], its counterpart will be a Champion of the same type.
+* The Maze Roamer's tactic of spawning in groups, lining up with Isaac, and mirroring the other Maze Roamer's movements are similar to the cut enemy [[anti:Gaper#Strifer|Strifer]], which appeared in Antibirth. The Strifer also appeared in Mausoleum, the alternate level to Gehenna.
+* {{dlc|r}} The [[Anti:Revenant|Revenant]] first appeared in the ''Antibirth'' mod where it also had 2.4 stage hp.
+
+[[Category:Bone monsters]]
+{{nav|fr=Osselet}}

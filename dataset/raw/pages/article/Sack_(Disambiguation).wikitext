@@ -1,0 +1,24 @@
+{{distinguish|Bag}}
+'''Sack''' may refer to:
+
+== Enemies ==
+* [[Boil#Sack|Sack]], a [[Monsters|monster]] that spawns spiders.
+* [[Boil#Walking Variants|Walking Sack]], a mobile version of the Sack.
+* [[Fatty#Fat Sack|Fat Sack]], a variant of the [[Fatty]].
+* [[Fatty#Half Sack|Half Sack]], a variant of the [[Fatty]].
+
+== Items ==
+* {{i|Bursting Sack}}, a [[Item#Passive Collectibles|passive item]] that makes most spiders passive.
+* {{i|Juicy Sack}}, a [[Item#Passive Collectibles|passive item]] that spawns friendly Blue Spiders and leaves a trail of slowing white creep.
+* {{i|Mystery Sack}}, a [[Item#Passive Collectibles|passive item]] that spawns random pickups.
+* {{i|Sack Head}}, a [[Item#Passive Collectibles|passive item]] that turns pickups into Sack pickups.
+* {{i|Sack of Pennies}}, a [[Item#Passive Collectibles|passive item]] that spawns pennies.
+* {{i|Sack of Sacks}}, a [[Item#Passive Collectibles|passive item]] that spawns sacks.
+* {{t|Lucky Sack}}, a [[Trinket]] that spawns a sack at the start of every floor.
+* {{i|Keeper's Sack}}, a [[Item#Passive Collectibles|passive item]] that gives you stat bonuses for purchasing items at shops.
+
+== Pickups ==
+* {{dlc|a}} [[Sacks (Pickup)|Sacks]], a type of [[Pickups|pickup]] that spawns other random pickups.
+
+{{disambiguation}}
+{{nav}}

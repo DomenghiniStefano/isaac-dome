@@ -1,0 +1,240 @@
+'''Level generation''' is the process the game uses to create each [[floor]]. Each floor has its own requirements of size, [[special room]]s, and dead ends that must be met.
+
+== Process ==
+First, the game determines how many [[rooms]] will generate on the floor. Later floors have more rooms, and {{cu|Labyrinth}} makes the floor much larger.
+* If the floor is not XL or {{s|The Void}}:
+** NumberOfRooms = 3.33 × FloorDepth + 5-6 ''(maximum of 20)''
+* If the floor is an XL floor:
+** NumberOfRooms = 1.8 × (3.33 × FloorDepth + 5-6) ''(maximum of 45)''
+* If the floor is The Void:
+** NumberOfRooms = 50-59
+* 2-3 more rooms are added if playing on [[Hard Mode]]
+* 4 more rooms are added if the floor has Curse of the Lost.
+
+Then the minimum number of dead ends the floor must generate is set.
+* All floors have at least 5 dead ends:
+** 1 dead end is added to all floors except the first floor.
+** 1 dead end is added to XL floors.
+** 2 dead ends are added to The Void.
+** {{dlc+|r}} 1 dead end is added if Isaac has {{i|Voodoo Head}}.{{dlc-}}
+
+Next, special rooms are generated in dead ends.
+* Special rooms are placed in order from the dead end farthest from the starting room to the closest.
+* If all dead ends on a floor become occupied by special rooms, no more special rooms can generate.
+* {{s|Chest}}, {{s|Dark Room}}, and {{s|The Void}} only generate {{r|Boss Room}}s and {{r|Secret Room}}s/{{r|Super Secret Room}}s (and a [[Grave Room]] in the Dark Room).
+
+Special rooms generate in the following order:
+* {{r|Boss Room}} (guaranteed).
+** If it is an XL floor, two boss rooms will be generated back to back.
+** {{dlc+|a+}} Multiple Boss Rooms are generated in {{s|The Void}}.{{dlc-}}
+* {{r|Super Secret Room}} (guaranteed).
+** {{dlc+|r}} Two Super Secret Rooms will be generated if Isaac has {{i|Luna}}.{{dlc-}}
+* {{r|Shop}} (guaranteed for the first 3 Chapters).
+** {{dlc+|a+}} Also guaranteed in [[Chapter 4]] if Isaac has {{t|Silver Dollar}}{{dlc-}}.
+** {{dlc+|r}} Also guaranteed in [[Chapter 5]] if Isaac has {{t|Holy Crown}} or {{t|Wicked Crown}}).{{dlc-}}
+** {{dlc+|a+}} Will not be generated on the third and subsequent [[Victory Lap]]s.{{dlc-}}
+* {{r|Treasure Room}} (guaranteed for the first 3 Chapters).
+** {{dlc+|a+}} Also guaranteed in [[Chapter 4]] if Isaac has {{t|Bloody Crown}}.{{dlc-}}
+** {{dlc+|r}} Also guaranteed in [[Chapter 5]] if Isaac has {{t|Holy Crown}} or {{t|Wicked Crown}}).{{dlc-}}
+** If it is an XL floor, two Treasure Rooms will be generated.
+* {{r|Planetarium}} (base 1% chance to be generated in Chapter 1 through Chapter 3, but will not be generated in later chapters; skipping Treasure Rooms, and obtaining one of a number of items and trinkets will modify this chance).
+* {{r|Dice Room}} or {{r|Sacrifice Room}} (1/7 (~14%) base chance, plus a second 1/4 chance for a total of 5/14 (~36%) if Isaac’s total health is equal to or greater than his total Heart Containers).
+** If a Sacrifice Room is successfully generated, it has a 1/50 base chance to become a Dice Room instead, plus a second 1/5 chance for a total of 27/125 (~22%) if Isaac has 2 or more Keys.
+* {{r|Library}} (1/20 chance).
+** {{dlc|nr}} The code specifically checks for a flag that is supposed to increase Library generation rate if a book was touched, but the flag is never set. That code was removed in Repentance.
+* {{r|Curse Room}} ({{dlc|nr}} 1/7 chance {{dlc|r}} 1/4 chance).
+** {{dlc|nr}} The code specifically checks for a flag that is supposed to increase Curse room generation rate if {{r|Devil Room}} was visited this run, but the flag is never set. That code was removed in Repentance.
+** {{dlc+|r}} An additional Curse Room is generated on each floor if Isaac has {{i|Voodoo Head}}; an extra dead end is also generated to accommodate it.{{dlc-}}
+* {{r|Mini-Boss Room}} (1/4 chance, plus a second 1/3 chance for a total of 1/2 (50%) if it is the first floor).
+* {{r|Challenge Room}} (guaranteed if Isaac’s total health is equal to or greater than his total heart containers; will not be generated otherwise).
+** Will not be generated on the first floor, and has a 50% chance on the second floor.
+** Will always be a {{r|Boss Challenge Room}} on the second floor of a chapter, and a normal Challenge Room otherwise.
+* {{r|Vault}} or {{r|Arcade}} (guaranteed if Isaac has 5 or more [[Coins]] and it’s the second floor of a Chapter; will not be generated otherwise).
+** If an Arcade is successfully generated, it has a 1/10 chance to be a Vault instead, plus a second 1/3 chance for a total of 2/5 (40%) if Isaac has 2 or more Keys.
+** {{dlc+|r}} If Isaac has 2 or more Keys but less than 5 Coins, a Vault can still be generated. If Isaac has 5 or more Coins but less than 2 Keys, and if the 1/10 chance to become a Vault passes, then neither an Arcade or a Vault will be generated.{{dlc-}}
+* {{r|Clean Bedroom}} or {{r|Dirty Bedroom}} (1/50 chance, plus a second 1/5 chance for a total of 27/125 (~22%) if Isaac has 1/2 or fewer {{e|Red Heart}}s and no {{e|Soul Heart}}s, or 1 or fewer Soul Hearts and no Red/{{e|Bone Heart}}s).
+** Equal chance to be a Clean or Dirty Bedroom.
+** Will only be generated in the first 3 Chapters.
+* {{r|Secret Room}} (guaranteed).
+** Each location candidate is given a starting weight of 10-14, reduced by 3 if it has only 2 neighboring rooms, and reduced by 6 if it has only 1 neighboring room. The highest weight candidate is picked.
+*** In practice, this means a Secret Room will be extremely likely to have at least 2 rooms adjacent to it, unless it's the very first floor, where occasionally one will be placed at a dead end for lack of anywhere else to put it.
+** Will not be placed next to a Boss Room, Super Secret Room, another Secret Room, or the starting room if it's The Chest or Dark Room.
+** {{dlc+|a+}} An additional Secret Room will be generated if Isaac has {{t|Fragmented Card}}.{{dlc-}}
+** {{dlc+|r}} An additional Secret Room will be generated if Isaac has {{i|Luna}}, three if he also has Fragmented Card.{{dlc-}}
+* {{r|Ultra Secret Room}} (guaranteed).
+* {{dlc+|a+}} A [[Grave Room]] is placed if the floor is Dark Room.{{dlc-}}
+* Normal Room layouts are chosen.
+** Each room has a set difficulty number, which is chosen based on the current floor of the chapter and if it's Hard Mode or not.
+*** Normal Mode floor 1: 1-5
+*** Normal Mode floor 2: 5-10
+*** Hard Mode floor 1: {{dlc|nr}} 5 only / {{dlc|r}} 1-10 (1 and 10 are less common)
+*** Hard Mode floor 2: {{dlc|na+}} 10 / {{dlc|a+nr}} 10-15 / {{dlc|r}} 5-15 (5 is less common)
+*** XL Floors count as {{dlc|nr}} floor 1 / {{dlc|r}} both floors
+*** Chapters 5 and 6 count as {{dlc|nr}} floor 1 / {{dlc|r}} floor 2
+*** The Void on Normal Mode: 5-10 ({{dlc|r}} and 20)
+*** The Void on Hard Mode: 5-15 / {{dlc|r}} 5-20
+
+== Pseudo-Code ==
+Some parts of the level generation are based on the following pseudo-code:
+
+<syntaxhighlight lang="lua">
+--Pseudo lua code for getting the number of rooms for a floor.
+
+NumberOfRooms = Min(20, Rand(0, 1) + 5 + Floor(StageId * 10 / 3))
+if CurseOfTheLabyrinth then
+	NumberOfRooms = Min(45, Floor(NumberOfRooms * 1.8))
+elseif CurseOfTheLost then
+	NumberOfRooms += 4
+end
+if StageId == 12 then --The Void
+	NumberOfRooms = 50 + (Rand() % 10)
+end
+if IsHardDifficulty then
+	NumberOfRooms += 2 + Rand(0, 1)
+end
+
+--Pseudo lua code for getting the number of deadends a floor must have.
+
+MinDeadEnds = 5
+if StageId ~= 1 then
+	 MinDeadEnds += 1
+end
+if CurseOfTheLabyrinth then
+	MinDeadEnds += 1
+end
+if StageId == 12 then
+	MinDeadEnds += 2
+end
+
+-Deadends are sorted by distance from the starting room descending.
+--e.g. Boss room is placed in the farthest deadend, super secret is placed in the next farthest deadend
+
+--DequeueDeadend also resizes the deadend. This is important to note because that means most deadends get changed to a 1x1 by the end of this.
+
+PlaceRoom(ROOM_BOSS, DequeueDeadend())
+--Super Secret
+PlaceRoom(ROOM_SUPERSECRET, DequeueDeadend())
+--Shop
+if StageId < 7 or (StageId < 9 and HasTrinket(SilverDollar)) and VictoryLap < 3 then
+	PlaceRoom(ROOM_SHOP, DequeueDeadend())
+end
+--Treasure
+if StageId < 7 or (StageId < 9 and HasTrinket(BloodyCrown)) then
+	PlaceRoom(ROOM_TREASURE, DequeueDeadend())
+end
+--Dice and Sacrifice
+if StageId < 12 then
+	local deadend = DequeueDeadend() --resizes the room :(
+	if deadend ~= nil then
+		local roomType = nil
+		if Rng() % 50 == 0 or (Rng() % 5 == 0 and GetNumKeys() > 1) then
+			roomType = ROOM_DICE
+		else
+			roomType = ROOM_SACRIFICE
+		end
+		if Rng() % 7 == 0 or (Rng() & 3 == 0 and GetHearts() + GetSoulHearts() >= GetMaxHearts()) then
+			PlaceRoom(roomType)
+		else
+			QueueDeadend(deadend)
+		end
+	end
+end
+--Library
+local deadend = DequeueDeadend()
+if deadend ~= nil then
+	if Rng() % 20 == 0 or (Rng() & 3 == 0 and GetStateFlag(STATE_BOOK_PICKED_UP)) then
+		PlaceRoom(ROOM_LIBRARY, deadend)
+	else
+		QueueDeadend(deadend)
+	end
+end
+--Curse
+local deadend = DequeueDeadend()
+if deadend ~= nil then
+	if Rng() & 1 == 0 or (Rng() & 3 == 0 and GetStateFlag(STATE_DEVILROOM_VISITED)) then
+		PlaceRoom(ROOM_CURSE, deadend)
+	else
+		QueueDeadend(deadend)
+	end
+end
+--MiniBoss
+local boss = GetMiniBossRoom() --mini boss is picked based on floor, STATE_ULTRAPRIDE_SPAWNED and rng
+local deadend = DequeueDeadend()
+if deadend ~= nil then
+	if Rng() & 3 == 0 or (Rng() & 2 == 0 and StageId == 1) then
+		PlaceRoom(boss, deadend)
+	else
+		QueueDeadend(deadend)
+	end
+end
+--Challenge
+local deadend = DequeueDeadend()
+if deadend ~= nil then
+	if (Rng() & 1 == 0 or StageId > 2) and GetHearts() + GetSoulHearts() >= GetMaxHearts() and StageId > 1 then
+		PlaceRoom(boss, deadend)
+	else
+		QueueDeadend(deadend)
+	end
+end
+--Chest and Arcade
+local deadend = DequeueDeadend()
+if deadend ~= nil then
+	local roomType = nil
+	if Rng() % 10 == 0 or (Rng() % 3 == 0 and GetNumKeys() > 1) then
+		roomType = ROOM_CHEST
+	else
+		roomType = ROOM_ARCADE
+	end
+	if GetNumCoins() >= 5 and (StageId == 2 or StageId == 4 or StageId == 6 or StageId == 8) then
+		PlaceRoom(roomType)
+	else
+		QueueDeadend(deadend)
+	end
+end
+--Bedroom
+if StageId < 7 then
+	local deadend = DequeueDeadend()
+	if deadend ~= nil then
+		local roomType = nil
+		if Rng() & 1 == 0 then
+			roomType = ROOM_ISAACS
+		else
+			roomType = ROOM_BARREN
+		end
+		
+		local maxHearts = nil
+		if GetPlayerType() == PLAYER_THELOST or GetPlayerType() == PLAYER_XXX or GetPlayerType() == PLAYER_THESOUL then
+			maxHearts = GetMaxHearts()
+		else
+			maxHearts = GetMaxHearts() + GetBoneHearts() * 2
+		end
+		
+		local second = false
+		if (GetHearts() < 2 and GetSoulHearts() <= 0) or (maxHearts <= 0 and GetSoulHearts() <= 2) then
+			second = true
+		end
+
+		if Rng() % 50 == 0 or (Rng() % 5 == 0 and second) then
+			PlaceRoom(roomType)
+		else
+			QueueDeadend(deadend)
+		end
+	end
+end
+--Secret
+TryPlacingSecret()
+if HasTrinket(TRINKET_FRAGMENTED_CARD) or HasItem(ITEM_LUNA) then
+	TryPlacingSecret()
+end
+-- Grave Room
+if StageId == 11 and StageType == 0 then --Dark Room
+	PlaceGrave(DequeueDeadend())
+end
+</syntaxhighlight>
+
+== Notes ==
+* The algorithm is from [https://gist.github.com/bladecoding/d75aef7e830c738ad5e3d66d146a095c Blade's GitHub Gist], also known as [[User:Blcd/RandomTidbits|blcd]] / Will. He reverse engineered the game using a disassembler in order to create the pseudo-code.
+* The second chances for certain types of rooms are separate, independent rolls: the probabilities are '''not''' added together directly.
+
+{{nav|fr=Génération d'étage}}
+[[Category:Mechanics]]

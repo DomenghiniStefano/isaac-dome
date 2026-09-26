@@ -1,0 +1,41 @@
+{{infobox monster
+ | dlc         = r
+ | name        = Cultist
+ | id          = 885
+ | base hp     = 24
+ | stage hp    = 3
+ | environment = {{floor|Mausoleum}}{{floor|Gehenna}}<br>{{room|challenge}}
+ | behavior    = Creates an indestructible, homing {{E|Purple Ball}} at the start of the room and follows it around, occasionally leaving it to revive enemies that have died in the current room.
+}}
+'''Cultists''' are an enemy added in ''[[The Binding of Isaac: Repentance]]''.
+
+At the start of the room, they create a homing, indestructible {{E|Purple Ball}} (like {{E|Rag Mega}}'s) and proceed to follow it around on a brief delay. These purple balls fade into {{E|Dark Ball}}s after 6 seconds, which can be destroyed as normal and have 10 HP. They cannot spawn another ball as long as the one they previously spawned is still intact.
+
+If they detect an enemy has died in the current room, it will stop following the ball it summoned, move to where the enemy died, and resurrect it with full health before going back to following its ball.
+
+They can revive up to 5 enemies at a time and cannot revive other Cultists. They can, however, revive most bosses and mini-bosses.
+{{clear}}
+
+== Variations ==
+=== Blood Cultist ===
+{{infobox monster
+ | dlc         = r
+ | name        = Blood Cultist
+ | variant     = 1
+ | base hp     = 24
+ | stage hp    = 3
+ | environment = {{floor|Mausoleum}}{{floor|Gehenna}}<br>{{room|challenge}}
+ | behavior    = Wanders around the room and fires a line of blood shots and creep if Isaac is on either side of it. Can summons bone traps that temporarily ensnare Isaac if he walks into them.
+}}
+
+'''Blood Cultists''' are a variant of Cultists, but are similar only in appearance and their mobility. They wander erratically around the room and, if Isaac aligns with them horizontally, they will fire a horizontal wave of red creep and blood shots with unlimited range. They can also summon four bone traps that prevent Isaac from moving for one second when stepped on, predicting where he will be when summoning them. The bone traps cannot be destroyed in any ways other than stepping on them, and de-spawn after 3 seconds if not stepped on.
+
+==== Notes ====
+* If a Blood Cultist is [[charm]]ed or [[friendly]], the bone traps it summons will [[petrify]] other enemies that step on them.
+{{clear}}
+
+== Trivia ==
+* Cultist might be a reference to the [[thelegendofbumbo:Floater|Floater]] enemy from ''The Legend of Bumbo'', despite there actually being a [[thelegendofbumbo:Cultist|Cultist]] enemy in the game.
+* Cultists may have replaced the [[anti:Necromancer|Necromancer]] enemy from Antibirth, as they both have near identical mechanics and reside in Mausoleum.
+
+{{nav|fr=Cultiste}}

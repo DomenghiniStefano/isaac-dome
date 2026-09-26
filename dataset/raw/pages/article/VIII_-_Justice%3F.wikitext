@@ -1,0 +1,36 @@
+{{header reverse tarot cards}}
+{{Infobox card
+ | dlc         = r
+ | name        = VIII - Justice?
+ | files name  = VIII - Inverted Justice
+ | type        = card
+ | id          = 64
+ | quote       = May your sins come back to torment you
+ | description = Creates 2 to 4 {{e|Locked Chest}}s near Isaac.
+ | unlocked by = Justice
+ | recharge    = 12
+}}
+
+{{cit|uc|r}}
+
+== Effects ==
+* Spawns 2 - 4 {{e|Locked Chest}}s.
+
+== Notes ==
+* The spawned Locked Chests have a 0.833% chance to be replaced by {{e|Mega Chest}}s if they are unlocked.
+
+== Synergies ==
+* {{I|Tarot Cloth}}: Spawns 4-14 {{E|Locked Chest}}s.
+** {{I|Tarot Cloth}} + {{i|Blank Card}}: Only 2-7 chests spawn.
+
+== Interactions ==
+* {{t|The Left Hand}}: Turns all spawned chests into {{e|Red Chest}}s.
+
+== Unlocking Bugs ==
+* If option of Item Description is turned on, game might crash.
+** To fix this issue, player can disable Item Description for the duration of the Challenge #43 Cantripped!
+
+== In-game Footage ==
+{{#ev:youtube|b3cZ6UlSuRk}}
+
+{{nav|fr=VIII - La Justice ?|card}}

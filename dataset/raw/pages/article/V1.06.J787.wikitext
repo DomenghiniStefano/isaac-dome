@@ -1,0 +1,971 @@
+{{infobox version
+ | dlc   = r
+ | name = The Binding of Isaac: Repentance
+ | steam = 3007816130302381983
+ | date  = 2021-03-31
+}}
+
+This is the first version of the Repentance DLC.
+
+= Additions =
+For a description of the new content added to the game, see the [[The Binding of Isaac: Repentance]] page.
+
+= Documented Changes =
+
+== Characters ==
+* 1 - {{c|Magdalene}} - The unlockable starting [[pill]] is changed to Full Health (from Speed Up). Full Health is guaranteed to be in the run's pill rotation.
+* 1 - {{c|Magdalene}} - Health Up is guaranteed to be in the run's pill rotation.
+* 9 - {{c|Eden}} - Fixed a rare crash caused when {{c|Eden}} starts with {{t|Error}}.
+* 9 - {{c|Eden}} - Fixed {{t|Mom's Toenail}} immediately stomping when {{c|Eden}} starts with it.
+* 9 - {{c|Eden}} - Starting [[tear delay]] can't get quite as bad as before (roughly ~15 tear delay maximum).
+* 10 - {{c|The Lost}} - The starting {{i|Holy Mantle}} is now an effect intrinsic to him once unlocked, and cannot be rerolled.
+* 10 - {{c|The Lost}} - The starting [[active item]] has changed from the {{i|D4}} to the {{i|Eternal D6}}.
+* 10 - {{c|The Lost}} - Can only take one item per [[Devil Room#Deals with the Devil|devil deal]]. Other options, if present, will disappear.
+* 12 - {{c|Black Judas}} - Now shares the same health properties as {{c|???}}. [[Heart container]]s cannot be gained, and will instead be converted to [[Black Heart]]s.
+* 14 - {{c|Keeper}} - Can now have up to three [[Health#Coin Hearts|coin containers]]. If the "Keeper now holds a penny" achievement has been unlocked, he will start with three.
+* 14 - {{c|Keeper}} - Starting [[speed]] has been increased to 0.9 (from 0.85).
+* 14 - {{c|Keeper}} - Starting tear delay has been reduced to 27.4 (from 28).
+* 14 - {{c|Keeper}} - Is now unable to lose devil/angel deal chances through taking damage.
+* 14 - {{c|Keeper}} - Is now unable to get Health Down pills.
+* 14 - {{c|Keeper}} - Devil deals now sell items for money.
+* 14 - {{c|Keeper}} - Hematemesis now spawns [[coins]].
+* 14 - {{c|Keeper}} - {{i|Abaddon}} no longer kills {{c|Keeper}} when picked up, but reduces the amount of coin containers to one.
+* 14 - {{c|Keeper}} - {{i|Midas' Touch}} can now appear when playing as {{c|Keeper}} (previously it could not appear).
+* 14 - {{c|Keeper}} - {{t|Swallowed Penny}} now works similarly to {{i|Piggy Bank}} in that it no longer guarantees a coin drop with every hit.
+* 14 - {{c|Keeper}} - [[Blood donation machine]]s are no longer guaranteed to payout.
+* 16 - {{c|The Forgotten}} - Fixed the bug where using a [[bed]] would give soul hearts to [[The Soul]].
+* 16 - {{c|The Forgotten}} - Fixed full heals not affecting the body when obtained as {{c|The Soul}}.
+* 16 - {{c|The Forgotten}} - Fixed being damaged by lasers generated from the {{i|Haemolacria}} + {{i|Jacob's Ladder}} synergy.
+
+== Items (General) ==
+* Timed recharge items now recharge immediately upon room clear, and from certain item effects (such as {{i|Habit}} or {{i|Charged Baby}}).
+* The use animation on most active items has been shortened, allowing players to attack again more quickly than before.
+* Updated the [[transformation]] lists to include more previously uncounted items.
+* Updated the descriptions of various items to be more accurate/informative.
+* Added an aim direction buffer to assist with firing charged attacks diagonally, such as {{i|Mom's Knife}}.
+* Added tons of new synergies between existing items.
+* Removed the "[[special item]]" system.
+* Most HP upgrades now heal more on pickup than previously.
+* The rotation speed of most [[Familiar#Orbital Familiars|orbitals]] (aside from {{i|Big Fan}} and attack flies) decreased from 4.05 degrees per frame to 2.7 degrees pre frame.
+
+== Items (Familiars) ==
+* Added a [[familiar]] chain priority system. {{i|Incubus}} will always be closest to the player, {{i|Lil Brimstone}} second. The rest of the shooting familiars have equal priority, with non-damaging familiars last.
+* Fixed a few pathfinding issues with some familiars (especially {{i|Bumbo}}).
+* Fixed charged familiars releasing their attack when the player gets hit or picks up an item.
+* Fixed several instances of familiars disappearing, only to respawn later once the player gets another familiar.
+* Fixed an issue that caused many familiars' tears to be {{i|Soy Milk}} sized.
+* Basic shooting familiars now fire at an increased rate, to match their rate of fire in Wrath of the Lamb (every 22 frames, down from every 30 frames).
+* Familiars that mimic Isaac's movement (such as {{i|Shade}}, {{i|Papa Fly}}, or {{i|Obsessed Fan}}) now follow Isaac more closely (roughly a 0.66s delay, down from 2s).
+
+== Items (Specific) ==
+* 2 - {{i|The Inner Eye}} - Now causes less of a decrease in the rate of fire than previously, and has a tighter spread.
+* 8 - {{i|Brother Bobby}} - Has an increased rate of fire.
+* 9 - {{i|Skatole}} - Fixed still being able to take damage from fly enemies on their first frame of spawning.
+* 9 - {{i|Skatole}} - Now prevents damage from eternal flies and Hush flies.
+* 10 - {{i|Halo of Flies}} - No longer immune to full run reroll effects. It is also no longer counted as multiple items for scoring purposes.
+* 13 - {{i|The Virus}} - Fixed the poison effect not dealing damage if Isaac remains in contact with the afflicted enemy.
+* 13 - {{i|The Virus}} - The poison effect no longer drops black hearts. Enemies coming into contact with Isaac now immediately take 12 damage, and the poison effect lasts for either 6-7 ticks (previously 5-6 ticks). The damage from the poison effect scales with the amount of red health Isaac has, dealing up to 30.8 damage per tick at 12 full red hearts.
+* 13 - {{i|The Virus}} - The -0.1 speed downgrade has been changed to a +0.2 speed upgrade.
+* 14 - {{i|Roid Rage }} - Reduced the amount of speed given to +0.3 (from +0.6).
+* 29 - {{i|Mom's Underwear}} - Now spawns 3-6 blue flies upon pickup.
+* 30 - {{i|Mom's Heels}} - Now deals 12 damage to enemies coming into contact with Isaac.
+* 31 - {{i|Mom's Lipstick}} - Now grants more of a range increase than previously, and spawns a random heart upon pickup.
+* 33 - {{i|The Bible}} - Fixed the interaction with Satan displaying an inappropriate death portrait.
+* 33 - {{i|The Bible}} - Charge time has been reduced to 4 (from 6).
+* 34 - {{i|The Book of Belial}} - The effect is now stackable.
+* 35 - {{i|The Necronomicon}} - Charge time has been reduced to 4 (from 6).
+* 36 - {{i|The Poop}} - Fixed failing to create poop on top of various objects (such as already destroyed poop piles).
+* 40 - {{i|Kamikaze!}} - Now has increased blast damage and radius (equal to that of {{i|Mr. Mega}} bombs).
+* 42 - {{i|Bob's Rotten Head}} - Charge time has been reduced to 2 (from 3). Damage has been increased to 185 (from 50). Upon exploding, it now leaves behind a gas cloud that poisons enemies that move through it.
+* 44 - {{i|Teleport!}} - Now allows the player to influence the teleport direction (using the direction Isaac is moving upon activating the item). (This effect does not seem to actually work though.)
+* 46 - {{i|Lucky Foot}} - Now guarantees positive pill effects.
+* 52 - {{i|Dr. Fetus}} - Shot bombs now scale with the player's tear size and are immune to knockback from their own explosions.
+* 52 - {{i|Dr. Fetus}} - The damage formula of shot bombs has changed from damage * 5 + 30 to damage * 10.
+* 52 - {{i|Dr. Fetus}} - Most bomb modifiers are now chance based (scaling with luck).
+* 53 - {{i|Magneto}} - Fixed attracting soul hearts while at maximum health.
+* 53 - {{i|Magneto}} - Now capable of opening chests from a small distance. Does not apply to locked chests.
+* 62 - {{i|Charm of the Vampire}} - Now comes with a small damage upgrade (equal to that of {{i|Stigmata}} or {{i|MEAT!}}).
+* 64 - {{i|Steam Sale}} - Obtaining more than one Steam Sale no longer makes shop items free, but still further reduces their price.
+* 64 - {{i|Steam Sale}} - Random shop sales (for further reduced prices) will no longer occur with Steam Sale.
+* 67 - {{i|Sister Maggy}} - Tear damage has been increased to 5 (from 3.5), to match how it was in Wrath of the Lamb.
+* 68 - {{i|Technology}} - Removed jittering from lasers and adjusted hit detection to be more accurate.
+* 68 - {{i|Technology}} - Laser size now scales with damage, and lasers inherit angles from movement, similar to tears.
+* 70 - {{i|Growth Hormones}} - Reduced the amount of speed given to +0.2 (from +0.4).
+* 72 - {{i|Rosary}} - Now gives a tears upgrade (equal to that of the Screw).
+* 76 - {{i|X-Ray Vision}} - Fixed not always opening secret rooms in [[The Void]].
+* 77 - {{i|My Little Unicorn}} - Charge time has been reduced to 4 (from 6).
+* 78 - {{i|Book of Revelations}} - Fixed many cases of failing to generate a horseman boss fight in each chapter.
+* 81 - {{i|Dead Cat}} - No longer immune to full run reroll effects. It is also no longer counted as multiple items for scoring purposes.
+* 83 - {{i|The Nail}} - Now gives Isaac blood tears while the effect is active.
+* 83 - {{i|The Nail}} - The temporary damage bonus has been increased, and is now able to stack with itself. Now grants a half-black heart upon use instead of a full soul heart.
+* 88 - {{i|Little Chubby}} - Fixed it being unable to destroy fireplaces.
+* 88 - {{i|Little Chubby}} - The damage tick rates have been increased.
+* 93 - {{i|The Gamekid}} - Charge time has been reduced to 4 (from 6).
+* 98 - {{i|The Relic}} - Now generates soul hearts less frequently.
+* 107 - {{i|The Pinking Shears}} - The decapitated body now uses the player's costumes.
+* 107 - {{i|The Pinking Shears}} - The charge time has been reduced to 4 (from 6). Damage tick rate of the body has been reduced. The speed of the body now depends on the player's speed stat. If the player is able to fly (prior to activating the effect), then the body will be able to fly as well.
+* 114 - {{i|Mom's Knife}} - Fixed not updating the knife color when held by {{i|Incubus}}.
+* 114 - {{i|Mom's Knife}} - Fixed a rare crash caused by the synergy with {{i|Sad Bombs}}.
+* 114 - {{i|Mom's Knife}} - The default throw range has been reduced.
+* 114 - {{i|Mom's Knife}} - The bonus damage gained from charging is now removed much more quickly as the thrown knife returns to Isaac.
+* 116 - {{i|9 Volt}} - No longer plays the "item ready" sound effect when only granting partial charge.
+* 118 - {{i|Brimstone}} - Beam duration has been reduced, dealing 9 ticks of damage total (down from 13), and it no longer gains bonus damage from {{i|Tammy's Head}}, {{i|Sad Bombs}}, or {{i|Varicose Veins}}.
+* 120 - {{i|Odd Mushroom (Thin)}} - Fixed the item causing some item costumes to be improperly scaled.
+* 121 - {{i|Odd Mushroom (Large)}} - Fixed the item causing some item costumes to be improperly scaled.
+* 121 - {{i|Odd Mushroom (Large)}} - Now a larger damage increase (equal to that of {{i|Steven}} or {{i|Pentagram}}), but now also a larger speed downgrade (from -0.1 to -0.2).
+* 122 - {{i|Whore of Babylon}} - Fixed the effect of not activating for the current room when fulfilling the conditions through means other than damage (Guppy's Paw, Hematemesis, etc).
+* 123 - {{i|Monster Manual}} - Updated the list of possible familiars.
+* 123 - {{i|Monster Manual}} - Summoned familiars now persist for the entire floor. Charge time has been increased to 6 (from 3).
+* 124 - {{i|Dead Sea Scrolls}} - Fixed playing its overlay animation when canceling two-stage effects such as {{i|Bob's Rotten Head}} and {{i|Shoop da Whoop!}}.
+* 124 - {{i|Dead Sea Scrolls}} - Now displays the name of the given effect.
+* 124 - {{i|Dead Sea Scrolls}} - Can no longer give {{i|Kamikaze!}}.
+* 126 - {{i|Razor Blade}} - Damage from Razor Blade now ignores invincibility effects, similar to {{i|IV Bag}}.
+* 130 - {{i|A Pony}} - Updated the charge attack to have new visual and sound effects.
+* 130 - {{i|A Pony}} - Charge time has been reduced to 2 (from 4). Ram damage formula has changed to damage * 4 + 28 (previously dealt a static 40 damage). The charge direction now allows for a minor amount of control.
+* 139 - {{i|Mom's Purse}} - Now spawns a trinket.
+* 140 - {{i|Bob's Curse}} - Bombs now leave behind a gas cloud that poisons enemies that move through it.
+* 142 - {{i|Scapular}} - Added visual and sound indicators for the effect activation.
+* 142 - {{i|Scapular}} - Will no longer grant a soul heart if the player is attempting to proc it with certain heart donation mechanics (such as {{i|IV Bag}}).
+* 147 - {{i|Notched Axe}} - Now functions as a melee attack that breaks rocks and damages enemies in its path. It has a limited amount of uses per floor, decreasing with every hit that connects with a rock/enemy.
+* 148 - {{i|Infestation}} - Increased the amount of flies spawned to 2-6 (from 1-3).
+* 149 - {{i|Ipecac}} - Fixed explosions being unable to damage enemies when the tears are too large.
+* 149 - {{i|Ipecac}} - Ipecac tear explosion size now scales with tear size.
+* 152 - {{i|Technology 2}} - Fixed not getting correctly updated with 3 Dollar Bill and Rainbow Worm if continuously shooting.
+* 152 - {{i|Technology 2}} - No longer decreases Isaac's damage stat (the damage of the laser itself is unaffected by this change). Rate of fire is still halved as previously, but this reduction now also applies to tear replacements, such as {{i|Brimstone}}, {{i|Mom's Knife}}, etc.
+* 157 - {{i|Bloody Lust}} - The damage bonus has been adjusted (previous order was +0.5, +0.5, +0.5, +33%, +33%, +33%, new order is +0.5, +0.7, +0.9, +1.1, +1.3, +1.5).
+* 164 - {{i|The Candle}} - Fixed flames sometimes passing through enemies without damaging them.
+* 166 - {{i|D20}} - Fixed being able to reroll already opened chests into more pickups/chests.
+* 168 - {{i|Epic Fetus}} - Most bomb modifiers are now chance based (scaling with luck).
+* 171 - {{i|Spider Butt}} - Enemies killed by the effect will now spawn friendly blue spiders.
+* 173 - {{i|Mitre}} - Now only has a 33% chance to convert red heart drops into soul hearts (down from 50%).
+* 177 - {{i|Portable Slot}} - Removed the forced delay between uses.
+* 178 - {{i|Holy Water}} - Now a thrown projectile attack, similar in behavior to {{i|Bob's Brain}}. The puddle now also freezes enemies that come into contact with it, in addition to continuously damaging them.
+* 181 - {{i|White Pony}} - Updated the charge attack to have new visual and sound effects.
+* 181 - {{i|White Pony}} - Charge time has been reduced to 2 (from 6). The beams of light now trail behind Isaac when charging with it (damage formula of the beams is damage * 4 + 10). Otherwise functions identically to the regular Pony.
+* 186 - {{i|Blood Rights}} - Damage from Blood Rights now ignores invincibility effects, similar to {{i|IV Bag}}.
+* 188 - {{i|Abel}} - Now has an increased rate of fire. If picked up by Cain, it shoots blood tears and the damage becomes increased to 5 (instead of the usual 3.5).
+* 191 - {{i|3 Dollar Bill}} - Updated the list of possible effects.
+* 192 - {{i|Telepathy For Dummies}} - Now increases range upon use (roughly twice as much as regular range upgrades).
+* 203 - {{i|Humbleing Bundle}} - No longer change already existing pickups.
+* 203 - {{i|Humbleing Bundle}} - Changed to be chance-based instead of guaranteeing every pickup to be a doubled variant.
+* 205 - {{i|Sharp Plug}} - The cost has been reworked to depend on the amount of charge bars missing. It takes half of a heart per charge, and can now be used on partially charged items. It now stops short of dealing fatal damage, and cannot be used at half of a heart. Now takes red hearts first.
+* 211 - {{i|Spiderbaby}} - Increased the amount of spiders spawned to 2-5 (from 1-2).
+* 213 - {{i|Lost Contact}} - Fixed being able to destroy shots from perma-charmed enemies.
+* 223 - {{i|Pyromaniac}} - Now grants Isaac immunity to fire, but no longer protects against stomps or shockwaves. Explosions now only heal Isaac for half of a heart (previously healed a full heart).
+* 230 - {{i|Abaddon}} - Now only grants two black hearts, but now also converts heart containers into black hearts instead of simply removing them.
+* 232 - {{i|Stop Watch}} - Now slows down all enemies in the game once again, but the slow effect is much less drastic. It no longer has an "on hit" effect.
+* 233 - {{i|Tiny Planet}} - The orbit now more tightly follows Isaac. To help with range, the orbit is now also offset based on the current direction Isaac is shooting.
+* 245 - {{i|20/20}} - Now reduces the player's damage by 25%.
+* 247 - {{i|BFFS!}} - Fixed familiar tears not increasing in size.
+* 256 - {{i|Hot Bombs}} - Fixed the bombs not always dealing contact damage when they should.
+* 256 - {{i|Hot Bombs}} - Now have greatly increased contact damage (increased from 1 to 16).
+* 256 - {{i|Hot Bombs}} - Now passively grant Isaac immunity to fire.
+* 261 - {{i|Proptosis}} - Fixed the black ring from [[Athame]] and [[Maw Of The Void]] extending much farther away from the player when they have Proptosis.
+* 261 - {{i|Proptosis}} - Is now a lesser additive increase longer to the damage stat (instead of a flat multiplier). Tear damage is still determined by a distance-based multiplier, and at point-blank it will do more damage than previously (up to 300% damage). Damage scales linearly down to 0% with distance.
+* 262 - {{i|Missing Page 2}} - Now doubles all black heart and Necronomicon damage (to 80 instead of the usual 40). The room damaging effect that triggers at one heart remaining now also deals 80 damage (instead of 40).
+* 264 - {{i|Smart Fly}} - Damage tick rate has been decreased.
+* 270 - {{i|Leech}} - Fixed being able to heal Isaac more than once per enemy in certain cases.
+* 273 - {{i|Bob's Brain}} - Fixed it being unable to destroy fireplaces.
+* 273 - {{i|Bob's Brain}} - Now has an increased delay before becoming available when entering rooms. Explosion damage has increased to 100 (from 60).
+* 274 - {{i|Best Bud}} - Contact damage has been increased to 10 (from 5).
+* 275 - {{i|Lil Brimstone}} - Now unable to start charging until he is finished attacking.
+* 275 - {{i|Lil Brimstone}} - Beam damage has been decreased to 2.5 over 8 ticks (from 3.5 over 9 ticks).
+* 276 - {{i|Isaac's Heart}} - Can now be repositioned easier, as it tries to stay opposite of the direction Isaac is shooting. As Isaac shoots, it will charge up and, when released, will repel all nearby enemies and release blood shots in eight directions. Isaac's body gains a larger hitsphere than previously to block shots with and is also pushed less by enemies. While an enemy is in contact with Isaac's body, they take 7 damage over 2-3 ticks per second. Enemies now target Isaac's body instead of the heart. This item no longer prevents damage from self-harm mechanics/items.
+* 278 - {{i|Dark Bum}} - Now has a chance to drop pills, cards, or runes. If he drops a heart, it will always be a black heart.
+* 280 - {{i|Sissy Longlegs}} - Now charms enemies upon contact.
+* 284 - {{i|D4}} - Fixed sometimes rerolling all items into items from one pool.
+* 285 - {{i|D10}} - Fixed Mr. Mine chains being counted as enemies.
+* 285 - {{i|D10}} - Now attempts to reroll enemies into enemies of similar health.
+* 286 - {{i|Blank Card}} - Now only works with cards. Charge time is now dependent on the held card and will update with each activation.
+* 287 - {{i|Book of Secrets}} - Now avoids giving mapping effects that the player already has. If the player has all mapping effects, it grants the "I can see forever!" effect for the floor.
+* 288 - {{i|Box of Spiders}} - Increased the amount of spiders spawned to 4-8 (from 1-4).
+* 289 - {{i|Red Candle}} - Flames now play a sound and animation when extinguished.
+* 289 - {{i|Red Candle}} - Fixed flames sometimes passing through enemies without damaging them.
+* 289 - {{i|Red Candle}} - Flames now time out after ten seconds and automatically extinguish. They also no longer block player attacks or get extinguished by them.
+* 290 - {{i|The Jar}} - Fixed being able to infinitely duplicate hearts with {{i|Maggy's Bow}} or {{i|Humbleing Bundle}}.
+* 291 - {{i|Flush!}} - Updated water to have reflections.
+* 291 - {{i|Flush!}} - Charge time has been reduced to 4 (from 6).
+* 292 - {{i|Satanic Bible}} - If used on the floor before defeating the boss, the boss item drop is changed to a random devil deal that must be paid for. The {{i|The Polaroid}} / {{i|The Negative}} pedestals are unaffected.
+* 293 - {{i|Head of Krampus}} - Now deals 10 damage over 19 ticks (from 22 damage over 20 ticks). Charge time has been reduced to 3 (from 6).
+* 294 - {{i|Butter Bean}} - Now knocks back enemies and projectiles with significantly more force. If a pushed enemy hits a rock or wall forcefully enough, they take 10 damage.
+* 295 - {{i|Magic Fingers}} - Increased the damage per use. The formula is now damage * 2 + 10 (previously the formula was simply damage * 2). Now mostly ignores the flat +40 bonus from Ipecac.
+* 296 - {{i|Converter}} - Now only costs one soul heart to use (previously costed two).
+* 300 - {{i|Aries}} - Now prevents receiving contact damage if ramming and killing enemies at full speed.
+* 304 - {{i|Libra}} - The damage and fire rate formulas have been adjusted.
+* 308 - {{i|Aquarius}} - Now synergizes with tear effects.
+* 312 - {{i|Maggy's Bow}} - Fixed blended hearts not being affected.
+* 313 - {{i|Holy Mantle}} - Added visual and sound effects for losing the shield.
+* 313 - {{i|Holy Mantle}} - Fixed being able to exploit refreshing the effect with the save and continue system.
+* 313 - {{i|Holy Mantle}} - The shield now has significantly fewer invulnerability frames when lost.
+* 315 - {{i|Strange Attractor}} - Tears now pull enemies in with less force at first, but increase in magnetization as they travel.
+* 316 - {{i|Cursed Eye}} - Can now shoot a maximum of 5 shots at a time (increased from the previous 4 shots maximum).
+* 319 - {{i|Cain's Other Eye}} - Fixed the familiar leaving the room bounds in L rooms.
+* 320 - {{i|???'s Only Friend}} - Damage tick rate has been decreased.
+* 322 - {{i|Mongo Baby}} - Removed the double damage multiplier on his attacks.
+* 324 - {{i|Undefined}} - Fixed a rare crash caused by using it in [[Greed Mode]].
+* 325 - {{i|Scissors}} - Has been redesigned. The stationary head is now affected by Isaac's stats and attack modifiers, and the body will spew a controllable fountain of blood shots. Charge time increased to 4 (from 2).
+* 328 - {{i|The Negative}} - Now grants a passive damage upgrade (equal to that of {{i|Steven}} or {{i|Pentagram}}).
+* 329 - {{i|The Ludovico Technique}} - Tears no longer move towards the player when no enemies are present in the room.
+* 329 - {{i|The Ludovico Technique}} - Fixed the broken synergy with {{i|Explosivo}}.
+* 329 - {{i|The Ludovico Technique}} - Fixed bad interpolation on tears.
+* 329 - {{i|The Ludovico Technique}} - Fixed shots not disappearing with the {{i|Trisagion}} and {{i|Fruit Cake}} synergy.
+* 330 - {{i|Soy Milk}} - Tears now cause drastically less knockback.
+* 338 - {{i|The Boomerang}} - Fixed a bugged interaction with sticky nickels.
+* 338 - {{i|The Boomerang}} - Is now piercing, and has far less downtime between throwing it and being able to fire tears again.
+* 344 - {{i|Match Book}} - Now able to also drop the {{t|Match Stick}} trinket.
+* 348 - {{i|Placebo}} - Charge time is now dependent on the held pill, and will update with each activation.
+* 352 - {{i|Glass Cannon}} - No longer removes the user's health upon firing. Upon taking damage, the cannon will break, the damage that the player received is increased by two hearts (this extra damage cannot be fatal), and the player gains the {{i|Anemic}} effect for the room. The cannon will remain broken and unusable until recharged (four rooms, alternative means of charging still work).
+* 353 - {{i|Bomber Boy}} - Added a unique bomb appearance.
+* 355 - {{i|Mom's Pearls}} - Now grants a soul heart upon pickup.
+* 357 - {{i|Box of Friends}} - Charge time has been reduced to 3 (from 4).
+* 360 - {{i|Incubus}} - Incubus tears deal 25% less damage when playing as characters other than Lilith, and are now affected by the player's range and shot speed stats.
+* 366 - {{i|Scatter Bombs}} - Added a unique bomb appearance.
+* 366 - {{i|Scatter Bombs}} - The small bombs now pop out in a less erratic cluster that explodes quickly.
+* 368 - {{i|Epiphora}} - Fixed not working when blindfolded (which also allows it to be used with Lilith).
+* 375 - {{i|Host Hat}} - No longer protects against stomps or shockwaves.
+* 376 - {{i|Restock}} - Now exponentially increases the asking price with every shop purchase.
+* 376 - {{i|Restock}} - No longer spawns random pickups when the item is obtained.
+* 378 - {{i|No. 2}} - Added a visual fart cloud effect when a bomb is placed.
+* 380 - {{i|Pay To Play}} - Fixed unlocked coin doors appearing open even when they are closed.
+* 382 - {{i|Friendly Ball}} - Charge time has been reduced to 2 (from 3). Walking over the thrown ball after capturing an enemy will immediately recharge it.
+* 383 - {{i|Tear Detonator}} - Now a timed recharge (previously 1 room charge).
+* 384 - {{i|Lil Gurdy}} - Can deal significantly more damage (dependent on charge), and now bounces off of enemies and obstacles.
+* 388 - {{i|Key Bum}} - Fixed not paying out when taking charged keys. Upon taking a charged key, he also leaves behind a battery pickup.
+* 389 - {{i|Rune Bag}} - Now generates runes less frequently.
+* 393 - {{i|Serpent's Kiss}} - Fixed the poison effect not dealing damage if Isaac remains in contact with the afflicted enemy.
+* 393 - {{i|Serpent's Kiss}} - No longer generates black hearts from the poison tears (the contact effect still can).
+* 394 - {{i|Marked}} - Added a dotted line between Isaac and the target.
+* 394 - {{i|Marked}} - Now only begins to continuously fire once the player has pressed an attack button. The target starts near Isaac instead of the room's center. The target can be removed and firing stops if the player presses the card/trinket drop button, or when the player leaves the room.
+* 395 - {{i|Tech X}} - Added extra effects to the laser rings so that they can be seen appearing and disappearing.
+* 395 - {{i|Tech X}} - Laser ring damage is now calculated based on charge, starting from 25% at minimal charge to 100% at full charge. The maximum ring size has been reduced. Shots now also dissipate more quickly upon coming into contact with walls.
+* 399 - {{i|Maw Of The Void}} - Fixed not working when blindfolded (which also allows it to be used with Lilith).
+* 399 - {{i|Maw Of The Void}} - No longer comes with a damage upgrade.
+* 399 - {{i|Maw Of The Void}} - No longer generates black hearts.
+* 401 - {{i|Explosivo}} - Explosivo tears now deal damage upon impact.
+* 402 - {{i|Chaos}} - Now assigns a "weight" to item pools based on how many items are in the pool. The more items in a pool, the more likely that pool will be picked.
+* 403 - {{i|Spider Mod}} - Now features color coded health bars and more accurate damage information.
+* 405 - {{i|GB Bug}} - Now a thrown projectile, activated by double-tapping an attack button. It rerolls enemies and pickups it comes into contact with, then despawns. It returns after a room has been cleared.
+* 408 - {{i|Athame}} - No longer generates black hearts.
+* 409 - {{i|Empty Vessel}} - Now requires the timer to reach the twenty-second interval twice in one room before triggering invincibility (previously triggered invincibility the first time the timer reached 00, 20, or 40 seconds while in the room, allowing players to enter every room invincible with enough patience).
+* 415 - {{i|Crown Of Light}} - Fixed the crown not visually updating when losing health through means other than damage.
+* 416 - {{i|Deep Pockets}} - No longer adds a pill/card slot, instead increases money cap to 999. When a room clear would otherwise yield no rewards, it now spawns 1-3 pennies.
+* 420 - {{i|Black Powder}} - The powder pentagram can now damage flying enemies.
+* 421 - {{i|Kidney Bean}} - Now has a bigger effect radius, no longer deals damage to the enemies it's charming, and charge time has been reduced to 1 (from 2).
+* 422 - {{i|Glowing Hourglass}} - Fixed perma-charmed enemies not being properly restored when rewinding.
+* 422 - {{i|Glowing Hourglass}} - Now refunds certain resources that it didn't before (such as keys/health spent to enter special rooms). Charge time has been increased to 3 (from 2).
+* 427 - {{i|Mine Crafter}} - Fixed the barrel instantly detonating if used while having the [[Yes Mother?]] transformation.
+* 427 - {{i|Mine Crafter}} - Has been updated to allow remote detonation of the placed TNT by activating the item again while uncharged. Previously, this remote detonation feature required another charge on the item. TNT will now always be placed if the item is used while charged, allowing for more than one barrel to be active at a time if more charges are available.
+* 432 - {{i|Glitter Bombs}} - Fixed a rare crash.
+* 437 - {{i|D7}} - Fixed not rerolling miniboss drops.
+* 437 - {{i|D7}} - Fixed not properly refreshing [[Greed]] miniboss rooms.
+* 440 - {{i|Kidney Stone}} - No longer has a speed downgrade.
+* 441 - {{i|Mega Blast}} - Fixed the laser not being the correct color when combined with certain tear effects.
+* 442 - {{i|Dark Prince's Crown}} - Reduced the price in devil deals to one heart.
+* 442 - {{i|Dark Prince's Crown}} - Now grants more of an increase in the rate of fire, and the bonus now breaks the soft tears cap.
+* 444 - {{i|Lead Pencil}} - The tear barrage no longer deals double damage.
+* 448 - {{i|Shard of Glass}} now causes Isaac to start bleeding upon taking damage, slowly draining his red health over time. While bleeding, he leaves a trail of creep and spews a fountain of controllable blood shots. The effect ends when Isaac receives any kind of red heart healing, or when he runs out of red health to use (it cannot kill him).
+* 451 - {{i|Tarot Cloth}} - Added a slow pulsing outline HUD effect for cards that would be buffed.
+* 451 - {{i|Tarot Cloth}} - Now only buffs tarot cards. Some cards that previously did not benefit from doubling now have unique effects.
+* 456 - {{i|Midnight Snack}} - Renamed from Moldy Bread. Pickup quote changed to "HP up".
+* 462 - {{i|Eye of Belial}} - Fixed tear impacts being the default tear color.
+* 464 - {{i|Glyph of Balance}} - Now also modifies room clear rewards.
+* 470 - {{i|Hushy}} - Damage tick rate has been decreased.
+* 472 - {{i|King Baby}} - Familiars being commanded by King Baby now automatically aim at enemies.
+* 473 - {{i|Big Chubby}} - Fixed it being unable to destroy fireplaces.
+* 473 - {{i|Big Chubby}} - The damage tick rates have been increased.
+* 477 - {{i|Void}} - Can now suck up items that are held over Isaac's head. This allows usage on purchased shop/devil items.
+* 477 - {{i|Void}} - No longer activates effects immediately upon sucking them up. This allows for more strategic activation timing for single-use actives.
+* 482 - {{i|Clicker}} - Fixed being able to remove key items, such as The Polaroid/Negative or key pieces.
+* 483 - {{i|Mama Mega!}} - The effect now blows up machines, beggars, and fireplaces.
+* 483 - {{i|Mama Mega!}} - Added new visual and sound effects for the explosion.
+* 487 - {{i|Potato Peeler}} - Added extra visual feedback for the effect.
+* 489 - {{i|D infinity}} - Has been reworked. Press the drop button to cycle through to the next dice (there is no limit to this). Charge time scales based on the chosen dice, updating with each usage. No longer forces the player to use a different effect.
+* 491 - {{i|Acid Baby}} - The pill drop rate has been reduced to every 6-7 rooms (previously every 2-3 rooms). Upon using a pill, all enemies in the room now take 10 damage and become poisoned for 6-7 ticks (previously only had the poison effect for 2 ticks).
+* 492 - {{i|YO LISTEN!}} - Fixed hovering over obstacles that are ineligible for a crawlspace.
+* 493 - {{i|Adrenaline}} - Fixed the item causing some item costumes to be improperly scaled.
+* 493 - {{i|Adrenaline}} - Now grants an increasingly higher damage bonus the more empty heart containers Isaac has.
+* 494 - {{i|Jacob's Ladder}} - Electricity arcs now have a maximum range unless chained through enemies. They also cannot deal extra damage to the enemy being hit by the tear.
+* 495 - {{i|Ghost Pepper}} - Now shoots spectral blue flames that scale with Isaac's damage and luck.
+* 497 - {{i|Camo Undies}} - Fixed some broken interactions with items that change Isaac's color.
+* 501 - {{i|Greed's Gullet}} - Fixed not applying its bonus retroactively.
+* 503 - {{i|Little Horn}} - Fixed an issue where the contact damage effect would override superior contact damage effects from other items.
+* 503 - {{i|Little Horn}} - The tear effect isn't piercing anymore, but can now summon Big Horn's hand to slap bosses for extra damage. Still is an instant kill on regular enemies, and features a new animation of Big Horn's hand grabbing them.
+* 504 - {{i|Brown Nugget}} - Fixed Brown Nugget flies not being buffed by Hive Mind/BFFs.
+* 504 - {{i|Brown Nugget}} - Brown Nugget flies now have faster-shot speed, and their damage has been increased to 3.5 (from 2).
+* 507 - {{i|Sharp Straw}} - Added extra visual feedback for the effect.
+* 507 - {{i|Sharp Straw}} - Now only able to generate half red hearts (previously, it generated half soul hearts if the player had no heart containers).
+* 507 - {{i|Sharp Straw}} - Now mostly ignores the +40 damage from Ipecac in its damage formula.
+* 509 - {{i|Bloodshot Eye}} - Now blocks enemy shots, has increased shot speed and rate of fire, and now only shoots when lined up with enemies.
+* 513 - {{i|Bozo}} - Fixed failing to create poop ontop of various objects (such as already destroyed poop piles).
+* 517 - {{i|Fast Bombs}} - Bombs no longer knock each other around when the player has Fast Bombs, allowing for a more controlled line of explosions.
+* 519 - {{i|Lil Delirium}} - Updated the colors of the attacks.
+* 520 - {{i|Jumper Cables}} - No longer plays the "item ready" sound effect when only granting partial charge.
+* 522 - {{i|Telekinesis}} - Added a new visual effect.
+* 522 - {{i|Telekinesis}} - Has more downtime between being able to activate it again, and now repels nearby enemies. Enemy shots picked up now retain their properties (such as appearance, or the ability for Ipecac shots to explode).
+* 523 - {{i|Moving Box}} - Now has a cap of 6 held items/pickups (previously unlimited). Packing up chests/items from [[Challenge Room]]s or the [[Boss Rush]] now starts the ambush.
+* 524 - {{i|Technology Zero}} - The lasers now deal 30% of the player's damage stat per tick (from 100%).
+* 527 - {{i|Mr. ME!}} - No longer restocks shops when stealing from them.
+* 530 - {{i|Death's List}} - Fixed a softlock caused by triggering the thumbs up animation while falling down a [[Pitfall]].
+* 534 - {{i|Schoolbag}} - Displays the secondary active item to the top left of the primary active, instead of being in the bottom right of it. It also no longer displays a HUD icon when empty.
+* 534 - {{i|Schoolbag}} - Fixed most known bugs (items deactivating when swapping, certain passive effects not working correctly, etc).
+* 535 - {{i|Blanket}} - Added visual and sound effects for losing the shield.
+* 535 - {{i|Blanket}} - The shield now has significantly fewer invulnerability frames when lost.
+* 543 - {{i|Hallowed Ground}} - White poop is now more durable, similar to golden poop. While standing in the aura, Isaac's damage is now also increased by 25%, and his tears gain a homing effect.
+* 545 - {{i|Book of the Dead}} - Charge time has been increased to 6 (from 4). Generated orbitals now break more easily.
+* 548 - {{i|Jaw Bone}} - Fixed a bugged interaction with sticky nickels.
+
+== Trinkets (General) ==
+* It is now possible to pick up two of the same trinket (if it was duplicated). Effects can stack.
+* Reworked smelted trinkets to have a more consistent implementation (they are now shared between coop babies and can be removed or rerolled by items such as the {{i|D4}} and {{i|Clicker}}).
+* Updated some trinkets to support doubled effects from {{i|Mom's Box}} and golden trinkets.
+
+== Trinkets (Specific) ==
+* 10 - {{t|Wiggle Worm}} - Now grants spectral tears.
+* 11 - {{t|Ring Worm}} - Now grants spectral tears.
+* 13 - {{t|Store Credit}} - Fixed allowing for infinite trinket purchases in [[Greed Mode]].
+* 15 - {{t|Lucky Rock}} - Now has a 33% chance to drop a coin for every rock destroyed (previously 100%).
+* 26 - {{t|Hook Worm}} - Now grants spectral tears.
+* 32 - {{t|Liberty Cap}} - Updated the list of possible effects.
+* 32 - {{t|Liberty Cap}} - Fixed giving the Compass effect instead of Magic Mushroom.
+* 33 - {{t|Umbilical Cord}} - Now has a high chance to spawn a {{i|Gemini}} familiar for the room when Isaac takes damage. This effect is stackable.
+* 40 - {{t|Red Patch}} - Fixed not applying its costume when the effect activates.
+* 46 - {{t|Isaac's Fork}} - Fixed not having any indicators of the effect activating.
+* 49 - {{t|Bloody Penny}} - Now has a 25% chance to drop extra pickups (previously 50%).
+* 50 - {{t|Burnt Penny}} - Now has a 25% chance to drop extra pickups (previously 50%).
+* 51 - {{t|Flat Penny}} - Now has a 25% chance to drop extra pickups (previously 50%).
+* 57 - {{t|???'s Soul}} - Fixed the familiar leaving the room bounds in L rooms.
+* 61 - {{t|The Left Hand}} - No longer change already existing chests.
+* 69 - {{t|Faded Polaroid}} - Fixed some broken interactions with items that change Isaac's color.
+* 92 - {{t|Cracked Crown}} - Reduced the stat bonuses to +20% (from +33%) and removed the flat independent tears upgrade from it.
+* 94 - {{t|Fish Tail}} - Fixed not working with several blue fly sources.
+* 97 - {{t|Tonsil}} - The familiar is no longer considered a collectible item, meaning Eden cannot start with it and it doesn't appear on the collection page.
+* 109 - {{t|Duct Tape}} - Fixed not setting the position of familiars correctly at the start of a room when obtained by the {{t|Error}} trinket.
+* 119 - {{t|Stem Cell}} - Now heals Isaac's heart containers to 50% each floor. If Isaac already has 50% health or more, it does the previous effect of healing half of a heart.
+* 128 - {{t|Finger Bone}} - The chance to grant a bone heart has been increased to 5% per hit taken (from 2%).
+
+== Pills ==
+* The pixelation visual effect (used by Retro Vision and stage transitions) has been reworked and is generally less blurry/painful to look at.
+* Retro Vision now lasts a set amount of time instead of going away and returning at random intervals.
+* Restored the original description for the "I Found Pills" pill effect.
+* Fixed I Can See Forever not always opening secret rooms in [[The Void]].
+* Pill rotation generation has been reworked to reduce the amount of "joke" pills in rotation and to increase the prevalence of stat modifiers.
+* Bombs are Key pill now swaps golden keys/bombs. A carried golden key would change into a golden bomb, and vise versa.
+* I'm Drowsy and I'm Excited pills now also affect the speed of the players and their attacks.
+
+== Cards & Runes ==
+* Added "rune shards", which are weaker versions of existing runes. They only appear if not all runes have been unlocked.
+* Added a unique card back for Ancient Recall.
+* Added visual and sound effects for losing a Holy Card shield.
+* Fixed Hagalaz being able to open secret rooms in L rooms.
+* Fixed Blank Rune not being able to trigger Black Rune.
+* Holy Card's shield now persists between rooms/floors.
+* "Ace" cards now convert all non-boss enemies in the room into the respective pickups. Still applies to other pickups in the room as well.
+* The effect of the Devil card is now stackable.
+* Black Rune can now suck up items that are held over Isaac's head. This allows usage on purchased shop/devil items.
+* Holy Card shields now have significantly fewer invulnerability frames when lost.
+* Reduced the shield duration of the Algiz rune to 20 seconds (from 30 seconds).
+
+== Other Pickups ==
+* Black hearts no longer pause the game with animation when lost. New, less intrusive effects have been added for them.
+* Items/mechanics that damage red hearts first now ignore eternal hearts instead of removing them.
+* Bombs now flash corresponding to their detonation timer, instead of exploding without warning.
+* Many minor tweaks and improvements to various pickup animations.
+* Mimic chests have been updated to be more subtle in their appearance.
+* Lucky pennies now use translation strings and show their name when picked up, with "Luck up" being the description.
+* Added a unique bomb appearance for golden bombs.
+* Added animation for using golden keys on key blocks (previously it just reused the normal key animation).
+* Fixed nickels and dimes not having the sparkling pickup animation like regular pennies.
+* Fixed a glitch causing Gold Hearts to instantly break when picked up if a Gold Heart had been previously picked up and lost.
+* Fixed brown and spiked chests opened in Chapter 6 turning into golden chests when an item appears from them.
+* Fixed gold and red chests losing their outline when an item appears from them.
+* Fixed spiked chests being able to spawn in narrow pathways.
+* Batteries can no longer appear as room clear rewards without certain trinkets.
+* Eternal chests are now guaranteed to pay out at least once.
+
+== Machines & Beggars ==
+* [[Mom's Dressing Table]] has been moved from the starting room to bedrooms.
+* Beggars and machines no longer drop item pedestals when bombed in The Chest/Dark Room.
+* Demon beggars now always drop hostile spiders when bombed.
+* Bomb bums now retaliate when bombed.
+* Fixed being able to pay demon beggars twice per half heart.
+* Bomb Bum's payouts have changed to give coins and hearts back instead of more bombs.
+* Restock machines now explode when bombed. Still grants one reroll/restock in the process. They also appear much less frequently outside of Greed Mode.
+
+== Enemies ==
+* Enemies now die upon reaching zero health. Previously, enemies needed to reach negative health to die. This mostly improves the lethality of items that deal fixed damage.
+* [[Portal]]s now only appear in [[The Void]].
+* Slightly tweaked enemies with [[Larry Jr.]] style behavior to have smoother movement.
+* [[Chubber]]'s chomping maggot projectile now dies when the Chubber does, instead of returning to the original firing position and disappearing.
+* [[Ulcer]]s now fire blood shots in arcs instead of in straight lines.
+* Flames spawned by certain enemies now play a sound and animation when extinguished.
+* Fires left behind by enemies can now be extinguished by player attacks, and are more visually distinct.
+* Certain enemy replacements no longer happen on inappropriate floors (no Mushrooms in Womb, no Blisters in Basement, etc).
+* Fireplaces, movable TNT barrels, and all invincible stone type enemies (i.e. [[Stone Grimace]]s, [[Stoney|Stonies]]) now follow obstacle rules when colliding with tears (piercing shots are blocked, spectral shots pass through).
+* Added visual telegraph for when [[Eye]] enemies are about to attack.
+* Added visual telegraph for red/purple fireplace attacks.
+* Added a visual and sound telegraph for Lil Haunt attacks.
+* Fixed [[Leech (Enemy)|Leeches]] not pathfinding correctly in rooms with pits.
+* Fixed [[Leech (Enemy)|Leeches]] not being properly locked along their charging axis (they no longer wildly bounce from tear knockback).
+* Fixed a rare crash caused by [[Soul Sucker]]s.
+* Fixed a bug with eternal flies which could cause their position to become undefined when turning into a normal fly.
+* Fixed a lot of enemies not being able to become champions when they should.
+* Fixed [[The Duke of Flies]], [[The Husk]], and [[The Wretched]] not spawning enemies upon death.
+* Fixed [[Guts]] and [[Wall Hugger]]s starting in an unpredictable direction when spawned next to a fireplace.
+* Fixed [[Charger]]s getting stuck on other enemies.
+* Fixed [[Gurdy]]'s hit sphere not matching the sprite.
+* Fixed several enemies not applying their damage resistances when frozen.
+* Fixed [[Host]]s being unable to see players from behind spikes, and refusing to pop up if stuck between spikes.
+* Fixed being able to trick [[Round Worm]]s into not firing by hugging the nearest rock.
+* Fixed slowed enemy projectiles losing their color.
+* Fixed [[Carrion Queen]] and [[Mask of Infamy]] disappearing on death with no sound or effect.
+* Fixed issues where some enemies could attack without playing an attack animation.
+* Fixed [[Buttlicker]]s not being counted for any "on kill" effects (such as {{i|Lusty Blood}}).
+* Fixed uncleared rooms not saving champions when leaving and re-entering them.
+* Fixed certain enemies being able to deal contact damage to Isaac by jumping onto him while he's flying over pits, snapping back to the ground afterward in a very glitchy looking way.
+* Fixed enemies spawning onto and detonating dangerous objects in [[Greed Mode]] (such as TNT).
+* Enemies that spawn other enemies upon death will now spawn less of them with each death if they're regenerating dark red champions.
+* Yellow champions will no longer spawn on the first chapter.
+* Adjusted collision sizes for some entities, such as Peep/Bloat's eyes.
+* [[Poison Mind]]s now float over obstacles, and explode on death.
+* [[Drowned Charger]]s spawned from [[Drowned Hive]]s now have reduced health.
+* [[Fistuloid]]s now have a death animation, which delays and telegraphs their attack.
+* Reduced the health of [[Wizoob]]s and [[Red Ghost]]s to 20 base HP and 4 stage HP (from 25 base HP and 5 stage HP).
+* Piercing shots no longer damage segmented enemies (such as [[Larry Jr.]]) multiple times per attack.
+
+== Charmed Enemies ==
+* Updated some perma-charmed enemies to be less annoying with their attacks and sounds in cleared rooms.
+* Fixed some player homing attacks targeting perma-charmed enemies.
+* Homing shots from perma-charmed enemies will no longer target Isaac.
+* Fixed perma-charmed enemies not blocking shots from other enemies.
+* Fixed [[Mr. Maw]]s having extremely erratic and glitchy behavior when charmed.
+* Charmed enemies now inflict more damage to other enemies, and receive less contact damage.
+
+== Bosses ==
+* [[Mom's Heart]] / [[It Lives!]] now has a small delay before spawning the two Eye enemies at the start of the fight.
+* Fixed [[Pin]] and other related bosses being able to deal contact damage during the same frame they were spawned in.
+* Fixed some bosses being able to spawn multiple enemies at the exact same location (such as [[Isaac (Boss)|Isaac]] and [[Dingle]]).
+* Fixed an issue that caused boss pools to heavily skew towards certain bosses.
+* Fixed [[Mom]] rarely ever doing her hand attack when standing near her doors.
+* Fixed the [[Chub]] spawned after the [[Matriarch]] fight rarely being pushed in strange ways by the [[Fistuloid]]s orbiting her.
+* Fixed the various Blastocyst forms not having an appear animation.
+* Fixed [[Mom's Heart]] / [[It Lives!]] being able to spawn enemies in the top center part of the room, usually causing them to die instantly from the projectiles fired by the heart.
+* Fixed a bug that caused [[Conquest]] to share his health with [[War]] or other Conquests in the room.
+* Fixed a bug with [[Mega Satan]] where bombs would go into a bugged state and be deleted without exploding during his transition to phase 2.
+* Fixed [[Hush]] being able to immediately cause contact damage during its appearance animation.
+* Fixed [[Turdlings]] not being healed by {{i|Butt Bombs}}.
+* Fixed [[Ultra Greed]] not having a door at the top of the room to spawn enemies from (it was always meant to be there).
+* Fixed some classic bosses (such as [[Peep]], [[Bloat]], and [[Monstro]]) being unable to jump over obstacles, despite clearly achieving enough visual height to do so.
+* Super Sins no longer appear in the first chapter.
+* [[Mom]] and [[Satan]]'s legs now deal contact damage. Does not apply to disjointed legs, such as from High Priestess or [[Broken Shovel]].
+* [[Fistula]] has been moved from the {{s|Cellar}} to the {{s|Caves}} (instead of {{s|Basement}}. (This is how it was in Wrath of the Lamb.)
+* Restored a missing [[Blastocyst]] attack from the original game (the random arced shots when the largest form is jumping), and restored its original, larger shot size.
+* The animations and behavior for [[Widow]] and [[The Wretched]] have been sped up to more closely resemble how it was in Wrath of the Lamb.
+* Replaced [[Big Horn]]'s ability to summon [[Little Horn]] with a new combo attack, in which Big Horn temporarily brings Little Horn out to shoot three consecutive smoke balls.
+* [[Big Horn]]'s black balls now bounce off of him when coming into contact instead of hurting him and destroying the balls.
+* [[Conquest]] and the [[Isaac (Boss)|Isaac boss]] now use a delayed version of the {{i|Crack the Sky}} beam which leaves the player with enough time to move out of the way.
+* Boss attacks that involve {{i|Crack the Sky}} beams are now more aggressive to compensate for the above change.
+* [[Daddy Long Legs|Daddy Longlegs]] and [[Triachnid]] random stomp attacks are now distributed more evenly.
+* [[Daddy Long Legs|Daddy Longlegs]] and [[Triachnid]] have had their health increased to 500 (from 300).
+* Ultra Pride baby (Florian) health has been increased to 30 (from 25).
+* Increased the health of minibosses by varying amounts (does not include Krampus, Envy, or Super Envy).
+* [[Mega Satan]] now has boss armor (not as much as [[Hush]], don't worry).
+* Made several adjustments to the [[Matriarch]]:
+** Decreased [[Fistula]] pieces spawned when changing phases to 1 (from 2)
+** Spawning [[Fistuloid]]s now consumes 30 HP, Fistuloids will not be spawned if this would cause a phase change (this does not apply to Fistuloid spam attack)
+** Fistuloids will chase the player less aggressively and refrain from attacking while the Matriarch is doing her 8-way chubber attack
+
+== Rooms ==
+* Rooms with spikes directly next to the entrance have been adjusted. The spikes are either moved away from the door or blocked off.
+* Adjusted the appearance rate of many special rooms to be more balanced (the black poop super secret room is now rarer, for example).
+* Rooms with water in them now automatically extinguish fireplaces. Most Flooded Caves rooms have fireplaces pre-extinguished.
+* Updated many existing room layouts and certain [[Greed Mode]] waves to make them more consistently fair.
+* Certain floor alts now share fewer rooms/enemies with each other, in order to make them more distinct.
+* Added new doors for dice rooms, chest rooms, sacrifice rooms, libraries, and shops. (They are also revealed on the minimap.)
+* Added thousands of new room layouts.
+* Fixed all off-grid rooms not being consistently seeded due to extra-special rooms spawning (such as sacrifice rooms or arcades).
+
+== Special Rooms - Shop (2) ==
+* [[Sacks]] can now be sold in shops for {{pennies|7}}.
+* All items in the shop item pool are now completely decremented on sight (instead of being decremented by half).
+
+== Special Rooms - Treasure (4) ==
+* Removed Greed Gapers from treasure rooms.
+
+== Special Rooms - Boss (5) ==
+* Small boss rooms have been disabled.
+* If pits are near the trap door that spawns after a boss, they will now be automatically filled and become walkable. This prevents situations where a trap door could block off devil/angel doors.
+
+== Special Rooms - Miniboss (6) ==
+* Small miniboss rooms have been disabled.
+
+== Special Rooms - Secret (7) ==
+* Fixed [[Secret Room]]s connected to the [[Treasure Room]] not having an exit when teleporting there in [[Greed Mode]].
+
+== Special Rooms - Curse (10) ==
+* Updated the hit detection of Curse Room doors to prevent situations where it may not damage players entering at high speeds.
+
+== Special Rooms - Challenge (11) ==
+* [[Challenge Room]] waves are now randomized, and each floor features unique waves (previously they were shared for every alt floor in a chapter).
+* [[Challenge Room]] doors re-close if Isaac no longer meets their entry conditions while in the adjacent room.
+* Boss [[Challenge Room]]s now always contain a boss pool item. Isaac must be at one heart or less total to enter, including soul/black hearts.
+
+== Special Rooms - Devil (14) ==
+* Fixed being able to survive fatal devil deals by holding certain actives over Isaac's head and leaving the room (such as {{i|Bob's Rotten Head}}).
+* [[Krampus]] can now only appear if the player has previously entered a devil deal.
+* Devil deals now accept bone hearts, equal in worth to a regular heart container.
+* Devil deal items cannot be purchased unless Isaac has the asking price.
+* If Isaac only has one heart container, devil items that would normally cost two heart containers now cost one heart container plus two soul hearts.
+* If Isaac has enough health of various types, the devil may randomly ask for three soul hearts or a mixture of one heart container plus two soul hearts.
+* Some items now cost more in devil deals. These include {{i|Dark Bum}}, {{i|Dead Cat}}, {{i|Ceremonial Robes}}, and {{i|Succubus}}.
+
+== Special Rooms - Angel (15) ==
+* Angel deals can now be guaranteed if the first seen devil deal is skipped without entering it.
+
+== Special Rooms - Crawlspace (16) ==
+* Leaving a crawlspace from any unintended direction now teleports the player to the [[I AM ERROR]] room.
+
+== UI ==
+* The item tracker now includes a "mini" option, allowing for more items to be displayed at once.
+* The tears stat on the HUD now displays as "tears per second" (previously displayed delay between tears in frames).
+* The range stat on the HUD now displays the amount of effective range in tiles (this also fixes misleading cases like Mini Mush/Kidney Stone).
+* Devil/angel chances on the HUD have changed to display the chance the respective deal will appear (previously displayed the chance for an angel deal to replace a devil deal).
+* Duplicate items now show up on the item tracker/pause menu/game over screen.
+* Smelted/gulped trinkets now show up on the item tracker.
+* "Delete Save" confirmation dialog now defaults to "No" instead of "Yes".
+* "goto" console command now accepts the prefix "x" for special rooms from the current stage.
+* Composite enemies (such as Mr. Maw) now show up as a single entry in the Bestiary.
+* Bloodstain from the character selection menu now uses multiply blending so it no longer obscures starting item names.
+* Restored Blastocyst's intro animation from the original game.
+* Updated the boss intros to have more depth and animation, similar to Wrath of the Lamb.
+* Updated Bestiary animations for some enemies.
+* Updated the stat marks on the pause screen to be more accurate.
+* Updated the sorting and placement of character completion marks.
+* Added new minimap icons for sacks, crawlspaces, runes, beggars, machines, and the dressing table.
+* Added new icons for challenge destinations.
+* Added narration voice lines for the cards that did not have them (Era Walk, Huge Growth, Ancient Recall).
+* Added "heart flash" HUD effect when gaining hearts or healing (like it does in Wrath of the Lamb).
+* Added new curse icons under the minimap.
+* Added many missing enemy death portraits.
+* Fixed game over screen displaying the wrong location name in [[Greed Mode]].
+* Fixed Greedier mode becoming visible (but impossible to select) when switching languages.
+* Fixed some enemy kills being counted in the bestiary multiple times per kill.
+* Fixed win streaks not being cleared when exiting to the main menu as Isaac is dying.
+
+== Graphics & Environment ==
+* Brightness around players has been increased in order to aid visibility in [[Curses|Curse of Darkness]] on lower gamma settings.
+* [[Dingle]] now shoots poop shots instead of blood shots (aside from the red champion), to be consistent with other poop enemies.
+* Head costumes now deform along with the player's head when firing charged attacks, such as Brimstone.
+* Light beams (such as {{i|Crack the Sky}} beams or the Cathedral's entrance beam) and many tear effects now properly light up dark rooms.
+* Pin and its variants spawn less excessively large blood explosions on death.
+* Updated sprites for various enemies, bosses, items, obstacles, characters, and more.
+* Updated the [[Dank Depths]] backdrop and pits.
+* Updated the [[Burning Basement]] and [[Cathedral]] to have light sources from the backdrop.
+* Updated water from the [[Flooded Caves]] and [[Scarred Womb]] to have reflections.
+* Updated the player teleport animation to respect the silhouette of certain characters.
+* Updated many of the "giant book" animations (e.g. {{i|The Book of Belial}}, {{i|The Necronomicon}}).
+* Updated all familiar animations to use interpolation.
+* Added new visual effects for [[Utero]].
+* Added minor color correction for various floors/special rooms.
+* Added new death effects for the Steven boss.
+* Added unique item costumes for [[Keeper]], [[Blue Baby]], [[Apollyon]], and [[Black Judas]].
+* Added a new coloring system for champion enemies.
+* Added dust particles on death for bone enemies.
+* Added new attacking visual effects for many enemies, and new effects for enemies with stomp attacks (i.e. Monstro).
+* Added visual effects for certain champions to make their effects more clear (most notably the Pulsing Red and Pulsing Dark Gray champions).
+* Fixed crawlspace items suddenly having a pedestal underneath them when leaving and reentering the room.
+* Fixed [[Hush]] entrance door skipping its animation when opened while having a golden key.
+* Fixed a few animation issues with [[Rag Man]].
+* Fixed barred doors playing their closing animation upon entering the room.
+* Fixed boss shadows becoming invisible during their death animations.
+* Fixed Spirit of the Night, Dead Dove, Empty Vessel, and Guppy not properly overwriting the front wings layer from other flight items.
+* Fixed the fire animation on [[Flaming Gaper]]s and [[Flaming Fatty|Flaming Fatties]] playing too fast.
+* Fixed the fire animation on [[Flaming Fatty|Flaming Fatties]] and [[Flaming Hopper]]s not playing when they are not moving.
+* Fixed Pin's dirt segment briefly appearing as its head before exploding on death (this also applied to the Frail and Scolex).
+* Fixed Isaac being able to die while the big chest opening animation is playing (did nothing aside from visual bugs with the animation).
+* Fixed a regression to light blending which caused colors to appear more washed out compared to Rebirth.
+
+== Sounds & Music ==
+* [[Challenge Room]]s no longer interrupt the floor music theme pre-ambush.
+* Minibosses now use the ambush theme instead of the regular boss theme.
+* Floor music layers can now play if the room's enemies' total HP reaches a certain threshold (previously required a certain amount of enemies in a room to play the music layer).
+* Restored [[Gurdy]]'s taunting laugh animation (after hitting the player) from the original game.
+* Added new music tracks for [[Utero]], [[Super Secret Room]]s, [[Boss Rush]], and the credits (after [[Blue Baby]] has been unlocked).
+* Added new sound effects for {{i|Brimstone}}, {{i|Glass Cannon}}, {{i|Technology}}, {{i|Tech X}}, {{i|Holy Mantle}}, {{i|Death's Touch}}, {{i|Crack the Sky}}, {{i|Clicker}}, {{i|The Book of Belial}}, {{i|Eye of Greed}}, [[Uriel]]/[[Gabriel]]'s wings and attacks, [[Stoney|Stonies]], coin pickups, special rock destruction, [[Arcade]] doors, [[Blood Donation Machine]]s, [[Challenge Room]] doors, enemy deaths, black heart loss, [[Globin]] regeneration, small/large explosions, menu scrolling, enemy spawning, and the pause menu.
+* Fixed burn sound not being played when Isaac takes contact damage from fireplaces.
+* Fixed some enemies missing sound effects (such as Super Sloth's spider throwing attack, Gurdy Jr's slide, Blastocyst splitting, etc).
+
+== Achievements ==
+* Updated the "Mr. Resetter!" achievement to unlock scared hearts. Half soul hearts are now tied to the "Everything is Terrible" achievement.
+
+== Hard Mode ==
+* Reduced the frequency of tinted rocks.
+* Reduced the soul heart drop rate from blue/purple fireplaces to 10% (normal mode percentage is the usual 25%).
+* Shops can randomly be lower level, even with upgrades unlocked for them.
+* {{i|IV Bag}} now only pays out with one coin per use, to match the payout rate of blood donation machines in Hard mode.
+* Added new "micro batteries" that restore 2 bars of charge.
+* Shot speed for many classic enemies has been increased.
+* Increased the charging speed of Horseman bosses.
+* Does not prevent rooms marked as "lower difficulty" from spawning anymore, but makes them less likely to appear.
+* [[Bomb Bum]]s and [[Key Master]]s no longer adhere to the 6 payment minimum of beggars in Hard mode, allowing payouts earlier than before.
+* The reduction of heart drops has been changed to -33% (previously -65%), and bosses can drop hearts again.
+
+== Misc ==
+* Coop can now be played with multiple, separate characters instead of babies. If played with multiple characters, bosses will drop multiple items.
+* [[Greed Mode]] and [[Greedier Mode]] now feature floor alts (Burning Basement, Necropolis, etc.).
+* [[Curses|Curse of the Maze]] now avoids teleporting players to already explored rooms.
+* Homing tears now target enemies much more reliably.
+* It is now possible to see items again that have been rerolled away from by full run reroll effects (this should prevent "Breakfasting" with them).
+* Pretty Flies are no longer counted as items for scoring purposes.
+* Most weapons and tear effects now induce knockback on enemies and bombs. (e.g. {{i|Mom's Knife}}, {{i|Tech X}})
+* Farts from both players and enemies can now push bombs and pickups.
+* "Choice" pedestals (such as those found in [[Angel Room]]s or [[Boss Rush]]) now remember that they're supposed to be a choice when duplicated or moved out of the room.
+* Fixed full run reroll effects not properly removing rerolled items from item history.
+* Fixed several seeding issues with item pedestals which caused inconsistent rerolls in seeded runs.
+* Fixed being able to go to the [[I AM ERROR]] room in [[The Void]].
+* Fixed being able to access [[The Void]] after the first [[Hush]] kill in the save file by leaving and entering the room.
+* Fixed a long-standing bug where tears and projectiles fired very close to a wall would instantly collide with it (this was an issue with splitting shots and enemies that explode into projectiles on death).
+* Fixed being able to use teleportation cards and active items during a room transition, resulting in the teleport being wasted.
+* Fixed certain items and rainbow poop being able to heal Isaac as he dies (while this had no effect, it was confusing to have hearts visible on the game over page).
+* Red chests in the starting room of the [[Dark Room]] now turn into devil deals when opened. These must still be paid for.
+* The shop on the first floor is now free to enter.
+* Rate of fire can now be improved beyond the previous limit, allowing items such as Soy Milk to benefit from tears upgrades.
+* Shot speed no longer has any impact on effective range.
+* Time scaling effects have been reworked to affect enemy/player animation speed and attack rate, and no longer affect the range of tears.
+* Bomb damage has been increased to 100 (from 60). Mega bombs (such as those from {{i|Mr. Mega}} or {{i|Mr. Boom}}) now deal 185 damage (from 110). Bombs now pierce enemy armor.
+* Blue spider damage has been reduced to 2x Isaac's damage (previously x2.5).
+* The [[Guppy]] transformation now grants a 50% chance to spawn a blue fly upon attacking enemies (previously 100%).
+* The [[Stompy]] transformation now allows the player to crush rocks by walking over them.
+* It is now possible to fully empty heart containers through donations or self-harm items.
+* Double red hearts can now uncommonly drop randomly (previously they only appeared in specific room layouts, killing dark red champions, or with {{i|Humbleing Bundle}}). The spawn chance is 1/20 in Normal mode and 1/50 in Hard mode.
+* [[Sacrifice Room]] spikes, [[Curse Room]] doors, spiked chests, {{i|Kamikaze!}}, {{i|Sharp Plug}}, and the Bad Trip pill no longer compromise devil/angel room chances if they damage red hearts. These sources also no longer count as damage for scoring purposes.
+* Most forms of player creep now deal damage ticks at a significantly increased rate.
+* Invincibility effects with contact damage (such as {{i|The Gamekid}}) now deal 20 damage every half-second (from 40 damage every full second, meaning potential DPS is unchanged but feels more responsive). If an enemy is at 40 HP or less, they will still be killed immediately on contact.
+* Locusts of War (including the ones generated by 7 Seals) now have smaller explosions, which should result in less self-damage taken from them.
+* Full run reroll effects (such as D4) are now able to remove heart containers and transformations if losing the respective items during the reroll. Rerolls also does not directly grant health, and heart containers gained from rerolling will start empty.
+* Damage upgrades (and other tear size increases) don't increase tear size quite as much as before.
+
+== Item Pools ==
+=== Treasure ===
+Added:
+* {{i|Skeleton Key}} (at reduced weight)
+* {{i|Polydactyly}}
+* {{i|Belly Button}}
+
+Removed:
+* {{i|Notched Axe}}
+* {{i|Epic Fetus}}
+* {{i|Crystal Ball}}
+* {{i|Blank Card}}
+* {{i|Judas' Shadow}}
+* {{i|D infinity}}
+
+Reduced weight:
+* {{i|Pyro}}
+* {{i|Magic Mushroom}}
+* {{i|The Relic}}
+* {{i|The Halo}}
+* {{i|Mom's Knife}}
+* {{i|Pyromaniac}}
+* {{i|Death's Touch}}
+* {{i|Holy Mantle}}
+* {{i|The Mind}}
+* {{i|The Body}}
+* {{i|The Soul}}
+* {{i|Holy Light}}
+
+=== Shop ===
+Added:
+* {{i|Notched Axe}}
+
+Removed:
+* {{i|Sack of Sacks}}
+
+Reduced weight:
+* {{i|Blank Card}}
+* {{i|Chaos}}
+* {{i|Sack Head}}
+* {{i|Mama Mega!}}
+* {{i|Crooked Penny}}
+
+=== Boss ===
+Removed:
+* {{i|<3}}
+* {{i|Polydactyly}}
+* {{i|Belly Button}}
+* {{i|The Halo}}
+* {{i|Magic Mushroom}}
+* {{i|Little Steven}} (outside of the Steven boss fight)
+
+Reduced weight:
+* {{i|PJs}}
+* {{i|Super Bandage}}
+
+=== Devil ===
+Added:
+* {{i|Money Power}}
+* {{i|A Quarter}}
+* {{i|Bloody Lust}}
+* {{i|Lusty Blood}}
+* {{i|Forget Me Now}} (at reduced weight)
+
+Reduced weight:
+* {{i|Void}}
+
+=== Angel ===
+Added:
+* {{i|Blood of the Martyr}}
+* {{i|Hallowed Ground}}
+
+Reduced weight:
+* {{i|Void}}
+
+=== Secret ===
+Added:
+* {{i|Epic Fetus}}
+* {{i|Chaos}}
+* {{i|Sack Head}}
+* {{i|Sack of Sacks}}
+* {{i|D infinity}}
+
+Removed:
+* {{i|A Quarter}}
+* {{i|Mr. Mega}}
+* {{i|Compost}}
+* {{i|Bomb Bag}}
+
+=== Library ===
+Added:
+* {{i|Monster Manual}}
+
+=== Golden/Stone Chest ===
+Added:
+* {{i|The Belt}}
+* {{i|Mom's Underwear}}
+* {{i|Mom's Pearls}}
+* {{i|Wire Coat Hanger}}
+* {{i|A Quarter}}
+* {{i|Magic 8 Ball}}
+* {{i|Squeezy}}
+* {{i|Screw}}
+* {{i|Torn Photo}}
+* {{i|Latch Key}}
+* {{i|Match Book}}
+* {{i|Crack Jacks}}
+* {{i|Binky}}
+* {{i|Mr. Dolly}}
+* {{i|PJs}} (at reduced weight)
+* {{i|Lead Pencil}} (at reduced weight)
+* {{i|Schoolbag}} (at reduced weight)
+* {{i|Dad's Lost Coin}}
+* {{i|Midnight Snack}}
+
+Removed:
+* {{i|Fate's Reward}}
+* {{i|Steven}}
+* {{i|Cricket's Head}}
+* {{i|Bob's Rotten Head}}
+* {{i|Sack of Pennies}}
+* {{i|Blood Bag}}
+* {{i|Bomb Bag}}
+* {{i|IV Bag}}
+* {{i|Little Baggy}}
+* {{i|Abel}}
+* {{i|Goat Head}}
+* {{i|Infamy}}
+* {{i|Little Baggy}}
+* {{i|Mystery Sack}}
+* {{i|Bob's Brain}}
+* {{i|Rune Bag}}
+* {{i|Head of the Keeper}}
+* {{i|Sack of Sacks}}
+
+Reduced weight:
+* {{i|Fate}}
+
+=== Demon Beggar ===
+Added:
+* {{i|Pentagram}}
+* {{i|The Mark}}
+* {{i|The Pact}}
+* {{i|Lord of the Pit}} (at reduced weight)
+* {{i|The Nail}}
+* {{i|Loki's Horns}}
+* {{i|Whore of Babylon}}
+* {{i|Razor Blade}}
+* {{i|Forget Me Now}} (at reduced weight)
+* {{i|Spirit of the Night}} (at reduced weight)
+* {{i|Abaddon}} (at reduced weight)
+* {{i|Dark Matter}}
+* {{i|Dark Bum}}
+* {{i|Empty Vessel}}
+* {{i|Black Powder}}
+* {{i|Adrenaline}}
+
+Removed:
+* {{i|Acid Baby}}
+
+=== Key Master ===
+Added:
+* {{i|Obsessed Fan}}
+* {{i|Papa Fly}}
+* {{i|YO LISTEN!}}
+* {{i|Mr. ME!}}
+* {{i|Latch Key}}
+
+=== Bomb Bum ===
+Added:
+* {{i|Remote Detonator}}
+* {{i|Mr. Mega}}
+* {{i|Glitter Bombs}}
+
+Removed:
+* {{i|Boom!}}
+* {{i|BOGO Bombs}}
+* {{i|Bomb Bag}}
+
+Reduced weight:
+* {{i|Pyro}}
+
+= Undocumented Changes =
+
+== Characters ==
+* Every character now has new stage transition sprites.
+* [[Magdalene]], [[Eve]], [[Samson]], and [[Azazel]] have new hair sprites.
+* [[The Forgotten]] and [[The Forgotten|The Soul]] will no longer immediately pick up a pedestal item after performing a character switch.
+
+== Items (Specific) ==
+* 3 - {{i|Spoon Bender}} - Has a new costume, adding a purple flame to the top of Isaac's forehead.
+* 73 - {{i|Cube of Meat}} - Now ticks once every 8 frames (instead of once every 4 frames), which means that it effectively deals half as much damage.
+* 73 - {{i|Cube of Meat}} - Now has a collision radius of 8 (instead of 13).
+* 79 - {{i|The Mark}} - Now grants 1 black heart (instead of 1 soul heart).
+* 80 - {{i|The Pact}} - Now grants 2 black hearts (instead of a 2 soul hearts).
+* 114 - {{i|Mom's Knife}} - Now has a homing synergy that is much more reliable than before.
+* 114 - {{i|Mom's Knife}} - Now synergizes with {{i|Tiny Planet}} in a better way than before.
+* 118 - {{i|Brimstone}} - Now synergizes with {{i|Jacob's Ladder}} to make electric sparks.
+* 118 - {{i|Brimstone}} - Now synergizes with {{i|Soy Milk}} to shoot a constant white beam.
+* 123 - {{i|Monster Manual}} - Now sometimes randomly display the text of "Monster Manuel" while picking it up as an Easter Egg reference to Wrath of the Lamb. (It was misspelled in that game.)
+* 149 - {{i|Ipecac}} - Now synergizes with {{i|Brimstone}} to make explosive blood lasers.
+* 149 - {{i|Ipecac}} - Now synergizes with {{i|Technology}} to make explosive lasers.
+* 149 - {{i|Ipecac}} - Now synergizes with {{i|Tech X}} to make explosive lasers.
+* 149 - {{i|Ipecac}} - Now synergizes with {{i|Tech.5}} to make explosive lasers.
+* 149 - {{i|Ipecac}} - Now synergizes with {{i|Mom's Knife}} to make the knife explode on contact.
+* 172 - {{i|Sacrificial Dagger}} - Now ticks once every 8 frames (instead of once every 4 frames), which means that it effectively deals half as much damage.
+* 172 - {{i|Sacrificial Dagger}} - Now has a collision radius of 10 (instead of 13).
+* 182 - {{i|Sacred Heart}} - No longer grants homing bombs.
+* 207 - {{i|Ball of Bandages}} - Now ticks once every 8 frames (instead of once every 4 frames), which means that it effectively deals half as much damage.
+* 207 - {{i|Ball of Bandages}} - Now has a collision radius of 8 (instead of 13).
+* 240 - {{i|Experimental Treatment}} - Now has a mechanic where if it grants a tears up, it can break the normal tear cap of 5.0.
+* 275 - {{i|Lil Brimstone}} - Now counts towards the [[Conjoined]] transformation.
+* 310 - {{i|Eve's Mascara}} - Now a 0.66x tears / 1.5x tear delay multiplier (instead of 0.5x tears / 2x tear delay multiplier).
+* 340 - {{i|Caffeine Pill}} - Now drops the pill on the ground instead of putting it directly into your inventory. (This is now consistent with every other item in the game that grants consumables.)
+* 353 - {{i|Bomber Boy}} - Now properly synergizes with explosive flies. (Previously, the damage on the explosion would be halved with no other effect. Now, it deals 3/4 of the damage and does a smaller cross explosion pattern.)
+* 395 - {{i|Tech X}} - Now synergizes with {{i|A Lump of Coal}} in a way where it is always a damage up. (Previously, it would be a damage down if it hit a target that was close to you and a damage up if it hit an enemy that was far away.)
+* 396 - {{i|Ventricle Razor}} - Can no longer be used to give free donations to [[Blood Donation Machine]]s or [[Devil Beggar]]s.
+* 404 - {{i|Farting Baby}} - Now has a unique farting animation. The sprite is also changed.
+* 484 - {{i|Wait What?}} - No longer has the "surprise" mechanic that has a chance to occur after touching a {{i|Butter Bean}}. Instead, Wait What? will randomly replace Butter Bean in item pools at the beginning of the run.
+* 498 - {{i|Duality}} - Now merges the numbers of the Devil and Angel deal chances on the Found HUD.
+* 514 - {{i|Broken Modem}} - Now has the chance to freeze enemy projectiles in addition to its other effects. Projectiles are deleted from existence on the frame after they are frozen.
+
+== Enemies ==
+* [[Sub Horf]]s can now randomly replace [[Horf]]s.
+* Certain bosses had an environment switch/addition/removal:
+** [[Dingle]], [[Dangle]], [[Gemini]], [[Steven]], the [[Gurglings]] and the [[Turdlings]] can now additionally appear in the {{s|Burning Basement}}.
+** [[The Haunt]] now only appears in the {{s|Cellar}}.
+** [[Rag Man]] no longer appears in the {{s|Basement}}.
+** [[Mega Fatty]] and [[Mega Maw]] can now additionally appear in the {{s|Flooded Caves}}.
+** [[The Forsaken]] and [[The Frail]] no longer appear in the {{s|Caves}}.
+** [[Polycephalus]] and [[Dark One]] now only appear in the {{s|Catacombs}}.
+** [[The Stain]] no longer appears in the {{s|Catacombs}}.
+** [[The Cage]] can now additionally appear in the {{s|Dank Depths}}.
+** [[The Gate]] still appears in the {{s|Depths}}, but has been moved from {{s|Necropolis}} to the {{s|Dank Depths}}.
+** [[The Adversary]] now only appears in {{s|Necropolis}}.
+** [[Mama Gurdy]], [[Blastocyst]] and [[The Matriarch]] no longer appear in the {{s|Utero}}.
+** [[Sisters Vis]] and [[Triachnid]] no longer appear in the {{s|Womb}}.
+** [[Daddy Long Legs]] and [[Teratoma]] now only appear in the {{s|Utero}}.
+** [[Lokii]] can now additionally appear in the {{s|Scarred Womb}}.
+** [[Mr. Fred]] still appears in the {{s|Womb}}, but has been moved from the {{s|Utero}} to the {{s|Scarred Womb}}.
+** [[The Bloat]] now only appears in the {{s|Utero}} in [[Chapter 4]].
+* You can no longer kill [[??? (Boss)|???]] and [[Hush]] with a single [[Chaos Card]] by throwing it from the bottom.
+* [[Tar Boy]]s will no longer come up underneath where you are standing, dealing unavoidable damage.
+* [[Host]]s are now immune to fear. (This prevents them from attacking.)
+* [[The Adversary]] no longer destroys blue fires when he does his shockwave attack.
+
+== Other ==
+* The rock replacement mechanic in Afterbirth+ alternate floors is removed.
+* All items that granted tear delay down no longer do so. Instead, they give the normal tear stat, but allow breaks of the 5.0 cap at a rate commensurate with how much tear delay down that they used to give.
+* The tears up system has changed. For example, it now takes 3x {{i|The Sad Onion}} to max the player's tear rate (instead of 2x).
+* The stat HUD from Afterbirth+ (i.e. the "Found HUD") has been replaced with the Antibirth implementation, which has different graphics and functions slightly differently.
+* [[Bone heart]]s now have priority over [[soul heart]]s and [[black heart]]s when your health is full.
+* You can no longer donate twice to [[Devil Beggar]]s using invincibility frames.
+* Crawlspaces will now spawn closed if the room is uncleared. (Boss Rush and Challenge Rooms are exempt from this behavior.)
+* [[Tears]] are now properly circular instead of slightly polygonal.
+* Items now cast shadows on item pedestals (like it is in Wrath of the Lamb).
+* You can now use the Home and End keys in the console.
+
+== Bug Fixes ==
+* Fixed the bug where if you switched to [[The Soul]] on the same frame that you accumulated a {{i|Dead Eye}} charge, the game would crash.
+* Fixed the bug where Vivid Orange (#3) champions would spawn multiple coins on the same position.
+* Fixed the bug where [[Pin]] did not have a champion entity added. It is now a black champion with custom tear effects. ([[Scolex]] now has the bugged champion removed.)
+* Fixed the bug where pickups rolled with the {{i|D20}} were unseeded.
+* Fixed the bug where using a [[Strength]] card on [[Keeper]] while at one coin container would permanently grant a second coin container.
+* Fixed the bug where the player would not die when at 0 health under certain conditions (e.g. [[Keeper]] using {{i|Guppy's Paw}}, using {{i|The Candle}} while taking a devil deal).
+* Fixed the bug where [[Batteries#Lil' Battery|Lil' Batteries]] would charge {{i|Eden's Soul}} for 12 charges instead of 6.
+* Fixed the bug where [[Batteries#Lil' Battery|Lil' Batteries]] would charge Mega Blast for 3 charges instead of 6.
+* Fixed the bug where {{i|Cursed Eye}} would not work property with {{i|Incubus}}.
+* Fixed the bug where [[Reward Plate]]s that spawned two different pickups would spawn them at the exact same position.
+* Fixed the bug where {{i|Clicker}} could randomly choose the same character that you already were.
+* Fixed the bug where stat downs were applied after stat ups. (For example, this would result in speed is capped at 1.8 instead of 2.0 if you had {{i|The Small Rock}}.)
+* Fixed the bug where {{t|Daemon's Tail}} did not have an outline.
+* Fixed the bug where the stacked [[Vis]] entities were bugged in Miniboss room #2112.
+* Fixed the bug where [[The Lamb]] could perform a spinning brimstone attack when standing next to a wall and cause unavoidable damage.
+* Fixed the bug where [[The Lamb]] could move while a Brimstone attack was still ongoing.
+* Fixed the bug where you could softlock in Depths/Necropolis/Dank room #39 when the random bomb drops spawned as troll bombs.
+* Fixed the bug where you could softlock in Depths/Necropolis/Dank room #39 when entering from the left side with only one bomb.
+* Fixed the bug where Keeper could revive with a half soul heart instead of a coin container under certain conditions.
+* Fixed the bug where reseeding a floor (with e.g. {{i|Forget Me Now}}, 5-pip [[Dice Room]]) would incorrectly randomize the rooms because it used the same xorshift constants in the <code>ForgetStageSeed</code> function.
+* Fixed the bug where killing an enemy in the <code>PostEntityKill</code> callback would cause a buffer overflow and crash the game.
+* Fixed the bug where small chests will revert to normal size if you exit the room and re-enter.
+* Fixed the bug where using {{i|Sacrificial Altar}} did not properly remove {{i|Lil Delirium}}.
+* Fixed the bug where <code>[INFO] - Failed to load image</code> would be logged every time you entered a crawlspace.
+* Fixed the bug where {{i|Divorce Papers}} spawns {{t|Mysterious Paper}} but does not actually remove Mysterious Paper from the trinket pool.
+* Fixed the bug where if you were fighting two angels at the same time, the first one killed would not drop a key piece.
+* Fixed the bug where rerolling your build would not cause the active item inside of a {{i|Schoolbag}} to drop on the ground.
+* Fixed the bug where Isaac's split tear attack on phase 2 would be different depending on your range stat.
+* Fixed the bug where Large (#19) and Skull (#23) champions would deal contact damage to the player even if the non-champion version of the enemy was not supposed to deal contact damage.
+* Fixed the bug where mods were not able to modify the "seeds.txt" file.
+* Fixed the bug where {{i|Dad's Ring}} would not display correctly with {{i|Holy Mantle}}.
+* Fixed the bug with [[Cage]] where he would generate creep during his slam attack before he actually landed.
+* Fixed the bug where using {{i|Delirious}} to spawn [[Gemini]] would make chains persist on the screen forever under certain conditions (e.g. immediately exiting the room).
+* Fixed the bug where [[Gurglings]] erroneously appeared twice in the boss table for {{i|Delirious}}.
+* Fixed the bug where {{i|Delirious}} would spawn an extra, untextured [[Lokii]].
+* Fixed the bug where if you happened to randomly get the {{i|Breath of Life}} effect from a {{i|Metronome}}, then it would slowly kill you with no way to stop it.
+* Fixed the bug where all forms of teleportation were not properly seeded per floor. For example, now, the first time you use {{i|Teleport!}}, it will always take you to the same room no matter which room you were already in.
+* Fixed the bug where The Shop room #238 in [[Greed Mode]] had all of the doors disabled. (This is room #57 in Repentance.)
+* Fixed the bug where [[Mom#Champion Versions|Blue Champion Mom]] would not make the proper sound when spawning monsters.
+
+== New Features ==
+* True online multiplayer was added with the new <code>netstart</code> console command. It was not announced officially because it is in early development and still has bugs. More information can be found on the [[Debug Console]] page.
+
+= Cut Antibirth Items =
+The following items were cut from Antibirth for various reasons:
+
+* 1012 - Book of Despair
+* 1034 - Menorah - This is the unused item ID of 587.
+* 1067 - Voodoo Pin - This is the same thing as the Dull Razor (which was implemented in Afterbirth+). This is the unused item ID of 620.
+* 1075 - Knife Piece 3 - There are only two Knife Pieces now.
+* 1080 - Stone Bombs
+* 613 - Salt Shaker - Was Edith's active item. Edith was a planned character for Antibirth, but it was cut out for gameplay reasons. (It was item ID 613 but now this ID is currently unused.)
+* 630 - Lucky Seven - This was an item planned for the first Antibirth update. (It was item ID 630 but now this ID is currently unused.)
+* 648 - Pill Crusher - This was an item planned for the first Antibirth update. (It was item ID 648 but now this ID is currently unused.)
+* Immortal Hearts - (This is a special pickup, not a collectible.)
+
+= Renamed Items =
+* 456 - {{i|Midnight Snack}} - Was Moldy Bread in Afterbirth+.
+* 570 - {{i|Playdough Cookie}} - Was Playdoh Cookie in Antibirth. (Renamed for trademark reasons.)
+* 582 - {{i|Wavy Cap}} - Was Black Mushroom in Antibirth.
+* 586 - {{i|The Stairway}} - Was Jacob's Ladder in Antibirth. (Renamed to not conflict with the existing {{i|Jacob's Ladder}} item.)
+* 606 - {{i|Ocular Rift}} - Was Oculus Rift in Antibirth. (Renamed for trademark reasons.)
+* 653 - {{i|Nancy Bombs}} - Was Enigma Bombs in Antibirth.
+* 704 - {{i|Berserk!}} - Was Donkey Jawbone in Antibirth, though it was a passive item instead of an active item, and functioned very differently.
+
+{{nav|version}}

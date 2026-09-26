@@ -1,0 +1,101 @@
+{{header runes}}
+{{Infobox rune
+ | name        = Ehwaz
+ | type        = rune
+ | image scale = 1/10
+ | id          = 34
+ | quote       = Passage
+ | description = Creates a trapdoor leading to the next floor. {{dlc|nr}} Has an estimated 1/12 (8%) chance to create a trapdoor leading to a {{r|Crawl Space}} instead. {{dlc|r}} Guaranteed to create a trap door to a {{r|Crawl Space}} if used on floor tiles containing certain patterns. Will not create trapdoors if used on the end floor of a challenge.
+ | unlocked by = Rune of Ehwaz
+ | recharge    = 4
+}}
+
+{{cit|ur}}
+
+== Effects ==
+* Creates a trapdoor leading to the next floor. {{dlc|nr}} Has an estimated 1/12 (8%) chance to create a trapdoor leading to a {{r|Crawl Space}} instead.
+** {{Dlc+|r}} Some floor tiles will appear with a special decorative graphic (for example, grass or paper in {{s|Basement}}). Using this item on these tiles will guarantee a {{R|Crawl Space}}. Only one Crawl Space can be made per floor, as all subsequent uses will only spawn trapdoors.
+*** A list of all decoration tiles may be found here:
+{| class="wikitable mw-collapsible mw-collapsed" style="text-align: center"
+ !Found in
+ !Notes
+ !Decorations 
+ |-
+ |{{s|Basement}}<br>{{s|Cellar}}<br>{{s|Burning Basement}}<br>{{s|Home}}<br>{{r|Shop}}<br>{{r|Arcade}}<br>{{r|Secret Room}}<br>{{r|Library}}<br>{{r|Dice Room}}<br>{{r|Clean Bedroom}}<br>{{r|Dirty Bedroom}}<br>{{r|I AM ERROR}}
+ |Some grass tiles are animated.<br>One decoration is completely invisible.<br>Also used by the entrance to Chapter 1.5 and 2.5.<br>{{Dlc|r+}}Also used by {{i|Lil Portal}}.
+ |[[File:Decorations_Basement.png|182px]]
+ |-
+ |{{s|Downpour}}
+ |
+ |[[File:Decorations_Downpour.png|104px]]
+ |-
+ |{{s|Dross}}
+ |
+ |[[File:Decorations_Dross.png|156px]]
+ |-
+ |{{s|Caves}}<br>{{s|Catacombs}}<br>{{s|Flooded Caves}}
+ |Mushrooms and some grass tiles are animated.<br>Seven decorations are completely invisible.<br>The large decoration cannot generate in Flooded Caves.
+ |[[File:Decorations_Caves.png|208px]]
+ |-
+ |{{s|Mines}}<br>{{s|Ashpit}}
+ |Mushrooms and some grass tiles are animated.<br>Seven decorations are completely invisible.
+ |[[File:Decorations_Mines.png|182px]]
+ |-
+ |{{s|Depths}}<br>{{s|Necropolis}}<br>{{s|Dank Depths}}<br>{{s|Mausoleum}}<br>{{r|Sacrifice Room}}
+ |Lit candles are animated and emit a miniscule amount of light.<br>One decoration is completely invisible.<br>Also used by the entrance to Chapter 3.5.<br>Also used by {{i|Death Certificate}}.
+ |[[File:Decorations_Depths.png|182px]]
+ |-
+ |{{s|Gehenna}}<br>{{s|Sheol}}<br>{{r|Challenge Room}}<br>{{r|Curse Room}}<br>{{r|Devil Room}}<br>{{r|Black Market}}<br>{{r|Boss Rush}}
+ |Some bones are animated, and skulls emit a miniscule amount of light.<br>One decoration is completely invisible.
+ |[[File:Decorations_Sheol.png|182px]]
+ |-
+ |{{s|Womb}}<br>{{s|Scarred Womb}}
+ |Some tiles are animated.<br>One decoration is completely invisible.
+ |[[File:Decorations_Womb.png|234px]]
+ |-
+ |{{s|Utero}}
+ |Some tiles are animated.<br>One decoration is completely invisible.
+ |[[File:Decorations_Utero.png|234px]]
+ |-
+ |{{s|???}}
+ |Some tiles are animated.<br>One decoration is completely invisible.<br>Also used by the entrance to ???.<br>Also used by {{t|Blue Key}}.
+ |[[File:Decorations_Blue_Womb.png|234px]]
+ |-
+ |{{s|Corpse}}
+ |Some tiles are animated.<br>One decoration is completely invisible.
+ |[[File:Decorations_Corpse.png|234px]]
+ |-
+ |{{s|Cathedral}}<br>{{r|Angel Room}}
+ |Some tiles are animated.<br>Two decorations are completely invisible.
+ |[[File:Decorations_Cathedral.png|182px]]
+ |-
+ |{{s|Chest}}<br>{{r|Vault}}
+ |Some gems are animated.<br>An animated tile with a glowing pair of eyes emits a miniscule amount of light.
+ |[[File:Decorations_Chest.png|182px]]
+ |-
+ |{{s|Dark Room}}<br>{{r|Planetarium}}<br>{{r|Ultra Secret Room}}
+ |Notable in that they have no decoration tiles.<br>The Rune cannot create Crawl Spaces when in these rooms.<br>Also applies to the [[Mega Satan]] arena.
+ |
+ |-
+ |{{s|Ultra Greed}}
+ |Some gems are animated.
+ |[[File:Decorations_Greed.png|104px]]
+ |-
+ |}{{Dlc-}}
+
+== Notes ==
+* {{dlc|r}} Only one trapdoor to the Crawl Space can be made per floor by using '''Ehwaz''' on a floor element,  as all subsequent uses will guarantee a trapdoor to the next floor.
+* If used in {{s|Womb}} II / {{s|Utero}} II / {{s|Scarred Womb}} II, the trapdoor will always lead to {{s|Sheol}}.
+* In hostile rooms, a trapdoor leading to the next floor will always be open, whereas a trapdoor leading to a crawl space will be closed until the room is cleared.
+** However, in rooms that become hostile ({{r|Challenge Room}}, {{r|Boss Rush}}), the trapdoor to a crawl space will remain open even when the room is hostile.
+* Using '''Ehwaz''' whilst Isaac is over a rock will destroy it.
+* This Rune's effect is identical to {{i|We Need To Go Deeper!}}. ''See the item page for further effect notes.''
+
+== Strategy ==
+* {{dlc|r}} '''Ehwaz''' can be used to steal the contents of a {{r|Challenge Room}} / {{r|Boss Rush}} without facing the imposed challenge: using '''Ehwaz''' on a floor element will always spawn an open crawl space and entering it will reset the previous room to a neutral state, that Isaac can leave.
+
+== Interactions ==
+* {{I|Tarot Cloth}}: No effect.
+
+{{nav}}
+[[Category:Runes]]

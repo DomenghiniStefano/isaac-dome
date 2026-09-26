@@ -1,0 +1,103 @@
+{{header reverse tarot cards}}
+{{Infobox card
+ | dlc         = r
+ | name        = IX - The Hermit?
+ | files name  = IX - Inverted The Hermit
+ | type        = card
+ | id          = 65
+ | quote       = May you see the value of all things in life
+ | description = Turns items, trinkets, and pickups in the room into [[coins]]. If there is nothing to sell, drops a {{e|Penny}}.
+ | unlocked by = The Hermit
+ | recharge    = 1
+}}
+
+{{cit|uc|r}}
+
+== Effects ==
+* Turns items, trinkets, and pickups in the room into {{e|Penny|text=Coins}}, essentially selling them.
+** All items will be sold for {{pennies|15}}, including items that usually have a different price in the shop, such as {{i|R Key}}.
+** Other pickups and trinkets are sold for their normal {{r|Shop}} price.
+** If there is nothing to sell, drops a single {{e|Penny}}.
+
+=== Pickup Prices ===
+{| class="wikitable sortable mw-collapsible striped"
+ ! Name
+ ! Price
+ |-
+ | {{e|Half Red Heart}} || 1
+ |-
+ | {{e|Red Heart}} / {{e|Scared Heart}} || 3
+ |-
+ | {{e|Double Heart}} || 6
+ |-
+ | {{e|Rotten Heart}} || 2
+ |-
+ | {{e|Blended Heart}} || 3
+ |-
+ | {{e|Half Soul Heart}} || 2
+ |-
+ | {{e|Soul Heart}} || 5
+ |-
+ | {{e|Bone Heart}} || 6
+ |-
+ | {{e|Black Heart}} || 6
+ |-
+ | {{e|Gold Heart}} || 10
+ |-
+ | {{e|Eternal Heart}} || 10
+ |-
+ | {{e|Bomb}} || 5 
+ |-
+ | {{e|Double Bomb}} || 10 
+ |-
+ | data-sort-value="Card" | [[File:TarotCard.png|link=Card]] [[Card]] || 5
+ |-
+ | {{e|Key}} || 5
+ |-
+ | {{e|Key Ring}} || 10
+ |-
+ | Any {{e|Lil' Battery|text=Battery}} || 5
+ |-
+ | [[File:Pill Black White.png]] [[Pill]] || 5
+ |-
+ | [[File:Rune1.png]] [[Rune]] (includes Soul Stones) || 5
+ |-
+ | {{e|Charged Key}} ||10 
+ |-
+ | {{e|Golden Bomb}} || 10
+ |-
+ | {{e|Golden Key}} || 10
+ |-
+ | {{e|Giga Bomb}} || 10
+ |-
+ | [[Trinket]] || 5
+ |-
+ | {{e|Grab Bag}} || 7
+ |-
+ | [[Item]] || 15
+ |}
+
+== Notes ==
+* [[Chest]]s cannot be sold.
+* Selling an item in a {{r|Boss Challenge Room}} or {{r|Boss Rush}} does ''not'' cause waves of bosses to spawn.
+* If used in a room with a choice of multiple item pedestals, only one of the choice objects will be sold and the rest will disappear.
+
+== Strategy ==
+* For maximum profit, any card, rune, pill or trinket should be gathered to the same room before using '''IX - The Hermit?'''.
+* Since cheap or discounted shop items are still converted to the full 15 cents, this can be used to generate profit.
+
+== Synergies ==
+* {{I|Tarot Cloth}}: Spawns 1 additional {{e|Penny}}.
+* {{i|Moving Box}}: Allows for transport of items and pickups to the same room. Making more money from one use of '''IX - The Hermit?'''.
+
+== Interactions ==
+* {{i|Dad's Note}}: Not affected by '''IX - The Hermit?'''. If the room only has Dad's Note, a {{e|Penny}} will spawn.
+* {{c|Tainted ???}}: Poop pickups can't be sold.
+
+== In-game Footage ==
+{{#ev:youtube|b3cZ6UlSuRk}}
+
+== Trivia ==
+* '''IX - The Hermit?''''s effect is based directly on the [[Anti:Pickups#Runes|Rune of Fehu]] from ''Antibirth''. No other ''Antibirth'' rune was adapted into ''Repentance''.
+
+{{nav|fr=IX - L'Ermite ?|card}}

@@ -1,0 +1,17 @@
+{{infobox monster
+ | dlc         = r
+ | name        = Fissure
+ | base hp     = 6.5
+ | id          = 815
+ | environment = {{floor|Downpour}}
+ | behavior    = Jumps out of pits and bounces around the room. Spawns endlessly from pits until room clear. Do not need to be killed to clear room.
+}}
+
+The '''Fissure''' is a monster exclusive to {{s|Downpour}}, resembling a fish wearing a skull on its head. Fissures do not need to be defeated to clear the room, and rather act as a stage hazard, spawning endlessly by jumping out of pits and bouncing off walls until they land in a pit again. They can be damaged normally, despite their vague resemblance to {{E|Host}}s. If a fissure goes too long without re-entering a pit, it dies.
+
+== Trivia ==
+* Fissure is based off of [[theendisnigh:Enemies|the monster of the same name]] from The End is Nigh.
+* Fissure shares its name with a cut enemy in Repentance, [[anti:Spider#Fissure|Fissure]], which appeared in Antibirth.
+
+{{nav}}
+[[Category:Monsters]]

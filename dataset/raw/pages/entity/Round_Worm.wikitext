@@ -1,0 +1,156 @@
+{{disambig msg|the monster|trinkets|:Category:Worm trinkets}}
+
+{{infobox monster
+ | name        = Round Worm
+ | id          = 244
+ | base hp     = 10
+ | environment = {{floor|Basement}}{{floor|Cellar}}{{floor|Burning Basement}}<br>{{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{room|boss}}{{room|challenge}}
+ | behavior    = Pops out of the ground in random locations and spits a blood shot at Isaac if he is in sight.
+}}
+
+A '''Round Worm''' is an enemy introduced in the vanilla content of ''[[The Binding of Isaac: Rebirth]]''. They appear from [[Chapter 1]] to [[Chapter 4]].
+
+It will periodically burrow into the ground and pop up in different part of the room. If Isaac is in their line of sight when that happens, it will spit a blood shot in his direction.
+
+__TOC__
+{{clear}}
+
+== Variations ==
+=== Night Crawler ===
+{{infobox monster
+ | name        = Night Crawler
+ | id          = 255
+ | base hp     = 35
+ | environment = {{floor|Cellar}}<br>{{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{room|challenge}}
+ | behavior    = Pops out of the ground in random locations and fires four short-range shots that spiral outwards if Isaac is in sight.
+}}
+
+Like the Round Worm, the '''Night Crawler''' will burrow into the ground and appear somewhere else. When Isaac is within their line of sight, they will fire four short-range projectiles that spiral outwards.
+{{clear}}
+
+=== Roundy ===
+{{infobox monster
+ | dlc         = a
+ | name        = Roundy
+ | id          = 276
+ | base hp     = 10
+ | environment = {{floor|Basement}}{{floor|Cellar}}{{floor|Burning Basement}}<br>{{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}
+ | behavior    = Pops out of the ground in random locations, creating a small rock wave. Fires an explosive Ipecac shot at Isaac if he is in sight.
+}}
+'''Roundy''' is a type of Round Worm added in ''[[The Binding of Isaac: Afterbirth]]'' DLC.
+
+Like the Round Worm, a Roundy will burrow into the ground and appear somewhere else. When it surfaces, it releases a small rock wave around it and fires an {{i|Ipecac}} shot towards Isaac.
+
+The Roundy's rock wave and explosive projectile can kill other monsters including each other.
+{{clear}}
+
+=== Ulcer ===
+{{infobox monster
+ | dlc         = a
+ | name        = Ulcer
+ | id          = 289
+ | base hp     = 10
+ | environment = {{floor|Basement}}{{floor|Cellar}}{{floor|Burning Basement}}<br>{{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{room|boss}}
+ | behavior    = Pops out of the ground in random locations and spawns a Dart Fly if Isaac is in sight. Fires a blood shot if there are ≥6 enemies in the room.
+}}
+
+The '''Ulcer''' is an enemy added in ''The Binding of Isaac: Afterbirth'' DLC.
+
+Like the Round Worm, the Ulcer will burrow into the ground and appear somewhere else. When it surfaces, if Isaac is within its line of sight, it will spawn a {{e|Dart Fly}}, but if there are ≥6 enemies in the current room, it will start firing a blood shot instead. Ulcers burrow underground at a slightly slower rate than most other Worms, usually making them easier to attack.
+{{clear}}
+
+=== Tube Worm ===
+{{infobox monster
+ | dlc         = a+
+ | name        = Tube Worm
+ | id          = 244
+ | variant     = 1
+ | base hp     = 20
+ | environment = {{floor|Downpour}}{{floor|Dross}}<br>{{floor|Flooded Caves}}<br>{{room|challenge}}
+ | behavior    = Pops out of the ground in random locations and fires a long-range spray of arcing shots where Isaac will be.
+}}
+
+The '''Tube Worm''' is a unique variant of the Round Worm found in {{dlc|r}} [[Chapter 1.5]] and the {{s|Flooded Caves}} of [[Chapter 2]]. They are added in the [[Booster Pack 4|Booster Pack #4]] for ''[[The Binding of Isaac: Afterbirth †]]'' DLC.
+
+Like the Round Worm, the Tube Worm will burrow into the ground and appear somewhere else. Upon popping out of the ground, they will fire a long-ranged arcing spray of shots at Isaac, attempting to intercept Isaac's position based on his movement. Unlike standard Round Worms, they can fire at Isaac even if they do not have a line of sight.
+{{clear}}
+
+=== Fire Worm ===
+{{infobox monster
+ | dlc         = r
+ | name        = Fire Worm
+ | image scale = 1/2
+ | id          = 825
+ | base hp     = 10
+ | environment = {{floor|Mines}}
+ | behavior    = Pops out of the ground in random locations in the lava and fires one flame at Isaac.
+}}
+
+'''Fire Worms''' were introduced in ''[[The Binding of Isaac: Repentance]]''.
+
+Like the Round Worm, the Fire Worm will burrow into the ground and appear somewhere else. If Isaac is in their line of sight, they will fire a single flame at him. They can only appear in lava-filled gaps.
+{{clear}}
+
+=== Tainted Round Worm ===
+{{infobox monster
+ | dlc         = r
+ | name        = Tainted Round Worm
+ | image scale = 1/2
+ | id          = 244
+ | variant     = 2
+ | base hp     = 100
+ | environment = {{floor|Basement}}<br>Found on the [[Ascent]] to {{s|Home}}.
+ | behavior    = Pops out of the ground in random locations alongside several tail ends. The head fires a large blood shot that splits into a radial burst of 8 blood shots, while the tail ends shoot normal blood shots.
+}}
+
+'''Tainted Round Worms''' are much stronger and tankier versions of Round Worms. They are added in ''The Binding of Isaac: Repentance'' DLC.
+
+Like Round Worms, they will pop out of random locations in the floor, but the Tainted Round Worm does so alongside multiple tail ends. The head and all the tail ends will shoot Isaac together when he is in sight; while the tail ends each shoot a small blood shot, the head spits a large blood shot which will split into 8 blood shots upon obstacle collision. The tail ends can be attacked to deal damage to the Tainted Round Worm.
+
+They are only found on the [[Ascent]] to {{s|Home}}.
+{{clear}}
+
+=== Tainted Tube Worm ===
+{{infobox monster
+ | dlc         = r
+ | name        = Tainted Tube Worm
+ | variant     = 3
+ | base hp     = 100
+ | environment = {{floor|Downpour}}<br>Found on the [[Ascent]] to {{s|Home}}.
+ | behavior    = Pops out of the ground in random locations, spitting 4 explosive shots towards Isaac.
+}}
+
+'''Tainted Tube Worms''' are a stronger variant of Tube Worms only found in {{s|Downpour}} during the [[Ascent]]. They are added to ''[[The Binding of Isaac: Repentance]]'' DLC.
+
+After popping up in a random location, they spit 4 spread-out {{i|Ipecac}} shots in the direction of Isaac.
+{{dlc clear}}{{clear}}
+
+== Notes ==
+* Worms are immune to the effects of {{i|Strange Attractor}} and {{i|Black Hole}}.
+
+== Gallery ==
+<gallery>
+File:Tube Worm Dross.png|A Tube Worm's appearance in Dross and stages outside of Downpour and Flooded Caves.
+Tainted_Tube_Worm_Normal.png| A Tainted Tube Worm's appearance in stages outside of Downpour.
+File:Round WormLast Will.png|Round Worm on Isaac's Last Will.
+File:Round Worm Concept.jpg|Concept drawn for Round Worm.
+</gallery>
+
+== Trivia ==
+* Round Worms are parasitic creatures in real life that can be found inside cats or dogs.
+* Nightcrawlers in real life could refer to earthworms, although they don't look similar to the Nightcrawlers from ''The Binding of Isaac''.
+* {{dlc|a}} Ulcers are a reference to [[wikipedia:Ulcer|ulcers]], breaks in bodily membranes caused by sloughing out of inflamed necrotic tissue.
+* {{dlc|a+}}Tube Worms were created by Kilburn,<ref>Booster Pack #4 is Live! - [https://www.reddit.com/r/bindingofisaac/comments/75ma1q/booster_pack_4_is_live/ r/bindingofisaac]</ref> who later became the programmer and developer for the ''Repentance'' DLC.
+* In real-life, tube worms are creatures that live underwater and anchor their tails underground, which may be where the Tube Worm from ''The Binding of Isaac'' got its name from. However, they don't resemble real-life tube worms.
+* {{dlc|r}}The [[Anti:Fireworm|Fireworm]] first appeared in the ''Antibirth'' mod where its name was one word instead of two.
+
+== References ==
+{{Reflist}}
+
+{{nav|booster pack|fr=Ascaris}}
+
+[[Category:Worm monsters]]
+[[Category:Chapter 1 monsters]]
+[[Category:Chapter 2 monsters]]
+[[Category:Chapter 2.5 monsters]]
+[[Category:Chapter 3 monsters]]

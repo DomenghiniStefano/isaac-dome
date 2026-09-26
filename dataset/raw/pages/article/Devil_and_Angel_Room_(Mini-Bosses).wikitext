@@ -1,0 +1,22 @@
+{{header bosses}}
+
+== [[Devil Room]] ==
+A [[Krampus]] mini-boss battle has a chance to appear in place of a regular Devil deal once he is unlocked.
+{| style="width: 70%; text-align: center"
+ | [[file:Boss Krampus portrait.png|172px|center|link=Krampus]]
+ |-
+ | [[Krampus]] {{unlockable}}
+ |}
+
+== [[Angel Room]] ==
+Bombing an Angel Statue will transform it into one of these mini-bosses once they are unlocked.
+{| style="width: 70%; text-align: center"
+ | [[file:boss Angel.png|center|link=Uriel]]
+ | [[file:boss Angel2.png|center|link=Gabriel]]
+ |-
+ | [[Uriel]] {{unlockable}}
+ | [[Gabriel]] {{unlockable}}
+ |}
+
+{{nav|boss|fr=Antre du Diable & Refuge des Anges (Boss)}}
+[[Category:Bosses| ]]

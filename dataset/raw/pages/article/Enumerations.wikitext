@@ -1,0 +1,83 @@
+{{page dlc|a+}}
+A list of Lua enumerations in the [[modding|modding API]] of ''[[The Binding of Isaac: Afterbirth †]]''. See also [[Classes]]
+
+{{enumeration
+ | name        = [[Modding Callbacks]]
+ | description = Callbacks for use by mods.
+ | content     =
+{{enumeration value | MC_NPC_UPDATE               | Method that takes (EntityNPC). Called after an NPC is updated. When adding callback, specify an EntityType so it is only called for entities of that type. }}
+{{enumeration value | MC_POST_UPDATE              | Method with no arguments. Called after game update. }}
+{{enumeration value | MC_POST_RENDER              | Method with no arguments. Called after game render. }}
+{{enumeration value | MC_USE_ITEM                 | Method that takes (CollectibleType, RNG). Return true to show the "use item" animation, otherwise false. Called when a custom active item is used, after discharging it. When adding callback, specify a CollectibleType to only respond to one custom active. The item RNG allows for the item's random events to be seeded. }}
+{{enumeration value | MC_POST_PEFFECT_UPDATE      | Method that takes (EntityPlayer). Called for each player, each frame, after the player evaluates the effects of items that must be constantly evaluated. }}
+{{enumeration value | MC_USE_CARD                 | Method that takes (Card). Called when a custom card is used. When adding callback, specify a Card ID to only respond to one card type. }}
+{{enumeration value | MC_FAMILIAR_UPDATE          | Method that takes (Entity_Familiar). Called every frame for each custom familiar. When adding callback, specify a Variant to restrict calls to a specific familiar. }}
+{{enumeration value | MC_FAMILIAR_INIT            | Method that takes (Entity_Familiar). Called just after a custom familiar is initialized. When adding callback, specify a Variant to restrict calls to a specific familiar. }}
+{{enumeration value | MC_EVALUATE_CACHE           | Method that takes (EntityPlayer, CacheFlag). Called one or more times when a player's stats must be re-evaluated, such as after picking up an item, using certain pills, manually calling EvaluateItems on EntityPlayer. Use this to let custom items change the player's stats, familiars, flying, weapons, etc. Items tell the game which stats they affect using cache values in items.xml. Then the callback should respond to the CacheFlag by setting the corresponding player stat. Other items' stat modifiers, multipliers, etc are applied before this callback is called. }}
+{{enumeration value | MC_POST_PLAYER_INIT         | Method that takes (EntityPlayer). Called after the player is initialized. }}
+{{enumeration value | MC_USE_PILL                 | Method that takes (PillEffect). Called when a custom pill is used. When adding callback, specify a PillEffect ID to only respond to one pill effect. }}
+{{enumeration value | MC_ENTITY_TAKE_DMG          | Method that takes (TookDamage : Entity, DamageAmount : number, DamageFlag : number (bit flags from DamageFlag enumeration), DamageSource : EntityRef, DamageCountdownFrames : number). Return true or nil if the entity or player should sustain the damage, otherwise false to ignore it. If the entity is an EntityPlayer, the DamageAmount is the integer number of half-hearts of damage that the player will take. Otherwise, DamageAmount is a number of hit points. Called before new damage is applied. A DAMAGE_COUNTDOWN flag means the entity will ignore any other DAMAGE_COUNTDOWN hits for the duration specified. When adding callback, specify an EntityType to respond to only damage taken by that entity type. }}
+{{enumeration value | MC_POST_CURSE_EVAL          | Method that takes (Curses). Curses is a bitmask containing current curses. Called after Level applied it's curses. Returns the new curse bitmask. Use Isaac.GetCurseIdByName("Curse name") to get a custom curse. }}
+{{enumeration value | MC_INPUT_ACTION             | Method that takes (Entity, InputHook, ButtonAction). It is called when the game/game entities want to read an action input. Entity can be nil if the input is not read from an entity Class. InputHook and ButtonAction are enumerations. Return nil if you don't want to overwrite the input or a value otherwise. Return value can be boolean if it's a Is__ hook or float if it's an Get__Value hook. Float values should be in range of 0.0 and 1.0. }}
+{{enumeration value | MC_LEVEL_GENERATOR          | Is not active yet. }}
+{{enumeration value | MC_POST_GAME_STARTED        | (boolean) Is the game started from a savestate? }}
+{{enumeration value | MC_POST_GAME_END            | (boolean) Game Over (player died or won). }}
+{{enumeration value | MC_PRE_GAME_EXIT            | (boolean) Game should be saved. }}
+{{enumeration value | MC_POST_NEW_LEVEL           | Triggers at the start of a new level, after new room callback. }}
+{{enumeration value | MC_POST_NEW_ROOM            | Triggers at the start of a new room. }}
+{{enumeration value | MC_GET_CARD                 | Method that takes (RNG& rng, integer CurrentCard, bool Playing, bool Runes, bool OnlyRunes). Method used for card pools. Because not all cards have the same chance to spawn, use RNG for seeded random and return your card (if you want your card to be 100% chance. Return CurrentCard or nil if you don't want to change card). Playing used to say if you want playing cards to be included, Runes used to say if you want runes to be included, and OnlyRunes determines that you want only runes to be returned. }}
+{{enumeration value | MC_GET_SHADER_PARAMS        | (string shaderName) - returns a table containing a key -> value pair for custom shader parameters }}
+{{enumeration value | MC_EXECUTE_CMD              | (string cmd, string params) - returns a string separated by (newline) per output line }}
+{{enumeration value | MC_PRE_USE_ITEM             | (CollectibleType ItemId, RNG& ItemRng) - return true if the item can't be used / processed inside the script, other values or no value will continue the routine }}
+{{enumeration value | MC_PRE_ENTITY_SPAWN         | (EntityType Type, integer Variant, integer SubType, const Vector2 Position, const Vector2 Velocity, const Entity Spawner, integer Seed), optional return - an array table with new values { Type, Variant, Subtype, Seed } }}
+{{enumeration value | MC_POST_FAMILIAR_RENDER     | (EntityFamiliar Fam, Vector Offset) }}
+{{enumeration value | MC_PRE_FAMILIAR_COLLISION   | (EntityFamiliar Fam, Entity Collider, boolean Low), returns true/false to ignore collision code (true to respond to collision, false to not), or nil to continue the internal code. }}
+{{enumeration value | MC_POST_NPC_INIT            | (EntityNPC NPC) }}
+{{enumeration value | MC_POST_NPC_RENDER          | (EntityNPC NPC, Vector Offset) }}
+{{enumeration value | MC_POST_NPC_DEATH           | (EntityNPC NPC) Gets called before the Death animation is played. }}
+{{enumeration value | MC_PRE_NPC_COLLISION        | (EntityNPC NPC, Entity Collider, boolean Low), returns true/false to ignore collision code (true to respond to collision, false to not), or nil to continue the internal code. }}
+{{enumeration value | MC_POST_PLAYER_UPDATE       | (EntityPlayer Player) }}
+{{enumeration value | MC_POST_PLAYER_RENDER       | (EntityPlayer Player, Vector Offset) }}
+{{enumeration value | MC_PRE_PLAYER_COLLISION     | (EntityPlayer Player, Entity Collider, boolean Low), returns true/false to ignore collision code (true to respond to collision, false to not), or nil to continue the internal code. }}
+{{enumeration value | MC_POST_PICKUP_INIT         | (EntityPickup Pickup) }}
+{{enumeration value | MC_POST_PICKUP_UPDATE       | (EntityPickup Pickup) }}
+{{enumeration value | MC_POST_PICKUP_RENDER       | (EntityPickup Pickup, Vector Offset) }}
+{{enumeration value | MC_POST_PICKUP_SELECTION    | (EntityPickup Pickup, integer Variant, integer Subtype), return nil or an array table with new Variant and Subtype - return { Variant, Subtype } }}
+{{enumeration value | MC_PRE_PICKUP_COLLISION     | (EntityPickup Pickup, Entity Collider, boolean Low), returns true/false to ignore collision code (true to respond to collision, false to not), or nil to continue the internal code. }}
+{{enumeration value | MC_POST_TEAR_INIT           | (EntityTear Pickup) }}
+{{enumeration value | MC_POST_TEAR_UPDATE         | (EntityTear Pickup) }}
+{{enumeration value | MC_POST_TEAR_RENDER         | (EntityTear Pickup, Vector Offset) }}
+{{enumeration value | MC_PRE_TEAR_COLLISION       | (EntityTear Tear, Entity Collider, boolean Low), returns true/false to ignore collision code (true to respond to collision, false to not), or nil to continue the internal code. }}
+{{enumeration value | MC_POST_PROJECTILE_INIT     | (EntityProjectile Projectile) }}
+{{enumeration value | MC_POST_PROJECTILE_UPDATE   | (EntityProjectile Projectile) }}
+{{enumeration value | MC_POST_PROJECTILE_RENDER   | (EntityProjectile Projectile, Vector Offset) }}
+{{enumeration value | MC_PRE_PROJECTILE_COLLISION | (EntityProjectile Projectile, Entity Collider, boolean Low), returns true/false to ignore collision code (true to respond to collision, false to not), or nil to continue the internal code. }}
+{{enumeration value | MC_POST_LASER_INIT          | (EntityLaser Laser) }}
+{{enumeration value | MC_POST_LASER_UPDATE        | (EntityLaser Laser) }}
+{{enumeration value | MC_POST_LASER_RENDER        | (EntityLaser Laser, Vector Offset) }}
+{{enumeration value | MC_POST_KNIFE_INIT          | (EntityKnife Knife) }}
+{{enumeration value | MC_POST_KNIFE_UPDATE        | (EntityKnife Knife) }}
+{{enumeration value | MC_POST_KNIFE_RENDER        | (EntityKnife Knife, Vector Offset) }}
+{{enumeration value | MC_PRE_KNIFE_COLLISION      | (EntityKnife Knife, Entity Collider, boolean Low), returns true/false to ignore collision code (true to respond to collision, false to not), or nil to continue the internal code. }}
+{{enumeration value | MC_POST_EFFECT_INIT         | (EntityEffect Effect) }}
+{{enumeration value | MC_POST_EFFECT_UPDATE       | (EntityEffect Effect) }}
+{{enumeration value | MC_POST_EFFECT_RENDER       | (EntityEffect Effect, Vector Offset) }}
+{{enumeration value | MC_POST_BOMB_INIT           | (EntityBomb Bomb) }}
+{{enumeration value | MC_POST_BOMB_UPDATE         | (EntityBomb Bomb) }}
+{{enumeration value | MC_POST_BOMB_RENDER         | (EntityBomb Bomb, Vector Offset) }}
+{{enumeration value | MC_PRE_BOMB_COLLISION       | (EntityBomb Bomb, Entity Collider, boolean Low), returns true/false to ignore collision code (true to respond to collision, false to not), or nil to continue the internal code. }}
+{{enumeration value | MC_POST_FIRE_TEAR           | (EntityTear Tear) }}
+{{enumeration value | MC_PRE_GET_COLLECTIBLE      | (integer PoolType, boolean Decrease, integer Seed), evaluates before special events. You can return an integer from this callback in order to change the returned item pool type. It is not called for set drops (like Mr. Boom from Wrath) and manually spawned items (like the Checkpoint) }}
+{{enumeration value | MC_POST_GET_COLLECTIBLE     | (CollectibleType SelectedCollectible, integer PoolType, boolean Decrease, integer Seed) }}
+{{enumeration value | MC_GET_PILL_COLOR           | (PillColor SelectedPill, integer Seed) }}
+{{enumeration value | MC_GET_PILL_EFFECT          | (PillEffect SelectedPillEffect, PillColor PillColor) }}
+{{enumeration value | MC_GET_TRINKET              | (TrinketType SelectedTrinket, RNG& TrinketRNG) }}
+{{enumeration value | MC_POST_ENTITY_REMOVE       | (Entity Ent) }}
+{{enumeration value | MC_POST_ENTITY_KILL         | (Entity Ent) }}
+{{enumeration value | MC_PRE_NPC_UPDATE           | (EntityNPC NPC), returns true if the internal ai should be ignored, false or nil/nothing otherwise }}
+{{enumeration value | MC_PRE_SPAWN_CLEAN_AWARD    | (RNG& Rng, Vector SpawnPos), returns true if the spawn routine should be ignored, false or nil/nothing otherwise }}
+{{enumeration value | MC_PRE_ROOM_ENTITY_SPAWN    | (EntityType Type, integer Variant, integer SubType, integer GridIndex, integer Seed) - This is called when entering a new room, before spawning entities which are part its layout. Grid entities will also trigger this callback and their type will the same as the type used by the gridspawn command. Because of this, effects are assigned the type 999 instead of 1000 in this callback. Optional return: an array table with new values { Type, Variant, Subtype }. Returning a table will override any replacements that might naturally occur i.e. enemy variants. }}
+}}
+
+{{nav|modding}}
+[[Category:Lua reference]]

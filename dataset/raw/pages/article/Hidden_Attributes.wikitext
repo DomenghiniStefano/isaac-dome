@@ -1,0 +1,121 @@
+{{header attributes}}
+
+== Tear Falling Speed ==
+'''Tear falling speed''' is a hidden attribute that determines how far above the ground tears travel after traveling for a short period of time, and in practice increases effective [[range]]. Very high tear falling speed makes Isaac's tears arc upward then continue along "cruising altitude" so high they can cross over [[obstacles]] as if they were [[spectral tears|spectral]], but they won't go through the room walls. Once the tears fall down, they will start hitting obstacles again. This compounds with the height from the tear height stat.
+* {{dlc|r}} Items no longer give tear falling speed directly, instead tear falling speed is dynamically generated based on the [[range]] stat, [[shot speed]] stat, and tear height stat, in order to match the range stat in tiles.
+
+=== {{dlc|nr}} Items that Affect Tear Falling Speed ===
+==== Passive Items ====
+{{collectible table | Blood Clot, Compound Fracture, Continuum, Crown Of Light, Dad's Lost Coin, Dark Prince's Crown, Dead Onion, Eye of Belial, Godhead, The Halo, Ipecac, Jesus Juice, Kidney Stone, Magic Mushroom, Marked, Mini Mush, Mom's Contacts, Mom's Heels, Mom's Lipstick, Mom's Pearls, Mom's Underwear, Mr. Dolly, My Reflection, Number One, Odd Mushroom (Large), Purity, Roid Rage, Sacred Heart, Safety Pin, SMB Super Fan, Synthoil, Tiny Planet, Tractor Beam }}
+
+==== Trinkets ====
+{{trinket table | Dim Bulb, Lazy Worm, Ouroboros Worm, Tape Worm, Vibrant Bulb }}
+
+==== Other ====
+* {{dlc|a}} In co-op, [[Long Baby]] will occasionally briefly increase range, shot speed, and tear falling speed. [[Dark Baby]] will occasionally briefly increase all stats, including tear falling speed.
+* {{dlc|nr}} {{C|Azazel}} starts with -1 tear falling speed, though the stat does not affect his short-range Brimstone.
+
+== {{dlc+|r}} Tear Height ==
+'''Tear height''' is a hidden attribute that determines the height that tears spawn at. Before Repentance, this was the range stat displayed in the found hud, and most items that affected range affected this stat directly. Since Repentance, most range affecting items affect the new [[range]] stat instead of tear height, and only a few items affect tear height directly. Tear height no longer majorly affects effective range.
+
+=== Items that Affect Tear Height ===
+{| class="wikitable mw-collapsible"
+! Item !! Tear Height Adjustment
+|-
+| Base tear height ||23.75
+|-
+| {{i|Eye of the Occult}} ||+8
+|-
+| {{i|Jupiter}} ||+8
+|-
+| {{i|Pluto}}/{{i|Inner Child}}'s revive ||x0.4
+|-
+| {{p|Huge Growth}} ||+30
+|-
+| {{i|Mega Mush}} ||+80
+|-
+| {{t|Tape Worm}} ||x2 per Tape Worm
+|-
+| {{i|Telepathy For Dummies}}/{{p|I - The Magician}} ||x2
+|-
+| {{i|Number One}}/{{i|Kidney Stone}} ||-18
+|-
+| {{i|Multidimensional Baby}} ||x1.5
+|-
+| {{i|Parasitoid}}'s egg tears ||x2
+|}
+
+==== Notes ====
+* Tear height adjustments occur in the order of the above list from top to bottom.
+* Tear height can not be lowered to below 5.0.
+* Certain items still use tear height to calculate their effective range, these include {{i|The Boomerang}}, {{i|C Section}} (only slightly), {{i|Cricket's Body}},  {{i|Dr. Fetus}}, {{i|Eraser}}, {{i|Flat Stone}}, {{i|Haemolacria}}, {{i|Lachryphagy}}'s burst tears, {{i|Monstro's Lung}}, {{i|My Reflection}}, {{i|Sharp Key}}, and {{i|Tiny Planet}} (inverted, lower tear height improves range).
+** As a result, items that lower tear height, even if they don't affect range, such as {{i|Pluto}} and {{i|Kidney Stone}}, can negatively affect the effective range of the above items.
+** With below 10 tear height {{i|Cricket's Body}}'s split tears will hit the ground immediately, being unable to deal damage.
+* Tears that pass through {{i|Multidimensional Baby}} and {{i|Parasitoid}}'s egg tears don't get reduced tear falling speed, and as a result, effective range is increased.
+** {{i|Tiny Planet}} tears' range will increase instead of decrease in these cases.{{dlc-}}
+
+== Knockback ==
+'''Knockback''' is a mechanic that determines how far an entity is pushed back by a certain force.
+
+=== Tear Knockback ===
+This knockback comes from [[Tears]], most notably Isaac's. The knockback force is determined by the speed and direction of the tear, which itself is determined by Isaac's movement and [[Shot Speed]]. For example, {{t|Ring Worm}} does not increase the knockback stat, but does affect knockback as the tear's speed hits extremes of very fast and very slow; hitting enemies with the fastest moment of its arc applies significant knockback. [[Damage]] does not affect the knockback.
+
+Upon collision, the tear applies two separate knockbacks on the enemy. One is collision knockback which pushes the enemy away from the tear. The other one is momentum knockback which pushes the enemy toward the tear's movement direction. Since they can have directional difference, the two knockbacks can cancel each other in some rare cases.
+
+<math>\text{Collision Knockback} = \frac{V_p \times K \times M_p}{10 \times M_t}</math>
+
+<math>\text{Momentum Knockback} = \begin{cases} M_p \times \left\vert \frac{(V_p + K)}{M_p + M_t} - \frac{K}{M_t}\right\vert, & \text{if the tear is not Piercing} \\ \frac{M_p \times V_p}{M_p + M_t}, & \text{if the tear is Piercing} \end{cases}</math>
+
+Where:
+
+* V<sub>p</sub> is the tear's velocity.
+* K is knockback multiplier, which is 1.7 by default but is counted as 0 when the knockback multiplier is not active.
+* M<sub>p</sub> is the tear's mass, which is 8 by default.
+* M<sub>t</sub> is the enemy's mass.
+
+Knockbacks from laser is:
+
+<math>\text{Laser Knockback} = \begin{cases} 1.8 \times \frac{M_p}{M_t}, & \text{if the knockback multiplier is not active} \\ 3.6 \times \frac{M_p}{M_t}, & \text{if the knockback multiplier is active} \end{cases}</math>
+
+The knockback multiplier does not affect lasers' knockback.
+
+Knockback items affect the knockback in many ways, by activating the knockback multiplier, increasing the knockback multiplier, and/or increasing the tear mass. Effects that increase the knockback multiplier do not stack, and only the highest increase applies. Effects that increase the tear mass do not stack. {{I|Soy Milk}} or {{I|Almond Milk}} decrease the tear mass, thus weakening the knockback.
+
+=== Items that Affect Tear Knockback ===
+==== Passive Items ====
+{{collectible table |8 Inch Nails, Pisces, Terra, Soy Milk, Almond Milk}}
+
+==== Trinkets ====
+{{trinket table | Blister}}
+
+==== Notes ====
+* Directional knockback affects most enemies, including bosses (except for stationary ones like {{e|Pin}} or {{e|Round Worm}}). Items (both [[trinket]]s and [[pickup]]s) cannot be moved by tears, except for live bombs.
+* Knockback from tears provides minor crowd control for homing enemies like [[fly|flies]] or {{e|Gaper}}s, increasing the time it takes them to reach Isaac.
+* Be wary of the natural knockback from tears when trying to dodge charging enemies (like the smaller twin of {{E|Gemini}}, {{E|Gurglings}}, and {{e|Leech}}es): The tears can push them off-track and towards the direction you are planning to escape to.
+
+=== Knockback from Other Sources ===
+Various sources also can cause knockback. This knockback is often a little shockwave that's emitted at a certain radius in all directions, most prominently from explosives, like {{e|Bomb}}s. Certain farts also create a knockback. Some enemies, like the {{E|Fatty}}, can fart, and Isaac can also do so with certain items.
+
+[[Pickup]]s (including {{E|Chest}}s) are affected by this knockback; [[item]]s, however, are not.
+
+=== {{dlc+|r}} Strong Knockback ===
+Knockbacks from {{I|Belly Jelly}}, {{i|The Black Bean}}, {{I|Butter Bean}}, {{I|Divine Intervention}}, {{I|Hemoptysis}}, {{i|Isaac's Heart}}, {{I|Knockout Drops}}, {{i|Lil Dumpy}}, {{i|Mars|r+}}, and the synergy with {{i|Notched Axe}} + {{i|The Book of Belial}} + {{i|Birthright}} as {{c|Judas}} / {{c|Black Judas}} are strong knockback. They do not decrease from the enemy's friction and linger for a relatively long time once applied. Any enemy affected by it takes 10 + 2 × (floor - 1) damage upon being pushed into walls or obstacles. No other knockback can deal such damage however strong it is.{{dlc-}}
+
+=== Items that Cause Knockback ===
+==== Activated Items ====
+{{collectible table | The Bean, Butter Bean, The Poop }}
+
+==== Passive Items ====
+{{collectible table/header}}
+{{collectible rows | Belly Jelly, The Black Bean, Divine Intervention, Farting Baby, Hemoptysis, Isaac's Heart, Knockout Drops, Lil Dumpy }}
+{{collectible rows | dlc = r+ | Mars }}
+|}
+
+==== Trinkets ====
+{{trinket table | Butt Penny, Mysterious Candy }}
+
+==== Notes ====
+* There is also a mechanic that acts as an opposite of sorts to circular knockback: a gravitational pull that is emitted from {{E|Gaping Maw}}s, {{E|Mega Fatty}} (while charging up its "Vomit Storm" attack), purple [[champion|champion monsters]], {{I|Strange Attractor}}, and {{E|Suction Pitfall}}s.
+
+{{nav|fr=Statistiques cachées}}
+[[Category:Mechanics]]

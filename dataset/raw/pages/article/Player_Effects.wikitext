@@ -1,0 +1,5 @@
+{{header player effects}}
+'''Player Effects''' are [[effects]] that can be granted to the player character from a variety of sources, including from [[Items]] and from hazards such as [[Obstacles]] and [[Bosses]].
+
+{{nav|fr=Effets du joueur}}
+[[Category:Mechanics]]

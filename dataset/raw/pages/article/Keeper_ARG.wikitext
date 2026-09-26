@@ -1,0 +1,104 @@
+{{page dlc|a}}
+
+The '''Keeper ARG'''<ref>https://www.reddit.com/r/bindingofisaac/comments/3ss8oo/the_afterbirth_arg_a_stepbystep_summary/</ref> was an Alternate-Reality Game which started when Afterbirth was released, and was completed by the community to unlock the [[Keeper]].
+
+== Background ==
+Upon the release of Rebirth, a secret character, called [[The Lost]], was released. The devs' goal was to make players have to complete an ARG to figure out the complex method of unlocking this character, but their plans were foiled once dataminers figured out the unlock method in allegedly '''109''' hours.
+
+Convinced to not have another foiled ARG, when Afterbirth was released, the reward ([[Keeper]]) was not in the game's code at all, and instead, the community would have to complete the ARG to 'add' him to the game.
+
+== The ARG ==
+=== Generosity ===
+One of the things added to the game on the release of Afterbirth was a special gamemode named [[Greed Mode]], with the ultimite goal and final boss being [[Ultra Greed]]. Once Ultra Greed is defeated, a [[Greed Donation Machine]] appears, with you being able to donate any leftover coins to unlock things, similar to the normal [[Donation Machine]]. 
+
+However, when Afterbirth first released, the Greed Donation Machine was seemingly bugged, breaking at '''109''' coins, no matter what. The community noticed this, and so apparently '''109''' hours later, the bug was miraculously fixed.
+
+When the bug was fixed, a new achievment, [[Generosity]], was released for hitting 999 coins in the Greed Donation Machine. However, upon earning this achievment, nothing really would happen.
+
+While players were waiting for something to be changed or discovered, many of them grew superstitous towards the number 109, which is where statements such as "the Greed machine was fixed 109 hours after release", "the Lost character was datamined 109 hours after Rebirth's release" came from. The number '''109''' is also the ID for [[Money = Power]], and also appeared in various places in messages from Tyrone and Ed.
+
+Eventually, weird clues, such as unusual text when hovering over [[A Quarter]], [[A Dollar]], and [[Money = Power]] ([https://gyazo.com/735d5c22c997aa15a5d144ada2a82df2 "where are you"]) in the item collection menu were discovered. Then, on November 10th, Edmund McMillen created a [http://bindingofisaac.com/post/132875425114/the-good-the-bad-and-the-daily blog post] where, when you take the first letter of each paragraph, spells the message "U R SO CLOSE" indicating the community was getting close to the next step.
+
+=== The Lost Boys & Santa Cruz ===
+Once enough of the community had achieved the Generosity achievment, the Steam icon for it was changed to a [https://imgur.com/mWNaZbr piece of paper with black lines and dots on it]. If you count the number of pixels in each line/dot (with a double space meaning 0) you get the number series 108 69 82 66 101 73 76. When that is converted to ASCII, it becomes lERBeIL.
+
+Using this code as an imgur link reveals [http://imgur.com/lERBeIL a '''109x109''' image] of the Lost, 8 figures, a [[treasure Map]] icon, and a quote form Genesis 30:35. Combined with a hint from [https://x.com/edmundmcmillen/status/663028923450589184 Edmund's twitter], the community realised that this was a reference to the movie "The Lost Boys" which was set on the Santa Cruz boardwalk.
+
+"Nirvanaguy007"'s brother went to the hinted location IRL on November 13th, and found a [http://i.imgur.com/c1Qr1SD.jpg Missing Poster] resembeling [[missing Poster|the one from the game]]. At the bottom is a phone number (444-0???) with the last 3 digits obscured, but they were found out to be '''109'''. Then At the back, the text "GOD IS SPIRIT" can be seen, from John 4:24. 
+
+So, calling the number 424-444-0'''109''' directs the caller to a voice mail, which says:
+
+{{quote |
+Hello ???,
+
+I am your ???.
+
+I know what you came for,
+
+but i need to hear you ask me.
+}}
+
+The ??? sections of the audio are reversed, and re-reversing them makes the new voice mail:
+
+{{quote |
+Hello Isaac,
+
+I am your father.
+
+I know what you came for,
+
+but i need to hear you ask me.
+}}
+
+The community began replying with messages trying to figure out the correct answer, which turned out to be "where are you?" (the weird Money = Power text from earlier).
+
+Around this time, PC Gamer published an [http://www.pcgamer.com/an-insane-arg-is-happening-in-the-binding-of-isaac-community-right-now/ article] summarizing the ARG thus far. They asked Edmund for comments, and he replied "bring a shovel!"
+
+Also around this time, the game was patched, which fixed several issues but also caused Greed Mode to crash the game. However it is believed this did not have anything to do with the ARG.
+
+=== I am Isaac's body ===
+On evening November 13th, the voice mail was replaced. The new audio said:
+
+{{quote |
+Christ calls,
+
+generous gods don't guide history forever.
+
+???????.
+
+???????.
+
+''We need to go deeper.''
+}}
+
+Again, the ??? parts were reversed, and fixing them changes the audio to:
+
+{{quote |
+Christ calls,
+
+generous gods don't guide history forever.
+
+Knowledge grows.
+
+His final form ends beyond greed.
+
+''We need to go deeper.''
+}}
+
+Edmund then made a [https://twitter.com/edmundmcmillen/status/665419722708619264 tweet] saying "We almost revealed more evil right?, which when you take the first letter of every word, spells "Warmer". Due to this mechanic being used before (in the blog post), user "DIXINMYAZZ" applied it to the second voice mail (while omitting "''we need to go deeper''") and got "CC GGDGHF KG HFFEBG". Tweeting this to Edmund confirmed this as the right answer.
+
+Converting the message with an Alphanumeric or A1Z26 cypher gives "33 774786 117 866527", then that formatted to GPS coordinates gives "33.774786, -117.866527" in DD or "N 33° 46' 29.23",	W 117° 51' 59.497"
+" in DMS. (the longtitude is negative because that part of the voice mail is reversed). 
+
+This leads to a building in Santa Ana, CA with building number '''109'''. The devs continued to drop Twitter hints about digging and looking for loose change.
+
+Around midnight, 6 Reddit users went to the location and explored the are. They found a [https://i.imgur.com/r5uNaF1.jpg poster] with bible quotes on the front, and a person growing until death on the [https://i.imgur.com/VBxtMWe.jpg back.] They also found a pile of change, and digging there revealed a [http://imgur.com/a/tGksx Greed statue] with lots of writing on it. At some point they also found someone in a parked car, who drove off when they approuched them. This was probably Tyrone, who posted pictures on his Twitter.
+
+Using the writing on the statue, with &#64 being HTML for "@", a [https://twitter.com/iamisaacsbody Greed twitter page] was found. The handle is @iamisaacsbody ans the password WAS isaacisdead. After the community "gave him a voice" by posting on the Twitter account, the developers uploaded an image saying "The community unlocked... something hidden!" 
+
+Finally, the game was updated, and the Keeper was released, needing you to donate 1000 coins to the Greed Donation Machine.
+
+== References ==
+{{reflist}}
+
+{{nav}}

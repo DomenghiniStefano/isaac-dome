@@ -1,0 +1,11 @@
+{{disambiguation}}
+
+'''Magnet''' may refer to:
+* {{i|Magneto}}, a [[passive collectible]].
+* {{t|Broken Magnet}}, a [[trinket]].
+* {{t|Super Magnet}}, a [[trinket]].
+* {{t|Number Magnet}}, an unlockable [[trinket]].
+* [[Magnet Baby]], a special [[co-op]] baby.
+* {{i|Strange Attractor}}, a [[passive collectible]] which looks like a magnet.
+
+{{nav|magnetic}}

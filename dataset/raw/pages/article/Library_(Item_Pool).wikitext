@@ -1,0 +1,19 @@
+{{header item pools}}
+{{item pool}}
+
+Items in this pool can be found in the {{R|Library}}.
+
+== Activated Collectibles ==
+{{item pool/header}}
+{{pool items | Anarchist Cookbook, The Bible, The Book of Belial, Book of Revelations, Book of Secrets, Book of Shadows, The Book of Sin, How to Jump, The Necronomicon, Satanic Bible, Telepathy For Dummies }}
+{{pool items | dlc = a+ | Book of the Dead }}
+{{pool items | dlc = r | Monster Manual }}
+{{pool items | dlc = r | weight = 0.2 | Lemegeton }}
+|}
+
+== Passive Collectibles ==
+{{item pool/header}}
+{{pool items | dlc = r | weight = 0.2 | Book of Virtues }}
+|}
+
+{{nav|fr=Bibliothèque (Banque d'Objets)}}

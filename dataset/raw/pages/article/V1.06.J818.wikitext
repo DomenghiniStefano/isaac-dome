@@ -1,0 +1,150 @@
+{{infobox version
+ | dlc   = r
+ | date  = 2021-05-14
+ | steam = 5586130823840728052
+}}
+
+== Documented Changes ==
+=== General Fixes ===
+* {{I|Vengeful Spirit}} deals a lot more contact damage, before it was dealing much less than intended
+* Hostile enemies spawned by glitch items no longer deal instant damage, so the player gets a small amount of time to get away from them
+* Fixed {{I|Vanishing Twin}} being able to turn into [[Tainted Jacob#Dark Esau|Dark Esau]]
+* Fixed {{T|Locust of War}} + {{I|Brimstone Bombs}} being able to damage the player when spawned by {{T|Cricket Leg}}
+* Fixed a bug that caused the first two floors of the alternate path to always share the same variant, making it impossible to see both {{s|Downpour}} and {{s|Dross}} in the same run
+
+=== General Modding Changes ===
+* Mods are now stored in a <code>mods</code> folder in the same directory as the rest of the game files
+* This directory can be easily accessed by right-clicking The Binding of Isaac: Rebirth in the Steam library, then clicking on "Properties", "Local Files", and finally "Browse..."
+* Mod save data is now stored separately in a <code>data</code> folder, meaning that updating or unsubscribing from a mod will no longer cause its save data to be wiped
+* The name of the subfolder used to store save data is determined by the <code>directory</code> property in <code>metadata.xml</code>
+* Added a loading screen that appears when installing or updating mods from Steam Workshop
+
+=== XML changes ===
+* Players (<code>players.xml</code>) Added the following properties:
+** <code>broken</code>: Number of broken hearts this player begins with
+** <code>pocketActive</code>: Gives this player the specified starting active item in the pocket item slot
+** <code>birthright</code>: The unique description that should be displayed when this character picks up Birthright
+** <code>bSkinParent</code>: If present, marks this character as the "tainted" version of the regular character that bears the specified name. Usually, this should be set to the same name as the character, unless the tainted and regular version of this character bear different names. If there is no regular character to attach to, this character will not be available in the character selection menu
+** <code>hidden</code>: If set to "true", hides this character from the character selection menu
+** Custom coop selection graphics can be set for all modded characters by supplying the following animation file (non-tainted characters only):
+*** <code>content/Coop Menu.anm2</code>: Must contain one animation per character, each animation must bear the same name as the character it was made for
+** Custom menu graphics can be set for tainted characters by supplying the following animation files:
+*** <code>content/CharacterMenuAlt.anm2</code>
+*** <code>content/CharacterPortraitsAlt.anm2</code>
+*** <code>content/Death Screen Alt.anm2</code>
+*** <code>content/Coop Menu Alt.anm2</code>
+*** <code>content/CharacterMenu.anm2</code> and <code>content/CharacterMenuAlt.anm2</code> no longer require a "Background" layer as the game now renders the paper background automatically
+* Items (<code>items.xml</code>) Added the following properties:
+** <code>shopprice</code>: Sets a custom shop price for this item
+** <code>initcharge</code>: Overrides the initial charge for this item (this can be used for active items that do not start with a full charge)
+** <code>chargetype</code>: Can be set one of the following 3 values: <code>normal</code> (recharges on room clear), <code>timed</code> (recharges over time), <code>special</code> (never recharges automatically, cannot be recharged by batteries or item effects)
+** <code>passivecache</code>: If set to true on an active item, evaluates the player's stats on pickup like a passive item rather than when using the item
+** <code>hidden</code>: If set to true, cannot be obtained in game unless explicitly spawned or given to the player
+** <code>persistent</code>: If set to true, temporary effects tied to this item persist between rooms
+** <code>quality</code>: Sets the quality of this item (0 to 4, where 0 is the lowest quality and 4 is the highest)
+** <code>tags</code>: Adds one or more tags to this item (see <code>items_metadata.xml</code> for reference)
+
+=== Lua Changes ===
+* Added a new <code>include()</code> function which acts like a "raw" version of <code>require()</code> and will always load the specified file even if it was loaded before
+* Fixed the spelling of <code>EntityPlayer:GetMaxPocketItems()</code> and <code>EntityPlayer:DropPocketItem()</code>. Previous spellings are still present for backwards compatibility but should no longer be used
+* <code>Sprite:SetFrame()</code> can now be called with only an int argument, this will adjust the current frame for the current animation without stopping it
+* Vector multiplication is now commutative (number * vector is a valid operation) and supports element-wise vector by vector multiplication
+* <code>Color(R, G, B, A, RO, GO, BO)</code> has been updated:
+** Only the first three arguments (<code>R, G, B</code>) are required, <code>A</code> defaults to <code>1</code> when omitted
+** The offset parameters (<code>RO, GO, BO</code>) default to 0 when omitted and are now in the 0-1 range instead of 0-255 for consistency
+** Mods that use this feature will need to be updated
+* Added constants <code>Vector.Zero</code>, <code>Vector.One</code> and <code>Color.Default</code> for convenience purposes
+* Updated <code>Isaac.GetPlayerTypeByName(string Name, boolean Tainted = false)</code>
+** If <code>Tainted</code> is omitted or set to false, only matches non-tainted characters
+** If <code>Tainted</code> is set to true, only matches tainted characters
+* Tear flags are now represented by the <code>BitSet128</code> data type, this was a necessary change due to 64 bits no longer being enough to hold every tear effect in the game
+* Most AB+ mods should be backwards compatible, however due to a limitation from Lua, expressions such as <code>Tear.TearFlags</code> & <code>TearFlags.TEAR_POISON == 0</code> no longer work correctly
+** This can be quickly fixed by either replacing "==" with "<=", replacing 0 with <code>TearFlags.TEAR_NORMAL</code>, or using the convenience functions below
+* The following convenience functions have been added:
+** <code>void Entity_Tear:AddTearFlags(BitSet128 Flags)</code>
+** <code>void Entity_Tear:ClearTearFlags(BitSet128 Flags)</code>
+** <code>boolean Entity_Tear:HasTearFlags(BitSet128 Flags)</code>
+** <code>void Entity_Bomb:AddTearFlags(BitSet128 Flags)</code>
+** <code>void Entity_Bomb:ClearTearFlags(BitSet128 Flags)</code>
+** <code>boolean Entity_Bomb:HasTearFlags(BitSet128 Flags)</code>
+** <code>void Entity_Laser:AddTearFlags(BitSet128 Flags)</code>
+** <code>void Entity_Laser:ClearTearFlags(BitSet128 Flags)</code>
+** <code>boolean Entity_Laser:HasTearFlags(BitSet128 Flags)</code>
+** <code>void Entity_Knife:AddTearFlags(BitSet128 Flags)</code>
+** <code>void Entity_Knife:ClearTearFlags(BitSet128 Flags)</code>
+** <code>boolean Entity_Knife:HasTearFlags(BitSet128 Flags)</code>
+* Updated <code>EntityProjectile</code>. Added:
+** <code>void ClearProjectileFlags(int Flags)</code>
+** <code>boolean HasProjectileFlags(int Flags)</code>
+* <code>MC_PRE_SPAWN_CLEAN_AWARD, MC_PRE_NPC_UPDATE</code> and all <code>MC_PRE_xxx_COLLISION</code> callbacks will now only skip remaining callbacks when returning a non-nil value
+* <code>MC_GET_SHADER_PARAMS</code> will now only skip remaining callbacks when returning a table
+* Updated arguments passed to <code>MC_USE_CARD (int CardId, EntityPlayer Player, int UseFlags)</code>
+* Updated arguments passed to <code>MC_USE_PILL (int PillId, EntityPlayer Player, int UseFlags)</code>
+* Updated arguments passed to <code>MC_PRE_USE_ITEM (int ItemId, RNG ItemRng, EntityPlayer Player, int UseFlags, int ActiveSlot, int CustomVarData)</code>
+* Updated arguments passed to <code>MC_USE_ITEM (int ItemId, RNG ItemRng, EntityPlayer Player, int UseFlags, int ActiveSlot, int CustomVarData)</code>
+* If a table is returned instead of a boolean, the following fields can be set to a non-nil value for extra functionality:
+** <code>Discharge</code>: Determines whether the item should be discharged or not after being used
+** <code>Remove</code>: Determines whether the item should be removed from the player or not after being used
+** <code>ShowAnim</code>: Plays the default use animation if set to true (equivalent to simply returning true in AB+)
+* Updated <code>PlayerTypes.ActiveItemDesc</code>.
+** Added:
+*** <code> int TimedRechargeCooldown</code>: Number of frames before an item with a timed cooldown can recharge again (used by {{I|Spin to Win}} to pause its recharge after fully discharging it)
+*** <code>float PartialCharge</code>: How close the item is to gaining another charge (0-1 range, used by {{I|4.5 Volt}})
+*** <code>int VarData</code>: Holds extra information for some active items (such as the number of uses for {{I|Jar of Wisps}})
+** Removed:
+*** <code>boolean Lock</code>
+* Updated <code>EntityPickup</code>:
+** Added:
+*** <code>int OptionsPickupIndex</code>: Any non-zero value causes the item to form an option group with any other item with the same <code>OptionsPickupIndex</code> value. When an item belonging to an option group is picked up, all other items belonging to the same group disappear. 0 is the default value and means the item doesn't belong to any group.
+** Removed:
+*** <code>boolean TheresOptionsPickup</code>: see above
+* Updated <code>GridEntity</code>:
+** Added:
+*** <code>RNG GetRNG()</code> (The object returned from this function is now a reference rather than a copy)
+*** <code>Sprite GetSprite()</code> (Same as above)
+** Removed:
+*** <code>RNG RNG</code>
+*** <code>Sprite Sprite</code>
+* Updated <code>Sprite</code>:
+** Added:
+*** <code>string GetAnimation()</code>
+*** <code>string GetOverlayAnimation()</code>
+* Updated <code>EntityPlayer</code>:
+** Added:
+*** <code>void ChangePlayerType(PlayerType Type)</code>
+*** <code>void AddBrokenHearts(int Num)</code>
+*** <code>int GetBrokenHearts()</code>
+*** <code>void AddRottenHearts(int Num)</code>
+*** <code>int GetRottenHearts()</code>
+*** <code>boolean CanPickRottenHearts()</code>
+*** <code>void AddSoulCharge(int Num)</code>
+*** <code>void SetSoulCharge(int Num)</code>
+*** <code>int GetSoulCharge()</code>
+*** <code>int GetEffectiveSoulCharge()</code>
+*** <code>void AddBloodCharge(int Num)</code>
+*** <code>void SetBloodCharge(int Num)</code>
+*** <code>int GetBloodCharge()</code>
+*** <code>int GetEffectiveBloodCharge()</code>
+*** <code>EntityPlayer GetMainTwin()</code>
+*** <code>EntityPlayer GetOtherTwin()</code>
+*** <code>boolean TryHoldEntity(Entity Ent)</code>
+*** <code>Entity ThrowHeldEntity(Vector Velocity)</code>
+*** <code>EntityFamiliar AddFriendlyDip(int Subtype, Vector Position)</code>
+*** <code>EntityFamiliar ThrowFriendlyDip(int Subtype, Vector Position, Vector Target = Vector.Zero)</code>
+*** <code>EntityFamiliar AddWisp(int Subtype, Vector Position, boolean AdjustOrbitLayer = false, boolean DontUpdate = false)</code>
+*** <code>EntityFamiliar AddItemWisp(int Subtype, Vector Position, boolean AdjustOrbitLayer = false)</code>
+*** <code>void TriggerBookOfVirtues(CollectibleType Type = CollectibleType.COLLECTIBLE_NULL)</code>
+*** <code>EntityFamiliar AddSwarmFlyOrbital(Vector Position)</code>
+*** <code>int GetNumGigaBombs()</code>
+*** <code>void AddGigaBombs(int Num)</code>
+*** <code>CollectibleType GetModelingClayEffect()</code>
+*** <code>void AddCurseMistEffect()</code>
+*** <code>void RemoveCurseMistEffect()</code>
+*** <code>boolean HasCurseMistEffect()</code>
+*** <code>boolean IsCoopGhost()</code>
+*** <code>EntityFamiliar AddMinisaac(Vector Position, boolean PlayAnim = true)</code>
+*** <code>void SetPocketActiveItem(CollectibleType Type, ActiveSlot Slot = ActiveSlot.SLOT_POCKET, boolean KeepInPools = false)</code>
+* Updated all enums (see <code>enums.lua</code>)
+* Many more additions and changes to existing functions, the full list of changes can be found here: https://pastebin.com/748vEEdR
+
+{{nav|version}}

@@ -1,0 +1,51 @@
+{{page dlc|a+}}
+A '''Victory Lap''' allows Isaac the opportunity to start a new run with almost all of his final items after killing {{e|The Lamb}} in {{s|Dark Room}}; after it dies, a page dlc appears, giving Isaac the option of starting a Victory Lap or not (this option is only given once per run). Multiple Laps can be made as long as Dark Room is cleared each time.
+
+== Effects ==
+* [[Completion mark]]s and [[Achievements]] cannot be earned (except for the Achievements earned for completing Victory Laps).
+* The effects of all [[Pills]] are re-randomized.
+* Some [[items]] are lost upon starting a Victory Lap. Items lost this way are added back into their respective item pools and can be acquired again.
+** Starting the 1st and the 3rd Laps takes away no items, starting the 2nd Lap takes away 50% of the items (rounded up), and starting the 4th and all subsequent Laps takes away 75% of the items (rounded up).
+** {{dlc|r}} This mechanic can remove a character's pocket item.
+* All Victory Laps will be on Hard difficulty, even if the initial run wasn't.
+* Once the third Victory Lap has been reached (and on every subsequent Victory Lap), several effects occur:
+** Isaac will turn into {{C|The Lost}}.
+*** {{dlc|nr}} This version of The Lost does not get {{i|Holy Mantle}} or {{i|D4}}. However, if the run was started as The Lost (or if Holy Mantle was found during a previous run), it will be retained, unless the Victory Lap discards it by chance.
+*** {{dlc|r}} This version of The Lost has Holy Mantle if it has been unlocked by donating to the Greed Donation Machine.
+*** {{C|Tainted Forgotten|r}} and {{c|Tainted Soul}} will ''both'' become The Lost, controlled with the same inputs like {{C|Jacob and Esau}}, removing the latter's attack restriction and ability to pick up and throw Tainted Forgotten. The drop key cannot be held to individually control each character, and items previously acquired are held by the Tainted Forgotten. Tainted Soul can acquire its own items.
+** {{r|Shop}}s will no longer appear (except for in {{s|???}}).
+* If a [[Devil Room|Devil Deal]] is taken at any point during a previous Lap, {{r|Angel Room}}s will no longer appear (unless {{I|Act of Contrition}}, {{i|Book of Virtues}}, {{i|Duality}} or {{i|Eucharist}} is picked up, or a {{r|Sacrifice Room}} teleports Isaac into an Angel Room). "You feel blessed!" effects from Sacrifice Rooms and {{m|Confessional}}s also allow Angel Rooms to appear.
+* If the {{m|Donation Machine}} jams, it will remain jammed on all subsequent Victory Laps, unlike the {{i|R Key}}.
+
+== Notes ==
+* Killing any final boss aside from {{e|The Lamb}} will result in the expected [[ending]]; the option to continue the run with a new Lap will not be presented.
+* {{i|The Negative}} may disappear upon starting a Victory Lap and must be reacquired to access {{s|Dark Room}} and continue the run.
+* Isaac can still change characters after becoming {{C|The Lost}} on the third lap (e.g., {{i|Ankh}}, {{i|Lazarus' Rags}}, {{i|Clicker}}).
+** {{dlc|r}} Obtaining {{i|Genesis|n}} will transform The Lost back into the original character.
+* {{dlc|nr}} [[Transformations]] will remain even if the items used to acquire them are removed.
+* When using [[Telepills]] or other teleportation items in {{s|Womb}} II or equivalent, Isaac may be teleported to an {{r|I AM ERROR}} room with only a way to the {{s|Cathedral}}, possibly ending the Victory Lap streak.
+** If a {{r|Sacrifice Room}} appears in the {{s|Cathedral}}, Isaac may be able to teleport to {{s|Dark Room}} if he has enough health, continuing the run.
+* Entering {{s|The Void}} and killing {{e|Delirium}} will end the Victory Lap streak.
+* {{dlc|nr}} The achievement {{a|U Broke It!}} (unlocked by obtaining 50 items) can be earned during Victory Laps.
+* Stats obtained by {{P|Black Rune}} or {{i|Void}} will not be removed after starting a new lap.
+* Effects from trinkets absorbed by [[Gulp!]], {{I|Marbles}}, or {{I|Smelter}} will not be removed after starting a new lap.
+* {{dlc|r}} Enemies and bosses killed with {{I|Eraser|n}} will remain erased after starting a new lap.
+* {{I|R Key}} Resets the ''entire run'', '''INCLUDING''' all completed Victory Laps! This means the lap counter will reset to 0, and shops will return.
+** Additionally, if the difficulty had changed from Normal to Hard, or if the character had become The Lost, these changes will ''not'' be reverted.
+** Unlocks will still be disabled, though exiting and re-entering your run will re-enable them.
+
+== Unlockable [[Achievements]] ==
+{{achievement text | Once More with Feeling!, Butter!, RERUN }}
+
+== Trivia ==
+* According to Edmund McMillen, the Victory Lap mechanic is only included in {{s|Dark Room}}, since it's the "Harder Chapter 6 path", therefore being set as a "reward" there.<ref>https://twitter.com/edmundmcmillen/status/1239746936564936705</ref>
+
+== Bugs ==
+{{Bug|plat=PS4|Trying to pause the game when the player is asked if they want to do the victory lap disables the option and forfeits the victory lap.}}
+
+== References ==
+{{reflist}}
+
+{{nav|fr=Tour d'Honneur}}
+[[Category:Mechanics]]
+[[Category:Modes]]

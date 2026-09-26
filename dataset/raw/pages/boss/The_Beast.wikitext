@@ -12,7 +12,7 @@
 '''The Beast''' is a [[boss]] added in ''[[The Binding of Isaac: Repentance]]'' DLC. She appears in {{s|Home}} and is the final boss of [[Endings#Ending 22 (Dogma)|Ending 22]], as well as ''The Binding of Isaac'' as a whole.
 
 == Behavior ==
-After defeating {{e|Dogma}}, Isaac is given {{i|Dogma}}, granting him [[flight]] and allowing him to traverse The Beast's 2D [[Crawl Space]]-like arena. {{i|Dogma}} also grants a one-time {{i|Holy Mantle}} shield, the effect of {{i|The Wafer}} (if playing in Normal Mode), Prevents Isaac's [[speed]] from going under 1.1, and +2 [[damage]], and heals him up to 6 [[Health|hearts]] with {{e|Red Heart}} Containers and {{e|Soul Heart}}s.
+After defeating {{e|Dogma}}, Isaac is given {{i|Dogma}}, granting him [[flight]] and allowing him to traverse The Beast's 2D [[Crawl Space]]-like arena. {{i|Dogma}} also grants a one-time {{i|Holy Mantle}} shield, the effect of {{i|The Wafer}} (if playing in Normal Mode), prevents Isaac's [[speed]] from going under 1.1, and +2 [[damage]], and heals him up to 6 [[Health|hearts]] with {{e|Red Heart}} Containers and {{e|Soul Heart}}s.
 
 At the start of the fight, The Beast sits inactive in the background. Flying around The Beast are four [[Harbingers (Bosses)#Ultra Harbingers|Ultra Harbingers]], which attack Isaac one at a time in the order of {{e|Ultra Famine}}, {{e|Ultra Pestilence}}, {{e|Ultra War}}, and {{e|Ultra Death}}. Once they have all been defeated, The Beast lets out a roar, submerges into the lava, then reemerges on the right side of the screen, beginning her fight.
 

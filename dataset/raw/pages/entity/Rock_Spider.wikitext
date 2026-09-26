@@ -1,0 +1,57 @@
+{{infobox monster
+ | dlc         = r
+ | name        = Rock Spider
+ | id          = 818
+ | base hp     = 12
+ | environment = {{floor|Mines}}{{floor|Ashpit}}<br>{{room|challenge}}<br>{{room|secret}} (Mines only)<br>{{room|treasure}} (Mines and Ashpit only)
+ | behavior    = Slowly crawls around the room. If it sees Isaac, it crawls at him, trying to deal contact damage. Turns into a [[Spider]] upon death. Turns into a [[Coal Spider]] if it touches fire.
+}}
+'''Rock Spiders''' are small spider-legged stones and they were added to ''[[The Binding of Isaac: Repentance]]''. They behave very closely to {{E|Spider|text=Spiders}}, but they are exclusive to {{s|Mines}} and {{s|Ashpit}} and skitter at a slower speed.
+Upon death, they turn into a normal {{E|Spider}}.
+
+If Isaac is capable of breaking  [[rocks]] by stepping on them (e. g. with {{i|Leo}} or {{tf|Stompy}}), '''Rock Spiders''' will die if stepped on. This ''will'' spawn a Spider which is extremely likely to deal damage to Isaac.{{dlc-}}
+
+
+{{clear}}
+
+== Variants ==
+=== Tinted Rock Spider ===
+{{infobox monster
+ | dlc         = r
+ | name        = Tinted Rock Spider
+ | variant     = 1
+ | base hp     = 22
+ | environment = {{floor|Mines}}{{floor|Ashpit}}<br>Spawned exclusively from Tinted Rocks
+ | behavior    = Quickly crawls around the room. If it sees Isaac, it crawls at him, trying to deal contact damage. Turns into a [[Soul Heart]] upon death. Can only spawn by breaking [[Rocks#Tinted Rocks|tinted rocks]] on [[Mines]] or [[Ashpit]].
+}}
+
+'''Tinted Rock Spiders''' are similar to Rock Spiders, however they have nearly twice as much health and move much faster. When killed, instead of transforming into a regular Spider, they drop 1 {{E|Soul Heart}} upon death. They are characterized by the "X" on their rock, which is similar to [[rocks#Tinted Rocks|Tinted Rocks]].
+
+They do not spawn naturally; there is a chance that 1-2 will spawn upon destruction of a [[rocks#Tinted Rocks|Tinted Rock]] while in the {{s|Mines}} or {{s|Ashpit}}.
+
+If killed by freezing, for example, with {{i|Uranus}} or {{i|Freezer Baby}}, the spider will not drop a soul heart.
+{{clear}}
+
+=== Coal Spider ===
+{{infobox monster
+ | dlc         = r
+ | name        = Coal Spider
+ | variant     = 2
+ | base hp     = 15
+ | environment = {{floor|Burning Basement}}<br>{{floor|Mines}}{{floor|Ashpit}}
+ | behavior    = Quickly crawls around the room. If it sees Isaac, it crawls at him, trying to deal contact damage. Turns into a hot coal upon death that blocks shots and deals contact damage, but can be destroyed.
+}}
+
+'''Coal Spiders''' behave very closely to Rock Spiders, but they skitter at a faster speed due to being on fire.
+
+Upon death, it leaves a hot rock on the ground that despawns after several seconds. They can be shot to make them despawn faster.
+
+Rock Spiders coming into contact with a {{E|Fire Place}} or fire spawned by items, such as {{i|Red Candle}} or {{i|Bird's Eye}}, turn into Coal Spiders.
+
+Unlike Rock Spiders, Coal Spiders cannot be killed by stepping on them while having a {{tf|Stompy}} effect.
+{{clear}}
+
+== Trivia ==
+* The [[Anti:Rock Spider|Rock Spider]] and all its variants originate from the ''Antibirth'' mod.
+{{clear}}
+{{nav|fr=Araignée Rocheuse}}

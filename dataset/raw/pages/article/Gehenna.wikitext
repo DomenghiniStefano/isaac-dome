@@ -1,0 +1,76 @@
+{{infobox stage
+ | dlc         = r
+ | chapter     = 3.5
+ | id          = 32
+ | level id    = 5, 6
+ | type id     = 5
+ | bosses      = The Visage, The Horny Boys, Mom, Mom's Heart
+ | unlocked by = Gehenna
+}}
+
+'''Gehenna''' is an alternative floor to the {{s|Mausoleum}} and was added in ''[[The Binding of Isaac: Repentance]]''.
+
+Gehenna has a demonic theme, with horned skulls, bones, and blood on the black cracked floor, while bloodied chains hang from the walls. Unique features of this stage include [[Teleporters]], {{e|Grudge}}s, and the {{e|Ball and Chain}}.
+
+The door to the Mausoleum / Gehenna will appear after defeating the boss in The {{S|Mines}} II / {{S|Ashpit}} II or the {{S|Depths}} I / {{S|Necropolis}} I / {{S| Dank Depths}} I. The door will '''not''' spawn after defeating {{e|Mom}}. It costs two full hearts to enter, and ignores almost every form of damage reduction, including {{I|The Wafer}} and invincibility. Unlike other methods of health donation, red hearts will not be prioritized over more valuable hearts.
+
+* {{C|The Lost}}, {{C|Tainted Lost}}, {{c|Tainted Jacob}} (In his soul form), {{C|Tainted Soul}} (unless he is holding {{C|Tainted Forgotten}}), and any character under the effect of {{p|Soul of the Lost}} can enter the door for free.
+* {{I|Dad's Key}}, {{p|Get out of Jail Free Card}}, {{I|Mr. ME!}}, and {{I|Sharp Key}} can be used to open the door without taking damage.
+* {{t|Broken Padlock}} can be used to open the door with one bomb.
+* {{i|Cracked Orb}}'s effect can open the door with less damage taken than needed, or with no damage with {{i|Dull Razor}}.
+* The extra characters spawned by {{I|Strawman}}, {{P|Soul of the Forgotten}}, and {{P|Soul of Jacob and Esau}} can expend their health to open the door.
+* {{t|Crow Heart}} can be used to open the door with red hearts first.
+
+The boss of Gehenna II is always a more powerful version of {{e|Mom}}. After Mom is defeated, a trapdoor that leads to the {{S|Womb}} II, and a sealed fleshy door both appear. Stabbing the door with the knife familiar created by {{i|Knife Piece 1}} and {{i|Knife Piece 2}} will cause it to open, leading to a more difficult version of {{e|Mom's Heart}}. Defeating Mom's Heart will cause the boss room to darken, and the trapdoor to Womb II will now lead to the {{s|Corpse}}.
+
+* A {{i|Sharp Key}} can be used in place of the Knife.
+* {{i|Cracked Orb}}'s effect can open the flesh door, allowing Isaac to keep the knife.
+* If Isaac exits the {{R|Boss Rush}} room after 25 minutes have passed, there is a chance that the flesh door will change positions to the wall where the boss rush door was, causing Isaac to "come out" of the flesh door and leaving it open, allowing entry without the knife.
+* After this special version of Mom's Heart is defeated, any [[Item]] or [[Pickup]] that was left behind anywhere on the floor will disappear (including {{R|Shop}} items, {{R|Angel Room}}/{{R|Devil Room}} items, etc.): the floor will be empty.
+** Therefore, make sure not to leave behind something that you might want to use after this floor. The strategy consisting in teleporting outside of Mom and Mom's Heart to retrieve something that was left behind after fighting them is '''not''' viable here.
+** The {{r|Boss Rush}} entrance will disappear if it was previously open.
+** If a {{M|Shop Restock Machine}} is used within the now-empty shop, it will restock the shop as normal.
+** If the effect of {{i|Forget Me Now}} is invoked after the special version of Mom's Heart is defeated, the {{cu|Darkness}}-like effect will remain on the newly generated floor. Additionally, no items will naturally generate in rooms where they would have. After the player defeats Mom again, there will be no flesh door, and the trapdoor to Corpse will appear.
+
+== [[Monster]]s ==
+{{entity table/header}}
+{{stage entities | Baby Begotten, Begotten, Goat, Black Goat, Cultist, Blood Cultist, Bony, Revenant, Quad Revenant, Maze Roamer, Dople, Death's Head, Brimstone Death's Head, Vis Fatty, Fetal Demon, Fly, Eternal Fly, Sucker, Soul Sucker, Whipper, Snapper, Cursed Globin, Black Knight, Mask + Heart, Mask II + 1/2 Heart, Big Spider, Poofer, Vis Versa, Lil Portal, Morningstar, Mockulus, Poky, Wall Hugger, Grudge, Ball and Chain, Stone Grimace, Vomit Grimace, Triple Grimace, Brimstone Head, Gaping Maw, Broken Gaping Maw, Constant Stone Shooter, Cross Stone Shooter }}
+|}
+
+''Degraded Bosses:''
+{| class="wikitable mw-collapsible striped sortable"
+! Name
+! ID
+! class="unsortable" | Notes
+{{entity row minimal|Dark One}} |
+|}
+
+== [[Bosses]] ==
+{| style="width: 70%; text-align: center"
+ | [[file:Boss The Visage portrait.png|center|link=The Visage]]
+ | [[file:Boss The Horny Boys portrait.png|center|link=The Horny Boys]]
+ | [[file:boss  Mom.png|center|link=Mom#Behavior in Mausoleum/Gehenna]]
+ | [[file:boss  Mom's_Heart.png|center|link=Mom's Heart#Behavior in Mausoleum/Gehenna]]
+ |-
+ | [[The Visage]] {{dlc|r}}
+ | [[The Horny Boys]] {{dlc|r}}
+ | [[Mom#Behavior in Mausoleum/Gehenna|Mom]] {{Dlc|r}}
+ | [[Mom's Heart#Behavior in Mausoleum/Gehenna|Mom's Heart]] {{Dlc|r}}
+ |}
+
+== Trivia ==
+* In Hebrew belief, [[wikipedia:Gehenna|Gehenna]] (or Gehinnom) was thought to be a small valley in [[wikipedia:Jerusalem|Jerusalem]]. The name literally translated to "Valley of Hinnom" and in the Valley, Kings of Jerusalem would sacrifice their children through fire.
+** Gehenna was also thought to be "the destination of the wicked" in Jewish literature. It differs from the neutral-leaning {{s|Sheol}} as Gehenna was considered a type of waiting room; the longest one can be there is 11 or 12 months with few exceptions.
+** It was also thought to be the location of Jerusalem's garbage dump, where the city's waste and the corpses of criminals were disposed by incineration. These fires burned for most of the day, inspiring later descriptions of Hell as a place of eternal torment by fire for the wicked.
+* This floor may a reference to ''The 7 Planes of Hehenna'', a similarly named area in another of Edmund McMillen's games, ''Gish.'' This is reinforced by the numerous similarities the two share, such as the appearance of gimp-clad enemies and the visual theme of a demonic temple.
+** The boss {{e|Sisters Vis}} was also originally the boss of this area in ''Gish'', though that is not the case for Gehenna.
+* As the {{s|Mausoleum}} only has 2 unique bosses, it is possible to unlock Gehenna in one run by completing a Boss Challenge room in Hard mode, as both bosses will spawn.
+
+== Music ==
+* The [[music]] in Gehenna is titled ''Morning Star.''
+** "Morning Star", "Shining One" or "Light-Bringer" comes from ancient Greek and is used to refer to [[wikipedia:Lucifer|Lucifer]].
+** The planet Venus is considered the Morning Star and is associated with the Devil falling from heaven. This is due to it falling beneath the horizon in the morning, much like how the former angel fell to Earth. Venus and the Devil share the name Lucifer because of this.
+** A morning star is also a type of weapon that consists of a spiked ball at the end of a club, an extremely brutal weapon that resembles the rotating spike balls and similarly named enemies unique to this floor.
+* In the background of the track, the Latin phrase "bonum est Deus" can be heard, which can be translated to "God is good."
+
+{{nav|environment|fr=Géhenne}}

@@ -1,0 +1,484 @@
+'''Cut Content''' refers to entities, mechanics, objects, graphics, etc. that didn't make it into the final game but are still present within the game's data.
+
+== Cut Vanilla Content ==
+=== Pressure Plates ===
+[[file:PressurePlates.png|120px]]
+
+Pressure plates can be found in the game files and could have served as another type of [[obstacle]]. They are fully functional and can do the following things:
+* Nothing
+* Spawn a random chest
+* Spawn 6 Attack Flies
+* Spawn 6 Troll Bombs
+* Activate Curse of Darkness for the rest of the floor
+* Spawn a random pickup
+* Spawn 15 random coins
+
+{{dlc|a}} Buttons appear in rooms.
+
+=== Various Half Hearts ===
+[[file:SoulHalves.png|70px]]
+
+Half [[Soul Heart]] and [[Black Heart]] pickups are in the game files, but they cannot be found in-game.
+
+{{dlc|a+}} [[Half Soul Heart]]s are an unlockable pickup.
+
+=== Colored Destructibles ===
+[[file:ColoredDestructibles.png|400px]]
+
+There are several colored versions of certain destructibles, which could have served a purpose similar to [[tinted rock]]s.
+
+{{dlc+|r}} [[Marked Skull]]s are an unlockable obstacle through {{a|A Secret Exit}}.{{dlc-}}
+
+=== Sisters Vis ===
+[[file:SistersVisUnlock.png]]
+
+A boss version of the [[Vis]] enemy that could have appeared in {{s|Sheol}}. According to the unused corresponding achievement file, Sisters Vis would have been unlocked by beating Sheol 10 times. The Sisters Vis were also a boss in ''Gish'', one of Edmund McMillen's previous games.
+* {{dlc+|a+}} [[Sisters Vis|This boss]] can be encountered, but can appear in all environments of [[Chapter 3]], {{dlc|nr}} all environments of [[chapter 4]] and requires unlocking {{a|Something wicked this way comes+!}}.{{dlc-}}
+
+=== Unused 12 Room Charge ===
+[[file:BOIRebirth12Charge.png|20px]]
+
+By editing the game's "items.xml" file and setting an item to ''maxcharges=12'', it's possible to see the charge bar in-game.
+* {{dlc+|a}} The bar is used for the {{i|Mega Blast}} item, which has a 12-room charge.{{dlc-}}
+* {{dlc+|a+}} The bar is also used for the {{i|Delirious}} and {{i|Eden's Soul}} items, which have 12-room charges.{{dlc-}}
+* {{dlc+|r}} The bar is also used for {{i|Alabaster Box}}, {{i|Larynx}}, {{i|Jar of Wisps}}, {{i|Everything Jar}}, {{i|Mega Mush}}, and for various consumables for {{i|Blank Card}}, {{i|Placebo}}, and {{i|Clear Rune}}.{{dlc-}}
+
+=== Breath of Life Animation ===
+[[file:Collectible Breath of Life animated unused.gif|120px]]
+
+=== Keeper (Enemy) unused Animation ===
+A [[Keeper (Enemy)|keeper]] enemy animation for jump from the back, jump for right and shooting from the back, shooting facing for right and left.
+
+[[File:KeeperEnemy.gif|225px]]
+
+=== Unused Jar Charges ===
+[[file:BOIRebirthJarCharges.png|400px]]
+
+=== Unused Floors ===
+By disabling the invalid seed check, and using an invalid seed, you can continue the game after The {{s|Chest}} and {{s|Dark Room}}, up to an additional 14 floors. They use pre-existing graphics and the same layout.
+
+=== Mega Satan's Skeleton Hand ===
+Originally, a skeletal version of Mega Satan's hands would have appeared for his 2nd form. Even if Mega Satan's hands were not killed, fully depleting his head's health in his 1st form will cause the hands to immediately despawn.
+
+[[File:Mega Satan's Skeleton Hand.png|frameless|228x228px]]
+
+== Cut ''Afterbirth'' Content ==
+{{section dlc|a}}
+
+=== Old Man Keeper ===
+Old Man Keeper was originally a second new playable character before ending up replaced by {{c|Keeper}}. This character, however, is playable since the DLC's initial release by using the Cheat Engine until in the later update patches, but he appears invisible with no sprites and has zero hearts.
+
+On every April Fool's Day between 2016 and sometime after the release of ''Afterbirth †'', Keeper was replaced by Old Man Keeper during the daily run for that day.<gallery>
+File:Old Man Keeper Menu.png
+File:Old Man Keeper Spritesheet.png
+File:Old Man Keeper Transition.png
+</gallery>
+
+=== Skinless Hush ===
+From the files, there was an unfinished sprite sheet of Hush's flayed form. At first, Edmund stated that the file is a "red herring to the data miners".<ref>https://twitter.com/edmundmcmillen/status/666006708339118080</ref> However, this scrapped form was later confirmed to be actually intentional.<ref>https://twitter.com/tyronerodriguez/status/1103856012816113666</ref><ref>https://twitter.com/edmundmcmillen/status/1378785476211998722</ref><gallery>
+File:Boss hush skinless portrait.png
+</gallery>
+
+=== Beta Ultra Greed ===
+[[Ultra Greed]], based on his unused sprite sheet, was originally featured with a beard, along with a single tooth and a rather stout-looking body build. This old Ultra Greed design supposedly represents [[Tyrone Rodriguez]],<ref>https://twitter.com/tyronerodriguez/status/672246234355138562</ref> similar to [[Ultra Pride]] who also represents Edmund McMillen and [[Florian Himsl]].<gallery>
+File:Beta Ultra Greed spritesheet1.png
+File:Beta Ultra Greed spritesheet2.png
+</gallery>
+
+== Cut ''Afterbirth †'' Content ==
+{{section dlc|a+}}
+
+=== Unused Ultra Greedier Sprites and Animation ===
+[[Ultra Greedier]] has not only an unused hanging sprite like his original form but an entire unused 'waking up' animation, The animation can be seen in game by spawning him with [[Debug Console]].
+
+<gallery>
+File:Ultra Greedier Hanged Unused.png|Combination of 2 animation frames showing the full appearance of 'hanged' Ultra Greedier.
+File:Ultra_Greedier_Intro_Unused.gif|Ultra Greedier unused waking-up animation.
+</gallery>
+
+=== Big Horn's Big Bomb ===
+This unused bomb sprite reveals that [[Big Horn]] was intended to summon a larger bomb.
+
+<gallery>
+File:Big Horn Bomb Unused.png
+</gallery>
+
+=== Unused Room Editor Sprites ===
+Along with modding support, several tools were included with Afterbirth † to assist new and existing modders, one of which was the Room Editor. It came with a huge number of icons it used for visualization, which included a number of pre-release enemy designs which were never used in-game. Some were simply colored differently while others looked drastically different.
+
+<gallery>
+File:Begotten Unused.png|[[Begotten]]
+File:Bloodshot Eye Unused.png|[[Bloodshot Eye (Enemy)|Bloodshot Eye]]
+File:Camillo Jr. Unused.png|[[Camillo Jr.]]
+File:Gabriel Unused.png|[[Gabriel]], apparently with a second set of wings
+File:Uriel Unused.png|[[Uriel]], ditto
+File:Fallen Angel Unused.png|Sprite used for both Fallen [[Angel]]s, but only part of their wings are visible
+File:Gurgling Unused.png|[[Gurgling (Enemy)|Gurgling]] enemy; the boss version used the normal sprite
+File:Heart Unused.png|Sprite for the Heart half of the [[Mask + Heart]] duo
+File:Hush Unused.png|[[Hush]]
+File:Key Ring Unused.png|[[Key Ring]]
+File:Boss Mask of Infamy Heart Unused ingame.png|Sprite for the Heart half of [[Mask of Infamy]]
+File:Meatball Unused.png|[[Meatball]] with slightly mis-colored exposed bone
+File:Boss Mega Fatty Unused ingame.png|[[Mega Fatty]]; resembles the in-game version's [[Isaac's Last Will]] portrait
+File:Boss Mega Satan Head Unused ingame.png|Red [[Mega Satan]]
+File:Boss Mega Satan Hand Unused ingame.png|Also included red sprites for his hands
+File:Swarm Fly Unused.png|[[Swarm Fly]] spawner
+File:The Cage Unused.png|[[The Cage]], featuring a noticeably more Flash-like appearance
+File:The Husk Unused.png|[[The Husk]], ditto.
+</gallery>
+
+== Cut ''Repentance'' Content ==
+{{section dlc|r}}
+
+=== Dogma's Unused Attacks ===
+There are 2 unused attacks for [[Dogma]] that appear in the files and can be spawned using console commands, but neither are ever seen in-game normally.
+
+Entity 950.10 is "Dogma Angel Baby". When spawned, it floats around for a few seconds before charging at Isaac and exploding. They were originally supposed to spawn alongside Dogma's spin attack in Phase 2, but were ultimately removed from the fight, likely for being too difficult. They are fully functional in-game, though they cannot spawn naturally. They can still be spawned in with the command "spawn 950.10".
+[[File:Dogma angel baby.png|thumb|Sprites for Dogma's unused Angel Baby attack.]]
+
+Entity 1000.171 is "Dogma Blackhole". When spawned, it starts charging up, and after a few moments, it emits a powerful suction force and spawns damaging tears to be dragged in as well. If Isaac makes contact with the blackhole, he will also take damage. The blackhole explodes into a shower of tears after it finishes the suction attack. The Hole would also suck Isaac's own shots and even bombs. The attack pattern was cut because it was deemed to be too hard by the playtesters. The black hole can still be spawned with the debug console with the command "spawn 1000.171".
+
+=== Unimplemented Bosses ===
+Files for several bosses created for ''[[The Binding of Isaac: Repentance]]'' that were ultimately cut can be found within the game files. However, it was confirmed that some of the bosses may have a chance to be implemented in the DLC's future updates.<ref>https://twitter.com/edmundmcmillen/status/1378604105657020417</ref>
+
+* '''Maid in the Mist''', a scrapped ghost-like boss. She is an early version of {{e|Min-Min}} with both sharing a {{e|Willo}} theme:
+[[File:Boss Maid in the Mist portrait.png]]
+
+* '''Raglich''', a boss that appears to be a part of the {{e|Rag Man}} lineage. Raglich does not appear in any rooms, meaning it must be spawned with the console. It was originally intended to be encountered in {{s|Mausoleum}} and has confirmation from _Kilburn, one of the developers, that: "he will make it in, eventually" (though now that _Kilburn is no longer working on the game, this is rather unlikely).
+
+<gallery>
+File:Boss Raglich portrait.png
+File:Boss_Raglich_Spritesheet.png
+File:Boss_Raglich_Spritesheet_2.png
+</gallery>
+{{#ev:youtube|0Y8R0FTOs24}}
+
+* '''Cadavra''', a pair of bosses similar in appearance to {{e|Chimera}}. Their walking animation gifs were first shown by [[Edmund McMillen]] on September 4, 2020,<ref>https://twitter.com/edmundmcmillen/status/1302048115504021507</ref> but they were never found in the DLC's final release. Unlike the previous two bosses, Cadavra does not exist as an entity and cannot be spawned in-game. It does not have a portrait nor a boss title. Edmund stated that they're "still in pieces maybe one day",<ref>https://twitter.com/edmundmcmillen/status/1377712528902459395</ref> implying that Cadavra would be later added in the future update patches some other time.
+
+<gallery>
+File:Cadavra Walk 1.gif
+File:Cadavra Walk 2.gif
+File:Boss_Cadavra_Spritesheet.png
+</gallery>
+
+=== Unimplemented Enemies ===
+* '''Tainted Mr. Maw''', an enemy resembling three [[Maw]] faces stuck together. The enemy's sheet suggests that each face broke off as its health lowered. It also has sprites for a body making it akin to the original [[Mr. Maw]].
+* '''Floater Turdlet''', a variant of [[Drip]]s themed after [[Turdlet]], likely meant to be a part of Turdlet's fight (Drips are known as Floaters in the game's assets).
+* '''Red Fly Bomb''', a red version of a [[Fly Bomb]] with small spikes protruding around it.
+* '''Lump Corpse''', a Corpse-themed version of a [[Lump]] that looks more like the Flash version, albeit green.
+* '''Split Rage Creep''', an enemy resembling [[Rage Creep]]s, but with a more gored body that shoots two {{i|Brimstone}} beams at 30° angles instead of one straight beam, leaving a blind spot in the middle.
+* '''Rag Creep''', a variation of a [[Wall Creep]] which spits a chain of 4 homing shots, spawned as part of Raglich's fight.
+* '''Canary''', a [[Gaper]] with what seems to be a fleshy version of the {{i|Technology}} costume. The name of its body sprite, along with the name of the enemy itself, indicates that it would have appeared in {{s|Mines}}.
+* '''Foreigner''', a Gaper with a large white eye resembling a fleshy version of the {{i|Polyphemus}} costume and could have been possibly a variation of a [[Cyclopia]]. Its shares a theme with the '''Canary''' and thus would have also appeared in {{s|Mines}}.
+* '''Graverobber''', a small enemy resembling [[Greed]] paired with a penny sack.
+* '''Gasbag 2''' and '''Lump Corpse 2''', greyish blue hued variations of a [[Gasbag]] and the cut '''Lump Corpse'''.
+<gallery>
+File:TaintedMrMaw.png|Tainted Mr. Maw
+File:Drip Turdlet.png|Floater Turdlet
+File:Red Fly Bomb.png|Red Fly Bomb
+File:Lump Corpse.png|Lump Corpse
+File:Split Rage Creep.png|Split Rage Creep
+File:Rag Creep.png|Rag Creep
+File:Canary.png|Canary
+File:Foreigner.png|Foreigner
+File:Graverobber.png|Graverobber
+File:Gasbag 2.png|Gasbag 2
+File:Lump Corpse 2.png|Lump Corpse 2
+</gallery>
+
+=== Unimplemented Items ===
+The following items were originally in/planned for ''Antibirth'' but weren't transferred over to ''Repentance''.
+
+{|class="wikitable striped"
+ ! Name
+ ! ID
+ ! Icon
+ ! Description
+ |-
+ | [[anti:Book Of Despair|Book Of Despair]]
+ | 1012
+ | [[File:Cut Item Book Of Despair.png|45px]]
+ | Active item; granted a temporary tears up on use.
+ |-
+ | [[anti:Bowl of Tears|Bowl of Tears]]
+ | 1015
+ | [[File:Cut Item Bowl of Tears.png|45px]]
+ | Active item; was charged by shooting tears and fired a {{I|Monstro's Lung}} burst of tears.
+ |-
+ | [[anti:Donkey Jawbone|Donkey Jawbone]]
+ | 1058
+ | [[File:Cut Item Donkey Jawbone.png|45px]]
+ | Passive item; did a {{I|Spirit Sword}}-like spin attack whenever Isaac took damage. This item was scrapped in ''Repentance,'' but its graphic now appears in {{C|Tainted Samson}}'s gameplay and in the {{I|Berserk!}} item, now working more like {{C|The Forgotten}}'s attack. Its unlock was replaced by {{i|Bloody Gust}}.
+ |-
+ | [[anti:Knife Piece 2|Knife Piece 2]]
+ | 1074
+ | [[File:Cut Item Knife Piece 2.png|45px]]
+ | The unused sprite from when the Knife had 3 pieces.
+ |-
+ | [[anti:Knife Item Piece 3|Knife Piece 3]]
+ | 1075
+ | [[File:Cut Item Knife Piece 3.png|45px]]
+ | There are only two Knife Pieces now. In ''Antibirth'', Knife Piece 3 was found in a teleporter-based puzzle in {{s|Mausoleum}} II.
+ |-
+ | [[anti:Menorah|Menorah]]
+ | 1034
+ | [[File:Cut Item Menorah.png|45px]]
+ | Passive item; familiar that lowered Tears stat and made Isaac fire more tears at once whenever he took damage, up to 7. This is the unused item ID of 587.
+ |-
+ | [[anti:Pill Crusher|Pill Crusher]]
+ | ?
+ | [[File:Cut Item Pill Crusher.png|45px]]
+ | Active item, also unimplemented in Antibirth; would have dropped a Pill on pickup, made Pills more common, and on activation, would have consumed the currently held pill and affected all enemies on screen depending on the pill consumed. This was meant to take the unused item ID of 648.
+ |-
+ | [[anti:Stone Bombs|Stone Bombs]]
+ | 1080
+ | [[File:Cut Item Stone Bombs.png|45px]]
+ | Passive item; made Isaac's bombs release rock waves in the cardinal directions on exploding.
+ |-
+ | [[anti:Voodoo Pin|Voodoo Pin]]
+ | 1067
+ | [[File:Cut Item Voodoo Pin.png|45px]]
+ | Active item; functioned identically to {{i|Dull Razor}} (which was implemented in ''Afterbirth+''). This is the unused item ID of 620.
+ |-
+ |Checked Mate
+ | ?
+ | [[File:Checked Mate.png|45x45px]]
+ | Passive item; was supposed to turn one enemy in every room into a champion. When that champion is killed, every other enemy dies as well.
+ |-
+ |Lunchbox
+ | ?
+ | [[File:collectibles 101x Lunchbox.png|45px]]
+ | Active item; stored next passive item picked up. Activating gives the player the stored item, restored HP, and gave a temporary all stats up.
+ |}
+
+<gallery>
+File:Cut Item Mr. Mega Stone Bomb.png|Included in the files. It was the {{i|Mr. Mega}} version of the Stone Bomb.
+File:003.205_menorah.png|Included in the files.
+File:Cut_Achievement_Donkeys_Jawbone.png|Cut achievement icon for Donkey Jawbone.
+</gallery>
+
+Unused items that weren't originally in ''Antibirth'' also exist within the game's files.
+
+{|class="wikitable striped"
+ ! Name
+ ! ID
+ ! Icon
+ ! Description
+ |-
+ | Beth's Heart
+ | ?
+ | ?
+ | Passive item; a familiar that would have stored Soul Hearts to be used as active item charges, akin to {{c|Bethany}}'s soul charge mechanic.
+ |-
+ | Blank Bombs
+ | ?
+ | ?
+ | Passive item; bomb upgrade that would be able to destroy nearby enemy projectiles.
+ |-
+ | Pacifist
+ | 662
+ | [[File:Cut Item Pacifist.png|45px]]
+ | Passive item; was meant to add a timer to hostile rooms akin to the <code>PAC1F1SM</code> seed, giving a reward for uncleared rooms.
+ |-
+ | Keeper's Rope
+ | 718
+ | [[File:Cut Item Keeper's Rope.png|45px]]
+ | An item resembling a noose. Its function is unknown, nor is it known if it was meant to be a passive or active item.
+|}
+
+<gallery>
+File:Cut Achievement Beth's Heart.png|Unused [[Achievement]] Unlocked popup for Beth's Heart.
+File:Cut Spritesheet Beth's Heart.png|Spritesheet for Beth's Heart; top-left sprite is the item appearance, the rest are the familiar's in-game appearance.
+File:Unused Achievement Blank Bombs.png|Unused Achievement Unlocked popup for Blank Bombs. No other sprites exist.
+File:Unused Achievement Keeper's Rope.png|Unused Achievement Unlocked popup for Keeper's Rope. No in-game sprite exists.
+File:Unused Collection Page Icon Keeper's Rope.png|[[Collection Page]] icon for Keeper's Rope; no way to see this in-game.
+File:Unused Item Costume Pacifist.png|Costume spritesheet for the non-existent item Pacifist. No in-game icon for this exists.
+File:Unused Collection Page Icon Pacifist.png|Collection Page icon for pacifist; no way to see this in-game.
+</gallery>
+
+=== Unimplemented Pickups ===
+Several unused achievements for pickups exist.
+
+* Illusion Hearts: Illusion Hearts appeared to function as Soul Hearts that create a clone of the player character that moves in tandem with the original, a similar mechanic to Jacob & Esau, with a copy of all of your items. When an Illusion Heart was depleted, the Isaac that got hit disappeared. This was also cut from Antibirth.
+* Rune of Ingwaz
+* Rune of Sowilo
+
+<gallery>
+File:Illusionheart.png|thumb|The unused achievement unlock for Illusion Heart.
+</gallery>
+
+=== Unimplemented Challenges ===
+Several unused achievements exist that mention the following challenges being unlocked. It is unknown what the challenges would have been.
+* Dimension Red; possibly an early version of [[Red Redemption]].
+* Divide and Conquer; seems to feature a {{e|Conquest}}-like Isaac throwing copies of himself at enemies.
+* Ghost Babel; notably features the cut [[anti:Nightwatch|Nightwatch]] enemy (see Cut Monsters below).
+* Turbo!; evidently involved {{c|Cain}}, with the game sped-up.
+
+<gallery>
+File:Unused Achievement Dimension Red.png|Unused [[Achievement]] icon for Dimension Red.
+File:Unused Achievement Divide and Conquer.png|Unused Achievement icon for Divide and Conquer.
+File:Unused Achievement Ghost Babel.png|Unused Achievement icon for Ghost Babel.
+File:Unused Achievement Turbo!.png|Unused Achievement icon for Turbo!
+</gallery>
+
+=== Unimplemented Co-op Babies ===
+Several unused achievements exist for co-op babies that never made it in.
+
+* BFF Baby
+* Duplex Baby
+* Lot Baby
+* Pawn Baby
+* Salty Baby
+
+=== Mortis ===
+An unused floor which would have been an alternative version of Corpse exists as an STB file with one room and no associated assets. In the music XML file, there is also a listing labeled as "not done" after Gehenna, which uses The Womb's theme as a placeholder. Edmund McMillen has confirmed on Twitter that there are currently no plans to add Mortis to the game.
+
+<gallery>
+File:Mortis.png|Mortis using Corpse's progress stage icon as a placeholder.
+</gallery>
+
+=== The Void ===
+An unused floor which shares its name with {{s|The Void}} can be found in the game's files and contains a variety of unique unimplemented rooms, some of which feature Repentance mechanics/bosses as well as one containing Clutch/The Possessor.
+* This new version of The Void may have been related to the Delirium revamp which Kilburn noted in a tweet.
+
+=== Curse of the Giant ===
+A new curse from the ''Antibirth'' mod, which generates a floor with special big rooms made from combining multiple small rooms together, remains in the game files in ''Repentance'', but as of yet cannot be encountered in-game. It was likely cut due to the number of unfair, extremely difficult, or even impossible rooms it could sometimes generate.
+
+=== Derpy Plum ===
+Next to Baby Plum's animation file is a file called "908.000_derpy plum.anm2" which is missing its associated sprite sheet.  There are two images of what appears to be Derpy Plum, as shared by one of the developers.
+
+[[File:Derpy Plum Attack1.gif|frameless]] [[File:Derpy Plum Death.png]]
+
+=== Beast Laugh ===
+During the Beast fight, any remaining Ultra Horsemen as well as the Beast herself can be seen in the background of the fight, with the former cheering on the current Horseman whenever Isaac takes damage. It seems that originally the Beast was intended to laugh when this occurred as well, since there are unused sprites and even a fully finished animation within the .anm2 file. However, this animation does not play in the final game.
+
+[[File:Beast Laugh.gif|frameless|320x320px]]
+
+=== Heretic Dabbing ===
+In "905.000_heretic.anm2", there is an animation called "why does this exist" showing Heretic dabbing after being defeated.
+
+[[File:Why does this exist..gif|frameless|320x320px]]
+
+== Cut ''Antibirth'' Content ==
+{{section dlc|r}}
+
+=== Cut Characters ===
+* '''Edith''' - An unused character from ''Antibirth'' that could only move through teleporting. It was confirmed early on by Ed that Edith would not be added, however, a statue that looks similar to Edith does appear rarely when using {{p|VII - The Chariot?}}. Her gameplay style was reworked and added to the game as {{c|Tainted Forgotten}}.
+
+[[File:EdithSprites.png|frameless|512x512px]][[File:EdithScarfSpriteheet.png|frameless|512x512px]][[File:EdithUnlockReplica.png|frameless|263x263px]]<gallery>
+File:Edith door.png|Edith locked character icon.
+File:Target edith.png|Edith target.
+</gallery>{{clear}}
+
+=== Cut Items ===
+The following items were planned for but ultimately cut from ''Antibirth'':
+* 613 - [[anti:Salt Shaker|Salt Shaker]] - Was [[anti:Edith|Edith]]'s active item. Edith was a planned character for ''Antibirth'', who was cut out for gameplay reasons. (It was item ID 613, but now this ID is currently unused.)
+* 630 - Lucky Seven - Was an item planned for the first ''Antibirth'' update. (It was item ID 630, but now this ID is currently unused.)
+* 648 - [[anti:Pill Crusher|Pill Crusher]] - Was an item planned for the first ''Antibirth'' update. (It was item ID 648, but now this ID is currently unused.)
+
+=== Cut Monsters ===
+Some monsters from the ''Antibirth'' mod are found in the game files but unused, while others are completely absent in ''Repentance''. Edmund McMillen confirmed that he has [https://twitter.com/edmundmcmillen/status/1486234569758035973 no plans for the currently unused Antibirth monsters].
+* It is possible to encounter these enemies along with other cut enemies with {{i|TMTRAINER}} or in the [[DELETE THIS]] challenge, although it is highly unlikely.<ref>https://www.reddit.com/r/bindingofisaac/comments/nafk69/what_enemy_is_this/</ref><ref>https://imgur.com/uNmBHzk</ref>
+
+Unused monsters:
+
+* '''[[anti:Fatty#Barfy|Barfy]]''' - A variant of [[Fatty]]. Wanders around the room, and slowly follows Isaac when he's in its line of sight. Occasionally spews clusters of green shots that leaves green creep towards Isaac.
+* '''[[anti:One Tooth#Blind Bat|Blind Bat]]''' - A variant of [[One Tooth]]. Starts out asleep. When Isaac gets close, it wakes up and chases Isaac, followed by a group of three more Blind Bats.
+* '''[[anti:One Tooth#Echo Bat|Echo Bat]]''' - A variant of One Tooth. Flies towards Isaac and periodically fires three white orbs. If an orb hits Isaac, he becomes confused and his movement is reversed for a few seconds.
+* '''[[anti:Corpse Eater|Corpse Eater]]''' - Rapidly moves around the room erratically and charges at Isaac if he comes within its line of sight. When spawned in game, it will behave like normal but only has the front end for its sprite.
+* '''[[anti:Corpse Eater#Carrion Rider|Carrion Rider]]''' - A variant of Corpse Eater. Rapidly moves around the room erratically and charges at Isaac if he comes within its line of sight. The Bony on its back shoots at Isaac. If spawned in game, acts the same as Corpse Eater, while also having a chance to spawn a charger on death.
+* '''[[anti:Necromancer|Necromancer]]''' - Summons skeleton enemies such as Bonies and Big Bonies.
+* '''[[anti:Nightwatch|Nightwatch]]''' - Invulnerable enemies. Moves in a fixed pattern or rotates in a spot. If Isaac enters its light, it will lock all doors, summon enemies, and vanish.
+* '''[[anti:Baby|Swapper]]''' - A variant of [[Baby]]. Slowly floats towards Isaac and fires purple lasers. Occasionally teleports and reappears elsewhere. Has a chance to swap positions with Isaac.
+* '''[[anti:Strifer|Strifer]]''' - Walks horizontally or vertically, attempting to line up with Isaac. Frequently fires lines of four tears forwards.
+* '''[[anti:Fatty#Vessel|Vessel]]''' - A variant of Fatty. Walks around the room and explodes into Small Maggots upon death.
+
+<gallery>
+File:Cut Enemy Barfy.png||Barfy
+File:Cut Enemy Blind Bat.png|Blind Bat
+File:Cut Enemy Echo Bat.png|Echo bat
+File:Cut Enemy Corpse Eater.png||Corpse Eater
+File:CutCarrion Rider.png||Carrion Rider
+File:Cut Enemy Necromancer.png||Necromancer
+File:Cut Enemy Nightwatch.png||Nightwatch
+File:Cut Enemy Swapper.png||Swapper
+File:Cut Enemy Strifer.png||Strifer
+File:Cut Enemy Vessel.png||Vessel
+</gallery>
+
+Removed monsters:
+
+* '''[[anti:Dumpling|Dumpling]]''' - Flies around and farts if Isaac is close, if it is damaged, and when it dies. Farts knock Isaac back and propel it forwards.
+* '''[[anti:Dumpling#Skinling|Skinling]]''' - A variant of Dumpling. Their behavior is similar but their farts are poisonous.
+* '''[[anti:Dumpling#Scab|Scab]]''' - A variant of Dumpling. Flies towards Isaac. Upon death, farts and sends out 6 blood shots in all directions.
+* '''[[anti:Spider#Fissure|Fissure]]''' - A Dumpling/Trite hybrid. Jumps towards Isaac like a Trite. When it jumps, it fires a red shot towards Isaac. Occasionally, it stands still and spews a chaotic burst of red shots.
+* '''[[anti:Screamer|Screamer]]''' - Walks slowly around the room. If Isaac gets too close, it will scream, paralyzing Isaac. It will gain a slowing aura and start charging towards him.
+* '''[[anti:Coil|Coil]]''' - Creates beams of electricity to other enemies in the room. Touching the electricity damages Isaac. Cannot be killed.
+* '''[[anti:Stillborn|Stillborn]]''' - Slowly floats towards Isaac, occasionally firing blood shots. Cannot be killed and dies when the room is cleared.
+
+<gallery>
+File:Cut Enemy Dumpling.png|Dumpling
+File:Cut Enemy Skinling.png|Skinling
+File:Cut Enemy Scab.png|Scab
+File:Cut Enemy Fissure.png|Fissure
+File:Cut Enemy Screamer.png|Screamer
+File:Cut Enemy Coil.png|Coil
+File:Cut Enemy Stillborn.png|Stillborn
+</gallery>
+
+As well, there is a cut Orange-Red champion that behaved similar to the flashing green champion, splitting once, and then having its clones split.
+
+=== Cut Pickups ===
+{| class="wikitable striped"
+! Name
+! Icon
+! Description
+|-
+| '''Rune of Kenaz'''
+| [[File:Cut Rune Kenaz Icon.png]]
+| Poisons all enemies in the room for 48 hits. Seems to deal between 1.0 and 3.5 damage per hit, but never scales off of Isaac's damage stat.
+|-
+| '''Rune of Othala'''
+| [[File:Cut Rune Othala Icon.png]]
+| Gives Isaac a random item that he already has. Items interact like how they would if you had gotten them from a pedestal.
+|-
+| '''Rune of Gebo'''
+| [[File:Cut Rune Gebo Icon.png]]
+| Interacts with any machine or Beggar in the room. Donates 7 coins to Donation Machines, plays Beggars 6 times, plays Blood Donation Machines 4 times, plays other machines 5 times. Machines and Beggars have an increased chance to pay out or explode, even paying out at only one play.
+|-
+| '''Rune of Fehu'''
+| [[File:Cut Rune Fehu Icon.png]]
+| Turns all pickups or items in the room into coins. Coins generated are equal to how much the item would be worth in a shop (Items give 15 cents, trinkets give 5 cents, Black Hearts give 6 cents, 1+1 Bombs/Keys give 10 cents). Does not work on Chests, open or closed, unless the chest has a pedestal item. Does not work with pickups or items not on the ground (Shop items, Devil deals).
+* This effect has been implemented in the form of {{P|IX - The Hermit?|n}} inverted tarot card.
+|-
+| '''Immortal Hearts'''
+| [[File:Cut Immortal Heart.png|40px]]
+| Take two hits to be fully depleted and will regenerate from half to full upon clearing a room.
+|-
+|}
+
+<gallery>
+File:Cut_Achievement_Rune_of_Kenaz.png|Cut achievement icon for Rune of Kenaz.
+File:Cut_Achievement_Rune_of_Othala.png|Cut achievement icon for Rune of Othala.
+File:Cut_Achievement_Rune_of_Gebo.png|Cut achievement icon for Rune of Gebo.
+File:Cut_Achievement_Rune_of_Fehu.png|Cut achievement icon for Rune of Fehu.
+</gallery>
+
+=== Cut Obstacles ===
+* '''Red TNT -''' Red TNT barrels explode when destroyed. Unlike regular TNT barrels, red TNT only needs to be shot once to be detonated. They also detonate if Isaac or an enemy walks into it.
+<gallery>
+File:Red TNT.png|Red TNT spritesheet
+</gallery>
+
+=== Cut Challenges ===
+* '''Turbo!''': Starts the game with Cain. The game is significantly sped up.
+
+<gallery>
+File:Cut_Challenge_Turbo.png|Cut Turbo! achievement icon.
+</gallery>
+{{dlc clear}}
+
+== References ==
+<references />
+
+{{nav|fr=Contenu non implémenté}}

@@ -1,0 +1,219 @@
+{{infobox entity
+ | dlc     = a
+ | name    = Greed Donation Machine
+ | id      = 6
+ | variant = 11
+}}
+
+The '''Greed Donation Machine''' appears after every [[Ultra Greed]] fight in [[Greed mode]] or {{dlc|a+}} [[Greedier mode]]. Upon touching the Greed Donation Machine, Isaac will donate a coin, causing the displayed coin total to increment. Similar to the [[Donation Machine]], the amount of coins donated will persist between all Greed mode runs. Donating money to the Greed Donation Machine unlocks achievements and items.
+
+== Jam Chance ==
+* The machine can be jammed, like the [[Donation Machine]], when adding [[coin]]s. However, rather than a flat 5% chance, the chance increases the more money is put into the machine with a specific [[character]].
+* Each character's overall donation status is tracked separately across all playthroughs, so each character has a separate jam chance.
+** Characters introduced by mods have a 99.9% (displayed as 100%) chance to jam the machine
+** The jam chance maxes out at 20% at 200 coins total in Greed mode, and 1% at 55 coins total in Greedier mode.
+** The jam chance updates in real time, so even with a character that has never donated to the donation machine prior, the machine will most likely eventually jam given enough donations.
+** The amount of coins added will persist across both Greed and Greedier runs.
+** In multiplayer, the HUD will display the jam chance of Player 1's character, but the machine itself uses the jam chance of the character that touches it.
+* Like the [[Donation Machine]], if a 1,000th coin is donated, the Greed Donation Machine will explode, dropping several dimes. However, unlike the Donation Machine, donating the 1,000th coin is required to fully complete the game.
+* The formula used to convert the total coins donated by the current character to a jam percentage is <math display="inline">floor(0.2*min(100.0, exp(0.023*Coins)-1)+0.5)</math>.
+* If the Greed Donation machine is spawned outside of the [[Ultra Greed]] Arena then the machine cannot jam.
+** Greedier Mode further caps the percentage to 1% after the calculations.
+* The formula results in the below table of displayed percentages:
+
+{| class="wikitable mw-collapsible mw-collapsed"
+ ! Coins Donated
+ ! Greed Mode Jam Chance
+ ! Greedier Mode Jam Chance
+ |-
+ | 0-54
+ | 0%
+ | 0%
+ |-
+ | 55-93
+ | 1%
+ | rowspan="20" style="vertical-align:top;" | 1%
+ |-
+ | 94-113
+ | 2%
+ |-
+ | 114-126
+ | 3%
+ |-
+ | 127-137
+ | 4%
+ |-
+ | 138-145
+ | 5%
+ |-
+ |146-152
+ |6%
+ |-
+ |153-158
+ |7%
+ |-
+ |159-164
+ |8%
+ |-
+ |165-168
+ |9%
+ |-
+ |169-173
+ |10%
+ |-
+ |174-176
+ |11%
+ |-
+ |177-180
+ |12%
+ |-
+ |181-183
+ |13%
+ |-
+ |184-186
+ |14%
+ |-
+ |187-189
+ |15%
+ |-
+ |190-192
+ |16%
+ |-
+ |193-194
+ |17%
+ |-
+ |195-197
+ |18%
+ |-
+ |198-199
+ |19%
+ |-
+ |200+
+ |20%
+|}
+
+== Greed Donation Machine Rewards ==
+{{achievement text | Lucky Pennies, Special Hanging Shopkeepers, Wooden Nickel, Cain holds Paperclip, Everything is Terrible 2!!!, Special Shopkeepers, Eve now holds Razor Blade, Greedier!, Store Key, Lost holds Holy Mantle, Generosity, Keeper }}
+
+== Greed Donation Machine Tricks ==
+* Here are a few ways to drastically shorten the time spent on Greed mode by allowing the player to donate as many coins as possible in a single run.
+
+=== Infinite Money ===
+==== Via the 2 of Diamonds ====
+# Acquire a {{p|2 of Diamonds}} card and  {{i|Blank Card}} (which must be unlocked first).
+# Find a [[Lil' Battery]] for sale. At least 6 or {{dlc|r}} 11 coins are needed to exploit the {{p|2 of Diamonds}} card (11 or {{dlc|r}} 21 coins are needed if the{{i|Blank Card}} is completely uncharged).
+# Use the Blank Card to double your money then buy the Lil' Battery to recharge the Blank Card. {{Dlc|r}}You need to buy 2 lil' Batteries because of recharge time 12 rooms instead of 4 rooms (see the {{i|Blank Card}} page); {{t|Butter!}} makes Blank Card revert back to a 4 room charge, making the process as how it was before Repentance. Restock will cause the Lil' Battery to constantly be restocking in the Shop. This allows Isaac to generate an infinite amount of money.
+# {{dlc|nr}} Jera can likewise be exploited in the same manner with coins on the ground and can duplicate Lil' Batteries in the shop for ease of exploitation. See {{i|Clear Rune}} (must be unlocked)
+
+This method can be used to quickly gain the Chaos Card as well:
+* Use a {{i|Deck of Cards}} and buy Lil' Batteries until you draw a Chaos Card.
+** '''Make sure your coin count does not drop below 11 while doing this!'''
+
+==== Via Head of the Keeper ====
+* Acquire the {{i|Head of the Keeper}} and keep some enemy spawning monster(s) (like [[Ulcer]]) alive.
+* Keep killing spawned monsters until the total amount of desired coins has been spawned from your coin tears.
+** However Head of the Keeper will make the fight against Ultra Greed more difficult by constantly producing coins next to him, allowing him to recover some HP regularly.
+* Also, your tears will blend in with all the coins Ultra Greed produced, making it difficult to know who is shooting whom. {{dlc|r}}The Bullet Visibility option can assist with the blending in of the tears.
+
+==== Via the D20 ====
+* Buy the D20.
+* Kill an entire floor without picking up money.
+* Restock the Shop until a [[Lil' Battery]] is present.
+* Reroll the money. (DON'T TOUCH ANYTHING YET!)
+* Buy the [[Lil' Battery]].
+* Open all the chests.
+* If you don't already have at least 5 cents, pick up coins until you have at least 5 cents.
+* Reroll and repeat the process.
+* This method is less viable in Repentance, since empty chests no longer can be rerolled.
+* This method is more difficult to start in Repentance+, since D20 is now very rare in the {{ip|Greed Shop|text=Greed Shop pool}}.
+
+After a couple of rerolls, you will have 99 of all consumables. This is improved by also having {{i|Mom's Key}}, as you will also get a lot of items from [[Locked Chest]]s.
+
+==== Via Swallowed Penny or Piggy Bank ====
+* Acquire the {{t|Swallowed Penny}} or {{i|Piggy Bank}}.
+* Acquire any method to regenerate health: {{i|Pyromaniac}} with sufficient/infinite bombs (with sufficient bombs, there's high probability you'll manage to find any number of combos to continue anyway), {{t|Bloody Penny}}, {{i|Scapular}}, Habit with any number of consumable-spawning items, etc.
+* Alternatively, acquire {{i|Humbleing Bundle}}, which makes you drop more coins than it costs to heal, [[Steam Sale]], which lowers the margin on healing, or {{i|Maggy's Bow}}, which would heal you for more.
+* Take damage, collect coins and health, repeat as required.
+* Be careful not to get damage-prevention effects when doing this: Holy Mantle prevents the curse room from damaging you for this purpose, Yes Mother? transformation tend to destroy fires if you aren't careful, {{i|Pyromaniac}} prevents you from using bombs for self-damage, flying prevents you from taking damage from spikes, etc.
+* BUT, keep in mind you can always stand in the doorway of a curse room to take damage without exiting the current room (if you have flight this will only work when you stand in the door way from inside the curse room). {{dlc+|r}} The spikes can be removed with {{T|Flat File}}, so be cautious.{{dlc-}}
+
+==== Via IV Bag ====
+* Manage to start the game with Eden holding {{i|IV Bag}}.
+* Have at least 2 Red Heart containers.
+* Keep using the [[IV Bag]] and filling Red Hearts from the Shop. The price of Red Hearts is 3 cents and usually, the [[IV Bag]] gives you 1 or 2 cents per half a heart. Though part of this depends on luck (literally), in the long run, you will be able to get a margin since the [[IV Bag]] gives you Nickels or Dimes time by time.
+* Use the margin to purchase collectible items or trinkets.
+* {{i|PHD}}, {{t|Swallowed Penny}}, {{t|Counterfeit Penny}}, {{t|Bloody Penny}} will guarantee success on this method and cut down the effort considerably.
+* {{i|Placenta}} can be used as an emergency option.
+* If there is the [[Lil' Battery]] in the Shop you will be able to produce all the trinkets once you encounter {{i|Mom's Box}}.
+
+=== Notes on Farming Methods ===
+* Avoid the following items whenever possible:
+** DO <u>NOT</u> get {{i|Missing No.}}. It will cause you to reroll your items and ruin the entire strategy.
+** DO <u>NOT</u> get the {{i|Little Baggy}} at all, as it will replace your Two of Diamonds and/or chaos cards.
+** {{i|Chaos}}: Will make it a lot harder (nearly impossible) to find {{i|Glowing Hourglass}}, it's best to find it before picking up Chaos.
+** {{i|Marked}}: Will force you to shoot tears, which with too many items may result in the game repeatedly crashing, not allowing you to continue. {{dlc|r}}Shooting can be toggled on and off.
+* Resetting the Ultra Greed fight many times may cause a bug that strips you of all your items. When this happens, ''close the program via Task Manager. DO NOT use the Hourglass or exit the game normally.'' If you do, the game will save your progress and you will be permanently stripped of your items.
+* Be extremely careful when the giant chest spawns since touching it (either by walking into it or being knocked into it by an explosive blast) will immediately end your run.
+* Spread your runs out across multiple characters.
+** Since the Greed Donation Machine's chance of jamming is character-specific it's a good idea to play multiple characters to decrease the chance of the Greed Donation Machine jamming. If you're having a hard time with the above methods or just don't want to do them, switch characters when you notice the Greed Donation Machine starts jamming regularly on you.
+
+=== Glowing Hourglass Method ===
+{{dlc|na+}} '''Methods based on {{i|Glowing Hourglass}} work only in Afterbirth and have been patched in later DLCs.'''
+
+This method centers around the fact that the Greed Donation Machine is unjammed every time Ultra Greed is killed but the coin count doesn't reset after the {{i|Glowing Hourglass}} is used.
+In order to make this possible, you will need some way to recharge your spacebar item, since you will only get one recharge every time you kill Ultra Greed. This is also a very good method to farm as many [[Eden]] tokens as you want, as one token will be granted for each Ultra Greed kill.
+
+# Buy the Glowing Hourglass.
+#* The Glowing Hourglass is very rare, but it can be found easier by exhausting the shop pool with any of the Infinite Money methods found above.
+#* Since {{i|Chaos}} causes each newly generated item to be chosen from a randomly selected item pool, acquiring it should be avoided. Glowing Hourglass is in only one item pool in Greed Mode.
+# The fight with Ultra Greed '''has to be started with a fully charged Glowing Hourglass'''.
+From here is where you can start donating infinitely:
+# Kill Ultra Greed. If the battle looks like a loss, the Glowing Hourglass can be used once to reset the fight, but the next time Ultra Greed has to be defeated in order to keep the combo up.
+#* A double-charged Hourglass with {{i|The Battery}} allows infinite uses of the Hourglass, allowing you to reset as much as you want any time.
+# Donate money to the Greed Donation Machine until the machine jams.
+# Use the Glowing Hourglass to reset back to the room before Ultra Greed.
+
+==== Acquiring the [[Chaos Card]] ====
+The Chaos Card (if unlocked already) will allow the player to instantly kill Ultra Greed, cutting a large amount of time otherwise needed to defeat him.
+* Keep buying cards from the shop until a Chaos Card shows up.
+* Use a {{i|Deck of Cards}} and buy Batteries until you draw a Chaos Card.
+** Any [[Lil' Battery|Lil' Batteries]] and Battery Items will further increase the effectiveness of the Deck of Cards.
+
+==== Faster alternative method using the [[0 - The Fool]] card ====
+* Acquire an infinite {{i|Glowing Hourglass}} (such as by using {{i|The Battery}}, {{i|Habit}} with any form of self-damage, Glitter Bombs, or the 48 Hour Energy pill), but bring 0 - The Fool card instead of the Chaos Card.
+* Kill Ultra Greed once, then run near the bottom of the room to spawn the machine by where the door was, but do NOT donate to the machine.
+* Use 0 - The Fool card, re-enter the Boss Room, Ultra Greed will be dead but the machine will still be there, donate to the machine until it breaks.
+* Use The Glowing Hourglass, re-enter the room, donate again. Repeat.
+
+=== Force Quit Method ===
+{{plat|Switch}} '''This method only applies to the cartridge Switch version, others have been patched.'''
+
+The Force Quit method is an easy way to fill up the Greed Donation Machine. It follows the same exploit as the [[Donation Machine]]. The game saves the Greed and Donation Machine data separately from your main save file; the Machine data is only changed and saved AFTER you leave the room. Requisite is any item or card that allows you to teleport outside the Boss Room. There is no need for Glowing Hourglass, Blank Card, or ? Card for this method as you can reset your items and keep the coin count going higher.
+* Defeat Ultra Greed(ier).
+* After the Greed Donation Machine appears, exit to the start menu normally to save your game.
+* Continue the game.
+* Donate money until machine jams or you run out of coins.
+* Teleport outside the room. Now the game will save the change in coins only.
+* Force quit the game
+** Nintendo Switch: eject and reinsert the cartridge
+* Restart and continue the game. Your save game from the 2nd step will be restored. It should look the same as before: Greed Donation Machine is unjammed and your teleport item/card is still there, except the starting coin count on the Greed Donation Machine is now higher.
+* Donate money. Teleport. Force Quit. Repeat.
+* Note: The Force Quit Method has been patched except for the cartridge on Nintendo Switch. The Greed Donation Machine will no longer be there when you return to the game after force quitting, neither will the item/card, which you used to teleport with.
+
+== Gallery ==
+<gallery>
+File:Greed Donation Machine Jammed.png|A jammed Greed Donation Machine.
+File:Greed Donation Machine Broken.png|A broken Greed Donation Machine.
+</gallery>
+
+== Trivia ==
+* Due to a bug, the Greed Donation Machine could initially only hold a maximum of 109 coins, blowing up whenever another coin was inserted. However, this was fixed in a later update.
+** The number 109 was part of the [[Keeper_ARG|ARG]] that led to the addition of The Keeper, after the initial glitch that caused it. Despite popular belief, the number has nothing to do with the Lost being datamined.<ref>https://twitter.com/edmundmcmillen/status/1026548525113307136?s=19</ref>
+* The icon for the Generosity achievement is different on Steam, featuring several black lines. This is a coded message and was part of the community ARG to unlock {{c|Keeper}}.
+
+== References ==
+{{reflist}}
+
+{{nav|greed machine unlock|fr=Boîte à Dons d'Avarice}}
+[[Category:Objects]]
+[[Category:Mechanics]]

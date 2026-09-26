@@ -1,0 +1,363 @@
+{{header greed bosses}}
+{{page dlc|a}}
+
+== {{s|Womb}} ==
+=== All Boss Waves ===
+{| style="width: 70%; text-align: center"
+ | [[file:Boss War portrait.png|center|link=War]]
+ | [[file:Boss Lokii portrait.png|center|link=Lokii]]
+ | [[file:Boss Scolex portrait.png|center|link=Scolex]]
+ |-
+ | [[War]] {{unlockable}}
+ | [[Lokii]]
+ | [[Scolex]]
+ |}
+
+=== Boss Wave 1 Specific ===
+{| style="width: 70%; text-align: center"
+ | [[file:Boss Dingle portrait.png|center|link=Dingle]]
+ | [[file:Boss Gurglings portrait.png|center|link=Gurglings]]
+ | [[file:Boss Gurdy portrait.png|center|link=Gurdy]]
+ | [[file:Boss Gurdy Jr. portrait.png|link=Gurdy Jr.]]
+ |-
+ | [[Dingle]]
+ | [[Gurglings]]
+ | [[Gurdy]]
+ | [[Gurdy Jr.]]
+ |-
+ |[[file:Boss Polycephalus portrait.png|center|link=Polycephalus]]
+ |[[file:Boss C.H.A.D. portrait.png|center|link=C.H.A.D.]]
+ |[[file:Boss The Stain portrait.png|center|link=The Stain]]
+ |[[file:Boss The Gate portrait.png|center|link=The Gate]]
+ |-
+ |[[Polycephalus]]
+ |[[C.H.A.D.]] {{unlockable}}
+ |[[The Stain]] {{unlockable}}
+ |[[The Gate]]
+ |-
+ | colspan="2" |[[file:Boss Loki portrait.png|center|link=Loki]]
+ | colspan="2" |[[file:Boss Brownie portrait.png|center|link=Brownie]]
+ |-
+ | colspan="2" |[[Loki]]
+ | colspan="2" |[[Brownie]] {{unlockable}}
+ |-
+ |[[file:boss Super Envy.png|80px|center|link=Super Envy]]
+ |[[file:boss Super Gluttony.png|80px|center|link=Super Gluttony]]
+ |[[file:boss Super Wrath.png|80px|center|link=Super Wrath]]
+ |[[file:boss Super Sloth.png|80px|center|link=Super Sloth]]
+ |-
+ |[[Super Envy]]
+ |[[Super Gluttony]]
+ |[[Super Wrath]]
+ |[[Super Sloth]]
+ |}
+
+=== Boss Wave 2 Specific ===
+{| style="width: 70%; text-align: center"
+ |[[file:Boss Gurdy Jr. portrait.png|link=Gurdy Jr.]]
+ |[[file:Boss C.H.A.D. portrait.png|center|link=C.H.A.D.]]
+ |[[file:Boss Loki portrait.png|center|link=Loki]]
+ |[[file:Boss Monstro II portrait.png|center|link=Monstro II]]
+ |-
+ |[[Gurdy Jr.]]
+ |[[C.H.A.D.]] {{unlockable}}
+ |[[Loki]]
+ |[[Monstro II]]
+ |-
+ | colspan="4" |[[file:Boss Mr. Fred portrait.png|center|link=Mr. Fred]]
+ |-
+ | colspan="4" |[[Mr. Fred]]
+ |-
+ | colspan="4" |[[file:boss Super Wrath.png|80px|center|link=Super Wrath]]
+ |-
+ | colspan="4" |[[Super Wrath]]
+ |}
+
+=== Nightmare Wave Specific ===
+{| style="width: 70%; text-align: center"
+ |[[file:Boss Gurglings portrait.png|center|link=Gurglings]]
+ |
+[[file:Boss Gurdy portrait.png|center|link=Gurdy]]
+ |[[file:Boss Polycephalus portrait.png|center|link=Polycephalus]]
+ |[[file:Boss The Stain portrait.png|center|link=The Stain]]
+ |-
+ |[[Gurglings]]
+ |[[Gurdy]]
+ |[[Polycephalus]]
+ |[[The Stain]] {{unlockable}}
+ |-
+ |[[file:Boss The Bloat portrait.png|center|link=The Bloat]]
+ |[[file:Boss The Gate portrait.png|center|link=The Gate]]
+ |[[file:Boss Monstro II portrait.png|center|link=Monstro II]]
+ |[[file:Boss Brownie portrait.png|center|link=Brownie]]
+ |-
+ |[[The Bloat]]
+ |[[The Gate]]
+ |[[Monstro II]]
+ |[[Brownie]] {{unlockable}}
+ |-
+ | colspan="4" style="padding:0" |
+{| style="width: 100%"
+ |[[file:Boss Mr. Fred portrait.png|center|link=Mr. Fred]]
+ |[[file:Boss Mom's Heart portrait.png|center|link=Mom's Heart]]
+ |[[file:boss It Lives! portrait.png|center|link=It Lives!]]
+ |-
+ |[[Mr. Fred]]
+ |[[Mom's Heart]]
+ |[[It Lives!]] {{unlockable}}
+|}
+ |-
+ | colspan="4" |[[file:boss Super Envy.png|80px|center|link=Super Envy]]
+ |-
+ | colspan="4" |[[Super Envy]]
+ |}
+
+== {{dlc+|r}} {{s|Utero}} ==
+=== All Boss Waves ===
+{| style="width: 70%; text-align: center"
+ |[[file:Boss The Bloat portrait.png|center|link=The Bloat]]
+ |[[file:Boss Mask of Infamy portrait.png|center|link=Mask of Infamy]]
+ |[[file:Boss War portrait.png|center|link=War]]
+ |-
+ |[[The Bloat]]
+ |[[Mask of Infamy]]
+ |[[War]] {{unlockable}}
+ |}
+
+=== Boss Wave 1 Specific ===
+{| style="width: 70%; text-align: center"
+ |[[file:Boss Blighted Ovum portrait.png|center|link=Blighted Ovum]]
+ | [[file:Boss Dingle portrait.png|center|link=Dingle]]
+ |[[file:Boss Gurglings portrait.png|center|link=Gurglings]]
+ |[[file:Boss Gurdy Jr. portrait.png|link=Gurdy Jr.]]
+ |-
+ |[[Blighted Ovum]]
+ |[[Dingle]]
+ |[[Gurglings]]
+ |[[Gurdy Jr.]]
+ |-
+ |[[file:Boss Polycephalus portrait.png|center|link=Polycephalus]]
+ |[[file:Boss The Forsaken portrait.png|center|link=The Forsaken]]
+ |[[file:Boss The Stain portrait.png|center|link=The Stain]]
+ |[[File:Boss The Cage portrait.png|center|link=The Cage]]
+ |-
+ |[[Polycephalus]]
+ |[[The Forsaken]] {{unlockable}}
+ |[[The Stain]] {{unlockable}}
+ |[[The Cage]]
+ |-
+ | colspan="2" |[[file:Boss The Gate portrait.png|center|link=The Gate]]
+ | colspan="2" |[[file:Boss Brownie portrait.png|center|link=Brownie]]
+ |-
+ | colspan="2" |[[The Gate]]
+ | colspan="2" |[[Brownie]] {{unlockable}}
+ |-
+ |[[file:boss Super Envy.png|80px|center|link=Super Envy]]
+ |[[file:boss Super Gluttony.png|80px|center|link=Super Gluttony]]
+ |[[file:boss Super Wrath.png|80px|center|link=Super Wrath]]
+ |[[file:boss Super Sloth.png|80px|center|link=Super Sloth]]
+ |-
+ |[[Super Envy]]
+ |[[Super Gluttony]]
+ |[[Super Wrath]]
+ |[[Super Sloth]]
+ |}
+
+=== Boss Wave 2 Specific ===
+{| style="width: 70%; text-align: center"
+ |[[file:Boss Carrion Queen portrait.png|center|link=Carrion Queen]]
+ |[[file:Boss Gurdy Jr. portrait.png|link=Gurdy Jr.]]
+ | [[file:Boss Polycephalus portrait.png|center|link=Polycephalus]]
+ | [[file:Boss Monstro II portrait.png|center|link=Monstro II]]
+ |-
+ |[[Carrion Queen]]
+ |[[Gurdy Jr.]]
+ |[[Polycephalus]]
+ |[[Monstro II]]
+ |-
+ | colspan="4" |[[file:boss Super Wrath.png|80px|center|link=Super Wrath]]
+ |-
+ | colspan="4" |[[Super Wrath]]
+ |}
+
+=== Nightmare Wave Specific ===
+{| style="width: 70%; text-align: center"
+ |[[file:Boss Carrion Queen portrait.png|center|link=Carrion Queen]]
+ |[[file:Boss Polycephalus portrait.png|center|link=Polycephalus]]
+ |[[file:Boss The Stain portrait.png|center|link=The Stain]]
+ |[[File:Boss The Cage portrait.png|center|link=The Cage]]
+ |-
+ |[[Carrion Queen]]
+ |[[Polycephalus]]
+ |[[The Stain]] {{unlockable}}
+ |[[The Cage]]
+ |-
+ |[[file:Boss The Gate portrait.png|center|link=The Gate]]
+ |[[file:Boss Monstro II portrait.png|center|link=Monstro II]]
+ |[[file:Boss Brownie portrait.png|center|link=Brownie]]
+ |[[file:Boss Mr. Fred portrait.png|center|link=Mr. Fred]]
+ |-
+ |[[The Gate]]
+ |[[Monstro II]]
+ |[[Brownie]] {{unlockable}}
+ |[[Mr. Fred]]
+ |-
+ | colspan="4" style="padding:0" |
+{| style="width: 100%"
+ |[[file:Boss Scolex portrait.png|center|link=Scolex]]
+ |[[file:Boss Mom's Heart portrait.png|center|link=Mom's Heart]]
+ |[[file:boss It Lives! portrait.png|center|link=It Lives!]]
+ |-
+ |[[Scolex]]
+ |[[Mom's Heart]]
+ |[[It Lives!]] {{unlockable}}
+|}
+ |-
+ | colspan="4" |[[file:boss Ultra Pride.png|128px|center|link=Ultra Pride]]
+ |-
+ | colspan="4" |[[Ultra Pride]]
+ |}
+{{dlc-}}
+
+== {{dlc+|r}} {{s|Scarred Womb}} ==
+=== All Boss Waves ===
+{| style="width: 70%; text-align: center"
+ |[[file:Boss Gurdy portrait.png|center|link=Gurdy]]
+ |[[file:Boss Polycephalus portrait.png|center|link=Polycephalus]]
+ | [[File:Boss The Cage portrait.png|center|link=The Cage]]
+ |[[file:Boss War portrait.png|center|link=War]]
+ |-
+ |[[Gurdy]]
+ | [[Polycephalus]]
+ |
+[[The Cage]]
+ | [[War]] {{unlockable}}
+ |-
+ | colspan="2" |[[file:Boss Sisters Vis portrait.png|center|link=Sisters Vis]]
+ | colspan="2" |[[file:Boss Lokii portrait.png|center|link=Lokii]]
+ |-
+ | colspan="2" |[[Sisters Vis]] {{unlockable}}
+ | colspan="2" |[[Lokii]]
+ |}
+
+=== Boss Wave 1 Specific ===
+{| style="width: 70%; text-align: center"
+ | [[file:Boss Blighted Ovum portrait.png|center|link=Blighted Ovum]]
+ |[[file:Boss Dingle portrait.png|center|link=Dingle]]
+ |[[file:Boss Gurglings portrait.png|center|link=Gurglings]]
+ |[[file:Boss Gurdy Jr. portrait.png|link=Gurdy Jr.]]
+ |-
+ |[[Blighted Ovum]]
+ |[[Dingle]]
+ |[[Gurglings]]
+ |[[Gurdy Jr.]]
+ |-
+ |[[File:Boss Fistula portrait.png|center|link=Fistula]]
+ |[[file:Boss C.H.A.D. portrait.png|center|link=C.H.A.D.]]
+ |[[file:Boss The Forsaken portrait.png|center|link=The Forsaken]]
+ |[[file:Boss The Stain portrait.png|center|link=The Stain]]
+ |-
+ |[[Fistula]]
+ |[[C.H.A.D.]] {{unlockable}}
+ |[[The Forsaken]] {{unlockable}}
+ |[[The Stain]] {{unlockable}}
+ |-
+ |[[file:Boss The Bloat portrait.png|center|link=The Bloat]]
+ |[[file:Boss The Gate portrait.png|center|link=The Gate]]
+ |[[file:Boss Loki portrait.png|center|link=Loki]]
+ |[[file:Boss Mask of Infamy portrait.png|center|link=Mask of Infamy]]
+ |-
+ |[[The Bloat]]
+ |[[The Gate]]
+ |[[Loki]]
+ |[[Mask of Infamy]]
+ |-
+ | colspan="4" |[[file:Boss Brownie portrait.png|center|link=Brownie]]
+ |-
+ | colspan="4" |[[Brownie]] {{unlockable}}
+ |-
+ |[[file:boss Super Envy.png|80px|center|link=Super Envy]]
+ |[[file:boss Super Gluttony.png|80px|center|link=Super Gluttony]]
+ |[[file:boss Super Wrath.png|80px|center|link=Super Wrath]]
+ |[[file:boss Super Sloth.png|80px|center|link=Super Sloth]]
+ |-
+ |[[Super Envy]]
+ |[[Super Gluttony]]
+ |[[Super Wrath]]
+ |[[Super Sloth]]
+ |}
+
+=== Boss Wave 2 Specific ===
+{| style="width: 70%; text-align: center"
+ |[[file:Boss Carrion Queen portrait.png|center|link=Carrion Queen]]
+ |[[file:Boss Gurdy Jr. portrait.png|link=Gurdy Jr.]]
+ |[[file:Boss C.H.A.D. portrait.png|center|link=C.H.A.D.]]
+ |[[file:Boss The Bloat portrait.png|center|link=The Bloat]]
+ |-
+ |[[Carrion Queen]]
+ |[[Gurdy Jr.]]
+ |[[C.H.A.D.]] {{unlockable}}
+ |[[The Bloat]]
+ |-
+ |[[file:Boss Loki portrait.png|center|link=Loki]]
+ |[[file:Boss Monstro II portrait.png|center|link=Monstro II]]
+ |[[file:Boss Mr. Fred portrait.png|center|link=Mr. Fred]]
+ |[[file:Boss Scolex portrait.png|center|link=Scolex]]
+ |-
+ |[[Loki]]
+ |[[Monstro II]]
+ |[[Mr. Fred]]
+ |[[Scolex]]
+ |-
+ | colspan="4" |[[file:boss Super Wrath.png|80px|center|link=Super Wrath]]
+ |-
+ | colspan="4" |[[Super Wrath]]
+ |}
+
+=== Nightmare Wave Specific ===
+{| style="width: 70%; text-align: center"
+ |[[file:Boss Carrion Queen portrait.png|center|link=Carrion Queen]]
+ | [[file:Boss Gurdy Jr. portrait.png|link=Gurdy Jr.]]
+ |[[file:Boss War portrait.png|center|link=War]]
+ |[[file:Boss The Stain portrait.png|center|link=The Stain]]
+ |-
+ |[[Carrion Queen]]
+ |[[Gurdy Jr.]]
+ |[[War]] {{unlockable}}
+ |
+[[The Stain]] {{unlockable}}
+ |-
+ |[[file:Boss The Bloat portrait.png|center|link=The Bloat]]
+ |[[file:Boss The Gate portrait.png|center|link=The Gate]]
+ |[[file:Boss Mask of Infamy portrait.png|center|link=Mask of Infamy]]
+ |[[file:Boss Monstro II portrait.png|center|link=Monstro II]]
+ |-
+ |[[The Bloat]]
+ |[[The Gate]]
+ |[[Mask of Infamy]]
+ |[[Monstro II]]
+ |-
+ |[[file:Boss Brownie portrait.png|center|link=Brownie]]
+ |[[file:Boss Mr. Fred portrait.png|center|link=Mr. Fred]]
+ |[[file:Boss Scolex portrait.png|center|link=Scolex]]
+ |[[file:Boss The Matriarch portrait.png|center|link=The Matriarch]]
+ |-
+ |[[Brownie]] {{unlockable}}
+ |[[Mr. Fred]]
+ |[[Scolex]]
+ |[[The Matriarch]] {{unlockable}}
+ |-
+ | colspan="2" |[[file:Boss Mom's Heart portrait.png|center|link=Mom's Heart]]
+ | colspan="2" |[[file:boss It Lives! portrait.png|center|link=It Lives!]]
+ |-
+ | colspan="2" |[[Mom's Heart]]
+ | colspan="2" |[[It Lives!]] {{unlockable}}
+ |-
+ | colspan="4" |[[file:boss Ultra Pride.png|128px|center|link=Ultra Pride]]
+ |-
+ | colspan="4" |[[Ultra Pride]]
+ |}
+{{dlc-}}
+
+{{nav|boss|fr=Avarice Chapitre 4 (Boss)}}
+[[Category:Bosses]]

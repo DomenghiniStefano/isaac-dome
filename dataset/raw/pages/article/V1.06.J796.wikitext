@@ -1,0 +1,61 @@
+{{infobox version
+ | dlc   = r
+ | steam = 3102392357023665893
+ | date  = 2021-04-08
+}}
+
+== Documented Changes ==
+=== General Fixes ===
+* Fixed a crash caused by teleporting in {{s|Mines}}/{{s|Ashpit}} II (for real this time!)
+* Fixed {{I|Death Certificate}} crashing the game when used in {{s|The Void}}
+* Fixed {{I|Member Card}} and {{I|The Stairway}} crashing in [[Greed Mode]]
+* Fixed a rare crash caused by using {{I|Potato Peeler}} right as the player is respawning from an extra life
+* Fixed a softlock caused by white champion [[Fatty#Peeping Fatty|Peeping Fatties]]
+* Fixed a potential softlock when fighting a certain version of [[Death (Boss)|Death]]
+* Fixed a softlock caused by trapdoors incorrectly staying closed on XL floors in {{A|Isaac's Awakening|3=-}}
+* Fixed a softlock caused by entering an XL floor on a certain secret path
+* Fixed player spawning in the wrong spot in a special version of {{s|Basement}} I, sometimes resulting in unavoidable damage
+* Fixed a certain red door closing itself when it shouldn't
+* Fixed an issue preventing {{I|Dad's Key}} and {{T|Filigree Feather}} from being unlocked
+* Fixed alternate credits music not playing after unlocking Blue Baby
+* Fixed certain voices not stopping when quitting or restarting a run
+* Fixed [[Confessional]]s not paying out with Angel room items as intended
+* Fixed {{C|The Lost}}'s {{I|Birthright}} not blacklisting items as intended
+* Fixed familiars spawned by {{I|Giant Cell}} causing {{C|The Forgotten}} to be pushed back when hitting enemies with their melee attack
+* Fixed the {{I|Eraser}} causing a rare crash in the [[Dogma|D____]] fight
+* [[Health Up]] and [[Health Down]] [[Pills|horse pills]] now play their correct announcer lines
+* Fixed canceling the {{I|Red Candle}} causing it to briefly appear as {{I|The Candle}} in Isaac's hands before disappearing
+* Fixed a certain final boss not counting as "beating the game" and not granting {{C|Eden}} tokens
+* Fixed [[Tainted Eden|""Eden""]] not taking Eden tokens away when restarting a run
+* Fixed a certain dark twin still attempting to attack the player during certain cutscenes
+* Fixed {{I|Brimstone Bombs}} causing self-damage in the {{A|Hot Potato|3=x}}
+* Fixed being able to create trapdoors in {{s|Corpse}} II or Corpse XL
+* {{I|Red Key}} can no longer create doors to the [[I AM ERROR|Error Room]] on final floors
+* Fixed double-tap items having flipped controls in a certain secret area
+* Fixed active items obtained in a certain secret area having no charge
+* Fixed {{I|Ventricle Razor}} being able to create portals between dimensions (i.e. some secret areas)
+* Fixed being able to teleport out of a certain final boss fight using {{I|Ventricle Razor}}
+* Fixed another bug that prevented daily runs from ending properly
+* Fixed tarot card dropped from a certain special rock sometimes turning into a [[sack]] if the player has {{I|Sack Head}}
+* This same tarot card will now turn into [[Telepills]] if the player has{{I|Little Baggy}}
+* Fixed R Key not resetting the game properly and causing softlocks on certain paths
+
+=== Changes and Improvements ===
+* Increased the drop rate of [[soul heart]]s from [[Fire Places#Blue Fire Place|blue fires]] from 10% back to 25% in Normal Mode
+* Increased lighting around the player in [[Curse of Darkness]]
+* Soul heart devil deals can now be taken even if the player cannot afford them
+* Removed double tap trigger from {{I|Dark Arts}} since it could often be accidentally triggered
+* {{I|Dark Bum}} can no longer be found by [[Tainted Lost|""The Lost""]]
+* {{I|Dark Bum}} and {{I|Brimstone Bombs}} now cost 1 heart container in deals with the devil
+* Added a few more missing [[Bestiary Repentance|Bestiary]] entries
+* {{I|Genesis}} room will now contain a trapdoor back to the starting room on final floors
+* Helper summoned by {{P|Soul of the Forgotten}} now deals more damage and constantly swings its bone as long as the attack buttons are held down instead of charging a bone throw
+* [[Bombs]] thrown by a certain end game boss now interact as expected with {{T|Safety Scissors}}
+* Added a charge bar to {{I|Sumptorium}} to indicate when a blood clot will be spawned
+* White fires no longer trigger on-hit effects
+* Sacrifice room spikes will no longer teleport the player to the {{s|Dark Room}} when on a challenge or daily run that does not end there
+
+=== Misc ===
+* Updated various room layouts
+
+{{nav|version}}

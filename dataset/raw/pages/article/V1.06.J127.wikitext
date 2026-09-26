@@ -1,0 +1,30 @@
+{{infobox version
+ | dlc  = a+
+ | date = 2017-12-14
+}}
+
+== Undocumented changes ==
+=== Additions ===
+* {{i|Haemolacria}} now has a custom synergy with {{i|Tech X}}.
+
+=== Changes ===
+* {{i|Haemolacria}} is now treated as a weapon by the game, so it should behave slightly differently and synergize with more things.
+
+=== Fixes ===
+* Fixed the bug where the {{i|Monstro's Lung}} and {{i|Lachryphagy}} synergy would cause tears to become invisible occasionally.
+* Fixed the bug where the "yellow" charge from {{i|The Battery}} would transfer to other items.
+** This fixes the bug where you could get unlimited charges on an item with {{i|The Battery}} and the {{i|Schoolbag}}.
+** For modders, {{i|The Battery}} charge is now stored per pedestal.
+* Fixed the bug where {{i|Haemolacria}} would prevent {{i|Incubus}} from shooting tears, effectively soft-locking the game if you picked it up on [[Lilith]].
+* Fixed the bug where the {{i|Technology Zero}} and {{i|Lachryphagy}} synergy would damage you occasionally.
+* Fixed the bug where the {{i|Schoolbag}} and {{i|Breath of Life}} synergy would cause you to get "free" charges.
+* Fixed the bug where the [[Backasswards]] challenge was not functioning correctly.
+
+=== Lua API ===
+* EntityPlayer.QueueItem got renamed to EntityPlayer.QueuedItem due to a naming conflict. It is now possible to detect the item that is currently queued, meaning the item that Isaac is holding overhead. This gives modders much more precision, as before they had to rely on the clunky EntityPlayer.IsItemQueueEmpty() function.
+* EntityPlayer:RemoveGoldenBomb() got added.
+* EntityPlayer:RemoveGoldenKey() got added.
+* The Battery now stores its charges per pedestal. EntityPickup.Charge will now be 12 for a D6 that is double charged, for example.
+
+{{nav|version}}
+[[Category:Added in Booster Pack 4]]

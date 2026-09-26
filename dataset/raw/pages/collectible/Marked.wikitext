@@ -41,6 +41,7 @@
 
 == Interactions ==
 * {{C|Lilith|nr}} : Marked gives the stat upgrades but not the mark.
+* {{dlc+|r}} {{C|Lilith|nr}} : Marked gives both the stat upgrades and the mark as expected.
 * {{dlc+|r}} {{C|Tainted Lilith}} : When the baby is launched, it permanently fires at the crosshair. Pressing the "drop" key or button (Keyboard default: left Control key; Controller default: right trigger) will make the crosshair disappear and cause the baby to return to Tainted Lilith.{{dlc-}}
 * {{C|The Forgotten}} / {{C|Tainted Forgotten}} : Gives stats up without any drawbacks, and allows the bone to be angled in any direction, similar to {{i|Analog Stick}}.
 * {{i|Anti-Gravity}}: The tear hover effect is nullified, though the tear delay down is applied.
@@ -55,6 +56,7 @@
 * {{I|GB Bug|r}}: Unaffected by Marked.
 * {{dlc|nr}} {{i|Gnawed Leaf}}: Tears will stop auto-firing once Isaac is invulnerable.
 ** {{dlc|r}} Gnawed Leaf cannot activate while Isaac is auto-firing.
+* {{I|The Intruder}} Shots from The Intruder will ignore the mark, only firing in cardinal directions.
 * {{dlc|nr}} {{i|Lil Brimstone}}: Lil Brimstone only charges while moving the mark.
 * {{i|The Ludovico Technique}}: Overrides Marked, but stat bonuses still apply.
 * {{I|Mr. ME!}}: The Mr. ME! crosshair will move constantly in the direction of the Marked crosshair relative to Isaac. It will not attempt to match with where Marked is aiming, making it difficult to control. Pressing the drop button will stop the Mr. ME! crosshair.

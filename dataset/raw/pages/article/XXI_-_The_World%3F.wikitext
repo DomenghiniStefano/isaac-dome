@@ -1,0 +1,25 @@
+{{header reverse tarot cards}}
+{{Infobox card
+ | dlc         = r
+ | name        = XXI - The World?
+ | files name  = XXI - Inverted The World
+ | type        = card
+ | id          = 77
+ | quote       = Step into the abyss
+ | description = Creates a trap door which always leads to a {{r|Crawl Space}}.
+ | unlocked by = The World
+ | recharge    = 2
+}}
+
+{{cit|uc|r}}
+
+== Effects ==
+* Creates a trap door which always leads to a {{r|Crawl Space}}.
+
+== Interactions ==
+* {{I|Tarot Cloth}}: No effect.
+
+== In-game Footage ==
+{{#ev:youtube|b3cZ6UlSuRk}}
+
+{{nav|fr=XXI - Le Monde ?|card}}

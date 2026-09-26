@@ -1,0 +1,11 @@
+{{infobox monster
+ | name        = Keeper
+ | id          = 86
+ | base hp     = 36
+ | environment = {{floor|Catacombs}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Cathedral}}<br>{{floor|Chest}}<br>{{floor|Ultra Greed}}<br>{{room|challenge}}{{room|Shop}}
+ | behavior    = Hops around the room, firing 2 blood shots in a V formation at Isaac. Upon damaging Isaac, Isaac drops 2 coins on the ground but loses 3.
+}} {{disambig msg|the monster|the playable character|Keeper}}
+
+'''Keepers''' (also known as "Greed Heads") are bodiless {{E|Hanger}}s, commonly found in {{s|Catacombs}} and the {{s|Dank Depths}}. They can also be spawned by {{E|Super Greed}} and {{E|Ultra Greed}}, or found alongside Hangers. They move like {{E|Hopper}}s and occasionally stop to shoot two projectiles in a V shape towards Isaac. If hit by these projectiles, Isaac will drop or lose coins.
+
+{{nav|fr=Tête de Gardien}}

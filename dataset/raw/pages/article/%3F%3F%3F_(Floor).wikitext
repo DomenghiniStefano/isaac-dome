@@ -1,0 +1,88 @@
+{{infobox stage
+ | dlc         = a
+ | files name  = Blue Womb
+ | chapter     = 4.5
+ | id          = 13
+ | level id    = 9
+ | type id     = 0
+ | bosses      = Hush
+ | unlocked by = Blue Womb
+}} {{disambig msg|the chapter}}
+
+'''???''', referred to as '''Blue Womb''' or '''Dead Womb''' in the OST, is a [[chapter]] added in ''[[The Binding of Isaac: Afterbirth]]''. It is unlocked by defeating {{e|Mom's Heart}} for the 10th time.
+
+It is accessed by defeating Mom's Heart or {{e|It Lives!}} within 30 minutes. Leaving and re-entering the Boss Room after the timer has reached 30 minutes will make the entrance to ??? disappear.<br> If the player is fast enough, both {{r|Boss Rush}} and ??? can be completed in a single run.
+
+It contains the following:
+* Four {{e|Locked Chest}}s in the main room.
+** Unlike the ones in the {{s|Chest}}, these are just regular golden chests and don't guarantee an item drop.
+* Two locked {{r|Treasure Room}}s, both of them offering two choices of items as if {{i|More Options}} was active.
+* A {{r|Shop}} that always contains 6 goods for sale, even if Shop Upgrade Lvl. 4 has not been unlocked.
+* A 2×2 boss room that contains Hush.
+** The door leading to the boss room is unique and appears to be part of the wall until it is touched.
+
+It is advised to only enter ??? with very powerful items and/or a set of good dodging skills because Hush ranks amongst the most difficult bosses of the entire game.
+
+After Hush is defeated, one of two things will happen:
+* If this is the first time Hush has been defeated, a giant golden chest will appear in the middle of the room. Jumping into it ends the run and gives [[ending 17]].
+* If Hush has been defeated before, a trapdoor and a beam of light leading to {{s|Sheol}} or the {{s|Cathedral}} will appear.
+** If Hush has been defeated before but Sheol and the Cathedral have not been unlocked, the giant golden chest will appear instead.
+** {{dlc+|a+}} Additionally, an exit will spawn in the corner of the room, containing a portal leading to {{s|The Void}}.{{dlc-}}
+
+== [[Boss]] ==
+{| style="width: 100%; text-align: center"
+ | [[File:Boss Hush portrait.png|link=Hush]]
+ |-
+ | [[Hush]]
+ |}
+
+== Notes ==
+* This floor cannot be skipped with {{i|We Need To Go Deeper!}} or {{p|Ehwaz}}; neither will work.
+** The floor can be skipped if a {{R|Black Market}} or {{R|I AM ERROR}} room is found, {{dlc|r}} or a trapdoor is created with {{i|D12|n}}. This will always take the player to {{s|Sheol}}.
+*** {{dlc|r}} {{r|I AM ERROR}} room can contain a beam of light that takes Isaac to {{s|Cathedral}}.
+** {{I|Genesis}} will skip the floor, and always take the player to {{s|Cathedral}}.
+* ??? has its own {{R|Devil Room}}/{{R|Angel Room}} which can be reached via a {{e|Red Chest}} or a {{p|Joker}}.
+* ??? doesn't have {{R|Secret Room}}s, a {{R|Super Secret Room}}, or an {{R|Ultra Secret Room}}.
+* {{dlc+|a+}} Using {{I|Mama Mega!}}, {{I|Mega Bean|r+}} or holding {{T|Strange Key}} will open the entrance even if the time limit has expired.{{dlc-}}
+** {{dlc+|r}} When {{i|Suplex!}} is used while a {{i|Berserk!}} effect is ending, Isaac lands with an explosion similar to {{i|Mama Mega!}}. This explosion can open the entrance after the time limit has expired.{{dlc-}}
+* Rocks contained in ??? have a significantly increased chance of spawning a {{R|Crawl Space}} when destroyed.
+* {{i|Red Key}} creates exclusive room layouts that contain the following enemies:
+{{entity table | Blue Boil, Hush Fly, Blue Gaper, Blue Conjoined Fatty }}
+* {{dlc+|r}} Despite red rooms being able to be created, no {{r|Ultra Secret Room}}s appear, even when using {{p|XVIII - The Moon?}}.{{dlc-}}
+
+== Gallery ==
+<gallery>
+File:Room Concepts.jpg|Concept for ??? on the lower left side by Edmund McMillen.
+</gallery>
+
+== Music ==
+* The stage's [[music]] is called ''Mater Prope'' or ''Nativitate''.<ref>[https://ridiculon.bandcamp.com/album/the-binding-of-isaac-afterbirth-ost Binding of Isaac: Afterbirth OST]</ref>
+** These names are in Latin and could be translated to "Almost Mother" and "With Birth" / "Due to Birth" / "At the Time of Birth" respectively.
+** ''Nativitate'' has a combat layer which can only be heard in rooms with enemies. Since enemies do not spawn on ??? normally, the only way to hear the combat layer is to encounter enemies in {{r|I AM ERROR}} rooms, {{r|Crawl Space}}s, rooms created by {{t|Blue Key}}, or {{r|Red Room}}s. Spawning enemies via [[Reward Plate]]s, however, will not change the music to the combat layer.
+*** The layer can also be heard while playing [[DELETE THIS]] if the music is replaced with this floor's music track.
+* The tracks that play during the battle against Hush are called ''Ascension'' (the {{e|???}} boss fight music; played during Hush's first phase, which is similar to the ??? boss) and ''Morituros'' (during the second phase).
+
+== Trivia ==
+* The displayed name of the chapter is ???, but the chapter is referred to as Blue Womb by the achievement, using the same logic as the character {{c|???}}.
+* The character ??? and the chapter ??? have the same unlock requirements.
+* ??? is unique as the only chapter that can be optionally done between mandatory chapters.
+** {{dlc+|a+}} It is mandatory, however, to complete this chapter to unlock {{s|The Void}}.{{dlc-}}
+** {{dlc+|r}} It is also mandatory to complete three times to unlock {{s|Downpour}}, as well as the rest of the alternative chapters.{{dlc-}}
+* {{dlc|nr}} ??? is the smallest chapter, only containing 6 normally accessible rooms.
+** {{s|Home}} ties with ??? in terms of having 6 normally accessible rooms.
+* In [[Isaac's last will]], ??? is referred to as "some barren place".
+** This may be a reference to the fact that infertile women were historically referred to as "barren".
+* ???'s icon on the progress bar is actually a recolor of the {{s|Womb}}'s.
+** Similarly, the trapdoor leading to ??? is a recolor of the trapdoor leading to the first and second floor of [[Chapter 4]].
+* {{dlc+|r}} There is an unused version of ???, which uses the textures for the [[Basement]] and has the filter seen in [[Ascent|The Ascent]], with the song for [[The Void]]. The sound played after defeating Hush normally is replaced by a sound that plays after defeating an alt-path boss. Entering the trapdoor to {{s|Sheol}} or the beam of light to {{s|Cathedral}} after defeating Hush will send Isaac to {{s|Home}}. It can be accessed by typing <code>stage 9c</code> in the [[Debug Console]]. The void portal in this version of ??? is replaced by a cobweb.{{dlc-}}
+* The 30-minute limit of reaching Blue Womb could signify how long it took Isaac to suffocate, hence the floor's theming and {{E|Hush}}'s presence.
+* The Hush boss door's texture is larger than is depicted ingame. When the door sprite sheet is opened in a photo editor, it is revealed to actually be a archlike gateway, rather than the "garage door" like door it is seen as ingame.
+
+== Bugs ==
+{{bug|dlc=nr|Attempting to open the door leading to Hush's room while holding a {{e|Golden Key}} will cause Isaac to walk through the door without opening it, immediately beginning the Hush fight.}}
+{{bug|plat=XboxOne, PS4|{{i|Mama Mega!}} cannot be used to open the door to {{s|???}}.}}
+
+== References ==
+{{reflist}}
+
+{{nav|moms heart unlock|environment|fr=??? (Étage)}}

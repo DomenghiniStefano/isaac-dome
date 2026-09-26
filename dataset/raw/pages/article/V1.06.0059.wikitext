@@ -1,0 +1,28 @@
+{{infobox version
+ | dlc  = a
+ | date = 2015-11-13
+}}
+
+== Undocumented changes ==
+=== Additions ===
+* Added 5 new [[Greed machine]] unlocks.
+* Added {{i|Mega Blast}} item.
+* Added {{t|Store Key}} trinket.
+* Added pop-up text whenever Isaac activates a new [[transformation]].
+
+=== Changes ===
+* Decreased HP:
+** [[Ultra Greed]]'s blank coin 100 → 50.
+** Ultra Greed's key coin 100 → 60.
+** Ultra Greed's bomb coin 100 → 50.
+** Ultra Greed's heart coin 100 → 40.
+* Increased [[Azazel]]'s damage and decreased charge time.
+* {{i|Head of Krampus}} lasers now have a chance to rotate.
+* Increased Isaac's speed in [[The Guardian]] and [[SPEED!]] challenges.
+* Decreased intensity of the [[Retro Vision]] pill effect.
+* {{i|Glowing Hourglass}} now resets the game's timer when used.
+
+=== Fixes ===
+* Fixed [[Lazarus]] and [[Lilith]]'s visuals being overridden.
+
+{{nav|version}}

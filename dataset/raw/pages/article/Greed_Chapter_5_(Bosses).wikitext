@@ -1,0 +1,189 @@
+{{header greed bosses}}
+{{page dlc|a}}
+
+== {{s|Sheol}} ==
+=== All Boss Waves ===
+{| style="width: 70%; text-align: center"
+ | [[file:Boss Little Horn portrait.png|center|link=Little Horn]]
+ | [[file:Boss Dark One portrait.png|center|link=Dark One]]
+ | [[file:Boss Big Horn portrait.png|center|link=Big Horn]]
+ | [[File:Boss The Cage portrait.png|center|link=The Cage]]
+ |-
+ | [[Little Horn]] {{unlockable}}
+ | [[Dark One]]
+ | [[Big Horn]] {{dlc|a+}}
+ | [[The Cage]]
+ |-
+ | colspan="4" |[[file:Boss Sisters Vis portrait.png|center|link=Sisters Vis]]
+ |-
+ | colspan="4" |[[Sisters Vis]] {{dlc|a+}} {{unlockable}}
+ |-
+ | colspan="2" |[[file:boss Super Gluttony.png|80px|center|link=Super Gluttony]]
+ | colspan="2" |[[file:boss Super Sloth.png|80px|center|link=Super Sloth]]
+ |-
+ | colspan="2" |[[Super Gluttony]]
+ | colspan="2" |[[Super Sloth]]
+ |}
+
+=== Boss Wave 1 Specific ===
+{| style="width: 70%; text-align: center"
+ |[[file:Boss Widow portrait.png|center|link=Widow]]
+ |[[file:Boss Steven portrait.png|link=Steven]]
+ |[[file:Boss Famine portrait.png|center|link=Famine]]
+ |[[file:Boss Rag Man portrait.png|center|link=Rag Man]]
+ |-
+ |[[Widow]]
+ |[[Steven]] {{unlockable}}
+ |[[Famine]] {{unlockable}}
+ |[[Rag Man]] {{unlockable}}
+ |-
+ |[[file:Boss The Husk portrait.png|center|link=The Husk]]
+ |[[file:Boss The Wretched portrait.png|center|link=The Wretched]]
+ |[[file:Boss The Forsaken portrait.png|center|link=The Forsaken]]
+ |[[file:Boss The Stain portrait.png|center|link=The Stain]]
+ |-
+ |[[The Husk]]
+ |[[The Wretched]]
+ |[[The Forsaken]] {{unlockable}}
+ |[[The Stain]] {{unlockable}}
+ |-
+ |[[file:Boss The Bloat portrait.png|center|link=The Bloat]]
+ |[[file:Boss The Gate portrait.png|center|link=The Gate]]
+ |[[file:Boss Monstro II portrait.png|center|link=Monstro II]]
+ |[[file:Boss Gish portrait.png|center|link=Gish]]
+ |-
+ |[[The Bloat]]
+ |[[The Gate]]
+ |[[Monstro II]]
+ |[[Gish]] {{unlockable}}
+ |-
+ | colspan="4" |[[file:Boss Teratoma portrait.png|center|link=Teratoma]]
+ |-
+ | colspan="4" |[[Teratoma]]
+ |-
+ | colspan="4" style="padding:0" |
+{| style="width: 100%"
+ |[[file:boss Wrath.png|64px|center|link=Wrath]]
+ |[[file:boss Sloth.png|64px|center|link=Sloth]]
+ |[[file:boss Super Wrath.png|80px|center|link=Super Wrath]]
+ |-
+ |[[Wrath]]
+ |[[Sloth]]
+ |[[Super Wrath]]
+ |}
+|}
+
+=== Boss Wave 2 Specific ===
+{| style="width: 70%; text-align: center"
+ |[[file:Boss Gurglings portrait.png|center|link=Gurglings]]
+ |[[file:Boss Famine portrait.png|center|link=Famine]]
+ |[[file:Boss Carrion Queen portrait.png|center|link=Carrion Queen]]
+ |[[file:Boss Pestilence portrait.png|center|link=Pestilence]]
+ |-
+ |[[Gurglings]]
+ |[[Famine]] {{unlockable}}
+ |[[Carrion Queen]]
+ |[[Pestilence]] {{unlockable}}
+ |-
+ |[[file:Boss The Adversary portrait.png|center|link=The Adversary]]
+ |[[file:Boss Mask of Infamy portrait.png|center|link=Mask of Infamy]]
+ |[[file:Boss Death portrait.png|center|link=Death (Boss)]]
+ |[[file:Boss Conquest portrait.png|center|link=Conquest]]
+ |-
+ |[[The Adversary]]
+ |[[Mask of Infamy]]
+ |[[Death (Boss)|Death]] {{unlockable}}
+ |[[Conquest]] {{unlockable}}
+ |-
+ | colspan="2" |[[file:Boss Headless Horseman portrait.png|center|link=Headless Horseman]]
+ | colspan="2" |[[file:Boss The Fallen portrait.png|center|link=The Fallen]]
+ |-
+ | colspan="2" |[[Headless Horseman]] {{unlockable}}
+ | colspan="2" |[[The Fallen]] {{room|Devil}}
+ |-
+ | colspan="4" style="padding:0" |
+{| style="width: 100%"
+ |[[file:Envy.png|64px|center|link=Envy]]
+ |[[file:Sloth.png|64px|center|link=Sloth]]
+ |[[file:Super Envy.png|80px|center|link=Super Envy]]
+ |-
+ |[[Envy]]
+ |[[Sloth]]
+ |[[Super Envy]]
+ |}
+ |-
+ | colspan="4" |[[file:Boss Krampus ingame.png|172px|center|link=Krampus]]
+ |-
+ | colspan="4" |[[Krampus]] {{unlockable}}
+ |}
+
+=== Nightmare Wave Specific ===
+{| style="width: 70%; text-align: center"
+ |[[file:Boss Gurglings portrait.png|center|link=Gurglings]]
+ |[[file:Boss Rag Man portrait.png|center|link=Rag Man]]
+ |[[file:Boss Carrion Queen portrait.png|center|link=Carrion Queen]]
+ |[[file:Boss The Wretched portrait.png|center|link=The Wretched]]
+ |-
+ |[[Gurglings]]
+ |[[Rag Man]] {{unlockable}}
+ |[[Carrion Queen]]
+ |[[The Wretched]]
+ |-
+ |[[file:Boss Pestilence portrait.png|center|link=Pestilence]]
+ |[[file:Boss The Forsaken portrait.png|center|link=The Forsaken]]
+ |[[file:Boss The Stain portrait.png|center|link=The Stain]]
+ |[[file:Boss The Adversary portrait.png|center|link=The Adversary]]
+ |-
+ |[[Pestilence]] {{unlockable}}
+ |[[The Forsaken]] {{unlockable}}
+ |[[The Stain]] {{unlockable}}
+ |[[The Adversary]]
+ |-
+ |[[file:Boss The Bloat portrait.png|center|link=The Bloat]]
+ |[[file:Boss The Gate portrait.png|center|link=The Gate]]
+ |[[file:Boss Mask of Infamy portrait.png|center|link=Mask of Infamy]]
+ |[[file:Boss Monstro II portrait.png|center|link=Monstro II]]
+ |-
+ |[[The Bloat]]
+ |[[The Gate]]
+ |[[Mask of Infamy]]
+ |[[Monstro II]]
+ |-
+ |[[file:Boss Gish portrait.png|center|link=Gish]]
+ |[[file:Boss The Pile portrait.png|center|link=The Pile]]
+ |[[file:Boss Teratoma portrait.png|center|link=Teratoma]]
+ |[[file:Boss Death portrait.png|center|link=Death (Boss)]]
+ |-
+ |[[Gish]] {{unlockable}}
+ |[[The Pile]] {{dlc|r}}
+ |[[Teratoma]]
+ |[[Death (Boss)|Death]] {{unlockable}}
+ |-
+ | colspan="4" style="padding:0" |
+{| style="width: 100%"
+ |[[file:Boss Conquest portrait.png|center|link=Conquest]]
+ |[[file:Boss Headless Horseman portrait.png|center|link=Headless Horseman]]
+ |[[file:Boss The Fallen portrait.png|center|link=The Fallen]]
+ |-
+ |[[Conquest]] {{unlockable}}
+ |[[Headless Horseman]] {{unlockable}}
+ |[[The Fallen]] {{room|Devil}}
+ |}
+ |-
+ |[[file:boss Super Envy.png|80px|center|link=Super Envy]]
+ |[[file:boss Super Wrath.png|80px|center|link=Super Wrath]]
+ |[[file:boss Super Lust.png|80px|center|link=Super Lust]]
+ |[[file:boss Ultra Pride.png|128px|center|link=Ultra Pride]]
+ |-
+ |[[Super Envy]]
+ |[[Super Wrath]]
+ |[[Super Lust]]
+ |[[Ultra Pride]]
+ |-
+ | colspan="4" |[[file:Boss Krampus portrait.png|172px|center|link=Krampus]]
+ |-
+ | colspan="4" |[[Krampus]] {{unlockable}}
+ |}
+
+{{nav|boss|fr=Avarice Chapitre 5 (Boss)}}
+[[Category:Bosses]]

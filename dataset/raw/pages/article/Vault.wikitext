@@ -1,0 +1,276 @@
+{{dlc|nr}}[[file:Double Locked Room.png]] {{dlc|r}}[[File:Vault door locked.png]][[File:Vault door.png]]
+
+'''Vaults'''  are [[special room]]s that contain a variety of [[pickups]]/[[chests]] (or occasional lack thereof). Vaults require two {{e|Key|text=keys}} to be opened, unlike most other special rooms. For a Vault to spawn, the following has to happen.
+* {{dlc|nr}} An {{r|Arcade}} has to be able to spawn that floor. This requires that both:
+** Isaac is holding five or more {{e|Penny|text=pennies}}
+** The floor Isaac is going to is the second floor of a [[chapter]]
+* {{dlc|nr}} Once the game determines an Arcade will spawn, a Vault has a 1/10 chance to replace that Arcade. [[Level Generation|This chance increases to 4/10 if Isaac has two or more keys.]]
+* {{dlc+|r}} The floor Isaac is going to is the second floor of a [[chapter]] or the first floor of an alternate chapter ( {{S|Downpour}},  {{S|Dross}},  {{S|Mines}},  {{S|Ashpit}},  {{S|Mausoleum}},  {{S|Gehenna}} and  {{S|Corpse}}) {{dlc-}}
+* {{dlc|r}} If Isaac has 2 or more keys, a Vault has a 1/3 chance to spawn. [[Level Generation|This chance increases to 4/10 if Isaac has five or more pennies, and will replace the Arcade.]]
+
+== Layouts ==
+The following room maps were made using [https://github.com/Basement-Renovator/basement-renovator Basement Renovator] for cleaner viewing.
+
+{| class="wikitable sortable mw-collapsible mw-collapsed" style="text-align: center"
+ ! scope="col" | ID
+ ! scope="col" | Weight
+ ! scope="col" class="unsortable" | Contents
+ ! scope="col" class="unsortable" | Image preview
+ |-
+ ! scope="row" | 0
+ | 1
+ | style="text-align: left" | Two chests and a {{e|Red Chest}}.
+ | [[File:Vault 0.png|300px]]
+ |-
+ ! scope="row" | 1
+ | 1
+ | style="text-align: left" | Three {{E|Chest}}s.
+ | [[File:Vault 1.png|300px]]
+ |-
+ ! scope="row" | 2
+ | 1
+ | style="text-align: left" | Four random pickups behind [[Blocks|Key blocks]] and two {{E|Chest}}s.
+ | [[File:Vault 2.png|300px]]
+ |-
+ ! scope="row" | 3
+ | 1
+ | style="text-align: left" | Three {{E|Locked Chest}}.
+ | [[File:Vault 3.png|300px]]
+ |-
+ ! scope="row" | 4
+ | 1
+ | style="text-align: left" | Two random pickups behind [[rocks]], two {{e|Bomb}}s behind key blocks, and three {{e|Bomb Chest}}s.
+ | [[File:Vault 4.png|300px]]
+ |-
+ ! scope="row" | 5
+ | 1
+ | style="text-align: left" | Seven {{e|Red Chest}}s behind [[spikes]]. The spikes surrounding the three chests in the center occasionally retract.
+ | [[File:Vault 5.png|300px]]
+ |-
+ ! scope="row" | 6
+ | 1
+ | style="text-align: left" | Ten random pickups, four of which are behind rocks.
+ | [[File:Vault 6.png|300px]]
+ |-
+ ! scope="row" | 7
+ | 1
+ | style="text-align: left" | An [[item]].
+ | [[File:Vault 7.png|300px]]
+ |-
+ ! scope="row" | 8
+ | 1
+ | style="text-align: left" | Eight coins and a {{e|Golden Key}}.
+ | [[File:Vault 8.png|300px]]
+ |-
+ ! scope="row" | 9
+ | 1
+ | style="text-align: left" | A {{m|Key Master}}.
+ | [[File:Vault 9.png|300px]]
+ |-
+ ! scope="row" | 10
+ | 1
+ | style="text-align: left" | A {{e|Shopkeeper}} and two {{E|Spider}}s.
+ | [[File:Vault 10.png|300px]]
+ |-
+ ! scope="row" | 11
+ | 1
+ | style="text-align: left" | Four {{e|Shopkeeper}}s and two {{e|Bomb}}s.
+ | [[File:Vault 11.png|300px]]
+ |-
+ ! scope="row" | 12
+ | 1
+ | style="text-align: left" | Three [[trinkets]].
+ | [[File:Vault 12.png|300px]]
+ |-
+ ! scope="row" | 13
+ | 1
+ | style="text-align: left" | Thirteen {{e|Poop}}s.
+ | [[File:Vault 13.png|300px]]
+ |-
+ ! scope="row" | 14
+ | 1
+ | style="text-align: left" | A {{E|Chest}}, {{E|Locked Chest}}, {{e|Red Chest}}, and a {{e|Bomb Chest}}.
+ | [[File:Vault 14.png|300px]]
+ |-
+ ! scope="row" | 15
+ | 1
+ | style="text-align: left" | A {{e|Red Heart}}, {{e|Soul Heart}}, {{E|Nickel}}, {{e|Penny}}, {{e|Key}}, {{e|Bomb}}, [[pill]], and [[card]].
+ | [[File:Vault 15.png|300px]]
+ |-
+ ! scope="row" | 16
+ | 1
+ | style="text-align: left" | A {{E|Chest}}, {{dlc|na+}} two {{E|Lil' Battery|text=Lil' Batteries}} / {{dlc|a+}} two random batteries, and two random pickups behind rocks.
+ | {{dlcmap slideshow|{{dlcalt|[[File:Vault 16 Afterbirth.png|300px]]|a+=[[File:Vault 16.png|300px]]}}}}
+ |-
+ ! scope="row" | 17
+ | 1
+ | style="text-align: left" | A {{E|Locked Chest}} and four {{e|Bomb}}s behind spikes.
+ | [[File:Vault 17.png|300px]]
+ |-
+ ! scope="row" | 18
+ | 1
+ | style="text-align: left" | Two {{E|Chest}}s and a trinket.
+ | [[File:Vault 18.png|300px]]
+ |-
+ ! scope="row" | 19
+ | 1
+ | style="text-align: left" | 25 pennies and a {{M|Donation Machine}}.
+ | [[File:Vault 19.png|300px]]
+ |-
+ ! scope="row" | 20
+ | 1
+ | style="text-align: left" | Five {{E|Chest}}s.
+ | [[File:Vault 20.png|300px]]
+ |-
+ ! scope="row" | 21
+ | 1
+ | style="text-align: left" | Eight {{E|Attack Fly|text=Attack Flies}} surrounding a {{E|Corny Poop}}.
+ | [[File:Vault 21.png|300px]]
+ |-
+ ! scope="row" | 22
+ | 1
+ | style="text-align: left" | Three {{E|Chest}}s.
+ | [[File:Vault 22.png|300px]]
+ |-
+ ! scope="row" | 23
+ | 1
+ | style="text-align: left" | Three {{E|Chest}}s and some [[Cobweb]]s.
+ | [[File:Vault 23.png|300px]]
+ |-
+ ! scope="row" | 24
+ | 1
+ | style="text-align: left" | Seven {{e|Penny|text=Pennies}} and a {{M|Shell Game}}.
+ | [[File:Vault 24.png|300px]]
+ |-
+ ! scope="row" | 25
+ | 1
+ | style="text-align: left" | A {{e|Shopkeeper}}, a {{e|Key}}, and two {{E|Locked Chest}}s.
+ | [[File:Vault 25.png|300px]]
+ |-
+ ! scope="row" | 26
+ | 1
+ | style="text-align: left" | A {{E|Dime}}.
+ | [[File:Vault 26.png|300px]]
+ |-
+ ! scope="row" | 27
+ | 1
+ | style="text-align: left" | Two {{e|Key}}s, two {{E|Chest}}s, and a {{E|Locked Chest}} behind a key block and iron blocks.
+ | [[File:Vault 27.png|300px]]
+ |-
+ ! scope="row" | 28
+ | 1
+ | style="text-align: left" | A {{e|Shopkeeper}}, five {{e|Penny|text=Pennies}}, two {{E|Double Penny|text=Double Pennies}}, and three random coins.
+ | [[File:Vault 28.png|300px]]
+ |-
+ ! scope="row" | 29
+ | 1
+ | style="text-align: left" | Three [[runes]].
+ | [[File:Vault 29.png|300px]]
+ |-
+ ! scope="row" | {{dlc|a}} 30
+ | 1
+ | style="text-align: left" | Three {{e|Reward Plate}}s.
+ | [[File:Vault 30.png|300px]]
+ |-
+ ! scope="row" | {{dlc|a}} 31
+ | 1
+ | style="text-align: left" | Nine random pickups.
+ | [[File:Vault 31.png|300px]]
+ |-
+ ! scope="row" | {{dlc|a}} 32
+ | {{dlcmap slideshow|{{dlcalt|1|r=0.75}}}}
+ | style="text-align: left" | {{dlc|na+}} Five {{E|Lil' Battery|text=Lil' Batteries}}.
+* {{dlc|a+nr}} Five random batteries.
+* {{dlc+|r}} The four batteries on each cardinal side has 50% chance to be a {{E|Lil' Battery}} and 50% chance to be a random battery. The central battery has 60% chance to be a {{E|Lil' Battery}}, 20% chance to be a {{E|Mega Battery}}, and 20% chance to be a random battery.{{dlc-}}
+ | {{dlcmap slideshow|{{dlcalt|[[File:Vault 32 Afterbirth.png|300px]]|a+=[[File:Vault 32 Afterbirth+.png|300px]]|r=[[File:Vault 32.png|300px]]}}}}
+ |-
+ ! scope="row" | {{dlc|a}} 33
+ | 1
+ | style="text-align: left" | {{E|Greed}}, two {{E|Golden Poop}}s, and four {{e|Shopkeeper}}s.
+ | [[File:Vault 33.png|300px]]
+ |-
+ ! scope="row" | {{dlc|a}} 34
+ | 1
+ | style="text-align: left" | A {{e|Key Ring}}, {{e|Double Heart}}, and {{E|Double Penny}}.
+ | [[File:Vault 34.png|300px]]
+ |-
+ ! scope="row" | {{dlc|a}} 35
+ | 1
+ | style="text-align: left" | Two {{E|Chest}}s and a {{E|Reward Plate}}.
+ | [[File:Vault 35.png|300px]]
+ |-
+ ! scope="row" | {{dlc|a}} 36
+ | 1
+ | style="text-align: left" | Three {{E|Chest}}s behind a key block and iron blocks.
+ | [[File:Vault 36.png|300px]]
+ |-
+ ! scope="row" | {{dlc|a+}} 37
+ | 1
+ | style="text-align: left" | Three {{E|Spiked Chest|n}}s.
+ | [[File:Vault 37.png|300px]]
+ |-
+ ! scope="row" | {{dlc|a+}} 38
+ | 1
+ | style="text-align: left" | An {{E|Eternal Chest|n}} and two {{e|Key}}s.
+ | [[File:Vault 38.png|300px]]
+ |-
+ ! scope="row" | {{dlc|a+}} 39
+ | 1
+ | style="text-align: left" | {{dlc|na+}} Five {{e|Grab Bag|n}}s / {{dlc|a+}} Five random bags and four random coins.
+ | {{dlcmap slideshow|{{dlcalt|[[File:Vault 39 Afterbirth.png|300px]]|a+=[[File:Vault 39.png|300px]]}}}}
+ |-
+ ! scope="row" | {{dlc|a+}} 40
+ | 0.1
+ | style="text-align: left" | Fifteen {{E|Locked Chest}}s.
+ | [[File:Vault 40.png|300px]]
+ |-
+ ! scope="row" | {{dlc|a+}} 41
+ | 0.1
+ | style="text-align: left" | {{dlc|na+}} A {{e|Grab Bag|n}} / {{dlc|a+}} random bag, three {{E|Attack Fly|text=Attack Flies}}, and a {{e|Poop}}.
+ | {{dlcmap slideshow|{{dlcalt|[[File:Vault 41 Afterbirth.png|300px]]|a+=[[File:Vault 41.png|300px]]}}}}
+ |-
+ ! scope="row" | {{dlc|r}} 42
+ | 0.75
+ | style="text-align: left" | A {{m|Devil Beggar}}, a {{m|Bomb Bum|n}}, and a {{m|Beggar}}.
+ | [[File:Vault 42.png|300px]]
+ |-
+ ! scope="row" | {{dlc|r}} 43
+ | 0.75
+ | style="text-align: left" | Two {{e|Chest}}s, and a {{e|Haunted Chest|n}}.
+ | [[File:Vault 43.png|300px]]
+ |-
+ ! scope="row" | {{dlc|r}} 44
+ | 0.5
+ | style="text-align: left" | Four random coins, and three {{e|Black Sack|n}}s.
+ | [[File:Vault 44.png|300px]]
+ |-
+ ! scope="row" | {{dlc|r}} 45
+ | 0.25
+ | style="text-align: left" | Two {{e|Grab Bag|n}}s, and three {{e|Black Sack|n}}s.
+ | [[File:Vault 45.png|300px]]
+ |-
+ ! scope="row" | {{dlc|r}} 46
+ | 0.25
+ | style="text-align: left" | Four {{e|Black Sack|n}}s around spikes.
+ | [[File:Vault 46.png|300px]]
+ |-
+ ! scope="row" | {{dlc|r}} 47
+ | 1
+ | style="text-align: left" | A {{e|Mega Chest|n}}.
+ | [[File:Vault 47.png|300px]]
+ |-
+ ! scope="row" | {{dlc|r}} 48
+ | 1
+ | style="text-align: left" | Eight random coins, a {{m|Beggar}}, a {{m|Battery Bum|n}}, and a {{m|Rotten Beggar}}.
+ | [[File:Vault 48.png|300px]]
+|}
+
+== Notes ==
+* The texture Vaults use for their rooms are the same as {{s|Chest}}.
+* {{i|Dad's Key}}, {{p|Get out of Jail Free Card}}, and {{i|Mr. ME!}} open Vaults in one use, despite the fact that they require two keys.
+* Many vaults contain locked chests or key blocks, further increasing the required number of keys to fully utilize them. Make sure you have enough keys if you choose to enter one.
+* Due to how Vault generation works, a floor cannot have both an Arcade and Vault on it; they are mutually exclusive.
+** If an Arcade is especially valuable to your run, it may be worth limiting your keys to one going into a floor with an Arcade on it to reduce the chances of it becoming a vault.
+
+{{nav|room|fr=Coffre-Fort}}
+[[Category:Rooms]]

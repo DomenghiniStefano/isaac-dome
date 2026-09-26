@@ -1,0 +1,120 @@
+{{page dlc|r}}
+Item tags are internal metadata, like [[Item quality]], that were added in Repentance. The tags are used to create groups of items which are used in a few different ways.
+
+== Examples ==
+* [[Planetarium]] uses items tagged [[Item Tags stars|stars]] for its unlock condition.
+* [[The Lost]]'s [[Birthright]] rerolls items tagged [[Item Tags nolostbr|nolostbr]].
+* [[Tainted Lost]] can only find items tagged [[Item Tags offensive|offensive]].
+
+== Tags ==
+<!-- For now friendly names are defined in [[Module:Item Tags/data|module data]] -->
+{| class="wikitable sortable"
+|-
+! Tag
+! Internal name
+|-
+| {{tag|angel}}
+| {{code|angel}}
+|-
+| {{tag|baby}}
+| {{code|baby}}
+|-
+| {{tag|battery}}
+| {{code|battery}}
+|-
+| {{tag|bob}}
+| {{code|bob}}
+|-
+| {{tag|book}}
+| {{code|book}}
+|-
+| {{tag|dead}}
+| {{code|dead}}
+|-
+| {{tag|devil}}
+| {{code|devil}}
+|-
+| {{dlc|r+}} {{tag|devilsacrifice}}
+| {{code|devilsacrifice}}
+|-
+| {{tag|fly}}
+| {{code|fly}}
+|-
+| {{tag|food}}
+| {{code|food}}
+|-
+| {{tag|guppy}}
+| {{code|guppy}}
+|-
+| {{tag|lazarusshared}}
+| {{code|lazarusshared}}
+|-
+| {{tag|lazarussharedglobal}}
+| {{code|lazarussharedglobal}}
+|-
+| {{tag|mom}}
+| {{code|mom}}
+|-
+| {{tag|monstermanual}}
+| {{code|monstermanual}}
+|-
+| {{tag|mushroom}}
+| {{code|mushroom}}
+|-
+| {{tag|nocantrip}}
+| {{code|nocantrip}}
+|-
+| {{tag|nochallenge}}
+| {{code|nochallenge}}
+|-
+| {{tag|nodaily}}
+| {{code|nodaily}}
+|-
+| {{tag|noeden}}
+| {{code|noeden}}
+|-
+| {{tag|nogreed}}
+| {{code|nogreed}}
+|-
+| {{tag|nokeeper}}
+| {{code|nokeeper}}
+|-
+| {{tag|nolostbr}}
+| {{code|nolostbr}}
+|-
+| {{tag|offensive}}
+| {{code|offensive}}
+|-
+| {{tag|poop}}
+| {{code|poop}}
+|-
+| {{tag|quest}}
+| {{code|quest}}
+|-
+| {{tag|spider}}
+| {{code|spider}}
+|-
+| {{tag|stars}}
+| {{code|stars}}
+|-
+| {{tag|summonable}}
+| {{code|summonable}}
+|-
+| {{tag|syringe}}
+| {{code|syringe}}
+|-
+| {{tag|tearsup}}
+| {{code|tearsup}}
+|-
+| {{tag|tech}}
+| {{code|tech}}
+|-
+| {{tag|uniquefamiliar}}
+| {{code|uniquefamiliar}}
+|}
+
+{{nav|fr=Balises}}
+[[Category:Items by effect]]
+[[Category:Collectibles]]
+[[Category:Mechanics]]
+[[Category:Item tags| ]]

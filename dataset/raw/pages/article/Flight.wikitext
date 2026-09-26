@@ -1,0 +1,23 @@
+{{header player effects}}
+'''Flight''' is an ability that can be gained by Isaac upon pick up of various items. When Isaac has flight, he can pass over [[rock]]s, {{e|Poop}}, and pits, and won't be damaged by hazards such as [[creep]] or [[spikes]] (except {{R|Sacrifice Room}} spikes). He can still be damaged by {{e|Fire Place}}s, {{e|Poky}}s, and [[Rocks|Spiked Rocks]]. {{dlc|r}} He also cannot pass over [[Blocks|Pillars]]. {{C|Azazel}}, {{C|The Lost}}, {{C|The Soul}}, {{Dlc|r}}{{C|Tainted Lost}}, and {{C|Tainted Soul}} start with the ability to fly.
+
+== Activated Collectibles that Grant Flight ==
+{{collectible table | The Bible, The Pinking Shears, A Pony, White Pony, Esau Jr.}}
+'''Note:''' The Pony and White Pony passively grant flight while they are in Isaac's possession.
+
+== Passive Collectibles that Grant Flight ==
+{{collectible table | Astral Projection, Dead Dove, Dogma, Empty Vessel, Fate, Holy Grail, Lord of the Pit, Revelation, Spirit of the Night, Spirit Shackles, Transcendence }}
+
+== Trinkets that Grant Flight ==
+{{trinket table | Bat Wing, Azazel's Stump}}
+
+== Transformations that Grant Flight ==
+{{transformation table | Guppy, Beelzebub, Seraphim, Leviathan}}
+
+== Other Ways to Gain Flight ==
+* Using {{p|XII - The Hanged Man}}, {{p|XV - The Devil?}}, {{p|XIX - The Sun?}}, or {{p|Soul of the Lost}}.
+* {{dlc|a}} In co-op, [[Noose Baby]] will occasionally briefly grant flight.
+* {{dlc|r}} Losing the ability to fly while overtop of an [[obstacle]] or pit will grant flight for the current room.
+
+{{nav|fr=Vol}}
+[[Category:Mechanics]]

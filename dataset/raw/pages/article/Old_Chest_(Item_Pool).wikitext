@@ -1,0 +1,19 @@
+{{header item pools}}
+{{item pool
+ | dlc = r
+}}
+
+{{e|Old Chest}}s created by {{i|Isaac's Tomb}} may draw items from either the [[Angel Room (Item Pool)|Angel Room item pool]] or from a selection related to Isaac's mother and father.
+
+== Activated Collectibles ==
+{{item pool/header}}
+{{pool items | Dad's Key, Mom's Bottle of Pills, Mom's Box, Mom's Bra, Mom's Bracelet, Mom's Pad }}
+|}
+
+== Passive Collectibles ==
+{{item pool/header}}
+{{pool items | Dad's Lost Coin, Divorce Papers, Mom's Coin Purse, Mom's Contacts, Mom's Eye, Mom's Eyeshadow, Mom's Heels, Mom's Key, Mom's Lipstick, Mom's Pearls, Mom's Perfume, Mom's Purse, Mom's Razor, Mom's Ring, Mom's Underwear, Mom's Wig, Torn Photo }}
+{{pool items | weight = 0.2 | Dad's Ring, Mom's Knife }}
+|}
+
+{{nav|fr=Coffre Antique (Banque d'Objets)}}

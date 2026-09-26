@@ -1,0 +1,137 @@
+{{infobox stage
+ | chapter         = 6
+ | id              = {{dlcalt|12|a=17}}
+ | level id        = 11
+ | type id         = 1
+ | degraded bosses = The Adversary, Blastocyst, Blastocyst Medium, Blighted Ovum, The Bloat, Brownie, The Cage, Carrion Queen, C.H.A.D., Chub, Daddy Long Legs, Dark One, Death, Dingle, The Duke of Flies, Envy, Famine, Fistula, Fistula Medium, The Forsaken, The Gate, Gluttony, Greed, Gurdy, Gurdy Jr., Gurglings, The Haunt, The Husk, Larry Jr., Little Horn, Loki, Lokii, Lust, Mega Fatty, Mega Maw, Monstro, Monstro II, Peep, Pestilence, Pin, Polycephalus, Pride, Rag Man, Sloth, The Stain, Super Envy, Super Gluttony, Super Greed, Super Lust, Super Pride, Super Sloth, Super Wrath, Teratoma, War, Widow, Wrath, The Wretched
+ | bosses          = ???
+}} {{disambig msg|the floor|the object|Chests}}
+
+The '''Chest''' is one of five final levels in The Binding of Isaac, alongside the {{s|Dark Room}}, {{s|The Void}}, the {{s|Corpse}}, and {{s|Home}}.
+
+The Chest can be accessed with three methods: Touching the chest dropped by {{e|Isaac}} while having {{i|The Polaroid}} (always dropped by {{e|Mom}} after beating Isaac five times) equipped, or, while in the {{s|Cathedral}}, by using Telepills or another item that acts like [[Telepills]], and being sent to the {{r|I AM ERROR}} room, or finding a {{r|Black Market}} on the Cathedral and going into the beam of light.
+
+Like the Cathedral before it, the Chest consists of only one floor. In the Chest, it is not possible to bomb doors open to skip rooms. The Chest's rooms are usually devoid of [[Rock]]s and other obstacles and are mainly filled with [[boss]]es and [[mini-boss]]es. The boss of the floor is always {{e|???}}.
+
+The first room in the Chest will automatically contain 4 {{E|Locked Chest}}s. These special chests always contain [[Treasure Room (Item Pool)|Treasure Room items]]. Rarely, these chests can also be {{e|Mega Chest}}s or {{e|Eternal Chest}}s. Additionally, all {{e|Chest}}s, {{e|Bomb Chest}}s, and {{e|Locked Chest}}s spawned in the Chest will always contain Treasure Room Items. This means that a lot of different items can be found in the Chest when clearing rooms with items or effects that raise the chance of spawning chests. This can be useful when trying to complete the [[collection page]]. {{dlc|nr}} Destroying {{m|Slot Machine}}s, {{m|Fortune Telling Machine}}s, and all types of {{m|Beggar}}s with the exception of the {{m|Shell Game}} will also spawn items.
+
+After completing the Chest or the Dark Room for the first time, the first room of the Chest will always contain a large golden door, which can be unlocked with either the Key Pieces (combination of {{i|Key Piece 1}} and {{i|Key Piece 2}}), {{i|Dad's Key}}, {{p|Get out of Jail Free Card}}, or {{i|Mr. ME!}}, allowing access to {{e|Mega Satan}}.
+
+== [[Monster]]s ==
+{{entity table/header}}
+{{stage entities | Imp, Bony, Death's Head, MemBrain, Dip, Dinga, Pale Fatty, Attack Fly, Frowning Gaper, Nulls, Gurgling, Bone Knight, Red Maw, Mom's Hand, Rotty, Spider, Oob, Wizoob, Lil' Haunt, Slide }}
+{{stage entities | dlc = a | Dark Ball, Blue Conjoined Fatty, Cyclopia, Rag Man's Ragling }}
+{{stage entities | dlc = a+ | Ministro }}
+{{stage entities | dlc = r | Wrinkly Baby, Grilled Clotty, Holy Mulligan, Needle }}
+|}
+
+''Degraded Bosses:''
+{| class="wikitable mw-collapsible striped sortable"
+! Name
+! ID
+! class="unsortable" | Notes
+{{entity row minimal|The Adversary}} |
+{{entity row minimal|Baby Plum}} |
+{{entity row minimal|Big Horn}} |
+{{entity row minimal|Blastocyst}} | Medium- and large-form only
+{{entity row minimal|Blighted Ovum}} |
+{{entity row minimal|The Bloat}} |
+{{entity row minimal|Brownie}} |
+{{entity row minimal|The Cage}} |
+{{entity row minimal|Carrion Queen}} |
+{{entity row minimal|C.H.A.D.}} |
+{{entity row minimal|Chub}} |
+{{entity row minimal|Conquest}} |
+{{entity row minimal|Daddy Long Legs}} |
+{{entity row minimal|Dangle}} |
+{{entity row minimal|Dark One}} |
+{{entity row minimal|Death}} |
+{{entity row minimal|Dingle}} |
+{{entity row minimal|The Duke of Flies}} |
+{{entity row minimal|Envy}} |
+{{entity row minimal|The Fallen}} |
+{{entity row minimal|Famine}} |
+{{entity row minimal|Fistula}} | Medium- and large-form only
+{{entity row minimal|The Forsaken}} |
+{{entity row minimal|The Gate}} |
+{{entity row minimal|Gemini}} |
+{{entity row minimal|Gluttony}} |
+{{entity row minimal|Greed}} |
+{{entity row minimal|Gurdy}} |
+{{entity row minimal|Gurdy Jr.}} |
+{{entity row minimal|Gurglings}} |
+{{entity row minimal|The Haunt}} |
+{{entity row minimal|Headless Horseman}} |
+{{entity row minimal|The Hollow}} |
+{{entity row minimal|The Husk}} |
+{{entity row minimal|Larry Jr.}} |
+{{entity row minimal|Little Horn}} |
+{{entity row minimal|Loki}} |
+{{entity row minimal|Lokii}} |
+{{entity row minimal|Lust}} |
+{{entity row minimal|The Matriarch}} |
+{{entity row minimal|Mega Fatty}} |
+{{entity row minimal|Mega Maw}} |
+{{entity row minimal|Monstro}} |
+{{entity row minimal|Monstro II}} |
+{{entity row minimal|Peep}} |
+{{entity row minimal|Pestilence}} |
+{{entity row minimal|The Pile}} |
+{{entity row minimal|Pin}} |
+{{entity row minimal|Polycephalus}} |
+{{entity row minimal|Pride}} |
+{{entity row minimal|Rag Man}} |
+{{entity row minimal|Rag Mega}} |
+{{entity row minimal|Reap Creep}} |
+{{entity row minimal|Sisters Vis}} |
+{{entity row minimal|Sloth}} |
+{{entity row minimal|The Stain}} |
+{{entity row minimal|Super Envy}} |
+{{entity row minimal|Super Gluttony}} |
+{{entity row minimal|Super Greed}} |
+{{entity row minimal|Super Lust}} |
+{{entity row minimal|Super Pride}} |
+{{entity row minimal|Super Sloth}} |
+{{entity row minimal|Super Wrath}} |
+{{entity row minimal|Teratoma}} |
+{{entity row minimal|Turdlings}} |
+{{entity row minimal|War}} |
+{{entity row minimal|Widow}} |
+{{entity row minimal|Wrath}} |
+{{entity row minimal|The Wretched}} |
+|}
+
+== [[Boss]]es ==
+{| style="width: 100%; text-align: center"
+ | [[File:Boss ??? portrait.png|link=??? (Boss)]]
+ | [[file:Boss Mega Satan portrait.png|center|link=Mega Satan]]
+ |-
+ | [[??? (Boss)|???]]
+ | [[Mega Satan]]
+ |}
+
+== Notes ==
+* If Isaac gets {{i|Key Piece 1}} and {{i|Key Piece 2}}, the key will open the golden gate to fight Mega Satan, but if Isaac uses {{i|Forget Me Now}}, the floor will reset and Isaac won't get both Key Pieces back, making it so that the golden gate won't open again.
+* {{dlc|anr}} It is possible to create trapdoors thanks to {{e|Reward Plate}}s (found for example in a {{r|Secret Room}}). Upon entering them, the floor is restarted. If the large golden door was opened before restarting, it will be closed afterward.
+** This may result in a softlock on a Daily Run to Mega Satan, if no other way of opening the door is found.
+* {{dlc|anr}} The {{r|I AM ERROR}} room cannot be reached by any method in the Chest and the {{s|Dark Room}}.
+** {{dlc+|r}} The {{r|I AM ERROR}} room can be reached by leaving a {{r|Crawl Space}} through an unintended direction. The room will always contain a portal leading to {{s|The Void}}.{{dlc-}}
+* {{dlc|r}} If a {{e|Red Chest}} is placed in the starting room, it will contain a [[Devil deal]], similar to the {{s|Dark Room}}.
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | Angels, Dead Boy, Something wicked this way comes!, Something wicked this way comes+! }}
+
+== Trivia ==
+* The Chest and its boss, ???, are based on the in-game backstory of Isaac locking himself in his toy chest and asphyxiating to death.
+* The sprite appearance of ??? is a reference to Edmund McMillen's Dead Baby games, which are often referenced throughout ''The Binding of Isaac''.
+* The texture of the floor may have a small chance of showing two small glowing dots that look like eyes.
+* The shadow cast on the floor most likely resembles Isaac's head while [[ending|opening the chest]].
+* {{dlc+|a+}} In {{s|The Void}}, during {{e|Delirium}}'s death animation, its boss room switches between different environments, and it always ends with a Chest backdrop.{{dlc-}}
+
+== Music ==
+* The [[music]] for the Chest is titled ''Sketches of Pain''.<ref>[https://ridiculon.bandcamp.com/album/the-binding-of-isaac-rebirth-ost Binding of Isaac: Rebirth OST]</ref>
+
+== References ==
+{{reflist}}
+
+{{nav|isaac boss unlock|environment|fr=Coffre (Étage)}}

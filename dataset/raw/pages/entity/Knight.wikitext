@@ -1,0 +1,123 @@
+{{infobox monster
+ | id          = 41
+ | image name  = * {{dlc|nr|Rebirth}}
+ | base hp     = 20
+ | environment = {{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Utero}}<br>{{floor|Sheol}}{{floor|Cathedral}}<br>{{room|Challenge}}
+ | behavior    = Moves erratically around the room and charges towards Isaac when in line of sight. Can only be damaged with regular tears from behind.
+}}
+
+'''Knights''' are enemies that can normally only be damaged from their exposed brains on the backs of their heads. However, explosions, attacks that pierce enemies ({{i|Brimstone}}, {{i|Cupid's Arrow}}, etc.), or melee attacks ({{i|Spirit Sword}}, {{i|Mom's Knife}}, etc.), will deal damage from any direction. The Knight normally walks around in random directions and will dash at Isaac if he is within line of sight.
+
+__TOC__
+{{clear}}
+
+== Variations ==
+=== Selfless Knight ===
+{{infobox monster
+ | name          = Selfless Knight
+ | variant        = 1
+ | base hp        = 20
+ | environment    = {{floor|Sheol}}<br>{{room|challenge}}
+ | replace        = Knight
+ | replace chance = 4.96%
+ | behavior       = Moves erratically around the room and charges towards Isaac very quickly when in line of sight. Can only be damaged with regular tears from behind.
+}}
+
+'''Selfless Knights''' are considerably faster than regular Knights but otherwise function the same. Rather than an exposed brain, they have Isaac's face on the backs of their heads.
+{{clear}}
+
+=== Floating Knight ===
+{{infobox monster
+ | name        = Floating Knight
+ | image name = * {{dlc|nr|Rebirth}}
+ | id          = 254
+ | base hp     = 20
+ | environment = {{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Cathedral}}<br>{{room|boss}}
+ | behavior    = Behaves like the Knight but slower, and can fly over all obstacles.
+}}
+
+'''Floating Knights''' are similar to ordinary Knights but are slightly slower and can fly over obstacles.
+{{clear}}
+
+=== Bone Knight ===
+{{infobox monster
+ | dlc         = a
+ | name        = Bone Knight
+ | image name  = * {{dlc|nr|Afterbirth}}
+ | id          = 283
+ | base hp     = 20
+ | environment = {{floor|Sheol}}<br>{{floor|Dark Room}}{{floor|Chest}}
+ | behavior    = Moves erratically around the room, charges toward Isaac when in line of sight, and leaves behind a short-lasting trail of damaging Red Creep. Can only be damaged with regular tears from behind.
+}}
+
+'''Bone Knights''' are similar to ordinary Knights but leaves behind a short-lasting trail of damaging [[Creep#Red Creep|Red Creep]]. They charge faster than an ordinary Knight, but not as fast as the Selfless Knight. {{dlc|nr}} Bone Knights are the only variant of Knights that are susceptible to knockback both from the front and from the back.
+{{clear}}
+
+=== Loose Knight ===
+{{infobox monster
+ | dlc            = r
+ | name           = Loose Knight
+ | id             = 41
+ | variant        = 2
+ | base hp        = 20
+ | environment    = {{floor|Ashpit}}<br>{{floor|Mausoleum}}<br>{{room|challenge}}
+ | replace        = Knight
+ | replace chance = 1.67%
+ | behavior       = Moves erratically around the room, charges toward Isaac when in line of sight. When its health is depleted, it turns into a Brainless Knight and a {{E|Pon}}.
+}}
+
+'''Loose Knights''' are similar to ordinary Knights, but move slower and separates into a Brainless Knight and {{E|Pon}} when killed.
+{{clear}}
+
+=== Brainless Knight ===
+{{infobox monster
+ | dlc         = r
+ | name        = Brainless Knight
+ | variant     = 3
+ | environment = {{floor|Mausoleum}}
+ | behavior    = Alternates between running around the room along the cardinal directions and aimlessly walking in circles. Charges at Isaac when in line of sight. Dies when its corresponding {{E|Pon}} dies.
+}}
+
+'''Brainless Knights''' are a variant of Knight created when a Loose Knight dies. They alternate between running around the room along the cardinal directions and aimlessly walking in circles, charging at Isaac when he gets in line of sight. It dies when its corresponding {{E|Pon}} dies; otherwise, they are invincible.
+{{clear}}
+
+=== Black Knight ===
+{{infobox monster
+ | dlc         = r
+ | name        = Black Knight
+ | variant     = 4
+ | base hp     = 30
+ | environment = {{floor|Gehenna}}<br>{{room|challenge}}
+ | behavior    = Moves erratically around the room, charges toward Isaac when in line of sight. Unleashes waves of fire in all cardinal directions upon charging into an obstacle. Shots that hit it from the front are deflected back at Isaac.
+}}
+'''Black Knights''' are a variant of Knight that have slightly higher health and will walk erratically around the room, charging at Isaac if he is within line of sight. When charging, they accelerate rapidly, sending waves of fire in the cardinal directions and becoming stunned momentarily after colliding with a wall or obstacle. A Black Knight's mask will also reflect any of Isaac's tears that come in contact with it. They are almost immune to knockback and other forced-movement (such as {{I|Black Hole}}).
+{{clear}}{{dlc clear}}
+
+== Notes ==
+* {{dlc|r+}} The Rune of {{p|Hagalaz}} will destroy the frontal armor of Knights and their variants, rendering them vulnerable from all directions.
+* The Knight is a monster in two segments: an invisible, invincible "shield" segment that leads the way and the visible "body" that follows close behind.  The shield takes no damage and partially covers the body, stopping shots that would damage it.
+** Sometimes, when a Knight changes directions, it appears to pause for a moment; this is because the shield segment is moving past the body segment, and the body won't move until the shield moves away from it, the same way the trailing segments of {{E|Larry Jr.}} or {{E|Buttlicker}} chains behave.
+* {{dlc|a+}} Prior to [[Booster Packs#Booster Pack #5|Booster Pack #5]], the Knight and its variants were briefly invulnerable when they spawned, or when Isaac entered the room they are in. They would become vulnerable when they started moving.
+** In the original Binding of Isaac, Knights were completely vulnerable when they spawned; the shield segment did not cover the Knight's front until it started moving, so Isaac  could shoot it in the face for damage as soon as it appeared.
+* Items that provide a fear effect (like {{I|Dark Matter}}) work remarkably well because they run away from Isaac, exposing their weak side.
+* Items that have a damage-over-time effect (such as {{I|Fire Mind}} or {{I|Scorpio}}) Also work well, since hitting them on the shield portion will still inflict the effect and mitigate the need to hit them from behind.
+* The name of the monster is a reference to the Darknut (also known as Tartnuc) enemy from ''[[wikipedia:The Legend of Zelda|The Legend of Zelda]]'' who, similar to Knights, cannot be harmed from their front.
+* Floating Knights cannot fly over [[key block]]s.
+* If Isaac [[charm]]s a Knight and it is the only enemy in the room, the Knight will chase Isaac but will not charge, making the Knight more difficult to damage until the effect is gone.
+
+== Trivia ==
+* {{dlc|r}}The [[Anti:Black Knight|Black Knight]], [[Anti:Brainless Knight|Brainless Knight]], and [[Anti:Loose Knight|Loose Knight]] first appeared in the ''Antibirth'' mod.
+** In ''Antibirth'', Brainless Knights were referred to as Empty Knights.
+** Black Knights had a slightly different appearance in ''Antibirth'' and would spawn in the Mausoleum.
+* Knights and their variants first appear in Chapter 2 ({{s|Caves}},{{s|Catacombs}},{{s|Flooded Caves}}), but become much more common in Chapter 3 ({{s|Depths}},{{s|Necropolis}},{{s|Dank Depths}}).
+* {{dlc|r+}} Bone Knight is the only Knight variant that does not play sound effects.
+
+== Gallery ==
+<gallery>
+File:Black Knight old.png|Black Knights in ''Antibirth''
+</gallery>
+
+== Bugs ==
+{{bug|The hitbox of Dark Red Champion Knights (and their variants) do not change when they crumble into goo, and they must be shot from the back to damage them.}}
+
+{{nav|fr=Chevalier}}

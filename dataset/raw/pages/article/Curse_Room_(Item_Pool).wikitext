@@ -1,0 +1,24 @@
+{{header item pools}}
+{{item pool}}
+
+Items in this pool can spawn in the {{R|Curse Room}}. This does not apply to Red Chests.
+
+== Activated Collectibles ==
+{{item pool/header}}
+{{pool items | Guppy's Head, Guppy's Paw }}
+{{pool items | dlc = a+ | Sacrificial Altar }}
+{{pool items | dlc = a+ | weight = 0.2 | Plan C }}
+{{pool items | dlc = r | Flip, Magic Skin, Razor Blade, Red Key }}
+|}
+
+== Passive Collectibles ==
+{{item pool/header}}
+{{pool items | Black Candle, Ceremonial Robes, Contract From Below, Dead Cat, Gimpy, Goat Head, Guppy's Collar, Guppy's Tail, The Mark, The Pact, Pentagram }}
+{{pool items | dlc = a | Athame, Curse of the Tower }}
+{{pool items | dlc = a+ | Dark Prince's Crown, Euthanasia, Little Horn, Shade, Tarot Cloth }}
+{{pool items | dlc = a+nr | Mom's Razor }}
+{{pool items | dlc = r | Blood Oath, Blood Puppy, Guppy's Eye, Sanguine Bond, Vengeful Spirit }}
+{{pool items | dlc = r | weight = 0.5 | False PHD, Heartbreak, Vanishing Twin }}
+|}
+
+{{nav|fr=Salle Maudite (Banque d'Objets)}}

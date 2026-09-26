@@ -1,0 +1,32 @@
+{{infobox monster
+ | id           = 52
+ | variant      = 1
+ | image name   = * {{dlc|nr|Rebirth}}
+ | is mini-boss = yes
+ | environment  = <u>Mini-Boss</u><br>{{room|mini-boss}}<br>{{dlc|r}} Cannot be encountered in [[Chapter 1]] Mini-Boss Rooms<br><u>Degraded Mini-Boss</u><br>{{floor|Chest}}{{floor|Dark Room}}
+ | base hp      = 60
+ | stage hp     = {{dlcalt|15|r=25}}
+ | pool         = {{dlc|nr}}[[Tarot Card]] / {{e|Key|r}} (78.6% Chance) <br>or<br>{{i|Dead Cat}} (21.4% Chance)
+}}
+
+'''Super Pride''' is a [[mini-boss]] and one of the [[Seven Deadly Sins#Super Sins|Seven Super Deadly Sins]]. He is randomly encountered as an alternate version of {{e|Pride}}.
+
+== Behavior ==
+Super Pride wanders randomly around the room and performs one of two attacks:
+* Spawns 2 {{e|Mega Troll Bomb}}s in randomly around the room.
+** Super Pride is immune to his own Mega Troll Bombs.
+* Fires 4 wave-like lasers from himself in an X-pattern and shoots 6 projectiles in all directions.
+Super Pride deals a whole heart of contact damage.
+
+== Notes ==
+* Super Pride is immune to his Troll Bombs.
+* {{dlc|a+}} Rarely, Super Pride can spawn with 2 {{e|Poky|text=Pokies}}.
+* {{dlc|nr}} Super Pride can drop {{i|Dead Cat}} even if Isaac has already encountered / picked it up.
+* Super Pride is not immune to damage from his own Mega Troll Bombs while under the effect of {{i|Anima Sola}}.
+
+== Trivia ==
+* Like {{e|Pride}}, Super Pride's expressions during its attacks are a reference to "rage comic" memes; he briefly assumes a [https://knowyourmeme.com/memes/trollface troll face] before spawning Troll Bombs, and resembles [https://knowyourmeme.com/memes/forever-alone forever alone] before firing lasers.
+* The [[wikipedia:Seven Deadly Sins|Seven Deadly Sins]] that these mini-bosses are based upon are, in Christian teachings, a classification of vices from which all others are derived.
+
+{{nav|mini-boss|fr=Super Orgueil}}
+[[category:Seven Super Deadly Sins]]

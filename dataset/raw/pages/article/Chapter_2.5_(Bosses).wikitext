@@ -1,0 +1,36 @@
+{{header normal bosses}}
+{{page dlc|r}}
+
+== {{s|Mines}} {{Unlockable}} ==
+{| style="width: 70%; text-align: center"
+ |[[file:boss Reap Creep portrait.png|center|link=Reap Creep]]
+|[[File:Boss Tuff Twins portrait.png|center|link=Tuff Twins]]
+|[[file:Boss Hornfel portrait.png|center|link=Hornfel]]
+|[[File:Boss Great Gideon portrait.png|center|link=Great Gideon]]
+ |-
+|[[Reap Creep]]
+|[[Tuff Twins]]
+|[[Hornfel]]
+|[[Great Gideon]]
+ |}
+
+== {{s|Ashpit}} {{Unlockable}} ==
+{| style="width: 70%; text-align: center"
+|[[file:Boss The Pile portrait.png|center|link=The Pile]]
+|[[File:Boss The Shell portrait.png|center|link=The Shell]]
+
+|[[file:boss Singe portrait.png|center|link=Singe]]
+|[[File:Boss Clutch portrait.png|center|link=Clutch]]
+ |-
+|[[The Pile]]
+|[[The Shell]]
+|[[Singe]]
+|[[Clutch]]
+|-
+| colspan="4" |[[File:Boss Great Gideon portrait.png|center|link=Great Gideon]]
+|-
+| colspan="4" |[[Great Gideon]]
+ |}
+
+{{nav|boss|fr=Chapitre 2.5 (Boss)}}
+[[Category:Bosses| ]]

@@ -1,0 +1,44 @@
+{{infobox monster
+ | id          = 219
+ | base hp     = {{dlcalt|25|r=20}}
+ | stage hp    = {{dlcalt|5|r=4|r+=3}}
+ | environment = {{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Sheol}}{{floor|Cathedral}}<br>{{floor|Dark Room}}{{floor|Chest}}<br>{{room|challenge}}{{room|devil}}
+ | behavior    = Disappears, then appears near Isaac and spits a cluster of spectral tears at him.
+}}
+
+'''Wizoobs''' are ghost enemies that disappear, then reappear near Isaac and spit a cluster of spectral tears at him. While they can appear to any side of Isaac, they most often will appear below him.
+
+=== Notes ===
+* They can spawn in unique {{R|Devil Room}} layouts if Isaac is holding the {{t|Number Magnet}}.
+__TOC__
+{{clear}}
+
+== Variations ==
+=== Red Ghost ===
+{{infobox monster
+ | dlc         = a
+ | name        = Red Ghost
+ | image name  = * {{dlc|nr|Afterbirth}}
+ | id          = 285
+ | base hp     = {{dlcalt|25|r=20}}
+ | stage hp    = {{dlcalt|5|r=4|r+=3}}
+ | environment = {{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|Sheol}}{{floor|Cathedral}}<br>{{floor|Dark Room}}<br>{{room|challenge}}
+ | behavior    = Disappears, then reappears near Isaac and fires a brimstone laser.
+}}
+
+'''Red Ghosts''' behave the same as Wizoobs, but fire a {{i|Brimstone}} beam instead of spectral shots.
+{{dlc clear}}{{clear}}
+
+== Gallery ==
+<gallery>
+Edmund_McMillen_Rebirth_Monster_Sketches.jpg | Sketches of monsters for the Binding of Isaac: Rebirth, including the Wizoob in the sixth square of the third row. In the concept art, it's originally called "Wizoos."
+</gallery>
+
+== Trivia ==
+* Wizoobs may be a reference to Wizrobes from ''The Legend of Zelda'' due to their similar names, similar sound effects, and attack patterns.
+* They could be a reference to Boos from the ''Super Mario'' series as well, considering that they look and act like boos, as well as having "boo" spelled backward at the end of their name.
+* {{dlc+|r}} Wizoobs and Red Ghosts are the only entities in the game whose [[Stage HP]]s were reduced in ''Repentance'', both from 5 to 4.
+** {{dlc|r+}} This is once again true in ''Repentance+'', both from 4 to 3.{{dlc-}}
+
+[[Category:Ghost monsters]]
+{{nav|fr=Magizoob}}

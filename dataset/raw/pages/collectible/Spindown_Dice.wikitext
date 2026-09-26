@@ -12,7 +12,7 @@
 {{cit|ua|r}}
 
 == Effects ==
-* Rerolls all pedestal items in a room by subtracting their internal ID number by one until a valid item is rolled. This effect occurs per item and is independent of any other items in the room.
+* Rerolls all pedestal items in a room by decreasing their internal ID number by one until a valid item is rolled. This effect occurs per item and is independent of any other items in the room.
 ** Unlockable items will be skipped if they are not unlocked.
 
 == Notes ==

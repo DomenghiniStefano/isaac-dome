@@ -1,0 +1,228 @@
+'''Beggars''' are a group of randomly occurring [[NPC]]s in the game. There are a total of 8 types of beggars, each requesting different donations. Isaac can donate pennies, keys, hearts, or {{dlc|a}} bombs by simply walking into them. With each donation, the beggar has a chance to drop various [[pickup]]s and [[trinket]]s. Sometimes, the beggar will drop an [[item]] and disappear. The rate of drops isn't influenced by [[luck]].
+
+Beggars can be destroyed by {{e|Bomb||bombs}}, causing them to drop a few pickups. {{dlc|nr}} If destroyed in {{s|Chest}} or {{s|Dark Room}} they will drop an item, with the exception of the Shell Game who still drops pickups.
+
+Normal Beggars, Devil Beggars, or more rarely Key Masters, Bomb Bums, Battery Bums, and Rotten Beggars can be spawned using {{p|XX - Judgement}}.
+
+== Beggar ==
+{{infobox entity
+ | name    = Beggar
+ | id      = 6
+ | variant = 4
+}}
+
+'''Beggars''' ask for {{e|Penny|text=Pennies}}. For each payout, they have a chance to drop the following
+* 16.6% {{e|Red Heart|text=Heart}} (3.33% with {{t|Daemon's Tail}})
+* 16.6% {{e|Bomb}} (23.3% with {{t|Daemon's Tail}})
+* 16.6% {{e|Key}} (23.3% with {{t|Daemon's Tail}})
+* 25% [[Cards and Runes|Card]]
+* 12.6% {{i|Breakfast}}, {{i|Lunch}}, {{i|Dinner}}, {{i|Dessert}}, or {{i|Rotten Meat}}
+* 12.6% An item from the {{ip|Beggar|text=Beggar item pool}}
+After spawning a pedestal item, the Beggar will disappear and can no longer be donated to.
+
+The hard-coded items can be spawned even if previously encountered during the same run.
+
+=== Notes ===
+* When destroyed drops random pickups and increases the {{r|Angel Room}} / {{r|Devil Room}} chance by 35%.
+* When paying out increase the {{r|Angel Room}} chance by 10%.
+* {{Dlc|r}} The chance for paying out depends on whether the game is in hard mode or not.
+** On hard mode, the first time the Beggar pays out will always be after at least six donations, with a high chance of paying out at six. After the first payout, any subsequent payout will take at least three donations.
+** On other modes (Normal, Greed, and Greedier), Beggars may pay out after any amount has been donated. It is unclear whether there is a limit, but it is very rare that they take six or more donations before paying out.
+** If the player has {{I|Lucky Foot}}, payouts are much more likely on each donation after the first payout. On Hard mode, the minimum amount of donations between each payout after the first is reduced to 2.
+{{clear}}
+
+== Devil Beggar ==
+{{infobox entity
+ | name    = Devil Beggar
+ | variant = 5
+}}
+
+'''Devil Beggars''' ask for {{e|Red Heart||hearts}}. Each donation deals a half heart of damage to Isaac (a full heart in [[Chapter 4]] and beyond). For each payout, they have a chance to drop the following
+* 25% [[Pill]]
+* 25% [[Card]]
+* 12.5% [[Trinket]]
+* 37.5% An item from the {{ip|Devil Beggar|text=Devil Beggar item pool}}
+After spawning a pedestal item, the Devil Beggar will disappear and can no longer be donated to.
+
+=== Notes ===
+* {{dlc|nr}} When destroyed drops various [[pickups]] {{dlc|nr+}} and increases the {{r|Angel Room}} chance by 25%.
+** {{dlc|r}} When destroyed drops two {{e|Spider||Spiders}}.
+** {{dlc|r+}} Increases the {{r|Angel Room}} / {{r|Devil Room}} chance by 35%.
+* When paying out decreases the {{r|Angel Room}} chance by 10%.
+* {{dlc|nr}} Similar to a {{m|Blood Donation Machine}}, Devil Beggars will take Eternal Hearts first, then Red Hearts. If Isaac only has half a Red Heart remaining, they will then take Black Hearts and Soul Hearts. It is possible to die in this manner.
+** {{dlc|r}} Devil Beggars ignore eternal hearts when taking hearts unless Isaac only has half a heart and an eternal heart; at that point, the beggar will take the eternal heart instead of the half heart.
+** {{Dlc|r}} The Devil Beggar will take the last Half Red Heart before Black Hearts and Soul Hearts.
+* [[Invulnerability]] and [[shield]]s can be used to prevent damage from it.
+* The full hearts of damage in [[Chapter 4]] and beyond can be mitigated by {{i|The Wafer}}, {{i|Cancer}}, or [[Percs]], which cut it back down to 1/2 heart.
+* The donations activate damage effects, such as {{i|Celtic Cross}}.
+* Activating Devil Beggars while using an item that grants invincibility, such as the {{i|Book of Shadows}} or {{p|Algiz}}, will not lower Isaac's health, but will still cause the beggar to spawn items. {{i|Holy Mantle}} is ignored, though, so {{c|The Lost}} will be killed instantly.
+** {{dlc|nr}} It is possible to exploit the invincibility frames after taking damage to donate twice for the price of one donation. {{t|Blind Rage}} doubles the invincibility frames, thus allowing to activate the Devil Beggar even more times in that period.
+** {{e|Bone Heart||Bone Hearts}} will not be broken by donating to a Devil Beggar unless Isaac has no other hearts, and can drain multiple Bone Hearts without breaking them.
+* {{Dlc|r}} The chance for paying out depends on whether the game is in hard mode or not.
+** On [[Hard mode]], the first time the Devil Beggar pays out will always be after at least 6 donations, though it very rarely takes more than 6. After the first payout, any subsequent payout will take at least three donations.
+** On other modes (Normal, Greed, and Greedier), Devil Beggars will pay out randomly between donations 1-7, with increasing odds and a guaranteed payout after 8 donations. The chances of getting subsequent payouts are slightly higher than the chances of getting the first.
+** If the player has {{I|Lucky Foot}}, payouts are much more likely on each donation after the first payout. On Hard mode, the minimum amount of donations between each payout after the first is reduced to 2.
+{{clear}}
+
+== Key Master ==
+{{infobox entity
+ | name    = Key Master
+ | variant = 7
+}}
+
+'''Key Masters''' (also known as Key Bums) are rare and ask for {{e|Key||keys}}. For each donation they drop the following
+* 65% Nothing
+* 30.6% Random [[Chest]]
+* 4.4% {{t|Paper Clip}} or An item from the {{ip|Key Master|text=Key Master item pool}} if the Paper Clip has been encountered in the run
+After spawning a pedestal item or dropping {{t|Paper Clip}}, the Key Master will disappear and can no longer be donated to.
+
+=== Notes ===
+* When destroyed drops random pickups {{dlc|r+}} and increases the {{r|Angel Room}} / {{r|Devil Room}} chance by 35%.
+* {{dlc|r+}} When paying out increase the {{r|Angel Room}} chance by 10%.
+* If found on {{s|Dark Room}} or {{s|Chest}}, the chest payouts will contain items.
+* {{dlc|nr+}} Possessing a {{e|Golden Key}} will not affect the Key Master in any way.
+** {{dlc|r+}} Possessing a {{e|Golden Key}} will now make the Key Master instantly pay out with an item, consuming the Golden Key as well.
+{{clear}}
+
+== Bomb Bum ==
+{{infobox entity
+ | dlc     = a
+ | name    = Bomb Bum
+ | variant = 9
+}}
+
+'''Bomb Bums''' ask for {{e|Bomb||bombs}}.
+
+{{dlc|nr}} For every donation, they have a chance to drop 1-2 Bombs or an item from the {{ip|Bomb Bum|text=Bomb Bum item pool}}. After spawning a pedestal item, the Bomb Bum will disappear.
+
+{{dlc|r}} For each donation they drop the following
+* 60% Nothing
+* 26% 1-3 {{e|Penny}}
+* 9% {{e|Red Heart||Heart}} 
+* 5% An item from the {{ip|Bomb Bum|text=Bomb Bum item pool}}
+After spawning a pedestal item the Bomb Bum will disappear and can no longer be donated to.
+
+=== Notes ===
+* When destroyed drops various [[pickups]] and {{dlc|r+}} increases the {{r|Angel Room}} / {{r|Devil Room}} chance by 35%.
+* {{dlc|r+}} When paying out increase the {{r|Angel Room}} chance by 10%.
+* {{dlc|nr}} Bomb Bums are rarer than other beggars.
+* {{dlc|nr}} It is possible that the Bomb Bum will "pay out" by spawning a Troll Bomb underneath itself.
+* {{dlc|nr+}} Possessing a {{e|Golden Bomb}} will not affect the Bomb Bum in any way.
+** {{dlc|r+}} Possessing a {{e|Golden Bomb}} will now make the Bomb Bum instantly pay out with an item, consuming the Golden Bomb as well.
+* {{dlc+|r}} Bomb Bums are immune to bombs, and will respond to an attempt to bombing them by spawning several troll bombs, similar to {{p|XVI - The Tower}}.
+** Bomb Bums can still be destroyed by the shockwave from {{i|Mama Mega!}} and {{i|Larynx}}, by being walked into with the effect of {{i|Mega Mush}}, or by the explosion of {{i|Dr. Fetus}} and {{i|Epic Fetus}} with {{i|Terra}}.
+** Having {{t|Safety Scissors}} allows Isaac to acquire infinite bombs by bombing the beggar repeatedly.
+*** Can be abused further for infinite pickups with {{i|Sack Head}}.{{dlc-}}
+{{clear}}
+
+== Battery Bum ==
+{{infobox entity
+ | dlc     = r
+ | name    = Battery Bum
+ | variant = 13
+}}
+
+'''Battery Bums''' ask for {{e|Penny||coins}}. For each payout, they have a chance to drop the following
+* 81.25% Charge the character's active item by 1-3 charges (can overflow like {{i|The Battery}})
+* 10% {{E|Lil' Battery}}
+* 6.25% An item from the {{ip|Battery Bum|text=Battery Bum item pool}}
+* 1.25% {{t|AAA Battery}}
+* 1.25% {{t|Watch Battery}}
+After spawning a pedestal item or trinket the Battery Bum will disappear and can no longer be donated to.
+
+=== Notes ===
+* When destroyed has a chance to drop random pickups, a [[pill]] or a trinket also increases the {{r|Angel Room}} / {{r|Devil Room}} chance by 35%.
+* When paying out increase the {{r|Angel Room}} chance by 10%.
+* This is the counterpart to the [[anti:Objects#Electrifier|Electrifier]] in Antibirth.
+* Battery Bums pay out every 3-4 coins donated in Hard mode and every 1-4 pennies in every other mode.
+
+=== Bugs ===
+{{Bug|dlc=nr+|Will not grant charges to a tainted character's pocket active item unless they have a normal active item.}}
+{{clear}}
+
+== Rotten Beggar ==
+{{infobox entity
+ | dlc         = r
+ | name        = Rotten Beggar
+ | variant     = 18
+ | unlocked by = Rotten Beggar
+}}
+
+'''Rotten Beggars''' ask for {{e|Penny||coins}}. For each payout, they have a chance to drop the following
+* 36% [[Blue Flies]]
+* 36% [[Blue Spider]]s
+* 12% {{e|Rotten Heart}}
+* 4% {{e|Bone Heart}}
+* 3% {{t|Fish Tail}},{{t|Fish Head}},{{t|Bob's Bladder}}, or {{t|Rotten Penny}} (Farts if all trinkets have already been picked up)
+* 5% Farts
+* 4.16%  An item from the {{ip|Rotten Beggar|text=Rotten Beggar item pool}}
+After spawning a pedestal item the Rotten Beggar will disappear and can no longer be donated to.
+
+=== Notes ===
+* When destroyed drops 2 {{e|Small Maggot}}s and has a chance to drop a {{e|Rotten Heart}}. Also increases the {{r|Angel Room}}/{{r|Devil Room}} chance by 35%.
+* When paying out increase the {{r|Angel Room}} chance by 10%.
+* Rotten Beggars pay out every 3-4 coins donated in Hard mode and every 1-4 pennies in every other mode.
+
+Will be replaced with a {{m|Key Master}} if not unlocked.
+{{clear}}
+
+== Shell Game ==
+{{infobox entity
+ | name    = Shell Game
+ | variant = 6
+}}
+
+'''Shell Game''' beggars can sometimes be found in the {{r|Arcade}}; they also have a small chance to spawn elsewhere. After giving the beggar a coin, they will lift a skull, revealing a Penny, Bomb, Red Heart, Key, or {{i|Skatole}}. The beggar will shuffle the skulls around and wait for Isaac to bump into 1 of the 3 shells. 
+
+If Isaac wins then they will payout with 2 of the respective pickup / {{i|Skatole}}. If Isaac loses they'll instead spawn an {{e|Attack Fly}}. 
+
+Skatole has a 7.6% of being chosen while the other pickups have a 23.1% of being chosen. 
+
+{{Dlc|r}} If Isaac wins a coin pickup, the beggar will spawn 2-3 coins.
+
+Once {{i|Skatole}} is dropped the Shell Game will disappear.
+=== Notes ===
+* {{i|Lucky Foot}} increases chances of winning from 33% to 55%.
+* If {{i|Skatole}} has already been acquired, other Shell Games will never give a second {{i|Skatole}} and will remain unless destroyed.
+** If Isaac wishes to avoid a {{i|Skatole}} pickup (for example, he wants to acquire more pickups), he may leave the room — this resets the Shell Game (though his spent coin is lost).
+* Item payouts are subjected to the same spawning chances as usual. {{e|Bomb||Bombs}} can be replaced with {{e|Troll Bomb||Troll Bombs}} or {{e|Double Bomb||Double Bombs}}, {{e|Red Heart||Red Hearts}} can be replaced with {{e|Half Red Heart||Half Red Hearts}}, {{e|Soul Heart||Soul Hearts}}, {{e|Black Heart||Black Hearts}}, {{e|Eternal Heart||Eternal Hearts}}, or {{e|Bone Heart||Bone Hearts}}, and {{e|Penny||Pennies}} can be replaced with {{e|Nickel||Nickels}} or {{e|Dime||Dimes}}.
+** Under the effects of {{i|Humbleing Bundle}}, bombs will be Double Bombs, Red Hearts will be Double Hearts, and Keys will be Key Rings.
+* {{dlc+|r}} A {{ip|Shell Game|text="shellGame" item pool}} contains other items than just {{i|Skatole}}. However, the item pool is currently only used by the {{i|Bag of Crafting}}, which commonly draws from it when the {{c|Tainted ???}} exclusive {{e|Poop Nugget}} is included in the recipe.{{dlc-}}
+{{clear}}
+
+== Hell Game ==
+{{infobox entity
+ | dlc         = r
+ | name        = Hell Game
+ | variant     = 15
+ | unlocked by = Hell Game
+}}
+
+'''Hell Game''' beggars can sometimes be found in the {{r|Arcade}}; they also have a small chance to spawn elsewhere. After giving the beggar health, they will lift a skull, revealing a Black Heart, Blue Spider, Bomb, Key, Coin, Card, or an item from the {{ip|Devil Room|text=Devil item pool}}. The beggar will shuffle the skulls around and wait for Isaac to bump into 1 of the 3 shells. 
+
+If Isaac wins then they will payout with a Black Heart, 2 Blue Spiders, 2 Bombs, 2 Keys, 2-3 Coins, A Card/Rune (Will always show a tarot card), or the shown item respectively. If Isaac loses they'll instead spawn a {{e|Spider}}. 
+
+The {{ip|Devil Room|text=Devil Room Item}} has a 7.6% of being chosen while the other pickups have a 15.4% of being chosen. 
+
+=== Notes ===
+* {{i|Lucky Foot}} increases chances of winning from 33% to 55%.
+* [[Invulnerability]] and [[shield]]s can be used to prevent damage from it.
+* Like with the Shell Game, pickups spawn under the same rules and chances as usual.
+* The item shown in each Hell Game will not change between plays. This means that Isaac can't just leave the room and try to get a different item. Isaac can, however, leave the room if he wishes to prevent the Hell Game from disappearing (though the spent health will be lost).
+* Unlike the devil beggar, bombing a Hell Game beggar does not affect the chance for an angel room to appear. Like the devil beggar, however, it will spawn spiders.
+* {{T|Sigil of Baphomet|nr+}}: the invincibility after killing an enemy can be used to play for free. Since the Hell Game spawns a spider when Isaac loses, this can be used to get a free play after every loss.
+
+Will be replaced with a {{m|Devil Beggar}} if not unlocked.
+{{clear}}{{dlc clear}}
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | Counterfeit Coin, Old Capacitor, Charged Penny }}
+
+== In-game Footage ==
+{{#ev:youtube|YzRhdOjJrkI}}
+
+== Trivia ==
+* {{dlc|r+}} Shell Game is referred to as "3 Skull Monty" in the online tab of the stats page.
+
+{{nav|beggar|mega satan unlock|tainted apollyon unlock|tainted azazel unlock|fr=Mendiant|zh=乞丐}}
+[[Category:Objects]]

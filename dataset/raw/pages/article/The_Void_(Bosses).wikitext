@@ -1,0 +1,12 @@
+{{header normal bosses}}
+{{page dlc|a+}}
+
+== {{s|The Void}} {{Unlockable}} ==
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:Boss Delirium portrait.png|center|link=Delirium]]
+|-
+| style="text-align: center; border: none" |[[Delirium]]
+|}
+
+{{nav|boss|fr=Néant (Boss)}}
+[[Category:Bosses|*]]

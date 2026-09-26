@@ -1,0 +1,72 @@
+{{infobox monster
+ | id          = 44
+ | environment = {{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Mausoleum}}{{floor|Gehenna}}<br>{{floor|Womb}}<br>{{floor|Cathedral}}<br>{{room|boss}}{{room|mini-boss}}
+ | behavior    = Slides around the room aimlessly, damaging Isaac by contact. Disappears when the room is cleared.
+}}
+
+Pokies are invulnerable enemies that slide around the room aimlessly in cardinal directions, dealing contact damage. They may move slightly faster towards Isaac if he gets in their sight. When the enemies or {{dlc|a}} [[Pressure Plate]]s are cleared from the room, the Poky stops moving and no longer does contact damage.
+{{clear}}
+
+== Variations ==
+=== Slide ===
+{{infobox monster
+ | name        = Slide
+ | variant     = 1
+ | environment = {{floor|Cellar}}<br>{{floor|Caves}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Mausoleum}}<br>{{floor|Womb}}{{floor|Scarred Womb}}<br>{{floor|Cathedral}}<br>{{floor|Chest}}<br>{{dlc|nr}} Chance to replace Pokies
+ | behavior    = Quickly slides towards Isaac when he gets in its line of sight, then moves slowly back to its original position. Cannot be destroyed.
+}}
+
+Slides will remain stationary in their positions and have their spikes drawn out, dealing contact damage. Should Isaac get in their sight in a cardinal direction, Slides will move towards Isaac's direction, then move back to their previous position after hitting a wall or obstacle. They have a short cooldown after charging towards Isaac before being able to move again. They will not stop moving even after enemies in the room are cleared. {{dlc|a}} They can, however, be deactivated by [[Pressure Plate]]s and retract their spikes as a result, meaning that they'll stop dealing contact damage and also stop moving towards Isaac.
+{{clear}}
+
+=== Wall Hugger ===
+{{infobox monster
+ | name        = Wall Hugger
+ | id          = 218
+ | environment = {{floor|Basement}}{{floor|Cellar}}{{floor|Burning Basement}}<br>{{floor|Downpour}}<br>{{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Mines}}{{floor|Ashpit}}<br>{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Mausoleum}}{{floor|Gehenna}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|Corpse}}<br>{{floor|Sheol}}{{floor|Cathedral}}<br>{{room|boss}}
+ | behavior    = Draws out its spikes a few seconds after Isaac enters a room. Moves around the room like [[Guts]], damaging Isaac by contact. Cannot be destroyed.
+}}
+
+Wall Huggers move around walls and obstacles endlessly. A couple of seconds after Isaac enters a room with them, their spikes will be drawn out, dealing contact damage. They cannot be shut down, even if enemies are cleared from the room. {{dlc|a}} They can, however, be deactivated by [[Pressure Plate]]s, retracting its spikes, meaning that it'll no longer move and do contact damage. Their paths can also be stopped should a {{e|Fire Place}} or static enemy be in their way.
+{{clear}}
+
+=== Grudge ===
+{{infobox monster
+ | dlc         = r
+ | name        = Grudge
+ | id          = 877
+ | environment = {{floor|Mausoleum}}{{floor|Gehenna}}<br>{{room|secret}} ([[Mausoleum]] only)<br>{{room|treasure}} ([[Mausoleum]] and [[Gehenna]] only)
+ | behavior    = Quickly slides towards Isaac when he gets in its line of sight. Cannot be destroyed.
+}}
+
+Grudges are exclusive to {{s|Mausoleum}} and {{s|Gehenna}} and are characterized by the eye in the center and two spikes on each side instead of three. Very briefly after Isaac enters a room, their spikes will be drawn out. They remain stationary until there's an uninterrupted path between it and Isaac in a cardinal direction, at which point it will quickly slide towards him, dealing a full heart of damage if it hits. They will not return to their original position after moving. They also have unique interactions with other stage elements.
+* If it runs into an enemy, it will be pushed along with it, instantly killing it if they're caught between the Grudge and a wall/obstacle.
+** Even bosses are prone to this instant kill effect. However, the only method to witness this happening is to get a {{I|TMTRAINER}} effect with summoning friendly Grudges.
+* If it runs over a [[button]], it will be pressed. Many rooms use this to create puzzles where Isaac has to manipulate the Grudge into pressing buttons.
+* If it runs into a {{e|Bomb}}, it will be pushed along with it, causing it to instantly explode if it gets caught between the Grudge and a wall/obstacle.
+{{clear}}{{dlc clear}}
+
+== Gallery ==
+<gallery>
+File:Grudge Gehenna.png|A Grudge's appearance in Gehenna.
+File:Edmund McMillen Rebirth Monster Sketches.jpg|Sketches of monsters for the ''Binding of Isaac: Rebirth'', including the Wall Hugger in the fifth square of the third row. Unlike its final appearance, the Wall Hugger in the concept art appears to have a face.
+</gallery>
+
+== Notes ==
+* A Poky can appear in a {{E|Loki}} boss fight.
+* These monsters can be destroyed using {{p|Chaos Card}}, {{i|Little Horn}} and {{i|Euthanasia}}. However, Grudges will re-spawn upon re-entering the room.
+* {{dlc|a+}} Two Pokies can appear in a {{E|Super Pride}} miniboss fight.
+* {{dlc|a}} In [[Greed mode]], if a Slide is spawned and all waves are cleared, the Slide will still try to harm Isaac. Leaving and re-entering the room will make the Slide disappear.
+* {{dlc|r}} All Pokies except for Grudges will retract their spikes if Isaac holds {{t|Flat File}}.
+** {{A|Golden Trinket|r+}} / {{I|Mom's Box|r+}} + {{t|Flat File}}: {{E|Grudge}}, and {{E|Ball and Chain}} have spikes retracted anyways.
+
+== Trivia ==
+* The three original variants are similar to Blade Traps, hazards found in ''[[wikipedia:The Legend Of Zelda|The Legend of Zelda]]'', with each trap imitating the different behaviors of them between games.
+** Pokies imitate the Blade Traps from ''Phantom Hourglass'' and ''Spirit Tracks'', being traps that move freely around the room.
+** Slides imitate the traditional Blade Traps from the original ''The Legend of Zelda'', charging towards Isaac whenever he is in their line of detection.
+** Wall Huggers imitate the Blade Traps from ''Twilight Princess'', moving around the room's walls and obstacles.
+* Grudges are very similar to Crush Traps from ''Spelunky'', having a similar design with an eye in the center, the same movement pattern, and the same quirk of instantly killing enemies it traps between itself and a wall or obstacle.
+* {{dlc|r}} Isaac has a unique death animation if he dies to a Grudge. He bursts into gibs like any other enemy, and his body is invisible (aside from his ghost arising from it).
+** This is a reference to the death sequence caused by [[spelunky:Crush Trap|crush traps]], from the game ''[[wikipedia:Spelunky|Spelunky]]'', which behave exactly like a Grudge.
+* {{dlc|r}} Grudge's eyes will stare at and follow Isaac as he moves.
+{{nav|fr=Picote}}

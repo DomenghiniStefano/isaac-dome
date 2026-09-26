@@ -1,0 +1,21 @@
+{{infobox version
+ | dlc  = a
+ | date = 2015-11-06
+}}
+
+== Undocumented changes ==
+=== Additions ===
+* Added a counter when donating to the [[Greed machine]] that shows the chance for the machine to jam.
+
+=== Changes ===
+* Increased HP:
+** [[Ultra Greed]]'s blank coin 35 → 100.
+** Ultra Greed's key coin 50 → 100.
+** Ultra Greed's bomb coin 20 → 100.
+** Ultra Greed's heart coin 20 → 100.
+** [[Blue Gaper]] 9 → 30.
+* The room before the [[Ultra Greed]] fight now contains several mini-bosses instead of only [[Monstro]].
+* The {{i|Death's Touch}} animation was updated to be smoother (with more frames of animation than before).
+* The {{i|Multidimensional Baby}} tear effect was updated to be more easy on the eyes.
+
+{{nav|version}}

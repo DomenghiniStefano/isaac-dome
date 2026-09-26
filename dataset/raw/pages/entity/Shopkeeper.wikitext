@@ -1,0 +1,70 @@
+Shopkeepers are present in every {{r|Shop}} and most {{r|Secret Room}}s, and can also be found in {{r|Vault}}s, {{r|Arcade}}s, [[Bedroom]]s, and {{r|I AM ERROR}} rooms. They cannot be hit by normal attacks, but explosions and certain items will damage them. Occasionally, destroying them will yield rewards.
+
+Destroying a shopkeeper increases the chance for a {{r|Devil Room}} or {{r|Angel Room}} to appear by 10% for the current floor.
+
+== Normal Shopkeepers ==
+{{ infobox entity
+ | name = Shopkeeper
+ | id   = 17
+}}
+[[File:Shopkeeper.png|bottom|50px]] [[File:Hanging Shopkeeper.png|50px]]
+
+=== Possible Rewards ===
+* Nothing (32.33% chance)
+* 2 random [[Coins]] (32.33% chance)
+* 2 {{e|Spider}}s (32.33% chance)
+* {{i|Steam Sale}} (1% chance)
+* {{i|Head of the Keeper}} (1% chance)
+* {{i|Coupon}} (1% chance once unlocked)
+{{clear}}
+
+== Special Shopkeeper ==
+{{ infobox entity
+ | dlc         = a
+ | name        = Special Shopkeeper
+ | variant     = 3
+ | unlocked by = Special Shopkeepers
+}}
+[[File:Special Shopkeeper.png|bottom|50px]] [[File:Special Hanging Shopkeeper.png|50px]]
+
+Special shopkeepers have a chance to replace regular shopkeepers. Special shopkeepers are unlocked by donating 234 coins to the {{m|Greed Donation Machine}} and special hanging shopkeepers are unlocked by donating 14 coins to the Greed Machine.
+
+=== Possible Rewards ===
+* Nothing (~30.09% chance)
+* A {{e|Nickel}} / {{e|Sticky Nickel|nr}} (66% chance)
+* {{t|Bloody Penny}} / {{t|Butt Penny}} / {{t|Counterfeit Penny}} / {{t|Flat Penny}} / {{t|Swallowed Penny}} / {{t|Burnt Penny}} (3.125% chance)
+* {{e|Greed}} (~0.78% chance)
+{{clear}}{{dlc clear}}
+
+== Notes ==
+* Shopkeepers have 5 hit points, but most attacks capable of hitting them deal more damage than that.
+* Non-explosion attacks that can damage shopkeepers include {{i|The Boomerang}}, {{i|Red Candle}}, {{i|The Candle}}, {{i|Stitches}}, and {{i|Mars}}.
+** {{dlc|a}} If Isaac has {{i|Holy Light|n}} and hits an enemy near a Shopkeeper with a Holy Light tear, the Shopkeeper will be destroyed by the beam of light.
+** {{dlc+|r}} The blast from {{i|Dark Arts}} will hit shopkeepers, but the slicing attack will not. This means an extra target is required to destroy a shopkeeper with Dark Arts. {{dlc-}}
+** {{dlc+|r}} The blast from {{I|Camo Undies}} will hit shopkeepers. {{dlc-}}
+** {{dlc+|r}} Collision damage from {{i|Mega Mush}} will hit shopkeepers. {{dlc-}}
+** {{dlc+|r}} Shopkeepers can be grabbed with {{i|Suplex!}}. The shockwaves may also hit the {{m|Donation Machine}}. {{dlc-}}
+** {{dlc+|r+}} The fire wave generated when colliding with an obstacle using {{i|Mars}} will hit shopkeepers. {{dlc-}}
+* Destroying a shopkeeper triggers the effects of specific items and trinkets, such as {{i|Charm of the Vampire}}, {{i|Infestation 2|nr}}, {{t|Samson's Lock|}}, {{i|Lusty Blood|a}}, {{i|Jumper Cables|a+}}, {{i|Book of the Dead|a+}}, {{t|Bat Wing|a+}}, {{i|Athame|r}} and {{t|Sigil of Baphomet|r}}.
+** The effects of {{i|Gimpy}}, {{i|Sticky Bombs|a}}, {{i|Infestation 2|r}}, {{i|Vade Retro|r}}, {{i|Vasculitis|r}}, {{i|Quints|r}}, {{i|Hungry Soul|r}} and {{t|Cricket Leg|r}} cannot be triggered by destroying shopkeepers. Destroying shopkeepers also does not provide soul charges for {{i|Urn of Souls|r}}.
+* Shopkeepers will be targeted by Mom's foot when using {{p|II - The High Priestess}}.
+* Using the <code>PAC1 F1SM</code> [[Seed]] makes Shopkeepers invincible too.
+* {{dlc|a}} If {{e|Greed}} appears after destroying a Special Shopkeeper, the doors will be locked.
+* {{dlc|a}} If Isaac already has {{i|Steam Sale}}, {{i|Head of the Keeper|n}}, and {{i|Coupon}}, Shopkeepers will not drop any further pedestal items.
+* {{dlc|a}} Special Shopkeepers can spawn in some specific room layouts even while not unlocked.
+
+== Unlockable [[Achievements]] ==
+{{achievement text | Lucky Toe }}
+
+== Trivia ==
+* The Shopkeeper's faces occasionally take on the appearance of certain popular Internet memes, such as "Forever Alone".
+* {{dlc|r}} A Shopkeeper shares the appearance of a {{e|Dummy|n}}.
+* Edmund has confirmed that all Shopkeepers (and, by extension, {{c|Keeper}}) are mummified versions of Isaac from previous runs.<ref>https://twitter.com/edmundmcmillen/status/1568484195252731904</ref>
+
+== Bugs ==
+{{bug|dlc=r|{{e|Greed}}s spawned by blowing up Shopkeepers will play the incorrect boss music.}}
+
+== References ==
+{{Reflist}}
+{{nav|greed machine unlock|fr=Gardien}}
+[[Category:Objects]]

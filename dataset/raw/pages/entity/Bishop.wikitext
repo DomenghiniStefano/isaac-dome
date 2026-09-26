@@ -1,0 +1,30 @@
+{{infobox monster
+ | dlc         = r
+ | name        = Bishop
+ | id          = 805
+ | base hp     = 14
+ | stage hp    = 4
+ | environment = {{floor|Mausoleum}}<br>{{floor|Cathedral}}<br>{{room|challenge}}
+ | behavior    = Shields all enemies in the room, preventing them from taking damage. Fires shots in the cardinal directions when it takes damage.
+}}
+
+'''Bishops''' are stationary enemies added in ''[[The Binding of Isaac: Repentance]]''. They appear only in {{s|Mausoleum}} and {{s|Cathedral}}.
+
+While a Bishop is alive in the current room, all other enemies that aren't Bishops will be given [[shield]]s, protecting them from all damage taken; all Bishops in the room must be killed for the other enemies to take damage as normal. Additionally, when Bishops take damage, they retaliate by firing shots in the cardinal directions.
+
+== Notes ==
+* Bishops will not protect other enemies while [[petrification|petrified]].
+* Bishops will shield Isaac if he takes damage while they are [[charm]]ed.
+* When captured by {{I|Friendly Ball}}, the Bishop will shield Isaac, but unlike with enemies, blocking damage done to Isaac damages the Bishop.
+* Bishops cannot be healed by [[champion|Pulsing Vivid Red Champions]].
+
+== Gallery ==
+<gallery>
+File:Bishop old.png|Bishops in ''Antibirth.
+File:Bishop Concept.png|Concept art of the Bishop for Antibirth along with another unused monster concept art.
+</gallery>
+
+== Trivia ==
+* In ''Antibirth'', [[anti:Bishop|Bishop]]'s robes had a purple color, didn't shoot tears after taking damage, had a base hp of 5, and could appear in {{s|Chest}}.
+
+{{nav|fr=Prêtre}}

@@ -1,0 +1,95 @@
+'''Black Markets''' are unique shops that can be accessed through a [[Crawl Space]]. Black Markets are 2 rooms wide. The left side of the Black Market contains a door back to the crawlspace and a trapdoor or beam of light to the next floor (including the {{s|Dark Room}} or {{s|Chest}}, even if they haven't been unlocked yet). The center of the room contains several items from the [[Shop (Item Pool)|Shop pool]] that can all be bought for 1 Red Heart container. {{dlc|nr}} Although these will not be [[Devil]] Room items, they still count as Devil deals for [[Angel Room#Conditions to Make Angel Rooms Appear|Angel Room generation]] and unlocking {{C|Azazel}}. {{dlc|r}} This is no longer the case, and Isaac can buy items from the Black Market without affecting the spawn chances of Angel rooms. The rest of the room will be strewn about with {{e|Shopkeeper}}s, pickups, and various {{M|Beggar}}s and [[machine]]s.
+
+[[Telepills]], {{i|Undefined}}, and {{dlc+|r+}}{{t|Cursed Penny}} {{dlc-}} have a very small chance to teleport you to the Black Market, but there will be no door exiting back to a {{R|Crawl Space}}. This means that without another way to teleport, the player will be forced to proceed to the next level, like in an {{R|I AM ERROR}} Room.
+
+== Layouts ==
+The following room maps were made using [https://github.com/Basement-Renovator/basement-renovator Basement Renovator] for cleaner viewing; note that all [[urn]]s you see will be [[skull]]s when encountered in-game. Additionally, the door to the crawlspace will close if there are enemies in the room, but the trapdoor will always be open.
+
+{| class="wikitable sortable mw-collapsible mw-collapsed" style="text-align: center"
+ ! scope="col" | ID
+ ! scope="col" | Weight
+ ! scope="col" class="unsortable" | Contents
+ ! scope="col" class="unsortable" | Image preview
+ |-
+ ! scope="row" | {{dlcmap slideshow|{{dlcalt|1|r=0}}}}
+ | 1
+ | style="text-align: left" | Five items for sale, a shopkeeper, four skulls, a {{M|Key Master}}, and a {{M|Devil Beggar}}.
+ | [[File:BlackMarket 0.png|400px]]
+ |-
+ ! scope="row" | {{dlcmap slideshow|{{dlcalt|2|r=1}}}}
+ | 1
+ | style="text-align: left" | Four items for sale, three shopkeepers, two skulls, four {{E|Blue Fire Place}}s (two of which can be reached), a {{M|Beggar}}, and a key master.
+ | [[File:BlackMarket 1.png|400px]]
+ |-
+ ! scope="row" | {{dlcmap slideshow|{{dlcalt|3|r=2}}}}
+ | 1
+ | style="text-align: left" | Two {{e|Red Heart|text=heart}}s, five items for sale, two shopkeepers, two coins, one skull, and a {{M|Donation Machine}}.
+ | [[File:BlackMarket 2.png|400px]]
+ |-
+ ! scope="row" | {{dlcmap slideshow|{{dlcalt|4|r=3}}}}
+ | 1
+ | style="text-align: left" | {{E|Greed}}, five items for sale, two shopkeepers, a {{M|Beggar}}, and a {{M|Devil Beggar}}.
+ | [[File:BlackMarket 3.png|400px]]
+ |-
+ ! scope="row" | {{dlcmap slideshow|{{dlcalt|5|r=4}}}}
+ | 1
+ | style="text-align: left" | Four items for sale, three shopkeepers, and two {{E|Pressure Plate|nr}}s / {{E|Reward Plate|r}}s.
+ | {{dlcmap slideshow|{{dlcalt|[[File:BlackMarket 5 Afterbirth+.png|400px]]|r=[[File:BlackMarket 4.png|400px]]}}}}
+ |-
+ ! scope="row" | {{dlcmap slideshow|{{dlcalt|6|r=5}}}}
+ | 1
+ | style="text-align: left" | Five items for sale, four shopkeepers, two [[trinket]]s, and three {{E|Fly||Flies}}. There are also two trapdoors on the left side of the room instead of one.
+ | [[File:BlackMarket 5.png|400px]]
+ |-
+ ! scope="row" | {{dlcmap slideshow|{{dlcalt|7|r=6}}}}
+ | 1
+ | style="text-align: left" | Five items for sale, three shopkeepers, a {{M|Shop Restock Machine}}, and a black/white [[pill]].
+ | [[File:BlackMarket 6.png|400px]]
+ |-
+ ! scope="row" | {{dlcmap slideshow|{{dlcalt|8|r=7}}}}
+ | 0.1
+ | style="text-align: left" | Two items and three pills for free, three shopkeepers (two of which will be {{E|Special Shopkeeper}}s), four skulls, a {{M|Shop Restock Machine}}, and a [[bed]].
+ | [[File:BlackMarket 7.png|400px]]
+ |-
+ ! scope="row" | {{dlcmap slideshow|{{dlcalt|9|r=8}}}}
+ | 0.1
+ | style="text-align: left" | An item for sale, five shopkeepers, four skulls, three black flies, a {{e|Poop}}, and a {{e|Red Chest}}.
+ | [[File:BlackMarket 8.png|400px]]
+ |-
+ ! scope="row" | {{dlc|r}} 9
+ | 1
+ | style="text-align: left" | Five items for sale, one shopkeeper, one {{m|Battery Bum}}, one {{M|Devil Beggar}}, three {{e|Bulb|n}}s, four {{e|Poop||poops}}, six skulls, two rocks and two {{e|Fire Place}}s.
+ | [[File:BlackMarket 9.png|400px]]
+ |-
+ ! scope="row" | {{dlc|r}} 10
+ | 1
+ | style="text-align: left" | Five items for sale, three shopkeepers, one {{m|Rotten Beggar}}, four skulls, and four rocks.
+ | [[File:BlackMarket 10.png|400px]]
+ |-
+ ! scope="row" | {{dlc|r}} 11
+ | 0.5
+ | style="text-align: left" | Five items for sale, one shopkeeper, one {{m|Blood Donation Machine}}, one {{M|Bomb Bum}}, thirteen rocks, and seven {{e|Fire Place}}s.
+ | [[File:BlackMarket 11.png|400px]]
+|}
+
+== Notes ==
+* {{dlc|na}} Exiting the Black Market through the beam of light in {{s|Chest}} or {{s|Dark Room}} causes the floor to restart (in a similar fashion to {{i|Forget Me Now}}), as there are no floors further than these two. This can come in handy to gather a lot of items. The same applies to {{R|I AM ERROR}}.
+** {{dlc|a}} Black Markets and {{R|I AM ERROR}} can no longer be accessed in Chest or Dark Room.
+*** {{dlc|r}} {{R|I AM ERROR}} rooms can be accessed by exiting a {{r|Crawl Space}} in an unintended direction.
+* {{dlc+|a+}} Black Markets and {{R|I AM ERROR}} can be found in {{s|The Void}}. Using the trapdoor causes the floor to restart (in a similar fashion to {{i|Forget Me Now}}).{{dlc-}}
+** {{dlc|a+}} Players can no longer access the Black Market through the wall glitch. However, it is still possible to access the Black Market using the glitch via special circumstances including having Ipecac and The Inner Eye.
+* {{C|The Lost}} can take items from the Black Market for free, just like with regular devil deals.
+** {{dlc|r}} The Lost can take only one item from each selection of items. When an item is taken, the others disappear.
+** {{dlc|r}} If a Black Market is found in the [[Mirrored World]] and is populated using a {{M|Shop Restock Machine}}, it will follow the rules of the non-mirrored character. Despite playing as The Lost in this area, multiple items can be purchased, and health will be deducted from the non-mirrored character, possibly resulting in death.
+* {{dlc|r}} When playing as {{C|Keeper}}, the items are sold for money instead, making it no different from a regular Shop.
+* {{dlc|r}} When two crawl spaces lead to a Black Market in the same floor, they lead to the same Black Market.
+* {{dlc|r}} During the [[Ascent]], crawlspaces with Black Markets lead to an {{R|I AM ERROR}} room instead.
+
+== Trivia ==
+* In the game files, every Black Market room is named "# - The Black Market (Racist Placeholder) (copy)", which can be seen with the "Debug 5" command.
+
+== Bugs ==
+{{bug|dlc=na+|Creating and entering a trapdoor which also leads to a Black Market (for example by {{i|We Need To Go Deeper!}} or an {{p|Ehwaz}} rune) results in not being able to escape the Black Market other than going to the next floor.}}
+{{bug|dlc=r|Using [[Telepills]] or {{i|Undefined}} to enter a black market in the mirrored world on {{s|Downpour}} II and {{s|Dross}} II will generate a black market with no items and no exits. Without any other means of teleporting, this will softlock a run.}}
+
+{{nav|room|fr=Marché Noir|es=Mercado_Negro}}

@@ -1,0 +1,9 @@
+{{page dlc|r}}
+
+Items with this [[Item Tags|tag]] can be spawned as wisps by {{i|Lemegeton}} and copied by {{t|Modeling Clay}}.
+
+== Passive Collectibles ==
+{{collectible table | tag = summonable | type = passive }}
+
+{{nav|fr=Balise summonable}}
+[[Category:Item tags]]

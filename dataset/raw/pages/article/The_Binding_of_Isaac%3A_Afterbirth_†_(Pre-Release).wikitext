@@ -1,0 +1,40 @@
+{{toc right}}{{page dlc|a+nr}}
+
+== [[boisite:134762989114|December 7 Update (Update #1)]] ==
+The DLC was announced. The [[bestiary]], item pool editor, room editor, animation editor, and Lua support were shown.
+
+== [[boisite:136686594689|January 5 Update (Update #2)]] ==
+The DLC will be coming out this year! Like [[Afterbirth]], it needs to be purchased and requires both Rebirth and Afterbirth. The expansion will be available for Windows, OSX, and Linux (and possibly Xbox One & Playstation 4). However, the mod support will only be available for Windows.
+
+== [[boisite:143043162269|April 19 Update (Update #3)]] ==
+The DLC will feature over 55 new [[item]]s (including [[trinket]]s), a new final [[chapter]], [[final boss]], and a new [[ending]], a new playable [[character]], a Hard Mode extension to [[Greed Mode]], [[daily challenge]]s for Greed Mode, 5 new [[challenge]]s, "loads" of new [[achievement]]s, new [[boss]]es, and several other minor changes.
+
+== [[boisite:145526962889|June 6 Update (Update #4)]] ==
+The new character has been revealed to be Apollyon. He starts with 2 hearts, slightly lower stats than Isaac, and his starting item is Void, a usable item with a recharge time of 4.
+
+== [[boisite:147984546014|July 27 Update (Update #5)]] ==
+The effect of {{i|Void}} was revealed. An additional item, {{i|Smelter|n}}, was revealed.
+
+== [[boisite:149687772024|August 29 Update (Update #6)]] ==
+A new music track, [https://www.youtube.com/watch?v=kBy4Bz2OEhs Flux], was revealed. Two trinkets, {{t|Silver Dollar}} and {{t|Bloody Crown}}, were also revealed.
+
+== [[boisite:150342833204|September 12 Update (Update #7)]] ==
+Four new items ({{i|Finger!}}, {{i|Lil Monstro}}, {{i|Depression}}, and {{i|Eucharist}}) were revealed.
+
+== [[boisite:152265548904|October 24 Update (Update #8)]] ==
+Three new items ({{i|Little Horn}}, {{i|Poke Go}}, and {{i|Brown Nugget}}) were revealed. Additionally, two bosses introduced in Afterbirth will be receiving evolved versions.
+
+== [[boisite:153201876719|November 15 Update (Update #9)]] ==
+A new idea that will be implemented into Afterbirth† was announced: Every month, the best fan-made mod (card, enemy, boss, etc.) will be handpicked by Edmund McMillen and fully implemented in the game as a mini-update. Furthermore, a new enemy was unveiled: [[Stoney]], an alternative to the Fatty that slowly walks toward Isaac, is invincible, and dies when there are no more enemies in the room.
+
+== [[boisite:153791362179|November 28 Update (Update #10)]] ==
+Two new items ({{i|Clicker}} and {{i|Pause}}) were revealed. Additionally, two mod samples were shown.
+
+== [[boisite:154255262019|December 9 Update (Update #11)]] ==
+The release date, price, and features of the expansion were revealed.
+
+== [[boisite:155355804054|January 3 Update (Update #12)]] ==
+Released.
+
+{{nav}}
+[[Category:Afterbirth+]]

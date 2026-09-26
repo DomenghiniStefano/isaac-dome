@@ -1,0 +1,59 @@
+{{infobox stage
+ | dlc         = r
+ | chapter     = 2.5
+ | id          = 29
+ | level id    = 3, 4
+ | type id     = 4
+ | bosses      = Hornfel, Tuff Twins, Great Gideon, Reap Creep
+ | unlocked by = A Secret Exit
+}}
+
+The '''Mines''' are the second floor of the alternate path added in [[Repentance]]. This stage can be accessed by using 2 bombs to open the boarded up door that appears after defeating the boss of the {{s|Caves}} / {{s|Catacombs}} / {{s|Flooded Caves}} I or II, or {{s|Downpour}} / {{s|Dross}} II. The Mines has an underground theme consisting of mostly rock and fire themed enemies and obstacles. The alternative floor of the Mines is the {{s|Ashpit}}, unlocked after beating every single boss from the Mines.
+
+The Mines are significantly more difficult than their [[Chapters#Chapter 2|standard counterparts]], filled with stone and fire-themed [[Monsters|enemies]] that boast greater health, aggression and occasionally resistances to damage. Most obstacles are [[rocks]] or [[Rocks#Spiked Rocks|spiked rocks]], while {{e|Poop}}s are almost non-existent. [[Rocks#Tinted Rocks|Tinted rocks]] have a high chance of spawning {{e|Tinted Rock Spider}}s. Travelling through it is only advised if you have already acquired {{I|Knife Piece 1}} in {{s|Downpour}} and intend to access the {{s|Corpse}}, however, you will still be presented with an additional, blind option in the item rooms.
+
+After defeating the Mines II's boss, a door leading to the next alternate chapter - {{s|Mausoleum}} - appears. It requires 2 full hearts to open. The damage taken ignores almost every form of damage reduction, including {{I|The Wafer}} and invincibility. Unlike other methods of health donation, red hearts will not be prioritized over more valuable hearts.
+
+== Unique Elements ==
+* '''Minecarts''' - Several [[Rooms#Normal Rooms|rooms]] contain rail tracks with minecarts racing around on them, usually containing enemies or hazards. These enemies can be defeated as normal, and doing so will destroy the minecart.
+* '''{{e|Throwable Bomb}}s''' - {{e|Bomb Grimace}}s can be commonly found in various rooms which infinitely produce red, throwable bombs. Walking into one will cause Isaac to pick it up, lighting the fuse, and giving a short time window to rid of the explosive by pressing any of the fire buttons.
+* '''Dark Rooms''' - Some rooms are very dark, having a more potent {{cu|Darkness}} effect, leaving only a small aura of light around Isaac.
+
+== [[Monster]]s ==
+{{entity table/header}}
+{{stage entities | Bony, Black Bony, Fly Bomb, Ink, Bulb, Danny, Coal Boy, Blaster, Bouncer, Dragon Fly, Dragon Fly X, Hard Host, Quakey, Gyro, Grilled Gyro, Fire Worm, Dip, Hardy, Gurgle, Faceless, Mole, Rock Spider, Coal Spider, Migraine, Splasher, Blister, Pon, Crispy, Chubber, Soy Creep, Wall Hugger, Stone Grimace, Vomit Grimace, Constant Stone Shooter, Cross Stone Shooter, Bomb Grimace, Quake Grimace, Stoney}}
+|}
+
+== [[Bosses]] ==
+{| style="width:100%; align:left padding-right:2em"
+ | style="text-align: center; border: none" |[[File:Boss Reap Creep portrait.png|center|link=Reap Creep]]
+ | style="text-align: center; border: none" |[[File:Boss Tuff Twins portrait.png|center|link=Tuff Twins]]
+ | style="text-align: center; border: none" |[[File:Boss Great Gideon portrait.png|center|link=Great Gideon]]
+ | style="text-align: center; border: none" |[[File:Boss Hornfel portrait.png|center|link=Hornfel]]
+ |-
+ | style="text-align: center; border: none" |[[Reap Creep]] {{dlc|r}}
+ | style="text-align: center; border: none" |[[Tuff Twins]] {{dlc|r}}
+ | style="text-align: center; border: none" |[[Great Gideon]] {{dlc|r}}
+ | style="text-align: center; border: none" |[[Hornfel]] {{dlc|r}}
+ |}
+
+== Knife Piece ==
+If Isaac has {{I|Knife Piece 1}}, a special double-sized room will spawn in Mines II containing a minecart and a broken length of rail track leading to a boarded-up door, resembling a [[Bedroom]] door. Behind this door lies the area in which {{I|Knife Piece 2}} can be acquired. There are two methods for accessing this area:
+* Three {{e|Yellow Button}}s can be found in rooms throughout the floor. One will be in the same room as the broken rail track, but the other two are randomly placed. Once all three buttons are pressed, the rail track will be repaired, and once Isaac touches the minecart it will bring him into the special area.
+* If Isaac has [[flight]] and 2 {{e|Bomb}}s, he can fly to the boarded-up door and blow it open. Other effects that open doors such as {{i|Dad's Key}}, {{p|Soul of Cain}}, {{i|Cracked Orb}}, etc. can also be used in place of bombs.
+
+Upon entering this area, all [[Items#Passive Collectibles|passive items]], [[Items#Active Collectibles|active items]], and [[trinket]]s will be rendered inactive, and Isaac's {{e|Bomb}}s, {{e|Penny|text=coins}}, and {{e|Key}}s will be set to zero. Isaac will pass through several empty [[rooms]] before reaching a room with the {{I|Knife Piece 2}}. Once picked up, {{e|Mother's Shadow}} will spawn and chase Isaac until he reaches the entrance to the area and leaves. Once Isaac escapes, all his items will be reactivated, and Mother's Shadow will end her pursuit.
+
+''For more notes and details, see {{e|Mother's Shadow}}.''
+
+== Unlockable [[achievements]] ==
+{{achievement text | Ashpit }}
+
+== Trivia ==
+* In [https://antibirth.com/ Antibirth], the Mines used to have a different way of unlocking {{I|Knife Piece 2}}. Somewhere on the floor, there was a room containing four [[buttons]]. In the room, next to each button, were 1 to 4 small pebbles, indicating the order in which to press them. After all four buttons were pressed, the {{I|Knife Piece 2}} would appear in the center of the room. This also wasn't the last knife piece, as there was a third piece to collect on the {{s|Mausoleum}} floor.
+* {{e|Mole}}s will open their eyes if encountered in a dark room, however, this doesn't change their behavior.
+
+== Music ==
+* The music for the Mines is called ''Fissure''.
+
+{{nav|environment|hush unlock|zh=矿洞}}

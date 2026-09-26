@@ -1,0 +1,39 @@
+{{header soul stones}}
+{{Infobox rune
+ | dlc         = r
+ | name        = Soul of Lazarus
+ | type        = soul stone
+ | id          = 89
+ | quote       = Life after death
+ | description = Isaac dies, and is immediately revived at half a Heart in the same room, with 1.5 second of invincibility time. The soul stone is automatically used upon taking fatal damage, acting as an extra life.
+ | unlocked by = Soul of Lazarus
+ | recharge    = 1
+}}
+
+{{cit|ur|r}}
+
+== Effects ==
+* Isaac dies, and is immediately revived at half a Heart in the same room, with 1.5 second of invincibility time. 
+** The soul stone is automatically used upon taking fatal damage, acting as an extra life.
+
+== Notes ==
+* Soul of Lazarus has the highest priority of all [[:Category:Revival items|revival items]].
+
+== Strategy ==
+* Soul of Lazarus is very precious for {{c|Tainted Lost}} as revival items are very rare with him.
+* Soul of Lazarus can be used to steal a devil deal. If the deal taken would kill Isaac, the soul stone will revive him on the spot.
+* One extremely niche use involves being one hit away from death on red HP, and using the soul stone to kill Isaac in order to preserve his chance for a {{r|Devil Room}}.
+* As a revival item, it can be used to make use of high-risk/guaranteed death items such as {{i|Damocles}} or {{p|Suicide King}}.
+* Since Soul of Lazarus revives Isaac in the same room he died in, it is useful against bosses as reviving does not reset their health.
+
+== Synergies ==
+* {{i|Plan C}}: Soul of Lazarus allow to use Plan C safely on bosses that have a death animation longer than 3 seconds. 
+
+== Interactions ==
+* {{i|Echo Chamber}}: Getting automatically revived by Soul of Lazarus does not add it to the queue, and directly using the soul stone will not allow for automatic revival in the future.
+
+== In-game Footage ==
+{{#ev:youtube|QllR1KrizD0}}
+
+{{nav|fr=Âme de Lazare}}
+[[Category:Runes]]

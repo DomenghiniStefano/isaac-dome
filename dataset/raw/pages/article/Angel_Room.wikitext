@@ -1,0 +1,324 @@
+[[File:Angel Room door.png|130px]]
+
+'''Angel Rooms''' are the divine equivalent of the {{R|Devil Room}}. They feature an angel and 0-4 free items. Taking one of these items causes all other free items to disappear. ({{c|Tainted Keeper}} still needs to pay for these items, and buying any of them causes all of the others to disappear. Some of these items cost 30 pennies to buy.)
+
+Every time the Devil Room is spawned/entered, there's a chance for it to be replaced by the Angel Room if certain conditions are met. After beating the {{s|Dark Room}} or {{s|Chest}} once, an [[Angel]] can be awoken by planting a bomb near the statue (or destroying it with {{i|Leo}} or similar items). This will begin an angel boss fight and allow Isaac to charge his active item and pick up {{i|Key Piece 1}} or {{i|Key Piece 2}}. Both pieces are needed to get through the Golden Door in {{S|Chest}} or {{S|Dark Room}} to fight {{E|Mega Satan}}.
+
+== Layouts ==
+The following room maps were made using [https://github.com/Basement-Renovator/basement-renovator Basement Renovator] for cleaner viewing. Note that, unlike Devil rooms, items in Angel rooms cost nothing to take, but if there are multiple items, taking one will cause the others to disappear.
+
+=== Normal ===
+{| class="wikitable sortable mw-collapsible mw-collapsed" style="text-align: center"
+ ! scope="col" | ID
+ ! scope="col" | Weight
+ ! scope="col" class="unsortable" | Contents
+ ! scope="col" class="unsortable" | Image preview
+ |-
+ ! scope="row" | 0
+ | 1
+ | style="text-align: left" | One [[item]].
+ | [[File:Angel 0.png|250px]]
+ |-
+ ! scope="row" | 1
+ | 1
+ | style="text-align: left" | {{dlc|na+}} One [[item]] and two {{E|Blue Fire Place}}s.<br>{{dlc|a+}} Two items to choose from and two {{E|Blue Fire Place}}s.
+ | [[File:Angel 1.png|250px]]
+ |-
+ ! scope="row" | 2
+ | 1
+ | style="text-align: left" | {{dlc|na+}} One item and four {{E|Blue Fire Place}}s.<br>{{dlc|a+}} One item, an {{e|Eternal Heart}}, and four {{E|Blue Fire Place}}s.
+ | [[File:Angel 2.png|250px]]
+ |-
+ ! scope="row" | 3
+ | {{dlcmap slideshow|{{dlcalt|1|r=0.25}}}}
+ | style="text-align: left" | {{dlc|na+}} Three {{e|Soul Heart}}s.<br>{{dlc|a+}} Four {{e|Eternal Heart}}s and a {{e|Soul Heart}}.
+ | [[File:Angel 3.png|250px]]
+ |-
+ ! scope="row" | 4
+ | {{dlcmap slideshow|{{dlcalt|1|r=0.25}}}}
+ | style="text-align: left" | {{dlc|na+}} Two {{e|Eternal Heart}}s.<br>{{dlc|a+}} Three items to choose from.
+ | {{dlcmap slideshow|{{dlcalt|[[File:Angel 4 Afterbirth+.png|250px]]|r=[[File:Angel 4.png|250px]]}}}}
+ |-
+ ! scope="row" | 5
+ | 1
+ | style="text-align: left" | {{dlc|na+}} One item and two {{E|Blue Fire Place}}s.<br>{{dlc|a+}} One item and eight {{E|Blue Fire Place}}s.
+ | [[File:Angel 5.png|250px]]
+ |-
+ ! scope="row" | {{dlc|a}} 6
+ | 1
+ | style="text-align: left" | {{dlc|a+nr}} Two items to choose from and four {{E|Purple Fire Place}}s.<br>{{dlc|na+r}} One item and four {{E|Purple Fire Place}}s.
+ | {{dlcmap slideshow|{{dlcalt|[[File:Angel 6 Afterbirth+.png|250px]]|r=[[File:Angel 6.png|250px]]}}}}
+ |-
+ ! scope="row" | {{dlc|a}} 7
+ | {{dlcmap slideshow|{{dlcalt|1|r=0.25}}}}
+ | style="text-align: left" | {{dlc|na+}} An {{e|Eternal Heart}} and four {{e|Soul Heart}}s behind [[Block|key/iron blocks]].<br>{{dlc|a+}} Four items to choose from behind [[Block|key/iron blocks]] and a {{e|Soul Heart}}.
+ | [[File:Angel 7.png|250px]]
+ |-
+ ! scope="row" | {{dlc|a}} 8
+ | 1
+ | style="text-align: left" | One item, twelve [[Urn]]s, and a {{e|Bomb}} behind the statue. {{dlc|nr}} This bomb has a chance to be a {{e|Troll Bomb}}, which will awaken the angel and force you to fight it if you don't push it out of the way, leave the room immediately, or have {{t|Safety Scissors}}.
+ | [[File:Angel 8.png|250px]]
+ |-
+ ! scope="row" | {{dlc|a}} 9
+ | 1
+ | style="text-align: left" | {{dlc|na+}} One item.<br>{{dlc|a+nr}} Two items to choose from.<br>{{dlc|r}} This room cannot spawn.
+ | [[File:Angel 9.png|250px]]
+ |-
+ ! scope="row" | {{dlc|a+}} 10
+ | 1
+ | style="text-align: left" | One item and two blue fireplaces.
+ | [[File:Angel 10.png|250px]]
+ |-
+ ! scope="row" | {{dlc|a+}} 11
+ | {{dlcmap slideshow|{{dlcalt|1|r=0.5}}}}
+ | style="text-align: left" | One item and two {{E|Eternal Chest}}s.
+ | [[File:Angel 11.png|250px]]
+ |-
+ ! scope="row" | {{dlc|a+}} 12
+ | {{dlcmap slideshow|{{dlcalt|1|r=0.5}}}}
+ | style="text-align: left" | {{dlc|nr}} Two items to choose from.<br>{{dlc|r}} One item.
+ | {{dlcmap slideshow|{{dlcalt|[[File:Angel 12 Afterbirth+.png|250px]]|r=[[File:Angel 12.png|250px]]}}}}
+ |-
+ ! scope="row" | {{dlc|a+}} 13
+ | {{dlcmap slideshow|{{dlcalt|1|r=0.25}}}}
+ | style="text-align: left" | {{dlc|nr}} Two items to choose from, two {{e|Soul Heart}}s, and six {{E|Blue Fire Place}}s.<br>{{dlc|rnr+}} One item, two {{e|Soul Heart}}s, and six {{E|Blue Fire Place}}s.<br>{{dlc|r+}} One item, two {{e|Half Soul Heart}}s, and six {{E|Blue Fire Place}}s.
+ | {{dlcmap slideshow|{{dlcalt|[[File:Angel 13 Afterbirth+.png|250px]]|r=[[File:Angel 13 Repentance.png|250px]]|r+=[[File:Angel 13.png|250px]]}}}}
+ |-
+ ! scope="row" | {{dlc|a+}} 14
+ | {{dlcmap slideshow|{{dlcalt|1|r=0.25}}}}
+ | style="text-align: left" | Two items to choose from, a {{e|Soul Heart}}, and five {{E|Blue Fire Place}}s.
+ | [[File:Angel 14.png|250px]]
+ |-
+ ! scope="row" | {{dlc|a+}} 15
+ | 0.1
+ | style="text-align: left" | Three items to choose from and four {{E|Purple Fire Place}}s.
+ | [[File:Angel 15.png|250px]]
+ |-
+ ! scope="row" | {{dlc|r}} 16
+ | 0.5
+ | style="text-align: left" | Two items to choose from, four {{E|Blue Fire Place}}s, and one {{E|Purple Fire Place}} that has a 50% chance to become a {{E|Blue Fire Place}}.
+ | [[File:Angel 16.png|250px]]
+ |-
+ ! scope="row" | {{dlc|r}} 17
+ | 1
+ | style="text-align: left" | One item and six {{E|Blue Fire Place}}s.
+ | [[File:Angel 17.png|250px]]
+ |-
+ ! scope="row" | {{dlc|r}} 18
+ | 1
+ | style="text-align: left" | One item and six {{E|Blue Fire Place}}s.
+ | [[File:Angel 18.png|250px]]
+ |-
+ ! scope="row" | {{dlc|r}} 19
+ | 0.5
+ | style="text-align: left" | One item and thirteen {{E|Blue Fire Place}}s.
+ | [[File:Angel 19.png|250px]]
+ |-
+ ! scope="row" | {{dlc|r}} 20
+ | 1
+ | style="text-align: left" | Two items to choose from and two [[pillar]]s.
+ | [[File:Angel 20.png|250px]]
+ |-
+ ! scope="row" | {{dlc|r}} 21
+ | 1
+ | style="text-align: left" | One item, one [[confessional]], and two {{E|Blue Fire Place}}s.
+ | [[File:Angel 21.png|250px]]
+ |-
+ ! scope="row" | 100
+ | 1
+ | style="text-align: left" | The layout containing the light beam to the {{s|Cathedral}}.
+ | [[File:Angel 100.png|250px]]
+ |}
+
+=== {{dlc+|a}} {{mode|greed}} Greed Mode ===
+{| class="wikitable sortable mw-collapsible mw-collapsed" style="text-align: center"
+ ! scope="col" | ID
+ ! scope="col" | Weight
+ ! scope="col" class="unsortable" | Contents
+ ! scope="col" class="unsortable" | Image preview
+ |-
+ ! scope="row" | 0
+ | {{dlcmap slideshow|{{dlcalt|1|r=0.5}}}}
+ | style="text-align: left" | {{dlc|na+}} One item and two {{E|Blue Fire Place}}s.<br>{{dlc|a+nr}} Two items to choose from and two {{E|Blue Fire Place}}s.<br>{{dlc|r}} Three items to choose from and two {{E|Blue Fire Place}}s.
+ | {{dlcmap slideshow|{{dlcalt|[[File:GreedAngel 0 Afterbirth+.png|250px]]|r=[[File:GreedAngel 0.png|250px]]}}}}
+ |-
+ ! scope="row" | 1
+ | 1
+ | style="text-align: left" | {{dlc|na+}} One item and four {{E|Blue Fire Place}}s.<br>{{dlc|a+}} Two items to choose from and four {{E|Blue Fire Place}}s.
+ | {{dlcmap slideshow|{{dlcalt|[[File:GreedAngel 1 Afterbirth+.png|250px]]|r=[[File:GreedAngel 1.png|250px]]}}}}
+ |-
+ ! scope="row" | 2
+ | 1
+ | style="text-align: left" | {{dlc|na+}} An {{e|Eternal Heart}}.<br>{{dlc+|a+}} One item and two {{E|Half Soul Heart}}s.{{dlc-}}
+ | [[File:GreedAngel 2.png|250px]]
+ |-
+ ! scope="row" | 3
+ | {{dlcmap slideshow|{{dlcalt|1|r=0.5|r+=1}}}}
+ | style="text-align: left" | {{dlc|nr}} An {{e|Eternal Heart}} and two {{E|Blue Fire Place}}s.<br>{{dlc|r}} One item, an {{e|Eternal Heart}}, and two {{E|Blue Fire Place}}s.
+* {{dlc|r+}} The eternal heart has 50% chance to not appear.
+ | {{dlcmap slideshow|{{dlcalt|[[File:GreedAngel 3 Afterbirth+.png|250px]]|r=[[File:GreedAngel 3.png|250px]]}}}}
+ |-
+ ! scope="row" | 4
+ | {{dlcmap slideshow|{{dlcalt|1|r=0.25}}}}
+ | style="text-align: left" | {{dlc|nr}} Two {{e|Soul Heart}}s, each behind two {{E|Blue Fire Place}}s, and two {{E|Eternal Chest}}s.<br>{{dlc|r}} One item, two {{e|Soul Heart}}s, each behind two {{E|Blue Fire Place}}s, and two {{E|Eternal Chest}}s. It is possible to walk diagonally between the blue fireplaces to get the soul hearts without taking damage.
+ | {{dlcmap slideshow|{{dlcalt|[[File:GreedAngel 4 Afterbirth+.png|250px]]|r=[[File:GreedAngel 4.png|250px]]}}}}
+ |-
+ ! scope="row" | 5
+ | {{dlcmap slideshow|{{dlcalt|1|r=0.5}}}}
+ | style="text-align: left" | {{dlc|nr}} Two {{e|Soul Heart}}s and a {{E|Gold Heart}}.<br>{{dlc|r}} One item, two {{e|Soul Heart}}s, and a {{E|Gold Heart}}.
+ | {{dlcmap slideshow|{{dlcalt|[[File:GreedAngel 5 Afterbirth+.png|250px]]|r=[[File:GreedAngel 5.png|250px]]}}}}
+ |-
+ ! scope="row" | 6
+ | {{dlcmap slideshow|{{dlcalt|1|r=0.75}}}}
+ | style="text-align: left" | {{dlc|na+}} Six [[coin]]s and two {{E|Blue Fire Place}}s.<br>{{dlc|a+nr}} One item, two random [[coin]]s, and two {{E|Blue Fire Place}}s.<br>{{dlc|r}} Two items to choose from, one random [[coin]], and two {{E|Blue Fire Place}}s.
+ | {{dlcmap slideshow|{{dlcalt|[[File:GreedAngel 6 Afterbirth+.png|250px]]|r=[[File:GreedAngel 6.png|250px]]}}}}
+ |-
+ ! scope="row" | {{dlc|r}} 7
+ | 1
+ | style="text-align: left" | One item, one [[confessional]], and two {{E|Blue Fire Place}}s.
+ | [[File:GreedAngel 7.png|250px]]
+ |}
+{{dlc-}}
+
+=== {{dlc+|r}} Angel Shops ===
+Angel shops are special angel rooms accessed via {{i|The Stairway}}. The player can buy [[pickups]] and [[items]] with coins.
+
+The beggars have a very low chance to be replaced by another type of beggar.
+{| class="wikitable sortable mw-collapsible mw-collapsed" style="text-align: center"
+ ! scope="col" | ID
+ ! scope="col" | Weight
+ ! scope="col" class="unsortable" | Contents
+ ! scope="col" class="unsortable" | Image preview
+ |-
+ ! scope="row" | 40
+ | 1
+ | style="text-align: left" | A beggar, 1-2 pickups and 1-2 items for sale, and 4 {{E|Blue Fire Place}}s.
+ | [[File:Angel 40.png|250px]]
+ |-
+ ! scope="row" | 41
+ | 1
+ | style="text-align: left" | A beggar, 1-2 pickups and 1-2 items for sale, and 2 {{E|Blue Fire Place}}s.
+ | [[File:Angel 41.png|250px]]
+ |-
+ ! scope="row" | 42
+ | 1
+ | style="text-align: left" | A beggar, 1-2 pickups and 1-2 items for sale, and 3 {{E|Blue Fire Place}}s.
+ | [[File:Angel 42.png|250px]]
+ |-
+ ! scope="row" | 43
+ | 1
+ | style="text-align: left" | A beggar, 1-2 pickups and 1-2 items for sale, 4 {{E|Blue Fire Place}}s, and a free pickup.
+ | [[File:Angel 43.png|250px]]
+ |-
+ ! scope="row" | 44
+ | 0.5
+ | style="text-align: left" | A beggar, 1-3 pickups and 1-2 items for sale, and 2 {{E|Blue Fire Place}}s.
+ | [[File:Angel 44.png|250px]]
+ |-
+ ! scope="row" | 45
+ | data-sort-value="0.51" | {{mode|normal|hard}} 0.5<br>{{mode|greed|greedier}} 1
+ | style="text-align: left" | A beggar, 1-2 pickups and 1-2 items for sale, 2 {{E|Blue Fire Place}}s, and a {{m|Confessional}}.
+ | [[File:Angel 45.png|250px]]
+ |}
+{{dlc-}}
+
+== Conditions to Make Angel Rooms Appear ==
+For the player to have a chance to get an Angel Room after killing a boss (or with a {{p|Joker}} card / {{e|Red Chest}} teleport), some conditions must be met:
+* A {{R|Devil Room}} door has spawned on any previous floor.
+** Teleporting to a {{R|Devil Room}} with a {{p|Joker}} card or a {{e|Red Chest}} doesn't count.
+** {{dlc+|r}} {{i|Book of Virtues}} and the "You feel blessed!" fortune from {{M|Confessional}}s make the first deal to appear in a run to be an Angel Room.{{dlc-}}
+* No [[Devil Room#Deals with the Devil|Deals with the Devil]] have been made throughout the run.
+** Taking {{e|Red Chest}} items, using {{p|Credit Card}}, using {{i|Coupon}}, or collecting an item from {{E|Krampus}} do not count.
+** Even though it technically doesn't cost any health, taking a devil deal with {{c|The Lost}} will still prevent Angel Rooms from appearing.
+** {{dlc+|r}} Paying for {{R|Devil Room}} items from Boss Rooms after using {{i|Satanic Bible}} will still prevent Angel Rooms from spawning.{{dlc-}}
+** {{dlc+|r}} {{i|Book of Virtues}} and {{i|Act of Contrition}} allow for Angel Rooms to spawn even if a Devil Deal was taken previously, as well as allowing to take Devil Deals without being locked out of Angel Rooms.{{dlc-}}
+** {{dlc+|r}} The "You feel blessed!" fortune from {{M|Confessional}}s allow for Angel Rooms to spawn even if a Devil Deal was taken previously, but only for the current floor.{{dlc-}}
+
+=== {{dlc|a}} Sacrifice Room Exception ===
+* On the 3rd and 5th sacrifice in a {{R|Sacrifice Room}}, there is a 66% chance that the player will receive the "You feel blessed!" effect. This will increase the chances of the Angel Room spawning even if the previous conditions have not been met.
+* On the 6th sacrifice in a {{R|Sacrifice Room}}, there is a 33% chance that the player will be teleported to the Angel Room if they haven't already visited or opened the Devil Room for that floor. This will occur even if the previous conditions have not been met.
+
+== Angel Room Generation Chance ==
+The selection between Angel Room and Devil Room is made upon opening the door after defeating the floor's boss (or upon teleporting to the room using a {{p|Joker}} card or a {{e|Red Chest}}).
+
+The game makes a series of coin flips to determine if an Angel Room will appear or not. If one of these coin flips succeeds, an Angel Room is generated (except for the Devil beggar coin flip). If all the coin flips fail or no coin flips are done, a Devil Room is generated. Satisfying certain conditions gives additional coin flips with varying probabilities:
+
+{| class="wikitable"
+ ! Condition
+ ! style="width: 10%" | Chance Bonus
+ |-
+ | Base chance
+ | style="text-align: center" | 50%
+ |-
+ | Donating 10 coins to the {{M|Donation Machine}} on the current floor
+ | style="text-align: center" | 50%
+ |-
+ | Holding {{i|Key Piece 1}}
+ | style="text-align: center" | 25%
+ |-
+ | Holding {{i|Key Piece 2}}
+ | style="text-align: center" | 25%
+ |-
+ | {{dlc|nr+}} Killing a {{M|Devil Beggar}} on the current floor **
+* {{dlc|na}} Killing Key Masters and Shell Game Beggars also applies the bonus.
+ | style="text-align: center" | 25%
+ |-
+ | Donating to a {{M|Beggar}} until it pays out with an item on the current floor **
+* Making a {{dlc|nr+}}{{M|Key Master}}, {{dlc+|anr+}}{{M|Bomb Bum}}{{dlc-}}, or {{M|Shell Game}} pay out does not apply the bonus.
+ | style="text-align: center" | 25%<br>{{dlc|a}} 10%
+ |- style="background-color: #440f0f"
+ | Donating to a {{M|Devil Beggar}} until it pays out with an item on the current floor **
+* {{dlc|a}} If this coin flip succeeds, a Devil room will be generated regardless of the above coin flips.
+ | style="text-align: center" | -25%<br>{{dlc|a}} -10%
+ |-
+ | {{dlc|a}} "You feel blessed!" fortune in the {{R|Sacrifice Room}} of the current floor
+* If the "You feel blessed!" fortune appeared on the 3rd sacrifice, the chance will be 15%.
+* If the "You feel blessed!" fortune appeared on the 5th sacrifice, the chance will be 50%.
+* If both "You feel blessed!" fortunes appeared, the chance will be 65%.
+ | style="text-align: center" | 15/50/65%
+ |-
+ | {{dlc+|r}} "You feel blessed" fortune from {{M|Confessional}}s on the current floor
+* The bonus is additive and goes up to 100% with 10 activations.{{dlc-}}
+ | style="text-align: center" | 10%
+ |-
+ | Holding {{t|Rosary Bead}}
+ | style="text-align: center" | {{dlc|nr+}} 50%<br>{{dlc|r+}} Guaranteed
+ |-
+ | {{dlc+|r}} Holding {{i|Book of Virtues}}{{dlc-}}
+* While held, The Book guarantees the first encountered Devil/Angel Room to be an Angel Room.
+ | style="text-align: center" | 12.5%<br>Guaranteed
+ |-
+ | {{dlc+|a+}} Having {{i|Eucharist}}{{dlc-}}
+ | style="text-align: center" | Guaranteed
+ |-
+ | {{dlc|r}} First successful generation after seeing but not entering the first Devil Room of a run
+ | style="text-align: center" | Guaranteed
+ |}
+<nowiki>**</nowiki> These conditions share the same "coin flip chance" in Rebirth.
+
+=== Examples ===
+If Isaac meets the prerequisites and has {{i|Key Piece 1}} with him, the game will make two coin flips to determine if he gets an Angel Room or not. The first coin flip has a 50% success chance and the second one has a 25% success chance. Isaac will only get a Devil Room if both coin flips fail, and he will get an Angel Room if one of the coin flips succeeds. The chance of failure is 0.5 * 0.75 = 0.375, which means the chance of success is 1 - 0.375 = 0.625. Thus, Isaac has a 62.5% chance to get an Angel Room—take note that the result is ''not'' simply the sum of the coin flip probabilities 50% + 25% for 75%.
+
+If Isaac meets the prerequisites, has {{i|Key Piece 1}}, and a {{M|Beggar}} paid on the current floor, the chance to fail all coin flips (and get a {{R|Devil Room}}) become 0.5 * 0.75 * 0.75 = 0.28125, which means that the chance of success is 1 - 0.28125 = 0.71875. Thus, Isaac has a 71.875% chance to get an Angel Room.
+
+== Notes ==
+* The highest Angel Room chance is 95.25% in Rebirth and 98.34% in Afterbirth (with the {{R|Sacrifice Room}} blessings).
+* If an Angel Room spawns after the player defeats {{e|Mom's Heart}} or {{E|It Lives!|na}}, instead of [[item]]s or [[pickup]]s, a beam of light will appear. Touching this beam of light will take the player to the {{S|Cathedral}}. The [[Angel]] can still be awoken by destroying the statue in this room. The beam of light will disappear for the duration of the fight.
+** {{dlc|a}} Angel Rooms that spawn after Isaac defeats {{E|It Lives!}} will be normal Angel Rooms with [[item]]s or [[pickup]]s.
+* {{dlc|na+}} The rock behind the Angel statue can rarely be a [[Tinted Rock]].
+* {{dlc|a+}} Two angel statues can appear in the same room, allowing Isaac to fight both {{E|Uriel}} and {{E|Gabriel}}. It is possible to get both Key Pieces if Isaac awakes and fights each of them one by one; however, fighting both at once will only spawn one Key Piece corresponding to the last defeated [[angel]].
+** {{Dlc|r}} Both angels can be fought at once, and will drop their corresponding Key Pieces as they die.
+* Contrary to popular belief, the {{t|Bible Tract}} doesn't allow Angel Rooms to appear after paying for a Devil deal.
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | A Forgotten Horseman, Trisagion }}
+
+== Gallery ==
+<gallery>
+File:Angel Statue.png|Angel statue inside an Angel Room.
+</gallery>
+
+== Bugs ==
+{{bug|dlc=a+nr|The Found HUD will incorrectly display the angel room chance as 100% if either of the "Blessed" messages appear. The percentages listed in this page are however correct.}}
+
+{{nav|room|fr=Refuge des Anges}}

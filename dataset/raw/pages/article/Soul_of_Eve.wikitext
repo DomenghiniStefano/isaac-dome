@@ -1,0 +1,33 @@
+{{header soul stones}}
+{{Infobox rune
+ | dlc         = r
+ | name        = Soul of Eve
+ | type        = soul stone
+ | id          = 86
+ | quote       = Your very own murder
+ | description = 14 {{i|Dead Bird}} familiars fly in and attack enemies. They last 10 seconds and will begin to leave after the limit, but will stay as long as an enemy is alive. They will disappear if Isaac leaves the room.
+ | unlocked by = Soul of Eve
+ | recharge    = 4
+}}
+
+{{cit|ur|r}}
+
+== Effects ==
+* Spawns 14 {{I|Dead Bird}} familiars that fly in from off-screen and attack enemies.
+** They last 10 seconds and will begin to leave after the limit, but will stay as long as an enemy is alive. They will disappear if Isaac leaves the room.
+
+== Notes ==
+* When a bird expires and begins to leave, it will only disappear once it flies to the edge of the screen. If another monster spawns or becomes vulnerable before the bird can fully fly away, it will return and continue attacking.
+
+== Interactions ==
+* {{i|BFFS!}}: Doubles the damage of the dead birds.
+
+== In-game Footage ==
+{{#ev:youtube|QllR1KrizD0}}
+
+== Trivia ==
+* '''Soul of Eve''''s description is a reference to the original description {{I|Birthright}} had when taken as {{c|Eve}} in the original ''Antibirth'' mod.
+** A murder is a group of crows or ravens.
+
+{{nav|fr=Âme d'Ève}}
+[[Category:Runes]]

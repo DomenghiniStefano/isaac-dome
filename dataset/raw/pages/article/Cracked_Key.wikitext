@@ -1,0 +1,30 @@
+{{header special cards}}
+{{infobox pickup
+ | dlc         = r
+ | type        = special card
+ | id          = 78
+ | quote       = ???
+ | description = Creates a room adjacent to a viable wall, like {{i|Red Key|n}}.
+ | unlocked by = Red Key
+}}
+
+'''Cracked Key''' is a [[Cards and Runes#Other|consumable item]] added in [[The Binding of Isaac: Repentance]].
+
+== Effects ==
+* Acts as a single-use {{i|Red Key}}, allowing Isaac to create new rooms by using the key next to a wall where there would be no conditions that could prevent a (secret) room from appearing there. This is indicated by walls that have red door outlines on them.
+** These rooms are most commonly normal rooms, but have a chance to be various [[special room]]s instead, including {{r|Devil Room}}s, {{r|Angel Room}}s, {{r|Shop}}s, {{r|Treasure Room}}s, etc. The red rooms can be connected to the floor's {{r|Ultra Secret Room}}.
+
+== Notes ==
+* Despite it not being a card, the '''Cracked Key''' is considered a [[special card]], so it has a significantly lower chance of appearing compared to other cards.
+* Cracked Key's main purpose is to allow unlocking Tainted characters in {{s|Home}} without having to rely on finding the Red Key.
+** To create a Cracked Key (once unlocked), drop any [[trinket]] in a {{r|Boss Room}} or a {{r|Treasure Room}} on any floor before acquiring {{i|Dad's Note}}, including the floor Dad's Note is in. After starting the [[Ascent]] by collecting Dad's Note, the trinket left behind will have become a Cracked Key in the corresponding room.
+*** While trinkets are fairly common, there is always a chance one doesn't appear naturally. This chance can be avoided by clearing three consecutive floors without taking damage, which is guaranteed to cause {{T|Perfection}} to spawn.
+*** {{i|Mom's Box}} can be helpful for creating Cracked Keys, providing extra trinkets to leave in Boss rooms or Treasure rooms for later use.
+* Cracked Keys can also spawn in the same condition as any [[Card]].
+* This item cannot be mimicked by Wild Card, {{i|Blank Card}} or {{i|Clear Rune}}, and {{i|Tarot Cloth}} has no effect on it.
+* Using the Cracked Key in {{s|Home}} having unlocked that character's tainted version or as a tainted character will spawn the item {{i|Inner Child}} in the closet where the Tainted character would normally be found, as long as Inner Child is unlocked, otherwise there will be a shopkeeper.
+** {{dlc|r+}} In [[Online Co-Op]], each player will unlock the Tainted version of the character they are playing as, regardless of whether they are alive or not, and if they are alive, they will also see the correct character, else seeing the host's character. However, if the host is playing as a Tainted character, the room will not contain any Tainted characters even if other players have not found their respective Tainted character, and the character will not be unlocked for anyone.
+* If found before the [[Ascent]], the Cracked Key can serve as a {{r|Secret Room}} finder, as secret room entrances do not have red door outlines.
+* Cracked Key cannot appear in [[greed mode]].
+
+{{nav|key|broken|fr=Clé Brisée}}

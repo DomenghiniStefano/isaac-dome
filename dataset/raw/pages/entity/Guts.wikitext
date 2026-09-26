@@ -1,0 +1,73 @@
+{{infobox monster
+ | id          = 40
+ | base hp     = 25
+ | environment = {{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{room|boss}}
+ | behavior    = Attaches itself to a wall or obstacle and rolls around it.
+}}
+
+'''Guts''' is a monster that attaches itself to a wall or obstacle, such as a rock, rolling around the contour of the terrain.
+If the obstacle it is attached to is destroyed, then it will continue rolling in the direction it was previously traveling until it meets another wall or obstacle.
+
+They make up for their limited movement by being very fast, and in numbers they can tighten movement space (especially in layouts containing narrow passages). Two of them are spawned by [[Mama Guts]] upon death.
+
+__TOC__
+{{clear}}
+
+== Variations ==
+=== Scarred Guts ===
+{{infobox monster
+ | dlc            = a
+ | name           = Scarred Guts
+ | image name     = * {{dlc|nr|Afterbirth}}
+ | variant        = 1
+ | base hp        = 28
+ | environment    = {{floor|Womb}}{{floor|Scarred Womb}}<br>{{room|challenge}}
+ | replace        = Guts
+ | replace chance = 50%
+ | replace notes  = in {{s|Scarred Womb}}
+ | behavior       = Attaches itself to a wall or obstacle and rolls around it, leaving a trail of damaging Red Creep.
+}}
+
+'''Scarred Guts''' are paler versions of the regular Guts. They have a 50% chance of replacing normal Guts in the {{s|Scarred Womb}}. They behave identically to regular Guts but leave behind a trail of damaging [[Creep#Red Creep|Red Creep]] and move slightly faster than their regular counterparts.
+{{clear}}
+
+=== Slog ===
+{{infobox monster
+ | dlc         = r
+ | name        = Slog
+ | variant     = 2
+ | base hp     = 28
+ | environment = {{floor|Dank Depths}}<br>{{room|challenge}}
+ | behavior    = Attaches itself to a wall or obstacle and rolls around it, charging at Isaac when he is in sight.
+}}
+
+'''Slogs''' are much darker than Guts and bear a yellow eye in their center that follows Isaac's position. Initially, they behave identically to Guts while moving slightly slower and leaving behind a trail of slowing [[Creep#Black Creep|Black Creep]]. However, when Isaac cardinally aligns with them, they charge at him until colliding with a wall or obstacle, where they will then resume their previous behavior. Slogs are exclusive to the {{s|Dank Depths}}.
+{{clear}}
+
+=== Cyst ===
+{{infobox monster
+ | dlc         = r
+ | name        = Cyst
+ | id          = 862
+ | base hp     = 25
+ | environment = {{floor|Corpse}}<br>{{room|challenge}}
+ | behavior    = Attaches itself to a wall or obstacle and rolls around it, regularly firing blood shots at Isaac.
+}}
+'''Cysts''' behave like normal Guts but they will occasionally shoot 1 blood shot towards Isaac if he is close enough.
+
+Two of them will be spawned if a {{e|Dead Meat}} is killed.
+{{clear}}{{dlc clear}}
+
+== Notes ==
+* Guts and their variants are immune to {{i|Strange Attractor}}'s effect.
+
+== Gallery ==
+<gallery>
+File:Slog Concept.png|{{dlc|r}} Concept art for the Slog.
+</gallery>
+
+== Trivia ==
+* {{dlc|r}} The [[Anti:Cyst|Cyst]] first appeared in the ''Antibirth'' mod.
+* Cysts in real life are abnormal growths, usually non-cancerous, filled with fluid or other semi-solid substances. Some even develop in organs or contain pores.
+
+{{nav|fr=Tripes}}

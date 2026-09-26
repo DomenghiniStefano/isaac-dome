@@ -1,0 +1,107 @@
+{{header modding}}
+
+''Modding''' is now officially supported in [[The Binding of Isaac: Afterbirth †|Afterbirth+]] as well as [[The Binding of Isaac: Repentance|Repentance]], enabling users to mod the game using the [[wikipedia:Lua (programming language)|Lua programming language]] and to upload their creations to the [http://steamcommunity.com/app/250900/workshop/ Steam Workshop].
+
+== Installing Mods ==
+Mods can be installed in a few different ways, depending on how the author chose to share it. Mods can typically be found in the Steam Workshop or various community sources.
+
+=== Steam Workshop ===
+Mods found in the Steam Workshop can be installed by navigating to the mod's page and clicking Subscribe. The game must be started to install the mod into the game, and the installation will be signaled by a loading screen. Once installed, the mod will automatically be enabled ingame. If a mod has updated, then starting the game again will update the mod accordingly as signaled as a loading screen. Unsubscribing to the Steam Workshop mod then starting the game will cause the mod itself to uninstall, also seen on the loading screen. Note that some mods are only functional for the [[The Binding of Isaac: Afterbirth †|Afterbirth+]] DLC while others are only functional when the [[The Binding of Isaac: Repentance|Repentance]] DLC is enabled. Some mods require add-in support mods in order to properly function as well (i.e. Mod Compatibility Hack or Custom Stage API).
+
+=== Manual installation ===
+Mods that do not use the Steam Workshop can be installed by downloading them and manually extracting them to the mods folder of the main Binding of Isaac folder. Starting the game will feature the mod automatically enabled and won't be featured in the installation loading screen.
+
+{| class="wikitable"
+|-
+! OS !! Path
+|-
+| Windows || <code>Documents/My Games/Binding of Isaac Afterbirth+ Mods</code>
+|-
+| Linux || <code>~/.local/share/binding of isaac afterbirth+ mods</code>
+|-
+| Mac || <code>~/Library/Application Support/Binding of Isaac Afterbirth+ Mods</code>
+|}
+
+== Enabling unlocks ==
+In Afterbirth+ and Repentance, having any enabled mod will disable the ability to unlock any [[achievements]] to encourage new players to play the game without any. To enable unlocking achievements with mods enabled, you need to defeat [[Mom]] at least once with all of your mods disabled. If your mods disappear after installing them (only on cracked versions of AB+), it is greatly recommended to defeat [[Mom's Heart]] once.
+It is not required to beat [[Mom]] on each individual save file to fulfill this requirement.
+
+{{dlc|r}} Enabling the debug console will disable achievements as well until Mom is defeated without mods or the console enabled.
+
+== Ensuring stability ==
+While introducing official modding support, mods for this game are infamous for not working properly due to how the API was constructed and the lack of suitable, comprehensible documentation.
+
+=== Save data ===
+{{dlc|nr}} Many mods do not or cannot retain save data in a continued game. This could be due to the mod author not knowing how to enable this, or the mod's data being too complicated to save. It is recommended to avoid continuing any saved games if any mods are enabled.
+
+Some mods may have their save data cleared if one of the situations below occurs:
+* The mod was recently updated.
+* The mod was unsubscribed from and then resubscribed to, forcing the mod to be downloaded again.
+
+If any installed mods contain save data that must be kept between runs (for example, custom unlockables) then this would be a big concern, as deleting the mod's save data would remove this progress. Some ways to work around these issues include:
+* Backing up the save.dat files included in the mods after most sessions.
+* Installing the [https://steamcommunity.com/sharedfiles/filedetails/?id=1438478410 Mod Compatibility Hack], which will back up the saves of other mods within itself.
+
+=== Assets ===
+Most mod assets do not load properly if one of the situations below occurs:
+* Playing the game after the first time the game has loaded after subscribing to or unsubscribing from a mod on the Steam Workshop.
+* Playing the game after a mod on the Steam Workshop updates.
+* Continuing to play the game after enabling or disabling a mod from within the in-game mods menu. (this can also lead to a crash when leaving the menu).
+
+When this happens, many textures and animation files will not be applied in-game. For example, a custom [[monster]] added by a mod affected by this issue may appear invisible. Some ways to work around these issues include:
+* Restarting the game after loading it if a mod was recently subscribed to. If there is a long pause and a black screen when starting the game, the game may be installing the mods. Restart the game after it has finished loading past this screen.
+* When the process of enabling or disabling mods in-game is complete, do not leave the menu. Instead, press Alt+F4 to close the game without ever leaving the menu and risking a crash or improperly loaded assets. Then simply start up the game again.
+
+=== Download Failures ===
+For larger mods, the game may even fail to install all the files into your game. This can have the same causes as improperly loaded assets have, but some signs that things are not right can include:
+* New characters missing their core mechanics.
+* New items not having any effects.
+
+These kinds of issues are usually caused by the game failing to copy all the mod's files over from Steam's workshop folder into the mod's folder. Performing this process manually by yourself usually fixes this. Steam's workshop folder is included in:
+{| class="wikitable"
+|-
+! OS !! Path
+|-
+| Windows || <code>Steam/steamapps/workshop/content/250900</code>
+|}
+250900 is The Binding of Isaac: Rebirth's ID on Steam. Inside this folder you will see many more numbered folders, these correspond to the id of each mod. You can see these numbers in links.
+
+Once you have located the problem mod, go into its folder and copy all the files inside over to its true location in the <code>Binding of Isaac Afterbirth+ Mods</code> folder.
+
+== Resources ==
+Listed below are resources that can assist you in creating mods.
+* [[Debug Console]]
+A built-in console to use various commands to test mods: give items, go to stage ''x'', reload Lua script and so on.
+* [[Modding Tools]]
+A list of tools that can help in mod creation and debugging (Official and unofficial tools are included).
+* [https://moddingofisaac.com/docs/index.html Modding of Isaac Lua Reference]
+User updated Doxygen Lua reference for The Binding of Isaac Afterbirth + Lua API based on the official Lua reference, useful when coding mods.
+* [[:Category:Lua reference|Lua Reference]]
+User-made reference for The Binding of Isaac Afterbirth + Lua API hosted on this wiki.
+* [[Modding Tutorials]]
+Links to external tutorials about modding, ranging from animations to spriting and Lua programming.
+* [[XML Modding]]
+Information about modding XML files. This is needed for examples to add new costumes, items or player types to mods.
+
+* [[Custom Challenges]]
+
+Information about modding challenge XML files specifically.
+
+== Mod Hosts ==
+* [http://steamcommunity.com/app/250900/workshop/ Rebirth Steam Workshop]
+The official mod repository, these mods only work for Afterbirth+ or Repentance. Note that some mods only work with the former enabled and the latter disabled while some others only work with the latter enabled.
+* [https://www.moddingofisaac.com/ The Modding of Isaac]
+A service by the community to host mods created primarily for Rebirth and Afterbirth, though Afterbirth+ mods can be hosted here too.
+* [http://www.nexusmods.com/thebindingofisaacrebirth/ The Binding of Isaac Rebirth NexusMods]
+A section of NexusMods that is home to some Isaac mods. Not very active.
+
+== Community ==
+* [https://www.reddit.com/r/themoddingofisaac/ The Modding of Isaac Subreddit]
+A subreddit to discuss mods and modding.
+* [https://discord.gg/Wcsqsfq The Binding of Isaac Discord Server]
+The main discord server for The Binding of Isaac. The server contains a modding channel and modding development channel.
+* [https://discord.gg/modding-of-isaac-962027940131008653 The Modding of Isaac Discord Server]
+A Discord server specific to modding The Binding of Isaac.
+
+{{nav|modding}}
+[[Category:Modding]]

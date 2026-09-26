@@ -1,0 +1,45 @@
+{{page dlc|r}}
+'''Golden Trinkets''' are an unlockable type of [[Trinkets|trinket]] unlocked by beating {{e|Mega Satan}} with {{c|Tainted Jacob}}.
+
+== Effects ==
+* Golden trinkets have their effects either doubled or given additional effects, identical to how the trinket works with {{i|Mom's Box}}.
+** {{dlc|r+}}Some golden trinkets have a special effect if combined with Mom's Box.
+
+== Notes ==
+* Once unlocked, any trinket drop has a 2% chance to spawn as a golden version of itself. This includes regular room drops, opening chests, using {{i|Mom's Box}}, finding them in the shop in [[Greed Mode]], etc.
+** This chance is not affected by [[luck]], Mom's Box or difficulty settings.
+* Holding a golden trinket counts as the player holding 2 of the normal version.
+* Only trinkets that are affected by Mom's Box or can stack with each other are affected by their golden counterparts. Others will act just like the normal ones.
+* Hardcoded drops such as {{t|Mysterious Paper}} from {{i|Divorce Papers}}, {{t|The Left Hand}} from beating {{e|Ultra Pride}}, {{t|Forgotten Lullaby}} from bombing {{e|The Siren}}'s skull and {{t|Perfection}} for beating 3 bosses without taking damage cannot spawn as golden variants.
+* {{c|Eden}} and {{c|Tainted Eden}}'s starting trinket can also be a golden one.
+* If a [[Champions|violet champion]] monster is killed while it is [[Petrification|gold-petrified]], for instance through {{i|Midas' Touch}} or {{i|Eye of Greed}}, the trinket it drops is guaranteed to be a golden one. Rainbow champions still drop normal trinkets.
+
+== Notable effects ==
+* {{t|Broken Remote}}: Triggers the {{I|Teleport 2.0}} effect whenever an [[activated item]] is used.
+* {{t|Crystal Key}}: Increases the chance of red rooms spawning.
+* {{t|NO!}}: Prevents items with [[quality]] 0 from appearing.
+* {{t|Rosary Bead}}: Adds 4 {{i|Rosary}} items to all item pools.
+* {{T|Hook Worm}} / {{t|Ring Worm}} / {{T|Wiggle Worm}}: In addition to the further stats increase, they have an increased effect on your tear trajectory.
+* In addition, the following effects are unique to the golden versions of their respective trinkets, and cannot be replicated by {{i|Mom's Box}}:
+** {{t|Kid's Drawing}}: Having a golden version counts as having 2 {{tf|Guppy}} items.
+** {{t|Mysterious Candy}}: Spawned poops will be {{e|Golden Poop}}s.
+** {{t|Store Credit}}: The golden version won't be removed on a purchase. Instead, it has a chance to turn into a non-Golden Store Credit with each item purchased using it.
+** {{t|Tick}}: In addition to the doubled effects, the golden Tick can be dropped/replaced like any other regular trinket.
+
+== In-game footage ==
+{{#ev:youtube|QaCd7ObecZ0}}
+{{#ev:youtube|BrwKOJXksng}}
+
+== Trivia ==
+* The ID, or more accurately subtype, of a golden trinket is the normal ID + 32768. For example, the ID of Golden {{t|Cancer}} is 32807 (because it normally has an ID of 39).
+** The [[Debug Console]] spawn code would in this case be 5.350.32807.
+* Using the high damage debug flag, <code>debug 4</code>, causes all trinkets spawn as golden ones.
+* {{dlc|rnr+}}Some golden trinkets do not have an effect due to them being added late in development.
+
+== Bugs ==
+{{bug|Golden trinkets rerolled by {{i|D20}} will cause the resulting pickup to have the golden effect applied to it. If this is a trinket, the trinket will turn into a standard trinket, otherwise the gold effect will do nothing and will disappear upon leaving and re-entering the room.
+* Additionally, items spawned by [[chest]]s with the gold effect applied will be golden as well, however other pickups dropped by chests will not be.}}
+
+{{Nav|mega satan unlock|tainted jacob unlock|fr=Babiole Dorée}}
+
+[[Category:Trinkets]]

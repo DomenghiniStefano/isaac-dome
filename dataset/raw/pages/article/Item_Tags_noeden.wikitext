@@ -1,0 +1,12 @@
+{{page dlc|r}}
+
+Items with this [[Item Tags|tag]] are not available as starting items for {{c|Eden}} or {{c|Tainted Eden}}.
+
+== Activated Collectibles ==
+{{collectible table | tag = noeden | type = activated }}
+
+== Passive Collectibles ==
+{{collectible table | tag = noeden | type = passive }}
+
+{{nav|fr=Balise noeden}}
+[[Category:Item tags]]

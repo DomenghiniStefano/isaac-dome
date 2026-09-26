@@ -1,0 +1,25 @@
+'''Mushroom''' may refer to:
+
+== Items ==
+* {{i|1up!}}, [[Item#Passive Collectibles|passively]] grants an [[Death#Extra Lives|extra life]].
+* {{i|Blue Cap}}, passively grants increased [[Attributes#Health|health]] and [[Attributes#Tears|tears]], while decreasing [[Attributes#Shot Speed|shot speed]].
+* {{i|Magic Mushroom}}, passively grants increases to several [[attributes]].
+* {{i|Mini Mush}}, passively grants increased [[Attributes#Speed|speed]] and [[Attributes#Shot Height|shot height]], while decreasing [[Attributes#Range|range]] and character size.
+* {{i|Odd Mushroom (Large)}}, passively grants increases to several attributes, while decreasing speed.
+* {{i|Odd Mushroom (Thin)}}, passively grants increased speed and tears, while decreasing [[Attributes#Damage|damage]].
+* {{i|God's Flesh}}, passively causes shots to shrink some enemies.
+* {{i|Mega Mush}}, an active item that gigantifies the character for 30 seconds, persisting between rooms and floors.
+* {{i|Wavy Cap}}, an active item that increase the fire rate, but distorts the screen and background music.
+
+== Obstacles ==
+* [[Mushroom (Obstacle)]], a destructible [[Obstacles|obstacle]] commonly found in [[Chapter 2]] and the [[Secret Room]].
+
+== Trinkets ==
+* {{t|Liberty Cap}}, a [[trinket]] which may grant the effects of either {{i|Mini Mush}}, {{i|Odd Mushroom (Large)}}, {{i|Odd Mushroom (Thin)}}, or {{i|The Compass}} for the current room upon entering.
+
+== Enemies ==
+* {{dlc|a+}} [[Mushroom (Enemy)|Mushroom]], a monster that resembles a mushroom.
+
+== Transformations ==
+* {{dlc|a}} [[Fun Guy]], a walking Mushroom that grants a red heart container.
+{{disambiguation}}

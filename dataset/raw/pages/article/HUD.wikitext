@@ -1,0 +1,75 @@
+The '''HUD''' consists of all the information contained on the screen that the player sees while playing the game. It shows important information like remaining [[health]], [[items]], and the map.
+
+== Health Bar ==
+Shows {{e|Red Heart}}s,{{e|Eternal Heart}}s, {{e|Soul Heart}}s, {{e|Black Heart}}s, {{e|Gold Heart}}s, {{e|Bone Heart}}s, {{e|Rotten Heart}}s, and {{dlc|r}} [[Health#Broken Hearts|Broken Hearts]]. Not visible if{{cu|Unknown}} is active.
+
+== Map ==
+The map is shown in the top-right part of the screen, with your current room centered. Any discovered special rooms, as well as rooms with items and pickups, are marked with special icons; special room icons take precedence over item and pickup icons. You can press Tab (PC), the touchpad/L2 (PS4), or the touchscreen (Vita) to see a larger version of the map, which will display all relevant icons. The map is not visible if {{cu|Lost}} is active, an [[Amnesia]] pill has been taken on the current floor, or you are in the {{r|Devil Room}}/{{r|Angel Room}}. It is also not visible while in the {{r|Boss Rush}} room or during the {{e|Mega Satan}} fight.
+
+{{dlc|r}} All [[curses]] active on the floor, alongside any active mapping effects (such as {{i|Treasure Map}} or {{i|The Compass}}) are shown below the map and represented by their respective icons. The Mind's icon will override other mapping icons if there were any.
+
+== Item Slots ==
+=== Active Item ===
+Shows the current [[activated collectible]] you are carrying. Activated collectibles, as the name implies, can be activated by pressing Space (PC), LT (Xbox), or L2 (PS4); only one can be carried at a time, unless the player has {{i|Schoolbag}}, in which case you can switch between activated items by pressing Left Ctrl (PC), RT (Xbox), or R2 (PS).
+
+The green bar next to the item shows how many rooms must be cleared between each item use, and can range between one and twelve. Generally, each cleared room adds one increment to the bar; however, there are a few passive collectibles ({{i|Habit}}, {{i|9 Volt}}, {{i|The Battery}}, {{i|4.5 Volt}}, etc.) that provide alternate ways to charge active items.
+
+Some activated items cannot be used indefinitely, but do not require a room to be cleared to use them; they instead require a certain amount of time to pass between uses. For these items, once they have been used, the green bar will steadily refill; when it is completely refilled, the item is ready to use again.
+
+Some activated items have no green bar at all. If the green bar is absent, the item requires no charge (though it may have a cost, such as money or hearts, or have limited uses).
+
+=== Trinket Slots ===
+Shown in the lower-left corner, [[trinket]]s are a kind of item that provide passive bonuses. Normally, only one can be held at a time. {{i|Mom's Purse}} / {{i|Belly Button}} allows two trinkets to be kept at once, {{dlc|nr}} but not two of the same trinket.
+
+=== Card/Pill Slots ===
+Shows the current [[card]], [[rune]], or [[pill]] picked up. Unidentified pills are shown as ???, while cards and runes are identified upon being picked up. A held card, rune, or pill can be used by pressing Q (PC), RB (Xbox), R1 (PS), or Select (Vita); once used, it disappears. {{i|Starter Deck}} and {{i|Little Baggy}} allow two items to go in this slot, but restrict the player to one kind; Starter Deck will prevent pills from spawning and replace all already-spawned pills with cards or runes upon being picked up, while Little Baggy will prevent cards and runes from spawning and replace all already-spawned cards and runes with pills upon being picked up. If the player possesses both Starter Deck and Little Baggy in the same run, they are still allowed only two card/pill slots, but both pills and cards will be allowed to spawn. {{i|Deep Pockets|dlc=anr}} also gives two pill/card slots without preventing either item type from spawning, as does {{i|Polydactyly}}.
+
+{{dlc|r}} Some characters start with an activated item in their card/pill slot, which doesn't actually prevent Isaac from picking up cards or pills and can be used by pressing the same button as using a card/pill or switched to an actual card/pill.
+
+== Pickups ==
+The number of coins, bombs, and keys that Isaac has are displayed underneath the activated item slot. Isaac can hold a maximum of 99 pickups of each type. If Isaac has a {{e|Golden Key}} or {{e|Golden Bomb}}, the corresponding icon will be golden.
+
+{{dlc|r}} If Isaac has at least one {{e|Giga Bomb|n}}, the bomb icon will be larger and will override the golden bomb icon if Isaac has a golden bomb. {{i|Deep Pockets|r}} increases the max coin count to 999 instead. There are also new types of pickups: soul charges and blood charges, unique to {{c|Bethany}} and {{c|Tainted Bethany}}, respectively. They are granted for collecting soul hearts or red hearts and can be used for getting extra charges for active items. {{c|Tainted ???}} has his bombs replaced with poop pickups that can be used to spawn poops with various effects.
+
+== Score and time ==
+The score and time for the current run are shown when the map is fully extended, {{dlc|a}} or when Extra HUD is turned on.
+
+== Indicators ==
+Underneath the pickups, various icons can appear that indicate different game conditions, such as whether {{mode|hard}} Hard mode is active or if {{no unlocks}} [[achievement]]s are disabled for the current run.
+
+{{dlc|a}} Indicators for {{mode|daily}} [[daily run]]s and challenge objectives were added, with different icons corresponding to the final boss of the current challenge or daily run. {{dlc|nr}} Most of these icons are the same as [[completion mark]]s with the exception of a high-heeled shoe icon representing {{e|Mom}}. {{dlc|r}} The icons are now simplified versions of the final boss of that challenge or daily run.
+In {{mode|greed}} [[Greed mode]], the current wave is displayed, and upon defeating {{e|Ultra Greed}}, the chance for the {{m|Greed Donation Machine}} to jam is also displayed.
+
+== {{dlc|a}} Extra HUD ==
+Since ''[[The Binding of Isaac: Afterbirth]]'', Extra HUD is a HUD addition that shows recently picked up passive items and sticks the score and time to the middle top of the screen. {{dlc|r}} Extra HUD can be minimized in [[options|game options]] to show more items at once and make their icons smaller, as well as unsticking the score and time from the screen.
+
+== {{dlc|a+}} Found HUD ==
+Since ''[[The Binding of Isaac: Afterbirth †]]'', Found HUD is a HUD addition that gives numerical values to the player's current stats (e.g., damage, luck, speed, devil room chance). It can be enabled through the [[options]] menu. {{dlc|r}} Found HUD will not be displayed during {{e|The Beast|n}} fight, even if enabled.
+
+== {{dlc|r+}} Item Description ==
+Since ''[[The Binding of Isaac: Repentance+]]'', a popup describing item effects appears when the player approches it. Stat changes indicated are adapted depending of your current build.
+
+== Gallery ==
+<gallery>
+File:Binding of Isaac Rebirth HUD.png|An in-game screenshot of the HUD.
+File:HUD heart red full.png|A full Red Heart container in the health meter.
+File:HUD heart soul full.png|A Soul Heart in the health meter.
+File:HUD heart black full.png|A Black Heart in the health meter.
+File:Curse icons.png|{{dlc|r}} Curse icons under the map (in order): Blind, Maze, Cursed, Unknown, Lost, Labyrinth and Darkness.
+File:Mapping icons.png|{{dlc|r}} Mapping effect icons under the map (in order): Treasure Map, Blue Map, The Compass and The Mind.
+File:Holy Mantle hp.png|{{dlc|r}} While {{i|Holy Mantle}} is in effect, a blue cross icon appears in the HUD, next to Characters's life.
+File:Blanket hp.png|{{dlc+|r+}} While a {{i|Blanket}} is in effect, a blue cross icon appears in the HUD, next to Characters's life.{{dlc-}}
+File:Wooden Cross hp.png|{{dlc+|r+}} While {{t|Wooden Cross}} is in effect, a brown cross icon appears in the HUD, next to Characters's life.{{dlc-}}
+File:Holy Card hp.png|{{dlc+|r+}} While a {{p|Holy Card}} is in effect, a white cross icon appears in the HUD, next to Characters's life.{{dlc-}}
+File:Item Description Example.png|{{dlc+|r+}} An in-game screenshot of the description of {{i|The Sad Onion}}.{{dlc-}}
+</gallery>
+
+== Notes ==
+* The [[seed|special seed]] KEEP TRAK completely removes the HUD.
+
+== Trivia ==
+* "Found HUD" is a reference to '''"Missing HUD"''', an external program that applied this function to Rebirth and Afterbirth.
+* {{dlc|r+}} Item Descriptions (also known as Internal Item Descriptions) are a reference to '''External Item Descriptions''', the most subscribed Isaac's Steam Workshop mod, that applied this function to Rebirth, Afterbirth, Afterbirth+, Repentance and Repentance+.
+
+{{nav|fr=ATH}}
+[[Category:Mechanics]]

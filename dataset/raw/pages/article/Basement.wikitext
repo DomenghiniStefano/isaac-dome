@@ -1,0 +1,96 @@
+{{infobox stage
+ | chapter         = 1
+ | id              = 1
+ | id greed        = {{dlcalt|19|r=1}}
+ | level id        = 1, 2
+ | level id greed  = 1
+ | type id         = 0
+ | type id greed   = {{dlcalt|3|r=0}}
+ | degraded bosses = Blastocyst Small
+ | bosses          = Dangle, Dingle, The Duke of Flies, Famine, Gemini, Gurglings, Larry Jr., Little Horn, Monstro, Rag Man, Steven, Turdlings
+}}
+
+'''The Basement''' is one of the environments in [[Chapter 1]]. Unlocked at the beginning of the game, it is considered the easiest of the environments in the game. The theme of the Basement is flies and poop.
+
+The Basement's harder unlockable variants are the {{s|Cellar}} and the {{s|Burning Basement}}.
+
+{{dlc+|r}} After {{a|A Secret Exit}} is unlocked, a locked door similar to the one leading to a {{R|Treasure Room}} will appear in this floor's {{R|Boss Room}} upon defeating the boss, which leads to {{s|Downpour}} / {{s|Dross}}. Like a {{R|Treasure Room}}, this door requires a key to be unlocked. Unlike {{R|Angel Room}}s and {{R|Devil Room}}s, this door never disappears.{{dlc-}}
+
+== [[Monster]]s ==
+{{entity table/header}}
+{{stage entities | Clotty, Clot, I.Blob, Dip, Squirt, Embryo, Fatty, Pale Fatty, Blubber, Fly, Attack Fly, Ring Fly, Moter, Pooter, Super Pooter, Level 2 Fly, Full Fly, Sucker, Gaper, Frowning Gaper, Skinny, Hopper, Flaming Hopper, Horf, Psychic Horf, Mulligan, Mulligoon, Mulliboom, Hive, Nest, Nerve Ending, Pacer, Gusher, Round Worm, Spider, Level 2 Spider, Ticking Spider, Baby Long Legs, Small Baby Long Legs, Crazy Long Legs, Small Crazy Long Legs, Wall Creep, Wall Hugger }}
+{{stage entities | dlc = a | Brownie Corn, Dart Fly, Swarm, Cyclopia, Blue Gaper, Greed Gaper, Conjoined Fatty, Suction Pitfall, Rag Man's Ragling, Roundy, Ulcer }}
+{{stage entities | dlc = a+ | Stoney, Ministro }}
+{{stage entities | dlc = a+nr | Portal }}
+{{stage entities | dlc = r | Army Fly, Bulb, Swarm Spider, Needle }}
+|}
+
+''Degraded Bosses:''
+{| class="wikitable sortable mw-collapsible"
+! scope="col" | Name
+! scope="col" | ID
+! scope="col" class="unsortable" | Notes
+{{entity row minimal|Blastocyst}} | Small-form only
+|}
+
+== [[Boss]]es ==
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:Boss Dingle portrait.png|center|link=Dingle]]
+| style="text-align: center; border: none" |[[File:Boss The Duke of Flies portrait.png|center|link=The Duke of Flies]]
+| style="text-align: center; border: none" |[[File:Boss Gemini portrait.png|link=Gemini]]
+| style="text-align: center; border: none" |[[File:Boss Steven portrait.png|center|link=Steven]]
+|-
+| style="text-align: center; border: none" |[[Dingle]]
+| style="text-align: center; border: none" |[[The Duke of Flies]]
+| style="text-align: center; border: none" |[[Gemini]]
+| style="text-align: center; border: none" |[[Steven]] {{Unlockable}}
+|}
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:Boss Larry Jr. portrait.png|center|link=Larry Jr.]]
+| style="text-align: center; border: none" |[[File:Boss Monstro portrait.png|link=Monstro]]
+| style="text-align: center; border: none" |[[File:Boss Gurglings portrait.png|center|link=Gurglings]]
+| style="text-align: center; border: none" |[[File:Boss Famine portrait.png|center|link=Famine]]
+|-
+| style="text-align: center; border: none" |[[Larry Jr.]]
+| style="text-align: center; border: none" |[[Monstro]]
+| style="text-align: center; border: none" |[[Gurglings]]
+| style="text-align: center; border: none" |[[Famine]] {{unlockable}}
+|}
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:Boss The Fallen portrait.png|center|link=The Fallen]]
+| style="text-align: center; border: none" |[[File:Boss Headless Horseman portrait.png|center|link=Headless Horseman]]
+| style="text-align: center; border: none" |[[File:Boss Dangle portrait.png|center|link=Dangle]]
+| style="text-align: center; border: none" |[[File:Boss Little Horn portrait.png|center|link=Little Horn]]
+|-
+| style="text-align: center; border: none" |[[The Fallen]] {{room|Devil}}
+| style="text-align: center; border: none" |[[Headless Horseman]] {{unlockable}}
+| style="text-align: center; border: none" |[[Dangle]] {{Dlc|a}} {{unlockable}}
+| style="text-align: center; border: none" |[[Little Horn]] {{Dlc|a}} {{unlockable}}
+|}
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:Boss Turdlings portrait.png|center|link=Turdlings]]
+| style="text-align: center; border: none" |[[File:Boss Rag Man portrait.png|center|link=Rag Man]]
+| style="text-align: center; border: none" |[[File:Boss Baby Plum portrait.png|center|link=Baby Plum]]
+|
+|-
+| style="text-align: center; border: none" |[[Turdlings]] {{Dlc|a}} {{unlockable}}
+| style="text-align: center; border: none" |[[Rag Man]] {{Dlc|anr}} {{unlockable}}
+| style="text-align: center; border: none" |[[Baby Plum]] {{Dlc|r}} {{unlockable}}
+|
+|}
+
+== Trivia ==
+* The Basement's backdrop consists of an unfinished wooden basement in a relatively good condition, with a mostly clean floor without visible planks, unlike the {{s|Cellar}} and the {{s|Burning Basement}}.
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | Monstro's Tooth, Something From The Future, The Cellar, Sprinkler, Basement Boy }}
+
+== Music ==
+* The [[music]] for the Basement is titled ''Diptera Sonata''.<ref>[https://ridiculon.bandcamp.com/album/the-binding-of-isaac-rebirth-ost Binding of Isaac: Rebirth OST]</ref>
+** [[wikipedia:Diptera|Diptera]] is the [[wikipedia:Order (biology)|order]] of true flies. Thus, ''Diptera Sonata'' literally means "Fly Sonata".
+
+== References ==
+{{reflist}}
+
+{{nav|environment|fr=Sous-Sol}}
+[[ru:Подвал]]

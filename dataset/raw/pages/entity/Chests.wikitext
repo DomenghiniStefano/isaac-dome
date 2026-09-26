@@ -1,0 +1,358 @@
+{{header pickups}}
+{{disambig msg|the objects called chests|the floor|Chest (Floor)|title=chest}}
+
+'''Chests''' are objects that contain other objects, [[item]]s, [[trinket]]s, [[pickup]]s, [[monster|enemies]], other chests, and more. There are eleven types of chests.
+
+== Chest ==
+{{infobox entity
+ | name    = Chest
+ | id      = 5
+ | variant = 50
+}}
+
+Normal '''chests''' have no requirements to open. When opened, they will contain one of the following:
+* Pickups: If a chest spawns pickups, 2-3 of the following batches of pickups will spawn. The same batch can be chosen multiple times. If Isaac has {{i|Mom's Key}}, an additional batch of 2-3 pickups spawns, up to a total of 4-6.
+** 1-3 random [[coin]]s
+** 1 random {{e|Bomb}}
+** 1 random {{e|Key}}
+** 1 random [[Heart]]
+* A [[trinket]]
+* A [[pill]]
+* A smaller Chest
+
+=== {{Dlc|r}} Reward Chances ===
+{| class="wikitable sortable"
+|-
+! Reward !! % Chance
+|-
+| 2-3 Random Pickups (see below table) || 78%
+|-
+| 1 [[Trinket]] || 10%
+|-
+| 1 {{E|Chest}} || 1%
+|-
+| 1 {{E|Locked Chest}} || 1%
+|-
+| 1 [[Pill]] || 10%
+|}
+
+* {{t|Lucky Toe}}: 33% chance to increase pickups by 1
+* {{i|Mom's Key}}: Doubles pickups
+* {{t|Poker Chip}}: 50% chance to double pickups, 50% for no pickups and an {{E|Attack Fly}}
+* {{dlc|nr}} Hearts have a 50% chance to count as 2 batches.
+* 33% chance for one of the following trinkets to add to the random pickups:
+** {{t|Ace of Spades}}: Adds 1 card or rune
+** {{t|Child's Heart}}: Adds 1 heart
+** {{t|Match Stick}}: Adds 1 bomb
+** {{t|Rusted Key}}: Adds 1 key
+** {{t|Safety Cap}}: Adds 1 pill
+
+{| class="wikitable sortable"
+|-
+! Reward !! Base % !! Daemon's Tail
+|-
+| 1-3 [[Coin]]s || 35% || ~41.6%
+|-
+| 1 [[Heart]] || 20% || ~4.7%
+|-
+| 1 {{e|Key}} || 15% || ~17.8%
+|-
+| 1 {{e|Bomb}} || 30% || ~35.7%
+|}
+{{clear}}
+
+== Locked Chest ==
+{{infobox entity
+ | name    = Locked Chest
+ | variant = 60
+}}
+
+'''Locked Chests''' (or alternatively '''Golden Chests''') require a key to open unless Isaac has {{t|Paper Clip}} or a {{e|Golden Key}}; trying to open it without the means to will push the chest instead. When opened, they'll contain one of the following:
+* Pickups: Follows the same pickup generation rules as normal chests, but spawns 2-6 batches of pickups instead. Mom's Key also causes an additional 2-6 batches to spawn from locked chests, increasing the total to 4-12.
+* A [[Golden Chest (Item Pool)|Golden Chest item]]
+* A [[trinket]]
+* A [[Cards and Runes|card]]
+* A smaller Chest
+
+{{dlc+|r}} If Isaac has {{t|Gilded Key}}, all chest spawns will be replaced by Golden Chests and their contents will be modified to allow them to spawn trinkets, cards, and/or pills (which Golden Chests normally can't give) alongside normal pickups.{{dlc-}}
+
+''See the following item pools for a list of items Golden Chests can contain:'' [[Golden Chest (Item Pool)]] and {{dlc|nr}}[[Golden Chest (Greed Mode Item Pool)]]
+{{clear}}
+
+=== {{Dlc|r}} Reward Chances ===
+{| class="wikitable sortable"
+|-
+! Reward !! % Chance || Gilded Key
+|-
+| 1 [[Golden Chest (Item Pool)|Item]] || 20% || 20%
+|-
+| 2-6 Random pickups (see below tables) || 58% || 80%
+|-
+| 1 [[Trinket]] || 10% || --
+|-
+| 1 {{E|Chest}} || 1% || --
+|-
+| 1 {{E|Locked Chest}} || 1% || --
+|-
+| 1 [[Card]] or [[Rune]] || 10% || --
+|}
+
+* {{t|Lucky Toe}}: 33% chance to increase pickups by 1
+* {{i|Mom's Key}}: Doubles pickups
+* {{t|Poker Chip}}: 50% chance to double pickups, 50% for no pickups and an {{E|Attack Fly}}
+* {{dlc|nr}} Hearts have a 50% chance to count as 2 batches
+* 33% chance for one of the following trinkets to add to the random pickups:
+** {{t|Ace of Spades}}: Adds 1 card or rune
+** {{t|Child's Heart}}: Adds 1 heart
+** {{t|Match Stick}}: Adds 1 bomb
+** {{t|Rusted Key}}: Adds 1 key
+** {{t|Safety Cap}}: Adds 1 pill
+
+{| class="wikitable sortable"
+|-
+! Reward !! Base % !! Daemon's Tail
+|-
+| 1-3 [[Coin]]s || 35% || ~41.6%
+|-
+| 1 [[Heart]] || 20% || ~4.7%
+|-
+| 1 {{e|Key}} || 15% || ~17.8%
+|-
+| 1 {{e|Bomb}} || 30% || ~35.7%
+|}
+
+Note: Based on these stats, upon opening a locked chest without holding any of the mentioned items, you have a raw 26.91796149375% chance to obtain at least one key.
+
+{{dlc+|r}} Random pickups when holding {{t|Gilded Key}}
+{| class="wikitable sortable"
+|-
+! Reward !! Base % !! Daemon's Tail
+|-
+| 1-3 [[Coin]]s || 25% || ~29.76%
+|-
+| 1 [[Heart]] || 20% || ~4.76%
+|-
+| 1 {{e|Key}} || 10% || ~11.9%
+|-
+| 1 {{e|Bomb}} || 20% || ~23.8%
+|-
+| 1 [[Pill]] || 5% || ~5.95%
+|-
+| 1 [[Card]] or [[Rune]] || 5% || ~5.95%
+|-
+| 1 [[Rune]] || 5% || ~5.95%
+|-
+| 1 [[Trinket]] || 5% || ~5.95%
+|-
+| 1 {{E|Lil' Battery}} || 5% || ~5.95%
+|}
+{{dlc-}}
+{{clear}}
+
+== Red Chest ==
+{{infobox entity
+ | name    = Red Chest
+ | variant = 360
+}}
+
+'''Red Chests''' are most commonly found in {{R|Curse Room}}s and {{R|Devil Room}}s, but can also occasionally replace normal chests. If Isaac is holding {{t|The Left Hand}} trinket, all chests will turn into Red Chests. They can contain the following:
+* 2 {{e|Troll Bomb}}s
+* 1 {{e|Mega Troll Bomb}}
+* 2 {{E|Spider}}s {{dlc+|r}} or 2 {{E|Strider|dlc=n}}s in {{s|Downpour}}/{{s|Dross}}{{dlc-}}
+* 1-2 {{e|Soul Heart}}s
+* A [[Red Chest (Item Pool)|Red Chest pool item]]
+* 1-2 [[pill]]s
+* Teleport to the {{R|Devil Room}} or {{r|Angel Room}}
+** If the Devil/Angel Room has not been encountered normally on the floor yet, it will actually change what's in the deal.
+** {{dlc|a+}}Red Chests inside a Devil Room cannot teleport the player to the Devil Room.
+* 1-3 [[Blue Fly|Blue Flies]]
+* 1-3 [[Blue Spider]]s
+
+Having the {{t|Daemon's Tail}} trinket changes the chances to get various rewards from a Red Chest.
+
+{{dlc | r}} Reward Chances
+
+{| class="wikitable sortable"
+|-
+! Reward !! Base % + {{dlc|nr}}in Devil/Angel Room !! In a Devil/Angel Room !! Daemon's Tail !! In a Devil/Angel Room & Daemon's Tail
+|-
+| [[Red Chest (Item Pool)|Red Chest Item]] || 10% || 10.5% || 11.3% || 12%
+|-
+| Teleport to [[Devil Room|Devil]]/[[Angel Room|Angel]] Room || 5% || 0% || 5.5%  || 0%
+|-
+| 2 {{E|Spider}}s/{{E|Strider}}s || 13% || 13.6% || 14.7% || 15.6%
+|-
+| {{e|Mega Troll Bomb}} || 13% || 13.6% || 14.7% || 15.6%
+|-
+| 3 [[Blue Fly|Blue Flies]] || 7% || 7.3% || 7.9% || 8.4%
+|-
+| 3 [[Blue Spider]]s || 7% || 7.3% || 7.9% || 8.4%
+|-
+| 1 {{e|Soul Heart}} || 7.5% || 7.8% || 3% || 3.3%
+|-
+| 2 {{e|Soul Heart}}s || 7.5% || 7.8% || 0.3% || 0.3%
+|-
+| 2 {{e|Troll Bomb}}s || 15% || 15.7% || 17% || 18%
+|-
+| 2 [[Pill]]s || 15% || 15.7% || 17% || 18%
+|}
+{{dlc|na+}}Red Chests have the same stats inside of a Devil/Angel Room as they can teleport players into the room despite being inside it.<!-- Note: The soul heart reward is actually a 15% chance for 1-2 soul hearts. The second soul heart is a 50% chance (10% with daemon's tail). I expanded the 1 reward into 2 in the table. -->
+{{clear}}
+
+== Bomb Chest ==
+{{infobox entity
+ | name    = Bomb Chest
+ | variant = 51
+}}
+
+'''Bomb Chests''' (or alternatively '''Stone Chests''') are grey chests that have an appearance similar to stone. They are unique in that they will only open if hit by an explosion. They give the same rewards as Golden Chests. Stone Chests are most commonly found in {{R|Challenge Room}}s, {{R|Curse Room}}s, and {{R|Vault}}s, and they will occasionally replace normal chests.
+{{clear}}
+
+== Eternal Chest ==
+{{infobox entity
+ | dlc     = a
+ | name    = Eternal Chest
+ | variant = 53
+}}
+
+'''Eternal Chests''' are similar in appearance to Golden Chests, except that they are a bright blue instead of gold and emit a pale glow. They have the same requirements to unlock and rewards as locked chests, but with an additional feature: the chest will close itself after a few seconds, at which point it can be opened again for more rewards at the cost of another key. However, there is a 25% chance that the chest will give nothing when opened, and if the chest contains nothing or an item, it will not reclose and cannot give any more rewards. They can be found in {{R|Angel Room}}s, {{R|Vault}}s, and {{R|I AM ERROR}} rooms, and will very rarely replace normal chests and locked chests.
+
+{{dlc|r}}Eternal Chests are guaranteed to pay out at least once.
+{{clear}}
+
+== Spiked Chest ==
+{{infobox entity
+ | dlc     = a
+ | name    = Spiked Chest
+ | variant = 52
+}}
+
+'''Spiked Chests''' are brown-colored chests with spikes protruding from them. Opening the chest will deal half a heart of damage to Isaac unless he has a way to resist the damage, such as with [[invulnerability]] effects or {{i|Holy Mantle}}. {{C|The Forgotten}} can also open spiked chests without taking damage by swinging their bone club. They give the same rewards as normal Chests. They can be rarely found upon completing a room or in Greed mode Shops.
+
+{{dlc|r}} Spiked Chests can also be opened without any damage being taken when using {{I|Magneto}} or holding {{t|Flat File|n}}.
+
+{{dlc|na+}} Unlike other chests, they do not appear on the minimap.
+{{clear}}
+
+== Mimic Chest ==
+{{infobox entity
+ | dlc        = a+
+ | name       = Mimic Chest
+ | image name = {{dlcalt|Mimic Chest|r=Mimic Chest Repentance}}
+ | variant    = 54
+}}
+
+'''Mimic Chests''' appear similar to normal Chests (both for the sprite and the mini-map icon) until Isaac gets close to them, at which point they sprout spikes and act the same as a Spiked Chest.
+
+{{dlc|nr}} They can be distinguished from normal Chests by their darker, brown coloring, the grayish spots on each side of the latch where the spikes will sprout from, and a tiny bloodstain.
+
+{{dlc|r}} Mimic Chests can be identified through a bloodstain on their bottom-right edge. Damage from this chest is considered self-damage.
+
+The contents inside mimic chests will change whenever their spikes pop out, {{dlc+|r}}which can be observed with {{i|Guppy's Eye}}.{{dlc-}} The only way to get the original drops is to open it with {{t|Flat File}}, {{i|Magneto}}, or a melee swing attack such as {{c|The Forgotten}}'s bone club or {{i|Spirit Sword}}.
+{{clear}}
+
+== Old Chest ==
+{{infobox entity
+ | dlc     = r
+ | name    = Old Chest
+ | variant = 55
+}}
+
+'''Old Chests''' are similar in shape to Golden Chests, but have the color of a normal Chest and a worn-down appearance. They have the same requirements as locked chests. When opened, they contain one of the following:
+
+* 1-3 {{e|Soul Heart}}s (43% chance)
+* 3 [[trinket]]s (42% chance)
+* An [[Old Chest (Item Pool)|Old Chest item]] (10% chance)
+* An [[Angel Room (Item Pool)|Angel Room item]] (5% chance)
+
+Old Chests can be found through the effects of {{I|Isaac's Tomb}} and inside {{R|I AM ERROR}} rooms.
+{{clear}}
+
+== Wooden Chest ==
+{{infobox entity
+ | dlc         = r
+ | name        = Wooden Chest
+ | variant     = 56
+ | unlocked by = Wooden Chest
+}}
+
+'''Wooden Chests''' appear similar to normal Chests, but have a wooden texture. When opened, they contain one of the following:
+
+* 2 [[Cards and Runes|cards or runes]] (45% chance)
+* 2-3 [[pill]]s (45% chance)
+* A [[Wooden Chest (Item Pool)|Wooden Chest item]] (10% chance)
+
+Wooden Chests have a chance to replace regular chests, and can additionally be found in one {{r|Secret Room}} layout, as well as one {{r|Super Secret Room}} layout. Before they are unlocked, Wooden Chests are replaced by random regular {{E|Chest}}s or {{e|Grab Bag}}s ({{e|Spiked Chest}}s and {{e|Locked Chest}}s cannot replace the regular chest).
+{{clear}}
+
+== Mega Chest ==
+{{infobox entity
+ | dlc         = r
+ | name        = Mega Chest
+ | variant     = 57
+ | unlocked by = Mega Chest
+}}
+
+'''Mega Chests''' appear similar to Golden Chests but are larger in appearance. They require 1-7 keys to open. When opened, they have an equal chance to contain one of the following:
+
+* 2 [[Treasure Room (Item Pool)|Treasure Room Items]]
+* Pickups equivalent to 5 {{E|Locked Chest}}s, including trinkets, cards, and runes.
+
+Mega Chests have a 0.8328% chance to replace any golden chest, and appears in one super secret room layout next to 2 keys, and one vault room layout. Before they are unlocked, Mega Chests are replaced by {{E|Locked Chest}}s.
+{{clear}}
+
+== Haunted Chest ==
+{{infobox entity
+ | dlc         = r
+ | name        = Haunted Chest
+ | variant     = 58
+ | unlocked by = Haunted Chest
+}}
+
+'''Haunted Chests''' appear nearly identical to normal Chests, but are slightly lighter in color and are haunted by a {{E|Polty}}. A haunted chest deals collision damage while the {{E|Polty}} is inside it. When Isaac gets close enough to a Haunted Chest, the {{E|Polty}} will emerge and throw the chest at him, breaking it open and dealing half a heart of damage if it hits. The {{E|Polty}} then acts normally.
+* If the player leaves the room while the chest is in the air, it will disappear.
+* If {{E|Polty|text=Polties}} have been permanently destroyed by {{i|Eraser}}, approaching the chest makes it pop open with a pink puff of smoke.
+* Using {{i|Pause}} at a time when {{e|Polty}} has not yet picked it up, the chest will be impossible to open in any way until {{e|Polty}} unfreezes or dies. If you try to push {{e|Haunted Chest}} away from {{e|Polty}}, the ghost will appear immediately at the current chest after unfreezing.
+{{clear}}
+
+== Mom's Chest ==
+{{infobox entity
+ | dlc     = r
+ | name    = Mom's Chest
+ | variant = 390
+}}
+
+'''Mom's Chest''' appears in {{s|Home}}. Mom's Chest has no requirements to open. It contains a {{I|Red Key}} upon the first visit (used to access the [[Home#Hidden closet|hidden closet]]), and on later encounters, an item from the [[Mom's Chest (Item Pool)|Mom's Chest item pool]].
+
+* Can't be copied by {{I|D1|dlc=x}}.
+* Can't be duplicated with {{p|Jera}} or {{i|Diplopia}}.
+{{clear}}{{dlc clear}}
+
+== Notes ==
+* Normal chests cannot contain [[card]]s or [[Golden Chest (Item Pool)|items]].
+* Consider opening adjacent Red Chests before Stone Chests; Red Chests often contain {{e|Troll Bomb}}s, which can blast Stone Chests open.
+** Stone Chests can also be pushed to any position in the room, which can be used to save bombs by hitting multiple targets with one blast.
+* Opening any chest (except for red chests) while on {{s|Chest}} or {{s|Dark Room}} will spawn an [[item]].
+* Chests of all types are considered pickups and will be doubled by {{p|Jera}}.
+** Mom's Chest cannot be doubled.
+* {{i|Mom's Key}} cannot change the contents of a chest; it only causes the chest to spawn more pickups if it normally would.
+* Whenever a chest contains another chest, the smaller chest may also contain another chest. This can repeat as many times as the chance allows, but that chance is very slim by default. The smaller chest will have no different rewards than one of the same size.
+** If these smaller chests contain an item, they will appear as tiny items.
+* When using the Debug Console, a Golden Chest is referred to as a "Locked Chest" and a Stone Chest is referred to as a "Bomb Chest".
+* {{dlc|nr}}All of the icons for the items in the Golden Chest pool are heads or, as is the case for {{i|Bob's Brain}} and {{i|Infamy}}, head-related.
+** {{dlc|a+nr}}The Golden Chest pool also includes bags, such as {{i|IV Bag}} or {{i|Sack of Pennies}}.
+* {{dlc|nr}}Empty opened chests may be rerolled into other pickups by using items such as the {{i|D20}}, but this must be done immediately, as opened chests will disappear upon leaving the room.
+** {{dlc|r}}Opened chests cannot be rerolled.
+* {{dlc|a+}}Prior to update [[v1.06.0182]], Mimic Chests looked identical to normal Chests.
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | Mr. ME!, Red Key }}
+
+== Trivia ==
+* Mimic Chests share the same name with a recurring Chest enemy that has appeared in ''Dungeons and Dragons'' and eventually in various video games. Mimic Chests in the games act as a chest but attempt to catch players off guard and attack them. The Mimic Chests in ''The Binding of Isaac'', although not a living entity, may have mostly been inspired by the Mimic Chest's ability to act like chests and catch players off guard, which explains its nature.
+
+== Bugs ==
+{{bug|dlc=nr|If a smaller chest is present in a room, re-entering the room will make the chest appear in a regular size.}}
+{{Bug|Unless the player has enough keys, flight, or any form of teleportation, the Mega Chest can block the way of a narrow passage way and may even deny access to many other rooms such as the Boss Room, possibly softlocking your run.|dlc=r}}
+{{nav|fr=Coffres|mega satan unlock|tainted isaac unlock|tainted lazarus unlock|tainted lost unlock}}
+[[Category:Objects]]

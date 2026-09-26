@@ -1,0 +1,50 @@
+{{infobox version
+ | dlc  = a+
+ | name = Booster Pack #1
+ | date = 2017-03-23
+ | blog = 158765831809
+}}
+
+''This was the first initial version of Booster Pack #1 for the [[Afterbirth †]] DLC expansion. For an overview on content added in Booster Pack #1, please see this page: [[Booster Packs]]''
+
+== Documented changes ==
+=== New items ===
+* {{i|Angry Fly}} (511), which is based off [http://steamcommunity.com/sharedfiles/filedetails/?id=835997271 this Steam Workshop item] by Custom Phase.
+* {{i|Black Hole}} (512), which is based off [http://steamcommunity.com/sharedfiles/filedetails/?id=840640979 this Steam Workshop item] by Custom Phase.
+* {{i|Bozo}} (513), which is based off this [http://steamcommunity.com/sharedfiles/filedetails/?id=840361451 Steam Workshop item] by Electoon.
+* {{i|Broken Modem}} (514), which is based off this [http://steamcommunity.com/sharedfiles/filedetails/?id=839519212 Steam Workshop item] by Freeze.
+* {{i|Mystery Gift}} (515), which is based off this [http://steamcommunity.com/sharedfiles/filedetails/?id=839883727 Steam Workshop item] by Mills.
+* {{i|Sprinkler}} (516), which is based off this [http://steamcommunity.com/sharedfiles/filedetails/?id=842444127 Steam Workshop item] by Kieran & Stewartisme.
+* {{i|Fast Bombs}} (517).
+* {{i|Buddy in a Box}} (518), which is based off this [http://steamcommunity.com/sharedfiles/filedetails/?id=844440401 Steam Workshop item] by Scayze & Ashkait.
+* {{i|Lil Delirium}} (519), which is based off this [http://steamcommunity.com/sharedfiles/filedetails/?id=845230668 Steam Workshop item] by Scayze & Ashkait.
+
+=== New trinkets ===
+* {{t|Hairpin}} (120), which is based off this [http://steamcommunity.com/sharedfiles/filedetails/?id=835885114 Steam Workshop trinket] by Zarat.us.
+* {{t|Wooden Cross}} (121), which is based off this [http://steamcommunity.com/sharedfiles/filedetails/?id=841132488 Steam Workshop trinket] by Mills & ep.
+* {{t|Butter!}} (122) (This trinket was designed by Florian Himsl, developer and programer of the original ''The Binding of Isaac'' game.)
+
+=== New cards ===
+* {{p|Huge Growth}} (52), which is based off this [http://steamcommunity.com/sharedfiles/filedetails/?id=841401139 Steam Workshop card] by JOHN MADDEN.
+* {{p|Ancient Recall}} (53), which is based off this [http://steamcommunity.com/sharedfiles/filedetails/?id=841401139 Steam Workshop card] by JOHN MADDEN.
+* {{p|Era Walk}} (54), which is based off this [http://steamcommunity.com/sharedfiles/filedetails/?id=841401139 Steam Workshop card] by JOHN MADDEN.
+
+=== New features ===
+* Added 5 new [[Eden]] hairstyles, which is based off of [http://steamcommunity.com/sharedfiles/filedetails/?id=834446972 this Steam workshop mod] by Niche Hobby Robot.
+* Added a new option in the menu for charge bars, which is based off of [http://steamcommunity.com/sharedfiles/filedetails/?id=835177566 this Steam workshop mod] by Wofsauge.
+* [[Dice room]]s now have a small icon in the corner of the room that denotes what the effect of the room is, which is inspired by [http://steamcommunity.com/sharedfiles/filedetails/?id=835149267 this Steam Workshop mod] by Wofsauge.
+
+== Undocumented changes ==
+=== Changes ===
+* Lil' Brimstone got renamed to {{i|Lil Brimstone}}.
+* Lil' Haunt got renamed to {{i|Lil Haunt}}.
+
+=== Fixes ===
+* Fixed the bug where {{i|Epic Fetus}} and {{i|Monstro's Lung}} would not synergize properly.
+* Fixed the bug where {{i|Key Piece 1}} and {{i|Key Piece 2}} rerolls were unseeded.
+* Fixed the bug where {{i|Epic Fetus}} and {{i|Loki's Horns}} would not synergize properly.
+* Fixed the bug where {{i|Epic Fetus}} and {{i|Mom's Eye}} would not synergize properly.
+* Fixed the bug where you could use a {{i|Crooked Penny}} to duplicate an empty item pedestal.
+
+{{nav|version}}
+[[Category:Added in Booster Pack 1]]

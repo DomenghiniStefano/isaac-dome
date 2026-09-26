@@ -1,0 +1,384 @@
+{{header greed bosses}}
+{{page dlc|a}}
+
+== {{s|Caves}} ==
+=== All Boss Waves ===
+{| style="width: 70%; text-align: center"
+ | [[file:Boss Gurglings portrait.png|center|link=Gurglings]]
+ | [[file:Boss Monstro portrait.png|link=Monstro]]
+ | [[file:Boss Chub portrait.png|center|link=Chub]]
+ | [[File:Boss Fistula portrait.png|center|link=Fistula]]
+ |-
+ | [[Gurglings]]
+ | [[Monstro]]
+ | [[Chub]]
+ | [[Fistula]]
+ |}
+
+=== Boss Wave 1 Specific ===
+{| style="width: 70%; text-align: center"
+ | [[file:Boss Dingle portrait.png|center|link=Dingle]]
+ | [[file:Boss The Duke of Flies portrait.png|center|link=The Duke of Flies]]
+ | [[file:Boss Gemini portrait.png|link=Gemini]]
+ | [[file:Boss Larry Jr. portrait.png|center|link=Larry Jr.]]
+ |-
+ | [[Dingle]]
+ | [[The Duke of Flies]]
+ | [[Gemini]]
+ | [[Larry Jr.]]
+ |}
+{| style="width: 70%; text-align: center"
+ | [[file:Boss Polycephalus portrait.png|center|link=Polycephalus]]
+ |-
+ | [[Polycephalus]]
+ |}
+{| style="width: 70%; text-align: center"
+ | [[file:Envy.png|64px|center|link=Envy]]
+ | [[file:Wrath.png|64px|center|link=Wrath]]
+ | [[file:Pride.png|64px|center|link=Pride]]
+ | [[file:Lust.png|64px|center|link=Lust]]
+ |-
+ | [[Envy]]
+ | [[Wrath]]
+ | [[Pride]]
+ | [[Lust]]
+ |}
+{| style="width: 70%; text-align: center"
+ | [[file:boss Sloth.png|64px|center|link=Sloth]]
+ |-
+ | [[Sloth]]
+ |}
+
+=== Boss Wave 2 Specific ===
+{| style="width: 70%; text-align: center"
+ | [[file:Boss Gurdy Jr. portrait.png|link=Gurdy Jr.]]
+ | [[file:Boss The Husk portrait.png|center|link=The Husk]]
+ | [[File:Boss Mega Maw portrait.png|center|link=Mega Maw]]
+ | [[file:Boss Peep portrait.png|center|link=Peep]]
+ |-
+ | [[Gurdy Jr.]]
+ | [[The Husk]]
+ | [[Mega Maw]]
+ | [[Peep]]
+ |}
+{| style="width: 70%; text-align: center"
+ | [[file:boss Gluttony.png|64px|center|link=Gluttony]]
+ | [[file:boss Wrath.png|64px|center|link=Wrath]]
+ |-
+ | [[Gluttony]]
+ | [[Wrath]]
+ |}
+
+=== Nightmare Wave Specific ===
+{| style="width: 70%; text-align: center"
+ | [[file:Boss Dingle portrait.png|center|link=Dingle]]
+ | [[file:Boss The Duke of Flies portrait.png|center|link=The Duke of Flies]]
+ | [[file:Boss Larry Jr. portrait.png|center|link=Larry Jr.]]
+ | [[file:Boss Gurdy Jr. portrait.png|link=Gurdy Jr.]]
+ |-
+ | [[Dingle]]
+ | [[The Duke of Flies]]
+ | [[Larry Jr.]]
+ | [[Gurdy Jr.]]
+ |}
+{| style="width: 70%; text-align: center"
+ | [[file:Boss The Husk portrait.png|center|link=The Husk]]
+ | [[File:Boss Mega Maw portrait.png|center|link=Mega Maw]]
+ | [[file:Boss Peep portrait.png|center|link=Peep]]
+ | [[file:Boss Bumbino portrait.png|center|link=Bumbino]]
+ |-
+ | [[The Husk]]
+ | [[Mega Maw]]
+ | [[Peep]]
+ | [[Bumbino]] {{dlc|r}}
+ |}
+{| style="width: 70%; text-align: center"
+ | [[file:boss Wrath.png|64px|center|link=Wrath]]
+ | [[file:boss Sloth.png|64px|center|link=Sloth]]
+ |-
+ | [[Wrath]]
+ | [[Sloth]]
+ |}
+
+== {{dlc+|r}} {{s|Catacombs}} ==
+=== All Boss Waves ===
+{| style="width: 70%; text-align: center"
+ | [[file:Boss Pin portrait.png|link=Pin]]
+ | [[file:Boss Chub portrait.png|center|link=Chub]]
+ | [[File:Boss Fistula portrait.png|center|link=Fistula]]
+ | [[file:Boss The Hollow portrait.png|center|link=The Hollow]]
+ |-
+ | [[Pin]]
+ | [[Chub]]
+ | [[Fistula]]
+ | [[The Hollow]]
+ |}
+{| style="width: 70%; text-align: center"
+ | [[file:boss Wrath.png|64px|center|link=Wrath]]
+ |-
+ | [[Wrath]]
+ |}
+
+=== Boss Wave 1 Specific ===
+{| style="width: 70%; text-align: center"
+ | [[file:Boss Dingle portrait.png|center|link=Dingle]]
+ | [[file:Boss The Duke of Flies portrait.png|center|link=The Duke of Flies]]
+ | [[file:Boss The Haunt portrait.png|center|link=The Haunt]]
+ | [[file:Boss Widow portrait.png|center|link=Widow]]
+ |-
+ | [[Dingle]]
+ | [[The Duke of Flies]]
+ | [[The Haunt]]
+ | [[Widow]]
+ |}
+{| style="width: 70%; text-align: center"
+ | [[file:Boss Mega Fatty portrait.png|center|link=Mega Fatty]]
+ | [[file:Boss Polycephalus portrait.png|center|link=Polycephalus]]
+ |-
+ | [[Mega Fatty]]
+ | [[Polycephalus]]
+ |}
+{| style="width: 70%; text-align: center"
+ | [[file:Envy.png|64px|center|link=Envy]]
+ | [[file:Lust.png|64px|center|link=Lust]]
+ | [[file:Greed.png|64px|center|link=Greed]]
+ | [[file:Sloth.png|64px|center|link=Sloth]]
+ |-
+ | [[Envy]]
+ | [[Lust]]
+ | [[Greed]]
+ | [[Sloth]]
+ |}
+{| style="width: 70%; text-align: center"
+ | [[file:Pride.png|64px|center|link=Pride]]
+ |-
+ | [[Pride]]
+ |}
+
+=== Boss Wave 2 Specific ===
+{| style="width: 70%; text-align: center"
+ | [[file:Boss Blighted Ovum portrait.png|center|link=Blighted Ovum]]
+ | [[file:Boss Gurdy Jr. portrait.png|link=Gurdy Jr.]]
+ | [[file:Boss The Husk portrait.png|center|link=The Husk]]
+ | [[File:Boss Mega Maw portrait.png|center|link=Mega Maw]]
+ |-
+ | [[Blighted Ovum]]
+ | [[Gurdy Jr.]]
+ | [[The Husk]]
+ | [[Mega Maw]]
+ |}
+{| style="width: 70%; text-align: center"
+ | [[file:Boss Peep portrait.png|center|link=Peep]]
+ | [[file:Boss The Wretched portrait.png|center|link=The Wretched]]
+ |-
+ | [[Peep]]
+ | [[The Wretched]]
+ |}
+{| style="width: 70%; text-align: center"
+ | [[file:boss Gluttony.png|64px|center|link=Gluttony]]
+ |-
+ | [[Gluttony]]
+ |}
+
+=== Nightmare Wave Specific ===
+{| style="width: 70%; text-align: center"
+ | [[file:Boss Blighted Ovum portrait.png|center|link=Blighted Ovum]]
+ | [[file:Boss Dingle portrait.png|center|link=Dingle]]
+ | [[file:Boss Gemini portrait.png|link=Gemini]]
+ | [[file:Boss Monstro portrait.png|link=Monstro]]
+ |-
+ | [[Blighted Ovum]]
+ | [[Dingle]]
+ | [[Gemini]]
+ | [[Monstro]]
+ |}
+{| style="width: 70%; text-align: center"
+ | [[file:Boss Widow portrait.png|center|link=Widow]]
+ | [[file:Boss Gurdy Jr. portrait.png|link=Gurdy Jr.]]
+ | [[File:Boss Mega Maw portrait.png|center|link=Mega Maw]]
+ | [[file:Boss Peep portrait.png|center|link=Peep]]
+ |-
+ | [[Widow]]
+ | [[Gurdy Jr.]]
+ | [[Mega Maw]]
+ | [[Peep]]
+ |}
+{| style="width: 70%; text-align: center"
+ | [[file:Boss Polycephalus portrait.png|center|link=Polycephalus]]
+ | [[file:Boss The Wretched portrait.png|center|link=The Wretched]]
+ | [[file:Boss Bumbino portrait.png|center|link=Bumbino]]
+ |-
+ | [[Polycephalus]]
+ | [[The Wretched]]
+ | [[Bumbino]]
+ |}
+{| style="width: 70%; text-align: center"
+ | [[file:boss Sloth.png|64px|center|link=Sloth]]
+ |-
+ | [[Sloth]]
+ |}
+{{dlc-}}
+
+== {{dlc+|r}} {{s|Flooded Caves}} ==
+=== All Boss Waves ===
+{| style="width: 70%; text-align: center"
+ | [[file:Boss Gurglings portrait.png|center|link=Gurglings]]
+ | [[file:Boss Pin portrait.png|link=Pin]]
+ | [[file:Boss Little Horn portrait.png|center|link=Little Horn]]
+ | [[file:Boss Rag Man portrait.png|center|link=Rag Man]]
+ |-
+ | [[Gurglings]]
+ | [[Pin]]
+ | [[Little Horn]] {{unlockable}}
+ | [[Rag Man]] {{unlockable}}
+ |}
+{| style="width: 70%; text-align: center"
+ | [[File:Boss Fistula portrait.png|center|link=Fistula]]
+ | [[file:Boss Rag Mega portrait.png|center|link=Rag Mega]]
+ |-
+ | [[Fistula]]
+ | [[Rag Mega]] {{unlockable}}
+ |}
+{| style="width: 70%; text-align: center"
+ | [[file:boss Wrath.png|64px|center|link=Wrath]]
+ |-
+ | [[Wrath]]
+ |}
+
+=== Boss Wave 1 Specific ===
+{| style="width: 70%; text-align: center"
+ | [[file:Boss Dingle portrait.png|center|link=Dingle]]
+ | [[file:Boss The Duke of Flies portrait.png|center|link=The Duke of Flies]]
+ | [[file:Boss The Haunt portrait.png|center|link=The Haunt]]
+ | [[file:Boss Gemini portrait.png|link=Gemini]]
+ |-
+ | [[Dingle]]
+ | [[The Duke of Flies]]
+ | [[The Haunt]]
+ | [[Gemini]]
+ |}
+{| style="width: 70%; text-align: center"
+ | [[file:Boss Larry Jr. portrait.png|center|link=Larry Jr.]]
+ | [[file:Boss Monstro portrait.png|link=Monstro]]
+ | [[file:Boss Widow portrait.png|center|link=Widow]]
+ | [[file:Boss Chub portrait.png|center|link=Chub]]
+ |-
+ | [[Larry Jr.]]
+ | [[Monstro]]
+ | [[Widow]]
+ | [[Chub]]
+ |}
+{| style="width: 70%; text-align: center"
+ | [[File:Boss Mega Fatty portrait.png|center|link=Mega Fatty]]
+ | [[file:Boss Polycephalus portrait.png|center|link=Polycephalus]]
+ |-
+ | [[Mega Fatty]]
+ | [[Polycephalus]]
+ |}
+{| style="width: 70%; text-align: center"
+ | [[file:Envy.png|64px|center|link=Envy]]
+ | [[file:Pride.png|64px|center|link=Pride]]
+ | [[file:Lust.png|64px|center|link=Lust]]
+ | [[file:Greed.png|64px|center|link=Greed]]
+ |-
+ | [[Envy]]
+ | [[Pride]]
+ | [[Lust]]
+ | [[Greed]]
+ |}
+{| style="width: 70%; text-align: center"
+ | [[file:Sloth.png|64px|center|link=Sloth]]
+ |-
+ | [[Sloth]]
+ |}
+
+=== Boss Wave 2 Specific ===
+{| style="width: 70%; text-align: center"
+ | [[file:Boss Blighted Ovum portrait.png|center|link=Blighted Ovum]]
+ | [[file:Boss The Haunt portrait.png|center|link=The Haunt]]
+ | [[file:Boss Monstro portrait.png|link=Monstro]]
+ | [[file:Boss Chub portrait.png|center|link=Chub]]
+ |-
+ | [[Blighted Ovum]]
+ | [[The Haunt]]
+ | [[Monstro]]
+ | [[Chub]]
+ |}
+{| style="width: 70%; text-align: center"
+ | [[file:Boss Gurdy Jr. portrait.png|link=Gurdy Jr.]]
+ | [[file:Boss The Hollow portrait.png|center|link=The Hollow]]
+ | [[file:Boss The Husk portrait.png|center|link=The Husk]]
+ | [[File:Boss Mega Maw portrait.png|center|link=Mega Maw]]
+ |-
+ | [[Gurdy Jr.]]
+ | [[The Hollow]]
+ | [[The Husk]]
+ | [[Mega Maw]]
+ |}
+{| style="width: 70%; text-align: center"
+ | [[file:Boss Peep portrait.png|center|link=Peep]]
+ | [[file:Boss The Wretched portrait.png|center|link=The Wretched]]
+ | [[file:Boss The Stain portrait.png|center|link=The Stain]]
+ |-
+ | [[Peep]]
+ | [[The Wretched]]
+ | [[The Stain]] {{unlockable}}
+ |}
+{| style="width: 70%; text-align: center"
+ | [[file:boss Gluttony.png|64px|center|link=Gluttony]]
+ |-
+ | [[Gluttony]]
+ |}
+
+=== Nightmare Wave Specific ===
+{| style="width: 70%; text-align: center"
+ | [[file:Boss Blighted Ovum portrait.png|center|link=Blighted Ovum]]
+ | [[file:Boss Dingle portrait.png|center|link=Dingle]]
+ | [[file:Boss The Duke of Flies portrait.png|center|link=The Duke of Flies]]
+ | [[file:Boss Gemini portrait.png|link=Gemini]]
+ |-
+ | [[Blighted Ovum]]
+ | [[Dingle]]
+ | [[The Duke of Flies]]
+ | [[Gemini]]
+ |}
+{| style="width: 70%; text-align: center"
+ | [[file:Boss Larry Jr. portrait.png|center|link=Larry Jr.]]
+ | [[file:Boss Monstro portrait.png|link=Monstro]]
+ | [[file:Boss Widow portrait.png|center|link=Widow]]
+ | [[file:Boss Gurdy Jr. portrait.png|link=Gurdy Jr.]]
+ |-
+ | [[Larry Jr.]]
+ | [[Monstro]]
+ | [[Widow]]
+ | [[Gurdy Jr.]]
+ |}
+{| style="width: 70%; text-align: center"
+ | [[file:Boss The Husk portrait.png|center|link=The Husk]]
+ | [[File:Boss Mega Maw portrait.png|center|link=Mega Maw]]
+ | [[file:Boss Peep portrait.png|center|link=Peep]]
+ | [[file:Boss Polycephalus portrait.png|center|link=Polycephalus]]
+ |-
+ | [[The Husk]]
+ | [[Mega Maw]]
+ | [[Peep]]
+ | [[Polycephalus]]
+ |}
+{| style="width: 70%; text-align: center"
+ | [[file:Boss The Wretched portrait.png|center|link=The Wretched]]
+ | [[file:Boss The Stain portrait.png|center|link=The Stain]]
+ | [[file:Boss Bumbino portrait.png|center|link=Bumbino]]
+ |-
+ | [[The Wretched]]
+ | [[The Stain]] {{unlockable}}
+ | [[Bumbino]]
+ |}
+{| style="width: 70%; text-align: center"
+ | [[file:boss Sloth.png|64px|center|link=Sloth]]
+ |-
+ | [[Sloth]]
+ |}
+{{dlc-}}
+
+{{nav|boss|fr=Avarice Chapitre 2 (Boss)}}
+[[Category:Bosses]]

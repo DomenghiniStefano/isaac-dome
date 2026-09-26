@@ -1,0 +1,35 @@
+{{infobox monster
+ | id          = 206
+ | base hp     = 16
+ | stage hp    = 4
+ | environment = {{floor|Basement}}{{floor|Cellar}}{{floor|Burning Basement}}<br>{{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}
+ | behavior    = Runs away from Isaac and frequently spawns Spiders.
+}}
+
+'''Baby Long Legs''' quickly run away from Isaac and occasionally stops to spawn a {{E|Spider}}. Usually, they can spawn a maximum of 3 Spiders. They run around erratically when Isaac is nearby and can sometimes run directly into him when this occurs.
+{{clear}}
+
+== Variants ==
+=== Small Baby Long Legs ===
+{{infobox monster
+ | name        = Small Baby Long Legs
+ | variant     = 1
+ | base hp     = 12
+ | stage hp    = 4
+ | environment = {{floor|Basement}}{{floor|Cellar}}{{floor|Burning Basement}}<br>{{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}
+ | behavior    = Runs away from Isaac and occasionally spawns weaker, slower regenerating Sacks.
+}}
+
+The '''Small Baby Long Legs''' is a tiny variant of Baby Long Legs that simultaneously spawns {{E|Sack}}s along with a small puddle of slowing [[Creep#White Creep|White Creep]]. The Sacks it spawns start at around half health and take a while to regenerate fully.
+{{clear}}
+
+== Gallery ==
+<gallery>
+Edmund_McMillen_Rebirth_Monster_Sketches.jpg | Sketches of monsters for the Binding of Isaac: Rebirth, including what appears to actually be the Small Baby Long Legs in the sixth square of the first row (called the Baby Long Legs in this sketch).
+</gallery>
+
+== Notes ==
+* If a Small Baby Long Legs attempts to spawn a Sack on top of an already spawned Sack, the newly spawned Sack will replace the previous one.
+
+{{nav|fr=Bébé Faucheux}}
+[[Category:Spider monsters]]

@@ -1,0 +1,9 @@
+{{page dlc|r}}
+
+Items with this [[Item Tags|tag]] contribute toward the {{tf|Spun}} transformation and the unlock of {{a|Little Baggy}}.
+
+== Passive Collectibles ==
+{{collectible table | tag = syringe | type = passive }}
+
+{{nav|syringe|fr=Balise syringe}}
+[[Category:Item tags]]

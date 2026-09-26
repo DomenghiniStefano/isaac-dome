@@ -1,0 +1,38 @@
+{{infobox monster
+ | id           = 52
+ | image name   = * {{dlc|nr|Rebirth}}
+ | is mini-boss = yes
+ | base hp      = 60
+ | stage hp     = {{dlcalt|15|r=20}}
+ | environment  = <u>Mini-Boss</u><br>{{room|mini-boss}}<br><u>Degraded Mini-Boss</u><br>{{floor|Cathedral}}
+ | pool         = {{dlc|nr}}[[Tarot Card]] / {{e|Troll Bomb|nr}} / {{e|Key|r}} (75% Chance)<br>or<br>{{i|Anarchist Cookbook}} (25% Chance)
+}}
+
+'''Pride''' is a [[mini-boss]] based on one of the [[wikipedia:Seven Deadly Sins|Seven Deadly Sins]].
+
+== Behavior ==
+Pride wanders randomly around the room and performs one of two attacks:
+* Spawns 4 {{e|Troll Bomb}}s in random sections of the room.
+** Pride is immune to damage from his own Troll Bombs.
+* Fires 4 wave-like lasers from himself in an X-pattern.
+Pride deals a whole heart of contact damage.
+
+== Notes ==
+* {{dlc|nr}} Pride can drop {{i|Anarchist Cookbook}} even if Isaac has already encountered/possessed it.
+* Pride is not immune to damage from his own Troll Bombs while under the effect of {{i|Anima Sola}}.
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | The Book of Sin }}
+
+== Trivia ==
+* Pride's grayscale color, simple design, and the wavy scribble-like appearance of his lasers make him resemble Isaac's drawings as seen in the game's menus and cutscenes, possibly meaning he represents the pride Isaac takes in his creations.
+* Pride's expressions during its attacks are a reference to "rage comic" memes, he briefly resembles [https://knowyourmeme.com/memes/trollface troll face] before spawning Troll Bombs and assumes a [https://knowyourmeme.com/memes/forever-alone forever alone] before firing lasers.
+* The [[wikipedia:Seven Deadly Sins|Seven Deadly Sins]] that these mini-bosses are based upon are, in Christian teachings, a classification of vices from which all others are derived.
+* Pride is the personification of one of the Seven Deadly Sins. Pride is the excessive belief in one’s own importance, and can be thought of as narcissism, entitlement, or egotism. Pride can lead to other sins such as excessive desires for fame/attention, selfish desires for power, disobedience, discord, hypocrisy, and vanity. Pride is also believed by many to be the root of all sins.
+
+== Bugs ==
+{{bug|If Pride is [[fear]]ed, only his head will be colored purple when he is facing the back wall of the room.}}
+{{Bug|If Pride is [[slow]]ed during his attack animation, he will not play the full animation.}}
+
+{{nav|mini-boss|fr=Orgueil}}
+[[Category:Seven Deadly Sins]]

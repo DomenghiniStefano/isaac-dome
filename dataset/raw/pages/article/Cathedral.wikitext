@@ -1,0 +1,95 @@
+{{infobox stage
+ | chapter         = 5
+ | id              = {{dlcalt|10|a=15}}
+ | level id        = 10
+ | type id         = 1
+ | degraded bosses = Envy, Super Envy, Greed, Super Greed, Gluttony, Pride, Sloth, Wrath, Super Wrath, Famine, Pestilence, War, Death, Conquest, Chub, Daddy Long Legs, The Duke of Flies, Fistula, Dingle, Gemini, Gurdy Jr., The Haunt, Headless Horseman, Loki, Mega Fatty, Mega Maw, Monstro, Monstro II, Peep, The Bloat, Widow
+ | bosses          = Isaac
+}}
+
+The '''Cathedral''' is one of two floors following the {{s|Womb}} / {{s|Utero}} / {{s|Scarred Womb}}, the other being {{s|Sheol}}. After defeating {{e|Mom's Heart}}, depending on Isaac's deal chance, an {{r|Angel Room}} may spawn which will only contain a beam of light leading upwards to the Cathedral. Other methods to enter the deal room such as {{P|Joker}} or {{e|Red Chest}}s will work too. It's also possible to enter Cathedral via the beam of light in {{r|I AM ERROR}} Rooms. Unlocking and defeating {{e|It Lives!}} will always spawn a beam of light leading to the Cathedral, as well as a trapdoor leading to Sheol.
+
+The Cathedral has only one floor, featuring mostly undead and/or holy enemies, and the boss is always {{e|Isaac}}.
+
+{{e|Blue Fire Place}}s are far more common in this floor than normally.
+
+== [[Monster]]s ==
+{{entity table/header}}
+{{stage entities | Angelic Baby, Bony, Death's Head, Dip, Squirt, Dinga, Clot, I.Blob, Pale Fatty, Fat Sack, Fly, Eternal Fly, Pooter, Red Boom Fly, Spit, Floating Knight, Gazing Globin, Gurgling, Hanger, Keeper, Leech, Holy Leech, Mr. Maw, Mom's Hand, Splasher, Rotty, Spider, Big Spider, Ragling, Psy Tumor, Psychic Horf, Psychic Maw, Wizoob, Lil' Haunt, Poky, Slide, Wall Hugger, Stone Grimace, Constant Stone Shooter }}
+{{stage entities | dlc = a | Red Ghost, Suction Pitfall }}
+{{stage entities | dlc = a+ | Mr. Red Maw, Stoney, Cross Stone Shooter }}
+{{stage entities | dlc = a+nr | Portal }}
+{{stage entities | dlc = r | Bishop, Holy Bony, Candler, Bulb, Holy Eye, Holy Mulligan, Polty, Triple Grimace }}
+|}
+
+''Degraded Bosses:''
+{| class="wikitable mw-collapsible striped sortable"
+! Name
+! ID
+! class="unsortable" | Notes
+{{entity row minimal|Baby Plum}} |
+{{entity row minimal|The Bloat}} |
+{{entity row minimal|Bumbino}} |
+{{entity row minimal|Chub}} |
+{{entity row minimal|Conquest}} |
+{{entity row minimal|Daddy Long Legs}} |
+{{entity row minimal|Death}} |
+{{entity row minimal|Dingle}} |
+{{entity row minimal|The Duke of Flies}} |
+{{entity row minimal|Envy}} |
+{{entity row minimal|Famine}} |
+{{entity row minimal|Fistula}} | Small- and large-form only
+{{entity row minimal|Gabriel}} |
+{{entity row minimal|Gemini}} |
+{{entity row minimal|Gluttony}} |
+{{entity row minimal|Greed}} |
+{{entity row minimal|Gurdy Jr.}} |
+{{entity row minimal|The Haunt}} |
+{{entity row minimal|Headless Horseman}} |
+{{entity row minimal|Loki}} |
+{{entity row minimal|The Matriarch}} |
+{{entity row minimal|Mega Fatty}} |
+{{entity row minimal|Mega Maw}} |
+{{entity row minimal|Monstro}} |
+{{entity row minimal|Monstro II}} |
+{{entity row minimal|Peep}} |
+{{entity row minimal|Pestilence}} |
+{{entity row minimal|Pride}} |
+{{entity row minimal|Rag Man}} |
+{{entity row minimal|Sloth}} |
+{{entity row minimal|Super Envy}} |
+{{entity row minimal|Super Greed}} |
+{{entity row minimal|Super Sloth}} |
+{{entity row minimal|Super Wrath}} |
+{{entity row minimal|Uriel}} |
+{{entity row minimal|War}} |
+{{entity row minimal|Widow}} |
+{{entity row minimal|Wrath}} |
+{{entity row minimal|The Wretched}} |
+|}
+
+== Boss ==
+{| style="width: 70%; text-align: center"
+ | [[file:Boss Isaac portrait.png|120px|link=Isaac (Boss)]]
+ |-
+ | [[Isaac (Boss)|Isaac]]
+ |}
+
+== Notes ==
+* {{dlc|a+}} Some rooms contain Angel Statues that can be bombed to summon the [[Angel]]s and {{dlc|nr}} acquire key pieces.
+
+== Trivia ==
+* In the original Binding of Isaac, the windows along the walls were much larger and had different patterns resembling {{c|Isaac}} and a crucifix.
+* The floor's theme, ''Everlasting Hymn'', is one of the few tracks, together with ''Morning Star'', ''Living in the Light'' and ''Revelations 13-1,'' that contains actual lyrics'': Dei, quod reliquum est, Nolite metuere, Et ossa tua liberabit, Exspectans''.
+** Even though the Latin in the song likely contains a few mistakes (like ''dei'', which can only mean "of god" or "the gods" as subject of the sentence, or the inconsistency between the singular vocative "expectans" and the plural verb "nolite metuere"), the more accurate translation would be: "O thou who await, ye shan't fear what is left of God, and He will set thy bones free." Considering the fact that Isaac believes that killing himself is the morally correct thing to do (as he sees himself as being sinful or corrupted), the lyrics are encouraging Isaac to stay in the box and suffocate as his body panics for air.
+* The theme of Cathedral (''Everlasting Hymn'') is noticeably shorter than other floor themed soundtracks. The second layer of the theme (for when entering a room with enemies and bosses with a high HP count) wasn't added in the official OST, with the in-game second track being barely noticeable chants. The {{s|Dark Room}}'s theme (''Devoid'') is also shorter, but actually lacks the second, intense part of the track.
+* {{dlc+|r}} Interestingly, Cathedral was the only non-final level with no unique enemies. This was why it was given some enemies exclusive to the floor in ''Repentance'' (those being {{E|Holy Mulligan}}s, {{E|Holy Eye}}s, and {{E|Holy Bony|text=Holy Bonies}}).
+** Holy Eyes, Holy Bonies, and Holy Mulligans were first seen in cards from the card game '''The Binding of Isaac: Four Souls'''.{{dlc-}}
+
+== Music ==
+* The [[music]] for the Cathedral is titled ''Everlasting Hymn''.<ref>[https://ridiculon.bandcamp.com/album/the-binding-of-isaac-rebirth-ost Binding of Isaac: Rebirth OST]</ref>
+
+== References ==
+{{reflist}}
+
+{{nav|environment|fr=Cathédrale}}

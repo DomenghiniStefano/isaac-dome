@@ -1,0 +1,33 @@
+{{header reverse tarot cards}}
+{{Infobox card
+ | dlc         = r
+ | name        = XVI - The Tower?
+ | files name  = XVI - Inverted The Tower
+ | type        = card
+ | id          = 72
+ | quote       = Creation brings destruction
+ | description = Creates 7 clusters of random [[rocks]] and other obstacles. Spawned clusters will often contain [[tinted rock]]s, with the possibility of finding more than one in the same room. The pathways between exits can't be blocked.
+ | unlocked by = The Tower
+ | recharge    = {{dlcalt|3|r+=4}}
+}}
+
+{{cit|uc|r}}
+
+== Effects ==
+* Creates 7 clusters of random [[rocks]] and other obstacles. The pathways between exits can't be blocked.
+** Every [[rocks|rock]] has a 3% chance to be a [[tinted rock]].
+
+== Strategy ==
+* It is recommended to use '''XVI - The Tower?''' in a large room, as the clusters will be larger, increasing the chance of spawning tinted rocks.
+
+== Synergies ==
+* {{I|Tarot Cloth}}: Spawns 14 rock clusters.
+
+== In-game Footage ==
+{{#ev:youtube|b3cZ6UlSuRk}}
+
+== Bugs ==
+{{bug|dlc=r|Using {{p|XVI - The Tower?}} in a {{r|Boss Room}} may block all paths to the trap door, resulting in a softlock if no bombs or flight are available.}}
+{{bug|dlc=r|Using {{p|XVI - The Tower?}} can also trap certain familiars over the rocks such as {{i|Lost Fly}} until Isaac leaves the room.}}
+
+{{nav|fr=XVI - La Maison Dieu ?|card}}

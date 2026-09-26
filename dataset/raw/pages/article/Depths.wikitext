@@ -1,0 +1,153 @@
+{{infobox stage
+ | chapter          = 3
+ | id               = {{dlcalt|5|a=7}}
+ | id greed         = {{dlcalt|21|r=7}}
+ | level id         = 5, 6
+ | level id greed   = 3
+ | type id          = 0
+ | type id greed    = {{dlcalt|3|r=0}}
+ | degraded bosses  = Blastocyst Small, Chub, Dingle, The Duke of Flies, Fistula Medium, Fistula Small, The Haunt, The Hollow, Larry Jr., Mega Fatty, Monstro, Pin, Polycephalus, Teratoma Medium
+ | bosses 1         = The Adversary, Brownie, The Cage, The Gate, Gish, Loki, Monstro II, Sisters Vis, War
+ | double trouble 1 = Chub, Gurdy Jr., The Haunt, The Hollow, Turdlings, The Wretched
+ | bosses 2         = Mom
+}}
+
+'''The Depths''' is one of the levels in [[Chapter 3]]. It features a dark environment, filled with skulls. Common enemies in the Depths include Knights, Guts, and Vis.
+
+The Depths' unlockable variants are {{s|Necropolis}} and the {{s|Dank Depths}}, which can be unlocked after defeating every boss from the Depths (not necessarily ''in'' the Depths), and after killing {{e|It Lives!}} 26 times.
+
+The boss of The Depths II is always {{e|Mom}}.
+
+{{dlc+|r}} After {{a|A Secret Exit}} is unlocked, a door will appear in Depths I's {{r|Boss Room}} upon defeating the boss, leading to the {{S|Mausoleum}} / {{S|Gehenna}}. This door requires two hearts to be opened (except on Lost characters). Unlike {{r|Angel Room}}s and {{r|Devil Room}}s, this door never disappears. Also after this achievement is unlocked, [[a Strange Door]] in the starting room of Depths II will appear. This door leads to {{S|Mausoleum}} / {{S|Gehenna}} II before entering the [[Ascent]].
+{{dlc-}}
+
+== [[Monster]]s ==
+{{entity table/header}}
+{{stage entities | Baby, Begotten, Nulls, Boil, Gut, Sack, Walking Sack, Bony, Death's Head, Brain, MemBrain, Clot, I.Blob, Dip, Squirt, Dinga, Embryo, Pale Fatty, Fat Sack, Blubber, Half Sack, Fly, Attack Fly, Ring Fly, Moter, Pooter, Boom Fly, Red Boom Fly, Sucker, Spit, Skinny, Rotty, Gurgle, Globin, Gazing Globin, Grub, Gurgling, Buttlicker, Guts, Leech, Hive, Pacer, Hopper, Flaming Hopper, Leaper, Host, Red Host, Mobile Host, Flesh Mobile Host, Mask + Heart, Keeper, Hanger, Knight, Floating Knight, Psychic Horf, Maw, Red Maw, Psychic Maw, Mr. Maw, Mom's Hand, Nerve Ending, One Tooth, Round Worm, Night Crawler, Spider, Big Spider, Ragling, Baby Long Legs, Small Crazy Long Legs, Wall Creep, Blind Creep, Rage Creep, Swarmer, Tumor, Psy Tumor, Vis, Chubber, Wizoob, Lil' Haunt, Poky, Slide, Stone Grimace, Constant Stone Shooter, Gaping Maw, Broken Gaping Maw }}
+{{stage entities | dlc = a | Blue Boil, Black Bony, Dank Death's Head, Mega Clotty, Corn, Brownie Corn, Corn Mine, Flaming Fatty, Dart Fly, Hush Fly, Cyclopia, Blue Gaper, Greed Gaper, Black Globin's Head, Black Globin's Body, Dukie, Mom's Dead Hand, Fat Bat }}
+{{stage entities | dlc = a+ | Blister, Poison Mind, Ministro, Mr. Red Maw, The Thing, Stoney, Cross Stone Shooter }}
+{{stage entities | dlc = a+nr | Portal }}
+{{stage entities | dlc = r | Army Fly, Bulb, Needle, Triple Grimace }}
+|}
+
+''Degraded Bosses:''
+{| class="wikitable mw-collapsible sortable striped"
+! Name
+! ID
+! class="unsortable" |  Notes
+{{entity row minimal|Blastocyst}} | Small-form only
+{{entity row minimal|Chub}} |
+{{entity row minimal|Dingle}} |
+{{entity row minimal|The Duke of Flies}} |
+{{entity row minimal|Fistula}} | Small- and medium-form only
+{{entity row minimal|The Haunt}} |
+{{entity row minimal|The Hollow}} |
+{{entity row minimal|Larry Jr.}} |
+{{entity row minimal|Mega Fatty}} |
+{{entity row minimal|Monstro}} |
+{{entity row minimal|Pin}} |
+{{entity row minimal|Polycephalus}} |
+{{entity row minimal|Super Greed}} |
+{{entity row minimal|Teratoma}} | Medium-form only
+|}
+
+== [[Bosses]] ==
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:Boss The Cage portrait.png|center|link=The Cage]]
+| style="text-align: center; border: none" |[[File:Boss The Gate portrait.png|center|link=The Gate]]
+| style="text-align: center; border: none" |[[File:Boss Loki portrait.png|center|link=Loki]]
+| style="text-align: center; border: none" |[[File:Boss Monstro II portrait.png|center|link=Monstro II]]
+|-
+| style="text-align: center; border: none" |[[The Cage]]
+| style="text-align: center; border: none" |[[The Gate]]
+| style="text-align: center; border: none" |[[Loki]]
+| style="text-align: center; border: none" |[[Monstro II]]
+|}
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:Boss Gish portrait.png|center|link=Gish]]
+| style="text-align: center; border: none" |[[File:Boss The Adversary portrait.png|center|link=The Adversary]]
+| style="text-align: center; border: none" |[[File:Boss War portrait.png|center|link=War]]
+| style="text-align: center; border: none" |[[File:Boss The Fallen portrait.png|center|link=The Fallen]]
+|-
+| style="text-align: center; border: none" |[[Gish]] {{unlockable}}
+| style="text-align: center; border: none" |[[The Adversary]] {{Dlc|nr}}
+| style="text-align: center; border: none" |[[War]] {{unlockable}}
+| style="text-align: center; border: none" |[[The Fallen]] {{room|Devil}}
+|}
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:Boss Headless Horseman portrait.png|center|link=Headless Horseman]]
+| style="text-align: center; border: none" |[[File:Boss Brownie portrait.png|center|link=Brownie]]
+| style="text-align: center; border: none" |[[File:Boss Sisters Vis portrait.png|center|link=Sisters Vis]]
+| style="text-align: center; border: none" |[[File:Boss Reap Creep portrait.png|center|link=Reap Creep]]
+|-
+| style="text-align: center; border: none" |[[Headless Horseman]] {{unlockable}}
+| style="text-align: center; border: none" |[[Brownie]] {{dlc|a}} {{unlockable}}
+| style="text-align: center; border: none" |[[Sisters Vis]] {{dlc|a+}} {{unlockable}}
+| style="text-align: center; border: none" |[[Reap Creep]] {{Dlc|r}} {{unlockable}}
+|}
+
+=== Double Trouble ===
+{| class="mw-collapsible mw-collapsed wikitable"
+! Double Trouble Bosses
+|-
+|
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:Boss Chub portrait.png|center|link=Chub]]
+| style="text-align: center; border: none" |[[File:Boss Gurdy Jr. portrait.png|center|link=Gurdy Jr.]]
+| style="text-align: center; border: none" |[[File:Boss The Haunt portrait.png|center|The Haunt]]
+|-
+| style="text-align: center; border: none" |(Double Trouble)<br>[[Chub]]
+| style="text-align: center; border: none" |(Double Trouble)<br>[[Gurdy Jr.]]
+| style="text-align: center; border: none" |(Double Trouble)<br>[[The Haunt]]
+|}
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:Boss The Hollow portrait.png|center|link=The Hollow]]
+| style="text-align: center; border: none" |[[File:Boss The Husk portrait.png|center|link=The Husk]]
+| style="text-align: center; border: none" |[[File:Boss Larry Jr. portrait.png|center|link=Larry Jr.]]
+|-
+| style="text-align: center; border: none" |(Double Trouble)<br>[[The Hollow]]
+| style="text-align: center; border: none" |(Double Trouble)<br>[[The Husk]]
+| style="text-align: center; border: none" |(Double Trouble)<br>[[Larry Jr.]]
+|}
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:Boss The Wretched portrait.png|center|link=The Wretched]]
+| style="text-align: center; border: none" |[[File:Boss Little Horn portrait.png|center|link=Little Horn]]
+| style="text-align: center; border: none" |[[File:Boss Rag Man portrait.png|center|link=Rag Man]]
+|-
+| style="text-align: center; border: none" |(Double Trouble)<br>[[The Wretched]]
+| style="text-align: center; border: none" |(Double Trouble)<br>[[Little Horn]] {{dlc|a}} {{unlockable}}
+| style="text-align: center; border: none" |(Double Trouble)<br>[[Rag Man]] {{dlc|a}} {{unlockable}}
+|-
+|[[File:Boss Dark One portrait.png|center|link=Dark One]]
+|
+|
+|-
+|(Double Trouble)<br>[[Dark One]] {{Dlc|r}}
+|
+|
+|}
+|-
+|}
+
+=== Final Boss ===
+[[Mom]] will always appear in the second floor of this chapter or in the last boss room if [[Curse of the Labyrinth]] is active.
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:Boss Mom portrait.png|center|link=Mom]]
+|-
+| style="text-align: center; border: none" |[[Mom]]
+|}
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | Something Sticky, The Necropolis, Leprosy, Dark Boy }}
+
+== Trivia ==
+* The Depths may resemble a dungeon, or a torture chamber.
+
+== Music ==
+* The [[music]] for the Depths is titled ''Abyss''.<ref>[https://ridiculon.bandcamp.com/album/the-binding-of-isaac-rebirth-ost Binding of Isaac: Rebirth OST]</ref>
+** As the name implies, the Depths are located inside of one.
+
+== References ==
+{{reflist}}
+
+{{nav|environment|fr=Profondeurs}}

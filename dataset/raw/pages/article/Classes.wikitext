@@ -1,0 +1,380 @@
+A list of Lua '''classes''' in the [[modding|modding API]] of ''[[The Binding of Isaac: Afterbirth †]]''. See also [[Enumerations]]
+
+== Config ==
+<!-- To do -->
+
+== CppContainer ==
+<!-- To do -->
+
+== PlayerTypes ==
+<!-- To do -->
+
+== Color ==
+<!-- To do -->
+
+== Entity ==
+{{function
+ | name   = AddSlowing()
+ | syntax = Entity:AddSlowing( EntityRef Source, Integer Duration, float SlowValue, Color SlowColor )
+ | desc   = Adds Slow Status Effect to Entity.
+ | args   =
+{{functionArg | type = EntityRef | name = Source    | desc = The Entity that the code is referencing to.         }}
+{{functionArg | type = Integer   | name = Duration  | desc = For how long the Status Effect is active in frames. }}
+{{functionArg | type = float     | name = SlowValue | desc = The amount of slowing.                              }}
+{{functionArg | type = Color     | name = SlowColor | desc = What Color the effect will be.                      }}
+}}
+{{function
+ | name   = AddPoison()
+ | syntax = Entity:AddPoison( EntityRef Source, Integer Duration, float Damage )
+ | desc   = Adds a Poison Effect to Entity.<br>As of 17th January 2017 this function ignores the Duration and Damage arguments. It does damage based on player damage during a fixed amount of time.
+ | args   =
+{{functionArg | type = EntityRef | name = Source   | desc = The Entity that the code is referencing to.         }}
+{{functionArg | type = Integer   | name = Duration | desc = For how long the Status Effect is active in frames. }}
+{{functionArg | type = float     | name = Damage   | desc = How much poison damage it gives.                    }}
+}}
+{{function
+ | name   = AddMidasFreeze()
+ | syntax = Entity:AddMidasFreeze( EntityRef Source, Integer Duration )
+ | desc   = Adds Midas's Freeze Effect to Entity.
+ | args   =
+{{functionArg | type = EntityRef | name = Source   | desc = The Entity that the code is referencing to.         }}
+{{functionArg | type = Integer   | name = Duration | desc = For how long the Status Effect is active in frames. }}
+}}
+{{function
+ | name   = AddFreeze()
+ | syntax = Entity:AddFreeze( EntityRef Source, Integer Duration )
+ | desc   = Adds a Freeze Effect to Entity.
+ | args   =
+{{functionArg | type = EntityRef | name = Source   | desc = The Entity that the code is referencing to.         }}
+{{functionArg | type = Integer   | name = Duration | desc = For how long the Status Effect is active in frames. }}
+}}
+{{function
+ | name   = AddShrink()
+ | syntax = Entity:AddShrink( EntityRef Source, Integer Duration )
+ | desc   = Shrinks the Entity.
+ | args   =
+{{functionArg | type = EntityRef | name = Source   | desc = The Entity that the code is referencing to.         }}
+{{functionArg | type = Integer   | name = Duration | desc = For how long the Status Effect is active in frames. }}
+}}
+{{function
+ | name   = AddHealth()
+ | syntax = Entity:AddHealth( float HitPoints )
+ | desc   = Adds Health to the Entity.
+ | args   = {{functionArg | type = float | name = HitPoints | desc = The Amount of HP added to the Entity. }}
+}}
+{{function
+ | name   = AddFear()
+ | syntax = Entity:AddFear( EntityRef Source, Integer Duration )
+ | desc   = Adds a Fear Effect to Entity.
+ | args   =
+{{functionArg | type = EntityRef | name = Source   | desc = The Entity that the code is referencing to.         }}
+{{functionArg | type = Integer   | name = Duration | desc = For how long the Status Effect is active in frames. }}
+}}
+{{function
+ | name   = AddConfusion()
+ | syntax = Entity:AddConfusion( EntityRef Source, Integer Duration Boolean IgnoreBosses )
+ | desc   = Confuses the Entity.
+ | args   =
+{{functionArg | type = EntityRef | name = Source       | desc = The Entity that the code is referencing to.         }}
+{{functionArg | type = Integer   | name = Duration     | desc = For how long the Status Effect is active in frames. }}
+{{functionArg | type = boolean   | name = IgnoreBosses | desc = If the effect should be working on bosses or not.   }}
+}}
+{{function
+ | name   = AddCharmed()
+ | syntax = Entity:AddCharmed( Integer Duration )
+ | desc   = Adds a Charm Effect to Entity.
+ | args   = {{functionArg | type = Integer | name = Duration | desc = For how long the Status Effect is active in frames. }}
+}}
+{{function
+ | name   = AddBurn()
+ | syntax = Entity:AddBurn( EntityRef Source, Integer Duration float Damage )
+ | desc   = Adds a Burn Effect to Entity. As of 17th January 2017 this function ignores the Duration and Damage arguments. It does damage based on player damage during a fixed amount of time.
+ | args   =
+{{functionArg | type = EntityRef | name = Source   | desc = The Entity that the code is referencing to.         }}
+{{functionArg | type = Integer   | name = Duration | desc = For how long the Status Effect is active in frames. }}
+{{functionArg | type = float     | name = Damage   | desc = How much burn damage it gives.                      }}
+}}
+{{function
+ | name   = AddEntityFlags()
+ | syntax = Entity:AddBurn( Integer Flags )
+ | desc   = Adds flags to the Entity.
+ | args   = {{functionArg | type = Integer | name = Flags | desc = The flag that you wanna add to the entity (Example: FLAG_SPAWN_BLACK_HP). }}
+}}
+
+== EntityBomb ==
+{{function
+ | name   = SetExplosionCountdown()
+ | syntax = EntityBomb::SetExplosionCountdown( integer Countdown )
+ | desc   = Sets the amount of time before the bomb explodes.
+ | args   = {{functionArg | type = integer | name = Countdown | desc = The amount of time before the bomb explodes. }}
+}}
+
+== EntityEffect ==
+{{function
+ | name   = FollowParent()
+ | syntax = EntityEffect::FollowParent( entity Parent )
+ | desc   = Has a familiar or other entity follow a specified parent.
+ | args   = {{functionArg | type = entity | name = Parent | desc = Defines which entity to follow. }}
+}}
+{{function
+ | name   = IsPlayerCreep()
+ | syntax = boolean EntityEffect:IsPlayerCreep( int variant )
+ | desc   = Returns whether a piece of creep is from the player or an entity.
+ | args   = {{functionArg | type = float   | name = HitPoints     | desc = The Amount of HP added to the Entity.                               }}
+ | rets   = {{functionRet | type = Boolean | name = isPlayerCreep | desc = Determines whether the creep is the player's (true) or not (false). }}
+}}
+{{function
+ | name   = SetDamageSource()
+ | syntax = EntityEffect::SetDamageSource( EntityType DamageSource )
+ | desc   = Determines what kind of damage was taken. Useful for making items that deal certain special kinds of damage ({{i|Fire Mind}}, {{i|Scorpio}}).
+ | args   = {{functionArg | type = EntityType | name = DamageSource | desc = Determines the type of damage dealt. }}
+}}
+{{function
+ | name   = SetRadii()
+ | syntax = EntityEffect::SetRadii( float min, float max )
+ | desc   = Used to determine the minimum and maximum radius of shockwaves (shockwaves are the circular knockback most commonly applied by farts).
+ | args   =
+{{functionArg | type = float | name = min | desc = Defines the minimum knockback. }}
+{{functionArg | type = float | name = max | desc = Defines the maximum knockback. }}
+}}
+{{function
+ | name   = SetTimeout()
+ | syntax = EntityEffect::SetTimeout( integer Timeout )
+ | desc   = Currently unknown.
+ | args   = {{functionArg | type = integer | name = Timeout | desc = Currently unknown. }}
+}}
+
+== EntityFamiliar ==
+<!-- To do -->
+
+== EntityKnife ==
+<!-- To do -->
+
+== EntityLaser ==
+<!-- To do -->
+
+== EntityNPC ==
+<!-- To do -->
+
+== EntityPickup ==
+<!-- To do -->
+
+== EntityPlayer ==
+{{function
+ | name     = AddBlackHearts()
+ | syntax   = Player:AddBlackHearts( integer BlackHearts )
+ | desc     = Adds [[black heart]]s to Isaac
+ | args     = {{functionArg | type = Integer | name = BlackHearts | desc = Number of Black Hearts to add. }}
+ | examples = {{functionExample | number = 1 | desc = Adds 2 Black Hearts to Isaac. | code =
+<pre style="background: #4a3026">
+player = Isaac.GetPlayer( 0 )
+player:AddBlackHearts( 2 )
+</pre> }}
+}}
+{{function
+ | name     = AddBlueFlies()
+ | syntax   = Entity: or Player:AddBlueFlies( integer Amount, Vector Position, Entity Target )
+ | desc     = Spawns [[blue fly|blue flies]] in a specified position, targeting a specified enemy.
+ | args     =
+{{functionArg | type = Integer | name = Amount   | desc = Number of Blue Flies to add.               }}
+{{functionArg | type = Vector  | name = Position | desc = Coordinates where Blue Flies should spawn. }}
+{{functionArg | type = Entity  | name = Target   | desc = Entity the Blue Flies should target.       }}
+ | examples = {{functionExample | number = 1 | desc = Spawns 5 Blue Flies whenever Isaac attacks an enemy | code =
+<pre style="background: #4a3026">
+local exampleMod = RegisterMod( "AddBlueFlies Example", 1 )
+
+function exampleMod:update( target, amount, source, dealer )
+  local player = Isaac.GetPlayer( 0 )
+  if source == 0 and target:IsActiveEnemy() then
+    player = player:AddBlueFlies( 5, player.Position, target )
+  end
+end
+
+exampleMod:AddCallback( ModCallbacks.MC_ENTITY_TAKE_DMG, exampleMod.update );
+</pre> }}
+}}
+{{function
+ | name     = AddBlueSpider()
+ | syntax   = Entity: or Player:AddBlueSpider( Vector Position )
+ | desc     = Spawns a [[blue spider]] in a specified position.
+ | args     = {{functionArg | type = Vector | name = Position | desc = Coordinates where Blue Spider should spawn. }}
+ | examples = {{functionExample | number = 1 | desc = Spawns a Blue Spider at Isaac's position | code =
+<pre style="background: #4a3026">
+player = Isaac.GetPlayer( 0 )
+player = player:AddBlueSpider( player.Position )
+</pre> }}
+}}
+{{function
+ | name   = AddMaxHearts()
+ | syntax = Player:AddMaxHearts( Integer MaxHearts, Boolean IgnoreKeeper )
+ | desc   = Adds [[heart container]]s to Isaac.
+ | args   =
+{{functionArg | type = Integer | name = MaxHearts    | desc = The amount of Heart Containers you want to add. }}
+{{functionArg | type = Boolean | name = IgnoreKeeper | desc = If usable by the Keeper.                        }}
+}}
+{{function
+ | name   = GetHearts()
+ | syntax = Player:GetHearts()
+ | desc   = Gets the number of red half-hearts the player has.
+ | rets   = {{functionRet | type = Integer | name = Hearts | desc = Number of [[red heart]]s Isaac has. Note that each half heart counts as one. }}
+}}
+{{function
+ | name   = GetSoulHearts()
+ | syntax = Player:GetSoulHearts()
+ | desc   = Gets the number of combined soul and black half-hearts.
+ | rets   = {{functionRet | type = Integer | name = SoulHearts | desc = Number of [[soul heart]]s and [[black heart]]s Isaac has. Note that each half heart counts as one. }}
+}}
+{{function
+ | name   = GetBlackHearts()
+ | syntax = Player:GetBlackHearts()
+ | desc   = Gets which of the soul half-hearts is really a black half-heart.
+ | rets   = {{functionRet | type = Integer | name = BlackHearts | desc = A bit mask of the black half-hearts among the soul half-hearts. The lowest bit (1) represents the first soul half-heart, and the highest bit represents the highest soul half-heart. }}
+}}
+{{function
+ | name     = GetName()
+ | syntax   = Player:GetName()
+ | desc     = Gets the name of the player.
+ | rets     = {{functionRet | type = String | name = Name | desc = A string that represents the name of the character you are playing as. }}
+ | examples = {{functionExample | number = 1 | desc = Prints out the name of the character in the debug console. | code =
+<pre style="background: #4a3026">
+player = Isaac.GetPlayer( 0 )
+Isaac.DebugString( player:GetName() )
+</pre> }}
+}}
+{{function
+ | name     = AddNullCostume()
+ | syntax   = Player:AddNullCostume( Config::NullItemID NullId )
+ | desc     = Adds a costume to the player.
+ | args     = {{functionArg | type = integer | name = CostumeID | desc = The id of the costume to add. }}
+ | examples = {{functionExample | number = 1 | desc = Adds a custom made costume to the player upon picking up the item. | code =
+<pre style="background: #4a3026">
+local costume = {}
+local custom_costume = Isaac.GetCostumeIdByPath( "gfx/characters/costume.anm2" )
+function afterlife:playerFrameUpdate( _player )
+  if game:GetFrameCount() == 1 then
+    setCostume( custom_costume, false )
+  end
+  if not hasCostume( markOfCain_costume ) and _player:HasCollectible( markOfCain_item ) then
+    _player:AddNullCostume( custom_costume )
+    setCostume( custom_costume, true )
+  end
+end
+
+function hasCostume( _costume )
+  if costume[_costume] ~= nil then
+    return costume[_costume]
+  else
+    return false
+  end
+end
+
+function setCostume( _costume, _value )
+  costume[_costume] = _value
+end
+
+afterlife:AddCallback( ModCallbacks.MC_POST_PEFFECT_UPDATE, afterlife.playerFrameUpdate )
+</pre> }}
+}}
+
+== EntityPtr ==
+<!-- To do -->
+
+== EntityRef ==
+<!-- To do -->
+
+== Game ==
+<!-- To do -->
+
+== GridEntity ==
+<!-- To do -->
+
+== GridEntityDesc ==
+<!-- To do -->
+
+== GridEntityDoor ==
+<!-- To do -->
+
+== Level ==
+<!-- To do -->
+
+== PathFinder ==
+<!-- To do -->
+
+== ProjectileParams ==
+<!-- To do -->
+
+== RNG ==
+{{function
+ | name   = GetSeed()
+ | syntax = RNG::GetSeed()
+ | desc   = Gets and returns the seed to be used in the run.
+ | rets   = {{functionRet | type = double | name = Seed | desc = An 8-digit number that generates the run. }}
+}}
+{{function
+ | name   = Next()
+ | syntax = RNG::Next()
+ | desc   = Unkown.
+}}
+{{function
+ | name   = RandomFloat()
+ | syntax = RNG::RandomFloat()
+ | desc   = Makes and returns a random float value.
+ | rets   = {{functionRet | type = float | name = Float | desc = The random float value. }}
+}}
+{{function
+ | name   = RandomInt()
+ | syntax = RNG::RandomInt( integer Max )
+ | desc   = Makes and returns a random Integer value.
+ | args   = {{functionArg | type = integer | name = Max | desc = The maximum integer it will generate. }}
+ | rets   = {{functionRet | type = int     | name = Int | desc = The random integer value.             }}
+}}
+
+== Room ==
+<!-- To do -->
+
+== Sprite ==
+<!-- To do -->
+
+== TearParams ==
+<!-- To do -->
+
+== TemporaryEffect ==
+<!-- To do -->
+
+== TemporaryEffects ==
+{{function
+ | name   = AddCollectibleEffect()
+ | syntax = TemporaryEffects::AddCollectibleEffect( CollectibleType CollectibleType, boolean AddCostume )
+ | desc   = Adds an effect from picking up a collectible.
+ | args   =
+{{functionArg | type = CollectibleType | name = CollectibleType | desc = Checks the kind of collectible you are picking up.                }}
+{{functionArg | type = boolean         | name = AddCostume      | desc = Checks whether Isaac's sprite needs to update with a new costume. }}
+}}
+{{function
+ | name   = AddNullEffect()
+ | syntax = TemporaryEffects::AddNullEffect( Config::NullItemID NullId, boolean AddCostume )
+ | desc   = Unclear. Possibly deals with items that do nothing but add a costume effect?
+ | args   =
+{{functionArg | type = Config::NullItemID | name = NullId     | desc = Calls a NullId from the Config class.                             }}
+{{functionArg | type = boolean            | name = AddCostume | desc = Checks whether Isaac's sprite needs to update with a new costume. }}
+}}
+{{function
+ | name   = AddTrinketEffect()
+ | syntax = TemporaryEffects::AddTrinketEffect( TrinketType TrinketType, boolean AddCostume )
+ | desc   = Adds an effect from picking up a trinket.
+ | args   =
+{{functionArg | type = TrinketType | name = TrinketType | desc = Checks what trinket is being picked up.                           }}
+{{functionArg | type = boolean     | name = AddCostume  | desc = Checks whether Isaac's sprite needs to update with a new costume. }}
+}}
+{{function
+ | name   = ClearEffects()
+ | syntax = TemporaryEffects::ClearEffects()
+ | desc   = Clears effects on a character. Likely used for Dice rooms and the D4.
+}}
+
+== Vector ==
+<!-- To do -->
+
+{{nav|modding}}
+[[Category:Lua reference]]
+[[Category:Modding]]

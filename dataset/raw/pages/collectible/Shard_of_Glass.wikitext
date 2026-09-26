@@ -39,8 +39,13 @@ Upon taking damage, activates the following effects:
 
 == Synergies ==
 * {{dlc|r}} {{I|Epic Fetus}} / {{I|Marked}}: Bleeding tears will aim at the crosshair.
-
 * {{dlc|r}} {{I|The Ludovico Technique}}: Bleeding tears will aim at the controlled tear.
+* {{i|Cambion Conception}} / {{i|Candy Heart}} / {{i|Immaculate Conception}} / {{i|Fanny Pack}} / {{i|Piggy Bank}}: Isaac can get the rewards from items that give items/resources on hit by intentionally taking damage with something like a fire and grabbing the hearts, for essentially half the cost (as every 4 hits generates 1 full heart on average, which let isaac take 2 more hits)
+* {{I|IV Bag}}: Lets Isaac generate large amounts of money
+* {{i|Maggy's Bow}}: Doubles the healing received from the hearts spawned, letting isaac effectively take infinite red heart damage (on average) if each hit takes half a heart.
+** {{i|Humbleing Bundle}} generates 3 hits of health on average for every 4 taken.
+
+
 
 == In-game Footage ==
 {{#ev:youtube|NBaOqLD9PaI}}

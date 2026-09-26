@@ -23,7 +23,8 @@
 
 == Interactions ==
 * {{I|Birthright}}: Dying and reviving as any character will ''not'' give Lazarus Risen a damage boost; however, picking up Birthright as him will.
-* {{i|Plan C}}: Isaac can use Plan C on end-game bosses (e.g. {{E|Hush|n}}, {{E|Delirium|n}}) and survive, although, if going for unlocks, he will get Lazarus's post-it notes instead.
+* {{Dlc|nr+}} {{i|Plan C}}: Isaac can use Plan C on end-game bosses (e.g. {{E|Hush|n}}, {{E|Delirium|n}}) and survive, although, if going for unlocks, he will get Lazarus's post-it notes instead.
+** {{Dlc|r+}} Plan C Takes longer to kill the player character, effectively allowing Delirium to fully die to get the achievement, before changing character to Lazarus Risen.
 
 == In-game Footage ==
 {{#ev:youtube|v1TjQOl30-k}}

@@ -1,0 +1,32 @@
+{{Header playing cards}}
+{{Infobox card
+ | name        = 2 of Diamonds
+ | type        = card
+ | id          = 24
+ | quote       = Item multiplier
+ | description = Doubles Isaac's {{e|Penny|text=Coins}}.<br>If he has no coins, gives him 2 instead.
+ | recharge    = {{dlcalt|4|r=12}}
+}}
+
+{{cit|c}}
+
+== Effects ==
+* Doubles Isaac's {{e|Penny|text=pennies}}.
+* If Isaac has no pennies, gives 2 pennies instead.
+
+== Strategy ==
+* The penny counter cannot exceed 99, so the most optimal time to use '''2 of Diamonds''' is when Isaac has 49 or 50 pennies.
+* {{dlc+|a}} {{mode|greed}} '''2 of Diamonds''' is an excellent way of filling up the {{m|Greed Donation Machine}}:
+** It can be used if Isaac has few coins left after defeating {{e|Ultra Greed}}.
+** If Isaac has many coins, they can be donated until 49 or 50 coins are left and then doubled for a total of donated coins exceeding 99 coins.{{dlc-}}
+
+== Synergies ==
+* {{I|Tarot Cloth|nr}}: Quadruples Isaac's pennies.
+* {{i|Deep Pockets|r}}: Allows for enormous wealth to be accumulated, as the coin limit is increased to 999.
+* {{c|Keeper}} / {{c|Tainted Keeper|r}}: Can refill coin health at the cost of 1 coin after doubling.
+
+== Interactions ==
+* {{I|Tarot Cloth|r}}: No effect.
+* {{a|It's the Key}}: Acquiring pennies with '''2 of Diamonds''' does not invalidate the achievement condition.
+
+{{nav|fr=2 de Carreau|card|coin modifier}}

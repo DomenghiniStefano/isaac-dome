@@ -1,0 +1,31 @@
+{{header soul stones}}
+{{Infobox rune
+ | dlc         = r
+ | name        = Soul of Apollyon
+ | type        = soul stone
+ | id          = 94
+ | quote       = Bringer of calamity
+ | description = Spawns 15 random [[locusts]].
+ | unlocked by = Soul of Apollyon
+ | recharge    = 6
+}}
+
+{{cit|ur|r}}
+
+== Effects ==
+* Spawns 15 random [[locusts]].
+
+== Notes ==
+* All locusts have an equal chance to be any of the 5 types.
+
+== Strategy ==
+* Using the '''Soul of Apollyon''' near an enemy can be dangerous: an explosive locust may spawn on it and immediately explode, damaging Isaac.
+
+== Synergies ==
+* {{i|Hive Mind}}: Doubles the damage dealt by locusts.
+
+== In-game Footage ==
+{{#ev:youtube|QllR1KrizD0}}
+
+{{nav|fr=Âme d'Apollyon}}
+[[Category:Runes]]

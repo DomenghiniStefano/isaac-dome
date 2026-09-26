@@ -1,0 +1,6 @@
+{{page dlc|a}}
+
+The {{a|Blank Rune}} achievement unlocks {{p|Blank Rune}}, a card/rune type consumable.
+* {{dlc|r}} The achievement also unlocks the {{i|Clear Rune|n}} item.
+
+{{nav|fr=Blank Rune (Succès)}}

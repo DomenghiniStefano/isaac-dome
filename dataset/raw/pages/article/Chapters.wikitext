@@ -1,0 +1,118 @@
+'''Chapters''' are sets of '''floors''' (or '''stages''') containing similar [[enemy|enemies]], themes, [[boss]]es, and difficulties. Earlier chapters are divided into three floors, while later chapters contain one floor. Each chapter has different '''environments''' (or '''stage types''') which, while retaining similar feels, have slightly different themes, enemies, bosses, and difficulties. Each environment also has its own [[music]].
+
+== Chapter 1 ==
+{| style="width: 80%; text-align: center"
+ | {{stage image|Basement}}
+ | {{stage image|Cellar}}
+ | {{stage image|Burning Basement}}
+ |-
+ | {{s|Basement}}
+ | {{s|Cellar}}
+ | {{s|Burning Basement}}
+ |}
+
+== Chapter 1.5 (Alternative) ==
+{| style="width: 80%; text-align: center"
+ | {{stage image|Downpour}}
+ | {{stage image|Dross}}
+ |-
+ | {{s|Downpour}}
+ | {{s|Dross}}
+ |}
+
+== Chapter 2 ==
+{| style="width: 80%; text-align: center"
+ | {{stage image|Caves}}
+ | {{stage image|Catacombs}}
+ | {{stage image|Flooded Caves}}
+ |-
+ | {{s|Caves}}
+ | {{s|Catacombs}}
+ | {{s|Flooded Caves}}
+ |}
+
+== Chapter 2.5 (Alternative) ==
+{| style="width: 80%; text-align: center"
+ | {{stage image|Mines}}
+ | {{stage image|Ashpit}}
+ |-
+ | {{s|Mines}}
+ | {{s|Ashpit}}
+ |}
+
+== Chapter 3 ==
+{| style="width: 80%; text-align: center"
+ | {{stage image|Depths}}
+ | {{stage image|Necropolis}}
+ | {{stage image|Dank Depths}}
+ |-
+ | {{s|Depths}}
+ | {{s|Necropolis}}
+ | {{s|Dank Depths}}
+ |}
+
+== Chapter 3.5 (Alternative) ==
+{| style="width: 80%; text-align: center"
+ | {{stage image|Mausoleum}}
+ | {{stage image|Gehenna}}
+ |-
+ | {{s|Mausoleum}}
+ | {{s|Gehenna}}
+ |}
+
+== Chapter 4 ==
+{| style="width: 80%; text-align: center"
+ | {{stage image|Womb}}
+ | {{stage image|Utero}}
+ | {{stage image|Scarred Womb}}
+ |-
+ | {{s|Womb}}
+ | {{s|Utero}}
+ | {{s|Scarred Womb}}
+ |}
+
+== Chapter 4.5 (Optional/Alternative) ==
+{| style="width: 80%; text-align: center"
+ | {{stage image|???}}
+ | {{stage image|Corpse}}
+ |-
+ | {{s|???}}
+ | {{s|Corpse}}
+ |}
+
+== Chapter 5 ==
+{| style="width: 80%; text-align: center"
+ | {{stage image|Cathedral}}
+ | {{stage image|Sheol}}
+ |-
+ | {{s|Cathedral}}
+ | {{s|Sheol}}
+ |}
+
+== Chapter 6 (Optional) ==
+{| style="width: 80%; text-align: center"
+ | {{stage image|Chest}}
+ | {{stage image|Dark Room}}
+ |-
+ | {{s|Chest}}
+ | {{s|Dark Room}}
+ |}
+
+== Endgame (Optional) ==
+{| style="width: 80%; text-align: center"
+ | {{stage image|The Void}}
+ | {{stage image|Home}}
+ |-
+ | {{s|The Void}}
+ | {{s|Home}}
+ |}
+
+== Level Generation ==
+For the technical details of how each level / floor is generated, see [[Level Generation]].
+
+== Gallery ==
+<gallery>
+File:Chapters Flowchart.png|A flowchart of how to unlock and reach each chapter
+</gallery>
+{{nav|environment|fr=Chapitres}}
+[[Category:Stages| ]]

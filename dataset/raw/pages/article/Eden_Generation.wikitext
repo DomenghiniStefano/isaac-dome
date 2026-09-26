@@ -1,0 +1,447 @@
+This is a technical analysis of how the game randomly generates the various characteristics of the [[Eden]] character. Note that this analysis was performed by BLouBLue on version 1.05 (pre-Afterbirth), and version 1.06.T1 (Afterbirth+). Analysis for version 1.7.9b (Repentance) was performed by SarvaTathagata.
+
+== Launch ==
+When launching the game, the main thing to know is the game will derive a bunch of subseeds that will be used by RNG instances dedicated to items, trinkets, pickups, enemies, level generation and character management.
+
+This allows you to play your run slightly differently, yet still, get the same items at the same place (for the most part - that's not entirely true).
+
+One specific "character" subseed is used for Eden generation. This RNG instance is used during two phases:
+
+# Generate hearts, pickups, and attributes, before level initialization;
+# Randomly pick cards, pills, trinkets, and items, after level initialization.
+
+It is reset to the character subseed before either phase. This means the same random numbers could come out of the RNG in the same order for both phases.
+
+== Hearts ==
+Hearts are the first thing to be generated. The game tries its best to give you 3 full hearts, Red and Soul hearts altogether:
+
+# The game randomly picks <code>x = 0 to 3</code> Red Hearts;
+# It will randomly pick between <code>0 and (3 - x)</code> Soul Hearts;
+# If no red hearts were picked at the first step, the game guarantees the player at least 2 Soul Hearts.
+
+There cannot be any Black Hearts from this phase. Collectible items given afterward may exceed those limits.
+
+== Keys, Bombs, and Coins ==
+Eden has a 1/3 chance to start with either keys, bombs or coins. If you've been granted that chance, here are the possible outcomes:
+
+# Eden starts with 1 key;
+# Eden starts with 1 or 2 bombs;
+# Eden starts with 1 to 5 coins.
+
+Collectible active/passive items given afterward may give additional pickups, bringing the total beyond those limits.
+
+The chance to start with a pickup is calculated as follows:
+<syntaxhighlight lang="c#">
+/* rand(min,max) returns a random integer between min (inclusive) and max (exclusive) */
+if(rand(0, 3) == 0)
+{  // 1/3 chance that the player will get a pickup
+    tmp = rand(0, 3); // either 0, 1 or 2
+    if(tmp == 0)
+        give 1 key
+    else if(tmp == 1)
+        give 1 + rand(0,2) bombs
+    else
+        give 1 + rand(0,5) coins
+}
+</syntaxhighlight>
+
+== Attributes ==
+Attributes are based on Isaac's base attributes. An additive modifier (float value) is randomly chosen for each of the 6 attributes:
+{| class="wikitable"
+ ! Attribute !! Eden's modifier range
+ |-
+ | damage || flat -1.00 to +1.00
+ |-
+ | speed || -0.15 to +0.15
+ |-
+ | tears || {{dlc|nr}} -0.75 to +0.75 {{dlc|r}} -0.515 to +0.75
+ |-
+ | tear height || -5.00 to +5.00
+ |-
+ | shot speed || -0.25 to +0.25
+ |-
+ | luck || -1.00 to +1.00
+ |}
+
+Here's what the attribute initialization part of the routine looks like:
+<syntaxhighlight lang="c#">
+// characterRng.Random() returns a float value between 0.0 and 1.0
+Player->attributeModifierDamage       = (characterRng.Random() * 2.0f) + -1.0f;
+Player->attributeModifierSpeed        = (characterRng.Random() * 0.3f) + -0.15f;
+Player->attributeModifierTears        = (characterRng.Random() * 1.5f) + -0.75f;
+Player->attributeModifierHeightRange  = (characterRng.Random() * 10.0f) + -5.0f;
+Player->attributeModifierShotSpeed    = (characterRng.Random() * 0.5f) + -0.25f;
+Player->attributeModifierLuck         = (characterRng.Random() * 2.0f) + -1.0f;
+</syntaxhighlight>
+
+== Pocket Items ==
+Pills, cards, trinkets, and items are picked after level generation. Two phases occur:
+
+# Give the player a chance to have either a pill, card or trinket;
+# Attempt to pick 1 active item and 1 passive item.
+
+So, when consuming an Eden token, you have:
+* 1/3 chance to get a trinket;
+* 1/6 chance to get a pill;
+* 1/6 chance to get a card;
+* 1/3 chance to get none of the above.
+
+These options are mutually exclusive. You cannot get a trinket and a card or pill. Here's what the actual routine looks like:
+<syntaxhighlight lang="c#">
+if(characterRng.Random(3) > 0) { // 2/3 chance to get pill, card or nothing
+    if(characterRng.Random(2) > 0) { // 2/3 * 1/2 chance to get nothing
+        give nothing
+    }
+    else { // 2/3 * 1/2 chance to get a pill or a card
+        if(characterRng.Random(2) > 0) { // 1/3 * 1/2 chance to generate a pill
+            give a random pill
+        }
+        else { // 1/3 * 1/2 chance to generate a card
+            give a random card
+        }
+    }
+}
+else { // 1/3 chance to get a trinket
+    give a random trinket
+}
+</syntaxhighlight>
+
+More about how pocket items of each type are selected:
+* Pill colors and pill effects are shuffled based on a subseed derived from the main seed. 9 or {{dlc|a}}13 pill effects are selected and randomly assigned to each of the flavors. If entitled to, Eden will randomly get one of those pills;
+* Trinkets are randomly chosen among the unlocked trinket pool. There are 32 random repicks, or {{dlc|a+}}64 repicks in Afterbirth+, and another pass if unsuccessful. The game may give up if the player hasn't unlocked any trinket;
+* Eden cannot start with the following cards/runes:
+** Any rune or {{dlc|r}}soul stone,
+** 2 of Clubs, 2 of Diamonds, 2 of Spades, 2 of Hearts, Joker,
+** {{dlc|a+}}Ace of Clubs, Ace of Diamonds, Ace of Spades, Ace of Hearts,
+** {{dlc|r}}Queen of Hearts;
+* 2 sets of cards are created:
+** A special card set containing:
+*** Chaos Card, Credit Card, Rules Card, A Card Against Humanity and Suicide King,
+*** {{dlc|a}}Get out of Jail Free Card, ? Card, Dice Shard, Emergency Contact,
+*** {{dlc|a+}}Holy Card, Huge Growth, Ancient Recall, Era Walk,
+*** {{dlc|r}}Cracked Key, Wild Card
+** A global set containing every other card except those that are forbidden,
+** Eden has a 1/25 chance to randomly get a card from the special set, and a 24/25 chance to get one from the global set.
+** {{dlc|r}}Every Major Arcana Tarot Card has a 1/7 chance to be replaced by its reversed version.
+
+{{dlc|nr}}Here's how the card selection is done, in pseudo-code:
+<syntaxhighlight lang="c#">
+// both isRunesAllowed and isSpecialCardsAllowed are set to false when initializing Eden.
+// Card IDs can be found in the game's xml files
+// cardRng.Random(min,max) returns a random integer between min (inclusive) and max (exclusive)
+// cardRng.Random(max) returns a random integer between 0 (inclusive) and max (exclusive, so max-1 is the upper bound)
+if(cardRng.Random(25) > 0) // 24/25 chance
+{
+    if(cardRng.Random(10) || !isRunesAllowed)
+    {
+        bool tmp = (cardRng.Random(5) != 0) || !isSpecialCardsAllowed;
+        if(tmp == false)
+        {
+            card_first = CARD_2_OF_CLUBS;
+            card_last = CARD_JOKER;
+        }
+        else
+        {
+            card_first = CARD_0_THE_FOOL;
+            card_last = CARD_XXI_THE_WORLD;
+        }
+    }
+    else
+    {
+        card_first = RUNE_DESTRUCTION_HAGALAZ;
+        card_last = RUNE_RESISTANCE_ALGIZ; // RUNE_BLACK in AB+
+    }
+}
+else
+{
+    card_first = CARD_CHAOS_CARD;
+    card_last = CARD_SUICIDE_KING; // CARD_ERA_WALK in AB+
+}
+
+return cardRng.Random(card_first, card_last + 1);
+</syntaxhighlight>
+
+{{dlc|r}}Here's how the card selection is done in Repentance:
+<syntaxhighlight lang="c++">
+if (cardRng.next() % 25 == 0) {
+	// Special cards from Chaos Card to Era Walk, with 2 more cards in Repentance.
+	int card = (int)(cardRng.next() % 15) + 42;
+	
+	if(card == 55){card=78;} // Cracked key
+	if(card == 56){card=80;} // Wild Card
+		
+	return card;
+}
+
+// The checks of Runes and Playing cards are removed in Repentance, too.
+
+// Normal cards from The Fool to The World
+int card = (int)(cardRng.next() % 22) + 1;
+
+// Reversed Major Arcana Cards; added in Repentance
+if(cardRng.next() % 7 == 0){
+	card += 55;
+}
+	
+return card;
+</syntaxhighlight>
+
+== Collectibles ==
+The game does 100 attempts to fill both the active item slot and one passive item slot.
+At each attempt, it will randomly pick an item ID between 1 and 346 or {{dlc|a+}}552 or {{dlc|r}}732.
+
+{{dlc|nr}}There are a few disabled item IDs which cause the game to repick a random ID and go on to the next attempt:
+* #43: "Pills here!", an active item that does nothing and looks like a [[pill]].
+** This could be an Easter Egg Number in the Code, Referencing the "Pills Here!" when finding an unidentified pill from [[original:The Binding of Isaac Wiki|Flash Isaac]].
+* #59: Literally nothing, and is not defined in items.xml.
+** {{dlc|r}} This ID is for The Book of Belial from Judas' Birthright.
+* #61: "Tarot Card", a passive item that looks like a [[card]] and does nothing.
+* #235: ''Not Available''
+* #238: {{i|Key Piece 1}}
+* #239: {{i|Key Piece 2}}
+* #263: {{dlc|nr}}''Not Available''
+* #550: {{i|Broken Shovel 1}} (piece #1)
+* #551: {{i|Broken Shovel 2}} (piece #2)
+* #552: {{i|Mom's Shovel}}
+
+{{dlc|r}} An item will be disabled if and only if it has the [[Item Tags noeden|noeden]] tag.
+
+The first valid candidate (unlocked item) for the passive or active slot is selected, and will not be overwritten by subsequent attempts (there will be 100 attempts no matter what).
+
+The player is given those items after 100 attempts, whether both slots are filled or not, though it is highly unlikely that any seed exists in which Eden is missing an item.
+
+== C# Code ==
+{{dlc|nr}}Code for calculating Eden's items for a given seed. This is missing trinket, pill and stats calculations.
+
+<syntaxhighlight lang="c#">
+void Main()
+{
+	var seeds = new List<uint>();
+	for(uint i = 0; i < uint.MaxValue; i++)
+	{
+		var startSeed = (uint)i;
+		var dropSeed = CalculatePlayerSeed(startSeed);
+		var items = CalculateEdenItems(dropSeed);
+
+		if (items.Active == 186 && (items.Passive == 276 || items.Passive == 108 || items.Passive == 301) && items.Card == 5)
+		{
+			seeds.Add(startSeed);	
+			SeedToString(startSeed).Dump();
+		}
+		if (i % 100000000 == 0)
+			(":" + i).Dump();
+	}
+	seeds.Select(s => SeedToString(s)).ToArray().Dump();
+}
+
+//ItemCount impacts the item pick RNG even though Eden can't start with an item over id 552
+public static EdenItems CalculateEdenItems(uint dropSeed, int itemCount = 552)
+{
+	var rng = new Rng(dropSeed, 0x1, 0x5, 0x13);
+	
+	var trinket = 0;
+	var card = 0;
+	var pill = 0;
+	var hearts = 0;
+	var soulHearts = 0;	
+	if ((rng.Next() % 3) == 0)
+	{
+		//trinket
+	}
+	else if ((rng.Next() & 1) == 0)
+	{
+		if ((rng.Next() & 1) == 0)
+		{
+			card = GetCard(rng.Next());
+		}
+		else
+		{
+			//pill
+			var pillSeed = rng.Next();
+		}
+	}
+	
+	var activeId = 0;
+	var passiveId = 0;
+	for (var i = 0; i < 100; i++)
+	{
+		int itemId = (int)(rng.Next() % itemCount) + 1;
+		
+		//BlackList
+		if (itemId > 552)
+			continue;
+		switch(itemId){
+			case 0x3B:
+			case 0xEB:
+			case 0x107:
+			case 0x2b:
+			case 0x3d:
+			case 0xee:
+			case 0xef:
+			case 0x226:
+			case 0x227:
+			case 0x228:
+				continue;
+			default:
+				break;
+		}
+		
+		var itemType = ItemConfig[itemId];
+		if (itemType == ItemType.Active)
+		{
+			activeId = activeId != 0 ? activeId : itemId;
+		}
+		else if (itemType == ItemType.Passive || itemType == ItemType.Familiar)
+		{
+			passiveId = passiveId != 0 ? passiveId : itemId;
+		}
+		//Isaac doesn't exit early :thinking:
+		if (activeId != 0 && passiveId != 0)
+			break;
+
+	}
+	
+	//Hearts and SoulHearts are actually done in Player::Init
+	var healthRng = new Rng(dropSeed, 0x1, 0x5, 0x13);
+	var halfHearts = (int)healthRng.Next() & 3;
+	hearts = halfHearts * 2;
+	soulHearts = ((int)healthRng.Next() % (4 - halfHearts)) * 2;
+	if (hearts == 0 && soulHearts < 4)
+	 	soulHearts = 4;
+		
+	
+	
+	return new EdenItems(hearts, soulHearts, activeId, passiveId, trinket, card, pill);
+}
+public static int GetCard(uint seed, bool playing = false)
+{
+	var cardRng = new Rng(seed, 0x5, 0x9, 0x7);
+	if (cardRng.Next() % 25 == 0) {
+		return (int)(cardRng.Next() % 13) + 42;
+	}
+	if (cardRng.Next() % 10 == 0)
+	{
+		//Rune
+	}
+	if (cardRng.Next() % 5 == 0 && playing)
+	{
+		//Playing card
+		return (int)(cardRng.Next() % 9) + 23;
+	}
+	return (int)(cardRng.Next() % 22) + 1;
+}
+
+public static uint CalculatePlayerInitSeed(uint startSeed)
+{
+	var startRng = new Rng(startSeed, 0x3, 0x17, 0x19);
+	//Stage Seeds
+	for (var i = 0; i < 0xD; i++)
+		startRng.Next();
+	return startRng.Next(); //Seeds::PlayerInitSeed
+}
+
+public static uint CalculatePlayerSeed(uint startSeed)
+{
+	var playerInitSeed = CalculatePlayerInitSeed(startSeed);
+
+	//These happen inside Player::Init
+	var playerInitRng = new Rng(playerInitSeed, 0x1, 0xB, 0x10);
+	//CollectiblesRNG seed
+	playerInitRng.Next();
+	playerInitRng.Next();
+	playerInitRng.Next();
+	//CardsRNG seed
+	playerInitRng.Next();
+	
+	return playerInitRng.Next(); //Entity::DropSeed
+}
+
+public class EdenItems
+{
+	public int Hearts;
+	public int SoulHearts;
+	public int Active;
+	public int Passive;
+	public int Trinket;
+	public int Card;
+	public int Pill;
+	public EdenItems(int hearts, int soulHearts, int active, int passive, int trinket, int card, int pill)
+	{
+		Hearts = hearts;
+		SoulHearts = soulHearts;
+		Active = active;
+		Passive = passive;
+		Trinket = trinket;
+		Card = card;
+		Pill = pill;
+	}
+}
+
+static string SeedToString(uint num)
+{
+	const string chars = "ABCDEFGHJKLMNPQRSTWXYZ01234V6789";
+	byte x = 0;
+	var tnum = num;
+	while (tnum != 0)
+	{
+		x += ((byte)tnum);
+		x += (byte)(x + (x >> 7));
+		tnum >>= 5;
+	}
+	num ^= 0x0FEF7FFD;
+	tnum = (num) << 8 | x;
+
+	var ret = new char[8];
+	for (int i = 0; i < 6; i++)
+	{
+		ret[i] = chars[(int)(num >> (27 - (i * 5)) & 0x1F)];
+	}
+	ret[6] = chars[(int)(tnum >> 5 & 0x1F)];
+	ret[7] = chars[(int)(tnum & 0x1F)];
+
+	return new string(ret);
+}
+
+public class Rng
+{
+	public uint Seed;
+	public int Shift1;
+	public int Shift2;
+	public int Shift3;
+	public uint Next()
+	{
+		var num = Seed;
+		num ^= num >> Shift1;
+		num ^= num << Shift2;
+		num ^= num >> Shift3;
+		Seed = num;
+		return num;
+	}
+	
+	public Rng(uint seed, int s1, int s2, int s3) {
+		this.Seed = seed;
+		Shift1 = s1;
+		Shift2 = s2;
+		Shift3 = s3;
+	}
+};
+
+public enum ItemType {
+	Null = 0,
+	Passive = 1,
+	Trinket = 2,
+	Active = 3,
+	Familiar = 4,
+}
+
+public static ItemType[] ItemConfig = GetItemConfig();
+public static ItemType[] GetItemConfig() {
+	var itemConfig = new ItemType[553];
+	return itemConfig;
+}
+</syntaxhighlight>
+
+The full code can be found here [https://gist.github.com/bladecoding/5fcc1356bfb0cf26555b0ade7c4fedca Blade's GitHub Gist] or for the Repentance version here [https://github.com/Zamiell/isaac-eden-finder/blob/main/isaac-eden-finder.linq Zamiel's GitHub Gist].
+
+{{nav|fr=Génération d'Éden}}
+[[Category:Mechanics]]

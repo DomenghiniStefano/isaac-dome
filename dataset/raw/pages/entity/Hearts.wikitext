@@ -1,0 +1,217 @@
+{{header pickups}}
+{{disambig msg|the pickup|title=heart}}
+
+'''Hearts''' are the standard HP for most characters and can be found in several varieties. Isaac cannot have more Red Hearts than Red [[Heart container]]s, but certain Heart pickups can circumvent that limit.
+
+{{infobox monster
+ | hidden      = yes
+ | name        = Red Heart
+ | id          = 5
+ | variant     = 10
+ | subtype     = 1
+}} {{infobox monster
+ | hidden      = yes
+ | name        = Half Red Heart
+ | subtype     = 2
+}} {{infobox monster
+ | hidden      = yes
+ | name        = Soul Heart
+ | subtype     = 3
+}} {{infobox monster
+ | hidden      = yes
+ | name        = Eternal Heart
+ | subtype     = 4
+}} {{infobox monster
+ | hidden      = yes
+ | name        = Double Heart
+ | subtype     = 5
+}} {{infobox monster
+ | hidden      = yes
+ | name        = Black Heart
+ | subtype     = 6
+}} {{infobox monster
+ | hidden      = yes
+ | dlc         = a
+ | name        = Gold Heart
+ | subtype     = 7
+ | unlocked by = Gold Heart
+}} {{infobox monster
+ | hidden      = yes
+ | dlc         = a+
+ | name        = Half Soul Heart
+ | subtype     = 8
+ | unlocked by = Everything is Terrible!!!
+}} {{infobox monster
+ | hidden      = yes
+ | dlc         = a+
+ | name        = Scared Heart
+ | image name  = Red Heart
+ | subtype     = 9
+ | unlocked by = Mr. Resetter!
+}} {{infobox monster
+ | hidden      = yes
+ | dlc         = a+
+ | name        = Blended Heart
+ | subtype     = 10
+}} {{infobox monster
+ | hidden      = yes
+ | dlc         = a+
+ | name        = Bone Heart
+ | subtype     = 11
+ | unlocked by = Bone Heart
+}} {{infobox monster
+ | hidden      = yes
+ | dlc         = r
+ | name        = Rotten Heart
+ | subtype     = 12
+ | unlocked by = Rotten Heart
+}}{{dlc clear}}
+
+{| class="wikitable mw-collapsible striped sortable" style="text-align: center"
+ ! scope="col" style="width: 120px"                   | Heart
+ ! scope="col" style="width: 10px"                    | ID
+ ! scope="col" class="unsortable" style="width: 60px" | Image
+ ! scope="col" class="unsortable" style="width: 90px" | Worth
+ ! scope="col" class="unsortable"                     | Additional Info
+ ! scope="col" class="unsortable"                     | Unlock Method
+ ! scope="col" style="width: 15px"                    | Probability
+ |-
+ ! scope="row" | {{anchor|Red Heart}}
+ | data-sort-value="1" | {{ghost|5.10.}}1
+ | [[file:Red Heart.png|48px]]
+ | {{heart|red}}
+ | Heals {{hearts|red=2}} with {{i|Maggy's Bow}}.<br>{{i|Humbleing Bundle}} and {{t|Equality!|a+nr+}} can replace this with a Double Heart.
+ |
+ | 39.98%
+ |-
+ ! scope="row" | {{anchor|Half Red Heart}}
+ | data-sort-value="2" | {{ghost|5.10.}}2
+ | [[file:Half Red Heart.png|48px]]
+ | {{heart|red|half}}
+ | Heals {{heart|red}} with {{i|Maggy's Bow}}.
+ |
+ | 39.99%
+ |-
+ ! scope="row" | {{anchor|Soul Heart}}
+ | data-sort-value="3" | {{ghost|5.10.}}3
+ | [[file:Soul Heart.png|48px]]
+ | {{heart|soul}}
+ | Soul Hearts are blue hearts that are added to the end of the health bar. Soul Hearts are not permanent; once lost, they cannot be replenished, although new ones may be picked up. Soul Hearts will be depleted before Red Hearts in most cases. However, donating to a {{M|Blood Donation Machine}} or a {{M|Devil Beggar}} will deplete Red Hearts first {{dlc|nr}} as long as Isaac has more than half a Red Heart (a full heart in {{s|Womb}} and beyond). {{dlc|r}} Blood Donation Machines and Devil Beggars will now deplete Isaac's last half or full Red Heart before depleting Soul Hearts.
+ |
+ | 6.73%
+ |-
+ ! scope="row" | {{anchor|Eternal Heart}}
+ | data-sort-value="4" | {{ghost|5.10.}}4
+ | [[file:Eternal Heart.png|48px]]
+ | {{heart|red|empty|eternal}}
+ | When held until the next floor, Eternal Hearts will grant Isaac [[Health#Red Heart Containers|a Red Heart container]]. They will also give a Red Heart container if two are collected on the same floor. Characters that cannot gain Red Heart containers will instead be given a Soul Heart ({{dlc|r}} Black Heart in the case of {{C|Black Judas}} and {{C|Tainted Judas}}). Eternal Hearts are placed in the second half of the last Red Heart container or [[#Bone Heart|Bone Heart]], even when it is full (the Eternal Heart will overlap with the Red Heart in this case). If Isaac has no Red Heart containers or Bone Hearts, they are placed in the second half of his first Soul Heart or Black Heart.
+ |
+ | 1.80%
+ |-
+ ! scope="row" | {{anchor|Double Heart}}
+ | data-sort-value="5" | {{ghost|5.10.}}5
+ | [[file:Double Heart.png|72px]]
+ | {{hearts|red=2}}
+ | {{dlc+|nr}} Doesn't appear naturally. Can only be found by using certain items or encountering certain rooms.<br>{{dlc-}}{{dlc+|r}} Has a 5% spawn rate in Normal Mode and 2% in Hard Mode.<br>{{dlc-}}Heals {{hearts|red=4}} with {{i|Maggy's Bow}}.
+ |
+ | 5%
+ |-
+ ! scope="row" | {{anchor|Black Heart}}
+ | data-sort-value="6" | {{ghost|5.10.}}6
+ | [[file:Black Heart.png|48px]]
+ | {{heart|black}}
+ | When depleted, invokes {{i|The Necronomicon}} effect, dealing 40 damage to every vulnerable enemy in the room. {{dlc|r}} If Isaac holds {{t|A Missing Page}}, or has the {{i|Missing Page 2}}, the damage dealt will be doubled to 80. If Isaac obtains both, the damage will be tripled to 120. Acts like a Soul Heart otherwise.
+ |
+ | 0.50%
+ |-
+ ! scope="row" | {{dlc+|a}} {{anchor|Gold Heart}}
+ | data-sort-value="7" | {{ghost|5.10.}}7
+ | [[file:Gold Heart.png|48px]]
+ | {{heart|red|empty|gold}}
+ | Gold Hearts do not actually add more health, instead forming an outline around the last heart in Isaac's health bar. When that heart is depleted, the Gold Heart will break and 3-8 [[Coins]] will be dropped around Isaac.<br>{{dlc|a+}} Gold Hearts flash when depleted and will temporarily turn enemies golden like {{i|Midas' Touch}}.<br>{{Dlc+|r+}} When playing as {{c|The Lost}}, {{c|Tainted Lost}}, {{c|Keeper}}, or {{c|Tainted Keeper}}, Gold Hearts will break on pickup and drop coins.{{dlc-}}
+ | {{achievement unlock|Gold Heart}}{{dlc-}}
+ | 0.63%
+ |-
+ ! scope="row" | {{dlc|a+}} {{anchor|Half Soul Heart}}
+ | data-sort-value="8" | {{ghost|5.10.}}8
+ | [[file:Half Soul Heart.png|48px]]
+ | {{heart|soul|half}}
+ | Can replace regular Soul Heart drops. Like whole Soul Hearts, they can be used to refill a half Black Heart.
+ | {{dlc+|a+nr}}{{achievement unlock|Mr. Resetter!}}{{dlc-}}<br/>{{dlc|r}}{{achievement unlock|Everything Is Terrible!!!}}
+ | 2.24%
+ |-
+ ! scope="row" | {{dlc+|a+}} {{anchor|Scared Heart}}
+ | data-sort-value="9" | {{ghost|5.10.}}9
+ | [[file:Red Heart.png|48px]]
+ | {{heart|red}}
+ | Identical to the standard Red Heart, but pulses faster. It will run away as Isaac, [[Dark Bum]], or [[Super Bum]] moves towards it.<br>Heals {{hearts|red=2}} with {{i|Maggy's Bow}}.<br>{{i|Humbleing Bundle}} and {{t|Equality!|a+nr+}} will '''not''' double this.{{dlc-}}
+ | {{dlc+|r}}{{achievement unlock|Mr. Resetter!}}{{dlc-}}
+ | 0.87%
+ |-
+ ! scope="row" | {{dlc|a+}} {{anchor|Blended Heart}}
+ | data-sort-value="10" | {{ghost|5.10.}}10
+ | [[file:Blended Heart.png|48px]]
+ | {{heart|red}}/{{heart|soul}}/{{heart|red|half}}{{heart|soul|half}}
+ | Fills up a full Red Heart container, but will act as a Soul Heart when no containers are free. If Isaac is only missing half a Red Heart, it will fill that half, and give him half a Soul Heart as well.<br>{{i|Dark Bum}} and {{i|The Jar}} will '''not''' collect this.<br>{{dlc+|r}}Heals {{hearts|red=2}} or {{heart|red}} with {{i|Maggy's Bow}}.{{dlc-}}
+ |
+ | 0.87%
+ |-
+ ! scope="row" | {{dlc+|a+}} {{anchor|Bone Heart}}
+ | data-sort-value="11" | {{ghost|5.10.}}11
+ | [[file:Bone Heart.png|48px]]
+ | {{heart|bone|empty}}
+ | Takes three hits to deplete and can be refilled with Red Hearts ({{dlc|r}} and Rotten Hearts), but disappears permanently upon depleting.<br>Cannot be filled as {{C|???}}, {{C|Tainted ???}}, {{C|Black Judas}}, {{C|Tainted Judas}}, {{C|Tainted Forgotten}}, or {{C|Tainted Bethany}} and only protects against one hit as these characters.
+ | {{achievement unlock|Bone Heart}}{{dlc-}}
+ | 0.47%
+ |-
+ ! scope="row" | {{dlc+|r}} {{anchor|Rotten Heart}}
+ | data-sort-value="12" | {{ghost|5.10.}}12
+ | [[file:Rotten Heart.png|48px]]
+ | [[File:Rotten heart2.png|30x30px]]
+ | Rotten Hearts fill up one whole heart container, or the rightmost Red Heart if all of Isaac's heart containers are full, but can only take a half heart of damage each before being depleted (so, for example, two Rotten Hearts will be depleted if a full heart of damage is taken). Each Rotten Heart in Isaac's life bar spawns up to two [[Familiar#Blue Flies|Blue Flies]] upon clearing a room.
+ | {{achievement unlock|Rotten Heart}}{{dlc-}}
+ | 1.71%
+ |}
+
+== Notes ==
+''More details on these pickups and how they work can be found [[Health|here]].''
+* Unless an item effect specifically states it, a Red Heart always has the chance to be replaced by a Soul, Black, or Eternal Heart.
+* If Heart pickups are created by item, card, or pill effects in certain {{r|Super Secret Room}} layouts, they will be forced to spawn as a specific heart type (e. g. all hearts will be Black Hearts). There are layouts corresponding to Red, Soul, Black, Eternal and Rotten Hearts.
+* If Isaac's health bar is filled with Soul Hearts, picking up a Black Heart will replace the topmost Soul Heart.
+** If Isaac's health bar is filled up to 11 1/2 (Soul/Black) Hearts with the last one being half a Black Heart, picking up a Black Heart will fill that one and convert a full Soul Heart to a Black Heart (therefore adding half a Black Heart and converting a Soul Heart).
+** Collecting a Soul Heart with half a Black Heart left will complete the Black Heart, and add half a Soul Heart. The reverse is also true.
+* {{dlc|a}} If Gold Hearts have not been unlocked yet, they be replaced by random Heart pickups in any room layouts containing them.
+** {{dlc+|r}} If Rotten Hearts have not been unlocked yet, they will always be replaced by Half Red Hearts ({{s|Corpse}} themed {{r|Super Secret Room}}, etc.).{{dlc-}}
+* {{dlc|a+}} Eternal Hearts take half a heart of damage without counting as a hit for {{r|Devil Room}} / {{r|Angel Room}} purposes.
+* {{dlc|a+}} Taking Red Heart damage in a Bone Heart Container does not lower the chance of the Angel Room or Devil Room appearing. Breaking an empty Bone Heart will not either.
+** {{c|The Forgotten}} is the only exception, as breaking a Bone Heart while playing as him will affect the chance.
+* {{dlc|a+}} Bone Hearts cannot be broken if filled with at least a Half Red Heart, even if a full heart of damage is taken. This can be abused to repeatedly pay a half-red heart to step on a spike in a {{r|Sacrifice Room}}, for example.
+* {{dlc|r}} Rotten Hearts are only donated to the {{Machine|Blood Donation Machine}} after all Red Hearts are depleted.
+* {{dlc|r}} Losing Rotten Hearts does not lower the chance of the Angel Room or Devil Room appearing.
+* {{dlc|r}} If after clearing a room the number of Blue Flies Isaac has is less than 2× the number of Rotten Hearts in Isaac's health, additional Blue Flies are spawned so that these numbers are equal (e. g. if Isaac has 3 Rotten Hearts and 4 Blue Flies upon clearing a room, 2 Blue Flies will spawn). Otherwise, no Blue Flies will spawn.
+* {{i|Bag of Crafting}} will treat double hearts as two heart pickups. Blended Hearts will be treated as a Soul Heart and a Red Heart.
+* The probabilities in the table refer to the kind of heart that is generated by the game when a heart is spawned with a subtype of 0 (i.e. a random heart).
+* {{dlc|r+}} In [[Online (open beta)|Online Co-op]], dead ghost characters can pick up an Eternal Heart to instantly revive themselves.
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | Magdalene, Eve, Lazarus, The Tank, Cursed!, It's the Key, Living on the edge }}
+
+== Gallery ==
+<gallery>
+File:Rebirth Concepts.jpg|Concepts drawn for ''Rebirth'', including Black Hearts.
+</gallery>
+
+== Trivia ==
+* There are unused graphics for Half Soul Hearts and Half Black Hearts that are never seen in-game.
+** {{dlc|a+}} Half Soul Hearts were eventually added to the game as an unlockable.
+* {{dlc|a+}} [[Booster Pack#5]] made Scared Hearts beat faster, making them slightly easier to spot. This was from [https://steamcommunity.com/sharedfiles/filedetails/?id=1173905740 this Steam Workshop mod] by piber20.
+* {{dlc|a+}} Gold Hearts' appearance was changed in [[Booster Pack#5]].
+* Most [[item]]s that grant Black Hearts upon being picked up say "evil up" in their description.
+* [[Cut Content#Cut Pickups|Immortal Hearts]] were a heart type present in the original ''Antibirth'' mod, but were not added to ''Repentance''.
+* Blended hearts were a feature in the Community remix mod for the original ''The Binding of Isaac''.
+
+== Bugs ==
+{{bug|Gold Hearts actually simply compare Isaac's current heart count to what he had on the previous frame, leading to two bugs. Firstly, it's possible for a Gold Heart to burst when health other than the rightmost heart is lost, such as using up Red Hearts with a {{m|Blood Donation Machine}}. {{dlc|nr}} Secondly, the "previous frame hearts" value is updated incorrectly; a Gold Heart bursts immediately upon pickup if Isaac had and lost a Gold Heart earlier, and his current heart count is lower than after losing the previous one.}}
+
+{{nav|fr=Cœurs}}
+[[Category:Pickups]]

@@ -1,0 +1,5 @@
+{{header obstacles}}
+'''Obstacles''' are [[object]]s that are meant to get in Isaac's way in [[rooms]]. Obstacles have a variety of effects, either doing nothing, acting as a gate, dealing damage to Isaac, exploding, providing loot, or slowing him down. These obstacles can be found scattered throughout rooms, with some occuring on more floors than others.
+
+{{nav}}
+[[category:objects]]

@@ -1,0 +1,196 @@
+{{header obstacles}}
+{{page dlc|a}}
+
+'''Buttons''', originally cut content in ''[[The Binding of Isaac: Rebirth]]'', have become a full-fledged feature of ''[[The Binding of Isaac: Afterbirth]]''.
+
+== Pressure Plate ==
+{{infobox entity
+ | hidden = yes
+ | name   = Pressure Plate
+}}
+[[file:Pressure Plate.png|50px]]
+
+'''Pressure Plates''' appear in trap rooms, which have [[obstacle|hazards]] in them which disarm upon pressing all of the plates in the room. Hazards include:
+* [[Spikes]]
+* [[Retractable Spikes]]
+* {{E|TNT}}
+* {{e|Troll Bomb}}s
+* {{e|Mega Troll Bomb}}s
+* {{E|Stone Grimace}}s
+* {{E|Vomit Grimace}}s
+* {{E|Constant Stone Shooter}}s
+* {{E|Gaping Maw}}s
+* {{E|Broken Gaping Maw}}s
+* {{E|Brimstone Head}}s
+* {{E|Cross Stone Shooter}}s
+* {{E|Quake Grimace}}s
+* {{E|Poky|text=Pokies}}
+* {{E|Wall Hugger}}s
+* {{E|Slide}}s
+* {{E|Grudge}}s
+* {{E|Spikeball}}s
+* {{E|Red Poop}}
+* {{E|Red Fire Place}}s
+* {{E|Purple Fire Place}}s
+* {{E|Pitfall}}s
+Once pressed, all the hazards will be disarmed — spikes will retract, Red Poop will transform into regular Poop, Red Fire Places will turn into regular Fire Places, Purple Fire Places will turn into Blue Fire Places, and Pitfalls will close.
+{{clear}}
+Unlike Reward Plates, all Pressure Plates in the room have to be pressed to clear the room, even if all enemies are slain.
+
+{{bug|In trap rooms with retracting spikes, pressing the plate within five frames of the spikes deploying will cause them to appear to fail to retract, but this is only a visual bug, and they will not deal damage. This can be fixed by leaving the room and re-entering.}}
+
+== Kill Plate (Killswitch) {{dlc+|r}} ==
+{{infobox entity
+ | hidden = yes
+ | name   = Killswitch
+ | dlc    = r
+}}
+[[File:Killswitch.png|50px]]
+
+'''Kill Plates''' usually appear in normal rooms.
+
+Once pressed, all enemies will be killed and all enemy projectiles will be destroyed. Enemies that normally spawn another enemy or shoot projectiles upon death will not do so if slain by a Kill Plate. Kill Plates also disarm all the same hazards that Pressure Plates can, but unlike said buttons, they don't need to be pressed to clear a room. Kill Plates can also uncover the hidden crawl space in the {{e|Great Gideon}} boss fight.
+
+Kill Plates often appear either hidden behind tall blocks or in rooms filled with enemies either too great in numbers to fight off normally or that are blocked from the player's attacks, therefore requiring the button to clear the room.
+{{dlc-}}
+
+== Rail Plate {{dlc+|r}} ==
+{{infobox entity
+ | hidden = yes
+ | name   = Yellow Button
+ | dlc    = r
+}}
+[[File:Yellow Button.png|50px]]
+
+'''Rail Plates''' only appear in the second {{s|Mines}} or {{s|Ashpit}} floor if Isaac has acquired {{i|Knife Piece 1}}, and are square-shaped.
+
+Pressing all 3 yellow buttons throughout the floor unlocks the bridge to {{i|Knife Piece 2}}.
+
+Rail Plates may appear in {{R|Red Room}}s, in which case they will not do anything.
+{{dlc-}}
+
+== Event Plate {{dlc+|r}} ==
+{{infobox entity
+ | hidden = yes
+ | name   = Brown Button
+ | dlc    = r
+}}
+[[File:Brown Button.png|50px]]
+
+'''Event Plates''' cause certain pits (varies from room to room) to be filled so they can be walked on. Sometimes it clears rocks instead. Event Plates are also capable of spawning enemies, pickups, and items or deactivating or reactivating teleporters, which all vary from room to room as well. Event Plates are most commonly found in the alternative path such as {{S|Mines}} and {{S|Mausoleum}}, where they may sometimes be hidden behind tall blocks, which often grant access to rewards in the room that are otherwise inaccessible.
+{{dlc-}}
+
+== Reward Plate ==
+{{infobox entity
+ | hidden = yes
+ | name   = Reward Plate
+}}
+[[file:Reward Plate.png|50px]]
+
+'''Reward Plates''' can appear in a variety of rooms, including {{R|Secret Room}}s, {{R|Curse Room}}s, and {{R|Shop}}s in [[Greed mode]]. When pressed, they may spawn helpful pickups or harmful enemies. Reward Plates differ from an Event Plate's ability to spawn pickups and enemies by the fact that it is completely random every time as opposed to Event Plates having a preset spawn for the specific room it is in.
+
+=== Possible Spawns ===
+==== Afterbirth ====
+''This list is currently incomplete.''
+
+* 1-3 random Bomb, Heart, Coin, or Key pickups
+* A {{M|Donation Machine}}
+* A {{M|Beggar}}
+* A {{M|Slot Machine}}
+* A {{M|Fortune Telling Machine}}
+* 1-3 [[monster]]s or [[boss]]es in front of each exit of the room ({{dlc|a+}} also closes all doors)
+* A trapdoor to the next floor
+* {{E|Golden Poop}}
+* An [[item]]
+
+==== Afterbirth † {{dlc|a+}} ====
+There is a 50-50 chance to spawn a reward or a monster.
+
+===== Rewards =====
+{| class="wikitable"
+ !Reward!!Chance
+ |-
+ | Trap Door||5%
+ |-
+ | {{E|Golden Poop}}||5%
+ |-
+ | {{e|Poop}}||1%
+ |-
+ | An [[item]] from the current pool||1%
+ |-
+ | 1-3 [[Coins]]|| 28%
+ |-
+ | 1-2 {{e|Red Heart}}s|| 20%
+ |-
+ | 1-2 {{e|Bomb}}s|| 20%
+ |-
+ | {{E|Chest}}||2.5%
+ |-
+ | {{E|Locked Chest}}||2.5%
+ |-
+ | {{e|Bomb Chest}}||2.5%
+ |-
+ | {{e|Red Chest}}||2.5%
+ |-
+ | {{M|Slot Machine}}||2.5%
+ |-
+ | {{M|Fortune Telling Machine}}||2.5%
+ |-
+ | {{M|Donation Machine}}||5%
+ |-
+ | {{e|Troll Bomb}}|| 10%
+ |}
+
+===== Monsters =====
+1-4 [[monster]]s or [[boss]]es. The Void spawns [[monster]]s and [[boss]]es based on the room's backdrop.
+
+{| class="wikitable mw-collapsible"
+!Stage
+!Monsters
+|-
+|{{s|Basement}}
+|{{E|Attack Fly}}, {{E|Ring Fly}}, {{E|Dart Fly}}, {{E|Horf}}, {{E|Charger}}, {{E|Spider}}
+|-
+|{{s|Caves}}
+|{{E|Charger}}, {{E|Boom Fly}}, {{E|Hive}}, {{E|Nest}}, {{E|Maw}}, {{E|One Tooth}}
+|-
+|{{s|Depths}}
+|{{E|Baby}}, {{E|Globin}}, {{E|Bony}}, {{E|Knight}}, {{E|Fat Sack}}, {{E|Gurglings}}
+|-
+|{{s|Womb}}
+|{{E|MemBrain}}, {{E|Dinga}}, {{E|Lump}}, {{e|Mom's Hand}}
+|-
+|{{dlc+|a}}{{s|???}}
+|{{E|Drowned Charger}}, {{E|Blue Conjoined Fatty}}{{dlc-}}
+|-
+|{{s|Sheol}}
+|{{E|Greed}}, {{E|Little Horn}}, {{E|Rag Man}}
+|-
+|{{s|Cathedral}}
+|{{E|Monstro}}, {{E|Gemini}}, {{E|The Duke of Flies}}
+|-
+|{{s|Dark Room}}
+|{{E|Nulls}}, {{E|Little Horn}}
+|-
+|{{s|Chest}}
+|{{E|Monstro}}, {{E|Super Envy}}
+|-
+|{{s|Ultra Greed}}
+|{{E|Isaac}}, {{E|Nulls}}
+|}
+
+== Notes ==
+* A Reward Plate may spawn a trapdoor even in {{s|Chest}} or {{s|Dark Room}}. If that happens and Isaac enters the trapdoor, the floor is restarted as with {{i|Forget Me Now}} or a 5-pip {{R|Dice Room}}.
+* {{dlc|na+}} If a Reward Plate spawns enemies, the doors to the room will not close, allowing Isaac to avoid fighting them.
+** It may be worth fighting [[Sin]]s, as they still drop items on death.
+* {{dlc|a+}} If a Reward Plate spawns enemies, the doors will close. The enemies will remain in the room even after escaping via teleportation or bombing out.
+* When enemies are spawned, they appear only at walls with doors (barring an {{R|I AM ERROR}} room where the locations are random). This may help locating {{R|Secret Room}}s, as their secret doors also count.
+* Different enemies may spawn from the buttons depending on the floor, with difficult enemies such as [[Boss]]es being spawned on later floors.
+* Donation Machines spawned in [[Greed mode]] will be regular Donation Machines and not {{M|Greed Donation Machine}}s.
+* {{dlc|r}} If the Donation Machine has been bombed during the run, a button attempting to spawn one will only result in the generic "reward" sound effect and nothing else.{{dlc clear}}
+
+== Bugs ==
+{{bug|dlc=r|If {{i|D12}} creates a {{e|Reward Plate}} in the boss room on the floor where an alt door is allowed to appear (After {{a|A Secret Exit}} is unlocked), activating the button to create enemies and kill will create another one, up to 4 doors (depending on the size of the room). Exiting the boss room will leave only the original alt door. By entering a copy of the door, you can go to the alt floor and if you exit, the original door will also be open, even if you did not open it.}}
+
+{{nav|fr=Boutons}}
+[[Category:Objects]]

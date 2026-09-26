@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
   "generatedFrom": {
-    "snapshotAt": "2026-09-14T17:31:43Z",
-    "maxRevid": 269333
+    "snapshotAt": "2026-09-26T15:34:47Z",
+    "maxRevid": 269722
   },
   "achievements": {
     "1": {
@@ -2521,6 +2521,15 @@
             "subtype": 0
           },
           "label": "Angel"
+        },
+        {
+          "target": {
+            "kind": "entity",
+            "id": 78,
+            "variant": 0,
+            "subtype": 0
+          },
+          "label": "Mom's Heart"
         }
       ]
     },
@@ -12573,7 +12582,7 @@
     {
       "key": "entity:Mom's Heart",
       "label": "Mom's Heart",
-      "uses": 45
+      "uses": 46
     },
     {
       "key": "entity:Mother",

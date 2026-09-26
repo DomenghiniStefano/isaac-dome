@@ -1,0 +1,85 @@
+{{infobox monster
+ | id          = 32
+ | image name  = * {{dlc|nr|Rebirth}}
+ | base hp     = 20
+ | environment = {{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{room|challenge}}
+ | behavior    = Slowly crawls around the room, leaving a trail of [[red creep]].
+}}
+
+'''Brains''' slide around the room erratically in the cardinal directions, leaving a trail of [[red creep]], they deal a whole heart of contact damage. When Isaac is within line of sight they will charge in his direction until they collide with an obstacle or another enemy similar to {{E|Knight}}s.
+{{clear}}
+
+== Variants ==
+=== Poison Mind ===
+{{infobox monster
+ | dlc         = a+
+ | name        = Poison Mind
+ | image name  = * {{dlc|nr|Afterbirth+}}
+ | id          = 301
+ | base hp     = 20
+ | environment = {{floor|Depths}}{{floor|Necropolis}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|Corpse}}<br>{{room|challenge}}<br>{{dlc|nr}} Chance to replace Brains
+ | behavior    = Slowly {{dlc|nr}}crawls/{{dlc|r}}floats around the room diagonally, leaving a trail of damaging [[green creep]]. {{dlc|r}} Explodes upon death.
+ | unlocked by = The gate is open!
+}}
+
+'''Poison Minds''' behave like regular Brains, but they slide diagonally and leave a trail of [[green creep]].
+
+{{dlc|r}} Poison Minds float, passing over obstacles, and explode when killed.
+
+{{clear}}
+
+=== Black Globin's Head ===
+{{infobox monster
+ | dlc         = a
+ | name        = Black Globin's Head
+ | id          = 279
+ | base hp     = 20
+ | environment = {{floor|Cellar}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Sheol}}<br>{{room|challenge}}{{room|devil}}{{room|curse}}{{room|Super Secret}}<br>Spawned after killing a {{E|Black Globin}}.
+ | behavior    = Slides towards Isaac, leaving a trail of damaging [[red creep]].
+}}
+
+'''Black Globin's Heads''' behave like Brains, but they target Isaac directly, chasing him.
+
+=== Notes ===
+* {{dlc+|r}} They can spawn in unique {{R|Devil Room}} layouts if Isaac is holding the {{t|Number Magnet}}.{{dlc-}}
+{{clear}}
+
+=== Festering Guts ===
+{{infobox monster
+ | dlc         = r
+ | name        = Festering Guts
+ | id          = 831
+ | variant     = 20
+ | base hp     = 22
+ | environment = {{floor|Corpse}}<br>Spawned exclusively by [[Gutted Fatty|Gutted Fatties]].
+ | behavior    = Spawned by {{E|Gutted Fatty|text=Gutted Fatties}}, Festering Guts randomly slide around the room and occasionally spawn a {{E|Charger}}.
+}}
+
+'''Festering Guts''' are spawned exclusively by {{E|Gutted Fatty|text=Gutted Fatties}}. They travel around the room randomly in cardinal directions and occasionally spawn a [[Charger]].
+
+{{clear}}
+
+=== Pon ===
+{{infobox monster
+ | dlc         = r
+ | name        = Pon
+ | id          = 840
+ | base hp     = 20
+ | environment = {{floor|Mines}}<br>{{floor|Mausoleum}}
+ | behavior    = Hops around the room, leaving damaging [[red creep]] wherever it lands. Upon death, its associated {{E|Brainless Knight}} dies with it.
+}}
+
+'''Pons''' hop around erratically leaving [[red creep]] wherever they land. If close to Isaac then they will hop towards Isaac chasing him similarly to {{E|Hopper}}s.
+
+They can spawn with a paired {{E|Brainless Knight}} in which killing them is required to kill their corresponding Brainless Knight. A Pon and a Brainless Knight pair will always spawn when {{E|Loose Knight}} is killed.
+
+{{clear}}{{dlc clear}}
+
+== Notes ==
+* {{dlc|a+}} If Poison Minds aren't unlocked yet, they are replaced by Brains.
+
+== Trivia ==
+* {{dlc|r}} The [[Anti:Pon|Pon]] first appeared in the ''Antibirth'' mod where it could also appear in {{s|Depths}}.
+* {{dlc|r}} The name of '''Pon''' is likely a pun in reference to the homophonic pronunciation of the [[wikipedia:Pon|Pons]] region of the brain and pawns from chess.
+
+{{nav|fr=Cervelle}}

@@ -1,0 +1,20 @@
+{{header item pools}}
+{{item pool
+ | dlc = r
+}}
+[[file:Rotten Beggar.png|75px]]
+
+[[Rotten Beggar]]s can pay out with these items if given enough Coins. They are unlocked by defeating {{E|Mega Satan}} as {{C|Tainted Apollyon}}, and will be replaced by a Key Master before they are unlocked.
+
+== Activated Collectibles ==
+{{item pool/header}}
+{{pool items | Bob's Rotten Head, Compost, Yuck Heart }}
+|}
+
+== Passive Collectibles ==
+{{item pool/header}}
+{{pool items | Bob's Brain, Bob's Curse, Rotten Baby, Rotten Meat }}
+{{pool items | weight = 0.5 | Dead Onion, Rotten Tomato }}
+|}
+
+{{nav|fr=Mendiant Moisi (Banque d'Objets)}}

@@ -1,0 +1,70 @@
+'''Fly''' may refer to:
+
+== Bosses ==
+* [[The Duke of Flies]], one of the bosses fought at Chapter 1.
+* [[The Husk]], a posthumous version of the Duke of Flies.
+* {{dlc|r}}[[Baby Plum]], one of the bosses fought at Chapter 1.
+
+== Monsters ==
+* [[Fly]], one of the most common enemies.
+** [[Attack Fly]]
+** [[Moter]]
+** [[Ring Fly]]
+** [[Eternal Fly]]
+** {{dlc|a}}[[Dart Fly]]
+** {{dlc|a}}[[Swarm Fly]]
+** {{dlc|a}}[[Hush Fly]]
+** {{dlc|r}}[[Army Fly]]
+** {{dlc|r}}[[Willo]]
+* [[Sucker]], a fly enemy that shoots tears upon death.
+** [[Spit]]
+** {{dlc|a+}}[[Soul Sucker]]
+** {{dlc|r}}[[Ink]]
+** {{dlc|r}}[[Mama Fly]]
+** {{dlc|r}}[[Tainted Sucker]]
+* [[Boom Fly]], a fly enemy that explodes upon death.
+** [[Red Boom Fly]]
+** [[Drowned Boom Fly]]
+** {{dlc|r}}[[Sick Boom Fly]]
+** {{dlc|r}}[[Bone Fly]]
+** {{dlc|r}}[[Dragon Fly]]
+** {{dlc|r}}[[Dragon Fly X]]
+* [[Level 2 Fly]], a stronger version of common flies.
+** [[Full Fly]]
+** {{dlc|r}}[[Level 2 Fly#Level 2 Willo|Level 2 Willo]]
+* {{dlc|r}}[[Bulb]], a fly enemy that drains the active item's charges upon contact.
+** {{dlc|r}}[[Bloodfly]]
+* {{dlc|r}}[[Fly Bomb]], a fly-winged bomb.
+** {{dlc|r}}[[Eternal Fly Bomb]]
+
+== Items ==
+* {{i|???'s Only Friend}}, an unlockable passive item.
+* {{i|BBF}}, a passive item.
+* {{i|Best Bud}}, a passive item.
+* {{i|Big Fan}}, a passive item.
+* {{i|Distant Admiration}}, a passive item.
+* {{i|Forever alone}}, a passive item.
+* {{i|Halo of Flies}}, a passive item.
+* {{i|Hive Mind}}, a passive item.
+* {{i|Infestation}}, a passive item.
+* {{i|The Mulligan}}, a passive item.
+* {{i|Skatole}}, a passive item.
+* {{i|Smart Fly}}, a passive item.
+* {{i|Friend Zone}}, a passive item.
+* {{i|Jar of Flies}}, an activated item.
+* {{i|Lost Fly}}, a passive item.
+* {{i|Obsessed Fan}}, a passive item.
+* {{i|Papa Fly}}, a passive item.
+* {{i|Angry Fly}}, an unlockable passive item.
+* {{i|Bot Fly}}, a passive item.
+* {{i|Psy Fly}}, a passive item.
+* {{i|The Swarm}}, a passive item.
+
+== Pills ==
+* [[Pretty Fly]], a pill that grants a fly as an orbital that blocks projectiles.
+
+== Transformations ==
+* [[Beelzebub]], a transformation triggered when obtaining three fly-related items.
+
+{{disambiguation}}
+{{nav}}

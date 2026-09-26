@@ -1,0 +1,40 @@
+{{header tarot cards}}
+{{Infobox card
+ | name        = XVIII - The Moon
+ | id          = 19
+ | quote       = May you find all you have lost
+ | description = Teleports Isaac to the {{r|Secret Room}}.
+ | recharge    = {{dlcalt|4|r=2}}
+}}
+
+{{cit|c}}
+
+== Effects ==
+* Teleports Isaac to the {{r|Secret Room}}. 
+
+== Notes ==
+* Opens one wall inside the Secret Room, so Isaac can leave even if he doesn't have any {{e|Bomb}}s.
+* '''XVIII - The Moon''' cannot teleport Isaac to the {{r|Super Secret Room}}.
+* Using '''XVIII - The Moon''' on a floor that doesn't have a secret room will teleport Isaac to a random room.
+* When there are two secret rooms (via {{t|Fragmented Card}} and/or {{i|Luna}}), one of the two secret rooms is chosen at random to teleport Isaac into.
+** '''XVIII - The Moon''' will always teleport to an unexplored secret room. If one has been explored, it will teleport to the other.
+* When {{curse|Maze}} is active, using this card can teleport Isaac to a random room instead.
+* '''XVIII - The Moon''' cannot appear in [[greed mode]].
+
+== Strategy ==
+* '''XVIII - The Moon''' can be used to escape any room that locks down after taking its contents, like {{r|Challenge Room}}s or {{r|Boss Rush}}, effectively "stealing" its contents without facing the imposed challenge.
+* The hole in the wall created by teleportation will always be on the wall closest to Isaac when the card was used. This can be exploited to force the hole to appear between a secret room and a locked room of any kind. To do so, the target room must be between the secret room and Isaac.
+
+== Interactions ==
+* {{i|Luna}}: Allows to access the {{e|Half Soul Heart}} and tears up immediately upon entering the floor, providing protection early on the floor.
+* {{I|Tarot Cloth}}: No effect.
+
+== Gallery ==
+<gallery>
+File:XVIII - The Moon Steam Card.jpg| '''XVIII - The Moon''''s Steam trading card.
+</gallery>
+
+== Trivia ==
+[[wikipedia:The Moon (tarot card)|The Moon]] is the eighteenth card of a Major Arcana set.
+
+{{nav|fr=XVIII - La Lune|card}}

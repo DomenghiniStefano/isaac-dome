@@ -1,0 +1,45 @@
+{{infobox monster
+ | id          = 89
+ | base hp     = 20
+ | environment = {{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{room|challenge}}
+ | behavior    = Can start attached to other Buttlickers and erratically moves around the room, similar to {{E|Larry Jr.}}.
+}}
+
+'''Buttlickers''' are monsters that wander around randomly in straight lines similar to {{E|Larry Jr.}}.
+They most often spawn attached to other Buttlickers in chains of up to 5. When one Buttlicker in the chain is destroyed, the other Buttlickers separate from each other and continue to move in random directions.
+
+Similar to Larry Jr., Buttlickers can destroy Poop on contact.
+{{clear}}
+
+== Variants ==
+=== Butt Slicker ===
+{{infobox monster
+ | dlc         = r
+ | name        = Butt Slicker
+ | id          = 878
+ | base hp     = 16
+ | stage hp    = 3
+ | environment = {{floor|Dank Depths}}<br>{{room|challenge}}
+ | behavior    = Moves erratically around the room unless attached to another Butt Slicker. Grouped Butt Slickers drag themselves towards Isaac, and when an individual is killed they leave black creep, and shoot out black projectiles. The amount of projectiles released and the size of the pool of Black Creep  is determined by the amount of Butt Slickers attached.
+}}
+
+'''Butt Slickers''' when encountered individually, act identically to Buttlickers, but unlike their counterparts they can group together and stick to other Butt Slickers. When grouped together they begin to drag themselves towards Isaac. Upon killing a Butt Slicker within a group, it creates a pool of slowing [[black creep]] and shoots out black projectiles; the amount of projectiles released and the size of the pool of Black Creep is determined by the amount of Butt Slickers attached. All other Butt Slickers will scatter and temporarily leave trails of Black Creep when this occurs.
+
+Killing a Butt Slicker in a group of 2 or 3 will create a small pool of Black Creep and 4 projectiles in the cardinal directions while killing one in a group of 4 or more creates a large pool of Black Creep and 8 projectiles in the cardinal and diagonal directions.
+{{clear}}{{dlc clear}}
+
+== Gallery ==
+<gallery>
+File:Dank Depths Enemy Concept.png|Concept art for the Butt Slicker and [[Sticky Leaper]].
+</gallery>
+
+== Notes ==
+* Any status effect inflicted on a Buttlicker (poison, etc) will also spread to any other Buttlickers attached to it if in a chain.
+* [[Charm]]ing a chain of Buttlickers will cause it to chase Isaac if no other enemies are in the room. However, if Isaac kills a Buttlicker in the middle of the chain and then charms them, the Buttlickers will attack each other.
+
+== Trivia ==
+* Buttlickers were first implemented in the ''Wrath of the Lamb'' DLC for the original ''The Binding of Isaac''.
+* In the original ''The Binding of Isaac'', destroying any Buttlicker in a chain would cause all Buttlickers to separate and move independently. This does not happen in Rebirth.
+* This is possibly a reference to the movie "Human Centipede".
+
+{{nav|fr=Lèche-cul}}

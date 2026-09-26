@@ -1,0 +1,60 @@
+{{infobox version
+ | dlc   = a+
+ | date  = 2017-01-06
+ | steam = 248095310194829089
+}}
+
+== Documented changes ==
+=== Fixes ===
+* Fixed a Windows crash caused by an exe modification step in the build process.
+* Fixed a crash related to loading a game save after [[Smelter|smelting]] trinkets.
+* Fixed a crash on startup related to save data.
+* Fixed a crash involving an item that would try to spawn doors in Greed/Greedier mode.
+* Fixed a bug where the player could be hurt by certain fires spawned by their own items.
+* Fixed a bug where the boss clear music could play too soon.
+* Adjusted steam cloud save detection.
+
+=== Mod tools ===
+* Fixed a display issue and some default path issues with room editor.
+* Fixed a Mac issue with missing libraries that made the Mac ModUploader impossible to launch without a specific dev environment installed.
+
+=== Modding API ===
+* Generated comments for HTML documentation.
+* Added descriptions of mod callback conditions, arguments and return values, in <code>enums.lua</code> and in HTML documentation.
+* Changed signature of <code>MC_EVALUATE_CACHE</code> callback to pass the player entity.
+* Removed some duplicated casts: <code>Isaac.ToPickup</code> and <code>Isaac.ToEffect</code>. Instead use <code>entity:ToPickup</code> and <code>entity:ToEffect</code>.
+* Added some missing entity casts: <code>ToBomb</code>, <code>ToLaser</code>, <code>ToKnife</code>.
+* Added some methods to player to get joystick inputs.
+* Made player stats modifiable by mods.
+* Removed getters for readonly player stats, since they were made redundant.
+* Added functions such as <code>Isaac.WorldToScreenPosition</code> to convert game coordinates to rendering coordinates.
+
+== Undocumented changes ==
+=== Additions ===
+* [[Mimic Chest]]s have a new texture.<ref>http://i.imgur.com/n4nRhwg.png</ref>
+** They also now have a custom animation. (This does not get correctly unpacked by the unpacker and shows up as <code>8d6fafc0341b7397</code> in the root of the game directory.)
+* [[Drowned Hive]] was given a new "portrait" attribute (might be related to the [[bestiary]]).
+
+=== Changes ===
+* HP changes:
+** [[Portal]] 10 → 9.
+** [[Sisters Vis]] 800 → 500.
+** [[Big Horn]] 600 → 480.
+* The following bosses got updated animations:
+** [[Sisters Vis]],
+** [[Big Horn]],
+** [[Delirium]].
+* The following rooms were changed:
+** Special rooms:
+*** Added a random heart, a random bomb, a random coin, a random pill, and a random key to the Treasure Room without a pedestal item.
+** {{s|Basement}}/{{s|Cellar}}:
+*** Lots of room changes, too many to list individually.
+** {{s|Womb}}:
+*** Deleted room 741 (a room with 8 [[Blastocyst]]s).
+* If you {{i|Void}} a 1-use item such as {{i|Pandora's Box}}, it will still trigger the item, but it will no longer permanently store that item.
+* The black champion [[Brownie]] now spawns [[Charger]]s instead of [[Drowned Charger]]s.
+
+== References ==
+{{Reflist}}
+
+{{nav|version}}

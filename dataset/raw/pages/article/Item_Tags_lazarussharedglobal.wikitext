@@ -1,0 +1,15 @@
+{{page dlc|r}}
+
+Items and trinkets with this [[Item Tags|tag]] have their passive effects (except for direct stat changes) shared between {{c|Tainted Lazarus}} and {{c|Dead Tainted Lazarus}}, regardless of which side of the character is active.
+
+== Activated Collectibles ==
+{{collectible table | tag = lazarussharedglobal | type = activated }}
+
+== Passive Collectibles ==
+{{collectible table | tag = lazarussharedglobal | type = passive }}
+
+== Trinkets ==
+{{trinket table | tag = lazarussharedglobal }}
+
+{{nav|fr=Balise lazarussharedglobal}}
+[[Category:Item tags]]

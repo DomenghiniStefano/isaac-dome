@@ -1,0 +1,29 @@
+{{infobox version
+ | dlc   = a+
+ | date  = 2017-01-07
+ | steam = 248095310200099228
+}}
+
+== Documented changes ==
+=== Fixes ===
+* Reverted the steam cloud saving change from the last update due to reports of the game being unable to find its save data if cloud saving was turned off.
+* Fixed a crash releated to having multiple [[trinket]]s.
+* Fixed a bug where the unlock checks for [[ending 19]] and [[final ending|final]] were reversed in the cutscene menu.
+* Gameplay adjustments.
+
+=== Modding ===
+* Some changes were made to Lua sandboxing due to security concerns. Here's how they affect you:
+** If you used <code>require("mobdebug").start()</code> in your mods, that should be replaced with <code>StartDebug()</code> to prevent your script from hitting an error, since that only works with <code>--luadebug</code> enabled. This means you'll have to update any lua mods you've released with that line left in.
+** For now we strongly recommend running workshop mods only with <code>--luadebug</code> disabled. This recommendation may be retracted in a later update.
+** See the debugging page in the tools/luadoc documentation for a tutorial on setting up the debugger.
+* Changed the way unpacked resources are loaded, due to issues players were frequently seeing where unpacked resources were becoming outdated, players with incompatible legacy mod files or mods applied by the legacy method. Now the game prefers to load files from the pack file first, and if that fails, loads from loose files.
+* Fixed const-ness of player entity passed to certain callbacks.
+* Fixed an issue where a function for getting the screen position of an entity didn't account for the camera offset or screen shake.
+
+== Undocumented changes ==
+=== Changes ===
+* Spectral Tears now go through [[Stoney]]s.
+* The Double Trouble room with a [[Mega Fatty]] and a [[Sisters Vis]] was changed; [[Mega Fatty]] was replaced with a [[Larry Jr.]].
+* The Double Trouble room with 2 [[Fred]]s and 2 [[Gurdy]]s was changed to only have 1 [[Fred]].
+
+{{nav|version}}

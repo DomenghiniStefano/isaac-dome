@@ -1,0 +1,45 @@
+'''Challenges''' are unique runs in the game. Isaac typically starts each challenge with one or more specific items which makes normal play more difficult. With few exceptions, {{R|Treasure Room}}s are not available during challenges. Challenges are all set in {{mode|normal}} normal mode except for [[I RULE!]]. Each challenge unlocks new content for the game, such as [[rune]]s, when completed. Players, with the advent of modding, can create their own [[Custom Challenges]] too.
+
+== General Strategy ==
+Most challenges are designed to increase the difficulty of the game in a unique fashion. This doesn't mean all challenges are especially difficult. Challenges like [[Computer Savvy]] can be quite easy to beat, other challenges compensate for this by being especially punishing; [[Solar System]] being a good example of this. Each challenge has certain strategies that can be employed to make the run easier. However, there are a few strategies that can be applied to most challenges.
+* Challenges can be played in [[co-op]], allowing a second player to contribute to the run without being hindered in the same way Isaac is. This is especially useful in any challenge where Isaac is [[Blindfolded]], as the second player will be allowed to fire tears normally.
+** {{dlc|r}} If other players join the game in the first room for true co-op, they will not get to select a character and will be forced to play as the character the challenge has you play as, ex. for [[Blue Bomber]], all players will be forced to play as {{c|???}} no matter what. (This excludes untrue co-op because of co-op babies.)
+* Due to the lack of {{R|Treasure Room}}s, {{R|Devil Room}}s become much more valuable. Some challenges can be made much easier by making just one deal, however many challenges reduce Isaac's health to the extent that Devil Deals become too risky.
+** Some rooms (including {{R|Crawl Space}}s) may have Treasure Room items by default. Since these items are random, results can vary from run to run.
+*** {{dlc+|r}} Makes {{i|We Need To Go Deeper!}} useful, since it can open {{R|Crawl Space}}s each floor.{{dlc-}}
+** Because locked Treasure Rooms don't spawn, keys can be used far more liberally. Also, [[trinket]]s and [[item]]s that generate more coins, along with upgraded {{R|Shop}}s, can help Isaac acquire a greater range of powerful items.
+* {{i|The Bible}} instantly kills {{E|Mom}} and {{E|Mom's Heart}} / {{E|It Lives!}}. All challenges require defeating Mom, and most require defeating Mom's Heart or It Lives!, making this an extremely powerful item, especially in challenges where Mom or Mom's Heart / It Lives! is the final boss.
+** {{i|Pandora's Box}} will spawn {{I|The Bible}} if used in {{S|Womb}}/{{S|Utero}}/{{S|Scarred Womb}} II, making it a reliable way to acquire The Bible.
+** {{p|XV - The Devil?}} can also do {{i|The Bible}}'s job.
+* {{R|Curse Room}}s can spawn items, making them valuable.
+* {{dlc|na}} In some challenges, {{R|Dice Room}}s and the {{i|D4}} are very useful, allowing that challenge's starting items to be rerolled, thus removing most of the difficulty. NOTE: This changes depending on the challenge. Most challenge pages contain details on the results of rerolling.
+** {{t|Butter!}} can also remove starter items.
+* [[Blindfolded]] challenges are arguably the most difficult challenges due to Isaac's inability to fire tears. There are several methods to work around this.
+** Familiars can provide an alternative method of dealing damage. Powerful familiars like {{i|Lil Brimstone}}, {{i|Succubus}}, {{i|Incubus}}, and {{i|Twisted Pair}} are therefore highly useful items.
+** {{i|The Boomerang}}, {{i|The Candle}}, and {{i|Red Candle}} are also useful for blindfolded challenges, as they recharge based on a timer, rather than an amount of cleared rooms.
+** {{e|Golden Bomb}} also provides a powerful damage output method for a floor.
+** {{i|Clicker|dlc=nr}} can allow Isaac to change into {{C|Lilith}}, whose {{i|Incubus}} overrides the blindfolded effect by default.
+** Some active items like {{i|Tammy's Head}} can be really helpful, providing an alternative method of dealing damage.
+** {{dlc+|r}} {{i|Maw Of The Void}}, {{i|Revelation}}, and {{i|Montezuma's Revenge}} can be charged and fired even while Blindfolded, giving you very powerful attacks when you're not supposed to be able to shoot.{{dlc-}}
+** Most useful items while blindfolded gain no benefit from the Tears, Range, or Shot Speed stats. As a result, items like {{i|False PHD}} can be used to make gains in other stats at effectively no cost.
+* {{i|Chaos}} is a powerful item in challenges, as it can allow powerful items to be found more commonly, such as in the Shop or after defeating bosses.
+* Defeating a boss beyond the specified end of the challenge (e.g. defeating {{E|Mom's Heart}} when the goal is to defeat {{E|Mom}}) will still spawn the trophy.
+** {{dlc|anr}} In some longer challenges (e.g. [[XXXXXXXXL]]), using a {{R|Sacrifice Room}} until it teleports Isaac to the {{S|Dark Room}} is a viable strategy. Once in the Dark Room, the trophy can be spawned by defeating {{E|The Lamb}}.
+*** {{dlc+|a+nr}} In a similar vein, all runs can be completed by killing {{e|Delirium}}, meaning that the player can beat a challenge through an alternative method such as defeating {{E|Hush}} then traveling to {{S|The Void}}; however, this is generally extremely difficult given the restrictions challenges place on the player.{{dlc-}}
+
+== Notes ==
+* Apart from the achievement related to beating the challenge, all achievements are locked. Also, no {{M|Donation Machine}}s will appear in any challenge.
+* {{C|Isaac}} does not start any challenge with {{i|The D6}}.
+* {{dlc+|r}} Items with tag [[Item Tags nochallenge|<code>nochallenge</code>]] are excluded during challenges.
+** {{i|Lazarus' Rags}}, {{i|Judas' Shadow}}, {{i|Ankh}}, and {{i|Clicker}} are excluded, preventing Isaac from changing to other characters.
+*** {{dlc|nr+}} {{t|Broken Ankh}} is still available.
+*** {{dlc|r+}} {{t|Broken Ankh}}, {{t|Missing Poster}} and {{t|Mysterious Paper}} are also excluded.
+** {{i|R Key}} is also excluded.
+** Excluded items are considered as if they have not been unlocked, making it impossible to get these items by {{i|Spindown Dice}}, {{i|Bag of Crafting}}, or  {{i|Death Certificate}}.
+** It is, however, possible for [[Aprils Fool]]'s effect on active items to cause {{I|Clicker}} to activate.{{dlc-}}
+
+== Challenges List ==
+{{challenge table}}
+
+{{nav|challenge|fr=Défis|ru=Испытания}}
+[[Category:Challenges| ]]

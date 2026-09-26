@@ -1,0 +1,1269 @@
+{{page dlc|r}}
+'''Wisps''' are [[orbital familiar]]s that are created by the {{i|Book of Virtues}}. This article lays out the effects and stats of the wisps Isaac can create, mostly covering {{i|Book of Virtues}} synergies.
+
+== Unique Wisps ==
+Descriptions for the following wisp stats:
+* Item: The item that spawns the following wisp. {{i|Everything Jar}}, {{i|Esau Jr.}}, {{i|Mom's Box}}, {{i|Pandora's Box}}, {{i|R Key}}, and {{i|Death Certificate}} only spawn normal wisps, and have no unique effects.
+* Orbit: The ring around Isaac the wisp occupies. The Inner ring can hold 6 wisps, the Center ring can hold 8 wisps, and the Outer ring can hold 12 wisps. Wisps that don't orbit Isaac will count as “other” and have their unique behavior in the notes.
+* HP: The amount of hits the wisp can take before being destroyed. Contact damage and explosions count as two hits taken. Wisps are immune to damage if Isaac is [[Temporary Buffs|Shielded/Invulnerable]] or under the effects of {{i|Gnawed Leaf}}. Invulnerability frames from taking damage do not count.
+* Tear Damage: The damage the wisp's tears do. All wisps deal an additional +0.1 tear damage for every floor deeper into the game Isaac is. Note that the contact damage the wisps deal is 2x Isaac's damage per tick (4x Isaac's damage per second) and is unaffected by the wisp type, with a few exceptions.
+** {{i|BFFS!}} will double the base damage, contact damage, and damage scaling per floor of the wisps, and {{t|Forgotten Lullaby}} will double their fire rate.
+* Tear Delay: The number of frames the wisp has to wait between firing tears. 30 frames equals one second.
+* Tear Effects: Any special tear effects/modifiers the wisp's tears have, such as [[Tear Effects|Homing]] or [[Status Effects|Poison]], and the chance of that effect occurring if it is a chance.
+* Notes: Any other effects the wisp has that are worth noting.
+
+{| class="wikitable mw-collapsible mw-collapsed" style="text-align: center"
+ ! Item
+ ! Orbit
+ ! HP
+ ! Damage
+ ! Tear Delay
+ ! Tear Effects
+ ! Notes
+ |-
+ | None
+ | Center ring
+ | 2
+ | 3
+ | 30
+ | None
+ | These are the default wisps spawned by Book of Virtues and other things that spawn wisps, such as {{i|Jar of Wisps}}, {{t|Beth's Essence}}, {{t|Beth's Faith}}, and {{p|Soul of Bethany}}.
+ |-
+ | {{i|The Bible}}
+ | Inner ring
+ | 3
+ | 6
+ | 30
+ | [[Tear Effects|Homing]]
+ | Wisps' tears have 0.75 shot speed. The wisps' tears effectively act as though they have {{i|Sacred Heart}}.
+ |-
+ | {{i|The Book of Belial}}
+ | Center ring
+ | 3
+ | 6
+ | 30
+ | None
+ | N/A
+ |-
+ | {{i|The Necronomicon}}
+ | Inner ring
+ | 3
+ | 3.5
+ | 30
+ | None
+ | The wisps deal 40 damage to all enemies in the room when destroyed. This is not boosted by {{i|BFFS!}}, but is boosted by {{i|Missing Page 2}}.
+ |-
+ | {{i|The Poop}}
+ | Outer ring
+ | 1
+ | 1.5
+ | 30
+ | {{i|E. Coli}} (2.5%)
+ | Also has a chance to spawn if Isaac destroys [[Poops|poop]] while holding {{i|Notched Axe}}.
+ |-
+ | {{i|Mr. Boom}}
+ | Center ring
+ | 1
+ | 1.5
+ | 30
+ | None
+ | The wisps spawn miniature homing bombs when destroyed. These miniature bombs behave the same as ones created by {{i|Scatter Bombs}}, with the exception that they deal 100 blast damage instead of 50.
+ |-
+ | {{i|Tammy's Head}}
+ | Outer ring
+ | 1
+ | 1.5
+ | 15
+ | None
+ | The wisps' tears are inaccurate, and fire in a spread.
+ |-
+ | {{i|Mom's Bra}}
+ | Center ring
+ | 2
+ | 3
+ | 30
+ | [[Status Effects|Petrification]] (5%)
+ | N/A
+ |-
+ | {{i|Kamikaze!}}
+ | Center ring
+ | 3
+ | 7
+ | 30
+ | Explosive
+ | The wisps explode when destroyed, dealing 30 damage to enemies that are close to it. This explosion is small enough to not hit Isaac. All explosions the wisps make are unaffected by {{i|BFFS!}} and bomb synergies.
+ |-
+ | {{i|Mom's Pad}}
+ | Center ring
+ | 2
+ | 3
+ | 30
+ | [[Status Effects|Fear]] (7.5%)
+ | N/A
+ |-
+ | {{i|Bob's Rotten Head}}
+ | Center ring
+ | 2
+ | 3
+ | 30
+ | [[Status Effects|Poison]] + Explosive (7.5%)
+ | The wisps' tears have decreased range and travel in an arc.
+ |-
+ | {{i|Teleport!}}
+ | Center ring
+ | 3
+ | 4
+ | 30
+ | Teleport (10%)
+ | The teleport effect teleports non-boss enemies hit by the tear to a random location in the current room; it does not affect Isaac. The wisps also temporarily vanish every 5 seconds, preventing them from blocking shots or taking/dealing damage.
+ |-
+ | {{i|Yum Heart}}
+ | Center ring
+ | 2
+ | 3
+ | 30
+ | None
+ | Enemies killed by the wisps' tears have a 20% chance to drop a full [[Hearts|red heart]].
+ |-
+ | {{i|Doctor's Remote}}
+ | Center ring
+ | 1
+ | 1.5
+ | 30
+ | None
+ | When Doctor's Remote is used, the wisps fire two inaccurate, explosive tears at the crosshair in an arc that deal 14 damage (28 if Isaac has {{i|BFFS!}}).
+ |-
+ | {{i|Shoop da Whoop!}}
+ | Outer ring
+ | 2.5
+ | 1.5
+ | 30
+ | None
+ | The wisps also fire lasers when Isaac uses Shoop da Whoop!. The lasers deal 7 damage per tick (BUG: 3.5 if Isaac has {{i|BFFS!}}), and can hit up to 10 times for a total of 70 damage. Multiple lasers can hit the same enemy.
+ |-
+ | {{i|Lemon Mishap}}
+ | Center ring
+ | 1
+ | 1.5
+ | 10
+ | None
+ | The wisps' tears have decreased range. The wisps themselves occasionally leave small puddles of yellow [[creep]] that last for 3 seconds and deal 7 damage per tick to enemies that walk over them (56 damage per second).
+ |-
+ | {{i|Book of Shadows}}
+ | Center ring
+ | 1
+ | 1.5
+ | 30
+ | None
+ | The wisps are immune to damage from blocking projectiles.
+ |-
+ | {{i|Anarchist Cookbook}}
+ | Center ring
+ | 1
+ | 3
+ | 30
+ | None
+ | The wisps spawn [[Bombs|troll bombs]] when destroyed. These troll bombs will use Isaac's bomb synergies.
+ |-
+ | {{i|The Hourglass}}
+ | Center ring
+ | 1
+ | 1.5
+ | 30
+ | None
+ | The wisps [[Status Effects|slow]] all enemies in the room for 3 seconds when destroyed. If the Hourglass is used or extra wisps are destroyed while the slow is in effect, it's duration is extended.
+ |-
+ | {{i|My Little Unicorn}}
+ | Center ring
+ | 3
+ | 4
+ | 30
+ | None
+ | The wisps orbit Isaac more quickly than normal wisps and change colors constantly, with both of these effects being boosted while My Little Unicorn is active. The wisps also deal an extra 8 contact damage.
+ |-
+ | {{i|Book of Revelations}}
+ | Inner ring
+ | 5
+ | No tears
+ | No tears
+ | None
+ | The wisps give {{i|7 Seals}}' harbinger familiars for the current room when destroyed.
+ |-
+ | {{i|The Nail}}
+ | Inner ring
+ | 3
+ | 6
+ | 30
+ | {{t|Blister}}
+ | N/A
+ |-
+ | {{i|We Need To Go Deeper!}}
+ | Center ring
+ | 5
+ | 3
+ | 30
+ | None
+ | N/A
+ |-
+ | {{i|Deck of Cards}}
+ | Inner ring
+ | 3
+ | 3
+ | 30
+ | None
+ | The wisps spawn [[Cards and Runes#Cards|cards]] when destroyed.
+ |-
+ | {{i|Monstro's Tooth}}
+ | Center ring
+ | 2
+ | 12
+ | 45
+ | None
+ | The wisps' tears look like teeth, similar to those created from {{i|Tough Love}}.
+ |-
+ | {{i|The Gamekid}}
+ | Inner ring
+ | 4
+ | 3
+ | 25
+ | [[Status Effects|Fear]] (chance unknown) + {{i|Anti-Gravity}}
+ | The wisps look like little Pac-Men while shooting.
+ |-
+ | {{i|Mom's Bottle of Pills}}
+ | Inner ring
+ | 4
+ | 3
+ | 30
+ | [[Status Effects|Poison/Petrification/Confusion/Burn]]/Spawn a [[Bombs|Troll Bomb]] (chances unknown)
+ | The wisps spawn [[pill]]s when destroyed. Each tear effect is assigned to one color of pill wisp based on the current seed. The only color pill wisp without a tear effect also spawns a hostile [[Spider]] when destroyed. For the troll bomb effect, the pill itself spawns the troll bomb instead of the tear, and the chance for it to do so is independent of whether or not its tears hit anything.
+ |-
+ | {{i|The D6}}
+ | Center ring
+ | 4
+ | 3
+ | 30
+ | None
+ | An extra wisp is spawned per item rerolled.
+ |-
+ | {{i|The Pinking Shears}}
+ | Inner ring
+ | 4
+ | 3.5
+ | 30
+ | [[Tear Effects|Piercing]]
+ | N/A
+ |-
+ | {{i|The Bean}}
+ | Outer ring
+ | 1
+ | 1.5
+ | 30
+ | None
+ | The wisps deal 5 damage to and poison nearby enemies when destroyed.
+ |-
+ | {{i|Monster Manual}}
+ | Inner ring
+ | 3
+ | 2-4
+ | 15-30
+ | Random
+ | The wisps given function similarly to familiars given by {{i|Buddy in a Box}}.
+ |-
+ | {{i|Razor Blade}}
+ | Center ring
+ | 8
+ | 3
+ | 30
+ | None
+ | N/A
+ |-
+ | {{i|Forget Me Now}}
+ | Center ring
+ | Infinite
+ | 10
+ | 30
+ | None
+ | The wisp only lasts for the floor Forget Me Now created.
+ |-
+ | {{i|A Pony}}
+ | Center ring
+ | 2
+ | Other
+ | Other
+ | None
+ | The wisps charge in the direction Isaac shoots instead of firing tears. While charging, the wisps deal contact damage equal to 40% of Isaac's damage per tick (120% of Isaac's damage per second) and are immune to damage. Wisps must wait 2.5 seconds after hitting a wall before they can charge again. The wisps deal their normal contact damage while not charging.
+ |-
+ | {{i|Guppy's Paw}}
+ | Center ring
+ | 20
+ | 3.5
+ | 30
+ | None
+ | Spawns 3 wisps for every heart container consumed in addition to granting soul hearts.
+ |-
+ | {{i|IV Bag}}
+ | Outer ring
+ | 1
+ | 3
+ | 30
+ | None
+ | N/A
+ |-
+ | {{i|Best Friend}}
+ | Center ring
+ | 2
+ | 3.5
+ | 30
+ | [[Status Effects|Mark]] (7.5%)
+ | N/A
+ |-
+ | {{i|Remote Detonator}}
+ | Inner ring
+ | 0.5
+ | 2.5
+ | 30
+ | None
+ | The wisps are summoned when bombs placed by Isaac explode. Using Remote Detonator also causes the wisps' tears to explode, dealing 16.5 damage to enemies that are close to them (24 if Isaac has {{i|BFFS!}}).
+ |-
+ | {{i|Guppy's Head}}
+ | Outer ring
+ | 1
+ | 1.5
+ | 30
+ | None
+ | Using Guppy's Head summons 2-4 wisps instead of [[Familiar#Blue Flies|Blue Flies]]; the wisps summon the Blue Flies when destroyed. One wisp contains one Blue Fly.
+ |-
+ | {{i|Prayer Card}}
+ | Inner ring
+ | 3
+ | 6
+ | 30
+ | [[Tear Effects|Homing]]
+ | Wisps' tears have 0.75 shot speed. The wisps' tears effectively act as though they have {{i|Sacred Heart}}.
+ |-
+ | {{i|Notched Axe}} (Coal)
+ | Center ring
+ | 2
+ | 2.5
+ | 30
+ | {{i|A Lump of Coal}}
+ | Has a chance to spawn when Isaac destroys an [[Obstacles|obstacle]] with Notched Axe.
+ |-
+ | {{i|Notched Axe}} (Iron)
+ | Center ring
+ | 3
+ | 4
+ | 30
+ | [[Status Effects|Confusion]] (10%)
+ | Has an uncommon chance to spawn when Isaac destroys an [[Obstacles|obstacle]] with Notched Axe.
+ |-
+ | {{i|Notched Axe}} (Gold)
+ | Center ring
+ | 2
+ | 3.5
+ | 30
+ | {{i|Head of the Keeper}} (10%)
+ | Has a rare chance to spawn when Isaac destroys an [[Obstacles|obstacle]] with Notched Axe.
+ |-
+ | {{i|Notched Axe}} (Diamond)
+ | Center ring
+ | 8
+ | 7
+ | 30
+ | None
+ | Has a very rare chance to spawn when Isaac destroys an [[Obstacles|obstacle]] with Notched Axe.
+ |-
+ | {{i|Notched Axe}} (Redstone)
+ | Center ring
+ | 3
+ | 3.5
+ | 30
+ | {{i|Technology}}
+ | Has a rare chance to spawn when Isaac destroys an [[Obstacles|obstacle]] with Notched Axe.
+ |-
+ | {{i|Crystal Ball}}
+ | Center ring
+ | 5
+ | 3.5
+ | 30
+ | None
+ | Wisps' tears have 1.2 shot speed. The wisps will automatically aim directly at nearby enemies.
+ |-
+ | {{i|Crack the Sky}}
+ | Center ring
+ | 4
+ | 3
+ | 30
+ | None
+ | The wisps summon a beam of light when touched, dealing 12 damage to nearby enemies in addition to their normal contact damage.
+ |-
+ | {{i|The Candle}}
+ | Other
+ | 1
+ | 2.5
+ | 30
+ | None
+ | The wisps do not persist between rooms.
+ |-
+ | {{i|D20}}
+ | Center ring
+ | 4
+ | 4
+ | 30
+ | None
+ | In addition to summoning it's specific wisp, instead of rerolling pickups, it will destroy all pickups in the room and has a chance to give a random wisp for each pickup destroyed.
+ |-
+ | {{i|Spider Butt}}
+ | Center ring
+ | 1
+ | 3
+ | 30
+ | [[Status Effects|Slow]] (7.5%)
+ | N/A
+ |-
+ | {{i|Dad's Key}}
+ | Center ring
+ | 1.5
+ | 3
+ | 30
+ | None
+ | If the wisps touch locked [[Chests]] or special room doors, they will unlock them, destroying themselves in the process. These wisps can open ANY locked door they touch, including the ones to [[Mega Satan]], the [[Ascent]], and [[Corpse]]. Stone/Mega Chests are unaffected.
+ |-
+ | {{i|Portable Slot}}
+ | Outer ring
+ | 2
+ | 1.5
+ | 30
+ | None
+ | This wisp is only given if Portable Slot spawns a [[Coins|coin]]; other effects are noted in the “other interactions” section below.
+ |-
+ | {{i|White Pony}}
+ | Center ring
+ | 2
+ | 3
+ | 30
+ | {{i|Holy Light}} (10%)
+ | The beams of light the wisps' tears make deal extra damage to enemies in a small area equal to 3x the wisps' tear damage.
+ |-
+ | {{i|Blood Rights}}
+ | Center ring
+ | 8
+ | 3
+ | 30
+ | None
+ | N/A
+ |-
+ | {{i|Telepathy For Dummies}}
+ | Center ring
+ | 2
+ | 3
+ | 30
+ | [[Tear Effects|Homing]]
+ | N/A
+ |-
+ | {{i|Clear Rune}}
+ | Center ring
+ | 2
+ | 3
+ | 30
+ | N/A
+ | The wisps spawn [[Cards and Runes#Runes|Runes/Soul Stone]]s when destroyed, and enemies killed by the wisps' tears have a 15% chance to drop a Rune/Soul Stone. The effect of the wisps and the types of runes they spawn are independent from Clear Rune's charge time and the most recently used rune.
+ |-
+ | {{i|How to Jump}}
+ | Other
+ | 1
+ | 3
+ | 15
+ | None
+ | The wisps are stationary, and remain where Isaac was when he jumped. Up to 6 of these wisps can exist at a time. The wisps do not persist between rooms.
+ |-
+ | {{i|D10}}
+ | Center ring
+ | 2
+ | 3
+ | 30
+ | D10 (10%)
+ | N/A
+ |-
+ | {{i|Blank Card}}
+ | Center ring
+ | 2
+ | 3
+ | 30
+ | None
+ | The wisps spawn [[Cards and Runes#Cards|Cards]] when destroyed, and enemies killed by the wisps' tears have a 15% chance to drop a Card. The effect of the wisps and the types of cards they spawn are independent from Blank Card's charge time and the most recently used card.
+ |-
+ | {{i|Book of Secrets}}
+ | Center ring
+ | 2
+ | 3
+ | 30
+ | None
+ | The wisps invoke the effect of {{i|Cracked Orb}} when destroyed.
+ |-
+ | {{i|Box of Spiders}}
+ | Outer ring
+ | 1
+ | 2
+ | 30
+ | None
+ | Using Box of Spiders summons 5-6 wisps instead of [[Familiar#Blue Spiders|Blue Spiders]]; the wisps summon the Blue Spiders when destroyed. One wisp contains one Blue Spider.
+ |-
+ | {{i|Red Candle}}
+ | Center ring
+ | 1
+ | 5
+ | 75
+ | None
+ | The wisps shoot small flames instead of tears; flames last for 5 seconds or until they block 2 shots and/or deal 2 ticks of damage. The wisps do not persist between rooms, and the damage they deal does not increase with {{i|BFFS!}} or scale up on later floors.
+ |-
+ | {{i|The Jar}}
+ | Center ring
+ | 1.5
+ | 2
+ | 30
+ | None
+ | When The Jar is used, any [[Hearts|red hearts]] that would drop are instead turned into wisps. The health and damage of the wisps is unaffected by whether or not the hearts would be half hearts or full hearts. The wisps have a chance to drop half red hearts when destroyed.
+ |-
+ | {{i|Flush!}}
+ | Center ring
+ | 2
+ | 1.5
+ | 30
+ | None
+ | An additional wisp is spawned for each enemy turned into [[Poops|poop]].
+ |-
+ | {{i|Satanic Bible}}
+ | Center ring
+ | 2
+ | 3
+ | 30
+ | None
+ | Each wisp gives Isaac +10% [[Devil Room#Conditions to Make Devil Rooms Appear|Devil Room chance]].
+ |-
+ | {{i|Head of Krampus}}
+ | Center ring
+ | 2
+ | 3
+ | 30
+ | None
+ | The wisps fire small {{i|Brimstone}} lasers in the cardinal directions when destroyed. The lasers deal the wisps' tear damage per tick, and can hit up to 20 times. {{i|BFFS!}} will not increase this damage, despite it scaling with the wisps' tear damage.
+ |-
+ | {{i|Butter Bean}}
+ | Center ring
+ | 1
+ | No tears
+ | No tears
+ | None
+ | The wisps invoke the effect of Butter Bean when destroyed and do not persist between rooms.
+ |-
+ | {{i|Magic Fingers}}
+ | Inner ring
+ | 1
+ | 1
+ | 30
+ | None
+ | The wisps have a chance to drop [[coins]] when destroyed.
+ |-
+ | {{i|Converter}}
+ | Center ring
+ | 4
+ | 3
+ | 30
+ | None
+ | Wisps are only spawned when [[hearts]] are converted.
+ |-
+ | {{i|Unicorn Stump}}
+ | Center ring
+ | 3
+ | No tears
+ | No tears
+ | None
+ | The wisps orbit Isaac more quickly and change colors constantly, and become much more vibrant while Isaac is invulnerable. The wisps do not take contact damage, but also don't deal contact damage if Unicorn Stump isn't active. If Unicorn Stump is active, the wisps deal contact damage equal to 2x Isaac's damage -5. If Isaac has less than 2.5 damage, the wisps will deal no damage even if Unicorn Stump is active.
+ |-
+ | {{i|Isaac's Tears}}
+ | Center ring
+ | 0.5
+ | 1
+ | 30
+ | None
+ | Summons six wisps at a time. Using Isaac's Tears destroys the previous set of wisps. The wisps are automatically destroyed after three seconds.
+ |-
+ | {{i|Undefined}}
+ | Center ring
+ | 2
+ | 3
+ | 30
+ | {{i|Playdough Cookie}}
+ | N/A
+ |-
+ | {{i|Scissors}}
+ | Center ring
+ | 2
+ | 3
+ | 30
+ | None
+ | The wisps fire 2-3 tears at a time, which are inaccurate, travel in an arc, and have variable range.
+ |-
+ | {{i|The Boomerang}}
+ | Center ring
+ | 1
+ | 3
+ | 30
+ | {{i|My Reflection}}
+ | The wisps do not persist between rooms.
+ |-
+ | {{i|Diplopia}}
+ | Center ring
+ | 12
+ | 3
+ | 30
+ | None
+ | The wisp fires two tears at a time (similar to {{i|20/20}}). Using Diplopia also duplicates all of Isaac's other wisps.
+ |-
+ | {{i|Placebo}}
+ | Center ring
+ | 2
+ | 3
+ | 30
+ | None
+ | The wisps spawn [[Pill]]s when destroyed. The effects of the wisps and types of pills they spawn is independent from Placebo's charge time and the most recently used pill. Unlike {{i|Blank Card}} and {{i|Clear Rune}}, enemies killed by these wisps' tears do not have a chance to drop pills.
+ |-
+ | {{i|Wooden Nickel}}
+ | Center ring
+ | 2
+ | 2
+ | 30
+ | None
+ | The wisps have a 50% chance to drop [[coins]] when destroyed, much like Wooden Nickel itself.
+ |-
+ | {{i|Mega Bean}}
+ | Center ring
+ | 2
+ | 3
+ | 30
+ | None
+ | The wisps send rock waves outward when Mega Bean is used. They also [[Tear Effects|petrify and poison]] all enemies in a large radius when destroyed.
+ |-
+ | {{i|Glass Cannon}}
+ | Center ring
+ | 0.5
+ | 8
+ | 30
+ | None
+ | If one of the wisps is destroyed, all the others are also destroyed. Does not affect wisps other than ones made by this item. Despite Glass Cannon having a timed charge, the wisps persist between rooms.
+ |-
+ | {{i|Box of Friends}}
+ | Center ring
+ | 2
+ | 3
+ | 30
+ | None
+ | After creating a wisp, Box of Friends also gives temporary copies of all of Isaac's wisps, including any extra copies Box of Friends made.
+ |-
+ | {{i|Friendly Ball}} (Normal)
+ | Center ring
+ | 2
+ | 3
+ | 30
+ | None
+ | Enemies captured by Friendly Ball spawn this wisp when they die if they wouldn't spawn any of the other variants listed below.
+ |-
+ | {{i|Friendly Ball}} (Homing)
+ | Center ring
+ | 2
+ | 3
+ | 30
+ | [[Tear Effects|Homing]]
+ | Enemies captured by Friendly Ball spawn this wisp when they die if they were psychic or had homing shots in some way.
+ |-
+ | {{i|Friendly Ball}} (Explosive)
+ | Center ring
+ | 2
+ | 3
+ | 60
+ | Explosive (33%)
+ | Enemies captured by Friendly Ball spawn this wisp when they die if they created explosions in some way. Explosive tears deal no extra damage.
+ |-
+ | {{i|Friendly Ball}} (Brimstone)
+ | Center ring
+ | 2
+ | 2.5
+ | 60
+ | {{i|Brimstone}}
+ | Enemies captured by Friendly Ball spawn this wisp when they die if they fired lasers in some way. The laser does not need to be charged to be fired, and can tick up to 8 times for a total of 20 damage.
+ |-
+ | {{i|Tear Detonator}}
+ | Center ring
+ | 2
+ | 2
+ | 30
+ | None
+ | The wisps' tears burst into 6 of Isaac's tears when Tear Detonator is used. They also burst into 6 tears and invoke the effect of Tear Detonator when destroyed. Despite Tear Detonator having a timed recharge, the wisps persist between rooms.
+ |-
+ | {{i|D12}}
+ | Center ring
+ | 2
+ | 2
+ | 30
+ | D12 ([[obstacles]] only, 5%)
+ | [[Poops]] and [[TNT]] cannot be rerolled by the wisps' tears.
+ |-
+ | {{i|Ventricle Razor}}
+ | Other
+ | 2
+ | No tears
+ | No tears
+ | None
+ | One wisp orbits each portal; no wisps are given to Isaac.
+ |-
+ | {{i|D8}}
+ | Center ring
+ | 2
+ | 3-4
+ | 25-35
+ | None
+ | Each wisp has a random damage and fire rate assigned to it. Wisp health is not randomised.
+ |-
+ | {{i|Teleport 2.0}}
+ | Center ring
+ | 4
+ | 6
+ | 30
+ | Teleport (20%)
+ | The teleport effect teleports non-boss enemies hit by the tear to a random location in the current room; it does not affect Isaac. The wisps also temporarily vanish every 5 seconds, preventing them from blocking shots or taking/dealing damage.
+ |-
+ | {{i|Kidney Bean}}
+ | Center ring
+ | 2
+ | 3
+ | 30
+ | None
+ | The wisps [[Status Effects|charm]] nearby enemies when destroyed.
+ |-
+ | {{i|Glowing Hourglass}}
+ | Center ring
+ | 1
+ | 1.5
+ | 30
+ | [[Tear Effects|Petrification]] (30%)
+ | N/A
+ |-
+ | {{i|Mine Crafter}}
+ | Other
+ | Other
+ | No tears
+ | No tears
+ | None
+ | The wisp cannot take or deal damage in any way, and bounces around the room in a random direction instead of following Isaac. If the wisp is shot by Isaac or his familiars, it explodes, dealing 100 damage to nearby enemies. The wisp does not persist between rooms. Explosions and enemy shots do not detonate it, and the wisps' explosions are unaffected by {{i|BFFS!}} and bomb synergies.
+ |-
+ | {{i|Jar of Flies}}
+ | Center ring
+ | 2 * Blue Flies in the wisp
+ | 1 + 0.5 per Blue Fly in the wisp
+ | 30
+ | None
+ | Using Jar of Flies summons wisps instead of [[Familiar#Blue Flies|Blue Flies]]; the wisps do not summon the flies when destroyed. Up to five flies at a time are consumed to summon one wisp, with stacking health and damage. The damage of the wisps decreases as they take damage. Enemies killed by wisps’ tears will not add flies to the jar.
+ |-
+ | {{i|D7}}
+ | Center ring
+ | 2
+ | 3
+ | 30
+ | None
+ | The wisps start gray; if the wisps get hit while they’re gray, they invoke the effect of the D7 in the current room and turn blue. Damage that turns the wisps from gray to blue is negated.
+ |-
+ | {{i|Mega Blast}}
+ | Center ring
+ | {{dlc|nr+}} 2<br>{{dlc|r+}} 6
+ | 2.5
+ | 30
+ | {{i|Lil Brimstone}}
+ | Lasers can hit up to 8 times for a total of 20 damage. If Mega Blast is being used, the wisps will continuously fire their laser outward rather than in the direction Mega Blast is firing.
+ |-
+ | {{i|Plan C}}
+ | Center ring
+ | 2
+ | 12
+ | 30
+ | None
+ | Spawns eight wisps on use. As Plan C will still kill Isaac after using it, he must have a respawn in order to use the wisps.
+ |-
+ | {{i|D1}}
+ | Center ring
+ | 2
+ | 3
+ | 30
+ | None
+ | An extra wisp spawns if no pickups are duplicated.
+ |-
+ | {{i|Pause}}
+ | Center ring
+ | 2
+ | 3
+ | 30
+ | None
+ | Wisps pause all enemies and enemy shots for 3 seconds when destroyed. This effect is not cancelled by shooting tears.
+ |-
+ | {{i|Smelter}}
+ | Center ring
+ | 2
+ | 3
+ | 30
+ | None
+ | The wisps have a chance to spawn [[trinket]]s when destroyed.
+ |-
+ | {{i|Compost}}
+ | Center ring
+ | See notes
+ | 3
+ | 30
+ | None
+ | The wisp will only be summoned if Compost destroys at least one pickup, and the wisp's health will be equal to the number of pickups converted to [[Familiar#Blue Flies|Blue Flies]]/[[Familiar#Blue Spiders|Spiders]]. If Isaac hits the blue fly cap of 64 as a result of using Compost, all but one of Isaac's wisps will despawn.
+ |-
+ | {{i|Dataminer}}
+ | Center ring
+ | 2
+ | 3
+ | 30
+ | Transform non-boss enemies into random wisps (5%)
+ | The wisps are indistinguishable from normal ones outside of their unique tear effect.
+ |-
+ | {{i|Mama Mega!}}
+ | Center ring
+ | 2
+ | 3
+ | 30
+ | None
+ | Summons 8 wisps on use. The wisps summon [[Bombs|Golden Troll Bombs]] when destroyed.
+ |-
+ | {{i|Wait What?}}
+ | Center ring
+ | 0.5
+ | No tears
+ | No tears
+ | None
+ | The wisps invoke the effect of Wait What? when destroyed and do not persist between rooms.
+ |-
+ | {{i|Crooked Penny}}
+ | Center ring
+ | See Notes
+ | 2
+ | 30
+ | None
+ | The wisps have a 50/50 chance to duplicate all their copies or destroy all their copies when one takes damage. Does not affect wisps other than ones made by this item. Using Crooked Penny always spawns one wisp, with no chance to affect the others.
+ |-
+ | {{i|Dull Razor}}
+ | Center ring
+ | 2
+ | No tears
+ | No tears
+ | None
+ | Whenever Isaac takes damage, there is a chance that the damage is negated and one of the wisps is destroyed instead. "Damage" taken from using Dull Razor does not count for this effect.
+ |-
+ | {{i|Potato Peeler}}
+ | Other
+ | Infinite
+ | 3
+ | 30
+ | None
+ | The wisps do not orbit Isaac, block shots, or deal contact damage. Instead, they chase and constantly shoot at nearby enemies. If you have befriended enemies they will likely chase and shoot those, not dealing any damage.
+ |-
+ | {{i|Brown Nugget}}
+ | Center ring
+ | 2
+ | 1
+ | 10
+ | None
+ | The wisps automatically shoot at nearby enemies instead of in the direction Isaac shoots. The wisps do not persist between rooms.
+ |-
+ | {{i|Sharp Straw}}
+ | Outer ring
+ | 0.5
+ | 3
+ | 30
+ | None
+ | Enemies have a chance to spawn wisps when they’re killed by Sharp Straw. Despite Sharp Straw having a timed charge, the wisps persist between rooms.
+ |-
+ | {{i|Delirious}} ([[Monstro]])
+ | Center ring
+ | {{dlc|nr+}} 2<br>{{dlc|r+}} 6
+ | {{dlc|nr+}} 0.5<br>{{dlc|r+}} 3
+ | 60
+ | None
+ | Fires an inaccurate spray of 6-10 tears at a time, similarly to {{i|Monstro's Lung}} but without the charge time. Can be one of the unique wisps created from using Delirious.
+ |-
+ | {{i|Delirious}} ([[The Duke of Flies|Duke of Flies]])
+ | Center ring
+ | {{dlc|nr+}} 2<br>{{dlc|r+}} 6
+ | Other
+ | 60
+ | {{i|Rotten Baby}}
+ | Each wisp can have up to 3 [[Familiar#Blue Flies|Blue Flies]] out at a time. Can be one of the unique wisps created from using Delirious.
+ |-
+ | {{i|Delirious}} ([[Loki]])
+ | Center ring
+ | {{dlc|nr+}} 2<br>{{dlc|r+}} 6
+ | 3
+ | {{dlc|nr+}} 60<br>{{dlc|r+}} 25
+ | {{i|Loki's Horns}}
+ | The direction the tears are fired alternates between the cardinal and ordinal directions. Can be one of the unique wisps created from using Delirious.
+ |-
+ | {{i|Delirious}} ([[Haunt]])
+ | Center ring
+ | {{dlc|nr+}} 2<br>{{dlc|r+}} 6
+ | 1
+ | 60
+ | {{i|Brimstone}}
+ | The laser does not need to be charged to be fired, and can tick up to 8 times for a total of 8 damage. Can be one of the unique wisps created from using Delirious.
+ |-
+ | {{i|Black Hole}}
+ | Center ring
+ | 2
+ | 3
+ | 30
+ | {{i|Strange Attractor}}
+ | N/A
+ |-
+ | {{i|Sprinkler}}
+ | Center ring
+ | 2
+ | 2
+ | 10
+ | None
+ | The wisps fire tears in a spiral pattern, similarly to Sprinkler itself.
+ |-
+ | {{i|Coupon}}
+ | Center ring
+ | 2
+ | 3
+ | 30
+ | None
+ | The wisps fire three tears at a time, similarly to {{i|The Inner Eye}}. However, all of these wisps are destroyed if Isaac buys something using money. Does not affect wisps other than ones made by this item.
+ |-
+ | {{i|Telekinesis}}
+ | Outer ring
+ | 2
+ | 2
+ | 30
+ | None
+ | Tears caught by Telekinesis become wisps. The wisps are outside the range of Telekinesis, making them vulnerable to shots before they can be converted to Wisps.
+ |-
+ | {{i|Moving Box}}
+ | Center ring
+ | 2
+ | 3
+ | 30
+ | None
+ | Moving Box must drop a pickup/item in order for it to spawn wisps. The wisps invoke the effect of {{i|The Book of Sin}} when destroyed.
+ |-
+ | {{i|Mr. ME!}}
+ | Center ring
+ | 2
+ | No tears
+ | No tears
+ | None
+ | If the current room is cleared, the wisps automatically move toward and unlock [[chests]] and special room doors, destroying themselves in the process. The wisps can open ANY locked doors, including the ones to [[Mega Satan]], the [[Ascent]], and [[Corpse]]. Stone/Mega Chests are unaffected.
+ |-
+ | {{i|Sacrificial Altar}}
+ | Center ring
+ | 12
+ | 6
+ | 30
+ | None
+ | All other wisps are turned into half [[Hearts|red hearts]] in the process. {{i|Lemegeton}}'s wisps instead become half soul hearts.
+ |-
+ | {{i|Book of the Dead}}
+ | Inner ring
+ | 3
+ | 4
+ | 30
+ | None
+ | The wisps spawn friendly [[Bony]]s when destroyed. The book will summon wisps regardless of whether or not there were enemies killed in the current room, and the ring of wisps is close enough to Isaac to be inside the ring of bone orbitals Book of the Dead makes.
+ |-
+ | {{i|Broken Shovel 1}} (Soul)
+ | Center ring
+ | 2
+ | 3
+ | 30
+ | {{p|II - The High Priestess}} (10%)
+ | This wisp is also spawned when Mom's Shovel is used, alongside it's unique wisp.
+ |-
+ | {{i|Mom's Shovel}} (Forgotten)
+ | Center ring
+ | 10
+ | No tears
+ | No tears
+ | None
+ | A Forgotten and Soul wisp are spawned each use.
+ |-
+ | {{i|Golden Razor}}
+ | Center ring
+ | 2
+ | 3
+ | 30
+ | {{i|Midas' Touch}} (15%)
+ | N/A
+ |-
+ | {{i|Sulfur}}
+ | Center ring
+ | 2
+ | 2.5
+ | 90
+ | {{i|Brimstone}}
+ | The lasers fired are small and reach only one tile out, but do not need to be charged. Each laser can hit an enemy up to 8 times for a total of 20 damage. [[Range]], using Sulfur, having {{i|Brimstone}}, and playing as {{c|Azazel}}/{{c|Tainted Azazel}} does not affect the wisp.
+ |-
+ | {{i|Fortune Cookie}}
+ | Center ring
+ | 1
+ | 2
+ | 30
+ | None
+ | Each wisp gives Isaac +0.2 [[luck]]. If wisps are lost, luck is only updated after Isaac's luck changes through any means. This mechanic also causes the first wisp given to not increase luck.
+ |-
+ | {{i|Damocles}}
+ | Center ring
+ | 2
+ | 3
+ | 30
+ | None
+ | The wisp's tears look like {{i|Spirit Sword}}'s beams, but there are no other effects. Likely not fully implemented.
+ |-
+ | {{i|Free Lemonade}}
+ | Center ring
+ | 2
+ | 3
+ | 30
+ | None
+ | The wisps make small puddles of yellow creep every other shot, which last for 3 seconds and deal 7 damage per tick to enemies that walk over them (56 damage per second).
+ |-
+ | {{i|Red Key}}
+ | Center ring
+ | 1.5
+ | 3
+ | 30
+ | None
+ | The wisps have a chance to unlock red rooms when Isaac enters an unexplored room.
+ |-
+ | {{i|Wavy Cap}}
+ | Center ring
+ | 2
+ | 1.5
+ | 30
+ | None
+ | Only one of this wisp can exist at a time.
+ |-
+ | {{i|Mom's Bracelet}}
+ | Other
+ | 2
+ | 3
+ | 30
+ | [[Status Effects|Confusion]] (10%)
+ | Three wisps are created where thrown [[obstacle]]s land; these wisps rotate around where the obstacle was thrown and fire tears in the same direction Isaac does. The wisps do not persist between rooms. Isaac cannot have more than 8 of these wisps at one time, and wisps in Isaac's Center ring count against this limit.
+ |-
+ | {{i|The Scooper}}
+ | Center ring
+ | 2
+ | 3
+ | 30
+ | None
+ | Despite the fact that the wisps look like they’re spinning, the angle they fire shots doesn’t rotate.
+ |-
+ | {{i|Eternal D6}}
+ | Center ring
+ | Infinite
+ | 3
+ | 30
+ | None
+ | Every use has a 50% chance to destroy all the wisps instead of spawn another. Does not affect wisps other than ones made by this item. Rerolling items does not affect this chance.
+ |-
+ | {{i|Larynx}}
+ | Center ring
+ | 1 * Charges Used
+ | 1.5 * Charges Used
+ | 30
+ | None
+ | The wisps deals contact damage equal to 30% of Isaac's damage * Charges Used. Charges Used equals the number of charges Larynx had at the time it was used.
+ |-
+ | {{i|Lemegeton}}
+ | Inner Ring, moves to other rings as they’re filled
+ | 4
+ | No tears
+ | No tears
+ | None
+ | The wisps take the appearance of an [[Item]] from the [[Item Pool]] of the room Lemegeton was used in. While Isaac has the wisp, he gains the effect of its associated item. Lemegeton's interaction with {{i|Book of Virtues}} is noted in the "Other Interactions" section below.
+ |-
+ | {{i|Sharp Key}}
+ | Center ring
+ | 2
+ | 3
+ | 30
+ | None
+ | Despite the wisps' appearance, they cannot unlock anything. Due to a bug, Sharp Key can spawn wisps even if Isaac has no keys.
+ |-
+ | {{i|Meat Cleaver}}
+ | Center ring
+ | 4
+ | 3
+ | 30
+ | None
+ | Before spawning wisps, Meat Cleaver divides all of Isaac's wisps into two wisps that have half health and deal half tear damage. Wisps will be destroyed if they try to divide a third time.
+ |-
+ | {{i|Stitches}}
+ | Other
+ | 2
+ | 1.5
+ | 30
+ | None
+ | When Isaac teleports, he leaves behind a stationary wisp that fires tears in the same direction Isaac does. Up to 6 of these wisps can exist at a time. The wisps do not persist between rooms.
+ |-
+ | {{i|Eraser}}
+ | Center ring
+ | Infinite
+ | 3
+ | 30
+ | None
+ | If a [[Monsters|non-boss enemy]] touches the wisp, it is erased and the wisp is destroyed. The wisp cannot erase [[bosses]], regardless of how much health they have left.
+ |-
+ | {{i|Yuck Heart}}
+ | Center ring
+ | 2
+ | No tears
+ | No tears
+ | None
+ | Every wisp spawns an additional [[Familiar#Blue Flies|Blue Fly]] when a room is cleared. The wisps also create a small green cloud when destroyed; this is purely cosmetic.
+ |-
+ | {{i|Urn of Souls}}
+ | Center ring
+ | 2
+ | 3
+ | 30
+ | {{i|The Candle}} (Chance unknown)
+ | A wisp spawns for every consecutive second Urn of Souls is fired (BUG: and whenever the urn is activated/deactivated). The occasional fires shot by the wisps block enemy shots, deal contact damage to enemies, and last for 3 seconds before dissipating. The flames deal 10 damage per tick for the first second they're out, scale down to 5 damage over the next second, and then stay at 5 damage until they dissipate (60-30 damage per second). The damage these fires deal does not increase with {{i|BFFS!}} or scale up on later floors.
+ |-
+ | {{i|Magic Skin}}
+ | Center ring
+ | 4
+ | 3
+ | 30
+ | [[Status Effects|Poison]]
+ | N/A
+ |-
+ | {{i|Plum Flute}}
+ | Center ring
+ | 2
+ | 3.5
+ | 30
+ | None
+ | When the [[Baby Plum]] spawned from using Plum Flute bounces diagonally around the room, all the wisps will bounce around the room and fire tears behind themselves as well. The wisps are invulnerable while bouncing around the room.
+ |-
+ | {{i|Spin to Win}}
+ | Center ring
+ | 0.5
+ | 3
+ | 5
+ | None
+ | Generates wisps once every 0.25 seconds while in use; all wisps are destroyed when the item stops being used. Wisps other than ones made by Spin to Win will not be destroyed, but they will spin faster while it's active.
+ |-
+ | {{i|Vengeful Spirit}}
+ | Center ring
+ | Infinite
+ | 3
+ | 30
+ | None
+ | The wisps are summoned when Isaac takes damage, and Isaac can have up to 6 of them at a time. They cannot be destroyed and last for the entire floor, but do not block shots. They also deal damage equal to half of Isaac's damage per tick (7.5x Isaac's damage per second, doubled if Isaac has {{i|BFFS!}}).
+ |-
+ | {{i|Berserk!}}
+ | Center ring
+ | 10
+ | No tears
+ | No tears
+ | None
+ | N/A
+ |-
+ | {{i|Dark Arts}}
+ | Center ring
+ | 2
+ | 3
+ | 30
+ | None
+ | The wisps are summoned when Isaac kills enemies with Dark Arts, and do not persist between rooms.
+ |-
+ | {{i|Abyss}}
+ | Center ring
+ | 10
+ | No tears
+ | No tears
+ | None
+ | The number of items destroyed does not change the wisps given.
+ |-
+ | {{i|Suplex!}}
+ | Other
+ | 2
+ | 3
+ | 30
+ | None
+ | 3 wisps are summoned where Isaac lands after using Suplex; the wisps rotate around the spot Isaac landed and fire tears in the same direction Isaac does. The wisps do not persist between rooms.
+ |-
+ | {{i|Keeper's Box}}
+ | Center ring
+ | 2
+ | 3
+ | 30
+ | None
+ | Enemies killed by the wisps' tears have a 20% chance to drop a [[Coins|penny]].
+ |-
+ | {{i|Anima Sola}}
+ | Other
+ | 2
+ | 3
+ | 30
+ | None
+ | The wisps orbit the enemy that was chained and constantly shoot at them. When the enemy dies, the wisps despawn.
+ |-
+ | {{i|Gello}}
+ | Center ring
+ | 2
+ | 3
+ | 30
+ | None
+ | The wisps will orbit Gello instead of Isaac while it's active.
+ |-
+ | {{i|Decap Attack}}
+ | Other
+ | 2
+ | 3
+ | 30
+ | None
+ | A stationary wisp spawns where Isaac was when he threw his head that fires tears in the same direction Isaac does. The wisps do not persist between rooms.
+|}
+
+== Other Interactions ==
+The following items don't have unique wisps when used with {{i|Book of Virtues}}, and instead have other effects:
+* {{i|Alabaster Box}}: Spawns 8 normal wisps when used.
+* {{i|The Book of Sin}}: Spawns the wisp of {{i|Yum Heart}}, {{i|Mom's Bottle of Pills}}, {{i|Deck of Cards}}, {{i|Mr. Boom}}, {{i|Portable Slot}} (Coin wisp, x3), {{i|Bob's Rotten Head}}, {{i|Anarchist Cookbook}}, or {{i|Shoop da Whoop!}}. Shoop Da Whoop wisps will not fire lasers when Book of Sin is used. The wisp given is independent of the pickup generated.
+* {{i|Breath of Life}}: Spawns a normal wisp if Isaac takes damage from using it.
+* {{i|Clicker}}/{{i|Friend Finder}}: Spawns a random wisp.
+* {{i|D infinity}}: Spawns a normal wisp, along with the appropriate extra wisp of the die it's mimicking if the conditions for it are met.
+* {{i|D4}}/{{i|D100}}: Removes all of Isaac's wisps and gives him one random wisp for every two items rerolled. Book of Virtues will not be rerolled in the process.
+* {{i|Dead Sea Scrolls}}/{{i|Metronome}}: The wisp spawned will be based on the item it mimicked.
+* {{i|Mystery Gift}}: Spawns a random wisp. For the rest of the run, a random wisp spawns after clearing a room if the one given by the item was destroyed, including the replacement wisps given by this effect.
+* {{i|Eden's Soul}}: Spawns a random wisp. For the rest of the run, the wisp turns into a new random wisp after clearing a room, regardless of if the wisp was destroyed or not. If the wisp has no room to spawn, then it doesn't, but it continues to attempt to spawn after every room clear.
+* {{i|Genesis}}: Replaces all of Isaac's wisps with 3 normal wisps, in addition to its other effects.
+* {{i|Jar of Wisps}}: The number of wisps spawned is doubled and then increased by 1.
+* {{i|Lemegeton}}: Lets Lemegeton's wisps shoot homing tears once per second that deal 3 damage.
+* {{i|Portable Slot}}: Gives the wisps of the following items depending on the reward:
+** Coin: Portable Slot (see wisps section above)
+*** Two wisps are spawned if Portable Slot gives 2 coins.
+** Heart: {{i|Yum Heart}}
+** Bomb:{{i| Mr. Boom}}
+** Key: {{i|Dad's Key}}
+** Pill: {{i|Mom's Bottle of Pills}}
+** Black Fly: Nothing
+** Pretty Fly: {{i|Guppy's Head}} (x2-4)
+* {{i|Spindown Dice}}: Spawns an extra wisp and rerolls all of Isaac's wisps. All of the wisps will reroll into the same type of wisp.
+* {{i|Vade Retro}}: Ghosts created by enemies very slowly move and shoot tears in the same direction Isaac is shooting. The ghosts' tears deal 3.5 damage, and are fired once every second. No wisps are created when using Vade Retro. The wisps' damage are unaffected by the enemy they spawned from.
+* {{i|Void}}: Spawns the wisps of all the active items it's absorbed. Spawns no wisps by itself. Using Void on Book of Virtues will give stat upgrades instead of its normal effect, as Book of Virtues is considered a passive item.
+
+{{nav|fr=Feux follets}}
+[[Category:Mechanics]]

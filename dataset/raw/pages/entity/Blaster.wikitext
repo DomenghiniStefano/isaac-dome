@@ -1,0 +1,27 @@
+{{infobox monster
+ | dlc         = r
+ | id          = 821
+ | base hp     = 20
+ | environment = {{floor|Mines}}{{floor|Ashpit}}<br>{{room|challenge}}
+ | behavior    = Slowly wanders around and occasionally shoots {{E|Fly Bomb}}s at Isaac.
+}}
+
+The '''Blaster''' is an enemy that is exclusive to {{s|Mines}}. It is characterized by a large boulder with holes on its upper body and its lack of arms.
+
+Blasters slowly wander around the room, occasionally shooting {{E|Fly Bomb}}s at Isaac; the aim of these bombs varies between normal ones aimed directly at Isaac and predictive ones aimed where Isaac is going to be. When it shoots, the boulder on its head forms an opening for the Fly Bomb to be shot out of.
+
+Blasters cannot shoot Fly Bombs if at least 4 Fly Bombs are alive in the current room, regardless of whether or not they were spawned by Blasters.
+
+Blasters take only 25% damage from non-explosive sources. This means they have an effective 80 HP, but can be killed in a single hit by bombs, both ones placed by Isaac and ones created by the Fly Bombs the Blaster spawns.
+{{clear}}
+
+== Trivia ==
+* The [[Anti:Blaster|Blaster]] first appeared in the ''Antibirth'' mod.
+
+== Gallery ==
+<gallery>
+File:Blaster Ashpit.png|A Blaster's appearance in Ashpit.
+File:Mini wrath concept.png|Concept art for the Blaster.
+</gallery>
+
+{{nav|fr=Rocanon}}

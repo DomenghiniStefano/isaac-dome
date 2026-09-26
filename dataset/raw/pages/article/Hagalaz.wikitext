@@ -1,0 +1,71 @@
+{{header runes}}
+{{Infobox rune
+ | name        = Hagalaz
+ | type        = rune
+ | image scale = 1/10
+ | id          = 32
+ | quote       = Destruction
+ | description = Destroys all breakable obstacles in the room. Does not affect Key Blocks.
+ | unlocked by = Rune of Hagalaz
+ | recharge    = 2
+}}
+
+{{cit|ur}}
+
+== Effects ==
+* Destroys all breakable obstacles in the room.
+** Does not affect Key Blocks.
+* {{dlc+|r+}} Kills all of the following stone-related enemies:
+{{entity table | Blaster, Carrion Princess, Floast, Brainless Knight, Stoney, Cross Stoney, Stone Grimace, Vomit Grimace, Triple Grimace, Stone Eye, Constant Stone Shooter, Cross Stone Shooter, Brimstone Head, Gaping Maw, Broken Gaping Maw, Quake Grimace, Bomb Grimace, Poky, Slide, Grudge, Ball and Chain, Spikeball, Singe's Ball | collapsed = yes }}{{dlc-}}
+* {{dlc+|r+}} Has special interactions with the following stone-related enemies:
+** {{e|Host}} - Destroys and leaves behind a {{e|Red Host}}
+** {{e|Hard Host}} - Destroys and leaves behind a {{e|Red Host}}
+** {{e|Mobile Host}} - Destroys and leaves behind a {{e|Flesh Mobile Host}}
+** {{e|Knight}} - Destroys and leaves behind a {{e|Brain}}
+** {{e|Loose Knight}} - Destroys and leaves behind a {{e|Pon}}
+** {{e|Black Knight}} - Destroys and leaves behind a {{e|Pon}}
+** {{e|Floating Knight}} - Destroys and leaves behind a {{e|Brain}}
+** {{e|Bone Knight}} - Destroys and leaves behind a {{e|Brain}}
+** {{e|Rock Spider}} - Destroys and leaves behind a {{e|Spider}}
+** {{e|Tinted Rock Spider}} - Destroys and leaves behind a {{e|Soul Heart}}
+** {{e|Coal Spider}} - Destroys and leaves behind a hot coal
+** {{e|Death's Head}} - Destroys and leaves behind a {{e|Flesh Death's Head}}
+** {{e|Brimstone Death's Head}} - Destroys and leaves behind a {{e|Flesh Death's Head}}
+** {{e|Hardy}} - Destroys and leaves behind a {{e|Dip}}
+** {{e|Tuff Twins}} - Removes their armor plating
+** {{e|The Shell}} - Removes their armor plating, minus the head
+{{dlc-}}
+
+== Notes ==
+* '''Hagalaz''' cannot create bridges.
+* {{e|TNT}}s are exploded by '''Hagalaz'''' effect, but {{e|Movable TNT}}s are not.
+* {{dlc|r+}} Hosts revealed from [[Rocks#Skulls|Skulls]] will start out with their armor destroyed, as {{e|Red Host}}s.
+* {{dlc+|r+}} Enemies with no interactions that are notable exceptions: 
+** {{e|Danny}}
+** {{e|Coal Boy}}
+** {{e|Selfless Knight}}
+** {{e|Mask + Heart}}
+** {{e|Mask II + 1/2 Heart}}
+** {{e|Quakey}}
+** {{e|Cursed Death's Head}}
+** {{e|Redskull}}
+** {{e|Ultra Death Head}}
+** {{e|Wall Hugger}}
+** {{e|Carrion Queen}}
+** {{e|Great Gideon}}
+** {{e|Mask of Infamy}}
+** {{e|The Visage}}
+{{dlc-}}
+
+== Strategy ==
+* '''Hagalaz''' is best used in a room with many mushrooms, urns, or skulls, as they often drop useful resources.
+* Using '''Hagalaz''' in [[chapter 4]] can be hazardous, as [[Polyp|polyps]] can shoot projectiles in all directions when destroyed.
+
+== Interactions ==
+* {{I|Tarot Cloth}}: No effect.
+
+== Bugs ==
+{{bug|dlc=a+nr|{{p|Hagalaz}} will open {{r|Secret Room}} doors in L-shaped rooms.}}
+
+{{nav}}
+[[Category:Runes]]

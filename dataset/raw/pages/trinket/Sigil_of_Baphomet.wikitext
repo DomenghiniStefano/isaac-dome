@@ -15,7 +15,7 @@
 == Notes ==
 * If Isaac is in range of an enemy that explodes on death, the shield will not come up before Isaac takes damage from the explosion. Other on-death effects, like firing shots, are still guarded against.
 * {{dlc|nr+}} In {{r|Arcade}}s, {{machine|Blood Donation Machine}}s or {{machine|Devil Beggar}}s can be used without losing health by killing the red flies from {{machine|Shell Game}}s and gaining a shield.
-* Additionally, losing in a {{machine|Hell Game}} always spawns a red spider, the shield generated from killing it guarantees a payout for each half-heart.
+** Additionally, losing in a {{machine|Hell Game}} always spawns a red spider, the shield generated from killing it guarantees a payout for each half-heart.
 * During the fight against {{E|Ultra Greed}}, destroying {{E|Ultra Greed Coin (Spinner)|text=Ultra Greed Coins}} will not grant a shield, despite being considered enemies.
 * Destroyed {{e|Shopkeeper}}s also grant a shield.
 

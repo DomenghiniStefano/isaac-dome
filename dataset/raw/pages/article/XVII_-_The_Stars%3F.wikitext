@@ -1,0 +1,34 @@
+{{header reverse tarot cards}}
+{{Infobox card
+ | dlc         = r
+ | name        = XVII - The Stars?
+ | files name  = XVII - Inverted The Stars
+ | type        = card
+ | id          = 73
+ | quote       = May your loss bring fortune
+ | description = Removes Isaac's oldest [[passive item]] (ignoring starting items) and creates 2 random item pedestals from the current room's item pool. Does nothing if Isaac has no items.
+ | unlocked by = The Stars
+ | recharge    = 12
+}}
+
+{{cit|uc|r}}
+
+== Effects ==
+* Removes Isaac's oldest [[passive item]] (ignoring starting items) and creates 2 random item pedestals from the current room's item pool. '''Does nothing if Isaac has no items.'''
+
+== Synergies ==
+* {{I|Tarot Cloth}}: Removes 2 items and spawns 4.
+** {{I|Tarot Cloth}} + {{i|Blank Card}}: Only removes one item and spawns two when used by Blank card.
+
+== Interactions ==
+* {{i|Book of Virtues}}: Will be removed because it is also considered a passive item.
+* {{i|Damocles}}: '''XVII - The Stars?''' does not remove the passive sword item created by Damocles.
+* {{i|Eden's Blessing}}: Items granted by Eden's Blessing are considered starting items by the effect of '''XVII - The Stars?'''. Thus, only the first item picked up within the current run is removed.
+
+== In-game Footage ==
+{{#ev:youtube|b3cZ6UlSuRk}}
+
+== Bugs ==
+{{Bug|plat=Switch|Using '''XVII - The Stars?''' in {{chal|DELETE THIS}} will cause the game to crash.}}
+
+{{nav|fr=XVII - L'Étoile ?|card}}

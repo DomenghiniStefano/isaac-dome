@@ -1,0 +1,135 @@
+{{dlc|nr}}[[File:Locked Door.png]] {{dlc|r}}[[File:Library door locked.png]][[File:Library door.png]]
+
+A {{r|Library}} is a room that must be opened with a key. Items from the {{ip|Library|text=Library item pool}} can be found within, among other things, such as [[Cards and Runes|cards and/or runes]] or even enemies. Libraries have a 5% chance of appearing each floor. Certain Library layouts can only appear after unlocking certain store upgrades from donating to the {{m|Donation Machine}}.
+
+== Layouts ==
+The following room maps were made using [https://github.com/Basement-Renovator/basement-renovator Basement Renovator] for cleaner viewing.
+
+{| class="wikitable sortable mw-collapsible mw-collapsed" style="text-align: center"
+ ! scope="col" | ID
+ ! scope="col" | Shop Level
+ ! scope="col" | Weight
+ ! scope="col" class="unsortable" | Contents
+ ! scope="col" class="unsortable" | Image preview
+ |-
+ ! scope="row" | 0
+ | 0
+ | 1.0
+ | style="text-align: left" | Two [[items]] side-by-side in the center, and one [[cobweb]] each in the bottom left and top right corners.
+ | [[File:Library 0.png|200x200px]]
+ |-
+ ! scope="row" | 1
+ | 0
+ | 1.0
+ | style="text-align: left" | One item and two [[Cards and Runes|Cards]].
+ | [[File:Library 1.png|200x200px]]
+ |-
+ ! scope="row" | 2
+ | 1
+ | 1.0
+ | style="text-align: left" | Two items and one [[Batteries|Little Battery]].
+ | [[File:Library 2.png|200x200px]]
+ |-
+ ! scope="row" | 3
+ | 0
+ | 1.0
+ | style="text-align: left" | One item and two random batteries.
+ | [[File:Library 3.png|frameless|200x200px]]
+ |-
+ ! scope="row" | 4
+ | 3
+ | 1.0
+ | style="text-align: left" | Three items, surrounded by four [[Fire Places]].
+ | [[File:Library 4.png|frameless|200x200px]]
+ |-
+ ! scope="row" | 5
+ | 4
+ | 1.0
+ | style="text-align: left" | Five items, one in the center available for free, and four in the corners trapped behind [[Blocks|iron/key blocks]].
+ | [[File:Library 5.png|frameless|200x200px]]
+ |-
+ ! scope="row" | 6
+ | 1
+ | 1.0
+ | style="text-align: left" | Two items, one each in the top left and bottom right corners, and two [[Rocks|urns]], one each in the bottom left and top right corners.
+ | [[File:Library 6.png|frameless|200x200px]]
+ |-
+ ! scope="row" | 7
+ | 4
+ | 1.0
+ | style="text-align: left" | Four items, trapped behind iron blocks and [[spikes]].
+ | [[File:Library 7.png|frameless|200x200px]]
+ |-
+ ! scope="row" | 8
+ | 0
+ | {{dlc|nr}}<br>1.0<br>{{dlc|r}}<br>0.25
+ | style="text-align: left" | Four Cards.
+ | [[File:Library 8.png|frameless|200x200px]]
+ |-
+ ! scope="row" | 9
+ | 2
+ | {{dlc|nr}}<br>1.0<br>{{dlc|r}}<br>0.5
+ | style="text-align: left" | Two items, with a {{m|Key Master}} in the middle, and two cobwebs adjacent to the latter.
+ | [[File:Library 9.png|frameless|200x200px]]
+ |-
+ ! scope="row" | {{dlc|a}} 10
+ | 4
+ | {{dlc|nr}}<br>1.0<br>{{dlc|r}}<br>0.5
+ | style="text-align: left" | Five items at the top, all trapped behind iron/key blocks.
+ | [[File:Library 10.png|200x200px]]
+ |-
+ ! scope="row" | {{dlc|a}} 11
+ | 0
+ | {{dlc|nr}}<br>1.0<br>{{dlc|r}}<br>0.5
+ | style="text-align: left" | One item, surrounded by {{e|Maggot}}s.
+ | [[File:Library 11.png|200x200px]]
+ |-
+ ! scope="row" | {{dlc|a}} 12
+ | 0
+ | {{dlc|nr}}<br>1.0<br>{{dlc|r}}<br>0.25
+ | style="text-align: left" | Four Cards in the middle, next to a cross made out of rocks.
+ | {{dlcmap slideshow|{{dlcalt|[[File:Library 12 Afterbirth.png|200x200px]]|r+=[[File:Library 12.png|200x200px]]}}}}
+ |-
+ ! scope="row" | {{dlc|a}} 13
+ | 0
+ | 1.0
+ | style="text-align: left" | Two items at the bottom, surrounded by cobwebs, urns, and red Fire Places.
+ | [[File:Library 13.png|200x200px]]
+ |-
+ ! scope="row" | {{dlc|a}} 14
+ | 0
+ | 1.0
+ | style="text-align: left" | Two items: one in the middle, next to two Fire Places, and one on the right, trapped behind rocks.
+ | [[File:Library 14.png|200x200px]]
+ |-
+ ! scope="row" | {{dlc|a}} 15
+ | 0
+ | 1.0
+ | style="text-align: left" | Closet-sized room with two items.
+* {{dlc|nr}} Closet-sized room with one item.
+ | {{dlcmap slideshow|{{dlcalt|[[File:Library 15 Afterbirth.png|200x200px]]|r=[[File:Library 15.png|200x200px]]}}}} 
+ |-
+ ! scope="row" | {{dlc|r}} 16
+ | 0
+ | 0.5
+ | style="text-align: left" | Two items, a [[Bomb Bum]], and each corner has a 50% chance to be either a cobweb or a random bomb.
+ | [[File:Library 16.png|200x200px]]
+ |-
+ ! scope="row" | {{dlc|r}} 17
+ | 0
+ | 0.5
+ | style="text-align: left" | Two items and a [[Wooden Chest]].
+ | [[File:Library 17.png|200x200px]]
+ |}
+
+== Notes ==
+* {{dlc|nr}} From the outside, the library is identical in appearance to the {{r|Shop}}. One of the ways they can be distinguished is if Isaac has a mapping item such as {{i|Spelunker Hat}} or {{i|The Compass}}. Generally, the library will be closer to the starting room than the Shop.
+** {{dlc|r}} The library now has its own unique door.
+* Once all items in the [[Library (Item Pool)|Library item pool]] have been picked up, items from the [[Treasure Room (Item Pool)|Treasure Room item pool]] will appear instead.
+* Libraries are particularly useful for acquiring the {{tf|Bookworm}} transformation.
+* {{t|NO!|r}} now replaces all [[activated item]]s inside the Library with passive items, which prevents all Library items other than {{i|Book of Virtues|n}} from appearing.
+
+== Trivia ==
+* The music that plays in the Library is the same as the one played in [[ending 14]].
+
+{{nav|room|es=Biblioteca|fr=Bibliothèque}}

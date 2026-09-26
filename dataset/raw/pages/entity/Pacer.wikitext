@@ -1,0 +1,86 @@
+{{infobox monster
+ | id          = 11
+ | variant     = 1
+ | base hp     = 10
+ | environment = {{floor|Basement}}{{floor|Cellar}}{{floor|Burning Basement}}<br>{{floor|Downpour}}{{floor|Dross}}<br>{{floor|Mines}}<br>{{floor|Depths}}{{floor|Dank Depths}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}
+ | behavior    = Walks aimlessly around the room.
+}}
+
+'''Pacers''' wander around the room aimlessly and can be spawned when a {{e|Gaper}}, a {{e|Flaming Gaper}} or a {{e|Frowning Gaper}} is killed.
+__TOC__
+{{clear}}
+
+== Variations ==
+=== Gusher ===
+{{infobox monster
+ | name        = Gusher
+ | variant     = 0
+ | image name  = * {{dlc|nr|Rebirth}}
+ | base hp     = 10
+ | environment = {{floor|Basement}}{{floor|Cellar}}{{floor|Burning Basement}}<br>{{floor|Downpour}}{{floor|Dross}}
+ | behavior    = Walks aimlessly around the room, occasionally firing a short-ranged blood shot.
+}}
+
+'''Gushers''' wander around a room aimlessly, similar to Pacers, but will occasionally shoot a short ranged slow-moving, blood shot in whichever direction they happen to be moving in. They can be spawned from all the same sources as the Pacer with the addition of {{e|Leper}}s which will always spawn a grey-colored Gusher upon death.
+
+==== Notes ====
+* [[Champion|Pure Magenta Champion]] Gushers will spit two blood shots at different intervals.
+{{clear}}
+
+=== Splasher ===
+{{infobox monster
+ | name        = Splasher
+ | id          = 238
+ | image name  = * {{dlc|nr|Rebirth}}
+ | base hp     = 10
+ | stage hp    = 2
+ | environment = {{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Mines}}{{floor|Ashpit}}<br>{{floor|Necropolis}}<br>{{floor|Cathedral}}<br>{{room|mini-boss}}{{room|challenge}}
+ | behavior    = Walks aimlessly around the room, firing Ipecac shots in random directions.
+}}
+
+'''Splashers''' wander around a room and randomly shoot {{i|Ipecac}} shots.
+They can be spawned when a {{e|Gurgle}} is killed.
+
+=== Notes ===
+* {{Dlc|nr}} Splashers that are spawned from [[Champion]] Gurgles appear as Champions but Splashers that spawn naturally in layouts are never seen in champion form, even if using the "CHAM P1ON" special seed.
+{{clear}}
+
+=== Black Globin's Body ===
+{{infobox monster
+ | dlc         = a
+ | name        = Black Globin's Body
+ | image name  = * {{dlc|nr|Afterbirth}}
+ | id          = 280
+ | base hp     = 10
+ | environment = {{floor|Cellar}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Sheol}}<br>Spawned after killing a [[Black Globin]].
+ | behavior    = Walks aimlessly around the room, occasionally spawning spiders.
+}}
+
+'''Black Globin's Bodies''' walk around aimlessly, occasionally spawning a {{e|Spider}}. They can be spawned alongside a {{e|Black Globin's Head}} when a {{e|Black Globin}} is killed.
+{{clear}}
+
+=== Level 2 Gusher ===
+{{infobox monster
+ | dlc         = r
+ | name        = Level 2 Gusher
+ | id          = 850
+ | variant     = 2
+ | base hp     = 20
+ | environment = {{floor|Corpse}}<br>Spawned after killing a [[Level 2 Gaper]].
+ | behavior    = Runs aimlessly around the room, spitting up [[Small Maggot]]s.
+}}
+
+'''Level 2 Gushers''' run around a room blindly, occasionally spitting up {{e|Small Maggot}}s.
+{{clear}}{{dlc clear}}
+
+== Gallery ==
+<gallery>
+File:Pacer Downpour.png|A Pacer's appearance in Downpour.
+File:Pacer Dross.png|A Pacer's appearance in Dross.
+File:Gusher Downpour.png|A Gusher's appearance in Downpour.
+File:Gusher Dross.png|A Gusher's appearance in Dross.
+File:Gusher Scarred.png|A Gusher spawned from a Leper.
+File:Repentance Enemy Design Sketches.png|{{dlc|r}} Concept art of various enemies by Edmund McMillen, including the Level 2 Gusher.
+</gallery>
+
+{{nav|fr=Errant}}

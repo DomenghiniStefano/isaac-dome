@@ -1,0 +1,84 @@
+{{infobox version
+ | dlc   = a+
+ | date  = 2017-02-24
+ | steam = 233463050443861381
+}}
+
+== Documented changes ==
+=== Changes ===
+* The {{a|Dedication}} [[achievement]] was changed to only require 31 total [[daily challenge]]s instead of 31 consecutive daily challenges. (This change is not retroactive, meaning that any non-consecutive daily challenges you have done in the past will not count.)
+* If {{i|Ipecac}} is overwritten by another item, it will now synergize in such a way that it adds +4 damage (+4 damage in this context is as reported from the Found HUD). This scales with the {{i|Magic Mushroom}} / {{i|Cricket's Head}} multiplier and the {{i|Eve's Mascara}} multiplier. This does not scale with the {{i|Sacred Heart}} multiplier or character multipliers (like {{i|Judas' Shadow}}). For more details on how the damage calculation works, see [https://docs.google.com/spreadsheets/d/1HsZF-jXtb-zAnJH5Py_b38mv1hv0WZp323efY4ZpMW4/edit#gid=596000734 the "Formula Information" sheet of Twinge's spreadsheet].
+** The {{i|Epic Fetus}} and {{i|Ipecac}} synergy is unchanged. (It still gives +40 damage.)
+* Changed the difficulty of the Caves room with 4 Small Crazy Long Legs and 2 Mushrooms (#914) by removing 2 Small Crazy Long Legs and 2 rows of pits.
+* Replaced 2 blocks with poops in {{s|Depths}}/{{s|Necropolis}} room #226. (This room can still soft-lock you on a minimum range build.)
+* The [[Mom]] void teleport has been changed to a void portal. The conditions for it appearing are the same as they were for the teleport (5%, 10+ tear damage or 20+ items).
+* {{i|Mom's Box}} now works with trinkets consumed by {{i|Smelter}} or [[Gulp!]].
+
+=== Fixes ===
+* Fixed the bug where {{s|The Void|text=Void}} portal trap doors would not suck you in even if you were standing directly on top of them.
+* Fixed the bug where {{s|The Void|text=Void}}portal trap doors would instantly suck you in if they spawned underneath you.
+* Fixed the bug where {{s|The Void|text=Void}}portal trap doors would not properly be animated.
+* Fixed the unfair {{e|Sucker}} placement on a {{e|Monstro II}} room (#1067).
+* Fixed the incorrect {{e|Larry Jr.}} placement on the Double Trouble room with Larry Jr. and {{e|Sisters Vis}} (#3772).
+* Fixed a softlock in {{s|Catacombs}} room #328 by replacing 2 blocks with poops.
+* Fixed the bug with the {{i|Incubus}} + {{i|Cursed Eye}} synergy.
+* Fixed the bug where {{c|Eden}} could not reset with the R key.
+* Fixed the bug with the {{i|Jacob's Ladder}} + {{i|The Ludovico Technique}} + {{i|Monstro's Lung}} synergy where it would deal  damage to the player.
+* Fixed the bug where {{i|The Compass}} proc from {{t|Liberty Cap}} would permanently stay after saving and quitting and continuing (until it happened to proc again).
+* Fixed the bug with the {{i|Incubus}} + {{i|Monstro's Lung}} + {{i|Tech X}} synergy where only one Tech X would shoot from the Incubus instead of many.
+* Fixed the bug with the {{i|Incubus}} + {{i|Monstro's Lung}} + {{i|Brimstone}} synergy where only one Brimstone would shoot from the Incubus instead of many.
+* Fixed the bug with the {{i|Incubus}} + {{i|Tech X}} + {{i|Mom's Knife}} synergy where the player could spam the tear button to shoot a Tech X ring every single frame.
+* Fixed the bug with the {{i|Spear Of Destiny}} + {{i|Maw Of The Void}} synergy where the Spear Of Destiny would desync from Isaac after the Maw is activated.
+* Fixed the bug with {{i|Gimpy}} where it would completely stop working if the player had 23 luck or more.
+* Fixed the bug with {{i|Old Bandage}} where it wouldn't drop any hearts if the player has more than 29 luck.
+* Fixed the bug with the {{i|Ipecac}} + {{i|Toxic Shock}} synergy where Ipecac wouldn't increase the damage of the Toxic Shock. It is governed by the same +4 damage formula listed above.
+* Fixed the bug with {{i|The Ludovico Technique}} + {{i|Proptosis}} synergy where only the first tick of damage would properly account for the distance that the player was standing from the tear.
+* Fixed the bug with {{i|The Ludovico Technique}} + {{i|A Lump of Coal}} synergy where only the first the first tick of damage would properly account for the distance that the player was standing from the tear.
+* Fixed the bug with the {{i|Monstro's Lung}} + {{i|Marked}} synergy where Marked would act as a range down and prevent angled shots.
+* Fixed the bug where if the player has {{i|Isaac's Heart}} and uses a {{r|Sacrifice Room}}, they would not get any rewards but still take damage.
+* Fixed the bug where dropping the {{i|Book of Shadows}} for another spacebar item would kill the shield from an {{p|Algiz}} rune, {{i|Celtic Cross}}, {{i|The Polaroid}}, or {{i|Empty Vessel}}.
+* Fixed the bug where taking {{i|Tech X}} after taking {{i|Ipecac}} would not properly update your stats.
+* Fixed the bug where {{i|Breath of Life}} did not work with the {{t|Broken Remote}} trinket.
+* Fixed the bug where if a teleport card was used at the same time as exiting the room, the teleport would be canceled.
+* Fixed the bug where {{i|Experimental Treatment}} could kill {{c|???}} if he was at one soul heart remaining.
+* Fixed the bug where the {{r|Boss Rush}} would spawn the non-boss version of {{e|Gurglings}}.
+* Fixed the bug where {{e|Bomb Chest}}s did not have an icon on the minimap. (They now have a unique icon that is square.)
+* Fixed the bug where {{e|Spiked Chest}}s did not have an icon on the minimap. (They now have a unique icon that has a dark-red top and spikes.)
+* Fixed the bug where {{e|Eternal Chest}}s did not have an icon on the minimap. (They now have a unique icon that looks like a white chest.)
+* Fixed the bug where [[sack]]s did not have an icon on the minimap. (They now have a unique icon.)
+* Fixed the bug where the beam of light that leads to the {{s|Cathedral}} would fail to spawn if there were lots of explosions or tears on the screen.
+* Fixed the bug where having two {{i|Steam Sale}}s would result in free {{r|Devil Room}} and {{r|Black Market}} items.
+* Fixed the bug where if the player has {{i|The Candle}} or {{i|Red Candle}} held over their head while they attempt to leave a crawlspace, the game would soft-lock.
+* Fixed the bug with the {{i|Dr. Fetus}} + {{i|Tech X}} synergy where the ring would generate black hearts for no reason.
+* Fixed the bug with the {{i|Incubus}} + {{i|Brimstone}} + {{i|Tech X}} synergy where the Incubus would shoot a laser ring instead of a blood ring.
+* Fixed the bug with the {{i|Spear Of Destiny}} + {{i|Kidney Stone}} synergy where the spear would desync from Isaac when the Kidney Stone activated.
+* Fixed the bug where the state of {{i|Guppy's Hairball}} would be reset after saving, quitting, and continuing.
+* Fixed the bug where using {{i|Void}} to consume {{i|Breath of Life}} did not actually grant any invulnerability. Now, it functions as a 1-charge Void and a Breath of Life at the same time.
+* Fixed the bug with {{i|BBF}} in L-shaped rooms where it would phase through the wall.
+* Fixed the bug where if you selected {{e|Daddy Long Legs}} or {{e|It Lives!}} from the [[bestiary]] and went back to the stats screen, the sprites would still be visible.
+* Fixed the bug where if the player had 1 familiar, used {{i|Box of Friends}}, touched an item pedestal with another familiar, and then entered a new room, the two familiars would erroneously be stacked on top of each other.
+* Fixed the bug where you could use {{i|Glass Cannon}} to steal {{r|Devil Room}} items by using it to heal you for 1/2 of a soul heart.
+* Fixed the bug where it was possible to go into a Void portal during the "jumping into the chest" animation.
+* Fixed the bug where killing an angel spawned from a statue outside of an {{r|Angel Room}} would prevent an angel from an [[angel room]] from dropping a key piece.
+* Fixed the bug where it was possible to use {{i|We Need To Go Deeper!}} inside a crawlspace or Black Market (which had the potential to cause softlocks).
+* Fixed the bug with the {{i|Isaac's Tears}} + {{i|Brimstone}} + {{i|Chocolate Milk}} synergy where tears could be charged infinitely.
+* Fixed the bug with the {{i|Mom's Box}} + {{t|Cracked Crown}} synergy where it would not give you double stats.
+* Fixed the bug where {{e|Gurglings}} from {{e|Delirium}} or {{i|Delirious}} would show up as normal Gurglings.
+* Fixed the bug where loading a mod would not properly overwrite the floor STB files.
+* Fixed the bug where the player would be soft-locked with no bombs on the Double Trouble room with 1 {{e|Rag Man}} and 2 {{e|Rag Mega}} (#3732).
+* Fixed the bug where the items from {{i|The Book of Sin}} were unseeded.
+* Fixed the bug where bombing an angel statue and killing the angel would result in a key piece becoming unobtainable.
+* Fixed the bug where the game would crash on most versions of Linux.
+* Fixed the bug where in certain situations, getting a [[machine]] from a Reward Plate would soft-lock the game. (Machines now spawn in the center of the room.)
+* Fixed the bug where {{i|Robo-Baby 2.0}} does not unlock anymore after defeating the [[Computer Savvy]] challenge.
+* Fixed the bug where it was possible to clip through blocks and walls with explosions.
+
+== New bugs ==
+* All tear shooting buttons will automatically be released when walking into a boss room.
+* If you have any mods enabled, holding R to reset on {{c|Eden}} will not consume your Eden tokens.
+* The {{i|Incubus}} + {{i|Cursed Eye}} synergy is broken such that Incubus will quickly spam fully charged Cursed Eye shots.
+* Bombing an angel statue in a {{r|Devil Room}} will correctly cause the door to close, but there will be a graphical glitch so that it appears open.
+* If you have {{i|Incubus}} + {{i|Tech X}} + {{i|Brimstone}}, the Brimstone sound effect will incorrectly play when you shoot.
+* {{s|The Void}} portal that appears after the {{e|Mom}} fight is incorrectly textured as a {{s|Womb}} trapdoor.
+
+{{nav|version}}

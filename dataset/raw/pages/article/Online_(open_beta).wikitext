@@ -1,0 +1,95 @@
+{{page dlc|r+}}
+
+'''Online''' is an in-development mode exclusive to the Repentance DLC and PC that allows players to play Co-Op with other people on different devices. Players may choose to play with friends on Steam or be randomly matched with other players.
+
+Online mode is currently available with ''[[The Binding of Isaac: Repentance+|Repentance+]]''. The initial plan was to open the beta the first two weeks of every month but Tyrone made the decision on February 2, 2024 to shut down the beta.<ref>https://twitter.com/tyronerodriguez/status/1753273950124343484</ref>
+
+'''WARNING:''' Repentance+ online co-op is still in a beta state. It may be unstable and can sometimes corrupt your save data. Play it at your own risk. You can always turn off Repentance+ content in Steam's DLC manager, and the game keeps a backup of your pre-Repentance+ save files.
+
+== Changes ==
+Online mode uses most of the same game rules as [[Repentance Co-Op]] but with the following changes:
+* Destroying {{r|Boss Room}} items through {{i|Abyss}}, {{i|Eternal D6}}, {{c|Tainted Cain}}, {{i|Void}} etc., will no longer prevent further items from spawning.
+** Silver Treasure Room items in [[Greed Mode|Greed]]/Greedier mode behave the same as Boss Room items.
+* Co-Op Ghosts can fly over pits and obstacles, open {{e|Chest}}s and {{e|Grab Bag}}s, and pick up {{e|Penny|text=Pennies}}, {{e|Bomb}}s, and {{e|Key}}s.
+** Co-Op Ghosts have their damage reduced to 20% and their other stats are reverted to base.
+** Co-Op Ghosts can revive themselves by picking up an {{e|Eternal Heart}}.
+* Giving coins to {{m|Revive Machine}}s will revive dead players without needing to beat a boss, requiring 10 coins for the first revival.
+* When moving to another room, the door entered is closed for one second.
+* Enemies and bosses, such as {{e|Eye}}, {{e|The Bloat}}, or {{e|Gabriel}}, now have an indicator on where they will fire their laser beam in rooms larger than a regular 1x1 room.
+* Players can communicate through a chat-box or through the [[Emote Wheel]].
+* Players can restart a run if all players hold down the R button.
+* Upon successfully completing a run, all players will be sent to a [[Deathmatch]] mini-game.
+* Following a run's end, each player is given a select list of "Sins" which are titles that are given depending on the player's actions that run. The amount of times a player has earned a Sin can be checked in the Stats page.
+* Full list of Sins: {{column list | width = 30em | content =
+** '''Eternal''': Killed a [[boss]] with a ghost baby shot
+** '''Heartless''': Didn't pick up any [[Hearts|health]]
+** '''Envious''': Died to a {{m|Blood Donation Machine|text=Blood Bank}}, {{m|Devil Beggar|text=Beggar}}, or [[Devil Deal]]
+** '''Dressed Up''': [[Transformations|Transformed]] the most (minimum 2)
+** '''Prideful''': Picked up the fewest [[items]]
+** '''Savior''': [[Revive Machine|Revived]] the most allies (minimum 3)
+** '''Wrathful''': Dealt the most damage
+** '''Big Boss''': Dealt the killing blow to the most [[boss]]es (minimum 5)
+** '''Explorer''': Opened the most {{r|Secret Room}}s (minimum 3)
+** '''Expressive''': [[Emote Wheel|Emoted]] the most (minimum 10)
+** '''Gluttonous''': Took [[hearts]] while other players had significantly less health
+** '''Reckless''': Damaged other players (minimum 3)
+** '''Escape Artist''': Teleported out of a {{r|Challenge Room}}, {{r|Boss Rush}}, {{r|I AM ERROR}} Room, or {{r|Curse Room}} (minimum 2)
+** '''Gambler''': Gambled the most at a {{m|Slot Machine}}, {{m|Crane Game|text=Claw Game}}, or {{m|Shell Game|text=3 Shell Monty}} (minimum 20)
+** '''Greedy''': Picked up the most [[coins]]
+** '''Mystic''': Used the most [[Cards|tarot cards]] (minimum 5)
+** '''Pill Popper''': Took the most [[pills]] (minimum 5)
+** '''Big Spender''': Spent the most money in {{r|Shop}}s
+** '''Janitor''': Destroyed the most {{e|Poop}}s and {{e|Fire Place|text=Fires}} (minimum 10)
+** '''Lustful''': Took the most damage
+** '''Slothful''': Killed the fewest [[monsters]]
+}}
+
+== Notes ==
+* An online run's save file uses the player's who has the least unlocks completed.
+** This means that if one player is missing an unlock, then all players will be missing that unlock.
+** The {{m|Donation Machine}} uses the amount of that save file.
+** Character unlocks, such as {{c|The Lost}}'s {{i|Holy Mantle}}, are determined on a per-player basis. This includes the Holy Mantle from the white fire in {{s|Downpour}} / {{s|Dross}}.
+*** Due to a bug(?), {{c|Keeper}}'s 3rd [[Coin Heart]] and starting [[Coins|penny]] are tied to the file used.
+* When a player joins a game that is in progress, they join automatically at the start of the next floor.
+* Achievements are enabled, unless joining in the middle of a game, where a special icon will tell that achievements are disabled.
+* When waiting in a lobby in online mode, text will display stating the current status of the run and the floor that it is on. This feature was present in the beta, but removed in Repentance+'s official release. It was readded in [[V1.9.7.16|v1.9.7.16.J450]]. Texts displayed are:
+# '''Fighting [Boss] in [Floor]''': Players are fighting the boss (or boss wave, in Greed mode). Waiting players spawn after end trapdoor entry. In Greed mode, the boss isn't specified, except for Ultra Greed.
+# '''Fighting a Miniboss in [Floor]''': Players are fighting a miniboss.
+# '''Looking to the stars in [Floor]''': Players have entered a Planetarium.
+# '''Collecting treasure in [Floor]''': Players have entered a Treasure Room.
+# '''Shopping in [Floor]''': Players have entered a shop.
+# '''Shopping the black market in [Floor]''': Players have entered a black market.
+# '''Exploring [Floor]:''' Players are in any normal room.
+# '''Found a Secret in [Floor]''': Players are exploring one of the various secret rooms.
+# '''Praying to the angels/Making a deal with the devil in [Floor]''': Players have entered a devil or angel deal.
+# '''CURSED! in [Floor]''': Players have entered a cursed room.
+# '''Playing in Isaac's room in [Floor]''': Players have entered a bedroom.
+# '''Rummaging below [Floor]''': Players are in a crawlspace.
+# '''Looting the chest in [Floor]''': Players have entered a vault.
+# '''Browsing a special selection''': Players have entered the underground shop from {{i|Member Card}} (Please verify).
+# '''We used to live here...''': Players are in the special version of Home from {{i|Death Certificate}}.
+# '''Fighting wave X/10(11) in [Floor]''': Players are on a current wave in Greed (Greedier) mode.
+# '''Fighting devil wave in [Floor]''': Players are on the devil wave in Greed mode.
+# '''Playing challenge in [Floor]''': Players are participating in a challenge.
+* [[Victory Lap]]s don't disable achievements.
+* This mode adds a new pause menu only found while playing online.
+** Completing a mark in Normal/Greed Mode turns the bloody border around the mark blue, and completing it in Hard Mode/Greedier Mode turns it purple.
+
+== Gallery ==
+<gallery>
+File:Online lobby completion marks.png|The blue and purple completion marks found online, alongside the normal single player completion marks.
+</gallery>
+
+== Trivia ==
+* Doors closing behind players was added in a later build of the online beta to prevent people fighting over where to go.
+* During early beta testing, options usually available in single player are unavailable when playing online, such as switching modes and entering seeds.
+** Prior to the beta’s closure, modes were rotated in each beta. December 2023’s beta was Normal Mode only, January 2024 was Hard Mode only, and February 2024 was Greed Mode.
+*** It was technically possible to play in Hard Mode in the December 2023 beta due to [[Victory Lap]]s.
+** There was an option to switch modes, however it was unable to be interacted with.
+
+== References ==
+{{Reflist}}
+
+{{nav|version|fr=Multijoueur en ligne (beta ouverte)}}
+
+[[Category:Modes]]

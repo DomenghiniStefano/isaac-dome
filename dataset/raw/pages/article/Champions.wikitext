@@ -1,0 +1,1258 @@
+{{#ev:youtube|https://youtu.be/2TpnBPt5HTQ}}
+
+Some monsters can spawn as a '''Champion''' which deviates in coloration and size. The champion's coloration/size denotes which peculiar behaviors and traits it will exhibit. Champions will generally drop a [[pickup]] (coinciding with the color of the champion) when killed on normal difficulty. However, in hard mode, the drop rate is reduced to 33%, while in [[Greed mode]], champions won't drop pickups at all.
+
+__TOC__
+
+Most champions have a visual 15% size increase, inflict full heart damage regardless of [[chapter]], and have double the health of a normal monster. Champions are generally regarded as more dangerous than common monsters.
+
+{{dlc|na+}}Champions always deal contact damage, regardless of what monster they are (e.g. a common Mulligan will not deal contact damage, but champion versions will).
+
+The identifying scheme for champion qualities is as follows. The rarities are only a rough estimate and may be different in stages where some varieties are not generated:
+{| class="wikitable mw-collapsible sortable" style="text-align: center"
+ |-
+ !ID
+ ! class="unsortable" |Appearance
+ ! class="unsortable" |Effect
+ ! class="unsortable" |Drop
+ ! class="unsortable" |Rarity
+ ! class="unsortable" |Notes
+ |-
+ |0
+ |
+[[file:Champion Red.png|50px]]<br>Red
+ | style="text-align: left" |×2.6 amount of HP.
+ |
+{{e|Red Heart}}
+ |Common
+ |
+ |-
+ |1
+ |
+[[file:Champion Yellow.png|50px]]<br>Yellow
+ | style="text-align: left" |Increased movement speed.
+
+{{dlc|r}} ×1.5 amount of HP.
+ |
+{{e|Lil' Battery|text=Battery}}
+ |Common
+ |
+{{dlc|r}} Doesn't appear until entering {{mode|normal|hard}}{{s|Caves}} and its alts, or {{mode|greed|greedier}}{{s|Depths}} and its alts in [[Greed mode]].
+ |-
+ |2
+ |
+[[file:Champion Green.png|50px]]<br>Green
+ | style="text-align: left" |Leaves [[green creep]] as it walks.
+ |
+[[Pill]]
+ |Common
+ |
+ |-
+ |3
+ |
+[[file:Champion Orange.png|50px]]<br>Orange
+ | style="text-align: left" |Attacks cause Isaac to drop {{e|Penny|text=pennies}} (like {{E|Greed}} or a {{E|Hanger}}).
+
+The number of pennies dropped ranges from 1-3, also taking away 2-4 pennies in total respectively. No pennies are dropped if Isaac has none.
+ |1-3 {{e|Penny|text=Coins}}
+
+{{dlc|nr}} The coins will appear stacked on each other and can be picked up all at once.
+ |Around 2× rarer than common champions.
+ |
+ |-
+ |4
+ |
+[[file:Champion Dark Blue.png|50px]]<br>Dark Blue
+ | style="text-align: left" |Decreased speed.
+ |3 [[Blue Fly|Blue Flies]]
+ |Around 2× rarer than common champions.
+ |
+ |-
+ |5
+ |
+[[file:Champion Dark Green.png|50px]]<br>Dark Cyan
+ | style="text-align: left" |Explodes when killed.
+ |
+{{e|Bomb}}
+ |Common
+ |
+ |-
+ |6
+ |
+[[file:Champion Solid White.png|50px]]<br>White
+ | style="text-align: left" |Invincible until all other enemies are killed.
+
+If there is more than one invincible champion in the room, they ignore themselves in order to prevent a softlock.
+ |
+{{e|Eternal Heart}}
+ |{{dlc|nr}}Around 10× rarer than common champions.<br/>{{dlc|r}}Around 20× rarer than common champions.
+ |Doesn't appear until entering {{mode|normal|hard}}{{s|Depths}} and its alts, or {{mode|greed|greedier}}{{s|Sheol}} in [[Greed mode]].
+ |-
+ |7
+ |
+[[file:Champion Gray.png|50px]]<br>Gray
+ | style="text-align: left" |x0.66 health, decreased speed.
+ |
+{{e|Key}}
+ |Common
+ |
+ |-
+ |8
+ |
+[[file:Champion Transparent White.png|50px]]<br>Translucent
+ | style="text-align: left" |Projectiles become [[spectral]], and it ignores and passes through all [[obstacle]]s, including pits, when pathfinding and moving.
+ |
+{{e|Locked Chest}}
+
+{{dlc|r}} Small chance to drop a {{e|Mega Chest|n}} instead.
+ |Around 10× rarer than common champions.
+ |Doesn't appear until entering {{mode|normal|hard}}{{s|Depths}} and its alts, or {{mode|greed|greedier}}{{s|Sheol}} in [[Greed mode]].
+ |-
+ |9
+ |
+[[file:Champion Black.png|50px]]<br>Black
+ | style="text-align: left" |Fades in and out of visibility, like {{e|Nulls}}.
+ |
+{{e|Red Chest}}
+ |Around 10× rarer than common champions.
+ |Doesn't appear until entering {{mode|normal|hard}}{{s|Depths}} and its alts, or {{mode|greed|greedier}}{{s|Sheol}} in [[Greed mode]].
+ |-
+ |10
+ |
+[[file:Champion Pink.png|50px]]<br>Magenta
+ | style="text-align: left" |Periodically shoots short-ranged blood shots, like {{e|Gusher}}s.
+ |Nothing
+ |Common
+ |
+ |-
+ |11
+ |
+[[file:Champion Purple.png|100px]]<br>Violet
+ | style="text-align: left" |Pulls Isaac and his shots towards itself, like a {{e|Gaping Maw}}.
+ |Random [[trinket]]
+ |Around 10× rarer than common champions.
+ |Doesn't appear until entering {{mode|normal|hard}}{{s|Depths}} and its alts, or {{mode|greed|greedier}}{{s|Sheol}} in [[Greed mode]].<br/>{{dlc|r}} If killed while [[petrification|gold-petrified]] (i.e. {{i|Midas' Touch}}), the trinket it drops is guaranteed to be [[Golden Trinket|golden]].
+ |-
+ |12
+ |
+[[file:Champion Dark Red.png|50px]]<br>Dark Red
+ | style="text-align: left" |Collapses into a flesh pile upon death and regenerates if not finished off (like a {{e|Globin}}).
+ |
+{{e|Double Heart}}
+ |Around 2× rarer than common champions.
+ |
+ |-
+ |13
+ |
+[[file:Champion Light Blue.png|50px]]<br>Light Blue
+ | style="text-align: left" |Releases blood shots in 8 directions when killed.
+ |{{e|Half Red Heart}}
+ |Common
+ |
+ |-
+ ! colspan="6" |{{dlc|a}} '''Afterbirth'''
+ |-
+ |14
+ |
+[[file:Champion Camouflage.png|50px]]<br>Camouflage
+ | style="text-align: left" |The enemy blends into the background and briefly becomes visible when damaged.
+ |
+[[Rune]] or a random card if runes/soul stones haven't been unlocked.
+ |Around 4× rarer than common champions.
+ |
+ |-
+ |15
+ |
+[[file:Champion Pulsing Green.gif|50px]]<br>Pulsing Green
+ | style="text-align: left" |Splits into two copies of itself upon death.
+ |2 normal versions of itself
+ |Around 4× rarer than common champions.
+ |
+ |-
+ |16
+ |
+[[file:Champion Pulsing Gray.gif|50px]]<br>Pulsing Gray
+ | style="text-align: left" |Repels Isaac's shots when it pulses.
+ |Nothing
+ |Around 4× rarer than common champions.
+ |
+ |-
+ |17
+ |
+[[file:Champion Light White.png|65px]]<br>Light White
+ | style="text-align: left" |Has {{dlc|nr}} 1-2 {{e|Eternal Fly| text=Eternal Flies}} / {{dlc|r}} 1 Eternal Fly circling it. Spawns another {{e|Attack Fly}} upon death.
+ |
+{{e|Attack Fly}}
+ |Around 4× rarer than common champions.
+ |
+ |-
+ |18
+ |
+[[file:Gaper.png|22px]]<br>Small
+ | style="text-align: left" |x0.66 health, increased speed and pitch of sound effects. 50% smaller both visually and collision-wise, making them more difficult to hit. Small champions' shots do not deal increased damage.
+ |
+[[One Makes You Small]] pill at 1/5th of difficulty-based drop rate.
+ |Around 4× rarer than common champions.
+ |The pill is forced into rotation even if it was not included yet, changing all other pills matching its color into [[One Makes You Small]] pills.
+ |-
+ |19
+ |
+[[file:Gaper.png|65px]]<br>Large
+ | style="text-align: left" |3× health, slightly decreased speed and decreased pitch of sound effects. Visually 50% larger, though collision remains the same. Deals two full hearts of damage.
+ |
+[[One Makes You Larger]] pill at 1/5th of difficulty-based drop rate.
+ |Around 4× rarer than common champions.
+ |The pill is forced into rotation even if it was not included yet, changing all other pills matching its color into [[One Makes You Larger]] pills.
+ |-
+ ! colspan="6" |{{dlc|a+}} '''Afterbirth+'''
+ |-
+ |20
+ |
+[[file:Champion Pulsing Red.gif|50px]]<br>Pulsing Red
+ | style="text-align: left" |All other enemies in the room regenerate health at the rate of 20HP per second while this enemy is alive.
+
+Other healing champions in the room cannot be healed.
+ |
+{{e|Red Heart}}
+ |Around 10× rarer than common champions.
+ |Doesn't appear until entering {{mode|normal|hard}}{{s|Depths}} and its alts, or {{mode|greed|greedier}}{{s|Sheol}} in [[Greed mode]].
+
+{{E|Bishop}}s cannot be healed by this champion.
+ |-
+ |21
+ |
+[[file:Champion Pulsating.gif|65px]]<br>Pulsating
+ | style="text-align: left" | Spawns an {{e|Attack Fly}} whenever it takes damage, with a short cooldown between spawns. One champion can only have a max of 5 alive at once.
+ |4-6 [[Blue Fly|Blue Flies]]
+ |Around 10× rarer than common champions.
+ |Doesn't appear until entering {{mode|normal|hard}}{{s|Depths}} and its alts, or {{mode|greed|greedier}}{{s|Sheol}} in [[Greed mode]].
+ |-
+ |22
+ |
+[[file:Champion Crown.png|50px]]<br>Crown
+ | style="text-align: left" | 6× health. All enemies in the room that are not champions will turn yellow while the crowned enemy is alive. The affected enemies will drop {{e|Lil' Battery|text=Batteries}} like yellow champions upon dying, but otherwise have no extra health, speed, or damage.
+ |2-3 random pickups
+ |Around 10× rarer than common champions.
+ |Doesn't appear until entering {{mode|normal|hard}}{{s|Depths}} and its alts, or {{mode|greed|greedier}}{{s|Sheol}} in [[Greed mode]].
+ |-
+ |23
+ |
+[[file:Champion Skull.png|50px]]<br>Skull
+ | style="text-align: left" | Produces a {{i|The Necronomicon}} effect upon death. Deals two full hearts of damage.
+ |
+{{i|The Necronomicon}} effect
+ |Around 10× rarer than common champions.
+ |Doesn't appear until entering {{mode|normal|hard}}{{s|Depths}} and its alts, or {{mode|greed|greedier}}{{s|Sheol}} in [[Greed mode]].
+ |-
+ ! colspan="6" |{{dlc|r}} '''Repentance'''
+ |-
+ |24
+ |
+[[file:Champion Brown.png|50px]]<br>Brown
+ | style="text-align: left" | Trails {{e|Poop}}s behind it as it walks.
+
+The poop can drop pickups after leaving and re-entering the room.
+ |Nothing
+ |Around 10× rarer than common champions.
+ |Doesn't appear until entering {{mode|normal|hard}}{{s|Depths}} and its alts, or {{mode|greed|greedier}}{{s|Sheol}} in [[Greed mode]].
+ |-
+ |25
+ |
+[[file:Champion Rainbow.gif|50px]]<br>Rainbow
+ | style="text-align: left" | Combines the effects of multiple champion types.
+* Large: 3× health.
+* Dark Yellow: increased movement speed.
+* Strong Lime Green: leaves green damaging creep on the ground.
+* Light White: has a circling {{e|Eternal Fly}}.
+* Pure Magenta: fires an occasional blood shot in the direction it's facing.
+* Mostly Pure Violet: pulls Isaac and his shots towards it.
+* Dark Cyan: explode on death.
+* Very Light Blue: releases blood shots in 8 directions on death.
+ |A {{e|Penny|text=Coin}}, a {{e|Bomb}}, a {{e|Key}}, a {{e|Red Heart|text=heart}}, a [[pill]], a [[card]], and a [[trinket]].
+ |Around 20× rarer than common champions.
+ |Doesn't appear until entering {{mode|normal|hard}}{{s|Depths}} and its alts, or {{mode|greed|greedier}}{{s|Sheol}} in [[Greed mode]].
+ |}
+
+The chances for Champion monsters to appear are noted in the table below:
+{| class="wikitable mw-collapsible mw-collapsed sortable" style="text-align: center"
+ |-
+ !Modifiers
+ !Normal mode {{dlc|r}} and Hard mode
+ !
+{{dlc|nr}} Hard mode
+ !
+{{s|The Void}}
+ |-
+ |Base chance
+ |5%
+ |20%
+ | 75%
+ |-
+ |
+{{i|Champion Belt}}
+ |20%
+ | 35%
+ | 75%
+ |-
+ |
+{{t|Purple Heart}}
+ |10%
+ | 40%
+ | 100%
+ |-
+ |
+{{t|Purple Heart}} + {{i|Mom's Box}}
+
+{{dlc|r}} [[Golden Trinket|Golden]] {{t|Purple Heart}}
+ |20%
+ | 80%
+ | 100%
+ |-
+ |
+{{dlc|r}} [[Golden Trinket|Golden]] {{t|Purple Heart}} + {{i|Mom's Box}}
+ |30%
+ | style="color: #fff3" |N/A
+ | 100%
+ |-
+ |
+{{i|Champion Belt}} + {{t|Purple Heart}}
+ |40%
+ | 70%
+ | 100%
+ |-
+ |
+{{i|Champion Belt}} + {{t|Purple Heart}} + {{i|Mom's Box}}
+
+{{dlc|r}}{{i|Champion Belt}} + [[Golden Trinket|Golden]] {{t|Purple Heart}}
+ |80%
+ | 100%
+ |100%
+ |-
+ |
+{{dlc|r}} {{i|Champion Belt}} + [[Golden Trinket|Golden]] {{t|Purple Heart}} + {{i|Mom's Box}}
+ |100%
+ | style="color: #fff3" |N/A
+ | 100%
+ |}
+
+* {{i|Champion Belt}} adds 15% to the base champion chance. This has no effect in {{s|The Void}}.
+* {{t|Purple Heart}} doubles the champion chance, and stacks with Champion's Belt.
+** Each copy of Purple Heart adds 2 to the multiplier (e.g. 6× with 3 Purple Hearts, 20× with 10 Purple Hearts). {{i|Mom's Box}} and {{dlc|r}}[[Golden Trinket|Golden]] {{t|Purple Heart}} count as 1 extra copy.
+*** {{dlc|nr}} Holding multiple Purple Hearts doesn't increase champion chance. Only Mom's Box increases Purple Heart's multiplier.
+
+=== Champion Enemies ===
+<details>
+<summary>The following enemies are able to spawn as Champions</summary>
+{{column list | width = 15em | content =
+* {{e|Adult Leech}}
+* {{e|Angelic Baby}}
+* {{e|Baby}}
+* {{e|Baby Begotten}}
+* {{e|Baby Long Legs}}
+* {{e|Big Bony}}
+* {{e|Black Bony}}
+* {{e|Black Globin}}
+* {{e|Black Globin's Body}}
+* {{e|Black Globin's Head}}
+* {{e|Black Goat}}
+* {{e|Black Knight}}
+* {{e|Black Maw}}
+* {{e|Blaster}}
+* {{e|Blind Creep}}
+* {{e|Blister}}
+* {{e|Bloaty}}
+* {{e|Blood Cultist}}
+* {{e|Bloodshot Eye}}
+* {{e|Blubber}}
+* {{e|Blue Boil}}
+* {{e|Blue Conjoined Fatty}}
+* {{e|Blue Gaper}}
+* {{e|Blurb}}
+* {{e|Boil}}
+* {{e|Bombgagger}}
+* {{e|Bone Fly}}
+* {{e|Bone Knight}}
+* {{e|Bony}}
+* {{e|Boom Fly}}
+* {{e|Bouncer}}
+* {{e|Brain}}
+* {{e|Bubbles}}
+* {{e|Butt Slicker}}
+* {{e|Camillo Jr.}}
+* {{e|Candler}}
+* {{e|Carrion Princess}}
+* {{e|Charger}}
+* {{e|Chubber}}
+* {{e|Clickety Clack}}
+* {{e|Cloggy}}
+* {{e|Clot}}
+* {{e|Clotty}}
+* {{e|Coal Boy}}
+* {{e|Cod Worm}}
+* {{e|Cohort}}
+* {{e|Conjoined Fatty}}
+* {{e|Conjoined Spitty}}
+* {{e|Crackle}}
+* {{e|Crazy Long Legs}}
+* {{e|Crispy}}
+* {{e|Cultist}}
+* {{e|Cursed Globin}}
+* {{e|Cyclopia}}
+* {{e|Cyst}}
+* {{e|Dank Charger}}
+* {{e|Dank Globin}}
+* {{e|Danny}}
+* {{e|Dead Meat}}
+* {{e|Deep Gaper}}
+* {{e|Dople}}
+* {{e|Double Vis}}
+* {{e|Dragon Fly}}
+* {{e|Dragon Fly X}}
+* {{e|Drowned Boom Fly}}
+* {{e|Drowned Charger}}
+* {{e|Drowned Hive}}
+* {{e|Dukie}}
+* {{e|Dump}}
+* {{e|Dump Head}}
+* {{e|Dust}}
+* {{e|Eggy}}
+* {{e|Evil Twin}}
+* {{e|Evis}}
+* {{e|Eye}}
+* {{e|Faceless}}
+* {{e|Fat Bat}}
+* {{e|Fat Sack}}
+* {{e|Fatty}}
+* {{e|Fire Worm}}
+* {{e|Fistuloid}}
+* {{e|Flagellant}}
+* {{e|Flaming Fatty}}
+* {{e|Flaming Gaper}}
+* {{e|Flaming Hopper}}
+* {{e|Flesh Maiden}}
+* {{e|Flesh Mobile Host}}
+* {{e|Floast}}
+* {{e|Floating Knight}}
+* {{e|Fly Bomb}}
+* {{e|Fly Trap}}
+* {{e|Fred}}
+* {{e|Frowning Gaper}}
+* {{e|Full Fly}}
+* {{e|Gaper}}
+* {{e|Gas Dwarf}}
+* {{e|Gasbag}}
+* {{e|Gazing Globin}}
+* {{e|Globin}}
+* {{e|Goat}}
+* {{e|Greed Gaper}}
+* {{e|Grilled Clotty}}
+* {{e|Grilled Gyro}}
+* {{e|Gurgle}}
+* {{e|Gurgling}}
+* {{e|Gush}}
+* {{e|Gusher}}
+* {{e|Gut}}
+* {{e|Guts}}
+* {{e|Gutted Fatty}}
+* {{e|Gyro}}
+* {{e|Half Sack}}
+* {{e|Hanger}}
+* {{e|Hard Host}}
+* {{e|Hardy}}
+* {{e|Hive}}
+* {{e|Holy Bony}}
+* {{e|Holy Eye}}
+* {{e|Holy Leech}}
+* {{e|Holy Mulligan}}
+* {{e|Hopper}}
+* {{e|Horf}}
+* {{e|Host}}
+* {{e|I.Blob}}
+* {{e|Imp}}
+* {{e|Ink}}
+* {{e|Kamikaze Leech}}
+* {{e|Keeper}}
+* {{e|Kineti}}
+* {{e|Knight}}
+* {{e|Leaper}}
+* {{e|Leech}}
+* {{e|Leper}}
+* {{e|Level 2 Charger}}
+* {{e|Level 2 Fly}}
+* {{e|Level 2 Gaper}}
+* {{e|Level 2 Gusher}}
+* {{e|Level 2 Horf}}
+* {{e|Level 2 Spider}}
+* {{e|Lil' Haunt}}
+* {{e|Loose Knight}}
+* {{e|Lump}}
+* {{e|Maggot}}
+* {{e|Mama Fly}}
+* {{e|Mama Guts}}
+* {{e|Maw}}
+* {{e|Maze Roamer}}
+* {{e|Meatball}}
+* {{e|Mega Clotty}}
+* {{e|MemBrain}}
+* {{e|Migraine}}
+* {{e|Ministro}}
+* {{e|Mobile Host}}
+* {{e|Mole}}
+* {{e|Morningstar}}
+* {{e|Mulliboom}}
+* {{e|Mulligan}}
+* {{e|Mullighoul}}
+* {{e|Mulligoon}}
+* {{e|Mushroom}}
+* {{e|Necro}}
+* {{e|Nest}}
+* {{e|Night Crawler}}
+* {{e|Nulls}}
+* {{e|One Tooth}}
+* {{e|Oob}}
+* {{e|Pacer}}
+* {{e|Pale Fatty}}
+* {{e|Para-Bite}}
+* {{e|Peeping Fatty}}
+* {{e|Planetoid}}
+* {{e|Poison Mind}}
+* {{e|Polty}}
+* {{e|Pon}}
+* {{e|Pooter}}
+* {{e|Poot Mine}}
+* {{e|Prey}}
+* {{e|Psychic Horf}}
+* {{e|Psychic Maw}}
+* {{e|Psy Tumor}}
+* {{e|Pustule}}
+* {{e|Quad Revenant}}
+* {{e|Quakey}}
+* {{e|Rage Creep}}
+* {{e|Ragling}}
+* {{e|Red Boom Fly}}
+* {{e|Red Host}}
+* {{e|Red Maw}}
+* {{e|Revenant}}
+* {{e|Rotten Gaper}}
+* {{e|Rotty}}
+* {{e|Round Worm}}
+* {{e|Roundy}}
+* {{e|Sack}}
+* {{e|Scarred Double Vis}}
+* {{e|Scarred Guts}}
+* {{e|Scarred Para-Bite}}
+* {{e|Selfless Knight}}
+* {{e|Sick Boom Fly}}
+* {{e|Skinny}}
+* {{e|Slog}}
+* {{e|Small Baby Long Legs}}
+* {{e|Small Crazy Long Legs}}
+* {{e|Snapper}}
+* {{e|Soul Sucker}}
+* {{e|Spit}}
+* {{e|Spitty}}
+* {{e|Splasher}}
+* {{e|Sticky Leaper}}
+* {{e|Sub Horf}}
+* {{e|Sucker}}
+* {{e|Super Pooter}}
+* {{e|Swarmer}}
+* {{e|Tar Boy}}
+* {{e|The Thing}}
+* {{e|Ticking Spider}}
+* {{e|Trite}}
+* {{e|Tube Worm}}
+* {{e|Tumor}}
+* {{e|Twitchy}}
+* {{e|Ulcer}}
+* {{e|Unborn}}
+* {{e|Vis}}
+* {{e|Vis Fatty}}
+* {{e|Vis Versa}}
+* {{e|Walking Boil}}
+* {{e|Walking Gut}}
+* {{e|Walking Sack}}
+* {{e|Wall Creep}}
+* {{e|Whipper}}
+* {{e|Wraith}}
+* {{e|Wrinkly Baby}}
+}}
+</details>
+* The {{e|Angelic Baby (small)}}, {{e|Eternal Fly Bomb}}s, the bones thrown by a {{e|Big Bony}}, {{e|Festering Guts}}, {{e|Exorcist}}s, {{e|Fanatic}}s, {{e|Fetal Demon}}s, and the shadow Chargers spawned by {{i|My Shadow}} are flagged to be able to spawn as Champions, but this is impossible to see without mods, as they aren't placed in any room layouts normally.
+
+<details>
+<summary>The following enemies cannot spawn as Champions under any circumstances</summary>
+{{column list | width = 15em | content =
+* {{e|Army Fly}}
+* {{e|Attack Fly}}
+* {{e|Begotten}}
+* {{e|Big Corn}}
+* {{e|Big Spider}}
+* {{e|Bishop}}
+* {{e|Bloodfly}}
+* {{e|Brainless Knight}}
+* {{e|Brimstone Death's Head}}
+* {{e|Brownie Corn}}
+* {{e|Bulb}}
+* {{e|Buttlicker}}
+* {{e|Coal Spider}}
+* {{e|Corn}}
+* {{e|Cross Stoney}}
+* {{e|Cursed Death's Head}}
+* {{e|Dank Death's Head}}
+* {{e|Dank Squirt}}
+* {{e|Dart Fly}}
+* {{e|Dead Isaac}}
+* {{e|Death's Head}}
+* {{e|Dinga}}
+* {{e|Dip}}
+* {{e|Drip}}
+* {{e|Dusty Death's Head}}
+* {{e|Elleech}}
+* {{e|Embryo}}
+* {{e|Eternal Fly}}
+* {{e|Fissure}}
+* {{e|Flesh Death's Head}}
+* {{e|Fly}}
+* {{e|Grub}}
+* {{e|Henry}}
+* {{e|Homunculus}}
+* {{e|Hush Fly}}
+* {{e|Level 2 Willo}}
+* {{e|Lil Portal}}
+* {{e|Mask + Heart}}
+* {{e|Mask II + 1/2 Heart}}
+* {{e|Mom's Dead Hand}}
+* {{e|Mom's Hand}}
+* {{e|Moter}}
+* {{e|Mr. Maw}}
+* {{e|Mr. Mine}}
+* {{e|Mr. Red Maw}}
+* {{e|Needle}}
+* {{e|Nerve Ending}}
+* {{e|Nerve Ending 2}}
+* {{e|Pasty}}
+* {{e|Poofer}}
+* {{e|Portal}}
+* {{e|Red Ghost}}
+* {{e|Redskull}}
+* {{e|Ring Fly}}
+* {{e|Rock Spider}}
+* {{e|Shady}}
+* {{e|Small Leech}}
+* {{e|Small Maggot}}
+* {{e|Soy Creep}}
+* {{e|Spider}}
+* {{e|Splurt}}
+* {{e|Squirt}}
+* {{e|Stoney}}
+* {{e|Strider}}
+* {{e|Swarm}}
+* {{e|Swarm Spider}}
+* {{e|Swinger}}
+* {{e|Tainted Boom Fly}}
+* {{e|Tainted Faceless}}
+* {{e|Tainted Hopper}}
+* {{e|Tainted Mole}}
+* {{e|Tainted Mulligan}}
+* {{e|Tainted Pooter}}
+* {{e|Tainted Round Worm}}
+* {{e|Tainted Soy Creep}}
+* {{e|Tainted Spitty}}
+* {{e|Tainted Sub Horf}}
+* {{e|Tainted Sucker}}
+* {{e|Tainted Tube Worm}}
+* {{e|Tinted Rock Spider}}
+* {{e|Willo}}
+* {{e|Wizoob}}
+}}
+</details>
+
+=== Champion Bosses ===
+[[Boss]]es are also capable of being champions, but these work much differently from regular monsters as champions. Every champion boss is unique, with individualized adjustments to the attacks and AI of the boss in question, usually specializing in certain aspects of the boss's repertoire to make them harder to deal with. A champion boss may or may not have increased or decreased health, speed, and/or size in comparison to the default version of the boss, depending on the champion in question. Champion bosses are usually not strictly stronger than the default versions of the bosses, having trade-offs with certain stats being lowered and/or certain attacks being weaker or outright inaccessible in exchange for other stats and/or attacks being stronger.
+
+Because every champion boss is unique, the following table contains a brief summation of how they differ from the default bosses. Additional details (including any changes to the differences in versions prior to Repentance) can be found in the pages for each individual boss.
+
+<details>
+<summary>The following bosses have Champion versions and are able to spawn as Champions</summary>
+{| class="wikitable"
+!Boss!!Champion
+!Entity ID
+!Champion Differences
+|-
+| rowspan="2" |[[File:Boss Monstro portrait.png|thumb|{{E|Monstro}}]]||[[File:Boss Monstro dark grey ingame.png|thumb|Grey]]
+|20.0.1
+|
+* 15% larger.
+* 25% more HP (250 → 312.5).
+* Fires projectile volleys more frequently.
+* Unable to jump off-screen.
+|-
+|[[File:Boss Monstro red ingame.png|thumb|Red]]
+|20.0.2
+|
+* Always spawns in pairs.
+* 20% smaller.
+* 55% less HP (250 → 112.5).
+|-
+| rowspan="2" |[[File:Boss Gemini portrait.png|thumb|{{E|Gemini}}]]
+|[[File:Boss Gemini cyan ingame.png|thumb|Blue]]
+|79.0.1
+|
+* Suture shoots [[homing]] tears.
+* Contusion will drop a {{e|Soul Heart}} if killed last.
+|-
+|[[File:Boss Gemini green ingame.png|thumb|Green]]
+|79.0.2
+|
+* Suture and Contusion are detached from one another upon spawning.
+* If Contusion is killed last, it will usually drop a {{e|Red Heart}} or {{e|Half Red Heart}}, but will rarely drop any other type of [[heart]] instead ({{e|Soul Heart|text=Soul}}, {{e|Bone Heart|text=Bone}}, {{E|Gold Heart|text=Gold}}, etc).
+|-
+| rowspan="2" |[[File:Boss Dingle portrait.png|thumb|{{E|Dingle}}]]
+|[[File:Boss Dingle black ingame.png|thumb|{{dlc|a}}Black]]
+|261.0.1
+|
+* Summons {{E|Spider|text=Spiders}} instead of {{E|Dip|text=Dips}}.
+* Fires 8 shots in the cardinal directions rather than 3 towards Isaac.
+* The dash attack covers more distance at greater speed, but is only executed once before Dingle rests.
+|-
+|[[File:Boss Dingle red ingame.png|thumb|{{dlc|a}}Red]]
+|261.0.2
+|
+* Creates a {{E|Red Poop}} instead of summoning Dips.
+* The dash attack covers less distance at lower speed, but is executed four times in succession before Dingle rests.
+|-
+| rowspan="2" |[[File:Boss Gurglings portrait.png|thumb|{{E|Gurglings}}]]
+|[[File:Boss Gurglings black ingame.png|thumb|{{dlc|a}}Black]]
+|237.1.1
+|
+* Spawns {{e|Troll Bomb|text=Troll Bombs}} at regular intervals instead of leaving a trail of [[red creep]] while charging.
+** The Gurglings only take 5 damage from their own Troll Bombs' explosions (unless they are [[petrification|petrified]], in which case they take the full damage).
+* Cannot spawn {{E|Attack Fly|text=Attack Flies}}.
+|-
+|[[File:Boss Gurglings yellow ingame.png|thumb|{{dlc|a}}Yellow]]
+|237.1.2
+|
+* 3 Gurglings spawn instead of 2.
+* Movement speed is increased.
+* Cannot produce Creep.
+* Cannot spawn Attack Flies.
+|-
+| rowspan="2" |[[File:Boss Larry Jr. portrait.png|thumb|{{E|Larry Jr.}}]]
+|[[File:Boss Larry Jr. blue ingame.png|thumb|Blue]]
+|19.0.1
+|
+* 15% larger.
+* 45% more HP per segment (22 → 31.9).
+* Reduced movement speed.
+* Does not create [[poop]].
+* Has shared health between his body segments, meaning that dealing damage to one segment will deal a percentage of the damage to the other segments.
+* Always drops a {{e|Soul Heart}} upon death.
+|-
+|[[File:Boss Larry Jr. green ingame.png|thumb|Green]]
+|19.0.2
+|
+* Will occasionally shoot a projectile in the direction he's facing, pausing momentarily as he does so.
+|-
+| rowspan="2" |[[File:Boss The Duke of Flies portrait.png|thumb|{{E|The Duke of Flies}}]]
+|[[File:Boss The Duke of Flies green ingame.png|thumb|Green]]
+|67.0.1
+|
+* Spawns {{E|Moter|text=Moters}} instead of large {{E|Attack Fly|text=Attack Flies}}.
+* Fires blood shots in eight directions upon spreading orbiting Attack Flies.
+* Can spread orbiting Attack Flies at any time, and will not necessarily wait to have a certain number in orbit.
+|-
+|[[File:Boss The Duke of Flies orange ingame.png|thumb|Orange]]
+|67.0.2
+|
+* 15% larger.
+* 25% more HP (110 → 137.5).
+* Spawns {{E|Sucker|text=Suckers}} instead of large Attack Flies.
+|-
+| rowspan="2" |[[File:Boss Widow portrait.png|thumb|{{E|Widow}}]]
+|[[File:Boss Widow black ingame.png|thumb|Black]]
+|100.0.1
+|
+* Spawns {{E|Big Spider|text=Big Spiders}} (with half HP) instead of {{E|Sack|text=Sacks}}.
+* Creates [[black creep]] instead of [[white creep]].
+* Fires 6 projectiles in all directions instead of spawning {{E|Spider|text=Spiders}}.
+|-
+|[[File:Boss Widow pink ingame.png|thumb|Pink]]
+|100.0.2
+|
+* Spawns {{E|Boil|text=Boils}} instead of Sacks.
+* Spawns {{E|Attack Fly|text=Attack Flies}} instead of Spiders.
+* Jump speed increased.
+* 25% smaller.
+* 10% less HP (130 → 117).
+|-
+| rowspan="2" |[[File:Boss The Haunt portrait.png|thumb|{{E|The Haunt}}]]
+|[[File:Boss The Haunt phase1 black ingame.png|thumb|{{dlc|a}}Black<br />(Phase 1)]][[File:Boss The Haunt phase2 black ingame.png|thumb|{{dlc|a}}Black<br />(Phase 2)]]
+|260.0.1
+|
+* Only 2 {{E|Lil' Haunt|text=Lil' Haunts}} are present in Phase 1.
+* In Phase 2, the {{I|Brimstone}} attack is replaced with spawning 1-2 Spiders.
+|-
+|[[File:Boss The Haunt phase1 pink ingame.png|thumb|{{dlc|a}}Pink<br />(Phase 1)]][[File:Boss The Haunt phase2 pink ingame.png|thumb|{{dlc|a}}Pink<br />(Phase 2)]]
+|260.0.2
+|
+* Only 1 Lil' Haunt is present in Phase 1.
+* 50% less HP (200 → 100) in Phase 2.
+* In Phase 2, the Brimstone laser is bifurcated (i.e. 2 lasers are fired at once, forming a V shape) and the lasers bounce off of walls once.
+* The blood shot attack fires 8 shots instead of 5 and is aimed directly towards Isaac rather than straight down.
+|-
+|[[File:Boss Pin portrait.png|thumb|{{E|Pin}}<ref group="Champion Boss Notes">The Grey Pin champion was unused due to a coding oversight up until <u>Repentance</u>.</ref>]]
+|[[File:Boss Pin dark grey ingame.png|thumb|{{dlc|r}}Grey]]
+|62.0.1
+|
+* 15% larger.
+* 25% more HP (100 → 125).
+* Explosive {{I|Ipecac}} projectile is replaced with a radial burst of 6 spiraling projectiles.
+* Fires 6 projectiles instead of 4 when jumping.
+|-
+|[[File:Boss Famine portrait.png|thumb|{{E|Famine}}]]
+|[[File:Boss Famine blue ingame.png|thumb|Blue<br />(Phase 1)]][[File:Boss Famine blue2 ingame.png|thumb|Blue<br />(Phase 2)]]
+|63.0.1
+|
+* Charges more often and veers towards Isaac (similar to the {{E|Dark One}}). He can do this attack regardless of whether Isaac is to his sides or not.
+* Shoots six bullets in all directions instead of spawning {{E|Pooter|text=Pooters}}.
+* Triple shot attack in Phase 2 is replaced with a {{E|Monstro}}-esque cluster of bullets, with reduced shot speed compared to default Famine's triple shot.
+* Will always drop a {{e|Soul Heart}} upon death.
+|-
+| rowspan="2" |[[File:Boss Little Horn portrait.png|thumb|{{E|Little Horn}}]]
+|[[File:Boss Little Horn black ingame.png|thumb|{{dlc|a+}}Black]]
+|404.0.1
+|
+* Does not attack with [[Pitfall]]s, {{e|Troll Bomb|text=Troll Bombs}}, or {{e|Mega Troll Bomb|text=Mega Troll Bombs}}, but fires {{E|Dark Ball|text=Dark Balls}} more frequently.
+* Will not create Troll Bombs during the chain teleport maneuver.
+|-
+|[[File:Boss Little Horn orange ingame.png|thumb|{{dlc|a+}}Orange]]
+|404.0.2
+|
+* Spits out an orange Troll Bomb instead of a Dark Ball.
+** This orange Troll Bomb deals contact damage and leaves a patch of fire (similar to {{I|Hot Bombs}}) that cannot damage Little Horn.
+** This orange Troll Bomb is also used in place of regular Troll Bombs in all attacks that involve throwing Troll Bombs into Pitfalls, including the chain teleport maneuver.
+* Takes 1 damage every time it spawns a bomb.
+* Does not use Mega Troll Bombs.
+|-
+| rowspan="2" |[[File:Boss Rag Man portrait.png|thumb|{{E|Rag Man}}]]
+|[[File:Boss Rag Man black ingame.png|thumb|{{dlc|a+}}Black]]
+|405.0.1
+|
+* The head roll attack spawns 1-2 {{E|Spider|text=Spiders}} instead of a {{E|Ragling}}.
+* Fires a spray of 3 arcing bullets instead of resurrecting Raglings.
+|-
+|[[File:Boss Rag Man red ingame.png|thumb|{{dlc|a+}}Red]]
+|405.0.2
+|
+* Does not fire homing bullets, and instead constantly creates and revives Raglings.
+* The Raglings spawned by this version have the same red color as Rag Man and have 19.8 HP (34% less than the normal ones).
+|-
+|[[File:Boss Fistula portrait.png|thumb|{{E|Fistula}}]]
+|[[File:Boss Fistula large dark grey ingame.png|thumb|Grey<br/>(large)]][[File:Boss Fistula medium dark grey ingame.png|thumb|Grey<br/>(medium)]][[File:Boss Fistula small dark grey ingame.png|thumb|Grey<br/>(small)]]
+|71.0.1
+|
+* 15% larger.
+* 25% more HP per chunk (60 → 75 for full size, 15 → 18.75 for medium chunks, 8 → 10 for small chunks).
+* Spawns {{E|Boom Fly|text=Boom Flies}} instead of {{E|Charger|text=Chargers}} (still with only 15 HP) upon destruction of the smallest chunks.
+** Despite Boom Flies being capable of [[flight|flying]] over pits, spawning a Boom Fly still fails if a Fistula chunk is over a pit upon being destroyed.
+* Reduced movement speed.
+* The largest chunks split into three medium Fistulas instead of 4, similar to {{E|Teratoma}}.
+|-
+| rowspan="2" |[[File:Boss Chub portrait.png|thumb|{{E|Chub}}]]
+|[[File:Boss Chub cyan ingame.png|thumb|Blue]]
+|28.0.1
+|
+* 15% larger.
+* 15% slower.
+* 25% more HP (350 → 437.5).
+* Spawns {{E|Boil|text=Boils}} instead of Chargers.
+** These Boils are colored orange, but function identically to the regular version.
+|-
+|[[File:Boss Chub orange ingame.png|thumb|Orange]]
+|28.0.2
+|
+* 15% smaller.
+* 15% faster.
+* 15% less HP (350 → 297.5).
+* Spawns {{E|Spitty|text=Spitties}} instead of Chargers.
+|-
+|[[File:Boss Gurdy portrait.png|thumb|{{E|Gurdy}}]]
+|[[File:Boss Gurdy dark greyish green ingame.png|thumb|Green]]
+|36.0.1
+|
+* 11% larger.
+* Does not fire projectiles.
+* Spawns monsters more rapidly.
+|-
+| rowspan="2" |[[File:Boss Mega Fatty portrait.png|thumb|{{E|Mega Fatty}}]]
+|[[File:Boss Mega Fatty brown ingame.png|thumb|{{dlc|a}}Brown]]
+|264.0.1
+|
+* 15% more HP (600 → 690).
+* Cannot use the vomit attack.
+* Creates rock waves instead of [[red creep]] when landing from the high jump (similarly to {{E|The Cage}}).
+|-
+|[[File:Boss Mega Fatty red ingame.png|thumb|{{dlc|a}}Red]]
+|264.0.2
+|
+* 33% smaller.
+* 10% less HP (600 → 540).
+* Shoots 6 bullets in all directions instead of leaving Red Creep when landing from the high jump.
+* Creates {{E|Red Poop}} instead of spawning {{E|Dip|text=Dips}}.
+* Vomit attack launches 4 streams of projectiles (similar to attacks used by {{e|Mom's Heart}} / {{E|It Lives!}}).
+** {{dlc|nr+}}The vomit attack is launched with a massive tear height (to the point where the projectiles are likely to fly over Isaac's head).
+|-
+| rowspan="2" |[[File:Boss Mega Maw portrait.png|thumb|{{E|Mega Maw}}]]
+|[[File:Boss Mega Maw black ingame.png|thumb|{{dlc|a}}Black]]
+|262.0.1
+|
+* Spawns 1-2 {{E|Spider|text=Spiders}} instead of a {{E|Hopper}} with its monster-spitting attack.
+** The Spiders are launched directly at Isaac instead of simply being deposited below Mega Maw.
+* Does not use any flame attacks.
+|-
+|[[File:Boss Mega Maw red ingame.png|thumb|{{dlc|a}}Red]]
+|262.0.2
+|
+* Does not spawn monsters.
+* Does not use any flame attacks, replacing them with an entirely different set of blood shot attacks.
+* All attacks do 1 full heart of damage.
+|-
+| rowspan="2" |[[File:Boss Gurdy Jr. portrait.png|thumb|{{E|Gurdy Jr.}}]]
+|[[File:Boss Gurdy Jr. blue ingame.png|thumb|Blue]]
+|99.0.1
+|
+* Always spawns in pairs.
+* 42% smaller.
+* 45% less HP (250 → 137.5).
+* Only uses the charging attack.
+* Always drops a {{e|Soul Heart}} on death.
+|-
+|[[File:Boss Gurdy Jr. gold ingame.png|thumb|Yellow]]
+|99.0.2
+
+|
+* 15% larger.
+* 25% more HP (250 → 312.5).
+* Spawns {{E|Super Pooter|text=Super Pooters}} instead of {{E|Pooter|text=Pooters}}.
+* Does not fire any projectiles.
+|-
+| rowspan="2" |[[File:Boss Peep portrait.png|thumb|{{E|Peep}}]]
+|[[File:Boss Peep no eyes dark cyan ingame.png|thumb|Cyan]]
+|68.0.1
+|
+* Spawns with both eyes detached (like {{E|The Bloat}}).
+|-
+|[[File:Boss Peep two eyes yellow ingame.png|thumb|Yellow]]
+|68.0.2
+|
+* 15% smaller.
+* Movement speed increased.
+* Creates a constant trail of [[Creep#Yellow Creep|yellow creep]].
+|-
+| rowspan="2" |[[File:Boss The Husk portrait.png|thumb|{{E|The Husk}}]]
+|[[File:Boss The Husk dark grey ingame.png|thumb|Black]]
+|67.1.1
+|
+* 15% larger.
+* 56% more HP (150 → 234).
+* Reduced movement speed.
+* Spawns {{E|Boom Fly|text=Boom Flies}} instead of {{E|Spider|text=Spiders}} and {{E|Attack Fly|text=Attack Flies}}.
+** Boom Fly explosions deal full damage to The Husk.
+* Spawns 1-2 additional Boom Flies on death.
+|-
+|[[File:Boss The Husk red ingame.png|thumb|Red]]
+|67.1.2
+|
+* 25% smaller.
+* 25% faster.
+* Does not spawn enemies; only fires blood shots.
+* Spawns 1-2 {{E|Red Boom Fly|text=Red Boom Flies}} on death.
+|-
+| rowspan="3" |[[File:Boss The Hollow portrait.png|thumb|{{E|The Hollow}}]]
+|[[File:Boss The Hollow dark grey ingame.png|thumb|Black]]
+|19.1.1
+
+|
+* 15% larger.
+* Reduced movement speed.
+* 25% more HP per segment (26 → 32.5).
+* Each segment that isn't the head spawns a Boom Fly on death.
+** The head spawns a Boom Fly only if killed immediately after spawning.
+* Doesn't create any [[poop]].
+|-
+|[[File:Boss The Hollow gold ingame.png|thumb|Yellow]]
+|19.1.2
+|
+* 15% larger.
+* 25% more HP per segment (26 → 32.5).
+* Each segment that isn't the head drops a {{e|Penny}} on death.
+** The head drops a Penny only if killed immediately after spawning.
+|-
+|[[File:Boss The Hollow green ingame.png|thumb|Green]]
+|19.1.3
+
+|
+* Each segment that isn't the head may spawn a {{E|Charger}} on death.
+** The head can spawn a Charger only if killed immediately after spawning.
+* Occasionally pauses movement to fire a spread of 3 projectiles in the direction it's facing.
+|-
+|[[File:Boss Carrion Queen portrait.png|thumb|{{E|Carrion Queen}}]]
+|[[File:Boss Carrion Queen pink ingame.png|thumb|Pink]]
+|28.2.2
+|
+* Slightly increased movement speed.
+* 100% more HP (350 → 700).
+* Spawns small {{E|Mask + Heart|text=Hearts}} instead of creating {{E|Red Poop|text=Red Poops}}.
+** These Hearts have 28 HP.
+** Carrion Queen loses 40 HP whenever one of its Hearts dies.
+* Does not change behavior to bounce diagonally around the room below half health.
+|-
+| rowspan="2" |[[File:Boss Polycephalus portrait.png|thumb|{{E|Polycephalus}}]]
+|[[File:Boss polycephalus red ingame.png|thumb|{{dlc|a}}Red]]
+|269.0.1
+|
+* Summons {{E|Para-Bite|text=Para-Bites}} instead of {{E|Round Worm|text=Round Worms}}.
+** {{dlc|na+}}Has a chance to spawn {{e|Scarred Para-Bite}}s if fought in the {{s|Scarred Womb}}.
+* All projectile attacks are replaced with a ring of 6 projectiles.
+|-
+|[[File:Boss polycephalus pink ingame.png|thumb|{{dlc|a}}Pink]]
+|269.0.2
+|
+* Always spawns in pairs.
+* 50% less HP (200 → 100).
+* Does not spawn Round Worms.
+|-
+|[[File:Boss Pestilence portrait.png|thumb|{{E|Pestilence}}]]
+|[[File:Boss Pestilence grey ingame.png|thumb|Grey<br/>(Phase 1)]][[File:Boss Pestilence grey2 ingame.png|thumb|Grey<br/>(Phase 2)]]
+|64.0.1
+
+|
+* Leaves a trail of [[white creep]] instead of [[green creep]].
+* Shoots 6 projectiles in all directions instead of a single {{I|Ipecac}} shot.
+* Spawns {{E|Trite|text=Trites}} instead of {{E|Charger|text=Chargers}} or {{E|Spitty|text=Spitties}}.
+** Cannot have more than 3 Trites active at any given time.
+* Spawns {{E|Spider|text=Spiders}} instead of {{E|Attack Fly|text=Attack Flies}} in Phase 2.
+|-
+|[[File:Boss The Stain portrait.png|thumb|{{E|The Stain}}]]
+|[[File:Boss The Stain grey ingame.png|thumb|{{dlc|a+}}Grey]]
+|401.0.1
+|
+* Spawns Round Worms instead of Chargers.
+** 2 Round Worms are spawned at a time.
+** Cannot have more than 3 Round Worms active at any given time.
+** Spawns Round Worms more frequently than the default version spawns Chargers.
+* Cannot use any bullet barrage attacks.
+|-
+|[[File:Boss The Frail portrait.png|thumb|{{E|The Frail}}]]
+|[[File:Boss The Frail black ingame.png|thumb|{{dlc|a+}}Black]]
+|62.2.1
+|
+* Spawns in Phase 2.
+* Total HP is 66.6% of the default version (300 → 200).
+** This is the same amount of HP that the default version has in Phase 2 (Phase 1 has 100 HP).
+|-
+|[[File:Boss The Forsaken portrait.png|thumb|{{E|The Forsaken}}]]
+|[[File:Boss The Forsaken black ingame.png|thumb|{{dlc|a+}}Black]]
+|403.0.1
+|
+* Spawns {{E|Black Bony|text=Black Bonies}} instead of {{E|Bony|text=Bonies}}.
+* Spawns 4 {{E|Dank Death's Head|text=Dank Death's Heads}} instead of firing rotating Brimstone beams.
+** The Forsaken becomes invulnerable for 1 second if no Dank Death's Heads were alive when it uses this attack.
+** If any Dank Death's Heads are alive, this attack cannot be used, and The Forsaken will pause momentarily before summoning a Black Bony.
+|-
+|[[File:Boss Monstro II portrait.png|thumb|{{E|Monstro II}}]]
+|[[File:Boss Monstro II red ingame.png|thumb|Red]]
+|43.0.1
+|
+* 20% smaller.
+* Movement speed increased.
+* Attack speed increased.
+* Spawns 2 {{E|Sucker|text=Suckers}} at a time instead of 4.
+* {{dlc|r}}10% less HP (632.5 → 569.25).
+|-
+| rowspan="2" |[[File:Boss The Cage portrait.png|thumb|{{E|The Cage}}]]
+|[[File:Boss The Cage green ingame.png|thumb|{{dlc|a}}Green]]
+|265.0.1
+|
+* Periodically creates a puddle of [[green creep]].
+* Never spawns {{E|Vis}}.
+|-
+|[[File:Boss The Cage pink ingame.png|thumb|{{dlc|a}}Pink]]
+|265.0.2
+|
+* Always spawns in pairs.
+* 50% less HP (800 → 400).
+* 50% smaller.
+* Never uses the jump attack.
+|-
+| rowspan="2" |[[File:Boss The Gate portrait.png|thumb|{{E|The Gate}}]]
+|[[File:Boss The Gate black ingame.png|thumb|{{dlc|a}}Black]]
+|263.0.1
+|
+* Has 25% more HP (500 → 625).
+* Spawns {{E|Big Spider|text=Big Spiders}} instead of {{E|Leaper|text=Leapers}}.
+** Big Spiders are flung directly at Isaac instead of landing at random locations in the room.
+** Big Spiders, like Leapers, can be harmed by The Gate's blood shots.
+* Does not use the Brimstone attack.
+|-
+|[[File:Boss The Gate red ingame.png|thumb|{{dlc|a}}Red]]
+|263.0.2
+|
+* Does not spawn monsters.
+* Uses a different set of attacks.
+* All attacks do 1 full heart of damage.
+|-
+|[[File:Boss The Bloat portrait.png|thumb|{{E|The Bloat}}]]
+|[[File:Boss The Bloat green ingame.png|thumb|Green]]
+|68.1.1
+|
+* Fires 2 Ipecac shots instead of blood shots when performing a small jump.
+** Fires 3 Ipecac shots when jumping off-screen.
+* Spawns 2 Chargers when creating large Creep puddles.
+* Creates Green Creep instead of Red Creep.
+|-
+|[[File:Boss Mask of Infamy portrait.png|thumb|{{E|Mask of Infamy}}]]
+|[[File:Boss Mask of Infamy black ingame.png|thumb|Black]]
+|97.0.1
+|
+* 15% larger.
+* The heart has 25% more HP (200 → 250).
+* The heart shoots 4 [[homing]] shots in a cross formation.
+* The mask's behavior doesn't change after the heart is killed.
+|-
+|[[File:Boss War portrait.png|thumb|{{E|War}}]]
+|[[File:Boss War phase1 dark grey ingame.png|thumb|Grey<br/>(Phase 1)]][[File:Boss War phase2 dark grey ingame.png|thumb|Grey<br/>(Phase 2)]]
+|65.0.1
+|
+* 15% larger.
+* 25% more HP (500 → 625).
+* Summons 2 {{e|Mega Troll Bomb|text=Mega Troll Bombs}} (rather than 5 regular {{e|Troll Bomb|text=Troll Bombs}}) when he ascends off-screen.
+* Drops a single Troll Bomb behind him every time he charges.
+* Shoots 6 projectiles in all directions at the start of Phase 2 and every time he gets knocked down during Phase 2.
+|-
+|[[File:Boss Brownie portrait.png|thumb|{{E|Brownie}}]]
+|[[File:Boss Brownie black ingame.png|thumb|{{dlc|a+}}Black]]
+|402.0.1
+|
+* Spawns up to 3 {{E|Charger|text=Chargers}} at once instead of {{E|Brownie Corn|text=Brownie Corns}}.
+* Creates [[black creep]] instead of [[brown creep]].
+* Turns into 2 {{E|Dank Squirt|text=Dank Squirts}} instead of a weakened {{E|Dangle}} at sufficiently low health.
+|-
+| rowspan="2" |[[File:Boss Mom portrait.png|thumb|{{e|Mom}}<ref group="Champion Boss Notes">The version of Mom fought in {{S|Mausoleum}} II/{{S|Gehenna}} II is not considered a Champion version and is not described here. (In fact, Mom ''cannot'' spawn as a Champion in Mausoleum or Gehenna.)</ref>]]
+|[[File:Boss Mom foot blue ingame.png|thumb|280x280px|Blue]]
+|45.0.1
+|
+* Has 23% more health (645 → 793.4).
+* Spawns a different set of enemies:
+** {{e|Spider}}
+** {{e|Big Spider}}
+** {{e|Trite}}
+** {{e|Buttlicker}}
+** {{e|Keeper}}
+|-
+|[[File:Boss Mom foot red ingame.png|thumb|280x280px|Red]]
+|45.0.2
+|
+* Does not summon enemies.
+* Stomps faster and more frequently.
+** The stomp is used repeatedly, only pausing when Mom sticks her eye or hand out from one of the Boss Doors in her room.
+* Fires a spread of 3 blood shots from her eye when it sticks out of a Boss Door in her room.
+|-
+|[[File:Boss Death portrait.png|thumb|{{E|Death}}]]
+|[[File:Boss Death phase1 black ingame.png|thumb|Black<br/>(Phase 1)]][[File:Boss Death phase2 black ingame.png|thumb|Black<br/>(Phase 2)]]
+|66.0.1
+|
+* 15% larger.
+* 25% more HP (450 → 562.5).
+* In Phase 1, spawns {{E|Kamikaze Leech|text=Kamikaze Leeches}} instead of {{E|Death Scythe|text=Death Scythes}}.
+* Does not use {{I|The Hourglass}}.
+* In Phase 2, summons {{E|Red Maw|text=Red Maws}} instead of {{E|Knight|text=Knights}}.
+|}
+</details>
+
+<details>
+<summary>The following bosses have no Champion versions and cannot spawn as Champions under any circumstances</summary>
+{{column list | width = 15em | content =
+* {{E|The Fallen}}
+* {{E|Headless Horseman}}
+* {{E|Steven}}
+* {{E|Blighted Ovum}}
+* {{E|Dangle}}
+* {{e|Turdlings}}
+* {{E|Baby Plum}}
+* {{E|Lil Blub}}
+* {{E|Wormwood}}
+* {{E|The Rainmaker}}
+* {{E|Min-Min}}
+* {{E|Clog}}
+* {{E|Colostomia}}
+* {{E|Turdlet}}
+* {{E|C.H.A.D.}}
+* {{E|The Wretched}}
+* {{E|Dark One}}
+* {{E|Big Horn}}
+* {{E|Rag Mega}}
+* {{E|Bumbino}}
+* {{E|Reap Creep}}
+* {{E|Tuff Twins}}
+* {{E|Hornfel}}
+* {{E|Great Gideon}}
+* {{E|The Pile}}
+* {{E|The Shell}}
+* {{E|Singe}}
+* {{E|Clutch}}
+* {{E|Loki}}
+* {{E|Gish}}
+* {{E|The Adversary}}
+* {{E|Sisters Vis}}
+* {{E|The Siren}}
+* {{E|The Heretic}}
+* {{E|The Visage}}
+* {{E|The Horny Boys}}
+* {{E|Blastocyst}}
+* {{E|Mama Gurdy}}
+* {{E|Scolex}}<ref group="Champion Boss Notes">Scolex actually ''does'' have a champion version (specifically a black version) that is 15% larger, 15% slower, and has 25% more HP (300 → 375), but it is hard-coded to never spawn in <u>Repentance</u>.</ref>
+* {{E|Mr. Fred}}
+* {{E|Lokii}}
+* {{E|Daddy Long Legs}}
+* {{E|Triachnid}}
+* {{E|Teratoma}}
+* {{E|The Matriarch}}
+* {{E|Conquest}}
+* {{e|Mom's Heart}}<ref group="Champion Boss Notes">The version of Mom's Heart fought in {{s|Mausoleum|r}} II/{{s|Gehenna|r}} II with the [[Knife Piece 1|Knife]] [[Knife Piece 2|Pieces]] is not considered a Champion version and is not described here.</ref>
+* {{E|It Lives!}}
+* {{E|Hush}}
+* {{E|Rotgut}}
+* {{E|Chimera}}
+* {{E|The Scourge}}
+* {{E|Mother}}
+* {{E|Satan}}
+* {{E|Isaac}}
+* {{E|The Lamb}}
+* {{E|???}}
+* {{E|Mega Satan}}
+* {{E|Ultra Greed}}
+* {{e|Delirium}}
+* {{E|Dogma}}
+* {{E|Ultra Famine}}
+* {{E|Ultra Pestilence}}
+* {{E|Ultra War}}
+* {{E|Ultra Death}}
+* {{E|The Beast}}
+}}
+</details>
+
+=== Notes ===
+<references group="Champion Boss Notes" />
+
+== Bugs ==
+{{bug|dlc=a+|{{e|The Frail}}'s black champion is intended to spawn in the second phase with 30% more HP (390), but the second phase is coded to always spawn at 66.6% HP (200) total.|}}
+{{bug|dlc=a+|The Crown champion is intended to turn every other enemy in the room into a Yellow champion, but this doesn't work due to the enemy trying this after every enemy spawns, failing to give the champion's effects.|}}
+
+== Gallery ==
+<gallery>
+File:ChampionColours.jpg|Concept art for the champion versions of the {{e|Nest}}.
+</gallery>
+
+{{nav|fr=Élites}}

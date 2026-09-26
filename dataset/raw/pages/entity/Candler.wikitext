@@ -1,0 +1,18 @@
+{{infobox monster
+ | dlc         = r
+ | name        = Candler
+ | id          = 833
+ | base hp     = 25
+ | environment = {{floor|Mausoleum}}<br>{{floor|Cathedral}}<br>{{room|challenge}}
+ | behavior    = Flies around the room and propels itself by spawning flames.
+}}
+
+'''Candlers''' are an enemy added in ''[[The Binding of Isaac: Repentance]]''. They fly around the room, bouncing off walls, and spawn flames beneath them.
+
+Sometimes, they can spawn alongside {{E|The Haunt}}.
+
+== Trivia ==
+* {{dlc|r}}The [[Anti:Candler|Candler]] first appeared in the ''Antibirth'' mod.
+* Candlers resemble {{E|Lil' Haunt}}s with the face of The Haunt when it is in its second phase.
+
+{{nav|fr=Chandelle}}

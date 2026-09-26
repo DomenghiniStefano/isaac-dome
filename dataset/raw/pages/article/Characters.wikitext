@@ -1,0 +1,126 @@
+{{header characters}}
+{{disambig msg|the main player character|the additional multiplayer characters|Babies|non-player characters|NPCs}}
+
+There are 34 playable '''characters''' in ''[[The Binding of Isaac: Rebirth]]'', with 11 available in the base game and 23 available in the DLCs. Five of these characters ({{c|Isaac}}, {{c|Magdalene}}, {{c|Cain}}, {{c|Judas}}, and {{c|???}}) came with the original ''The Binding of Isaac'', while two additional characters ({{c|Eve}} and {{c|Samson}}) were added later. Eve was added in ''The Binding of Isaac''<nowiki/>'s Halloween Update, while Samson was added in the ''Wrath of the Lamb'' expansion. ''Rebirth'' contains four new characters ({{c|Azazel}}, {{c|Lazarus}}, {{c|Eden}}, and {{c|The Lost}}).
+
+{{dlc|a}} ''[[The Binding of Isaac: Afterbirth]]'' adds one new character ({{c|Lilith}}), plus one more character via an update ({{c|Keeper}}).
+
+{{dlc|a+}} ''[[The Binding of Isaac: Afterbirth †]]'' adds one character ({{c|Apollyon}}), plus one more secret character ({{c|The Forgotten}}) added via a [[Booster Pack]].
+
+{{dlc+|r}} ''[[The Binding of Isaac: Repentance]]'' adds two characters: {{c|Bethany}} and {{c|Jacob and Esau}}.
+
+''Repentance'' also adds alternate [[Tainted character|Tainted versions]] of all 17 characters. Tainted characters have their own set of completion marks and corresponding unlocks, however they only have a single unlock for completing both {{r|Boss Rush}} and {{e|Hush}}, and one altogether for beating {{e|Isaac}}, {{e|???}}, {{e|Satan}}, and {{e|The Lamb}}.{{dlc-}}
+
+''Each character's progress can be gauged by checking their [[completion mark]]s.''
+
+{{Character Tables}}
+
+== Unlocking ==
+Each character is unlocked by accomplishing a certain task in the game. The unlock requirements are as follows:
+{| class="wikitable"
+ ! Character !! Unlock requirement
+ |-
+ | {{c|Isaac}} || None; unlocked by default
+ |-
+ | {{c|Magdalene}} || {{achievement unlock|Magdalene}}
+ |-
+ | {{c|Cain}} || {{achievement unlock|Cain}}
+ |-
+ | {{c|Judas}} || {{achievement unlock|Judas}}
+ |-
+ | {{c|???}} || {{achievement unlock|???}}
+ |-
+ | {{c|Eve}} || {{achievement unlock|Eve}}
+ |-
+ | {{c|Samson}} || {{achievement unlock|Samson}}
+ |-
+ | {{c|Azazel}} || {{achievement unlock|Azazel}}
+ |-
+ | {{c|Lazarus}} || {{achievement unlock|Lazarus}}
+ |-
+ | {{c|Eden}} || {{achievement unlock|Eden}}
+ |-
+ | {{c|The Lost}} || {{achievement unlock|The Lost}}
+ |-
+ | {{dlc+|a}} {{c|Lilith}} || {{achievement unlock|Lilith}}{{dlc-}}
+ |-
+ | {{dlc+|a}} {{c|Keeper}} || {{achievement unlock|Keeper}}{{dlc-}}
+ |-
+ | {{dlc+|a+}} {{c|Apollyon}} || {{achievement unlock|Apollyon}}{{dlc-}}
+ |-
+ | {{dlc+|a+}} {{c|The Forgotten}} || {{achievement unlock|The Forgotten}}{{dlc-}}
+ |-
+ | {{dlc+|r}} {{c|Bethany}} || {{achievement unlock|Bethany}}{{dlc-}}
+ |-
+ | {{dlc+|r}} {{c|Jacob and Esau}} || {{achievement unlock|Jacob and Esau}}{{dlc-}}
+ |-
+ | {{dlc+|r}} {{c|Tainted Isaac}} || {{achievement unlock|The Broken}}{{dlc-}}
+ |-
+ | {{dlc+|r}} {{c|Tainted Magdalene}} || {{achievement unlock|The Dauntless}}{{dlc-}}
+ |-
+ | {{dlc+|r}} {{c|Tainted Cain}} || {{achievement unlock|The Hoarder}}{{dlc-}}
+ |-
+ | {{dlc+|r}} {{c|Tainted Judas}} || {{achievement unlock|The Deceiver}}{{dlc-}}
+ |-
+ | {{dlc+|r}} {{c|Tainted ???}} || {{achievement unlock|The Soiled}}{{dlc-}}
+ |-
+ | {{dlc+|r}} {{c|Tainted Eve}} || {{achievement unlock|The Curdled}}{{dlc-}}
+ |-
+ | {{dlc+|r}} {{c|Tainted Samson}} || {{achievement unlock|The Savage}}{{dlc-}}
+ |-
+ | {{dlc+|r}} {{c|Tainted Azazel}} || {{achievement unlock|The Benighted}}{{dlc-}}
+ |-
+ | {{dlc+|r}} {{c|Tainted Lazarus}} || {{achievement unlock|The Enigma}}{{dlc-}}
+ |-
+ | {{dlc+|r}} {{c|Tainted Eden}} || {{achievement unlock|The Capricious}}{{dlc-}}
+ |-
+ | {{dlc+|r}} {{c|Tainted Lost}} || {{achievement unlock|The Baleful}}{{dlc-}}
+ |-
+ | {{dlc+|r}} {{c|Tainted Lilith}} || {{achievement unlock|The Harlot}}{{dlc-}}
+ |-
+ | {{dlc+|r}} {{c|Tainted Keeper}} || {{achievement unlock|The Miser}}{{dlc-}}
+ |-
+ | {{dlc+|r}} {{c|Tainted Apollyon}} || {{achievement unlock|The Empty}}{{dlc-}}
+ |-
+ | {{dlc+|r}} {{c|Tainted Forgotten}} || {{achievement unlock|The Fettered}}{{dlc-}}
+ |-
+ | {{dlc+|r}} {{c|Tainted Bethany}} || {{achievement unlock|The Zealot}}{{dlc-}}
+ |-
+ | {{dlc+|r}} {{c|Tainted Jacob}} || {{achievement unlock|The Deserter}}{{dlc-}}
+|}
+
+== Trivia ==
+* One common theory (which was [[edmundm:97038438355|confirmed]] by Edmund) is that all characters are different forms of Isaac himself. This theory suggests that every character is a creation of Isaac's imagination which he assumes the personality and appearance of when playing as them. Most characters represent different issues that Isaac believes he has, while ??? is Isaac after dying by suffocation inside [[The Chest]], Azazel is who Isaac sees himself as, and The Lost is Isaac's wandering soul (which can be seen upon dying).
+** {{dlc|a}} Additionally, Keeper is Isaac's desiccated corpse, as evidenced by [[Ending 18]].
+** {{dlc|a+}} The Forgotten could be Isaac's skeleton shown in [[Ending 17]] and [[Ending 20]].
+** {{Dlc|r}} This theory is also confirmed by the cutscene before fighting [[The Beast]], in which Isaac briefly turns into The Lost, The Forgotten, and ??? as he grows angel wings.
+* The original 4 characters were based on D&D classes and tarot suits,<ref>[https://www.tumblr.com/edmundmcmillen/85288070630/if-you-consider-judas-to-be-the-wizard-class-of?source=share Edmund's Tumblr blog, May 10th 2014]</ref> being:
+** Isaac = fighter / swords
+** Cain = thief / pentacles 
+** Judas = wizard / rods
+** Maggy = cleric / cups
+** Samson was also loosely based on a Brezerker and Eve on a Druid.
+* {{Dlc|r}} While on the character selection screen for the tainted characters, a male voice sings instead of the normal female voice, and the song is distorted. The same is true when loading into the game after selecting a tainted character.
+** Also, when a tainted character is selected or being selected, the taskbar icon of the game changes to look like Tainted Isaac.
+
+* In the ''Requiem'' expansion for the ''Four Souls'' card game, the tainted characters have their achievement names (e.g. "The Broken" instead of "Tainted Isaac") unlike in the video game. This was decided in a [https://twitter.com/edmundmcmillen/status/1393649169890385921 poll] made by Edmund via twitter.
+** Before that, Edmund had posted an [https://twitter.com/edmundmcmillen/status/1393645830028992513 image] of Isaac's alternate version being referred to as "Tainted Isaac".
+* When switching back and forth between the tainted and normal characters, you can see Isaac's face behind the Who Am I? note, which either appears as Normal or Tainted Isaac depending on which side you switch to.
+* The closet you find any tainted character in is the same closet you see during [[Ending 21]]. This is reflected in how the characters you find inside the closet are usually hurt or damaged in some way, like how a child might look after being forced into a closet.
+* Most of the tainted character's Delirium unlocks are their starting ability. Exceptions to this are Tainted Isaac, Tainted Lost, Tainted Keeper and Tainted Eden.
+* Many, if not all, of the tainted characters have similar abilities to their non-tainted variants, with them having a "twist" on the original character that alters the playstyle in significant ways. An example of this is Isaac and Tainted Isaac, where the former uses D6 to reroll unfavorable items, and the latter automatically is presented with 2 options each pedestal, at the cost of an inventory allowing only 8 passive items at a time.
+
+== Audio ==
+{{sound table header}}
+{{sound table row | [[File:Hurt grunt.wav]] | One of the noises characters make when receiving damage. }}
+{{sound table row | [[File:Hurt grunt 1.wav]] | Another sound characters make when taking damage. }}
+{{sound table row | [[File:Hurt grunt 2.wav]] | Another noise characters make when getting hit. }}
+{{sound table row | [[File:Isaac dies new.wav]] | One of the sounds characters make when dying. }}
+{{sound table row | [[File:Isaac dies new 1.wav]] | Another death sound characters can make. }}
+{{sound table row | [[File:Isaac dies new 2.wav]] | Another noise characters can make upon dying. }}
+{{sound table row | [[File:Derp 0.wav]] | The sound characters make upon taking a pill with the "I Found Pills!" effect. }}
+|}
+
+{{nav|character|fr=Personnages}}
+[[ru:Персонажи]]
+[[Category:Mechanics]]

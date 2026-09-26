@@ -1,0 +1,15 @@
+{{page dlc|r}}
+
+Items and trinkets with this [[Item Tags|tag]] are not available in [[Greed Mode|Greed or Greedier Mode]].
+
+== Activated Collectibles ==
+{{collectible table | tag = nogreed | type = activated }}
+
+== Passive Collectibles ==
+{{collectible table | tag = nogreed | type = passive }}
+
+== Trinkets ==
+{{trinket table | tag = nogreed }}
+
+{{nav|fr=Balise nogreed}}
+[[Category:Item tags]]

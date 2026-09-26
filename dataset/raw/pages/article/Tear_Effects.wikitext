@@ -1,0 +1,92 @@
+{{header effects}}
+{{disambig msg|Isaac's primary weapon|the attribute of the same name that governs the rate of fire|Tears|debuffs that can be inflicted on [[monsters]]|Status Effects}}
+
+'''Tear Effects''' modify Isaac's primary weapon — tears. A few of the most common tear effects are listed below.
+
+<div class="toclimit-2">__TOC__</div>
+
+== Effects ==
+{| class="wikitable mw-collapsible sortable"
+ ! Effect
+ ! class="unsortable" | Appearance
+ ! class="unsortable" | Description
+ |-
+ ! [[#Homing|Homing]]
+ | style="text-align: center" | [[File:Collectible Spoon Bender tears.png|50px|link=#Homing]]
+ | Completely diverts from their original path to seek nearby enemies. The distance homing tears can travel is determined by the [[range]] stat.{{dlc|nr}} The friction of {{i|Sacred Heart}}'s and {{i|Seraphim}}'s homing effects have a lower value than other sources of homing, meaning the tears won't go as far.
+ |-
+ ! [[#Piercing|Piercing]]
+ | style="text-align: center" | [[File:Collectible Cupid's Arrow tears.png|50px|link=#Piercing]]
+ | style="text-align: left" |Can travel through enemies (but not obstacles) without breaking on impact.  Once a single target or a segment of an enemy has been hit by a piercing tear, it can no longer take damage from that tear.<br>{{dlc|nr}} However, piercing effects also remove [[knockback]].
+ |-
+ ! [[#Spectral|Spectral]]
+ | style="text-align: center" | [[File:Collectible Ouija Board tears.png|50px|link=#Spectral]]
+ | style="text-align: left" | Can travel through obstacles (but not enemies) without breaking on impact. Spectral tears can be used to safely dispatch most types of [[monsters]] from behind obstacles, or over them in combination with [[Flight|flying]].<br>Allows tears to pass through both enemies and obstacles if combined with Piercing.
+ |-
+ ! [[#Bouncing|Bouncing]]
+ | style="text-align: center" | [[File:Boucing tear.png|50px|link=#Bouncing]]
+ | Makes tears bounce off walls, [[Enemy|enemies]] and [[Obstacle|environmental objects]]. Tears that bounce off of enemies bounce in random directions, whereas tears that bounce off of walls and other objects bounce directly back. When tears bounce from enemies, they become able to hit the same enemy again should they bounce off of another enemy or obstacle.
+ |}
+
+== Homing ==
+=== Activated Items that grant homing tears ===
+{{collectible table | Telepathy For Dummies }}
+
+=== Passive Items that grant homing tears ===
+{{collectible table | Sacred Heart, Spoon Bender, Godhead, Star of Bethlehem, C Section}}
+
+=== Trinkets that grant homing tears ===
+{{trinket table | Nose Goblin, Ouroboros Worm }}
+
+=== Cards that grant homing tears ===
+{{pickup table | I - The Magician }}
+
+=== Familiars that fire homing tears ===
+{{collectible table | Little Steven, Seraphim }}
+
+=== Trinkets that grant familiars with homing tears ===
+{{trinket table | ???'s Soul, Umbilical Cord }}
+
+=== Trinkets that grant familiars homing tears ===
+{{trinket table | Baby-Bender }}
+
+=== Other Sources of Homing ===
+* {{dlc+|r}} Standing near a {{E|White Poop}} or [[Familiar#Dips|White Dip]] will grant homing.{{dlc-}}
+* {{dlc+|r}} White clot familiars spawned by {{C|Tainted Eve}} or {{I|Sumptorium}} shoot homing tears.{{dlc-}}
+* {{dlc+|r}} Purple tears granted by {{I|Playdough Cookie}} can be homing.{{dlc-}}
+
+== Piercing ==
+=== Passive Items that grant piercing tears ===
+{{collectible table | C Section, Cupid's Arrow, Dead Onion, Death's Touch, Eye of Belial, Sagittarius, Technology, Trisagion, Brimstone }}
+
+=== Familiars that fire piercing tears ===
+{{collectible table | Robo-Baby, Robo-Baby 2.0, Lil Brimstone }}
+
+=== Trinkets that grant familiars with piercing tears ===
+{{trinket table | Isaac's Head }}
+
+=== Trinkets that grant piercing tears ===
+{{trinket table | Push Pin }}
+
+== Spectral ==
+=== Passive Items that grant spectral tears ===
+{{collectible table | Continuum, Dead Dove, Dead Onion, Ouija Board, Pupula Duplex, Spirit of the Night, Tiny Planet, The Wiz, C Section }}
+
+=== Familiars that fire spectral tears ===
+{{collectible table | Ghost Baby, Robo-Baby }}
+
+=== Trinkets that grant familiars with spectral tears ===
+{{trinket table | ???'s Soul }}
+
+=== Trinkets that grant spectral tears ===
+{{trinket table | Ouroboros Worm, Push Pin, Wiggle Worm, Ring Worm}}
+
+== Bouncing ==
+=== Passive Items that grant bouncing tears ===
+{{Collectible table|Rubber Cement}}
+
+=== Trinkets that grant bouncing tears ===
+{{Trinket table|Super Ball}}
+
+{{nav|fr=Effets de larmes}}
+[[Category:Mechanics]]

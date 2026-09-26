@@ -1,0 +1,30 @@
+The Binding of Isaac: Four souls (or just "Four Souls") is the official TBoI [[The Binding of Isaac Merchandise|card game]]. The game is for 2 players or more, and is about deceiving others, kill each other, looting, gaining items, and winning souls.
+
+There is an official website here, which shows everything you need to know:
+* ''https://foursouls.com/''
+
+== Gameplay ==
+The objective of Four Souls is for any player to accumulate four cards on their person with a soul attached, at which point the game instantly ends and the player with four souls is declared victorious. Souls can be acquired primarily through fighting enemies, though some cards have effects that allow the player to gain a soul through some alternative method.
+
+Players take turns, usually clockwise, to perform any combination of three main actions. These include playing a Loot card from their hand, purchasing a Treasure from the top of the Treasure Deck (or from the Shop, a face-up subset of the Treasure Deck), and attacking a monster. In addition to these three effects, players can "Activate" cards in their possession (ordinarily by turning them sideways and declaring an effect) to perform an effect specified on the card, such as forcing the result of a dice roll to be rerolled. Activated effects operate under a "Stack" system, wherein the most recent effect activated is the first to resolve. This system allows player actions to be reactive instead of predictive.
+
+For example, if player A owns the [[Host Hat]] item, and player B holds a [[Bombs|Bomb]] loot card and both wished to activate their respective effects, the order of resolution depends on who declares their intention to resolve an effect first. The effects of the two cards are as follows:
+* Host Hat: Prevent the next 1 damage you would take this turn. When you prevent damage this way, deal 1 damage to another player.
+* Bomb: Deal 1 damage to a monster or player.
+Assume player B targets player A for the effect of Bomb. 
+If Host Hat was declared first, then Bomb would resolve first. Player A receives 1 damage, and any subsequent 1 damage they receive on the turn would be prevented and dealt to player B. Player A has still been damaged, but another instance would be deflected to player B.
+If Bomb was declared first, then Host Hat would resolve first. Player A shields themselves from a point of damage, which is dealt afterwards by Bomb. Player A receives no damage, and player B receives 1.
+
+== Treasures ==
+Treasures, or items, are obtained by paying {{pennies|10}}, if you gain it this way you may purchase a item from the shop, or from the top card of the treasure deck, which is risky. The shop starts with 2 items in it, and can be expanded with event cards, and other treasures.
+
+== Loot ==
+Loot cards are essential to play, since it gives you money, bombs, and other goods. This deck is where you can find 'Lost Soul'.  At the start of your turn you always loot one.
+
+== Monsters ==
+Monster cards are things you can always attack. Monsters have hp, a dice roll you need to roll or higher, and damage. Monsters usually have a reward for killing it, like loot, money, treasures, and bosses always give a soul, or 2 souls! At the start of that game, there are 2 monster slots, and can be expanded by event cards, or sometimes treasures. There are many types of monsters, the most often cards from the monster deck is regular monsters, and boss monsters, but there are sometimes event cards which do special things, like skipping turns, gaining loot, and rarely a soul. Monsters sometimes have effect text like if you roll a 1 take double damage, or when this dies kill a player. Players only may attack once, and may attack the top deck of the monster deck for a gamble.
+
+== Room Deck ==
+The room deck is an optional deck you can play with, which gives players an extra challenge, and another thing to pay attention to. Every time a Monster dies, the active player may discard the current room deck. The room deck holds cards that helps every one, hurts only one person, and rarely a monster (there is only 1 monster out of all 50 cards)!
+
+[[Category:Four Souls]]

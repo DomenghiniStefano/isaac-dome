@@ -1,0 +1,27 @@
+{{header soul stones}}
+{{Infobox rune
+ | dlc         = r
+ | name        = Soul of Azazel
+ | type        = soul stone
+ | id          = 88
+ | quote       = Demon rage!
+ | costume     = Collectible Mega Blast appearance.png
+ | description = Activates {{i|Mega Blast}} for 7.5 seconds.
+ | unlocked by = Soul of Azazel
+ | recharge    = 6
+}}
+
+{{cit|ur|r}}
+
+== Effects ==
+* Activates {{I|Mega Blast}} for 7.5 seconds.
+
+== Notes ==
+* The fired laser has the same width as a {{i|Mega Blast}} laser.
+* The laser persists between rooms.
+
+== In-game Footage ==
+{{#ev:youtube|QllR1KrizD0}}
+
+{{nav|fr=Âme d'Azazel}}
+[[Category:Runes]]

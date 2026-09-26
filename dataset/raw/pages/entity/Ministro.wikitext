@@ -1,0 +1,22 @@
+{{infobox monster
+ | dlc         = a+
+ | id          = 305
+ | base hp     = 9
+ | stage hp    = 2
+ | environment = {{floor|Basement}}{{floor|Burning Basement}}<br>{{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Depths}}{{floor|Dank Depths}}<br>{{floor|Scarred Womb}}<br>{{floor|Chest}}<br>{{room|boss}}<br>{{dlc|nr}} Chance to replace [[Hopper]]s and [[Trite]]s
+ | behavior    = Hops around randomly and hop towards Isaac when he gets close, occasionally spitting out a cluster of disorganized shots.
+ | unlocked by = The gate is open!
+}}
+{{disambig msg|the enemy|the boss|Monstro|the item|Lil Monstro}}
+
+'''Ministros''' hop around the room aimlessly but will hop in the general direction of Isaac if he gets too close. They will occasionally pause to spit a disorganized cluster of projectiles akin to [[Monstro]]. Ministros are unlocked by defeating [[The Lamb]] for the first time.
+
+== Notes ==
+* {{Dlc|a+nr}} When Ministros are [[champion]]s, their red shots only deal half a heart of damage, but they still deal a full heart of contact damage.
+* If Ministros aren't unlocked yet, they are replaced by [[Hopper]]s.
+* [[Monstro]] is the boss version of Ministros.
+
+== Trivia ==
+* The name 'Ministro' is both a portmanteau of 'mini' and 'Monstro' and the Italian/spanish/portuguese word for 'minister'.
+* Older version of this mob didn't have a jumping animation and was just crawling instead.
+{{nav|fr=Monstrounet}}

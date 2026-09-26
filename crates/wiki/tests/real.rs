@@ -263,11 +263,19 @@ fn diagnostics_are_bounded() {
     //   item, and `tonsil_is_a_trinket_and_474_is_broken_glass_cannon` pins exactly that.
     //   If this one ever reaches zero, the bug is there and not here.
     //
+    // - the 1 `{{t|…}}` is `Swallows Penny` on Piggy Bank, a typo on the wiki for
+    //   Swallowed Penny: the page is what is wrong, and it is fixed there, not guessed here.
+    //
     // The three that went away were `{{i|1=Name}}`, MediaWiki's explicit positional
     // syntax, which `assemble` used to file under `named` leaving `args` empty.
     let unresolved: u32 = d.unresolved.values().sum();
     assert!(
-        unresolved <= 20,
+        d.unresolved.get("t").copied().unwrap_or(0) <= 1,
+        "only the Swallows Penny typo may stay an unresolved trinket: {:?}",
+        d.unresolved
+    );
+    assert!(
+        unresolved <= 21,
         "unresolved {unresolved}: {:?}",
         d.unresolved
     );

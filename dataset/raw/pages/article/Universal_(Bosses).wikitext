@@ -1,0 +1,16 @@
+{{header bosses}}
+
+== Universal ==
+Universal Bosses are those which may appear at the end of floors 1-5 and 7, replacing a boss from the pool for that environment.
+*{{dlc|r}} Universal Bosses cannot appear on any of the alternative Chapters added in [[Repentance]].
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:Boss The Fallen portrait.png|center|link=The Fallen]]
+| style="text-align: center; border: none" |[[File:Boss Headless Horseman portrait.png|center|link=Headless Horseman]]
+|-
+| style="text-align: center; border: none" |[[The Fallen]] {{room|Devil}}
+| style="text-align: center; border: none" |[[Headless Horseman]] {{unlockable}}
+|}
+
+{{nav|boss|fr=Universel (Boss)}}
+
+[[Category:Bosses]]

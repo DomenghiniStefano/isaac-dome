@@ -1,0 +1,127 @@
+{{infobox monster
+ | id          = 39
+ | image name  = * {{dlc|nr|Rebirth}}
+ | base hp     = 25
+ | environment = {{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{room|challenge}}
+ | behavior    = Randomly wanders around the room. Pauses to charge and fire a Brimstone laser when Isaac gets in its line of sight.
+}}
+
+'''Vis''' are enemies most commonly found in The Depths. They are headless like Hoppers and have their entire torso cut open. When Isaac lines up with the Vis in a cardinal direction, it will fire a {{i|Brimstone}} beam in that direction.
+
+__TOC__
+{{clear}}
+
+== Variations ==
+=== Double Vis ===
+{{infobox monster
+ | name           = Double Vis
+ | image name     = * {{dlc|nr|Rebirth}}
+ | variant        = 1
+ | base hp        = 25
+ | environment    = {{floor|Necropolis}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|Sheol}}<br>{{room|challenge}}
+ | replace        = Vis
+ | replace chance = 5.71%
+ | replace notes  = in {{s|Utero}}
+ | behavior       = Randomly wanders around the room. Pauses to charge and fire a Brimstone laser which fires from both sides when Isaac gets in its line of sight.
+}}
+
+Added in the Wrath of the Lamb DLC for the original Binding of Isaac, the '''Double Vis''' appears similar to the normal Vis but has blood around its openings and a vertical gash in its back. They function identically to regular Vis, but they also fire a {{i|Brimstone}} beam from behind.
+{{clear}}
+
+=== Chubber ===
+{{infobox monster
+ | name           = Chubber
+ | image name     = * {{dlc|nr|Rebirth}}
+ | variant        = 2
+ | base hp        = 25
+ | environment    = {{floor|Catacombs}}<br>{{floor|Mines}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{room|challenge}}
+ | replace        = Vis, Double Vis, Scarred Double Vis
+ | replace chance = 1%
+ | behavior       = Randomly wanders around the room. Pauses to fire a Charger that deals one heart of damage when Isaac gets in its line of sight. The Charger is invulnerable, blocks Isaac's tears, has limited range, and flies back to the Chubber.
+}}
+
+'''Chubbers''', like Double Vis, were added in the Wrath of the Lamb DLC for the original ''The Binding of Isaac''. They look identical to a Vis but have a maggot as their head. Instead of shooting the {{i|Brimstone}} beam that regular Vis and Double Vis have, the Chubber shoots a Charger, similar to the Little Chubby Familiar, which can go through rocks. They can be found in the same locations as Double Vis; however, they are less common. The Charger it shoots does a full heart of damage, will destroy any tears in its way, and has a limited range. Once the Charger has reached this range, it will return to the Chubber.
+
+{{dlc|nr}} If the Chubber is killed before the Charger has returned to its body, he will still return to the last location and will simply disappear upon touching it. The Charger can still damage Isaac during this time.
+
+Killing the Charger with a {{p|Chaos Card}} will not transform the Chubber into a normal Vis. If the Charger is [[charm]]ed when being fired, it will not deal damage to the Chubber when returning.
+
+Using the {{i|Eraser}} on a Chubber's Charger will render Chubbers unable to attack for the rest of the run.
+
+{{clear}}
+
+=== Scarred Double Vis ===
+{{infobox monster
+ | dlc            = a
+ | name           = Scarred Double Vis
+ | image name     = * {{dlc|nr|Afterbirth}}
+ | variant        = 3
+ | base hp        = 22
+ | environment    = {{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|Sheol}}<br>{{floor|Dark Room}}
+ | replace        = Vis, Double Vis
+ | replace chance = 50%
+ | replace notes  = in {{s|Scarred Womb}}
+ | behavior       = Randomly wanders around the room. Pauses to charge and fire a Brimstone laser which fires from all four cardinal sides when Isaac gets in its line of sight.
+}}
+
+The '''Scarred Double Vis''' behaves identically to the normal Vis but fires four {{i|Brimstone}} beams in the cardinal directions.
+{{clear}}
+
+=== Vis Versa ===
+{{infobox monster
+ | dlc         = r
+ | name        = Vis Versa
+ | id          = 836
+ | base hp     = 25
+ | environment = {{floor|Mausoleum}}{{floor|Gehenna}}<br>{{room|challenge}}
+ | behavior    = Randomly wanders around the room. Pauses to charge and fire a homing Brimstone laser when Isaac gets in its line of sight.
+}}
+
+The '''Vis Versa''' behaves identically to Vis, but fires a purple homing {{i|Brimstone}} at Isaac instead. In {{s|Gehenna}}, their appearance becomes black instead of white, and their {{i|Brimstone}} becomes red.
+{{clear}}
+
+=== Evis ===
+{{infobox monster
+ | dlc         = r
+ | name        = Evis
+ | id          = 865
+ | base hp     = 40
+ | environment = {{floor|Corpse}}
+ | behavior    = Randomly wanders around the room. Launches a string of guts when Isaac gets close to it, which it uses to pull Isaac toward itself.
+}}
+
+The '''Evis''' behaves similarly in movement to Vis and its variants, but launches a string of guts at Isaac instead of {{i|Brimstone}}.
+
+If Isaac is hit, he doesn't immediately take damage, but is instead held by the whip and can't get any further away from the Evis while the cord gradually shrinks as Isaac is pulled in. He can still move at the same radius, but as soon as he gets closer, said radius gets smaller. The cord also has an elastic effect causing Isaac to bounce back closer to the Evis if he attempts to pull away. This lasts until the Evis is killed.
+{{dlc clear}}{{clear}}
+
+== Gallery ==
+<gallery>
+File:Cage Vis.png|A Vis' appearance when spawned by [[The Cage]].
+File:Vis Versa Gehenna.png|A Vis Versa's appearance in Gehenna.
+File:Evis_Old.png|Original Evis sprite from Antibirth.
+File:Vis_Versa_Old.png|Original Vis Versa sprite from Antibirth.
+</gallery>
+
+== Notes ==
+* The{{i|Brimstone}}  fired by Vis will damage other non-Vis enemies.
+* The Vis and its variations might be the most useful and powerful enemies when they are charmed, spawned by {{i|Friendly Ball}}, or {{i|Poke Go}}, since its {{i|Brimstone}} Laser is very powerful and can very quickly kill enemies and even bosses.
+
+== Trivia ==
+* In the original ''Binding Of Isaac'', if a Vis or a Double Vis was a [[Champion]], its {{i|Brimstone}} would be colored.
+* {{E|Gluttony}} is a Vis with a head.
+** Similarly, {{E|Super Gluttony}} is a Double Vis with a large head.
+*** {{dlc|r}} Both's updated sprites use the new Vis/Double Vis sprites as well
+** {{C|Tainted Lilith}}'s body is a black colored Vis with ribs added when opened.
+* {{E|The Cage}} can spawn Vis with a unique coloration but no change to their behavior.
+* Their designs are based on the {{E|Sisters Vis}}, which originated from ''[[wikipedia:Gish (video game)|Gish]]'', one of Edmund McMillen's other games.
+* "Vis" may potentially serve as an abbreviation for the term "viscera", whereas "Evis" is likely an abbreviation for "eviscerated".
+* If a Chubber is a champion, only the Vis part is colored and the Charger stays the same.
+* {{dlc|r}}The name "Vis Versa" is a play on the term "vice versa", which is Latin for "the other way around".
+* {{dlc|r}}The [[anti:Vis Versa|Vis Versa]] and [[anti:Evis|Evis]] both first appeared in the ''Antibirth'' mod.
+** In  ''Antibirth'' the Vis Versa could spawn in {{S|Dark Room}}.
+
+== Bugs ==
+{{bug|If a Vis (or any of its variants) is {{dlc|na+}} [[confusion|stunned]], [[fear|scared]], or {{dlc|a}}[[shrink|shrunken]], it will still attack the player while running away from Isaac.}}
+
+{{nav|fr=Vis (Monstre)}}

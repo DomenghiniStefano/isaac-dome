@@ -1,0 +1,26 @@
+'''Dice''' may refer to the following:
+
+== Collectibles ==
+* {{i|D1}}, an [[activated collectible]] that duplicates 1 random [[pickup]], [[trinket]], or [[chest]] in the current room.
+* {{i|D4}}, an activated collectible that re-rolls each of Isaac's items into a random item from the {{dlc|na+}}[[Treasure Room (Item Pool)|Treasure Room item pool]]. {{dlc|a+}}from the pool where the item it replaces was acquired.
+* {{i|The D6}}, an activated collectible that replaces every [[Items|pedestal item]] in the current room (not [[pickup]]s or [[trinket]]s) with other random items corresponding to the current room's item pool.
+* {{i|Eternal D6}}, an activated collectible that has the same effect as the D6, but with a much shorter recharge and a chance to make the items disappear instead.
+* {{i|D7}}, an activated collectible that restarts the room and respawns all [[monster]]s.
+* {{i|D8}}, an activated collectible that re-rolls Isaac's speed, range, tears, and damage.
+* {{i|D10}}, an activated collectible that {{dlc|nr}} rerolls all of the [[monster]]s in the room into random ones. {{dlc|r}} Devolves all monsters in the room.
+* {{i|D12}}, an activated collectible that re-rolls all [[rock]]s in the current room into other [[obstacle]]s.
+* {{i|D20}}, an activated collectible that randomizes all [[pickup]]s and [[chest]]s within a room.
+* {{i|D100}}, an activated collectible that combines the effects of multiple dice items.
+* {{i|D infinity}}, an activated collectible that {{dlc|nr}} acts like a random die. {{dlc|r}} Acts like any selected die item.
+* {{i|Spindown Dice}}, an activated collectible that transforms items in the current room into items with 1 lower internal ID number, skipping items that haven't been unlocked or are invalid.
+
+== Trinkets ==
+* {{dlc+|a}}{{t|Cracked Dice}}, a trinket that, when Isaac takes damage, gives a chance that either{{i|The D6}}, {{i|D8}}, {{i|D12}}, or {{i|D20}} effect will activate.{{dlc-}}
+* {{t|Dice Bag}}, a trinket that gives Isaac a chance to spawn a die consumable for the duration of each new room.
+
+== Other ==
+* {{p|Dice Shard}}, a [[Cards and Runes#Other|consumable item]] that acts like {{i|The D6}} and the {{i|D20}} combined.
+* {{r|Dice Room}}s, a room found behind a double-key door that randomizes some aspect of the game.
+
+{{disambiguation}}
+{{nav}}

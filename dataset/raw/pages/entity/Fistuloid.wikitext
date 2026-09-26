@@ -1,0 +1,22 @@
+{{infobox monster
+ | dlc         = a+
+ | id          = 308
+ | base hp     = 30
+ | environment = {{floor|Womb}}{{floor|Scarred Womb}}<br>{{room|challenge}}
+ | behavior    = Flies towards Isaac in an erratic waving motion, periodically firing a blood shot towards Isaac that also knocks itself back. Upon death, fires a worm that flies off screen.
+}}
+
+The '''Fistuloid''' flies towards Isaac in an erratic waving motion. When it gets close to Isaac, it fires a blood shot at him and propels itself in the opposite direction. Upon death, it fires a maggot that flies off-screen. The maggot is fired in the cardinal direction closest to Isaac and will do a full heart of damage if touched.
+
+== Gallery ==
+<gallery>
+Fistuloid concept.png | Concept art.
+</gallery>
+
+== Trivia ==
+* Fistuloids were added in [[Booster Pack #4]].
+* Fistuloids appear to be small {{E|Fistula|text=Fistulas}} with a {{E|Chubber|text=Chubber's}} charger stuck inside.
+* {{E|The Matriarch}}, added in the Booster Pack after which this enemy was added, is designed in a way that resembles a larger version of a Fistuloid.
+
+{{nav|booster pack|fr=Fistuloïde}}
+[[Category:Added in Booster Pack 4]]

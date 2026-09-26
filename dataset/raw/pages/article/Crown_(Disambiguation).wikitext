@@ -1,0 +1,16 @@
+'''Crown''' can refer to any of the following
+
+== Collectibles ==
+* {{i|Crown Of Light}} A passive collectible that gives isaac a 2x damage multiplier at full health
+* {{i|Dark Prince's Crown}} A passive collectible that gives Isaac a boost to his tears at exactly one red heart of health
+* {{i|Glitched Crown}} A passive collectible that makes all future items cycle between 5 different items
+
+== Trinkets ==
+* {{t|Bloody Crown}} A trinket that cause item rooms to spawn in [[The Womb]]
+* {{t|Cracked Crown}} A trinket that exaggerates Isaac's stat boosts
+* {{t|Devil's Crown}} A trinket that replaces item rooms with Devil Deals
+* {{t|Holy Crown}} A trinket that causes an item room and shop to spawn in [[Cathedral|The Cathedral]]
+* {{t|Wicked Crown}} A trinket that causes an item room and shop to spawn in [[Sheol]]
+
+{{disambiguation}}
+{{nav}}

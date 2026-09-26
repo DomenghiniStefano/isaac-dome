@@ -1,0 +1,38 @@
+{{header tarot cards}}
+{{Infobox card
+ | name        = XV - The Devil
+ | id          = 16
+ | quote       = Revel in the power of darkness
+ | recharge    = {{dlcalt|4|r=3}}
+ | costume     = Collectible The Book of Belial appearance.png
+ | description = Triggers {{i|The Book of Belial}} effect, granting +2 [[Damage]] for the current room.
+}}
+
+{{cit|c}}
+
+== Effects ==
+* Grants +2 [[Damage]] for the current room.
+
+== Notes ==
+* '''XV - The Devil''''s effect is identical to {{i|The Book of Belial}}.
+** Unlike {{i|The Book of Belial}}, the card does not grant increased chances for {{r|Devil Room}}s / {{r|Angel Room}}s to appear after defeating a boss.
+
+== Strategy ==
+* Since this effect only lasts for a room, it is preferably used against a [[boss]].
+
+== Synergies ==
+* {{I|Tarot Cloth|r}} / {{i|The Book of Belial|r}} / {{dlc|r}}'''XV - The Devil''': The effects stack, every copy of the effect gives +1 damage.
+* {{i|Blood of the Martyr}}: Also applies a temporary x1,5 damage multiplier.
+
+== Interactions ==
+* {{I|Tarot Cloth|nr}} / {{i|The Book of Belial|nr}} / {{dlc|nr}}'''XV - The Devil''': No effect.
+
+== Gallery ==
+<gallery>
+File:XV - The Devil Steam Card.jpg|'''XV - The Devil''''s Steam trading card.
+</gallery>
+
+== Trivia ==
+* [[wikipedia:The Devil (tarot card)|The Devil]] is the fifteenth card of a Major Arcana set.
+
+{{nav|fr=XV - Le Diable|card}}

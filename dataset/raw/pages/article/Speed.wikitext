@@ -1,0 +1,67 @@
+{{header attributes}}
+{{disambig msg|the attribute|the challenge|SPEED!}}
+
+[[file:Attribute speed icon.png|50px]]
+'''Speed''' determines how quickly the character moves and is represented by a shoe. Speed has a minimum value of 0.1 and a maximum value of 2.0.
+
+{{dlc|nr}} Some items may lower the maximum value, and other items may bring it back up, but it can never exceed 2.0.
+
+Each character's base speed is as follows:
+
+{| class="wikitable sortable striped"
+ |-
+ ! class="unsortable" |Character
+ ! Speed
+ |-
+ | {{C|Magdalene}} {{Dlc|anr}}{{C|Keeper}} {{C|Tainted Lilith}}
+ | 0.85
+ |-
+ | {{Dlc|r}}{{C|Keeper}} {{C|Tainted ???}} {{C|Dead Tainted Lazarus}}
+ | 0.9
+ |-
+ | {{C|Isaac}} {{C|Judas}} {{C|Lazarus}} {{C|The Lost}} {{C|Lilith}} {{C|Apollyon}} {{C|The Forgotten}} {{C|Bethany}} {{C|Jacob and Esau}} {{C|Tainted Isaac}} {{C|Tainted Magdalene}} {{C|Tainted Eve}} {{C|Tainted Samson}} {{C|Tainted Azazel}} {{C|Tainted Lazarus}} {{C|Tainted Lost}} {{C|Tainted Keeper}} {{C|Tainted Apollyon}} {{C|Tainted Soul}} {{C|Tainted Bethany}} {{C|Tainted Jacob}}
+ | 1.0
+ |-
+ | {{C|???}} {{C|Samson}} {{C|Black Judas}}
+ | 1.1
+ |-
+ | {{C|Eve}} {{C|Tainted Judas}}
+ | 1.23
+ |-
+ | {{C|Azazel}} {{C|Lazarus Risen}}
+ | 1.25
+ |-
+ | {{C|Cain}} {{C|The Soul}} {{C|Tainted Cain}}
+ | 1.3
+ |}
+
+* {{C|Eden}} and {{C|Tainted Eden}}: varies between 0.85 and 1.15, inclusive (including decimal values).
+* {{C|Tainted Forgotten}}: completely immobile; relies on {{C|Tainted Soul}} to carry and throw him around.
+
+== Items that affect speed ==
+=== Activated Items ===
+{{collectible table | Berserk!, D100, D8, Dark Arts, Dataminer, My Little Unicorn, The Nail, A Pony, Spin to Win, Unicorn Stump, Void, Wavy Cap, White Pony }}
+
+=== Passive Items ===
+{{collectible table | Abaddon, Aries, The Belt, Binge Eater, Blood Bag, Blood Oath, Bloody Gust, Bucket of Lard, Caffeine Pill, Camo Undies, Candy Heart, Capricorn, Consolation Prize, Death's List, Dog Tooth, Dogma, Experimental Treatment, Growth Hormones, The Halo, Inner Child, Jupiter, Keeper's Sack, Kidney Stone, Libra, Lord of the Pit, Magic Mushroom, The Mark, Mercurius, Mini Mush, Missing No., Odd Mushroom (Large), Odd Mushroom (Thin), Orphan Socks, Purity, Roid Rage, Sagittarius, Sausage, The Small Rock, SMB Super Fan, Soul Locket, Speed Ball, Stop Watch, Taurus, Thunder Thighs, The Virus, Whore of Babylon, Wooden Spoon, Zodiac }}
+
+=== Trinkets ===
+{{trinket table | Azazel's Stump, Broken Syringe, Cracked Crown, Cracked Dice, Dim Bulb, Goat Hoof, Liberty Cap, Vibrant Bulb }}
+
+=== Other ===
+* Speed up [[pill]]s increase speed by 0.15, and speed down pills decrease speed by 0.12.
+* The {{tf|Spun}} transformation increases speed by 0.15.
+* {{dlc|a}} In co-op, [[Co-op#Special Babies 2|Yellow Baby]] will occasionally briefly increase speed by 0.15. [[Co-op#Special Babies 2|Whore Baby]] will occasionally briefly grant the {{I|Whore of Babylon}} effect, which increases speed. [[Co-op#Special Babies 2|Dark Baby]] will occasionally briefly increase all stats, including speed.
+* The {{P|III - The Empress}} card activates the {{I|Whore of Babylon}} effect for the current room, which increases speed.
+* The {{P|XI - Strength}} card activates the {{I|Magic Mushroom}} effect for the current room, which increases speed.
+* The {{P|VII - The Chariot}} card activates the {{I|My Little Unicorn}} effect for the current room, which increases speed.
+* {{dlc|a+}} The {{P|Era Walk|dlc=x}} card increases speed and decreases shot speed for the current room.
+* {{dlc|a+}} The [[Feels like I'm walking on sunshine!]] pill activates the {{i|Unicorn Stump}} effect for the current room, which increases speed.
+* {{dlc|a+}} Absorbing an item using {{p|Black Rune|n}} can increase speed by 0.2.
+* {{p|Soul of Judas}} activates the {{i|Dark Arts|n}} effect, which increases speed.
+* {{p|Soul of Samson}} activates the {{i|Berserk!|n}} effect, which increases speed.
+* {{p|III - The Empress?}} card decreases speed by 0.1 for the duration of its effect.
+* {{p|XII - The Hanged Man?}} card decreases speed by 0.1 for the duration of its effect.
+
+{{nav|fr=Vitesse}}
+[[Category:Mechanics]]

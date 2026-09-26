@@ -1,0 +1,12 @@
+{{page dlc|r}}
+
+Items with this [[Item Tags|tag]] contribute toward the {{tf|Seraphim}} transformation.
+
+== Activated Collectibles ==
+{{collectible table | tag = angel | type = activated }}
+
+== Passive Collectibles ==
+{{collectible table | tag = angel | type = passive }}
+
+{{nav|fr=Balise angel}}
+[[Category:Item tags]]

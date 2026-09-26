@@ -1,0 +1,57 @@
+{{infobox monster
+ | name        = Spitty
+ | id          = 31
+ | base hp     = 10
+ | environment = {{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{room|challenge}}
+ | behavior    = Slowly moves around the room, occasionally firing a single blood shot forward.
+}}
+'''Spitties''' are maggot-like monsters introduced in the vanilla content of ''[[The Binding of Isaac: Rebirth]]'', and can be only encountered in [[Chapter 2]].
+
+They are much fatter than other [[maggot]] forms, possess a face like [[Charger]]s, but have only half health of a Charger. They spit a blood shot ahead of them while slowly crawling along aimlessly. They have a slow firing rate, and because they ignore Isaac, their shots are easy to avoid.
+
+They also can be summoned by other monsters and bosses, such as the {{e|Grub}}, {{e|Pestilence}}, and {{e|Chub}}'s orange champion variant.
+
+{{dlc|nr}} Oddly enough, they do one full heart of contact damage, despite Chargers and even Conjoined Spitties doing half heart damage.
+
+__TOC__
+{{clear}}
+
+== Variants ==
+=== Conjoined Spitty ===
+{{infobox monster
+ | name        = Conjoined Spitty
+ | id          = 243
+ | base hp     = 18
+ | environment = {{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{room|boss}}
+ | behavior    = Slowly moves around the room, occasionally firing a blood shot from both ends of its body.
+}}
+
+'''Conjoined Spitties''' are very similar to Spitties, but they have 80% more health and have 2 heads, 1 added on the back of its body, so they shoot forward and backward simultaneously.
+
+{{clear}}
+
+=== Tainted Spitty ===
+{{infobox monster
+ | dlc         = r
+ | name        = Tainted Spitty
+ | id          = 31
+ | variant     = 1
+ | base hp     = 60
+ | environment = {{floor|Caves}}<br>Found on the [[Ascent]] to {{s|Home}}.
+ | behavior    = Slowly moves around the room, firing chaotic bursts of blood shots in all directions and occasionally spitting a line of blood shots in the direction it's facing. Fires two rotating rings of blood shots upon death.
+}}
+
+'''Tainted Spitties''' are exclusive to the [[Ascent]] to {{s|Home}}. They are much larger and tankier versions of regular Spitties that also move and spit faster.
+
+They shoot blood shots out of their backs and occasionally spit out a line full of shots. Upon death, they shoot out a ring of blood shots.
+
+{{clear}}{{dlc clear}}
+
+== Trivia ==
+* Spitties first appear in the original ''Binding of Isaac''.
+** Oddly enough, Spitties were misspelled as "spities" in the ending credits.
+* Tainted Spitties bear striking resemblance to the second phase of [[Rotgut]], named Gus.
+
+{{nav|fr=Postillon}}
+[[Category:Maggot monsters]]
+[[Category:Chapter 2 monsters]]

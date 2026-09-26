@@ -1,0 +1,57 @@
+{{infobox version
+ | dlc = r+
+ | steam = 4470480602670303857
+ | date = 2024-11-22
+}}
+
+== Documented changes ==
+=== Additions ===
+* Added guaranteed {{s|The Void|text=Void}} portal after the {{e|Mother}} fight (as long as the character has beaten Mother previously)
+
+=== Changes ===
+* Moved "mods" directory back to its prior location and added first time disclaimer text about mod stability
+* Made adjustments to various proc chances for {{i|Abyss}} locusts
+* Made {{i|Hive Mind}} increase damage of {{i|Abyss}} locusts
+* Made Repentance+ daily seeds different than Repentance ones
+* Glitched active items will now always start fully charged
+* In online runs, {{i|Wavy Cap}} only applies shader effect to the player that used it
+* Adjusted weight of deathmatch variants
+* {{e|Mother}}'s hole no longer takes 5 seconds to open in online co-op
+* Improved search results when looking for public lobbies with custom filters
+* Improved search results when looking for an Online Daily Run lobby
+* Lowered {{i|Poke Go}} proc chance back to 20%
+* Made {{i|Lil Portal}}'s follow priority higher so it will stay closer to the front of the familiar line
+* Made {{i|Dead Bird}} stay active for players who have no red heart containers after they take damage
+* Made {{i|Dead Bird}} reset between floors. If the player's health meets the parameters, Dead Bird will remain active for the floor
+* Decreased the timer in [[deathmatch]] to 90 seconds
+* Reduced overall health in deathmatch by 20%
+
+=== Fixes ===
+* Fixed an issue where correctly entered passwords were not being accepted
+* Fixed an issue where kicked players could rejoin password protected lobbies
+* Fixed an issue where ineligible players could enter password protected challenge lobbies
+* Completing an online match against {{e|The Beast}} will now properly trigger the deathmatch event
+* Fixed exit/Restart prompts persisting into the next run in some cases
+* Fixed several issues in the modding API
+* Fixed an issue where the {{m|Greed Donation Machine}} was not accepting coins
+* Fixed an issue that caused colors to be much more muted in Repentance+ vs. Repentance
+* Fixed an issue where debug console wasn't working in practice dailies
+* Fixed an issue preventing mouse input from working in online matches
+* Fixed an issue preventing glitched active items from applying their effects
+* Fixed issues with {{e|Mother}} boss intro animation
+* Fixed an issue with {{i|Schoolbag}} not displaying second active item in HUD
+* Fixed an issue where password lobbies could fail to be found
+* Fixed an issue where kicking a player from a lobby would prevent other players from joining
+* Fixed an issue with the game not correctly filtering lobbies when using Tag filters
+* Fixed an issue with special seeds not working for online matches
+* Fixed an issue with achievement unlocks in special seeds that don't allow unlock progress
+* Fixed an issue where {{i|Wavy Cap}} shader effect could bleed over into the start of deathmatch
+* Fixed an issue where the restart button combo could be activated on any controller that was connected
+* Fixed an issue where typing 'R' in online text chat would show the restart emote
+* Fixed sizing and duration on {{i|Lil Spewer}} pee creep
+
+== Undocumented changes ==
+=== Fixes ===
+* Fixed a crash when {{i|Berserk!}} wears off at 0 hearts and the player had {{i|Spirit Shackles}}
+
+{{nav|version}}

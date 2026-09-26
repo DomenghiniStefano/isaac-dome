@@ -1,0 +1,379 @@
+{{page dlc | a }}
+'''Greed mode''' is a game mode introduced in ''[[The Binding of Isaac: Afterbirth]]''.
+
+== Gameplay ==
+[[file:Greed Mode Layout.png|125px|right]]
+In Greed mode, each floor has a {{R|Curse Room}}, a {{R|Devil Room}}/{{R|Angel Room}}, a double-wide [[#Shop|Shop]], and an exit room all connected to a main double-height arena room with a [[button]] in the center. A {{R|Super Secret Room}} is also connected to one of the rooms. Up until the penultimate floor, an already unlocked {{R|Treasure Room}} with a silver door frame and a normal locked Treasure Room are also available. The silver Treasure Room always gives items from the [[Boss (Greed Mode Item Pool)|Boss pool]]. The sixth floor (The Shop) does not have any Treasure Rooms but does have the Shop and Curse Rooms. The final seventh floor has no waves and contains only three rooms, the largest of which contains the game mode's [[Ultra Greed|final boss]].
+
+When playing Greed Mode, a yellow coin ({{mode|greed}}) will appear on the [[HUD]], below the consumables.
+
+=== Shop ===
+As there are no normal drops in Greed mode, the Shop becomes Isaac's primary source of items and pickups. Shops in Greed mode automatically restock. Shops will always have six items/pickups for sale, sometimes discounted; in order from the left side of the room to the right, these will always be:
+* A {{e|Key}}
+* A [[Hearts|red heart]]
+* A [[Shop (Greed Mode Item Pool)|Shop item]]
+* A [[Boss (Greed Mode Item Pool)|Boss item]]
+* Two random pickups, [[trinkets]], or items from the [[Treasure Room (Greed Mode Item Pool)|Treasure Room pool]].
+There will also almost always be two {{e|Shopkeeper}}s near the center of the room, as sometimes just one special shopkeeper spawns instead.
+
+=== Layouts ===
+The following room maps were made using [https://github.com/Basement-Renovator/basement-renovator Basement Renovator] for cleaner viewing. All layouts have a weight of 1.
+
+{{m|Revive Machine}}s only spawn in online [[multiplayer]].
+
+{| class="wikitable mw-collapsible mw-collapsed" style="text-align: center"
+ ! ID
+ ! Contents
+ ! Image preview 
+ |-
+ | 0
+ | style="text-align: left" | A {{M|Shop Restock Machine}} and a red heart.
+ | {{dlcmap slideshow|{{dlcalt|[[File:Shop (Greed) 0 Repentance.png|450px]]|r+=[[File:Shop (Greed) 0.png|450px]]}}}}
+ |-
+ | 1
+ | style="text-align: left" | A restock box, a {{E|Locked Chest}} behind [[rocks]], a {{e|Red Heart}}, and either a trapdoor or random pickup behind rocks. {{dlc|na+}} The pickup is twice as likely as the trapdoor to spawn.
+ | {{dlcmap slideshow|{{dlcalt|[[File:Shop (Greed) 1 Repentance.png|450px]]|r+=[[File:Shop (Greed) 1.png|450px]]}}}}
+ |-
+ | 2
+ | style="text-align: left" | A restock box, a {{M|Beggar}}, a {{M|Devil Beggar}}, a {{e|Half Red Heart}}, and two random pickups behind rocks.
+ | {{dlcmap slideshow|{{dlcalt|[[File:Shop (Greed) 2 Afterbirth+.png|450px]]|r=[[File:Shop (Greed) 2 Repentance.png|450px]]|r+=[[File:Shop (Greed) 2.png|450px]]}}}}
+ |-
+ | 3
+ | style="text-align: left" | A restock box, a red heart, and two random pickups behind [[Blocks|key/iron blocks]].
+ | {{dlcmap slideshow|{{dlcalt|[[File:Shop (Greed) 3 Repentance.png|450px]]|r+=[[File:Shop (Greed) 3.png|450px]]}}}}
+ |-
+ | 4
+ | style="text-align: left" | A random heart, a [[Reward Plate]], {{dlc|r}} and a restock machine.
+ | {{dlcmap slideshow|{{dlcalt|[[File:Shop (Greed) 4 Afterbirth+.png|450px]]|r=[[File:Shop (Greed) 4 Repentance.png|450px]]|r+=[[File:Shop (Greed) 4.png|450px]]}}}}
+ |-
+ | 5
+ | style="text-align: left" | A {{e|Soul Heart}}, two {{E|Blue Fire Place}}s, and a {{E|Chest}} behind rocks.
+ | {{dlcmap slideshow|{{dlcalt|[[File:Shop (Greed) 5 Repentance.png|450px]]|r+=[[File:Shop (Greed) 5.png|450px]]}}}}
+ |-
+ | 6
+ | style="text-align: left" | A restock box, a {{M|Slot Machine}}, and a red heart behind [[Rocks#Urns|urns]].
+ | {{dlcmap slideshow|{{dlcalt|[[File:Shop (Greed) 6 Repentance.png|450px]]|r+=[[File:Shop (Greed) 6.png|450px]]}}}}
+ |-
+ | 7
+ | style="text-align: left" | A restock box, a {{M|Fortune Telling Machine}}, and a half red heart behind {{e|Poop}}.
+ | {{dlcmap slideshow|{{dlcalt|[[File:Shop (Greed) 7 Afterbirth+.png|450px]]|r=[[File:Shop (Greed) 7 Repentance.png|450px]]|r+=[[File:Shop (Greed) 7.png|450px]]}}}}
+ |-
+ | 8
+ | style="text-align: left" | A restock box, a {{M|Blood Donation Machine}}, a random heart, and three random pickups behind key/iron blocks. Note that all blood donation machines are automatically replaced with devil beggars in greed mode.
+ | {{dlcmap slideshow|{{dlcalt|[[File:Shop (Greed) 8 Repentance.png|450px]]|r+=[[File:Shop (Greed) 8.png|450px]]}}}}
+ |-
+ | 9
+ | style="text-align: left" | A restock box, a {{M|Key Master}}, and either a trapdoor or random pickup behind rocks.
+ | {{dlcmap slideshow|{{dlcalt|[[File:Shop (Greed) 9 Repentance.png|450px]]|r+=[[File:Shop (Greed) 9.png|450px]]}}}}
+ |-
+ | 10
+ | style="text-align: left" | A {{e|Bomb Chest}}, a half red heart, and a random pickup and either a trapdoor or another random pickup, each behind rocks and iron blocks. {{dlc|na+}} The pickup is twice as likely as the trapdoor to spawn.
+ | {{dlcmap slideshow|{{dlcalt|[[File:Shop (Greed) 10 Repentance.png|450px]]|r+=[[File:Shop (Greed) 10.png|450px]]}}}}
+ |-
+ | 11
+ | style="text-align: left" | A restock box, a Reward Plate, and two random pickups behind rocks and [[spikes]].
+ | {{dlcmap slideshow|{{dlcalt|[[File:Shop (Greed) 11 Repentance.png|450px]]|r+=[[File:Shop (Greed) 11.png|450px]]}}}}
+ |-
+ | 12
+ | style="text-align: left" | A random heart pickup and a random pickup, a {{e|Red Chest}} behind spikes, {{dlc|r}} and a restock machine; the red chest can be accessed without taking damage by walking diagonally between the spikes.
+ | {{dlcmap slideshow|{{dlcalt|[[File:Shop (Greed) 12 Afterbirth+.png|450px]]|r=[[File:Shop (Greed) 12 Repentance.png|450px]]|r+=[[File:Shop (Greed) 12.png|450px]]}}}}
+ |-
+ | 13
+ | style="text-align: left" | A restock box, a {{M|Shell Game}}, and two random pickups behind spikes. {{dlc|r+}} The Shell Game has 1/6 chance to be a {{m|Hell Game}} instead.
+ | {{dlcmap slideshow|{{dlcalt|[[File:Shop (Greed) 13 Repentance.png|450px]]|r+=[[File:Shop (Greed) 13.png|450px]]}}}}
+ |-
+ | 14
+ | style="text-align: left" | A restock box, a devil beggar, a half red heart, and a Reward Plate behind spikes.
+ | {{dlcmap slideshow|{{dlcalt|[[File:Shop (Greed) 14 Repentance.png|450px]]|r+=[[File:Shop (Greed) 14.png|450px]]}}}}
+ |-
+ | 15
+ | style="text-align: left" | A restock box and a beggar.
+ | {{dlcmap slideshow|{{dlcalt|[[File:Shop (Greed) 15 Repentance.png|450px]]|r+=[[File:Shop (Greed) 15.png|450px]]}}}}
+ |-
+ | 16
+ | style="text-align: left" | A slot machine, poops, {{dlc|r}} and a restock machine.
+ | {{dlcmap slideshow|{{dlcalt|[[File:Shop (Greed) 16 Afterbirth+.png|450px]]|r=[[File:Shop (Greed) 16 Repentance.png|450px]]|r+=[[File:Shop (Greed) 16.png|450px]]}}}}
+ |-
+ | 17
+ | style="text-align: left" | A restock box and fortune teller.
+ | {{dlcmap slideshow|{{dlcalt|[[File:Shop (Greed) 17 Repentance.png|450px]]|r+=[[File:Shop (Greed) 17.png|450px]]}}}}
+ |-
+ | 18
+ | style="text-align: left" | A restock box, a blood donation machine, and two random pickups behind rocks. Note that all blood donation machines are automatically replaced with devil beggars in greed mode.
+ | {{dlcmap slideshow|{{dlcalt|[[File:Shop (Greed) 18 Repentance.png|450px]]|r+=[[File:Shop (Greed) 18.png|450px]]}}}}
+ |-
+ | 19
+ | style="text-align: left" | A random pickup behind rocks, {{dlc|r}} and a restock machine.
+ | {{dlcmap slideshow|{{dlcalt|[[File:Shop (Greed) 19 Afterbirth+.png|450px]]|r=[[File:Shop (Greed) 19 Repentance.png|450px]]|r+=[[File:Shop (Greed) 19.png|450px]]}}}}
+ |-
+ | 20
+ | style="text-align: left" | A restock box, a locked chest, and two random pickups behind rocks.
+ | {{dlcmap slideshow|{{dlcalt|[[File:Shop (Greed) 20 Repentance.png|450px]]|r+=[[File:Shop (Greed) 20.png|450px]]}}}}
+ |-
+ | {{dlc|r}} 21
+ | style="text-align: left" | A restock box, a {{m|Bomb Bum}}, and two {{e|Double Bomb}}s behind spiked rocks and key blocks.
+ | {{dlcmap slideshow|{{dlcalt|[[File:Shop (Greed) 21 Repentance.png|450px]]|r+=[[File:Shop (Greed) 21.png|450px]]}}}}
+ |-
+ | {{dlc|r}} 22
+ | style="text-align: left" | A restock box, a {{m|Battery Bum}}, and two chests behind rocks.
+ | {{dlcmap slideshow|{{dlcalt|[[File:Shop (Greed) 22 Repentance.png|450px]]|r+=[[File:Shop (Greed) 22.png|450px]]}}}}
+ |-
+ | {{dlc|r}} 23
+ | style="text-align: left" | A restock box, a {{m|Crane Game}}, and a {{e|Spiked Chest|n}}.
+ | {{dlcmap slideshow|{{dlcalt|[[File:Shop (Greed) 23 Repentance.png|450px]]|r+=[[File:Shop (Greed) 23.png|450px]]}}}}
+ |-
+ | {{dlc|r}} 24
+ | style="text-align: left" | A restock box, a random battery and a random pickup both behind retractable spikes.
+ | {{dlcmap slideshow|{{dlcalt|[[File:Shop (Greed) 24 Repentance.png|450px]]|r+=[[File:Shop (Greed) 24.png|450px]]}}}}
+ |-
+ | {{dlc|r+}} 25
+ | style="text-align: left" | A restock box, a {{m|Confessional}}, a random heart that has 50% chance to be a shopkeeper instead, and two random pickups behind rocks and spikes (one of them has 50% chance to be a random [[pill]] instead).
+ | [[File:Shop (Greed) 25.png|450px]]
+ |}
+
+=== Arena ===
+The 1x2 room in the center of all floors except the final one is the Arena, where most of the game mode's coins and enemies come from.  These rooms always have a [[button]] in the center that, when pressed, bars all the doors and starts spawning waves of enemies and coins. While active, the button has a timer underneath it that counts down; when the timer runs out or all enemies in the current wave are killed, the next wave spawns. This continues until wave 8 or 10 is reached, Isaac dies, teleports out of the arena or presses the button again. Pressing the button before all the waves have spawned deals half a heart of damage to Isaac (or removes 1 penny from the next wave if playing as {{C|The Lost}} or {{C|Tainted Lost}}) and stops the timer that causes waves to spawn automatically. Once the timer stops and all remaining enemies are killed, the doors re-open. The button can then be reactivated to continue progressing through the waves. Once all waves are spawned, the button's spikes retract and cannot be pressed until all enemies are cleared. All waves except the optional "nightmare" wave must be completed for the door to the next floor to open.
+
+For the first 8 waves, the timer will start at a set time and then increase by 1 second for subsequent waves. For {{s|Basement}} and {{s|Caves}}, the clock starts at 6 seconds. For {{s|Depths}}, the clock starts at 5 seconds. For {{s|Womb}}, the clock starts at 4 seconds. For {{s|Sheol}} and {{s|The Shop}}, the clock starts back at 6 seconds again. The first boss wave is set at 33 seconds (30 after {{a|Everything is Terrible 2!!!}} is unlocked) on all floors.
+
+The enemies spawned by each wave are determined by the wave number and current floor. Each wave is as follows:
+* Normal enemy waves:
+** Wave 1-3: "Easy" enemy pool
+** Wave 4-6: "Medium" enemy pool
+** Wave 7-8: "Hard" enemy pool 
+* Boss waves:
+** Wave 9: "Easy boss" pool 
+** Wave 10: "Medium boss" pool
+* Wave 11 (optional): Nightmare boss wave - "Hard boss" pool (spawns the floor's {{R|Devil Room}}/{{R|Angel Room}} on completion).
+
+Note that "boss" pools can include multiple (mini)bosses spread out across the room. Unlike normal mode, deal chances will only appear after doing the extra wave, and their spawn chances are not affected by taking red heart damage.
+
+{{dlc|r}} Enemies can spawn as [[Monster#Champions|Champions]] as normal, but will not drop pickups, with the exception of {{E|The Hollow}}'s gold champion, which drops coins as normal. Rainbow champions drop consumables too, albeit only appear in Sheol in {{mode|greed|greedier}} Greedier version of the mode.
+
+At the start of each wave, Pennies are dropped on the ground, which Isaac can use in the [[#Shop|Shop]] to purchase items and pickups. Each normal wave drops 2 pennies, each boss wave drops 4 pennies along with a bonus coin after passing through 3 waves without receiving red heart damage. That means on a full hitless floor, an extra coin can be obtained on waves 4, 7 and 10, bringing the total of coins earned to 27 per floor. This extra coin mechanic explains why sometimes a coin can spawn on the 11th wave.
+
+Each new wave counts as a new 'room' for purposes of item charges, familiars dropping items or the like. However, one-room temporary effects, such as {{i|The Book of Belial}}, will remain across waves, and items that activate upon entering a new room will not activate when a new wave starts.
+* {{i|Taurus|r}} is an exception and will activate each time the button is pressed to start a wave.
+
+== Floors ==
+{{infobox stage
+ | hidden         = yes
+ | dlc            = a
+ | name           = The Shop
+ | chapter        = 6
+ | id greed       = 24
+ | level id greed = 6
+ | type id greed  = {{dlcalt|3|r=0}}
+}} {{infobox stage
+ | hidden         = yes
+ | dlc            = a
+ | name           = Ultra Greed
+ | chapter        = 7
+ | id greed       = 25
+ | level id greed = 7
+ | type id greed  = {{dlcalt|3|r=0}}
+ | bosses         = Ultra Greed, Ultra Greedier
+}}
+
+Greed mode has seven total floors, five of which are based on floors found in the main game. These floors are {{s|Basement}}, {{s|Caves}}, {{s|Depths}}, {{s|Womb}}, {{s|Sheol}}, a unique floor called {{s|The Shop}}, and the [[Ultra Greed|final boss]] floor. Each floor will spawn enemies and bosses native to that floor in the main game, except for The Shop, which has no counterpart outside of Greed mode. Instead, The Shop spawns mostly Greed enemies, but can also spawn enemies from any floor. The Shop is the only normal floor which does not contain [[Treasure Room]]s.
+
+{{dlc|r}} Greed mode floors can appear as their variants with unique waves including {{s|Burning Basement}}, {{s|Cellar}}, {{s|Flooded Caves}}, {{s|Catacombs}}, {{s|Dank Depths}}, {{s|Necropolis}}, {{s|Utero}}, and {{s|Scarred Womb}}.
+
+== Ultra Greed ==
+The Ultra Greed floor contains only three rooms: An empty starting room, a Mini-Boss Room in which multiple {{E|Greed}}s, {{E|Super Greed}}, {{E|Wrath}} or {{E|Monstro}} will spawn, and the final Boss Room containing {{E|Ultra Greed}}.
+
+After Ultra Greed has been defeated, turning him into a golden statue, a Final Boss Chest to end the level and the {{M|Greed Donation Machine}} will spawn. Isaac is given the chance to donate his remaining money to the Greed Machine, which will unlock several rewards including the {{C|Keeper}} character.{{dlc clear}}
+
+== {{dlc+|a+}} Greedier Mode ==
+Greedier mode is a harder version of Greed mode. When playing Greedier mode, a small, red stained coin ({{mode|greedier}}) will appear on the [[HUD]], below the consumables.
+
+You must {{achievement unlock|Greedier!}} to unlock it.
+
+Greedier mode changes gameplay in the following ways:
+* An additional “hard” wave is added to the initial set of 8 waves, bringing it up to 9.
+* The time the clock starts at is shorter (with the exception for Basement and Caves' mob waves).
+** For {{s|Basement}}, the clock starts at 8 seconds. For {{s|Caves}}, the clock starts at 6 seconds. For {{s|Depths}}, the clock starts at 4 seconds. For {{s|Womb}}, the clock starts at 3 seconds. For {{s|Sheol}} and {{s|The Shop}}, the clock starts at 2 seconds. The first boss wave is set at 14 seconds on all floors.
+* Coin drops per wave are modified to give fewer coins overall.
+** Waves 1-8 drop 1 penny.
+** Wave 9 drops 2 pennies. (total 10 coins from mob waves)
+** The first boss wave drops 3 pennies.
+** The second boss wave drops 6 pennies. (total 9 coins from boss waves)
+** Plus the extra coin mechanic explained above that can give 3 additional coins, bringing the potential total to 22.
+* {{dlc|nr+}} One enemy per wave is guaranteed to spawn as a [[champions|champion]], unless the wave consists solely of non-champion enemies. They will not drop pickups, unlike the regular game.
+* The final boss gains a [[Ultra Greed#Ultra Greedier|second phase]].
+* The Greed Donation Machine's chance to jam is greatly reduced, making it much easier to fill out.
+
+Greedier mode unlockables were separate from Greed mode unlockables; however, as of [[Booster Pack #5]], completing Greedier Mode with a character will also unlock the corresponding Greed mode unlockable.
+
+Despite being a "hard" version of Greed, most hard mode rules from the vanilla gamemode don't apply.
+{{dlc-}}
+
+== Unlockable [[Achievement]]s ==
+=== Greed Mode ===
+{{achievement text | Lil' Chest, Censer, Evil Eye, My Shadow, Cracked Dice, Black Feather, Lusty Blood, Lilith, Key Bum, GB Bug, Zodiac, Box of Friends, Rib of Greed, Brown Nugget, Finger Bone, Soul Locket, Inner Child }}
+
+=== {{dlc+|a+}} Greedier Mode ===
+Completing Greedier Mode with a character will unlock the corresponding Greed Mode unlockable if it hasn't been unlocked.
+{{achievement text | D1, Glyph of Balance, Sack of Sacks, Eye of Belial, Meconium, Crow Heart, Stem Cell, Bat Wing, Plan C, Metronome, Dad's Lost Coin, Duality, Eye of Greed, Black Rune, Dad's Ring, Vade Retro, Genesis, The Fool, The Magician, The High Priestess, The Empress, The Emperor, The Hierophant, The Lovers, Wheel of Fortune, Strength, The Hanged Man, Death, The Devil, The Tower, The Stars, The Sun and the Moon, Judgement, The World }}
+{{dlc-}}
+
+=== Greed Machine ===
+{{achievement text | Lucky Pennies, Special Hanging Shopkeepers, Wooden Nickel, Cain holds Paperclip, Everything is Terrible 2!!!, Special Shopkeepers, Eve now holds Razor Blade, Greedier!, Store Key, Lost holds Holy Mantle, Generosity, Keeper }}
+
+== Tips ==
+* Flight will not prevent damage from the spiked stop button unless the player is {{C|The Lost}}, {{C|Tainted Lost}}, or {{C|Tainted Forgotten}}.
+** However, a Penny is deducted from the next round of rewards if the button is pressed as {{C|The Lost}} or {{C|Tainted Lost}}. It is possible to negate this by triggering the button and surviving until all waves have spawned before quitting out. When reloading the save, all of the coins will be on the ground. Pressing the button again will start the waves from wave 1, but will no longer spawn coins, removing the downside.
+* Items with effects that only persist in the room are especially useful in Greed mode. Complete all waves in one go to maximize their efficiency. Examples of such items include {{i|Box of Friends}}, {{i|The Book of Belial}}, {{i|The Nail}}, {{i|Lusty Blood}}, {{i|The Pinking Shears}}, {{i|Scissors}}, and {{i|Sulfur}}.
+* Being teleported by the Curse of the Maze can open the exit door without needing to complete the floor, allowing large portions of a run to be skipped.
+* Only a half heart of damage is taken in floors beyond chapter 3, a feature unique to Greed mode.
+** This makes items such as {{i|The Wafer}} substantially less useful, since there is a limited number of enemies that could cause more than a half heart of damage. However, they can still be used for the Ultra Greed boss fight, since all of his attacks deal a full heart of damage.
+* Killing all the enemies before the timer resets doesn't increase the number of coins produced.
+* It is also often a good idea to get rid of pickups on the ground if possible, as they can limit movement in a relatively cramped arena.
+* Due to the fact that the mode presents fewer rocks, finding {{r|Crawl Space}}s is much easier.
+* Using keys or bombs to open golden and stone chests is almost always worth it since it's highly likely that it will return the used pickup, with the smaller possibility of an item like the {{I|A Quarter}}.
+* Staying towards the middle of the room makes seeing most of the arena at once, as well as avoiding potential instant damage.
+* It is often a good idea to press the button when the arena is flooded by invulnerable entities like {{e|Death's Head}}s or {{e|Poky||Pokies}}, so that they are guaranteed to die once the waves are complete. Clearing the room before the next wave still deactivates them.
+* Firing non-stop is not always the wisest thing to do as it can lead to instant damage, from something like explosions for example. Items like {{I|Cursed Eye}} and {{I|Chocolate Milk}} help avoiding that, although Cursed Eye is still a double edged sword.
+* "The Shop" penultimate chapter often spawns several shopkeeper entities throughout the waves, which can be blown up for extra cash.
+* The shop keepers have a very low chance of dropping {{i|Steam Sale}} or {{T|Counterfeit Penny}} and other useful pickups when bombed.
+* Sometimes spending the acquired pennies may be wiser on the next floor. Certain collectible items, hearts or keys may be on sale a depth below, which saves money compared to refilling them when not yet necessary.
+* Any form of homing is tremendous in this gamemode as its' effect covers a relatively large part of the arena.
+* {{dlc|r}} "Ace of" cards are very helpful to use on spawning enemies — be it to heal up or gain resources.
+* {{I|Sack Head}} tends to replace the coins {{E|Ultra Greedier}}'s coin explosions spawn, which can be useful for{{C|Tainted Lost}} with a clutch {{P|Holy Card}}. Alternatively - it could be useful for battery drops instead.
+* There are methods of achieving infinite coins/items. Although difficult to coordinate, and sometimes heavily reliant on luck, these methods can practically guarantee a successful run. These strategies can be combined with {{i|Chaos}} to allow stronger items to be obtained more easily.
+** Method #1: Requires a {{P|2 of Diamonds}} card, the {{i|Blank Card}}, a Shop selling {{E|Lil' Battery|text=Lil' Batteries}}, and enough coins to buy one. This allows infinite coin count doubling with no drawback.
+** Method #2: Requires {{P|Jera}}, the {{i|Blank Card}}, a Shop selling {{E|Lil' Battery|text=Lil' Batteries}}, and enough coins to buy one. Similar to the first method, but instead of doubling Isaac's currently held coins, this method allows for infinite duplication of Pennies dropped during waves.
+*** {{dlc+|r}} Since {{i|Blank Card}} no longer copies the ability of the runes, this method no longer works with {{P|Jera}}, so instead you need {{i|Clear Rune}} in place of {{i|Blank Card}}, a Shop selling {{E|Lil' Battery|text=Lil' Batteries}}, and enough coins to buy two, as Clear Rune requires 12 charges to copy effect of {{P|Jera}}.{{dlc-}}
+** Method #3: Use {{i|Diplopia}} or the {{i|Crooked Penny}} on a {{i|Steam Sale}}. This will allow Isaac to take as many items as desired for free.
+*** {{dlc|r}} This method is no longer infinite, as stacking multiple {{i|Steam Sale}} uses a new algorithm.
+** Method #4: Requires {{T|Swallowed Penny}} and a discounted red heart (2c). Use the curse door by entering and exiting right after losing only half a red heart and spawning a coin. By repeating the process long enough you can get infinite coins, {{T|Swallowed Penny}} being able to spawn nickels and dimes and being guaranteed 1 penny per half heart. If {{I|Mom's Box}} is held, this method can be performed without a discounted red heart as the number of coins spawned by {{T|Swallowed Penny}} will be doubled.
+* The {{i|D20}} can be used in tandem with {{E|Lil' Battery|text=Lil' Batteries}} to re-roll all Pennies dropped during combat, some of which will become Grab Bags or chests. The process can then be repeated indefinitely.
+** {{dlc|nr}} As the D20 re-rolls all opened chests into pickups, chests should not be opened unless the D20 is fully charged.
+** {{dlc+|r}} Using the D20 in conjunction with the {{i|Book of Virtues}} will destroy all pickups in the room; as such, the D20 should not be picked up while playing as {{C|Bethany}}.{{dlc-}}
+** This method also works with {{i|D infinity}} or {{i|Clear Rune}} paired with a {{p|Soul of Eden}}.
+* {{dlc|nr}} In Greedier mode, upon defeating Ultra Greedier, all poops, whether destroyed, damaged or intact, will be converted into {{E|Golden Poop}}s.
+** As a result, {{P|A Card Against Humanity}} can be used to guarantee a large source of coins for the Greed Donation Machine.
+*** {{Dlc|r}} Poops spawned inside of the Ultra Greedier fight are turned into yellow colored poops, and drop normal brown poop pickups.
+* Common display resolutions, such as 1920x1080 with aspect ratio 16:9, will show only part of the arena in fullscreen mode. Switching to windowed mode and then resizing the window makes it possible to keep an eye on the entire arena while playing.
+
+=== Helpful Items ===
+As mentioned above, all items that grant a temporary buff or benefit that expire once Isaac leaves the room are extremely powerful in Greed Mode, as these effects can last an entire floor's worth of waves, and some can be stacked. Items typically useful in Normal Mode that are not enhanced by Greed Mode's nature are not listed.
+
+* {{I|Steam Sale}}: Reduces prices so that more items can be bought, and saves more money for the Greed Machine.
+* {{I|Sack of Pennies}} / {{I|A Quarter}} / {{I|A Dollar}}: Provides an abundance of money.
+* {{I|Mystery Sack}} / {{I|Sack of Sacks}} / {{i|Bomb Bag}}: Provides more pickups, especially bombs which are scarcer in Greed Mode.
+* {{I|Keeper's Sack}}: Due to the gamemode's nature, many stats ups will be granted by this item very frequently.
+* {{I|Leech}} / {{I|Charm of the Vampire}}: The large amount of enemies means more healing.
+* {{I|Crooked Penny}}: May be used to duplicate all shop contents. If Crooked Penny fails, the shop could simply be rerolled to replenish its contents.
+* {{I|Linger Bean}}: Any cloud created by the item stays afloat for a while & provides a consistent, wide-area effect.
+* {{I|Brown Nugget|r}}: Multiple flies can be spawned in the arena before starting the waves.
+* {{I|Akeldama}}: Slows down and damages chasing enemies, who can get overwhelming as the waves get shorter.
+* {{I|Lemon Mishap}} / {{I|Free Lemonade}}: Deals great AoE damage.
+** {{dlc|r+}} Creep created by '''Lemon Mishap''' remains on the ground indefinitely, allowing Isaac to cover a large portion of the room in it.
+* {{I|Sprinkler}}: Can be used multiple times in one arena.
+* {{I|Gnawed Leaf}}: Allows for passive damage through familiars while staying invincible.
+* {{I|Mega Blast}} / {{I|Mega Mush}}: Long lasting effects that can trivialize a floor.
+* {{I|Plum Flute}}: Baby Plum is able to damage way more enemies as they are usually strewn about in the room.
+* {{I|Star of Bethlehem}}: Always present in the middle of arena, allowing for great DPS increase, though it also makes accidentally pushing the button easier.
+* {{I|Red Stew}}: The damage buff can be sustained by the constant onslaught of enemies.
+* {{I|The Stairway}}: As long as one remains in the arena at the start of a floor, the ladder won't disappear. This allows Isaac to get richer before going into The Stairway's deal.
+* {{I|Quints}}: Gives you a persistent source of help during all the waves.
+* {{I|Jar of Flies}}: The high enemy count of Greed Mode causes Jar of Flies to generate stacks very quickly.
+* {{I|Ocular Rift}} / {{I|Lodestone}} / {{I|Black Hole}}: Can suck up many enemies in large chunks garnered in close proximity.
+* {{I|Hungry Soul}}: Very useful in a run since massive formation of enemies are ever-present throughout.
+* {{I|Purgatory}}: Can be timed to fire a ghost right as a new wave generates.
+* {{I|It Hurts}}: The effects stack throughout the entire arena zone.
+* {{i|Azazel's Rage}}: Triggers every 4 waves and can easily wipe out every enemy in the arena.
+* {{I|Larynx}}: Cleans up the enemies fast as well as preventing hits with high likelihood.
+* {{I|D10|r}}: Downgrades all the enemies in the room, useful because of the low charge amount.
+* {{i|Birthright}} + {{c|Tainted Cain}}: Purchasing an on-sale item over and over while having Birthright results in almost infinite consumables.
+* {{i|Betrayal|nr}}: Charms every enemy when hit, allowing an entire wave to be cleared at the cost of one hit.
+* {{I|Betrayal|dlc=r}}: The high enemy count will cause them to harm each other more often.
+* {{I|The Candle}}: Can be used to wipe out clusters of enemies, which helps prevent overcrowding.
+* {{I|Black Candle}}: While most curses don't especially matter in Greed Mode, Curse of the Blind is especially devastating, making immunity to it very valuable.
+* {{I|Paschal Candle}}: Quickly gains stacks, especially later on, due to the short wave timer.
+* {{I|Midas' Touch}} + {{I|E. Coli}}: Touching enemies turns them into golden poops, making you rich.
+* {{I|Cube of Meat}} / {{I|Ball of Bandages}},{{I|Mom's Heels}},{{I|The Virus}},{{I|Serpent's Kiss|dlc=a}}, {{I|Aries}}, {{I|Little Horn}}, {{I|The Nail}} and {{I|My Shadow|r}}: Since the mode prevents telefragging for a tiny amount of time even if enemies spawn on top of you - the contact damage trait of that item becomes very useful to instantly kill those that spawn on you with no consequences, however it can turn out badly if said monsters are explosive.
+* {{I|Keeper's Kin}}: Provides support in early floors due to the abundance of rocks.
+* {{I|Glass Cannon}}: helps immensely with clearing waves, it's possible to even use it in advance before pressing the buttons to get use of 2 shots in a row.
+* {{I|Potato Peeler}}: Meat boys can be created in mass due to the abundance of HP ups available in the shop. Isaac also emits damaging creep for the current room after using the item.
+* {{i|Book of the Dead}}: Spawns bone orbitals or charmed {{E|Bony|text=Bonies}} when there are killed enemies in a room. Making this item especially useful after the first 8 rounds and before the boss rounds.
+* {{i|D20}}: The D20 is a one-item game breaker as long as the Shop has a {{e|Lil' Battery}} available. See the tips section above for more information.
+* {{i|D infinity|r}}: Incredibly powerful in Greed Mode, as the dice can now be toggled to mimic the effects of the {{i|D1}}, {{i|The D6}}, and the {{i|D20}}, allowing Isaac to quickly gain consumables and reroll items.
+* {{i|Dark Arts}}: Dark Arts can be used to press the button without taking any damage, kill many enemies with each activation, and have the item be constantly recharged with each wave.
+** While playing as {{C|Tainted Judas}}, each enemy or projectile ran into will grant a damage buff. With the sheer amount of enemies appearing, especially in Greedier, Tainted Judas will gain an immense damage buff and can kill huge swaths of enemies with ease. Additionally, this is even more potent against {{E|Ultra Greed}}, as you can run through the many {{E|Greed Gaper}}s summoned to gain even greater damage buff, as the Gapers will be clustered very closely together.
+* {{i|Gello}}: Incredibly powerful, as it can be activated multiple times in the same room.
+* {{I|Hemoptysis}}: Can be spammed to push into enemies into walls, which happens almost always due to the arena being somewhat secluded.
+* {{i|No. 2}}: Can deal room-wide damage every 5 seconds, as well as giving you free bombs to blow up shopkeepers & secret room walls.
+* {{i|Red Candle|nr}}: Filling the room with flames before pushing the button will quickly kill all enemies and bosses.
+** {{Dlc|r}} This method is no longer effective because the flames now extinguish after a set time.
+* {{i|Wooden Nickel}}: Allows for an easy gain for a lot more money very quickly, as it can be used once per wave. If the {{i|9 Volt}} is also picked up, Isaac can use activate the item once every 15 seconds to gain infinite money as long as there is an enemy left in the room.
+* {{T|Liberty Cap}}: Can be used to repeatedly exit and re-enter the arena to force the {{i|Magic Mushroom}} effect.
+* {{T|Mom's Lock}}: Can be used to repeatedly exit and re-enter the arena to force the {{i|Mom's Knife}} effect.
+* {{T|Counterfeit Penny}}, {{T|Swallowed Penny}} and all other penny trinkets are useful due to the nature of Greed Mode. Even {{T|Cursed Penny}} is useful if you're trying to teleport into the exit door of the floor; Although it is wise to take all money before picking the trinket up, and only using it with 1 coin left.
+* {{T|Equality!|nr+}}: With careful pickup management, the coins can be doubled.
+* {{T|Eve's Bird Foot}}: The bird provides consistent help throughout waves.
+* {{T|Samson's Lock}}: Abundance of enemies offers consistent damage increase.
+* {{p|Berkano|r+}}: Consistently useful in Greed Mode due to locusts lasting as long as Isaac stays withing the arena.
+* {{T|Sigil of Baphomet}}: The wave based enemy spawns allow for constant uptime.
+* {{i|Coupon}}: Can be used to make pickups or items free in the shop, in exchange for making them no longer restock. Can also be used to take Devil Deals for free, conserving any heart containers, which are more valuable due to red heart damage having no effect on Deal chances.
+
+=== Unhelpful Items ===
+* {{i|Blanket}}: Only grants a shield for the two boss fights on the final level. The shield does not activate for the regular boss waves on previous floors.
+* {{i|Camo Undies|a+nr}}: This item does almost nothing in Greed Mode, despite being able to be obtained from the Greed Mode Treasure Room.
+** {{dlc|r}} Due to its ability to destroy {{e|Shopkeeper}}s, Camo Undies can net you some extra pennies or nickels from shops each floor. Its new effect in Repentance also nets you a risk-reward dynamic as long as you re-enter the arena. You risk by losing money but get rewarded by clearing the waves easier.
+* {{i|Champion Belt}}:While it does provide a damage up, it also quadruples the chance for champion enemies to appear, while not being able to profit from any extra pickups dropping from champions.
+* {{i|D12}}: Very few rocks to reroll, however, can be abused to force a hatch to the next floor.
+* {{i|Eucharist}}: You're already guaranteed an Angel or Devil deal each floor, so all this does is ensures that it's an Angel Deal.
+* {{i|Guppy's Eye}}: This item is substantially less useful in Greed Mode, due to the scarcity of chests.
+* {{i|Guppy's Tail}}: This item has no effect in Greed Mode other than counting towards the Guppy Transformation.
+* {{i|Holy Mantle}}: Only triggers once without leaving the room, however can still be useful to make use of curse rooms for free; As well as deactivating the wave button with no consequences.
+* {{I|Monstro's Tooth}}: Only targets one enemy, virtually useless with the exception of cleaning up dead shopkeeper bodies.
+* {{i|Mom's Bracelet}}: Very few rocks to throw.
+* {{i|Mama Mega!}}: The explosion will only trigger once per room, making it effectively useless in Greed Mode after the first activation.
+* {{i|The Mind}}: In Greed Mode, this item effectively becomes {{i|Blue Map}}. Other map-related items such as {{I|Treasure Map}} and {{I|The Compass}} are negated completely irrelevant.
+* {{i|Pause}}: Using the item in Greed Mode will freeze all enemies but will not pause the timer. New waves of enemies will continue to spawn even while the effect is active.
+* {{p|Soul of Cain}}: Will show red door outlines, but cannot generate normal red rooms, leaving only special rooms as a rare possibility. The red outlines can be used to find the Secret Room or leave the floor, however.
+* {{I|Meat Cleaver|dlc=r}}: Virtually useless, especially considering how pretty much none of the champions drop any pickups.
+* {{I|Dream Catcher}} Doesn't show the outcomes for the boss waves and is bugged in the way that it doesn't show the right items, making it useless outside of the half-soul heart it gives each floor.
+* {{I|Deep Pockets|r}}: Doesn't actually increase the amount of money you gain, causing it to only be valuable if you had a way to generate absurd amounts of money, which you don't need Deep Pockets to do.
+
+=== Neutral items ===
+* {{I|Sulfuric Acid|dlc=a+}} is both a blessing and a curse since it helps to always find secret rooms for free and destroy polyps; however it is bad for {{C|The Lost}} and {{C|Tainted Lost}} because they effectively can't hide inside rocks anymore.
+* Both {{I|Head of the Keeper|dlc=a}} and {{I|Eye of Greed|dlc=a+}} are very useful throughout the entire run but are a severe disadvantage during the final boss fight, as it gives {{E|Ultra Greed}} and {{E|Ultra Greedier}} a consistent way to heal themselves.
+* {{I|Member Card|}} offers more options for sale, however the items inside are still costly & indulging too much there may cause neglect of the base shop stuff.
+* {{I|Magic Fingers}} and {{I|Golden Razor}} provide short-term helping hand at the cost of being less advantageous long-term.
+* {{I|Money Power}} is a double-edged sword in the mode as it essentially forces the player to choose between buying shop items, or saving them for damage and the Greed Donation Machine.
+
+== Notes ==
+* With the nature of the mode's arena being the place most of the time is being spent at – anything that only temporary boosts up the character for one room is significantly more useful during the lingering battlefield. Penny-Related trinkets are also very useful with the constant flood of money.
+* Despite being possible to make, red rooms will only open if a generated one is a special one, or if you're on the final floor. Red Rooms on the last floor are mostly empty with no contents inside. Some red rooms on the final floor can be Curse rooms or Super Secret rooms with some pickups in them.
+* The combat room before Ultra Greed boss fight doesn't grant active item charges.
+* Greed Mode is the only place in the game where {{I|Match Book}} doesn't drop {{T|Match Stick}}.
+* Using {{I|Glowing Hourglass}} at the start of the run sends Isaac into the I AM ERROR room.
+
+== Gallery ==
+<gallery>
+File:Greed Mode Concepts.jpg|Concept for Greed mode room layouts and mechanics by Edmund McMillen.
+File:GreedModeLayoutSketch.png|Edmund McMillen's sketch of the Greed mode layout.
+File:Greed Mod Store Layout Concept.png|Sketch of the Greed mode store layout.
+</gallery>
+
+== Trivia ==
+* Ultra Greed's theme, named “Chorus Mortis”, is a remix of the main menu theme.
+* Doodles that pop-up at the start of a run are always greed-themed in this gamemode.
+* Isaac doesn't have the animation of jumping inside a golden chest in the end, possibly drawing a parallel with the ending in which he gets stuck inside a cave, drying up and becoming Greed. The updated Greedier ending also shows many spiders from isaac's body flooding up everything - drawing possible symolism of Isaac becoming rotten to the core.
+
+== Bugs ==
+{{bug|If the Super Secret Room is generated behind the locked (golden) Treasure Room, it is possible to get stuck by teleporting into before unlocking the Treasure Room. The Treasure Room doors all become unlocked when one of them is, unlike the normal game mode where a Treasure Room may have only one locked door, which results in the bombable wall between the Super Secret Room and the Treasure Room also being "locked". It cannot be bombed or opened with a key from inside the Super Secret Room, and unless another means of teleporting is available, the run is softlocked.}}
+{{Bug|dlc=nr|The music played in chapters 1-4 have the wrong music. The music played will always be of the 2nd alt floor version of the current floor. For example, Burning Basement's track will play on Basement, and Flooded Caves's track will play on Caves.}}
+{{Bug|dlc=nr+|Using {{i|Genesis|n}} forces you down a new "Ultra Greed" floor instead of the starting room, even if the final boss is already killed.}}
+{{Bug|dlc=nr+|{{i|Dream Catcher|n}} shows the wrong items in Greed mode.}}
+{{Bug|dlc=r+|Non-boss enemies spawned in waves will never be champions. Enemies spawned by other means (e.g. those present in the Exit room) may still be champions.}}
+{{bug|dlc=r+|All {{e|Bony|}} enemies spawned by {{t|Polished Bone}} will be champions.}}
+
+
+{{nav|greed machine unlock|fr=Mode Avarice}}
+
+[[Category:Mechanics]]
+[[Category:Modes]]

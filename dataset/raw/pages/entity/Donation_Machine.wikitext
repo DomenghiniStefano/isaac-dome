@@ -1,0 +1,238 @@
+{{infobox entity
+ | name    = Donation Machine
+ | id      = 6
+ | variant = 8
+}}
+
+The '''Donation Machine''' is a type of machine that appears in almost every {{R|Shop}} as well as rarely spawning through {{R|Black Market}}s, {{e|Reward Plate|a|Reward Plates}}, {{R|Arcade}}s, and {{R|Vault}}s.
+
+Touching the Donation Machine donates a coin from Isaac's inventory, increasing the displayed coin total by one. Similar to the {{Machine|Greed Donation Machine}}, the number of coins donated persists between runs. Donating enough money [[Donation Machine#Donation Rewards|upgrades the Shop, the Library, and unlocks new items]].
+
+It takes many runs of continuous donations to unlock everything, as the player will have to donate a total of 999 coins to max the machine out.
+
+== Mechanics ==
+A total of 999 coins can be donated. Attempting to donate a 1,000th coin causes the Donation Machine to explode, resetting its total back to 0 and dropping roughly 12 dimes.
+
+Donating money has a chance to jam the machine, preventing further donations. If a machine jams, all future Donation Machines will be jammed as well for the remainder of the run. On average, Donation Machines accept 30 coins before jamming.
+* {{dlc|nr}}Each coin has a 5% chance to jam the machine.
+* {{dlc|r}} The first coin has a 0.15% chance to jam the machine, increasing by 0.15% with each coin donated on the current floor. Restarting a run with {{i|R Key|n}} un-jams all Donation Machines.
+
+Exploding the Donation Machine, such as with a {{E|Bomb}}, causes it to drop {{dlc|nr}} 1-5 pennies / {{dlc|r}} 6-14 pennies. This decreases the donation total by (number of dropped pennies + 1), resulting in a net loss.
+* {{dlc|nr}} The Donation Machine can be exploded for as long as there are still coins inside. It drops coins even when jammed.
+** {{i|Humbleing Bundle|nr}} turns the dropped pennies into double pennies, which makes a profit.
+* {{dlc|r}} Bombing a Donation Machine destroys it, preventing future Donation Machines from appearing for the rest of the run. The dropped coins are deducted from the donation total at the start of the next run.
+** Jammed donation machines cannot be blown up and will not drop any coins.
+** Using {{i|R Key|n}} un-explodes the Donation Machine, allowing it to spawn again.
+
+Under rare conditions, it's possible to spawn multiple donation machines in the same room, via {{E|Reward Plate}}s or {{i|TMTRAINER}}. Adding coins to one does not update the coin counter on the others, until the current room is left and re-entered. They can be individually jammed/exploded without affecting the others.
+
+=== Other Effects ===
+* Donations have a 2% chance to increase Isaac's luck by 1.
+** Donating ten coins to a Donation Machine increases the odds of an {{R|Angel Room}} appearing instead of a {{R|Devil Room}}, if a devil deal was not previously taken. This does not increase the chance overall, instead simply swaying the odds in favor of an Angel Room.
+* Donation Machines cannot appear while achievements are disabled.
+* {{dlc|r}} Donated money also reduces the chance for {{E|Greed}} to spawn for the next floor: -1.66% per coin, up to a maximum of -8.33% for 5 coins
+* {{dlc|r}} Destroying the the Donation Machine increases the chance for {{E|Greed}} to spawn for the next floor by +3.33%
+
+=== Donation chances ===
+{{dlc+|nr}} Below is a table of the expected probabilities that donating any amount of coins will jam the Donation Machine, assuming that every donation has an independent 5% chance to cause a jam.
+{| class="wikitable"
+|+
+!Coins donated
+!Total jam chance
+!Notes
+|-
+|0
+|0%
+|The total jam chance is considered the probability of a jam at donating <math>n</math> amount of coins.
+|-
+|1
+|5%
+|It is possible for the machine to jam after donating a single coin.
+|-
+|2
+|9.75%
+|
+|-
+|3
+|14.26%
+|
+|-
+|4
+|18.55%
+|
+|-
+|5
+|22.62%
+|The amount of coins a {{E|Nickel}} gives you.
+|-
+|10
+|40.12%
+|The amount of coins a {{E|Dime}} gives you.
+|-
+|13
+|48.67%
+|Average low.
+|-
+|14
+|51.23%
+|Average high.
+|-
+|25
+|72.26%
+|The amount of coins {{I|A Quarter}} gives you.
+|-
+|50
+|92.31%
+|
+|-
+|99
+|99.38%
+|The maximum amount of coins Isaac can normally carry.
+|-
+|148
+|99.95%
+|The amount of coins that can be donated at once with 99 coins and proper usage of a {{P|2 of Diamonds}} card.
+|-
+|<math>n</math>
+|<math>1 - 0.95^n</math>
+|To calculate the odds of the machine ''not'' jamming after <math>n</math> donations, use the formula <math>0.95^n</math>. This [https://www.desmos.com/calculator/nszxram60w graph] can also be used to calculate any probabilities.
+|}
+{{dlc-}}
+
+{{dlc+|r}} Below is a table of the expected probabilities that donating any amount of coins will jam the Donation Machine. The jam chance resets upon entering a new floor.
+{| class="wikitable"
+|+
+!Coins donated
+!Total chance
+!Jam chance on donation
+!Notes
+|-
+|0
+|0%
+|0%
+|The total jam chance is considered the probability of a jam at donating <math>n</math> amount of coins.
+|-
+|1
+|0.15%
+|0.15%
+|It is possible for the machine to jam after donating a single coin.
+|-
+|2
+|0.6%
+|0.3%
+|
+|-
+|3
+|1.34%
+|0.45%
+|
+|-
+|4
+|2.38%
+|0.6%
+|
+|-
+|5
+|3.69%
+|0.75%
+|The amount of coins a {{E|Nickel}} gives you.
+|-
+|10
+|14.02%
+|1.5%
+|The amount of coins a {{E|Dime}} gives you.
+|-
+|20
+|45.62%
+|3%
+|
+|-
+|21
+|48.93%
+|3.15%
+|Average low.
+|-
+|22
+|52.2%
+|3.3%
+|Average high.
+|-
+|25
+|61.53%
+|3.75%
+|The amount of coins {{I|A Quarter}} gives you.
+|-
+|50
+|97.97%
+|7.5%
+|
+|-
+|99
+|~99.99%
+|14.85%
+|The maximum amount of coins Isaac can carry without {{I|Deep Pockets}}.
+|-
+|148
+|~100%
+|22.2%
+|The amount of coins that can be donated at once with 99 coins and proper usage of a {{P|2 of Diamonds}} card.
+|-
+|667
+|~100%
+|100.1%
+|The maximum amount of coins possible to donate on a single floor.
+|}
+{{dlc-}}
+
+== Donation Rewards ==
+{{achievement text | Blue Map, Store Upgrade lv.1, There's Options }}
+** Also unlocks {{i|More Options}}.
+{{achievement text | Store Upgrade lv.2, Black Candle, Store Upgrade lv.3, Red Candle, Store Upgrade lv.4, Blue Candle, Stop Watch }}
+
+== Strategy ==
+After reaching 999 coins and unlocking everything, the Donation Machine can be exploded freely, essentially letting Isaac trade bombs for the stowed away coins.
+* Causing the Donation Machine to explode by reaching 1000 cents is not recommended, as it does not unlock anything and limits the ability to trade bombs for coins in future runs until the coin total has been built back up again.
+* It is recommended to deliberately bomb the Donation Machine such that the banked total is less than 999 cents. This effectively prevents accidental 1000th cent donations.
+
+{{dlc|nr}} With items that let Isaac reliably create explosions, such as {{I|Ipecac}}, and {{I|Dr. Fetus}}, the donation machine can be endlessly bombed for as long as there are still coins inside of it, as it doesn't get destroyed after a single explosion like it does in Repentance runs. This can have game-breaking potential, especially if combined with items like {{i|Humbleing Bundle}}, {{i|D20}}, {{P|Jera}}, and {{i|Restock}}.
+
+=== Making Money ===
+Though it is generally best to donate coins in addition to playing the game normally (to obtain other unlocks/[[Completion Marks|completion marks]] in addition to filling it up), if the player wishes to deliberately farm coins to fill the Donation Machine sooner, there are multiple ways to do so.
+* {{Machine|Blood Donation Machine}}s/{{i|IV Bag}} can generate a lot of money, at the cost of health.
+** If there's an abundance of {{E|Red Heart}}s on the floor (or {{i|Placenta}} and a lot of patience), enough money can be generated with blood donations to jam the machine.
+* {{C|Azazel}}'s powerful attack and innate flight makes it easy for him to clear rooms and fly to otherwise hard to reach coins, making him a good choice for farming coins early on.
+** {{C|Keeper}} and {{C|Tainted Keeper}} can get a lot of money incredibly fast with their unique starting items and abilities, though by the time they (and Keeper's starting items) are unlocked, it is likely that a high donation total would already be achieved. Regardless, they're still great at refilling the machine for the benefit of future runs.
+* {{dlc|ana+}} In versions of the game prior to [[Booster_Packs#Booster_Pack#5|Booster Pack #5]], {{i|Glowing Hourglass}} un-jams the machine and returns the donated coins, but the donation total still goes up as if they were donated. There are multiple ways to donate indefinitely with this, usually by charging it up before leaving the room:
+** Purchasing (or otherwise acquiring) a {{E|Lil' Battery}} to recharge Glowing Hourglass in the shop will rewind to back before the battery was purchased.
+** Using {{i|Sharp Plug}} (or {{i|Habit}} and two bombs) with more than two hearts provides a full charge.
+** If Glowing Hourglass is for sale in the Shop, it can be bought before donating, then used to go back before it was purchased.
+** Using a {{p|? Card}}, which takes Isaac back to before it was used, allowing infinite uses of Glowing Hourglass.
+
+* {{dlc|na+}} '''Force Quit Method''': This is an easy way to fill up the machine potentially in one run. This method also has no item prerequisite. The game saves the normal and Greed Donation Machine data separately from your main save file; the machine data is only changed and saved AFTER you leave the room.
+** Enter a room with the Donation Machine. Then exit to the start menu normally to save your game.
+** Continue the game.
+** Donate money until machine jams or you run out of coins.
+** Walk out to a different room. Now the game will save the change in coins only.
+*** On computer, you will not need to leave the room but will need to suspend the game using an application such as Process Explorer (for Windows)
+** Force quit the game
+*** Windows: Alt+F4
+*** OS X: Force Quit
+*** Linux: Ctrl+Alt+Esc (may depend on desktop environment)
+*** Consoles: home button and then quit app
+** Restart and continue the game. Your save game from the 1st step will be restored. It should look the same as before: the Donation Machine is unjammed, but the starting coin count on the Donation Machine is now higher.
+** Donate money. Walk to different room. Force Quit. Repeat.
+** Notes: If you accidentally walk by the machine at 999 coins and blow it up by accident, do not leave the room and just Force Quit. The machine will be back at 999.
+*** Despite the 5% jam chance noted above, in actuality, the number of coins it takes to jam a machine is set per floor. Let's say it takes 10 coins to jam the machine. If you Force Quit and try again, it will still take 10 coins to jam the machine even with the higher coin count. When you go to the next floor, let's say it now takes 20 coins to jam the machine. Force quitting on the next floor will still take 20 coins to jam the machine next time. The method works best on a Donation Machine that accepts a large number of coins before jamming.
+
+== Gallery ==
+<gallery>
+File:Donation Machine Jammed.png|A jammed Donation Machine.
+File:Donation Machine Broken.png|A broken Donation Machine.
+</gallery>
+
+== Bugs ==
+{{bug|plat=Vita|If Isaac donates to the machine, leaves the room, and the game is then restarted using the PS button, the machine will retain its donation and Isaac will have the same amount of coins as he started the current floor with.}}
+
+{{nav|donation machine unlock|fr=Boîte à Dons}}
+[[Category:Objects]]
+[[Category:Mechanics]]

@@ -1,0 +1,88 @@
+{{infobox stage
+ | dlc         = r
+ | chapter     = 7
+ | id          = 35
+ | level id    = 13
+ | type id     = 0
+ | bosses      = Dogma, The Beast
+ | unlocked by = A Strange Door
+}}
+'''Home''' is one of the final floors in ''The Binding of Isaac'', alongside the {{s|Chest}}, the {{s|Dark Room}}, {{dlc|a+}}{{s|The Void}}, and the {{s|Corpse}}. It was added in ''[[The Binding of Isaac: Repentance]]''.
+
+Home can be accessed after picking up {{i|Dad's Note}} and going through the [[ascent]] or by using the {{i|Glowing Hourglass}} in the first floor's starting room without entering any other rooms. The bosses of the floor are always {{e|Dogma}}, followed by a gauntlet against {{e|Ultra Famine}}, {{e|Ultra Pestilence}}, {{e|Ultra War}}, and {{e|Ultra Death}}, and finally {{e|The Beast}}.
+
+== Layout ==
+The Home floor has no enemies, and is completely empty. Similar to {{s|???}} and the [[Greed Mode|Greed mode]] floors, its layout is always the same. Home features Isaac's room, two corridors, a room with a pickup, the living room, and Mom's room.
+
+Isaac's room is where Isaac spawns upon entering the stage. It contains a bed in the upper left corner and a carpet in the center, like a regular {{r|Clean Bedroom}}, as well as a {{E|Locked Chest}}. Isaac can sleep in his bed to recover provided he's not at full health, or to add three {{e|Soul Heart}}s provided he has no {{e|Red Heart}} containers. Triggering an explosion on the carpet will cause it to be damaged, but reveal nothing underneath.
+
+A single door in the bottom wall leads to the narrow right corridor. Through a door in the upper side of the right wall is a small room that contains a random [[pickup]] or, rarely, an [[item]]. Further down in the left wall, there is another door leading to the house's living room.
+
+The living room is double-sized and extends vertically downwards from the entrances at either side. It contains a large turned-off TV, placed against its northern wall, and a couch further south, as well as a red carpet located between them with a massive picture of a cross with wings. A door in the upper left side leads to another narrow corridor, which Isaac can walk north to reach Mom's room.
+
+Mom's room contains a unique chest, a carpet, a dressing table, and Mom's bed, all of them larger than similar items found throughout the game. When the chest is opened for the first time, it will contain the {{i|Red Key}}, which will be permanently unlocked. In subsequent playthroughs, it draws from [[Mom's Chest (Item Pool)|its own item pool]] of Mom-related items; the Red Key can still be found, but more rarely. The carpet and the dressing table in this room cannot be interacted with.
+
+Sleeping in Mom's bed will cause Isaac to have a nightmare, showing the loading screen with no floor icons. In the dream, Isaac is sitting next to his mother as she watches TV. Isaac's distorted face then appears on the TV screen, as the noise of static begins to increase in volume.
+
+After a flash of static briefly covering the entire screen, Isaac wakes up again, presumably at night since Home is considerably darker. At this point, when exiting Mom's room and walking down the left corridor, a grey light can be seen through the bottom-right door. The source of this light is the TV in the living room, which is now turned on but only emits static. Stepping on the cross in the living room's carpet will begin the battle against Home's first boss, Dogma.
+
+Upon beating Dogma, a cutscene will play, after which the fight with The Beast will start.
+
+=== Hidden closet ===
+In the hallway leading to Mom's bedroom, using either the {{i|Red Key}}, {{p|Cracked Key}}, or {{P|Soul of Cain}} will open an entrance to a hidden room. This is hinted by the existence of the closet on the other side of the map, by Isaac's bedroom. There is also a barely visible glowing red outline for the hidden door when the Red Key or Cracked Key has been picked up. The closet is also the place Isaac is thrown into in [[Endings|ending 21]].
+
+Inside is the tainted version of the character currently being played, laying on the floor, crying. Touching them will unlock that character, which can be selected from their own menu and has their own unique mechanics and unlocks. Each playable character has a tainted version that can be unlocked this way. If the player changes the character (for example dying with {{T|Missing Poster}} and respawning as {{C|The Lost}}) and re-enters the Hidden Closet, the crying baby will not change to the corresponding character, and will stay as the first character it turned into. This means the player cannot unlock two [[Tainted Characters]] in the same run. In [[Repentance Co-Op|true co-op]], the character in the closet will be the tainted version of player one's character.
+
+If the tainted version of a character has already been unlocked, or a tainted character is being played, the closet will contain {{i|Inner Child}}. If Inner Child has not been unlocked, it will contain a {{E|Shopkeeper}} instead.
+
+The method for obtaining a {{p|Cracked Key}} during the [[ascent]] is described on their respective pages, but the {{i|Red Key}} can also be obtained from {{R|Curse Room}}s (if unlocked) or by using {{i|Pandora's Box}} on the Home floor.
+
+== [[Bosses]] ==
+{| style="width:100%; align:left padding-right:2em"
+| style="text-align: center; border: none" colspan="4" |[[File:Boss Dogma portrait.png|center|link=Dogma]]
+|-
+| style="text-align: center; border: none" colspan="4" |[[Dogma]]
+|-
+| style="text-align: center; border: none" |[[File:Boss Ultra Famine ingame.png|center|link=Ultra Famine]]
+| style="text-align: center; border: none" |[[File:Boss Ultra Pestilence ingame.png|center|link=Ultra Pestilence]]
+| style="text-align: center; border: none" |[[File:Boss Ultra War ingame.png|center|link=Ultra War]]
+| style="text-align: center; border: none" |[[File:Boss Ultra Death ingame.png|center|link=Ultra Death]]
+|-
+| style="text-align: center; border: none" |[[Ultra Famine]]
+| style="text-align: center; border: none" |[[Ultra Pestilence]]
+| style="text-align: center; border: none" |[[Ultra War]]
+| style="text-align: center; border: none" |[[Ultra Death]]
+|-
+| style="text-align: center; border: none" colspan="4" |[[File:Boss The Beast ingame.png|center|link=The Beast]]
+|-
+| style="text-align: center; border: none" colspan="4" |[[The Beast]]
+|}
+
+== Unlockable [[Achievements]] ==
+{{achievement text | Red Key, The Broken, The Dauntless, The Hoarder, The Deceiver, The Soiled, The Curdled, The Savage, The Benighted, The Enigma, The Capricious, The Baleful, The Harlot, The Miser, The Empty, The Fettered, The Zealot, The Deserter }}
+
+== Gallery ==
+<gallery>
+File:Dogma_Concept_1.png|Early concept sketches of Home, including Dogma's boss arena for Home along with {{e|Min-Min}}.
+File:Dogma_Concept_2.png|Early concept sketches of Dogma itself and its boss arenas for Home. Edmund McMillen noted that Dogma was intended to be a demonic Isaac initially.
+File:Dogma Cutscene Sketches.png|Concept art of Isaac's nightmare seen before the fight with Dogma.
+</gallery>
+
+== Trivia ==
+* The fact that there isn't a trap door underneath the rug in Isaac's bedroom hints towards the Final Ending, as the game is kicked off with Isaac finding and using a trap door underneath his rug in order to escape his mother and using it to reach The Basement.
+* Uniquely, using {{I|Undefined}} in {{s|Home}} is impossible, despite an I AM ERROR room existing for this floor; any attempts to trigger the effect result in nothing happening.
+* {{i|The Bible}} and {{i|Mom's Purse}} can be seen on top of her dresser in her room. {{i|Mom's Lipstick}}, {{i|Mom's Perfume}}, and {{i|Mom's Eyeshadow}} can be seen atop a dresser beneath her mirror. Various [[pills]] can be seen in the drawers reaching from her bed.
+* The unique chest in Mom's room resembles a much larger version of {{I|Mom's Box}}.
+* The drawings seen in Isaac's room reference the events of Ending 20.
+* The closet created by using the Red Key resembles the one featured in the Official Art for ''Repentance'' and is most likely shown in Ending 21.
+* Normally unseen, there is a crack on the door to Isaac's room referencing the events of the game's introduction cutscene where Isaac peeks through and sees his mom approaching with a knife. It can be seen by using {{i|Everything Jar}} and getting it to close the room's doors. The cracked door sprite is also used in bedrooms which can be seen by reward plates spawning enemies or, as mentioned before, {{i|Everything Jar}}
+* Including the hidden room, Home's layout resembles a heart. This may be a reference to the phrase 'Home is where the heart is'.
+* The golden chest in Isaac's room can spawn as a {{E|Mega Chest}}.
+* There is an unused [https://www.youtube.com/watch?v=Du1skPiB70s Combat] layer for the [[music]] in Home, in which you can hear Mom yelling at Isaac, either his name or in full sentences (Although very echoey, like "Oh god, '''ISAAC!'''")
+** This soundtrack can be heard via entering [[Crawl Space]] with enemies in it.
+* Both Home and the Lake of Fire are referred to on [[Isaac's last will|Isaac's Last Will]] as "Some Familiar Place".
+
+== Bugs ==
+{{bug|If the player uses {{I|Delirious}} during {{E|The Beast}} fight, and it summons {{E|Rag Man}} during The [[Harbingers (Bosses)#Ultra Harbingers|Ultra Harbingers]] phase, the battle will softlock or crash due to the dead {{E|Rag Man's Ragling}}s counting as [[Monsters|enemies]]}}
+
+{{nav|environment|mother unlock|fr=Maison}}

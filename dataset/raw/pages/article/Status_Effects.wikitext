@@ -1,0 +1,343 @@
+{{header effects}}
+{{disambig msg|effects which can be inflicted on [[monster]]s|the different kinds of effects which Isaac's primary weapon can have|Tear Effects}}
+
+'''Status effects''' are special effects that can be inflicted on an [[enemy]] from a variety of sources, such as tears, {{e|Bomb}}s, and [[item]]s. Each status effect has a color and/or symbol/effect associated with them for easy identification. These colorations are not to be confused with [[champion]]s. Status effects are often temporary, but can become permanent in certain circumstances.
+
+<div class="toclimit-2">__TOC__</div>
+
+== Effects ==
+{| class="mw-collapsible wikitable sortable"
+ ! Effect
+ ! class="unsortable" | Appearance
+ ! class="unsortable" | Description
+ |- id="Burn Effect"
+ ! [[#Burn|Burn]]
+ | style="text-align: center" | [[File:Burn Effect.png|50px|link=#Burn]]
+ | {{dlc+|na}}Afflicted enemies take 4 to 6 fire damage over time. Afflicted enemies will be tinted orange for the duration and have a fire symbol above them.{{dlc-}}<br>{{dlc|a}}Afflicted enemies will sustain double Isaac's [[Damage|tear damage]] over time. Afflicted enemies will be tinted orange for the duration and have a fire symbol above them.
+ |- id="Charm Effect"
+ ! [[#Charm|Charm]]
+ | style="text-align: center" | [[File:Charm Effect.png|50px|link=#Charm]]
+ | Afflicted enemies will temporarily fight on Isaac's side, running toward and/or shooting at other enemies and damaging them for 25% of their maximum HP per touch, 5 damage with [[Health|half-heart-dealing]] projectiles, and 10 with full-heart-dealing projectiles. If no other enemies are in the room, a charmed enemy will instead run towards Isaac. (Charmed enemies can still hurt Isaac.) Afflicted enemies will be tinted pink for the duration and have a heart symbol above them. Most enemies with ranged attacks will not fire them (but can damage other enemies with them if they do — see the above "monster infighting" damage description).<br>{{dlc|a+}}Charmed enemies will prioritize non-charmed enemies and won't target invincible enemies. Charmed {{e|Portal}}s will also spawn [[friendly]] enemies.
+ |- id="Confusion Effect"
+ ! [[#Confusion|Confusion]]/Concussion<ref group=Details>"Confusion" is the proper name of this status effect, but it is sometimes referred to as "Concussion" in certain item and effect descriptions (such as {{I|Iron Bar}}).</ref>
+ | style="text-align: center" | [[File:Confusion Effect.png|50px|link=#Confusion]]
+ | Afflicted enemies are slowed and walk around randomly. While confused, most non-[[Bosses|boss]] enemies will be unable to attack. Bosses will have randomized movement, but will still be able to fire projectiles at Isaac. Afflicted enemies will be tinted pale gray and have stars above them.
+ |- id="Fear Effect"
+ ! [[#Fear|Fear]]
+ | style="text-align: center" | [[File:Fear Effect.png|50px|link=#Fear]]
+ | Afflicted enemies are scared of Isaac and will run away from him. While scared, most non-boss enemies will be unable to attack or charge towards Isaac. Bosses will run away from Isaac, but will still be able to shoot projectiles at him. Afflicted enemies will be tinted purple and have a skull symbol above them.
+ |- id="Petrification Effect"
+ ! [[#Petrification|Petrified]]
+ | style="text-align: center" | [[File:Petrified Effect.png|50px|link=#Petrified]][[File:Gold Petrified Effect.png|50px|link=#Petrified]]
+ | Afflicted enemies are stopped in place. They cannot move or attack, but will still deal contact damage. Afflicted enemies will be shaded brown-gray as if turned to stone (unless petrified by {{I|Midas' Touch}}, in which case they will be shaded gold).<ref group=Details>Enemies that are petrified by Midas' Touch or an analogous effect (e.g. {{I|Eye of Greed}} and {{e|Gold Heart}}) will drop [[coins]] on death. This does ''not'' happen with other petrification effects, even if Isaac is able to inflict both kinds in the same build, which is why Midas' Touch applies different shading. {{dlc+|r+}} if a [[Champions|violet champion]] monster is killed while it is gold-petrified, the trinket it drops is guaranteed to be a golden one. Rainbow champions still drop normal trinkets.{{dlc-}}
+</ref>
+ |- id="Poison Effect"
+ ! [[#Poison|Poison]]
+ | style="text-align: center" | [[File:Poison Effect.png|50px|link=#Poison]]
+ | {{dlc+|na}} Afflicted enemies sustain 4 to 6 damage over time. Afflicted enemies will be tinted green and have a bubbly effect surrounding them.{{dlc-}}<br>{{dlc|a}} Afflicted enemies will sustain double Isaac's [[Damage|tear damage]] over time. Afflicted enemies will be tinted green and have a bubbly effect surrounding them.
+ |- id="Slow Effect"
+ ! [[#Slow|Slow]]
+ | style="text-align: center" | [[File:Slow Effect.png|50px|link=#Slow]][[File:Tar Slow Effect.png|50px|link=#Slow]]
+ | Afflicted enemies are slowed down to approximately 51.3% of their original speed. Any projectiles they shoot will also be slowed down to the same amount. Attacks that end when the enemy runs out of momentum, such as the charging attacks of {{e|Gurdy Jr.}} and {{e|Dingle}}, will be vastly shortened in duration. Depending on the item that triggers the slow effect, afflicted enemies will be tinted black or white with a snail icon above them.<br>{{dlc+|nr}} Slowed projectiles will lose momentum much more quickly, greatly reducing their total range.{{dlc-}}
+ |- id="Friendly Effect"
+ ! {{dlc|a}}<br>[[#Friendly|Friendly]]
+ | style="text-align: center" | [[File:Friendly Effect.png|50px|link=#Friendly]]
+ | Afflicted enemies are permanently [[charm]]ed<ref group=Details>While most friendly enemies are spawned with the condition, it is possible for a non-friendly enemy to become friendly without being killed. In this scenario, the enemy in question will still be treated as though it was dead for purposes such as whether or not a room counts as cleared.</ref> and will fight on Isaac's side until they die.<ref group=Details>Friendly enemies can take damage, including contact and projectile damage, from non-friendly enemies (blocking most enemy projectiles in the process), which works like how charmed enemies deal damage to other enemies. (Friendly and non-friendly enemies making contact with each other generally damage each other more-or-less at the same time if both enemies can cause contact damage.) Some charmed or friendly enemies can also take damage in different ways (such as {{e|Bishop|text=Bishops}} taking damage when they prevent damage being dealt to Isaac).</ref> Most enemies under this effect will follow Isaac across rooms, like a [[familiar]].<ref group=Details>Some friendly-inducing effects cause affected enemies to despawn when Isaac leaves the room.</ref> Friendly enemies cannot hurt Isaac, but many of them will still chase and "attack" Isaac in a room with no enemies. Enemies spawned from afflicted enemies will also be friendly. Friendly enemies are slightly tinted gray, and have heart symbols above their head.
+ |- id="Shrink Effect"
+ ! {{dlc|a}}<br>[[#Shrink|Shrink]]
+ | style="text-align: center" | [[File:Shrink Effect.png|20px|link=#Shrink]]
+ | Afflicted enemies are shrunken and will run away from Isaac. Isaac can walk over shrunken enemies to kill them.
+ |- id="Bleed Effect"
+ ! {{dlc|a+}}<br>[[#Bleed|Bleed]]
+ | style="text-align: center" | [[File:Bleed Effect.png|50px|link=#Bleed]]
+ | {{dlc+|nr}} Afflicted enemies take damage equal to 10% of their maximum health every 5 seconds.{{dlc-}}<br/>{{dlc+|r}} Afflicted enemies repeatedly take <code>2.8 + (floor * 0.3)</code> damage based on how quickly they move; the faster the enemy, the more damage they take. While moving, a bleeding enemy leaves behind [[Creep#Red Creep|red creep]] that can damage other enemies.{{dlc-}}
+ |- id="Bait Effect"
+ ! {{dlc|r}}<br>[[#Bait|Bait]]
+ | style="text-align: center" | [[File:Mark Effect.png|50px|link=#Bait]]
+ | Afflicted enemies will be attacked by other enemies, functioning like a reverse [[charm]] effect. Afflicted enemies are tinted red.
+ |- id="Chained Effect"
+ ! {{dlc|r}}<br>[[#Chained|Chained]]
+ | style="text-align: center" | [[File:Chained Effect.png|100px|link=#Chained]]
+ | Afflicted enemies are chained in place, preventing them from taking any action.
+ |- id="Frozen Effect"
+ ! {{dlc|r}}<br>[[#Frozen|Frozen]]
+ | style="text-align: center" | [[File:Frozen Effect.png|50px|link=#Frozen]]
+ | Enemies that are killed by items that can inflict Frozen <ref group=Details>If a non-boss enemy dies within 10 ticks (0.33 seconds) after being hit by a freezing tear, it will be frozen regardless of what killed it.</ref> become ice statues on death that block both Isaac's tears and enemy shots. Ice statues can also be pushed by Isaac, causing them to slide, leaving damaging [[Creep#Blue Creep|blue creep]] (which deals 22 damage per second), until they hit an obstacle or enemy, dealing 35 damage to enemies they collide with. After an ice statue blocks 10 shots or collides with something while sliding, it shatters into a ring of 10 icicles which slow and deal <code>8 + (floor − 1)</code> damage to enemies they hit. Enemies that are killed by these icicles also become ice statues. Frozen enemies will not trigger any of their on-death effects, such as exploding or splitting.
+{{dlc|nr+}} On-kill effects from items such as {{i|Charm of the Vampire}} and {{i|Lusty Blood|n}} are not triggered when enemies are frozen.
+{{dlc|r+}} On-kill effects do trigger.
+ |- id="Magnetized Effect"
+ ! {{dlc|r}}<br>[[#Magnetized|Magnetized]]
+ | style="text-align: center" | [[File:Magnetized Effect.png|100px|link=#Magnetized]]
+ | Afflicted enemies attract tears/projectiles, pickups, and other enemies. Enemy shots attracted by this effect can damage other enemies.
+ |- id="Brimstone Curse Effect"
+ ! {{dlc|r}}<br>[[#Brimstone Curse|Brimstone Curse]]
+ | style="text-align: center" | [[File:Brimstone Curse Effect.png|50px|link=Tainted Azazel]]
+ | Effect exclusively applied by {{c|Tainted Azazel}} and {{i|Hemoptysis|n}}. Cursed enemies take more damage from {{i|Brimstone}} and Brimstone-like effects. On death, cursed enemies explode, spreading the effect to nearby enemies. Enemies spawned/created from cursed enemies will also be cursed.
+ |- id="Weaken Effect"
+ ! {{dlc|r}}<br>[[#Weaken|Weaken]]
+ | style="text-align: center" | [[File:Weaken Effect.png|50px|link=XI - Strength?]]
+ | Effect exclusively applied by {{p|XI - Strength?}}. Afficted enemies are slowed slightly and take 2x damage from all sources. Enemies also have their damage reduced to half a heart, even on the {{s|Womb}} stages and beyond.
+ |}
+
+=== Notes ===
+<references group="Details" />
+
+* {{e|Host}}-type enemies will take burn and poison damage even if their skull is down, and all status effects can be applied by tears even if their skulls are down.
+** If a Host-type enemy is petrified, they will take damage regardless of if they are vulnerable or not.
+* After a [[Bosses|boss]] or [[All Mini-Bosses (Bosses)|mini-boss]] has had a status effect applied on them, they will receive immunity against all status effects for 8 seconds. This means that no other status effect can be applied to that enemy during this period.
+** Slow effects and {{dlc|r}} Brimstone Curse are the exceptions to this rule.
+* {{i|Abyss|r+}} can create locusts that apply various status effects on enemies depending on the item consumed.
+
+== Burn ==
+=== Passive items that cause burning ===
+{{collectible table/header}}
+{{collectible rows | Fire Mind }}
+|}
+
+=== Trinkets that cause burning ===
+{{trinket table/header}}
+{{trinket rows | A Lighter }}
+|}
+
+==== Other sources that burn enemies ====
+* {{dlc+|r}} {{c|Judas}}' {{i|Birthright}} effect will inflict Burn on nearby enemies when using an active item.{{dlc-}}
+* {{dlc+|r}} When playing as {{c|Tainted Jacob}}, {{e|Dark Esau}} inflicts Burn on enemies he passes through whilst dashing.{{dlc-}}
+
+== Charm ==
+=== Activated items that cause charming ===
+{{collectible table/header}}
+{{collectible rows | Kidney Bean }}
+|}
+
+=== Passive items that cause charming ===
+{{collectible table/header}}
+{{collectible rows | Ball of Bandages, Bozo, Farting Baby, Glitter Bombs, Mom's Eyeshadow, Venus}}
+{{collectible rows | Sissy Longlegs | dlc = r}}
+{{collectible rows | Betrayal | dlc = anr}}
+|}
+
+=== Pills that cause charming ===
+{| class="wikitable mw-collapsible"
+ ! style="width: 130px" | Pill
+ ! Effect
+ |-
+ | Pheromones
+ | [[Charm]]s all enemies in the room for a short period of time.
+ |}
+
+==== Notes ====
+* First stage of Ball of Bandages cannot charm enemies. See {{i|Ball of Bandages}} for details.
+* Charmed enemies will still target Isaac if they are the only enemy in the room.
+
+== Confusion ==
+=== Passive items that cause confusion ===
+{{collectible table/header}}
+{{collectible rows | Butt Bombs, Camo Undies, Glaucoma, Iron Bar, Knockout Drops, Metal Plate, No. 2 }}
+|}
+
+=== Trinkets that cause confusion ===
+{{trinket table/header}}
+{{trinket rows | Faded Polaroid }}
+|}
+
+=== Other sources of confusion ===
+* Destroying a {{e|Black Poop}} briefly confuses all enemies in the room.
+
+== Fear ==
+=== Activated items that cause fear ===
+{{collectible table/header}}
+{{collectible rows | The Gamekid, Mom's Pad }}
+|}
+
+=== Passive Items that cause fear ===
+{{collectible table/header}}
+{{collectible rows | Abaddon, Bozo, Dark Matter, Lil Haunt, Mom's Perfume, Spear Of Destiny, 2Spooky }}
+{{collectible rows | My Shadow | dlc = anr}}
+|}
+
+=== Pills that cause fear ===
+{| class="wikitable mw-collapsible"
+ ! style="width: 130px" | Pill
+ ! Effect
+ |-
+ | {{dlc|a}} Power Pill!
+ | Temporarily grants [[Temporary Buffs#Invulnerability|invulnerability]], inflicts fear on enemies in the room, and lets Isaac deal contact damage, similar to {{i|The Gamekid}}.
+ |}
+
+=== Other sources of fear ===
+* {{dlc+|r}} If {{i|Little Horn}} kills an enemy, it will be feared briefly before being crushed.{{dlc-}}
+
+== Petrification ==
+=== Activated items that petrify enemies ===
+{{collectible table/header}}
+{{collectible rows | The Boomerang, Mega Bean, Mom's Bra }}
+|}
+
+=== Passive items that petrify enemies ===
+{{collectible table/header}}
+{{collectible rows | Charged Baby, Dad's Ring, Eye of Greed, Freezer Baby, Midas' Touch, Mom's Contacts}}
+{{collectible rows | Holy Water | dlc = r}}
+{{collectible rows | Uranus | dlc = r+}}
+|}
+
+=== Trinkets that petrify enemies ===
+{{trinket table/header}}
+{{trinket rows | Ice Cube }}
+|}
+
+==== Other sources that petrify enemies ====
+* {{dlc|a+}} Losing a {{e|Gold Heart|n}} briefly turns all nearby enemies into gold.
+
+== Poison ==
+=== Activated items that poison enemies ===
+{{collectible table/header}}
+{{collectible rows | The Bean, Bob's Rotten Head, Mega Bean }}
+|}
+
+=== Passive items that poison enemies ===
+{{collectible table/header}}
+{{collectible rows | Acid Baby, The Black Bean, Bob's Brain, Bob's Curse, The Common Cold, Contagion, Dead Tooth, Farting Baby, Ipecac, Jupiter, Mucormycosis, Scorpio, Serpent's Kiss, Toxic Shock, The Virus }}
+|}
+
+=== Trinkets that poison enemies ===
+{{trinket table/header}}
+{{trinket rows | Pinky Eye, Locust of Pestilence, Black Tooth, Torn Card }}
+|}
+
+=== Pills that poison enemies ===
+{| class="wikitable mw-collapsible"
+ ! style="width: 130px" | Pill
+ ! Effect
+ |-
+ | Bad Gas
+ | Isaac farts, [[poison]]ing enemies around him.
+ |}
+
+== Slow ==
+=== Activated items that slow enemies ===
+{{collectible table/header}}
+{{collectible rows | The Hourglass, Spider Butt }}
+|}
+
+=== Passive items that slow enemies ===
+{{collectible table/header}}
+{{collectible rows | Ball of Tar, Broken Watch, Censer, Cube Baby, The Intruder, Juicy Sack, Lil Spewer, Little Gish, Night Light, Spider Bite, Parasitoid, Large Zit, Uranus, Worm Friend }}
+{{collectible rows | Sticky Bombs | dlc = r}}
+{{collectible rows | Stop Watch | dlc = nr}}
+|}
+
+=== Trinkets that slow enemies ===
+{{trinket table/header}}
+{{trinket rows | Locust of Famine, Chewed Pen }}
+|}
+
+=== Cards that slow enemies ===
+{{pickup table | Era Walk }}
+
+=== Pills that slow enemies ===
+{| class="wikitable mw-collapsible"
+ ! style="width: 130px" | Pill
+ ! Effect
+ |-
+ | I'm Drowsy...
+ | {{dlc|nr}} Slows all enemies for the duration of the room.
+{{dlc|r}} Slows all enemies, Isaac, and the background music for the duration of the room.
+ |}
+
+=== Notes ===
+* The [[creep]] from items like {{i|Ball of Tar}} and {{i|Juicy Sack}} only slow enemies for as long as they remain in the creep.
+* The {{e|Mask + Heart}} enemy is not affected by the slow effect.
+* {{dlc|r}} Stop Watch's slowdown effect is classified as a separate effect from the slow status and fully stacks with the status. See {{i|Stop Watch}} for more details.
+
+== Friendly {{dlc+|a}} ==
+=== Activated items that create friendly enemies ===
+{{collectible table/header}}
+{{collectible rows | Friendly Ball, Book of the Dead, Delirious, Friend Finder}}
+|}
+
+=== Passive items that create friendly enemies ===
+{{collectible table/header}}
+{{collectible rows | My Shadow, Shade, Poke Go, Mystery Egg}}
+|}
+
+=== Trinkets that create friendly enemies ===
+{{trinket table/header}}
+{{trinket rows | Polished Bone }}
+|}
+
+=== Cards that create friendly enemies ===
+{{pickup table | XIII - Death? }}
+
+=== Other sources to create friendly enemies ===
+* {{dlc|r}} {{tf|Beelzebub}} makes large fly enemies become friendly.
+* {{dlc|r}} [[Pills#Horse Pills|Horse]] [[Pheromones]] pill makes enemies friendly.
+{{dlc-}}
+
+== Shrink {{dlc+|a}} ==
+=== Passive items that grant shrinking tears ===
+{{collectible table/header}}
+{{collectible rows | God's Flesh}}
+|}{{dlc-}}
+
+== Bleed {{dlc+|a+}} ==
+=== Passive items that inflict bleed ===
+{{collectible table/header}}
+{{collectible rows | Backstabber, Mom's Razor }}
+|}{{dlc-}}
+
+== Bait {{dlc+|r}} ==
+=== Passive items that inflict bait ===
+{{collectible table/header}}
+{{collectible rows | Rotten Tomato}}
+|}{{dlc-}}
+
+== Chained {{dlc+|r}} ==
+=== Activated items that inflict chained ===
+{{collectible table/header}}
+{{collectible rows | Anima Sola }}
+|}{{dlc-}}
+
+== Frozen {{dlc+|r}} ==
+=== Passive items that freeze enemies ===
+{{collectible table/header}}
+{{collectible rows | Cube Baby, Freezer Baby, Uranus }}
+|}
+
+=== Trinkets that freeze enemies ===
+{{trinket table/header}}
+{{trinket rows | Ice Cube }}
+|}{{dlc-}}
+
+== Magnetized {{dlc+|r}} ==
+=== Passive items that magnetize enemies ===
+{{collectible table/header}}
+{{collectible rows | Lodestone }}
+|}{{dlc-}}
+
+== Brimstone Curse {{dlc+|r}} ==
+=== Passive items that inflict brimstone curse ===
+{{collectible table/header}}
+{{collectible rows | Hemoptysis }}
+|}
+==== Other sources that inflict brimstone curse ====
+* {{c|Tainted Azazel}}'s sneeze attack will also inflict Brimstone Curse.{{dlc-}}
+
+== Weaken {{dlc+|r}} ==
+=== Cards that weaken enemies ===
+{{pickup table | XI - Strength? }}{{dlc-}}
+
+== Random ==
+These items inflict random status effects on enemies.
+
+=== Passive items that inflict random effects ===
+{{collectible table/header}}
+{{collectible rows | 3 Dollar Bill, Buddy in a Box, Fruit Cake, Playdough Cookie, Spider Mod }}
+{{collectible rows | GB Bug | dlc = anr }}
+{{collectible rows | Tech.5 | dlc = r+ }}
+|}
+
+==== Other sources that inflict random effects ====
+* {{tf|Spider Baby}} creates a spider familiar that applies random status effects to enemies that come in contact with it.
+
+{{nav|fr=Effets de statut}}
+[[Category:Mechanics]]

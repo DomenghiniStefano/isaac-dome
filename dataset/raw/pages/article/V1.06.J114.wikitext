@@ -1,0 +1,10 @@
+{{infobox version
+ | dlc  = a+
+ | date = 2017-10-10
+}}
+
+== Undocumented changes ==
+* Added credit screens for the mod authors who contributed to [[Booster Pack]]s #1, #2, and #3.
+
+{{nav|version}}
+[[Category:Added in Booster Pack 4]]

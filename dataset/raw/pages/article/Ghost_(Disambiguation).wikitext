@@ -1,0 +1,27 @@
+{{disambiguation}}
+__NOTOC__
+
+'''Ghost''' may refer to:
+== Passive items ==
+* {{i|Astral Projection}}
+* {{i|Ghost Baby}}
+* {{i|Ghost Bombs}}
+* {{i|Ghost Pepper}}
+* {{i|Lil Haunt}}
+* {{i|Multidimensional Baby}}
+* {{i|Purgatory}}
+* {{i|Quints}}
+* {{i|Spirit Shackles}}
+
+== Active items ==
+* {{i|Mr. ME!}}
+* {{i|Vade Retro}}
+
+== Enemies ==
+* {{e|Dust}}
+* {{e|Lil' Haunt}}
+* {{e|Polty}}
+* {{e|Wizoob}}
+
+== Characters ==
+* {{c|The Lost}} and {{c|Tainted Lost}}

@@ -1,0 +1,9 @@
+{{disambiguation}}
+
+'''Shovel''' may refer to:
+
+* {{i|We Need To Go Deeper!}}, an [[activated collectible]] that creates a trapdoor leading to the next floor.
+* {{dlc+|a+}} {{i|Broken Shovel 1}}, an [[activated collectible]] that causes Mom to attempt to stomp on Isaac and can be combined to get {{i|Mom's Shovel}}.{{dlc-}}
+* {{i|Mom's Shovel}}, an [[activated collectible]] that creates a trapdoor leading to the next floor.
+
+{{nav}}

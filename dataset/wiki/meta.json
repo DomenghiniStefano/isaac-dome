@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
-  "snapshotAt": "2026-09-14T17:31:43Z",
-  "maxRevid": 269333,
+  "snapshotAt": "2026-09-26T15:34:47Z",
+  "maxRevid": 269722,
   "lastKnownPatch": {
     "number": "v1.9.7.17",
     "date": "2026-04-20"
@@ -23,7 +23,8 @@
   "diagnostics": {
     "unresolved": {
       "e": 19,
-      "i": 1
+      "i": 1,
+      "t": 1
     },
     "unknownTemplates": {
       "=": 6,
@@ -39,7 +40,7 @@
       "hearts": 40,
       "infobox passive collectible": 1,
       "mode": 30,
-      "plat": 44,
+      "plat": 43,
       "reconfirm": 2,
       "tear delay down": 6
     },
@@ -57,7 +58,7 @@
       "Drops": 1,
       "Everything Is Terrible!!! changes": 1,
       "Friendly Charger": 1,
-      "Gallery": 359,
+      "Gallery": 362,
       "Good Items": 1,
       "In-Game Footage": 1,
       "In-game Footage": 705,

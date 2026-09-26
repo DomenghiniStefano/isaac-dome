@@ -1,0 +1,40 @@
+{{Header magic cards}}
+{{header special cards}}
+{{infobox card
+ | dlc         = a+
+ | type        = special card
+ | id          = 52
+ | recharge    = {{dlcalt|4|r=3}}
+ | quote       = Become immense!
+ | description = For the current room, makes Isaac larger, allows him to crush [[obstacles]] he walks on, and grants +7 flat [[Damage]] and {{dlc|nr}} +30 [[Range]] {{dlc|r}} +3 [[Range]].
+ | unlocked by = Huge Growth
+}}
+
+{{cit|us|a+}}
+
+== Effects ==
+* Grants the following effects for the current room:
+** Increases Isaac's sprite size and hitbox by 60%. Hitbox cannot be increased past the standard value.
+** +7 flat [[damage]].
+** {{dlc|nr}} +30 [[range]].
+** {{dlc|r}} +3 [[range]].
+** Allows Isaac to walk over [[obstacles]] to destroy them.
+
+== Notes ==
+* Being a [[special card]], Huge Growth has a significantly lower chance of appearing compared to other cards.
+* This effect doesn't stack if used multiple times in the same room.
+* To unlock, Isaac must be 3 times bigger than his starting size.
+** Isaac's total size is taken into account in unlocking Huge Growth; any size downs, such as [[Pills|One Makes You Small]] pills and {{I|Binky}}, will hinder progression towards the unlock.
+** {{T|Liberty Cap}} will count towards this when the {{I|Magic Mushroom}} effect is active.
+* {{I|Tarot Cloth}} causes {{P|XI - Strength}} to count for 2 size increases.
+
+== Interactions ==
+* {{i|Tarot Cloth}}: No effect.
+
+== Trivia ==
+* Huge Growth has been added in [[Booster Pack #1]], after the initial release of the DLC.
+* Huge Growth is based on [http://steamcommunity.com/sharedfiles/filedetails/?id=841401139 this Steam Workshop mod] by aeiou.
+* Huge Growth is a reference to the card [http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=153 Giant Growth] from Magic: The Gathering. The quote is a reference to the card [http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=456753 Become Immense], which has a similar effect to Giant Growth, both making a creature larger.
+
+{{nav|booster pack|fr=Croissance Colossale}}
+[[Category:Added in Booster Pack 1]]

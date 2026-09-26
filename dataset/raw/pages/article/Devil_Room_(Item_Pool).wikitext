@@ -1,0 +1,34 @@
+{{header item pools}}{{disambig msg|the item pool|the room|Devil Room}}
+{{item pool
+ | price type = health
+}}{{#vardefine: item pool#is devil | 1 }}
+
+The '''Devil Room''' pool is the pool of items that can be found in the {{R|Devil Room}} and can be given from [[Beggar|Hell Games]]. All items can be bought for some number of Red [[Heart container]]s (In the case of the Devil Room), {{dlc|r+}} or via damaging Sacrifice Spikes. If Isaac has no Red Heart containers, items can be bought for three {{E|Soul Heart}}s / {{E|Black Heart}}s. {{dlc|r}} Occasionally, items may cost Soul Hearts even if Isaac still has Red Hearts.
+
+Any items outside of the Devil Room item pool will have a price of 1 Red Heart or 3 Soul Hearts/Black Hearts. This can be caused either by obtaining {{i|Chaos}} or exhausting the item pool, making {{i|Breakfast}} appear. {{dlc+|r}} The exceptions to this are items that cost 30 cents in Angel Shops from {{i|The Stairway}}, and {{i|R Key}}, which cost 2 Red Hearts, 1 Red Heart and 2 Soul Hearts, or 3 Soul Hearts.{{dlc-}}
+
+== Activated Collectibles ==
+{{item pool/header}}
+{{pool items | The Book of Belial, The Book of Sin, Guppy's Head, Guppy's Paw, The Nail, The Necronomicon, Satanic Bible, We Need To Go Deeper! }}
+{{pool items | dlc = nr | Razor Blade }}
+{{pool items | dlc = a | weight = 0.2 | Mega Blast }}
+{{pool items | dlc = a+ | Book of the Dead, Sacrificial Altar }}
+{{pool items | dlc = a+ | weight = {{dlcalt|1|r=0.5}} | Void }}
+{{pool items | dlc = a+ | weight = 0.2 | Plan C }}
+{{pool items | dlc = r | Blood Rights, Damocles, Gello, Monster Manual, Sulfur }}
+{{pool items | dlc = r | weight = 0.5 | Abyss, Berserk!, Dark Arts, Lemegeton }}
+{{pool items | dlc = r | weight = 0.2 | Forget Me Now }}
+|}
+
+== Passive Collectibles ==
+{{item pool/header}}
+{{pool items | Abaddon, Bloody Lust, Brimstone, Ceremonial Robes, Contract From Below, Dark Bum, Dark Matter, Dead Cat, Death's Touch, Demon Baby, Ghost Baby, Gimpy, Goat Head, Guppy's Collar, Guppy's Hairball, Guppy's Tail, Headless Baby, Judas' Shadow, Lil Brimstone, Lord of the Pit, The Mark, Missing Page 2, Mom's Knife, The Pact, Pentagram, Rotten Baby, Sacrificial Dagger, Spirit of the Night, Whore of Babylon }}
+{{pool items | dlc = nr+ | Brother Bobby, Sister Maggy }}
+{{pool items | dlc = a | Athame, Betrayal, Black Powder, Cambion Conception, Empty Vessel, Incubus, Maw Of The Void, Multidimensional Baby, My Shadow, Succubus }}
+{{pool items | dlc = a+ | 7 Seals, Dark Prince's Crown, Death's List, Duality, Eye of Belial, Lil Delirium, Shade }}
+{{pool items | dlc = r | 2Spooky, Azazel's Rage, Backstabber, Blood Oath, Bloody Gust, Brimstone Bombs, Eye of the Occult, False PHD, Guppy's Eye, Hungry Soul, Lil Abaddon, Little Horn, Lusty Blood, Money Power, Ocular Rift, Ouija Board, A Pound of Flesh, Purgatory, A Quarter, Sanguine Bond, Twisted Pair, Vengeful Spirit }}
+{{pool items | dlc = r | weight = 0.5 | Heartbreak }}
+{{pool items | dlc = r+ | Dry Baby }}
+|}
+
+{{nav|fr=Antre du Diable (Banque d'Objets)}}

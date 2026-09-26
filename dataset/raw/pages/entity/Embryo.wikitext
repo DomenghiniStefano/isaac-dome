@@ -1,0 +1,17 @@
+{{infobox monster
+ | id          = 77
+ | base hp     = 12
+ | environment = {{floor|Basement}}{{floor|Cellar}}{{floor|Burning Basement}}<br>{{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|Dark Room}}<br>{{room|boss}}
+ | behavior    = Aimlessly hops around the room, dealing contact damage.
+}}
+
+'''Embryos''' are monsters that hop around the room, dealing contact damage. They are relatively harmless as they do not move much from their position and don’t target the player.
+
+== Trivia ==
+* {{dlc|na}} Embryos count as the {{E|Blastocyst}} boss. Blastocyst still splits into Embryos.
+* Embryos bear a strong resemblance to Spewer: the star of the game Spewer which was also created by Edmund Mcmillen, the maker of ''The Binding of Isaac''.
+* In the original ''The Binding of Isaac'', they have health bars (like [[mini-boss]]es or [[boss]]es have). This is likely because {{E|Blastocyst}} splits into them.
+* Embryos can often be seen in rooms with {{M|Blood Donation Machine}}s.
+* In the [[Bestiary]], Embryos have a unique appearance in which they're smiling.
+
+{{nav|fr=Embryon}}
