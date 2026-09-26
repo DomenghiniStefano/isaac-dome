@@ -16,9 +16,9 @@ use crate::page::PageKind;
 use crate::resolver::{Row, Tables};
 
 /// The infobox template an article was found to transclude, when it transcludes one of the
-/// four whose parameters this sub-project declines to read (design decision 2): a card, a
-/// rune, a pickup or a stage. It is not a `PageKind` — the page is still filed as `Article`
-/// — but it is how the landing tells a card from a mechanic page.
+/// five whose parameters this sub-project declines to read (design decision 2): a card, a
+/// rune, a pickup, a stage, or a version. It is not a `PageKind` — the page is still filed
+/// as `Article` — but it is how the landing tells a card from a mechanic page.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Serialize, Deserialize)]
 #[serde(rename_all = "lowercase")]
 pub enum ArticleCategory {
@@ -26,6 +26,7 @@ pub enum ArticleCategory {
     Rune,
     Pickup,
     Stage,
+    Version,
 }
 
 /// An `index.json` entry: what the wiki says about the page besides its text. `category`

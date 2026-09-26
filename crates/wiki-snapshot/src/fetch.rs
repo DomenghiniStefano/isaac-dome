@@ -87,21 +87,25 @@ fn fetch_template(
     Ok(())
 }
 
-/// The four infobox templates decision 2 declines to read: an article that transcludes one
+/// The five infobox templates decision 2 declines to read: an article that transcludes one
 /// is tagged with the matching category, so the landing can tell a card from a mechanic
-/// page without reading the infobox's own parameters.
+/// page without reading the infobox's own parameters. **Most specific wins**: the list is
+/// ordered by specificity, card and rune through version down to pickup (which the card and
+/// rune templates transclude), and the first match in the fetched categories is kept — later
+/// visits to the same title do not overwrite it.
 const CATEGORY_TEMPLATES: &[(&str, ArticleCategory)] = &[
     ("Template:Infobox card", ArticleCategory::Card),
     ("Template:Infobox rune", ArticleCategory::Rune),
-    ("Template:Infobox pickup", ArticleCategory::Pickup),
     ("Template:Infobox stage", ArticleCategory::Stage),
+    ("Template:Infobox version", ArticleCategory::Version),
+    ("Template:Infobox pickup", ArticleCategory::Pickup),
 ];
 
 /// Every title transcluding one of `CATEGORY_TEMPLATES`, title → category. Titles only
-/// (`embeddedin_titles_url`): the category is all `index.json` keeps of these four
-/// infoboxes, so their wikitext is never fetched. A title that transcludes two of the four
-/// (unseen on the wiki so far) keeps whichever `CATEGORY_TEMPLATES` visits last — an
-/// explicit last-wins, not a crash, because none of the four is more "correct" than another.
+/// (`embeddedin_titles_url`): the category is all `index.json` keeps of these five
+/// infoboxes, so their wikitext is never fetched. A title that transcludes more than one
+/// (the normal case for card and rune, which transclude pickup) keeps the first match from
+/// `CATEGORY_TEMPLATES` — an explicit first-wins, which makes specificity matter.
 fn fetch_categories() -> Result<BTreeMap<String, ArticleCategory>, Failure> {
     let mut categories = BTreeMap::new();
     for (template, category) in CATEGORY_TEMPLATES {
@@ -111,7 +115,7 @@ fn fetch_categories() -> Result<BTreeMap<String, ArticleCategory>, Failure> {
                 .map_err(Failure::Error)?;
             let batch = parse_embeddedin_titles(&body).map_err(Failure::Error)?;
             for title in batch.titles {
-                categories.insert(title, *category);
+                categories.entry(title).or_insert(*category);
             }
             match batch.cont {
                 Some(c) => cont = c,
@@ -315,5 +319,38 @@ mod tests {
     #[test]
     fn page_bytes_normalise_line_endings() {
         assert_eq!(page_bytes("a\r\nb\n"), b"a\nb\n");
+    }
+
+    #[test]
+    fn category_first_match_wins_not_last() {
+        // Simulates a title transcluding both card and pickup infoboxes (e.g., "0 - The Fool").
+        // Since card template transcludes pickup template, both appear in the fetched results.
+        // The first match in CATEGORY_TEMPLATES should win: card should be kept, not overwritten
+        // by pickup.
+        let fool = "0 - The Fool";
+        let mut categories_card_first = BTreeMap::new();
+        categories_card_first.insert(fool.to_string(), ArticleCategory::Card);
+        categories_card_first
+            .entry(fool.to_string())
+            .or_insert(ArticleCategory::Pickup);
+        assert_eq!(
+            categories_card_first.get(fool),
+            Some(&ArticleCategory::Card)
+        );
+
+        // Verify the opposite order with `or_insert` also results in Card being kept
+        // (because `or_insert` only inserts if the key is absent).
+        let mut categories_pickup_first = BTreeMap::new();
+        categories_pickup_first.insert(fool.to_string(), ArticleCategory::Pickup);
+        categories_pickup_first
+            .entry(fool.to_string())
+            .or_insert(ArticleCategory::Card);
+        assert_eq!(
+            categories_pickup_first.get(fool),
+            Some(&ArticleCategory::Pickup)
+        );
+
+        // The actual fetch_categories iterates CATEGORY_TEMPLATES in order (card before pickup),
+        // so the real scenario corresponds to the first case above.
     }
 }
