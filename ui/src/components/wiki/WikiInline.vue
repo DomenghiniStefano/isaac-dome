@@ -13,6 +13,8 @@ const props = defineProps<{
   // page; the wiki store answers from its index, so a stage or an entity the dataset lacks
   // reads like a concept instead of leading to a page that says "unknown".
   canOpen?: (target: Target) => boolean
+  // References drawn a step quieter, for text that supports something louder beside it.
+  quiet?: boolean
 }>()
 // `newTab` is the click's modifier: Ctrl opens the reference beside the page, as a browser
 // does with a link.
@@ -59,7 +61,7 @@ const refs = computed(() =>
     }}</span>
     <Button
       v-else-if="token.kind === 'ref' && refs[index]?.opens"
-      :variant="ButtonVariant.Ref"
+      :variant="quiet ? ButtonVariant.RefQuiet : ButtonVariant.Ref"
       :size="ButtonSize.Inline"
       :class="refs[index]?.gap ? 'ml-1' : undefined"
       @click="emit('navigate', token.target, $event.ctrlKey)"
@@ -89,6 +91,7 @@ const refs = computed(() =>
       <WikiInline
         :inline="token.inline"
         :can-open="canOpen"
+        :quiet="quiet"
         @navigate="(target, newTab) => emit('navigate', target, newTab)"
       />
     </template>

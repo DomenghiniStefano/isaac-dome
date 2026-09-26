@@ -20,13 +20,13 @@ watch(
 const art = computed(() => refArt(props.target))
 
 // One size per kind of art, whether the picture is there or not, so the names beside a column of
-// them stay in line. A drawing is the table rows' thumbnail, 48 x 32 on the mark paper: its dark
-// strokes on the dark page were unreadable. A sprite is `--spacing-sprite`, a whole multiple of
+// them stay in line. A drawing is `--spacing-wiki-name-art` wide on the mark paper: its dark strokes
+// on the dark page were unreadable. A sprite is `--spacing-sprite`, a whole multiple of
 // its own 32px, so the pixel art lands on whole pixels.
 const frame = computed((): string => {
   switch (art.value) {
     case RefArt.Drawing:
-      return 'aspect-achievement w-achievement-thumb'
+      return 'aspect-achievement w-wiki-name-art'
     case RefArt.Sprite:
       return 'size-sprite'
     default:

@@ -44,6 +44,10 @@
   --spacing-achievement: 5.5rem;
   /* An achievement drawing in a table row: 48 x 32, the 263 x 176 drawing at its ratio. */
   --spacing-achievement-thumb: 3rem;
+  /* The same drawing beside its name in a wiki list of names (`WikiNameList`): 72 x 48. At the
+     table rows' 48 the lettering on the paper is lost, and a list of names has room for it. It
+     is also the width of the list's picture column, where a 32px sprite sits centred. */
+  --spacing-wiki-name-art: 4.5rem;
   /* The same drawing leading a wiki page's band (card #57): 176 wide, so at its ratio it is
      118 tall and sits inside the band's 128 without setting the band's height itself. */
   --spacing-achievement-hero: 11rem;
