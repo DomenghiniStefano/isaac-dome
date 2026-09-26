@@ -11,8 +11,9 @@ import {
 import { assertNever } from '@/lib/assertNever'
 import { cn } from '@/lib/cn'
 import type { Block, Target } from '@/lib/ipc/types'
-import { isNameItem, RefIconSize } from './refIcon'
+import { isNameList } from './nameList'
 import WikiInline from './WikiInline.vue'
+import WikiNameList from './WikiNameList.vue'
 
 const props = defineProps<{
   blocks: Block[]
@@ -21,10 +22,10 @@ const props = defineProps<{
 }>()
 const emit = defineEmits<{ navigate: [target: Target, newTab: boolean] }>()
 
-// What every nested WikiInline and WikiBlocks receives: the two resolvers and the way back
-// up. One object, so adding to it is one edit, not one per block kind.
+// What every nested WikiInline receives: whether a reference opens, and the way back up. One
+// object, so adding to it is one edit, not one per block kind. The nested blocks and a list of
+// names take the pictures on top of it.
 const forward = computed(() => ({
-  iconFor: props.iconFor,
   canOpen: props.canOpen,
   onNavigate: (target: Target, newTab: boolean) =>
     emit('navigate', target, newTab),
@@ -37,6 +38,12 @@ const forward = computed(() => ({
       <p v-if="block.kind === 'paragraph'">
         <WikiInline :inline="block.inline" v-bind="forward" />
       </p>
+      <WikiNameList
+        v-else-if="block.kind === 'list' && isNameList(block)"
+        :items="block.items"
+        :icon-for="iconFor"
+        v-bind="forward"
+      />
       <component
         :is="block.ordered ? 'ol' : 'ul'"
         v-else-if="block.kind === 'list'"
@@ -48,16 +55,11 @@ const forward = computed(() => ({
         "
       >
         <li v-for="(item, i) in block.items" :key="i">
-          <WikiInline
-            :inline="item.inline"
-            :icon-size="
-              isNameItem(item) ? RefIconSize.Name : RefIconSize.Inline
-            "
-            v-bind="forward"
-          />
+          <WikiInline :inline="item.inline" v-bind="forward" />
           <WikiBlocks
             v-if="item.children.length"
             :blocks="item.children"
+            :icon-for="iconFor"
             v-bind="forward"
             class="mt-1"
           />

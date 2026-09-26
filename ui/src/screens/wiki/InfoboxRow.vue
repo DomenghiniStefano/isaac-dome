@@ -40,7 +40,6 @@ const { t } = useMessages()
         <WikiInline
           v-if="inline && inline.length > 0"
           :inline="inline"
-          :icon-for="links?.iconFor"
           :can-open="links?.canOpen"
           @navigate="(target, newTab) => links?.navigate(target, newTab)"
         />
