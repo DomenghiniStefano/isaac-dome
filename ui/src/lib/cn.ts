@@ -6,7 +6,8 @@ import opacity from '@/assets/theme/opacity.css?raw'
 import radius from '@/assets/theme/radius.css?raw'
 import spacing from '@/assets/theme/spacing.css?raw'
 import typography from '@/assets/theme/typography.css?raw'
-import { ThemeNamespace, themeKeys } from '@/lib/design/themeKeys'
+import layers from '@/assets/theme/layers.css?raw'
+import { ThemeNamespace, themeKeys, utilityKeys } from '@/lib/design/themeKeys'
 
 // shadcn's cn() is twMerge(clsx(...)) with no configuration, and with our tokens that
 // drops classes silently: tailwind-merge only knows t-shirt font sizes, reads `text-body`
@@ -35,6 +36,9 @@ const merge = extendTailwindMerge({
       // The names join the group the numbers are already in, rather than replacing it:
       // `opacity-0` still wins over `opacity-muted`, in either order.
       opacity: [{ opacity: themeKeys(opacity, ThemeNamespace.Opacity) }],
+      // The stacking layers are utilities, not theme values (`layers.css`), and the same guard
+      // applies: `cn('z-raised', 'z-overlay')` kept both.
+      z: [{ z: utilityKeys(layers, 'z') }],
     },
   },
 })
