@@ -1,5 +1,6 @@
-//! wiki — the wiki's text sections as a typed tree. A pure crate except for one spot:
-//! `raw` reads `dataset/raw/` from disk. No network, no game archive.
+//! wiki — the wiki's text sections as a typed tree. A pure crate except two spots: `raw`
+//! reads `dataset/raw/` from disk, and `Dataset::read_dir`/`write_dir` do the same for
+//! `dataset/wiki/`. No network, no game archive.
 
 mod blocks;
 mod build;
@@ -26,7 +27,11 @@ mod unlock_condition;
 
 pub use blocks::parse_blocks;
 pub use build::build;
-pub use dataset::{Counts, Dataset, DatasetError, Meta, Patch, Source, HOST, SCHEMA_VERSION};
+#[cfg(all(feature = "embedded", feature = "test-api"))]
+pub use dataset::embedded_len;
+pub use dataset::{
+    write_if_changed, Counts, Dataset, DatasetError, Meta, Patch, Source, HOST, SCHEMA_VERSION,
+};
 pub use dead_links::{dead_links, DeadLinks};
 pub use diagnostics::Diagnostics;
 pub use editions::{parse_code, Editions};

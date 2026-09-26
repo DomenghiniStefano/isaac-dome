@@ -153,7 +153,7 @@ that talks to the network; `build` is offline:
 
 ```
 pnpm wiki:fetch       # downloads pages and Cargo tables into dataset/raw/
-pnpm wiki:build       # builds dataset/wiki.json
+pnpm wiki:build       # builds dataset/wiki/
 ```
 
 ## Verifying

@@ -8,7 +8,7 @@
 //! the *whole* dataset, not about the page a link sits on, so it cannot be a [`Diagnostics`]
 //! counter bumped while one page is still being parsed — it is a read-only pass afterwards.
 //!
-//! Not part of [`Diagnostics`], and not carried in `wiki.json`: the destinations are the
+//! Not part of [`Diagnostics`], and not carried in `dataset/wiki/`: the destinations are the
 //! wiki's own inconsistency, of interest to whoever maintains the parser, and no use to the
 //! app at runtime. `wiki-snapshot build` reports it on stdout instead of paying embedded
 //! bytes for a fact nothing at runtime reads.
