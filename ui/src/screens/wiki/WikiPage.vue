@@ -19,6 +19,7 @@ import { canQueue, isQueued } from '@/lib/plan/queueRows'
 import { categoryOf } from '@/lib/wiki/category'
 import { parsePageKey } from '@/lib/wiki/pageKey'
 import { RouteName } from '@/router/routeTable'
+import type { Target } from '@/lib/ipc/types'
 import type { WikiCategory } from '@/router/routeTable'
 import { useQueueOffer } from '@/composables/useQueueOffer'
 import { useTabsStore } from '@/stores/tabs'
@@ -84,6 +85,11 @@ const back = () => {
 const node = computed(() =>
   achievementNode(graph.view?.unlock ?? null, target.value),
 )
+
+// The same reading for every achievement a page lists, so a list of names can say which ones
+// the profile has — under the same rule: nothing loaded, nothing said.
+const nodeFor = (other: Target) =>
+  achievementNode(graph.view?.unlock ?? null, other)
 
 const canAdd = computed(
   () =>
@@ -184,6 +190,7 @@ const canAdd = computed(
           <WikiSections
             :sections="entry.sections"
             :icon-for="wiki.iconFor"
+            :node-for="nodeFor"
             :can-open="wiki.hasPage"
             @navigate="tabs.openPage"
           />

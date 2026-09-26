@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import WikiBlocks from '@/components/wiki/WikiBlocks.vue'
 import WikiInline from '@/components/wiki/WikiInline.vue'
-import type { Block, Inline, Target } from '@/lib/ipc/types'
+import type { Block, Inline, Target, UnlockNode } from '@/lib/ipc/types'
 import { Dlc, Style } from '@/lib/ipc/types'
 import KitSection from '../../KitSection.vue'
 
@@ -168,6 +168,34 @@ const blocks: Block[] = [
 // at runtime, and the Kit page has no copy to cut from.
 const iconFor = (): string | null => null
 
+// What a profile says about the three achievements of the list of names: one done, one that can
+// be had now, one with something in the way — the three states the badge draws beside a name.
+const stateNode = (
+  id: number,
+  done: boolean,
+  availableNow: boolean,
+): UnlockNode => ({
+  achievement: { kind: 'known', id, text: '', condition: null, iconUrl: null },
+  done,
+  unlocks: [],
+  origin: null,
+  missing: [],
+  graph: {
+    kind: 'computed',
+    availableNow,
+    blockedBy: availableNow ? 0 : 2,
+    fanOut: 0,
+    stepsMissing: 0,
+  },
+})
+const nodes = new Map([
+  [3, stateNode(3, true, true)],
+  [1, stateNode(1, false, true)],
+  [9, stateNode(9, false, false)],
+])
+const nodeFor = (target: Target): UnlockNode | null =>
+  target.kind === 'achievement' ? (nodes.get(target.id) ?? null) : null
+
 // Which references lead to a page: items do, a concept has no id to open one with.
 const canOpen = (target: Target): boolean => target.kind !== 'concept'
 </script>
@@ -182,6 +210,11 @@ const canOpen = (target: Target): boolean => target.kind !== 'concept'
     <p class="text-row">
       <WikiInline :inline="paragraph" :can-open="canOpen" />
     </p>
-    <WikiBlocks :blocks="blocks" :icon-for="iconFor" :can-open="canOpen" />
+    <WikiBlocks
+      :blocks="blocks"
+      :icon-for="iconFor"
+      :can-open="canOpen"
+      :node-for="nodeFor"
+    />
   </KitSection>
 </template>

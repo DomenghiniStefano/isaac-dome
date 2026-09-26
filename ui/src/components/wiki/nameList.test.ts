@@ -1,7 +1,13 @@
 import { describe, expect, it } from 'vitest'
-import type { Block, Inline, ListItem, Target } from '@/lib/ipc/types'
+import type {
+  Block,
+  Inline,
+  ListItem,
+  Target,
+  UnlockNode,
+} from '@/lib/ipc/types'
 import { Dlc, Style } from '@/lib/ipc/types'
-import { isNameItem, isNameList, RefArt, refArt } from './nameList'
+import { isNameItem, isNameList, nameStatus, RefArt, refArt } from './nameList'
 
 const ref = (label: string): Inline => ({
   kind: 'ref',
@@ -99,5 +105,60 @@ describe('isNameList', () => {
 
   it('is not a paragraph', () => {
     expect(isNameList({ kind: 'paragraph', inline: [ref('Cain')] })).toBe(false)
+  })
+})
+
+describe('nameStatus', () => {
+  const node = (id: number, done: boolean): UnlockNode => ({
+    achievement: {
+      kind: 'known',
+      id,
+      text: `t${id}`,
+      condition: null,
+      iconUrl: null,
+    },
+    done,
+    unlocks: [],
+    origin: null,
+    missing: [],
+    graph: {
+      kind: 'computed',
+      availableNow: true,
+      blockedBy: 0,
+      fanOut: 0,
+      stepsMissing: 0,
+    },
+  })
+  const nodes = new Map([
+    [3, node(3, true)],
+    [4, node(4, false)],
+  ])
+  const nodeFor = (t: Target): UnlockNode | null =>
+    t.kind === 'achievement' ? (nodes.get(t.id) ?? null) : null
+
+  it('says an achievement the save has done is done', () => {
+    const status = nameStatus({ kind: 'achievement', id: 3 }, nodeFor)
+    expect(status.node?.achievement).toMatchObject({ id: 3 })
+    expect(status.done).toBe(true)
+  })
+
+  it('carries the node of one not done yet, and does not call it done', () => {
+    const status = nameStatus({ kind: 'achievement', id: 4 }, nodeFor)
+    expect(status.node).not.toBeNull()
+    expect(status.done).toBe(false)
+  })
+
+  it('says nothing without a profile to ask', () => {
+    expect(nameStatus({ kind: 'achievement', id: 3 }, undefined)).toEqual({
+      node: null,
+      done: false,
+    })
+  })
+
+  it('says nothing about a name the profile does not know', () => {
+    expect(nameStatus({ kind: 'item', id: 105 }, nodeFor)).toEqual({
+      node: null,
+      done: false,
+    })
   })
 })
