@@ -125,9 +125,9 @@ const open = (category: WikiCategory, event: MouseEvent) =>
             <span class="text-heading text-foreground">{{
               t(wikiCategoryTitle[category])
             }}</span>
-            <span class="text-caption text-subtle-foreground tabular-nums"
-              >{{ view.count(category) }} {{ t('wiki.pages') }}</span
-            >
+            <span class="text-caption text-subtle-foreground tabular-nums">{{
+              t('wiki.pages', { n: view.count(category) })
+            }}</span>
           </Button>
         </div>
         <Card class="mt-6">

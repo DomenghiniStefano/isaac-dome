@@ -116,12 +116,12 @@ const id = computed(() => (props.target ? pageId(props.target) : null))
           <span
             v-if="id !== null"
             class="text-caption text-faint-foreground tabular-nums"
-            >{{ t('wiki.id') }} {{ id }}</span
+            >{{ t('wiki.id', { id }) }}</span
           >
           <span
             v-if="entry"
             class="text-caption text-faint-foreground tabular-nums"
-            >{{ t('wiki.revision') }} {{ entry.revid }}</span
+            >{{ t('wiki.revision', { revision: entry.revid }) }}</span
           >
           <span
             v-if="entry === null"

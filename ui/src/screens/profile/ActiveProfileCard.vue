@@ -69,9 +69,9 @@ const view = computed(() => {
             :value="view.dlcs"
           />
         </div>
-        <span class="truncate text-label text-subtle-foreground"
-          >{{ t('profile.active.foundIn') }} {{ view.source }}</span
-        >
+        <span class="truncate text-label text-subtle-foreground">{{
+          t('profile.active.foundIn', { source: view.source })
+        }}</span>
       </div>
       <div class="flex shrink-0 flex-col gap-2">
         <Button :variant="ButtonVariant.Secondary" @click="emit('change')">

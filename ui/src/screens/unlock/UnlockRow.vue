@@ -47,7 +47,7 @@ const more = computed(() => Math.max(0, props.node.unlocks.length - 1))
       >{{ text }}</span
     >
     <span class="text-micro text-faint-foreground tabular-nums"
-      >{{ t('graph.slot') }} {{ nodeNumber(node)
+      >{{ t('graph.slot', { slot: nodeNumber(node) })
       }}<template v-if="queued"> · {{ t('queue.inQueue') }}</template></span
     >
   </span>
