@@ -568,6 +568,7 @@ const checks = [
 // and looks like a bug in one component. Some values do keep px on purpose (a hairline, a
 // radius, a sprite's whole multiple): the rule is that each one says why, on the spot.
 const PX_TOKEN = /^\s*--[a-z0-9-]+\s*:\s*[^;]*\d+px/
+const PX_TOKEN_CHECK = 'px token with no reason beside it'
 const COMMENT = /(^\s*\/\*)|(^\s*\*)|(\*\/\s*$)/
 const COMMENT_REACH = 5
 
@@ -1026,6 +1027,33 @@ const fixtureFailures = FIXTURES.flatMap((f) => {
       ]
 })
 
+// The table in `docs/frontend-conventions.md` names every check here by its name
+// (`| scan: \`<name>\` |`), and the two must hold the same set: a check with no row is a rule
+// nobody was told about, and a row with no check is a promise nothing keeps. On 2026-09-26 two
+// checks had no row, while the document said the two had the same rows.
+const CONVENTIONS_DOC = join(ROOT, '..', 'docs', 'frontend-conventions.md')
+const documentDrift = () => {
+  const documented = new Set(
+    [
+      ...readFileSync(CONVENTIONS_DOC, 'utf8').matchAll(
+        /\| scan: `([^`]+)` \|/g,
+      ),
+    ].map(([, name]) => name),
+  )
+  const implemented = new Set([...checks.map((c) => c.name), PX_TOKEN_CHECK])
+  const doc = 'docs/frontend-conventions.md'
+  return [
+    ...[...implemented]
+      .filter((name) => !documented.has(name))
+      .map((name) => `${doc}: the check "${name}" has no row in the table`),
+    ...[...documented]
+      .filter((name) => !implemented.has(name))
+      .map(
+        (name) => `${doc}: a row names "${name}", and no check has that name`,
+      ),
+  ]
+}
+
 const violations = walk(SRC)
   .filter((f) => /\.(vue|ts)$/.test(f))
   .flatMap((file) =>
@@ -1038,11 +1066,11 @@ const violations = walk(SRC)
       .filter((f) => f.endsWith('.css'))
       .flatMap((file) =>
         pxWithoutReason(readFileSync(file, 'utf8')).map(
-          (line) =>
-            `${relative(ROOT, file)}: px token with no reason beside it — ${line}`,
+          (line) => `${relative(ROOT, file)}: ${PX_TOKEN_CHECK} — ${line}`,
         ),
       ),
   )
+  .concat(documentDrift())
 
 fixtureFailures.forEach((f) => console.error(f))
 violations.forEach((v) => console.error(v))
