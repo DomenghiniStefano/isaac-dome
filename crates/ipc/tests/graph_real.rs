@@ -1,4 +1,4 @@
-//! Against the real profile `samples/live.rep+persistentgamedata1.dat` (2026-08-31)
+//! Against the real profile `samples/20260831.rep+persistentgamedata1.dat`
 //! and the real catalog via `samples/packed`. They skip with a note if something is
 //! missing. The numbers are fixtures of known origin, measured on 2026-09-05.
 
