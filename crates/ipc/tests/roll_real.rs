@@ -38,9 +38,11 @@ fn every_target() -> usize {
 
 #[test]
 fn every_target_of_every_real_save_lands_in_exactly_one_bucket() {
+    let mut checked = 0;
     for name in SERIES {
         for path in dated_series(name) {
             let Some(c) = counters(&path) else { continue };
+            checked += 1;
             for include_taken in [false, true] {
                 let d = deck_of(&c, include_taken);
                 assert_eq!(
@@ -51,6 +53,9 @@ fn every_target_of_every_real_save_lands_in_exactly_one_bucket() {
                 );
             }
         }
+    }
+    if checked == 0 {
+        test_support::skip("no readable dated save: the deck's accounting checked nothing");
     }
 }
 

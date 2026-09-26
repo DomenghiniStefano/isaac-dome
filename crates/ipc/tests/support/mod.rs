@@ -47,11 +47,19 @@ pub fn real_catalog() -> Option<Catalog> {
     Some(Catalog::build(|p| rs.read(p)))
 }
 
-/// Section 2 of a save, or `None` when the file does not open or has no such section.
+/// Section 2 of a save, or `None` when the file does not open or has no such section — and
+/// then the skip is declared here, so no caller leaves a sample out of a series in silence.
 pub fn counters(path: &std::path::Path) -> Option<Vec<u32>> {
-    core_save::Save::open(path)
-        .ok()?
-        .u32s(core_save::Kind::Counters)
+    let read = core_save::Save::open(path)
+        .ok()
+        .and_then(|save| save.u32s(core_save::Kind::Counters));
+    if read.is_none() {
+        test_support::skip(&format!(
+            "{}: no readable counters section, left out",
+            path.display()
+        ));
+    }
+    read
 }
 
 /// The counters index of the cell at `row` and the column at `position` in `BOSSES`: the
