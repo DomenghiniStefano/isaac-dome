@@ -4,12 +4,14 @@
 mod blocks;
 mod build;
 mod dataset;
+mod dead_links;
 mod diagnostics;
 mod editions;
 #[cfg(feature = "test-api")]
 pub mod for_tests;
 mod infobox;
 mod inline;
+mod inline_tree;
 mod model;
 mod page;
 #[cfg(feature = "test-api")]
@@ -18,12 +20,14 @@ mod raw;
 mod resolver;
 mod sections;
 mod template;
+mod title;
 mod transformation;
 mod unlock_condition;
 
 pub use blocks::parse_blocks;
 pub use build::build;
 pub use dataset::{Counts, Dataset, DatasetError, Meta, Patch, Source, HOST, SCHEMA_VERSION};
+pub use dead_links::{dead_links, DeadLinks};
 pub use diagnostics::Diagnostics;
 pub use editions::{parse_code, Editions};
 #[cfg(feature = "test-api")]
@@ -44,3 +48,4 @@ pub use resolver::{
 };
 pub use sections::{normalize_title, section_kind, split_page, RawSection};
 pub use template::{parse_template_at, Template};
+pub use title::canonical_title;

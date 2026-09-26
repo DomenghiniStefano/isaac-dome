@@ -8,8 +8,8 @@ use std::sync::OnceLock;
 
 use wiki::for_tests::cross_check_character_parents;
 use wiki::{
-    build, Block, Corrections, Dataset, Entry, Infobox, Inline, Raw, Resolution, Resolver,
-    SectionKind, Target,
+    build, dead_links, Block, Corrections, Dataset, Entry, Infobox, Inline, Raw, Resolution,
+    Resolver, SectionKind, Target,
 };
 
 fn root() -> PathBuf {
@@ -290,61 +290,16 @@ fn diagnostics_are_bounded() {
     );
 }
 
-/// Every `Text` with a literal `{{`/`}}` inside `inline`, recursing into `Edition`.
-fn raw_brace_texts(inline: &[Inline], out: &mut Vec<String>) {
-    for i in inline {
-        match i {
-            Inline::Text { text, .. } if text.contains("{{") || text.contains("}}") => {
+/// Every `Text` leaf of `e` with a literal `{{`/`}}` in it: `Entry::inlines` already walks
+/// the infobox's own fields, the description and every section for us, with an `Edition`
+/// wrapper already unwrapped.
+fn raw_brace_texts_in_entry(e: &Entry, out: &mut Vec<String>) {
+    for leaf in e.inlines() {
+        if let Inline::Text { text, .. } = leaf {
+            if text.contains("{{") || text.contains("}}") {
                 out.push(text.clone());
             }
-            Inline::Edition { inline, .. } => raw_brace_texts(inline, out),
-            Inline::Text { .. } | Inline::Ref { .. } | Inline::Concept { .. } => {}
         }
-    }
-}
-
-/// The same search, over a section's blocks: paragraphs, headings, lists (with their
-/// nested children) and table cells.
-fn raw_brace_texts_in_blocks(blocks: &[Block], out: &mut Vec<String>) {
-    for b in blocks {
-        match b {
-            Block::Paragraph { inline } | Block::Heading { inline, .. } => {
-                raw_brace_texts(inline, out);
-            }
-            Block::List { items, .. } => {
-                for item in items {
-                    raw_brace_texts(&item.inline, out);
-                    raw_brace_texts_in_blocks(&item.children, out);
-                }
-            }
-            Block::Table { header, rows } => {
-                for cell in header {
-                    raw_brace_texts(cell, out);
-                }
-                for row in rows {
-                    for cell in row {
-                        raw_brace_texts(cell, out);
-                    }
-                }
-            }
-        }
-    }
-}
-
-/// Every inline field of the infobox, through `Infobox::inlines` (card #80, item 14): this
-/// used to name the fields by hand and skipped five of them — the quotes, `notes`,
-/// `stage_hp` — and the entry's `description` besides.
-fn raw_brace_texts_in_infobox(infobox: &Infobox, out: &mut Vec<String>) {
-    for field in infobox.inlines() {
-        raw_brace_texts(field, out);
-    }
-}
-
-fn raw_brace_texts_in_entry(e: &Entry, out: &mut Vec<String>) {
-    raw_brace_texts_in_infobox(&e.infobox, out);
-    raw_brace_texts(&e.description, out);
-    for s in &e.sections {
-        raw_brace_texts_in_blocks(&s.blocks, out);
     }
 }
 
@@ -772,5 +727,65 @@ fn the_cargo_dlc_integer_is_the_infobox_code_through_the_wikis_own_switch() {
         disagree.is_empty(),
         "{disagreements} rows where the code and the table disagree, first {}: {disagree:?}",
         disagree.len()
+    );
+}
+
+/// How many links a reader cannot open, and where they point — `Concept`s (a wiki page
+/// nothing has) and `Ref`s whose target the dataset carries no entry for (mostly a common
+/// enemy with no boss page behind its bestiary triple). Not pinned: the scope this counts
+/// over grows on purpose, and a growing total here is the expected shape, not a regression.
+/// What is asserted is that the pass actually looked — a report that always reads zero would
+/// be the flat line this test exists to catch, the same trap a property with no vacuity
+/// guard falls into.
+#[test]
+fn dead_links_are_tallied_by_destination() {
+    let links = dead_links(dataset());
+    let concept_occurrences: u32 = links.concept_pages.values().sum();
+    let ref_occurrences: u32 = links.unopenable_refs.values().sum();
+    println!(
+        "dead concept links: {} distinct pages, {concept_occurrences} occurrences",
+        links.concept_pages.len()
+    );
+    println!(
+        "unopenable refs: {} distinct destinations, {ref_occurrences} occurrences",
+        links.unopenable_refs.len()
+    );
+    let top = |map: &BTreeMap<String, u32>, n: usize| {
+        let mut rows: Vec<(&String, &u32)> = map.iter().collect();
+        rows.sort_by(|a, b| b.1.cmp(a.1).then_with(|| a.0.cmp(b.0)));
+        for (name, count) in rows.into_iter().take(n) {
+            println!("  {count:>6}  {name}");
+        }
+    };
+    println!("top concept destinations:");
+    top(&links.concept_pages, 15);
+    println!("top unopenable ref destinations:");
+    top(&links.unopenable_refs, 15);
+
+    // `unopenable_refs` is every `Ref` the dataset has no entry for, not only entities — a
+    // room or a stage never gets a page either, and `WikiInline.vue`'s own `canOpen` treats
+    // them the same way a reader would (both read as a `Concept`). Entities (common enemies
+    // with no boss page) are the case this card was written about, so they are broken out
+    // here to say how much of the total they are.
+    let (entities, other): (Vec<_>, Vec<_>) = links
+        .unopenable_refs
+        .iter()
+        .partition(|(k, _)| k.starts_with("entity "));
+    let entity_occurrences: u32 = entities.iter().map(|(_, n)| **n).sum();
+    let other_occurrences: u32 = other.iter().map(|(_, n)| **n).sum();
+    println!(
+        "  of which entities: {} distinct, {entity_occurrences} occurrences; \
+         stage/room/other: {} distinct, {other_occurrences} occurrences",
+        entities.len(),
+        other.len()
+    );
+
+    assert!(
+        !links.concept_pages.is_empty(),
+        "no dead concept link found at all"
+    );
+    assert!(
+        !links.unopenable_refs.is_empty(),
+        "no unopenable ref found at all"
     );
 }

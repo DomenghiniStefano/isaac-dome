@@ -288,9 +288,10 @@ pub enum Infobox {
 impl Infobox {
     /// The same fields as [`Self::inlines_mut`], read-only, destructured the same way and
     /// **without `..`**, so a field added to a variant breaks the build here instead of
-    /// slipping past the guard over the dataset's text — which, naming its fields by hand,
-    /// once skipped five of them. Only that guard, a test, reads it.
-    #[cfg(feature = "test-api")]
+    /// slipping past a pass over the dataset's text — which, naming its fields by hand, once
+    /// skipped five of them. Read by `Entry::inlines`, which every read-only pass over an
+    /// entry's text goes through in turn; unlike the test-only guards that used to call this
+    /// directly, that method ships in `wiki-snapshot build`, so it is not behind `test-api`.
     pub fn inlines(&self) -> Vec<&Vec<Inline>> {
         match self {
             Infobox::Item {

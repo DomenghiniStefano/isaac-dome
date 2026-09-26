@@ -276,6 +276,19 @@ impl Dataset {
             .chain(self.transformations.values_mut())
     }
 
+    /// The read-only twin of [`Dataset::entries_mut`], for a pass that only looks
+    /// (`dead_links`, walking every entry's text without changing any of it).
+    pub(crate) fn entries(&self) -> impl Iterator<Item = &Entry> {
+        self.items
+            .values()
+            .chain(self.trinkets.values())
+            .chain(self.achievements.values())
+            .chain(self.bosses.values())
+            .chain(self.challenges.values())
+            .chain(self.characters.values())
+            .chain(self.transformations.values())
+    }
+
     /// Files a page's entry under its key. A key that recurs keeps the first entry, which is
     /// what makes the visiting order of `build` part of the result.
     pub(crate) fn insert_first(&mut self, key: EntryKey, entry: Entry) {

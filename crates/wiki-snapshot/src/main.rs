@@ -11,7 +11,9 @@ use std::collections::{BTreeMap, BTreeSet};
 use std::path::{Path, PathBuf};
 use std::process::ExitCode;
 
-use wiki::{build, page_file_name, Corrections, Dataset, IndexEntry, PageKind, Raw, Row};
+use wiki::{
+    build, dead_links, page_file_name, Corrections, Dataset, IndexEntry, PageKind, Raw, Row,
+};
 
 use crate::api::{
     cargo_url, is_translation_subpage, pages_url, parse_cargo, parse_pages, sort_rows, FetchedPage,
@@ -390,6 +392,13 @@ fn print_meta(ds: &Dataset) {
     print_diagnostic("unknown dlc codes", unknown_dlc_codes);
     print_diagnostic("unknown entities", unknown_entities);
     print_diagnostic("unknown infoboxes", unknown_infoboxes);
+    // Not part of `meta.diagnostics`: whether a `Ref`'s target has a page is a fact about
+    // the whole dataset, not about the page one is printed from, and it never ships in
+    // `wiki.json` — the destinations are the parser's own maintenance concern, not the
+    // app's at runtime.
+    let links = dead_links(ds);
+    print_diagnostic("dead concept links", &links.concept_pages);
+    print_diagnostic("unopenable refs (id with no page)", &links.unopenable_refs);
 }
 
 fn build_dataset(raw_dir: &Path, out: &Path, corrections_path: &Path) -> Outcome {
