@@ -6,15 +6,22 @@ import { cn } from '@/lib/cn'
 import type { Inline, Target } from '@/lib/ipc/types'
 import { Style } from '@/lib/ipc/types'
 import { editionLabel } from './editionLabel'
+import { RefIconSize } from './refIcon'
+import WikiRefIcon from './WikiRefIcon.vue'
 
-const props = defineProps<{
-  inline: Inline[]
-  iconFor?: (target: Target) => string | null
-  // Whether a reference leads to a page. Without it every reference opens, as on the Kit
-  // page; the wiki store answers from its index, so a stage or an entity the dataset lacks
-  // reads like a concept instead of leading to a page that says "unknown".
-  canOpen?: (target: Target) => boolean
-}>()
+const props = withDefaults(
+  defineProps<{
+    inline: Inline[]
+    iconFor?: (target: Target) => string | null
+    // Whether a reference leads to a page. Without it every reference opens, as on the Kit
+    // page; the wiki store answers from its index, so a stage or an entity the dataset lacks
+    // reads like a concept instead of leading to a page that says "unknown".
+    canOpen?: (target: Target) => boolean
+    // Beside words unless the run is an item of a list of names, which `WikiBlocks` knows.
+    iconSize?: RefIconSize
+  }>(),
+  { iconFor: undefined, canOpen: undefined, iconSize: RefIconSize.Inline },
+)
 // `newTab` is the click's modifier: Ctrl opens the reference beside the page, as a browser
 // does with a link.
 const emit = defineEmits<{ navigate: [target: Target, newTab: boolean] }>()
@@ -65,11 +72,11 @@ const refs = computed(() =>
       :class="refs[index]?.gap ? 'ml-1' : undefined"
       @click="emit('navigate', token.target, $event.ctrlKey)"
     >
-      <img
+      <WikiRefIcon
         v-if="refs[index]?.icon"
-        :src="refs[index]?.icon ?? undefined"
-        alt=""
-        class="mr-1 inline-block size-4 align-text-bottom pixelated"
+        :src="refs[index]?.icon ?? ''"
+        :target="token.target"
+        :size="iconSize"
       />{{ token.label }}
     </Button>
     <span
@@ -80,11 +87,11 @@ const refs = computed(() =>
           refs[index]?.gap && 'ml-1',
         )
       "
-      ><img
+      ><WikiRefIcon
         v-if="refs[index]?.icon"
-        :src="refs[index]?.icon ?? undefined"
-        alt=""
-        class="mr-1 inline-block size-4 align-text-bottom pixelated"
+        :src="refs[index]?.icon ?? ''"
+        :target="token.target"
+        :size="iconSize"
       />{{ token.label }}</span
     >
     <span
@@ -102,6 +109,7 @@ const refs = computed(() =>
         :inline="token.inline"
         :icon-for="iconFor"
         :can-open="canOpen"
+        :icon-size="iconSize"
         @navigate="(target, newTab) => emit('navigate', target, newTab)"
       />
     </template>

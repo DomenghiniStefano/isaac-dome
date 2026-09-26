@@ -11,6 +11,7 @@ import {
 import { assertNever } from '@/lib/assertNever'
 import { cn } from '@/lib/cn'
 import type { Block, Target } from '@/lib/ipc/types'
+import { isNameItem, RefIconSize } from './refIcon'
 import WikiInline from './WikiInline.vue'
 
 const props = defineProps<{
@@ -47,7 +48,13 @@ const forward = computed(() => ({
         "
       >
         <li v-for="(item, i) in block.items" :key="i">
-          <WikiInline :inline="item.inline" v-bind="forward" />
+          <WikiInline
+            :inline="item.inline"
+            :icon-size="
+              isNameItem(item) ? RefIconSize.Name : RefIconSize.Inline
+            "
+            v-bind="forward"
+          />
           <WikiBlocks
             v-if="item.children.length"
             :blocks="item.children"
