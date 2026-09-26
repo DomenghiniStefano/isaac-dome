@@ -82,9 +82,9 @@ const open = (page: WikiPageRef, event: MouseEvent) =>
         <h1 class="text-title text-foreground">
           {{ t(wikiCategoryTitle[category]) }}
         </h1>
-        <span class="text-caption text-subtle-foreground tabular-nums"
-          >{{ pages.length }} / {{ total }} {{ t('wiki.pages') }}</span
-        >
+        <span class="text-caption text-subtle-foreground tabular-nums">{{
+          t('wiki.pagesOf', { shown: pages.length, total })
+        }}</span>
       </div>
       <Input
         :model-value="query"
@@ -133,7 +133,7 @@ const open = (page: WikiPageRef, event: MouseEvent) =>
             <span
               v-if="pageId(page.target) !== null"
               class="shrink-0 text-micro text-faint-foreground tabular-nums"
-              >{{ t('wiki.id') }} {{ pageId(page.target) }}</span
+              >{{ t('wiki.id', { id: pageId(page.target) }) }}</span
             >
             <ChevronRightIcon class="shrink-0 text-faint-foreground" />
           </Button>

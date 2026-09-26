@@ -85,7 +85,7 @@ export const it = {
     floors: 'piani',
     collected: 'raccolti',
     wouldOpen: 'Se finisci questa run',
-    missing: 'marchi da prendere',
+    missing: '{n} marchi da prendere',
     secondLevel: {
       hard: 'in hard',
       ultraGreedier: 'in Ultra Greedier',
@@ -129,7 +129,7 @@ export const it = {
       cancel: 'Annulla',
       confirm: 'Svuota',
     },
-    neighbours: 'stanze adiacenti',
+    neighbours: '{n} stanze adiacenti',
     empty: 'vuota',
     cell: 'Riga {row}, colonna {column}: {room}',
     at: 'Riga {row}, colonna {column}',
@@ -470,7 +470,8 @@ export const it = {
       unknownTemplates: 'template sconosciuti',
     },
     categories: 'Categorie',
-    pages: 'pagine',
+    pages: '{n} pagine',
+    pagesOf: '{shown} / {total} pagine',
     noCatalog:
       'Senza il gioco installato le pagine non hanno immagine: le figure vengono dalla tua copia di Isaac, non dall’app.',
     search: 'cerca una pagina',
@@ -478,7 +479,7 @@ export const it = {
     emptyCategory: 'Questa categoria non ha pagine.',
     resetFilters: 'Azzera la ricerca',
     back: 'Torna alla categoria',
-    id: 'id',
+    id: 'id {id}',
     kind: {
       item: 'Oggetto',
       trinket: 'Trinket',
@@ -488,7 +489,7 @@ export const it = {
       character: 'Personaggio',
       transformation: 'Trasformazione',
     },
-    revision: 'rev.',
+    revision: 'rev. {revision}',
     outline: 'In questa pagina',
     section: {
       effects: 'Effetti',
@@ -794,7 +795,7 @@ export const it = {
       character: 'Personaggio',
       normal: 'normale',
       hard: 'hard',
-      unreadable: 'non leggibili',
+      unreadable: '{n} non leggibili',
       columnTotals: 'Personaggi con il marchio',
       columnTotalsHard: 'Di cui in hard',
     },
@@ -910,7 +911,8 @@ export const it = {
     thresholdName: '{name} — {current} di {atLeast}',
     originNone: 'non indicata',
     unknownAchievement: 'Achievement sconosciuto',
-    slot: 'slot',
+    unknownAchievementInSlot: 'Achievement sconosciuto · slot {slot}',
+    slot: 'slot {slot}',
     // La forma Tainted di un personaggio: il gioco scrive lo stesso nome per le due forme.
     // "Tainted" resta in inglese come ogni nome del gioco (DESIGN-BRIEF.md §12).
     taintedName: 'Tainted {name}',
@@ -968,7 +970,7 @@ export const it = {
     use: 'Entra',
     cancel: 'Annulla',
     card: {
-      slot: 'slot',
+      slot: 'slot {slot}',
       achievements: 'achievement',
       items: 'oggetti',
       marks: 'marchi',
@@ -1042,7 +1044,7 @@ export const it = {
       modified: 'Modificato',
       size: 'Dimensione',
       dlcs: 'DLC',
-      foundIn: 'Trovato in',
+      foundIn: 'Trovato in {source}',
       change: 'Cambia profilo',
       reload: 'Rileggi il file',
       unknownDate: 'sconosciuto',
