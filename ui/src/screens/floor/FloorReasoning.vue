@@ -89,9 +89,9 @@ const placeOf = (cell: number): string => {
             <span class="text-label tabular-nums">{{
               placeOf(candidate.cell)
             }}</span>
-            <span class="text-caption text-subtle-foreground"
-              >{{ candidate.neighbours }} {{ t('floor.neighbours') }}</span
-            >
+            <span class="text-caption text-subtle-foreground">{{
+              t('floor.neighbours', { n: candidate.neighbours })
+            }}</span>
           </div>
           <span
             v-for="rule in candidate.applied"

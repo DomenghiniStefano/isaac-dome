@@ -69,13 +69,14 @@ until 2026-09-15; `design-export` was removed from the repository on 2026-09-20.
 ## Modules
 
 **Drawn, in [`docs/architecture.md`](docs/architecture.md)**: four diagrams — the data flow from
-the disk to the screens, the crate graph, the seventeen routes with the commands behind each, and
+the disk to the screens, the crate graph, the routes with the commands behind each, and
 the build. It is the state and not the design, so the table below stays the authority on *what a
 module is for*.
 
-**It is kept up to date, and that is not a suggestion.** Its header pins five counts — 16 crates,
-41 commands, 6 events, 17 routes, 6 store migrations — so a change that makes one of them wrong
-makes the document wrong. **Redraw it in the same commit**, and five things trigger that: a crate
+**It is kept up to date, and that is not a suggestion.** Its header pins five counts — crates,
+commands, events, routes, store migrations — so a change that makes one of them wrong makes the
+document wrong. The numbers live in that header and nowhere else: this paragraph quoted them
+until 2026-09-26 and said 17 routes, four days after the document had gone to 16. **Redraw it in the same commit**, and five things trigger that: a crate
 added or removed, a route added or removed from `RouteName`, a command joining or leaving
 `generate_handler!`, an event in `crates/app/src/events.rs`, a migration in
 `crates/store/src/migrations.rs`. Nothing enforces it — `scripts/check-doc-refs.mjs` catches a
@@ -349,6 +350,40 @@ Steam account id, test count, `samples/` access, `test-api` in the release graph
   and nesting, no side effects in expressions, comments that are true and carry no history, dead
   code removed with its last caller, a defect found in passing written on the correctness card.
 - A reference that carries an id is resolved by the id first.
+
+**A rule arrives with its check, in the same commit.** Card #81 took a day of eight branches
+and twelve violations to close, and it was needed only because rules had been written here for
+weeks without anything to hold them. So a rule added to this file, or to
+`docs/frontend-conventions.md`, lands in one of two places **in the commit that adds it**:
+
+- **checked**: the commit also adds the test, the lint, the gate in `scripts/check` or the rule
+  in `pnpm scan`, closes every violation it finds (never an `EXEMPTIONS` entry for debt, only
+  for a permanent exception with its reason), and the rule's paragraph says "Checked since … by
+  …", naming it;
+- **held by review**: the commit adds it to the list above, so its absence from every script is
+  a decision a reader can see and not an oversight.
+
+A rule that is in neither place is the thing this section exists to stop. Four more things
+belong to the same commit:
+
+- **The check is seen to fail before it is trusted**, on the real violation or on a fixture
+  that has it. A check that has never spoken proves nothing, the same as an instrument
+  (*Measuring on real data*).
+- **It reads the form, not a list of names**: `no_fieldless_enum_crosses_as_a_tagged_object`
+  reads every union in the generated contract, so the next enum is covered without being named.
+  A check that lists the offenders it knew about covers exactly those.
+- **Its fixtures try to get past it**, in the forms this repo actually writes: a Windows path
+  with `\` and a raw string (`r"..\samples"`), `concat!`/`.join`, a relative import
+  (`'../components/…'`), a bare side-effect `import '…'` and a dynamic `import()`, `!z-10` and
+  `z-[5]`. The validation of 2026-09-26 found three checks that stopped at the easy form.
+- **What it cannot see is written down**: in the script's header, and in the rule's paragraph
+  here. A blind spot found later is a defect, and it goes on the correctness card as a checklist
+  item, not only in a comment on the card that built the check.
+
+**A document that describes a check moves with it.** `docs/frontend-conventions.md`'s table
+and the `checks` array in `scan-conventions.mjs` must have the same rows; on 2026-09-26 two
+rules the script enforced were missing from the table. The same goes for a count quoted from
+another document: point at it, don't copy it.
 
 ### Tests
 

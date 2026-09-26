@@ -45,7 +45,7 @@ const rowText = (node: UnlockNode, t: Translate): string => {
   if (unlocked !== '') return unlocked
   return (
     refText(node.achievement) ??
-    `${t('graph.unknownAchievement')} · ${t('graph.slot')} ${refNumber(node.achievement)}`
+    t('graph.unknownAchievementInSlot', { slot: refNumber(node.achievement) })
   )
 }
 

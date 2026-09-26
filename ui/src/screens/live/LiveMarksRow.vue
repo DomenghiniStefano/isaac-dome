@@ -29,8 +29,8 @@ const { t } = useMessages()
         :label="bosses[i]"
       />
     </div>
-    <span class="ml-auto shrink-0 text-label text-subtle-foreground"
-      >{{ row.missing }} {{ t('live.missing') }}</span
-    >
+    <span class="ml-auto shrink-0 text-label text-subtle-foreground">{{
+      t('live.missing', { n: row.missing })
+    }}</span>
   </div>
 </template>
