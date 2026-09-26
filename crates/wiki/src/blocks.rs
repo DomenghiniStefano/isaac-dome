@@ -5,7 +5,7 @@
 //! The input is external data: no path may panic. Whatever isn't recognized degrades to
 //! a paragraph.
 
-use crate::inline::parse_inline;
+use crate::inline::{name_list_items, parse_inline};
 use crate::resolver::Resolver;
 use crate::template::{template_segments, Segment, Template};
 use crate::{Block, Diagnostics, Inline, ListItem};
@@ -191,7 +191,31 @@ impl Parser<'_> {
             return;
         }
         self.flush_list();
-        self.paragraph_line(trimmed);
+        if !self.name_list_line(trimmed) {
+            self.paragraph_line(trimmed);
+        }
+    }
+
+    /// A line that is nothing but `{{achievement text|…}}` or one of the collectible tables
+    /// is the bulleted list the site expands it into, one item per name; `false` for any
+    /// other line.
+    fn name_list_line(&mut self, trimmed: &str) -> bool {
+        let Some(items) = name_list_items(trimmed, self.r, self.d) else {
+            return false;
+        };
+        self.flush_para();
+        let items = items
+            .into_iter()
+            .map(|inline| ListItem {
+                inline,
+                children: Vec::new(),
+            })
+            .collect();
+        self.out.push(Block::List {
+            ordered: false,
+            items,
+        });
+        true
     }
 
     fn table_line(&mut self, line: &str) {
@@ -487,7 +511,7 @@ fn strip_attributes(cell: &str) -> &str {
 mod tests {
     use super::*;
     use crate::resolver::fixtures::test_resolver;
-    use crate::{Block, Diagnostics, Inline, ListItem, Style};
+    use crate::{Block, Diagnostics, Dlc, Inline, ListItem, Style, Target};
 
     fn p(s: &str) -> Vec<Block> {
         parse_blocks(s, &test_resolver(), &mut Diagnostics::default())
@@ -789,6 +813,134 @@ mod tests {
             rows[0].len(),
             2,
             "the template is one cell, `after` is the other: {rows:?}"
+        );
+    }
+
+    fn the_list(blocks: &[Block]) -> &[ListItem] {
+        match blocks {
+            [Block::List {
+                ordered: false,
+                items,
+            }] => items,
+            _ => panic!("one unordered list, got {blocks:?}"),
+        }
+    }
+
+    fn is_achievement_ref(i: &Inline, label: &str) -> bool {
+        matches!(i, Inline::Ref { target: Target::Achievement { .. }, label: l } if l == label)
+    }
+
+    /// `{{achievement text | A, B}}` is how a character page lists what it unlocks, and the
+    /// site expands it into a bulleted list with an icon per name. Written as a row of
+    /// references inside a paragraph, fifteen names read as one run-on line.
+    #[test]
+    fn a_name_list_alone_on_its_line_is_a_list_with_one_item_per_name() {
+        let blocks = p("{{achievement text | Epic Fetus, Cain }}\n");
+        let items = the_list(&blocks);
+        assert_eq!(items.len(), 2, "{items:?}");
+        for (item, label) in items.iter().zip(["Epic Fetus", "Cain"]) {
+            assert!(
+                matches!(item.inline.as_slice(), [only] if is_achievement_ref(only, label)),
+                "{item:?}"
+            );
+            assert!(item.children.is_empty());
+        }
+    }
+
+    /// A name the resolver does not know is still what the page says: it keeps its item,
+    /// as text.
+    #[test]
+    fn an_unresolved_name_is_text_in_its_own_item() {
+        let blocks = p("{{achievement text | Epic Fetus, Not An Achievement }}\n");
+        let items = the_list(&blocks);
+        assert_eq!(items.len(), 2, "{items:?}");
+        assert_eq!(items[1].inline, t("Not An Achievement"));
+    }
+
+    /// 82 of the 143 `achievement text` name exactly one achievement, and the site draws
+    /// those as a list of one: the shape does not depend on the count.
+    #[test]
+    fn a_single_name_is_a_list_of_one() {
+        let blocks = p("{{collectible table | Breakfast }}\n");
+        let items = the_list(&blocks);
+        assert_eq!(
+            items[0].inline,
+            vec![Inline::Ref {
+                target: Target::Item { id: 25 },
+                label: "Breakfast".into()
+            }]
+        );
+    }
+
+    /// The four table templates are the same list. `rows | dlc = r` is Conjoined's markup
+    /// for items that count only in that edition, so each item carries the edition.
+    #[test]
+    fn a_rows_list_qualified_by_edition_qualifies_every_item() {
+        let blocks = p("{{collectible rows | dlc = r | Breakfast, Book of Virtues }}\n{{trinket table | Swallowed Penny }}\n");
+        let [Block::List { items, .. }, Block::List {
+            items: trinkets, ..
+        }] = blocks.as_slice()
+        else {
+            panic!("two lists, got {blocks:?}")
+        };
+        let ids: Vec<u32> = items
+            .iter()
+            .map(|item| match item.inline.as_slice() {
+                [Inline::Edition { only, inline }]
+                    if only == &vec![Dlc::Repentance, Dlc::RepentancePlus] =>
+                {
+                    match inline.as_slice() {
+                        [Inline::Ref {
+                            target: Target::Item { id },
+                            ..
+                        }] => *id,
+                        _ => panic!("{inline:?}"),
+                    }
+                }
+                _ => panic!("an item inside its edition, got {item:?}"),
+            })
+            .collect();
+        assert_eq!(ids, vec![25, 584]);
+        assert!(matches!(
+            trinkets[0].inline.as_slice(),
+            [Inline::Ref {
+                target: Target::Trinket { id: 1 },
+                ..
+            }]
+        ));
+    }
+
+    /// The list is a block of its own: the prose around it stays two paragraphs, and a
+    /// comment after the template (one page carries one) does not keep it inline.
+    #[test]
+    fn a_name_list_closes_the_paragraph_before_it() {
+        let blocks = p("before\n{{achievement text | Cain }} <!-- a note -->\nafter\n");
+        assert_eq!(blocks.len(), 3, "{blocks:?}");
+        assert_eq!(
+            blocks[0],
+            Block::Paragraph {
+                inline: t("before")
+            }
+        );
+        assert_eq!(the_list(&blocks[1..2]).len(), 1);
+        assert_eq!(blocks[2], Block::Paragraph { inline: t("after") });
+    }
+
+    /// Inside a sentence the template is still a run of references: only a line that is
+    /// nothing but the template is the list the site draws.
+    #[test]
+    fn a_name_list_inside_a_sentence_stays_inline() {
+        let blocks = p("Unlocks {{achievement text | Epic Fetus, Cain }} on the spot\n");
+        let [Block::Paragraph { inline }] = blocks.as_slice() else {
+            panic!("one paragraph, got {blocks:?}")
+        };
+        assert_eq!(
+            inline
+                .iter()
+                .filter(|i| matches!(i, Inline::Ref { .. }))
+                .count(),
+            2,
+            "{inline:?}"
         );
     }
 

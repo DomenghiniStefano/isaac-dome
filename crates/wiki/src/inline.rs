@@ -4,12 +4,16 @@
 //! The input is external data: no path may panic. Every malformed construct (an
 //! unclosed template, an open link, a tag with no `>`) degrades to text.
 
+mod name_list;
 mod out;
+
+pub use name_list::name_list_items;
 
 use crate::editions::span_restriction;
 use crate::resolver::{Resolution, Resolver};
 use crate::template::{parse_template_at, Template};
-use crate::{Diagnostics, Inline, Target};
+use crate::{Diagnostics, Inline};
+use name_list::NameList;
 use out::Out;
 
 /// A closed list, and deliberately not a general HTML-entity decoder: the input is
@@ -241,6 +245,12 @@ fn text_char(rest: &str, out: &mut Out) -> usize {
 
 /// An already-parsed template: editions, `{{!}}`, or a reference passed to the resolver.
 fn template(t: &Template, r: &Resolver, d: &mut Diagnostics, out: &mut Out, depth: u32) {
+    // A list of names inside a sentence. A line holding nothing else never gets here:
+    // `blocks` makes it a list first.
+    if let Some(list) = NameList::of(&t.name) {
+        list.push_inline(t, r, d, out);
+        return;
+    }
     let arg = t.args.first().cloned().unwrap_or_default();
     match t.name.as_str() {
         "!" => out.buf.push('|'),
@@ -268,12 +278,6 @@ fn template(t: &Template, r: &Resolver, d: &mut Diagnostics, out: &mut Out, dept
         // resolver answers nothing — 33 uses lost the reference, and the ": " that introduces
         // the description with it.
         "book of belial synergy" => synergy("The Book of Belial", t, r, d, out, depth),
-        // The only template whose argument is a *list* of achievements: a boss page names the
-        // achievements that boss unlocks, comma-separated. `resolve` answers with one
-        // `Resolution`, so this cannot go through it — it has to push a node per name.
-        "achievement text" => push_name_list(out, &arg, |name| r.achievement_by_name(name)),
-        "collectible table" | "collectible rows" => collectible_list("i", t, &arg, r, d, out),
-        "trinket table" | "trinket rows" => collectible_list("t", t, &arg, r, d, out),
         // 204 of the 547 `{{bug|…}}` carry a `dlc`, and until 2026-09-15 this arm recursed
         // into the positional argument and read no named one: a defect that exists in one
         // edition was shown to every reader as theirs. The 130 whose code this parser
@@ -335,59 +339,6 @@ fn synergy(item: &str, t: &Template, r: &Resolver, d: &mut Diagnostics, out: &mu
     }
     if let Some(description) = t.named.get("description") {
         recurse_into_arg(description, r, d, out, depth);
-    }
-}
-
-/// `{{collectible table|…}}` and its three siblings, with the same reason as
-/// `achievement text`: the argument is a comma-separated list of names, and `resolve` answers
-/// with one target. They are how a transformation page states what counts toward it, which is
-/// the only complete statement of that set — the infobox's `items` misses Guppy's trinket.
-///
-/// `rows` takes an optional `dlc =`: Conjoined splits its list by edition, one `rows` each
-/// under a shared header, and those items count only in that edition — which is what
-/// `Inline::Edition` says everywhere else. A name that does not resolve is counted where every
-/// other failed lookup is counted.
-fn collectible_list(
-    kind: &str,
-    t: &Template,
-    arg: &str,
-    r: &Resolver,
-    d: &mut Diagnostics,
-    out: &mut Out,
-) {
-    with_optional_edition(out, d, t.named.get("dlc"), |out, d| {
-        push_name_list(out, arg, |item| match r.resolve(kind, item) {
-            Resolution::Target(target) => Some(target),
-            Resolution::Concept
-            | Resolution::Unresolved
-            | Resolution::Ignore
-            | Resolution::Unknown => {
-                d.unresolved(kind);
-                None
-            }
-        })
-    });
-}
-
-/// A comma-separated list of names, one node per name: a reference where `resolve` finds one,
-/// the name as text where it does not — not dropped, because a name we cannot resolve is still
-/// what the page says. Empty names are skipped; the separator is the list's own.
-fn push_name_list(out: &mut Out, list: &str, mut resolve: impl FnMut(&str) -> Option<Target>) {
-    for (n, name) in list.split(',').enumerate() {
-        let name = name.trim();
-        if name.is_empty() {
-            continue;
-        }
-        if n > 0 {
-            out.buf.push_str(", ");
-        }
-        match resolve(name) {
-            Some(target) => out.push(Inline::Ref {
-                target,
-                label: name.to_string(),
-            }),
-            None => out.buf.push_str(name),
-        }
     }
 }
 
