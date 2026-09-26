@@ -460,7 +460,7 @@ fn the_correction_check_detects_a_correction_that_matches_nothing() {
 }
 
 /// Every hand-written description in `corrections.json` lands on an entry of the snapshot.
-/// The file is written by hand against `wiki.json`'s keys, and a typo in one — `bosses`
+/// The file is written by hand against `dataset/wiki/`'s collection keys, and a typo in one — `bosses`
 /// keyed `45` instead of `45.0.0` — fills nothing and says nothing. Not vacuous: the file
 /// carries Dead God's (637), and `a_description_for_no_entry_is_reported` in `build.rs`
 /// shows the check speaking about entries it knows are wrong.

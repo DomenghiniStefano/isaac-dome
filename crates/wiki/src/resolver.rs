@@ -53,8 +53,8 @@ pub struct Corrections {
     /// different template. Wins over the ids derived from the pages.
     #[serde(default)]
     pub characters: BTreeMap<String, u32>,
-    /// Descriptions written by hand, as wikitext: collection, named the way `wiki.json`
-    /// names it (`achievements`, `bosses`…), then the entry's key in that collection. One
+    /// Descriptions written by hand, as wikitext: collection, named the way `dataset/wiki/`
+    /// names its files (`achievements`, `bosses`…), then the entry's key in that collection. One
     /// wins over the page's, on any kind — the reason to write one is that the wiki's is
     /// missing (Dead God) or says nothing.
     #[serde(default)]

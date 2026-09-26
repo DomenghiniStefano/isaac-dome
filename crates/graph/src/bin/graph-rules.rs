@@ -1,22 +1,15 @@
-//! Writes `crates/graph/rules/requirements.json` from `dataset/wiki.json`. Offline, one
+//! Writes `crates/graph/rules/requirements.json` from `dataset/wiki/`. Offline, one
 //! pass per snapshot: the app never runs this.
 
 use std::path::Path;
 
 fn main() {
     let root = Path::new(env!("CARGO_MANIFEST_DIR")).join("../..");
-    let src = root.join("dataset/wiki.json");
-    let json = match std::fs::read_to_string(&src) {
-        Ok(j) => j,
-        Err(e) => {
-            eprintln!("cannot read {}: {e}", src.display());
-            std::process::exit(1);
-        }
-    };
-    let dataset = match wiki::Dataset::from_json(&json) {
+    let src = root.join("dataset/wiki");
+    let dataset = match wiki::Dataset::read_dir(&src) {
         Ok(d) => d,
         Err(e) => {
-            eprintln!("invalid dataset: {e}");
+            eprintln!("invalid dataset at {}: {e}", src.display());
             std::process::exit(1);
         }
     };

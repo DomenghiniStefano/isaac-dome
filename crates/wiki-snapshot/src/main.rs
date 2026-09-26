@@ -1,7 +1,8 @@
 //! `wiki-snapshot`: a developer tool, never shipped. `fetch` downloads the pages and
 //! Cargo tables from bindingofisaacrebirth.wiki.gg into `dataset/raw/`, the only place
 //! in the repo that talks to the network; `build` turns that snapshot into
-//! `dataset/wiki.json`, the file the `wiki` crate embeds into the binary.
+//! `dataset/wiki/`, one file per collection, which the `wiki` crate merges and embeds
+//! into the binary.
 
 mod api;
 mod http;
@@ -22,7 +23,7 @@ use crate::api::{
 use crate::store::{prune, write_if_changed};
 
 const USAGE: &str =
-    "usage:\n  wiki-snapshot fetch [--out <dir>]\n  wiki-snapshot build [--raw <dir>] [--out <file>]";
+    "usage:\n  wiki-snapshot fetch [--out <dir>]\n  wiki-snapshot build [--raw <dir>] [--out <dir>]";
 /// How many entries of each diagnostic map `build` shows.
 const DIAGNOSTIC_ROWS: usize = 20;
 
@@ -97,7 +98,7 @@ fn run(args: &[String]) -> Outcome {
             let out = opts
                 .get("out")
                 .map(PathBuf::from)
-                .unwrap_or_else(|| root.join("dataset").join("wiki.json"));
+                .unwrap_or_else(|| root.join("dataset").join("wiki"));
             build_dataset(&raw, &out, &root.join("dataset").join("corrections.json"))
         }
         Some(other) => Err(Failure::Usage(format!("unknown command: {other}"))),
@@ -394,7 +395,7 @@ fn print_meta(ds: &Dataset) {
     print_diagnostic("unknown infoboxes", unknown_infoboxes);
     // Not part of `meta.diagnostics`: whether a `Ref`'s target has a page is a fact about
     // the whole dataset, not about the page one is printed from, and it never ships in
-    // `wiki.json` — the destinations are the parser's own maintenance concern, not the
+    // `dataset/wiki/` — the destinations are the parser's own maintenance concern, not the
     // app's at runtime.
     let links = dead_links(ds);
     print_diagnostic("dead concept links", &links.concept_pages);
@@ -405,12 +406,14 @@ fn build_dataset(raw_dir: &Path, out: &Path, corrections_path: &Path) -> Outcome
     let raw = Raw::load(raw_dir).map_err(|e| Failure::Error(e.to_string()))?;
     let corrections = load_corrections(corrections_path)?;
     let ds = build(&raw, &corrections);
-    let changed = write_if_changed(out, ds.to_json().as_bytes()).map_err(|e| io_error(out, e))?;
-    println!(
-        "{}: {}",
-        out.display(),
-        if changed { "written" } else { "unchanged" }
-    );
+    let report = ds.write_dir(out).map_err(|e| io_error(out, e))?;
+    for (file, written) in &report {
+        println!(
+            "{}: {}",
+            out.join(file).display(),
+            if *written { "written" } else { "unchanged" }
+        );
+    }
     print_meta(&ds);
     Ok(())
 }
