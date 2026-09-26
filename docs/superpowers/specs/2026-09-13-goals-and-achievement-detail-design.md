@@ -96,7 +96,9 @@ not a scan of 642 nodes.
 Four cases, all of them "the block is absent and the page is exactly what it is today":
 
 - no active profile (the wiki is reachable without one);
-- the graph view failed to load, or has not been loaded in this window;
+- the graph view failed to load. (Until 2026-09-26 also "has not been loaded in this window": the
+  page read only what the progress screens had loaded. The owner asked for the profile's state
+  wherever there is a save, so the page now reads the graph itself when nobody has — card #89.)
 - the page's id is an achievement the catalog does not know;
 - the node exists but the save's achievement section was not read (`noAchievementSection`) —
   the state would read "not done" for everything, which is a lie. The diagnostic is already
