@@ -776,36 +776,38 @@ For honesty's sake, and so as not to make this document look more complete than 
 | Class ordering | `prettier-plugin-tailwindcss`, automatic |
 | TypeScript strict, types | `vue-tsc --noEmit` |
 | Generic Vue and TS rules | ESLint flat config: `eslint-plugin-vue`, `typescript-eslint`, `@vue/eslint-config-typescript` |
-| **`<style>` blocks without a marker** | `ui/scripts/scan-conventions.mjs` |
-| **Mandatory `<script setup>`** | `ui/scripts/scan-conventions.mjs` |
-| **Arbitrary pixel value in a class** | `ui/scripts/scan-conventions.mjs` |
-| **Hardcoded opacity** | `ui/scripts/scan-conventions.mjs` |
-| **Hardcoded duration** | `ui/scripts/scan-conventions.mjs` |
-| **`invoke()` outside the IPC layer** | `ui/scripts/scan-conventions.mjs` |
-| **Window API outside `src/lib/window/`** | `ui/scripts/scan-conventions.mjs` |
-| **Numeric `:size` prop on an icon** | `ui/scripts/scan-conventions.mjs` |
-| **Raw `<button>` / `<input>` outside `src/components/ui/`** | `ui/scripts/scan-conventions.mjs` |
-| **String literal unions (`'a' \| 'b'`)** | `ui/scripts/scan-conventions.mjs` |
-| **Visible strings in the template** (skipping `src/kit/` and `src/verify/`, development-only) | `ui/scripts/scan-conventions.mjs` |
-| **`dark:` variant** (one theme) | `ui/scripts/scan-conventions.mjs` |
-| **Literal colour in a class** | `ui/scripts/scan-conventions.mjs` |
-| **Colour alpha modifier (`bg-x/50`)** | `ui/scripts/scan-conventions.mjs` |
-| **`tw-animate-css` class** (not installed) | `ui/scripts/scan-conventions.mjs` |
-| **Literal `variant`/`size`/`density`/`orientation` on a primitive** | `ui/scripts/scan-conventions.mjs` |
-| **Glyph missing from Determination** | `ui/scripts/scan-conventions.mjs` |
-| **A px token in `assets/` with no reason beside it** | `ui/scripts/scan-conventions.mjs` |
-| **A media query variant, or a container size that is not ours** | `ui/scripts/scan-conventions.mjs` |
-| **A screen root that is neither flowing nor filling** | `ui/scripts/scan-conventions.mjs` |
-| **A width cap on a screen root** | `ui/scripts/scan-conventions.mjs` |
-| **A narrow grid template with no column hidden** | `ui/scripts/scan-conventions.mjs` |
-| **A scrolling box under `src/screens/` without `v-scroll-memory`** | `ui/scripts/scan-conventions.mjs` |
-| **An import against the layer direction** (`lib/`, `stores/`, `composables/` import no component or screen; `components/` no screen; `router/` no component; by the `@/` alias or a relative path, `from`, side-effect `import` or `import()`) — since 2026-09-24, card #81; relative and side-effect imports since 2026-09-26 | `ui/scripts/scan-conventions.mjs` |
-| **A token read from a string** (`var(--…)` in `:style` or a TS string, unless the key *sets* a `'--name'`) — since 2026-09-24, card #81 | `ui/scripts/scan-conventions.mjs` |
-| **A quarter step off the 4px grid** (`gap-0.75`) | `ui/scripts/scan-conventions.mjs` |
-| **A numbered `z-*`** — the names are in `assets/theme/layers.css` | `ui/scripts/scan-conventions.mjs` |
-| **A `shadow-*` class with no `--shadow-*` token** (`--shadow-*` is `initial`, so it draws nothing) | `ui/scripts/scan-conventions.mjs` |
-| **An `await` inside `??`, `\|\|`, `&&` or a ternary** — since 2026-09-24, card #81 | `ui/scripts/scan-conventions.mjs` |
-| **A `switch` on a value compared against `case '…'`** (on a `.kind` tag the literal is the exception rule 5 allows) | `ui/scripts/scan-conventions.mjs` |
+| **`<style>` blocks without a marker** | scan: `style block with no declared exemption` |
+| **Mandatory `<script setup>`** | scan: `<script> without setup` |
+| **Arbitrary pixel value in a class** | scan: `arbitrary pixel value in a class` |
+| **Hardcoded opacity** | scan: `hardcoded opacity` |
+| **Hardcoded duration** | scan: `hardcoded duration` |
+| **`invoke()` outside the IPC layer** | scan: `invoke() outside src/lib/ipc/` |
+| **Window API outside `src/lib/window/`** | scan: `window API outside src/lib/window/` |
+| **Numeric `:size` prop on an icon** | scan: `size prop on an icon: use size-*` |
+| **Raw `<button>` / `<input>` outside `src/components/ui/`** | scan: `raw primitive <button>/<input>` |
+| **String literal unions (`'a' \| 'b'`)** | scan: `string literal union: use an 'as const' object` |
+| **Visible strings in the template** (skipping `src/kit/` and `src/verify/`, development-only) | scan: `visible string in the template` |
+| **`dark:` variant** (one theme) | scan: `dark: variant in a one-theme app` |
+| **Literal colour in a class** | scan: `literal colour in a class: colours are tokens` |
+| **Colour alpha modifier (`bg-x/50`)** | scan: `colour alpha modifier: the alpha belongs in a token` |
+| **`tw-animate-css` class** (not installed) | scan: `tw-animate-css class` |
+| **Literal `variant`/`size`/`density`/`orientation` on a primitive** | scan: `literal variant on a primitive: use the component's constant` |
+| **Glyph missing from Determination** | scan: `glyph missing from Determination: use an icon` |
+| **A px token in `assets/` with no reason beside it** | scan: `px token with no reason beside it` |
+| **A media query variant, or a container size that is not ours** | scan: `media query variant, or a container size that is not ours` |
+| **A screen root that is neither flowing nor filling** | scan: `screen root is neither flowing nor filling` |
+| **A width cap on a screen root** | scan: `width cap on a screen root` |
+| **A narrow grid template with no column hidden** | scan: `narrow grid template with no column hidden` |
+| **A scrolling box under `src/screens/` without `v-scroll-memory`** | scan: `scrolling box without v-scroll-memory` |
+| **An import against the layer direction** (`lib/`, `stores/`, `composables/` import no component or screen; `components/` no screen; `router/` no component; by the `@/` alias or a relative path, `from`, side-effect `import` or `import()`) — since 2026-09-24, card #81; relative and side-effect imports since 2026-09-26 | scan: `import against the layer direction` |
+| **A token read from a string** (`var(--…)` in `:style` or a TS string, unless the key *sets* a `'--name'`) — since 2026-09-24, card #81 | scan: `a token read from a string instead of set as a variable` |
+| **A quarter step off the 4px grid** (`gap-0.75`) | scan: `a quarter step off the 4px grid` |
+| **A numbered `z-*`** — the names are in `assets/theme/layers.css` | scan: `a z-index with no name` |
+| **A `shadow-*` class with no `--shadow-*` token** (`--shadow-*` is `initial`, so it draws nothing) | scan: `a shadow class with no --shadow token behind it` |
+| **An `await` inside `??`, `\|\|`, `&&` or a ternary** — since 2026-09-24, card #81 | scan: `an await inside a conditional expression` |
+| **A `switch` on a value compared against `case '…'`** (on a `.kind` tag the literal is the exception rule 5 allows) | scan: `a switch on a value compared against a string literal` |
+| **`outline-none` outside a primitive** (cyan is the only thing that says where the keyboard is) | scan: `outline-none outside a primitive` |
+| **A class of a reset default scale** (`text-sm`, `font-bold`, `rounded-md`: `@theme` resets them to `initial`, so they generate nothing) | scan: `class of a reset default scale: it generates nothing` |
 
 Three rows arrived on 2026-09-06 — before that, the document declared five rules and the
 script checked three — six more on 2026-09-10 with the design system, and **four on
@@ -816,15 +818,19 @@ is which. On the same day
 the visible-string heuristic learned to skip quoted attribute values: a class such as
 `has-[>svg]:grid-cols-2` used to end the tag early and leave half a class list behind as
 "visible text". **This table and the script's `checks` array must have the
-same rows**, and that's the only thing keeping the document from promising a check that
-doesn't happen.
+same rows**, and since 2026-09-26 the script says so itself: every row names its check as
+`scan: <name>`, spelled exactly as in the `checks` array, and a check with no row or a row
+with no check is a violation. Until then it held only by being read, and two checks
+(`outline-none`, the reset scales) had gone without a row while this paragraph said the two
+lists matched. A new check gets its row in the same commit, or `pnpm scan` fails.
 
 **The exceptions live in the script, not in the head of whoever runs it.** At the top of
 `scan-conventions.mjs` there's an `EXEMPTIONS` array with file, check, and reason. It stood empty
-for months; since 2026-09-20 it holds two, both against the screen-shape rule and both permanent
-rather than temporary: `WelcomeScreen.vue`, a takeover drawn outside `<main>` with no page box to
+for months; it now holds three, all permanent rather than temporary. Two are against the
+screen-shape rule: `WelcomeScreen.vue`, a takeover drawn outside `<main>` with no page box to
 fill, and `WikiScreen.vue`, which has no root of its own and picks one of four bodies that each
-carry the shape. An empty list is the goal; an exception with no written reason is an untracked
+carry the shape. The third is `WelcomeScreen.vue` again, against `v-scroll-memory`: it is not a
+tab, so there is no history entry for a position to be kept on. An empty list is the goal; an exception with no written reason is an untracked
 violation.
 
 Two known limits, stated so as not to pretend the script is a compiler: the
