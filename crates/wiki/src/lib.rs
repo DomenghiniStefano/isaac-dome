@@ -41,7 +41,7 @@ pub use model::{
     Target,
 };
 pub use page::{parse_page, EntryKey, PageKind};
-pub use raw::{page_file_name, IndexEntry, Raw, RawError, RawPage};
+pub use raw::{page_file_name, ArticleCategory, IndexEntry, Raw, RawError, RawPage};
 pub use resolver::{
     in_current_edition, is_layout_template, key, Corrections, Resolution, Resolver, Row, Tables,
     CORRECTED_TABLES,

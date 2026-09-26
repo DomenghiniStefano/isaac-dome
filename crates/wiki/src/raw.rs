@@ -1,6 +1,10 @@
 //! Reading `dataset/raw/`, the raw snapshot downloaded from the wiki: the crate's only
 //! I/O. Layout: `index.json` (title → kind, pageid, revid, timestamp), a `pages/<kind>/`
-//! folder with a `.wikitext` per page, `cargo/<table>.json` with the cargoquery rows.
+//! folder with a `.wikitext` per page, `cargo/<table>.json` with the cargoquery rows,
+//! `redirects.json` (`from` → `to`, canonical titles) and `templates/<name>.wikitext`
+//! (a template's own wikitext, for the defaults it declares). The last two come with
+//! the whole-namespace fetch and are absent from a snapshot taken without it: both
+//! degrade to empty rather than fail.
 
 use std::collections::BTreeMap;
 use std::fmt;
@@ -11,13 +15,30 @@ use serde::{Deserialize, Serialize};
 use crate::page::PageKind;
 use crate::resolver::{Row, Tables};
 
-/// An `index.json` entry: what the wiki says about the page besides its text.
+/// The infobox template an article was found to transclude, when it transcludes one of the
+/// four whose parameters this sub-project declines to read (design decision 2): a card, a
+/// rune, a pickup or a stage. It is not a `PageKind` — the page is still filed as `Article`
+/// — but it is how the landing tells a card from a mechanic page.
+#[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Serialize, Deserialize)]
+#[serde(rename_all = "lowercase")]
+pub enum ArticleCategory {
+    Card,
+    Rune,
+    Pickup,
+    Stage,
+}
+
+/// An `index.json` entry: what the wiki says about the page besides its text. `category`
+/// exists only for an `Article`; `#[serde(default)]` reads it as `None` on every entry a
+/// snapshot taken without the whole-namespace fetch wrote without the field.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct IndexEntry {
     pub kind: PageKind,
     pub pageid: u64,
     pub revid: u64,
     pub timestamp: String,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub category: Option<ArticleCategory>,
 }
 
 /// A page as it is on disk: title, index entry and wikitext.
@@ -28,13 +49,21 @@ pub struct RawPage {
     pub text: String,
 }
 
-/// The whole raw snapshot: pages (in title order), Cargo tables, and the `version` table
-/// with the game's patches.
+/// The whole raw snapshot: pages (in title order), Cargo tables, the `version` table with
+/// the game's patches, the redirect map, and a template's own wikitext for its declared
+/// defaults.
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct Raw {
     pub pages: Vec<RawPage>,
     pub tables: Tables,
     pub versions: Vec<Row>,
+    /// `from` → `to`, both canonical titles (`title::canonical_title`), sorted. Empty when
+    /// `redirects.json` is absent — a snapshot has none until the whole-namespace fetch runs.
+    pub redirects: BTreeMap<String, String>,
+    /// `Template:Infobox character`'s own wikitext, read once for the base-stat defaults it
+    /// declares (design decision 4). `None` until the template-defaults fetch runs; the
+    /// parser that reads the defaults is a later step, not this one.
+    pub template_infobox_character: Option<String>,
 }
 
 #[derive(Debug)]
@@ -142,16 +171,46 @@ fn load_tables(cargo: &Path) -> Result<Tables, RawError> {
     })
 }
 
+/// `redirects.json` (`{ "from": "to" }`) if present; a missing file degrades to an empty
+/// map, same as an absent Cargo table — the fetch that writes it is new, and an old
+/// snapshot never wrote it.
+fn load_redirects(dir: &Path) -> Result<BTreeMap<String, String>, RawError> {
+    let path = dir.join("redirects.json");
+    match read_text(&path) {
+        Ok(text) => serde_json::from_str(&text)
+            .map_err(|e| RawError::Unreadable(path.clone(), e.to_string())),
+        Err(RawError::Missing(_)) => Ok(BTreeMap::new()),
+        Err(e) => Err(e),
+    }
+}
+
+/// A template's own wikitext (`templates/<name>.wikitext`), if the fetch downloaded it.
+/// A missing file is `None`, not an error: the template-defaults fetch is new, and the
+/// parser that reads it treats absence like every other "the game/wiki didn't say" case.
+fn load_template(dir: &Path, title: &str) -> Result<Option<String>, RawError> {
+    let path = dir
+        .join("templates")
+        .join(format!("{}.wikitext", page_file_name(title)));
+    match read_text(&path) {
+        Ok(text) => Ok(Some(text)),
+        Err(RawError::Missing(_)) => Ok(None),
+        Err(e) => Err(e),
+    }
+}
+
 impl Raw {
     /// Reads the snapshot in `dir`. Cargo tables other than `collectible` may be missing
     /// (the wiki might not have them): the vector stays empty. A page listed in the index
-    /// but absent on disk is an error: the snapshot is incomplete.
+    /// but absent on disk is an error: the snapshot is incomplete. `redirects.json` and the
+    /// template wikitext degrade the same way the optional Cargo tables do.
     pub fn load(dir: &Path) -> Result<Raw, RawError> {
         let cargo = dir.join("cargo");
         Ok(Raw {
             pages: load_pages(dir)?,
             tables: load_tables(&cargo)?,
             versions: optional_table(&cargo, "version")?,
+            redirects: load_redirects(dir)?,
+            template_infobox_character: load_template(dir, "Infobox character")?,
         })
     }
 }
@@ -198,7 +257,89 @@ mod tests {
         assert_eq!(raw.pages[0].title, "Breakfast");
         assert_eq!(raw.tables.collectible.len(), 1);
         assert!(raw.tables.trinket.is_empty());
+        // Neither file exists in this fixture: both degrade to empty rather than fail,
+        // the same as an optional Cargo table — a snapshot taken without the
+        // whole-namespace fetch has neither.
+        assert!(raw.redirects.is_empty());
+        assert!(raw.template_infobox_character.is_none());
         std::fs::remove_file(p.join("pages/collectible/Breakfast.wikitext")).unwrap();
         assert!(matches!(Raw::load(p), Err(RawError::Missing(_))));
+    }
+
+    /// `redirects.json` and the template's wikitext, when the fetch wrote them: read back
+    /// exactly what was written, keyed and valued as canonical titles (the writer's job, not
+    /// this reader's — `raw.rs` trusts what is on disk).
+    #[test]
+    fn load_reads_redirects_and_the_template_default_when_present() {
+        let dir = tempfile::tempdir().unwrap();
+        let p = dir.path();
+        std::fs::create_dir_all(p.join("cargo")).unwrap();
+        std::fs::create_dir_all(p.join("templates")).unwrap();
+        std::fs::write(p.join("index.json"), "{}").unwrap();
+        std::fs::write(
+            p.join("cargo/collectible.json"),
+            r#"[{"_pageName":"Breakfast","id":"25"}]"#,
+        )
+        .unwrap();
+        std::fs::write(
+            p.join("redirects.json"),
+            r#"{"Soul Hearts":"Health","Tears Up":"Tears"}"#,
+        )
+        .unwrap();
+        std::fs::write(
+            p.join("templates/Infobox_character.wikitext"),
+            "{{{damage|3.5}}}",
+        )
+        .unwrap();
+        let raw = Raw::load(p).unwrap();
+        assert_eq!(
+            raw.redirects.get("Soul Hearts").map(String::as_str),
+            Some("Health")
+        );
+        assert_eq!(raw.redirects.len(), 2);
+        assert_eq!(
+            raw.template_infobox_character.as_deref(),
+            Some("{{{damage|3.5}}}")
+        );
+    }
+
+    /// An `Article`'s `category` round-trips through `index.json`; every other kind's stays
+    /// absent from the JSON (`skip_serializing_if`) and reads back as `None`.
+    #[test]
+    fn an_articles_category_round_trips_and_is_absent_for_other_kinds() {
+        let dir = tempfile::tempdir().unwrap();
+        let p = dir.path();
+        std::fs::create_dir_all(p.join("pages/article")).unwrap();
+        std::fs::create_dir_all(p.join("pages/collectible")).unwrap();
+        std::fs::create_dir_all(p.join("cargo")).unwrap();
+        std::fs::write(
+            p.join("index.json"),
+            r#"{
+                "0 - The Fool": {"kind":"article","pageid":1,"revid":1,"timestamp":"2026-01-01T00:00:00Z","category":"card"},
+                "Breakfast": {"kind":"collectible","pageid":2,"revid":1,"timestamp":"2026-01-01T00:00:00Z"}
+            }"#,
+        )
+        .unwrap();
+        std::fs::write(p.join("pages/article/0_-_The_Fool.wikitext"), "text").unwrap();
+        std::fs::write(
+            p.join("pages/collectible/Breakfast.wikitext"),
+            "{{infobox passive collectible|id=25}}",
+        )
+        .unwrap();
+        std::fs::write(
+            p.join("cargo/collectible.json"),
+            r#"[{"_pageName":"Breakfast","id":"25"}]"#,
+        )
+        .unwrap();
+        let raw = Raw::load(p).unwrap();
+        let by_title = |t: &str| raw.pages.iter().find(|p| p.title == t).unwrap();
+        assert_eq!(
+            by_title("0 - The Fool").index.category,
+            Some(ArticleCategory::Card)
+        );
+        assert_eq!(by_title("Breakfast").index.category, None);
+        // Serializing keeps the field out entirely when it is `None`.
+        let s = serde_json::to_string(&by_title("Breakfast").index).unwrap();
+        assert!(!s.contains("category"), "{s}");
     }
 }

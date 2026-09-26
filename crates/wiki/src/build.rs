@@ -48,12 +48,15 @@ pub fn build(raw: &Raw, corrections: &Corrections) -> Dataset {
     let mut ds = Dataset::empty();
     let mut diagnostics = Diagnostics::default();
     for p in pages_in_order(raw) {
+        note_revision(&mut ds.meta, p);
+        if !parses_into_entries(p.index.kind) {
+            continue;
+        }
         let mut d = Diagnostics::default();
         for (key, entry) in parse_page(&p.title, p.index.revid, &p.text, &r, &mut d) {
             ds.insert_first(key, entry);
         }
         diagnostics.merge(&d);
-        note_revision(&mut ds.meta, p);
     }
     apply_descriptions(&mut ds, corrections, &r, &mut diagnostics);
     add_conditions(&mut ds);
@@ -66,6 +69,24 @@ pub fn build(raw: &Raw, corrections: &Corrections) -> Dataset {
     ds.meta.counts = ds.counts();
     ds.meta.diagnostics = diagnostics;
     ds
+}
+
+/// Whether a page of this kind is built into dataset entries here. `Entity` and `Article`
+/// are not, yet: their pages are fetched and filed (`wiki-snapshot`, `raw.rs`), but a later
+/// sub-project reads their infoboxes and bodies into `Infobox::Entity` / `Infobox::Article`
+/// (design decision 2, `2026-09-26-wiki-complete-design.md`). Written as an explicit match
+/// rather than a wildcard so a ninth kind has to say which side of the line it is on.
+fn parses_into_entries(kind: PageKind) -> bool {
+    match kind {
+        PageKind::Collectible
+        | PageKind::Trinket
+        | PageKind::Achievement
+        | PageKind::Boss
+        | PageKind::Challenge
+        | PageKind::Character
+        | PageKind::Transformation => true,
+        PageKind::Entity | PageKind::Article => false,
+    }
 }
 
 fn pages_in_order(raw: &Raw) -> Vec<&RawPage> {
@@ -125,6 +146,7 @@ mod tests {
                 pageid: 1,
                 revid,
                 timestamp: ts.into(),
+                category: None,
             },
             text: text.into(),
         };
@@ -170,6 +192,8 @@ mod tests {
                 row(&[("number", "v1.9.7.16"), ("date", "2026-04-11")]),
                 row(&[("number", "v1.9.7.17"), ("date", "2026-04-20")]),
             ],
+            redirects: BTreeMap::new(),
+            template_infobox_character: None,
         }
     }
 
@@ -191,6 +215,48 @@ mod tests {
         assert!(s.contains(r#""kind":"character","id":2"#));
         assert!(ds.entry(&Target::Character { id: 2 }).is_some());
         assert!(ds.entry(&Target::Stage { name: "x".into() }).is_none());
+    }
+
+    /// `Entity` and `Article` pages are fetched and filed but not built into entries yet
+    /// (decision 2): a page of either kind still advances `meta`'s snapshot timestamp and
+    /// revid, exactly as one that does build an entry, and produces no diagnostics of its own
+    /// — `parse_page` is never called on it, so an infobox on it (`Infobox monster`) is not
+    /// even counted as unknown.
+    #[test]
+    fn entity_and_article_pages_advance_meta_but_yield_no_entries() {
+        let mut with_new_kinds = raw();
+        with_new_kinds.pages.push(RawPage {
+            title: "Gaper".into(),
+            index: IndexEntry {
+                kind: PageKind::Entity,
+                pageid: 2,
+                revid: 99,
+                timestamp: "2026-03-01T00:00:00Z".into(),
+                category: None,
+            },
+            text: "{{infobox monster|id=1|variant=0|subtype=0}}\n== Behavior ==\nx\n".into(),
+        });
+        with_new_kinds.pages.push(RawPage {
+            title: "Damage".into(),
+            index: IndexEntry {
+                kind: PageKind::Article,
+                pageid: 3,
+                revid: 100,
+                timestamp: "2026-03-02T00:00:00Z".into(),
+                category: None,
+            },
+            text: "'''Damage''' is a stat.\n== Formula ==\nx\n".into(),
+        });
+        let ds = build(&with_new_kinds, &Corrections::default());
+        // Neither page added an item, a character or a transformation.
+        assert_eq!(ds.meta.counts.items, 1);
+        assert_eq!(ds.meta.counts.characters, 1);
+        assert_eq!(ds.meta.counts.transformations, 1);
+        // Both still moved the snapshot's own clock.
+        assert_eq!(ds.meta.snapshot_at, "2026-03-02T00:00:00Z");
+        assert_eq!(ds.meta.max_revid, 100);
+        // Neither's infobox was even looked at: `parse_page` never ran on it.
+        assert!(ds.meta.diagnostics.unknown_infoboxes.is_empty());
     }
 
     /// The kind that used to answer `None` by construction now answers, and its count
