@@ -808,6 +808,7 @@ For honesty's sake, and so as not to make this document look more complete than 
 | **A `switch` on a value compared against `case '…'`** (on a `.kind` tag the literal is the exception rule 5 allows) | scan: `a switch on a value compared against a string literal` |
 | **`outline-none` outside a primitive** (cyan is the only thing that says where the keyboard is) | scan: `outline-none outside a primitive` |
 | **A class of a reset default scale** (`text-sm`, `font-bold`, `rounded-md`: `@theme` resets them to `initial`, so they generate nothing) | scan: `class of a reset default scale: it generates nothing` |
+| **A sentence joined from pieces** (two `t()` in one template literal, a `t()` joined by `+`, a mustache with `t()` beside another): one message with named parameters — since 2026-09-26 | scan: `a sentence joined from pieces: one message with named parameters` |
 
 Three rows arrived on 2026-09-06 — before that, the document declared five rules and the
 script checked three — six more on 2026-09-10 with the design system, and **four on

@@ -240,6 +240,18 @@ const readsTokenInString = (body) =>
 // shape (card #82: `stores/tabs.ts` had one, and the pattern could not see it).
 const CONDITIONAL_AWAIT = /(?:\?\?|\|\||&&|[^?.]\?)\s*\(?\s*await\b/
 
+// A translation call, `t('…')` or `$t('…')`.
+const T_CALL = String.raw`\$?\bt\(\s*'`
+const JOINED_SENTENCE = new RegExp(
+  [
+    `\`[^\`]*\\$\\{\\s*${T_CALL}[^\`]*\\$\\{\\s*${T_CALL}[^\`]*\``,
+    `${T_CALL}[^']*'(?:\\s*,\\s*\\{[^}]*\\})?\\s*\\)\\s*\\+`,
+    `\\+\\s*${T_CALL}`,
+    `\\{\\{\\s*${T_CALL}[^}]*\\}\\}[ \\t]*\\{\\{`,
+    `\\}\\}[ \\t]*\\{\\{\\s*${T_CALL}`,
+  ].join('|'),
+)
+
 // The body of every `switch (subject) { … }`, found by counting braces from the opening one.
 // Not a parser: a brace inside a string would miscount, and no switch in `src/` has one.
 const switchesOf = (body) =>
@@ -496,6 +508,17 @@ const checks = [
       /\p{L}{2,}/u.test(visibleText(body)),
   },
   {
+    // One sentence is one message with named parameters: the order of its words is the
+    // language's to choose. Two translations in one template literal, a translation joined by
+    // `+`, or two mustaches side by side with a translation in one of them all put the order in
+    // the code instead (`lib/plan/rowModel.ts` did, on 2026-09-26). Data beside one message —
+    // `${editionShort(x)} · ${t('…')}` — is not a sentence and is left alone. Test files are
+    // excused: their `t` is a fake that returns the key.
+    name: 'a sentence joined from pieces: one message with named parameters',
+    test: (file, body) =>
+      !file.endsWith('.test.ts') && JOINED_SENTENCE.test(body),
+  },
+  {
     // One theme. Without `@custom-variant dark`, Tailwind's built-in `dark:` compiles to
     // `prefers-color-scheme`, so a leftover class would switch on with the OS setting.
     // The variant chain in front of it is part of the class: `hover:dark:bg-x` is the same
@@ -697,6 +720,36 @@ const FIXTURES = [
     name: 'a named z-index is allowed',
     file: 'src/components/Fixture.vue',
     body: '<template>\n  <div class="sticky top-0 z-raised" />\n</template>\n',
+    expect: [],
+  },
+  {
+    name: 'two translations in one template literal are caught',
+    file: 'src/lib/plan/fixture.ts',
+    body: "const s = `${t('graph.unknownAchievement')} · ${t('graph.slot')} ${n}`\n",
+    expect: [
+      'a sentence joined from pieces: one message with named parameters',
+    ],
+  },
+  {
+    name: 'a translation joined by + is caught',
+    file: 'src/lib/plan/fixture.ts',
+    body: "const s = t('queue.of', { n }) + ' ' + rest\n",
+    expect: [
+      'a sentence joined from pieces: one message with named parameters',
+    ],
+  },
+  {
+    name: 'a translation beside another mustache is caught',
+    file: 'src/components/Fixture.vue',
+    body: "<template>\n  <span>{{ t('graph.slot') }} {{ n }}</span>\n</template>\n",
+    expect: [
+      'a sentence joined from pieces: one message with named parameters',
+    ],
+  },
+  {
+    name: 'data beside one message, and one message with parameters, are allowed',
+    file: 'src/lib/plan/fixture.ts',
+    body: "const a = `${editionShort(x)} · ${t('profile.edition')}`\nconst b = t('graph.slot', { slot: n })\n",
     expect: [],
   },
   {
