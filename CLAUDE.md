@@ -243,6 +243,46 @@ label, and the open item is the honest record of why.
   anything in `app`'s normal graph enables it. Something used by production *and* by tests
   stays `pub(crate)` and gets a feature-gated `pub use` in `lib.rs`, so the tests' imports do
   not move.
+- **When a reference carries an id, resolve it by the id first and by name only as a fallback.**
+  Names are not unique in the game: a Tainted character has its base form's name, and a name
+  lookup returns one of the two without failing. A lookup by name is for references that carry
+  nothing else (`graph::resolve::character_of`).
+
+### The shape of the code
+
+Code stays readable only if every commit keeps it that way: debt that is left for a clean-up
+card later costs far more than it would have cost in the commit that created it. **These rules
+apply to every commit**: the code a commit touches leaves in this shape.
+
+- **One definition per concept.** A domain table (the mark columns, the character roster, the
+  item kinds, the editions) is written once, in the lowest crate that needs it. Everything else
+  **re-exports it or derives from it**. Where two tables cannot be one, a
+  `const _: () = assert!(…)` ties them together. Before writing a helper, search for it.
+  **Don't** write a hand-made mapping between two enums that mean the same thing: re-export the
+  one instead (`pub use catalog::ItemKind as ItemKindView`). **Don't** copy a pattern a third
+  time: the second copy is the moment to extract it.
+- **A function reads as a sequence of named steps.** In production code, no function goes above
+  ~60 lines and no nesting goes deeper than three levels **without a reason written next to it**.
+  The accepted ones are `unpack::Archive::open`, `miniz::decompress`, `core_save::read_section`,
+  `wiki::resolve`, `Infobox::inlines(_mut)` and `ipc::contract::render`. No non-test source file
+  goes above ~600 lines: split it by what its parts are about.
+- **No side effects inside expressions.** **Don't** `push` inside a `.map`, increment a counter in
+  the arm of a `match` that builds a value, or move a reader inside an `if` condition. Build the
+  value, then derive the totals from it.
+- **Use an iterator where it reads better than `let mut` and a loop**: accumulate-and-collect,
+  find, max-by, partition. A stateful algorithm stays a loop: a BFS, a parser state machine, and
+  the faithful ports `isaac.rs` and `lzw`.
+- **A comment says what the code does and why.** **Don't** write card numbers, dates, "it used
+  to" or "was moved from" in it: that belongs in the commit message and on the card. The one
+  exception is a measured fact that explains why the code is the way it is; keep it. **Don't**
+  describe a known defect in a comment: fix it, or put it on the card.
+- **A comment the diff makes false is fixed in the same diff.** When you rename, move or split
+  code, grep the old name in comments and documents too, not only in code.
+- **Dead code leaves in the commit that makes it dead**: a command nobody calls, a wrapper with
+  no caller, a component nobody mounts, an i18n key nobody reads, a finished probe in `examples/`.
+- **A defect found while working on something else goes on the correctness card the same day**,
+  as a checklist item with enough to reproduce it. **Don't** leave it only in a comment on the
+  card you are working on: that card closes, and the defect is lost with it.
 
 ### Frontend → `docs/frontend-conventions.md`
 
@@ -305,6 +345,10 @@ Steam account id, test count, `samples/` access, `test-api` in the release graph
   those two lines is not linted, and only review sees the omission.
 - `docs/architecture.md` is redrawn in the commit that changes one of its five counts.
 - `master` moves only when the owner cuts a release.
+- The shape of the code: one definition per concept, functions and files within their length
+  and nesting, no side effects in expressions, comments that are true and carry no history, dead
+  code removed with its last caller, a defect found in passing written on the correctness card.
+- A reference that carries an id is resolved by the id first.
 
 ### Tests
 
