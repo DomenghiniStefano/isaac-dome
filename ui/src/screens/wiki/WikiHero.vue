@@ -26,7 +26,6 @@ const props = defineProps<{
   category: WikiCategory | null
   entry: Entry | null | undefined
   pageKey: string
-  iconFor?: (target: Target) => string | null
   canOpen?: (target: Target) => boolean
 }>()
 const emit = defineEmits<{ navigate: [target: Target, newTab: boolean] }>()
@@ -95,7 +94,6 @@ const id = computed(() => (props.target ? pageId(props.target) : null))
         <p v-if="summary.length > 0" class="max-w-200 text-body">
           <WikiInline
             :inline="summary"
-            :icon-for="iconFor"
             :can-open="canOpen"
             @navigate="(next, newTab) => emit('navigate', next, newTab)"
           />
