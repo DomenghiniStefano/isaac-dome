@@ -2,7 +2,7 @@
 import EmptyCategory from '@/components/data-state/EmptyCategory.vue'
 import WikiBlocks from '@/components/wiki/WikiBlocks.vue'
 import { useMessages } from '@/i18n'
-import type { Section, Target } from '@/lib/ipc/types'
+import type { Section, Target, UnlockNode } from '@/lib/ipc/types'
 import { sectionAnchor } from './wikiOutline'
 import { sectionText } from '@/lib/wiki/wikiLabels'
 
@@ -10,6 +10,7 @@ defineProps<{
   sections: Section[]
   iconFor?: (target: Target) => string | null
   canOpen?: (target: Target) => boolean
+  nodeFor?: (target: Target) => UnlockNode | null
 }>()
 const emit = defineEmits<{ navigate: [target: Target, newTab: boolean] }>()
 const { t } = useMessages()
@@ -40,6 +41,7 @@ const { t } = useMessages()
         :blocks="section.blocks"
         :icon-for="iconFor"
         :can-open="canOpen"
+        :node-for="nodeFor"
         @navigate="(target, newTab) => emit('navigate', target, newTab)"
       />
     </section>
