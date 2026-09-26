@@ -1,11 +1,18 @@
 <script setup lang="ts">
+import { CheckIcon } from '@lucide/vue'
 import { computed, ref, watch } from 'vue'
 import { assertNever } from '@/lib/assertNever'
 import { cn } from '@/lib/cn'
 import type { Target } from '@/lib/ipc/types'
 import { RefArt, refArt } from './nameList'
 
-const props = defineProps<{ src: string | null; target: Target }>()
+// `done`: the profile has it, and the picture wears a tick in its corner — seen while scrolling
+// down a list, before the badge beside the name is read.
+const props = defineProps<{
+  src: string | null
+  target: Target
+  done?: boolean
+}>()
 
 // A picture that fails to load is drawn as one that isn't there: the placeholder, never a
 // broken-image glyph. A new address tries again.
@@ -40,7 +47,7 @@ const shown = computed(() => props.src !== null && !failed.value)
   <span
     :class="
       cn(
-        'grid shrink-0 place-items-center',
+        'relative grid shrink-0 place-items-center',
         frame,
         !shown && 'hatch-placeholder',
         shown && art === RefArt.Drawing && 'bg-mark-paper',
@@ -56,5 +63,10 @@ const shown = computed(() => props.src !== null && !failed.value)
       "
       @error="failed = true"
     />
+    <span
+      v-if="done"
+      class="absolute -right-1 -bottom-1 grid size-4 place-items-center border border-state-done bg-state-done-surface text-state-done-foreground"
+      ><CheckIcon class="size-3"
+    /></span>
   </span>
 </template>

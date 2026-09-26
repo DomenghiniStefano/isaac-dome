@@ -1,5 +1,12 @@
 import { assertNever } from '@/lib/assertNever'
-import type { Block, Inline, ListItem, Target } from '@/lib/ipc/types'
+import { NodeState, nodeState } from '@/lib/graph/nodeState'
+import type {
+  Block,
+  Inline,
+  ListItem,
+  Target,
+  UnlockNode,
+} from '@/lib/ipc/types'
 
 // What a name's icon is: an achievement's painted drawing, dark strokes on transparency that
 // need the mark paper under them, or the game's pixel art, drawn at a whole multiple.
@@ -55,3 +62,14 @@ export const isNameList = (block: Block): boolean =>
   !block.ordered &&
   block.items.length > 0 &&
   block.items.every(isNameItem)
+
+// What the profile says about a name: its node, for the state badge and its menu of why, and
+// whether it is done, for the tick on its picture. Nothing without a profile to ask, and nothing
+// for a name the profile does not track — the wiki stays the wiki.
+export const nameStatus = (
+  target: Target,
+  nodeFor: ((target: Target) => UnlockNode | null) | undefined,
+): { node: UnlockNode | null; done: boolean } => {
+  const node = nodeFor?.(target) ?? null
+  return { node, done: node !== null && nodeState(node) === NodeState.Done }
+}

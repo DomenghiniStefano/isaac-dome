@@ -10,7 +10,7 @@ import {
 } from '@/components/ui/table'
 import { assertNever } from '@/lib/assertNever'
 import { cn } from '@/lib/cn'
-import type { Block, Target } from '@/lib/ipc/types'
+import type { Block, Target, UnlockNode } from '@/lib/ipc/types'
 import { isNameList } from './nameList'
 import WikiInline from './WikiInline.vue'
 import WikiNameList from './WikiNameList.vue'
@@ -19,6 +19,7 @@ const props = defineProps<{
   blocks: Block[]
   iconFor?: (target: Target) => string | null
   canOpen?: (target: Target) => boolean
+  nodeFor?: (target: Target) => UnlockNode | null
 }>()
 const emit = defineEmits<{ navigate: [target: Target, newTab: boolean] }>()
 
@@ -42,6 +43,7 @@ const forward = computed(() => ({
         v-else-if="block.kind === 'list' && isNameList(block)"
         :items="block.items"
         :icon-for="iconFor"
+        :node-for="nodeFor"
         v-bind="forward"
       />
       <component
@@ -60,6 +62,7 @@ const forward = computed(() => ({
             v-if="item.children.length"
             :blocks="item.children"
             :icon-for="iconFor"
+            :node-for="nodeFor"
             v-bind="forward"
             class="mt-1"
           />
