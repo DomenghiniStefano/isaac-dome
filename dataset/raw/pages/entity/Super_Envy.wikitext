@@ -1,0 +1,32 @@
+{{infobox monster
+ | id           = 51
+ | variant      = 1
+ | image name   = * {{dlc|nr|Rebirth}}
+ | is mini-boss = yes
+ | environment  = <u>Mini-Boss</u><br>{{room|Mini-Boss}}<br>{{dlc|r}} Cannot be encountered in [[Chapter 1]] Mini-Boss Rooms<br><u>Degraded Mini-Boss</u><br>{{floor|Cathedral}}<br>{{floor|Chest}}{{floor|Dark Room}}
+ | base hp      = {{dlcalt|60|a=40}}
+ | stage hp     = 7.5
+ | pool         = {{e|Troll Bomb}} (78.6% Chance) <br>or<br>{{i|Shoop da Whoop!|na+}} /<br>{{i|Forever alone|a+}} (21.4% Chance)
+}}
+
+'''Super Envy''' is a [[mini-boss]] and one of the [[Seven Deadly Sins#Super Sins|Seven Super Deadly Sins]]. He is randomly encountered as an alternate version of {{e|Envy}}.
+
+== Behavior ==
+* Super Envy floats around the room diagonally, bouncing off of the walls.
+* Splits into three medium heads upon death which split into 2-3 small heads each when destroyed. These small heads split one last time into 2 even smaller heads when destroyed.
+** The last head killed drops a {{e|Troll Bomb}} or {{i|Shoop da Whoop!|na+}} / {{I|Forever alone|a+}}.
+* The heads increase in speed as they split into smaller versions.
+
+== Notes ==
+* {{dlc|nr}} Super Envy can drop {{i|Shoop da Whoop!|na+}} / {{i|Forever alone|a+}} even if Isaac has already encountered/possessed it.
+
+== Trivia ==
+* Like Envy, Super Envy's expressions are a reference to "rage comic" memes, with the biggest and smallest heads showing a [https://knowyourmeme.com/memes/trollface troll face] and [https://knowyourmeme.com/memes/poker-face poker face], respectively.
+** This is reinforced by his drops {{I|Shoop da Whoop!|na+}} / {{I|Forever alone|a+}}, both references to memes from the same era.
+* Envy and Super Envy have a lower chance of dropping their item than the other sins.
+* The [[wikipedia:Seven Deadly Sins|Seven Deadly Sins]] that these mini-bosses are based upon are, in Christian teachings, a classification of vices from which all others are derived.
+* {{dlc|a+}} Until patch [[v1.06.J149]], Super Envy had a chance to spawn a {{i|Shoop da Whoop!}} instead of a {{i|Forever alone}}. According to the developers, he was always intended to drop {{i|Forever alone}}, but the behavior has been bugged since the initial port of the game.
+* {{dlc|r}} Super Envy is the only Super Sin whose [[Stage HP]] wasn't increased in Repentance.
+
+{{nav|mini-boss|fr=Super Envie}}
+[[Category:Seven Super Deadly Sins]]

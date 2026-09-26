@@ -1,0 +1,282 @@
+{{infobox version
+ | dlc   = r+
+ | steam = 505075712851443812
+ | date  = 2025-05-01
+}}
+
+== Documented changes ==
+=== Changes ===
+* Adjusted the behavior of {{e|Cod Worm}}s staying hidden for long periods of time.
+* Adjusted the behavior of {{e|Kineti}} to only use their rock-grabbing action if they are on screen with the player.
+* Adjusted {{e|Blood Cultist}}s to not fire their blood attack from off screen.
+* Lowered the tear height of red champion {{e|Mega Fatty}}'s puke attack so that it doesn't always fly over Isaac's head.
+* {{e|The Siren}} will no longer charm {{i|Isaac's Heart}} or {{c|Lilith}}'s {{i|Incubus}}.
+* The [[Amnesia]] horse pill will now unidentify all previously identified pills.
+* {{c|Tainted Magdalene}}'s bleeding hearts now provide half the charge of a regular heart container when used with {{i|Sharp Plug}}.
+* {{c|Tainted ???}} will now swap poops and keys when using a [[Bombs Are Key]] pill.
+* Added a 1% chance for {{p|X - Wheel of Fortune}} to spawn a {{m|Crane Game}}.
+* Gave {{i|Punching Bag}} back his ability to block shots.
+* Removed {{i|Glowing Hourglass}} and {{i|Book of Shadows}} from the {{c|Tainted Lost}} pool.
+* Using {{i|Meat Cleaver}} on an [[Angel]] will now award only one [[Key Piece]].
+* {{i|Delirious}} has returned to a fixed 12-charge item. Bosses have had their health and damage overhauled. They will take 1 damage per hit and 5 damage from explosions. Spikes, fires and red poops do no damage to them. Their health will deteriorate steadily and their color will slowly turn more gray until they reach 1 health.
+* {{e|Delirium}} Mom's Foot is no longer sped up when Delirium gets enraged. A minimum delay of one second has been added between transforming into the foot and the stomp attack. While in Mom's Foot form, Delirium cannot fire additional projectiles. These same behaviors also apply to Satan's Foot.
+* Replaced {{i|Mars}}' shield bubble with i-frames which will still allow free entrance into {{r|Curse Room}}s but will not allow free plays to {{m|Devil Beggar}}s and {{m|Blood Donation Machine}}s. Impact from a Mars dash no longer creates fissures that destroy rocks. It instead creates a ring of fire that applies the [[burn]] status effect.
+* {{i|Jar of Wisps}} has returned to a 12-charge item. Its first use will grant two wisps and every wisp spawned has a high chance to be of a special variety.
+* Pausing the game with {{i|Glitched Crown}} will not pause the item rotation, and will instead give the rotation a burst of speed.
+* Adjusted the proc chances of several {{i|Abyss}} locusts that were too powerful.
+* Knockback from farting locusts has been increased.
+* Adjusted the stat boost from {{i|Star of Bethlehem}} to match {{i|Hallowed Ground}}.
+* Wisps spawned from {{i|The Bean}} and {{i|Kidney Bean}} will now expire when changing rooms.
+* Completing a {{r|Secret Room}} with a {{e|Greed}} fight will now allow access to adjacent {{r|Challenge Room}}s.
+* Added enemy spawn indicators for {{r|Boss Rush}}, {{r|Challenge Room}}s, {{e|Great Gideon}} and {{mode|greed|greedier}} [[Greed Mode]].
+* {{e|Golden Key}}s and {{e|Golden Bomb}}s can now be spent at the {{m|Key Master}} and {{m|Bomb Bum}} to guarantee an item drop.
+* Item charging with {{m|Battery Bum}} while holding multiple active items now prioritizes filling up each item before overcharging.
+* {{i|Pause}} now synergizes with {{i|Black Powder}} allowing circles to be drawn while a room is paused.
+* Added a very low (1%) chance for most bosses to drop a thematic item on death.
+** Items are dropped as choice pedestals tied to the normal boss item, while trinkets are able to be taken freely along with the normal boss item.
+{| class="wikitable mw-collapsible mw-collapsed" style="width: 100%"
+|+ 1% Boss Drops
+|-
+! Boss !! Item/Trinket
+|-
+| {{e|Dingle}} || {{i|The Poop}}
+|-
+| {{e|The Duke of Flies}} || {{i|Halo of Flies}}
+|-
+| {{e|Gemini}} || {{i|Gemini}}
+|-
+| {{e|Pin}}, {{e|Larry Jr.}}, {{e|The Hollow}}, and {{e|Scolex}} || {{t|Flat Worm}}, {{t|Hook Worm}}, {{t|Pulse Worm}}, {{t|Ring Worm}}, {{t|Whip Worm}}, {{t|Wiggle Worm}}, {{t|Lazy Worm}}, {{t|Rainbow Worm}}, {{t|Tape Worm}}, {{t|Ouroboros Worm}}, or {{t|Brain Worm}}
+|-
+| {{e|Monstro}} || {{i|Monstro's Tooth}}
+|-
+| {{e|Gurglings}}, {{e|Gurdy}}, {{e|Gurdy Jr.}}, and {{e|Mama Gurdy}} || {{i|Lil Gurdy}}
+|-
+| {{e|Famine}}, {{e|Pestilence}}, {{e|War}}, {{e|Death}}, and {{e|Conquest}} || {{t|Locust of Famine}}, {{t|Locust of Pestilence}}, {{t|Locust of War}}, {{t|Locust of Death}}, {{t|Locust of Conquest}}, respectively.
+|-
+| {{e|The Fallen}} || {{i|Brimstone Bombs}}
+|-
+| {{e|Dangle}} || {{i|Montezuma's Revenge}}
+|-
+| {{e|Turdlings}} || {{i|No. 2}}
+|-
+| {{e|Rag Man}} || {{i|Box of Spiders}}
+|-
+| {{e|Blighted Ovum}} || {{i|Lost Soul}}
+|-
+| {{e|The Haunt}} || {{i|Lil Haunt}}
+|-
+| {{e|Widow}} || {{i|Spiderbaby}}
+|-
+| {{e|Lil Blub}} || {{i|Aquarius}}
+|-
+| {{e|Wormwood}} || {{i|Leech}}
+|-
+| {{e|The Rainmaker}} || {{i|Depression}}
+|-
+| {{e|Min-Min}} || {{i|Smart Fly}}
+|-
+| {{e|Clog}} || {{i|Flush!}}
+|-
+| {{e|Colostomia}} || {{i|Butt Bombs}}
+|-
+| {{e|Turdlet}} || {{i|Brown Nugget}}
+|-
+| {{e|Chub}} || {{i|Little Chubby}}
+|-
+| {{e|Mega Fatty}} || {{i|Thunder Thighs}}
+|-
+| {{e|Mega Maw}} || {{i|Continuum}}
+|-
+| {{e|Peep}} || {{i|Free Lemonade}}
+|-
+| {{e|The Stain}} || {{i|Worm Friend}}
+|-
+| {{e|Big Horn}}, {{e|Little Horn}} || {{i|Little Horn}}
+|-
+| {{e|Rag Mega}} || {{i|Spoon Bender}}
+|-
+| {{e|Fistula}} || {{i|Leprosy}}
+|-
+| {{e|Carrion Queen}} || {{i|Bone Spurs}}
+|-
+| {{e|Dark One}} || {{i|Dark Matter}}
+|-
+| {{e|The Husk}} || {{i|Infestation}}
+|-
+| {{e|Polycephalus}} || {{i|Giant Cell}}
+|-
+| {{e|The Wretched}} || {{i|Juicy Sack}}
+|-
+| {{e|The Forsaken}} || {{i|Book of the Dead}}
+|-
+| {{e|The Frail}} || {{i|Brittle Bones}}
+|-
+| {{e|Reap Creep}} || {{i|The Wiz}}
+|-
+| {{e|Tuff Twins}} || {{i|Tooth and Nail}}
+|-
+| {{e|Hornfel}} || {{i|Hot Bombs}}
+|-
+| {{e|Great Gideon}} || {{i|Gnawed Leaf}}
+|-
+| {{e|The Pile}} || {{i|Compound Fracture}}
+|-
+| {{e|The Shell}} || {{i|Akeldama}}
+|-
+| {{e|Singe}} || {{i|Bird's Eye}}
+|-
+| {{e|Clutch}} || {{i|Astral Projection}}
+|-
+| {{e|The Cage}} || {{i|Bird Cage}}
+|-
+| {{e|The Gate}} || {{i|Host Hat}}
+|-
+| {{e|Monstro II}} || {{i|Monstro's Lung}}
+|-
+| {{e|Loki}} || {{i|Loki's Horns}}
+|-
+| {{e|The Adversary}} || {{i|Eye of the Occult}}
+|-
+| {{e|Brownie}} || {{i|Dirty Mind}}
+|-
+| {{e|Sisters Vis}} || {{i|Gimpy}}
+|-
+| {{e|The Bloat}} || {{i|The Peeper}}
+|-
+| {{e|Mask of Infamy}} || {{i|Infamy}}
+|-
+| {{e|The Siren}} || {{t|Forgotten Lullaby}}
+|-
+| {{e|The Heretic}} || {{i|Ceremonial Robes}}
+|-
+| {{e|The Visage}} || {{i|Empty Heart}}
+|-
+| {{e|The Horny Boys}} || {{t|The Twins}}
+|-
+| {{e|Blastocyst}} || {{i|Lil Spewer}}
+|-
+| {{e|Lokii}} || {{i|Lil Loki}}
+|-
+| {{e|Mr. Fred}} || {{i|Harlequin Baby}}
+|-
+| {{e|The Matriarch}} || {{i|Big Chubby}}
+|-
+| {{e|Daddy Long Legs}} || {{i|Daddy Longlegs}}
+|-
+| {{e|Triachnid}} || {{i|Spider Bite}}
+|-
+| {{e|Teratoma}} || {{i|Tinytoma}}
+|-
+| {{e|Rotgut}} || {{i|Yuck Heart}}
+|-
+| {{e|Chimera}} || {{i|Decap Attack}}
+|-
+| {{e|The Scourge}} || {{i|Magic Skin}}
+|}
+* Increased the range of {{i|Dr. Fetus}} with {{i|Number One}} and {{i|Pluto}}.
+* {{i|The Ludovico Technique}} now grants a .2 shot speed increase.
+* If the {{e|Mega Satan}} door has been been opened, using {{i|Forget Me Now}} and restarting the floor will keep door opened.
+* Increased the rarity of {{i|D20}} in the Greed {{r|Shop}}.
+* Added an option in options.ini to disable the [[Ascent]] voiceover.
+* Fully rerolling a character with {{i|D4}}, {{i|D100}}, {{r|Dice Room}}, {{i|Missing No.}}, etc. will no longer reroll the starting passive items of a character if they have unlocked them. Using a {{p|XVII - The Stars?}} card will also not consume starting passives. Starting active items can be rerolled. The items that will not be rerolled are:
+** {{c|Cain}}: {{i|Lucky Foot}}.
+** {{c|Eve}}: {{i|Whore of Babylon}} and {{i|Dead Bird}}.
+** {{c|Samson}}: {{i|Bloody Lust}}.
+** {{c|Lazarus}}: {{i|Anemic}}.
+** {{c|The Lost}}: {{i|Holy Mantle}}.
+** {{c|Lilith}}: {{i|Incubus}} and {{i|Cambion Conception}}.
+** {{c|Bethany}}: {{i|Book of Virtues}}.
+* Using {{i|Clicker}} to change characters now provides that character's intrinsic passive items. These items are lost when changing characters again. Reduced the chance of Clicker removing the most recently acquired item to 50%.
+* Added various new sound effects:
+** Using {{i|Abyss}}, {{i|The Boomerang}}, {{i|Box of Friends}}, {{i|Brown Nugget}}, {{i|Converter}}, {{i|Crooked Penny}}, {{i|Flip}}, {{i|Glowing Hourglass}}, {{i|Mega Bean}}, and {{i|Mom's Bottle of Pills}}.
+** {{i|Big Chubby}} and {{i|Little Chubby}} attacking.
+** {{i|Bumbo}} leveling up.
+** Entering a {{i|Card Reading}} portal and ambient sounds for portals.
+** {{i|Cracked Orb}} and {{i|Gnawed Leaf}} activating.
+** Kicking {{i|Cube Baby}}.
+** {{i|Dark Bum}} paying out.
+** {{i|Doctor's Remote}} missile warning before landing.
+** {{i|Eraser}} hitting an enemy.
+** {{i|Glitter Bombs}} bomb exploding.
+** Taking and throwing an {{i|IBS}} poop.
+** {{i|Infamy}} deflecting a shot.
+** {{i|Lil Haunt}} chasing an enemy.
+** {{i|Linger Bean}} spawning a cloud.
+** Firing a {{i|Little Horn}} tear.
+* Daily Runs:
+** Using {{i|Meat Cleaver}} during daily runs will cause each resulting split monster to give half of its normal score.
+** [[Frozen]] enemies will count as being killed and will award score in daily runs.
+** Killing {{e|Uriel}} and {{e|Gabriel}} during a daily run will now only award score the first time each is killed.
+** Stage bonus in daily runs has been modified to accommodate different end goals.
+** Stage bonus is fixed for each stage. XL stages now award the stage bonus for both floors. Using a {{i|Forget Me Now}} or a 5-pip {{r|Dice Room}} will not award additional stage bonus.
+** Using a {{i|Forget Me Now}} during a daily run will now award half the exploration bonus during the repeated floor. Any additional replayed floors will not grant any exploration bonus.
+** Fixed an issue where using {{i|Forget Me Now}} on the final floor of a daily run would result in an incorrect time on the score summary.
+** Fixed an issue where quitting a practice daily would reset the daily win streak.
+** Exploration bonus from red rooms opened with {{i|Red Key}}, {{t|Crystal Key}}, {{p|Soul of Cain}} and {{p|XVIII - The Moon?}} is capped at 2,000 points, after which they award no exploration bonus.
+** Added Alt Path, {{s|Home}} and {{e|Delirium}} to the daily rotation. The new schedule is:
+*** Monday: {{e|Mother}}.
+*** Tuesday: [[Tainted Characters]].
+*** Wednesday: {{e|Delirium}}.
+*** Thursday: {{s|Home}}.
+*** Friday: [[Hard Mode]].
+*** Saturday: Grab Bag (random character, end goal, difficulty).
+*** Sunday: {{e|Mega Satan}}.
+
+=== Fixes ===
+* Fixed an issue where {{i|Glowing Hourglass}} was not expending charges correctly in some scenarios
+* Fixed an issue where {{t|Gigante Bean}} would apply to enemy farts
+* Fixed an issue with {{c|Jacob and Esau}} classic controls that would cause cards and active items to be used together
+* Fixed an issue where dashing items were not properly stopping when attacking {{e|Mega Satan}} head-on
+* Fixed an issue where {{i|R Key}} could be used while picking up an active item, allowing both the active to be acquired and the R Key to be used
+* Fixed an issue where {{e|Wall Creep}} and {{e|Blind Creep}} would infinitely devolve into each other
+* Fixed an issue where using {{i|Genesis}} after a completed {{e|Ultra Greed}} fight would completely reset the floor
+* Fixed several issues which allowed {{i|Lemegeton}} wisps to exceed their cap
+* Fixed an issue where {{i|Lemegeton}} item effects were retained after using {{i|Genesis}}
+* Fixed an issue where mapping items granted by {{i|Lemegeton}} would not activate until entering the next floor
+* Fixed an issue where shrunken champion enemies could still damage Isaac when killed
+* Fixed an issue where {{c|Tainted Eve}} would not refund the appropriate amount of health if {{e|Rotten Heart}}s were turned into clots
+* Fixed an issue where leaving the room while a {{m|Crane Game}} was paying out could result in the item dropping but the machine not advancing
+* Fixed an issue where [[Tainted characters]] would not receive charges to their eternal item from {{m|Battery Bum}} unless they were holding another active item
+* Fixed an issue where taking too many of a single pill type could prevent the run from being exited and continued
+* Fixed an issue where {{i|Vanishing Twin}} could spawn an item pedestal on the same tile as the trapdoor
+* Fixed an issue where {{i|Dead Bird}} could persist between rooms if the player had only {{e|Soul Heart}}s
+* Fixed an issue where {{i|Monstro's Lung}} would fire arching shots from {{i|Ipecac}} and {{i|Haemolacria}} directly at Isaac's feet
+* Fixed a softlock that could occur when using {{i|Eraser}} on {{e|Dogma}}
+* Fixed an exploit with {{e|The Bloat}}'s hitbox that allowed players to safely stand on top of him while repeating the same attack
+* Fixed a softlock that would occur when using {{i|Dataminer}} to reroll {{i|Dad's Note}}
+* Fixed an issue where {{i|Echo Chamber}}'s stored effects were lost when exiting and resuming a run
+* Fixed an audible skip when looping the {{e|Mother}} fight, {{e|Isaac}} fight and {{r|Devil Room}} music
+* Fixed an issue where jumping into the {{e|Mother}} fight played a teleport sound effect
+* Fixed a desync with {{i|Plum Flute}} and {{i|Book of Virtues}}
+* Fixed an issue where status effects were double applied in some cases when entering a new room
+* Fixed an issue where players could get golden trinkets from champion monsters before they were unlocked
+* Fixed an issue where bombs could be dropped when typing in online chat
+* Fixed an issue where {{i|Lil Portal}} could spawn directly in front of doorways
+* Fixed some issues with {{t|Found Soul}} and Clot familiar positioning when teleporting between rooms
+* Fixed an issue where {{t|Found Soul}} was able to get and lose {{i|Abyss}} locusts
+* Fixed an issue where {{i|Epiphora}} was not resetting when changing firing direction
+* Fixed another instance where the {{i|D4}} could change the pool ID of items, allowing them to be rerolled into a specific pool
+* Fixed an issue where {{i|Mama Mega!}} and {{t|Flat File}} effects could persist into deathmatch
+* Fixed a crash when using {{i|Clicker}}, gulped trinkets and {{c|Jacob and Esau}}
+* Fixed an issue where {{i|Milk!}} was higher priority in the familiar order than {{i|Incubus}}
+* Fixed incorrect challenge names displaying when creating an online game
+* Selected challenge name now appears in lobby list details
+* Fixed an issue where the number of {{i|Quints}} could be exceeded and turned into followers for {{c|Tainted Lazarus}}
+* Fixed an issue where the chance for {{i|Glitter Bombs}} to drop a consumable was reset when exiting and continuing a run
+* Fixed an issue where {{i|Glitched Crown}} removed items from pools when encountering story items
+* Fixed several crashes that could occur with a {{i|C Section}} and {{i|Spirit Sword}} combo
+* Removed {{i|Urn of Souls}} from {{i|Metronome}} payouts
+* {{t|Perfection}} progress is no longer interrupted by {{i|Lost Soul}}, {{i|Strawman}} or {{p|Soul of the Forgotten}} taking damage
+* {{i|Guppy's Eye}} now correctly updates the contents of chests when the {{i|D1}} is used
+* Fixed an issue where kills from a {{i|Gello}} whip would not give {{i|Jar of Flies}} a fly
+* Fixed an issue where the {{s|???}} {{r|Shop}} was not an appropriate variant when playing {{c|Tainted Keeper}}
+* Adjusted {{e|Mega Satan}}'s phase 2 fire attacks making their visual line up more closely to their hitbox
+* Fixed [[frozen]] enemies not properly triggering the on-kill effects of {{i|Charm of the Vampire}}, {{i|Lusty Blood}}, {{i|Toxic Shock}}, {{i|Jar of Flies}}, {{t|Samson's Lock}}, {{t|Eve's Bird Foot}}, {{t|Bat Wing}}, {{t|Sigil of Baphomet}}, {{i|Vasculitis}}, {{i|Death's List}}, {{i|Berserk!}}, {{i|Red Stew}}, {{i|4.5 Volt}} and {{i|Jumper Cables}}
+
+== Undocumented changes ==
+=== Changes ===
+* Perma [[charm|charmed]] enemies now contribute to the score.
+* {{m|Devil Beggar}}s now give +35% devil chance when blown.
+* {{i|Sulfuric Acid}} / {{i|Terra}} + any laser can now destroy doors.
+
+{{nav|version}}

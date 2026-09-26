@@ -1,0 +1,37 @@
+{{header reverse tarot cards}}
+{{Infobox card
+ | dlc         = r
+ | name        = II - The High Priestess?
+ | files name  = II - Inverted The High Priestess
+ | type        = card
+ | id          = 58
+ | quote       = Run
+ | description = {{E|Mom}}'s leg starts stomping down repeatedly, targeting Isaac, for one minute, like holding {{i|Broken Shovel 1}}.
+ | unlocked by = The High Priestess
+ | recharge    = 4
+}}
+
+{{cit|uc|r}}
+
+== Effects ==
+* {{e|Mom}}'s leg starts stomping down repeatedly, targeting Isaac, for one minute.
+
+== Notes ==
+* This card's effect is nearly identical to {{i|Broken Shovel 1}}'s.
+
+== Strategy ==
+* If lacking bombs, II - The High Priestess? may be used to open secret rooms and destroy obstacles. It is however recommended to do so after a floor is cleared, as it can make dodging during combat more difficult.
+
+== Interactions ==
+* {{I|Tarot Cloth}}: No effect.
+* {{i|Broken Shovel 1}}: II - The High Priestess? does not stack with the Broken Shovel's effect. The stomp frequency remains the same.
+
+== In-game Footage ==
+{{#ev:youtube|b3cZ6UlSuRk}}
+
+== Gallery ==
+<gallery>
+File:Pickup The High Priestess Foot.png|Mom's dismembered leg.
+</gallery>
+
+{{nav|fr=II - La Papesse ?|card}}

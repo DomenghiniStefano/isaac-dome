@@ -1,0 +1,22 @@
+{{header item pools}}
+{{item pool}}
+[[file:beggar.png|75px|link=]]
+
+[[Beggar]]s will pay out with one of these items after being given enough coins.
+
+== Activated Collectibles ==
+{{item pool/header}}
+{{pool items | Butter Bean, Mom's Bottle of Pills, The Bean }}
+{{pool items | dlc = nr+ | Portable Slot }}
+{{pool items | dlc = a+ | Crooked Penny }}
+|}
+
+== Passive Collectibles ==
+{{item pool/header}}
+{{pool items | Blue Map, Box, Breakfast, Dessert, Dinner, Fanny Pack, Lucky Foot, Lunch, Mom's Coin Purse, Mystery Sack, Rotten Meat, The Black Bean, The Compass, Treasure Map }}
+{{pool items | dlc = a | Bum Friend, Bumbo, Lil Chest, Restock }}
+{{pool items | dlc = a+ | Dad's Lost Coin, Linger Bean, Midnight Snack }}
+{{pool items | dlc = r | Supper }}
+|}
+
+{{nav|fr=Mendiant (Banque d'Objets)}}

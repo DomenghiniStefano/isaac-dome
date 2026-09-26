@@ -1,0 +1,470 @@
+[[File:Devil Room door.png|130px]]
+
+{{r|Devil Room}}s primarily allow Isaac to make Deals with the Devil, but they can also contain a variety of enemies, pickups, or even a boss battle against {{e|Krampus}}. A '''Devil Room''' has a chance to appear in a {{r|Boss Room}} after the [[boss]] occupying it has been defeated. If certain criteria are met, a Devil Room can be replaced by an {{r|Angel Room}}.
+
+{{dlc|a}} In [[Greed Mode]], Devil Rooms are guaranteed to appear upon completing the optional 11th / {{dlc|a+}} 12th (in [[Greedier Mode]]) wave of a floor.
+
+== Layouts ==
+The following room maps were made using [https://github.com/Basement-Renovator/basement-renovator Basement Renovator] for cleaner viewing. Note that all [[urn]]s you see will be [[skull]]s when encountered in-game.
+
+=== Normal ===
+{| class="wikitable sortable mw-collapsible mw-collapsed" style="text-align: center"
+ ! scope="col" | ID
+ ! scope="col" | Weight
+ ! scope="col" class="unsortable" | Contents
+ ! scope="col" class="unsortable" | Image preview
+ |-
+ ! scope="row" | 0
+ | 1
+ | style="text-align: left" | Two devil deals and two {{e|Fire Place}}s.
+ | [[File:Devil 0.png|250px]]
+ |-
+ ! scope="row" | 1
+ | 1
+ | style="text-align: left" | Two devil deals and {{dlc|nr}} two / {{dlc|r}} four Fire Places.
+ | {{dlcmap slideshow|{{dlcalt|[[File:Devil 0.png|250px]]|r=[[File:Devil 1.png|250px]]}}}}
+ |-
+ ! scope="row" | 2
+ | 1
+ | style="text-align: left" | Three devil deals and two Fire Places.
+ | [[File:Devil 2.png|250px]]
+ |-
+ ! scope="row" | 3
+ | {{dlcmap slideshow|{{dlcalt|1|r=0.75}}}}
+ | style="text-align: left" | One devil deal and two Fire Places.
+ | [[File:Devil 3.png|250px]]
+ |-
+ ! scope="row" | 4
+ | 1
+ | style="text-align: left" | Two devil deals, a {{e|Red Chest}}, and two Fire Places.
+ | [[File:Devil 4.png|250px]]
+ |-
+ ! scope="row" | 5
+ | {{dlcmap slideshow|{{dlcalt|1|r=0.25}}}}
+ | style="text-align: left" | Two red chests and two Fire Places.
+ | [[File:Devil 5.png|250px]]
+ |-
+ ! scope="row" | 6
+ | {{dlcmap slideshow|{{dlcalt|1|r=0.25}}}}
+ | style="text-align: left" | One devil deal, two {{e|Black Heart}}s, and two Fire Places.
+ | [[File:Devil 6.png|250px]]
+ |-
+ ! scope="row" | 7
+ | {{dlcmap slideshow|{{dlcalt|1|r=0.75}}}}
+ | style="text-align: left" | One devil deal, two Fire Places, and spikes.
+ | [[File:Devil 7.png|250px]]
+ |-
+ ! scope="row" | 8
+ | 1
+ | style="text-align: left" | Two devil deals surrounded by spikes and two {{e|Red Fire Place}}s.
+ | [[File:Devil 8.png|250px]]
+ |-
+ ! scope="row" | 9
+ | 1
+ | style="text-align: left" | Two devil deals and six Red Fire Places.
+ | [[File:Devil 9.png|250px]]
+ |-
+ ! scope="row" | 10
+ | 1
+ | style="text-align: left" | Two devil deals, a {{m|Devil Beggar}}, and four Red Fire Places.
+ | [[File:Devil 10.png|250px]]
+ |-
+ ! scope="row" | 11
+ | 1
+ | style="text-align: left" | Two devil deals, two {{e|Nulls}}, and two Fire Places.
+ | [[File:Devil 11.png|250px]]
+ |-
+ ! scope="row" | 12
+ | 1
+ | style="text-align: left" | Two devil deals and two Fire Places.
+ | [[File:Devil 12.png|250px]]
+ |-
+ ! scope="row" | 13
+ | {{dlcmap slideshow|{{dlcalt|1|r=0.75}}}}
+ | style="text-align: left" | One devil deal, one {{e|Mom's Hand}}, and four Fire Places.
+ | [[File:Devil 13.png|250px]]
+ |-
+ ! scope="row" | 14
+ | {{dlcmap slideshow|{{dlcalt|1|r=0.1}}}}
+ | style="text-align: left" | Two black hearts and two Fire Places.
+ | {{dlcmap slideshow|{{dlcalt|[[File:Devil 14 Afterbirth+.png|250px]]|r=[[File:Devil 14.png|250px]]}}}}
+ |-
+ ! scope="row" | 15
+ | 1
+ | style="text-align: left" | One devil deal and two Fire Places.
+* {{dlc|r}} This room can't appear anymore.
+ | [[File:Devil 15.png|250px]]
+ |-
+ ! scope="row" | 16
+ | 0.1
+ | style="text-align: left" | Three devil beggars and six skulls.
+* {{dlc|r+}} The middle devil beggar has 50% chance to be replaced by a devil deal.
+ | {{dlcmap slideshow|{{dlcalt|[[File:Devil 16 Repentance.png|250px]]|r+=[[File:Devil 16.png|250px]]}}}}
+ |-
+ ! scope="row" | 17
+ | {{dlcmap slideshow|{{dlcalt|0.1|r=0.25}}}}
+ | style="text-align: left" | Four devil deals, eight Fire Places, and two Red Fire Places.
+ | [[File:Devil 17.png|250px]]
+ |-
+ ! scope="row" | 18
+ | 0.1
+ | style="text-align: left" | Five red chests, four Fire Places, and two Red Fire Places.
+* {{dlc|r+}} The middle red chest has 50% chance to be replaced by a devil deal.
+ | {{dlcmap slideshow|{{dlcalt|[[File:Devil 18 Repentance.png|250px]]|r+=[[File:Devil 18.png|250px]]}}}}
+ |-
+ ! scope="row" | {{dlc|r}} 19
+ | 0.25
+ | style="text-align: left" | Three devil deals, one {{e|Mom's Dead Hand|n}}, and two Fire Places.
+ | [[File:Devil 19.png|250px]]
+ |-
+ ! scope="row" | {{dlc|r}} 20
+ | 1
+ | style="text-align: left" | Three devil deals and eight Red Fire Places.
+ | [[File:Devil 20.png|250px]]
+ |-
+ ! scope="row" | {{dlc|r}} 21
+ | 0.75
+ | style="text-align: left" | One devil deal and four Red Fire Places.
+ | [[File:Devil 21.png|250px]]
+ |-
+ ! scope="row" | {{dlc|r}} 22
+ | 0.5
+ | style="text-align: left" | Two devil deals and two skulls.
+ | {{dlcmap slideshow|{{dlcalt|[[File:Devil 22 Repentance.png|250px]]|r+=[[File:Devil 22.png|250px]]}}}}
+ |-
+ ! scope="row" | {{dlc|r}} 23
+ | 0.5
+ | style="text-align: left" | Two devil deals, a {{e|Black Sack|n}}, and two Fire Places surrounded by spikes.
+ | [[File:Devil 23.png|250px]]
+ |-
+ ! scope="row" | {{dlc|r}} 24
+ | 1
+ | style="text-align: left" | Two devil deals, six skulls, and the middle entity is 40% chance to be a devil deal, 20% a red chest, 20% a devil beggar, and 20% a black sack.
+ | [[File:Devil 24.png|250px]]
+ |-
+ ! scope="row" | {{dlc|r}} 25
+ | 1
+ | style="text-align: left" | A {{t|Number Magnet|n}} layout. Two devil deals, a black heart, two {{e|Begotten}}s, and twelve rocks.
+ | [[File:Devil 25.png|250px]]
+ |-
+ ! scope="row" | {{dlc|r}} 26
+ | 1
+ | style="text-align: left" | A {{t|Number Magnet|n}} layout. Two devil deals, two black hearts, three Nulls, and two Fire Places.
+ | [[File:Devil 26.png|250px]]
+ |-
+ ! scope="row" | {{dlc|r}} 27
+ | 1
+ | style="text-align: left" | A {{t|Number Magnet|n}} layout. Three devil deals, a black heart, two {{e|Imp|n}}s, and two Fire Places behind three rocks each.
+ | [[File:Devil 27.png|250px]]
+ |-
+ ! scope="row" | {{dlc|r}} 28
+ | 1
+ | style="text-align: left" | A {{t|Number Magnet|n}} layout. Two devil deals, an {{e|Evil Twin}}, and two black hearts behind rocks and blocks.
+ | [[File:Devil 28.png|250px]]
+ |-
+ ! scope="row" | {{dlc|r}} 29
+ | 1
+ | style="text-align: left" | A {{t|Number Magnet|n}} layout. Two devil deals, a black heart, and two Begottens chained to blocks.
+ | [[File:Devil 29.png|250px]]
+ |-
+ ! scope="row" | {{dlc|r}} 30
+ | 0.75
+ | style="text-align: left" | A {{t|Number Magnet|n}} layout. One devil deal, two black hearts, a {{e|Black Maw}}, and four Fire Places.
+ | [[File:Devil 30.png|250px]]
+ |-
+ ! scope="row" | {{dlc|r}} 31
+ | 1
+ | style="text-align: left" | A {{t|Number Magnet|n}} layout. Three devil deals, three {{e|Black Globin's Head|n}}s, two blocks, and two black hearts behind spikes.
+ | [[File:Devil 31.png|250px]]
+ |-
+ ! scope="row" | {{dlc|r}} 32
+ | 1
+ | style="text-align: left" | A {{t|Number Magnet|n}} layout. Two devil deals, two Imps, a black heart, and four skulls.
+ | [[File:Devil 32.png|250px]]
+ |-
+ ! scope="row" | {{dlc|r}} 33
+ | 0.25
+ | style="text-align: left" | A {{t|Number Magnet|n}} layout. Two devil deals, three black hearts, three {{e|Wizoob}}s, two blocks, and two Fire Places.
+ | [[File:Devil 33.png|250px]]
+ |-
+ ! scope="row" | {{dlc|r}} 34
+ | 0.1
+ | style="text-align: left" | A {{t|Number Magnet|n}} layout. Three red chests, two black hearts, four {{e|Soul Sucker|n}}s and four {{E|Blue Fire Place}}s.
+ | [[File:Devil 34.png|250px]]
+ |-
+ ! scope="row" | {{dlc|r}} 35
+ | 0.25
+ | style="text-align: left" | A {{t|Number Magnet|n}} layout. One devil deal, one {{e|Bloodshot Eye}}, two black sacks, and four Blue Fire Places.
+ | [[File:Devil 35.png|250px]]
+ |-
+ ! scope="row" | {{dlc|r}} 36
+ | 1
+ | style="text-align: left" | A {{t|Number Magnet|n}} layout. Three devil deals, three Nulls, two black sacks, and six skulls.
+ | [[File:Devil 36.png|250px]]
+ |-
+ ! scope="row" | 100
+ | 1
+ | style="text-align: left" | The layout containing the trapdoor to {{s|Sheol}}.
+ | [[File:Devil 100.png|250px]]
+ |}
+
+=== {{dlc+|a}} {{mode|greed}} Greed Mode ===
+{| class="wikitable sortable mw-collapsible mw-collapsed" style="text-align: center"
+ ! scope="col" | ID
+ ! scope="col" | Weight
+ ! scope="col" class="unsortable" | Contents
+ ! scope="col" class="unsortable" | Image preview
+ |-
+ ! scope="row" | 0
+ | 1
+ | style="text-align: left" | Two devil deals and two {{e|Fire Place}}s.
+ | [[File:Greed Devil 0.png|250px]]
+ |-
+ ! scope="row" | 1
+ | {{dlcmap slideshow|{{dlcalt|1|r=0.5}}}}
+ | style="text-align: left" | One devil deal and two Fire Places.
+ | [[File:Greed Devil 1.png|250px]]
+ |-
+ ! scope="row" | 2
+ | 1
+ | style="text-align: left" | {{dlc|nr}} Two {{e|Black Heart}}s and two Fire Places.<br>{{dlc|r}} Two devil deals, a black heart, and two Fire Places.
+ | {{dlcmap slideshow|{{dlcalt|[[File:Greed Devil 2 Afterbirth+.png|250px]]|r=[[File:Greed Devil 2.png|250px]]}}}}
+ |-
+ ! scope="row" | 3
+ | 1
+ | style="text-align: left" | Two devil deals and four Fire Places.
+ | [[File:Greed Devil 3.png|250px]]
+ |-
+ ! scope="row" | 4
+ | 1
+ | style="text-align: left" | {{dlc|nr}} Two {{e|Red Chest}}s and two Fire Places.<br>{{dlc|r}} Two devil deals, a red chest, and two Fire Places.
+ | {{dlcmap slideshow|{{dlcalt|[[File:Greed Devil 4 Afterbirth+.png|250px]]|r=[[File:Greed Devil 4.png|250px]]}}}}
+ |-
+ ! scope="row" | 5
+ | {{dlcmap slideshow|{{dlcalt|1|r=0.5}}}}
+ | style="text-align: left" | One devil deal, two red chests, and two Fire Places.
+ | [[File:Greed Devil 5.png|250px]]
+ |-
+ ! scope="row" | 6
+ | {{dlcmap slideshow|{{dlcalt|1|r+=0.75}}}}
+ | style="text-align: left" | {{dlc|nr}} Two black hearts, a red chest, and two Fire Places.<br>{{dlc|r}} Two devil deals, two black hearts, and two Fire Places.
+ | {{dlcmap slideshow|{{dlcalt|[[File:Greed Devil 6 Afterbirth+.png|250px]]|r=[[File:Greed Devil 6.png|250px]]}}}}
+ |-
+ ! scope="row" | 7
+ | 1
+ | style="text-align: left" | Three devil deals and two Fire Places.
+ | [[File:Greed Devil 7.png|250px]]
+ |-
+ ! scope="row" | 8
+ | 1
+ | style="text-align: left" | Two devil deals, a {{m|Devil Beggar}} and two Fire Places.
+ | {{dlcmap slideshow|{{dlcalt|[[File:Greed Devil 8 Afterbirth+.png|250px]]|r=[[File:Greed Devil 8.png|250px]]}}}}
+ |-
+ ! scope="row" | 9
+ | {{dlcmap slideshow|{{dlcalt|1|r=0.25}}}}
+ | style="text-align: left" | {{dlc|nr+}} Two random [[runes]] and two Fire Places.<br>{{dlc|r+}} Two random runes, one devil deal, and two Fire Places.
+ | {{dlcmap slideshow|{{dlcalt|[[File:Greed Devil 9 Repentance.png|250px]]|r+=[[File:Greed Devil 9.png|250px]]}}}}
+ |-
+ ! scope="row" | 10
+ | 1
+ | style="text-align: left" | Two devil deals and two Fire Places.
+ | {{dlcmap slideshow|{{dlcalt|[[File:Greed Devil 10 Repentance.png|250px]]|r+=[[File:Greed Devil 10.png|250px]]}}}}
+ |-
+ ! scope="row" | {{dlc|r}} 11
+ | {{dlcmap slideshow|{{dlcalt|0.1|r+=0.25}}}}
+ | style="text-align: left" | Four devil deals, eight Fire Places, and two Red Fire Places.
+ | [[File:Greed Devil 11.png|250px]]
+ |-
+ ! scope="row" | {{dlc|r}} 12
+ | 1
+ | style="text-align: left" | Two devil deals, a {{e|Black Sack|n}}, and four skulls.
+ | [[File:Greed Devil 12.png|250px]]
+ |-
+ ! scope="row" | {{dlc|r}} 13
+ | 1
+ | style="text-align: left" | A {{t|Number Magnet|n}} layout. Two devil deals, a black heart, two {{e|Begotten}}s, and twelve rocks.
+ | [[File:Greed Devil 13.png|250px]]
+ |-
+ ! scope="row" | {{dlc|r}} 14
+ | {{dlcmap slideshow|{{dlcalt|1|r=0.1}}}}
+ | style="text-align: left" | A {{t|Number Magnet|n}} layout. Two devil deals, two black hearts, three {{e|Nulls}}, and two Fire Places.
+ | [[File:Greed Devil 14.png|250px]]
+ |-
+ ! scope="row" | {{dlc|r}} 15
+ | 1
+ | style="text-align: left" | A {{t|Number Magnet|n}} layout. Three devil deals, a black heart, two {{e|Imp}}s, and two Fire Places behind three rocks each.
+ | [[File:Greed Devil 15.png|250px]]
+ |-
+ ! scope="row" | {{dlc|r}} 16
+ | 1
+ | style="text-align: left" | A {{t|Number Magnet|n}} layout. Two devil deals, an {{e|Evil Twin}}, and two black hearts behind rocks and blocks.
+ | [[File:Greed Devil 16.png|250px]]
+ |-
+ ! scope="row" | {{dlc|r}} 17
+ | 1
+ | style="text-align: left" | A {{t|Number Magnet|n}} layout. Two devil deals, two Imps, a black heart, and four skulls.
+ | [[File:Greed Devil 17.png|250px]]
+ |-
+ ! scope="row" | {{dlc|r}} 18
+ | 0.1
+ | style="text-align: left" | A {{t|Number Magnet|n}} layout. {{dlc|nr+}} Three / {{dlc|r+}} Two red chests, two black hearts, four {{e|Soul Sucker|n}}s, four {{E|Blue Fire Place}}s, {{dlc|r+}} and one devil deal.
+ | {{dlcmap slideshow|{{dlcalt|[[File:Greed Devil 18 Repentance.png|250px]]|r+=[[File:Greed Devil 18.png|250px]]}}}}
+ |-
+ ! scope="row" | {{dlc|r}} 19
+ | 1
+ | style="text-align: left" | A {{t|Number Magnet|n}} layout. Three devil deals, one black sack, and two Nulls.
+ | [[File:Greed Devil 19.png|250px]]
+ |}
+{{dlc-}}
+
+== Deals with the Devil ==
+A Devil Room has a high chance of spawning [[item]]s that will be put up for sale. Unlike {{r|Shop}}s, where Isaac pays with money, to make Deals with the Devil Isaac has to trade Red [[Heart Container]]s as payment. All items normally cost either 1 or 2 Red Heart Containers, and their prices roughly correspond to their power.
+
+When playing as {{C|Keeper}}, the character's [[Health#Coin Hearts|coin heart containers]] are used to trade for Devil Deal items, with items costing the same number of coin heart containers as red heart containers with a different character.
+
+* {{Dlc|r}} Instead of coin heart containers, Devil Deal items must be bought using coins. One-heart and two-heart deals cost 15 and 30 cents, respectively. Paying cents for Devil Deals will still remove the Angel room appearance chance in the same way when other characters pay with heart containers.
+** The same cost for deals are applied with any character who collected {{i|A Pound of Flesh}}.
+
+''See the {{ip|Devil Room|text=Devil Room item pool}} for a comprehensive list of items offered and their health price.'' 
+
+{{dlc|r+}} Additionally, Devil Deal items with the [[Item Tags devilsacrifice|<code>devilsacrifice</code> item tag]] will have a sacrifice spike cost instead of a Red [[Heart container|Heart Container]] cost. There is a 50% chance to award the item on the first play and 100% chance on the second. Picking up an item from the pedestal spawned this way counts as taking a regular deal and will prevent Angel Rooms from spawning naturally.
+
+=== Notes ===
+* If Isaac does not have Red Heart Containers upon entering a Devil Room, all items will cost 3 {{e|Soul Heart}}s.
+** {{dlc|a}} If Isaac is presented with 2+ items to buy, but only has enough Red Hearts to buy one, the price of the other(s) will change to 3 Soul Hearts upon spending your Red Hearts.
+** {{dlc|r}} Additionally, if Isaac only has one Red Heart, deals that normally cost 2 Hearts will change to one Red Heart and two Soul Hearts.
+*** If Isaac does not have enough Soul Hearts for this type, he will still be able to take the Deal. However, if Isaac has no health at all (e. g. he is defying death with {{i|Berserk!}}), he will not be able to take the Deals.
+** {{dlc+|a+nr}} If Isaac has less than 3 Soul Hearts, but at least one {{e|Bone Heart}}, he can take a three-Soul-Heart Deal and stay alive because of the bone hearts.{{dlc-}}
+*** {{dlc|r}} Bone hearts are considered Heart Containers. Having at least one bone heart will change the price of a Deal to at least one red heart.
+* Two-heart deals can be taken even if Isaac does not have enough Red Hearts to afford them, as long as he has one Red Heart to spend.
+* Spending all of his Heart Containers will not kill Isaac as long as he has {{e|Soul Heart}}s, {{e|Black Heart}}s, or {{e|Bone Heart|nr}}s remaining.
+** If taking a Deal leaves Isaac with no health remaining, he can still survive if he picks up a Soul Heart, Black Heart, or Bone Heart while holding the item in the air. Also, if he has an active item that grants Soul/Black Hearts, he can take a Deal and then use the active item, leaving him alive with whatever the item gave him.<ref>https://www.youtube.com/watch?v=EEdBTgyKxqU</ref> The same is true for consumables that give hearts (e. g. {{p|Dagaz}}).
+*** {{dlc+|a}} If Isaac takes a Deal for an item that grants an {{e|Eternal Heart}} through the use of {{I|Chaos}}, it will ''not'' keep him alive.{{dlc-}}
+* {{dlc|nr}} The temporary heart container granted by {{p|XI - Strength}} cannot be used to purchase a devil deal. However, if Isaac has no other heart containers to spend, then it can be used this way. This also works if the devil deal costs 2 hearts, but Isaac only has 0 or 1 before activating the Strength card.
+** {{dlc|r}} Temporary heart containers can be used for devil deals with no restrictions.
+* {{dlc|r}} Some items may cost Soul Hearts even if Isaac still has Red Hearts.
+** An item's price may change from Red Hearts to Soul Hearts if Isaac visits the Devil Room before obtaining enough Soul Hearts and returning to the Devil Room.
+
+=== Angel Rooms ===
+* Refusing to make Deals with the Devil will give Isaac the chance of an {{r|Angel Room}} replacing the {{r|Devil Room}} on subsequent floors. If any Deal with the Devil is taken, Angel Rooms will not spawn for the remainder of the run.
+** {{dlc|nr}} Trading Heart Containers for items in a {{r|Black Market}} counts as taking a Deal with the Devil for {{R|Angel Room}} generation purposes.
+* Only the act of paying health (Red Hearts or Soul Hearts) for an item in a Devil Room counts as a Deal with the Devil. Taking {{e|Black Heart}}s, opening {{e|Red Chest}}s, and taking items that weren't paid for (such as those obtained from {{e|Red Chest}}s, {{e|Krampus}}, {{m|Beggar}}s, {{i|Pandora's Box}}, or made free by using {{p|Credit Card}}) do not count as Deals taken, allowing Isaac to still see Angel Rooms.
+* {{dlc|r}} If the first offered Devil Room is not entered at all, the next offer is guaranteed to be an Angel Room. If the player uses the {{P|Joker}} it will take you to the Angel Room without removing the guarantee.
+
+== Conditions to Make Devil Rooms Appear ==
+A {{r|Devil Room}} can only open on floors between the second floor of [[Chapter 1]] and [[Chapter 4]].
+
+There is only a 1% base chance for the Devil Room door to open. This chance can be modified in various ways:
+{| class="wikitable mw-collapsible" style="text-align: center"
+ ! scope="col" | Condition
+ ! scope="col" | Chance
+ |-
+ | {{dlc+|r}} Having {{i|Sausage}}
+ | +6.9%{{dlc-}}
+ |-
+ | Blowing up at least one {{e|Shopkeeper}} on the current floor
+ | +10%
+ |-
+ | Having {{i|Pentagram}}
+ | {{dlc|na}} +20%<br>{{dlc|a}} +10%
+ |-
+ | Having a second {{i|Pentagram}}
+ | {{dlc|na}} +10%<br>{{dlc|a}} +5%
+ |-
+ | Having {{i|Black Candle}}
+ | {{dlc|na}} +30%<br>{{dlc|a}} +15%
+ |-
+ | Holding {{i|Book of Revelations}}
+ | {{dlc|na}} +35%<br>{{dlc|a}} +17.5%
+ |-
+ | Blowing up at least one {{M|Beggar}}, {{M|Rotten Beggar}}, {{M|Battery Bum}}, {{dlc|r+}} {{M|Devil Beggar}} or {{dlc|r+}} {{m|Key Master}} on the current floor
+ | +35%
+ |-
+ | Taking no Red Heart damage against the boss
+ | +35%
+ |-
+ | Taking no Red Heart damage for the entire floor
+ | +99%
+ |-
+ | {{dlc+|r}} Having {{i|Act of Contrition}} and taking Red Heart damage
+ | +40%{{dlc-}}
+ |-
+ | {{dlc+|r}} Having {{i|Act of Contrition}} and taking Red Heart damage in the {{r|Boss Room}}
+ | +15%{{dlc-}}
+ |-
+ | {{dlc+|r}} Having {{i|Satanic Bible}} [[Familiar#Wisps|wisps]]
+ | +10%, up to +80% {{dlc-|r}}
+ |-
+ | Holding {{i|The Book of Belial}}
+ | {{dlc|na}} +2500%<br>{{dlc|a}} +12.5%
+ |-
+ | Having {{i|Goat Head}}
+ | Guaranteed
+ |-
+ | {{dlc+|a+}} Having {{i|Eucharist}}{{dlc-}}
+ | Guaranteed<br>(always Angel Room)
+ |- style="background-color: #440f0f"
+ | Previous Devil Room door seen two floors ago
+ | x0.5
+ |- style="background-color: #440f0f"
+ | Previous Devil Room door seen less than two floors ago
+ | x0.25
+ |}
+For example, if Isaac has avoided taking Red Heart damage and has blown up a Shopkeeper, he will have a (1+35+99+10)% = 145% base Deal with the Devil chance which will be displayed 100%, which will then go down to 36.25% once he sees the Devil Room.
+
+== Notes ==
+* If the player enters a Devil Room without the entrance door appearing (by teleporting in), the chance to receive a Devil Room will not be reduced. Because of this, if a Devil Room is seen this way and the player does not want to enter it again, intentionally taking red heart damage will reduce the chance of seeing it after the boss fight, which can prevent the penalty from seeing the Devil Room door from applying to the next floor.
+* The chance that the Devil Room or Angel Room door will remain open after re-entering the Boss Room is based on the current Deal with the Devil chance, which gains the x0.25 multiplier from seeing the Devil Room door less than two floors ago. Due to its high chance of disappearing, it is recommended to go directly into the Devil Room when offered, {{dlc|r}} unless it's the first time one is seen and the player wants to get a guaranteed Angel deal.
+** Once a Devil Room door closes for the floor, it cannot be re-opened without picking up {{i|Goat Head}} or {{i|Eucharist}}.
+* On XL floors, the Devil Room door can only appear after completing the second Boss Room.
+* On XL floors, not seeing a Devil Room will count as not seeing a Devil Room for two floors, and seeing it will count as not seeing a Devil Room for one floor.
+* Taking {{e|Soul Heart}}, {{e|Black Heart}}, {{e|Eternal Heart}}, {{e|Bone Heart}}, or {{e|Rotten Heart}} damage does not decrease the chance to open a Devil Room; only {{e|Red Heart}}s count.
+** Taking red heart damage from a {{M|Devil Beggar}}, {{M|Blood Donation Machine}}, {{i|IV Bag}}, {{i|Blood Rights}}, {{i|Razor Blade}}, {{I|Shard of Glass}} or {{i|Sharp Plug}} does not decrease the chance to open a Devil Room.
+*** {{dlc|r}} {{r|Sacrifice Room}}s also count as self-damage and do not lower the Devil Room chance.
+*** {{dlc|nr}} The [[Bad Trip]] pill effect or damage from {{r|Curse Room}} doors still counts as Red Heart damage.
+*** {{dlc|a+}} Losing a Bone Heart container as {{c|The Forgotten}} counts as Red Heart damage.
+** {{c|Tainted Magdalene}}'s leaking Red Hearts being damaged does not count as Red Heart damage, regardless of the damage source.
+* There are additional ways to enter a Devil Room on any floor:
+** {{e|Red Chest}}s have a chance of teleporting Isaac into the Devil Room upon being opened.
+** Using {{p|Joker}} will teleport Isaac into the room.
+** {{dlc+|a}} Using {{i|Teleport 2.0}} after all other rooms on the floor (excluding the {{r|I AM ERROR}} room) have been visited.{{dlc-}}
+* {{i|Teleport!}}, {{i|Undefined}}, and [[Telepills]] cannot transport Isaac to the Devil Room.
+* {{dlc+|a+}} If a deal would deal lethal damage to {{c|The Soul}}, quickly switching to {{c|The Forgotten}} will keep him alive. This can even be done to take 3-heart deals for one soul heart.
+** If The Soul has no Hearts, switching to The Soul is disabled until another Soul or Black Heart is acquired.{{dlc-}}
+** {{dlc|r}} The same can be done "in reverse" - take a deal as The Forgotten and quickly switch to The Soul. However, this will usually cause a softlock unless {{i|Birthright}} is obtained since switching to The Forgotten will be disabled while he has no Hearts, and The Soul is chained to The Forgotten and thus is incapable of traversing rooms.
+* {{dlc|nr}} {{c|The Lost}} can take all Deals with the Devil for free.
+** {{dlc+|r}} {{c|The Lost}}, {{c|Tainted Lost}}, and {{c|Tainted Jacob}} in ghost form are allowed to take one of the offered Deals for free; the others will vanish afterward.
+*** The same applies to any character turned into ghost form via {{p|Soul of the Lost}} or by touching a {{e|White Fire Place}}.{{dlc-}}
+* {{dlc+|r}} {{c|???}} pays for Devil Deals with Soul Hearts for prices equal to their Red heart equivalent; ie, one or two Soul Hearts depending on the item, rather than the normal three. No other character has this effect, including {{c|Tainted ???}}.{{dlc-}}
+* {{dlc|na+}} The rock behind the Devil can rarely be a [[Tinted Rock]].
+* {{dlc|a+nr}} An Angel statue can rarely substitute the Satan statue and can be awoken with an explosion as usual.
+** [[Angel]]s spawned in this way do not drop Key Pieces, however.
+* The highest possible Devil Room chance without Goat Head is 204% in ''Afterbirth'', or 326.9% in ''Repentance''.
+** {{dlc+|r}} It is possible to have a guaranteed Deal Chance without Goat Head or Eucharist if enough {{i|Satanic Bible}} [[Familiar#Wisps|wisps]] are produced and all chance-increasing effects take place. However, this is extremely difficult to achieve since only up to 8 Satanic Bible wisps can exist simultaneously (certain items such as {{i|Jar of Wisps}} ignore this).{{dlc-}}
+* Teleporting into a deal without beating the floor boss can generate a different deal than the one you'd receive after beating it. This can be observed by having a {{e|Red Chest}} teleport or using a {{p|Joker}} while holding on to a {{i|Glowing Hourglass}}, using it to undo the teleport and then accessing the deal after defeating the floor boss, even if the deal door does not open by itself.
+** This can be observed even in the starting floor of the game. It however no longer happens after Womb 2.
+* Once a deal has been generated in any manner, it can not be changed or influenced.
+** For example collecting {{i|Eucharist}} after a Devil Deal door had opened, will not result into changing the current floor deal to an Angel Deal even if the Devil Deal was not visited.
+* It is possible to "undo" a deal door opening after beating the floor boss with {{i|Glowing Hourglass}} (provided the natural chance for the deal was not 100%) by entering the deal door and using the hourglass inside the room. If that happens, the game considers the current deal as not having opened at all, and will not apply a deal chance penalty for the next floor. This can be useful if the deal did not offer anything the player wanted.
+** This can be repeated as many times as necessary until the door closes by itself, and as long as Isaac directly visits the deal and does not leave it himself but only by using the hourglass.
+
+== Gallery ==
+<gallery>
+File:Satandevilroom.png|Satan Statue in the Devil Room.
+</gallery>
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | Azazel, Krampus, Death's List, Sacrificial Altar }}
+
+== Trivia ==
+* In the original ''The Binding of Isaac'', the Devil Rooms were somewhat less forgiving; if Isaac had an Eternal Heart, taking a Devil Deal would remove it.
+** Furthermore, if Isaac has at least one Soul Heart and one Red Heart Container, and he takes a Devil Deal, Isaac would die. Isaac's last will will show a pentagram or a goat head as a result.
+** Purchasing something worth two Red Heart Containers with one Red Heart Container and at least one Soul Heart will also remove the Soul Heart. Strangely, this will not kill Isaac, but the next hit he takes will, similar to {{c|The Lost}}.
+
+== Bugs ==
+{{bug|dlc=r+|Once item pedestal spawned in devil room is rolled into an item with [[Item Tags devilsacrifice|devilsacrifice tag]], all further rolls for this pedestal are restricted to items with the [[Item Tags devilsacrifice|devilsacrifice tag]]. Additionally, this bug breaks item exclusion mechanic on [[Tainted Lost]], [[Birthright (The Lost)|Birthright on The Lost]] (self-harm items appear when they're not supposed to)<ref>https://www.twitch.tv/diaxii6_/clip/AthleticRudeDunlinCoolCat-KxpxXGQ1sigVO7Uf</ref> and [[Spindown Dice]].<ref>https://youtu.be/ZDUai0gjmlM</ref>}}
+
+== References ==
+{{reflist}}
+
+{{nav|room|fr=Antre du Diable}}

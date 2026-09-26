@@ -1,0 +1,1800 @@
+{{toc right}}{{page dlc|r}}
+
+The following information/confirmations of [[The Binding of Isaac: Repentance]], the 3rd and final DLC which was released on March 31, 2021, has been collected:
+
+= 2018 =
+
+== August ==
+=== August 30th (Reveal) ===
+A "title reveal" for a new expansion was released by [[Nicalis]] on YouTube.
+
+{{#ev:youtube|https://www.youtube.com/watch?v=TgV96KNJA0s}}
+
+The trailer revealed the title of the expansion and its logo - strikingly similar to that of ''[[anti:|The Binding of Isaac: Antibirth]]'', a fan-made expansion of the game that received critical acclaim from the community but despite popular demand seemed to have little chance of being brought to the official game. Additionally, it was announced on [https://twitter.com/edmundmcmillen/status/1035455549049958400 Twitter] that Repentance would be available for play at the PAX West 2018 Convention.
+
+=== August 31st ===
+{{#ev:youtube|https://www.youtube.com/watch?v=26EwFVALj10}}
+
+The demo version of Repentance playable at PAX confirmed suspicions that the expansion would indeed be a port of Antibirth. Original content from the mod that led to this conclusion as well as brand new content in Repentance that was discovered in the demo included:
+
+* The [[anti:Downpour|Downpour]] floor from Antibirth, as well as a [https://twitter.com/nicalis/status/1035581465113710592 brand new sewer-themed floor "Dross"] (assumed to be an alternate floor of [[anti:Downpour|Downpour]])
+
+[[File:Repentance Nicalis Tweet Dross Pax.mp4|650px|link=]]
+
+* New [[item]]s, such as:
+** Giant Cell
+** Vade Retro
+** Spin to Win
+** Tropicamide
+** Vasculitis
+* Returning Items from Antibirth:
+** [[anti:Booster Pack|Booster Pack]]
+** [[anti:Consolation Prize|Consolation Prize]]
+* New [[monster|enemies]]:
+** A Dross variant of [https://i.imgur.com/Yplhzyj.png Squirt] which charges twice in a row.
+** A green fly (later seen in Kil's gameplay footage).
+* New [[boss]]es:
+** A [https://pbs.twimg.com/media/Dl8gQKLUwAA9bGk.jpg new boss] in the "Dross" floor (name later to be confirmed as Clog)
+* As well as recurring enemies and bosses from Antibirth:
+** [[anti:Blurb|Blurb]], revealed in [https://media.discordapp.net/attachments/485133685881045014/485148841323266048/unknown.png this image].
+** [[anti:Bubbles|Bubbles]]
+** [[anti:Wraith|Wraith]]
+** [[anti:Prey|Prey]]
+** [[anti:Small Leech|Small Leech]]
+** [[anti:Willo|Willo]]
+** [[anti:Tidal Gaper|Tidal Gaper]]
+** [[anti:Polty|Polty]] (Confirmed by [https://www.reddit.com/r/bindingofisaac/comments/9bxl3c/repentance_is_antibirth/ images in a Google Drive in this Reddit post])
+* Returning Bosses from Antibirth:
+** [[anti:Baby Plum|Baby Plum]], as revealed in [https://twitter.com/SnomanGaming/status/1035678348167368705 this tweet by a PAX player].
+** Lil Bub (Originally named [[anti:Beelzeblub|Beelzeblub]] in Antibirth)
+* Returning Obstacles from Antibirth:
+** [[anti:Bucket|Buckets]]
+
+== September ==
+=== September 1st ===
+[[Edmund McMillen]] [https://twitter.com/edmundmcmillen/status/1035768949097418752 officially discloses details] of the Repentance expansion pack on Twitter.
+
+* The Repentance DLC is officially announced to include the Antibirth mod alongside a ton of other new content - Edmund affirms it is "the FINAL (for real this time) DLC for Isaac".
+* Edmund will be working with [http://i.imgur.com/tAvbGyA.jpg the full team of Antibirth developers] (Public Entertainment Networked Interactive Software - also known as P.E.N.I.S), _Kilburn, LeatherIceCream, and NotYourSagittarius, on the Repentance DLC, which will also be published by Nicalis.
+* Repentance, as a substantial addition to the game, '''will cost money'''.
+* Repentance has '''no set release date''' '''yet''' - however, remaining Booster Packs are being worked on and expected to release within the next 2 months on the console.
+* Repentance will feature a '''new cutscene(s) & lore''' in the Isaac story.
+* Repentance's soundtrack will be '''fully composed by original Isaac: Rebirth music composer Ridiculon''' (in name of cohesiveness) and not Antibirth soundtrack composer [https://mudeth.bandcamp.com/releases Mudeth], contrary to the expectation of a full port of the mod's content - [https://twitter.com/htedum/status/1035776549385990145 Mudeth adds] that he will finish working on [https://www.youtube.com/playlist?list=PLkpGvIpK1f3r6yTChZtlzn-kj5uWHS77v his soundtrack] nevertheless, but that it will have to be modded in instead.
+
+[[Tyrone Rodriguez]] posted [https://twitter.com/tyronerodriguez/status/1036116610744872961 a tweet with "#IsaacRepentanceDev" hashtag] of a gif showing off a new item, as well as new visual shaders in the [[Burning Basement]].
+
+[[File:Repentance Tyrone Tweet BB New Item.mp4|650px|link=]]
+
+=== September 3rd ===
+[[Tyrone Rodriguez]] posted [https://twitter.com/tyronerodriguez/status/1036665563211214849 a tweet with the "#IsaacRepentanceDev" hashtag] showing a new gif.
+
+[[File:Repentance Tyrone Tweet Downpour Apollyon.mp4|650px|link=]]
+
+This gif shows [[Apollyon]] in [[anti:Downpour|Downpour]] with [[Curse of Darkness]] active. Some noticeable changes include:
+
+* The return of the Antibirth item [[anti:Lodestone|Lodestone]].
+* A new version of the item tracker, with smaller item icons meaning more items will be shown in the tracker compared to the original [[Afterbirth]] version.
+* Possibility for the item tracker to be enabled separately from the game timer.
+
+=== September 4th ===
+Video footage of _Kilburn playing the Repentance demo on the last day of PAX West was recorded and uploaded to YouTube by a member of the community. However, the original video was eventually taken down, but it was then re-uploaded by another member of the community.
+
+{{#ev:youtube|https://www.youtube.com/watch?v=1P0EadiKTYU}}
+
+* A mechanic of the Dross floor is demonstrated - there are rooms with rushing water that will actively affect Isaac's movement
+* New item revealed:
+** Plum Flute
+* New enemies:
+** Previously described green variant of an [[Attack Fly]] that moves in a single file along with other green flies.
+** Variant of [[Mulligan]] that chases the player and periodically spits out poison gas. And it also fires an [[Ipecac]] shot upon death.
+** A spherical [[Dip]] variant in Dross that does short rolls randomly around the room, spawned by Dross Squirts upon death and Clog.
+** A humanoid enemy in Dross that floats and chases Isaac. Surrounded by [[Attack Fly|Attack Flies]].
+** Video footage of Clog's attacks and tactics in his battle.
+* As well as more recurring enemies from Antibirth:
+** [[anti:Strider|Strider]]
+** [[anti:Sub Horf|Sub Horf]]
+
+[[Tyrone Rodriguez]] posted [https://twitter.com/tyronerodriguez/status/1037147567874703361 a tweet with the "#IsaacRepentanceDev" hashtag] showing a new gif of [[Lilith]] in [[Burning Basement]] fighting [[anti:Baby Plum|Baby Plum]], a boss from the Antibirth mod.
+
+[[File:Repentance Tyrone Tweet Plum.mp4|650px|link=]]
+
+=== September 6th ===
+[[Tyrone Rodriguez]] posted [https://twitter.com/tyronerodriguez/status/1037853192019533824 a tweet with the "#IsaacRepentanceDev" hashtag] showing a new gif.
+
+[[File:Repentance Tyrone Tweet Downpour KnockoutDrops.mp4|650px|link=]]
+
+This gif shows [[Cain]] in [[anti:Downpour|Downpour]] firing a total of 3 large tears in the shape of fists. This gif reveals:
+
+* An Antibirth item called [[anti:Knockout Drops|Knockout Drops]], which had also been seen in the list of items that were picked up in the previous gameplay.
+* A new tear visual, possibly a synergy with [[My Reflection]] and [[Pupula Duplex]].
+
+=== September 10th ===
+[[Tyrone Rodriguez]] posted [https://twitter.com/tyronerodriguez/status/1039192642326691842 a tweet with the "#IsaacRepentanceDev" hashtag], this time showing a clear gif of Clog on the boss title screen.
+
+[[File:Repentance Tyrone Tweet Dross Clog.mp4|650px|link=]]
+
+=== September 19th ===
+[[Edmund McMillen]] posted a couple of status report tweets where he announced [https://twitter.com/edmundmcmillen/status/1042390377594990592 Antibirth content and the new paths are being currently ported and polished], and that [https://twitter.com/edmundmcmillen/status/1042390659305398272 new content for the DLC is planned once that task is complete].
+
+=== September 20th ===
+[[Edmund McMillen]] made a [https://twitter.com/edmundmcmillen/status/1042457340031557632 tweet response], confirming that online co-op won't be added to the game.
+
+== October ==
+=== October 8th ===
+[[Edmund McMillen]] made a [https://twitter.com/edmundmcmillen/status/1049492318837862400 tweet] about the status of Repentance and his other projects.
+
+=== October 9th ===
+[[Tyrone Rodriguez]] posted [https://twitter.com/tyronerodriguez/status/1049815973908250624 another tweet with the "#IsaacRepentanceDev" hashtag] showing a new gif.
+
+[[File:Repentance Tyrone Tweet Dross FlyingEnemy.mp4|650px|link=]]
+
+This gif appears to show [[Eve]] in Dross, attacking some of the new enemies.
+
+* This reveals the attacks of the floating enemy that has [[Attack Fly|Attack Flies]] surrounding it. It appears to cough to push the Attack Flies far away, similar to [[The Duke of Flies]], although the Attack Flies appear to return to float around the enemy.
+* The gameplay also reveals the Antibirth version of the Found HUD
+* A new rune that can be seen dropping next to Eve at the end of the video.
+* Eve appears to have a new hair sprite for her [[Whore of Babylon]] state.
+* The mascara on Eve’s eyes having been changed to be darker and no longer changing shape when Eve blinks, which better resembles how it looks on Eve in her Flash incarnation.
+* Possibly a new sprite for {{i|Clicker}}.
+* Finally, the tears fired by Eve appear to be shaped like a circle instead of a pixelated polygon.
+
+== November ==
+=== November 8th ===
+[[Edmund McMillen]] posted another [https://twitter.com/edmundmcmillen/status/1060594086267113472 status report tweet].
+
+=== November 15th ===
+[[Edmund McMillen]] posted a [https://twitter.com/edmundmcmillen/status/1063122110514552832?s=12 status report tweet] talking about the first expected release date of Repentance," the first half of next year".
+
+= 2019 =
+
+== January ==
+=== January 11th ===
+[[Edmund McMillen]] posts an image on Twitter that was quickly deleted.
+
+[[file:Repentance Edmund Tweet Deleted Boss.png|link=]]
+
+=== January 12th ===
+Edmund posts a second image of the same entity, this time showing off the limbs and body in a grayscale image.
+
+[[file:Repentance Edmund Tweet Deleted Boss2.png|link=]]
+
+=== January 21st ===
+In a Twitter Q&A, [[Edmund McMillen]] confirmed that [[anti:The Witness|The Witness]] [https://twitter.com/edmundmcmillen/status/1087556694257750016 will be in the game, although it'll probably have a name change]. Two returning characters from The Binding of Isaac: Antibirth, [[anti:Bethany|Bethany]] and [[anti:Jacob & Esau|Jacob & Esau]], [https://twitter.com/edmundmcmillen/status/1087555573787152384 are most likely being added into the game]. Additionally, Edmund confirmed that [https://twitter.com/edmundmcmillen/status/1087566121538994176 true local co-op could be added in as well]. Finally, Edmund clarifies while that a couple of redundant items got cut [https://twitter.com/edmundmcmillen/status/1087570831562072065 most of the changes to items are just edits].
+
+== February ==
+=== February 13th ===
+[[Edmund McMillen]] confirmed [https://twitter.com/edmundmcmillen/status/1095891529766395912 in another AMA] that cut content from Antibirth will not be included in Repentance, but that unfinished content may still be finished and included.
+
+=== February 18th ===
+[[Edmund McMillen]] posted [https://twitter.com/edmundmcmillen/status/1097728428147535872 a tweet once again reconfirming that the DLC would be delayed], while also including another grayscale picture of Isaac fighting the same unknown entity shown on January (which was later revealed to be Singe) in [[The Basement]].
+
+[[file:Repentance Edmund Tweet Grayscale Boss.png|link=]]
+
+=== February 26th ===
+[[Tyrone Rodriguez]] posted [https://twitter.com/tyronerodriguez/status/1100604103141449735 a tweet with the "#Isaacrepentancedev" hashtag], showing a new gif.
+
+[[File:Repentance Tryone Tweet Mines Minecarts.mp4|650px|link=]]
+
+This appears to show [[Magdalene]] in the [[anti:Mines|Mines]] floor from Antibirth. Some noticeable changes in this gif include:
+
+* The room featuring a [[anti:Bomb Grimace|Bomb Grimace]], a type of [[Grimace]] originating from Antibirth. It spits out a [[anti:Red Bomb|Red Bomb]], which [[Magdalene]] uses to break the rocks and access the [[Pressure Plate]] to clear the room.
+* [[anti:Minecart|Minecarts]] being used in this room, carrying [[Constant Stone Shooter]]s.
+* An unknown Ph.D. item (that's later revealed to be False Ph.D.).
+* Magdalene holding the [[anti:Broken Padlock|Broken Padlock]], a trinket originating from Antibirth.
+* The Mines having a slight orange shade when lava pits are present.
+
+=== February 27th ===
+Kilburn posted [https://twitter.com/FixItVinh/status/1100688370471190528 a screenshot on Twitter].
+
+[[file:Repentance Kilburn Tweet Item Shadows.png|link=]]
+
+Though in the format of a meme, this screenshot showcases shadows on item pedestals, a returning feature from Flash.
+
+== March ==
+=== March 4th ===
+[[Edmund McMillen]] [https://twitter.com/edmundmcmillen/status/1102645855310340096 responds to a tweet in an AMA] about rebalancing in Greedier Mode.
+
+=== March 16th ===
+[[Edmund McMillen]] [http://twitter.com/edmundmcmillen/status/1106956804041277440 responds to a tweet] saying that Repentance will be present at PAX, [http://twitter.com/edmundmcmillen/status/1107001441493737472 later clarifying in another tweet] that he means the PAX that will be held in August.
+
+=== March 20th ===
+[[Edmund McMillen]] [http://twitter.com/edmundmcmillen/status/1108373724623826950 tweets that the team is aiming to release Repentance sometime this year], with more teases to be released after Bum-bo. [http://twitter.com/edmundmcmillen/status/1108374550146764800 He also states in another tweet] that [[anti:Jacob's Ladder|Jacob's Ladder]] from Antibirth will be renamed to avoid naming conflicts with the already existing {{i|Jacob's Ladder|n}}.
+
+== April ==
+=== April 13th ===
+[[Edmund McMillen]] posted [https://twitter.com/edmundmcmillen/status/1117171659171975168 a tweet] showing a new gif.
+
+[[File:Repentance Edmund Tweet Scarred Womb Colors.mp4|650px|link=]]
+
+This shows Isaac in [[Scarred Womb]]. Some noticeable changes in this gif include:
+* Isaac carrying [[anti:Mom's Bracelet|Mom's Bracelet]], an item originating from Antibirth.
+* The tear sprite for {{i|Lost Contact}} appearing to be rounder, meaning that the tears are now circles instead of being pixelated polygons as stated before.
+* [[Champion]] [[monster]]s appearing to have been recolored in a different manner, similar to Antibirth's champion colorings.
+* The ground sprites for [[Fred]]s, [[Para-Bite]]s, and [[Scarred Para-Bite]]s dynamically changing their color to match the floor.
+** This can be seen when one of them pops out of the ground over the blood - the color changes to red.
+* The [[Para-Bite]]s themselves flashing when taking damage, not the ground surrounding it.
+
+== May ==
+=== May 9th ===
+[[Edmund McMillen]] posted [https://twitter.com/edmundmcmillen/status/1126528871132614656 a status update tweet] about Bum-Bo and Repentance's expected release times, and about other games that he is developing. This Twitter post states that Repentance is expected to be released late Q4 of 2019.
+
+=== May 27th ===
+[[Edmund McMillen]] posted [https://twitter.com/edmundmcmillen/status/1133187023349530625 a tweet] showing a new gif.
+
+[[File:Repentance Edmund Tweet Big Horn Resprite.mp4|650px|link=]]
+
+This shows Isaac in [[Flooded Caves]] in a fight with [[Big Horn]]. Some noticeable changes in this gif include:
+
+* [[Big Horn]]'s in-game appearance being completely redesigned.
+* Pits now being properly layered under the water effect instead of on top of it.
+* Big Horn's hands splashing the water when they slam down.
+* Big Horn's shadow balls having their sprites instead of being [[Little Horn]]'s orbs but resized.
+* Big Horn's bomb-throwing animation now displaying what kind of bomb will be thrown, and how many.
+* The colors of the [[Flooded Caves]] have been changed, and the water now has a reflection effect similar to [[anti:Downpour|Downpour]].
+* Isaac carrying [[anti:Sulfur|Sulfur]], an item originating from Antibirth.
+* The [[Troll bomb]]s and [[Mega Troll Bomb]]s appearing to have a new lit fuse animation that also originated from Antibirth.
+* {{i|Marked}} appearing to be able to synergize with {{i|Brimstone}} and familiars such as {{i|Brother Bobby}}. Marked also has a visible line showing the path tears will take.
+* The [[Tear Delay]] stat now having decimal values in the Found HUD.
+* The [[Cube of Meat]] orbital now traveling faster than before, implying that orbitals will be nerfed by moving faster.
+
+== June ==
+=== June 14th ===
+[[Edmund McMillen]] had a Twitter Q&A where he revealed that Edith, the unused Antibirth character, would not be in Repentance [https://twitter.com/romablumen/status/1139684593714335751]. Other details revealed include possible respriting for bosses [https://twitter.com/Apollyon_Man/status/1139689662606274560], changes to bosses, and enemies [https://twitter.com/UltrinikXD/status/1139687650342780928], and that Antibirth characters will most likely have gameplay changes [https://twitter.com/Apollyon_Man/status/1139689288113643521].
+
+== July ==
+=== July 3rd ===
+[[Tyrone Rodriguez]] posted [https://twitter.com/tyronerodriguez/status/1146523287352070144 a tweet] showing a new gif.
+
+[[File:Repentance Tyrone Tweet Dank Depths Buttlicker.mp4|650px|link=]]
+
+This appears to show [[Judas]] in [[Dank Depths]]. Some noticeable changes in this gif include:
+
+* A new [[Buttlicker]] variant which sticks to other Buttlickers it collides with, and it has a chance to shoot 8 bullets upon death and leaves puddles of black creep.
+* Judas carrying [[anti:Devil's Crown|Devil's Crown]], a trinket originating from Antibirth. Interestingly, it is also in the item tracker. This seems to imply that trinkets, including those that have been [[Gulp!|gulped]], or [[Smelter|smelted]] can now also appear in this tracker HUD.
+* Judas having [[anti:Freezer Baby|Freezer Baby]], a familiar originating from Antibirth.
+* An unknown item in the item hud that appears to be a ring or a dreamcatcher.
+* The indicator for the angel/devil deal being summarized. This could be a unique visual synergy with {{i|Duality}}.
+* The [[Dank Depths]] floor appearing to have a more detailed backdrop with tar colors.
+* {{i|The Book of Belial}} having an old activated animation, originating from Flash, which was previously unused in Rebirth and forward.
+* Lasers having a new animation and become bigger with a higher damage stat in a similar manner to the original Flash game.
+* The jittery nature that was added to lasers in Afterbirth was undone.
+
+[[Edmund McMillen]] also had a Twitter Q&A where he revealed that [https://twitter.com/boneacide/status/1146555803282731008 some Four Souls enemies may get added]. He also revealed that [[Delirium]] and [[The Void]] will likely receive some minor tweaks [https://twitter.com/GrutaDosCavaero/status/1146556256452251648]. The [[anti:Red Key|Red Key]] from Antibirth may be added to Repentance [https://twitter.com/broskiplays_/status/1146555537007546368].
+
+=== July 27th ===
+[[Edmund McMillen]] had [https://twitter.com/edmundmcmillen/status/1154926591907995648 a Twitter Q&A] where he revealed that Repentance would include [[anti:Hornfel|Hornfel]], and a new boss named Singe.
+
+== August ==
+=== August 9th ===
+[[Tyrone Rodriguez]] posted [https://twitter.com/tyronerodriguez/status/1159951880270704640 a tweet] announcing that Repentance would be at PAX West. He also announced that they will probably be doing a live stream of the demo with Kilburn. In this tweet, he also shows a new gif.
+
+[[File:Repentance Tyrone Tweet Catacombs Wretched.mp4|650px|link=]]
+
+This appears to show [[Magdalene]] in [[The Catacombs]] fighting [[The Wretched]]. Some noticeable changes in this gif include:
+
+* [[The Wretched]]  being given extra details such as blowing up dust after hitting the ground or when spawning [[Big Spider]]s/[[Spider]]s. [[The Wretched]]'s legs are also more dynamic and have more noticeable movement.
+* Magdalene has a new hair sprite.
+* {{i|Little Horn}} having a new effect, where the enemy hit by the tear will receive the fear effect before a [[Big Horn]] arm will come up and squish the enemy. However, the tear no longer possesses a piercing effect.
+* A new trinket which seems to turn familiars into orbitals while still keeping their effect.
+* A strange icon on the minimap, which appears to be a Battery Bum from Four Souls.
+* An unknown white crystal active item.
+* Magdalene having a broken heart container, implying that [[anti:Magic Skin|Magic Skin]] or a new item which gives broken hearts will be in the game.
+
+=== August 17th ===
+[[Edmund McMillen]] posted a [https://twitter.com/edmundmcmillen/status/1162815857459773440 a tweet] clarifying that redundant Antibirth items will be changed rather than removed.
+
+=== August 21st ===
+[[Tyrone Rodriguez]] posted [https://twitter.com/tyronerodriguez/status/1164234506846388224 a comedic tweet with a #IsaacRepentance hashtag] showing promotional art for Repentance.
+
+=== August 30th ===
+PAX West 2019 begins and [[Nicalis]] showcases a new demo for ''[[The Binding of Isaac: Repentance]]''. A couple of photos were taken by players there.
+
+[[file:PAX0.jpeg|link=]]
+
+* This is an image from PAX West 2019 showing what appears to be Isaac with the costume appearance of [[anti:The Intruder|The Intruder]] item from Antibirth.
+
+[[file:PAX1.jpg|link=]]
+
+* This image features the [[anti:Fortune Cookie|Fortune Cookie]] item from Antibirth.
+
+[[file:PAX2.jpg|link=]]
+
+* This is an image featuring multi-character co-op, which is another returning feature from Antibirth.
+
+[[File:DMV - Binding of Isaac Pax West Gameplay 2019.mp4|link=]]
+
+* [https://www.youtube.com/watch?v=IQu25xN1dhQ&feature=youtu.be This video features short gameplay of more co-op] which also shows [[anti:The Scooper|The Scooper]] item and a [[Crazy Long Legs]] exploding into a black cloud from the depleted Black Heart from [[Azazel]], who also releases a giant puff of black smoke. Black Hearts no longer have an animation, instead instantly applying damage.
+** Similar to the Flash version, the starting room displays the keyboard/gamepad controls.
+
+{{#ev:youtube|hhttps://www.youtube.com/watch?v=BUu6WdaalFU}}
+
+Tyrone Rodriguez hosted [https://www.twitch.tv/videos/474608118?t=00h01m12s a livestream on Twitch], showing the PAX demo of Repentance. Following features could be seen during the stream:
+
+* New enemies:
+** Enemies seen in the Dross:
+*** A Dross variant of [[Clotty]].
+*** A worm-like enemy that slowly crawls towards Isaac and loses its head when taking a certain amount of damage.
+**** The body shoots bursts of tears, while the head slides across the room. Both leave a slippery trail of [[brown creep]]. This monster's name was later revealed to be "Dump."
+*** Lil Bub has a different appearance when being fought in the Dross floor.
+** Enemies seen in the [[anti:Mines|Mines]]:
+*** A black spider that spawns several Troll Bombs when killed.
+* New item:
+** Dream Catcher
+
+* Items from Antibirth:
+** [[anti:The Intruder|The Intruder]]
+** [[anti:A Bar Of Soap|A Bar of Soap]]
+** [[anti:Battery Pack|Battery Pack]]
+** [[anti:Tinytoma|Tinytoma]]
+** [[anti:Dirty Mind|Dirty Mind]]
+** [[anti:Red Stew|Red Stew]]
+
+* Enemies from Antibirth:
+** [[anti:Mole|Mole]]
+** [[anti:Faceless|Faceless]]
+** [[anti:Hard Host|Hard Host]]
+** [[anti:Soi Creep|Soi Creep]]
+** [[anti:Bouncer|Bouncer]]
+** [[anti:Rock Spider|Rock Spider]]
+** [[anti:Grilled Gyro|Grilled Gyro]]
+** [[anti:Pon|Pon]]
+** [[anti:Dragonfly|Dragonfly]]
+
+* Visual changes:
+** Pickups now appear on the map in the same room Isaac is currently in, just like in the Flash game. Previously, any room that Isaac is in would not show any pickups, and instead be blank.
+*** Interestingly, those icons do not disappear after picking up consumables, but only after exiting the room.
+** [[Crispy]]s have different faces and their expression changes when they take a certain amount of damage.
+** [[Death's Touch]] tears got a visual change that is taken from Antibirth.
+** [[Brimstone]]'s costume has a new, more detailed appearance.
+** [[Hearts (Pickup)|Heart pickups]] flash red when they pump and display their animation even when they're sold in [[Shop]]s.
+** The [[Cyclopia]]s got minor visual changes.
+** [[Sacrifice room]]s have a bloodier appearance.
+** The loading sequences between the floor have been slightly altered.
+*** The floor Isaac lies on looks different depending on the floor Isaac is entering.
+*** The spotlight above Isaac slowly opens.
+*** The eyes of the monsters in the background are slowly revealed from the ground up.
+*** The icon of Isaac's head has a slight pause before it moves from one floor to the next.
+** [[Devil Room]]s and [[Angel Room]]s have new animations when appearing after a boss fight, with Devil Rooms producing a darker and thicker smoke when spawning.
+** [[Keys]] have a new animation which causes them to sparkle.
+** New subtle effects have been added to many monsters, such as [[Monstro]] creating a cloud every time he jumps and shoots.
+** [[Mr. Maw]] no longer has blood in his eyes.
+** [[Gusher]]s squirting blood is now clearer and bolder.
+** [[Eternal Fly]] got a minor redesign, looking slightly whiter.
+* Audio changes:
+** [[Coin]]s display a different sound when Isaac picks them up.
+** [[Bony|Bonies]] and their variants display a new sound when dying.
+** The sound heard whenever the player or a monster shoot [[Brimstone]] beams got changed.
+** New music tracks were shown, such as the themes of Dross and[[anti:Mines|Mines]].
+*** Boss fights on Repentance floors have unique tracks. [[Mini-boss]]es (such as [[Krampus]]) that appear in these floors also share this track.
+*** The theme for the Mines features more distorted segments and other small changes that aren't present in the later released song.
+* Other features:
+** [[Horf]]s have a chance to rotate when getting attacked, shooting tears around themselves similar to Antibirth's [[anti:Horf|Sub Horfs]].
+** Flames spawned by enemies such as [[Flaming Fatty|Flaming Fatties]] are more distinguishable from regular fires.
+** An icon appears underneath the map, indicating if there's a curse on the current floor.
+** {{i|Match Book}} can drop the {{t|Match Stick}} trinket when picked up.
+** [[anti:Minecart|Minecarts]] and [[anti:Red Button|Red Buttons]] from Antibirth reappear.
+** Enemy projectiles appear to move faster.
+** The {{i|Spider Mod}}'s health display will change depending on if it's a boss or an enemy, with it either being smaller or bigger and being more color-coordinated as well.
+** Floor variants, such as [[Necropolis]], appear in [[Greed Mode]] as well.
+** Isaac's {{i|Brimstone}} lasers do not last as long.
+
+{{#ev:youtube|https://www.youtube.com/watch?v=wX0jWG6dwjs}}
+
+Additionally, another [https://www.youtube.com/watch?v=wX0jWG6dwjs PAX video] has been posted to the internet, featuring:
+
+* [[Magdalene]]'s default pill gives an HP Up instead of the usual Speed Up.
+* [[The Duke of Flies]] spawns additional [[Fly|Flies]] and [[Attack Fly|Attack Flies]] upon death, similar to the original ''The Binding of Isaac'' (as well as ''Rebirth'').
+
+Finally, Edmund had reposted the [https://twitter.com/edmundmcmillen/status/1167624136283176960 art image for the Binding of Isaac: Repentance that Tyrone had posted earlier], implying that it'll indeed be used as the cover.
+
+=== August 31st ===
+At the second day of PAX West, the following information has been collected:
+
+* A user at PAX posted [https://twitter.com/Snozell/status/1167635205819002881 two tweets] featuring:
+** Returning enemies from Antibirth:
+*** [[anti:Ink|Ink]]
+*** [[anti:Gyro|Gyro]]
+*** [[anti:Great Gideon|Great Gideon]], who has a list of waves instead of the altered health bar from Antibirth.
+** New enemies:
+*** A new [[anti:Downpour|Downpour]] variant of a [[Fatty]] that shoots projectiles and [[green creep]].
+** [[Gurgle]]s have hunched backs.
+* Another user uploaded a [https://www.reddit.com/r/bindingofisaac/comments/cy58fh/new_mines_alt_floor_ashpit_and_new_boss_singe/ Reddit post], featuring pictures of the already mentioned boss Singe and the variant floor of Mines: Ashpit, taken from another player at PAX.
+
+Tyrone Rodriguez [https://www.youtube.com/watch?v=DOcYCOJ3txU hosted a second stream], showing more features:
+
+* New enemies:
+** A small monster that looks and behaves similarly to [[Pin]], jumping through the room and burrowing into the ground. It can be seen in the [[Flooded Caves]] and [[Dank Depths]].
+** A new yellow fly enemy that charges at Isaac and steals charges from active items.
+** A boss that has a similar appearance to [[Bumbo]] (later revealed to be Bumbino) can be seen through the effect of Dream Catcher.
+* Items from Antibirth:
+** [[anti:Yuck Heart|Yuck Heart]]
+** [[anti:Eye Of The Occult|Eye Of The Occult]]
+* Enemies from Antibirth:
+** [[anti:Grilled Clotty|Grilled Clotty]]
+** [[anti:Coal Spider|Coal Spider]]
+** [[anti:Mullighoul|Mullighoul]]
+* Bosses from Antibirth:
+** [[anti:Wormwood|Wormwood]]
+** [[anti:The Rainmaker|The Rainmaker]]
+* Visual changes:
+** [[Mr. Mine]]s have a slightly altered appearance.
+** [[Incubus]] has a new appearance.
+* Audio changes:
+** [[Super secret room]]s have a new unique theme instead of sharing the same theme with regular [[secret room]]s.
+** [[Gluttony]]'s laser attack has different sound effects.
+
+* Other features:
+** [[anti:Pickups#Rotten Heart|Rotten Hearts]], a new type of pickup from Antibirth.
+** The effect of Dream Catcher got revealed: It predicts which item and boss will appear on the upcoming floor during the loading sequences between floors.
+** The previously mentioned new [[beggar]] variant, a Battery Bum, can be seen in the [[Arcade]].
+** Devil Deals have been reworked: if Isaac has one red heart and wants to make a two-heart-deal he needs to additionally pay two soul hearts.
+** In Downpour, red chests spawn [[anti:Spider#Strider|Striders]] instead of regular spiders.
+** Hanged shopskeepers now also appear in regular shops, as they did in Antibirth.
+** [[Challenge Room|Boss Challenge Rooms]] on Repentance floors contain new bosses.
+** Repentance floors (such as Downpour and Dross) will only offer one item in the [[Treasure Room]], instead of two items like in Antibirth.
+** The [[Devil Room]] chance penalty for taking red heart damage in the current room is less severe.
+*** In the vod in Downpour 1, the player goes from 100% to 36% chance, instead of 100% to 1% for the current room.
+*** This might just be a visual change to avoid going to 1% and then back up to 36% when 1% is only meant to be applied for Boss Rooms.
+
+== September ==
+=== September 1st ===
+During the third day of PAX West, someone onad/new_repentance_images_new_bosses_boss_portraits/ Reddit uploaded this post of images], showing a few more new features:
+
+* A Downpour variant of [[The Husk]] called Min Min.
+* New boss portraits of [[Big Horn]] and [[anti:Baby Plum|Baby Plum]].
+* Pits that appear in the [[Dank Depths]] are filled with tar.
+* Another returning item from Antibirth called [[anti:Boiled Baby|Boiled Baby]].
+* [[anti:Wormwood|Wormwood]] has a different skin tone in the Dross floor, similar to Lil Bub and other [[anti:Downpour|Downpour]] enemies.
+
+Additionally, the PAX user who uploaded photos from August 31 and September 1 uploaded [https://www.youtube.com/watch?v=eGN34LZcwYo&list=PLWttWLcu29xlitNOK7vpC4wIqaGSDG-nK&index=3 a series of videos] showing new features of the PAX demo:
+{{#ev:youtube|https://www.youtube.com/watch?v=eGN34LZcwYo&list=PLWttWLcu29xlitNOK7vpC4wIqaGSDG-nK&index=3}}
+* New enemies:
+** A grey monster with a huge mouth and sharp teeth (found in the Ashpit).
+** A monster that looks similar to a gas cloud (found in the Dross).
+** Bumbino, a new boss who appears in the [[Flooded Caves]].
+** A [[Dank Depths]] variant of [[Hopper]].
+** A Dross variant of [[Dip]] that shoots a single corn shot at the player upon death.
+** The already mentioned Dross variant of [[Clotty]] that shoots four shots that curve around itself.
+** The already mentioned worm-like enemy that appears in Dross is shown to appear with different faces, as well as spawning with its head already separated from its body, later known as a Dump.
+* Returning items from Antibirth:
+** [[anti:Voodoo Head|Voodoo Head]]
+** [[anti:Blood Oath|Blood Oath]]
+** [[anti:Bird Cage|Bird Cage]]
+** [[anti:Member Card|Member Card]] which wasn't accessible in Antibirth due to a bug.
+* Returning enemies from Antibirth:
+** [[anti:Quakey|Quakey]]
+** [[anti:Danny|Danny]]
+** [[anti:Quake Grimace|Quake Grimace]]
+** [[anti:Reap Creep|Reap Creep]]
+* Other features:
+** Footage of the Min Min boss fight.
+** Gas clouds seem to explode in a chain reaction when a bomb explosion touches it.
+** The already teased False Ph.D. item which grants one black heart and increases the chance to find bad pills / replaces the good pills with bad pills. It can be bought in the [[Devil Room]] in exchange for one heart container.
+** Soul heart devil deals are sometimes offered even if Isaac could still spend red hearts.
+** The Retro Vision pill now makes the screen look very pixelated, instead of blurry.
+** {{i|Torn Photo}} can now be found in locked chests.
+** [[anti:Dragonfly|Dragonflies]] have an altered visual appearance in the Ashpit, with fire visible in their eyes or mouths depending on the form.
+** [[Beggar]]s and [[donation machine]]s now have their unique icons on the map.
+** [[Famine]]'s head during his 2nd phase leaves blood drops while floating, just like in the original ''The Binding of Isaac'' game.
+** [[Big Horn]]'s [[Hot Bombs|burning bombs]] now leave a small flame for a few seconds instead of leaving a fire for a long duration of time. (This may be an interaction with the floor of Flooded Caves being flooded with water, and may be an indicator that any regular fires will quickly extinguish on floors like this.)
+** {{i|Euthanasia}} has a new collectible sprite, and enemies killed by needle tears now burst into a ring of large black tears. It also synergizes with items such as Brimstone and Technology 2, with enemies killed by them having a chance to burst into tears.
+** {{i|Technology 2}} doesn't decrease the damage stat anymore.
+** [[Psychic Horf]] has teeth now just like a regular [[Horf]].
+
+{{#ev:youtube|https://youtu.be/D0_MeWidO8g}}
+{{#ev:youtube|https://www.youtube.com/watch?v=d9lRU2GUZF8}}
+
+Tyrone also hosted two short periscope streams at PAX, which revealed more features:
+
+* The [https://youtu.be/D0_MeWidO8g first stream]:
+** A new [[Spider]] variant that sticks in swarms, similar to [[Swarm Fly|Swarm Flies]].
+** [[Challenge Room]]s on Repentance floors have new enemies.
+
+* The [https://www.youtube.com/watch?v=d9lRU2GUZF8 second stream]:
+** Co-op was shown off.
+*** Co-op babies have not been deleted and can still be played as if they join the game outside the starting room.
+*** Player 2's hearts will be in the top right corner, with 4 rows of 3 hearts.
+*** Cards and trinkets, are also displayed on the top right.
+** {{i|Jacob's Ladder}} has new visuals and sound effects. It sounds a lot louder and more "electric," as it was in Flash.
+
+[[file:video0.mov|650px|link=]]
+
+Finally, the user who had previously uploaded a bunch of footage at PAX posted brief footage of the [[anti:Tuff Twins|Tuff Twins]] at the Mines.
+
+=== September 2nd ===
+{{#ev:youtube|https://youtu.be/ZeigfIn5x5M}}
+
+Tyrone hosted a [https://youtu.be/ZeigfIn5x5M 3rd periscope stream] which revealed even more features:
+* Co-op was shown again, this time with additional HUD enabled.
+** The stats of the characters will both be listed on the left side of the screen, with Player 1's stats being above Player 2's.
+** Both player's items will be shown on the item tracker, with a line splitting the two sets of items for each character.
+* A new [[Boom Fly]] variant, which can be seen in the Ashpit.
+* A new angel room active item, Genesis. It was shown to not have a charge.
+* The Eternal Heart animation has been updated to how it looked in Flash.
+
+A Discord user posts [https://media.discordapp.net/attachments/485133685881045014/618249323309957129/image0.png this image] showcasing a new unknown enemy in Ashpit.
+
+=== September 4th ===
+The same Discord user posts two more videos, showcasing both [https://www.youtube.com/watch?v=2_BmemRX6Qc  Greedier Mode] and [https://www.youtube.com/watch?v=EmCKREKVyWM  a bit more of the Ashpit.] In the videos, a couple of new changes and features are revealed.
+* Returning enemies from Antibirth:
+** [[anti:Dip#Hardy|Hardy]]
+** [[anti:Big Bony|Big Bony]] can be seen in Ashpit with a different attack of firing, which is a bouncing bone that remains on screen for a long time.
+* Azazel's Brimstone now appears to have knockback.
+* The unknown enemy revealed on September 2 is shown. It moves in an erratic pattern towards Isaac by curving left and right in short bursts.
+
+== October ==
+=== October 10th ===
+[[Tyrone Rodriguez]] posted [https://twitter.com/tyronerodriguez/status/1182469265942708224 a tweet] showing a new gif.
+
+[[File:Repentance Tyrone Tweet Caves Fistula.mp4|650px|link=]]
+
+This depicts [[Isaac]] with [[Brimstone]] fighting against [[Fistula]] in [[The Caves]]. Details from the gif include:
+
+* [[Fistula]] now appearing in [[The Caves]].
+* [[Brimstone]] now having knockback. This is shown in the gif as it pushes a bomb towards [[Fistula]].
+* Also, [[Brimstone]] now having blood splatter effects whenever it hits an object.
+
+=== October 17th ===
+[[Edmund McMillen]] posted [https://twitter.com/edmundmcmillen/status/1184887058487054336 a tweet] confirming Repentance has been delayed to 2020.
+
+=== October 29th ===
+[[Tyrone Rodriguez]] posted [https://twitter.com/tyronerodriguez/status/1189056121689952257 a gif] featuring {{i|Tiny Planet}}, {{i|Ipecac}}, and {{i|Soy Milk}}.
+
+[[File:Repentance Tyrone Tweet Ipecac Soy Planet.mp4|650px|link=]]
+
+Details from the gif include:
+
+* [[Ipecac]] with [[Soy Milk]] appearing to have an increased fire rate and decreased explosion radius.
+* [[Tiny Planet]] has a new orbiting pattern, making tears orbit at a consistent radius around Isaac, rather that slinging to wherever Isaac moves.
+* A purple icon for Curse of the Lost now being visible on the HUD below the map.
+* Enemies suffering from the [[poison]] effect now dropping green gibs upon death.
+
+=== October 30th ===
+[[Tyrone Rodriguez]] posted [https://twitter.com/tyronerodriguez/status/1189395417353474048 a gif] showing a new synergy.
+
+[[File:Repentance Tyrone Tweet Brimstone Parasite.mp4|650px|link=]]
+
+Details from the gif include:
+* A new [[Brimstone]] and {{i|The Parasite}} synergy.
+* The Parasite bouncing along with Isaac's head as he fires Brimstone.
+
+= 2020 =
+
+== January ==
+=== January 16th ===
+In a [https://twitter.com/edmundmcmillen/status/1217895624525246464 Twitter Q&A], Edmund McMillen briefly answered a few questions by Twitter users, regarding features for Repentance.
+
+* Only characters that were [https://twitter.com/edmundmcmillen/status/1217900979326078976 originally from Antibirth (with a few reworks)] will be added into the DLC.
+* There are currently [https://twitter.com/edmundmcmillen/status/1217902100128026625 no plans] to add new [[Challenges]] to the DLC.
+* Edmund confirmed there will be [https://twitter.com/edmundmcmillen/status/1217899021122994177?s=21 minor gameplay changes] to final bosses outside of graphical ones.
+
+=== January 29th ===
+Another [https://twitter.com/edmundmcmillen/status/1222607359811276800?s=21 Twitter AMA] occurred later that focused mostly on Edmund’s non-Repentance related projects.
+
+* However, there was one answer where Edmund reconfirmed that [https://twitter.com/edmundmcmillen/status/1222609694184763392?s=21 the game will be rebalanced] which may make some players upset, though the ultimate goal is to make the game more enjoyable.
+
+== February ==
+=== February 8th ===
+Edmund Mcmillen created [https://twitter.com/edmundmcmillen/status/1226231213792227328 another brief Q&A], answering a question about Repentance in the process:
+
+* Contrary to his prior statement about Challenges, they may [https://twitter.com/edmundmcmillen/status/1226233991449047040 be worked on now].
+
+=== February 10th ===
+Edmund created [https://twitter.com/edmundmcmillen/status/1227008095945027584 another AMA], answering more questions about the features of the upcoming DLC:
+
+* A [https://twitter.com/edmundmcmillen/status/1227012891573772288 third character wouldn't be created, let alone implemented into the DLC. However, Bethany and Jacob & Esau will have some gameplay edits].
+* Ridiculon will add [https://twitter.com/edmundmcmillen/status/1227011007123345408 another music layer to the title screen] for the upcoming DLC.
+
+=== February 19th ===
+Edmund McMillen posted a [https://twitter.com/edmundmcmillen/status/1230262779212288000 tweet about the status of his upcoming games]. Here, he posted an image of [[anti:Bethany|Bethany]] in the Basement, who by default holds [[anti:Book Of Virtues|Book Of Virtues]].
+
+[[File:Bethany teaser.jpg|500px]]
+
+It appears that the number of charges for the Book of Virtues was nerfed from 2 charges in its original appearance (Antibirth) to 4 charges in this DLC.
+
+=== February 26th ===
+Edmund McMillen [https://twitter.com/edmundmcmillen/status/1232725650189893632 responded] to a fan on Twitter asking if Repentance will be released on the Nintendo Switch, saying "Don't know". This is contradictory to earlier reports saying Repentance would be released exclusively on the Switch and PC.
+
+== March ==
+=== March 10th ===
+Edmund McMillen [https://twitter.com/edmundmcmillen/status/1237485921798221825 posted a tweet] about the continued development of his card and video games. One of the images he posted was an image of [[anti:Jacob & Esau|Jacob & Esau]], who are both dead as a result of Jacob running out of health from the spike in the Sacrifice Room despite Esau having one red heart left (this feature was already in Antibirth). It also shows a Dross Sacrifice Room.
+
+[[File:Jacob_Esau_Deceased.jpg|500px]]
+
+=== March 11th ===
+Nicalis posted a new [https://twitter.com/nicalis/status/1237816030006829056 gif] showcasing the new boss Min Min in the Downpour.
+
+[[File:Repentance Teaser Downpour Min Min.mp4|650px|link=]]
+
+New changes that were seen in this gif include:
+* {{i|Razor Blade}}’s sprite properly having holes in the center.
+* A new ghostly fog overlay being visible, likely to accentuate Downpour’s minor haunted theme.
+
+=== March 18th ===
+Tyrone Rodriguez posted [https://twitter.com/tyronerodriguez/status/1240400087051898882 a new gif on Twitter] of footage for this DLC. Here, Eden can be seen fighting [[Isaac (Boss)]] in the Cathedral, as per the boss's usual spot.
+
+[[File:Repentance Tyrone Tweet Isaac Dark Cathedral.mp4|650px|link=]]
+
+New details from the gif include:
+
+* [[anti:Bot Fly|Bot Fly]], a returning item from Antibirth, as shown by its appearance as a familiar and being in the item HUD.
+* {{i|Scissors}} now having 4 charges in total.
+* The blades of the Scissor item being recolored slightly to look more polished.
+* A Curse of Darkness indicator shown under the map. Appears as a purple crescent moon.
+* A resprite of the [[Golden Horse Shoe]] so that it more accurately resembles one.
+* {{i|Farting Baby}} now having a unique farting animation, along with a rounder head shape, improved shading, and a new belly button.
+* A cathedral window in the lower right side of the background now being partially cracked.
+** Intact cathedral windows glow in the dark.
+* [[Isaac (Boss)|Isaac (Boss)'s]] attacks having been visually improved.
+** The tears' blinking effect is more visible, especially with the curse of darkness.
+** The diagonal beams of light shake the screen, give off some light and also burn the ground where they land.
+** The random beams of light in the second phase appear dim and semitransparent as a signal as to where they'll appear.
+* Potential tear stat rework, based on the Found HUD value.
+* {{i|Dead Eye}} tears having new visuals with colored lighting.
+
+=== March 28th ===
+For the first time since Repentance’s announcement, Kilburn posted [https://twitter.com/fixitvinh/status/1244090607720685568?s=21 a gif on Twitter], showcasing some of Repentance’s new significant synergy changes.
+
+[[File:Repentance Kilburn tweet technology.mp4|650px|link=]]
+
+The new changes showcased in the gif include:
+
+* {{i|Technology}}-based lasers giving off knockback without requiring any item/trinket that grants the player increased knockback.
+* A reworked synergy of {{i|Monstro's Lung}} and Technology; the player now charges up to shoot a chaotic short-ranged shotgun blast of lasers.
+** Also, it appears that {{i|Chocolate Milk}} is responsible for letting the player shoot quick singular beams or charge to get a full blast of beams.
+* Chocolate Milk’s sprite having also been updated to remove the grey area with proper transparency.
+
+== April ==
+=== April 14th ===
+Kilburn [https://twitter.com/FixItVinh/status/1249969873893146624 responded] to a fan on Twitter asking if the synergy between [[Brimstone]] and {{i|Head of the Keeper}} looking like the brimstone lasers coming from the doors in the [[Ultra Greedier]] boss fight could happen, saying "Damn right it can".
+
+=== April 18th ===
+Kilburn [https://twitter.com/FixItVinh/status/1251434846011998208 responded] to a fan on Twitter asking if some "shadow hits" from [[Delirium]] would be fixed, saying that it will be fixed and that the boss fight will be revamped to be fairer and less confusing.
+
+=== April 26th ===
+Edmund McMillen published an AMA post on Reddit<ref>https://www.reddit.com/r/bindingofisaac/comments/g854b5/tapeworm_kickstarter_four_souls_and_general_isaac/?sort=new</ref> in which he answers several questions regarding Repentance:
+
+* Due to certain difficulties, the development of Repentance has been slowed down. They want to release the expansion at the end of summer, however, the release could still be delayed.
+* The expansion will be released on PC first, further ports will depend on the publisher Nicalis.
+* Repentance might get a retail release in some way.
+* Edmund reconfirms that:
+** Repentance will adopt the champion coloring system of Antibirth.
+** Almost every feature that appeared in Antibirth will be brought over to Repentance, although some elements might be tweaked to better fit the game.
+** Multiplayer will be reworked.
+** The themes of the Antibirth floors are remade to fit better to the rest of the OST.
+* {{i|Blank Card}} is not able to copy [[Runes|rune]] effects anymore.
+* Floors that were added in the ''Wrath of the Lamb'' expansion ([[Cellar]], [[Catacombs]], [[Necropolis]] and [[Utero]]) will be improved in some aspects.
+* When asked if angel rooms got buffed, Edmund replied with "in a way...".
+** This could also be a reference to the fact that devil rooms got weakened, as seen in various videos of the PAX demo.
+* More synergies to several items like {{i|Mom's Knife}} will be added to the game.
+* [[Mama Gurdy]]'s appearance will be renewed, other visual updates regarding bosses are unknown.
+** Gameplay-wise, already existing bosses will get no new attack patterns.
+* The puzzle of the Knife Pieces will be changed.
+* Edmund's latest games such as ''Bum-bo'' and ''The End Is Nigh'' will be represented in Repentance.
+* Repentance will add a unique [[Savefile Images|savefile image]] when completing all three files.
+* Regarding the question of a possible rework of the [[Keeper]], Edmund replied with "you'll see".
+* Blog posts regarding the DLC will be published before the expansion will be released, possibly revealing more content.
+
+== May ==
+=== May 11th ===
+Tyrone Rodriguez posted [https://twitter.com/tyronerodriguez/status/1259941716838068226?s=21 a new gif] showcasing the significant changes made to {{i|Telekinesis}}, alongside many other minor changes.
+
+[[File:Repentance Telekinesis Buffed.mp4|650px|link=]]
+
+The changes that are shown in the gif include:
+
+* Telekinesis’s effect now having a visual tell for the radius in which it can pick up shots, though the time for which it can collect shots has been shortened. When collected, enemy projectiles begin to flash white until they are thrown back by the player. The projectiles that were thrown back also get to keep their visual and mechanical properties, such as bones thrown by [[Bony]]s‘ projectiles retaining their bone appearance or [[Gurgle]]s’ projectiles remaining explosive.
+* Gurgle projectiles blinking more profusely, much as the enemy blood projectiles do. They also retain a noticeable hunch previously seen from the last Rep demo that is based on their Wrath of the Lamb incarnation.
+* Gurgles also turning into green gibs and bones upon death, either for consistency with Gurgle’s generally green coloration or because of a returning Flash feature where poisoned enemies would drop green gibs on death.
+* The gibs that break apart from Bony’s bone projectiles now using their previously underutilized animation where they would gradually shrink upon hitting the ground.
+
+<br />
+
+=== May 17th ===
+Edmund states [https://twitter.com/edmundmcmillen/status/1262206717636440064 on Twitter] that while the planned release was at the end of summer it will likely be pushed back due to the ongoing Covid-19 pandemic.
+
+[[File:Repentance.jpg|250px]]
+
+He also talks about stuff that needs to be worked on- which include some bosses, items, cut scenes, and "bonus things".
+
+Additionally, he posted a picture of what seems to be the final cover art.
+
+== June ==
+=== June 23rd ===
+Kilburn [https://twitter.com/FixItVinh/status/1275461394914295815 responded] to a fan on Twitter asking for exactly 2.75 seconds of each new song on the soundtrack.
+
+[[File:Repentance Kilburn Music Tweet.mp4|650px|link=]]
+
+There seems to be a total of 10 new themes. These are in the following order:
+
+* Downpour
+* Mines
+* Mausoleum
+* Corpse (''speculated)''
+* Dross
+* Ashpit
+* Alternate boss theme for Antibirth floors
+* New final boss theme ''(speculated)''
+* 2 unknown themes, possibly intended for Planetariums or cutscenes.
+
+Some songs may be missing or have been excluded from the video to prevent spoilers or because they haven't been finished yet.
+
+=== June 24th ===
+Edmund [https://twitter.com/edmundmcmillen/status/1275894436988284929 posted a tweet] stating that most of the new cutscenes are finished.
+
+=== June 28th ===
+Edmund [https://www.reddit.com/r/bindingofisaac/comments/hhjyah/update_on_repentance/ posted a tweet] stating that Repentance development is getting back to the normal speed. Cutscenes and music are nearly done, while some enemies and items from Antibirth still await porting. The goal was the end of the summer and he assumes the delay is going to be 1–2 months at this point.
+
+== July ==
+=== July 21st ===
+Edmund [https://twitter.com/edmundmcmillen/status/1285649644115177474?s=19/ posted a tweet] stating that the development of Repentance is near its end with two remaining music tracks of its wide library. He also says that some end game stuff will be finalized this week, and after this, they will finally move onto the game's final unlocks and some remaining bosses and enemies.
+
+Later that day, a user asked in his tweet if the DLC could be released before September/October, on which Edmund [https://twitter.com/edmundmcmillen/status/1285663485049872389?s=19/ replied], negating this information.
+
+=== July 23rd ===
+Edmund hosted another [https://twitter.com/edmundmcmillen/status/1286445185862217734 Twitter AMA] where he disclosed a few new details about the upcoming expansion.
+* Pills will be changed in some way, shape, or form.
+* There will be a new tear modifier in the update similar to Tech X or Brimstone.
+* The expansion is still expected to launch in 2020.
+
+== August ==
+=== August 27th ===
+Edmund hosted a [https://twitter.com/edmundmcmillen/status/1298905191761158145?s=20 Twitter AMA] where he stated that blog posts and a Steam page are expected in mid-September.
+
+In his [https://twitter.com/edmundmcmillen/status/1298905191761158145?s=20 Twitter AMA], he [https://twitter.com/edmundmcmillen/status/1298911762830356481 stated] that the price of Repentance will be between $12 to $15.
+
+=== August 31st ===
+Edmund responded to a quick [https://twitter.com/edmundmcmillen/status/1300363911632314369 Twitter AMA] regarding the possibility of another series of [https://twitter.com/edmundmcmillen/status/1300374028088008704 Booster Packs in Repentance], stating that if they were to be made they wouldn't be announced and be a surprise.
+
+On his latest [https://twitter.com/edmundmcmillen/status/1300363911632314369 Twitter AMA], Edmund [https://twitter.com/edmundmcmillen/status/1300374348511887360 replied] to a [https://twitter.com/Saggitar12/status/1300367369227960321 tweet] that [[anti:The Witness|The Witness]] will '''not''' have her special giant room design and will be in a smaller room. However, The Witness will be '''changed''' to fit that new design.
+
+== September ==
+=== September 4th ===
+Edmund posted two gifs on Twitter, one featuring a [https://twitter.com/edmundmcmillen/status/1302048115504021507?s=21 thin creature] while the [https://twitter.com/edmundmcmillen/status/1302048159967973376?s=21 other] depicts a similar creature that is bloated, both displayed in the form of gifs of front-walking animations. The former has an armless, flesh-tone body covered in blisters and holes, while the latter has a rotund, grayish body with a large stitch in the center. Both heads are bisected into a fleshy half and a grey half, stitched together in the center, and the eye that’s opened on their half of the head is respective towards their body type. Later on, Edmund would [https://twitter.com/edmundmcmillen/status/1302116278061035520?s=21 confirm] that these are two separate “twins” with a complex relationship. It is currently unknown if these entities are bosses or complex enemies.
+
+[[File:Repentance New Monster 1.mp4|650px|link=]]
+[[File:Repentance New Monster 2.mp4|650px|link=]]
+
+=== September 9th ===
+Tyrone posted an image of what appears to be the new [https://twitter.com/tyronerodriguez/status/1303841239557578752?s=20 title screen for Repentance]. Further, when asked if Repentance would be ported to the Switch, Tyrone responded>"Yes, but it'll take some work. Lots of optimization [is needed]."</nowiki>]
+
+[[File:Reptentance Title Screen Tyrone.jpg|400px]]
+
+<br />
+
+=== September 10th ===
+Kilburn posted [https://twitter.com/FixItVinh/status/1304215987177295872 a gif] on Twitter.
+
+[[File:Repentance Coop Brimstone.mp4|650px|link=]]
+
+Details from the gif include:
+* The [[anti:Almond Milk|Almond Milk]] and [[anti:Playdoh Cookie|Playdoh Cookie]] items from Antibirth being featured in Repentance.
+* A new synergy between {{I|Anti-Gravity}}, {{I|Marked}}, and {{I|Brimstone}}, including new visuals for the Brimstone vortexes.
+* A resprite of {{I|Pageant Boy}}.
+* [[anti:Playdoh Cookie|Playdoh Cookie]] causing the [[Brimstone]] laser to flash in rainbow colors.
+* [[Brimstone]] lasers now being affected by the {{T|Ring Worm}} effect, which is caused by [[anti:Almond Milk|Almond Milk]] in the gif.	
+* The [[Gurglings]] appearing in the {{s|Burning Basement}}.
+<br />
+
+=== September 11th ===
+Tyrone posted [https://twitter.com/tyronerodriguez/status/1304473397393383425 a blurry pic] on Twitter. It appears to be the costume for {{I|Metal Plate}} possibly designed as a teaser.
+
+[[File:Repentance Blurry Teaser.jpg|400px]]
+
+=== September 13th ===
+During a Twitter AMA, Edmund was asked an approximate release date for Repentance. He [https://twitter.com/edmundmcmillen/status/1305146469452660738?s=20 responded,] "I mean the goal was end of summer and then the world ended [COVID-19] and production slowed... the goal is still this year, but honestly when it’s done it’s done." When another user asked if Edmund is 100% sure Repentance will be released this year, [https://twitter.com/edmundmcmillen/status/1305150585163767808 Edmund did not directly answer the question.] Another user asked how much of Repentance is done on a percent scale. Edmund [https://twitter.com/edmundmcmillen/status/1305148021710045185?s=20 responded,] that Repentance is 85% done.
+
+Edmund noted that Repentance is "very close to [being] an isaac 2." and, "a major bookend to the "series"." Edmund also [https://twitter.com/edmundmcmillen/status/1305155254820859905 mentioned] that a lot of the ideas used in Repentance "were ones locked away for isaac 2 especially cutscene wise." A user noted, "If repentance is substantial enough in content, whatever sequel there will be for Isaac will then be a very long way away and be completely different because more of the same could just be another update to the original." Edmund [https://twitter.com/edmundmcmillen/status/1305156041349373952?s=20 agreed.]
+
+Edmund was asked if an additional horseman that was planned to be in the Antibirth mod will make it into Repentance. Edmund [https://twitter.com/edmundmcmillen/status/1305153248811126787 responded,] "I’m not aware of any horsemen planned."
+
+=== September 14th ===
+Tyrone posted [https://twitter.com/tyronerodriguez/status/1305667073037578241 a tweet] on Twitter. He posts some of the letters to the names of one or possibly two bosses.
+
+=== September 22nd ===
+Tyrone posted [https://mobile.twitter.com/tyronerodriguez/status/1308460088940662784 a teaser gif] on Twitter.
+
+[[File:Repentance Tyrone Tweet Scatter Bombs.mp4|650px|link=]]
+
+* New Items:
+** A new item that looks like a silver {{i|There's Options}}/{{i|More Options}}. Presumably lets you choose between two consumables after clearing a room, based on the two shadows that appear right at the end of the gif.
+<!-- Newer gifs confirm that There's Options still has its old sprite, which means the item shown in this gif is a new one. Please do not add it being a reskin. -->
+
+Details from the gif include:
+* [[??? (Character)|???]] fighting two [[anti:Dip#Hardy|Hardies]] from Antibirth with improved animations.
+* The [[anti:Myosotis|Myosotis]] trinket from Antibirth.
+* ??? having a unique costume for {{i|Speed Ball}} that keeps his X eyes (likely other items have new costumes as well).
+* Bombs having a lit fuse animation from Antibirth.
+* {{i|Scatter Bombs}} having a unique bomb costume and the small bombs that spawn after the main Scatter bomb exploding almost immediately.
+
+=== September 27th ===
+Tyrone posted [https://twitter.com/tyronerodriguez/status/1310414084018323456 a teaser gif] on Twitter.
+
+[[File:Repentance Tyrone Tweet Lilith Mines.mp4|650px|link=]]
+
+Details from the gif include:
+* [[anti:Coal Boy|Coal Boy]] from the Antibirth mod now being confirmed as a returning monster.
+* {{i|Incubus}} now properly synergizing with {{i|Cursed Eye}}, {{i|Loki's Horns}} and {{i|Flat Stone}}.
+* Piercing tears from {{i|Cupid's Arrow}} now having a visual synergy with {{i|Mysterious Liquid}}.
+* Mysterious Liquid having its sprite from Antibirth.
+* {{i|Box of Friends}} having 3 room charges instead of 4.
+* Previously unseen icon for [[Curses|Curse of The Blind]] under the minimap.
+* At the very end of the gif, a [[anti:Monsters#Champions|Brown Champion]] monster from Antibirth can be seen at the top of the screen, which spawns piles of [[Poop]] around itself.
+
+=== September 28th ===
+Tyrone posted [https://twitter.com/tyronerodriguez/status/1310693350215806976 another teaser gif] on Twitter.
+
+[[File:Repentance Tyrone Tweet Forgotten Mars.mp4|650px|link=]]
+
+Details from the gif include:
+
+* [[Anti:Mars|Mars]] from Antibirth.
+* [[Anti:Pickups#Pills|Experimental Pill]] from Antibirth.
+* A resprite of {{t|Blind Rage}}.
+
+At the end of the day, Tyrone also put a link to the [https://store.steampowered.com/app/1426300/The_Binding_of_Isaac_Repentance/ official Steam page for the game], which reveals more images with more content. It also states that there will be 130+ items, A full alternate path with brand new chapters and a new final boss and ending, 100+ enemies, 25+ bosses, 2 new characters (Bethany and Jacob & Esau), 5 new challenges, 100+ achievements, and 5,000+ new room designs. The page also says that the DLC will come out on December 31, 2020, but it's likely just a placeholder. Unfortunately, according to Edmund's response to a Tweet, the DLC [https://twitter.com/edmundmcmillen/status/1310771013798354944 won't be released for the Mac].
+
+[[File:Repentance Steam Page 1.jpg|650px]]
+[[File:Repentance Steam Page 2.jpg|650px]]
+[[File:Repentance Steam Page 3.jpg|650px]]
+[[File:Repentance Steam Page 4.jpg|650px]]
+[[File:Repentance Steam Page 5.jpg|650px]]
+[[File:Repentance Steam Page 6.jpg|650px]]
+[[File:Repentance Steam Page 7.jpg|650px]]
+[[File:Repentance Steam Page 8.jpg|650px]]
+[[File:Repentance Steam Page 9.jpg|650px]]
+
+* New Enemies:
+** A variant of [[Poky]] with a large red eye and fewer spikes that appears in the [[Anti:Mausoleum|Mausoleum]].
+** A floating enemy in Dross, although its behavior and name (Poot Mine) weren't revealed until later.
+
+* Enemies from Antibirth:
+** [[anti:Loose Knight|Loose Knight]]
+** [[anti:Empty Knight|Empty Knight]]
+** [[anti:Hornfel|Hornfel]]
+
+* New Items and Trinkets
+** A new penny trinket (or a resprite of [[Anti:Electric Penny|Electric Penny]])
+
+* Items and Trinkets from Antibirth:
+** [[Anti:Eraser|Eraser]]
+** [[Anti:Act of Contrition|Act of Contrition]]
+** [[Anti:Oculus Rift|Oculus Rift]]
+** [[Anti:Blood Bombs|Blood Bombs]]
+** [[Anti:Meat Cleaver|Meat Cleaver]]
+** [[Anti:Paschal Candle|Paschal Candle]]
+** [[Anti:Eye Drops|Eye Drops]]
+** [[Anti:Broken Padlock|Broken Padlock]]
+
+* New Details and Features:
+** The [[Anti:Planetarium|Planetarium]] from Antibirth can be seen in the form of a map icon.
+** {{t|Ouroboros Worm}} and {{i|Brimstone}} synergize with each other.
+** {{i|The Parasite}} and {{i|Mom's Knife}} synergize with each other.
+** {{i|Technology}} can be angled by moving.
+** {{t|Ring Worm}} and Mom's Knife synergize with each other.
+** {{i|Head of Krampus}} has three room charges instead of six.
+** {{i|Void}} has a new sprite.
+** {{i|Marked}} also has a new rounder sprite.
+** {{i|Halo of Flies}} has a new sprite, now showing 2 orbital flies instead of attack flies, similar to {{i|Forever alone}} and {{i|Distant Admiration}} redesigns introduced in booster packs.
+** [[anti:Book Of Virtues|The Book of Virtues]] from Antibirth now appearing to be a passive item, while also showing as an opened book under {{i|Bob's Rotten Head}}. It's likely that the book is now able to create fire orbitals based on other active items, judging by the green fires around the player, that resemble small Bob's rotten heads.
+** [[anti:Oculus Rift|Oculus Rift]] has a new effect when a rift appears.
+** [[anti:Dirty Mind|Dirty Mind]] will work with [[black poop]]s.
+** [[??? (Character)|???]] was redesigned to better resemble his appearance in the Flash game.
+** [[anti:Hornfel|Hornfel]]'s doll attack was buffed from 1 doll to 3 dolls.
+*** The dolls are now red.
+
+Edmund also uploaded a [https://store.steampowered.com/newshub/app/250900/view/2795003923911775359/ blog post] to accompany the Steam page:
+
+[[File:Isaac blog 1.png|650px]][[File:Isaac Blog 2.png|650px]]
+
+* Items and Trinkets from Antibirth:
+** [[Anti:Immaculate Heart|Immaculate Heart]]
+** [[Anti:Brain Worm|Brain Worm]]
+* Changes:
+** [[Anti:Brain Worm|Brain Worm]] and {{i|Technology}} synergize with each other.
+** {{i|Soy Milk}} causes Technology lasers to become thinner and change color to match that of Soy Milk tears.
+** {{i|Crack Jacks}} has a new sprite.
+* Edmund says that the DLC is over 90% done and to expect regular blog posts, similar to those for previous DLCs, starting the second half of October.
+
+== October ==
+=== October 9th ===
+Tyrone posted another [https://store.steampowered.com/newshub/app/250900/view/2909846985626025207 blog post] on Steam in which he interviewed the Ridiculon, the musical duo responsible for The Binding of Isaac soundtrack, and showed another screenshot of the DLC. In the interview, Jon also mentioned that there are nearly 45 minutes of new music and that a new song named "River of Despare" will be revealed next week.
+
+[[File:Isaac blog 2.png|650px]]
+
+* Items from Antibirth:
+** [[Anti:Eternal D6|Eternal D6]]
+** [[Anti:Psy Fly|Psy Fly]]
+* Changes:
+** Eternal D6's recharge time was lowered from 3 to 2 rooms. Or this may actually be {{i|D infinity}} that transformed into it, which always has 2 charges.
+** {{i|Bob's Curse}} has a slightly tweaked shape.
+** Previously shown {{i|Scatter Bombs}} new design is compatible with other bombs modifiers, such as Bob's Curse.
+** [[Anti:Objects#Spiked Rocks|Spiked rocks]] from the Antibirth mod have returned with a redesigned sprite, although this could simply be a design variant.
+** The tar in [[Dank Depths]] is leaking from the top of the walls, instead of leaking from wall cracks.
+** A closer look at the new Dank Depths background, with pillars near the corners of the room.
+** The previously seen dank version of [[Hopper]] appears to leave a puddle of black creep and a chaotic splash of tears similar to [[Monstro]], though with much fewer tears.
+
+=== October 15th ===
+Tyrone posted a new [https://steamcommunity.com/games/250900/announcements/detail/4695524966232353983 blog post]. It is following his last [https://store.steampowered.com/newshub/app/250900/view/2909846985626025207 blog post] in which he interviewed the Ridiculon duo, creators of the Isaac soundtrack. On this new blog post, he revealed a new GIF, a teaser of a soundtrack called [https://soundcloud.com/the_binding_of_isaac/river-of-despare River Of Despare] and goes into details about how this theme has been created by Ridiculon and Edmund itself.
+
+[[File:October 15th Blog Post.mp4|650px]]
+
+* Changes:
+** [[Azazel]]'s appearance was redesigned, his hair and horns are now fully colored and his opened mouth now better resembles the new Brimstone costume.
+** A new synergy between {{i|Lachryphagy}} and {{i|Brimstone}} - character rapidly fires a stream of small fully-red shots alongside the blood barrage, which quickly combine into one big tear if the character doesn't move, and also burst into 8 blood shots instead of laser beams.
+** A new item which looks like an opened can, probably gives a health up.
+** A new trinket that looks like a key. Its effect is unknown.
+
+On the blog, there is also a [https://soundcloud.com/the_binding_of_isaac/river-of-despare link] which redirects to a new official [https://soundcloud.com/the_binding_of_isaac SoundCloud account] for The Binding of Isaac. That link features a brand new theme made by Ridiculon, called [https://soundcloud.com/the_binding_of_isaac/river-of-despare River Of Despare].
+
+In the blog, Matthias said, "The River of Despare, it's a distance cousin of Sodden Hollow. Expect dank, liquidy and a slow drum groove. What you're going to hear is more of an ambient feeling of sudden hallow and what was spawned a lot of the Isaac soundtrack."
+
+This soundtrack was previously featured in recorded footage of the Binding of Isaac: Repentance PAX gameplays during the Downpour stage, this time with slight alterations including a new intro track and the sound of water slushing during most of the track.
+
+=== October 17th ===
+NotYourSagittarius posted a [https://twitter.com/NY_Sagittarius/status/1318016586905780228?s=20 tweet] on Twitter.
+
+[[File:Repentance NotYourSag Hush Bullets Pog.mp4|650px|link=]]
+
+Though mostly showcasing a meme, this video shows that [[Hush]]'s bullets blink much more vibrantly.
+
+=== October 20th ===
+Edmund McMillen revealed more information through a [https://twitter.com/edmundmcmillen/status/1318738364586106880 Q&A on Twitter]:
+
+* A unique theme for the [[Utero]] floor will be added.
+* [[Gurdy|Gurdy's]] laughing animation that could be seen in the Flash game will reappear.
+* Kilburn will look into re-adding the tear stain trails that from the original game/Pre-release Rebirth gifs, though they may be post-release.
+* [[Greed Mode|Greed and Greedier mode]] won't receive many changes.
+* Edmund reconfirmed that some elements from Antibirth will be renamed, changed, or removed due to overlapping effects.
+* Confirmed Antibirth enemies:
+** [[anti:Rotgut|Rotgut]]
+** [[anti:Small Maggot|Small Maggots]]
+
+Edmund also gave his reason [https://twitter.com/edmundmcmillen/status/1318750313411616768 why Mudeth's soundtrack won't be featured in Repentance].
+
+=== October 22nd ===
+Tyrone Rodriguez posted a new [https://store.steampowered.com/newshub/app/250900/view/2948128849684597297 blog post], in which he interviewed the members of the Repentance development team: _Kilburn (lead designer), LeatherIceCream (designer), and NotYourSagittarius (artist). Tyrone also shared concept artwork for some new bosses and enemies and pre-production dev screenshots (in form of gifs).
+
+[[File:Isaac blog penisinterview1.gif|320px]]
+[[File:Isaac blog penisinterview2.gif|320px]]
+[[File:Isaac blog penisinterview3.gif|320px]]
+
+Most notable features from the gifs include:
+* Returning boss from Antibirth: [[anti:The Pile|The Pile]], with a redesign and new visuals.
+* The previously seen floating monster at Dross that explodes upon death, its name being revealed as the Poot Mine.
+* Items from Antibirth:
+** [[anti:Spirit Sword|Spirit Sword]]
+** [[anti:Akeldama|Akeldama]]
+** [[anti:Enigma Bombs|Enigma Bombs]]
+* An unknown trinket that looks like a red button.
+* {{i|Robo-Baby}} was reskinned to be fully-grey colored and having a new design for his robo-eye. He's also now being able to fire diagonally. Might be an effect of {{i|King Baby}}.
+
+=== October 28th ===
+Edmund McMillen shared more information during a [https://twitter.com/edmundmcmillen/status/1321654086039605250 Q&A session on Twitter]:
+
+* Besides the addition of co-op, Repentance will introduce more [[Co-op|co-op babies]] as well.
+* The song "Jesus Loves Me" from the original game will return.
+* Super secret rooms and the item RNG will be tweaked in some form. Further details were not given.
+
+=== October 29th ===
+Tyrone Rodriguez posted a new [https://store.steampowered.com/newshub/app/250900/view/2937996383563100606 blog post], in which he interviewed the members of the Repentance development team again.
+
+New details on the upcoming DLC include:
+* One of the new floors has a special visual effect that isn't shaders. It blends a couple of scrolling layers with the overhead shadow that's visible on most floors to achieve a "rather nice atmospheric effect".
+
+== November ==
+=== November 4th ===
+Tyrone Rodriguez posted a short [https://store.steampowered.com/newshub/app/250900/view/2940248818740192364 blog post], in which he provides a link to another track preview from Ridiculon. This track is called [https://soundcloud.com/the_binding_of_isaac/fissure-mines Fissure], and it is used in the Mines.
+
+The post does not include any new information, but it does provide some insight into the track and how it was created.
+
+=== November 14th ===
+Tyrone Rodriguez posted a new [https://store.steampowered.com/newshub/app/250900/view/2923360954119576716 blog post], in which he interviewed Edmund McMillen. The interview also included gifs with new details, with most of them being brought back from the Flash game:
+
+[[File:Isaac Blog Fistula.gif]]
+[[File:Isaac Blog Holy Water.gif]]
+
+Old details from Flash:
+* [[Fistula]]'s color palette was changed to be darker brown to match it boss portrait, and the shape of some of its small fragments were also tweaked.
+* {{i|Spoon Bender}} now having an animated flame on top of Isaac's head, and Isaac's eyes now always being closed with this item. A purple lighting effect also surrounds Isaac.
+* {{i|Holy Water}} now having a transparent container. The water also acts like actual water, with the animation of waves inside the glass.
+* {{i|Magic 8 Ball}} appearing to be darker.
+* [[Eye]] now glows red and squints right before firing its laser.
+* the Second gif shows Isaac having 1.54 shot speed, even though [[Cat-o-nine-tails|his]] [[Magic 8 Ball|items]] should only increase it by 0.49 (for 1.49 shot speed total). This may suggest that either one of his items was buffed to give 0.05 more shotspeed, or that [[anti:Pickups#Pills|Shot Speed Up]] pill will be added from the Flash game and the Antibirth mod.
+
+New changes:
+* {{i|Lil Gurdy}} bounces off enemies and rocks, and not just walls.
+* {{i|Dry Baby}} now has a rounder head and a subtle moving animation, similar to many other familiars.
+* {{i|Placebo}} is shown with a 1 room charge instead of the usual 4 room charge.
+** This may hint at Placebo having a fluctuating charge time depending on the currently held pill.
+* {{i|Lil Delirium}} and its familiars having circular eyes instead of dots, along with having a pallet much closer to [[Delirium]]’s main form.
+** Lil Delirium's icon also seems to have been changed, with a more melted appearance.
+* Lasers' impact effect bounces against the walls, instead of spreading in all directions.
+
+=== November 19th ===
+In a brief AMA on Twitter, a user asked Edmund if Repentance is delayed to 2021. Edmund [https://mobile.twitter.com/edmundmcmillen/status/1329291384881246208 replied] "Probably, but it’s close". It was not clear if he meant Repentance was close to completion, or if 2021 is close anyway. Edmund also stated that he will do a [https://mobile.twitter.com/edmundmcmillen/status/1329296999980515330 pre-release stream of Repentance].
+
+=== November 21st ===
+Tyrone Rodriguez posted a new [https://store.steampowered.com/newshub/app/250900/view/2907598989569700838 blog post], in which he continued interviewing Edmund McMillen.
+
+Information from the interview:
+* When asked if he was happy with Repentance, Edmund started talking about little details that were in Flash and how they brought them back in the game. Including a few hints on what some of them are:
+** "''There’s a ____ _____ ____ that’s in ___ ____ and it’s ______ ____ _. You have a _____ of ____ and it’s _____ across_ and it’s _____ and _________ and doesn’t ____, but it’s one of those _____ things _____ that will _____. It’s one of those little things. That happened a lot in the Flash version. I think with Repentance, superfans will really feel that the world is even more alive. And little things that creep up on people, or really rare stuff that creates this illusion that the game goes infinite.''"
+*** If each underscore counts as one letter, there are a few excess singular letters that can't be decoded into anything meaningful.
+* Edmund stated that playing ____ __ _____ changes the Repentance experience.
+* When Tyrone reminded Edmund about porting the game on different platforms, he replied with the following:
+** "''The thing is, I want people to know that ______ _____. We don’t not want to ____ ___, but when the time comes soon, when we do a release trailer we’re going to ____ ____.''"
+
+The interview also included one gif of the upcoming DLC.
+
+[[File:Isaac blog knifesknifesknifes.gif]]
+
+Details from the gif include:
+* [[anti:Luna|Luna]], a returning Planetarium item from Antibirth, with a different costume or maybe even a new mechanic.
+* Unknown trinket that looks like a file or cigarette.
+* {{t|Goat Hoof}} having gotten a minor redesign.
+* {{i|Betrayal}} no longer playing its animation that covers the entire screen; instead, it shows a knife above enemies' heads.
+<!--
+Goat Hoof is not an item. It was just absorbed by Smelter/Gulp, which is now tracked. Please do not add it being an item.
+-->
+
+=== November 28th ===
+Edmund posted a new [https://steamcommunity.com/games/250900/announcements/detail/2907599623115846058 blog post], which was themed around angel rooms, showcasing two new items and a new enemy.
+
+A total of five gifs were included in the blogpost.
+
+[[File:Spirit Sword Mars 1.gif]]
+[[File:Spirit Sword Mars 2.gif]]
+[[File:Divine Protection Bloat.gif]]
+[[File:Divine Protection Vis.gif]]
+[[File:Holy Boner.gif]]
+
+* New Enemies:
+** Holy Bony
+*** A larger variant of [[Bony]] which has more HP and throws special bones in an arc which create temporary blue flames where they land, which can damage Isaac on contact.
+*** It can be found in the [[Cathedral]] alongside other new Holy enemies.
+
+* New Items:
+** Divine Intervention
+*** A passive item found in [[Angel Room]]s which is activated by double-tapping the firing keys, which spawns a holy shield that slowly moves forward.
+*** The shield can reflect enemy projectiles and [[Brimstone]] beams.
+*** Magdalene flashes yellow at the end of the gif featuring [[The Bloat]], possibly hinting at the ability to have a cooldown after being used.
+
+* Items and Trinkets from Antibirth:
+** [[Anti:120 Volt|120 Volt]]
+** [[Anti:Birthright|Birthright]]
+** [[Anti:Blessed Penny|Blessed Penny]]
+** [[Anti:Sol|Sol]]
+** [[Anti:Alabaster Box|Alabaster Box]]
+
+* New Details and Features:
+** {{i|Jar of Flies}} has had its sprite redesigned slightly.
+** [[Anti:Spirit Sword|Spirit Sword]] synergizes with [[Anti:Mars|Mars]] and {{i|Jacob's Ladder}}.
+** {{i|Mama Mega!}} has a new sprite.
+** {{i|Ghost Pepper}} appears to have a new sprite and spawns blue flames instead of red flames.
+*** This change could be because of [[Anti: Bird's Eye|Bird's Eye]]'s inclusion from Antibirth, which functions almost exactly like Ghost Pepper
+** [[The Bloat]]'s floating eyeballs have been redesigned to resemble their appearance from Flash.
+** Shadow under the Bloat's body is present during his death animation.
+** Gold [[Bombs]] have a unique sprite on the minimap.
+** Runes have a unique sprite on the minimap.
+** {{i|The Mind}} has a unique icon beneath the minimap.
+** Closer look at the new {{i|Mysterious Liquid}} tears' visuals, now producing green bubbles around the tears instead of leaving a trail behind.
+** Holy Bony appears to have a unique body sprite, similar to [[The Forgotten]], which may suggest that other variations of Bony were changed too.
+** {{i|Holy Mantle}} has a new visual effect and gives fewer invincibility frames when activated.
+** [[The Lost]]'s Holy Mantle can't be seen in the item tracker, suggesting it is now a fully passive ability that cannot be rerolled.
+** {{i|Cursed Eye}} allows the character to shoot five tears when fully charged, as opposed to the original maximum of four.
+** {{i|The Mulligan}} appears to have a new sprite.
+
+== December ==
+=== December 4th ===
+Tyrone posted a new [https://store.steampowered.com/newshub/app/250900?emclan=103582791436265228&emgid=2907600256837311277 blog post], showcasing [https://soundcloud.com/the_binding_of_isaac/juggernaut a new alt boss theme] as well as a gif.
+
+[[File:Blog Wormwood fight.gif|400px]]
+
+Details from the gif include:
+* New Items.
+** A blue gem trinket.
+** A new item with an unknown function.
+
+=== December 11th ===
+In a Twitter AMA for Four Souls, Edmund stated the price for Repentance will be [https://mobile.twitter.com/edmundmcmillen/status/1337468970408951809 $14.99].
+
+A new [https://store.steampowered.com/newshub/app/250900/view/2930118889167243932 blog post] written by Nikola (LeatherIceCream) was posted which highlighted three new enemies featured in Repentance:
+
+[[File:Needlescaves.gif]]
+[[File:Needlesindepths.gif]]
+[[File:Holyeye.gif]]
+[[File:Bishopgif.gif]]
+
+* Enemies from Antibirth:
+** [[anti:Bishop|Bishop]] with a new design, and a new self-defense attack where they fire white bullets in cardinal directions.
+
+* New enemies:
+** The previously unnamed miniature Pins are revealed to be called "Needles," and they have a more distinct telegraph before they attack than they did in PAX 2019. They also do not have any warning that they're in the room when you first enter.
+** Holy Eyes, which fire beams of light near Isaac, in volleys of four. They are found in the Cathedral.
+
+* Items and trinkets from Antibirth:
+** [[anti:Lil' Dumpy|Lil' Dumpy]]
+** [[anti:Exploded Firecracker|Exploded Firecracker]]
+
+* New Items and trinkets:
+** A red flame item that grants two red flame orbitals that shoot blood tears.
+** An unknown new item in the Holy Eye gif that looks like a blood clot. Presumably increases tear size.
+
+* New features:
+** {{i|A Pony}} only has a 2-room charge.
+** {{i|Tech X}} got an updated animation. The laser ring seems to start slightly big, then quickly shrink a small amount. The laser properly fades out when it touches a wall.
+*** It also seems to deal damage differently altogether. The ring only seems to hit twice, once on each side of the ring, instead of being a continuous hitbox. It also seems to deal a very small amount of knockback.
+** {{t|???'s Soul}} familiar is wandering around the room despite Isaac not having him as a trinket nor in the item tracker.
+** In the last frame of Holy Eyes gif, Isaac releases a giant puff of black smoke after taking damage. This is quite possibly a new visual for black hearts being depleted.
+** {{i|20/20}} now appears to have a 0.75x damage multiplier, as in the gif no other damage ups are active but Cat-o-nine-tails which still grants +1 damage; the damage shown as 3.89 is 75% of the expected 5.19.
+** {{i|Growth Hormones}} appears to have been nerfed to give a 0.2 Speed increase.
+
+=== December 17th ===
+Edmund hosted another Twitter AMA revealing some more information on the new co-op mode:
+* In co-op, the [[Treasure Room]] [https://twitter.com/edmundmcmillen/status/1339446951339704320?s=20 will only offer one item,] and players will have to choose who takes it.
+* Multi-character co-op must be initiated from the start of the run. If you drop into a single-player session outside of the starting room, [https://twitter.com/edmundmcmillen/status/1339452050266996737?s=20 it will use co-op babies.]
+
+=== December 18th ===
+A new [https://store.steampowered.com/news/app/250900/view/4499624084974416918 blog post] by NotYourSaggitarius showcases some new enemies and many visual changes.
+
+[[File:ButtslickerGif.gif]]
+[[File:StickyLeaperGif.gif]]
+[[File:BurningBasementGif.gif]]
+[[File:NewGemini.gif]]
+[[File:WhipperGif.gif]]
+[[File:TeratomaGif.gif]]
+[[File:DankDepthsComparison.png|800px]]
+[[File:NewHairstyles.png|800px]]
+[[File:The Adversary Comparison.png|800px]]
+
+* Enemies from Antibirth:
+** The [[anti:Whipper|Whipper]], now with an updated appearance.
+
+* Trinkets from Antibirth:
+** [[anti:Song of the Siren|Song of the Siren]]
+** [[anti:Giant Bean|Giant Bean]], with an updated sprite
+
+* New items
+** An unknown new item is seen in the Whipper gif, in the item tracker.
+
+* New enemies:
+** The previously seen dank variant of the Buttlicker is named the Butt Slicker. They attach to each other in large clusters from any direction and shoot eight projectiles when the cluster is broken.
+** The previously seen dank variant of the Leaper is named the Sticky Leaper. It leaves tar creep when it hops around and scatters many projectiles when it lands from offscreen.
+
+* New features:
+** {{i|Wooden Nickel}} and {{i|Mom's Pad}} are seen with an overcharge, despite no other items in the gif granting {{i|The Battery}}'s effect.
+** {{i|Jesus Juice}} has a new sprite.
+** The [[Tar Boy]]'s attack where it shoots projectiles from beneath Isaac while he is standing in tar creep has been visually redesigned to be a tar tentacle instead.
+** The costumes for [[???]], [[Magdalene]], and [[Lilith]] have been updated.
+** The costume for {{i|Maw Of The Void}} has been changed, and its damage upgrade has been removed.
+*** The enemies killed with Maw Of The Void don't have any blood splashes effects, only leaving grey gibs after themselves.
+** [[The Adversary]], [[Gemini]], and [[Teratoma]] all have updated appearances.
+** The previously-teased tar pits added into [[Dank Depths]] have a bubbling animation.
+** A new health bar is shown in the Teratoma gif, speculated to be for degraded bosses and minibosses.
+** The health regeneration animation for {{i|Leech}}, and most likely other similar healing items like {{i|Charm of the Vampire}} and {{i|Placenta}}, has been visually updated. It also now lasts about twice as long.
+** {{t|Cracked Crown}} now gives smaller stat upgrades.
+
+=== December 25th ===
+A [https://steamcommunity.com/games/250900/announcements/detail/2931245981693868718 new blog post] written by Vinh (_Kilburn) focuses on a returning character from Antibirth, [[anti:Bethany|Bethany]].
+
+[[File:Beth1.gif]]
+[[File:Beth2.gif]]
+[[File:BethWrath.gif]]
+[[File:BethTammy.gif]]
+[[File:BethMegaFatty.gif]]
+[[File:BethMonstro.gif]]
+[[File:BethKrampus.gif]]
+
+* New character, Bethany:
+** Starts with [[anti:Book of Virtues|Book of Virtues]].
+** Soul hearts drop more often.
+** Bethany cannot gain soul or black hearts - they are instead treated as active item charges, at a rate of 1 charge per half soul heart.
+
+* Changes to existing items:
+** The Book of Virtues now acts as a hybrid of a passive item and an active item. Bethany will always carry Book of Virtues, and any other active item collected will cause the items to combine, allowing both items to be used at the same time.
+** Certain active items grant unique effects to the wisps they spawn. Generally, items with shorter cooldowns will produce weaker wisps, and items with longer cooldowns will produce stronger wisps.
+*** Active items that have a recharge time of one room, such as{{i|Tammy's Head}}, create wisps that shoot very small shots.
+*** {{i|My Little Unicorn}} creates rainbow wisps that shoot multicolored shots. They become invincible and deal extra damage on contact when invincibility is triggered.
+*** {{i|How to Jump}} creates a stationary wisp at the location the item was used, that fire in the direction Bethany is firing. Wisps created use How to Jump seem to have less health, only taking one hit of contact damage before disappearing.
+*** {{i|Shoop da Whoop!}} creates off-white wisps that shoot thin lasers when used, greatly increasing damage output.
+** Wisp shots are visually smaller and appear to deal less damage.
+** Wisps have a new appearance depending on what active item Bethany is holding.
+** It might be worth noting that each active item's wisps have different orbits around Bethany, signifying each wisp type's main feature (My Little Unicorn wisps are closer for doing lots of contact damage, Shoop da Whoop! wisps are farther because they are powerful and have lots of range, so they should be expended easier).
+
+* New features:
+** [[Krampus]] has an updated appearance.
+** Items now appear in a puff of smoke when appearing after a boss fight.
+
+After the blog post went live, Edmund hosted a brief AMA on the Binding of Isaac Discord server,<ref>https://imgur.com/a/5hmhqKq</ref> with the following information about Repentance:
+* A release date trailer is planned to be released in the next week, and the release date on Steam will be changed.
+* The developers are aiming for a Wrath of the Lamb-style balance direction, with harder gameplay and less game-breaking.
+* Repentance may have performance improvements.
+* An update to [[Delirium]] is in the cards but could be delayed to post-release.
+* [[anti:The Siren|The Siren]] will return and will keep her hair.
+
+=== December 28th ===
+[https://twitter.com/edmundmcmillen/status/1343759069161504768?s=20 Edmund tweets] that the release date will be announced as part of a trailer on Friday, January 1. Steam page initially referenced "'''COMING Q2 2021'''". The planned release date on the Steam page was later changed to Q1 2021.
+
+= 2021 =
+
+== January ==
+=== January 1st ===
+{{#ev:youtube|https://www.youtube.com/watch?v=gOaWadhNi0A}}
+
+The day before, Edmund had posted a [https://www.youtube.com/watch?v=gOaWadhNi0A scheduled stream] that would announce the release date for the Binding of Isaac: Repentance on his Youtube channel. Once the stream had started at 12:00 PM PST on this day, the end of the trailer revealed that the release date would be on March 31, 2021. Immediately after, Edmund McMillen made a [https://steamcommunity.com/games/250900/announcements/detail/2931245981718356332 Steam blog] confirming this information while the game is still undergoing testing.
+
+=== January 2nd ===
+Edmund McMillen [https://twitter.com/edmundmcmillen/status/1345180439724507137 held a new AMA on Twitter], revealing plenty of new details:
+
+* Edmund reconfirms that Edith, a cut character, won't be added, although a small nod to her will appear somewhere in the game.
+* Repentance is planned to be released on consoles in 2021.
+* Although the game has been delayed, the planned reworks on Delirium and the Void are still intended to be released after the launch. The remaining time before the release will mainly be used to fine-tune and test the new content.
+* [[Keeper|The Keeper]] will wear a noose.
+* Repentance will increase the general difficulty of the game.
+
+=== January 5th ===
+Edmund McMillen [https://twitter.com/edmundmcmillen/status/1346654949254389762 stated on Twitter] that Vinh has added 34 new unlockables to Repentance that were designed "like yesterday".
+
+* 34 is a recurring number that has been popping up a lot recently on Edmund's Twitter and may have something to do with a new ARG.
+
+=== January 8th ===
+Edmund posted a [https://store.steampowered.com/news/app/250900/view/2944758124782297380 new blog post], in which he presented a new soundtrack and answered some questions regarding the release of the upcoming DLC.
+
+The new soundtrack is the remake of the title track "Genesis" called "Genesis II".
+{{#ev:youtube|https://www.youtube.com/watch?v=7YKBW1y4sCw}}
+
+New info:
+* Repentance will cost $14.99.
+* The player must own Rebirth, Afterbirth, and Afterbirth+ in order to play Repentance.
+* Repentance will not come on Mac but will be released on more than one console.
+* There will be no booster packs, but small fixes and balance updates post-launch.
+
+The blog page also included a gif of Isaac fighting a Holy Bony and a couple of [[anti:Polty|Polties]] in the Cathedral.
+
+[[File:PoltiesInCathedral.gif]]
+
+Details from the gif include:
+* Items from Antibirth:
+** [[anti:Bird's Eye|Bird's Eye]]
+* New trinket:
+** A new trinket that looks like {{i|Eden's Blessing}} but red. While its effect is not confirmed, it's presumed to be Modeling Clay from Four souls, which copies the effect of another item in the form of a trinket.
+* {{i|White Pony}} was reworked:
+** The item recharges in only 2 rooms instead of 6, just like previously seen normal {{i|A Pony}}.
+** The light beams now follow Isaac instead of spawning randomly during his charge attack.
+** The charge attack makes Isaac leave a trail of his own copies, similar to charging with the [[anti:Mars|Mars]].
+* Dust cloud effect spawned after Holy Bony's death looks smoother than the similar effect from other enemies in the game.
+
+=== January 13th ===
+Edmund McMillen [https://twitter.com/edmundmcmillen/status/1349247857740509186 held a new AMA on Twitter], revealing some new information:
+
+* A user asked if beating [[Delirium]] would still be the definitive ending, which he answered by saying "[https://twitter.com/edmundmcmillen/status/1349258613303377920 You’ll need to wait and see huh?]", leading to the possibility of a new ending, or even a new final boss.
+* Repentance will have a new ending cutscene.
+* Edmund said a new transformation could be coming, but not what we would expect.
+
+=== January 15th ===
+Edmund writes a new [https://store.steampowered.com/news/app/250900/view/4441079842344456644 blog post] showcasing some additions, mainly to the Downpour.
+
+{{#ev:youtube|https://www.youtube.com/watch?v=5lvk80pAGqw&}}
+
+[[File:DownpourFissureGif.gif]]
+[[File:NeptunusGameplay.gif]]
+[[File:BloatyGameplay.gif]]
+[[File:MinMinGameplay1.gif]]
+[[File:MinMinGameplay2.gif]]
+
+New enemies:
+
+* A new enemy called Fissure, based on its namesake from The End Is Nigh. It is a skull-like enemy that bounces diagonally around the room. They can be killed but will spawn continuously until the rest of the room is cleared.
+** There is a separate enemy called [[anti:Fissure|Fissure]] in Antibirth, which suggests that this enemy has either been renamed or removed from the game entirely.
+* A previously-seen variant of the [[Fatty]] called Bloaty. It wanders around the room aimlessly, occasionally stopping to shoot a line of green shots and creep in a random direction, and also leaves creep when it dies.
+* More gameplay of the Min Min boss, showcasing the transition to her second phase.
+
+New items:
+
+* Neptunus, a new [[anti:Planetarium#Planetarium Items|Astrological Sign]] item. Originally cut from Antibirth, this item passively charges an inaccurate stream of tears when not firing.
+* A new active item that looks like a bloody, demonic skull and charges when the player takes damage.
+* A new active item that looks like a paper doll chain. This may have something to do with the charmed [[Drowned Hive]] directly next to the player.
+* A new passive item that resembles a large green-colored bean.
+* A new passive item that looks like a horde of flies. It appears to spawn a slow-moving [[Pretty Fly]] familiar when the room is cleared.
+* A new trinket that looks like a circuit board.
+* A new trinket that looks like a faded piece of paper with red symbols on it.
+* A new trinket that looks like an 8-shot ring cap, a teething ring, or a bracelet.
+
+Other details:
+
+* A new version of River of Despair ("Despare" appears to be a typo), with updated mixing and a new layer.
+* [[??? (Character)|???]] has a new costume for {{i|Ouija Board}}.
+* [[Drowned Charger]]s have an updated appearance.
+
+=== January 21st ===
+Edmund McMillen [https://twitter.com/edmundmcmillen/status/1352149908619362304 held a new AMA on Twitter] where he confirmed the following information:
+
+* There will be [https://twitter.com/edmundmcmillen/status/1352150536829587458 10] new [[challenges]] in total on Repentance.
+
+You can now pre-order Repentance on it's [https://store.steampowered.com/app/1426300/The_Binding_of_Isaac_Repentance/ Steam store] page.
+
+=== January 22nd ===
+A [https://steamcommunity.com/games/250900/announcements/detail/3046090385089369964 new blog post] written by Edmund McMillen focusing on pre-order content.
+
+[[File:Aludofortwoplease.gif]][[File:Lilithandherbabies.gif]]
+
+[[File:Funnymissiles.gif]]
+
+Details from the gifs include:
+
+* Items from Antibirth:
+** [[anti:Rocket In A Jar|Rocket in a Jar]]
+* New Items:
+** An active item with 12 charges that resembles a key in a capsule. When the room is cleared, the key changes into a heart. The white outline implies that the item can be used without being fully charged.
+** A trinket that resembles an RC Controller, which allows familiars to mimic the player's movement and stop on command.
+*** Controlling the familiars might act exactly like how the player can control just Jacob and not Esau by holding down the Drop button (might be bound to a different button since the item is a trinket.)
+** An item that resembles Guppy's Eye from Four Souls.
+** A trinket that spawns a friendly Dip when the room is cleared. Similar to the poop friends created by [[anti:Dirty Mind|Dirty Mind]].
+* Other Details:
+** {{i|The Ludovico Technique}} now synergizes properly with {{i|Incubus}} and {{i|Explosivo}}.
+** {{i|Explosivo}}'s sticky tears explode after a shorter duration of time.
+** 120 Volt appears to have a different costume from Antibirth. Its effect does not trigger in the gif or is potentially changed.
+** More familiars now contribute to the Conjoined transformation.
+** Familiars shoot faster now.
+** [[Crazy Long Legs]] attack more frequently.
+** A new synergy with Rocket in a Jar, {{i|Dr. Fetus}}, and {{i|Soy Milk}}.
+** {{i|Dr. Fetus}} has a more detailed costume.
+** [[Clotty|Clots]] shoot faster, and more often.
+** Smoke and explosion particles have been updated.
+
+=== January 29th ===
+Edmund posted another [https://steamcommunity.com/games/250900/announcements/detail/3041587419817959591 blog post], focusing on new unique synergies.
+
+[[File:Parasite-tech synergy.gif]]
+* Anti-Gravity and Technology, as well as Technology and The Parasite.
+
+[[File:Brim-continuum synergy.gif]]
+* Brimstone and {{i|Continuum}}, using Marked to better showcase the interaction.
+
+[[File:Mom's knife-parasite-prism.gif]]
+* Mom's Knife, The Parasite, Ring Worm and {{i|Angelic Prism}}.
+
+[[File:Tech-monstro's lung synergy.gif]]
+* Technology and Monstro's Lung.
+
+[[File:Soy milk-brim.gif]]
+* Brimstone and Soy Milk.
+
+[[File:Soy milk-monstro's lung synergy.gif]]
+* Monstro's Lung and Soy Milk.
+
+[[File:Tech-choc milk synergy.gif]]
+* Technology, Chocolate Milk, and Cursed Eye.
+
+* Other details:
+** [[Red Maw]] has an updated sprite.
+** Technology has a new charging animation.
+
+== February ==
+=== February 3rd ===
+Edmund McMillen schedules a premiere of the Mausoleum track "Walls of Denial" on his YouTube channel, scheduled for February 5, 12:00 PM PST.
+
+{{#ev:youtube|https://www.youtube.com/watch?v=aYeLVR2xiyc}}
+
+=== February 5th ===
+Edmund uploaded a new [https://store.steampowered.com/news/app/250900/view/3042713953397536274 blog post] with a link to the premiere of the Mausoleum track. It mainly focused on Four Souls content with no further information on Repentance itself.
+
+=== February 12th ===
+A new [https://store.steampowered.com/news/app/250900/view/5500554185526321124 blog post] was posted by Nikola. It focused on new enemies.
+
+[[File:Bulb Fly gif.gif|400px]]
+[[File:Grudge gif 1.gif|400px]]
+[[File:Grudge gif 2.gif|400px]]
+[[File:Willow gif.gif|400px]]
+[[File:Lvl 2 Willow gif.gif|400px]]
+[[File:Lvl 2 Willow gif 2.gif|400px]]
+[[File:Holy Mulligan gif.gif|400px]]
+
+Details from the gifs include:
+
+* New enemies:
+** Previously seen yellow flies are called Bulb Flies. They move erratically and take away charge from your active item instead of dealing damage. They appear in special rooms.
+** Previously seen [[Poky]] variant is called a Grudge. It appears in the Mausoleum and charges at Isaac when he aligns with it, stopping once it hits a wall and staying there. It can also kill enemies and push-buttons.
+** Level 2 Willos, which orbit enemies instead of Isaac while shooting projectiles, and switch to a new enemy if the one they were previously orbiting was killed.
+** Holy Mulligans, which spawn [[Angelic Baby|Angelic Babies]].
+* Enemies from Antibirth:
+** [[anti:Cursed Globin|Cursed Globin]]
+* New Items
+** A black and red dice item.
+** An item that resembles a ketchup packet.
+** A familiar that charges up and creates a black ring, similar to {{i|Maw Of The Void}}.
+* New Trinkets
+** A soul heart surrounded by a blue aura, possibly a resprite of [[anti:Beth's Faith|Beth's Faith]] from Antibirth.
+** A pair of red lips.
+* New Details
+** [[Angelic Baby|Angelic Babies]] have animated wings.
+** Angelic Babies can be seen in the gif firing a single blood shot instead of three, though this may only apply to the ones spawned by Holy Mulligans.
+** [[Leech (Enemy)|Leeches]] have quicker animations.
+** Cursed Globins start regenerating instantly after splitting in two.
+** Previously seen jar/capsule item that had a key and heart now contains a poop. Its effect is still unknown.
+** {{i|Roid Rage}} appears to have been nerfed to give a 0.3 Speed increase.
+
+=== February 17th ===
+Edmund tweeted [https://twitter.com/edmundmcmillen/status/1362183753305522177 about the status of Repentance], stating that it is over 98% done. He also had a Q&A where he answered questions about [https://twitter.com/Guwahavel/status/1361937184362815492 sound design], [https://twitter.com/NUKEmajestic/status/1361937286829662208 visual updates], [https://twitter.com/userkup/status/1361937851131125772 character reworks], and [https://twitter.com/JaydenLouis10/status/1361936724134424576 two] [https://twitter.com/SoftAndWet16/status/1361938975783604226 questions] relating to [[The Lost]]'s [[D4]] interaction with [[Holy Mantle]].
+
+=== February 19th ===
+Aost] by newcomer SnakeBlock showcases even more graphical changes and overhauls for Repentance.
+
+[[File:RepSlogGif.gif|400px]]
+[[File:RepPlanetoidGif.gif|400px]]
+[[File:RepLokiGif.gif|400px]]
+[[File:RepGurdyJrGif.gif|400px]]
+[[File:RepVisGif.gif|400px]]
+[[File:RepChubGif.gif|400px]]
+[[File:RepCavesRocks.png|400px]]
+[[File:RepFloodedCavesRocks.png|400px]]
+[[File:RepDepthsRocks.png|400px]]
+[[File:RepRespriteGif.gif]]
+
+* New enemies:
+** Slog, a variant of [[Guts]] that appears in the Dank Depths. It charges at Isaac if lined up, not stopping until it hits a wall or obstacle, while constantly leaving a trail of [[Creep#Black Creep|Black Creep]].
+** Planetoid, a new enemy that appears in [[Chapter 4]]. It flies around the room, shooting tears that orbit around itself and occasionally farts to push the tears into a further orbit.
+
+* Items from Antibirth:
+** [[anti:Damocles|Damocles]]
+** [[anti:120 Volt|120 Volt]] has a new effect: it passively shocks enemies when Isaac is standing near them.
+
+* New items:
+** A passive item that looks like an Emperor card.
+** A passive item that looks like a stapler.
+** A previously seen passive item now seen in clearer detail, which is a line of five grey babies.
+** An active item that looks like a wooden box with a keyhole.
+** An active item that looks like a charred stick.
+** A trinket that looks like a blonde lock of hair.
+** A trinket that looks like a cursed penny.
+** A trinket that looks like a heart with a "Mom" label.
+** A trinket that looks like a red battery.
+
+* Changed enemies:
+** [[Gurdy]], [[Gurdy Jr.]], [[Loki]], [[Pin]], [[The Frail]], [[Chub]], [[Carrion Queen]], [[Chubber]], [[Vis]], [[The Cage|Cage Vis]], [[Boom Fly]], [[Red Boom Fly]], [[Brain]], [[Dank Globin]], and [[Dank Death's Head]] all have new appearances.
+
+* Changed items:
+** [[Zodiac]], [[Blood Bag]], [[IV Bag]], [[Infestation]], and [[Mine Crafter]] all have new appearances.
+
+* Other changes:
+** There are more sprites for normal rocks and for their subtypes (such as the Tinted Rock and Bomb Rock). They may also have different appearances on alt floors.
+** Brains appear to leave updated red creep sprites on the ground.
+** [[Lil Delirium|Lil Delirium's]] Robo-Baby 2.0 form now has yellow lasers.
+** [[Bomber Boy|Bomber Boy's]] bombs now have a different appearance that is closer to the appearance of bombs in Bomberman.
+** [[Aquarius]] does more damage and now synergizes with tear effects such as [[Pinky Eye]].
+** [[Gurdy Jr.]] has new blood particle effects, and has a new animation that shoots [[Pooter]]s out of her tube hole.
+** [[NO!]] either has an updated sprite or there is a new trinket that strongly resembles it.
+** Golden keys have a unique icon on the minimap.
+** There is a pale yellow and brown icon in the minimap as well, seen in the Gurdy Jr. gif. It could be Mom's Dressing Table, though it seems too far away from the starting room.
+
+=== February 20th ===
+Edmund tweeted [https://twitter.com/edmundmcmillen/status/1363312191118532608 that, as of right now, the new steam achievement total will be over 634].
+
+=== February 26th ===
+A [https://steamcommunity.com/games/250900/announcements/detail/3043841755831734427 new blog] was posted by Edmund, focused on the Dross.
+
+The soundtrack for the Dross, Night Soil, was revealed.
+
+{{#ev:youtube|https://youtu.be/9hhds-PZM20}}
+
+[[File:Dumps gif.gif|400px]]
+[[File:Poot Mines gif.gif|400px]]
+[[File:Clog gif 1.gif|400px]]
+[[File:Clog gif 2.gif|400px]]
+[[File:Montezuma's Revenge gif.gif|400px]]
+[[File:Dirty Mind gif.gif|400px]]
+[[File:Dross enemy concept art.png|800px]]
+
+Details from the images include:
+
+* New enemies (previously seen at PAX 2019):
+** Dumps, which chase Isaac slowly with a slug-like body, and split into a head and body once killed. The head slides and bounces around the room before preceding to quickly chase Isaac, while the body remains in place and spouts brown tears around itself until it melts away. All forms leave a trail of slippery brown creep beneath themselves, and body-less Dump heads can be found on their own in rooms as well.
+** Poot Mines, which are stationary until taking damage, upon which they fart to leave behind a gas cloud and push themselves away. They explode upon death, creating a chain reaction of explosions through the spawned gas clouds.
+
+* New items:
+** Montezuma's Revenge, which allows Isaac to charge a short-ranged [[Brimstone]]-like diarrhea laser from behind himself, independent from his normal tears.
+
+* New details:
+** Friendly tar [[Dip]]s spawned from [[anti:Dirty Mind|Dirty Mind]] and [[Poops#Black Poop|Black Poops]] will leave slowing tar creep underneath themselves.
+
+* Other details
+** Edmund mentioned that pills will be "more worth it" in Repentance.
+** Edmund also said that Hard Mode will be buffed in appropriate ways.
+** Eve's hair and {{i|Whore of Babylon}} have been further resprited since October 9, 2018.
+** [[Mimic Chest]]s now look identical to normal chests but retain the bloodstain in the righthand corner.
+
+== March ==
+=== March 1st ===
+A listing for Repentance for the PS5 appeared on the [https://www.bestbuy.com/site/the-binding-of-isaac-repentance-playstation-5/6454251.p?skuId=6454251 Best Buy store], with the release date listed as 9/30/21 for the platform. Many previously seen screenshots were included on the page, however, one of the screenshots was new and had new details included with it.
+
+[[File:PS5RepentanceIncuMarked.jpg|400x400px]]
+
+* New details:
+** [[Incubus]] now synergies with [[Marked]], including if it has [[Brimstone]].
+** [[Dank Depths]] can show up in [[Greed Mode]], along with presumably other Afterbirth alt floors.
+
+=== March 2nd ===
+A Russian [https://www.stratege.ru/ps4/games/the_binding_of_isaac_rebirth/article/105003 article] was posted that reveals screenshots with new information.
+
+[[File:Urnofsouls.png|400x400px]]
+[[File:Homingrocket.png|400x400px]]
+[[File:Darkmines.png|400x400px]]
+[[File:Oldcap.png|400x400px]]
+
+* New Items:
+** A blue heart pendant
+
+* Items from Antibirth:
+** [[anti:Urn of Souls|Urn of Souls]]
+** [[anti:Old Capacitor|Old Capacitor]]
+
+* Resprites:
+** {{i|Brother Bobby}} has a rounder head
+** {{i|Dr. Fetus}} has a transparent background
+
+=== March 5th ===
+A new [https://steamcommunity.com/games/250900/announcements/detail/3040464689838142491 blog post] from NotYourSagittarius was uploaded, showcasing many significant visual changes.
+
+[[File:3 5 Leeches.gif|400x400px]]
+[[File:3 5 Steven.gif|400x400px]]
+[[File:3 5 Duke.gif|400x400px]]
+[[File:3 5 Conquest.gif|400x400px]]
+[[File:3 5 DarkOne.gif|400x400px]]
+[[File:3 5 VsScreen.gif|400x400px]]
+[[File:3 5 BossResprites.gif|800px]]
+[[File:3 5 Shampoo.png]]
+
+* New items
+** A white upside-down cross with a blue glow around it.
+** An unknown red passive item.
+
+* Trinkets from Antibirth
+** [[anti:Broken Syringe|Broken Syringe]]
+
+* New details:
+** [[Leech (Enemy)|Leeches]] have new sprites and separate animations for when they are charging or wandering around the room.
+** Leeches seem to now be impervious to knockback while charging, preventing them from veering off in unpredictable trajectories when attacked.
+** [[Glass Cannon]] now is a 4-charge item and has a new sprite depicting it shattered, suggesting the item has been completely reworked in some fashion.
+** [[Steven]]'s projectiles spawned on death have new visuals referencing Ouroboros, and the larger Steven spawns an increased amount of projectiles when killed which can travel through rocks. It also seems like the larger Steven needs to lose most or even all of its health before detaching from the smaller Steven.
+** [[Epic Fetus]] has a new costume.
+** [[Epic Fetus]] now synergizes with [[Marked]] and [[Incubus]].
+** [[Ring Worm]] now works with [[Technology]].
+** The following bosses have received new sprites: [[Steven]], [[The Duke of Flies]], [[Famine]], [[Pestilence]], [[War]], [[Death (Boss)]], [[Conquest]], [[Headless Horseman]], and [[Dark One]].
+** The gif showcasing Conquest has a new icon for challenges with [[Isaac (Boss)]] as the end goal, and shows the player with a large amount of trinkets, [[Mom's Box]], and [[Marbles]], implying a new trinket-oriented challenge.
+** In the Dark One gif, ??? is seen exploding when getting hit and receiving a small Speed and Tears up. This is likely the effect of the previously seen dynamite trinket, or it could be something else entirely.
+** [[GB Bug]] is seen following ??? instead of bouncing around the room.
+** [[Azazel]] has a new versus screen portrait.
+** The versus screen has been visually changed to be more similar to how it looked in the Flash version.
+*** Isaac and his "platform" are larger and closer to the screen. Isaac himself also shakes. The boss he is facing and its platform are farther back. The words "<character name>", "VS", and "<boss name>" all appear individually, instead of the character name and the boss name appearing at the same time.
+
+=== March 12th ===
+A new [https://steamcommunity.com/games/250900/announcements/detail/3041591225396294143 blog post] was posted by Edmund, focusing on reworks to underpowered items.
+
+[[File:GB Bug gif 1.gif|400px]]
+[[File:GB Bug gif 2.gif|400px]]
+[[File:Glass Cannon gif.gif|400px]]
+[[File:Holy Water gif.gif|400px]]
+
+* Reworked items:
+** {{i|GB Bug}}'s new behaviour is explained. It now follows Isaac. Tapping the fire button twice launches it forward, rerolling the first enemy or consumable it contacts. It then despawns, returning after room clear.
+** {{i|Glass Cannon}} no longer lowers Isaac's health on use. If Isaac is damaged while holding it, it removes all of his health except half a soul heart (granting half a soul heart if necessary), grants the {{i|Anemic}} effect for the current room, and transforms into the Broken Cannon. Broken Cannon is a 4 room charge item that simply turns back into Glass Cannon when used.
+** {{i|Holy Water}} can now be thrown, which will create a pool of creep on the first enemy it hits. It petrifies any enemy that walks into the creep. It also uses the unused animation for shattering.
+
+=== March 17th ===
+Tyrone posted a new video to his [https://twitter.com/i/status/1372252547411415042 twitter].
+
+[[File:SaturnusTechZeroRepentance.mp4|650px]]
+
+* Items from Antibirth
+** [[anti:Saturnus|Saturnus]]
+
+* New details
+** {{i|Technology Zero}} has new visual and sound effects.
+
+=== March 18th ===
+Tyrone posted another new video to his [https://twitter.com/tyronerodriguez/status/1372616803721961474 twitter].
+
+[[File:SuplexLilPlumRepentance.mp4|650px]]
+
+* Items from Antibirth
+** [[anti:Eye Sore|Eye Sore]]
+
+* New items
+** A [[anti:Baby Plum|Baby Plum]] familiar that flies around the room shooting tears diagonally.
+** A timed-recharge active item that looks like a wrestling belt. When used, Isaac dashes forward, and if he collides with an enemy, he lifts the enemy above his head. A crosshair then appears, and after a second, Isaac suplexes the enemy to the crosshair's position, sending out rock waves in all directions. Isaac appears to be invulnerable while lifting the enemy.
+
+=== March 19th ===
+A new [https://steamcommunity.com/games/250900/announcements/detail/3032584660739939427 blog post] was posted by Edmund, detailing how True Co-op works.
+
+[[File:True Co-op 1.gif|400px]]
+[[File:True Co-op 2.gif|400px]]
+[[File:True Co-op 3.gif|400px]]
+[[File:True Co-op 4.gif|400px]]
+
+* New items
+** Cube Baby, a familiar that slides around when Isaac walks into it, dealing contact damage and slowing enemies, freezing enemies it kills (similar to [[anti:Uranus|Uranus]] in Antibirth).
+
+* Co-op details
+** When you start a normal run, players 2-4 can hit start on their gamepads while you're in the starting room, which will bring up a mini character select screen
+** Players share consumables but have their own HP and items
+** When a player dies, they respawn as a weak ghost baby that can deal minimal damage. If the boss of the current floor is killed, the ghost baby will be reborn with all the items they previously had, but with only half a heart.
+** When a player picks up a Boss Item after killing the floor's boss, another boss item will spawn for the next player to take. This won't happen to other item spawns.
+** Once all non-ghost players are dead, the run is over
+** True Co-op is local only, but can be played online through [https://store.steampowered.com/remoteplay?snr=2_groupannouncements_detail_ Steam Remote Play].
+
+Additionally, Tyrone posted a new video on [https://twitter.com/tyronerodriguez/status/1373052062695485444?s=20 Twitter].
+
+[[File:PinkingBabiesRepentance.mp4|650px]]
+
+* New details
+** {{i|The Pinking Shears}} have had their damage reduced, but the charge count is lowered from 6 to 4. The headless body has also been improved by giving it the respective body costume Isaac had and the new blood gushing visuals.
+
+=== March 20th ===
+Tyrone Rodriguez posted on his twitter [https://twitter.com/tyronerodriguez/status/1373349320565657612 the full version of the Title Screen OST]
+
+[[File:Enjoy this until the 31st - IsaacRepentance.mp4|650px]]
+
+=== March 21st ===
+Edmund did a quick [https://twitter.com/edmundmcmillen/status/1373891092618211333 AMA on his Twitter] where he confirmed the following information:
+
+* [[Tiny Planet]] will get some tweaks in Repentance.
+* A new Gameplay Trailer will be released together with the game.
+* Planetariums are present on Repentance.
+* [[Keeper|The Keeper]] will be changed in Repentance.
+* There will be incentives of some kind when taking the alternate floors.
+* Repentance will reveal more lore than it has ever revealed before.
+* Repentance will have a lot of unlockable [[Items]].
+
+In a [https://twitter.com/edmundmcmillen/status/1373894476251291652 separate tweet], Edmund confirmed that the time Repentance will be released is at Midnight from the 30th to the 31st.
+
+=== March 22nd ===
+Edmund posted a short [https://steamcommunity.com/games/250900/announcements/detail/3032584660754307402 blog post], revealing the soundtrack for the Ashpit, Absentia.
+
+{{#ev:youtube|https://www.youtu.be/e2tSTmyMPN8}}
+
+Additionally, Tyrone posted a new video on his [https://twitter.com/tyronerodriguez/status/1374093203155034112 Twitter].
+
+[[File:Who's the boss.mp4|650px]]
+
+* New Details:
+** Min Min's boss portrait is shown, along with its entire battle.
+** Little ghost sprites appear in the boss room. They don't appear to have any function aside from aesthetics, similar to the small flies and maggots that appear on other floors, with the ghosts being exclusive to Downpour.
+** ??? portrait has been resprited to be reminiscent of his flash appearance.
+
+* New Items:
+** A new Explosivo-like item that grants a chance to shoot a sticky tear that grows and makes a fart cloud after a while.
+
+=== March 23rd ===
+Tyrone posted a new video to [https://twitter.com/tyronerodriguez/status/1374456881637257225 Twitter].
+
+[[File:RainbowCreepMinesRepentance.mp4|650px]]
+
+* New Details:
+** [[Splasher]]s use the same improved graphics as [[Gusher]]s.
+** [[anti:Playdoh Cookie|Playdoh Cookie]] shoots a wider variety of colored tears than it did in Antibirth.
+*** New effects it has include: [[Charm]], [[anti:Uranus|Freeze]], and [[anti:Rotten Tomato|Marked]].
+** {{i|Jacob's Ladder}}'s functionality has been changed to how the [[anti:120 Volt|120 Volt]] item functioned from Antibirth, arcing between enemies across a shorter range. It also has received the same new sound effects as [[Technology Zero]].
+** {{i|Aquarius}} with homing tears causes the creep puddles to slide towards enemies.
+*** The item also synergizes with Playdoh Cookie, leaving multi-colored creep puddles with unique effects.
+** The Mines have been touched up and updated visually.
+** Rooms in the Mines which have lava pits have special sound effects.
+
+=== March 24th ===
+Tyrone posted a new video on [https://twitter.com/tyronerodriguez/status/1374894227700641793 Twitter].
+
+[[File:BethanyMegaKidneyBeanRepentance.mp4|650px]]
+
+* New Details:
+** {{i|Kidney Bean}} has a new sprite, synergizes with [[anti:Giant Bean|Giant Bean]] and has had its charge count lowered from 2 to 1.
+** Kidney Bean combined with [[anti:Book Of Virtues|Book of Virtues]] spawns pink wisps which create a charming fart when destroyed.
+
+=== March 25th ===
+Edmund posted a couple of screenshots of Repentance on [https://twitter.com/edmundmcmillen/status/1375173859184238592 Twitter], showing some art updates.
+
+[[File:Repentance Library door.png|400px]]
+[[File:Repentance Shop door.png|400px]]
+
+[[File:Repentance Treasure room.png|400px]]
+
+* New details:
+** [[Shop]]s, [[Vault]]s, and [[Library|Libraries]] have updated door visuals, making it easier to differentiate them. Libraries have a small book on top of the door and the keyhole is darker, vaults have a treasure chest and golden studs, and shops have a penny on top and red details.
+** [[anti:Knife Pieces|Knife Piece 1]] can be seen, confirming that the Knife Pieces are in Repentance.
+
+Later that day, Tyrone posted a new video on [https://twitter.com/tyronerodriguez/status/1375181121147727877 Twitter].
+
+[[File:ColostomiaReveal.mp4|650px]]
+
+* New details:
+** A new boss in the Dross, Colostomia, is shown.
+** {{i|Leech}} has a new animation when attacking.
+** Bot Fly's shots now home in on enemy bullets or enemies if there are no bullets.
+
+=== March 26th ===
+A new [https://store.steampowered.com/news/app/250900/view/3032584660758395998 blog post] by Edmund is released, giving hard numbers of content in the game, as well as promotional artwork by orisghost.
+
+[[File:RepentancePromoArtOri.png|650px]]
+
+* The details:
+** 22000 rooms
+** 716 items
+** 637 achievements
+** 188 trinkets
+** 322 enemies
+** 103 bosses
+** 94 tracks
+** 44 challenges
+** 17+ playable characters
+
+* When discounting previously-existing content from Rebirth and its existing DLCs, the new content is as follows:
+** 169 new items
+** 234 new achievements
+** 61 new trinkets
+** 126 new enemies
+** 31 new bosses
+** 52 new tracks
+** 9 new challenges
+** 2+ new characters
+
+* When discounting Antibirth content, the new content is as so:
+** 80 new items
+** 234 new achievements
+** 43 new trinkets
+** about 46 new enemies
+** about 15 new bosses
+** about 45 new tracks, not including the tracks unique to Antibirth for the alternative path floors, alternate path boss music, the music for the final boss of Corpse, and the planetarium track.
+** about 9 new challenges
+
+In addition, a [https://imgur.com/a/hOJU5lG secret link] was hidden inside the text of the blogpost, showing a character in the Downpour. This character is unknown, but it bears a resemblance to the cut Antibirth character [[anti:Edith|Edith]].
+
+[[File:RepentanceCharacterTeaser.png]]
+[[File:Secret link character brightness adjusted.png]]
+
+In a later interview, Edmund stated that the plus in the number of characters was a mistake, "he intended on pressing Backspace", and he just likes to add plus signs to stuff. However, there was no explanation for the secret teaser image, which implies that the plus sign was intentional and there is a secret third character.
+
+=== March 27th ===
+Tyrone posted a new video on [https://twitter.com/tyronerodriguez/status/1375872488937193472 Twitter].
+
+[[File:GlassCannonBouncerRepentance.mp4|650px]]
+
+* New Details:
+** {{i|Glass Cannon}} has new sound effects when used.
+
+=== March 28th ===
+Caesarian, a new soundtrack for [[Utero]], was revealed.
+{{#ev:youtube|https://www.youtu.be/RC1IrRc6nlA}}In addition, a period just after the sentence "36 hours remain" was hyperlinked at the end of the blogpost directing to an image of a birthday cake with candles writing the number "34." This potentially implied that something would happen 34 hours after the blogpost as well.
+
+=== March 29th ===
+Tyrone posted a new video on [https://twitter.com/tyronerodriguez/status/1376642132660736001 Twitter].
+
+* Items from Antibirth:
+** [[anti:It Hurts|It Hurts]]
+
+* Other details:
+** {{i|Technology Zero}} tears can connect between other players' tears in co-op, but only occasionally.
+
+=== March 30th ===
+Edmund posted a final [https://steamcommunity.com/games/250900/announcements/detail/3011193195393811435 blog post] where he answered a few frequently asked questions. Most was reaffirming previously-known details, although Edmund did mention potential updates for [[The Void]] and [[Delirium]] in a patch after launch.
+
+Later that day, Tyrone posted a new video on [https://twitter.com/tyronerodriguez/status/1377041629182234626 Twitter].
+
+[[File:Boomshakalaka.mp4|frame|center|Boomshakalaka!]]
+
+* New details:
+** {{i|Mama Mega!}} has a new explosion animation and sound effect.
+** Pennies have a new sound effect when picked up.
+
+Likely relating to the "34" birthday cake teaser on March 28, 34 hours after that post (or 2 hours before the release of the Repentance DLC) another blog post was made available with a [https://newtextdocument.com/f072e8cd1e log of all core gameplay changes] (some spoilers) from Afterbirth+ to Repentance.
+
+=== March 31st ===
+A launch trailer was released for the DLC on the official Nicalis channel.
+{{#ev:youtube|https://youtu.be/JUKJYuSN_KM}}
+
+Exactly after it, The Binding of Isaac: Repentance launched on Steam and on the Epic Games Store.
+
+= References =
+{{reflist}}
+
+{{nav}}
+[[Category:Repentance]]
+[[Category:Repentance pre-release material| ]]

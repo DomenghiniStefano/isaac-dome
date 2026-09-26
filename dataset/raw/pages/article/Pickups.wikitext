@@ -1,0 +1,28 @@
+{{header pickups}}
+'''Pickups''' are minor items that can be found throughout the game.
+
+'''Pickups can be appear in any of the following locations:'''
+{|
+ |
+* Placed semi-randomly inside rooms.
+* Dropped from {{E|Chest}}s.
+* Dropped by any kind of {{M|Beggar}}.
+ |
+* Dropped after clearing a [[room]].
+* Found after blasting [[Tinted Rock]]s.
+* Dropped by various {{M|Slot Machine}}s.
+ |
+* Dropped after defeating a [[Champion|Champion monster]].
+* Bought in {{R|Shop}}s.
+* Generated as part of an [[item]] effect.
+ |}
+
+== Notes ==
+* Most of the pickups that a player gets on a run will be from clearing rooms. For the logic involved in this, see [[Room Clear Awards]].
+* When the "KEEP AWAY" [[seed]] is enabled, all pickups will mimic Isaac's movements.
+* {{dlc|a}} When the "GONE SOON" seed is enabled, all pickups will quickly fade.
+* When the "CAMO DROP" seed is enabled, all pickups (and [[item]]s) will blend into the ground.
+
+{{nav|fr=Ressources}}
+[[Category:Objects]]
+[[Category:Pickups| ]]

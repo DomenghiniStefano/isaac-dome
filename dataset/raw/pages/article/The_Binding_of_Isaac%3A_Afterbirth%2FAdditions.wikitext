@@ -1,0 +1,214 @@
+<noinclude>{{page dlc|ana+}}</noinclude>
+
+== Player ==
+=== Characters ===
+{| style="border-spacing:2px" cellpadding="4" data-description="Character Overview Table"
+|- style="text-align:center; vertical-align:bottom; background:#142e59"
+!  style="width:30%" |Character
+!  style="width:30%" |[[File:Character Lilith appearance.png|82px|link=Lilith]]<br>[[Lilith]]
+!  style="width:30%" |[[File:Character Keeper appearance.png|82px|link=Keeper]]<br>[[Keeper]]
+
+|- style="text-align:center; background:#4a3026"
+! {{attribute|Health}}
+| {{heart|red}}{{heart|black}}{{heart|black}} || {{heart|coin}}{{heart|coin}}
+
+|- style="text-align:center; background:#4a3026"
+! {{attribute|Damage}}
+| {{ghost|3.5 (*1.00)}} || 3.5 (*1.20)
+
+|- style="text-align:center; background:#4a3026"
+! {{attribute|Tears}}
+| {{blindfolded}}<br>{{ghost|(+0)}} || +18
+
+|- style="text-align:center; background:#4a3026"
+! {{attribute|Shot speed}}
+| {{blindfolded}}<br>{{ghost|(1)}} || {{ghost|1}}
+
+|- style="text-align:center; background:#4a3026"
+! {{attribute|Range}}
+| {{blindfolded}}<br>{{ghost|(23.75)}} || {{ghost|23.75}}
+
+|- style="text-align:center; background:#4a3026"
+! {{attribute|Speed}}
+|  {{ghost|1.0}} || 0.85
+
+|- style="text-align: center; background:#4a3026"
+! {{attribute|Luck}}
+| {{ghost|0}} || -2
+
+|- style="text-align: center; background:#4a3026"
+! [[File:Starting Item Icon.png|16px]] Starting Pickup(s)
+| {{ghost|None}} || x1 [[bomb]]s<br>{{unlockable}} x1 [[coin]]s<br>{{unlockable}} {{t|Store Key}}
+
+|- style="text-align:center; background:#4a3026"
+! [[File:Starting Item Icon.png|16px]] Starting Item(s)
+| {{i|Incubus}}<br>{{unlockable}} {{i|Cambion Conception}}<br>{{i|Box of Friends}} || Triple shot<br>{{unlockable}} {{i|Wooden Nickel}}
+|}
+
+=== Transformations ===
+{{transformation table | where = not transformation.dlc & {{dlcset|na}} }}
+
+=== Co-op ===
+{{afterbirth Babies|1}}
+
+== Items ==
+95 new items were added in the expansion: 19 activated items and 76 passive items.
+
+=== Activated Collectibles ===
+{{collectible table | type = activated | where = not collectible.dlc & {{dlcset|na}} }}
+
+=== Passive Collectibles ===
+{{collectible table | type = passive | where = not collectible.dlc & {{dlcset|na}} }}
+
+== Trinkets ==
+29 new trinkets were added in the expansion.
+{{trinket table | where = not trinket.dlc & {{dlcset|na}} }}
+
+== Pickups ==
+=== Hearts ===
+{| class="wikitable striped" style="text-align: center"
+ ! '''Heart'''
+ ! '''Image'''
+ ! '''Worth'''
+ ! '''Additional Info'''
+ ! '''Unlocked By'''
+ |-
+ | Gold Heart || [[File:Gold Heart.png|48px]] || {{heart|red|gold}} || When a Gold Heart is lost, a few coins will be dropped around you. || {{achievement unlock|Gold Heart}}
+ |}
+
+=== Coins ===
+{| class="wikitable striped" style="text-align: center"
+ ! '''Coin'''
+ ! '''Image'''
+ ! '''Worth'''
+ ! '''Additional Info'''
+ ! '''Unlocked By'''
+ |-
+ | Lucky Penny || [[File:Lucky Penny.png|40px]] || 1 || <p style="text-align:left">Increases luck by 1 when picked up.</p> || {{achievement unlock|Lucky Pennies}}
+ |-
+ | Sticky Nickel || [[File:Nickel.png|40px]] || 5 || <p style="text-align:left">Will flip upside-down when Isaac tries to collect it. Afterwards, it will get stuck on the ground, unable to be picked up unless blasted off the ground with an explosion.</p> || {{achievement unlock|Sticky Nickels}}
+ |}
+
+=== Bombs ===
+{| class="wikitable striped" style="text-align: center"
+ ! '''Bomb'''
+ ! '''Image'''
+ ! '''Worth'''
+ ! '''Additional Info'''
+ ! '''Unlocked By'''
+ |-
+ | Gold Bomb || [[File:Golden Bomb.png|40px]] || ∞ || <p style="text-align:left">Will not add to the player's bomb count, but when picked up, it will give the player unlimited bombs for the duration of the current floor, even if the current number of bombs is 0.</p> || {{achievement unlock|Gold Bomb}}
+ |}
+
+=== Pills ===
+{| class="mw-collapsible wikitable striped" style="text-align: center"
+ ! style="width: 30px" | '''ID'''
+ ! style="width: 130px" | '''Pill'''
+ ! '''Effect'''
+ |-
+ | 28 || {{unlockable}} Percs! || <p style="text-align:left">Gives {{i|The Wafer}} effect while in the room. Unlocked by completing Challenge #24: [[PAY TO PLAY]].</p>
+ |-
+ | 29 || {{unlockable}} Addicted! || <p style="text-align:left">Makes Isaac take a full heart of damage from all sources for the current room. Unlocked by completing Challenge #24: [[PAY TO PLAY]].</p>
+ |-
+ | 30 || {{unlockable}} Re-Lax || <p style="text-align:left">For a short time, poop spawns wherever Isaac moves, like Explosive Diarrhea but with poop. A higher move speed means you can touch more tiles in the same time. A pun on laxatives. Unlocked by completing Challenge #25: [[Have a Heart]].</p>
+ |-
+ | 31 || {{unlockable}} ??? || <p style="text-align:left">Gives the Curse of the Maze effect for the remainder of the floor. The effect can stack with other [[curses]]. If no other [[curses]] are active for the floor, Curse of the Maze will appear under the level name when TAB is held. This effect cannot be negated by {{i|Black Candle}}. Unlocked by completing Challenge #25: [[Have a Heart]].</p>
+ |-
+ | 32 || One makes you larger || <p style="text-align:left">Increases Isaac's size and decreases the pitch of his voice. This effect does not increase the size of Isaac's hitbox.</p>
+ |-
+ | 33 || One makes you small || <p style="text-align:left">Decreases Isaac's size and increases the pitch of his voice. This effect decreases the size of Isaac's hitbox.</p>
+ |-
+ | 34 || Infested! || <p style="text-align:left">Destroys all poop in the room and spawns a single [[Blue Spider]] under Isaac and on each destroyed poop.</p>
+ |-
+ | 35 || Infested? || <p style="text-align:left">Spawns [[Blue Spider]]s equal to the number of enemies in the room. If there are no enemies in the room, spawns 1-3 Blue Spiders.</p>
+ |-
+ | 36 || Power Pill! || <p style="text-align:left">Activates an effect similar to {{i|The Gamekid}}.</p>
+ |-
+ | 37 || Retro Vision || <p style="text-align:left">Briefly pixelates the screen 3 times over 30 seconds.</p>
+ |-
+ | 38 || Friends Till The End! || <p style="text-align:left">Spawns three [[blue fly|blue flies]].</p>
+ |}
+
+=== Cards ===
+{{pickup table | where = not pickup.dlc & {{dlcset|na}} and type within 'card' }}
+
+=== Runes ===
+{{pickup table | where = not pickup.dlc & {{dlcset|na}} and type within 'rune' }}
+
+=== Consumables ===
+{{pickup table | where = not pickup.dlc & {{dlcset|na}} and type is null }}
+
+=== Chests ===
+; [[File:Eternal Chest.png|link=Eternal Chest]] [[Eternal Chest]]s
+* Eternal Chests are similar in appearance to Gold Chests, except they glow bright blue instead of gold, like a [[soul heart]]. They require one key to unlock, but can be reopened a random amount of times, each time requiring another key. They can be found in [[Angel Room|Angel rooms]], in [[I AM ERROR|I AM ERROR Rooms]] and rarely in a normal room. Their loot is similar to Golden Chests, but there is a 25% chance they will drop nothing upon opening. If they contain nothing or an item, they will no longer be able to be reopened.
+; [[File:Spiked Chest.png|link=Spiked Chest]] [[Spiked Chest]]s
+* Spiked Chests are purple colored chests with spikes protruding from them that will deal damage to Isaac upon opening unless he has the [[Holy Mantle]] active, which nullifies the damage, or if found in [[The Chest]]/[[Dark Room]], where they are free to open. They can be rarely found upon completing a room or in greed mode shops. Their loot is similar to Brown Chests. Unlike other chests, they do not appear on the minimap.
+
+=== Sacks ===
+; [[File:Grab Bag.png|30px|link=Mystery sack]] [[Mystery sack]]
+* Spawns 1-4 random pickups upon touching it. It will not drop any [[heart]]s, [[pill]]s or [[chest]]s, and they have an increased chance to drop [[battery|batteries]].
+
+== Entities ==
+=== Monsters ===
+{{entity table | where = not entity.dlc & {{dlcset|na}} and type within 'monster' }}
+
+=== Bosses ===
+{| style="width:70%; align:left; padding-right:2em"
+| style="text-align:center" | [[File:Boss_Rag_Man portrait.png|center|link=Rag Man]]
+| style="text-align:center" | [[File:Boss_Little_Horn portrait.png|center|link=Little Horn]]
+| style="text-align:center" | [[File:Boss_Dangle portrait.png|center|link=Dangle]]
+| style="text-align:center" | [[File:Boss_Turdlings portrait.png|center|link=Turdlings]]
+|-
+| style="text-align:center" | [[Rag Man]]
+| style="text-align:center" | [[Little Horn]]
+| style="text-align:center" | [[Dangle]]
+| style="text-align:center" | [[Turdlings]]
+|}
+{| style="width:70%; align:left; padding-right:2em"
+| style="text-align:center" | [[File:Boss_The_Frail portrait.png|center|link=The Frail]]
+| style="text-align:center" | [[File:Boss_The_Stain portrait.png|center|link=The Stain]]
+| style="text-align:center" | [[File:Boss_The_Forsaken portrait.png|center|link=The Forsaken]]
+| style="text-align:center" | [[File:Boss_Brownie portrait.png|center|link=Brownie]]
+|-
+| style="text-align:center" | [[The Frail]]
+| style="text-align:center" | [[The Stain]]
+| style="text-align:center" | [[The Forsaken]]
+| style="text-align:center" | [[Brownie]]
+|}
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align:center" | [[File:Boss_Hush portrait.png|center|link=Hush]]
+| style="text-align:center" | [[File:Boss_Ultra_Greed portrait.png|center|link=Ultra Greed]]
+|-
+| style="text-align:center" | [[Hush]]
+| style="text-align:center" | [[Ultra Greed]]
+|}
+
+=== Beggars ===
+; [[File:Bomb Bum.png|60px|link=Bomb bum]] [[Bomb bum]]
+Bomb Bums are extremely rare, and ask for bombs. Each bomb donated has a chance to have him drop 1-2 bomb pickups or an item from the Bomb Bum Item Pool. After spawning a pedestal item, the Bomb Bum will disappear and can no longer be donated to.
+
+== Environment ==
+=== Chapters ===
+{| style="width: 80%; align: left"
+| style="text-align:center" | {{stage image|Burning Basement}}
+| style="text-align:center" | {{stage image|Flooded Caves}}
+|-
+| style="text-align:center" | {{s|Burning Basement}}
+| style="text-align:center" | {{s|Flooded Caves}}
+|-
+| style="text-align:center" | {{stage image|Dank Depths}}
+| style="text-align:center" | {{stage image|Scarred Womb}}
+|-
+| style="text-align:center" | {{s|Dank Depths}}
+| style="text-align:center" | {{s|Scarred Womb}}
+|-
+| style="text-align:center" colspan="2" | {{stage image|???}}
+|-
+| style="text-align:center" colspan="2" | {{s|???}}
+|}
+
+== Challenges ==
+{{challenge table | where = not challenge.dlc & {{dlcset|na}} }}
+
+== Achievements ==
+{{achievement table | where = not achievement.dlc & {{dlcset|na}} }}

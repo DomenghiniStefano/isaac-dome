@@ -1,0 +1,37 @@
+{{header tarot cards}}
+{{Infobox card
+| name        = I - The Magician
+| id          = 2
+| recharge    = {{dlcalt|4|r=2}}
+| quote       = May you never miss your goal
+| costume     = Collectible Spoon Bender appearance.png
+| description = {{dlc|nr}} Grants [[homing tears]] for the current room.<br>{{dlc+|r}}Grants [[homing tears]] and +3 [[Range]] for the current room.{{dlc-}}
+}}
+{{cit|c}}
+
+== Effects ==
+* {{dlc|nr}} Grants [[homing tears]] for the current room.
+* {{dlc+|r}} Grants [[homing tears]] and +3 [[Range]] for the current room.{{dlc-}}
+
+== Notes ==
+* '''I - The Magician''' has the same effect as {{i|Telepathy For Dummies}}, as evidenced by the given costume.
+
+== Strategy ==
+* Since this effect only lasts for a room, it is preferably used against a boss. Homing allows to focus more on dodging.
+
+== Synergies ==
+* {{I|Tarot Cloth|r}}: Gives {{i|The Book of Belial}} effect on top of homing.
+** {{I|Tarot Cloth|r}} + {{i|Blank Card}} + {{i|Car Battery|n}} : Only damage is doubled.
+
+== Interactions ==
+* {{I|Tarot Cloth|nr}}: No effect.
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | Baby-Bender      }}
+** {{dlc|nr}} Using '''I - The Magician''' with {{I|Tarot Cloth}} unlocks Baby-bender.
+*** {{dlc|r}} Now having a special effect, '''I - The Magician''' no longer contributes twice to Baby-bender's unlock condition.
+
+== Trivia ==
+* [[wikipedia:The Magician (tarot card)|The Magician]] is the first card of a Major Arcana set.
+
+{{nav|fr=I - Le Bateleur|card}}

@@ -1,0 +1,167 @@
+{{infobox stage
+ | chapter          = 4
+ | id               = {{dlcalt|7|a=10}}
+ | id greed         = {{dlcalt|22|r=10}}
+ | level id         = 7, 8
+ | level id greed   = 4
+ | type id          = 0
+ | type id greed    = {{dlcalt|3|r=0}}
+ | degraded bosses  = Blastocyst Medium, Blastocyst Small, Chub, Dingle, The Duke of Flies, Envy, Fistula, Fistula Medium, Fistula Small, Gemini, Gluttony, Gurdy Jr., The Haunt, Larry Jr., Loki, Lust, Mega Fatty, Mega Maw, Monstro, Peep, Pin, Polycephalus, Sloth, Wrath
+ | bosses 1         = The Bloat, Conquest, Daddy Long Legs, Death, Lokii, Mama Gurdy, The Matriarch, Mr. Fred, Scolex, Sisters Vis, Teratoma, Triachnid
+ | double trouble 1 = The Cage, The Fallen, The Gate, Gurdy
+ | bosses 2         = Mom's Heart, It Lives!
+ | unlocked by      = The Womb
+}}
+
+'''The Womb''' is the fourth chapter of the game, unlocked after beating {{e|Mom}}. From the Womb onward, floors do not naturally generate item rooms or shops, and all damage taken will do a full heart of damage to Isaac's HP (unless he has {{i|The Wafer}}), regardless of the source. Like the {{s|Depths}} / {{s|Necropolis}} / {{s|Dank Depths}}, the Womb's second floor has a preset boss that will always be fought: {{e|Mom's Heart}} initially, and {{e|It Lives!}} after beating Mom's Heart 11 times.
+
+The Womb has two alternate floors. The {{s|Utero}}, which, unlike alternate floors before it, does not need to be unlocked separately from the Womb and the {{s|Scarred Womb}}.
+
+== [[Monster]]s ==
+{{entity table/header}}
+{{stage entities | Baby, Boil, Walking Boil, Bony, Death's Head, Brain, MemBrain, Charger, Clotty, I.Blob, Dip, Squirt, Dinga, Dople, Embryo, Eye, Pale Fatty, Fat Sack, Blubber, Half Sack, Fly, Attack Fly, Eternal Fly, Moter, Pooter, Full Fly, Red Boom Fly, Sucker, Spit, Fred, Globin, Gazing Globin, Grub, Gurgling, Guts, Mama Guts, Homunculus, Host, Red Host, Flesh Mobile Host, Leech, Pacer, Lump, Maw, Red Maw, Mr. Maw, Swinger, Mom's Hand, Nerve Ending, Oob, Round Worm, Para-Bite, Cod Worm, Skinny, Rotty, Spider, Crazy Long Legs, Small Crazy Long Legs, Wall Creep, Blind Creep, Rage Creep, Tumor, Vis, Double Vis, Chubber, Mask + Heart, Poky, Slide, Wall Hugger, Stone Grimace, Constant Stone Shooter, Gaping Maw, Broken Gaping Maw, Stone Eye }}
+{{stage entities | dlc = a | Flesh Death's Head, Mega Clotty, Dukie, Scarred Guts, Meatball, Mom's Dead Hand, Red Ghost, Ulcer, Scarred Double Vis, Suction Pitfall }}
+{{stage entities | dlc = a+ | Poison Mind, Fistuloid, Mr. Red Maw, Stoney, Cross Stone Shooter, Nerve Ending 2 }}
+{{stage entities | dlc = a+nr | Portal }}
+{{stage entities | dlc = r | Needle, Triple Grimace }}
+|}
+
+''Degraded Bosses:''
+{| class="wikitable mw-collapsible sortable striped"
+! Name
+! ID
+! class="unsortable" | Notes
+{{entity row minimal|Blastocyst}} | Small- and medium- form only
+{{entity row minimal|Chub}} |
+{{entity row minimal|Dingle}} |
+{{entity row minimal|The Duke of Flies}} |
+{{entity row minimal|Envy}} |
+{{entity row minimal|Fistula}} | Appears in all forms
+{{entity row minimal|Gemini}} |
+{{entity row minimal|Gluttony}} |
+{{entity row minimal|Gurdy Jr.}} |
+{{entity row minimal|Gurglings}} |
+{{entity row minimal|The Haunt}} |
+{{entity row minimal|The Hollow}} |
+{{entity row minimal|Larry Jr.}} |
+{{entity row minimal|Loki}} |
+{{entity row minimal|Lust}} |
+{{entity row minimal|Mega Fatty}} |
+{{entity row minimal|Mega Maw}} |
+{{entity row minimal|Monstro}} |
+{{entity row minimal|Peep}} |
+{{entity row minimal|Pin}} |
+{{entity row minimal|Polycephalus}} |
+{{entity row minimal|Sloth}} |
+{{entity row minimal|Wrath}} |
+|}
+
+== [[Bosses]] ==
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:Boss_Blastocyst portrait.png|center|link=Blastocyst]]
+| style="text-align: center; border: none" |[[File:Boss_Lokii portrait.png|center|link=Lokii]]
+| style="text-align: center; border: none" |[[File:Boss_Mama_Gurdy portrait.png|center|link=Mama Gurdy]]
+| style="text-align: center; border: none" |[[File:Boss_Mr._Fred portrait.png|center|link=Mr. Fred]]
+|-
+| style="text-align: center; border: none" |[[Blastocyst]]
+| style="text-align: center; border: none" |[[Lokii]]
+| style="text-align: center; border: none" |[[Mama Gurdy]]
+| style="text-align: center; border: none" |[[Mr. Fred]]
+|}
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:Boss_Scolex portrait.png|center|link=Scolex]]
+| style="text-align: center; border: none" |[[File:Boss_The_Bloat portrait.png|center|link=The Bloat]]
+| style="text-align: center; border: none" |[[File:Boss_Daddy_Long_Legs portrait.png|center|link=Daddy Long Legs]]
+| style="text-align: center; border: none" |[[File:Boss_Triachnid portrait.png|center|link=Triachnid]]
+|-
+| style="text-align: center; border: none" |[[Scolex]]
+| style="text-align: center; border: none" |[[The Bloat]] {{Dlc|nr}}
+| style="text-align: center; border: none" |[[Daddy Long Legs]] {{Dlc|nr}}
+| style="text-align: center; border: none" |[[Triachnid]] {{Dlc|nr}} {{unlockable}}
+|}
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:Boss_Teratoma portrait.png|center|link=Teratoma]]
+| style="text-align: center; border: none" |[[File:Boss_Death portrait.png|center|link=Death (Boss)]]
+| style="text-align: center; border: none" |[[File:Boss_Conquest portrait.png|center|link=Conquest]]
+| style="text-align: center; border: none" |[[File:Boss_The_Fallen portrait.png|center|link=The Fallen]]
+|-
+| style="text-align: center; border: none" |[[Teratoma]] {{Dlc|nr}}
+| style="text-align: center; border: none" |[[Death (Boss)|Death]] {{unlockable}}
+| style="text-align: center; border: none" |[[Conquest]] {{unlockable}}
+| style="text-align: center; border: none" |[[The Fallen]] {{room|Devil}}
+|}
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:Boss_Headless_Horseman portrait.png|center|link=Headless Horseman]]
+| style="text-align: center; border: none" |[[File:Boss_The_Matriarch portrait.png|center|link=The Matriarch]]
+| style="text-align: center; border: none" |[[File:Boss Sisters Vis portrait.png|center|link=Sisters Vis]]
+|-
+| style="text-align: center; border: none" |[[Headless Horseman]] {{unlockable}}
+| style="text-align: center; border: none" |[[The Matriarch]] {{dlc|a+}} {{unlockable}}
+| style="text-align: center; border: none" |[[Sisters Vis]] {{dlc|a+nr}} {{unlockable}}
+|}
+
+=== Double Trouble ===
+{| class="mw-collapsible mw-collapsed wikitable"
+! Double Trouble Bosses
+|-
+|
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:Boss_Dingle portrait.png|center|link=Dingle]]
+| style="text-align: center; border: none" |[[File:Boss_The_Cage portrait.png|center|link=The Cage]]
+| style="text-align: center; border: none" |[[File:Boss_The_Fallen portrait.png|center|link=The Fallen]]
+| style="text-align: center; border: none" |[[File:Boss_The_Gate portrait.png|center|link=The Gate]]
+|-
+| style="text-align: center; border: none" |(Double Trouble)<br>[[Dingle]]
+| style="text-align: center; border: none" |(Double Trouble)<br>[[The Cage]]
+| style="text-align: center; border: none" |(Double Trouble)<br>[[The Fallen]]
+| style="text-align: center; border: none" |(Double Trouble)<br>[[The Gate]]
+|}
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:Boss_Gurdy portrait.png|center|link=Gurdy]]
+| style="text-align: center; border: none" |[[File:Boss_Dangle portrait.png|center|link=Dangle]]
+| style="text-align: center; border: none" |[[File:Boss_Little_Horn portrait.png|center|link=Little Horn]]
+|-
+| style="text-align: center; border: none" |(Double Trouble)<br>[[Gurdy]]
+| style="text-align: center; border: none" |(Double Trouble)<br>[[Dangle]] {{dlc|a}} {{unlockable}}
+| style="text-align: center; border: none" |(Double Trouble)<br>[[Little Horn]] {{dlc|a}} {{unlockable}}
+|}
+|-
+|}
+
+=== Final Boss ===
+{{e|Mom's Heart}} will always appear in the second floor of this chapter or in the last boss room if {{cu|Labyrinth}} is active. Once {{e|It Lives!}} is unlocked, it will appear instead of Mom's Heart.
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:Boss_Mom's_Heart portrait.png|center|link=Mom's Heart]]
+| style="text-align: center; border: none" |[[File:Boss_It_Lives! portrait.png|center|link=It Lives!]]
+|-
+| style="text-align: center; border: none" |[[Mom's Heart]]
+| style="text-align: center; border: none" |[[It Lives!]] {{unlockable}}
+|}
+
+== Notes ==
+* It is possible to access the Womb before unlocking it by using {{p|Ehwaz}} or {{i|We Need To Go Deeper!}} on The Depths II.
+* Using Ehwaz or We Need To Go Deeper on Womb / Utero II will lead the Isaac to {{s|Sheol}}, which will skip any of {{e|Mom's Heart}}'s [[ending]]s.
+* Since shops no longer spawn in the Womb, it may be advisable to donate Isaac's remaining coins to the {{m|Donation Machine}} in the shop on {{s|Depths}} II.
+* {{m|Beggar}}s still have a chance to spawn in {{r|Secret Room}}s or can be spawned with {{p|XX - Judgement}}, so some coins should still be saved for them.
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | Eden, Pop!, Mama's Boy }}
+
+== Trivia ==
+* The Womb being mentioned in [[Isaac's last will]] as a "warm place" is a reference to how the inner human body temperature is quite high.
+* The Womb has a slight static filter covering the screen, possibly to represent heat.
+** {{Dlc|nr}} The {{s|Utero}} shares this same static filter.
+* In the original Binding of Isaac, {{e|Lokii}} and {{e|Teratoma}} were exclusive to the Utero.
+** {{dlc|r}} Teratoma was moved back to the Utero.
+* In flash Isaac, the Womb's backdrop had white ribs on the walls like in the The {{s|Utero}}, as both floors looked exactly the same in flash Isaac.
+
+== Music ==
+* The [[music]] for the Womb is titled ''Viscera''.<ref>[https://ridiculon.bandcamp.com/album/the-binding-of-isaac-rebirth-ost Binding of Isaac: Rebirth OST]</ref>
+** The term viscera represents the internal organs in the body.
+** {{dlc|nr}} The {{s|Utero}} shares this same track.
+* The music heard during the fight against Mom's Heart/It Lives! is called ''Ventricide''. Ventricide combines ventricle, a word that means a hollow area in an organ and is often associated with the heart, and the suffix -cide, which denotes the act of killing.
+
+== References ==
+{{Reflist}}
+
+{{nav|mom unlock|environment|fr=Utérus}}

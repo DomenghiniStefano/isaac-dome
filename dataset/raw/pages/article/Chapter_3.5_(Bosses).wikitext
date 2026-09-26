@@ -1,0 +1,32 @@
+{{header normal bosses}}
+{{page dlc|r}}
+
+== {{s|Mausoleum}} {{Unlockable}} ==
+{| style="width: 70%; text-align: center"
+ | [[file:Boss The Siren portrait.png|center|link= The Siren]]
+ | [[file:Boss The Heretic portrait.png|center|link=The Heretic]]
+ |-
+ | [[The Siren]]
+ | [[The Heretic]]
+ |}
+
+== {{s|Gehenna}} {{Unlockable}} ==
+{| style="width: 70%; text-align: center"
+ | [[file:Boss The Visage portrait.png|center|link=The Visage]]
+ | [[file:Boss The Horny Boys portrait.png|center|link=The Horny Boys]]
+ |-
+ | [[The Visage]]
+ | [[The Horny Boys]]
+ |}
+
+== Final Bosses ==
+{| style="width: 70%; text-align: center"
+ | [[file:Boss Mom portrait.png|center|link=Mom#Behavior in Mausoleum/Gehenna]]
+ | [[file:Boss Mom's Heart portrait.png|center|link=Mom's Heart#Behavior in Mausoleum/Gehenna]]
+ |-
+ | [[Mom#Behavior in Mausoleum/Gehenna|Mom]]
+ | [[Mom's Heart#Behavior in Mausoleum/Gehenna|Mom's Heart]]
+ |}
+
+{{nav|boss|fr=Chapitre 3.5 (Boss)}}
+[[Category:Bosses| ]]

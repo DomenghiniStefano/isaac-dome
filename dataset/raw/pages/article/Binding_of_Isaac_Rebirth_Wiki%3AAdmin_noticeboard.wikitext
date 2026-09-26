@@ -1,0 +1,9 @@
+== Help clarifying which page should be edited  ==
+
+Hi! I recently encountered an interesting synergy while playing as Cain, where I had obtained 20/20 and technology 2; I expected to fire two continuous beams, but this is not the case as you only fire one beam and just receive the damage penalty from 20/20. I went to see if this interaction was listed on the wiki, but I could not find anything mentioning it. I was wondering what page would be most appropriate to add this to, or if there is a page that addresses these multi-item interactions.
+
+Admin anwser : multshot items only works on tears or anything that replace tears. Tech 2 not being a replacement but an additional weapon, it was kind of logical to not mention multishot items on this page. I added the clarification on tech 2's page. Any info between two items can be added on any (even both) of the two pages. To avoid bloat, two items that don't work together and are expected to not work together shouldn't be added.
+
+can there PLEASE be a dlc filter pretty please please :D
+
+Admin answer : One is existing but not enabled by default because there are still things that are broken because of recent MediaWiki updates and with the migration. Derugon will try to work on it this week-end.

@@ -1,0 +1,263 @@
+{{infobox monster
+ | id          = 16
+ | base hp     = 13
+ | environment = {{floor|Basement}}{{floor|Cellar}}{{floor|Burning Basement}}<br>{{room|boss}}{{room|challenge}}
+ | behavior    = Walks around the room, avoiding Isaac. Upon death, spawns several flies, which can be {{E|Fly|text=Flies}}, {{E|Attack Fly|text=Attack Flies}}, and/or {{E|Pooter}}s. Can self-detonate and launch four projectiles in the cardinal directions while still releasing flies.
+}}
+{{disambig msg|the enemy|the item|The Mulligan}}
+
+'''Mulligans''' are enemies that will actively try to avoid Isaac; their eyes widen and their speed increases when doing so. When running away, they may walk over spikes or into a fire.
+
+Upon death, they spawn several {{e|Fly|text=Flies}}, {{e|Attack Fly|text=Attack Flies}} and, occasionally, a {{e|Pooter}}. Mulligans may sometimes self-detonate. If this occurs: in addition to spawning flies as normal, it will also fire four projectiles in the cardinal directions and destroy nearby objects when doing so. Mulligans cannot deal contact damage to Isaac ({{dlc|na+}} unless they are [[Champion]]s).
+
+Alternatively, if a Mulligan's health is dropped to -10 or less in one instance (i.e., by using a Bomb), it will spawn nothing on death.
+
+__TOC__
+
+{{clear}}
+
+== Variations ==
+=== Mulligoon ===
+{{infobox monster
+ | name           = Mulligoon
+ | variant        = 1
+ | base hp        = 13
+ | environment    = {{floor|Basement}}{{floor|Cellar}}{{floor|Burning Basement}}
+ | replace        = Mulligan
+ | replace chance = 9.49%
+ | behavior       = Walks around the room, avoiding Isaac. Upon death, spawns a {{e|Troll Bomb}} and fires four shots in the ordinal directions. Can self-detonate, spawn a Troll bomb, and launch eight projectiles in all directions.
+}}
+
+'''Mulligoons''' behave like Mulligans and will run away from Isaac, don't deal contact damage, and can self-detonate. They release 4 projectiles in ordinal directions and drop a {{e|Troll Bomb}} on death. If they self-detonate, they release 8 projectiles in the cardinal and ordinal directions in addition to dropping a Troll bomb.
+{{clear}}
+
+=== Mulliboom ===
+{{infobox monster
+ | name           = Mulliboom
+ | variant        = 2
+ | base hp        = 13
+ | environment    = {{floor|Basement}}{{floor|Cellar}}{{floor|Burning Basement}}<br>{{floor|Caves}}{{floor|Catacombs}}
+ | replace        = Mulligan, Mulligoon
+ | replace chance = 1%
+ | behavior       = Chases Isaac and explodes upon death or upon touching Isaac. The explosion deals a half-heart of damage instead of the regular full heart.
+}}
+
+'''Mullibooms''', unlike Mulligans, will chase Isaac at a very fast pace and explode on contact, dealing half a heart of damage. They also explode immediately if they are killed.
+{{clear}}
+
+=== Hive ===
+{{infobox monster
+ | name        = Hive
+ | id          = 22
+ | base hp     = 20
+ | environment = {{floor|Basement}}{{floor|Burning Basement}}<br>{{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{room|challenge}}
+ | behavior    = Wanders around the room, avoiding Isaac and spawning {{E|Attack Fly|text=Attack Flies}} if he gets close. Spawns a large number of flies on death, which can be {{E|Fly|text=Flies}}, {{E|Attack Fly|text=Attack Flies}}, and/or {{E|Pooter}}s.
+}}
+
+'''Hives''' behave similarly to Mulligans, evading Isaac and spawning {{E|Fly|text=Flies}}, {{E|Attack Fly|text=Attack Flies}}, and {{E|Pooter}}s upon death. However, they also occasionally spit {{e|Attack Fly|text=Attack Flies}} while running away from Isaac, and unlike Mulligans and Mulligoons, they can't self-detonate.
+
+Alternatively, if a Hive's health is dropped to -20 or less in one instance (i.e., by using a Bomb), it will spawn nothing on death.
+{{clear}}
+
+=== Drowned Hive ===
+{{infobox monster
+ | dlc            = a
+ | name           = Drowned Hive
+ | variant        = 1
+ | base hp        = 18
+ | environment    = {{floor|Flooded Caves}}<br>{{room|challenge}}
+ | replace        = Hive
+ | replace chance = 50%
+ | replace notes  = in {{s|Flooded Caves}}
+ | behavior       = Wanders around the room, avoiding Isaac and spawning {{E|Drowned Charger}}s if he gets close. Spawns 0-2 Drowned Chargers upon death.
+}}
+
+'''Drowned Hives''' behave similarly to Hives but spit out {{e|Drowned Charger}}s instead of Attack Flies. Upon death, they spawn 1-2 Drowned Chargers.
+
+Alternatively, if a Drowned Hive's health is dropped to -20 or less in one instance (i.e., by using a Bomb), it will spawn nothing on death.
+
+{{dlc|r}} Drowned Chargers spawned by Drowned Hives have half their usual health (11 HP).
+{{clear}}
+
+=== Nest ===
+{{infobox monster
+ | name        = Nest
+ | id          = 205
+ | base hp     = 20
+ | environment = {{floor|Basement}}{{floor|Cellar}}{{floor|Burning Basement}}<br>{{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Necropolis}}
+ | behavior    = Wanders around the room, avoiding Isaac and spawning {{E|Spider}}s if he gets close. Spawns a {{E|Big Spider}} or {{E|Trite}} upon death.
+}}
+
+'''Nests''' behave similarly to Hives, but they spit out {{e|Spider||spiders}} instead of {{e|Attack Fly|text=Attack Flies}} when being chased. They spawn a {{e|Trite}} or a {{e|Big Spider}} upon death.
+
+Unlike normal {{e|Spider||spiders}}, those spawned by the Nest die upon touching Isaac. This is not the case for spiders spawned from killing the Big spider.
+
+Alternatively, if a Nest's health is dropped to -20 or less in one instance (i.e., by using a Bomb), it will spawn nothing on death.
+{{clear}}
+
+=== Leper ===
+{{infobox monster
+ | dlc         = a+
+ | name        = Leper
+ | image name  = * {{dlc|nr|Afterbirth+}}
+ | id          = 310
+ | base hp     = 60
+ | environment = {{floor|Scarred Womb}}<br>{{room|challenge}}
+ | behavior    = Alternating between walking towards and running away from Isaac. Releases a Leper Flesh each time it takes enough damage. At low health, constantly chases Isaac and leaves behind damaging [[Creep#Red Creep|red creep]]. Spawns a Leper Flesh and {{E|Gusher}} upon death.
+}}
+
+'''Lepers''' are a Mulligan variant that alternate between walking towards and running away from Isaac. For every 15 damage they take, a chunk of their head, known as a Leper Flesh, will detach and start erratically chasing Isaac. Lepers deal contact damage if they are in this state or below. Lepers can naturally be found with some head chunks missing.
+
+After being reduced to 15 health, Lepers will chase Isaac continuously, leaving a trail of damaging [[Creep#Red Creep|Red Creep]]. Upon death, they leave behind one Leper Flesh and have a 50% chance to leave behind a Grey-colored {{e|Gusher}}.
+
+Alternatively, if a Leper's health is dropped to -25 or less in one instance (i.e., by using a Bomb), it will never spawn a Gusher on death, but will still spawn Leper Flesh.
+{{clear}}
+
+=== Leper Flesh ===
+{{infobox monster
+ | dlc         = a+
+ | name        = Leper Flesh
+ | image name  = * {{dlc|nr|Afterbirth+}}
+ | variant     = 1
+ | base hp     = 5
+ | stage hp    = 1.5
+ | environment = {{floor|Scarred Womb}}<br>{{room|Treasure}}(Scarred Womb Only)<br>Spawned from Lepers
+ | behavior    = Floats slowly toward Isaac and fires a predictive projectile at him upon death.
+}}
+
+'''Leper Fleshes''' are head chunks from Lepers that erratically chase Isaac and are spawned from Lepers for every 15 damage they take. Upon death, they fire a projectile at Isaac that predicts his movements.
+
+They will die if Isaac walks into them, though he will still take contact damage.
+{{clear}}
+
+=== Holy Mulligan ===
+{{infobox monster
+ | dlc         = r
+ | name        = Holy Mulligan
+ | id          = 22
+ | variant     = 2
+ | base hp     = 40
+ | stage hp    = 3
+ | environment = {{floor|Cathedral}}<br>{{floor|Chest}}<br>{{room|challenge}}
+ | behavior    = Wanders around the room, avoiding Isaac and spawning {{E|Angelic Baby (small)||Small Angelic Babies}} if he gets close. Spawns 1-2 {{E|Embryo}}s upon death.
+}}
+
+'''Holy Mulligans''' behave similarly to Nests and Hives; avoiding Isaac and spawning {{E|Angelic Baby (small)|text=Small Angelic Babies}} when chased. When killed, they leave behind 1-2 {{e|Embryo}}s.
+
+Alternatively, if a Holy Mulligan's health is dropped to -20 or less in one instance (i.e., by using a Bomb), it will spawn nothing on death.
+{{clear}}
+
+=== Prey ===
+{{infobox monster
+ | dlc         = r
+ | name        = Prey
+ | id          = 817
+ | base hp     = 14
+ | environment = {{floor|Downpour}}{{floor|Dross}}<br>{{floor|Flooded Caves}}<br>{{room|challenge}}
+ | behavior    = Wanders around the room, avoiding Isaac and spawning {{E|Small Leech}}es if he gets close. Spawns 3 Small Leeches upon death.
+}}
+
+'''Preys''' behave similarly to Nests and Hives; avoiding Isaac and spawning {{e|Small Leech}}es when chased. Upon death, they spawn 2-3 Small Leeches.
+
+Alternatively, if a Prey's health is dropped to -20 or less in one instance (i.e., by using a Bomb), it will spawn nothing on death.
+{{clear}}
+
+=== Mullighoul ===
+{{infobox monster
+ | dlc         = r
+ | name        = Mullighoul
+ | variant     = 1
+ | base hp     = 13
+ | environment = {{floor|Downpour}}<br>{{room|challenge}}
+ | behavior    = Wanders around the room, avoiding Isaac and spawning {{E|Willo}}s if he gets close. Spawns 1-2 Willos upon death.
+}}
+
+'''Mullighouls''' behave similarly to Nests and Hives; avoiding Isaac and occasionally spawning a {{e|Willo}} when chased. Upon death it spawns 1-2 Willos. This variant can fly over pits.
+
+Alternatively, if a Mullighoul's health is dropped to -20 or less in one instance (i.e., by using a Bomb), it will spawn nothing on death.
+{{clear}}
+
+=== Gas Dwarf ===
+{{infobox monster
+ | dlc         = r
+ | name        = Gas Dwarf
+ | id          = 874
+ | base hp     = 13
+ | stage hp    = 0
+ | environment = {{floor|Dross}}<br>{{room|challenge}}
+ | behavior    = Chases Isaac, periodically coughing up gas clouds. On death, fires an explosive shot that can detonate gas clouds it hits.
+}}
+
+'''Gas Dwarves''' act similar to Mullibooms, but hock up explosive gas as they chase Isaac. Upon death, they release an explosive {{i|Ipecac}} shot that blows up any gas clouds it hits. If it manages to reach Isaac, however, it will explode, damaging Isaac and detonating nearby gas clouds.
+{{clear}}
+
+=== Bouncer ===
+{{infobox monster
+ | dlc         = r
+ | name        = Bouncer
+ | id          = 822
+ | base hp     = 30
+ | stage hp    = 0
+ | environment = {{floor|Mines}}<br>{{room|challenge}}
+ | behavior    = Wanders around the room, avoiding Isaac. If Isaac stays close to one for long enough, it inflates and starts chasing him, gaining a chance to deflect shots and causing it to explode into lingering blood shots on death.
+}}
+
+'''Bouncers''' behave like regular Mulligans and avoid Isaac with the exception that they can still deal contact damage to Isaac in their normal state. However, after some time or when close to death, their head inflates and they start chasing Isaac. If they die or come into contact with him in this state, they explode into a large cloud of projectiles with some lingering in the air before dropping down. If they are killed before they enter this hostile state, they release 4 projectiles in the ordinal directions.
+
+They can also occasionally reflect tears in their inflated state.
+{{clear}}
+
+=== Tainted Mulligan ===
+{{infobox monster
+ | dlc         = r
+ | name        = Tainted Mulligan
+ | id          = 22
+ | variant     = 3
+ | base hp     = 100
+ | stage hp    = 8
+ | environment = {{floor|Basement}}<br>Found on the [[Ascent]] to {{s|Home}}.
+ | behavior    = Wanders around the room, avoiding Isaac and spawning 6 {{E|Ring Fly|text=Ring Flies}} if he gets close. Spawns a plethora of fly enemies upon death.
+}}
+
+'''Tainted Mulligans''' are stronger versions of Mulligans that behave similarly to Hives. They walk away from Isaac and will spit several {{E|Ring Fly|text=Ring Flies}} at him if he is near. Upon death, they spawn a plethora of fly enemies including: {{e|Fly|text=Flies}}, {{e|Attack Fly|text=Attack Flies}}, {{e|Sucker}}s, {{e|Spit}}s, {{e|Ink}}s, {{e|Boom Fly|text=Boom Flies}}, and {{e|Red Boom Fly|text=Red Boom Flies}}.
+
+Alternatively, if a Tainted Mulligan's health is dropped to -20 or less in one instance (i.e., by using a Bomb), it will spawn nothing on death.
+
+They are exclusive to the [[Ascent]] to {{s|Home}}.
+{{dlc clear}}{{clear}}
+
+== Gallery ==
+<gallery>
+File:Leper.png|Undamaged Leper.
+File:Leper 2.png|Slightly degraded Leper.
+File:Leper 3.png|Degraded Leper.
+File:Leper 4.png|Fully degraded Leper.
+File:Gusher Scarred.png|A Gusher spawned from a Leper.
+File:Prey Dross.png|A Prey's appearance in Dross.
+File:Leper Flesh Room.PNG|The only room in which a Leper Flesh appears without being spawned from a Leper.
+File:Edmund McMillen Rebirth Monster Sketches.jpg|Sketches of monsters for ''The Binding of Isaac: Rebirth'', including the Nest in the fifth square of the first row (no name included).
+File:Nest Concept.jpg|Concept drawn for Nests.
+File:Leper Concept.png|Leper concept art by _Kilburn.
+File:Holy Mulligan Concept.png|Concept art for a Holy Mulligan.
+File:Collectible Punching Bag ingame.png|The Mulligan familiar spawned by {{i|Punching Bag}}.
+</gallery>
+
+== Trivia ==
+* The Leper and Leper Flesh enemies were added in [[Booster Pack #5]].
+* The Mulligan, Mulligoon, Hive, and {{e|Swarmer}} are all the same monster in stages of decay and infestation.
+* In the original ''Binding of Isaac'', when a Mulligan self-detonated, the explosion would not break [[rock]]s.
+* Mulligans will start running in random directions instead of directly away from Isaac if he stays close to them for long enough. This behavior also applies to {{e|Small Baby Long Legs}}.
+* In the game's files, there is an unused Mulliboom self-detonation animation, an unused graphic of a Hive with a Mulligoon's face, and an unused graphic of the {{dlc|a}} Drowned Hive with a blue-tinted Mulligoon's face.
+* {{dlc|a}} Drowned Hives, along with {{e|Drowned Charger}}s (name of Drowned Charger wasn't revealed), were revealed for ''Afterbirth'' in [https://web.archive.org/web/20190316152608/http://bindingofisaac.com/post/125792901269/double-vision-afterbirth-update-18 this official ''Binding of Isaac'' post].
+* {{dlc|a+}} A leper is a person who suffers from [[wikipedia:Leprosy|leprosy]], which is a contagious disease that causes discoloration and lumping on the skin plus disfigurement and deformities.
+* {{dlc|r}} Due to the Holy Mulligan leaving behind Embryos on death, it could be suggested that it transforms Embryos into the Small Angelic Babies it spawns.
+* {{dlc|r}} Holy Mulligans, {{e|Holy Bony|text=Holy Bonies}}, and {{e|Holy Eye}}s originated as cards from the card game '''The Binding of Isaac: Four Souls'''.
+* {{dlc|r}} Gas Dwarves used to be called Fartigans.
+* {{dlc+|r}} [[Anti:Prey|Prey]], [[Anti:Mullighoul|Mullighouls]], and [[Anti:Bouncer|Bouncers]] originate from the ''Antibirth'' mod. In ''Antibirth'', Mullighouls could also appear in {{S|Mausoleum}} and had 13 stage hp.{{dlc-}}
+
+== Bugs ==
+{{bug|dlc=na+|If a Mulligan or a Mulligoon is killed before the spawning period is finished (before they move), it will count as a self-detonation.}}
+{{bug|dlc=na+|If a Nest is killed in the [[Burning Basement]], it has a chance to spawn a {{e|Flaming Hopper}}.}}
+{{bug|dlc=ana+|Rarely if you kill a Drowned Hive before their spawn period is finished (before they move), it will shoot 4 projectiles in ordinal directions but the monster won't explode.}}
+
+{{nav|booster pack}}

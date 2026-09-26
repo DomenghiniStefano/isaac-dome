@@ -1,0 +1,44 @@
+{{header reverse tarot cards}}
+{{Infobox card
+ | dlc         = r
+ | name        = XIII - Death?
+ | files name  = XIII - Inverted Death
+ | type        = card
+ | id          = 69
+ | quote       = May life spring forth from the fallen
+ | description = Creates a [[friendly]] {{E|Bony}}, {{E|Black Bony}}, {{E|Bone Fly}}, {{E|Revenant}}, {{e|Big Bony}}, or an orbital bone for each enemy killed in the current room.
+ | unlocked by = Death
+ | recharge    = 4
+}}
+
+{{cit|uc|r}}
+
+== Effects ==
+* Spawns one of the following for each enemy already killed in the current room:
+** An orbital bone familiar (very common).
+** A [[friendly]] {{e|Bony}} (uncommon).
+** A friendly {{e|Black Bony}} (rare).
+** A friendly {{e|Bone Fly|n}} (uncommon).
+** A friendly {{e|Revenant|n}} (rare).
+** A friendly {{e|Big Bony}} (uncommon chance only if the killed enemy has high enough HP)
+* {{dlc|rnr+}} Spawning an enemy other than a Bony/Black Bony is only possible after dying at least once to said enemy on the save file.
+* The chance to spawn Revenants is greatly increased in {{s|Mausoleum}} / {{s|Gehenna}} / {{s|Sheol}} / {{s|Dark Room}}.
+
+== Notes ==
+* '''XIII - Death?''''s effect is identical to that of {{i|Book of the Dead}}. ''Refer to its page to see in-depth interactions, detailed spawn chances, and notes about the bone orbitals.''
+* Up to 32 enemy deaths can be tracked in the room. Those locations are used as spawn points for bone orbitals and Bonies.
+** If Isaac leaves the room, the points are reset. Using '''XIII - Death?''' will have no effect.
+
+== Strategy ==
+* To gain the most value out of '''XIII - Death?''', it is recommended to leave enemies that can summon other enemies alive for longer, which will increase the number of dead enemies in one room.
+
+== Interactions ==
+* {{I|Tarot Cloth}}: No effect.
+
+== In-game Footage ==
+{{#ev:youtube|b3cZ6UlSuRk}}
+
+== Trivia ==
+* {{p|XIII - Death}}'s effect being to kill all enemies in the room, its antithetical effect is to raise them from the dead.
+
+{{nav|fr=XIII - La Mort ?|card}}

@@ -1,0 +1,99 @@
+The '''Angels''' are [[mini-boss]]es that can appear most commonly in {{R|Angel Room}}s. There are two angel variants: '''Uriel''' and '''Gabriel'''.
+
+== Locations ==
+* A random angel appears when destroying an angel statue in an {{R|Angel Room}} with an explosion or similar effects.
+* Dark "fallen" versions of both angels show up during the battle against {{E|Mega Satan}}.
+** Fallen Uriel has 450 health instead of 400.
+** Fallen Gabriel has 750 health instead of 660.
+* {{dlc|a}} Uriel appears after the 9th sacrifice and Gabriel appears after the 11th sacrifice in a {{R|Sacrifice Room}}.
+* {{dlc|a}} Both angels have a chance of appearing in {{R|Boss Rush}}, though it does not drop a Key Piece on death.
+* {{dlc|a+}} Angel Statues can sometimes appear in {{R|Super Secret Room}}s, and {{R|I AM ERROR}} rooms, and in a rare {{s|Cathedral}} [[closet]].
+** An angel defeated in a Super Secret Room will award a key piece, but ones defeated in an I AM ERROR room or a closet will not.
+* {{dlc|a+nr}} There's a small chance for an angel statue to replace the {{E|Satan}} statue in the {{R|Devil Room}}.
+
+== Uriel ==
+{{infobox monster
+ | name         = Uriel
+ | id           = 271
+ | is mini-boss = yes
+ | base hp      = 400
+ | environment  = <u>Mini-Boss</u><br>{{room|angel}}<br>{{dlc|a}}{{room|sacrifice}}{{room|boss rush}}<br>{{dlc|a+}}{{room|super secret}}{{room|i am error}}<br><u>Degraded Mini-Boss</u><br> {{dlc|a}}{{floor|Cathedral}}
+ | pool         = {{i|Key Piece 1}}
+ | unlocked by  = Angels
+}}
+
+'''Uriel''' wears a light blue robe. He drops {{i|Key Piece 1}} upon defeat.
+
+=== Behavior ===
+Uriel moves towards Isaac, and attempts to position himself above Isaac while doing so. He stops moving to perform the following attacks:
+* Folds his wings, then fires a spread of 5 projectiles in Isaac's direction.
+* Uriel's hands begin to glow before shooting a {{i|Revelation|dlc=x}} beam either straight downward or 2 beams in diagonal directions downwards.
+Uriel deals a whole heart of contact damage.
+{{clear}}
+
+== Gabriel ==
+{{infobox monster
+ | name         = Gabriel
+ | id           = 272
+ | is mini-boss = yes
+ | base hp      = 660
+ | environment  = <u>Mini-Boss</u><br>{{room|angel}}<br>{{dlc|a}}{{room|sacrifice}}{{room|boss rush}}<br>{{dlc|a+}}{{room|super secret}}{{room|i am error}}<br><u>Degraded Mini-Boss</u><br>{{dlc|a}}{{floor|Cathedral}}
+ | pool         = {{i|Key Piece 2}}
+ |behavior=| unlocked by  = Angels
+}}
+
+'''Gabriel''' wears a bright red robe. He drops {{i|Key Piece 2}} upon defeat.
+
+=== Behavior ===
+Gabriel moves towards Isaac, and attempts to position himself above Isaac while doing so. He stops moving to perform the following attacks:
+* Folds his wings, then either shoots a ring of 12 projectiles or {{i|Revelation|dlc=x}} beams in the diagonal directions.
+* Folds his wings, then summons an {{E|Angelic Baby}} with a maximum of 2 alive at once.
+** Angelic Babies can be damaged and killed by Gabriel's light beams.
+* Gabriel's hands begin to glow before shooting {{i|Revelation|dlc=x}} beams in the cardinal directions.
+Gabriel deals a whole heart of contact damage.
+{{clear}}
+
+== Gallery ==
+<gallery>
+File:Fallen Uriel.png|Fallen Uriel in-game.
+File:Boss Delirium Uriel ingame.png|{{dlc+|a+}} Uriel as one of {{E|Delirium}}'s forms.{{dlc-}}
+File:Fallen Gabriel.png|Fallen Gabriel in-game.
+File:Boss Delirium Gabriel ingame.png|{{dlc+|a+}} Gabriel as one of {{E|Delirium}}'s forms.{{dlc-}}
+File:Angel Statue.png|The Angel Statue inside an Angel Room.
+File:Uriel Unused.png|[[Cut Content#Cut Afterbirth .E2.80.A0 Content|Unused]] pre-release sprite of Uriel found among the Room Editor files.
+File:Gabriel Unused.png|[[Cut Content#Cut Afterbirth .E2.80.A0 Content|Unused]] pre-release sprite of Gabriel found among the Room Editor files.
+File:Fallen Angel Unused.png|[[Cut Content#Cut Afterbirth .E2.80.A0 Content|Unused]] pre-release sprite of both Fallen Angels found among the Room Editor files, with only part of one wing visible.
+File:Uriel Concept.png|Concept art of Uriel.
+</gallery>
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | Dad's Key, The Family Man, Filigree Feather, Angelic Prism }}
+
+== Notes ==
+* The angels will always alternate in order of appearance. Thus, if Uriel has just been defeated, the next angel spawn is guaranteed to be Gabriel and vice versa.
+* If the player defeats an angel, and they already have both Key Pieces, no Key Piece drops. However, if this occurs, it counts as a normal room clear, and the player may be rewarded with a [[pickup]] or [[chest]].
+* Angels only drop a Key Piece the first time they are defeated, even if Isaac does not pick up the Key Piece, subsequent kills in the same run provide no pedestal item rewards.
+** {{dlc|a+}} Angels will drop a Key Piece even if they were defeated before. Additionally, if Isaac has one of the Key Pieces, angels will always drop the other piece, even if he already skipped that piece or that particular angel normally wouldn't drop it (for instance, Uriel will drop Key Piece 2 if Isaac already has Key Piece 1 from fighting him earlier).
+* Rerolling {{i|Key Piece 1}} or {{i|Key Piece 2}} will yield an item from a pool, depending on which room the Key Pieces are in.
+** Rerolling the Key Pieces in an Angel Room will yield an item from the Angel Room item pool.
+* The angel's beams of light are rendered at a height, though their hitbox is on the ground (and their shadow is invisible). For diagonal beams, this causes Isaac to take damage even if he is below them, and allows him to partially walk into the beams if he is above them.
+* {{dlc+|a+}} Angels will drop [[item]]s from the [[Angel Room (Item Pool)|Angel Room item pool]] instead of the Key Pieces if Isaac is holding {{t|Filigree Feather}}.{{dlc-}}
+* {{dlc|a+}} Sometimes, two angel statues can appear in the same room. Destroying both at the same time will spawn both Uriel and Gabriel, but only one Key Piece will drop. If each angel is spawned and defeated separately, both will drop Key Pieces.
+** {{dlc|r}} Both angels will drop key pieces if fought at the same time.
+* Uriel and Gabriel are immune to the [[Fear]] effect.
+* When spawned inside a {{R|Sacrifice Room}}, the room is not locked, allowing Isaac to simply walk out of the fight.
+** When returning to the Sacrifice Room, the angel will be gone.
+** {{dlc|na+}} As a result, it is possible to miss obtaining {{i|Key Piece 1}} while getting {{i|Key Piece 2}}.
+
+== Trivia ==
+* [[wikipedia:Uriel|Uriel]] (or Auriel/Oriel) is one of the archangels of post-Exilic Rabbinic tradition, and also of certain Christian traditions. The name means "God is my light" - in Hebrew, ori (or uri) means "my light" and el means "god".
+* [[wikipedia:Gabriel|Gabriel]] is an archangel who typically serves as a messenger sent from God to certain people in Abrahamic religions. The name means "God is my strength".
+* Uriel and Gabriel, along with the angel statues, have no face. This is in reference to Exodus 33:20 in the Bible, when God stated:
+** ''"But," He said, "you cannot see my face, for man shall not see me and live."''
+* Uriel and Gabriel may be based on [[Wikipedia:Seraph|Seraph]] and [[Wikipedia:Cherub|Cherub]] angels. Seraphim are angels that fly above God's throne while Cherubim guard the throne.
+* {{dlc+|r}} The angels' battle theme is different depending on which route they are fought in. If they are fought on the main route, either ''Crusade'' or ''Cerebrum Dispersio'' will play; if fought on the alternate route, ''Juggernaut'' will play. They share this characteristic with {{E|The Pile}} and {{E|Reap Creep}}.{{dlc-}}
+
+== Bugs ==
+{{bug|dlc=a+|{{E|Delirium}} can transform into ''Fallen'' [[Uriel]] and ''Fallen'' [[Gabriel]] but they do not have unique Delirium skins.}}
+
+{{nav|mini-boss|fr=Anges}}

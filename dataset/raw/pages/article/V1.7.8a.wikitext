@@ -1,0 +1,45 @@
+{{infobox version
+ | dlc   = r
+ | steam = 3111431264449777699
+ | date  = 2022-03-25
+}}
+
+== Documented Changes ==
+=== Gameplay Changes ===
+* {{e|Little Horn}} now takes reduced damage from his own bombs (this prevents him from killing himself too quickly).
+* {{e|Little Horn}}'s orange champion variant now uses unique flaming troll bomb sprites and always spawns flaming troll bombs when teleporting around the room.
+* Updated several room layouts.
+* Updated localization files.
+
+=== Fixes ===
+* Fixed a bug which prevented scores from being submitted upon winning a [[daily run]].
+* Fixed missing champion sprites for {{e|Rag Man}}.
+* Fixed champion {{e|Mask of Infamy}} not using its unique champion sprites.
+* Fixed champion versions of {{e|Chub}}, {{e|Little Horn}}, {{e|Rag Man}}, {{e|Brownie}}, {{e|Peep}} and {{e|The Bloat}} not using the correct sprites for spawned enemies.
+* Fixed champion {{e|War}} and {{e|Death}} not using the correct sprites when transitioning to their second phase.
+* Fixed {{i|Lil Loki}} not counting towards the [[Conjoined]] transformation (for real this time!)
+* Fixed {{e|Clutch}}'s {{e|Clickety Clack}}s not dealing contact damage after being revived.
+* Fixed reviving as {{c|Lazarus}} resetting his [[Devil Deal]] chance even if Red Heart damage was taken during the current floor.
+* Fixed {{c|Bethany}}'s unlock condition not working as intended due to {{c|Lazarus}}' new revival mechanic.
+* Fixed several special room doors not working correctly in the [[PAY TO PLAY]] challenge.
+* Fixed {{i|Pay To Play}} locking doors that would normally be unlocked (such as the Silver {{r|Treasure Room}} in [[Greed Mode]]).
+
+=== Modding changes ===
+* Added missing enums for null items introduced by previous updates.
+
+== Undocumented Changes ==
+* {{bc|18|no square}} Champion {{e|Mega Maw}}'s eyes/face lines are slightly different
+* {{bc|1}} Champion {{e|Mega Maw}}'s eyes glow red instead of blue when it performs the pertinent attacks.
+* {{bc|18}} Champion {{e|The Gate}}'s sprite has different shading on the eyes and fleshy bits.
+* {{bc|1}} Champion {{e|The Gate}}'s sprite is considerably different stylistically and in shading.
+* {{bc|23}} Champion {{e|Mega Fatty}}'s eyes are more beady.
+* {{bc|1}} Champion {{e|Mega Fatty}}'s eyes are sunken and appear larger.
+* {{bc|5}} Champion {{e|The Bloat}} has a new sprite and his brimstone is a different colour.
+* {{bc|1}} and {{bc|7}} Champion {{e|Mom}} have unique door sprites.
+** In addition, {{bc|1}} Champion {{e|Mom}}'s eyes have red sclera.
+* The [[Onan's Streak]] Challenge is now unlocked after {{c|Judas}} and {{e|It Lives!}} are both unlocked.
+* The following items gained the [[Item Tags lazarussharedglobal|<code>lazarussharedglobal</code> item tag]]:
+** {{i|The Compass}}
+** {{i|Treasure Map}}
+
+{{nav|version}}

@@ -1,0 +1,130 @@
+{{header normal bosses}}
+
+== {{s|Basement}} ==
+{| style="width: 70%; text-align: center"
+ | [[file:Boss Dingle portrait.png|center|link=Dingle]]
+ | [[file:Boss The Duke of Flies portrait.png|center|link=The Duke of Flies]]
+ | [[file:Boss Gemini portrait.png|link=Gemini]]
+ | [[file:Boss Steven portrait.png|center|link=Steven]]
+ |-
+ | [[Dingle]]
+ | [[The Duke of Flies]]
+ | [[Gemini]]
+ | [[Steven]] {{Unlockable}}
+ |-
+ |[[file:Boss Larry Jr. portrait.png|center|link=Larry Jr.]]
+ |[[file:Boss Monstro portrait.png|link=Monstro]]
+ |[[file:Boss Gurglings portrait.png|center|link=Gurglings]]
+ |[[file:Boss Famine portrait.png|link=Famine]]
+ |-
+ |[[Larry Jr.]]
+ |[[Monstro]]
+ |[[Gurglings]]
+ |[[Famine]] {{unlockable}}
+ |-
+ |[[file:Boss Headless Horseman portrait.png|center|link=Headless Horseman]]
+ |[[file:Boss The Fallen portrait.png|center|link=The Fallen]]
+ |[[file:Boss Dangle portrait.png|center|link=Dangle]]
+ |[[file:Boss Little Horn portrait.png|center|link=Little Horn]]
+ |-
+ |[[Headless Horseman]] {{Unlockable}}
+ |[[The Fallen]] {{room|Devil}}
+ |[[Dangle]] {{dlc|a}} {{unlockable}}
+ |[[Little Horn]] {{dlc|a}} {{unlockable}}
+ |-
+ | colspan="4" style="padding: 0" |
+{| style="width: 100%"
+ |[[file:Boss Turdlings portrait.png|center|link=Turdlings]]
+ |[[file:Boss Rag Man portrait.png|center|link=Rag Man]]
+ |[[file:Boss Baby Plum portrait.png|center|link=Baby Plum]]
+ |-
+ |[[Turdlings]] {{dlc|a}} {{unlockable}}
+ |[[Rag Man]] {{dlc|anr}} {{unlockable}}
+ |[[Baby Plum]] {{Dlc|r}} {{unlockable}}
+|}
+ |}
+
+== {{s|Cellar}} ==
+{| style="width: 70%; text-align: center"
+ |[[file:Boss Blighted Ovum portrait.png|center|link=Blighted Ovum]]
+ |[[file:Boss The Duke of Flies portrait.png|center|link=The Duke of Flies]]
+ |[[file:Boss The Haunt portrait.png|center|link=The Haunt]]
+ |[[file:Boss Pin portrait.png|center|link=Pin]]
+ |-
+ |[[Blighted Ovum]]
+ |[[The Duke of Flies]]
+ |[[The Haunt]]
+ |[[Pin]]
+ |-
+ |[[file:Boss Widow portrait.png|link=Widow]]
+ |[[file:Boss Fistula portrait.png|center|link=Fistula]]
+ |[[file:Boss Famine portrait.png|center|link=Famine]]
+ |[[file:Boss Headless Horseman portrait.png|center|link=Headless Horseman]]
+ |-
+ |[[Widow]]
+ |[[Fistula]] {{dlc|nr}}
+ |[[Famine]] {{unlockable}}
+ |[[Headless Horseman]] {{unlockable}}
+ |-
+ |[[file:Boss The Fallen portrait.png|center|link=The Fallen]]
+ |[[file:Boss Little Horn portrait.png|center|link=Little Horn]]
+ |[[file:Boss Rag Man portrait.png|center|link=Rag Man]]
+ |[[file:Boss Baby Plum portrait.png|center|link=Baby Plum]]
+ |-
+ |[[The Fallen]] {{room|Devil}}
+ |[[Little Horn]] {{dlc|a}} {{unlockable}}
+ |[[Rag Man]] {{dlc|a}} {{unlockable}}
+ |[[Baby Plum]] {{Dlc|r}} {{unlockable}}
+ |}
+
+== {{s|Burning Basement}} ==
+{| style="width: 70%; text-align: center"
+ |[[file:Boss The Duke of Flies portrait.png|center|link=The Duke of Flies]]
+ |[[file:Boss Larry Jr. portrait.png|center|link=Larry Jr.]]
+ |[[file:Boss Monstro portrait.png|center|link=Monstro]]
+ |[[file:Boss The Haunt portrait.png|link=The Haunt]]
+ |-
+ |[[The Duke of Flies]]
+ |[[Larry Jr.]]
+ |[[Monstro]]
+ |[[The Haunt]] {{dlc|nr}}
+ |-
+ |[[file:Boss Famine portrait.png|center|link=Famine]]
+ |[[file:Boss Headless Horseman portrait.png|center|link=Headless Horseman]]
+ |[[file:Boss The Fallen portrait.png|center|link=The Fallen]]
+ |[[file:Boss Little Horn portrait.png|center|link=Little Horn]]
+ |-
+ |[[Famine]] {{unlockable}}
+ |[[Headless Horseman]] {{unlockable}}
+ |[[The Fallen]] {{room|Devil}}
+ |[[Little Horn]] {{unlockable}}
+ |-
+ |[[file:Boss Rag Man portrait.png|center|link=Rag Man]]
+ |[[File:Boss Dingle portrait.png|center|link=Dingle]]
+ |[[File:Boss Gurglings portrait.png|center|link=Gurglings]]
+ |[[File:Boss Gemini portrait.png|center|link=Gemini]]
+ |-
+ |[[Rag Man]] {{unlockable}}
+ |[[Dingle]] {{Dlc|r}}
+ |[[Gurglings]] {{Dlc|r}}
+ |[[Gemini]] {{Dlc|r}}
+ |-
+ |[[File:Boss Steven portrait.png|center|link=Steven]]
+ |[[File:Boss Dangle portrait.png|center|link=Dangle]]
+ |[[File:Boss Turdlings portrait.png|center|link=Turdlings]]
+ |[[File:Boss Baby Plum portrait.png|center|link=Baby Plum]]
+ |-
+ |[[Steven]] {{Dlc|r}} {{unlockable}}
+ |[[Dangle]] {{Dlc|r}} {{unlockable}}
+ |[[Turdlings]] {{Dlc|r}} {{unlockable}}
+ |[[Baby Plum]] {{Dlc|r}} {{unlockable}}
+ |}
+
+== Notes ==
+* {{e|The Fallen}} and {{e|Headless Horseman}} are universal bosses.
+
+{{nav|boss|fr=Chapitre 1 (Boss)}}
+[[Category:Modified in Afterbirth]]
+[[Category:Modified in Afterbirth+]]
+[[Category:Modified in Repentance]]
+[[Category:Bosses| ]]

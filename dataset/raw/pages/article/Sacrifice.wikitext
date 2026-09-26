@@ -1,0 +1,8 @@
+{{disambiguation}}
+
+'''Sacrifice''' may refer to:
+* {{r|Sacrifice Room}}, a type of [[special room]].
+* {{i|Sacrificial Dagger}}, an unlockable [[passive collectible]] found in {{r|Treasure Rooms}} and {{r|Devil Rooms}}.
+* {{i|Sacrificial Altar}}, an unlockable [[activated collectible]] found in {{r|Curse Rooms}} and {{r|Devil Rooms}}.
+
+{{nav}}

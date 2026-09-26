@@ -1,0 +1,80 @@
+{{infobox monster
+ | name        = MemBrain
+ | image name  = * {{dlc|nr|Rebirth}}
+ | id          = 57
+ | base hp     = 62
+ | environment = {{floor|Depths}}{{floor|Dank Depths}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|Chest}}<br>{{room|challenge}}
+ | behavior    = Slowly moves around the room, occasionally hopping and firing 8 large blood shots in all directions. Splits into 2 {{E|Brain}}s upon death.
+}}
+
+'''MemBrains''' are much larger {{E|Brain}}s that slowly move around the room and occasionally hop to fire 8 blood shots in all directions. They have a large amount of health and will split into two Brains upon death. Membrains deal a whole heart of damage with contact and projectiles.
+
+__TOC__
+{{clear}}
+
+== Variants ==
+=== Mama Guts ===
+{{infobox monster
+ | name        = Mama Guts
+ | variant     = 1
+ | base hp     = 62
+ | environment = {{floor|Necropolis}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{room|challenge}}<br>5.71% Chance to replace MemBrains
+ | behavior    = Slowly moves around the room, occasionally hopping and firing 8 large blood shots in all directions. Splits into 2 {{E|Guts}} upon death.
+}}
+
+'''Mama Guts''' are large versions of the regular {{E|Guts}}. They slowly move around the room, occasionally hopping and firing 8 large blood shots in all directions. Upon death, it splits into 2 Guts.
+{{clear}}
+
+=== Dead Meat ===
+{{infobox monster
+ | dlc         = r
+ | name        = Dead Meat
+ | variant     = 2
+ | base hp     = 62
+ | environment = {{floor|Corpse}}<br>{{room|challenge}}
+ | behavior    = Slowly moves around the room, occasionally hopping and firing 8 large blood shots in all directions that bounce off the walls. Splits into 2 {{E|Cyst}}s upon death.
+}}
+
+'''Dead Meats''' are bigger versions of the {{E|Cyst}}s that move around the room slowly, occasionally hopping which fires 8 large blood shots in all directions that bounce off the walls like {{i|Rubber Cement}}. Upon death, they split into 2 Cysts.
+{{clear}}
+
+=== Dinga ===
+{{infobox monster
+ | name        = Dinga
+ | image name  = * {{dlc|nr|Rebirth}}
+ | id          = 223
+ | base hp     = 62
+ | environment = {{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|Sheol}}{{floor|Cathedral}}<br>{{floor|Chest}}<br>{{room|boss}}{{room|challenge}}
+ | behavior    = Slowly moves around the room, occasionally hopping to spawn {{E|Dip}}s or fire 8 Brown shots in all directions. Splits 2 {{E|Squirt}}s upon death.
+}}
+
+'''Dingas''' are large {{E|Dip}}s that behave similarly to MemBrains. Dingas slide around the room aimlessly and occasionally hop, spawning Dips or shooting poop shots in 8 directions. Splits into two {{E|Squirt}}s when killed.
+{{clear}}
+
+=== Mega Clotty ===
+{{infobox monster
+ | dlc         = a
+ | name        = Mega Clotty
+ | id          = 282
+ | base hp     = 20
+ | environment = {{floor|Cellar}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{room|challenge}}
+ | behavior    = Slowly moves around the room, occasionally hopping and either firing 6 blood shots in all directions, leaving a puddle of Red Creep, or spawning a {{E|Clotty}} or a collapsed {{E|Globin}}. Splits into two {{E|Clotty|text=Clotties}} upon death.
+}}
+
+'''Mega Clotties''' slowly move around the room, occasionally hopping. When one hops, it will usually fire six blood shots around itself, but it can also alternatively leave a puddle of [[Creep#Red Creep|Red Creep]] near itself. Even more rarely, the hop may spawn a {{E|Clotty}} or a collapsed {{E|Globin}}. Upon death, it’ll split into two {{E|Clotty|text=Clotties}}. Even though the sprite shows three conjoined Clotties, it always creates two upon death, and will never spawn three.
+{{clear}}{{dlc clear}}
+
+== Gallery ==
+<gallery>
+File:Edmund McMillen Rebirth Monster Sketches.jpg|Sketches of monsters for the Binding of Isaac: Rebirth, including the Dinga in the third rectangle of the fourth row, formerly called "Guts Alt."
+</gallery>
+
+== Notes ==
+* All monsters listed on this page deal one whole heart of contact damage except for Mega Clotty which deals half a heart of contact damage.
+
+== Trivia ==
+* MemBrain is a pun on the word membrane, which means a thin, flexible layer of body tissue.
+* Mama Guts slightly resembles a digestive system.
+* {{dlc+|a}} The Mega Clotty’s behavior coincidentally bears some resemblance to a fan idea of a boss called “[[fanideas:Bosses#Mega Clotty|Mega Clotty]],” as, besides its name, this 2012 idea mentions that its behavior would be jumping up to shoot out blood shots as well as spawning one Clotty. However, the Mega Clotty is implemented as an enemy, not a boss, and some of its conceptual behaviors on the ideas wiki were never implemented for the fact that it’s purely coincidental.{{dlc-}}
+
+{{nav|fr=Membrane}}

@@ -1,0 +1,35 @@
+{{infobox monster
+ | id           = 48
+ | image name   = * {{dlc|nr|Rebirth}}
+ | is mini-boss = yes
+ | base hp      = 60
+ | stage hp     = 24
+ | environment  = <u>Mini-Boss</u><br>{{room|mini-boss}}<br>{{room|boss challenge}}<br><u>Degraded Mini-Boss</u><br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|Sheol}}{{floor|Cathedral}}<br>{{floor|Dark Room}}{{floor|Chest}}<br>{{room|challenge}}
+ | pool         = 2 {{e|Bomb}}s (75% Chance)<br>or<br>{{i|Mr. Boom}} (25% Chance)
+}}
+
+'''Wrath''' is a [[mini-boss]] based on one of the [[wikipedia:Seven Deadly Sins|Seven Deadly Sins]].
+
+== Behavior ==
+* Wrath wanders around the room randomly, occasionally standing still.
+* Throws a {{E|Bomb}} towards Isaac if he is in line of sight and then attempts to run away from the bomb.
+** Wrath takes only 20 damage (as opposed to the usual {{dlc|nr}} 60 / {{dlc|r}} 100) from his own bombs.
+Wrath deals a full heart of damage (both bombs and contact).
+
+== Notes ==
+* {{dlc|anr}} Occasionally, 2 regular Wraths appear in a Mini-Boss Room and the boss message will display "Isaac vs {{E|Super Wrath}}".
+* Isaac's bombs and {{i|Epic Fetus}} missiles deal 200 damage to Wrath regardless of modifiers or damage stat.
+* {{dlc|nr}} Wrath can drop {{i|Mr. Boom}} even if Isaac has already encountered/possessed it. 
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | The Book of Sin }}
+
+== Trivia ==
+* Wrath's behavior, his room layouts (most of the time), and his appearance are references to the ''[[Wikipedia:Bomberman|Bomberman]]'' series of games.
+* The item {{i|Mr. Mega}} gives Isaac's head a similar appearance to Wrath's.
+* The [[wikipedia:Seven Deadly Sins|Seven Deadly Sins]] that these mini-bosses are based upon are, in Christian teachings, a classification of vices from which all others are derived from.
+* Wrath's absence of eyes could be a reference to the expression "blind rage".
+
+__NOTOC__
+{{nav|mini-boss|fr=Colère}}
+[[Category:Seven Deadly Sins]]

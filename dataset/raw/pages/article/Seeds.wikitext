@@ -1,0 +1,423 @@
+{{#ev:youtube|hBHN6_yuy20|350|right}}
+<div class='page item'></div>
+'''Seeds''', essentially random strings of characters, are used as the basis for all decision making in the game. By inputting a seed manually, one can guarantee that most randomly-generated decisions will occur the same every time. For instance, two players using the same seed will find the same items in the same locations.
+
+== Notes Regarding Seed Entry ==
+* Seeds are the same on every platform as long as the game version is also the same. For instance, if you find a Rebirth seed on PC, you can use it on the 3DS version and it will be the same because the 3DS version only has Rebirth.
+* Except for some special seeds, inputting a seed will cause the 'no trophies' mark to appear. This prevents any achievements from being obtained on that particular run.
+* All alphanumeric characters are accepted except for 5, I, O, and U. On the PC version pressing the I, O, and U keys during seed entry replace them with 1, 0, and V respectively.
+* {{dlc|a}} Once a special seed has been entered, it will be permanently unlocked without needing to enter the code again. Pressing '''Q''' / '''Left Bumper''' during character selection will bring up the Easter Egg Section, in which any previously unlocked game mode can be selected. Selecting multiple modes at once is also possible.
+* On the special seed selection menu, it is possible to remove a discovered seed by focusing it and pressing Q+E+Tab on keyboard or LB+RB+X on controller.
+* In total, there are 69 special seeds.
+
+== Special Seeds ==
+{| class="mw-collapsible wikitable striped" style="text-align:center;width:100%;height:100%;"
+!style="width:30px"|'''ID'''
+!style="width:100px"|'''Seed'''
+!style="width:300px"|'''Description'''
+!'''Effects'''
+|-
+!colspan="5" | Miscellaneous
+|-
+|16
+|BASE<br>MENT
+|Infinite basements
+|[[The Basement]] repeats infinitely. {{No unlocks}}
+|-
+|11
+|KEEP<br>AWAY
+|Tricky pickups
+|[[Pickups]] mimic Isaac's movements. {{No unlocks}}
+|-
+|72
+|{{dlc|a}}<br>G0NE<br>S00N
+|Pickups time out
+|Pickups quickly fade. This includes pedestal [[items]], shop purchases, devil deals, and the {{S|Cathedral}}/{{S|Sheol}} boss chest.
+|-
+|33
+|FREE<br>2PAY
+|F2P version
+|Isaac starts with 69 coins, but all items and consumables must be bought. {{No unlocks}}
+|-
+|25
+|PAC1<br>F1SM
+|Pacifism
+|Enemies do not take damage. All rooms are considered cleared upon entering them; doors stay open, room rewards spawn, {{E|Stoney|text=Stonies}} instantly die. When in a boss room, the boss's health bar is used as a timer and slowly ticks down. At the end of the countdown, the trapdoor to the next floor appears. {{No unlocks}}
+|-
+|32
+|C0ME<br>BACK
+|Enemies respawn
+|Enemies, including bosses, respawn once Isaac leaves the room. Completing a room multiple times does not yield additional pickups. {{No unlocks}}
+|-
+|71
+|{{dlc|a}}<br>N0RE<br>TVRN
+|Point of no return
+|Boss rooms lock Isaac in, similar to the {{e|Mom}} fight.
+|-
+|24
+|BRWN<br>SNKE
+|Poopy trail
+|Isaac leaves a trail of poop behind him as he walks. {{No unlocks}}
+|-
+|73
+|{{dlc|a}}<br>ALM1<br>GHTY
+|Dog mode
+|Isaac is invincible. {{No unlocks}}
+|-
+|55
+|K1DS<br>M0DE
+|Kids' co-op mode
+|Makes [[Babies|co-op babies]] invincible. {{No unlocks}}
+|-
+|79
+|{{dlc|r}}<br>GFVE<br>LLLL
+|G Fuel!
+|Spawns a [[G FUEL!]] item in the starting room of each floor. Each copy picked up has different effects and adds various excessive "gamer style" visual and sound effects to the gameplay. Chapter 2 will always be {{s|Flooded Caves}} with neon-blue G Fuel pits. {{e|???}} will be replaced by a can of G Fuel. {{No unlocks}}
+Enables an item blacklist consisting of: {{i|Dr. Fetus}}, {{i|Mom's Eye}}, {{i|Technology}}, {{i|Loki's Horns}}, {{i|Mom's Knife}}, {{i|Brimstone}}, {{i|Technology 2}}, {{i|Epic Fetus}}, {{i|Monstro's Lung}}, {{i|The Ludovico Technique}}, {{i|Marked|n}}, {{i|Tech X|n}}, {{i|Trisagion|n}}, {{i|Spirit Sword|n}}, {{i|C Section|n}}.
+|-
+!colspan="5" | [[Curses]]
+|-
+|56
+|{{dlc|a}}<br>DARK<br>NESS
+|Permanent darkness
+|Permanent Curse of Darkness.
+|-
+|57
+|{{dlc|a}}<br>LABY<br>RNTH
+|Inescapable labyrinth
+|Permanent Curse of the Labyrinth. {{No unlocks}}
+|-
+|58
+|{{dlc|a}}<br>L0ST
+|Hopelessly lost
+|Permanent Curse of the Lost.
+|-
+|59
+|{{dlc|a}}<br>VNKN<br>0WN
+|Forever unknown
+|Permanent Curse of the Unknown.
+|-
+|60
+|{{dlc|a}}<br>MAZE
+|Unending maze
+|Permanent Curse of the Maze.
+|-
+|61
+|{{dlc|a}}<br>BL1N<br>D
+|Incurable blindness
+|Permanent Curse of the Blind.
+|-
+|62
+|{{dlc|a}}<br>CVRS<br>ED
+|Horrible curse
+|Permanent Curse of the Cursed.
+|-
+!colspan="5" | Curse Immunity
+|-
+|63
+|{{dlc|a}}<br>N1TE<br>L1TE
+|Illuminate darkness
+|Provides immunity to Curse of Darkness. {{No unlocks}}
+|-
+|64
+|{{dlc|a}}<br>THRE<br>AD
+|Escape the labyrinth
+|Provides immunity to Curse of the Labyrinth. {{No unlocks}}
+|-
+|65
+|{{dlc|a}}<br>F0VN<br>D
+|I once was lost
+|Provides immunity to Curse of the Lost. {{No unlocks}}
+|-
+|66
+|{{dlc|a}}<br>N0W1<br>KN0W
+|Know the unknown
+|Provides immunity to Curse of the Unknown. {{No unlocks}}
+|-
+|67
+|{{dlc|a}}<br>PATH<br>F1ND
+|Stay out of the maze
+|Provides immunity to Curse of the Maze. {{No unlocks}}
+|-
+|68
+|{{dlc|a}}<br>BRA1<br>LLE
+|Heal the blind
+|Provides immunity to Curse of the Blind. {{No unlocks}}
+|-
+|70
+|{{dlc|a}}<br>BLCK<br>CNDL
+|Total curse immunity
+|Provides immunity to all curses. {{No unlocks}}
+|-
+!colspan="5" | Damage Modifiers
+|-
+|47
+|HARD<br>HARD
+|Full heart damage
+|Isaac takes a full heart of damage from all sources.
+|-
+|48
+|BRTL<br>B0NS
+|Twelve heart damage
+|Isaac takes twelve hearts of damage from all sources.
+|-
+|26
+|D0NT<br>ST0P
+|Don't stop moving
+|Isaac takes damage if he stops moving.
+|-
+|27
+|THEG<br>H0ST
+|Damage on a timer
+|Every 45 seconds, a ticking will begin, and after 5 seconds, Isaac will take 1/2 heart of damage. Damage increases to 1 heart in Chapter 4 and beyond. Having invincibility during the time when damage should be inflicted blocks the damage.
+|-
+|28
+|30M1<br>N1TS
+|30 minute limit
+|Gives a time limit of 30 minutes to beat the game. When the timer hits 29:45, a timer starts ticking, and after 30:00, Isaac takes damage every second.
+|-
+!colspan="5" | Control Modifiers
+|-
+|52
+|{{dlc|a}}<br>1CES<br>KATE
+|Ice physics
+|Makes the ground slippery.
+|-
+|74
+|{{dlc|a}}<br>BRAV<br>ERY
+|Bravery
+|Isaac automatically fires tears in the same direction that he moves. Removes the ability to fire tears manually.
+|-
+|75
+|{{dlc|a}}<br>C0WR<br>D1CE
+|Cowardice
+|Isaac automatically fires tears in the opposite direction that he moves. Removes the ability to fire tears manually.
+|-
+|12
+|DRAW<br>KCAB
+|Reversed controls
+|All movement and firing keys are reversed.
+|-
+|76
+|{{dlc|a}}<br>AX1S<br>ALGN
+|Axis aligned controls
+|Isaac cannot move diagonally.
+|-
+!colspan="5" | Camouflage
+|-
+|3
+|CAM0<br>K1DD
+|Camouflage player
+|Isaac blends into the ground.
+|-
+|4
+|CAM0<br>F0ES
+|Camouflage enemies
+|All enemies blend into the ground.
+|-
+|5
+|CAM0<br>DR0P
+|Camouflage stuff
+|Pickups and items blend into the ground.
+|-
+|6
+|WH0A<br>WHAT
+|Camouflage EVERYTHING!
+|Isaac, enemies, pickups, and items all blend into the ground.
+|-
+|14
+|1MN0<br>B0DY
+|Invisible player
+|Isaac becomes completely invisible.
+|-
+|15
+|BL1N<br>DEYE
+|Invisible enemies
+|All enemies become completely invisible.
+|-
+!colspan="5" | Player Appearance
+|-
+|46
+|THEB<br>LANK
+|The blank
+|Isaac has no face.
+|-
+|53
+|KAPP<br>A
+|Grayscale
+|Isaac turns gray.
+|-
+|54
+|H0H0<br>H0H0
+|Christmas
+|Isaac wears a Christmas hat.
+|-
+|35
+|T0PH<br>EAVY
+|Big head mode
+|Isaac's head is large.
+|-
+|36
+|T1NY<br>D0ME
+|Tiny head mode
+|Isaac's head is small.
+|-
+|37
+|PTCH<br>BLCK
+|Black body
+|Isaac and his tears turn completely black.
+|-
+!colspan="5" | Visual Effects
+|-
+|38
+|TEAR<br>GL0W
+|Glowing tears
+|Isaac's tears glow. {{No unlocks}}
+|-
+|23
+|BL00<br>00DY
+|Extra gore
+|Makes a lot more blood appear after enemies die.
+|-
+!colspan="5" | HUD Modifiers
+|-
+|8
+|B00B<br>T00B
+|Cathode rays!
+|Applies a filter that makes the game look like it's being played through a cathode ray tube.
+|-
+|9
+|DYSL<br>EX1A
+|Dyslexia
+|All in-game text is rearranged.
+|-
+|10
+|KEEP<br>TRAK
+|No HUD
+|Removes the HUD entirely. This affects the map, health, consumables, held items, pickup text, floor names, and more.
+|-
+|29
+|MED1<br>C1NE
+|Mystery pills
+|All pill names and descriptions show ???.
+|-
+|30
+|FACE<br>D0WN
+|Mystery cards
+|All card names and descriptions show ???.
+|-
+!colspan="5" | Enemy Modifiers
+|-
+|13
+|CHAM<br>P10N
+|Champion enemies
+|All enemies turn into [[Monsters#Champions|champions]] if possible. {{No unlocks}}
+|-
+|17
+|C0CK<br>FGHT
+|Charmed enemies
+|All enemies are permanently [[Effects#Status Effects|charmed]]. {{No unlocks}}
+|-
+|18
+|C0NF<br>ETT1
+|Confused enemies
+|All enemies are permanently [[Effects#Status Effects|confused]]. {{No unlocks}}
+|-
+|19
+|FEAR<br>M1NT
+|Scaredy enemies
+|All enemies are permanently [[Effects#Status Effects|scared]]. {{No unlocks}}
+|-
+|20
+|FRA1<br>DN0T
+|Skittish enemies
+|Every few seconds, all enemies become [[Effects#Status Effects|scared]]. {{No unlocks}}
+|-
+|21
+|CLST<br>RPH0
+|Asocial enemies
+|All enemies are permanently [[Effects#Status Effects|charmed and scared]]. {{No unlocks}}
+|-
+!colspan="5" | Sound Modifiers
+|-
+|7
+|FART<br>SNDS
+|Farty sounds
+|All sound effects are replaced with farts.
+|-
+|1
+|SL0W<br>4ME2
+|Movement tempo
+|Music speed is affected by Isaac's walking speed.
+|-
+|2
+|HART<br>BEAT
+|Health tempo
+|The lower Isaac's health is, the slower the music is and vice versa.
+|-
+|41
+|ANDA<br>NTE
+|Downtempo
+|Music is slowed down.
+|-
+|42
+|LARG<br>HET0
+|Downtempo--
+|Music is significantly slowed down.
+|-
+|43
+|ALLE<br>GR0
+|Uptempo
+|Music is sped up.
+|-
+|44
+|PRES<br>T0
+|Uptempo++
+|Music is significantly sped up.
+|-
+!colspan="5" | Video Games
+|-
+|77
+|{{dlc|r}}<br />SVPE<br/>RH0T
+|SuperHot
+|While Isaac is not moving, time runs extremely slowly. Isaac's speed and fire rate remain normal at all times. {{No unlocks}}
+|-
+|78
+|{{dlc|r}}<br />M0DE<br/>SEVN
+|Retro vision
+|Screen has a permanent [[Pills|Retro-Vision]] effect.
+|-
+
+|}
+
+== Notes Regarding Seed Effects ==
+* While the BRTL B0NS seed is enabled, getting hit will not result in death if Isaac possesses {{e|Red Heart}}s as well as {{e|Soul Heart}}s or {{e|Black Heart}}s. Instead, the Soul hearts and/or Black hearts will be completely depleted, leaving Isaac with only his Red hearts. You can also prevent death with {{e|Bone Heart}}s, as they will get depleted without destroying the bone heart and protecting the rest of the hearts, and can be refilled with Red Hearts. The soul hearts in front of them will get destroyed though.
+* If the ICES KATE seed is enabled, purple champion monsters are be much more dangerous, as escaping their gravitational pull becomes almost impossible.
+* When playing with the KAPP A seed enabled, certain items will override the grayscale, such as {{i|Kidney Stone}}.
+* When the seed PACI FISM is enabled, effects that kill enemies on impact such as {{I|Euthanasia}} and {{I|Little Horn}} still remove enemies, but they will respawn when the room is re-entered. No effect occurs after killing all in a room.
+* Some seeds can not be enabled alongside other certain seeds. For example, the PTCH BLCK seed cannot be enabled alongside THEB LANK.
+* It is possible to access other chapters while playing the BASE MENT seed. Stepping into the beam of light after using {{i|Genesis}} can take Isaac to chapter II, avoiding the standard loop after the first two basement floors. Additionally, {{R|Sacrifice Room}}s after 12 uses can be used at any point to teleport to the {{s|Dark Room}}, making it possible to see a proper ending and finish the run.
+
+== Trivia ==
+* Many of the special seeds can be found by using either the  {{M|Fortune Telling Machine}} or the {{P|Rules Card}}.
+* Some special seeds were shared with the community by the developers.
+* If an [[item]] that would appear on a seed is not unlocked yet, it will be replaced by another item that is unlocked.
+* The "DYSL EXIA" seed is a reference to [[Wikipedia:Dyslexia|dyslexia]], a disorder that causes difficulties in spelling, reading, and writing.
+* The seeds "ANDA NTE", "LARG HET0", "ALLE GR0", and "PRES T0" refer to ''andante'', ''larghetto'', ''allegro'', and ''presto'', respectively. These are names of musical [[wikipedia:Tempo|tempos]], which are the speeds of given pieces of music.
+* The "KAPP A" seed is a reference to a commonly used Twitch emote "KAPPA".
+* The "ALM1 GHTY" seed's description is, "Dog Mode". This is referencing the term "God mode", which is used to describe someone or something in a game that has invincibility, usually attained through the use of cheats.
+** "Dog Mode" is also a reference to the 1994 first-person shooter game ''[[wikipedia:Rise of the Triad|Rise of the Triad]]'', which has a power-up of the same name.
+* The "FEAR M1NT" seed is a reference to [[wikipedia:spearmint|spearmint]], an herb popularly used for flavoring food.
+* Although the "T1NY D0ME" seed also makes Isaac's hitbox somewhat smaller and could be considered beneficial, it does not prevent achievements.
+* {{dlc|r}} The "SVPE RH0T" seed is a [[References|reference]] to the 2016 first-person shooter game ''[[wikipedia:Superhot|Superhot]]''.
+* {{dlc|r}} "M0DE SEVN" i.e. Mode 7 is a [[wikipedia:Mode 7|graphics mode]] on the Super Nintendo Entertainment System console that often results in pronounced pixelation.
+* {{dlc|r}}"GFVE LLLL" is used as 11/4/2022 and 3/24/2023's daily runs.
+* {{dlc|r}} While using {{c|Tainted Forgotten|n}} in the "SVPE RH0T" seed, time will only move when the skeleton moves.
+
+== Bugs ==
+{{bug|dlc=a|Entering the [[Blue Womb]] while using the "N0RE TVRN" seed is not recommended as the door leading to the Boss Room will not spawn, thereby trapping the player and ending the run.}}
+{{bug|Returning to the menu from a run that uses a seed that alters audio speed will cause the main menu audio to remain altered. This resets upon entering a new run, or exiting the game.}}
+{{bug|dlc=r|The PAC1F1SM seed does not allow you to finish a The Beast run. Dogma never transforms in his second phase. If you manage to go to the Beast fight (with the debug console), the Chest spawns before Ultra Famine is killed.}}
+
+{{nav|fr=Graines}}
+[[Category:Mechanics]]

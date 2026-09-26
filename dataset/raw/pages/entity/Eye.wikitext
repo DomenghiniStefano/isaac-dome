@@ -1,0 +1,63 @@
+{{infobox monster
+ | id          = 60
+ | base hp     = 20
+ | environment = {{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{room|challenge}}
+ | behavior    = Slowly turns towards Isaac and fires a Technology laser at Isaac if he stands still or is too slow.
+}}
+
+'''Eyes''' are immobile and attack by rotating towards Isaac and firing a {{i|Technology}} laser towards his position. Non-Eye enemies hit by the lasers take 8 damage.
+
+The battle against {{E|Mom's Heart}} / {{E|It Lives!}} begins with an Eye on either side of it.
+{{clear}}
+
+== Variants ==
+=== Bloodshot Eye ===
+{{infobox monster
+ | name           = Bloodshot Eye
+ | variant        = 1
+ | base hp        = 20
+ | environment    = {{floor|Utero}}<br>{{floor|Sheol}}<br>{{room|challenge}}{{room|devil}}
+ | replace        = Eye
+ | replace chance = 4.96%
+ | behavior       = Slowly turns towards Isaac and fires a Brimstone beam at Isaac if he stands still or is too slow.
+}}
+
+'''Bloodshot Eyes''' behave similarly to Eyes but fires a wider {{i|Brimstone}} beam towards Isaac. Non-Eye enemies hit by the beam take 22 damage per tick.
+
+=== Notes ===
+* {{dlc+|r}} They can spawn in unique {{R|Devil Room}} layouts if Isaac is holding the {{t|Number Magnet}}.{{dlc-}}
+{{clear}}
+
+=== Holy Eye ===
+{{infobox monster
+ | dlc         = r
+ | name        = Holy Eye
+ | variant     = 2
+ | base hp     = 20
+ | stage hp    = 5
+ | environment = {{floor|Cathedral}}
+ | behavior    = Rapidly summons several beams of light around Isaac every few seconds.
+}}
+
+'''Holy Eyes''' are a unique variety of eye added in ''[[The Binding of Isaac: Repentance]]''. They are only encountered on {{s|Cathedral}}.
+
+The '''Holy Eye''' is a stationary enemy, much like other Eyes. Every few seconds, it summons four beams of light (similar to the beams summoned by {{i|Crack the Sky}}) near Isaac's position, with shadows telegraphing where the beams will strike. The first beam strikes where Isaac is, but the others will attempt to predict his movements, striking where Isaac would be if he kept moving in a straight line. Holy Eyes will always attempt to summon beams of light if they take damage and aren't already firing.
+{{clear}}{{dlc clear}}
+
+== Gallery ==
+<gallery>
+File:Bloodshot Eye Unused.png|[[Cut Content#Cut Afterbirth .E2.80.A0 Content|Unused]] pre-release sprite/placeholder for the Bloodshot Eye found among the Room Editor files.
+File:Holy Eye Concept.png|Concept art for the Holy Eye.
+</gallery>
+
+== Trivia ==
+* When Eyes spawn, they can be briefly seen opening their eyelids before they start turning towards the player.
+* In the original Binding of Isaac, Bloodshot Eyes, despite using Brimstone as projectiles, had limited range. This does not apply to Rebirth.
+* Eyes may be a reference of Mr. I from [[wikipedia:Super Mario 64|Super Mario 64]], which is immobile and can rotate, although they shoot pink bubbles from their pupils instead of lasers.
+* Afflicting [[Status Effects|fear]] to Eyes will cause them to look away from Isaac.
+* {{dlc+|r}} Holy Eyes, {{E|Holy Bony|text=Holy Bonies}}, and {{E|Holy Mulligan}}s originated as cards from the card game ''The Binding of Isaac: Four Souls''.{{dlc-}}
+** They originally went by the card name "Holy Mom's Eye" as the card name for regular Eyes was "Mom's Eye".
+
+== Bugs ==
+{{bug|The game will crash if a Bloodshot Eye that is a Dark-Red champion regenerates and attacks.}}
+{{nav|fr=Œil}}

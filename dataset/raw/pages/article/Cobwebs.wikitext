@@ -1,0 +1,9 @@
+{{header obstacles}}
+[[file:Cobweb.png|50px|link=]]
+* Slows Isaac's movement.
+** If Isaac possesses flight, no effect occurs.
+* Can be destroyed using explosions.
+* Can be destroyed by replacing with {{i|The Poop}}'s poop and then clearing the poop.
+
+{{nav|fr=Toiles d'araignée}}
+[[category:objects]]

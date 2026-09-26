@@ -1,0 +1,40 @@
+{{infobox monster
+ | dlc         = r
+ | name        = Exorcist
+ | id          = 832
+ | base hp     = 25
+ | environment = {{floor|Mausoleum}}<br>During the fight with {{E|The Heretic}}
+ | behavior    = Summons {{E|The Heretic}} before transforming into [[Fanatic]]s.
+}}
+'''Exorcists''' are enemies found exclusively in the fight against {{E|The Heretic}}, and can never be found naturally. They take the appearance of a {{E|Gaper}} with its head's skin rolled down, revealing its skull.
+
+If spawned by itself, it will start to walk towards Isaac, occasionally spawning a single {{E|Lil' Haunt}}. It will try to follow the most recently spawned {{E|Lil' Haunt}} and use it to shield itself, and it will only spawn another Lil' Haunt once the previous one has been killed. It will also run away from Isaac once its designated Lil Haunt has been killed prior to spawning another.
+
+After an enemy dies, it will leave behind a small red spirit, sometimes, an Exorcist will walk over to one of the red spirits and revive it as a {{E|Lil' Haunt}}, similar to {{E|Rag Man}} or a {{E|Cultist}}. These red spirits are the same ones created by {{I|Vade Retro}} and can be blown up as such. All red spirits will disappear once an exorcist dies unless holding {{I|Vade Retro}}.
+
+=== Notes ===
+* The only method to kill the shielded Exorcists in The Heretic's fight is with {{p|Chaos Card}}, {{i|Little Horn}}, {{i|Euthanasia}}, or {{I|Suplex!}} as they go through shields.
+{{clear}}
+
+== Variations ==
+=== Fanatic ===
+{{infobox monster
+ | dlc         = r
+ | name        = Fanatic
+ | variant     = 1
+ | base hp     = 35
+ | environment = {{floor|Mausoleum}}<br>During the fight with {{E|The Heretic}}
+ | behavior    = Transformed into from {{E|Exorcist}}s. Chases Isaac and occasionally fires two purple, rotating shots.
+}}
+The '''Fanatic''' is a variant of Exorcists, encountered only at the start of the fight with {{E|The Heretic}}.
+
+At the beginning a group of 5 Exorcists are seen on the edges of a large purple pentagram on the floor, chanting and kneeling towards the center as The Heretic emerges. They are shielded until after The Heretic is fully summoned, after which they transform into Fanatics (which appear to be Exorcists with the skull replaced by a purple flame) and begin behave similarly to {{E|Faceless}}, chasing Isaac while occasionally shooting two purple, rotating tears as it does so, like a {{E|Ragling}}.
+
+Upon death, they have a chance to turn into {{E|Pacer}}s or {{E|Gusher}}s.
+{{clear}}
+
+== Trivia ==
+* [[Anti:Exorcist|Exorcists]] are from the ''Antibirth'' mod where they were a common enemy in {{s|Mausoleum}}.
+** They could also spawn {{E|Wizoob}}s and {{E|Candler}}s in conjunction with Lil' Haunts.
+
+{{nav|fr=Exorciste}}

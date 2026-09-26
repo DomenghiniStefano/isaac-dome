@@ -1,0 +1,104 @@
+{{infobox stage
+ | chapter         = 5
+ | id              = {{dlcalt|9|a=14}}
+ | id greed        = {{dlcalt|23|r=14}}
+ | level id        = 10
+ | level id greed  = 5
+ | type id         = 0
+ | type id greed   = {{dlcalt|3|r=0}}
+ | degraded bosses = The Adversary, Blighted Ovum, The Cage, Dark One, Death, The Fallen, Famine, Fistula, The Gate, Gemini, Greed, The Haunt, Headless Horseman, The Husk, Loki, Mega Fatty, Mega Maw, Monstro II, Peep, Pestilence, Polycephalus, Sloth, Steven, Super Greed, Super Wrath, Teratoma, Teratoma Medium, Teratoma Small, War, Wrath, The Wretched
+ | bosses          = Satan
+}}
+
+'''Sheol''' is one of two floors following the {{s|Womb}}/{{s|Utero}}/{{s|Scarred Womb}}, the other being the {{s|Cathedral}}. After defeating {{e|Mom's Heart}}, depending on Isaac's deal chance, a {{r|Devil Room}} may spawn which will only contain a trapdoor leading down to Sheol. Other methods to enter the deal room such as {{P|Joker}} or {{e|Red Chest}}s will also work. Unlocking and defeating {{e|It Lives!}} will always spawn a trapdoor leading to Sheol, as well as a Beam of Light leading to the Cathedral. Additionally, Sheol can be accessed using {{i|We Need To Go Deeper!}} or {{p|Ehwaz}} from The Womb II.
+
+Sheol has only one floor, featuring undead and dark/demonic enemies, and the boss is always {{e|Satan}}.
+
+== [[Monster]]s ==
+{{entity table/header}}
+{{stage entities | Bony, Boom Fly, Death's Head, Dip, Squirt, Dinga, Evil Twin, Bloodshot Eye, Sucker, Nulls, Gurgle, Globin, Gazing Globin, Gurgling, Begotten, Host, Mobile Host, Selfless Knight, Bone Knight, Leech, Kamikaze Leech, Mr. Maw, Nerve Ending, Charger, One Tooth, Oob, Black Maw, Spider, Big Spider, Ticking Spider, Swarmer, Camillo Jr., Double Vis, Wizoob, Lil' Haunt, Wall Hugger, Brimstone Head, Constant Stone Shooter, Gaping Maw, Stone Eye }}
+{{stage entities | dlc = a | Imp, Dank Squirt, Black Bony, Dank Death's Head, Flesh Death's Head, Dank Globin, Black Globin, Black Globin's Head, Black Globin's Body, Mom's Dead Hand, Fat Bat, Scarred Double Vis, Red Ghost, Suction Pitfall }}
+{{stage entities | dlc = a+ | Soul Sucker, Mr. Red Maw, Crispy, Stoney, Cross Stone Shooter }}
+{{stage entities | dlc = a+nr | Portal }}
+{{stage entities | dlc = r | Wrinkly Baby, Whipper, Snapper, Flagellant, Shady, Triple Grimace }}
+|}
+
+''Degraded Bosses:''
+{| class="wikitable mw-collapsible striped sortable"
+! Name
+! ID
+! class="unsortable" | Notes
+{{entity row minimal|The Adversary}} |
+{{entity row minimal|Blastocyst}} |
+{{entity row minimal|Blighted Ovum}} |
+{{entity row minimal|The Cage}} |
+{{entity row minimal|Dark One}} |
+{{entity row minimal|Death}} |
+{{entity row minimal|The Fallen}} |
+{{entity row minimal|Famine}} |
+{{entity row minimal|Fistula}} |
+{{entity row minimal|The Gate}} |
+{{entity row minimal|Gemini}} |
+{{entity row minimal|Gluttony}} |
+{{entity row minimal|Greed}} |
+{{entity row minimal|The Haunt}} |
+{{entity row minimal|Headless Horseman}} |
+{{entity row minimal|The Hollow}} |
+{{entity row minimal|The Husk}} |
+{{entity row minimal|Larry Jr.}} |
+{{entity row minimal|Little Horn}} |
+{{entity row minimal|Loki}} |
+{{entity row minimal|Lokii}} |
+{{entity row minimal|Lust}} |
+{{entity row minimal|Mega Fatty}} |
+{{entity row minimal|Mega Maw}} |
+{{entity row minimal|Monstro II}} |
+{{entity row minimal|Peep}} |
+{{entity row minimal|Pestilence}} |
+{{entity row minimal|The Pile}} |
+{{entity row minimal|Polycephalus}} |
+{{entity row minimal|Rag Man}} |
+{{entity row minimal|Rag Mega}} |
+{{entity row minimal|Sloth}} |
+{{entity row minimal|The Stain}} |
+{{entity row minimal|Steven}} |
+{{entity row minimal|Super Gluttony}} |
+{{entity row minimal|Super Greed}} |
+{{entity row minimal|Super Sloth}} |
+{{entity row minimal|Super Wrath}} |
+{{entity row minimal|Teratoma}} | All forms
+{{entity row minimal|War}} |
+{{entity row minimal|Wrath}} |
+{{entity row minimal|The Wretched}} |
+|}
+
+== Boss ==
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center;" |[[File:Boss Satan portrait.png|link=Satan]]
+|
+|-
+| style="text-align: center;" |[[Satan]]
+
+|}
+
+== Gallery ==
+<gallery>
+File:Sheol_Stuff_Concepts.jpg|Sheol concept art.
+</gallery>
+
+== Trivia ==
+* In Hebrew, Sheol is translated as "place of the dead"; it is described as the common afterlife of humans in Jewish religious lore (including the Old Testament), making it the Abrahamic version of the underworld.
+* Sheol is the ninth level of the game (without there being a Curse of the Labyrinth). The 14th-century novel [[wikipedia:Inferno (Dante)|''Inferno'']], the first part of Dante Aligheri's famous ''[[wikipedia:Divine Comedy|Divine Comedy]]'' and one of the first books to describe Hell in detail, notes that the ninth and lowest layer of Hell, where those who commit the sin of betrayal are sent, is frozen. On [[Isaac's last will]], it says he died in "a cold place" if he dies in Sheol.
+** The ninth layer of Hell is said to be where Satan, who turned against God and was cast down for it, is imprisoned, indicating the reason for Satan's presence in the area.
+** It's also said that the ninth layer of Hell is the prison for Judas Iscariot, the betrayer of Jesus, which may be the reason that {{c|Judas}} is unlocked there.
+* Like in all chapters, small non-interactive objects can be found on the ground. One of these decorations is a drawing of a triangle that may be a reference to the Triforce, an iconic relic from [[wikipedia:The Legend of Zelda (series)|The Legend of Zelda]] series.
+* There is an unused version of Sheol, which uses textures for {{s|Dark Room}}, but with a black background. It can be accessed by typing <code>stage 10b</code> in the [[Debug Console]].
+
+== Music ==
+* The [[music]] for Sheol is titled ''Duress''.<ref>[https://ridiculon.bandcamp.com/album/the-binding-of-isaac-rebirth-ost Binding of Isaac: Rebirth OST]</ref>
+** The term duress means intimidation or coercion and usually denotes violence.
+
+== References ==
+{{reflist}}
+
+{{nav|environment}}

@@ -1,0 +1,18 @@
+{{Disambig msg|the achievement|the unplayable state of a save file|Corrupt Data}}{{page dlc|r}}
+
+'''Corrupted Data''' is an [[achievement]] and a permanent effect on the [[Save File Completion|save file]] it is unlocked for.
+
+== Effect ==
+* {{r|Secret Room}}s and {{r|I AM ERROR}} rooms now have a chance of generating glitch items, as if caused by {{i|TMTRAINER}}. The chances in {{r|Secret Room}}s are 1/60 and 1/16 in {{r|I AM ERROR}} rooms.
+** This chance applies only to items that are part of the room layout. Items generated later or rerolled do not have a chance to become glitched.
+** If affected by {{curse|blind}}, the items that were corrupted are revealed upon first entering the room. Leaving the room and returning will render them hidden again.
+
+== Unlocked By ==
+{{achievement unlock|Corrupted Data}}
+
+== Trivia ==
+* Corrupted Data is one of the few unlocks for any character that isn't either an [[Item]], [[Pickup]], [[Character]], or [[Co-op|Baby]], along with {{e|Charming Poop}}, [[Fool's Gold|Fool's Gold Rocks]], [[Super special rock]]s, {{m|Crane Game}}, {{m|Hell Game}}, {{m|Rotten Beggar}}s and {{m|Confessional}}s.
+** While most unlocks that change gameplay are unlocked by defeating Mega Satan as a Tainted character, Corrupted Data is unlocked by defeating Delirium.
+* [[wikipedia:Data corruption|Corrupted data]] refers to errors in computer data that occur during its modification, which introduce unintended changes to the original data. In the case of image data, the result of corruption often makes it garbled, comparable to the glitched items.
+
+{{nav|tainted eden unlock|delirium unlock|fr=Corrupted Data}}

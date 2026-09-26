@@ -1,0 +1,49 @@
+{{infobox monster
+ | dlc         = r
+ | name        = Ball and Chain
+ | id          = 893
+ | environment = {{floor|Gehenna}}
+ | behavior    = Spike balls that rotate at the end of a chain attached to an obstacle. If the obstacle is destroyed, the ball will fly free around the room for a while.
+}}
+
+'''Ball and Chain''' are an indestructible enemy that rotate at various speeds around an obstacle which they are attached to with chains of varying lengths. Touching the chain does not harm Isaac. They can destroy rocks and other obstacles they come into contact with.
+
+If the anchor obstacle is destroyed, the ball will be launched across the room at its current velocity, eventually coming to a stop. When the room is re-entered, the ball will be at rest where the anchor obstacle used to be. A detached ball can be pushed by touch, tears and explosions.
+
+{{dlc|r+}} The Ball and Chain and all of its variations are destroyed by {{p|Hagalaz}}.
+
+__TOC__
+{{clear}}
+
+== Variations ==
+=== Spikeball ===
+{{infobox monster
+ | dlc         = r
+ | name        = Spikeball
+ | id          = 852
+ | environment = {{floor|Corpse}}
+ | behavior    = Spike balls that fly in a line either horizontally or vertically, bouncing off walls and obstacles.
+}}
+
+'''Spikeballs''' fly back and forth in a line either horizontally or vertically, bouncing off walls and obstacles. They will be destroyed once the room is cleared. However, if the room doesn't need clearing, they will remain permanently.
+
+Spikeballs will be destroyed immediately upon entering a room while holding the {{t|Flat File}}.
+{{clear}}
+
+=== Singe's Ball ===
+{{infobox monster
+ | dlc         = r
+ | name        = Singe's Ball
+ | id          = 915
+ | variant     = 1
+ | environment = {{floor|Ashpit}}<br>Exclusively spawned in [[Singe|Singe's]] boss room.
+ | behavior    = Spawned exclusively as apart [[Singe]]'s boss fight and used in his attacks. They can be pushed around and launched with explosions.
+}}
+
+'''Singe's Balls''' are movable Spikeballs spawned during the [[Singe]] boss fight. They will not move on their own, but can be pushed via touch, tears, and explosions — particularly Singe's. They deal half a heart of contact damage and are destroyed upon Singe's defeat.
+{{clear}}
+
+== Trivia ==
+* The [[Anti:Spikeball|Spikeball]] first appeared in the ''Antibirth'' mod where it behaved similarly; however, it would not be destroyed and would continue moving after the room was cleared.
+
+{{nav|fr=Boule Enchaînée}}

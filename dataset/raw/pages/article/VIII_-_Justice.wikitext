@@ -1,0 +1,40 @@
+{{header tarot cards}}
+{{Infobox card
+ | name        = VIII - Justice
+ | id          = 9
+ | quote       = May your future become balanced
+ | description = Drops a random type of [[Heart]], {{e|Key}}, {{e|Bomb}}, and [[Coin]] pickup on the ground.
+| recharge =             {{dlcalt|4|r=6}}
+}}
+
+{{cit|c}}
+
+== Effects ==
+* Drops a random type of [[Heart]], {{e|Key}}, {{e|Bomb}}, and [[Coin]] pickup on the ground.
+
+== Notes ==
+* The pickups spawned can be of any of their types (if unlocked):
+** The coin can be of any value.
+** The heart can be of any color.
+** The key can be a {{e|Golden Key}}, a {{e|Charged Key}} {{dlc|nr}} but not a {{e|Key Ring}}.
+** The bomb can be double, or even a {{e|Troll Bomb}}.
+
+== Strategy ==
+* Some {{r|Super Secret Room}} layouts can force hearts in them to be of one type. Using '''VIII - Justice''' in these rooms can force the hearts to be of one specific type.
+* Since the bomb can be a troll bomb, it's better to use '''VIII - Justice''' next to a [[tinted rock]] or a {{r|Secret Room}}'s entrance.
+
+== Synergies ==
+* {{I|Tarot Cloth}}: Spawns two of each pickup.
+** Each pickup can independently be of any type.
+** {{I|Tarot Cloth|n}} + {{i|Blank Card}} + {{i|Car Battery|n}} : Spawns four of each pickup.
+
+== Trivia ==
+* [[wikipedia:Justice (tarot card)|Justice]] is the eighth card of a Major Arcana set.
+* {{dlc+|r}} There is one room in the game (in {{s|Dross}}) that contains a guaranteed Justice card (see Gallery). The same room in {{s|Downpour}} has only a 20% chance to contain a Justice card.{{dlc-}}
+
+== Gallery ==
+<gallery>
+File:Justice_card_Dross.png|{{dlc+|r}} The room in {{s|Dross}} that contains a guaranteed Justice card behind spiked rocks.{{dlc-}}
+</gallery>
+
+{{nav|fr=VIII - La Justice|card}}

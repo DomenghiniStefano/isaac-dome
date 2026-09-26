@@ -1,0 +1,20 @@
+{{header collection pages}}
+
+The '''Collection Page''' can be found under "Items" In the "Stats" menu. It shows all the [[item]]s that have ever been picked up on that save file.
+
+== Notes ==
+* The following will '''NOT''' count as picking up items and therefore doesn't add entries to the collection grid:
+** {{dlc|nr}} Items which are intrinsic to a character and can't be rerolled.
+** Any item interaction during [[seed]]ed runs.
+*** {{dlc|a}} Certain special seeds do not disable the addition of entries.
+*** {{dlc|a}} [[daily challenge|Daily]] runs count as seeded runs.
+** Any item interaction during [[challenge]] runs.
+** {{dlc|a+}} Any item interaction during [[Victory Lap]]s.
+** {{dlc+|a+}} Temporary items granted by {{I|Metronome}}.{{dlc-}}
+** {{dlc+|r}} Item wisps created with {{I|Lemegeton}}.{{dlc-}}
+* Afterbirth changed the grid size of pages from 10x10 to 20x6.
+* Gaining items via re-rolls (such as {{i|Missing No.}} and {{i|D100}}) counts towards the collection grid, even if the items have not been unlocked yet.
+* [[Trinket]]s are not on the collection grid, {{dlc+|a+nr}} except for {{i|Tonsil}}.{{dlc-}}
+
+{{nav|fr=Page de Collection}}
+[[Category:Collectibles| ]]

@@ -1,0 +1,18 @@
+{{page dlc|r}}
+
+Items with this [[Item Tags|tag]] contribute toward the {{tf|Bob}} transformation.
+
+== Activated Collectibles ==
+{{collectible table | tag = bob | type = activated }}
+
+== Passive Collectibles ==
+{{collectible table | tag = bob | type = passive }}
+
+== Trinkets ==
+{{trinket table | tag = bob }}
+
+== Bugs ==
+{{bug|dlc=nr+|{{t|Bob's Bladder}} will not contribute to the Bob transformation despite having the item tag.}}
+
+{{nav|fr=Balise bob}}
+[[Category:Item tags]]

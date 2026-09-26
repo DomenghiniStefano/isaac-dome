@@ -1,0 +1,32 @@
+{{header obstacles}}
+
+__TOC__
+
+== Metal Blocks ==
+[[file:metalblock.png|52px|link=]]
+* Blocks movement and projectiles.
+* An explosion's blast radius will not extend past it.
+* {{dlc|nr}} Cannot be destroyed or removed.
+* {{dlc+|r}} Can only be destroyed by walking over while {{i|Mega Mush}} is active.{{dlc-}}
+* {{dlc+|a}} Can be re-rolled by the {{i|D12}} into a destructible obstacle.{{dlc-}}
+* Can only be moved over via [[flight|flying]] or [[jump]]ing.
+
+== Key Blocks ==
+[[file:keyblock.png|48px|link=]]
+* Acts like [[#Metal Block|Metal Blocks]].
+* Requires a [[key]] to unlock.
+* Cannot be [[flight|flown]] over.
+* Small chance to drop a random [[pickup]] when unlocked.
+* {{dlc+|r}} Can be destroyed with a bomb explosion if {{t|Broken Padlock}} is held.{{dlc-}}
+* {{dlc+|r}} Can be destroyed without consuming a key by walking over while {{i|Mega Mush}} is active.{{dlc-}}
+
+== Pillars {{dlc|r}} ==
+[[File:Pillars.png|200px|link=]]
+* Blocks movement and projectiles like a regular block.
+* Cannot be [[flight|flown]] over, nor can flying enemies or familiars fly over it.
+* Obstructs vision of the tile above it.
+** Some rooms will seem to have an inaccessible pickup, but there is actually an [[Event Plate]] hidden on the top tile of the pillar.
+** Some other rooms may also have a [[Kill Plate]] hidden behind it.
+
+{{nav|fr=Blocs}}
+[[Category:Objects]]

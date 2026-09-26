@@ -1,0 +1,172 @@
+{{infobox monster
+ | id          = 42
+ | environment = {{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Mines}}{{floor|Ashpit}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Mausoleum}}{{floor|Gehenna}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|Corpse}}<br>{{floor|Sheol}}{{floor|Cathedral}}<br>{{room|boss}}
+ | behavior    = Stationary and invulnerable monster that occasionally fires a blood shot at Isaac. Stops firing when room is cleared.
+}}
+
+A '''Stone Grimace''' is an invincible stationary statue with the shape of a head with a wide-open mouth and hollow eyes. Stone Grimaces will sporadically spit a Red bullet in Isaac's direction until the room is cleared by killing regular enemies, or by pressing {{E|Pressure Plate}}s. When the room is cleared, the Stone Grimace closes its eyes and mouth.
+
+__TOC__
+{{clear}}
+
+== Variations ==
+=== Vomit Grimace ===
+{{infobox monster
+ | name           = Vomit Grimace
+ | variant        = 1
+ | environment    = {{floor|Catacombs}}<br>{{floor|Mines}}{{floor|Ashpit}}<br>{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Gehenna}}<br>{{floor|Utero}}
+ | replace        = Stone Grimace
+ | replace chance = 5.71%
+ | behavior       = Stationary and invulnerable monster that occasionally fires an Ipecac shot at Isaac. Stops firing when room is cleared.
+}}
+
+The '''Vomit Grimace''' fires an explosive {{i|Ipecac}}-like shot. Like Stone Grimaces, Vomit Grimaces will stop firing at Isaac when the room is cleared.
+{{clear}}
+
+=== Triple Grimace ===
+{{infobox monster
+ | dlc         = r
+ | name        = Triple Grimace
+ | variant     = 2
+ | environment = {{floor|Ashpit}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Mausoleum}}{{floor|Gehenna}}<br>{{floor|Womb}}{{Floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|Corpse}}<br>{{floor|Sheol}}{{floor|Cathedral}}
+ | behavior    = Stationary and invulnerable monster that occasionally fires a triple shot at Isaac. Stops firing when room is cleared.
+}}
+
+The '''Triple Grimace''' fires a triple shot. Like Stone Grimaces, Triple Grimaces will stop firing at Isaac when the room is cleared.
+{{clear}}
+
+=== Gaping Maw ===
+{{infobox monster
+ | name        = Gaping Maw
+ | id          = 235
+ | environment = {{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Mausoleum}}{{floor|Gehenna}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|Sheol}}
+ | behavior    = Stationary and invulnerable monster that sucks Isaac towards it, along with Isaac's tears and enemy projectiles.
+}}
+
+The '''Gaping Maw''' sucks Isaac towards it, along with warping Isaac's and any enemies' bullet paths. It does not fire any shots and simply functions as an obstacle, and is often surrounded by [[spikes]]. {{dlc|a}} They can, however, be deactivated by {{E|Pressure Plate}}s.
+
+==== Notes ====
+* If a Gaping Maw is rerolled with {{i|D10}}, it will always turn into a {{e|Broken Gaping Maw}}.
+{{clear}}
+
+=== Broken Gaping Maw ===
+{{infobox monster
+ | name        = Broken Gaping Maw
+ | id          = 236
+ | environment = {{floor|Ashpit}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Mausoleum}}{{floor|Gehenna}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}
+ | behavior    = Stationary and invulnerable monster that sucks Isaac towards it, along with Isaac's tears and enemy projectiles. Alternates between active and inactive every couple of seconds. Has a stronger attraction power than a regular Gaping Maw.
+}}
+
+A broken variant of the Gaping Maw. It alternates between active and inactive every four seconds, but it has a much stronger attraction power. {{dlc|a}} Just like regular Gaping Maws, they can be deactivated by {{E|Pressure Plate}}s. Prior to Afterbirth+ Booster Pack 5, only one room in the game contained Broken Gaping Maws.
+{{clear}}
+
+=== Constant Stone Shooter ===
+{{infobox monster
+ | name        = Constant Stone Shooter
+ | id          = 202
+ | environment = {{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Mines}}{{floor|Ashpit}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Mausoleum}}{{floor|Gehenna}}<br>{{floor|Womb}}{{floor|Utero}}<br>{{floor|Sheol}}{{floor|Cathedral}}
+ | behavior    = Stationary and invulnerable monster that continuously fires shots in a single direction.
+}}
+
+'''Constant Stone Shooters''', sometimes referred to as Turret Grimaces, constantly fire bullets in a fixed direction, and do not stop firing even after the room is cleared. {{dlc|a}} The exceptions are rooms with {{E|Pressure Plate}}s, which deactivate them once they are all pressed.
+{{clear}}
+
+=== Cross Stone Shooter ===
+{{infobox monster
+ | dlc         = a+
+ | name        = Cross Stone Shooter
+ | variant     = 10
+ | environment = {{floor|Flooded Caves}}<br>{{floor|Mines}}{{floor|Ashpit}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Gehenna}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|Sheol}}{{floor|Cathedral}}
+ | behavior    = Stationary and invulnerable monster that continuously fires shots in four directions, alternating between cardinal and ordinal.
+}}
+
+Cross Stone Shooters were added in [[Booster Pack #4]].
+
+The '''Cross Stone Shooter''', sometimes referred to as Cross Grimace, constantly fires bullets in four directions, alternating between cardinal and diagonal directions. If the room has to be cleared, whether by killing enemies or by pressing {{E|Pressure Plate}}s, then Cross Grimaces will deactivate upon the room's completion like a regular Grimace. However, if the room is purely trap based and does not present an objective to complete, then Cross Grimaces will continue shooting indefinitely.
+{{clear}}
+
+=== Brimstone Head ===
+{{infobox monster
+ | name        = Brimstone Head
+ | image name  = * {{dlc|nr|Rebirth}}
+ | id          = 203
+ | environment = {{Floor|Gehenna}}<br>{{Floor|Sheol}}
+ | behavior    = Stationary and invulnerable monster that fires Brimstone beams in a specific direction.
+}}
+
+Found in {{s|Gehenna}} and {{s|Sheol}}, the '''Brimstone Head''', sometimes referred to as Brimstone Grimace, periodically shoots {{i|Brimstone}} lasers and does not stop firing even after the room is cleared. {{dlc|a}} The exception is pressing all {{E|Pressure Plate}}s, which deactivates them.
+{{clear}}
+
+=== Stone Eye ===
+{{infobox monster
+ | name        = Stone Eye
+ | id          = 201
+ | environment = {{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|Sheol}}
+ | behavior    = Stationary and invulnerable monster that constantly rotates and fires a flickering Technology laser. Stops firing when the room is cleared.
+}}
+
+The '''Stone Eye''' resembles the {{e|Bloodshot Eye}}. It constantly rotates in a clockwise circle and shoots a flickering {{i|Technology}} laser. It stops firing after the room is cleared. Unlike any other Stone Grimace variants, the Stone Eye appears to despawn when the room is cleared, exited, and then re-entered. {{dlc|r+}} Stone Eyes will do an entire rotation before shooting their laser.
+{{clear}}
+
+=== Bomb Grimace ===
+{{infobox monster
+ | dlc         = r
+ | name        = Bomb Grimace
+ | id          = 809
+ | environment = {{floor|Mines}}{{floor|Ashpit}}<br>{{room|boss}}{{room|boss challenge}}<br>{{room|treasure}} ([[Mines]] and [[Ashpit]] only)
+ | behavior    = Stationary and invulnerable monster that coughs up a {{E|Throwable Bomb}} if one doesn't exist already. If destroyed by any means, 10 Throwable Bombs are dropped.
+}}
+
+The '''Bomb Grimace''' is a unique Stone Grimace in that its only purpose is to keep a single {{E|Throwable Bomb}} spawned. A few seconds after Isaac takes the bomb, it will spawn another.
+
+If it is destroyed with an instant-death attack such as {{i|Euthanasia}} or {{i|Little Horn}}, it spawns 10 Throwable Bombs.
+
+Always spawns during the battle of {{e|Tuff Twins}} and {{e|The Shell}}. It can also appear in the mineshaft in Mines/Ashpit II, where the Throwable Bombs it provides prove essential for fleeing {{e|Mother's Shadow}}.
+{{clear}}
+
+=== Quake Grimace ===
+{{infobox monster
+ | dlc         = r
+ | name        = Quake Grimace
+ | id          = 804
+ | environment = {{floor|Mines}}{{floor|Ashpit}}
+ | behavior    = Stationary and invulnerable monster that jumps and fires a line of rocks in one direction upon landing.
+}}
+
+The '''Quake Grimace''' fires a line of rocks in one direction upon landing every 3 seconds. In most cases, even after the room is cleared of vulnerable enemies, they will continue this behavior. However, they can be deactivated from {{E|Pressure Plate}}s.
+
+If a {{R|Secret Room}} or a {{R|Super Secret Room}} is placed in the path of their attack, the attack will break the wall and open the entrance.
+{{dlc clear}}{{clear}}
+
+== Notes ==
+* These monsters are impassable, even with flight.
+* These monsters can be destroyed using {{p|Chaos Card}}, {{i|Little Horn}} and {{i|Euthanasia}}, though they will respawn upon leaving and re-entering the room they were in.
+* With {{i|Infestation 2}}, killing Stone Grimaces creates a [[Blue Spider]], allowing blue spiders to be farmed by leaving and re-entering the room.
+* {{i|Fire Mind}} tears that hit these monsters can still cause explosions.
+* {{dlc|a}} Hitting Grimaces increases the {{i|Dead Eye|n}} damage multiplier.
+* {{dlc|a+}} If an uncleared room has Cross Grimaces, leaving and then re-entering the room by bombing a door will make them stop shooting, making the room easier.
+* {{dlc|r}} 4 Stone Grimaces can appear in {{e|Loki}}'s boss fight.
+
+== Gallery ==
+<gallery>
+File:Edmund McMillen Rebirth Monster Sketches.jpg|Sketches of monsters for the Binding of Isaac: Rebirth, including the Stone Eye in the first square of the first row, which was formerly called "360 Stole Laser"; the Constant Stone Shooter in the second square of the first row, which was called "Constant Stone Shot" and the Brimstone Head in the third square of the first row (no visible sketch name).
+File:Brimstone Head Gehenna.png|Brimstone Head's appearance in {{s|Gehenna}}. (Added in [[v1.7.7]] but currently unused)
+</gallery>
+
+== Trivia ==
+* {{dlc|na+}} Stone Grimaces and their variants play their appearance animation for a second before resuming as deactivated in a cleared room if they were deactivated.
+** {{dlc|a+}} They now no longer reuse their appear animation in a cleared room when the player re-enters it.
+* If a Constant Stone Shooter is deactivated, it closes its eyes and mouth and stops crying, looking similar to Stone Grimaces upon deactivation. The difference is that deactivated Constant Stone Shooters still have a crack on top of their heads.
+* If a Gaping Maw or Broken Gaping Maw is deactivated, unlike other Grimaces, it doesn't fully close its eyes. Instead, it closes its eyes only partially and makes a frown.
+* Grimaces will turn green if poisoned.
+* {{E|Great Gideon}} is the boss variant of Stone Grimaces.
+* Gaping Maws were going to have fangs, as shown on the [[Bestiary]].
+* {{dlc|r}}The [[Anti:Bomb Grimace|Bomb Grimace]] and [[Anti:Quake Grimace|Quake Grimace]] first appeared in the ''Antibirth'' mod.
+** {{dlc|r}} Quake Grimaces have substantially different designs compared to their original appearance in ''Antibirth''. Most notably, they are the same size as other Stone Grimaces instead of being twice as large, and they do not have the large gash in their body.
+*** Pre-release content of Repentance as well as the "death preview" shows the original version of Quake Grimaces, suggesting this change was made late in development.
+** {{dlc|r}} Bomb Grimaces are the only Grimaces who don't appear in the [[Bestiary Repentance|bestiary]].
+
+== Bugs ==
+{{bug|dlc=nr|Using the {{i|D10}} in a room with {{e|Stone Grimace}}s will turn them invisible. They will not fire, but the space they occupied will prevent Isaac from moving through it like an invisible wall.}}
+
+{{nav|booster pack|fr=Grimace de Pierre}}

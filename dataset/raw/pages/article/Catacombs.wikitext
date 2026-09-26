@@ -1,0 +1,138 @@
+{{infobox stage
+ | chapter         = 2
+ | id              = {{dlcalt|4|a=5}}
+ | id greed        = {{dlc|r|5}}
+ | level id        = 3, 4
+ | level id greed  = {{dlc|r|2}}
+ | type id         = 1
+ | type id greed   = {{dlc|r|1}}
+ | degraded bosses = Blastocyst Small, Larry Jr., Teratoma Medium, Teratoma Small
+ | bosses          = Big Horn, Carrion Queen, Dark One, The Forsaken, The Frail, Gurdy Jr., The Hollow, The Husk, Peep, Pestilence, Polycephalus, Rag Mega, The Stain, The Wretched
+ | double trouble  = Dingle, The Duke of Flies, Gemini, Pin
+ | unlocked by     = The Catacombs
+}}
+
+'''The Catacombs''' is one of the environments of [[Chapter 2]].
+
+The Catacombs are unlocked once each boss in the {{s|Caves}} has been defeated.
+
+It generally possesses more spiders and decayed enemies and bosses than the {{s|Caves}}, with common enemies including Gurgles, Guts, and Keepers.
+
+{{dlc+|r}} After {{a|A Secret Exit}} is unlocked, a boarded door similar to the one leading to a [[Bedroom]] will appear in this floor's {{r|Boss Room}} upon defeating the boss, leading to the {{S|Mines}} / {{S|Ashpit}}. This door, like a Bedroom, requires two bombs to be opened. Unlike {{r|Angel Room}}s and {{r|Devil Room}}s, this door never disappears.{{dlc-}}
+
+== [[Monster]]s ==
+{{entity table/header}}
+{{stage entities | Boil, Gut, Sack, Walking Boil, Walking Gut, Walking Sack, Bony, Buttlicker, Chubber, Clotty, Clot, I.Blob, Dip, Squirt, Ring Fly, Embryo, Fatty, Pale Fatty, Fat Sack, Half Sack, Blubber, Fly, Attack Fly, Moter, Level 2 Fly, Pooter, Super Pooter, Boom Fly, Red Boom Fly, Full Fly, Sucker, Spit, Gurgle, Skinny, Rotty, Globin, Gazing Globin, Grub, Gurgling, Psychic Horf, Flaming Hopper, Hopper, Leaper, Host, Red Host, Mobile Host, Flesh Mobile Host, Keeper, Hanger, Knight, Maggot, Charger, Spitty, Conjoined Spitty, Mask + Heart, Maw, Red Maw, Mulliboom, Hive, Nest, One Tooth,  Splasher, Round Worm, Night Crawler, Spider, Big Spider, Level 2 Spider, Ticking Spider, Trite, Ragling, Baby Long Legs, Small Baby Long Legs, Crazy Long Legs, Small Crazy Long Legs, Wall Creep, Blind Creep, Tumor, Stone Grimace, Vomit Grimace, Constant Stone Shooter, Gaping Maw, Wall Hugger }}
+{{stage entities | dlc = a | Corn, Dank Squirt, Dart Fly, Conjoined Fatty, Fat Bat, Roundy, Swarm, Dukie, Ulcer, Corn Mine, Blue Gaper, Blue Boil, Greed Gaper }}
+{{stage entities | dlc = a+ | Mushroom, Stoney, Blister, The Thing, Ministro }}
+{{stage entities | dlc = a+nr | Portal }}
+{{stage entities | dlc = r | Eggy, Bulb, Clickety Clack, Migraine, Swarm Spider }}
+|}
+
+''Degraded Bosses:''
+{| class="wikitable mw-collapsible striped sortable"
+! Name
+! ID
+! class="unsortable" |  Notes
+{{entity row minimal|Blastocyst}} | Small-form only
+{{entity row minimal|The Hollow}} |
+{{entity row minimal|Larry Jr.}} |
+{{entity row minimal|Teratoma}} | Small- and Medium-form only
+|}
+
+== [[Boss]]es ==
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:Boss Carrion Queen portrait.png|center|link=Carrion Queen]]
+| style="text-align: center; border: none" |[[File:Boss Dark One portrait.png|center|link=Dark One]]
+| style="text-align: center; border: none" |[[File:Boss Gurdy Jr. portrait.png|link=Gurdy Jr.]]
+| style="text-align: center; border: none" |[[File:Boss The Hollow portrait.png|center|link=The Hollow]]
+|-
+| style="text-align: center; border: none" |[[Carrion Queen]]
+| style="text-align: center; border: none" |[[Dark One]]
+| style="text-align: center; border: none" |[[Gurdy Jr.]]
+| style="text-align: center; border: none" |[[The Hollow]]
+|}
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:Boss The Husk portrait.png|center|link=The Husk]]
+| style="text-align: center; border: none" |[[File:Boss Peep portrait.png|center|link=Peep]]
+| style="text-align: center; border: none" |[[File:Boss Polycephalus portrait.png|center|link=Polycephalus]]
+| style="text-align: center; border: none" |[[File:Boss The Wretched portrait.png|center|link=The Wretched]]
+|-
+| style="text-align: center; border: none" |[[The Husk]]
+| style="text-align: center; border: none" |[[Peep]]
+| style="text-align: center; border: none" |[[Polycephalus]]
+| style="text-align: center; border: none" |[[The Wretched]]
+|}
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:Boss Pestilence portrait.png|center|link=Pestilence]]
+| style="text-align: center; border: none" |[[File:Boss The Fallen portrait.png|center|link=The Fallen]]
+| style="text-align: center; border: none" |[[File:Boss Headless Horseman portrait.png|center|link=Headless Horseman]]
+| style="text-align: center; border: none" |[[File:Boss The Forsaken portrait.png|center|link=The Forsaken]]
+|-
+| style="text-align: center; border: none" |[[Pestilence]] {{unlockable}}
+| style="text-align: center; border: none" |[[The Fallen]] {{room|Devil}}
+| style="text-align: center; border: none" |[[Headless Horseman]] {{unlockable}}
+| style="text-align: center; border: none" |[[The Forsaken]] {{dlc|a}} {{unlockable}}
+|}
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:Boss The Frail portrait.png|center|link=The Frail]]
+| style="text-align: center; border: none" |[[File:Boss The Stain portrait.png|center|link=The Stain]]
+| style="text-align: center; border: none" |[[File:Boss Big Horn portrait.png|center|link=Big Horn]]
+| style="text-align: center; border: none" |[[File:Boss Rag Mega portrait.png|center|link=Rag Mega]]
+|-
+| style="text-align: center; border: none" |[[The Frail]] {{dlc|a}} {{unlockable}}
+| style="text-align: center; border: none" |[[The Stain]] {{dlc|anr}} {{unlockable}}
+| style="text-align: center; border: none" |[[Big Horn]] {{dlc|a+}} {{unlockable}}
+| style="text-align: center; border: none" |[[Rag Mega]] {{dlc|a+}} {{unlockable}}
+|}
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:Boss Bumbino portrait.png|center|link=Bumbino]]
+|-
+| style="text-align: center; border: none" |[[Bumbino]] {{Dlc|r}} {{unlockable}}
+|}
+
+=== Double Trouble ===
+{| class="mw-collapsible mw-collapsed wikitable"
+ ! Double Trouble Bosses
+ |-
+ |
+ {| style="width: 70%; text-align: center"
+  | [[file:Boss Dingle portrait.png|center|link=Dingle]]
+  | [[file:Boss The Duke of Flies portrait.png|center|link=The Duke of Flies]]
+  | [[file:Boss Gemini portrait.png|link=Gemini]]
+  | [[file:Boss Larry Jr. portrait.png|center|link=Larry Jr.]]
+  |-
+  | (Double Trouble)<br>[[Dingle]]
+  | (Double Trouble)<br>[[The Duke of Flies]]
+  | (Double Trouble)<br>[[Gemini]]
+  | (Double Trouble)<br>[[Larry Jr.]]
+  |}
+ {| style="width: 70%; text-align: center"
+  | [[file:Boss Monstro portrait.png|link=Monstro]]
+  | [[file:Boss Pin portrait.png|center|link=Pin]]
+  | [[file:Boss Rag Man portrait.png|center|link=Rag Man]]
+  | [[File:Boss Gurglings portrait.png|center|link=Gurglings]]
+  |-
+  | (Double Trouble)<br>[[Monstro]]
+  | (Double Trouble)<br>[[Pin]]
+  | (Double Trouble)<br>[[Rag Man]] {{dlc|a}} {{unlockable}}
+  | (Double Trouble)<br>[[Gurglings]] {{dlc|r}}
+  |}
+ |}
+
+== Trivia ==
+* In the original Binding of Isaac, {{e|Blighted Ovum}} could appear as a boss.
+* The backdrop of the Catacombs is a cave, similar to the {{s|Caves}}, but darker and with ocassional pillars or skulls in the walls.
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | Something Cute, Telekinesis, Spelunker Boy }}
+
+== Music ==
+* The [[music]] for the Catacombs is titled ''Capiticus Calvaria''.<ref>[https://ridiculon.bandcamp.com/album/the-binding-of-isaac-rebirth-ost Binding of Isaac: Rebirth OST]</ref>
+** Calvaria is Latin for "Skull", and while Capiticus does not have a true definition, it most likely comes from the word Caput, meaning "Head", or Capitulum, meaning "Chapter".
+
+== References ==
+{{reflist}}
+
+{{nav|environment|fr=Catacombes}}
+[[ru:Катакомбы]]

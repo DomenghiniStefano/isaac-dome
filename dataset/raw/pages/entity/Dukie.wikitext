@@ -1,0 +1,25 @@
+{{infobox monster
+ | dlc         = a
+ | image name  = * {{dlc|nr|Afterbirth}}
+ | id          = 288
+ | base hp     = 25
+ | environment = {{floor|Dross}}<br>{{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Womb}}<br>{{room|challenge}}
+ | behavior    = Flies around the room diagonally, occasionally spitting out 1-2 {{E|Dart Fly|text=Dart Flies}}.
+}}
+
+'''Dukie''' is an enemy added in ''[[The Binding of Isaac: Afterbirth]]''. It floats diagonally around the room, occasionally spitting out 1-2 {{E|Dart Fly|text=Dart Flies}}. Dukies do not attack in any other way but can still do contact damage.
+
+== Notes ==
+* If there are 6 {{E|Dart Fly|text=Dart Flies}} spawned, Dukies will stop spawning Dart Flies.
+
+== Gallery ==
+<gallery>
+File:Dukie Sad.png|Unused sad Dukie sprite
+</gallery>
+
+== Trivia ==
+* Dukies were inspired by a [https://m.youtube.com/watch?v=tpPcp17z9Pg video by LeatherIceCream about a miniature Duke Of Flies].
+* {{E|The Duke of Flies}} is the boss version of these enemies.
+** Despite the fact that the Duke of Flies is a boss found in Chapter 1, Dukies themselves only begin to appear from Chapter 2 onward, or Chapter 1.5 in the alternate path.
+
+{{nav|fr=Duché}}

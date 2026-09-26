@@ -1,0 +1,16 @@
+{{Infobox entity
+ | dlc = r
+ | base hp = 10000
+ | id = 964
+ | image name = Shopkeeper
+ | behavior    = Only encounterable through [[Debug Console]], it is immobile, harmless, and used to track Isaac's damage.
+}}
+'''Dummy''' is a special enemy available through the [[Debug Console]]'s <code>spawn</code> command.
+
+It is immobile, harmless, and visually identical to a normal [[Shopkeeper]] but has a damage counter overlaid on the face, adding up any and all damage taken. Touching the Dummy will reset the counter to 0.00.
+
+Although the Dummy has the limited amount of 10000 HP, it is nearly impossible to kill as its health refills completely on every internal tick of the game; it must take 10000 damage in one frame to be destroyed.
+
+The game considers the Dummy to be a boss, giving it resistance to [[Status Effects|status effects]], immunity to instant kills from {{i|Euthanasia}} and {{i|Little Horn}} and practical immunity to {{i|Eraser}}. However, this does allow the Dummy to be killed using a {{P|Chaos Card}}.
+
+{{nav|fr=Mannequin}}

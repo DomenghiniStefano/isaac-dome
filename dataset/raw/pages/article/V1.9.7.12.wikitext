@@ -1,0 +1,33 @@
+{{infobox version
+ | dlc  = r+
+ | date = 2025-05-03
+}}
+
+== Undocumented changes ==
+=== Additions ===
+* Added various new sound effects:
+** Set of sounds for {{e|Big Horn}} and its attacks.
+** Using {{i|Mom's Box}}, {{i|Moving Box}}, {{i|Pandora's Box}}, {{i|Pause}}, {{i|Plan C}}, {{i|Portable Slot}}, {{i|R Key}}, {{i|Sharp Plug}}, {{i|Smelter}}, {{i|Telekinesis}}, {{i|The D6}}, {{i|Undefined}}, and {{i|Void}}.
+** {{t|Butter!}} dropping an activated or passive item.
+** Charging and firing a {{i|Monstro's Lung}} charged shot.
+** Removing {{t|Tick}} with {{t|Match Stick}} or {{t|A Lighter}}.
+** {{i|Rubber Cement}} tear bouncing.
+** {{t|Safety Scissors}} defusing a bomb.
+** {{i|Slipped Rib}} deflecting a shot.
+** {{i|YO LISTEN!}} flying toward something.
+
+=== Changes ===
+* Lowered volume of the new tear falling sound.
+
+=== Fixes ===
+* Fixed the {{e|Mega Satan}} door opening without needing key pieces.
+* Fixed petrified enemies giving coins.
+* Fixed {{c|Tainted Keeper}} not getting coins from greed mode waves enemies.
+* Fixed {{i|Aries}} being banned instead of {{i|Book of Shadows}} for {{c|Tainted Lost}}.
+* Fixed a softlock in {{e|Delirium}} dailies that go through {{e|Hush}} if you miss the 30 minutes timer.
+* Fixed the [[Red Redemption]] challenge where you couldn't go past the first floor.
+* Fixed the {{s|Corpse}} music combat layer being out of sync.
+* Fixed {{i|Delirious}} Brownie not disappearing when summoning another boss.
+* Fixed {{i|Delirious}} Husk and Duke of Flies spawning hostile flies instead of friendly flies on death.
+
+{{nav|version}}

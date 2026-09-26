@@ -1,0 +1,23 @@
+{{header normal bosses}}
+{{page dlc|r}}
+
+== {{s|Corpse}} {{Unlockable}} ==
+{| style="width: 70%; text-align: center"
+ | [[file:Boss Rotgut portrait.png|center|link=Rotgut]]
+ | [[file:Boss Chimera portrait.png|center|link=Chimera]]
+ | [[file:Boss The Scourge portrait.png|center|link=The Scourge]]
+ |-
+ | [[Rotgut]]
+ | [[Chimera]]
+ | [[The Scourge]]
+ |}
+
+== Final Boss ==
+{| style="width: 70%; text-align: center"
+ | [[file:Boss Mother portrait.png|center|link=Mother]]
+ |-
+ | [[Mother]]
+ |}
+
+{{nav|boss|fr=Cadavre (Boss)}}
+[[Category:Bosses| ]]

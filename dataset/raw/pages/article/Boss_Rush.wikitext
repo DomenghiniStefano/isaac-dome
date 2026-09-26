@@ -1,0 +1,237 @@
+The '''Boss Rush''' is an optional [[room]] that becomes available by beating [[Mom]] in {{s|Depths}}, {{s|Necropolis}}, or {{s|Dank Depths}} within 20 minutes, or {{dlc+|r}} beating her in {{s|Mausoleum}} or {{s|Gehenna}} within 25 minutes.{{dlc-}}
+
+In the center of a large room, there will be 4 ({{dlc|a}} 2 or 4 / {{dlc|a+}} 2, 4 or 8) random [[items]] to choose from, which are picked from the {{ip|Treasure Room|text=Treasure Room item pool}}. Picking up an item will cause the rest of them to disappear and start the Boss Rush. Completing the Boss Rush will also reward 1 more item, separate from the others seen when first entering the room.
+
+== Waves ==
+The Boss Rush consists of 15 waves with 2 [[bosses]] per wave. The next wave does not spawn until both bosses from the previous wave have been killed, and any lingering [[monsters]] from previous waves will not prevent the next wave from spawning.
+
+Occasionally, all the bosses fought in the Boss Rush will be their [[Champion]] variants, if they have one.
+
+=== Rebirth ===
+All 15 waves are predetermined.
+* '''Wave 1''': {{E|Blighted Ovum}} and {{E|Gurdy Jr.}}
+* '''Wave 2''': {{E|Carrion Queen}} and {{E|The Wretched}}
+* '''Wave 3''': {{E|Peep}} and {{E|The Duke of Flies}}
+* '''Wave 4''': {{E|Blastocyst}} and {{E|Loki}}
+* '''Wave 5''': {{E|Steven}} and {{E|Gemini}}
+* '''Wave 6''': 3x {{E|Larry Jr.}} and {{E|Fistula}}
+* '''Wave 7''': {{E|C.H.A.D.}} and {{E|Monstro}}
+* '''Wave 8''': {{E|Gurdy}} and {{E|Chub}}
+* '''Wave 9''': {{E|Monstro II}} and {{E|Gish}}
+* '''Wave 10''': {{E|Widow}} and {{E|Pin}}
+* '''Wave 11''': 3x {{E|The Hollow}} and {{E|The Husk}}
+* '''Wave 12''': {{E|Mask of Infamy}} and {{E|The Bloat}}
+* '''Wave 13''': {{E|Pestilence}} and {{E|Famine}}
+* '''Wave 14''': {{E|Death}} and {{E|War}}
+* '''Wave 15''': {{E|The Fallen}} and {{E|Headless Horseman}}
+
+=== {{dlc|a}} Afterbirth ===
+All 15 waves are randomized, with each wave spawning two random bosses from the list. Each boss can only appear once per Boss Rush, meaning that out of all the 50 bosses, Isaac will face 30 of them.
+{| class="wikitable sortable mw-collapsible"
+ ! scope="col" | Boss
+ ! scope="col" | Entity ID
+ |-
+ | data-sort-value="Larry Jr." | 3x {{E|Larry Jr.}} || 19.0
+ |-
+ | data-sort-value="The Hollow" | 3x {{E|The Hollow}} || 19.1
+ |-
+ | {{E|Monstro}} || 20.0
+ |-
+ | {{E|Chub}} || 28.0
+ |-
+ | {{E|C.H.A.D.}} || 28.1
+ |-
+ | {{E|Carrion Queen}} || 28.2
+ |-
+ | {{E|Gurdy}} || 36.0
+ |-
+ | {{E|Monstro II}} ||  43.0
+ |-
+ | {{E|Gish}} || 43.1
+ |-
+ | {{E|Pin}} ||  62.0
+ |-
+ | {{E|The Frail}} || 62.2
+ |-
+ | {{E|Famine}} ||  63.0
+ |-
+ | {{E|Pestilence}} || 64.0
+ |-
+ | {{E|War}} || 65.0
+ |-
+ | {{E|Death}} || 66.0
+ |-
+ | {{E|The Duke of Flies}} || 67.0
+ |-
+ | {{E|The Husk}} || 67.1
+ |-
+ | {{E|Peep}} || 68.0
+ |-
+ | {{E|The Bloat}} || 68.1
+ |-
+ | {{E|Loki}} || 69.0
+ |-
+ | {{E|Fistula}} || 71.0
+ |-
+ | {{E|Blastocyst}} || 74.0
+ |-
+ | {{E|Gemini}} || 79.0
+ |-
+ | {{E|Steven}} || 79.1
+ |-
+ | {{E|Blighted Ovum}} || 79.2
+ |-
+ | {{E|The Fallen}} || 81.0
+ |-
+ | {{E|Headless Horseman}} || 82.0
+ |-
+ | {{E|Mask of Infamy}} || 97.0
+ |-
+ | {{E|Gurdy Jr.}} || 99.0
+ |-
+ | {{E|Widow}} || 100.0
+ |-
+ | {{E|The Wretched}} || 100.1
+ |-
+ | data-sort-value="Gurglings" | 3x {{E|Gurglings}} || 237.1
+ |-
+ | data-sort-value="Turdlings" | 3x {{e|Turdlings|n}} || 237.2
+ |-
+ | {{E|The Haunt}} || 260.0
+ |-
+ | {{E|Dingle}} || 261.0
+ |-
+ | {{E|Dangle|n}} || 261.1
+ |-
+ | {{E|Mega Maw}} || 262.0
+ |-
+ | {{E|The Gate}} || 263.0
+ |-
+ | {{E|Mega Fatty}} || 264.0
+ |-
+ | {{E|The Cage}} || 265.0
+ |-
+ | {{E|Dark One}} || 267.0
+ |-
+ | {{E|The Adversary}} || 268.0
+ |-
+ | {{E|Polycephalus}} || 269.0
+ |-
+ | {{E|Uriel}} || 271.0
+ |-
+ | {{E|Gabriel}} || 272.0
+ |-
+ | {{E|The Stain|n}} || 401.0
+ |-
+ | {{E|Brownie|n}} || 402.0
+ |-
+ | {{E|The Forsaken|n}} || 403.0
+ |-
+ | {{E|Little Horn|n}} || 404.0
+ |-
+ | {{E|Rag Man|n}} || 405.0
+ |}
+
+Note that none of the [[chapter 4]] bosses (except {{E|Blastocyst}} and {{E|Death}}) are present in the Boss Rush:
+* {{E|Scolex}} (62.1)
+* {{E|Conquest}} (65.1)
+* {{E|Lokii}} (69.1)
+* {{E|Teratoma}} (71.1)
+* {{E|Daddy Long Legs}} (101.0)
+* {{E|Triachnid}} (101.1)
+* {{E|Mama Gurdy}} (266.0)
+* {{E|Mr. Fred}} (270.0)
+
+Furthermore, some other bosses are not present in the Boss Rush:
+* All [[final boss]]es
+* All [[Sin]]s and [[Super Sin]]s
+* {{E|Krampus}} (81.1)
+* {{E|Uriel|text=Fallen Uriel}} (271.1)
+* {{E|Gabriel|text=Fallen Gabriel}} (272.2)
+* {{Dlc|a+}} [[All Bosses (Bosses)#Afterbirth+|All ''Afterbirth †'' Bosses]]
+* {{Dlc|r}} [[All Bosses (Bosses)#Repentance|All ''Repentance'' Bosses]]
+
+== Layouts ==
+The following room maps were made using [https://github.com/Basement-Renovator/basement-renovator Basement Renovator] for cleaner viewing. Note that the [[urn]]s you see will be replaced by skulls.
+
+{| class="wikitable sortable mw-collapsible mw-collapsed" style="text-align: center"
+ ! scope="col" | ID
+ ! scope="col" | Weight
+ ! scope="col" class="unsortable" | Image preview
+ |-
+ ! scope="row" | 0
+ | 1
+ | [[File:Boss Rush 0.png|500px]]
+ |-
+ ! scope="row" | {{dlc|a}} 1
+ | {{dlcmap slideshow|{{dlcalt|1|r=0.1}}}}
+ | [[File:Boss Rush 1.png|500px]]
+ |-
+ ! scope="row" | {{dlc|a}} 2
+ | {{dlcmap slideshow|{{dlcalt|1|r=0.1}}}}
+ | [[File:Boss Rush 2.png|500px]]
+ |-
+ ! scope="row" | {{dlc|a}} 3
+ | {{dlcmap slideshow|{{dlcalt|1|r=0.25}}}}
+ | {{dlcmap slideshow|{{dlcalt|[[File:Boss Rush 3 Repentance.png|500px]]|r+=[[File:Boss Rush 3.png|500px]]}}}}
+ |-
+ ! scope="row" | {{dlc|a}} 4
+ | {{dlcmap slideshow|{{dlcalt|1|r=0.25}}}}
+ | [[File:Boss Rush 4.png|500px]]
+ |-
+ ! scope="row" | {{dlc|a+}} 5
+ | 0.1
+ | [[File:Boss Rush 5.png|500px]]
+ |-
+ ! scope="row" | {{dlc|r}} 6
+ | 0.5
+ | [[File:Boss Rush 6.png|500px]]
+|}
+
+== Notes ==
+* If Mom is beaten within 20 minutes and Isaac enters the Devil Room, he must return to the boss room before 20 minutes have passed; otherwise, the Boss Rush entrance will be closed.
+** If Isaac is teleported to the Devil Room while inside the Boss Rush room (for example, using a {{p|Joker}} card), exiting the Devil Room will lead him to Mom's Boss Room.
+* If Isaac dies during the Boss Rush, but is able to respawn, the entrance to the Boss Rush room will still be open if the timer is still under 20 minutes. If the Boss Rush entrance has closed, the room can still be re-entered by dying in the Mom boss fight room at the cost of another life.
+* The Boss Rush can only be retried by picking up an item off a pedestal in its room. If the item Isaac originally picked from the room was an active item and Isaac had another item to swap it for, the pedestal and item it was swapped out for will still be there. Swapping the items again will restart the fight. Alternatively, a new pedestal can be created, such as through a {{p|XX - Judgement}} card, {{dlc+|a+}} or dropping your active item via {{T|Butter!}} and taking its item will also restart the fight{{dlc-}}. {{dlc+|a+}} Also, having {{I|Broken Shovel 1}} in your possession will automatically start the Boss Rush if left and entered again.{{dlc-}}
+* {{dlc+|a}} If a {{e|Grab Bag}} spawns for whatever reason, picking it up will start the Boss Rush. The player can still pick up one of the pedestal items.{{dlc-}}
+* The boss rush does not unlock anything if beaten in a challenge.
+* {{dlc+|a+}} Using {{i|Void}}, {{p|Black Rune}}, {{i|Abyss}}, or {{i|Moving Box|dlc=r}} will start the Boss Rush.{{dlc-}}
+* If a {{E|Chest||chest}} is opened in the Boss Rush room, it will start the Boss Rush.
+* {{i|Mama Mega!}} / {{I|Mega Bean|r+}} will open the Boss Rush room even if the time limit has expired. Leaving the room will cause the door to close if the time limit has expired.
+* {{dlc+|a+}} Holding {{i|Broken Shovel 1}} will also open the Boss Rush room, ignoring the time limit, to complete {{i|Mom's Shovel}}.{{dlc-}}
+* If a Crawl Space is entered from within the Boss Rush room, exiting the Crawl Space will not return the player to the Boss Rush room, but will instead place the player back in the Mom Boss Room.
+* {{dlc+|r}} When {{i|Suplex!}} is used to grab an entity while a {{i|Berserk!}} effect is about to end, Isaac lands with an explosion similar to {{i|Mama Mega!}}. This explosion can open the boss rush door after the time limit has expired.{{dlc-}}
+* {{i|Dad's Key}} can't open the door from the outside, but can open it from the inside, which can be used for taking an item, then leaving without fighting the bosses, for example.
+* Despite being similar to a Mama Mega explosion, {{e|Giga Bomb}}s can't open the boss rush door.
+
+== Tips ==
+* The player's playtime can be checked at any moment by pressing TAB (or long-pressing SELECT on the controller), enabling Extra HUD in the options menu, or by simply looking down to the bottom screen on the 3DS version, where it is shown on the map.
+* Each boss will always drop {{e|Red Heart||hearts}} on normal difficulty, {{dlc|r}} and sometimes on hard difficulty (which means with bad enough luck, you won't get any heart drops). {{i|Dark Bum}} can turn red hearts from these drops into {{e|Soul Heart|nr}}s/{{e|Black Heart|r}}s, providing loads of extra health.
+* Take out {{E|Carrion Queen}} quickly, as its {{E|Red Poop}}s will remain for the rest of the boss rush. They can be advantageous though, as other bosses can also take damage from these poops. In particular, bouncing bosses like {{E|The Hollow}} and {{E|The Husk}} can quickly kill themselves on contact.
+* All bosses with a {{i|Brimstone}} laser attack could severely hurt or even one-shot-kill each other, especially {{E|The Gate}}. It may be beneficial to focus on the other boss before killing them.
+* {{dlc|na}} Wave 9 can be quite difficult, as {{E|Monstro II}} (he always spawns on the left side) can catch the player off-guard with an offscreen {{i|Brimstone}} laser. The [[black creep]] left by {{E|Gish}} will remain until he is killed.
+* {{dlc|na}}{{E|The Bloat}} + {{E|Mask of Infamy}} is one of the hardest waves, but {{E|The Bloat}} can be baited into destroying both the heart and the mask itself of the {{E|Mask of Infamy}} with its {{i|Brimstone}} lasers.
+* Any teleport effect (such as [[card]]s, activated items, Telepills, etc) can be used to leave the Boss Rush. This can be used to gain one item without having to fight any bosses.
+** {{dlc+|r}} After unlocking {{a|A Strange Door}}, [[Marked Skull]]s will always appear on Depths II and will always drop {{p|0 - The Fool}}, providing a guaranteed way to escape Boss Rush.{{dlc-}}
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | Isaac's Head, Maggy's Bow, Cain's Other Eye, Judas' Shadow, ???'s Only Friend, Eve's Mascara, Samson's Chains, The Nail, Missing No., Undefined, The D100, Immaculate Conception, Sticky Nickels, Locust of Conquest, Divorce Papers, Beth's Faith, Rock Bottom, Soul of Isaac, Soul of Magdalene, Soul of Cain, Soul of Judas, Soul of ???, Soul of Eve, Soul of Samson, Soul of Azazel, Soul of Lazarus, Soul of Eden, Soul of the Lost, Soul of Lilith, Soul of the Keeper, Soul of Apollyon, Soul of the Forgotten, Soul of Bethany, Soul of Jacob and Esau }}
+
+== Gallery ==
+<gallery>
+File:Room Concepts.jpg|A drawn concept of Boss Rush by Edmund McMillen.
+</gallery>
+
+== Trivia ==
+* Despite the Timer seen between level transitions appearing, Boss Rush cannot be done the first time the player defeats {{e|Mom}}. Instead, the game will cut directly to the [[Epilogue]].
+* {{dlc|r}} ''Armageddon'' is the theme for the Boss Rush added in [[The Binding of Isaac: Repentance]].
+* The 20-minute limit for reaching Boss Rush could signify how long it took Isaac to become delirious and start having thoughts about various creations made up in his head, i.e. bosses.
+
+== Bugs ==
+{{bug|It is possible for item pedestals to spawn on [[red poop]] (which can be spawned by {{E|Carrion Queen}} or red {{e|Dingle}}) or [[spikes]]. Attempting to pick up the item will damage Isaac.}}
+{{bug|One of the possible layouts for the Boss Rush room will have spikes near the location that an item pedestal spawns after completing the fight. If you possess {{i|There's Options}}, one of the item pedestals can appear in the same place as the spikes, causing you to take damage by picking that item up.}}
+{{bug|dlc=na+|Entering Boss Rush after the 20 minutes (killing {{e|Mom}} before it, but waiting to enter) and using {{i|Glowing Hourglass}} will crash the game.}}
+{{bug|plat=XboxOne, PS4|{{i|Mama Mega!}} cannot be used to open the door to {{r|Boss Rush}}.}}
+
+{{nav|room|boss rush unlock|fr=Ruée des Boss}}
+[[Category:Mechanics]]

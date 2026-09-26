@@ -1,0 +1,34 @@
+{{header normal bosses}}
+{{page dlc|r}}
+
+== {{s|Downpour}} {{Unlockable}} ==
+{| style="width: 70%; text-align: center"
+ | [[file:Boss Lil Blub (Downpour) portrait.png|center|link=Lil Blub]]
+ | [[file:Boss Wormwood (Downpour) portrait.png|center|link=Wormwood]]
+ | [[file:Boss The Rainmaker portrait.png|center|link=The Rainmaker]]
+ | [[file:Boss Min-Min portrait.png|center|link=Min-Min]]
+ |-
+ |[[Lil Blub]]
+ |[[Wormwood]]
+ |[[The Rainmaker]]
+ |[[Min-Min]]
+ |}
+
+== {{s|Dross}} {{Unlockable}} ==
+{| style="width: 75%; text-align: center"
+ |[[file:Boss Lil Blub (Dross) portrait.png|center|link=Lil Blub]]
+ |[[file:Boss Wormwood (Dross) portrait.png|center|link=Wormwood]]
+ |[[file:Boss Clog portrait.png|center|link=Clog]]
+ |[[file:Boss Colostomia portrait.png|center|link=Colostomia]]
+ |-
+ |[[Lil Blub]]
+ |[[Wormwood]]
+ |[[Clog]]
+ |[[Colostomia]]
+ |-
+ | colspan="4" |[[file:Boss Turdlet portrait.png|center|link=Turdlet]]
+ |-
+ | colspan="4" |[[Turdlet]]
+ |}
+{{nav|boss|fr=Chapitre 1.5 (Boss)}}
+[[Category:Bosses| ]]

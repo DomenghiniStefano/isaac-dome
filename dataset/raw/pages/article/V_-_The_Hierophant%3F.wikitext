@@ -1,0 +1,29 @@
+{{header reverse tarot cards}}
+{{Infobox card
+ | dlc         = r
+ | name        = V - The Hierophant?
+ | files name  = V - Inverted The Hierophant
+ | type        = card
+ | id          = 61
+ | quote       = Two prayers for the forgotten
+ | description = Spawns 2 {{e|Bone Heart|n}}s on the ground.
+ | unlocked by = The Hierophant
+ | recharge    = 12
+}}
+
+{{cit|uc|r}}
+
+== Effects ==
+* Spawns 2 {{e|Bone Heart|n}}s on the ground near Isaac.
+
+== Notes ==
+* Some {{r|Super Secret Room}} layouts can force hearts in them to be of one type. Using '''V - The Hierophant?''' in these rooms can transform the bone hearts into other types of hearts, which may be an unwanted outcome.
+
+== Synergies ==
+* {{I|Tarot Cloth|n}}: Spawns 3 {{e|Bone Heart}}s.
+** {{I|Tarot Cloth|n}} + {{i|Blank Card}} + {{i|Car Battery|n}} : Spawns 6 bone hearts.
+
+== In-game Footage ==
+{{#ev:youtube|b3cZ6UlSuRk}}
+
+{{nav|fr=V - Le Pape ?|card}}

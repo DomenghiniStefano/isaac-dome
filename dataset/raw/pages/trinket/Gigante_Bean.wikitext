@@ -19,6 +19,12 @@
 * {{I|Linger Bean}}: The clouds will be larger, increasing the range drastically. The damage is unaffected.
 * {{I|Mucormycosis}}: Spore explosions count as farts, and increase in size.
 
+== Gallery ==
+<gallery>
+File:gigante_bean_antibirth.png|Gigante Bean's appearance in ''Antibirth''.
+File:gigante_bean_old.png|Gigante Bean's appearance prior to [[V1.7.6|version 1.7.6]].
+</gallery>
+
 == Trivia ==
 * This trinket originated in ''Antibirth'', where it was originally called [[anti:Giant Bean|Giant Bean]] and had the additional effect of stunning enemies.
 

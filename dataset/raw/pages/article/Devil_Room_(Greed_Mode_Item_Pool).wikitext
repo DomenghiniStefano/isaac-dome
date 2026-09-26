@@ -1,0 +1,33 @@
+{{header greed item pools}}
+{{item pool
+ | dlc        = a
+ | is greed   = yes
+ | price type = health
+}}
+
+Items in this pool can be found in the {{R|Devil Room}} in [[Greed mode]]. All items can be bought for some number of Red [[Heart container]]s, {{dlc|r+}} or via damaging Sacrifice Spikes. If Isaac has no Red Heart containers, items can be bought for three {{E|Soul Heart}}s.
+
+== Activated Collectibles ==
+{{item pool/header}}
+{{pool items | The Book of Belial, The Book of Sin, Guppy's Head, Guppy's Paw, The Nail, The Necronomicon, Satanic Bible }}
+{{pool items | weight = 0.2 | Mega Blast }}
+{{pool items | dlc = a+ | Book of the Dead, Sacrificial Altar }}
+{{pool items | dlc = r | Damocles, Gello, Monster Manual, Sulfur }}
+{{pool items | dlc = r | weight = 0.5 | Abyss, Berserk!, Dark Arts, Lemegeton }}
+|}
+
+== Passive Collectibles ==
+{{item pool/header}}
+{{pool items | Abaddon, Athame, Betrayal, Black Powder, Ceremonial Robes, Cambion Conception, Contract From Below, Dark Matter, Dead Cat, Death's Touch, Demon Baby, Empty Vessel, Gimpy, Guppy's Collar, Guppy's Hairball, Headless Baby, Incubus, Judas' Shadow, Leech, Lord of the Pit, A Lump of Coal, The Mark, Maw Of The Void, Mom's Knife, Multidimensional Baby, My Shadow, Ouija Board, The Pact, Pentagram, Rotten Baby, Sacrificial Dagger, Spirit of the Night, Whore of Babylon }}
+{{pool items | dlc = nrr+ | Guppy's Tail }}
+{{pool items | dlc = nr | Cube of Meat, Dead Bird }}
+{{pool items | dlc = nr+ | Sister Maggy }}
+{{pool items | dlc = a+ | 7 Seals, Dark Prince's Crown, Eye of Belial, Lil Delirium, Little Horn, Shade }}
+{{pool items | dlc = a+nr+ | Tarot Cloth }}
+{{pool items | dlc = r | 2Spooky, Azazel's Rage, Backstabber, Blood Oath, Bloody Gust, Bloody Lust, Brimstone, Brimstone Bombs, Eye of the Occult, False PHD, Guppy's Eye, Hungry Soul, Lil Abaddon, Lusty Blood, Money Power, Ocular Rift, Purgatory, A Quarter, Sanguine Bond, Twisted Pair, Vengeful Spirit }}
+{{pool items | dlc = r | weight = 0.5 | Heartbreak }}
+{{pool items | dlc = r | weight = 0.2 | Technology }}
+{{pool items | dlc = r+ | Dry Baby, Lil Brimstone, Missing Page 2, Succubus }}
+|}
+
+{{nav|fr=Antre du Diable (Banque d'Objets - Mode Avarice)}}

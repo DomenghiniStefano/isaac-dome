@@ -1,0 +1,37 @@
+{{header special cards}}
+''Not to be confused with [[Suicide King (Challenge)]].
+{{infobox card
+ | type        = special card
+ | id          = 46
+ | recharge    = {{dlcalt|4|r=1}}
+ | quote       = A true ending?
+ | description = Kills Isaac and spawns lots of Pickups, items, and/or Chests in the same room.
+ | unlocked by = Suicide King
+}}
+
+{{cit|us}}
+
+== Effects ==
+* Kills Isaac and spawns 10 consumables and/or items around the location of use.
+
+== Notes ==
+* Being a [[special card]], Suicide King has a significantly lower chance of appearing compared to other cards.
+* The spawned collectibles will come from the [[Item Pool]] related to the Room where Suicide King was used (e.g. Angel Room items if used in an {{r|Angel Room}}).
+
+== Strategy ==
+* Since using Suicide King means death, Isaac will need to have a resurrection item to make a good use of it, such as {{i|1up!}}, the {{i|Ankh}}, the {{i|Dead Cat}}, or being {{C|Lazarus}}.
+** When combined with {{i|Blank Card}} and {{i|Dead Cat}}, the card can be used nine times (spawning a total of 90 consumables and/or items).
+* Suicide King won't always drop a pedestal item, but often drops numerous Chests, meaning that using Suicide King on a [[special room]] or in {{s|Chest}}/{{s|Dark Room}} can be useful to get good items.
+* {{dlc|r}} When doing a [[Repentance Co-Op|true co-op]] run, the player that uses Suicide King can be revived by beating the floor boss. An ideal time to use this card would be during the fight with the floor's boss while its health is low.
+** {{dlc|r+}} In [[Online (open beta)|online co-op]] mode, the player who uses Suicide King can also be revived at any time, for a cost, using the {{m|Revive Machine}}.
+* Although a niche situation, {{i|Echo Chamber}} and multiple Suicide Kings, likely via Echo Chambered {{p|Jera}}, and several extra lives like the Dead Cat allows stacking large amounts of rewards: each Suicide King in the Echo Chamber spawns its rewards, but Isaac dies only once, allowing up to 4x rewards per life. Counting remaining lives and using different consumables to remove the Suicide Kings from the Chamber afterwards is important to keep in mind.
+
+== Trivia ==
+* The Suicide King card is a nickname for the King of Hearts, referred to as such because its artwork depicts a king who seems to be sticking a sword into his own head.
+* When Suicide King causes a Game Over (i.e. is used with no revive items), a picture of the last cause of damage will appear on Isaac's last will as the cause of death.
+* The background color for the Suicide King achievement has the same color as all the {{r|Boss Rush}} unlocks, suggesting that the Suicide King card was originally intended to be unlocked via completing a Boss Rush, with {{C|Lazarus}}.
+** This is further evidenced by the fact that {{I|Missing No.}}, {{C|Lazarus}}'s Boss Rush unlock has a Challenge background color. This implies that the [[Suicide King (Challenge)|Suicide King]] [[challenge]] originally unlocked Missing No., or it was intended to be looked at as an error or a glitch, as Missing No. is a glitch-related item.
+* The card quote reinforces [https://www.reddit.com/r/bindingofisaac/comments/2m33ys/i_am_the_author_of_the_isaac_endings_explained/ the idea] proposed by Reddit user Jayborino that the only way for Isaac to get out of the chest in the "real world", is to die in the game.
+** This user was praised by Edmund himself for his article being "mind blowingly accurate".
+
+{{nav|fr=Roi Suicidaire}}

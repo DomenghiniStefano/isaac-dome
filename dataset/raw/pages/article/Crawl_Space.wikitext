@@ -1,0 +1,134 @@
+{{r|Crawl Space}}s are small secret rooms that can be entered by touching trapdoors with ladders in them. They can be found by:
+
+# Using {{i|We Need To Go Deeper!}} {{dlc|nr}} randomly (8% chance)/{{dlc|r}} on certain patterned tiles (100% chance once per floor)
+# Using {{p|Ehwaz}} {{dlc|nr}} randomly (10% chance)/{{dlc|r}} on certain patterned tiles (100% chance once per floor)
+# Bombing a {{r|Clean Bedroom}} rug (100% chance)
+# Destroying a rock (see below)
+# {{dlc|r}} Using {{p|Chaos Card}} on {{e|Great Gideon|n}} (100% chance)
+# {{dlc|r}} Using {{p|XXI - The World?|n}} (100% chance)
+
+These rooms are viewed from the side, rather than from above like the rest of the game, and Isaac will experience gravity pulling him to the floor while he is not walking on top of one of the ladders. Under the effects of flight, this gravity has no effects. However, Isaac cannot fly over the walls or floor. Items spawned inside are generated from the {{ip|Treasure Room|text=Treasure Room Item Pool}}.
+
+== Mechanics ==
+When entering a room pre-determined to contain a Crawl Space entrance, an RNG roll is made using the floor seed. This value will be shifted and divided, until its final result is in the grid range for the current room (ie: 128 tiles for 1x1 rooms, or 16x8). If said tile value is tied to a ''simple rock'' (not tinted, not a prop), then access to the Crawl Space will be granted upon destroying that rock. Only one room per floor has the right to spawn a Crawl Space, and not every floor is given one during the initial generation, even though every floor has also a Crawl Space '''and''' a Black Market ready in queue. The tile value can also be tied to props (empty tiles, doors, pots, void tiles, spikes, metal blocks, ...), but the Crawl Space won't spawn unless it's below a simple rock.
+
+* This makes the rocks contained in {{s|???}} have a significantly increased chance of spawning a crawl space.
+* {{Dlc|r}} Crawl spaces may spawn under variants of rocks.
+
+== Layouts ==
+The following room maps were made using [https://github.com/Basement-Renovator/basement-renovator Basement Renovator] for cleaner viewing.
+
+{| class="wikitable sortable mw-collapsible mw-collapsed" style="text-align: center"
+ ! scope="col" | ID
+ ! scope="col" | Weight
+ ! scope="col" class="unsortable" | Contents
+ ! scope="col" class="unsortable" | Image preview
+ |-
+ ! scope="row" | 0
+ | 1
+ | style="text-align: left" | One [[item]] {{dlc|nr}} and two {{e|Attack Fly||Attack Flies}}.
+ | {{dlcmap slideshow|{{dlcalt|[[File:CrawlSpace 0 Afterbirth+.png|250px]]|r=[[File:CrawlSpace 0.png|250px]]}}}}
+ |-
+ ! scope="row" | 1
+ | 1
+ | style="text-align: left" | The entrance to the {{r|Black Market}}.
+ | [[File:CrawlSpace 1.png|250px]]
+ |-
+ ! scope="row" | 2
+ | {{dlcmap slideshow|{{dlcalt|1|r=0.25}}}}
+ | style="text-align: left" | A random [[trinket]].
+ | {{dlcmap slideshow|{{dlcalt|[[File:CrawlSpace 2 Afterbirth+.png|250px]]|r=[[File:CrawlSpace 2.png|250px]]}}}}
+ |-
+ ! scope="row" | 3
+ | {{dlcmap slideshow|{{dlcalt|1|r=0.25}}}}
+ | style="text-align: left" | {{dlc|nr}} One / {{dlc|r}} Two {{e|Chest}}s.
+ | {{dlcmap slideshow|{{dlcalt|[[File:CrawlSpace 3 Afterbirth+.png|250px]]|r=[[File:CrawlSpace 3.png|250px]]}}}}
+ |-
+ ! scope="row" | 4
+ | {{dlcmap slideshow|{{dlcalt|1|r=0.5}}}}
+ | style="text-align: left" | {{dlc|nr}} One [[item]] and three {{e|Attack Fly||Attack Flies}}.<br>{{dlc|r}} Two items, see the [[#Notes|notes]] to know how to reach the left item.
+ | {{dlcmap slideshow|{{dlcalt|[[File:CrawlSpace 4 Afterbirth+.png|250px]]|r=[[File:CrawlSpace 4.png|250px]]}}}}
+ |-
+ ! scope="row" | 5
+ | 1
+ | style="text-align: left" | One item and one {{e|Lil' Haunt}}.
+ | {{dlcmap slideshow|{{dlcalt|[[File:CrawlSpace 5 Afterbirth+.png|250px]]|r=[[File:CrawlSpace 5.png|250px]]}}}}
+ |-
+ ! scope="row" | {{dlc|a}} 6
+ | {{dlcmap slideshow|{{dlcalt|1|r=0.5}}}}
+ | style="text-align: left" | A chest and six {{e|Penny||coins}}.
+ | {{dlcmap slideshow|{{dlcalt|[[File:CrawlSpace 6 Afterbirth+.png|250px]]|r=[[File:CrawlSpace 6.png|250px]]}}}}
+ |-
+ ! scope="row" | {{dlc|a}} 7
+ | 1
+ | style="text-align: left" | One item and two {{e|Dart Fly||Dart Flies}}.
+ | {{dlcmap slideshow|{{dlcalt|[[File:CrawlSpace 7 Afterbirth+.png|250px]]|r=[[File:CrawlSpace 7.png|250px]]}}}}
+ |-
+ ! scope="row" | {{dlc|a}} 8
+ | {{dlcmap slideshow|{{dlcalt|1|r=0.25}}}}
+ | style="text-align: left" | {{dlc|nr}} Three coins.<br>{{dlc|r}} Four coins and a {{m|Beggar}}.
+ | {{dlcmap slideshow|{{dlcalt|[[File:CrawlSpace 8 Afterbirth+.png|250px]]|r=[[File:CrawlSpace 8.png|250px]]}}}}
+ |-
+ ! scope="row" | {{dlc|a+}} 9
+ | 0.1
+ | style="text-align: left" | One {{e|Poop}} and three {{e|Fly||Flies}}.
+ | {{dlcmap slideshow|{{dlcalt|[[File:CrawlSpace 9 Afterbirth+.png|250px]]|r=[[File:CrawlSpace 9.png|250px]]}}}}
+ |-
+ ! scope="row" | {{dlc|a+}} 10
+ | {{dlcmap slideshow|{{dlcalt|0.1|r=0.25}}}}
+ | style="text-align: left" | One item and a {{m|Shop Restock Machine}}.
+ | {{dlcmap slideshow|{{dlcalt|[[File:CrawlSpace 10 Afterbirth+.png|250px]]|r=[[File:CrawlSpace 10.png|250px]]}}}}
+ |-
+ ! scope="row" | {{dlc|r}} 11
+ | 1
+ | style="text-align: left" | One item and one {{e|Horf}}.
+ | [[File:CrawlSpace 11.png|250px]]
+ |-
+ ! scope="row" | {{dlc|r}} 12
+ | 1
+ | style="text-align: left" | One item and one {{e|Horf}}.
+ | [[File:CrawlSpace 12.png|250px]]
+|}
+
+== Notes ==
+* There is only one Crawl Space room per floor. Thus, if Isaac finds two trapdoors with ladders on the same floor, they will lead to the same Crawl Space. When Isaac exits the Crawl Space, he will come out from the entrance he came in from. {{dlc+|r}} Creating a Crawl Space within a Crawl Space with {{p|XXI - The World?}} will just take Isaac back to the original one.{{dlc-}}
+* Entering a Crawl Space in the {{R|Boss Rush}} room and exiting it after the time limit has expired will transport Isaac back to the {{E|Mom}} Boss room.
+* There is no map in the Crawl Space, similar to the {{R|Black Market}}, the {{R|I AM ERROR}} room, the {{R|Devil Room}}, and the {{R|Angel Room}}.
+** This is because the Crawl Space does not technically occupy a fixed location on the floor relative to other rooms; Isaac is, in a sense, teleported to the Crawl Space when he touches the trapdoor. Possibly related to this, should Isaac enter a crawl space from a Devil Room, upon exiting he will emerge back in the regular map.
+* Be careful when using {{I|The Poop}}, as in certain situations, The Poop can block the exit and trap Isaac.
+* Crawl spaces can appear in [[Greed mode]] as well.
+* {{dlc|nr}}It is possible to enter {{R|Black Market}}s through a Crawl Space even when there is no path to it. By using two bombs, Isaac can clip out of bounds and then walk underneath the Crawl Space room.
+** {{dlc+|r}} Leaving a Crawl Space from any side where no exit exists brings Isaac to {{R|I AM ERROR}} instead. It is now significantly more difficult to clip out of bounds, and can't be done with just two bombs.{{dlc-}}
+* {{dlc+|a}} With {{i|Continuum}}, if Isaac shoots downward in a Crawl Space, his tears will continuously accelerate and may loop many times (over 20), regardless of his range.{{dlc-}}
+* {{dlc+|a}} Rocks with Crawl Spaces under them will flash while holding the {{t|Shiny Rock}}.{{dlc-}}
+* {{dlc+|a}} The trinket {{t|Stud Finder}} adds an additional 1 in 200 chance for a Crawl Space to appear when a rock is destroyed.
+** With {{i|Mom's Box}} or a {{A|Golden Trinket}} it becomes 1 in 100.{{dlc-}}
+* {{dlc+|r}} The Crawl Space that appears by using a {{p|Chaos Card}} on {{E|Great Gideon}} always has the same design even if another Crawl Space was encountered.{{dlc-}}
+* {{dlc+|r}} One Crawl Space layout contains two items, one of which is entirely enclosed by walls. The following are ways to obtain the seemingly off-limits item:
+** Teleport to it with {{I|Stitches}};
+** Grab it with {{I|Mr. ME!}};
+** Jump through the wall with {{I|How to Jump}};
+** Using {{i|Void}} with {{i|Birthright}} when playing as {{c|Apollyon}} has a 10% chance to create a copy of the item after being absorbed by Void;
+** Absorb it with {{I|Moving Box}}, then place it in another room;
+** Clipping through the wall with {{I|Pluto}};
+** Cloning the item using {{I|Diplopia}} and grabbing the copy created underneath.
+*** This applies as well for {{i|Crooked Penny}}.{{dlc-}}
+* {{dlc+|r}} Crawl Spaces can be found during the {{E|Mother's Shadow}} sequence. She will follow Isaac into them, so care must still be taken to avoid her charge.{{dlc-}}
+** The sequence may contain key blocks, usually with a key nearby. If a key is in your inventory when entering the crawl space, it will get transferred to your key pool, rendering a nearby key block impossible to remove.
+* {{dlc+|r}} Crawl spaces can still be found on floors during the [[Ascent]] to {{s|Home}}.{{dlc-}}
+
+== Gallery ==
+<gallery>
+File:Crawl space in shadow mother room.jpg|An entrance to crawl space found during the {{E|Mother's Shadow|n}} sequence.
+</gallery>
+
+== Trivia ==
+* The layout of the Crawl Space is a direct visual reference to the treasure rooms in the Legend of Zelda for the NES.
+* Crawl Spaces are referred to within the game files as "Item Dungeons".
+
+== Bugs ==
+{{bug|If Isaac's hitbox is small enough (by using [[One Makes You Smaller]] pills), it's possible to travel through the walls and ceiling to access the {{R|Black Market}}. In Afterbirth+, the walls are much harder to clip through, but it can still be done with high speed and help of the stairs or flight.}}
+{{bug|dlc=r|If Isaac uses a {{p|XXI - The World?}} card inside a {{R|Black Market}} and enters it, he will be taken to the crawl space that leads to the Black Market. If he then tries to leave the crawl space from here, he will be spawned back inside it making exiting to the main floor no longer possible. If this is done on the {{s|Chest}}, {{s|Dark Room}}, {{s|The Void}}, or {{s|Home}} floors it will result in a soft lock since Isaac cannot leave through the trap door that usually spawns in the {{R|Black Market}}.}}
+{{bug|If Isaac teleports to an {{r|I AM ERROR}}, {{r|Devil Room}}, or {{r|Angel Room}} from a Crawl Space, and then enters a Crawl Space from that room, Isaac will be unable to exit the crawl space. He will be permanently stuck unless he can teleport out.}}
+
+{{nav|room|fr=Souterrain|es=Mazmorra}}

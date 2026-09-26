@@ -1,0 +1,20 @@
+{{infobox version
+ | dlc  = a
+ | date = 2015-11-19
+}}
+
+== Undocumented changes ==
+=== Additions ===
+* Added {{i|Censer}} to the [[Angel Room (Item Pool)|Angel room item pool]].
+
+=== Changes ===
+* Changed {{i|Stop Watch}} to only activate upon taking damage.
+* The [[Greed machine]] jams less frequently.
+* {{t|Missing Poster}} now revives Isaac as [[The Lost]]. Doing this in a sacrifice room now permanently unlocks The Lost.
+* {{i|Mega Blast}} only gains 3 charges when picking up a [[little battery]].
+
+=== Fixes ===
+* Fixed {{i|Kamikaze!}} not damaging Isaac.
+* Fixed [[Keeper]]'s visuals being overridden.
+
+{{nav|version}}

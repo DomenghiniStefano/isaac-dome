@@ -1,0 +1,36 @@
+{{header reverse tarot cards}}
+{{Infobox card
+ | dlc         = r
+ | name        = XIV - Temperance?
+ | files name  = XIV - Inverted Temperance
+ | type        = card
+ | id          = 70
+ | quote       = May your hunger be satiated
+ | description = Forces Isaac to eat 5 random [[pills]] in quick succession. Eaten pill types become identified.
+ | unlocked by = Temperance
+ | recharge    = 6
+}}
+
+{{cit|uc|r}}
+
+== Effects ==
+* Forces Isaac to eat 5 random [[pills]] (from the run's pill pool) in quick succession.
+** Eaten pill types become identified.
+
+== Notes ==
+* Changing rooms while the pills are eaten does not stop the forced feeding of pills.
+* If unlocked, [[Horse Pills]] can rarely appear in the sequence of force fed pills.
+
+== Synergies ==
+* {{I|Tarot Cloth}}: Forces Isaac to eat 10 [[pills]].
+
+== Interactions ==
+* {{i|Acid Baby}}: Each eaten pill triggers Acid Baby's poison effect, dealing 10 damage per pill + extra poison damage.
+* {{t|Endless Nameless}}: Only '''XIV - Temperance?''' itself can be copied, not the pill it generates.
+* {{i|Lil Spewer}}: Each eaten pill changes Lil Spewer effect.
+* [[Vurp!]]: Clones the last pill used.
+
+== In-game Footage ==
+{{#ev:youtube|b3cZ6UlSuRk}}
+
+{{nav|card|pill modifier|fr=XIV - Tempérance ?}}

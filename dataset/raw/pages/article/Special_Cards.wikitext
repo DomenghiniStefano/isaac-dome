@@ -1,0 +1,33 @@
+{{header special cards}}
+
+'''Special Cards''' are [[cards]] that have a lower chance of appearing. They use a separate roll chance when a card is spawned.
+
+The following is a complete list of the special cards:
+* {{p|Suicide King}}
+* {{p|Chaos Card}}
+* {{p|Credit Card}}
+* {{p|Rules Card}}
+* {{p|A Card Against Humanity}}
+* {{p| ? Card}}
+* {{p|Get out of Jail Free Card}}
+* {{p|Holy Card}}
+* {{p|Huge Growth}}
+* {{p|Ancient Recall}}
+* {{p|Era Walk}}
+* {{p|Wild Card}}
+Despite being non-card consumables, the following are also considered '''special cards''' for spawning purposes, but can be excluded from some sources:
+* {{p|Emergency Contact}}
+* {{p|Dice Shard}}
+* {{p|Cracked Key}}
+
+== Different drop chances for Special Cards ==
+* Generic Card drop / When {{c|Tainted Eden}} rerolls his consumable: 77.7% Tarot, 9.6% Rune, 8.6% Playing, 4.1% Special
+* Eden Generation: 95.9% Tarot, 4.1% Special
+* {{i|Deck of Cards}}, and the death of its wisp / {{i|Keeper's Box}} card? / {{i|Starter Deck}} pickup / {{i|Magic 8 Ball}} pickup: 86.3% Tarot, 9.6% Playing, 4.1% Special
+* {{i|Booster Pack}} spawns:
+** 1 out of 5 cards: 93.3% Playing, 6.67% special (can't be non-card consumable)
+** 4 out of 5 cards: 65% Tarot, 20% Playing, 5% Special (can't be non-card consumable)
+
+{{nav|fr=Cartes Spéciales}}
+[[Category:Pickups]]
+[[Category:Special cards| ]]

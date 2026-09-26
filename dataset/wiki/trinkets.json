@@ -22959,7 +22959,7 @@
   },
   "52": {
     "title": "Counterfeit Penny",
-    "revid": 266877,
+    "revid": 269644,
     "description": [
       {
         "kind": "text",
@@ -42016,7 +42016,7 @@
   },
   "97": {
     "title": "Tonsil",
-    "revid": 266715,
+    "revid": 269364,
     "description": [
       {
         "kind": "text",
@@ -42220,6 +42220,38 @@
                     ]
                   }
                 ]
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": " The passive item form of Tonsil no longer exists; its ID has been taken by ",
+                        "style": "plain"
+                      },
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 474
+                        },
+                        "label": "Broken Glass Cannon"
+                      },
+                      {
+                        "kind": "text",
+                        "text": " and no longer appears in the Collection Page, nor can it be obtained by Eden as a starting item.",
+                        "style": "plain"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
               },
               {
                 "inline": [
@@ -56243,7 +56275,7 @@
   },
   "134": {
     "title": "Gigante Bean",
-    "revid": 258280,
+    "revid": 269336,
     "description": [
       {
         "kind": "text",
@@ -58709,7 +58741,7 @@
   },
   "140": {
     "title": "Apple of Sodom",
-    "revid": 258285,
+    "revid": 269641,
     "description": [
       {
         "kind": "text",
@@ -59190,7 +59222,7 @@
   },
   "141": {
     "title": "Forgotten Lullaby",
-    "revid": 258288,
+    "revid": 269365,
     "description": [
       {
         "kind": "text",
@@ -86384,7 +86416,7 @@
   },
   "189": {
     "title": "Sigil of Baphomet",
-    "revid": 269046,
+    "revid": 269525,
     "description": [
       {
         "kind": "text",
@@ -86542,27 +86574,34 @@
                     ]
                   }
                 ],
-                "children": []
-              },
-              {
-                "inline": [
+                "children": [
                   {
-                    "kind": "text",
-                    "text": "Additionally, losing in a ",
-                    "style": "plain"
-                  },
-                  {
-                    "kind": "concept",
-                    "page": "Hell Game",
-                    "label": "Hell Game"
-                  },
-                  {
-                    "kind": "text",
-                    "text": " always spawns a red spider, the shield generated from killing it guarantees a payout for each half-heart.",
-                    "style": "plain"
+                    "kind": "list",
+                    "ordered": false,
+                    "items": [
+                      {
+                        "inline": [
+                          {
+                            "kind": "text",
+                            "text": "Additionally, losing in a ",
+                            "style": "plain"
+                          },
+                          {
+                            "kind": "concept",
+                            "page": "Hell Game",
+                            "label": "Hell Game"
+                          },
+                          {
+                            "kind": "text",
+                            "text": " always spawns a red spider, the shield generated from killing it guarantees a payout for each half-heart.",
+                            "style": "plain"
+                          }
+                        ],
+                        "children": []
+                      }
+                    ]
                   }
-                ],
-                "children": []
+                ]
               },
               {
                 "inline": [

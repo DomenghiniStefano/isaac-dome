@@ -1,0 +1,25 @@
+{{header greed item pools}}
+{{item pool
+ | dlc      = a
+ | is greed = yes
+}}
+
+Items in this pool can spawn in the {{R|Curse Room}} in [[Greed mode]]. This does not apply to {{E|Red Chest}}s.
+
+== Activated Collectibles ==
+{{item pool/header}}
+{{pool items | Guppy's Head, Guppy's Paw }}
+{{pool items | dlc = r | Magic Skin, Razor Blade, Sacrificial Altar }}
+{{pool items | dlc = r | weight = 0.2 | Plan C }}
+|}
+
+== Passive Collectibles ==
+{{item pool/header}}
+{{pool items | Dead Cat, Guppy's Collar }}
+{{pool items | dlc = nrr+ | Guppy's Tail }}
+{{pool items | dlc = nr+ | Cube of Meat }}
+{{pool items | dlc = r | Athame, Black Candle, Blood Oath, Blood Puppy, Ceremonial Robes, Curse of the Tower, Dark Prince's Crown, Euthanasia, Gimpy, Guppy's Eye, Little Horn, The Mark, The Pact, Pentagram, Sanguine Bond, Shade, Tarot Cloth, Vengeful Spirit }}
+{{pool items | dlc = r | weight = 0.5 | False PHD, Heartbreak }}
+|}
+
+{{nav|fr=Salle Maudite (Banque d'Objets - Mode Avarice)}}

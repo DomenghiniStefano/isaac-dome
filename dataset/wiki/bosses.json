@@ -56965,7 +56965,7 @@
   },
   "68.1.0": {
     "title": "The Bloat",
-    "revid": 267111,
+    "revid": 269369,
     "description": [
       {
         "kind": "text",
@@ -87310,7 +87310,7 @@
   },
   "950.0.0": {
     "title": "Dogma",
-    "revid": 268851,
+    "revid": 269343,
     "description": [
       {
         "kind": "text",
@@ -87409,7 +87409,7 @@
             "inline": [
               {
                 "kind": "text",
-                "text": "In its first phase, Dogma is attached to a television. Damage can only be dealt to Dogma by damaging the television in the center of the room. Any attacks towards Dogma themself causes a shield to briefly appear and block the attack. Dogma moves slowly towards Isaac, leaving a trail of damaging ",
+                "text": "In its first phase, Dogma is attached to a television. Damage can only be dealt to Dogma by damaging the television in the center of the room. Any attacks towards Dogma itself causes a shield to briefly appear and block the attack. Dogma moves slowly towards Isaac, leaving a trail of damaging ",
                 "style": "plain"
               },
               {
@@ -87670,7 +87670,7 @@
             "inline": [
               {
                 "kind": "text",
-                "text": "As Dogma takes more and more damage during this phase, its Seraph form will occasionally flicker into various other forms; these include Isaac's head, a lamb's skull with a serpent in its eye, a fly, and a troll face with horns. They represent each one of the 4 horsemen. This is a purely visual effect.",
+                "text": "As Dogma takes more and more damage during this phase, its Seraph form will occasionally flicker into various other forms; these include Isaac's head, a lamb's skull with a serpent in its eye, a fly, and a troll face with horns (each of which represents one of the Four Horsemen of the Apocalypse). This is a purely visual effect.",
                 "style": "plain"
               }
             ]
@@ -88069,7 +88069,7 @@
   },
   "951.0.0": {
     "title": "The Beast",
-    "revid": 268849,
+    "revid": 269345,
     "description": [
       {
         "kind": "text",
@@ -88264,7 +88264,7 @@
               },
               {
                 "kind": "text",
-                "text": " (if playing in Normal Mode), Prevents Isaac's ",
+                "text": " (if playing in Normal Mode), prevents Isaac's ",
                 "style": "plain"
               },
               {

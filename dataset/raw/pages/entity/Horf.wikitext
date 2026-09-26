@@ -1,0 +1,107 @@
+{{infobox monster
+ | id          = 12
+ | image name  = * {{dlc|nr|Rebirth}}
+ | base hp     = 10
+ | environment = {{floor|Basement}}{{floor|Cellar}}{{floor|Burning Basement}}<br>{{room|challenge}}{{room|crawl space}}
+ | behavior    = Stationary enemy that fires a medium-ranged blood shot at Isaac when he gets in range of them.
+}} {{disambig msg|the enemy|the pill effect|Pills}}
+
+'''Horfs''' are disembodied human heads with their eyes gouged out. Horfs remain immobile in one spot, firing blood shots at Isaac when he gets in their range. They will fire shots directly at Isaac when they're about ½-room width away from him, even though their shots can travel the entire room's length. This makes it possible to outrange Horfs in almost all encounters with them; even if you're in range, they have a slow rate of fire and their shots are slow-traveling as well, and can be dodged simply by moving slightly to the side.
+
+* {{dlc+|r}} Horfs have a 1.67% chance to be replaced by {{E|Sub Horf|text=Sub Horfs}}. {{dlc-|r}}
+{{clear}}
+
+== Variations ==
+=== Psychic Horf ===
+{{infobox monster
+ | name        = Psychic Horf
+ | id          = 248
+ | image name  = * {{dlc|nr|Rebirth}}
+ | base hp     = 10
+ | environment = {{floor|Basement}}{{floor|Cellar}}{{floor|Burning Basement}}<br>{{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Mausoleum}}<br>{{floor|Cathedral}}<br>{{room|challenge}}
+ | behavior    = Stationary enemy that fires a homing shot at Isaac when he gets in range of them.
+}}
+
+'''Psychic Horfs''' behave similar to Horfs, but they shoot homing shots instead of blood shots. Unlike a {{E|Psychic Maw}}, it does not possess an {{E|Eternal Fly}}.
+{{clear}}
+
+=== Sub Horf ===
+{{infobox monster
+ |dlc             = r
+ | name           = Sub Horf
+ | id             = 812
+ | base hp        = 14
+ | environment    = {{floor|Downpour}}{{floor|Dross}}<br>{{room|challenge}}
+ | replace        = Horf
+ | replace chance = 1.67%
+ | behavior       = Stationary enemy that spins and fires shots while being moved around or knocked back.
+}}
+
+'''Sub Horfs''' are a variant of Horfs found in {{s|Downpour}}, {{s|Dross}} and rarely replace Horfs in other floors. Sub Horfs look like Horfs but are tinted blue in Downpour and rotten green in Dross; the random replacements in other floors are identical.
+
+Sub Horfs will only shoot if hit first. If they are shot at, they will rotate and periodically shoot in the direction they are facing while rotating. They will also shoot upon receiving any knockback. They release 1 water shot upon death. Despite appearing to float, Sub Horfs can be pushed by the water streams in {{S|Dross}}.
+{{clear}}
+
+=== Necro ===
+{{infobox monster
+ | dlc          = r
+ | name        = Necro
+ | id          = 828
+ | base hp     = 22
+ | environment = {{floor|Ashpit}}<br>{{room|challenge}}
+ | behavior    = Stationary enemy that summons unlimited-ranged bones to attack Isaac.
+}}
+
+'''Necroes''' are a variant of Horfs resembling ghostly {{E|Bony|text=Bonies}}. They will summon bones in a radius around them, sending them at Isaac. They can target Isaac from anywhere in the room.
+
+{{clear}}
+
+=== Tainted Sub Horf ===
+{{infobox monster
+ |dlc          = r
+ | name        = Tainted Sub Horf
+ | id          = 812
+ | variant     = 1
+ | base hp     = 50
+ | environment = {{floor|Downpour}}<br>Found on the [[Ascent]] to {{s|Home}}.
+ | behavior    = Will only shoot when hit. Takes heavy knockback and rotates when hit. Shoots a lot faster and has bigger projectiles than its normal variant.
+}}
+
+Tainted Sub Horfs are a stronger version of the Sub Horf that behave like a Sub Horf, but fire much faster, have bigger projectiles, and slowly move towards Isaac while facing him.
+{{clear}}
+
+=== Level 2 Horf ===
+{{infobox monster
+ |dlc          = r
+ | name        = Level 2 Horf
+ | id          = 850
+ | variant     = 1
+ | base hp     = 20
+ | environment = {{floor|Corpse}}<br>{{room|challenge}}<br>Spawned after killing a {{E|Level 2 Gaper}}.
+ | behavior    = Slowly floats toward Isaac, spitting {{E|Small Maggot}}s at him.
+}}
+
+'''Level 2 Horfs''' are a variant of Horfs found in {{s|Corpse}}. They look like Horfs in a decaying state.
+
+Level 2 Horfs act quite similarly to regular Horfs; however, they spit {{E|Small Maggot}}s at Isaac instead of blood shots. Although they appear to float, they cannot get past gaps in the floor and are affected by [[creep]].
+{{clear}}{{dlc clear}}
+
+== Gallery ==
+<gallery>
+FIle:Sub Horf Dross.png|{{dlc|r}} A Sub Horf's appearance in Dross.
+File:Horf Last Will.png|A Horf on Isaac's Last Will.
+File:Repentance Enemy Design Sketches.png|{{dlc|r}} Concept art of various enemies by Edmund McMillen, including the Level 2 Horf.
+</gallery>
+
+== Trivia ==
+* {{E|Maw}}s and {{E|Psychic Maw}}s appear to be the posthumous versions of Horfs and Psychic Horfs, as their attacks and appearance are similar.
+* Even though Horfs look like they are flying, they are considered grounded.
+** However, they do fly in {{r|Crawl Space}}s and can be hit down.
+* {{dlc|r}} [[anti:Sub Horf|Sub Horfs]] appeared in the ''Antibirth'' mod, where they would only fire upon receiving any knockback.
+* {{dlc+|r}} Sub Horfs spawned outside of {{s|Downpour}} will have the same coloration as a normal Horf.
+** Their bullets are also colored the same as normal horf bullets.{{dlc-}}
+
+== Bugs ==
+{{bug|If a Horf or Psychic Horf is [[confusion|stunned]], [[fear]]ed, or [[petrification|frozen]] at the same time that it tries to shoot Isaac after the effect wears off, its shot will be fired without its corresponding animation.}}
+
+{{nav|fr=Crachant}}

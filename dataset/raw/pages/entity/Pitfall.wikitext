@@ -1,0 +1,45 @@
+{{infobox entity
+ | dlc         = a
+ | id          = 291
+ | environment = Only spawned by {{e|Little Horn}}.
+ | behavior    = Invulnerable and stationary enemy which Isaac falls into when walked over, taking damage and popping back out after a short delay.
+}}
+
+'''Pitfalls''' are invulnerable and stationary enemies which Isaac can walk over. When Isaac walks over a pitfall, he falls in, takes damage, and pops back out after a short delay. Pitfalls disappear after falling into them. They are only spawned by several of {{e|Little Horn}}'s attacks.
+
+== Notes ==
+* [[Flight]] makes Isaac immune to pitfalls.
+{{clear}}
+__TOC__
+
+== Variations ==
+=== Suction Pitfall ===
+{{infobox entity
+ | dlc         = a
+ | name        = Suction Pitfall
+ | variant     = 1
+ | environment = {{floor|Basement}}{{floor|Cellar}}{{floor|Burning Basement}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|Sheol}}{{floor|Cathedral}}
+ | behavior    = Invulnerable and stationary enemy which sucks Isaac towards itself. Isaac falls into it when walked over, taking damage and popping back out after a short delay.
+}}
+
+'''Suction Pitfalls''' act as regular pitfalls, but suck Isaac in like a {{e|Gaping Maw}}. They are typically found in rooms with [[Pressure Plate]]s, which when pressed will make any Suction Pitfalls in the room disappear.
+{{clear}}
+
+=== Teleport Pitfall ===
+{{infobox entity
+ | dlc         = a
+ | name        = Teleport Pitfall
+ | variant     = 2
+ | environment = Only spawned by {{e|Little Horn}}.
+ | behavior    = Invulnerable and stationary enemy which Isaac falls into when walked over, taking damage and popping back out at a random location after a short delay.
+}}
+
+'''Teleport Pitfalls''' act as regular pitfalls, but pop Isaac out at a random location after damaging him. {{e|Little Horn}} spawns these and pushes them outward in some of his attacks.
+{{clear}}
+
+== Bugs ==
+{{bug|dlc=nr|Using {{i|Spider Mod|n}} will display health bars for Pitfalls.}}
+{{bug|dlc=a+nr|Falling into a Pitfall while a {{i|Black Hole}} is active will result in Isaac becoming headless, immobile and invulnerable, softlocking the run until it is quit and resumed.}}
+{{bug|dlc=r|If Isaac walks over a Teleport Pitfall while {{i|Mega Mush}} is active a visual bug will occur where the pitfall is destroyed and can no longer harm Isaac however its sprites still remain in the room. When Isaac reenters the room or exits and continues the run, the teleport pitfall works normally again.}}
+
+{{nav|fr=Trou}}

@@ -1,0 +1,50 @@
+{{header special cards}}
+{{infobox card
+ | dlc         = a
+ | files name  = Q Card
+ | type        = special card
+ | id          = 48
+ | recharge    = one time
+ | quote       = Double active
+ | description = When used, copies the effect of Isaac's currently held [[activated collectible]].
+}}
+
+{{cit|s|a}}
+
+== Effect ==
+* Replicates the effect of Isaac's [[activated collectible]].
+** {{dlc|nr}} Single-use items, such as {{i|Pandora's Box}}, will not replicate but instead activate and disappear.
+** {{dlc|r}} Single-use items do not disappear after using ? Card, allowing for potential multiple uses of the items.
+
+== Notes ==
+* Being a [[special card]], the '''? Card''' has a significantly lower chance of appearing compared to other cards.
+* The ID of this card was 43 before the Afterbirth+ expansion.
+* {{dlc+|r}} Doesn't work with pocket activated items (such as {{c|Tainted Bethany}}'s {{i|Lemegeton}} or items given by {{t|Dice Bag}}).{{dlc-}}
+
+== Interactions ==
+* {{i|Car Battery}}: Does not influence the card's effect, activating the active item only once.
+* {{i|Everything Jar}} / {{i|Larynx}}: The effect will be determined by the number of charges the active item currently has.
+* {{i|Jar of Flies}}: Expends both the card and all charges with no additional benefit.
+
+== Synergies ==
+* {{I|Alabaster Box}}: Causes the Alabaster Box to yield rewards without destroying the item or depleting any of its current charges.
+* {{i|Blank Card}}: Teleports Isaac to the {{r|I AM ERROR}} room of the current floor. This will consume both the Blank Card and the ? Card. If done on {{s|Chest}} or {{s|Dark Room}}, will instead spawn an I AM ERROR shopkeeper.
+* {{i|Diplopia|r}}: Duplicates all pedestal items and pickups in the room, without expending Diplopia.
+** If used with another ? Card dropped on the floor in the room, allows for infinite duplication.
+* {{i|Eden's Soul|r}}: Spawns two items without consuming Eden's Soul or depleting its charge.
+* {{i|Glowing Hourglass|ana+}}: Since the card replicates the effect of moving back one room to the previous state, Isaac keeps the card having not used it as an item until the room later. This effectively gives him charge-free uses of the Glowing Hourglass.
+** {{dlc|a+}} The card is no longer refunded if you enter the room with it in your inventory and use it. {{dlc|nr}} But if you enter a room, drop it, leave the room, come back, pick it up and use it in that room, you do get a refund as the next time you enter the room the card will be in the floor. This allows for infinite uses.
+*** {{dlc|r}} The Glowing Hourglass loses a charge when the card is used.
+* {{i|Mystery Gift|r}}: Grants an item without consuming Mystery Gift.
+* {{i|Tarot Cloth|a+nr}}: ? Card is used twice, giving the active item the same effect as if Isaac had Car Battery.{{dlc-}}
+
+== Trivia ==
+* The interaction with Blank Card presents a paradox, as Blank Card and ? Card try to replicate the effects of each other. This would result in an endless loop, so a special case was put in.
+* The Blank Card interaction is one of the four reliable ways to reach the {{r|I AM ERROR}} room in game, alongside {{i|Teleport 2.0}} in certain circumstances, {{dlc+|r}} using {{I|Red Key}} to go beyond the 13x13 level grid,{{dlc-}} and {{i|Undefined}}.
+* {{dlc+|a+}} Before [[Booster Pack #5]], {{i|Glowing Hourglass}} was limited to 5 uses, and uses of the ? Card counted against that limit.
+** This was re-implemented in [[V1.7.8]] (although the limit was changed to 3 uses).{{dlc-}}
+
+== Bugs ==
+{{bug|dlc=r|Using ? Card on any activated item that needs a direction, such as {{i|Bob's Rotten Head}} or {{I|Gello}} will still result in the charges being used once a direction is chosen. The ? Card will be used up as well, despite providing no free use of the item.}}
+
+{{nav|active modifier|fr=Carte ?}}

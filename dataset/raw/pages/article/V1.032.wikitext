@@ -1,0 +1,16 @@
+{{infobox version
+ | date = 2014-12-11
+}}
+
+== Undocumented changes ==
+=== Changes ===
+* Now prevents Steam achievements for modded games.
+
+=== Fixes ===
+* Fixed teleport AI for [[Lump]], [[Para-Bite]], [[Loki]], [[??? (Boss)|???]], and others.
+* Fixed a [[seed|seeded run]] exploit.
+* Fixed some impossible rooms in {{s|Cellar}}, {{s|Womb}}/{{s|Utero}}, and {{s|Chest}}.
+* Fixed [[secret room]] placement on some floors.
+* Fixed Boss room placement on [[Curse of the Labyrinth|XL]] floors.
+
+{{nav|version}}

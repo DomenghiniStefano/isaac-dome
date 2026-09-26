@@ -1,0 +1,39 @@
+{{header runes}}
+{{Infobox rune
+ | name        = Jera
+ | type        = rune
+ | image scale = 1/10
+ | id          = 33
+ | quote       = Abundance
+ | description = Duplicates all pickups and [[chests]] in the room. Cannot clone other '''Jera''' runes and [[trinkets]].
+ | unlocked by = Rune of Jera
+ | recharge    = 12
+}}
+
+{{cit|ur}}
+
+== Effects ==
+* Duplicates all pickups and chests in the room.
+** This includes pickups for sale in the {{r|Shop}}; the duplicates can then be picked up for free.
+
+== Notes ==
+* Cannot duplicate other '''Jera''' runes and [[trinkets]].
+* Duplicated chests will contain exactly the same type of items: if the original contains a pickup, so will the duplicate.
+
+== Strategy ==
+* If obtained later in the run, it is recommended to keep it for the {{s|Chest}} / {{s|Dark Room}}, as their first rooms always contain 4 chests that can be duplicated.
+** {{dlc|r}} If '''Jera''' is used in the starting room of the Dark room, the newly spawned {{e|Red Chest}}s will contain four additional and distinct devil deals.
+
+== Synergies ==
+* {{I|Tarot Cloth|nr}}: Quadruples all pickups and chests in the room.
+* {{p|Wild Card}}: '''Jera''' can duplicate the Wild card, allowing for infinite duplication on the room's pickups.
+
+== Interactions ==
+* {{I|Tarot Cloth|r}}: No effect.
+* {{i|D20}}: Rerolling duplicated pickups will result in both the original item and the duplicate being rerolled into the exact same pickup.
+* {{i|Diplopia}}: Does not duplicate '''Jera'''.
+* {{i|Hypercoagulation}}: Duplicating temporary hearts makes the duplicates permanent.
+* {{e|Mom's Chest}}: Cannot be duplicated by '''Jera'''.
+
+{{nav}}
+[[Category:Runes]]

@@ -1,0 +1,5 @@
+'''Odd Mushroom''' may refer to the following:
+* {{i|Odd Mushroom (Thin)}}, a [[Items#Passive Collectibles|passive collectible]] that increases the tears and speed stat in addition to other effects.
+* {{i|Odd Mushroom (Large)}}, a [[Items#Passive Collectibles|passive collectible]] that increases damage and grants a heart container in addition to other effects.
+
+{{disambiguation}}

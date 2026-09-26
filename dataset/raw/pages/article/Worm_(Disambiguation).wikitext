@@ -1,0 +1,25 @@
+'''Worm''' may refer to the following:
+
+== Enemies ==
+* [[Round Worm]]
+* [[Cod Worm]]
+* [[Wormwood]]
+
+== Collectibles ==
+* {{i|Worm Friend}}
+
+== Trinkets ==
+* {{t|Brain Worm}}
+* {{t|Flat Worm}}
+* {{t|Hook Worm}}
+* {{t|Lazy Worm|n}}
+* {{t|Ouroboros Worm|r}}
+* {{t|Pulse Worm}}
+* {{t|Rainbow Worm}}
+* {{t|Ring Worm}}
+* {{t|Tape Worm|n}}
+* {{t|Whip Worm}}
+* {{t|Wiggle Worm}}
+
+{{disambiguation}}
+{{nav}}

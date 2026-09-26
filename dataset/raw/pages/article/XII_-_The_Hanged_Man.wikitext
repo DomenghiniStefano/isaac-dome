@@ -1,0 +1,34 @@
+{{header tarot cards}}
+{{Infobox card
+ | name        = XII - The Hanged Man
+ | id          = 13
+ | quote       = May you find enlightenment
+ | recharge    = {{dlcalt|4|r=3}}
+ | costume     = Collectible Transcendence appearance.png
+ | description = Grants [[flight]] for the duration of the room.
+}}
+
+{{cit|c}}
+
+== Effects ==
+* Grants [[flight]] for the duration of the room.
+
+== Notes ==
+* {{dlc+|r}} During the chase sequence following {{i|Knife Piece 2}}, XII - The Hanged Man may appear behind puzzle element and if reached, allows Isaac to skip an entire room by flying out of it.{{dlc-}}
+
+== Strategy ==
+* Flight can halve the cost of entering a {{r|Curse Room}}: entering a curse room while flying will not deal any damage. Exiting a curse room by its door will deal damage to Isaac in all cases.
+
+== Interactions ==
+* {{I|Tarot Cloth}}: No effect.
+
+== Gallery ==
+<gallery>
+File:XII - The Hanged Man Steam Card.jpg|XII - The Hanged Man's Steam trading card
+</gallery>
+
+== Trivia ==
+* [[wikipedia:The Hanged Man (tarot card)|The Hanged Man]] is the twelfth card of a Major Arcana set.
+* XII - The Hanged Man temporarily grants {{i|Transcendence}}, as evidenced by the given costume.
+
+{{nav|fr=XII - Le Pendu|card}}

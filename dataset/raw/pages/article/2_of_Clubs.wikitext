@@ -1,0 +1,28 @@
+{{Header playing cards}}
+{{Infobox card
+ | name        = 2 of Clubs
+ | type        = card
+ | id          = 23
+ | quote       = Item multiplier
+ | description = Doubles Isaac's {{E|Bomb}}s.<br>If he has no bombs, gives him 2 instead.
+ | recharge    = {{dlcalt|4|r=12}}
+}}
+
+{{cit|c}}
+
+== Effects ==
+* Doubles Isaac's {{E|Bomb}}s.
+* If Isaac has no bombs, gives 2 bombs instead.
+
+== Strategy ==
+* The bomb counter cannot exceed 99, so the most optimal time to use '''2 of Clubs''' is when Isaac has 49 or 50 bombs.
+
+== Synergies ==
+* {{I|Tarot Cloth|nr}}: Quadruples Isaac's bombs.
+
+== Interactions ==
+* {{I|Tarot Cloth|r}}: No effect.
+* {{c|Tainted ???}}: Does not double the poop count. Gives two [[Blue Flies|blue flies]] instead.
+* {{a|It's the Key}}: Acquiring bombs with '''2 of Clubs''' does not invalidate the achievement condition.
+
+{{nav|fr=2 de Trèfle|card|bomb modifier}}

@@ -31,7 +31,7 @@
 ** [[Pill]]s
 ** [[Trinket]]s
 ** {{dlc|r}} {{E|Lil' Battery|text=Lil' Batteries}}
-** {{dlc|r}} [[Item]]s from the {{ip|Beggar|text=Beggar item pool}}
+** {{dlc|r}} [[Item]]s from the {{ip|Beggar|text=Beggar item pool}} (only if Bum Friend collects at least 10c worth of coins before payout)
 
 == Synergies ==
 * {{i|BFFS!}}: All future drops will happen every 3 coins. If the next scheduled drop at the moment of acquiring BFFS! requires more than 3 coins, the amount will not be lowered.

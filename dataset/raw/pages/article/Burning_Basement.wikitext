@@ -1,0 +1,100 @@
+{{infobox stage
+ | dlc            = a
+ | chapter        = 1
+ | id             = 3
+ | id greed       = {{dlc|r|3}}
+ | level id       = 1, 2
+ | level id greed = {{dlc|r|1}}
+ | type id        = 2
+ | type id greed  = {{dlc|r|2}}
+ | bosses         = The Duke of Flies, Famine, The Haunt, Larry Jr., Little Horn, Monstro, Rag Man
+ | unlocked by    = Burning Basement
+}}
+
+The '''Burning Basement''' is one of the environments in [[chapter 1]] added in ''[[The Binding of Isaac: Afterbirth]]''. The theme of the Burning Basement is fire, and most enemies are replaced with burning versions. There are relatively few flying or shooting enemies; most of the enemies are ground-based and rely on contact damage. {{dlc|nr}} [[Rock]]s have a chance to be replaced with [[Fire Place]]s.
+
+The Burning Basement's alternate floors are the {{s|Basement}} and the {{s|Cellar}}.
+
+{{dlc|a+}} The Burning Basement is unlocked by defeating {{e|Mom's Heart}} 11 times.
+
+{{dlc+|r}} After {{a|A Secret Exit}} is unlocked, a locked door similar to the one leading to a {{R|Treasure Room}} will appear in this floor's {{R|Boss Room}} upon defeating the boss leading to {{S|Downpour}} / {{S|Dross}}. Like a Treasure Room, this door requires a key to be unlocked. Unlike {{R|Angel Room}} and {{R|Devil Room}}s, this door never disappears.{{dlc-}}
+
+== [[Monster]]s ==
+{{entity table/header}}
+{{stage entities | Fly, Attack Fly, Ring Fly, Moter, Pooter, Super Pooter, Level 2 Fly, Full Fly, Sucker, Spit, Dip, Squirt, Spider, Big Spider, Trite, Level 2 Spider, Ticking Spider, Baby Long Legs, Small Baby Long Legs, Crazy Long Legs, Small Crazy Long Legs, Wall Creep, Round Worm, Mulligan, Mulligoon, Mulliboom, Hive, Nest, Hopper, Flaming Hopper, Pacer, Gusher, Gaper, Frowning Gaper, Skinny, Horf, Psychic Horf, Fatty, Pale Fatty, Blubber, Nerve Ending, Clotty, Clot, I.Blob, Wall Hugger, Embryo }}
+{{stage entities | dlc = a | Brownie Corn, Flaming Gaper, Conjoined Fatty, Cyclopia, Dart Fly, Greed Gaper, Blue Gaper, Suction Pitfall, Swarm, Flaming Fatty, Rag Man's Ragling, Roundy, Ulcer }}
+{{stage entities | dlc = a+ | Crispy, Ministro, Stoney }}
+{{stage entities | dlc = a+nr | Portal }}
+{{stage entities | dlc = r | Army Fly, Bulb, Coal Spider, Grilled Clotty, Needle, Swarm Spider }}
+|}
+
+''Degraded Bosses:''
+{| class="wikitable mw-collapsible"
+ ! Name
+ ! ID
+ ! Notes
+{{entity row minimal|Blastocyst}} | Small-form only
+ |}
+
+== [[Boss]]es ==
+{| style="width: 70%; text-align: center"
+ | [[file:Boss The Duke of Flies portrait.png|center|link=The Duke of Flies]]
+ | [[file:Boss Larry Jr. portrait.png|center|link=Larry Jr.]]
+ | [[file:Boss Monstro portrait.png|center|link=Monstro]]
+ | [[file:Boss The Haunt portrait.png|center|link=The Haunt]]
+ |-
+ | [[The Duke of Flies]]
+ | [[Larry Jr.]]
+ | [[Monstro]]
+ | [[The Haunt]] {{Dlc|nr}}
+ |}
+{| style="width: 70%; text-align: center"
+ | [[file:Boss Famine portrait.png|center|link=Famine]]
+ | [[file:Boss The Fallen portrait.png|center|link=The Fallen]]
+ | [[file:Boss Headless Horseman portrait.png|center|link=Headless Horseman]]
+ | [[file:Boss Little Horn portrait.png|center|link=Little Horn]]
+ |-
+ | [[Famine]] {{unlockable}}
+ | [[The Fallen]] {{room|Devil}}
+ | [[Headless Horseman]] {{unlockable}}
+ | [[Little Horn]] {{dlc|a}} {{unlockable}}
+ |}
+{| style="width: 70%; text-align: center"
+ | [[file:Boss Rag Man portrait.png|center|link=Rag Man]]
+ | [[File:Boss Dingle portrait.png|center|link=Dingle]]
+ | |[[File:Boss Gemini portrait.png|center|link=Gemini]]
+ | [[File:Boss Steven portrait.png|center|link=Steven]]
+ |-
+ | [[Rag Man]] {{dlc|a}} {{unlockable}}
+ | [[Dingle]] {{Dlc|r}}
+ | [[Gemini]] {{Dlc|r}}
+ | [[Steven]] {{Dlc|r}} {{unlockable}}
+ |}
+{| style="width: 70%; text-align: center"
+ | [[File:Boss Gurglings portrait.png|center|link=Gurglings]]
+ | [[File:Boss Dangle portrait.png|center|link=Dangle]]
+ | [[File:Boss Turdlings portrait.png|center|link=Turdlings]]
+ | [[File:Boss Baby Plum portrait.png|center|link=Baby Plum]]
+ |-
+ | [[Gurglings]] {{Dlc|r}}
+ | [[Dangle]] {{dlc|a}} {{Dlc|r}} {{unlockable}}
+ | [[Turdlings]] {{dlc|a}} {{Dlc|r}} {{unlockable}}
+ | [[Baby Plum]] {{Dlc|r}} {{unlockable}}
+ |}
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | Monstro's Tooth, Sprinkler, Basement Boy }}
+
+== Trivia ==
+* Despite being called the Burning Basement, the backdrop of the floor is actually based on the {{s|Cellar}}, looking more reddish and with a burning element added to it.
+
+== Music ==
+* The [[music]] that plays in the Burning Basement is titled ''Fundamentum''.<ref>[https://ridiculon.bandcamp.com/album/the-binding-of-isaac-afterbirth-ost Binding of Isaac: Afterbirth OST]</ref>
+** ''Fundamentum'' is Latin for "Foundation".
+** The song's melody is similar to that of ''Diptera Sonata'', the theme for the [[Basement]].
+
+== References ==
+{{Reflist}}
+
+{{nav|moms heart unlock|environment|fr=Sous-Sol Ardent}}
+[[ru:Горящий подвал]]

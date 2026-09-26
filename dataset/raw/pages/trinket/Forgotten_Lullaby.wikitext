@@ -27,6 +27,6 @@
 
 == Trivia ==
 * This trinket was originally called [[Anti:Song of the Siren|Song of the Siren]] in ''Antibirth''.
-* "Forgotten Lullaby" is the title of the secret room theme in Mudeth's original soundtrack for the ''[[anti:The Binding of Isaac: Antibirth Wiki|Antibirth]]'' mod.
+* "Forgotten Lullaby" is the title of the {{r|Secret Room}} theme in Mudeth's original soundtrack for the ''[[anti:The Binding of Isaac: Antibirth Wiki|Antibirth]]'' mod. Notably, it contains a rearranged snippet of "Sacrificial", the {{s|Basement}} theme from the original Flash game.
 
 {{nav|familiar modifier|fr=Berceuse Oubliée}}

@@ -1,0 +1,279 @@
+{{incomplete|As this is information relating to newly released content, there may be more information planned to be released by the developers in the following months.}}{{page dlc|r+}}
+'''''Repentance+''''' is a free DLC expansion to ''[[The Binding of Isaac: Repentance]]'' that was released on November 18, 2024.  It will be ported to consoles after an update on Steam scheduled for September 2025 has been released and "ironed out," according to this [https://store.steampowered.com/news/app/250900/view/505084591262925029?l=english steam post].
+
+'''WARNING:''' Repentance+ online co-op is still in a beta state. It may be unstable and can sometimes corrupt your save data. Play it at your own risk. You can always turn off Repentance+ content in Steam's DLC manager, and the game keeps a backup of your pre-Repentance+ save files.
+
+== Features ==
+General features revealed include:
+
+* An ingame Item Description, unlocked after beating {{e|Mom}} once.
+* A fully reworked Co-op mode, with new [[Online (open beta)|online multiplayer]] modes, including Quick Match, Public Match, Friend Match and online Daily Run.
+* A new [[Emote Wheel]], allowing users to communicate better.
+* Text chat functionality.
+* Many new item buffs and re-balancing adjustments.
+
+== Additions ==
+=== Transformations ===
+{{transformation table | where = not transformation.dlc & {{dlcset|nr+}} }}
+
+=== Co-op ===
+{{Repentance+ Babies|1}}
+
+=== Machines ===
+* {{m|Revive Machine}} which allows a player to be revived in exchange for coins in online runs.
+
+=== Mechanics ===
+* Added various new sound effects:
+** Using {{i|Abyss}}, {{i|The Boomerang}}, {{i|Box of Friends}}, {{i|Brown Nugget}}, {{i|Converter}}, {{i|Crooked Penny}}, {{i|Flip}}, {{i|Glowing Hourglass}}, {{i|Mega Bean}}, and {{i|Mom's Bottle of Pills}}.
+** {{i|Big Chubby}} and {{i|Little Chubby}} attacking.
+** {{i|Bumbo}} leveling up.
+** Entering a {{i|Card Reading}} portal and ambient sounds for portals.
+** {{i|Cracked Orb}} and {{i|Gnawed Leaf}} activating.
+** Kicking {{i|Cube Baby}}.
+** {{i|Dark Bum}} paying out.
+** {{i|Doctor's Remote}} missile warning before landing.
+** {{i|Eraser}} hitting an enemy.
+** {{i|Glitter Bombs}} bomb exploding.
+** Taking and throwing an {{i|IBS}} poop.
+** {{i|Infamy}} deflecting a shot.
+** {{i|Lil Haunt}} chasing an enemy.
+** {{i|Linger Bean}} spawning a cloud.
+** Firing a {{i|Little Horn}} tear.
+** Many enemies and bosses have added sound effects.
+
+=== Bosses ===
+* Bosses have now 1% chance to drop an additional themed item.
+* Added a wave counter to {{r|Boss Rush}}.
+
+== Re-balancing Adjustments ==
+=== Item Changes ===
+* {{I|Tammy's Head}}: Reduced the duration of the animation when using Tammy’s Head, allowing the player to fire more quickly after use.
+* {{I|Lemon Mishap}}: Slightly increased the size of the puddle. Also, the puddle will now persist until the player exits the room.
+* {{I|Mega Bean}}: Creates a catastrophic fart that sweeps the entire room (It now works just like {{I|Mama Mega!}}, including opening Boss Rush/Hush). Increased charge from rooms 3 to 6.
+* {{I|Milk!}}: The familiar now follows closely behind the player and blocks shots. After 10 hits, the glass will break and give the player a Tears upgrade for the remainder of the floor.
+* {{I|Delirious}}: Summoned bosses will now persist through rooms. Only one boss can be active at a time. Bosses health deteriorate steadily and their color will slowly turn more gray until they reach 1 health, They take 1 damage per hit, 5 for explosion and cannot be damaged by spikes, fires or red poops.
+* {{I|Lil Delirium}}: Now contributes to the Conjoined transformation.
+* {{I|Jar of Wisps}}: Reduced to a 6-room charge, allowing the wisps to stack up to the maximum number more quickly.
+* {{I|Abyss}}: Item quality now impacts the damage of the summoned locust. Locusts now inherit many different effects based on the item destroyed by Abyss.
+* {{I|Flip}}: Charge has been reduced to 4 rooms for {{C|Tainted Lazarus}} only.
+* {{I|Portable Slot}}: Removed from the {{r|Shop}} pool. Added as a possible reward from a {{m|Slot Machine}}.
+* {{I|Void}}: Charge has been reduced from 6 rooms to 4.
+* {{I|Epiphora}}: The Tears upgrade from firing in a single direction is now a smooth increase, instead of being staggered every few seconds.
+* {{I|God's Flesh}}: Doubled the chance of shrink tears firing. Shrunken enemies now briefly flash white before growing back to full size. Enemies that explode, fire shots or summon minions on death can no longer hurt Isaac if they're killed while shrunken.
+* {{I|Hushy}}: While held in place, Hushy now fires radial bursts of shots.
+* {{I|It Hurts}}: After taking damage, the player's tears will now leave behind small pools of blood creep for the room.
+* {{I|Mars}}: In addition to being invulnerable when charging, Isaac will gain a 1-second iframes after the charge. Hitting obstacles also creates ring of fire that applies the burn status effect.
+* {{I|Evil Charm}}: The player now gains immunity to spider-web slowdown, flame attacks, fireplaces and poison mushrooms. Isaac can also stand in enemy creep for 1 second before taking damage.
+* {{I|Vasculitis}}: Friendly radial shots fired after killing an enemy will now appear as blood clots to more easily distinguish them.
+* {{I|Lil Portal}}: Has been completely reworked. Double-tapping a fire button is now required to launch Lil Portal. After it has consumed enough items and the room is clear, a single portal will spawn and the familiar will now disappear for the remainder of the floor. Entering this portal now takes Isaac to a room where he can pick up or drop off items. This room persists throughout the rest of the current run.
+* {{I|Linger Bean}}: The fart cloud is now deployed after 4 seconds of continuous fire instead of 7 seconds. The cloud starts small and potent, and will grow and deal reduced damage over the course of 10 seconds.
+* {{I|Jupiter}}: Now heals 2 red hearts instead of just ½.
+* {{I|Butter Bean}}: Recharge time has been reduced from 3 seconds to 2.
+* {{I|The Bean}}: Can now be re-used after a 4-second cooldown instead of a room charge.
+* {{I|Kidney Bean}} Can now be re-used after a 4-second cooldown instead of a room charge.
+* {{I|Dead Bird}}: Will remain active between rooms as long as the player is at ½ heart. (Note: {{C|Eve}} requires 1 full heart.)
+* {{I|Dataminer}}: Using Dataminer in a room with an item pedestal will now reroll it into a glitched item.
+* {{I|Parasitoid}}: Egg sacs can now be created from Technology shots and Brimstone beams.
+* {{I|Ocular Rift}}: Reduced devil price from 2 to 1.
+* {{I|Hive Mind}}: Now increases damage of {{I|Abyss}} locusts.
+* {{I|Flush!}}: Now also instantly kills {{e|Turdlings}}.
+* {{i|Revelation}}: Removed the 2 {{e|Soul Heart}}s on pickup.
+* {{i|Plan C}}: Increased the delay before killing Isaac, allowing {{e|Delirium}} and {{e|Mother}} death animations to complete in time.
+* {{i|Mega Blast}}: Now receives 6 charges instead of 3 when picking up a {{e|Lil' Battery}}, {{i|9 Volt}}, {{i|Battery Pack}}, and [[48 Hour Energy]].
+* {{i|Car Battery}}: Added interactions for {{i|Gello}}, {{i|The Book of Belial}}, {{i|Red Candle}}, {{i|The Candle}}, {{i|Doctor's Remote}}, {{i|Telekinesis}}, and {{i|Mega Blast}}.
+* {{i|Odd Mushroom (Thin)}}: Can now break the soft tears cap.
+* {{i|Seraphim}}: Now contributes to the {{tf|Seraphim}} transformation.
+* {{i|2Spooky}}: In addition to its existing effects, now adds +0.5 [[tears]] and +0.2 [[shot speed]].
+* {{i|Black Powder}}: Now grants larger explosions and fireplaces will explode when extinguished.
+* {{i|Blood Rights}}: In addition to its existing effects, each use now grants a tears upgrade for the current room.
+* {{i|Pageant Boy}}: Now always drops a {{e|Penny}} trinket as part of its rewards.
+
+=== Trinket Changes ===
+* {{t|Tick}}: Now removable by picking up {{t|A Lighter}}.
+* {{t|Short Fuse}}: Now makes bombs deal 15% more damage.
+* {{t|Tonsil}}: Reduced the number of hits required to create a familiar from 12-20 to 6-12.
+* {{t|Bag Lunch}}: Increased the chance to spawn {{I|Lunch}} on hit.
+* {{t|Wish Bone}}: Increased the chance to spawn an item on hit.
+* {{t|Super Ball}}: Bouncing tear chance now scales with luck.
+* {{t|Bob's Bladder}}: Now contributes to the Bob transformation.
+* {{t|Missing Poster}}: Now has a 33% chance to reveal the Super Secret Room when entering a new chapter.
+* {{t|Used Diaper}}: Skatole chance raised to 33%. Spawn a blue fly when entering a new combat room.
+* {{t|Rosary Bead}}: In addition to its increased chance of The Bible appearing, when a Devil Deal is earned, holding this trinket will force the deal to be an Angel Deal.
+* {{t|Modeling Clay}} / {{t|Error}}: Now correctly display the mimicked item/trinket in Extra HUD when gulped.
+* {{t|Louse}}: Now spawns a blue spider when completing a combat room.
+* {{t|Karma}}: In addition to its existing effects, holding it will reduce the chance of the Donation Machine jamming. Donating to a Beggar now has a chance to refund the penny, heal Isaac for one heart or increase Isaac's luck. Blood Donation Machines and Confessionals have a chance to heal Isaac for one heart, spawn a beggar, or increase Isaac's luck.  Restock Machines have a chance to increase Isaac's luck.
+* {{t|Equality!}}: When keys bombs and coins are all equal in number, gives +2 tear rate.
+* {{t|Lazy Worm}}: Now adds +0.5 damage in addition to its shot speed down.
+* {{t|Mom's Toenail}}: Dropping/swapping the trinket will now make Mom stomp on its dropped location.
+* {{t|Child Leash}}: While held, familiars gain a small damage multiplier.
+* {{t|Purple Heart}}: Increased the chance of champion enemies spawning. Chance for champion specific loot drops raised to 50%. Champion loot rewards are doubled.
+* {{t|Poker Chip}}: Retains its original effect of 50/50 chance for chests to have double rewards or a hostile fly. If the reward was an item and quality 0-2, the item rolls into another of higher quality. Can pull items from outside of the golden chest pool occasionally. Slightly increased the odds of a payout from slot machines, fortune tellers, crane games, shell games, and restock machines.
+* {{t|Cursed Penny}}: Increased chance to teleport Isaac to different rooms based on the coin collected.
+* Added effects for all golden trinkets that did not previously have them.
+
+== Global Changes ==
+* Once it’s been unlocked, the portal to {{s|The Void}} is now guaranteed after defeating {{e|The Lamb}}, {{e|???}} and, {{e|Mega Satan}}.
+* Added guaranteed portal to {{s|The Void}} after the {{e|Mother}} fight (Once [[Ending 21]], the Mother ending, has been seen by any character).
+* Bomb rocks can now create bridges across chasms.
+* When picking up cards/pills/runes with tainted characters who carry eternal items, the consumable is now placed behind the item and can be manually selected, avoiding unintentional uses.
+* Added {{i|Skeleton Key}}, {{i|Best Bud}}, {{i|Angry Fly}}, and {{i|Sharp Key}} to the {{m|Key Master}}'s prize pool.
+* Fixed several items that were missing from Greed Mode's item pools.
+* Made {{i|Goat Head}}, {{i|D7}}, {{i|Poke Go}}, {{t|Child's Heart}}, {{t|Mom's Pearl}}, {{t|Black Lipstick}}, {{t|Bible Tract}}, Amnesia [[pills]], and ??? [[pills]] unobtainable in [[Greed Mode]].
+* Added several baby familiars to the Baby Shop pool which were previously missing, and removed {{i|Sacrificial Dagger}} from the Baby Shop pool.
+* Added tainted characters in dailies, playable on Tuesday.
+* Possessing a {{e|Golden Bomb}} / {{e|Golden Key}} when donating to {{m|Bomb Bum}} / {{m|Key Master}} will consume the respective golden pickup and cause the beggar to instantly pay out with an item.
+* Destroying a {{m|Devil Beggar}}, {{m|Bomb Bum}} or {{m|Key Master}} now increases the {{r|Angel Room}} / {{r|Devil Room}} chance by 35%.
+* {{m|Bomb Bum}}s and {{m|Key Master}}s now increase the {{r|Angel Room}} chance by 10% when paying out.
+* Several Devil Deal items now have a sacrifice spike cost instead of permanent HP loss. There is a 50% chance to award the item on the first play and 100% chance on the second.
+* Added new horse pill effects for [[I'm Excited!!!]], [[I'm Drowsy]], [[??? (Pill)|???]], [[Telepills]], [[Amnesia]], [[Percs!]], [[Addicted!]] and [[Gulp!]].
+
+== Undocumented Changes ==
+* Added a [[deathmatch]] mode that can be played only after winning an online run.
+
+=== Character Changes ===
+* {{c|Jacob and Esau}} were given a new toggle in the options menu labelled "Jacob+Esau Controls" with the choices being "Classic" or "Better".
+** Classic controls will toggle between the active items of Jacob & Esau and their pills/cards when the player holds the Drop button.
+** Better controls will toggle between Jacob's active item + pill/card and Esau's active item + pill/card when the player holds the Drop button.
+
+=== Quality Changes ===
+Many items have had their quality updated:
+* {{I|Abyss}}: 4 -> 3
+* {{I|Anarchist Cookbook}}: 1 -> 0
+* {{I|Alabaster Box}}: 2 -> 1
+* {{I|Anima Sola}}: 3 -> 2
+* {{I|Anti-Gravity}}: 2 -> 1
+* {{I|Ball of Bandages}}: 2 -> 1
+* {{I|A Bar of Soap}}: 3 -> 2
+* {{I|Blue Map}}: 2 -> 1
+* {{I|Bob's Brain}}: 1 -> 0
+* {{I|Bobby-Bomb}}: 2 -> 1
+* {{I|Bomb Bag}}: 2 -> 1
+* {{I|The Book of Sin}}: 2 -> 1
+* {{I|Book of the Dead}}: 3 -> 2
+* {{I|Butt Bombs}}: 2 -> 1
+* {{I|Charged Baby}}: 3 -> 2
+* {{I|Charm of the Vampire}}: 1 -> 2
+* {{I|The Compass}}: 2 -> 1
+* {{I|Converter}}: 2 -> 1
+* {{I|Crack the Sky}}: 2 -> 1
+* {{I|Cube of Meat}}: 2 -> 1
+* {{I|Cupid's Arrow}}: 3 -> 2
+* {{I|D100}}: 3 -> 1
+* {{I|D8}}: 2 -> 1
+* {{I|Dad's Ring}}: 3 -> 2
+* {{I|Damocles}}: 2 -> 3
+* {{I|Dead Onion}}: 3 -> 2
+* {{I|Demon Baby}}: 2 -> 1
+* {{I|Distant Admiration}}: 2 -> 1
+* {{I|E. Coli}}: 1 -> 0
+* {{I|Eden's Soul}}: 3 -> 2
+* {{I|Epiphora}}: 2 -> 1
+* {{I|Eraser}}: 2 -> 1
+* {{I|Esau Jr.}}: 2 -> 1
+* {{I|Everything Jar}}: 3 -> 2
+* {{I|Friend Finder}}: 3 -> 2
+* {{I|Genesis}}: 3 -> 2
+* {{I|Golden Razor}}: 1 -> 0
+* {{I|Guillotine}}: 2 -> 0
+* {{I|The Halo}}: 2 -> 3
+* {{I|Head of Krampus}}: 2 -> 1
+* {{I|The Hourglass}}: 1 -> 0
+* {{I|Isaac's Tomb}}: 3 -> 2
+* {{I|The Inner Eye}}: 2 -> 3
+* {{I|The Intruder}}: 3 -> 2
+* {{I|IV Bag}}: 1 -> 2
+* {{I|Jumper Cables}}: 3-> 2
+* {{I|Lachryphagy}}: 2 -> 3
+* {{I|Lil Delirium}}: 2 -> 1
+* {{I|Lil Gurdy}}: 2 -> 1
+* {{I|Little Chubby}}: 2 -> 1
+* {{I|Little Gish}}: 2 -> 1
+* {{I|Lodestone}}: 3 -> 2
+* {{I|The Ludovico Technique}}: 2 -> 1
+* {{I|Luna}}: 2 -> 3
+* {{I|Magic Fingers}}: 1 -> 0
+* {{I|Mars}}: 2 -> 0
+* {{I|Mercurius}}: 3 -> 2
+* {{I|Midas' Touch}}: 2 -> 1
+* {{I|Mom's Bra}}: 1 -> 0
+* {{I|Mom's Razor}}: 2 -> 1
+* {{I|My Reflection}}: 2 -> 3
+* {{I|My Shadow}}: 2 -> 1
+* {{I|Ocular Rift}}: 3 -> 2
+* {{I|Red Candle}}: 2 -> 1
+* {{I|Rock Bottom}}: 3 -> 4
+* {{I|Rocket in a Jar}}: 2 -> 1
+* {{I|Sack of Sacks}}: 3 -> 2
+* {{I|Satanic Bible}}: 4 -> 3
+* {{I|Skeleton Key}}: 3 -> 2
+* {{I|Spear Of Destiny}}: 2 -> 1
+* {{I|Sprinkler}}: 2 -> 1
+* {{I|Sticky Bombs}}: 2 -> 1
+* {{I|Strawman}}: 2 -> 1
+* {{I|Sulfur}}: 3 -> 2
+* {{I|Tammy's Head}}: 2 -> 1
+* {{I|Transcendence}}: 3 -> 2
+* {{I|Treasure Map}}: 2 -> 1
+* {{I|Undefined}}: 2 -> 1
+* {{I|Vade Retro}}: 2 -> 1
+* {{I|Ventricle Razor}}: 1 -> 0
+* {{I|Void}}: 4 -> 3
+* {{I|White Pony}}: 2 -> 3
+
+=== Modding Changes ===
+
+Specifically, this is the modding diff between Repentance v1.7.9b and Repentance+ v1.9.7.12.J273. Any Repentance+ changes after this patch (if any) are not included in this list.
+
+New classes:
+* FontRenderSettings - https://wofsauge.github.io/IsaacDocs/rep/FontRenderSettings.html
+
+New class members:
+* void Entity:KillWithSource(EntityRef Source)
+* boolean GridEntity:DestroyWithSource(boolean Immediate, EntityRef Source)
+* boolean GridEntity:HurtWithSource(int Damage, EntityRef Source)
+* int Options.JacobEsauControls (0 = classic, 1 = better)
+* boolean Room:DamageGridWithSource(int Index, int Damage, EntityRef Source)
+* boolean Room:DestroyGridWithSource(int Index, boolean Immediate, EntityRef Source)
+
+Changed class methods:
+* Entity:AddBurn - Added optional "IgnoreBosses" parameter.
+* Entity:AddCharmed - Added optional "IgnoreBosses" parameter.
+* Entity:AddFear - Added optional "IgnoreBosses" parameter.
+* Entity:AddFreeze - Added optional "IgnoreBosses" parameter.
+* Entity:AddMidasFreeze - Added optional "IgnoreBosses" parameter.
+* Entity:AddPoison - Added optional "IgnoreBosses" parameter.
+* Entity:AddShrink - Added optional "IgnoreBosses" parameter.
+* Entity:AddSlowing - Added optional "IgnoreBosses" parameter.
+* EntityPlayer:AddCollectible - Added optional "ItemPoolType" parameter.
+* Game:Fadein - Added optional "ShowIcon" and "KColor" parameters.
+* Game:Fadeout - Added optional "KColor" parameter.
+* HUD:ShowItemText - Added optional "StackUpText" boolean parameter. If it is missing or true, then it clears the message stack (Repentance functionality). If it is false, then the text will stack up (Repentance+ functionality). These values are counterintuitive, so it seems likely that the developers made a mistake.
+* Room:MamaMegaExplosion - Made the "Position" parameter optional. Added optional "Player" parameter.
+* Font:DrawString - Added an overload with the following signature: void (string String, float PositionX, float PositionY, float sizeX, float sizeY, KColor RenderColor, FontRenderSettings settings)
+
+New enums:
+* DrawStringAlignment - https://wofsauge.github.io/IsaacDocs/rep/enums/DrawStringAlignment.html
+
+New enum members:
+* BackdropType.DEATHMATCH = 61
+* BackdropType.LIL_PORTAL = 62
+* ButtonAction.ACTION_MENULB = 24 (took over old value of ACTION_MENULT)
+* ButtonAction.ACTION_MENURB = 25 (took over old value of ACTION_MENURT)
+* ButtonAction.ACTION_MENUEX = 29
+* ButtonAction.ACTION_EMOTES = 30
+
+Changed enum members:
+* ButtonAction.ACTION_FULLSCREEN = 16 (changed from 17)
+* ButtonAction.ACTION_MUTE = 17 (changed from 18)
+* ButtonAction.ACTION_RESTART = 18 (changed from 16)
+* ButtonAction.ACTION_MENULT = 26 (changed from 24)
+* ButtonAction.ACTION_MENURT = 27 (changed from 25)
+* ButtonAction.ACTION_MENUTAB = 28 (changed from 26)
+* ButtonAction.ACTION_CONSOLE = 32 (changed from 28)
+
+New variables:
+* REPENTANCE_PLUS (to determine if the mod is running in Repentance+)
+
+{{nav|version}}
+[[Category:DLC]]
+[[Category:Repentance+| ]]

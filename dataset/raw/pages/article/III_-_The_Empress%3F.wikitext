@@ -1,0 +1,41 @@
+{{header reverse tarot cards}}
+{{Infobox card
+ | dlc         = r
+ | name        = III - The Empress?
+ | files name  = III - Inverted The Empress
+ | type        = card
+ | id          = 59
+ | quote       = May your love bring protection
+ | costume     = Character Magdalene appearance.png
+ | description = Grants 2 temporary [[Red Heart Container]]s, +1.5 [[Fire Rate]], and -0.1 [[Speed]] for one minute, along with {{c|Magdalene}}'s hairstyle. The effect does not stack with itself. 
+ | unlocked by = The Empress
+ | recharge    = 4
+}}
+
+{{cit|uc|r}}
+
+== Effects ==
+* Grants 2 temporary [[Red Heart Container]]s, +1.5 [[Fire Rate]], and -0.1 [[Speed]] for one minute.
+* Visually grants {{c|Magdalene}}'s hairstyle while the effect is active.
+
+== Notes ==
+* The effect does not stack with itself.
+* The card's effect persists in the {{i|Knife Piece 2}} abandoned area.
+* The temporary [[heart container]]s granted by III - The Empress? can be spent for purposes such as [[devil deal]]s and {{i|Potato Peeler}}, and doing so will not affect Isaac's permanent containers after the effect runs out. 
+
+== Synergies ==
+* {{I|Tarot Cloth}}: Adds a total of three temporary [[heart container]]s.
+
+== In-game Footage ==
+{{#ev:youtube|b3cZ6UlSuRk}}
+
+== Gallery ==
+<gallery>
+Morningsun giantbook.png| The pop-up that appears whenever III - The Empress? is used.
+</gallery>
+
+== Trivia ==
+* III - The Empress? will display a pop up saying "''The morning sun has vanquished the horrible night''", a reference to ''[[wikipedia:Castlevania II: Simon's Quest|Castlevania II: Simon's Quest]]'' when night turns to day.
+** This is also a reference to {{i|Whore of Babylon}}'s (and by extension {{p|III - The Empress}}') pop up being the day to night message in said game.
+
+{{nav|fr=III - L'Impératrice ?|card}}

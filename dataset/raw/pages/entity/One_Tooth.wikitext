@@ -1,0 +1,36 @@
+{{infobox monster
+ | id          = 234
+ | base hp     = 20
+ | environment = {{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Sheol}}<br>{{room|challenge}}{{room|crawl space}}
+ | behavior    = Follows Isaac and periodically dashes towards him when it gets close. Deals contact damage.
+}}
+'''One Tooths''' slowly fly towards Isaac, charging at random intervals at considerably higher speed. They will shy away from Isaac if directly approached.
+
+== Notes ==
+* Two One Tooths will spawn in the secret crawlspace created by killing {{e|Great Gideon}} using a {{p|Chaos Card}}.
+
+{{clear}}
+
+== Variations ==
+=== Fat Bat ===
+{{infobox monster
+ | dlc         = a
+ | name        = Fat Bat
+ | id          = 258
+ | base hp     = {{dlcalt|50|r=35}}
+ | environment = {{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Sheol}}
+ | behavior    = Slowly flies towards Isaac. Tries to align itself diagonally to Isaac and shoots at him when in that alignment.
+}}
+
+'''Fat Bats''' move slower than a One Tooth but have more health. Fat Bats try to align themselves diagonally to Isaac, giving them a tendency to avoid his shots. They will try to shoot at Isaac once they are diagonally aligned.
+{{clear}}{{dlc clear}}
+
+== Gallery ==
+<gallery>
+Fat Bat Concept.jpg | Concept for Fat Bat.
+</gallery>
+
+== Trivia ==
+* Fat Bats were first revealed for the Afterbirth DLC in a [https://web.archive.org/web/20150730165956/http://bindingofisaac.com/post/118734743319/monstro-mash-afterbirth-update-6 Binding of Isaac official website post].
+
+{{nav|fr=Monodent}}

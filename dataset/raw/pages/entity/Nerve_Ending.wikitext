@@ -1,0 +1,37 @@
+{{infobox monster
+ | id          = 231
+ | base hp     = 20
+ | environment = {{floor|Basement}}{{floor|Burning Basement}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|Sheol}}<br>{{room|Treasure}}(Womb Only)
+ | behavior    = Static enemy which acts as a meat shield.
+}}
+
+'''Nerve Endings''' are purely static enemies with no proactive means of dealing damage, aside from contact damage.
+
+__TOC__
+{{clear}}
+
+== Variations ==
+=== Nerve Ending 2 ===
+{{infobox monster
+ | dlc            = a+
+ | name           = Nerve Ending 2
+ | variant        = 1
+ | base hp        = 20
+ | environment    = {{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}
+ | replace        = Nerve Ending
+ | replace chance = 20%
+ | behavior       = Static enemy which whips at Isaac if he gets too close.
+ | unlocked by    = The gate is open!
+}}
+
+'''Nerve Ending 2s''' are stationary enemies which will swipe at Isaac if he gets too close. This attack can only connect if Isaac is horizontal with it, but will deal contact damage in any case if Isaac walks into them. Otherwise, they have no means of attacking and are generally harmless.
+
+==== Notes ====
+* Nerve Ending 2s can never replace Nerve Endings next to doors.
+* If Nerve Ending 2s aren't unlocked yet, they are replaced by Nerve Endings.
+{{dlc clear}}{{clear}}
+
+== Trivia ==
+* It's possible that the Nerve Ending is a giant axon, an electrical impulse terminal for nerve cells, which could explain its name.
+
+{{nav|fr=Terminaison Nerveuse}}

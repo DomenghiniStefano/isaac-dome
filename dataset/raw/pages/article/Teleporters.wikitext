@@ -1,0 +1,20 @@
+{{header obstacles}}
+{{page dlc|r}}
+[[File:Teleporters.png|418px]]
+
+'''Teleporters''' can be found in {{s|Mausoleum}} and {{s|Gehenna}}.
+
+Walking on a teleporter causes Isaac to teleport to the one that has a matching symbol. If there are more than two teleporters in a room with the same symbol, then Isaac will teleport to a random one of them.
+
+Teleporters can exist in both an active (glowing) and inactive (not glowing) state. If there exists two or more teleporters of matching symbols where some are active and others are not, it acts as a one-way teleporter with the inactive pad(s) being the exit point. {{e|Pressure Plate}}s and [[Event Plate]]s can activate or deactivate the teleporters.
+
+== Notes ==
+* When playing as {{c|The Forgotten}}, teleporting as {{c|The Soul}} will also teleport The Forgotten's body.
+
+== Trivia ==
+* One of the teleporters' symbols resembles {{p|Ehwaz}}.
+
+== Bugs ==
+{{Bug|If {{c|Tainted Lazarus}} steps on a teleporter at the same time as the room is cleared, he will NOT flip to his other form.}}
+{{nav|fr=Téléporteurs}}
+[[Category:Objects]]

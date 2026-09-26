@@ -1,0 +1,26 @@
+{{infobox version
+ | dlc  = a+
+ | date = 2017-10-23
+}}
+
+== Undocumented changes ==
+=== Changes ===
+* Passive effects of items contained in the {{i|Schoolbag}} are now applied.
+
+=== Bug fixes ===
+* Fixed the bug where the {{i|Schoolbag}} would cause memory corruption and crash the game.
+* Fixed the bug where {{s|Flooded Caves}} room #976 was accidentally given 1000 weight, and would appear in almost every run.
+* Fixed the bug where the {{e|Soul Sucker}} had the wrong bestiary animation.
+* Fixed the bug where using {{i|Forget Me Now}} with the {{t|Broken Remote}} trinket caused the game to crash.
+* Fixed the bug where the Rage Creep in the top right hand corner of Womb/Utero/Scarred room #202 would damage you if you were standing along the top wall during its first attack.
+* Fixed the bug where the "Rerun" option on the menu would never appear as long as you had at least one mod enabled.
+* Fixed the bug where you could wrong warp by dying (with extra lives) immediately before going to the next floor. (This was only possible by using Sacrifice Rooms to teleport to the Dark Room or by playing on the DONT STOP custom seed.)
+* Fixed the bug where the player would be invisible after respawning if they teleported during a death animation.
+* Fixed the bug where {{i|Lachryphagy}} + {{i|The Parasite}} + {{i|Death's Touch}} would crash the game.
+
+== New bugs ==
+* Continuing a run won't correctly apply passive effects of items contained in the {{i|Schoolbag}}.
+* The {{i|Schoolbag}} and {{i|The Battery}} together can be exploited to gain unlimited charges, as shown in [https://www.reddit.com/r/bindingofisaac/comments/794cip/ok_i_guess/ this video].
+
+{{nav|version}}
+[[Category:Added in Booster Pack 4]]

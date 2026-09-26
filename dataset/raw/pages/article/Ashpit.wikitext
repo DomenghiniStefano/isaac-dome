@@ -1,0 +1,55 @@
+{{infobox stage
+ | dlc         = r
+ | chapter     = 2.5
+ | id          = 30
+ | level id    = 3, 4
+ | type id     = 5
+ | bosses      = Singe, The Shell, Great Gideon, The Pile
+ | unlocked by = Ashpit
+}}
+
+The '''Ashpit''' is an alternative floor to the {{s|Mines}} and is unlocked by defeating all of the [[boss]]es inside the {{s|Mines}}. The floor can be accessed by using bombs on the Exit Door of the {{s|Caves}}/{{s|Catacombs}}/{{s|Flooded Caves}} I or II, or at the end of {{s|Downpour}}/{{s|Dross}}. Ashpit's theme is centered around a dry, crumbling wasteland, with an abundance of skeleton enemies and brutal-looking foes.
+
+The Ashpit is significantly more difficult than their [[Chapter 2|standard counterparts]], filled with stone and bone-themed [[Monster|enemies]] that boast greater health and aggression. Most obstacles are [[rock]]s or [[Spiked Rock]]s, and {{e|Poop}}s are almost non-existent. [[Tinted Rock]]s have a high chance of spawning {{e|Tinted Rock Spider}}s. Travelling through it is only advised if you have already acquired {{I|Knife Piece 1}} in {{s|Downpour}} and intend to access the {{s|Corpse}}.
+
+After defeating the Mines II's boss, a door leading to the next alternate chapter - {{s|Mausoleum}} - appears. It requires 2 full hearts to open. The damage taken ignores almost every form of damage reduction, including {{I|The Wafer}} and invincibility. Unlike other methods of health donation, red hearts will not be prioritized over more valuable hearts.
+
+== [[Monster]]s ==
+{{entity table/header}}
+{{stage entities | Gurgle, Crackle, Splasher, Dragon Fly, Dragon Fly X, Bone Fly, Hard Host, Rock Spider, Coal Spider, Big Bony, Stoney, Pasty, Fly Bomb, Flesh Maiden, Death's Head, Dusty Death's Head, Redskull, Blaster, Hardy, Danny, Coal Boy, Dust, Clickety Clack, Bombgagger, Necro, Ink, Bulb, Carrion Princess, Loose Knight, Migraine, Bony, Black Bony, Stone Grimace, Vomit Grimace, Triple Grimace, Broken Gaping Maw, Constant Stone Shooter, Bomb Grimace, Quake Grimace, Wall Hugger }}
+|}
+
+== [[Boss]]es ==
+{| style="width: 100%; text-align: center"
+| style="text-align: center; border: none" |[[File:Boss The Pile portrait.png|center|link=The Pile]]
+| style="text-align: center; border: none" |[[File:Boss The Shell portrait.png|center|link=The Shell]]
+| style="text-align: center; border: none" |[[File:Boss Great Gideon portrait.png|center|link=Great Gideon]]
+| style="text-align: center; border: none" |[[File:Boss Singe portrait.png|center|link=Singe]]
+|-
+| style="text-align: center; border: none" |[[The Pile]] {{dlc|r}}
+| style="text-align: center; border: none" |[[The Shell]] {{dlc|r}}
+| style="text-align: center; border: none" |[[Great Gideon]] {{dlc|r}}
+| style="text-align: center; border: none" |[[Singe]] {{dlc|r}}
+|-
+| colspan="4" |[[File:Boss Clutch portrait.png|center|link=Clutch]]
+|-
+| colspan="4" |[[Clutch]] {{dlc|r}}
+|}
+
+== Knife Piece ==
+If you have {{I|Knife Piece 1}}, a special double-sized room will spawn in Ashpit II containing a minecart and a broken length of rail track leading to a boarded up door, just like those that lead to a [[Bedroom]]. Behind this door lies the area in which {{I|Knife Piece 2}} can be acquired. There are two methods for accessing this area:
+
+* If you have flight and 2 {{e|Bomb}}s, you can simply fly over to the boarded up door and blow it open. It is also accessible with flight and an item with an effect that opens doors such as {{i|Dad's Key}}, {{p|Soul of Cain}}, {{i|Cracked Orb}}, etc.
+* Otherwise, you can repair the track. There are three [[Rail Plate]]s spread throughout the floor. One will be in the same room as the broken rail track, but the other two are randomly placed. Once all three buttons are pressed, the rail track will be repaired and you can touch the minecart to access the area.
+
+Upon entering this area, all [[passive collectible|passive]] and [[activated collectible|active items]] will be rendered inactive, and your {{e|Bomb}}s, {{e|Penny|text=Coins}}, and {{e|Key}}s will be set to zero. New [[pickup]]s can still be obtained, however, and will persist after Isaac leaves the area. You will pass through several empty [[room]]s before reaching a room with the {{I|Knife Piece 2}}. Once you pick it up, {{e|Mother's Shadow}} will spawn and your race back to the entrance begins. This enemy cannot be defeated by any means, and escape is your only option.
+
+Unlike your initial trip to reach the {{I|Knife Piece 2}}, the path back will be obstructed by [[rock]]s and {{e|Poop}}s. While flying [[character]]s can handle all of this with ease, walking characters will have a significantly harder time. Using your tears and the conveniently located Throwable Bombs, you will need to break through the obstructions, press [[button]]s, and grab keys for [[Key Block]]s to make it back to the main dungeon. Making it out taking little or no damage is possible, particularly if you are fast and accustomed to dodging the shadow's attacks. Once you escape, all your items will be reactivated, and the shadow will end its pursuit.
+
+* It is possible for the floor's {{r|Crawl Space}} to appear on your escape path. Upon entry, your items will temporarily be reactivated, and you will be able to pick up any items/consumables available. Items will become inactive again after exiting. Mother's Shadow will still appear in the crawl space, and the enclosed area makes the dodging of her attacks very difficult. Furthermore, if a key is required to complete an obstacle on the way back, and it is picked up before entering the crawl space, it will be lost and could make the obstacle impossible.
+** The {{r|Black Market}} can also appear in a crawlspace.  Entering the trapdoor will complete the escape sequence.
+
+== Music ==
+* The [[music]] for the Ashpit is called ''Absentia''. Absentia is the Latin word for absence, likely because a "ashpit" is generally what remains after everything has burned away in a wildfire.
+
+{{nav|environment|fr=Cendrière}}

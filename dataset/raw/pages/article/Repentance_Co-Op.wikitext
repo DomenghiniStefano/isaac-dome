@@ -1,0 +1,298 @@
+<br />{{disambig msg|Repentance's Co-Op mode|Co-op babies|Co-op|Repentance+'s Online Co-Op mode|Online Co-Op}}
+{{page dlc|r}}
+In the [[The Binding of Isaac: Repentance|Repentance]] expansion, a new Co-Op mode was added. To access it, when a new run begins, as long as Player 1 does not leave the starting room, up to three additional players may press start. When they do, a small character selection menu will pop-up, and they will spawn in as the chosen character. To use the Co-Op baby mode, Player 1 must leave the starting room.
+
+In '''Repentance Co-Op''', sometimes referred to as True Co-Op mode, all players share the same resource pool of [[coins]], [[bombs]], and [[keys]], but have their own independent [[hearts|health]], [[items]], [[trinket]]s, and [[card]]s/[[pill]]s.
+
+__TOC__
+
+== Changes ==
+Certain changes are made to the game whenever multiple player characters are present. They are:
+* {{r|Boss Room}}s drop an extra item for every extra player; when the original item is taken, the other items will spawn afterward.
+** Any item pedestals spawned in Boss Rooms will have this mechanic; replacement items will always be from the [[Boss (Item Pool)|Boss Room item pool]], regardless of how they were spawned.
+** If the item is destroyed (such as via {{i|Abyss}}, {{i|Eternal D6}}, {{c|Tainted Cain}}, {{i|Void}}, etc.), the extra items will spawn after it.
+* Players who die will turn into small ghost babies upon death. These babies cannot aggro enemies, pick up items, or use any active items, cards, or pills they're holding, but they can fly, pick up coins, bombs, and keys, flip switches on the ground, and shoot tears, although they will deal heavily reduced damage. When a Boss Room is cleared, all dead players will respawn with one and a half either red or soul hearts (depending on what character they are playing and if they have enough heart containers).
+* Global passives such as {{c|???}}'s cheaper [[Devil Deal]]s, {{c|Tainted Isaac}}'s reroll, {{i|Steam Sale}}, {{i|Infestation 2}}, etc., only apply while the character who has them is alive. These passives are inactive as a ghost baby.
+* Transformation progress from activated items such as {{i|Bob's Rotten Head}}, {{i|Guppy's Head}}, {{i|The Bible}}, etc., will only be given to the first character to pick up the item.
+* All characters will earn [[Completion Marks|completion marks]] on their post-it notes and their associated [[achievements]] after completing their required objectives, regardless of how much they participated.
+** {{dlc|r+}} There is also a special set of completion marks for Online Co-Op, that are blue for Normal Mode, and Purple for Hard Mode.
+
+== Notes ==
+* Enemies will target any players that are alive at random.
+* All players can affect {{r|Devil Room}} chance in all the normal ways, and all players will feel the effects of anything that changes it. Items that increase Devil Room chance will help everyone earn them, but one character taking red heart damage will hurt everyone's chances at earning them.
+* If a character has an item/trinket that boosts the value of certain items/pickups, it will only apply to them. For example, only the character that has {{i|BFFS!}} will have stronger familiars, and only the character that has {{t|Bloody Penny}} will spawn hearts from picking up coins.
+* All damage players deal to [[bosses]] is reduced by 20%.
+* True Co-Op players can also be spawned in at the first room after using {{i|R Key|n}}.
+* Touching the {{e|White Fire Place}} will transform all characters into {{c|The Lost}}, not just the player who touched it.
+
+== General Strategy ==
+* As items, trinkets, and cards/pills aren't shared between characters, players will have to choose who gets any given item. Consider who needs or can make use of certain items more than others when deciding who to give items to.
+* If multiple characters touch different items at the same time in a room that offers multiple choices between items (such as {{r|Angel Room}}s, alt path {{r|Treasure Room}}s, or {{r|Boss Rush}}), all the items touched will be taken before they despawn. With proper timing, this can be used to get more value out of these rooms. However, this might not be worth the risk due to varying internet connections causing delay between characters.
+** If one of the items available is much better than the others, it's usually not worth the risk of getting the timing wrong and losing the powerful item.
+* Because all coins, bombs, and keys are shared, it usually doesn't matter which player takes them.
+** Take note if one player has a penny trinket (such as {{t|Bloody Penny}} or {{t|Counterfeit Penny}}), since the trinket effect will only trigger for the player who takes the coin.
+* Active items can be traded between characters by swapping them with other active items on pedestals.
+** If one character has {{t|Butter!}}, it can be dropped and given to the character who wants to swap items, circumventing the need for another active item altogether.
+* Because all dead characters are revived after clearing a Boss Room, more frail characters (like {{c|The Lost}}, {{c|Keeper}}, and {{c|Tainted Jacob}}) become much more powerful, as they can afford to die; the other characters just have to complete the floor with less help if they do.
+** [[Familiars]] dead characters have will despawn, making their absence much more impactful; make sure to give them to characters who are more likely to survive. (needs testing).
+*** Exceptions to this rule are the red locusts from {{i|Abyss}} which will continue to follow the player’s ghost and {{c|Tainted Lilith}}’s familiar which acts normally with her ghost but still suffering the same penalties as other characters in this form.
+** This mechanic also makes devil deals more affordable; a character can spend all their remaining hearts on devil deals, die, and respawn at the end of the next floor, albeit with only half a heart.
+** Items/effects that can instantly kill the player (such as {{i|Damocles}}, {{i|Plan C}}, and {{p|Suicide King}}) also become more viable as a result.
+* For Remote Play Co-Op, try to stay close together, as any character who wanders past the edge of the screen in a large room will drag the camera with them, putting the other players off-screen and only giving a vague directional indicator for where they are.
+** If the game is in windowed mode on PC, the window can be dragged out to greatly increase the game's resolution without triggering the scaling effect, allowing a better view of larger rooms and more room to maneuver.
+* Bombs or explosive items like {{i|Ipecac}} or {{i|Dr. Fetus}} should be handled with extreme caution, as the explosions caused by these items will damage other players.
+* Curse Rooms can be used by changing which player uses the door, spreading the damage out.
+* Unless going for {{e|The Beast}}, respawn items should be avoided. This is because they will boot all players out of the room if the player holding them dies. For Boss fights, especially ones where you're more likely to die, this resets the boss's health.
+** The main exceptions are {{i|Lazarus' Rags}} and {{i|Inner Child}}, as they revive the player in the same room and do not reset the fight.
+** The Beast is unique, as respawn items will not boot you out of the boss room during that fight.
+
+== Character Interactions ==
+=== {{c|Isaac}} ===
+* Isaac's {{i|The D6}} makes him generally useful on any run.
+* {{i|The D6}} is useful for rerolling items discarded by {{C|Tainted Isaac}}, particularly HP upgrades, as they no longer have an effect.
+
+=== {{c|Magdalene}} ===
+* Identifies the Full Health she starts with for all characters.
+* {{i|Yum Heart}} heals half a heart to all other players and can be given to other characters which make use of red health, such as {{c|Tainted Eve}} or {{c|Tainted Bethany}}.
+* Magdalene's low speed will have her compete for speed upgrades with characters such as {{c|Keeper}}, {{c|Tainted ???}}, and {{c|Tainted Lilith}}.
+
+=== {{c|Cain}} ===
+* Cain's {{i|Lucky Foot}} can be used to identify pills for other players without consequences. This is useful with {{c|Lazarus}}'s starting pill.
+* Cain should always be the character used to gamble, as he has the bonus from {{i|Lucky Foot}}, and open {{e|Locked Chest}}s, as he starts with {{t|Paper Clip}}.
+* {{I|Chemical Peel}}, {{i|Stye}}, and {{I|Blood Clot}} can be given to other players as they are less effective on Cain due to his one eye. Conversely, {{i|Technology 2}} benefits Cain the most since it causes him to fire {{i|Technology}}-like lazers in addition to its usual effect.
+* Some range upgrades are useful for Cain due to his low range.
+
+=== {{c|Judas}} ===
+* Judas' {{i|The Book of Belial}} will make getting the {{tf|Bookworm}} transformation more likely for all players if a {{r|Library}} spawns.
+* Judas provides a high damage output from early on, and is less reliant on damage upgrades due to his high damage multiplier.
+* Judas will compete with other characters such as {{c|Azazel}} for HP upgrades and other temporary hearts as he starts with low HP.
+
+=== {{c|???}} ===
+* ??? grants all players his inherent {{t|Lil Larva}} effect. This is useful with {{C|Tainted ???}}'s ability.
+* {{c|Bethany}} can be given {{i|The Poop}} to create a steady stream of wisps that can turn enemies into {{e|Poop}}s, creating more blue flies.
+* ??? reduces {{e|Soul Heart}} costs for all players in [[Devil Deal]]s.
+
+=== {{C|Eve}} ===
+* Eve generally prioritizes [[Devil Deal]]s to spend her heart containers, which may put her at odds with {{c|Bethany}}, {{c|Tainted Magdalene}}, and other low-health characters.
+** {{c|Keeper}} and {{c|Tainted Keeper}} make Devil Deals cost coins instead of hearts, preventing Eve from using them effectively.
+* {{c|Magdalene}}'s {{i|Yum Heart}} and {{c|Tainted Magdalene}} can be detrimental in situations where Eve needs to stay at low health.
+* Eve's {{i|Razor Blade}} can be passed to other characters which make use of self-damage, such as {{c|Samson}}.
+* Eve's starting items make her very strong early game, but her low damage multiplier will compete with other characters for damage upgrades to stay relevant.
+
+=== {{C|Samson}} ===
+* Works well with {{c|Magdalene}}'s {{i|Yum Heart}} and Full health pill and {{c|Tainted Magdalene}}'s ability to recover damage from activating {{i|Bloody Lust}}.
+* Samson can take Eve's {{i|Razor Blade}} for a source of garuanteed self-damage.
+* Samson will compete with characters such as {{c|Lilith}} and {{c|Tainted Magdalene}} for self-damage items.
+* {{i|Bloody Lust}} makes Samson less reliant on damage upgrades. However, he will compete with characters such as {{c|Tainted Eve}}, and {{c|Tainted Bethany}} for red hearts.
+
+=== {{C|Azazel}} ===
+* {{C|Azazel}} will keep his unique Brimstone as a ghost baby, with the damage penalty applied.
+* Having flight and high damage output make him always useful, especially in the early game.
+* Tear effect items such as {{i|The Common Cold}} should be given to Azazel, due to his innate {{i|Brimstone}}. Item effects that override or have no effect with Brimstone should be given to other characters.
+* Azazel is extremely reliant on range upgrades and less reliant on damage upgrades. This is useful as most other characters value damage more than range.
+
+=== {{C|Lazarus}} ===
+* Lazarus starts with a pill that {{c|Cain}} can use.
+* Lazarus can take {{c|Eve}}’s {{i|Razor Blade}} for an easy method to revive every floor.
+* Lazarus can be less reliant on damage upgrades if he makes use of gaining permanent damage every revive. However, this makes him compete with characters such as {{c|???}} for temporary hearts every floor.
+
+=== {{C|Eden}} ===
+* Eden's random generation can give them any list of strengths and weaknesses, but health and damage have the greatest potential to cause problems.
+* Eden is the only character that can immediately end a co-op run as they can start with items such as {{i|Dr. Fetus}} or {{i|Ipecac}}.
+
+=== {{C|The Lost}} ===
+* The Lost should be the last one to buy something from a [[Devil Deal]], {{r|Black Market}}, and {{s|Dark Room}}; all other options will disappear after he takes an item.
+* {{i|Holy Mantle}} makes it so that The Lost should be the character to enter {{r|Curse Room}}s and open {{e|Mimic Chest}}s. He also opens the door to {{s|Mausoleum}} for free.
+* The Lost's {{i|Eternal D6}} should only be used on the final {{r|Boss Room}} item. {{dlc|nr+}} If an earlier item is destroyed, no extra items will spawn after it.
+** {{dlc|r+}} {{i|Eternal D6}} no longer prevents further items from spawning if it destroys a boss item; however, it should still only be used on the final item, as there is no way to tell if a previous item was rerolled or destroyed.
+* {{i|Eternal D6}} is useful for rerolling items discarded by {{C|Tainted Isaac}}, particularly HP upgrades, as they no longer have an effect.
+* As The Lost does not use HP upgrades nor any hearts, he is a useful pairing with HP-dependent characters of any kind.
+* The Lost's main weakness of only taking 1-2 hits before dying is heavily mitigated in co-op mode as he can be easily revived every floor.
+
+=== {{C|Lilith}} ===
+* {{dlc|nr+}} Lilith will be able to use her {{I|Incubus}} for the current room after dying, but for the rest of the floor her baby will be unable to shoot any tears.
+** {{dlc|r+}} Lilith's ghost baby behaves like a regular ghost baby.
+* {{c|Magdalene}}'s {{i|Yum Heart}} and Full health pill and {{c|Tainted Magdalene}}'s ability can help Lilith activate {{i|Cambion Conception}} more easily.
+* Lilith can take Eve's {{i|Razor Blade}} for a source of guaranteed self-damage.
+* Lilith makes better use of familiars which are generally less useful for other characters.
+* Lilith can compete with characters such as {{c|Samson}} for self-damage items, however they are less important on her due to her low base HP and minimal immediate impact of {{i|Cambion Conception}}.
+* Lilith will compete with {{c|Tainted Eve}} and {{c|Tainted Apollyon}} for familiar-boosting items.
+
+=== {{C|Keeper}} ===
+* Keeper will maintain his inherent triple shot as a ghost baby.
+* [[Devil Deal]]s will cost coins instead of hearts for all players. This pairs well with characters such as {{c|Tainted Judas}} and {{c|Bethany}}, as they are less inclined to spend heart containers, but is detrimental for characters such as {{c|Eve}} or {{c|Tainted Lost}} as they make use of the heart container cost.
+* {{c|Bethany}} can be given Wooden Nickel to create wisps that also spawn extra coins.
+* Keeper can use {{r|Curse Room}}s and {{r|Sacrifice Room}}s at the cost of coins instead of hearts, and will not compete for hearts with other characters.
+** The 10th use of a Sacrifice Room will give 30 coins (which pays back the cost of using it) or 7 soul hearts (which other characters can use, and are much more valuable than 10 cents).
+* Keeper should always be the character to open the {{r|Shop}} as he starts with {{t|Store Key}}.
+* Due to the risk of health downs Keeper should let other characters take pills and {{i|Experimental Treatment}}. {{i|Piggy Bank}} and {{t|Swallowed Penny}} should also be given to other characters as they spawn less coins as Keeper.
+* Keeper's low tear rate makes tears upgrades more valuable on him.
+* {{dlc|r+}} Keeper's extra coin generation from {{i|Wooden Nickel}} is useful to revive players using the {{m|Revive Machine}}.
+
+=== {{C|Apollyon}} ===
+* Apollyon's {{i|Void}} should only be used on the final {{r|Boss Room}} items. {{dlc|nr+}} If an earlier item is destroyed, no extra items will spawn after it.
+** {{dlc|r+}} {{i|Void}} no longer prevents further items from spawning if it destroys a boss item.
+* The [[active item]] effects and passive stat boosts from using {{i|Void}} are stored on the character rather than in the Void itself, so passing the Void to other characters can be counterproductive if some active items are already absorbed.
+* {{c|Bethany}} is a good user of {{i|Void}} as it will spawn the wisp of every active item destroyed each time she uses it.
+* {{i|Void}} is useful for absorbing items discarded by {{C|Tainted Isaac}}, particularly HP upgrades, as they no longer have an effect.
+* Due to his low starting stats, Apollyon generally should not give {{i|Void}} to other players until later in a run.
+
+=== {{C|The Forgotten}} ===
+* {{c|The Forgotten}} will keep his bone club as a ghost baby, with the damage penalty applied. The Forgotten will be unable to toggle between the bone club and normal tears while in this state.
+* {{c|Magdalene}}'s {{i|Yum Heart}} and {{c|Tainted Magdalene}}'s ability are extremely useful to avoid losing {{e|Bone Heart}}s.
+* The Forgotten will compete with other characters for red hearts, and especially with {{c|Bethany}} as they both need red and bone hearts.
+* Size ups will increase the range of The Forgotten's bone club, and have higher priority for him. Range upgrades are also useful to an extent on The Forgotten.
+** Inversely, size downs will decrease the club's range, and have lower priority for him.
+* The Forgotten's interactions with tear modifiers should be considered when choosing who to give them to.
+* Having high damage and flight makes The Forgotten generally useful early game, and his body being able to block projectiles for other players while in {{c|The Soul}} form makes him useful for bosses.
+
+=== {{C|Bethany}} ===
+* {{dlc|nr+}} Bethany will add her unique soul charge counter to the other consumable counters. It will only increase when Bethany gains soul hearts, and the soul charges can only be used by Bethany.
+* Bethany will change the first deal to be an {{r|Angel Room}}, which can be beneficial or detrimental depending on the other characters.
+* {{e|Soul Heart}}s are generally more useful as health than active item charges, restricting the amount of Soul Hearts she can use for her active item. As such she pairs best with characters that can't use soul hearts, such as {{c|The Lost}}, {{c|Keeper}}, and {{c|Tainted Magdalene}}.
+* {{i|Book of Virtues}} makes all [[active item]]s have more inherent value with Bethany than other characters.
+* Bethany will compete with other characters for red hearts, and especially with {{c|The Forgotten}} as they both need red and bone hearts.
+
+=== {{C|Jacob and Esau}} ===
+* Jacob and Esau will each have ghost babies after death, Esau's ghost baby arriving shortly after Jacob's.
+* Jacob & Esau have increased control over the camera, due to the fact that they count as two characters.
+* Due to the fact that Jacob & Esau always spawns 2 characters, they increase the amount of visual clutter for other players.
+* Jacob & Esau suffer the weakness from having to divide up their items and HP among 2 characters. In co-op mode this weakness is exacerbated due to having even less items and hearts to go around, causing them to quickly fall behind in power as a run goes on.
+* Jacob & Esau are characters with next to no reasons to be used as co-op partners aside from earning achievements or as a challenge.
+
+=== {{C|Tainted Isaac}} ===
+* The 8-item limit doesn't apply to other characters, letting them take full advantage of Tainted Isaac's unique reroll mechanic.
+* If Tainted Isaac is at his 8-item limit, he can effectively drop his passive items by picking up more items, letting other characters have them instead.
+** Characters such as {{c|Isaac}} and {{c|Apollyon}} are useful for rerolling or repurposing items discarded by Tainted Isaac, especiall HP upgrades.
+* {{dlc|r+}} Tainted Isaac's reroll will apply normally to all items except the {{r|Boss Room}} item. Only one of the boss room items will flip back and forth, the items following are unaffected.
+
+=== {{C|Tainted Magdalene}} ===
+* Tainted Magdalene will make all enemies have a chance to drop temporary red hearts on death, regardless of who killed them. Tainted Magdalene's “hug” attack still guarantees that they drop.
+** {{c|Samson}} and {{c|Lilith}} can get better use out of {{i|Bloody Lust}} and {{i|Cambion Conception}} respectively, {{c|Tainted Eve}} can spawn more blood clot familiars, and {{c|Tainted Bethany}} can turn excess hearts into blood charges for her active item(s).
+* The large amount of hearts Tainted Magdalene can generate gives her and her allies lots of hearts to spend on {{r|Curse Room}}s, {{r|Sacrifice Room}}s, {{m|Blood Donation Machine}}s, {{m|Devil Beggar}}s, {{m|Confessional}}s, and {{m|Hell Game}}s.
+* Size ups will increase the range of Tainted Magdalene's “hugs”, and have higher priority for her.
+** Inversely, size downs will decrease the “hugs”' range, and have lower priority for her.
+* Tainted Magdalene will utilize shield/invulnerability effects, speed upgrades, and contact damage items better than other characters.
+* Tainted Magdalene will not compete for any temporary HP with characters such as {{c|???}} as she cannot keep them. However, she greatly values HP upgrades and will compete with other characters for them.
+
+=== {{C|Tainted Cain}} ===
+* {{dlc|nr+}} If Tainted Cain converts a {{r|Boss Room}} item into pickups, no other items will spawn after it.
+* Tainted Cain will generally only be used to convert bad items or dropped [[active item]]s to pickups for himself.
+* Tainted Cain is overall less affected by the split item system of co-op mode as he can grab pick-ups and craft more items for himself at all times.
+
+=== {{C|Tainted Judas}} ===
+* {{i|Dark Arts}} is a useful tool for co-op as it freezes enemies in place which other characters can still attack, and can destroy numerous projectiles in boss fights.
+* Tainted Judas is slightly less reliant on damage upgrades as he can gain damage from Dark Arts, but will compete for speed upgrades to make better use of the item.
+
+=== {{C|Tainted ???}} ===
+* Tainted ??? will add his unique poop counter to the normal bomb counter as long as at least one player is playing as him, and only Tainted ??? can use the poops.
+** Regular bombs will be added back to the pickup pool, and any player may pick up poop drops to refill Tainted ???'s supply.
+** Tainted ??? can spawn poop pickups when any character deals damage, and enemies can drop poop pickups when they die, regardless of the character that killed them.
+** If multiple players are playing as Tainted ???, they will all share the same poop supply, but will have their own individual poop order. Special care should be taken between Tainted ???'s to not only monitor each other's poop order in order to best determine usage of the shared poop supply, but also upon the death of any Tainted ???, they will defecate the ''shared poop supply'', requiring the remaining players to pick up dropped poops lest the remaining Tainted ??? be caught without poop at a pivotal moment.
+* The damage of Tainted ???'s poop is independent of Tainted ???'s damage and tears, with the exception of Blue Flies from corny poop and the damage enemies take from walking over creep. As such Tainted ??? will not compete for any damage upgrades as his damage potential scales into the late game naturally.
+* As Tainted ???'s poops are separate from bombs, he can use their explosive effects in place of bombs to save bombs for other purposes.
+** Caution should be taken when trying to use poops offensively; these explosions can hurt other characters.
+* Creep and {{e|White Poop}} created by Tainted ??? can buff all other characters.
+** White Poop gives its benefits even while Tainted ???'s holding it over his head, allowing him to be a mobile aura boost. The poop will be dropped if he takes damage or enters a new floor.
+
+=== {{C|Tainted Eve}} ===
+* Tainted Eve will maintain control of all of her clots after death, but they will suffer the same damage penalty. If all of Tainted Eve's clots are dead, she will enter her unique {{i|Whore of Babylon}}-esque state as normal, along with using {{i|Sumptorium}} like {{i|Mom's Knife}}.
+** She will keep this Whore of Babylon Sumptorium effect even as a ghost baby.
+* {{c|Magdalene}}'s {{i|Yum Heart}} and Full health pill and {{c|Tainted Magdalene}}'s ability can help Tainted Eve spawn more clot familiars.
+* Tainted Eve will want {{i|BFFS!}}, {{t|Forgotten Lullaby}}, and {{t|Baby-Bender}} more than other characters and will compete with {{c|Lilith}} and {{c|Tainted Apollyon}} for familiar-boosting items.
+* As Tainted Eve is very HP-reliant, she will compete with all characters for all types of hearts. Therefore, she pairs better with characters such as {{c|The Lost}} or {{c|Keeper}} who don't require hearts.
+
+=== {{C|Tainted Samson}} ===
+* Can activate {{i|Berserk!}} as a ghost baby when dead.
+* Like {{c|The Forgotten}}, Tainted Samson will prioritize size ups, and avoid size downs for {{i|Berserk!}}. However, they are less necessary for him as his melee form usually isn't active.
+* {{i|Berserk!}} is useful in the early game it has high damage and can clear multiple rooms. However it is difficult to maintain full use of in co-op mode as Tainted Samson deals overall less damage, and kills overall less enemies, making his Berserk! mode less frequent and harder to maintain.
+
+=== {{C|Tainted Azazel}} ===
+* Tainted Azazel can still make use of his unique brimstone and sneeze abilities as a ghost baby. The sneeze will be smaller.
+* Tainted Azazel synergizes well with {{c|Azazel}}, as {{i|Hemoptysis}} boosts the damage of any {{i|Brimstone}} attack, and any Brimstone attack can trigger the Hemoptysis explosion.
+
+=== {{C|Tainted Lazarus}} ===
+* Tainted Lazarus will still swap forms while dead; If one of Tainted Lazarus' forms dies while the other is alive, he will alternate between being a ghost baby and a normal character.
+** This allows his item limitation to be handled one of two ways: divide items between the two characters and play them normally, or let one character have all the items and let the other have none, making Tainted Lazarus a character that's only active in every other room.
+* Tainted Lazarus' weakness of having to split items and health is exacerbated in co-op mode as each character will become increasingly weaker and fall behind as the run goes on.
+** However, Tainted Lazarus' main benefit is being able to offset the item deficiency in co-op with {{i|Flip}}, as he can overall increase the amount of items for other players.
+
+=== {{c|Tainted Eden}} ===
+* Weak/useless items, trinkets, and cards/pills can be given to Tainted Eden with no consequence; they will turn into other items after they take damage.
+** The only exception is Devil/Curse room items, as they can turn into {{i|Dead Cat}} and remove all of Tainted Eden's health with no benefit.
+* If Tainted Eden rerolls into a good active item/trinket/card/pill, it can be given to another character to avoid being rerolled.
+
+=== {{C|Tainted Lost}} ===
+* Tainted Lost should be the last one to buy something from a [[Devil Deal]], {{r|Black Market}}, and {{s|Dark Room}}; all other options will disappear after he takes an item.
+* As most items that cannot spawn are health ups or items that activate upon taking damage, {{c|Samson}}, {{c|Lilith}}, {{c|Tainted Magdalene}}, and {{c|Tainted Eve}} will be much less able to take advantage of their strengths. However, Tainted Lost will also not compete with any characters for hearts.
+* Other characters can hold onto an extra {{p|Holy Card}} for Tainted Lost.
+* Tainted Lost's main weakness of only taking 1-2 hits before dying is heavily mitigated in co-op mode as he can be easily revived every floor.
+
+=== {{C|Tainted Lilith}} ===
+* Keeps her {{i|Gello}} as a ghost baby.
+* Tainted Lilith's fixed range means that she will not compete for range upgrades with characters such as {{c|Cain}} or {{c|Azazel}}.
+* Tainted Lilith will want tear modifiers less than other characters, as most of them don't affect her unique form of attack.
+* Tainted Lilith's high base damage output makes her much less reliant on items, the only items she will prioritize are speed upgrades.
+
+=== {{C|Tainted Keeper}} ===
+* Tainted Keeper will maintain his quadruple shot as a ghost baby.
+* Causes all items other than [[Item Tags quest|<code>quest</code>]] items to cost coins.
+* All enemies will drop temporary coins when killed, regardless of the player who killed them.
+* Tainted Keeper will share the same [[Devil Deal]], {{r|Curse Room}}s, and {{r|Sacrifice Room}}s strategies as {{c|Keeper}}.
+* Tainted Keeper can use {{r|Curse Room}}s and {{r|Sacrifice Room}}s at the cost of coins instead of hearts, and will not compete for hearts with other characters.
+* Due to the risk of health downs Tainted Keeper should let other characters take pills and {{i|Experimental Treatment}}. {{i|Piggy Bank}} and {{t|Swallowed Penny}} should also be given to other characters as they spawn less coins as Tainted Keeper.
+* Tainted Keeper's low tear rate makes tears upgrades more valuable on him.
+* {{dlc|r+}} Tainted Keeper's extra coin generation is extremely useful to revive players using the {{m|Revive Machine}}.
+
+=== {{C|Tainted Apollyon}} ===
+* Tainted Apollyon's locusts persist after death and deal full damage as a ghost baby, bypassing the damage penalty.
+* Tainted Apollyon's {{i|Abyss}} should only be used on the final {{r|Boss Room}} items. {{dlc|nr+}} If an earlier item is destroyed, no extra items will spawn after it.
+** {{dlc|r+}} {{i|Abyss}} no longer prevents further items from spawning if it destroys a boss item.
+* Tainted Apollyon will want {{i|BFFS!}} and {{i|Hive Mind}} more than other characters, due to the fact that Abyss' locusts are boosted by these items.
+** This also means he will be competing with {{c|Lilith}} and {{c|Tainted Eve}} for familiar-boosting items.
+* {{i|Abyss}} is useful for absorbing items discarded by {{C|Tainted Isaac}}, particularly HP upgrades, as they no longer have an effect.
+
+=== {{C|Tainted Forgotten}} ===
+* {{C|Tainted Forgotten}} will keep their bone club as a ghost baby, with the damage penalty applied. They will also be able to move on their own.
+* Only the bone pile will receive the effects of items, making Tainted Forgotten value items very differently from other characters. Given the fact that it can't move without The Soul's help, is indestructible, and wants to be close to enemies at all times, this makes Tainted Forgotten want the following items more than other characters:
+** Size ups (to block shots and increase the range of the bone club)
+** [[Familiar#Orbital Familiars|Orbitals]]
+** Contact damage
+** Area-of-effects
+*** As these aren't generally useful to other characters, Tainted Forgotten doesn't have to compete nearly as much for the items they want compared to other characters.
+* In a similar vein, this also makes Tainted Forgotten want the following items less than other characters:
+** Shooting familiars
+** Size downs
+** [[Status Effects|Fear/Confusion]]
+* The bone pile can be thrown into and out of Curse Room doors or at {{e|Spiked Chest}}s and {{e|Mimic Chest}}s without spending health.
+* Having high damage and flight makes Tainted Forgotten generally useful early game, and the bone pile able to block projectiles for other players makes him useful for bosses.
+
+=== {{C|Tainted Bethany}} ===
+* {{dlc|nr+}} Tainted Bethany will add her unique blood charge counter to the other consumable counters. It will only increase when Tainted Bethany gains red hearts, and the blood charges can only be used by Tainted Bethany.
+* Characters such as {{c|Samson}}, {{c|Lilith}}, and {{c|Tainted Eve}} will compete with Tainted Bethany for red hearts to use. As such she pairs best with characters that can't use red hearts, such as {{c|???}}, {{c|Keeper}}, and {{c|The Lost}}.
+* Tainted Bethany synergizes well with {{c|Tainted Magdalene}} as Tainted Magdalene's ability will generate a lot of red hearts.
+* Tainted Bethany will want to take less items in general due to her debuffs to familiars and stat increases. In turn Tainted Bethany is generally self-sufficient due to {{i|Lemegeton}} and useful in mitigating co-op mode's item deficiency.
+
+=== {{C|Tainted Jacob}} ===
+* {{e|Dark Esau}} is unable to hurt any characters other than other {{c|Jacob}} and {{c|Tainted Jacob}}, with the exception of the rings of fire he creates when he spawns.
+** This makes it so that {{c|Jacob and Esau}} and {{c|Tainted Jacob}} should not be played together.
+* {{dlc|nr+}} Tainted Jacob will still be targeted by {{e|Dark Esau}} while he's dead. For more notes, read [[Tainted Jacob#Co-Op Mode|this article]].
+* {{dlc|r+}} Dark Esau will no longer deal damage to enemies or charge at the ghost of Tainted Jacob until he is revived.
+** {{dlc|nr+}} If Tainted Jacob is dead at the start of the floor, Dark Esau will target other characters instead of Tainted Jacob, but will still be unable to hurt them.
+** {{dlc|r+}} If Tainted Jacob is dead at the end of a floor and has died while in ghost form, he will respawn at the start of the next floor.
+* If Tainted Jacob was in ghost form when he died, he will respawn in ghost form after the boss room is cleared.
+* Tainted Jacob can take one free devil deal item in his ghost form. As with {{c|The Lost}}, he should be the last character to pick up a deal.
+
+== Bugs ==
+{{Bug|dlc=nr+|When one player is using Tainted Cain and takes a boss item pedestal, all items that aren't claimed will be taken immediately.}}
+{{Bug|dlc=nr+|If Tainted Jacob is revived in his The Lost form and killed before the next floor starts, his ghost baby will be a floating Isaac head and turn into a floating Isaac torso when moving. This is purely cosmetic.}}
+{{Bug|dlc=nr+|When an active item is on a boss pedestal and a player that already has an active item picks it up, any item underneath will despawn and only the replaced active item will be on the pedestal.}}
+{{Bug|dlc=nr+|If Jacob & Esau is the last person to die in a co-op game, the game will not end and will instead softlock with neither of you able to leave the room. This is also true with Tainted Forgotten.}}
+{{Bug|dlc=nr+|If multiple people are playing as Jacob & Esau, Esau's health will only be shown for the first player to join the game.}}
+{{Bug|dlc=nr+|If you exit the game to the desktop and after returning to the game you click "continue" on a different controller/keyboard than the one you started the run with before,  the second player's character will change into the character of the first player. Health bar of the second player will not be visible unless you exit to the menu and return to the game.}}
+{{Bug|plat=XboxOne|When loading into a challenge, if the second player quickly presses left or right on the d-pad while spawning in the second player will be able to either choose random or Maggy, this random character will spawn with the items granted by the challenge  along with their normal starting items, however their normal starting active will be removed. The hud for character selection will briefly appear if done correctly (This exploit is very inconsistent and can seemingly only be done while the first room of the challenge is fading in from the loading screen).}}
+{{Bug|If Bethany dies by any source that removes heart containers (Guppy's Paw, Potato Peeler, etc.), she will respawn with {{dlc|nr+}} one half soul heart / {{dlc|r+}} one and a half.}}
+{{Bug|If a character uses Void or Abyss on a Boss Room pedestal on the same frame as a character collects it, both actions will complete and two items will spawn afterward instead of one.}}
+{{Bug|While ghost players normally cannot take damage, they can still take damage in obscure ways, such as glitched items.}}
+
+{{nav|fr=Co-op Repentance}}

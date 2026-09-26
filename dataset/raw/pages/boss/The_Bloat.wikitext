@@ -1,5 +1,6 @@
 {{infobox boss
  | name = The Bloat
+ | image name  = * {{dlc|nr|Rebirth}}
  | id          = 68
  | variant     = 1
  | environment = <u>Boss</u><br>{{dlc|nr}}<br>{{floor|Necropolis}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|The Void}}<br>{{room|Boss Rush}}<br>{{dlc|r}}<br>{{floor|Necropolis}}<br>{{floor|Utero}}<br>{{floor|The Void}}<br>{{room|boss challenge}}{{room|Boss Rush}}<br><u>Degraded Boss</u><br><u>Main Path</u><br>{{floor|Cathedral}}<br>{{floor|Chest}}{{floor|Dark Room}}<br><u>Alternate path</u><br>{{floor|Corpse}}

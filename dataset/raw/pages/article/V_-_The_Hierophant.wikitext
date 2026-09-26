@@ -1,0 +1,27 @@
+{{header tarot cards}}
+{{Infobox card
+| name =                 V - The Hierophant
+| id =  	             6
+| quote =                Two prayers for the lost
+| description =          Spawns 2 {{e|Soul Heart}}s on the ground.
+| recharge =             {{dlcalt|4|r=12}}
+}}
+
+{{cit|c}}
+
+== Effects ==
+* Spawns 2 {{e|Soul Heart}}s on the ground near Isaac.
+
+== Notes ==
+* As the Soul Hearts are spawned on the ground, if the card is used too close to a pit or obstacle, or if there isn’t enough room around Isaac, the hearts can spawn on the other side of the pit or obstacle.
+** Since the hearts need to be picked up and are not directly added to Isaac’s HP they will trigger effects such as {{i|Soul Locket}} or {{i|Immaculate Conception}}.
+* Some {{r|Super Secret Room}} layouts can force hearts in them to be of one type. Using '''V - The Hierophant''' in these rooms can transform the soul hearts into other types of hearts, which may be an unwanted outcome.
+
+== Synergies ==
+* {{I|Tarot Cloth|n}}: Spawns {{dlc|nr}} 4 / {{dlc|r}} 3 {{e|Soul Heart}}s.
+** {{I|Tarot Cloth|n}} + {{i|Blank Card}} + {{i|Car Battery|n}} : Spawns {{dlc|nr}} 8 / {{dlc|r}} 6 soul hearts.
+
+== Trivia ==
+* [[wikipedia:The Hierophant|The Hierophant]] is the fifth card of a Major Arcana set.
+
+{{nav|fr=V - Le Pape|card}}

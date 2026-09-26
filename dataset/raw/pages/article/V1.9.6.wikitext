@@ -1,0 +1,28 @@
+{{infobox version
+ | dlc   = r
+ | date  = 2024-01-06
+}}
+
+The [[Online (open beta)|online beta]] received a patch on January 6th, 2024, announced on [https://twitter.com/tyronerodriguez/status/1743732242734854247 Twitter].
+
+== Documented Changes ==
+* {{m|Revive Machine}}s added to each floor
+** Reviving a player costs 10 coins
+** Exploding the revive machine sometimes drops an eternal heart
+* {{p|XIX - The Sun}} card + Isaac's Bed heals all players
+* Co-op ghosts flight + can interact with some objects
+* Co-op ghosts revived by eternal heart
+* Left-Alt/L3 emote wheel
+
+=== Fixes ===
+* Starting items are accessible if unlocked
+* {{c|The Lost}} and {{c|Tainted Lost}} health after revival corrected
+* {{i|Schoolbag}} don’t drop 2nd active item on death
+* Rerun save issue
+* No [[Victory Lap]] Completion Mark
+* Cannot join Victory Lap in progress
+* Revival cosmetic issues
+* Runs unjoinable when victory lap begins
+* {{c|Tainted ???}} with {{i|Birthright}} correct poop limit
+
+{{nav|version}}

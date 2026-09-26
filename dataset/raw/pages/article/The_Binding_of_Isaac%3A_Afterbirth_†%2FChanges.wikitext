@@ -1,0 +1,979 @@
+<noinclude>{{page dlc|a+nr}}</noinclude>
+
+== Menus ==
+; [[Collection page]]
+* The navigation is faster and loops back on itself when scrolling vertically.
+; Loading screen
+* Loading images are smoother.
+
+== Player ==
+=== Characters ===
+; General
+* Adjusted the [[stat]]s of each [[character]] in the character selection menu to better reflect their actual in-game stats.
+* Adjusted pickup animation so items no longer obstruct Isaac's face.
+* Bloodstains on costumes are now consistently the same color.
+; [[Eden]]
+* Holding R to reset will consume an Eden Token and start a new run.
+* Added 30 hairstyles.
+* Can be randomized if the player has Eden tokens.
+; [[Eve]]
+* Starts with [[Razor Blade]] only if it has been unlocked.
+* Leaves a pool of blood behind instead of pee when walking between rooms at low HP.
+; [[Lilith]]
+* Starts with [[Cambion Conception]] only if it has been unlocked.
+
+=== Transformations ===
+; [[Conjoined]]
+* Its costume has color alts.
+; [[Seraphim (Transformation)|Seraphim]]
+* Its costume has color alts.
+; [[Spun]]
+* Its costume has color alts.
+; [[Yes Mother?]]
+* Its costume has color alts.
+
+=== Familiars ===
+* Teleport to the player's new position if it was changed by a boss such as [[Gurdy]] or [[Mom's Heart]].
+* Most sources of [[Blue Spider]]s throw those spiders out instead of spawning them on the ground.
+* Following [[familiar]]s are no longer pushed back when very close to the player.
+
+=== Co-op ===
+* [[Co-op]] babies can no longer drop out while the player is playing a pickup animation.
+
+== Items ==
+; General
+* Mushroom items play their unique pickup sound.
+
+=== Activated Collectibles ===
+; General
+* Some sprites changed:
+{| class="wikitable mw-collapsible mw-collapsed" style="text-align:center"
+ ! Item
+ ! Old sprite
+ ! New sprite
+ |-
+ | [[The Boomerang]]
+ | [[file:collectible The Boomerang Rebirth icon.png|96px|link=]]
+ | [[file:collectible The Boomerang icon.png|96px|link=]]
+ |-
+ | [[Box of Spiders]]
+ | [[file:collectible Box of Spiders Rebirth icon.png|96px|link=]]
+ | [[file:collectible Box of Spiders icon.png|96px|link=]]
+ |-
+ | [[D20]]
+ | [[file:collectible D20 Rebirth icon.png|96px|link=]]
+ | [[file:collectible D20 icon.png|96px|link=]]
+ |-
+ | [[D7]]
+ | [[file:collectible D7 Afterbirth icon.png|96px|link=]]
+ | [[file:collectible D7 icon.png|96px|link=]]
+ |-
+ | [[Glass Cannon]]
+ | [[file:collectible Glass Cannon Afterbirth icon.png|96px|link=]]
+ | [[file:collectible Glass Cannon icon.png|96px|link=]]
+ |-
+ | [[Isaac's Tears]]
+ | [[file:collectible Isaac's Tears Rebirth icon.png|96px|link=]]
+ | [[file:collectible Isaac's Tears icon.png|96px|link=]]
+ |-
+ | [[The Jar]]
+ | [[file:collectible The Jar Afterbirth icon.png|96px|link=]]
+ | [[file:collectible The Jar icon.png|96px|link=]]
+ |-
+ | [[Jar of Flies]]
+ | [[file:collectible Jar of Flies Afterbirth icon.png|96px|link=]]
+ | [[file:collectible Jar of Flies icon.png|96px|link=]]
+ |-
+ | [[Mega Blast]]
+ | [[file:collectible Mega Blast Afterbirth icon.png|96px|link=]]
+ | [[file:collectible Mega Blast icon.png|96px|link=]]
+ |-
+ | [[Ventricle Razor]]
+ | [[file:collectible Ventricle Razor Afterbirth icon.png|96px|link=]]
+ | [[file:collectible Ventricle Razor icon.png|96px|link=]]
+ |-
+ | [[We Need To Go Deeper!]]
+ | [[file:collectible We Need To Go Deeper! Rebirth icon.png|96px|link=]]
+ | [[file:collectible We Need To Go Deeper! icon.png|96px|link=]]
+ |}
+; {{i|Breath of Life}}
+* Can be held down between rooms.
+* Added some visual feedback when it provides its invincibility.
+; {{i|Butter Bean}}
+* If Isaac swaps Butter Bean for a different active item, then picks up Butter Bean again, it has a small chance to transform into [[Wait What?]].
+; {{i|D4}}
+* Re-rolls each of Isaac's passive items into a random item from the specific item pool where it was acquired.
+; {{i|Diplopia}}
+* No longer spawns extra items for empty item pedestals.
+; {{i|Flush!}}
+* [[Poop]]s spawned react to damage similarly to regular poops.
+; {{i|Friendly Ball}}
+* Can catch [[Lil Haunt]]s.
+; {{i|Glowing Hourglass}}
+* Revert the player's [[character]] if it was changed by an item during the current room.
+* Rewinds event counters (this includes [[Donation Machine|donations]] and [[Eden's Blessing]]s).
+* [[Co-op]] babies are saved and restored.
+* No longer duplicates [[Blue Fly|Blue Flies]], [[Blue Spider]]s and perma-[[charm]]ed enemies.
+; {{i|Guppy's Head}}
+* The number of flies is seeded.
+; {{i|Head of Krampus}}
+* Lasers no longer have a chance to rotate.
+; {{i|The Jar}}
+* Its sprite changes based on how many hearts it contains.
+; {{i|Jar of Flies}}
+* Its sprite changes based on how many flies it contains.
+; {{i|Mine Crafter}}
+* Spawns a [[TNT|TNT barrel]] directly at the player's position rather than on a nearby free tile.
+; {{i|My Little Unicorn}}
+* Its costume has color alts.
+; {{i|Pandora's Box}}
+* Adjusted the contents in [[Greed mode]].
+; {{i|Satanic Bible}}
+* Plays its use animation.
+; {{i|Shoop da Whoop!}}
+* Damage halved to compensate.
+; {{i|Undefined}}
+* [[The Void]] is reset on exiting the I AM ERROR room and can be cleared repeatedly as long as the player is able to gather enough charges to successfully warp to it.
+; {{i|Ventricle Razor}}
+* Portals will now appear closed if they have no connected portal.
+* Portals got a few minor visual tweaks.
+
+=== Passive Collectibles ===
+; General
+* Some sprites changed:
+{| class="wikitable mw-collapsible mw-collapsed" style="text-align:center"
+ ! Item
+ ! Old sprite
+ ! New sprite
+ |-
+ | [[Less Than Three|<3]]
+ | [[file:collectible Less Than Three Rebirth icon.png|96px|link=]]
+ | [[file:collectible Less Than Three icon.png|96px|link=]]
+ |-
+ | [[8 Inch Nails]]
+ | [[file:collectible 8 Inch Nails Afterbirth icon.png|96px|link=]]
+ | [[file:collectible 8 Inch Nails icon.png|96px|link=]]
+ |-
+ | [[Abaddon]]
+ | [[file:collectible Abaddon Rebirth icon.png|96px|link=]]
+ | [[file:collectible Abaddon icon.png|96px|link=]]
+ |-
+ | [[Anemic]]
+ | [[file:collectible Anemic Rebirth icon.png|96px|link=]]
+ | [[file:collectible Anemic icon.png|96px|link=]]
+ |-
+ | [[Aquarius]]
+ | [[file:collectible Aquarius Rebirth icon.png|96px|link=]]
+ | [[file:collectible Aquarius icon.png|96px|link=]]
+ |-
+ | [[The Belt]]
+ | [[file:collectible The Belt Rebirth icon.png|96px|link=]]
+ | [[file:collectible The Belt icon.png|96px|link=]]
+ |-
+ | [[Best Bud]]
+ | [[file:collectible Best Bud Rebirth icon.png|96px|link=]]
+ | [[file:collectible Best Bud icon.png|96px|link=]]
+ |-
+ | [[Black Lotus]]
+ | [[file:collectible Black Lotus Rebirth icon.png|96px|link=]]
+ | [[file:collectible Black Lotus icon.png|96px|link=]]
+ |-
+ | [[Bob's Curse]]
+ | [[file:collectible Bob's Curse Rebirth icon.png|96px|link=]]
+ | [[file:collectible Bob's Curse icon.png|96px|link=]]
+ |-
+ | [[Box]]
+ | [[file:collectible Box Rebirth icon.png|96px|link=]]
+ | [[file:collectible Box icon.png|96px|link=]]
+ |-
+ | [[Brimstone]]
+ | [[file:collectible Brimstone Rebirth icon.png|96px|link=]]
+ | [[file:collectible Brimstone icon.png|96px|link=]]
+ |-
+ | [[Brother Bobby]]
+ | [[file:collectible Brother Bobby Rebirth icon.png|96px|link=]]
+ | [[file:collectible Brother Bobby icon.png|96px|link=]]
+ |-
+ | [[Bum Friend]]
+ | [[file:collectible Bum Friend Rebirth icon.png|96px|link=]]
+ | [[file:collectible Bum Friend icon.png|96px|link=]]
+ |-
+ | [[Caffeine Pill]]
+ | [[file:collectible Caffeine Pill Rebirth icon.png|96px|link=]]
+ | [[file:collectible Caffeine Pill icon.png|96px|link=]]
+ |-
+ | [[Cambion Conception]]
+ | [[file:collectible Cambion Conception Afterbirth icon.png|96px|link=]]
+ | [[file:collectible Cambion Conception icon.png|96px|link=]]
+ |-
+ | [[Cancer]]
+ | [[file:collectible Cancer Rebirth icon.png|96px|link=]]
+ | [[file:collectible Cancer icon.png|96px|link=]]
+ |-
+ | [[Celtic Cross]]
+ | [[file:collectible Celtic Cross Rebirth icon.png|96px|link=]]
+ | [[file:collectible Celtic Cross icon.png|96px|link=]]
+ |-
+ | [[The Compass]]
+ | [[file:collectible The Compass Rebirth icon.png|96px|link=]]
+ | [[file:collectible The Compass icon.png|96px|link=]]
+ |-
+ | [[Continuum]]
+ | [[file:collectible Continuum Afterbirth icon.png|96px|link=]]
+ | [[file:collectible Continuum icon.png|96px|link=]]
+ |-
+ | [[Cricket's Head]]
+ | [[file:collectible Cricket's Head Rebirth icon.png|96px|link=]]
+ | [[file:collectible Cricket's Head icon.png|96px|link=]]
+ |-
+ | [[Crown Of Light]]
+ | [[file:collectible Crown Of Light Afterbirth icon.png|96px|link=]]
+ | [[file:collectible Crown Of Light icon.png|96px|link=]]
+ |-
+ | [[Cupid's Arrow]]
+ | [[file:collectible Cupid's Arrow Rebirth icon.png|96px|link=]]
+ | [[file:collectible Cupid's Arrow icon.png|96px|link=]]
+ |-
+ | [[Daddy Longlegs]]
+ | [[file:collectible Daddy Longlegs Rebirth icon.png|96px|link=]]
+ | [[file:collectible Daddy Longlegs icon.png|96px|link=]]
+ |-
+ | [[Dark Bum]]
+ | [[file:collectible Dark Bum Rebirth icon.png|96px|link=]]
+ | [[file:collectible Dark Bum icon.png|96px|link=]]
+ |-
+ | [[Demon Baby]]
+ | [[file:collectible Demon Baby Rebirth icon.png|96px|link=]]
+ | [[file:collectible Demon Baby icon.png|96px|link=]]
+ |-
+ | [[Distant Admiration]]
+ | [[file:collectible Distant Admiration Rebirth icon.png|96px|link=]]
+ | [[file:collectible Distant Admiration icon.png|96px|link=]]
+ |-
+ | [[Evil Eye]]
+ | [[file:collectible Evil Eye Afterbirth icon.png|96px|link=]]
+ | [[file:collectible Evil Eye icon.png|96px|link=]]
+ |-
+ | [[Farting Baby]]
+ | [[file:collectible Farting Baby Afterbirth icon.png|96px|link=]]
+ | [[file:collectible Farting Baby icon.png|96px|link=]]
+ |-
+ | [[Forever alone]]
+ | [[file:collectible Forever alone Rebirth icon.png|96px|link=]]
+ | [[file:collectible Forever alone icon.png|96px|link=]]
+ |-
+ | [[Friend Zone]]
+ | [[file:collectible Friend Zone Afterbirth icon.png|96px|link=]]
+ | [[file:collectible Friend Zone icon.png|96px|link=]]
+ |-
+ | [[Gemini (Item)|Gemini]]
+ | [[file:collectible Gemini Rebirth icon.png|96px|link=]]
+ | [[file:collectible Gemini icon.png|96px|link=]]
+ |-
+ | [[Ghost Baby]]
+ | [[file:collectible Ghost Baby Rebirth icon.png|96px|link=]]
+ | [[file:collectible Ghost Baby icon.png|96px|link=]]
+ |-
+ | [[Goat Head]]
+ | [[file:collectible Goat Head Rebirth icon.png|96px|link=]]
+ | [[file:collectible Goat Head icon.png|96px|link=]]
+ |-
+ | [[Guppy's Hairball]]
+ | [[file:collectible Guppy's Hairball Rebirth icon.png|96px|link=]]
+ | [[file:collectible Guppy's Hairball icon.png|96px|link=]]
+ |-
+ | [[Habit]]
+ | [[file:collectible Habit Rebirth icon.png|96px|link=]]
+ | [[file:collectible Habit icon.png|96px|link=]]
+ |-
+ | [[Harlequin Baby]]
+ | [[file:collectible Harlequin Baby Rebirth icon.png|96px|link=]]
+ | [[file:collectible Harlequin Baby icon.png|96px|link=]]
+ |-
+ | [[Holy Water]]
+ | [[file:collectible Holy Water Rebirth icon.png|96px|link=]]
+ | [[file:collectible Holy Water icon.png|96px|link=]]
+ |-
+ | [[Infestation]]
+ | [[file:collectible Infestation Rebirth icon.png|96px|link=]]
+ | [[file:collectible Infestation icon.png|96px|link=]]
+ |-
+ | [[Key Bum]]
+ | [[file:collectible Key Bum Afterbirth icon.png|96px|link=]]
+ | [[file:collectible Key Bum icon.png|96px|link=]]
+ |-
+ | [[Key Piece 2]]
+ | [[file:collectible Key Piece 2 Rebirth icon.png|96px|link=]]
+ | [[file:collectible Key Piece 2 icon.png|96px|link=]]
+ |-
+ | [[Lil Brimstone]]
+ | [[file:collectible Lil Brimstone Rebirth icon.png|96px|link=]]
+ | [[file:collectible Lil Brimstone icon.png|96px|link=]]
+ |-
+ | [[Lil' Loki]]
+ | [[file:Collectible Lil Loki Afterbirth icon.png|96px|link=]]
+ | [[file:Collectible Lil Loki icon.png|96px|link=]]
+ |-
+ | [[Lord of the Pit]]
+ | [[file:collectible Lord of the Pit Rebirth icon.png|96px|link=]]
+ | [[file:collectible Lord of the Pit icon.png|96px|link=]]
+ |-
+ | [[Lost Fly]]
+ | [[file:collectible Lost Fly Afterbirth icon.png|96px|link=]]
+ | [[file:collectible Lost Fly icon.png|96px|link=]]
+ |-
+ | [[Lucky Foot]]
+ | [[file:collectible Lucky Foot Rebirth icon.png|96px|link=]]
+ | [[file:collectible Lucky Foot icon.png|96px|link=]]
+ |-
+ | [[Magic 8 Ball]]
+ | [[file:collectible Magic 8 Ball Rebirth icon.png|96px|link=]]
+ | [[file:collectible Magic 8 Ball icon.png|96px|link=]]
+ |-
+ | [[Magneto]]
+ | [[file:collectible Magneto Rebirth icon.png|96px|link=]]
+ | [[file:collectible Magneto icon.png|96px|link=]]
+ |-
+ | [[Mitre]]
+ | [[file:collectible Mitre Rebirth icon.png|96px|link=]]
+ | [[file:collectible Mitre icon.png|96px|link=]]
+ |-
+ | [[Mom's Contacts]]
+ | [[file:collectible Mom's Contacts Rebirth icon.png|96px|link=]]
+ | [[file:collectible Mom's Contacts icon.png|96px|link=]]
+ |-
+ | [[Mom's Eye]]
+ | [[file:collectible Mom's Eye Rebirth icon.png|96px|link=]]
+ | [[file:collectible Mom's Eye icon.png|96px|link=]]
+ |-
+ | [[Mom's Knife]]
+ | [[file:collectible Mom's Knife Rebirth icon.png|96px|link=]]
+ | [[file:collectible Mom's Knife icon.png|96px|link=]]
+ |-
+ | [[Money = Power]]
+ | [[file:collectible Money = Power Rebirth icon.png|96px|link=]]
+ | [[file:collectible Money = Power icon.png|96px|link=]]
+ |-
+ | [[The Mulligan]]
+ | [[file:collectible The Mulligan Rebirth icon.png|96px|link=]]
+ | [[file:collectible The Mulligan icon.png|96px|link=]]
+ |-
+ | [[Multidimensional Baby]]
+ | [[file:collectible Multidimensional Baby Afterbirth icon.png|96px|link=]]
+ | [[file:collectible Multidimensional Baby icon.png|96px|link=]]
+ |-
+ | [[The Peeper]]
+ | [[file:collectible The Peeper Rebirth icon.png|96px|link=]]
+ | [[file:collectible The Peeper icon.png|96px|link=]]
+ |-
+ | [[Pentagram]]
+ | [[file:collectible Pentagram Rebirth icon.png|96px|link=]]
+ | [[file:collectible Pentagram icon.png|96px|link=]]
+ |-
+ | [[Piggy Bank]]
+ | [[file:collectible Piggy Bank Rebirth icon.png|96px|link=]]
+ | [[file:collectible Piggy Bank icon.png|96px|link=]]
+ |-
+ | [[Polyphemus]]
+ | [[file:collectible Polyphemus Rebirth icon.png|96px|link=]]
+ | [[file:collectible Polyphemus icon.png|96px|link=]]
+ |-
+ | [[Proptosis]]
+ | [[file:collectible Proptosis Rebirth icon.png|96px|link=]]
+ | [[file:collectible Proptosis icon.png|96px|link=]]
+ |-
+ | [[Pyro]]
+ | [[file:collectible Pyro Rebirth icon.png|96px|link=]]
+ | [[file:collectible Pyro icon.png|96px|link=]]
+ |-
+ | [[Rainbow Baby]]
+ | [[file:collectible Rainbow Baby Rebirth icon.png|96px|link=]]
+ | [[file:collectible Rainbow Baby icon.png|96px|link=]]
+ |-
+ | [[Robo-Baby]]
+ | [[file:collectible Robo-Baby Rebirth icon.png|96px|link=]]
+ | [[file:collectible Robo-Baby icon.png|96px|link=]]
+ |-
+ | [[Robo-Baby 2.0]]
+ | [[file:collectible Robo-Baby 2.0 Rebirth icon.png|96px|link=]]
+ | [[file:collectible Robo-Baby 2.0 icon.png|96px|link=]]
+ |-
+ | [[Rotten Baby]]
+ | [[file:collectible Rotten Baby Rebirth icon.png|96px|link=]]
+ | [[file:collectible Rotten Baby icon.png|96px|link=]]
+ |-
+ | [[Sacrificial Dagger]]
+ | [[file:collectible Sacrificial Dagger Rebirth icon.png|96px|link=]]
+ | [[file:collectible Sacrificial Dagger icon.png|96px|link=]]
+ |-
+ | [[Sad Bombs]]
+ | [[file:collectible Sad Bombs Rebirth icon.png|96px|link=]]
+ | [[file:collectible Sad Bombs icon.png|96px|link=]]
+ |-
+ | [[Sagittarius]]
+ | [[file:collectible Sagittarius Rebirth icon.png|96px|link=]]
+ | [[file:collectible Sagittarius icon.png|96px|link=]]
+ |-
+ | [[Sister Maggy]]
+ | [[file:collectible Sister Maggy Rebirth icon.png|96px|link=]]
+ | [[file:collectible Sister Maggy icon.png|96px|link=]]
+ |-
+ | [[Skeleton Key]]
+ | [[file:collectible Skeleton Key Rebirth icon.png|96px|link=]]
+ | [[file:collectible Skeleton Key icon.png|96px|link=]]
+ |-
+ | [[SMB Super Fan]]
+ | [[file:collectible SMB Super Fan Rebirth icon.png|96px|link=]]
+ | [[file:collectible SMB Super Fan icon.png|96px|link=]]
+ |-
+ | [[Spear Of Destiny]]
+ | [[file:collectible Spear Of Destiny Afterbirth icon.png|96px|link=]]
+ | [[file:collectible Spear Of Destiny icon.png|96px|link=]]
+ |-
+ | [[Speed Ball]]
+ | [[file:collectible Speed Ball Rebirth icon.png|96px|link=]]
+ | [[file:collectible Speed Ball icon.png|96px|link=]]
+ |-
+ | [[Spirit of the Night]]
+ | [[file:collectible Spirit of the Night Rebirth icon.png|96px|link=]]
+ | [[file:collectible Spirit of the Night icon.png|96px|link=]]
+ |-
+ | [[Strange Attractor]]
+ | [[file:collectible Strange Attractor Rebirth icon.png|96px|link=]]
+ | [[file:collectible Strange Attractor icon.png|96px|link=]]
+ |-
+ | [[Taurus]]
+ | [[file:collectible Taurus Rebirth icon.png|96px|link=]]
+ | [[file:collectible Taurus icon.png|96px|link=]]
+ |-
+ | [[Tech.5]]
+ | [[file:collectible Tech.5 Rebirth icon.png|96px|link=]]
+ | [[file:collectible Tech.5 icon.png|96px|link=]]
+ |-
+ | [[Tough Love]]
+ | [[file:collectible Tough Love Rebirth icon.png|96px|link=]]
+ | [[file:collectible Tough Love icon.png|96px|link=]]
+ |-
+ | [[Whore of Babylon]]
+ | [[file:collectible Whore of Babylon Rebirth icon.png|96px|link=]]
+ | [[file:collectible Whore of Babylon icon.png|96px|link=]]
+ |}
+; {{i|Ball of Bandages}}
+* Decreased the damage rate of level 3 and 4 to match [[Cube of Meat]].
+; {{i|The Battery}}
+* Self-recharging active items can charge the yellow meter, allowing Isaac to use them twice immediately.
+; {{i|Betrayal}}
+* No longer triggers if there are fewer than 2 enemies in the room.
+* Its costume has color alts.
+; {{i|BFFS!}}
+* Increases spawner familiar spawn rates.
+; {{i|Black Candle}}
+* Makes the darkness from [[Curse of Darkness]] fade away instead of immediately lighting the room up.
+; {{i|The Body}}
+* Its costume has color alts.
+; {{i|BOGO Bombs}}
+* Its costume has color alts.
+; {{i|Bursting Sack}}
+* Its costume has color alts.
+; {{i|Cancer}}
+* Its costume has color alts.
+; {{i|Dead Eye}}
+* The multiplier will no longer be lost when hitting poops or TNT barrels.
+; {{i|E. Coli}}
+* [[Poop]]s spawned react to damage similarly to regular poops.
+; {{i|Eden's Blessing}}
+* Is now limited to a maximum of 10 to prevent potential crashes.
+; {{i|Epiphora}}
+* Being hit, changing rooms, and using items no longer reset the Epiphora bonus.
+** During the delay when transitioning between rooms, picking up an item, or using an active item, it's possible to change firing direction without resetting the bonus.
+; {{i|Fate}}
+* Its costume has color alts.
+; {{i|Fruit Cake}}
+* New possible effects:
+** [[Compound Fracture]]
+** [[Euthanasia]]
+** [[Eye of Greed]]
+** [[Jacob's Ladder]]
+** [[Little Horn (Item)|Little Horn]]
+** [[Ouroboros Worm]]
+** [[Parasitoid]]
+** [[Sinus Infection]]
+** [[Sulfuric Acid]]
+; {{i|Gemini}}
+* Added extra familiar animations.
+; {{i|Hive Mind}}
+* The effect also applies to [[locust]]s.
+; {{i|Holy Grail}}
+* Its costume has color alts.
+; {{i|Holy Mantle}}
+* The shield is no longer restored if the player saves and continues after losing it.
+; {{i|Immaculate Conception}}
+* Its costume has color alts.
+; {{i|Key Piece 1}} / {{i|Key Piece 2}}
+* Will drop from angels that are not in [[Angel Room]]s.
+; {{i|Kidney Stone}}
+* Causes Isaac to fire "tears" from the middle instead of from his eyes, and at a slightly lower height.
+; {{i|Lil Brimstone}}
+* Got renamed from "Lil' Brimstone" to "Lil Brimstone".
+* Can damage [[Fire Place]]s and [[poop]]s.
+; {{i|Lil Haunt}}
+* Got renamed from "Lil' Haunt" to "Lil Haunt".
+; {{i|Lord of the Pit}}
+* Its costume has color alts.
+; {{i|Lost Contact}}
+* Only affects the player and [[Incubus]]'s tears.
+; {{i|Lusty Blood}}
+* Its costume has color alts.
+; {{i|Number One}}
+* Causes Isaac to fire "tears" from the middle instead of from his eyes, and at a slightly lower height.
+; {{i|Ouija Board}}
+* Its costume no longer overwrites the player's skin color to pink instead of white.
+; {{i|PHD}}
+* Converts:
+** ''???'' into ''Telepills''
+** ''Addicted'' into ''Percs!''
+** ''Paralysis'' into ''Pheromones''
+** ''Retro Vision'' into ''I can see forever!''
+** ''R U A Wizard?'' into ''Power Pill!''
+** ''X-Lax'' into ''Something's wrong...''
+; {{i|Piggy Bank}}
+* Its costume has color alts.
+; {{i|Purity}}
+* Better visualization of Purity's glow.
+; {{i|Restock}}
+* Purchasing an item that is on sale will replace it with another that is on sale.
+; {{i|Robo-Baby}}
+* Can damage [[Fire Place]]s and [[poop]]s.
+; {{i|Rubber Cement}}
+* Tears bounce off bombs.
+* Spectral tears no longer bounce off rocks.
+; {{i|Sagittarius}}
+* Its costume has color alts.
+; {{i|Scatter Bombs}}
+* Bombs actually scatter around.
+* Small bombs leave smaller craters.
+; {{i|The Small Rock}}
+* The speed and tears changes will take effect immediately. Without Afterbirth+, they didn't immediately change until Isaac's speed or tears stats are updated the next time.
+; {{i|Steam Sale}}
+* Items have a chance to be discounted further by random sales; for example, a discounted item originally costing 5 coins will then cost 2 coins instead of 3.
+; {{i|Sticky Bombs}}
+* Its costume has color alts.
+; {{i|Succubus}}
+* Grants its damage bonus when obtained via [[Cambion Conception]].
+; {{i|Synthoil}}
+* Its costume has color alts.
+
+=== Trinkets ===
+; General
+* Some sprites changed:
+{| class="wikitable mw-collapsible mw-collapsed" style="text-align:center"
+ ! Item
+ ! Old sprite
+ ! New sprite
+ |-
+ | [[???'s Soul]]
+ | [[File:Trinket Blue Baby's Soul Rebirth icon.png|96px|link=]]
+ | [[File:Trinket Blue Baby's Soul icon.png|96px|link=]]
+ |-
+ | [[Black Feather]]
+ | [[File:Trinket Black Feather Afterbirth icon.png|96px|link=]]
+ | [[File:Trinket Black Feather icon.png|96px|link=]]
+ |-
+ | [[Blasting Cap]]
+ | [[File:Trinket Blasting Cap Afterbirth icon.png|96px|link=]]
+ | [[File:Trinket Blasting Cap icon.png|96px|link=]]
+ |-
+ | [[Blister]]
+ | [[File:Trinket Blister Afterbirth icon.png|96px|link=]]
+ | [[File:Trinket Blister icon.png|96px|link=]]
+ |-
+ | [[Bob's Bladder]]
+ | [[File:Trinket Bob's Bladder Afterbirth icon.png|96px|link=]]
+ | [[File:Trinket Bob's Bladder icon.png|96px|link=]]
+ |-
+ | [[Broken Magnet]]
+ | [[File:Trinket Broken Magnet Rebirth icon.png|96px|link=]]
+ | [[File:Trinket Broken Magnet icon.png|96px|link=]]
+ |-
+ | [[Brown Cap]]
+ | [[File:Trinket Brown Cap Afterbirth icon.png|96px|link=]]
+ | [[File:Trinket Brown Cap icon.png|96px|link=]]
+ |-
+ | [[Cain's Eye]]
+ | [[File:Trinket Cain's Eye Rebirth icon.png|96px|link=]]
+ | [[File:Trinket Cain's Eye icon.png|96px|link=]]
+ |-
+ | [[Cracked Dice]]
+ | [[File:Trinket Cracked Dice Afterbirth icon.png|96px|link=]]
+ | [[File:Trinket Cracked Dice icon.png|96px|link=]]
+ |-
+ | [[Daemon's Tail]]
+ | [[File:Trinket Daemon's Tail Rebirth icon.png|96px|link=]]
+ | [[File:Trinket Daemon's Tail icon.png|96px|link=]]
+ |-
+ | [[Endless Nameless]]
+ | [[File:Trinket Endless Nameless Afterbirth icon.png|96px|link=]]
+ | [[File:Trinket Endless Nameless icon.png|96px|link=]]
+ |-
+ | [[Error]]
+ | [[File:Trinket Error Afterbirth icon.png|96px|link=]]
+ | [[File:Trinket Error icon.png|96px|link=]]
+ |-
+ | [[Karma]]
+ | [[File:Trinket Karma Afterbirth icon.png|96px|link=]]
+ | [[File:Trinket Karma icon.png|96px|link=]]
+ |-
+ | [[Lazy Worm]]
+ | [[File:Trinket Lazy Worm Afterbirth icon.png|96px|link=]]
+ | [[File:Trinket Lazy Worm icon.png|96px|link=]]
+ |-
+ | [[Lil Larva]]
+ | [[File:Trinket Lil Larva Afterbirth icon.png|96px|link=]]
+ | [[File:Trinket Lil Larva icon.png|96px|link=]]
+ |-
+ | [[Louse]]
+ | [[File:Trinket Louse Afterbirth icon.png|96px|link=]]
+ | [[File:Trinket Louse icon.png|96px|link=]]
+ |-
+ | [[Lucky Rock]]
+ | [[File:Trinket Lucky Rock Rebirth icon.png|96px|link=]]
+ | [[File:Trinket Lucky Rock icon.png|96px|link=]]
+ |-
+ | [[Mom's Locket]]
+ | [[File:Trinket Mom's Locket Afterbirth icon.png|96px|link=]]
+ | [[File:Trinket Mom's Locket icon.png|96px|link=]]
+ |-
+ | [[Mom's Pearl]]
+ | [[File:Trinket Mom's Pearl Rebirth icon.png|96px|link=]]
+ | [[File:Trinket Mom's Pearl icon.png|96px|link=]]
+ |-
+ | [[Mysterious Paper]]
+ | [[File:Trinket Mysterious Paper Rebirth icon.png|96px|link=]]
+ | [[File:Trinket Mysterious Paper icon.png|96px|link=]]
+ |-
+ | [[NO!]]
+ | [[File:Trinket NO! Afterbirth icon.png|96px|link=]]
+ | [[File:Trinket NO! icon.png|96px|link=]]
+ |-
+ | [[Poker Chip]]
+ | [[File:Trinket Poker Chip Afterbirth icon.png|96px|link=]]
+ | [[File:Trinket Poker Chip icon.png|96px|link=]]
+ |-
+ | [[Purple Heart]]
+ | [[File:Trinket Purple Heart Rebirth icon.png|96px|link=]]
+ | [[File:Trinket Purple Heart icon.png|96px|link=]]
+ |-
+ | [[Push Pin]]
+ | [[File:Trinket Push Pin Rebirth icon.png|96px|link=]]
+ | [[File:Trinket Push Pin icon.png|96px|link=]]
+ |-
+ | [[Rainbow Worm]]
+ | [[File:Trinket Rainbow Worm Afterbirth icon.png|96px|link=]]
+ | [[File:Trinket Rainbow Worm icon.png|96px|link=]]
+ |-
+ | [[Rib of Greed]]
+ | [[File:Trinket Rib of Greed Afterbirth icon.png|96px|link=]]
+ | [[File:Trinket Rib of Greed icon.png|96px|link=]]
+ |-
+ | [[Second Hand]]
+ | [[File:Trinket Second Hand Afterbirth icon.png|96px|link=]]
+ | [[File:Trinket Second Hand icon.png|96px|link=]]
+ |-
+ | [[Shiny Rock]]
+ | [[File:Trinket Shiny Rock Afterbirth icon.png|96px|link=]]
+ | [[File:Trinket Shiny Rock icon.png|96px|link=]]
+ |-
+ | [[Stud Finder]]
+ | [[File:Trinket Stud Finder Afterbirth icon.png|96px|link=]]
+ | [[File:Trinket Stud Finder icon.png|96px|link=]]
+ |-
+ | [[Super Magnet]]
+ | [[File:Trinket Super Magnet Afterbirth icon.png|96px|link=]]
+ | [[File:Trinket Super Magnet icon.png|96px|link=]]
+ |-
+ | [[Tape Worm]]
+ | [[File:Trinket Tape Worm Afterbirth icon.png|96px|link=]]
+ | [[File:Trinket Tape Worm icon.png|96px|link=]]
+ |-
+ | [[Umbilical Cord]]
+ | [[File:Trinket Umbilical Cord Rebirth icon.png|96px|link=]]
+ | [[File:Trinket Umbilical Cord icon.png|96px|link=]]
+ |-
+ | [[Watch Battery]]
+ | [[File:Trinket Watch Battery Afterbirth icon.png|96px|link=]]
+ | [[File:Trinket Watch Battery icon.png|96px|link=]]
+ |-
+ | [[Whip Worm]]
+ | [[File:Trinket Whip Worm Rebirth icon.png|96px|link=]]
+ | [[File:Trinket Whip Worm icon.png|96px|link=]]
+ |}
+; {{t|The Left Hand}}
+* Affects [[Bomb Chest]]s.
+; {{t|Safety Scissors}}
+* [[Wrath]] and [[Super Wrath]]'s bombs turn into their respective pickups.
+; {{t|Tick}}
+* Can be removed by [[Smelter]] and [[Gulp!]].
+
+=== Interactions ===
+* {{p|? Card}} + {{i|Glowing Hourglass}} - The ? Card doesn't get refunded upon usage anymore.
+* {{i|9 Volt}} + {{i|The Candle}} - The Candle starts at half charge after use.
+* {{i|A Lump of Coal}} + {{i|Athame}} - Damage to the ring of Athame is no longer reduced by half.
+* {{i|A Lump of Coal}} + {{i|Maw Of The Void}} - Damage to the Maw ring is no longer reduced by half.
+* {{i|Athame}} + {{i|Proptosis}} - The ring deals normal damage.
+* {{i|Brimstone}} + {{i|Ipecac}} - Isaac shoots Ipecac tears while charging Brimstone. Isaac gains increased damage, decreased tears, and the poison effect.
+* {{i|Car Battery}} + {{i|Mine Crafter}} - Spawns two [[TNT|TNT barrels]].
+* {{i|Cursed Eye}} + {{i|Incubus}} - A burst of tears is fired, but it does not need to be charged.
+* {{i|Epic Fetus}} + {{i|Monstro's Lung}} - As of current version this synergy is bugged and only a single missile fires.
+* {{i|Ipecac}} + {{i|The Ludovico Technique}} - +4 damage bonus, no explosion.
+* {{i|Ipecac}} + {{i|Mom's Knife}} - Also adds +4 damage.
+* {{i|The Ludovico Technique}} + {{i|Multidimensional Baby}} - An additional Ludovico tear is spawned when it passes through Multidimensional Baby, at the start of every room, and persists like the Ludovico tear itself.
+* {{i|Maw Of The Void}} + {{i|Proptosis}} - The ring deals normal damage.
+
+== Pickups ==
+; General
+* Can be picked up as soon as they hit the ground.
+* Pickup velocities are seeded from [[machine]]s, [[beggar]]s, [[Tinted Rock]]s, [[chest]]s, [[sack]]s, and [[boss]]es.
+
+=== Hearts ===
+; [[Black Heart]]
+* Has unique sounds.
+; [[Eternal Heart]]
+* Takes half a heart worth of damage from any lethal hit taken with only [[Soul Heart]]s.
+; [[Gold Heart]]
+* Turns nearby enemies to gold when breaking.
+* Added better visual feedback when breaking.
+* Minimap icon added.
+* Has unique sounds.
+; [[Half Red Heart]]
+* Minimap icon added.
+
+=== Coins ===
+; [[Lucky Penny]]
+* Has a green shine.
+
+=== Bombs ===
+; [[Golden Bomb]]
+* Has unique sounds.
+
+=== Pills ===
+; [[Friends Till The End!]]
+* Has narration.
+
+=== Cards and Runes ===
+; {{p|? Card}}
+* Its card ID is 48 instead of 43.
+; {{p|A Card Against Humanity}}
+* Has a unique card back.
+; {{p|Chaos Card}}
+* Has a unique card back.
+; {{p|Credit Card}}
+* Has a unique card back.
+; {{p|Get out of Jail Free Card}}
+* Has a unique card back.
+
+=== Chests ===
+; General
+* Items dropped no longer revert to their generic stone pedestal look upon leaving and reentering the room.
+; [[Locked Chest]]
+* The Golden Chest pool also includes bags, such as [[IV Bag]] or [[Sack of Pennies]].
+; [[Spiked Chest]]
+* Spiked Chests will deal damage normally even in [[The Chest]] / [[Dark Room]].
+
+== Entities ==
+=== Monsters ===
+; General
+* [[Champion]] enemies no longer deal contact damage if the non-champion version doesn't.
+* [[Charm]]ed enemies prioritize non-charmed enemies unless there aren't any.
+* Permanently [[charm]]ed enemies no longer try to go after [[Punching Bag]].
+* Permanently [[charm]]ed enemies can shoot projectiles through each other and familiars.
+* Monster replacements will now only occur with enemies spawned as part of the room layout.
+; [[Begotten]]
+* Is chained to an adjacent rock if the nearest wall is more than 1 grid cell away.
+; [[Big Spider]]
+* No longer blink when the player has [[Bursting Sack]].
+; [[Blue Gaper]]
+* Reduced Base HP and added stage HP.
+* Has a proper appearance animation if spawned by a room rather than by a boss.
+; [[Conjoined Fatty]]
+* Added extra sounds and effects to [[creep]] attacks.
+; [[Death's Head]]
+* No longer deals contact damage during its death animation.
+; [[Greed Gaper]]
+* Has a proper appearance animation if spawned by a room rather than by a boss.
+; [[Homunculus]]
+* Is chained to an adjacent rock if the nearest wall is more than 1 grid cell away.
+; [[Lil Haunt]]
+* Is no longer considered a boss.
+* Has a unique death portrait.
+; [[Lump]]
+* Its body is red when in the [[Scarred Womb]].
+; [[Meatball]]
+* Added extra sounds and effects to [[creep]] attacks.
+; [[Mega Clotty]]
+* Make a sound when stomping.
+; [[Rage Creep]]
+* Its brimstone is no longer moved upwards and no longer causes the player to take damage along the top wall in Womb/Utero room #202.
+* Its attack animation slightly longer.
+; [[Spider]]
+* No longer blink when the player has [[Bursting Sack]].
+; [[Stone Grimace]] and all its variants
+* Explodes into rock debris when killed with [[Chaos Card]] or [[Little Horn]].
+; [[Stone Grimace]]
+* Closes its eyes when the room is cleared.
+* No longer respawn when reentering the room if killed.
+; [[Super Pooter]]
+* Renamed from "Fat Fly" to "Super Pooter".
+
+=== Mini-Bosses ===
+; [[Greed]]
+* The Greed fight before [[Ultra Greed]] triggers the victory jingle when cleared.
+; [[Stone Grimace]]
+* No longer plays its appear animation if encountered in an already cleared room.
+; [[Super Greed]]
+* Can drop [[Head of the Keeper]].
+; [[Swinger]]
+* Spawns with its head retracted and extends over 2 seconds.
+
+=== Bosses ===
+; [[Brownie]]
+* Has new a champion version:
+** Black: Spawns up to 3 [[Maggot#Charger|Charger]]s at once instead of [[Corn]]s. Upon death, spawns 2 [[Dank Squirt]]s.
+; [[The Cage]]
+* Its grey creep blinks.
+; [[The Forsaken]]
+* Moves to a more appropriate place to perform his Brimstone attack in L-shaped rooms.
+* Multiple [[Forsaken]]s in the same room can spawn their own [[Bony]] each and always spin their Brimstone attack in the same direction at the same speed.
+; [[The Haunt]]
+* Champion variants are transparent during their first phase.
+; [[Hush]]
+* Due to the way entity stacking works [[??? (Boss)|???]] may rarely appear instead and once defeated will skip "phase 2" entirely and will give a completion mark as if Hush was defeated.
+; [[Krampus]]
+* Does a short dash towards the player before doing a spinning Brimstone attack.
+* Can shoot [[Brimstone]] lasers in all 4 diagonal directions.
+; [[The Lamb]]
+* No longer do its rotating [[Brimstone]] attack when close to a wall.
+; [[Little Horn]]
+* Has new champion versions:
+** Orange: Spits out an orange Troll Bomb instead of a black ball. The bomb deals contact damage and leave a patch of fire similar to [[Hot Bombs]].
+** Black: Does not attack with Pits or troll bombs, but fires smoke balls more frequently.
+; [[Mega Satan]]
+* If [[The Void]] is unlocked, there is a 50% chance that the game will not immediately end, and Mega Satan will instead drop an ending chest along with a portal. Entering the chest ends the game and plays the cutscene while entering the portal will take Isaac to The Void.
+; [[Mom]]
+* Familiars are teleported to the player's position when entering the boss room.
+; [[Rag Man]]
+* Has new champion versions:
+** Black: Spawns 2 spiders instead of a Ragling. Uses his resurrect frequently. This won't resurrect anything since the spiders don't leave corpses but still heals him. Sprays tears during his resurrection, similar to [[Monstro]]'s spit.
+** Red: No longer fires tears. Can have up to 4 Raglings at one time and can revive up to 2 Raglings at once.
+; [[Triachnid]]
+* Has a death animation.
+
+=== Creeps ===
+; [[Red creep]]
+* No longer be darkened in the [[Scarred Womb]].
+
+== Environment ==
+; General
+* Added some backdrop tiling fixes.
+* Pit seams are fixed.
+
+=== Chapters ===
+; [[Womb]]
+* Womb trapdoors have a new sprite for when they are closed.
+; [[??? (Floor)|???]]
+* Additionally, an exit will spawn in the corner of the room, containing a [[Portal]] leading to [[The Void]].
+; [[Cathedral]]
+* Has a new floor transition animation.
+* Some rooms contain Angel Statues that can be bombed to summon the [[Angel]]s and acquire key pieces.
+
+=== Rooms ===
+; [[Treasure Room]]
+* There is a chance that 2-4 [[Greed Gaper]]s may appear in the room.
+* Treasure rooms can rarely contain two items that can both be taken or [[poop]], [[trinket]], and a couple of pickups instead of an [[item]].
+* New layouts:
+[[File:Treasure Room 49.png|200px]][[File:Treasure Room 48.png|200px]][[File:Treasure Room 53.png|200px]][[File:Treasure Room 33 Afterbirth+.png|200px]][[File:Treasure Room 19.png|200px]][[File:Treasure Room 35 Afterbirth+.png|200px]][[File:Treasure Room 36 Afterbirth+.png|200px]][[File:Treasure Room 22.png|200px]][[File:Treasure Room 23.png|200px]]
+
+; [[Shop]]
+* There is a 20% chance for [[Donation Machine]] to be replaced by [[Restock Machine]].
+* There is a small chance for the shop to be replaced by one of its two rare variants:
+[[File:Shop 6.png|200px]][[File:Shop 5.png|200px]] (the two pennies are [[Lucky penny|lucky pennies]])
+
+; [[Curse Room]]
+* Can contain a Devil statue and a random [[item]], surrounded by [[spikes]].
+* Minimap icon changed.
+
+; [[Sacrifice Room]]
+* Minimap icon changed.
+* New layout:
+[[File:Sacrifice Room 9.png|200px]]
+
+; [[Secret Room]]
+* New theme:
+** Angel Room: 3 [[Soul Heart]]s, 2 [[Blue Fire Place]]s, Angel statue in center which does not drop key piece for respective [[angel]].
+
+; [[Devil Room]]
+* Can contain:
+** 4 [[Deal with the Devil|deals with the Devil]]
+** 5 [[Red Chest]]s
+** 3 [[Devil Beggar]]s.
+* [[Urn]]s may spawn in the Devil Room.
+* An angel statue can rarely substitute the Satan statue and can be awoken with an explosion.
+** [[Angel]]s spawned in this way do not drop Key Pieces.
+* [[Red Chest]]s inside a Devil Room no longer teleport the player to the Devil Room.
+
+; [[Angel Room]]
+* Can contain 5 [[Soul Heart]]s.
+* Two angel statues can appear in the same room, allowing Isaac to fight both Uriel and Gabriel. It is possible to get both Key Pieces if Isaac awakes and fights each of them one by one; however, fighting both at once will only spawn one Key Piece corresponding to the last defeated angel.
+
+; [[Dice Room]]
+* The 1 pip room re-rolls each of Isaac's passive items into a random item from the specific item pool where it was acquired.
+* The 4 pips room rerolls item pedestals located in the [[Shop]] and the [[Library]].
+* Have a small icon in the corner of the room that denotes what the effect of the room is.
+
+; [[I AM ERROR]]
+* Can contain two [[Blood Donation Machine]]s, two [[Beggar]]s, and two [[bed]]s.
+
+; [[Boss Rush]]
+* There is a small chance that there will be 8 items to choose from.
+* Using the [[Black Rune]] will start the Boss Rush.
+* New layout:
+[[File:Boss Rush 5.png|200px]]
+
+; [[Crawl Space]]
+* New layouts (rares):
+[[File:CrawlSpace 9.png|200px]][[File:CrawlSpace 10.png|200px]]
+
+; [[Black Market]]
+* Players can no longer access the Black Market through the wall glitch. However, it is still possible to access the Black Market using the glitch via special circumstances including having Ipecac and The Inner Eye.
+
+=== Obstacles ===
+; [[Mushroom (Obstacle)|Mushrooms]]
+* Have a chance to spawn [[Mushroom (Enemy)|Mushrooms]].
+; [[Reward Plate]]
+* Locks the room when spawning enemies.
+; [[Pressure Plate]]
+* No longer grants a charge when bombing out of its room.
+; [[Movable TNT]]
+* Takes damage exactly like their regular counterparts.
+; [[Spikes]]
+* No longer stay in their raised position when clearing [[Pressure Plate]] rooms.
+* Start (and remain) in their lowered position when entering a cleared [[Pressure Plate]] room.
+
+=== Machines ===
+; [[Donation Machine]]
+* Donation gradually accelerates if the player stays in contact with the donation machine.
+; [[Greed Donation Machine]]
+* No longer jams when the HUD displays a jamming rate of 0%.
+* Donation gradually accelerates if the player stays in contact with the greed machine.
+; [[Slot Machine]]
+* Items dropped no longer revert to their generic stone pedestal look upon leaving and reentering the room.
+
+== Challenges ==
+* Killing [[Delirium]] will count as completing challenges.
+; [[I RULE!]]
+* Gives only [[The Negative]] after defeating [[Mom]], forcing you to progress through [[Sheol]] and the [[Dark Room]] instead of the [[Cathedral]] and [[The Chest]].
+
+== Achievements ==
+; General
+* Popups can be fast-forwarded by tapping Start.
+
+[[Category:Added in Afterbirth+]]

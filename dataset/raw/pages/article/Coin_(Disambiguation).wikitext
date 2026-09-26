@@ -1,0 +1,8 @@
+'''Coin''' may refer to:
+* [[Coins]], a type of [[pickup]].
+* {{i|Mom's Coin Purse}}, a [[passive collectible]] that spawns random pills.
+* {{dlc+|a+}}{{i|Dad's Lost Coin}}, a [[passive collectible]] that increases [[range]] and drops a {{e|Lucky Penny}}.{{dlc-}}
+* {{dlc|a}} [[Ultra Greed Coin]]s, entities spawned by [[Ultra Greed]].
+
+{{disambiguation}}
+{{nav}}

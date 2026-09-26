@@ -1,0 +1,381 @@
+[[file:Curse Room Door.png]]
+
+'''Curse Rooms''' feature teeth-like spikes on the door that hurt Isaac when entering and exiting the room.
+
+Curse rooms can appear from [[Chapters|Chapter]] 1 to 5.
+
+{{dlc|r}} Taking damage from the spikes doesn't reduce the odds of getting a Devil or Angel room.
+
+== Layouts ==
+The following room maps were made using [https://github.com/Basement-Renovator/basement-renovator Basement Renovator] for cleaner viewing.
+
+{{dlc+|r}} In {{s|Downpour}} and {{s|Dross}}, {{e|Spider}}s will be replaced by {{e|Strider}}s.{{dlc-}}
+{| class="wikitable sortable mw-collapsible mw-collapsed" style="text-align: center"
+ ! scope="col" | ID
+ ! scope="col" | Weight
+ ! scope="col" class="unsortable" | Contents
+ ! scope="col" class="unsortable" | Image preview
+ |-
+ ! scope="row" | 0
+ | 1
+ | style="text-align: left" | A {{e|Red Chest}}.
+ | [[File:Curse Room 0.png|300px]]
+ |-
+ ! scope="row" | 1
+ | 1
+ | style="text-align: left" | Two {{e|Red Chest}}s.
+ | [[File:Curse Room 1.png|300px]]
+ |-
+ ! scope="row" | 2
+ | 1
+ | style="text-align: left" | Two {{e|Red Chest}}s.
+ | [[File:Curse Room 2.png|300px]]
+ |-
+ ! scope="row" | 3
+ | 1
+ | style="text-align: left" | An item and four {{e|Spider}}s.
+ | [[File:Curse Room 3.png|300px]]
+ |-
+ ! scope="row" | 4
+ | {{dlcmap slideshow|{{dlcalt|1|a+=0.25}}}}
+ | style="text-align: left" | Two {{e|Black Heart}}s.
+ | [[File:Curse Room 4.png|300px]]
+ |-
+ ! scope="row" | 5
+ | {{dlcmap slideshow|{{dlcalt|1|r=0.75}}}}
+ | style="text-align: left" | Two {{e|Red Chest}}s and a {{e|Bomb Chest}}.
+ | [[File:Curse Room 5.png|300px]]
+ |-
+ ! scope="row" | 6
+ | 1
+ | style="text-align: left" | A {{e|Big Spider}} and four {{e|Spider}}s.
+ | [[File:Curse Room 6.png|300px]]
+ |-
+ ! scope="row" | 7
+ | 1
+ | style="text-align: left" | A {{e|Red Chest}}.
+ | [[File:Curse Room 7.png|300px]]
+ |-
+ ! scope="row" | 8
+ | 1
+ | style="text-align: left" | A {{e|Red Chest}} and four {{e|Blue Fire Place}}s.
+ | [[File:Curse Room 8.png|300px]]
+ |-
+ ! scope="row" | 9
+ | {{dlcmap slideshow|{{dlcalt|1|r=0.5}}}}
+ | style="text-align: left" | A {{e|Black Heart}} and a {{e|Nulls}}.
+ | [[File:Curse Room 9.png|300px]]
+ |-
+ ! scope="row" | 10
+ | 1
+ | style="text-align: left" | A {{e|Red Chest}} and two {{e|Nulls}}.
+ | [[File:Curse Room 10.png|300px]]
+ |-
+ ! scope="row" | 11
+ | {{dlcmap slideshow|{{dlcalt|1|r=0.5}}}}
+ | style="text-align: left" | A {{e|Reward Plate}}, four {{e|Fire Place}}s, and two {{e|Nulls}}.
+ | [[File:Curse Room 11.png|300px]]
+ |-
+ ! scope="row" | 12
+ | {{dlcmap slideshow|{{dlcalt|1|r=0.25}}}}
+ | style="text-align: left" | A random [[rune]].
+ | [[File:Curse Room 12.png|300px]]
+ |-
+ ! scope="row" | 13
+ | {{dlcmap slideshow|{{dlcalt|1|r=0.5}}}}
+ | style="text-align: left" | Two random [[card]]s and seven {{e|Red Fire Place}}s.
+ | [[File:Curse Room 13.png|300px]]
+ |-
+ ! scope="row" | 14
+ | {{dlcmap slideshow|{{dlcalt|1|r=0.5}}}}
+ | style="text-align: left" | Four spiders and a {{m|Devil Beggar}}.
+ | [[File:Curse Room 14.png|300px]]
+ |-
+ ! scope="row" | 15
+ | 1
+ | style="text-align: left" | Two {{e|Red Chest}}s and an {{e|Imp}}.
+ | [[File:Curse Room 15.png|300px]]
+ |-
+ ! scope="row" | 16
+ | 1
+ | style="text-align: left" | A {{e|Red Chest}}.
+ | [[File:Curse Room 16.png|300px]]
+ |-
+ ! scope="row" | 17
+ | {{dlcmap slideshow|{{dlcalt|1|r=0.5}}}}
+ | style="text-align: left" | A black heart and two spiders.
+ | [[File:Curse Room 17.png|300px]]
+ |-
+ ! scope="row" | 18
+ | 1
+ | style="text-align: left" | Two random [[pickup]]s, a {{e|Nickel}}, and a {{e|Big Spider}}.
+ | [[File:Curse Room 18.png|300px]]
+ |-
+ ! scope="row" | 19
+ | 1
+ | style="text-align: left" | A {{e|Spiked Chest}}.
+ | [[File:Curse Room 19.png|300px]]
+ |-
+ ! scope="row" | 20
+ | 1
+ | style="text-align: left" | Three {{e|Red Chest}}s, one surrounded by spikes.
+ | [[File:Curse Room 20.png|300px]]
+ |-
+ ! scope="row" | 21
+ | {{dlcmap slideshow|{{dlcalt|0.25|r=0.1}}}}
+ | style="text-align: left" | A [[Satan]] statue, two Red Fire Places, and a pickup that has an equal chance to be : a random trinket, a random rune, a {{p|Black Rune}}, an item, a random pickup, and a red chest. 
+ | [[File:Curse Room 21.png|300px]]
+ |-
+ ! scope="row" | 22
+ | {{dlcmap slideshow|{{dlcalt|1|r=0.5}}}}
+ | style="text-align: left" | Two {{e|Black Globin's Head}}s and a {{e|Fire Place}}.
+ | [[File:Curse Room 22.png|300px]]
+ |-
+ ! scope="row" | 23
+ | 0.1
+ | style="text-align: left" | Three red chests and three black hearts.
+ | [[File:Curse Room 23.png|300px]]
+ |-
+ ! scope="row" | 24
+ | 0.1
+ | style="text-align: left" | A {{e|Black Globin's Head}}, and 6 [[urn]]s (4 of them have 50% chance to be a {{e|Black Globin's Head}} instead).
+ | [[File:Curse Room 24.png|300px]]
+ |-
+ ! scope="row" | {{dlc|r}} 25
+ | 0.5
+ | style="text-align: left" | An item and two {{e|Bulb|n}}s.
+ | [[File:Curse Room 25.png|300px]]
+ |-
+ ! scope="row" | {{dlc|r}} 26
+ | 0.25
+ | style="text-align: left" | A red chest, two Reward Plates and four Fire Places.
+ | [[File:Curse Room 26.png|300px]]
+ |-
+ ! scope="row" | {{dlc|r}} 27
+ | 0.25
+ | style="text-align: left" | An item and two Red Fire Places.
+ | [[File:Curse Room 27.png|300px]]
+ |-
+ ! scope="row" | {{dlc|r}} 28
+ | 0.1
+ | style="text-align: left" | A Reward Plate, two red chests, four urns, and two Blue Fire Places.
+ | [[File:Curse Room 28.png|300px]]
+ |-
+ ! scope="row" | {{dlc|r}} 29
+ | 0.25
+ | style="text-align: left" | Two {{e|Black Sack|n}}s, four urns, and a Blue Fire Place.
+ | [[File:Curse Room 29.png|300px]]
+ |-
+ ! scope="row" | {{dlc|r}} 30
+ | 0.5
+ | style="text-align: left" | A random rune behind three urns that each have 50% chance to be a cobweb instead, two spiders, and two Fire Places.
+ | [[File:Curse Room 30.png|300px]]
+|}
+
+=== {{dlc+|r}} {{i|Voodoo Head}}'s layouts ===
+{| class="wikitable sortable mw-collapsible mw-collapsed" style="text-align: center"
+ ! scope="col" | ID
+ ! scope="col" | Weight
+ ! scope="col" class="unsortable" | Contents
+ ! scope="col" class="unsortable" | Image preview
+ |-
+ ! scope="row" | 31
+ | 1
+ | style="text-align: left" | A [[coin]] and two red chests.
+ | [[File:Curse Room 31.png|300px]]
+ |-
+ ! scope="row" | 32
+ | 0.5
+ | style="text-align: left" | A coin, two red chests, four cobwebs, and spikes.
+ | [[File:Curse Room 32.png|300px]]
+ |-
+ ! scope="row" | 33
+ | 1
+ | style="text-align: left" | A coin, three red chests, and four Fire Places.
+ | [[File:Curse Room 33.png|300px]]
+ |-
+ ! scope="row" | 34
+ | 1
+ | style="text-align: left" | A coin, three red chests, and two {{e|Sack}}s.
+ | [[File:Curse Room 34.png|300px]]
+ |-
+ ! scope="row" | 35
+ | 0.5
+ | style="text-align: left" | A coin, two black hearts, an {{e|Imp}}, and four Blue Fire Places.
+ | [[File:Curse Room 35.png|300px]]
+ |-
+ ! scope="row" | 36
+ | 1
+ | style="text-align: left" | A coin, three red chests, and six Fire Places.
+ | [[File:Curse Room 36.png|300px]]
+ |-
+ ! scope="row" | 37
+ | 1
+ | style="text-align: left" | A coin, two red chests, and four Fire Places.
+ | [[File:Curse Room 37.png|300px]]
+ |-
+ ! scope="row" | 38
+ | 1
+ | style="text-align: left" | A coin, four red chests, and two Nulls.
+ | [[File:Curse Room 38.png|300px]]
+ |-
+ ! scope="row" | 39
+ | 1
+ | style="text-align: left" | A coin, four red chests, and spikes.
+ | [[File:Curse Room 39.png|300px]]
+ |-
+ ! scope="row" | 40
+ | 0.1
+ | style="text-align: left" | A coin, a Big Spider, and two items.
+ | [[File:Curse Room 40.png|300px]]
+|}
+{{dlc-}}
+=== {{dlc+|a}} {{mode|greed}} Greed mode layouts ===
+{| class="wikitable sortable mw-collapsible mw-collapsed" style="text-align: center"
+ ! scope="col" | ID
+ ! scope="col" | Weight
+ ! scope="col" class="unsortable" | Contents
+ ! scope="col" class="unsortable" | Image preview
+ |-
+ ! scope="row" | 0
+ | 1
+ | style="text-align: left" | A {{e|Red Chest}} and two {{e|Red Fire Place}}s.
+ | [[File:Greed Curse Room 0.png|300px]]
+ |-
+ ! scope="row" | 1
+ | 1
+ | style="text-align: left" | Two {{e|Red Chest}}s.
+ | [[File:Greed Curse Room 1.png|300px]]
+ |-
+ ! scope="row" | 2
+ | {{dlcmap slideshow|{{dlcalt|1|r=0.5}}}}
+ | style="text-align: left" | A {{e|Locked Chest}} and two urns.
+ | [[File:Greed Curse Room 2.png|300px]]
+ |-
+ ! scope="row" | 3
+ | {{dlcmap slideshow|{{dlcalt|1|r=0.5}}}}
+ | style="text-align: left" | A {{e|Bomb Chest}} and two urns.
+ | [[File:Greed Curse Room 3.png|300px]]
+ |-
+ ! scope="row" | 4
+ | {{dlcmap slideshow|{{dlcalt|1|r=0.1}}}}
+ | style="text-align: left" | A {{e|Reward Plate}}.
+ | [[File:Greed Curse Room 4.png|300px]]
+ |-
+ ! scope="row" | 5
+ | {{dlcmap slideshow|{{dlcalt|1|r=0.25}}}}
+ | style="text-align: left" | Two {{e|Reward Plate}} and two random {{e|Red Heart||hearts}}.
+ | [[File:Greed Curse Room 5.png|300px]]
+ |-
+ ! scope="row" | 6
+ | {{dlcmap slideshow|{{dlcalt|1|r=0.5}}}}
+ | style="text-align: left" | Three random [[pills]] and two Fire Places.
+ | [[File:Greed Curse Room 6.png|300px]]
+ |-
+ ! scope="row" | 7
+ | 1
+ | style="text-align: left" | A random card, four urns, and two cobwebs.
+ | [[File:Greed Curse Room 7.png|300px]]
+ |-
+ ! scope="row" | 8
+ | 1
+ | style="text-align: left" | A random [[rune]] and two Fire Places.
+ | [[File:Greed Curse Room 8.png|300px]]
+ |-
+ ! scope="row" | 9
+ | 1
+ | style="text-align: left" | A red chest and four rocks.
+ | [[File:Greed Curse Room 9.png|300px]]
+ |-
+ ! scope="row" | 10
+ | {{dlcmap slideshow|{{dlcalt|1|r=0.25}}}}
+ | style="text-align: left" | A [[bed]] and twelve rocks.
+ | [[File:Greed Curse Room 10.png|300px]]
+ |-
+ ! scope="row" | 11
+ | {{dlcmap slideshow|{{dlcalt|1|r=0.5}}}}
+ | style="text-align: left" | Two {{e|Key||keys}} and two urns.
+ | [[File:Greed Curse Room 11.png|300px]]
+ |-
+ ! scope="row" | 12
+ | {{dlcmap slideshow|{{dlcalt|1|r=0.25}}}}
+ | style="text-align: left" | Four random hearts.
+ | [[File:Greed Curse Room 12.png|300px]]
+ |-
+ ! scope="row" | 13
+ | {{dlcmap slideshow|{{dlcalt|1|r=0.5}}}}
+ | style="text-align: left" | Three coins.
+ | [[File:Greed Curse Room 13.png|300px]]
+ |-
+ ! scope="row" | 14
+ | 1
+ | style="text-align: left" | A red chest.
+ | [[File:Greed Curse Room 14.png|300px]]
+ |-
+ ! scope="row" | 15
+ | 1
+ | style="text-align: left" | Two random pills.
+ | [[File:Greed Curse Room 15.png|300px]]
+ |-
+ ! scope="row" | 16
+ | {{dlcmap slideshow|{{dlcalt|1|r=0.5}}}}
+ | style="text-align: left" | Three random {{e|Bomb||bombs}}.
+ | [[File:Greed Curse Room 16.png|300px]]
+ |-
+ ! scope="row" | 17
+ | {{dlcmap slideshow|{{dlcalt|1|r=0.5}}}}
+ | style="text-align: left" | Two random {{e|Bomb||bombs}}.
+ | [[File:Greed Curse Room 17.png|300px]]
+ |-
+ ! scope="row" | 18
+ | {{dlcmap slideshow|{{dlcalt|1|r=0.5}}}}
+ | style="text-align: left" | A red chest and two spiders.
+ | [[File:Greed Curse Room 18.png|300px]]
+ |-
+ ! scope="row" | 19
+ | {{dlcmap slideshow|{{dlcalt|1|r=0.5}}}}
+ | style="text-align: left" | A {{e|Double Bomb}}, four urns, and two cobwebs.
+ | [[File:Greed Curse Room 19.png|300px]]
+ |-
+ ! scope="row" | 20
+ | 1
+ | style="text-align: left" | A {{e|Black Heart}}.
+ | [[File:Greed Curse Room 20.png|300px]]
+ |-
+ ! scope="row" | {{dlc|r}} 21
+ | 0.5
+ | style="text-align: left" | Three red chests.
+ | [[File:Greed Curse Room 21.png|300px]]
+ |-
+ ! scope="row" | {{dlc|r}} 22
+ | 0.5
+ | style="text-align: left" | Two {{e|Black Sack|n}}s.
+ | [[File:Greed Curse Room 22.png|300px]]
+ |-
+ ! scope="row" | {{dlc|r}} 23
+ | 0.75
+ | style="text-align: left" | An item and four urns.
+ | [[File:Greed Curse Room 23.png|300px]]
+ |-
+ ! scope="row" | {{dlc|r+}} 3
+ | 0.5
+ | style="text-align: left" | Duplicate of #23 with the weight of #3, a leftover.
+ | [[File:Greed Curse Room 23.png|300px]]
+|}{{dlc-}}
+
+== Notes ==
+* Items that grant [[flight]] allow Isaac to avoid damage taken upon entering a Curse Room, but do not prevent damage taken upon leaving.
+* Any item that gives Isaac a shield or invulnerability will prevent damage taken when passing through a Curse Room Door, including {{i|Holy Mantle}}.
+* If a {{R|Secret Room}} is next to a Curse Room, it can be entered without taking any damage by bombing the wall between these rooms from the Secret Room.
+* The damage done by the Curse Room's door is applied when touching the door. This means that Isaac can be damaged by it without actually going through the door, and any effects that occur upon taking damage will occur in the current room and not the room that the door leads to.
+* During {{chal|Cursed!}}, all doors except for special types turn into this type of door.
+* Damage taken from entering a Curse Room doesn't count for the purposes of score calculation.
+* {{dlc|r}} Holding {{t|Flat File|n}} will remove the spikes from Curse Room doors, allowing them to be entered without taking damage.
+
+== Trivia ==
+* The Curse Room's icon is similar to the icon of {{i|Whore of Babylon}}.
+
+== Bugs ==
+{{bug|{{dlc|nr}}Isaac can pass through Curse Room doors without taking damage even when he should. This usually requires 2.0 speed, a long running start and careful positioning to cross the door before its damage effect kicks in, or alternatively several size downs and very careful nudging along the door's edge.}}
+
+{{nav|room|fr=Salle Maudite}}

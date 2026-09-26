@@ -1,0 +1,28 @@
+{{header special cards}}
+{{infobox pickup
+ | dlc         = a
+ | id          = 50
+ | quote       = Help from above
+ | description = When used, will cause two {{E|Mom's Hand}}s to come down and grab two random enemies, dealing damage and, if they have 40 or more HP, immobilizing them temporarily.
+}}
+
+'''Emergency Contact''' is a [[Cards and Runes#Other|consumable item]] added in ''[[The Binding of Isaac: Afterbirth]]''.
+
+== Effects ==
+* Spawns up to two of {{E|Mom's Hand}}s that fall down onto two random enemies in the room, dealing 40 damage.
+** Enemies with more than 40 HP and bosses will be immobilized for 5 seconds, rendering them unable to move and attack.
+
+== Notes ==
+* Despite it not being a card, the '''Emergency Contact''' is considered a [[special card]], having a significantly lower chance of appearing compared to other cards.
+* {{dlc|nr}} When used on {{E|Hush}}, damage resistance is briefly lowered. This can be used to deal additional damage to it.
+* Grabs mom's parts when they're out of the doors when used on {{E|Mom}}. Does nothing if no part and monsters are visible.
+* {{E|Isaac}}, {{E|???}}, and first phase of {{E|Hush}} will not retaliate with tears while grabbed.
+* The consumable will have no effect if used in a room without enemies.
+* {{dlc+|r}} This consumable cannot be mimicked by {{i|Blank Card}}, and {{i|Tarot Cloth}} has no effect on it.{{dlc-}}
+
+== Gallery ==
+<gallery>
+File:Emergency Contact (Ground).png|Emergency Contact when dropped on the ground.
+</gallery>
+
+{{nav|mom|fr=Appel d'Urgence}}

@@ -1,0 +1,647 @@
+{{header pickups}}
+
+'''Pills''' are [[pickup]]s that can provide useful or inhibiting effects. They take up the same [[item slot|slot]] as [[cards and runes]].
+
+At the start of each run, an effect is randomly assigned to each color of pill. The pill effect for each color will remain constant throughout the run. (However, it is possible for {{i|PHD}}, {{i|Virgo}}, {{I|False PHD}}, or {{dlc|r}}{{I|Lucky Foot}} to reassign some of the effects, such that 2 different colored pills will have the same effect.) Pills start the game unidentified (unless the player is holding {{i|PHD}} or {{I|False PHD}}); their effect is shown as "???" when picked up. Upon using a particular pill for the first time, its effect will be revealed and all subsequent pills with the same color will have their effect shown as well. The set of pill effects for any given run is usually known as the ''pill pool''.
+* {{dlc|a}} The pill pool for each run has increased from 9 to 13.
+
+== Pill Effects ==
+{| class="mw-collapsible wikitable striped sortable" style="width: 100%"
+! scope="col" style="width:  30px" | ID
+! scope="col" style="width: 130px" | Pill
+! scope="col" | {{dlc|r}} Polarity
+! scope="col" | {{dlc|r}} Class
+! scope="col" class="unsortable" style="width: 50%" | Effect
+! scope="col" class="unsortable" style="width: 50%" | {{dlc|r}} Horse Pill Effect
+|- id="Bad Gas"
+|0||Bad Gas
+| style="text-align:center;" | N
+|1|| Isaac farts, dealing 5 damage and [[Status Effects#Poison|poisoning]] enemies around him.
+|| The poison affects all enemies in the room.
+|- id="Bad Trip"
+|1||Bad Trip
+| style="text-align:center; background-color: rgba(125,0,0,0.3)" | -
+|2||Deals a full heart of damage to Isaac. Using a Bad Trip pill while Isaac only has a single heart left or less turns it into a Full Health pill.<br>{{dlc|r}} This doesn't count as damage for the purposes of {{R|Devil Room}}/{{R|Angel Room}} generation odds or score reduction.
+||Deals two hearts of damage. If Isaac would not survive, the pill becomes Full Health.
+|- id="Balls of Steel"
+|2||Balls of Steel
+| style="text-align:center; background-color: rgba(0,125,0,0.3)" | +
+|2||Grants Isaac two soul hearts.
+||Grants four soul hearts.
+|- id="Bombs Are Key"
+|3||Bombs Are Key
+| style="text-align:center;" |N
+|2|| Swaps the values of Isaac's {{e|Bomb}}s and {{e|Key}}s.<br>{{dlc|r}}The effects of {{e|Golden Bomb}}s and {{e|Golden Key}}s are also swapped.
+||The number of bombs and keys is increased by 50% while swapping.
+|- id="Explosive Diarrhea"
+|4||Explosive Diarrhea
+| style="text-align:center;" | N
+|1||Spawns a lit bomb behind Isaac every second for five seconds.
+||Spawns more bombs with the effects of {{i|Mr. Mega}} and {{i|Bobby-Bomb}}.
+|- id="Full Health"
+|5||Full Health
+| style="text-align:center; background-color: rgba(0,125,0,0.3)" | +
+|2||Refills every empty [[Health#Red Heart Containers|red heart]] container.
+||Fully heals and grants 3 soul hearts.
+|- id="Health Down"
+|6||Health Down
+| style="text-align:center; background-color: rgba(125,0,0,0.3)" | -
+|3||Removes one red heart container. Acts as a ''Health Up'' pill if Isaac has one or fewer red heart containers. Characters who cannot have red heart containers will lose one heart.
+|| Removes two heart containers. If Isaac has 0 or 1 heart containers, the pill becomes Health Up, and if he has 2 with no other types of health, they are removed and he is given half a soul heart.
+|- id="Health Up"
+|7||Health Up
+| style="text-align:center; background-color: rgba(0,125,0,0.3)" | +
+|3||Adds one empty red heart container.
+|| Adds two empty red heart containers.
+|- id="I Found Pills"
+|8||I Found Pills
+| style="text-align:center;" |N
+|0||Changes the appearance of Isaac's face. This pill is cosmetic only, {{dlc|na}}and the effect disappears when Isaac leaves the room.
+||Isaac's face gets a permanent, very exaggerated expression resembling a horse.
+|- id="Puberty"
+|9||Puberty
+| style="text-align:center;" | N
+|0||Causes Isaac to grow four hairs from the top of his head and zits on his face. This pill is cosmetic only and will stay for the rest of the run.<br>{{dlc+|a+}} Consuming three puberty pills will grant the {{tf|Adult}} transformation, granting one red heart container and making Isaac's voice slightly deeper (one time effect).{{dlc-}}
+||Isaac gains very fluffy hair covering his entire head and even face.
+|- id="Pretty Fly"
+|10||[[Pretty Fly]]
+| style="text-align:center; background-color: rgba(0,125,0,0.3)" | +
+|2||Grants a fly orbital, up to 3 maximum, that circles the player, blocking projectiles and damaging [[Fly|fly-type]] enemies on touch.
+||Spawns a {{i|Big Fan}}. There is no upper limit. These Big Fans do not contribute towards the {{tf|Beelzebub}} transformation.
+
+|- id="Range Down"
+|11||Range Down
+| style="text-align:center; background-color: rgba(125,0,0,0.3)" | -
+|3||{{dlc|nr}}-2.00 [[range]].<br />{{dlc|r}}-1.00 range.
+|| -2.00 range.
+|- id="Range Up"
+|12||Range Up
+| style="text-align:center; background-color: rgba(0,125,0,0.3)" | +
+|3||{{dlc|nr}}+2.50 range.<br />{{dlc|r}}+1.25 range.
+|| +2.50 range.
+|- id="Speed Down"
+|13|| Speed Down
+| style="text-align:center; background-color: rgba(125,0,0,0.3)" | -
+| 3||-0.12 [[speed]].
+|| -0.24 speed.
+|- id="Speed Up"
+|14||Speed Up
+| style="text-align:center; background-color: rgba(0,125,0,0.3)" | +
+|3||+0.15 speed.
+|| +0.30 speed.
+|- id="Tears Down"
+|15||Tears Down
+| style="text-align:center; background-color: rgba(125,0,0,0.3)" | -
+|3||-0.28 [[tears]].
+|| -0.56 tears.
+|- id="Tears Up"
+|16||Tears Up
+| style="text-align:center; background-color: rgba(0,125,0,0.3)" | +
+|3||+0.35 tears.
+|| +0.70 tears.
+|- id="Luck Down"
+|17||Luck Down
+| style="text-align:center; background-color: rgba(125,0,0,0.3)" | -
+|3|| -1 [[luck]].
+|| -2 luck.
+|- id="Luck Up"
+|18||Luck Up
+| style="text-align:center; background-color: rgba(0,125,0,0.3)" | +
+|3||+1 luck.
+|| +2 luck.
+|- id="Telepills"
+|19|| Telepills
+| style="text-align:center;" | N
+|1|| Teleports Isaac to a random [[room]]. Has a small chance to teleport Isaac to the {{R|I AM ERROR}} room, and an extremely small chance to teleport him to the {{R|Black Market}}, like {{i|Undefined}}.
+{{dlc|r}} Using a Telepills in the mirrored version of {{S|Downpour}}/{{S|Dross}} II has a chance to teleport Isaac to an {{R|Ultra Secret Room}}.
+||{{dlc|nr+}}No difference.<br />{{dlc|r+}}Guarantees teleportation to a special room.
+|- id="48 Hour Energy"
+|20||48 Hour Energy
+| style="text-align:center; background-color: rgba(0,125,0,0.3)" | +
+|2||Drops one to two {{E|Lil' Battery|text=Lil' Batteries}} and fully charges the [[activated collectible|spacebar item]]. {{dlc|anr}} Can be used with {{i|Placebo|x}} or {{i|D1}} to generate infinite batteries.
+||Spawns 3-4 batteries.
+|- id="Hematemesis"
+|21||Hematemesis
+| style="text-align:center;" |N
+|2||Sets Isaac's red heart health to 1, then spawns 1-4 {{e|Red Heart}}s. This fills Isaac's first red heart container (even if Isaac's red health is less than 1) and empties the rest, including {{e|Bone Heart}}s. This effect does not count as damage. If used without any red heart containers, no health will be deducted, but red hearts will still spawn. If used in a{{R|Super Secret Room}} containing a{{e|Black Heart}} or {{e|Eternal Heart}}, it will spawn those types of hearts instead. 
+{{dlc|r}}If used by {{c|Keeper|n}}, will spawn [[coins|pennies]] instead.
+||Spawns 4-7 hearts.
+|- id="Paralysis"
+|22 ||Paralysis
+| style="text-align:center; background-color: rgba(125,0,0,0.3)" | -
+| 1||Prevents Isaac from moving and shooting for 2 seconds.
+||The effect lasts 4 seconds.
+|- id="I can see forever!"
+|23||I can see forever!
+| style="text-align:center; background-color: rgba(0,125,0,0.3)" | +
+|2||Opens all entrances to the {{R|Secret Room}} and {{R|Super Secret Room}} for the current floor.
+||In addition to the normal effect, fully reveals the map like {{i|The Mind}}.
+|- id="Pheromones"
+|24||Pheromones
+| style="text-align:center; background-color: rgba(0,125,0,0.3)" | +
+|1||[[Status Effects#Charm|Charms]] all enemies in the room for a short period of time.
+||The charm is permanent, turning the enemies [[Status Effects#Friendly|friendly]].
+|- id="Amnesia"
+|25 ||Amnesia
+| style="text-align:center; background-color: rgba(125,0,0,0.3)" | -
+| 2||Replaces [[map|the floor map]] with a ? for the rest of the floor, identical to the effect of Curse of the Lost. If no other [[curse]]s are active for the floor, the Curse of the Lost will appear under the level name when the map key is held. This effect can be negated by picking up {{i|Black Candle}}, but will not prevent future uses of the Amnesia pill from giving the Curse of the Lost effect. {{dlc|a}} Also the only pill to have its flavor text appear on a piece of paper as curses do.
+||{{dlc|nr+}}No difference.<br />{{dlc|r+}}Unidentifies all previously identified pills.
+|- id="Lemon Party"
+|26|| Lemon Party
+| style="text-align:center; background-color: rgba(0,125,0,0.3)" |+
+|1||Spawns [[Creep#Yellow Creep|a large yellow pool]] (similar to {{i|Lemon Mishap}}) around Isaac. Greatly damages any enemy that steps on it, for 22 damage per tick or 66 damage per second.
+||The puddle is larger, covering nearly the entire room if used near the center.
+|- id="R U a Wizard?"
+|27||R U a Wizard?
+| style="text-align:center; background-color: rgba(125,0,0,0.3)" | -
+|1||Tears are shot diagonally outwards for 30 seconds, making it much harder to aim. This effect will persist between rooms until it wears off.
+||The effect lasts for 60 seconds.
+|-
+! colspan="6" |'''{{dlc|a}} [[Afterbirth]]'''
+|- id="Percs!"
+| 28||{{unlockable}} {{Anchor|Percs!}}
+| style="text-align:center; background-color: rgba(0,125,0,0.3)" | +
+| 1|| For the duration of the room, taking damage only removes a half-heart from Isaac's HP, regardless of the source of the damage. (Similar effect to{{i|The Wafer}}'s)<br />Unlocked by: {{achievement unlock|2 new pills}}.
+||{{dlc|nr+}}No difference.<br />{{dlc|r+}}Heals Isaac fully in addition to the usual effect.
+|- id="Addicted!"
+|29||{{unlockable}} Addicted!
+| style="text-align:center; background-color: rgba(125,0,0,0.3)" | -
+|1||For the duration of the room, taking damage removes a full heart from Isaac's HP, regardless of the source of the damage. Also changes Isaac's appearance for the room.<br />Unlocked by: {{achievement unlock|2 new pills}}.
+||{{dlc|nr+}}No difference.<br />{{dlc|r+}}Gives Isaac one [[Broken Heart]] in addition to the usual effect.
+|- id="Re-Lax"
+| 30||{{unlockable}} Re-Lax
+| style="text-align:center;" |N
+| 0|| Spawns {{e|Poop}} at Isaac's position for a few seconds. A higher speed stat means Isaac can cover more tiles in poop in the same time. A pun on laxatives.<br />Unlocked by: {{achievement unlock|2 new pills 2}}.
+||The effect lasts much longer.
+|- id="???"
+| 31||{{unlockable}} ???
+| style="text-align:center; background-color: rgba(125,0,0,0.3)" | -
+|1||Gives the {{curse|Maze}} effect for the remainder of the floor. The effect can stack with other [[curse]]s. If no other [[curse]]s are active for the floor, Curse of the Maze will appear under the level name when Tab is held. This effect can be negated by picking up {{i|Black Candle}}, but will not prevent future uses of the ??? pill from giving the Curse of the Maze effect. As the pill's name is "???", the same as what unidentified pills are referred to, it is easy to accidentally use it more than once per run. It is recommended to memorize its color upon first using it.<br />{{dlc|r+}}Using more than one ??? pill on a floor will add more curses.<br />Unlocked by: {{achievement unlock|2 new pills 2}}.
+||{{dlc|nr+}}No difference.<br />{{dlc|r+}}Gives Curse of the Maze and one other curse.
+|- id="One makes you larger"
+| 32||One makes you larger
+| style="text-align:center;" |N
+|1||Increases Isaac's size and decreases the pitch of his voice. This effect does not increase the size of Isaac's hitbox, but increases the size of {{C|The Forgotten}}'s bone club. {{dlc|a+}} These pills contribute to the [[Stompy]] transformation.
+||Size increases by two steps.
+|- id="One makes you small"
+|33|| One makes you small
+| style="text-align:center;" |N
+|1||Decreases Isaac's size and increases the pitch of his voice. This effect decreases the size of Isaac's hitbox; a small enough hitbox allows Isaac to walk "under" certain projectiles to avoid them.
+||Size decreases by two steps.
+|- id="Infested!"
+|34||Infested!
+| style="text-align:center; background-color: rgba(0,125,0,0.3)" | +
+|1||Destroys all poop in the room and spawns a single [[blue spider]] under Isaac and on each destroyed poop.
+||Double the number of spiders spawned.
+|- id="Infested?"
+|35 ||Infested?
+| style="text-align:center; background-color: rgba(0,125,0,0.3)" | +
+
+|1
+|Spawns [[blue spider]]s equal to the number of enemies in the room. If there are no enemies in the room, spawns 1-3 Blue Spiders.
+||Double the number of spiders spawned.
+|- id="Power Pill!"
+| 36||Power Pill!
+| style="text-align:center; background-color: rgba(0,125,0,0.3)" | +
+|1|| Temporarily grants [[invulnerability]], inflicts [[Status Effects#Fear|fear]] on enemies in the room, lets Isaac deal contact damage, and has a chance to replenish a {{e|Half Red Heart}} every time an enemy is killed, similar to {{i|The Gamekid}}.
+||In addition to the normal effect, grants {{p|Huge Growth}} for +7 flat damage and +3 range. The Huge Growth bonus persists after the Gamekid wears off.
+|- id="Retro Vision"
+| 37||Retro Vision
+| style="text-align:center; background-color: rgba(125,0,0,0.3)" | -
+| 1||{{dlc|nr}}Applies a pixelating filter on the screen 3 times over 30 seconds. The effect continues between floors.
+{{dlc|r}}Pixelates the screen and degrades colors for 30 seconds.
+||The effect lasts 90 seconds.
+|- id="Friends Till The End!"
+|38||Friends Till The End!
+| style="text-align:center; background-color: rgba(0,125,0,0.3)" | +
+|1||Spawns three [[blue fly|blue flies]].
+||Spawns 12 blue flies.
+|-
+! colspan="6" |'''{{dlc|a+}} [[Afterbirth †]]'''
+|- id="X-Lax"
+|39||X-Lax
+| style="text-align:center; background-color: rgba(125,0,0,0.3)" | -
+|0||Creates a pool of slippery [[Creep#Brown Creep|brown creep]] underneath Isaac.
+||The pool lasts much longer.
+|- id="Something's wrong..."
+|40||Something's wrong...
+| style="text-align:center; background-color: rgba(0,125,0,0.3)" | +
+| 0||Creates a pool of [[Creep#Black Creep|black creep]] beneath Isaac that slows enemies.
+||The pool lasts much longer.
+|- id="I'm Drowsy..."
+|41||I'm Drowsy...
+| style="text-align:center;" |N
+|1||{{dlc|nr}} Slows all enemies for the duration of the room.<br>{{dlc|r}} Applies the {{i|Stop Watch}} effect, slowing all enemies, Isaac, and the background music as well as additionally applying the Slowness status effect on every enemy for the duration of the room.
+||{{dlc|nr+}}No difference.<br />{{dlc|r+}}The effect applies for the whole floor.
+|- id="I'm Excited!!!"
+|42||I'm Excited!!!
+| style="text-align:center;" |N
+|1||{{dlc|nr}} Increases the speed of all enemies for the duration of the room.<br>{{dlc|r}} Increases the speed of all enemies, Isaac, and the background music for the duration of the room.<br>The effect triggers again three additional times.
+||{{dlc|nr+}}No difference.<br />{{dlc|r+}}The effect applies for the whole floor.
+|- id="Gulp!"
+|43||{{unlockable}} {{Anchor|Gulp!}}
+| style="text-align:center; background-color: rgba(0,125,0,0.3)" | +
+|2||Destroys any [[trinkets]] held by Isaac and grants their effects permanently.<br />Unlocked by: {{achievement unlock|Once More with Feeling!}}.
+|| {{dlc|nr+}}Heals one red heart per gulped trinket (Up to 2 at the same time with {{i|Mom's Purse}}). No effect for characters who cannot have red hearts. This counts for two gulp pills toward the {{I|Marbles}} achievement.<br/>{{dlc|r+}} The gulped trinket will become a {{a|Golden Trinket|n}}.
+|- id="Horf!"
+|44||{{unlockable}} Horf!
+| style="text-align:center;" |N
+|0||Isaac shoots an explosive tear with the {{i|Ipecac}} effect that always deals 200 damage.<br />Unlocked by: {{achievement unlock|Dedication}}.
+||Isaac shoots a cluster of 6 Horf! tears with 150-400 damage per tear, resulting in an average of 1650 damage if all tears or their explosions hit.
+|- id="Feels like I'm walking on sunshine!"
+|45 ||{{unlockable}} Feels like I'm walking on sunshine!
+| style="text-align:center; background-color: rgba(0,125,0,0.3)" | +
+|1||Makes Isaac fast and invincible, similar to {{I|Unicorn Stump}}, for 6 seconds or until Isaac leaves the room.<br />Unlocked by: {{achievement unlock|Sin collector}}.
+||The effect is upgraded to {{i|The Gamekid}}'s.
+|- id="Vurp!"
+|46||{{unlockable}} Vurp!
+| style="text-align:center; background-color: rgba(0,125,0,0.3)" | +
+|2||Spawns the last pill used. Will spawn itself if no other pills were taken beforehand, or if Vurp! was the last pill used.<br />Unlocked by: {{achievement unlock|U Broke It!}}.
+||If the last pill was a normal pill, it becomes a horse pill. No further difference on horse pills themselves.
+|-
+! colspan="6" |'''{{dlc|r}} [[Repentance]]'''
+|- id="Shot Speed Down"
+|47||Shot Speed Down
+| style="text-align:center; background-color: rgba(125,0,0,0.3)" | -
+|1||-0.15 [[shot speed]].
+|| -0.30 shot speed.
+|- id="Shot Speed Up"
+|48||Shot Speed Up
+| style="text-align:center; background-color: rgba(0,125,0,0.3)" | +
+| 1||+0.15 shot speed.
+|| +0.30 shot speed.
+|- id="Experimental Pill"
+|49 ||Experimental Pill
+| style="text-align:center;" |N
+|3||Increases one [[attribute]] and decreases another randomly, with the same power as normal attribute up/down pills. Will not reduce any attributes if taken with {{i|Lucky Foot}}, {{I|PHD}} or {{i|Virgo}}. Will not increase any attribute if taken with {{I|False PHD|n}}. If a pill-improving item is combined with False PHD, the pill gives an attribute increase, a decrease and a damage up.
+||The two effects are doubled in power.
+|}
+
+== Pill Appearances ==
+{| class="mw-collapsible sortable mw-collapsed wikitable striped" style="text-align: center"
+! scope="colgroup" colspan="2" | Normal Pills
+! scope="colgroup" colspan="2" | {{dlc|r}} Horse Pills
+|-
+! scope="col" | ID
+! scope="col" class="unsortable" | Appearance
+! scope="col" | ID
+! scope="col" class="unsortable" | Appearance
+|-
+|{{ghost|5.70.}}1||[[file:BlueBlue.png|38px|link=]]||{{ghost|5.70.}}2049||[[file:Horse Pill Blue-Blue icon.png|50px|link=]]
+|-
+|{{ghost|5.70.}}2||[[file:WhiteBlue.png|38px|link=]]||{{ghost|5.70.}}2050||[[file:Horse Pill White-Blue icon.png|50px|link=]]
+|-
+|{{ghost|5.70.}}3||[[file:OrangeOrange.png|38px|link=]]||{{ghost|5.70.}}2051||[[file:Horse Pill Orange-Orange icon.png|50px|link=]]
+|-
+|{{ghost|5.70.}}4||[[file:pill WhiteWhite.png|38px|link=]]||{{ghost|5.70.}}2052||[[file:Horse Pill White-White icon.png|50px|link=]]
+|-
+|{{ghost|5.70.}}5||[[file:RedSpecled.png|38px|link=]]||{{ghost|5.70.}}2053||[[file:Horse Pill Dots-Red icon.png|50px|link=]]
+|-
+|{{ghost|5.70.}}6||[[file:WhiteRed.png|38px|link=]]||{{ghost|5.70.}}2054||[[file:Horse Pill Pink-Red icon.png|50px|link=]]
+|-
+|{{ghost|5.70.}}7||[[file:BlueCyan.png|38px|link=]]||{{ghost|5.70.}}2055||[[file:Horse Pill Blue-Cadetblue icon.png|50px|link=]]
+|-
+|{{ghost|5.70.}}8||[[file:YellowOrange.png|38px|link=]]||{{ghost|5.70.}}2056||[[file:Horse Pill Yellow-Orange icon.png|50px|link=]]
+|-
+|{{ghost|5.70.}}9||[[file:SpottedwhiteWhite.png|38px|link=]]||{{ghost|5.70.}}2057||[[file:Horse Pill Dots-White icon.png|50px|link=]]
+|-
+! colspan="4" |'''{{dlc|a}} [[Afterbirth]]'''
+|-
+|{{ghost|5.70.}}10||[[file:pill White Cyan.png|38px|link=]]||{{ghost|5.70.}}2058||[[file:Horse Pill White-Azure icon.png|50px|link=]]
+|-
+|{{ghost|5.70.}}11||[[file:pill Black Yellow.png|38px|link=]]||{{ghost|5.70.}}2059||[[file:Horse Pill Black-Yellow icon.png|50px|link=]]
+|-
+|{{ghost|5.70.}}12||[[file:pill Black White.png|38px|link=]]||{{ghost|5.70.}}2060||[[file:Horse Pill White-Black icon.png|50px|link=]]
+|-
+|{{ghost|5.70.}}13||[[file:Pill White Yellow.png|38px|link=]]||{{ghost|5.70.}}2061||[[file:Horse Pill White-Yellow icon.png|50px|link=]]
+|-
+! colspan="4" |'''{{dlc|r}} [[Repentance]]'''
+|-
+|{{ghost|5.70.}}14 ||[[file:Golden Pill icon.png|38px|link=]]||{{ghost|5.70.}}2062||[[file:Golden Horse Pill icon.png|50px|link=]]
+|}
+
+== {{Dlc+|r}} Pill Classes ==
+[[Repentance]] introduces the mechanic of pill classes. Internally, pills are given a class from 0 to 3 and a polarity that reflects their influence:
+
+Pills in class 0 have little to no impact on a run overall, while pills in higher classes are correspondingly more influential, class 3 pills having effects as significant as permanent stat changes.
+Classes that end with + or - denote a positive or negative effect, otherwise considered neutral.
+
+This mechanic is used to balance the pill pool and avoid having too many negative or positive pills. Polarity is used by certain items to determine which pills to convert.
+
+{{dlc-}}
+
+== {{dlc+|r}} Gold Pills ==
+[[Repentance]] introduces '''Gold Pills''' (or Golden Pills). Using one gives a random pill effect. Gold pills are unique in that they can be used multiple times, with each use only having a 10% chance to remove the pill. This often allows many uses before they finally disappear.
+
+* Unlocked by: {{achievement unlock|Gold Pill}}.
+* The possible effects are all effects that aren't in the run's pill pool, which means if you see an effect from a normal pill, you will never see it from a gold pill.
+* Items such as {{I|PHD}} or {{I|Lucky Foot}} which alter pill effects also work on the effects of this pill, allowing many beneficial effects to be stacked with little risk. Effects altered by these items may overlap with the effects in the run's pill pool; for example, a run might have Tears Up in the pill pool and Tears Down outside of the pill pool, which will be turned into Tears Up due to the effects of the item.
+* Gold Pills have an ID of 5.70.14.
+* A Gold Pill can also be a Horse Pill. Gold Horse Pills use the Horse Pill effect on every use.
+* Gold horse pills are most likely the rarest pickup in the game with a 0.06% chance of spawning instead of a normal pill.
+* If a Gold Pill uses the 'Vurp' effect, and no other pill was used prior, another gold pill will drop.
+
+{{dlc-}}
+
+== {{dlc+|r}} Horse Pills ==
+''[[Repentance]]'' introduces '''Horse Pills'''. These are larger versions of the standard pills with a more powerful effect, but only appear very rarely. Unique sound effects can be heard when they are used, and the narrator's normal spoken voice lines are instead shouted using a different voice.
+
+* Unlocked by: {{achievement unlock|Horse Pill}}.
+* All items that work with pills work identically with horse pills.
+* A horse pill with a given effect has the same color as the normal pill does.
+* Horse pills have an ID of the normal ID + 2048 (i.e. 1 << 11). For example, a white-blue pill has an ID of 2, so the horse pill version would have an ID of 5.70.2050.
+* It is also possible to have a golden horse pill. (It has an ID of 5.70.2062.)
+{{dlc-}}
+
+== Probabilities ==
+Pills that spawn with a sub-type of 0 (i.e. a random pill) will have the following probabilities:
+
+* Random normal pill - 97.86%
+* Specific normal pill - 7.53%
+* Gold pill - 0.7%
+* Random horse pill - 1.43%
+* Specific horse pill - 0.11%
+* Gold horse pill - 0.01%
+
+== Notes ==
+* Among the [[attribute]]-modifying pill effects, only five of the seven [[attribute|visible attributes]] are covered: health, range, tears, speed, and luck. Both shot speed and damage can't be altered by pills.
+** {{dlc|r}} Shot speed can now be altered with pills. Damage can now also be altered with pills with {{I|False PHD|dlc=x}}.
+* If a "Health Up" pill is used while Isaac has 11 empty red hearts and one non-red heart, the non-red heart will be replaced with an empty container, killing Isaac.
+* Having {{i|Midas' Touch}}, {{t|Meconium}}, or {{i|Hallowed Ground}} and using a "Re-Lax" pill has a chance to spawn {{E|Golden Poop}}, {{E|Black Poop}}, or {{E|White Poop}}, respectively.
+* If the item {{i|PHD}} is picked up and then lost in any way, such as rerolling by the {{i|D4}} or a {{R|Dice Room}}, or dropping it as {{c|Tainted Isaac}}, pills will remain fully identified for the rest of the run, but negative pills will not be converted.
+* {{dlc|a}} Pill effects have a chance to be narrated upon use, as do [[card]]s and [[rune]]s.
+* {{dlc|a}} Currently, the "Retro Vision" pill effect can crash the game on some machines, resulting in restarting the current floor when the game is continued.
+* {{dlc|a}} The "Addicted!" pill will have no effect if Isaac has {{i|The Wafer}}.
+** Despite this, if Isaac takes both the "Addicted!" pill with "Percs!" in the same room, a full heart of damage will be taken from all sources.
+* {{dlc|a}} Using an "Infested!" pill on {{E|Red Poop}} will spawn [[blue spider]]s and the Red Poop will regenerate.
+* {{dlc|a}} If a Tiny or Large [[Champion]] monster drops a "One Makes You Smaller"/"Larger" pill and either pill is not in the current pill pool, an existing pill will be overwritten. If the chosen pill was already identified, the new pill will also be.
+* {{dlc+|a}} "R U A Wizard" does not affect {{C|Lilith}}'s {{i|Incubus}}.{{dlc-}}
+* {{dlc|a}} Isaac's hitbox can be reduced to 30% of original, which is achieved after 6 One Makes You Small pills. Further pills will only make him visually smaller, with no additional benefit.
+* {{dlc|a+}} Using a "Gulp!" pill while holding two [[trinket]]s (with {{i|Belly Button}} or {{i|Mom's Purse}}) will cause both trinkets to be absorbed.
+* {{c|Magdalene}}'s starting pill will override one of the pills in the current run's pill set if it doesn't exist in it ("Speed Up" for ''Afterbirth+'', or "Full Health" in ''Repentance''). The pill that is converted is dependent on the run's seed.
+** This only applies if the run is started as Magdalene, not if Isaac turns into Magdalene using {{i|Clicker}}.
+* {{dlc|r}} All golden pills in the run have a shared sequence of effects they activate, so reversing the effects of one golden pill through {{i|Glowing Hourglass}} and consuming another golden pill will activate the same effects.
+* {{dlc|r}} If a "Vurp!" effect is activated by a golden pill, it will spawn the last non-golden pill taken by Isaac, or a golden pill if no non-golden pills have been taken by Isaac in the run.
+** A normal "Vurp!" pill will also ignore previous effects granted by gold pills.
+* {{dlc|r}} If a [[Rocks#Marked Skulls|Marked Skull]] is destroyed while Isaac is holding {{i|Little Baggy}}, it will spawn a "Telepill" instead of {{p|0 - The Fool}}. If "Telepills" doesn't exist in the current run's pill set, an existing pill will be overwritten. The pill that is converted is dependent on the run's seed.
+* {{dlc+|r}} While transformed into {{C|The Lost}} form (for example, by a {{e|White Fire Place}}), "Health Down" pills turn into "Health Up" pills, and "Bad Trip" pills become "Full Health", regardless of Isaac's health.{{dlc-}}
+* "Telepills" is unobtainable in [[Greed Mode]].
+** {{dlc|r+}} The "Amnesia" and "???" pills are also unobtainable in Greed Mode.
+
+== Strategy ==
+* {{dlc|r}} There are 24 good effects, 14 neutral (sometimes good/sometimes bad) effects, and 12 negative effects. This means that taking mystery pills is usually beneficial.
+* Use of unidentified pills is recommended for outside of combat as Hematemesis, R U a Wizard?, Paralysis, {{dlc|a}}Addicted!, {{dlc|a+}} X-Lax, and {{dlc|a+}} I'm Excited!!! can be detrimental mid-fight. However, {{dlc|a+}} I'm Drowsy..., {{dlc|a+}} Something's wrong..., Lemon Party, Bad Gas, and Pheromones are useless outside of combat.
+* {{dlc|a}} Percs! can be used in the {{R|Sacrifice Room}} to reduce the damage Isaac takes, potentially allowing him to do more sacrifices. However, if Isaac is teleported to the Devil/Angel room, he loses the effect.
+* {{dlc|a}} The invincibility effect from Power Pill and {{dlc|a+}} Feels like I'm walking on sunshine! can be utilized to get into {{R|Curse Room}}s, play {{Machine|Blood Donation Machine}}s and {{Machine|Confessional}}s, or use {{Machine|Devil Beggar}}s and {{Machine|Hell Game}}s without taking any damage.
+** {{dlc|a}} Percs! can be used to reduce damage from these from [[chapter 4]] onward.
+* {{dlc|r}}{{t|Endless Nameless|n}} can be used to effectively generate infinite golden pills, as the trinket's ability to respawn collectibles applies with every use.
+* {{dlc|r}} Taking only golden pills in a run can allow for infinite golden pill generation by repeatedly activating the Vurp! effect.
+* {{dlc|r+}} ??? can be distinguished from unidentified pills more easily by enabling item descriptions in the Options menu. They will display as "???" instead of "Unidentified Pill" when approached.
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | Huge Growth, Marbles, Lachryphagy, Lil Spewer }}
+
+== Trivia ==
+* {{dlc|a+}} The Vurp! pill is a portmanteau of the words vomit and burp.
+* {{dlc|a}} Power Pills activating the Gamekid effect is a reference to Pac-Man, in which the "Super-Pac" powerup is obtained by eating a Power Pellet.
+* "I Found Pills (and Ate Them)," "R U a Wizard?," and "I can see Forever" are all [[wikipedia:image macro|image macro]] memes.
+* {{dlc|a+}} The Feels like I'm walking on sunshine! pill is a reference to the 80s song [[wikipedia:Walking on Sunshine (Katrina and the Waves song)|Walking on Sunshine]].
+** Furthermore, creator Edmund McMillen made in 2010 [https://www.youtube.com/watch?v=eMIXDlvD_Yw a video with the same name], although it doesn't feature the actual Walking on Sunshine song.
+* Balls of Steel is a reference to ''Duke Nukem''; it is one of Duke's more famous quotes.
+* Explosive Diarrhea is extremely loud and forceful [[wikipedia:diarrhea|diarrhea]]. In the original game, the message that displayed when the pill was activated was "Oh No!". The pill name and effect are likely a reference to Atomic Bomberman where a pickup of the same name would cause the player to drop bombs behind them uncontrollably for a short duration.
+* Shot speed effects were introduced in The Binding of Isaac: Eternal Edition, after the release of Rebirth. They were finally added to Rebirth in the Repentance DLC.
+* Hematemesis is a medical term for [https://muschealth.org/medical-services/ddc/patients/symptoms-and-conditions/hematemesis vomiting blood].
+* Lemon Party is a reference to internet shock site featuring a group of elderly men performing oral sex, peeing on each other.
+* "Puberty" having a negative sound effect is a tongue in cheek connotation to how unpleasant that period in life can be.
+* {{dlc|a}} Friends Till the End! was originally in the Wrath of the Lamb but removed in Rebirth, then put back into Afterbirth.
+* {{dlc|ana+}} Friends Till The End! is the only non-narrated pill.
+* 48 Hour Energy is a reference to the drink 5 Hour Energy.
+* {{dlc|a+}} X-Lax is a reference to the anti-constipation medicine Ex-Lax.
+* {{dlc|a}} "One makes you larger" and "One makes you small" are references to Alice in Wonderland, and the specific wording is a reference to the song White Rabbit by Jefferson Airplane.
+* {{dlc|a}} "Percs" is a reference to a street name for the prescription drug Percocet, which is more generically known as Oxycodone. This drug is meant to be used to treat pain, but it is often abused for recreational purposes.
+* {{dlc|a}} The "???" is the only pill that has 3 different narrated voice lines.
+* {{dlc|a+}} "I'm Drowsy..." and "I'm Excited!!!" are references to benzodiazepines and stimulants respectively. From the pill themed Mom items, it's implied that Mom is a drug addict, and therefore keeps narcotics around the home and in her coin purse.
+* {{dlc|r}} "Horse pills" is a slang term used to refer to large, hard to swallow pills, hence their sprites being larger than those of regular pills.
+
+== Voiceovers ==
+{| class="wikitable sortable mw-collapsible mw-collapsed striped"
+! scope="col" | Pill
+! scope="col" class="unsortable" | Voiceover (Standard Pills)
+! scope="col" class="unsortable" | Voiceover (Horse Pills)
+|-
+! scope="row" | ???
+|[[file:3Question_Voiceover1.wav|thumb]][[file:3Question_Voiceover2.wav|thumb]][[file:3Question_Voiceover3.wav|thumb]]
+|[[File:3Question_Voiceover1HorsePill.wav|thumb]][[File:3Question_Voiceover2HorsePill.wav|thumb]][[File:3Question_Voiceover3HorsePill.wav|thumb]]
+|-
+! scope="row" | 48 Hour Energy
+|[[file:48HourEnergyVoiceover.wav|thumb]]
+|[[File:48HourEnergyVoiceoverHorsePill.wav|thumb]]
+|-
+! scope="row" | Addicted
+|[[file:AddictedVoiceover.wav|thumb]]
+|[[File:AddictedVoiceoverHorsePill.wav|thumb]]
+
+|-
+! scope="row" | Amnesia
+|[[file:AmnesiaVoiceover.wav|thumb]]
+|[[File:AmnesiaVoiceoverHorsePill.wav|thumb]]
+|-
+! scope="row" | Bad Gas
+|[[file:BadGasVoiceover.wav|thumb]]
+|[[File:BadGasVoiceoverHorsePill.wav|thumb]]
+|-
+! scope="row" | Bad Trip
+|[[file:BadTripVoiceover.wav|thumb]]
+|[[File:BadTripVoiceoverHorsePill.wav|thumb]]
+|-
+! scope="row" | Balls of Steel
+|[[file:BallsOfSteelVoiceover.wav|thumb]]
+|[[File:BallsOfSteelVoiceoverHorsePill.wav|thumb]]
+|-
+! scope="row" | Bombs Are Key
+|[[file:BombsAreKeyVoiceover.wav|thumb]]
+|[[File:BombsAreKeyVoiceoverHorsePill.wav|thumb]]
+|-
+! scope="row" | Experimental Pill
+|[[File:ExperimentalPillVoiceover.wav|thumb]]
+|[[File:ExperimentalPillVoiceoverHorsePill.wav|thumb]]
+|-
+! scope="row" | Explosive Diarrhea
+|[[file:ExplosiveDiahrreaVoiceover.wav|thumb]]
+|[[file:ExplosiveDiahrreaVoiceoverHorsePill.wav|thumb]]
+|-
+! scope="row" | Feels like I'm walking on sunshine!
+|[[file:FeelsLikeI'mWalkingonSunshine.wav|thumb]]
+|[[File:FeelsLikeI'mWalkinOnSunshineVoiceoverHorsePill.wav|thumb]]
+|-
+! scope="row" | Friends Till the End!
+|[[file:FriendsTillTheEndVoiceover.wav|thumb]]
+|[[File:FriendsTillTheEndVoiceoverHorsePill.wav|thumb]]
+|-
+! scope="row" | Full Health
+|
+[[file:FullHealthVoiceover.wav|thumb]]
+|[[File:FullHealthVoiceoverHorsePill.wav|thumb]]
+|-
+! scope="row" | Gulp!
+|[[file:GulpVoiceover.wav|thumb]]
+|[[File:GulpVoiceoverHorsePill.wav|thumb]]
+|-
+! scope="row" | Health Down
+|[[file:HealthDownVoiceover.wav|thumb]]
+|[[File:HealthDownVoiceoverHorsePill.wav|thumb]]
+|-
+! scope="row" | Health Up
+|[[file:HealthUpVoiceover.wav|thumb]]
+|[[File:HealthUpVoiceoverHorsePill.wav|thumb]]
+|-
+! scope="row" | Hematemesis
+|[[file:HematemesisVoiceover.wav|thumb]]
+|[[File:HematemesisVoiceoverHorsePill.wav|thumb]]
+|-
+! scope="row" | Horf!
+|[[file:HorfVoiceover.wav|thumb]]
+|[[File:HorfVoiceoverHorsePill.wav|thumb]]
+|-
+! scope="row" | I Can See Forever
+|[[file:ICanSeeForeverVoiceover1.wav|thumb]][[file:ICanSeeForeverVoiceover2.wav|thumb]]
+|[[File:ICanSeeForeverVoiceoverHorsePill.wav|thumb]]
+|-
+! scope="row" | I Found Pills
+|[[file:IFoundPillsVoiceover.wav|thumb]]
+|[[File:IFoundPillsVoiceoverHorsePill.wav|thumb]]
+|-
+! scope="row" | I'm Drowsy...
+|[[file:I'mDrowsyVoiceover.wav|thumb]]
+|[[File:I'mDrowsyVoiceoverHorsePill.wav|thumb]]
+|-
+! scope="row" | I'm Excited!
+|[[file:I'mExcitedVoiceover.wav|thumb]]
+|[[File:I'mExcitedVoiceoverHorsePill.wav|thumb]]
+|-
+! scope="row" | Infested!
+|[[file:InfestedExclaimVoiceover.wav|thumb]]
+|[[File:InfestedExclaimVoiceoverHorsePill.wav|thumb]]
+|-
+! scope="row" | Infested?
+|[[file:InfestedQuestionVoiceover.wav|thumb]]
+|[[File:InfestedQuestionVoiceoverHorsePill.wav|thumb]]
+|-
+! scope="row" | Lemon Party
+|[[file:LemonPartyVoiceover.wav|thumb]]
+|[[File:LemonPartyVoiceoverHorsePill.wav|thumb]]
+|-
+! scope="row" | Luck Down
+|[[file:LuckDownVoiceover.wav|thumb]]
+|[[File:LuckDownVoiceoverHorsePill.wav|thumb]]
+|-
+! scope="row" | Luck Up
+|
+[[file:LuckUpVoiceover.wav|thumb]]
+|[[File:LuckUpVoiceoverHorsePill.wav|thumb]]
+|-
+! scope="row" | One Makes You Larger
+|[[file:OneMakesYouLargerVoiceover.wav|thumb]]
+|[[File:OneMakesYouLargerVoiceoverHorsePill.wav|thumb]]
+|-
+! scope="row" | One Makes You Small
+|[[file:OneMakesYouSmallVoiceover.wav|thumb]]
+|[[File:OneMakesYouSmallVoiceoverHorsePill.wav|thumb]]
+|-
+! scope="row" | Paralysis
+|[[file:ParalysisVoiceover.wav|thumb]]
+|[[File:ParalysisVoiceoverHorsePill.wav|thumb]]
+|-
+! scope="row" | Percs
+|[[file:PercsVoiceover.wav|thumb]]
+
+|[[File:PercsVoiceoverHorsePill.wav|thumb]]
+|-
+! scope="row" | Pheromones
+|[[file:PheromonesVoiceover.wav|thumb]]
+|[[File:PheromonesVoiceoverHorsePill.wav|thumb]]
+|-
+! scope="row" | Power Pill
+|[[file:PowerPillVoiceover.wav|thumb]]
+|[[File:PowerPillVoiceoverHorsePill.wav|thumb]]
+|-
+! scope="row" | Pretty Fly
+|[[file:PrettyFlyVoiceover.wav|thumb]]
+|[[File:PrettyFlyVoiceoverHorsePill.wav|thumb]]
+|-
+! scope="row" | Puberty
+|[[file:PubertyVoiceover.wav|thumb]]
+|[[File:PubertyVoiceoverHorsePill.wav|thumb]]
+|-
+! scope="row" | R U a Wizard?
+|[[file:RUAWizardVoiceover.wav|thumb]]
+|[[File:RUAWizardVoiceoverHorsePill.wav|thumb]]
+|-
+! scope="row" | Range Down
+|[[file:RangeDownVoiceover.wav|thumb]]
+|[[File:RangeDownVoiceoverHorsePill.wav|thumb]]
+|-
+! scope="row" | Range Up
+|[[file:RangeUpVoiceover.wav|thumb]]
+|[[File:RangeUpVoiceoverHorsePill.wav|thumb]]
+|-
+! scope="row" | Re-Lax
+|[[file:ReLaxVoiceover.wav|thumb]]
+|[[File:ReLaxVoiceoverHorsePill.wav|thumb]]
+|-
+! scope="row" | Retro Vision
+|[[file:RetroVisionVoiceover.wav|thumb]]
+|[[File:RetroVisionVoiceoverHorsePill.wav|thumb]]
+|-
+! scope="row" | Shot Speed Down
+|[[File:ShotSpeedDownVoiceover.wav|thumb]]
+|[[File:ShotSpeedDownVoiceoverHorsePill.wav|thumb]]
+|-
+! scope="row" | Shot Speed Up
+|[[File:ShotSpeedUpVoiceover.wav|thumb]]
+|[[File:ShotSpeedUpVoiceoverHorsePill.wav|thumb]]
+|-
+! scope="row" | Something's wrong...
+|[[file:Something'sWrongVoiceover.wav|thumb]]
+|[[File:Something'sWrongVoiceoverHorsePill.wav|thumb]]
+|-
+! scope="row" | Speed Down
+|[[file:SpeedDownVoiceover.wav|thumb]]
+|[[File:SpeedDownVoiceoverHorsePill.wav|thumb]]
+|-
+! scope="row" | Speed Up
+|[[file:SpeedUpVoiceover.wav|thumb]]
+|[[File:SpeedUpVoiceoverHorsePill.wav|thumb]]
+|-
+! scope="row" | Tears Down
+|[[file:TearsDownVoiceover.wav|thumb]]
+|[[File:TearsDownVoiceoverHorsePill.wav|thumb]]
+|-
+! scope="row" | Tears Up
+|[[file:TearsUpVoiceover.wav|thumb]]
+|[[File:TearsUpVoiceoverHorsePill.wav|thumb]]
+|-
+! scope="row" | Telepills
+|[[file:TelepillsVoiceover.wav|thumb]]
+|[[File:TelepillsVoiceoverHorsePill.wav|thumb]]
+|-
+! scope="row" | Vurp!
+|[[file:VurpVoiceover.wav|thumb]]
+|[[File:VurpVoiceoverHorsePill.wav|thumb]]
+|-
+! scope="row" | X-Lax
+|[[file:XLaxVoiceover.wav|thumb]]
+|[[File:XLaxVoiceoverHorsePill.wav|thumb]]
+|}
+
+== In-Game Footage ==
+{{#ev:youtube|7nA5y4ODeCk}}
+{{#ev:youtube|kO9n3oV-ZUk}}
+
+== Bugs ==
+{{bug|dlc=a|Any blue flies and blue spiders created by pill effects can be multiplied when {{i|Glowing Hourglass|n}} teleports Isaac in a way that does not move him to a different room from the one he is currently in (such as by teleporting to the previous room then using it again).{{dlc-}}}}
+{{bug|dlc=a|After shrinking significantly from "One makes you smaller", Isaac is able to run past the hit detection of solid objects, allowing him to run past gaps in the floor and metal blocks.}}
+
+{{nav|pill|fr=Pilules|mega satan unlock|tainted cain unlock|tainted eve unlock}}
+[[Category:Mechanics]]
+[[Category:Pickups]]

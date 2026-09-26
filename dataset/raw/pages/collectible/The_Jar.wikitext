@@ -41,6 +41,7 @@
 
 == Gallery ==
 <gallery>
+File:TheJar_Animated.gif|{{dlc|a+}} The Jar being gradually filled.
 File:Collectible The Jar concept.jpg|Concept drawn for The Jar.
 File:3DS Detailed The Jar.png|{{plat|3DS}} The icon of The Jar as seen on the lower 3DS screen.
 </gallery>

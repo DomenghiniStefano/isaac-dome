@@ -1,0 +1,44 @@
+'''Mom''', or '''Mother''', may refer to:
+
+== Bosses ==
+* [[Mom]], the boss fought at the end of Chapter 3, and the final boss of [[Endings#Epilogue|Epilogue]].
+* [[Mom's Heart]], the boss fought at the end of Chapter 4, and the final boss of Endings 1-11.
+* {{dlc+|r}} [[Mother]], the boss fought in {{s|Corpse}}.{{dlc-}}
+
+== Monsters ==
+* [[Mom's Hand]], an enemy fought at Chapter 3 and 4.
+* {{dlc|a}} [[Mom's Dead Hand]], a skeletal and stronger version of Mom's Hand.
+* {{dlc+|r}} [[Mother's Shadow]], an enemy fought at {{s|Mines}}/{{s|Ashpit}}.{{dlc-}}
+
+== Items ==
+* {{i|Mom's Bottle of Pills}}, an activated item.
+* {{i|Mom's Bra}}, an active item.
+* {{i|Mom's Coin Purse}}, a passive item.
+* {{i|Mom's Contacts}}, an unlockable passive item.
+* {{i|Mom's Eye}}, a passive item.
+* {{i|Mom's Eyeshadow}}, a passive item.
+* {{i|Mom's Heels}}, a passive item.
+* {{i|Mom's Key}}, an unlockable passive item.
+* {{i|Mom's Knife}}, an unlockable passive item.
+* {{i|Mom's Lipstick}}, a passive item.
+* {{i|Mom's Pad}}, an active item.
+* {{i|Mom's Perfume}}, a passive item.
+* {{i|Mom's Underwear}}, a passive item.
+* {{i|Mom's Wig}}, an unlockable passive item.
+* {{i|Mom's Pearls}}, a passive item.
+* {{i|Mom's Razor}}, an unlockable passive item.
+* {{i|Mom's Shovel}}, an unlockable activated item.
+* {{i|Mom's Bracelet}}, an unlockable activated item.
+
+== Trinkets ==
+* {{t|Mom's Toenail}}, a trinket.
+* {{t|Mom's Pearl}}, a trinket.
+* {{t|Mom's Locket}}, a trinket.
+* {{t|Mom's Lock}}, an unlockable trinket.
+* {{t|Mother's Kiss}}, an unlockable trinket.
+
+== Transformations ==
+* {{dlc|a}}[[Yes Mother?]], a transformation triggered when obtaining three Mom-related items.
+
+{{disambiguation}}
+{{nav}}

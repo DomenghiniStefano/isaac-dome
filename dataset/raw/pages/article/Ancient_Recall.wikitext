@@ -1,0 +1,32 @@
+{{Header magic cards}}
+{{header special cards}}
+{{infobox card
+ | dlc         = a+
+ | type        = special card
+ | id          = 53
+ | recharge    = {{dlcalt|4|r=12}}
+ | quote       = Draw 3 cards
+ | description = Spawns 3 random cards.
+ | unlocked by = Ancient Recall
+}}
+
+{{cit|us|a+}}
+
+== Effect ==
+* Spawns 3 random [[card]]s.
+
+== Notes ==
+* Being a [[special card]], '''Ancient Recall''' has a significantly lower chance of appearing compared to other cards.
+* Special "cards" like {{p|Cracked Key}} and {{p|Dice Shard}} can be spawned, but runes cannot spawn.
+
+== Interactions ==
+* {{i|Tarot Cloth}}: No effect.
+
+== Trivia ==
+* Ancient Recall has been added in [[Booster Pack #1]], after the initial release of the DLC.
+* Ancient Recall is based on [http://steamcommunity.com/sharedfiles/filedetails/?id=841401139 this Steam Workshop mod] by aeiou.
+* Ancient Recall is a reference to the card [http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=95 Ancestral Recall] from Magic: The Gathering.
+* {{dlc+|r}} Prior to patch v1.7.7 of ''Repentance'', it was possible to spawn infinite cards with this card and {{I|Echo Chamber}}.{{dlc-}}
+
+{{nav|booster pack|fr=Rappel Ancestral}}
+[[Category:Added in Booster Pack 1]]

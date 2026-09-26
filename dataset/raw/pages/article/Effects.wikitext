@@ -1,0 +1,14 @@
+'''Effects''' are a major mechanic of ''The Binding of Isaac: Rebirth'', altering the behavior of Isaac, his tears, or [[monster]]s in ways either helpful or harmful for him.
+
+{| style="width:30%"
+ | [[file:Confusion Effect.png|65px|center|link=Status Effects]]
+ | [[file:collectible Spoon Bender tears.png|50px|center|link=Tear Effects]]
+ | [[file:collectible Fate appearance.png|90px|center|link=Player Effects]]
+ |-
+ ! [[Status Effects]]
+ ! [[Tear Effects]]
+ ! [[Player Effects]]
+ |}
+
+{{nav|fr=Effets}}
+[[Category:Mechanics]]

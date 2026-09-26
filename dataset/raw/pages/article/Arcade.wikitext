@@ -1,0 +1,293 @@
+[[file:Arcade Door.png|link=|Arcade door]]
+
+An '''Arcade''' is a [[special room]] that can only spawn on an even-numbered floor ({{s|Basement}} II, {{s|Caves}} II, {{s|Depths}} II, {{s|Womb}} II) if you have 5 coins or more when you leave the previous floor. Arcades require one coin to be opened. They can be replaced with a {{R|Vault}} if Isaac is carrying two keys or more.
+
+* Arcades cannot spawn on XL floors.
+** {{dlc|r}} Unless it is on an alt path floor.
+* {{dlc+|r}} Arcades can spawn on the first floor of the alternate chapters ({{s|Downpour}} I, {{s|Mines}} I, {{s|Mausoleum}} I, {{s|Corpse}} I).{{dlc-}}
+
+== Layouts ==
+The following room maps were made using [https://github.com/Basement-Renovator/basement-renovator Basement Renovator] for cleaner viewing.
+{| class="wikitable sortable mw-collapsible mw-collapsed" style="text-align: center"
+ ! scope="col" | ID
+ ! scope="col" | Weight
+ ! scope="col" class="unsortable" | Contents
+ ! scope="col" class="unsortable" | Image preview
+ |-
+ ! scope="row" | 0
+ | 1
+ | style="text-align: left" | A {{m|Shell Game}}, a {{m|Slot Machine}}, a {{m|Blood Donation Machine}}, and two rocks.
+ | {{dlcmap slideshow|{{dlcalt|[[File:Arcade 0 Afterbirth+.png|400px]]|r=[[File:Arcade 0.png|400px]]}}}}
+ |-
+ ! scope="row" | 1
+ | 1
+ | style="text-align: left" | A {{m|Shell Game}}, a {{m|Slot Machine}}, a {{m|Blood Donation Machine}}, and a random {{e|Red Heart||heart}}.
+ | {{dlcmap slideshow|{{dlcalt|[[File:Arcade 1 Afterbirth+.png|400px]]|r=[[File:Arcade 1.png|400px]]}}}}
+ |-
+ ! scope="row" | 2
+ | 1
+ | style="text-align: left" | A {{m|Shell Game}}, a {{m|Slot Machine}}, a {{m|Blood Donation Machine}}, and a random {{e|Penny||coin}}.
+ | {{dlcmap slideshow|{{dlcalt|[[File:Arcade 2 Afterbirth+.png|400px]]|r=[[File:Arcade 2.png|400px]]}}}}
+ |-
+ ! scope="row" | 3
+ | 1
+ | style="text-align: left" | A {{m|Shell Game}}, a {{m|Slot Machine}}, and a {{m|Blood Donation Machine}}.
+ | {{dlcmap slideshow|{{dlcalt|[[File:Arcade 3 Afterbirth+.png|400px]]|r=[[File:Arcade 3.png|400px]]}}}}
+ |-
+ ! scope="row" | 4
+ | 1
+ | style="text-align: left" | A {{m|Shell Game}}, a {{m|Slot Machine}}, a {{m|Blood Donation Machine}}, and a {{e|Poop||poop}}.
+ | {{dlcmap slideshow|{{dlcalt|[[File:Arcade 4 Afterbirth+.png|400px]]|r=[[File:Arcade 4.png|400px]]}}}}
+ |-
+ ! scope="row" | 5
+ | 1
+ | style="text-align: left" | A {{m|Shell Game}}, a {{m|Slot Machine}}, a {{m|Blood Donation Machine}}, and three {{e|Poop||poops}}.
+ | {{dlcmap slideshow|{{dlcalt|[[File:Arcade 5 Afterbirth+.png|400px]]|r=[[File:Arcade 5.png|400px]]}}}}
+ |-
+ ! scope="row" | 6
+ | 1
+ | style="text-align: left" | Two {{m|Blood Donation Machine}}s, a {{m|Beggar}}, a {{m|Key Master}}, and a {{m|Devil Beggar}}.
+ | {{dlcmap slideshow|{{dlcalt|[[File:Arcade 6 Afterbirth+.png|400px]]|r=[[File:Arcade 6.png|400px]]}}}}
+ |-
+ ! scope="row" | 7
+ | 1
+ | style="text-align: left" | A {{m|Slot Machine}}, a {{m|Blood Donation Machine}}, and a {{m|Fortune Telling Machine}}.
+ | {{dlcmap slideshow|{{dlcalt|[[File:Arcade 7 Afterbirth+.png|400px]]|r=[[File:Arcade 7.png|400px]]}}}}
+ |-
+ ! scope="row" | 8
+ | 1
+ | style="text-align: left" | A {{m|Donation Machine}}, a {{m|Blood Donation Machine}}, six rocks, and three random {{e|Penny||coins}}.
+ | {{dlcmap slideshow|{{dlcalt|[[File:Arcade 8 Afterbirth+.png|400px]]|r=[[File:Arcade 8.png|400px]]}}}}
+ |-
+ ! scope="row" | 9
+ | 1
+ | style="text-align: left" | A {{m|Blood Donation Machine}}, a {{m|Beggar}}, a {{m|Shell Game}}, a {{m|Devil Beggar}}, and a {{e|Poop||poop}}.
+ | {{dlcmap slideshow|{{dlcalt|[[File:Arcade 9 Afterbirth+.png|400px]]|r=[[File:Arcade 9.png|400px]]}}}}
+ |-
+ ! scope="row" | 10
+ | 1
+ | style="text-align: left" | A {{m|Slot Machine}}, a {{m|Donation Machine}}, a {{m|Blood Donation Machine}}, and 5 [[urn]]s.
+ | {{dlcmap slideshow|{{dlcalt|[[File:Arcade 10 Afterbirth+.png|400px]]|r=[[File:Arcade 10.png|400px]]}}}}
+ |-
+ ! scope="row" | {{dlc|a}} 11
+ | {{dlcmap slideshow|{{dlcalt|1|r=0.25}}}}
+ | style="text-align: left" | A {{m|Shell Game}}, two {{e|Reward Plate}}s, and four rocks.
+ | {{dlcmap slideshow|{{dlcalt|[[File:Arcade 11 Afterbirth+.png|400px]]|r=[[File:Arcade 11.png|400px]]}}}}
+ |-
+ ! scope="row" | {{dlc|a}} 12
+ | {{dlcmap slideshow|{{dlcalt|1|r=0.25}}}}
+ | style="text-align: left" | Three ({{dlc|a+}} hanging) {{e|Shopkeeper}}s, a {{m|Key Master}}, a [[bed]], and three rocks.
+ | {{dlcmap slideshow|{{dlcalt|[[File:Arcade 12 Afterbirth.png|400px]]|a+=[[File:Arcade 12 Afterbirth+.png|400px]]|r=[[File:Arcade 12.png|400px]]}}}}
+ |-
+ ! scope="row" | {{dlc|a}} 13
+ | 1
+ | style="text-align: left" | A {{m|Slot Machine}}, a {{m|Blood Donation Machine}}, and six {{e|Penny||coins}} behind spikes.
+ | {{dlcmap slideshow|{{dlcalt|[[File:Arcade 13 Afterbirth.png|400px]]|a+=[[File:Arcade 13.png|400px]]}}}}
+ |-
+ ! scope="row" | {{dlc|a}} 14
+ | 1
+ | style="text-align: left" | A {{m|Shell Game}}, a {{m|Slot Machine}}, and a {{m|Blood Donation Machine}}.
+ | {{dlcmap slideshow|{{dlcalt|[[File:Arcade 14 Afterbirth.png|400px]]|a+=[[File:Arcade 14.png|400px]]}}}}
+ |-
+ ! scope="row" | {{dlc|a+}} 15
+ | {{dlcmap slideshow|{{dlcalt|1|r=0.5}}}}
+ | style="text-align: left" | Three {{m|Slot Machine}}s, and three random {{e|Penny||coins}}.
+ | {{dlcmap slideshow|{{dlcalt|[[File:Arcade 15 Afterbirth+.png|400px]]|r=[[File:Arcade 15.png|400px]]}}}}
+ |-
+ ! scope="row" | {{dlc|a+}} 16
+ | {{dlcmap slideshow|{{dlcalt|1|r=0.5}}}}
+ | style="text-align: left" | A {{m|Shell Game}}, a {{m|Beggar}}, a {{e|Poop||poop}}, and an urn.
+ | {{dlcmap slideshow|{{dlcalt|[[File:Arcade 16 Afterbirth+.png|400px]]|r=[[File:Arcade 16.png|400px]]}}}}
+ |-
+ ! scope="row" | {{dlc|a+}} 17
+ | 1
+ | style="text-align: left" | Three {{m|Slot Machine}}s, four rocks, and two random {{e|Penny||coins}}.
+ | {{dlcmap slideshow|{{dlcalt|[[File:Arcade 17 Afterbirth+.png|400px]]|r=[[File:Arcade 17.png|400px]]}}}}
+ |-
+ ! scope="row" | {{dlc|a+}} 18
+ | 1
+ | style="text-align: left" | A {{m|Shell Game}}, a {{m|Bomb Bum}}, a {{m|Devil Beggar}}, a {{e|Poop||poop}}, and two rocks.
+ | {{dlcmap slideshow|{{dlcalt|[[File:Arcade 18 Afterbirth+.png|400px]]|r=[[File:Arcade 18.png|400px]]}}}}
+ |-
+ ! scope="row" | {{dlc|a+}} 19
+ | 0.1
+ | style="text-align: left" | A {{m|Shell Game}}, a {{m|Donation Machine}}, three {{e|Fly||flies}}, a {{e|Poop||poop}}, and two rocks.
+ | {{dlcmap slideshow|{{dlcalt|[[File:Arcade 19 Afterbirth+.png|400px]]|r=[[File:Arcade 19.png|400px]]}}}}
+ |-
+ ! scope="row" | {{dlc|a+}} 20
+ | 0.1
+ | style="text-align: left" | Four {{m|Slot Machine}}s, two {{m|Blood Donation Machine}}s, three {{m|Fortune Telling Machine}}s, a {{m|Donation Machine}}, two rocks, and seven {{e|Penny||coins}}.
+ | {{dlcmap slideshow|{{dlcalt|[[File:Arcade 20 Afterbirth+.png|400px]]|r=[[File:Arcade 20.png|400px]]}}}}
+ |-
+ ! scope="row" | {{dlc|r}} 21
+ | 1
+ | style="text-align: left" | A {{m|Shell Game}}, a {{m|Battery Bum}}, and a {{m|Blood Donation Machine}}.
+ | [[File:Arcade 21.png|400px]]
+ |-
+ ! scope="row" | {{dlc|r}} 22
+ | 1
+ | style="text-align: left" | A {{m|Shell Game}}, a {{m|Battery Bum}}, a {{m|Blood Donation Machine}}, and a random {{e|Penny||coin}}.
+ | [[File:Arcade 22.png|400px]]
+ |-
+ ! scope="row" | {{dlc|r}} 23
+ | 1
+ | style="text-align: left" | A {{m|Fortune Telling Machine}}, a {{m|Battery Bum}}, a {{m|Blood Donation Machine}}, and a random {{e|Red Heart||heart}}.
+ | [[File:Arcade 23.png|400px]]
+ |-
+ ! scope="row" | {{dlc|r}} 24
+ | 1
+ | style="text-align: left" | A {{m|Battery Bum}}, two {{m|Blood Donation Machine}}s, and two urns.
+ | [[File:Arcade 24.png|400px]]
+ |-
+ ! scope="row" | {{dlc|r}} 25
+ | 0.5
+ | style="text-align: left" | A {{m|Blood Donation Machine}}, a {{m|Beggar}}, a {{m|Bomb Bum}}, a {{m|Battery Bum}}, four urns, two rocks, and two {{e|Poop||poops}}.
+ | [[File:Arcade 25.png|400px]]
+ |-
+ ! scope="row" | {{dlc|r}} 26
+ | 0.25
+ | style="text-align: left" | Two {{m|Shell Game}}s, a {{m|Shop Restock Machine}}, and four urns.
+ | [[File:Arcade 26.png|400px]]
+ |-
+ ! scope="row" | {{dlc|r}} 27
+ | 1
+ | style="text-align: left" | A {{m|Shell Game}}, a {{m|Bomb Bum}}, a {{m|Devil Beggar}}, and four {{e|Poop||poops}}.
+ | [[File:Arcade 27.png|400px]]
+ |-
+ ! scope="row" | {{dlc|r}} 28
+ | 0.1
+ | style="text-align: left" | A {{m|Shell Game}}, a {{m|Slot Machine}}, an item for sale, a {{e|Shopkeeper}}, and six hanging shopkeepers (two of them have 66% chance to not appear and one of them has 50% chance to not appear).
+ | [[File:Arcade 28.png|400px]]
+ |-
+ ! scope="row" | {{dlc|r}} 29
+ | 1
+ | style="text-align: left" | A {{m|Slot Machine}}, a {{m|Hell Game}}, a {{m|Blood Donation Machine}}, and two rocks.
+ | [[File:Arcade 29.png|400px]]
+ |-
+ ! scope="row" | {{dlc|r}} 30
+ | 1
+ | style="text-align: left" | Two {{m|Slot Machine}}s, a {{m|Hell Game}}, and two urns.
+ | [[File:Arcade 30.png|400px]]
+ |-
+ ! scope="row" | {{dlc|r}} 31
+ | 0.5
+ | style="text-align: left" | Two {{m|Blood Donation Machine}}s, a {{m|Rotten Beggar}}, a {{m|Devil Beggar}}, and four urns.
+ | [[File:Arcade 31.png|400px]]
+ |-
+ ! scope="row" | {{dlc|r}} 32
+ | 0.5
+ | style="text-align: left" | A {{m|Shell Game}}, a {{m|Rotten Beggar}}, a {{m|Blood Donation Machine}}, a rock, and a {{e|Poop||poop}}.
+ | [[File:Arcade 32.png|400px]]
+ |-
+ ! scope="row" | {{dlc|r}} 33
+ | 0.25
+ | style="text-align: left" | A {{m|Blood Donation Machine}}, a {{m|Beggar}}, a {{m|Rotten Beggar}}, two urns, and four {{e|Poop||poops}}.
+ | [[File:Arcade 33.png|400px]]
+ |-
+ ! scope="row" | {{dlc|r}} 34
+ | 1
+ | style="text-align: left" | A {{m|Shell Game}}, a {{m|Crane Game}}, a {{m|Blood Donation Machine}}, and two rocks.
+ | [[File:Arcade 34.png|400px]]
+ |-
+ ! scope="row" | {{dlc|r}} 35
+ | 0.5
+ | style="text-align: left" | A {{m|Crane Game}}, and two {{m|Blood Donation Machine}}s.
+ | [[File:Arcade 35.png|400px]]
+ |-
+ ! scope="row" | {{dlc|r}} 36
+ | 1
+ | style="text-align: left" | A {{m|Hell Game}}, a {{m|Crane Game}}, a {{m|Blood Donation Machine}}, and a random {{e|Red Heart||heart}}.
+ | [[File:Arcade 36.png|400px]]
+ |-
+ ! scope="row" | {{dlc|r}} 37
+ | 1
+ | style="text-align: left" | A {{m|Shell Game}}, a {{m|Crane Game}}, a {{m|Slot Machine}}, and a random {{e|Penny||coin}}.
+ | [[File:Arcade 37.png|400px]]
+ |-
+ ! scope="row" | {{dlc|r}} 38
+ | 1
+ | style="text-align: left" | A {{m|Shell Game}}, a {{m|Crane Game}}, and a {{m|Fortune Telling Machine}}.
+ | [[File:Arcade 38.png|400px]]
+ |-
+ ! scope="row" | {{dlc|r}} 39
+ | 1
+ | style="text-align: left" | A {{m|Crane Game}}, a {{m|Beggar}}, a {{m|Battery Bum}}, and a {{m|Blood Donation Machine}}.
+ | [[File:Arcade 39.png|400px]]
+ |-
+ ! scope="row" | {{dlc|r}} 40
+ | 0.5
+ | style="text-align: left" | A {{m|Crane Game}}, a {{m|Bomb Bum}}, a {{m|Blood Donation Machine}}, two rocks, and two {{e|Poop||poops}}.
+ | [[File:Arcade 40.png|400px]]
+|}
+
+=== {{dlc+|r}} {{c|Cain}}'s {{i|Birthright}} layouts ===
+{| class="wikitable sortable mw-collapsible mw-collapsed" style="text-align: center"
+ ! scope="col" | ID
+ ! scope="col" | Weight
+ ! scope="col" class="unsortable" | Contents
+ ! scope="col" class="unsortable" | Image preview
+ |-
+ ! scope="row" | {{dlc|r}} 41
+ | 1
+ | style="text-align: left" | Two {{m|Slot Machine}}s, a {{m|Shell Game}}, and two {{m|Blood Donation Machine}}s.
+ | [[File:Arcade 41.png|400px]]
+ |-
+ ! scope="row" | {{dlc|r}} 42
+ | 1
+ | style="text-align: left" | Three {{m|Slot Machine}}s, a {{m|Shell Game}}, three {{m|Blood Donation Machine}}s, and six urns.
+ | [[File:Arcade 42.png|400px]]
+ |-
+ ! scope="row" | {{dlc|r}} 43
+ | 1
+ | style="text-align: left" | Two {{m|Slot Machine}}s, two {{m|Fortune Telling Machine}}s, two {{m|Blood Donation Machine}}s, and a random {{e|Red Heart||heart}}.
+ | [[File:Arcade 43.png|400px]]
+ |-
+ ! scope="row" | {{dlc|r}} 44
+ | 1
+ | style="text-align: left" | A {{m|Slot Machine}}, a {{m|Fortune Telling Machine}}, a {{m|Shell Game}}, two {{m|Blood Donation Machine}}s, and six urns.
+ | [[File:Arcade 44.png|400px]]
+ |-
+ ! scope="row" | {{dlc|r}} 45
+ | 1
+ | style="text-align: left" | A {{m|Devil Beggar}}, two {{m|Beggar}}s, two {{m|Bomb Bum}}s, two {{e|Bomb||bombs}}, and four rocks.
+ | [[File:Arcade 45.png|400px]]
+ |-
+ ! scope="row" | {{dlc|r}} 46
+ | 1
+ | style="text-align: left" | Two {{m|Blood Donation Machine}}s, two {{m|Battery Bum}}s, and six rocks.
+ | [[File:Arcade 46.png|400px]]
+ |-
+ ! scope="row" | {{dlc|r}} 47
+ | 1
+ | style="text-align: left" | Two {{m|Slot Machine}}s, a {{m|Hell Game}}, two {{m|Blood Donation Machine}}s, two random {{e|Red Heart||hearts}}, two urns, and eight rocks.
+ | [[File:Arcade 47.png|400px]]
+ |-
+ ! scope="row" | {{dlc|r}} 48
+ | 1
+ | style="text-align: left" | A {{m|Slot Machine}}, a {{m|Fortune Telling Machine}}, two {{m|Blood Donation Machine}}s, a {{m|Beggar}}, and four {{e|Fire Place}}s.
+ | [[File:Arcade 48.png|400px]]
+ |-
+ ! scope="row" | {{dlc|r}} 49
+ | 0.5
+ | style="text-align: left" | Four {{m|Fortune Telling Machine}}s, two rocks, and three random {{e|Penny||coins}}.
+ | [[File:Arcade 49.png|400px]]
+ |-
+ ! scope="row" | {{dlc|r}} 50
+ | 0.25
+ | style="text-align: left" | A {{m|Crane Game}}, two {{m|Slot Machine}}s, two {{m|Fortune Telling Machine}}s, two {{m|Blood Donation Machine}}s, a {{m|Donation Machine}}, and three random {{e|Penny||coins}}.
+ | [[File:Arcade 50.png|400px]]
+ |-
+ ! scope="row" | {{dlc|r}} 51
+ | 1
+ | style="text-align: left" | Two {{m|Crane Game}}s, two {{m|Slot Machine}}s, a {{m|Blood Donation Machine}}, and four urns.
+ | [[File:Arcade 51.png|400px]]
+|}{{dlc-}}
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | A Gamekid, The D4 }}
+
+== Trivia ==
+* The posters that can appear on the arcade's walls are pictures of games that Edmund McMillen has worked on, such as <u>Gish</u>, <u>Super Meat Boy</u>, and <u>Time Fcuk</u>.
+* In the original <u>Binding of Isaac</u>, the arcade's icon was a 6-sided dice. In <u>Rebirth</u>, this icon was changed to a joystick.
+
+{{nav|room|fr=Salle d'Arcade}}

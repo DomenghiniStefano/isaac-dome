@@ -1,0 +1,28 @@
+{{Header playing cards}}
+{{Infobox card
+ | dlc         = a+
+ | name        = Ace of Hearts
+ | type        = card
+ | id          = 30
+ | quote       = Convert all
+ | unlocked by = Living on the edge
+ | description = Turns all [[pickup]]s, [[trinkets]] and [[chest]]s in the room into [[hearts]].<br>{{dlc|r}} All non-boss enemies in the room are also transformed into hearts.
+ | recharge    = {{dlcalt|4|r=6}}
+}}
+
+{{cit|uc|a+}}
+
+== Effects ==
+* Turns all [[pickup]]s, [[trinkets]] and [[chest]]s in the room into [[hearts]].
+* {{dlc|r}} All non-boss enemies in the room are also transformed into hearts.
+
+== Notes ==
+* Any unlocked heart variant can appear.
+* {{dlc|r}} On-kill effects such as {{i|Charm of the Vampire}}, do not trigger from turning enemies into hearts.
+* {{dlc|r}} [[Friendly]] enemies will be transformed into hearts.
+
+== Interactions ==
+* {{I|Tarot Cloth}}: No effect.
+* {{i|Blood Puppy|nr+}}: Using an Ace card on an angry Blood Puppy will create the respective pickup and tame it.
+
+{{nav|fr=As de Cœur|card}}

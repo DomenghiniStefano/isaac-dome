@@ -17833,7 +17833,7 @@
   },
   "10": {
     "title": "The Lost",
-    "revid": 269011,
+    "revid": 269556,
     "description": [
       {
         "kind": "text",
@@ -50298,7 +50298,7 @@
   },
   "21": {
     "title": "Tainted Isaac",
-    "revid": 268679,
+    "revid": 269346,
     "description": [
       {
         "kind": "text",
@@ -50623,7 +50623,7 @@
                   },
                   {
                     "kind": "text",
-                    "text": " is used (the one with item ID \"656\"), and all activated items are exempt from this limit and do not take up inventory space. Swallowed ",
+                    "text": " is used (the one with item ID 656), and all activated items are exempt from this limit and do not take up inventory space. Swallowed ",
                     "style": "plain"
                   },
                   {
@@ -68565,7 +68565,7 @@
   },
   "29": {
     "title": "Tainted Lazarus",
-    "revid": 268681,
+    "revid": 269468,
     "description": [
       {
         "kind": "text",
@@ -73573,7 +73573,7 @@
   },
   "31": {
     "title": "Tainted Lost",
-    "revid": 267117,
+    "revid": 269469,
     "description": [
       {
         "kind": "text",
@@ -76185,8 +76185,57 @@
                   },
                   {
                     "kind": "text",
-                    "text": ": A single-use Holy Mantle per floor. Note that it does not break before Holy Card, thus it is wise to save them for when the shield from Wooden Cross is broken.",
+                    "text": ": A single-use Holy Mantle per floor. ",
                     "style": "plain"
+                  },
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": " Note that it does not break before Holy Card, thus it is wise to save them for when the shield from Wooden Cross is broken. ",
+                        "style": "plain"
+                      },
+                      {
+                        "kind": "edition",
+                        "only": [
+                          "repentancePlus"
+                        ],
+                        "inline": [
+                          {
+                            "kind": "text",
+                            "text": " Both Wooden Cross and Holy Card shields can be active without issue; the Wooden Cross shield will be broken first upon hit. The trinket grants two shields if ",
+                            "style": "plain"
+                          },
+                          {
+                            "kind": "ref",
+                            "target": {
+                              "kind": "item",
+                              "id": 439
+                            },
+                            "label": "Mom's Box"
+                          },
+                          {
+                            "kind": "text",
+                            "text": " is held, or it is a ",
+                            "style": "plain"
+                          },
+                          {
+                            "kind": "concept",
+                            "page": "Golden Trinket",
+                            "label": "Golden Trinket"
+                          },
+                          {
+                            "kind": "text",
+                            "text": ".",
+                            "style": "plain"
+                          }
+                        ]
+                      }
+                    ]
                   }
                 ],
                 "children": []
@@ -88001,7 +88050,7 @@
   },
   "37": {
     "title": "Tainted Jacob",
-    "revid": 268676,
+    "revid": 269643,
     "description": [
       {
         "kind": "text",
@@ -90382,7 +90431,7 @@
   },
   "38": {
     "title": "Dead Tainted Lazarus",
-    "revid": 268681,
+    "revid": 269468,
     "description": [
       {
         "kind": "text",

@@ -1,0 +1,21 @@
+[[file:Boss Room door.png]]
+
+Boss Rooms contain one of the many [[boss]]es, with victory granting Isaac an item from the {{ip|Boss|text=Boss pool}}, [[heart]]s (depending on difficulty), and a trap door leading to the next level.
+
+== Notes ==
+* Double Trouble Boss Rooms contain 2 bosses of the same type from the previous chapter. Defeating them only gives one item. Double Trouble Boss Rooms only appear from [[chapter 2]] onward.
+** {{dlc|a}} Double Trouble Boss Rooms can now contain 2 bosses of different types. Additionally, they can appear as early as [[chapter 1]].
+* If the floor is affected by [[Curse of the Labyrinth]], 2 separate Boss Rooms will appear in series. The trapdoor to the next floor will only appear after defeating the second boss.
+* When a boss is defeated, an entrance to a {{R|Devil Room}} or {{R|Angel Room}} can appear.
+** A Devil Room door can't appear on the first floor, unless {{p|Joker}} is used. A Devil Room door can also appear in a boss room on the first floor if the floor is spawned with the Curse of the Labyrinth, in which the Devil Room door will appear after defeating the second boss.
+** Upon defeating {{e|Mom's Heart}}, a {{R|Devil Room}} containing a trapdoor or an {{R|Angel Room}} containing a beam of light may appear. This allows Isaac to visit {{s|Sheol}} or {{s|Cathedral}} respectively even if {{E|It Lives!}} has not yet been unlocked. If one of these paths is taken instead of touching the large chest, the next Mom's Heart ending will not play but will be unlocked and it will count as a victory against Mom's Heart.
+*** {{dlc|a}} {{R|Devil Room}}s and {{R|Angel Room}}s no longer contain a trapdoor or a beam after defeating It Lives!. They instead have their normal contents.
+* {{E|Mr. Fred}}, {{E|Tuff Twins}}, {{E|Great Gideon}}, {{E|The Shell}}, and {{E|Mega Satan}} are always fought in a double-sized (2x1) room.
+** {{dlc+|a}} {{E|Hush}} is always fought in a 2x2 room and {{E|Ultra Greed}} is fought in a double-sized one.{{dlc-}}
+** {{e|Delirium}} is fought in a 2x2 room.
+** {{E|Mother}} is a fought in a regular room in her first phase, which expands to a double-sized room for her second.
+* Before the boss has been defeated, the eyes of the skull above the boss room's door are flashing.
+* {{i|Dad's Key}}, {{p|Get out of Jail Free Card}}, {{I|Mr. ME!}}, {{t|Door Stop}} can allow Isaac to flee the boss room by opening the door from the inside.
+** This won't work if the boss is {{e|Mom}}.
+
+{{nav|room|fr=Salle du Boss}}

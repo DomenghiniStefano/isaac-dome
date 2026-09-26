@@ -1,0 +1,209 @@
+{{header attributes}}
+{{disambig msg|the attribute|Isaac's primary weapon|effects|noalign=true}}
+
+[[file:Attribute tears icon.png|50px]]
+Isaac's '''fire rate''' is primarily tied to the hidden Tears attribute, which decreases the base delay between fired tears. Items and such that directly modify fire rate also exist, but are rarer than ones that affect the Tears attribute. The game uses an icon depicting three arrows in flight to represent both fire rate and the Tears attribute; In the Found HUD, the arrows denote either {{dlc|nr}} Isaac's tear delay {{dlc|r}} or his fire rate in tears per second.
+
+== Fire Rate Calculation ==
+The formula for calculating fire rate is:
+<math>
+\text{Fire Rate} = ({\frac{30}{\text{Tear Delay} + 1} + {\text{S}}) * {\text{P}}}
+</math>
+
+Where tear delay is calculated using the Tears stat {{dlc|anr}}and tear delay modifiers, S is the sum of all direct additions and subtractions to fire rate, and P is the product of all direct fire rate multipliers.
+
+As the vast majority of items that affect fire rate do so by adding or subtracting Tears, tear delay is the most commonly relevant part of the formula. Depending on how high Isaac's Tears stat is, one of four different formulas is used to calculate tear delay:
+
+<math>
+\text{Tear Delay} =
+\begin{cases}
+  5                                                    & \text{if } T > T_{max}\\
+  16 - 6 \times \sqrt{T \times 1.3 {+} 1}              & \text{if } T \geq 0 \text{ and } T \leq T_{max}\\
+  16 - 6 \times \sqrt{T \times 1.3 {+} 1} - 6 \times T & \text{if } T < 0 \text{ and } T > -0.77\\
+  16 - 6 \times T                                      & \text{if } T \leq -0.77
+\end{cases}
+</math>
+
+* <math>T</math> is the Tears stat.
+* <math>T_{max}</math> is the Tears cap, defined as the number that brings you to 5 tear delay. Increasing the tears stat beyond this does nothing directly, but it can counteract potential tears down. If Isaac has no direct fire rate modifiers, he will have a fire rate of 5 tears per second at <math>T_{max}</math> Tears.
+* {{dlc|nr}} Tear Delay is rounded down to the nearest integer. <math>T_{max}</math> is just under 1.37, meaning two items with +0.7 tears is enough to get your tear delay to under 6 and therefore to 5, assuming you start at 0.
+* {{dlc|r}} Tear Delay is no longer rounded down. <math>T_{max}</math> is just under 1.82 (1.816239316).
+
+Tear delay is '''the additional delay between fired tears beyond 1/30 seconds''', in units of 1/30 seconds. For example, 7 tear delay means 8/30 seconds between tears, or 30/8 = 3.75 fire rate.
+
+{{dlc|nr}} Items can directly reduce tear delay.
+* The minimum tear delay is 1, corresponding to 15 fire rate.
+* Tear delay reduction has accelerating returns. Each -1 tear delay is more effective the more tear delay reduction (and the higher tears stat) you have.
+
+{{dlc|r}} Almost all direct tear delay reductions were replaced with fire rate increases.
+* Generally, each -1 tear delay is replaced with a +0.5 fire rate increase.
+* The maximum fire rate is 120.
+
+Items that directly affect fire rate include:
+* {{i|Pisces}}, which gives +0.5 fire rate.
+* {{i|Soy Milk}}, which gives a x5.5 fire rate multiplier.
+* {{i|The Inner Eye}}, which gives a x0.51 fire rate multiplier.
+There are many other rules and exceptions.{{explain}}
+
+The tears stat has accelerating returns. Each increase of some +X tears provides about the same percentage bonus to fire rate (and therefore damage per second) until you reach the cap. For example, if you get +0.35 tears (a tears up pill) five times, each gives 12-13% fire rate increase, with the first one giving +0.35 fire rate and the last one +0.55 fire rate.
+
+At or below -0.77 Tears, changes to the Tears stat affect fire rate much less. This is especially relevant for {{c|Keeper}}, who starts with -1.9 Tears, and {{c|Tainted Keeper}}, who starts with -2.2 Tears.
+
+Fire rate on the other hand has linear returns. Each +1 fire rate increases shots per second by the same amount. Fire rate increases are applied before fire rate multipliers, so with a multiplier of 2, a +1 fire rate addition will increase fire rate by 2.
+
+== Characters ==
+Different characters start with different initial tears stats and fire rate multipliers. The multipliers apply after most additive fire rate modifiers.
+* The following characters start with the base +0 tears and ~2.73 fire rate: ({{C|Isaac}}, {{C|Magdalene}}, {{C|Cain}}, {{C|Judas}}, {{C|Black Judas}}, {{C|???}}, {{C|Eve}}, {{C|Lazarus}}, {{C|The Lost}}, {{C|Lilith}}, {{C|Apollyon}}, {{C|The Soul}}, {{C|Bethany}}, {{C|Tainted Isaac}}, {{C|Tainted Magdalene}}, {{C|Tainted Cain}}, {{C|Tainted Judas}}, {{C|Tainted Lazarus}}, {{C|Tainted Lost}}, {{C|Tainted Lilith}}, {{C|Tainted Bethany}})
+* {{C|Samson}}/{{C|Tainted Samson}}: -0.1 tears
+** Tainted Samson has fire rate x0.5 and then +2 while berserking
+* {{C|Azazel}}: +0.5 tears, x0.267 fire rate
+* {{C|Tainted Azazel}}: x1/3 fire rate
+* {{C|Eden|nr}}: ±0.75 tears
+** {{C|Eden|r}}/{{C|Tainted Eden}}: +0.75 to -0.515 tears
+*** {{dlc|r}} Tainted Eden's base tears rerolls every time they take damage
+* {{C|Keeper|anr}}: -2 tears
+** {{C|Keeper|r}}: -1.9 tears (will be ignored when player has {{i|20/20}})
+* {{C|Tainted Keeper}}: -2.2 tears (will be ignored when player has {{i|20/20}})
+* {{C|Jacob and Esau}}: +0.277 tears for Jacob, -0.1 for Esau
+* {{C|Tainted Jacob}}: +0.277 tears
+* {{C|Tainted ???}}: -0.35 tears
+* {{C|Tainted Eve}}: -0.5 tears, x0.66 fire rate
+* {{C|Dead Tainted Lazarus}}: -0.1 tears
+* {{C|Tainted Apollyon}}: -0.5 tears
+* {{C|The Forgotten}} / {{C|Tainted Forgotten}}: x0.5 fire rate (normally overwrites multiplier of {{i|Dr. Fetus}}, {{i|Brimstone}}, {{i|Ipecac}}, and {{i|Monstro's Lung}})
+* {{C|Tainted Bethany}}: x0.75 fire rate above base fire rate, gained by tears and {{i|Eye Drops}}. This results in a fire rate of 4.43 at tears-cap
+
+== Direct modifiers to Tear Delay/{{dlc|r}} Fire Rate ==
+Several items directly modify tear delay after the main calculation. {{dlc|r}} Almost all such items directly modify fire rate instead.
+{| class="wikitable mw-collapsible"
+! Item !! {{dlc|nr}} Tear delay adjustment !! {{dlc|r}} Fire rate adjustment
+|-
+| {{i|Anti-Gravity}} ||-2 || +1
+|-
+| {{i|Brimstone}} || x3 || x1/3
+|-
+| {{t|Cancer}} ||-2 || +1
+|-
+| {{i|Capricorn}} ||-1 || +0.5
+|-
+| {{i|Chocolate Milk}} || x2.5 (for maximum charge) || No change, displayed value = maximum charge time
+|-
+| {{t|Cracked Crown}} || x0.8 || Fire rate over base value x1.2
+|-
+| {{i|Cricket's Body}} || -1 || +0.5
+|-
+| {{i|Dataminer}} || ''{{ghost|N/A}}'' || ±0.5
+|-
+| {{i|Dr. Fetus}} || x2.5 || x0.4
+|-
+| {{i|Epiphora}} || x0.5 (while at maximum "charge") || x2 (while at maximum "charge")
+|-
+| {{i|Eve's Mascara}} || x2 || x0.66 <!-- appears to be *specifically* 0.66, not closer to 2/3 -->
+|-
+| {{i|Experimental Treatment}} || ''{{ghost|N/A}}'' || ±0.5
+|-
+| {{i|Guillotine}} || -1 || +0.5
+|-
+| {{i|Haemolacria}} || x2, then +10 || Still ''tear delay'' adjustment: x2, then +11
+|-
+| {{i|Hallowed Ground}} || x0.5 || x2.5
+|-
+| {{i|Ipecac}} || x2, then +10 || x1/3
+|-
+| {{i|Milk!}} || -2 || +1
+|-
+| {{i|Missing No.}} || ''{{ghost|N/A}}'' || ±0.5
+|-
+| {{i|Mom's Perfume}} || -1 || +0.5
+|-
+| {{i|Monstro's Lung}} || x4.3 || x1/4.3
+|-
+| {{i|Mutant Spider}} || x2.1, then +3 || x0.42
+|-
+| {{i|Pisces}} || -1 || +0.5
+|-
+| {{i|Polyphemus}} || x2.1, then +3 || x0.42
+|-
+| {{i|Purity}} || -4 || +2
+|-
+| {{i|Soy Milk}} || x0.25, then -2 || x5.5
+|-
+| {{i|Technology 2}} || ''{{ghost|N/A}}'' || x2/3
+|-
+| {{i|The Inner Eye}}/{{p|XII - The Hanged Man?}} || x2.1, then +3 || x0.51 <!-- specifically not 0.5, it seems -->
+|-
+| {{i|Tractor Beam}} || ''{{ghost|N/A}}'' || +1
+|-
+| {{i|Brittle Bones}} || ''{{ghost|N/A}}'' || +0.4 per bone heart lost
+|-
+| {{i|Dark Prince's Crown}} || ''{{ghost|N/A}}'' || +2
+|-
+| {{i|Death's List}}/{{i|Void}}/{{p|Black Rune}} || ''{{ghost|N/A}}'' || +0.5
+|-
+| {{I|Almond Milk}} || ''{{ghost|N/A}}'' || x4
+|-
+| {{I|Berserk!}}/{{p|Soul of Samson}} || ''{{ghost|N/A}}'' || x0.5, then +2
+|-
+| {{I|Bloody Gust}} || ''{{ghost|N/A}}'' || Up to +3 after taking damage 6 times
+|-
+| {{p|VII - The Chariot?}} || ''{{ghost|N/A}}'' || x4
+|-
+| {{I|Consolation Prize}} || ''{{ghost|N/A}}'' || +0.5
+|-
+| {{p|III - The Empress?}} || ''{{ghost|N/A}}'' || +1.5
+|-
+| {{I|Eye Drops}} || ''{{ghost|N/A}}'' || x1.2
+|-
+| {{I|IBS}}/{{p|Soul of ???}}/{{c|Tainted ???|r}} || ''{{ghost|N/A}}'' || +1.5 while on unique creep<br/>Additional x3 if the creep is in contact with white poop
+|-
+| {{I|It Hurts}} || ''{{ghost|N/A}}'' || +1.2 on the first hit, then +0.4 on subsequent hits
+|-
+| {{I|Luna}} || ''{{ghost|N/A}}'' || +1 for the first beam of light, then +0.5 for subsequent beams
+|-
+| {{I|Paschal Candle}} || ''{{ghost|N/A}}'' || +0.4 for every room cleared without taking non-self damage, up to +2 total
+|-
+| {{I|Wavy Cap}} || ''{{ghost|N/A}}'' || +0.75 (halved if Isaac leaves the room, and wears off at the rate of one room clear per use)
+|}
+<!--a bug I documented here [[Metronome#Bugs]] shows some information about the way Brimstone and Monstro's Lung influence the tears stat-->
+
+== Notes ==
+* Polyphemus, Mutant Spider, and Inner Eye's fire rate delay formulas do not stack with each other, meaning that there is no downside to taking another after you have already taken one. This fire rate delay is negated with 20/20.
+* {{dlc|nr}} Charge-bar items like Monstro's Lung or Brimstone stop working at 30 tears per second.
+* {{dlc|r}} Eye drops x1.2 multiplier only applies over Tears Delay-gained Fire Rate.
+* Dr Fetus, Brimstone, Ipecac, and Monstro's Lung fire rate delay formulas do not (always) stack with each other, following a priority list:
+- Dr Fetus + Monstro's Lung + X = x1/4.3
+- Dr Fetus + X (but no Monstro's Lung) = x0.4
+- No Dr Fetus + Brimstone + X = x1/3
+- Monstro's Lung and Ipecac DO stack with each other if no Brimstone and Dr Fetus.
+* Haemolacria has very complex interactions with other fire rate items, almost resulting in an overhaul of the formulas.
+- For Tear Delay (TD) = TD_preHeamolacria * 2 + 11
+- Fire rate is first calculated 'normal' for Tear Delay and Fire rate additions. This Fire rate is turned back into Tear Delay via (30 / FR) - 1. This Tear Delay is put into the above formula.
+
+== Items that affect tears ==
+=== Activated Items ===
+{{collectible table | Berserk!, D100, D8, Dataminer, Mega Mush, Sulfur, Void, Wavy Cap}}
+
+=== Passive Items ===
+{{collectible table | Analog Stick, Anti-Gravity, Apple!, Binky, Blue Cap, Brimstone, Brittle Bones, Camo Undies, Capricorn, Chocolate Milk, Cricket's Body, Dark Prince's Crown, Death's List, Death's Touch, Divorce Papers, Dr. Fetus, Eden's Blessing, Epiphora, Eve's Mascara, Experimental Treatment, Godhead, Guillotine, Haemolacria, The Halo, The Inner Eye, Ipecac, Kidney Stone, Libra, Marked, Milk!, Missing No., Mom's Perfume, Monstro's Lung, Mr. Dolly, Mutant Spider, Number One, Odd Mushroom (Thin), Ouija Board, The Pact, Pisces, Polyphemus, Purity, Sacred Heart, The Sad Onion, Screw, The Small Rock, SMB Super Fan, Soy Milk, Star of Bethlehem, Squeezy, Technology 2, Tooth Picks, Torn Photo, Tractor Beam, Wire Coat Hanger, Zodiac, A Bar of Soap, Act of Contrition, Almond Milk, Binge Eater, Bloody Gust, Candy Heart, Consolation Prize, Eye Drops, Luna, Paschal Candle, Pluto, Sausage, Soul Locket, It Hurts, Rosary }}
+
+=== Trinkets ===
+{{trinket table | Azazel's Stump, Broken Syringe, Cancer, Cracked Crown, Cracked Dice, Dim Bulb, Liberty Cap, Vibrant Bulb, Wiggle Worm, Rainbow Worm, Ring Worm, Ouroboros Worm, Hook Worm}}
+
+=== Other ===
+* Tears up [[pill]]s increase tears by 0.35 and tears down pills decrease tears by 0.28.
+* The {{tf|Conjoined}} transformation decreases tears by 0.3.
+* {{dlc|a}} In co-op, [[Co-op#Special Babies 2|Cry Baby]] will occasionally briefly increase tears. [[Co-op#Special Babies 2|Dark Baby]] will occasionally briefly increase all stats, including tears. [[Co-op#Special Babies 2|Buddy Baby]] will occasionally briefly grant the {{I|Guillotine}} effect, which increases tears.
+* {{dlc|a+}} Absorbing an item using {{p|Black Rune|n}} can increase fire rate by 0.5.
+* {{p|III - The Empress?}} increases fire rate by 1.5 for the duration of its effect.
+* {{p|VII - The Chariot?}} greatly increases fire rate for the duration of its effect.
+* {{p|XII - The Hanged Man?}} grants triple shot and reduces fire rate (similar to {{i|The Inner Eye}}) for the duration of its effect.
+* {{dlc|r}} Standing near a {{e|White Poop|n}} or [[Familiar#Dips|White Dip]] will greatly increase fire rate.
+* {{dlc|r}} Standing on brown creep produced by {{i|IBS|n}} or {{c|Tainted ???}} will increase fire rate by 1.5.
+* {{p|Soul of Samson}} activates the {{i|Berserk!|n}} effect, which increases tears.
+* {{dlc+|r}} {{c|Judas}} + {{i|The Book of Belial}} + {{i|Birthright}} + {{i|Decap Attack}}: Grants Judas ×3 fire rate while his head is detached from his body.{{dlc-}}
+
+== Bugs ==
+{{bug|dlc=r|If your tear rate is decreased into a negative number, then it will flip back to 120 tears per second.}}
+
+{{nav|fr=Débit}}
+[[Category:Mechanics]]

@@ -1,0 +1,12 @@
+{{page dlc|r}}
+
+Items with this [[Item Tags|tag]] contribute toward the {{tf|Spider Baby}} transformation.
+
+== Activated Collectibles ==
+{{collectible table | tag = spider | type = activated }}
+
+== Passive Collectibles ==
+{{collectible table | tag = spider | type = passive }}
+
+{{nav|fr=Balise spider}}
+[[Category:Item tags]]

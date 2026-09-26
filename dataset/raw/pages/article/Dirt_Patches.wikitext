@@ -1,0 +1,17 @@
+{{header obstacles}}
+{{page dlc|a+}}
+
+[[file:Dirt Patch.png|86px|link=]] [[file:Dirt Patch Forgotten.png|86px|link=]]
+* '''Dirt Patches''' are small mounds of dirt found only in [[Grave Room]]s that can be dug into with certain items.
+* Using {{i|Mom's Shovel}} on top of a Dirt Patch will reveal a skeleton and unlock {{C|The Forgotten}}.
+* Prior to unlocking The Forgotten, the Grave Room containing the Dirt Patch only has one layout with one Dirt Patch in the middle.
+* Using Mom's Shovel (After unlocking The Forgotten), {{i|We Need To Go Deeper!}}, or {{p|Ehwaz}} on top of a Dirt Patch will dig up a random [[chest]].
+
+== Notes ==
+* Using {{p|XXI - The World?}} spawns a {{r|Crawl Space}} over top of a dirt patch. The dirt patch is not replaced, and can still be dug up if Isaac is standing over it.
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | The Forgotten, Bone Heart }}
+
+{{nav|fr=Tas de terre}}
+[[Category:Objects]]

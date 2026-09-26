@@ -1,0 +1,44 @@
+{{header runes}}
+{{infobox rune
+ | dlc         = a+
+ | name        = Black Rune
+ | id          = 41
+ | quote       = Void
+ | description = Deals 40 damage to all enemies in the room. Consumes all pickups in the room and turns them into Blue Flies and Spiders. Consumes all pedestal items in the room and turns them into random stat upgrades.
+ | recharge    = 4
+ | unlocked by = Black Rune
+}}
+
+{{cit|ur|a+}}
+
+== Effects ==
+* Deals 40 damage to all enemies in the room.
+* Turns [[pickup]]s into [[Blue Fly|Blue Flies]] and [[Blue Spider|Spiders]].
+* Absorbs items and turns them into random stat upgrades.
+
+== Notes ==
+* '''Black Rune''''s effect is similar to {{i|Void|n}}.
+** Unlike {{I|Void}}, the '''Black Rune''' will grant stat ups for sacrificing active items. This makes '''Black Rune''' useful even while holding Void, as any active item that would be detrimental to absorb can instead be absorbed by '''Black Rune'''.
+** Like {{I|Void}}, stats gained by a '''Black Rune''' will be removed when Isaac's build is re-rolled (e.g. with {{I|D4}} or a {{R|Dice Room}}).
+* Using a '''Black Rune''' to absorb items in {{r|Boss Rush}} or {{r|Boss Challenge Room}}s counts as taking the items and will cause waves of bosses or enemies to start spawning.
+* If Black Runes have not been unlocked, they will be replaced by random Cards of any type, rather than {{p|Rune Shard}}s, in any room layouts containing them.
+* {{dlc+|r}} If Isaac uses the '''Black Rune''' to absorb items from a room with choice pedestals, it will only absorb one item, and the other item vanishes.{{dlc-}}
+
+== Strategy ==
+* {{dlc+|r}} If a '''Black Rune''' is used while Isaac is holding an item above his head, it will consume the item. This allows him to immediately absorb passive items bought from {{r|Devil Room}}s, {{r|Black Market}}s, or {{r|Shop}}s. This also can be used to give Isaac a chance to see what an unknown item is before deciding if he wants to consume it.{{dlc-}}
+* {{dlc+|r}} The '''Black Rune''' can be used to absorb {{i|Knife Piece 1}} if {{e|Mother}} isn't the goal of the run. Can also be used to absorb {{i|Key Piece 1}} or {{i|Key Piece 2}}.{{dlc-}}
+
+== Synergies ==
+* {{I|Tarot Cloth|nr}}: Deals 80 damage.
+* {{t|A Missing Page|r}} / {{i|Missing Page 2|r}}: Deals +40 damage per copy.
+
+== Interactions ==
+* {{I|Tarot Cloth|r}}: No effect.
+* {{i|Death Certificate}}: Only allows the consumption of one item. The consumed item is treated as if it was picked up causing all other items in the room to disappear and forcing Isaac to leave the area.
+* {{t|Endless Nameless}}: The newly spawned '''Black rune''' will spawn before the effect goes through, transforming it instantly into blue flies.
+
+== Bugs ==
+{{bug|dlc=rnr+|Using a {{p|Black Rune}} in a room with exactly one pickup and one item while being near the fly limit won't absorb the item.}}
+
+{{nav|fr=Rune Noire}}
+[[Category:Runes]]

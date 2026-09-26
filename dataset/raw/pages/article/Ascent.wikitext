@@ -1,0 +1,174 @@
+{{page dlc|r}}
+
+The '''Ascent''' is a special sequence begun by obtaining {{i|Dad's Note}} from the special versions of the {{s|Mausoleum}}/{{s|Gehenna}} II. These floors can be accessed by opening the [[A Strange Door|special door]] in the starting room of the {{S|Depths}} II or its variants. This door appears once Isaac has defeated {{e|Mother}} at least once. It involves going back up through abbreviated versions of every floor previously seen through beams of light. Much like the {{a|Backasswards}} challenge, Isaac begins in the boss room of each floor and must find the beam of light, located in the corresponding starting room.
+
+These abbreviated versions contain the same {{r|Treasure Room}}s and {{r|Boss Room}}s as they did previously, in almost the same condition.
+
+* Any [[trinket]]s left behind in these rooms, however, will each be transformed into a {{p|Cracked Key}}.
+
+All the other [[special room]]s do not spawn.
+
+* Special {{r|Red Room}}s still have the normal chance to be generated.
+
+Monsters not normally found on the current floor will appear, as well as unique room layouts and new monsters not found anywhere else in the game.
+
+After leaving the {{s|Mausoleum}} II, Isaac will begin taking full heart damage, as would otherwise occur on entering any variant of the {{s|Womb}} or the {{s|Corpse}}.
+
+Entering the {{s|Basement}} I's light beam will take Isaac to {{s|Home}}.
+
+== Unique [[Monster]]s ==
+This table lists all of the unique monsters that only spawn during the ascent. These enemies are based on normal enemies from the individual pre-ascent chapters they are seen in, but are far tougher.
+
+{{entity table | Tainted Pooter, Tainted Mulligan, Tainted Boom Fly, Tainted Hopper, Tainted Spitty, Tainted Sucker, Tainted Soy Creep, Tainted Round Worm, Tainted Tube Worm, Tainted Sub Horf, Tainted Faceless, Tainted Mole, Elleech}}
+
+== Regular Monsters ==
+When the game makes a small mock floor to take the place of each original floor/chapter Isaac descended through before the ascent, it populates each new floor mostly with its pre-ascent chapter-specific enemies. However, the Ascent enemy pools are altered to allow enemies from later floors.
+
+These are the tables of enemies the game spawns to populate its specific ascent mock chapters.
+
+=== {{s|Mausoleum}} ===
+{{Entity table| Baby Begotten, Ball and Chain, Bishop, Blood Cultist, Bony, Brainless Knight, Brimstone Death's Head, Candler, Cultist, Cursed Death's Head, Cursed Globin, Death's Head, Fetal Demon, Flagellant, Goat, Grudge, Kineti, Lil Portal, Loose Knight, Maze Roamer, Morningstar, Pon, Psychic Maw, Quad Revenant, Revenant, Shady, Snapper, Soul Sucker, Vis Fatty, Vis Versa, Whipper}}
+
+=== {{s|Depths}} ===
+{{Entity table| Wrinkly Baby, Walking Boil, Walking Gut, Brain, MemBrain, Poison Mind, Baby, Bony, Black Bony, Death's Head, Dukie, Embryo, Pale Fatty, Fat Sack, Half Sack, Shady, Attack Fly, Army Fly, Sucker, Boom Fly, Gazing Globin, Dank Globin, Cohort, Grub, Gurgle, Guts, Hanger, Hive, Eggy, Leaper, Host, Mobile Host, Knight, Floating Knight, Lil' Haunt, Mask + Heart, Mask II + 1/2 Heart, Red Maw, Psychic Maw, Mr. Maw, Mr. Red Maw, Needle, One Tooth, Rotty, Migraine, Swarmer, Vis, Scarred Double Vis, Chubber, Rage Creep, Poky, Slide, Stone Grimace, Triple Grimace, Constant Stone Shooter, Cross Stone Shooter, }}
+''Degraded Bosses:''
+{| class="wikitable sortable mw-collapsible mw-collapsed striped"
+! Name
+! ID
+! class="unsortable" | Notes
+{{entity row minimal|Dingle}}    ||
+{{entity row minimal|Fistula}}   || Medium-form only
+{{entity row minimal|The Haunt}} ||
+|}
+
+=== {{s|Mines}} ===
+{{Entity table| Big Bony, Blaster, Bomb Grimace, Bone Fly, Bony, Bouncer, Coal Boy, Crackle, Danny, Dragon Fly, Dragon Fly X, Dust, Dusty Death's Head, Faceless, Fire Worm, Flesh Maiden, Fly Bomb, Gurgle, Gyro, Hard Host, Hardy, Ink, Migraine, Mole, Necro, Quake Grimace, Quakey, Rock Spider, Soy Creep, Stone Grimace, Stoney}}
+
+=== {{s|Caves}} ===
+{{Entity table| Army Fly, Blind Creep, Blister, Boil, Gut, Boom Fly, Buttlicker, Charger, Chubber, Cohort, Conjoined Spitty, Conjoined Fatty, Constant Stone Shooter, Dart Fly, Dinga, Dukie, Eggy, Fat Sack, Gazing Globin, Globin, Gurgle, Half Sack, Host, Horf, I.Blob, Keeper, Level 2 Charger, Maggot, Maw, Mega Clotty, Migraine, Ministro, Mr. Maw, Mr. Red Maw, Needle, One Tooth, Peeping Fatty, Red Boom Fly, Red Maw, Roundy, Spit, Spitty, Squirt, Stone Grimace, Stoney, Sucker, Ticking Spider, Triple Grimace, Vomit Grimace, Walking Boil, Walking Gut}}
+
+''Degraded Bosses:''
+{| class="wikitable sortable mw-collapsible mw-collapsed striped"
+! Name
+! ID
+{{entity row minimal|The Duke of Flies}}
+{{entity row minimal|The Hollow}}
+{{entity row minimal|Larry Jr.}}
+|}
+
+=== {{s|Downpour}} ===
+{{Entity table| Attack Fly, Bloaty, Blurb, Bubbles, Deep Gaper, Drip, Fissure, Fly Trap, Frowning Gaper, Gaper, Level 2 Willo, Lil' Haunt, Mullighoul, Polty, Prey, Small Leech, Splurt, Strider, Sub Horf, Tube Worm, Willo, Wraith}}
+
+=== {{s|Basement}} ===
+{{Entity table| Army Fly, Attack Fly, Big Spider, Constant Stone Shooter, Cyclopia, Dinga, Dip, Faceless, Fatty, Flaming Hopper, Fly, Frowning Gaper, Full Fly, Gaper, Grilled Clotty, Gusher, Hanger, Hopper, Horf, Ink, Leaper, Lil' Haunt, Mega Clotty, Migraine, Ministro, Moter, Mulliboom, Mulligan, Pale Fatty, Para-Bite, Pooter, Red Boom Fly, Ring Fly, Rotty, Round Worm, Roundy, Soul Sucker, Squirt, Stoney, Sub Horf, Sucker, Ticking Spider, Vis, Cohort}}
+
+''Degraded Bosses:''
+{| class="wikitable sortable mw-collapsible mw-collapsed striped"
+! Name
+! ID
+{{entity row minimal|Baby Plum}}
+{{entity row minimal|Dingle}}
+{{entity row minimal|The Duke of Flies}}
+{{entity row minimal|Gemini}}
+{{entity row minimal|Gish}}
+{{entity row minimal|The Husk}}
+{{entity row minimal|Mega Fatty}}
+{{entity row minimal|Monstro}}
+{{entity row minimal|Steven}}
+{{entity row minimal|Widow}}
+|}
+
+== Notes ==
+* If any variant floors were encountered during descent, all floors of the Ascent will still be the original ones. For example, if the second floor on a run was the {{s|Cellar}} II or the {{s|Burning Basement}} II, during the Ascent, it will be replaced by the {{s|Basement}} II regardless. This includes alternate chapters, such as the {{s|Downpour}}, and so on.
+** However, it's still possible to access them through the use of [[Debug Console]].
+* Isaac won't encounter any [[curse]]s during the Ascent, except {{cu|Labyrinth}} if it was on the original floor.
+** When encountering {{cu|Blind}}, it may be a good idea to skip boss and treasure room items, as they will be revealed during the Ascent.
+** XL floors in the Ascent will contain both {{r|Treasure Room}}s from the original floor.
+* Red {{r|Treasure Room}}s found through the {{i|Red Key}} during the original run will automatically show up during the Ascent, and will be adjacent to normal rooms. These doors do not require keys to open.
+* Any unopened {{r|Treasure Room}}s on previous floors will still be locked during the Ascent.
+** If these skipped Treasure Rooms are entered during the ascent, they will contain different items. This is best viewed with the effect of {{I|Dream Catcher}}.
+** This also means a strategy is to skip {{r|Treasure Room}}s early in a run to spawn a {{r|Planetarium}}, and then get the skipped Treasure Room items during the Ascent. However, there's no need to keep doing it after encountering a Planetarium, since the probability to encounter it will stay at 1%.
+* {{r|Angel Room}}s and {{r|Devil Room}}s will have different contents than on the original path.
+** Since the {{r|Boss Room}}s have already been cleared during descent, Devil Rooms and Angel Rooms won't open during the Ascent, and can only be accessed with teleport effects.
+** The special Angel Room Shops generated by {{I|The Stairway}} will also have different contents.
+* During the Ascent, both items in a double item {{r|Treasure Room}} are visible.
+* Items and trinkets that activate on entering the floor, such as {{T|Maggy's Faith}}, will trigger each time Isaac ascends a floor.
+* If pickups were transported to another floor from the Treasure or Boss Room by {{t|Myosotis}}, their copies will remain in those rooms and can be encountered during the Ascent. Affected trinkets still transform into {{p|Cracked Key}}s, potentially allowing you to gain large amounts of Cracked Keys.
+** {{T|Myosotis}} will work on the Ascent, and can be used to bring an additional pickup if holding a {{p|Cracked Key}}.
+* In each floor, after exploring all normal rooms, using {{I|Teleport 2.0}} will teleport Isaac to the {{r|Angel Room}}/{{r|Devil Room}}, since {{r|Secret Room}}s and {{r|Super Secret Room}}s will not spawn.
+* If a floor is restarted, which can be accomplished through using {{I|Forget Me Now}} or by finding a Red 5-pip {{r|Dice Room}}, the following effects will happen:
+** No dream animations will be shown when restarting.
+** The regenerated floor will still be an Ascent floor, not a descent floor.
+** If the floor was an XL one, the regenerated floor will also be XL.
+** If the {{r|Treasure Room}} was skipped during descent, and during the Ascent its contents were seen, after restarting it will contain different items.
+** All {{P|Cracked Key}}s in either the {{r|Boss Room}} or the {{r|Treasure Room}} will remain there, even if they were used before restarting.
+* The {{r|I AM ERROR}} room can be reached during the ascent. {{r|I AM ERROR}} rooms will mimic the layout that they had corresponding to the floor. Rather than containing a trapdoor, they will contain a beam of light leading up to the next floor.
+* Entering an {{r|I AM ERROR}} room in {{s|Gehenna}} II (before the Ascent) takes Isaac to the starting room of the floor.
+* No consumable voice lines will be spoken during the Ascent.
+* {{C|Jacob and Esau}} will overlap one other when ascending to a new floor. This effect stops upon pressing the Swap key or entering a new room.
+* During the descent, it is recommended to leave any abandoned [[Trinket]]s in {{r|Treasure Room}}s or {{r|Boss Room}}s, so that the resulting {{P|Cracked Key}}s can be used during the Ascent, which could potentially create special rooms containing items or other useful pickups.
+* If the Boss Music would play, it plays the Boss Music for the alternate path rather than the Boss Music for the main path. One way to make Boss Music play is to find an Angel Room by using a {{i|Red Key}}/{{p|Cracked Key}}.
+* If a Boss is not fought during the descent (e.g. if it was skipped using {{i|We Need To Go Deeper!}}), the {{r|Boss Room}} will still be empty during the Ascent.
+* Portals to {{s|The Void}} that spawn after the {{e|Mom}} fight will still appear in the boss room during Ascent, however they will be permanently closed.
+
+== Dialogue ==
+At various points during the Ascent, arguments between Isaac's parents can be heard, shedding some light on the fractured state of Isaac's family.
+{| class="wikitable sortable mw-collapsible mw-collapsed striped"
+! Stage
+! class="unsortable" | Dialogue
+! class="unsortable" | Audio
+|-
+| data-sort-value="1" | '''At the start of the {{s|Mausoleum}} II'''
+|
+* '''Dad:''' "I spent it, it's gone. ''Just get over it''!"
+* '''Mom:''' "What do you mean, what do you mean it's gone? ''How could you have spent our savings?!''"
+| [[File:Mom and dad clip 1 mastered.ogg|center]]
+|-
+| data-sort-value="3" | '''At the start of the {{S|Depths}} I / {{S|Mines}} II'''
+|
+* '''Mom:''' "He's self-destructive and disturbed, just like his father! Look at who he has to look up to! ''...And you're drunk again, aren't you?''"
+* '''Dad:''' "'''Shut up, Maggy! ''SHUT! UP!''''' You just keep pushing me like this, I'm leaving!"
+* '''Mom:''' "Good! '''LEAVE!''' We'll be fine without you! ''Abandon us like you abandoned yourself...''"
+| [[File:Mom and dad clip 2 mastered.ogg|center]]
+|-
+| data-sort-value="5" | '''At the start of the {{S|Caves}} I / {{S|Downpour}} II'''
+|
+* '''Mom:''' "You need to repent. You need to confess your sins, and become saved! Let His light inside you! CLEANSE YOUR SOU-"
+* '''Dad:''' "''You. Are. '''INSANE'''.'' You are taking this too far. Can't you hear how you sound!?"
+* '''Mom:''' ''"Pray with me...'' Pray for your salvation! ''Come, pray with us, Isaac...''"
+| [[File:Mom and dad clip 3 mastered.ogg|center]]
+|-
+| data-sort-value="7" | '''At the start of the {{S|Basement}} I'''
+|
+* ''(The sound of a door opening and footsteps are heard)''
+* '''Mom:''' "Where are you going?! Wait! We need you! Your son '''NEEDS''' you!"
+* '''Dad:''' "I'm doing more harm than good. I just can't do this anymore, I'm sorry."
+* '''Mom:''' "'''''PLEASE!''''' '''PLEASE DON'T LEAVE US...!!'''"
+* '''Dad:''' "''I'm sorry, Isaac...''"
+| [[File:Mom and dad clip 4 mastered.ogg|center]]
+|}
+
+== Trivia ==
+* The Ascent is referred to as "backwards" in the sequence's rooms file.
+* According to an [https://youtu.be/MWfRn5wUzbo?si=EUEYmDgTWOpveMIP&t=6930 interview with _Kilburn], the tainted enemies were designed with inspiration from eternal champion monsters in [[enboi:The Binding of Isaac: Eternal Edition|The Binding of Isaac: Eternal Edition]].
+* {{e|Great Gideon}} can be seen in its boss room during the Ascent. However, since he was already defeated on the way down, he will be deactivated.
+** Even if he was encountered in the {{s|Ashpit}} during the normal descent, he will still appear in the {{s|Mines}} during the Ascent.
+** He can still be destroyed by using the {{p|Chaos Card}}, to reveal the unique 1x2 {{r|Crawl Space}}.
+** If he was previously destroyed with the {{p|Chaos Card}} before the ascent, he will be missing during the ascent.
+* What sounds like a reversed version of Genesis Retake Light can be heard playing during the Ascent, and as the ascent progresses, more instruments are added to it based on the floors Isaac ascends through.
+** The {{s|Mausoleum}} adds a crunchy, electric bass line.
+** The {{s|Depths}} adds occasional guitar riffs and a unique composition.
+** The {{s|Mines}} adds a drum line and metal clanking sounds.
+** The {{s|Caves}} adds a standard bass line.
+** The {{s|Downpour}} adds a fuller guitar line with an echo effect.
+** The {{s|Basement}} adds a full drum line.
+
+== Bugs ==
+{{Bug|Dropping a trinket in the exact same spot as an obstacle may despawn Cracked Key further down the road during Ascension.<ref>https://imgur.com/a/goTBGaH</ref>}}
+
+== References ==
+{{reflist}}
+
+{{nav|environment|fr=Ascension}}
+[[Category:Bugs]]
+[[Category:Stages]]

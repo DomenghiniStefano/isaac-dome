@@ -1,0 +1,30 @@
+{{infobox version
+ | dlc  = a+
+ | date = 2017-01-17
+}}
+
+== Undocumented changes ==
+=== Additions ===
+* {{i|Adrenaline}} now counts towards the [[Spun|Spun]] transformation.
+* {{i|The Bible}} and {{i|The Necronomicon}} now count towards the [[Bookworm]] transformation.
+* There is a new "rumble" option in the options menu. However, it only appears on the Nintendo Switch version of the game, which was currently unreleased at the time.
+
+=== Changes ===
+* [[Adderline]] was renamed to [[Adrenaline]].
+* [[Krampus]]' new Brimstone attack was smoothed out.
+* [[Stoney]]s now have a better panting behavior.
+
+=== Fixes ===
+* The bug where the rewards for the [[Onan's Streak]] and [[The Guardian]] challenges were incorrectly swapped was fixed.
+* {{i|The Small Rock}} now updates the "speed" and "firedelay" caches, meaning it no longer is a delayed tears up and a delayed speed down.
+* All of the bugged <code>DecreaseBy</code> values for the Afterbirth+ items have been fixed, meaning that Afterbirth+ items will no longer roll into themselves in pools where they are supposed to be removed on sight.
+* Fixed the graphics for the Ed Baby and the D Baby (2 of the co-op babies).
+* The entity stacking feature is fixed. This results in many changes throughout the game, like getting [[Restock Machine]]s in shops.
+* Fixed the bug where [[Magdalene]] would be shown as having a pill on the character select screen before beating the [[Aprils Fool]] challenge.
+* Fixed the bug where [[Samson]] would be shown as having {{t|Child's Heart}} on the character select screen before beating the [[Ultra Hard]] challenge.
+* Fixed the bug where [[Lazarus]] would be shown as having {{i|Anemic}} on the character select screen before beating the [[Backasswards]] challenge.
+
+== New bugs ==
+* Accidentally added a bug to the description of {{i|Monstro's Tooth}} (it will no longer appear in-game).
+
+{{nav|version}}

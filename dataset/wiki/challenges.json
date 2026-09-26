@@ -11625,7 +11625,7 @@
   },
   "19": {
     "title": "The Family Man",
-    "revid": 253308,
+    "revid": 269713,
     "description": [
       {
         "kind": "text",
@@ -22470,7 +22470,7 @@
   },
   "29": {
     "title": "Onan's Streak",
-    "revid": 269208,
+    "revid": 269523,
     "description": [
       {
         "kind": "text",
@@ -23176,7 +23176,7 @@
                         "inline": [
                           {
                             "kind": "text",
-                            "text": "XboxOne Poop is not considered an enemy if it is the first object hit.",
+                            "text": "Poop is not considered an enemy if it is the first object hit.",
                             "style": "plain"
                           }
                         ],
@@ -25508,7 +25508,24 @@
                     "style": "plain"
                   }
                 ],
-                "children": []
+                "children": [
+                  {
+                    "kind": "list",
+                    "ordered": false,
+                    "items": [
+                      {
+                        "inline": [
+                          {
+                            "kind": "text",
+                            "text": "Hitting anything other than an enemy will harm Judas.",
+                            "style": "plain"
+                          }
+                        ],
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
               },
               {
                 "inline": [

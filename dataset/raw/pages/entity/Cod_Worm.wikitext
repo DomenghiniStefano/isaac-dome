@@ -1,0 +1,25 @@
+{{infobox monster
+ | id          = 221
+ | base hp     = 20
+ | environment = {{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}
+ | behavior    = Stationary enemy that hides in a shell and spews a burst of blood shots if shot at. Only vulnerable when it pops its head out.
+}}
+
+A '''Cod Worm''' is a special variant of the {{e|Para-Bite}} in an immobile shell that can be found in [[Chapter 4]]. It was introduced in the vanilla content of ''[[The Binding of Isaac: Rebirth]]''.
+
+Instead of chasing Isaac like the regular Para-Bites, the Cod Worm stays in its shell and will spew a burst of blood shots if shot at. After some time, it will reveal itself and become vulnerable to attacks.
+{{clear}}
+
+== Gallery ==
+<gallery>
+Edmund_McMillen_Rebirth_Monster_Sketches.jpg | Sketches of monsters for the Binding of Isaac: Rebirth, including the Cod Worm in the first rectangle of the fourth row, formerly called "Blober." Coincidentally, the worm's appearance in the concept art resembles the "Longit" in the Legend of Bum-bo, another rentangle-shaped, legless monster.
+</gallery>
+
+== Trivia ==
+* A cod worm is an aquatic parasite of marine fish.
+* Cod worm has a resemblance to the Pokémon [[bulbapedia:Shuckle|Shuckle]].
+* Prior to [[Booster Packs#Booster Pack #5|Booster Pack #5]], if a Cod Worm was killed before enemies finished spawning, the Cod Worm would die, even in its invincible form.
+
+{{nav|fr=Copépode}}
+[[Category:Worm monsters]]
+[[Category:Chapter 4 monsters]]

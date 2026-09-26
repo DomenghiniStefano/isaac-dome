@@ -1,0 +1,127 @@
+{{infobox stage
+ | dlc             = a
+ | chapter         = 3
+ | id              = 9
+ | id greed        = {{dlc|r|9}}
+ | level id        = 5, 6
+ | level id greed  = {{dlc|r|3}}
+ | type id         = 2
+ | type id greed   = {{dlc|r|2}}
+ | degraded bosses = Pin, The Hollow
+ | bosses 1        = The Adversary, Brownie, Gish, Loki, Monstro II, Sisters Vis, War
+ | bosses 2        = Mom
+ | unlocked by     = Dank Depths
+}}
+
+The '''Dank Depths''' is one of the environments in [[chapter 3]] added in ''[[The Binding of Isaac: Afterbirth]]''. The theme of the Dank Depths is tar, which can be found dripping from the ceiling and bubbling in pits. {{dlc|nr}} Rocks have a chance to be replaced with [[spikes]].
+
+The Dank Depths' alternate floors are the {{s|Depths}} and {{s|Necropolis}}. The boss of the Dank Depths II is always {{e|Mom}}.
+
+{{dlc+|r}} After {{a|A Secret Exit}} is unlocked, a door will appear in Dank Depths I's {{r|Boss Room}} upon defeating the boss, leading to the {{S|Mausoleum}} / {{S|Gehenna}}. This door requires two hearts to be opened (except on Lost characters). Unlike {{r|Angel Room}}s and {{r|Devil Room}}s, this door never disappears. Also after this achievement is unlocked, [[a Strange Door]] in the starting room of Dank Depths II will appear. This door leads to {{S|Mausoleum}} / {{S|Gehenna}} II before entering the [[Ascent]].
+{{dlc-}}
+
+{{dlc|a+}} The Dank Depths are unlocked by defeating {{e|It Lives!}} 21 times.
+* Killing {{e|Dogma}} and {{e|The Beast}} also increases this tally, as does [[Mausoleum]]'s version of Mom's Heart.
+
+== [[Monster]]s ==
+{{entity table/header}}
+{{stage entities | Baby, Begotten, Nulls, Boil, Gut, Sack, Blue Boil, Walking Sack, Bony, Black Bony, Death's Head, Dank Death's Head, Brain, MemBrain, Clot, I.Blob, Mega Clotty, Dip, Squirt, Dank Squirt, Dinga, Corn Mine, Embryo, Flaming Fatty, Pale Fatty, Fat Sack, Blubber, Half Sack, Fly, Attack Fly, Ring Fly, Hush Fly, Eternal Fly, Moter, Pooter, Full Fly, Boom Fly, Red Boom Fly, Sucker, Spit, Dukie, Rotty, Blue Gaper, Greed Gaper, Gurgle, Globin, Gazing Globin, Dank Globin, Black Globin's Head, Black Globin's Body, Grub, Gurgling, Buttlicker, Guts, Leech, Hive, Pacer, Hopper, Flaming Hopper, Leaper, Host, Red Host, Mobile Host, Flesh Mobile Host, Keeper, Hanger, Knight, Floating Knight, Psychic Horf, Mask + Heart, Maw, Red Maw, Psychic Maw, Mr. Maw, Mom's Hand, Mom's Dead Hand, Nerve Ending, One Tooth, Fat Bat, Round Worm, Night Crawler, Spider, Big Spider, Ragling, Baby Long Legs, Small Crazy Long Legs, Wall Creep, Blind Creep, Rage Creep, Swarmer, Tumor, Psy Tumor, Vis, Double Vis, Chubber, Lil' Haunt, Wizoob, Poky, Slide, Wall Hugger, Stone Grimace, Vomit Grimace, Constant Stone Shooter, Gaping Maw, Broken Gaping Maw }}
+{{stage entities | dlc = a+ | Blister, Gush, Ministro, Mr. Red Maw, Dank Charger, Tar Boy, The Thing, Stoney, Cross Stone Shooter }}
+{{stage entities | dlc = a+nr | Portal }}
+{{stage entities | dlc = r | Army Fly, Ink, Bulb, Butt Slicker, Slog, Sticky Leaper, Needle, Triple Grimace }}
+|}
+
+''Degraded Bosses:''
+{| class="wikitable mw-collapsible sortable striped"
+! Name
+! ID
+! class="unsortable" | Notes
+{{entity row minimal|Blastocyst}} | Small-form only
+{{entity row minimal|Chub}} |
+{{entity row minimal|Dingle}} |
+{{entity row minimal|The Duke of Flies}} |
+{{entity row minimal|Fistula}} | Small- and medium-form only
+{{entity row minimal|The Haunt}} |
+{{entity row minimal|The Hollow}} |
+{{entity row minimal|Larry Jr.}} |
+{{entity row minimal|Mega Fatty}} |
+{{entity row minimal|Monstro}} |
+{{entity row minimal|Pin}} |
+{{entity row minimal|Polycephalus}} |
+{{entity row minimal|Super Greed}} |
+{{entity row minimal|Teratoma}} | Medium-form only
+|}
+
+== [[Bosses]] ==
+{| style="width: 70%; text-align: center"
+ | [[file:Boss Loki portrait.png|center|link=Loki]]
+ | [[file:Boss Monstro II portrait.png|center|link=Monstro II]]
+ | [[file:Boss Gish portrait.png|center|link=Gish]]
+ | [[file:Boss The Adversary portrait.png|center|link=The Adversary]]
+ |-
+ | [[Loki]]
+ | [[Monstro II]]
+ | [[Gish]] {{unlockable}}
+ | [[The Adversary]] {{Dlc|nr}}
+ |}
+{| style="width: 70%; text-align: center"
+ | [[file:Boss War portrait.png|center|link=War]]
+ | [[file:Boss The Fallen portrait.png|center|link=The Fallen]]
+ | [[file:Boss Headless Horseman portrait.png|center|link=Headless Horseman]]
+ | [[file:Boss Brownie portrait.png|center|link=Brownie]]
+ |-
+ | [[War]] {{unlockable}}
+ | [[The Fallen]] {{room|Devil}}
+ | [[Headless Horseman]] {{unlockable}}
+ | [[Brownie]] {{dlc|a}} {{unlockable}}
+ |}
+{| style="width: 70%; text-align: center"
+ | [[file:Boss Sisters Vis portrait.png|center|link=Sisters Vis]]
+ | [[File:Boss The Cage portrait.png|center|link=The Cage]]
+ | [[File:Boss The Gate portrait.png|center|link=The Gate]]
+ | [[File:Boss Reap Creep portrait.png|center|link=Reap Creep]]
+ |-
+ | [[Sisters Vis]] {{dlc|a+}} {{unlockable}}
+ | [[The Cage]] {{Dlc|r}}
+ | [[The Gate]] {{Dlc|r}}
+ | [[Reap Creep]] {{Dlc|r}} {{unlockable}}
+ |}
+
+=== Double Trouble ===
+{| class="wikitable mw-collapsible mw-collapsed"
+ ! Double Trouble Bosses 
+ |-
+ |
+ {| style="width: 70%; text-align: center"
+  | [[file:Boss The Haunt portrait.png|center|The Haunt]]
+  | [[file:Boss Little Horn portrait.png|center|link=Little Horn]]
+  | [[file:Boss Baby Plum portrait.png|center|link=Baby Plum]]
+  |-
+  | (Double Trouble)<br>[[The Haunt]]
+  | (Double Trouble)<br>[[Little Horn]] {{dlc|a}} {{unlockable}}
+  | (Double Trouble)<br>[[Baby Plum]] {{dlc|r}} {{unlockable}}
+  |}
+ |}
+
+=== Final Boss ===
+[[Mom]] will always appear in the second floor of this chapter or in the last boss room if [[Curse of the Labyrinth]] is active.
+{| style="width: 70%; text-align: center"
+ | [[file:Boss Mom portrait.png|center|link=Mom]]
+ |-
+ | [[Mom]]
+ |}
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | Something Sticky, Leprosy, Dark Boy }}
+
+== Trivia ==
+* Due to the Dank versions of enemies being more common on this type of floor, it may be the hardest of the other Chapter 3 floors.
+* Edmund McMillen confirmed that the Dank Depths is made up of [https://twitter.com/edmundmcmillen/status/1487547451145801731 black mold, ichor, and tar].
+
+== Music ==
+* The [[music]] in the Dank Depths is titled "Pulso Profundum."<ref>[https://ridiculon.bandcamp.com/album/the-binding-of-isaac-afterbirth-ost Binding of Isaac: Afterbirth OST]</ref>
+
+== References ==
+{{reflist}}
+
+{{nav|it lives unlock|environment|fr=Profondeurs Humides}}

@@ -1,0 +1,48 @@
+{{infobox monster
+ | id           = 81
+ | variant      = 1
+ | image        = Boss Krampus {{dlc|nr|Old}} ingame.png
+ | is mini-boss = yes
+ | base hp      = 60
+ | stage hp     = 45
+ | environment  = <u>Mini-Boss</u><br>{{room|Devil}}
+ | pool         = {{i|A Lump of Coal}} (50% chance)<br>or<br>{{i|Head of Krampus}} (50% chance)
+ | unlocked by  = Krampus
+}}
+
+'''Krampus''' is a [[mini-boss]] that can occasionally appear inside of a {{r|Devil Room}}.
+
+== Behavior ==
+Krampus moves randomly around the room in cardinal directions and can perform the following attacks:
+* Stops and fires {{i|Brimstone}} lasers in all 4 cardinal {{dlc|a+}} or diagonal directions.
+** {{dlc|a}} The lasers can sometimes rotate 90 degrees in either direction after being shot.
+*** {{dlc|a+}} Krampus signals rotating {{i|Brimstone}} lasers by growling and quickly dashing towards Isaac before performing this attack.
+* Fires 3 projectiles in a spread followed by 4 projectiles in a spread in succession towards Isaac.
+Krampus deals a whole heart of contact damage.
+
+== Notes ==
+* Encountering Krampus replaces both the statue of {{e|Satan}} as well as any deals in regular {{r|Devil Room}}s.
+* Krampus can drop {{i|A Lump of Coal}} even if Isaac has already encountered/possessed it. However, he can only drop {{i|Head of Krampus}} once, and any other kills will only drop copies of {{i|A Lump of Coal}}.
+* {{dlc|a}} Krampus can spawn in [[Greed Mode]] without needing to be unlocked.
+** Defeating Krampus when encountered here still unlocks {{i|Head of Krampus}} even if Krampus himself has not yet been unlocked.
+* {{i|Chaos}} will not change the items dropped from Krampus.
+* {{dlc|r}} Krampus can never appear in the first {{r|Devil Room}} entered on a run.
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | Head of Krampus }}
+
+== Gallery ==
+<gallery>
+File:Boss Delirium Krampus ingame.png|Krampus as one of {{e|Delirium}}'s forms.
+</gallery>
+
+== Trivia ==
+* His name and appearance are based on [[Wikipedia:Krampus|Krampus]], an alpine folkloric figure. It supposedly acts as a antithesis to [[Wikipedia:Santa Claus|Saint Nicholas]], punishing children who misbehave near Christmas time.
+** This is most likely why {{i|A Lump of Coal}} is in his item pool.
+* Krampus is both visually and behaviorally similar to {{e|The Fallen}}.
+* Krampus is tied with {{e|The Fallen}} as having the highest [[Stage HP]] among all entities in the game.
+* In an [https://www.reddit.com/r/IAmA/comments/8um4er/edmund_mcmillen_here_known_for_the_binding_of/ AMA subreddit thread for Edmund McMillen], a user questioned why Krampus got "worse with every update." Edmund McMillen jokingly responded, "he's the new bloat."; referencing the general hatred some fans have towards {{e|The Bloat}}.
+* {{dlc|r}} Despite Krampus receiving a redesign in ''Repentance'', Delirium's Krampus appearance has yet to be updated.
+* {{dlc+|r}} Red {{r|Mini-Boss Room}}s created by {{i|Red Key}} (etc.) can contain a battle against Krampus.{{dlc-}}
+
+{{nav|mini-boss}}

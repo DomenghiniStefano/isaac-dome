@@ -1,0 +1,125 @@
+'''Hard mode''' changes the gameplay compared to Normal in some ways to make it more difficult.
+When playing in Hard mode, a small red pentagram ({{mode|hard}}) appears on the [[HUD]], below the [[HUD#Pickups|pickups]].
+
+== Differences ==
+* 2-3 more [[rooms]] generate each floor.
+* {{dlc|nr}} Standard rooms with a difficulty of "1" cannot generate.
+** {{dlc|r}} Standard rooms with a difficulty of "1" have a reduced chance of appearing.
+** Most rooms with this difficulty are very easy, making difficult rooms more common.
+* {{dlc|a+}} Rooms with a difficulty of "15" are able to generate on the second floor of chapters 1-4.
+** {{dlc|r}} Additionally, they can always spawn on single floor chapters.
+* {{dlc|nr}} Enemies have a base 20% chance to become [[Champion]]s instead of only 5%.
+* Champion enemies only award [[pickup]]s 33% of the time instead of 100%.
+* {{dlc|nr}} 66% of [[Heart]] drops from completing rooms are removed and replaced with nothing.
+** {{dlc|r}} 34% of [[Heart]] drops from completing rooms are removed and replaced with nothing.
+* {{dlc|nr}} Only champion [[boss]]es will drop hearts; normal bosses will not.
+* Floors are more likely to have [[curse]]s.
+* {{m|Slot Machine}}s are half as likely to pay out.
+* {{m|Fortune Telling Machine}}s have an 85% chance to give a fortune, instead of 65%.
+* {{m|Confessional}}s only have a 25% chance to pay out, instead of 30%.
+* {{m|Blood Donation Machine}}s only give out one coin per use.
+** {{dlc|r}} Also applies to {{i|IV Bag}}.
+* {{m|Beggar}}s require a minimum of 6 donations before paying out.
+** {{dlc+|r}} This doesn't apply to {{m|Bomb Bum}}s or {{m|Key Master}}s.{{dlc-}}
+* {{dlc|r}} The {{r|Shop}} has a 50% chance of becoming a lower level, regardless of having store upgrades unlocked.
+* {{dlc|r}} The drop rate of {{e|Soul Heart}}s from {{e|Blue Fire Place}}s and {{e|Purple Fire Place}}s is decreased to 10%, instead of 25%.
+* {{dlc|r}} The drop rate of {{e|Double Heart}}s is decreased to 2%, instead of 5%.
+* {{dlc|r}} The chance of a {{e|Micro Battery|n}} spawning in place of other types of [[Batteries]] is increased to 83.33%, instead of 66.67%.
+* {{dlc|r}} [[Rocks|Tinted rocks]] have a 50% lower chance of appearing.
+* {{dlc|r}} Certain enemies and bosses have increased shot and movement speed.
+** [[The Harbingers]] have increased charge attack speeds where applicable.
+* {{I|Dogma}} does not provide the effect of {{I|The Wafer}}.
+
+== Unlocks for Hard Mode ==
+{| class="wikitable" style="text-align: center"
+ ! Character
+ ! [[Mom's Heart]]
+ ! {{dlc|a}} All [[completion mark]]s
+ |-
+ | {{c|Isaac}}
+ | {{achievement image | Lost Baby  }}
+ | {{achievement image | Buddy Baby }}
+ |-
+ | {{c|Magdalene}}
+ | {{achievement image | Cute Baby     }}
+ | {{achievement image | Colorful Baby }}
+ |-
+ | {{c|Cain}}
+ | {{achievement image | Glass Baby }}
+ | {{achievement image | Picky Baby }}
+ |-
+ | {{c|Judas}}
+ | {{achievement image | Shadow Baby }}
+ | {{achievement image | Belial Baby }}
+ |-
+ | {{c|???}}
+ | {{achievement image | Dead Baby }}
+ | {{achievement image | Hive Baby }}
+ |-
+ | {{c|Eve}}
+ | {{achievement image | Crow Baby  }}
+ | {{achievement image | Whore Baby }}
+ |-
+ | {{c|Samson}}
+ | {{achievement image | Fighting Baby }}
+ | {{achievement image | Revenge Baby  }}
+ |-
+ | {{c|Azazel}}
+ | {{achievement image | Begotten Baby }}
+ | {{achievement image | Sucky Baby    }}
+ |-
+ | {{c|Lazarus}}
+ | {{achievement image | Wrapped Baby  }} {{achievement image | Bethany }}
+ | {{achievement image | Dripping Baby }}
+ |-
+ | {{c|Eden}}
+ | {{achievement image | Glitch Baby  }}
+ | {{achievement image | Cracked Baby }}
+ |-
+ | {{c|The Lost}}
+ | {{achievement image | -0- Baby }}
+ | {{achievement image | Godhead  }}
+ |-
+ | {{c|Lilith}}
+ | {{achievement image | Goat Head Baby }}
+ | {{achievement image | Dark Baby      }}
+ |-
+ | {{c|Keeper}}
+ | {{achievement image | Super Greed Baby }}
+ | {{achievement image | Sale Baby        }}
+ |-
+ | {{c|Apollyon}}
+ | {{achievement image | Smelter       }}
+ | {{achievement image | Apollyon Baby }}
+ |-
+ | {{c|The Forgotten}}
+ | {{achievement image | Marrow    }}
+ | {{achievement image | Bone Baby }}
+ |-
+ | {{c|Bethany}}
+ | {{achievement image | Wisp Baby }}
+ | {{achievement image | Hope Baby }}
+ |-
+ | {{c|Jacob and Esau}}
+ | {{achievement image | Double Baby }}
+ | {{achievement image | Solomon's Baby }}
+ |-
+ | {{dlc|r}} All non-Tainted characters
+ |
+ | {{achievement image | Mega Mush }}
+ |-
+ | {{dlc|r}} All characters
+ |
+ | {{achievement image | Death Certificate }}
+ |}
+
+== Trivia ==
+* Before update 1.03, the reduced drop-rate affected all [[pickup]]s (not just Red Hearts).
+* Most Hard mode unlocks are [[co-op]] babies, with the notable exceptions of {{i|Godhead}}, {{i|Smelter}}, {{i|Marrow}}, {{i|Mega Mush}}, {{i|Death Certificate}} and the character {{c|Bethany}}.
+* {{i|Godhead}}'s unlock requirements were extended in later DLCs due to the addition of more [[completion mark]]s, but it can still be unlocked in the base game using the same method.
+* {{dlc|r}} The Repentance chances for max level shops and tinted rocks were initially much more sparse. These chances were increased in update [[v1.06.J791]] a few days later.
+* {{dlc+|r}} None of the tainted characters have unlocks tied to getting all completion marks, apart from {{i|Death Certificate}}.{{dlc-}}
+
+{{nav|fr=Mode Difficile}}
+[[Category:Mechanics]]
+[[Category:Modes]]

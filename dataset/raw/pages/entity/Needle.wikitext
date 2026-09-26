@@ -1,0 +1,45 @@
+{{infobox monster
+ | id          = 881
+ | base hp     = 10
+ | stage hp    = 2
+ | environment = {{floor|Basement}}{{floor|Burning Basement}}<br>{{floor|Caves}}{{floor|Flooded Caves}}<br>{{floor|Depths}}{{floor|Dank Depths}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|Chest}}<br>{{room|challenge}}{{room|boss challenge}}
+ | behavior    = Pops out of the ground and lunges towards Isaac, dealing contact damage.
+ | dlc         = r
+}}
+
+'''Needles''' are [[monsters]] that resemble a miniature [[Pin]], and added in ''[[The Binding of Isaac: Repentance]]'' DLC.
+
+They lunge towards Isaac in an attempt to deal contact damage. Before they lunge, they are characterized by a small lump in the ground. Unlike Pin, they do not move underground relative to where they land. Instead, they teleport to a spot near Isaac before lunging. They can leap over pits and obstacles to reach Isaac if he has flight.
+
+Needles will not leave a cloud of smoke upon spawning within a given [[Rooms|room]].
+
+__TOC__
+{{Clear}}
+
+== Variations ==
+=== Pasty ===
+{{infobox monster
+ | name        = Pasty
+ | variant     = 1
+ | base hp     = 10
+ | stage hp    = 2
+ | environment = {{floor|Flooded Caves}}<br>{{floor|Ashpit}}<br>{{room|challenge}}<br>{{room|secret}}{{room|treasure}} (Ashpit only)
+ | behavior    = Pops out of the ground and lunges toward Isaac, dealing contact damage and firing four shots in the ordinal directions.
+ | dlc         = r
+}}
+'''Pasties''' are skeletal variants and behave exactly like the Needles. However, when emerging off the ground, they will shoot 4 blood shots on the ordinal directions. The appearance of Pasty is similar to {{e|The Frail}}'s in its second phase.
+{{clear}}
+
+== Gallery ==
+<gallery>
+File:Needle Concept.png|Concept art for the Needle.
+</gallery>
+
+{{nav|fr=Pinuscule}}
+[[Category:Worm monsters]]
+[[Category:Chapter 1 monsters]]
+[[Category:Chapter 2 monsters]]
+[[Category:Chapter 2.5 monsters]]
+[[Category:Chapter 3 monsters]]
+[[Category:Chapter 4 monsters]]
+[[Category:Chapter 6 monsters]]

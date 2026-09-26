@@ -1,0 +1,46 @@
+{{header tarot cards}}
+{{Infobox card
+ | name        = XIX - The Sun
+ | id          = 20
+ | quote       = May the light heal and enlighten you
+ | description = Restores Isaac to full [[health]], deals 100 damage to all enemies in the room, and reveals the map for the current floor, except for the {{r|Super Secret Room}} and {{r|Ultra Secret Room}}. {{dlc|r}}Removes {{cu|Darkness}} for the current floor.
+| recharge     = {{dlcalt|4|r=12}}
+}}
+
+{{cit|c}}
+
+== Effects ==
+* Deals 100 damage to all enemies in the room.
+* Reveals the map for the current floor, except for the {{r|Super Secret Room}} and {{r|Ultra Secret Room}}.
+* Restores Isaac to full [[health]].
+* {{dlc|r}} Removes {{cu|Darkness}} for the current floor.
+
+== Notes ==
+* {{dlc+|r+}} In [[multiplayer]], '''XIX - The Sun''' heals all players. Similarly, {{c|Jacob and Esau}} both receive healing regardless of who used the card, even in singleplayer.{{dlc-}}
+
+== Strategy ==
+* '''XIX - The Sun''' is a powerful card thanks to its many effects.
+** 100 damage is equivalent to a {{e|Bomb}}'s damage and will kill most enemies.
+** The revealed map allows for optimized charge management.
+** The full heal can help against tough boss fights, and also to make better use of {{m|Blood Donation Machine}}s, {{m|Devil Beggar}}s, {{r|Sacrifice Room}}s, etc.
+
+== Synergies ==
+* {{I|Tarot Cloth|nr}}: Deals 200 damage to all enemies in the room.
+* {{I|Tarot Cloth|r}}: Deals 400 damage.
+** {{I|Tarot Cloth|r}} + {{i|Blank Card}}: Deals 200 damage when used with blank card.
+
+== Interactions ==
+* {{i|Book of Secrets|r}}: The mapping provided by '''XIX - The Sun''' does not count as a mapping effect. The amount of times the Book of Secrets must be used before activating the {{i|X-Ray Vision}} effect remains the same.
+
+== Unlockable [[achievement]]s ==
+{{achievement text | Blinding Baby }}
+
+== Gallery ==
+<gallery>
+File:XIX - The Sun Steam Card.jpg|'''XIX - The Sun''''s Steam trading card
+</gallery>
+
+== Trivia ==
+* [[wikipedia:The Sun (tarot card)|The Sun]] is the nineteenth card of a Major Arcana set.
+
+{{nav|fr=XIX - Le Soleil|card}}

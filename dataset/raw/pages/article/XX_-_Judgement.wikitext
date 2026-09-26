@@ -1,0 +1,48 @@
+{{header tarot cards}}
+{{Infobox card
+ | name        = XX - Judgement
+ | id          = 21
+ | quote       = Judge lest ye be judged
+ | description = Spawns a {{m|Beggar}} near Isaac. The beggar can sometimes be a {{m|Devil Beggar}} and rarely a {{m|Battery Bum}}, {{m|Rotten Beggar}}, {{m|Key Master}}, or {{m|Bomb Bum}} instead.
+| recharge =             {{dlcalt|4|r=6}}
+}}
+
+{{cit|c}}
+
+== Effects ==
+* Spawns a {{m|Beggar}} near Isaac.
+** The beggar can sometimes be a {{m|Devil Beggar}} and rarely a {{m|Key Master}}, {{m|Bomb Bum}}, {{m|Battery Bum}}, or {{m|Rotten Beggar}} instead.
+
+== Notes ==
+* The probabilities for each type of beggar to spawn are as follows:
+** If Rotten Beggar is unlocked:
+*** 61.50% {{m|Beggar}}
+*** 33.33% {{m|Devil Beggar}}
+*** 1.33% {{m|Battery Bum}}
+*** 1.31% {{m|Rotten Beggar}}
+*** 1.28% {{m|Key Master}}
+*** 1.24% {{m|Bomb Bum}}
+** If Rotten Beggar is not unlocked:
+*** 62.75% {{m|Beggar}}
+*** 33.33% {{m|Devil Beggar}}
+*** 1.33% {{m|Battery Bum}}
+*** 1.31% {{m|Key Master}}
+*** 1.28% {{m|Bomb Bum}}
+
+== Strategy ==
+* Even if Isaac is short on pickups to give to the beggars, they can still be blown up for more pickups and increased {{r|Devil Room}} / {{r|Angel Room}} chance.
+** To save on bombs, it is recommended to use '''XX - Judgement''' near a [[tinted rock]] or a {{r|Secret Room}}'s entrance, so that they can both be blown up by the same bomb.
+
+== Synergies ==
+* {{I|Tarot Cloth}}: Spawns two beggars. Each beggar can be any of type.
+** {{I|Tarot Cloth|r}} + {{i|Blank Card}}: Only spawns one beggar when used with blank card.
+
+== Gallery ==
+<gallery>
+File:XX - Judgement Steam Card.jpg| '''XX - Judgement''''s Steam trading card
+</gallery>
+
+== Trivia ==
+[[wikipedia:Judgement (tarot card)|Judgement]] is the twentieth card of a Major Arcana set.
+
+{{nav|fr=XX - Le Jugement|card}}

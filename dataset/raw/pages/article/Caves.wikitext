@@ -1,0 +1,132 @@
+{{infobox stage
+ | chapter         = 2
+ | id              = {{dlcalt|3|a=4}}
+ | id greed        = {{dlcalt|20|r=4}}
+ | level id        = 3, 4
+ | level id greed  = 2
+ | type id         = 0
+ | type id greed   = {{dlcalt|3|r=0}}
+ | degraded bosses = Blastocyst Small, Fistula Small, Larry Jr.
+ | bosses          = Big Horn, C.H.A.D., Chub, Dark One, The Forsaken, The Frail, Gurdy, Gurdy Jr., Mega Fatty, Mega Maw, Peep, Pestilence, Rag Mega, The Stain
+ | double trouble  = Blighted Ovum, The Duke of Flies, Mega Fatty, Monstro, Pin
+}}
+
+'''The Caves''' is the second chapter of Rebirth. The Caves' unlockable variants are the {{s|Catacombs}} and the {{s|Flooded Caves}}. It features more decayed enemies than the first chapter, with the main theme being worms and boils.
+
+{{dlc+|r}} After {{a|A Secret Exit}} is unlocked, a boarded door similar to the one leading to a [[Bedroom]] will appear in this floor's {{r|Boss Room}} upon defeating the boss, leading to the {{S|Mines}} / {{S|Ashpit}}. This door, like a Bedroom, requires two bombs to be opened. Unlike {{r|Angel Room}}s and {{r|Devil Room}}s, this door never disappears.{{dlc-}}
+
+== [[Monster]]s ==
+{{entity table/header}}
+{{stage entities | Boil, Gut, Sack, Walking Gut, Bony, Clotty, Clot, I.Blob, Dip, Squirt, Embryo, Fatty, Pale Fatty, Fat Sack, Blubber, Half Sack, Fly, Attack Fly, Ring Fly, Moter, Boom Fly, Red Boom Fly, Full Fly, Pooter, Super Pooter, Sucker, Gurgle, Skinny, Rotty, Globin, Gazing Globin, Grub, Gurgling, Hopper, Flaming Hopper, Leaper, Psychic Horf, Host, Red Host, Mobile Host, Flesh Mobile Host, Knight, Maggot, Charger, Spitty, Conjoined Spitty, Maw, Red Maw, Psychic Maw, Mr. Maw, Hive, Nest, Mulliboom, One Tooth, Splasher, Round Worm, Night Crawler, Spider, Big Spider, Ticking Spider, Trite, Ragling, Buttlicker, Baby Long Legs, Small Baby Long Legs, Crazy Long Legs, Small Crazy Long Legs, Wall Creep, Blind Creep, Swarmer, Tumor, Stone Grimace, Constant Stone Shooter, Gaping Maw, Slide, Wall Hugger }}
+{{stage entities | Blue Boil, Corn, Dank Squirt, Dark Ball, Corn Mine, Swarm, Dart Fly, Blue Gaper, Greed Gaper, Conjoined Fatty, Dukie, Fat Bat, Roundy, Ulcer }}
+{{stage entities | dlc = a+ | Stoney, Ministro, Mushroom }}
+{{stage entities | dlc = a+nr | Portal }}
+{{stage entities | dlc = r | Army Fly, Bulb, Faceless, Needle }}
+|}
+
+''Degraded Bosses:''
+{| class="wikitable mw-collapsible striped sortable"
+! Name
+! ID
+! class="unsortable" |  Notes
+{{entity row minimal|Blastocyst}} | Small-form only
+{{entity row minimal|Fistula}} | Small- and Medium-form only
+{{entity row minimal|The Hollow}} |
+{{entity row minimal|Larry Jr.}} |
+|}
+
+== [[Boss]]es ==
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:Boss Chub portrait.png|center|link=Chub]]
+| style="text-align: center; border: none" |[[File:Boss C.H.A.D. portrait.png|center|link=C.H.A.D.]]
+| style="text-align: center; border: none" |[[File:Boss Gurdy portrait.png|center|link=Gurdy]]
+| style="text-align: center; border: none" |[[File:Boss Gurdy Jr. portrait.png|link=Gurdy Jr.]]
+|-
+| style="text-align: center; border: none" |[[Chub]]
+| style="text-align: center; border: none" |[[C.H.A.D.]] {{unlockable}}
+| style="text-align: center; border: none" |[[Gurdy]]
+| style="text-align: center; border: none" |[[Gurdy Jr.]]
+|}
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:Boss Mega Fatty portrait.png|center|link=Mega Fatty]]
+| style="text-align: center; border: none" |[[File:Boss Mega Maw portrait.png|center|link=Mega Maw]]
+| style="text-align: center; border: none" |[[File:Boss Peep portrait.png|center|link=Peep]]
+| style="text-align: center; border: none" |[[File:Boss Dark One portrait.png|center|link=Dark One]]
+|-
+| style="text-align: center; border: none" |[[Mega Fatty]]
+| style="text-align: center; border: none" |[[Mega Maw]]
+| style="text-align: center; border: none" |[[Peep]]
+| style="text-align: center; border: none" |[[Dark One]] {{Dlc|nr}}
+|}
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:Boss Pestilence portrait.png|center|link=Pestilence]]
+| style="text-align: center; border: none" |[[File:Boss The Fallen portrait.png|center|link=The Fallen]]
+| style="text-align: center; border: none" |[[File:Boss Headless Horseman portrait.png|center|link=Headless Horseman]]
+| style="text-align: center; border: none" |[[File:Boss The Stain portrait.png|center|link=The Stain]]
+|-
+| style="text-align: center; border: none" |[[Pestilence]] {{unlockable}}
+| style="text-align: center; border: none" |[[The Fallen]] {{room|Devil}}
+| style="text-align: center; border: none" |[[Headless Horseman]] {{unlockable}}
+| style="text-align: center; border: none" |[[The Stain]] {{dlc|a}} {{unlockable}}
+|}
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:Boss The Frail portrait.png|center|link=The Frail]]
+| style="text-align: center; border: none" |[[File:Boss The Forsaken portrait.png|center|link=The Forsaken]]
+| style="text-align: center; border: none" |[[File:Boss Big Horn portrait.png|center|link=Big Horn]]
+| style="text-align: center; border: none" |[[File:Boss Rag Mega portrait.png|center|link=Rag Mega]]
+|-
+| style="text-align: center; border: none" |[[The Frail]] {{dlc|anr}} {{unlockable}}
+| style="text-align: center; border: none" |[[The Forsaken]] {{dlc|anr}} {{unlockable}}
+| style="text-align: center; border: none" |[[Big Horn]] {{dlc|a+}} {{unlockable}}
+| style="text-align: center; border: none" |[[Rag Mega]] {{dlc|a+}} {{unlockable}}
+|}
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:Boss Fistula portrait.png|center|link=Fistula]]
+| style="text-align: center; border: none" |[[File:Boss Bumbino portrait.png|center|link=Bumbino]]
+|-
+| style="text-align: center; border: none" |[[Fistula]] {{Dlc|r}}
+| style="text-align: center; border: none" |[[Bumbino]] {{Dlc|r}} {{unlockable}}
+|}
+
+=== Double Trouble ===
+{| class="mw-collapsible mw-collapsed wikitable"
+! Double Trouble Bosses
+|-
+|
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:Boss Dingle portrait.png|center|link=Dingle]]
+| style="text-align: center; border: none" |[[File:Boss The Duke of Flies portrait.png|center|link=The Duke of Flies]]
+| style="text-align: center; border: none" |[[File:Boss Gemini portrait.png|link=Gemini]]
+| style="text-align: center; border: none" |[[File:Boss Larry Jr. portrait.png|center|link=Larry Jr.]]
+|-
+| style="text-align: center; border: none" |(Double Trouble)<br>[[Dingle]]
+| style="text-align: center; border: none" |(Double Trouble)<br>[[The Duke of Flies]]
+| style="text-align: center; border: none" |(Double Trouble)<br>[[Gemini]]
+| style="text-align: center; border: none" |(Double Trouble)<br>[[Larry Jr.]]
+|}
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:Boss Monstro portrait.png|link=Monstro]]
+| style="text-align: center; border: none" |[[File:Boss Pin portrait.png|center|link=Pin]]
+| style="text-align: center; border: none" |[[File:Boss Polycephalus portrait.png|center|link=Polycephalus]]
+| style="text-align: center; border: none" |[[file:Boss Rag Man portrait.png|center|link=Rag Man]]
+|-
+| style="text-align: center; border: none" |(Double Trouble)<br>[[Monstro]]
+| style="text-align: center; border: none" |(Double Trouble)<br>[[Pin]]
+| style="text-align: center; border: none" |(Double Trouble)<br>[[Polycephalus]]
+| style="text-align: center; border: none" |(Double Trouble)<br>[[Rag Man]] {{dlc|a}} {{unlockable}}
+|}
+|-
+|}
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | Lil' Chubby, Something Cute, The Catacombs, Telekinesis, Spelunker Boy }}
+
+== Music ==
+* The [[music]] in the caves is titled ''Sodden Hollow''.<ref>[https://ridiculon.bandcamp.com/album/the-binding-of-isaac-rebirth-ost Binding of Isaac: Rebirth OST]</ref>
+** The word "sodden" in the name is used to describe the damp, wet appearance of the caves.
+
+== References ==
+{{reflist}}
+
+{{nav|environment|fr=Grottes}}
+[[ru:Пещеры]]

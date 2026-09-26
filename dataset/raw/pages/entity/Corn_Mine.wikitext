@@ -1,0 +1,16 @@
+{{infobox monster
+ | dlc         = a
+ | id          = 295
+ | base hp     = 8
+ | environment = {{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>Spawned by [[Dangle]] and [[Brownie]]
+ | behavior    = Goes off when destroyed or after some time, then releases a cloud of poisonous gas and fires corny shots in eight directions.
+}}
+
+'''Corn Mines''' are stationary dirt like enemies that will go off either when their health is depleted, after some time passes that they begin the detonation process by flashing, or if Isaac gets close to them that they'll instantly begin to detonate. This will release a cloud of poisonous gas similar to one released from [[Mushroom (Obstacle)|Mushrooms]] and fire eight corny shots in all directions.
+
+== Gallery ==
+<gallery>
+File:Corn mine brownie black.png|{{dlc|a+}} A Corn Mine spawned by Black Champion Brownie.
+</gallery>
+
+{{nav|fr=Mine Maïs}}

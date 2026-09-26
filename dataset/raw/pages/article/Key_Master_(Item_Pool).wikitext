@@ -1,0 +1,23 @@
+{{header item pools}}
+{{item pool}}
+[[file:Key Master.png|75px|link=]]
+
+[[Key Master]]s will pay out with either one of these items or the {{t|Paper Clip}} after being given enough keys.
+
+== Activated Collectibles ==
+{{item pool/header}}
+{{pool items | Dad's Key }}
+{{pool items | dlc = r | Mr. ME!, Red Key }}
+{{pool items | dlc = r+ | Sharp Key }}
+|}
+
+== Passive Collectibles ==
+{{item pool/header}}
+{{pool items | BBF, Distant Admiration, Forever alone, Halo of Flies, Mom's Key, Smart Fly }}
+{{pool items | dlc = a | ???'s Only Friend, Friend Zone, Key Bum, Lost Fly }}
+{{pool items | dlc = r | Big Fan, Bot Fly, Fruity Plum, Latch Key, Obsessed Fan, Papa Fly, Psy Fly, The Swarm, YO LISTEN! }}
+{{pool items | dlc = r+ | Angry Fly, Best Bud }}
+{{pool items | dlc = r+ | weight = 0.2 | Skeleton Key }}
+|}
+
+{{nav|fr=Mendiant Serrurier (Banque d'Objets)}}

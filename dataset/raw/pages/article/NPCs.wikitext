@@ -1,0 +1,26 @@
+'''NPCs''' are characters in the [[Binding of Isaac: Rebirth Wiki|The Binding of Isaac: Rebirth]] which are not directly controlled by [[Isaac]] or his [[Babies|co-op partner]]. Major NPCs include characters within Isaac's thoughts, antagonists, friendly characters, characters who provide a service, and deceased, inanimate characters in the environment.
+
+== Characters Within Isaac's Thoughts ==
+The story of the game provides two insights into Isaac's mind. Most evidently, he has recurring thoughts or memories of persons in life who cause him distress. The player is shown vignettes of moments where Isaac dwells on acts of ridicule or neglect from his peers. These characters include various children and Isaac's own [[Mom|mother]].
+Additionally, the game provides moments in the introduction and [[endings]] which indicate that not all things are as they seem. The player can be led to suspect that all or part of the game takes place within Isaac's head.
+
+== Antagonists ==
+The premier antagonists presented by the series are [[Wikipedia:God in Christianity|God]] and Isaac's [[Mom|mother]]. Through a trapdoor under his bedroom, Isaac will find danger at every turn. Other dangerous parties include bugs, undead, spirits, deformed children, and major foes (e.g. incarnations of [[Bosses#Mini-Bosses|The Seven Deadly Sins]], [[The Harbingers|The Four Horsemen of the Apocalypse]], and [[Isaac (Boss)|Isaac himself]]).
+: ''For a full list of common creatures encountered through the trapdoor, see [[Monsters]].''
+: ''For a list of major foes, see [[Bosses]].''
+
+== Familiars ==
+Familiars are non-playable characters and creatures in the game that serve to follow Isaac from [[Rooms|room to room]]; at times, assisting him to survive or dispatch enemies by various means.
+: ''For a full list of Isaac's friends, see [[Familiar]].''
+
+== Services ==
+Throughout Isaac's [[Chapters|basement and beyond]], some characters will interact with Isaac by way of exchanging resources. Isaac can choose to give them some portion of his [[Pickups#Hearts|health]], [[Pickups#Coins|money]], or [[Pickups#Keys|keys]]. Afterward, he may receive something in return.
+: ''For the usual list of services, see [[Beggar]].''
+: ''For more difficult choices, see [[Devil Room]].''
+: ''For something for nothing, see [[Angel Room]].''
+
+== Deceased Residents ==
+In [[shop]]s, [[arcade]]s, and [[Secret Room|hidden areas]], there is a possibility of encountering deceased, former residents who have left behind their remains. The corpse can be destroyed with an [[Pickups#Bombs|explosion]] for a chance to find [[pickups]], [[trinkets]], or [[spider]]s. One other area exists where Isaac will find a [[I AM ERROR|unique individual]].
+
+{{nav|fr=PNJ}}
+[[Category:Characters]]

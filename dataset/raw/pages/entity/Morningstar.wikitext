@@ -1,0 +1,26 @@
+{{infobox monster
+ | dlc         = r
+ | id          = 863
+ | variant     = 0
+ | base hp     = 60
+ | environment = {{floor|Gehenna}}
+ | behavior    = Floats toward Isaac to deal contact damage while Isaac is moving, gaining speed the longer Isaac continues moving. Stops moving when Isaac stops moving.
+}}
+
+'''Morningstars''' are enemies that float towards Isaac only when Isaac is moving. They get faster as they move, eventually reaching a point where Isaac cannot outrun them unless he has a high speed stat. When Isaac stops moving, their speed resets and they stop in place. They deal a full heart of contact damage.
+
+They have 2 different appearances though this is purely visual as they behave the same.
+{{clear}}
+
+== Gallery ==
+<gallery>
+File:Cut Morningstar.png|Alternate appearance of a Morningstar.
+</gallery>
+
+== Trivia ==
+* The name Morningstar comes from "Morning Star" which is one of the meanings of the name "Lucifer"- a common name for Satan.
+* Morningstars resemble the end of a [[wikipedia:Morning star (weapon)|morning star]], a medieval club-like weapon.
+* Morningstars closely resemble Ferals, enemies from Edmund's game ''The End is Nigh''. Both are sharp-toothed spiked balls that float in the air and pursue the player, attached to the ground by a chain.
+* "Morning Star" is the name of the track that plays while in [[Gehenna]].
+
+{{Nav|fr=Morgenstern}}

@@ -1,0 +1,36 @@
+{{header tarot cards}}
+{{Infobox card
+| name =                 IV - The Emperor
+| id =  	             5
+| recharge =             4
+| quote =                Challenge me!
+| description =          Teleports Isaac into the {{r|Boss Room}}.
+}}
+
+{{cit|c}}
+
+== Effects ==
+* Teleports Isaac into the {{r|Boss Room}}.
+
+== Notes ==
+* Using '''IV - The Emperor''' on a floor that doesn't have a {{r|Boss Room}} will teleport Isaac to a random room.
+* Using '''IV - The Emperor''' in {{s|The Void}} will always teleport you to a random unexplored boss room in priority.
+* On a {{curse|labyrinth}} floor, '''IV - The Emperor''' will usually teleport Isaac to the second boss room; however, it is possible to be teleported to the first one instead.
+* When {{curse|Maze}} is active, using this card can teleport Isaac to a random room instead.
+* '''IV - The Emperor''' cannot appear in [[greed mode]].
+
+== Strategy ==
+* Once the boss is defeated, or when one is ready to face the boss, '''IV - The Emperor''' can be used to escape dangerous rooms like {{r|Curse Room}}s and {{r|Challenge Room}}s.
+
+== Synergies ==
+* {{I|Tarot Cloth|r}}: If the boss has not yet been defeated, grants a {{e|Soul Heart}} on top of teleporting Isaac.
+** {{I|Tarot Cloth|r}} + {{i|Blank Card}} + {{i|Car Battery|n}} : Grants 2 soul hearts.
+
+== Interactions ==
+* {{i|Sol}}: Using this card to defeat the boss earlier can allow more utilization of Sol’s stat boost, curse removal, and mapping, for the remainder of the [[floor]].
+* {{I|Tarot Cloth|nr}}: No effect.
+
+== Trivia ==
+* [[wikipedia:The Emperor (tarot card)|The Emperor]] is the fourth card of a Major Arcana set.
+
+{{nav|fr=IV - L'Empereur|card}}

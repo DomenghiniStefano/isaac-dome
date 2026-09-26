@@ -1,0 +1,36 @@
+{{header soul stones}}
+{{Infobox rune
+ | dlc         = r
+ | name        = Soul of Jacob and Esau
+ | type        = soul stone
+ | id          = 97
+ | quote       = Bound by blood
+ | description = Spawns {{c|Esau}} as a temporary secondary character, controlled at the same time as Isaac. He dies with no consequences if his health runs out, and disappears when Isaac leaves the room. Esau has random items equal to the number of items Isaac has, each based on the pools of the items Isaac's were obtained from.
+ | unlocked by = Soul of Jacob and Esau
+ | recharge    = 4
+}}
+
+{{cit|ur|r}}
+
+== Effects ==
+* Spawns {{c|Esau}} as a temporary secondary character, controlled at the same time as Isaac. He dies with no consequences if his health runs out, and disappears when Isaac leaves the room.
+* Esau is given random items equal to the number of items Isaac has, each based on the pools of the items Isaac's were obtained from.
+
+== Notes ==
+* The spawned Esau can interact with {{Machine|Blood Donation Machine}}s, {{Machine|Devil Beggar}}s, {{Machine|Hell Game}}s, and {{r|Sacrifice Room}} allowing {{C|The Lost}} and {{C|Tainted Lost}} to safely use them without dying, or a form of invulnerability.
+* He cannot leave a room, so he can't be used to negate damage from exiting a {{r|Curse Room}}.
+* He also cannot pick up items, nor can he pick up things such as pills/cards/soul stones.
+** He can pick up all other pickups and can replenish his health by picking up hearts.
+* When the '''Soul of Jacob and Esau''' is used, some items given to Esau will also apply to Isaac for the floor. This happens with {{i|Black Candle}} and mapping items such as {{i|The Compass}}, for example.
+** If Esau is given {{i|PHD}} / {{i|False PHD|n}}, pills will remain identified for the rest of the run, even if negative pills aren't converted into positive ones.
+** If Esau is given {{i|Eden's Blessing|n}}, an extra item will be given to Isaac at the start of the next run.
+
+== In-game Footage ==
+{{#ev:youtube|QllR1KrizD0}}
+
+== Bugs ==
+{{bug|If multiple '''Souls of Jacob and Esau''' are used in the same room, only one Esau will be removed after leaving the room. For every room that is left, one copy of Esau will disappear.}}
+{{bug|dlc=nr+|Items granted to Esau will remove those items from their respective pools as if they were obtained. This also prevents future uses of the soul stone from giving that item to Esau.}}
+
+{{nav|fr=Âme de Jacob et Ésaü}}
+[[Category:Runes]]

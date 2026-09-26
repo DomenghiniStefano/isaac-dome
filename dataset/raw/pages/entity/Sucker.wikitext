@@ -1,0 +1,154 @@
+{{infobox monster
+ | name        = Sucker
+ | id          = 61
+ | base hp     = 10
+ | environment = {{floor|Basement}}{{floor|Cellar}}{{floor|Burning Basement}}<br>{{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Mausoleum}}{{floor|Gehenna}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|Sheol}}<br>{{room|boss}}{{room|challenge}}
+ | behavior    = Flies slowly towards Isaac, exploding into 4 shots in the cardinal directions upon death.
+}}
+'''Suckers''' fly slowly towards Isaac and, upon death, fire 4 shots in the cardinal directions.
+
+=== Notes ===
+* {{dlc|nr}} Suckers are unaffected by {{i|Skatole}}.
+* {{dlc|r}} Suckers and all of its variants will not deal contact damage while Isaac holds {{i|Skatole}}, but can still deal damage by other means (usually by a bullet fired after death).
+__TOC__
+{{clear}}
+
+== Variants ==
+=== Spit ===
+{{infobox monster
+ | name           = Spit
+ | variant        = 1
+ | base hp        = 10
+ | environment    = {{floor|Cellar}}{{floor|Burning Basement}}<br>{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|Cathedral}}<br>{{room|boss}}
+ | replace        = Sucker
+ | replace chance = 5.71%
+ | behavior       = Flies slowly towards Isaac, firing an {{i|Ipecac}} shot towards Isaac upon death.
+}}
+
+'''Spits''' fly slowly towards Isaac and, upon death, fire an explosive {{i|Ipecac}} shot toward him.
+{{clear}}
+
+=== Ink ===
+{{infobox monster
+ | dlc         = r
+ | name        = Ink
+ | variant     = 3
+ | base hp     = 10
+ | environment = {{floor|Mines}}{{floor|Ashpit}}<br>{{floor|Dank Depths}}<br>{{room|challenge}}
+ | behavior    = Flies slowly towards Isaac. Fires four shots in the ordinal directions and leaves a puddle of slowing [[Black Creep]] upon death.
+}}
+
+'''Inks''' fly slowly towards Isaac and, upon death, fire four projectiles in the ordinal directions and spawn a puddle of [[Black Creep]].
+{{clear}}
+
+=== Soul Sucker ===
+{{infobox monster
+ | dlc         = a+
+ | name        = Soul Sucker
+ | variant     = 2
+ | base hp     = 18
+ | environment = {{floor|Mausoleum}}{{floor|Gehenna}}<br>{{floor|Sheol}}<br>{{floor|Dark Room}}<br>{{room|challenge}}{{room|devil}}
+ | behavior    = Flies slowly towards Isaac. Spawns a vortex that fires four {{i|Brimstone}} beams in the cardinal directions upon death.
+}}
+'''Soul Suckers'''  float towards Isaac and, upon death, spawn a swirling red vortex, which then fires four {{i|Brimstone}} beams in the cardinal directions after a short delay.
+
+==== Notes ====
+* The Brimstone beams fired from the Soul Suckers can damage other enemies, including other Soul Suckers.
+* The appearance of the vortex resembles the same vortex that appears when firing {{i|Brimstone}} with the effects of {{i|Anti-Gravity}}.
+* {{dlc|r}} They can spawn in unique {{r|Devil Room}} layouts if Isaac is holding the {{t|Number Magnet|n}}.
+{{clear}}
+
+=== Mama Fly ===
+{{infobox monster
+ | dlc         = r
+ | name        = Mama Fly
+ | variant     = 4
+ | base hp     = 44
+ | environment = {{floor|Corpse}}<br>{{room|challenge}}
+ | behavior    = Flies more-or-less away from Isaac, occasionally plopping on the ground to plant a {{e|Pustule}}. Upon death, they spawn a group of {{e|Small Maggot}}s.
+}}
+'''Mama Flies''' float away from Isaac and occasionally stop to plant down a {{e|Pustule}}. They spawn {{e|Small Maggot}}s upon death.
+
+==== Notes ====
+* After planting a Pustule, they will move directly away from Isaac, and will continue in that direction until either planting another Pustule or hitting a wall.
+{{clear}}
+
+=== Bulb ===
+{{infobox monster
+ | dlc         = r
+ | name        = Bulb
+ | variant     = 5
+ | base hp     = 10
+ | stage hp    = 2
+ | environment = {{floor|Basement}}{{floor|Cellar}}{{floor|Burning Basement}}<br>{{floor|Downpour}}{{floor|Dross}}<br>{{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Mines}}{{floor|Ashpit}}<br>{{floor|Depths}}{{floor|Dank Depths}}<br>{{floor|Cathedral}}<br>{{room|treasure}}{{room|secret}}{{room|curse}}{{room|black market}}{{room|i am error}}
+ | behavior    = Flies in erratic, angled movements toward Isaac if his [[Items|active item]] has charges; on contact, they drain up to 2 charges, but never deal contact damage. If he has no active item, or no charges, they wander around the room aimlessly.
+ | unlocked by = Everything Is Terrible!!!
+}}
+
+'''Bulbs''' fly in erratic, right-angled motions. If Isaac has an active item with any amount of charges (this includes timed recharge items), they fly towards him and drain up to 2 charges upon contact, but do not deal damage. If Isaac does not have an active item, or if his item has no charges, they simply fly around randomly and are completely harmless.
+
+==== Notes ====
+* If Bulbs aren't unlocked yet, each will be replaced with a {{e|Fly}}.
+* {{c|Bethany}}'s soul charges and {{c|Tainted Bethany}}'s blood charges cannot be drained by them.
+* Bulbs replaced {{e|Greed Gaper}}s in any {{r|Treasure Room}} layouts that previously contained them in [[The Binding of Isaac: Afterbirth †|Afterbirth+]].
+{{clear}}
+
+=== Bloodfly ===
+{{infobox monster
+ | dlc         = r
+ | name        = Bloodfly
+ | variant     = 6
+ | base hp     = 6
+ | stage hp    = 1
+ | environment = {{floor|Corpse}}<br>Spawned exclusively by {{e|Pustule}}s.
+ | behavior    = Spawned only after a {{e|Pustule}} bursts. Flies in erratic, angled movements toward Isaac. Fires four blood shots in the cardinal directions upon death.
+}}
+
+'''Bloodflies''' are exclusively encountered in {{s|Corpse}} after a {{e|Pustule}} bursts. They behave very similarly to Bulbs in movement, but unlike Bulbs, don't drain charges and deal contact damage. After dying, they shoot 4 shots in the cardinal directions.
+{{clear}}
+
+=== Tainted Sucker ===
+{{infobox monster
+ | dlc         = r
+ | name        = Tainted Sucker
+ | variant     = 7
+ | base hp     = 14
+ | stage hp    = 1
+ | environment = {{floor|Basement}}{{floor|Caves}}<br>Found on the [[Ascent]] to {{s|Home}}.
+ | behavior    = Flies slowly towards Isaac. Upon death, fires a radial burst of six blood shots that each also fires a radial burst of six blood shots.
+}}
+
+'''Tainted Suckers''' float towards Isaac and, upon death, shoot 6 projectiles in all directions that bounce off of walls and obstacles, splitting into 6 smaller projectiles each.
+
+They are exclusive to the [[Ascent]] to {{s|Home}}.
+
+==== Notes ====
+* Strangely enough, they are the only Sucker variant aside from Bulbs that do not deal contact damage.
+{{clear}}{{dlc clear}}
+
+== Gallery ==
+<gallery>
+File:Soulsucker concept.png|Concept art for the Soul Sucker.
+File:Bulb Concept.png|Concept art for the Bulb.
+File:Bulb_Lit.png|A Bulb after draining an active item's charges.
+File:Bloodfly_Aggro.png|An aggressive Bloodfly.
+</gallery>
+
+== Trivia ==
+* Suckers seem to be based on mosquitoes, midge-like flies that suck the blood of other animals, as they seem to share a small proboscis and blood sac.
+* Bulbs seem to be based on fireflies, with the positioning of their bulb mirroring the bioluminescent organ of the firefly.
+* {{dlc|r}} The Sucker is tied with the {{e|Boom Fly}} for being the monster with the most true variants ('true variants' being monsters with ID x.1, x.2, etc.), both with 7.
+* {{e|Soul Sucker}}s were added in [[Booster Pack #4]], after the initial release of the DLC ''Afterbirth †''.
+* {{dlc|r}}The [[Anti:Ink|Ink]] and [[Anti:Mama Fly|Mama Fly]] first appeared in the ''Antibirth'' mod.
+** The Mama Fly's AI has been changed from the mod where it would fly aimlessly rather than flying away from Isaac after planting down a Pustule.
+* {{e|Bulb}}s have a couple odd behaviors when converted into a friendly enemy by the [[Beelzebub]] transformation:
+** If the room has no hostile enemies, they will still move erratically in Isaac's general direction regardless if he has charges or not (they will not steal charges while friendly).
+** If the room has hostile enemies, they will erratically fly toward enemies; they deal no contact damage to enemies either, so this is useless and only results in their deaths.
+* {{e|Tainted Sucker}}s have the lowest health out of any tainted variant.
+* {{dlc|r}} The sound that plays when a Bulb dies is the same as when an active item charge was filled in the original Flash-based Binding of Isaac.
+
+== Bugs ==
+{{bug|dlc=r|Mama Flies are not affected by the [[Beelzebub]] transformation.}}
+{{bug|dlc=r|Bulbs ignore {{c|Tainted Forgotten}} even when they have an active item.}}
+
+{{nav|booster pack|fr=Ventouse}}

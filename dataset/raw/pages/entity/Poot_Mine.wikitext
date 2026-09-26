@@ -1,0 +1,21 @@
+{{infobox monster
+ | dlc         = r
+ | name        = Poot Mine
+ | id          = 875
+ | base hp     = 12
+ | stage hp    = 2
+ | environment = {{floor|Dross}}<br>{{room|challenge}}
+ | behavior    = Creates a gas cloud and propels itself away from Isaac when it gets hit non-consecutively. Explodes on death, detonating all the gas clouds it created.
+}}
+'''Poot Mines''' are an enemy added in ''[[The Binding of Isaac: Repentance]]''. They are encountered only in {{s|Dross}}.
+
+Poot Mines float in place, producing lingering gas clouds and propelling themselves away from Isaac when they take damage non-consecutively. On death, they explode, causing all of the gas clouds they created to explode in a chain reaction.
+
+{{clear}}
+
+== Gallery ==
+<gallery>
+File:Dross enemy concept art.png|Concept art for the Poot Mine and the [[Dump]].
+</gallery>
+
+{{nav|fr=Pétomine}}

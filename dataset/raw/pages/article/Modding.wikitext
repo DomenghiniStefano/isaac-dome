@@ -1,0 +1,10 @@
+{{header modding}}
+
+'''Modding''' is the act of modifying graphics and/or gameplay elements of the base game (in other words, creating mods).
+
+Modding for the Afterbirth+/Repentance and non-Afterbirth+ versions are very different, so they have been separated into two pages which are linked to above.
+
+For more information regarding general modding and modding tools, see the two links above or the modding wikitable below.
+
+{{nav|modding}}
+[[Category:Modding]]

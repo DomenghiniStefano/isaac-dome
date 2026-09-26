@@ -1,0 +1,24 @@
+{{disambiguation}}
+
+'''Penny''' may refer to:
+
+== Pickups ==
+* A 1 cent [[Coin]], used as currency.
+
+== Items ==
+* {{i|Crooked Penny}}: Can either duplicate all items and pickups in a room, or make all of them disappear and spawn 1 coin.
+* {{i|Sack of Pennies}}: A bag familiar which follows Isaac and drops a [[Coin]] every two (first time one) rooms.
+
+== Trinkets ==
+* {{t|Blessed Penny}}: Has a chance to spawn a [[half Soul Heart]] when a coin is picked up.
+* {{t|Bloody Penny}}: Grants 50% chance to drop a [[Pickups#Red Hearts|half Red Heart]] when a coin is picked up.
+* {{t|Burnt Penny}}: Grants 50% chance to drop a [[Bomb]] when a coin is picked up.
+* {{t|Butt Penny}}: Causes Isaac to fart upon picking up a coin, knocking back nearby enemies.
+* {{t|Charged Penny}}: Has a chance to charge an active item when a coin is picked up.
+* {{t|Counterfeit Penny}}: Upon picking up a coin, has a chance of increasing its value by one.
+* {{t|Cursed Penny}}: Teleports Isaac to a random room when a coin is picked up.
+* {{t|Flat Penny}}: Grants a 50% chance of dropping a [[Key]] when a coin is picked up.
+* {{t|Rotten Penny}}: Spawns a [[Blue Fly]] when a coin is picked up.
+* {{t|Swallowed Penny}}: Spawns a [[Coins|penny or nickel]] upon taking damage.
+
+{{nav}}

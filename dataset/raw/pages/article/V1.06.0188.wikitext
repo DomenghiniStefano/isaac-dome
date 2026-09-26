@@ -1,0 +1,20 @@
+{{infobox version
+ | dlc  = a+
+ | date = 2017-01-13
+}}
+
+== Documented changes ==
+These changes are only documented via [https://twitter.com/tyronerodriguez/status/819788050960027650 Tyrone's personal twitter].
+
+=== Fixes ===
+* Fixed crash on custom challenge menu.
+* Fixed crash when stepping on certain pressure plates.
+* Fixed issue where trophy sometimes wouldn't work at end of [[daily challenge]]s.
+* Fixed issues causing certain enemy types to not be added to the [[bestiary]].
+
+== Undocumented changes ==
+=== Changes ===
+* [[Stoney]]s now get tired after chasing you for a while.
+* Made [[Krampus]]' second attack 8 frames longer.
+
+{{nav|version}}

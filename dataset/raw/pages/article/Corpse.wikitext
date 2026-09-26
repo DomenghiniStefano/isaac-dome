@@ -1,0 +1,92 @@
+{{infobox stage
+ | dlc         = r
+ | chapter     = 4.5
+ | id          = 33
+ | level id    = 7, 8
+ | type id     = 4
+ | bosses      = The Scourge, Rotgut, Chimera, Mother
+ | unlocked by = A Secret Exit
+}}
+
+The '''Corpse''' is a new floor added in [[The Binding of Isaac: Repentance]], which acts as the {{s|Womb}}'s alternative Chapter. It features a desolate and dreary atmosphere with enemies that carry the theme of death and advanced rot. The Corpse is one of five final levels in The Binding of Isaac, alongside the {{s|Chest}}, the {{s|Dark Room}}, {{dlc|a+}} {{s|The Void}}, and {{dlc|r}} {{s|Home}}. Like in the Womb and its alternate floors, floors in Corpse do not naturally generate item rooms or shops, and all damage taken will do a full heart of damage to Isaac's HP (unless he has {{i|The Wafer}}), regardless of the source.
+
+To access The Corpse, the player must first open the flesh door at the end of the {{s|Mausoleum}}/{{s|Gehenna}} II after defeating the Mausoleum version of [[Mom#Behaviour in Mausoleum/Gehenna|Mom]] by doing one of the following:
+* Collect {{I|Knife Piece 1}} and {{I|Knife Piece 2}}, which are obtained via puzzles inside {{s|Downpour}} and the {{s|Mines}}, to build the knife familiar, and stab the door with it.
+* Sacrifice one key and open the door by using {{I|Sharp Key}}.
+* {{I|Cracked Orb}} can also open the door while simultaneously letting you keep the knife familiar.
+* Using a {{p|Soul of Cain}}.
+* If Isaac exits the {{r|Boss Rush}} room in Gehenna after 25 minutes have passed, there is a chance that the flesh door will change positions to the wall where the boss rush door was, causing Isaac to "come out" of the flesh door and leaving it open, allowing entry without the knife.
+
+On the other side of the flesh door, the player will fight the Mausoleum version of [[Mom's Heart#Behaviour in Mausoleum/Gehenna|Mom's Heart]], after which the entrance to the Womb will turn into the Corpse entrance, which will take the player into the Corpse floor.
+
+The boss of Corpse II is always {{e|Mother}}.
+
+== [[Monster]]s ==
+{{entity table/header}}
+{{stage entities | Wrinkly Baby, Unborn, Pustule, Poison Mind, Gutted Fatty, Army Fly, Sick Boom Fly, Mama Fly, Rotten Gaper, Twitchy, Level 2 Gaper, Level 2 Horf, Level 2 Gusher, Gasbag, Globin, Gazing Globin, Cohort, Cyst, Dead Meat, Eggy, Leech, Adult Leech, Maggot, Small Maggot, Charger, Level 2 Charger, Floast, Evis, Stone Grimace, Triple Grimace, Wall Hugger, Spikeball }}
+|}
+
+''Degraded Bosses:''
+{| class="wikitable mw-collapsible striped sortable"
+! Name
+! ID
+! class="unsortable" | Notes
+{{entity row minimal|The Bloat}} |
+{{entity row minimal|The Cage}} |
+{{entity row minimal|Carrion Queen}} |
+{{entity row minimal|Chub}} |
+{{entity row minimal|Fistula}} |
+{{entity row minimal|The Frail}} |
+{{entity row minimal|The Gate}} |
+{{entity row minimal|Gluttony}} |
+{{entity row minimal|The Husk}} |
+{{entity row minimal|Monstro II}} |
+{{entity row minimal|Pestilence}} |
+{{entity row minimal|The Pile}} |
+{{entity row minimal|Polycephalus}} |
+{{entity row minimal|Sloth}} |
+{{entity row minimal|The Stain}} |
+{{entity row minimal|Super Gluttony}} |
+{{entity row minimal|Super Sloth}} |
+{{entity row minimal|Teratoma}} | All forms.
+|}
+
+== [[Boss]]es ==
+{| style="width: 70%; text-align: center"
+ | [[file:Boss The Scourge portrait.png|center|link=The Scourge]]
+ | [[file:Boss Rotgut portrait.png|center|link=Rotgut]]
+ | [[file:Boss Chimera portrait.png|center|link=Chimera]]
+ | [[file:Boss Mother portrait.png|center|link=Mother]]
+ |-
+ | [[The Scourge]] {{Dlc|r}}
+ | [[Rotgut]] {{Dlc|r}}
+ | [[Chimera]] {{Dlc|r}}
+ | [[Mother]] {{Dlc|r}}
+ |}
+
+== Unlockable [[achievements]] ==
+{{achievement text | Rotten Heart }}
+
+== Notes ==
+* {{I|Mama Mega!|dlc=x}} can not be used to open the Flesh Door.
+* {{i|We Need To Go Deeper!}} and {{p|Ehwaz}} cannot generate trapdoors in Corpse II.<br>An {{r|I AM ERROR}} room can only be visited in Corpse II via clipping out of a {{r|Crawl Space}}; such an I AM ERROR room will contain a passageway which leads back to the starting room of the floor.
+* If the game is exited after defeating {{e|Mother}} and rejoined, there will be a door in the room allowing the player to leave the room. This can be used to go to a {{r|Sacrifice Room}} and then warp to the {{s|Dark Room}}, letting the run continue further.
+* {{dlc|r+}} If the player has previously defeated {{e|Mother}}, beating her again will cause a portal leading to {{s|The Void}} to spawn, allowing the player to continue their run without the need for a sacrifice room.
+
+== Trivia ==
+* The Corpse is the only Alternative Chapter to not have any alternative floors.
+** An unused floor named Mortis, presumably as an alternative to the Corpse, exists in the game files.
+* In ''Antibirth'', the hole to the Mother battle had 4 {{e|Locked Chest}}s next to it that always contained items, similar to chests in {{s|Chest}}.
+* If a room's floor is filled with blood, there will be a huge blood stain on the floor upon entering any room adjacent to it.
+
+== Music ==
+* The music for Corpse is titled ''Carrion''.<ref>[https://ridiculon.bandcamp.com/album/the-binding-of-isaac-repentance-ost ''The Binding of Isaac: Repentance'' OST]</ref>
+** The term "carrion" refers to the decaying flesh of dead animals.
+
+== References ==
+{{reflist}}
+
+== Bugs ==
+{{Bug|{{i|D12}} still has a small chance to generate trapdoors in Corpse II. These trapdoors will lead Isaac to {{s|???}}.}}
+
+{{nav|environment|hush unlock|fr=Cadavre}}

@@ -1,0 +1,187 @@
+{{infobox version
+ | dlc   = r+
+ | steam = 521976260528701584
+ | date  = 2025-09-10
+}}
+
+== Documented changes ==
+=== Item changes ===
+* {{i|Revelation}}: Removed the 2 {{e|Soul Heart}}s on pickup.
+* {{i|Plan C}}: Increased the delay before killing Isaac, allowing {{e|Delirium}} and {{e|Mother}} death animations to complete in time.
+* {{i|Mega Blast}}: Now receives 6 charges instead of 3 when picking up a {{e|Lil' Battery}}, {{i|9 Volt}}, {{i|Battery Pack}}, and [[48 Hour Energy]].
+* {{i|Car Battery}}: Added interactions for {{i|Gello}}, {{i|The Book of Belial}}, {{i|Red Candle}}, {{i|The Candle}}, {{i|Doctor's Remote}}, {{i|Telekinesis}}, and {{i|Mega Blast}}.
+* {{i|Odd Mushroom (Thin)}}: Can now break the soft tears cap.
+* {{i|Seraphim}}: Now contributes to the {{tf|Seraphim}} transformation.
+* {{i|2Spooky}}: In addition to its existing effects, now adds +0.5 [[tears]] and +0.2 [[shot speed]].
+* {{i|Black Powder}}: Now grants larger explosions and fireplaces will explode when extinguished.
+* {{i|Blood Rights}}: In addition to its existing effects, each use now grants a tears upgrade for the current room.
+* {{i|Pageant Boy}}: Now always drops a {{e|Penny}} trinket as part of its rewards.
+
+=== Trinket changes ===
+* {{t|Super Ball}}: Bouncing tear chance now scales with luck.
+* {{t|Bob's Bladder}}: Now contributes to the Bob transformation.
+* {{t|Missing Poster}}: Now has a 33% chance to reveal the Super Secret Room when entering a new chapter.
+* {{t|Used Diaper}}: Skatole chance raised to 33%. Spawn a blue fly when entering a new combat room.
+* {{t|Rosary Bead}}: In addition to its increased chance of The Bible appearing, when a Devil Deal is earned, holding this trinket will force the deal to be an Angel Deal.
+* {{t|Modeling Clay}} / {{t|Error}}: Now correctly display the mimicked item/trinket in Extra HUD when gulped.
+* {{t|Louse}}: Now spawns a blue spider when completing a combat room.
+* {{t|Karma}}: In addition to its existing effects, holding it will reduce the chance of the Donation Machine jamming. Donating to a Beggar now has a chance to refund the penny, heal Isaac for one heart or increase Isaac's luck. Blood Donation Machines and Confessionals have a chance to heal Isaac for one heart, spawn a beggar, or increase Isaac's luck.  Restock Machines have a chance to increase Isaac's luck.
+* {{t|Equality!}}: When keys bombs and coins are all equal in number, gives +2 tear rate.
+* {{t|Lazy Worm}}: Now adds +0.5 damage in addition to its shot speed down.
+* {{t|Mom's Toenail}}: Dropping/swapping the trinket will now make Mom stomp on its dropped location.
+* {{t|Child Leash}}: While held, familiars gain a small damage multiplier.
+* {{t|Purple Heart}}: Increased the chance of champion enemies spawning. Chance for champion specific loot drops raised to 50%. Champion loot rewards are doubled.
+* {{t|Poker Chip}}: Retains its original effect of 50/50 chance for chests to have double rewards or a hostile fly. If the reward was an item and quality 0-2, the item rolls into another of higher quality. Can pull items from outside of the golden chest pool occasionally. Slightly increased the odds of a payout from slot machines, fortune tellers, crane games, shell games, and restock machines.
+* {{t|Cursed Penny}}: Increased chance to teleport Isaac to different rooms based on the coin collected.
+* Added effects for all golden trinkets that did not previously have them.
+
+=== Other changes ===
+* Added Item Descriptions to the game after defeating Mom one time per save file. Items will need to have been collected one time before their description will appear.
+* Several Devil Deal items now have a sacrifice spike cost instead of permanent HP loss. There is a 50% chance to award the item on the first play and 100% chance on the second.
+* Added a buffer to item chests with {{i|Glitched Crown}}, {{c|Tainted Isaac}}, and {{p|Soul of Isaac}} to prevent accidentally picking up the rotating item.
+* Fixed an issue where double {{r|Angel Room}}s could have two of the same angel. Key pieces that are not yet collected will be prioritized when determining which angel to spawn.
+* Travelling to a new floor via {{r|I AM ERROR}} rooms or {{i|Genesis}} will now keep the player on the Alt Path if they were on that route. On {{s|Downpour}}/{{s|Mines}} 2, traveling this way will bring the player back to the standard path if they haven't collected the knife pieces on those respective floors.
+* Added time and score display to {{e|The Beast}} fight in Daily runs.
+* The beam from {{i|Brimstone}}+{{i|Gello}} will continue for its entire duration even after an enemy is killed.
+* Removed {{i|Broken Glass Cannon}} as a potential starting item for {{c|Eden}}.
+* Removed {{i|Brother Bobby}} and {{i|Sister Maggy}} from the {{ip|Devil Room|text=Devil pool}} and added {{i|Dry Baby}} in their place.
+* Holy shields from different sources now stack consistently and have a unique icon showing what the source of the next shield is. The priority is {{t|Wooden Cross}}, {{i|Blanket}}, {{i|Holy Mantle}}, {{p|Holy Card}}.
+* Percs! [[Pills|Horse Pill]] now full heals Isaac in addition to adding {{i|The Wafer}} effect for the room.
+* Addicted! Horse Pill now gives Isaac a broken heart.
+* I'm Excited!!! Horse Pill now applies the effect for the duration of the floor.
+* I'm Drowsy Horse Pill now applies the effect for the duration of the floor.
+* ??? Horse Pill now add additional curses with each use.
+* Telepills Horse Pill now guarantees a teleport to a special room.
+* Gulp! Horse Pill now gulps the golden version of the held trinket.
+* {{p|Hagalaz}} rune now destroys {{e|Stoney||Stonies}}, stone turrets and many stone-based enemies. It also breaks the armor of many others including {{e|Host}}s and {{e|Knight}}s.
+* Healing with coins as {{c|Keeper}} and {{c|Tainted Keeper}} now contributes to {{i|Immaculate Conception}}.
+* Using {{i|Potato Peeler}} while having {{i|Ball of Bandages}} will now contribute to Bandage Girl instead of giving Cubes of Meat.
+* {{i|The Parasite}} now interacts with {{i|Tech X}}.
+* {{e|Gold Heart}}s now explode into coins as soon as they are touched by {{c|The Lost}}/{{c|Tainted Lost}} and Keeper/Tainted Keeper.
+* Items touched in the {{r|Ultra Secret Room}} with {{c|Tainted Cain}} will now guarantee one {{p|Cracked Key}} pickup.
+* {{c|Tainted Bethany}} can now collect and store {{e|Rotten Heart}}s for use with active items.
+* Added a new transformation, “{{tf|Necromancer}}”.
+* Added a wave counter to {{r|Boss Rush}}.
+* Added a slightly longer wind up before {{e|Camillo Jr.}} attacks.
+* Online games will now dynamically adjust the cost of [[Devil Deal]]s for the player nearest to the item.
+* Replaced Wednesday {{e|Delirium}} [[Daily Run]] end goal with random end goal and character.
+* Added {{i|Clicker}} back into Daily Run pools.
+* Removed score counter for non-daily runs.
+* Permanently charmed enemies from {{i|Friendly Ball}} and Pheromones Horse Pill now award score when converted.
+* If a player disconnects in the middle of a Daily Run, they will receive score up to the last completed floor instead of a zero score.
+* Adjusted the chances for Daily Run end goals on Tuesday, Wednesday and Friday to be:
+** 10% {{e|The Lamb}}
+** 10% {{e|???}}
+** 15% {{e|Isaac}}
+** 15% {{e|Satan}}
+** 10% {{e|Delirium}}
+** 20% {{e|Mom's Heart}}
+** 20% {{e|Mom}}
+
+=== Fixes ===
+* Fixed an issue where rerolling with {{c|Tainted Cain}} would result in all of his crafted items turning into Breakfast.
+* Added {{t|Lazy Worm}} to the thematic payouts from worm bosses.
+* Fixed an issue where {{e|Rotgut}} was unable to spawn his thematic drop.
+* Fixed an issue where the flesh door would remain open during the alt path {{e|Mom's Heart}} fight.
+* Fixed an issue where {{i|Glowing Hourglass}} could duplicate {{i|Blood Puppy}}.
+* Fixed an issue where Baptism by Fire and Bloody Mary challenges were starting with {{i|Book of Virtues}}.
+* Fixed an issue where {{e|Fissure}} enemies could despawn on uncleared rooms.
+* Fixed an issue where {{t|Filigree Feather}} would prioritize Key Piece drops. A Key Piece will only drop if the player already has the other piece, collected without Filigree Feather.
+* Fixed an issue where using {{i|Book of Virtues}} between active item pickups would give infinite free wisps.
+* Fixed a crash that could occur when using {{i|Genesis}} after using {{i|Death Certificate}}.
+* Fixed an issue where using {{i|Glowing Hourglass}} in Downpour 1 would teleport the player to {{s|Home}}.
+* Fixed an issue where Glowing Hourglass could cause {{c|Tainted Lilith}} to be unable to shoot.
+* Fixed an issue where items granted to {{c|Esau}} when using {{p|Soul of Jacob and Esau}} were removed from future item pools.
+* Fixed an issue where {{r|Boss Rush}} could prematurely close on Home daily runs.
+* Fixed an issue with charged items not firing with {{i|Epiphora}}.
+* Fixed an issue where spectral tears would cause {{i|Bob's Rotten Head}} to bounce off of walls.
+* Fixed an issue where {{i|Star of Bethlehem}} would significantly speed up its pathing while the player is in an off-grid room.
+* Fixed an issue where {{i|Belly Jelly}} and {{i|Cone Head}} could prevent the on-damage effects of items from triggering when using {{i|Dull Razor}}.
+* Fixed an issue where {{e|Black Maw}} was not charging to the right correctly.
+* Fixed an issue where a ??? pill could prevent the chest from appearing after defeating Satan in Ultra Hard.
+* Fixed an issue where killing {{e|Greed}} could remove {{i|Coupon}} and {{i|Head of the Keeper}} from future pools.
+* Fixed a bomb exploit that allowed the first phase of {{e|Dogma}} to be skipped.
+* Added a time delay between the sound effects for {{i|Little Chubby}}, {{i|Big Chubby}}, and {{i|Lil Haunt}}.
+* Fixed an issue where consumable pop-ups were miniaturized when holding {{t|Found Soul}}.
+* Fixed an issue where game sounds would not correctly switch when the output device changed.
+* {{i|Suplex!}} no longer works on fireplaces or during {{i|Mega Mush}}, preventing softlocks and unintended damage.
+* Fixed an issue where {{i|Camo Undies}} would not come out of stealth when using mouse controls.
+* Fixed an issue where {{i|Eye of the Occult}} tears would not travel to the cursor when using mouse controls.
+* Fixed an issue where flies from {{tf|Beelzebub}} could be farmed for infinite daily run points.
+* Fixed an issue where {{c|Keeper}} would lose his {{i|Birthright}} effect after the Mom Chase.
+* Fixed an issue where {{c|Tainted Jacob}} could not be damaged by copies of Dark Esau from {{i|Birthright}}.
+* Fixed an issue where {{e|Camillo Jr.}} could fire from offscreen in [[Greed Mode]].
+* Fixed an issue where {{i|Wavy Cap}} tears up could be kept and distortion effects could be removed by exiting and continuing the run.
+* Fixed an issue where {{i|Bumbo}}'s evolution would be reset after the Mom Chase.
+* Fixed an issue where ice shards from frozen enemies could freeze and damage friendly monsters.
+* Fixed an issue where {{i|Abyss}} Locusts were not removed during the Mom Chase, causing potential softlocks.
+* Fixed an issue where crawl spaces could spawn during the Mother Chase, causing potential softlocks.
+* Fixed an issue where a dead zone in the center of {{e|Red Poop}}s was not triggering damage.
+* Fixed an issue where {{i|Consolation Prize}} would always drop a bomb when playing as {{c|Tainted ???}}.
+* Fixed an issue where losing an {{e|Eternal Heart}} while the player has {{e|Rotten Heart}}s resulted in taking an extra half heart of damage.
+* Fixed an issue where {{i|Dream Catcher}} could display incorrect {{r|Treasure Room}} items in the Alt Path when combined with some other items.
+* Fixed an issue where copies of {{e|Dark Esau}} beyond the first were not doing damage to Tainted Jacob.
+* Fixed an issue where {{c|Tainted Bethany}} would not start with the correct number of stored red hearts in co-op if she was not player one.
+* Fixed an issue that allowed Keeper and {{c|Tainted Keeper}} to gain infinite health with {{t|Mother's Kiss}} trinkets.
+* Fixed an issue where exiting and continuing would remove the I'm Excited effect.
+* Fixed an issue where using {{p|Soul of Cain}} in the mirror room would break the mirror.
+* Fixed an issue where {{c|Bethany}}'s starting {{i|Book of Virtues}} was not contributing to the {{tf|Bookworm}} transformation.
+* Fixed an issue where a crawl space would not spawn if placed under certain rocks.
+* Fixed an issue where {{i|Glowing Hourglass}} would not refund a teleport card if used to undo that teleport.
+* Fixed an issue where tech items would not break open secret rooms with {{i|Terra}} or {{i|Sulfuric Acid}}.
+* Fixed an issue where {{c|Tainted Lazarus}} could respawn as another character on death and lose story items if they were held by the other Lazarus half.
+* Fixed an issue where collecting a {{e|Bone Heart}} could remove charges from {{i|Alabaster Box}}.
+* Fixed an issue where {{e|Bloaty}}'s creep attack could hit flying characters.
+* Fixed an issue where playing a {{m|Blood Donation Machine}} with the {{t|Swallowed M80}} trinket would not cause the machine to be destroyed when Isaac explodes.
+* Fixed an issue where using {{i|Glowing Hourglass}} immediately after taking {{i|Dad's Note}} resulted in a softlock.
+
+== Undocumented changes ==
+=== Changes ===
+* {{e|The Beast}} attacks are now random and not tied to her health anymore.
+* You now can't skip the dream sequence when you have {{i|Dream Catcher}}.
+* Added new co-op babies.
+* Added a new item tag, [[Item Tags devilsacrifice|devilsacrifice]]. Items with this tag will have the sacrifice spikes cost in devil rooms.
+* Breaking the mirror in {{s|Downpour}}/{{s|Dross}} II grants -7 luck.
+* Added various new sound effects:
+** Ambiance sounds when being in a room adjacent to a non-cleared [[Boss room]].
+** Jumping through a trapdoor.
+** Opening a final boss chest.
+** Set of sounds for {{e|Black Knight}}s, {{e|Brain}}s, {{e|Buttlicker}}s, {{e|Butt Slicker}}s, {{e|Floating Knight}}s, {{e|Imp}}s, {{e|Knight}}s, {{e|Loose Knight}}s, {{e|Poison Mind}}s, {{e|Selfless Knight}}s, and {{e|Unborn}}s.
+** Set of sounds for {{e|Blastocyst}}, {{e|The Cage}}, {{e|Carrion Queen}}, {{e|Clog}}, {{e|Death}}, {{e|The Fallen}}, {{e|Fistula}}, {{e|The Forsaken}}, {{e|The Frail}}, {{e|Gish}}, {{e|Gurglings}}, {{e|The Haunt}}, {{e|The Hollow}}, {{e|Larry Jr.}}, {{e|Little Horn}}, {{e|Loki}}, {{e|Lokii}}, {{e|Mask of Infamy}}, {{e|Mega Fatty}}, {{e|Pin}}, {{e|Rag Mega}}, {{e|Sisters Vis}}, {{e|The Stain}}, {{e|Steven}}, {{e|Teratoma}}, and {{e|War}}.
+** [[Blue Spider]] dying.
+** Using {{i|Abyss}}, {{i|Bag of Crafting}}, {{i|Best Friend}}, {{i|The Bible}}, {{i|Black Hole}}, {{i|Book of Shadows}}, {{i|The Book of Sin}}, {{i|Box of Spiders}}, {{i|Broken Shovel 1}}, {{i|Crystal Ball}}, {{i|Dark Arts}}, {{i|Dead Sea Scrolls}}, {{i|Decap Attack}}, {{i|Diplopia}}, {{i|Dull Razor}}, {{i|Esau Jr.}}, {{i|Forget Me Now}}, {{i|Friendly Ball}}, {{i|Gello}}, {{i|The Hourglass}}, {{i|How to Jump}}, {{i|IV Bag}}, {{i|Jar of Flies}}, {{i|Magic Skin}}, {{i|Mine Crafter}}, {{i|Mom's Bra}}, {{i|Mr. ME!}}, {{i|Notched Axe}}, {{i|Razor Blade}}, {{i|Red Candle}}, {{i|Satanic Bible}}, {{i|Spin to Win}}, {{i|Sprinkler}}, {{i|Suplex!}}, {{i|Tear Detonator}}, {{i|Telepathy For Dummies}}, {{i|Ventricle Razor}}, {{i|Void}}, and {{i|Wooden Nickel}}.
+** {{i|Cambion Conception}} and {{i|Immaculate Conception}} spawning a [[familiar]].
+** {{i|Charged Baby}} spawning a {{e|Lil' Battery}}, adding a charge, and [[petrify]]ing enemies.
+** {{i|Mega Mush}} effect ending.
+** Firing an {{i|Ocular Rift}} tear and it spawning a portal.
+** {{t|Shiny Rock}} making a rock shine.
+** {{i|Sissy Longlegs}} charming an enemy.
+** Opening a [[Crawl Space]] with {{i|We Need To Go Deeper!}}.
+
+=== Item Tags Changes ===
+* {{i|Razor Blade}}: +devilsacrifice
+* {{i|Bloody Lust}}: +devilsacrifice
+* {{i|Blood Rights}}: +devilsacrifice
+* {{i|Gimpy}}: +devilsacrifice
+* {{i|Seraphim}}: +angel
+* {{i|Broken Glass Cannon}}: +noeden
+* {{i|Clicker}}: -nodaily
+* {{i|Blood Oath}}: +devilsacrifice
+* {{i|A Pound of Flesh}}: +devilsacrifice
+* {{i|Sanguine Bond}}: +devilsacrifice
+* {{i|Bloody Gust}}: +devilsacrifice
+* {{i|Berserk!}}: +devilsacrifice
+
+=== Trinket Tags Changes ===
+* {{t|Mom's Toenail}}: -mom
+* {{t|Mom's Pearl}}: -mom
+* {{t|Mom's Locket}}: -mom
+* {{t|Mom's Lock}}: -mom
+* {{t|Mother's Kiss}}: -mom
+
+=== Fixes ===
+* Fixed {{c|Cain}} not getting positive pills when changing into him via {{i|Clicker}}.
+* Fixed a crash occuring when entering the light beam in a {{s|Corpse}} XL {{r|I AM ERROR}} room. It still leads to {{s|Cathedral}}.
+* Fixed {{c|Tainted Lazarus}} with {{i|Birthright}} immediately dying on respawn if the player had character-changing resurrection items.
+
+{{nav|version}}

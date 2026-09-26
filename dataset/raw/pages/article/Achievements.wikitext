@@ -1,0 +1,78 @@
+{{Hatnote|For tips and strategies on completing achievements, see [[achievement tip]]s.}}
+
+'''Achievements''' are unlocked after completing [[Challenge]]s, reaching certain [[completion mark|milestones]], achieving hidden goals, or unlocking certain [[item]]s. In the PC version, every Steam achievement exactly corresponds to one secret in-game, whereas only a handful of secrets are represented by PSN trophies in the PlayStation version of the game.
+
+If Isaac is unable to unlock achievements, a small icon of a crossed-out trophy {{no unlocks}} will be displayed below the {{e|Key}}'s counter. Conditions which can disable the ability to unlock achievements include:
+* Using a pre-determined [[seed]]. {{dlc|a}} Certain cosmetic and difficulty-increasing [[seed|special seeds]] will still allow unlocks.
+* During a [[Challenge]], although the achievement for completing the challenge is unaffected.
+* {{dlc|a}} During a [[Daily Challenge]], although the achievements associated with this game mode are unaffected.
+* {{dlc|a+}} Playing with any enabled [[mod]] (unless {{e|Mom}} has been beaten).
+* {{dlc|a+}} During [[Victory Lap]]s.
+* {{dlc|r}} If the [[Debug Console]] is enabled (unless {{e|Mom}} has been beaten).
+* {{dlc|r+}} Joining an in progress [[Online (open beta)|Online]] run.
+
+Rebirth has a total of 178 unlockable secrets. {{dlc|a}} [[Afterbirth]] added 98 new secrets, for a total of 276. {{dlc|a+}} [[Afterbirth †]] added 63 new secrets, for a total of 339. {{dlc|a+}} [[Booster Pack #5]] added 64 new secrets, for a total of 403. {{dlc|r}} [[Repentance]] added 234 new secrets, for a total of 637.
+{{dlc|r+}} [[Repentance+]] added 4 new secrets, for a total of 641.
+
+Inside the stats menu, while having the "secrets" menu open, pressing Alt + F2 will sync unlocks with Steam achievements. If you have Steam achievements for secrets that haven't been unlocked in-game, they will be unlocked by doing this.
+
+__FORCETOC__
+
+== All Achievements ==
+{{achievement table | order by = id }}
+
+== PlayStation Trophies ==
+{{trophy list}}
+
+== Notes ==
+* {{dlc+|r}} The {{a|5 Nights at Mom's}} achievement is bugged in various ways:
+** {{dlc|nr+}} {{plat|PC}} Because the game uses 32-bit architecture and has [[Custom Challenges#Characters (playertype)|41]] characters, the game counts wins twice for the first 9 characters. That means if in your streak you play once with a character from Isaac to Lazarus, you will get the achievement with 4 wins. If you play with two characters from Isaac to Lazarus, you will get the achievement with 3 wins. Since the game uses 64-bit architecture on consoles, this bug is PC-only.
+** Using normal [[Characters]] to get a win and then using its tainted counterpart won't work, only one of them will work for obtaining the achievement.
+*** Additionally, due to integer overflow, some tainted characters share the same bitmask with some normal characters. The game resets the achievement streak counter if two runs are done with characters with the same bitmask. {{c|Tainted Lilith}} has the same bitmask as {{c|Isaac}}. Here are the pairs of characters that have the same bitmask : Tainted Keeper and Magdalene, Tainted Apollyon and Cain, Tainted Forgotten and Lazarus, Tainted Bethany and ???, Tainted Jacob and Eve, Tainted Dead Lazarus and Samson, Tainted Jacob in Lost form and Azazel. If you did a run with Isaac or Lilith, do not finish a run with Tainted Lilith or the counter will reset. Not confirmed yet but by the same logic as the bug above, this one is likely PC-only too.
+** The achievement does not unlock in Co-op Repentance, even if the five wins were done with different characters for each player.
+** Modded characters do not interfere with the streaks, and do not reset nor increment the counter.{{dlc-}}
+
+== Trivia ==
+* Each achievement is color-coded based on the requirements for unlocking their respective secrets:
+** Tan: Miscellaneous unlocks
+** Tan with blood stain: {{e|Mom's Heart}} / {{e|It Lives!}} [[Hard Mode]] unlocks
+** Olive-Green: Character unlocks
+** Dark Red: Mom's Heart / {{s|Womb}} ending unlocks
+** Grey: {{e|Isaac}} unlocks
+** Black: {{e|Satan}} unlocks
+** Dark Blue: {{e|???}} unlocks
+** Purple: {{e|The Lamb}} unlocks
+** Pale Green: {{r|Boss Rush}} unlocks
+** {{dlc|a}} Pale Blue: {{e|Hush|n}} unlocks
+** {{dlc|a}} Orange Yellow: {{mode|Greed}} [[Greed Mode]] unlocks
+** {{dlc|a}} Orange Yellow with blood stain: {{mode|Greedier}} [[Greedier mode]] unlocks
+** {{dlc|a+}} White: {{e|Delirium|n}} unlocks
+** {{dlc|a+}} Red: {{e|Mega Satan}} unlocks
+** Bright Yellow: All [[Hard Mode]] marks (most are tan)/Damageless floor/100% unlocks
+** {{dlc|a}} Brighter Yellow: {{machine|Greed Donation Machine|n}} unlocks
+** Bluish Purple: [[Challenge]] unlocks
+** {{dlc|r}} Dark Green with bloodstain: {{e|Mother|n}} unlocks
+** {{dlc|r}} Orange: {{e|The Beast|n}} unlocks
+** {{dlc|r}} Bright Purple: Tainted Character unlocks
+** {{dlc|r+}} Cyan: Online Multiplayer achivements
+* Despite being a Boss Rush unlock for {{c|Lazarus}}, {{i|Missing No.}}'s achievement color is bluish purple, a color normally used for challenge-related unlocks.
+* Achievements 37-41 and 83 have a typo on their pop-ups, and read "achieveved".
+* {{dlc+|a+}} Despite unlocking {{T|Locust of War}}, achievement 310 is named "Locust of Wrath".{{dlc-}}
+* {{dlc|a+}} Although not technically an achievement, getting 1000000% on all 3 [[Save File Completion|save files]] will result in a special 3,000,000%!!! [[Savefile Images|graphic on the save file]] selection screen.
+** {{dlc|r}} In Repentance, something similar happens when achieving Dead God on all 3 save files.
+* {{dlc|a+}} The 5 Nights at Mom's achievement is a reference to [[wikipedia:Five Nights at Freddy's (series)|Five Nights at Freddy's]].
+* {{dlc|a+}} The Mr. Resetter achievement may be a reference to Mr. Resetti from the [[wikipedia:Animal Crossing|Animal Crossing]] series.
+* {{dlc|a+}} The Something Wicked This Way Comes quote is most likely a reference to the same quote from one of the witches from Shakespeare's play "Macbeth." It may also be a reference to the Ray Bradbury novel of the same name, which in turn, is also a reference to Macbeth.
+* {{dlc|a+}} [[Booster Pack #5]] added 64 secrets. Interestingly, this is a single secret more than Afterbirth+'s original count of 63 secrets. Thus, this update more than doubled the amount of secrets added to the game.
+* {{plat|PS4}} {{dlc|a+}} Achievements 340-348 don't exist in the PS4 version, resulting in the content already being "unlocked" even on new save files.
+* {{dlc|r}} Like {{i|Monster Manual}}, the achievement Dead God is a reference to the [[wikipedia:Dead Gods|Dead Gods]] adventure module for the second edition of [[wikipedia:Advanced Dungeons & Dragons|Advanced Dungeons & Dragons]].
+
+== Bugs ==
+{{bug|dlc=r|{{i|Clear Rune}} must be unlocked and collected to attain {{a|!Platinum God!}} and {{a|The Real Platinum God}} despite being a Repentance item. This is due to its ID being unused in Rebirth, thus being in the ID range of Rebirth items.}}
+{{bug|dlc=a|{{plat|PS4}} If installed, before unlocking it, the 'Challenges' trophy will require completing all the challenges available on the current DLC played instead of the original 20 Challenges.<ref>https://www.reddit.com/r/bindingofisaac/comments/4wkzdd/ps4_challenges_trophy_glitch/</ref>}}
+{{bug|dlc=a+|{{a|Buddy in a Box}} also counts collectible effects towards its progress. Getting hit 5 times in a room with one {{i|Best Bud}} or getting {{i|Paschal Candle}} to level 4 count as having 5 familiars.}}
+
+== References ==
+{{reflist}}
+
+{{nav|fr=Succès|es=Logros|ru=Достижения/Rebirth}}

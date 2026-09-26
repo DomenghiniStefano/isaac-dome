@@ -1,0 +1,18 @@
+{{infobox monster
+ | dlc         = r
+ | name        = Fly Trap
+ | id          = 873
+ | base hp     = 16
+ | stage hp    = 6
+ | environment = {{floor|Dross}}
+ | behavior    = Floats towards Isaac, with 3 {{e|Attack Fly|text=Attack Flies}} circling around it. Coughs up additional Attack Flies and releases gas to launch the Attack Flies outwards.
+}}
+
+'''Fly Traps''' are enemies added in ''[[The Binding of Isaac: Repentance]]''.
+
+Floats slowly towards Isaac, orbited by 3 {{e|Attack Fly|text=Attack Flies}} that spawn with it. It will, along the way, either cough to spawn an additional Attack Fly to orbit it or release a cloud of gas that pushes the flies outwards before they group back together and continue to orbit the Fly Trap. The Fly Trap will only fart if it has at least 3 Attack Flies in orbit and will continuously spawn flies until it has the minimum amount. The maximum amount of flies orbiting the Fly Trap is 6 and it will use the spawning attack less often the closer it reaches this threshold.
+
+Upon death any orbiting Attack Flies will chase Isaac as usual.
+{{clear}}
+
+{{nav|fr=Piège à Mouches}}

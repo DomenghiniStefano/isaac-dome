@@ -1,0 +1,81 @@
+{{infobox monster
+ | image name  = * {{dlc|nr|Rebirth}}
+ | id          = 229
+ | base hp     = 20
+ | environment = {{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{room|challenge}}
+ | behavior    = Moves around the room diagonally, occasionally firing 6 blood shots in all directions. Fires more often upon getting damaged.
+}}
+
+'''Tumors''' are enemies that slowly float across the room diagonally bouncing off walls. They occasionally fire 6 blood shots in all directions, and fire even more quickly when attacked.
+{{clear}}
+
+== Variations ==
+=== Psy Tumor ===
+{{infobox monster
+ | name        = Psy Tumor
+ | id          = 253
+ | base hp     = 40
+ | environment = {{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Cathedral}}<br>{{room|challenge}}
+ | behavior    = Moves around the room diagonally, occasionally firing 6 homing shots in all directions. Fires more often upon getting damaged.
+}}
+
+'''Psy Tumors''' behave exactly like regular Tumors, but fire homing shots instead of blood shots.
+{{clear}}
+
+=== Camillo Jr. ===
+{{infobox monster
+ | name        = Camillo Jr.
+ | id          = 230
+ | base hp     = 32
+ | environment = {{floor|Sheol}}<br>{{floor|Dark Room}}<br>{{room|challenge}}
+ | behavior    = Moves around the room diagonally, occasionally firing Technology lasers towards Isaac. Fires more often upon getting damaged.
+}}
+
+'''Camillo Jr.''' behave exactly like Tumors, but fire {{i|Technology}} lasers at Isaac. Their lasers may also hit enemies for 8 damage.
+{{clear}}
+
+=== Planetoid ===
+{{infobox monster
+ | dlc         = r
+ | name        = Planetoid
+ | id          = 229
+ | variant     = 1
+ | base hp     = 28
+ | stage hp    = 4
+ | environment = {{floor|Utero}}<br>{{room|challenge}}
+ | behavior    = Moves around the room diagonally, occasionally firing blood shots that orbit itself. Fires more shots and has a chance to send its ring of shots outward upon taking damage.
+}}
+
+'''Planetoids''' are a variant of Tumor that move faster than their variants and fire blood shots that orbit them, similar to effect of {{i|Tiny Planet}}. When they take damage, they fire shots more frequently and have a chance to fart, releasing their orbiting projectiles out of orbit and let them fly off while starting a new ring.
+{{clear}}
+
+=== Poofer ===
+{{infobox monster
+ | dlc         = r
+ | name        = Poofer
+ | id          = 892
+ | base hp     = 20
+ | environment = {{floor|Mausoleum}}{{floor|Gehenna}}<br>{{room|challenge}}
+ | behavior    = Slowly floats toward Isaac, swells up and fire 6 blood shots in all directions upon taking damage. Explodes upon death, healing nearby enemies and leaving a big puddle of red creep.
+}}
+'''Poofers''', unlike other Tumors, slowly float towards Isaac. However, if Isaac is shooting, they will target a position in front of where he is facing instead of targeting him directly, to try and intercept his projectiles.
+
+Each time they take damage, they swell up and fire 6 blood shots in a fixed, radial spread. They can swell up a total of 4 times, becoming slower the more swollen they are. Upon death, they explode, forcibly pushing Isaac, destroying nearby grids, healing nearby enemies for 15 HP, and leaving a large puddle of damaging [[Creep#Red Creep|Red Creep]].
+
+Their health also doesn't deplete until they are hit by a total of at least 40 damage, giving them an effective health of 60 and a unique form of one-shot protection.
+{{clear}}{{dlc clear}}
+
+== Gallery ==
+<gallery>
+File:Poofer Full.png|Fully Swollen Poofer.
+File:Camillo Jr. Unused.png|[[Cut Content#Cut Afterbirth .E2.80.A0 Content|Unused]] pre-release sprite of Camillo Jr. found among the Room Editor files.
+File:Planetoid Concept.png|Concept art for the Planetoid.
+</gallery>
+
+== Trivia ==
+* Tumors are a reference to [[wikipedia:Tumor|abnormal growth of tissues of the same name]], caused by genetic mutations.
+* Camillo Jr.'s name is a reference to Kracko Jr., a recurring enemy from the ''Kirby'' series. In appearance he bears resemblance to Kracko, the mature version of Kracko Jr.
+* {{dlc|r}} Poofer is a reference to [[thelegendofbumbo:Poofer|the enemy]] from ''The Legend of Bumbo'' with the same name.
+* {{dlc|r}} A Planetoid is an [[wikipedia:Minor planet|astronomical object that is neither a planet nor a comet]].
+
+{{nav|fr=Tumeur}}

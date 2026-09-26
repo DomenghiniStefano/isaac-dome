@@ -1,0 +1,52 @@
+A list of Damage Flags in the [[Modding|Modding API]] of ''[[The Binding of Isaac: Afterbirth †]]''.
+{| class="wikitable"
+ ! Damage Flag !! Value !! Description
+ |-
+ | DAMAGE_NOKILL || 1 || damage can not kill the receiver
+ |-
+ | DAMAGE_FIRE || 1<<1 || source is some sort of fire (ie. fireplace)
+ |-
+ | DAMAGE_EXPLOSION || 1<<2 || damage comes from an explosion
+ |-
+ | DAMAGE_LASER || 1<<3 || damage comes from laser
+ |-
+ | DAMAGE_ACID || 1<<4 || damage comes from acid, e.g. blood acid
+ |-
+ | DAMAGE_RED_HEARTS || 1<<5 || damage affects only red hearts if > 1 (ex: razor)
+ |-
+ | DAMAGE_COUNTDOWN || 1<<6 || damage from unicorn horn, the nail, game kid that has cooldown
+ |-
+ | DAMAGE_SPIKES || 1<<7 || damage from spikes
+ |-
+ | DAMAGE_CLONES || 1<<8 || damage is done by clones when they took damage, avoid infinite loops
+ |-
+ | DAMAGE_POOP || 1<<9 || damage from red poop
+ |-
+ | DAMAGE_DEVIL || 1<<10 || damage comes from devil room deal
+ |-
+ | DAMAGE_ISAAC_HEART || 1<<11 || Indicates the damage has been redirected from Isaac's Heart familiar
+ |-
+ | DAMAGE_TNT || 1<<12 || damage comes from a TNT barrel
+ |-
+ | DAMAGE_INVINCIBLE || 1<<13 || damages even if invincible (currently only for player). Used on IV Bag.
+ |-
+ | DAMAGE_SPAWN_FLY || 1<<14 || creates a fly when damage is applied
+ |-
+ | DAMAGE_POISON_BURN  || 1<<15 || damage comes from POISON/BURN flags
+ |-
+ | DAMAGE_CURSED_DOOR || 1<<16 || damage comes from a cursed door
+ |-
+ | DAMAGE_TIMER || 1<<17 || damage comes from the passage of time (used for player damage by time limited special seeds)
+ |-
+ | DAMAGE_IV_BAG || 1<<18 || damage from using the IV Bag
+ |-
+ | DAMAGE_PITFALL || 1<<19 || damage comes from the passage of time (used for player damage by time limited special seeds)
+ |-
+ | DAMAGE_CHEST || 1<<20 || damage comes from spiked chest
+ |-
+ | DAMAGE_FAKE || 1<<21 || fake damage that should trigger player's damage effects.
+ |}
+
+{{nav|modding}}
+[[Category:Lua reference]]
+[[category:Added in Afterbirth+]]

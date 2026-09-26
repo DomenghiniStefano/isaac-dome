@@ -51,7 +51,7 @@
 * {{c|The Lost}} / {{c|Tainted Lost}}: Any damage the Lost would take is likely to kill him instantly, meaning that the item's downside is greatly mitigated. Dying and respawning, however, will still trigger the chance of falling.
 * {{I|Magic Skin}}: Spawns 2 items on every use instead of 1.
 * {{i|My Little Unicorn}} / {{i|Unicorn Stump}} / other items that give [[invulnerability]]: If active, will negate the sword's lethal fall, saving Isaac.
-* {{i|Mega Mush}}: When activated, protected from falling Damocles.
+* {{i|Mega Mush}}: When activated, protects from falling Damocles.
 * {{i|Mystery Gift}}: When Damocles is activated, a second item will be spawned with adherence to the item pool for the current room. Even if Mystery Gift "fails" and spawns either {{i|The Poop}} or {{i|A Lump of Coal}}, a second item from the room's item pool will be rewarded.
 
 == Interactions ==

@@ -1,0 +1,22 @@
+{{page dlc|r+}}
+The '''Emote Wheel''' is a communication method for players who are playing [[Online (open beta)|'''Online''']] in [[The Binding of Isaac: Repentance+|'''Repentance+''']].
+[[File:NormalWheel.png|thumb]]
+
+== Features ==
+The wheel has 20 different emotes you can choose from which convey different things which may be useful for players who do not have text chat enabled or speak a different language.
+Additionally, there is a secret developer emote wheel that is accessed by pressing alt then pressing tab (Or on controller by pressing down on the right stick then pressing the left tear button), which has hidden emotes featuring the faces of [[Edmund McMillen]] and other developers of ''The Binding of Isaac''.
+
+== Notes ==
+* Using either the {{i|The D6}} or {{i|D20}} emote will roll and randomly generate a number from the dice.
+* On the initial release of [[The Binding of Isaac: Repentance+|Repentance+]], there was a developer emote that was replaced in an update.
+* There is an additional {{i|R Key}} emote which is displayed when a player presses the reset button.
+** If all players hold the reset button, then a new run will start.
+
+== Gallery ==
+<gallery>
+NormalWheel.png|The wheel itself.
+DeveloperWheel.png|The developer wheel.
+Babyemotereplaced.png|The emote that was replaced.
+</gallery>
+
+{{nav}}

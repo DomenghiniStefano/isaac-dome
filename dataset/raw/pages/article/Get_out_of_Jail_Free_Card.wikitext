@@ -1,0 +1,32 @@
+{{header special cards}}
+{{infobox card
+ | dlc         = a
+ | type        = special card
+ | recharge    = {{dlcalt|4|r=2}}
+ | description = Upon use, opens all doors in the current room, exactly like {{i|Dad's Key}}.
+ | quote       = Open Sesame
+ | id          = 47
+ | unlocked by = Get out of Jail Free Card
+}}
+
+{{cit|us|a}}
+
+== Effects ==
+* Opens all doors in the current room, just like {{i|Dad's Key}}.
+
+== Notes ==
+* Being a [[special card]], the '''Get out of Jail Free Card''' has a significantly lower chance of appearing compared to other cards.
+* Get out of Jail Free Card can open:
+** {{dlc|r}} The door of a {{r|Challenge Room}} after the fight has started.
+** The door to the {{E|Mega Satan}} boss fight. The door will remain open after leaving the room.
+** The fight in {{r|Boss Rush}} to leave early, but cannot be used to get into the Boss Rush room if the time limit has already passed.
+* Get out of Jail Free Card cannot open:
+** {{dlc|nr}} The door of a {{r|Challenge Room}} after the fight has started.
+** The door to {{s|???}}.
+** {{a|A Strange Door}}.
+** {{dlc+|r}} The flesh door to the {{E|Mom's Heart}} boss fight in {{s|Mausoleum}} II / {{s|Gehenna}} II.{{dlc-}}
+
+== Trivia ==
+* "Get out of Jail Free" is a card found in the board game ''Monopoly'', allowing its user to escape jail early. The phrase has since spread and a "Get out of Jail Free Card" is also an idiomatic expression for something that would alleviate an undesirable situation.
+
+{{nav|fr=Carte Chance}}

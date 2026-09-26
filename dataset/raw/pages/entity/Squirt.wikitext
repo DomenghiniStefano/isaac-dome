@@ -1,0 +1,79 @@
+{{infobox monster
+ | name        = Squirt
+ | id          = 220
+ | base hp     = 15
+ | stage hp    = 6
+ | environment = {{floor|Basement}}{{floor|Cellar}}{{floor|Burning Basement}}<br>{{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|Sheol}}{{floor|Cathedral}}<br>{{room|boss}}{{room|challenge}}
+ | behavior    = Dashes towards Isaac and deals contact damage. Spawns 2 {{e|Dip}}s upon death.
+}}
+
+The '''Squirt''' is a medium-sized poop enemy that does contact damage to Isaac by periodically dashing to him. Two Squirts spawn from {{e|Dinga}}s when killed. It splits into two {{e|Dip}}s when killed.
+{{clear}}
+
+== Variants ==
+=== Dank Squirt ===
+{{infobox monster
+ | dlc            = a
+ | name           = Dank Squirt
+ | variant        = 1
+ | base hp        = 15
+ | stage hp       = 6
+ | environment    = {{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Dank Depths}}<br>{{floor|Sheol}}<br>{{room|challenge}}
+ | replace        = Squirt
+ | replace chance = 50%
+ | replace notes  = in {{s|Dank Depths}}
+ | behavior       = Dashes towards Isaac and deals contact damage, creating slowing [[creep#Black Creep|black creep]]. Spawns 2 {{e|Clot}}s upon death.
+}}
+
+'''Dank Squirts''' dash towards Isaac, leaving a trail of slowing [[Creep#Black Creep|Black Creep]]. Upon death, they spawn two {{e|Clot}}s.
+{{clear}}
+
+=== Splurt ===
+{{infobox monster
+ | dlc         = r
+ | name        = Splurt
+ | id          = 871
+ | base hp     = 15
+ | stage hp    = 6
+ | environment = {{floor|Dross}}<br>{{room|challenge}}
+ | behavior    = Dashes towards Isaac twice and deals contact damage. Spawns 2 {{e|Drip}}s upon death.
+}}
+
+'''Splurts''' are a variant of Squirts that dash twice towards Isaac rather than just once and can travel over flooded pits. Upon death, they spawn two {{e|Drip}}s.
+{{clear}}
+
+=== Hardy ===
+{{infobox monster
+ | dlc         = r
+ | name        = Hardy
+ | id          = 826
+ | base hp     = 42
+ | stage hp    = 6
+ | environment = {{floor|Mines}}{{floor|Ashpit}}<br>{{room|challenge}}
+ | behavior    = Dashes toward Isaac and deals contact damage creating rock projectiles when it hits a wall/obstacle. It spawns more rock projectiles the more times it crashes into obstacles, dying after doing so a third time.
+}}
+
+'''Hardies''' are a rocky variant of Squirts.
+
+They charge at Isaac, and if they run into an obstacle/wall, a piece of them breaks off and rock projectiles are fired outwards. A Hardy will destroy most breakable obstacles on collision and is also able to reveal secret rooms if it hits the entrance of one. After running into rocks/walls three times, a Hardy will die.
+* First collision: 8 rock projectiles are fired out in a radius.
+* Second collision: 8 rock projectiles are fired out in a radius and a cluster of rock projectiles is launched in Isaac's direction.
+* Third collision: A cluster of small and large rock projectiles is launched in Isaac's direction. The small rock projectiles have shorter range and will spawn 2-3 {{e|Rock Spider}}s and the large rock projectiles each shoot out a small cross of 4 smaller rock projectiles upon landing.
+
+In the uncommon event that it charges but doesn't hit a wall or obstacle, it will slow down like a normal Squirt without sustaining damage. Upon death, it spawns a {{e|Dip}}.
+
+{{clear}}{{dlc clear}}
+
+== Gallery ==
+<gallery>
+File:Hardy Stage 2.png|Damaged Hardy after one collision.
+File:Hardy Stage 3.png|Very Damaged Hardy after a second collision.
+File:Edmund McMillen Rebirth Monster Sketches.jpg|Sketches of monsters for the Binding of Isaac: Rebirth, including the Squirt in the first square of the fourth row, referred as "sliders" in the concept art.
+</gallery>
+
+== Trivia ==
+* {{dlc|r}} The [[Anti:Hardy|Hardy]] first appeared in the ''Antibirth'' mod where its third impact with an obstacle would cause the same effects as its first and second impact but also create rocks to fall from the ceiling.
+* Squirts are likely a reference to [[zelda:Zol|Zols]], big Gels that split into two Gels upon death.
+
+[[Category:Poop monsters]]
+{{Nav|fr=Giclée}}

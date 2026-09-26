@@ -1,0 +1,13 @@
+{{infobox version
+ | dlc  = a+
+ | date = 2017-01-04
+}}
+
+== Undocumented changes ==
+=== Changes ===
+* [[Big Horn]] portrait changed.
+
+=== Fixes ===
+* {{t|Bat Wing}} fixed to give an appearance when it activates.
+
+{{nav|version}}

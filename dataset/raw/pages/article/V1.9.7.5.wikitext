@@ -1,0 +1,11 @@
+{{infobox version
+ | dlc = r+
+ | date = 2024-11-19
+}}
+
+== Undocumented Changes ==
+* Updated title screen logo with the final version of the knife and title screen image.
+* Updated <code>filelist.txt</code> for the file extractor.
+* Replaced certain developer [[Emote Wheel|emotes]] (accessible by opening emote wheel with an alt button and then hitting tab).
+
+{{nav|version}}

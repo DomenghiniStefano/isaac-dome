@@ -1,0 +1,97 @@
+The game is occasionally updated by Nicalis (the developers). These pages will attempt to track all of the changes, which are often undocumented. You can find [https://steamdb.info/depot/250911/manifests/ the official manifests] for Repentance on SteamDB.info.
+
+== [[The Binding of Isaac: Repentance+|Repentance+]] ==
+* 2026-04-20 Patch [[V1.9.7.17|v1.9.7.17.J460]]
+* 2026-04-11 Patch [[V1.9.7.16|v1.9.7.16.J450]]
+* 2025-09-25 Patch [[V1.9.7.15|v1.9.7.15.J374]]
+* 2025-09-13 Patch [[V1.9.7.14|v1.9.7.14.J370]]
+* 2025-09-10 Patch [[V1.9.7.13|v1.9.7.13.J359]]
+* 2025-05-03 Patch [[V1.9.7.12|v1.9.7.12.J273]]
+* 2025-05-01 Patch [[V1.9.7.11|v1.9.7.11.J269]]
+* 2025-02-14 Patch [[V1.9.7.10|v1.9.7.10.J212]]
+* 2025-02-12 Patch [[V1.9.7.9|v1.9.7.9.J208]]
+* 2024-12-16 Patch [[V1.9.7.8|v1.9.7.8.J181]]
+* 2024-12-05 Patch [[V1.9.7.7|v1.9.7.7.J158]]
+* 2024-11-22 Patch [[V1.9.7.6|v1.9.7.6.J148]]
+* 2024-11-19 Patch [[V1.9.7.5|v1.9.7.5.J138]]
+* 2024-11-18 Repentance+ Release [[V1.9.7.4|v1.9.7.4.J135]]
+
+== [[The Binding of Isaac: Repentance|Repentance]] ==
+* 2024-02-01 Beta Online Patch v1.9.7.2.J234 (No patch notes)
+* 2024-02-01 Beta Online Patch [[V1.9.7.1|v1.9.7.1.J232]]
+* 2024-01-08 Beta Online Patch [[V1.9.7|v1.9.7.J211]]
+* 2024-01-06 Beta Online Patch [[V1.9.6|v1.9.6.J210]]
+* 2024-01-03 Beta Online Patch [[V1.9.5|v1.9.5.J205]]
+* 2023-12-14 Beta Online Patch [[V1.9.4|v1.9.4.J197]]
+* 2023-12-08 Beta Online Patch [[V1.9.3|v1.9.3.J190]]
+* 2023-12-07 Beta Online Patch [[V1.9.2|v1.9.2.J189]]
+* 2023-12-01 Beta Online [[V1.9.1|v1.9.1.J181]]
+* 2022-12-08 Patch [[v1.7.9b]]
+* 2022-11-11 Patch [[v1.7.9a]]
+* 2022-11-04 Patch [[v1.7.9]]
+* 2022-03-25 Patch [[v1.7.8a]]
+* 2022-03-21 Patch [[v1.7.8]]
+* 2021-12-06 Patch [[v1.7.7a]]
+* 2021-12-03 Patch [[v1.7.7]]
+* 2021-11-16 Patch [[v1.7.6]]
+* 2021-11-10 Patch [[v1.7.5]]
+* 2021-05-21 Patch [[v1.06.J820]]
+* 2021-05-14 Patch [[v1.06.J818]]
+* 2021-04-24 Patch [[v1.06.J813]]
+* 2021-04-08 Patch [[v1.06.J796]]
+* 2021-04-03 Patch [[v1.06.J791]]
+* 2021-03-31 Repentance Release [[v1.06.J787]]
+
+== [[The Binding of Isaac: Afterbirth †|Afterbirth+]] ==
+* 2018-05-11 Patch [[v1.06.J168]]
+* 2018-04-30 Patch [[v1.06.J150]]
+* 2018-04-30 Patch [[v1.06.J149]] ([[Booster Packs|Booster Pack #5]])
+* 2017-12-14 Patch [[v1.06.J127]]
+* 2017-10-23 Patch [[v1.06.J119]]
+* 2017-10-10 Patch [[v1.06.J114]]
+* 2017-10-10 Patch [[v1.06.J113]] ([[Booster Packs|Booster Pack #4]])
+* 2017-07-18 Patch [[v1.06.J104]]
+* 2017-07-17 Patch [[v1.06.J103]]
+* 2017-06-30 Patch [[v1.06.J99]] ([[Booster Packs|Booster Pack #3]])
+* 2017-05-21 Patch [[v1.06.J85]]
+* 2017-05-12 Patch [[v1.06.J75]] ([[Booster Packs|Booster Pack #2]])
+* 2017-03-24 Patch [[v1.06.J39]]
+* 2017-03-23 Patch [[v1.06.J34]] ([[Booster Packs|Booster Pack #1]])
+* 2017-02-24 Patch [[v1.06.0211]]
+* 2017-02-06 Patch [[v1.06.0193]]
+* 2017-01-21 Patch [[v1.06.0192 (Re-release)]]
+* 2017-01-20 Patch [[v1.06.0192]]
+* 2017-01-17 Patch [[v1.06.0190]]
+* 2017-01-13 Patch [[v1.06.0188]]
+* 2017-01-12 Patch [[v1.06.0187]]
+* 2017-01-10 Patch [[v1.06.0185]]
+* 2017-01-07 Patch [[v1.06.0183]]
+* 2017-01-06 Patch [[v1.06.0182]]
+* 2017-01-04 Patch [[v1.06.0181]]
+* 2017-01-03 Afterbirth† Release [[v1.06.0180]]
+
+== [[The Binding of Isaac: Afterbirth|Afterbirth]] ==
+* 2016-01-21 Patch [[v1.06.0109]]
+* 2015-12-06 Patch [[v1.06.0076]]
+* 2015-11-19 Patch [[v1.06.0067]]
+* 2015-11-14 Patch [[v1.06.0060]]
+* 2015-11-13 Patch [[v1.06.0059]]
+* 2015-11-06 Patch [[v1.06.0052]]
+* 2015-11-04 Patch [[v1.06.0051]]
+* 2015-10-31 Patch [[v1.06 Hotfix]]
+* 2015-10-30 Afterbirth Release [[v1.06]]
+
+== Rebirth ==
+* 2015-02-11 Patch [[v1.05 Hotfix]]
+* 2015-02-06 Patch [[v1.05]]
+* 2014-12-29 Patch [[v1.041]]
+* 2014-12-24 Patch [[v1.04]]
+* 2014-12-11 Patch [[v1.032]]
+* 2014-12-10 Patch [[v1.031]]
+* 2014-11-11 Patch [[v1.02]]
+* 2014-11-07 Patch [[v1.01]]
+* 2014-10-31 Rebirth Release [[v1.0]]
+* 2014-10-29 Pre-Release [[v0.9]]
+
+{{nav|version|fr=Historique des versions}}
+[[Category:Versions| ]]

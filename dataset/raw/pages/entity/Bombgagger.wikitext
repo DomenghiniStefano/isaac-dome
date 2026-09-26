@@ -1,0 +1,23 @@
+{{infobox monster
+ | dlc         = r
+ | name        = Bombgagger
+ | id          =844
+ | base hp     = 26
+ | environment ={{floor|Ashpit}}
+ | behavior    = Spits up a {{E|Giga Bomb}} and runs away from it.
+}}
+
+'''Bombgaggers''' are monsters added in ''[[The Binding of Isaac: Repentance]]'' DLC and are exclusively found in {{s|Ashpit}}.
+
+When near Isaac, they will begin to vomit up a {{E|Giga Bomb}} and proceed to run to a safe distance.
+
+== Notes ==
+* {{t|Safety Scissors}} can be used to defuse and pick up the Giga Bombs that Bombgaggers produce.
+
+== Trivia ==
+* Referred to as Toothman by the development team before Repentance's release.
+
+== In-game Footage ==
+{{#ev:youtube|DJutOKhHiII}}
+
+{{nav|fr=Gerbombe}}

@@ -1,0 +1,36 @@
+{{header runes}}
+{{Infobox rune
+ | dlc         = r
+ | name        = Rune Shard
+ | type        = rune
+ | id          = 55
+ | quote       = It still glows faintly
+ | description = Activates a random rune effect that's weaker than normal. Only spawns when less than 6 different runes have been unlocked.
+ | recharge    = 1
+}}
+
+The {{cit|r|r}}
+
+== Effects ==
+* Activates a random, weakened rune effect:
+** {{p|Algiz}} grants a 3 second [[shield]].
+** {{p|Ansuz}} reveals the map up to 3 rooms away (including {{r|Ultra Secret Room}}).
+** {{p|Berkano}}:
+*** {{dlc|nr+}} Gives 1 [[blue fly]] and [[blue spider|spider]].
+*** {{dlc|r+}} Gives 1 standard {{I|Abyss}} locust for the room.
+** {{p|Dagaz}} gives a {{e|Half Soul Heart}}.
+** {{p|Ehwaz}} makes a trapdoor.
+** {{p|Hagalaz}} destroys some rocks.
+** {{p|Jera}} duplicates one pickup.
+** {{p|Perthro}} rerolls one item.
+
+== Notes ==
+* The Rune shard is a placeholder for rune spawns on a save file that doesn't have all runes unlocked yet. Once 6 runes of any kind (including soul stones) are available, Rune Shards cease to spawn.
+** Before Repentance, unlocking only one rune would make all runes the same one. This exploit that incentivized against completion was fixed with the rune shard.
+* The Jera effect activated by Rune Shards is similar to {{i|D1}} - it can create a variant of the pickup rather than its exact copy.
+* The Perthro effect from Rune Shards has a chance to reroll an item into {{i|The Poop}} (ignoring item pools).
+* The Ehwaz effect can still create {{r|Crawl Space}} entrances if used on a floor element.
+* The three most valuable rune effects from Blank Rune are {{p|Perthro}}, for a re-roll, {{p|Jera}} for copying one drop, or {{p|Ehwaz}} for a {{r|Crawl Space}} which has a high chance of containing a free item. Therefore, the best use of Blank Rune is in a room with an item, after dropping a Trinket, Rune or Card on the floor, while standing over a [[We Need To Go Deeper!|tile with a special graphic]].
+
+{{nav|fr=Fragment de Rune}}
+[[Category:Runes]]

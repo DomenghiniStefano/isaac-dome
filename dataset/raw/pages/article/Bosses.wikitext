@@ -1,0 +1,28 @@
+{{header bosses}}
+
+'''Bosses''' are very strong [[monster]]s found in [[Boss Room]]s at the end of a floor. The boss at the end of the floor must be defeated to advance to the next floor. From [[Chapter 2]] onwards, many of these non-final bosses can spawn as degraded bosses, or normal [[enemy|enemies]]. The same can go for mini-bosses, which can spawn on later floors as degraded mini-bosses. However, some bosses and mini-bosses cannot appear as degraded bosses at all. The boss for a particular floor is chosen from the pool of bosses for the [[chapter]]s of the floor. After defeating {{e|Satan}} for the first time, bosses may also spawn as [[champion]]s, which can change various attributes such as health, damage, and attack pattern. Upon defeat, most bosses drop an item from the [[Boss (Item Pool)|Boss item pool]] as well as 1-2 [[Heart]]s of any kind.
+
+Bosses boast additional resistances to [[status effect]]s. Once a boss has been inflicted with a status, they become immune to further ones for a period of time lasting longer than the initial effect itself. Slowdown-causing items that require the enemy to stay within their area such as {{i|Night Light}} are nearly useless on bosses due to the immunity triggering from the first tick. On the other hand, whole-room slowdown and slowing creep, such as that from {{i|Stop Watch}} and {{i|Juicy Sack}}, ignore the immunity and affect bosses like normal enemies.
+
+Additionally, some floors may spawn a room with a [[mini-boss]].
+
+In total, there are 102 bosses and 20 mini-bosses. 10 bosses were added in ''[[The Binding of Isaac: Afterbirth]]'', 6 were added in ''[[The Binding of Isaac: Afterbirth †]]'', and 30 bosses and 2 mini-bosses were added in ''[[The Binding of Isaac: Repentance]]''.
+
+== Gallery ==
+<gallery>
+File:Boss_Concepts.jpg|Concept art for a few bosses.
+File:MiniBosses_Gurdy.jpg|Mini-boss concept art.
+</gallery>
+
+== Trivia ==
+* Originally, every boss and enemy in Binding of Isaac was going to resemble Isaac in some way.<ref>https://web.archive.org/web/20170923040329/http://edmundm.com/post/51416553970/binding-of-isaac-fast-facts-now-they-need-to-do</ref> This is still the case for some.
+* Double Trouble boss pools can have bosses from previous chapters {{dlc|nr}} and can be the same for both versions of that chapter's floor. This means that, for example, Double Trouble boss fights in The Caves can feature bosses from The Cellar or The Basement, {{dlc|nr}} and every Double Trouble fight in The Caves can also be encountered in The Catacombs.
+* Bosses often come in three versions: normal (for example, {{e|Monstro}}), posthumous ({{e|Monstro II}}), and alternate ({{e|Gish}}). Usually, the posthumous boss looks like the original with some horrible mutilation; for example, Monstro and {{e|Chub}} had most of their skin ripped off.
+** Most bosses and their alternate/posthumous forms either share similar death animations or share the fact that they lack death animations.
+* Some bosses appear as evolved or larger versions of enemies (for example, Chub looks like a bigger {{e|Charger}}). Some even act as larger versions of other bosses ({{e|Little Horn}} and {{e|Big Horn}}).
+
+== References ==
+{{reflist}}
+
+{{nav|boss|fr=Boss}}
+[[Category:Bosses| ]]

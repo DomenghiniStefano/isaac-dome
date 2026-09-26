@@ -1,0 +1,13 @@
+{{infobox monster
+ | dlc         = r
+ | name        = Flesh Maiden
+ | id          = 880
+ | base hp     = 24
+ | stage hp    = 4
+ | environment ={{floor|Ashpit}}<br>{{room|challenge}}
+ | behavior    =Vaguely flies towards Isaac in curved swooping motions.
+}}'''Flesh Maidens''' are monsters added in ''[[The Binding of Isaac: Repentance]]'' DLC and exclusively found in {{s|Ashpit}}.
+
+They will fly vaguely towards Isaac in curved swooping motions, their eyeball eerily staring directly at him at all times. They take about half a second to get up before they start their pursuit.
+
+{{nav|fr=Vierge de Chair}}

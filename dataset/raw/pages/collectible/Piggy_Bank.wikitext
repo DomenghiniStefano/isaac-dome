@@ -21,7 +21,7 @@
 * {{I|Dull Razor}}: Activates Piggy Bank's effect without actually taking any damage.
 * {{dlc|a}} {{C|Keeper}}/{{C|Tainted Keeper|r}}: Drops 0-1 pennies instead.
 * {{i|Piggy Bank}}: Multiple copies will only add 3 more coins on pickup, with no additional coins dropping on taking damage.
-
+* {{t|Swallows Penny}}: More coins are dropped, due to identical function.
 == In-game Footage ==
 {{#ev:youtube|KzFYM5oa7I4}}
 

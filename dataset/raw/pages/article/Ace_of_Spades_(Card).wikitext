@@ -1,0 +1,31 @@
+{{Header playing cards}}
+{{Infobox card
+ | dlc         = a+
+ | name        = Ace of Spades
+ | type        = card
+ | id          = 29
+ | quote       = Convert all
+ | unlocked by = It's the Key
+ | description = Turns all [[pickup]]s, [[trinkets]] and [[chest]]s in the room into {{e|Key}}s.<br>{{dlc|r}} All non-boss enemies in the room are also transformed into keys.
+ | recharge    = {{dlcalt|4|r=6}}
+}}
+
+{{disambig msg|the card|the trinket of the same name|Ace of Spades}}
+
+{{cit|uc|a+}}
+
+== Effects ==
+* Turns all [[pickup]]s, [[trinkets]] and [[chest]]s in the room into {{e|Key}}s.
+* {{dlc|r}} All non-boss enemies in the room are also transformed into keys.
+
+== Notes ==
+* ''For tips on how to unlock the '''Ace of Spades''', see [[Achievement_Tips#Obscure_Challenge_Achievements| Achievement Tips]].''
+* Any unlocked key variant can appear.
+* {{dlc|r}} On-kill effects such as {{i|Charm of the Vampire}} do not trigger from turning enemies into keys.
+* {{dlc|r}} [[Friendly]] enemies will be transformed into keys.
+
+== Interactions ==
+* {{I|Tarot Cloth}}: No effect.
+* {{i|Blood Puppy|nr+}}: Using an Ace card on an angry Blood Puppy will create the respective pickup and tame it.
+
+{{nav|fr=As de Pique (Carte)|card|key modifier}}

@@ -1,0 +1,39 @@
+<div style="float: right; width: 280px">{{#ev:youtube|e_vlRV6lFx4|280|right}}</div>
+
+'''Trinkets''' are a type of collectible with their designated slot that can provide passive bonuses. Only one trinket can be carried at a time and must be dropped if you wish to carry another. Some of these limitations can be bypassed with certain [[item]]s; {{i|Mom's Purse}} and {{i|Belly Button}} allow two trinkets to be held at once, {{dlc|a+|}} and trinkets can be absorbed by {{i|Smelter}}, {{i|Marbles}}, or [[Gulp!]]. Absorbed trinkets do not take up a trinket slot and act as permanent passive effects.
+
+Compared to items with a similar effect, trinket effects are typically more subtle, less powerful, or less reliable. For example, the {{t|Callus}} only prevents damage from spikes and creep, while many items that do the same also grant Isaac [[flight]].
+
+The original Binding of Isaac DLC 'The Wrath of the Lamb' introduced Trinkets as a mechanic and had 33 trinkets. Rebirth has a total of 60 trinkets. [[Afterbirth]] added 29 new trinkets, for a total of 89 trinkets. [[Afterbirth †]] added 38 new trinkets, for a total of 127 trinkets. [[The Binding of Isaac: Repentance|Repentance]] added 61 new trinkets, for a total of 188 trinkets.
+
+{{dlc|r}} All trinkets have a very rare 2% chance to spawn as [[Golden Trinket]]s.
+
+* Unlocked by: {{achievement unlock|Golden Trinket}}
+
+== Notes ==
+* It is possible to drop a trinket by holding down the key or button bound to the "Drop" function for three seconds. (Doing this is not possible with the {{t|Tick}}.)
+* While held, {{i|Mom's Box}} doubles the effect of most trinkets.
+** {{dlc|r}} A Golden Trinket with Mom's Box will have a tripled effect.
+* Trinkets appear in a set order based on the run's seed, and each trinket can usually only be encountered once.
+** Trinkets which are set drops, such as {{t|Mysterious Paper}} from {{i|Divorce Papers}} and {{t|The Left Hand}} from {{e|Ultra Pride}}, can appear even if encountered previously.
+** Other set drops, such as {{t|Swallowed Penny}} from a [[urn]] or {{t|Umbilical Cord}} from a [[polyp]], will not appear if already seen.
+** If enough trinkets are spawned, e.g. through Mom's Box, the cycle loops and begins spawning trinkets that were already encountered.
+* {{dlc|nr}} If two of the same trinkets are gathered, Isaac can have both by using [[Gulp!]] on one and then picking up the other. This rarely has any useful purpose.
+* {{dlc+|r}} Multiples of the same trinkets sometimes stack as expected, and two copies of the same trinket can be held simultaneously with {{i|Belly Button}} or {{i|Mom's Purse}}. However, a large number of trinkets don't stack, especially the ones that are more complicated than a simple stat up.{{dlc-}}
+* Trinkets cannot be duplicated with items such as {{i|Diplopia}} or {{P|Jera}}.
+* {{dlc+|a+nr}} Activating the {{i|D1}} on a trinket will duplicate the trinket.{{dlc-}}
+* {{dlc+|r}} Activating the {{i|D1}} on a trinket will spawn a new, different trinket.{{dlc-}}
+
+== All Trinkets ==
+{{trinket table}}
+
+== Trivia ==
+* {{i|The Polaroid}} was originally a trinket in the original Binding of Isaac, but it was changed into an [[item]]. It had the trinket ID 47 which is now empty.
+** {{t|Wiggle Worm}} was an item in the original Binding of Isaac; however, in Rebirth, it was changed into a [[trinket]]. Interestingly, these changes keep the count of items and trinkets from the original game the same.
+* {{dlc|a+}} Afterbirth+'s original trinket count was 29. The [[Booster Pack]]s added 9 trinkets.
+* [[enboi:Game Squid|Game Squid]] is the only trinket from the original Binding of Isaac that wasn't implemented into Rebirth or any of its DLCs. This is likely due to it having been added in the Eternal Edition update after Rebirth's release.
+** {{T|Chewed Pen}}, a trinket added in Repentance, has a nearly identical effect to Game Squid.
+* The game has a set "order" of trinkets that will appear. So, for example, if a trinket is encountered as a room drop, then going back in time with the {{i|Glowing Hourglass}}, the next trinket that drops from any source will always be that same trinket. This is also why {{i|Guppy's Eye}} can show the same trinket in two different chests; as the next drop is technically that trinket, no matter which chest is opened. Opening that chest and getting that trinket will cause the other chest to change its drop to a different trinket.
+
+{{nav|fr=Babioles}}
+[[Category:Objects]]

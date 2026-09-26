@@ -1,0 +1,94 @@
+{{infobox monster
+ | id          = 29
+ | base hp     = 10
+ | environment = {{floor|Basement}}{{floor|Cellar}}{{floor|Burning Basement}}<br>{{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Depths}}{{floor|Dank Depths}}<br>{{room|boss}}{{room|challenge}}
+ | behavior    = Slowly hops around the room, doing contact damage. Can turn into a Flaming Hopper by jumping into {{E|Fire Place}}s or other fires.
+}}
+
+A '''Hopper''' jumps around the room, doing contact damage to Isaac. They jump slowly around the room until Isaac gets close to them, at which point they start chasing Isaac. They can jump across rocks and gaps.
+
+Hoppers transform into Flaming Hoppers after touching a {{E|Fire Place}}, fire spawned from {{i|Fire Mind}} or  {{Dlc|r}}{{i|Red Candle}}, or if they touch a {{i|Hot Bombs}} bomb.{{clear}}
+
+== Variations ==
+=== Flaming Hopper ===
+{{infobox monster
+ | name           = Flaming Hopper
+ | id             = 54
+ | base hp        = 20
+ | environment    = {{floor|Basement}}{{floor|Burning Basement}}<br>{{floor|Caves}}{{floor|Catacombs}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}
+ | replace        = {{dlc|a|Hopper}}
+ | replace chance = 60%
+ | replace notes  = in {{s|Burning Basement|n}}
+ | behavior       = Quickly hops around the room, doing contact damage. Covers a larger distance than the regular Hopper.
+}}
+
+'''Flaming Hoppers''' behave similarly to normal Hoppers in that they will randomly hop around the room, following Isaac only when within a certain range. Unlike normal Hoppers, Flaming Hoppers have a larger range of detection and can hop both further and faster.
+
+Flaming Hoppers will still take damage from the [[Status Effects#Burn|burning]] status effect.{{clear}}
+
+=== Leaper ===
+{{infobox monster
+ | name        = Leaper
+ | id          = 34
+ | base hp     = 25
+ | environment = {{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{room|challenge}}
+ | behavior    = Hops around the room, doing contact damage. Occasionally jumps high into the air, dropping down onto Isaac's position while firing 4 blood shots in the cardinal directions.
+}}
+
+'''Leapers''' behave similarly to Hoppers, hopping around the room and chasing Isaac when he gets close but can also jump into the air and land on Isaac's position, firing four blood projectiles in the cardinal directions upon landing.
+{{clear}}
+
+=== Sticky Leaper ===
+{{infobox monster
+ | dlc         = r
+ | name        = Sticky Leaper
+ | variant     = 1
+ | base hp     = 28
+ | environment = {{floor|Dank Depths}}<br>{{room|challenge}}
+ | behavior    = Hops around the room, dealing contact damage. Occasionally jumps high into the air, dropping down onto Isaac's position while creating a chaotic burst of tar shots in all directions and a puddle of slowing [[Creep#Black Creep|black creep]].
+}}
+
+'''Sticky Leapers''' behave like normal Leapers but spawn a pool of [[Creep#Black Creep|Black Creep]] and spew several tar shots around themselves upon landing.
+{{clear}}
+
+=== Eggy ===
+{{infobox monster
+ | dlc         = r
+ | name        = Eggy
+ | id          = 29
+ | variant     = 2
+ | base hp     = 20
+ | stage hp    = 2
+ | environment = {{floor|Catacombs}}<br>{{Floor|Necropolis}}<br>{{floor|Utero}}<br>{{floor|Corpse}}<br>{{room|challenge}}
+ | behavior    = Hops aimlessly around the room, spawning slowing [[creep#White Creep|white creep]] wherever it hops. Spawns a group of {{E|Swarm Spider}}s upon death.
+}}
+
+'''Eggies''' behave similarly to Hopper jumping around the room and chasing Isaac, spawning [[white creep]] wherever it jumps. When it takes enough damage, it spawns a group of {{e|Swarm Spider}}s. After dying its body remains for a few seconds where it can delay the room from being completed.
+{{clear}}
+
+=== Tainted Hopper ===
+{{infobox monster
+ | dlc         = r
+ | name        = Tainted Hopper
+ | variant     = 3
+ | base hp     = 80
+ | environment = {{floor|Basement}}<br>Found on the [[Ascent]] to {{s|Home}}.
+ | behavior    = Jumps and twirls around the room, shooting 4 rings of projectiles that increase in size with each shot.
+}}
+
+'''Tainted Hoppers''' are much stronger versions of Hoppers. They jump and twirl consecutively around the room, shooting 4 rings of projectiles, each increasing in size compared to the last. The first ring has 4 projectiles, the second has 6, the third has 8, and the last has 12.
+
+They are exclusive to the [[Ascent]] to {{s|Home}}.
+{{clear}}{{dlc clear}}
+
+== Gallery ==
+<gallery>
+File:Dank Depths Enemy Concept.png|Concept art for the Sticky Leaper and [[Butt Slicker]].
+File:Repentance Monster Sketches.png|Concept sketches of monsters implemented in Repentance, including the Eggy and [[Spider#Swarm Spider|Swarm Spiders]] that come out of it upon death.
+</gallery>
+
+== Trivia ==
+* Hoppers share similar movement patterns with [[zelda:Tektite|Tektites]] from ''The Legend Of Zelda''.
+* {{E|Death's Head}}, {{E|Flesh Death's Head}}, {{E|Stoney|text=Stonies}}, {{E|Cross Stoney|text=Cross Stonies}}, and Eggies are the only non-boss enemies with a death animation.
+
+{{nav|fr=Sautelant}}

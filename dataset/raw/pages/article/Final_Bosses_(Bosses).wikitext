@@ -1,0 +1,44 @@
+{{header bosses}}
+== Final Bosses ==
+{| style="width: 100%; text-align: center"
+ |[[File:Boss Mom portrait.png|center|link=Mom]]
+ |[[File:Boss Mom's Heart portrait.png|center|link=Mom's Heart]]
+ |[[file:Boss It Lives! portrait.png|center|link=It Lives!]]
+ |[[File:Boss Satan portrait.png|center|link=Satan]]
+ |-
+ |[[Mom]]
+ |[[Mom's Heart]] {{unlockable}}
+ |[[It Lives!]] {{unlockable}}
+ |[[Satan]] {{unlockable}}
+ |-
+ |[[File:Boss Isaac portrait.png|center|link=Isaac (Boss)]]
+ |[[File:Boss The Lamb portrait.png|center|link=The Lamb]]
+ |[[File:Boss ??? portrait.png |center|link=??? (Boss)|???]]
+ |[[File:Boss Mega Satan portrait.png|center|link=Mega Satan]]
+ |-
+ |[[Isaac (Boss)|Isaac]] {{unlockable}}
+ |[[The Lamb]] {{unlockable}}
+ |[[??? (Boss)|???]] {{unlockable}}
+ |[[Mega Satan]] {{unlockable}}
+ |}
+{| style="width: 100%; text-align: center"
+ |-
+ |[[File:Boss Hush portrait.png|center|link=Hush]]
+ |[[File:Boss Delirium portrait.png|center|link=Delirium]]
+ |[[File:Boss Mother portrait.png|center|link=Mother]]
+ |-
+ |[[Hush]] {{dlc|a}} {{unlockable}}
+ |[[Delirium]] {{dlc|a+}} {{unlockable}}
+ |[[Mother]] {{dlc|r}} {{unlockable}}
+ |-
+ |[[File:Boss The Beast ingame.png|172px|center|link=The Beast]]
+ |[[File:Boss Ultra Greed portrait.png|center|link=Ultra Greed]]
+ |[[File:Boss Ultra Greedier ingame.png|172px|center|link=Ultra Greedier]]
+ |-
+ |[[The Beast]] {{dlc|r}} {{unlockable}}
+ |[[Ultra Greed]] {{dlc|a}}
+ |[[Ultra Greedier]] {{dlc|a+}} {{unlockable}}
+ |}
+
+{{nav|boss|fr=Tous les Boss}}
+[[Category:Bosses]]

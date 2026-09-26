@@ -1,0 +1,426 @@
+{{infobox version
+ | dlc   = r
+ | steam = 3087775317090158626
+ | date  = 2021-11-10
+}}
+
+== Documented Changes ==
+=== Localization ===
+* The game has been updated with partial support for the following languages: Japanese, Korean, Spanish, German, Russian and Simplified Chinese.
+
+=== Additions ===
+* Added 3 new items to the boss and chest pools: {{I|Glass Eye}}, {{I|Stye}} and {{I|Mom's Ring}}
+* {{I|C Section}} is now functional and obtainable after being unlocked
+* {{I|Bag of Crafting}}, {{I|Flip}}, and {{I|Sumptorium}} can now be found by all characters after being unlocked
+* Added a {{I|Birthright}} effect to all the characters that were missing one
+* Added a description to every Tainted character that was missing one in the character selection menu
+* Added new level transition/VS screen graphics for Tainted Eden
+* Added minimap icons for Tainted ???'s poop pickups
+* Added unique starting room graphics for every character
+* Added 200+ new room layouts
+
+=== Visual changes ===
+* The Lost's health is now visible in the HUD
+* {{I|Holy Mantle}} is now visible next to the player's hearts in the HUD when active
+* Updated sprites for Tainted Lazarus
+* Updated sprites for [[The Thing]], [[Nulls]], [[Begotten]], [[Evil Twin]], [[Clot]], [[Blue Boil]] and [[Dukie]]
+* Updated sprite for {{I|Converter}}
+* Fixed The Visage's attacks to use a consistent red color scheme
+* Added unique item costumes to Tainted Lilith's fetus
+* Slightly tweaked the color of the Womb to be easier on the eyes
+* Updated graphics for ???'s only friend and Big Fan to be more consistent with Boom Flies and other variants
+* Techstone (Tech+Brimstone) lasers now have a large and giant variant similar to Brimstone lasers
+
+=== Gameplay changes ===
+* {{C|Tainted Azazel}}'s beam now has a reduced duration unless he holds Brimstone
+* Tainted Azazel now sneezes automatically when charging instead of when releasing a partial charge
+* Hitting enemies with Tainted Azazel's sneeze cuts the remaining charge time in half
+* Hitting enemies with Tainted Azazel's sneeze inflicts them with a Brimstone Curse which makes them more vulnerable to Brimstone attacks and causes them to explode when killed by Brimstone
+* {{C|Tainted Eve}}'s clots are no longer lost when recalled by {{I|Sumptorium}} if she has full health, instead they will drop to the ground next to her
+* Tainted Eve's clots now start with 15 HP when spawned and slowly decay down to 1 HP (5 HP for non-red hearts)
+* When playing as {{C|Tainted Lazarus}}, all items that spawn as part of a room layout (such as a treasure room or a shop) now have an alternate form which can be accessed using {{I|Flip}}, even after they have been picked up
+* {{C|Tainted Eden}} no longer rerolls on self inflicted damage (such as blood donations and curse rooms)
+* Tainted Eden no longer rerolls on fatal damage
+* Updated {{C|Tainted Cain}}'s recipe system to allow golden pennies, golden pills, golden batteries and poop pickups
+* Tainted Cain's crafting recipes are now slightly more consistent (high quality pickups are more likely to yield high quality items)
+* Most of Tainted Cain's crafting recipes are now generated based on the seed of the current run, aside from a few fixed recipes
+* {{C|Tainted Forgotten}} is now thrown by releasing the attack buttons if picked up while charging an attack
+* {{I|Bag of Crafting}} now yields a random item instead of Breakfast when its result would normally be an item that hasn't been unlocked yet
+* {{I|Bag of Crafting}} can now purchase pickups on sale in a shop
+* {{C|Tainted Lilith}}'s fetus now automatically aims at nearby enemies
+* {{C|Tainted Jacob}} can now pick up health when in ghost form (this does not prevent him from dying in one hit)
+* Tainted Jacob now gets more invincibility frames after being hit by Dark Esau
+* Tainted Jacob no longer turns into his ghost form if hit by Dark Esau while invulnerable
+* Dark Esau is now invulnerable and no longer blocks tears and bombs, but blocks enemy projectiles instead
+* Dark Esau now always charges towards the player instead of being locked to 8 directions
+* Dark Esau now attempts to keep a minimum distance from the player when not charging
+* Dark Esau's charge now ignores boss armor
+* Using {{I|Anima Sola}} in a room with no enemies as Tainted Jacob now immediately summons Dark Esau
+* Updated the list of items {{C|Tainted Lost}}/Birthright Lost can find (fixes being able to find Yuck Heart, or not being able to find Holy Water)
+* Donation machines now explode upon being bombed. Most donation progress is retained, but the machines do not reappear for the remainder of the run.
+* Restock machines can now uncommonly appear in shops (for real this time)
+* {{I|Rocket in a Jar}} now aims purely based on the player's aim direction (normal bombs are placed if the player is not attacking)
+* Piercing {{I|Dr. Fetus}} bombs now inflict contact damage when passing through enemies
+* Dr. Fetus + Rocket in a Jar + {{I|Polyphemus}} now fires piercing rockets that can explode twice
+* {{I|Mom's Knife}} now synergizes with {{I|Technology}} and {{I|Tech X}} (similar to the Forgotten’s thrown bone)
+* {{I|Trisagion}} shots now trigger on-hit effects only when touching enemies or obstacles
+* {{I|The Bean}} and most fart sources now push enemies, bombs and pickups
+* Reduced the volume of farts from {{I|Jupiter}}
+* Picking up items granted by {{I|Satanic Bible}} now counts as taking a devil deal (disabling future angel rooms)
+* Devil deals costing 1 heart and 2 soul hearts can now be taken if the player only has 1 heart container and no soul hearts
+* Devil deals can now be taken for free when under the Lost's curse (obtained by touching a white fire place or using Soul of the Lost), however this will cause other purchasable items in the room to disappear
+* {{I|Glass Cannon}} no longer breaks on self inflicted damage (such as blood donations and curse rooms)
+* Increased invincibility frames from Holy Mantle to 1 second (from 0.5)
+* {{I|IBS}} now behaves like a charged attack similar to Kidney Stone, but does not prevent the player from attacking when fully charged
+* Golden Troll Bombs now explode less often when coming in contact with the Beast
+* {{I|Notched Axe}} now consumes a soul charge per swing as Bethany after running out of durability (charges only get consumed if the swing hits an enemy or destroys something)
+* Notched Axe now creates bridges when breaking rocks next to pits
+* {{T|'M}} now rerolls Notched Axe when it runs out of durability
+* Increased the price of higher tier items in Angel shops from 15 to 30
+* Reduced the price of {{I|Lil Brimstone}} and {{I|Lil Abaddon}} to 1 heart
+* Devil rooms are now more likely to have items for sale
+* Capped the proc rate of {{I|Ghost Pepper}} and {{I|Bird's Eye}} to 50% (holding both removes the cap)
+* Removed a redundant range increase granted by {{I|Sacred Heart}} and {{I|Godhead}} (this was originally needed to counteract the shot speed decrease)
+* Converter now has 3 room cooldown
+* The Hermit? now converts sacks into 7 pennies
+* Treasure rooms can now be encountered in the Seeing Double challenge
+* {{I|Mama Mega!}} now has a more intuitive interaction with golden bombs: using it will now consume a golden bomb if the player has one, allowing it to be used again
+* {{I|Suplex!}} now scales in damage and area of effect with the player's size
+* {{I|Blood Puppy}} will no longer try to attack the player when they are unable to move
+* Mirrors can no longer be broken by tear effects (such as Sulfuric Acid and Terra)
+* {{I|Anima Sola}} can now chain up to two targets if the player has {{I|Car Battery}}, if only one valid target is present it will be chained for twice the duration
+* Challenge trophies and giant chests now spawn with a pickup cooldown to prevent accidentally ending a run
+* {{I|Pop!}} tears will now start falling to the ground after bouncing off each other 8 times
+* {{I|Lemegeton}} now spawns item wisps from randomized pools (Treasure, Boss and Shop pool), with a 25% chance to pick the same pool as the current room
+* Rebalanced the cooldown of {{I|Blank Card}}, {{I|Placebo}} and {{I|Clear Rune}} with certain effects
+* Bombs can now be [[Suplex!|suplexed]]
+* {{I|Little Baggy}} no longer affects pocket items that are neither pills nor cards (such as runes)
+* {{I|Heartbreak}} can no longer kill the player on pickup
+* Reviving after dying from having 100% broken hearts now removes 1 broken heart to prevent situations where the player would be still alive despite having no health
+* {{I|Dark Arts}} now only grants its temporary damage buff to Black Judas and Tainted Judas
+* Damage buff granted by Dark Arts now decays faster the higher it is, but no longer decays while Dark Arts is active
+* {{I|Binge Eater}} now gives -0.03 speed per food item held
+* Binge Eater + Breakfast now increases range and shot speed (instead of range and speed)
+* Binge Eater + Dessert now increases damage and shot speed (instead of damage and speed)
+* Reduced the size of Lost Soul’s hitsphere
+* {{T|Sigil of Baphomet}} no longer triggers from stalagmites being destroyed in the Beast fight
+* {{T|Expansion Pack}} can no longer trigger Metronome or D infinity
+* {{I|Metronome}} can no longer trigger Clicker or R Key
+* Metronome now has a reduced chance to trigger {{I|Genesis}} and {{I|Death Certificate}}
+* Fully charged {{I|Azazel's Rage}} now fires when clearing a challenge room or Greed Mode wave
+* Updated Boom Flies and other variants to use stage HP (this results in them having less HP before the Caves and more HP after)
+* Rebalanced the quality value of several items
+* Rebalanced various wisps from {{I|Book of Virtues}}
+* Updated Singe’s boss room layouts to have less rocks
+* Champion bosses that spawn with a copy of themselves now spawn with a fixed offset (this should prevent unavoidable damage upon entering a room)
+* Pink champion Cage is now smaller for consistency with other duplicating champion bosses
+* Hush's sky lasers are now affected by time scale modifiers (i.e. Hourglass)
+* {{I|Mama Mega!}} can now cause the {{I|Broken Shovel 1}} to fall down in Basement 1
+* {{I|Twisted Pair}} now interacts correctly with {{T|Friendship Necklace}}
+* {{I|Monster Manual}} can now grant {{I|Twisted Pair}}
+* {{I|Sacrificial Altar}} can now grant {{I|Vengeful Spirit}}, {{I|Hungry Soul}} and {{I|Blood Puppy}}
+* {{I|Cube Baby}} can now be picked up and thrown using {{I|Mom's Bracelet}}
+* {{I|Psy Fly}} now enters a brief cooldown period after reflecting a certain number of projectiles (it's still really good don't worry)
+* {{I|Guppy's Eye}} now displays the contents of Shopkeepers
+* Pulsing red champions now only heal enemies that are on the same team as them (perma-charmed enemies will only heal other perma-charmed enemies)
+* Morningstars can now sometimes spawn with an alternate facial expression
+* The Mausoleum can now be entered for free when under the Lost's curse
+* Bad Trip and Health Down can no longer be obtained from pills when under the Lost's curse
+* Golden hearts now only break from taking damage, or when the player no longer has enough hearts to fit all of them
+* Heart container overflow is now tracked for the purpose of full rerolls, this prevents unfair loss of heart containers when rerolling HP up items away (especially with Keeper)
+* {{I|20/20}} no longer adds an extra shot when combined with {{I|The Inner Eye}} or {{I|Mutant Spider}}, instead cancels out the firerate decrease they grant (extra copies of 20/20 add 1 extra shot per copy)
+* {{I|Mega Mush}} now grants more invincibility frames after its effect expires
+* {{I|Spirit Shackles}} now grants more invincibility frames after revival
+* The random item effect granted by {{T|Modeling Clay}} is now seeded per room
+* {{I|Abaddon}} can no longer kill the player if they have {{I|Alabaster Box}}
+* {{I|Spelunker Hat}} and {{I|Host Hat}} now block projectiles falling from above
+* Spelunker Hat now reveals rooms up to 2 rooms away
+* Increased the aura damage of {{I|Godhead}} tears from 1.05 to 2
+* {{I|Haemolacria}} + {{I|Dr. Fetus}} tears now split in a more visually satisfying way
+* Vis no longer has a random chance to turn into Double Vis, except in Utero
+* Boom Flies no longer have a random chance to turn into Red Boom Flies until Caves 1
+* Doples no longer have a chance to turn into Evil Twins
+* {{I|Dr. Fetus}} + {{I|Monstro's Lung}} now fires a more random looking barrage of bombs with a shorter fuse time
+* Super Secret Rooms with hearts now more consistently force specific heart types when spawning hearts using cards/items
+* Ultra Secret Rooms now have an item pool unique to them instead of using the Angel room pool
+* Replaced the {{I|Mitre}} with {{I|Hallowed Ground}} in the Greed mode Angel room pool
+* Updated the Greed mode Secret Room and Curse Room pools to have actual items instead of only {{I|Cube of Meat}}
+* {{I|Tammy's Head}} can now be found in the treasure room pool
+* {{I|Pyromaniac}} now has normal weight/rarity
+* {{I|Glyph of Balance}} no longer causes soul hearts to drop when playing as the Lost
+* Rebalanced payout chances from {{I|Sanguine Bond}}, stepping on the spikes now counts as intentional self damage (no damage penalties)
+* The Stars? no longer attempts to remove starting items
+* Curse of the Tower no longer triggers on damage taken from blood donation machines and devil beggars (but still triggers on other forms of intentional self damage such as IV Bag)
+* Curse of the Lost can no longer be encountered in the Red Redemption challenge
+* Losing flight now temporarily grants the Bible effect for the current room if the lack of flight would cause the player to be stuck otherwise
+* {{C|Tainted Lazarus}} now respawns as himself when revived by {{I|Lazarus' Rags}}
+* {{C|Tainted ???}} now respawns as himself when revived by the {{I|Ankh}} or {{T|Broken Ankh}}
+* {{C|Tainted Judas}} now respawns as himself when revived by {{I|Judas' Shadow}}
+* {{I|Ipecac}}, {{I|Haemolacria}} and {{I|Monstro's Lung}} tears now have a less extreme arc when fired in a crawlspace or in the Beast fight
+* {{I|Dad's Note}} can no longer be rerolled by 4-pip dice rooms and {{I|Spindown Dice}}
+
+=== Fixes ===
+* Fixed a bug causing crawlspaces to always lead to the Error room even when they should lead to a black market
+* Fixed TMTRAINER replacing important progression items
+* Fixed Soul Locket not granting stat ups when picking up soul hearts as the Lost
+* Fixed Dream Catcher showing incorrect items and bosses on certain levels (such as Greed Mode levels and the Void)
+* Fixed Decap Attack being usable while Isaac's head is in mid air
+* Fixed Recall causing the Forgotten's body to hover in the air with Car Battery
+* Fixed an exploit with the Forgotten which allowed taking infinite items from the Death Certificate area
+* Fixed Lil Abaddon not scaling with BFFs
+* Fixed Brimstone dealing one less damage tick than intended
+* Fixed several orbitals doing less contact damage than intended
+* Fixed invisible mirrors and devil room doors which could appear along walls where a door should not be present
+* Fixed Ludovico tears periodically getting destroyed in sidescrolling sections
+* Fixed red chests forcing the devil room to be initialized when opened, regardless of whether they contain a teleport to the devil room or not (this sometimes caused angel rooms not to generate properly)
+* Fixed treasure rooms in the mirror dimension counting as treasure rooms for the purpose of calculating Planetarium spawning chance
+* Fixed battery bums not giving charges to Tainted Forgotten when touched by his soul
+* Fixed battery bums not being able to recharge Book of Virtues
+* Fixed Luna light beams granting their stat bonus to the wrong character when playing as Tainted Forgotten
+* Fixed The Emperor? being able to create final boss fights when used in Caves II or Depths II (or equivalent floors)
+* Fixed The Emperor? creating a bugged Monstro fight when used in Gehenna and the Blue Womb
+* Fixed Genesis giving a lot more items than intended when multiple copies of the same items are owned
+* Fixed Genesis giving less items than intended when used by characters with multiple bodies (such as Jacob and Esau)
+* Fixed Genesis duplicating starting items from challenges and not removing Damocles and Missing No
+* Fixed Vanishing Twin not working correctly when fighting Great Gideon
+* Fixed the bottom right corner of closet rooms having no collision (this could rarely result in entities getting stuck there)
+* Fixed Star of Bethlehem crashing the game in challenge runs ending at Mega Satan
+* Fixed wisps spawned by Book of Virtues + Fortune Cookie not updating the player's luck stat
+* Fixed Urn of Souls spawning wisps when opened or closed with Book of Virtues
+* Fixed Guppy's Paw, Potato Peeler and Sharp Key generating wisps for free with Book of Virtues
+* Fixed Dull Razor killing the player when used under the Lost's curse (white fire/Soul of the Lost)
+* Fixed Dr. Fetus + Marked + Eye of the Occult not moving fired bombs towards the crosshair
+* Fixed Dr. Fetus + Rocket in a Jar always throwing rockets to the right when playing as the Forgotten
+* Fixed Dead Cat always setting the player's max HP to 1 even after being dropped and picked back up (this mainly affected Tainted Eden and Tainted Isaac)
+* Fixed several bugs related to rotten hearts with Tainted Magdalene
+* Fixed Haemolacria not working with the Forgotten's bone and similar melee attacks
+* Fixed rockets fired by Dr. Fetus + Rocket in a Jar not flying in the correct direction after passing through Angelic Prism
+* Fixed Dr. Fetus bombs being able to knock each other around after passing through Angelic Prism
+* Fixed a softlock caused by jumping down a trapdoor with Mega Mush while having flight
+* Fixed Dark Arts affecting friendly enemies and projectiles
+* Fixed speed upgrades being only half as effective on Tainted Forgotten
+* Fixed Tainted Forgotten immediately dying upon being revived as a different character
+* Fixed ???'s birthright doubling HP downs
+* Fixed an infinite loop caused by Haemolacria + Sad Bombs + Dr. Fetus
+* Fixed the full screen effect from Dogma's death animation not going away if the player teleports out of the room before the animation finishes
+* Fixed familiars not firing towards the crosshair when the player has Eye of the Occult and Technology/Brimstone
+* Fixed Clicker not spawning/removing Tainted Forgotten's Soul
+* Fixed a crash caused by becoming Tainted Isaac with Clicker
+* Fixed not being able to Flip when becoming Tainted Lazarus with Clicker
+* Fixed Butter spawning extra items with Damocles
+* Fixed items dropped by Butter being affected by auto-rerolling abilities such as Glitched Crown
+* Fixed Guppy's Eye sometimes leaving item previews behind when a chest or sack gets removed
+* Fixed Dead Eye not working correctly with the Forgotten's bone
+* Fixed daily runs featuring the Forgotten, Bethany or Jacob and Esau briefly displaying Apollyon as the starting character during the loading screen
+* Fixed not being able to consume an item with Void right after picking it up from a pedestal if certain active items were previously consumed (such as Smelter)
+* Fixed Tractor Beam getting visually cut off too early when hitting the top wall of the room
+* Fixed Esau Jr causing instant death when used as the Lost
+* Fixed a crash caused by certain items interacting with Mom's Knife + Tiny Planet
+* Fixed I Found Pills using the wrong graphics when obtained with any skin color other than Isaac's default color
+* Fixed Jacob and Esau’s stats clipping into the Hard/Greed mode icons
+* Fixed Tainted Azazel's Brimstone beam not becoming stronger when picking up Brimstone
+* Fixed being able to extend the duration of Berserk indefinitely by taking damage while having no health
+* Fixed The Fool? rarely removing all of the player's hearts
+* Fixed The Empress? removing all but half of a heart when the effect expires for certain characters
+* Fixed several indestructible enemies missing the "noreroll" tag
+* Fixed Rotten Gapers not having a looping idle head animation
+* Fixed a rare case where Delirium's death animation would never end, softlocking the game
+* Fixed Gnawed Leaf statue visual having a slightly oddly shaped head
+* Fixed Dr Fetus and Epic Fetus costumes using outdated graphics when given to Black Judas
+* Fixed a crash caused by Purgatory when the owner of a Purgatory ghost stops existing before it explodes
+* Fixed Lil Conquest spawning locusts way more often than intended
+* Fixed the Forgotten's bone not being duplicated properly by Multidimensional Baby and Angelic Prism
+* Fixed straight lasers not respecting their range when damaging grid entities (this caused Technology Zero and Extension Cord to destroy distant poops or TNT from a distance without actually touching them)
+* Fixed Mother not stopping her looping sounds when teleporting out of the boss room
+* Fixed Dark Esau getting instantly killed by bosses that kill all spawned enemies on death (such as Mom's Heart)
+* Fixed Dark Esau preventing Mega Satan from progressing to his next phase
+* Fixed Hush sometimes spawning projectiles after dying
+* Fixed Tainted Boom Flies dying without exploding if killed while poisoned or burning
+* Fixed Ultra Greed's boss armor not resetting properly after spinning or guarding
+* Fixed item pedestals in boss rooms always containing multiple items in co-op, even if the pedestal wasn't spawned as a room clear reward (i.e. Moving Box, Mystery Gift, or any item that can spawn item pedestals)
+* Fixed Tainted Lazarus not always being able to open the “special” door in Depths 2
+* Fixed Tainted ??? being able to donate infinite bombs to bomb beggars if he somehow manages to obtain bombs
+* Fixed Tainted Jacob's co-op ghost turning into a glitched Isaac head when going to the next floor
+* Fixed Tainted Eden not having a randomized haircut
+* Fixed being able to delete any enemy or boss by holding them with Suplex right before the effect of Berserk runs out
+* Fixed a few exploits which allowed Found Soul's death to be bypassed
+* Fixed How To Jump preventing the player from attacking until they hit the ground
+* Fixed dying as Jacob and Esau in co-op not triggering a game over
+* Fixed co-op ghosts dealing much less damage than intended
+* Fixed some teleport animations in co-op causing the player to become permanently non-solid if interrupted by another player leaving the room
+* Fixed the Forgotten being able to collect pickups as a co-op ghost by using his bone
+* Fixed items not being given back properly when entering and leaving an abandoned mineshaft as a co-op ghost
+* Fixed Tainted Bethany rarely losing Lemegeton when a Polydactyly wisp is destroyed
+* Fixed full rerolls removing Holy Mantle shields and preventing Dark Esau from spawning for the rest of the floor
+* Fixed multi-shot Ludovico tears crashing the game when removed by weapon modifiers such as Mom's Knife or Brimstone
+* Fixed crawlspaces not being colored properly during the Ascent
+* Fixed a few rare crashes caused by too many lasers being on screen
+* Fixed Lachryphagy tears sometimes accumulating much more damage than intended
+* Fixed Chub, C.H.A.D and Carrion Queen segments detaching in Greed mode
+* Fixed certain boss fights spawning hearts and stopping the music prematurely, such as Matriarch or Delirium
+* Fixed Tarot Cloth quadrupling the effect of The Hierophant?, The Lovers? and Temperance? instead of simply doubling it
+* Fixed stat bonuses from Redemption, Candy Heart and Soul Locket not being retained when saving and resuming a run
+* Fixed Tainted Lilith's fetus getting duplicated when saving and resuming a run
+* Fixed Tainted Lilith's umbilical cord sometimes rendering behind her body when facing left or right
+* Fixed way too many issues with Esau Jr
+* Fixed a softlock caused by killing Chimera's body while it is picking up its head
+* Fixed Alabaster Box absorbing the black hearts granted by Judas' Shadow, potentially causing death
+* Fixed Lemegeton being able to give the Bible when holding the Rosary
+* Fixed a potential softlock when using The Moon? to teleport into an ultra secret room connected to a regular secret room
+* Fixed lock blocks being breakable by Notched Axe, Sulfuric Acid, and other rock breaking effects (they are supposed to be breakable only by bombs + Broken Padlock)
+* Fixed extra copies of Dark Esau not disappearing when going to the next floor in the Red Redemption challenge
+* Fixed a crash caused by Esau gaining Birthright when using Soul of Jacob and Esau
+* Fixed helpers spawned by Soul of the Forgotten and Soul of Jacob and Esau being able to touch ending chests, softlocking the game
+* Fixed Tainted Cain being able to go down to 0 hearts from taking devil deals without dying
+* Fixed the Exorcist having an unobtainable Bestiary entry
+* Fixed the wrong portrait showing if the player is killed by Scourge’s tendrils
+* Fixed a hitsphere from Scourge’s tendrils lingering if Scourge is killed during certain attacks
+* Fixed a crash caused by some of Mother’s attacks being destroyed/deflected
+* Fixed thrown haunted chests causing damage when Spirit Sword hits them
+
+== Undocumented Changes ==
+* The ornament that adorns the {{r|Planetarium}} door was moved one pixel to the left and therefore centered.
+* Holding "R" to reset a run will gradually fade the screen to black before resetting the run. If R is let go during the fadeout time, it stops the fade and the run is not reset. Overall, this makes each reset take roughly 0.2 seconds longer.
+* When playing as{{c|Tainted Lazarus}}, the Active Item of both of his forms now charge upon room completion. Previously, items would only charge upon room completion for Tainted Lazarus's currently active form, effectively making any active item have double its charge time.
+* Donation machines now give increased money when bombed, to compensate for them only being able to be destroyed once per run. This is especially useful on early floors, as it makes it much easier to purchase a 15 cent item.
+* Picking up {{i|Dead Cat}} as Esau no longer grants {{c|Jacob and Esau}} unlimited extra lives.
+* {{c|Tainted Samson}} has a new mechanic such that if he uses {{i|Suplex!}} on an enemy at the end of his berserk state, it will deal extra amounts of damage and cause a {{i|Mama Mega!}} effect. (This uses two new animations called "SuperLeapUp" and "SuperLeapDown".)
+** The reason for this was due to a bug where if Tainted Samson's berserk ended while he was Suplexing, the said enemy would simply disappear, causing a softlock against some bosses
+* Specific changes to item qualities:
+** {{i|120 Volt}}: 3 to 2
+** {{i|Anima Sola}}: 2 to 3
+** {{i|Ankh}}: 2 to 1
+** {{i|Anti-Gravity}}: 3 to 2
+** {{i|Aquarius}}: 0 to 1
+** {{i|Aries}}: 1 to 2
+** {{i|Athame}}: 2 to 1
+** {{i|Bag of Crafting}}: 3 to 4
+** {{i|Belly Jelly}}: 2 to 3
+** {{i|The Belt}}: 2 to 1
+** {{i|Binge Eater}}: 3 to 4
+** {{i|Bird's Eye}}: 2 to 3
+** {{i|Birthright}}: 2 to 3
+** {{i|Blanket}}: 1 to 2
+** {{i|Blood Puppy}}: 2 to 1
+** {{i|The Book of Belial}}: 3 to 2
+** {{i|Book of Shadows}}: 2 to 3
+** {{i|Book of the Dead}}: 2 to 3
+** {{i|The Boomerang}}: 1 to 2
+** {{i|Broken Modem}}: 1 to 2
+** {{i|Brother Bobby}}: 0 to 1
+** {{i|Butter Bean}}: 0 to 1
+** {{i|Charm of the Vampire}}: 0 to 1
+** {{i|Chemical Peel}}: 1 to 2
+** {{i|Converter}}: 1 to 2
+** {{i|Crystal Ball}}: 2 to 3
+** {{i|D infinity}}: 1 to 4
+** {{i|D1}}: 2 to 4
+** {{i|Dark Arts}}: 2 to 3
+** {{i|Deck of Cards}}: 1 to 2
+** {{i|Divorce Papers}}: 2 to 3
+** {{i|A Dollar}}: 2 to 3
+** {{i|Eternal D6}}: 2 to 3
+** {{i|Eve's Mascara}}: 1 to 2
+** {{i|Evil Charm}}: 1 to 2
+** {{i|Explosivo}}: 1 to 2
+** {{i|Flip}}: 3 to 4
+** {{i|Free Lemonade}}: 2 to 1
+** {{i|Friendly Ball}}: 1 to 2
+** {{i|GB Bug}}: 0 to 1
+** {{i|Ghost Pepper}}: 2 to 3
+** {{i|Glowing Hourglass}}: 1 to 3
+** {{i|Glyph of Balance}}: 1 to 2
+** {{i|Guillotine}}: 3 to 2
+** {{i|Habit}}: 3 to 2
+** {{i|Haemolacria}}: 2 to 3
+** {{i|Holy Water}}: 0 to 3
+** {{i|Inner Child}}: 3 to 2
+** {{i|Jacob's Ladder}}: 2 to 3
+** {{i|Jupiter}}: 3 to 2
+** {{i|Keeper's Box}}: 3 to 2
+** {{i|Kidney Bean}}: 0 to 1
+** {{i|Kidney Stone}}: 1 to 2
+** {{i|King Baby}}: 0 to 1
+** {{i|Lil Gurdy}}: 1 to 2
+** {{i|Lost Fly}}: 0 to 1
+** {{i|The Ludovico Technique}}: 3 to 2
+** {{i|Marked}}: 0 to 1
+** {{i|Metronome}}: 0 to 1
+** {{i|Monster Manual}}: 0 to 1
+** {{i|Multidimensional Baby}}: 1 to 2
+** {{i|Mysterious Liquid}}: 1 to 3
+** {{i|The Negative}}: 1 to 2
+** {{i|Notched Axe}}: 0 to 1
+** {{i|Odd Mushroom (Thin)}}: 3 to 2
+** {{i|Orphan Socks}}: 1 to 2
+** {{i|The Parasite}}: 2 to 3
+** {{i|The Peeper}}: 0 to 2
+** {{i|The Pinking Shears}}: 3 to 2
+** {{i|Poke Go}}: 0 to 1
+** {{i|Potato Peeler}}: 3 to 2
+** {{i|Psy Fly}}: 3 to 4
+** {{i|A Quarter}}: 2 to 1
+** {{i|Quints}}: 1 to 2
+** {{i|Red Stew}}: 0 to 2
+** {{i|Restock}}: 3 to 2
+** {{i|Robo-Baby 2.0}}: 0 to 1
+** {{i|Rock Bottom}}: 2 to 3
+** {{i|Rosary}}: 1 to 2
+** {{i|Rotten Tomato}}: 1 to 2
+** {{i|Sacrificial Dagger}}: 3 to 2
+** {{i|Sad Bombs}}: 3 to 2
+** {{i|Salvation}}: 2 to 3
+** {{i|Saturnus}}: 1 to 2
+** {{i|Scissors}}: 0 to 1
+** {{i|Scorpio}}: 2 to 3
+** {{i|Serpent's Kiss}}: 4 to 2
+** {{i|Shard of Glass}}: 0 to 1
+** {{i|Shoop da Whoop!}}: 1 to 2
+** {{i|Sister Maggy}}: 0 to 1
+** {{i|Smart Fly}}: 3 to 2
+** {{i|Spirit Shackles}}: 3 to 2
+** {{i|Sulfur}}: 2 to 3
+** {{i|Tammy's Head}}: 3 to 2
+** {{i|Teleport 2.0}}: 2 to 3
+** {{i|Tractor Beam}}: 2 to 3
+** {{i|Venus}}: 1 to 2
+** {{i|The Virus}}: 0 to 2
+** {{i|Wait What?}}: 0 to 1
+** {{i|Worm Friend}}: 2 to 3
+** {{i|Yuck Heart}}: 3 to 2
+* Several new tags were added to the "items_metadata.xml" file:
+** [[Item Tags lazarusshared|<code>lazarusshared</code>]]
+** [[Item Tags lazarussharedglobal|<code>lazarussharedglobal</code>]]
+** [[Item Tags noeden|<code>noeden</code>]]
+** [[Item Tags nochallenge|<code>nochallenge</code>]]
+** [[Item Tags nodaily|<code>nodaily</code>]]
+* The following items cost 30 coins to purchase in an Angel shop:{{column list | width = 15em | content =
+** {{i|The Body}}
+** {{i|Crown Of Light}}
+** {{i|Dead Dove}}
+** {{i|Godhead}}
+** {{i|Holy Grail}}
+** {{i|Holy Mantle}}
+** {{i|Immaculate Heart}}
+** {{i|The Mind}}
+** {{i|Paschal Candle}}
+** {{i|Prayer Card}}
+** {{i|The Relic}}
+** {{i|Revelation}}
+** {{i|Sacred Heart}}
+** {{i|Sacred Orb}}
+** {{i|The Soul}}
+** {{i|Spirit Sword}}
+** {{i|Trinity Shield}}
+** {{i|The Wafer}}
+}}
+* {{i|Sausage}} now gives a +6.9% Devil/Angel Room chance and a +6.9% Planetarium chance.
+* {{i|Paschal Candle}} now increments correctly after clearing a room with {{c|Tainted Lazarus}} (before, the Flip effect took priority and Paschal Candle never had an opportunity to increment).
+* Some items and trinkets with the [[Item Tags lazarussharedglobal|<code>lazarussharedglobal</code> item tag]] are now shared between both forms of {{c|Tainted Lazarus}}. This includes items that map parts of the floor such as the [[The Compass|Compass]], items that increase devil/angel deal chance such as [[Black Candle]], and items/trinkets that spawn new or altered rooms on each floor such as [[Voodoo Head]]. Items that grant a shared effect and a stat boost (such as [[Pentagram]], which grants a damage increase and increases devil deal chance), will not transfer the stat increases between forms.
+* {{e|Necro}}s are now visible in their [[Bestiary Repentance|Bestiary]] entry.
+* The changes to the price of certain items in an Angel shop ({{i|The Stairway}}) also applies to the prices of those items in Angel Rooms in general for {{c|Tainted Keeper}}.
+* Fixed {{C|Tainted Isaac}}'s special inventory being temporarily invisible after quitting and reloading a run.
+* Fixed {{C|Tainted Jacob}} becoming permanently unable to recover from his Lost form after quitting and reloading a run.
+* The player the user is controlling in [[Debug Console#Unlisted Commands|"netstart"]] co-op now has a pink outline for increased visibility.
+
+{{nav|version}}

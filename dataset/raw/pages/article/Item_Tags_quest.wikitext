@@ -1,0 +1,16 @@
+{{page dlc|r}}
+
+Items with this [[Item Tags|tag]] cannot be rerolled in most circumstances, and bypass character-specific limitations. Most items in this list are progression-related.
+
+* {{c|Tainted Isaac}}: Items do not have a second option, and do not contribute to the 8-item limit.
+* {{c|Tainted Cain}}: Items will not be decomposed into pickups, and can be picked up as normal.
+* {{c|Tainted Eden}}: Items will not be rerolled upon hit.
+
+== Activated Collectibles ==
+{{collectible table | tag = quest | type = activated }}
+
+== Passive Collectibles ==
+{{collectible table | tag = quest | type = passive }}
+
+{{nav|fr=Balise quest}}
+[[Category:Item tags]]

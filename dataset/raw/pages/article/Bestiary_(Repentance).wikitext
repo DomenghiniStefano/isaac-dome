@@ -1,0 +1,1059 @@
+{{page dlc|r}}
+[[file:Bestiary Page 1.png|alt=First page of the bestiary|center|frameless|450x450px|First page of the Bestiary]]
+The '''bestiary''' is a new addition to ''[[The Binding of Isaac: Afterbirth †]]'' that is accessible through the "Stats" menu. The Bestiary shows information and statistics on all encountered [[monster]]s and [[boss]]es except for some alternate forms of some enemies.
+
+It shows the number of times an enemy has been encountered, how much health it has, how much damage it has done to Isaac, how many times it's been killed, and how many times it has killed Isaac.
+
+Because ''Repentance'' added a lot of new enemies, the whole page layout was reworked, requiring this page to be separate from [[Bestiary|the ''Afterbirth †'' Bestiary]].
+
+== Notes ==
+* The order of the monsters starts with ''Rebirth'' enemies, then ''Afterbirth'' enemies, then ''Afterbirth †'', and finally ''Repentance'' enemies.
+* Encountering a boss while fighting {{E|Delirium}} does not count towards the bestiary.
+* Seeded and challenge runs will affect bestiary entries, including whether an enemy has been found at least once or not, meaning that regardless of whether achievements are disabled or not, bestiary entries will still be updated.
+** This also means that enemies spawned using the developer console will be counted as well.
+* While fighting {{E|Hush}}, the {{E|Blue Boil}} will count as an encounter but the {{E|Blue Gaper}} will not. A Blue Gaper must be found on its own to be marked as an encounter.
+
+== Pages ==
+These are the monsters on each of the bestiary's pages.
+
+''(Click on the images to open the corresponding monster page.)''
+
+=== Monsters ===
+<div style="float: left; padding: 12px">
+{| class="wikitable" style="text-align: center; background-color: transparent"
+ | colspan="4" |
+
+==== Page 1 ====
+|- style="background-color: #0004"
+ | [[file:Frowning Gaper.png|80x80px|link=Frowning Gaper]]
+ | [[file:Gaper.png|80x80px|link=Gaper]]
+ | [[file:Flaming Gaper.png|80x80px|link=Flaming Gaper]]
+ | [[file:Rotten Gaper.png|80x80px|link=Rotten Gaper]]
+|- style="background-color: #0004"
+ | [[file:Gusher.png|80x80px|link=Gusher]]
+ | [[file:Pacer.png|80x80px|link=Pacer]]
+ | [[file:Horf.png|80x80px|link=Horf]]
+ | [[file:Fly.png|80x80px|link=Fly]]
+|- style="background-color: #0004"
+ | [[file:Pooter.png|80x80px|link=Pooter]]
+ | [[file:Super Pooter.png|80x80px|link=Super Pooter]]
+ | [[file:Tainted Pooter.png|80x80px|link=Tainted Pooter]]
+ | [[file:Clotty.png|80x80px|link=Clotty]]
+|- style="background-color: #0004"
+ | [[file:Clot.png|80x80px|link=Clot]]
+ | [[file:I.Blob.png|80x80px|link=I.Blob]]
+ | [[file:Grilled Clotty.png|80x80px|link=Grilled Clotty]]
+ | [[file:Mulligan.png|80x80px|link=Mulligan]]
+ |}
+</div>
+<div style="float: left; padding: 12px">
+{| class="wikitable" style="text-align: center; background-color: transparent"
+ | colspan="4" |
+
+==== Page 2 ====
+|- style="background-color: #0004"
+ | [[file:Mulligoon.png|80x80px|link=Mulligoon]]
+ | [[file:Mulliboom.png|80x80px|link=Mulliboom]]
+ | [[file:Attack Fly.png|80x80px|link=Attack Fly]]
+ | [[file:Maggot.png|80x80px|link=Maggot]]
+|- style="background-color: #0004"
+ | [[file:Hive.png|80x80px|link=Hive]]
+ | [[file:Drowned Hive.png|80x80px|link=Drowned Hive]]
+ | [[file:Holy Mulligan.png|80x80px|link=Holy Mulligan]]
+ | [[file:Tainted Mulligan.png|80x80px|link=Tainted Mulligan]]
+|- style="background-color: #0004"
+ | [[file:Charger.png|80x80px|link=Charger]]
+ | [[file:Drowned Charger.png|80x80px|link=Drowned Charger]]
+ | [[file:Dank Charger.png|80x80px|link=Dank Charger]]
+ | [[file:Carrion Princess.png|80x80px|link=Carrion Princess]]
+|- style="background-color: #0004"
+ | [[file:Globin.png|80x80px|link=Globin]]
+ | [[file:Gazing Globin.png|80x80px|link=Gazing Globin]]
+ | [[file:Dank Globin.png|80x80px|link=Dank Globin]]
+ | [[file:Cursed Globin.png|80x80px|link=Cursed Globin]]
+ |}
+</div>
+{{clear}}
+<div style="float: left; padding: 12px">
+{| class="wikitable" style="text-align: center; background-color: transparent"
+ | colspan="4" |
+
+==== Page 3 ====
+|- style="background-color: #0004"
+ | [[file:Boom Fly.png|80x80px|link=Boom Fly]]
+ | [[file:Red Boom Fly.png|80x80px|link=Red Boom Fly]]
+ | [[file:Drowned Boom Fly.png|80x80px|link=Drowned Boom Fly]]
+ | [[file:Dragon Fly.png|80x80px|link=Dragon Fly]]
+|- style="background-color: #0004"
+ | [[file:Bone Fly.png|80x80px|link=Bone Fly]]
+ | [[file:Sick Boom Fly.png|80x80px|link=Sick Boom Fly]]
+ | [[file:Tainted Boom Fly.png|80x80px|link=Tainted Boom Fly]]
+ | [[file:Maw.png|80x80px|link=Maw]]
+|- style="background-color: #0004"
+ | [[file:Red Maw.png|80x80px|link=Red Maw]]
+ | [[file:Psychic Maw.png|80x80px|link=Psychic Maw]]
+ | [[file:Host.png|80x80px|link=Host]]
+ | [[file:Red Host.png|80x80px|link=Red Host]]
+|- style="background-color: #0004"
+ | [[file:Hard Host.png|80x80px|link=Hard Host]]
+ | [[file:Hopper.png|80x80px|link=Hopper]]
+ | [[file:Trite.png|80x80px|link=Trite]]
+ | [[file:Eggy.png|80x80px|link=Eggy]]
+ |}
+</div>
+<div style="float: left; padding: 12px">
+{| class="wikitable" style="text-align: center; background-color: transparent"
+ | colspan="4" |
+
+==== Page 4 ====
+|- style="background-color: #0004"
+ | [[file:Tainted Hopper.png|80x80px|link=Tainted Hopper]]
+ | [[file:Boil.png|80x80px|link=Boil]]
+ | [[file:Gut.png|80x80px|link=Gut]]
+ | [[file:Sack.png|80x80px|link=Sack (Enemy)]]
+|- style="background-color: #0004"
+ | [[file:Spitty.png|80x80px|link=Spitty]]
+ | [[file:Tainted Spitty.png|80x80px|link=Tainted Spitty]]
+ | [[file:Brain.png|80x80px|link=Brain]]
+ | [[file:Leaper.png|80x80px|link=Leaper]]
+|- style="background-color: #0004"
+ | [[file:Sticky Leaper.png|80x80px|link=Sticky Leaper]]
+ | [[file:Mr. Maw.png|80x80px|link=Mr. Maw]]
+ | [[file:Mr. Red Maw.png|80x80px|link=Mr. Red Maw]]
+ | [[file:Baby.png|80x80px|link=Baby]]
+|- style="background-color: #0004"
+ | [[file:Angelic Baby.png|80x80px|link=Angelic Baby]]
+ | [[file:Wrinkly Baby.png|80x80px|link=Wrinkly Baby]]
+ | [[file:Vis.png|80x80px|link=Vis]]
+ | [[file:Double Vis.png|80x80px|link=Double Vis]]
+ |}
+</div>
+{{clear}}
+<div style="float: left; padding: 12px">
+{| class="wikitable" style="text-align: center; background-color: transparent"
+ | colspan="4" |
+
+==== Page 5 ====
+|- style="background-color: #0004"
+ | [[file:Chubber.png|80x80px|link=Chubber]]
+ | [[file:Scarred Double Vis.png|80x80px|link=Scarred Double Vis]]
+ | [[file:Guts.png|80x80px|link=Guts]]
+ | [[file:Scarred Guts.png|80x80px|link=Scarred Guts]]
+|- style="background-color: #0004"
+ | [[file:Slog.png|80x80px|link=Slog]]
+ | [[file:Knight.png|80x80px|link=Knight]]
+ | [[file:Selfless Knight.png|80x80px|link=Selfless Knight]]
+ | [[file:Loose Knight.png|80x80px|link=Loose Knight]]
+|- style="background-color: #0004"
+ | [[file:Brainless Knight.png|80x80px|link=Brainless Knight]]
+ | [[file:Black Knight.png|80x80px|link=Black Knight]]
+ | [[file:Stone Grimace.png|80x80px|link=Stone Grimace]]
+ | [[file:Vomit Grimace.png|80x80px|link=Vomit Grimace]]
+|- style="background-color: #0004"
+ | [[file:Triple Grimace.png|80x80px|link=Triple Grimace]]
+ | [[file:Poky.png|80x80px|link=Poky]]
+ | [[file:Slide.png|80x80px|link=Slide]]
+ | [[file:Dople.png|80x80px|link=Dople]]
+ |}
+</div>
+<div style="float: left; padding: 12px">
+{| class="wikitable" style="text-align: center; background-color: transparent"
+ | colspan="4" |
+
+==== Page 6 ====
+|- style="background-color: #0004"
+ | [[file:Evil Twin.png|80x80px|link=Evil Twin]]
+ | [[file:Flaming Hopper.png|80x80px|link=Flaming Hopper]]
+ | [[file:Leech.png|80x80px|link=Leech (Enemy)]]
+ | [[file:Kamikaze Leech.png|80x80px|link=Kamikaze Leech]]
+|- style="background-color: #0004"
+ | [[file:Holy Leech.png|80x80px|link=Holy Leech]]
+ | [[file:Lump.png|80x80px|link=Lump]]
+ | [[file:MemBrain.png|80x80px|link=MemBrain]]
+ | [[file:Mama Guts.png|80x80px|link=Mama Guts]]
+|- style="background-color: #0004"
+ | [[file:Dead Meat.png|80x80px|link=Dead Meat]]
+ | [[file:Para-Bite.png|80x80px|link=Para-Bite]]
+ | [[file:Scarred Para-Bite.png|80x80px|link=Scarred Para-Bite]]
+ | [[file:Fred.png|80x80px|link=Fred]]
+|- style="background-color: #0004"
+ | [[file:Eye.png|80x80px|link=Eye]]
+ | [[file:Bloodshot Eye.png|80x80px|link=Bloodshot Eye (Enemy)]]
+ | [[file:Holy Eye.png|80x80px|link=Holy Eye]]
+ | [[file:Sucker.png|80x80px|link=Sucker]]
+ |}
+</div>
+{{clear}}
+<div style="float: left; padding: 12px">
+{| class="wikitable" style="text-align: center; background-color: transparent"
+ | colspan="4" |
+
+==== Page 7 ====
+|- style="background-color: #0004"
+ | [[file:Spit.png|80x80px|link=Spit]]
+ | [[file:Soul Sucker.png|80x80px|link=Soul Sucker]]
+ | [[file:Ink.png|80x80px|link=Ink]]
+ | [[file:Mama Fly.png|80x80px|link=Mama Fly]]
+|- style="background-color: #0004"
+ | [[file:Bulb.png|80x80px|link=Bulb]]
+ | [[file:Bloodfly.png|80x80px|link=Bloodfly]]
+ | [[file:Tainted Sucker.png|80x80px|link=Tainted Sucker]]
+ | [[file:Embryo.png|80x80px|link=Embryo]]
+|- style="background-color: #0004"
+ | [[file:Moter.png|80x80px|link=Moter]]
+ | [[file:Spider.png|80x80px|link=Spider]]
+ | [[file:Keeper.png|80x80px|link=Keeper (Enemy)]]
+ | [[file:Gurgle.png|80x80px|link=Gurgle]]
+|- style="background-color: #0004"
+ | [[file:Crackle.png|80x80px|link=Crackle]]
+ | [[file:Walking Boil.png|80x80px|link=Walking Boil]]
+ | [[file:Walking Gut.png|80x80px|link=Walking Gut]]
+ | [[file:Walking Sack.png|80x80px|link=Walking Sack]]
+ |}
+</div>
+<div style="float: left; padding: 12px">
+{| class="wikitable" style="text-align: center; background-color: transparent"
+ | colspan="4" |
+
+==== Page 8 ====
+|- style="background-color: #0004"
+ | [[file:Buttlicker.png|80x80px|link=Buttlicker]]
+ | [[file:Hanger.png|80x80px|link=Hanger]]
+ | [[file:Swarmer.png|80x80px|link=Swarmer]]
+ | [[file:Heart Solo.png|80x80px|link=Mask + Heart]]
+|- style="background-color: #0004"
+ | [[file:Half Heart Solo.png|80x80px|link=Mask II + 1/2 Heart]]
+ | [[file:Mask Solo.png|80x80px|link=Mask + Heart]]
+ | [[file:Mask II Solo.png|80x80px|link=Mask II + 1/2 Heart]]
+ | [[file:Big Spider.png|80x80px|link=Big Spider]]
+|- style="background-color: #0004"
+ | [[file:Eternal Fly.png|80x80px|link=Eternal Fly]]
+ | [[file:Stone Eye.png|80x80px|link=Stone Eye]]
+ | [[file:Constant Stone Shooter.png|80x80px|link=Constant Stone Shooter]]
+ | [[file:Cross Grimace.png|80x80px|link=Stone Grimace#Cross Stone Shooter]]
+|- style="background-color: #0004"
+ | [[file:Brimstone Head.png|80x80px|link=Brimstone Head]]
+ | [[file:Mobile Host.png|80x80px|link=Mobile Host]]
+ | [[file:Nest.png|80x80px|link=Nest]]
+ | [[file:Baby Long Legs.png|80x80px|link=Baby Long Legs]]
+ |}
+</div>
+{{clear}}
+<div style="float: left; padding: 12px">
+{| class="wikitable" style="text-align: center; background-color: transparent"
+ | colspan="4" |
+
+==== Page 9 ====
+|- style="background-color: #0004"
+ | [[file:Small Baby Long Legs.png|80x80px|link=Small Baby Long Legs]]
+ | [[file:Crazy Long Legs.png|80x80px|link=Crazy Long Legs]]
+ | [[file:Small Crazy Long Legs.png|80x80px|link=Small Crazy Long Legs]]
+ | [[file:Fatty.png|80x80px|link=Fatty]]
+|- style="background-color: #0004"
+ | [[file:Pale Fatty.png|80x80px|link=Pale Fatty]]
+ | [[file:Flaming Fatty.png|80x80px|link=Flaming Fatty]]
+ | [[file:Fat Sack.png|80x80px|link=Fat Sack]]
+ | [[file:Blubber.png|80x80px|link=Blubber]]
+|- style="background-color: #0004"
+ | [[file:Half Sack.png|80x80px|link=Half Sack]]
+ | [[file:Death's Head.png|80x80px|link=Death's Head]]
+ | [[file:Dank Death's Head.png|80x80px|link=Dank Death's Head]]
+ | [[file:Cursed Death's Head.png|80x80px|link=Cursed Death's Head]]
+|- style="background-color: #0004"
+ | [[file:Brimstone Death's Head.png|80x80px|link=Brimstone Death's Head]]
+ | [[file:Redskull.png|80x80px|link=Redskull]]
+ | [[file:Mom's Hand.png|80x80px|link=Mom's Hand]]
+ | [[file:Level 2 Fly.png|80x80px|link=Level 2 Fly]]
+ |}
+</div>
+<div style="float: left; padding: 12px">
+{| class="wikitable" style="text-align: center; background-color: transparent"
+ | colspan="4" |
+
+==== Page 10 ====
+|- style="background-color: #0004"
+ | [[file:Level 2 Spider.png|80x80px|link=Level 2 Spider]]
+ | [[file:Swinger.png|80x80px|link=Swinger]]
+ | [[file:Dip.png|80x80px|link=Dip]]
+ | [[file:Corn.png|80x80px|link=Corn]]
+|- style="background-color: #0004"
+ | [[file:Brownie Corn.png|80x80px|link=Brownie Corn]]
+ | [[file:Big Corn.png|80x80px|link=Big Corn]]
+ | [[file:Wall Hugger.png|80x80px|link=Wall Hugger]]
+ | [[file:Wizoob.png|80x80px|link=Wizoob]]
+|- style="background-color: #0004"
+ | [[file:Squirt.png|80x80px|link=Squirt]]
+ | [[file:Dank Squirt.png|80x80px|link=Dank Squirt]]
+ | [[file:Cod Worm.png|80x80px|link=Cod Worm]]
+ | [[file:Ring Fly.png|80x80px|link=Ring Fly]]
+|- style="background-color: #0004"
+ | [[file:Dinga.png|80x80px|link=Dinga]]
+ | [[file:Oob.png|80x80px|link=Oob]]
+ | [[file:Black Maw.png|80x80px|link=Black Maw]]
+ | [[file:Skinny.png|80x80px|link=Skinny]]
+ |}
+</div>
+{{clear}}
+<div style="float: left; padding: 12px">
+{| class="wikitable" style="text-align: center; background-color: transparent"
+ | colspan="4" |
+
+==== Page 11 ====
+|- style="background-color: #0004"
+ | [[file:Rotty.png|80x80px|link=Rotty]]
+ | [[file:Crispy.png|80x80px|link=Crispy]]
+ | [[file:Bony.png|80x80px|link=Bony]]
+ | [[file:Holy Bony.png|80x80px|link=Holy Bony]]
+|- style="background-color: #0004"
+ | [[file:Homunculus.png|80x80px|link=Homunculus]]
+ | [[file:Tumor.png|80x80px|link=Tumor]]
+ | [[file:Planetoid.png|80x80px|link=Planetoid]]
+ | [[file:Camillo Jr..png|80x80px|link=Camillo Jr.]]
+|- style="background-color: #0004"
+ | [[file:Nerve Ending.png|80x80px|link=Nerve Ending]]
+ | [[file:Nerve Ending 2.png|80x80px|link=Nerve Ending 2]]
+ | [[file:One Tooth.png|80x80px|link=One Tooth]]
+ | [[file:Gaping Maw.png|80x80px|link=Gaping Maw]]
+|- style="background-color: #0004"
+ | [[file:Broken Gaping Maw.png|80x80px|link=Broken Gaping Maw]]
+ | [[file:Gurgling.png|80x80px|link=Gurgling_(Enemy)]]
+ | [[file:Splasher.png|80x80px|link=Splasher]]
+ | [[file:Grub.png|80x80px|link=Grub]]
+ |}
+</div>
+<div style="float: left; padding: 12px">
+{| class="wikitable" style="text-align: center; background-color: transparent"
+ | colspan="4" |
+
+==== Page 12 ====
+|- style="background-color: #0004"
+ | [[file:Wall Creep.png|80x80px|link=Wall Creep]]
+ | [[file:Soy Creep.png|80x80px|link=Soy Creep]]
+ | [[File:Tainted Soy Creep.png|80x80px|link=Tainted Soy Creep]]
+ | [[file:Rage Creep.png|80x80px|link=Rage Creep]]
+|- style="background-color: #0004"
+ | [[file:Blind Creep.png|80x80px|link=Blind Creep]]
+ | [[file:Conjoined Spitty.png|80x80px|link=Conjoined Spitty]]
+ | [[file:Round Worm.png|80x80px|link=Round Worm]]
+ | [[file:Tube Worm.png|80x80px|link=Tube Worm]]
+|- style="background-color: #0004"
+ | [[file:Tainted Round Worm.png|80x80px|link=Tainted Round Worm]]
+ | [[file:Tainted Tube Worm.png|80x80px|link=Tainted Tube Worm]]
+ | [[file:Ragling.png|80x80px|link=Ragling]]
+ | [[file:Flesh Mobile Host.png|80x80px|link=Flesh Mobile Host]]
+|- style="background-color: #0004"
+ | [[file:Psychic Horf.png|80x80px|link=Psychic Horf]]
+ | [[file:Full Fly.png|80x80px|link=Full Fly]]
+ | [[file:Ticking Spider.png|80x80px|link=Ticking Spider]]
+ | [[file:Begotten.png|80x80px|link=Begotten]]
+ |}
+</div>
+{{clear}}
+<div style="float: left; padding: 12px">
+{| class="wikitable" style="text-align: center; background-color: transparent"
+ | colspan="4" |
+
+==== Page 13 ====
+|- style="background-color: #0004"
+ | [[file:Nulls.png|80x80px|link=Nulls]]
+ | [[file:Psy Tumor.png|80x80px|link=Psy Tumor]]
+ | [[file:Floating Knight.png|80x80px|link=Floating Knight]]
+ | [[file:Night Crawler.png|80x80px|link=Night Crawler]]
+|- style="background-color: #0004"
+ | [[file:Dart Fly.png|80x80px|link=Dart Fly]]
+ | [[file:Conjoined Fatty.png|80x80px|link=Conjoined Fatty]]
+ | [[file:Blue Conjoined Fatty.png|80x80px|link=Blue Conjoined Fatty]]
+ | [[file:Fat Bat.png|80x80px|link=Fat Bat]]
+|- style="background-color: #0004"
+ | [[file:Imp.png|80x80px|link=Imp]]
+ | [[file:Lil' Haunt.png|80x80px|link=Lil' Haunt]]
+ | [[file:Roundy.png|80x80px|link=Roundy]]
+ | [[file:Black Bony.png|80x80px|link=Black Bony]]
+|- style="background-color: #0004"
+ | [[file:Black Globin.png|80x80px|link=Black Globin]]
+ | [[file:Black Globin's Head.png|80x80px|link=Black Globin's Head]]
+ | [[file:Black Globin's Body.png|80x80px|link=Black Globin's Body]]
+ | [[file:Swarm.png|80x80px|link=Swarm]]
+ |}
+</div>
+<div style="float: left; padding: 12px">
+{| class="wikitable" style="text-align: center; background-color: transparent"
+ | colspan="4" |
+
+==== Page 14 ====
+|- style="background-color: #0004"
+ | [[file:Mega Clotty.png|80x80px|link=Mega Clotty]]
+ | [[file:Bone Knight.png|80x80px|link=Bone Knight]]
+ | [[file:Cyclopia.png|80x80px|link=Cyclopia]]
+ | [[file:Red Ghost.png|80x80px|link=Red Ghost]]
+|- style="background-color: #0004"
+ | [[file:Flesh Death's Head.png|80x80px|link=Flesh Death's Head]]
+ | [[file:Mom's Dead Hand.png|80x80px|link=Mom's Dead Hand]]
+ | [[file:Dukie.png|80x80px|link=Dukie]]
+ | [[file:Ulcer.png|80x80px|link=Ulcer]]
+|- style="background-color: #0004"
+ | [[file:Meatball.png|80x80px|link=Meatball]]
+ | [[file:Corn Mine.png|80x80px|link=Corn Mine]]
+ | [[file:Hush Fly.png|80x80px|link=Hush Fly]]
+ | [[file:Blue Gaper.png|80x80px|link=Blue Gaper]]
+|- style="background-color: #0004"
+ | [[file:Blue Boil.png|80x80px|link=Blue Boil]]
+ | [[file:Greed Gaper.png|80x80px|link=Greed Gaper]]
+ | [[file:Mushroom (Enemy).png|80x80px|link=Mushroom (Enemy)]]
+ | [[file:Poison Mind.png|80x80px|link=Poison Mind]]
+ |}
+</div>
+{{clear}}
+<div style="float: left; padding: 12px">
+{| class="wikitable" style="text-align: center; background-color: transparent"
+ | colspan="4" |
+
+==== Page 15 ====
+|- style="background-color: #0004"
+ | [[file:Stoney.png|80x80px|link=Stoney]]
+ | [[file:Blister.png|80x80px|link=Blister (Enemy)]]
+ | [[file:The Thing.png|80x80px|link=The Thing]]
+ | [[file:Ministro.png|80x80px|link=Ministro]]
+|- style="background-color: #0004"
+ | [[file:Portal.png|80x80px|link=Portal]]
+ | [[file:Lil Portal.png|80x80px|link=Portal#Lil Portal]]
+ | [[file:Tar Boy.png|80x80px|link=Tar Boy]]
+ | [[file:Fistuloid.png|80x80px|link=Fistuloid]]
+|- style="background-color: #0004"
+ | [[file:Gush.png|80x80px|link=Gush]]
+ | [[file:Leper.png|80x80px|link=Leper]]
+ | [[file:Leper Flesh.png|80x80px|link=Leper Flesh]]
+ | [[file:Mr. Mine.png|80x80px|link=Mr. Mine]]
+|- style="background-color: #0004"
+ | [[file:Enemy Blood Puppy.png|80x80px|link=Blood Puppy]]
+ | [[file:Quake Grimace.png|80x80px|link=Quake Grimace]]
+ | [[file:Bishop.png|80x80px|link=Bishop]]
+ | [[file:Bubbles.png|80x80px|link=Bubbles]]
+ |}
+</div>
+<div style="float: left; padding: 12px">
+{| class="wikitable" style="text-align: center; background-color: transparent"
+ | colspan="4" |
+
+==== Page 16 ====
+|- style="background-color: #0004"
+ | [[file:Wraith.png|80x80px|link=Wraith]]
+ | [[file:Willo.png|80x80px|link=Willo]]
+ | [[file:Small Leech.png|80x80px|link=Leech (Enemy)#Small Leech]]
+ | [[file:Deep Gaper.png|80x80px|link=Deep Gaper]]
+|- style="background-color: #0004"
+ | [[file:Sub Horf.png|80x80px|link=Sub Horf]]
+ | [[file:Tainted Sub Horf.png|80x80px|link=Tainted Sub Horf]]
+ | [[file:Blurb.png|80x80px|link=Blurb]]
+ | [[file:Strider.png|80x80px|link=Strider]]
+|- style="background-color: #0004"
+ | [[file:Fissure.png|80x80px|link=Fissure]]
+ | [[file:Polty.png|80x80px|link=Polty]]
+ | [[file:Kineti.png|80x80px|link=Kineti]]
+ | [[file:Prey.png|80x80px|link=Prey]]
+|- style="background-color: #0004"
+ | [[file:Mullighoul.png|80x80px|link=Mullighoul]]
+ | [[file:Rock Spider.png|80x80px|link=Rock_Spider]]
+ | [[file:Tinted Rock Spider.png|80x80px|link=Tinted Rock Spider]]
+ | [[file:Coal Spider.png|80x80px|link=Coal Spider]]
+ |}
+</div>
+{{clear}}
+<div style="float: left; padding: 12px">
+{| class="wikitable" style="text-align: center; background-color: transparent"
+ | colspan="4" |
+
+==== Page 17 ====
+|- style="background-color: #0004"
+ | [[file:Fly Bomb.png|80x80px|link=Fly Bomb]]
+ | [[file:Danny.png|80x80px|link=Danny]]
+ | [[file:Coal Boy.png|80x80px|link=Coal Boy]]
+ | [[file:Blaster.png|80x80px|link=Blaster]]
+|- style="background-color: #0004"
+ | [[file:Bouncer.png|80x80px|link=Bouncer]]
+ | [[file:Quakey.png|80x80px|link=Quakey]]
+ | [[file:Gyro.png|80x80px|link=Gyro]]
+ | [[file:Grilled Gyro.png|80x80px|link=Grilled Gyro]]
+|- style="background-color: #0004"
+ | [[file:Fire Worm.png|80x80px|link=Fire Worm]]
+ | [[file:Hardy.png|80x80px|link=Hardy]]
+ | [[file:Faceless.png|80x80px|link=Faceless]]
+ | [[file:Tainted Faceless.png|80x80px|link=Tainted Faceless]]
+|- style="background-color: #0004"
+ | [[file:Necro.png|80x80px|link=Necro]]
+ | [[file:Mole.png|80x80px|link=Mole]]
+ | [[file:Tainted Mole.png|80x80px|link=Tainted Mole]]
+ | [[file:Big Bony.png|80x80px|link=Big Bony]]
+ |}
+</div>
+<div style="float: left; padding: 12px">
+{| class="wikitable" style="text-align: center; background-color: transparent"
+ | colspan="4" |
+
+==== Page 18 ====
+|- style="background-color: #0004"
+ | [[file:Gutted Fatty.png|80x80px|link=Gutted Fatty]]
+ | [[file:Festering Guts.png|80x80px|link=Festering Guts]]
+ | [[file:Fanatic.png|80x80px|link=Fanatic]]
+ | [[file:Candler.png|80x80px|link=Candler]]
+|- style="background-color: #0004"
+ | [[file:Whipper.png|80x80px|link=Whipper]]
+ | [[file:Snapper.png|80x80px|link=Snapper]]
+ | [[file:Flagellant.png|80x80px|link=Flagellant]]
+ | [[file:Peeping Fatty.png|80x80px|link=Peeping Fatty]]
+|- style="background-color: #0004"
+ | [[file:Vis Versa.png|80x80px|link=Vis Versa]]
+ | [[file:Level 2 Willo.png|80x80px|link=Level 2 Willo]]
+ | [[file:Pon.png|80x80px|link=Pon]]
+ | [[file:Revenant.png|80x80px|link=Revenant]]
+|- style="background-color: #0004"
+ | [[file:Quad Revenant.png|80x80px|link=Quad Revenant]]
+ | [[file:Bombgagger.png|80x80px|link=Bombgagger]]
+ | [[file:Level 2 Gaper.png|80x80px|link=Level 2 Gaper]]
+ | [[file:Level 2 Horf.png|80x80px|link=Level 2 Horf]]
+ |}
+</div>
+{{clear}}
+<div style="float: left; padding: 12px">
+{| class="wikitable" style="text-align: center; background-color: transparent"
+ | colspan="4" |
+
+==== Page 19 ====
+|- style="background-color: #0004"
+ | [[file:Level 2 Gusher.png|80x80px|link=Level 2 Gusher]]
+ | [[file:Twitchy.png|80x80px|link=Twitchy]]
+ | [[file:Spikeball.png|80x80px|link=Spikeball]]
+ | [[file:Small Maggot.png|80x80px|link=Small Maggot]]
+|- style="background-color: #0004"
+ | [[file:Adult Leech.png|80x80px|link=Adult Leech]]
+ | [[file:Level 2 Charger.png|80x80px|link=Level 2 Charger]]
+ | [[file:Elleech.png|80x80px|link=Elleech]]
+ | [[file:Gasbag.png|80x80px|link=Gasbag]]
+|- style="background-color: #0004"
+ | [[file:Cohort.png|80x80px|link=Cohort]]
+ | [[file:Floating Host.png|80x80px|link=Floast]]
+ | [[file:Unborn.png|80x80px|link=Unborn]]
+ | [[file:Pustule.png|80x80px|link=Pustule]]
+|- style="background-color: #0004"
+ | [[file:Cyst.png|80x80px|link=Cyst]]
+ | [[file:Morningstar.png|80x80px|link=Morningstar]]
+ | [[file:Mockulus.png|80x80px|link=Mockulus]]
+ | [[file:Evis.png|80x80px|link=Evis]]
+ |}
+</div>
+<div style="float: left; padding: 12px">
+{| class="wikitable" style="text-align: center; background-color: transparent"
+ | colspan="4" |
+
+==== Page 20 ====
+|- style="background-color: #0004"
+ | [[file:Army Fly.png|80x80px|link=Army Fly]]
+ | [[file:Migraine.png|80x80px|link=Migraine]]
+ | [[file:Drip.png|80x80px|link=Drip]]
+ | [[file:Splurt.png|80x80px|link=Splurt]]
+|- style="background-color: #0004"
+ | [[file:Cloggy.png|80x80px|link=Cloggy]]
+ | [[file:Fly Trap.png|80x80px|link=Fly Trap]]
+ | [[file:Gas Dwarf.png|80x80px|link=Gas Dwarf]]
+ | [[file:Poot Mine.png|80x80px|link=Poot Mine]]
+|- style="background-color: #0004"
+ | [[file:Dump.png|80x80px|link=Dump]]
+ | [[file:Dump Head.png|80x80px|link=Dump Head]]
+ | [[file:Grudge.png|80x80px|link=Grudge]]
+ | [[file:Butt Slicker.png|80x80px|link=Butt Slicker]]
+|- style="background-color: #0004"
+ | [[file:Bloaty.png|80x80px|link=Bloaty]]
+ | [[file:Flesh Maiden.png|80x80px|link=Flesh Maiden]]
+ | [[file:Needle.png|80x80px|link=Needle]]
+ | [[file:Pasty.png|80x80px|link=Pasty]]
+ |}
+</div>
+{{clear}}
+<div style="float: left; padding: 12px">
+{| class="wikitable" style="text-align: center; background-color: transparent"
+ | colspan="4" |
+
+==== Page 21 ====
+|- style="background-color: #0004"
+ | [[file:Dust.png|80x80px|link=:Dust]]
+ | [[file:Baby Begotten.png|80x80px|link=Baby Begotten]]
+ | [[file:Swarm Spider.png|80x80px|link=Swarm Spider]]
+ | [[file:Cultist.png|80x80px|link=Cultist]]
+|- style="background-color: #0004"
+ | [[file:Blood Cultist.png|80x80px|link=Blood Cultist]]
+ | [[file:Vis Fatty.png|80x80px|link=Vis Fatty]]
+ | [[file:Fetal Demon.png|80x80px|link=Fetal Demon]]
+ | [[file:Dusty Death's Head.png|80x80px|link=Dusty Death's Head]]
+|- style="background-color: #0004"
+ | [[file:Shady.png|80x80px|link=Shady]]
+ | [[file:Clickety Clack.png|80x80px|link=Clickety Clack]]
+ | [[file:Maze Roamer.png|80x80px|link=Maze Roamer]]
+ | [[file:Goat.png|80x80px|link=Goat]]
+|- style="background-color: #0004"
+ | [[file:Black Goat.png|80x80px|link=Black Goat]]
+ | [[file:Poofer.png|80x80px|link=Poofer]]
+ | [[file:Ball and Chain.png|80x80px|link=Ball and Chain]]
+ | [[file:Dead Isaac.png|80x80px|link=Dead Isaac]]
+ |}
+</div>
+{{clear}}
+
+=== Bosses ===
+<div style="float: left; padding: 12px">
+{| class="wikitable" style="text-align: center; background-color: transparent"
+ | colspan="4" |
+
+==== Page 22 ====
+|- style="background-color: #0004"
+ | [[file:Boss Larry Jr. ingame.png|160x160px|link=Larry_Jr.]]
+ | [[file:Boss The Hollow ingame.png|160x160px|link=The Hollow]]
+|- style="background-color: #0004"
+ | [[file:Boss Tuff Twins ingame.png|160x160px|link=Tuff Twins]]
+ | [[file:Boss The Shell ingame.png|160x160px|link=The Shell]]
+ |}
+</div>
+<div style="float: left; padding: 12px">
+{| class="wikitable" style="text-align: center; background-color: transparent"
+ | colspan="4" |
+
+==== Page 23 ====
+|- style="background-color: #0004"
+ | [[file:Boss Monstro ingame.png|160x160px|link=Monstro]]
+ | [[file:Boss Chub ingame.png|160x160px|link=Chub]]
+|- style="background-color: #0004"
+ | [[file:Boss C.H.A.D. ingame.png|160x160px|link=C.H.A.D.]]
+ | [[file:Boss Carrion Queen ingame.png|160x160px|link=Carrion Queen]]
+ |}
+</div>
+<div style="float: left; padding: 12px">
+{| class="wikitable" style="text-align: center; background-color: transparent"
+ | colspan="4" |
+
+==== Page 24 ====
+|- style="background-color: #0004"
+ | [[file:Boss Gurdy ingame.png|160x160px|link=Gurdy]]
+ | [[file:Boss Ultra Pride Baby ingame.png|160x160px|link=Ultra Pride]]
+|- style="background-color: #0004"
+ | [[file:Boss Monstro II ingame.png|160x160px|link=Monstro II]]
+ | [[file:Boss Gish ingame.png|160x160px|link=Gish]]
+ |}
+</div>
+{{clear}}
+<div style="float: left; padding: 12px">
+{| class="wikitable" style="text-align: center; background-color: transparent"
+ | colspan="4" |
+
+==== Page 25 ====
+|- style="background-color: #0004"
+ | [[file:Boss Mom ingame.png|160x160px|link=Mom]]
+ | [[file:Sloth.png|160x160px|link=Sloth]]
+|- style="background-color: #0004"
+ | [[file:Super Sloth.png|160x160px|link=Super Sloth]]
+ | [[file:Boss Ultra Pride Adult ingame.png|160x160px|link=Ultra Pride]]
+ |}
+</div>
+<div style="float: left; padding: 12px">
+{| class="wikitable" style="text-align: center; background-color: transparent"
+ | colspan="4" |
+
+==== Page 26 ====
+|- style="background-color: #0004"
+ | [[file:Lust.png|160x160px|link=Lust]]
+ | [[file:Super Lust.png|160x160px|link=Super Lust]]
+|- style="background-color: #0004"
+ | [[file:Wrath.png|160x160px|link=Wrath]]
+ | [[file:Super Wrath.png|160x160px|link=Super Wrath]]
+ |}
+</div>
+<div style="float: left; padding: 12px">
+{| class="wikitable" style="text-align: center; background-color: transparent"
+ | colspan="4" |
+
+==== Page 27 ====
+|- style="background-color: #0004"
+ | [[file:Gluttony.png|160x160px|link=Gluttony]]
+ | [[file:Super Gluttony.png|160x160px|link=Super Gluttony]]
+|- style="background-color: #0004"
+ | [[file:Greed.png|160x160px|link=Greed]]
+ | [[file:Super Greed.png|160x160px|link=Super Greed]]
+ |}
+</div>
+{{clear}}
+<div style="float: left; padding: 12px">
+{| class="wikitable" style="text-align: center; background-color: transparent"
+ | colspan="4" |
+
+==== Page 28 ====
+|- style="background-color: #0004"
+ | [[file:Envy.png|160x160px|link=Envy]]
+ | [[file:Super Envy.png|160x160px|link=Super Envy]]
+|- style="background-color: #0004"
+ | [[file:Pride.png|160x160px|link=Pride]]
+ | [[file:Super Pride.png|160x160px|link=Super Pride]]
+ |}
+</div>
+<div style="float: left; padding: 12px">
+{| class="wikitable" style="text-align: center; background-color: transparent"
+ | colspan="4" |
+
+==== Page 29 ====
+|- style="background-color: #0004"
+ | [[file:Boss Pin ingame.png|160x160px|link=Pin]]
+ | [[file:Boss Scolex ingame.png|160x160px|link=Scolex]]
+|- style="background-color: #0004"
+ | [[file:Boss The Frail ingame.png|160x160px|link=The Frail]]
+ | [[file:Boss Wormwood (Downpour) ingame.png|160x160px|link=Wormwood]]
+ |}
+</div>
+<div style="float: left; padding: 12px">
+{| class="wikitable" style="text-align: center; background-color: transparent"
+ | colspan="4" |
+
+==== Page 30 ====
+|- style="background-color: #0004"
+ | [[file:Boss Famine ingame.png|160x160px|link=Famine]]
+ | [[file:Boss Pestilence ingame.png|160x160px|link=Pestilence]]
+|- style="background-color: #0004"
+ | [[file:Boss War ingame.png|160x160px|link=War]]
+ | [[file:Boss Conquest ingame.png|160x160px|link=Conquest]]
+ |}
+</div>
+{{clear}}
+<div style="float: left; padding: 12px">
+{| class="wikitable" style="text-align: center; background-color: transparent"
+ | colspan="4" |
+
+==== Page 31 ====
+|- style="background-color: #0004"
+ | [[file:Boss Death ingame.png|160x160px|link=Death (Boss)]]
+ | [[file:Boss The Duke of Flies ingame.png|160x160px|link=The Duke of Flies]]
+|- style="background-color: #0004"
+ | [[file:Boss The Husk ingame.png|160x160px|link=The Husk]]
+ | [[file:Boss Peep ingame.png|160x160px|link=Peep]]
+ |}
+</div>
+<div style="float: left; padding: 12px">
+{| class="wikitable" style="text-align: center; background-color: transparent"
+ | colspan="4" |
+
+==== Page 32 ====
+|- style="background-color: #0004"
+ | [[file:Boss The Bloat ingame.png|160x160px|link=The Bloat]]
+ | [[file:Boss Loki ingame.png|160x160px|link=Loki]]
+|- style="background-color: #0004"
+ | [[file:Boss Lokii ingame.png|160x160px|link=Lokii]]
+ | [[file:Boss Fistula ingame.png|160x160px|link=Fistula]]
+ |}
+</div>
+<div style="float: left; padding: 12px">
+{| class="wikitable" style="text-align: center; background-color: transparent"
+ | colspan="4" |
+
+==== Page 33 ====
+|- style="background-color: #0004"
+ | [[file:Boss Teratoma ingame.png|160x160px|link=Teratoma]]
+ | [[file:Boss Blastocyst ingame.png|160x160px|link=Blastocyst]]
+|- style="background-color: #0004"
+ | [[file:Boss Mom's Heart ingame.png|160x160px|link=Mom's Heart]]
+ | [[file:Boss It Lives! ingame.png|160x160px|link=It Lives!]]
+ |}
+</div>
+{{clear}}
+<div style="float: left; padding: 12px">
+{| class="wikitable" style="text-align: center; background-color: transparent"
+ | colspan="4" |
+
+==== Page 34 ====
+|- style="background-color: #0004"
+ | [[file:Boss Contusion ingame.png|160x160px|link=Gemini]]
+ | [[file:Boss Steven Big ingame.png|160x160px|link=Steven]]
+|- style="background-color: #0004"
+ | [[file:Boss Blighted Ovum Large ingame.png|160x160px|link=Blighted Ovum]]
+ | [[file:Boss Suture ingame.png|160x160px|link=Gemini]]
+ |}
+</div>
+<div style="float: left; padding: 12px">
+{| class="wikitable" style="text-align: center; background-color: transparent"
+ | colspan="4" |
+
+==== Page 35 ====
+|- style="background-color: #0004"
+ | [[file:Boss Steven Little ingame.png|160x160px|link=Steven]]
+ | [[file:Boss Blighted Ovum Spirit ingame.png|160x160px|link=Blighted Ovum]]
+|- style="background-color: #0004"
+ | [[file:Boss The Fallen ingame.png|160x160px|link=The Fallen]]
+ | [[file:Boss Krampus ingame.png|160x160px|link=Krampus]]
+ |}
+</div>
+<div style="float: left; padding: 12px">
+{| class="wikitable" style="text-align: center; background-color: transparent"
+ | colspan="4" |
+
+==== Page 36 ====
+|- style="background-color: #0004"
+ | [[file:Boss Headless Horseman Body ingame.png|160x160px|link=Headless Horseman]]
+ | [[file:Boss Headless Horseman Head ingame.png|160x160px|link=Headless Horseman]]
+|- style="background-color: #0004"
+ | [[file:Boss Satan ingame.png|160x160px|link=Satan]]
+ | [[file:Boss Mask of Infamy Mask ingame.png|160x160px|link=Mask Of Infamy]]
+ |}
+</div>
+{{clear}}
+<div style="float: left; padding: 12px">
+{| class="wikitable" style="text-align: center; background-color: transparent"
+ | colspan="4" |
+
+==== Page 37 ====
+|- style="background-color: #0004"
+ | [[file:Boss Mask of Infamy Heart ingame.png|160x160px|link=Mask Of Infamy]]
+ | [[file:Boss Gurdy Jr. ingame.png|160x160px|link=Gurdy Jr.]]
+|- style="background-color: #0004"
+ | [[file:Boss Widow ingame.png|160x160px|link=Widow]]
+ | [[file:Boss The Wretched ingame.png|160x160px|link=The Wretched]]
+ |}
+</div>
+<div style="float: left; padding: 12px">
+{| class="wikitable" style="text-align: center; background-color: transparent"
+ | colspan="4" |
+
+==== Page 38 ====
+|- style="background-color: #0004"
+ | [[file:Boss Daddy Long Legs ingame.png|160x160px|link=Daddy Long Legs]]
+ | [[file:Boss Triachnid ingame.png|160x160px|link=Triachnid]]
+|- style="background-color: #0004"
+ | [[file:Boss Isaac thirdphase ingame.png|160x160px|link=Isaac_(Boss)]]
+ | [[file:Boss ??? thirdphase ingame.png|160x160px|link=???_(Boss)]]
+ |}
+</div>
+<div style="float: left; padding: 12px">
+{| class="wikitable" style="text-align: center; background-color: transparent"
+ | colspan="4" |
+
+==== Page 39 ====
+|- style="background-color: #0004"
+ | [[file:Boss Gurglings ingame.png|160x160px|link=Gurglings]]
+ | [[file:Boss Turdlings ingame.png|160x160px|link=Turdlings]]
+|- style="background-color: #0004"
+ | [[file:Boss The Haunt ingame.png|160x160px|link=The Haunt]]
+ | [[file:Boss Dingle ingame.png|160x160px|link=Dingle]]
+ |}
+</div>
+{{clear}}
+<div style="float: left; padding: 12px">
+{| class="wikitable" style="text-align: center; background-color: transparent"
+ | colspan="4" |
+
+==== Page 40 ====
+|- style="background-color: #0004"
+ | [[file:Boss Dangle ingame.png|160x160px|link=Dangle]]
+ | [[file:Boss Mega Maw ingame.png|160x160px|link=Mega Maw]]
+|- style="background-color: #0004"
+ | [[file:Boss The Gate ingame.png|160x160px|link=The Gate]]
+ | [[file:Boss Mega Fatty ingame.png|160x160px|link=Mega Fatty]]
+ |}
+</div>
+<div style="float: left; padding: 12px">
+{| class="wikitable" style="text-align: center; background-color: transparent"
+ | colspan="4" |
+
+==== Page 41 ====
+|- style="background-color: #0004"
+ | [[file:Boss The Cage ingame.png|160x160px|link=The Cage]]
+ | [[file:Boss Mama Gurdy ingame.png|160x160px|link=Mama Gurdy]]
+|- style="background-color: #0004"
+ | [[file:Boss Dark One ingame.png|160x160px|link=Dark_One]]
+ | [[file:Boss The Adversary ingame.png|160x160px|link=The Adversary]]
+ |}
+</div>
+<div style="float: left; padding: 12px">
+{| class="wikitable" style="text-align: center; background-color: transparent"
+ | colspan="4" |
+
+==== Page 42 ====
+|- style="background-color: #0004"
+ | [[file:Boss Polycephalus ingame.png|160x160px|link=Polycephalus]]
+ | [[file:Boss The Pile ingame.png|160x160px|link=The Pile]]
+|- style="background-color: #0004"
+ | [[file:Boss Mr. Fred ingame.png|160x160px|link=Mr. Fred]]
+ | [[file:Uriel.png|160x160px|link=Uriel]]
+ |}
+</div>
+{{clear}}
+<div style="float: left; padding: 12px">
+{| class="wikitable" style="text-align: center; background-color: transparent"
+ | colspan="4" |
+
+==== Page 43 ====
+|- style="background-color: #0004"
+ | [[file:Fallen Uriel.png|160x160px|link=Uriel]]
+ | [[file:Gabriel.png|160x160px|link=Gabriel]]
+|- style="background-color: #0004"
+ | [[file:Fallen Gabriel.png|160x160px|link=Gabriel]]
+ | [[file:Boss The Lamb ingame.png|160x160px|link=The Lamb]]
+ |}
+</div>
+<div style="float: left; padding: 12px">
+{| class="wikitable" style="text-align: center; background-color: transparent"
+ | colspan="4" |
+
+==== Page 44 ====
+|- style="background-color: #0004"
+ | [[file:Boss Mega Satan ingame.png|160x160px|link=Mega Satan]]
+ | [[file:Boss Mega Satan secondphase ingame.png|160x160px|link=Mega Satan]]
+|- style="background-color: #0004"
+ | [[file:Boss The Stain ingame.png|160x160px|link=The Stain]]
+ | [[file:Boss Brownie ingame.png|160x160px|link=Brownie]]
+ |}
+</div>
+<div style="float: left; padding: 12px">
+{| class="wikitable" style="text-align: center; background-color: transparent"
+ | colspan="4" |
+
+==== Page 45 ====
+|- style="background-color: #0004"
+ | [[file:Boss The Forsaken ingame.png|160x160px|link=The Forsaken]]
+ | [[file:Boss Little Horn ingame.png|160x160px|link=Little Horn]]
+|- style="background-color: #0004"
+ | [[file:Boss Rag Man ingame.png|160x160px|link=Rag Man]]
+ | [[file:Boss Ultra Greed ingame.png|160x160px|link=Ultra Greed]]
+ |}
+</div>
+{{clear}}
+<div style="float: left; padding: 12px">
+{| class="wikitable" style="text-align: center; background-color: transparent"
+ | colspan="4" |
+
+==== Page 46 ====
+|- style="background-color: #0004"
+ | [[file:Boss Ultra Greedier ingame.png|160x160px|link=Ultra Greedier]]
+ | [[file:Boss Hush ingame.png|160x160px|link=Hush]]
+|- style="background-color: #0004"
+ | [[file:Boss Rag Mega ingame.png|160x160px|link=Rag Mega]]
+ | [[file:Boss Sisters Vis ingame.png|160x160px|link=Sisters Vis]]
+ |}
+</div>
+<div style="float: left; padding: 12px">
+{| class="wikitable" style="text-align: center; background-color: transparent"
+ | colspan="4" |
+
+==== Page 47 ====
+|- style="background-color: #0004"
+ | [[file:Boss Big Horn ingame.png|160x160px|link=Big Horn]]
+ | [[file:Boss Delirium ingame.png|160x160px|link=Delirium]]
+|- style="background-color: #0004"
+ | [[file:Boss The Matriarch ingame.png|160x160px|link=The Matriarch]]
+ | [[file:Dark Esau.png|160x160px|link=Dark Esau]]
+ |}
+</div>
+<div style="float: left; padding: 12px">
+{| class="wikitable" style="text-align: center; background-color: transparent"
+ | colspan="4" |
+
+==== Page 48 ====
+|- style="background-color: #0004"
+ | [[file:Mother's Shadow.png|160x160px|link=Mother's Shadow]]
+ | [[File:Boss Reap Creep ingame.png|160x160px|link=Reap Creep]]
+|- style="background-color: #0004"
+ | [[file:Boss Lil Blub (Downpour) ingame.png|160x160px|link=Lil Blub]]
+ | [[file:Boss The Rainmaker ingame.png|160x160px|link=The Rainmaker]]
+ |}
+</div>
+{{clear}}
+<div style="float: left; padding: 12px">
+{| class="wikitable" style="text-align: center; background-color: transparent"
+ | colspan="4" |
+
+==== Page 49 ====
+|- style="background-color: #0004"
+ | [[file:Boss The Visage Heart ingame.png|160x160px|link=The Visage]]
+ | [[file:Boss The Siren ingame.png|160x160px|link=The Siren]]
+|- style="background-color: #0004"
+ | [[file:Boss The Heretic ingame.png|160x160px|link=The Heretic]]
+ | [[file:Boss Hornfel ingame.png|160x160px|link=Hornfel]]
+ |}
+</div>
+<div style="float: left; padding: 12px">
+{| class="wikitable" style="text-align: center; background-color: transparent"
+ | colspan="4" |
+
+==== Page 50 ====
+|- style="background-color: #0004"
+ | [[file:Boss Great Gideon ingame.png|160x160px|link=Great Gideon]]
+ | [[file:Boss Baby Plum ingame.png|160x160px|link=Baby Plum]]
+|- style="background-color: #0004"
+ | [[file:Boss The Scourge ingame.png|160x160px|link=The Scourge]]
+ | [[file:Boss Chimera ingame.png|160x160px|link=Chimera]]
+ |}
+</div>
+<div style="float: left; padding: 12px">
+{| class="wikitable" style="text-align: center; background-color: transparent"
+ | colspan="4" |
+
+==== Page 51 ====
+|- style="background-color: #0004"
+ | [[file:Boss Rotgut ingame.png|160x160px|link=Rotgut]]
+ | [[file:Boss Mother ingame.png|160x160px|link=Mother]]
+|- style="background-color: #0004"
+ | [[file:Boss Min-Min ingame.png|160x160px|link=Min-Min]]
+ | [[file:Boss Clog ingame.png|160x160px|link=Clog]]
+ |}
+</div>
+{{clear}}
+<div style="float: left; padding: 12px">
+{| class="wikitable" style="text-align: center; background-color: transparent"
+ | colspan="4" |
+
+==== Page 52 ====
+|- style="background-color: #0004"
+ | [[file:Boss Singe ingame.png|160x160px|link=Singe]]
+ | [[file:Boss Bumbino ingame.png|160x160px|link=Bumbino]]
+|- style="background-color: #0004"
+ | [[file:Boss Colostomia ingame.png|160x160px|link=Colostomia]]
+ | [[file:Boss Turdlet ingame.png|160x160px|link=Turdlet]]
+ |}
+</div>
+<div style="float: left; padding: 12px">
+{| class="wikitable" style="text-align: center; background-color: transparent"
+ | colspan="4" |
+
+==== Page 53 ====
+|- style="background-color: #0004"
+ | [[file:Boss The Horny Boys ingame.png|160x160px|link=The Horny Boys]]
+ | [[file:Boss Clutch ingame.png|160x160px|link=Clutch]]
+|- style="background-color: #0004"
+ | [[file:Boss Dogma ingame.png|160x160px|link=Dogma]]
+ | [[file:Boss The Beast ingame.png|160x160px|link=The Beast]]
+ |}
+</div>
+<div style="float: left; padding: 12px">
+{| class="wikitable" style="text-align: center; background-color: transparent"
+ | colspan="4" |
+
+==== Page 54 ====
+|- style="background-color: #0004"
+ | [[file:Boss Ultra Famine ingame.png|160x160px|link=Ultra Famine]]
+ | [[file:Boss Ultra Pestilence ingame.png|160x160px|link=Ultra Pestilence]]
+|- style="background-color: #0004"
+ | [[file:Boss Ultra War ingame.png|160x160px|link=Ultra War]]
+ | [[file:Boss Ultra Death ingame.png|160x160px|link=Ultra Death]]
+ |}
+</div>
+{{clear}}
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | Sin collector }}
+
+== Trivia ==
+* {{E|Cross Stoney}}s are not featured in the Bestiary because they only appear in the [[Aprils Fool]] challenge and were added as a joke by _Killburn revealed in a [https://twitter.com/FixItVinh/status/980490518747631616 tweet] made on April Fools Day.
+* {{E|Henry}} has no bestiary entry.
+
+== Bugs ==
+{{bug|The Bestiary is bugged with bosses that have multiple parts (such as {{e|Larry Jr.}}, {{e|Pin}}, {{e|The Hollow}}, and so forth):
+* For {{e|Pin}}, {{e|The Frail}}, and {{e|Scolex}}, each body part counts as an encounter and a kill.
+* For {{e|Larry Jr.}} and {{e|The Hollow}}, only their heads count as a kill but each part counts as an encounter.
+* {{e|Satan}}, {{e|War}}, {{e|The Matriarch}} and {{e|Dogma}} kills are not registered.}}
+{{bug|{{e|The Visage}}'s mask is not included in the Bestiary (only the Heart is), while both of {{e|Mask of Infamy}}'s halves are included.}}
+{{bug|The Sin Collector achievement can be obtained without a full Bestiary. It requires 2 entries less than what is actually featured.}}
+{{bug|The Bestiary counts every time {{e|Delirium}} changes forms as separate encounters.}}
+
+{{nav|fr=Bestiaire Repentance}}

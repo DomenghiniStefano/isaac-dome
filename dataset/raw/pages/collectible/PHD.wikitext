@@ -125,6 +125,7 @@
 == Notes ==
 * Bad pills already obtained/dropped will be converted to their "good" counterparts.
 * If PHD is lost in any way, such as rerolling by the {{i|D4}} or a {{R|Dice Room}}, or dropping it as {{c|Tainted Isaac}}, pills will remain fully identified, but negative pills will not be converted.
+** Rerolling an owned passive item into PHD through effects such as {{i|D4}} will not identify pills, but will convert negative pills into positive ones.
 * {{dlc|a+}} Performing a [[RERUN]] with a character that held PHD will still prevent negative pills from spawning, but will no longer identify pills until used.
 * As bad pills will turn into good pills, it is possible for two different colored pills to have the same effect.
 * Multiple copies of PHD will not yield more coins when using a Blood Donation Machine or IV Bag.

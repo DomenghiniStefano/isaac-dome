@@ -1,0 +1,695 @@
+'''Completion marks''' are earned by completing specific objectives in ''The Binding of Isaac: Rebirth''. When completing these objectives, the post-it note on the character select screen fills up with Completion Marks. If objectives are completed in Normal mode, the completion marks are solid black. If objectives are completed in [[Hard mode]], the completion marks are outlined in red. Earning a completion mark in Hard mode will unlock marks for both Normal and Hard modes, even if the prior wasn't unlocked.
+
+In ''Rebirth'', [[Mom's Heart]] / [[It Lives!]] is the only boss with a character-specific co-op baby unlock if you beat it in [[Hard mode]] instead of Normal mode, with one exception - {{i|Godhead}}, which is unlocked by obtaining every Hard mode completion mark with The Lost. as such, it is not necessary to earn every Hard mode completion mark to achieve Platinum God, only every Hard mode Heart mark, with The Lost as an exception. In ''Afterbirth'' and onward, every other regular character has a co-op baby that can be unlocked for earning all of their completion marks on Hard mode. There are also 3 rewards for completing certain marks will all characters, those being {{i|Mega Blast}} for defeating Mega Satan with every non-tainted character, {{i|Mega Mush}} for getting every mark with every non-tainted character, and {{i|Death Certificate}} for completing every mark with every character, including tainted characters.
+
+In ''Rebirth'', there are 6 unique completion marks, and each one comes in two varieties, adding up to 12 marks in total. ''Afterbirth'' introduced 3 more, bringing the total to 17, as Greed mode only has one mark. ''Afterbirth+'' introduced 1 more, as well as an additional mark for Greedier mode, bringing the final total to 20. ''Repentance'' introduced 2 more, bringing the final total to 24. Each mark has a character-specific unlockable [[achievement|secret]] associated with it. There are 6 secrets per [[character]] in the base game, while there are 10 in Afterbirth, 12 in Afterbirth+ and 14 in Repentance.
+
+{{dlc+|r}} [[Tainted character]]s have different requirements for unlocking secrets. One secret each is unlocked for beating timed challenges ([[Boss Rush]] and [[Hush]]) and main path bosses ([[Isaac]], [[??? (Boss)|???]], [[Satan]], and [[The Lamb]]). There are no secrets for beating normal [[Greed mode]], as well as no character-specific unlocks for earning all completion marks on Hard mode, bringing the secret total down to 7 per character. {{dlc-|r}}
+
+<tabber>
+ Regular Characters=
+<div style="width: 100%; height: 100%; overflow: auto">
+{| class="mw wikitable" style="text-align: center"
+ ! style="width: 70px" | Name
+ ! style="width: 60px" | Mark
+ ! style="width: 60px" | [[Hard mode]]<br>Mark
+ ! Associated Boss
+ ! {{c|Isaac}}<br>Unlock
+ ! {{c|Magdalene}}<br>Unlock
+ ! {{c|Cain}}<br>Unlock
+ ! {{c|Judas}}<br>Unlock
+ ! {{c|???}}<br>Unlock
+ ! {{c|Eve}}<br>Unlock
+ ! {{c|Samson}}<br>Unlock
+ ! {{c|Azazel}}<br>Unlock
+ ! {{c|Lazarus}}<br>Unlock
+ ! {{c|Eden}}<br>Unlock
+ ! {{c|The Lost}}<br>Unlock
+ ! {{c|Lilith}}<br>Unlock
+ ! {{c|Keeper}}<br>Unlock
+ ! {{c|Apollyon}}<br>Unlock
+ ! {{c|The Forgotten}}<br>Unlock
+ ! {{c|Bethany}}<br>Unlock
+ ! {{c|Jacob and Esau}}<br>Unlock
+ ! All Non-Tainted Characters<br>Unlock
+ ! All Characters<br>Unlock
+ |-
+ | Heart
+ ! style="background: #efe6e9" | [[file:Completion Heart.png|50px|center|link=|Heart]]
+ ! style="background: #efe6e9" | [[file:Completion Heart Hard.png|50px|center|link=|Heart - Hard mode]]
+ | [[Mom's Heart]]<br>or [[It Lives!]]
+ | {{achievement image | Lost Baby        }}
+ | {{achievement image | Cute Baby        }}
+ | {{achievement image | Glass Baby       }}
+ | {{achievement image | Shadow Baby      }}
+ | {{achievement image | Dead Baby        }}
+ | {{achievement image | Crow Baby        }}
+ | {{achievement image | Fighting Baby    }}
+ | {{achievement image | Begotten Baby    }}
+ | {{achievement image | Wrapped Baby     }}
+ | {{achievement image | Glitch Baby      }}
+ | {{achievement image | -0- Baby         }}
+ | {{achievement image | Goat Head Baby   }}
+ | {{achievement image | Super Greed Baby }}
+ | {{achievement image | Smelter          }}
+ | {{achievement image | Marrow           }}
+ | {{achievement image | Wisp Baby        }}
+ | {{achievement image | Double Baby      }}
+ | style="color: #fff3" | None
+ | style="color: #fff3" | None
+ |-
+ | Cross
+ ! style="background: #efe6e9" | [[file:Completion Cathedral.png|50px|center|link=|Cross]]
+ ! style="background: #efe6e9" | [[file:Completion Cathedral Hard.png|50px|center|link=|Cross - Hard mode]]
+ | [[Isaac (Boss)|Isaac]]
+ | {{achievement image | Isaac's Tears              }}
+ | {{achievement image | A Cross                    }}
+ | {{achievement image | A Bag of Pennies           }}
+ | {{achievement image | Guillotine                 }}
+ | {{achievement image | The D6                     }}
+ | {{achievement image | Eve's Bird Foot            }}
+ | {{achievement image | Bloody Lust                }}
+ | {{achievement image | Satanic Bible              }}
+ | {{achievement image | Lazarus' Rags              }}
+ | {{achievement image | Blank Card                 }}
+ | {{achievement image | Isaac's Heart              }}
+ | {{achievement image | Rune Bag                   }}
+ | {{achievement image | Keeper holds Wooden Nickel }}
+ | {{achievement image | Locust of Wrath            }}
+ | {{achievement image | Slipped Rib                }}
+ | {{achievement image | Book of Virtues            }}
+ | {{achievement image | The Stairway               }}
+ | style="color: #fff3" | None
+ | style="color: #fff3" | None
+ |-
+ | Polaroid
+ ! style="background: #efe6e9" | [[file:Completion Chest.png|50px|center|link=|Polaroid]]
+ ! style="background: #efe6e9" | [[file:Completion Chest Hard.png|50px|center|link=|Polaroid - Hard mode]]
+ | [[??? (Boss)|???]]
+ | {{achievement image | The D20            }}
+ | {{achievement image | Celtic Cross       }}
+ | {{achievement image | Cain's Eye         }}
+ | {{achievement image | The Left Hand      }}
+ | {{achievement image | Fate               }}
+ | {{achievement image | Sacrificial Dagger }}
+ | {{achievement image | Blood Penny        }}
+ | {{achievement image | Abaddon            }}
+ | {{achievement image | Store Credit       }}
+ | {{achievement image | Mysterious Paper   }}
+ | {{achievement image | The Body           }}
+ | {{achievement image | Cambion Conception }}
+ | {{achievement image | Deep Pockets       }}
+ | {{achievement image | Locust of Famine   }}
+ | {{achievement image | Jaw Bone           }}
+ | {{achievement image | Blessed Penny      }}
+ | {{achievement image | Birthright         }}
+ | style="color: #fff3" | None
+ | style="color: #fff3" | None
+ |-
+ | Inverted Cross
+ ! style="background: #efe6e9" | [[file:Completion Sheol.png|50px|center|link=|Inverted cross]]
+ ! style="background: #efe6e9" | [[file:Completion Sheol Hard.png|50px|center|link=|Inverted cross - Hard mode]]
+ | [[Satan]]
+ | {{achievement image | Mom's Knife            }}
+ | {{achievement image | Guardian Angel         }}
+ | {{achievement image | A Bag of Bombs         }}
+ | {{achievement image | Judas' Tongue          }}
+ | {{achievement image | Forget Me Now          }}
+ | {{achievement image | The Razor              }}
+ | {{achievement image | Blood Rights           }}
+ | {{achievement image | Daemon's Tail          }}
+ | {{achievement image | Broken Ankh            }}
+ | {{achievement image | Book of Secrets        }}
+ | {{achievement image | The Mind               }}
+ | {{achievement image | Serpent's Kiss         }}
+ | {{achievement image | Keeper holds Store Key }}
+ | {{achievement image | Locust of Pestilence   }}
+ | {{achievement image | Pointy Rib             }}
+ | {{achievement image | Urn of Souls           }}
+ | {{achievement image | Red Stew               }}
+ | style="color: #fff3" | None
+ | style="color: #fff3" | None
+ |-
+ | Negative
+ ! style="background: #efe6e9" | [[file:Completion DarkRoom.png|50px|center|link=|Negative]]
+ ! style="background: #efe6e9" | [[file:Completion DarkRoom Hard.png|50px|center|link=|Negative - Hard mode]]
+ | [[The Lamb]]
+ | {{achievement image | Missing Poster  }}
+ | {{achievement image | Maggy's Faith   }}
+ | {{achievement image | Abel            }}
+ | {{achievement image | Curved Horn     }}
+ | {{achievement image | ???'s Soul      }}
+ | {{achievement image | Black Lipstick  }}
+ | {{achievement image | Samson's Lock   }}
+ | {{achievement image | Demon Baby      }}
+ | {{achievement image | Pandora's Box   }}
+ | {{achievement image | Mystery Sack    }}
+ | {{achievement image | The Soul        }}
+ | {{achievement image | Succubus        }}
+ | {{achievement image | Karma           }}
+ | {{achievement image | Locust of Death }}
+ | {{achievement image | Brittle Bones   }}
+ | {{achievement image | Alabaster Box   }}
+ | {{achievement image | Damocles        }}
+ | style="color: #fff3" | None
+ | style="color: #fff3" | None
+ |-
+ | Brimstone {{dlc|a}}
+ ! style="background: #efe6e9" | [[file:Completion Brimstone.png|50px|center|link=|Brimstone]]
+ ! style="background: #efe6e9" | [[file:Completion Brimstone Hard.png|50px|center|link=|Brimstone - Hard mode]]
+ | [[Mega Satan]]
+ | {{achievement image | Cry Baby        }}
+ | {{achievement image | Red Baby        }}
+ | {{achievement image | Green Baby      }}
+ | {{achievement image | Brown Baby      }}
+ | {{achievement image | Blue Baby       }}
+ | {{achievement image | Lil' Baby       }}
+ | {{achievement image | Rage Baby       }}
+ | {{achievement image | Black Baby      }}
+ | {{achievement image | Long Baby       }}
+ | {{achievement image | Yellow Baby     }}
+ | {{achievement image | White Baby      }}
+ | {{achievement image | Big Baby        }}
+ | {{achievement image | Noose Baby      }}
+ | {{achievement image | Mort Baby       }}
+ | {{achievement image | Bound Baby      }}
+ | {{achievement image | Glowing Baby    }}
+ | {{achievement image | Illusion Baby   }}
+ | {{achievement image | Mega            }}
+ | style="color: #fff3" | None
+ |-
+ | Star
+ ! style="background: #efe6e9" | [[file:Completion BossRush.png|50px|center|link=|Star]]
+ ! style="background: #efe6e9" | [[file:Completion BossRush Hard.png|50px|center|link=|Star - Hard mode]]
+ | [[Boss Rush]]
+ | {{achievement image | Isaac's Head          }}
+ | {{achievement image | Maggy's Bow           }}
+ | {{achievement image | Cain's Other Eye      }}
+ | {{achievement image | Judas' Shadow         }}
+ | {{achievement image | ???'s Only Friend     }}
+ | {{achievement image | Eve's Mascara         }}
+ | {{achievement image | Samson's Chains       }}
+ | {{achievement image | The Nail              }}
+ | {{achievement image | Missing No.           }}
+ | {{achievement image | Undefined             }}
+ | {{achievement image | The D100              }}
+ | {{achievement image | Immaculate Conception }}
+ | {{achievement image | Sticky Nickels        }}
+ | {{achievement image | Locust of Conquest    }}
+ | {{achievement image | Divorce Papers        }}
+ | {{achievement image | Beth's Faith          }}
+ | {{achievement image | Rock Bottom           }}
+ | style="color: #fff3" | None
+ | style="color: #fff3" | None
+ |-
+ | Hush's Face {{dlc|a}}
+ ! style="background: #efe6e9" | [[file:Completion BlueWomb.png|50px|center|link=|Hush's face]]
+ ! style="background: #efe6e9" |[[file:Completion BlueWomb Hard.png|50px|center|link=|Hush's face - Hard mode]]
+ |[[Hush]]
+ |{{achievement image | Fart Baby                    }}
+ |{{achievement image | Purity                       }}
+ |{{achievement image | D12                          }}
+ |{{achievement image | Betrayal                     }}
+ |{{achievement image | Fate's Reward                }}
+ |{{achievement image | Athame                       }}
+ |{{achievement image | Blind Rage                   }}
+ |{{achievement image | Maw of the Void              }}
+ |{{achievement image | Empty Vessel                 }}
+ |{{achievement image | Eden's Blessing              }}
+ |{{achievement image | Sworn Protector              }}
+ |{{achievement image | Incubus                      }}
+ |{{achievement image | Keeper now holds... A Penny! }}
+ |{{achievement image | Hushy                        }}
+ |{{achievement image | Hallowed Ground              }}
+ |{{achievement image | Divine Intervention          }}
+ |{{achievement image | Vanishing Twin               }}
+ | style="color: #fff3" | None
+ | style="color: #fff3" | None
+ |-
+ | Cent Sign {{dlc|a}}
+ ! style="background: #efe6e9" colspan="2" | [[file:Completion Greed Hard.png|50px|center|link=|Cent sign - Greed mode]] {{dlc|ana+}} [[file:Completion Greed.png|50px|center|link=|Cent sign - Greed mode]] {{dlc|a+}}
+ | [[Ultra Greed]]
+ | {{achievement image | Lil' Chest     }}
+ | {{achievement image | Censer         }}
+ | {{achievement image | Evil Eye       }}
+ | {{achievement image | My Shadow      }}
+ | {{achievement image | Cracked Dice   }}
+ | {{achievement image | Black Feather  }}
+ | {{achievement image | Lusty Blood    }}
+ | {{achievement image | Lilith         }}
+ | {{achievement image | Key Bum        }}
+ | {{achievement image | GB Bug         }}
+ | {{achievement image | Zodiac         }}
+ | {{achievement image | Box of Friends }}
+ | {{achievement image | Rib of Greed   }}
+ | {{achievement image | Brown Nugget   }}
+ | {{achievement image | Finger Bone    }}
+ | {{achievement image | Soul Locket    }}
+ | {{achievement image | Inner Child    }}
+ | style="color: #fff3" | None
+ | style="color: #fff3" | None
+ |-
+ | Cent Sign {{dlc|a+}}
+ ! style="background: #efe6e9" colspan="2" | [[file:Completion Greed Hard.png|50px|center|link=|Cent sign - Greedier mode]]
+ | [[Ultra Greedier]]
+ | {{achievement image | D1                   }}
+ | {{achievement image | Glyph of Balance     }}
+ | {{achievement image | Sack of Sacks        }}
+ | {{achievement image | Eye of Belial        }}
+ | {{achievement image | Meconium             }}
+ | {{achievement image | Crow Heart           }}
+ | {{achievement image | Stem Cell            }}
+ | {{achievement image | Bat Wing             }}
+ | {{achievement image | Plan C               }}
+ | {{achievement image | Metronome            }}
+ | {{achievement image | Dad's Lost Coin      }}
+ | {{achievement image | Duality              }}
+ | {{achievement image | Eye of Greed         }}
+ | {{achievement image | Black Rune           }}
+ | {{achievement image | Dad's Ring           }}
+ | {{achievement image | Vade Retro           }}
+ | {{achievement image | Genesis              }}
+ | style="color: #fff3" | None
+ | style="color: #fff3" | None
+ |-
+ | rowspan="2" | Wrinkled Paper {{dlc|a+}}
+ ! style="background: #efe6e9" |[[file:Completion Void.png|50px|center|link=|Wrinkled paper]] {{dlc|a+}}
+ ! style="background: #efe6e9" |[[file:Completion Void Hard.png|50px|center|link=|Wrinkled paper - Hard mode]] {{dlc|a+}}
+ | rowspan="2" | [[Delirium]]
+ | rowspan="2" |{{achievement image | D infinity          }}
+ | rowspan="2" |{{achievement image | Eucharist           }}
+ | rowspan="2" |{{achievement image | Silver Dollar       }}
+ | rowspan="2" |{{achievement image | Shade               }}
+ | rowspan="2" |{{achievement image | King Baby           }}
+ | rowspan="2" |{{achievement image | Dull Razor          }}
+ | rowspan="2" |{{achievement image | Bloody Crown        }}
+ | rowspan="2" |{{achievement image | Dark Prince's Crown }}
+ | rowspan="2" |{{achievement image | Compound Fracture   }}
+ | rowspan="2" |{{achievement image | Eden's Soul         }}
+ | rowspan="2" |{{achievement image | Holy Card           }}
+ | rowspan="2" |{{achievement image | Euthanasia          }}
+ | rowspan="2" |{{achievement image | Crooked Penny       }}
+ | rowspan="2" |{{achievement image | Void                }}
+ | rowspan="2" |{{achievement image | Book of the Dead    }}
+ | rowspan="2" |{{achievement image | Star of Bethlehem   }}
+ | rowspan="2" |{{achievement image | Suplex!             }}
+ | rowspan="2" style="color: #fff3" | None
+ | rowspan="2" style="color: #fff3" | None
+ |-
+ ! style="background: #efe6e9" |[[file:Repentance Completion Void.png|50px|center|link=|Wrinkled paper]] {{dlc|r}}
+ ! style="background: #efe6e9" |[[file:Repentance Completion Void Hard.png|50px|center|link=|Wrinkled paper - Hard mode]] {{dlc|r}}
+ |-
+ |Knife {{Dlc|r}}
+ ! style="background: #efe6e9" |[[File:Completion Mother.png|50px|center|link=|Knife]]
+ ! style="background: #efe6e9" |[[File:Completion Mother Hard.png|50px|center|link=|Knife - Hard mode]]
+ |[[Mother]]
+ |{{achievement image | Meat Cleaver           }}
+ |{{achievement image | Yuck Heart             }}
+ |{{achievement image | Guppy's Eye            }}
+ |{{achievement image | Akeldama               }}
+ |{{achievement image | Eternal D6             }}
+ |{{achievement image | Bird Cage              }}
+ |{{achievement image | Bloody Gust            }}
+ |{{achievement image | Devil's Crown          }}
+ |{{achievement image | Tinytoma               }}
+ |{{achievement image | 'M                     }}
+ |{{achievement image | Lost Soul              }}
+ |{{achievement image | Blood Puppy            }}
+ |{{achievement image | Keeper's Sack          }}
+ |{{achievement image | Lil Portal             }}
+ |{{achievement image | Bone Spurs             }}
+ |{{achievement image | Revelation             }}
+ |{{achievement image | Magic Skin             }}
+ | style="color: #fff3" | None
+ | style="color: #fff3" | None
+ |-
+ |Dad's Note {{Dlc|r}}
+ ! style="background: #efe6e9" |[[File:Completion Beast.png|50px|center|link=|Dad's Note]]
+ ! style="background: #efe6e9" | [[File:Completion Beast Hard.png|50px|center|link=|Dad's Note - Hard mode]]
+ |[[The Beast]]
+ |{{achievement image | Options?            }}
+ |{{achievement image | Candy Heart         }}
+ |{{achievement image | A Pound of Flesh    }}
+ |{{achievement image | Redemption          }}
+ |{{achievement image | Montezuma's Revenge }}
+ |{{achievement image | Cracked Orb         }}
+ |{{achievement image | Empty Heart         }}
+ |{{achievement image | Lil Abaddon         }}
+ |{{achievement image | Astral Projection   }}
+ |{{achievement image | Everything Jar      }}
+ |{{achievement image | Hungry Soul         }}
+ |{{achievement image | C Section           }}
+ |{{achievement image | Keeper's Box        }}
+ |{{achievement image | Worm Friend         }}
+ |{{achievement image | Spirit Shackles     }}
+ |{{achievement image | Jar of Wisps        }}
+ |{{achievement image | Friend Finder       }}
+ | style="color: #fff3" | None
+ | style="color: #fff3" | None
+ |-
+ | rowspan="4" | All Hard Mode Marks {{dlc|a}}
+ ! colspan="2" style="background: #efe6e9" | [[file:FullMarks.png|75px|center|link=|All marks - Hard mode]] {{dlc|a}}
+ | rowspan="4" | (All Above)
+ | rowspan="4" |{{achievement image | Buddy Baby }}
+ | rowspan="4" |{{achievement image | Colorful Baby }}
+ | rowspan="4" |{{achievement image | Picky Baby }}
+ | rowspan="4" |{{achievement image | Belial Baby }}
+ | rowspan="4" |{{achievement image | Hive Baby }}
+ | rowspan="4" |{{achievement image | Whore Baby }}
+ | rowspan="4" |{{achievement image | Revenge Baby }}
+ | rowspan="4" |{{achievement image | Sucky Baby }}
+ | rowspan="4" |{{achievement image | Dripping Baby }}
+ | rowspan="4" |{{achievement image | Cracked Baby }}
+ | rowspan="4" |{{achievement image | Godhead }}
+ | rowspan="4" |{{achievement image | Dark Baby }}
+ | rowspan="4" |{{achievement image | Sale Baby }}
+ | rowspan="4" |{{achievement image | Apollyon Baby }}
+ | rowspan="4" |{{achievement image | Bone Baby }}
+ | rowspan="4" |{{achievement image | Hope Baby }}
+ | rowspan="4" |{{achievement image | Solomon's Baby }}
+ | rowspan="4" |{{achievement image | Mega Mush }}
+ | rowspan="4" |{{achievement image | Death Certificate }}
+ |-
+ ! colspan="2" style="background: #efe6e9" | [[file:FullMarksPlus.png|75px|center|link=|All marks - Hard mode]] {{dlc|a+}}
+ |-
+ ! colspan="2" style="background: #efe6e9" | [[File:Repentance Completion Marks.png|75px|center|link=|All marks - Hard mode]] {{Dlc|r}}
+|}</div>
+|-|
+ Tainted Characters=
+<div style="width: 100%; height: 100%; overflow: auto">
+{| class="mw wikitable" style="text-align: center"
+ ! style="width: 70px" | Name
+ ! style="width: 60px" | Mark
+ ! style="width: 60px" | [[Hard mode]]<br>Mark
+ ! Associated Boss
+ ! {{c|Tainted Isaac}}<br>Unlock
+ ! {{c|Tainted Magdalene}}<br>Unlock
+ ! {{c|Tainted Cain}}<br>Unlock
+ ! {{c|Tainted Judas}}<br>Unlock
+ ! {{c|Tainted ???}}<br>Unlock
+ ! {{c|Tainted Eve}}<br>Unlock
+ ! {{c|Tainted Samson}}<br>Unlock
+ ! {{c|Tainted Azazel}}<br>Unlock
+ ! {{c|Tainted Lazarus}}<br>Unlock
+ ! {{c|Tainted Eden}}<br>Unlock
+ ! {{c|Tainted Lost}}<br>Unlock
+ ! {{c|Tainted Lilith}}<br>Unlock
+ ! {{c|Tainted Keeper}}<br>Unlock
+ ! {{c|Tainted Apollyon}}<br>Unlock
+ ! {{c|Tainted Forgotten}}<br>Unlock
+ ! {{c|Tainted Bethany}}<br>Unlock
+ ! {{c|Tainted Jacob}}<br>Unlock
+ ! All Characters<br>Unlock
+ |-
+ | Heart
+ ! style="background: #efe6e9" | [[file:Completion Heart.png|50px|center|link=|Heart]]
+ ! style="background: #efe6e9" | [[file:Completion Heart Hard.png|50px|center|link=|Heart - Hard mode]]
+ | [[Mom's Heart]]<br>or [[It Lives!]]
+ | style="color: #fff3" | None
+ | style="color: #fff3" | None
+ | style="color: #fff3" | None
+ | style="color: #fff3" | None
+ | style="color: #fff3" | None
+ | style="color: #fff3" | None
+ | style="color: #fff3" | None
+ | style="color: #fff3" | None
+ | style="color: #fff3" | None
+ | style="color: #fff3" | None
+ | style="color: #fff3" | None
+ | style="color: #fff3" | None
+ | style="color: #fff3" | None
+ | style="color: #fff3" | None
+ | style="color: #fff3" | None
+ | style="color: #fff3" | None
+ | style="color: #fff3" | None
+ | style="color: #fff3" | None
+ |-
+ | Cross
+ ! style="background: #efe6e9" | [[file:Completion Cathedral.png|50px|center|link=|Cross]]
+ ! style="background: #efe6e9" | [[file:Completion Cathedral Hard.png|50px|center|link=|Cross - Hard mode]]
+ | [[Isaac (Boss)|Isaac]]
+ | rowspan="4" |{{achievement image | Mom's Lock       }}
+ | rowspan="4" |{{achievement image | Holy Crown       }}
+ | rowspan="4" |{{achievement image | Gilded Key       }}
+ | rowspan="4" |{{achievement image | Your Soul        }}
+ | rowspan="4" |{{achievement image | Dingle Berry     }}
+ | rowspan="4" |{{achievement image | Strange Key      }}
+ | rowspan="4" |{{achievement image | Temporary Tattoo }}
+ | rowspan="4" |{{achievement image | Wicked Crown     }}
+ | rowspan="4" |{{achievement image | Torn Pocket      }}
+ | rowspan="4" |{{achievement image | Nuh Uh!          }}
+ | rowspan="4" |{{achievement image | Kid's Drawing    }}
+ | rowspan="4" |{{achievement image | The Twins        }}
+ | rowspan="4" |{{achievement image | Keeper's Bargain }}
+ | rowspan="4" |{{achievement image | Cricket Leg      }}
+ | rowspan="4" |{{achievement image | Polished Bone    }}
+ | rowspan="4" |{{achievement image | Expansion Pack   }}
+ | rowspan="4" |{{achievement image | RC Remote        }}
+ | style="color: #fff3" | None
+ |-
+ | Polaroid
+ ! style="background: #efe6e9" | [[file:Completion Chest.png|50px|center|link=|Polaroid]]
+ ! style="background: #efe6e9" | [[file:Completion Chest Hard.png|50px|center|link=|Polaroid - Hard mode]]
+ | [[??? (Boss)|???]]
+ | style="color: #fff3" | None
+ |-
+ | Inverted Cross
+ ! style="background: #efe6e9" | [[file:Completion Sheol.png|50px|center|link=|Inverted cross]]
+ ! style="background: #efe6e9" | [[file:Completion Sheol Hard.png|50px|center|link=|Inverted cross - Hard mode]]
+ | [[Satan]]
+ | style="color: #fff3" | None
+ |-
+ | Negative
+ ! style="background: #efe6e9" | [[file:Completion DarkRoom.png|50px|center|link=|Negative]]
+ ! style="background: #efe6e9" | [[file:Completion DarkRoom Hard.png|50px|center|link=|Negative - Hard mode]]
+ | [[The Lamb]]
+ | style="color: #fff3" | None
+ |-
+ | Brimstone
+ ! style="background: #efe6e9" | [[file:Completion Brimstone.png|50px|center|link=|Brimstone]]
+ ! style="background: #efe6e9" | [[file:Completion Brimstone Hard.png|50px|center|link=|Brimstone - Hard mode]]
+ | [[Mega Satan]]
+ | {{achievement image | Mega Chest      }}
+ | {{achievement image | Queen of Hearts }}
+ | {{achievement image | Gold Pill       }}
+ | {{achievement image | Black Sack      }}
+ | {{achievement image | Charming Poop   }}
+ | {{achievement image | Horse Pill      }}
+ | {{achievement image | Crane Game      }}
+ | {{achievement image | Hell Game       }}
+ | {{achievement image | Wooden Chest    }}
+ | {{achievement image | Wild Card       }}
+ | {{achievement image | Haunted Chest   }}
+ | {{achievement image | Fool's Gold     }}
+ | {{achievement image | Golden Penny    }}
+ | {{achievement image | Rotten Beggar   }}
+ | {{achievement image | Golden Battery  }}
+ | {{achievement image | Confessional    }}
+ | {{achievement image | Golden Trinket  }}
+ | style="color: #fff3" | None
+ |-
+ | Star
+ ! style="background: #efe6e9" | [[file:Completion BossRush.png|50px|center|link=|Star]]
+ ! style="background: #efe6e9" | [[file:Completion BossRush Hard.png|50px|center|link=|Star - Hard mode]]
+ | [[Boss Rush]]
+ | rowspan="2" |{{achievement image | Soul of Isaac          }}
+ | rowspan="2" |{{achievement image | Soul of Magdalene      }}
+ | rowspan="2" |{{achievement image | Soul of Cain           }}
+ | rowspan="2" |{{achievement image | Soul of Judas          }}
+ | rowspan="2" |{{achievement image | Soul of ???            }}
+ | rowspan="2" |{{achievement image | Soul of Eve            }}
+ | rowspan="2" |{{achievement image | Soul of Samson         }}
+ | rowspan="2" |{{achievement image | Soul of Azazel         }}
+ | rowspan="2" |{{achievement image | Soul of Lazarus        }}
+ | rowspan="2" |{{achievement image | Soul of Eden           }}
+ | rowspan="2" |{{achievement image | Soul of the Lost       }}
+ | rowspan="2" |{{achievement image | Soul of Lilith         }}
+ | rowspan="2" |{{achievement image | Soul of the Keeper     }}
+ | rowspan="2" |{{achievement image | Soul of Apollyon       }}
+ | rowspan="2" |{{achievement image | Soul of the Forgotten  }}
+ | rowspan="2" |{{achievement image | Soul of Bethany        }}
+ | rowspan="2" |{{achievement image | Soul of Jacob and Esau }}
+ | style="color: #fff3" | None
+ |-
+ | Hush's Face
+ ! style="background: #efe6e9" | [[file:Completion BlueWomb.png|50px|center|link=|Hush's face]]
+ ! style="background: #efe6e9" |[[file:Completion BlueWomb Hard.png|50px|center|link=|Hush's face - Hard mode]]
+ |[[Hush]]
+ | style="color: #fff3" | None
+ |-
+ | Cent Sign
+ ! style="background: #efe6e9" colspan="2" | [[file:Completion Greed.png|50px|center|link=|Cent sign - Greed mode]]
+ | [[Ultra Greed]]
+ | style="color: #fff3" | None
+ | style="color: #fff3" | None
+ | style="color: #fff3" | None
+ | style="color: #fff3" | None
+ | style="color: #fff3" | None
+ | style="color: #fff3" | None
+ | style="color: #fff3" | None
+ | style="color: #fff3" | None
+ | style="color: #fff3" | None
+ | style="color: #fff3" | None
+ | style="color: #fff3" | None
+ | style="color: #fff3" | None
+ | style="color: #fff3" | None
+ | style="color: #fff3" | None
+ | style="color: #fff3" | None
+ | style="color: #fff3" | None
+ | style="color: #fff3" | None
+ | style="color: #fff3" | None
+ |-
+ | Cent Sign
+ ! style="background: #efe6e9" colspan="2" | [[file:Completion Greed Hard.png|50px|center|link=|Cent sign - Greedier mode]]
+ | [[Ultra Greedier]]
+ | {{achievement image | The Stars            }}
+ | {{achievement image | The Lovers           }}
+ | {{achievement image | Wheel of Fortune     }}
+ | {{achievement image | The Magician         }}
+ | {{achievement image | The Emperor          }}
+ | {{achievement image | The Empress          }}
+ | {{achievement image | Strength             }}
+ | {{achievement image | The Devil            }}
+ | {{achievement image | Judgement            }}
+ | {{achievement image | The World            }}
+ | {{achievement image | The Fool             }}
+ | {{achievement image | The High Priestess   }}
+ | {{achievement image | The Hanged Man       }}
+ | {{achievement image | The Tower            }}
+ | {{achievement image | Death                }}
+ | {{achievement image | The Hierophant       }}
+ | {{achievement image | The Sun and the Moon }}
+ | style="color: #fff3" | None
+ |-
+ | Wrinkled Paper
+ ! style="background: #efe6e9" |[[file:Tainted Completion Void.png|50px|center|link=|Wrinkled paper]]
+ ! style="background: #efe6e9" |[[file:Tainted Completion Void Hard.png|50px|center|link=|Wrinkled paper - Hard mode]]
+ | [[Delirium]]
+ | {{achievement image | Spindown Dice       }}
+ | {{achievement image | Hypercoagulation    }}
+ | {{achievement image | Bag of Crafting     }}
+ | {{achievement image | Dark Arts           }}
+ | {{achievement image | IBS                 }}
+ | {{achievement image | Sumptorium          }}
+ | {{achievement image | Berserk!            }}
+ | {{achievement image | Hemoptysis          }}
+ | {{achievement image | Flip                }}
+ | {{achievement image | Corrupted Data      }}
+ | {{achievement image | Ghost Bombs         }}
+ | {{achievement image | Gello               }}
+ | {{achievement image | Keeper's Kin        }}
+ | {{achievement image | Abyss               }}
+ | {{achievement image | Decap Attack        }}
+ | {{achievement image | Lemegeton           }}
+ | {{achievement image | Anima Sola          }}
+ | style="color: #fff3" | None
+ |-
+ |Knife
+ ! style="background: #efe6e9" |[[File:Completion Mother.png|50px|center|link=|Knife]]
+ ! style="background: #efe6e9" |[[File:Completion Mother Hard.png|50px|center|link=|Knife - Hard mode]]
+ |[[Mother]]
+ |{{achievement image | Dice Bag               }}
+ |{{achievement image | Mother's Kiss          }}
+ |{{achievement image | Lucky Sack             }}
+ |{{achievement image | Number Magnet          }}
+ |{{achievement image | Ring Cap               }}
+ |{{achievement image | Lil Clot               }}
+ |{{achievement image | Swallowed M80          }}
+ |{{achievement image | Azazel's Stump         }}
+ |{{achievement image | Torn Card              }}
+ |{{achievement image | Modeling Clay          }}
+ |{{achievement image | Crystal Key            }}
+ |{{achievement image | Adoption Papers        }}
+ |{{achievement image | Cursed Penny           }}
+ |{{achievement image | Apollyon's Best Friend }}
+ |{{achievement image | Hollow Heart           }}
+ |{{achievement image | Beth's Essence         }}
+ |{{achievement image | Found Soul             }}
+ | style="color: #fff3" | None
+ |-
+ |Dad's Note
+ ! style="background: #efe6e9" |[[File:Completion Beast.png|50px|center|link=|Dad's Note]]
+ ! style="background: #efe6e9" | [[File:Completion Beast Hard.png|50px|center|link=|Dad's Note - Hard mode]]
+ |[[The Beast]]
+ |{{achievement image | Glitched Crown      }}
+ |{{achievement image | Belly Jelly         }}
+ |{{achievement image | Blue Key            }}
+ |{{achievement image | Sanguine Bond       }}
+ |{{achievement image | The Swarm           }}
+ |{{achievement image | Heartbreak          }}
+ |{{achievement image | Larynx              }}
+ |{{achievement image | Azazel's Rage       }}
+ |{{achievement image | Salvation           }}
+ |{{achievement image | TMTRAINER           }}
+ |{{achievement image | Sacred Orb          }}
+ |{{achievement image | Twisted Pair        }}
+ |{{achievement image | Strawman            }}
+ |{{achievement image | Echo Chamber        }}
+ |{{achievement image | Isaac's Tomb        }}
+ |{{achievement image | Vengeful Spirit     }}
+ |{{achievement image | Esau Jr.            }}
+ | style="color: #fff3" | None
+ |-
+ | rowspan="2" | All Hard Mode Marks
+ ! colspan="2" style="background: #efe6e9" | [[File:Tainted Completion Marks.png|75px|center|link=|All marks - Hard mode]]
+ | rowspan="2" | (All Above)
+ | rowspan="2" style="color: #fff3" | None
+ | rowspan="2" style="color: #fff3" | None
+ | rowspan="2" style="color: #fff3" | None
+ | rowspan="2" style="color: #fff3" | None
+ | rowspan="2" style="color: #fff3" | None
+ | rowspan="2" style="color: #fff3" | None
+ | rowspan="2" style="color: #fff3" | None
+ | rowspan="2" style="color: #fff3" | None
+ | rowspan="2" style="color: #fff3" | None
+ | rowspan="2" style="color: #fff3" | None
+ | rowspan="2" style="color: #fff3" | None
+ | rowspan="2" style="color: #fff3" | None
+ | rowspan="2" style="color: #fff3" | None
+ | rowspan="2" style="color: #fff3" | None
+ | rowspan="2" style="color: #fff3" | None
+ | rowspan="2" style="color: #fff3" | None
+ | rowspan="2" style="color: #fff3" | None
+ | rowspan="2" |{{achievement image | Death Certificate }}
+ |-
+|}</div>
+</tabber>
+
+== Notes ==
+* {{dlc+|ana+}} As {{mode|Greed}} [[Greed mode]] is a unique mode separate from Normal or [[Hard mode]], it always appears on the completion note with the red outline otherwise found on Hard mode marks.{{dlc-|ana+}}
+** {{dlc|a+}} This symbol is used to indicate completion of [[Greedier mode]], and the Greed mode symbol is changed to be one without a red outline.
+* While it is possible to fight Mega Satan in the base game, Completion Marks for defeating him and their respective unlocks are only available in the subsequent DLC.
+* In the base game, {{i|Godhead}} is unlocked by defeating {{e|Mom's Heart}}, {{e|Isaac}}, {{e|???}}, {{e|Satan}}, {{e|The Lamb}}, and {{r|Boss Rush}} on Hard mode as {{c|The Lost}}.
+** {{dlc|a}} It is necessary to additionally defeat {{e|Hush}}, {{e|Mega Satan}}, and {{e|Ultra Greed}}.
+** {{dlc|a+}} It is also necessary to additionally defeat {{e|Ultra Greedier}} and {{e|Delirium}}. This also applies to all other unlocks requiring beating all bosses on [[Hard mode]].
+** {{dlc|r}} It is also necessary to additionally defeat {{e|Mother}} and {{e|The Beast}}. This also applies to all other unlocks requiring beating all bosses on [[Hard mode]].
+* Some items and trinkets transform the current character into other [[character]]s. All Completion Marks earned in that run from the moment of death onwards will count towards the new character, not the old.
+** {{i|Judas' Shadow}} transforms the current character into {{c|Black Judas}} upon death. Black Judas is considered the same character as {{c|Judas}} by the game and can earn all of Judas' Completion Marks.
+** {{i|Ankh}} transforms the current character into {{c|???}} upon death, and {{t|Broken Ankh}} has a 22.22% chance to transform the current character into ??? upon death.
+** {{i|Lazarus' Rags}} transforms the current character into {{c|Lazarus Risen}} upon death. Lazarus Risen is considered the same character as {{c|Lazarus}} by the game, and can earn all of Lazarus' Completion Marks. The only thing Lazarus Risen can't do is unlock {{c|Bethany}}.
+** {{dlc|a}} {{t|Missing Poster}} transforms the current character into {{c|The Lost}} upon death if he's already unlocked.
+** {{i|Clicker}} transforms the current character into a random character upon use.
+*** {{dlc|r}} Only transforms into a character of the current side (i.e. Tainteds into other tainteds, non-tainteds into other non-tainteds)
+* With {{i|Clicker}} and a reliable method of reaching the {{r|I AM ERROR}} room (such as {{i|Teleport 2.0}} or {{i|Undefined}}, held with a {{i|Schoolbag}}), {{s|The Void}} can be repeated endlessly and cleared with every playable character in one run.
+** By using a {{i|Forget Me Now}} (and a method to duplicate it endlessly) this can be applied to any floor and boss in the game, allowing any Completion Mark to be obtained with every character in one run. A {{i|Crooked Penny}} combined with a {{i|Glowing Hourglass}} to rewind failures is a good approach. {{i|Moving Box}} will also be necessary to bring all of the required items on each reset.
+*** {{r|Boss Rush}} requires the additional duplication of a {{i|Mama Mega!}} to repeat endlessly.
+*** {{e|Mega Satan}} can only be repeated with the addition of other unlimited items that can unlock the door, such as a duplicated {{p|Get out of Jail Free Card}}, {{i|Dad's Key}}, {{dlc|a+|or {{i|Mr. ME!}},}} because the key disappears after a single-use. {{dlc+|nr+}} Mega Satan also has a 50% chance of automatically ending the run upon defeat, so it is only recommended to focus on that Completion Mark after finishing all other possible marks as the desired characters. {{dlc-}}
+*** Completion marks for {{e|Satan}} and {{e|The Lamb}} are still mutually exclusive with Completion Marks for {{e|Isaac}} and {{e|???}}, as well as with {{e|The Beast}} and {{e|Mother}}. This means a minimum of four runs are required to obtain every character's Completion Marks using this strategy.
+*** This strategy does not work for Greed mode Completion Marks, as Moving Box is not in any item pools (disregarding an {{c|Eden}} spawn and {{i|Spindown Dice}}).
+**** Up to 3 Greed mode Completion Marks can be obtained in a single run using 2 or more items that revive Isaac as a different character – alongside 2 Forget Me Nows.
+*** Getting all these items in a single run usually requires the use of a strategy to create infinite items and exhaust the item pool, like {{dlcalt|{{i|Blank Card}}|r={{i|Clear Rune|n}}}} combined with {{p|Jera}}. While this can be time-consuming to achieve in a single run, it can save the player a great deal of time and additional runs if they are are aiming for 100% completion.
+** Substituting Clicker with items that revive Isaac as another character upon death will allow the player to get the extra Completion Marks for {{c|The Lost}}, {{c|???}}, {{c|Lazarus}}, and {{c|Judas}}, but will not allow for completion with every character as the Clicker does.
+** Beating the game with multiple players will count towards each of the players' Completion Marks.
+* {{dlc+|r}} [[Online (open beta)]] added a new {{e|Delirium}} icon and also blue and purple Completion Marks (only shown online). {{dlcalt|Blue is for Completion Marks that were completed in online mode only, and purple is for the Completion Marks completed in both Hard and online mode. (online is Hard mode only)|r+=Completing Normal/[[Greed]] mode runs online turns the Completion Marks blue, and completing Hard/Greedier runs turn the Completion Marks purple}}.{{dlc-}}
+
+== Gallery ==
+<gallery>
+File:Chapters Flowchart.png|{{dlc|rnr+}} A flowchart on the routes to each completion mark
+File:Online lobby completion marks.png|All completion marks in Online mode
+</gallery>
+
+== Trivia ==
+* Crumpled / Torn up paper might only go further with the notion of Isaac being fed up with his own thoughts.
+
+{{nav|fr=Marques de Complétion|ru=Лист достижений персонажа}}
+[[Category:Mechanics]]

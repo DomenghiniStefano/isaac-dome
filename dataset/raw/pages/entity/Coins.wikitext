@@ -1,0 +1,132 @@
+{{header pickups}}
+{{disambig msg|the pickup|title=coin}}
+
+{{infobox entity
+ | hidden      = yes
+ | name        = Penny
+ | id          = 5
+ | variant     = 20
+ | subtype     = 1
+}} {{infobox entity
+ | hidden      = yes
+ | name        = Nickel
+ | subtype     = 2
+}} {{infobox entity
+ | hidden      = yes
+ | name        = Dime
+ | subtype     = 3
+}} {{infobox entity
+ | hidden      = yes
+ | name        = Double Penny
+ | subtype     = 4
+}} {{infobox entity
+ | hidden      = yes
+ | dlc         = a
+ | name        = Lucky Penny
+ | subtype     = 5
+ | unlocked by = Lucky Penny
+}} {{infobox entity
+ | hidden      = yes
+ | dlc         = a
+ | name        = Sticky Nickel
+ | subtype     = 6
+ | image name  = Nickel
+ | unlocked by = Sticky Nickel
+}} {{infobox entity
+ | hidden      = yes
+ | dlc         = r
+ | name        = Golden Penny
+ | subtype     = 7
+ | unlocked by = Golden Penny
+}}
+{{dlc clear}}
+
+'''Coins''' serve as the currency for {{R|Shop}}s, the payment for the {{Machine|Donation Machine}} in Shops, and payment for {{Machine|Slot Machine}}s, {{Machine|Fortune Telling Machine}}s, {{Machine|Shell Game}}s, {{Machine|Beggar}}s, {{Machine|Shop Restock Machine}}s, and {{Machine|Crane Game}}s. They are also consumed to use a few [[activated item]]s (most notably {{i|Magic Fingers}} and {{i|Portable Slot}}). {{c|Keeper}} can also pick up coins to refill his [[health]].
+
+{| class="wikitable mw-collapsible striped sortable" style="text-align: center"
+ ! scope="col" style="width: 120px" | Coin
+ ! scope="col" style="width: 10px" | ID
+ ! scope="col" class="unsortable" style="width: 60px" | Image
+ ! scope="col" style="width: 90px" | Worth
+ ! scope="col" class="unsortable" | Additional Info
+ ! scope="col" class="unsortable" | Unlock Method
+ ! scope="col" style="width: 15px" | Probability
+ |-
+ ! scope="row" | {{anchor|Penny}}
+ | data-sort-value="1" | {{ghost|5.20.}}1
+ | [[file:Penny.png|40px]]
+ | 1
+ | {{i|Humbleing Bundle}} and {{t|Equality!|a+nr+}} can replace this with a Double Penny.
+ | <span style="opacity:0.5">''Always unlocked''</span>
+ | {{dlcmap slideshow|{{dlcalt|92.63%|r+=91.718%}}}}
+ |-
+ ! scope="row" | {{anchor|Nickel}}
+ | data-sort-value="2" | {{ghost|5.20.}}2
+ | [[file:Nickel.png|40px]]
+ | 5
+ |
+ | <span style="opacity:0.5">''Always unlocked''</span>
+ | {{dlcmap slideshow|{{dlcalt|4.68%|r+=4.925%}}}}
+ |-
+ ! scope="row" | {{anchor|Dime}}
+ | data-sort-value="3" | {{ghost|5.20.}}3
+ | [[file:Dime.png|40px]]
+ | 10
+ |
+ | <span style="opacity:0.5">''Always unlocked''</span>
+ | {{dlcmap slideshow|{{dlcalt|1.00%|r+=0.995%}}}}
+ |-
+ ! scope="row" | {{anchor|Double Penny}}
+ | data-sort-value="4" | {{ghost|5.20.}}4
+ | [[file:Double Penny.png|60px]]
+ | 2
+ | Can't spawn naturally as a normal coin. Can only be found by using certain items or encountering certain room layouts.
+ | <span style="opacity:0.5">''Always unlocked''</span>
+ | 0.00%
+ |-
+ ! scope="row" | {{dlc+|a}} {{anchor|Lucky Penny}}
+ | data-sort-value="5" | {{ghost|5.20.}}5
+ | [[file:Lucky Penny.png|40px]]
+ | 1
+ | Increases [[luck]] by 1 when picked up.<br>{{i|Humbleing Bundle}} and {{t|Equality!|a+nr+}} will '''not''' double this.<br>{{i|Bumbo}} and {{i|Bum Friend}} will pick this up, but will not give Isaac any luck.
+ | {{achievement unlock|Lucky Pennies}}{{dlc-}}
+ | {{dlcmap slideshow|{{dlcalt|0.94%|r+=0.926%}}}}
+ |-
+ ! scope="row" | {{dlc+|a}} {{anchor|Sticky Nickel}}
+ | data-sort-value="6" | {{ghost|5.20.}}6
+ | [[file:Nickel.png|40px]]
+ | 5
+ | Will flip upside-down when Isaac tries to collect it. Afterwards, it will get stuck on the ground, unable to be picked up unless blasted off the ground with an explosion.<br>{{i|Bumbo}} and {{i|Bum Friend}} are unable to pick this up; they instead hover over them, attempting to pick them up.
+A Level 4 {{i|Bumbo}} will drop bombs in an attempt to pick it up.
+ | {{achievement unlock|Sticky Nickels}}{{dlc-}}
+ | {{dlcmap slideshow|{{dlcalt|0.25%|r+=0.936%}}}}
+ |-
+ ! scope="row" | {{dlc|r}} {{anchor|Golden Penny}}
+ | data-sort-value="7" | {{ghost|5.20.}}7
+ | [[file:Golden Penny.png|40px]]
+ | 1
+ | Spawns another Golden Penny in a random spot in the same room after being picked up, but has a small but increasing chance of disappearing instead.
+ | {{achievement unlock|Golden Penny}}
+ | 0.50%
+ |}
+
+== Notes ==
+* {{dlc|r}} Upon pickup, Golden Pennies have a <math>0.98^{(n-1)}</math> chance to spawn another Golden Penny, where <math>n</math> represents the number of times it has been picked up.
+** The minimum possible amount of cents from a Golden Penny is 2, while the maximum is theoretically infinite. On average, Golden Pennies give ~9 cents.
+* {{dlc|anr+}} Unlocking [[#Sticky Nickel|Sticky Nickels]] is strictly speaking a downgrade, as they replace normal Nickels, though the sticky ones are rare enough to not make a severe difference.
+* {{dlc|a}} If Lucky Pennies have not been unlocked, they will always be replaced by a Penny in any room layouts containing them.
+** {{dlc|r}} Golden Pennies will also be replaced by random Coin pickup if not unlocked yet.
+* {{dlc|a+}} [[Booster Pack#5]] added a green glow to Lucky Pennies, making them easier to spot. This was from [https://steamcommunity.com/sharedfiles/filedetails/?id=1173905740 this Steam Workshop mod] by piber20.
+* {{E|Ultra Greed}} and [[Ultra Greed#Ultra Greedier|his statue]] cannot pick up Sticky Nickels until they have been unstuck by an explosion, thus negating some difficulty from the fight.
+** During the Ultra Greed fight, if a Sticky Nickel drops, Ultra Greed will be continuously drawn to it.
+** {{e|Bumbino}} also has this behaviour.
+* {{dlc|r}} Sticky Nickels visibly stick to the ground upon spawning, making them easier to distinguish from ordinary Nickels.
+* {{dlc+|r}} {{i|Sack Head}} can cause a Golden Penny to spawn a [[sack]] instead of another Golden Penny.{{dlc-}}
+* The probabilities in the table refer to the kind of coin that is generated by the game when a coin is spawned with a sub-type of 0 (i.e. a random coin).
+
+== Unlockable [[Achievements]] ==
+{{achievement text | Cain, It's the Key, Golden Razor }}
+
+
+{{nav|coin|fr=Pièces|greed machine unlock|boss rush unlock|keeper unlock|mega satan unlock|tainted keeper unlock}}
+[[Category:Pickups]]

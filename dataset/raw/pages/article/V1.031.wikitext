@@ -1,0 +1,42 @@
+{{infobox version
+ | date  = 2014-12-10
+ | steam = 228886519673853693
+}}
+
+== Documented changes ==
+=== Changes ===
+* The game now directly saves to the synchronized Steam Cloud folder.
+
+=== Fixes ===
+* Fixed an issue where the Sony DS4 controller was disconnected randomly when using both analogue sticks at the same time.
+
+== Undocumented changes ==
+=== Changes ===
+* Limited {{i|Halo of Flies}} count to 10.
+* Changed {{i|Lil Brimstone}} deal to 2 hearts
+* Changed [[Ticking Spider]] collision damage to half a heart.
+* Changed {{i|Head of Krampus}} to 6 charges.
+* Improved {{i|Dark Bum}} mechanics.
+
+=== Fixes ===
+* Improved Steam Cloud sync.
+* Fixed random disconnect for Sony controllers.
+* Fixed crash on [[trinket]] pool reset
+* Fixed {{i|Gemini}} + {{i|BFFS!}} synergy.
+* Fixed {{i|Technology 2}} + {{i|Chocolate Milk}} synergy.
+* [[Eden]]'s start items are seeded more reliably.
+* Fixed collectible spawn position for {{i|There's Options}} and {{i|The Negative}}.
+* Fixed {{i|Holy Mantle}} continue exploit.
+* Fixed seed exploit for [[challenge|challenge runs]].
+* Fixed [[hard mode]] affecting room drops other than hearts.
+* Fixed P2 blood donation exploit.
+* Fixed P2 {{i|Anti-Gravity}}.
+* Fixed P2 being able to use [[bomb]]s.
+* Fixed Devil deal exploit with half soul heart.
+* Fixed invincible [[Carrion Queen]].
+* Fixed [[??? (Character)|???]] restart issue.
+* Fixed [[The Haunt]] not invincible for the first few frames.
+* Fixed 60fps interpolation for {{i|Cube of Meat}} 2.
+* Fixed picked up item disappearing when exiting during pickup animation.
+
+{{nav|version}}

@@ -1,0 +1,38 @@
+{{header reverse tarot cards}}
+{{Infobox card
+ | dlc         = r
+ | name        = XI - Strength?
+ | files name  = XI - Inverted Strength
+ | type        = card
+ | id          = 67
+ | quote       = May you break their resolve
+ | description = All enemies in the room are [[weakened]], becoming slightly slower and taking double damage from all sources. Affected enemies also have their damage reduced to half a heart. The effect lasts up to one minute, or until the room is left.
+ | unlocked by = Strength
+ | recharge    = 3
+}}
+
+{{cit|uc|r}}
+
+== Effects ==
+* All enemies (including [[bosses]]) in the room are [[weakened]], becoming slightly slower, having slightly slowed projectile speed, and taking double damage from all sources for up to a minute or until the room is cleared. Afflicted enemies also have their damage reduced to half a heart.
+* Causes a purple fog to cover the room; this effect is purely visual.
+* The effect lasts up to one minute, or until the room is left.
+
+== Notes ==
+* Enemies spawned in later on, after Isaac has already used the card, will also be afflicted with weakness as long as the effect is active.
+* Enemies' decreased damage applies even in the {{s|Womb}} stages and beyond.
+
+== Interactions ==
+* {{I|Tarot Cloth}}: No effect.
+* [[Addicted!]]: Makes Isaac take a full heart of damage even when '''XI - Strength?''' is active.
+
+== In-game Footage ==
+{{#ev:youtube|b3cZ6UlSuRk}}
+
+== Bugs ==
+{{bug|When using '''XI - Strength?''', any segmented bosses are able to be one-shot due to the way segmented bosses are handled.<ref>https://youtu.be/8rjhpHua4JY</ref>}}
+
+== References ==
+{{reflist}}
+
+{{nav|fr=XI - La Force ?|card}}

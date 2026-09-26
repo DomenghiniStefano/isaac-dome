@@ -1,0 +1,109 @@
+{{header obstacles}}
+
+{{infobox entity
+ | name = Fire Place
+ | id   = 33
+}}
+
+* Deals a half-heart of damage when touched. {{dlc|r}} This damage is considered to be from a hostile source, not self-inflicted. {{i|Pyromaniac}} and {{i|Hot Bombs}} will prevent this damage.
+* Can be extinguished by tears, bombs, or explosions.
+* 25% chance to drop [[coin]]s (75% chance) or [[heart]]s (25% chance) when extinguished.
+** {{dlc|r}} The chance to drop a reward is reduced to 10% while playing on [[Hard Mode]].
+* [[Piercing tears]] and {{i|Explosivo}} shots can pierce through fire places and all of their variants. {{Dlc|nr}} [[Spectral tears]], however, are blocked.
+* {{Dlc|r}} Spectral tears can pierce through fire places.
+
+__TOC__
+{{clear}}
+
+== Red Fire Place ==
+{{infobox entity
+ | name    = Red Fire Place
+ | variant = 1
+}}
+
+* Can shoot red projectiles at medium speed at Isaac.
+** {{dlc|nr}} They do not telegraph before firing projectiles.
+** {{Dlc|r}} Red Fire Places have a bounce animation before firing.
+** {{dlc|r}} They fire a projectile only once until Isaac re-enters the room.
+* Shots fired from a Red Fire Place will not spawn directly on the Red Fire Place, but rather near the fire.
+** If Isaac stands too close when a Red Fire Place shoots, the projectile will spawn on Isaac.
+** {{Dlc|nr}} {{i|Pyromaniac}} makes Isaac immune to these projectiles.
+* Can be extinguished like normal Fire Places.
+* 25% chance to drop [[coin]]s (75% chance) or [[heart]]s (25% chance) when extinguished.
+** {{dlc|r}} The chance to drop a reward is reduced to 10% while playing on Hard Mode.
+* Can rarely replace normal Fire Places.
+* {{dlc|a}} Rarely, they'll appear in a room that needs to be cleared by pressing {{E|Pressure Plate}}s. When all are pressed, the Red Fire Places will turn into normal Fire Places.
+{{clear}}
+
+== Blue Fire Place ==
+{{infobox entity
+ | name    = Blue Fire Place
+ | variant = 2
+}}
+
+* 25% chance to drop a {{E|Soul Heart}} when extinguished.
+** {{dlc|r}} The chance to drop a Soul Heart is reduced to 10% while playing on Hard Mode.
+* Can only be put out by the following:
+** Bombs/explosions and rock blasts (such as from {{i|Wait What?}}).
+** {{i|Little Horn|a+nr}} tears.
+** {{dlc|r}} Teleporting on top of it with {{i|Stitches|n}}.
+** {{dlc+|r}} Using {{i|Suplex!}} on it, then leaving and re-entering the room (likely a bug).
+** {{dlc|r+}} Making contact with an explosive locust made from {{i|Abyss}}.
+{{dlc-}}
+{{clear}}
+
+== Purple Fire Place ==
+{{infobox entity
+ | name    = Purple Fire Place
+ | variant = 3
+}}
+
+* Fires purple homing projectiles at Isaac.
+** {{dlc|nr}} The homing projectiles deal a full heart of damage.
+** {{dlc|r}} They fire a projectile only once until Isaac re-enters the room.
+* 25% chance to drop a {{E|Soul Heart}} when extinguished.
+** {{dlc|r}} The chance to drop a Soul Heart is reduced to 10% while playing on Hard Mode.
+* Can only be put out the same way as Blue Fire Places.
+* Can rarely replace Blue Fire Places.
+* {{dlc|a}} Rarely, they'll appear in a room that needs to be cleared by pressing {{E|Pressure Plate}}s. When all are pressed, the Purple Fire Places will turn blue.
+{{clear}}
+
+== White Fire Place ==
+{{infobox entity
+ | dlc     = r
+ | name    = White Fire Place
+ | variant = 4
+}}
+
+* Only spawns in specific rooms on {{s|Downpour}} II or {{s|Dross}} II, and there will only be one of these rooms on the floor. The room may contain multiple white fire places depending on the layout.
+** {{r|Red Room}}s in {{s|Downpour}} I/II or {{s|Dross}} I/II also have a chance to contain white fire places.
+* When Isaac touches the flame, he "dies" and becomes a ghost, which has the properties of {{C|The Lost}} (flight, spectral tears, no health, and the {{I|Holy Mantle}}).
+** The ghost will not have Holy Mantle if it is not yet [[Greed Donation Machine#Greed Donation Machine Rewards|unlocked]] for The Lost.
+** The ghost will not have Holy Mantle if the room has not been cleared.
+** The ghost can take a devil deal for free like The Lost can.
+** The ghost can collect health pickups, but these are applied to the main character once Isaac reverts to normal form.
+* While a ghost, Isaac can enter the [[mirrored world]] by walking into the mirror found on Downpour/Dross II.
+* Completing and exiting a hostile room outside of the mirror world will change Isaac back to normal.
+** However, traveling to the next floor as the ghost will not change Isaac back until a room is cleared on that floor.
+* As a ghost, the fire can be flown through as if it were an empty tile, with no other effects.
+* Can be extinguished by using {{p|Chaos Card}} or by an explosion under the effect of {{i|Astral Projection}} (bug) or {{i|Suplex!}} (bug).
+{{clear}}{{dlc clear}}
+* Can also be extinguished by using {{p|Soul of Judas}}; quickly running to hover over the White Fire Place then shooting on the white fire place. Upon leaving and re-entering the room, the White Fire Place will be extinguished.
+
+== Notes ==
+* All types of fire places deal 16 damage to enemies that come in contact with them.
+* {{dlc+|r}} Normal and Red Fire Places are automatically extinguished in flooded rooms (including most rooms in {{s|Flooded Caves}}). Using {{I|Flush!}} will immediately put out all Normal and Red Fire Places in the room.{{dlc-}}
+* Unlike similar room obstacles, bombing a fire place will not create a walkable area over a pit.
+* {{i|Hot Bombs}} makes Isaac immune to contact damage with fire places. Fire place projectiles will still deal damage.
+
+== Gallery ==
+<gallery perrow="5">
+File:Normal Fire Place.gif|A normal Fire Place in-game.
+File:Red Fire Place.gif|A Red Fire Place in-game.
+File:Blue Fire Place.gif|A Blue Fire Place in-game.
+File:Purple Fire Place.gif|A Purple Fire Place in-game.
+File:White Fire.gif|{{dlc|r}}A White Fire Place in-game.
+</gallery>
+
+{{nav|fr=Feux}}
+[[Category:Objects]]

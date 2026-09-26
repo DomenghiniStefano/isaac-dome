@@ -1,0 +1,133 @@
+{{header greed bosses}}
+{{page dlc|a}}
+
+== {{s|The Shop}} ==
+=== All Boss Waves ===
+{| style="width: 70%; text-align: center"
+ | [[file:Boss The Forsaken portrait.png|center|link=The Forsaken]]
+ |-
+ | [[The Forsaken]] {{unlockable}}
+ |-
+ |[[file:boss Super Greed.png|64px|center|link=Super Greed]]
+ |-
+ |[[Super Greed]]
+ |}
+
+=== Boss Wave 1 Specific ===
+{| style="width: 70%; text-align: center"
+ |[[file:Boss Monstro portrait.png|link=Monstro]]
+ |[[file:Boss Pin portrait.png|link=Pin]]
+ |[[file:Boss Widow portrait.png|center|link=Widow]]
+ |[[file:Boss Famine portrait.png|center|link=Famine]]
+ |-
+ |[[Monstro]]
+ |[[Pin]]
+ |[[Widow]]
+ |
+[[Famine]] {{unlockable}}
+ |-
+ |[[file:Boss Chub portrait.png|center|link=Chub]]
+ |[[file:Boss The Hollow portrait.png|center|link=The Hollow]]
+ |[[file:Boss The Bloat portrait.png|center|link=The Bloat]]
+ |[[file:Boss The Cage portrait.png|center|link=The Cage]]
+ |-
+ |[[Chub]]
+ |[[The Hollow]]
+ |[[The Bloat]]
+ |[[The Cage]]
+ |-
+ |[[file:Boss Mask of Infamy portrait.png|center|link=Mask of Infamy]]
+ |[[file:Boss Monstro II portrait.png|center|link=Monstro II]]
+ |[[file:Boss Daddy Long Legs portrait.png|center|link=Daddy Long Legs]]
+ |[[file:Boss Teratoma portrait.png|center|link=Teratoma]]
+ |-
+ |[[Mask of Infamy]]
+ |[[Monstro II]]
+ |[[Daddy Long Legs]]
+ |[[Teratoma]]
+ |-
+ | colspan="4" style="padding:0" |
+{| style="width: 100%"
+ |[[file:Boss Triachnid portrait.png|center|link=Triachnid]]
+ |[[file:Boss Death portrait.png|center|link=Death (Boss)]]
+ |[[file:Boss Conquest portrait.png|center|link=Conquest]]
+ |-
+ |[[Triachnid]] {{unlockable}}
+ |[[Death (Boss)|Death]] {{unlockable}}
+ |[[Conquest]] {{unlockable}}
+ |}
+ |-
+ | colspan="2" |[[file:boss Greed.png|64px|center|link=Greed]]
+ | colspan="2" |[[file:boss Super Envy.png|80px|center|link=Super Envy]]
+ |-
+ | colspan="2" |[[Greed]]
+ | colspan="2" |[[Super Envy]]
+ |-
+ | colspan="2" |[[file:boss Angel.png|center|link=Uriel]]
+ | colspan="2" |[[file:boss Angel2.png|center|link=Gabriel]]
+ |-
+ | colspan="2" |[[Uriel]] {{unlockable}}
+ | colspan="2" |[[Gabriel]] {{unlockable}}
+ |}
+
+=== Boss Wave 2 Specific ===
+{| style="width: 70%; text-align: center"
+ |[[file:Boss Rag Man portrait.png|center|link=Rag Man]]
+ |[[file:Boss Carrion Queen portrait.png|center|link=Carrion Queen]]
+ |[[file:Boss The Husk portrait.png|center|link=The Husk]]
+ |[[file:Boss Polycephalus portrait.png|center|link=Polycephalus]]
+ |-
+ |[[Rag Man]] {{unlockable}}
+ |[[Carrion Queen]]
+ |[[The Husk]]
+ |[[Polycephalus]]
+ |-
+ |[[file:Boss The Frail portrait.png|center|link=The Frail]]
+ |[[file:Boss The Stain portrait.png|center|link=The Stain]]
+ |[[file:Boss The Gate portrait.png|center|link=The Gate]]
+ |[[file:Boss The Pile portrait.png|center|link=The Pile]]
+ |-
+ |[[The Frail]] {{unlockable}}
+ |[[The Stain]] {{unlockable}}
+ |[[The Gate]]
+ |[[The Pile]] {{dlc|r}}
+ |-
+ | colspan="4" style="padding:0" |
+{| style="width: 100%"
+ |[[file:Boss The Matriarch portrait.png|center|link=The Matriarch]]
+ |[[file:Boss Conquest portrait.png|center|link=Conquest]]
+ |[[file:Boss Headless Horseman portrait.png|center|link=Headless Horseman]]
+ |-
+ |[[The Matriarch]] {{dlc|a+}} {{unlockable}}
+ |[[Conquest]] {{unlockable}}
+ |[[Headless Horseman]] {{unlockable}} (Head Only)
+ |}
+ |-
+ | colspan="4" |[[file:boss Greed.png|64px|center|link=Greed]]
+ |-
+ | colspan="4" |[[Greed]]
+ |}
+
+=== Nightmare Wave Specific ===
+{| style="width: 70%; text-align: center"
+ |[[file:Boss Blighted Ovum portrait.png|center|link=Blighted Ovum]]
+ |[[file:Boss The Frail portrait.png|center|link=The Frail]]
+ |[[file:Boss The Stain portrait.png|center|link=The Stain]]
+ |[[file:Boss Mask of Infamy portrait.png|center|link=Mask of Infamy]]
+ |-
+ |[[Blighted Ovum]]
+ |[[The Frail]] {{unlockable}}
+ |[[The Stain]] {{unlockable}}
+ |[[Mask of Infamy]]
+ |-
+ | colspan=4|[[file:boss Angel2.png|center|link=Gabriel]]
+ |-
+ | colspan=4|[[Gabriel]] {{unlockable}}
+ |}
+
+== Notes ==
+* A wave consisting of 2 {{E|Grub}}s with 7 segments each can spawn for the Boss Wave 2.
+* An extremely rare (0.1 weight) wave consisting of 11 {{E|Shopkeeper}}s and a {{E|Fly}} can spawn for the Nightmare Wave.
+
+{{nav|boss|fr=La Boutique (Boss)}}
+[[Category:Bosses]]

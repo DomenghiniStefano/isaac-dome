@@ -3,6 +3,7 @@
  | id          = 517
  | quote       = Rapid bomb drops
  | description = +7 {{E|Bomb}}s. Removes the delay between bomb placements, allowing them to be placed rapidly. {{dlc|r}} Bombs will no longer knock each other away.
+ | bomb app    = {{dlcalt|Collectible_Fast_Bombs_bomb_appearance.png|r=Bomb.png}}
  | quality     = 1
  | tags        = summonable offensive
  | unlocked by = Fast Bombs

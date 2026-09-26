@@ -1,0 +1,671 @@
+<noinclude>{{page dlc|rnr+}}</noinclude>
+
+== Playable Characters ==
+{| style="border-spacing: 2px; text-align: center" cellpadding="4" data-description="Character Overview Table"
+|- style="text-align:center; vertical-align:bottom; background:#142e59"
+! rowspan="2" style="width:25%" |Character
+! rowspan="2" style="width:25%" |[[file:Character Bethany appearance.png|100px|link=Bethany]]<br>{{c|Bethany}}
+! colspan="2" style="width:50%" |[[file:Character Jacob and Esau appearance.png|160px|link=Jacob and Esau]]<br>{{c|Jacob and Esau}}
+|- style="text-align:center; vertical-align:bottom; background:#142e59"
+! style="width:25%" |{{c|Jacob}}
+! style="width:25%" |{{c|Esau}}
+|- style="text-align:center; background:#4a3026"
+!{{attribute|Health}}
+|{{Heart|red}}{{Heart|red}}{{Heart|red}}||{{Heart|red}}{{Heart|red}}{{Heart|red}}||{{Heart|red}}{{Heart|soul}}
+|- style="text-align:center; background:#4a3026"
+!{{attribute|Damage}}
+|3.50 (*1.00)||2.75 (*1.00)||3.75 (*1.00)
+|- style="text-align:center; background:#4a3026"
+!{{attribute|Tears}}
+| +0||3.00||2.50
+|- style="text-align:center; background:#4a3026"
+!{{attribute|Shot speed}}
+|1||1.15||0.85
+|- style="text-align:center; background:#4a3026"
+!{{attribute|Range}}
+|6.5||5.00||8.00
+|- style="text-align:center; background:#4a3026"
+!{{attribute|Speed}}
+|1.0||1.00||1.00
+|- style="text-align:center; background:#4a3026"
+!{{attribute|Luck}}
+|0||1.00||-1.00
+|- style="text-align:center; background:#4a3026"
+![[File:Starting Item Icon.png|16px]] Starting Pickups
+|4 [[Bethany|Soul Charges]]||style="color: #fff3"|None||style="color: #fff3"|None
+|- style="text-align:center; background:#4a3026"
+![[File:Starting Item Icon.png|16px]] Starting Item(s)
+|[[File:Collectible Book of Virtues icon.png]][[Book of Virtues]]||style="color: #fff3"|None||style="color: #fff3"|None
+|}There is also a "tainted character" for each existing playable character (including {{c|Bethany}} and {{c|Jacob and Esau}}) which can be unlocked by finding a hidden room on the new stage "{{s|Home}}". Because of that, the total number of playable characters in the game is 34.
+
+=== Co-op ===
+{{Repentance Babies|1}}
+
+== Items and Trinkets ==
+=== Activated Collectibles ===
+{{collectible table | type = activated | where = not collectible.dlc & {{dlcset|nr}} }}
+
+=== Passive Collectibles ===
+{{collectible table | type = passive | where = not collectible.dlc & {{dlcset|nr}} }}
+
+=== Trinkets ===
+{{trinket table | where = not trinket.dlc & {{dlcset|nr}} }}
+
+== Pickups ==
+=== Hearts ===
+{| class="striped wikitable mw-collapsible"
+! Heart
+! ID
+! class="unsortable"|Image
+! Worth
+! class="unsortable"|Additional Info
+! Unlocked By
+|-
+| Rotten Heart
+| {{ghost|5.10.}}12
+| [[File:Rotten Heart.png|center]]
+| [[File:Rotten heart2.png|center]]
+| Rotten Hearts fill up one whole heart container, or the rightmost Red Heart if all of Isaac's heart containers are full. (It isn't possible to have one-half a Rotten Heart; they are always depleted in one hit.) Each Rotten Heart in Isaac's life bar spawns two [[Familiar#Blue Flies|Blue Flies]] upon clearing a room.
+| {{achievement unlock|Rotten Heart}}
+|}
+
+=== Coins ===
+{| class="striped wikitable mw-collapsible"
+! Coin
+! ID
+! class="unsortable"|Image
+! Worth
+! class="unsortable"|Additional Info
+! Unlocked By
+|-
+| Golden Penny
+| {{Ghost|5.10.}}7
+| [[File:Golden Penny.png|center]]
+| 1
+| Spawns another golden penny in a random spot in the same room after being picked up, but has a 5% chance of disappearing instead.
+| {{achievement unlock|Golden Penny}}
+|}
+
+=== Bombs ===
+{| class="striped wikitable sortable mw-collapsible"
+! Bomb
+! ID
+! class="unsortable" |Image
+! Worth
+! class="unsortable" |Additional Info
+! Unlocked By
+|-
+| Golden Troll Bomb
+| {{ghost|4.}}18
+| [[file:Golden Troll Bomb.png|center]]
+| 0
+| Similar to troll bombs, spawns already ignited and cannot be picked up. However, it explodes endlessly, similar to unlimited bombs of the golden bomb pickup.<br>{{t|Safety Scissors}} will turn this into a Golden Bomb before it explodes.
+|
+|-
+| Giga Bombs
+| {{ghost|5.40.}}7
+| [[file:Giga Bomb.png|center]]
+| 1
+| Thrown by [[Bombgagger]]s and are spawned naturally in some rooms in [[Ashpit]]. Explodes and destroys tiles in a diamond shape.<br>Can be obtained by the player with {{t|Safety Scissors}} or {{i|Everything Jar}}.
+|
+|-
+| Throwable Bomb
+| {{ghost|5.}}41
+| [[file:Throwable Bomb.png|center]]
+| 0
+| Can only be picked up and thrown, explodes in a few seconds after pickup. Spawned only by the [[Stone Grimace#Bomb Grimace|Bomb Grimace]] enemy.
+|
+|}
+
+=== Batteries ===
+{| class="striped wikitable sortable mw-collapsible"
+! Battery
+! ID
+! class="unsortable"|Image
+! Worth
+! class="unsortable"|Additional Info
+! Unlocked By
+|-
+| Micro Battery
+| {{ghost|5.90.}}2
+| [[File:Micro Battery.png|center]]
+| 2 Charges.
+|
+| ''Always available''
+|-
+| Mega Battery
+| {{ghost|5.90.}}3
+| [[File:Mega Battery.png|center|20x20px]]
+| Fully charges the player's Active Item twice.
+|
+| ''Always available''
+|-
+| Golden Battery
+| {{ghost|5.90.}}4
+| [[File:Golden Battery.png|center]]
+| Fully charges the player's Active Item.
+| Damages the player for a full heart when picked up, and reappears somewhere else in the floor.
+| {{achievement unlock|Golden Battery}}
+|}
+
+=== Pills ===
+==== Pill effects ====
+{| class="striped wikitable sortable mw-collapsible"
+! Pill
+! ID
+! class="unsortable"|Effect
+! Unlocked By
+|-
+| Shot Speed Down || 47
+| -0.15 [[shot speed]].
+| ''Always available''
+|-
+| Shot Speed Up || 48
+| +0.15 shot speed.
+| ''Always available''
+|-
+| Experimental Pill || 49
+| Increases one [[attribute]] and decreases another randomly, with the same power as normal attribute up/down pills. If taken with {{i|Lucky Foot}}, {{I|PHD}} or {{i|Virgo}}, it will not reduce any attributes. If taken with {{I|False PHD|n}}, it will not increase any attributes.
+| ''Always available''
+|}
+
+==== Gold Pills ====
+'''Gold Pills''' (or Golden Pills) can be used multiple times and grant a random pill effect, even from pills not in the pill pool. Every time a Golden Pill is used it has a chance of being consumed. Its Horse Pill variant will make it give only Horse Pill Effects.
+
+{| class="striped wikitable mw-collapsible"
+! Pill
+! ID
+! style="text-align:center" | Image
+! Effect
+! Unlocked by
+|-
+| Gold Pill
+| {{ghost|5.70.}}14
+| [[File:Golden Pill icon.png|38px]]
+| Gives random pill effects and disappears after a random amount of uses.
+| {{achievement unlock|Gold Pill}}
+|}
+
+==== Horse Pills ====
+'''Horse Pills''' appear as larger versions of the standard pills with a more powerful effect, and their effects and appearances are similarly randomly chosen. All items that work with pills work identically with horse pills. A horse pill with a given effect has the same color as the normal pill does. Unlocked by: {{achievement unlock|Horse Pill}}
+
+{| class="striped wikitable sortable mw-collapsible"
+! Horse Pill
+! class="unsortable" | Effect
+|-
+| Bad Gas || The [[poison]] applies to the entire room.
+|-
+| Bad Trip || Two hearts of damage. If Isaac would not survive, the pill becomes Full Health.
+|-
+| Balls of Steel || Grants four soul hearts.
+|-
+| Bombs are Key || The number of bombs and keys is increased by 50% while swapping.
+|-
+| Explosive Diarrhea || Spawns more bombs, boosted with {{i|Mr. Mega}} and {{i|Bobby-Bomb}}.
+|-
+| Full Health || Fully heals and grants 3 soul hearts.
+|-
+| Health Down || Removes two heart containers. If this is not possible, the pill becomes Health Up.
+|-
+| Health Up || Adds two empty red heart containers.
+|-
+| I Found Pills || Isaac's face gets a permanent, very exaggerated expression.
+|-
+| Puberty || Isaac gains very fluffy hair covering his entire head and even face.
+|-
+| Pretty Fly || Spawns a {{i|Big Fan}} instead. There is no upper limit.
+|-
+| Range Down || -2.00 [[range]].
+|-
+| Range Up || +2.50 range.
+|-
+| Speed Down || -0.24 [[speed]].
+|-
+| Speed Up || +0.30 speed.
+|-
+| Tears Down || -0.56 [[tears]].
+|-
+| Tears Up || +0.70 tears.
+|-
+| Luck Down || -2 [[luck]].
+|-
+| Luck Up || +2 luck.
+|-
+| Telepills || No difference.
+|-
+| 48 Hour Energy || Spawns 3-4 [[Little battery|batteries]].
+|-
+| Hematemesis || Spawns 4-7 [[Red heart|hearts]].
+|-
+| Paralysis || The effect lasts 4 seconds.
+|-
+| I can see forever! || In addition to the normal effect, fully reveals the map like {{i|The Mind}}.
+|-
+| Pheromones || The [[charm]] is permanent, turning the enemies [[friendly]].
+|-
+| Amnesia || No difference.
+|-
+| Lemon Party || The puddle covers nearly the entire room.
+|-
+| R U a Wizard? || The effect lasts 60 seconds.
+|-
+| Percs || No difference.
+|-
+| Addicted || No difference.
+|-
+| Re-Lax || The effect lasts much longer.
+|-
+| ??? || No difference.
+|-
+| One makes you larger || Size increases by two steps.
+|-
+| One makes you small || Size decreases by two steps.
+|-
+| Infested! || Double the number of [[Blue spider|spiders]] spawned.
+|-
+| Infested? || Double the number of spiders spawned.
+|-
+| Power Pill! || In addition to the normal effect, grants {{p|Huge Growth}} for +7 flat damage and +3 range. The Huge Growth bonus persists after the Gamekid wears off.
+|-
+| Retro Vision || Lasts 90 seconds, with no breaks.
+|-
+| Friends 'Till The End! || Spawns 12 [[Familiar#Blue Flies|blue flies]].
+|-
+| X-Lax || The pool lasts much longer.
+|-
+| Something's wrong... || The pool lasts much longer.
+|-
+| I'm Drowsy... || No difference.
+|-
+| I'm Excited!!! || No difference.
+|-
+| Gulp! || Heals one red heart per gulped trinket.
+|-
+| Horf! || Isaac shoots a small cluster of Horf! tears, with varying power above normal Horf!.
+|-
+| Feels like I'm walking on sunshine! || The effect is upgraded to {{i|The Gamekid}}.
+|-
+| Vurp! || If the last pill was a normal pill, it becomes a horse pill. No further difference on horse pills themselves.
+|-
+| Shot Speed Down || -0.30 [[shot speed]].
+|-
+| Shot Speed Up || +0.30 shot speed.
+|-
+| Experimental Pill || The two effects are doubled in power.
+|-
+| Gold Pill || The random effects are doubled.
+|}
+
+=== Consumables ===
+==== Reversed Cards ====
+{{pickup table | 0 - The Fool?, I - The Magician?, II - The High Priestess?, III - The Empress?, IV - The Emperor?, V - The Hierophant?, VI - The Lovers?, VII - The Chariot?, VIII - Justice?, IX - The Hermit?, X - Wheel of Fortune?, XI - Strength?, XII - The Hanged Man?, XIII - Death?, XIV - Temperance?, XV - The Devil?, XVI - The Tower?, XVII - The Stars?, XVIII - The Moon?, XIX - The Sun?, XX - Judgement?, XXI - The World? | unlock method = yes }}
+
+==== Playing Cards ====
+{{pickup table | Queen of Hearts | unlock method = yes }}
+
+==== Other Cards ====
+{{pickup table | Wild Card | unlock method = yes }}
+
+==== Runes ====
+{{pickup table | Rune Shard | unlock method = yes }}
+
+==== Soul Stones ====
+{{pickup table | Soul of Isaac, Soul of Magdalene, Soul of Cain, Soul of Judas, Soul of ???, Soul of Eve, Soul of Samson, Soul of Azazel, Soul of Lazarus, Soul of Eden, Soul of the Lost, Soul of Lilith, Soul of the Keeper, Soul of Apollyon, Soul of the Forgotten, Soul of Bethany, Soul of Jacob and Esau | unlock method = yes }}
+
+==== Other ====
+{{pickup table | Cracked Key | unlock method = yes }}
+
+=== Chests ===
+{| class="striped wikitable sortable mw-collapsible"
+! Chest
+! ID
+! class="unsortable" | Image
+! class="unsortable" | Additional Info
+! Unlocked By
+|-
+| Old Chest
+| {{ghost|5.}}55
+| style="text-align:center" |[[File:Old Chest.png]]
+| '''Old Chests''' are similar in appearance to Golden Chests, but have the color of a normal Chest and a worn-down appearance. They have the same requirements as locked chests. Pulls from the [[Old Chest (Item Pool)|Old Chest item pool.]]
+|
+|-
+| Wooden Chest
+| {{ghost|5.}}56
+| style="text-align:center" |[[File:Wooden Chest.png]]
+| '''Wooden Chests''' appear similar to normal Chests but have an appearance similar to wood. Pulls from the [[Wooden Chest (Item Pool)|Wooden Chest item pool.]]
+| {{achievement unlock|Wooden Chest}}
+|-
+| Mega Chest
+| {{ghost|5.}}57
+| style="text-align:center" |[[File:Mega Chest.png]]
+| '''Mega chests''' appear similar to Golden Chests but are larger in appearance.
+| {{achievement unlock|Mega Chest}}
+|-
+| Haunted Chest
+| {{ghost|5.}}58
+| style="text-align:center" |[[File:Haunted Chest.png]]
+| '''Haunted Chests''' appear nearly identical to normal Chests until Isaac gets close to them, at which point a [[Polty]] picks up the chest and throws it at Isaac, doing half a heart of damage and breaking open the chest.
+| {{achievement unlock|Haunted Chest}}
+|-
+| Mom's Chest
+| {{ghost|5.}}390
+| style="text-align:center" |[[File:Mom's Chest.png]]
+| '''Mom's Chest''' appears in [[Home]]. Mom's chest has no requirements to open. Contains a [[Red Key]] upon the first visit. Contains a random Mom-related item or Red Key upon subsequent visits of Home.
+|
+|}
+
+=== Sacks ===
+{| class="striped wikitable mw-collapsible"
+! Sack
+! ID
+! class="unsortable"|Image
+! class="unsortable"|Additional Info
+! Unlocked By
+|-
+| [[Sacks|Black Sack]]
+| {{ghost|5.69.}}2
+| [[File:Black Sack.png|center]]
+| Spawns 2-3 pills, black or bone hearts and/or bombs when collected.
+| {{achievement unlock|Black Sack}}
+|}
+As well, [[Sacks]] can spawn in shops for 7 coins.
+
+== Machines & Beggars ==
+* {{M|Crane Game}}: Bet 5 coins to have a chance to obtain an item. Contains 3 items.
+* {{M|Confessional}}: Sacrifice health to obtain various angel rewards.
+* {{M|Battery Bum}}: Give coins to recharge your active item or get rewards.
+* {{M|Rotten Beggar}}: Give coins to obtains rewards such as blue flies/spiders, Bone/Rotten hearts, trinket or items.
+* {{M|Hell Game}}: Bet health to get pickups or devil items.
+
+== Monsters ==
+=== Bosses ===
+<div style="text-align:center">
+
+<li style="display: inline-table;">
+{| style="text-align: center"
+| [[File:Boss Baby Plum portrait.png|center|link=Baby Plum]]
+|-
+| [[Baby Plum]]
+|} </li>
+<li style="display: inline-table;">
+{| style="text-align: center"
+| [[File:Boss Bumbino portrait.png|center|link=Bumbino]]
+|-
+| [[Bumbino]]
+|} </li>
+<li style="display: inline-table;">
+{| style="text-align: center"
+| [[File:Boss Reap Creep portrait.png|center|link=Reap Creep]]
+|-
+| [[Reap Creep]]
+|} </li>
+<li style="display: inline-table;">
+{| style="text-align: center"
+| [[File:Boss The Pile portrait.png|center|link=The Pile]]
+|-
+| [[The Pile]]
+|} </li>
+<li style="display: inline-table;">
+{| style="text-align: center"
+| [[File:Boss Lil Blub (Downpour) portrait.png|center|link=Lil Blub]]
+|-
+| [[Lil Blub]]
+|} </li>
+<li style="display: inline-table;">
+{| style="text-align: center"
+| [[File:Boss Wormwood (Downpour) portrait.png|center|link=Wormwood]]
+|-
+| [[Wormwood]]
+|} </li>
+<li style="display: inline-table;">
+{| style="text-align: center"
+| [[File:Boss The Rainmaker portrait.png|center|link=The Rainmaker]]
+|-
+| [[The Rainmaker]]
+|} </li>
+<li style="display: inline-table;">
+{| style="text-align: center"
+| [[File:Boss Min-Min portrait.png|center|link=Min-Min]]
+|-
+| [[Min-Min]]
+|} </li>
+<li style="display: inline-table;">
+{| style="text-align: center"
+| [[File:Boss Clog portrait.png|center|link=Clog]]
+|-
+| [[Clog]]
+|} </li>
+<li style="display: inline-table;">
+{| style="text-align: center"
+| [[File:Boss Colostomia portrait.png|center|link=Colostomia]]
+|-
+| [[Colostomia]]
+|} </li>
+<li style="display: inline-table;">
+{| style="text-align: center"
+| [[File:Boss Turdlet portrait.png|center|link=Turdlet]]
+|-
+| [[Turdlet]]
+|} </li>
+<li style="display: inline-table;">
+{| style="text-align: center"
+| [[File:Boss Tuff Twins portrait.png|center|link=Tuff Twins]]
+|-
+| [[Tuff Twins]]
+|} </li>
+<li style="display: inline-table;">
+{| style="text-align: center"
+| [[File:Boss Hornfel portrait.png|center|link=Hornfel]]
+|-
+| [[Hornfel]]
+|} </li>
+<li style="display: inline-table;">
+{| style="text-align: center"
+| [[File:Boss Great Gideon portrait.png|center|link=Great Gideon]]
+|-
+| [[Great Gideon]]
+|} </li>
+<li style="display: inline-table;">
+{| style="text-align: center"
+| [[File:Boss Singe portrait.png|center|link=Singe]]
+|-
+| [[Singe]]
+|} </li>
+<li style="display: inline-table;">
+{| style="text-align: center"
+| [[File:Boss The Shell portrait.png|center|link=The Shell]]
+|-
+| [[The Shell]]
+|} </li>
+<li style="display: inline-table;">
+{| style="text-align: center"
+| [[File:Boss Clutch portrait.png|center|link=Clutch]]
+|-
+| [[Clutch]]
+|} </li>
+<li style="display: inline-table;">
+{| style="text-align: center"
+| [[File:Boss The Siren portrait.png|center|link=The Siren]]
+|-
+| [[The Siren]]
+|} </li>
+<li style="display: inline-table;">
+{| style="text-align: center"
+| [[File:Boss The Heretic portrait.png|center|link=The Heretic]]
+|-
+| [[The Heretic]]
+|} </li>
+<li style="display: inline-table;">
+{| style="text-align: center"
+| [[File:Boss The Visage portrait.png|center|link=The Visage]]
+|-
+| [[The Visage]]
+|} </li>
+<li style="display: inline-table;">
+{| style="text-align: center"
+| [[File:Boss The Horny Boys portrait.png|center|link=The Horny Boys]]
+|-
+| [[The Horny Boys]]
+|} </li>
+<li style="display: inline-table;">
+{| style="text-align: center"
+| [[File:Boss Rotgut portrait.png|center|link=Rotgut]]
+|-
+| [[Rotgut]]
+|} </li>
+<li style="display: inline-table;">
+{| style="text-align: center"
+| [[File:Boss Chimera portrait.png|center|link=Chimera]]
+|-
+| [[Chimera]]
+|} </li>
+<li style="display: inline-table;">
+{| style="text-align: center"
+| [[File:Boss The Scourge portrait.png|center|link=The Scourge]]
+|-
+| [[The Scourge]]
+|} </li>
+<li style="display: inline-table;">
+{| style="text-align: center"
+| [[File:Boss Dogma portrait.png|center|link=Dogma]]
+|-
+| [[Dogma]]
+|}</li>
+<li style="display: inline-table;">
+{| style="text-align: center"
+| style="padding: 0em 2.67em" | [[File:Boss Ultra Famine ingame.png|top|link=Ultra Famine]]
+|-
+| [[Ultra Famine]]
+|} </li>
+<li style="display: inline-table;">
+{| style="text-align: center"
+| style="padding: 0em 1.96em" | [[File:Boss Ultra Pestilence ingame.png|top|link=Ultra Pestilence]]
+|-
+| [[Ultra Pestilence]]
+|} </li>
+<li style="display: inline-table;">
+{| style="text-align: center"
+| style="padding: 0em 2.6em" | [[File:Boss Ultra War ingame.png|center|link=Ultra War]]
+|-
+| [[Ultra War]]
+|} </li>
+<li style="display: inline-table;">
+{| style="text-align: center"
+| style="padding: 0em 1em" | [[File:Boss Ultra Death ingame.png|center|link=Ultra Death]]
+|-
+| [[Ultra Death]]
+|} </li>
+
+</div>
+
+<div style="text-align:center">
+
+<li style="display: inline-table">
+{| style="text-align: center"
+| style="padding: 2em 3em 0em" | [[File:Boss Mother portrait.png|center|link=Mother]]
+|-
+| [[Mother]]
+|} </li>
+<li style="display: inline-table">
+{| style="text-align: center"
+| style="padding: 2em 3em 0em" | [[File:Boss The Beast ingame.png|center|link=The Beast]]
+|-
+| [[The Beast]]
+|} </li>
+
+</div>
+
+=== Enemies ===
+{{entity table | Deep Gaper, Blurb, Crackle, Wraith, Rotten Gaper, Dead Isaac, Twitchy, Level 2 Gaper, Faceless, Fanatic, Exorcist, Dump, Dump Head, Level 2 Gusher, Sub Horf, Necro, Tainted Sub Horf, Level 2 Horf, Army Fly, Willo, Ultra Famine Fly, Ultra Pestilence Fly, Fly Bomb, Eternal Fly Bomb, Ink, Tainted Sucker, Bulb, Bloodfly, Tainted Pooter, Mama Fly, Grilled Clotty, Cloggy, Prey, Gas Dwarf, Holy Mulligan, Mullighoul, Bouncer, Tainted Mulligan, Danny, Coal Boy, Blaster, Small Maggot, Level 2 Charger, Carrion Princess, Small Leech, Elleech, Blood Puppy, Tainted Spitty, Cursed Globin, Clickety Clack, Cohort, Gasbag, Dragon Fly, Dragon Fly X, Bone Fly, Sick Boom Fly, Tainted Boom Fly, Hard Host, Floast, Sticky Leaper, Eggy, Tainted Hopper, Pustule, Pon, Gyro, Grilled Gyro, Angelic Baby (small), Wrinkly Baby, Baby Begotten, Unborn, Vis Versa, Evis, Slog, Cyst, Loose Knight, Brainless Knight, Black Knight, Whipper, Snapper, Flagellant, Adult Leech, Dead Meat, Holy Eye, Strider, Swarm Spider, Rock Spider, Tinted Rock Spider, Coal Spider, Butt Slicker, Mask II + 1/2 Heart, Peeping Fatty, Bloaty, Bubbles, Shady, Quakey, Big Bony, Vis Fatty, Fetal Demon, Gutted Fatty, Festering Guts, Tainted Faceless, Cursed Death's Head, Brimstone Death's Head, Dusty Death's Head, Redskull, Ultra Death Head, Level 2 Willo, Migraine, Big Corn, Drip, Splurt, Hardy, Revenant, Quad Revenant, Maze Roamer, Holy Bony, Planetoid, Poofer, Bishop, Goat, Black Goat, Cultist, Blood Cultist, Soy Creep, Tainted Soy Creep, Fire Worm, Tainted Round Worm, Tainted Tube Worm, Mole, Tainted Mole, Polty, Kineti, Dust, Fly Trap, Poot Mine, Bombgagger, Flesh Maiden, Morningstar, Needle, Pasty, Fissure, Lil Portal, Henry, Triple Grimace, Quake Grimace, Bomb Grimace, Mockulus, Grudge, Ball and Chain, Spikeball, Singe's Ball, Ultra Death Scythe, Siren Minion, Siren Helper, Visage Plasma }}
+
+=== Champions ===
+{| class="wikitable"
+|+
+!ID!!Appearance
+!Effect
+!Drop
+!Rarity
+!Notes
+|- very rare
+|24
+|[[file:Champion Brown.png|50px]]
+Brown
+|Trails [[Poops|poop]] behind it as it walks.
+|Nothing
+|Unknown
+|
+|-
+|25
+|[[file:Champion Rainbow.gif|50px]]
+Rainbow
+|Combines the effects of champion types 0, 2, 5, 10, 11, 13 and 17.
+|A [[coin]], a [[bomb]], a [[key]], a [[heart]], a [[pill]], a [[card]] and a [[trinket]].
+|Unknown
+|
+|}
+
+== Audio ==
+* The Music is once again composed by Ridiculon.
+** Whilst not being in the official release, a fully updated Antibirth soundtrack may be released by Mudeth as a mod.
+
+== Environment ==
+=== Chapters ===
+{| style="width: 80%; align: left"
+| style="text-align:center" | {{stage image|Downpour}}
+| style="text-align:center" | {{stage image|Dross}}
+|-
+| style="text-align:center" | {{s|Downpour}}
+| style="text-align:center" | {{s|Dross}}
+|-
+| style="text-align:center" | {{stage image|Mines}}
+| style="text-align:center" | {{stage image|Ashpit}}
+|-
+| style="text-align:center" | {{s|Mines}}
+| style="text-align:center" | {{s|Ashpit}}
+|-
+| style="text-align:center" | {{stage image|Mausoleum}}
+| style="text-align:center" | {{stage image|Gehenna}}
+|-
+| style="text-align:center" | {{s|Mausoleum}}
+| style="text-align:center" | {{s|Gehenna}}
+|-
+| style="text-align:center" | {{stage image|Corpse}}
+| style="text-align:center" | {{stage image|Home}}
+|-
+| style="text-align:center" | {{s|Corpse}}
+| style="text-align:center" | {{s|Home}}
+|}
+
+=== Obstacles ===
+* '''Rocks'''
+** Spiked Rocks
+** Marked Skulls
+** Buckets
+** Fool's Gold Rocks
+
+* '''Poops'''
+** Giant Poop
+** Charming Poop
+
+* '''Fire Places'''
+** White Fire Place
+
+* '''Blocks'''
+** Pillars
+
+* '''Buttons'''
+** Red Buttons
+** Yellow Buttons
+** Brown Buttons
+
+* '''Teleporters'''
+
+=== Rooms ===
+* [[Planetarium]]s
+* [[Devil's Crown|Red Treasure Rooms]]
+* [[Secret Room#Ultra Secret Rooms|Ultra Secret Rooms]]
+* [[Red Key|Red Rooms]]
+* Exit Rooms
+
+== Challenges ==
+{{challenge table | where = not challenge.dlc & {{dlcset|nr}} }}

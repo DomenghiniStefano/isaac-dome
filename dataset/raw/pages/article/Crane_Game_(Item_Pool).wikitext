@@ -1,0 +1,17 @@
+{{header item pools}}
+{{item pool
+ | dlc = r
+}}
+The Crane Game item pool contains the collectibles that can be earned by winning at the {{m|Crane Game}}, unlocked after defeating {{E|Mega Satan}} as {{C|Tainted Samson}}.
+
+== Activated Collectibles ==
+{{item pool/header}}
+{{pool items | Best Friend, The Boomerang, Box of Friends, Clear Rune, D1, D4, The D6, D7, D8, D10, D12, D20, D100, Deck of Cards, Doctor's Remote, Eraser, Eternal D6, Everything Jar, Friend Finder, Friendly Ball, The Gamekid, Glass Cannon, Glowing Hourglass, The Hourglass, Metronome, Mine Crafter, Mom's Bottle of Pills, Mom's Box, Mom's Bracelet, Mr. ME!, My Little Unicorn, Mystery Gift, Notched Axe, Pause, Remote Detonator, Shoop da Whoop!, Spindown Dice, Spin to Win, Sprinkler, Suplex!, Tammy's Head, Tear Detonator, Teleport!, Teleport 2.0 }}
+|}
+
+== Passive Collectibles ==
+{{item pool/header}}
+{{pool items | 9 Volt, Analog Stick, The Battery, Binky, Booster Pack, Bot Fly, Broken Watch, Buddy in a Box, Champion Belt, The Compass, Consolation Prize, Cricket's Head, Cupid's Arrow, Fruity Plum, Glass Eye, Guppy's Collar, Jacob's Ladder, Lead Pencil, Lil Chest, Lodestone, Lucky Foot, Magic 8 Ball, Marbles, Mr. Dolly, Mutant Spider, My Reflection, Night Light, Pentagram, Piggy Bank, Poke Go, Robo-Baby, Robo-Baby 2.0, The Sad Onion, Screw, The Small Rock, SMB Super Fan, Spelunker Hat, Spider Bite, Spider Mod, Spoon Bender, Squeezy, Starter Deck, Stop Watch, Tarot Cloth, Tech.5, Technology, Technology 2, Technology Zero, Tech X, Tractor Beam, Voodoo Head, Wire Coat Hanger }}
+|}
+
+{{nav|fr=Machine à Pince (Banque d'Objets)}}

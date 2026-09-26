@@ -1,0 +1,181 @@
+'''Stage HP''' is a feature of some enemies, granting them extra health the higher the stage number they're encountered in is.
+
+__TOC__
+
+== Calculation ==
+The formula for an enemy's total health (''HP'') is
+
+<math display="block">\mathit{HP} = \mathit{Base HP} + \left(\mathrm{min}(4, \mathit{Stage}) + 0.8 \times \mathrm{bound}(0, \mathit{Stage} - 5, 5)\right) \times \mathit{Stage HP}</math>
+
+where ''Base HP'' and ''Stage HP'' are the defined HP values for the given enemy and displayed in the enemies' pages, ''Stage'' is the current stage number as defined internally by the game, and ''min'' and ''bound'' are functions that take the smaller of two values or bound the middle value between the two others, respectively.
+
+In practice, this means that the enemy gains ''Stage HP'' extra health for the first 4 stages, gains nothing for stage 5, and then 4/5ths of ''Stage HP'' for each stage up to stage 10, after which their health stops increasing.
+
+[[Chapters]] map to stage numbers as follows:
+{| class="wikitable"
+ ! Stage number
+ ! Normal Mode
+ ! {{dlc|a}}[[Greed Mode]]
+ |-
+ | 1
+ | {{s|Basement}} / {{s|Cellar}} / {{s|Burning Basement}} / {{s|Downpour}} / {{s|Dross}} I
+ | {{s|Basement}} / {{s|Cellar|r}} / {{s|Burning Basement|r}}
+ |-
+ | 2
+ | {{s|Basement}} / {{s|Cellar}} / {{s|Burning Basement}} / {{s|Downpour}} / {{s|Dross}} II
+ | {{s|Caves}} / {{s|Catacombs|r}} / {{s|Flooded Caves|r}}
+ |-
+ | 3
+ | {{s|Caves}} / {{s|Catacombs}} / {{s|Flooded Caves}} / {{s|Mines}} / {{s|Ashpit}} I
+ | {{s|Depths}} / {{s|Necropolis|r}} / {{s|Dank Depths|r}}
+ |-
+ | 4
+ | {{s|Caves}} / {{s|Catacombs}} / {{s|Flooded Caves}} / {{s|Mines}} / {{s|Ashpit}} II
+ | {{s|Womb}} / {{s|Utero|r}} / {{s|Scarred Womb|r}}
+ |-
+ | 5
+ | {{s|Depths}} / {{s|Necropolis}} / {{s|Dank Depths}} / {{s|Mausoleum}} / {{s|Gehenna}} I
+ | {{s|Sheol}}
+ |-
+ | 6
+ | {{s|Depths}} / {{s|Necropolis}} / {{s|Dank Depths}} / {{s|Mausoleum}} / {{s|Gehenna}} II
+ | {{s|The Shop}}
+ |-
+ | 7
+ | {{s|Womb}} / {{s|Utero}} / {{s|Scarred Womb}} / {{s|Corpse}} I
+ | {{s|Ultra Greed}}
+ |-
+ | 8
+ | {{s|Womb}} / {{s|Utero}} / {{s|Scarred Womb}} / {{s|Corpse}} II
+ | -
+ |-
+ | 9
+ | {{s|???}}
+ | -
+ |-
+ | 10
+ | {{s|Cathedral}} / {{s|Sheol}}
+ | -
+ |-
+ | 11
+ | {{s|Chest}} / {{s|Dark Room}}
+ | -
+ |-
+ | 12
+ | {{s|The Void}}
+ | -
+ |-
+ | 13
+ | {{s|Home}}
+ | -
+|}
+
+=== Example ===
+Consider a {{e|Dip}} with 3 base HP and 1 stage HP.
+* Basement I, i.e. stage 1: HP = 3 + (min(4, 1) + 0.8 × bound(0, 1 - 5, 5)) × 1 = 3 + (1 + 0.8 × 0) × 1 = '''4'''
+* Womb II, i.e. stage 8: HP = 3 + (min(4, 8) + 0.8 × bound(0, 8 - 5, 5)) × 1 = 3 + (4 + 0.8 × 3) × 1 = '''9.4'''
+* The Void, i.e. stage 12: HP = 3 + (min(4, 12) + 0.8 × bound(0, 12 - 5, 5)) × 1 = 3 + (4 + 0.8 × 5) × 1 = '''11'''
+
+== Monsters and Bosses that use Stage HP ==
+A total of 52 [[Monsters]] and 18 [[Bosses]] use this mechanic, with the [[Seven Deadly Sins|Sins]] counted among the latter group.
+
+{| class="wikitable mw-collapsible mw-collapsed sortable striped"
+! Name
+! ID
+! Base HP
+! Stage HP
+{{entity row minimal|Baby Begotten}}         || 18  || 3
+{{entity row minimal|Baby Long Legs}}        || 16  || 4
+{{entity row minimal|Big Corn}}              || 6   || 2
+{{entity row minimal|Black Bony}}            || 8   || 2
+{{entity row minimal|Black Maw}}             || 20  || 6
+{{entity row minimal|Blister}}               || 16  || 8
+{{entity row minimal|Bloodfly}}              || 6   || 1
+{{entity row minimal|Blue Gaper}}        <!--|| 16  || 2 -->
+| data-sort-value="16" | {{dlc|ana+}} 30 <br> {{dlc|a+}} 16
+| data-sort-value="2" | {{dlc|ana+}} 0 <br> {{dlc|a+}} 2
+{{entity row minimal|Bone Fly}}              || 8   || 3
+{{entity row minimal|Bony}}                  || 8   || 2
+{{entity row minimal|Boom Fly}}          <!--|| 8   || 3 -->
+| data-sort-value="8" | {{dlc|nr}} 20 <br> {{dlc|r}} 8
+| data-sort-value="3" | {{dlc|nr}} 0 <br> {{dlc|r}} 3
+{{entity row minimal|Bulb}}                  || 10  || 2
+{{entity row minimal|Butt Slicker}}          || 16  || 3
+{{entity row minimal|Clickety Clack}}        || 20  || 3
+{{entity row minimal|Cloggy}}                || 15  || 2
+{{entity row minimal|Crazy Long Legs}}       || 16  || 4
+{{entity row minimal|Crispy}}                || 12  || 4
+{{entity row minimal|Dank Squirt}}           || 15  || 6
+{{entity row minimal|Dip}}                   || 3   || 1
+{{entity row minimal|Dragon Fly}}            || 8   || 3
+{{entity row minimal|Dragon Fly X}}          || 8   || 3
+{{entity row minimal|Drip}}                  || 3   || 1
+{{entity row minimal|Drowned Boom Fly}}  <!--|| 8   || 3 -->
+| data-sort-value="8" | {{dlc|nr}} 20 <br> {{dlc|r}} 8
+| data-sort-value="3" | {{dlc|nr}} 0 <br> {{dlc|r}} 3
+{{entity row minimal|Dump}}                  || 10  || 1
+{{entity row minimal|Dump Head}}             || 10  || 1
+{{entity row minimal|Eggy}}                  || 20  || 2
+{{entity row minimal|Fetal Demon}}           || 40  || 3
+{{entity row minimal|Flesh Maiden}}          || 24  || 4
+{{entity row minimal|Fly Trap}}              || 16  || 6
+{{entity row minimal|Grub}}                  || 10  || 2.5
+{{entity row minimal|Gurgling}}              || 24  || 4
+{{entity row minimal|Hardy}}                 || 15  || 6
+{{entity row minimal|Holy Bony}}             || 60  || 14
+{{entity row minimal|Holy Eye}}              || 20  || 5
+{{entity row minimal|Holy Mulligan}}         || 40  || 3
+{{entity row minimal|Leper Flesh}}           || 5   || 1.5
+{{entity row minimal|Ministro}}              || 9   || 2
+{{entity row minimal|Planetoid}}             || 28  || 4
+{{entity row minimal|Polty}}                 || 14  || 2.5
+{{entity row minimal|Portal}}                || 9   || 5
+{{entity row minimal|Red Boom Fly}}      <!--|| 8   || 3 -->
+| data-sort-value="8" | {{dlc|nr}} 20 <br> {{dlc|r}} 8
+| data-sort-value="3" | {{dlc|nr}} 0 <br> {{dlc|r}} 3
+{{entity row minimal|Red Ghost}}         <!--|| 20  || 4 -->
+| data-sort-value="20" | {{dlc|nr}} 25 <br> {{dlc|r}} 20
+| data-sort-value="4" | {{dlc|nr}} 5 <br> {{dlc|rnr+}} 4 <br> {{dlc|r+}} 3
+{{entity row minimal|Rotty}}                 || 16  || 5
+{{entity row minimal|Sick Boom Fly}}         || 8   || 3
+{{entity row minimal|Skinny}}                || 10  || 4
+{{entity row minimal|Small Baby Long Legs}}  || 12  || 4
+{{entity row minimal|Small Crazy Long Legs}} || 12  || 4
+{{entity row minimal|Splasher}}              || 10  || 2
+{{entity row minimal|Splurt}}                || 15  || 6
+{{entity row minimal|Squirt}}                || 15  || 6
+{{entity row minimal|Swarm Spider}}          || 4.5 || 0.2
+{{entity row minimal|Tainted Mulligan}}      || 120 || 8
+{{entity row minimal|Tainted Sucker}}        || 14  || 1
+{{entity row minimal|Vis Fatty}}             || 40  || 4
+{{entity row minimal|Wizoob}}            <!--|| 20  || 4 -->
+| data-sort-value="20" | {{dlc|nr}} 25 <br> {{dlc|r}} 20
+| data-sort-value="4" | {{dlc|nr}} 5 <br> {{dlc|rnr+}} 4 <br> {{dlc|r+}} 3
+{{entity row minimal|Headless Horseman}}     || 160 || 30
+{{entity row minimal|The Fallen}}            || 60 || 45
+{{entity row minimal|Krampus}}               || 60 || 45
+{{entity row minimal|Envy}}                  | data-sort-value="40" | {{dlc|na}} 60 <br> {{dlc|a}} 40 || 7.5
+{{entity row minimal|Gluttony}}              || 60 || data-sort-value="20" | {{dlc|nr}} 15 <br> {{dlc|r}} 20
+{{entity row minimal|Greed}}                 || 60 || data-sort-value="20" | {{dlc|nr}} 15 <br> {{dlc|r}} 20
+{{entity row minimal|Lust}}                  || 60 || data-sort-value="20" | {{dlc|nr}} 15 <br> {{dlc|r}} 20
+{{entity row minimal|Pride}}                 || 60 || data-sort-value="20" | {{dlc|nr}} 15 <br> {{dlc|r}} 20
+{{entity row minimal|Sloth}}                 || 60 || data-sort-value="20" | {{dlc|nr}} 15 <br> {{dlc|r}} 20
+{{entity row minimal|Wrath}}                 || 60 || 24
+{{entity row minimal|Super Envy}}            | data-sort-value="40" | {{dlc|na}} 60 <br> {{dlc|a}} 40 || 7.5
+{{entity row minimal|Super Gluttony}}        || 60 || data-sort-value="25" | {{dlc|nr}} 15 <br> {{dlc|r}} 25
+{{entity row minimal|Super Greed}}           || 60 || data-sort-value="25" | {{dlc|nr}} 15 <br> {{dlc|r}} 25
+{{entity row minimal|Super Lust}}            || 60 || data-sort-value="25" | {{dlc|nr}} 15 <br> {{dlc|r}} 25
+{{entity row minimal|Super Pride}}           || 60 || data-sort-value="25" | {{dlc|nr}} 15 <br> {{dlc|r}} 25
+{{entity row minimal|Super Sloth}}           || 60 || data-sort-value="25" | {{dlc|nr}} 15 <br> {{dlc|r}} 25
+{{entity row minimal|Super Wrath}}           || 60 || data-sort-value="30" | {{dlc|nr}} 24 <br> {{dlc|r}} 30
+{{entity row minimal|Ultra Pride}}           || 85 || data-sort-value="25" | {{dlc|nr}} 15 <br> {{dlc|r}} 25
+|}
+
+== Trivia ==
+* {{dlc+|r}} The {{e|Wizoob}} and {{e|Red Ghost}} are the only entities whose Stage HP were reduced in ''Repentance'', both from 5 to 4.{{dlc-}}
+** {{dlc+|r+}} And once again, in ''Repentance+'', both from 4 to 3.{{dlc-}}
+* {{dlc+|r}} The Monster with the lowest Stage HP (and with the lowest amount among all entities) is the {{e|Swarm Spider}} at 0.2, while the Monster with the highest is the {{e|Holy Bony}} with a staggering 14, nearly twice the amount of 2nd place. All other Monsters have an amount between 1 and 8.{{dlc-}}
+* The Boss with the highest Stage HP (and with the highest amount among all entities) is a tie between {{e|Krampus}} and {{e|The Fallen}} at 45. All other Bosses have an amount between 7.5 and 30.
+
+{{nav|fr=PV par étage}}
+[[Category:Mechanics]]

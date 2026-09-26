@@ -1,0 +1,72 @@
+{{infobox stage
+ | dlc         = r
+ | chapter     = 1.5
+ | id          = 27
+ | level id    = 1, 2
+ | type id     = 4
+ | bosses      = Lil Blub, Wormwood, The Rainmaker, Min-Min
+ | unlocked by = A Secret Exit
+}}
+
+'''Downpour''' is the first new environment added in [[The Binding of Isaac: Repentance|Repentance]]. The theme of Downpour is flooded, haunted storm drains with many supernatural enemies and elements. Though there is some overlap with the {{s|Flooded Caves}} due to both featuring water flooding, the Flooded Caves' unique enemies are almost exclusively 'drowned' or 'bloated' as opposed to Downpour's more haunted theme.
+
+[[Treasure Room|Treasure rooms]] in Downpour always have two items to choose from. One of the items will always be unknown; however, this can be circumvented with the {{I|Dream Catcher}}.
+
+After {{a|A Secret Exit}} is unlocked, a locked door to Downpour I or II will appear upon completing the {{s|Basement}} / {{s|Cellar}} / {{s|Burning Basement}} I or II, respectively. The locked door requires a key to enter.
+
+== Unique Elements ==
+* '''Flooded Rooms''' - A layer of water covers all rooms in the floor, allowing certain enemies such as {{e|Small Leech|text=Small Leeches}} and {{e|Strider}}s to swim over flooded pits. {{E|Deep Gaper}}s can hide beneath the water and emerge when all other enemies in the room have been killed. The reflection visible in the water is also utilized by {{e|Wraith}}s, which are always visible in the reflection when they are otherwise invisible. 
+* '''Lightning Flashes''' -  Lightning will occasionally strike, briefly brightening the room and revealing any Wraiths.
+
+== [[Monster]]s ==
+{{entity table/header}}
+{{stage entities | Frowning Gaper, Gaper, Gusher, Pacer, Fly, Clotty, Bulb, Wall Hugger, Tube Worm, Bubbles, Wraith, Willo, Small Leech, Deep Gaper, Sub Horf, Blurb, Strider, Fissure, Polty, Prey, Mullighoul, Level 2 Willo, Bloaty }}
+|}
+
+== [[Bosses]] ==
+{| style="width: 70%; text-align: center"
+ | [[file:Boss Lil Blub (Downpour) portrait.png|center|link=Lil Blub]]
+ | [[file:Boss Wormwood (Downpour) portrait.png|center|link=Wormwood]]
+ | [[file:Boss The Rainmaker portrait.png|center|link=The Rainmaker]]
+ | [[file:Boss Min-Min portrait.png|center|link=Min-Min]]
+ |-
+ | [[Lil Blub]] {{Dlc|r}}
+ | [[Wormwood]] {{Dlc|r}}
+ | [[The Rainmaker]] {{Dlc|r}}
+ | [[Min-Min]] {{Dlc|r}}
+ |}
+
+== Knife Piece ==
+Downpour II (or {{s|Dross}} II) contains the [[Mirrored World]] in which Isaac can acquire the {{I|Knife Piece 1}}, one of the quest items used to access {{s|Corpse}}. 
+
+To access this area, Isaac can find the {{e|White Fire Place}} which spawns in a single room on the floor. Touching it converts Isaac into a ghostly form, resembling {{C|The Lost}}. Clearing any room will return Isaac to normal.
+* The ghost form will hold the {{I|Holy Mantle}} if it is unlocked as a starting item for {{c|The Lost}}. The Holy Mantle will ''not'' be active until Isaac leaves the room.
+* Interacting with Blood Donation Machines and Devil Beggars in the ghost form will kill Isaac despite having health in his normal form.
+
+While in the ghost form, Isaac can then enter the mirror in the 1×1 room with a mirror on the icon, which leads Isaac to the '''[[Mirrored World]]''', where he can find {{I|Knife Piece 1}}.
+* The mirror can be entered normally when playing as {{c|The Lost}}, {{c|Tainted Lost}}, {{C|Tainted Soul}}, or {{c|Tainted Jacob}} in his ghost form after being hit by {{e|Dark Esau}}. 
+
+Once Isaac has cleared one room, has obtained the Knife Piece, and returns through the mirror back to the real world, he will be converted back to the original character. After acquiring the first Knife Piece, {{I|Knife Piece 2}} will now be accessible in {{s|Mines}} / {{s|Ashpit}} II.
+
+''For further notes and details, see the [[Mirrored World]] page.''
+
+== Unlockable [[achievements]] ==
+{{achievement text | Dross }}
+
+== Trivia ==
+* Downpour is referred to on [[Isaac's last will|Isaac's Last Will]] as "Some Sewer".
+* ''Antibirth'' used to have a different method of obtaining the first Knife Piece. Somewhere on the floor, there was a seemingly empty dead-end room with a minimap icon that indicated the room had a chest. Bombing the center of the room would open a hidden stone chest containing Knife Piece 1.
+* In Antibirth, {{e|The Haunt}} could spawn as a boss.
+** In [[Challenge Room#Boss Challenge Room|Boss Challenge Rooms]] in Downpour, The Haunt is one of the possible spawns, which is a nod to this.
+* {{e|Gaper}}s and {{e|Frowning Gaper}}s are tinted blue if encountered. As well, {{e|Clotty|text=Clotties}} that spawn in the floor will appear wet and shiny.
+* Almost any {{e|Spider}}s that spawn on this floor are replaced with {{e|Strider}}s, including those spawned from Red Chests and {{e|Shopkeeper}}s. The ones that spawn from a {{e|Big Spider}} are still normal spiders.
+
+== Music ==
+* The music for the Downpour is called ''[https://www.youtube.com/watch?v=qCfn8HicQNI River of Despair]''.
+** An early version of this song was revealed during the pre-release of ''Repentance'', where it was titled "River of Despare".<ref>https://soundcloud.com/the_binding_of_isaac/river-of-despare</ref>
+* ''River of Despair'' features heavy use of a theremin, an instrument commonly associated with the paranormal.
+
+== References ==
+{{reflist}}
+
+{{nav|hush unlock|environment|fr=Canalisations}}

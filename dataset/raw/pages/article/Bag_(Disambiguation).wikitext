@@ -1,0 +1,19 @@
+{{distinguish|Sack}}
+'''Bag''' may refer to:
+
+== Enemies ==
+* {{e|Colostomia}}, a [[boss]] spawning in [[Dross]].
+
+== Items ==
+* {{i|Bag of Crafting}}, an [[activated collectible]] that collects pickups, which can then be used to craft an item.
+* {{i|Bomb Bag}}, a [[passive collectible]] that spawns a familiar dropping bombs.
+* {{t|Dice Bag}}, a [[trinket]] that grants a Dice item as a consumable per room.
+* {{i|IV Bag}}, an [[activated collectible]] that damages Isaac to spawn coins.
+* {{i|Punching Bag}}, a [[passive collectible]] that spawns a familier acting as a decoy for monsters.
+* {{i|Rune Bag}}, a [[passive collectible]] that spawns a familiar dropping runes.
+
+== Pickups ==
+* {{e|Grab Bag}}, a type of [[Sack (Pickup)|sack]] that spawns random pickups.
+
+{{disambiguation}}
+{{nav}}

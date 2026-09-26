@@ -1,0 +1,28 @@
+{{header item pools}}
+{{item pool}}
+
+The '''Boss''' Pool is the pool of [[item]]s that are dropped by [[boss]]es in the {{R|Boss Room}}, barring those with specific set item drops, and can be found in the {{R|Boss Challenge Room}}.
+
+{{item pool/header}}
+{{pool items | The Belt, Blood Clot, Blue Cap, Box, Breakfast, Caffeine Pill, Cat-o-nine-tails, Dessert, Dinner, Experimental Treatment, Growth Hormones, Jesus Juice, Latch Key, Lunch, MEAT!, Magic 8 Ball, Magic Scab, Match Book, Mom's Coin Purse, Mom's Heels, Mom's Lipstick, Mom's Underwear, Old Bandage, Pageant Boy, Pentagram, Placenta, Roid Rage, Rotten Meat, Safety Pin, Screw, A Snack, Speed Ball, Squeezy, Stem Cells, Synthoil, Tooth Picks, Torn Photo, Wire Coat Hanger, Wooden Spoon }}
+{{pool items | weight = {{dlcalt|1|r=0.5}} | Super Bandage }}
+{{pool items | dlc = nr | <3, The Halo, Little Steven, Magic Mushroom }}
+{{pool items | dlc = a | Binky, Crack Jacks, Mom's Pearls, Mr. Dolly }}
+{{pool items | dlc = a | weight = {{dlcalt|1|r=0.5}} | PJs }}
+{{pool items | dlc = a+ | Dad's Lost Coin, Divorce Papers, Marbles, Marrow, Midnight Snack }}
+{{pool items | dlc = a+nr | Belly Button, Polydactyly }}
+{{pool items | dlc = r | A Bar of Soap, Booster Pack, Consolation Prize, Eye Drops, Glass Eye, Stapler, Stye, Supper, Tropicamide }}
+|}
+
+== Trivia ==
+* This item pool only has passive items. 
+** {{Dlc+|r}} The only other room based item pool that has this property is the {{ip|Planetarium|text=Planetarium pool}}.{{dlc-}}
+* All items in this pool will increase [[stat]]s, increase [[health]], grant [[pickup]]s, grant [[trinket]]s, or some combination of the four. 
+* Some bosses will drop specific items that are not within the Boss Room pool, {{e|Steven}}, {{e|C.H.A.D.}}, and {{e|Gish}}, giving {{i|Little Steven}}, {{i|Little C.H.A.D.}}, and {{i|Little Gish}} respectively. These bosses are all references to previous games made by [[Edmund McMillen]].
+** {{e|Mom}} will drop a regular boss item, unless {{i|The Polaroid}} and {{i|The Negative}} have been unlocked, after which she will always drop those items.
+** The [[Harbinger]]s will drop either {{i|Cube of Meat}}, {{i|Ball of Bandages}}, {{i|A Pony}}, or {{i|White Pony}}, depending on the horseman encountered.
+** {{e|The Fallen}} will always drop an item from the {{ip|Devil Room|text=Devil Room item pool}}.
+** {{dlc+|r}} {{e|Baby Plum}} will replace her regular boss drop with {{i|Plum Flute}} if she was spared.{{dlc-}}
+** {{dlc|r+}} There's a 1% chance for some bosses to drop their thematic items, which can also be an active item such as {{i|The Poop}} that can drop from {{e|Dingle}} or {{i|Book of the Dead}} from {{e|The Forsaken}}.
+
+{{nav|fr=Boss (Banque d'Objets)}}

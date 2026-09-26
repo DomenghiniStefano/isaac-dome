@@ -1,0 +1,236 @@
+[[File:Shopkeeper I AM ERROR.png|120px]]
+
+The {{r|I AM ERROR}} room is a rare room that isn't connected to any other room on the floor and is reached through glitches or as a failsafe for an impossible event (like using {{i|Blank Card}} on {{p|? Card}}, which loops on itself infinitely without a failsafe).
+
+'''I AM ERROR''' rooms are chaotic and often contain multiple items, pickups, beggars, and/or powerful enemies. There are no doors to leave, but always an exit to the next level ({{dlc|r}} with few exceptions) and at least one unique shopkeeper (pictured above) with a text bubble that reads "I AM ERROR".
+
+The trapdoor will always be open, even if there are enemies in the room.
+
+== Accessing the I AM ERROR room ==
+* The only items/effects that can bring Isaac to the I AM ERROR room are [[Telepills]], {{i|Undefined}}, {{i|Teleport 2.0}}, {{i|Red Key}} and {{i|Blank Card}} + {{p|? Card}}. (This '''<u>consumes</u>''' {{i|Blank Card}} and {{p|? Card}})
+* {{i|Undefined}} is the simplest method, as it has a decent chance to teleport the player there.
+* {{dlc+|r}} Using {{i|Red Key}} on the 13x13 boundaries of the map will create a 1-way door to the I AM ERROR room, and displays no icon on the map upon opening.
+** No red door outlines will appear on the normal floor's boundary walls, meaning the I AM ERROR room can only be entered from another {{r|Red Room}}. At least 2 uses of {{P|Cracked Key}} are needed to enter if you don't have access to {{i|Red Key}}.
+** Doesn't work on the {{s|Chest}}, {{s|Dark Room}}, {{s|The Void}}, {{s|Home}}, {{s|Corpse}} II, or the {{i|Dad's Note}} floor.{{dlc-}}
+* {{dlc+|a}} Using {{i|Teleport 2.0}} when all rooms on the floor have been explored (including the {{r|Secret Room}}(s), {{r|Super Secret Room}}(s), and the {{r|Devil Room}} or {{r|Angel Room}}) sends you to the I AM ERROR room.{{dlc-}}
+* {{dlc+|r}} The I AM ERROR room can be reached by leaving a {{r|Crawl Space}} through an unintended direction. This will '''<u>always</u>''' bring you to an error room, even when all other methods stop working.
+** {{i|Blank Card}} + {{p|XXI - The World?|n}}, {{I|Clear Rune}} + {{P|Ehwaz}}, {{I|We Need To Go Deeper!}}, and {{I|Mom's Shovel}} offer consistent methods of creating crawl spaces.
+** Use 4 size downs, 2 speed, and crash into the floor below the entrance ladder ''or'' 3 size downs and the left and right walls using flight.
+*** [[Pills|One makes you smaller]] is the easiest way to acquire multiple size downs, and although you can exit the crawl space using listed minimums, it sometimes requires a lot of patience. {{I|Pluto}} / {{I|Inner Child}} are equal to 4 uses of the pill.
+*** It is also possible to exit through an unintended direction using {{I|A Pony}} / {{I|White Pony}} and 1 size down, albeit rarely. Significantly more common with 2 or more size downs. The speed stat does not matter since the charge-speed is a flat velocity.
+*** You can use {{I|Spin to Win}}, 2 speed & flight just by themselves to exit, bouncing off the far left and right walls and timing turning around after each bounce to build up speed and eventually exit.
+*** {{c|Tainted Forgotten}} can be thrown outside the {{r|Crawl Space}} provided {{c|Tainted Soul}} builds up enough velocity, resulting in accessing the I AM ERROR room.
+*** {{c|The Forgotten}} can place his body at the bottom of the entrance ladder, swap to the Soul form, then stretch vertically towards the entrance. Slingshotting yourself downward using the chain can provide some extra speed in order to clip. {{dlc-}}
+* {{dlc|r+}} A trapdoor created in the {{i|Lil Portal|n}} bedroom with {{i|We Need To Go Deeper!}} or {{p|Ehwaz}} will always lead to the I AM ERROR room.
+
+== I AM ERROR room destination ==
+* Entering the I AM ERROR room from {{S|Womb}} II, {{S|Utero}} II, {{S|Scarred Womb}} II or {{S|???}} will randomly result in a trapdoor or a beam of light. Isaac may have to end his run early in the {{S|Cathedral}}/{{S|Sheol}} if the wrong story item was collected.
+* {{dlc+|r}} The second part of each Alt floor shall send Isaac back to the main route. (for example, {{s|Downpour}} II's trapdoor goes to Caves II.){{dlc-}}
+* {{dlc+|r}} The only way to access the I AM ERROR room on {{s|Chest}}, {{s|Dark Room}}, {{s|The Void}}, {{s|Home}}, {{s|Corpse}} II, or the {{i|Dad's Note}} floor is through glitching out of bounds inside of a {{r|Crawl Space}}. Methods such as {{i|Teleport 2.0}} will instead create an I am Error Shopkeeper.
+** {{s|Chest}} and {{s|Dark Room}}'s I AM ERROR room contain a portal to {{s|The Void}}.
+*** If {{s|The Void}} is not unlocked, it will instead contain a trapdoor that brings Isaac back to the floor.
+** {{s|Corpse}} II, {{s|Home}}, {{s|The Void}}, and the {{i|Dad's Note}} floor all have I AM ERROR room which contains a trapdoor that puts Isaac back onto the floor.
+*** {{dlc|nr+}} In the rare event of accessing I AM ERROR on {{s|Corpse}} XL and encountering a trapdoor in that error room, Isaac is taken to a new floor which attempts to load then the game crashes.
+*** {{dlc|r+}} Entering the I AM ERROR room in {{S|Corpse}} XL will create a trapodoor or a beam of light that sends Isaac to {{S|Cathedral}} or {{S|Sheol}}, similarly to {{S|Womb}} II, {{S|Utero}} II, {{S|Scarred Womb}} II or {{S|???}}.
+**** This can be viewed by enabling the LABY RNTH seed and getting into the Corpse XL Error room.{{dlc-}}
+* {{dlc|na+}} Entering the exit of an I AM ERROR room in the {{s|Chest}} or {{s|Dark Room}} will restart the floor.
+* {{dlc|a+nr}} The I AM ERROR room cannot be reached in {{s|Chest}}, {{s|Dark Room}}, or the final floor of the [[daily challenge]].
+* {{dlc|r}} During the [[Ascent]], the I AM ERROR room will contain a beam of light instead.
+
+== Layouts ==
+The following room maps were made using [https://github.com/Basement-Renovator/basement-renovator Basement Renovator] for cleaner viewing.
+
+{| class="wikitable sortable mw-collapsible mw-collapsed" style="text-align: center"
+ ! scope="col" | ID
+ ! scope="col" | Weight
+ ! scope="col" class="unsortable" | Contents
+ ! scope="col" class="unsortable" | Image preview
+ |-
+ ! scope="row" | 0
+ | 1
+ | style="text-align: left" |Two items.
+ | [[File:Error 0.png|300px]]
+ |-
+ ! scope="row" | 1
+ | 1
+ | style="text-align: left" |An item and nine random [[pill]]s.
+ | [[File:Error 1.png|300px]]
+ |-
+ ! scope="row" | 2
+ | 1
+ | style="text-align: left" | An item and 16 random [[coin]]s.
+ | [[File:Error 2.png|300px]]
+ |-
+ ! scope="row" | 3
+ | 1
+ | style="text-align: left" |An item, four random [[card]]s/[[rune]]s, and ten [[urn]]s.
+ | [[File:Error 3.png|300px]]
+ |-
+ ! scope="row" | 4
+ | 1
+ | style="text-align: left" |An item and four {{e|Chest}}s.
+ | [[File:Error 4.png|300px]]
+ |-
+ ! scope="row" | 5
+ | 1
+ | style="text-align: left" |An item, two pickups/items for sale, and seven random coins.
+ | [[File:Error 5.png|300px]]
+ |-
+ ! scope="row" | 6
+ | 1
+ | style="text-align: left" |An item, four pickups/items for sale, and two {{E|Golden Poop}}s.
+ | [[File:Error 6.png|300px]]
+ |-
+ ! scope="row" | 7
+ | 1
+ | style="text-align: left" |An item and an {{e|Eternal Heart}}, {{e|Red Heart}}, {{e|Soul Heart}}, and {{e|Black Heart}}.
+ | [[File:Error 7.png|300px]]
+ |-
+ ! scope="row" | 8
+ | 1
+ | style="text-align: left" |An item, two random keys, and 6 {{E|Locked Chest}}s.
+ | [[File:Error 8.png|300px]]
+ |-
+ ! scope="row" | 9
+ | 1
+ | style="text-align: left" |An eternal, red, soul, and black heart, a {{e|Key Ring}}, a {{e|Double Bomb}}, a regular, locked, and {{e|Red Chest}}, a random battery, two random pills, and a random card.
+ | [[File:Error 9.png|300px]]
+ |-
+ ! scope="row" | 10
+ | 1
+ | style="text-align: left" | An item and four [[trinket]]s.
+ | [[File:Error 10.png|300px]]
+ |-
+ ! scope="row" | 11
+ | 1
+ | style="text-align: left" | Four soul hearts.
+ | [[File:Error 11.png|300px]]
+ |-
+ ! scope="row" | 12
+ | 1
+ | style="text-align: left" |An item, eight shopkeepers, and 12 {{E|Fly||Flies}}.
+ | [[File:Error 12.png|300px]]
+ |-
+ ! scope="row" | 13
+ | 1
+ | style="text-align: left" | Four shopkeepers, six keys, and two {{M|Key Master}}s.
+ | [[File:Error 13.png|300px]]
+ |-
+ ! scope="row" | 14
+ | 1
+ | style="text-align: left" | 48 {{e|Poop}}s and 2 golden poops.
+ | [[File:Error 14.png|300px]]
+ |-
+ ! scope="row" | 15 {{dlc+|a}}
+ | 1
+ | style="text-align: left" |An item, four extra error shopkeepers, and two {{E|Rag Man|text=Rag Men}}{{dlc-}}.
+ | [[File:Error 15.png|300px]]
+ |-
+ ! scope="row" | 16 {{dlc+|a}}
+ | 1
+ | style="text-align: left" |11 {{E|Reward Plate}}s.{{dlc-}}
+ | [[File:Error 16.png|300px]]
+ |-
+ ! scope="row" | 17 {{dlc+|a}}
+ | 1
+ | style="text-align: left" |A {{E|Corny Poop}}, 14 {{E|Attack Fly|text=Attack Flies}}, and 18 random pickups/items.{{dlc-}}
+ | [[File:Error 17.png|300px]]
+ |-
+ ! scope="row" | 18 {{dlc+|a}}
+ | 1
+ | style="text-align: left" |Two items, eight shopkeepers, and {{E|Super Greed}}.{{dlc-}}
+ | [[File:Error 18.png|300px]]
+ |-
+ ! scope="row" | 19 {{dlc+|a}}
+ | 1
+ | style="text-align: left" |Two items and a {{M|Shop Restock Machine}}.{{dlc-}}
+ | [[File:Error 19.png|300px]]
+ |-
+ ! scope="row" | 20 {{dlc+|a}}
+ | 0.1
+ | style="text-align: left" |Eight soul hearts and 12 {{E|Blue Gaper}}s.{{dlc-}}
+ | [[File:Error 20.png|300px]]
+ |-
+ ! scope="row" | 21 {{dlc+|a+}}
+ | 1
+ | style="text-align: left" |12 {{e|Fire Place}}s and 7 {{E|Spiked Chest}}s. It is possible to enter the room on a spiked chest and immediately take damage.{{dlc-}}
+ | [[File:Error 21.png|300px]]
+ |-
+ ! scope="row" | 22 {{dlc+|a+}}
+ | 1
+ | style="text-align: left" | An item, six keys, two {{E|Eternal Chest}}s, eight {{E|Blue Fire Place}}s, and two [[Angel]] Statues. The angels will '''not''' drop key pieces if defeated.{{dlc-}}
+ | [[File:Error 22.png|300px]]
+ |-
+ ! scope="row" | 23 {{dlc+|a+}}
+ | 1
+ | style="text-align: left" |An item, two {{E|Lucky Penny|text=Lucky Pennies}}, two black hearts, a {{E|Gold Heart}}, two {{P|Black Rune}}s, four [[spikes]], six {{E|Red Fire Place}}s, and two [[Devil Room|Devil]] statues.{{dlc-}}
+ | [[File:Error 23.png|300px]]
+ |-
+ ! scope="row" | 24 {{dlc+|a+}}
+ | 1
+ | style="text-align: left" |Five random bags, two random batteries, and four random pickups/items.{{dlc-}}
+ | [[File:Error 24.png|300px]]
+ |-
+ ! scope="row" | 25 {{dlc|a+}}
+ | 1
+ | style="text-align: left" |A {{M|Donation Machine}}, poop, two {{M|Beggar}}s, two {{M|Blood Donation Machine}}s, and two [[Bed]]s.{{dlc-}}
+ | [[File:Error 25.png|300px]]
+ |-
+ ! scope="row" | 26 {{dlc|a+}}
+ | 0.1
+ | style="text-align: left" |Two items, two golden poops, four {{E|Rainbow Poop}}s, a random bag, and 24 random pickups/items.{{dlc-}}
+ | [[File:Error 26.png|300px]]
+ |-
+ ! scope="row" | 27 {{dlc|a+}}
+ | 0.1
+ | style="text-align: left" |Two pickups/items for sale, nine poops, and six flies.{{dlc-}}
+ | [[File:Error 27.png|300px]]
+ |-
+ ! scope="row" | 28 {{dlc+|r}}
+ | 0.1
+ | style="text-align: left" |An item, two {{E|Bulb}}s, and four {{E|Black Poop}}s.{{dlc-}}
+ | [[File:Error 28.png|300px]]
+ |-
+ ! scope="row" | 29 {{dlc+|r}}
+ | 0.1
+ | style="text-align: left" |Six {{E|Gold Heart}}s (four of which are behind [[Rocks#Spiked Rocks|Spiked Rocks]]), four extra shopkeepers, and a {{E|Golden Troll Bomb}}.{{dlc-}}
+ | [[File:Error 29.png|300px]]
+ |-
+ ! scope="row" | 30 {{dlc+|r}}
+ | 0.5
+ | style="text-align: left" |Four random keys and two {{E|Mega Chest}}s.{{dlc-}}
+ | [[File:Error 30.png|300px]]
+ |-
+ ! scope="row" | 31 {{dlc+|r}}
+ | 1
+ | style="text-align: left" |A Nickel, eight random coins, six poops, a Beggar, and a {{M|Rotten Beggar}}.{{dlc-}}
+ | [[File:Error 31.png|300px]]
+ |-
+ ! scope="row" | 32 {{dlc+|r}}
+ | 0.5
+ | style="text-align: left" | Two random keys and four {{E|Old Chest}}s.{{dlc-}}
+ | [[File:Error 32.png|300px]]
+|}
+
+== Notes ==
+* Once Isaac arrives at the I AM ERROR room, the only ways out are the trapdoor to the next level or another teleport. As the I AM ERROR room is randomly reached, this could force Isaac to skip {{r|Treasure Room}} and/or {{r|Boss Room}} items if they hadn't been picked up before, and if he cannot teleport again.
+* Items in the I AM ERROR room will be from random [[item pool]]s.
+* {{dlc+|r}} Once [[Corrupted Data]] is achieved (beating {{e|Delirium}} as {{c|Tainted Eden}}), items that spawn in this room have a 1/16 chance to be randomized as if affected by {{i|TMTRAINER}}.{{dlc-}}
+* If a {{r|Crawl Space}} is spawned in the I AM ERROR room, Isaac will return to the room he was in before being teleported to the I AM ERROR room upon exiting the Crawl Space.
+* Using the trapdoor in the I AM ERROR room can allow Isaac to reach levels not yet unlocked, like {{S|Sheol}} or {{S|Cathedral}}.
+* {{dlc|na}} Using the trapdoor in {{S|Chest}} or the {{S|Dark Room}} will restart the level, similar to the effect of the {{I|Forget Me Now}}, and as of patch 1.05, the floor will generate a different layout upon restarting. The door to {{E|Mega Satan}} will be locked if it was previously opened.
+* The chests present in the I AM ERROR room while on {{s|Chest}} and {{s|Dark Room}} always contain items.
+* Using the {{P|Jera}} in most of these room configurations can allow Isaac to duplicate a very large amount of pickups, making Jera especially effective in this room.
+* If Isaac is teleported to a {{r|Devil Room}} or {{r|Angel Room}} from an I AM ERROR room (e. g. by using {{p|Joker}}), exiting the room will return him to the room he was in ''before'' entering the I AM ERROR room.
+* It is probably not a good idea to go to the I AM ERROR room on {{S|Depths}}/{{S|Necropolis}}/{{S|Dank Depths}} II before getting {{i|The Polaroid}}/{{i|The Negative}}, because then you can't go to the {{S|Chest}} or {{S|Dark Room}}, having to end the run in {{S|Sheol}} or {{S|Cathedral}}.
+** Reaching another I AM ERROR room in the above-mentioned levels would allow continuing the run beyond them, even lacking the prerequisite items.
+** Note that the 12th reward and onward in a {{r|Sacrifice Room}} has a 50% chance to send Isaac to {{S|Dark Room}}. This may be useful if an I AM ERROR room locked Isaac out of {{i|The Negative}}.
+** {{dlc+|r}} This rule also applies to Isaac when trying to reach an alternate floor from a main floor ({{S|Downpour}} II from {{S|Basement}} II, etc.). The I AM ERROR room will always send him to a regular floor ({{S|Basement}} II to {{S|Caves}} I, etc.) and Isaac will not be able to pick up the necessary progression items needed to reach {{s|Corpse}}.
+*** However, in {{S|Mausoleum}}/{{S|Gehenna}} II, if Isaac kills {{e|Mom's Heart}} first, then enters the I AM ERROR room, the trapdoor inside will lead him to {{S|Corpse}}.{{dlc-}}
+* {{dlc|a}} There is a rare [[Closets|Closet]] room in {{S|Depths}} and {{S|Necropolis}} containing an I AM ERROR shopkeeper. This is not an I AM ERROR room, and can be exited normally.
+* {{dlc|a}} There is a {{r|Super Secret Room}} that looks like an I AM ERROR room. This is not an I AM ERROR room, and can be exited normally.
+
+== Trivia ==
+* The I AM ERROR room is a reference to an infamous quote in the NES game [[wikipedia:Zelda II: The Adventure of Link|''Zelda II: The Adventure of Link'']], where a citizen from Ruto introduces himself with the sentence "[[wikipedia:I am Error|I AM ERROR]]".
+
+{{nav|room|fr=Salle d'Erreur}}

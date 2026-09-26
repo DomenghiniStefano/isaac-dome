@@ -1,0 +1,24 @@
+{{disambig msg|the enemy|the boss|Gurglings}}
+{{infobox monster
+ | name        = Gurgling
+ | id          = 237
+ | image name  = * {{dlc|nr|Rebirth}}
+ | base hp     = 24
+ | stage hp    = 4
+ | environment = {{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|Sheol}}{{floor|Cathedral}}<br>{{floor|Dark Room}}{{floor|Chest}}<br>{{room|boss}}{{room|challenge}}
+ | behavior    = Charges towards Isaac when he lines up with them, leaving a trail of Red Creep and shooting 6 blood shots.
+}}
+
+'''Gurglings''' are ordinary enemies that behave slightly differently from their [[Gurglings|boss]] counterparts. They have significantly less HP, leave a constant trail of [[Creep#Red Creep|Red Creep]], and after dashing, shoot out six blood projectiles instead of spawning [[Attack Fly|Attack Flies]].
+
+== Gallery ==
+<gallery>
+File:Gurgling Unused.png|[[Cut Content#Cut Afterbirth .E2.80.A0 Content|Unused]] pre-release sprite of a Gurgling found among the Room Editor files.
+</gallery>
+
+== Trivia ==
+* Gurglings appear to be the first stage of the "Gurdy" boss line, with the second stage as {{e|Gurdy Jr.}}, third as {{e|Gurdy}}, and final as {{e|Mama Gurdy}}.
+* If the Gurglings audio is slowed down or if one spawns as a [[Champions|large champion]], the audio reveals that it is a little kid saying "Rawr!"
+* In the game files, a Gurgling's feet are called hands.
+
+{{nav|fr=Gargouillis (Monstre)}}

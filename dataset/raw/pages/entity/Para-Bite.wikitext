@@ -1,0 +1,45 @@
+{{infobox monster
+ | id          = 58
+ | base hp     = 35
+ | environment = {{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{room|boss}}{{room|challenge}}
+ | behavior    = Moves towards Isaac, dealing contact damage. Can burrow underground and reappear elsewhere.
+}}
+
+The '''Para-Bite''' is a monster introduced in the vanilla content of ''[[The Binding of Isaac: Rebirth]]''. They can be only encountered in [[Chapter 4]].
+
+It will move around the room until Isaac appears in its line of sight, prompting it to charge towards him and can deal a full heart of contact damage. They're also able to move underground and pop up in a different location, although they cannot spawn right under Isaac.
+
+__TOC__
+{{clear}}
+
+== Variations ==
+=== Scarred Para-Bite ===
+{{infobox monster
+ | dlc            = a
+ | name           = Scarred Para-Bite
+ | variant        = 1
+ | base hp        = 35
+ | environment    = {{floor|Scarred Womb}}<br>{{room|challenge}}
+ | replace        = Para-Bite
+ | replace chance = 50%
+ | replace notes  = in {{s|Scarred Womb}}
+ | behavior       = Moves towards Isaac, dealing contact damage and firing a short-range blood shot at him. Can burrow underground and reappear elsewhere.
+}}
+
+'''Scarred Para-Bites''' are a variant of Para-Bites added in ''[[The Binding of Isaac: Afterbirth]]'' DLC.
+
+They behave similarly to regular Para-Bites and occasionally fire a short-ranged blood shot towards Isaac.
+
+==== Notes ====
+* [[Champion|Magenta Champion]] Scarred Para-Bites will shoot two blood shots at different intervals.
+{{clear}}{{dlc clear}}
+
+== Trivia ==
+* The Para-Bite first appeared in the original Flash version of ''The Binding of Isaac''.
+* The name Para-Bite is a portmanteau of the words parasite and bite, with parasite meaning an organism that lives in or on another organism and benefits from it at the host's expense.
+* The Para-Bite's sprite was based off of a character from an old comic Edmund made, whose name was Longits.
+* The attack pattern of the Para-Bite was based off of an enemy in the Zelda series.
+
+{{nav|fr=Ver Béant}}
+[[Category:Worm monsters]]
+[[Category:Chapter 4 monsters]]

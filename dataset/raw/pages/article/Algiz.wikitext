@@ -1,0 +1,32 @@
+{{header runes}}
+{{Infobox rune
+ | name        = Algiz
+ | type        = rune
+ | image scale = 1/10
+ | id          = 39
+ | quote       = Resistance
+ | description = {{dlc|nr}} Grants a [[shield]] which lasts for 30 seconds.<br>{{dlc|r}} Grants a [[shield]] which lasts for 20 seconds.
+ | unlocked by = Rune of Algiz
+ | recharge    = 4
+}}
+
+{{cit|ur}}
+
+== Effects ==
+* Grants a [[shield]] which lasts for {{dlc|nr}} 30 / {{dlc|r}} 20 seconds.
+
+== Notes ==
+* Subsequent uses of '''Algiz''' are additive: if it's used while the shield effect is already active, it will add to the duration of the shield effect.
+
+== Strategy ==
+* The invulnerability effect negates all forms of damage, including health loss from {{M|Blood Donation Machine}}s and {{M|Devil Beggar}}s. They can be used for free for the duration of the effect.
+
+== Synergies ==
+* {{I|Tarot Cloth|nr}}: Doubles the duration of the shield, making it last a full minute.
+* {{i|Book of Shadows}}: The shield effects also stack.
+
+== Interactions ==
+* {{I|Tarot Cloth|r}}: No effect.
+
+{{nav}}
+[[Category:Runes]]

@@ -1,0 +1,125 @@
+{{infobox monster
+ | id          = 212
+ | environment = {{floor|Ashpit}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Mausoleum}}{{floor|Gehenna}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|Sheol}}{{floor|Cathedral}}<br>{{floor|Dark Room}}{{floor|Chest}}<br>{{room|challenge}}
+ | behavior    = Invulnerable enemy that moves diagonally around the room, dealing contact damage. Dies when the room is cleared.
+}}
+'''Death's Heads''' are invulnerable, flying enemies that move diagonally around the room and deal contact damage. They will bounce off of Isaac, walls, and each other, generally causing chaos in a room. They immediately die when the room is cleared.
+
+=== Notes ===
+* They can be killed if hit with the {{p|Chaos Card}}, {{i|Little Horn}}, or {{i|Euthanasia}}.
+
+__TOC__
+{{clear}}
+
+== Variations ==
+=== Dank Death's Head ===
+{{infobox monster
+ | dlc            = a
+ | name           = Dank Death's Head
+ | image name     = * {{dlc|nr|Afterbirth}}
+ | variant        = 1
+ | base hp        = 20
+ | environment    = {{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Sheol}}<br>{{floor|Dark Room}}<br>{{room|challenge}}
+ | replace        = Death's Head
+ | replace chance = 50%
+ | replace notes  = in {{s|Dank Depths}}
+ | behavior       = Moves diagonally around the room, dealing contact damage. Needs to be killed to complete the room.
+}}
+'''Dank Death's Heads''' behave the same as regular Death's Heads, but are vulnerable and must be killed to clear a room.
+
+{{clear}}
+
+=== Flesh Death's Head ===
+{{infobox monster
+ | dlc         = a
+ | name        = Flesh Death's Head
+ | image name  = * {{dlc|nr|Afterbirth}}
+ | id          = 286
+ | base hp     = {{dlcalt|50|r=30|r+=50}}
+ | environment = {{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|Sheol}}<br>{{floor|Dark Room}}
+ | behavior    = Moves diagonally around the room, dealing contact damage. Releases 6 blood shots in all directions upon death. Can be killed, but also dies when the room is cleared.
+}}
+'''Flesh Death's Heads''' are vulnerable, but do not need to be killed to clear a room. They release six blood shots upon death or upon clearing the room.
+
+{{clear}}
+
+=== Cursed Death's Head ===
+{{infobox monster
+ | dlc         = r
+ | name        = Cursed Death's Head
+ | id          = 212
+ | variant     = 2
+ | environment = {{floor|Mausoleum}}
+ | behavior    = Invulnerable enemy that moves diagonally around the room, dealing contact damage.  If Isaac enters its purple aura, he will be inflicted with [[Status Effects#Effects|fear]] and be temporarily unable to shoot. Dies when the room is cleared.
+}}
+'''Cursed Death's Heads''' behave the same as regular Death's Heads but have a purple aura around them. If Isaac enters the aura, he will be inflicted with the [[Status Effects#Effects|fear status effect]] for around two seconds. While feared, Isaac is unable to fire tears nor perform any other actions except moving for the duration of the effect.
+
+{{clear}}
+
+=== Brimstone Death's Head ===
+{{infobox monster
+ | dlc         = r
+ | name        = Brimstone Death's Head
+ | variant     = 3
+ | environment = {{floor|Gehenna}}
+ | behavior    = Invulnerable enemy that moves diagonally around the room, pausing to fire a {{i|Brimstone}} laser when Isaac lines up with it in the cardinal directions. Dies when the room is cleared.
+}}
+'''Brimstone Death's Heads''' behave the same as regular Death's Heads in terms of movement. When Isaac passes close to them horizontally or vertically, they will pause in place and aim a faint red indicator beam in that direction, before following it up with a {{i|Brimstone}} laser.
+
+{{clear}}
+
+=== Dusty Death's Head ===
+{{infobox monster
+ | dlc         = r
+ | name        = Dusty Death's Head
+ | id          = 887
+ | environment = {{floor|Ashpit}}<br>{{room|challenge}}
+ | behavior    = Invulnerable enemy that moves across the room in a waving motion in large quantities. Dies when the room is cleared.
+}}
+'''Dusty Death's Heads''' behave uniquely to other Death's Heads. They continuously travel horizontally across the screen, oscillating up and down, going off-screen and reentering on the opposite side. They are invulnerable and are destroyed once the room is cleared.
+
+{{clear}}
+
+=== Redskull ===
+{{infobox monster
+ | dlc         = r
+ | name        = Redskull
+ | id          = 212
+ | variant     = 4
+ | base hp     = 80
+ | environment = {{floor|Ashpit}}
+ | behavior    = Moves diagonally around the room, creating a ring of fire around itself if Isaac gets close to it. Can be killed, but also dies when the room is cleared.
+}}
+
+'''Redskulls''' move similar to Death's Heads, however if Isaac gets too close they will pause in place and release out a ring of fire. This ring can ignite certain enemies like the {{E|Rock Spider}}. Like Flesh Death's Heads, they can be killed, but will also die when the room is cleared.
+
+{{clear}}
+
+=== Ultra Death Head ===
+{{infobox monster
+ | dlc         = r
+ | name        = Ultra Death Head
+ | id          = 951
+ | variant     = 42
+ | environment = {{floor|Home}}<br>Spawned by {{E|Ultra Death}}.
+ | behavior    = Invulnerable enemy spawned by {{E|Ultra Death}} that moves across the room in a waving motion in large quantities as a part of one of his attacks. Dies upon the completion of the attack.
+}}
+
+'''Ultra Death Heads''' behave uniquely to other Death's Heads and more similarly to Dusty Death Heads, oscillating up and down in large wave-like patterns, going off-screen and reentering on the opposite side. They are summoned in a horde as a part of one of {{E|Ultra Death}}'s attacks and are invulnerable, only being destroyed at the end of the attack.
+
+{{clear}}
+{{dlc clear}}
+
+== Trivia ==
+* Death's Head, {{dlc|a}} Flesh Death's Head, {{E|Stoney|text=Stonies}}, {{E|Cross Stoney|text=Cross Stonies}}, and {{E|Eggy|text=Eggies}} are the only non-boss enemies with a death animation.
+* {{dlc|a}} In the game's files, the Dank Death's Head has a death animation that is impossible to see because it needs to be killed to clear a room.
+* The Death's Head is based on the [[zelda:Bubble|Bubble]] from ''The Legend of Zelda'' on the NES, as they are both skulls that are usually invulnerable which maneuver by bouncing off of walls.
+* {{dlc|r}} The Dusty Death's Head is based on the [[castlevania:Medusa Head|Medusa Head]], as both fly in a wave-like pattern that is intended to be difficult to dodge.
+* {{dlc|a}} In a closet room in {{s|Womb}}, there is a room with 1 Red Poop, 4 Blood Donation Machines, and 4 Flesh Death's Heads. When entering the room, they appear to die quickly since no other enemies in the room exist there.
+* {{dlc|a+nr}} If a Death's Head is permanently charmed by charming a [[Portal]] in Chapter 3, it cannot interact with enemies or enemy tears and will simply fly around the room.
+* {{dlc|a+}} Prior to [[Booster Pack #5]], if Death Heads were in the process of dying, they could still damage Isaac.
+* {{dlc|r}} In Antibirth, Cursed Death's Heads were called [[anti:Smoky|Smokys]]. They could also spawn in the [[Chest (Floor)|Chest]].
+* {{dlc|r}} Cursed Death's Heads resemble {{E|The Heretic|dlc=x}}.
+* {{dlc|r}} Redskulls have a stray pixel on the top-right of their sprite which does appear in-game, and is animated similar to their fire.
+
+{{nav|fr=Tête de Mort}}
