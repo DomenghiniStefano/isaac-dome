@@ -15,7 +15,7 @@ pub const SCHEMA_VERSION: u32 = 2;
 pub struct Requirements {
     pub schema_version: u32,
     pub generated_from: GeneratedFrom,
-    pub achievements: BTreeMap<u32, AchievementRefs>,
+    pub achievements: BTreeMap<AchievementId, AchievementRefs>,
     /// Every target that doesn't reduce to an achievement on its own: the form the
     /// curation fills in, not a list anyone has to invent.
     pub targets: Vec<TargetRow>,
@@ -282,7 +282,7 @@ impl Rules {
     pub fn refs(&self, achievement: AchievementId) -> &[RefRow] {
         self.requirements
             .achievements
-            .get(&achievement.0)
+            .get(&achievement)
             .map(|a| a.refs.as_slice())
             .unwrap_or(&[])
     }
