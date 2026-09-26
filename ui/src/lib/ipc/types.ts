@@ -1051,6 +1051,7 @@ export const SectionKind = {
   Difficulty: 'difficulty',
   Reward: 'reward',
   Unlockable: 'unlockable',
+  StartingItems: 'startingItems',
 } as const
 export type SectionKind = (typeof SectionKind)[keyof typeof SectionKind]
 
@@ -1094,7 +1095,8 @@ export type Inline =
 export type ListItem = {
   inline: Array<Inline>
   /**
-   * The lists nested under the item.
+   * What sits under the item: the lists nested in it, or — under an item naming an
+   * achievement — that achievement's unlock condition, as a paragraph.
    */
   children: Array<Block>
 }

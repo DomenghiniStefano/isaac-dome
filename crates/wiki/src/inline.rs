@@ -278,6 +278,7 @@ fn template(t: &Template, r: &Resolver, d: &mut Diagnostics, out: &mut Out, dept
         // resolver answers nothing — 33 uses lost the reference, and the ": " that introduces
         // the description with it.
         "book of belial synergy" => synergy("The Book of Belial", t, r, d, out, depth),
+        "achievement unlock" => achievement_unlock(t, &arg, r, d, out),
         // 204 of the 547 `{{bug|…}}` carry a `dlc`, and until 2026-09-15 this arm recursed
         // into the positional argument and read no named one: a defect that exists in one
         // edition was shown to every reader as theirs. The 130 whose code this parser
@@ -340,6 +341,24 @@ fn synergy(item: &str, t: &Template, r: &Resolver, d: &mut Diagnostics, out: &mu
     if let Some(description) = t.named.get("description") {
         recurse_into_arg(description, r, d, out, depth);
     }
+}
+
+/// `{{achievement unlock|Name}}`, how a character's "Unlockable Starting Items" names the
+/// achievement behind each item. Not through `resolve`: the second argument, where there is one,
+/// is an edition code (Magdalene's pill differs by edition), and `label_of` would take it for
+/// the label. A name that does not resolve keeps its words and is counted.
+fn achievement_unlock(t: &Template, arg: &str, r: &Resolver, d: &mut Diagnostics, out: &mut Out) {
+    let name = arg.trim();
+    with_optional_edition(out, d, t.args.get(1), |out, d| match r.resolve("a", name) {
+        Resolution::Target(target) => out.push(Inline::Ref {
+            target,
+            label: name.to_string(),
+        }),
+        Resolution::Concept | Resolution::Unresolved | Resolution::Ignore | Resolution::Unknown => {
+            d.unresolved("a");
+            out.buf.push_str(name);
+        }
+    });
 }
 
 /// `body` inside the edition `code` names, or on its own when there is no code.
@@ -935,6 +954,39 @@ mod tests {
         assert!(
             flat.contains("Not An Achievement"),
             "an unresolved name must stay readable, got {v:?}"
+        );
+    }
+
+    /// `{{achievement unlock|The D6}} - Start with {{i|The D6}}` is how a character page lists
+    /// what it unlocks to start with: 13 uses, and until it was known the name came out as
+    /// plain text instead of the achievement it names.
+    #[test]
+    fn achievement_unlock_names_the_achievement() {
+        let (v, d) = p("{{achievement unlock|Epic Fetus}} - Start with {{i|Breakfast}}");
+        assert!(
+            matches!(
+                v.first(),
+                Some(Inline::Ref { target: Target::Achievement { .. }, label }) if label == "Epic Fetus"
+            ),
+            "{v:?}"
+        );
+        assert!(d.unknown_templates.is_empty(), "{:?}", d.unknown_templates);
+    }
+
+    /// Magdalene's pill is two achievements' worth of text under one name, split by edition:
+    /// `{{achievement unlock|Maggy Now Holds a Pill!|nr}}`. The second argument is the edition,
+    /// not a label — read as a label, the link would say "nr".
+    #[test]
+    fn achievement_unlock_takes_an_edition_as_its_second_argument() {
+        let (v, _) = p("{{achievement unlock|Epic Fetus|r}}");
+        assert!(
+            matches!(
+                v.as_slice(),
+                [Inline::Edition { only, inline }]
+                    if only == &vec![Dlc::Repentance, Dlc::RepentancePlus]
+                        && matches!(inline.as_slice(), [Inline::Ref { label, .. }] if label == "Epic Fetus")
+            ),
+            "{v:?}"
         );
     }
 
