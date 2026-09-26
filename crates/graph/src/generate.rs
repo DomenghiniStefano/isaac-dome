@@ -1,6 +1,7 @@
 //! One pass from `dataset/wiki.json` to `requirements.json`. Runs offline, once per
 //! snapshot, never from the app.
 
+use catalog::AchievementId;
 use std::collections::BTreeMap;
 
 use wiki::{Dataset, Entry, Infobox, Inline, Target};
@@ -59,12 +60,12 @@ fn reduces_by_id(t: &Target) -> bool {
 }
 
 pub fn generate(d: &Dataset) -> Requirements {
-    let achievements: BTreeMap<u32, AchievementRefs> = d
+    let achievements: BTreeMap<AchievementId, AchievementRefs> = d
         .achievements
         .iter()
         .filter_map(|(&id, entry)| {
             let refs = collect_refs(requirements_of(entry)?);
-            Some((id, AchievementRefs { refs }))
+            Some((AchievementId(id), AchievementRefs { refs }))
         })
         .collect();
     Requirements {
@@ -101,7 +102,7 @@ fn requirements_of(entry: &Entry) -> Option<&[Inline]> {
 /// Every target that doesn't reduce by id, once, with how many refs use it and the label of
 /// the first. Keyed in a `BTreeMap`, which iterates sorted, so the file is stable across runs
 /// — which is what makes the `derived` test mean anything.
-fn inventory(achievements: &BTreeMap<u32, AchievementRefs>) -> Vec<TargetRow> {
+fn inventory(achievements: &BTreeMap<AchievementId, AchievementRefs>) -> Vec<TargetRow> {
     achievements
         .values()
         .flat_map(|a| a.refs.iter())

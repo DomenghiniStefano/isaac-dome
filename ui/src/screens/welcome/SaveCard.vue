@@ -47,7 +47,7 @@ const note = computed(() => unreadableNote(props.candidate.preview))
         <span class="flex flex-col">
           <span class="text-body">{{ edition }}</span>
           <span class="text-caption text-subtle-foreground"
-            >{{ t('welcome.card.slot') }} {{ candidate.slot }} ·
+            >{{ t('welcome.card.slot', { slot: candidate.slot }) }} ·
             {{ t(candidateSourceLabel[candidate.source]) }}</span
           >
         </span>

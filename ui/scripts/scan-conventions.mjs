@@ -1,5 +1,5 @@
 import { readdirSync, readFileSync, statSync } from 'node:fs'
-import { join, relative } from 'node:path'
+import { dirname, join, relative } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const ROOT = fileURLToPath(new URL('..', import.meta.url))
@@ -185,8 +185,18 @@ const LAYER_BANS = {
   components: ['screens'],
   router: ['components'],
 }
-// `'@/<layer>/…'` in a static or dynamic import; a `?` in the path (`?raw`) never matches.
-const LAYER_IMPORT = /(?:\bfrom\s+|\bimport\s*\(\s*)'@\/([a-z]+)\/[^'?]*'/g
+// Every module specifier: `from '…'` (imports and re-exports), a bare `import '…'` run for its
+// side effect, and `import('…')`. A `?` in the path (`?raw`) never matches.
+const MODULE_SPECIFIER =
+  /(?:\bfrom\s+|\bimport\s+|\bimport\s*\(\s*)(['"])([^'"?]+)\1/g
+// The layer a specifier lands in: `@/<layer>/…` by the alias, `./…` and `../…` resolved from
+// the importing file. A package (`vue`, `@lucide/vue`) lands in no layer.
+const layerImported = (file, specifier) => {
+  if (specifier.startsWith('@/')) return specifier.split('/')[1]
+  if (specifier.startsWith('.'))
+    return layerOf(join(dirname(file), ...specifier.split('/')))
+  return null
+}
 
 // Card #81, C5. A class starts after whitespace, a quote, a backtick or a variant's colon.
 const CLASS_START = String.raw`(?:^|[\s"'\x60:])`
@@ -229,6 +239,18 @@ const readsTokenInString = (body) =>
 // around the await change nothing about which half suspends, so `a ?? (await b())` is the same
 // shape (card #82: `stores/tabs.ts` had one, and the pattern could not see it).
 const CONDITIONAL_AWAIT = /(?:\?\?|\|\||&&|[^?.]\?)\s*\(?\s*await\b/
+
+// A translation call, `t('…')` or `$t('…')`.
+const T_CALL = String.raw`\$?\bt\(\s*'`
+const JOINED_SENTENCE = new RegExp(
+  [
+    `\`[^\`]*\\$\\{\\s*${T_CALL}[^\`]*\\$\\{\\s*${T_CALL}[^\`]*\``,
+    `${T_CALL}[^']*'(?:\\s*,\\s*\\{[^}]*\\})?\\s*\\)\\s*\\+`,
+    `\\+\\s*${T_CALL}`,
+    `\\{\\{\\s*${T_CALL}[^}]*\\}\\}[ \\t]*\\{\\{`,
+    `\\}\\}[ \\t]*\\{\\{\\s*${T_CALL}`,
+  ].join('|'),
+)
 
 // The body of every `switch (subject) { … }`, found by counting braces from the opening one.
 // Not a parser: a brace inside a string would miscount, and no switch in `src/` has one.
@@ -340,14 +362,16 @@ const checks = [
     // borrows nothing from components. On 2026-09-24 twelve imports pointed up, one of them under
     // a comment in `lib/window/layout.ts` saying the direction was "checked".
     //
-    // Both shapes count, `from '…'` and `import('…')`. A `?raw` import is excluded: it reads a
-    // file's source as text (`virtualRows.test.ts` checks a component's markup), not its code.
+    // Every shape counts: `from '…'`, a side-effect `import '…'`, `import('…')`, by the `@/`
+    // alias or by a relative path. A `?raw` import is excluded: it reads a file's source as text
+    // (`virtualRows.test.ts` checks a component's markup), not its code. What it cannot see: a
+    // specifier built at runtime (`import(\`../${x}\`)`), and none exists.
     name: 'import against the layer direction',
     test: (file, body) => {
       const layer = layerOf(file)
       const banned = LAYER_BANS[layer] ?? []
-      return [...body.matchAll(LAYER_IMPORT)].some(([, target]) =>
-        banned.includes(target),
+      return [...body.matchAll(MODULE_SPECIFIER)].some(([, , specifier]) =>
+        banned.includes(layerImported(file, specifier)),
       )
     },
   },
@@ -484,6 +508,17 @@ const checks = [
       /\p{L}{2,}/u.test(visibleText(body)),
   },
   {
+    // One sentence is one message with named parameters: the order of its words is the
+    // language's to choose. Two translations in one template literal, a translation joined by
+    // `+`, or two mustaches side by side with a translation in one of them all put the order in
+    // the code instead (`lib/plan/rowModel.ts` did, on 2026-09-26). Data beside one message —
+    // `${editionShort(x)} · ${t('…')}` — is not a sentence and is left alone. Test files are
+    // excused: their `t` is a fake that returns the key.
+    name: 'a sentence joined from pieces: one message with named parameters',
+    test: (file, body) =>
+      !file.endsWith('.test.ts') && JOINED_SENTENCE.test(body),
+  },
+  {
     // One theme. Without `@custom-variant dark`, Tailwind's built-in `dark:` compiles to
     // `prefers-color-scheme`, so a leftover class would switch on with the OS setting.
     // The variant chain in front of it is part of the class: `hover:dark:bg-x` is the same
@@ -556,6 +591,7 @@ const checks = [
 // and looks like a bug in one component. Some values do keep px on purpose (a hairline, a
 // radius, a sprite's whole multiple): the rule is that each one says why, on the spot.
 const PX_TOKEN = /^\s*--[a-z0-9-]+\s*:\s*[^;]*\d+px/
+const PX_TOKEN_CHECK = 'px token with no reason beside it'
 const COMMENT = /(^\s*\/\*)|(^\s*\*)|(\*\/\s*$)/
 const COMMENT_REACH = 5
 
@@ -687,6 +723,36 @@ const FIXTURES = [
     expect: [],
   },
   {
+    name: 'two translations in one template literal are caught',
+    file: 'src/lib/plan/fixture.ts',
+    body: "const s = `${t('graph.unknownAchievement')} · ${t('graph.slot')} ${n}`\n",
+    expect: [
+      'a sentence joined from pieces: one message with named parameters',
+    ],
+  },
+  {
+    name: 'a translation joined by + is caught',
+    file: 'src/lib/plan/fixture.ts',
+    body: "const s = t('queue.of', { n }) + ' ' + rest\n",
+    expect: [
+      'a sentence joined from pieces: one message with named parameters',
+    ],
+  },
+  {
+    name: 'a translation beside another mustache is caught',
+    file: 'src/components/Fixture.vue',
+    body: "<template>\n  <span>{{ t('graph.slot') }} {{ n }}</span>\n</template>\n",
+    expect: [
+      'a sentence joined from pieces: one message with named parameters',
+    ],
+  },
+  {
+    name: 'data beside one message, and one message with parameters, are allowed',
+    file: 'src/lib/plan/fixture.ts',
+    body: "const a = `${editionShort(x)} · ${t('profile.edition')}`\nconst b = t('graph.slot', { slot: n })\n",
+    expect: [],
+  },
+  {
     name: 'a shadow with no token draws nothing and is caught',
     file: 'src/components/Fixture.vue',
     body: '<template>\n  <div class="shadow-floor-nothing" />\n</template>\n',
@@ -727,6 +793,36 @@ const FIXTURES = [
     file: 'src/router/fixture.ts',
     body: "import { TabOrigin } from '@/components/shell/tabs'\n",
     expect: ['import against the layer direction'],
+  },
+  {
+    name: 'lib importing a component by a relative path is caught',
+    file: 'src/lib/runs/fixture.ts',
+    body: "import { x } from '../../components/facets/labels'\n",
+    expect: ['import against the layer direction'],
+  },
+  {
+    name: 'a store importing a component for its side effect is caught',
+    file: 'src/stores/fixture.ts',
+    body: "import '@/components/shell/register'\n",
+    expect: ['import against the layer direction'],
+  },
+  {
+    name: 'a composable importing a screen lazily by a relative path is caught',
+    file: 'src/composables/fixture.ts',
+    body: 'const s = () => import("../screens/GoalsScreen.vue")\n',
+    expect: ['import against the layer direction'],
+  },
+  {
+    name: 'lib re-exporting a component is caught',
+    file: 'src/lib/runs/fixture.ts',
+    body: "export { x } from '@/components/facets/labels'\n",
+    expect: ['import against the layer direction'],
+  },
+  {
+    name: 'a relative import inside the same layer is allowed',
+    file: 'src/lib/runs/fixture.ts',
+    body: "import { x } from '../facets/labels'\nimport './side'\n",
+    expect: [],
   },
   {
     name: 'a ?raw import reads text, not code',
@@ -984,6 +1080,33 @@ const fixtureFailures = FIXTURES.flatMap((f) => {
       ]
 })
 
+// The table in `docs/frontend-conventions.md` names every check here by its name
+// (`| scan: \`<name>\` |`), and the two must hold the same set: a check with no row is a rule
+// nobody was told about, and a row with no check is a promise nothing keeps. On 2026-09-26 two
+// checks had no row, while the document said the two had the same rows.
+const CONVENTIONS_DOC = join(ROOT, '..', 'docs', 'frontend-conventions.md')
+const documentDrift = () => {
+  const documented = new Set(
+    [
+      ...readFileSync(CONVENTIONS_DOC, 'utf8').matchAll(
+        /\| scan: `([^`]+)` \|/g,
+      ),
+    ].map(([, name]) => name),
+  )
+  const implemented = new Set([...checks.map((c) => c.name), PX_TOKEN_CHECK])
+  const doc = 'docs/frontend-conventions.md'
+  return [
+    ...[...implemented]
+      .filter((name) => !documented.has(name))
+      .map((name) => `${doc}: the check "${name}" has no row in the table`),
+    ...[...documented]
+      .filter((name) => !implemented.has(name))
+      .map(
+        (name) => `${doc}: a row names "${name}", and no check has that name`,
+      ),
+  ]
+}
+
 const violations = walk(SRC)
   .filter((f) => /\.(vue|ts)$/.test(f))
   .flatMap((file) =>
@@ -996,11 +1119,11 @@ const violations = walk(SRC)
       .filter((f) => f.endsWith('.css'))
       .flatMap((file) =>
         pxWithoutReason(readFileSync(file, 'utf8')).map(
-          (line) =>
-            `${relative(ROOT, file)}: px token with no reason beside it — ${line}`,
+          (line) => `${relative(ROOT, file)}: ${PX_TOKEN_CHECK} — ${line}`,
         ),
       ),
   )
+  .concat(documentDrift())
 
 fixtureFailures.forEach((f) => console.error(f))
 violations.forEach((v) => console.error(v))

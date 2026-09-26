@@ -53,7 +53,7 @@ fn a_typed_ref_becomes_a_requirement_row() {
     let r = generate(&d);
     let refs = &r
         .achievements
-        .get(&7)
+        .get(&graph::AchievementId(7))
         .expect("achievement 7 is present")
         .refs;
     assert_eq!(
@@ -78,7 +78,11 @@ fn refs_nested_in_an_edition_block_are_not_lost() {
     )]);
     let r = generate(&d);
     assert_eq!(
-        r.achievements.get(&8).expect("present").refs.len(),
+        r.achievements
+            .get(&graph::AchievementId(8))
+            .expect("present")
+            .refs
+            .len(),
         1,
         "an Edition block wraps inline content: its refs still count"
     );

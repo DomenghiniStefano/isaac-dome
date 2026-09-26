@@ -179,7 +179,9 @@ const followRows = (event: Event) => {
               <span
                 v-if="group.unknown > 0"
                 class="ml-auto text-label text-state-unknown-foreground tabular-nums"
-                >{{ group.unknown }} {{ t('completion.grid.unreadable') }}</span
+                >{{
+                  t('completion.grid.unreadable', { n: group.unknown })
+                }}</span
               >
             </div>
             <TallyCell

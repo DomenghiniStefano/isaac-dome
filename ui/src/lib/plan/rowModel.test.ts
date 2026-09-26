@@ -107,7 +107,18 @@ describe('what the row carries', () => {
     expect(model.location).toBeNull()
     expect(model.condition).toBeNull()
     expect(model.art).toBeNull()
-    expect(model.text).toContain('640')
+  })
+
+  // One sentence is one message: the order of "unknown", "slot" and the number is the
+  // language's to choose, not the code's.
+  it('names a slot the catalog does not know with one message', () => {
+    const seen: Array<[string, unknown]> = []
+    const record = ((key: string, params?: Record<string, unknown>) => {
+      seen.push([key, params])
+      return key
+    }) as never
+    rowModel({ ...base, achievement: { kind: 'unknown', slot: 640 } }, record)
+    expect(seen).toEqual([['graph.unknownAchievementInSlot', { slot: 640 }]])
   })
 
   it('carries the fan-out as a number for the sentence to be built from', () => {
