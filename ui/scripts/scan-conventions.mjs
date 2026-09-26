@@ -1,5 +1,5 @@
 import { readdirSync, readFileSync, statSync } from 'node:fs'
-import { join, relative } from 'node:path'
+import { dirname, join, relative } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const ROOT = fileURLToPath(new URL('..', import.meta.url))
@@ -185,8 +185,18 @@ const LAYER_BANS = {
   components: ['screens'],
   router: ['components'],
 }
-// `'@/<layer>/…'` in a static or dynamic import; a `?` in the path (`?raw`) never matches.
-const LAYER_IMPORT = /(?:\bfrom\s+|\bimport\s*\(\s*)'@\/([a-z]+)\/[^'?]*'/g
+// Every module specifier: `from '…'` (imports and re-exports), a bare `import '…'` run for its
+// side effect, and `import('…')`. A `?` in the path (`?raw`) never matches.
+const MODULE_SPECIFIER =
+  /(?:\bfrom\s+|\bimport\s+|\bimport\s*\(\s*)(['"])([^'"?]+)\1/g
+// The layer a specifier lands in: `@/<layer>/…` by the alias, `./…` and `../…` resolved from
+// the importing file. A package (`vue`, `@lucide/vue`) lands in no layer.
+const layerImported = (file, specifier) => {
+  if (specifier.startsWith('@/')) return specifier.split('/')[1]
+  if (specifier.startsWith('.'))
+    return layerOf(join(dirname(file), ...specifier.split('/')))
+  return null
+}
 
 // Card #81, C5. A class starts after whitespace, a quote, a backtick or a variant's colon.
 const CLASS_START = String.raw`(?:^|[\s"'\x60:])`
@@ -340,14 +350,16 @@ const checks = [
     // borrows nothing from components. On 2026-09-24 twelve imports pointed up, one of them under
     // a comment in `lib/window/layout.ts` saying the direction was "checked".
     //
-    // Both shapes count, `from '…'` and `import('…')`. A `?raw` import is excluded: it reads a
-    // file's source as text (`virtualRows.test.ts` checks a component's markup), not its code.
+    // Every shape counts: `from '…'`, a side-effect `import '…'`, `import('…')`, by the `@/`
+    // alias or by a relative path. A `?raw` import is excluded: it reads a file's source as text
+    // (`virtualRows.test.ts` checks a component's markup), not its code. What it cannot see: a
+    // specifier built at runtime (`import(\`../${x}\`)`), and none exists.
     name: 'import against the layer direction',
     test: (file, body) => {
       const layer = layerOf(file)
       const banned = LAYER_BANS[layer] ?? []
-      return [...body.matchAll(LAYER_IMPORT)].some(([, target]) =>
-        banned.includes(target),
+      return [...body.matchAll(MODULE_SPECIFIER)].some(([, , specifier]) =>
+        banned.includes(layerImported(file, specifier)),
       )
     },
   },
@@ -727,6 +739,36 @@ const FIXTURES = [
     file: 'src/router/fixture.ts',
     body: "import { TabOrigin } from '@/components/shell/tabs'\n",
     expect: ['import against the layer direction'],
+  },
+  {
+    name: 'lib importing a component by a relative path is caught',
+    file: 'src/lib/runs/fixture.ts',
+    body: "import { x } from '../../components/facets/labels'\n",
+    expect: ['import against the layer direction'],
+  },
+  {
+    name: 'a store importing a component for its side effect is caught',
+    file: 'src/stores/fixture.ts',
+    body: "import '@/components/shell/register'\n",
+    expect: ['import against the layer direction'],
+  },
+  {
+    name: 'a composable importing a screen lazily by a relative path is caught',
+    file: 'src/composables/fixture.ts',
+    body: 'const s = () => import("../screens/GoalsScreen.vue")\n',
+    expect: ['import against the layer direction'],
+  },
+  {
+    name: 'lib re-exporting a component is caught',
+    file: 'src/lib/runs/fixture.ts',
+    body: "export { x } from '@/components/facets/labels'\n",
+    expect: ['import against the layer direction'],
+  },
+  {
+    name: 'a relative import inside the same layer is allowed',
+    file: 'src/lib/runs/fixture.ts',
+    body: "import { x } from '../facets/labels'\nimport './side'\n",
+    expect: [],
   },
   {
     name: 'a ?raw import reads text, not code',
