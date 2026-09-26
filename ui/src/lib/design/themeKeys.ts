@@ -27,3 +27,14 @@ const declaration = (namespace: ThemeNamespace) =>
 
 export const themeKeys = (css: string, namespace: ThemeNamespace): string[] =>
   uniq([...css.matchAll(declaration(namespace))].map(([, name]) => name ?? ''))
+
+// `@utility <prefix>-<name> {` — the form a token takes where Tailwind has no theme namespace
+// for it, as the stacking layers in `layers.css` do.
+export const utilityKeys = (css: string, prefix: string): string[] =>
+  uniq(
+    [
+      ...css.matchAll(
+        new RegExp(`@utility ${prefix}-([a-z0-9-]+)\\s*\\{`, 'g'),
+      ),
+    ].map(([, name]) => name ?? ''),
+  )

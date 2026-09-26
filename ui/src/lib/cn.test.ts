@@ -42,6 +42,11 @@ describe('cn', () => {
     expect(cn('opacity-muted', 'opacity-0')).toBe('opacity-0')
   })
 
+  it('lets a later stacking layer replace an earlier one', () => {
+    expect(cn('z-raised', 'z-overlay')).toBe('z-overlay')
+    expect(cn('z-raised-corner', 'z-raised-header')).toBe('z-raised-header')
+  })
+
   it('lets a later letter spacing replace an earlier one', () => {
     expect(cn('tracking-nav', 'tracking-caps')).toBe('tracking-caps')
   })
