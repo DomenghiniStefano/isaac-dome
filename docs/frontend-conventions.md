@@ -799,7 +799,7 @@ For honesty's sake, and so as not to make this document look more complete than 
 | **A width cap on a screen root** | `ui/scripts/scan-conventions.mjs` |
 | **A narrow grid template with no column hidden** | `ui/scripts/scan-conventions.mjs` |
 | **A scrolling box under `src/screens/` without `v-scroll-memory`** | `ui/scripts/scan-conventions.mjs` |
-| **An import against the layer direction** (`lib/`, `stores/`, `composables/` import no component or screen; `components/` no screen; `router/` no component) — since 2026-09-24, card #81 | `ui/scripts/scan-conventions.mjs` |
+| **An import against the layer direction** (`lib/`, `stores/`, `composables/` import no component or screen; `components/` no screen; `router/` no component; by the `@/` alias or a relative path, `from`, side-effect `import` or `import()`) — since 2026-09-24, card #81; relative and side-effect imports since 2026-09-26 | `ui/scripts/scan-conventions.mjs` |
 | **A token read from a string** (`var(--…)` in `:style` or a TS string, unless the key *sets* a `'--name'`) — since 2026-09-24, card #81 | `ui/scripts/scan-conventions.mjs` |
 | **A quarter step off the 4px grid** (`gap-0.75`) | `ui/scripts/scan-conventions.mjs` |
 | **A numbered `z-*`** — the names are in `assets/theme/layers.css` | `ui/scripts/scan-conventions.mjs` |
