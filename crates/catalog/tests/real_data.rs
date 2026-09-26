@@ -598,3 +598,76 @@ fn only_the_online_lobby_names_all_twelve_marks() {
         "the mark is expected to be 16 x 16 like every other one"
     );
 }
+
+/// `entities2.xml` on Repentance+, measured with a text search on 2026-09-26: 1337 `<entity`
+/// elements, one of them (id 9001, "Spidermod Text") declaring an empty `anm2path` and so
+/// skipped — 1336 rows read. The ceiling is generous: the count only grows as the game adds
+/// entities.
+#[test]
+fn entities_are_at_least_thirteen_hundred_and_every_anm2_resolves_in_the_archives() {
+    let Some((c, rs)) = build_or_skip() else {
+        return;
+    };
+    let n = c.entities().count();
+    assert_band("entities", n, 1336, 4000);
+    let missing: Vec<String> = c
+        .entities()
+        .map(|e| e.anm2_path.clone())
+        .filter(|p| !rs.contains(p))
+        .collect();
+    assert!(missing.is_empty(), "unresolvable entity anm2: {missing:?}");
+}
+
+/// The ten monsters the sprite spike rendered from the real archives (card #86), each
+/// `anm2path` read straight out of `entities2.xml` with a text search rather than through the
+/// parser under test. `subtype` is left out on every one of these rows, so the fallback in
+/// `Catalog::entity` isn't exercised here — the row is reached directly, subtype 0.
+#[test]
+fn the_ten_spiked_monsters_resolve_to_the_anm2_the_spike_rendered() {
+    let Some((c, _)) = build_or_skip() else {
+        return;
+    };
+    let expected = [
+        (10, 1, "gfx/010.001_Gaper.anm2"),
+        (12, 0, "gfx/012.000_Horf.anm2"),
+        (13, 0, "gfx/013.000_Fly.anm2"),
+        (14, 0, "gfx/014.000_Pooter.anm2"),
+        (15, 0, "gfx/015.000_Clotty.anm2"),
+        (16, 0, "gfx/016.000_Mulligan.anm2"),
+        (22, 0, "gfx/022.000_Hive.anm2"),
+        (23, 0, "gfx/023.000_Charger.anm2"),
+        (24, 0, "gfx/024.000_Globin.anm2"),
+        (25, 0, "gfx/025.000_Boom Fly.anm2"),
+    ];
+    for (id, variant, anm2_path) in expected {
+        assert_eq!(
+            c.entity(id, variant, 0).map(|e| e.anm2_path.as_str()),
+            Some(anm2_path),
+            "entity {id}.{variant}"
+        );
+    }
+}
+
+/// A champion subtype (`023.000.001_My Shadow.anm2`, Charger's shadow form) is its own row,
+/// and a pickup's subtype (`005.011_Heart.anm2`, subtype 1 of the heart variant) resolves the
+/// same way a monster's does: `entities2.xml` doesn't distinguish "monster" from "pickup",
+/// both are rows of the same file under type id 5. Read with a text search on 2026-09-26.
+#[test]
+fn a_champion_subtype_and_a_pickup_subtype_resolve_like_any_other_row() {
+    let Some((c, _)) = build_or_skip() else {
+        return;
+    };
+    assert_eq!(
+        c.entity(23, 0, 1).map(|e| e.anm2_path.as_str()),
+        Some("gfx/023.000.001_My Shadow.anm2")
+    );
+    assert_eq!(
+        c.entity(5, 10, 1).map(|e| e.anm2_path.as_str()),
+        Some("gfx/005.011_Heart.anm2")
+    );
+    assert_eq!(
+        c.entity(5, 10, 99).map(|e| e.anm2_path.as_str()),
+        None,
+        "subtype 10 (Heart's variant) declares no subtype 0 row to fall back to"
+    );
+}
