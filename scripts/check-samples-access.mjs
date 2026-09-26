@@ -30,15 +30,32 @@ const EXEMPTIONS = []
 const SAMPLES_PATH = /^(?:\.{0,2}[/\\])*samples(?:[/\\][^\s"]*)?$/
 const LIVE_NAME = /^live\./
 
+// A raw string's opening at `i`: `r"`, `r#"`, `br##"` and so on, not preceded by an identifier
+// character (`for"` is not a raw string). Answers the number of `#` and where the text starts.
+const RAW_OPEN = /^b?r(#*)"/
+const rawAt = (line, i) => {
+  if (i > 0 && /\w/.test(line[i - 1])) return null
+  const m = RAW_OPEN.exec(line.slice(i))
+  return m ? { hashes: m[1].length, start: i + m[0].length } : null
+}
+
 // The string literals of one line, with `//` comments outside strings ignored. Not a parser: it
-// tracks `"…"` with backslash escapes and stops at `//` outside one, which is what `.rs` lines in
-// this repo need. Raw strings (`r#"…"#`) read as ordinary strings, which is right for this check.
+// tracks `"…"` with backslash escapes, raw strings (`r"…"`, `r#"…"#`) without them, and stops at
+// `//` outside one, which is what `.rs` lines in this repo need.
 export const literalsOf = (line) => {
   const out = []
   let i = 0
   while (i < line.length) {
     const c = line[i]
     if (c === '/' && line[i + 1] === '/') break
+    const raw = rawAt(line, i)
+    if (raw) {
+      const close = '"' + '#'.repeat(raw.hashes)
+      const end = line.indexOf(close, raw.start)
+      out.push(line.slice(raw.start, end === -1 ? line.length : end))
+      i = end === -1 ? line.length : end + close.length
+      continue
+    }
     if (c === "'" && line[i + 2] === "'") {
       i += 3 // a char literal like '"' must not open a string
       continue
@@ -92,6 +109,12 @@ const FIXTURES = [
   { src: 'let url = "https://x"; // "samples"', found: 0 },
   { src: 'let q = \'"\'; let s = "samples";', found: 1 },
   { src: 'test_support::sample("20260831.rep+persistentgamedata1.dat")', found: 0 },
+  // Raw strings keep `\` as it is: a Windows path written the way Windows writes it.
+  { src: 'Path::new(r"..\\..\\samples")', found: 1 },
+  { src: 'Path::new(r#"..\\samples\\packed"#)', found: 1 },
+  { src: 'let d = r"C:\\"; let s = "samples";', found: 1 },
+  { src: 'let d = br"x\\"; let s = "samples";', found: 1 },
+  { src: 'let r = "a"; let s = "samples";', found: 1 },
 ]
 
 const broken = FIXTURES.filter((f) => findingsOf(f.src).length !== f.found)
