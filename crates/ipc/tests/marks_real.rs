@@ -57,9 +57,11 @@ fn series_of(suffix: &str) -> Vec<(String, Vec<u32>)> {
 
 #[test]
 fn no_mark_appears_without_a_kill_of_that_boss() {
+    let mut windows = 0;
     for suffix in SERIES {
         let series = series_of(suffix);
         for pair in series.windows(2) {
+            windows += 1;
             let (before_name, before) = &pair[0];
             let (after_name, after) = &pair[1];
             for (column, boss, kill_index) in KILLS {
@@ -87,6 +89,15 @@ fn no_mark_appears_without_a_kill_of_that_boss() {
                 );
             }
         }
+    }
+    // A series of one snapshot has no window: the property then holds over nothing, and says
+    // so rather than passing as if it had looked.
+    if windows == 0 {
+        test_support::skip(&format!(
+            "none of the {} dated series holds two readable snapshots: no window to walk, \
+             the kill property checked nothing",
+            SERIES.len()
+        ));
     }
 }
 
