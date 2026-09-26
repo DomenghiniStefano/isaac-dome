@@ -19,6 +19,7 @@ export const sectionText: Record<SectionKind, Message> = {
   [SectionKind.Difficulty]: 'wiki.section.difficulty',
   [SectionKind.Reward]: 'wiki.section.reward',
   [SectionKind.Unlockable]: 'wiki.section.unlockable',
+  [SectionKind.StartingItems]: 'wiki.section.startingItems',
 }
 
 // A page's kind badge: the category's singular, by the page's identity.

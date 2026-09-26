@@ -120,9 +120,9 @@ pub fn section_kind(title: &str) -> Option<SectionKind> {
         }
         "difficulty" => SectionKind::Difficulty,
         "reward" | "rewards" => SectionKind::Reward,
+        "unlockable starting items" => SectionKind::StartingItems,
         "unlockable achievements"
         | "unlockable achievement"
-        | "unlockable starting items"
         | "unlockable items"
         // "How to Acquire" describes how a thing is reached, which is what this kind is.
         | "how to acquire"
@@ -372,6 +372,21 @@ mod tests {
         );
         // Not a prefix rule: a spelling nobody has read stays out.
         assert_eq!(section_kind("Unlocking Tainted Eden"), None);
+    }
+
+    /// Isaac's page has "Unlockable Achievements" and, under it, "Unlockable Starting Items"
+    /// ("Defeat Isaac as ??? - Start with The D6"); so do seven more base characters. Read as
+    /// one kind they were two sections with the same name.
+    #[test]
+    fn the_starting_items_are_a_kind_of_their_own() {
+        assert_eq!(
+            section_kind("Unlockable Starting Items"),
+            Some(SectionKind::StartingItems)
+        );
+        assert_eq!(
+            section_kind("Unlockable [[Achievement]]s"),
+            Some(SectionKind::Unlockable)
+        );
     }
 
     /// The other half of `discardedSections`, and the half worth protecting: these are out

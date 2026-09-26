@@ -264,6 +264,18 @@ impl Dataset {
         }
     }
 
+    /// Every entry of every collection, for a pass that joins one page's facts into another's.
+    pub(crate) fn entries_mut(&mut self) -> impl Iterator<Item = &mut Entry> {
+        self.items
+            .values_mut()
+            .chain(self.trinkets.values_mut())
+            .chain(self.achievements.values_mut())
+            .chain(self.bosses.values_mut())
+            .chain(self.challenges.values_mut())
+            .chain(self.characters.values_mut())
+            .chain(self.transformations.values_mut())
+    }
+
     /// Files a page's entry under its key. A key that recurs keeps the first entry, which is
     /// what makes the visiting order of `build` part of the result.
     pub(crate) fn insert_first(&mut self, key: EntryKey, entry: Entry) {

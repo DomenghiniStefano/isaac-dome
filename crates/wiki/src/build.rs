@@ -8,6 +8,7 @@ use crate::infobox::{extract_infoboxes, InfoboxKind, RawInfobox};
 use crate::page::{parse_page, PageKind};
 use crate::raw::{Raw, RawPage};
 use crate::resolver::{Corrections, Resolver, Row};
+use crate::unlock_condition::add_conditions;
 use crate::Diagnostics;
 
 /// Characters have no Cargo table: title (and the infobox's `name`) → id is derived from
@@ -55,6 +56,7 @@ pub fn build(raw: &Raw, corrections: &Corrections) -> Dataset {
         note_revision(&mut ds.meta, p);
     }
     apply_descriptions(&mut ds, corrections, &r, &mut diagnostics);
+    add_conditions(&mut ds);
     ds.meta.last_known_patch = last_known_patch(&raw.versions);
     ds.meta.source = Source {
         name: "The Binding of Isaac: Rebirth Wiki".into(),

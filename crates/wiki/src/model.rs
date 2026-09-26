@@ -61,6 +61,10 @@ pub enum SectionKind {
     Difficulty,
     Reward,
     Unlockable,
+    /// What a character unlocks to start a run with. A kind apart from `Unlockable` because
+    /// the eight pages that have it have both, one under the other, and two sections with one
+    /// name read as the same list twice.
+    StartingItems,
 }
 
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize, ts_rs::TS)]
@@ -91,7 +95,8 @@ pub enum Block {
 #[serde(rename_all = "camelCase")]
 pub struct ListItem {
     pub inline: Vec<Inline>,
-    /// The lists nested under the item.
+    /// What sits under the item: the lists nested in it, or — under an item naming an
+    /// achievement — that achievement's unlock condition, as a paragraph.
     pub children: Vec<Block>,
 }
 
