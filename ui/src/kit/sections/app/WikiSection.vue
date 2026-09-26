@@ -58,6 +58,99 @@ const blocks: Block[] = [
       },
     ],
   },
+  // A list of names, as `{{achievement text}}` becomes: a picture per row, the name beside it
+  // and how it is unlocked under the name.
+  { kind: 'heading', level: 3, inline: [plain('Sbloccabile')] },
+  {
+    kind: 'list',
+    ordered: false,
+    items: [
+      {
+        inline: [
+          {
+            kind: 'ref',
+            target: { kind: 'achievement', id: 3 },
+            label: 'Judas',
+          },
+        ],
+        children: [
+          {
+            kind: 'paragraph',
+            inline: [
+              plain('Defeat '),
+              {
+                kind: 'ref',
+                target: { kind: 'entity', id: 84, variant: 0, subtype: 0 },
+                label: 'Satan',
+              },
+            ],
+          },
+        ],
+      },
+      {
+        inline: [
+          {
+            kind: 'ref',
+            target: { kind: 'achievement', id: 1 },
+            label: 'I RULE!',
+          },
+        ],
+        children: [
+          {
+            kind: 'paragraph',
+            inline: [
+              {
+                kind: 'edition',
+                only: [Dlc.Afterbirth],
+                inline: [
+                  plain(' Defeat ??? or The Lamb, then Satan as Isaac.'),
+                ],
+              },
+              plain(' '),
+              {
+                kind: 'edition',
+                only: [Dlc.Repentance, Dlc.RepentancePlus],
+                inline: [plain(' Defeat Mega Satan and unlock The Negative.')],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        inline: [
+          {
+            kind: 'ref',
+            target: { kind: 'achievement', id: 9 },
+            label: 'The Negative',
+          },
+        ],
+        children: [],
+      },
+    ],
+  },
+  {
+    kind: 'list',
+    ordered: false,
+    items: [
+      { inline: [{ kind: 'ref', target: d6, label: 'The D6' }], children: [] },
+      {
+        inline: [
+          {
+            kind: 'edition',
+            only: [Dlc.Repentance],
+            inline: [
+              {
+                kind: 'ref',
+                target: { kind: 'item', id: 25 },
+                label: 'Breakfast',
+              },
+            ],
+          },
+        ],
+        children: [],
+      },
+    ],
+  },
   {
     kind: 'table',
     header: [[plain('Edizione')], [plain('Carica')]],
@@ -83,11 +176,11 @@ const canOpen = (target: Target): boolean => target.kind !== 'concept'
   <KitSection title="Wiki" class="col-span-2">
     <div class="flex flex-col gap-2 text-row">
       <p v-for="(line, i) in natures" :key="i">
-        <WikiInline :inline="line" :icon-for="iconFor" :can-open="canOpen" />
+        <WikiInline :inline="line" :can-open="canOpen" />
       </p>
     </div>
     <p class="text-row">
-      <WikiInline :inline="paragraph" :icon-for="iconFor" :can-open="canOpen" />
+      <WikiInline :inline="paragraph" :can-open="canOpen" />
     </p>
     <WikiBlocks :blocks="blocks" :icon-for="iconFor" :can-open="canOpen" />
   </KitSection>
