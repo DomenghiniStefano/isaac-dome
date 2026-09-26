@@ -31,10 +31,17 @@ pub enum PageKind {
     Challenge,
     Character,
     Transformation,
+    /// A monster or a pickup entity: `Infobox monster` or `Infobox entity` (design decision 2,
+    /// `2026-09-26-wiki-complete-design.md`). Not built into dataset entries yet — that is a
+    /// later step (`build::parses_into_entries`).
+    Entity,
+    /// Every other page of namespace 0: no infobox of a kind we read. Not built into dataset
+    /// entries yet, same as `Entity`.
+    Article,
 }
 
 impl PageKind {
-    pub const ALL: [PageKind; 7] = [
+    pub const ALL: [PageKind; 9] = [
         PageKind::Collectible,
         PageKind::Trinket,
         PageKind::Achievement,
@@ -42,6 +49,8 @@ impl PageKind {
         PageKind::Challenge,
         PageKind::Character,
         PageKind::Transformation,
+        PageKind::Entity,
+        PageKind::Article,
     ];
 
     /// The subfolder of `raw/pages/`.
@@ -54,13 +63,25 @@ impl PageKind {
             PageKind::Challenge => "challenge",
             PageKind::Character => "character",
             PageKind::Transformation => "transformation",
+            PageKind::Entity => "entity",
+            PageKind::Article => "article",
         }
     }
 
     /// The wiki templates whose transclusions list the pages of this kind. Plural because
     /// the characters need two: `Infobox characters` is a different template, not a
     /// spelling of the first, and it holds the four pages that state two playable forms
-    /// (B45). A kind with one template is the ordinary case and reads the same.
+    /// (B45). A kind with one template is the ordinary case and reads the same. `Entity`
+    /// has two for the same reason `Character` does: `Infobox monster` and `Infobox entity`
+    /// are different templates that both make an entity page (their parameters are compared
+    /// at plan time, not here).
+    ///
+    /// `Article` answers the empty slice, truthfully: it has no template of its own, because
+    /// it is not "pages that transclude X" but "every page of namespace 0 that transcludes
+    /// none of the templates above" — the fetch reaches it through
+    /// `generator=allpages`, not through `embeddedin`, and that loop (`PageKind::ALL` calling
+    /// `fetch_kind`) naturally does nothing for a kind with no templates, which is why the
+    /// empty slice is the right answer rather than a special case elsewhere.
     pub fn templates(self) -> &'static [&'static str] {
         match self {
             PageKind::Collectible => &["Template:Infobox collectible"],
@@ -70,6 +91,8 @@ impl PageKind {
             PageKind::Challenge => &["Template:Infobox challenge"],
             PageKind::Character => &["Template:Infobox character", "Template:Infobox characters"],
             PageKind::Transformation => &["Template:Infobox transformation"],
+            PageKind::Entity => &["Template:Infobox monster", "Template:Infobox entity"],
+            PageKind::Article => &[],
         }
     }
 }
@@ -731,15 +754,39 @@ mod tests {
             PageKind::Character.templates(),
             ["Template:Infobox character", "Template:Infobox characters"]
         );
-        // Every other kind still has exactly one, so nothing else changed shape.
+        // Every kind fetched by template has exactly one, except `Character` and `Entity`,
+        // which have two; `Article` has none — it is reached through `allpages`, not
+        // `embeddedin` (see `PageKind::templates`'s doc comment).
         for kind in PageKind::ALL {
             let n = kind.templates().len();
-            assert_eq!(
-                n,
-                if kind == PageKind::Character { 2 } else { 1 },
-                "{kind:?}"
-            );
+            let expected = match kind {
+                PageKind::Character | PageKind::Entity => 2,
+                PageKind::Article => 0,
+                PageKind::Collectible
+                | PageKind::Trinket
+                | PageKind::Achievement
+                | PageKind::Boss
+                | PageKind::Challenge
+                | PageKind::Transformation => 1,
+            };
+            assert_eq!(n, expected, "{kind:?}");
         }
+    }
+
+    /// `Entity` is filed by two templates, `Infobox monster` and `Infobox entity`: the two
+    /// infoboxes decision 2 folds into one kind. `Article` names none, and its own doc
+    /// comment says why.
+    #[test]
+    fn entity_is_listed_by_two_templates_and_article_by_none() {
+        assert_eq!(
+            PageKind::Entity.templates(),
+            ["Template:Infobox monster", "Template:Infobox entity"]
+        );
+        assert_eq!(PageKind::Article.templates(), [] as [&str; 0]);
+        assert_eq!(PageKind::Entity.dir(), "entity");
+        assert_eq!(PageKind::Article.dir(), "article");
+        assert!(PageKind::ALL.contains(&PageKind::Entity));
+        assert!(PageKind::ALL.contains(&PageKind::Article));
     }
 
     /// B45's mechanism, not its symptom. `extract_infoboxes` takes any template whose name
