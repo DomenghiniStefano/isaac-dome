@@ -1,0 +1,5072 @@
+{
+  "0": {
+    "title": "Guppy",
+    "revid": 262417,
+    "description": [
+      {
+        "kind": "text",
+        "text": "Guppy",
+        "style": "bold"
+      },
+      {
+        "kind": "text",
+        "text": " is a ",
+        "style": "plain"
+      },
+      {
+        "kind": "concept",
+        "page": "transformation",
+        "label": "transformation"
+      },
+      {
+        "kind": "text",
+        "text": ", turning Isaac into his cat Guppy after picking up 3 Guppy-related items.",
+        "style": "plain"
+      },
+      {
+        "kind": "text",
+        "text": " ",
+        "style": "plain"
+      },
+      {
+        "kind": "edition",
+        "only": [
+          "rebirth",
+          "afterbirth",
+          "afterbirthPlus"
+        ],
+        "inline": [
+          {
+            "kind": "text",
+            "text": " Grants ",
+            "style": "plain"
+          },
+          {
+            "kind": "concept",
+            "page": "flight",
+            "label": "flight"
+          },
+          {
+            "kind": "text",
+            "text": " and spawns a ",
+            "style": "plain"
+          },
+          {
+            "kind": "concept",
+            "page": "Blue Fly",
+            "label": "Blue Fly"
+          },
+          {
+            "kind": "text",
+            "text": " each time a tear hits an enemy. ",
+            "style": "plain"
+          },
+          {
+            "kind": "edition",
+            "only": [
+              "repentance",
+              "repentancePlus"
+            ],
+            "inline": [
+              {
+                "kind": "text",
+                "text": " Grants ",
+                "style": "plain"
+              },
+              {
+                "kind": "concept",
+                "page": "flight",
+                "label": "flight"
+              },
+              {
+                "kind": "text",
+                "text": " and adds a 66% chance to spawn a ",
+                "style": "plain"
+              },
+              {
+                "kind": "concept",
+                "page": "Blue Fly",
+                "label": "Blue Fly"
+              },
+              {
+                "kind": "text",
+                "text": " when a tear hits an enemy.",
+                "style": "plain"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "dlc": [],
+    "unlockedBy": null,
+    "infobox": {
+      "kind": "transformation",
+      "requires": 3,
+      "contributors": [
+        {
+          "kind": "item",
+          "id": 145
+        },
+        {
+          "kind": "item",
+          "id": 133
+        },
+        {
+          "kind": "item",
+          "id": 81
+        },
+        {
+          "kind": "item",
+          "id": 212
+        },
+        {
+          "kind": "item",
+          "id": 134
+        },
+        {
+          "kind": "item",
+          "id": 187
+        },
+        {
+          "kind": "item",
+          "id": 665
+        },
+        {
+          "kind": "trinket",
+          "id": 169
+        }
+      ],
+      "target": []
+    },
+    "sections": [
+      {
+        "kind": "effects",
+        "blocks": [
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "Grants ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "concept",
+                    "page": "flight",
+                    "label": "flight"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ".",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": " Spawns a ",
+                        "style": "plain"
+                      },
+                      {
+                        "kind": "concept",
+                        "page": "Blue Fly",
+                        "label": "Blue Fly"
+                      },
+                      {
+                        "kind": "text",
+                        "text": " each time a tear from Isaac or one of its familiars hits an enemy.",
+                        "style": "plain"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": " Grants a 66% chance to spawn a ",
+                        "style": "plain"
+                      },
+                      {
+                        "kind": "concept",
+                        "page": "Blue Fly",
+                        "label": "Blue Fly"
+                      },
+                      {
+                        "kind": "text",
+                        "text": " each time a tear from Isaac or one of its familiars hits an enemy.",
+                        "style": "plain"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "notes",
+        "blocks": [
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 152
+                    },
+                    "label": "Technology 2"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " spawns flies only very rarely.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": " If Isaac has transformed into Guppy, Guppy's Hairball spawns Blue Flies when it deals damage.",
+                        "style": "plain"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": " If all the 9 extra lives have been consumed, ",
+                        "style": "plain"
+                      },
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 81
+                        },
+                        "label": "Dead Cat"
+                      },
+                      {
+                        "kind": "text",
+                        "text": " is removed from Isaac's inventory. This causes the transformation to be removed.",
+                        "style": "plain"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": " Blue flies will only spawn if Isaac has less than 30 blue flies.",
+                        "style": "plain"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "unlockable",
+        "blocks": [
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "achievement",
+                      "id": 65
+                    },
+                    "label": "Guppy's Hairball"
+                  }
+                ],
+                "children": [
+                  {
+                    "kind": "paragraph",
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "Become ",
+                        "style": "plain"
+                      },
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "transformation",
+                          "id": 0
+                        },
+                        "label": "Guppy"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "achievement",
+                      "id": 161
+                    },
+                    "label": "Cat Got Your Tongue"
+                  }
+                ],
+                "children": [
+                  {
+                    "kind": "paragraph",
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "Become ",
+                        "style": "plain"
+                      },
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "transformation",
+                          "id": 0
+                        },
+                        "label": "Guppy"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1": {
+    "title": "Beelzebub",
+    "revid": 266812,
+    "description": [
+      {
+        "kind": "text",
+        "text": "Beelzebub",
+        "style": "bold"
+      },
+      {
+        "kind": "text",
+        "text": " is a ",
+        "style": "plain"
+      },
+      {
+        "kind": "concept",
+        "page": "transformation",
+        "label": "transformation"
+      },
+      {
+        "kind": "text",
+        "text": ", turning Isaac into a giant humanoid fly after picking up 3 fly-related items.",
+        "style": "plain"
+      },
+      {
+        "kind": "text",
+        "text": " ",
+        "style": "plain"
+      },
+      {
+        "kind": "text",
+        "text": "Grants ",
+        "style": "plain"
+      },
+      {
+        "kind": "concept",
+        "page": "flight",
+        "label": "flight"
+      },
+      {
+        "kind": "text",
+        "text": ". Converts small enemy ",
+        "style": "plain"
+      },
+      {
+        "kind": "ref",
+        "target": {
+          "kind": "entity",
+          "id": 13,
+          "variant": 0,
+          "subtype": 0
+        },
+        "label": "flies"
+      },
+      {
+        "kind": "text",
+        "text": " into ",
+        "style": "plain"
+      },
+      {
+        "kind": "concept",
+        "page": "Blue Fly",
+        "label": "Blue Flies"
+      },
+      {
+        "kind": "text",
+        "text": ". ",
+        "style": "plain"
+      },
+      {
+        "kind": "edition",
+        "only": [
+          "repentance",
+          "repentancePlus"
+        ],
+        "inline": [
+          {
+            "kind": "text",
+            "text": " Larger flies become ",
+            "style": "plain"
+          },
+          {
+            "kind": "concept",
+            "page": "friendly",
+            "label": "friendly"
+          },
+          {
+            "kind": "text",
+            "text": " and follow Isaac between rooms.",
+            "style": "plain"
+          }
+        ]
+      }
+    ],
+    "dlc": [],
+    "unlockedBy": null,
+    "infobox": {
+      "kind": "transformation",
+      "requires": 3,
+      "contributors": [
+        {
+          "kind": "item",
+          "id": 434
+        },
+        {
+          "kind": "item",
+          "id": 650
+        },
+        {
+          "kind": "item",
+          "id": 320
+        },
+        {
+          "kind": "item",
+          "id": 511
+        },
+        {
+          "kind": "item",
+          "id": 272
+        },
+        {
+          "kind": "item",
+          "id": 274
+        },
+        {
+          "kind": "item",
+          "id": 279
+        },
+        {
+          "kind": "item",
+          "id": 57
+        },
+        {
+          "kind": "item",
+          "id": 128
+        },
+        {
+          "kind": "item",
+          "id": 364
+        },
+        {
+          "kind": "item",
+          "id": 10
+        },
+        {
+          "kind": "item",
+          "id": 248
+        },
+        {
+          "kind": "item",
+          "id": 365
+        },
+        {
+          "kind": "item",
+          "id": 151
+        },
+        {
+          "kind": "item",
+          "id": 426
+        },
+        {
+          "kind": "item",
+          "id": 430
+        },
+        {
+          "kind": "item",
+          "id": 9
+        },
+        {
+          "kind": "item",
+          "id": 264
+        },
+        {
+          "kind": "item",
+          "id": 629
+        },
+        {
+          "kind": "item",
+          "id": 649
+        },
+        {
+          "kind": "item",
+          "id": 461
+        },
+        {
+          "kind": "item",
+          "id": 581
+        },
+        {
+          "kind": "item",
+          "id": 693
+        },
+        {
+          "kind": "item",
+          "id": 492
+        },
+        {
+          "kind": "item",
+          "id": 148
+        }
+      ],
+      "target": []
+    },
+    "sections": [
+      {
+        "kind": "effects",
+        "blocks": [
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "Grants ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "concept",
+                    "page": "flight",
+                    "label": "flight"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ".",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "The following flies transform into ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "concept",
+                    "page": "Blue Fly",
+                    "label": "Blue Flies"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ":",
+                    "style": "plain"
+                  }
+                ],
+                "children": [
+                  {
+                    "kind": "list",
+                    "ordered": false,
+                    "items": [
+                      {
+                        "inline": [
+                          {
+                            "kind": "ref",
+                            "target": {
+                              "kind": "entity",
+                              "id": 13,
+                              "variant": 0,
+                              "subtype": 0
+                            },
+                            "label": "Fly"
+                          }
+                        ],
+                        "children": []
+                      },
+                      {
+                        "inline": [
+                          {
+                            "kind": "ref",
+                            "target": {
+                              "kind": "entity",
+                              "id": 18,
+                              "variant": 0,
+                              "subtype": 0
+                            },
+                            "label": "Attack Fly"
+                          }
+                        ],
+                        "children": []
+                      },
+                      {
+                        "inline": [
+                          {
+                            "kind": "ref",
+                            "target": {
+                              "kind": "entity",
+                              "id": 214,
+                              "variant": 0,
+                              "subtype": 0
+                            },
+                            "label": "Level 2 Fly"
+                          }
+                        ],
+                        "children": []
+                      },
+                      {
+                        "inline": [
+                          {
+                            "kind": "ref",
+                            "target": {
+                              "kind": "entity",
+                              "id": 222,
+                              "variant": 0,
+                              "subtype": 0
+                            },
+                            "label": "Ring Fly"
+                          }
+                        ],
+                        "children": []
+                      },
+                      {
+                        "inline": [
+                          {
+                            "kind": "ref",
+                            "target": {
+                              "kind": "entity",
+                              "id": 249,
+                              "variant": 0,
+                              "subtype": 0
+                            },
+                            "label": "Full Fly"
+                          }
+                        ],
+                        "children": []
+                      },
+                      {
+                        "inline": [
+                          {
+                            "kind": "ref",
+                            "target": {
+                              "kind": "entity",
+                              "id": 256,
+                              "variant": 0,
+                              "subtype": 0
+                            },
+                            "label": "Dart Fly"
+                          }
+                        ],
+                        "children": []
+                      },
+                      {
+                        "inline": [
+                          {
+                            "kind": "ref",
+                            "target": {
+                              "kind": "entity",
+                              "id": 281,
+                              "variant": 0,
+                              "subtype": 0
+                            },
+                            "label": "Swarm"
+                          }
+                        ],
+                        "children": []
+                      },
+                      {
+                        "inline": [
+                          {
+                            "kind": "ref",
+                            "target": {
+                              "kind": "entity",
+                              "id": 868,
+                              "variant": 0,
+                              "subtype": 0
+                            },
+                            "label": "Army Fly"
+                          }
+                        ],
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": " The following flies become friendly and are brought with Isaac to other rooms and floors:",
+                        "style": "plain"
+                      }
+                    ]
+                  }
+                ],
+                "children": [
+                  {
+                    "kind": "list",
+                    "ordered": false,
+                    "items": [
+                      {
+                        "inline": [
+                          {
+                            "kind": "ref",
+                            "target": {
+                              "kind": "entity",
+                              "id": 14,
+                              "variant": 0,
+                              "subtype": 0
+                            },
+                            "label": "Pooter"
+                          }
+                        ],
+                        "children": []
+                      },
+                      {
+                        "inline": [
+                          {
+                            "kind": "ref",
+                            "target": {
+                              "kind": "entity",
+                              "id": 14,
+                              "variant": 1,
+                              "subtype": 0
+                            },
+                            "label": "Super Pooter"
+                          }
+                        ],
+                        "children": []
+                      },
+                      {
+                        "inline": [
+                          {
+                            "kind": "ref",
+                            "target": {
+                              "kind": "entity",
+                              "id": 14,
+                              "variant": 2,
+                              "subtype": 0
+                            },
+                            "label": "Tainted Pooter"
+                          }
+                        ],
+                        "children": []
+                      },
+                      {
+                        "inline": [
+                          {
+                            "kind": "ref",
+                            "target": {
+                              "kind": "entity",
+                              "id": 25,
+                              "variant": 0,
+                              "subtype": 0
+                            },
+                            "label": "Boom Fly"
+                          }
+                        ],
+                        "children": []
+                      },
+                      {
+                        "inline": [
+                          {
+                            "kind": "ref",
+                            "target": {
+                              "kind": "entity",
+                              "id": 25,
+                              "variant": 1,
+                              "subtype": 0
+                            },
+                            "label": "Red Boom Fly"
+                          }
+                        ],
+                        "children": []
+                      },
+                      {
+                        "inline": [
+                          {
+                            "kind": "ref",
+                            "target": {
+                              "kind": "entity",
+                              "id": 25,
+                              "variant": 2,
+                              "subtype": 0
+                            },
+                            "label": "Drowned Boom Fly"
+                          }
+                        ],
+                        "children": []
+                      },
+                      {
+                        "inline": [
+                          {
+                            "kind": "ref",
+                            "target": {
+                              "kind": "entity",
+                              "id": 25,
+                              "variant": 3,
+                              "subtype": 0
+                            },
+                            "label": "Dragon Fly"
+                          }
+                        ],
+                        "children": []
+                      },
+                      {
+                        "inline": [
+                          {
+                            "kind": "ref",
+                            "target": {
+                              "kind": "entity",
+                              "id": 25,
+                              "variant": 3,
+                              "subtype": 1
+                            },
+                            "label": "Dragon Fly X"
+                          }
+                        ],
+                        "children": []
+                      },
+                      {
+                        "inline": [
+                          {
+                            "kind": "ref",
+                            "target": {
+                              "kind": "entity",
+                              "id": 25,
+                              "variant": 4,
+                              "subtype": 0
+                            },
+                            "label": "Bone Fly"
+                          }
+                        ],
+                        "children": []
+                      },
+                      {
+                        "inline": [
+                          {
+                            "kind": "ref",
+                            "target": {
+                              "kind": "entity",
+                              "id": 25,
+                              "variant": 5,
+                              "subtype": 0
+                            },
+                            "label": "Sick Boom Fly"
+                          }
+                        ],
+                        "children": []
+                      },
+                      {
+                        "inline": [
+                          {
+                            "kind": "ref",
+                            "target": {
+                              "kind": "entity",
+                              "id": 25,
+                              "variant": 6,
+                              "subtype": 0
+                            },
+                            "label": "Tainted Boom Fly"
+                          }
+                        ],
+                        "children": []
+                      },
+                      {
+                        "inline": [
+                          {
+                            "kind": "ref",
+                            "target": {
+                              "kind": "entity",
+                              "id": 61,
+                              "variant": 0,
+                              "subtype": 0
+                            },
+                            "label": "Sucker"
+                          }
+                        ],
+                        "children": []
+                      },
+                      {
+                        "inline": [
+                          {
+                            "kind": "ref",
+                            "target": {
+                              "kind": "entity",
+                              "id": 61,
+                              "variant": 1,
+                              "subtype": 0
+                            },
+                            "label": "Spit"
+                          }
+                        ],
+                        "children": []
+                      },
+                      {
+                        "inline": [
+                          {
+                            "kind": "ref",
+                            "target": {
+                              "kind": "entity",
+                              "id": 61,
+                              "variant": 2,
+                              "subtype": 0
+                            },
+                            "label": "Soul Sucker"
+                          }
+                        ],
+                        "children": []
+                      },
+                      {
+                        "inline": [
+                          {
+                            "kind": "ref",
+                            "target": {
+                              "kind": "entity",
+                              "id": 61,
+                              "variant": 3,
+                              "subtype": 0
+                            },
+                            "label": "Ink"
+                          }
+                        ],
+                        "children": []
+                      },
+                      {
+                        "inline": [
+                          {
+                            "kind": "ref",
+                            "target": {
+                              "kind": "entity",
+                              "id": 61,
+                              "variant": 4,
+                              "subtype": 0
+                            },
+                            "label": "Mama Fly"
+                          }
+                        ],
+                        "children": []
+                      },
+                      {
+                        "inline": [
+                          {
+                            "kind": "ref",
+                            "target": {
+                              "kind": "entity",
+                              "id": 61,
+                              "variant": 5,
+                              "subtype": 0
+                            },
+                            "label": "Bulb"
+                          }
+                        ],
+                        "children": []
+                      },
+                      {
+                        "inline": [
+                          {
+                            "kind": "ref",
+                            "target": {
+                              "kind": "entity",
+                              "id": 61,
+                              "variant": 6,
+                              "subtype": 0
+                            },
+                            "label": "Bloodfly"
+                          }
+                        ],
+                        "children": []
+                      },
+                      {
+                        "inline": [
+                          {
+                            "kind": "ref",
+                            "target": {
+                              "kind": "entity",
+                              "id": 61,
+                              "variant": 7,
+                              "subtype": 0
+                            },
+                            "label": "Tainted Sucker"
+                          }
+                        ],
+                        "children": []
+                      },
+                      {
+                        "inline": [
+                          {
+                            "kind": "ref",
+                            "target": {
+                              "kind": "entity",
+                              "id": 80,
+                              "variant": 0,
+                              "subtype": 0
+                            },
+                            "label": "Moter"
+                          }
+                        ],
+                        "children": []
+                      },
+                      {
+                        "inline": [
+                          {
+                            "kind": "ref",
+                            "target": {
+                              "kind": "entity",
+                              "id": 819,
+                              "variant": 0,
+                              "subtype": 0
+                            },
+                            "label": "Fly Bomb"
+                          }
+                        ],
+                        "children": []
+                      },
+                      {
+                        "inline": [
+                          {
+                            "kind": "ref",
+                            "target": {
+                              "kind": "entity",
+                              "id": 819,
+                              "variant": 1,
+                              "subtype": 0
+                            },
+                            "label": "Eternal Fly Bomb"
+                          }
+                        ],
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "notes",
+        "blocks": [
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "Isaac starts with this transformation in the ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "challenge",
+                      "number": 6
+                    },
+                    "label": "Solar System"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " challenge.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "Since ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "concept",
+                    "page": "Champions",
+                    "label": "violet and rainbow champions"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " still pull Isaac towards them even when turned friendly, caution should be taken to avoid unnecessary damage.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "unlockable",
+        "blocks": [
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "achievement",
+                      "id": 178
+                    },
+                    "label": "Lord of the Flies"
+                  }
+                ],
+                "children": [
+                  {
+                    "kind": "paragraph",
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "Become ",
+                        "style": "plain"
+                      },
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "transformation",
+                          "id": 1
+                        },
+                        "label": "Beelzebub"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "achievement",
+                      "id": 352
+                    },
+                    "label": "Angry Fly"
+                  }
+                ],
+                "children": [
+                  {
+                    "kind": "paragraph",
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "Become ",
+                        "style": "plain"
+                      },
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "transformation",
+                          "id": 1
+                        },
+                        "label": "Beelzebub"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "2": {
+    "title": "Fun Guy",
+    "revid": 269273,
+    "description": [
+      {
+        "kind": "text",
+        "text": "Fun Guy",
+        "style": "bold"
+      },
+      {
+        "kind": "text",
+        "text": " is a ",
+        "style": "plain"
+      },
+      {
+        "kind": "concept",
+        "page": "transformation",
+        "label": "transformation"
+      },
+      {
+        "kind": "text",
+        "text": " added in ",
+        "style": "plain"
+      },
+      {
+        "kind": "concept",
+        "page": "The Binding of Isaac: Afterbirth",
+        "label": "The Binding of Isaac: Afterbirth"
+      },
+      {
+        "kind": "text",
+        "text": ", turning Isaac into a walking mushroom after picking up 3 mushroom-related items.",
+        "style": "plain"
+      },
+      {
+        "kind": "text",
+        "text": " ",
+        "style": "plain"
+      },
+      {
+        "kind": "text",
+        "text": "+1 Red ",
+        "style": "plain"
+      },
+      {
+        "kind": "concept",
+        "page": "Heart Container",
+        "label": "Heart Container"
+      },
+      {
+        "kind": "text",
+        "text": ".",
+        "style": "plain"
+      }
+    ],
+    "dlc": [
+      "afterbirth",
+      "afterbirthPlus",
+      "repentance",
+      "repentancePlus"
+    ],
+    "unlockedBy": null,
+    "infobox": {
+      "kind": "transformation",
+      "requires": 3,
+      "contributors": [
+        {
+          "kind": "item",
+          "id": 625
+        },
+        {
+          "kind": "item",
+          "id": 582
+        },
+        {
+          "kind": "item",
+          "id": 11
+        },
+        {
+          "kind": "item",
+          "id": 342
+        },
+        {
+          "kind": "item",
+          "id": 398
+        },
+        {
+          "kind": "item",
+          "id": 12
+        },
+        {
+          "kind": "item",
+          "id": 71
+        },
+        {
+          "kind": "item",
+          "id": 553
+        },
+        {
+          "kind": "item",
+          "id": 121
+        },
+        {
+          "kind": "item",
+          "id": 120
+        }
+      ],
+      "target": []
+    },
+    "sections": [
+      {
+        "kind": "effects",
+        "blocks": [
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "Grants one full ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "concept",
+                    "page": "Red Heart container",
+                    "label": "Red Heart container"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ".",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "3": {
+    "title": "Seraphim (Transformation)",
+    "revid": 262529,
+    "description": [
+      {
+        "kind": "text",
+        "text": "Seraphim",
+        "style": "bold"
+      },
+      {
+        "kind": "text",
+        "text": " is a ",
+        "style": "plain"
+      },
+      {
+        "kind": "concept",
+        "page": "transformation",
+        "label": "transformation"
+      },
+      {
+        "kind": "text",
+        "text": " added in ",
+        "style": "plain"
+      },
+      {
+        "kind": "concept",
+        "page": "The Binding of Isaac: Afterbirth",
+        "label": "The Binding of Isaac: Afterbirth"
+      },
+      {
+        "kind": "text",
+        "text": ", giving Isaac wings after picking up 3 angel-related items.",
+        "style": "plain"
+      },
+      {
+        "kind": "text",
+        "text": " ",
+        "style": "plain"
+      },
+      {
+        "kind": "text",
+        "text": "Grants ",
+        "style": "plain"
+      },
+      {
+        "kind": "concept",
+        "page": "flight",
+        "label": "flight"
+      },
+      {
+        "kind": "text",
+        "text": " and gives +3 ",
+        "style": "plain"
+      },
+      {
+        "kind": "ref",
+        "target": {
+          "kind": "entity",
+          "id": 5,
+          "variant": 10,
+          "subtype": 3
+        },
+        "label": "Soul Heart"
+      },
+      {
+        "kind": "text",
+        "text": "s.",
+        "style": "plain"
+      }
+    ],
+    "dlc": [
+      "afterbirth",
+      "afterbirthPlus",
+      "repentance",
+      "repentancePlus"
+    ],
+    "unlockedBy": null,
+    "infobox": {
+      "kind": "transformation",
+      "requires": 3,
+      "contributors": [
+        {
+          "kind": "item",
+          "id": 33
+        },
+        {
+          "kind": "item",
+          "id": 185
+        },
+        {
+          "kind": "item",
+          "id": 101
+        },
+        {
+          "kind": "item",
+          "id": 184
+        },
+        {
+          "kind": "item",
+          "id": 313
+        },
+        {
+          "kind": "item",
+          "id": 173
+        },
+        {
+          "kind": "item",
+          "id": 72
+        },
+        {
+          "kind": "item",
+          "id": 112
+        },
+        {
+          "kind": "item",
+          "id": 363
+        },
+        {
+          "kind": "item",
+          "id": 162
+        },
+        {
+          "kind": "item",
+          "id": 568
+        },
+        {
+          "kind": "item",
+          "id": 331
+        },
+        {
+          "kind": "item",
+          "id": 374
+        },
+        {
+          "kind": "item",
+          "id": 573
+        },
+        {
+          "kind": "item",
+          "id": 643
+        },
+        {
+          "kind": "item",
+          "id": 182
+        },
+        {
+          "kind": "item",
+          "id": 696
+        },
+        {
+          "kind": "item",
+          "id": 691
+        },
+        {
+          "kind": "item",
+          "id": 142
+        },
+        {
+          "kind": "item",
+          "id": 390
+        }
+      ],
+      "target": []
+    },
+    "sections": [
+      {
+        "kind": "effects",
+        "blocks": [
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "Grants ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "concept",
+                    "page": "flight",
+                    "label": "flight"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " and 3 ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "entity",
+                      "id": 5,
+                      "variant": 10,
+                      "subtype": 3
+                    },
+                    "label": "Soul Heart"
+                  },
+                  {
+                    "kind": "text",
+                    "text": "s.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "notes",
+        "blocks": [
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "afterbirth",
+                      "afterbirthPlus",
+                      "repentance"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": " Despite having the same name, the familiar ",
+                        "style": "plain"
+                      },
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 390
+                        },
+                        "label": "Seraphim"
+                      },
+                      {
+                        "kind": "text",
+                        "text": " does not contribute to the Seraphim transformation.",
+                        "style": "plain"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "Picking up and dropping multiple, distinct copies of ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 33
+                    },
+                    "label": "The Bible"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " will count each copy towards the transformation. This makes ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 72
+                    },
+                    "label": "Rosary"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " and to a lesser degree, ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "trinket",
+                      "id": 7
+                    },
+                    "label": "Rosary Bead"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " especially helpful in gaining the transformation.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "4": {
+    "title": "Bob",
+    "revid": 262459,
+    "description": [
+      {
+        "kind": "text",
+        "text": "Bob",
+        "style": "bold"
+      },
+      {
+        "kind": "text",
+        "text": " is a ",
+        "style": "plain"
+      },
+      {
+        "kind": "concept",
+        "page": "transformation",
+        "label": "transformation"
+      },
+      {
+        "kind": "text",
+        "text": " added in ",
+        "style": "plain"
+      },
+      {
+        "kind": "concept",
+        "page": "The Binding of Isaac: Afterbirth",
+        "label": "The Binding of Isaac: Afterbirth"
+      },
+      {
+        "kind": "text",
+        "text": ", turning Isaac into Bob after picking up 3 Bob-related items.",
+        "style": "plain"
+      },
+      {
+        "kind": "text",
+        "text": " ",
+        "style": "plain"
+      },
+      {
+        "kind": "text",
+        "text": "Isaac leaves a trail of ",
+        "style": "plain"
+      },
+      {
+        "kind": "concept",
+        "page": "Green Creep",
+        "label": "green poisonous creep"
+      },
+      {
+        "kind": "text",
+        "text": " as he walks that deals 6 damage per second.",
+        "style": "plain"
+      }
+    ],
+    "dlc": [
+      "afterbirth",
+      "afterbirthPlus",
+      "repentance",
+      "repentancePlus"
+    ],
+    "unlockedBy": null,
+    "infobox": {
+      "kind": "transformation",
+      "requires": 3,
+      "contributors": [
+        {
+          "kind": "item",
+          "id": 42
+        },
+        {
+          "kind": "item",
+          "id": 273
+        },
+        {
+          "kind": "item",
+          "id": 140
+        },
+        {
+          "kind": "item",
+          "id": 149
+        },
+        {
+          "kind": "trinket",
+          "id": 71
+        }
+      ],
+      "target": []
+    },
+    "sections": [
+      {
+        "kind": "effects",
+        "blocks": [
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "Isaac leaves a trail of ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "concept",
+                    "page": "Green Creep",
+                    "label": "green poisonous creep"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " as he walks that deals ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": " 6 / ",
+                        "style": "plain"
+                      },
+                      {
+                        "kind": "edition",
+                        "only": [
+                          "repentance",
+                          "repentancePlus"
+                        ],
+                        "inline": [
+                          {
+                            "kind": "text",
+                            "text": " 20 damage per second.",
+                            "style": "plain"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": " Grants ",
+                        "style": "plain"
+                      },
+                      {
+                        "kind": "concept",
+                        "page": "poison",
+                        "label": "poison"
+                      },
+                      {
+                        "kind": "text",
+                        "text": " immunity.",
+                        "style": "plain"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "5": {
+    "title": "Spun",
+    "revid": 263464,
+    "description": [
+      {
+        "kind": "text",
+        "text": "Spun",
+        "style": "bold"
+      },
+      {
+        "kind": "text",
+        "text": " is a ",
+        "style": "plain"
+      },
+      {
+        "kind": "concept",
+        "page": "transformation",
+        "label": "transformation"
+      },
+      {
+        "kind": "text",
+        "text": " added in ",
+        "style": "plain"
+      },
+      {
+        "kind": "concept",
+        "page": "The Binding of Isaac: Afterbirth",
+        "label": "The Binding of Isaac: Afterbirth"
+      },
+      {
+        "kind": "text",
+        "text": ", turning Isaac into a buff berserker after picking up 3 syringe items.",
+        "style": "plain"
+      },
+      {
+        "kind": "text",
+        "text": " ",
+        "style": "plain"
+      },
+      {
+        "kind": "text",
+        "text": "Gives +2 ",
+        "style": "plain"
+      },
+      {
+        "kind": "concept",
+        "page": "damage",
+        "label": "damage"
+      },
+      {
+        "kind": "text",
+        "text": " and +0.15 ",
+        "style": "plain"
+      },
+      {
+        "kind": "concept",
+        "page": "speed",
+        "label": "speed"
+      },
+      {
+        "kind": "text",
+        "text": ", and spawns a random ",
+        "style": "plain"
+      },
+      {
+        "kind": "concept",
+        "page": "pill",
+        "label": "pill"
+      },
+      {
+        "kind": "text",
+        "text": " upon transformation.",
+        "style": "plain"
+      }
+    ],
+    "dlc": [
+      "afterbirth",
+      "afterbirthPlus",
+      "repentance",
+      "repentancePlus"
+    ],
+    "unlockedBy": null,
+    "infobox": {
+      "kind": "transformation",
+      "requires": 3,
+      "contributors": [
+        {
+          "kind": "item",
+          "id": 493
+        },
+        {
+          "kind": "item",
+          "id": 496
+        },
+        {
+          "kind": "item",
+          "id": 240
+        },
+        {
+          "kind": "item",
+          "id": 70
+        },
+        {
+          "kind": "item",
+          "id": 14
+        },
+        {
+          "kind": "item",
+          "id": 143
+        },
+        {
+          "kind": "item",
+          "id": 345
+        },
+        {
+          "kind": "item",
+          "id": 13
+        }
+      ],
+      "target": []
+    },
+    "sections": [
+      {
+        "kind": "effects",
+        "blocks": [
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "Drops a random ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "concept",
+                    "page": "pill",
+                    "label": "pill"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ".",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "+2 ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "concept",
+                    "page": "damage",
+                    "label": "damage"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ".",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "+0.15 ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "concept",
+                    "page": "speed",
+                    "label": "speed"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ".",
+                    "style": "plain"
+                  }
+                ],
+                "children": [
+                  {
+                    "kind": "list",
+                    "ordered": false,
+                    "items": [
+                      {
+                        "inline": [
+                          {
+                            "kind": "edition",
+                            "only": [
+                              "afterbirth",
+                              "afterbirthPlus"
+                            ],
+                            "inline": [
+                              {
+                                "kind": "text",
+                                "text": " Also affects maximum Speed. Maximum Speed may never exceed 2.0.",
+                                "style": "plain"
+                              }
+                            ]
+                          }
+                        ],
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "6": {
+    "title": "Yes Mother?",
+    "revid": 262431,
+    "description": [
+      {
+        "kind": "text",
+        "text": "Yes Mother?",
+        "style": "bold"
+      },
+      {
+        "kind": "text",
+        "text": " is a ",
+        "style": "plain"
+      },
+      {
+        "kind": "concept",
+        "page": "transformation",
+        "label": "transformation"
+      },
+      {
+        "kind": "text",
+        "text": " added in ",
+        "style": "plain"
+      },
+      {
+        "kind": "concept",
+        "page": "The Binding of Isaac: Afterbirth",
+        "label": "The Binding of Isaac: Afterbirth"
+      },
+      {
+        "kind": "text",
+        "text": ", dressing Isaac with his Mom's dress after picking up 3 Mom-related items.",
+        "style": "plain"
+      },
+      {
+        "kind": "text",
+        "text": " ",
+        "style": "plain"
+      },
+      {
+        "kind": "text",
+        "text": "Isaac gains a stationary knife that trails directly behind him. It synergizes like ",
+        "style": "plain"
+      },
+      {
+        "kind": "ref",
+        "target": {
+          "kind": "item",
+          "id": 114
+        },
+        "label": "Mom's Knife"
+      },
+      {
+        "kind": "text",
+        "text": " would.",
+        "style": "plain"
+      }
+    ],
+    "dlc": [
+      "afterbirth",
+      "afterbirthPlus",
+      "repentance",
+      "repentancePlus"
+    ],
+    "unlockedBy": null,
+    "infobox": {
+      "kind": "transformation",
+      "requires": 3,
+      "contributors": [
+        {
+          "kind": "item",
+          "id": 102
+        },
+        {
+          "kind": "item",
+          "id": 39
+        },
+        {
+          "kind": "item",
+          "id": 41
+        },
+        {
+          "kind": "item",
+          "id": 552
+        },
+        {
+          "kind": "item",
+          "id": 439
+        },
+        {
+          "kind": "item",
+          "id": 604
+        },
+        {
+          "kind": "item",
+          "id": 195
+        },
+        {
+          "kind": "item",
+          "id": 110
+        },
+        {
+          "kind": "item",
+          "id": 55
+        },
+        {
+          "kind": "item",
+          "id": 200
+        },
+        {
+          "kind": "item",
+          "id": 30
+        },
+        {
+          "kind": "item",
+          "id": 199
+        },
+        {
+          "kind": "item",
+          "id": 114
+        },
+        {
+          "kind": "item",
+          "id": 31
+        },
+        {
+          "kind": "item",
+          "id": 355
+        },
+        {
+          "kind": "item",
+          "id": 228
+        },
+        {
+          "kind": "item",
+          "id": 139
+        },
+        {
+          "kind": "item",
+          "id": 508
+        },
+        {
+          "kind": "item",
+          "id": 732
+        },
+        {
+          "kind": "item",
+          "id": 29
+        },
+        {
+          "kind": "item",
+          "id": 217
+        }
+      ],
+      "target": []
+    },
+    "sections": [
+      {
+        "kind": "effects",
+        "blocks": [
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "Gives Isaac a stationary ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 114
+                    },
+                    "label": "Mom's Knife"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " that trails behind him as he moves, dealing 2x Isaac's tear damage on contact.",
+                    "style": "plain"
+                  }
+                ],
+                "children": [
+                  {
+                    "kind": "list",
+                    "ordered": false,
+                    "items": [
+                      {
+                        "inline": [
+                          {
+                            "kind": "text",
+                            "text": "The knife synergizes like Mom's Knife would.",
+                            "style": "plain"
+                          }
+                        ],
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "notes",
+        "blocks": [
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "This is a reference to the horror film ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "concept",
+                    "page": "wikipedia:Psycho (1960 film)",
+                    "label": "Psycho"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ".",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 439
+                    },
+                    "label": "nr"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " does not count towards this transformation even though it has the name \"Mom\" in it.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "The Yes Mother? transformation was originally going to have the effect in which mom's foot would be called down when Isaac reaches one heart.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "unlockable",
+        "blocks": [
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "achievement",
+                      "id": 35
+                    },
+                    "label": "Mom's Contact"
+                  }
+                ],
+                "children": [
+                  {
+                    "kind": "paragraph",
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "Obtain three ",
+                        "style": "plain"
+                      },
+                      {
+                        "kind": "concept",
+                        "page": "category:Yes Mother? items",
+                        "label": "Yes Mother? items"
+                      },
+                      {
+                        "kind": "text",
+                        "text": " in one run",
+                        "style": "plain"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "7": {
+    "title": "Conjoined",
+    "revid": 262491,
+    "description": [
+      {
+        "kind": "text",
+        "text": "Conjoined",
+        "style": "bold"
+      },
+      {
+        "kind": "text",
+        "text": " is a ",
+        "style": "plain"
+      },
+      {
+        "kind": "concept",
+        "page": "transformation",
+        "label": "transformation"
+      },
+      {
+        "kind": "text",
+        "text": " added in ",
+        "style": "plain"
+      },
+      {
+        "kind": "concept",
+        "page": "The Binding of Isaac: Afterbirth",
+        "label": "The Binding of Isaac: Afterbirth"
+      },
+      {
+        "kind": "text",
+        "text": ", grows two tumor faces from Isaac's cheeks after picking up 3 baby familiar items.",
+        "style": "plain"
+      },
+      {
+        "kind": "text",
+        "text": " ",
+        "style": "plain"
+      },
+      {
+        "kind": "text",
+        "text": "Adds two tumors that fire diagonally from Isaac's head. -0.3 ",
+        "style": "plain"
+      },
+      {
+        "kind": "concept",
+        "page": "Damage",
+        "label": "Damage"
+      },
+      {
+        "kind": "text",
+        "text": ", -0.3 ",
+        "style": "plain"
+      },
+      {
+        "kind": "concept",
+        "page": "Tears",
+        "label": "Tears"
+      },
+      {
+        "kind": "text",
+        "text": ".",
+        "style": "plain"
+      }
+    ],
+    "dlc": [
+      "afterbirth",
+      "afterbirthPlus",
+      "repentance",
+      "repentancePlus"
+    ],
+    "unlockedBy": null,
+    "infobox": {
+      "kind": "transformation",
+      "requires": 3,
+      "contributors": [
+        {
+          "kind": "item",
+          "id": 8
+        },
+        {
+          "kind": "item",
+          "id": 167
+        },
+        {
+          "kind": "item",
+          "id": 269
+        },
+        {
+          "kind": "item",
+          "id": 100
+        },
+        {
+          "kind": "item",
+          "id": 322
+        },
+        {
+          "kind": "item",
+          "id": 268
+        },
+        {
+          "kind": "item",
+          "id": 67
+        },
+        {
+          "kind": "item",
+          "id": 188
+        },
+        {
+          "kind": "item",
+          "id": 491
+        },
+        {
+          "kind": "item",
+          "id": 607
+        },
+        {
+          "kind": "item",
+          "id": 518
+        },
+        {
+          "kind": "item",
+          "id": 652
+        },
+        {
+          "kind": "item",
+          "id": 113
+        },
+        {
+          "kind": "item",
+          "id": 265
+        },
+        {
+          "kind": "item",
+          "id": 404
+        },
+        {
+          "kind": "item",
+          "id": 608
+        },
+        {
+          "kind": "item",
+          "id": 163
+        },
+        {
+          "kind": "item",
+          "id": 112
+        },
+        {
+          "kind": "item",
+          "id": 360
+        },
+        {
+          "kind": "item",
+          "id": 472
+        },
+        {
+          "kind": "item",
+          "id": 679
+        },
+        {
+          "kind": "item",
+          "id": 275
+        },
+        {
+          "kind": "item",
+          "id": 435
+        },
+        {
+          "kind": "item",
+          "id": 431
+        },
+        {
+          "kind": "item",
+          "id": 661
+        },
+        {
+          "kind": "item",
+          "id": 174
+        },
+        {
+          "kind": "item",
+          "id": 95
+        },
+        {
+          "kind": "item",
+          "id": 267
+        },
+        {
+          "kind": "item",
+          "id": 390
+        },
+        {
+          "kind": "item",
+          "id": 363
+        },
+        {
+          "kind": "item",
+          "id": 698
+        },
+        {
+          "kind": "item",
+          "id": 519
+        }
+      ],
+      "target": []
+    },
+    "sections": [
+      {
+        "kind": "effects",
+        "blocks": [
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "Isaac fires tears from the tumor faces simultaneously and diagonally (similar to the effect of ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 358
+                    },
+                    "label": "The Wiz"
+                  },
+                  {
+                    "kind": "text",
+                    "text": "), while continuing to shoot forwards.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "-0.3 ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "concept",
+                    "page": "damage",
+                    "label": "damage"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " and ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "concept",
+                    "page": "tears",
+                    "label": "tears"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ".",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "notes",
+        "blocks": [
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "Isaac starts with this transformation in ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "challenge",
+                      "number": 19
+                    },
+                    "label": "The Family Man"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " challenge, but due to the challenge's ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "concept",
+                    "page": "blindfolded",
+                    "label": "blindfolded"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " property, it's useless without ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 360
+                    },
+                    "label": "Incubus"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ".",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 99
+                    },
+                    "label": "Little Gish"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ", ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 471
+                    },
+                    "label": "Lil Monstro"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ", ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 519
+                    },
+                    "label": "nr+"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ", and ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "character",
+                      "id": 13
+                    },
+                    "label": "Lilith"
+                  },
+                  {
+                    "kind": "text",
+                    "text": "'s ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 360
+                    },
+                    "label": "Incubus"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " do not contribute toward the transformation.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "Familiars obtained from ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 412
+                    },
+                    "label": "Cambion Conception"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ", ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 413
+                    },
+                    "label": "Immaculate Conception"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " or ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 123
+                    },
+                    "label": "Monster Manual"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " do not contribute toward the transformation.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": " Familiars obtained from ",
+                        "style": "plain"
+                      },
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "concept",
+                          "name": "Soul of Lilith"
+                        },
+                        "label": "n"
+                      },
+                      {
+                        "kind": "text",
+                        "text": " contribute toward the transformation.",
+                        "style": "plain"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": " Using ",
+                        "style": "plain"
+                      },
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 536
+                        },
+                        "label": "Sacrificial Altar"
+                      },
+                      {
+                        "kind": "text",
+                        "text": " can remove Conjoined if it lowers the number of familiars below 3.",
+                        "style": "plain"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "8": {
+    "title": "Leviathan",
+    "revid": 262479,
+    "description": [
+      {
+        "kind": "text",
+        "text": "Leviathan",
+        "style": "bold"
+      },
+      {
+        "kind": "text",
+        "text": " is a ",
+        "style": "plain"
+      },
+      {
+        "kind": "concept",
+        "page": "transformation",
+        "label": "transformation"
+      },
+      {
+        "kind": "text",
+        "text": " added in ",
+        "style": "plain"
+      },
+      {
+        "kind": "concept",
+        "page": "The Binding of Isaac: Afterbirth",
+        "label": "The Binding of Isaac: Afterbirth"
+      },
+      {
+        "kind": "text",
+        "text": ", turning Isaac into a ",
+        "style": "plain"
+      },
+      {
+        "kind": "concept",
+        "page": "wikipedia:Lovecraftian horror",
+        "label": "Lovecraftian horror"
+      },
+      {
+        "kind": "text",
+        "text": " after picking up 3 devil-related items.",
+        "style": "plain"
+      },
+      {
+        "kind": "text",
+        "text": " ",
+        "style": "plain"
+      },
+      {
+        "kind": "text",
+        "text": "Grants ",
+        "style": "plain"
+      },
+      {
+        "kind": "concept",
+        "page": "flight",
+        "label": "flight"
+      },
+      {
+        "kind": "text",
+        "text": " and gives +2 ",
+        "style": "plain"
+      },
+      {
+        "kind": "ref",
+        "target": {
+          "kind": "entity",
+          "id": 5,
+          "variant": 10,
+          "subtype": 6
+        },
+        "label": "Black Heart"
+      },
+      {
+        "kind": "text",
+        "text": "s.",
+        "style": "plain"
+      }
+    ],
+    "dlc": [
+      "afterbirth",
+      "afterbirthPlus",
+      "repentance",
+      "repentancePlus"
+    ],
+    "unlockedBy": null,
+    "infobox": {
+      "kind": "transformation",
+      "requires": 3,
+      "contributors": [
+        {
+          "kind": "item",
+          "id": 83
+        },
+        {
+          "kind": "item",
+          "id": 556
+        },
+        {
+          "kind": "item",
+          "id": 230
+        },
+        {
+          "kind": "item",
+          "id": 118
+        },
+        {
+          "kind": "item",
+          "id": 79
+        },
+        {
+          "kind": "item",
+          "id": 80
+        },
+        {
+          "kind": "item",
+          "id": 51
+        },
+        {
+          "kind": "item",
+          "id": 159
+        },
+        {
+          "kind": "item",
+          "id": 399
+        },
+        {
+          "kind": "item",
+          "id": 572
+        },
+        {
+          "kind": "item",
+          "id": 82
+        }
+      ],
+      "target": []
+    },
+    "sections": [
+      {
+        "kind": "effects",
+        "blocks": [
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "Grants 2 ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "entity",
+                      "id": 5,
+                      "variant": 10,
+                      "subtype": 6
+                    },
+                    "label": "Black Heart"
+                  },
+                  {
+                    "kind": "text",
+                    "text": "s and ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "concept",
+                    "page": "flight",
+                    "label": "flight"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ".",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "notes",
+        "blocks": [
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 692
+                    },
+                    "label": "Sanguine Bond"
+                  },
+                  {
+                    "kind": "text",
+                    "text": "'s spikes have a 2% chance to transform Isaac into Leviathan.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "9": {
+    "title": "Oh Crap",
+    "revid": 269205,
+    "description": [
+      {
+        "kind": "text",
+        "text": "Oh Crap",
+        "style": "bold"
+      },
+      {
+        "kind": "text",
+        "text": " is a ",
+        "style": "plain"
+      },
+      {
+        "kind": "concept",
+        "page": "transformation",
+        "label": "transformation"
+      },
+      {
+        "kind": "text",
+        "text": " added in ",
+        "style": "plain"
+      },
+      {
+        "kind": "concept",
+        "page": "The Binding of Isaac: Afterbirth",
+        "label": "The Binding of Isaac: Afterbirth"
+      },
+      {
+        "kind": "text",
+        "text": ", turning Isaac into poop after picking up 3 poop-related items.",
+        "style": "plain"
+      },
+      {
+        "kind": "text",
+        "text": " ",
+        "style": "plain"
+      },
+      {
+        "kind": "text",
+        "text": "Whenever a pile of ",
+        "style": "plain"
+      },
+      {
+        "kind": "ref",
+        "target": {
+          "kind": "entity",
+          "id": 245,
+          "variant": 0,
+          "subtype": 0
+        },
+        "label": "poop"
+      },
+      {
+        "kind": "text",
+        "text": " is destroyed, restores half of a ",
+        "style": "plain"
+      },
+      {
+        "kind": "ref",
+        "target": {
+          "kind": "entity",
+          "id": 5,
+          "variant": 10,
+          "subtype": 1
+        },
+        "label": "red heart"
+      },
+      {
+        "kind": "text",
+        "text": ".",
+        "style": "plain"
+      }
+    ],
+    "dlc": [
+      "afterbirth",
+      "afterbirthPlus",
+      "repentance",
+      "repentancePlus"
+    ],
+    "unlockedBy": null,
+    "infobox": {
+      "kind": "transformation",
+      "requires": 3,
+      "contributors": [
+        {
+          "kind": "item",
+          "id": 291
+        },
+        {
+          "kind": "item",
+          "id": 36
+        },
+        {
+          "kind": "item",
+          "id": 504
+        },
+        {
+          "kind": "item",
+          "id": 236
+        },
+        {
+          "kind": "item",
+          "id": 209
+        },
+        {
+          "kind": "item",
+          "id": 576
+        },
+        {
+          "kind": "item",
+          "id": 543
+        },
+        {
+          "kind": "item",
+          "id": 680
+        },
+        {
+          "kind": "item",
+          "id": 378
+        },
+        {
+          "kind": "item",
+          "id": 9
+        },
+        {
+          "kind": "item",
+          "id": 725
+        }
+      ],
+      "target": []
+    },
+    "sections": [
+      {
+        "kind": "effects",
+        "blocks": [
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "Heals Isaac half of a red heart each time a ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "entity",
+                      "id": 245,
+                      "variant": 0,
+                      "subtype": 0
+                    },
+                    "label": "pile of poop"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " is destroyed.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "notes",
+        "blocks": [
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "In an uncleared room, Isaac has 1/15 chance every 30 seconds to use the effect of ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 36
+                    },
+                    "label": "The Poop"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ".",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": " Despite being poop-themed, ",
+                        "style": "plain"
+                      },
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 9
+                        },
+                        "label": "Skatole"
+                      },
+                      {
+                        "kind": "text",
+                        "text": ", ",
+                        "style": "plain"
+                      },
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 209
+                        },
+                        "label": "Butt Bombs"
+                      },
+                      {
+                        "kind": "text",
+                        "text": ", and ",
+                        "style": "plain"
+                      },
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 378
+                        },
+                        "label": "n"
+                      },
+                      {
+                        "kind": "text",
+                        "text": " do not count towards the transformation.",
+                        "style": "plain"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": " Despite being poop-themed, ",
+                        "style": "plain"
+                      },
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 725
+                        },
+                        "label": "IBS"
+                      },
+                      {
+                        "kind": "text",
+                        "text": " does not count towards the transformation.",
+                        "style": "plain"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": " Poop created with ",
+                        "style": "plain"
+                      },
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 291
+                        },
+                        "label": "Flush!"
+                      },
+                      {
+                        "kind": "text",
+                        "text": " and ",
+                        "style": "plain"
+                      },
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 236
+                        },
+                        "label": "E. Coli"
+                      },
+                      {
+                        "kind": "text",
+                        "text": " do not heal Isaac when he has this transformation.",
+                        "style": "plain"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "Oh Crap! is useless for any character that cannot have Red Heart Containers such as ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "character",
+                      "id": 4
+                    },
+                    "label": "???"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ", ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "character",
+                      "id": 10
+                    },
+                    "label": "The Lost"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ", ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "character",
+                      "id": 12
+                    },
+                    "label": "Black Judas"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ", ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "character",
+                      "id": 14
+                    },
+                    "label": "Keeper"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ", ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "character",
+                      "id": 25
+                    },
+                    "label": "Tainted ???"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ", ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "character",
+                      "id": 33
+                    },
+                    "label": "Tainted Keeper"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ", ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "character",
+                      "id": 24
+                    },
+                    "label": "Tainted Judas"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ", and ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "character",
+                      "id": 31
+                    },
+                    "label": "Tainted Lost"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ".",
+                    "style": "plain"
+                  }
+                ],
+                "children": [
+                  {
+                    "kind": "list",
+                    "ordered": false,
+                    "items": [
+                      {
+                        "inline": [
+                          {
+                            "kind": "ref",
+                            "target": {
+                              "kind": "character",
+                              "id": 36
+                            },
+                            "label": "Tainted Bethany"
+                          },
+                          {
+                            "kind": "text",
+                            "text": " will get blood charges for destroying poops.",
+                            "style": "plain"
+                          }
+                        ],
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": " The ",
+                        "style": "plain"
+                      },
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "challenge",
+                          "number": 36
+                        },
+                        "label": "Scat Man"
+                      },
+                      {
+                        "kind": "text",
+                        "text": " and ",
+                        "style": "plain"
+                      },
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "challenge",
+                          "number": 2
+                        },
+                        "label": "High Brow"
+                      },
+                      {
+                        "kind": "text",
+                        "text": " challenges start with this transformation.",
+                        "style": "plain"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "10": {
+    "title": "Bookworm",
+    "revid": 262546,
+    "description": [
+      {
+        "kind": "text",
+        "text": "Bookworm",
+        "style": "bold"
+      },
+      {
+        "kind": "text",
+        "text": " is a ",
+        "style": "plain"
+      },
+      {
+        "kind": "concept",
+        "page": "transformation",
+        "label": "transformation"
+      },
+      {
+        "kind": "text",
+        "text": " added in ",
+        "style": "plain"
+      },
+      {
+        "kind": "concept",
+        "page": "The Binding of Isaac: Afterbirth †",
+        "label": "The Binding of Isaac: Afterbirth †"
+      },
+      {
+        "kind": "text",
+        "text": ", giving Isaac a monocle after picking up 3 book items.",
+        "style": "plain"
+      },
+      {
+        "kind": "text",
+        "text": " ",
+        "style": "plain"
+      },
+      {
+        "kind": "text",
+        "text": "Roughly 25% of the time, Isaac shoots an extra tear, like ",
+        "style": "plain"
+      },
+      {
+        "kind": "ref",
+        "target": {
+          "kind": "item",
+          "id": 245
+        },
+        "label": "20/20"
+      },
+      {
+        "kind": "text",
+        "text": ".",
+        "style": "plain"
+      }
+    ],
+    "dlc": [
+      "afterbirthPlus",
+      "repentance",
+      "repentancePlus"
+    ],
+    "unlockedBy": null,
+    "infobox": {
+      "kind": "transformation",
+      "requires": 3,
+      "contributors": [
+        {
+          "kind": "item",
+          "id": 65
+        },
+        {
+          "kind": "item",
+          "id": 33
+        },
+        {
+          "kind": "item",
+          "id": 34
+        },
+        {
+          "kind": "item",
+          "id": 78
+        },
+        {
+          "kind": "item",
+          "id": 287
+        },
+        {
+          "kind": "item",
+          "id": 58
+        },
+        {
+          "kind": "item",
+          "id": 97
+        },
+        {
+          "kind": "item",
+          "id": 545
+        },
+        {
+          "kind": "item",
+          "id": 282
+        },
+        {
+          "kind": "item",
+          "id": 35
+        },
+        {
+          "kind": "item",
+          "id": 123
+        },
+        {
+          "kind": "item",
+          "id": 292
+        },
+        {
+          "kind": "item",
+          "id": 192
+        },
+        {
+          "kind": "item",
+          "id": 712
+        },
+        {
+          "kind": "item",
+          "id": 584
+        }
+      ],
+      "target": []
+    },
+    "sections": [
+      {
+        "kind": "effects",
+        "blocks": [
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "Isaac fires tears from both eyes simultaneously 25% of the time.",
+                    "style": "plain"
+                  }
+                ],
+                "children": [
+                  {
+                    "kind": "list",
+                    "ordered": false,
+                    "items": [
+                      {
+                        "inline": [
+                          {
+                            "kind": "text",
+                            "text": "This effect stacks with items such as ",
+                            "style": "plain"
+                          },
+                          {
+                            "kind": "ref",
+                            "target": {
+                              "kind": "item",
+                              "id": 245
+                            },
+                            "label": "20/20"
+                          },
+                          {
+                            "kind": "text",
+                            "text": ", ",
+                            "style": "plain"
+                          },
+                          {
+                            "kind": "ref",
+                            "target": {
+                              "kind": "item",
+                              "id": 2
+                            },
+                            "label": "The Inner Eye"
+                          },
+                          {
+                            "kind": "text",
+                            "text": " and ",
+                            "style": "plain"
+                          },
+                          {
+                            "kind": "ref",
+                            "target": {
+                              "kind": "item",
+                              "id": 153
+                            },
+                            "label": "Mutant Spider"
+                          },
+                          {
+                            "kind": "text",
+                            "text": ", multiplying the number of tears.",
+                            "style": "plain"
+                          }
+                        ],
+                        "children": []
+                      },
+                      {
+                        "inline": [
+                          {
+                            "kind": "text",
+                            "text": "The chance of firing double tears is not affected by ",
+                            "style": "plain"
+                          },
+                          {
+                            "kind": "concept",
+                            "page": "Luck",
+                            "label": "Luck"
+                          },
+                          {
+                            "kind": "text",
+                            "text": ".",
+                            "style": "plain"
+                          }
+                        ],
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "notes",
+        "blocks": [
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "As ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "character",
+                      "id": 19
+                    },
+                    "label": "Jacob and Esau"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " / ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "character",
+                      "id": 29
+                    },
+                    "label": "Tainted Lazarus"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ", it's not possible to cycle between three books to give both characters the transformation's effect. Each character needs to pick up three different books, meaning six books in total.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": " Unlike ",
+                        "style": "plain"
+                      },
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 245
+                        },
+                        "label": "20/20"
+                      },
+                      {
+                        "kind": "text",
+                        "text": ", the damage of doubled tears is not reduced. Each of the doubled tear shots does full damage.",
+                        "style": "plain"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "11": {
+    "title": "Adult",
+    "revid": 262556,
+    "description": [
+      {
+        "kind": "text",
+        "text": "Adult",
+        "style": "bold"
+      },
+      {
+        "kind": "text",
+        "text": " is a ",
+        "style": "plain"
+      },
+      {
+        "kind": "concept",
+        "page": "transformation",
+        "label": "transformation"
+      },
+      {
+        "kind": "text",
+        "text": " added in ",
+        "style": "plain"
+      },
+      {
+        "kind": "concept",
+        "page": "The Binding of Isaac: Afterbirth †",
+        "label": "The Binding of Isaac: Afterbirth †"
+      },
+      {
+        "kind": "text",
+        "text": ", turns Isaac into an adult upon taking three ",
+        "style": "plain"
+      },
+      {
+        "kind": "concept",
+        "page": "Puberty",
+        "label": "Puberty"
+      },
+      {
+        "kind": "text",
+        "text": " pills.",
+        "style": "plain"
+      },
+      {
+        "kind": "text",
+        "text": " ",
+        "style": "plain"
+      },
+      {
+        "kind": "text",
+        "text": "+1 Red ",
+        "style": "plain"
+      },
+      {
+        "kind": "concept",
+        "page": "Heart container",
+        "label": "Heart container"
+      },
+      {
+        "kind": "text",
+        "text": ".",
+        "style": "plain"
+      }
+    ],
+    "dlc": [
+      "afterbirthPlus",
+      "repentance",
+      "repentancePlus"
+    ],
+    "unlockedBy": null,
+    "infobox": {
+      "kind": "transformation",
+      "requires": null,
+      "contributors": [],
+      "target": []
+    },
+    "sections": [
+      {
+        "kind": "effects",
+        "blocks": [
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "Grants one full ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "concept",
+                    "page": "Red Heart container",
+                    "label": "Red Heart container"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ".",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "Makes Isaac's voice deeper.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "notes",
+        "blocks": [
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "Consuming further Puberty pills has no effect.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "12": {
+    "title": "Spider Baby (Transformation)",
+    "revid": 262550,
+    "description": [
+      {
+        "kind": "text",
+        "text": "Spider Baby",
+        "style": "bold"
+      },
+      {
+        "kind": "text",
+        "text": " is a ",
+        "style": "plain"
+      },
+      {
+        "kind": "concept",
+        "page": "transformation",
+        "label": "transformation"
+      },
+      {
+        "kind": "text",
+        "text": " added in ",
+        "style": "plain"
+      },
+      {
+        "kind": "concept",
+        "page": "The Binding of Isaac: Afterbirth †",
+        "label": "The Binding of Isaac: Afterbirth †"
+      },
+      {
+        "kind": "text",
+        "text": ", giving Isaac a spider familiar after picking up 3 spider-related items.",
+        "style": "plain"
+      },
+      {
+        "kind": "text",
+        "text": " ",
+        "style": "plain"
+      },
+      {
+        "kind": "text",
+        "text": "Spawns a spider familiar that applies random status effects to enemies it comes in contact with.",
+        "style": "plain"
+      }
+    ],
+    "dlc": [
+      "afterbirthPlus",
+      "repentance",
+      "repentancePlus"
+    ],
+    "unlockedBy": null,
+    "infobox": {
+      "kind": "transformation",
+      "requires": 3,
+      "contributors": [
+        {
+          "kind": "item",
+          "id": 288
+        },
+        {
+          "kind": "item",
+          "id": 171
+        },
+        {
+          "kind": "item",
+          "id": 153
+        },
+        {
+          "kind": "item",
+          "id": 89
+        },
+        {
+          "kind": "item",
+          "id": 403
+        },
+        {
+          "kind": "item",
+          "id": 211
+        },
+        {
+          "kind": "item",
+          "id": 377
+        },
+        {
+          "kind": "item",
+          "id": 170
+        },
+        {
+          "kind": "item",
+          "id": 248
+        },
+        {
+          "kind": "item",
+          "id": 234
+        },
+        {
+          "kind": "item",
+          "id": 575
+        },
+        {
+          "kind": "item",
+          "id": 266
+        },
+        {
+          "kind": "item",
+          "id": 717
+        },
+        {
+          "kind": "item",
+          "id": 461
+        },
+        {
+          "kind": "item",
+          "id": 280
+        },
+        {
+          "kind": "item",
+          "id": 367
+        }
+      ],
+      "target": []
+    },
+    "sections": [
+      {
+        "kind": "effects",
+        "blocks": [
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "Spawns a spider ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "concept",
+                    "page": "familiar",
+                    "label": "familiar"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " that applies random ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "concept",
+                    "page": "status effect",
+                    "label": "status effect"
+                  },
+                  {
+                    "kind": "text",
+                    "text": "s to enemies it comes into contact with.",
+                    "style": "plain"
+                  }
+                ],
+                "children": [
+                  {
+                    "kind": "list",
+                    "ordered": false,
+                    "items": [
+                      {
+                        "inline": [
+                          {
+                            "kind": "text",
+                            "text": "Contrary to popular belief, this transformation does not generate friendly spiders on hit.",
+                            "style": "plain"
+                          }
+                        ],
+                        "children": []
+                      },
+                      {
+                        "inline": [
+                          {
+                            "kind": "text",
+                            "text": "Confusingly, that effect is given by the item of the same name, which also contributes to this transformation.",
+                            "style": "plain"
+                          }
+                        ],
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "13": {
+    "title": "Stompy",
+    "revid": 267364,
+    "description": [
+      {
+        "kind": "text",
+        "text": "Stompy",
+        "style": "bold"
+      },
+      {
+        "kind": "text",
+        "text": " is a ",
+        "style": "plain"
+      },
+      {
+        "kind": "concept",
+        "page": "transformation",
+        "label": "transformation"
+      },
+      {
+        "kind": "text",
+        "text": " added in ",
+        "style": "plain"
+      },
+      {
+        "kind": "concept",
+        "page": "The Binding of Isaac: Afterbirth †",
+        "label": "The Binding of Isaac: Afterbirth †"
+      },
+      {
+        "kind": "text",
+        "text": ", making Isaac larger after picking up 3 items or pills that increase his size.",
+        "style": "plain"
+      },
+      {
+        "kind": "text",
+        "text": " ",
+        "style": "plain"
+      },
+      {
+        "kind": "text",
+        "text": "Taking damage has a chance to spawn rock waves. ",
+        "style": "plain"
+      },
+      {
+        "kind": "edition",
+        "only": [
+          "repentance",
+          "repentancePlus"
+        ],
+        "inline": [
+          {
+            "kind": "text",
+            "text": " Isaac can break obstacles by walking over them.",
+            "style": "plain"
+          }
+        ]
+      }
+    ],
+    "dlc": [
+      "afterbirthPlus",
+      "repentance",
+      "repentancePlus"
+    ],
+    "unlockedBy": null,
+    "infobox": {
+      "kind": "transformation",
+      "requires": 3,
+      "contributors": [
+        {
+          "kind": "item",
+          "id": 302
+        },
+        {
+          "kind": "item",
+          "id": 12
+        }
+      ],
+      "target": []
+    },
+    "sections": [
+      {
+        "kind": "effects",
+        "blocks": [
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "Gives a chance to spawn rock waves around Isaac upon taking damage.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": " Isaac can crush rocks and other destructible obstacles by walking over them.",
+                        "style": "plain"
+                      }
+                    ]
+                  }
+                ],
+                "children": [
+                  {
+                    "kind": "list",
+                    "ordered": false,
+                    "items": [
+                      {
+                        "inline": [
+                          {
+                            "kind": "text",
+                            "text": "Touching ",
+                            "style": "plain"
+                          },
+                          {
+                            "kind": "concept",
+                            "page": "Rocks",
+                            "label": "spiked rocks"
+                          },
+                          {
+                            "kind": "text",
+                            "text": " sometimes doesn't deal damage, depending on Isaac's size, speed and angle they're touched from.",
+                            "style": "plain"
+                          }
+                        ],
+                        "children": []
+                      },
+                      {
+                        "inline": [
+                          {
+                            "kind": "text",
+                            "text": "Isaac can also crush ",
+                            "style": "plain"
+                          },
+                          {
+                            "kind": "ref",
+                            "target": {
+                              "kind": "entity",
+                              "id": 818,
+                              "variant": 0,
+                              "subtype": 0
+                            },
+                            "label": "Rock Spider"
+                          },
+                          {
+                            "kind": "text",
+                            "text": "s and ",
+                            "style": "plain"
+                          },
+                          {
+                            "kind": "ref",
+                            "target": {
+                              "kind": "entity",
+                              "id": 818,
+                              "variant": 1,
+                              "subtype": 0
+                            },
+                            "label": "Tinted Rock Spider"
+                          },
+                          {
+                            "kind": "text",
+                            "text": "s by stepping on them. Killing a Rock Spider this way ",
+                            "style": "plain"
+                          },
+                          {
+                            "kind": "text",
+                            "text": "will",
+                            "style": "italic"
+                          },
+                          {
+                            "kind": "text",
+                            "text": " spawn a ",
+                            "style": "plain"
+                          },
+                          {
+                            "kind": "ref",
+                            "target": {
+                              "kind": "entity",
+                              "id": 85,
+                              "variant": 0,
+                              "subtype": 0
+                            },
+                            "label": "Spider"
+                          },
+                          {
+                            "kind": "text",
+                            "text": " which is extremely likely to deal damage to Isaac.",
+                            "style": "plain"
+                          }
+                        ],
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "Creates dust clouds when walking.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "notes",
+        "blocks": [
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "While the ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 314
+                    },
+                    "label": "Thunder Thighs"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " item does not contribute to the ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "transformation",
+                      "id": 13
+                    },
+                    "label": "Stompy"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " transformation, it still grants the ability to crush rocks and other destructible obstacles.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "Picking up items that decrease size do not count against progress for this transformation.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": " This transformation makes it more difficult to effectively use ",
+                        "style": "plain"
+                      },
+                      {
+                        "kind": "concept",
+                        "page": "Blood Donation Machine",
+                        "label": "Blood Donation Machine"
+                      },
+                      {
+                        "kind": "text",
+                        "text": "s and ",
+                        "style": "plain"
+                      },
+                      {
+                        "kind": "concept",
+                        "page": "Devil Beggar",
+                        "label": "Devil Beggar"
+                      },
+                      {
+                        "kind": "text",
+                        "text": "s, as the rock waves will destroy them.",
+                        "style": "plain"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "15": {
+    "title": "Necromancer",
+    "revid": 262562,
+    "description": [
+      {
+        "kind": "text",
+        "text": "Necromancer",
+        "style": "bold"
+      },
+      {
+        "kind": "text",
+        "text": " is a ",
+        "style": "plain"
+      },
+      {
+        "kind": "concept",
+        "page": "transformation",
+        "label": "transformation"
+      },
+      {
+        "kind": "text",
+        "text": " added in ",
+        "style": "plain"
+      },
+      {
+        "kind": "concept",
+        "page": "The Binding of Isaac: Repentance+",
+        "label": "The Binding of Isaac: Repentance+"
+      },
+      {
+        "kind": "text",
+        "text": ", upgrading Isaac's Necronomicon after picking up its page item and trinket.",
+        "style": "plain"
+      },
+      {
+        "kind": "text",
+        "text": " ",
+        "style": "plain"
+      },
+      {
+        "kind": "ref",
+        "target": {
+          "kind": "item",
+          "id": 35
+        },
+        "label": "The Necronomicon"
+      },
+      {
+        "kind": "text",
+        "text": " becomes empowered. It can be used 10 times with no recharge between uses per floor, after which it turns back to normal for the rest of the floor.",
+        "style": "plain"
+      }
+    ],
+    "dlc": [
+      "repentancePlus"
+    ],
+    "unlockedBy": null,
+    "infobox": {
+      "kind": "transformation",
+      "requires": 3,
+      "contributors": [
+        {
+          "kind": "item",
+          "id": 35
+        },
+        {
+          "kind": "item",
+          "id": 262
+        },
+        {
+          "kind": "trinket",
+          "id": 48
+        }
+      ],
+      "target": [
+        {
+          "kind": "ref",
+          "target": {
+            "kind": "item",
+            "id": 35
+          },
+          "label": "The Necronomicon"
+        }
+      ]
+    },
+    "sections": [
+      {
+        "kind": "effects",
+        "blocks": [
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 35
+                    },
+                    "label": "The Necronomicon"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " charge becomes a special purple bar that depletes by 10% each use.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "In this state, The Necronomicon cannot be recharged in any usual manner, but instead recharges fully upon reaching the next floor.",
+                    "style": "plain"
+                  }
+                ],
+                "children": [
+                  {
+                    "kind": "list",
+                    "ordered": false,
+                    "items": [
+                      {
+                        "inline": [
+                          {
+                            "kind": "text",
+                            "text": "If the charge is fully depleted, The Necronomicon turns back to normal for the rest of the floor, starting with an empty charge bar.",
+                            "style": "plain"
+                          }
+                        ],
+                        "children": []
+                      },
+                      {
+                        "inline": [
+                          {
+                            "kind": "text",
+                            "text": "If the charge is not fully depleted upon reaching the next floor, the purple bar can be overcharged, up to one extra full bar.",
+                            "style": "plain"
+                          }
+                        ],
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1000": {
+    "title": "Super Bum",
+    "revid": 269131,
+    "description": [
+      {
+        "kind": "text",
+        "text": "Super Bum",
+        "style": "bold"
+      },
+      {
+        "kind": "text",
+        "text": " is a ",
+        "style": "plain"
+      },
+      {
+        "kind": "concept",
+        "page": "transformation",
+        "label": "transformation"
+      },
+      {
+        "kind": "text",
+        "text": " added in ",
+        "style": "plain"
+      },
+      {
+        "kind": "concept",
+        "page": "The Binding of Isaac: Afterbirth",
+        "label": "The Binding of Isaac: Afterbirth"
+      },
+      {
+        "kind": "text",
+        "text": ", turning Isaac's three bums into Super Bum.",
+        "style": "plain"
+      },
+      {
+        "kind": "text",
+        "text": " ",
+        "style": "plain"
+      },
+      {
+        "kind": "text",
+        "text": "Replaces ",
+        "style": "plain"
+      },
+      {
+        "kind": "ref",
+        "target": {
+          "kind": "item",
+          "id": 144
+        },
+        "label": "Bum Friend"
+      },
+      {
+        "kind": "text",
+        "text": ", ",
+        "style": "plain"
+      },
+      {
+        "kind": "ref",
+        "target": {
+          "kind": "item",
+          "id": 278
+        },
+        "label": "Dark Bum"
+      },
+      {
+        "kind": "text",
+        "text": ", and ",
+        "style": "plain"
+      },
+      {
+        "kind": "ref",
+        "target": {
+          "kind": "item",
+          "id": 388
+        },
+        "label": "n"
+      },
+      {
+        "kind": "text",
+        "text": " with Super Bum. This bum collects any of the other beggars' pickups, and offers twice the rewards.",
+        "style": "plain"
+      }
+    ],
+    "dlc": [
+      "afterbirth",
+      "afterbirthPlus",
+      "repentance",
+      "repentancePlus"
+    ],
+    "unlockedBy": null,
+    "infobox": {
+      "kind": "transformation",
+      "requires": 3,
+      "contributors": [
+        {
+          "kind": "item",
+          "id": 144
+        },
+        {
+          "kind": "item",
+          "id": 278
+        },
+        {
+          "kind": "item",
+          "id": 388
+        }
+      ],
+      "target": [
+        {
+          "kind": "text",
+          "text": "Isaac's bums",
+          "style": "plain"
+        }
+      ]
+    },
+    "sections": [
+      {
+        "kind": "effects",
+        "blocks": [
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "Replaces all bum familiars obtained before or after the transformation with a Super Bum ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "concept",
+                    "page": "familiar",
+                    "label": "familiar"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ", who automatically collects all coins, red hearts, and keys in the room and drops twice as many rewards as the regular bums would have produced.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "notes",
+        "blocks": [
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "This transformation has a unique animation sequence when the third bum is picked up.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "When Dark Bum is obtained through ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 412
+                    },
+                    "label": "n"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ", it does not count towards the transformation.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "If multiple bums of the same kind were present before the transformation, e.g. via ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 357
+                    },
+                    "label": "Box of Friends"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ", all of them will be replaced with only one Super Bum when three different bums are obtained.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": " From a scoring perspective, consumables that Super Bum picks up count towards your Schwag bonus on daily runs.",
+                        "style": "plain"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": " Whenever Super Bum drops items, it will drop 2 copies of the same item.",
+                        "style": "plain"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

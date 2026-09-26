@@ -496,7 +496,7 @@ mod tests {
         }
     }
 
-    /// The three entities that reach `dataset/wiki.json`, measured on the snapshot of
+    /// The three entities that reach `dataset/wiki/`, measured on the snapshot of
     /// 2026-09-13: item 469 reads `&colon;(`, item 601 "Tears up&comma; you feel forgiven",
     /// trinket 138 "t&apos;s broken". All three are pickup quotes, and the wiki writes them
     /// to protect a comma or a colon inside a template argument and an apostrophe against
@@ -794,8 +794,8 @@ mod tests {
     /// that says which is which.
     ///
     /// It named none of them until 2026-09-15: this parser read whole codes one at a time,
-    /// so 1734 uses opened a frame with an empty `only`, and **1690 of those reached
-    /// `wiki.json`**, where `WikiInline.vue` draws no badge (`v-if="token.only.length"`)
+    /// so 1734 uses opened a frame with an empty `only`, and **1690 of those reached the
+    /// dataset**, where `WikiInline.vue` draws no badge (`v-if="token.only.length"`)
     /// and the text arrives saying nothing about which edition it belongs to.
     #[test]
     fn a_removal_code_names_the_editions_before_it() {

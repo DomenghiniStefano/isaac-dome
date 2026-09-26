@@ -489,16 +489,17 @@ behind it, named so the rule can be argued with.
 
 ### Wiki dataset
 
-`dataset/raw/`, `dataset/wiki.json` and `dataset/corrections.json` are committed together:
-the `derived` test in `crates/wiki` enforces `wiki.json == build(raw, corrections)`, so the
-three can never drift without the suite noticing. The snapshot (`pnpm wiki:fetch` +
+`dataset/raw/`, `dataset/wiki/` and `dataset/corrections.json` are committed together:
+the `derived` test in `crates/wiki` compares `dataset/wiki/` (one pretty JSON file per
+collection, plus `meta.json`) against `build(raw, corrections)`, so the three can never drift
+without the suite noticing. The snapshot (`pnpm wiki:fetch` +
 `pnpm wiki:build`) is **one pass per release**, never from the app:
 `wiki::Dataset::embedded()` only reads the derivative embedded at build time, it never
 talks to the wiki at runtime. Source attribution (wiki, URL, license, snapshot date) lives
 in `dataset/ATTRIBUTION.md`, CC BY-SA 4.0: it ships in the package.
 
 **A description the wiki doesn't give is written in `corrections.json`**, under
-`descriptions`, keyed the way `wiki.json` keys its collections (`"achievements": {"637": …}`,
+`descriptions`, keyed the way the dataset keys its collections (`"achievements": {"637": …}`,
 bosses by `id.variant.subtype`). It is wikitext, it wins over the page's, and one naming no
 entry fails `every_hand_written_description_names_an_entry_that_exists`. Rerun
 `pnpm wiki:build` after editing it. Before writing one, know what already fills the gap: a
