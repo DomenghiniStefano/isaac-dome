@@ -36,8 +36,10 @@ pub const TABLES: &[(&str, &str)] = &[
     ("version", "_pageName,number,name,date,dlc"),
 ];
 
-/// How many pages an `embeddedin` request asks for: the maximum allowed for an anonymous user.
-const PAGES_PER_REQUEST: u32 = 50;
+/// How many pages a request asking for wikitext (`prop=revisions`) fetches: the maximum
+/// allowed for an anonymous user once the response also carries content. Shared with
+/// `namespace` (`allpages_url` asks exactly the way `pages_url` does).
+pub(crate) const PAGES_PER_REQUEST: u32 = 50;
 /// How many rows a `cargoquery` request asks for: the maximum allowed for an anonymous user.
 pub const ROWS_PER_REQUEST: usize = 500;
 
@@ -90,6 +92,17 @@ fn url_encode_byte(b: u8) -> String {
     }
 }
 
+/// Appends a `continue` map to a base URL, each key percent-encoded: the tail every
+/// paginated URL in this crate shares, whatever the map's own key names are
+/// (`geicontinue`, `gapcontinue`, `eicontinue`). `pub(crate)`: `namespace`'s URLs share it.
+pub(crate) fn with_continuation(base: String, cont: &Continue) -> String {
+    let continuation: String = cont
+        .iter()
+        .map(|(k, v)| format!("&{}={}", url_encode(k), url_encode(v)))
+        .collect();
+    base + &continuation
+}
+
 /// The URL that lists pages transcluding `template`, with the text of the latest revision;
 /// `cont` is the `continue` map from the previous response (empty on the first request).
 pub fn pages_url(template: &str, cont: &Continue) -> String {
@@ -99,11 +112,7 @@ pub fn pages_url(template: &str, cont: &Continue) -> String {
          &rvslots=main&format=json&formatversion=2&maxlag=5",
         url_encode(template)
     );
-    let continuation: String = cont
-        .iter()
-        .map(|(k, v)| format!("&{}={}", url_encode(k), url_encode(v)))
-        .collect();
-    base + &continuation
+    with_continuation(base, cont)
 }
 
 /// The URL for a page of `ROWS_PER_REQUEST` rows of a Cargo table.
@@ -117,8 +126,9 @@ pub fn cargo_url(table: &str, fields: &str, offset: usize) -> String {
 }
 
 /// Parses the JSON and rejects a response carrying `error` (`maxlag`, bad
-/// parameters, …): the message includes the wiki's code and text.
-fn parse_response(json: &str) -> Result<Value, String> {
+/// parameters, …): the message includes the wiki's code and text. `pub(crate)`:
+/// `namespace`'s parsers share it, every response in this crate carrying the same shape.
+pub(crate) fn parse_response(json: &str) -> Result<Value, String> {
     let v: Value = serde_json::from_str(json).map_err(|e| format!("response is not JSON: {e}"))?;
     if let Some(err) = v.get("error") {
         let code = err.get("code").and_then(Value::as_str).unwrap_or("?");
@@ -128,7 +138,7 @@ fn parse_response(json: &str) -> Result<Value, String> {
     Ok(v)
 }
 
-fn str_field(v: &Value, name: &str, what: &str) -> Result<String, String> {
+pub(crate) fn str_field(v: &Value, name: &str, what: &str) -> Result<String, String> {
     v.get(name)
         .and_then(Value::as_str)
         .map(str::to_string)
@@ -165,13 +175,8 @@ pub struct PageBatch {
 /// A page without `revisions` is never an error here: that's decided by whoever sees all the batches.
 pub fn parse_pages(json: &str) -> Result<PageBatch, String> {
     let v = parse_response(json)?;
-    let cont = v
-        .get("continue")
-        .and_then(Value::as_object)
-        .map(continue_map)
-        .transpose()?;
     let mut batch = PageBatch {
-        cont,
+        cont: response_continue(&v)?,
         ..PageBatch::default()
     };
     // With no results, the wiki omits `query` entirely.
@@ -219,6 +224,16 @@ fn continue_map(map: &serde_json::Map<String, Value>) -> Result<Continue, String
                 .ok_or_else(|| format!("continue: `{k}` is not a string"))
         })
         .collect()
+}
+
+/// The `continue` map of a response, parsed the way every paginated response in this
+/// crate reads it: absent when there's no `continue` object at all. `pub(crate)`:
+/// `namespace`'s parsers share it.
+pub(crate) fn response_continue(v: &Value) -> Result<Option<Continue>, String> {
+    v.get("continue")
+        .and_then(Value::as_object)
+        .map(continue_map)
+        .transpose()
 }
 
 /// The bookkeeping for one kind across its batches: who was listed without text and
