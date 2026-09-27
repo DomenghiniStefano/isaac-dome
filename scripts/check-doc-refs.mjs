@@ -29,6 +29,10 @@ import { execFileSync } from 'child_process'
 // Known-legitimate unresolved references: `path` as the document writes it, and why it is not
 // a defect. A name that stops appearing here has either been fixed or the document changed.
 const EXEMPTIONS = [
+  {
+    path: 'dataset/wiki.json',
+    why: 'became dataset/wiki/, one file per collection; the dated wiki specs and the BACKLOG entries name the single file they were written against',
+  },
   // Card #82 (2026-09-25) split two ipc files into modules and removed dead code; the dated
   // specs name the files they were written against.
   {
