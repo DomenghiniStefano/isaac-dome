@@ -7,7 +7,7 @@
 use std::collections::BTreeMap;
 use std::path::Path;
 
-use wiki::{page_file_name, ArticleCategory, IndexEntry, PageKind, Row};
+use wiki::{page_file_name, ArticleCategory, IndexEntry, PageKind, Row, CONTENT_TEMPLATES};
 
 use crate::admit::{file_page, KindFetch};
 use crate::api::{
@@ -296,16 +296,18 @@ pub fn fetch(out: &Path) -> Outcome {
         .map_err(|e| io_error(&redirects_path, e))?;
     println!("redirects.json: {} redirects", redirects.len());
 
-    let wikitext = fetch_template_wikitext("Template:Infobox character")?;
-    let template_path = out
-        .join("templates")
-        .join(format!("{}.wikitext", page_file_name("Infobox character")));
-    let changed = write_if_changed(&template_path, &page_bytes(&wikitext))
-        .map_err(|e| io_error(&template_path, e))?;
-    println!(
-        "templates/Infobox character.wikitext: {}",
-        if changed { "written" } else { "unchanged" }
-    );
+    for title in CONTENT_TEMPLATES {
+        let wikitext = fetch_template_wikitext(&format!("Template:{title}"))?;
+        let template_path = out
+            .join("templates")
+            .join(format!("{}.wikitext", page_file_name(title)));
+        let changed = write_if_changed(&template_path, &page_bytes(&wikitext))
+            .map_err(|e| io_error(&template_path, e))?;
+        println!(
+            "templates/{title}.wikitext: {}",
+            if changed { "written" } else { "unchanged" }
+        );
+    }
 
     write_index(out, &index)?;
     println!("index.json: {} pages", index.len());

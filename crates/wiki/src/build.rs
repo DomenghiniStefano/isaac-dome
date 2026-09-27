@@ -44,18 +44,21 @@ fn leading_id(ib: &RawInfobox) -> Option<u32> {
 /// Builds the dataset. Pages are visited in (kind, title) order; a key that recurs keeps
 /// the first entry.
 pub fn build(raw: &Raw, corrections: &Corrections) -> Dataset {
+    // `Raw::templates` is the one place every content template's own wikitext lives
+    // (`CONTENT_TEMPLATES`); `with_templates` stores it, lowercased by name, for anything in
+    // this crate that later reaches one by name (`blocks::transclusion_line`).
+    let r = Resolver::new(&raw.tables, &characters(raw), corrections)
+        .with_templates(raw.templates.clone());
     // Design decision 4: a character page's base stats default to the ones
-    // `Template:Infobox character` itself declares. `template_infobox_character` is `None`
-    // until the template-defaults fetch runs, and `stat_defaults` degrades an unexpected
-    // shape to an empty map — either way `with_character_stat_defaults` then leaves every
-    // stat as `text()` alone would.
-    let character_stat_defaults = raw
-        .template_infobox_character
-        .as_deref()
+    // `Template:Infobox character` itself declares — read back from the resolver rather than
+    // from `raw` directly, so this crate has one way to reach a stored template's text, not
+    // two. Absent (the template-defaults fetch hasn't run) or an unexpected shape both
+    // degrade to an empty map, which leaves every stat as `text()` alone would.
+    let character_stat_defaults = r
+        .template("Infobox character")
         .map(stat_defaults)
         .unwrap_or_default();
-    let r = Resolver::new(&raw.tables, &characters(raw), corrections)
-        .with_character_stat_defaults(character_stat_defaults);
+    let r = r.with_character_stat_defaults(character_stat_defaults);
     let mut ds = Dataset::empty();
     // Carried through as-is: `Dataset::entry` chases a redirect to resolve a `Stage`, `Room`
     // or `Concept` target to its article (design decision 3), and `resolve_concepts_to_articles`
@@ -305,7 +308,7 @@ mod tests {
                 row(&[("number", "v1.9.7.17"), ("date", "2026-04-20")]),
             ],
             redirects: BTreeMap::new(),
-            template_infobox_character: None,
+            templates: BTreeMap::new(),
         }
     }
 

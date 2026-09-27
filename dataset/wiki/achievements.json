@@ -1629,17 +1629,7 @@
       "requirements": [
         {
           "kind": "text",
-          "text": "Obtain three ",
-          "style": "plain"
-        },
-        {
-          "kind": "concept",
-          "page": "category:Yes Mother? items",
-          "label": "Yes Mother? items"
-        },
-        {
-          "kind": "text",
-          "text": " in one run",
+          "text": "Obtain three Yes Mother? items in one run",
           "style": "plain"
         }
       ],

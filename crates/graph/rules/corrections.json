@@ -140,9 +140,6 @@
     "concept:XV - The Devil?": {
       "notAPrerequisite": true
     },
-    "concept:Yes Mother? items": {
-      "notAPrerequisite": true
-    },
     "entity:???": {
       "alwaysAvailable": true
     },

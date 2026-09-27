@@ -4841,9 +4841,9 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "wikipedia:Psycho (1960 film)",
-                    "label": "Psycho"
+                    "kind": "text",
+                    "text": "Psycho",
+                    "style": "italic"
                   },
                   {
                     "kind": "text",
@@ -4926,17 +4926,7 @@
                     "inline": [
                       {
                         "kind": "text",
-                        "text": "Obtain three ",
-                        "style": "plain"
-                      },
-                      {
-                        "kind": "concept",
-                        "page": "category:Yes Mother? items",
-                        "label": "Yes Mother? items"
-                      },
-                      {
-                        "kind": "text",
-                        "text": " in one run",
+                        "text": "Obtain three Yes Mother? items in one run",
                         "style": "plain"
                       }
                     ]
@@ -6276,17 +6266,7 @@
       },
       {
         "kind": "text",
-        "text": ", turning Isaac into a ",
-        "style": "plain"
-      },
-      {
-        "kind": "concept",
-        "page": "wikipedia:Lovecraftian horror",
-        "label": "Lovecraftian horror"
-      },
-      {
-        "kind": "text",
-        "text": " after picking up 3 devil-related items.",
+        "text": ", turning Isaac into a Lovecraftian horror after picking up 3 devil-related items.",
         "style": "plain"
       },
       {

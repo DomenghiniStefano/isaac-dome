@@ -8,9 +8,9 @@
 mod tabber;
 mod table;
 
-use crate::inline::{name_list_items, parse_inline};
+use crate::inline::{name_list_items, parse_inline, try_comment};
 use crate::resolver::Resolver;
-use crate::template::{template_segments, Segment, Template};
+use crate::template::{parse_template_at, template_segments, Segment, Template};
 use crate::{Block, Diagnostics, ListItem};
 
 /// A list item still to be built: depth, whether the last marker is `#`, text.
@@ -34,6 +34,11 @@ struct Parser<'a> {
     /// this its Lua listing read as loose paragraph text and its own `}` (a table literal,
     /// not `{{…}}`'s closer) as an orphaned one.
     in_verbatim: bool,
+    /// `false` only while reading a stored content template's own wikitext
+    /// ([`parse_blocks_inner`]'s doc comment says why): a bare line naming one falls through
+    /// to producing nothing, same as before it had a reader at all, instead of expanding
+    /// again.
+    expand_transclusions: bool,
 }
 
 /// A template whose content is block-level, and what this pass is allowed to do with it.
@@ -44,6 +49,14 @@ enum Wrapper {
     /// (`column list`) or that the box scrolls (`scroll box`), and the content it holds is
     /// already blocks. Dropped whole, because nothing it says is lost.
     Layout { param: &'static str },
+    /// No content at all, not even a named parameter worth reinserting: a wrapper Decision
+    /// 10 already excludes with a reason (`item pool`'s price-type box, `collection page`'s
+    /// grid recreation, `function`'s Lua signature, `slideshow`'s image gallery), and whose
+    /// multi-line span, left un-unwrapped like any other unknown template, left its own
+    /// closing `}}` stranded on a line of its own — 70 of them, one per span, until this.
+    /// Distinct from `Layout`: that one still owes its `content=` parameter a place in the
+    /// tree, this one owes nothing because task 1 already decided there is nothing to keep.
+    Dropped,
     /// Content whose wrapper the tree already carries somewhere else. Every `{{bug|…}}`
     /// that spans lines sits under `== Bugs ==`, which is `SectionKind::Bugs`, and the
     /// single-line case has been dropped inline since `CONTENT_WRAPPERS` existed: keeping
@@ -63,10 +76,23 @@ enum Wrapper {
 /// `column list` 55, `bug` 9, `book of virtues synergy` 6, `scroll box` 1,
 /// `book of belial synergy` 1. A closed list on purpose — a family that is not here is
 /// counted by `text_nodes_carry_no_raw_template_syntax` rather than guessed at.
+///
+/// `item pool`, `collection page`, `function` and `slideshow` joined on 2026-09-27 (card #86
+/// fix 2): all four are excluded with a reason in `corrections.json` (task 1 — none of them
+/// carries structure worth reading), but every one is written multi-line, and an excluded
+/// name is still an *unknown* one to this pass — the same "unknown template, left as its own
+/// source" fallback `push_template` gives anything not in this list, whose last line is
+/// nothing but the template's own closing `}}`. 70 orphan closers, on exactly the pages that
+/// use these four (measured with `examples/probe_orphans.rs`), and zero left once they are
+/// unwrapped instead — none of the 70 was the wiki's own malformed markup.
 fn wrapper(name: &str) -> Option<Wrapper> {
     match name {
         "column list" | "scroll box" => Some(Wrapper::Layout { param: "content" }),
-        "bug" => Some(Wrapper::Transparent),
+        "item pool" | "collection page" | "function" | "slideshow" => Some(Wrapper::Dropped),
+        // `{{bug|…}}` and `{{quote|…}}`: a sentence (or several) with nothing around it to
+        // draw, the same reason `bug`'s own content wrapper applies to `quote` too — a block
+        // quote (Keeper ARG's voicemail transcripts) written across several lines.
+        "bug" | "quote" => Some(Wrapper::Transparent),
         "book of virtues synergy" | "book of belial synergy" => Some(Wrapper::Headed {
             param: "description",
         }),
@@ -123,6 +149,7 @@ fn push_template(out: &mut String, t: &Template, source: &str, after: &str) {
     }
     match wrapper(&t.name) {
         Some(Wrapper::Layout { param }) => push_content(out, t.named.get(param), after),
+        Some(Wrapper::Dropped) => {}
         Some(Wrapper::Transparent) => push_content(out, t.args.first(), after),
         Some(Wrapper::Headed { param }) => push_headed(out, t, param, source, after),
         None => out.push_str(source),
@@ -147,6 +174,21 @@ fn push_headed(out: &mut String, t: &Template, param: &str, source: &str, after:
 }
 
 pub fn parse_blocks(body: &str, r: &Resolver, d: &mut Diagnostics) -> Vec<Block> {
+    parse_blocks_inner(body, r, d, true)
+}
+
+/// `expand_transclusions` is `false` only on the recursive call
+/// [`Parser::transclusion_line`] makes to read a stored content template's own wikitext:
+/// that text is never itself allowed to transclude another one, the same bounded-depth
+/// reasoning `inline::MAX_TEMPLATE_DEPTH` uses, sized down to "never" because nothing
+/// legitimate nests these — a template that somehow named itself would otherwise recurse
+/// without end on external data this parser must not trust.
+fn parse_blocks_inner(
+    body: &str,
+    r: &Resolver,
+    d: &mut Diagnostics,
+    expand_transclusions: bool,
+) -> Vec<Block> {
     let mut p = Parser {
         r,
         d,
@@ -155,6 +197,7 @@ pub fn parse_blocks(body: &str, r: &Resolver, d: &mut Diagnostics) -> Vec<Block>
         list: Vec::new(),
         table: None,
         in_verbatim: false,
+        expand_transclusions,
     };
     for raw in unwrapped(body).lines() {
         p.line(raw.trim_end());
@@ -227,7 +270,7 @@ impl Parser<'_> {
             return;
         }
         self.flush_list();
-        if !self.name_list_line(trimmed) {
+        if !self.name_list_line(trimmed) && !self.transclusion_line(trimmed) {
             self.paragraph_line(trimmed);
         }
     }
@@ -251,6 +294,36 @@ impl Parser<'_> {
             ordered: false,
             items,
         });
+        true
+    }
+
+    /// Card #86, task 3: a line that is nothing but a bare content-template call — the same
+    /// "trailing whitespace and a comment allowed" shape `name_list_items` reads — is
+    /// replaced by the blocks its own `Template:` page's wikitext parses into, when the
+    /// fetch downloaded that page and stored it (`Resolver::template`, any name
+    /// `CONTENT_TEMPLATES` lists, not two hardcoded ones: a new content template earns this
+    /// for free the moment it is added there and to that list, with nothing to change here).
+    /// `false` for any other line, for a name the resolver has no wikitext for (the fetch
+    /// hasn't run, or the name isn't a content template at all), and while already expanding
+    /// one (`expand_transclusions`): in every one of those cases the line falls through to
+    /// producing nothing, exactly as it did before any content template had a reader.
+    fn transclusion_line(&mut self, trimmed: &str) -> bool {
+        if !self.expand_transclusions {
+            return false;
+        }
+        let Some((t, end)) = parse_template_at(trimmed, 0) else {
+            return false;
+        };
+        let Some(wikitext) = self.r.template(&t.name) else {
+            return false;
+        };
+        let rest = trimmed.get(end..).unwrap_or_default().trim();
+        if !rest.is_empty() && try_comment(rest) != Some(rest.len()) {
+            return false;
+        }
+        self.flush_para();
+        let blocks = parse_blocks_inner(wikitext, self.r, self.d, false);
+        self.out.extend(blocks);
         true
     }
 
@@ -479,6 +552,29 @@ mod tests {
         // Nothing of the wrapper survives, neither its opener nor the line that closed it.
         assert_eq!(blocks.len(), 1, "{blocks:?}");
         assert_eq!(items[0].inline, t("The flies:"));
+    }
+
+    /// Card #86 fix 2: a multi-line `Wrapper::Dropped` template (Devil Room (Item Pool)'s own
+    /// `{{item pool | price type = health}}` box) used to leave its own closing `}}` on a
+    /// line of its own — an orphan closer, 70 of them across every page that used one of the
+    /// four templates in this family before this. Unwrapped like any other layout wrapper,
+    /// nothing of it survives and nothing is left to count.
+    #[test]
+    fn a_dropped_multiline_wrapper_leaves_no_orphan_closer() {
+        let (blocks, d) = pd(concat!(
+            "{{item pool\n",
+            " | price type = health\n",
+            "}}\n",
+            "\n",
+            "The Devil Room pool.\n",
+        ));
+        assert_eq!(d.orphan_closers, 0, "{d:?}");
+        assert_eq!(
+            blocks,
+            vec![Block::Paragraph {
+                inline: t("The Devil Room pool.")
+            }]
+        );
     }
 
     /// GB Bug's "Algorithm" section: a `<syntaxhighlight>` tag opens mid-line, inside a list
@@ -875,5 +971,90 @@ mod tests {
             2,
             "{inline:?}"
         );
+    }
+
+    /// Card #86, task 3: a bare `{{book of virtues synergy list}}` line, with the template's
+    /// own wikitext fetched and stored on the resolver, becomes the blocks that wikitext
+    /// parses into — the item's page carries the "Combinations" table for real instead of
+    /// producing nothing.
+    #[test]
+    fn a_synergy_list_expands_the_stored_template_wikitext() {
+        let mut templates = std::collections::BTreeMap::new();
+        templates.insert(
+            "book of virtues synergy list".to_string(),
+            "* {{i|Breakfast}}: heals extra hearts.".to_string(),
+        );
+        let r = test_resolver().with_templates(templates);
+        let blocks = parse_blocks(
+            "{{Book of Virtues synergy list}}",
+            &r,
+            &mut Diagnostics::default(),
+        );
+        let Block::List { items, .. } = &blocks[0] else {
+            panic!("a list, got {blocks:?}")
+        };
+        assert_eq!(items.len(), 1, "{items:?}");
+        assert!(
+            items[0].inline.iter().any(|i| matches!(
+                i,
+                Inline::Ref {
+                    target: Target::Item { id: 25 },
+                    ..
+                }
+            )),
+            "{:?}",
+            items[0].inline
+        );
+    }
+
+    /// Not two hardcoded names: any name `Resolver::template` answers for expands the same
+    /// way, so a content template added later needs no change here — only a new entry in
+    /// `CONTENT_TEMPLATES` and whatever reads it downstream.
+    #[test]
+    fn a_transclusion_line_expands_whatever_template_name_the_resolver_has_stored() {
+        let mut templates = std::collections::BTreeMap::new();
+        templates.insert(
+            "some future content template".to_string(),
+            "* {{i|Breakfast}}: a made-up example.".to_string(),
+        );
+        let r = test_resolver().with_templates(templates);
+        let blocks = parse_blocks(
+            "{{Some Future Content Template}}",
+            &r,
+            &mut Diagnostics::default(),
+        );
+        assert!(
+            matches!(&blocks[0], Block::List { items, .. } if items.len() == 1),
+            "{blocks:?}"
+        );
+    }
+
+    /// The fetch that downloads a content template hasn't always run: with no wikitext
+    /// stored on the resolver (`test_resolver()`'s own default), the bare template line
+    /// falls through to producing nothing — today's behaviour, unaffected until then.
+    #[test]
+    fn a_transclusion_with_no_stored_template_produces_nothing() {
+        assert!(p("{{Book of Virtues synergy list}}\n").is_empty());
+        assert!(p("{{Book of Belial synergy list}}\n").is_empty());
+    }
+
+    /// A pathological self-reference (the stored wikitext itself naming the template that
+    /// transcludes it) must not recurse without end on data this parser does not control:
+    /// the inner occurrence falls through to the inline fallback, which is nothing, same as
+    /// `a_transclusion_with_no_stored_template_produces_nothing`.
+    #[test]
+    fn a_transclusion_naming_itself_does_not_recurse() {
+        let mut templates = std::collections::BTreeMap::new();
+        templates.insert(
+            "book of virtues synergy list".to_string(),
+            "{{Book of Virtues synergy list}}".to_string(),
+        );
+        let r = test_resolver().with_templates(templates);
+        let blocks = parse_blocks(
+            "{{Book of Virtues synergy list}}",
+            &r,
+            &mut Diagnostics::default(),
+        );
+        assert!(blocks.is_empty(), "{blocks:?}");
     }
 }
