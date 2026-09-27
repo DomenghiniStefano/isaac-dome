@@ -6,7 +6,7 @@
 //! already — a wrong path doesn't raise an error, it goes quiet.
 
 use catalog::{Catalog, SpriteRef};
-use ipc::{icon_source, IconRef, IconSource, ItemKindView, MarkFill, MarkTier, Target};
+use ipc::{icon_source, IconRef, IconSource, ItemKindView, MarkFill, MarkTier, Placement, Target};
 
 /// Most of this file only cares about the single-sprite case: the other outcome
 /// (`IconSource::Entity`) is `app/icons.rs`'s to read and compose, and only
@@ -389,41 +389,62 @@ fn a_non_boss_entitys_page_resolves_to_its_anm2_not_a_sprite() {
     );
 }
 
-// Which references are served trimmed to their drawing, and which are served as the anm2
-// cut them. It is a reading of the game and not a preference, so it lives in the pure crate
-// and `app/icons.rs` only obeys it.
+// Where each reference's drawing sits in the picture served for it. It is a reading of the
+// game and not a preference, so it lives in the pure crate and `app/icons.rs` only obeys it.
 //
-// Only the room kinds. Their sheet is the one measured off-centre (`sprite_png::trim_opaque`),
-// and the Floor's cell is the one place that draws a sprite at a fixed pixel scale inside a
-// 2rem square. Everywhere else a sprite is fitted to a box, so trimming would rescale
-// pictures on six screens to fix one — the same drawing bigger on the row whose margin
-// happened to be wider.
+// Rooms are trimmed (`sprite_png::trim_opaque`): the Floor's cell draws a sprite at a fixed
+// pixel scale inside a 2rem square. A sprite fitted to a box is centred in its own frame
+// instead (`sprite_png::centre_opaque`) — the item and trinket sheets leave the drawing off the
+// middle — keeping its size, so the same drawing never grows on the row with the wider margin.
 
 #[test]
-fn only_a_room_icon_is_trimmed_to_its_drawing() {
-    assert!(IconRef::Room {
-        kind: ipc::RoomKindView::Boss
-    }
-    .trims_to_drawing());
-    let fitted = [
-        IconRef::Achievement { id: 19 },
+fn only_a_room_icon_is_trimmed_and_a_fitted_sprite_is_centred_in_its_frame() {
+    assert_eq!(
+        IconRef::Room {
+            kind: ipc::RoomKindView::Boss
+        }
+        .placement(),
+        Placement::Trimmed
+    );
+    let centred = [
         IconRef::Item {
             kind: ItemKindView::Passive,
             id: 92,
         },
-        IconRef::Mark {
-            column: 0,
-            tier: MarkTier::Hard,
+        IconRef::Item {
+            kind: ItemKindView::Trinket,
+            id: 1,
         },
         IconRef::Head { row: 0 },
         IconRef::Page {
             target: Target::Item { id: 105 },
         },
+        IconRef::Entity {
+            id: 10,
+            variant: 0,
+            subtype: 0,
+        },
+        IconRef::Unknown,
     ];
-    for reference in fitted {
-        assert!(
-            !reference.trims_to_drawing(),
-            "{reference:?} is fitted to a box: trimming would rescale it"
+    for reference in centred {
+        assert_eq!(
+            reference.placement(),
+            Placement::Centred,
+            "{reference:?} is fitted to a box: its drawing moves to the middle, its size stays"
+        );
+    }
+    let declared = [
+        IconRef::Achievement { id: 19 },
+        IconRef::Mark {
+            column: 0,
+            tier: MarkTier::Hard,
+        },
+    ];
+    for reference in declared {
+        assert_eq!(
+            reference.placement(),
+            Placement::AsDeclared,
+            "{reference:?}"
         );
     }
 }
@@ -434,7 +455,11 @@ fn every_room_kind_is_trimmed_not_only_the_ones_with_an_icon() {
     // about whether it resolves: a kind that gains an icon in a patch must not need a second
     // decision here to be drawn like its thirteen neighbours.
     for kind in ipc::ROOM_KINDS {
-        assert!(IconRef::Room { kind }.trims_to_drawing(), "{kind:?}");
+        assert_eq!(
+            IconRef::Room { kind }.placement(),
+            Placement::Trimmed,
+            "{kind:?}"
+        );
     }
 }
 
@@ -498,10 +523,13 @@ fn a_widget_address_of_the_wrong_shape_is_not_ours() {
 fn the_widget_is_not_trimmed_to_its_drawing() {
     // The paper's margin is where the marks are placed: trimming it would move every one of
     // them, and the offsets are the game's own.
-    assert!(!IconRef::Widget {
-        fills: fills("hn----------")
-    }
-    .trims_to_drawing());
+    assert_eq!(
+        IconRef::Widget {
+            fills: fills("hn----------")
+        }
+        .placement(),
+        Placement::AsDeclared
+    );
 }
 
 #[test]
@@ -517,10 +545,10 @@ fn the_unknown_sprite_is_a_reference_like_any_other() {
 }
 
 #[test]
-fn the_unknown_sprite_is_served_whole_like_the_items_it_stands_for() {
-    // It sits in the same box as an item's icon, at the same size, and is fitted to it the
-    // same way: trimming it would make it bigger than the pictures around it.
-    assert!(!IconRef::Unknown.trims_to_drawing());
+fn the_unknown_sprite_is_placed_like_the_items_it_stands_for() {
+    // It sits in the same box as an item's icon, at the same size: centred like them, never
+    // trimmed, which would make it bigger than the pictures around it.
+    assert_eq!(IconRef::Unknown.placement(), Placement::Centred);
 }
 
 #[test]

@@ -29,7 +29,7 @@ const factsFor = (target: WikiPageRef['target']): PageFacts => {
     case 'achievement':
       return { kind: 'achievement', requirement: '', unlocks: null }
     case 'entity':
-      return { kind: 'boss', baseHp: null, floors: '' }
+      return { kind: 'boss', baseHp: null, floors: [] }
     case 'challenge':
       return {
         kind: 'challenge',
