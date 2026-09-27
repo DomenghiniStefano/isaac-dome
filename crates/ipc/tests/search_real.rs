@@ -5,7 +5,7 @@
 use std::time::Instant;
 
 use catalog::Catalog;
-use ipc::{search, IconRef, SearchIndex, Target};
+use ipc::{search, IconRef, SearchCatalog, SearchIndex, Target};
 use unpack::ResourceSet;
 use wiki::Dataset;
 
@@ -31,20 +31,18 @@ fn brimstone_finds_its_own_page_first() {
         let rs = ResourceSet::open(&p);
         Catalog::build(|f| rs.read(f))
     });
+    let bosses = catalog
+        .as_ref()
+        .map(ipc::for_tests::bosses)
+        .unwrap_or_default();
+    let game = SearchCatalog {
+        catalog: catalog.as_ref(),
+        bosses: &bosses,
+        dataset: Some(ds),
+    };
     for query in ["brimstone", "the lost", "mom's heart"] {
         let at = Instant::now();
-        let view = search(
-            &index,
-            catalog.as_ref(),
-            &catalog
-                .as_ref()
-                .map(ipc::for_tests::bosses)
-                .unwrap_or_default(),
-            None,
-            query,
-            300,
-            link,
-        );
+        let view = search(&index, &game, None, query, 300, link);
         eprintln!(
             "search: {query:?} → {} hits of {} in {} ms",
             view.hits.len(),
@@ -52,18 +50,7 @@ fn brimstone_finds_its_own_page_first() {
             at.elapsed().as_millis()
         );
     }
-    let view = search(
-        &index,
-        catalog.as_ref(),
-        &catalog
-            .as_ref()
-            .map(ipc::for_tests::bosses)
-            .unwrap_or_default(),
-        None,
-        "brimstone",
-        30,
-        link,
-    );
+    let view = search(&index, &game, None, "brimstone", 30, link);
     assert_eq!(
         view.hits.first().map(|h| h.target.clone()),
         Some(Target::Item { id: 118 }),

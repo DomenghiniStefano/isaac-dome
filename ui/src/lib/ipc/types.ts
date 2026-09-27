@@ -1412,6 +1412,10 @@ export type WikiCounts = {
    */
   stages: number
   /**
+   * Articles under `ArticleCategory::Version`: the "Added in …" patch and version pages.
+   */
+  versions: number
+  /**
    * The whole `articles` collection, category or none: what search counts against.
    */
   articles: number
@@ -1462,6 +1466,7 @@ export const WikiPageCategory = {
   CardsAndRunes: 'cardsAndRunes',
   Pickups: 'pickups',
   Stages: 'stages',
+  Versions: 'versions',
 } as const
 export type WikiPageCategory =
   (typeof WikiPageCategory)[keyof typeof WikiPageCategory]
@@ -1478,10 +1483,28 @@ export type WikiPageRef = {
 }
 
 /**
+ * A landing tile's own picture, by its category: not a random find, a checked one — see
+ * `category_sample`.
+ */
+export type CategorySample = {
+  category: WikiPageCategory
+  iconUrl: string | null
+}
+
+/**
  * Every page the dataset has, once per window (spec 3.5, Decision 2): what the tab labels,
  * the category lists and the icon of every reference inside a page are read from.
  */
-export type WikiIndex = { info: WikiInfo; pages: Array<WikiPageRef> }
+export type WikiIndex = {
+  info: WikiInfo
+  pages: Array<WikiPageRef>
+  /**
+   * One representative picture per landing tile (design decision 5's "as many pictures as
+   * the game gives"), in `WIKI_PAGE_CATEGORIES` order. `icon_url: None` is the fallback
+   * icon, the same drawing the tile has without the game — not a broken image.
+   */
+  samples: Array<CategorySample>
+}
 
 /**
  * Where a target stands in the profile. Fieldless: a bare string.

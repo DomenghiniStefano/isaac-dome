@@ -66,6 +66,7 @@ export const en: MessageSchema = {
     cardsAndRunes: 'Cards and Runes',
     pickups: 'Pickups',
     stages: 'Stages',
+    versions: 'Versions',
   },
   sidebar: {
     progressTitle: 'Progress',
@@ -489,8 +490,11 @@ export const en: MessageSchema = {
       cardOrRune: 'Card or Rune',
       pickup: 'Pickup',
       stage: 'Stage',
+      version: 'Version',
     },
     revision: 'rev. {revision}',
+    addedIn: 'Added in {edition}',
+    removedIn: 'Removed in {edition}',
     outline: 'On this page',
     section: {
       effects: 'Effects',

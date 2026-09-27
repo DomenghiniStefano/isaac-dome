@@ -51,7 +51,26 @@ pub enum WikiPageCategory {
     CardsAndRunes,
     Pickups,
     Stages,
+    Versions,
 }
+
+/// Every category, once, in the enum's declaration order: what the landing walks to build a
+/// tile for each. Written out by hand, like `floor::ROOM_KINDS` — nothing but review holds it
+/// complete, since a `#[serde(rename_all)]` fieldless enum has no `strum`-style iterator here.
+pub const WIKI_PAGE_CATEGORIES: [WikiPageCategory; 12] = [
+    WikiPageCategory::Items,
+    WikiPageCategory::Trinkets,
+    WikiPageCategory::Achievements,
+    WikiPageCategory::Bosses,
+    WikiPageCategory::Challenges,
+    WikiPageCategory::Characters,
+    WikiPageCategory::Transformations,
+    WikiPageCategory::Monsters,
+    WikiPageCategory::CardsAndRunes,
+    WikiPageCategory::Pickups,
+    WikiPageCategory::Stages,
+    WikiPageCategory::Versions,
+];
 
 /// The category `target`'s own page belongs to, from `entry`'s infobox — which is what
 /// tells a boss from a common enemy, and an article's declined-infobox category from
@@ -87,8 +106,9 @@ fn page_category(target: &Target, entry: &Entry) -> Option<WikiPageCategory> {
                 category: Some(ArticleCategory::Stage),
             } => Some(WikiPageCategory::Stages),
             Infobox::Article {
-                category: Some(ArticleCategory::Version) | None,
-            } => None,
+                category: Some(ArticleCategory::Version),
+            } => Some(WikiPageCategory::Versions),
+            Infobox::Article { category: None } => None,
             Infobox::Item { .. }
             | Infobox::Trinket { .. }
             | Infobox::Achievement { .. }
@@ -109,6 +129,19 @@ fn page_category(target: &Target, entry: &Entry) -> Option<WikiPageCategory> {
 pub struct WikiIndex {
     pub info: WikiInfo,
     pub pages: Vec<WikiPageRef>,
+    /// One representative picture per landing tile (design decision 5's "as many pictures as
+    /// the game gives"), in `WIKI_PAGE_CATEGORIES` order. `icon_url: None` is the fallback
+    /// icon, the same drawing the tile has without the game — not a broken image.
+    pub samples: Vec<CategorySample>,
+}
+
+/// A landing tile's own picture, by its category: not a random find, a checked one — see
+/// `category_sample`.
+#[derive(Debug, Clone, Serialize, ts_rs::TS)]
+#[serde(rename_all = "camelCase")]
+pub struct CategorySample {
+    pub category: WikiPageCategory,
+    pub icon_url: Option<String>,
 }
 
 /// The index, in the dataset's order: by kind, then by id. Bosses are keyed by a string
@@ -127,12 +160,13 @@ pub fn wiki_index(
         return WikiIndex {
             info,
             pages: Vec::new(),
+            samples: Vec::new(),
         };
     };
     let pages = pages(ds)
         .map(|(target, entry)| WikiPageRef {
-            icon_url: catalog.and_then(|c| match target_sprite(c, bosses, &target) {
-                TargetSprite::Found(_) => icon(&IconRef::Page {
+            icon_url: catalog.and_then(|c| match target_sprite(c, bosses, Some(ds), &target) {
+                TargetSprite::Found(_) | TargetSprite::Entity(_) => icon(&IconRef::Page {
                     target: target.clone(),
                 }),
                 TargetSprite::NoArt | TargetSprite::Unknown => None,
@@ -142,7 +176,97 @@ pub fn wiki_index(
             target,
         })
         .collect();
-    WikiIndex { info, pages }
+    let samples = WIKI_PAGE_CATEGORIES
+        .into_iter()
+        .map(|category| CategorySample {
+            category,
+            icon_url: category_icon_url(catalog, bosses, ds, category, &mut icon),
+        })
+        .collect();
+    WikiIndex {
+        info,
+        pages,
+        samples,
+    }
+}
+
+/// A deliberate, checked choice of one game thing per landing tile — never "whatever page
+/// happens to come first", which would draw a different tile picture depending on the
+/// dataset's own iteration order. `None` for a kind the game draws no picture for at all
+/// (transformations: B50; stages: no title-art reader exists yet; versions: a patch note has
+/// no picture) — the tile falls back to its plain icon, same as without the game.
+///
+/// The two "raw" choices (`CardsAndRunes`, `Pickups`) are `IconRef::Entity`, not
+/// `IconRef::Page`: individual card faces have no data-file mapping at all (measured — see
+/// `target_sprite`'s `Target::Article` arm), so a card page can never draw a picture through
+/// this pipeline. The tile still can, honestly: `5.300.1` is a real `entities2.xml` row, a
+/// tarot card's own face-down back — "a card", not "the right card" — and `5.10.1` is a
+/// heart pickup, the same distinction the task drew.
+pub fn category_sample(category: WikiPageCategory) -> Option<IconRef> {
+    let entity = |id, variant, subtype| {
+        Some(IconRef::Page {
+            target: Target::Entity {
+                id,
+                variant,
+                subtype,
+            },
+        })
+    };
+    match category {
+        // Sad Onion: item 105, in the game since Rebirth, always drawn.
+        WikiPageCategory::Items => Some(IconRef::Page {
+            target: Target::Item { id: 105 },
+        }),
+        // Swallowed Penny: the first trinket a new run can find.
+        WikiPageCategory::Trinkets => Some(IconRef::Page {
+            target: Target::Trinket { id: 1 },
+        }),
+        WikiPageCategory::Achievements => Some(IconRef::Page {
+            target: Target::Achievement { id: 1 },
+        }),
+        // Isaac: id 0, the character the game itself opens on.
+        WikiPageCategory::Characters => Some(IconRef::Page {
+            target: Target::Character { id: 0 },
+        }),
+        WikiPageCategory::Challenges => Some(IconRef::Page {
+            target: Target::Challenge { number: 1 },
+        }),
+        // Monstro: the first boss's entity key.
+        WikiPageCategory::Bosses => entity(20, 0, 0),
+        // Gaper: the game's own first common enemy.
+        WikiPageCategory::Monsters => entity(10, 0, 0),
+        // A tarot card's shared back — see this function's own doc comment.
+        WikiPageCategory::CardsAndRunes => Some(IconRef::Entity {
+            id: 5,
+            variant: 300,
+            subtype: 1,
+        }),
+        // A heart pickup.
+        WikiPageCategory::Pickups => Some(IconRef::Entity {
+            id: 5,
+            variant: 10,
+            subtype: 1,
+        }),
+        WikiPageCategory::Transformations
+        | WikiPageCategory::Stages
+        | WikiPageCategory::Versions => None,
+    }
+}
+
+/// `category_sample`'s picture, only when the catalog really has one — never a URL to a
+/// picture that would 404. `icon_source` is the one function that already knows how to check
+/// every kind of `IconRef` this can produce, `Page` and `Entity` alike.
+fn category_icon_url(
+    catalog: Option<&Catalog>,
+    bosses: &BossKeys,
+    ds: &Dataset,
+    category: WikiPageCategory,
+    icon: &mut impl FnMut(&IconRef) -> Option<String>,
+) -> Option<String> {
+    let c = catalog?;
+    let r = category_sample(category)?;
+    crate::icon::icon_source(c, bosses, Some(ds), &r)?;
+    icon(&r)
 }
 
 /// Every page of the dataset with its identity, by kind and then by id: the one walk the
@@ -243,6 +367,8 @@ pub struct WikiCounts {
     pub pickups: u32,
     /// Articles under `ArticleCategory::Stage`.
     pub stages: u32,
+    /// Articles under `ArticleCategory::Version`: the "Added in …" patch and version pages.
+    pub versions: u32,
     /// The whole `articles` collection, category or none: what search counts against.
     pub articles: u32,
 }
@@ -309,6 +435,7 @@ pub fn wiki_info(
                     ),
                     pickups: articles_by_category(ds, &[ArticleCategory::Pickup]),
                     stages: articles_by_category(ds, &[ArticleCategory::Stage]),
+                    versions: articles_by_category(ds, &[ArticleCategory::Version]),
                     articles: meta.counts.articles,
                 },
                 unresolved: meta.diagnostics.unresolved.values().sum(),

@@ -6,7 +6,8 @@ use catalog::Catalog;
 use ipc::for_tests;
 use ipc::ProgressMark;
 use ipc::{
-    search, IconRef, SaveFlags, SearchDiagnostic, SearchIndex, SearchMatch, SearchView, Target,
+    search, IconRef, SaveFlags, SearchCatalog, SearchDiagnostic, SearchIndex, SearchMatch,
+    SearchView, Target,
 };
 use serde_json::{json, to_value};
 use wiki::for_tests::{empty_boss, empty_item, empty_trinket};
@@ -277,15 +278,12 @@ fn view(query: &str, limit: usize, with_catalog: bool, flags: Option<SaveFlags<'
     let ds = dataset();
     let index = SearchIndex::build(Ok(&ds));
     let c = catalog();
-    search(
-        &index,
-        with_catalog.then_some(&c),
-        &ipc::for_tests::bosses(&c),
-        flags,
-        query,
-        limit,
-        link,
-    )
+    let game = SearchCatalog {
+        catalog: with_catalog.then_some(&c),
+        bosses: &ipc::for_tests::bosses(&c),
+        dataset: Some(&ds),
+    };
+    search(&index, &game, flags, query, limit, link)
 }
 
 #[test]
@@ -378,7 +376,12 @@ fn the_six_tiers_order_the_answer() {
         ds.items.insert(id, entry_with(title, empty_item(), vec![]));
     }
     let index = SearchIndex::build(Ok(&ds));
-    let v = search(&index, None, ipc::BossKeys::NONE, None, "the", 10, link);
+    let game = SearchCatalog {
+        catalog: None,
+        bosses: ipc::BossKeys::NONE,
+        dataset: None,
+    };
+    let v = search(&index, &game, None, "the", 10, link);
     let titles: Vec<&str> = v.hits.iter().map(|h| h.title.as_str()).collect();
     assert_eq!(titles, vec!["The", "The Bible", "Of the", "Mother"]);
 }
@@ -397,15 +400,12 @@ fn not_done_comes_before_done_inside_a_tier() {
         achievements: Some(&[]),
         items: Some(&owned),
     };
-    let v = search(
-        &index,
-        None,
-        ipc::BossKeys::NONE,
-        Some(flags),
-        "bomb",
-        10,
-        link,
-    );
+    let game = SearchCatalog {
+        catalog: None,
+        bosses: ipc::BossKeys::NONE,
+        dataset: None,
+    };
+    let v = search(&index, &game, Some(flags), "bomb", 10, link);
     let titles: Vec<&str> = v.hits.iter().map(|h| h.title.as_str()).collect();
     assert_eq!(titles, vec!["Bomb Two", "Bomb One"]);
 }
@@ -418,7 +418,12 @@ fn the_limit_cuts_the_hits_and_total_says_how_many_there_were() {
             .insert(id, entry_with(&format!("Bomb {id}"), empty_item(), vec![]));
     }
     let index = SearchIndex::build(Ok(&ds));
-    let v = search(&index, None, ipc::BossKeys::NONE, None, "bomb", 2, link);
+    let game = SearchCatalog {
+        catalog: None,
+        bosses: ipc::BossKeys::NONE,
+        dataset: None,
+    };
+    let v = search(&index, &game, None, "bomb", 2, link);
     assert_eq!(v.hits.len(), 2);
     assert_eq!(v.total, 5);
 }
@@ -452,15 +457,12 @@ fn the_five_diagnostics_say_what_is_missing() {
     let e = DatasetError::Malformed { reason: "x".into() };
     let index = SearchIndex::build(Err(&e));
     let c = catalog();
-    let v = search(
-        &index,
-        Some(&c),
-        &ipc::for_tests::bosses(&c),
-        None,
-        "d6",
-        10,
-        link,
-    );
+    let game = SearchCatalog {
+        catalog: Some(&c),
+        bosses: &ipc::for_tests::bosses(&c),
+        dataset: None,
+    };
+    let v = search(&index, &game, None, "d6", 10, link);
     assert!(v.diagnostics.contains(&SearchDiagnostic::NoWiki));
     assert!(v.hits.iter().all(|h| !h.has_page));
     assert!(!v.hits.is_empty(), "the catalog still answers by name");
@@ -550,15 +552,12 @@ fn the_ranking_is_tier_then_profile_then_name_then_target() {
         achievements: Some(&[]),
         items: Some(&owned),
     };
-    let v = search(
-        &index,
-        Some(&c),
-        &for_tests::bosses(&c),
-        Some(flags),
-        "heart",
-        20,
-        link,
-    );
+    let game = SearchCatalog {
+        catalog: Some(&c),
+        bosses: &for_tests::bosses(&c),
+        dataset: Some(&ds),
+    };
+    let v = search(&index, &game, Some(flags), "heart", 20, link);
     let targets: Vec<Target> = v.hits.iter().map(|h| h.target.clone()).collect();
     assert_eq!(
         targets,
