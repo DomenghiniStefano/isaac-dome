@@ -75,7 +75,11 @@ fn the_unlock_payload_carries_links_and_stays_small() {
 /// Raised once, for the whole-namespace fetch (design decision 1, 2026-09-26): 971 more
 /// pages (entities, articles) moved this from 256 KB — measured on the embedded dataset,
 /// same reason `wiki_index.rs`'s own ceiling moved.
-const INDEX_CEILING: usize = 512_000;
+///
+/// Raised again for `dlc` and `facts` on every page reference (design decision 3,
+/// `2026-09-27-wiki-restyle-design.md`): measured at 659,246 bytes on the 2026-09-27
+/// snapshot, up from under 512,000.
+const INDEX_CEILING: usize = 900_000;
 
 #[test]
 fn the_wiki_index_stays_a_payload() {

@@ -25,6 +25,7 @@ export const Command = {
   WikiEntry: 'wiki_entry',
   WikiItemPools: 'wiki_item_pools',
   WikiIndex: 'wiki_index',
+  WikiProgress: 'wiki_progress',
   Search: 'search',
   Queue: 'queue',
   QueueAdd: 'queue_add',
