@@ -72,8 +72,9 @@ leaves out, each for a reason:
 Everything else is kept, list and disambiguation pages included: a link to `??? (Disambiguation)`
 exists on real pages, and "every link opens" means that one too.
 
-**Redirects are fetched as well**, as a map and not as pages: `list=allredirects` with the target
-(`generator=allpages&gapfilterredir=redirects&redirects`), into `dataset/raw/redirects.json`,
+**Redirects are fetched as well**, as a map and not as pages: MediaWiki refuses `redirects` with the
+`allpages` generator, so the map is read the other way round, each content page with the redirects
+pointing at it (`prop=redirects`, about ten requests), into `dataset/raw/redirects.json`,
 `{ "from": "to" }`, sorted. A link written to a redirect title resolves through it. Today nothing
 handles redirects, so a link to `Tears Up` or `Soul Hearts` is a dead concept even where the page
 exists.
@@ -183,7 +184,9 @@ rooms and pickup concepts:
   (type, variant, subtype → `anm2` file), and `anm2.rs` already renders a frame. This is a spike
   first: the plan starts by rendering ten monsters from the real archives before writing the
   reader for all of them;
-- **cards and runes**: `pocketitems.xml` names the card-front sprite per card;
+- **cards and runes**: measured, there is no per-card picture in the game files: `pocketitems.xml`
+  names no sprite, and `entities2.xml`'s `5.300.x` rows are one per card family, drawing its back.
+  A card page has no figure; the Cards and runes tile draws the tarot back;
 - **pickups**: the pickup's `anm2`, through the same `entities2.xml` reader (pickups are entities
   of type 5);
 - **stages**: the stage's `gfx/ui/stage/` title art, if the archives carry one per stage, `NoArt`
