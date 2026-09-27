@@ -12,9 +12,9 @@ use crate::editions::Editions;
 use crate::infobox::{
     entry_facts, extract_infoboxes, infobox_from, leading_number, InfoboxKind, RawInfobox,
 };
-use crate::inline::plain;
+use crate::inline::{parse_inline, plain};
 use crate::resolver::{is_layout_template, Resolver};
-use crate::sections::{section_kind, split_page};
+use crate::sections::{is_excluded_section, section_kind, split_page};
 use crate::template::{template_segments, Segment};
 use crate::{Block, Diagnostics, Entry, Inline, Section, Style};
 
@@ -327,6 +327,7 @@ fn narrow_sections(sections: &mut [Section], page: Editions, d: &mut Diagnostics
         return;
     }
     for section in sections {
+        narrow_inline(&mut section.title, page, d);
         for block in &mut section.blocks {
             narrow_block(block, page, d);
         }
@@ -387,20 +388,23 @@ fn narrow_node(node: Inline, page: Editions, d: &mut Diagnostics) -> Vec<Inline>
     }
 }
 
-/// The page's kept sections, in the order they appear; ones with an unrecognized title
-/// count among the discarded.
+/// The page's kept sections, in the order they appear. A title on the closed exclusion list
+/// (`sections::is_excluded_section` — Gallery, In-game Footage, References, Trivia, Audio) is
+/// the only kind of section dropped; every other heading is kept, either as one of the
+/// thirteen known kinds or as `SectionKind::Other` under its own title.
 fn sections(text: &str, r: &Resolver, d: &mut Diagnostics) -> Vec<Section> {
     let (_preamble, raw) = split_page(text);
     raw.iter()
-        .filter_map(|s| match section_kind(&s.title) {
-            Some(kind) => Some(Section {
-                kind,
-                blocks: parse_blocks(&s.body, r, d),
-            }),
-            None => {
+        .filter_map(|s| {
+            if is_excluded_section(&s.title) {
                 d.discarded_section(&s.title);
-                None
+                return None;
             }
+            Some(Section {
+                kind: section_kind(&s.title),
+                title: parse_inline(&s.title, r, d),
+                blocks: parse_blocks(&s.body, r, d),
+            })
         })
         .collect()
 }

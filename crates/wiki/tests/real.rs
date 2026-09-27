@@ -587,8 +587,24 @@ fn text_nodes_carry_no_raw_template_syntax() {
     // the count on 2026-09-08 and a formula arrived after it; an assertion at `<= 35`
     // cannot notice its own remainder drifting, which is the argument for pinning it at
     // what the data says and not at a round number.
+    //
+    // **9 → 20 on 2026-09-27** (design decision 2), and the 11 are one more family, not a
+    // new defect: the multi-line-template family this comment already names, hit by more
+    // input because a heading that used to be silently discarded is now kept.
+    // `Effects`/`Notes`/`Synergies` nested three levels down (`=== … ===`, inside a **kept**
+    // level-2 section) were unreachable either way before — the level-2 wrapper naming the
+    // second form fell to `None` and took its whole body with it — so this isn't content
+    // regressing, it's content that starts arriving, with the one open defect riding along
+    // on its first line. Six pages, the same shape each time: a page with two forms, the
+    // second one under a level-2 heading naming it, opening on that heading's very first
+    // line with a second `{{infobox …}}` call the multi-line-template defect doesn't
+    // consume: Judas (`Black Judas`, ×2 — Judas and Black Judas both carry the page's
+    // sections), Lazarus (`Lazarus Risen`, ×2), Broken Shovel (`Activated Collectible` and
+    // `Passive Collectible`, ×2 forms ×2 text nodes = 4), My Shadow (`Friendly Charger`,
+    // ×1), Ultra Greed (`Ultra Greedier`, ×1), Tainted Jacob (`Dark Esau`, ×1). 2+2+4+1+1+1
+    // = 11.
     assert!(
-        offenders.len() <= 9,
+        offenders.len() <= 20,
         "{} nodes with raw template syntax: {offenders:?}",
         offenders.len()
     );

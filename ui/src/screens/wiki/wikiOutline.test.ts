@@ -3,7 +3,11 @@ import { SectionKind } from '@/lib/ipc/types'
 import type { Section } from '@/lib/ipc/types'
 import { sectionAnchor, outlineOf } from './wikiOutline'
 
-const section = (kind: SectionKind): Section => ({ kind, blocks: [] })
+const section = (kind: SectionKind): Section => ({
+  kind,
+  title: [],
+  blocks: [],
+})
 
 // The column beside a page's text exists to let a long page be navigated. What it must not
 // do is appear on a page that is one glance long: an index of one entry is furniture.
@@ -48,5 +52,18 @@ describe('the page outline', () => {
       section(SectionKind.Notes),
     ])
     expect(outline[0]?.id).not.toBe(outline[1]?.id)
+  })
+
+  // `Other`'s label is its own title, not a translated one (`WikiOutline.vue`), so the
+  // outline carries it through rather than leaving the reader to go back to `sections`.
+  it('carries an other sections own title through', () => {
+    const title = [
+      { kind: 'text' as const, text: 'Formula', style: 'plain' as const },
+    ]
+    const outline = outlineOf([
+      section(SectionKind.Effects),
+      { kind: SectionKind.Other, title, blocks: [] },
+    ])
+    expect(outline[1]?.title).toEqual(title)
   })
 })

@@ -25,6 +25,15 @@
       "book of virtues synergy list": "only inside the discarded 'Combinations' heading on Book of Virtues; the list template's own content is not on the page to keep",
       "book of belial synergy list": "only inside the discarded 'Judas' Birthright Combinations' heading on The Book of Belial, same reason as book of virtues synergy list",
       "dlc_": "a one-time typo of {{dlc|r+}} on Spirit Sword; not silently corrected, the edition badge is lost"
+    },
+    "sections": {
+      "Gallery": "images, a game asset (constraint 3)",
+      "In-game Footage": "video, a game asset (constraint 3)",
+      "In-Game Footage": "video, a game asset (constraint 3)",
+      "Ingame Footage": "video, a game asset (constraint 3)",
+      "References": "external citations, off the wiki",
+      "Trivia": "the owner's call: the least useful part of a page (decision 9)",
+      "Audio": "sound listings, a game asset (constraint 3)"
     }
   }
 }

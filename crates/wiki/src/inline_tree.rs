@@ -145,6 +145,7 @@ mod tests {
             vec![],
             vec![Section {
                 kind: SectionKind::Effects,
+                title: vec![],
                 blocks: vec![
                     Block::List {
                         ordered: false,

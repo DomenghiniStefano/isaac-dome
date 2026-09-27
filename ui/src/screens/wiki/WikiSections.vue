@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import EmptyCategory from '@/components/data-state/EmptyCategory.vue'
 import WikiBlocks from '@/components/wiki/WikiBlocks.vue'
+import WikiInline from '@/components/wiki/WikiInline.vue'
 import { useMessages } from '@/i18n'
 import type { Section, Target, UnlockNode } from '@/lib/ipc/types'
+import { SectionKind } from '@/lib/ipc/types'
 import { sectionAnchor } from './wikiOutline'
 import { sectionText } from '@/lib/wiki/wikiLabels'
 
@@ -33,9 +35,17 @@ const { t } = useMessages()
       <h2
         class="flex items-center gap-2.5 border-b border-secondary-edge pb-1.5 text-heading text-highlight"
       >
-        <span class="h-4 w-1 shrink-0 bg-band" />{{
-          t(sectionText[section.kind])
-        }}
+        <span class="h-4 w-1 shrink-0 bg-band" />
+        <!-- `Other`'s own title is what the wiki called the heading (Damage's "Formula",
+             Bag of Crafting's "Recipes"); the thirteen named kinds keep their translated
+             label, the same reading a reader gets on every other section. -->
+        <WikiInline
+          v-if="section.kind === SectionKind.Other"
+          :inline="section.title"
+          :can-open="canOpen"
+          @navigate="(target, newTab) => emit('navigate', target, newTab)"
+        />
+        <template v-else>{{ t(sectionText[section.kind]) }}</template>
       </h2>
       <WikiBlocks
         :blocks="section.blocks"
