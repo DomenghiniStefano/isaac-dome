@@ -1114,7 +1114,17 @@
                 "inline": [
                   {
                     "kind": "text",
-                    "text": "This item replaces Isaac's regular white aura with a dimmer purple one which lowers visibility in darkness.",
+                    "text": "This item replaces Isaac's regular white aura with a dimmer purple one which lowers visibility in ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "concept",
+                    "page": "Curses",
+                    "label": "darkness"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ".",
                     "style": "plain"
                   }
                 ],
@@ -42288,7 +42298,17 @@
                 "inline": [
                   {
                     "kind": "text",
-                    "text": "Only the first boss of a floor affected by Labyrinth is affected.",
+                    "text": "Only the first boss of a floor affected by ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "concept",
+                    "page": "Curses",
+                    "label": "Labyrinth"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " is affected.",
                     "style": "plain"
                   }
                 ],
@@ -70565,7 +70585,17 @@
                   },
                   {
                     "kind": "text",
-                    "text": "; you can tell them apart from the sprites, or in the case of blind, by looking at the change in Isaac's stats (usually health is the most noticeable).",
+                    "text": "; you can tell them apart from the sprites, or in the case of ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "concept",
+                    "page": "Curses",
+                    "label": "blind"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ", by looking at the change in Isaac's stats (usually health is the most noticeable).",
                     "style": "plain"
                   }
                 ],
@@ -94964,7 +94994,17 @@
                 "inline": [
                   {
                     "kind": "text",
-                    "text": "The map revealing effect will not work if the Lost is active.",
+                    "text": "The map revealing effect will not work if the ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "concept",
+                    "page": "Curses",
+                    "label": "Lost"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " is active.",
                     "style": "plain"
                   }
                 ],
@@ -115961,7 +116001,7 @@
                     "inline": [
                       {
                         "kind": "text",
-                        "text": " 1",
+                        "text": " -1 Tear Delay",
                         "style": "plain"
                       }
                     ]
@@ -125719,7 +125759,7 @@
                     "inline": [
                       {
                         "kind": "text",
-                        "text": " 2",
+                        "text": " -2 Tear Delay",
                         "style": "plain"
                       }
                     ]
@@ -127906,7 +127946,7 @@
                     "inline": [
                       {
                         "kind": "text",
-                        "text": " 1",
+                        "text": " -1 Tear Delay",
                         "style": "plain"
                       }
                     ]
@@ -130089,7 +130129,7 @@
                     "inline": [
                       {
                         "kind": "text",
-                        "text": " 1",
+                        "text": " -1 Tear Delay",
                         "style": "plain"
                       }
                     ]
@@ -134386,7 +134426,7 @@
                     "inline": [
                       {
                         "kind": "text",
-                        "text": " It is possible to control the direction of Tiny Planet with the mouse. On Windows, go to C:/Users/[username]/Documents/My Games/The Binding Of Isaac [Rebirth/Afterbirth/Afterbirth+]/ and in the options.ini file, change the line that says MouseControl0 to MouseControl1. Unlike normal controls, the mouse allows diagonal direction.",
+                        "text": " It is possible to control the direction of Tiny Planet with the mouse. On Windows, go to C:/Users/[username]/Documents/My Games/The Binding Of Isaac [Rebirth/Afterbirth/Afterbirth+]/ and in the options.ini file, change the line that says MouseControl=0 to MouseControl=1. Unlike normal controls, the mouse allows diagonal direction.",
                         "style": "plain"
                       }
                     ]
@@ -147743,7 +147783,17 @@
                     "inline": [
                       {
                         "kind": "text",
-                        "text": " Isaac gives a wide glow lighting up dark areas, such as those under the effects of the Darkness or the ",
+                        "text": " Isaac gives a wide glow lighting up dark areas, such as those under the effects of the ",
+                        "style": "plain"
+                      },
+                      {
+                        "kind": "concept",
+                        "page": "Curses",
+                        "label": "Darkness"
+                      },
+                      {
+                        "kind": "text",
+                        "text": " or the ",
                         "style": "plain"
                       },
                       {
@@ -150243,7 +150293,17 @@
                         "inline": [
                           {
                             "kind": "text",
-                            "text": "Will immediately remove any curses on the current floor except labyrinth.",
+                            "text": "Will immediately remove any curses on the current floor except ",
+                            "style": "plain"
+                          },
+                          {
+                            "kind": "concept",
+                            "page": "Curses",
+                            "label": "labyrinth"
+                          },
+                          {
+                            "kind": "text",
+                            "text": ".",
                             "style": "plain"
                           }
                         ],
@@ -150342,7 +150402,17 @@
                   },
                   {
                     "kind": "text",
-                    "text": " will not remove the cursed.",
+                    "text": " will not remove the ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "concept",
+                    "page": "Curses",
+                    "label": "cursed"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ".",
                     "style": "plain"
                   }
                 ],
@@ -150365,7 +150435,27 @@
                   },
                   {
                     "kind": "text",
-                    "text": " will not remove the darkness or unknown.",
+                    "text": " will not remove the ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "concept",
+                    "page": "Curses",
+                    "label": "darkness"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " or ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "concept",
+                    "page": "Curses",
+                    "label": "unknown"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ".",
                     "style": "plain"
                   }
                 ],
@@ -150494,7 +150584,17 @@
                     "inline": [
                       {
                         "kind": "text",
-                        "text": " Doesn't remove darkness afflicted by ",
+                        "text": " Doesn't remove ",
+                        "style": "plain"
+                      },
+                      {
+                        "kind": "concept",
+                        "page": "Curses",
+                        "label": "darkness"
+                      },
+                      {
+                        "kind": "text",
+                        "text": " afflicted by ",
                         "style": "plain"
                       },
                       {
@@ -168703,7 +168803,17 @@
                     "inline": [
                       {
                         "kind": "text",
-                        "text": " Book of Secrets has no effect on floors affected by lost or an ",
+                        "text": " Book of Secrets has no effect on floors affected by ",
+                        "style": "plain"
+                      },
+                      {
+                        "kind": "concept",
+                        "page": "Curses",
+                        "label": "lost"
+                      },
+                      {
+                        "kind": "text",
+                        "text": " or an ",
                         "style": "plain"
                       },
                       {
@@ -168732,7 +168842,17 @@
                     "inline": [
                       {
                         "kind": "text",
-                        "text": " If lost or an ",
+                        "text": " If ",
+                        "style": "plain"
+                      },
+                      {
+                        "kind": "concept",
+                        "page": "Curses",
+                        "label": "lost"
+                      },
+                      {
+                        "kind": "text",
+                        "text": " or an ",
                         "style": "plain"
                       },
                       {
@@ -176513,7 +176633,17 @@
                 "inline": [
                   {
                     "kind": "text",
-                    "text": "Floors affected by Labyrinth are counted as the first floor by Pandora's Box.",
+                    "text": "Floors affected by ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "concept",
+                    "page": "Curses",
+                    "label": "Labyrinth"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " are counted as the first floor by Pandora's Box.",
                     "style": "plain"
                   }
                 ],
@@ -177957,7 +178087,7 @@
                             "inline": [
                               {
                                 "kind": "text",
-                                "text": "greed Taurus will trigger each time the button is pressed to start a new Greed or Greedier wave. Since the invincibility allows pressing the button to stop waves for free, it can be used repeatedly without leaving the arena.",
+                                "text": "greed/greedier Taurus will trigger each time the button is pressed to start a new Greed or Greedier wave. Since the invincibility allows pressing the button to stop waves for free, it can be used repeatedly without leaving the arena.",
                                 "style": "plain"
                               }
                             ]
@@ -182667,7 +182797,7 @@
                     "inline": [
                       {
                         "kind": "text",
-                        "text": " 1",
+                        "text": " -1 Tear Delay",
                         "style": "plain"
                       }
                     ]
@@ -192434,7 +192564,17 @@
                         "inline": [
                           {
                             "kind": "text",
-                            "text": "Treasure Rooms under Labyrinth.",
+                            "text": "Treasure Rooms under ",
+                            "style": "plain"
+                          },
+                          {
+                            "kind": "concept",
+                            "page": "Curses",
+                            "label": "Labyrinth"
+                          },
+                          {
+                            "kind": "text",
+                            "text": ".",
                             "style": "plain"
                           }
                         ],
@@ -195126,7 +195266,17 @@
                 "inline": [
                   {
                     "kind": "text",
-                    "text": "The Polaroid will be the leftmost item after defeating Mom, in case Blind is active.",
+                    "text": "The Polaroid will be the leftmost item after defeating Mom, in case ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "concept",
+                    "page": "Curses",
+                    "label": "Blind"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " is active.",
                     "style": "plain"
                   }
                 ],
@@ -195925,7 +196075,17 @@
                 "inline": [
                   {
                     "kind": "text",
-                    "text": "The Negative will be the rightmost item after defeating Mom, in case blind is active.",
+                    "text": "The Negative will be the rightmost item after defeating Mom, in case ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "concept",
+                    "page": "Curses",
+                    "label": "blind"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " is active.",
                     "style": "plain"
                   }
                 ],
@@ -207372,7 +207532,17 @@
                 "inline": [
                   {
                     "kind": "text",
-                    "text": "If an item pedestal that is duplicated is visible as \"?\" (for example with the Blind), duplicate will be visible as \"?\" until taken, just like the original item pedestal.",
+                    "text": "If an item pedestal that is duplicated is visible as \"?\" (for example with the ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "concept",
+                    "page": "Curses",
+                    "label": "Blind"
+                  },
+                  {
+                    "kind": "text",
+                    "text": "), duplicate will be visible as \"?\" until taken, just like the original item pedestal.",
                     "style": "plain"
                   }
                 ],
@@ -247195,7 +247365,7 @@
                 "inline": [
                   {
                     "kind": "text",
-                    "text": "On PC, it is possible to control Marked with the mouse. On Windows, go to C:/Users/[username]/Documents/My Games/The Binding Of Isaac [Rebirth/Afterbirth/Afterbirth+/Repentance/Repentance+]/ and in the options.ini file, change the line that says MouseControl0 to MouseControl1.",
+                    "text": "On PC, it is possible to control Marked with the mouse. On Windows, go to C:/Users/[username]/Documents/My Games/The Binding Of Isaac [Rebirth/Afterbirth/Afterbirth+/Repentance/Repentance+]/ and in the options.ini file, change the line that says MouseControl=0 to MouseControl=1.",
                     "style": "plain"
                   }
                 ],
@@ -251750,7 +251920,17 @@
                 "inline": [
                   {
                     "kind": "text",
-                    "text": "If Maze is active, using portals placed between different rooms may result in a random destination. Two portals in the same room work reliably.",
+                    "text": "If ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "concept",
+                    "page": "Curses",
+                    "label": "Maze"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " is active, using portals placed between different rooms may result in a random destination. Two portals in the same room work reliably.",
                     "style": "plain"
                   }
                 ],
@@ -270855,7 +271035,17 @@
                         "inline": [
                           {
                             "kind": "text",
-                            "text": "If Isaac has Blind, Glowing Hourglass can be used to pick up or purchase an unknown item to see what it is, then decide whether or not to undo picking it up.",
+                            "text": "If Isaac has ",
+                            "style": "plain"
+                          },
+                          {
+                            "kind": "concept",
+                            "page": "Curses",
+                            "label": "Blind"
+                          },
+                          {
+                            "kind": "text",
+                            "text": ", Glowing Hourglass can be used to pick up or purchase an unknown item to see what it is, then decide whether or not to undo picking it up.",
                             "style": "plain"
                           }
                         ],
@@ -274687,7 +274877,17 @@
                 "inline": [
                   {
                     "kind": "text",
-                    "text": "Removes darkness for the current floor.",
+                    "text": "Removes ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "concept",
+                    "page": "Curses",
+                    "label": "darkness"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " for the current floor.",
                     "style": "plain"
                   }
                 ],
@@ -312216,7 +312416,17 @@
                       },
                       {
                         "kind": "text",
-                        "text": "s. This also can be used to give Isaac a chance to see what an unknown item is before deciding if he wants to consume it, in the case of an active Blind or a ",
+                        "text": "s. This also can be used to give Isaac a chance to see what an unknown item is before deciding if he wants to consume it, in the case of an active ",
+                        "style": "plain"
+                      },
+                      {
+                        "kind": "concept",
+                        "page": "Curses",
+                        "label": "Blind"
+                      },
+                      {
+                        "kind": "text",
+                        "text": " or a ",
                         "style": "plain"
                       },
                       {
@@ -317656,7 +317866,7 @@
                 "inline": [
                   {
                     "kind": "text",
-                    "text": "In greed",
+                    "text": "In greed/greedier",
                     "style": "plain"
                   },
                   {
@@ -329495,7 +329705,78 @@
                 }
               ]
             ],
-            "rows": []
+            "rows": [
+              [
+                [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "entity",
+                      "id": 308,
+                      "variant": 0,
+                      "subtype": 0
+                    },
+                    "label": "Fistuloid"
+                  }
+                ]
+              ],
+              [
+                [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "entity",
+                      "id": 44,
+                      "variant": 0,
+                      "subtype": 0
+                    },
+                    "label": "Poky"
+                  }
+                ]
+              ],
+              [
+                [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "entity",
+                      "id": 44,
+                      "variant": 1,
+                      "subtype": 0
+                    },
+                    "label": "Slide"
+                  }
+                ]
+              ],
+              [
+                [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "entity",
+                      "id": 42,
+                      "variant": 0,
+                      "subtype": 0
+                    },
+                    "label": "Stone Grimace"
+                  }
+                ]
+              ],
+              [
+                [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "entity",
+                      "id": 302,
+                      "variant": 0,
+                      "subtype": 0
+                    },
+                    "label": "Stoney"
+                  }
+                ]
+              ]
+            ]
           },
           {
             "kind": "list",
@@ -329538,7 +329819,506 @@
                 }
               ]
             ],
-            "rows": []
+            "rows": [
+              [
+                [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "entity",
+                      "id": 280,
+                      "variant": 0,
+                      "subtype": 0
+                    },
+                    "label": "Black Globin's Body"
+                  }
+                ],
+                [
+                  {
+                    "kind": "text",
+                    "text": "Keeps spawning ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "entity",
+                      "id": 85,
+                      "variant": 0,
+                      "subtype": 0
+                    },
+                    "label": "Spider"
+                  },
+                  {
+                    "kind": "text",
+                    "text": "s that are also confused.",
+                    "style": "plain"
+                  }
+                ]
+              ],
+              [
+                [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "entity",
+                      "id": 242,
+                      "variant": 0,
+                      "subtype": 0
+                    },
+                    "label": "Blind Creep"
+                  }
+                ],
+                [
+                  {
+                    "kind": "text",
+                    "text": "Their behavior is practically the same as normal.",
+                    "style": "plain"
+                  }
+                ]
+              ],
+              [
+                [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "entity",
+                      "id": 258,
+                      "variant": 0,
+                      "subtype": 0
+                    },
+                    "label": "Fat Bat"
+                  }
+                ],
+                [
+                  {
+                    "kind": "text",
+                    "text": "Keeps shooting projectiles in random, ordinal directions.",
+                    "style": "plain"
+                  }
+                ]
+              ],
+              [
+                [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "entity",
+                      "id": 208,
+                      "variant": 0,
+                      "subtype": 0
+                    },
+                    "label": "Fatty"
+                  }
+                ],
+                [
+                  {
+                    "kind": "text",
+                    "text": "Farts when Isaac gets too close.",
+                    "style": "plain"
+                  }
+                ]
+              ],
+              [
+                [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "entity",
+                      "id": 27,
+                      "variant": 0,
+                      "subtype": 0
+                    },
+                    "label": "Host"
+                  }
+                ],
+                [
+                  {
+                    "kind": "text",
+                    "text": "Pops up very often without actually shooting.",
+                    "style": "plain"
+                  }
+                ]
+              ],
+              [
+                [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "entity",
+                      "id": 259,
+                      "variant": 0,
+                      "subtype": 0
+                    },
+                    "label": "Imp"
+                  }
+                ],
+                [
+                  {
+                    "kind": "text",
+                    "text": "Fires at Isaac's current location and teleports around like normal.",
+                    "style": "plain"
+                  }
+                ]
+              ],
+              [
+                [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "entity",
+                      "id": 260,
+                      "variant": 0,
+                      "subtype": 0
+                    },
+                    "label": "Lil' Haunt"
+                  }
+                ],
+                [
+                  {
+                    "kind": "text",
+                    "text": "Won't follow Isaac, but still shoots at his current location.",
+                    "style": "plain"
+                  }
+                ]
+              ],
+              [
+                [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "entity",
+                      "id": 290,
+                      "variant": 0,
+                      "subtype": 0
+                    },
+                    "label": "Meatball"
+                  }
+                ],
+                [
+                  {
+                    "kind": "text",
+                    "text": "Their behavior is practically the same as normal.",
+                    "style": "plain"
+                  }
+                ]
+              ],
+              [
+                [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "entity",
+                      "id": 204,
+                      "variant": 0,
+                      "subtype": 0
+                    },
+                    "label": "Mobile Host"
+                  }
+                ],
+                [
+                  {
+                    "kind": "text",
+                    "text": "Pops up very often without actually shooting, while still moving in Isaac's direction.",
+                    "style": "plain"
+                  }
+                ]
+              ],
+              [
+                [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "entity",
+                      "id": 213,
+                      "variant": 0,
+                      "subtype": 0
+                    },
+                    "label": "Mom's Hand"
+                  }
+                ],
+                [
+                  {
+                    "kind": "text",
+                    "text": "Lands in a random location, and will still teleport Isaac if he somehow gets hit.",
+                    "style": "plain"
+                  }
+                ]
+              ],
+              [
+                [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "entity",
+                      "id": 300,
+                      "variant": 0,
+                      "subtype": 0
+                    },
+                    "label": "Mushroom"
+                  }
+                ],
+                [
+                  {
+                    "kind": "text",
+                    "text": "Their behavior is practically the same as normal.",
+                    "style": "plain"
+                  }
+                ]
+              ],
+              [
+                [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "entity",
+                      "id": 231,
+                      "variant": 1,
+                      "subtype": 0
+                    },
+                    "label": "Nerve Ending 2"
+                  }
+                ],
+                [
+                  {
+                    "kind": "text",
+                    "text": "Their behavior is practically the same as normal.",
+                    "style": "plain"
+                  }
+                ]
+              ],
+              [
+                [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "entity",
+                      "id": 208,
+                      "variant": 1,
+                      "subtype": 0
+                    },
+                    "label": "Pale Fatty"
+                  }
+                ],
+                [
+                  {
+                    "kind": "text",
+                    "text": "Farts and fires shots when Isaac gets too close.",
+                    "style": "plain"
+                  }
+                ]
+              ],
+              [
+                [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "entity",
+                      "id": 14,
+                      "variant": 0,
+                      "subtype": 0
+                    },
+                    "label": "Pooter"
+                  }
+                ],
+                [
+                  {
+                    "kind": "text",
+                    "text": "Won't shoot, but still slowly move in Isaac's direction.",
+                    "style": "plain"
+                  }
+                ]
+              ],
+              [
+                [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "entity",
+                      "id": 241,
+                      "variant": 0,
+                      "subtype": 0
+                    },
+                    "label": "Rage Creep"
+                  }
+                ],
+                [
+                  {
+                    "kind": "text",
+                    "text": "Won't try to line up with Isaac, but still keeps firing Brimstone barrages.",
+                    "style": "plain"
+                  }
+                ]
+              ],
+              [
+                [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "entity",
+                      "id": 14,
+                      "variant": 1,
+                      "subtype": 0
+                    },
+                    "label": "Super Pooter"
+                  }
+                ],
+                [
+                  {
+                    "kind": "text",
+                    "text": "Won't shoot, but still slowly move in Isaac's direction.",
+                    "style": "plain"
+                  }
+                ]
+              ],
+              [
+                [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "entity",
+                      "id": 307,
+                      "variant": 0,
+                      "subtype": 0
+                    },
+                    "label": "Tar Boy"
+                  }
+                ],
+                [
+                  {
+                    "kind": "text",
+                    "text": "Fires at Isaac's current location.",
+                    "style": "plain"
+                  }
+                ]
+              ],
+              [
+                [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "entity",
+                      "id": 888,
+                      "variant": 0,
+                      "subtype": 0
+                    },
+                    "label": "Shady"
+                  }
+                ],
+                [
+                  {
+                    "kind": "text",
+                    "text": "Still appears confused, but will fire projectiles in Isaac's direction",
+                    "style": "plain"
+                  }
+                ]
+              ],
+              [
+                [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "entity",
+                      "id": 40,
+                      "variant": 2,
+                      "subtype": 0
+                    },
+                    "label": "Slog"
+                  }
+                ],
+                [
+                  {
+                    "kind": "text",
+                    "text": "Their behavior is the same as normal, including tackling Isaac if he is too close.",
+                    "style": "plain"
+                  }
+                ]
+              ],
+              [
+                [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "entity",
+                      "id": 304,
+                      "variant": 0,
+                      "subtype": 0
+                    },
+                    "label": "The Thing"
+                  }
+                ],
+                [
+                  {
+                    "kind": "text",
+                    "text": "Won't try to line up with Isaac, but still spits damaging red creep if he lines up with them.",
+                    "style": "plain"
+                  }
+                ]
+              ],
+              [
+                [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "entity",
+                      "id": 244,
+                      "variant": 1,
+                      "subtype": 0
+                    },
+                    "label": "Tube Worm"
+                  }
+                ],
+                [
+                  {
+                    "kind": "text",
+                    "text": "Fires at Isaac's current location.",
+                    "style": "plain"
+                  }
+                ]
+              ],
+              [
+                [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "entity",
+                      "id": 240,
+                      "variant": 0,
+                      "subtype": 0
+                    },
+                    "label": "Wall Creep"
+                  }
+                ],
+                [
+                  {
+                    "kind": "text",
+                    "text": "Won't try to line up with Isaac, but still keeps firing shots.",
+                    "style": "plain"
+                  }
+                ]
+              ],
+              [
+                [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "entity",
+                      "id": 834,
+                      "variant": 0,
+                      "subtype": 0
+                    },
+                    "label": "Whipper"
+                  }
+                ],
+                [
+                  {
+                    "kind": "text",
+                    "text": "Doesn't follow Issac, but pathing gets confused, and will swipe at Isaac if close",
+                    "style": "plain"
+                  }
+                ]
+              ]
+            ]
           },
           {
             "kind": "list",
@@ -330862,7 +331642,7 @@
                 "inline": [
                   {
                     "kind": "text",
-                    "text": "In greed ",
+                    "text": "In greed/greedier ",
                     "style": "plain"
                   },
                   {
@@ -332471,6 +333251,11 @@
                     "kind": "text",
                     "text": "Large Zit does not fire when ",
                     "style": "plain"
+                  },
+                  {
+                    "kind": "concept",
+                    "page": "Blindfolded",
+                    "label": "Blindfolded"
                   }
                 ],
                 "children": []
@@ -353348,7 +354133,7 @@
                   },
                   {
                     "kind": "text",
-                    "text": " and Haemolacria, the sparks caused by splattered tears will hurt the player. [https://imgur.com/a/i2J3hB4 (Video clip)]",
+                    "text": " and Haemolacria, the sparks caused by splattered tears will hurt the player. (Video clip)",
                     "style": "plain"
                   }
                 ]
@@ -356501,7 +357286,17 @@
                   },
                   {
                     "kind": "text",
-                    "text": ": Nearly no effect; increases damage by around 5% when the hit is dealt by the tip of the blast. Makes the blasts absorb light, making it difficult to see anything while Darkness is present.",
+                    "text": ": Nearly no effect; increases damage by around 5% when the hit is dealt by the tip of the blast. Makes the blasts absorb light, making it difficult to see anything while ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "concept",
+                    "page": "Curses",
+                    "label": "Darkness"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " is present.",
                     "style": "plain"
                   }
                 ],
@@ -356931,7 +357726,17 @@
                         "inline": [
                           {
                             "kind": "text",
-                            "text": " two XL in Chapters 1-3, except by chance of finding ",
+                            "text": " two ",
+                            "style": "plain"
+                          },
+                          {
+                            "kind": "concept",
+                            "page": "Curses",
+                            "label": "XL"
+                          },
+                          {
+                            "kind": "text",
+                            "text": " in Chapters 1-3, except by chance of finding ",
                             "style": "plain"
                           },
                           {
@@ -358867,7 +359672,17 @@
                 "inline": [
                   {
                     "kind": "text",
-                    "text": "On use, causes a brief darkness effect for a few seconds.",
+                    "text": "On use, causes a brief ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "concept",
+                    "page": "Curses",
+                    "label": "darkness"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " effect for a few seconds.",
                     "style": "plain"
                   }
                 ],
@@ -376804,8 +377619,13 @@
                       {
                         "inline": [
                           {
+                            "kind": "concept",
+                            "page": "Curses",
+                            "label": "Blind"
+                          },
+                          {
                             "kind": "text",
-                            "text": "Blind items will be revealed, as well as the hidden second item on the alternate floors (",
+                            "text": " items will be revealed, as well as the hidden second item on the alternate floors (",
                             "style": "plain"
                           },
                           {
@@ -376878,7 +377698,17 @@
                 "inline": [
                   {
                     "kind": "text",
-                    "text": "On XL floors, both items and bosses are shown.",
+                    "text": "On ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "concept",
+                    "page": "Curses",
+                    "label": "XL"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " floors, both items and bosses are shown.",
                     "style": "plain"
                   }
                 ],
@@ -381101,7 +381931,17 @@
                 "inline": [
                   {
                     "kind": "text",
-                    "text": "This item replaces Isaac's regular white aura with a dimmer purple one which lowers visibility in darkness.",
+                    "text": "This item replaces Isaac's regular white aura with a dimmer purple one which lowers visibility in ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "concept",
+                    "page": "Curses",
+                    "label": "darkness"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ".",
                     "style": "plain"
                   }
                 ],
@@ -389955,7 +390795,17 @@
                           },
                           {
                             "kind": "text",
-                            "text": " if Labyrinth takes effect on the floor.",
+                            "text": " if ",
+                            "style": "plain"
+                          },
+                          {
+                            "kind": "concept",
+                            "page": "Curses",
+                            "label": "Labyrinth"
+                          },
+                          {
+                            "kind": "text",
+                            "text": " takes effect on the floor.",
                             "style": "plain"
                           }
                         ],
@@ -396771,7 +397621,17 @@
                         "inline": [
                           {
                             "kind": "text",
-                            "text": "While this effect is mostly cosmetic, it also partially counteracts both the Darkness and the \"dark rooms\" in the ",
+                            "text": "While this effect is mostly cosmetic, it also partially counteracts both the ",
+                            "style": "plain"
+                          },
+                          {
+                            "kind": "concept",
+                            "page": "Curses",
+                            "label": "Darkness"
+                          },
+                          {
+                            "kind": "text",
+                            "text": " and the \"dark rooms\" in the ",
                             "style": "plain"
                           },
                           {
@@ -407371,7 +408231,7 @@
                   },
                   {
                     "kind": "text",
-                    "text": ": Spawns red wisps on the middle ring. The wisps deals contact damage equal to 30% of Isaac's damage * Charges Used. Charges Used equals the number of charges Larynx had at the time it was used. Health  1 * Charges Used. Tear Damage  1.5 * Charges Used.",
+                    "text": ": Spawns red wisps on the middle ring. The wisps deals contact damage equal to 30% of Isaac's damage * Charges Used. Charges Used equals the number of charges Larynx had at the time it was used. Health = 1 * Charges Used. Tear Damage = 1.5 * Charges Used.",
                     "style": "plain"
                   }
                 ],
@@ -411838,6 +412698,77 @@
                     },
                     "label": "Black Judas"
                   }
+                ],
+                [
+                  {
+                    "kind": "text",
+                    "text": "Belial incarnate",
+                    "style": "italic"
+                  }
+                ],
+                [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 34
+                    },
+                    "label": "The Book of Belial"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " becomes a passive item that can be held beneath other active items, similar to ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 584
+                    },
+                    "label": "Book of Virtues"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ". May stack with Book of Virtues. If Judas is not currently holding The Book of Belial, he receives it. The ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "concept",
+                    "page": "damage",
+                    "label": "damage"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " boost received from The Book of Belial scales with the amount of charges the active item above it has; may not work with one-time-use items, items with unlimited use, timed recharges, or items that do not follow normal room charge rules (",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 323
+                    },
+                    "label": "Isaac's Tears"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ", etc). Has special interactions with certain items — see ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 34
+                    },
+                    "label": "The Book of Belial"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " for more information.",
+                    "style": "plain"
+                  }
                 ]
               ],
               [
@@ -412324,6 +413255,85 @@
                       "id": 38
                     },
                     "label": "Dead Tainted Lazarus"
+                  }
+                ],
+                [
+                  {
+                    "kind": "text",
+                    "text": "Superposition",
+                    "style": "italic"
+                  }
+                ],
+                [
+                  {
+                    "kind": "text",
+                    "text": "The non-active form of Tainted Lazarus and their familiars will appear in ghostly form, being completely immune to damage and dealing 25% damage (including tear effects such as ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 374
+                    },
+                    "label": "Holy Light"
+                  },
+                  {
+                    "kind": "text",
+                    "text": "). Holding down the \"drop\" key allows the active form to move independently of the other form, similar to ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "character",
+                      "id": 19
+                    },
+                    "label": "Jacob and Esau"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ". Using ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 711
+                    },
+                    "label": "Flip"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " will cause the two characters to switch states while maintaining positions. Both characters receive the Birthright effect when one character collects it. Likewise both characters will benefit from passive global effects such as ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 376
+                    },
+                    "label": "Restock"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " or ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "trinket",
+                      "id": 2
+                    },
+                    "label": "Petrified Poop"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " regardless of who is the active form.",
+                    "style": "plain"
                   }
                 ]
               ],
@@ -415019,7 +416029,17 @@
                   },
                   {
                     "kind": "text",
-                    "text": ", meaning Blind will not affect the item pedestals present inside the room (except during the ",
+                    "text": ", meaning ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "concept",
+                    "page": "Curses",
+                    "label": "Blind"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " will not affect the item pedestals present inside the room (except during the ",
                     "style": "plain"
                   },
                   {
@@ -420470,7 +421490,17 @@
                 "inline": [
                   {
                     "kind": "text",
-                    "text": "If Death Certificate is used on a floor while blind is active, the area will not be affected by the curse, meaning all items will be revealed. ",
+                    "text": "If Death Certificate is used on a floor while ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "concept",
+                    "page": "Curses",
+                    "label": "blind"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " is active, the area will not be affected by the curse, meaning all items will be revealed. ",
                     "style": "plain"
                   },
                   {
@@ -440558,7 +441588,17 @@
                 "inline": [
                   {
                     "kind": "text",
-                    "text": "Entering a portal with Maze active on the current floor has a chance of teleporting Isaac to a random room instead.",
+                    "text": "Entering a portal with ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "concept",
+                    "page": "Curses",
+                    "label": "Maze"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " active on the current floor has a chance of teleporting Isaac to a random room instead.",
                     "style": "plain"
                   }
                 ],
@@ -443991,7 +445031,17 @@
                         "inline": [
                           {
                             "kind": "text",
-                            "text": "If unknown is in effect, his health bar will be hidden the same way as Isaac's.",
+                            "text": "If ",
+                            "style": "plain"
+                          },
+                          {
+                            "kind": "concept",
+                            "page": "Curses",
+                            "label": "unknown"
+                          },
+                          {
+                            "kind": "text",
+                            "text": " is in effect, his health bar will be hidden the same way as Isaac's.",
                             "style": "plain"
                           }
                         ],
@@ -466263,7 +467313,17 @@
                   },
                   {
                     "kind": "text",
-                    "text": ") or when getting Labyrinth, the twin will only act on the first boss encountered.",
+                    "text": ") or when getting ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "concept",
+                    "page": "Curses",
+                    "label": "Labyrinth"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ", the twin will only act on the first boss encountered.",
                     "style": "plain"
                   }
                 ],
@@ -475814,8 +476874,13 @@
                       {
                         "inline": [
                           {
+                            "kind": "concept",
+                            "page": "Curses",
+                            "label": "Blind"
+                          },
+                          {
                             "kind": "text",
-                            "text": "Blind hides the crafting preview.",
+                            "text": " hides the crafting preview.",
                             "style": "plain"
                           }
                         ],
@@ -475967,7 +477032,7 @@
                 "inline": [
                   {
                     "kind": "text",
-                    "text": "In greed",
+                    "text": "In greed/greedier",
                     "style": "plain"
                   },
                   {

@@ -76,7 +76,7 @@ pub fn build(raw: &Raw, corrections: &Corrections) -> Dataset {
 /// sub-project reads their infoboxes and bodies into `Infobox::Entity` / `Infobox::Article`
 /// (design decision 2, `2026-09-26-wiki-complete-design.md`). Written as an explicit match
 /// rather than a wildcard so a ninth kind has to say which side of the line it is on.
-fn parses_into_entries(kind: PageKind) -> bool {
+pub fn parses_into_entries(kind: PageKind) -> bool {
     match kind {
         PageKind::Collectible
         | PageKind::Trinket

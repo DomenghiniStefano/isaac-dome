@@ -69,3 +69,7 @@ pub fn empty_trinket() -> Infobox {
 /// question about it, which no command of the app ever asks: a disagreement is a fact about
 /// the data we ship, and the place that has to go red for it is the suite.
 pub use crate::parent_check::{cross_check_character_parents, ParentCrossCheck, ParentMismatch};
+
+/// Decision 10's completeness check: every template name a raw page's wikitext holds, at
+/// every nesting depth, exactly as the parser's own scanner sees it.
+pub use crate::template::all_template_names;
