@@ -12,7 +12,9 @@ import KitSection from '../../KitSection.vue'
 
 // No drawing ships in the repo (constraint 3), so `url` is always `null` here, exactly what
 // every machine without the game sees: this is the fallback path, on purpose — the category
-// icon at every size, centred, never a hole.
+// icon at every size, centred, at half the box (card #90 follow-up: it was neither, on a
+// `Hero`-sized boss with no picture — `PixelSprite`'s own fallback span had no box to centre
+// within, so the icon sat wherever inline flow put it).
 const sizes = Object.values(FigureSize)
 
 const targets: Array<[string, Target]> = [
@@ -20,6 +22,21 @@ const targets: Array<[string, Target]> = [
   ['achievement (painting)', { kind: 'achievement', id: 3 }],
   ['character (portrait)', { kind: 'character', id: 0 }],
   ['stage (no category icon)', { kind: 'stage', name: 'Basement' }],
+]
+
+// The landing's own use of `category` (decision 8): an `entity` target reads as Bosses
+// through `categoryOf` alone, which is wrong for a Monsters tile — the explicit prop wins.
+const categoryOverrides: Array<[string, Target, WikiCategory]> = [
+  [
+    'entity, category=monsters (overrides the Bosses categoryOf reads)',
+    { kind: 'entity', id: 10, variant: 0, subtype: 0 },
+    WikiCategory.Monsters,
+  ],
+  [
+    'entity, category=cardsAndRunes (articles have no categoryOf reading at all)',
+    { kind: 'entity', id: 5, variant: 300, subtype: 1 },
+    WikiCategory.CardsAndRunes,
+  ],
 ]
 
 const editions = Object.values(Dlc)
@@ -45,6 +62,24 @@ const categories = Object.values(WikiCategory)
             :key="size"
             :target="target"
             :url="null"
+            :size="size"
+          />
+        </div>
+      </div>
+
+      <div
+        v-for="[label, target, category] in categoryOverrides"
+        :key="label"
+        class="flex flex-col gap-1.5"
+      >
+        <span class="text-caption text-subtle-foreground">{{ label }}</span>
+        <div class="flex flex-wrap items-end gap-3">
+          <WikiFigure
+            v-for="size in sizes"
+            :key="size"
+            :target="target"
+            :url="null"
+            :category="category"
             :size="size"
           />
         </div>

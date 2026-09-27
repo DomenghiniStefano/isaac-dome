@@ -92,7 +92,9 @@ fn a_missing_dataset_is_an_empty_index_that_says_why() {
 }
 
 /// Without a catalog, every tile's sample is declared and every one of them draws nothing —
-/// the same "no picture without the game" the pages themselves fall back to.
+/// the same "no picture without the game" the pages themselves fall back to. `target` is a
+/// property of the *choice*, not of the catalog (`icon_ref_target`, `wiki_samples.rs`): it is
+/// `Some` even here, for every category but the three with no picture at all.
 #[test]
 fn every_category_has_a_sample_entry_and_none_draw_without_a_catalog() {
     let ds = dataset();
@@ -101,6 +103,19 @@ fn every_category_has_a_sample_entry_and_none_draw_without_a_catalog() {
     let categories: Vec<ipc::WikiPageCategory> = index.samples.iter().map(|s| s.category).collect();
     assert_eq!(categories, ipc::WIKI_PAGE_CATEGORIES.to_vec());
     assert!(index.samples.iter().all(|s| s.icon_url.is_none()));
+    let no_picture = [
+        ipc::WikiPageCategory::Transformations,
+        ipc::WikiPageCategory::Stages,
+        ipc::WikiPageCategory::Versions,
+    ];
+    for sample in &index.samples {
+        assert_eq!(
+            sample.target.is_none(),
+            no_picture.contains(&sample.category),
+            "{:?}",
+            sample.category
+        );
+    }
 }
 
 /// `category_sample` is total over `WikiPageCategory` (the match has no wildcard), so this is

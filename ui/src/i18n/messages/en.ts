@@ -603,6 +603,12 @@ export const en: MessageSchema = {
       bestiaryKilled: 'Killed {count}',
       bestiaryKilledYou: 'Killed you {count}',
     },
+    landing: {
+      totalPages: 'Pages',
+      overallProgress: 'Overall progress',
+      categoryProgress: '{category} progress',
+      progressOf: '{done} / {total}',
+    },
     states: {
       unknownTitle: 'Unknown page',
       unknown: 'This page is not in our copy of the wiki.',
