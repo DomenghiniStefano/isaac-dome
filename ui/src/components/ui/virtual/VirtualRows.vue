@@ -1,9 +1,5 @@
 <script setup lang="ts" generic="T">
-import {
-  useDebounceFn,
-  useEventListener,
-  useResizeObserver,
-} from '@vueuse/core'
+import { useDebounceFn, useResizeObserver } from '@vueuse/core'
 import { computed, inject, nextTick, onMounted, ref, watch } from 'vue'
 import type { ComponentPublicInstance } from 'vue'
 import { useScaledRows } from '@/composables/useScaledRows'
@@ -11,8 +7,6 @@ import { Timing } from '@/lib/constants/timing'
 import { offsetToApply } from '@/lib/scale/scrollOffset'
 import type { ScrollOffset } from '@/lib/scale/scrollOffset'
 import {
-  listScrollTop,
-  pageScrollTop,
   totalHeightPx,
   visibleRows,
   type VisibleRow,
@@ -97,18 +91,20 @@ const body = computed(() => ({
 // Restored **after** the rows are there: an offset into an empty list scrolls nothing, and the
 // data arrives a tick after the component. Once only — a later change of the stored offset is
 // this component's own echo coming back, not somebody moving the list.
+//
+// Only a list in a box of its own does this. Inside a `PageScroll` the position is the page's,
+// kept by the page box's `v-scroll-memory`, and a second restore here would fight it.
 let restored = false
 watch(
   () => props.rows.length,
   async (rows) => {
+    if (page) return
     if (restored || rows === 0) return
     restored = true
     const top = offsetToApply(props.offset ?? null, rows)
     if (top === null) return
     await nextTick()
-    measureMargin()
-    if (scroller.value)
-      scroller.value.scrollTop = page ? pageScrollTop(top, margin.value) : top
+    if (own.value) own.value.scrollTop = top
   },
   { immediate: true },
 )
@@ -122,18 +118,11 @@ defineExpose({
 })
 
 // The length travels with the position, because that is what makes the position mean anything.
-// With the page as the scroller the position kept is still the list's own, not the page's.
+// Only the list's own box reports: inside a `PageScroll` the scroll is the page's to keep.
 const onScroll = useDebounceFn(() => {
-  const box = scroller.value
-  if (box)
-    emit('offsetChange', {
-      top: page ? listScrollTop(box.scrollTop, margin.value) : box.scrollTop,
-      rows: props.rows.length,
-    })
+  if (own.value && !page)
+    emit('offsetChange', { top: own.value.scrollTop, rows: props.rows.length })
 }, Timing.ViewWrite)
-useEventListener(() => page?.value ?? null, 'scroll', onScroll, {
-  passive: true,
-})
 </script>
 
 <template>

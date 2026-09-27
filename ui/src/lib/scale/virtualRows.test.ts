@@ -1,12 +1,8 @@
 import { describe, expect, it } from 'vitest'
 import spacing from '@/assets/theme/spacing.css?raw'
+import pageScroll from '@/components/ui/virtual/PageScroll.vue?raw'
 import virtualRows from '@/components/ui/virtual/VirtualRows.vue?raw'
-import {
-  listScrollTop,
-  pageScrollTop,
-  totalHeightPx,
-  visibleRows,
-} from './virtualRows'
+import { totalHeightPx, visibleRows } from './virtualRows'
 
 // Unlock, the Collection, Search and the wiki's category list each repeated the same pairing:
 // a virtualizer's items carry an index and an offset, the row itself lives in a plain array at
@@ -78,14 +74,13 @@ describe('the virtualized list body', () => {
   })
 })
 
-describe('the list offset when the page scrolls', () => {
-  it('is how far the page scrolled past the top of the list, never below zero', () => {
-    expect(listScrollTop(500, 300)).toBe(200)
-    expect(listScrollTop(100, 300)).toBe(0)
+describe('the position when the page scrolls', () => {
+  it('is kept by the page box, like every other screen page', () => {
+    expect(pageScroll).toMatch(/v-scroll-memory="'page'"[^>]*overflow-y-auto/)
   })
 
-  it('puts the page back where the list was left', () => {
-    expect(pageScrollTop(200, 300)).toBe(500)
-    expect(listScrollTop(pageScrollTop(200, 300), 300)).toBe(200)
+  it('is neither restored nor reported by the list inside it', () => {
+    expect(virtualRows).toMatch(/if \(page\) return/)
+    expect(virtualRows).not.toMatch(/pageScrollTop|listScrollTop/)
   })
 })

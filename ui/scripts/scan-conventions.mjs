@@ -438,7 +438,10 @@ const checks = [
     // which fails nothing and reads as the app forgetting. Every tag under `screens/` whose
     // class scrolls (`overflow-auto`, `overflow-y-auto`, under any variant) carries the
     // directive on the same tag. The lists on `VirtualRows` are not tags here: the component
-    // lives in `components/ui/` and keeps its own offset in the screen's reading.
+    // lives in `components/ui/` and keeps its own offset in the screen's reading. **What it
+    // cannot see**: a scrolling box inside a component under `components/`, which a screen
+    // mounts without a tag of its own that scrolls — `PageScroll` carries the directive itself,
+    // and it went a day without it while this rule stayed quiet.
     name: 'scrolling box without v-scroll-memory',
     test: (file, body) => {
       if (!file.endsWith('.vue') || !isUnder(file, SCREENS_DIR)) return false
