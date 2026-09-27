@@ -1,5 +1,5 @@
 import type { Component, FunctionalComponent } from 'vue'
-import { CheckIcon, LockIcon, StarIcon, TriangleAlertIcon } from '@lucide/vue'
+import { CheckIcon, LockIcon, TargetIcon, TriangleAlertIcon } from '@lucide/vue'
 import { h } from 'vue'
 import { BadgeVariant } from './variants'
 
@@ -13,10 +13,12 @@ const QuestionMark: FunctionalComponent = () =>
 // variant added without a mark doesn't compile.
 export const badgeIcons: Record<BadgeVariant, Component | null> = {
   [BadgeVariant.Done]: CheckIcon,
-  [BadgeVariant.Now]: StarIcon,
+  // Within reach now — doable, available, open, met and not yet beaten: a target to go for.
+  // Not a star, which reads as a favourite, a thing someone chose rather than a state.
+  [BadgeVariant.Now]: TargetIcon,
   [BadgeVariant.Blocked]: LockIcon,
   // A partial node is locked like a blocked one; its dashed edge, not its mark, says the
-  // graph couldn't interpret everything. It must never borrow the star of Now.
+  // graph couldn't interpret everything. It must never borrow the target of Now.
   [BadgeVariant.Partial]: LockIcon,
   [BadgeVariant.Unknown]: QuestionMark,
   [BadgeVariant.Unexpected]: TriangleAlertIcon,
