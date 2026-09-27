@@ -137,7 +137,7 @@ fn step(
 
 /// `<!-- … -->`, dropped whole. An unclosed one is text.
 ///
-/// `pub(crate)`: `blocks::transclusion_line` needs the same "a bare template, trailing
+/// `pub(crate)`: `blocks::synergy_list_line` needs the same "a bare template, trailing
 /// whitespace and a comment allowed" check `name_list_items` already makes.
 pub(crate) fn try_comment(rest: &str) -> Option<usize> {
     let end = rest.strip_prefix("<!--")?.find("-->")?;
@@ -308,13 +308,13 @@ fn template(t: &Template, r: &Resolver, d: &mut Diagnostics, out: &mut Out, dept
         // The zero-argument transclusion of the item's *full* synergy table (Book of
         // Virtues's and The Book of Belial's own "Combinations" sections, kept now that
         // decision 2 keeps the heading), as opposed to `book of virtues synergy` above,
-        // which is one synergy written out on the page that names it. Its rows live on a
-        // Template: page — card #86, task 3, fetches the two of them and
-        // `blocks::transclusion_line` expands them, but only when the whole line is nothing
-        // but the bare template: this arm is the fallback for the shape that reaches inline
-        // parsing anyway (inside a sentence, or the fetch hasn't run), where there is either
-        // no wikitext to read or no block tree to splice one into. Producing nothing here,
-        // like a layout template, rather than falling through as unknown either way.
+        // which is one synergy written out on the page that names it. Its rows are
+        // `bov_combination`/`bob_combination`, two downloaded Cargo tables —
+        // `blocks::synergy_list_line` reads them, but only when the whole line is nothing but
+        // the bare template: this arm is the fallback for the shape that reaches inline
+        // parsing anyway (inside a sentence), where there is no block tree to splice a list
+        // into. Producing nothing here, like a layout template, rather than falling through
+        // as unknown either way.
         "book of virtues synergy list" | "book of belial synergy list" => {}
         "recipe" => recipe(t, out),
         "achievement unlock" => achievement_unlock(t, &arg, r, d, out),

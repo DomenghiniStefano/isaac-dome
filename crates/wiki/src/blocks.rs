@@ -8,10 +8,10 @@
 mod tabber;
 mod table;
 
-use crate::inline::{name_list_items, parse_inline, try_comment};
-use crate::resolver::Resolver;
+use crate::inline::{collectible, name_list_items, parse_inline, try_comment};
+use crate::resolver::{Resolver, Row};
 use crate::template::{parse_template_at, template_segments, Segment, Template};
-use crate::{Block, Diagnostics, ListItem};
+use crate::{Block, Diagnostics, Inline, ListItem, Style};
 
 /// A list item still to be built: depth, whether the last marker is `#`, text.
 struct RawItem {
@@ -34,11 +34,6 @@ struct Parser<'a> {
     /// this its Lua listing read as loose paragraph text and its own `}` (a table literal,
     /// not `{{…}}`'s closer) as an orphaned one.
     in_verbatim: bool,
-    /// `false` only while reading a stored content template's own wikitext
-    /// ([`parse_blocks_inner`]'s doc comment says why): a bare line naming one falls through
-    /// to producing nothing, same as before it had a reader at all, instead of expanding
-    /// again.
-    expand_transclusions: bool,
 }
 
 /// A template whose content is block-level, and what this pass is allowed to do with it.
@@ -174,21 +169,6 @@ fn push_headed(out: &mut String, t: &Template, param: &str, source: &str, after:
 }
 
 pub fn parse_blocks(body: &str, r: &Resolver, d: &mut Diagnostics) -> Vec<Block> {
-    parse_blocks_inner(body, r, d, true)
-}
-
-/// `expand_transclusions` is `false` only on the recursive call
-/// [`Parser::transclusion_line`] makes to read a stored content template's own wikitext:
-/// that text is never itself allowed to transclude another one, the same bounded-depth
-/// reasoning `inline::MAX_TEMPLATE_DEPTH` uses, sized down to "never" because nothing
-/// legitimate nests these — a template that somehow named itself would otherwise recurse
-/// without end on external data this parser must not trust.
-fn parse_blocks_inner(
-    body: &str,
-    r: &Resolver,
-    d: &mut Diagnostics,
-    expand_transclusions: bool,
-) -> Vec<Block> {
     let mut p = Parser {
         r,
         d,
@@ -197,7 +177,6 @@ fn parse_blocks_inner(
         list: Vec::new(),
         table: None,
         in_verbatim: false,
-        expand_transclusions,
     };
     for raw in unwrapped(body).lines() {
         p.line(raw.trim_end());
@@ -270,7 +249,7 @@ impl Parser<'_> {
             return;
         }
         self.flush_list();
-        if !self.name_list_line(trimmed) && !self.transclusion_line(trimmed) {
+        if !self.name_list_line(trimmed) && !self.synergy_list_line(trimmed) {
             self.paragraph_line(trimmed);
         }
     }
@@ -297,24 +276,19 @@ impl Parser<'_> {
         true
     }
 
-    /// Card #86, task 3: a line that is nothing but a bare content-template call — the same
-    /// "trailing whitespace and a comment allowed" shape `name_list_items` reads — is
-    /// replaced by the blocks its own `Template:` page's wikitext parses into, when the
-    /// fetch downloaded that page and stored it (`Resolver::template`, any name
-    /// `CONTENT_TEMPLATES` lists, not two hardcoded ones: a new content template earns this
-    /// for free the moment it is added there and to that list, with nothing to change here).
-    /// `false` for any other line, for a name the resolver has no wikitext for (the fetch
-    /// hasn't run, or the name isn't a content template at all), and while already expanding
-    /// one (`expand_transclusions`): in every one of those cases the line falls through to
-    /// producing nothing, exactly as it did before any content template had a reader.
-    fn transclusion_line(&mut self, trimmed: &str) -> bool {
-        if !self.expand_transclusions {
-            return false;
-        }
+    /// Card #86 fix 1: a line that is nothing but `{{book of virtues synergy list}}`/`{{book
+    /// of belial synergy list}}` — the same "trailing whitespace and a comment allowed" shape
+    /// `name_list_items` reads — becomes the list the wiki's own `{{cargo lookup}}` over
+    /// `bov_combination`/`bob_combination` would draw: one item per row, read straight from
+    /// the downloaded table (`Resolver::synergy_rows`) rather than by expanding that lookup's
+    /// wikitext, which this parser cannot read as a query. `false` for any other line, and
+    /// for a name the resolver has no rows for (the wrong table, or the fetch hasn't run) —
+    /// the same degrade a name list with nothing to draw already has.
+    fn synergy_list_line(&mut self, trimmed: &str) -> bool {
         let Some((t, end)) = parse_template_at(trimmed, 0) else {
             return false;
         };
-        let Some(wikitext) = self.r.template(&t.name) else {
+        let Some(rows) = self.r.synergy_rows(&t.name) else {
             return false;
         };
         let rest = trimmed.get(end..).unwrap_or_default().trim();
@@ -322,8 +296,23 @@ impl Parser<'_> {
             return false;
         }
         self.flush_para();
-        let blocks = parse_blocks_inner(wikitext, self.r, self.d, false);
-        self.out.extend(blocks);
+        let items: Vec<ListItem> = rows
+            .iter()
+            .filter_map(|row| synergy_item(row, self.r, self.d))
+            .map(|inline| ListItem {
+                inline,
+                children: Vec::new(),
+            })
+            .collect();
+        // No rows — the fetch hasn't downloaded `bov_combination`/`bob_combination` yet, or
+        // the real table has none — degrades to nothing, the same as a name list with no
+        // names, rather than an empty bulleted list.
+        if !items.is_empty() {
+            self.out.push(Block::List {
+                ordered: false,
+                items,
+            });
+        }
         true
     }
 
@@ -409,6 +398,42 @@ fn list_item(trimmed: &str) -> Option<RawItem> {
             .trim()
             .to_string(),
     })
+}
+
+/// One `bov_combination`/`bob_combination` row, as `{{cargo lookup}}`'s own pattern draws it
+/// (`* {{link|…}}: @description`): the collectible it names, resolved by page name — the row
+/// carries no id, so there is no id to prefer — then its own description, parsed as inline
+/// wikitext. `None` for a row naming nothing, which the wiki's own `WHERE description IS NOT
+/// NULL` already keeps out of the real table.
+fn synergy_item(row: &Row, r: &Resolver, d: &mut Diagnostics) -> Option<Vec<Inline>> {
+    let name = row
+        .get("collectible")
+        .map(String::as_str)
+        .unwrap_or_default()
+        .trim();
+    if name.is_empty() {
+        return None;
+    }
+    let mut inline = vec![match collectible("i", name, r, d) {
+        Some(target) => Inline::Ref {
+            target,
+            label: name.to_string(),
+        },
+        None => Inline::Text {
+            text: name.to_string(),
+            style: Style::Plain,
+        },
+    }];
+    inline.push(Inline::Text {
+        text: ": ".to_string(),
+        style: Style::Plain,
+    });
+    let description = row
+        .get("description")
+        .map(String::as_str)
+        .unwrap_or_default();
+    inline.extend(parse_inline(description, r, d));
+    Some(inline)
 }
 
 /// Whether `line` opens a `<syntaxhighlight …>` tag with no matching close on the same
@@ -973,23 +998,13 @@ mod tests {
         );
     }
 
-    /// Card #86, task 3: a bare `{{book of virtues synergy list}}` line, with the template's
-    /// own wikitext fetched and stored on the resolver, becomes the blocks that wikitext
-    /// parses into — the item's page carries the "Combinations" table for real instead of
-    /// producing nothing.
+    /// Card #86, fix 1: a bare `{{book of virtues synergy list}}` line becomes one list item
+    /// per `bov_combination` row — `test_resolver()`'s own fixture row names "Breakfast" and
+    /// carries a description — a reference to the item it names, then its description parsed
+    /// as inline wikitext, the same shape the wiki's own `{{cargo lookup}}` pattern draws.
     #[test]
-    fn a_synergy_list_expands_the_stored_template_wikitext() {
-        let mut templates = std::collections::BTreeMap::new();
-        templates.insert(
-            "book of virtues synergy list".to_string(),
-            "* {{i|Breakfast}}: heals extra hearts.".to_string(),
-        );
-        let r = test_resolver().with_templates(templates);
-        let blocks = parse_blocks(
-            "{{Book of Virtues synergy list}}",
-            &r,
-            &mut Diagnostics::default(),
-        );
+    fn a_synergy_list_reads_its_rows_from_the_downloaded_cargo_tables() {
+        let blocks = p("{{Book of Virtues synergy list}}\n");
         let Block::List { items, .. } = &blocks[0] else {
             panic!("a list, got {blocks:?}")
         };
@@ -1002,54 +1017,57 @@ mod tests {
                     ..
                 }
             )),
-            "{:?}",
+            "the collectible is missing: {:?}",
             items[0].inline
         );
-    }
-
-    /// Not two hardcoded names: any name `Resolver::template` answers for expands the same
-    /// way, so a content template added later needs no change here — only a new entry in
-    /// `CONTENT_TEMPLATES` and whatever reads it downstream.
-    #[test]
-    fn a_transclusion_line_expands_whatever_template_name_the_resolver_has_stored() {
-        let mut templates = std::collections::BTreeMap::new();
-        templates.insert(
-            "some future content template".to_string(),
-            "* {{i|Breakfast}}: a made-up example.".to_string(),
-        );
-        let r = test_resolver().with_templates(templates);
-        let blocks = parse_blocks(
-            "{{Some Future Content Template}}",
-            &r,
-            &mut Diagnostics::default(),
-        );
+        let flat: String = items[0]
+            .inline
+            .iter()
+            .filter_map(|i| match i {
+                Inline::Text { text, .. } => Some(text.as_str()),
+                _ => None,
+            })
+            .collect();
         assert!(
-            matches!(&blocks[0], Block::List { items, .. } if items.len() == 1),
-            "{blocks:?}"
+            flat.contains("Heals for a extra half a heart."),
+            "the description is missing: {flat:?}"
         );
     }
 
-    /// The fetch that downloads a content template hasn't always run: with no wikitext
-    /// stored on the resolver (`test_resolver()`'s own default), the bare template line
-    /// falls through to producing nothing — today's behaviour, unaffected until then.
+    /// The Belial twin reads its own table, not the Book of Virtues one: `bob_combination`'s
+    /// fixture row carries a different description, so the two lines can't be confused for
+    /// each other's rows.
     #[test]
-    fn a_transclusion_with_no_stored_template_produces_nothing() {
-        assert!(p("{{Book of Virtues synergy list}}\n").is_empty());
-        assert!(p("{{Book of Belial synergy list}}\n").is_empty());
+    fn the_belial_synergy_list_reads_its_own_table() {
+        let blocks = p("{{Book of Belial synergy list}}\n");
+        let Block::List { items, .. } = &blocks[0] else {
+            panic!("a list, got {blocks:?}")
+        };
+        assert_eq!(items.len(), 1, "{items:?}");
+        let flat: String = items[0]
+            .inline
+            .iter()
+            .filter_map(|i| match i {
+                Inline::Text { text, .. } => Some(text.as_str()),
+                _ => None,
+            })
+            .collect();
+        assert!(
+            flat.contains("chosen at random"),
+            "the belial description is missing: {flat:?}"
+        );
     }
 
-    /// A pathological self-reference (the stored wikitext itself naming the template that
-    /// transcludes it) must not recurse without end on data this parser does not control:
-    /// the inner occurrence falls through to the inline fallback, which is nothing, same as
-    /// `a_transclusion_with_no_stored_template_produces_nothing`.
+    /// No rows downloaded — the fetch hasn't run, or the real table is empty — degrades to
+    /// nothing, the same as a name list with no names, rather than an empty bulleted list.
     #[test]
-    fn a_transclusion_naming_itself_does_not_recurse() {
-        let mut templates = std::collections::BTreeMap::new();
-        templates.insert(
-            "book of virtues synergy list".to_string(),
-            "{{Book of Virtues synergy list}}".to_string(),
+    fn a_synergy_list_with_no_rows_produces_nothing() {
+        let tables = crate::resolver::Tables::default();
+        let r = crate::resolver::Resolver::new(
+            &tables,
+            &std::collections::BTreeMap::new(),
+            &crate::resolver::Corrections::default(),
         );
-        let r = test_resolver().with_templates(templates);
         let blocks = parse_blocks(
             "{{Book of Virtues synergy list}}",
             &r,

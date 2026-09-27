@@ -64,30 +64,25 @@ pub struct Raw {
     /// `from` → `to`, both canonical titles (`title::canonical_title`), sorted. Empty when
     /// `redirects.json` is absent — a snapshot has none until the whole-namespace fetch runs.
     pub redirects: BTreeMap<String, String>,
-    /// A content template's own wikitext, by its title without the `Template:` prefix
-    /// (`"Infobox character"`, `"Book of Virtues synergy list"`…) — every name
-    /// [`CONTENT_TEMPLATES`] lists, one map instead of one field per template. Design
-    /// decision 4 reads `"Infobox character"` for the base-stat defaults it declares; card
-    /// #86 task 3 reads the two synergy lists a `{{book of virtues synergy list}}`/`{{book
-    /// of belial synergy list}}` transcludes, which the whole-namespace fetch never downloads
-    /// on its own (namespace 0 only). A name with no file — the template-defaults fetch
-    /// hasn't run, or hasn't been extended to a newly added name yet — is simply absent from
-    /// the map, the same degrade `Option::None` gave for one field.
+    /// A content template's own wikitext, by its title without the `Template:` prefix — every
+    /// name [`CONTENT_TEMPLATES`] lists, one map instead of one field per template. Design
+    /// decision 4 reads `"Infobox character"` for the base-stat defaults it declares. Card #86
+    /// fix 2 removed the two synergy-list templates from this list: their own wikitext was a
+    /// `{{cargo lookup}}`, not content to expand, and the rows it queried are read straight
+    /// from `Tables::bov_combination`/`bob_combination` instead (`resolver::synergy_rows`). A
+    /// name with no file — the template-defaults fetch hasn't run, or hasn't been extended to
+    /// a newly added name yet — is simply absent from the map, the same degrade
+    /// `Option::None` gave for one field.
     pub templates: BTreeMap<String, String>,
 }
 
 /// The namespace-10 pages fetched whole because their own wikitext is data the parser reads,
-/// not because they render a page: `Infobox character`'s base-stat defaults, and the two
-/// synergy-list tables a bare `{{book of virtues synergy list}}`/`{{book of belial synergy
-/// list}}` transcludes. One list, read by both sides: `wiki-snapshot::fetch` downloads each
-/// name here into `templates/<name>.wikitext`, and [`Raw::load`] reads the same list back.
-/// Add a template here (and, if it needs one, a place downstream that reads it by name from
-/// [`Raw::templates`]) rather than a new field on [`Raw`] or a new list in `wiki-snapshot`.
-pub const CONTENT_TEMPLATES: &[&str] = &[
-    "Infobox character",
-    "Book of Virtues synergy list",
-    "Book of Belial synergy list",
-];
+/// not because they render a page: `Infobox character`'s base-stat defaults. One list, read
+/// by both sides: `wiki-snapshot::fetch` downloads each name here into
+/// `templates/<name>.wikitext`, and [`Raw::load`] reads the same list back. Add a template
+/// here (and a place downstream that reads it by name from [`Raw::templates`]) rather than a
+/// new field on [`Raw`] or a new list in `wiki-snapshot`.
+pub const CONTENT_TEMPLATES: &[&str] = &["Infobox character"];
 
 #[derive(Debug)]
 pub enum RawError {
@@ -191,6 +186,8 @@ fn load_tables(cargo: &Path) -> Result<Tables, RawError> {
         player: optional_table(cargo, "player")?,
         transformation: optional_table(cargo, "transformation")?,
         pickup: optional_table(cargo, "pickup")?,
+        bov_combination: optional_table(cargo, "bov_combination")?,
+        bob_combination: optional_table(cargo, "bob_combination")?,
     })
 }
 
@@ -339,53 +336,10 @@ mod tests {
             raw.templates.get("Infobox character").map(String::as_str),
             Some("{{{damage|3.5}}}")
         );
-        // Task 3: the same read, absent from this fixture, degrades to a missing key rather
-        // than an error — a snapshot taken before the synergy-list fetch exists has neither.
-        assert!(!raw.templates.contains_key("Book of Virtues synergy list"));
-        assert!(!raw.templates.contains_key("Book of Belial synergy list"));
-    }
-
-    /// The two synergy-list templates, present this time: read back exactly what was
-    /// written, one file per template the way `Infobox character`'s already is, all three
-    /// landing in the same `templates` map — `CONTENT_TEMPLATES` is the one list of what can
-    /// be there.
-    #[test]
-    fn load_reads_every_content_template_when_present() {
-        let dir = tempfile::tempdir().unwrap();
-        let p = dir.path();
-        std::fs::create_dir_all(p.join("cargo")).unwrap();
-        std::fs::create_dir_all(p.join("templates")).unwrap();
-        std::fs::write(p.join("index.json"), "{}").unwrap();
-        std::fs::write(
-            p.join("cargo/collectible.json"),
-            r#"[{"_pageName":"Breakfast","id":"25"}]"#,
-        )
-        .unwrap();
-        std::fs::write(
-            p.join("templates/Book_of_Virtues_synergy_list.wikitext"),
-            "* {{i|Breakfast}}: heals extra.",
-        )
-        .unwrap();
-        std::fs::write(
-            p.join("templates/Book_of_Belial_synergy_list.wikitext"),
-            "* {{i|Breakfast}}: costs extra.",
-        )
-        .unwrap();
-        let raw = Raw::load(p).unwrap();
-        assert_eq!(
-            raw.templates
-                .get("Book of Virtues synergy list")
-                .map(String::as_str),
-            Some("* {{i|Breakfast}}: heals extra.")
-        );
-        assert_eq!(
-            raw.templates
-                .get("Book of Belial synergy list")
-                .map(String::as_str),
-            Some("* {{i|Breakfast}}: costs extra.")
-        );
-        assert!(!raw.templates.contains_key("Infobox character"));
-        assert_eq!(raw.templates.len(), 2);
+        // `CONTENT_TEMPLATES` lists one name today: a file for any other title, even one the
+        // fetch could in principle write, is simply not read back — `load_content_templates`
+        // asks for names by that list, not by scanning the directory.
+        assert_eq!(raw.templates.len(), 1);
     }
 
     /// An `Article`'s `category` round-trips through `index.json`; every other kind's stays

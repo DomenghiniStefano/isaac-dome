@@ -34,6 +34,13 @@ pub const TABLES: &[(&str, &str)] = &[
     ),
     ("pickup", "_pageName,id,alias,type,dlc"),
     ("version", "_pageName,number,name,date,dlc"),
+    // Card #86, task 1: the two tables `{{book of virtues synergy list}}`/`{{book of belial
+    // synergy list}}`'s own `{{cargo lookup}}` queries — `action=cargofields`, read
+    // 2026-09-27, declares exactly these two fields for each. `collectible` is the
+    // interacting item's page name (the row carries no id of its own); `description` is
+    // wikitext, read the same way any other inline text is (`resolver::synergy_rows`).
+    ("bov_combination", "collectible,description"),
+    ("bob_combination", "collectible,description"),
 ];
 
 /// How many pages a request asking for wikitext (`prop=revisions`) fetches: the maximum

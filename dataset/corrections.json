@@ -91,7 +91,8 @@
       "References": "external citations, off the wiki",
       "Trivia": "the owner's call: the least useful part of a page (decision 9)",
       "Audio": "sound listings, a game asset (constraint 3)",
-      "Sounds": "sound listings, a game asset (constraint 3), same reason as Audio"
+      "Sounds": "sound listings, a game asset (constraint 3), same reason as Audio",
+      "Pages": "a picture grid — the Bestiary's monster/boss portraits by page, the Collection Page articles' item recreation (already unmodelled behind {{collection page}}) — images, a game asset (constraint 3); card #86 fix 2"
     }
   },
   "deadLinks": {
