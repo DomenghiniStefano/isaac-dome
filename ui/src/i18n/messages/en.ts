@@ -498,6 +498,7 @@ export const en: MessageSchema = {
       reward: 'Reward',
       unlockable: 'Unlockable',
       startingItems: 'Unlockable starting items',
+      other: 'Other',
     },
     infobox: {
       title: 'Card',

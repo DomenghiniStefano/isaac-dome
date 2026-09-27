@@ -1,4 +1,4 @@
-import type { Section, SectionKind } from '@/lib/ipc/types'
+import type { Inline, Section, SectionKind } from '@/lib/ipc/types'
 
 // The index of a page's sections, for the column that stays beside the text (card #57).
 // It exists so a long page can be moved through without scrolling it blind, which means a
@@ -8,6 +8,10 @@ export const OutlineFloor = 2
 
 export interface OutlineItem {
   kind: SectionKind
+  // The heading as the wiki wrote it — read only for `SectionKind.Other`, whose label is
+  // its own title and not a translated one; carried for every kind so the reader
+  // (`WikiOutline.vue`) needs nothing but the item to decide.
+  title: Inline[]
   /** The id its section's heading carries, and what the link scrolls to. */
   id: string
 }
@@ -21,5 +25,6 @@ export const outlineOf = (sections: Section[]): OutlineItem[] =>
     ? []
     : sections.map((section, index) => ({
         kind: section.kind,
+        title: section.title,
         id: sectionAnchor(index),
       }))

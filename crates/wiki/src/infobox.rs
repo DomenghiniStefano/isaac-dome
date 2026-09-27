@@ -5,7 +5,7 @@ use std::collections::BTreeMap;
 use crate::editions::declared_range;
 use crate::inline::parse_inline;
 use crate::resolver::Resolver;
-use crate::template::{template_segments, Segment, Template};
+use crate::template::{parse_template_at, template_segments, Segment, Template};
 use crate::{CollectibleTemplate, Diagnostics, Dlc, Infobox, Inline, Target};
 
 /// An `{{infobox …}}` template as-is: lowercase name and raw named parameters.
@@ -339,16 +339,65 @@ fn challenge_from(ib: &RawInfobox, r: &Resolver, d: &mut Diagnostics) -> Infobox
 fn character_from(ib: &RawInfobox, r: &Resolver, d: &mut Diagnostics) -> Infobox {
     Infobox::Character {
         health: inline(ib, "health", r, d),
-        damage: text(ib, "damage"),
-        tears: text(ib, "tears"),
-        range: text(ib, "range"),
-        speed: text(ib, "speed"),
-        luck: text(ib, "luck"),
-        shot_speed: text(ib, "shot speed"),
+        damage: stat(ib, "damage", r),
+        tears: stat(ib, "tears", r),
+        range: stat(ib, "range", r),
+        speed: stat(ib, "speed", r),
+        luck: stat(ib, "luck", r),
+        shot_speed: stat(ib, "shot speed", r),
         pickups: inline(ib, "pickups", r, d),
         collectibles: inline(ib, "collectibles", r, d),
         parent: r.by_page_title(param(ib, "parent")),
     }
+}
+
+/// A base stat as the page states it, or, when it states nothing, the template's own default
+/// (design decision 4): the site shows the default too, and a character page usually omits
+/// exactly the stats it doesn't narrow. `Resolver::character_stat_default` is empty whenever
+/// `Raw::template_infobox_character` was `None` (no template-defaults fetch) or didn't parse
+/// in the shape `stat_defaults` expects — either way this degrades to `text`'s own empty
+/// string, today's behaviour.
+fn stat(ib: &RawInfobox, name: &str, r: &Resolver) -> String {
+    let declared = text(ib, name);
+    if !declared.is_empty() {
+        return declared;
+    }
+    r.character_stat_default(name)
+        .map(str::to_string)
+        .unwrap_or_default()
+}
+
+/// The six base stats `Template:Infobox character` declares a default for, each on its own
+/// `{{#vardefine: infobox#<stat> | {{#or: … | <default> }} }} }}` line — measured on the raw
+/// template text, 2026-09-26. `health` is not among them: its own line is
+/// `{{{health|}}}` with no `#or` fallback, so a character page that omits it states nothing,
+/// the same as today.
+const STAT_NAMES: [&str; 6] = ["damage", "tears", "shot speed", "range", "speed", "luck"];
+
+/// Every stat [`STAT_NAMES`] finds in `template`, keyed by its infobox parameter name. A
+/// stat the expected `{{#vardefine: infobox#<stat> | {{#or: … | <default> }} }}` shape isn't
+/// found in degrades to absent — same as a missing template, never a panic on a wiki edit
+/// that reshapes the block.
+pub(crate) fn stat_defaults(template: &str) -> BTreeMap<String, String> {
+    STAT_NAMES
+        .iter()
+        .filter_map(|&name| Some((name.to_string(), stat_default(template, name)?)))
+        .collect()
+}
+
+/// One stat's default: the `{{#or: … | DEFAULT }}` block's own last alternative, read with
+/// the same brace-depth-aware split `parse_template_at` gives every other template — so the
+/// nested `{{dlcalt|23.75|r=6.5}}` inside `range`'s default doesn't get cut at its own `|`.
+/// Kept raw, unresolved (`{{dlcalt|…}}` included when the default carries one): the same
+/// level `text()` reads a *declared* stat at, so a default and a stated value read alike.
+fn stat_default(template: &str, name: &str) -> Option<String> {
+    let marker = format!("#vardefine: infobox#{name}");
+    let start = template.find(&marker)?;
+    let open = template[..start].rfind("{{")?;
+    let (vardefine, _) = parse_template_at(template, open)?;
+    let or_call_text = vardefine.args.first()?.trim();
+    let (or_call, _) = parse_template_at(or_call_text, 0)?;
+    or_call.args.last().map(|s| s.trim().to_string())
 }
 
 #[cfg(test)]
@@ -811,6 +860,118 @@ mod tests {
         };
         assert_eq!(tears, "2.73");
         assert_eq!(parent, Some(Target::Character { id: 21 }));
+    }
+
+    /// `Template:Infobox character`'s own shape, one line per stat, modeled on the six lines
+    /// read from the raw template on 2026-09-26. `range`'s default nests a `{{dlcalt|…}}`
+    /// inside a `{{dlcmap|…}}`, which is why the parser has to be brace-depth-aware rather
+    /// than splitting on the last `|` in the line: a naive split would cut inside `dlcalt`'s
+    /// own `r=6.5` and lose the rest.
+    const TEMPLATE_SHAPE: &str = "\
+{{#vardefine: infobox#damage     | {{#or: {{dlcmap | {{{damage|}}} }} | 3.5 (*1.00) }} }}<!--
+-->{{#vardefine: infobox#tears      | {{#or: {{dlcmap | {{{tears|}}} }} | +0 }} }}<!--
+-->{{#vardefine: infobox#shot speed | {{#or: {{dlcmap | {{{shot speed|}}} }} | 1 }} }}<!--
+-->{{#vardefine: infobox#range      | {{#or: {{dlcmap | {{{range|}}} }} | {{dlcmap | {{dlcalt|23.75|r=6.5}} }} }} }}<!--
+-->{{#vardefine: infobox#speed      | {{#or: {{dlcmap | {{{speed|}}} }} | 1.0 }} }}<!--
+-->{{#vardefine: infobox#luck       | {{#or: {{dlcmap | {{{luck|}}} }} | 0 }} }}<!--
+-->";
+
+    #[test]
+    fn stat_default_reads_each_stats_own_vardefine_line() {
+        assert_eq!(
+            stat_default(TEMPLATE_SHAPE, "damage").as_deref(),
+            Some("3.5 (*1.00)")
+        );
+        assert_eq!(stat_default(TEMPLATE_SHAPE, "tears").as_deref(), Some("+0"));
+        assert_eq!(
+            stat_default(TEMPLATE_SHAPE, "shot speed").as_deref(),
+            Some("1")
+        );
+        assert_eq!(
+            stat_default(TEMPLATE_SHAPE, "range").as_deref(),
+            Some("{{dlcmap | {{dlcalt|23.75|r=6.5}} }}")
+        );
+        assert_eq!(
+            stat_default(TEMPLATE_SHAPE, "speed").as_deref(),
+            Some("1.0")
+        );
+        assert_eq!(stat_default(TEMPLATE_SHAPE, "luck").as_deref(), Some("0"));
+    }
+
+    /// A stat `#vardefine: infobox#<name>` never occurs for, and a template with none of the
+    /// expected shape at all: both degrade to `None`, not a panic — a wiki edit that reshapes
+    /// the block loses the default, it doesn't take the build down.
+    #[test]
+    fn stat_default_of_an_unrecognized_shape_is_none() {
+        assert_eq!(stat_default(TEMPLATE_SHAPE, "luck bonus"), None);
+        assert_eq!(stat_default("no vardefine here at all", "damage"), None);
+    }
+
+    /// `Template:Infobox character`'s **real, committed** wikitext (`dataset/raw/templates/`):
+    /// the six values below were read by hand from that file, not from this parser's own
+    /// output — if the template is ever re-fetched and changes, this is the test that has to
+    /// be re-read against the new file, the same discipline `save-format.md`'s pinned numbers
+    /// follow.
+    #[test]
+    fn stat_defaults_matches_the_committed_template_file() {
+        let root = std::path::Path::new(env!("CARGO_MANIFEST_DIR")).join("../../dataset/raw");
+        let text = std::fs::read_to_string(root.join("templates/Infobox_character.wikitext"))
+            .expect("dataset/raw/templates/Infobox_character.wikitext");
+        let defaults = stat_defaults(&text);
+        assert_eq!(
+            defaults.get("damage").map(String::as_str),
+            Some("3.5 (*1.00)")
+        );
+        assert_eq!(defaults.get("tears").map(String::as_str), Some("+0"));
+        assert_eq!(defaults.get("shot speed").map(String::as_str), Some("1"));
+        assert_eq!(
+            defaults.get("range").map(String::as_str),
+            Some("{{dlcmap | {{dlcalt|23.75|r=6.5}} }}")
+        );
+        assert_eq!(defaults.get("speed").map(String::as_str), Some("1.0"));
+        assert_eq!(defaults.get("luck").map(String::as_str), Some("0"));
+    }
+
+    /// The two halves of design decision 4: a stat the page states is kept exactly as
+    /// written, and one it omits takes the resolver's default. `health` has no default at
+    /// all — `Template:Infobox character` declares none — so an omitted `health` stays empty
+    /// either way, today's behaviour.
+    #[test]
+    fn an_omitted_stat_takes_the_default_a_declared_one_is_kept() {
+        let mut defaults = BTreeMap::new();
+        defaults.insert("damage".to_string(), "3.5 (*1.00)".to_string());
+        defaults.insert("tears".to_string(), "+0".to_string());
+        let r = Resolver::default().with_character_stat_defaults(defaults);
+        let mut d = Diagnostics::default();
+        let ib = raw("infobox character", &[("tears", "3.5 (*1.35)")]);
+        let Infobox::Character {
+            damage,
+            tears,
+            health,
+            ..
+        } = infobox_from(InfoboxKind::Character, &ib, "", &r, &mut d)
+        else {
+            panic!("a character infobox gives Infobox::Character")
+        };
+        assert_eq!(damage, "3.5 (*1.00)", "omitted: takes the default");
+        assert_eq!(tears, "3.5 (*1.35)", "declared: kept as written");
+        assert!(health.is_empty(), "no default for health either way");
+    }
+
+    /// No template fetched (`Raw::template_infobox_character` is `None`, the pre-fetch
+    /// snapshot's shape) leaves every stat exactly as `text()` alone would: today's
+    /// behaviour, unchanged.
+    #[test]
+    fn with_no_defaults_set_an_omitted_stat_stays_empty() {
+        let r = Resolver::default();
+        let mut d = Diagnostics::default();
+        let ib = raw("infobox character", &[]);
+        let Infobox::Character { damage, .. } =
+            infobox_from(InfoboxKind::Character, &ib, "", &r, &mut d)
+        else {
+            panic!("a character infobox gives Infobox::Character")
+        };
+        assert_eq!(damage, "");
     }
 
     #[test]

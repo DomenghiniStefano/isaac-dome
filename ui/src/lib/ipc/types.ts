@@ -1052,6 +1052,7 @@ export const SectionKind = {
   Reward: 'reward',
   Unlockable: 'unlockable',
   StartingItems: 'startingItems',
+  Other: 'other',
 } as const
 export type SectionKind = (typeof SectionKind)[keyof typeof SectionKind]
 
@@ -1266,7 +1267,18 @@ export type Infobox =
       parent: Target | null
     }
 
-export type Section = { kind: SectionKind; blocks: Array<Block> }
+export type Section = {
+  kind: SectionKind
+  /**
+   * The heading exactly as the wiki wrote it, parsed like any other span of wikitext: a
+   * heading can carry `{{dlc+|r}}` or name a page (`{{c|Tainted Eve}}`, `{{s|Ashpit}}`).
+   * Carried for every kind, not only `Other`'s: the thirteen known kinds still show their
+   * translated title on screen, but a reader that wants the wiki's own words (a dead-link
+   * tally, a diagnostic) has one field to read regardless of kind.
+   */
+  title: Array<Inline>
+  blocks: Array<Block>
+}
 
 /**
  * A wiki page reduced to what's needed: the infobox and the text sections that are kept.

@@ -6,6 +6,12 @@ import { WikiCategory } from '@/router/routeTable'
 
 // A section's name for the reader (Schermate.dc.html, SEC_LABEL). A record over the whole
 // set: a kind with no name fails to compile.
+//
+// `Other`'s own title (`Section.title`) is the label a reader actually wants — a page like
+// Damage has "Formula", Bag of Crafting has "Recipes" — so `WikiSections`/`WikiOutline` read
+// that instead, wherever the section itself is at hand, and render it with `WikiInline`. This
+// entry only fires where nothing but the kind travels (a search hit's `SearchMatch::Section`
+// carries no title), and it names the kind rather than pretending to name the heading.
 export const sectionText: Record<SectionKind, Message> = {
   [SectionKind.Effects]: 'wiki.section.effects',
   [SectionKind.Notes]: 'wiki.section.notes',
@@ -20,6 +26,7 @@ export const sectionText: Record<SectionKind, Message> = {
   [SectionKind.Reward]: 'wiki.section.reward',
   [SectionKind.Unlockable]: 'wiki.section.unlockable',
   [SectionKind.StartingItems]: 'wiki.section.startingItems',
+  [SectionKind.Other]: 'wiki.section.other',
 }
 
 // A page's kind badge: the category's singular, by the page's identity.
