@@ -19,13 +19,33 @@ export interface FactChip {
   tone: Tone
 }
 
-// One sortable column a table view shows for a category (Task 5): the header and a getter
-// over the page. `value` reads `null` for a page whose `facts` is not the kind this column
-// belongs to, the same way a filter reads a page that doesn't apply.
+// One sortable column a table view shows for a category: the header and a getter over the
+// page. `value` reads `null` for a page whose `facts` is not the kind this column belongs to,
+// the same way a filter reads a page that doesn't apply. `text`, when present, is what the
+// column shows instead of `value`: a flag or a kind sorts by a number and reads as a word.
 export interface FactColumn {
   key: string
   label: Message
   value: (page: WikiPageRef) => string | number | null
+  text?: (page: WikiPageRef) => Message | null
+}
+
+// What a column shows for a page: a word to translate, the value as it is, or nothing.
+export type ShownValue =
+  { kind: 'message'; key: Message } | { kind: 'raw'; text: string }
+
+export const shownValue = (
+  column: FactColumn,
+  page: WikiPageRef,
+): ShownValue | null => {
+  if (column.text) {
+    const key = column.text(page)
+    return key === null ? null : { kind: 'message', key }
+  }
+  const value = column.value(page)
+  return value === null || value === ''
+    ? null
+    : { kind: 'raw', text: String(value) }
 }
 
 const chip = (
@@ -383,10 +403,28 @@ const scalarColumn = <K extends PageFacts['kind']>(
     page.facts.kind === kind ? get(page.facts as Facts<K>) : null,
 })
 
+// A column that sorts by a number and reads as a word, or as nothing when the word is `null`:
+// a flag names itself when it holds and says nothing when it does not.
+const wordColumn = <K extends PageFacts['kind']>(
+  kind: K,
+  key: string,
+  label: Message,
+  get: (facts: Facts<K>) => number,
+  word: (facts: Facts<K>) => Message | null,
+): FactColumn => ({
+  ...scalarColumn(kind, key, label, get),
+  text: (page) =>
+    page.facts.kind === kind ? word(page.facts as Facts<K>) : null,
+})
+
 const itemColumns: FactColumn[] = [
   scalarColumn('item', 'quality', 'wiki.infobox.quality', (f) => f.quality),
-  scalarColumn('item', 'template', 'wiki.facts.template', (f) =>
-    f.activated ? 1 : 0,
+  wordColumn(
+    'item',
+    'template',
+    'wiki.facts.template',
+    (f) => (f.activated ? 1 : 0),
+    (f) => (f.activated ? 'wiki.facts.activated' : 'wiki.facts.passive'),
   ),
   scalarColumn('item', 'recharge', 'wiki.infobox.recharge', (f) => f.recharge),
   scalarColumn(
@@ -433,8 +471,12 @@ const challengeColumns: FactColumn[] = [
       : null,
   ),
   scalarColumn('challenge', 'goal', 'wiki.infobox.goal', (f) => f.goal),
-  scalarColumn('challenge', 'blindfolded', 'wiki.infobox.blindfolded', (f) =>
-    f.blindfolded ? 1 : 0,
+  wordColumn(
+    'challenge',
+    'blindfolded',
+    'wiki.infobox.blindfolded',
+    (f) => (f.blindfolded ? 1 : 0),
+    (f) => (f.blindfolded ? 'wiki.infobox.blindfolded' : null),
   ),
   scalarColumn('challenge', 'curse', 'wiki.infobox.curse', (f) => f.curse),
 ]
@@ -443,8 +485,12 @@ const characterColumns: FactColumn[] = [
   ...CHARACTER_STAT_KEYS.map((key) =>
     scalarColumn('character', key, characterStatLabel[key], (f) => f[key]),
   ),
-  scalarColumn('character', 'tainted', 'wiki.facts.tainted', (f) =>
-    f.tainted ? 1 : 0,
+  wordColumn(
+    'character',
+    'tainted',
+    'wiki.facts.tainted',
+    (f) => (f.tainted ? 1 : 0),
+    (f) => (f.tainted ? 'wiki.facts.tainted' : null),
   ),
 ]
 

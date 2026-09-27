@@ -1,12 +1,11 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { Badge, BadgeVariant } from '@/components/ui/badge'
+import { Badge, stateBadgeVariant } from '@/components/ui/badge'
 import EditionBadge from '@/components/wiki/EditionBadge.vue'
 import FactChips from '@/components/wiki/FactChips.vue'
 import WikiFigure from '@/components/wiki/WikiFigure.vue'
 import WikiInline from '@/components/wiki/WikiInline.vue'
 import { FigureSize } from '@/components/wiki/figureSize'
-import { StateTone } from '@/lib/facets/stateTone'
 import { progressLines } from '@/lib/wiki/progressLines'
 import { useMessages } from '@/i18n'
 import type { Entry, Target } from '@/lib/ipc/types'
@@ -49,15 +48,7 @@ const profileLines = computed(() =>
   progress.value === null ? [] : progressLines(progress.value),
 )
 
-// The same tone `ProgressBadge` paints a compact row with, at the hero's own larger scale
-// (CLAUDE.md: a second copy is fine, a third is the moment to extract).
-const profileVariant: Record<StateTone, BadgeVariant> = {
-  [StateTone.Done]: BadgeVariant.Done,
-  [StateTone.Now]: BadgeVariant.Now,
-  [StateTone.Blocked]: BadgeVariant.Blocked,
-  [StateTone.Partial]: BadgeVariant.Partial,
-  [StateTone.Unknown]: BadgeVariant.Unknown,
-}
+const profileVariant = stateBadgeVariant
 
 // The figure's backdrop: the page's own category accent (design decision 9). A class per
 // category, the way `chip/variants.ts` reads a `Tone` — that map is a pill's full shape and
