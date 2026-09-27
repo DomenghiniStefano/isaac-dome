@@ -32,3 +32,16 @@ export const RowWikiRem = 4.5
 
 export const rowWikiPx = (percent: number): number =>
   remToPx(RowWikiRem, percent)
+
+// The wiki's card grid (card #90, decision 4), virtualized by row of cards rather than by
+// card: one row's height, and the card's own width, so `useCardColumns` can say how many fit
+// before a row is ever measured. The height holds the `--spacing-figure-card` picture, the
+// name, the id, the edition badge and a couple of rows of chips underneath.
+export const WikiCardRem = 12
+export const RowWikiCardRem = 15.5
+
+export const wikiCardPx = (percent: number): number =>
+  remToPx(WikiCardRem, percent)
+
+export const rowWikiCardPx = (percent: number): number =>
+  remToPx(RowWikiCardRem, percent)
