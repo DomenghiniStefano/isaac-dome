@@ -15941,16 +15941,6 @@
                 "style": "plain"
               }
             ]
-          },
-          {
-            "kind": "paragraph",
-            "inline": [
-              {
-                "kind": "text",
-                "text": " collectible, collectible_name, collectible_image, bob_combination ",
-                "style": "plain"
-              }
-            ]
           }
         ]
       }
@@ -437847,7 +437837,7 @@
                   },
                   {
                     "kind": "text",
-                    "text": ": The charged sword attack spawns creep, the projectiles do not / r+ projectiles spawn creep as well.",
+                    "text": ": The charged sword attack spawns creep, the projectiles do not /  projectiles spawn creep as well.",
                     "style": "plain"
                   }
                 ],
@@ -442965,18 +442955,7 @@
             "style": "plain"
           }
         ],
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "inline": [
-              {
-                "kind": "text",
-                "text": " collectible, collectible_name, collectible_image, bov_combination ",
-                "style": "plain"
-              }
-            ]
-          }
-        ]
+        "blocks": []
       },
       {
         "kind": "effects",

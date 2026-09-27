@@ -40,6 +40,12 @@ pub struct Tables {
     pub player: Vec<Row>,
     pub transformation: Vec<Row>,
     pub pickup: Vec<Row>,
+    /// Card #86, task 1: `{{book of virtues synergy list}}`'s own `{{cargo lookup}}`, read
+    /// straight from the tables it queries instead of expanding its stored wikitext — two
+    /// fields each, `collectible` (the interacting item's page name — the row carries no id)
+    /// and `description` (wikitext). `bob_combination` is its twin, over The Book of Belial.
+    pub bov_combination: Vec<Row>,
+    pub bob_combination: Vec<Row>,
 }
 
 /// `corrections.json`: per table, page title → the right id when the wiki gets it wrong.
@@ -187,15 +193,19 @@ pub struct Resolver {
     /// fetched, or nobody called it — which degrades to today's "a stat nobody stated is
     /// empty".
     character_stat_defaults: BTreeMap<String, String>,
-    /// A content template's own wikitext (`Raw::templates`), by its title, lowercased —
-    /// `blocks::transclusion_line` looks one up by a transcluding template's own name, which
-    /// arrives already lowercase (`template::assemble`). One map for every content template,
-    /// not one field per template: `Resolver::template` is the one way anything in this
-    /// crate reaches one, the way `Raw::templates`/`CONTENT_TEMPLATES` is the one way the
-    /// fetch and the reader agree on what's there. Empty until
-    /// [`Resolver::with_templates`] runs — no template fetched, or nobody called it — which
-    /// degrades to "nothing stored", same as before either of them existed.
+    /// A content template's own wikitext (`Raw::templates`), by its title, lowercased — read
+    /// by `Resolver::template`, `build.rs`'s reader for `Infobox character`'s base-stat
+    /// defaults. One map for every content template, not one field per template:
+    /// `Raw::templates`/`CONTENT_TEMPLATES` is the one way the fetch and the reader agree on
+    /// what's there. Empty until [`Resolver::with_templates`] runs — no template fetched, or
+    /// nobody called it — which degrades to "nothing stored", same as before either of them
+    /// existed.
     templates: BTreeMap<String, String>,
+    /// `Tables::bov_combination`/`bob_combination`, kept as raw rows rather than folded into
+    /// an index map: `blocks::synergy_list_line` draws one list item per row, in the table's
+    /// own order, which an index keyed by name could not give back.
+    bov_combination: Vec<Row>,
+    bob_combination: Vec<Row>,
 }
 
 /// A character page's title without the disambiguation suffix
@@ -385,6 +395,8 @@ impl Resolver {
     ) -> Resolver {
         let mut r = Resolver {
             corrections: corrections.clone(),
+            bov_combination: tables.bov_combination.clone(),
+            bob_combination: tables.bob_combination.clone(),
             ..Resolver::default()
         };
         index_numbered_pages(
@@ -451,6 +463,18 @@ impl Resolver {
     /// the same as before this template had a reader at all.
     pub(crate) fn template(&self, name: &str) -> Option<&str> {
         self.templates.get(&name.to_lowercase()).map(String::as_str)
+    }
+
+    /// The rows behind `{{book of virtues synergy list}}`/`{{book of belial synergy list}}`
+    /// (`blocks::synergy_list_line`), by the transcluding template's own already-lowercase
+    /// name (`template::assemble`). `None` for any other name, the same degrade a missing
+    /// content template already has: the caller's `?` falls through to producing nothing.
+    pub(crate) fn synergy_rows(&self, name: &str) -> Option<&[Row]> {
+        match name {
+            "book of virtues synergy list" => Some(&self.bov_combination),
+            "book of belial synergy list" => Some(&self.bob_combination),
+            _ => None,
+        }
     }
 
     /// The reverse of the title rule: an achievement's `name` always enters, its alias only
@@ -542,7 +566,14 @@ impl Resolver {
     /// which map answers it. Split up, the list of link templates would stop being one list.
     pub fn resolve(&self, template: &str, arg: &str) -> Resolution {
         let t = template.trim().to_lowercase();
-        if is_layout_template(&t) {
+        // Decision 10's own list (`corrections.json`'s `excluded.templates`) was, until card
+        // #86 fix 2, read only by `templates_complete.rs`'s static completeness check: a name
+        // could be declared excluded there and still fall through to `Resolution::Unknown`
+        // here, counted in `unknownTemplates` regardless. `item pool`, `#vardefine: item
+        // pool#is devil` and six others did, all eleven entries the snapshot of 2026-09-27
+        // carried, while the file said every one of them was a decided exclusion. One reader
+        // for the map now, the way `is_section_excluded` already is for `excluded.sections`.
+        if is_layout_template(&t) || self.corrections.excluded.templates.contains_key(&t) {
             return Resolution::Ignore;
         }
         let k = key(arg);
@@ -843,6 +874,19 @@ pub(crate) mod fixtures {
                 ("alias", "Beelzebub"),
             ])],
             pickup: vec![row(&[("_pageName", "Cards"), ("alias", "The Fool")])],
+            // Rows shaped like the real table: `collectible` is a page name, not an id — the
+            // one collectible this fixture's `synergy_rows`-driven tests reference.
+            bov_combination: vec![row(&[
+                ("collectible", "Breakfast"),
+                ("description", "Heals for a extra half a heart."),
+            ])],
+            bob_combination: vec![row(&[
+                ("collectible", "Breakfast"),
+                (
+                    "description",
+                    "One of a few effects happens, chosen at random.",
+                ),
+            ])],
         };
         let mut chars = BTreeMap::new();
         chars.insert("Tainted Isaac".to_string(), 21);

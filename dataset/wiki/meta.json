@@ -28,19 +28,7 @@
       "i": 2,
       "t": 1
     },
-    "unknownTemplates": {
-      "#vardefine: item pool#is devil": 1,
-      "afterbirth babies": 1,
-      "afterbirth† babies": 1,
-      "cargo lookup": 2,
-      "cargo query template": 2,
-      "dlc_": 1,
-      "documentation": 2,
-      "item pool": 11,
-      "repentance babies": 1,
-      "repentance+ babies": 1,
-      "trophy list": 1
-    },
+    "unknownTemplates": {},
     "discardedSections": {
       "Audio": 10,
       "Gallery": 485,
@@ -48,6 +36,7 @@
       "In-game Footage": 748,
       "In-game footage": 136,
       "Ingame Footage": 2,
+      "Pages": 6,
       "References": 151,
       "Sounds": 2,
       "Trivia": 1125,
@@ -61,7 +50,7 @@
     "unknownInfoboxes": {},
     "spansOutsideTheirPage": 0,
     "unknownHeartTypes": {},
-    "unmodelledTableRows": 123
+    "unmodelledTableRows": 31
   },
   "redirects": {
     "-0- Baby": "Co-op",

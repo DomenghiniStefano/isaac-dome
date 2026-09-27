@@ -45,8 +45,9 @@ fn leading_id(ib: &RawInfobox) -> Option<u32> {
 /// the first entry.
 pub fn build(raw: &Raw, corrections: &Corrections) -> Dataset {
     // `Raw::templates` is the one place every content template's own wikitext lives
-    // (`CONTENT_TEMPLATES`); `with_templates` stores it, lowercased by name, for anything in
-    // this crate that later reaches one by name (`blocks::transclusion_line`).
+    // (`CONTENT_TEMPLATES`); `with_templates` stores it, lowercased by name, for
+    // `Resolver::template` below, the one reader left (`Infobox character`'s base-stat
+    // defaults).
     let r = Resolver::new(&raw.tables, &characters(raw), corrections)
         .with_templates(raw.templates.clone());
     // Design decision 4: a character page's base stats default to the ones
