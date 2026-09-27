@@ -40,7 +40,7 @@ pub fn empty_item() -> Infobox {
         recharge: Vec::new(),
         devil_price: Vec::new(),
         shop_price: Vec::new(),
-        pools: Vec::new(),
+        obtained_from: Vec::new(),
     }
 }
 
@@ -60,7 +60,7 @@ pub fn empty_trinket() -> Infobox {
     Infobox::Trinket {
         quote: Vec::new(),
         tags: Vec::new(),
-        pools: Vec::new(),
+        obtained_from: Vec::new(),
     }
 }
 

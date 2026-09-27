@@ -1183,16 +1183,22 @@ export type Infobox =
       devilPrice: Array<Inline>
       shopPrice: Array<Inline>
       /**
-       * What the wiki says about the pools. Present on only 45 of 720 pages: the
-       * game's `itempools.xml` is the source that knows them all.
+       * The wiki's own `pool` parameter, kept under its own name: on the 45 items that
+       * write it, it names a specific guaranteed source (a boss, a machine, another
+       * item), not a weighted pool — see this enum's own doc comment. Empty on 674 of
+       * 719, same as before; the game's pools are the separate, catalog-joined row.
        */
-      pools: Array<Inline>
+      obtainedFrom: Array<Inline>
     }
   | {
       kind: 'trinket'
       quote: Array<Inline>
       tags: Array<string>
-      pools: Array<Inline>
+      /**
+       * Same as `Item.obtained_from`: 7 of 188 trinkets name a guaranteed source
+       * ("urn, special shopkeeper", "blood donation machine"), never a weighted pool.
+       */
+      obtainedFrom: Array<Inline>
     }
   | {
       kind: 'achievement'
@@ -1504,6 +1510,28 @@ export type WikiIndex = {
    * icon, the same drawing the tile has without the game — not a broken image.
    */
   samples: Array<CategorySample>
+}
+
+/**
+ * One pool the installed game lists a collectible in.
+ */
+export type PoolMembershipView = {
+  /**
+   * The pool's own name: the wiki article's title when the dataset covers it (every one
+   * of the 31 real pools does, per `POOL_ARTICLES`), the game's own id otherwise — never
+   * blank, since a player still needs to know which pool this is.
+   */
+  label: string
+  /**
+   * The wiki's own page about this pool, when the dataset has one to link.
+   */
+  target: Target | null
+  /**
+   * The pool's odds for this collectible relative to the rest of the pool: real data
+   * `catalog::PoolMembership` already keeps. `DecreaseBy` and `RemoveOn` (how the weight
+   * falls after a pull) never reach the catalog, so neither reaches here.
+   */
+  weight: number
 }
 
 /**

@@ -101,7 +101,7 @@ mod tests {
                 recharge: vec![],
                 devil_price: vec![],
                 shop_price: vec![],
-                pools: vec![],
+                obtained_from: vec![],
             },
             sections,
         }

@@ -39,7 +39,7 @@
         }
       ],
       "tags": [],
-      "pools": [
+      "obtainedFrom": [
         {
           "kind": "text",
           "text": "urn, special shopkeeper",
@@ -557,7 +557,7 @@
         }
       ],
       "tags": [],
-      "pools": [
+      "obtainedFrom": [
         {
           "kind": "text",
           "text": "poop",
@@ -949,7 +949,7 @@
       "tags": [
         "battery"
       ],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -1340,7 +1340,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -2866,7 +2866,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -3178,7 +3178,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -3511,7 +3511,7 @@
       "tags": [
         "lazarussharedglobal"
       ],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -4071,7 +4071,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -4242,7 +4242,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -4500,7 +4500,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -4893,7 +4893,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -5352,7 +5352,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -5591,7 +5591,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -5937,7 +5937,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -6444,7 +6444,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -6824,7 +6824,7 @@
       "tags": [
         "mom"
       ],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -7252,7 +7252,7 @@
       "tags": [
         "nogreed"
       ],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -7470,7 +7470,7 @@
       "tags": [
         "nogreed"
       ],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -7670,7 +7670,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -8040,7 +8040,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -8334,7 +8334,7 @@
       "tags": [
         "nochallenge"
       ],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -8927,7 +8927,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -10638,7 +10638,7 @@
       "tags": [
         "nochallenge"
       ],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -11613,7 +11613,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -12246,7 +12246,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -12664,7 +12664,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -13286,7 +13286,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -13517,7 +13517,7 @@
       "tags": [
         "nochallenge"
       ],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -13904,7 +13904,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -14047,7 +14047,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -14284,7 +14284,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -14548,7 +14548,7 @@
         }
       ],
       "tags": [],
-      "pools": [
+      "obtainedFrom": [
         {
           "kind": "text",
           "text": "mushroom",
@@ -14975,7 +14975,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -15329,7 +15329,7 @@
       "tags": [
         "nogreed"
       ],
-      "pools": [
+      "obtainedFrom": [
         {
           "kind": "text",
           "text": "blood donation machine",
@@ -16373,7 +16373,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -16599,7 +16599,7 @@
       "tags": [
         "nogreed"
       ],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -17522,7 +17522,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -17742,7 +17742,7 @@
         "mom",
         "nogreed"
       ],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -18058,7 +18058,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -18271,7 +18271,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -18553,7 +18553,7 @@
       "tags": [
         "nogreed"
       ],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -19676,7 +19676,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -20853,7 +20853,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -21213,7 +21213,7 @@
       "tags": [
         "nogreed"
       ],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -22191,7 +22191,7 @@
       "tags": [
         "nogreed"
       ],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -23149,7 +23149,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -23417,7 +23417,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -23805,7 +23805,7 @@
         }
       ],
       "tags": [],
-      "pools": [
+      "obtainedFrom": [
         {
           "kind": "text",
           "text": "special shopkeeper",
@@ -24573,7 +24573,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -25511,7 +25511,7 @@
         }
       ],
       "tags": [],
-      "pools": [
+      "obtainedFrom": [
         {
           "kind": "text",
           "text": "special shopkeeper",
@@ -26264,7 +26264,7 @@
         }
       ],
       "tags": [],
-      "pools": [
+      "obtainedFrom": [
         {
           "kind": "text",
           "text": "golden poop, special shopkeeper",
@@ -26690,7 +26690,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -27361,7 +27361,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -27779,7 +27779,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -28130,7 +28130,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -28472,7 +28472,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -28800,7 +28800,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -29199,7 +29199,7 @@
       "tags": [
         "nogreed"
       ],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -29464,7 +29464,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -29915,7 +29915,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -30473,7 +30473,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -30671,7 +30671,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -31463,7 +31463,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -32028,7 +32028,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -32519,7 +32519,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -33117,7 +33117,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -33431,7 +33431,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -33826,7 +33826,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -34167,7 +34167,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -34390,7 +34390,7 @@
       "tags": [
         "bob"
       ],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -34883,7 +34883,7 @@
         "battery",
         "nogreed"
       ],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -35168,7 +35168,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -35609,7 +35609,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -35817,7 +35817,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -36463,7 +36463,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -37307,7 +37307,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -37785,7 +37785,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -38160,7 +38160,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -38567,7 +38567,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -39004,7 +39004,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -39276,7 +39276,7 @@
       "tags": [
         "lazarussharedglobal"
       ],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -39591,7 +39591,7 @@
       "tags": [
         "nogreed"
       ],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -39942,7 +39942,7 @@
         "lazarussharedglobal",
         "nogreed"
       ],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -40452,7 +40452,7 @@
       "tags": [
         "nogreed"
       ],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -41022,7 +41022,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -41337,7 +41337,7 @@
       "tags": [
         "mom"
       ],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -41964,7 +41964,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -43091,7 +43091,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -43489,7 +43489,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -43869,7 +43869,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -44426,7 +44426,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -44978,7 +44978,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -45249,7 +45249,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -45989,7 +45989,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -46233,7 +46233,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -47015,7 +47015,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -47474,7 +47474,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -48446,7 +48446,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -48659,7 +48659,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -49270,7 +49270,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -50045,7 +50045,7 @@
         "lazarussharedglobal",
         "nogreed"
       ],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -50391,7 +50391,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -50905,7 +50905,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -51097,7 +51097,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -51276,7 +51276,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -51549,7 +51549,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -52042,7 +52042,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -52393,7 +52393,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -53439,7 +53439,7 @@
         "lazarussharedglobal",
         "nogreed"
       ],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -53761,7 +53761,7 @@
         "lazarussharedglobal",
         "nogreed"
       ],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -54097,7 +54097,7 @@
       "tags": [
         "lazarussharedglobal"
       ],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -54637,7 +54637,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -55163,7 +55163,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -55400,7 +55400,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -55637,7 +55637,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -55884,7 +55884,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -56121,7 +56121,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -56463,7 +56463,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -56738,7 +56738,7 @@
       "tags": [
         "nogreed"
       ],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -57263,7 +57263,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -57593,7 +57593,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -58657,7 +58657,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -59152,7 +59152,7 @@
       "tags": [
         "nogreed"
       ],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -59716,7 +59716,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -60212,7 +60212,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -60377,7 +60377,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -60757,7 +60757,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -60919,7 +60919,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -61151,7 +61151,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -61362,7 +61362,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -61905,7 +61905,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -62135,7 +62135,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -62496,7 +62496,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -62746,7 +62746,7 @@
       "tags": [
         "nogreed"
       ],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -62924,7 +62924,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -63441,7 +63441,7 @@
       "tags": [
         "lazarussharedglobal"
       ],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -63775,7 +63775,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -64786,7 +64786,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -65165,7 +65165,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -65675,7 +65675,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -65982,7 +65982,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -66203,7 +66203,7 @@
       "tags": [
         "nogreed"
       ],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -66465,7 +66465,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -66977,7 +66977,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -67915,7 +67915,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -68860,7 +68860,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -69166,7 +69166,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -70102,7 +70102,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -71394,7 +71394,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -71922,7 +71922,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -72580,7 +72580,7 @@
         "lazarussharedglobal",
         "nogreed"
       ],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -72824,7 +72824,7 @@
       "tags": [
         "mom"
       ],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -73113,7 +73113,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -73721,7 +73721,7 @@
         "lazarussharedglobal",
         "nogreed"
       ],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -73967,7 +73967,7 @@
       "tags": [
         "mom"
       ],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -74570,7 +74570,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -75489,7 +75489,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -76172,7 +76172,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -77472,7 +77472,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -77693,7 +77693,7 @@
         "lazarussharedglobal",
         "nogreed"
       ],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -77937,7 +77937,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -78463,7 +78463,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -78681,7 +78681,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -79189,7 +79189,7 @@
       "tags": [
         "nogreed"
       ],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -80398,7 +80398,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -82177,7 +82177,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -82580,7 +82580,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -82768,7 +82768,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -83040,7 +83040,7 @@
       "tags": [
         "nogreed"
       ],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -83470,7 +83470,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -83931,7 +83931,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -84704,7 +84704,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -85107,7 +85107,7 @@
       "tags": [
         "lazarussharedglobal"
       ],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -85362,7 +85362,7 @@
       "tags": [
         "lazarussharedglobal"
       ],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -85887,7 +85887,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -86291,7 +86291,7 @@
         "lazarussharedglobal",
         "nogreed"
       ],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -86486,7 +86486,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -87020,7 +87020,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -87375,7 +87375,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -90357,7 +90357,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -91229,7 +91229,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -91430,7 +91430,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -92809,7 +92809,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -93411,7 +93411,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -93884,7 +93884,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -94130,7 +94130,7 @@
       "tags": [
         "lazarussharedglobal"
       ],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -94575,7 +94575,7 @@
       "tags": [
         "nogreed"
       ],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -94833,7 +94833,7 @@
         }
       ],
       "tags": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {

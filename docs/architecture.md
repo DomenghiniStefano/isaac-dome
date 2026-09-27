@@ -26,7 +26,7 @@ that takes, what the screens are, and what it takes to build and check the thing
 > just below are the tripwire — if one of them is wrong, so is the drawing.
 
 Counted at that commit, and every number below is derived from the code, not from prose:
-**16 crates**, **41 Tauri commands**, **6 events**, **16 routes**, **6 store migrations**.
+**16 crates**, **42 Tauri commands**, **6 events**, **16 routes**, **6 store migrations**.
 
 ---
 
@@ -294,7 +294,7 @@ outside it.
 | Runs | `/tool/runs` | tool | `views` | `runs` |
 | Live | `/tool/live` | tool | `views` | `live` |
 | Floor | `/tool/floor` | tool | `floor` | `floor_candidates`, `room_icons` |
-| Wiki | `/wiki` | wiki | `wiki`, `views`, `queue` | `wiki_entry`, `wiki_index`, and `graph_views` when nobody has read the graph in this window |
+| Wiki | `/wiki` | wiki | `wiki`, `views`, `queue` | `wiki_entry`, `wiki_item_pools`, `wiki_index`, and `graph_views` when nobody has read the graph in this window |
 | Profile | `/settings/profile` | settings | `profile` | `setup_state`, `select_profile`, `save_summary`, `completion` |
 | Appearance | `/settings/appearance` | settings | `settings` | the six below |
 | Background | `/settings/background` | settings | `settings` | the six below |

@@ -230,6 +230,20 @@ pub enum Dlc {
     rename_all_fields = "camelCase"
 )]
 pub enum Infobox {
+    // Neither Item nor Trinket carries a `pools` field any more: measured on the 2026-09-27
+    // snapshot, the wiki's own `pool` parameter is empty on 674 of 719 items and 181 of 188
+    // trinkets, and the game's own `itempools.xml` is the source that actually knows every
+    // weighted-pool membership — `ipc` joins it at the page view, keyed by the same id.
+    //
+    // The 52 pages (45 items, 7 trinkets) that do write `pool` don't fill that gap: they name
+    // a boss, a machine or another item ("shell game beggar", "mushroom", "Krampus", "mom's
+    // dressing table-a+"), a guaranteed *source* rather than a weighted pool. Checked against
+    // the installed game (2026-09-27): Skatole ("shell game beggar") and Magic Mushroom
+    // ("mushroom") are themselves members of ordinary weighted pools too
+    // (`itempools.xml`'s `shellGame`, `treasure`), so the wiki's text was never standing in
+    // for an absent pool — it answers a different question, and is kept as `obtained_from`
+    // below, its own field under its own name: the game's pools and the wiki's acquisition
+    // text are two answers, shown as two rows, neither one a stand-in for the other.
     Item {
         /// The pickup quote. Inline, not a string: 78 of 719 carry edition markup
         /// (`Boomerang tears {{dlc|r|+ DMG up + luck down}}`), and read as raw text they
@@ -249,14 +263,18 @@ pub enum Infobox {
         /// Not a number either: 36 of the 56 real `devil price` values are per-edition.
         devil_price: Vec<Inline>,
         shop_price: Vec<Inline>,
-        /// What the wiki says about the pools. Present on only 45 of 720 pages: the
-        /// game's `itempools.xml` is the source that knows them all.
-        pools: Vec<Inline>,
+        /// The wiki's own `pool` parameter, kept under its own name: on the 45 items that
+        /// write it, it names a specific guaranteed source (a boss, a machine, another
+        /// item), not a weighted pool — see this enum's own doc comment. Empty on 674 of
+        /// 719, same as before; the game's pools are the separate, catalog-joined row.
+        obtained_from: Vec<Inline>,
     },
     Trinket {
         quote: Vec<Inline>,
         tags: Vec<String>,
-        pools: Vec<Inline>,
+        /// Same as `Item.obtained_from`: 7 of 188 trinkets name a guaranteed source
+        /// ("urn, special shopkeeper", "blood donation machine"), never a weighted pool.
+        obtained_from: Vec<Inline>,
     },
     Achievement {
         /// The line on the game's unlock paper, which the wiki files under `description`:
@@ -371,13 +389,13 @@ impl Infobox {
                 recharge,
                 devil_price,
                 shop_price,
-                pools,
-            } => vec![quote, recharge, devil_price, shop_price, pools],
+                obtained_from,
+            } => vec![quote, recharge, devil_price, shop_price, obtained_from],
             Infobox::Trinket {
                 quote,
                 tags: _,
-                pools,
-            } => vec![quote, pools],
+                obtained_from,
+            } => vec![quote, obtained_from],
             Infobox::Achievement {
                 quote,
                 requirements,
@@ -456,13 +474,13 @@ impl Infobox {
                 recharge,
                 devil_price,
                 shop_price,
-                pools,
-            } => vec![quote, recharge, devil_price, shop_price, pools],
+                obtained_from,
+            } => vec![quote, recharge, devil_price, shop_price, obtained_from],
             Infobox::Trinket {
                 quote,
                 tags: _,
-                pools,
-            } => vec![quote, pools],
+                obtained_from,
+            } => vec![quote, obtained_from],
             Infobox::Achievement {
                 quote,
                 requirements,
@@ -642,7 +660,7 @@ mod tests {
                 recharge: vec![],
                 devil_price: vec![],
                 shop_price: vec![],
-                pools: vec![],
+                obtained_from: vec![],
             })
             .unwrap(),
             json!({
@@ -654,17 +672,27 @@ mod tests {
                 "recharge": [],
                 "devilPrice": [],
                 "shopPrice": [],
-                "pools": []
+                "obtainedFrom": []
             })
         );
         assert_eq!(
             to_value(Infobox::Trinket {
                 quote: vec![],
                 tags: vec![],
-                pools: vec![],
+                obtained_from: vec![Inline::Text {
+                    text: "urn, special shopkeeper".into(),
+                    style: Style::Plain,
+                }],
             })
             .unwrap(),
-            json!({"kind":"trinket","quote":[],"tags":[],"pools":[]})
+            json!({
+                "kind": "trinket",
+                "quote": [],
+                "tags": [],
+                "obtainedFrom": [
+                    {"kind": "text", "text": "urn, special shopkeeper", "style": "plain"}
+                ]
+            })
         );
         // `unlockedBy` is gone from the variant: it rose to `Entry` on 2026-09-13.
         assert_eq!(
@@ -699,7 +727,7 @@ mod tests {
                 recharge: vec![],
                 devil_price: vec![],
                 shop_price: vec![],
-                pools: vec![],
+                obtained_from: vec![],
             },
             sections: vec![],
         };
@@ -721,7 +749,7 @@ mod tests {
                     "recharge": [],
                     "devilPrice": [],
                     "shopPrice": [],
-                    "pools": []
+                    "obtainedFrom": []
                 },
                 "sections": []
             })
@@ -742,7 +770,7 @@ mod tests {
             infobox: Infobox::Trinket {
                 quote: vec![],
                 tags: vec![],
-                pools: vec![],
+                obtained_from: vec![],
             },
             sections: vec![Section {
                 kind: SectionKind::Effects,

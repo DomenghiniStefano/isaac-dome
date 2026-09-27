@@ -43,7 +43,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -209,7 +209,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -1097,7 +1097,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -1741,7 +1741,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -2168,7 +2168,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -3447,7 +3447,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -4514,7 +4514,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -4780,7 +4780,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -5070,7 +5070,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": [
+      "obtainedFrom": [
         {
           "kind": "text",
           "text": "shell game beggar",
@@ -6333,7 +6333,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -6828,7 +6828,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -7460,7 +7460,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": [
+      "obtainedFrom": [
         {
           "kind": "text",
           "text": "mushroom",
@@ -8075,7 +8075,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": [
+      "obtainedFrom": [
         {
           "kind": "text",
           "text": "Lust",
@@ -9141,7 +9141,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -9479,7 +9479,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": [
+      "obtainedFrom": [
         {
           "kind": "text",
           "text": "Gluttony",
@@ -9774,7 +9774,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -9914,7 +9914,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -10071,7 +10071,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": [
+      "obtainedFrom": [
         {
           "kind": "text",
           "text": "slot machine",
@@ -10416,7 +10416,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": [
+      "obtainedFrom": [
         {
           "kind": "text",
           "text": "Wrath",
@@ -10655,7 +10655,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -10795,7 +10795,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -11255,7 +11255,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -11582,7 +11582,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -11879,7 +11879,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -12176,7 +12176,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -12756,7 +12756,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -13068,7 +13068,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -13157,7 +13157,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -13310,7 +13310,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": [
+      "obtainedFrom": [
         {
           "kind": "text",
           "text": "mom's dressing table-a+",
@@ -13629,7 +13629,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": [
+      "obtainedFrom": [
         {
           "kind": "text",
           "text": "mom's dressing table-a+",
@@ -13986,7 +13986,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": [
+      "obtainedFrom": [
         {
           "kind": "text",
           "text": "mom's dressing table-a+",
@@ -14324,7 +14324,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -14549,7 +14549,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -15348,7 +15348,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -17544,7 +17544,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -17956,7 +17956,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -19051,7 +19051,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": [
+      "obtainedFrom": [
         {
           "kind": "text",
           "text": "Wrath",
@@ -19513,7 +19513,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -20139,7 +20139,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -20402,7 +20402,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -21494,7 +21494,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -21860,7 +21860,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": [
+      "obtainedFrom": [
         {
           "kind": "text",
           "text": "Sloth",
@@ -23395,7 +23395,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -23847,7 +23847,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": [
+      "obtainedFrom": [
         {
           "kind": "text",
           "text": "Super Lust",
@@ -24495,7 +24495,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -25041,7 +25041,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -25437,7 +25437,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -25859,7 +25859,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -26459,7 +26459,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": [
+      "obtainedFrom": [
         {
           "kind": "text",
           "text": "Steven",
@@ -27081,7 +27081,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -27282,7 +27282,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -31908,7 +31908,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -32469,7 +32469,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -32752,7 +32752,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -33435,7 +33435,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -33771,7 +33771,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -33950,7 +33950,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -34359,7 +34359,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -34559,7 +34559,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -35103,7 +35103,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -35542,7 +35542,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": [
+      "obtainedFrom": [
         {
           "kind": "text",
           "text": "Greed, Super Greed, shopkeeper",
@@ -36258,7 +36258,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": [
+      "obtainedFrom": [
         {
           "kind": "text",
           "text": "Pride",
@@ -36764,7 +36764,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -37010,7 +37010,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -37318,7 +37318,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -40328,7 +40328,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -41835,7 +41835,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -42136,7 +42136,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": [
+      "obtainedFrom": [
         {
           "kind": "text",
           "text": "mushroom",
@@ -42556,7 +42556,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -43143,7 +43143,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": [
+      "obtainedFrom": [
         {
           "kind": "text",
           "text": "The Harbingers",
@@ -43923,7 +43923,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": [
+      "obtainedFrom": [
         {
           "kind": "text",
           "text": "Super Greed, urn",
@@ -44238,7 +44238,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -45782,7 +45782,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -45975,7 +45975,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -46539,7 +46539,7 @@
         }
       ],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -47762,7 +47762,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -48093,7 +48093,7 @@
         }
       ],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -48345,7 +48345,7 @@
         }
       ],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -49906,7 +49906,7 @@
         }
       ],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -50201,7 +50201,7 @@
         }
       ],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -50603,7 +50603,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -52439,7 +52439,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -52897,7 +52897,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -53353,7 +53353,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -54072,7 +54072,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -54529,7 +54529,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -54882,7 +54882,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": [
+      "obtainedFrom": [
         {
           "kind": "text",
           "text": "tinted rock",
@@ -55297,7 +55297,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -55514,7 +55514,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -55691,7 +55691,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -56594,7 +56594,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -56859,7 +56859,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -57249,7 +57249,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": [
+      "obtainedFrom": [
         {
           "kind": "text",
           "text": "C.H.A.D.",
@@ -57775,7 +57775,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -58759,7 +58759,7 @@
         }
       ],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -59146,7 +59146,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": [
+      "obtainedFrom": [
         {
           "kind": "text",
           "text": "Gish",
@@ -59494,7 +59494,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": [
+      "obtainedFrom": [
         {
           "kind": "text",
           "text": "Steven",
@@ -59937,7 +59937,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -60274,7 +60274,7 @@
           ]
         }
       ],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -60534,7 +60534,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -61042,7 +61042,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -62005,7 +62005,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -62911,7 +62911,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": [
+      "obtainedFrom": [
         {
           "kind": "text",
           "text": "Super Wrath",
@@ -63444,7 +63444,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -64004,7 +64004,7 @@
         }
       ],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -64552,7 +64552,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -64908,7 +64908,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -65621,7 +65621,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -65954,7 +65954,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -66235,7 +66235,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -66505,7 +66505,7 @@
         }
       ],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -69211,7 +69211,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -69622,7 +69622,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -70403,7 +70403,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -70782,7 +70782,7 @@
         }
       ],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -76001,7 +76001,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": [
+      "obtainedFrom": [
         {
           "kind": "text",
           "text": "blood donation machine",
@@ -76336,7 +76336,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -76859,7 +76859,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -77376,7 +77376,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -78597,7 +78597,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -80047,7 +80047,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -80987,7 +80987,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -81274,7 +81274,7 @@
         }
       ],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -82309,7 +82309,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -83609,7 +83609,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": [
+      "obtainedFrom": [
         {
           "kind": "text",
           "text": "Super Envy",
@@ -83867,7 +83867,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": [
+      "obtainedFrom": [
         {
           "kind": "text",
           "text": "Gluttony, Super Gluttony",
@@ -84180,7 +84180,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": [
+      "obtainedFrom": [
         {
           "kind": "text",
           "text": "The Headless Horseman",
@@ -84899,7 +84899,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -85207,7 +85207,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": [
+      "obtainedFrom": [
         {
           "kind": "text",
           "text": "Krampus",
@@ -86398,7 +86398,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -86972,7 +86972,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -87488,7 +87488,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": [
+      "obtainedFrom": [
         {
           "kind": "text",
           "text": "blood donation machine",
@@ -88370,7 +88370,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -89003,7 +89003,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -89698,7 +89698,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -89860,7 +89860,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -90137,7 +90137,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -90402,7 +90402,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -90837,7 +90837,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -91685,7 +91685,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -91925,7 +91925,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -92553,7 +92553,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -92772,7 +92772,7 @@
         }
       ],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -93157,7 +93157,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -94470,7 +94470,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -94736,7 +94736,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -97174,7 +97174,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -97778,7 +97778,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -98322,7 +98322,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -100604,7 +100604,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -101530,7 +101530,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -102096,7 +102096,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -102356,7 +102356,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -102798,7 +102798,7 @@
         }
       ],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -103228,7 +103228,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": [
+      "obtainedFrom": [
         {
           "kind": "text",
           "text": "fortune teller",
@@ -103734,7 +103734,7 @@
         }
       ],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -103895,7 +103895,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -104107,7 +104107,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -104636,7 +104636,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -104961,7 +104961,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": [
+      "obtainedFrom": [
         {
           "kind": "text",
           "text": "skull",
@@ -105261,7 +105261,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -105737,7 +105737,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -105898,7 +105898,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -106884,7 +106884,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": [
+      "obtainedFrom": [
         {
           "kind": "text",
           "text": "polyp",
@@ -107156,7 +107156,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -109349,7 +109349,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -109818,7 +109818,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -110307,7 +110307,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -110528,7 +110528,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -110735,7 +110735,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -111127,7 +111127,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -111674,7 +111674,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -112576,7 +112576,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -112788,7 +112788,7 @@
           ]
         }
       ],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -113762,7 +113762,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -114195,7 +114195,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -114390,7 +114390,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -114693,7 +114693,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": [
+      "obtainedFrom": [
         {
           "kind": "text",
           "text": "Conquest",
@@ -115461,7 +115461,7 @@
         }
       ],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -116040,7 +116040,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -116266,7 +116266,7 @@
         }
       ],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -116449,7 +116449,7 @@
         }
       ],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -116699,7 +116699,7 @@
         }
       ],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -117456,7 +117456,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -117819,7 +117819,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -118324,7 +118324,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -118628,7 +118628,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -118826,7 +118826,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -119696,7 +119696,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -120145,7 +120145,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -120333,7 +120333,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -120495,7 +120495,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -120649,7 +120649,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -120839,7 +120839,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -121137,7 +121137,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -121570,7 +121570,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -121943,7 +121943,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -122294,7 +122294,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -122543,7 +122543,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -124097,7 +124097,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -124867,7 +124867,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -125187,7 +125187,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -126186,7 +126186,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -127071,7 +127071,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": [
+      "obtainedFrom": [
         {
           "kind": "text",
           "text": "The Harbingers",
@@ -127821,7 +127821,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -128198,7 +128198,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -128620,7 +128620,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -129918,7 +129918,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -130182,7 +130182,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -130708,7 +130708,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -131658,7 +131658,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -131943,7 +131943,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -132443,7 +132443,7 @@
         }
       ],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -132726,7 +132726,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -133208,7 +133208,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": [
+      "obtainedFrom": [
         {
           "kind": "text",
           "text": "polyp",
@@ -134096,7 +134096,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -134452,7 +134452,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -135428,7 +135428,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -136561,7 +136561,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -137701,7 +137701,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -138762,7 +138762,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -140174,7 +140174,7 @@
         }
       ],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -140665,7 +140665,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -140820,7 +140820,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -141146,7 +141146,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": [
+      "obtainedFrom": [
         {
           "kind": "text",
           "text": "mom's dressing table-a+",
@@ -141628,7 +141628,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -143845,7 +143845,7 @@
         }
       ],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -144664,7 +144664,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -144973,7 +144973,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -145641,7 +145641,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -147150,7 +147150,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -147572,7 +147572,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -148543,7 +148543,7 @@
         }
       ],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -148973,7 +148973,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": [
+      "obtainedFrom": [
         {
           "kind": "text",
           "text": "Uriel",
@@ -149746,7 +149746,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": [
+      "obtainedFrom": [
         {
           "kind": "text",
           "text": "Gabriel",
@@ -150469,7 +150469,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -151031,7 +151031,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -151350,7 +151350,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -151928,7 +151928,7 @@
         }
       ],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -152301,7 +152301,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -153214,7 +153214,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -154150,7 +154150,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -154457,7 +154457,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -155717,7 +155717,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -156210,7 +156210,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -156773,7 +156773,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -156929,7 +156929,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -157326,7 +157326,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -158087,7 +158087,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -158309,7 +158309,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": [
+      "obtainedFrom": [
         {
           "kind": "text",
           "text": "polyp",
@@ -158955,7 +158955,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -159069,7 +159069,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -159899,7 +159899,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -161089,7 +161089,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -162233,7 +162233,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -162700,7 +162700,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -163232,7 +163232,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -164818,7 +164818,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -165235,7 +165235,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -166089,7 +166089,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -166371,7 +166371,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": [
+      "obtainedFrom": [
         {
           "kind": "text",
           "text": "skull",
@@ -166879,7 +166879,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -167223,7 +167223,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -167496,7 +167496,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -167958,7 +167958,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -168276,7 +168276,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -169030,7 +169030,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -169336,7 +169336,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -170140,7 +170140,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -171218,7 +171218,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -171463,7 +171463,7 @@
         }
       ],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -172010,7 +172010,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -173851,7 +173851,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -174038,7 +174038,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -175128,7 +175128,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -175512,7 +175512,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -175777,7 +175777,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -176198,7 +176198,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -177016,7 +177016,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -177875,7 +177875,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -179367,7 +179367,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -199190,7 +199190,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -201313,7 +201313,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -201881,7 +201881,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -202143,7 +202143,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -202737,7 +202737,7 @@
           "style": "plain"
         }
       ],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -203342,7 +203342,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -204746,7 +204746,7 @@
         }
       ],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -206077,7 +206077,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": [
+      "obtainedFrom": [
         {
           "kind": "text",
           "text": "Krampus",
@@ -206575,7 +206575,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -206996,7 +206996,7 @@
           ]
         }
       ],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -207599,7 +207599,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -208466,7 +208466,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -210576,7 +210576,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -211085,7 +211085,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -212053,7 +212053,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -212390,7 +212390,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -212504,7 +212504,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -212981,7 +212981,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -213390,7 +213390,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -214755,7 +214755,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -214987,7 +214987,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -215519,7 +215519,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -215880,7 +215880,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -216438,7 +216438,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -217006,7 +217006,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -217545,7 +217545,7 @@
         }
       ],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -218063,7 +218063,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -218575,7 +218575,7 @@
         }
       ],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -219659,7 +219659,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -220124,7 +220124,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -220936,7 +220936,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -222409,7 +222409,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -223724,7 +223724,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -224053,7 +224053,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -224511,7 +224511,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -224801,7 +224801,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -225091,7 +225091,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -225723,7 +225723,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -226791,7 +226791,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -227605,7 +227605,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -228385,7 +228385,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -229182,7 +229182,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -230080,7 +230080,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": [
+      "obtainedFrom": [
         {
           "kind": "text",
           "text": "Mom",
@@ -230899,7 +230899,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -234430,7 +234430,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -236205,7 +236205,7 @@
         }
       ],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -237346,7 +237346,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -237931,7 +237931,7 @@
         }
       ],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -238193,7 +238193,7 @@
         }
       ],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -238306,7 +238306,7 @@
         }
       ],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -238601,7 +238601,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -239283,7 +239283,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -239925,7 +239925,7 @@
           ]
         }
       ],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -240776,7 +240776,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -241037,7 +241037,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -241224,7 +241224,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -241393,7 +241393,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -241612,7 +241612,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -241907,7 +241907,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -242228,7 +242228,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -242457,7 +242457,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -242665,7 +242665,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -246015,7 +246015,7 @@
           ]
         }
       ],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -247429,7 +247429,7 @@
           "style": "plain"
         }
       ],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -247803,7 +247803,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -248451,7 +248451,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -249040,7 +249040,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -250432,7 +250432,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -251512,7 +251512,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -251761,7 +251761,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": [
+      "obtainedFrom": [
         {
           "kind": "text",
           "text": "mom's dressing table-a+",
@@ -252060,7 +252060,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -254862,7 +254862,7 @@
           ]
         }
       ],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -256184,7 +256184,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -257088,7 +257088,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -257466,7 +257466,7 @@
         }
       ],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -258854,7 +258854,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -259744,7 +259744,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -260182,7 +260182,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -260688,7 +260688,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -260905,7 +260905,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -261152,7 +261152,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -261893,7 +261893,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -262385,7 +262385,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -263390,7 +263390,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -264562,7 +264562,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -264853,7 +264853,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -265674,7 +265674,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -266150,7 +266150,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -267563,7 +267563,7 @@
         }
       ],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -269353,7 +269353,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -270810,7 +270810,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -271936,7 +271936,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -272919,7 +272919,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -273412,7 +273412,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -273978,7 +273978,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -274522,7 +274522,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -275772,7 +275772,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -277490,7 +277490,7 @@
           ]
         }
       ],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -278543,7 +278543,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -278839,7 +278839,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -279657,7 +279657,7 @@
           ]
         }
       ],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -281078,7 +281078,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -281506,7 +281506,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -282072,7 +282072,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -282463,7 +282463,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -282764,7 +282764,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -283033,7 +283033,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -283421,7 +283421,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -284534,7 +284534,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -286069,7 +286069,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -289062,7 +289062,7 @@
           "style": "plain"
         }
       ],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -289946,7 +289946,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -291638,7 +291638,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -292227,7 +292227,7 @@
         }
       ],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -293298,7 +293298,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -293808,7 +293808,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -295175,7 +295175,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -295916,7 +295916,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -296669,7 +296669,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -297145,7 +297145,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -297949,7 +297949,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -298510,7 +298510,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -299034,7 +299034,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -299778,7 +299778,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -300204,7 +300204,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -301264,7 +301264,7 @@
         }
       ],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -301684,7 +301684,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -302350,7 +302350,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -303075,7 +303075,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -303791,7 +303791,7 @@
         }
       ],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -304601,7 +304601,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -305416,7 +305416,7 @@
         }
       ],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -305800,7 +305800,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -307762,7 +307762,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -308997,7 +308997,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -309394,7 +309394,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -309696,7 +309696,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -312700,7 +312700,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -313271,7 +313271,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -313796,7 +313796,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -314133,7 +314133,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -314357,7 +314357,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -314854,7 +314854,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -315027,7 +315027,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": [
+      "obtainedFrom": [
         {
           "kind": "text",
           "text": "Greed, Super Greed, shopkeeper",
@@ -315976,7 +315976,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -316175,7 +316175,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -317201,7 +317201,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -318099,7 +318099,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -319134,7 +319134,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -321710,7 +321710,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -322151,7 +322151,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -322733,7 +322733,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -323845,7 +323845,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -324018,7 +324018,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -326775,7 +326775,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -328110,7 +328110,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -329137,7 +329137,7 @@
         }
       ],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -329722,7 +329722,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -330242,7 +330242,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -331439,7 +331439,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -331704,7 +331704,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -332134,7 +332134,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -332448,7 +332448,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -333415,7 +333415,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -334593,7 +334593,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -335888,7 +335888,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -338188,7 +338188,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -338735,7 +338735,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -339619,7 +339619,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -339896,7 +339896,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -340173,7 +340173,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -340389,7 +340389,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -340806,7 +340806,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -340932,7 +340932,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -342099,7 +342099,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -342288,7 +342288,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -343291,7 +343291,7 @@
         }
       ],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -344176,7 +344176,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -344970,7 +344970,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -345847,7 +345847,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -346322,7 +346322,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -346817,7 +346817,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -347580,7 +347580,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -348213,7 +348213,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -348567,7 +348567,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -348793,7 +348793,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -349030,7 +349030,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -350451,7 +350451,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -350777,7 +350777,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -350988,7 +350988,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -352168,7 +352168,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -353273,7 +353273,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -355499,7 +355499,7 @@
           ]
         }
       ],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -356494,7 +356494,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -357035,7 +357035,7 @@
           ]
         }
       ],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -357459,7 +357459,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -358103,7 +358103,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -359999,7 +359999,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -361423,7 +361423,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -362097,7 +362097,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -362780,7 +362780,7 @@
           ]
         }
       ],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -363568,7 +363568,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -364452,7 +364452,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -366968,7 +366968,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -367864,7 +367864,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -368333,7 +368333,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -368896,7 +368896,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -369262,7 +369262,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -369679,7 +369679,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -371105,7 +371105,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -372443,7 +372443,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -373367,7 +373367,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -375101,7 +375101,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -375490,7 +375490,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -375786,7 +375786,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -376108,7 +376108,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -377067,7 +377067,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -378048,7 +378048,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -379157,7 +379157,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -379611,7 +379611,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -380117,7 +380117,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -380828,7 +380828,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -381219,7 +381219,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -381571,7 +381571,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -381877,7 +381877,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -382910,7 +382910,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -383148,7 +383148,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -384498,7 +384498,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -384784,7 +384784,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -385162,7 +385162,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -385695,7 +385695,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -386802,7 +386802,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -387054,7 +387054,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -388080,7 +388080,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -388960,7 +388960,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -389310,7 +389310,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": [
+      "obtainedFrom": [
         {
           "kind": "text",
           "text": "shopkeeper",
@@ -389701,7 +389701,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -390300,7 +390300,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -391171,7 +391171,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -391974,7 +391974,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -392257,7 +392257,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -392905,7 +392905,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -394397,7 +394397,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -395304,7 +395304,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -396465,7 +396465,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -397486,7 +397486,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -399492,7 +399492,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -401079,7 +401079,7 @@
         }
       ],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -402943,7 +402943,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -403966,7 +403966,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -404419,7 +404419,7 @@
         }
       ],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -407159,7 +407159,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -407742,7 +407742,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -408073,7 +408073,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -410413,7 +410413,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -411324,7 +411324,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -411446,7 +411446,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -412041,7 +412041,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -413095,7 +413095,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -413569,7 +413569,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -414801,7 +414801,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -415070,7 +415070,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -415240,7 +415240,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -415893,7 +415893,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -416465,7 +416465,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -417964,7 +417964,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -419483,7 +419483,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -420242,7 +420242,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -420803,7 +420803,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -421185,7 +421185,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -421585,7 +421585,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -421942,7 +421942,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -422411,7 +422411,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -422796,7 +422796,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -423494,7 +423494,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -423689,7 +423689,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -424296,7 +424296,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -425438,7 +425438,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -425791,7 +425791,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -425910,7 +425910,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -426911,7 +426911,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -427707,7 +427707,7 @@
         }
       ],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -428055,7 +428055,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -428798,7 +428798,7 @@
         }
       ],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -430029,7 +430029,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -431022,7 +431022,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -431326,7 +431326,7 @@
         }
       ],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -432866,7 +432866,7 @@
         }
       ],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -433597,7 +433597,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -433965,7 +433965,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -434451,7 +434451,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -435478,7 +435478,7 @@
         }
       ],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -437430,7 +437430,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -437686,7 +437686,7 @@
         }
       ],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -439660,7 +439660,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -442433,7 +442433,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -442852,7 +442852,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -443244,7 +443244,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -443889,7 +443889,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -450614,7 +450614,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -451974,7 +451974,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -453118,7 +453118,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -453852,7 +453852,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -454537,7 +454537,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -455050,7 +455050,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -455328,7 +455328,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -455943,7 +455943,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -456485,7 +456485,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -456869,7 +456869,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -457956,7 +457956,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -459277,7 +459277,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -459856,7 +459856,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -460187,7 +460187,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -460620,7 +460620,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -461128,7 +461128,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -461345,7 +461345,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -462084,7 +462084,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -462405,7 +462405,7 @@
           "style": "plain"
         }
       ],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -463325,7 +463325,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -463553,7 +463553,7 @@
         }
       ],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -464049,7 +464049,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -464281,7 +464281,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -464568,7 +464568,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -464936,7 +464936,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -465298,7 +465298,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -465708,7 +465708,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -466647,7 +466647,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -467540,7 +467540,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -467941,7 +467941,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -468979,7 +468979,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -469415,7 +469415,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -469799,7 +469799,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -472671,7 +472671,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -473148,7 +473148,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -475010,7 +475010,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -476643,7 +476643,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -476973,7 +476973,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -477980,7 +477980,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -478685,7 +478685,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -479340,7 +479340,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -480522,7 +480522,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -480756,7 +480756,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -482016,7 +482016,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -482475,7 +482475,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -483241,7 +483241,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -483661,7 +483661,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -484322,7 +484322,7 @@
           "style": "plain"
         }
       ],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -485234,7 +485234,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -485559,7 +485559,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -486830,7 +486830,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -487123,7 +487123,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -487952,7 +487952,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -488621,7 +488621,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -490106,7 +490106,7 @@
         }
       ],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -491446,7 +491446,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -492014,7 +492014,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -492335,7 +492335,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -492851,7 +492851,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -493869,7 +493869,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -494235,7 +494235,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -494967,7 +494967,7 @@
         }
       ],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -496101,7 +496101,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -496542,7 +496542,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -497214,7 +497214,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -498390,7 +498390,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -499099,7 +499099,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -499568,7 +499568,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -500337,7 +500337,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -500567,7 +500567,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -501206,7 +501206,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -501936,7 +501936,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -502521,7 +502521,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -503598,7 +503598,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -504433,7 +504433,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -506818,7 +506818,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -507873,7 +507873,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -508323,7 +508323,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -509198,7 +509198,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -510031,7 +510031,7 @@
         }
       ],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -511264,7 +511264,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -512181,7 +512181,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -513075,7 +513075,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -513873,7 +513873,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -514386,7 +514386,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -514988,7 +514988,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -517969,7 +517969,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -518254,7 +518254,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -518923,7 +518923,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -520098,7 +520098,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -520395,7 +520395,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -520845,7 +520845,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -521276,7 +521276,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -521848,7 +521848,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -522517,7 +522517,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -523503,7 +523503,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -523950,7 +523950,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -524648,7 +524648,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -525321,7 +525321,7 @@
         }
       ],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -525775,7 +525775,7 @@
         }
       ],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -526433,7 +526433,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -526638,7 +526638,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -527272,7 +527272,7 @@
         }
       ],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -527520,7 +527520,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -527817,7 +527817,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -528970,7 +528970,7 @@
         }
       ],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -529541,7 +529541,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -529821,7 +529821,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -530727,7 +530727,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -531217,7 +531217,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -531475,7 +531475,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -532779,7 +532779,7 @@
         }
       ],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -533797,7 +533797,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -534986,7 +534986,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -542684,7 +542684,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -542902,7 +542902,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -543221,7 +543221,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -544263,7 +544263,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -547808,7 +547808,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -548363,7 +548363,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -549619,7 +549619,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -551097,7 +551097,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -551423,7 +551423,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -551729,7 +551729,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -552263,7 +552263,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -552660,7 +552660,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -553461,7 +553461,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -554528,7 +554528,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -555407,7 +555407,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -555884,7 +555884,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -560110,7 +560110,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -561460,7 +561460,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -562324,7 +562324,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -563057,7 +563057,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -563510,7 +563510,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -564029,7 +564029,7 @@
       ],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -564444,7 +564444,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -564615,7 +564615,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {
@@ -564928,7 +564928,7 @@
       "recharge": [],
       "devilPrice": [],
       "shopPrice": [],
-      "pools": []
+      "obtainedFrom": []
     },
     "sections": [
       {

@@ -270,7 +270,7 @@ fn item_from(
         recharge: inline(ib, "recharge", r, d),
         devil_price: inline(ib, "devil price", r, d),
         shop_price: inline(ib, "shop price", r, d),
-        pools: inline(ib, "pool", r, d),
+        obtained_from: inline(ib, "pool", r, d),
     }
 }
 
@@ -298,7 +298,7 @@ pub fn infobox_from(
         InfoboxKind::Trinket => Infobox::Trinket {
             quote: inline(ib, "quote", r, d),
             tags: tags(ib, "tags", r, d),
-            pools: inline(ib, "pool", r, d),
+            obtained_from: inline(ib, "pool", r, d),
         },
         InfoboxKind::Achievement => Infobox::Achievement {
             quote: paper_line(inline(ib, "description", r, d)),
@@ -577,7 +577,9 @@ mod tests {
     fn a_collectible_infobox_keeps_its_parameters() {
         let r = test_resolver();
         let mut d = Diagnostics::default();
-        // Brimstone's real infobox, trimmed to the parameters this type holds.
+        // Brimstone's real infobox, trimmed to the parameters this type holds, plus Skatole's
+        // real `pool` value: a guaranteed source, not a weighted pool (this enum's own doc
+        // comment).
         let ib = raw(
             "infobox passive collectible",
             &[
@@ -585,6 +587,7 @@ mod tests {
                 ("quality", "4"),
                 ("tags", "devil summonable offensive"),
                 ("devil price", "2"),
+                ("pool", "shell game beggar"),
             ],
         );
         let Infobox::Item {
@@ -595,7 +598,7 @@ mod tests {
             recharge,
             devil_price,
             shop_price,
-            pools,
+            obtained_from,
         } = infobox_from(InfoboxKind::Passive, &ib, "", &r, &mut d)
         else {
             panic!("a passive collectible infobox gives Infobox::Item")
@@ -609,11 +612,14 @@ mod tests {
         assert_eq!(tags, vec!["devil", "summonable", "offensive"]);
         assert!(recharge.is_empty());
         assert!(shop_price.is_empty());
-        assert!(pools.is_empty());
         // A price is inline, not a number: 36 of the 56 real values are `{{dlcalt|…}}`.
         assert!(matches!(
             devil_price.first(),
             Some(Inline::Text { text, .. }) if text.trim() == "2"
+        ));
+        assert!(matches!(
+            obtained_from.first(),
+            Some(Inline::Text { text, .. }) if text == "shell game beggar"
         ));
     }
 
@@ -638,10 +644,17 @@ mod tests {
         let mut d = Diagnostics::default();
         let ib = raw(
             "infobox trinket",
-            &[("quote", "Imaginary Friend"), ("tags", "offensive")],
+            &[
+                ("quote", "Imaginary Friend"),
+                ("tags", "offensive"),
+                ("pool", "urn, special shopkeeper"),
+            ],
         );
-        let Infobox::Trinket { quote, tags, pools } =
-            infobox_from(InfoboxKind::Trinket, &ib, "", &r, &mut d)
+        let Infobox::Trinket {
+            quote,
+            tags,
+            obtained_from,
+        } = infobox_from(InfoboxKind::Trinket, &ib, "", &r, &mut d)
         else {
             panic!("a trinket infobox gives Infobox::Trinket")
         };
@@ -649,8 +662,11 @@ mod tests {
             quote.first(),
             Some(Inline::Text { text, .. }) if text == "Imaginary Friend"
         ));
+        assert!(matches!(
+            obtained_from.first(),
+            Some(Inline::Text { text, .. }) if text == "urn, special shopkeeper"
+        ));
         assert_eq!(tags, vec!["offensive"]);
-        assert!(pools.is_empty());
     }
 
     /// Gaper's real infobox (`dataset/raw/pages/entity/Gaper.wikitext`, 2026-09-26): a

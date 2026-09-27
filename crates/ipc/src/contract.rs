@@ -247,6 +247,7 @@ pub fn render() -> String {
     decl::<crate::WikiPageRef>(&cfg, &mut out);
     decl::<crate::CategorySample>(&cfg, &mut out);
     decl::<crate::WikiIndex>(&cfg, &mut out);
+    decl::<crate::PoolMembershipView>(&cfg, &mut out);
     decl::<crate::ProgressMark>(&cfg, &mut out);
     decl::<crate::SearchDiagnostic>(&cfg, &mut out);
     decl::<crate::SearchMatch>(&cfg, &mut out);

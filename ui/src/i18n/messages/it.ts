@@ -559,6 +559,7 @@ export const it = {
       devilPrice: 'Prezzo dal diavolo',
       shopPrice: 'Prezzo in negozio',
       pools: 'Pool',
+      obtainedFrom: 'Si ottiene da',
       tags: 'Etichette',
       none: 'nessuno',
     },

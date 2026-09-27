@@ -552,6 +552,7 @@ export const en: MessageSchema = {
       devilPrice: 'Devil price',
       shopPrice: 'Shop price',
       pools: 'Pools',
+      obtainedFrom: 'Obtained from',
       tags: 'Tags',
       none: 'none',
     },

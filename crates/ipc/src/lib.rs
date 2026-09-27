@@ -37,6 +37,7 @@ mod tray;
 mod update;
 mod want;
 mod wiki;
+mod wiki_pools;
 mod wiki_target;
 
 pub use autostart::{
@@ -133,3 +134,4 @@ pub use wiki::{
     Target, WikiCounts, WikiIndex, WikiInfo, WikiMissingReason, WikiPageCategory, WikiPageRef,
     WIKI_PAGE_CATEGORIES,
 };
+pub use wiki_pools::{item_pools, PoolMembershipView};
