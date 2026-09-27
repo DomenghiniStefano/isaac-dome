@@ -26,3 +26,13 @@ const toneDot: Record<StateTone, string> = {
 export const stateDots = <State extends string>(
   tones: Record<State, StateTone>,
 ): Record<State, string> => mapValues(tones, (tone) => toneDot[tone])
+
+// The edge a surface takes from a state: a list card outlined in its page's state, the same
+// colour the square and the badge wear.
+export const stateBorder: Record<StateTone, string> = {
+  [StateTone.Done]: 'border-state-done',
+  [StateTone.Now]: 'border-state-now',
+  [StateTone.Blocked]: 'border-state-blocked',
+  [StateTone.Partial]: 'border-dashed border-state-blocked',
+  [StateTone.Unknown]: 'border-dashed border-state-unknown',
+}
