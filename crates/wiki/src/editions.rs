@@ -141,6 +141,15 @@ impl Editions {
         Editions(self.0 & other.0)
     }
 
+    pub fn union(self, other: Editions) -> Editions {
+        Editions(self.0 | other.0)
+    }
+
+    /// Every edition this set leaves out.
+    pub fn complement(self) -> Editions {
+        Editions(Editions::ALL.0 & !self.0)
+    }
+
     pub fn is_empty(self) -> bool {
         self.0 == 0
     }

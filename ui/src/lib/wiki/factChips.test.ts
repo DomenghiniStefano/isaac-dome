@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest'
 import type { PageFacts, WikiPageRef } from '@/lib/ipc/types'
 import { WikiCategory } from '@/router/routeTable'
 import { Tone } from './tone'
-import { factChips, factColumns, shortList } from './factChips'
+import { factChips, factColumns, shortList, shownValue } from './factChips'
 
 describe('factChips', () => {
   it('produces no chip at all for an empty item', () => {
@@ -198,5 +198,76 @@ describe('shortList', () => {
   it('names them all when they fit', () => {
     expect(shortList(['Basement'], 2)).toBe('Basement')
     expect(shortList(['Basement', 'Caves'], 2)).toBe('Basement, Caves')
+  })
+})
+
+describe('shownValue', () => {
+  const character = (tainted: boolean): WikiPageRef => ({
+    target: { kind: 'character', id: tainted ? 21 : 0 },
+    title: tainted ? 'Tainted Isaac' : 'Isaac',
+    iconUrl: null,
+    category: WikiCategory.Characters,
+    dlc: [],
+    facts: {
+      kind: 'character',
+      health: '3 red hearts',
+      damage: '3.5',
+      tears: '+0',
+      range: '6.5',
+      speed: '1.0',
+      luck: '0',
+      shotSpeed: '1.0',
+      tainted,
+    },
+  })
+  const column = (category: WikiCategory, key: string) => {
+    const found = factColumns(category).find((c) => c.key === key)
+    if (!found) throw new Error(`no ${key} column`)
+    return found
+  }
+
+  it('names a flag when it holds, and says nothing when it does not', () => {
+    const tainted = column(WikiCategory.Characters, 'tainted')
+    expect(shownValue(tainted, character(true))).toEqual({
+      kind: 'message',
+      key: 'wiki.facts.tainted',
+    })
+    expect(shownValue(tainted, character(false))).toBeNull()
+  })
+
+  it('reads an item’s type as a word, not the number it sorts by', () => {
+    const template = column(WikiCategory.Items, 'template')
+    const item = (activated: boolean): WikiPageRef => ({
+      target: { kind: 'item', id: 105 },
+      title: 'The D6',
+      iconUrl: null,
+      category: WikiCategory.Items,
+      dlc: [],
+      facts: {
+        kind: 'item',
+        quality: 4,
+        activated,
+        recharge: null,
+        shopPrice: null,
+        devilPrice: null,
+        tags: [],
+      },
+    })
+    expect(shownValue(template, item(true))).toEqual({
+      kind: 'message',
+      key: 'wiki.facts.activated',
+    })
+    expect(shownValue(template, item(false))).toEqual({
+      kind: 'message',
+      key: 'wiki.facts.passive',
+    })
+  })
+
+  it('keeps any other value as the text it is, and a missing one as nothing', () => {
+    const range = column(WikiCategory.Characters, 'range')
+    expect(shownValue(range, character(false))).toEqual({
+      kind: 'raw',
+      text: '6.5',
+    })
   })
 })

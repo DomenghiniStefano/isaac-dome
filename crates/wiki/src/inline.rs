@@ -14,7 +14,7 @@ pub use name_list::name_list_items;
 // `{{entity row minimal|…}}` row: one definition, reached from both places.
 pub(crate) use name_list::collectible;
 
-use crate::editions::span_restriction;
+use crate::editions::{span_restriction, Editions};
 use crate::resolver::{Resolution, Resolver};
 use crate::template::{parse_template_at, Template};
 use crate::{Diagnostics, Inline};
@@ -344,7 +344,7 @@ fn template(t: &Template, r: &Resolver, d: &mut Diagnostics, out: &mut Out, dept
         // fallback already does to its argument. Modelled here so Decision 10's completeness
         // check stops counting them as unknown.
         "plat" | "anchor" | "code" | "attribute" | "ghost" | "pennies" | "tag" | "tl"
-        | "dlcmap slideshow" | "quote" => recurse_into_arg(&arg, r, d, out, depth),
+        | "dlcmap" | "dlcmap slideshow" | "quote" => recurse_into_arg(&arg, r, d, out, depth),
         // 204 of the 547 `{{bug|…}}` carry a `dlc`, and until 2026-09-15 this arm recursed
         // into the positional argument and read no named one: a defect that exists in one
         // edition was shown to every reader as theirs. The 130 whose code this parser
@@ -366,10 +366,36 @@ fn template(t: &Template, r: &Resolver, d: &mut Diagnostics, out: &mut Out, dept
 /// `{{dlcalt|…|r=…}}`. Both the positional argument and every per-edition variant are content
 /// (the wiki nests other templates in them, `{{p|Soul of Lazarus}}` included): same recursion
 /// as unknown templates, not raw text.
+///
+/// The positional value is what the page shows in every edition no variant names — the wiki's
+/// template picks the variant for its edition and falls back to it — so it is marked with the
+/// editions left over, not left unrestricted: read unrestricted, a stat read as one edition
+/// came out as both values at once ("23.75 6.5").
 fn dlcalt(t: &Template, arg: &str, r: &Resolver, d: &mut Diagnostics, out: &mut Out, depth: u32) {
-    recurse_into_arg(arg, r, d, out, depth);
-    for (code, text) in &t.named {
-        out.open(span_restriction(code, d));
+    let variants: Vec<(Vec<crate::Dlc>, &String)> = t
+        .named
+        .iter()
+        .map(|(code, text)| (span_restriction(code, d), text))
+        .collect();
+    let rest = variants
+        .iter()
+        .fold(Editions::NONE, |covered, (only, _)| {
+            covered.union(Editions::of(only))
+        })
+        .complement();
+    // Variants covering every edition leave the fallback shown nowhere; variants that could
+    // not be read leave it shown everywhere, unrestricted like any plain text.
+    if !rest.is_empty() {
+        out.open(if rest.is_all() {
+            Vec::new()
+        } else {
+            rest.list()
+        });
+        recurse_into_arg(arg, r, d, out, depth);
+        out.close();
+    }
+    for (only, text) in variants {
+        out.open(only);
         out.buf.push(' ');
         recurse_into_arg(text, r, d, out, depth);
         out.close();
@@ -916,11 +942,16 @@ mod tests {
                 inline: vec![text(" Isaac also starts with X", Style::Plain)]
             }]
         );
+        // The positional value is what the page shows in the editions no named variant
+        // covers: here the three before Repentance.
         let (v, _) = p("{{dlcalt|17.75|r=4.5}}");
         assert_eq!(
             v,
             vec![
-                text("17.75", Style::Plain),
+                Inline::Edition {
+                    only: vec![Dlc::Rebirth, Dlc::Afterbirth, Dlc::AfterbirthPlus],
+                    inline: vec![text("17.75", Style::Plain)]
+                },
                 Inline::Edition {
                     only: vec![Dlc::Repentance, Dlc::RepentancePlus],
                     inline: vec![text(" 4.5", Style::Plain)]
@@ -1444,9 +1475,12 @@ mod tests {
         assert_eq!(
             v,
             vec![
-                Inline::Ref {
-                    target: Target::Item { id: 25 },
-                    label: "Breakfast".into()
+                Inline::Edition {
+                    only: vec![Dlc::Rebirth, Dlc::Afterbirth, Dlc::AfterbirthPlus],
+                    inline: vec![Inline::Ref {
+                        target: Target::Item { id: 25 },
+                        label: "Breakfast".into()
+                    }]
                 },
                 Inline::Edition {
                     only: vec![Dlc::Repentance, Dlc::RepentancePlus],

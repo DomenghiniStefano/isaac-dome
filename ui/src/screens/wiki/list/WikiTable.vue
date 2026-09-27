@@ -10,7 +10,7 @@ import { Button, ButtonSize, ButtonVariant } from '@/components/ui/button'
 import { VirtualRows } from '@/components/ui/virtual'
 import { useMessages } from '@/i18n'
 import type { WikiPageRef } from '@/lib/ipc/types'
-import { factColumns } from '@/lib/wiki/factChips'
+import { factColumns, shownValue } from '@/lib/wiki/factChips'
 import { categoryHasId } from '@/lib/wiki/listFacets'
 import type { WikiSortKey } from '@/lib/wiki/listFacets'
 import { SortDirection } from '@/lib/wiki/listSort'
@@ -49,10 +49,12 @@ const sortArrow = (key: WikiSortKey) =>
       : ArrowDownIcon
     : null
 
+// What a cell shows: the column's word, translated, or its value as it is (`shownValue`).
 const cellText = (page: WikiPageRef, key: WikiSortKey): string | null => {
   const column = columns.value.find((c) => c.key === key)
-  const value = column?.value(page)
-  return value === null || value === undefined ? null : String(value)
+  const shown = column ? shownValue(column, page) : null
+  if (shown === null) return null
+  return shown.kind === 'message' ? t(shown.key) : shown.text
 }
 </script>
 

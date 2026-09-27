@@ -4735,8 +4735,23 @@
       },
       {
         "kind": "text",
-        "text": " who follows Isaac around and fires normal tears once per second",
+        "text": " who follows Isaac around and fires normal tears ",
         "style": "plain"
+      },
+      {
+        "kind": "edition",
+        "only": [
+          "rebirth",
+          "afterbirth",
+          "afterbirthPlus"
+        ],
+        "inline": [
+          {
+            "kind": "text",
+            "text": "once per second",
+            "style": "plain"
+          }
+        ]
       },
       {
         "kind": "edition",
@@ -4814,8 +4829,23 @@
                   },
                   {
                     "kind": "text",
-                    "text": " who follows Isaac around and fires normal tears once per second",
+                    "text": " who follows Isaac around and fires normal tears ",
                     "style": "plain"
+                  },
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "once per second",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -4959,8 +4989,24 @@
                       },
                       {
                         "kind": "text",
-                        "text": "s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with Brother Bobby having  5th",
+                        "text": "s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with Brother Bobby having  ",
                         "style": "plain"
+                      },
+                      {
+                        "kind": "edition",
+                        "only": [
+                          "rebirth",
+                          "afterbirth",
+                          "afterbirthPlus",
+                          "repentance"
+                        ],
+                        "inline": [
+                          {
+                            "kind": "text",
+                            "text": "5th",
+                            "style": "plain"
+                          }
+                        ]
                       },
                       {
                         "kind": "edition",
@@ -6932,8 +6978,23 @@
                 "inline": [
                   {
                     "kind": "text",
-                    "text": "Resurrection items activate in a set order. 1up! is 1st in this order",
+                    "text": "Resurrection items activate in a set order. 1up! is ",
                     "style": "plain"
+                  },
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1st in this order",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -7076,8 +7137,23 @@
                       },
                       {
                         "kind": "text",
-                        "text": " will respawn with 3",
+                        "text": " will respawn with ",
                         "style": "plain"
+                      },
+                      {
+                        "kind": "edition",
+                        "only": [
+                          "rebirth",
+                          "afterbirth",
+                          "afterbirthPlus"
+                        ],
+                        "inline": [
+                          {
+                            "kind": "text",
+                            "text": "3",
+                            "style": "plain"
+                          }
+                        ]
                       },
                       {
                         "kind": "edition",
@@ -7138,8 +7214,23 @@
                         "inline": [
                           {
                             "kind": "text",
-                            "text": "Dying as The Soul respawns him with a Half Soul Heart",
+                            "text": "Dying as The Soul respawns him with ",
                             "style": "plain"
+                          },
+                          {
+                            "kind": "edition",
+                            "only": [
+                              "rebirth",
+                              "afterbirth",
+                              "afterbirthPlus"
+                            ],
+                            "inline": [
+                              {
+                                "kind": "text",
+                                "text": "a Half Soul Heart",
+                                "style": "plain"
+                              }
+                            ]
                           },
                           {
                             "kind": "edition",
@@ -7269,8 +7360,24 @@
                       },
                       {
                         "kind": "text",
-                        "text": "s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with 1up! having the lowest priority at 6th",
+                        "text": "s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with 1up! having the lowest priority at ",
                         "style": "plain"
+                      },
+                      {
+                        "kind": "edition",
+                        "only": [
+                          "rebirth",
+                          "afterbirth",
+                          "afterbirthPlus",
+                          "repentance"
+                        ],
+                        "inline": [
+                          {
+                            "kind": "text",
+                            "text": "6th",
+                            "style": "plain"
+                          }
+                        ]
                       },
                       {
                         "kind": "edition",
@@ -14528,9 +14635,19 @@
       ],
       "recharge": [
         {
-          "kind": "text",
-          "text": "6",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "6",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -17523,9 +17640,19 @@
       ],
       "recharge": [
         {
-          "kind": "text",
-          "text": "6",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "6",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -20106,8 +20233,23 @@
       "quote": [
         {
           "kind": "text",
-          "text": "Mass Fear",
+          "text": "Mass ",
           "style": "plain"
+        },
+        {
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "Fear",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -21446,9 +21588,19 @@
       "kind": "item",
       "quote": [
         {
-          "kind": "text",
-          "text": "Gross...",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "Gross...",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -21473,9 +21625,19 @@
       ],
       "recharge": [
         {
-          "kind": "text",
-          "text": "3",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "3",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -21839,9 +22001,19 @@
       ],
       "recharge": [
         {
-          "kind": "text",
-          "text": "3",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "3",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -34530,9 +34702,19 @@
       "kind": "item",
       "quote": [
         {
-          "kind": "text",
-          "text": "Kills heal",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "Kills heal",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -36965,8 +37147,23 @@
       },
       {
         "kind": "text",
-        "text": " who follows Isaac around and fires normal tears once per second that each do 3.5 damage",
+        "text": " who follows Isaac around and fires normal tears ",
         "style": "plain"
+      },
+      {
+        "kind": "edition",
+        "only": [
+          "rebirth",
+          "afterbirth",
+          "afterbirthPlus"
+        ],
+        "inline": [
+          {
+            "kind": "text",
+            "text": "once per second that each do 3.5 damage",
+            "style": "plain"
+          }
+        ]
       },
       {
         "kind": "edition",
@@ -37044,8 +37241,23 @@
                   },
                   {
                     "kind": "text",
-                    "text": " who follows Isaac around and fires normal tears once per second that each do 3.5 damage",
+                    "text": " who follows Isaac around and fires normal tears ",
                     "style": "plain"
+                  },
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "once per second that each do 3.5 damage",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -37206,8 +37418,24 @@
                       },
                       {
                         "kind": "text",
-                        "text": "s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with Sister Maggy having 5th",
+                        "text": "s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with Sister Maggy having ",
                         "style": "plain"
+                      },
+                      {
+                        "kind": "edition",
+                        "only": [
+                          "rebirth",
+                          "afterbirth",
+                          "afterbirthPlus",
+                          "repentance"
+                        ],
+                        "inline": [
+                          {
+                            "kind": "text",
+                            "text": "5th",
+                            "style": "plain"
+                          }
+                        ]
                       },
                       {
                         "kind": "edition",
@@ -42525,9 +42753,19 @@
       "kind": "item",
       "quote": [
         {
-          "kind": "text",
-          "text": "Faith up",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "Faith up",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -45954,9 +46192,19 @@
       ],
       "recharge": [
         {
-          "kind": "text",
-          "text": "6",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "6",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -46520,9 +46768,20 @@
       ],
       "devilPrice": [
         {
-          "kind": "text",
-          "text": "1",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus",
+            "repentance"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "1",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -47733,9 +47992,19 @@
       "kind": "item",
       "quote": [
         {
-          "kind": "text",
-          "text": "DMG up",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "DMG up",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -48325,9 +48594,19 @@
       "recharge": [],
       "devilPrice": [
         {
-          "kind": "text",
-          "text": "1",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "1",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -50181,9 +50460,19 @@
       ],
       "devilPrice": [
         {
-          "kind": "text",
-          "text": "2",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "2",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -54853,9 +55142,19 @@
       "kind": "item",
       "quote": [
         {
-          "kind": "text",
-          "text": "DMG up",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "DMG up",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -55670,9 +55969,19 @@
       ],
       "recharge": [
         {
-          "kind": "text",
-          "text": "6",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "6",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -58739,9 +59048,19 @@
       "recharge": [],
       "devilPrice": [
         {
-          "kind": "text",
-          "text": "1",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "1",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -59446,8 +59765,23 @@
       },
       {
         "kind": "text",
-        "text": " once per second",
+        "text": " ",
         "style": "plain"
+      },
+      {
+        "kind": "edition",
+        "only": [
+          "rebirth",
+          "afterbirth",
+          "afterbirthPlus"
+        ],
+        "inline": [
+          {
+            "kind": "text",
+            "text": "once per second",
+            "style": "plain"
+          }
+        ]
       },
       {
         "kind": "edition",
@@ -59547,8 +59881,23 @@
                   },
                   {
                     "kind": "text",
-                    "text": " once per second",
+                    "text": " ",
                     "style": "plain"
+                  },
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "once per second",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -59652,8 +60001,24 @@
                       },
                       {
                         "kind": "text",
-                        "text": "s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with Little Steven having 5th",
+                        "text": "s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with Little Steven having ",
                         "style": "plain"
+                      },
+                      {
+                        "kind": "edition",
+                        "only": [
+                          "rebirth",
+                          "afterbirth",
+                          "afterbirthPlus",
+                          "repentance"
+                        ],
+                        "inline": [
+                          {
+                            "kind": "text",
+                            "text": "5th",
+                            "style": "plain"
+                          }
+                        ]
                       },
                       {
                         "kind": "edition",
@@ -60255,9 +60620,19 @@
       "devilPrice": [],
       "shopPrice": [
         {
-          "kind": "text",
-          "text": "15",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "15",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -62884,9 +63259,19 @@
       "kind": "item",
       "quote": [
         {
-          "kind": "text",
-          "text": "Blast Damage",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "Blast Damage",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -63423,9 +63808,19 @@
       ],
       "recharge": [
         {
-          "kind": "text",
-          "text": "6",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "6",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -63984,9 +64379,19 @@
       "recharge": [],
       "devilPrice": [
         {
-          "kind": "text",
-          "text": "1",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "1",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -64437,8 +64842,23 @@
                   },
                   {
                     "kind": "text",
-                    "text": ": Damage taken is reduced to half a heart.",
+                    "text": ": ",
                     "style": "plain"
+                  },
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "Damage taken is reduced to half a heart.",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -65601,9 +66021,20 @@
       ],
       "recharge": [
         {
-          "kind": "text",
-          "text": "1",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus",
+            "repentance"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "1",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -66330,8 +66761,24 @@
                       },
                       {
                         "kind": "text",
-                        "text": "s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with Demon Baby having 5th",
+                        "text": "s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with Demon Baby having ",
                         "style": "plain"
+                      },
+                      {
+                        "kind": "edition",
+                        "only": [
+                          "rebirth",
+                          "afterbirth",
+                          "afterbirthPlus",
+                          "repentance"
+                        ],
+                        "inline": [
+                          {
+                            "kind": "text",
+                            "text": "5th",
+                            "style": "plain"
+                          }
+                        ]
                       },
                       {
                         "kind": "edition",
@@ -69181,9 +69628,19 @@
       "kind": "item",
       "quote": [
         {
-          "kind": "text",
-          "text": "Spectral tears",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "Spectral tears",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -75974,9 +76431,19 @@
       "kind": "item",
       "quote": [
         {
-          "kind": "text",
-          "text": "HP up",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "HP up",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -76306,9 +76773,19 @@
       "kind": "item",
       "quote": [
         {
-          "kind": "text",
-          "text": "Fire rate up",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "Fire rate up",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -76830,9 +77307,19 @@
       "kind": "item",
       "quote": [
         {
-          "kind": "text",
-          "text": "DMG up",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "DMG up",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -78576,9 +79063,19 @@
       ],
       "recharge": [
         {
-          "kind": "text",
-          "text": "3",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "3",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -81255,9 +81752,20 @@
       ],
       "devilPrice": [
         {
-          "kind": "text",
-          "text": "1",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus",
+            "repentance"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "1",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -84159,9 +84667,19 @@
       ],
       "recharge": [
         {
-          "kind": "text",
-          "text": "4",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "4",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -90808,9 +91326,19 @@
       "kind": "item",
       "quote": [
         {
-          "kind": "text",
-          "text": "You have been blessed",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "You have been blessed",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -92752,9 +93280,19 @@
       ],
       "devilPrice": [
         {
-          "kind": "text",
-          "text": "1",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "1",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -93136,9 +93674,19 @@
       ],
       "recharge": [
         {
-          "kind": "text",
-          "text": "3",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "3",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -94441,9 +94989,19 @@
       "kind": "item",
       "quote": [
         {
-          "kind": "text",
-          "text": "They grow inside",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "They grow inside",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -98293,9 +98851,19 @@
       "kind": "item",
       "quote": [
         {
-          "kind": "text",
-          "text": "Laser",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "Laser",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -102779,9 +103347,20 @@
       "recharge": [],
       "devilPrice": [
         {
-          "kind": "text",
-          "text": "1",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus",
+            "repentance"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "1",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -104607,9 +105186,19 @@
       "kind": "item",
       "quote": [
         {
-          "kind": "text",
-          "text": "You feel blessed",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "You feel blessed",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -106924,8 +107513,23 @@
                   },
                   {
                     "kind": "text",
-                    "text": " who follows Isaac around and fires two tears at once in a V-shape pattern once per second",
+                    "text": " who follows Isaac around and fires two tears at once in a V-shape pattern ",
                     "style": "plain"
+                  },
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "once per second",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -107037,8 +107641,24 @@
                       },
                       {
                         "kind": "text",
-                        "text": "s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with Harlequin Baby having 5th",
+                        "text": "s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with Harlequin Baby having ",
                         "style": "plain"
+                      },
+                      {
+                        "kind": "edition",
+                        "only": [
+                          "rebirth",
+                          "afterbirth",
+                          "afterbirthPlus",
+                          "repentance"
+                        ],
+                        "inline": [
+                          {
+                            "kind": "text",
+                            "text": "5th",
+                            "style": "plain"
+                          }
+                        ]
                       },
                       {
                         "kind": "edition",
@@ -110707,9 +111327,19 @@
       "kind": "item",
       "quote": [
         {
-          "kind": "text",
-          "text": "You feel blessed",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "You feel blessed",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -110756,8 +111386,23 @@
                 "inline": [
                   {
                     "kind": "text",
-                    "text": "Grants 50%",
+                    "text": "Grants ",
                     "style": "plain"
+                  },
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "50%",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -111240,8 +111885,23 @@
                         "inline": [
                           {
                             "kind": "text",
-                            "text": "Plain red tear for 3.5",
+                            "text": "Plain red tear for ",
                             "style": "plain"
+                          },
+                          {
+                            "kind": "edition",
+                            "only": [
+                              "rebirth",
+                              "afterbirth",
+                              "afterbirthPlus"
+                            ],
+                            "inline": [
+                              {
+                                "kind": "text",
+                                "text": "3.5",
+                                "style": "plain"
+                              }
+                            ]
                           },
                           {
                             "kind": "edition",
@@ -111476,8 +112136,24 @@
                       },
                       {
                         "kind": "text",
-                        "text": "s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with Rainbow Baby having 5th",
+                        "text": "s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with Rainbow Baby having ",
                         "style": "plain"
+                      },
+                      {
+                        "kind": "edition",
+                        "only": [
+                          "rebirth",
+                          "afterbirth",
+                          "afterbirthPlus",
+                          "repentance"
+                        ],
+                        "inline": [
+                          {
+                            "kind": "text",
+                            "text": "5th",
+                            "style": "plain"
+                          }
+                        ]
                       },
                       {
                         "kind": "edition",
@@ -112756,9 +113432,19 @@
       "devilPrice": [],
       "shopPrice": [
         {
-          "kind": "text",
-          "text": "15",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "15",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -113969,8 +114655,24 @@
                       },
                       {
                         "kind": "text",
-                        "text": "s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with Holy Water having 5th",
+                        "text": "s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with Holy Water having ",
                         "style": "plain"
+                      },
+                      {
+                        "kind": "edition",
+                        "only": [
+                          "rebirth",
+                          "afterbirth",
+                          "afterbirthPlus",
+                          "repentance"
+                        ],
+                        "inline": [
+                          {
+                            "kind": "text",
+                            "text": "5th",
+                            "style": "plain"
+                          }
+                        ]
                       },
                       {
                         "kind": "edition",
@@ -114672,9 +115374,19 @@
       ],
       "recharge": [
         {
-          "kind": "text",
-          "text": "6",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "6",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -115441,9 +116153,19 @@
       "recharge": [],
       "devilPrice": [
         {
-          "kind": "text",
-          "text": "1",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "1",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -116246,9 +116968,19 @@
       "recharge": [],
       "devilPrice": [
         {
-          "kind": "text",
-          "text": "1",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "1",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -116429,9 +117161,19 @@
       "recharge": [],
       "devilPrice": [
         {
-          "kind": "text",
-          "text": "1",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "1",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -116680,9 +117422,20 @@
       ],
       "devilPrice": [
         {
-          "kind": "text",
-          "text": "1",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus",
+            "repentance"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "1",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -117866,8 +118619,23 @@
                         "inline": [
                           {
                             "kind": "text",
-                            "text": "Abel shoots once per second",
+                            "text": "Abel shoots once per ",
                             "style": "plain"
+                          },
+                          {
+                            "kind": "edition",
+                            "only": [
+                              "rebirth",
+                              "afterbirth",
+                              "afterbirthPlus"
+                            ],
+                            "inline": [
+                              {
+                                "kind": "text",
+                                "text": "second",
+                                "style": "plain"
+                              }
+                            ]
                           },
                           {
                             "kind": "edition",
@@ -121536,9 +122304,19 @@
       "kind": "item",
       "quote": [
         {
-          "kind": "text",
-          "text": "Less is now more",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "Less is now more",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -122266,9 +123044,19 @@
       "kind": "item",
       "quote": [
         {
-          "kind": "text",
-          "text": "Concussive tears",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "Concussive tears",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -124598,8 +125386,23 @@
                         "inline": [
                           {
                             "kind": "text",
-                            "text": "This results in an average increase from 1.33x more pickups to 2.67x",
+                            "text": "This results in an average increase from 1.33x more pickups to ",
                             "style": "plain"
+                          },
+                          {
+                            "kind": "edition",
+                            "only": [
+                              "rebirth",
+                              "afterbirth",
+                              "afterbirthPlus"
+                            ],
+                            "inline": [
+                              {
+                                "kind": "text",
+                                "text": "2.67x",
+                                "style": "plain"
+                              }
+                            ]
                           },
                           {
                             "kind": "edition",
@@ -125158,9 +125961,19 @@
       "kind": "item",
       "quote": [
         {
-          "kind": "text",
-          "text": "Charge with blood",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "Charge with blood",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -126157,9 +126970,19 @@
       "kind": "item",
       "quote": [
         {
-          "kind": "text",
-          "text": "An out-of-body experience",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "An out-of-body experience",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -126305,8 +127128,23 @@
                 "inline": [
                   {
                     "kind": "text",
-                    "text": "The head orbital deals 7 damage per tick or 105",
+                    "text": "The head orbital deals 7 damage per tick or ",
                     "style": "plain"
+                  },
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "105",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -127111,8 +127949,23 @@
                   },
                   {
                     "kind": "text",
-                    "text": " that deals 105",
+                    "text": " that deals ",
                     "style": "plain"
+                  },
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "105",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -127223,8 +128076,23 @@
                           },
                           {
                             "kind": "text",
-                            "text": " tears once every second",
+                            "text": " tears once every ",
                             "style": "plain"
+                          },
+                          {
+                            "kind": "edition",
+                            "only": [
+                              "rebirth",
+                              "afterbirth",
+                              "afterbirthPlus"
+                            ],
+                            "inline": [
+                              {
+                                "kind": "text",
+                                "text": "second",
+                                "style": "plain"
+                              }
+                            ]
                           },
                           {
                             "kind": "edition",
@@ -127257,8 +128125,22 @@
                           },
                           {
                             "kind": "text",
-                            "text": ": Changes it from an orbital to a Bandage Girl that that chases nearby enemies dealing 52.5",
+                            "text": ": Changes it from an orbital to a Bandage Girl that that chases nearby enemies dealing ",
                             "style": "plain"
+                          },
+                          {
+                            "kind": "edition",
+                            "only": [
+                              "rebirth",
+                              "afterbirth"
+                            ],
+                            "inline": [
+                              {
+                                "kind": "text",
+                                "text": "52.5",
+                                "style": "plain"
+                              }
+                            ]
                           },
                           {
                             "kind": "edition",
@@ -127304,8 +128186,22 @@
                           },
                           {
                             "kind": "text",
-                            "text": ": Increases the size of the Bandage Girl and increases its contact damage to  82.5",
+                            "text": ": Increases the size of the Bandage Girl and increases its contact damage to  ",
                             "style": "plain"
+                          },
+                          {
+                            "kind": "edition",
+                            "only": [
+                              "rebirth",
+                              "afterbirth"
+                            ],
+                            "inline": [
+                              {
+                                "kind": "text",
+                                "text": "82.5",
+                                "style": "plain"
+                              }
+                            ]
                           },
                           {
                             "kind": "edition",
@@ -130306,8 +131202,23 @@
                 "inline": [
                   {
                     "kind": "text",
-                    "text": "Resurrection items activate in a set order. Guppy's Collar is 4th",
+                    "text": "Resurrection items activate in a set order. Guppy's Collar is ",
                     "style": "plain"
+                  },
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "4th",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -130355,30 +131266,40 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "ref",
-                    "target": {
-                      "kind": "item",
-                      "id": 81
-                    },
-                    "label": "Dead Cat"
-                  },
-                  {
-                    "kind": "text",
-                    "text": ", ",
-                    "style": "plain"
-                  },
-                  {
-                    "kind": "ref",
-                    "target": {
-                      "kind": "character",
-                      "id": 8
-                    },
-                    "label": "Lazarus"
-                  },
-                  {
-                    "kind": "text",
-                    "text": "' inherent extra life",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 81
+                        },
+                        "label": "Dead Cat"
+                      },
+                      {
+                        "kind": "text",
+                        "text": ", ",
+                        "style": "plain"
+                      },
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "character",
+                          "id": 8
+                        },
+                        "label": "Lazarus"
+                      },
+                      {
+                        "kind": "text",
+                        "text": "' inherent extra life",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -132395,9 +133316,19 @@
       "kind": "item",
       "quote": [
         {
-          "kind": "text",
-          "text": "Sin up",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "Sin up",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -132423,9 +133354,19 @@
       "recharge": [],
       "devilPrice": [
         {
-          "kind": "text",
-          "text": "1",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "1",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -138727,9 +139668,19 @@
       "kind": "item",
       "quote": [
         {
-          "kind": "text",
-          "text": "Splash damage",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "Splash damage",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -140155,9 +141106,20 @@
       "recharge": [],
       "devilPrice": [
         {
-          "kind": "text",
-          "text": "1",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus",
+            "repentance"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "1",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -141600,9 +142562,19 @@
       "kind": "item",
       "quote": [
         {
-          "kind": "text",
-          "text": "Charged attack",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "Charged attack",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -148504,9 +149476,19 @@
       "kind": "item",
       "quote": [
         {
-          "kind": "text",
-          "text": "Penetrative shot",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "Penetrative shot",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -150441,9 +151423,19 @@
       "kind": "item",
       "quote": [
         {
-          "kind": "text",
-          "text": "All stats up... then shuffled",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "All stats up... then shuffled",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -151323,9 +152315,19 @@
       "kind": "item",
       "quote": [
         {
-          "kind": "text",
-          "text": "Damage reduction",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "Damage reduction",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -151909,9 +152911,20 @@
       "recharge": [],
       "devilPrice": [
         {
-          "kind": "text",
-          "text": "1",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus",
+            "repentancePlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "1",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -161694,22 +162707,32 @@
               {
                 "inline": [
                   {
-                    "kind": "text",
-                    "text": "Can cause ",
-                    "style": "plain"
-                  },
-                  {
-                    "kind": "ref",
-                    "target": {
-                      "kind": "article",
-                      "title": "Transformations"
-                    },
-                    "label": "transformation"
-                  },
-                  {
-                    "kind": "text",
-                    "text": "s.",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "Can cause ",
+                        "style": "plain"
+                      },
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "article",
+                          "title": "Transformations"
+                        },
+                        "label": "transformation"
+                      },
+                      {
+                        "kind": "text",
+                        "text": "s.",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -161969,12 +162992,22 @@
               {
                 "inline": [
                   {
-                    "kind": "ref",
-                    "target": {
-                      "kind": "trinket",
-                      "id": 122
-                    },
-                    "label": "Butter!"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "trinket",
+                          "id": 122
+                        },
+                        "label": "Butter!"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -162205,9 +163238,19 @@
       "kind": "item",
       "quote": [
         {
-          "kind": "text",
-          "text": "Fear shot",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "Fear shot",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -166746,18 +167789,33 @@
                   },
                   {
                     "kind": "text",
-                    "text": ": If Isaac has obtained Dry Baby in the first familiar spot ",
+                    "text": ": ",
                     "style": "plain"
                   },
                   {
-                    "kind": "text",
-                    "text": "before",
-                    "style": "italic"
-                  },
-                  {
-                    "kind": "text",
-                    "text": " Isaac's Heart, the baby will block enemy tears before they can hit the heart. Enemies touching the heart can still do damage, and picking up the baby after the heart will cause the heart's hitbox to be checked first against shots.",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "If Isaac has obtained Dry Baby in the first familiar spot ",
+                        "style": "plain"
+                      },
+                      {
+                        "kind": "text",
+                        "text": "before",
+                        "style": "italic"
+                      },
+                      {
+                        "kind": "text",
+                        "text": " Isaac's Heart, the baby will block enemy tears before they can hit the heart. Enemies touching the heart can still do damage, and picking up the baby after the heart will cause the heart's hitbox to be checked first against shots.",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -171443,9 +172501,19 @@
       "recharge": [],
       "devilPrice": [
         {
-          "kind": "text",
-          "text": "2",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "2",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -171510,8 +172578,23 @@
                   },
                   {
                     "kind": "text",
-                    "text": " beam that deals 3.5",
+                    "text": " beam that deals ",
                     "style": "plain"
+                  },
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "3.5",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -171529,8 +172612,23 @@
                   },
                   {
                     "kind": "text",
-                    "text": " damage per tick and can strike an enemy up to 9",
+                    "text": " damage per tick and can strike an enemy up to ",
                     "style": "plain"
+                  },
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "9",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -171548,8 +172646,23 @@
                   },
                   {
                     "kind": "text",
-                    "text": " times, for a total of 31.5",
+                    "text": " times, for a total of ",
                     "style": "plain"
+                  },
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "31.5",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -171700,8 +172813,24 @@
                       },
                       {
                         "kind": "text",
-                        "text": "s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with Lil Brimstone having 3rd",
+                        "text": "s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with Lil Brimstone having ",
                         "style": "plain"
+                      },
+                      {
+                        "kind": "edition",
+                        "only": [
+                          "rebirth",
+                          "afterbirth",
+                          "afterbirthPlus",
+                          "repentance"
+                        ],
+                        "inline": [
+                          {
+                            "kind": "text",
+                            "text": "3rd",
+                            "style": "plain"
+                          }
+                        ]
                       },
                       {
                         "kind": "edition",
@@ -179346,9 +180475,19 @@
       ],
       "recharge": [
         {
-          "kind": "text",
-          "text": "1",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "1",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -199169,9 +200308,19 @@
       ],
       "recharge": [
         {
-          "kind": "text",
-          "text": "4",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "4",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -201279,9 +202428,19 @@
       "kind": "item",
       "quote": [
         {
-          "kind": "text",
-          "text": "??????",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "??????",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -202713,9 +203872,19 @@
       "devilPrice": [],
       "shopPrice": [
         {
-          "kind": "text",
-          "text": "15",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "15",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -203321,9 +204490,19 @@
       ],
       "recharge": [
         {
-          "kind": "text",
-          "text": "6",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "6",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -206056,9 +207235,19 @@
       ],
       "recharge": [
         {
-          "kind": "text",
-          "text": "6",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "6",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -206555,9 +207744,20 @@
       ],
       "recharge": [
         {
-          "kind": "text",
-          "text": "3s",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus",
+            "repentance"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "3s",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -206944,8 +208144,23 @@
       "quote": [
         {
           "kind": "text",
-          "text": "Pay to play",
+          "text": "Pay to ",
           "style": "plain"
+        },
+        {
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "play",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -206977,9 +208192,19 @@
       "devilPrice": [],
       "shopPrice": [
         {
-          "kind": "text",
-          "text": "15",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "15",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -207578,9 +208803,19 @@
       ],
       "recharge": [
         {
-          "kind": "text",
-          "text": "unlimited",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "unlimited",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -214953,9 +216188,19 @@
       "kind": "item",
       "quote": [
         {
-          "kind": "text",
-          "text": "Penetrative shot",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "Penetrative shot",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -216978,9 +218223,19 @@
       "kind": "item",
       "quote": [
         {
-          "kind": "text",
-          "text": "Shot speed down + DMG up",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "Shot speed down + DMG up",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -218555,9 +219810,19 @@
       "recharge": [],
       "devilPrice": [
         {
-          "kind": "text",
-          "text": "1",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "1",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -224463,8 +225728,23 @@
       },
       {
         "kind": "text",
-        "text": " that deals 37.5",
+        "text": " that deals ",
         "style": "plain"
+      },
+      {
+        "kind": "edition",
+        "only": [
+          "rebirth",
+          "afterbirth",
+          "afterbirthPlus"
+        ],
+        "inline": [
+          {
+            "kind": "text",
+            "text": "37.5",
+            "style": "plain"
+          }
+        ]
       },
       {
         "kind": "edition",
@@ -225477,8 +226757,24 @@
                       },
                       {
                         "kind": "text",
-                        "text": "s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with Mongo Baby having 4th",
+                        "text": "s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with Mongo Baby having ",
                         "style": "plain"
+                      },
+                      {
+                        "kind": "edition",
+                        "only": [
+                          "rebirth",
+                          "afterbirth",
+                          "afterbirthPlus",
+                          "repentance"
+                        ],
+                        "inline": [
+                          {
+                            "kind": "text",
+                            "text": "4th",
+                            "style": "plain"
+                          }
+                        ]
                       },
                       {
                         "kind": "edition",
@@ -227568,9 +228864,17 @@
       ],
       "recharge": [
         {
-          "kind": "text",
-          "text": "6",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "6",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -228364,9 +229668,19 @@
       ],
       "recharge": [
         {
-          "kind": "text",
-          "text": "6s",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "6s",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -236185,9 +237499,19 @@
       "recharge": [],
       "devilPrice": [
         {
-          "kind": "text",
-          "text": "1",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "1",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -237911,9 +239235,19 @@
       "recharge": [],
       "devilPrice": [
         {
-          "kind": "text",
-          "text": "1",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "1",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -238173,9 +239507,19 @@
       "recharge": [],
       "devilPrice": [
         {
-          "kind": "text",
-          "text": "1",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "1",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -238286,9 +239630,19 @@
       "recharge": [],
       "devilPrice": [
         {
-          "kind": "text",
-          "text": "1",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "1",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -239906,9 +241260,19 @@
       "devilPrice": [],
       "shopPrice": [
         {
-          "kind": "text",
-          "text": "15",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "15",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -245974,9 +247338,18 @@
       ],
       "recharge": [
         {
-          "kind": "text",
-          "text": "4",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "4",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -245996,9 +247369,18 @@
       "devilPrice": [],
       "shopPrice": [
         {
-          "kind": "text",
-          "text": "15",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "15",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -247405,9 +248787,18 @@
       "devilPrice": [],
       "shopPrice": [
         {
-          "kind": "text",
-          "text": "15",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "15",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -248431,9 +249822,19 @@
       ],
       "recharge": [
         {
-          "kind": "text",
-          "text": "3",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "afterbirth",
+            "afterbirthPlus",
+            "repentance"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "3",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -250404,9 +251805,18 @@
       "kind": "item",
       "quote": [
         {
-          "kind": "text",
-          "text": "Explosive blast!",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "Explosive blast!",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -251485,9 +252895,18 @@
       "kind": "item",
       "quote": [
         {
-          "kind": "text",
-          "text": "Don't swallow the prize!",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "Don't swallow the prize!",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -252030,9 +253449,18 @@
       "kind": "item",
       "quote": [
         {
-          "kind": "text",
-          "text": "Double charge!",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "Double charge!",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -254821,9 +256249,18 @@
       ],
       "recharge": [
         {
-          "kind": "text",
-          "text": "4",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "4",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -254843,9 +256280,18 @@
       "devilPrice": [],
       "shopPrice": [
         {
-          "kind": "text",
-          "text": "15",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "15",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -257966,8 +259412,22 @@
                   },
                   {
                     "kind": "text",
-                    "text": ": Shoots tears that do 2x",
+                    "text": ": Shoots tears that do ",
                     "style": "plain"
+                  },
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "2x",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -264825,9 +266285,18 @@
       "kind": "item",
       "quote": [
         {
-          "kind": "text",
-          "text": "You feel cursed...",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "You feel cursed...",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -267515,9 +268984,18 @@
       "kind": "item",
       "quote": [
         {
-          "kind": "text",
-          "text": "Holy shot!",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "Holy shot!",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -267544,9 +269022,19 @@
       "recharge": [],
       "devilPrice": [
         {
-          "kind": "text",
-          "text": "1",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "afterbirth",
+            "afterbirthPlus",
+            "repentance"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "1",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -269326,9 +270814,18 @@
       "kind": "item",
       "quote": [
         {
-          "kind": "text",
-          "text": "Nice hat!",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "Nice hat!",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -274492,9 +275989,18 @@
       "kind": "item",
       "quote": [
         {
-          "kind": "text",
-          "text": "Your future shines brighter",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "Your future shines brighter",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -275751,9 +277257,18 @@
       ],
       "recharge": [
         {
-          "kind": "text",
-          "text": "3",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "3",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -277449,9 +278964,18 @@
       ],
       "recharge": [
         {
-          "kind": "text",
-          "text": "1",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "1",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -277471,9 +278995,18 @@
       "devilPrice": [],
       "shopPrice": [
         {
-          "kind": "text",
-          "text": "15",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "15",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -279639,9 +281172,19 @@
       "devilPrice": [],
       "shopPrice": [
         {
-          "kind": "text",
-          "text": "15",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "afterbirth",
+            "afterbirthPlus",
+            "repentance"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "15",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -289038,9 +290581,18 @@
       "devilPrice": [],
       "shopPrice": [
         {
-          "kind": "text",
-          "text": "15",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "15",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -297117,9 +298669,18 @@
       "kind": "item",
       "quote": [
         {
-          "kind": "text",
-          "text": "Game breaking bug, right away!",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "Game breaking bug, right away!",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -301244,9 +302805,18 @@
       "recharge": [],
       "devilPrice": [
         {
-          "kind": "text",
-          "text": "1",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "1",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -303045,9 +304615,18 @@
       "kind": "item",
       "quote": [
         {
-          "kind": "text",
-          "text": "There are even more options!",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "There are even more options!",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -303771,9 +305350,18 @@
       "recharge": [],
       "devilPrice": [
         {
-          "kind": "text",
-          "text": "1",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "1",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -304571,9 +306159,18 @@
       "kind": "item",
       "quote": [
         {
-          "kind": "text",
-          "text": "More stuff to carry!",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "More stuff to carry!",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -305396,9 +306993,18 @@
       "recharge": [],
       "devilPrice": [
         {
-          "kind": "text",
-          "text": "1",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "1",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -309360,9 +310966,18 @@
       ],
       "recharge": [
         {
-          "kind": "text",
-          "text": "2",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "2",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -309675,9 +311290,18 @@
       ],
       "recharge": [
         {
-          "kind": "text",
-          "text": "2",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "2",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -319099,9 +320723,18 @@
       "kind": "item",
       "quote": [
         {
-          "kind": "text",
-          "text": "Gotta catch 'em all?",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "Gotta catch 'em all?",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -322100,9 +323733,17 @@
       "kind": "item",
       "quote": [
         {
-          "kind": "text",
-          "text": "Dont cry over it...",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "afterbirth"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "Dont cry over it...",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -322699,9 +324340,18 @@
       "kind": "item",
       "quote": [
         {
-          "kind": "text",
-          "text": "Reroll Rewards!",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "Reroll Rewards!",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -323816,9 +325466,18 @@
       "kind": "item",
       "quote": [
         {
-          "kind": "text",
-          "text": "Memories...",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "afterbirth",
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "Memories...",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -323983,9 +325642,17 @@
       "kind": "item",
       "quote": [
         {
-          "kind": "text",
-          "text": "Whats inside?",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "afterbirth"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "Whats inside?",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -329117,9 +330784,17 @@
       "recharge": [],
       "devilPrice": [
         {
-          "kind": "text",
-          "text": "2",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "2",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -331676,9 +333351,17 @@
       "kind": "item",
       "quote": [
         {
-          "kind": "text",
-          "text": "Halitosis",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "Halitosis",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -340145,9 +341828,17 @@
       "kind": "item",
       "quote": [
         {
-          "kind": "text",
-          "text": "Midnight snack!",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "Midnight snack!",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -349001,9 +350692,17 @@
       "kind": "item",
       "quote": [
         {
-          "kind": "text",
-          "text": "Lord of the dead!",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "Lord of the dead!",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -350955,9 +352654,17 @@
       "kind": "item",
       "quote": [
         {
-          "kind": "text",
-          "text": "Use with caution",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "Use with caution",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -353253,9 +354960,18 @@
       ],
       "recharge": [
         {
-          "kind": "text",
-          "text": "6",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "afterbirthPlus",
+            "repentance"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "6",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -355481,9 +357197,18 @@
       "devilPrice": [],
       "shopPrice": [
         {
-          "kind": "text",
-          "text": "15",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "afterbirthPlus",
+            "repentance"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "15",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -357016,9 +358741,17 @@
       "devilPrice": [],
       "shopPrice": [
         {
-          "kind": "text",
-          "text": "15",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "15",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -362761,9 +364494,17 @@
       "devilPrice": [],
       "shopPrice": [
         {
-          "kind": "text",
-          "text": "15",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "15",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -366947,9 +368688,17 @@
       ],
       "recharge": [
         {
-          "kind": "text",
-          "text": "2",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "2",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -378020,9 +379769,17 @@
       "kind": "item",
       "quote": [
         {
-          "kind": "text",
-          "text": "Science!",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "Science!",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -389680,9 +391437,17 @@
       ],
       "recharge": [
         {
-          "kind": "text",
-          "text": "3s",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "3s",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -401060,9 +402825,18 @@
       "recharge": [],
       "devilPrice": [
         {
-          "kind": "text",
-          "text": "1",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "afterbirthPlus",
+            "repentance"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "1",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -404399,9 +406173,17 @@
       ],
       "devilPrice": [
         {
-          "kind": "text",
-          "text": "2",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "2",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -413548,9 +415330,17 @@
       ],
       "recharge": [
         {
-          "kind": "text",
-          "text": "4",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "afterbirthPlus"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "4",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -428779,9 +430569,17 @@
       "recharge": [],
       "devilPrice": [
         {
-          "kind": "text",
-          "text": "1",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "repentance"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "1",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -463534,9 +465332,17 @@
       "recharge": [],
       "devilPrice": [
         {
-          "kind": "text",
-          "text": "2",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "repentance"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "2",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -464164,8 +465970,21 @@
                   },
                   {
                     "kind": "text",
-                    "text": "s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with Boiled Baby having the lowest priority at 6th",
+                    "text": "s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with Boiled Baby having the lowest priority at ",
                     "style": "plain"
+                  },
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "6th",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -464450,8 +466269,21 @@
                   },
                   {
                     "kind": "text",
-                    "text": "s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with Freezer Baby having 5th",
+                    "text": "s that follow behind Isaac have a certain priority in how close their position is to him over other familiars, with Freezer Baby having ",
                     "style": "plain"
+                  },
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "5th",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -494948,9 +496780,17 @@
       "recharge": [],
       "devilPrice": [
         {
-          "kind": "text",
-          "text": "1",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "repentance"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "1",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -510012,9 +511852,17 @@
       "recharge": [],
       "devilPrice": [
         {
-          "kind": "text",
-          "text": "1",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "repentance"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "1",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -525756,9 +527604,17 @@
       "recharge": [],
       "devilPrice": [
         {
-          "kind": "text",
-          "text": "1",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "repentance"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "1",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -527253,9 +529109,17 @@
       "recharge": [],
       "devilPrice": [
         {
-          "kind": "text",
-          "text": "1",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "repentance"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "1",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -532760,9 +534624,17 @@
       ],
       "devilPrice": [
         {
-          "kind": "text",
-          "text": "1",
-          "style": "plain"
+          "kind": "edition",
+          "only": [
+            "repentance"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "1",
+              "style": "plain"
+            }
+          ]
         },
         {
           "kind": "edition",

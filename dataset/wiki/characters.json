@@ -63,7 +63,7 @@
       ],
       "damage": "3.5 (*1.00)",
       "tears": "+0",
-      "range": "{{dlcmap | {{dlcalt|23.75|r=6.5}} }}",
+      "range": "6.5",
       "speed": "1.0",
       "luck": "0",
       "shotSpeed": "1",
@@ -1164,7 +1164,7 @@
       ],
       "damage": "3.5 (*1.00)",
       "tears": "+0",
-      "range": "{{dlcmap | {{dlcalt|23.75|r=6.5}} }}",
+      "range": "6.5",
       "speed": "0.85",
       "luck": "0",
       "shotSpeed": "1",
@@ -3094,7 +3094,7 @@
       ],
       "damage": "3.5 (*1.20)",
       "tears": "+0",
-      "range": "{{dlcalt|17.75|r=4.5}}",
+      "range": "4.5",
       "speed": "1.3",
       "luck": "0",
       "shotSpeed": "1",
@@ -3498,16 +3498,31 @@
                           },
                           {
                             "kind": "text",
-                            "text": " will prevent him from firing normal tears, including tear-changing effects like ",
+                            "text": " ",
                             "style": "plain"
                           },
                           {
-                            "kind": "ref",
-                            "target": {
-                              "kind": "item",
-                              "id": 118
-                            },
-                            "label": "Brimstone"
+                            "kind": "edition",
+                            "only": [
+                              "rebirth",
+                              "afterbirth",
+                              "afterbirthPlus"
+                            ],
+                            "inline": [
+                              {
+                                "kind": "text",
+                                "text": "will prevent him from firing normal tears, including tear-changing effects like ",
+                                "style": "plain"
+                              },
+                              {
+                                "kind": "ref",
+                                "target": {
+                                  "kind": "item",
+                                  "id": 118
+                                },
+                                "label": "Brimstone"
+                              }
+                            ]
                           },
                           {
                             "kind": "edition",
@@ -4677,7 +4692,7 @@
       ],
       "damage": "3.5 (*1.35)",
       "tears": "+0",
-      "range": "{{dlcmap | {{dlcalt|23.75|r=6.5}} }}",
+      "range": "6.5",
       "speed": "1.0",
       "luck": "0",
       "shotSpeed": "1",
@@ -6170,7 +6185,7 @@
       ],
       "damage": "3.5 (*1.05)",
       "tears": "+0",
-      "range": "{{dlcmap | {{dlcalt|23.75|r=6.5}} }}",
+      "range": "6.5",
       "speed": "1.1",
       "luck": "0",
       "shotSpeed": "1",
@@ -9101,9 +9116,9 @@
           "label": "2 red hearts"
         }
       ],
-      "damage": "3.5 (*0.75)<br>(*1.00 at a Red Heart)",
+      "damage": "3.5 (*0.75) (*1.00 at a Red Heart)",
       "tears": "+0",
-      "range": "{{dlcmap | {{dlcalt|23.75|r=6.5}} }}",
+      "range": "6.5",
       "speed": "1.23",
       "luck": "0",
       "shotSpeed": "1",
@@ -10860,7 +10875,7 @@
       ],
       "damage": "3.5 (*1.00)",
       "tears": "-0.1",
-      "range": "{{dlcalt|18.75|r=5.0}}",
+      "range": "5.0",
       "speed": "1.1",
       "luck": "0",
       "shotSpeed": "1.31",
@@ -12738,8 +12753,23 @@
       },
       {
         "kind": "text",
-        "text": " that deals damage 13",
+        "text": " that deals damage ",
         "style": "plain"
+      },
+      {
+        "kind": "edition",
+        "only": [
+          "rebirth",
+          "afterbirth",
+          "afterbirthPlus"
+        ],
+        "inline": [
+          {
+            "kind": "text",
+            "text": "13",
+            "style": "plain"
+          }
+        ]
       },
       {
         "kind": "edition",
@@ -12780,7 +12810,7 @@
       ],
       "damage": "3.5 (*1.50)",
       "tears": "+0.5; x0.267",
-      "range": "{{dlcalt|17.75|r=4.5}}",
+      "range": "4.5",
       "speed": "1.25",
       "luck": "0",
       "shotSpeed": "1",
@@ -13383,8 +13413,23 @@
                   },
                   {
                     "kind": "text",
-                    "text": ": Reduces charge time",
+                    "text": ": ",
                     "style": "plain"
+                  },
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "Reduces charge time",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -13928,8 +13973,23 @@
                   },
                   {
                     "kind": "text",
-                    "text": ": Provides a laser while Brimstone is charging, allowing the player to do damage while the charge occurs. However, this also decreases the damage and tear rate of Azazel's Brimstone",
+                    "text": ": Provides a laser while Brimstone is charging, allowing the player to do damage while the charge occurs. However, ",
                     "style": "plain"
+                  },
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "this also decreases the damage and tear rate of Azazel's Brimstone",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -15329,7 +15389,7 @@
       ],
       "damage": "3.5 (*1.00)",
       "tears": "+0",
-      "range": "{{dlcalt|17.75|r=4.5}}",
+      "range": "4.5",
       "speed": "1.0",
       "luck": "-1",
       "shotSpeed": "1",
@@ -15439,8 +15499,23 @@
             "inline": [
               {
                 "kind": "text",
-                "text": "Upon revival, Lazarus loses all but 1",
+                "text": "Upon revival, Lazarus loses ",
                 "style": "plain"
+              },
+              {
+                "kind": "edition",
+                "only": [
+                  "rebirth",
+                  "afterbirth",
+                  "afterbirthPlus"
+                ],
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "all but 1",
+                    "style": "plain"
+                  }
+                ]
               },
               {
                 "kind": "edition",
@@ -15468,8 +15543,23 @@
             "inline": [
               {
                 "kind": "text",
-                "text": "Lazarus Risen has increased speed, range, luck, and a 1.2x",
+                "text": "Lazarus Risen has increased speed, range, luck, and a ",
                 "style": "plain"
+              },
+              {
+                "kind": "edition",
+                "only": [
+                  "rebirth",
+                  "afterbirth",
+                  "afterbirthPlus"
+                ],
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "1.2x",
+                    "style": "plain"
+                  }
+                ]
               },
               {
                 "kind": "edition",
@@ -15561,8 +15651,23 @@
                 "inline": [
                   {
                     "kind": "text",
-                    "text": "Resurrection items and abilities activate in a set order. Lazarus' inherent extra life is 4th",
+                    "text": "Resurrection items and abilities activate in a set order. Lazarus' inherent extra life is ",
                     "style": "plain"
+                  },
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "4th",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -15742,8 +15847,23 @@
                       },
                       {
                         "kind": "text",
-                        "text": " even before reviving. Anemic gives +5",
+                        "text": " even before reviving. Anemic gives ",
                         "style": "plain"
+                      },
+                      {
+                        "kind": "edition",
+                        "only": [
+                          "rebirth",
+                          "afterbirth",
+                          "afterbirthPlus"
+                        ],
+                        "inline": [
+                          {
+                            "kind": "text",
+                            "text": "+5",
+                            "style": "plain"
+                          }
+                        ]
                       },
                       {
                         "kind": "edition",
@@ -17506,8 +17626,8 @@
       "kind": "character",
       "health": [],
       "damage": "3.5 ± 1.0 (*1.00)",
-      "tears": "{{dlcalt|±0.75|r=+0.75 to -0.515}}",
-      "range": "{{dlcalt|23.75 ± 5.00|r=6.5 ± 1.5}}",
+      "tears": "+0.75 to -0.515",
+      "range": "6.5 ± 1.5",
       "speed": "1.0 ± 0.15",
       "luck": "0 ± 1",
       "shotSpeed": "1 ± 0.25",
@@ -18091,8 +18211,23 @@
                   },
                   {
                     "kind": "text",
-                    "text": ": If Eden starts with this item and immediately uses it in the starting room, the room will be reset, and all starting items and trinkets removed",
+                    "text": ": ",
                     "style": "plain"
+                  },
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "If Eden starts with this item and immediately uses it in the starting room, the room will be reset, and all starting items and trinkets removed",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -18949,7 +19084,7 @@
       "health": [],
       "damage": "3.5 (*1.00)",
       "tears": "+0",
-      "range": "{{dlcmap | {{dlcalt|23.75|r=6.5}} }}",
+      "range": "6.5",
       "speed": "1.0",
       "luck": "0",
       "shotSpeed": "1",
@@ -22513,9 +22648,9 @@
           "label": "2 unknown hearts"
         }
       ],
-      "damage": "3.5 (*{{dlcalt|1.20|r=1.40}})",
+      "damage": "3.5 (*1.40)",
       "tears": "+0",
-      "range": "{{dlcmap | {{dlcalt|23.75|r=6.5}} }}",
+      "range": "6.5",
       "speed": "1.25",
       "luck": "0",
       "shotSpeed": "1",
@@ -22624,8 +22759,23 @@
             "inline": [
               {
                 "kind": "text",
-                "text": "Upon revival, Lazarus loses all but 1",
+                "text": "Upon revival, Lazarus loses ",
                 "style": "plain"
+              },
+              {
+                "kind": "edition",
+                "only": [
+                  "rebirth",
+                  "afterbirth",
+                  "afterbirthPlus"
+                ],
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "all but 1",
+                    "style": "plain"
+                  }
+                ]
               },
               {
                 "kind": "edition",
@@ -22653,8 +22803,23 @@
             "inline": [
               {
                 "kind": "text",
-                "text": "Lazarus Risen has increased speed, range, luck, and a 1.2x",
+                "text": "Lazarus Risen has increased speed, range, luck, and a ",
                 "style": "plain"
+              },
+              {
+                "kind": "edition",
+                "only": [
+                  "rebirth",
+                  "afterbirth",
+                  "afterbirthPlus"
+                ],
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "1.2x",
+                    "style": "plain"
+                  }
+                ]
               },
               {
                 "kind": "edition",
@@ -22746,8 +22911,23 @@
                 "inline": [
                   {
                     "kind": "text",
-                    "text": "Resurrection items and abilities activate in a set order. Lazarus' inherent extra life is 4th",
+                    "text": "Resurrection items and abilities activate in a set order. Lazarus' inherent extra life is ",
                     "style": "plain"
+                  },
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "4th",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -22927,8 +23107,23 @@
                       },
                       {
                         "kind": "text",
-                        "text": " even before reviving. Anemic gives +5",
+                        "text": " even before reviving. Anemic gives ",
                         "style": "plain"
+                      },
+                      {
+                        "kind": "edition",
+                        "only": [
+                          "rebirth",
+                          "afterbirth",
+                          "afterbirthPlus"
+                        ],
+                        "inline": [
+                          {
+                            "kind": "text",
+                            "text": "+5",
+                            "style": "plain"
+                          }
+                        ]
                       },
                       {
                         "kind": "edition",
@@ -24671,7 +24866,7 @@
       ],
       "damage": "3.5 (*2.00)",
       "tears": "+0",
-      "range": "{{dlcmap | {{dlcalt|23.75|r=6.5}} }}",
+      "range": "6.5",
       "speed": "1.1",
       "luck": "0",
       "shotSpeed": "1",
@@ -26208,7 +26403,7 @@
       ],
       "damage": "3.5 (*1.00)",
       "tears": "+0",
-      "range": "{{dlcmap | {{dlcalt|23.75|r=6.5}} }}",
+      "range": "6.5",
       "speed": "1.0",
       "luck": "0",
       "shotSpeed": "1",
@@ -28571,9 +28766,9 @@
         }
       ],
       "damage": "3.5 (*1.20)",
-      "tears": "{{dlcalt|-2|r=-1.9}}",
-      "range": "{{dlcmap | {{dlcalt|23.75|r=6.5}} }}",
-      "speed": "{{dlcalt|0.85|r=0.9}}",
+      "tears": "-1.9",
+      "range": "6.5",
+      "speed": "0.9",
       "luck": "-2",
       "shotSpeed": "1",
       "pickups": [
@@ -28880,8 +29075,22 @@
                           },
                           {
                             "kind": "text",
-                            "text": ", which allows him to have up to 6",
+                            "text": ", which allows him to have up to ",
                             "style": "plain"
+                          },
+                          {
+                            "kind": "edition",
+                            "only": [
+                              "afterbirth",
+                              "afterbirthPlus"
+                            ],
+                            "inline": [
+                              {
+                                "kind": "text",
+                                "text": "6",
+                                "style": "plain"
+                              }
+                            ]
                           },
                           {
                             "kind": "edition",
@@ -29940,8 +30149,22 @@
                         "inline": [
                           {
                             "kind": "text",
-                            "text": "The Inner Eye grants 6",
+                            "text": "The Inner Eye grants ",
                             "style": "plain"
+                          },
+                          {
+                            "kind": "edition",
+                            "only": [
+                              "afterbirth",
+                              "afterbirthPlus"
+                            ],
+                            "inline": [
+                              {
+                                "kind": "text",
+                                "text": "6",
+                                "style": "plain"
+                              }
+                            ]
                           },
                           {
                             "kind": "edition",
@@ -30424,30 +30647,39 @@
               {
                 "inline": [
                   {
-                    "kind": "ref",
-                    "target": {
-                      "kind": "room",
-                      "name": "Curse Rooms"
-                    },
-                    "label": "Curse Rooms"
-                  },
-                  {
-                    "kind": "text",
-                    "text": " are very risky to enter as Keeper. Entering it through the door will leave the player at 1 health, meaning that if they don't find any coins there, it will end their run. Even with the ",
-                    "style": "plain"
-                  },
-                  {
-                    "kind": "ref",
-                    "target": {
-                      "kind": "item",
-                      "id": 349
-                    },
-                    "label": "Wooden Nickel"
-                  },
-                  {
-                    "kind": "text",
-                    "text": " unlocked, it's not guaranteed that they will leave the Curse Room alive.",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "room",
+                          "name": "Curse Rooms"
+                        },
+                        "label": "Curse Rooms"
+                      },
+                      {
+                        "kind": "text",
+                        "text": " are very risky to enter as Keeper. Entering it through the door will leave the player at 1 health, meaning that if they don't find any coins there, it will end their run. Even with the ",
+                        "style": "plain"
+                      },
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 349
+                        },
+                        "label": "Wooden Nickel"
+                      },
+                      {
+                        "kind": "text",
+                        "text": " unlocked, it's not guaranteed that they will leave the Curse Room alive.",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -31838,8 +32070,22 @@
                   },
                   {
                     "kind": "text",
-                    "text": ": Allows him to fire 12",
+                    "text": ": Allows him to fire ",
                     "style": "plain"
+                  },
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "12",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -31937,8 +32183,22 @@
                   },
                   {
                     "kind": "text",
-                    "text": ": Can be used to take Devil Deals without spending any hearts",
+                    "text": ": Can be used to take Devil Deals without spending any ",
                     "style": "plain"
+                  },
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "hearts",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -32013,8 +32273,22 @@
                   },
                   {
                     "kind": "text",
-                    "text": ": Allows Keeper's health to extend past 2",
+                    "text": ": Allows Keeper's health to extend past ",
                     "style": "plain"
+                  },
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "2",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -32822,8 +33096,22 @@
                 "inline": [
                   {
                     "kind": "text",
-                    "text": "Health Ups are useless when Keeper has maximum health (2",
+                    "text": "Health Ups are useless when Keeper has maximum health (",
                     "style": "plain"
+                  },
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "2",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -34535,7 +34823,7 @@
       ],
       "damage": "3.5 (*1.00)",
       "tears": "+0",
-      "range": "{{dlcmap | {{dlcalt|23.75|r=6.5}} }}",
+      "range": "6.5",
       "speed": "1.0",
       "luck": "0",
       "shotSpeed": "1",
@@ -36145,7 +36433,7 @@
       ],
       "damage": "3.5 (*1.50)",
       "tears": "+0; x1/2",
-      "range": "{{dlcmap | {{dlcalt|23.75|r=6.5}} }}",
+      "range": "6.5",
       "speed": "1.0",
       "luck": "0",
       "shotSpeed": "1",
@@ -41835,7 +42123,7 @@
       ],
       "damage": "3.5 (*1.00)",
       "tears": "+0",
-      "range": "{{dlcmap | {{dlcalt|23.75|r=6.5}} }}",
+      "range": "6.5",
       "speed": "1.30",
       "luck": "0",
       "shotSpeed": "1",
@@ -47580,7 +47868,7 @@
       ],
       "damage": "3.5 (*1.00)",
       "tears": "+0",
-      "range": "{{dlcmap | {{dlcalt|23.75|r=6.5}} }}",
+      "range": "6.5",
       "speed": "1.0",
       "luck": "0",
       "shotSpeed": "1",
@@ -54627,7 +54915,7 @@
       ],
       "damage": "3.5 (*1.00)",
       "tears": "+0",
-      "range": "{{dlcmap | {{dlcalt|23.75|r=6.5}} }}",
+      "range": "6.5",
       "speed": "1.0",
       "luck": "0",
       "shotSpeed": "1",
@@ -57036,7 +57324,7 @@
       ],
       "damage": "3.5 (*0.75)",
       "tears": "+0",
-      "range": "{{dlcmap | {{dlcalt|23.75|r=6.5}} }}",
+      "range": "6.5",
       "speed": "1.0",
       "luck": "0",
       "shotSpeed": "1",
@@ -65603,7 +65891,7 @@
       ],
       "damage": "3.5 (*1.00)",
       "tears": "-0.35",
-      "range": "{{dlcmap | {{dlcalt|23.75|r=6.5}} }}",
+      "range": "6.5",
       "speed": "0.90",
       "luck": "0",
       "shotSpeed": "1",
@@ -68113,7 +68401,7 @@
       ],
       "damage": "3.5 (×1.20)",
       "tears": "-0.5; ×0.66",
-      "range": "{{dlcmap | {{dlcalt|23.75|r=6.5}} }}",
+      "range": "6.5",
       "speed": "1.0",
       "luck": "0",
       "shotSpeed": "1",
@@ -81149,7 +81437,7 @@
       "health": [],
       "damage": "3.50 (* 1.30)",
       "tears": "+0",
-      "range": "{{dlcmap | {{dlcalt|23.75|r=6.5}} }}",
+      "range": "6.5",
       "speed": "1.0",
       "luck": "0",
       "shotSpeed": "1",
@@ -85349,7 +85637,7 @@
       ],
       "damage": "3.5 (*1.00)",
       "tears": "+0",
-      "range": "{{dlcmap | {{dlcalt|23.75|r=6.5}} }}",
+      "range": "6.5",
       "speed": "0.85",
       "luck": "0",
       "shotSpeed": "1",
@@ -86856,7 +87144,7 @@
       ],
       "damage": "3.5 (*1.00)",
       "tears": "-2.2",
-      "range": "{{dlcmap | {{dlcalt|23.75|r=6.5}} }}",
+      "range": "6.5",
       "speed": "1.0",
       "luck": "-2",
       "shotSpeed": "1",
@@ -91194,7 +91482,7 @@
       ],
       "damage": "3.5 (*1.00)",
       "tears": "-0.5",
-      "range": "{{dlcmap | {{dlcalt|23.75|r=6.5}} }}",
+      "range": "6.5",
       "speed": "1.0",
       "luck": "0",
       "shotSpeed": "1",
@@ -92440,7 +92728,7 @@
       ],
       "damage": "3.5 (* 1.50)",
       "tears": "+0; x1/2",
-      "range": "{{dlcmap | {{dlcalt|23.75|r=6.5}} }}",
+      "range": "6.5",
       "speed": "－",
       "luck": "0",
       "shotSpeed": "1",
@@ -95050,7 +95338,7 @@
       ],
       "damage": "3.5 (*1.00)",
       "tears": "+0",
-      "range": "{{dlcmap | {{dlcalt|23.75|r=6.5}} }}",
+      "range": "6.5",
       "speed": "1.0",
       "luck": "0",
       "shotSpeed": "1",
@@ -96994,7 +97282,7 @@
       ],
       "damage": "3.5 (*1.00)",
       "tears": "+0.277",
-      "range": "{{dlcmap | {{dlcalt|23.75|r=6.5}} }}",
+      "range": "6.5",
       "speed": "1.0",
       "luck": "0",
       "shotSpeed": "1",
