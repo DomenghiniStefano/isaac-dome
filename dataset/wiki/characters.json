@@ -4620,26 +4620,6 @@
             "inline": [
               {
                 "kind": "text",
-                "text": "{{infobox character | name   = Black Judas | image  = collectible Judas' Shadow appearance.png | id     = 12 | parent = Judas | health = ",
-                "style": "plain"
-              },
-              {
-                "kind": "concept",
-                "page": "Health",
-                "label": "2 black hearts"
-              },
-              {
-                "kind": "text",
-                "text": " | damage = 3.5 (*2.00) | speed  = 1.1",
-                "style": "plain"
-              }
-            ]
-          },
-          {
-            "kind": "paragraph",
-            "inline": [
-              {
-                "kind": "text",
                 "text": "When a character dies while having ",
                 "style": "plain"
               },
@@ -15108,94 +15088,7 @@
             "inline": [
               {
                 "kind": "text",
-                "text": "{{infobox character | name         = Lazarus Risen | image name   = * ",
-                "style": "plain"
-              },
-              {
-                "kind": "edition",
-                "only": [
-                  "rebirth",
-                  "afterbirth",
-                  "afterbirthPlus"
-                ],
-                "inline": [
-                  {
-                    "kind": "text",
-                    "text": "Rebirth",
-                    "style": "plain"
-                  }
-                ]
-              },
-              {
-                "kind": "text",
-                "text": " | id           = 11 | parent       = Lazarus | health       = ",
-                "style": "plain"
-              },
-              {
-                "kind": "concept",
-                "page": "Health",
-                "label": "1 red heart"
-              },
-              {
-                "kind": "concept",
-                "page": "Health",
-                "label": "2 unknown hearts"
-              },
-              {
-                "kind": "text",
-                "text": " | damage       = 3.5 (*1.20",
-                "style": "plain"
-              },
-              {
-                "kind": "edition",
-                "only": [
-                  "repentance",
-                  "repentancePlus"
-                ],
-                "inline": [
-                  {
-                    "kind": "text",
-                    "text": " 1.40",
-                    "style": "plain"
-                  }
-                ]
-              },
-              {
-                "kind": "text",
-                "text": ") | speed        = 1.25 | collectibles = ",
-                "style": "plain"
-              },
-              {
-                "kind": "ref",
-                "target": {
-                  "kind": "item",
-                  "id": 214
-                },
-                "label": "Anemic"
-              },
-              {
-                "kind": "text",
-                "text": " (",
-                "style": "plain"
-              },
-              {
-                "kind": "edition",
-                "only": [
-                  "afterbirthPlus",
-                  "repentance",
-                  "repentancePlus"
-                ],
-                "inline": [
-                  {
-                    "kind": "text",
-                    "text": "  permanent",
-                    "style": "plain"
-                  }
-                ]
-              },
-              {
-                "kind": "text",
-                "text": ") When Lazarus (or another character with ",
+                "text": "When Lazarus (or another character with ",
                 "style": "plain"
               },
               {
@@ -22254,94 +22147,7 @@
             "inline": [
               {
                 "kind": "text",
-                "text": "{{infobox character | name         = Lazarus Risen | image name   = * ",
-                "style": "plain"
-              },
-              {
-                "kind": "edition",
-                "only": [
-                  "rebirth",
-                  "afterbirth",
-                  "afterbirthPlus"
-                ],
-                "inline": [
-                  {
-                    "kind": "text",
-                    "text": "Rebirth",
-                    "style": "plain"
-                  }
-                ]
-              },
-              {
-                "kind": "text",
-                "text": " | id           = 11 | parent       = Lazarus | health       = ",
-                "style": "plain"
-              },
-              {
-                "kind": "concept",
-                "page": "Health",
-                "label": "1 red heart"
-              },
-              {
-                "kind": "concept",
-                "page": "Health",
-                "label": "2 unknown hearts"
-              },
-              {
-                "kind": "text",
-                "text": " | damage       = 3.5 (*1.20",
-                "style": "plain"
-              },
-              {
-                "kind": "edition",
-                "only": [
-                  "repentance",
-                  "repentancePlus"
-                ],
-                "inline": [
-                  {
-                    "kind": "text",
-                    "text": " 1.40",
-                    "style": "plain"
-                  }
-                ]
-              },
-              {
-                "kind": "text",
-                "text": ") | speed        = 1.25 | collectibles = ",
-                "style": "plain"
-              },
-              {
-                "kind": "ref",
-                "target": {
-                  "kind": "item",
-                  "id": 214
-                },
-                "label": "Anemic"
-              },
-              {
-                "kind": "text",
-                "text": " (",
-                "style": "plain"
-              },
-              {
-                "kind": "edition",
-                "only": [
-                  "afterbirthPlus",
-                  "repentance",
-                  "repentancePlus"
-                ],
-                "inline": [
-                  {
-                    "kind": "text",
-                    "text": "  permanent",
-                    "style": "plain"
-                  }
-                ]
-              },
-              {
-                "kind": "text",
-                "text": ") When Lazarus (or another character with ",
+                "text": "When Lazarus (or another character with ",
                 "style": "plain"
               },
               {
@@ -24436,26 +24242,6 @@
           }
         ],
         "blocks": [
-          {
-            "kind": "paragraph",
-            "inline": [
-              {
-                "kind": "text",
-                "text": "{{infobox character | name   = Black Judas | image  = collectible Judas' Shadow appearance.png | id     = 12 | parent = Judas | health = ",
-                "style": "plain"
-              },
-              {
-                "kind": "concept",
-                "page": "Health",
-                "label": "2 black hearts"
-              },
-              {
-                "kind": "text",
-                "text": " | damage = 3.5 (*2.00) | speed  = 1.1",
-                "style": "plain"
-              }
-            ]
-          },
           {
             "kind": "paragraph",
             "inline": [
@@ -65142,7 +64928,20 @@
                   },
                   {
                     "kind": "text",
-                    "text": ", the same as those found in any run.",
+                    "text": ", the same as those found in any run. Can drop pick-ups like normal and is affected by ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "trinket",
+                      "id": 2
+                    },
+                    "label": "Petrified Poop"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ".",
                     "style": "plain"
                   }
                 ]
@@ -65520,7 +65319,20 @@
                 [
                   {
                     "kind": "text",
-                    "text": "Create a trail of brown creep that deals 1.5x Tainted ???'s damage to enemies per tick (15x Tainted ???'s damage per second). Standing on this creep gives Tainted ??? +1 damage, +1.5 tears fired per second, and other effects, depending on what's in contact with it. This creep persists indefinitely. So as long as any one poop remains on the trail, all previously connected effects will persist, even if the poops granting them were destroyed. Once all poops on the creep are destroyed, the creep loses any additional extra effects it granted. When in contact with:",
+                    "text": "Create a trail of brown creep that deals 1.5x Tainted ???'s damage to enemies per tick (15x Tainted ???'s damage per second). Standing on this creep gives Tainted ??? +1 damage, +1.5 tears fired per second, and other effects, depending on what's in contact with it. This creep persists indefinitely. So as long as any one poop remains on the trail, all previously connected effects will persist, even if the poops granting them were destroyed. Once all poops on the creep are destroyed, the creep loses any additional extra effects it granted. When in contact with:  Black Poop: the creep also slows enemies and gives Tainted ??? slowing tears.   Toxic cloud from Stinky poop: the creep poisons enemies and gives Tainted ??? poison tears.   Flaming Poop: the creep burns enemies and gives Tainted ??? ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 257
+                    },
+                    "label": "Fire Mind"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ".   White Poop & its Aura: the creep grants homing and triples Tainted ???'s fire rate and damage.    Stone Poop: the creep will keep all the extra effects of other poops, even if they are destroyed.  ",
                     "style": "plain"
                   }
                 ]
@@ -95618,16 +95430,6 @@
           }
         ],
         "blocks": [
-          {
-            "kind": "paragraph",
-            "inline": [
-              {
-                "kind": "text",
-                "text": "{{infobox monster | dlc          = r | is mini-boss = yes | name         = Dark Esau | id           = 866 | behavior     = Charges at Tainted Jacob. Upon collision, transforms him into The Lost for the remainder of the floor",
-                "style": "plain"
-              }
-            ]
-          },
           {
             "kind": "paragraph",
             "inline": [

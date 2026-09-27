@@ -18,12 +18,9 @@
   },
   "excluded": {
     "templates": {
-      "sound table row": "only inside the discarded 'Sounds' heading (section_kind reads no kind for it, same reason as Gallery and In-game Footage); the audio table itself isn't modelled",
-      "sound table header": "only inside the discarded 'Sounds' heading, same reason as sound table row",
-      "recipe": "only inside the discarded 'Recipes'/'Uncraftable Items' headings on Bag of Crafting; game data in a table with no SectionKind that names it",
+      "sound table row": "only inside the 'Sounds' heading, itself excluded (excluded.sections) as a game asset like Audio; the audio table itself isn't modelled",
+      "sound table header": "only inside the 'Sounds' heading, same reason as sound table row",
       "without context": "the wiki's own wrapper for 'ignore the page context here', only inside Trivia on Lilith's page, discarded by decision 9",
-      "book of virtues synergy list": "only inside the discarded 'Combinations' heading on Book of Virtues; the list template's own content is not on the page to keep",
-      "book of belial synergy list": "only inside the discarded 'Judas' Birthright Combinations' heading on The Book of Belial, same reason as book of virtues synergy list",
       "dlc_": "a one-time typo of {{dlc|r+}} on Spirit Sword; not silently corrected, the edition badge is lost"
     },
     "sections": {
@@ -33,7 +30,8 @@
       "Ingame Footage": "video, a game asset (constraint 3)",
       "References": "external citations, off the wiki",
       "Trivia": "the owner's call: the least useful part of a page (decision 9)",
-      "Audio": "sound listings, a game asset (constraint 3)"
+      "Audio": "sound listings, a game asset (constraint 3)",
+      "Sounds": "sound listings, a game asset (constraint 3), same reason as Audio"
     }
   }
 }

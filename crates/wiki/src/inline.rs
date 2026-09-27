@@ -302,6 +302,16 @@ fn template(t: &Template, r: &Resolver, d: &mut Diagnostics, out: &mut Out, dept
         // resolver answers nothing — 33 uses lost the reference, and the ": " that introduces
         // the description with it.
         "book of belial synergy" => synergy("The Book of Belial", t, r, d, out, depth),
+        // The zero-argument transclusion of the item's *full* synergy table (Book of
+        // Virtues's and The Book of Belial's own "Combinations" sections, kept now that
+        // decision 2 keeps the heading), as opposed to `book of virtues synergy` above,
+        // which is one synergy written out on the page that names it. Its rows live on the
+        // Template: page this snapshot never fetches (only namespace 0 is downloaded), so
+        // there is no wikitext here to read — modelled as producing nothing, like a layout
+        // template, rather than left to fall through as unknown: the gap is what the
+        // snapshot does not fetch, not something this parser fails to parse.
+        "book of virtues synergy list" | "book of belial synergy list" => {}
+        "recipe" => recipe(t, out),
         "achievement unlock" => achievement_unlock(t, &arg, r, d, out),
         "hearts" => hearts::hearts(t, out, d),
         "heart" => hearts::heart(t, &arg, out, d),
@@ -380,6 +390,24 @@ fn synergy(item: &str, t: &Template, r: &Resolver, d: &mut Diagnostics, out: &mu
     if let Some(description) = t.named.get("description") {
         recurse_into_arg(description, r, d, out, depth);
     }
+}
+
+/// `{{recipe|c1|c2|…|c8}}`, Bag of Crafting's own numbering for the up to eight pickups a
+/// recipe needs: each number is one of the 29 component types the page's own "Component
+/// Types and Qualities" table lists, and the table names every one of them "Component N" in
+/// the alt text of the icon it shows for it — the same words this renders. No page in the
+/// snapshot maps a component number to the pickup it stands for outside that table's prose,
+/// so the numbers are kept as the wiki's own name for them rather than resolved to a
+/// pickup reference. The recipe's *result* is not this template's argument: it is the
+/// table's other cell, an ordinary `{{i|…}}` the resolver already handles.
+fn recipe(t: &Template, out: &mut Out) {
+    let text = t
+        .args
+        .iter()
+        .map(|n| format!("Component {n}"))
+        .collect::<Vec<_>>()
+        .join(", ");
+    out.buf.push_str(&text);
 }
 
 /// `{{achievement unlock|Name}}`, how a character's "Unlockable Starting Items" names the
@@ -957,6 +985,50 @@ mod tests {
                 }
             )),
             "the item the synergy is with is missing: {v:?}"
+        );
+    }
+
+    /// `{{Book of Virtues synergy list}}`/`{{Book of Belial synergy list}}` transclude the
+    /// *whole* table from a Template: page this snapshot never fetches: there is no wikitext
+    /// here to render. Modelled as producing nothing rather than falling through to the
+    /// unknown-template fallback, so a page whose "Combinations" heading now stays
+    /// (`SectionKind::Other`) doesn't count the gap as something this parser failed to read.
+    #[test]
+    fn a_synergy_list_transclusion_renders_nothing_and_is_not_unknown() {
+        let (v, d) = p("{{Book of Virtues synergy list}}");
+        assert!(v.is_empty(), "{v:?}");
+        assert!(d.unknown_templates.is_empty(), "{:?}", d.unknown_templates);
+        let (v, d) = p("{{Book of Belial synergy list}}");
+        assert!(v.is_empty(), "{v:?}");
+        assert!(d.unknown_templates.is_empty(), "{:?}", d.unknown_templates);
+    }
+
+    /// `{{recipe|…}}`, Bag of Crafting's own "Recipes" table: eight numeric component codes,
+    /// the page's own "Component Types and Qualities" table naming each one "Component N" in
+    /// the alt text of its icon. Mixed codes (Godhead's recipe) keep their own order and
+    /// repeats, since the page says order does not matter for the outcome but says nothing
+    /// about collapsing repeats.
+    #[test]
+    fn a_recipe_renders_its_components_by_the_wiki_s_own_name_for_them() {
+        let (v, d) = p("{{recipe|29|29|29|29|29|29|29|29}}");
+        assert_eq!(
+            v,
+            vec![text(
+                "Component 29, Component 29, Component 29, Component 29, \
+                 Component 29, Component 29, Component 29, Component 29",
+                Style::Plain
+            )]
+        );
+        assert!(d.unknown_templates.is_empty(), "{:?}", d.unknown_templates);
+
+        let (v, _) = p("{{recipe|5|2|1|4|4|4|4|4}}");
+        assert_eq!(
+            v,
+            vec![text(
+                "Component 5, Component 2, Component 1, Component 4, \
+                 Component 4, Component 4, Component 4, Component 4",
+                Style::Plain
+            )]
         );
     }
 

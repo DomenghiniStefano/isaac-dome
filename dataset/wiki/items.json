@@ -288943,23 +288943,7 @@
                   }
                 ],
                 "children": []
-              }
-            ]
-          },
-          {
-            "kind": "paragraph",
-            "inline": [
-              {
-                "kind": "text",
-                "text": "local chestPickupVariants = { PickupVariant.PICKUP_CHEST,        -- 50 PickupVariant.PICKUP_BOMBCHEST     -- 51 PickupVariant.PICKUP_SPIKEDCHEST   -- 52 PickupVariant.PICKUP_ETERNALCHEST  -- 53 PickupVariant.PICKUP_MIMICCHEST,   -- 54 PickupVariant.PICKUP_OLDCHEST,     -- 55 PickupVariant.PICKUP_WOODENCHEST,  -- 56 PickupVariant.PICKUP_MEGACHEST,    -- 57 PickupVariant.PICKUP_HAUNTEDCHEST, -- 58 PickupVariant.PICKUP_LOCKEDCHEST,  -- 60 PickupVariant.PICKUP_REDCHEST,     -- 360 PickupVariant.PICKUP_MOMSCHEST,    -- 390 if ( (contains(chestPickupVariants, pickupVariant) and (pickupSeed:Next() % 5) == 0) or (pickupSeed:Next() % 10) == 0 ) then local chestVariant if (pickupSeed:Next() & 3) == 0 then chestVariant = PickupVariant.PICKUP_LOCKEDCHEST else chestVariant = PickupVariant.PICKUP_CHEST end pickup:Morph(pickup.Type, chestVariant, 0, true, false, false) else pickup:Morph(pickup.Type, 0, 1, true, false, false) end ",
-                "style": "plain"
-              }
-            ]
-          },
-          {
-            "kind": "list",
-            "ordered": false,
-            "items": [
+              },
               {
                 "inline": [
                   {
@@ -309520,20 +309504,7 @@
             "inline": [
               {
                 "kind": "text",
-                "text": "{{infobox monster | dlc         = a | id          = 23 | subtype     = 1 | description = Slowly moves around the room, charging at enemies when they get in its line of sight. | base hp     = 20 | behavior    = Charges at enemies when in its line of sight, dealing contact damage. Will always spawn friendly via ",
-                "style": "plain"
-              },
-              {
-                "kind": "ref",
-                "target": {
-                  "kind": "item",
-                  "id": 433
-                },
-                "label": "n"
-              },
-              {
-                "kind": "text",
-                "text": ". The dark ",
+                "text": "The dark ",
                 "style": "plain"
               },
               {
@@ -322049,28 +322020,6 @@
                   }
                 ],
                 "children": []
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "kind": "other",
-        "title": [
-          {
-            "kind": "text",
-            "text": "Sounds",
-            "style": "plain"
-          }
-        ],
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "inline": [
-              {
-                "kind": "text",
-                "text": "   |}",
-                "style": "plain"
               }
             ]
           }
@@ -405169,29 +405118,6 @@
             "inline": [
               {
                 "kind": "text",
-                "text": "{{infobox activated collectible | dlc         = a+ | alias       = Broken Shovel 1 | id          = 550 | quote       = It feels cursed | description = While held, causes Mom to continuously attempt to stomp on Isaac. Activating makes her stop for the current room or wave. One of two parts necessary to create ",
-                "style": "plain"
-              },
-              {
-                "kind": "ref",
-                "target": {
-                  "kind": "item",
-                  "id": 552
-                },
-                "label": "n"
-              },
-              {
-                "kind": "text",
-                "text": ". | quality     = 4 | tags        = offensive noeden lazarussharedglobal quest | recharge    = 4",
-                "style": "plain"
-              }
-            ]
-          },
-          {
-            "kind": "paragraph",
-            "inline": [
-              {
-                "kind": "text",
                 "text": "The first piece of the Broken Shovel is an ",
                 "style": "plain"
               },
@@ -406234,29 +406160,6 @@
           }
         ],
         "blocks": [
-          {
-            "kind": "paragraph",
-            "inline": [
-              {
-                "kind": "text",
-                "text": "{{infobox passive collectible | dlc         = a+ | alias       = Broken Shovel 2 | id          = 551 | quote       = It feels cursed | description = One of two parts necessary to create ",
-                "style": "plain"
-              },
-              {
-                "kind": "ref",
-                "target": {
-                  "kind": "item",
-                  "id": 552
-                },
-                "label": "Mom's Shovel"
-              },
-              {
-                "kind": "text",
-                "text": ". No effect if somehow obtained on its own. | quality     = 4 | tags        = offensive noeden lazarussharedglobal quest",
-                "style": "plain"
-              }
-            ]
-          },
           {
             "kind": "paragraph",
             "inline": [
@@ -406686,29 +406589,6 @@
             "inline": [
               {
                 "kind": "text",
-                "text": "{{infobox activated collectible | dlc         = a+ | alias       = Broken Shovel 1 | id          = 550 | quote       = It feels cursed | description = While held, causes Mom to continuously attempt to stomp on Isaac. Activating makes her stop for the current room or wave. One of two parts necessary to create ",
-                "style": "plain"
-              },
-              {
-                "kind": "ref",
-                "target": {
-                  "kind": "item",
-                  "id": 552
-                },
-                "label": "n"
-              },
-              {
-                "kind": "text",
-                "text": ". | quality     = 4 | tags        = offensive noeden lazarussharedglobal quest | recharge    = 4",
-                "style": "plain"
-              }
-            ]
-          },
-          {
-            "kind": "paragraph",
-            "inline": [
-              {
-                "kind": "text",
                 "text": "The first piece of the Broken Shovel is an ",
                 "style": "plain"
               },
@@ -407751,29 +407631,6 @@
           }
         ],
         "blocks": [
-          {
-            "kind": "paragraph",
-            "inline": [
-              {
-                "kind": "text",
-                "text": "{{infobox passive collectible | dlc         = a+ | alias       = Broken Shovel 2 | id          = 551 | quote       = It feels cursed | description = One of two parts necessary to create ",
-                "style": "plain"
-              },
-              {
-                "kind": "ref",
-                "target": {
-                  "kind": "item",
-                  "id": 552
-                },
-                "label": "Mom's Shovel"
-              },
-              {
-                "kind": "text",
-                "text": ". No effect if somehow obtained on its own. | quality     = 4 | tags        = offensive noeden lazarussharedglobal quest",
-                "style": "plain"
-              }
-            ]
-          },
           {
             "kind": "paragraph",
             "inline": [
@@ -526841,7 +526698,7 @@
                 [
                   {
                     "kind": "text",
-                    "text": "29",
+                    "text": "Component 29, Component 29, Component 29, Component 29, Component 29, Component 29, Component 29, Component 29",
                     "style": "plain"
                   }
                 ],
@@ -526860,7 +526717,7 @@
                 [
                   {
                     "kind": "text",
-                    "text": "8",
+                    "text": "Component 8, Component 8, Component 8, Component 8, Component 8, Component 8, Component 8, Component 8",
                     "style": "plain"
                   }
                 ],
@@ -526879,7 +526736,7 @@
                 [
                   {
                     "kind": "text",
-                    "text": "1",
+                    "text": "Component 1, Component 1, Component 1, Component 1, Component 1, Component 1, Component 1, Component 1",
                     "style": "plain"
                   }
                 ],
@@ -526898,7 +526755,7 @@
                 [
                   {
                     "kind": "text",
-                    "text": "2",
+                    "text": "Component 2, Component 2, Component 2, Component 2, Component 2, Component 2, Component 2, Component 2",
                     "style": "plain"
                   }
                 ],
@@ -526917,7 +526774,7 @@
                 [
                   {
                     "kind": "text",
-                    "text": "3",
+                    "text": "Component 3, Component 3, Component 3, Component 3, Component 3, Component 3, Component 3, Component 3",
                     "style": "plain"
                   }
                 ],
@@ -526936,7 +526793,7 @@
                 [
                   {
                     "kind": "text",
-                    "text": "12",
+                    "text": "Component 12, Component 12, Component 12, Component 12, Component 12, Component 12, Component 12, Component 12",
                     "style": "plain"
                   }
                 ],
@@ -526955,7 +526812,7 @@
                 [
                   {
                     "kind": "text",
-                    "text": "15",
+                    "text": "Component 15, Component 15, Component 15, Component 15, Component 15, Component 15, Component 15, Component 15",
                     "style": "plain"
                   }
                 ],
@@ -526987,7 +526844,7 @@
                 [
                   {
                     "kind": "text",
-                    "text": "21",
+                    "text": "Component 21, Component 21, Component 21, Component 21, Component 21, Component 21, Component 21, Component 21",
                     "style": "plain"
                   }
                 ],
@@ -527006,7 +526863,7 @@
                 [
                   {
                     "kind": "text",
-                    "text": "5",
+                    "text": "Component 5, Component 2, Component 1, Component 4, Component 4, Component 4, Component 4, Component 4",
                     "style": "plain"
                   }
                 ],
@@ -527025,7 +526882,7 @@
                 [
                   {
                     "kind": "text",
-                    "text": "4",
+                    "text": "Component 4, Component 4, Component 4, Component 4, Component 4, Component 4, Component 4, Component 4",
                     "style": "plain"
                   }
                 ],
@@ -527044,7 +526901,7 @@
                 [
                   {
                     "kind": "text",
-                    "text": "22",
+                    "text": "Component 22, Component 22, Component 22, Component 22, Component 22, Component 22, Component 22, Component 22",
                     "style": "plain"
                   }
                 ],
@@ -527063,7 +526920,7 @@
                 [
                   {
                     "kind": "text",
-                    "text": "3",
+                    "text": "Component 3, Component 22, Component 22, Component 22, Component 22, Component 22, Component 22, Component 22",
                     "style": "plain"
                   }
                 ],
@@ -527082,7 +526939,7 @@
                 [
                   {
                     "kind": "text",
-                    "text": "7",
+                    "text": "Component 7, Component 7, Component 1, Component 1, Component 1, Component 1, Component 1, Component 1",
                     "style": "plain"
                   }
                 ],
@@ -527101,7 +526958,7 @@
                 [
                   {
                     "kind": "text",
-                    "text": "13",
+                    "text": "Component 13, Component 13, Component 12, Component 12, Component 12, Component 12, Component 12, Component 12",
                     "style": "plain"
                   }
                 ],
@@ -527120,7 +526977,7 @@
                 [
                   {
                     "kind": "text",
-                    "text": "17",
+                    "text": "Component 17, Component 17, Component 17, Component 17, Component 17, Component 17, Component 17, Component 17",
                     "style": "plain"
                   }
                 ],
@@ -527139,7 +526996,7 @@
                 [
                   {
                     "kind": "text",
-                    "text": "16",
+                    "text": "Component 16, Component 16, Component 15, Component 15, Component 15, Component 15, Component 15, Component 15",
                     "style": "plain"
                   }
                 ],
@@ -527158,7 +527015,7 @@
                 [
                   {
                     "kind": "text",
-                    "text": "6",
+                    "text": "Component 6, Component 6, Component 6, Component 6, Component 6, Component 6, Component 6, Component 6",
                     "style": "plain"
                   }
                 ],
@@ -527177,7 +527034,7 @@
                 [
                   {
                     "kind": "text",
-                    "text": "24",
+                    "text": "Component 24, Component 24, Component 24, Component 24, Component 24, Component 24, Component 24, Component 24",
                     "style": "plain"
                   }
                 ],
@@ -527196,7 +527053,7 @@
                 [
                   {
                     "kind": "text",
-                    "text": "25",
+                    "text": "Component 25, Component 25, Component 25, Component 25, Component 25, Component 25, Component 25, Component 25",
                     "style": "plain"
                   }
                 ],
@@ -541829,7 +541686,30 @@
                   },
                   {
                     "kind": "text",
-                    "text": " fired per second, and other effects, depending on what's in contact with it. This creep persists indefinitely. When in contact with:",
+                    "text": " fired per second, and other effects, depending on what's in contact with it. This creep persists indefinitely. When in contact with:  Black Poop: the creep also slows enemies and gives Tainted ??? slowing tears.   Toxic cloud from Stinky poop: the creep poisons enemies and gives Tainted ??? poison tears.   Flaming Poop: the creep burns enemies and gives Tainted ??? ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 257
+                    },
+                    "label": "Fire Mind"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ".   White Poop & its Aura: the creep grants ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "concept",
+                    "page": "Tear Effects",
+                    "label": "homing"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " and triples Tainted ???'s fire rate and damage.   Stone Poop: the creep will keep all the extra effects of other poops, even if they are destroyed. ",
                     "style": "plain"
                   }
                 ]

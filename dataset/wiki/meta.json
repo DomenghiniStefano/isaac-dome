@@ -27,27 +27,22 @@
       "t": 1
     },
     "unknownTemplates": {
-      "book of belial synergy list": 1,
-      "book of virtues synergy list": 1,
-      "dlc_": 1,
-      "infobox passive collectible": 1,
-      "recipe": 19,
-      "sound table header": 1,
-      "sound table row": 2
+      "dlc_": 1
     },
     "discardedSections": {
       "Audio": 7,
       "Gallery": 362,
       "In-Game Footage": 1,
-      "In-game Footage": 704,
+      "In-game Footage": 705,
       "In-game footage": 133,
       "Ingame Footage": 2,
       "References": 102,
+      "Sounds": 1,
       "Trivia": 889,
       "{{dlc|nr}} Gallery": 1
     },
     "pagesWithoutId": 2,
-    "orphanClosers": 8,
+    "orphanClosers": 0,
     "unknownDlcCodes": {},
     "transformationSourcesDisagree": 13,
     "unknownEntities": {},
@@ -56,6 +51,6 @@
     },
     "spansOutsideTheirPage": 0,
     "unknownHeartTypes": {},
-    "unmodelledTableRows": 11
+    "unmodelledTableRows": 0
   }
 }

@@ -78,6 +78,14 @@ pub struct Excluded {
     /// on the wiki's own side that was not worth silently correcting.
     #[serde(default)]
     pub templates: BTreeMap<String, String>,
+    /// Section title (as a page writes it, not normalized) → why the whole heading is
+    /// dropped rather than kept as `SectionKind::Other`: images and video the constraints
+    /// forbid shipping, citations off the wiki, sound listings (a game asset like the
+    /// others), and the owner's call on Trivia. The single source `sections::is_excluded_section`
+    /// reads at runtime; `sections.rs`'s completeness test is what keeps this list honest
+    /// against the corpus.
+    #[serde(default)]
+    pub sections: BTreeMap<String, String>,
 }
 
 /// The tables [`Corrections::apply`] is ever called with. A `page_id` entry filed under
@@ -534,6 +542,14 @@ impl Resolver {
         Some(self.by_page_title(raw))
     }
 
+    /// Whether a level-2 heading is on the closed exclusion list, read from
+    /// `corrections.json`'s `excluded.sections` the resolver already carries: the one place
+    /// that map reaches the parser, so `page.rs`'s own section split never reads the file
+    /// itself. See `sections::is_excluded_section` for the normalization and the reason.
+    pub fn is_section_excluded(&self, title: &str) -> bool {
+        crate::sections::is_excluded_section(title, &self.corrections.excluded.sections)
+    }
+
     /// The id page `title` enters the items with, if the table (already filtered by
     /// edition) knows it with the id the infobox declares, corrected like the table.
     /// `None` for an infobox from another edition (Tonsil's collectible 474).
@@ -709,9 +725,24 @@ pub(crate) mod fixtures {
         chars.insert("Jacob & Esau".to_string(), 19);
         // The wiki gives Isaac the id 14 (Keeper's own): our own map wins.
         chars.insert("Isaac".to_string(), 14);
+        // `excluded.sections` mirrors `dataset/corrections.json`'s own set (not read from
+        // disk: this fixture stays a pure unit-test double), because page/block tests that
+        // exercise a page's sections — `Trivia` chief among them — expect the same headings
+        // production drops, now that `is_section_excluded` reads this map instead of a
+        // hardcoded list.
         let corrections: Corrections = serde_json::from_str(
             r#"{"pageId":{"collectible":{"Misfiled":901}},
-                "characters":{"Isaac":0,"Jacob & Esau":19,"???":4}}"#,
+                "characters":{"Isaac":0,"Jacob & Esau":19,"???":4},
+                "excluded":{"sections":{
+                    "Gallery":"images, a game asset",
+                    "In-game Footage":"video, a game asset",
+                    "In-Game Footage":"video, a game asset",
+                    "Ingame Footage":"video, a game asset",
+                    "References":"external citations, off the wiki",
+                    "Trivia":"the owner's call",
+                    "Audio":"sound listings, a game asset",
+                    "Sounds":"sound listings, a game asset"
+                }}}"#,
         )
         .unwrap();
         Resolver::new(&tables, &chars, &corrections)
@@ -743,6 +774,21 @@ mod tests {
         // Absent entirely: reads as empty, the same degrade every other `Corrections` map has.
         let empty: Corrections = serde_json::from_str("{}").unwrap();
         assert!(empty.excluded.templates.is_empty());
+    }
+
+    /// `corrections.json`'s `excluded.sections` key, the single source `is_section_excluded`
+    /// reads — `sections.rs` no longer carries its own copy of this list.
+    #[test]
+    fn excluded_sections_round_trip_from_json() {
+        let c: Corrections =
+            serde_json::from_str(r#"{"excluded":{"sections":{"Gallery":"images, a game asset"}}}"#)
+                .unwrap();
+        assert_eq!(
+            c.excluded.sections.get("Gallery").map(String::as_str),
+            Some("images, a game asset")
+        );
+        let empty: Corrections = serde_json::from_str("{}").unwrap();
+        assert!(empty.excluded.sections.is_empty());
     }
 
     #[test]
@@ -992,5 +1038,19 @@ mod tests {
         );
         assert_eq!(r.boss_key("Mom"), Some((45, 0, 0)));
         assert_eq!(r.boss_key("Angel"), None); // mini-boss, not a boss
+    }
+
+    /// `Resolver::is_section_excluded` reaches the same `excluded.sections` map the JSON
+    /// round-trip test above reads, through the resolver rather than a second file read —
+    /// the way `page.rs`'s section split is meant to consult it.
+    #[test]
+    fn is_section_excluded_reads_the_resolver_s_own_corrections() {
+        let corrections: Corrections =
+            serde_json::from_str(r#"{"excluded":{"sections":{"Gallery":"a game asset"}}}"#)
+                .unwrap();
+        let r = Resolver::new(&Tables::default(), &BTreeMap::new(), &corrections);
+        assert!(r.is_section_excluded("Gallery"));
+        assert!(r.is_section_excluded("{{dlc|nr}} Gallery"));
+        assert!(!r.is_section_excluded("Blood Clots"));
     }
 }
