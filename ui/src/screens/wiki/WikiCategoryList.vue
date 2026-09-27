@@ -10,6 +10,7 @@ import ListEmptyState from '@/components/data-state/ListEmptyState.vue'
 import FilterBar from '@/components/facets/FilterBar.vue'
 import { Card } from '@/components/ui/card'
 import { Skeleton } from '@/components/ui/skeleton'
+import { PageScroll } from '@/components/ui/virtual'
 import {
   ToggleGroup,
   ToggleGroupItem,
@@ -123,9 +124,9 @@ const open = (page: WikiPageRef, event: MouseEvent) =>
 </script>
 
 <template>
-  <!-- The gutter is the children's, so the band can be the full width without overflowing
-       anything (`WikiLanding.vue` says what that cost when it was done the other way round). -->
-  <div class="flex h-full min-h-0 flex-col overflow-hidden pb-5">
+  <!-- The whole screen scrolls (`PageScroll`): the band and the filters go by with the list,
+       and only the table's column header stays pinned. -->
+  <PageScroll>
     <WikiListHero
       :category="category"
       :representative="representative"
@@ -133,11 +134,11 @@ const open = (page: WikiPageRef, event: MouseEvent) =>
       :count="total"
       :progress="progress"
     />
-    <div class="flex min-h-0 flex-1 flex-col gap-3 px-5.5 pt-4">
+    <div class="flex flex-col gap-3 px-5.5 pt-4 pb-5">
       <p v-if="noCatalog" class="text-caption text-subtle-foreground">
         {{ t('wiki.noCatalog') }}
       </p>
-      <Card v-if="wiki.index" class="flex min-h-0 flex-1 flex-col">
+      <Card v-if="wiki.index">
         <FilterBar
           :bar="bar"
           :rows="categoryPages"
@@ -204,5 +205,5 @@ const open = (page: WikiPageRef, event: MouseEvent) =>
       </Card>
       <Skeleton v-else class="h-150 w-full" />
     </div>
-  </div>
+  </PageScroll>
 </template>

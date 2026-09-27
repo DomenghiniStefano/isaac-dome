@@ -53,14 +53,7 @@
      Kept for `RollCard`, which frames a drawn character's head at this size independently of
      the wiki (`--spacing-figure-card` below is `WikiFigure`'s own, larger, replacement). */
   --spacing-wiki-figure: 6rem;
-  /* The same figure on a page's opening band (card #57), half as large again: on a band that
-     wide the 96px one reads as a label stuck to the title rather than as the subject of the
-     page. It stays a whole multiple of the 32px sprite, so pixel art lands on whole pixels.
-     Retired from `WikiFigure` by `--spacing-figure-hero` below; still declared because
-     nothing has moved it out of `WikiCategoryList`'s and `WikiLanding`'s own markup yet
-     (card #90, Stream B — those screens are rebuilt in Streams C and D). */
-  --spacing-wiki-hero: 8rem;
-  /* `WikiFigure`'s one frame, four sizes (card #90, decision 2): the list row, the card
+  /* `WikiFigure`'s one frame, four sizes: the list row, the card
      grid, the landing tile, and the page's own band. Each is a whole multiple of the game's
      32px sprite at scale 100 — 2x, 4x, 5x, 6x — so `integerScale` (`figureScale.ts`) always
      fills the box exactly for a sprite; a portrait or an achievement painting fits inside it
@@ -79,31 +72,23 @@
   --spacing-wiki-aside: 17rem;
   /* A wiki list row: the framed figure, the page's name, and the line under it saying what it
      is. `RowWikiRem` in `lib/scale/rows.ts` is this number, and its test holds the two here.
-     Grown from 3.75rem with `WikiFigure`'s own `--spacing-figure-row` (card #90): a row
-     shorter than the figure it frames clips it in the virtualized list, so this stays the
-     figure's 4rem plus the 4px clearance on each side the old pair had, on the 4px grid. */
+     A row shorter than the figure it frames clips it in the virtualized list, so this is the
+     figure's `--spacing-figure-row` plus 4px of clearance on each side, on the 4px grid. */
   --spacing-row-wiki: 4.5rem;
-  /* A category list's card grid (card #90, decision 4): the card's own width, wide enough
+  /* A category list's card grid: the card's own width, wide enough
      that the id, the edition badge and a chip or two fit under the `--spacing-figure-card`
      picture without wrapping every word; and one row of that grid, tall enough for the
-     picture, the name, the id, the badge and two rows of chips. `rows.ts`'s `wikiCardPx` and
-     `rowWikiCardPx` hold the same two numbers on the TypeScript side, for `useCardColumns` and
-     the virtualizer. */
+     picture, the name, the id, the badge, two rows of chips and two rows of save badges (a
+     boss's met, killed and killed-you wrap to two in a card this wide). `rows.ts`'s
+     `wikiCardPx` and `rowWikiCardPx` hold the same two numbers on the TypeScript side, for
+     `useCardColumns` and the virtualizer. */
   --spacing-wiki-card: 12rem;
-  --spacing-row-wiki-card: 15.5rem;
-  /* A category list's table (card #90, decision 4): the id and the edition columns, and one
-     of the category's own fact columns — quality, HP, a stat, a price. The progress column
-     reuses `ProgressBadge`, which wraps its own badges rather than needing a width of its
-     own. */
+  --spacing-row-wiki-card: 17.5rem;
+  /* A category list's table: the id and the edition columns, and one of the category's own
+     fact columns — quality, HP, a stat, a price, and the save's state in its compact form. */
   --spacing-wiki-table-id: 4rem;
   --spacing-wiki-table-edition: 9rem;
   --spacing-wiki-table-fact: 9rem;
-  /* The figure inside one of those rows, framed: the 32px sprite at 1.5x, which is what the
-     row's height leaves once its padding is taken. Retired from `WikiFigure` by
-     `--spacing-figure-row` above; still declared for `WikiCategoryList`'s own category icon
-     in its hero band, which does not go through `WikiFigure` (card #90, Stream B — that
-     screen is rebuilt in Stream D). */
-  --spacing-wiki-row-figure: 3rem;
   /* Unlock's table (Schermate.dc.html): the drawing column, the state badge column, the
      fan-out column, the add-to-the-queue column. */
   --spacing-unlock-art: 4rem;
@@ -173,10 +158,9 @@
      right inset, since the scrolling box can have no padding of its own. 45 + 12 needs 60,
      and at 52 the two group totals printed as `151/198138/198`. */
   --spacing-matrix-total: 3.75rem;
-  /* The framed co-op head in that column: the 32px sprite with somewhere to sit, the same
-     idea as a wiki row's figure at the height a matrix row can spare. Not a whole multiple
-     of the sprite on purpose — the frame is a box and the sprite keeps its own size inside
-     it, exactly as `--spacing-wiki-row-figure` does. */
+  /* The framed co-op head in that column: the 32px sprite with somewhere to sit, at the
+     height a matrix row can spare. Not a whole multiple of the sprite on purpose — the frame
+     is a box and the sprite keeps its own size inside it. */
   --spacing-matrix-head: 2.5rem;
   /* A matrix row: the framed head plus the padding around it. The cell is smaller than this
      and centres in it, so the row's height is the head's and never the symbol's. */

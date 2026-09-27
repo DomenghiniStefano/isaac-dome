@@ -1,7 +1,12 @@
 import { describe, expect, it } from 'vitest'
 import spacing from '@/assets/theme/spacing.css?raw'
 import virtualRows from '@/components/ui/virtual/VirtualRows.vue?raw'
-import { totalHeightPx, visibleRows } from './virtualRows'
+import {
+  listScrollTop,
+  pageScrollTop,
+  totalHeightPx,
+  visibleRows,
+} from './virtualRows'
 
 // Unlock, the Collection, Search and the wiki's category list each repeated the same pairing:
 // a virtualizer's items carry an index and an offset, the row itself lives in a plain array at
@@ -31,6 +36,16 @@ describe('visibleRows', () => {
     ])
   })
 
+  it('places a row from the top of the list, not of the page, when the page scrolls', () => {
+    // With the page as the scroller, the virtualizer counts every offset from the top of the
+    // page: the hero and the filters sit above the list, and the row must not land that far
+    // below its own place.
+    const items = [{ index: 3, start: 420 }]
+    expect(visibleRows(items, ['a', 'b', 'c', 'd'], 300)).toEqual([
+      { index: 3, start: 120, style: { '--row-start': '120px' }, row: 'd' },
+    ])
+  })
+
   it('is empty when there are no virtual items', () => {
     expect(visibleRows([], ['a', 'b'])).toEqual([])
   })
@@ -53,12 +68,24 @@ describe('totalHeightPx', () => {
 // creeping back caps every list again at one number, and it would look like a design choice.
 describe('the virtualized list body', () => {
   it('takes the height that is left, and no token pins it', () => {
-    expect(virtualRows).toMatch(/class="min-h-0 flex-1 overflow-auto"/)
+    expect(virtualRows).toMatch(/['"]min-h-0 flex-1 overflow-auto['"]/)
     expect(virtualRows).not.toMatch(/\bmax-h-/)
   })
 
   it('leaves no body-height token behind in the theme', () => {
     expect(spacing).not.toMatch(/--spacing-virtual-rows-body/)
     expect(spacing).not.toMatch(/--spacing-unlock-body/)
+  })
+})
+
+describe('the list offset when the page scrolls', () => {
+  it('is how far the page scrolled past the top of the list, never below zero', () => {
+    expect(listScrollTop(500, 300)).toBe(200)
+    expect(listScrollTop(100, 300)).toBe(0)
+  })
+
+  it('puts the page back where the list was left', () => {
+    expect(pageScrollTop(200, 300)).toBe(500)
+    expect(listScrollTop(pageScrollTop(200, 300), 300)).toBe(200)
   })
 })

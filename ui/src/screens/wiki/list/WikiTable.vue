@@ -57,9 +57,9 @@ const cellText = (page: WikiPageRef, key: WikiSortKey): string | null => {
 </script>
 
 <template>
-  <div class="flex min-h-0 flex-1 flex-col">
+  <div class="flex flex-col">
     <div
-      class="flex items-center gap-3 border-b border-hairline bg-band px-3 py-1.5 text-label text-band-foreground"
+      class="sticky top-0 z-raised-header flex items-center gap-3 border-b border-hairline bg-band px-3 py-1.5 text-label text-band-foreground"
     >
       <span class="w-figure-row shrink-0" />
       <span
@@ -154,7 +154,7 @@ const cellText = (page: WikiPageRef, key: WikiSortKey): string | null => {
           }}</span>
         </span>
         <span class="w-wiki-table-fact shrink-0 truncate">
-          <ProgressBadge :progress="wiki.progressFor(page.target)" />
+          <ProgressBadge :progress="wiki.progressFor(page.target)" compact />
         </span>
       </Button>
     </VirtualRows>
