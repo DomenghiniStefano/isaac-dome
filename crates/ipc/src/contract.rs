@@ -235,6 +235,7 @@ pub fn render() -> String {
     decl::<crate::ListItem>(&cfg, &mut out);
     decl::<crate::Block>(&cfg, &mut out);
     decl::<wiki::CollectibleTemplate>(&cfg, &mut out);
+    decl::<crate::ArticleCategory>(&cfg, &mut out);
     decl::<crate::Infobox>(&cfg, &mut out);
     decl::<crate::Section>(&cfg, &mut out);
     decl::<crate::Entry>(&cfg, &mut out);
@@ -242,6 +243,7 @@ pub fn render() -> String {
     decl::<crate::PatchView>(&cfg, &mut out);
     decl::<crate::WikiCounts>(&cfg, &mut out);
     decl::<crate::WikiInfo>(&cfg, &mut out);
+    decl::<crate::WikiPageCategory>(&cfg, &mut out);
     decl::<crate::WikiPageRef>(&cfg, &mut out);
     decl::<crate::WikiIndex>(&cfg, &mut out);
     decl::<crate::ProgressMark>(&cfg, &mut out);

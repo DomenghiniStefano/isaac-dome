@@ -10,7 +10,7 @@ use std::collections::BTreeSet;
 use std::path::PathBuf;
 
 use wiki::for_tests::all_template_names;
-use wiki::{is_layout_template, parses_into_entries, Corrections, Raw};
+use wiki::{is_layout_template, Corrections, Raw};
 
 fn root() -> PathBuf {
     PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("../../dataset")
@@ -90,13 +90,12 @@ fn understood(name: &str) -> bool {
 
 /// The full set of template names in the pages the build reads, at every nesting depth,
 /// exactly as the parser's own scanner sees them — walking every section, because a template
-/// inside a discarded heading still "occurs in dataset/raw/". A page of a kind the build does
-/// not read yet is left out: what is not parsed cannot be judged read or lost.
+/// inside a discarded heading still "occurs in dataset/raw/". Every page kind builds into
+/// entries now (`build::entries_of`), so nothing is filtered out here any more.
 fn names_in_raw() -> BTreeSet<String> {
     raw()
         .pages
         .iter()
-        .filter(|p| parses_into_entries(p.index.kind))
         .flat_map(|p| all_template_names(&p.text))
         .collect()
 }

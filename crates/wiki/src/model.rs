@@ -3,6 +3,8 @@
 
 use serde::{Deserialize, Serialize};
 
+use crate::raw::ArticleCategory;
+
 /// A wiki page reduced to what's needed: the infobox and the text sections that are kept.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize, ts_rs::TS)]
 #[serde(rename_all = "camelCase")]
@@ -170,16 +172,45 @@ pub enum Style {
     rename_all_fields = "camelCase"
 )]
 pub enum Target {
-    Item { id: u32 },
-    Trinket { id: u32 },
-    Character { id: u32 },
-    Achievement { id: u32 },
-    Challenge { number: u32 },
-    Entity { id: u32, variant: u32, subtype: u32 },
-    Transformation { id: u32 },
-    Stage { name: String },
-    Room { name: String },
-    Concept { name: String },
+    Item {
+        id: u32,
+    },
+    Trinket {
+        id: u32,
+    },
+    Character {
+        id: u32,
+    },
+    Achievement {
+        id: u32,
+    },
+    Challenge {
+        number: u32,
+    },
+    Entity {
+        id: u32,
+        variant: u32,
+        subtype: u32,
+    },
+    Transformation {
+        id: u32,
+    },
+    Stage {
+        name: String,
+    },
+    Room {
+        name: String,
+    },
+    Concept {
+        name: String,
+    },
+    /// A plain `[[link]]` that names an article: no id in the game, and no infobox category
+    /// either (design decision 3, `2026-09-26-wiki-complete-design.md`). `title` is the
+    /// canonical page title (`wiki::canonical_title`), through any redirect the wiki wrote —
+    /// resolved once, at build time, so a reader never has to follow one.
+    Article {
+        title: String,
+    },
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Serialize, Deserialize, ts_rs::TS)]
@@ -294,6 +325,33 @@ pub enum Infobox {
         /// The character this one is a variant of (Lazarus Risen's Lazarus, Tainted's base).
         parent: Option<Target>,
     },
+    /// A monster or a pickup entity: `Infobox monster` and `Infobox entity` (design
+    /// decision 2). One variant for both — measured on the raw corpus (2026-09-26), the
+    /// second template's parameters (`name`, `dlc`, `variant`, `hidden`, `subtype`, `id`,
+    /// `unlocked by`) are a subset of the first's, `environment` and `behavior` included
+    /// (three of each on the whole snapshot); nothing in `Infobox entity` needs a shape the
+    /// monster fields can't hold.
+    Entity {
+        base_hp: Option<u32>,
+        /// Per-stage or per-note hp, the same reason `Boss.stage_hp` is inline and not a
+        /// number.
+        stage_hp: Vec<Inline>,
+        environment: Vec<Inline>,
+        /// The only place a **variant**'s own behavior is stated: several infoboxes on one
+        /// page (Gaper's sixteen) share the page's sections, so a per-variant sentence has
+        /// nowhere else to live.
+        behavior: Vec<Inline>,
+        pool: Vec<Inline>,
+        /// What this entity can turn into or be replaced by (a champion condition), and its
+        /// odds and notes. Not a number: `replace chance` carries `%` and edition markup.
+        replace: Vec<Inline>,
+        replace_chance: Vec<Inline>,
+        replace_notes: Vec<Inline>,
+    },
+    /// A page with none of the other six infoboxes: no fields of its own beyond which of the
+    /// four infobox templates this sub-project declines to read (design decision 2) named it,
+    /// when one did. The body — description and sections — is `Entry`'s, like every other kind.
+    Article { category: Option<ArticleCategory> },
 }
 
 impl Infobox {
@@ -363,6 +421,25 @@ impl Infobox {
                 collectibles,
                 parent: _,
             } => vec![health, pickups, collectibles],
+            Infobox::Entity {
+                base_hp: _,
+                stage_hp,
+                environment,
+                behavior,
+                pool,
+                replace,
+                replace_chance,
+                replace_notes,
+            } => vec![
+                stage_hp,
+                environment,
+                behavior,
+                pool,
+                replace,
+                replace_chance,
+                replace_notes,
+            ],
+            Infobox::Article { category: _ } => vec![],
         }
     }
 
@@ -429,6 +506,25 @@ impl Infobox {
                 collectibles,
                 parent: _,
             } => vec![health, pickups, collectibles],
+            Infobox::Entity {
+                base_hp: _,
+                stage_hp,
+                environment,
+                behavior,
+                pool,
+                replace,
+                replace_chance,
+                replace_notes,
+            } => vec![
+                stage_hp,
+                environment,
+                behavior,
+                pool,
+                replace,
+                replace_chance,
+                replace_notes,
+            ],
+            Infobox::Article { category: _ } => vec![],
         }
     }
 }

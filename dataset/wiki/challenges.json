@@ -14,8 +14,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "challenge",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "Challenges"
+        },
         "label": "challenge"
       },
       {
@@ -24,8 +27,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "Curses",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "Curses"
+        },
         "label": "Darkness"
       },
       {
@@ -34,8 +40,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "Curses",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "Curses"
+        },
         "label": "Unknown"
       },
       {
@@ -98,8 +107,11 @@
       "health": [],
       "curse": [
         {
-          "kind": "concept",
-          "page": "Curses",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Curses"
+          },
           "label": "Darkness"
         },
         {
@@ -108,8 +120,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Curses",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Curses"
+          },
           "label": "Unknown"
         }
       ],
@@ -140,8 +155,11 @@
                 "style": "plain"
               },
               {
-                "kind": "concept",
-                "page": "Curses",
+                "kind": "ref",
+                "target": {
+                  "kind": "article",
+                  "title": "Curses"
+                },
                 "label": "Unknown"
               },
               {
@@ -150,8 +168,11 @@
                 "style": "plain"
               },
               {
-                "kind": "concept",
-                "page": "health",
+                "kind": "ref",
+                "target": {
+                  "kind": "article",
+                  "title": "Health"
+                },
                 "label": "health"
               },
               {
@@ -160,8 +181,11 @@
                 "style": "plain"
               },
               {
-                "kind": "concept",
-                "page": "Deal with the Devil",
+                "kind": "ref",
+                "target": {
+                  "kind": "article",
+                  "title": "Devil Room"
+                },
                 "label": "devil deals"
               },
               {
@@ -170,8 +194,13 @@
                 "style": "plain"
               },
               {
-                "kind": "concept",
-                "page": "Blood Donation Machine",
+                "kind": "ref",
+                "target": {
+                  "kind": "entity",
+                  "id": 6,
+                  "variant": 2,
+                  "subtype": 0
+                },
                 "label": "Blood Donation Machine"
               },
               {
@@ -180,8 +209,11 @@
                 "style": "plain"
               },
               {
-                "kind": "concept",
-                "page": "Curses",
+                "kind": "ref",
+                "target": {
+                  "kind": "article",
+                  "title": "Curses"
+                },
                 "label": "Darkness"
               },
               {
@@ -190,8 +222,11 @@
                 "style": "plain"
               },
               {
-                "kind": "concept",
-                "page": "tinted rock",
+                "kind": "ref",
+                "target": {
+                  "kind": "article",
+                  "title": "Rocks"
+                },
                 "label": "tinted rock"
               },
               {
@@ -273,8 +308,11 @@
                 "style": "plain"
               },
               {
-                "kind": "concept",
-                "page": "Curses",
+                "kind": "ref",
+                "target": {
+                  "kind": "article",
+                  "title": "Curses"
+                },
                 "label": "Darkness"
               },
               {
@@ -316,8 +354,11 @@
                 "style": "plain"
               },
               {
-                "kind": "concept",
-                "page": "Curses",
+                "kind": "ref",
+                "target": {
+                  "kind": "article",
+                  "title": "Curses"
+                },
                 "label": "Lost"
               },
               {
@@ -434,8 +475,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "challenge",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "Challenges"
+        },
         "label": "challenge"
       },
       {
@@ -620,8 +664,11 @@
                 "style": "plain"
               },
               {
-                "kind": "concept",
-                "page": "range",
+                "kind": "ref",
+                "target": {
+                  "kind": "article",
+                  "title": "Range"
+                },
                 "label": "range"
               },
               {
@@ -687,8 +734,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "pickup",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Pickups"
+                    },
                     "label": "pickup"
                   },
                   {
@@ -707,8 +757,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "enemy",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Monsters"
+                    },
                     "label": "enemies"
                   },
                   {
@@ -732,8 +785,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "range",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Range"
+                    },
                     "label": "range"
                   },
                   {
@@ -826,8 +882,11 @@
                             "style": "plain"
                           },
                           {
-                            "kind": "concept",
-                            "page": "friendly",
+                            "kind": "ref",
+                            "target": {
+                              "kind": "article",
+                              "title": "Status Effects"
+                            },
                             "label": "friendly"
                           },
                           {
@@ -880,8 +939,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "item",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Items"
+                    },
                     "label": "item"
                   },
                   {
@@ -1087,8 +1149,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "Challenges",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "Challenges"
+        },
         "label": "challenge"
       },
       {
@@ -1790,8 +1855,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "challenge",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "Challenges"
+        },
         "label": "challenge"
       },
       {
@@ -2083,8 +2151,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "fear",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Status Effects"
+                    },
                     "label": "fear"
                   },
                   {
@@ -2103,8 +2174,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "Devil deal",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Devil Room"
+                    },
                     "label": "Devil deal"
                   },
                   {
@@ -2153,8 +2227,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "Devil Room (Item Pool)",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Devil Room (Item Pool)"
+                    },
                     "label": "Devil Room pool"
                   },
                   {
@@ -2355,8 +2432,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "Challenges",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "Challenges"
+        },
         "label": "challenge"
       },
       {
@@ -2538,8 +2618,11 @@
                 "style": "plain"
               },
               {
-                "kind": "concept",
-                "page": "speed",
+                "kind": "ref",
+                "target": {
+                  "kind": "article",
+                  "title": "Speed"
+                },
                 "label": "speed"
               },
               {
@@ -2574,8 +2657,11 @@
                 "style": "plain"
               },
               {
-                "kind": "concept",
-                "page": "Obstacles",
+                "kind": "ref",
+                "target": {
+                  "kind": "article",
+                  "title": "Obstacles"
+                },
                 "label": "Bomb Rocks"
               },
               {
@@ -2729,8 +2815,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "Devil Room",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Devil Room"
+                    },
                     "label": "deals with the devil"
                   },
                   {
@@ -2739,8 +2828,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "Sacrifice Room",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Sacrifice Room"
+                    },
                     "label": "Sacrifice Room"
                   },
                   {
@@ -2870,8 +2962,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "Challenges",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "Challenges"
+        },
         "label": "challenge"
       },
       {
@@ -2945,8 +3040,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "blindfolded",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "Blindfolded"
+        },
         "label": "blindfolded"
       },
       {
@@ -3084,8 +3182,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "blindfolded",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Blindfolded"
+                    },
                     "label": "blindfolded"
                   },
                   {
@@ -3398,8 +3499,11 @@
                             "style": "plain"
                           },
                           {
-                            "kind": "concept",
-                            "page": "The Harbingers",
+                            "kind": "ref",
+                            "target": {
+                              "kind": "article",
+                              "title": "The Harbingers"
+                            },
                             "label": "The Harbingers"
                           },
                           {
@@ -3594,8 +3698,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "blindfolded",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Blindfolded"
+                    },
                     "label": "blindfold"
                   },
                   {
@@ -4044,8 +4151,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "Challenge",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "Challenges"
+        },
         "label": "Challenge"
       },
       {
@@ -4106,8 +4216,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "pill",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "Pills"
+        },
         "label": "pill"
       },
       {
@@ -4213,8 +4326,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "pill",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Pills"
+          },
           "label": "pill"
         }
       ],
@@ -4639,8 +4755,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "Speed",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Speed"
+                    },
                     "label": "Speed"
                   },
                   {
@@ -4659,8 +4778,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "Shot Speed",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Shot Speed"
+                    },
                     "label": "Shot Speed"
                   },
                   {
@@ -5407,8 +5529,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "challenge",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "Challenges"
+        },
         "label": "challenge"
       },
       {
@@ -5486,8 +5611,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "blindfolded",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "Blindfolded"
+        },
         "label": "blindfolded"
       },
       {
@@ -5574,8 +5702,11 @@
       "pickups": [],
       "health": [
         {
-          "kind": "concept",
-          "page": "Health",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Health"
+          },
           "label": "3 black hearts"
         },
         {
@@ -5584,8 +5715,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Health",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Health"
+          },
           "label": "3 red hearts"
         },
         {
@@ -5594,8 +5728,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Health",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Health"
+          },
           "label": "3 soul hearts"
         }
       ],
@@ -5630,8 +5767,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "blindfolded",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Blindfolded"
+                    },
                     "label": "blindfolded"
                   },
                   {
@@ -5681,8 +5821,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "Blue Fly",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Familiar"
+                    },
                     "label": "Blue Flies"
                   },
                   {
@@ -5691,8 +5834,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "co-op",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Co-op"
+                    },
                     "label": "co-op baby"
                   },
                   {
@@ -5874,8 +6020,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "Blue Fly",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Familiar"
+                    },
                     "label": "Blue Flies"
                   },
                   {
@@ -5900,8 +6049,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "shooting familiar",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Familiar"
+                    },
                     "label": "shooting familiar"
                   },
                   {
@@ -6195,8 +6347,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "Challenges",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "Challenges"
+        },
         "label": "challenge"
       },
       {
@@ -6257,8 +6412,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "Trinkets",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "Trinkets"
+        },
         "label": "trinket"
       },
       {
@@ -6492,8 +6650,11 @@
               {
                 "inline": [
                   {
-                    "kind": "concept",
-                    "page": "Shot speed",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Shot Speed"
+                    },
                     "label": "Shot speed"
                   },
                   {
@@ -6814,8 +6975,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "challenge",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "Challenges"
+        },
         "label": "challenge"
       },
       {
@@ -6915,8 +7079,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "Curses",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "Curses"
+        },
         "label": "Cursed"
       },
       {
@@ -7039,8 +7206,11 @@
       "health": [],
       "curse": [
         {
-          "kind": "concept",
-          "page": "Curses",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Curses"
+          },
           "label": "Cursed"
         }
       ],
@@ -7528,8 +7698,11 @@
               {
                 "inline": [
                   {
-                    "kind": "concept",
-                    "page": "Curse Room",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Curse Room"
+                    },
                     "label": "Bugs"
                   },
                   {
@@ -7611,8 +7784,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "Challenges",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "Challenges"
+        },
         "label": "challenge"
       },
       {
@@ -7833,8 +8009,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "heart container",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Health"
+                    },
                     "label": "heart container"
                   },
                   {
@@ -7957,8 +8136,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "pill",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Pills"
+                    },
                     "label": "pill"
                   },
                   {
@@ -7967,8 +8149,13 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "Slot Machine",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "entity",
+                      "id": 6,
+                      "variant": 2,
+                      "subtype": 0
+                    },
                     "label": "Slot Machine"
                   },
                   {
@@ -8280,8 +8467,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "Challenges",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "Challenges"
+        },
         "label": "challenge"
       },
       {
@@ -8342,8 +8532,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "Lemon Party",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "Pills"
+        },
         "label": "Lemon Party"
       },
       {
@@ -8418,8 +8611,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Lemon Party",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Pills"
+          },
           "label": "Lemon Party"
         },
         {
@@ -8495,8 +8691,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "activated collectible",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Items"
+                    },
                     "label": "activated collectible"
                   },
                   {
@@ -8624,8 +8823,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "challenge",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "Challenges"
+        },
         "label": "challenge"
       },
       {
@@ -8817,8 +9019,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "blindfolded",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Blindfolded"
+                    },
                     "label": "blindfolded"
                   },
                   {
@@ -8827,8 +9032,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "poison",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Status Effects"
+                    },
                     "label": "poison"
                   },
                   {
@@ -8867,8 +9075,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "poison",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Status Effects"
+                    },
                     "label": "poison"
                   },
                   {
@@ -9110,8 +9321,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "Bombs Are Key",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Pills"
+                    },
                     "label": "Bombs Are Key"
                   },
                   {
@@ -9153,8 +9367,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "familiar",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Familiar"
+                    },
                     "label": "familiar"
                   },
                   {
@@ -9561,8 +9778,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "Challenges",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "Challenges"
+        },
         "label": "challenge"
       },
       {
@@ -9636,8 +9856,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "Cards and Runes",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "Cards and Runes"
+        },
         "label": "tarot card"
       },
       {
@@ -9725,8 +9948,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "tarot card",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Cards and Runes"
+          },
           "label": "tarot card"
         },
         {
@@ -10074,8 +10300,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "Challenges",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "Challenges"
+        },
         "label": "challenge"
       },
       {
@@ -10136,8 +10365,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "tear delay",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "Fire rate"
+        },
         "label": "tear delay"
       },
       {
@@ -10235,8 +10467,11 @@
                 "style": "plain"
               },
               {
-                "kind": "concept",
-                "page": "obstacle",
+                "kind": "ref",
+                "target": {
+                  "kind": "article",
+                  "title": "Obstacles"
+                },
                 "label": "obstacle"
               },
               {
@@ -10596,8 +10831,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "challenge",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "Challenges"
+        },
         "label": "challenge"
       },
       {
@@ -10813,8 +11051,11 @@
               {
                 "inline": [
                   {
-                    "kind": "concept",
-                    "page": "Spectral",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Tear Effects"
+                    },
                     "label": "Spectral"
                   },
                   {
@@ -10961,8 +11202,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "Challenges",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "Challenges"
+        },
         "label": "challenge"
       },
       {
@@ -11439,8 +11683,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "Challenges",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "Challenges"
+        },
         "label": "challenge"
       },
       {
@@ -11501,8 +11748,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "Trinkets",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "Trinkets"
+        },
         "label": "trinket"
       },
       {
@@ -11599,8 +11849,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "trinkets",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Trinkets"
+                    },
                     "label": "trinkets"
                   },
                   {
@@ -11732,8 +11985,11 @@
                                 "style": "plain"
                               },
                               {
-                                "kind": "concept",
-                                "page": "Pills",
+                                "kind": "ref",
+                                "target": {
+                                  "kind": "article",
+                                  "title": "Pills"
+                                },
                                 "label": "Gulp!"
                               },
                               {
@@ -11912,8 +12168,11 @@
                                 "style": "plain"
                               },
                               {
-                                "kind": "concept",
-                                "page": "Shop (Item Pool)",
+                                "kind": "ref",
+                                "target": {
+                                  "kind": "article",
+                                  "title": "Shop (Item Pool)"
+                                },
                                 "label": "Shop pool"
                               },
                               {
@@ -11965,8 +12224,13 @@
                             "style": "plain"
                           },
                           {
-                            "kind": "concept",
-                            "page": "Bomb Bum",
+                            "kind": "ref",
+                            "target": {
+                              "kind": "entity",
+                              "id": 6,
+                              "variant": 4,
+                              "subtype": 0
+                            },
                             "label": "Bomb Bum"
                           },
                           {
@@ -11975,8 +12239,11 @@
                             "style": "plain"
                           },
                           {
-                            "kind": "concept",
-                            "page": "Treasure Room (Item Pool)",
+                            "kind": "ref",
+                            "target": {
+                              "kind": "article",
+                              "title": "Treasure Room (Item Pool)"
+                            },
                             "label": "Treasure Room pool"
                           },
                           {
@@ -12072,8 +12339,13 @@
                             "style": "plain"
                           },
                           {
-                            "kind": "concept",
-                            "page": "Shell Game",
+                            "kind": "ref",
+                            "target": {
+                              "kind": "entity",
+                              "id": 6,
+                              "variant": 4,
+                              "subtype": 0
+                            },
                             "label": "Shell Game"
                           },
                           {
@@ -12100,8 +12372,13 @@
                       {
                         "inline": [
                           {
-                            "kind": "concept",
-                            "page": "Key Master",
+                            "kind": "ref",
+                            "target": {
+                              "kind": "entity",
+                              "id": 6,
+                              "variant": 4,
+                              "subtype": 0
+                            },
                             "label": "Key Master"
                           },
                           {
@@ -12212,8 +12489,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "challenge",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "Challenges"
+        },
         "label": "challenge"
       },
       {
@@ -12300,8 +12580,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "blindfolded",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "Blindfolded"
+        },
         "label": "blindfolded"
       },
       {
@@ -12310,8 +12593,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "familiar",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "Familiar"
+        },
         "label": "familiar"
       },
       {
@@ -12570,8 +12856,13 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "Beggar",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "entity",
+                      "id": 6,
+                      "variant": 4,
+                      "subtype": 0
+                    },
                     "label": "Beggar"
                   },
                   {
@@ -12633,8 +12924,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "flight",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Flight"
+                    },
                     "label": "flight"
                   },
                   {
@@ -12653,8 +12947,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "blue fly",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Familiar"
+                    },
                     "label": "blue flies"
                   },
                   {
@@ -12966,8 +13263,13 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "Slot Machine",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "entity",
+                      "id": 6,
+                      "variant": 2,
+                      "subtype": 0
+                    },
                     "label": "Slot Machine"
                   },
                   {
@@ -13114,8 +13416,11 @@
                             "style": "plain"
                           },
                           {
-                            "kind": "concept",
-                            "page": "Conjoined",
+                            "kind": "ref",
+                            "target": {
+                              "kind": "transformation",
+                              "id": 7
+                            },
                             "label": "Conjoined"
                           },
                           {
@@ -13448,8 +13753,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "Challenges",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "Challenges"
+        },
         "label": "challenge"
       },
       {
@@ -13602,8 +13910,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "special room",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Rooms"
+                    },
                     "label": "special room"
                   },
                   {
@@ -14069,8 +14380,11 @@
               {
                 "inline": [
                   {
-                    "kind": "concept",
-                    "page": "Items",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Items"
+                    },
                     "label": "Items"
                   },
                   {
@@ -14079,8 +14393,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "pickups",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Pickups"
+                    },
                     "label": "pickups"
                   },
                   {
@@ -14089,8 +14406,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "Rooms",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Rooms"
+                    },
                     "label": "Special Rooms"
                   },
                   {
@@ -14132,8 +14452,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "cards",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Cards and Runes"
+                    },
                     "label": "cards"
                   },
                   {
@@ -14259,8 +14582,11 @@
               {
                 "inline": [
                   {
-                    "kind": "concept",
-                    "page": "Curses",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Curses"
+                    },
                     "label": "Labyrinth"
                   },
                   {
@@ -15190,8 +15516,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "Curses",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Curses"
+                    },
                     "label": "Lost"
                   },
                   {
@@ -15200,8 +15529,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "Curses",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Curses"
+                    },
                     "label": "Maze"
                   },
                   {
@@ -15840,8 +16172,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "Challenge",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "Challenges"
+        },
         "label": "Challenge"
       },
       {
@@ -15850,8 +16185,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "The Binding of Isaac: Afterbirth",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "The Binding of Isaac: Afterbirth"
+        },
         "label": "The Binding of Isaac: Afterbirth"
       },
       {
@@ -16044,8 +16382,11 @@
                 "style": "plain"
               },
               {
-                "kind": "concept",
-                "page": "blindfolded",
+                "kind": "ref",
+                "target": {
+                  "kind": "article",
+                  "title": "Blindfolded"
+                },
                 "label": "blindfolded"
               },
               {
@@ -16346,8 +16687,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "Skull",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Rocks"
+                    },
                     "label": "Skull"
                   },
                   {
@@ -16976,8 +17320,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "bed",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Bedroom"
+                    },
                     "label": "bed"
                   },
                   {
@@ -17102,8 +17449,11 @@
                                 "style": "plain"
                               },
                               {
-                                "kind": "concept",
-                                "page": "Balls of Steel",
+                                "kind": "ref",
+                                "target": {
+                                  "kind": "article",
+                                  "title": "Pills"
+                                },
                                 "label": "Balls of Steel"
                               },
                               {
@@ -17484,8 +17834,11 @@
                                 "style": "plain"
                               },
                               {
-                                "kind": "concept",
-                                "page": "Bombs Are Key",
+                                "kind": "ref",
+                                "target": {
+                                  "kind": "article",
+                                  "title": "Pills"
+                                },
                                 "label": "Bombs Are Key"
                               },
                               {
@@ -17579,8 +17932,13 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "coin",
+          "kind": "ref",
+          "target": {
+            "kind": "entity",
+            "id": 5,
+            "variant": 20,
+            "subtype": 3
+          },
           "label": "coin"
         },
         {
@@ -17732,8 +18090,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "Co-op",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Co-op"
+                    },
                     "label": "Co-op"
                   },
                   {
@@ -18402,8 +18763,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "Shop",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Shop"
+                    },
                     "label": "Shop"
                   },
                   {
@@ -18663,8 +19027,11 @@
                         "style": "plain"
                       },
                       {
-                        "kind": "concept",
-                        "page": "Rocks",
+                        "kind": "ref",
+                        "target": {
+                          "kind": "article",
+                          "title": "Rocks"
+                        },
                         "label": "Fool's Gold"
                       },
                       {
@@ -18951,33 +19318,51 @@
       "pickups": [],
       "health": [
         {
-          "kind": "concept",
-          "page": "Health",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Health"
+          },
           "label": "1 red heart"
         },
         {
-          "kind": "concept",
-          "page": "Health",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Health"
+          },
           "label": "1 empty red heart container"
         },
         {
-          "kind": "concept",
-          "page": "Health",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Health"
+          },
           "label": "1 empty red heart container"
         },
         {
-          "kind": "concept",
-          "page": "Health",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Health"
+          },
           "label": "1 empty red heart container"
         },
         {
-          "kind": "concept",
-          "page": "Health",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Health"
+          },
           "label": "1 empty red heart container"
         },
         {
-          "kind": "concept",
-          "page": "Health",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Health"
+          },
           "label": "1 empty red heart container"
         },
         {
@@ -18986,33 +19371,51 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Health",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Health"
+          },
           "label": "1 empty red heart container"
         },
         {
-          "kind": "concept",
-          "page": "Health",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Health"
+          },
           "label": "1 empty red heart container"
         },
         {
-          "kind": "concept",
-          "page": "Health",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Health"
+          },
           "label": "1 empty red heart container"
         },
         {
-          "kind": "concept",
-          "page": "Health",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Health"
+          },
           "label": "1 empty red heart container"
         },
         {
-          "kind": "concept",
-          "page": "Health",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Health"
+          },
           "label": "1 empty red heart container"
         },
         {
-          "kind": "concept",
-          "page": "Health",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Health"
+          },
           "label": "1 empty red heart container"
         }
       ],
@@ -19307,8 +19710,13 @@
                 "style": "plain"
               },
               {
-                "kind": "concept",
-                "page": "Slot Machine",
+                "kind": "ref",
+                "target": {
+                  "kind": "entity",
+                  "id": 6,
+                  "variant": 2,
+                  "subtype": 0
+                },
                 "label": "Slot Machine"
               },
               {
@@ -19317,8 +19725,13 @@
                 "style": "plain"
               },
               {
-                "kind": "concept",
-                "page": "Blood Donation Machine",
+                "kind": "ref",
+                "target": {
+                  "kind": "entity",
+                  "id": 6,
+                  "variant": 2,
+                  "subtype": 0
+                },
                 "label": "Blood Donation Machine"
               },
               {
@@ -19327,8 +19740,13 @@
                 "style": "plain"
               },
               {
-                "kind": "concept",
-                "page": "Beggar",
+                "kind": "ref",
+                "target": {
+                  "kind": "entity",
+                  "id": 6,
+                  "variant": 4,
+                  "subtype": 0
+                },
                 "label": "Beggar"
               },
               {
@@ -19425,8 +19843,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "Full Health",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Pills"
+                    },
                     "label": "Full Health"
                   },
                   {
@@ -19448,8 +19869,11 @@
                             "style": "plain"
                           },
                           {
-                            "kind": "concept",
-                            "page": "Bad Trip",
+                            "kind": "ref",
+                            "target": {
+                              "kind": "article",
+                              "title": "Pills"
+                            },
                             "label": "Bad Trip"
                           },
                           {
@@ -19660,8 +20084,11 @@
               {
                 "inline": [
                   {
-                    "kind": "concept",
-                    "page": "Bed",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Bedroom"
+                    },
                     "label": "Bed"
                   },
                   {
@@ -19751,8 +20178,11 @@
                 "style": "plain"
               },
               {
-                "kind": "concept",
-                "page": "deal with the Devil",
+                "kind": "ref",
+                "target": {
+                  "kind": "article",
+                  "title": "Devil Room"
+                },
                 "label": "deals with the Devil"
               },
               {
@@ -19926,8 +20356,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "Health Down",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Pills"
+                    },
                     "label": "Health Down"
                   },
                   {
@@ -20082,8 +20515,13 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "Shell Game",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "entity",
+                      "id": 6,
+                      "variant": 4,
+                      "subtype": 0
+                    },
                     "label": "Shell Game"
                   },
                   {
@@ -20265,8 +20703,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "Hematemesis",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Pills"
+                    },
                     "label": "Hematemesis"
                   },
                   {
@@ -20708,8 +21149,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "challenge",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "Challenges"
+        },
         "label": "challenge"
       },
       {
@@ -20841,8 +21285,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "Hard Mode",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "Hard mode"
+        },
         "label": "Hard Mode"
       },
       {
@@ -21273,8 +21720,11 @@
                         "style": "plain"
                       },
                       {
-                        "kind": "concept",
-                        "page": "Health",
+                        "kind": "ref",
+                        "target": {
+                          "kind": "article",
+                          "title": "Health"
+                        },
                         "label": "Red Heart Containers"
                       },
                       {
@@ -21610,8 +22060,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "Challenge",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "Challenges"
+        },
         "label": "Challenge"
       },
       {
@@ -21620,8 +22073,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "The Binding of Isaac: Afterbirth",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "The Binding of Isaac: Afterbirth"
+        },
         "label": "The Binding of Isaac: Afterbirth"
       },
       {
@@ -21643,8 +22099,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "blindfolded",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "Blindfolded"
+        },
         "label": "blindfolded"
       },
       {
@@ -22206,8 +22665,11 @@
                       {
                         "inline": [
                           {
-                            "kind": "concept",
-                            "page": "Creep",
+                            "kind": "ref",
+                            "target": {
+                              "kind": "article",
+                              "title": "Creep"
+                            },
                             "label": "Creep"
                           },
                           {
@@ -22448,8 +22910,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "Treasure_Room_(Item_Pool)",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Treasure Room (Item Pool)"
+                    },
                     "label": "Treasure Room item pool"
                   },
                   {
@@ -22484,8 +22949,11 @@
                             "style": "plain"
                           },
                           {
-                            "kind": "concept",
-                            "page": "Tinted Rock",
+                            "kind": "ref",
+                            "target": {
+                              "kind": "article",
+                              "title": "Rocks"
+                            },
                             "label": "Tinted Rock"
                           },
                           {
@@ -22539,8 +23007,11 @@
                                 "style": "plain"
                               },
                               {
-                                "kind": "concept",
-                                "page": "Mushroom (Obstacle)",
+                                "kind": "ref",
+                                "target": {
+                                  "kind": "article",
+                                  "title": "Rocks"
+                                },
                                 "label": "Mushrooms"
                               },
                               {
@@ -22622,8 +23093,11 @@
               {
                 "inline": [
                   {
-                    "kind": "concept",
-                    "page": "flight",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Flight"
+                    },
                     "label": "Flying"
                   },
                   {
@@ -22645,8 +23119,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "Spikes",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Spikes"
+                    },
                     "label": "Spikes"
                   },
                   {
@@ -22655,8 +23132,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "creep",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Creep"
+                    },
                     "label": "creep"
                   },
                   {
@@ -22782,8 +23262,11 @@
                                     "style": "plain"
                                   },
                                   {
-                                    "kind": "concept",
-                                    "page": "The Harbingers",
+                                    "kind": "ref",
+                                    "target": {
+                                      "kind": "article",
+                                      "title": "The Harbingers"
+                                    },
                                     "label": "The Harbingers"
                                   },
                                   {
@@ -23764,8 +24247,11 @@
                         "style": "plain"
                       },
                       {
-                        "kind": "concept",
-                        "page": "Status_Effects",
+                        "kind": "ref",
+                        "target": {
+                          "kind": "article",
+                          "title": "Status Effects"
+                        },
                         "label": "frozen"
                       },
                       {
@@ -23789,8 +24275,11 @@
                             "style": "plain"
                           },
                           {
-                            "kind": "concept",
-                            "page": "Tear Effects",
+                            "kind": "ref",
+                            "target": {
+                              "kind": "article",
+                              "title": "Tear Effects"
+                            },
                             "label": "spectral tear"
                           },
                           {
@@ -24204,8 +24693,11 @@
               {
                 "inline": [
                   {
-                    "kind": "concept",
-                    "page": "Spectral tears",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Tear Effects"
+                    },
                     "label": "Spectral tears"
                   },
                   {
@@ -24298,8 +24790,11 @@
               {
                 "inline": [
                   {
-                    "kind": "concept",
-                    "page": "Piercing",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Tear Effects"
+                    },
                     "label": "Piercing"
                   },
                   {
@@ -24716,8 +25211,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "pill",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Pills"
+                    },
                     "label": "pill"
                   },
                   {
@@ -24726,8 +25224,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "R U a Wizard?",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Pills"
+                    },
                     "label": "R U a Wizard?"
                   },
                   {
@@ -24839,8 +25340,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "homing tears",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Tear Effects"
+                    },
                     "label": "homing tears"
                   },
                   {
@@ -27024,8 +27528,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "health",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Health"
+                    },
                     "label": "health"
                   },
                   {
@@ -27573,8 +28080,11 @@
               {
                 "inline": [
                   {
-                    "kind": "concept",
-                    "page": "Familiar",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Familiar"
+                    },
                     "label": "Familiar"
                   },
                   {
@@ -27679,8 +28189,11 @@
               {
                 "inline": [
                   {
-                    "kind": "concept",
-                    "page": "One Makes You Small",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Pills"
+                    },
                     "label": "One Makes You Small"
                   },
                   {
@@ -27728,8 +28241,11 @@
                             "style": "plain"
                           },
                           {
-                            "kind": "concept",
-                            "page": "One Makes You Larger",
+                            "kind": "ref",
+                            "target": {
+                              "kind": "article",
+                              "title": "Pills"
+                            },
                             "label": "One Makes You Larger"
                           },
                           {
@@ -28060,8 +28576,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "item",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Items"
+          },
           "label": "item"
         },
         {
@@ -28779,8 +29298,13 @@
                         "style": "plain"
                       },
                       {
-                        "kind": "concept",
-                        "page": "Mom's Dressing Table",
+                        "kind": "ref",
+                        "target": {
+                          "kind": "entity",
+                          "id": 6,
+                          "variant": 2,
+                          "subtype": 0
+                        },
                         "label": "Mom's Dressing Table"
                       },
                       {
@@ -29326,8 +29850,11 @@
                             "style": "plain"
                           },
                           {
-                            "kind": "concept",
-                            "page": "Curses",
+                            "kind": "ref",
+                            "target": {
+                              "kind": "article",
+                              "title": "Curses"
+                            },
                             "label": "Blind"
                           },
                           {
@@ -29336,8 +29863,11 @@
                             "style": "plain"
                           },
                           {
-                            "kind": "concept",
-                            "page": "Curses",
+                            "kind": "ref",
+                            "target": {
+                              "kind": "article",
+                              "title": "Curses"
+                            },
                             "label": "Blind"
                           },
                           {
@@ -29374,8 +29904,11 @@
                                     "style": "plain"
                                   },
                                   {
-                                    "kind": "concept",
-                                    "page": "Key Piece",
+                                    "kind": "ref",
+                                    "target": {
+                                      "kind": "article",
+                                      "title": "Key Piece (Disambiguation)"
+                                    },
                                     "label": "Key Piece"
                                   },
                                   {
@@ -29606,8 +30139,11 @@
                             "style": "plain"
                           },
                           {
-                            "kind": "concept",
-                            "page": "activated collectible",
+                            "kind": "ref",
+                            "target": {
+                              "kind": "article",
+                              "title": "Items"
+                            },
                             "label": "activated collectible"
                           },
                           {
@@ -29616,8 +30152,11 @@
                             "style": "plain"
                           },
                           {
-                            "kind": "concept",
-                            "page": "pill",
+                            "kind": "ref",
+                            "target": {
+                              "kind": "article",
+                              "title": "Pills"
+                            },
                             "label": "pill"
                           },
                           {
@@ -29626,8 +30165,11 @@
                             "style": "plain"
                           },
                           {
-                            "kind": "concept",
-                            "page": "card",
+                            "kind": "ref",
+                            "target": {
+                              "kind": "article",
+                              "title": "Cards and Runes"
+                            },
                             "label": "card"
                           },
                           {
@@ -29636,8 +30178,11 @@
                             "style": "plain"
                           },
                           {
-                            "kind": "concept",
-                            "page": "rune",
+                            "kind": "ref",
+                            "target": {
+                              "kind": "article",
+                              "title": "Cards and Runes"
+                            },
                             "label": "rune"
                           },
                           {
@@ -30424,8 +30969,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "Harbinger",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Harbingers (Bosses)"
+                    },
                     "label": "Harbinger"
                   },
                   {
@@ -30750,8 +31298,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "friendly",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Status Effects"
+                    },
                     "label": "friendly"
                   },
                   {
@@ -31246,8 +31797,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "obstacles",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Obstacles"
+                    },
                     "label": "obstacles"
                   },
                   {
@@ -31371,8 +31925,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "Spikes",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Spikes"
+                    },
                     "label": "Spikes"
                   },
                   {
@@ -31539,8 +32096,11 @@
                         "style": "plain"
                       },
                       {
-                        "kind": "concept",
-                        "page": "Ace cards",
+                        "kind": "ref",
+                        "target": {
+                          "kind": "article",
+                          "title": "Cards and Runes"
+                        },
                         "label": "Ace cards"
                       },
                       {
@@ -31671,8 +32231,11 @@
       "health": [],
       "curse": [
         {
-          "kind": "concept",
-          "page": "Curses",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Curses"
+          },
           "label": "Labyrinth"
         },
         {
@@ -31681,8 +32244,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Curses",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Curses"
+          },
           "label": "Blind"
         },
         {
@@ -31691,8 +32257,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Curses",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Curses"
+          },
           "label": "lost"
         },
         {
@@ -31701,8 +32270,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Curses",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Curses"
+          },
           "label": "Maze"
         }
       ],
@@ -31765,8 +32337,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "champion",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Champions"
+                    },
                     "label": "champion"
                   },
                   {
@@ -31852,8 +32427,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "Curses",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Curses"
+                    },
                     "label": "Labyrinth"
                   },
                   {
@@ -31862,8 +32440,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "Curses",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Curses"
+                    },
                     "label": "Blind"
                   },
                   {
@@ -31872,8 +32453,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "Curses",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Curses"
+                    },
                     "label": "lost"
                   },
                   {
@@ -31882,8 +32466,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "Curses",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Curses"
+                    },
                     "label": "Maze"
                   },
                   {
@@ -31973,8 +32560,13 @@
               {
                 "inline": [
                   {
-                    "kind": "concept",
-                    "page": "Heart",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "entity",
+                      "id": 5,
+                      "variant": 10,
+                      "subtype": 6
+                    },
                     "label": "Heart"
                   },
                   {
@@ -31996,8 +32588,11 @@
                             "style": "plain"
                           },
                           {
-                            "kind": "concept",
-                            "page": "Balls of Steel",
+                            "kind": "ref",
+                            "target": {
+                              "kind": "article",
+                              "title": "Pills"
+                            },
                             "label": "Balls of Steel"
                           },
                           {
@@ -32108,8 +32703,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "Treasure Room",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Treasure Room"
+                    },
                     "label": "Treasure Room"
                   },
                   {
@@ -32398,8 +32996,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "Treasure Room",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Treasure Room"
+                    },
                     "label": "Treasure Room item pool"
                   },
                   {
@@ -32431,8 +33032,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "The Womb",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Womb"
+                    },
                     "label": "The Womb"
                   },
                   {
@@ -32600,8 +33204,11 @@
                             "style": "plain"
                           },
                           {
-                            "kind": "concept",
-                            "page": "Rocks",
+                            "kind": "ref",
+                            "target": {
+                              "kind": "article",
+                              "title": "Rocks"
+                            },
                             "label": "Tinted Rocks"
                           },
                           {
@@ -32690,8 +33297,11 @@
               {
                 "inline": [
                   {
-                    "kind": "concept",
-                    "page": "Trinkets",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Trinkets"
+                    },
                     "label": "Trinkets"
                   },
                   {
@@ -32738,8 +33348,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "Bookworm",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "transformation",
+                      "id": 10
+                    },
                     "label": "Bookworm"
                   },
                   {
@@ -32758,8 +33371,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "Bedroom",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Bedroom"
+                    },
                     "label": "Bedroom"
                   },
                   {
@@ -32818,8 +33434,11 @@
               {
                 "inline": [
                   {
-                    "kind": "concept",
-                    "page": "Pill",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Pills"
+                    },
                     "label": "Pill"
                   },
                   {
@@ -33264,8 +33883,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "Dark Room",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Dark Room"
+                    },
                     "label": "Dark Room"
                   },
                   {
@@ -33287,8 +33909,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "Treasure Room (Item Pool)",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Treasure Room (Item Pool)"
+                    },
                     "label": "Treasure Room item pool"
                   },
                   {
@@ -33313,8 +33938,11 @@
                         "style": "plain"
                       },
                       {
-                        "kind": "concept",
-                        "page": "Co-op",
+                        "kind": "ref",
+                        "target": {
+                          "kind": "article",
+                          "title": "Co-op"
+                        },
                         "label": "Colorful Baby"
                       },
                       {
@@ -33323,8 +33951,11 @@
                         "style": "plain"
                       },
                       {
-                        "kind": "concept",
-                        "page": "co-op",
+                        "kind": "ref",
+                        "target": {
+                          "kind": "article",
+                          "title": "Co-op"
+                        },
                         "label": "co-op"
                       },
                       {
@@ -33639,8 +34270,11 @@
                             "style": "plain"
                           },
                           {
-                            "kind": "concept",
-                            "page": "Full Health",
+                            "kind": "ref",
+                            "target": {
+                              "kind": "article",
+                              "title": "Pills"
+                            },
                             "label": "Full Health"
                           },
                           {
@@ -33649,8 +34283,11 @@
                             "style": "plain"
                           },
                           {
-                            "kind": "concept",
-                            "page": "Bad Trip",
+                            "kind": "ref",
+                            "target": {
+                              "kind": "article",
+                              "title": "Pills"
+                            },
                             "label": "Bad Trip"
                           },
                           {
@@ -34664,8 +35301,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "item Tags baby",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Item Tags baby"
+                    },
                     "label": "baby familiars"
                   },
                   {
@@ -35742,8 +36382,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "damage",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Damage"
+                    },
                     "label": "damage"
                   },
                   {
@@ -35752,8 +36395,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "tears",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Fire rate"
+                    },
                     "label": "tears"
                   },
                   {
@@ -35782,8 +36428,11 @@
                                 "style": "plain"
                               },
                               {
-                                "kind": "concept",
-                                "page": "damage",
+                                "kind": "ref",
+                                "target": {
+                                  "kind": "article",
+                                  "title": "Damage"
+                                },
                                 "label": "damage"
                               },
                               {
@@ -35896,8 +36545,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "challenge",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "Challenges"
+        },
         "label": "challenge"
       },
       {
@@ -36085,8 +36737,11 @@
       "pickups": [],
       "health": [
         {
-          "kind": "concept",
-          "page": "Health",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Health"
+          },
           "label": "4 red hearts"
         }
       ],
@@ -36227,8 +36882,11 @@
                         "style": "plain"
                       },
                       {
-                        "kind": "concept",
-                        "page": "Monsters",
+                        "kind": "ref",
+                        "target": {
+                          "kind": "article",
+                          "title": "Monsters"
+                        },
                         "label": "champion enemies"
                       },
                       {
@@ -36353,8 +37011,11 @@
               {
                 "inline": [
                   {
-                    "kind": "concept",
-                    "page": "Pills",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Pills"
+                    },
                     "label": "Pills"
                   },
                   {
@@ -36455,8 +37116,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "v1.06.J791",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "V1.06.J791"
+                    },
                     "label": "v1.06.J791"
                   },
                   {
@@ -36553,8 +37217,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "challenge",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "Challenges"
+        },
         "label": "challenge"
       },
       {
@@ -36793,8 +37460,11 @@
       ],
       "health": [
         {
-          "kind": "concept",
-          "page": "Health",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Health"
+          },
           "label": "4 red hearts"
         }
       ],
@@ -37287,8 +37957,13 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "Shell Game",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "entity",
+                      "id": 6,
+                      "variant": 4,
+                      "subtype": 0
+                    },
                     "label": "Shell Game"
                   },
                   {
@@ -37485,8 +38160,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "Full Health",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Pills"
+                    },
                     "label": "Full Health"
                   },
                   {
@@ -37531,8 +38209,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "Power Pill",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Pills"
+                    },
                     "label": "Power Pill"
                   },
                   {
@@ -37541,8 +38222,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "Bad Trip",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Pills"
+                    },
                     "label": "Bad Trip"
                   },
                   {
@@ -37896,8 +38580,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "Pickup",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Pickups"
+                    },
                     "label": "Pickup"
                   },
                   {
@@ -38156,8 +38843,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "Percs",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Pills"
+                    },
                     "label": "Percs"
                   },
                   {
@@ -38990,8 +39680,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "challenge",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "Challenges"
+        },
         "label": "challenge"
       },
       {
@@ -39416,8 +40109,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "Blue Fly",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Familiar"
+                    },
                     "label": "blue flies"
                   },
                   {
@@ -39741,8 +40437,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "Challenges",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "Challenges"
+        },
         "label": "challenge"
       },
       {
@@ -40018,8 +40717,11 @@
                 "style": "plain"
               },
               {
-                "kind": "concept",
-                "page": "heart container",
+                "kind": "ref",
+                "target": {
+                  "kind": "article",
+                  "title": "Health"
+                },
                 "label": "heart container"
               },
               {
@@ -40038,8 +40740,11 @@
                 "style": "plain"
               },
               {
-                "kind": "concept",
-                "page": "rocks",
+                "kind": "ref",
+                "target": {
+                  "kind": "article",
+                  "title": "Rocks"
+                },
                 "label": "rocks"
               },
               {
@@ -40048,8 +40753,11 @@
                 "style": "plain"
               },
               {
-                "kind": "concept",
-                "page": "tinted rock",
+                "kind": "ref",
+                "target": {
+                  "kind": "article",
+                  "title": "Rocks"
+                },
                 "label": "tinted rock"
               },
               {
@@ -40328,8 +41036,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "familiar",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Familiar"
+                    },
                     "label": "familiar"
                   },
                   {
@@ -40478,8 +41189,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "Pills",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Pills"
+                    },
                     "label": "One Makes You Larger"
                   },
                   {
@@ -40810,8 +41524,11 @@
       "pickups": [],
       "health": [
         {
-          "kind": "concept",
-          "page": "Health",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Health"
+          },
           "label": "4 red hearts"
         },
         {
@@ -40820,8 +41537,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Health",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Health"
+          },
           "label": "1 soul heart"
         }
       ],
@@ -40972,8 +41692,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "Library",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Library"
+                    },
                     "label": "Libraries"
                   },
                   {
@@ -41177,8 +41900,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "Telepills",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Pills"
+                    },
                     "label": "Telepills"
                   },
                   {
@@ -41535,8 +42261,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "V1.7.5",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "V1.7.5"
+                    },
                     "label": "Version 1.7.5"
                   },
                   {
@@ -41764,8 +42493,11 @@
                 "style": "plain"
               },
               {
-                "kind": "concept",
-                "page": "trinkets",
+                "kind": "ref",
+                "target": {
+                  "kind": "article",
+                  "title": "Trinkets"
+                },
                 "label": "trinkets"
               },
               {
@@ -41846,8 +42578,13 @@
                 "style": "plain"
               },
               {
-                "kind": "concept",
-                "page": "Devil Beggar",
+                "kind": "ref",
+                "target": {
+                  "kind": "entity",
+                  "id": 6,
+                  "variant": 4,
+                  "subtype": 0
+                },
                 "label": "Devil Beggar"
               },
               {
@@ -41856,8 +42593,13 @@
                 "style": "plain"
               },
               {
-                "kind": "concept",
-                "page": "Blood Donation Machine",
+                "kind": "ref",
+                "target": {
+                  "kind": "entity",
+                  "id": 6,
+                  "variant": 2,
+                  "subtype": 0
+                },
                 "label": "Blood Donation Machine"
               },
               {
@@ -41866,8 +42608,13 @@
                 "style": "plain"
               },
               {
-                "kind": "concept",
-                "page": "Battery Bum",
+                "kind": "ref",
+                "target": {
+                  "kind": "entity",
+                  "id": 6,
+                  "variant": 4,
+                  "subtype": 0
+                },
                 "label": "Battery Bum"
               },
               {
@@ -42299,8 +43046,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "Baby Shop (Item Pool)",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Baby Shop (Item Pool)"
+                    },
                     "label": "Baby Shop (Item Pool)"
                   },
                   {
@@ -42459,8 +43209,11 @@
       "pickups": [],
       "health": [
         {
-          "kind": "concept",
-          "page": "Health",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Health"
+          },
           "label": "3 soul hearts"
         }
       ],
@@ -42833,8 +43586,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "room",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Rooms"
+                    },
                     "label": "room"
                   },
                   {
@@ -43100,8 +43856,13 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "Bomb Bum",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "entity",
+                      "id": 6,
+                      "variant": 4,
+                      "subtype": 0
+                    },
                     "label": "Bomb Bum"
                   },
                   {
@@ -43249,8 +44010,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "Super Meat Boy",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 73
+                    },
                     "label": "Super Meat Boy"
                   },
                   {
@@ -43259,8 +44023,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "Super Bandage Girl",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 207
+                    },
                     "label": "Super Bandage Girl"
                   },
                   {
@@ -43689,8 +44456,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "friendly",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Status Effects"
+                    },
                     "label": "friendly"
                   },
                   {
@@ -43729,8 +44499,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "friendly",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Status Effects"
+                    },
                     "label": "friendly"
                   },
                   {
@@ -43958,8 +44731,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "activated collectible",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "Items"
+        },
         "label": "active item"
       },
       {
@@ -44291,8 +45067,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "pickup",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Pickups"
+                    },
                     "label": "pickup"
                   },
                   {
@@ -44755,8 +45534,13 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "coin",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "entity",
+                      "id": 5,
+                      "variant": 20,
+                      "subtype": 3
+                    },
                     "label": "coin"
                   },
                   {
@@ -44785,8 +45569,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "transformation",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Transformations"
+                    },
                     "label": "transformation"
                   },
                   {
@@ -45047,8 +45834,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "Curses",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "Curses"
+        },
         "label": "labyrinth"
       },
       {
@@ -45262,8 +46052,11 @@
                             "style": "plain"
                           },
                           {
-                            "kind": "concept",
-                            "page": "cards",
+                            "kind": "ref",
+                            "target": {
+                              "kind": "article",
+                              "title": "Cards and Runes"
+                            },
                             "label": "cards"
                           },
                           {
@@ -45399,8 +46192,11 @@
                             "style": "plain"
                           },
                           {
-                            "kind": "concept",
-                            "page": "Pills",
+                            "kind": "ref",
+                            "target": {
+                              "kind": "article",
+                              "title": "Pills"
+                            },
                             "label": "Pills"
                           },
                           {
@@ -45409,8 +46205,11 @@
                             "style": "plain"
                           },
                           {
-                            "kind": "concept",
-                            "page": "Pills",
+                            "kind": "ref",
+                            "target": {
+                              "kind": "article",
+                              "title": "Pills"
+                            },
                             "label": "Amnesia"
                           },
                           {
@@ -45485,8 +46284,11 @@
               {
                 "inline": [
                   {
-                    "kind": "concept",
-                    "page": "Curses",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Curses"
+                    },
                     "label": "maze"
                   },
                   {
@@ -45575,8 +46377,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "Devil Room",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Devil Room"
+                    },
                     "label": "Devil Deal"
                   },
                   {
@@ -45881,8 +46686,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "Curses",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Curses"
+                    },
                     "label": "lost"
                   },
                   {
@@ -46057,8 +46865,11 @@
               {
                 "inline": [
                   {
-                    "kind": "concept",
-                    "page": "Planetarium",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Planetarium"
+                    },
                     "label": "Planetarium"
                   },
                   {
@@ -46355,8 +47166,11 @@
               {
                 "inline": [
                   {
-                    "kind": "concept",
-                    "page": "Trinkets",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Trinkets"
+                    },
                     "label": "Trinkets"
                   },
                   {
@@ -46365,8 +47179,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "Pills",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Pills"
+                    },
                     "label": "Pills"
                   },
                   {
@@ -46375,8 +47192,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "Cards and Runes",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Cards and Runes"
+                    },
                     "label": "Cards and Runes"
                   },
                   {
@@ -46505,8 +47325,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "Devil Room",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Devil Room"
+                    },
                     "label": "Deal with the Devil"
                   },
                   {

@@ -26,7 +26,7 @@ mod transformation;
 mod unlock_condition;
 
 pub use blocks::parse_blocks;
-pub use build::{build, parses_into_entries};
+pub use build::build;
 #[cfg(all(feature = "embedded", feature = "test-api"))]
 pub use dataset::embedded_len;
 pub use dataset::{

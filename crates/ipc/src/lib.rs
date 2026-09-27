@@ -125,7 +125,7 @@ pub use tray::{tray_action, tray_locale, tray_text, TrayAction, TrayLocale, Tray
 pub use update::{UpdateFailure, UpdatePhase, UpdateReason, UpdateState, UpdateView};
 pub use want::{want_view, WantDiagnostic, WantRoute, WantState, WantView, WantedView};
 pub use wiki::{
-    rfc3339_to_unix, wiki_index, wiki_info, Block, Dlc, Entry, Infobox, Inline, ListItem,
-    PatchView, Section, SectionKind, Style, Target, WikiCounts, WikiIndex, WikiInfo,
-    WikiMissingReason, WikiPageRef,
+    rfc3339_to_unix, wiki_index, wiki_info, ArticleCategory, Block, Dlc, Entry, Infobox, Inline,
+    ListItem, PatchView, Section, SectionKind, Style, Target, WikiCounts, WikiIndex, WikiInfo,
+    WikiMissingReason, WikiPageCategory, WikiPageRef,
 };

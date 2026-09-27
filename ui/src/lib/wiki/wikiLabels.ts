@@ -38,6 +38,10 @@ export const kindText: Record<WikiCategory, Message> = {
   [WikiCategory.Challenges]: 'wiki.kind.challenge',
   [WikiCategory.Characters]: 'wiki.kind.character',
   [WikiCategory.Transformations]: 'wiki.kind.transformation',
+  [WikiCategory.Monsters]: 'wiki.kind.monster',
+  [WikiCategory.CardsAndRunes]: 'wiki.kind.cardOrRune',
+  [WikiCategory.Pickups]: 'wiki.kind.pickup',
+  [WikiCategory.Stages]: 'wiki.kind.stage',
 }
 
 // The id a list row prints under the title: the number the game knows the page by; a boss
@@ -54,6 +58,7 @@ export const pageId = (target: Target): string | null => {
       return `${target.id}.${target.variant}.${target.subtype}`
     case 'challenge':
       return String(target.number)
+    case 'article':
     case 'stage':
     case 'room':
     case 'concept':

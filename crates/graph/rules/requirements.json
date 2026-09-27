@@ -22,8 +22,10 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Coin"
+            "kind": "entity",
+            "id": 5,
+            "variant": 20,
+            "subtype": 3
           },
           "label": "Coin"
         }
@@ -85,8 +87,8 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "The Harbingers"
+            "kind": "article",
+            "title": "The Harbingers"
           },
           "label": "Harbinger"
         }
@@ -153,8 +155,8 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Tinted Rock"
+            "kind": "article",
+            "title": "Rocks"
           },
           "label": "Tinted Rock"
         }
@@ -164,8 +166,8 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Chapter 1"
+            "kind": "article",
+            "title": "Chapters"
           },
           "label": "Chapter 1"
         }
@@ -175,8 +177,8 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Chapter 2"
+            "kind": "article",
+            "title": "Chapters"
           },
           "label": "Chapter 2"
         }
@@ -210,8 +212,8 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Chapter 2"
+            "kind": "article",
+            "title": "Chapters"
           },
           "label": "Chapter 2"
         }
@@ -221,8 +223,8 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Chapter 3"
+            "kind": "article",
+            "title": "Chapters"
           },
           "label": "Chapter 3"
         }
@@ -283,8 +285,8 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "7 Deadly Sins"
+            "kind": "article",
+            "title": "Seven Deadly Sins"
           },
           "label": "7 Deadly Sins"
         }
@@ -389,8 +391,8 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Tinted Rock"
+            "kind": "article",
+            "title": "Rocks"
           },
           "label": "Tinted Rock"
         }
@@ -497,8 +499,8 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Chapter 1"
+            "kind": "article",
+            "title": "Chapters"
           },
           "label": "Chapter 1"
         }
@@ -508,8 +510,8 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Chapter 2"
+            "kind": "article",
+            "title": "Chapters"
           },
           "label": "Chapter 2"
         }
@@ -519,8 +521,8 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Chapter 3"
+            "kind": "article",
+            "title": "Chapters"
           },
           "label": "Chapter 3"
         }
@@ -530,8 +532,8 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Chapter 4"
+            "kind": "article",
+            "title": "Chapters"
           },
           "label": "Chapter 4"
         }
@@ -563,8 +565,10 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "heart"
+            "kind": "entity",
+            "id": 5,
+            "variant": 10,
+            "subtype": 6
           },
           "label": "heart"
         }
@@ -880,8 +884,10 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Donation Machine"
+            "kind": "entity",
+            "id": 6,
+            "variant": 8,
+            "subtype": 0
           },
           "label": "Donation Machine"
         }
@@ -970,8 +976,8 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Angel Room (Item Pool)"
+            "kind": "article",
+            "title": "Angel Room (Item Pool)"
           },
           "label": "Angel Room items"
         }
@@ -997,15 +1003,15 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "collection page"
+            "kind": "article",
+            "title": "Collection Page"
           },
           "label": "Collect"
         },
         {
           "target": {
-            "kind": "concept",
-            "name": "ending"
+            "kind": "article",
+            "title": "Endings"
           },
           "label": "ending"
         },
@@ -1202,8 +1208,8 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Devil Room"
+            "kind": "article",
+            "title": "Devil Room"
           },
           "label": "Deals with the Devil"
         }
@@ -1226,8 +1232,8 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Chapter 4"
+            "kind": "article",
+            "title": "Chapters"
           },
           "label": "Chapter 4"
         }
@@ -1262,8 +1268,8 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Chapter 6"
+            "kind": "article",
+            "title": "Chapters"
           },
           "label": "Chapter 6"
         }
@@ -1273,22 +1279,22 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Collection Page"
+            "kind": "article",
+            "title": "Collection Page"
           },
           "label": "Collect"
         },
         {
           "target": {
-            "kind": "concept",
-            "name": "items"
+            "kind": "article",
+            "title": "Items"
           },
           "label": "items"
         },
         {
           "target": {
-            "kind": "concept",
-            "name": "ending"
+            "kind": "article",
+            "title": "Endings"
           },
           "label": "ending"
         }
@@ -1298,8 +1304,8 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "rock"
+            "kind": "article",
+            "title": "Rocks"
           },
           "label": "rock"
         }
@@ -2071,8 +2077,10 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Donation Machine"
+            "kind": "entity",
+            "id": 6,
+            "variant": 8,
+            "subtype": 0
           },
           "label": "Donation Machine"
         }
@@ -2082,8 +2090,10 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Donation Machine"
+            "kind": "entity",
+            "id": 6,
+            "variant": 8,
+            "subtype": 0
           },
           "label": "Donation Machine"
         }
@@ -2093,8 +2103,10 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Donation Machine"
+            "kind": "entity",
+            "id": 6,
+            "variant": 8,
+            "subtype": 0
           },
           "label": "Donation Machine"
         }
@@ -2104,8 +2116,10 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Donation Machine"
+            "kind": "entity",
+            "id": 6,
+            "variant": 8,
+            "subtype": 0
           },
           "label": "Donation Machine"
         }
@@ -2115,8 +2129,10 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Donation Machine"
+            "kind": "entity",
+            "id": 6,
+            "variant": 8,
+            "subtype": 0
           },
           "label": "Donation Machine"
         }
@@ -2165,8 +2181,8 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Devil Room"
+            "kind": "article",
+            "title": "Devil Room"
           },
           "label": "items from Devil Rooms"
         }
@@ -2216,8 +2232,10 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Blood Donation Machine"
+            "kind": "entity",
+            "id": 6,
+            "variant": 2,
+            "subtype": 0
           },
           "label": "Blood Donation Machine"
         }
@@ -2227,8 +2245,10 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Slot Machine"
+            "kind": "entity",
+            "id": 6,
+            "variant": 2,
+            "subtype": 0
           },
           "label": "Slot Machine"
         }
@@ -2271,8 +2291,10 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Donation Machine"
+            "kind": "entity",
+            "id": 6,
+            "variant": 8,
+            "subtype": 0
           },
           "label": "Donation Machine"
         }
@@ -2282,8 +2304,10 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Donation Machine"
+            "kind": "entity",
+            "id": 6,
+            "variant": 8,
+            "subtype": 0
           },
           "label": "Donation Machine"
         }
@@ -2293,8 +2317,10 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Donation Machine"
+            "kind": "entity",
+            "id": 6,
+            "variant": 8,
+            "subtype": 0
           },
           "label": "Donation Machine"
         }
@@ -2304,8 +2330,10 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Donation Machine"
+            "kind": "entity",
+            "id": 6,
+            "variant": 8,
+            "subtype": 0
           },
           "label": "Donation Machine"
         }
@@ -2315,8 +2343,8 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Chapter 6"
+            "kind": "article",
+            "title": "Chapters"
           },
           "label": "Chapter 6"
         }
@@ -2326,15 +2354,15 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Completion Mark"
+            "kind": "article",
+            "title": "Completion Marks"
           },
           "label": "Completion Mark"
         },
         {
           "target": {
-            "kind": "concept",
-            "name": "Hard mode"
+            "kind": "article",
+            "title": "Hard mode"
           },
           "label": "Hard mode"
         },
@@ -2568,8 +2596,8 @@
         },
         {
           "target": {
-            "kind": "concept",
-            "name": "Hard mode"
+            "kind": "article",
+            "title": "Hard mode"
           },
           "label": "Hard mode"
         },
@@ -2604,8 +2632,8 @@
         },
         {
           "target": {
-            "kind": "concept",
-            "name": "Hard mode"
+            "kind": "article",
+            "title": "Hard mode"
           },
           "label": "Hard mode"
         },
@@ -2640,8 +2668,8 @@
         },
         {
           "target": {
-            "kind": "concept",
-            "name": "Hard mode"
+            "kind": "article",
+            "title": "Hard mode"
           },
           "label": "Hard mode"
         },
@@ -2676,8 +2704,8 @@
         },
         {
           "target": {
-            "kind": "concept",
-            "name": "Hard mode"
+            "kind": "article",
+            "title": "Hard mode"
           },
           "label": "Hard mode"
         },
@@ -2712,8 +2740,8 @@
         },
         {
           "target": {
-            "kind": "concept",
-            "name": "Hard mode"
+            "kind": "article",
+            "title": "Hard mode"
           },
           "label": "Hard mode"
         },
@@ -2748,8 +2776,8 @@
         },
         {
           "target": {
-            "kind": "concept",
-            "name": "Hard mode"
+            "kind": "article",
+            "title": "Hard mode"
           },
           "label": "Hard mode"
         },
@@ -2780,8 +2808,8 @@
         },
         {
           "target": {
-            "kind": "concept",
-            "name": "Hard mode"
+            "kind": "article",
+            "title": "Hard mode"
           },
           "label": "Hard mode"
         },
@@ -2816,8 +2844,8 @@
         },
         {
           "target": {
-            "kind": "concept",
-            "name": "Hard mode"
+            "kind": "article",
+            "title": "Hard mode"
           },
           "label": "Hard mode"
         },
@@ -2848,8 +2876,8 @@
         },
         {
           "target": {
-            "kind": "concept",
-            "name": "Hard mode"
+            "kind": "article",
+            "title": "Hard mode"
           },
           "label": "Hard mode"
         },
@@ -2884,8 +2912,8 @@
         },
         {
           "target": {
-            "kind": "concept",
-            "name": "Hard mode"
+            "kind": "article",
+            "title": "Hard mode"
           },
           "label": "Hard mode"
         },
@@ -2920,8 +2948,8 @@
         },
         {
           "target": {
-            "kind": "concept",
-            "name": "Hard mode"
+            "kind": "article",
+            "title": "Hard mode"
           },
           "label": "Hard mode"
         },
@@ -2956,8 +2984,8 @@
         },
         {
           "target": {
-            "kind": "concept",
-            "name": "Hard mode"
+            "kind": "article",
+            "title": "Hard mode"
           },
           "label": "Hard mode"
         },
@@ -2992,8 +3020,8 @@
         },
         {
           "target": {
-            "kind": "concept",
-            "name": "Hard mode"
+            "kind": "article",
+            "title": "Hard mode"
           },
           "label": "Hard mode"
         },
@@ -3917,8 +3945,8 @@
         },
         {
           "target": {
-            "kind": "concept",
-            "name": "Hard mode"
+            "kind": "article",
+            "title": "Hard mode"
           },
           "label": "Hard mode"
         },
@@ -4072,15 +4100,15 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "ending"
+            "kind": "article",
+            "title": "Endings"
           },
           "label": "ending"
         },
         {
           "target": {
-            "kind": "concept",
-            "name": "collection page"
+            "kind": "article",
+            "title": "Collection Page"
           },
           "label": "collect"
         }
@@ -4206,8 +4234,8 @@
         },
         {
           "target": {
-            "kind": "concept",
-            "name": "Hard mode"
+            "kind": "article",
+            "title": "Hard mode"
           },
           "label": "Hard mode"
         },
@@ -4224,8 +4252,10 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Greed Donation Machine"
+            "kind": "entity",
+            "id": 6,
+            "variant": 11,
+            "subtype": 0
           },
           "label": "Greed Donation Machine"
         }
@@ -4235,8 +4265,10 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Greed Donation Machine"
+            "kind": "entity",
+            "id": 6,
+            "variant": 11,
+            "subtype": 0
           },
           "label": "Greed Donation Machine"
         }
@@ -4246,8 +4278,10 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Greed Donation Machine"
+            "kind": "entity",
+            "id": 6,
+            "variant": 11,
+            "subtype": 0
           },
           "label": "Greed Donation Machine"
         }
@@ -4257,8 +4291,10 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Greed Donation Machine"
+            "kind": "entity",
+            "id": 6,
+            "variant": 11,
+            "subtype": 0
           },
           "label": "Greed Donation Machine"
         }
@@ -4268,8 +4304,10 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Greed Donation Machine"
+            "kind": "entity",
+            "id": 6,
+            "variant": 11,
+            "subtype": 0
           },
           "label": "Greed Donation Machine"
         }
@@ -4279,8 +4317,10 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Greed Donation Machine"
+            "kind": "entity",
+            "id": 6,
+            "variant": 11,
+            "subtype": 0
           },
           "label": "Greed Donation Machine"
         }
@@ -4290,8 +4330,10 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Greed Donation Machine"
+            "kind": "entity",
+            "id": 6,
+            "variant": 11,
+            "subtype": 0
           },
           "label": "Greed Donation Machine"
         }
@@ -4301,8 +4343,10 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Greed Donation Machine"
+            "kind": "entity",
+            "id": 6,
+            "variant": 11,
+            "subtype": 0
           },
           "label": "Greed Donation Machine"
         }
@@ -4312,8 +4356,10 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Greed Donation Machine"
+            "kind": "entity",
+            "id": 6,
+            "variant": 11,
+            "subtype": 0
           },
           "label": "Greed Donation Machine"
         }
@@ -4323,8 +4369,10 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Greed Donation Machine"
+            "kind": "entity",
+            "id": 6,
+            "variant": 11,
+            "subtype": 0
           },
           "label": "Greed Donation Machine"
         }
@@ -4334,15 +4382,15 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Hard mode"
+            "kind": "article",
+            "title": "Hard mode"
           },
           "label": "Hard mode"
         },
         {
           "target": {
-            "kind": "concept",
-            "name": "Completion Mark"
+            "kind": "article",
+            "title": "Completion Marks"
           },
           "label": "Completion Mark"
         },
@@ -4359,15 +4407,15 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Hard mode"
+            "kind": "article",
+            "title": "Hard mode"
           },
           "label": "Hard mode"
         },
         {
           "target": {
-            "kind": "concept",
-            "name": "Completion Mark"
+            "kind": "article",
+            "title": "Completion Marks"
           },
           "label": "Completion Mark"
         },
@@ -4384,15 +4432,15 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Hard mode"
+            "kind": "article",
+            "title": "Hard mode"
           },
           "label": "Hard mode"
         },
         {
           "target": {
-            "kind": "concept",
-            "name": "Completion Mark"
+            "kind": "article",
+            "title": "Completion Marks"
           },
           "label": "Completion Mark"
         },
@@ -4409,15 +4457,15 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Hard mode"
+            "kind": "article",
+            "title": "Hard mode"
           },
           "label": "Hard mode"
         },
         {
           "target": {
-            "kind": "concept",
-            "name": "Completion Mark"
+            "kind": "article",
+            "title": "Completion Marks"
           },
           "label": "Completion Mark"
         },
@@ -4434,15 +4482,15 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Hard mode"
+            "kind": "article",
+            "title": "Hard mode"
           },
           "label": "Hard mode"
         },
         {
           "target": {
-            "kind": "concept",
-            "name": "Completion Mark"
+            "kind": "article",
+            "title": "Completion Marks"
           },
           "label": "Completion Mark"
         },
@@ -4459,15 +4507,15 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Hard mode"
+            "kind": "article",
+            "title": "Hard mode"
           },
           "label": "Hard mode"
         },
         {
           "target": {
-            "kind": "concept",
-            "name": "Completion Mark"
+            "kind": "article",
+            "title": "Completion Marks"
           },
           "label": "Completion Mark"
         },
@@ -4502,15 +4550,15 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Hard mode"
+            "kind": "article",
+            "title": "Hard mode"
           },
           "label": "Hard mode"
         },
         {
           "target": {
-            "kind": "concept",
-            "name": "Completion Mark"
+            "kind": "article",
+            "title": "Completion Marks"
           },
           "label": "Completion Mark"
         },
@@ -4527,15 +4575,15 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Hard mode"
+            "kind": "article",
+            "title": "Hard mode"
           },
           "label": "Hard mode"
         },
         {
           "target": {
-            "kind": "concept",
-            "name": "Completion Mark"
+            "kind": "article",
+            "title": "Completion Marks"
           },
           "label": "Completion Mark"
         },
@@ -4552,15 +4600,15 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Hard mode"
+            "kind": "article",
+            "title": "Hard mode"
           },
           "label": "Hard mode"
         },
         {
           "target": {
-            "kind": "concept",
-            "name": "Completion Mark"
+            "kind": "article",
+            "title": "Completion Marks"
           },
           "label": "Completion Mark"
         },
@@ -4577,15 +4625,15 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Hard mode"
+            "kind": "article",
+            "title": "Hard mode"
           },
           "label": "Hard mode"
         },
         {
           "target": {
-            "kind": "concept",
-            "name": "Completion Mark"
+            "kind": "article",
+            "title": "Completion Marks"
           },
           "label": "Completion Mark"
         },
@@ -4602,15 +4650,15 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Hard mode"
+            "kind": "article",
+            "title": "Hard mode"
           },
           "label": "Hard mode"
         },
         {
           "target": {
-            "kind": "concept",
-            "name": "Completion Mark"
+            "kind": "article",
+            "title": "Completion Marks"
           },
           "label": "Completion Mark"
         },
@@ -4627,15 +4675,15 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Hard mode"
+            "kind": "article",
+            "title": "Hard mode"
           },
           "label": "Hard mode"
         },
         {
           "target": {
-            "kind": "concept",
-            "name": "Completion Mark"
+            "kind": "article",
+            "title": "Completion Marks"
           },
           "label": "Completion Mark"
         },
@@ -4678,8 +4726,8 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Tinted Rock"
+            "kind": "article",
+            "title": "Rocks"
           },
           "label": "Tinted Rock"
         },
@@ -4714,8 +4762,8 @@
         },
         {
           "target": {
-            "kind": "concept",
-            "name": "Tinted Rock"
+            "kind": "article",
+            "title": "Rocks"
           },
           "label": "Tinted Rock"
         }
@@ -4901,8 +4949,10 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Greed Donation Machine"
+            "kind": "entity",
+            "id": 6,
+            "variant": 11,
+            "subtype": 0
           },
           "label": "Greed Donation Machine"
         }
@@ -4921,8 +4971,8 @@
         },
         {
           "target": {
-            "kind": "concept",
-            "name": "tainted character"
+            "kind": "article",
+            "title": "Tainted Characters"
           },
           "label": "tainted character"
         }
@@ -5783,8 +5833,8 @@
         },
         {
           "target": {
-            "kind": "concept",
-            "name": "Hard mode"
+            "kind": "article",
+            "title": "Hard mode"
           },
           "label": "Hard mode"
         },
@@ -5801,15 +5851,15 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Hard mode"
+            "kind": "article",
+            "title": "Hard mode"
           },
           "label": "Hard mode"
         },
         {
           "target": {
-            "kind": "concept",
-            "name": "Completion Mark"
+            "kind": "article",
+            "title": "Completion Marks"
           },
           "label": "Completion Mark"
         },
@@ -5839,8 +5889,8 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Victory Lap"
+            "kind": "article",
+            "title": "Victory Lap"
           },
           "label": "Victory Lap"
         },
@@ -5865,8 +5915,8 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Bestiary"
+            "kind": "article",
+            "title": "Bestiary"
           },
           "label": "Bestiary"
         }
@@ -5876,8 +5926,8 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Daily Challenge"
+            "kind": "article",
+            "title": "Daily Challenges"
           },
           "label": "Daily Challenge"
         }
@@ -5992,8 +6042,8 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Daily Challenge"
+            "kind": "article",
+            "title": "Daily Challenges"
           },
           "label": "Daily Challenge"
         }
@@ -6003,8 +6053,8 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Victory Lap"
+            "kind": "article",
+            "title": "Victory Lap"
           },
           "label": "Victory Lap"
         },
@@ -6036,22 +6086,22 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Collection Page (Afterbirth †)"
+            "kind": "article",
+            "title": "Collection Page (Afterbirth †)"
           },
           "label": "Collect"
         },
         {
           "target": {
-            "kind": "concept",
-            "name": "ending"
+            "kind": "article",
+            "title": "Endings"
           },
           "label": "ending"
         },
         {
           "target": {
-            "kind": "concept",
-            "name": "Bestiary"
+            "kind": "article",
+            "title": "Bestiary"
           },
           "label": "Bestiary"
         }
@@ -6074,8 +6124,10 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Greed Donation Machine"
+            "kind": "entity",
+            "id": 6,
+            "variant": 11,
+            "subtype": 0
           },
           "label": "Greed Donation Machine"
         }
@@ -6173,8 +6225,8 @@
         },
         {
           "target": {
-            "kind": "concept",
-            "name": "Character"
+            "kind": "article",
+            "title": "Characters"
           },
           "label": "Character"
         }
@@ -6193,8 +6245,8 @@
         },
         {
           "target": {
-            "kind": "concept",
-            "name": "Character"
+            "kind": "article",
+            "title": "Characters"
           },
           "label": "Character"
         }
@@ -6230,8 +6282,8 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "rock"
+            "kind": "article",
+            "title": "Rocks"
           },
           "label": "rock"
         }
@@ -6241,8 +6293,8 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Chapter 1"
+            "kind": "article",
+            "title": "Chapters"
           },
           "label": "Chapter 1"
         }
@@ -6276,8 +6328,8 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Daily Challenge"
+            "kind": "article",
+            "title": "Daily Challenges"
           },
           "label": "Daily Challenge"
         }
@@ -6287,8 +6339,8 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "familiar"
+            "kind": "article",
+            "title": "Familiar"
           },
           "label": "familiar"
         }
@@ -6337,8 +6389,8 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "bed"
+            "kind": "article",
+            "title": "Bedroom"
           },
           "label": "bed"
         }
@@ -6348,8 +6400,8 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Victory Lap"
+            "kind": "article",
+            "title": "Victory Lap"
           },
           "label": "Victory Lap"
         },
@@ -6371,8 +6423,8 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Cards and Runes"
+            "kind": "article",
+            "title": "Cards and Runes"
           },
           "label": "Cards and Runes"
         }
@@ -6396,8 +6448,8 @@
         },
         {
           "target": {
-            "kind": "concept",
-            "name": "Collection Page"
+            "kind": "article",
+            "title": "Collection Page"
           },
           "label": "collection"
         }
@@ -6432,8 +6484,8 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Chapter 2"
+            "kind": "article",
+            "title": "Chapters"
           },
           "label": "Chapter 2"
         }
@@ -6464,8 +6516,8 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Chapter 3"
+            "kind": "article",
+            "title": "Chapters"
           },
           "label": "Chapter 3"
         }
@@ -6475,8 +6527,8 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Tech (Disambiguation)"
+            "kind": "article",
+            "title": "Tech (Disambiguation)"
           },
           "label": "technology"
         }
@@ -6517,8 +6569,8 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Harbinger"
+            "kind": "article",
+            "title": "Harbingers (Bosses)"
           },
           "label": "Harbinger"
         }
@@ -6541,8 +6593,8 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Chapter 4"
+            "kind": "article",
+            "title": "Chapters"
           },
           "label": "Chapter 4"
         }
@@ -6563,8 +6615,8 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Devil Room"
+            "kind": "article",
+            "title": "Devil Room"
           },
           "label": "Deals with the Devil"
         }
@@ -6585,15 +6637,15 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Item Tags tearsup"
+            "kind": "article",
+            "title": "Item Tags tearsup"
           },
           "label": "items"
         },
         {
           "target": {
-            "kind": "concept",
-            "name": "Tears Up"
+            "kind": "article",
+            "title": "Pills"
           },
           "label": "pills"
         }
@@ -6614,8 +6666,8 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Angel Room (Item Pool)"
+            "kind": "article",
+            "title": "Angel Room (Item Pool)"
           },
           "label": "Angel Rooms items"
         }
@@ -6661,8 +6713,8 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Devil Room"
+            "kind": "article",
+            "title": "Devil Room"
           },
           "label": "Deals with the Devil"
         }
@@ -6707,8 +6759,8 @@
         },
         {
           "target": {
-            "kind": "concept",
-            "name": "Horf!"
+            "kind": "article",
+            "title": "Pills"
           },
           "label": "Horf!"
         }
@@ -6718,8 +6770,8 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "bed"
+            "kind": "article",
+            "title": "Bedroom"
           },
           "label": "bed"
         }
@@ -6729,8 +6781,8 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Gulp!"
+            "kind": "article",
+            "title": "Pills"
           },
           "label": "Gulp!"
         }
@@ -6743,8 +6795,8 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Blue Fly"
+            "kind": "article",
+            "title": "Familiar"
           },
           "label": "Blue Flies"
         }
@@ -6768,8 +6820,8 @@
         },
         {
           "target": {
-            "kind": "concept",
-            "name": "homing"
+            "kind": "article",
+            "title": "Tear Effects"
           },
           "label": "homing"
         }
@@ -6819,8 +6871,8 @@
         },
         {
           "target": {
-            "kind": "concept",
-            "name": "Hard mode"
+            "kind": "article",
+            "title": "Hard mode"
           },
           "label": "Hard mode"
         },
@@ -7015,15 +7067,15 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Hard mode"
+            "kind": "article",
+            "title": "Hard mode"
           },
           "label": "Hard mode"
         },
         {
           "target": {
-            "kind": "concept",
-            "name": "Completion Mark"
+            "kind": "article",
+            "title": "Completion Marks"
           },
           "label": "Completion Mark"
         },
@@ -7078,8 +7130,8 @@
         },
         {
           "target": {
-            "kind": "concept",
-            "name": "hard mode"
+            "kind": "article",
+            "title": "Hard mode"
           },
           "label": "hard mode"
         },
@@ -7118,8 +7170,8 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Item Tags stars"
+            "kind": "article",
+            "title": "Item Tags stars"
           },
           "label": "'stars' item tag"
         }
@@ -7254,8 +7306,8 @@
         },
         {
           "target": {
-            "kind": "concept",
-            "name": "Hard mode"
+            "kind": "article",
+            "title": "Hard mode"
           },
           "label": "Hard mode"
         },
@@ -7450,15 +7502,15 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Hard mode"
+            "kind": "article",
+            "title": "Hard mode"
           },
           "label": "Hard mode"
         },
         {
           "target": {
-            "kind": "concept",
-            "name": "Completion Mark"
+            "kind": "article",
+            "title": "Completion Marks"
           },
           "label": "Completion Mark"
         },
@@ -7513,8 +7565,8 @@
         },
         {
           "target": {
-            "kind": "concept",
-            "name": "Hard mode"
+            "kind": "article",
+            "title": "Hard mode"
           },
           "label": "Hard mode"
         },
@@ -7709,15 +7761,15 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Hard mode"
+            "kind": "article",
+            "title": "Hard mode"
           },
           "label": "Hard mode"
         },
         {
           "target": {
-            "kind": "concept",
-            "name": "Completion Mark"
+            "kind": "article",
+            "title": "Completion Marks"
           },
           "label": "Completion Mark"
         },
@@ -9427,8 +9479,8 @@
         },
         {
           "target": {
-            "kind": "concept",
-            "name": "Battery Bum (Item Pool)"
+            "kind": "article",
+            "title": "Battery Bum (Item Pool)"
           },
           "label": "item"
         }
@@ -9848,22 +9900,22 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Hard mode"
+            "kind": "article",
+            "title": "Hard mode"
           },
           "label": "Hard mode"
         },
         {
           "target": {
-            "kind": "concept",
-            "name": "Completion Mark"
+            "kind": "article",
+            "title": "Completion Marks"
           },
           "label": "Completion Mark"
         },
         {
           "target": {
-            "kind": "concept",
-            "name": "character"
+            "kind": "article",
+            "title": "Characters"
           },
           "label": "character"
         }
@@ -12178,22 +12230,22 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Hard mode"
+            "kind": "article",
+            "title": "Hard mode"
           },
           "label": "Hard mode"
         },
         {
           "target": {
-            "kind": "concept",
-            "name": "Completion Mark"
+            "kind": "article",
+            "title": "Completion Marks"
           },
           "label": "Completion Mark"
         },
         {
           "target": {
-            "kind": "concept",
-            "name": "character"
+            "kind": "article",
+            "title": "Characters"
           },
           "label": "character"
         }
@@ -12203,8 +12255,8 @@
       "refs": [
         {
           "target": {
-            "kind": "concept",
-            "name": "Collection Page (Repentance)"
+            "kind": "article",
+            "title": "Collection Page (Repentance)"
           },
           "label": "collect"
         }
@@ -12235,149 +12287,199 @@
   },
   "targets": [
     {
-      "key": "concept:'stars' item tag",
+      "key": "article:'stars' item tag",
       "label": "'stars' item tag",
       "uses": 1
     },
     {
-      "key": "concept:7 Deadly Sins",
+      "key": "article:7 Deadly Sins",
       "label": "7 Deadly Sins",
       "uses": 1
     },
     {
-      "key": "concept:Angel Room items",
+      "key": "article:Angel Room items",
       "label": "Angel Room items",
       "uses": 1
     },
     {
-      "key": "concept:Angel Rooms items",
+      "key": "article:Angel Rooms items",
       "label": "Angel Rooms items",
       "uses": 1
     },
     {
-      "key": "concept:Bestiary",
+      "key": "article:Bestiary",
       "label": "Bestiary",
       "uses": 2
     },
     {
-      "key": "concept:Blood Donation Machine",
-      "label": "Blood Donation Machine",
-      "uses": 1
-    },
-    {
-      "key": "concept:Blue Flies",
+      "key": "article:Blue Flies",
       "label": "Blue Flies",
       "uses": 1
     },
     {
-      "key": "concept:Cards and Runes",
+      "key": "article:Cards and Runes",
       "label": "Cards and Runes",
       "uses": 1
     },
     {
-      "key": "concept:Chapter 1",
+      "key": "article:Chapter 1",
       "label": "Chapter 1",
       "uses": 3
     },
     {
-      "key": "concept:Chapter 2",
+      "key": "article:Chapter 2",
       "label": "Chapter 2",
       "uses": 4
     },
     {
-      "key": "concept:Chapter 3",
+      "key": "article:Chapter 3",
       "label": "Chapter 3",
       "uses": 3
     },
     {
-      "key": "concept:Chapter 4",
+      "key": "article:Chapter 4",
       "label": "Chapter 4",
       "uses": 3
     },
     {
-      "key": "concept:Chapter 6",
+      "key": "article:Chapter 6",
       "label": "Chapter 6",
       "uses": 2
     },
     {
-      "key": "concept:Character",
+      "key": "article:Character",
       "label": "Character",
       "uses": 2
     },
     {
-      "key": "concept:Coin",
-      "label": "Coin",
-      "uses": 1
-    },
-    {
-      "key": "concept:Collect",
+      "key": "article:Collect",
       "label": "Collect",
       "uses": 3
     },
     {
-      "key": "concept:Completion Mark",
+      "key": "article:Completion Mark",
       "label": "Completion Mark",
       "uses": 19
     },
     {
-      "key": "concept:Daily Challenge",
+      "key": "article:Daily Challenge",
       "label": "Daily Challenge",
       "uses": 3
     },
     {
-      "key": "concept:Deals with the Devil",
+      "key": "article:Deals with the Devil",
       "label": "Deals with the Devil",
       "uses": 3
     },
     {
-      "key": "concept:Donation Machine",
-      "label": "Donation Machine",
-      "uses": 10
-    },
-    {
-      "key": "concept:Greed Donation Machine",
-      "label": "Greed Donation Machine",
-      "uses": 12
-    },
-    {
-      "key": "concept:Gulp!",
+      "key": "article:Gulp!",
       "label": "Gulp!",
       "uses": 1
     },
     {
-      "key": "concept:Harbinger",
+      "key": "article:Harbinger",
       "label": "Harbinger",
       "uses": 2
     },
     {
-      "key": "concept:Hard mode",
+      "key": "article:Hard mode",
       "label": "Hard mode",
       "uses": 38
     },
     {
-      "key": "concept:Horf!",
+      "key": "article:Horf!",
       "label": "Horf!",
+      "uses": 1
+    },
+    {
+      "key": "article:Tinted Rock",
+      "label": "Tinted Rock",
+      "uses": 4
+    },
+    {
+      "key": "article:Victory Lap",
+      "label": "Victory Lap",
+      "uses": 3
+    },
+    {
+      "key": "article:bed",
+      "label": "bed",
+      "uses": 2
+    },
+    {
+      "key": "article:character",
+      "label": "character",
+      "uses": 2
+    },
+    {
+      "key": "article:collect",
+      "label": "collect",
+      "uses": 2
+    },
+    {
+      "key": "article:collection",
+      "label": "collection",
+      "uses": 1
+    },
+    {
+      "key": "article:ending",
+      "label": "ending",
+      "uses": 4
+    },
+    {
+      "key": "article:familiar",
+      "label": "familiar",
+      "uses": 1
+    },
+    {
+      "key": "article:hard mode",
+      "label": "hard mode",
+      "uses": 1
+    },
+    {
+      "key": "article:homing",
+      "label": "homing",
+      "uses": 1
+    },
+    {
+      "key": "article:item",
+      "label": "item",
+      "uses": 1
+    },
+    {
+      "key": "article:items",
+      "label": "items",
+      "uses": 2
+    },
+    {
+      "key": "article:items from Devil Rooms",
+      "label": "items from Devil Rooms",
+      "uses": 1
+    },
+    {
+      "key": "article:pills",
+      "label": "pills",
+      "uses": 1
+    },
+    {
+      "key": "article:rock",
+      "label": "rock",
+      "uses": 2
+    },
+    {
+      "key": "article:tainted character",
+      "label": "tainted character",
+      "uses": 1
+    },
+    {
+      "key": "article:technology",
+      "label": "technology",
       "uses": 1
     },
     {
       "key": "concept:I - The Magician",
       "label": "I - The Magician",
       "uses": 1
-    },
-    {
-      "key": "concept:Slot Machine",
-      "label": "Slot Machine",
-      "uses": 1
-    },
-    {
-      "key": "concept:Tinted Rock",
-      "label": "Tinted Rock",
-      "uses": 4
-    },
-    {
-      "key": "concept:Victory Lap",
-      "label": "Victory Lap",
-      "uses": 3
     },
     {
       "key": "concept:XIII - Death",
@@ -12397,86 +12499,6 @@
     {
       "key": "concept:Yes Mother? items",
       "label": "Yes Mother? items",
-      "uses": 1
-    },
-    {
-      "key": "concept:bed",
-      "label": "bed",
-      "uses": 2
-    },
-    {
-      "key": "concept:character",
-      "label": "character",
-      "uses": 2
-    },
-    {
-      "key": "concept:collect",
-      "label": "collect",
-      "uses": 2
-    },
-    {
-      "key": "concept:collection",
-      "label": "collection",
-      "uses": 1
-    },
-    {
-      "key": "concept:ending",
-      "label": "ending",
-      "uses": 4
-    },
-    {
-      "key": "concept:familiar",
-      "label": "familiar",
-      "uses": 1
-    },
-    {
-      "key": "concept:hard mode",
-      "label": "hard mode",
-      "uses": 1
-    },
-    {
-      "key": "concept:heart",
-      "label": "heart",
-      "uses": 1
-    },
-    {
-      "key": "concept:homing",
-      "label": "homing",
-      "uses": 1
-    },
-    {
-      "key": "concept:item",
-      "label": "item",
-      "uses": 1
-    },
-    {
-      "key": "concept:items",
-      "label": "items",
-      "uses": 2
-    },
-    {
-      "key": "concept:items from Devil Rooms",
-      "label": "items from Devil Rooms",
-      "uses": 1
-    },
-    {
-      "key": "concept:pills",
-      "label": "pills",
-      "uses": 1
-    },
-    {
-      "key": "concept:rock",
-      "label": "rock",
-      "uses": 2
-    },
-    {
-      "key": "concept:tainted character",
-      "label": "tainted character",
-      "uses": 1
-    },
-    {
-      "key": "concept:technology",
-      "label": "technology",
       "uses": 1
     },
     {
@@ -12500,8 +12522,18 @@
       "uses": 2
     },
     {
+      "key": "entity:Blood Donation Machine",
+      "label": "Blood Donation Machine",
+      "uses": 1
+    },
+    {
       "key": "entity:C.H.A.D.",
       "label": "C.H.A.D.",
+      "uses": 1
+    },
+    {
+      "key": "entity:Coin",
+      "label": "Coin",
       "uses": 1
     },
     {
@@ -12515,9 +12547,19 @@
       "uses": 1
     },
     {
+      "key": "entity:Donation Machine",
+      "label": "Donation Machine",
+      "uses": 10
+    },
+    {
       "key": "entity:Gish",
       "label": "Gish",
       "uses": 1
+    },
+    {
+      "key": "entity:Greed Donation Machine",
+      "label": "Greed Donation Machine",
+      "uses": 12
     },
     {
       "key": "entity:Hell Game",
@@ -12615,6 +12657,11 @@
       "uses": 1
     },
     {
+      "key": "entity:Slot Machine",
+      "label": "Slot Machine",
+      "uses": 1
+    },
+    {
       "key": "entity:Soul Heart",
       "label": "Soul Heart",
       "uses": 1
@@ -12657,6 +12704,11 @@
     {
       "key": "entity:dying",
       "label": "dying",
+      "uses": 1
+    },
+    {
+      "key": "entity:heart",
+      "label": "heart",
       "uses": 1
     },
     {

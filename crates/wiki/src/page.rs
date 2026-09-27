@@ -13,10 +13,12 @@ use crate::infobox::{
     entry_facts, extract_infoboxes, infobox_from, leading_number, InfoboxKind, RawInfobox,
 };
 use crate::inline::{parse_inline, plain};
+use crate::raw::ArticleCategory;
 use crate::resolver::{is_layout_template, Resolver};
 use crate::sections::{section_kind, split_page};
 use crate::template::{template_segments, Segment};
-use crate::{Block, Diagnostics, Entry, Inline, Section, Style};
+use crate::title::canonical_title;
+use crate::{Block, Diagnostics, Entry, Infobox, Inline, Section, Style};
 
 /// The page kind, as `index.json` classifies it: decides the folder in `raw/` and the
 /// template the page was listed from. It does not decide the entries' kind: each infobox
@@ -32,11 +34,12 @@ pub enum PageKind {
     Character,
     Transformation,
     /// A monster or a pickup entity: `Infobox monster` or `Infobox entity` (design decision 2,
-    /// `2026-09-26-wiki-complete-design.md`). Not built into dataset entries yet — that is a
-    /// later step (`build::parses_into_entries`).
+    /// `2026-09-26-wiki-complete-design.md`). Dispatched through `InfoboxKind::Entity` like
+    /// every other infobox kind — `build::entries_of` sends it through `parse_page`.
     Entity,
-    /// Every other page of namespace 0: no infobox of a kind we read. Not built into dataset
-    /// entries yet, same as `Entity`.
+    /// Every other page of namespace 0: no infobox of a kind we read. One entry per page,
+    /// built by `parse_article_page` rather than dispatched by infobox — `build::entries_of`
+    /// is where the two paths split.
     Article,
 }
 
@@ -97,7 +100,9 @@ impl PageKind {
     }
 }
 
-/// The key an entry enters the dataset with. A boss carries the bestiary triple.
+/// The key an entry enters the dataset with. A boss and an entity both carry the bestiary
+/// triple, in their own collections (`Dataset::entry` tries the bosses first, then the
+/// entities — design decision 2). An article's key is its canonical title.
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub enum EntryKey {
     Item(u32),
@@ -107,6 +112,8 @@ pub enum EntryKey {
     Challenge(u32),
     Character(u32),
     Transformation(u32),
+    Entity(u32, u32, u32),
+    Article(String),
 }
 
 /// A numeric infobox parameter: the leading digits, because the wiki can follow the
@@ -145,6 +152,20 @@ fn entry_key(kind: InfoboxKind, title: &str, ib: &RawInfobox, r: &Resolver) -> O
             r.transformation_of_page(title)
                 .or_else(|| number(ib, "id"))?,
         ),
+        // The variant infobox's own `name` first (Gaper's page carries sixteen, one per
+        // variant, and only the first has no `name`); the entity table over the raw numbers,
+        // because it is the source that also knows the subtype most infoboxes never state.
+        InfoboxKind::Entity => {
+            let name = name_param(ib).unwrap_or(title);
+            match r.entity_of_name(name) {
+                Some((id, variant, subtype)) => EntryKey::Entity(id, variant, subtype),
+                None => EntryKey::Entity(
+                    number(ib, "id")?,
+                    number(ib, "variant").unwrap_or(0),
+                    number(ib, "subtype").unwrap_or(0),
+                ),
+            }
+        }
     })
 }
 
@@ -454,6 +475,9 @@ fn entry_title(kind: InfoboxKind, title: &str, ib: &RawInfobox, r: &Resolver) ->
             .map(str::to_string)
             .or_else(|| character(title, ib, r).map(|(_, n)| n))
             .unwrap_or_else(|| title.to_string()),
+        // A variant's own name (Frowning Gaper) over the page's (Gaper); the page title when
+        // the infobox states none, for the page's own first entity.
+        InfoboxKind::Entity => name.unwrap_or(title).to_string(),
         InfoboxKind::Passive
         | InfoboxKind::Activated
         | InfoboxKind::Trinket
@@ -526,6 +550,41 @@ pub fn parse_page(
         .collect()
 }
 
+/// An article page's own entry: no infobox drives it, so it is built once per page rather
+/// than once per recognized infobox — a page can carry zero (the ordinary case) or an
+/// embedded one of a kind this crate does read (`entry_of`'s own loop over
+/// `extract_infoboxes`, called first by every caller of this function, already produces
+/// those; see `build::build`). `category` is the infobox template the fetch already found on
+/// this page, when one of the four this sub-project declines to read (card, rune, pickup,
+/// stage) was there — decided at fetch time and carried in `index.json`, not re-detected
+/// here.
+///
+/// Keyed by [`canonical_title`]: MediaWiki treats two spellings that differ only by the
+/// first character's case, or by `_` against a space, as one page, and the key has to agree.
+pub fn parse_article_page(
+    title: &str,
+    revid: u64,
+    text: &str,
+    category: Option<ArticleCategory>,
+    r: &Resolver,
+    d: &mut Diagnostics,
+) -> (EntryKey, Entry) {
+    let canonical = canonical_title(title);
+    let editions = page_editions_of(&extract_infoboxes(text));
+    let mut entry = Entry {
+        title: canonical.clone(),
+        revid,
+        description: preamble(text, r, d),
+        dlc: Vec::new(),
+        unlocked_by: None,
+        infobox: Infobox::Article { category },
+        sections: sections(text, r, d),
+    };
+    narrow_to_page(&mut entry, editions, d);
+    narrow_sections(&mut entry.sections, editions, d);
+    (EntryKey::Article(canonical), entry)
+}
+
 /// The entry one infobox gives, or `None` — counted — for an infobox of no kind, or of a kind
 /// whose key the page does not state.
 fn entry_of(
@@ -574,7 +633,8 @@ fn entry_sections(
         | InfoboxKind::Boss
         | InfoboxKind::Challenge
         | InfoboxKind::Character
-        | InfoboxKind::Transformation => page.sections(r, d),
+        | InfoboxKind::Transformation
+        | InfoboxKind::Entity => page.sections(r, d),
     }
 }
 
@@ -607,10 +667,15 @@ fn entry_description(
             out.extend(own);
             out
         }
-        // Bosses and characters have no `description` parameter, and 27 of 45 challenges
-        // leave it out: the opening paragraph is the only summary those pages write. It
-        // stands in when the infobox is silent, never alongside it.
-        InfoboxKind::Boss | InfoboxKind::Challenge | InfoboxKind::Character if own.is_empty() => {
+        // Bosses, characters and entities have no `description` parameter at all, and 27 of
+        // 45 challenges leave it out: the opening paragraph is the only summary those pages
+        // write. It stands in when the infobox is silent, never alongside it.
+        InfoboxKind::Boss
+        | InfoboxKind::Challenge
+        | InfoboxKind::Character
+        | InfoboxKind::Entity
+            if own.is_empty() =>
+        {
             page.preamble(r, d)
         }
         // What the wiki files as an achievement's `description` is the unlock paper's line,
@@ -622,7 +687,8 @@ fn entry_description(
         | InfoboxKind::Trinket
         | InfoboxKind::Boss
         | InfoboxKind::Challenge
-        | InfoboxKind::Character => own,
+        | InfoboxKind::Character
+        | InfoboxKind::Entity => own,
     }
 }
 
@@ -1024,6 +1090,58 @@ mod tests {
         assert_eq!(d.pages_without_id, 1);
     }
 
+    /// An entity infobox resolves by its own `name` first (a variant on a shared page), the
+    /// page title when there is none, and degrades to the infobox's own raw numbers when the
+    /// table has neither — the same three-tier fallback a boss's key already has.
+    #[test]
+    fn an_entity_key_resolves_by_name_then_title_then_the_infoboxs_own_numbers() {
+        let mut d = Diagnostics::default();
+        // "Uriel" is Angel's alias in the fixture entity table (271.0.0).
+        let src = "{{infobox monster\n | name = Uriel\n | base hp = 1\n}}\n";
+        let v = parse_page("Angel", 1, src, &test_resolver(), &mut d);
+        assert_eq!(v[0].0, EntryKey::Entity(271, 0, 0));
+        assert_eq!(v[0].1.title, "Uriel");
+
+        // No `name`: the page title, "Mom", resolves through the table (45.0.0).
+        let src = "{{infobox monster\n | base hp = 1\n}}\n";
+        let v = parse_page("Mom", 1, src, &test_resolver(), &mut d);
+        assert_eq!(v[0].0, EntryKey::Entity(45, 0, 0));
+
+        // A name the table has no row for: the infobox's own numbers, subtype defaulted.
+        let src = "{{infobox monster\n | name = Nobody\n | id = 900\n | variant = 2\n}}\n";
+        let v = parse_page("Nobody", 1, src, &test_resolver(), &mut d);
+        assert_eq!(v[0].0, EntryKey::Entity(900, 2, 0));
+
+        // Neither the table nor an `id`: dropped, and counted the same as every other kind.
+        d = Diagnostics::default();
+        let v = parse_page(
+            "Nothing",
+            1,
+            "{{infobox monster\n | base hp = 1\n}}\n",
+            &test_resolver(),
+            &mut d,
+        );
+        assert!(v.is_empty());
+        assert_eq!(d.pages_without_id, 1);
+    }
+
+    /// A secondary `{{infobox monster}}` on a collectible or a character page (Blood Puppy,
+    /// My Shadow, Tainted Jacob on the live wiki) is dispatched the same way Tonsil's
+    /// trinket-and-collectible pair already is: every infobox on the page is its own entry,
+    /// of its own kind, regardless of which kind the page itself was filed under.
+    #[test]
+    fn a_secondary_monster_infobox_on_another_kinds_page_is_its_own_entity_entry() {
+        let src = "{{infobox character\n | id = 20\n}}\n\
+                    {{infobox monster\n | name = Uriel\n | is mini-boss = yes\n}}\n\
+                    == Notes ==\nn\n";
+        let mut d = Diagnostics::default();
+        let v = parse_page("Jacob", 1, src, &test_resolver(), &mut d);
+        assert_eq!(
+            v.iter().map(|(k, _)| k.clone()).collect::<Vec<_>>(),
+            vec![EntryKey::Character(20), EntryKey::Entity(271, 0, 0)]
+        );
+    }
+
     #[test]
     fn boss_key_from_entity_table_or_infobox() {
         let src = "{{infobox boss\n | id = 45\n | base hp = 1\n}}\n== Behavior ==\nx\n";
@@ -1071,16 +1189,25 @@ mod tests {
 
     #[test]
     fn an_alternate_character_form_takes_its_own_name() {
+        // The page's third infobox, `Infobox monster`, was inert fixture noise before
+        // `InfoboxKind::Entity` existed. Now it is dispatched the same way Tonsil's
+        // trinket-and-collectible pair already is: its own entry, "Dark Esau" not in the
+        // fixture's entity table, so it falls back to the infobox's own `id`.
         let src = "{{infobox character\n | name = Lazarus\n | id = 8\n}}\n{{infobox character\n | name = Lazarus Risen\n | id = 11\n}}\n{{infobox monster\n | name = Dark Esau\n | id = 866\n}}\n== Notes ==\nn\n";
         let mut d = Diagnostics::default();
         let v = parse_page("Lazarus", 1, src, &test_resolver(), &mut d);
         assert_eq!(
             v.iter().map(|(k, _)| k.clone()).collect::<Vec<_>>(),
-            vec![EntryKey::Character(8), EntryKey::Character(11)]
+            vec![
+                EntryKey::Character(8),
+                EntryKey::Character(11),
+                EntryKey::Entity(866, 0, 0)
+            ]
         );
         assert_eq!(v[0].1.title, "Lazarus");
         assert_eq!(v[1].1.title, "Lazarus Risen");
         assert_eq!(v[1].1.sections.len(), 1);
+        assert_eq!(v[2].1.title, "Dark Esau");
         assert_eq!(d.pages_without_id, 0);
     }
 
@@ -1118,6 +1245,53 @@ mod tests {
         assert_eq!(v[0].0, EntryKey::Character(99));
         assert_eq!(v[0].1.title, "Nobody");
         assert_eq!(d.pages_without_id, 0);
+    }
+
+    /// An article has no infobox to drive it: one entry per page, keyed by its canonical
+    /// title, its category carried through from `index.json` (decided at fetch time, not
+    /// re-detected here) and its body read the same way any other page's is.
+    ///
+    /// The heading here is `Notes`, a kind `SectionKind` already knows: a mechanics page's
+    /// own free-form headings ("Formula", on the real Damage page) are kept under their own
+    /// title only once `Section` carries one and `SectionKind` has `Other` — a change to
+    /// `sections.rs`'s section-splitting owned by a different sub-project of this same
+    /// branch, not by this one.
+    #[test]
+    fn an_article_page_is_one_entry_keyed_by_its_canonical_title() {
+        let src = "'''Damage''' is a stat that determines how much harm Isaac's tears and \
+                    other attacks deal to enemies.\n== Notes ==\n* base damage\n";
+        let mut d = Diagnostics::default();
+        let (key, entry) = parse_article_page("damage", 42, src, None, &test_resolver(), &mut d);
+        assert_eq!(key, EntryKey::Article("Damage".to_string()));
+        assert_eq!(entry.title, "Damage");
+        assert_eq!(entry.revid, 42);
+        assert!(crate::plain(&entry.description).starts_with("Damage is a stat"));
+        assert_eq!(entry.infobox, Infobox::Article { category: None });
+        assert_eq!(entry.sections.len(), 1, "{:?}", entry.sections);
+    }
+
+    /// A card article carries its category from `index.json`, and an empty page still gets
+    /// a shape: no preamble, no sections, and still an entry.
+    #[test]
+    fn an_article_carries_its_category_and_degrades_when_the_page_says_nothing() {
+        let mut d = Diagnostics::default();
+        let (key, entry) = parse_article_page(
+            "0 - The Fool",
+            1,
+            "",
+            Some(ArticleCategory::Card),
+            &test_resolver(),
+            &mut d,
+        );
+        assert_eq!(key, EntryKey::Article("0 - The Fool".to_string()));
+        assert_eq!(
+            entry.infobox,
+            Infobox::Article {
+                category: Some(ArticleCategory::Card)
+            }
+        );
+        assert!(entry.description.is_empty());
+        assert!(entry.sections.is_empty());
     }
 
     #[test]

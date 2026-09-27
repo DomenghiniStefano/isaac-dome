@@ -1,15 +1,15 @@
 //! From `Raw` to `Dataset`: the resolver, the pages in order, the `meta`. Deterministic:
 //! same `raw/`, same JSON.
 
-use std::collections::BTreeMap;
+use std::collections::{BTreeMap, BTreeSet};
 
-use crate::dataset::{Dataset, Meta, Patch, Source, HOST};
+use crate::dataset::{resolve_redirect, Dataset, Meta, Patch, Source, HOST};
 use crate::infobox::{extract_infoboxes, stat_defaults, InfoboxKind, RawInfobox};
-use crate::page::{parse_page, PageKind};
+use crate::page::{parse_article_page, parse_page, EntryKey, PageKind};
 use crate::raw::{Raw, RawPage};
 use crate::resolver::{Corrections, Resolver, Row};
 use crate::unlock_condition::add_conditions;
-use crate::Diagnostics;
+use crate::{Block, Diagnostics, Entry, Inline, Target};
 
 /// Characters have no Cargo table: title (and the infobox's `name`) → id is derived from
 /// their pages, before building the resolver. A title always takes its page's id; a `name`
@@ -57,20 +57,22 @@ pub fn build(raw: &Raw, corrections: &Corrections) -> Dataset {
     let r = Resolver::new(&raw.tables, &characters(raw), corrections)
         .with_character_stat_defaults(character_stat_defaults);
     let mut ds = Dataset::empty();
+    // Carried through as-is: `Dataset::entry` chases a redirect to resolve a `Stage`, `Room`
+    // or `Concept` target to its article (design decision 3), and `resolve_concepts_to_articles`
+    // below chases the same map to turn a `Concept` link into a `Ref`.
+    ds.meta.redirects = raw.redirects.clone();
     let mut diagnostics = Diagnostics::default();
     for p in pages_in_order(raw) {
         note_revision(&mut ds.meta, p);
-        if !parses_into_entries(p.index.kind) {
-            continue;
-        }
         let mut d = Diagnostics::default();
-        for (key, entry) in parse_page(&p.title, p.index.revid, &p.text, &r, &mut d) {
+        for (key, entry) in entries_of(p, &r, &mut d) {
             ds.insert_first(key, entry);
         }
         diagnostics.merge(&d);
     }
     apply_descriptions(&mut ds, corrections, &r, &mut diagnostics);
     add_conditions(&mut ds);
+    resolve_concepts_to_articles(&mut ds, &r);
     ds.meta.last_known_patch = last_known_patch(&raw.versions);
     ds.meta.source = Source {
         name: "The Binding of Isaac: Rebirth Wiki".into(),
@@ -82,22 +84,121 @@ pub fn build(raw: &Raw, corrections: &Corrections) -> Dataset {
     ds
 }
 
-/// Whether a page of this kind is built into dataset entries here. `Entity` and `Article`
-/// are not, yet: their pages are fetched and filed (`wiki-snapshot`, `raw.rs`), but a later
-/// sub-project reads their infoboxes and bodies into `Infobox::Entity` / `Infobox::Article`
-/// (design decision 2, `2026-09-26-wiki-complete-design.md`). Written as an explicit match
-/// rather than a wildcard so a ninth kind has to say which side of the line it is on.
-pub fn parses_into_entries(kind: PageKind) -> bool {
-    match kind {
+/// The entries one page gives. Every other kind is dispatched by its infoboxes
+/// (`parse_page`, one entry per recognized infobox — `Entity` reads the same way, through
+/// `InfoboxKind::Entity`). `Article` has none: it is one entry per page, built from the page
+/// itself and the category `index.json` already decided at fetch time (design decision 2).
+/// Written as an explicit match rather than a wildcard so a ninth kind has to say which arm
+/// it takes.
+fn entries_of(p: &RawPage, r: &Resolver, d: &mut Diagnostics) -> Vec<(EntryKey, Entry)> {
+    match p.index.kind {
+        PageKind::Article => vec![parse_article_page(
+            &p.title,
+            p.index.revid,
+            &p.text,
+            p.index.category,
+            r,
+            d,
+        )],
         PageKind::Collectible
         | PageKind::Trinket
         | PageKind::Achievement
         | PageKind::Boss
         | PageKind::Challenge
         | PageKind::Character
-        | PageKind::Transformation => true,
-        PageKind::Entity | PageKind::Article => false,
+        | PageKind::Transformation
+        | PageKind::Entity => parse_page(&p.title, p.index.revid, &p.text, r, d),
     }
+}
+
+/// Turns a remaining `Inline::Concept` into a `Ref`, once the whole dataset exists: whether a
+/// page is an article, or a redirect leads to one, is a fact about the *whole* snapshot, not
+/// about the entry currently being read, so this cannot run inside `parse_page` itself
+/// (design decision 3). `r.by_page_title` is tried first — a redirect can lead onto a page of
+/// any other kind (an item, a boss…), not only an article — an article match is the fallback,
+/// since `by_page_title` does not know that collection.
+fn resolve_concepts_to_articles(ds: &mut Dataset, r: &Resolver) {
+    let articles: BTreeSet<String> = ds.articles.keys().cloned().collect();
+    let redirects = ds.meta.redirects.clone();
+    for entry in ds.entries_mut() {
+        resolve_inline(&mut entry.description, r, &articles, &redirects);
+        for field in entry.infobox.inlines_mut() {
+            resolve_inline(field, r, &articles, &redirects);
+        }
+        for section in &mut entry.sections {
+            for block in &mut section.blocks {
+                resolve_block(block, r, &articles, &redirects);
+            }
+        }
+    }
+}
+
+fn resolve_block(
+    block: &mut Block,
+    r: &Resolver,
+    articles: &BTreeSet<String>,
+    redirects: &BTreeMap<String, String>,
+) {
+    match block {
+        Block::Paragraph { inline } | Block::Heading { inline, level: _ } => {
+            resolve_inline(inline, r, articles, redirects)
+        }
+        Block::List { ordered: _, items } => {
+            for item in items {
+                resolve_inline(&mut item.inline, r, articles, redirects);
+                for child in &mut item.children {
+                    resolve_block(child, r, articles, redirects);
+                }
+            }
+        }
+        Block::Table { header, rows } => {
+            for cell in header {
+                resolve_inline(cell, r, articles, redirects);
+            }
+            for row in rows {
+                for cell in row {
+                    resolve_inline(cell, r, articles, redirects);
+                }
+            }
+        }
+    }
+}
+
+fn resolve_inline(
+    inline: &mut [Inline],
+    r: &Resolver,
+    articles: &BTreeSet<String>,
+    redirects: &BTreeMap<String, String>,
+) {
+    for node in inline {
+        match node {
+            Inline::Edition { inline, .. } => resolve_inline(inline, r, articles, redirects),
+            Inline::Concept { page, label } => {
+                if let Some(target) = article_target_of(page, r, articles, redirects) {
+                    let label = std::mem::take(label);
+                    *node = Inline::Ref { target, label };
+                }
+            }
+            Inline::Text { .. } | Inline::Ref { .. } => {}
+        }
+    }
+}
+
+/// The target `page` names, once redirects are followed: any kind's page title first, an
+/// article by its canonical name otherwise, `None` if neither — the same dead link
+/// [`crate::dead_links::dead_links`] already counted, now confirmed after redirects.
+fn article_target_of(
+    page: &str,
+    r: &Resolver,
+    articles: &BTreeSet<String>,
+    redirects: &BTreeMap<String, String>,
+) -> Option<Target> {
+    let resolved = resolve_redirect(page, redirects);
+    r.by_page_title(&resolved).or_else(|| {
+        articles.contains(&resolved).then(|| Target::Article {
+            title: resolved.clone(),
+        })
+    })
 }
 
 fn pages_in_order(raw: &Raw) -> Vec<&RawPage> {
@@ -228,13 +329,11 @@ mod tests {
         assert!(ds.entry(&Target::Stage { name: "x".into() }).is_none());
     }
 
-    /// `Entity` and `Article` pages are fetched and filed but not built into entries yet
-    /// (decision 2): a page of either kind still advances `meta`'s snapshot timestamp and
-    /// revid, exactly as one that does build an entry, and produces no diagnostics of its own
-    /// — `parse_page` is never called on it, so an infobox on it (`Infobox monster`) is not
-    /// even counted as unknown.
+    /// `Entity` and `Article` pages build into entries like every other kind (design
+    /// decision 2): both advance `meta`'s snapshot clock, and each files under its own
+    /// collection with its own count.
     #[test]
-    fn entity_and_article_pages_advance_meta_but_yield_no_entries() {
+    fn entity_and_article_pages_build_into_entries() {
         let mut with_new_kinds = raw();
         with_new_kinds.pages.push(RawPage {
             title: "Gaper".into(),
@@ -256,18 +355,94 @@ mod tests {
                 timestamp: "2026-03-02T00:00:00Z".into(),
                 category: None,
             },
-            text: "'''Damage''' is a stat.\n== Formula ==\nx\n".into(),
+            text: "'''Damage''' is a stat.\n== Notes ==\nx\n".into(),
         });
         let ds = build(&with_new_kinds, &Corrections::default());
         // Neither page added an item, a character or a transformation.
         assert_eq!(ds.meta.counts.items, 1);
         assert_eq!(ds.meta.counts.characters, 1);
         assert_eq!(ds.meta.counts.transformations, 1);
+        assert_eq!(ds.meta.counts.entities, 1);
+        assert_eq!(ds.meta.counts.articles, 1);
         // Both still moved the snapshot's own clock.
         assert_eq!(ds.meta.snapshot_at, "2026-03-02T00:00:00Z");
         assert_eq!(ds.meta.max_revid, 100);
-        // Neither's infobox was even looked at: `parse_page` never ran on it.
-        assert!(ds.meta.diagnostics.unknown_infoboxes.is_empty());
+        let gaper = ds
+            .entry(&Target::Entity {
+                id: 1,
+                variant: 0,
+                subtype: 0,
+            })
+            .unwrap();
+        assert_eq!(gaper.title, "Gaper");
+        let damage = ds
+            .entry(&Target::Article {
+                title: "Damage".into(),
+            })
+            .unwrap();
+        assert_eq!(damage.title, "Damage");
+    }
+
+    /// Decision 3: a `[[link]]` that stays a dead `Concept` after parsing — the page it names
+    /// was not fetched with an id in mind — is resolved once the whole dataset exists,
+    /// through any redirect the wiki wrote.
+    #[test]
+    fn a_concept_through_a_redirect_becomes_a_ref_to_the_article() {
+        let mut with_article = raw();
+        with_article.pages[0].text =
+            "{{infobox passive collectible|id=25}}\n== Effects ==\n[[Soul Hearts]] heal.\n".into();
+        with_article.pages.push(RawPage {
+            title: "Health".into(),
+            index: IndexEntry {
+                kind: PageKind::Article,
+                pageid: 4,
+                revid: 1,
+                timestamp: "2026-01-01T00:00:00Z".into(),
+                category: None,
+            },
+            text: "'''Health''' is how much damage Isaac can take.\n".into(),
+        });
+        with_article
+            .redirects
+            .insert("Soul Hearts".to_string(), "Health".to_string());
+        let ds = build(&with_article, &Corrections::default());
+        let breakfast = ds.entry(&Target::Item { id: 25 }).unwrap();
+        assert!(
+            breakfast.inlines().iter().any(|i| matches!(
+                i,
+                crate::Inline::Ref {
+                    target: Target::Article { title },
+                    label
+                } if title == "Health" && label == "Soul Hearts"
+            )),
+            "{:?}",
+            breakfast.inlines()
+        );
+    }
+
+    /// The same resolution, but the redirect leads onto a page of another kind entirely — the
+    /// `by_page_title` half of decision 3, tried before the article fallback.
+    #[test]
+    fn a_concept_through_a_redirect_onto_another_kind_resolves_to_that_kind() {
+        let mut with_redirect = raw();
+        with_redirect.pages[0].text =
+            "{{infobox passive collectible|id=25}}\n== Effects ==\n[[Brekkie]] restores.\n".into();
+        with_redirect
+            .redirects
+            .insert("Brekkie".to_string(), "Breakfast".to_string());
+        let ds = build(&with_redirect, &Corrections::default());
+        let breakfast = ds.entry(&Target::Item { id: 25 }).unwrap();
+        assert!(
+            breakfast.inlines().iter().any(|i| matches!(
+                i,
+                crate::Inline::Ref {
+                    target: Target::Item { id: 25 },
+                    ..
+                }
+            )),
+            "{:?}",
+            breakfast.inlines()
+        );
     }
 
     /// The kind that used to answer `None` by construction now answers, and its count

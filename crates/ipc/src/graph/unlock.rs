@@ -243,7 +243,9 @@ fn condition_of(a: &catalog::Achievement, dataset: Option<&Dataset>) -> Option<S
         | wiki::Infobox::Boss { .. }
         | wiki::Infobox::Challenge { .. }
         | wiki::Infobox::Transformation { .. }
-        | wiki::Infobox::Character { .. } => return None,
+        | wiki::Infobox::Character { .. }
+        | wiki::Infobox::Entity { .. }
+        | wiki::Infobox::Article { .. } => return None,
     };
     let line = wiki::plain(requirements).trim().to_string();
     (!line.is_empty()).then_some(line)

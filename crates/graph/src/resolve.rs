@@ -120,9 +120,10 @@ pub fn requirement_with(
         // A transformation no longer reaches the verdict table: the rules file carries its
         // count and its items, so it can be answered rather than judged.
         Target::Transformation { id } => threshold(c, rules, *id, &label, unknown),
-        Target::Stage { .. } | Target::Room { .. } | Target::Concept { .. } => {
-            from_verdict(rules, &verdict_key, character, unknown)
-        }
+        Target::Stage { .. }
+        | Target::Room { .. }
+        | Target::Concept { .. }
+        | Target::Article { .. } => from_verdict(rules, &verdict_key, character, unknown),
     }
 }
 
@@ -178,7 +179,8 @@ fn contributor(c: &Catalog, t: &Target) -> Option<ThresholdItem> {
         | Target::Transformation { .. }
         | Target::Stage { .. }
         | Target::Room { .. }
-        | Target::Concept { .. } => return None,
+        | Target::Concept { .. }
+        | Target::Article { .. } => return None,
     };
     item_kinds_of(t).iter().find_map(|k| {
         c.item(*k, id).map(|i| ThresholdItem {
@@ -278,6 +280,7 @@ fn item_kinds_of(t: &Target) -> &'static [ItemKind] {
         | Target::Transformation { .. }
         | Target::Stage { .. }
         | Target::Room { .. }
-        | Target::Concept { .. } => &[],
+        | Target::Concept { .. }
+        | Target::Article { .. } => &[],
     }
 }

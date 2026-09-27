@@ -19,8 +19,11 @@ use crate::resolver::{Row, Tables};
 /// five whose parameters this sub-project declines to read (design decision 2): a card, a
 /// rune, a pickup, a stage, or a version. It is not a `PageKind` — the page is still filed
 /// as `Article` — but it is how the landing tells a card from a mechanic page.
-#[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Serialize, Deserialize)]
-#[serde(rename_all = "lowercase")]
+///
+/// Crosses the IPC as part of `Infobox::Article` (`model.rs`): fieldless, so a bare
+/// camelCase string, same as every variant name here since each is one word.
+#[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Serialize, Deserialize, ts_rs::TS)]
+#[serde(rename_all = "camelCase")]
 pub enum ArticleCategory {
     Card,
     Rune,
