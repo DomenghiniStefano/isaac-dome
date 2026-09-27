@@ -11,7 +11,7 @@ use wiki::{page_file_name, ArticleCategory, IndexEntry, PageKind};
 
 use crate::api::{is_translation_subpage, FetchedPage};
 use crate::fetch::page_bytes;
-use crate::namespace::is_own_wiki_page;
+use crate::namespace::{is_malformed_title, is_own_wiki_page};
 use crate::store::write_if_changed;
 use crate::{io_error, Outcome};
 
@@ -42,6 +42,9 @@ enum Admission {
     Translation,
     /// One of the wiki's own pages (`is_own_wiki_page`): a portal, not a page about the game.
     OwnWikiPage,
+    /// A title that is more URL than name (`is_malformed_title`): a technical artifact that
+    /// landed in namespace 0, not a page anyone wrote about the game.
+    MalformedTitle,
     /// Already filed under another kind, which keeps it — the precedence decision 1 asks
     /// for: whichever kind claims a title first is the one it stays under, so a page
     /// transcluding both a collectible infobox and an entity one is the collectible it was
@@ -67,6 +70,9 @@ fn admit(
     }
     if is_own_wiki_page(title) {
         return Admission::OwnWikiPage;
+    }
+    if is_malformed_title(title) {
+        return Admission::MalformedTitle;
     }
     if let Some(prev) = index.get(title).filter(|prev| prev.kind != kind) {
         return Admission::OtherKind(prev.kind);
@@ -95,7 +101,9 @@ pub(crate) fn file_page(
 ) -> Outcome {
     let name = match admit(&page.title, kind, index, fetched) {
         Admission::Admit(name) => name,
-        Admission::Translation | Admission::OwnWikiPage => return Ok(()),
+        Admission::Translation | Admission::OwnWikiPage | Admission::MalformedTitle => {
+            return Ok(())
+        }
         Admission::OtherKind(prev) => {
             if kind == PageKind::Article {
                 // `fetch_allpages` walks every page of namespace 0, so meeting one a
@@ -226,6 +234,33 @@ mod tests {
                 &fetched
             ),
             Admission::OwnWikiPage
+        );
+    }
+
+    /// Card #86 fix 3: the Cargo-documentation artifact that slipped past the namespace-0
+    /// filter once (`Zh./wiki/MediaWiki:Librarian-cargotables-definedby`) is never admitted,
+    /// a page whose title is ordinary namespace-0 prose still is.
+    #[test]
+    fn a_malformed_title_is_never_admitted() {
+        let index = BTreeMap::new();
+        let fetched = KindFetch::default();
+        assert_eq!(
+            admit(
+                "Zh./wiki/MediaWiki:Librarian-cargotables-definedby",
+                PageKind::Article,
+                &index,
+                &fetched
+            ),
+            Admission::MalformedTitle
+        );
+        assert_eq!(
+            admit(
+                "The Binding of Isaac: Rebirth",
+                PageKind::Article,
+                &index,
+                &fetched
+            ),
+            Admission::Admit("The_Binding_of_Isaac%3A_Rebirth.wikitext".into())
         );
     }
 

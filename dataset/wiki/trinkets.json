@@ -10868,17 +10868,7 @@
                     "inline": [
                       {
                         "kind": "text",
-                        "text": " Resurrection items activate in a ",
-                        "style": "plain"
-                      },
-                      {
-                        "kind": "concept",
-                        "page": "Category:Revival items",
-                        "label": "set order"
-                      },
-                      {
-                        "kind": "text",
-                        "text": ". Missing Poster has the lowest priority of all / ",
+                        "text": " Resurrection items activate in a set order. Missing Poster has the lowest priority of all / ",
                         "style": "plain"
                       },
                       {
@@ -13589,17 +13579,7 @@
                 "inline": [
                   {
                     "kind": "text",
-                    "text": "Resurrection items activate in a ",
-                    "style": "plain"
-                  },
-                  {
-                    "kind": "concept",
-                    "page": "Category:Revival items",
-                    "label": "set order"
-                  },
-                  {
-                    "kind": "text",
-                    "text": ". Broken Ankh is ",
+                    "text": "Resurrection items activate in a set order. Broken Ankh is ",
                     "style": "plain"
                   },
                   {
@@ -81542,13 +81522,8 @@
               {
                 "inline": [
                   {
-                    "kind": "concept",
-                    "page": "Category:Damage-triggered items",
-                    "label": "Damage-triggered items"
-                  },
-                  {
                     "kind": "text",
-                    "text": ": To gain extra value from using ",
+                    "text": "Damage-triggered items: To gain extra value from using ",
                     "style": "plain"
                   },
                   {

@@ -187,6 +187,15 @@ pub struct Resolver {
     /// fetched, or nobody called it — which degrades to today's "a stat nobody stated is
     /// empty".
     character_stat_defaults: BTreeMap<String, String>,
+    /// A content template's own wikitext (`Raw::templates`), by its title, lowercased —
+    /// `blocks::transclusion_line` looks one up by a transcluding template's own name, which
+    /// arrives already lowercase (`template::assemble`). One map for every content template,
+    /// not one field per template: `Resolver::template` is the one way anything in this
+    /// crate reaches one, the way `Raw::templates`/`CONTENT_TEMPLATES` is the one way the
+    /// fetch and the reader agree on what's there. Empty until
+    /// [`Resolver::with_templates`] runs — no template fetched, or nobody called it — which
+    /// degrades to "nothing stored", same as before either of them existed.
+    templates: BTreeMap<String, String>,
 }
 
 /// A character page's title without the disambiguation suffix
@@ -224,8 +233,16 @@ const LAYOUT: &[&str] = &[
     // because an unknown template recurses into its argument and these have none to give.
     "collectible table/header",
     "trinket table/header",
+    // Card #86: the same head/rows split for a stage's monster list, a pool's item list and
+    // the pickup table — `entity table`, `pool items` and `pickup table`/`pickup rows` are
+    // `NameList`s (`name_list.rs`), and each one's own header draws no rows of its own.
+    "entity table/header",
+    "pickup table/header",
+    "item pool/header",
     "reflist",
     "clear",
+    // `{{-}}` is MediaWiki's own alias for `{{clear}}`: floats the layout, nothing else.
+    "-",
     "main",
     "hatnote",
     "see also",
@@ -233,14 +250,30 @@ const LAYOUT: &[&str] = &[
     "distinguish visual",
     "toc",
     "__toc__",
+    // A table of contents floated beside the text instead of at the top: still no content
+    // of its own.
+    "toc right",
     // The page-wide edition range, read from the first infobox instead (`page_editions_of`):
     // the template itself renders no icon of its own.
     "page dlc",
+    // The same edition box, scoped to one section instead of the whole page (Cut Content's
+    // "Cut *Afterbirth* Content" and its siblings): every fact inside the section already
+    // carries its own `{{dlc|…}}`, so nothing is lost by not tracking the section's own
+    // range separately.
+    "section dlc",
     // Editorial markers: a flag for another editor, drawn as a small icon or nothing at all,
     // never a fact about the game.
     "citation needed",
     "reconfirm",
     "explain",
+    // `{{cn}}` is this wiki's own short alias for `{{citation needed}}`.
+    "cn",
+    // A maintenance banner naming what's missing from the page itself ("Verification on the
+    // specifics… is needed"): a note to editors about the article, not a fact about the game.
+    "incomplete",
+    // A banner marking a modding page as community-maintained rather than official: nothing
+    // about the game either.
+    "unsupported",
     // `{{dlc clear}}` clears the floating edition box `{{dlc}}` can leave open, the same way
     // `{{clear}}` clears a floated image: layout, not content.
     "dlc clear",
@@ -252,6 +285,38 @@ const LAYOUT: &[&str] = &[
     // MediaWiki's own magic word for overriding how the page's title renders (`Less Than
     // Three` displays as "<3"): the title the reader sees, not a fact about the subject.
     "displaytitle:<3",
+    // A disambiguation page's own footer marker (`{{disambiguation}}`, and this wiki's short
+    // alias `{{disambig}}`): categorizes the page, carries no text of its own — the page's
+    // body already lists what the title can mean.
+    "disambig",
+    "disambiguation",
+    // An inline icon (a crossed-out trophy) marking that achievements are disabled for the
+    // current run: no argument, no text, the sentence around it already says as much in
+    // words ("if achievements are disabled for the current run").
+    "no unlocks",
+    // The one navbox family left uncounted alongside `header characters` and
+    // `header tainted characters`: a link list at the top of a category page (Bosses,
+    // Attributes, Item Pools, the card and rune suits, Obstacles…), every one of them zero
+    // arguments and none of them a fact the page's own body doesn't already state in full.
+    "header attributes",
+    "header bosses",
+    "header collection pages",
+    "header effects",
+    "header greed bosses",
+    "header greed item pools",
+    "header item pools",
+    "header magic cards",
+    "header modding",
+    "header normal bosses",
+    "header obstacles",
+    "header pickups",
+    "header player effects",
+    "header playing cards",
+    "header reverse tarot cards",
+    "header runes",
+    "header soul stones",
+    "header special cards",
+    "header tarot cards",
 ];
 
 /// Templates that only do layout: they carry no reference.
@@ -347,9 +412,10 @@ impl Resolver {
     }
 
     /// Design decision 4: sets the base-stat defaults `infobox::stat_defaults` read from
-    /// `Raw::template_infobox_character`. A separate step from [`Resolver::new`] rather than
-    /// one more argument on it, because every other caller in this crate's own tests builds a
-    /// `Resolver` with no template text at all and would otherwise have to invent one.
+    /// `Raw::templates["Infobox character"]`. A separate step from [`Resolver::new`] rather
+    /// than one more argument on it, because every other caller in this crate's own tests
+    /// builds a `Resolver` with no template text at all and would otherwise have to invent
+    /// one.
     #[must_use]
     pub fn with_character_stat_defaults(mut self, defaults: BTreeMap<String, String>) -> Resolver {
         self.character_stat_defaults = defaults;
@@ -361,6 +427,30 @@ impl Resolver {
     /// that stat — a missing template degrades the same way a page that states nothing does.
     pub(crate) fn character_stat_default(&self, name: &str) -> Option<&str> {
         self.character_stat_defaults.get(name).map(String::as_str)
+    }
+
+    /// Sets every content template's own wikitext (`Raw::templates`), keyed the way
+    /// `Raw::templates` already is (a title, any case) — lowercased once here so
+    /// [`Resolver::template`] never has to. Same shape as
+    /// [`Resolver::with_character_stat_defaults`] and the same reason for being a separate
+    /// step: every other caller in this crate's own tests builds a `Resolver` with none of
+    /// this and would otherwise have to invent some.
+    #[must_use]
+    pub fn with_templates(mut self, templates: BTreeMap<String, String>) -> Resolver {
+        self.templates = templates
+            .into_iter()
+            .map(|(name, text)| (name.to_lowercase(), text))
+            .collect();
+        self
+    }
+
+    /// A content template's own wikitext, by its title in any case (`"Infobox character"`,
+    /// or a transcluding template's own already-lowercase name like `"book of virtues
+    /// synergy list"`). `None` when the fetch that downloads it hasn't run, or the name isn't
+    /// one `with_templates` was given — either way the caller degrades to producing nothing,
+    /// the same as before this template had a reader at all.
+    pub(crate) fn template(&self, name: &str) -> Option<&str> {
+        self.templates.get(&name.to_lowercase()).map(String::as_str)
     }
 
     /// The reverse of the title rule: an achievement's `name` always enters, its alias only
@@ -459,7 +549,11 @@ impl Resolver {
         let found = match t.as_str() {
             "i" => self.items.get(&k).map(|id| Target::Item { id: *id }),
             "t" => self.trinkets.get(&k).map(|id| Target::Trinket { id: *id }),
-            "a" | "achievement" => self
+            // `{{achievement image|Name}}` is a completion-marks grid cell: one achievement's
+            // icon, named the same way `{{achievement|Name}}` names one in prose. The icon
+            // itself is a game asset (constraint 3) and is never fetched; the name is real
+            // data and resolves the same reference either way.
+            "a" | "achievement" | "achievement image" => self
                 .achievements
                 .get(&k)
                 .map(|id| Target::Achievement { id: *id }),
@@ -496,7 +590,10 @@ impl Resolver {
             // An item pool. `itempools.xml` keys pools by name and gives them no id, so
             // there is no target to resolve to — the same shape as a machine.
             "ip" => return Resolution::Concept,
-            "s" | "floor" => {
+            // `{{stage image|Name}}` names a stage's title art the same way `{{s|Name}}`
+            // names one in prose; the art itself is a game asset (constraint 3) and is
+            // never fetched, only the reference.
+            "s" | "floor" | "stage image" => {
                 return Resolution::Target(Target::Stage {
                     name: arg.trim().to_string(),
                 })

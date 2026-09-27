@@ -6932,17 +6932,7 @@
                 "inline": [
                   {
                     "kind": "text",
-                    "text": "Resurrection items activate in a ",
-                    "style": "plain"
-                  },
-                  {
-                    "kind": "concept",
-                    "page": "Category:Revival items",
-                    "label": "set order"
-                  },
-                  {
-                    "kind": "text",
-                    "text": ". 1up! is 1st in this order",
+                    "text": "Resurrection items activate in a set order. 1up! is 1st in this order",
                     "style": "plain"
                   },
                   {
@@ -17636,17 +17626,7 @@
                         "inline": [
                           {
                             "kind": "text",
-                            "text": "Despite slightly different appearance, the bomb is functionally identical to a Mr. Mega bomb, being compatible with all ",
-                            "style": "plain"
-                          },
-                          {
-                            "kind": "concept",
-                            "page": "Category:Bomb items",
-                            "label": "bomb modifiers"
-                          },
-                          {
-                            "kind": "text",
-                            "text": ".",
+                            "text": "Despite slightly different appearance, the bomb is functionally identical to a Mr. Mega bomb, being compatible with all bomb modifiers.",
                             "style": "plain"
                           }
                         ],
@@ -21555,13 +21535,8 @@
               {
                 "inline": [
                   {
-                    "kind": "concept",
-                    "page": "Category:Worm trinkets",
-                    "label": "Worm trinkets"
-                  },
-                  {
                     "kind": "text",
-                    "text": ": Bob's Rotten Head is affected by ",
+                    "text": "Worm trinkets: Bob's Rotten Head is affected by ",
                     "style": "plain"
                   },
                   {
@@ -47237,17 +47212,7 @@
                 "inline": [
                   {
                     "kind": "text",
-                    "text": "Resurrection items activate in a ",
-                    "style": "plain"
-                  },
-                  {
-                    "kind": "concept",
-                    "page": "Category:Revival items",
-                    "label": "set order"
-                  },
-                  {
-                    "kind": "text",
-                    "text": ". Dead Cat is ",
+                    "text": "Resurrection items activate in a set order. Dead Cat is ",
                     "style": "plain"
                   },
                   {
@@ -54215,17 +54180,7 @@
                 "inline": [
                   {
                     "kind": "text",
-                    "text": "Upon use, transforms Isaac into a ",
-                    "style": "plain"
-                  },
-                  {
-                    "kind": "concept",
-                    "page": "wikipedia:Pac-Man (character)",
-                    "label": "Pac-Man"
-                  },
-                  {
-                    "kind": "text",
-                    "text": "-like creature for 6.5 seconds and provides the following effects:",
+                    "text": "Upon use, transforms Isaac into a Pac-Man-like creature for 6.5 seconds and provides the following effects:",
                     "style": "plain"
                   }
                 ],
@@ -90103,17 +90058,7 @@
                 "inline": [
                   {
                     "kind": "text",
-                    "text": "Using ",
-                    "style": "plain"
-                  },
-                  {
-                    "kind": "concept",
-                    "page": "Category:Damage-triggered items",
-                    "label": "damage-triggered items"
-                  },
-                  {
-                    "kind": "text",
-                    "text": " that pay out with resources or items such as ",
+                    "text": "Using damage-triggered items that pay out with resources or items such as ",
                     "style": "plain"
                   },
                   {
@@ -102722,17 +102667,7 @@
                 "inline": [
                   {
                     "kind": "text",
-                    "text": "Resurrection items activate in a ",
-                    "style": "plain"
-                  },
-                  {
-                    "kind": "concept",
-                    "page": "Category:Revival items",
-                    "label": "set order"
-                  },
-                  {
-                    "kind": "text",
-                    "text": ". ",
+                    "text": "Resurrection items activate in a set order. ",
                     "style": "plain"
                   },
                   {
@@ -123915,17 +123850,7 @@
                     "inline": [
                       {
                         "kind": "text",
-                        "text": " ",
-                        "style": "plain"
-                      },
-                      {
-                        "kind": "concept",
-                        "page": "Category:Damage-triggered items",
-                        "label": "Damage-triggered items"
-                      },
-                      {
-                        "kind": "text",
-                        "text": ": Each half heart used up by activating Sharp Plug triggers damage effects separately, allowing multiple payouts.",
+                        "text": " Damage-triggered items: Each half heart used up by activating Sharp Plug triggers damage effects separately, allowing multiple payouts.",
                         "style": "plain"
                       }
                     ]
@@ -128849,17 +128774,7 @@
                 "inline": [
                   {
                     "kind": "text",
-                    "text": "Resurrection items activate in a ",
-                    "style": "plain"
-                  },
-                  {
-                    "kind": "concept",
-                    "page": "Category:Revival items",
-                    "label": "set order"
-                  },
-                  {
-                    "kind": "text",
-                    "text": ". Guppy's Collar is 4th",
+                    "text": "Resurrection items activate in a set order. Guppy's Collar is 4th",
                     "style": "plain"
                   },
                   {
@@ -216190,17 +216105,7 @@
                 "inline": [
                   {
                     "kind": "text",
-                    "text": "Resurrection items activate in a ",
-                    "style": "plain"
-                  },
-                  {
-                    "kind": "concept",
-                    "page": "Category:Revival items",
-                    "label": "set order"
-                  },
-                  {
-                    "kind": "text",
-                    "text": ".",
+                    "text": "Resurrection items activate in a set order.",
                     "style": "plain"
                   }
                 ],
@@ -236082,17 +235987,7 @@
                 "inline": [
                   {
                     "kind": "text",
-                    "text": "Resurrection items activate in a ",
-                    "style": "plain"
-                  },
-                  {
-                    "kind": "concept",
-                    "page": "Category:Revival items",
-                    "label": "set order"
-                  },
-                  {
-                    "kind": "text",
-                    "text": ". Lazarus' Rags is ",
+                    "text": "Resurrection items activate in a set order. Lazarus' Rags is ",
                     "style": "plain"
                   },
                   {
@@ -293314,13 +293209,8 @@
               {
                 "inline": [
                   {
-                    "kind": "concept",
-                    "page": "Category:Bomb items",
-                    "label": "All other bomb modifiers"
-                  },
-                  {
                     "kind": "text",
-                    "text": ": No bomb modifier outside ",
+                    "text": "All other bomb modifiers: No bomb modifier outside ",
                     "style": "plain"
                   },
                   {
@@ -325262,17 +325152,7 @@
                     "inline": [
                       {
                         "kind": "text",
-                        "text": "Obtain three ",
-                        "style": "plain"
-                      },
-                      {
-                        "kind": "concept",
-                        "page": "category:Yes Mother? items",
-                        "label": "Yes Mother? items"
-                      },
-                      {
-                        "kind": "text",
-                        "text": " in one run",
+                        "text": "Obtain three Yes Mother? items in one run",
                         "style": "plain"
                       }
                     ]
@@ -361639,17 +361519,7 @@
             "inline": [
               {
                 "kind": "text",
-                "text": "For a full list of items that work with Dull Razor, see the list of ",
-                "style": "plain"
-              },
-              {
-                "kind": "concept",
-                "page": "Category:Damage-triggered items",
-                "label": "damage-triggered items"
-              },
-              {
-                "kind": "text",
-                "text": ". Note that any specific extra conditions the items may have for their activation still apply.",
+                "text": "For a full list of items that work with Dull Razor, see the list of damage-triggered items. Note that any specific extra conditions the items may have for their activation still apply.",
                 "style": "plain"
               }
             ]
@@ -395704,17 +395574,7 @@
                 "inline": [
                   {
                     "kind": "text",
-                    "text": "Waiting for the ",
-                    "style": "plain"
-                  },
-                  {
-                    "kind": "concept",
-                    "page": "User:Blcd/RandomTidbits",
-                    "label": "Room Anti-softlock"
-                  },
-                  {
-                    "kind": "text",
-                    "text": " to trigger will always grant a reward from Death's List.",
+                    "text": "Waiting for the Room Anti-softlock to trigger will always grant a reward from Death's List.",
                     "style": "plain"
                   }
                 ],
@@ -428042,13 +427902,8 @@
               {
                 "inline": [
                   {
-                    "kind": "concept",
-                    "page": "Category:Damage-triggered items",
-                    "label": "Damage-triggered items"
-                  },
-                  {
                     "kind": "text",
-                    "text": ": Activate a number of times equal to the total half hearts drained.",
+                    "text": "Damage-triggered items: Activate a number of times equal to the total half hearts drained.",
                     "style": "plain"
                   }
                 ],
@@ -464007,17 +463862,7 @@
                   },
                   {
                     "kind": "text",
-                    "text": " or ",
-                    "style": "plain"
-                  },
-                  {
-                    "kind": "concept",
-                    "page": "Category:Damage-triggered items",
-                    "label": "activate upon taking damage"
-                  },
-                  {
-                    "kind": "text",
-                    "text": ".",
+                    "text": " or activate upon taking damage.",
                     "style": "plain"
                   }
                 ]
@@ -503506,17 +503351,7 @@
                         "inline": [
                           {
                             "kind": "text",
-                            "text": "If a Heart is on sale, Isaac can trigger ",
-                            "style": "plain"
-                          },
-                          {
-                            "kind": "concept",
-                            "page": "Category:Damage-triggered items",
-                            "label": "items that activate upon taking damage"
-                          },
-                          {
-                            "kind": "text",
-                            "text": " indefinitely.",
+                            "text": "If a Heart is on sale, Isaac can trigger items that activate upon taking damage indefinitely.",
                             "style": "plain"
                           }
                         ],
@@ -516622,17 +516457,7 @@
                 "inline": [
                   {
                     "kind": "text",
-                    "text": "Resurrection items activate in a ",
-                    "style": "plain"
-                  },
-                  {
-                    "kind": "concept",
-                    "page": "Category:Revival items",
-                    "label": "set order"
-                  },
-                  {
-                    "kind": "text",
-                    "text": ". Inner Child is 5th in this order after ",
+                    "text": "Resurrection items activate in a set order. Inner Child is 5th in this order after ",
                     "style": "plain"
                   },
                   {
@@ -543774,17 +543599,7 @@
                   },
                   {
                     "kind": "text",
-                    "text": " / ",
-                    "style": "plain"
-                  },
-                  {
-                    "kind": "concept",
-                    "page": "Category:Revival items",
-                    "label": "Revival Items"
-                  },
-                  {
-                    "kind": "text",
-                    "text": ": Clots will be retained after losing the extra life.",
+                    "text": " / Revival Items: Clots will be retained after losing the extra life.",
                     "style": "plain"
                   }
                 ],

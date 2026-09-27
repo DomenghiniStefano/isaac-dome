@@ -39,6 +39,23 @@ pub fn is_own_wiki_page(title: &str) -> bool {
     })
 }
 
+/// A title that lands in namespace 0 (the fetch's own `gapnamespace=0` filter already says
+/// so) and still isn't a title anyone wrote about the game: a URL path or another
+/// namespace's own prefix, embedded as literal text rather than used as one. Found on
+/// 2026-09-27 (card #86 fix 3): `Zh./wiki/MediaWiki:Librarian-cargotables-definedby`, a
+/// Cargo-extension documentation page whose title is built from a URL path segment
+/// (`/wiki/`, the site's own article-path prefix — no page a person writes carries the
+/// site's own path inside its name) and a `MediaWiki:`-namespace message key (`Librarian-…`,
+/// one of this wiki's interface strings) — the same self-substituting template family
+/// (`{{FULLPAGENAME:$1}}`) that page's own wikitext uses to build its Cargo query, landing
+/// in namespace 0 by the wiki's own quirk rather than by a mistake on this side. Neither
+/// half is a namespace test on its own (`Category:`/`User:`/… mid-title is legitimate prose
+/// on `Item Tags`'s own examples, `/` alone is an ordinary subpage), so both have to hold at
+/// once for the title to be more URL than name.
+pub fn is_malformed_title(title: &str) -> bool {
+    title.contains("/wiki/") && title.contains("MediaWiki:")
+}
+
 /// The URL that lists every page of namespace 0 that is not a redirect, with the text of
 /// its latest revision — the whole-namespace fetch (decision 1). Asks exactly the way
 /// `crate::api::pages_url` does (same `prop`, `rvprop`, `rvslots`), because a page found
@@ -253,5 +270,18 @@ mod tests {
         assert!(is_own_wiki_page("Binding of Isaac: Rebirth Wiki/Rules"));
         assert!(!is_own_wiki_page("Binding of Isaac: Rebirth Wikipedia"));
         assert!(!is_own_wiki_page("Damage"));
+    }
+
+    /// The real offender, and the guard against over-matching: a genuine subpage (just a
+    /// `/`) or a namespace prefix appearing honestly mid-sentence must not trip this on their
+    /// own — only a title that is both a URL path and another namespace's prefix is one.
+    #[test]
+    fn a_malformed_title_needs_both_a_url_path_and_an_embedded_namespace() {
+        assert!(is_malformed_title(
+            "Zh./wiki/MediaWiki:Librarian-cargotables-definedby"
+        ));
+        assert!(!is_malformed_title("Achievements/Rebirth 1"));
+        assert!(!is_malformed_title("The Binding of Isaac: Rebirth"));
+        assert!(!is_malformed_title("Damage"));
     }
 }

@@ -136,7 +136,10 @@ fn step(
 }
 
 /// `<!-- … -->`, dropped whole. An unclosed one is text.
-fn try_comment(rest: &str) -> Option<usize> {
+///
+/// `pub(crate)`: `blocks::transclusion_line` needs the same "a bare template, trailing
+/// whitespace and a comment allowed" check `name_list_items` already makes.
+pub(crate) fn try_comment(rest: &str) -> Option<usize> {
     let end = rest.strip_prefix("<!--")?.find("-->")?;
     Some("<!--".len() + end + "-->".len())
 }
@@ -305,11 +308,13 @@ fn template(t: &Template, r: &Resolver, d: &mut Diagnostics, out: &mut Out, dept
         // The zero-argument transclusion of the item's *full* synergy table (Book of
         // Virtues's and The Book of Belial's own "Combinations" sections, kept now that
         // decision 2 keeps the heading), as opposed to `book of virtues synergy` above,
-        // which is one synergy written out on the page that names it. Its rows live on the
-        // Template: page this snapshot never fetches (only namespace 0 is downloaded), so
-        // there is no wikitext here to read — modelled as producing nothing, like a layout
-        // template, rather than left to fall through as unknown: the gap is what the
-        // snapshot does not fetch, not something this parser fails to parse.
+        // which is one synergy written out on the page that names it. Its rows live on a
+        // Template: page — card #86, task 3, fetches the two of them and
+        // `blocks::transclusion_line` expands them, but only when the whole line is nothing
+        // but the bare template: this arm is the fallback for the shape that reaches inline
+        // parsing anyway (inside a sentence, or the fetch hasn't run), where there is either
+        // no wikitext to read or no block tree to splice one into. Producing nothing here,
+        // like a layout template, rather than falling through as unknown either way.
         "book of virtues synergy list" | "book of belial synergy list" => {}
         "recipe" => recipe(t, out),
         "achievement unlock" => achievement_unlock(t, &arg, r, d, out),
@@ -322,12 +327,24 @@ fn template(t: &Template, r: &Resolver, d: &mut Diagnostics, out: &mut Out, dept
         // The wiki's escape for a literal `=` inside a template argument, where a bare one
         // would be read as introducing a named parameter (`MouseControl{{=}}0`).
         "=" => out.buf.push('='),
-        // Three templates whose argument is already genuine content and needed nothing beyond
-        // what the unknown-template fallback already does to it — a platform qualifier, an
-        // in-page anchor (kept as its first name; MediaWiki draws the second only as a second
-        // invisible id), a monospace note (no `Style::Code` exists, so it stays plain text).
-        // Modelled here so Decision 10's completeness check stops counting them as unknown.
-        "plat" | "anchor" | "code" => recurse_into_arg(&arg, r, d, out, depth),
+        // A platform qualifier, an in-page anchor (kept as its first name; MediaWiki draws
+        // the second only as a second invisible id), a monospace note (no `Style::Code`
+        // exists, so it stays plain text), a stat's own label in a comparison table
+        // (`{{attribute|Health}}`), a value that only differs from the page's own default in
+        // some edition (`{{ghost|…}}`, its dimmed styling lost — the number is what matters),
+        // a price in in-game cents (`{{pennies|N}}`, its coin icon a game asset — constraint
+        // 3 — dropped, the number kept), an item tag's own internal name (`{{tag|…}}`; its
+        // friendly name lives in a wiki Lua module this parser cannot read), the wiki's own
+        // name for one of its templates (`{{tl|bug}}`, "the bug template"), an edition-varying
+        // illustration wrapper (`{{dlcmap slideshow|…}}`, usually nesting a `{{dlcalt|…}}`
+        // this parser already reads — any `[[File:…]]` inside disappears the same way it
+        // does everywhere else) and a block quote read inline instead of spanning lines
+        // (`blocks::wrapper` handles the common, multi-line case; this is the fallback for
+        // one that doesn't). None of these needed anything beyond what the unknown-template
+        // fallback already does to its argument. Modelled here so Decision 10's completeness
+        // check stops counting them as unknown.
+        "plat" | "anchor" | "code" | "attribute" | "ghost" | "pennies" | "tag" | "tl"
+        | "dlcmap slideshow" | "quote" => recurse_into_arg(&arg, r, d, out, depth),
         // 204 of the 547 `{{bug|…}}` carry a `dlc`, and until 2026-09-15 this arm recursed
         // into the positional argument and read no named one: a defect that exists in one
         // edition was shown to every reader as theirs. The 130 whose code this parser
@@ -491,20 +508,39 @@ fn recurse_into_arg(arg: &str, r: &Resolver, d: &mut Diagnostics, out: &mut Out,
     }
 }
 
-/// The content of `[[…]]`: `File:`, `Image:` and `Category:` disappear without leaving
-/// any text; `[[:Page]]` is a concept like any other.
+/// The content of `[[…]]`: `File:` and `Image:` disappear without leaving any text, escaped
+/// or not (constraint 3 — never a game asset, embedded as a picture or linked to by name); an
+/// unescaped `[[Category:…]]` disappears the same way, because on the real wiki it tags the
+/// page rather than drawing a visible link. `[[:Page]]` is a concept like any other. Card
+/// #86, task 2: every other namespace this wiki writes links into — `[[:Category:…]]`
+/// (escaped, a real visible link this time), `[[User:…]]`, `[[Template:…]]`, and every
+/// interwiki prefix (`[[Anti:…]]` to the Antibirth wiki, `[[Wikipedia:…]]`…) — is not a page
+/// of ours by definition, so it degrades to its label instead of becoming a dead `Concept`.
 fn link(inner: &str, r: &Resolver, out: &mut Out) {
     let (page, label) = match inner.split_once('|') {
         Some((p, l)) => (p, l),
         None => (inner, inner),
     };
-    let lower = page.to_ascii_lowercase();
-    if lower.starts_with("file:") || lower.starts_with("category:") || lower.starts_with("image:") {
+    let escaped = page.trim_start().starts_with(':');
+    let stripped = page.trim_start_matches(':').trim();
+    let lower = stripped.to_ascii_lowercase();
+    if lower.starts_with("file:") || lower.starts_with("image:") {
         return;
     }
-    let page = page.trim_start_matches(':');
-    let page = page.split('#').next().unwrap_or(page).trim().to_string();
+    if !escaped && lower.starts_with("category:") {
+        return;
+    }
     let label = label.split('|').next().unwrap_or(label).trim().to_string();
+    if is_other_namespace(stripped) {
+        out.buf.push_str(&label);
+        return;
+    }
+    let page = stripped
+        .split('#')
+        .next()
+        .unwrap_or(stripped)
+        .trim()
+        .to_string();
     if page.is_empty() {
         out.buf.push_str(&label);
         return;
@@ -514,6 +550,74 @@ fn link(inner: &str, r: &Resolver, out: &mut Out) {
     match r.by_page_title(&page) {
         Some(target) => out.push(Inline::Ref { target, label }),
         None => out.push(Inline::Concept { page, label }),
+    }
+}
+
+/// The colon-namespace prefixes this wiki's own links use for something other than a page in
+/// the main namespace: MediaWiki's own reserved namespaces beyond `File`/`Image`/`Category`
+/// (handled above, ahead of this list, because unlike these an unescaped use of them is
+/// meaningful too), and this wiki's interwiki map — a sister wiki (`Anti`, the Antibirth
+/// wiki) or an off-site reference (`Wikipedia`, `Minecraft`…). Measured against
+/// `dataset/raw/`: every `[[X:…]]` whose "X:…" as a whole does not match a fetched page or
+/// redirect title (`[[The Binding of Isaac: Rebirth]]`'s colon is part of a real, fetched
+/// title, so `"the binding of isaac"` never needed a place on this list; `page.rs` has no
+/// stake in it either, since it reads infobox templates, not wikilinks).
+const OTHER_NAMESPACE_PREFIXES: &[&str] = &[
+    // MediaWiki's own reserved namespaces, past `file`/`image`/`category`.
+    "template",
+    "user",
+    "talk",
+    "help",
+    "special",
+    "mediawiki",
+    "module",
+    // This wiki's interwiki map, every prefix the corpus actually uses.
+    "anti",
+    "wikipedia",
+    "boisite",
+    "zelda",
+    "mewgenics",
+    "ru",
+    "edmundm",
+    "bulbapedia",
+    "minecraft",
+    "supermeatboy",
+    "enboi",
+    "thelegendofbumbo",
+    "teamfortress",
+    "nuclearthrone",
+    "original",
+    "theendisnigh",
+    "enterthegungeon",
+    "mario",
+    "castlevania",
+    "devilsharvest",
+    "revelations",
+    "alphabirth",
+    "gish",
+    "symbolism",
+    "slaythespire",
+    "dukenukem",
+    "fiendfolio",
+    "sandman",
+    "megaman",
+    "fireemblem",
+    "fanideas",
+    "spelunky",
+    "ouroboros",
+    // `Category` is handled ahead of this list for the unescaped case (dropped, a tag), but
+    // still belongs here for the escaped one (`[[:Category:…|label]]`, a real link).
+    "category",
+];
+
+/// Whether `page` (already stripped of a leading `:`) names a page outside the main
+/// namespace: a colon-prefixed title whose prefix is one of [`OTHER_NAMESPACE_PREFIXES`].
+fn is_other_namespace(page: &str) -> bool {
+    match page.split_once(':') {
+        Some((prefix, _)) => {
+            OTHER_NAMESPACE_PREFIXES.contains(&prefix.trim().to_ascii_lowercase().as_str())
+        }
+        None => false,
     }
 }
 
@@ -682,6 +786,46 @@ mod tests {
             }
         );
         assert!(d.unresolved.is_empty());
+    }
+
+    /// Card #86, task 2: a link that leaves the wiki's main namespace — an interwiki prefix,
+    /// or an escaped `[[:Category:…]]`/`[[User:…]]`/`[[Template:…]]` — is not a page of ours
+    /// by definition, so it keeps its label as plain text instead of becoming a dead
+    /// `Inline::Concept`.
+    #[test]
+    fn other_namespace_links_degrade_to_their_label() {
+        let (v, d) = p(
+            "[[Anti:Bird's Eye|Bird's Eye]] [[Wikipedia:Seraph]] [[:Category:Bugs|bug reports]] [[User:Blcd/RandomTidbits|notes]] [[Template:Infobox card]]",
+        );
+        assert_eq!(
+            v,
+            vec![text(
+                "Bird's Eye Wikipedia:Seraph bug reports notes Template:Infobox card",
+                Style::Plain
+            )]
+        );
+        assert!(d.unresolved.is_empty());
+    }
+
+    /// The same wiki-side distinction the parser already made for `File:`/`Image:`: an
+    /// unescaped `[[Category:…]]` still tags the page (drops silently, as it always has —
+    /// `html_and_entities` pins that), but the escaped form (`[[:Category:…|label]]`, a real
+    /// visible link on the rendered page) is the case task 2 exists for — until this, it fell
+    /// through to `Inline::Concept` and swelled the dead-link tally by 7 destinations.
+    #[test]
+    fn an_escaped_category_link_is_text_an_unescaped_one_still_tags() {
+        let (v, _) = p("[[:Category:Bosses|the bosses category]] and [[Category:Bosses]] end");
+        assert_eq!(v, vec![text("the bosses category and  end", Style::Plain)]);
+    }
+
+    /// A page whose own title carries a colon is not an other-namespace link: the resolver's
+    /// `by_page_title` still gets the whole string, "Anti" alone is never enough to condemn a
+    /// title that merely starts the same way.
+    #[test]
+    fn a_colon_inside_an_ordinary_page_title_is_not_an_other_namespace_prefix() {
+        assert!(!is_other_namespace("The Binding of Isaac: Rebirth"));
+        assert!(is_other_namespace("Anti:Bird's Eye"));
+        assert!(is_other_namespace("Category:Bugs"));
     }
 
     #[test]

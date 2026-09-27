@@ -377,9 +377,9 @@ fn character_from(ib: &RawInfobox, r: &Resolver, d: &mut Diagnostics) -> Infobox
 /// A base stat as the page states it, or, when it states nothing, the template's own default
 /// (design decision 4): the site shows the default too, and a character page usually omits
 /// exactly the stats it doesn't narrow. `Resolver::character_stat_default` is empty whenever
-/// `Raw::template_infobox_character` was `None` (no template-defaults fetch) or didn't parse
-/// in the shape `stat_defaults` expects — either way this degrades to `text`'s own empty
-/// string, today's behaviour.
+/// `Raw::templates` had no `"Infobox character"` entry (no template-defaults fetch) or it
+/// didn't parse in the shape `stat_defaults` expects — either way this degrades to `text`'s
+/// own empty string, today's behaviour.
 fn stat(ib: &RawInfobox, name: &str, r: &Resolver) -> String {
     let declared = text(ib, name);
     if !declared.is_empty() {
@@ -1055,8 +1055,8 @@ mod tests {
         assert!(health.is_empty(), "no default for health either way");
     }
 
-    /// No template fetched (`Raw::template_infobox_character` is `None`, the pre-fetch
-    /// snapshot's shape) leaves every stat exactly as `text()` alone would: today's
+    /// No template fetched (`Raw::templates` has no `"Infobox character"` entry, the
+    /// pre-fetch snapshot's shape) leaves every stat exactly as `text()` alone would: today's
     /// behaviour, unchanged.
     #[test]
     fn with_no_defaults_set_an_omitted_stat_stays_empty() {

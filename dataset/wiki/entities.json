@@ -79691,9 +79691,9 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "wikipedia:The Legend of Zelda",
-                    "label": "The Legend of Zelda"
+                    "kind": "text",
+                    "text": "The Legend of Zelda",
+                    "style": "italic"
                   },
                   {
                     "kind": "text",
@@ -95595,9 +95595,9 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "wikipedia:The Legend of Zelda",
-                    "label": "The Legend of Zelda"
+                    "kind": "text",
+                    "text": "The Legend of Zelda",
+                    "style": "italic"
                   },
                   {
                     "kind": "text",
@@ -139740,9 +139740,9 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "wikipedia:The Legend of Zelda",
-                    "label": "The Legend of Zelda"
+                    "kind": "text",
+                    "text": "The Legend of Zelda",
+                    "style": "italic"
                   },
                   {
                     "kind": "text",
@@ -140405,9 +140405,9 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "wikipedia:The Legend of Zelda",
-                    "label": "The Legend of Zelda"
+                    "kind": "text",
+                    "text": "The Legend of Zelda",
+                    "style": "italic"
                   },
                   {
                     "kind": "text",
@@ -141101,9 +141101,9 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "wikipedia:The Legend of Zelda",
-                    "label": "The Legend of Zelda"
+                    "kind": "text",
+                    "text": "The Legend of Zelda",
+                    "style": "italic"
                   },
                   {
                     "kind": "text",
@@ -141759,9 +141759,9 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "wikipedia:The Legend of Zelda",
-                    "label": "The Legend of Zelda"
+                    "kind": "text",
+                    "text": "The Legend of Zelda",
+                    "style": "italic"
                   },
                   {
                     "kind": "text",
@@ -142415,9 +142415,9 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "wikipedia:The Legend of Zelda",
-                    "label": "The Legend of Zelda"
+                    "kind": "text",
+                    "text": "The Legend of Zelda",
+                    "style": "italic"
                   },
                   {
                     "kind": "text",
@@ -149832,17 +149832,7 @@
       },
       {
         "kind": "text",
-        "text": " based on one of the ",
-        "style": "plain"
-      },
-      {
-        "kind": "concept",
-        "page": "wikipedia:Seven Deadly Sins",
-        "label": "Seven Deadly Sins"
-      },
-      {
-        "kind": "text",
-        "text": ".",
+        "text": " based on one of the Seven Deadly Sins.",
         "style": "plain"
       }
     ],
@@ -234793,17 +234783,7 @@
       },
       {
         "kind": "text",
-        "text": " based on one of the ",
-        "style": "plain"
-      },
-      {
-        "kind": "concept",
-        "page": "wikipedia:Seven Deadly Sins",
-        "label": "Seven Deadly Sins"
-      },
-      {
-        "kind": "text",
-        "text": ".",
+        "text": " based on one of the Seven Deadly Sins.",
         "style": "plain"
       }
     ],
@@ -259890,17 +259870,7 @@
                 "inline": [
                   {
                     "kind": "text",
-                    "text": "This is the counterpart to the ",
-                    "style": "plain"
-                  },
-                  {
-                    "kind": "concept",
-                    "page": "anti:Objects",
-                    "label": "Electrifier"
-                  },
-                  {
-                    "kind": "text",
-                    "text": " in Antibirth.",
+                    "text": "This is the counterpart to the Electrifier in Antibirth.",
                     "style": "plain"
                   }
                 ],
@@ -263775,17 +263745,7 @@
                 "inline": [
                   {
                     "kind": "text",
-                    "text": "This is the counterpart to the ",
-                    "style": "plain"
-                  },
-                  {
-                    "kind": "concept",
-                    "page": "anti:Objects",
-                    "label": "Electrifier"
-                  },
-                  {
-                    "kind": "text",
-                    "text": " in Antibirth.",
+                    "text": "This is the counterpart to the Electrifier in Antibirth.",
                     "style": "plain"
                   }
                 ],
@@ -276948,17 +276908,7 @@
                 "inline": [
                   {
                     "kind": "text",
-                    "text": "This is the counterpart to the ",
-                    "style": "plain"
-                  },
-                  {
-                    "kind": "concept",
-                    "page": "anti:Objects",
-                    "label": "Electrifier"
-                  },
-                  {
-                    "kind": "text",
-                    "text": " in Antibirth.",
+                    "text": "This is the counterpart to the Electrifier in Antibirth.",
                     "style": "plain"
                   }
                 ],
@@ -294743,17 +294693,7 @@
                 "inline": [
                   {
                     "kind": "text",
-                    "text": "This is the counterpart to the ",
-                    "style": "plain"
-                  },
-                  {
-                    "kind": "concept",
-                    "page": "anti:Objects",
-                    "label": "Electrifier"
-                  },
-                  {
-                    "kind": "text",
-                    "text": " in Antibirth.",
+                    "text": "This is the counterpart to the Electrifier in Antibirth.",
                     "style": "plain"
                   }
                 ],
@@ -298622,17 +298562,7 @@
                 "inline": [
                   {
                     "kind": "text",
-                    "text": "This is the counterpart to the ",
-                    "style": "plain"
-                  },
-                  {
-                    "kind": "concept",
-                    "page": "anti:Objects",
-                    "label": "Electrifier"
-                  },
-                  {
-                    "kind": "text",
-                    "text": " in Antibirth.",
+                    "text": "This is the counterpart to the Electrifier in Antibirth.",
                     "style": "plain"
                   }
                 ],
@@ -302501,17 +302431,7 @@
                 "inline": [
                   {
                     "kind": "text",
-                    "text": "This is the counterpart to the ",
-                    "style": "plain"
-                  },
-                  {
-                    "kind": "concept",
-                    "page": "anti:Objects",
-                    "label": "Electrifier"
-                  },
-                  {
-                    "kind": "text",
-                    "text": " in Antibirth.",
+                    "text": "This is the counterpart to the Electrifier in Antibirth.",
                     "style": "plain"
                   }
                 ],
@@ -306380,17 +306300,7 @@
                 "inline": [
                   {
                     "kind": "text",
-                    "text": "This is the counterpart to the ",
-                    "style": "plain"
-                  },
-                  {
-                    "kind": "concept",
-                    "page": "anti:Objects",
-                    "label": "Electrifier"
-                  },
-                  {
-                    "kind": "text",
-                    "text": " in Antibirth.",
+                    "text": "This is the counterpart to the Electrifier in Antibirth.",
                     "style": "plain"
                   }
                 ],
@@ -312867,17 +312777,7 @@
                 "inline": [
                   {
                     "kind": "text",
-                    "text": "This is the counterpart to the ",
-                    "style": "plain"
-                  },
-                  {
-                    "kind": "concept",
-                    "page": "anti:Objects",
-                    "label": "Electrifier"
-                  },
-                  {
-                    "kind": "text",
-                    "text": " in Antibirth.",
+                    "text": "This is the counterpart to the Electrifier in Antibirth.",
                     "style": "plain"
                   }
                 ],

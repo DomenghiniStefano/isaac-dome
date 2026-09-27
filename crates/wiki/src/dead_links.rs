@@ -173,7 +173,7 @@ mod tests {
             },
             versions: vec![],
             redirects: BTreeMap::new(),
-            template_infobox_character: None,
+            templates: BTreeMap::new(),
         }
     }
 

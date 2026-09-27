@@ -15561,17 +15561,7 @@
                 "inline": [
                   {
                     "kind": "text",
-                    "text": "Resurrection items and abilities activate in a ",
-                    "style": "plain"
-                  },
-                  {
-                    "kind": "concept",
-                    "page": "Category:Revival items",
-                    "label": "set order"
-                  },
-                  {
-                    "kind": "text",
-                    "text": ". Lazarus' inherent extra life is 4th",
+                    "text": "Resurrection items and abilities activate in a set order. Lazarus' inherent extra life is 4th",
                     "style": "plain"
                   },
                   {
@@ -22756,17 +22746,7 @@
                 "inline": [
                   {
                     "kind": "text",
-                    "text": "Resurrection items and abilities activate in a ",
-                    "style": "plain"
-                  },
-                  {
-                    "kind": "concept",
-                    "page": "Category:Revival items",
-                    "label": "set order"
-                  },
-                  {
-                    "kind": "text",
-                    "text": ". Lazarus' inherent extra life is 4th",
+                    "text": "Resurrection items and abilities activate in a set order. Lazarus' inherent extra life is 4th",
                     "style": "plain"
                   },
                   {
@@ -50418,17 +50398,7 @@
                 "inline": [
                   {
                     "kind": "text",
-                    "text": "Resurrection items activate in a ",
-                    "style": "plain"
-                  },
-                  {
-                    "kind": "concept",
-                    "page": "Category:Revival items",
-                    "label": "set order"
-                  },
-                  {
-                    "kind": "text",
-                    "text": ", regardless of who owns which item. If the two characters each own a copy of the same resurrection item, the game prioritizes removing Jacob's item.",
+                    "text": "Resurrection items activate in a set order, regardless of who owns which item. If the two characters each own a copy of the same resurrection item, the game prioritizes removing Jacob's item.",
                     "style": "plain"
                   }
                 ],
@@ -52879,17 +52849,7 @@
                 "inline": [
                   {
                     "kind": "text",
-                    "text": "Resurrection items activate in a ",
-                    "style": "plain"
-                  },
-                  {
-                    "kind": "concept",
-                    "page": "Category:Revival items",
-                    "label": "set order"
-                  },
-                  {
-                    "kind": "text",
-                    "text": ", regardless of who owns which item. If the two characters each own a copy of the same resurrection item, the game prioritizes removing Jacob's item.",
+                    "text": "Resurrection items activate in a set order, regardless of who owns which item. If the two characters each own a copy of the same resurrection item, the game prioritizes removing Jacob's item.",
                     "style": "plain"
                   }
                 ],
@@ -77512,17 +77472,7 @@
                   },
                   {
                     "kind": "text",
-                    "text": " due to the ",
-                    "style": "plain"
-                  },
-                  {
-                    "kind": "concept",
-                    "page": "Category:Revival items",
-                    "label": "order of activation"
-                  },
-                  {
-                    "kind": "text",
-                    "text": "), one of the forms will be turned into a different character while another will remain Lazarus. The unchanged form will flip in and out of existence as normal, while the other form will always be active. Quitting and resuming the run will require a controller to continue, and will then be played similarly to a ",
+                    "text": " due to the order of activation), one of the forms will be turned into a different character while another will remain Lazarus. The unchanged form will flip in and out of existence as normal, while the other form will always be active. Quitting and resuming the run will require a controller to continue, and will then be played similarly to a ",
                     "style": "plain"
                   },
                   {
@@ -102619,17 +102569,7 @@
                   },
                   {
                     "kind": "text",
-                    "text": " due to the ",
-                    "style": "plain"
-                  },
-                  {
-                    "kind": "concept",
-                    "page": "Category:Revival items",
-                    "label": "order of activation"
-                  },
-                  {
-                    "kind": "text",
-                    "text": "), one of the forms will be turned into a different character while another will remain Lazarus. The unchanged form will flip in and out of existence as normal, while the other form will always be active. Quitting and resuming the run will require a controller to continue, and will then be played similarly to a ",
+                    "text": " due to the order of activation), one of the forms will be turned into a different character while another will remain Lazarus. The unchanged form will flip in and out of existence as normal, while the other form will always be active. Quitting and resuming the run will require a controller to continue, and will then be played similarly to a ",
                     "style": "plain"
                   },
                   {

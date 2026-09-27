@@ -474,15 +474,7 @@
       ]
     },
     "35": {
-      "refs": [
-        {
-          "target": {
-            "kind": "concept",
-            "name": "category:Yes Mother? items"
-          },
-          "label": "Yes Mother? items"
-        }
-      ]
+      "refs": []
     },
     "36": {
       "refs": [
@@ -12494,11 +12486,6 @@
     {
       "key": "concept:XV - The Devil?",
       "label": "XV - The Devil?",
-      "uses": 1
-    },
-    {
-      "key": "concept:Yes Mother? items",
-      "label": "Yes Mother? items",
       "uses": 1
     },
     {
