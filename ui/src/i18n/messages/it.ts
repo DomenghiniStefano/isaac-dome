@@ -610,6 +610,12 @@ export const it = {
       bestiaryKilled: 'Ucciso {count}',
       bestiaryKilledYou: 'Ti ha ucciso {count}',
     },
+    landing: {
+      totalPages: 'Pagine',
+      overallProgress: 'Progresso complessivo',
+      categoryProgress: 'Progresso di {category}',
+      progressOf: '{done} / {total}',
+    },
     states: {
       unknownTitle: 'Pagina sconosciuta',
       unknown: 'Questa pagina non è nella nostra copia della wiki.',

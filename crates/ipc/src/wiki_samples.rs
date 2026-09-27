@@ -19,6 +19,17 @@ use crate::wiki::{WikiPageCategory, WIKI_PAGE_CATEGORIES};
 pub struct CategorySample {
     pub category: WikiPageCategory,
     pub icon_url: Option<String>,
+    /// The game thing the picture is of, when `category_sample` names one at all: `None` only
+    /// for the three categories with no picture at all (transformations, stages, versions) —
+    /// whether the picture actually draws on this machine is `icon_url`'s question, not this
+    /// one; `target` is the *choice*, unaffected by whether the catalog is even there.
+    /// **Not always a wiki page**:
+    /// the two "raw" choices (cards and runes, pickups) compose a picture from an
+    /// `entities2.xml` row nobody filed a page under (`category_sample`'s own doc comment), and
+    /// this still names that row as a `Target::Entity` — honest about *what game thing* the
+    /// picture is of, never a promise that opening it finds a page. The frontend reads it only
+    /// to pick the picture's frame (sprite, painting or portrait) and never to navigate.
+    pub target: Option<Target>,
 }
 
 /// A deliberate, checked choice of one game thing per landing tile — never "whatever page
@@ -86,18 +97,47 @@ pub fn category_sample(category: WikiPageCategory) -> Option<IconRef> {
 
 /// `category_sample`'s picture, only when the catalog really has one — never a URL to a
 /// picture that would 404. `icon_source` is the one function that already knows how to check
-/// every kind of `IconRef` this can produce, `Page` and `Entity` alike.
+/// every kind of `IconRef` this can produce, `Page` and `Entity` alike. Takes the reference
+/// `samples` below already resolved, rather than calling `category_sample` again: the choice
+/// is made once and read twice — once for the URL here, once for `target`.
 fn category_icon_url(
     catalog: Option<&Catalog>,
     bosses: &BossKeys,
     ds: &Dataset,
-    category: WikiPageCategory,
+    reference: Option<&IconRef>,
     icon: &mut impl FnMut(&IconRef) -> Option<String>,
 ) -> Option<String> {
     let c = catalog?;
-    let r = category_sample(category)?;
-    crate::icon::icon_source(c, bosses, Some(ds), &r)?;
-    icon(&r)
+    let r = reference?;
+    crate::icon::icon_source(c, bosses, Some(ds), r)?;
+    icon(r)
+}
+
+/// The `Target` a sample's own `IconRef` names, when it names one at all — `CategorySample`'s
+/// own `target` field, see its doc comment for what "names" means for the two raw choices.
+/// `category_sample` only ever produces `Page` or `Entity`; every other `IconRef` variant
+/// belongs to a picture no landing tile draws (a mark, the widget, a co-op head, the unknown
+/// stand-in, a room icon), so none of them name a `Target` here.
+fn icon_ref_target(r: &IconRef) -> Option<Target> {
+    match r {
+        IconRef::Page { target } => Some(target.clone()),
+        IconRef::Entity {
+            id,
+            variant,
+            subtype,
+        } => Some(Target::Entity {
+            id: *id,
+            variant: *variant,
+            subtype: *subtype,
+        }),
+        IconRef::Achievement { .. }
+        | IconRef::Item { .. }
+        | IconRef::Mark { .. }
+        | IconRef::Widget { .. }
+        | IconRef::Head { .. }
+        | IconRef::Unknown
+        | IconRef::Room { .. } => None,
+    }
 }
 
 /// One representative picture per landing tile, in `WIKI_PAGE_CATEGORIES` order — what
@@ -110,9 +150,13 @@ pub(crate) fn samples(
 ) -> Vec<CategorySample> {
     WIKI_PAGE_CATEGORIES
         .into_iter()
-        .map(|category| CategorySample {
-            category,
-            icon_url: category_icon_url(catalog, bosses, ds, category, &mut icon),
+        .map(|category| {
+            let reference = category_sample(category);
+            CategorySample {
+                category,
+                target: reference.as_ref().and_then(icon_ref_target),
+                icon_url: category_icon_url(catalog, bosses, ds, reference.as_ref(), &mut icon),
+            }
         })
         .collect()
 }
