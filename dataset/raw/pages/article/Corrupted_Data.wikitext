@@ -3,7 +3,7 @@
 '''Corrupted Data''' is an [[achievement]] and a permanent effect on the [[Save File Completion|save file]] it is unlocked for.
 
 == Effect ==
-* {{r|Secret Room}}s and {{r|I AM ERROR}} rooms now have a chance of generating glitch items, as if caused by {{i|TMTRAINER}}. The chances in {{r|Secret Room}}s are 1/60 and 1/16 in {{r|I AM ERROR}} rooms.
+* {{r|Secret Room}}s and {{r|I AM ERROR}} rooms now have a chance of generating glitch items, as if caused by {{i|TMTRAINER}} {{dlc|r+|or {{i|Dataminer}}}}. The chances in {{r|Secret Room}}s are 1/60 and 1/16 in {{r|I AM ERROR}} rooms.
 ** This chance applies only to items that are part of the room layout. Items generated later or rerolled do not have a chance to become glitched.
 ** If affected by {{curse|blind}}, the items that were corrupted are revealed upon first entering the room. Leaving the room and returning will render them hidden again.
 

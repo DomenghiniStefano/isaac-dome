@@ -19,7 +19,7 @@ fn the_embedded_rules_are_the_committed_ones() {
     // is a wiki edit to look at, not noise to accept.
     assert_eq!(
         rules.generated_from().snapshot_at,
-        "2026-09-26T15:34:47Z",
+        "2026-09-27T04:33:07Z",
         "era of the numbers pinned across this suite"
     );
 }

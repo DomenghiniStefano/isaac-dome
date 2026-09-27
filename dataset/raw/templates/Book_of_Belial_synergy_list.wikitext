@@ -1,0 +1,16 @@
+<onlyinclude><includeonly>{{cargo lookup
+ | tables    = collectible
+             , collectible_name LATEST ON collectible
+             , collectible_image LATEST ON collectible
+             , bob_combination ON collectible
+ | fields    = collectible.dlc & {{dlcset|r}} = dlc, alias, name, link, collectible_image.file = image, bob_combination.description = description
+ | where     = bob_combination.description IS NOT NULL
+ | lookup    = {{{1|}}}
+ | pattern   = <esc>* {{link|1=@link|2=@name|dlc=@dlc|icon=@image|size=1.4em|tooltip=i/tooltip{{!}}@alias}}: @description</esc>
+ | delimiter = \n
+ | default   = <esc>{{error|No Book of Belial interaction found for "@value".}}</esc>
+}}</includeonly></onlyinclude>
+{{cargo query template|collectible, collectible_name, collectible_image, bob_combination}}
+{{documentation|fr=liste synergies Livre de Bélial}}
+
+[[Category:Collectible templates]]

@@ -14,7 +14,7 @@
 {{cit|uc|r}}
 
 == Effects ==
-* Forces Isaac to eat 5 random [[pills]] (from the run's pill pool) in quick succession.
+* Forces Isaac to eat several random [[pills]] (from the run's pill pool) in quick succession.
 ** Eaten pill types become identified.
 
 == Notes ==

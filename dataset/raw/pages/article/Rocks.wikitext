@@ -370,8 +370,7 @@ When buckets in Dross are destroyed, the following events can occur:
 In addition to these rewards, whenever a full bucket (i.e. filled with water or filled with poop) is destroyed or picked up by a {{e|Polty}}, 6 projectiles will always spawn in a small radius.
 
 === Notes ===
-* If a bucket would normally spawn Striders, but is in a dry room, normal Spiders will spawn instead.
-{{dlc-}}
+* {{dlc|na|If a bucket would normally spawn Striders, but is in a dry room, normal Spiders will spawn instead.}}
 
 == Notes ==
 * All [[item]] and [[trinket]] drops from rocks can only spawn once per run, and copies cannot spawn if Isaac has already previously collected the item/trinket on the run.
