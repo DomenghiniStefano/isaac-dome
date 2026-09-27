@@ -8,6 +8,11 @@ import { focusOrder, rememberFocus } from '@/lib/window/focusOrder'
 import { WindowMessageKind } from '@/lib/window/messages'
 import type { WindowMessage } from '@/lib/window/messages'
 import { sidebarCollapsed, sidebarWidth } from '@/lib/window/layout'
+// Restored and watched the same way the sidebar's own layout is (card #90): a per-viewer
+// convenience beside it in the document, not tab state and not broadcast between windows —
+// see `lib/window/sessionDocument.ts`'s own doc comment on `wikiListView`.
+import { WikiCategory } from '@/router/routeTable'
+import { takeWikiListView, wikiListView } from '@/lib/wiki/listViewMode'
 import { layoutEcho } from '@/lib/window/layoutEcho'
 import { replaceableTimeout } from '@/lib/window/replaceableTimeout'
 import { reopenWindows } from '@/lib/window/reopen'
@@ -167,6 +172,10 @@ export const useWindowSession = (): void => {
       layout.changed()
       saver.remember()
     })
+    // Not echoed to other windows the way the sidebar is: a card-or-table choice is read back
+    // only at the next restore of the *main* window (below), never broadcast live — the cost a
+    // "per-viewer convenience" is allowed, per the plan that added it.
+    watch(wikiListView, () => saver.remember(), { deep: true })
     await listening.add(() => windowPort.listen(onMessage))
     // Who is in front, told by the only thing that observes it: this window's own focus.
     // Broadcast, so every window keeps the same order and the hit test agrees everywhere.
@@ -199,6 +208,7 @@ export const useWindowSession = (): void => {
       sidebarWidth: restored?.sidebarWidth ?? null,
       sidebarCollapsed: restored?.sidebarCollapsed === true,
     })
+    takeWikiListView(restored?.wikiListView, Object.values(WikiCategory))
     // `main` takes the first window of the document and reopens the rest — a restored window is
     // a torn-off window that nobody dragged, so this is the tear-off's own machinery.
     const windows = restored?.windows ?? []
