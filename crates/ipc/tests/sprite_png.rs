@@ -2,7 +2,7 @@
 //! the mark symbols and the character heads as crops, and a crop that takes the wrong cell is
 //! a picture that looks plausible and is wrong.
 
-use ipc::{centre_opaque, crop_png, decode_rgba, overlay, trim_opaque};
+use ipc::{centre_opaque, crop_png, decode_rgba, overlay, place, trim_opaque, Placement};
 
 fn encode(w: u32, h: u32, pixel: &[u8]) -> Vec<u8> {
     let mut out = Vec::new();
@@ -331,4 +331,44 @@ fn a_picture_with_nothing_in_it_centres_to_nothing() {
     // an empty picture. On a machine without the game nothing reaches here at all.
     assert!(centre_opaque(&block(8, 8, 0, 0, 0, 0)).is_none());
     assert!(centre_opaque(b"nothing").is_none());
+}
+
+// `place` is the one decision the icon handler asks for: a reference says where its drawing
+// sits (`IconRef::placement`), and the handler hands the picture over without choosing between
+// the three functions itself. A placement that cannot be carried out keeps the picture as it
+// was: degrade, never fail.
+
+#[test]
+fn a_centred_placement_moves_the_drawing_and_keeps_the_canvas() {
+    // A trinket's shape: a drawing low and to the left of its frame.
+    let picture = block(8, 8, 0, 4, 2, 2);
+    let out = place(picture, Placement::Centred);
+    let (w, h, _) = decode_rgba(&out).expect("a PNG");
+    assert_eq!((w, h), (8, 8));
+    assert_eq!(pixel_at(&out, 3, 3), [9, 8, 7, 255]);
+    assert_eq!(pixel_at(&out, 0, 4), [0, 0, 0, 0], "where it came from");
+}
+
+#[test]
+fn a_trimmed_placement_shrinks_to_the_drawing() {
+    let out = place(block(16, 16, 3, 2, 8, 6), Placement::Trimmed);
+    let (w, h, _) = decode_rgba(&out).expect("a PNG");
+    assert_eq!((w, h), (8, 6));
+}
+
+#[test]
+fn a_declared_placement_is_the_picture_untouched() {
+    let picture = block(8, 8, 0, 4, 2, 2);
+    assert_eq!(place(picture.clone(), Placement::AsDeclared), picture);
+}
+
+#[test]
+fn a_placement_that_cannot_be_done_keeps_the_picture() {
+    let empty = block(8, 8, 0, 0, 0, 0);
+    assert_eq!(place(empty.clone(), Placement::Centred), empty);
+    assert_eq!(place(empty.clone(), Placement::Trimmed), empty);
+    assert_eq!(
+        place(b"not a png".to_vec(), Placement::Centred),
+        b"not a png".to_vec()
+    );
 }

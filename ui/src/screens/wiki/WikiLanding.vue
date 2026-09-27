@@ -125,7 +125,6 @@ const open = (category: WikiCategory, event: MouseEvent) =>
            under it — what somebody arriving here wants is a way in — and the provenance
            of the dataset goes last. -->
       <WikiLandingHero
-        :samples="wiki.index?.samples ?? []"
         :total-pages="totalPages"
         :snapshot="view.snapshot"
         :patch="view.patch"

@@ -1,6 +1,6 @@
 import { assertNever } from '@/lib/assertNever'
 import { setWindowSession } from '@/lib/ipc/session'
-// The Wiki's own reading of what the session's opaque `wikiListView` map holds (card #90):
+// The Wiki's own reading of what the session's opaque `wikiListView` map holds:
 // generic session machinery never learns what a category or a view mode is, the same layering
 // `sidebarWidth` and `sidebarCollapsed` already keep — only this one call site, which is where
 // every other named part of the document is assembled for writing, reaches into it.

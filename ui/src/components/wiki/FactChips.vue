@@ -6,8 +6,8 @@ import type { PageFacts } from '@/lib/ipc/types'
 import { factChips } from '@/lib/wiki/factChips'
 import { useWikiStore } from '@/stores/wiki'
 
-// Every meaningful fact a page's own `PageFacts` carries, as coloured chips (card #90, decision
-// 3): a list card, a table row's expanded state, and a page's hero all read the same function.
+// Every meaningful fact a page's own `PageFacts` carries, as coloured chips:
+// a list card, a table row's expanded state, and a page's hero all read the same function.
 // `limit` caps how many show, for a card that has no room for every one of them — the full set
 // stays reachable on the single page.
 const props = defineProps<{ facts: PageFacts; limit?: number }>()
@@ -21,9 +21,13 @@ const chips = computed(() => {
 </script>
 
 <template>
-  <div v-if="chips.length > 0" class="flex flex-wrap gap-1.5">
-    <Chip v-for="chip in chips" :key="chip.key" :tone="chip.tone">{{
-      t(chip.label.key, chip.label.params)
-    }}</Chip>
+  <div v-if="chips.length > 0" class="flex w-full min-w-0 flex-wrap gap-1.5">
+    <Chip
+      v-for="chip in chips"
+      :key="chip.key"
+      :tone="chip.tone"
+      :title="t(chip.label.key, chip.label.params)"
+      >{{ t(chip.label.key, chip.label.params) }}</Chip
+    >
   </div>
 </template>

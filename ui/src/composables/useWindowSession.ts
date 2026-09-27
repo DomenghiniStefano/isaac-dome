@@ -8,7 +8,7 @@ import { focusOrder, rememberFocus } from '@/lib/window/focusOrder'
 import { WindowMessageKind } from '@/lib/window/messages'
 import type { WindowMessage } from '@/lib/window/messages'
 import { sidebarCollapsed, sidebarWidth } from '@/lib/window/layout'
-// Restored and watched the same way the sidebar's own layout is (card #90): a per-viewer
+// Restored and watched the same way the sidebar's own layout is: a per-viewer
 // convenience beside it in the document, not tab state and not broadcast between windows —
 // see `lib/window/sessionDocument.ts`'s own doc comment on `wikiListView`.
 import { WikiCategory } from '@/router/routeTable'

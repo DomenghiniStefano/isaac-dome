@@ -52,7 +52,7 @@ export interface StoredWindow {
 // what the sidebar is until somebody folds it, so an open sidebar writes nothing, exactly as a
 // width nobody set writes nothing.
 //
-// `wikiListView` is the same kind of part again (card #90): the Wiki's category lists remember
+// `wikiListView` is the same kind of part again: the Wiki's category lists remember
 // card grid or table per category, a per-viewer convenience and not tab state, so it sits beside
 // `sidebarWidth` rather than inside any one tab's own `view`. This document stays opaque to what
 // the values mean — a category name, `"grid"` or `"table"` — the same way `view` is opaque to a

@@ -3,11 +3,11 @@ import { cva } from 'class-variance-authority'
 import { Tone } from '@/lib/wiki/tone'
 
 // One class string per tone: the pair of tokens `tone.ts` named, read here and nowhere
-// else. There is no third "line" token in the wiki restyle's colour families (card #90,
-// decision 5 — only `-surface`/`-foreground`), so the border is the same bright colour the
+// else. There is no third "line" token in the wiki restyle's colour families
+// (only `-surface`/`-foreground`), so the border is the same bright colour the
 // text is, the way `BadgeVariant.Unknown` already borrows its own foreground for its edge.
 // Exported so a surface that wants the same tone painted large — the landing's tiles and hero
-// (card #90, decision 8), never a pill of their own — read the one definition instead of a
+//, never a pill of their own — read the one definition instead of a
 // second hand-written map: Tailwind's class scanner needs the literal strings written
 // somewhere, and this is where `Chip` already keeps them.
 export const toneClass: Record<Tone, string> = {
@@ -60,7 +60,7 @@ export const toneClass: Record<Tone, string> = {
 }
 
 export const chipVariants = cva(
-  'inline-flex w-fit shrink-0 items-center gap-1 rounded-full border px-2.5 py-0.5 text-caption whitespace-nowrap',
+  'inline-block max-w-full min-w-0 truncate rounded-full border px-2.5 py-0.5 align-middle text-caption whitespace-nowrap',
   {
     variants: { tone: toneClass },
     defaultVariants: { tone: Tone.QualityLow },

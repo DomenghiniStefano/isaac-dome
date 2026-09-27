@@ -25,7 +25,14 @@ const facts: Array<[string, PageFacts]> = [
     'achievement',
     { kind: 'achievement', requirement: 'Defeat Mom', unlocks: null },
   ],
-  ['boss', { kind: 'boss', baseHp: 300, floors: 'Womb, Utero' }],
+  [
+    'boss',
+    {
+      kind: 'boss',
+      baseHp: 300,
+      floors: ['Womb', 'Utero', 'Scarred Womb', 'Blue Womb'],
+    },
+  ],
   [
     'challenge',
     {
@@ -51,7 +58,7 @@ const facts: Array<[string, PageFacts]> = [
     },
   ],
   ['transformation', { kind: 'transformation', requires: 3, contributors: 8 }],
-  ['entity', { kind: 'entity', baseHp: null, floors: '' }],
+  ['entity', { kind: 'entity', baseHp: null, floors: [] }],
   [
     'article (version)',
     {

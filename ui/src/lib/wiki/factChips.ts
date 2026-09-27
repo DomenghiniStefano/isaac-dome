@@ -130,7 +130,7 @@ const achievementChips = (f: Facts<'achievement'>): FactChip[] =>
 // both — `factChips` still matches each variant on its own, since the enum is tagged.
 const bossOrEntityChips = (f: {
   baseHp: number | null
-  floors: string
+  floors: string[]
 }): FactChip[] => {
   const chips: FactChip[] = []
   if (f.baseHp !== null) {
@@ -143,17 +143,29 @@ const bossOrEntityChips = (f: {
       ),
     )
   }
-  if (f.floors !== '') {
+  if (f.floors.length > 0) {
+    const shown = shortList(f.floors, FLOORS_ON_A_CHIP)
     chips.push(
       chip(
         'floors',
-        { key: 'wiki.facts.floors', params: { value: f.floors } },
-        f.floors,
+        { key: 'wiki.facts.floors', params: { value: shown } },
+        shown,
         Tone.QualityNone,
       ),
     )
   }
   return chips
+}
+
+// How many floors a chip names before it counts the rest: a boss can appear on a dozen, and a
+// chip is one line of a card.
+const FLOORS_ON_A_CHIP = 2
+
+// The first `n` names, and how many more there are: `Basement, Caves +10`.
+export const shortList = (names: string[], n: number): string => {
+  const head = names.slice(0, n).join(', ')
+  const rest = names.length - n
+  return rest > 0 ? `${head} +${rest}` : head
 }
 
 const challengeChips = (
@@ -402,12 +414,16 @@ const achievementColumns: FactColumn[] = [
 
 const bossColumns: FactColumn[] = [
   scalarColumn('boss', 'baseHp', 'wiki.infobox.baseHp', (f) => f.baseHp),
-  scalarColumn('boss', 'floors', 'wiki.infobox.environment', (f) => f.floors),
+  scalarColumn('boss', 'floors', 'wiki.infobox.environment', (f) =>
+    f.floors.length > 0 ? f.floors.join(', ') : null,
+  ),
 ]
 
 const entityColumns: FactColumn[] = [
   scalarColumn('entity', 'baseHp', 'wiki.infobox.baseHp', (f) => f.baseHp),
-  scalarColumn('entity', 'floors', 'wiki.infobox.environment', (f) => f.floors),
+  scalarColumn('entity', 'floors', 'wiki.infobox.environment', (f) =>
+    f.floors.length > 0 ? f.floors.join(', ') : null,
+  ),
 ]
 
 const challengeColumns: FactColumn[] = [

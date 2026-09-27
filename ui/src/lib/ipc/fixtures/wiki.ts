@@ -237,7 +237,7 @@ const factsOf = (target: Target): PageFacts => {
     case 'achievement':
       return { kind: 'achievement', requirement: '', unlocks: null }
     case 'entity':
-      return { kind: 'boss', baseHp: null, floors: '' }
+      return { kind: 'boss', baseHp: null, floors: [] }
     case 'challenge':
       return {
         kind: 'challenge',
@@ -296,7 +296,7 @@ const warnSamples = warnOnce(
   `wiki fixture: ${samplePages.size} sample pages are recorded; every other page reads as unknown`,
 )
 
-// `obtainedFrom` (design decision 3, card #90) was added to `Infobox::Item`/`Infobox::Trinket`
+// `obtainedFrom` was added to `Infobox::Item`/`Infobox::Trinket`
 // after every sample here was last recorded: the field the recording predates is filled in by
 // the reader, with the value that recording would have carried (`[]`, "the wiki states no
 // guaranteed source" — this file's own README, "a field a payload predates").

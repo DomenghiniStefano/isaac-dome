@@ -1,7 +1,7 @@
 import { ref } from 'vue'
 import type { WikiCategory } from '@/router/routeTable'
 
-// Card grid or table, per category (card #90, decision 4). Remembered across the window's own
+// Card grid or table, per category. Remembered across the window's own
 // tabs and — through the session document (`lib/window/sessionDocument.ts`'s `wikiListView`,
 // a named key beside `windows` the same way `sidebarWidth` is one) — across a restart. A
 // per-viewer convenience: it never crosses to another machine and nothing here talks to Rust.

@@ -7,7 +7,7 @@ import { dlcNames } from '@/lib/wiki/dlcNames'
 import { editionAdded, editionRemoved } from '@/lib/wiki/edition'
 import { toneOfEdition } from '@/lib/wiki/tone'
 
-// "Added in …" and "Removed in …", each in the edition's own colour (card #90, decision 9).
+// "Added in …" and "Removed in …", each in the edition's own colour.
 // `dlc` is the entry's own restriction list; `editionAdded`/`editionRemoved` already read
 // the two null cases that mean "draw nothing" (no restriction, or present since Rebirth),
 // so this component states no rule of its own about when a chip appears.
@@ -19,7 +19,10 @@ const removed = computed(() => editionRemoved(props.dlc))
 </script>
 
 <template>
-  <span v-if="added || removed" class="flex flex-wrap items-center gap-2">
+  <span
+    v-if="added || removed"
+    class="flex max-w-full min-w-0 flex-wrap items-center gap-2"
+  >
     <Chip v-if="added" :tone="toneOfEdition(added)">{{
       t('wiki.addedIn', { edition: dlcNames[added] })
     }}</Chip>

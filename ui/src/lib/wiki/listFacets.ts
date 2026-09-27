@@ -15,8 +15,8 @@ import { dlcNames } from './dlcNames'
 import { factColumns } from './factChips'
 import { isComplete } from './progress'
 
-// A category's own filters, over `PageFacts` and the save's `PageProgress` (card #90,
-// decisions 4 and 6): the edition every page carries, the save's state where the category has
+// A category's own filters, over `PageFacts` and the save's `PageProgress`:
+// the edition every page carries, the save's state where the category has
 // one, and each kind's own facet. One union for all twelve categories — a facet a page's own
 // kind does not carry simply answers no value, the same way an inapplicable fact chip draws
 // nothing — so only `wikiSlotsForCategory` below decides which of them a given list offers.
@@ -327,7 +327,7 @@ export const wikiSortText = (
   ),
 })
 
-// A category's whole filter bar (card #90, decisions 4 and 6): the faceting the screen built
+// A category's whole filter bar: the faceting the screen built
 // over its own `progressFor`, which facets this category offers and where, the profile's state
 // row — empty when the category has no save state to show, which draws nothing rather than a
 // row of squares that would always read "no data" — and the sort keys.
