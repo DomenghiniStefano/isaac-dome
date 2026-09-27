@@ -130,14 +130,16 @@ fn print_meta(ds: &Dataset) {
     let m = &ds.meta;
     let c = &m.counts;
     println!(
-        "entries: {} items, {} trinkets, {} achievements, {} bosses, {} challenges, {} characters, {} transformations",
+        "entries: {} items, {} trinkets, {} achievements, {} bosses, {} challenges, {} characters, {} transformations, {} entities, {} articles",
         c.items,
         c.trinkets,
         c.achievements,
         c.bosses,
         c.challenges,
         c.characters,
-        c.transformations
+        c.transformations,
+        c.entities,
+        c.articles
     );
     println!("snapshotAt: {} (max revid {})", m.snapshot_at, m.max_revid);
     match &m.last_known_patch {

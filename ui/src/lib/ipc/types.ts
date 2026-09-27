@@ -1085,6 +1085,7 @@ export type Target =
   | { kind: 'stage'; name: string }
   | { kind: 'room'; name: string }
   | { kind: 'concept'; name: string }
+  | { kind: 'article'; title: string }
 
 export type Inline =
   | { kind: 'text'; text: string; style: Style }
@@ -1127,6 +1128,25 @@ export const CollectibleTemplate = {
 } as const
 export type CollectibleTemplate =
   (typeof CollectibleTemplate)[keyof typeof CollectibleTemplate]
+
+/**
+ * The infobox template an article was found to transclude, when it transcludes one of the
+ * five whose parameters this sub-project declines to read (design decision 2): a card, a
+ * rune, a pickup, a stage, or a version. It is not a `PageKind` — the page is still filed
+ * as `Article` — but it is how the landing tells a card from a mechanic page.
+ *
+ * Crosses the IPC as part of `Infobox::Article` (`model.rs`): fieldless, so a bare
+ * camelCase string, same as every variant name here since each is one word.
+ */
+export const ArticleCategory = {
+  Card: 'card',
+  Rune: 'rune',
+  Pickup: 'pickup',
+  Stage: 'stage',
+  Version: 'version',
+} as const
+export type ArticleCategory =
+  (typeof ArticleCategory)[keyof typeof ArticleCategory]
 
 export type Infobox =
   | {
@@ -1265,6 +1285,31 @@ export type Infobox =
        */
       parent: Target | null
     }
+  | {
+      kind: 'entity'
+      baseHp: number | null
+      /**
+       * Per-stage or per-note hp, the same reason `Boss.stage_hp` is inline and not a
+       * number.
+       */
+      stageHp: Array<Inline>
+      environment: Array<Inline>
+      /**
+       * The only place a **variant**'s own behavior is stated: several infoboxes on one
+       * page (Gaper's sixteen) share the page's sections, so a per-variant sentence has
+       * nowhere else to live.
+       */
+      behavior: Array<Inline>
+      pool: Array<Inline>
+      /**
+       * What this entity can turn into or be replaced by (a champion condition), and its
+       * odds and notes. Not a number: `replace chance` carries `%` and edition markup.
+       */
+      replace: Array<Inline>
+      replaceChance: Array<Inline>
+      replaceNotes: Array<Inline>
+    }
+  | { kind: 'article'; category: ArticleCategory | null }
 
 export type Section = { kind: SectionKind; blocks: Array<Block> }
 
@@ -1337,6 +1382,27 @@ export type WikiCounts = {
   challenges: number
   characters: number
   transformations: number
+  /**
+   * The `entities` collection (design decision 2): common enemies and pickup entities,
+   * what the landing's "Monsters" tile counts.
+   */
+  monsters: number
+  /**
+   * Articles under `ArticleCategory::Card` or `::Rune` (design decision 5).
+   */
+  cardsAndRunes: number
+  /**
+   * Articles under `ArticleCategory::Pickup`.
+   */
+  pickups: number
+  /**
+   * Articles under `ArticleCategory::Stage`.
+   */
+  stages: number
+  /**
+   * The whole `articles` collection, category or none: what search counts against.
+   */
+  articles: number
 }
 
 /**
@@ -1360,13 +1426,43 @@ export type WikiInfo =
   | { kind: 'missing'; reason: WikiMissingReason }
 
 /**
- * One page of the dataset: its identity, its own title, and the link to its figure when
- * the catalog draws one.
+ * A page's landing tile / sidebar category (design decisions 5 and 7). Fieldless: a bare
+ * string, and its values are chosen to equal the frontend's own `WikiCategory`
+ * (`routeTable.ts`) member for member, so a value crossing the IPC needs no translation —
+ * the two are structurally the same union, kept as two names because `WikiCategory` also
+ * carries seven kinds this crate had no reason to name before.
+ *
+ * **Why this exists at all, rather than being read from `Target` alone at the frontend**:
+ * `Target::Entity` covers both a boss and a common enemy (design decision 2) and a
+ * `Target::Article` covers four different landing tiles or none, and neither distinction
+ * survives in the wire shape of `Target` — it is `entry.infobox`'s variant that says which,
+ * and only `wiki_index` (here) still has the entry when it builds each page's reference.
+ */
+export const WikiPageCategory = {
+  Items: 'items',
+  Trinkets: 'trinkets',
+  Achievements: 'achievements',
+  Bosses: 'bosses',
+  Challenges: 'challenges',
+  Characters: 'characters',
+  Transformations: 'transformations',
+  Monsters: 'monsters',
+  CardsAndRunes: 'cardsAndRunes',
+  Pickups: 'pickups',
+  Stages: 'stages',
+} as const
+export type WikiPageCategory =
+  (typeof WikiPageCategory)[keyof typeof WikiPageCategory]
+
+/**
+ * One page of the dataset: its identity, its own title, the link to its figure when
+ * the catalog draws one, and which landing tile / sidebar category it belongs to.
  */
 export type WikiPageRef = {
   target: Target
   title: string
   iconUrl: string | null
+  category: WikiPageCategory | null
 }
 
 /**

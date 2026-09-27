@@ -35,6 +35,7 @@ fn family(t: &Target) -> &'static str {
         Target::Stage { .. } => "stage",
         Target::Room { .. } => "room",
         Target::Concept { .. } => "concept",
+        Target::Article { .. } => "article",
     }
 }
 
@@ -85,6 +86,27 @@ fn pages() -> Vec<Target> {
     out
 }
 
+/// `ds.entities`' own keys as targets, the same notation `pages` reads for bosses — the
+/// common enemies design decision 2 added, kept apart from `pages` because they answer a
+/// different question: not "is the boss's portrait reachable" but "what does the sprite
+/// pipeline still need before a common enemy has a picture at all".
+fn entity_page_targets(ds: &wiki::Dataset) -> Vec<Target> {
+    ds.entities
+        .keys()
+        .filter_map(|k| {
+            let mut p = k.split('.').map(|n| n.parse::<u32>());
+            match (p.next(), p.next(), p.next()) {
+                (Some(Ok(id)), Some(Ok(variant)), Some(Ok(subtype))) => Some(Target::Entity {
+                    id,
+                    variant,
+                    subtype,
+                }),
+                _ => None,
+            }
+        })
+        .collect()
+}
+
 /// Walks the dataset's pages and counts how **the page itself** (its target) resolves,
 /// per family.
 fn page_coverage(c: &Catalog) -> BTreeMap<&'static str, Counts> {
@@ -133,9 +155,11 @@ fn most_boss_pages_reach_their_portrait_through_the_entity_key() {
         test_support::skip("the dataset has no entity pages");
         return;
     }
-    // The wiki's `entity` pages aren't just bosses: they include common enemies, which
-    // by definition don't have a portrait. The property that holds is that the bosses
-    // the game illustrates are reachable — not that every entity has a picture.
+    // `pages` walks `ds.bosses` alone: the common enemies design decision 2 filed under
+    // `ds.entities` are a different collection and a different property, covered by
+    // `common_enemies_have_no_picture_yet` below — mixing the two here would drag this
+    // threshold down for a reason that has nothing to do with whether a *boss* portrait
+    // is reachable.
     //
     // The threshold was `> 50` while the key was read from the portrait's file name alone
     // and 75 of 102 resolved. Since the page's own title decides the key (2026-09-21) the
@@ -146,6 +170,62 @@ fn most_boss_pages_reach_their_portrait_through_the_entity_key() {
         n.found * 10 > n.total() * 9,
         "boss portraits must stay reachable from the entity key ({n:?})"
     );
+}
+
+/// The common enemies design decision 2 filed under `ds.entities` (Gaper, Fly, every
+/// non-boss `Infobox monster`/`Infobox entity` page) all read `Unknown` today, the same as a
+/// boss id the catalog does not have a portrait for — **not** `NoArt`, even though decision 5
+/// asks for `NoArt` eventually. `target_sprite` cannot tell the two apart yet: it is handed
+/// only `(id, variant, subtype)`, and `BossKeys` (`catalog::Boss` carries no type/variant of
+/// its own) is the only source of "is this id a boss", so an unkeyed boss — one
+/// `bossportraits.xml` has no name or file-name match for, `Portrait_Nevecka.png` among them
+/// on the installed archives — reads exactly like a common enemy by that measure. The sprite
+/// spike (decision 5, `entities2.xml` → `anm2` → frame) needs a way to know which dataset
+/// collection a target came from before it can turn a common enemy into `NoArt` without also
+/// mislabeling an unkeyed boss — `target_sprite` taking `Option<&Dataset>`, or the caller
+/// deciding once where the target is built, are the two shapes that could carry it.
+///
+/// This test is the measured statement of that gap: every common enemy today is `Unknown`,
+/// and the day the distinction lands, this assertion is what has to change, not a silent
+/// improvement nobody notices.
+#[test]
+fn common_enemies_read_as_unknown_not_no_art_yet() {
+    let Some(c) = real_catalog() else { return };
+    let Ok(ds) = wiki::Dataset::embedded() else {
+        test_support::skip("wiki dataset not embedded");
+        return;
+    };
+    let targets = entity_page_targets(ds);
+    if targets.is_empty() {
+        test_support::skip("the dataset has no entity pages");
+        return;
+    }
+    let bosses = ipc::for_tests::bosses(&c);
+    let mut n = Counts::default();
+    for t in &targets {
+        match target_sprite(&c, &bosses, t) {
+            TargetSprite::Found(_) => n.found += 1,
+            TargetSprite::NoArt => n.no_art += 1,
+            TargetSprite::Unknown => n.unknown += 1,
+        }
+    }
+    eprintln!("coverage common entities: {n:?}");
+    assert!(
+        n.no_art == 0,
+        "a common enemy reading 'NoArt' means the distinction landed — update this test \
+         and the doc comment on target_sprite::target_sprite: {n:?}"
+    );
+    // A handful genuinely resolve, by coincidence and not by any reader landing: Peep Eye
+    // (`68.1.0`) shares its exact triple with the boss The Bloat, and Lil' Haunt (`260.0.0`)
+    // with The Haunt — `Dataset::entry`'s bosses-first rule (`dataset.rs`) means
+    // `target_sprite` draws the boss's portrait for these two monster pages. Two on this
+    // snapshot; a regression here is a real reader landing, not more coincidences.
+    assert!(
+        n.found <= 4,
+        "more 'found' than the two known boss/monster key collisions explain — \
+         either a reader landed (update this test) or a new collision appeared: {n:?}"
+    );
+    assert!(n.unknown > 100, "too few common enemies measured: {n:?}");
 }
 
 /// Case, spaces and punctuation dropped, and a leading `the` with them: `normalized` in

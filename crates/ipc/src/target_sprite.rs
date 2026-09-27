@@ -62,14 +62,33 @@ pub fn target_sprite<'a>(c: &'a Catalog, bosses: &BossKeys, t: &Target) -> Targe
             },
         },
         // The boss: the portrait of the row `bosses` gives this type and variant to.
+        //
+        // A common enemy (the `entities` collection, design decision 2) reads `Unknown`
+        // here too, not `NoArt` — measured, not a shortcut. `BossKeys` is the *only*
+        // information this function has about which ids are bosses (`catalog::Boss` carries
+        // no type/variant of its own, only what `boss_keys` already derived from the name,
+        // the portrait file name, or the file name's own declared key), and an unkeyed boss
+        // — one `bossportraits.xml` has no name or file-name match for (17 portraits on the
+        // installed archives, `Portrait_Nevecka.png` among them) — is indistinguishable from
+        // an ordinary monster by that same measure: neither's type appears anywhere in
+        // `bosses`. Telling them apart needs to know which dataset collection (`ds.bosses`
+        // vs `ds.entities`) the target came from, which this function is not handed — giving
+        // callers `Option<&Dataset>` here, or deciding it once where the target is built, is
+        // what the sprite spike (decision 5) needs to solve before a common enemy can read
+        // `NoArt` without also mislabeling an unkeyed boss.
         Target::Entity { id, variant, .. } => match entity_portrait(c, bosses, (*id, *variant)) {
             Some(s) => TargetSprite::Found(s),
             None => TargetSprite::Unknown,
         },
+        // An article draws no picture through this pipeline either way: decision 5 gives
+        // cards, pickups and stages their pictures from the game's own files by name
+        // (`pocketitems.xml`, the `entities2.xml` reader, `gfx/ui/stage/`), a different path
+        // than a wiki `Target`, and a mechanics article has no picture at all.
         Target::Transformation { .. }
         | Target::Stage { .. }
         | Target::Room { .. }
-        | Target::Concept { .. } => TargetSprite::NoArt,
+        | Target::Concept { .. }
+        | Target::Article { .. } => TargetSprite::NoArt,
     }
 }
 

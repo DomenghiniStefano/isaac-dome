@@ -283,9 +283,11 @@ impl IconRef {
     }
 }
 
-/// The path segments of a page's figure, `item/105` or `entity/20/0/0`. `None` for the
-/// four kinds the dataset has no page for: exhaustive, so a new wiki kind has to say here
-/// whether it has a figure.
+/// The path segments of a page's figure, `item/105` or `entity/20/0/0`. `None` for every
+/// kind `target_sprite` never finds a picture for — not the same question as "does the
+/// dataset have a page for it": a stage, a room, a pickup concept and an article all
+/// resolve to a page since design decision 3, and still draw nothing through this path.
+/// Exhaustive, so a new wiki kind has to say here whether it has a figure.
 fn page_path(target: &Target) -> Option<String> {
     match target {
         Target::Item { id } => Some(format!("item/{id}")),
@@ -306,10 +308,14 @@ fn page_path(target: &Target) -> Option<String> {
         // names, twelve of them for sixteen pages, with holes in the numbering: mushroom,
         // angel, mom, poop, drugs, evilangel, iwata. Mapping those onto the wiki's names is
         // a guess, and a guess is what this repo spends its corrections on.
+        // An article draws no picture either — decision 5's landing tiles get their
+        // pictures from the game's own archives (a card's front, a stage's title art),
+        // never from a page path, and a mechanics article has no picture at all.
         Target::Transformation { .. }
         | Target::Stage { .. }
         | Target::Room { .. }
-        | Target::Concept { .. } => None,
+        | Target::Concept { .. }
+        | Target::Article { .. } => None,
     }
 }
 

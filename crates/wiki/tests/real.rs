@@ -268,6 +268,14 @@ fn diagnostics_are_bounded() {
     //
     // The three that went away were `{{i|1=Name}}`, MediaWiki's explicit positional
     // syntax, which `assemble` used to file under `named` leaving `args` empty.
+    //
+    // **27 as of 2026-09-26**, the whole-namespace fetch (`2026-09-26-wiki-complete-design.md`,
+    // decision 1): the same names as before, more of them, because a name that used to appear
+    // only on the pages we fetched now also appears on the ones we didn't — the 661 newly
+    // fetched entity and article pages. Checked by re-running with a name printed at each miss:
+    // `{{e|…}}` is still exactly `Killswitch` (6), `Pressure Plate` (9) and `Reward Plate` (9) —
+    // 24 occurrences of the same three id-less buttons, up from 19 — and `{{i|…}}` is still only
+    // `Tonsil`, twice now instead of once, from an article that also names it.
     let unresolved: u32 = d.unresolved.values().sum();
     assert!(
         d.unresolved.get("t").copied().unwrap_or(0) <= 1,
@@ -275,17 +283,17 @@ fn diagnostics_are_bounded() {
         d.unresolved
     );
     assert!(
-        unresolved <= 21,
+        unresolved <= 27,
         "unresolved {unresolved}: {:?}",
         d.unresolved
     );
     assert!(
-        d.unresolved.get("i").copied().unwrap_or(0) <= 1,
+        d.unresolved.get("i").copied().unwrap_or(0) <= 2,
         "only Tonsil may stay an unresolved item: {:?}",
         d.unresolved
     );
     assert!(
-        d.unresolved.get("e").copied().unwrap_or(0) <= 19,
+        d.unresolved.get("e").copied().unwrap_or(0) <= 24,
         "the unresolved entities are the three id-less buttons: {:?}",
         d.unresolved
     );
@@ -795,5 +803,43 @@ fn dead_links_are_tallied_by_destination() {
     assert!(
         !links.unopenable_refs.is_empty(),
         "no unopenable ref found at all"
+    );
+}
+
+/// Design decision 6: every destination [`dead_links`] still reports, once resolution has
+/// run (`build::resolve_concepts_to_articles`, redirects included), is named in
+/// `corrections.json`'s `deadLinks` with a reason — and a name that no longer resolves to
+/// nothing is removed from that list, the same `GONE` shape `scripts/check-doc-refs.mjs`
+/// reports for a stale document reference. Fails on either direction, so the residue is
+/// meant to shrink to nothing rather than grow quietly.
+#[test]
+fn the_dead_link_residue_matches_corrections_json_exactly() {
+    let links = dead_links(dataset());
+    let listed = &corrections().dead_links;
+
+    let mut unlisted: Vec<&String> = links
+        .concept_pages
+        .keys()
+        .chain(links.unopenable_refs.keys())
+        .filter(|destination| !listed.contains_key(*destination))
+        .collect();
+    unlisted.sort();
+    assert!(
+        unlisted.is_empty(),
+        "dead but not in corrections.json's deadLinks: {unlisted:?}"
+    );
+
+    let still_dead = |destination: &str| {
+        links.concept_pages.contains_key(destination)
+            || links.unopenable_refs.contains_key(destination)
+    };
+    let mut resolved_now: Vec<&String> = listed
+        .keys()
+        .filter(|destination| !still_dead(destination))
+        .collect();
+    resolved_now.sort();
+    assert!(
+        resolved_now.is_empty(),
+        "listed in corrections.json's deadLinks but no longer dead — remove: {resolved_now:?}"
     );
 }

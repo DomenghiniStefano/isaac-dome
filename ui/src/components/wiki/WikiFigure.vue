@@ -37,6 +37,7 @@ const frame = computed((): Frame => {
     case 'room':
     case 'concept':
     case 'transformation':
+    case 'article':
       return Frame.Portrait
     default:
       return assertNever(props.target)
