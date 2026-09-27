@@ -1147,3 +1147,67 @@ fn the_dead_link_residue_matches_corrections_json_exactly() {
         "listed in corrections.json's deadLinks but no longer dead — remove: {resolved_now:?}"
     );
 }
+
+/// A character's stat as Repentance+ reads it. The pages write edition-dependent values
+/// through `{{dlcalt|old|r=new}}` inside `{{dlcmap|…}}`, and line breaks as `<br>`; kept as the
+/// parameter's raw text they reached the screen as `{{dlcmap | {{dlcalt|23.75|r=6.5}} }}`.
+fn character_stat(title: &str, pick: fn(&Infobox) -> Option<&String>) -> String {
+    let entry = dataset()
+        .characters
+        .values()
+        .find(|e| e.title == title)
+        .unwrap_or_else(|| panic!("{title} is in the dataset"));
+    pick(&entry.infobox)
+        .unwrap_or_else(|| panic!("{title} is a character"))
+        .clone()
+}
+
+fn range_of(infobox: &Infobox) -> Option<&String> {
+    if let Infobox::Character { range, .. } = infobox {
+        Some(range)
+    } else {
+        None
+    }
+}
+
+fn damage_of(infobox: &Infobox) -> Option<&String> {
+    if let Infobox::Character { damage, .. } = infobox {
+        Some(damage)
+    } else {
+        None
+    }
+}
+
+#[test]
+fn a_characters_stats_read_as_the_current_edition_states_them() {
+    // Values read off the raw pages and `Template:Infobox character`: the `r=` side of
+    // `{{dlcalt}}` is Repentance's, which Repentance+ keeps.
+    assert_eq!(character_stat("Isaac", range_of), "6.5");
+    assert_eq!(character_stat("Cain", range_of), "4.5");
+    assert_eq!(character_stat("Eden", range_of), "6.5 ± 1.5");
+    assert_eq!(character_stat("Lazarus Risen", damage_of), "3.5 (*1.40)");
+    let eve = character_stat("Eve", damage_of);
+    assert!(!eve.contains("<br>"), "{eve}");
+    assert!(eve.starts_with("3.5 (*0.75)"), "{eve}");
+    // No stat of any character keeps wikitext or markup.
+    for entry in dataset().characters.values() {
+        if let Infobox::Character {
+            damage,
+            tears,
+            range,
+            speed,
+            luck,
+            shot_speed,
+            ..
+        } = &entry.infobox
+        {
+            for stat in [damage, tears, range, speed, luck, shot_speed] {
+                assert!(
+                    !stat.contains("{{") && !stat.contains('<'),
+                    "{}: {stat}",
+                    entry.title
+                );
+            }
+        }
+    }
+}

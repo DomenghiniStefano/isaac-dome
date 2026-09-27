@@ -118,6 +118,12 @@
     var(--spacing-challenge-queue);
 }
 
+/* A wiki card's spec sheet: each label as wide as it needs, its value taking the rest and
+   cut short there. */
+@utility grid-cols-fact-sheet {
+  grid-template-columns: auto minmax(0, 1fr);
+}
+
 /* The Run diary: the character, how it ended, the floors, the seed, where it came from. */
 @utility grid-cols-runs {
   grid-template-columns:

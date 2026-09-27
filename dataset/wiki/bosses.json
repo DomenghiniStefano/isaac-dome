@@ -25611,16 +25611,32 @@
         },
         {
           "kind": "text",
-          "text": " (50% Chance, otherwise cuts directly to ",
+          "text": " (",
           "style": "plain"
         },
         {
-          "kind": "ref",
-          "target": {
-            "kind": "article",
-            "title": "Endings"
-          },
-          "label": "Ending 16"
+          "kind": "edition",
+          "only": [
+            "rebirth",
+            "afterbirth",
+            "afterbirthPlus",
+            "repentance"
+          ],
+          "inline": [
+            {
+              "kind": "text",
+              "text": "50% Chance, otherwise cuts directly to ",
+              "style": "plain"
+            },
+            {
+              "kind": "ref",
+              "target": {
+                "kind": "article",
+                "title": "Endings"
+              },
+              "label": "Ending 16"
+            }
+          ]
         },
         {
           "kind": "edition",
@@ -27284,8 +27300,24 @@
                       },
                       {
                         "kind": "text",
-                        "text": " is unlocked, there is a 50%",
+                        "text": " is unlocked, there is a ",
                         "style": "plain"
+                      },
+                      {
+                        "kind": "edition",
+                        "only": [
+                          "rebirth",
+                          "afterbirth",
+                          "afterbirthPlus",
+                          "repentance"
+                        ],
+                        "inline": [
+                          {
+                            "kind": "text",
+                            "text": "50%",
+                            "style": "plain"
+                          }
+                        ]
                       },
                       {
                         "kind": "edition",
