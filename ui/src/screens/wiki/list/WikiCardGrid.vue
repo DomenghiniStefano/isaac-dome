@@ -43,7 +43,7 @@ const rowVars = (start: string) => ({
 </script>
 
 <template>
-  <div ref="box" class="flex min-h-0 flex-1 flex-col">
+  <div ref="box" class="flex flex-col">
     <VirtualRows
       v-if="rows.length > 0"
       v-slot="{ visible }"

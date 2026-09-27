@@ -20,10 +20,12 @@ export const remeasureOnScale = (
 
 export interface ScaledRowsOptions {
   count: () => number
-  scroller: Ref<HTMLElement | null>
+  scroller: Readonly<Ref<HTMLElement | null>>
   /** The row's height in device pixels at a given scale, from its own token. */
   rowPx: (percent: number) => number
   overscan?: number
+  /** The space above the list inside its scroller, when the scroller is the page. */
+  scrollMargin?: () => number
 }
 
 // What the four virtualized tables share: as many rows as fit plus a margin, positioned with
@@ -33,6 +35,7 @@ export const useScaledRows = ({
   scroller,
   rowPx,
   overscan = 8,
+  scrollMargin,
 }: ScaledRowsOptions) => {
   const settings = useSettingsStore()
   const virtualizer = useVirtualizer(
@@ -41,6 +44,7 @@ export const useScaledRows = ({
       getScrollElement: () => scroller.value,
       estimateSize: () => rowPx(settings.scale),
       overscan,
+      scrollMargin: scrollMargin?.() ?? 0,
     })),
   )
   remeasureOnScale(
