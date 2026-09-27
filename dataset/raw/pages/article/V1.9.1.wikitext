@@ -1,0 +1,10 @@
+{{infobox version
+ | dlc   = r
+ | steam = 3892861608043687818
+ | date  = 2023-12-01
+}}
+
+== Documented Changes ==
+* Released the [[Online (open beta)|online co-op]] mode from the closed alpha stage to closed beta. It could only be accessed by entering the code "'''combthedesert'''" into the Steam betas tab in the Properties menu.
+
+{{nav|version}}

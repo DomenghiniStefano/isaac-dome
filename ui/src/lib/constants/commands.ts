@@ -23,6 +23,7 @@ export const Command = {
   Collection: 'collection',
   Challenges: 'challenges',
   WikiEntry: 'wiki_entry',
+  WikiItemPools: 'wiki_item_pools',
   WikiIndex: 'wiki_index',
   Search: 'search',
   Queue: 'queue',

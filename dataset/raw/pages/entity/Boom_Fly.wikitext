@@ -1,0 +1,146 @@
+{{infobox monster
+ | image name  = * {{dlc|nr|Rebirth}}
+ | id          = 25
+ | base hp     = {{dlcalt|20|r=8}}
+ | stage hp    = {{dlcalt|0|r=3}}
+ | environment = {{floor|Dross}}<br>{{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Sheol}}<br>{{room|boss}}{{room|challenge}}
+ | behavior    = Flies across the room in straight diagonal lines, dealing contact damage. Explodes upon death.
+}}
+
+'''Boom Flies''' fly across the room in straight diagonal lines, dealing contact damage. Explodes upon death.
+
+== Notes ==
+* {{dlc|r}} While {{i|Skatole}} is held, the Boom Fly and all of its variants will fly significantly slower and will not deal contact damage, but their other means of attacking/dealing damage will still damage Isaac as normal.
+* While Isaac has the [[Beelzebub]] transformation, all Boom Fly variants will become friendly, and will not damage Isaac by any means (including explosions).
+{{clear}}
+
+== Variants ==
+=== Red Boom Fly ===
+{{infobox monster
+ | name           = Red Boom Fly
+ | image name     = * {{dlc|nr|Rebirth}}
+ | variant        = 1
+ | base hp        = {{dlcalt|20|r=8}}
+ | stage hp       = {{dlcalt|0|r=3}}
+ | environment    = {{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|Cathedral}}<br>{{room|boss}}{{room|challenge}}
+ | replace        = Boom Fly
+ | replace chance = 9.49%
+ | behavior       = Flies across the room in straight diagonal lines, dealing contact damage. Creates a ring of 6 blood shots upon death.
+}}
+
+'''Red Boom Flies''' fly across the room in straight diagonal lines, dealing contact damage and releasing 6 blood shots in all directions upon death. 
+
+==== Notes ====
+* Red Boom Flies cannot replace Boom Flies in {{s|Dross}}.
+{{clear}}
+
+=== Drowned Boom Fly ===
+{{infobox monster
+ | dlc            = a
+ | name           = Drowned Boom Fly
+ | image name     = * {{dlc|nr|Afterbirth}}
+ | variant        = 2
+ | base hp        = {{dlcalt|20|r=8}}
+ | stage hp       = {{dlcalt|0|r=3}}
+ | environment    = {{floor|Flooded Caves}}<br>{{floor|Necropolis}}<br>{{room|challenge}}
+ | replace        = Boom Fly, Red Boom Fly
+ | replace chance = 50%
+ | replace notes  = in {{s|Flooded Caves}}
+ | behavior       = Flies across the room in straight diagonal lines, dealing contact damage. Upon death, explodes and fires four blood shots in the cardinal directions. Also has a chance to spawn a {{e|Drowned Charger}} upon death.
+}}
+
+'''Drowned Boom Flies''' fly across the room in straight diagonal lines, dealing contact damage. Upon death, they explode and release 4 blood shots in the cardinal directions, and sometimes also spawns a {{e|Drowned Charger}}. If a Drowned Boom Fly dies while over an [[obstacle]] or pit, the Drowned Charger will not be spawned.
+{{clear}}
+
+=== Dragon Fly ===
+{{infobox monster
+ | dlc         = r
+ | name        = Dragon Fly
+ | variant     = 3
+ | base hp     = 8
+ | stage hp    = 3
+ | environment = {{floor|Mines}}{{floor|Ashpit}}
+ | behavior    = Flies across the room in straight diagonal lines, dealing contact damage. Upon death, creates four lines of fire in the cardinal directions; the fire nearly spans the length of an entire normal-sized room.
+}}
+
+'''Dragon Flies''' fly across the room in straight diagonal lines, dealing contact damage. Upon death, creates four lines of fire in the cardinal directions; the fire nearly spans the length of an entire normal-sized room.
+{{clear}}
+
+=== Dragon Fly X ===
+{{infobox monster
+ | dlc         = r
+ | name        = Dragon Fly X
+ | subtype     = 1
+ | base hp     = 8
+ | stage hp    = 3
+ | environment = {{floor|Mines}}{{floor|Ashpit}}
+ | behavior    = Flies across the room in straight diagonal lines, dealing contact damage. Upon death, creates four lines of fire in the ordinal directions; the fire nearly spans the length of an entire normal-sized room.
+}}
+
+'''Dragon Fly X''' is identical to the Dragon Fly in behavior, but upon death, creates four lines of fire in the ordinal directions; the fire nearly spans the length of an entire normal-sized room. Note its X-shaped eyes to help remember its fire pattern.
+{{clear}}
+
+=== Bone Fly ===
+{{infobox monster
+ | dlc         = r
+ | name        = Bone Fly
+ | variant     = 4
+ | base hp     = 8
+ | stage hp    = 3
+ | environment = {{floor|Ashpit}}<br>{{room|challenge}}
+ | behavior    = Flies across the room in straight diagonal lines, dealing contact damage. Fires bones at Isaac if he lines up with it in the cardinal directions. Fires a radial burst of 3 bones upon death.
+}}
+
+'''Bone Flies''' fly across the room in straight diagonal lines, dealing contact damage and firing bones at Isaac if he lines up with one in a cardinal direction. Upon death, they shoot 3 evenly spaced bones (one of them aligned towards the closest cardinal direction to Isaac).
+{{clear}}
+
+=== Sick Boom Fly ===
+{{infobox monster
+ | dlc         = r
+ | name        = Sick Boom Fly
+ | variant     = 5
+ | base hp     = 8
+ | stage hp    = 3
+ | environment = {{floor|Corpse}}<br>{{room|challenge}}
+ | behavior    = Flies across the room in straight diagonal lines, dealing contact damage and trailing poisonous gas. Upon death, explodes into a gas cloud and fires a ring of 6 green shots.
+}}
+
+'''Sick Boom Flies''' fly across the room in straight diagonal lines, dealing contact damage and trailing poisonous gas. Upon death, they explode into eight clouds of gas and release 6 green shots in all directions. The poison gas left behind upon death persists for much longer, but will dissipate when the room is cleared.
+{{clear}}
+
+=== Tainted Boom Fly ===
+{{infobox monster
+ | dlc         = r
+ | name        = Tainted Boom Fly
+ | variant     = 6
+ | base hp     = 20
+ | environment = {{floor|Caves}}<br>Found on the [[Ascent]] to {{s|Home}}.
+ | behavior    = Flies across the room in straight diagonal lines, dealing contact damage. Upon death, it glows brightly, warning that it is about to explode; this explosion sends 4 lines of further explosions in the cardinal directions, which span the length of the room.
+}}
+
+'''Tainted Boom Flies''' fly across the room in straight diagonal lines, dealing contact damage. Upon death, they will emit a cross-shaped glow for a brief period, after which they will explode. This explosion sends 4 lines of further explosions in the cardinal directions, which span the length of the room.
+
+They are exclusive to the [[Ascent]] to {{s|Home}}.
+{{clear}}{{dlc clear}}
+
+== Gallery ==
+<gallery>
+File:Dragon Fly Ashpit.png|{{dlc+|r}} A Dragon Fly's appearance in {{s|Ashpit}}.{{dlc-}}
+File:Dragon Fly X Ashpit.png|{{dlc+|r}} A Dragon Fly X's appearance in {{s|Ashpit}}.{{dlc-}}
+File:Mega Maw Concept.jpg|{{dlc|r}} Concept art for what appears to be the Bone Fly alongside concept art for {{e|Pin}}, {{e|Mega Maw}}, and {{e|The Gate}}.
+</gallery>
+
+== Trivia ==
+* {{dlc|r}} The Boom Fly is tied with the {{e|Sucker}} for being the monster with the most true variants ('true variants' being monsters with ID x.1, x.2, etc), both with 7.
+* {{dlc|r}} Both [[Anti:Dragonfly|Dragonfly]] types and the [[Anti:Sick Boom Fly|Sick Boom Fly]] first appeared in the ''Antibirth'' mod. In ''Antibirth'', instead of having any stage hp they had 20 base hp.
+** Sick Boomflies would only create poison gas on death and would not shoot out six tears when dying.
+
+{{nav|fr=Dynamouche}}
+[[Category:Fly monsters]]
+[[Category:Chapter 2 monsters]]
+[[Category:Chapter 2.5 monsters]]
+[[Category:Chapter 3 monsters]]
+[[Category:Chapter 3.5 monsters]]
+[[Category:Chapter 4 monsters]]
+[[Category:Chapter 4.5 monsters]]
+[[Category:Chapter 5 monsters]]

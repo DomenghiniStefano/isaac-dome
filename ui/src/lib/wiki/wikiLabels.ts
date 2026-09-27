@@ -6,6 +6,12 @@ import { WikiCategory } from '@/router/routeTable'
 
 // A section's name for the reader (Schermate.dc.html, SEC_LABEL). A record over the whole
 // set: a kind with no name fails to compile.
+//
+// `Other`'s own title (`Section.title`) is the label a reader actually wants — a page like
+// Damage has "Formula", Bag of Crafting has "Recipes" — so `WikiSections`/`WikiOutline` read
+// that instead, wherever the section itself is at hand, and render it with `WikiInline`. This
+// entry only fires where nothing but the kind travels (a search hit's `SearchMatch::Section`
+// carries no title), and it names the kind rather than pretending to name the heading.
 export const sectionText: Record<SectionKind, Message> = {
   [SectionKind.Effects]: 'wiki.section.effects',
   [SectionKind.Notes]: 'wiki.section.notes',
@@ -20,6 +26,7 @@ export const sectionText: Record<SectionKind, Message> = {
   [SectionKind.Reward]: 'wiki.section.reward',
   [SectionKind.Unlockable]: 'wiki.section.unlockable',
   [SectionKind.StartingItems]: 'wiki.section.startingItems',
+  [SectionKind.Other]: 'wiki.section.other',
 }
 
 // A page's kind badge: the category's singular, by the page's identity.
@@ -31,6 +38,11 @@ export const kindText: Record<WikiCategory, Message> = {
   [WikiCategory.Challenges]: 'wiki.kind.challenge',
   [WikiCategory.Characters]: 'wiki.kind.character',
   [WikiCategory.Transformations]: 'wiki.kind.transformation',
+  [WikiCategory.Monsters]: 'wiki.kind.monster',
+  [WikiCategory.CardsAndRunes]: 'wiki.kind.cardOrRune',
+  [WikiCategory.Pickups]: 'wiki.kind.pickup',
+  [WikiCategory.Stages]: 'wiki.kind.stage',
+  [WikiCategory.Versions]: 'wiki.kind.version',
 }
 
 // The id a list row prints under the title: the number the game knows the page by; a boss
@@ -47,6 +59,7 @@ export const pageId = (target: Target): string | null => {
       return `${target.id}.${target.variant}.${target.subtype}`
     case 'challenge':
       return String(target.number)
+    case 'article':
     case 'stage':
     case 'room':
     case 'concept':

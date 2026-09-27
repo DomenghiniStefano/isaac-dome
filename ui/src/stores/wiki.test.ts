@@ -1,10 +1,18 @@
 import { createPinia, setActivePinia } from 'pinia'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
-import type { Entry, IpcError, Target, WikiIndex } from '@/lib/ipc/types'
+import type {
+  Entry,
+  IpcError,
+  PoolMembershipView,
+  Target,
+  WikiIndex,
+} from '@/lib/ipc/types'
 
 const wikiIndex = vi.fn<() => Promise<WikiIndex>>()
 const wikiEntry = vi.fn<(target: Target) => Promise<Entry | null>>()
-vi.mock('@/lib/ipc/wiki', () => ({ wikiIndex, wikiEntry }))
+const wikiItemPools =
+  vi.fn<(target: Target) => Promise<PoolMembershipView[] | null>>()
+vi.mock('@/lib/ipc/wiki', () => ({ wikiIndex, wikiEntry, wikiItemPools }))
 
 const { LoadStatus } = await import('./loadStatus')
 const { useWikiStore } = await import('./wiki')
@@ -18,6 +26,7 @@ beforeEach(() => {
   setActivePinia(createPinia())
   wikiIndex.mockReset()
   wikiEntry.mockReset()
+  wikiItemPools.mockReset()
 })
 
 // Card #80, R9: a page that would not load marked the whole index `Failed`, and every screen
@@ -69,5 +78,41 @@ describe('a page that loads', () => {
     await wiki.loadEntry(d6)
     expect(wikiEntry).toHaveBeenCalledTimes(1)
     expect(wiki.pageFailed(d6Key)).toBe(false)
+  })
+})
+
+// Design decision 4: the item's pools come from the game, joined at the IPC boundary, not
+// from the wiki entry itself.
+describe("an item's pools", () => {
+  it('are undefined until asked, then cached once read', async () => {
+    wikiItemPools.mockResolvedValue([
+      { label: 'Treasure Room (Item Pool)', target: null, weight: 1 },
+    ])
+    const wiki = useWikiStore()
+    expect(wiki.poolsFor(d6Key)).toBeUndefined()
+    await wiki.loadPools(d6)
+    await wiki.loadPools(d6)
+    expect(wikiItemPools).toHaveBeenCalledTimes(1)
+    expect(wiki.poolsFor(d6Key)).toEqual([
+      { label: 'Treasure Room (Item Pool)', target: null, weight: 1 },
+    ])
+  })
+
+  it('cache `null` as a real answer — no game, or no pools concept at all', async () => {
+    wikiItemPools.mockResolvedValue(null)
+    const wiki = useWikiStore()
+    await wiki.loadPools(d6)
+    expect(wiki.poolsFor(d6Key)).toBeNull()
+  })
+
+  it('leave nothing cached on a failed read, so the next ask tries again', async () => {
+    wikiItemPools.mockRejectedValueOnce(new Error('boom'))
+    const wiki = useWikiStore()
+    await wiki.loadPools(d6)
+    expect(wiki.poolsFor(d6Key)).toBeUndefined()
+    wikiItemPools.mockResolvedValueOnce(null)
+    await wiki.loadPools(d6)
+    expect(wikiItemPools).toHaveBeenCalledTimes(2)
+    expect(wiki.poolsFor(d6Key)).toBeNull()
   })
 })

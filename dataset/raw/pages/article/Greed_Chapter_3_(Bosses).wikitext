@@ -1,0 +1,473 @@
+{{header greed bosses}}
+{{page dlc|a}}
+
+== {{s|Depths}} ==
+=== Boss Wave 1 Specific ===
+{| style="width: 70%; text-align: center"
+ | [[file:Boss Famine portrait.png|center|link=Famine]]
+ | [[file:Boss Little Horn portrait.png|center|link=Little Horn]]
+ | [[file:Boss Gurdy Jr. portrait.png|link=Gurdy Jr.]]
+ | [[File:Boss Mega Maw portrait.png|center|link=Mega Maw]]
+ |-
+ | [[Famine]] {{unlockable}}
+ | [[Little Horn]] {{unlockable}}
+ | [[Gurdy Jr.]]
+ | [[Mega Maw]]
+ |-
+ | colspan="4" |[[file:Boss Peep portrait.png|center|link=Peep]]
+ |-
+ | colspan="4" |[[Peep]]
+ |-
+ |[[file:boss Super Envy.png|80px|center|link=Super Envy]]
+ |[[file:boss Super Gluttony.png|80px|center|link=Super Gluttony]]
+ |[[file:boss Super Wrath.png|80px|center|link=Super Wrath]]
+ |[[file:boss Super Pride.png|80px|center|link=Super Pride]]
+ |-
+ |[[Super Envy]]
+ |[[Super Gluttony]]
+ |[[Super Wrath]]
+ |[[Super Pride]]
+ |-
+ | colspan="4" style="padding:0" |
+{| style="width: 100%"
+ |[[file:boss Super Lust.png|80px|center|link=Super Lust]]
+ |[[file:boss Super Sloth.png|80px|center|link=Super Sloth]]
+ |[[file:boss Ultra Pride.png|128px|center|link=Ultra Pride]]
+ |-
+ |[[Super Lust]]
+ |[[Super Sloth]]
+ |[[Ultra Pride]]
+ |}
+|}
+
+=== Boss Wave 2 Specific ===
+{| style="width: 70%; text-align: center"
+ |
+[[file:Boss The Gate portrait.png|center|link=The Gate]]
+ |[[file:Boss Loki portrait.png|center|link=Loki]]
+ |[[file:Boss Monstro II portrait.png|center|link=Monstro II]]
+ |[[file:Boss War portrait.png|center|link=War]]
+ |-
+ |[[The Gate]]
+ |[[Loki]]
+ |[[Monstro II]]
+ |[[War]] {{unlockable}}
+ |-
+ | colspan="4" |[[file:Boss Lokii portrait.png|center|link=Lokii]]
+ |-
+ | colspan="4" |[[Lokii]]
+ |-
+ | colspan="2" |[[file:boss Angel.png|center|link=Uriel]]
+ | colspan="2" |[[file:boss Angel2.png|center|link=Gabriel]]
+ |-
+ | colspan="2" |[[Uriel]] {{unlockable}}
+ | colspan="2" |[[Gabriel]] {{unlockable}}
+ |}
+
+=== Nightmare Wave Specific ===
+{| style="width: 70%; text-align: center"
+ |[[file:Boss Monstro portrait.png|link=Monstro]]
+ |[[file:Boss Famine portrait.png|center|link=Famine]]
+ |[[file:Boss Gurdy Jr. portrait.png|link=Gurdy Jr.]]
+ |[[file:Boss Pestilence portrait.png|center|link=Pestilence]]
+ |-
+ |[[Monstro]]
+ |[[Famine]] {{unlockable}}
+ |[[Gurdy Jr.]]
+ |[[Pestilence]] {{unlockable}}
+ |-
+ | colspan="4" style="padding:0" |
+{| style="width: 100%"
+ |[[file:Boss Loki portrait.png|center|link=Loki]]
+ |[[file:Boss Monstro II portrait.png|center|link=Monstro II]]
+ |[[file:Boss Lokii portrait.png|center|link=Lokii]]
+ |-
+ |[[Loki]]
+ |[[Monstro II]]
+ |[[Lokii]]
+ |}
+ |-
+ |[[file:Envy.png|64px|center|link=Envy]]
+ |[[file:Gluttony.png|64px|center|link=Gluttony]]
+ |[[file:Wrath.png|64px|center|link=Wrath]]
+ |[[file:Pride.png|64px|center|link=Pride]]
+ |-
+ |[[Envy]]
+ |[[Gluttony]]
+ |[[Wrath]]
+ |[[Pride]]
+ |-
+ |[[file:boss Lust.png|64px|center|link=Lust]]
+ |[[file:boss Sloth.png|64px|center|link=Sloth]]
+ |[[file:boss Super Envy.png|80px|center|link=Super Envy]]
+ |[[file:boss Super Gluttony.png|80px|center|link=Super Gluttony]]
+ |-
+ |[[Lust]]
+ |[[Sloth]]
+ |[[Super Envy]]
+ |[[Super Gluttony]]
+ |-
+ |[[file:boss Super Wrath.png|80px|center|link=Super Wrath]]
+ |[[file:boss Super Pride.png|80px|center|link=Super Pride]]
+ |[[file:boss Super Lust.png|80px|center|link=Super Lust]]
+ |[[file:boss Super Sloth.png|80px|center|link=Super Sloth]]
+ |-
+ |[[Super Wrath]]
+ |[[Super Pride]]
+ |[[Super Lust]]
+ |[[Super Sloth]]
+ |-
+ | colspan="2" |[[file:boss Angel.png|center|link=Uriel]]
+ | colspan="2" |[[file:boss Angel2.png|center|link=Gabriel]]
+ |-
+ | colspan="2" |[[Uriel]] {{unlockable}}
+ | colspan="2" |[[Gabriel]] {{unlockable}}
+ |}
+
+== {{dlc+|r}} {{s|Necropolis}} ==
+=== All Boss Waves ===
+{| style="width: 70%; text-align: center"
+ |[[file:Boss Big Horn portrait.png|center|link=Big Horn]]
+ |-
+ |
+[[Big Horn]] {{unlockable}}
+ |}
+
+=== Boss Wave 1 Specific ===
+{| style="width: 70%; text-align: center"
+ |[[file:Boss The Haunt portrait.png|center|link=The Haunt]]
+ |[[file:Boss Famine portrait.png|center|link=Famine]]
+ |[[file:Boss Chub portrait.png|center|link=Chub]]
+ |[[file:Boss Gurdy Jr. portrait.png|link=Gurdy Jr.]]
+ |-
+ |[[The Haunt]]
+ |[[Famine]] {{unlockable}}
+ |[[Chub]]
+ |[[Gurdy Jr.]]
+ |-
+ | colspan="2" |[[file:Boss Pestilence portrait.png|center|link=Pestilence]]
+ | colspan="2" |[[file:Boss The Stain portrait.png|center|link=The Stain]]
+ |-
+ | colspan="2" |[[Pestilence]] {{unlockable}}
+ | colspan="2" |[[The Stain]] {{unlockable}}
+ |-
+ |[[file:boss Super Envy.png|80px|center|link=Super Envy]]
+ |[[file:boss Super Gluttony.png|80px|center|link=Super Gluttony]]
+ |[[file:boss Super Wrath.png|80px|center|link=Super Wrath]]
+ |[[file:boss Super Pride.png|80px|center|link=Super Pride]]
+ |-
+ |[[Super Envy]]
+ |[[Super Gluttony]]
+ |[[Super Wrath]]
+ |[[Super Pride]]
+ |-
+ | colspan="4" style="padding:0" |
+{| style="width: 100%"
+ |[[file:boss Super Lust.png|80px|center|link=Super Lust]]
+ |[[file:boss Super Sloth.png|80px|center|link=Super Sloth]]
+ |[[file:boss Ultra Pride.png|128px|center|link=Ultra Pride]]
+ |-
+ |[[Super Lust]]
+ |[[Super Sloth]]
+ |[[Ultra Pride]]
+ |}
+|}
+
+=== Boss Wave 2 Specific ===
+{| style="width: 70%; text-align: center"
+ |[[file:Boss The Forsaken portrait.png|center|link=The Forsaken]]
+ |[[file:Boss The Bloat portrait.png|center|link=The Bloat]]
+ |[[File:Boss The Cage portrait.png|center|link=The Cage]]
+ |[[file:Boss The Gate portrait.png|center|link=The Gate]]
+ |-
+ |[[The Forsaken]] {{unlockable}}
+ |[[The Bloat]]
+ |[[The Cage]]
+ |[[The Gate]]
+ |-
+ | colspan="2" |[[file:Boss Mask of Infamy portrait.png|center|link=Mask of Infamy]]
+ | colspan="2" |[[file:Boss War portrait.png|center|link=War]]
+ |-
+ | colspan="2" |[[Mask of Infamy]]
+ | colspan="2" |[[War]] {{unlockable}}
+ |-
+ | colspan="2" |[[file:boss Angel.png|center|link=Uriel]]
+ | colspan="2" |[[file:boss Angel2.png|center|link=Gabriel]]
+ |-
+ | colspan="2" |[[Uriel]] {{unlockable}}
+ | colspan="2" |[[Gabriel]] {{unlockable}}
+ |}
+
+=== Nightmare Wave Specific ===
+{| style="width: 70%; text-align: center"
+ |[[file:Boss Pin portrait.png|link=Pin]]
+ |[[file:Boss Famine portrait.png|center|link=Famine]]
+ |[[file:Boss Carrion Queen portrait.png|center|link=Carrion Queen]]
+ |[[file:Boss Gurdy Jr. portrait.png|link=Gurdy Jr.]]
+ |-
+ |[[Pin]]
+ |[[Famine]] {{unlockable}}
+ |[[Carrion Queen]]
+ |[[Gurdy Jr.]]
+ |-
+ |[[file:Boss The Hollow portrait.png|center|link=The Hollow]]
+ |[[file:Boss Mega Fatty portrait.png|center|link=Mega Fatty]]
+ |[[file:Boss Pestilence portrait.png|center|link=Pestilence]]
+ |[[file:Boss The Stain portrait.png|center|link=The Stain]]
+ |-
+ |[[The Hollow]]
+ |[[Mega Fatty]]
+ |[[Pestilence]] {{unlockable}}
+ |[[The Stain]] {{unlockable}}
+ |-
+ |[[file:Boss Bumbino portrait.png|center|link=Bumbino]]
+ |[[File:Boss The Cage portrait.png|center|link=The Cage]]
+ |[[file:Boss The Gate portrait.png|center|link=The Gate]]
+ |[[file:Boss Mask of Infamy portrait.png|center|link=Mask of Infamy]]
+ |-
+ |[[Bumbino]]
+ |[[The Cage]]
+ |[[The Gate]]
+ |[[Mask of Infamy]]
+ |-
+ | colspan="4" style="padding:0" |
+{| style="width: 100%"
+ |[[file:Boss War portrait.png|center|link=War]]
+ |[[file:Boss Sisters Vis portrait.png|center|link=Sisters Vis]]
+ |[[file:Boss Teratoma portrait.png|center|link=Teratoma]]
+ |-
+ |[[War]] {{unlockable}}
+ |[[Sisters Vis]] {{unlockable}}
+ |[[Teratoma]]
+ |}
+ |-
+ |[[file:Envy.png|64px|center|link=Envy]]
+ |[[file:Gluttony.png|64px|center|link=Gluttony]]
+ |[[file:Wrath.png|64px|center|link=Wrath]]
+ |[[file:Lust.png|64px|center|link=Lust]]
+ |-
+ |[[Envy]]
+ |[[Gluttony]]
+ |[[Wrath]]
+ |[[Lust]]
+ |-
+ |[[file:Super Envy.png|80px|center|link=Super Envy]]
+ |[[file:Super Gluttony.png|80px|center|link=Super Gluttony]]
+ |[[file:Super Wrath.png|80px|center|link=Super Wrath]]
+ |[[file:Super Lust.png|80px|center|link=Super Lust]]
+ |-
+ |[[Super Envy]]
+ |[[Super Gluttony]]
+ |[[Super Wrath]]
+ |[[Super Lust]]
+ |-
+ | colspan="2" |[[file:boss Angel.png|center|link=Uriel]]
+ | colspan="2" |[[file:boss Angel2.png|center|link=Gabriel]]
+ |-
+ | colspan="2" |[[Uriel]] {{unlockable}}
+ | colspan="2" |[[Gabriel]] {{unlockable}}
+ |}
+{{dlc-}}
+
+== {{dlc+|r}} {{s|Dank Depths}} ==
+=== All Boss Waves ===
+{| style="width: 70%; text-align: center"
+ |[[file:Boss Big Horn portrait.png|center|link=Big Horn]]
+ |-
+ |[[Big Horn]] {{unlockable}}
+ |}
+
+=== Boss Wave 1 Specific ===
+{| style="width: 70%; text-align: center"
+ |[[file:Boss The Haunt portrait.png|center|link=The Haunt]]
+ |[[file:Boss Little Horn portrait.png|center|link=Little Horn]]
+ |[[file:Boss Chub portrait.png|center|link=Chub]]
+ |[[file:Boss Gurdy Jr. portrait.png|link=Gurdy Jr.]]
+ |-
+ |[[The Haunt]]
+ |[[Little Horn]] {{unlockable}}
+ |[[Chub]]
+ |[[Gurdy Jr.]]
+ |-
+ |[[file:Boss The Hollow portrait.png|center|link=The Hollow]]
+ |[[File:Boss Mega Maw portrait.png|center|link=Mega Maw]]
+ |[[file:Boss Peep portrait.png|center|link=Peep]]
+ |[[file:Boss The Wretched portrait.png|center|link=The Wretched]]
+ |-
+ |[[The Hollow]]
+ |[[Mega Maw]]
+ |[[Peep]]
+ |[[The Wretched]]
+ |-
+ | colspan="2" |[[file:Boss Pestilence portrait.png|center|link=Pestilence]]
+ | colspan="2" |[[file:Boss The Stain portrait.png|center|link=The Stain]]
+ |-
+ | colspan="2" |[[Pestilence]] {{unlockable}}
+ | colspan="2" |[[The Stain]] {{unlockable}}
+ |-
+ |[[file:boss Super Envy.png|80px|center|link=Super Envy]]
+ |[[file:boss Super Gluttony.png|80px|center|link=Super Gluttony]]
+ |[[file:boss Super Wrath.png|80px|center|link=Super Wrath]]
+ |[[file:boss Super Pride.png|80px|center|link=Super Pride]]
+ |-
+ |[[Super Envy]]
+ |[[Super Gluttony]]
+ |[[Super Wrath]]
+ |[[Super Pride]]
+ |-
+ | colspan="4" style="padding:0" |
+{| style="width: 100%"
+ |[[file:boss Super Lust.png|80px|center|link=Super Lust]]
+ |[[file:boss Super Sloth.png|80px|center|link=Super Sloth]]
+ |[[file:boss Ultra Pride.png|128px|center|link=Ultra Pride]]
+ |-
+ |[[Super Lust]]
+ |[[Super Sloth]]
+ |[[Ultra Pride]]
+ |}
+|}
+
+=== Boss Wave 2 Specific ===
+{| style="width: 70%; text-align: center"
+ |
+[[file:Boss The Forsaken portrait.png|center|link=The Forsaken]]
+ |[[file:Boss The Bloat portrait.png|center|link=The Bloat]]
+ |[[File:Boss The Cage portrait.png|center|link=The Cage]]
+ |[[file:Boss The Gate portrait.png|center|link=The Gate]]
+ |-
+ |[[The Forsaken]] {{unlockable}}
+ |[[The Bloat]]
+ |[[The Cage]]
+ |[[The Gate]]
+ |-
+ |[[file:Boss Loki portrait.png|center|link=Loki]]
+ |[[file:Boss Mask of Infamy portrait.png|center|link=Mask of Infamy]]
+ |[[file:Boss Monstro II portrait.png|center|link=Monstro II]]
+ |[[file:Boss Gish portrait.png|center|link=Gish]]
+ |-
+ |[[Loki]]
+ |[[Mask of Infamy]]
+ |[[Monstro II]]
+ |[[Gish]] {{unlockable}}
+ |-
+ | colspan="4" style="padding:0" |
+{| style="width: 100%"
+ |[[file:Boss War portrait.png|center|link=War]]
+ |[[file:Boss Brownie portrait.png|center|link=Brownie]]
+ |[[file:Boss Lokii portrait.png|center|link=Lokii]]
+ |-
+ |[[War]] {{unlockable}}
+ |[[Brownie]] {{unlockable}}
+ |[[Lokii]]
+ |}
+ |-
+ | colspan="2" |[[file:boss Angel.png|center|link=Uriel]]
+ | colspan="2" |[[file:boss Angel2.png|center|link=Gabriel]]
+ |-
+ | colspan="2" |[[Uriel]] {{unlockable}}
+ | colspan="2" |[[Gabriel]] {{unlockable}}
+ |}
+
+=== Nightmare Wave Specific ===
+{| style="width: 70%; text-align: center"
+ |[[file:Boss Monstro portrait.png|link=Monstro]]
+ |[[file:Boss Pin portrait.png|link=Pin]]
+ |[[file:Boss Famine portrait.png|center|link=Famine]]
+ |[[file:Boss Little Horn portrait.png|center|link=Little Horn]]
+ |-
+ |[[Monstro]]
+ |[[Pin]]
+ |[[Famine]] {{unlockable}}
+ |[[Little Horn]] {{unlockable}}
+ |-
+ |[[file:Boss Carrion Queen portrait.png|center|link=Carrion Queen]]
+ |[[file:Boss Gurdy Jr. portrait.png|link=Gurdy Jr.]]
+ |[[file:Boss The Hollow portrait.png|center|link=The Hollow]]
+ |[[File:Boss Mega Fatty portrait.png|center|link=Mega Fatty]]
+ |-
+ |[[Carrion Queen]]
+ |[[Gurdy Jr.]]
+ |[[The Hollow]]
+ |[[Mega Fatty]]
+ |-
+ |[[File:Boss Mega Maw portrait.png|center|link=Mega Maw]]
+ |[[file:Boss Pestilence portrait.png|center|link=Pestilence]]
+ |[[file:Boss The Stain portrait.png|center|link=The Stain]]
+ |[[file:Boss The Bloat portrait.png|center|link=The Bloat]]
+ |-
+ |[[Mega Maw]]
+ |[[Pestilence]] {{unlockable}}
+ |[[The Stain]] {{unlockable}}
+ |[[The Bloat]]
+ |-
+ |[[file:Boss The Cage portrait.png|center|link=The Cage]]
+ |[[file:Boss Loki portrait.png|center|link=Loki]]
+ |[[file:Boss Mask of Infamy portrait.png|center|link=Mask of Infamy]]
+ |[[file:Boss Monstro II portrait.png|center|link=Monstro II]]
+ |-
+ |[[The Cage]]
+ |[[Loki]]
+ |[[Mask of Infamy]]
+ |[[Monstro II]]
+ |-
+ |[[file:Boss Gish portrait.png|center|link=Gish]]
+ |[[file:Boss War portrait.png|center|link=War]]
+ |[[file:Boss Brownie portrait.png|center|link=Brownie]]
+ |[[file:Boss Sisters Vis portrait.png|center|link=Sisters Vis]]
+ |-
+ |[[Gish]] {{unlockable}}
+ |[[War]] {{unlockable}}
+ |[[Brownie]] {{unlockable}}
+ |[[Sisters Vis]] {{unlockable}}
+ |-
+ | [[file:Boss Lokii portrait.png|center|link=Lokii]]
+ | [[file:Boss Teratoma portrait.png|center|link=Teratoma]]
+ | [[file:Boss The Gate portrait.png|center|link=The Gate]]
+ | [[file:Boss Dingle portrait.png|center|link=Dingle]]
+ |-
+ | [[Lokii]]
+ | [[Teratoma]]
+ | [[The Gate]]
+ | [[Dingle]]
+ |-
+ |[[file:Envy.png|64px|center|link=Envy]]
+ |[[file:Gluttony.png|64px|center|link=Gluttony]]
+ |[[file:Wrath.png|64px|center|link=Wrath]]
+ |[[file:Pride.png|64px|center|link=Pride]]
+ |-
+ |[[Envy]]
+ |[[Gluttony]]
+ |[[Wrath]]
+ |[[Pride]]
+ |-
+ |[[file:Lust.png|64px|center|link=Lust]]
+ |[[file:Sloth.png|64px|center|link=Sloth]]
+ |[[file:Super Envy.png|80px|center|link=Super Envy]]
+ |[[file:Super Gluttony.png|80px|center|link=Super Gluttony]]
+ |-
+ |[[Lust]]
+ |[[Sloth]]
+ |[[Super Envy]]
+ |[[Super Gluttony]]
+ |-
+ | colspan="4" style="padding:0" |
+{| style="width: 100%"
+ |[[file:Super Wrath.png|80px|center|link=Super Wrath]]
+ |[[file:Super Lust.png|80px|center|link=Super Lust]]
+ |[[file:Super Sloth.png|80px|center|link=Super Sloth]]
+ |-
+ |[[Super Wrath]]
+ |[[Super Lust]]
+ |[[Super Sloth]]
+|}
+ |-
+ | colspan="2" |[[file:boss Angel.png|center|link=Uriel]]
+ | colspan="2" |[[file:boss Angel2.png|center|link=Gabriel]]
+ |-
+ | colspan="2" |[[Uriel]] {{unlockable}}
+ | colspan="2" |[[Gabriel]] {{unlockable}}
+ |}
+{{dlc-}}
+
+{{nav|boss|fr=Avarice Chapitre 3 (Boss)}}
+[[Category:Bosses]]

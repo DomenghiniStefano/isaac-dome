@@ -1,0 +1,33 @@
+{{infobox monster
+ | dlc         = r
+ | name        = Gyro
+ | id          = 824
+ | base hp     = 18
+ | environment = {{floor|Mines}}<br>{{room|challenge}}
+ | behavior    = Rolls around like a wheel. Charges at Isaac when he is in line of sight, bouncing off of walls and obstacles as it does.
+}}
+
+'''Gyros''' were introduced in ''[[The Binding of Isaac: Repentance]]''. They look like a piece of meat with a bone right through the middle.
+
+They move themselves by rolling — similar to how a wheel moves. When Isaac is in their line of sight, they will charge at him quickly and can rotate to continue pursuing him for a short time. Afterward, the Gyro will briefly quit chasing Isaac and slowly roll around as if in exhaustion before resuming its normal behavior. Gyros will convert into Grilled Gyros, if in contact with fire.
+{{clear}}
+
+== Variations ==
+=== Grilled Gyro ===
+{{infobox monster
+ | dlc         = r
+ | name        = Grilled Gyro
+ | variant     = 1
+ | base hp     = 20
+ | environment = {{floor|Mines}}
+ | behavior    = Rolls around like a wheel. Charges at Isaac when he is in line of sight, bouncing off of walls and obstacles and creating fires behind itself as it does.
+}}
+
+'''Grilled Gyros''' function relatively the same to normal Gyros, but they move at a faster pace and leave some damaging flames in its trail, but only when chasing Isaac.
+{{clear}}
+
+== Trivia ==
+* Both [[Anti:Gyro|Gyro]] variants first appeared in the ''Antibirth'' mod.
+* Edmund has expressed that this enemy doesn't fit in the game because it does not have a face like the other enemies.
+
+{{nav|fr=Bidoche}}

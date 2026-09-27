@@ -1,0 +1,32 @@
+{{infobox monster
+ | id           = 48
+ | variant      = 1
+ | is mini-boss = yes
+ | image name   = * {{dlc|nr|Rebirth}}
+ | base hp      = 60
+ | stage hp     = {{dlcalt|24|r=30}}
+ | environment  = <u>Mini-Boss</u><br>{{room|mini-boss}}<br>{{dlc|r}} Cannot be encountered in [[Chapter 1]] Mini-Boss Rooms<br>{{room|boss challenge}}<br><u>Degraded Mini-Boss</u><br>{{floor|Sheol}}{{floor|Cathedral}}<br>{{floor|Dark Room}}{{floor|Chest}}
+ | pool         = 2 {{e|Bomb}}s (78.6% Chance) <br>or<br>{{i|Mr. Mega}} (21.4% Chance)
+}}
+
+'''Super Wrath''' is a [[mini-boss]] and one of the [[Seven Deadly Sins#Super Sins|Seven Super Deadly Sins]]. He is randomly encountered as an alternate version of {{e|Wrath}}.
+
+== Behavior ==
+* Super Wrath wanders around the room randomly, spawning {{e|Mega Troll Bomb}}s on his position.
+** Super Wrath takes only 20 damage (not the usual {{dlc|nr}} 60 / {{dlc|r}} 100) from his own bombs.
+* Super Wrath deals a full heart of damage (both bombs and contact).
+
+== Notes ==
+* In a mini-boss room, Super Wrath can spawn near 2 {{e|Mega Troll Bomb}}s.
+* Isaac's bombs and {{i|Epic Fetus}} missiles deal 200 damage regardless of modifiers or damage stat.
+* {{dlc|nr}} Super Wrath can drop {{i|Mr. Mega}} even if Isaac has already encountered/possessed it. 
+* {{t|Safety Scissors}} replaces the Mega Troll Bombs with {{e|Double Bomb}} drops.
+* {{i|Pyromaniac}} or {{i|Host Hat}} renders Super Wrath unable to damage Isaac with bombs. Explosions can still knock Isaac into hazards.
+
+== Trivia ==
+* Super Wrath's blasted and soot-covered appearance suggests a backfired or failed attempt to handle a bomb.
+* {{e|Wrath}} and Super Wrath bear a strong resemblance to the title character of the [[wikipedia:Bomberman|''Bomberman'']] series, both in their appearance and their attack patterns.
+* The [[wikipedia:Seven Deadly Sins|Seven Deadly Sins]] that these mini-bosses are based upon are, in Christian teachings, a classification of vices from which all others are derived.
+
+{{nav|mini-boss|fr=Super Colère}}
+[[category:Seven Super Deadly Sins]]

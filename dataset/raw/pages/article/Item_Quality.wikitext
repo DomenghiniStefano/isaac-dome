@@ -1,0 +1,17 @@
+{{page dlc|r}}
+'''Item quality''' is a hidden item mechanic added in ''[[The Binding of Isaac: Repentance]]'', assigned to all [[items]].<ref>The qualities and categories are defined in <code>items_metadata.xml</code>.</ref> The quality ranges from 0 to 4 and causes them to behave differently with certain items or automatically get rerolled if certain conditions are met.
+
+== Mechanics Affected ==
+* {{i|Bag of Crafting}}: Determines what kind of item is given by the bag, depending on the pickups put into it.
+* {{I|Birthright}} ({{C|Tainted Bethany}}): The {{I|Lemegeton}} wisps spawned by this item are guaranteed to be quality 3 or higher.
+* {{t|NO!}}: If multiple copies, {{I|Mom's Box}}, or a [[Golden Trinket|golden version]] of the trinket is held, items with quality 0 are rerolled.
+* {{dlc|r+}} {{t|Poker Chip}}: If the chest would contain an item of quality 0-2, it is rerolled to get a +1 quality bonus.
+* {{i|Sacred Orb}}: Automatically rerolls items with a quality of 0 or 1, and has a 33% chance to reroll items with a quality of 2.
+* {{c|Tainted Lost}}: 20% chance of rerolling items with a quality of 2 or less.
+* {{dlc|r+}} {{i|Abyss}}: The damage locusts deal is dependent on the quality of the item destroyed.
+
+== References ==
+{{reflist}}
+
+{{nav|fr=Qualité des objets}}
+[[Category:Mechanics]]

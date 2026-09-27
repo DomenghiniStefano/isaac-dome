@@ -168,7 +168,8 @@ fn wanted_of(
         | Target::Transformation { .. }
         | Target::Stage { .. }
         | Target::Room { .. }
-        | Target::Concept { .. } => {
+        | Target::Concept { .. }
+        | Target::Article { .. } => {
             let key = key_of(c, bosses, target).ok_or(WantDiagnostic::NothingUnlocks)?;
             let ids = crate::queue::achievements_unlocking(c, &key);
             match crate::graph::resolve_target(c, bosses, &key, None, icon) {
@@ -299,7 +300,8 @@ fn key_of(c: &Catalog, bosses: &BossKeys, t: &Target) -> Option<crate::goals::Ta
         | Target::Transformation { .. }
         | Target::Stage { .. }
         | Target::Room { .. }
-        | Target::Concept { .. } => None,
+        | Target::Concept { .. }
+        | Target::Article { .. } => None,
     }
 }
 
@@ -316,6 +318,7 @@ fn unlockable(t: &Target) -> bool {
         Target::Transformation { .. }
         | Target::Stage { .. }
         | Target::Room { .. }
-        | Target::Concept { .. } => false,
+        | Target::Concept { .. }
+        | Target::Article { .. } => false,
     }
 }

@@ -1,0 +1,58 @@
+{{header soul stones}}
+{{Infobox rune
+ | dlc         = r
+ | name        = Soul of Cain
+ | type        = soul stone
+ | id          = 83
+ | quote       = Opens the unopenable
+ | description = Opens all doors in the room and creates a {{r|Red Room}} on all valid walls. This also destroys the mirror located in {{s|Downpour}} / {{s|Dross}} II.
+ | unlocked by = Soul of Cain
+ | recharge    = 6
+}}
+
+{{cit|ur|r}}
+
+== Effects ==
+* Opens all doors in the room.
+* Creates a {{r|Red Room}} on all valid walls of the room. This is indicated by walls that have red door outlines on them.
+
+== Notes ==
+* '''Soul of Cain''' can destroy the mirror located in {{s|Downpour}} / {{s|Dross}} II.
+* '''Soul of Cain''' can open:
+:# Any normal doors that are closed during combat, even on floors that normally disallow this;
+:# Any dоor requiring {{e|Key}}s;
+:# Any door requiring {{e|Bomb}}s to blow open (including {{r|Secret Room}} and {{r|Super Secret Room}} doors);
+:# {{r|Challenge Room}} and {{r|Boss Challenge Room}} doors regardless of health total;
+:# The door to the {{e|Mega Satan}} arena;
+:# The {{r|Boss Rush}} door from inside;
+:# The doors of a {{r|Mini-Boss Room}} from inside;
+:# Most {{r|Boss Room}} dоors from inside;
+:# The exit door in {{mode|greed}} [[Greed mode]];
+:#* Leaving the main room before clearing a set of waves will reset the wave counter, and repeated waves will not drop coins or charge Isaac's activated item.
+:# The {{s|Mausoleum}} / {{s|Gehenna}} doors without paying the health cost;
+:# The flesh door leading to {{s|Corpse}};
+:# {{a|A Strange Door}}.
+:# The closet containing a tainted character in {{s|Home}}.
+
+* '''Soul of Cain''' cannot open:
+:# The {{r|Boss Rush}} door if the timer has already passed 20 minutes;
+:# The door to the room leading to {{s|???}} if the timer has already passed 30 minutes;
+:# {{r|Angel Room}} or {{r|Devil Room}} doors from the outside;
+:# The door of {{E|Mom}}'s Boss Room from inside;
+:# The door to {{s|The Void}} during the {{e|Hush}} boss fight.
+
+== Strategy ==
+* '''Soul of Cain''' can serve as a {{r|Secret Room}} finder, as secret room entrances do not have red door outlines.
+* Refer to the {{r|Ultra Secret Room}} page for the strategy to better find it.
+
+== In-game Footage ==
+{{#ev:youtube|QllR1KrizD0}}
+
+== Trivia ==
+* '''Soul of Cain''''s ability is likely a reference to {{i|Red Key}} being an unlock for {{c|Cain}} in the original ''Antibirth'' mod.
+
+== Bugs ==
+{{Bug|dlc=nr+|Soul of Cain can break the mirror in {{s|Downpour}} II.}}
+
+{{nav|fr=Âme de Caïn}}
+[[Category:Runes]]

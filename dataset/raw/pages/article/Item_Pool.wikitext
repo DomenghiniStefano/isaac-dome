@@ -1,0 +1,541 @@
+An '''item pool''' is the set of [[item]]s that can be generated under a given circumstance. There are many item pools that exist within ''The Binding of Isaac: Rebirth.''
+
+== Item Pool List ==
+{| class="wikitable sortable mw-collapsible"
+ ! Game mode
+ ! Name
+ ! Usage
+ ! Notes
+ |-
+ | rowspan="24" | {{mode|normal}} Normal<br>{{mode|hard}} [[Hard mode|Hard]]
+ | {{ip|Treasure Room}}
+ | Items found in a {{r|Treasure Room}}.
+ | The largest pool. All rooms not listed below use this pool for Item rolls, eg. Crawlspace items or using {{i|Mystery Gift}} in a normal room. This pool is used when another is empty.
+ |-
+ | {{ip|Shop}}
+ | Items found in a {{r|Shop}}.
+ |-
+ | {{ip|Library}}
+ | Items found in a {{r|Library}}.
+ | Contains all the book-themed items. All items in this pool are Active items, with the exception of {{i|Book of Virtues}}
+ |-
+ | {{ip|Curse Room}}
+ | Items found in a {{r|Curse Room}}.
+ | Contains many items with a risk-reward dynamic. Shares many items with {{r|Devil Room}} and {{e|Red Chest}} pools, but they should not be confused.
+ |-
+ | {{ip|Boss}}
+ | Items found in a {{r|Boss Room}} or {{r|Boss Challenge Room}}.
+ | Contains only Passive Items. Some bosses and items can override the normal pool roll.
+ |-
+ | {{ip|Secret Room}}
+ | Items found in a {{r|Secret Room}}.
+ | Contains many powerful items with "game breaking" potential unique to the pool.
+ |-
+ | {{ip|Devil Room}}
+ | Items found in a {{r|Devil Room}}.<br>{{dlc+|r}} Items given by a {{m|Hell Game}}{{dlc-}}.
+ | Contains items with a demonic theme, as well as many dead baby familiars and blade themed items. 
+ |-
+ | {{ip|Angel Room}}
+ | Items found in an {{r|Angel Room}}.
+ | Contains items with a holy theme. Has a large quantity of items with defensive properties. 
+ |-
+ | {{ip|Golden Chest}}
+ | Items contained in a {{e|Locked Chest}} or {{e|Bomb Chest}}.<br>Items found in a {{r|Vault}}.
+ | Significantly changed between different DLC versions. AB theme was all the heads, AB+ added all the bags, REP replaced the pool with household objects.
+ |-
+ | {{ip|Red Chest}}
+ | Items contained in a {{e|Red Chest}}.
+ | Significant overlap in contents with {{ip|Curse Room}} and {{ip|Devil Room}} pools, but should not be confused.
+ |-
+ | {{ip|Beggar}}
+ | Items given by a {{m|Beggar}}.
+ | Contains no Quality 3 or 4 items. Contains items themed on food, drugs, and coins.
+ |-
+ | {{ip|Devil Beggar}}
+ | Items given by a {{m|Devil Beggar}}.
+ | All items in this pool are demonic, drugs, or connected to self-harm.
+ |-
+ | {{ip|Key Master}}
+ | Items given by a {{m|Key Master}}.
+ | All items in this pool are Keys or Flies.
+ |-
+ | {{dlc+|a}} {{ip|Bomb Bum}}
+ | Items given by a {{m|Bomb Bum}}.
+ | All items in this pool are bombs. {{dlc-}}
+ |-
+ | {{dlc+|r}} {{ip|Planetarium}}
+ | Items found in a {{r|Planetarium}}.
+ | Uniquely contains a set of items exclusively available in this item pool. {{dlc-}}
+ |-
+ | {{dlc+|r}} {{ip|Ultra Secret Room}}
+ | Items found in an {{r|Ultra Secret Room}}.
+ | All items in this pool are red, matching the theme of the Ultra Secret room.{{dlc-}}
+ |-
+ | {{dlc+|r}} {{ip|Crane Game}}
+ | Items given by a {{m|Crane Game}}.{{dlc-}}
+ | Contains items themed on handhold objects, toys, electronics, and arthropods. 
+ |-
+ | {{dlc+|r}} {{ip|Shell Game}}
+ | Not normally used. Dispite the name, [[Shell Game]]s only dispense {{i|Skatole}}.
+ | Only used by {{i|Bag of Crafting}} when collecting {{c|Tainted ???}}'s poop pickups, and contains poop items.
+ |{{dlc-}}
+ |-
+ | {{dlc+|r}} {{ip|Rotten Beggar}}
+ | Items given by a {{m|Rotten Beggar}}.
+ | All items in this pool are Rotten.{{dlc-}}
+ |-
+ | {{dlc+|r}} {{ip|Battery Bum}}
+ | Items given by a {{m|Battery Bum}}.
+ | All items in this pool are passive items connected to electricity.{{dlc-}}
+ |-
+ | {{dlc+|r}} {{ip|Old Chest}}
+ | Items contained in a {{e|Old Chest}}.
+ | All items in this pool are connected to Isaac's Mom or Dad.{{dlc-}}
+ |-
+ | {{dlc+|r}} {{ip|Wooden Chest}}
+ | Items contained in a {{e|Wooden Chest}}.
+ | All items in this pool are made of wood.{{dlc-}}
+ |-
+ | {{dlc+|r}} {{ip|Mom's Chest}}
+ | Items contained in {{e|Mom's Chest}}, or otherwise generated in Mom's Bedroom.
+ | Contains all of Mom's Items as well as {{i|Red Key}}{{dlc-}}
+ |-
+ | {{dlc+|r}} {{ip|Baby Shop}}
+ | Items found in a {{r|Shop}} while holding {{t|Adoption Papers}}.{{dlc-}}
+ | Contains all items that spawn a permanent [[familiar]]. 
+ |-
+ | rowspan="24" | {{dlc+|a}} {{mode|greed}} [[Greed Mode|Greed]]<br>{{dlc|a+}} {{mode|greedier}} [[Greedier Mode|Greedier]]
+ | {{ip|Greed Treasure Room}}
+ | Items found in a {{r|Treasure Room}} or {{r|Shop}}.
+ | All rooms not listed below use this pool for Item rolls, eg. Crawlspaces, {{i|Mystery Gift}}. This pool is drawn from if the default pool is empty.
+ |-
+ | {{ip|Greed Shop}}
+ | Items found in a {{r|Shop}}.
+ |-
+ | {{ip|Greed Library}}
+ | Items found in a {{r|Library}}-themed {{r|Super Secret Room}}.
+ |-
+ | {{ip|Greed Curse Room}}
+ | Items found in a {{r|Curse Room}}.
+ |-
+ | {{ip|Greed Boss}}
+ | Items found in a Silver {{r|Treasure Room}} or {{r|Shop}}.
+ |-
+ | {{ip|Greed Secret Room}}
+ | Items found in a {{r|Super Secret Room}}.
+ |-
+ | {{ip|Greed Devil Room}}
+ | Items found in a {{r|Devil Room}}.
+ |-
+ | {{ip|Greed Angel Room}}
+ | Items found in an {{r|Angel Room}}.
+ |-
+ | {{ip|Greed Golden Chest}}
+ | Items contained in a {{e|Locked Chest}} or {{e|Bomb Chest}}.{{dlc-}}
+ |}
+
+== Item Weight ==
+* Each item that is in an item pool has a weight associated with it. The weight represents how likely it is for the game to spawn the item. Nearly every item in the game has a weight of 1.
+** For example, if there are 200 items in a given item pool, and each item has a weight of 1, that means there is a 1 in 200 (0.5%) chance to get any particular item from that pool.
+** However, if an item has a weight of 0.5, that means that item is 50% as likely to spawn compared to an item that has a weight of 1. In a pool of 200 items that has only 2 items with a weight of 0.5, that would result in the total weight being 199. ((198 * 1) + (2 * 0.5) = 199) This means items with a weight of 1 have a 1 in 199 (≈0.5%) chance to spawn, while an item with a weight of 0.5 has a 1 in 398 (≈0.25%) chance to spawn.
+* {{dlc|nr}} Only a few items in the game do not have a weight of 1:
+** {{i|Bomber Boy}} has a weight of 0.2 in the [[Bomb Bum (Item Pool)|Bomb Bum pool]], making it 80% less likely to encounter.
+** {{i|Delirious}} has a weight of 0.4 in [[Angel Room (Item Pool)|Angel Room pool]], making it 60% less likely to encounter.
+** {{i|Mega Blast}} has a weight of 0.2 in the [[Devil Room (Item Pool)|Devil Room]] and [[Devil Room (Greed Mode Item Pool)|Greed Mode Devil Room]] pools, making it 80% less likely to encounter.
+** {{i|Plan C}} has a weight of 0.2 in the [[Curse Room (Item Pool)|Curse Room]], [[Devil Beggar (Item Pool)|Devil Beggar]], [[Devil Room (Item Pool)|Devil Room]], [[Shop (Greed Mode Item Pool)|Greed Mode Shop]], [[Red Chest (Item Pool)|Red Chest]] and [[Shop (Item Pool)|Shop]] pools, making it 80% less likely to encounter.
+* {{dlc+|r}} Item weights were adjusted more extensively in Repentance and Repentance+.
+** [[Treasure Room (Item Pool)|Treasure Room]]:
+*** {{i|Astral Projection}}: 0.2
+*** {{i|The Body}}: 0.2
+*** {{i|Death's Touch}}: 0.2
+*** {{i|Epic Fetus}}: 0.1
+*** {{i|Esau Jr.}}: 0.5
+*** {{i|Eternal D6}}: 0.5
+*** {{i|Gello}}: 0.5
+*** {{i|The Halo}}: 0.5
+*** {{i|Holy Light}}: 0.2
+*** {{i|Holy Mantle}}: 0.2
+*** {{i|Magic Mushroom}}: 0.5
+*** {{i|Mega Mush}}: 0.1
+*** {{i|The Mind}}: 0.2
+*** {{i|Mom's Knife}}: 0.2
+*** {{i|Plum Flute}}: 0.5
+*** {{i|Pyro}}: 0.1
+*** {{i|The Relic}}: 0.2
+*** {{i|The Soul}}: 0.2
+*** {{i|Skeleton Key}}: 0.1
+*** {{i|Spindown Dice}}: 0.1
+** [[Shop (Item Pool)|Shop]]:
+*** {{i|Blank Card}}: 0.5
+*** {{i|Card Reading}}: 0.5
+*** {{i|Chaos}}: 0.5
+*** {{i|Crooked Penny}}: 0.5
+*** {{i|Keeper's Box}}: 0.5
+*** {{i|Magic Skin}}: 0.1
+*** {{i|Mama Mega!}}: 0.5
+*** {{i|Plan C}}: 0.2
+*** {{i|Sack Head}}: 0.5
+** [[Library (Item Pool)|Library]]:
+*** {{i|Book of Virtues}}: 0.2
+*** {{i|Lemegeton}}: 0.2
+** [[Curse Room (Item Pool)|Curse Room]]:
+*** {{i|False PHD}}: 0.5
+*** {{i|Heartbreak}}: 0.5
+*** {{i|Plan C}}: 0.2
+*** {{i|Vanishing Twin}}: 0.5
+** [[Boss (Item Pool)|Boss Room]]:
+*** {{i|PJs}}: 0.5
+*** {{i|Super Bandage}}: 0.5
+** [[Secret Room (Item Pool)|Secret Room]]:
+*** {{i|Sacred Orb}}: 0.5
+*** {{i|Vanishing Twin}}: 0.5
+** [[Devil Room (Item Pool)|Devil Room]]:
+*** {{i|Abyss}}: 0.5
+*** {{i|Berserk!}}: 0.5
+*** {{i|Dark Arts}}: 0.5
+*** {{i|Forget Me Now}}: 0.2
+*** {{i|Heartbreak}}: 0.5
+*** {{i|Lemegeton}}: 0.5
+*** {{i|Mega Blast}}: 0.2
+*** {{i|Plan C}}: 0.2
+*** {{i|Void}}: 0.5
+** [[Angel Room (Item Pool)|Angel Room]]:
+*** {{i|Book of Virtues}}: 0.5
+*** {{i|Delirious}}: 0.4
+*** {{i|Sacred Orb}}: 0.5
+*** {{i|Void}}: 0.5
+** [[Golden Chest (Item Pool)|Golden Chest]]:
+*** {{i|Fate}}: 0.5
+*** {{i|Lead Pencil}}: 0.1
+*** {{i|Orphan Socks}}: 0.1
+*** {{i|PJs}}: 0.5
+*** {{i|Schoolbag}}: 0.5
+** [[Red Chest (Item Pool)|Red Chest]]:
+*** {{i|Blood Puppy}}: 0.5
+*** {{i|False PHD}}: 0.2
+*** {{i|Plan C}}: 0.1
+*** {{i|Red Key}}: 0.1
+** [[Devil Beggar (Item Pool)|Devil Beggar]]:
+*** {{i|Abaddon}}: 0.2
+*** {{i|A Pound of Flesh}}: 0.5
+*** {{i|Forget Me Now}}: 0.5
+*** {{i|Lord of the Pit}}: 0.2
+*** {{i|Plan C}}: 0.2
+*** {{i|Spirit of the Night}}: 0.2
+** [[Bomb Bum (Item Pool)|Bomb Bum]]:
+*** {{i|Brimstone Bombs}}: 0.2
+*** {{i|Pyro}}: 0.2
+*** {{i|Pyromaniac|r+}}: 0.2
+** [[Key Master (Item Pool)|Key Master]]:
+*** {{i|Skeleton Key|r+}}: 0.2
+** [[Rotten Beggar (Item Pool)|Rotten Beggar]]:
+*** {{i|Dead Onion}}: 0.5
+*** {{i|Rotten Tomato}}: 0.5
+** [[Battery Bum (Item Pool)|Battery Bum]]:
+*** {{i|120 Volt}}: 0.1
+*** {{i|Jacob's Ladder}}: 0.1
+** [[Old Chest (Item Pool)|Old Chest]]:
+*** {{i|Dad's Ring}}: 0.2
+*** {{i|Mom's Knife}}: 0.2
+** [[Mom's Chest (Item Pool)|Mom's Chest]]:
+*** {{i|Mom's Knife}}: 0.1
+*** {{i|Red Key}}: 0.5
+** [[Baby Shop (Item Pool)|Baby Shop]]:
+*** {{i|Gello|r+}}: 0.5
+*** {{i|Vanishing Twin|r+}}: 0.5
+** [[Treasure Room (Greed Mode Item Pool)|Greed Mode Treasure Room]]:
+*** {{i|Anima Sola}}: 0.1
+*** {{i|The Body}}: 0.2
+*** {{i|Death's Touch}}: 0.2
+*** {{i|Epic Fetus}}: 0.1
+*** {{i|Esau Jr.}}: 0.5
+*** {{i|Eternal D6}}: 0.5
+*** {{i|Gello}}: 0.5
+*** {{i|The Halo}}: 0.5
+*** {{i|Holy Light}}: 0.2
+*** {{i|Holy Mantle}}: 0.2
+*** {{i|Humbleing Bundle|r+}}: 0.2
+*** {{i|Keeper's Box}}: 0.2
+*** {{i|Magic Mushroom}}: 0.5
+*** {{i|Mega Mush}}: 0.5
+*** {{i|The Mind}}: 0.2
+*** {{i|Missing No.}}: 0.1
+*** {{i|Mom's Knife}}: 0.2
+*** {{i|Plum Flute}}: 0.5
+*** {{i|Pyro}}: 0.1
+*** {{i|The Relic}}: 0.2
+*** {{i|Skeleton Key}}: 0.1
+*** {{i|The Soul}}: 0.2
+*** {{i|Spindown Dice}}: 0.1
+*** {{i|Strawman|r+}}: 0.5
+** [[Shop (Greed Mode Item Pool)|Greed Mode Shop]]:
+*** {{i|1up!|r+}}: 0.1
+*** {{i|Anima Sola}}: 0.1
+*** {{i|Blank Card}}: 0.5
+*** {{i|Chaos}}: 0.5
+*** {{i|D infinity}}: 0.1
+*** {{i|D20|r+}}: 0.1
+*** {{i|Echo Chamber}}: 0.1
+*** {{i|Esau Jr.}}: 0.1
+*** {{i|Eternal D6|r+}}: 0.5
+*** {{i|Flip}}: 0.1
+*** {{i|Glitched Crown}}: 0.1
+*** {{i|Inner Child}}: 0.1
+*** {{i|Isaac's Tomb}}: 0.1
+*** {{i|Mama Mega!}}: 0.5
+*** {{i|Plan C}}: 0.2
+*** {{i|R Key}}: 0.1
+*** {{i|Sacred Orb}}: 0.1
+*** {{i|Spindown Dice}}: 0.1
+*** {{i|Spirit Shackles}}: 0.1
+*** {{i|Stop Watch|r+}}: 0.1
+*** {{i|Strawman}}: 0.1
+*** {{i|TMTRAINER}}: 0.1
+** [[Curse Room (Greed Mode Item Pool)|Greed Mode Curse Room]]:
+*** {{i|False PHD}}: 0.5
+*** {{i|Heartbreak}}: 0.5
+*** {{i|Plan C}}: 0.2
+** [[Boss (Greed Mode Item Pool)|Greed Mode Boss Room]]:
+*** {{i|Magic Mushroom}}: 0.2
+*** {{i|PJs}}: 0.5
+*** {{i|Raw Liver|r+}}: 0.2
+*** {{i|Super Bandage|r+}}: 0.5
+** [[Secret Room (Greed Mode Item Pool)|Greed Mode Secret Room]]:
+*** {{i|Sacred Orb}}: 0.5
+** [[Devil Room (Greed Mode Item Pool)|Greed Mode Devil Room]]:
+*** {{i|Abyss}}: 0.5
+*** {{i|Berserk!}}: 0.5
+*** {{i|Dark Arts}}: 0.5
+*** {{i|Heartbreak}}: 0.5
+*** {{i|Lemegeton}}: 0.5
+*** {{i|Mega Blast}}: 0.2
+*** {{i|Technology}}: 0.2
+** [[Angel Room (Greed Mode Item Pool)|Greed Mode Angel Room]]:
+*** {{i|Book of Virtues}}: 0.5
+*** {{i|Delirious|r+}}: 0.4
+*** {{i|Sacred Orb}}: 0.5
+{{dlc-}}
+
+== Weight Decrementation ==
+* When you see an item spawn, the weight of that item is automatically decremented inside of the respective item pool. However, the amount of the decrementation varies depending on the specific item pool.
+* If an item happens to be in more than one item pool, the weight decrementation will also apply to other pools.
+* Touching an item will remove it from all item pools.
+* If a pedestal cycles between multiple items, such as from {{i|Glitched Crown}}, each item option will count as being seen.
+
+The seen items in the following item pools are decremented by 50% on sight:
+* [[Beggar (Item Pool)|Beggar]]
+* [[Bomb Bum (Item Pool)|Bomb Bum]]
+* [[Curse Room (Item Pool)|Curse Room]] and [[Curse Room (Greed Mode Item Pool)|Greed Mode Curse Room]]
+* [[Devil Beggar (Item Pool)|Devil Beggar]]
+* [[Key Master (Item Pool)|Key Master]]
+* {{dlc|r}} [[Battery Bum (Item Pool)|Battery Bum]]
+* {{dlc|nr}} [[Shop (Item Pool)|Shop]] and [[Shop (Greed Mode Item Pool)|Greed Mode Shop]]
+* {{dlc|r}} [[Mom's Chest (Item Pool)|Mom's Chest]]
+
+The seen items in the following item pools are decremented by 40% on sight:
+* [[Golden Chest (Item Pool)|Golden Chest]] and [[Golden Chest (Greed Mode Item Pool)|Greed Mode Golden Chest]]
+* [[Red Chest (Item Pool)|Red Chest]]
+* {{dlc|r}} [[Ultra Secret Room (Item Pool)|Ultra Secret Room]]
+* {{dlc|r}} [[Old Chest (Item Pool)|Old Chest]]
+
+The seen items in the following item pools are decremented by 10% on sight:
+* [[Library (Item Pool)|Library]] and [[Library (Greed Mode Item Pool)|Greed Mode Library]]
+* {{dlc|r}} [[Crane Game (Item Pool)|Crane Game]]
+
+All other item pools not listed above are fully decremented on sight, and thus, removed.
+
+=== Examples ===
+* All items in the Treasure Room pool are completely decremented on sight. Thus, seeing a {{i|Notched Axe}} in the Basement 1 Treasure Room will make it impossible to spawn another Notched Axe in the run. (In this case, players do '''not''' have to touch the Notched Axe in order to prevent the game from ever spawning another one.)
+* {{dlc|nr}} All items in the shop pool are decremented by 0.5 on sight. Thus, if you use a [[Restock Machine]] to reroll a {{i|Treasure Map}}, you have a chance for another Treasure Map to appear. However, after the Treasure Map has already appeared twice on a run, it is completely decremented from the shop pool and it will never appear again.
+** {{dlc|r}} All items in the shop pool are fully decremented on sight. Thus, if you use a [[Restock Machine]] to reroll a {{i|Treasure Map}}, it will never appear again for the rest of the run.
+* If the player sees {{i|Telepathy For Dummies}} in the Basement 1 Treasure Room, it is completely removed from all other pools for the rest of the run even without touching it. Seeing it in a Library and not touching it, however, allows it still to be encountered as a Treasure item, with slightly lowered weight.
+
+== {{dlc+|nr}} Unused Item Pools ==
+In the <code>itempools.xml</code> file, we can see that there are some unused item pools:
+* <code>bossrush</code> - Likely intended to be used for the [[Boss Rush]]. However, in the actual game, the Boss Rush draws from the [[Treasure Room (Item Pool)|Treasure Room pool]].
+* <code>challenge</code> - Likely intended to be used for [[Challenge Room]]s. However, in the actual game, Challenge Rooms draw from the [[Treasure Room (Item Pool)|Treasure Room pool]].
+* <code>dungeon</code> - Likely intended to be used for the [[Crawl Space]]s. However, in the actual game, Crawl Spaces draw from the [[Treasure Room (Item Pool)|Treasure Room pool]].
+{{dlc-}}
+
+== Set Drops ==
+* Some specific collectible items are hard-coded to have a chance to drop from certain special events. These are referred to as "set drops".
+* {{dlc|nr}} Set drops from the [[Seven Deadly Sins]] are not affected by item pools. For example, if you touch {{i|The Virus}} in the Treasure Room on Basement 1, and then you fight [[Lust]] in the Mini-Boss Room of Basement 2, Lust will still have the normal chance to drop {{i|The Virus}}. If it does, you can take it and have two Viruses.
+* Set drops from most [[Machines]] can be obtained multiple times.
+** With the exception of {{i|IV Bag}}, {{i|Redemption}}, and {{i|Skatole}}.
+*** If an {{i|IV Bag}} has already been touched ({{dlc|r}} or seen), then {{m|Blood Donation Machine}}s will only spawn {{i|Blood Bag}}s after.
+* Set drops from bosses will always replace the [[Boss (Item Pool)|Boss Room Item]] if the set drop wasn't already obtained or depleted from pools, with some exceptions.
+** {{e|Famine}}, {{e|Pestilence}}, {{e|War}}, and {{e|Death}} will always drop {{i|Cube of Meat}} or {{i|Ball of Bandages}}, even if either was already obtained.
+*** {{dlc|nr}} Respectively, if {{i|A Pony}} or {{i|White Pony}} have been touched, then {{e|Headless Horseman}} and {{e|Conquest}} will drop a [[Boss (Item Pool)|Boss Room Item]] instead.
+*** {{dlc|r}} Respectively, if {{i|A Pony}} or {{i|White Pony}} have been touched, then {{e|Headless Horseman}} and {{e|Conquest}} will always drop either {{i|Cube of Meat}} or {{i|Ball of Bandages}}.
+** {{dlc|nr}} {{e|Krampus}} will always spawn either {{i|Head of Krampus}} or {{i|A Lump of Coal}}, even if either was already obtained.
+** {{dlc|r}} {{e|Krampus}} will only spawn {{i|Head of Krampus}} once, then will only spawn {{i|A Lump of Coal}} after, even if it was already obtained.
+** {{e|Mom}} will always drop {{i|The Polaroid}} and {{i|The Negative}} if they are unlocked, even if either was already obtained.
+** {{dlc+|r}} {{e|Bumbino}} will drop his items in addition to the boss room item, and will always drop {{i|The Poop}} once all his drops are obtained.{{dlc-}}
+** {{dlc+|r}} {{e|Hornfel}} will drop his items in addition to the boss room item, and will only drop 3 bombs once all his drops are seen.{{dlc-}}
+* {{i|Sacrificial Altar}}'s drops are deceptively not from the [[Devil Room (Item Pool)|Devil Room Pool]], and are considered set drops.
+** Once all of its drops are seen, it will always drop {{i|Pentagram}}.
+* All other set drops not mentioned above can only spawn if the item hasn't already been obtained or depleted from pools.
+
+The set drops are as follows:
+
+From the Seven Deadly Sins:
+* {{i|<3}} - Drops from {{e|Gluttony}}
+* {{i|Anarchist Cookbook}} - Drops from {{e|Pride}}
+* {{i|Bob's Curse}} - Drops from {{e|Super Sloth}}
+* {{i|Bob's Rotten Head}} - Drops from {{e|Sloth}}
+* {{i|Bucket of Lard}} - Drops from {{e|Super Gluttony}}
+* {{i|Dead Cat}} - Drops from {{e|Super Pride}}
+* {{i|Eternal D6}} - Drops from {{e|Ultra Pride}} when Florian is killed last
+* {{i|Forever alone}} - Drops from {{e|Super Envy}}
+* {{i|Mr. Boom}} - Drops from {{e|Wrath}}
+* {{i|Mr. Mega}} - Drops from {{e|Super Wrath}}
+* {{i|A Quarter}} - Drops from {{e|Super Greed}}
+* {{i|Shoop da Whoop!}} - Drops from {{e|Envy}}
+* {{i|Steam Sale}} - Drops from {{e|Greed}}
+* {{i|The Virus}} - Drops from {{e|Lust}}
+* {{i|Yum Heart}} - Drops from {{e|Super Lust}}
+
+From Bosses:
+* {{i|Ball of Bandages}} - Drops from {{e|Famine}}, {{e|Pestilence}}, {{e|War}}, and {{e|Death}}
+* {{i|Cube of Meat}} - Drops from {{e|Famine}}, {{e|Pestilence}}, {{e|War}}, and {{e|Death}}
+* {{i|Head of Krampus}} - Drops from {{e|Krampus}}
+* {{i|Key Piece 1}} - Drops from {{e|Uriel}} and {{e|Gabriel}}
+* {{i|Key Piece 2}} - Drops from {{e|Gabriel}} and {{e|Uriel}}
+* {{i|Little C.H.A.D.}} - Drops from {{e|C.H.A.D.}}
+* {{i|Little Gish}} - Drops from {{e|Gish}}
+* {{i|Little Steven}} - Drops from {{e|Steven}}
+* {{i|A Lump of Coal}} - Drops from {{e|Krampus}}
+* {{i|The Negative}} - Drops from {{e|Mom}}
+* {{dlc+|r}}{{i|Plum Flute}} - Drops from {{e|Baby Plum}} after not damaging her for 30 seconds{{dlc-}}
+* {{i|The Polaroid}} - Drops from {{e|Mom}}
+* {{i|A Pony}} - Drops from {{e|Headless Horseman}}
+* {{i|Steven}} - Drops from {{e|Steven}}
+* {{i|White Pony}} - Drops from {{e|Conquest}}
+
+From Machines:
+* {{i|Blood Bag}} - Drops from {{m|Blood Donation Machine}}s
+* {{i|Crystal Ball}} - Drops from {{m|Fortune Telling Machine}}s
+* {{i|A Dollar}} - Drops from {{m|Slot Machine}}s
+* {{i|IV Bag}} - Drops from {{m|Blood Donation Machine}}s
+* {{i|Mom's Underwear}} - Drops from {{m|Mom's Dressing Table}}
+* {{i|Mom's Heels}} - Drops from {{m|Mom's Dressing Table}}
+* {{i|Mom's Lipstick}} - Drops from {{m|Mom's Dressing Table}}
+* {{i|Mom's Bra}} - Drops from {{m|Mom's Dressing Table}}
+* {{i|Mom's Pad}} - Drops from {{m|Mom's Dressing Table}}
+* {{i|Mom's Eyeshadow}} - Drops from {{m|Mom's Dressing Table}}
+* {{i|Mom's Contacts}} - Drops from {{m|Mom's Dressing Table}}
+* {{i|Mom's Wig}} - Drops from {{m|Mom's Dressing Table}}
+* {{i|Mom's Perfume}} - Drops from {{m|Mom's Dressing Table}}
+* {{i|Mom's Pearls}} - Drops from {{m|Mom's Dressing Table}}
+* {{dlc+|r}}{{i|Redemption}} - Drops from {{m|Confessional}}s after taking a [[Devil Room#Deals with the Devil|Devil Deal]]{{dlc-}}
+* {{i|Skatole}} - Drops from the {{m|Shell Game}}
+
+From Rocks:
+* {{i|Blood Clot}} - Drops from destroying [[Rocks#Polyps|polyps]]
+* {{i|Dry Baby}} - Drops from destroying [[Rocks#Skulls|skulls]]
+* {{i|Ghost Baby}} - Drops from destroying [[Rocks#Skulls|skulls]]
+* {{i|Leech}} - Drops from destroying [[Rocks#Buckets|buckets]] in {{s|Downpour}}
+* {{i|Magic Mushroom}} - Drops from destroying [[Rocks#Mushrooms|mushrooms]]
+* {{i|Mini Mush}} - Drops from destroying [[Rocks#Mushrooms|mushrooms]]
+* {{i|Placenta}} - Drops from destroying [[Rocks#Polyps|polyps]]
+* {{i|The Poop}} - Drops from destroying [[Rocks#Buckets|buckets]] in {{s|Dross}}
+* {{i|A Quarter}} - Drops from destroying [[Rocks#Urns|urns]]
+* {{i|Rotten Baby}} - Drops from destroying [[Rocks#Polyps|polyps]] in the {{s|Corpse}}
+* {{i|Rotten Meat}} - Drops from destroying [[Rocks#Polyps|polyps]] in the {{s|Corpse}}
+* {{i|The Small Rock}} - Drops from destroying [[Rocks#Tinted Rocks|tinted rocks]] and [[Rocks#Super Special Rocks|super special rocks]]
+* {{i|Wavy Cap}} - Drops from destroying [[Rocks#Mushrooms|mushrooms]] in a {{r|Secret Room}}
+
+From {{e|Shopkeeper}}s:
+* {{i|Coupon}}
+* {{i|Head of the Keeper}}
+* {{i|Steam Sale}}
+
+From Items and Trinkets:
+* {{i|The Bible}} - Drops from {{i|Pandora's Box}} on {{s|Womb}} II
+* {{i|Red Key}} - Drops from {{i|Pandora's Box}} on {{s|Home}}
+* {{i|A Lump of Coal}} - Drops from {{i|Mystery Gift}}
+* {{i|Lunch}} - Drops from {{t|Bag Lunch}}
+* {{i|The Poop}} - Drops from {{i|Mystery Gift}}
+
+From Rooms:
+* {{dlc+|a+}} {{i|Broken Shovel 1}} - Found by bombing the first starting room after defeating the first boss in under 1 minute{{dlc-}}
+* {{dlc+|a+}} {{i|Broken Shovel 2}} - Found by defeating {{r|Boss Rush}} while holding {{i|Broken Shovel 1}}{{dlc-}}
+* {{dlc+|r}} {{i|Dad's Note}} - Found in {{s|Mausoleum}} and {{s|Gehenna}} II's {{r|Boss Room}} after entering [[A Strange Door|The Strange Door]]{{dlc-}}
+* {{dlc+|r}} {{i|Flush!}} - Found in a rare room in the {{s|Mines}}{{dlc-}}
+* {{dlc+|r}} {{i|Inner Child}} - Found in the hidden closet in {{s|Home}}{{dlc-}}
+* {{dlc+|r}} {{i|Knife Piece 1}} - Found in the [[Mirrored World]]'s {{r|Treasure Room}}{{dlc-}}
+* {{dlc+|r}} {{i|Knife Piece 2}} - Found at the end of the {{r|Mine Cart Room}} area{{dlc-}}
+* {{dlc+|r}} {{i|The Poop}} - Found in a rare room in {{s|Downpour}} and {{s|Dross}}{{dlc-}}
+* {{dlc+|r}} {{i|Redemption}} - Drops from {{r|Sacrifice Room}}s after taking a [[Devil Room#Deals with the Devil|Devil Deal]]{{dlc-}}
+* {{dlc+|a+}} {{i|We Need To Go Deeper!}} - Found in [[Grave Room]]s{{dlc-}}
+
+{{dlc+|r}} From {{e|Bumbino}} after he collects 12 cents:
+* {{i|<3}}
+* {{i|Bone Spurs}}
+* {{i|Butt Bombs}}
+* {{i|The Common Cold}}
+* {{i|Compound Fracture}}
+* {{i|Dead Tooth}}
+* {{i|Lemon Mishap}}
+* {{i|Monstro's Tooth}}
+* {{i|Number One}}
+* {{i|The Poop}}
+* {{i|Sinus Infection}}
+* {{i|Yum Heart}}{{dlc-}}
+
+{{dlc+|r}} Chance from {{e|Hornfel}} after defeating his 2nd phase before he escapes:
+* {{i|Boom!}}
+* {{i|Brimstone Bombs}}
+* {{i|Hot Bombs}}
+* {{i|Remote Detonator}}
+* {{i|Sad Bombs}}{{dlc-}}
+
+{{dlc+|a+}} From sacrificing familiars with {{i|Sacrificial Altar}}
+* {{i|7 Seals}}
+* {{i|Abaddon}}
+* {{i|Athame}}
+* {{i|Betrayal}}
+* {{i|Brimstone}}
+* {{i|Black Powder}}
+* {{i|Blood Puppy}}
+* {{i|Cambion Conception}}
+* {{i|Ceremonial Robes}}
+* {{i|Contract From Below}}
+* {{i|Dark Bum}}
+* {{i|Dark Prince's Crown}}
+* {{i|Dark Matter}}
+* {{i|Death's Touch}}
+* {{i|Demon Baby}}
+* {{i|Empty Vessel}}
+* {{i|Eye of the Occult}}
+* {{i|Gimpy}}
+* {{i|Goat Head}}
+* {{i|Hungry Soul}}
+* {{i|Incubus}}
+* {{i|Judas' Shadow}}
+* {{i|Lil Abaddon}}
+* {{i|Lil Delirium}}
+* {{i|Lord of the Pit}}
+* {{i|Maw Of The Void}}
+* {{i|Mom's Knife}}
+* {{i|Pentagram}}
+* {{i|Sacrificial Dagger}}
+* {{i|Succubus}}
+* {{i|Shade}}
+* {{i|Spirit of the Night}}
+* {{i|The Book of Belial}}
+* {{i|The Pact}}
+* {{i|The Mark}}
+* {{i|Vengeful Spirit}}
+* {{i|Void}}
+* {{i|Whore of Babylon}}{{dlc-}}
+
+== Notes ==
+* Item pools can be exhausted by having the game create every item in that specific pool. Items do not need to be picked up for this to happen, the game simply has to generate them (rerolling the item with {{i|The D6}} for example).
+** When an item pool is exhausted, the game will generate items from the Treasure Room pool instead.
+** If the Treasure Room pool is exhausted, the only item that can be generated from it is {{i|Breakfast}}.
+* Even though you technically cannot see items during [[Curses#Curse of the Blind|Curse of the Blind]], their weights are still being reduced upon encountering them.
+** {{dlc|r}} The same applies to blind items in alternative chapters.
+
+{{nav|fr=Banque d'Objets}}
+[[Category:Mechanics]]

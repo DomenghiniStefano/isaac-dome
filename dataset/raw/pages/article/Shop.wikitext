@@ -1,0 +1,178 @@
+''Not to be confused with {{s|The Shop}}, a floor in [[Greed mode]].''
+
+{{dlc|nr}}[[file:Locked Door.png]] {{dlc|r}}[[File:Shop door locked.png]][[File:Shop door.png]]
+
+A {{r|Shop}} is a Special Room that sells various [[pickups]] and [[item]]s in exchange for {{E|Penny|text=Pennies}}. Shops require a {{E|Key}} to open, unless Isaac holds {{t|Store Key}} ({{dlc|r}} except on floor 1, where Shops are always initially unlocked), and appear in every [[Chapters|Chapter]] prior to {{s|Womb}} or including The Womb if Isaac holds {{t|Silver Dollar}}. {{dlc+|a}} Additionally, a single '''Shop''' always spawns adjacent to the {{s|???}} starting room.{{dlc-}}
+
+Only one shop will ever appear on a floor at a time, even while under the effect of {{Cu|Labyrinth}}.
+
+Shops have a chance of being replaced by a {{r|Mini-Boss Room}} containing {{E|Greed}} or {{E|Super Greed}} once entered, starting on the second floor of [[Chapter 2]]. Once both mini-bosses has been defeated in a Shop or {{r|Secret Room}}, they will not appear in either for the rest of the run.
+
+* Greed will always spawn first, followed by Super Greed.
+* {{dlc|nr}} If any mini-boss is encountered on the floor, including Greed/Super Greed in the secret room, Greed or Super Greed will not appear in the shop on that floor.
+* {{t|Rib of Greed}} prevents both Greed and Super Greed from appearing in Shops while held.
+
+=== {{dlc+|a}} Greed Mode ===
+In [[Greed Mode]], Shops are twice as wide as usual and do not require a key to enter. They always contain a {{E|Key}}, a {{E|Red Heart}}, an item from the {{ip|Greed Shop|text=Greed Mode Shop item pool}}, an item from the {{ip|Greed Boss|text=Greed Mode Boss Room item pool}}, and two random pickups, trinkets, or items from the {{ip|Greed Treasure Room|text=Greed Mode Treasure Room item pool}}. The effect of {{i|Restock}} is always active inside of Shops in this mode ({{dlc|r}} prices will not increase continuously like they normally would when Isaac has Restock).
+
+Shops will never be replaced by Greed or Super Greed in Greed Mode.
+
+Layouts can be found [[Greed Mode#Layouts|here]].
+{{dlc-}}
+
+== Merchandise ==
+* Shops can sell {{E|Red Heart}}s for {{pennies|3}}. They can also sell {{E|Soul Heart}}s, {{E|Bomb}}s, {{E|Key}}s, {{E|Lil' Battery|text=Lil' Batteries}}, [[Pills]], and [[Cards and Runes|Cards]] for {{pennies|5}} each.
+** {{Dlc+|r}} Also: {{E|Grab Bag}}s for {{pennies|7}}.{{dlc-}}
+* Shops can sell items for {{pennies|15}}, from among those found in the {{ip|Shop|text=Shop item pool}}.
+** {{Dlc|r}} Certain active items are sold for {{pennies|10}}.
+* Any purchasable item has a chance to be discounted, which will cut its price in half.
+** Discounted items have red price tags instead of white price tags.
+** If a discount leaves the price of an item at a number that is not an integer, items and {{e|Grab Bag|r}}s will round their price down while pickups will round their price up.
+* {{i|Steam Sale}} will halve all prices in the Shop (and anywhere else items are bought for coins), {{dlc|nr}} including discounted ones.
+** {{dlc|anr}} Two Steam Sales will make every item free, which can be combined with {{i|Restock|n}} to allow infinite purchasing power. This also holds true in Greed Mode.
+<!--* {{dlc+|r}} There is a 20% chance for the shop to use a layout that contains a {{M|Shop Restock Machine}} if the Shop is level 1 or 2, and a 9% chance if the Shop is level 3 or 4.{{dlc-}}
+** These layouts contain 1 less slot than their normal counterparts.-->
+
+== Layouts ==
+Shops start at level 0 and can be upgraded by donating Coins to the {{M|Donation Machine}}, which can be found in Shops and sometimes in {{r|Arcade}}s, {{r|Vault}}s, {{r|Black Market}}s, rare normal/special room layouts, and from pressing {{dlc|a}}[[Reward Plate]]s. Each level increases the number of items for sale and visually fills the walls of the Shop.
+
+{{dlc|r}} Normal mode will always feature the highest unlocked level of Shop. In [[hard mode]], any level of shop that has been unlocked can appear. The room has 1/256 chance to be a rare shop (layouts 5, 6, 12, 13), then the weight determines which layout will be chosen. 
+
+The following room maps were made using [https://github.com/Basement-Renovator/basement-renovator Basement Renovator] for cleaner viewing.
+{| class="wikitable sortable mw-collapsible mw-collapsed" style="text-align: center"
+ ! scope="col" | ID
+ ! scope="col" | Weight
+ ! scope="col" | Pennies donated
+ ! scope="col" class="unsortable" | Contents
+ ! scope="col" class="unsortable" | Image preview
+ |-
+ ! scope="row" | 0
+ | 1
+ | {{pennies|0}}
+ | style="text-align: left" | 0-1 pickup and 1-2 items available for sale. {{dlc|nr}} The Donation Machine has 50% chance to be a Restock Machine instead.
+ | {{dlcmap slideshow|{{dlcalt|[[file:shop 0 Afterbirth+.png|300px]]|r=[[file:shop 0.png|300px]]}}}}
+ |-
+ ! scope="row" | 1
+ | 1
+ | {{pennies|20}}
+ | style="text-align: left" | 1-2 pickups and 1-2 items available for sale. {{dlc|nr}} The Donation Machine has 50% chance to be a Restock Machine instead.
+ | {{dlcmap slideshow|{{dlcalt|[[file:shop 1 Afterbirth+.png|300px]]|r=[[file:shop 1.png|300px]]}}}}
+ |-
+ ! scope="row" | 2
+ | 1
+ | {{pennies|100}}
+ | style="text-align: left" | 2-3 pickups and 1-2 items available for sale. {{dlc|nr}} The Donation Machine has 50% chance to be a Restock Machine instead.
+ | {{dlcmap slideshow|{{dlcalt|[[file:shop 2 Afterbirth+.png|300px]]|r=[[file:shop 2.png|300px]]}}}}
+ |-
+ ! scope="row" | 3
+ | 1
+ | {{pennies|200}}
+ | style="text-align: left" | 3–4 pickups and 1–2 items available for sale. {{dlc|nr}} The Donation Machine has 50% chance to be a Restock Machine instead.
+ | {{dlcmap slideshow|{{dlcalt|[[file:shop 3 Afterbirth+.png|300px]]|r=[[file:shop 3.png|300px]]}}}}
+ |-
+ ! scope="row" | 4
+ | 1
+ | {{pennies|600}}
+ | style="text-align: left" | 4–5 pickups and 1–2 items available for sale. {{dlc|nr}} The Donation Machine has 50% chance to be a Restock Machine instead.
+ | {{dlcmap slideshow|{{dlcalt|[[file:shop 4 Afterbirth+.png|300px]]|r=[[file:shop 4.png|300px]]}}}}
+ |-
+ ! scope="row" | {{dlc|a+}} 5
+ | {{dlcmap slideshow|{{dlcalt|1/256|r=0.25}}}}
+ | {{pennies|100}}
+ | style="text-align: left" | 4–5 pickups and 1–2 items available for sale. There are also 2 {{e|Keeper}}s and a random Grab Bag. {{dlc|nr}} The Donation Machine has 50% chance to be a Restock Machine instead.
+ | {{dlcmap slideshow|{{dlcalt|[[file:shop 5 Afterbirth+.png|300px]]|r=[[file:shop 5.png|300px]]}}}}
+ |-
+ ! scope="row" | {{dlc|a+}} 6
+ | {{dlcmap slideshow|{{dlcalt|1/256|r=0.1}}}}
+ | {{pennies|100}}
+ | style="text-align: left" | 1 pickup/item for sale and 3 {{e|Fly||flies}}. {{dlc|nr}} The Donation Machine has 50% chance to be a Restock Machine instead.
+ | {{dlcmap slideshow|{{dlcalt|[[file:shop 6 Afterbirth+.png|300px]]|r=[[file:shop 6.png|300px]]}}}}
+ |-
+ ! scope="row" | {{dlc|r}} 7
+ | 1
+ | {{pennies|0}}
+ | style="text-align: left" | Exclusive to {{c|Tainted Keeper|n}}. 1-2 pickups, 0-1 trinket and 2 items available for sale.
+ | [[file:shop 7.png|300px]]
+ |-
+ ! scope="row" | {{dlc|r}} 8
+ | 1
+ | {{pennies|20}}
+ | style="text-align: left" | Exclusive to {{c|Tainted Keeper|n}}. 1-2 pickups, 0-1 trinket and 3 items available for sale.
+ | [[file:shop 8.png|300px]]
+ |-
+ ! scope="row" | {{dlc|r}} 9
+ | 1
+ | {{pennies|100}}
+ | style="text-align: left" | Exclusive to {{c|Tainted Keeper|n}}. 2-3 pickups, 0-1 trinket and 3-4 items available for sale.
+ | [[file:shop 9.png|300px]]
+ |-
+ ! scope="row" | {{dlc|r}} 10
+ | 1
+ | {{pennies|200}}
+ | style="text-align: left" | Exclusive to {{c|Tainted Keeper|n}}. 1-4 pickups, 0-1 trinket and 3-5 items available for sale.
+ | [[file:shop 10.png|300px]]
+ |-
+ ! scope="row" | {{dlc|r}} 11
+ | 1
+ | {{pennies|600}}
+ | style="text-align: left" | Exclusive to {{c|Tainted Keeper|n}}. 2-4 pickups, 0-1 trinket and 4-5 items available for sale.
+ | [[file:shop 11.png|300px]]
+ |-
+ ! scope="row" | {{dlc|r}} 12
+ | 0.25
+ | {{pennies|100}}
+ | style="text-align: left" | Exclusive to {{c|Tainted Keeper|n}}. 1-5 pickups, 0-2 trinkets and 4-6 items available for sale.
+ | [[file:shop 12.png|300px]]
+ |-
+ ! scope="row" | {{dlc|r}} 13
+ | 0.1
+ | {{pennies|100}}
+ | style="text-align: left" | Exclusive to {{c|Tainted Keeper|n}}. A pickup/trinket for sale and a fly.
+ | [[file:shop 13.png|300px]]
+ |-
+ ! scope="row" | {{dlc|r}} 14
+ | 0.25
+ | {{pennies|20}}
+ | style="text-align: left" | A Restock Machine, 0-1 pickup and 1-2 items available for sale.
+ | [[file:shop 14.png|300px]]
+ |-
+ ! scope="row" | {{dlc|r}} 15
+ | 0.25
+ | {{pennies|100}}
+ | style="text-align: left" | A Restock Machine, 1-2 pickups and 1-2 items available for sale.
+ | [[file:shop 15.png|300px]]
+ |-
+ ! scope="row" | {{dlc|r}} 16
+ | 0.1
+ | {{pennies|200}}
+ | style="text-align: left" | A Restock Machine, 2-3 pickups and 1-2 items available for sale.
+ | [[file:shop 16.png|300px]]
+ |-
+ ! scope="row" | {{dlc|r}} 17
+ | 0.1
+ | {{pennies|600}}
+ | style="text-align: left" | A Restock Machine, 3–4 pickups and 1–2 items available for sale.
+ | [[file:shop 17.png|300px]]
+ |}
+
+== Notes ==
+* The Shop can also be accessed through the usage of {{p|IX - The Hermit}}, a {{e|Golden Key}}, {{Cu|Maze}}, {{i|Dad's Key}}, bombing an adjacent {{r|Secret Room}} wall, or {{t|Store Key}}, without spending a Key.
+* {{dlc|nr}} The Shop has a door that is identical to a {{r|Library}} as well as an identical symbol on the minimap. The Shop can never appear adjacent to the starting room (with the exception of the first floor), meaning that any one-key door that spawns adjacent to the starting room is a Library and not a Shop.
+** {{t|Store Key}} will ''not'' open Library doors, which reveals which room the locked door will lead to.
+* Using a {{p|Credit Card}} in the shop will make everything for sale free, spawning item pedestals and removing all listed prices.
+** {{i|Restock}} only replenishes items that are bought for a listed price (including {{pennies|0}}); therefore, Credit Card negates the effect of Restock for that Shop.
+* Holding {{t|Store Credit}} will reduce the price of all items to {{pennies|0}}. It will be consumed once an item is purchased. Unlike the {{p|Credit Card}}, {{i|Restock}} ''will'' restock the bought item.
+** {{dlc+|anr}} If the {{t|Store Credit}} effect is gained through the effects of {{t|Error}}, it will not be consumed upon making a purchase; this can be combined with {{i|Restock}} to infinitely purchase items.{{dlc-}}
+*** {{dlc|r}} Only 1 item can be bought for free without losing the trinket, even if Error is dropped and picked up again.
+* {{i|Diplopia}} and {{p|Jera}} function as expected in Shops, generating free pickups/items.
+* The [[Shopkeeper]] that spawns in the Shop can be bombed for potential rewards.
+** {{E|Special Shopkeeper}} can replace the regular shopkeeper at a chance, which can drop better rewards.
+* {{dlc|nr}} A total of 9 Shops maximum can be entered during a normal run — two in {{s|Basement}}/etc., two in {{s|Caves}}/etc., two in {{s|Depths}}/etc., two in {{s|Womb}}/etc. with the {{t|Silver Dollar}}, and one in {{s|???}}.
+** {{dlc+|r}} This is increased to 10 if Isaac additionally holds {{t|Holy Crown}} or {{t|Wicked Crown}} in {{s|Cathedral}} or {{s|Sheol}} respectively, and Isaac can theoretically encounter many more Red Shops with {{i|Red Key}}.{{dlc-}}
+** Multiple different shops can also be entered in one floor through resetting effects such as {{i|Forget Me Now}} or {{i|R Key}}.
+* {{dlc+|r}} Items will increase in price the more bought with {{i|Restock}} until maxing out at 99 cents.{{dlc-}}
+
+== Unlockable [[achievement]]s ==
+{{achievement text | Coupon, Schoolbag, Member Card }}
+
+{{nav|room|fr=Boutique}}

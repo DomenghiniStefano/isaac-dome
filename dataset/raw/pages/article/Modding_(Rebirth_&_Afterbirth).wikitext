@@ -1,0 +1,52 @@
+{{header modding}}
+
+{{Unsupported}}
+
+''Modding''' Rebirth & Afterbirth is limited to editing and replacing existing assets unless you [https://antibirth.com/ hack the .exe yourself].
+
+== Installing Mods ==
+Mods made for Rebirth & Afterbirth must be installed manually into the game's resources folder.
+
+{| class="wikitable"
+|-
+! OS !! Path
+|-
+| Windows || <code>Steam/steamapps/common/The Binding of Isaac Rebirth/resources</code>
+|-
+|Mac
+|Library/Application Support/Steam/steamapps/common/The Binding of Isaac Rebirth/The Binding of Isaac Rebirth.app/Contents/Resources/resources
+|}
+
+To properly install mods for this version of the game, you must place what is inside of the mod's resource folder into the resources folder at the file path above.
+
+== Limitations ==
+Modding for this version of the game is limited to replacing existing files. Custom code (such as LUA code) cannot be executed, making most custom logic impossible. However, some mods have made attempts to work around this limitation by abusing certain default game logic - such as adding additional events to a monster's animation file. This could result in, for example, an enemy firing two projectiles instead of one.
+
+== Resources ==
+Listed below are resources that can assist you in creating mods for this version of the game.
+
+* [[Modding Tools]]
+A list of tools that can help in mod creation.
+* [[Modding Tutorials]]
+Links to external tutorials about modding.
+* [[XML Modding]]
+Information about modding XML files.
+
+== Mod Hosts ==
+* [https://www.moddingofisaac.com/ The Modding of Isaac]
+A service by the community to host mods created primarily for Rebirth and Afterbirth.
+* [http://www.nexusmods.com/thebindingofisaacrebirth/ The Binding of Isaac Rebirth NexusMods]
+A section of NexusMods that is home to some Isaac mods. Not very active.
+* [https://antibirth.com/ The Binding of Isaac: Antibirth (Official Site)]
+A website that features the main source of downloads for the Binding of Isaac: Antibirth mod (many contents of which were implemented into [[The Binding of Isaac: Repentance]] but some of which are only available in the unofficial mod). This mod only works if all DLCs for the Binding of Isaac: Rebirth are disabled.
+
+== Community ==
+* [https://www.reddit.com/r/themoddingofisaac/ The Modding of Isaac Subreddit]
+A subreddit to discuss mods and modding.
+* [https://discord.gg/Wcsqsfq The Binding of Isaac Discord Server]
+The main discord server for The Binding of Isaac. The server contains a modding channel.
+* [https://discord.gg/JMaktQd The Modding of Isaac Discord Server]
+A Discord server specific to modding The Binding of Isaac.
+
+{{nav|modding}}
+[[Category:Modding]]

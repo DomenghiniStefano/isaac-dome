@@ -1,0 +1,60 @@
+{{Header magic cards}}
+{{header special cards}}
+{{infobox card
+ | type        = special card
+ | id          = 42
+ | recharge    = {{dlcalt|4|r=6}}
+ | quote       = ???
+ | description = Throws the card in the direction Isaac is moving, which opens doors, breaks obstacles, and instantly kills any enemy in its path.
+ | unlocked by = Chaos Card
+}}
+
+{{cit|us}}
+
+== Effects ==
+* Upon activation, Isaac throws the card in front of himself.
+** The card is thrown in the direction Isaac's '''''body''''' is facing, meaning the card will be thrown in the direction Isaac is moving. If he is stationary, it will be thrown in the last direction that Isaac moved.
+* The thrown card kills ''anything'' in its path (including end-game [[boss]]es like {{E|???}} and otherwise indestructible entities like {{E|Stone Grimace}}s and {{E|Wall Hugger}}s) and gets stuck in the ground/wall after being thrown.
+** The only exceptions to this are {{E|Delirium}}, {{E|The Beast}}, {{E|Mother's Shadow}} and {{E|Dark Esau}}.
+* The card can open doors as if a {{E|Bomb}} had exploded them, although it cannot open any locked doors or open the big door in the starting room of {{s|Dark Room}} and {{s|Chest}}.
+* The card can extinguish fires, break rocks, and open secret rooms.
+
+== Notes ==
+* Being a [[special card]], the Chaos Card has a significantly lower chance of appearing compared to other cards.
+* Using it on multi-phase bosses like {{E|Isaac}}, {{E|???}} and {{E|The Lamb}} will instantly end the boss fight.
+** Using it on {{E|Satan}} during his first form will end the fight, despite him having multiple forms and health bars. Using it on {{E|The Fallen}} instead of Satan himself will not end the fight.
+*** However, using it on {{E|Mega Satan}} will only skip one phase.
+** {{dlc+|a}} It will only kill one phase of {{E|Hush}} {{dlc|nr}} unless Isaac throws it from the bottom side, such that after killing the first phase, the card can still catch up with Hush's true form as he pops out at the top of the room. However, this method can fail depending on the timing and the position of the first phase.{{dlc-}}
+** {{dlc+|a+}} It will only kill one phase of {{E|Ultra Greed}} in [[Greedier mode]].{{dlc-}}
+** {{dlc+|r}} It will only kill one phase of {{E|Mother}} and {{E|Dogma}}.{{dlc-}}
+* To aim the card correctly, make sure to move/shoot in the direction that it needs to be thrown.
+* Does not kill {{M|Beggar}}s or {{E|Shopkeeper}}s.
+* Can kill normally indestructible enemies like the Masks of {{E|Mask + Heart}}s (though this will not kill the heart), {{E|Host}}s while they're invulnerable, the little chubs in {{E|Chubber}}s, and {{E|Death's Head}}s. It can also be used to kill things typically not considered alive like {{E|Wall Hugger}}s and {{E|Stone Grimace}}s.
+* If used on {{E|Pin}} or {{E|The Frail}} segments can be cut off causing both bosses to lose length like {{E|Larry Jr.}}.
+* Using it on an Angel Statue will reveal an [[Angel]] and kill them instantly.
+* {{E|Great Gideon}} has a special death animation if killed using it, which also reveals a {{r|Crawl Space}} under him containing several Chests and items.
+* {{dlc+|r}} {{E|Mother's Shadow}} cannot be killed with Chaos Card, though it is normally impossible to get one in the abandoned area of {{s|Mines}}/ {{s|Ashpit}} II.{{dlc-}}
+* {{dlc+|r}} {{C|Tainted Forgotten}} does not throw the card in the direction that {{C|Tainted Soul}} is moving if Tainted Forgotten is held.{{dlc-}}
+
+== Synergies ==
+* {{i|Angelic Prism}}: If the Chaos Card passes through the prism, it will replicate the Chaos Card four times each in their respective colors.
+* {{i|Blank Card}}: Allows for an easy run by allowing repeated use of the card.
+** Items such as {{i|Habit}}, {{i|9 Volt}}, and {{i|Charged Baby}} give more opportunities to use the card since all these items decrease the charge time of Blank Card.
+** {{i|The Battery}} allows Blank Card to be used twice in a room, allowing multi-phase bosses to be killed instantly.
+
+== Interactions ==
+* {{i|Tarot Cloth}}: No effect.
+
+== Trivia ==
+* The icon, name and functionality are all a reference to the [[wikipedia:Magic: The Gathering|Magic: The Gathering]] card [http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=6 Chaos Orb]. This card is famous for its unusual effect: the card is flipped from a height of over one foot above the board and all cards it touches as it lands are destroyed.
+* {{dlc+|r}} There is one room in the game (in {{s|Mines}}) that contains a guaranteed Chaos Card (see Gallery). {{dlc-}}
+
+== Gallery ==
+<gallery>
+File:Chaos_card_Mines.png|{{dlc+|r}} The room in {{s|Mines}} that contains a guaranteed Chaos Card behind a rock puzzle.{{dlc-}}
+</gallery>
+
+== Bugs ==
+{{bug|If used against {{E|Scolex}} while he's jumping, Chaos Card will not instantly kill him and will instead cut off the bottom of his tail, dealing some damage. Although his weak point will no longer be visible, its hitbox will be and can still be damaged as normal.}}
+
+{{nav|fr=Carte Chaos}}

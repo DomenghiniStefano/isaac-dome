@@ -1,0 +1,491 @@
+'''Machines''' are [[object]]s that Isaac can interact with to gain a variety of rewards.
+
+== Slot Machine ==
+{{infobox entity
+ | name    = Slot Machine
+ | id      = 6
+ | variant = 1
+}}
+
+Walking up to the '''Slot Machine''' and bumping into it will consume one penny and spin the slots. The Machine then has a chance to spawn one of its possible rewards.
+Slot Machines appear naturally in {{r|Arcade}}s, {{r|Secret Room}}s, and other room layouts, and can be summoned using the {{P|X - Wheel of Fortune}} tarot card.
+
+If the Slot Machine is caught in an explosion of any kind, it will be destroyed, yielding various rewards (see below). The Slot Machine also has a 2% chance to self-destruct after inserting a penny, in which case it drops several random pickups, {{i|A Dollar}}, or {{dlc|r+}} {{i|Portable Slot}} and becomes unusable.
+
+The {{i|D4}} is unlocked when 30 Slot Machines are destroyed (via explosion or overloading) by Isaac.
+
+{{Dlc|nr}} When blown up in the {{s|Dark Room}} or {{s|Chest}}, it will drop a collectible from the [[Treasure Room (Item Pool)|Treasure Room item pool]], much like {{e|Chest}}s and {{e|Locked Chest}}s.
+
+{{I|Lucky Foot}} raises the odds by a multiplier of 1.4×. On [[hard mode]], the chances of winning at the Slot Machine are halved.
+{| class="wikitable"
+|+Possible Results from Coin Gamble (in Percentage %)
+!
+!Explosion
+!Nothing
+!Bomb
+!Key
+!Heart
+!Pill
+!One Coin
+!Two Coins
+!{{i|A Dollar}}
+![[Black Fly]]
+![[Familiar#Pretty Fly|Pretty Fly]]
+|-
+|No {{I|Lucky Foot}}, Normal
+|2%
+|54.0%
+|4.7%
+|3.1%
+|9.3%
+|4.7%
+|11.4%
+|5.7%
+|0.47%
+|3.1%
+|1.56%
+|-
+|{{I|Lucky Foot}}, Normal
+|2%
+|37.4%
+|6.5%
+|4.4%
+|13.1%
+|6.5%
+|16.0%
+|8.0%
+|0.65%
+|4.4%
+|2.18%
+|-
+|No {{I|Lucky Foot}}, Hard
+|2%
+|76.0%
+|2.3%
+|1.6%
+|4.7%
+|2.3%
+|5.7%
+|2.9%
+|0.23%
+|1.6%
+|0.78%
+|-
+|{{I|Lucky Foot}}, Hard
+|2%
+|67.2%
+|3.3%
+|2.2%
+|6.5%
+|3.3%
+|8.0%
+|4.0%
+|0.33%
+|2.2%
+|1.09%
+|}
+
+{| class="wikitable"
+|+ {{dlc|r+}}Possible Results from Coin Gamble in Repentance+ (in Percentage %)
+!
+!Machine Breaks
+!Nothing
+!Bomb
+!Key
+!Heart
+!Pill
+!One Coin
+!Two Coins
+!{{i|A Dollar}}
+!{{i|Portable Slot}}
+![[Black Fly]]
+![[Familiar#Pretty Fly|Pretty Fly]]
+|-
+|No {{I|Lucky Foot}}, Normal
+|2%
+|50.87%
+|4.67%
+|3.11%
+|9.33%
+|4.67%
+|11.30%
+|5.65%
+|1.40%
+|2.33%
+|3.11%
+|1.56%
+|-
+|{{I|Lucky Foot}}, Normal
+|2%
+|32.01%
+|6.53%
+|4.36%
+|13.07%
+|6.53%
+|15.83%
+|7.91%
+|1.96%
+|3.27%
+|4.36%
+|2.18%
+|-
+|No {{I|Lucky Foot}}, Hard
+|2%
+|74.43%
+|2.33%
+|1.56%
+|4.67%
+|2.33%
+|5.65%
+|2.83%
+|0.70%
+|1.17%
+|1.56%
+|0.78%
+|-
+|{{I|Lucky Foot}}, Hard
+|2%
+|65.01%
+|3.27%
+|2.18%
+|6.53%
+|3.27%
+|7.91%
+|3.96%
+|0.98%
+|1.63%
+|2.18%
+|1.09%
+|}
+
+=== Possible Rewards when Destroyed ===
+When Isaac destroys a Slot Machine, there is a:
+
+* 10% chance to drop a random [[pill]]
+* 10% chance to drop a random [[trinket]]
+* 0.8% chance to drop a {{e|Chest}}
+* 0.792% chance to drop a {{e|Locked Chest}}
+* 78.408% chance to drop 2-3 random pickup groupings; for each grouping, there is a
+** 35% chance to drop 1-3 random {{e|Penny|text=Coin}}s
+** 20% chance to drop a random [[heart]]
+*** If {{t|Daemon's Tail}} is held, there is an 80% chance to prevent this grouping from being chosen; if prevented, another pickup grouping will be chosen instead.
+*** If chosen, there is a 50% chance that this counts as 2 pickup groupings.
+** 15% chance to drop a random {{e|Key}}
+** 30% chance to drop a random {{e|Bomb}}
+
+There is a 33% chance of an extra pickup grouping spawning if Isaac is holding {{t|Lucky Toe}}.
+
+Furthermore, if the 78.408% chance to drop the pickup groupings is selected, there is a 33% chance for the following conditions to occur:
+
+* If {{t|Ace of Spades}} is held, spawn an extra random [[card]].
+* If {{t|Safety Cap}} is held, spawn an extra random [[pill]].
+* If {{t|Match Stick}} is held, spawn an extra random {{e|Bomb}}.
+* If {{t|Child's Heart}} is held, spawn an extra random [[heart]].
+* If {{t|Rusted Key}} is held, spawn an extra random {{e|Key}}.
+
+Note that only 1 additional item can spawn from this 33% chance. In the case of having multiple matching trinkets, the conditions are checked in order.
+
+For debugging purposes, an init seed that spawns a Slot Machine that pays out a Dollar on the first attempt is 1236239571.
+{{clear}}
+
+== Fortune Telling Machine ==
+{{infobox entity
+ | name    = Fortune Telling Machine
+ | variant = 3
+}}
+
+The '''Fortune Telling Machine''' is similar to the Slot Machine. Bumping into the Machine costs one penny, which will either display a random fortune or [[special seed]] on-screen, or cause the Machine to spawn one of its possible drops. Fortune Telling Machines appear naturally in {{r|Arcade}}s, {{r|Secret Room}}s, {{r|Super Secret Room}}s, and other room layouts, and can be summoned using the {{P|X - Wheel of Fortune}} tarot card.
+The Fortune Telling Machine also has a chance to self-destruct after inserting a penny, in which case it drops several random pickups or {{i|Crystal Ball}}. {{Dlc|nr}} Like the Slot Machine, Fortune Telling Machines will also drop a random collectible item when destroyed in the {{s|Dark Room}} or {{s|Chest}}.
+
+{| class="wikitable"
+|+Possible Results from Coin Gamble (in Percentage %)
+!
+!Explosion
+!Fortune
+!Trinket
+!Soul Heart
+!Card or rune
+!{{i|Crystal Ball}}
+|-
+|Without {{I|Lucky Foot}}, Normal
+|1.75%
+|65%
+|14.29%
+|7.14%
+|10.71%
+|1.11%
+|-
+|With {{I|Lucky Foot}}, Normal
+|3.5%
+|29.9%
+|28.6%
+|14.3%
+|21.46%
+|2.22%
+|-
+|Without {{I|Lucky Foot}}, Hard
+|0.75%
+|85%
+|6.1%
+|3.06%
+|4.59%
+|0.47%
+|-
+|With {{I|Lucky Foot}}, Hard
+|3.045%
+|39.1%
+|24.9%
+|12.42%
+|18.64%
+|1.93%
+|}
+
+=== Notes ===
+* The {{i|Lucky Foot}} item increases the pay out chance from 35% to 54%.
+* When Fortune Telling Machines are blown up, they have the same drop table as Slot Machines (see above).
+
+{| class="mw-collapsible mw-collapsed wikitable"
+ |-
+ ! Fortunes
+ |-
+ |
+* LOOK TO LA LUNA
+* DON'T LEAVE THE / HOUSE TODAY
+* WE WILL ALL / DIE ONE DAY
+* YOU ARE THROWING / YOUR LIFE AWAY
+* GO OUTSIDE!
+* GIVE UP!
+* YOU WILL DIE ALONE
+* ASK AGAIN LATER
+* WAKE UP
+* YOU ARE WORSHIPING / A SUN GOD
+* STAY ASLEEP
+* MARRY AND REPRODUCE
+* QUESTION AUTHORITY
+* THINK FOR YOURSELF
+* STEVEN LIVES
+* BRING HIM THE PHOTO
+* YOUR SOUL / IS HIDDEN DEEP / WITHIN THE DARKNESS
+* YOU WERE BORN WRONG
+* YOU ARE DARK INSIDE
+* YOU WILL NEVER / BE FORGIVEN
+* WHEN LIFE / GIVES YOU LEMONS / REROLL!
+* IT IS DANGEROUS / TO GO ALONE
+* GO TO THE NEXT ROOM
+* YOU WILL DIE
+* WHY SO BLUE?
+* YOUR PRINCESS / IS IN ANOTHER CASTLE
+* YOU MAKE MISTAKES / IT IS ONLY / NATURAL
+* A HANGED MAN / BRINGS YOU / NO LUCK TODAY
+* THE DEVIL IN DISGUISE
+* NOBODY KNOWS / THE TROUBLES / YOU HAVE SEEN
+* DO NOT LOOK SO HURT / OTHERS / HAVE PROBLEMS TOO
+* ALWAYS YOUR HEAD / IN THE CLOUDS
+* DO NOT LOSE YOUR HEAD
+* DO NOT CRY / OVER SPILLED TEARS
+* WELL THAT / WAS WORTHLESS
+* SUNRAYS ON YOUR / LITTLE FACE
+* HAVE YOU SEEN THE EXIT?
+* ALWAYS LOOK ON / THE BRIGHT SIDE
+* GET A BABY PET / IT WILL CHEER YOU UP
+* MEET STRANGERS / WITHOUT PREJUDICE
+* ONLY A SINNER
+* SEE WHAT HE SEES / DO WHAT HE DOES
+* LIES
+* LUCKY NUMBERS / 16 31 64 70 74
+* GO DIRECTLY TO JAIL
+* REBIRTH GOT CANCELLED
+* FOLLOW THE CAT
+* YOU LOOK FAT / YOU SHOULD / EXERCISE MORE
+* TAKE YOUR MEDICINE
+* COME TO A FORK / IN THE ROAD / TAKE IT
+* BELIEVE IN YOURSELF
+* TRUST NO ONE
+* TRUST GOOD PEOPLE
+* FOLLOW THE DOG
+* FOLLOW THE ZEBRA
+* WHAT DO YOU WANT / TO DO TODAY
+* USE BOMBS WISELY
+* LIVE TO DIE
+* YOU ARE / PLAYING IT WRONG / GIVE ME THE CONTROLLER
+* CHOOSE YOUR OWN PATH
+* YOUR OLD LIFE / LIES IN RUIN
+* I FEEL ASLEEP!!!
+* MAY YOUR TROUBLES / BE MANY
+* BLAME NOBODY / BUT YOURSELF
+ |}
+{{clear}}
+
+== Blood Donation Machine ==
+{{infobox entity
+ | name    = Blood Donation Machine
+ | variant = 2
+}}
+
+Bumping into the '''Blood Donation Machine''' will damage Isaac. The machine will then pay out with 1-2 of any type of {{e|Penny|text=Coin}} (only 1 in Hard Mode) or, rarely, {{t|Child's Heart}}. Every donation has a 6.66% chance of causing the Blood Donation Machine to explode, giving either a {{i|Blood Bag}} or an {{i|IV Bag}}. Alternatively, it can be destroyed with a {{e|Bomb}}, which will cause it to drop several coin or heart [[pickup]]s.
+
+=== Notes ===
+* On the floors before {{s|Womb}}, the Machine will take a half-heart of health from each use. From Womb and onward, the Blood Donation Machine will take one full heart instead.
+* Once a Blood Donation Machine has given {{I|IV Bag}}, future Blood Donation Machines will never pay out with it again for the rest of the run unless Blood Bag has not been unlocked yet.
+* It is possible for any number of {{i|Blood Bag}}s to appear in the same run.
+* {{i|Holy Mantle}} does not prevent damage from a Blood Donation Machine.
+* [[Invulnerability]] and [[shield]]s can be used to prevent damage from it.
+* {{dlc|nr}} The Machine will accept {{e|Eternal Heart}}s first, then {{e|Red Heart}}s. When Isaac's health is at half a heart (or a full heart in {{s|Womb}} and beyond), the Machine will drain {{e|Soul Heart}}s and {{e|Black Heart}}s instead.
+* {{dlc|nr}} While the Machine takes Red Hearts before Soul Hearts or Black Hearts, using a Blood Donation Machine will trigger {{i|Scapular}} once Isaac is at half a heart. Leaving the room afterward and then reentering resets Scapular, allowing for further donations using Soul Hearts. Repeating this process after every Scapular activation allows Isaac to collect coins from the Blood Donation Machine until it breaks.
+* {{dlc|nr}} With {{i|Isaac's Heart}}, the Machine can be used without taking any damage.
+* {{dlc|nr}} Invincibility frames can be used to activate a Blood Donation Machine for free.
+* {{dlc|r}} Blood Donation Machines will drain Isaac's last half Red Heart before draining Soul Hearts.
+* {{dlc|r}} The Machine will ignore Eternal Hearts if Isaac has any other heart type, unless it would deal fatal damage.
+* {{dlc|r}} If Isaac has Red and {{e|Rotten Heart|n}}s, the Machine will take Red Hearts before taking Rotten Hearts.
+* {{dlc|r}} When using {{C|Keeper}} or {{c|Tainted Keeper}}, the Machine has a chance to pay out with no coins, preventing abuse.
+{{clear}}
+
+== Shop Restock Machine ==
+{{infobox entity
+ | dlc     = a
+ | name    = Shop Restock Machine
+ | variant = 10
+}}
+
+The '''Shop Restock Machine''' commonly appears in {{r|Shop}}s in [[Greed Mode]], and rarely in {{r|Arcade}}s, {{r|Black Market}}s, {{r|Crawl Space}}s, {{r|I AM ERROR}} rooms, {{r|Secret Room}}s, and {{r|Treasure Room}}s outside of Greed Mode. Shop Restock Machines also have a chance to spawn in {{r|Shop}}s outside of Greed Mode, replacing the Donation Machine.
+
+In {{r|Shop}}s and {{r|Black Market}}s, each activation will cause the following effects:
+* Rerolls every [[item]] and [[pickup]] for sale.
+* Refills all empty Shop slots.
+* Item pedestals in the room that are not for sale will not be rerolled.
+The chance for the Shop to be restocked increases as more coins are inserted.
+
+In all other rooms, the Shop Restock Machine will reroll any items present after donating enough pennies or blowing it up. It will not generate new items to replace the taken ones. It will reroll all items in the room even if they were not originally present (e.g. items from {{m|Beggar}}s).
+
+Shop Restock Machines can break after the fourth guaranteed reroll with a 50% chance for every subsequent reroll that should've been successful. This will cause them to drop a small number of coins.
+
+{{dlc|r}} Bombing a Shop Restock Machine breaks it immediately. 
+* {{dlc|nr+}} When a Shop Restock Machine explodes, either through bombing or extended use, it has a chance to rapidly reroll all items a few times. With timing, any item seen briefly during the rapid reroll process can be picked up, similar to acquiring items from {{i|Glitched Crown|n}}. Saving and quitting in the middle of the reroll process will cause the items to stop rerolling upon re-entering the game.
+
+{{dlc|r}} Restocking the shop in the [[Mirrored World|Mirrored world]] will make items appear in the mirrored shop. The normal shop will not be rerolled, and subsequent rerolls will not match those of the mirrored shop.
+{{clear}}
+
+== Mom's Dressing Table ==
+{{infobox entity
+ | dlc     = a+
+ | name    = Mom's Dressing Table
+ | variant = 12
+}}
+
+'''Mom's Dressing Table''' is an object added in [[Booster Pack#2]]. {{dlc+|nr}} If Isaac has more than 8 items, it has a 50% chance of appearing in the starting room of a floor.{{dlc-}} {{dlc+|r}} Mom's Dressing Tables have a high chance to spawn in {{r|Clean Bedroom}}s and {{r|Dirty Bedroom}}s.{{dlc-}}
+
+If Isaac bumps into Mom's Dressing Table, his appearance will be randomly changed such that only a few of his items are displayed.
+
+Hitting Mom's Dressing Table with an explosive will cause it to break and drop 1-4 [[pills]]. There is a 1% chance to spawn one of the following items instead: {{i|Mom's Underwear}}, {{i|Mom's Heels}}, {{i|Mom's Lipstick}}, {{i|Mom's Bra}}, {{i|Mom's Pad}}, {{i|Mom's Eyeshadow}}, {{i|Mom's Contacts}}, {{i|Mom's Wig}}, {{i|Mom's Perfume}} or {{i|Mom's Pearls}}. Items that have already been generated and/or collected can be spawned again in this manner.
+{{clear}}
+
+== Crane Game ==
+{{infobox entity
+ | dlc         = r
+ | name        = Crane Game
+ | variant     = 16
+ | unlocked by = Crane Game
+}}
+
+The '''Crane Game''' can appear in {{r|Arcade}}s and rarely in normal rooms after being unlocked. It can also appear in the Greed Mode Shop, replacing the Shop Restock Machine. The Machine contains one visible [[item]]; after the Machine pays out, another one will be displayed. A grapple is above the items. The Machine pays out prizes from the {{ip|Crane Game|text=Crane Game item pool}}.
+
+Bumping into the Machine consumes 5 cents and activates the grapple, which will attempt to grab the item in the center. If it succeeds, the item will be taken out of the Machine and appear on a pedestal.
+
+There is a 25% chance for the Machine to pay out, so the probability of the Machine paying out after at most <math>N</math> tries is <math>1-(3/4)^N</math>. The Machine explodes after giving 3 prizes.
+
+Alternatively, it can be destroyed with a {{e|Bomb}}, which will cause it to drop several [[pickups]].
+* if the Machine is destroyed during its payout animation, it will still give the item.
+
+The Crane Game won't change the reward item once it has been displayed, even if it was picked up elsewhere in the level. The same item can even be paid out twice in a row: the next item is determined before the first one is fully spawned, and at that point the reward is locked.
+
+Once all items in the Crane Game item pool have been picked up, the Crane Game will only dispense {{I|Buddy in a Box}}.
+
+Leaving the room while the animation is still playing after winning will cause the reward to not spawn.
+
+{{dlc|r+}} Crane Games have a 1% chance to appear from a {{p|X - Wheel of Fortune}} card.
+
+Will be replaced with a {{m|Slot Machine}} if not unlocked.
+{{clear}}
+
+== Confessional ==
+{{infobox entity
+ | dlc         = r
+ | name        = Confessional
+ | variant     = 17
+ | unlocked by = Confessional
+}}
+
+The '''Confessional''' damages Isaac with the same rules as the '''Blood Donation Machine''' in exchange for various rewards. It can be found in {{r|Super Secret Room}}s or {{r|Angel Room}}s, but can rarely be found in normal rooms.
+
+The Confessional has a 30% chance on Normal Mode and 25% chance on [[Hard Mode]] to pay out. This is increased by 1.5× if Isaac has {{i|Lucky Foot}}.
+
+The following are the rewards and are evaluated in the order they are listed.
+
+* 5% chance to explode.
+* 3.3% chance to explode giving an {{ip|Angel Room|text=Angel Room item}}.
+** If a [[Deal with the Devil]] has been made this run, it will instead give {{i|Redemption}}.
+* Removes a [[Health#Broken Hearts|Broken Heart]], if Isaac has one.
+* 46.875% chance to receive a {{e|Soul Heart}}. Reduced to 9.375% if Isaac has {{T|Daemon's Tail}}.
+* 3.125% chance to receive an {{e|Eternal Heart}}. Reduced to 0.125% if Isaac has {{T|Daemon's Tail}}.
+* "You Feel Blessed!": Removes an active [[curse]]. For the current floor, increases {{r|Angel Room}} chance by 10% and allows Isaac to find an Angel Room even if he already made a Deal with the Devil. This effect stacks additively, going up to a 100% Angel Room chance at 10 activations.
+** If Isaac hasn't seen any {{r|Devil Room}}s or {{r|Angel Room}}s before and the fortune is activated once, the deal on that floor is guaranteed to be an Angel Room.
+
+Alternatively, it can be destroyed with a {{e|Bomb}}, which will cause it to drop [[pickups]], with a chance to drop [[trinkets]] as well. Despite its appearance, destroying a Confessional does not affect {{r|Angel Room}} or {{r|Devil Room}} chance.
+
+Will be replaced with a {{e|Soul Heart}} if not unlocked.
+
+=== Notes ===
+* [[Invulnerability]] and [[shield]]s can be used to prevent damage from it.
+{{clear}}{{dlc clear}}
+
+== Donation Machine ==
+''See [[Donation Machine]].''
+
+== {{dlc|a}} Greed Donation Machine ==
+''See [[Greed Donation Machine]].''
+
+== Revive Machine ==
+{{infobox entity
+ | dlc     = r+
+ | name    = Revive Machine
+ | variant = 19
+}}
+
+The '''Revive Machine''' is used in [[Repentance Co-Op|co-op]] to revive players. It will always spawn in the starting room of each floor just left of the top doorway in normal and hard mode. In greed and greedier mode it will spawn somewhere in the {{r|Shop}} of every floor.
+
+Bumping into the Machine costs 1 cent and lowers the number displayed on the Machine by 1. Once the counter hits 0, a single player is revived at 1 and 1/2 filled hearts (1 coin heart for {{c|Keeper}} and {{c|Tainted Keeper}}). If multiple players are dead, then the player who filled the Machine chooses who is revived. The Machine starts at a counter of 10 and increases in cost by 2 every time its requirement is reached.
+
+Filling the Machine while there are no dead players will do nothing, but will reset the current counter.
+{{clear}}{{dlc clear}}
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | Blood Bag, The D4 }}
+
+== Gallery ==
+<gallery>
+File:Revive Machine Old.png|{{dlc|r+}} Old appearance of the Revive Machine from early betas.
+</gallery>
+
+== In-game Footage ==
+{{#ev:youtube|YzRhdOjJrkI}}
+
+== Trivia ==
+* Several messages from the Fortune Telling Machine are references to famous quotes, usually from video games:
+** The message "Your princess is in another castle" is a reference to a famous quote from the 1985 NES game [[wikipedia:Super Mario Bros.|''Super Mario Bros''.]]
+** The messages "It is dangerous to go alone" and "Go to the next room" are references to quotes from the 1986 NES game [[wikipedia:The Legend of Zelda|''The Legend of Zelda'']]; the former is usually followed up with "Take this".
+** The message "You will die" is likely a reference to a famous quote from the Philips CDi game [[wikipedia:Link: The Faces of Evil and Zelda: The Wand of Gamelon|''Zelda: The Wand of Gamelon'']].
+** The message "I Feel Asleep!!!" is a reference to a famous quote from the 1988 NES game [[wikipedia:Metal Gear|''Metal Gear'']].
+** The message "Look to La Luna" is a reference to a hint on how to unlock the hidden character Reptile on the 1992 game [[wikipedia:Mortal Kombat|''Mortal Kombat'']].
+** The message "Come to a fork in the road - Take It" is a reference to a famous quote from baseball hall-of-famer [[wikipedia:Yogi Berra|''Yogi Berra'']].
+** The message "Steven Lives" is a reference to ''Time Fcuk'', a previous game of Edmund McMillen's which is heavily referenced in Isaac.
+** The message "Use bombs wisely" is a reference to a quote in [[wikipedia:Star Fox 64|''Star Fox 64'']].
+** The message "MARRY AND REPRODUCE" is likely a reference to one of the billboards revealed in [[wikipedia:They Live|''They Live'']].
+** The message "ASK AGAIN LATER" is one of the non-committal answers given by a [[wikipedia:Magic_8_Ball|''Magic 8 Ball'']].
+* Mom's Dressing Table is based on [http://steamcommunity.com/sharedfiles/filedetails/?id=859294029 this Steam Workshop mod] by Sinsthar.
+
+== Bug ==
+{{bug|dlc=rnr+|Leaving the room while a crane game is paying out can result in the item dropping but the machine not advancing.}}
+{{bug|plat=Switch|dlc=a+nr|The Fortune Telling Machine's fortunes are broken and display as a garbled mess.}}
+
+{{nav|booster pack|mega satan unlock|tainted samson unlock|tainted bethany unlock}}
+[[Category:Objects]]

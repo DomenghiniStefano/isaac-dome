@@ -8,8 +8,8 @@ use std::sync::OnceLock;
 
 use wiki::for_tests::cross_check_character_parents;
 use wiki::{
-    build, Block, Corrections, Dataset, Entry, Infobox, Inline, Raw, Resolution, Resolver,
-    SectionKind, Target,
+    build, dead_links, Block, Corrections, Dataset, Entry, Infobox, Inline, ListItem, Raw,
+    Resolution, Resolver, SectionKind, Target,
 };
 
 fn root() -> PathBuf {
@@ -117,6 +117,209 @@ fn characters_key_by_our_map_not_by_the_wiki_ids() {
     assert_eq!(title(12), Some("Black Judas"));
 }
 
+/// A character's `health` as a reader would read it: the labels of the `Health` links
+/// `{{hearts|…}}`/`{{heart|…}}` build, in order, joined the way they read on the page. Once
+/// the whole dataset exists, `build::resolve_concepts_to_articles` turns the `Health` concept
+/// into a `Ref` to the fetched `Health` article — the same link, resolved (design decision 3).
+fn health_labels(inline: &[Inline]) -> String {
+    inline
+        .iter()
+        .filter_map(|i| match i {
+            Inline::Concept { page, label } if page == "Health" => Some(label.clone()),
+            Inline::Ref {
+                target: Target::Article { title },
+                label,
+            } if title == "Health" => Some(label.clone()),
+            Inline::Concept { .. }
+            | Inline::Text { .. }
+            | Inline::Ref { .. }
+            | Inline::Edition { .. } => None,
+        })
+        .collect::<Vec<_>>()
+        .join(", ")
+}
+
+fn character_health(ds: &Dataset, id: u32) -> Vec<Inline> {
+    let e = ds
+        .entry(&Target::Character { id })
+        .unwrap_or_else(|| panic!("character {id}"));
+    let Infobox::Character { health, .. } = &e.infobox else {
+        panic!("character {id} carries a character infobox")
+    };
+    health.clone()
+}
+
+/// `{{hearts|…}}` and `{{heart|…}}` read into `infobox.health`, verified against the raw
+/// wikitext by hand: Isaac and Magdalene write a single named count, ??? a different heart
+/// type, Tainted Jacob the same shape on a page with two infoboxes. The Lost's page carries no
+/// `health` parameter at all — "The Lost starts with no health" is the page's own prose, not
+/// this parser's gap — so its `health` stays correctly empty rather than getting an invented
+/// value.
+#[test]
+fn starting_health_is_read_from_the_hearts_template() {
+    let ds = dataset();
+    assert_eq!(health_labels(&character_health(ds, 0)), "3 red hearts"); // Isaac
+    assert_eq!(health_labels(&character_health(ds, 1)), "4 red hearts"); // Magdalene
+    assert_eq!(health_labels(&character_health(ds, 4)), "3 soul hearts"); // ??? / Blue Baby
+    assert_eq!(health_labels(&character_health(ds, 37)), "3 red hearts"); // Tainted Jacob
+    assert!(
+        character_health(ds, 10).is_empty(), // The Lost
+        "The Lost's page states no health parameter: {:?}",
+        character_health(ds, 10)
+    );
+}
+
+/// How many character and challenge pages still carry an empty `health` once
+/// `{{hearts|…}}`/`{{heart|…}}` are read — measured 2026-09-26, down from 32 of 40 characters
+/// and 44 of 45 challenges before this parser read either template.
+///
+/// The four names below are not a parser gap: Eden and Tainted Eden's starting loadout is
+/// randomized (the wiki states no fixed health for a start that isn't fixed), and The Lost and
+/// Tainted Lost have none by design. A fifth name here is a regression; a challenge, since
+/// nearly all of them play as some character's default health with no override stated, is
+/// expected to stay empty unless the page actually declares one.
+#[test]
+fn starting_health_is_filled_wherever_the_page_states_one() {
+    let ds = dataset();
+    let empty_characters: Vec<&str> = ds
+        .characters
+        .values()
+        .filter(|e| {
+            let Infobox::Character { health, .. } = &e.infobox else {
+                panic!(
+                    "{}: ds.characters only holds Infobox::Character entries",
+                    e.title
+                )
+            };
+            health.is_empty()
+        })
+        .map(|e| e.title.as_str())
+        .collect();
+    // Named, not a tolerance: a fifth name here is a regression, and the four are sorted by
+    // `Dataset::insert_first`'s own (kind, title) order.
+    assert_eq!(
+        empty_characters,
+        vec!["Eden", "The Lost", "Tainted Eden", "Tainted Lost"]
+    );
+
+    let empty_challenges: Vec<&str> = ds
+        .challenges
+        .values()
+        .filter(|e| {
+            let Infobox::Challenge { health, .. } = &e.infobox else {
+                panic!(
+                    "{}: ds.challenges only holds Infobox::Challenge entries",
+                    e.title
+                )
+            };
+            health.is_empty()
+        })
+        .map(|e| e.title.as_str())
+        .collect();
+    // 39 of 45, measured 2026-09-26 — down from 44, the one already-filled challenge being
+    // Have a Heart's `{{heart|…}}` chain, which the old first-positional fallback happened to
+    // half-read. The other 39 are not a gap: most challenges play at their character's normal
+    // health and the page states no override at all, so an empty `health` is what the
+    // wikitext actually says. The six that do declare one — Bloody Mary, Cat Got Your Tongue,
+    // Have a Heart, Hot Potato, Scat Man, Seeing Double — are the ones this bound requires to
+    // have filled in; Bloody Mary's own value is pinned below.
+    assert_eq!(empty_challenges.len(), 39, "{empty_challenges:?}");
+
+    // Bloody Mary (challenge #37): `{{hearts|red=4}}`.
+    let bloody_mary = ds
+        .entry(&Target::Challenge { number: 37 })
+        .expect("challenge 37");
+    let Infobox::Challenge { health, .. } = &bloody_mary.infobox else {
+        panic!("challenge 37 carries a challenge infobox")
+    };
+    assert_eq!(health_labels(health), "4 red hearts");
+}
+
+/// Ultra Greed's `{{entity table | Ultra Greed Coin (Spinner), … }}` — a comma list on its own
+/// line, the same shape `collectible table`/`trinket table` already read, extended to `{{e|…}}`
+/// so it becomes a list of entity references instead of four names with no link.
+#[test]
+fn ultra_greeds_entity_table_becomes_a_list_of_entity_refs() {
+    let ds = dataset();
+    let ultra_greed = ds
+        .bosses
+        .values()
+        .find(|e| e.title == "Ultra Greed")
+        .expect("Ultra Greed");
+    // The list `entity table` builds is a bare reference per item, nothing else — the same
+    // shape `collectible table`/`trinket table` already produce — so it's picked out from the
+    // page's other lists (Behavior's own attack notes, which mix prose with entity refs) by
+    // that shape, not merely by counting every `Entity` ref on the page.
+    let is_bare_entity_ref = |item: &ListItem| {
+        matches!(
+            item.inline.as_slice(),
+            [Inline::Ref {
+                target: Target::Entity { .. },
+                ..
+            }]
+        ) && item.children.is_empty()
+    };
+    let coin_variants: Vec<&str> = ultra_greed
+        .sections
+        .iter()
+        .flat_map(|s| &s.blocks)
+        .filter_map(|b| match b {
+            Block::List { items, .. }
+                if items.iter().all(is_bare_entity_ref) && !items.is_empty() =>
+            {
+                Some(items)
+            }
+            Block::List { .. }
+            | Block::Paragraph { .. }
+            | Block::Heading { .. }
+            | Block::Table { .. } => None,
+        })
+        .flatten()
+        .map(|item| match item.inline.as_slice() {
+            [Inline::Ref { label, .. }] => label.as_str(),
+            _ => unreachable!("filtered to bare entity refs above"),
+        })
+        .collect();
+    assert_eq!(
+        coin_variants,
+        vec![
+            "Ultra Greed Coin (Spinner)",
+            "Ultra Greed Coin (Key)",
+            "Ultra Greed Coin (Bomb)",
+            "Ultra Greed Coin (Heart)",
+        ]
+    );
+}
+
+/// Haemolacria's Bugs section: `[https://imgur.com/a/i2J3hB4 (Video clip)]` inside a
+/// single-line `{{bug|…}}`, the one external link the audit found in a kept section that
+/// wasn't already swallowed whole by `<ref>…</ref>`. The label stays; the URL never does.
+#[test]
+fn an_external_link_in_a_kept_section_keeps_its_label_and_drops_the_url() {
+    let ds = dataset();
+    let e = ds.entry(&Target::Item { id: 531 }).expect("Haemolacria");
+    let bugs = e
+        .sections
+        .iter()
+        .find(|s| s.kind == SectionKind::Bugs)
+        .expect("Bugs");
+    let text = wiki::plain(
+        &bugs
+            .blocks
+            .iter()
+            .flat_map(|b| match b {
+                Block::Paragraph { inline } => inline.clone(),
+                Block::List { .. } | Block::Heading { .. } | Block::Table { .. } => Vec::new(),
+            })
+            .collect::<Vec<_>>(),
+    );
+    assert!(text.contains("(Video clip)"), "{text}");
+    assert!(
+        !text.contains("http"),
+        "a URL crossed into the dataset: {text}"
+    );
+}
+
 #[test]
 fn broken_shovel_page_yields_both_halves() {
     let ds = dataset();
@@ -124,6 +327,77 @@ fn broken_shovel_page_yields_both_halves() {
         let e = ds.entry(&Target::Item { id }).expect("Broken Shovel");
         assert_eq!(e.title, "Broken Shovel");
         assert!(!e.sections.is_empty());
+    }
+}
+
+/// Equality! (trinket 103) is one `<tabber>` opened before any heading of the page's own,
+/// each tab carrying its own `== Effects ==`/`== Synergies ==` — the shape `split_page` used
+/// to leave opaque end to end, so the page built with **zero** sections. Both tabs' real
+/// content is checked, not just that the count is non-zero: the pre-Repentance+ mechanic
+/// ("doubled variants") and the Repentance+ one ("fire rate") are different sentences, and
+/// losing either would still leave a plausible-looking `Effects` section.
+#[test]
+fn equality_keeps_both_tabs_sections() {
+    let ds = dataset();
+    let e = ds.entry(&Target::Trinket { id: 103 }).expect("Equality!");
+    assert!(!e.sections.is_empty(), "{:?}", e.sections);
+    let flat = |s: &wiki::Section| -> String {
+        let mut out = String::new();
+        for block in &s.blocks {
+            flatten_block(block, &mut out);
+        }
+        out
+    };
+    let effects: Vec<String> = e
+        .sections
+        .iter()
+        .filter(|s| s.kind == SectionKind::Effects)
+        .map(flat)
+        .collect();
+    assert_eq!(effects.len(), 2, "one Effects section per tab: {effects:?}");
+    assert!(
+        effects.iter().any(|t| t.contains("doubled variants")),
+        "the pre-Repentance+ tab's Effects is missing: {effects:?}"
+    );
+    assert!(
+        effects.iter().any(|t| t.contains("fire rate")),
+        "the Repentance+ tab's Effects is missing: {effects:?}"
+    );
+    assert!(
+        e.sections.iter().any(|s| s.kind == SectionKind::Synergies),
+        "{:?}",
+        e.sections
+    );
+}
+
+/// All the plain text of a block, recursively, with no separator: enough to search a
+/// section's content for a phrase without caring how it's split across list items.
+fn flatten_block(block: &Block, out: &mut String) {
+    match block {
+        Block::Paragraph { inline } | Block::Heading { inline, .. } => flatten_inline(inline, out),
+        Block::List { items, .. } => {
+            for item in items {
+                flatten_inline(&item.inline, out);
+                for child in &item.children {
+                    flatten_block(child, out);
+                }
+            }
+        }
+        Block::Table { header, rows } => {
+            for cell in header.iter().chain(rows.iter().flatten()) {
+                flatten_inline(cell, out);
+            }
+        }
+    }
+}
+
+fn flatten_inline(inline: &[Inline], out: &mut String) {
+    for node in inline {
+        match node {
+            Inline::Text { text, .. } => out.push_str(text),
+            Inline::Edition { inline, .. } => flatten_inline(inline, out),
+            Inline::Ref { label, .. } | Inline::Concept { label, .. } => out.push_str(label),
+        }
     }
 }
 
@@ -263,21 +537,45 @@ fn diagnostics_are_bounded() {
     //   item, and `tonsil_is_a_trinket_and_474_is_broken_glass_cannon` pins exactly that.
     //   If this one ever reaches zero, the bug is there and not here.
     //
+    // - the 1 `{{t|…}}` is `Swallows Penny` on Piggy Bank, a typo on the wiki for
+    //   Swallowed Penny: the page is what is wrong, and it is fixed there, not guessed here.
+    //
     // The three that went away were `{{i|1=Name}}`, MediaWiki's explicit positional
     // syntax, which `assemble` used to file under `named` leaving `args` empty.
+    //
+    // **27 as of 2026-09-26**, the whole-namespace fetch (`2026-09-26-wiki-complete-design.md`,
+    // decision 1): the same names as before, more of them, because a name that used to appear
+    // only on the pages we fetched now also appears on the ones we didn't — the 661 newly
+    // fetched entity and article pages. Checked by re-running with a name printed at each miss:
+    // `{{e|…}}` is still exactly `Killswitch` (6), `Pressure Plate` (9) and `Reward Plate` (9) —
+    // 24 occurrences of the same three id-less buttons, up from 19 — and `{{i|…}}` is still only
+    // `Tonsil`, twice now instead of once, from an article that also names it.
+    //
+    // **52 as of 2026-09-27**, once Entity and Article pages themselves build into entries
+    // (`feature/wiki-complete-kinds`, `build::entries_of`): those 661 pages were fetched
+    // already, but this is the first build that also parses their own bodies, so a mention of
+    // one of the same three id-less buttons *on an entity or article page* is now counted too.
+    // `{{e|…}}` is still exactly `Killswitch`, `Pressure Plate` and `Reward Plate` (49
+    // occurrences, up from 24); `{{i|…}}` is still only `Tonsil` (2); `{{t|…}}` is still only
+    // `Swallows Penny` (1). No new key appeared — the floor moved, not what stands on it.
     let unresolved: u32 = d.unresolved.values().sum();
     assert!(
-        unresolved <= 20,
+        d.unresolved.get("t").copied().unwrap_or(0) <= 1,
+        "only the Swallows Penny typo may stay an unresolved trinket: {:?}",
+        d.unresolved
+    );
+    assert!(
+        unresolved <= 52,
         "unresolved {unresolved}: {:?}",
         d.unresolved
     );
     assert!(
-        d.unresolved.get("i").copied().unwrap_or(0) <= 1,
+        d.unresolved.get("i").copied().unwrap_or(0) <= 2,
         "only Tonsil may stay an unresolved item: {:?}",
         d.unresolved
     );
     assert!(
-        d.unresolved.get("e").copied().unwrap_or(0) <= 19,
+        d.unresolved.get("e").copied().unwrap_or(0) <= 49,
         "the unresolved entities are the three id-less buttons: {:?}",
         d.unresolved
     );
@@ -290,61 +588,16 @@ fn diagnostics_are_bounded() {
     );
 }
 
-/// Every `Text` with a literal `{{`/`}}` inside `inline`, recursing into `Edition`.
-fn raw_brace_texts(inline: &[Inline], out: &mut Vec<String>) {
-    for i in inline {
-        match i {
-            Inline::Text { text, .. } if text.contains("{{") || text.contains("}}") => {
+/// Every `Text` leaf of `e` with a literal `{{`/`}}` in it: `Entry::inlines` already walks
+/// the infobox's own fields, the description and every section for us, with an `Edition`
+/// wrapper already unwrapped.
+fn raw_brace_texts_in_entry(e: &Entry, out: &mut Vec<String>) {
+    for leaf in e.inlines() {
+        if let Inline::Text { text, .. } = leaf {
+            if text.contains("{{") || text.contains("}}") {
                 out.push(text.clone());
             }
-            Inline::Edition { inline, .. } => raw_brace_texts(inline, out),
-            Inline::Text { .. } | Inline::Ref { .. } | Inline::Concept { .. } => {}
         }
-    }
-}
-
-/// The same search, over a section's blocks: paragraphs, headings, lists (with their
-/// nested children) and table cells.
-fn raw_brace_texts_in_blocks(blocks: &[Block], out: &mut Vec<String>) {
-    for b in blocks {
-        match b {
-            Block::Paragraph { inline } | Block::Heading { inline, .. } => {
-                raw_brace_texts(inline, out);
-            }
-            Block::List { items, .. } => {
-                for item in items {
-                    raw_brace_texts(&item.inline, out);
-                    raw_brace_texts_in_blocks(&item.children, out);
-                }
-            }
-            Block::Table { header, rows } => {
-                for cell in header {
-                    raw_brace_texts(cell, out);
-                }
-                for row in rows {
-                    for cell in row {
-                        raw_brace_texts(cell, out);
-                    }
-                }
-            }
-        }
-    }
-}
-
-/// Every inline field of the infobox, through `Infobox::inlines` (card #80, item 14): this
-/// used to name the fields by hand and skipped five of them — the quotes, `notes`,
-/// `stage_hp` — and the entry's `description` besides.
-fn raw_brace_texts_in_infobox(infobox: &Infobox, out: &mut Vec<String>) {
-    for field in infobox.inlines() {
-        raw_brace_texts(field, out);
-    }
-}
-
-fn raw_brace_texts_in_entry(e: &Entry, out: &mut Vec<String>) {
-    raw_brace_texts_in_infobox(&e.infobox, out);
-    raw_brace_texts(&e.description, out);
-    for s in &e.sections {
-        raw_brace_texts_in_blocks(&s.blocks, out);
     }
 }
 
@@ -427,6 +680,28 @@ fn text_nodes_carry_no_raw_template_syntax() {
     // the count on 2026-09-08 and a formula arrived after it; an assertion at `<= 35`
     // cannot notice its own remainder drifting, which is the argument for pinning it at
     // what the data says and not at a round number.
+    //
+    // **9 → 20 on 2026-09-27** (design decision 2): the multi-line-template family this
+    // comment already names, hit by more input because a heading that used to be silently
+    // discarded is now kept. `Effects`/`Notes`/`Synergies` nested three levels down
+    // (`=== … ===`, inside a **kept** level-2 section) were unreachable either way before —
+    // the level-2 wrapper naming the second form fell to `None` and took its whole body with
+    // it — so this wasn't content regressing, it was content starting to arrive, with one
+    // open defect riding along on its first line: a page with two forms opens the level-2
+    // section naming the second one with a second `{{infobox …}}` call, on that heading's
+    // very first line, which `blocks::unwrapped`'s wrapper list doesn't know and the line
+    // pass then read as prose. Six pages carried it: Judas (`Black Judas`, ×2), Lazarus
+    // (`Lazarus Risen`, ×2), Broken Shovel (×2 forms ×2 text nodes = 4), My Shadow
+    // (`Friendly Charger`, ×1), Ultra Greed (`Ultra Greedier`, ×1), Tainted Jacob
+    // (`Dark Esau`, ×1). 2+2+4+1+1+1 = 11.
+    //
+    // **20 → 9 the same day**: `page::sections` now strips a raw `{{infobox …}}` call out of
+    // a section's body before it ever reaches `parse_blocks` — `page::without_infobox_calls`,
+    // the same segment-level removal the preamble's own infoboxes already had
+    // (`without_the_boxes`), read on every section instead of only the first paragraphs. All
+    // 11 were that one call on that one line; none of the six pages' sections carry it any
+    // more, and the bound is back at the number that was true before decision 2, because the
+    // family it opened is closed, not merely smaller.
     assert!(
         offenders.len() <= 9,
         "{} nodes with raw template syntax: {offenders:?}",
@@ -505,7 +780,7 @@ fn the_correction_check_detects_a_correction_that_matches_nothing() {
 }
 
 /// Every hand-written description in `corrections.json` lands on an entry of the snapshot.
-/// The file is written by hand against `wiki.json`'s keys, and a typo in one — `bosses`
+/// The file is written by hand against `dataset/wiki/`'s collection keys, and a typo in one — `bosses`
 /// keyed `45` instead of `45.0.0` — fills nothing and says nothing. Not vacuous: the file
 /// carries Dead God's (637), and `a_description_for_no_entry_is_reported` in `build.rs`
 /// shows the check speaking about entries it knows are wrong.
@@ -772,5 +1047,103 @@ fn the_cargo_dlc_integer_is_the_infobox_code_through_the_wikis_own_switch() {
         disagree.is_empty(),
         "{disagreements} rows where the code and the table disagree, first {}: {disagree:?}",
         disagree.len()
+    );
+}
+
+/// How many links a reader cannot open, and where they point — `Concept`s (a wiki page
+/// nothing has) and `Ref`s whose target the dataset carries no entry for (mostly a common
+/// enemy with no boss page behind its bestiary triple). Not pinned: the scope this counts
+/// over grows on purpose, and a growing total here is the expected shape, not a regression.
+/// What is asserted is that the pass actually looked — a report that always reads zero would
+/// be the flat line this test exists to catch, the same trap a property with no vacuity
+/// guard falls into.
+#[test]
+fn dead_links_are_tallied_by_destination() {
+    let links = dead_links(dataset());
+    let concept_occurrences: u32 = links.concept_pages.values().sum();
+    let ref_occurrences: u32 = links.unopenable_refs.values().sum();
+    println!(
+        "dead concept links: {} distinct pages, {concept_occurrences} occurrences",
+        links.concept_pages.len()
+    );
+    println!(
+        "unopenable refs: {} distinct destinations, {ref_occurrences} occurrences",
+        links.unopenable_refs.len()
+    );
+    let top = |map: &BTreeMap<String, u32>, n: usize| {
+        let mut rows: Vec<(&String, &u32)> = map.iter().collect();
+        rows.sort_by(|a, b| b.1.cmp(a.1).then_with(|| a.0.cmp(b.0)));
+        for (name, count) in rows.into_iter().take(n) {
+            println!("  {count:>6}  {name}");
+        }
+    };
+    println!("top concept destinations:");
+    top(&links.concept_pages, 15);
+    println!("top unopenable ref destinations:");
+    top(&links.unopenable_refs, 15);
+
+    // `unopenable_refs` is every `Ref` the dataset has no entry for, not only entities — a
+    // room or a stage never gets a page either, and `WikiInline.vue`'s own `canOpen` treats
+    // them the same way a reader would (both read as a `Concept`). Entities (common enemies
+    // with no boss page) are the case this card was written about, so they are broken out
+    // here to say how much of the total they are.
+    let (entities, other): (Vec<_>, Vec<_>) = links
+        .unopenable_refs
+        .iter()
+        .partition(|(k, _)| k.starts_with("entity "));
+    let entity_occurrences: u32 = entities.iter().map(|(_, n)| **n).sum();
+    let other_occurrences: u32 = other.iter().map(|(_, n)| **n).sum();
+    println!(
+        "  of which entities: {} distinct, {entity_occurrences} occurrences; \
+         stage/room/other: {} distinct, {other_occurrences} occurrences",
+        entities.len(),
+        other.len()
+    );
+
+    assert!(
+        !links.concept_pages.is_empty(),
+        "no dead concept link found at all"
+    );
+    assert!(
+        !links.unopenable_refs.is_empty(),
+        "no unopenable ref found at all"
+    );
+}
+
+/// Design decision 6: every destination [`dead_links`] still reports, once resolution has
+/// run (`build::resolve_concepts_to_articles`, redirects included), is named in
+/// `corrections.json`'s `deadLinks` with a reason — and a name that no longer resolves to
+/// nothing is removed from that list, the same `GONE` shape `scripts/check-doc-refs.mjs`
+/// reports for a stale document reference. Fails on either direction, so the residue is
+/// meant to shrink to nothing rather than grow quietly.
+#[test]
+fn the_dead_link_residue_matches_corrections_json_exactly() {
+    let links = dead_links(dataset());
+    let listed = &corrections().dead_links;
+
+    let mut unlisted: Vec<&String> = links
+        .concept_pages
+        .keys()
+        .chain(links.unopenable_refs.keys())
+        .filter(|destination| !listed.contains_key(*destination))
+        .collect();
+    unlisted.sort();
+    assert!(
+        unlisted.is_empty(),
+        "dead but not in corrections.json's deadLinks: {unlisted:?}"
+    );
+
+    let still_dead = |destination: &str| {
+        links.concept_pages.contains_key(destination)
+            || links.unopenable_refs.contains_key(destination)
+    };
+    let mut resolved_now: Vec<&String> = listed
+        .keys()
+        .filter(|destination| !still_dead(destination))
+        .collect();
+    resolved_now.sort();
+    assert!(
+        resolved_now.is_empty(),
+        "listed in corrections.json's deadLinks but no longer dead — remove: {resolved_now:?}"
     );
 }

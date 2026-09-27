@@ -71,7 +71,7 @@
 
 == Trivia ==
 * The Box of Friends seems to resemble the Lament Configuration of the [[wikipedia:Lemarchand's box|Lemarchand's box]] from Clive Barker's ''[[wikipedia:Hellraiser (franchise)|Hellraiser]]''.
-* This item used to have a recharge time of 2, until an update on November 4, 2015.
+* Box of Friends is the only active item to have it's charge rate changed twice. On initial release, it recharged in 2 rooms. Then an update on November 4, 2015 increased the recharge time to 4 rooms. Finally, in Repentance, its recharge time was decreased to 3 rooms.
 ** {{dlc|na+}} When playing in Korean, this item still has a recharge time of 2.
 * In the game files this item's sprite is called "[[Pandora's Box]]" <!-- collectibles/collectibles_357_pandorasbox.png --> by mistake.
 

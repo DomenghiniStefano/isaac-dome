@@ -1,0 +1,41 @@
+{{infobox monster
+ | id           = 50
+ | variant      = 1
+ | image name   = * {{dlc|nr|Rebirth}}
+ | is mini-boss = yes
+ | environment  = <u>Mini-Boss</u><br>{{room|Shop}}{{room|Secret}}<br><u>Degraded Mini-Boss</u><br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Cathedral}}{{floor|Sheol}}<br>{{floor|Chest}}{{floor|Dark Room}}<br>{{room|I AM ERROR}}
+ | base hp      = 60
+ | stage hp     = {{dlcalt|15|r=25}}
+ | pool         = 7 random {{e|Penny|text=Coins}} (78.6% Chance)<br>or<br>{{i|A Quarter}} (21.4% Chance) /<br>{{i|Steam Sale}} (if {{i|A Quarter}} is not unlocked)
+}}
+
+'''Super Greed''' is a [[mini-boss]] and one of the [[Seven Deadly Sins#Super Sins|Seven Super Deadly Sins]]. He can appear in {{r|Shop}} or {{r|Secret Room}}, but only if {{e|Greed}} has previously been encountered this way.
+
+== Behavior ==
+Super Greed wanders randomly around the room and performs one of two attacks:
+* Fires a spread of 4 projectiles in the cardinal direction closest to Isaac.
+* Spawns 2 {{e|Keeper}}s to his either side.
+If hit by Super Greed, Isaac loses 2-4 coins and drops 1-3 {{e|Penny|text=Pennies}} on the floor.
+
+Super Greed deals a whole heart of contact damage.
+
+== Notes ==
+* Defeating Super Greed in a Secret Room causes all entrances to adjacent room entrances to be opened. {{dlc|nr+}} The exceptions are entrances to adjacent {{r|Challenge Room}}s and {{r|Boss Challenge Room}}s- which will be barred and blocked off forever, unable to be opened by a bomb.
+* If Isaac teleports out of the room after defeating Super Greed but without killing all of the Keepers he spawns, Isaac can re-fight Super Greed for extra coins.
+* {{r|Shop}}s and {{r|Secret Room}}s that Super Greed appears in count as {{r|Mini-Boss Room}}s, and cannot be bombed out of. They also prevent any other mini-boss rooms from generating on that floor. Once Super Greed is encountered in a Shop or Secret Room, he and Greed cannot be encountered that way for the rest of the run.
+* {{dlc|nr}} Super Greed can drop {{i|Steam Sale}} / {{i|A Quarter}} even if Isaac has already encountered/possessed it. 
+* {{dlc|r}} The exact spawn chances for Greed/Super Greed are as follows:
+** Base chance 33.3%
+** Having more than 20 coins entering the floor: +1.66%
+** Destroyed a [[machine]] on the previous floor: +3.33%
+** Destroyed a Shopkeeper in the previous floor: +0.66%
+** Donating money in the previous floor: -1.66% per coin, up to a maximum of -8.33% for 5 coins
+** These put the minimum and maximum chances at 25% and 39% respectively.
+
+== Trivia ==
+* {{dlc+|a+}} Prior to [[Booster Pack #5]], Super Greed had a chance to spawn {{e|Blister}}s.{{dlc-}}
+* The [[wikipedia:Seven Deadly Sins|Seven Deadly Sins]] that these mini-bosses are based upon are, in Christian teachings, a classification of vices from which all others are derived.
+* {{dlc+|r}} {{c|Tainted Keeper}} seems to be based on Super Greed, as {{c|Keeper}} is to Greed.{{dlc-}}
+
+{{nav|mini-boss|fr=Super Avarice}}
+[[Category:Seven Super Deadly Sins]]

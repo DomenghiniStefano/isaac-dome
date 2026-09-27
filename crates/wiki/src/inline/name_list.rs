@@ -1,6 +1,7 @@
-//! The templates whose argument is a comma-separated list of names: `{{achievement text|…}}`
-//! and the four collectible and trinket tables. `resolve` answers with one target, so none of
-//! them can go through it — each needs a node per name.
+//! The templates whose argument is a comma-separated list of names: `{{achievement text|…}}`,
+//! the collectible and trinket tables, and — since card #86 — the pickup, pool, stage-monster,
+//! challenge and transformation lists that share the same shape. `resolve` answers with one
+//! target, so none of them can go through it — each needs a node per name.
 //!
 //! Two shapes come out of the same list. On a line of its own, which is how every one of the
 //! 203 uses in the snapshot is written, the site expands the template into a bulleted list
@@ -19,17 +20,38 @@ pub(super) enum NameList {
     /// A boss or character page naming the achievements it unlocks.
     Achievements,
     /// How a transformation page states what counts toward it, the only complete
-    /// statement of that set — the infobox's `items` misses Guppy's trinket. The kind is the
-    /// resolver's namespace, `"i"` or `"t"`.
+    /// statement of that set — the infobox's `items` misses Guppy's trinket. Also Ultra
+    /// Greed's `{{entity table|…}}`, the same comma-list shape naming entities instead: the
+    /// kind is the resolver's namespace, `"i"`, `"t"` or `"e"`.
     Collectibles(&'static str),
 }
 
 impl NameList {
     pub(super) fn of(template: &str) -> Option<NameList> {
         match template {
-            "achievement text" => Some(NameList::Achievements),
+            // `achievement table` is the same list the Achievements page's own manual
+            // listing would be, drawn with a Cargo query on every page that uses it in the
+            // snapshot (no page carries a positional list) — read the same way regardless:
+            // a query-only call has no names to give and produces an empty list, which is
+            // how `collectible table` below already degrades on the `/Additions` pages.
+            "achievement text" | "achievement table" => Some(NameList::Achievements),
             "collectible table" | "collectible rows" => Some(NameList::Collectibles("i")),
             "trinket table" | "trinket rows" => Some(NameList::Collectibles("t")),
+            "entity table" => Some(NameList::Collectibles("e")),
+            // Card #86: which monsters a floor has (a stage page's own "Monsters" section).
+            "stage entities" => Some(NameList::Collectibles("e")),
+            // Which items are in a pool (the Item Pool articles' own "Activated
+            // Collectibles"/"Passive Collectibles" sections).
+            "pool items" => Some(NameList::Collectibles("i")),
+            // A pickup's own name list (cards, runes, pills…), the same shape as
+            // `collectible table`/`collectible rows` for items.
+            "pickup table" | "pickup rows" => Some(NameList::Collectibles("p")),
+            // Which challenges a page names, and which transformations grant flight
+            // (`Flight`'s own "Transformations that Grant Flight") or make up a set
+            // (`Transformations`' own "Transformation Sets", Cargo-driven like
+            // `achievement table` above).
+            "challenge table" => Some(NameList::Collectibles("chal")),
+            "transformation table" => Some(NameList::Collectibles("tf")),
             _ => None, // allowed: template names are the wiki's open vocabulary
         }
     }
@@ -132,7 +154,16 @@ fn names(t: &Template) -> impl Iterator<Item = &str> {
         .filter(|name| !name.is_empty())
 }
 
-fn collectible(kind: &str, name: &str, r: &Resolver, d: &mut Diagnostics) -> Option<Target> {
+/// A reference under `resolve`'s namespace (`"i"`, `"t"`, `"e"`…), counted where every other
+/// failed lookup is when the name doesn't resolve. `blocks` reaches this too, for the entity
+/// a bare `{{entity row minimal|…}}` row names — the same fallback a `{{e|…}}` reference has,
+/// not a second one written to agree with it.
+pub(crate) fn collectible(
+    kind: &str,
+    name: &str,
+    r: &Resolver,
+    d: &mut Diagnostics,
+) -> Option<Target> {
     match r.resolve(kind, name) {
         Resolution::Target(target) => Some(target),
         Resolution::Concept | Resolution::Unresolved | Resolution::Ignore | Resolution::Unknown => {

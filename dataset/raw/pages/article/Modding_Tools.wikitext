@@ -1,0 +1,120 @@
+This is a list of tools that can help in the creation of a mod. The game can only be modded on PC.
+
+= Official Tools {{dlc|a+}} =
+[[Afterbirth †|The Binding of Isaac: Afterbirth †]] introduced official modding support, allowing users to mod the game using the [[wikipedia:Lua (programming language)|Lua programming language]] and to upload their creations to the [http://steamcommunity.com/app/250900/workshop/ Steam Workshop]. In addition, it comes with some official tools to assist in mod creation.
+
+All the tools mentioned below only come with Afterbirth+, there are no released official tools made for older versions of the game. These are located in <code>Steam/steamapps/common/The Binding of Isaac Rebirth/tools</code>.
+
+=== Animation Editor ===
+The Animation Editor can edit .anm2 animation files, changing animations of existing entities (or creating animations for new entities).
+
+=== Item Pool Editor ===
+Item Pool Editor allows editing of [[Item Pool|item pools]].
+
+=== Lua Reference ===
+Local documentation of the Lua API, generated with Doxygen.
+
+=== Mod Uploader ===
+A small tool to set mod's information (name, version, tags and so on) and upload it to Steam Workshop.
+
+=== Resource Extractor ===
+A command line extractor that unpacks all of the game's .a files when launched.
+
+=== Room Editor ===
+A tool to edit room layouts or create new ones.
+
+= Unofficial Tools =
+{{unsupported}}
+
+== Lua Reference {{dlc|a+}} ==
+=== Modding of Isaac ===
+The Modding of Isaac hosts an [https://moddingofisaac.com/docs/index.html online copy] of the documentation which has been modified by some community members to be more accurate and easier to understand.
+
+=== Binding of Isaac - Documents ===
+[https://github.com/MicroTransactionsMatterToo/Binding_of_Isaac-Documents Binding of Isaac - Documents] is an unofficial documentation project, more detailed than the official one but is far from complete. Online version [https://microtransactionsmattertoo.github.io/Binding_of_Isaac-Documents/index.html here].
+
+=== This wiki ===
+Here there is a [[:Category:Lua reference|Lua reference]] category.
+
+== Animation Editors ==
+=== Anm2Ed ===
+[https://github.com/ShweetsStuff/anm2ed Anm2Ed] is a recreation of the Nicalis .anm2 animation editor, with additional features.
+
+== Room Editors ==
+=== Basement Renovator {{dlc|a}} ===
+[https://github.com/Basement-Renovator/basement-renovator Basement Renovator] is a tool for editing and creating room files. It can export to stb, the game's binary room format, but saves in xml. Be careful when making Rebirth rooms as some entity ids have changed since then.
+
+== Unpacking ==
+=== Rick's Unpacker ===
+[https://moddingofisaac.com/help/modding/ Rick's Unpacker] extracts game's files (that will then be manipulated for modding) from .a packed files. If you wish to unpack Afterbirth+'s .a files, it is recommended you use the official unpacker instead.
+
+== LUA Editors {{dlc|a+}} ==
+=== Atom ===
+[https://atom.io/ Atom] is an open source text editor. [https://atom.io/packages/atom-boilua atom-boilua] is a package dedicated to Binding of Isaac lua modding. (Deprecated project)
+
+=== Sublime Text ===
+Sublime Text is a '''commercial''' text editor. [https://github.com/Kapiainen/The-Subliming-Of-Isaac The Subliming of Isaac] is a package for Sublime 2 and 3 dedicated to The Binding of Isaac.
+
+=== ZeroBrane Studio ===
+[https://studio.zerobrane.com/ ZeroBrane Studio] is a open source Lua IDE, also mentioned in the [https://moddingofisaac.com/docs/md_input_converted_test__debugging.html official Lua reference]. [https://github.com/Yusyuriv/Afterbirth-API-for-ZeroBrane Afterbirth API for ZeroBrane] is a plugin for autocompletion.
+
+=== Visual Studio Code ===
+[https://code.visualstudio.com/ Visual Studio Code] is an IDE for various programming languages, including Lua. [https://marketplace.visualstudio.com/items?itemName=Filloax.isaac-lua-api-vscode Binding of Isaac Lua API] is an extension for autocompletion.
+
+== Code Injection ==
+==== BrokenRemote {{dlc|a+}} ====
+[https://github.com/MasterQ32/BrokenRemote BrokenRemote] is a code injector with mod examples.
+
+=== isaac-injector {{dlc|na}} ===
+[https://github.com/omni-/isaac-injector isaac-injector] is a code injector for Rebirth
+
+== Debugging ==
+=== isaac-log {{dlc|na+}} ===
+[https://github.com/adewey/isaac-log isaac-log] is a log reader for Rebirth and Afterbirth<ref>Afterbirth+ version planned but never released</ref> written in Node.js.
+
+=== isaac_log ===
+[https://github.com/Okiesmokie/isaac_log isaac_log] is a library to read The Binding of Isaac logs.
+
+=== abp-log {{dlc|a+}} ===
+[https://github.com/pipe01/abp-log abp-log] is a real-time log reader.
+
+=== isaac-log-viewer {{dlc|r}} ===
+[https://github.com/Zamiell/isaac-log-viewer isaac-log-viewer] is a real-time log reader for Repentance.
+
+=== Isaac Debug Helper {{dlc|a+}} ===
+[https://github.com/Dogeek/isaac-debug-helper Isaac Debug Helper] aka Isaac Modding Helper Tool is a Python log reader with features like color highlighting and log filtering. There is also [https://github.com/teamdodo/isaac-debug-helper a fork by Team Dodo]. The fork is almost identical to the one by dogeek (indeed the two projects work together) but has an up-to-date release section with executables. When downloading from Dogeek repository, remember to do "Clone or download -> Download zip".
+
+{| class="wikitable"
+ |+ Log readers comparison
+ |-
+ ! Name !! Platform !! Requirements !! Real time !! Color highlighting !! Log filtering !! Custom filters !! Autoreload !! License !! Latest release
+ |-
+ | [https://github.com/pipe01/abp-log abp-log] || Windows only || .NET Framework 4.5.2 || Yes || Yes || Yes || Yes || No || Unknown || 0.3 (7 Jan 2017)
+ |-
+ | [https://github.com/Dogeek/isaac-debug-helper Isaac Debug Helper] || Anything that supports Python || Python 3.x || Yes || Yes || Yes || No || Yes || GNU GPL 3.0 || 1.0 (13 Apr 2017)
+ |-
+ | [https://github.com/teamdodo/isaac-debug-helper/ Isaac Debug Helper fork]|| Executables: Linux or Windows. Python script: Anything that supports Python || Executables: should work out of the box. Python script: Python 3.x || Yes || Yes || Yes || No || Yes || GNU GPL 3.0 || 2.1.0 (26 Feb 2018)
+ |-
+ | [https://github.com/Zamiell/isaac-log-viewer isaac-log-viewer]|| Python script: Anything that supports Python || Python 3.x || Yes || Yes || Yes || No || Yes || GNU GPL 3.0 || No release, need to download source code
+ |}
+
+== Mods {{dlc|a+}} ==
+=== A Debugging Tool ===
+[https://steamcommunity.com/sharedfiles/filedetails/?id=942078486 A Debugging Tool] is a mod with features like spawn of modded items and analysis of entities' health.
+
+=== devhelper ===
+[https://steamcommunity.com/sharedfiles/filedetails/?id=855863031 devhelper] is a mod that includes features like custom log and hotkeys.
+
+=== {{dlc|r}} Repentogon ===
+[https://repentogon.com/ Repentogon] is a mod that extends the Lua API. This script extender is needed for some advanced mods.
+
+== Consoles ==
+=== The-Binding-of-Isaac-Mod-Conversion-Kit ===
+(cannot retain LUA code)
+
+[https://github.com/ItsDeidara/The-Binding-of-Isaac-Mod-Conversion-Kit The-Binding-of-Isaac-Mod-Conversion-Kit] is a tool to convert mods the PC version of The Binding of Isaac to their console counterparts.
+
+== References ==
+{{reflist}}
+
+{{nav|modding|fr=Outils de Modding}}

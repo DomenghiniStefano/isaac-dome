@@ -1,0 +1,74 @@
+{{header player effects}}
+'''Temporary buffs''' are [[effects]] applied to the player character that expire after a timed duration or on leaving a room.
+
+<div class="toclimit-2">__TOC__</div>
+
+== Effects ==
+Temporary buffs negate all types of damage for a variable amount of time depending on the item it's granted by, including health loss from {{machine|Blood Donation Machine}}s, {{machine|Devil Beggar}}s, and environmental hazards like [[spikes]], {{r|Curse Room}} doors and {{r|Sacrifice Room}}s. '''Do not''' prevent [[Health|Heart Container]] or health loss from [[Pills|Health Down Pills]], {{r|Devil Room}} deals, damage from {{I|IV Bag}}, spawning a [[Babies|baby]], {{dlc|r}} or the door to the {{s|Mausoleum|n}}. End after a set amount of time depending on the source, or when Isaac enters a different room.
+
+{| class="mw-collapsible wikitable"
+! Effect
+! Appearance
+! Description
+|-
+| Invulnerability
+| style="text-align: center" | [[File:Invincibility_App.gif|50px]]
+| While invulnerable, Isaac loses the ability to shoot tears, and flashes in multiple colors for the duration of the effect.
+|-
+| Shield
+| style="text-align: center" | [[File:Collectible Book of Shadows appearance.png|75px]]
+| 
+The shield effect does not prevent Isaac from shooting tears.
+|-
+| Statue
+| style="text-align: center" | [[File:Statue appearences.png]]
+| The statue form does not prevent Isaac from shooting tears. Does not prevent damage from {{machine|Blood Donation Machine}}s and {{machine|Devil Beggar}}s.
+|}
+
+== Invulnerability ==
+=== Activated items that grant invulnerability ===
+{{collectible table | My Little Unicorn, The Gamekid, Unicorn Stump }}
+
+=== Passive items that grant invulnerability ===
+{{collectible table | Taurus }}
+
+=== Trinkets that grant invulnerability ===
+{{trinket table | Cartridge }}
+
+=== Cards and runes that grant invulnerability ===
+{{pickup table | VII - The Chariot }}
+
+=== Pills that grant invulnerability ===
+{| class="wikitable mw-collapsible"
+ ! style="width: 130px" | Pill
+ ! Effect
+ |-
+ | {{dlc|a}} Power Pill!
+ | Temporarily grants invulnerability, inflicts [[Status Effects#Fear|fear]] on enemies in the room, and lets Isaac deal contact damage, similar to {{i|The Gamekid}}.
+ |-
+ | {{dlc|a+}} Feels like I'm walking on sunshine!
+ | Temporarily makes Isaac invincible but unable to shoot, similar to {{I|Unicorn Stump}}.
+ |}
+
+== Shield ==
+=== Activated items that grant a shield ===
+{{collectible table | Book of Shadows }}
+
+=== Passive items that grant a shield ===
+{{collectible table | Celtic Cross, Empty Vessel, The Polaroid, Virgo }}
+
+=== Trinkets that grant a shield ===
+{{trinket table | Sigil of Baphomet }}
+
+=== Runes that grant a shield ===
+{{pickup table | Algiz }}
+
+== Statue ==
+=== Passive items that transform into a statue ===
+{{collectible table | Gnawed Leaf, Tooth and Nail }}
+
+=== Cards that transform into a statue ===
+{{pickup table | VII - The Chariot? }}
+
+{{nav|fr=Effets d'invincibilité}}
+[[Category:Mechanics]]

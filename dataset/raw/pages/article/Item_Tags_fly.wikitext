@@ -1,0 +1,12 @@
+{{page dlc|r}}
+
+Items with this [[Item Tags|tag]] contribute toward the {{tf|Beelzebub}} transformation.
+
+== Activated Collectibles ==
+{{collectible table | tag = fly | type = activated }}
+
+== Passive Collectibles ==
+{{collectible table | tag = fly | type = passive }}
+
+{{nav|fr=Balise fly}}
+[[Category:Item tags]]

@@ -1,0 +1,36 @@
+{{header tarot cards}}
+{{Infobox card
+ | name        = VII - The Chariot
+ | id          = 8
+ | quote       = May nothing stand before you
+ | description = Gives [[invulnerability]] and +0.28 [[speed]] for six seconds, removing the ability to shoot tears and replacing it with the ability to deal contact damage to enemies.
+| recharge =             {{dlcalt|4|r=3}}
+}}
+
+{{cit|c}}
+
+== Effects ==
+* For 6 seconds:
+** Gives [[invulnerability]]
+** +0.28 [[speed]]
+** Removes the ability to shoot tears, replacing it with the ability to deal contact damage to enemies.
+*** {{dlc|nr}} Isaac deals 40 contact damage to enemies, once per second.
+*** {{dlc|r}} Isaac deals 20 contact damage to enemies, twice per second.
+**** If an enemy is at 40 HP or less, the contact damage is increased to 40 for that enemy.
+
+== Notes ==
+* '''VII - The Chariot''''s effect is identical to {{i|My Little Unicorn}}.
+* Ending the current run via opening the end chest while My Little Unicorn is active will cause the credits and main menu music to be sped up. The effect ends upon restarting the game or starting a new run.
+
+== Strategy ==
+* The invulnerability effect negates all forms of damage, including health loss from {{M|Blood Donation Machine}}s and {{M|Devil Beggar}}s. They can be used for free for the duration of the effect.
+
+== Synergies ==
+* {{I|Tarot Cloth}}: The effect's length is doubled to 12 seconds.
+** {{I|Tarot Cloth|n}} + {{i|Blank Card}} + {{i|Car Battery|n}} : The effect is quadrupled to 24 seconds.
+
+== Trivia ==
+* [[wikipedia:The Chariot (tarot card)|The Chariot]] is the seventh card of a Major Arcana set.
+** In card divination, The Chariot represents war and triumph, which is represented in game with the high damage and speed granted to Isaac.
+
+{{nav|fr=VII - Le Chariot|card}}

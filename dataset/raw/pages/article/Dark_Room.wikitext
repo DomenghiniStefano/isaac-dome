@@ -1,0 +1,126 @@
+{{infobox stage
+ | chapter         = 6
+ | id              = {{dlcalt|11|a=16}}
+ | level id        = 11
+ | type id         = 0
+ | degraded bosses = The Adversary, Blastocyst, Blastocyst Medium, Blighted Ovum, The Bloat, Brownie, The Cage, Carrion Queen, Chub, Conquest, Daddy Long Legs, Dark One, Death, The Fallen, Famine, The Forsaken, The Gate, Gish, Gluttony, Greed, Gurdy Jr., The Haunt, Headless Horseman, The Husk, Larry Jr., Little Horn, Lust, Mask of Infamy, Mega Fatty, Mega Maw, Monstro, Monstro II, Peep, Polycephalus, Rag Man, Sisters Vis, Sloth, The Stain, Super Envy, Super Gluttony, Super Greed, Super Lust, Super Pride, Super Sloth, Super Wrath, Teratoma, Teratoma Medium, War, Widow, Wrath, The Wretched
+ | bosses          = The Lamb
+}}
+
+The '''Dark Room''' is one of five final levels in ''The Binding of Isaac: Rebirth'', alongside the {{s|Chest}}, {{s|The Void}}, the {{s|Corpse}}, and {{s|Home}}. The Dark Room is unlocked by defeating {{e|Satan}} 5 times, after which it can be accessed by touching the chest dropped by Satan with {{i|The Negative}} equipped. Entrance to the Dark Room can also be achieved via the {{r|I AM ERROR}} room in {{s|Sheol}}, even without {{i|The Negative}}, as well as through the {{r|Black Market}} in Sheol, and through a trapdoor spawned by a button. After completing this level or the Chest for the first time, the Dark Room will always contain a large golden door in the first room, which can be unlocked with either the Key Pieces (combination of {{i|Key Piece 1}} and {{i|Key Piece 2}}), {{i|Dad's Key}}, {{p|Get out of Jail Free Card}}, or {{i|Mr. ME!}}.
+
+{{dlc|a}} The Dark Room can also be accessed by repeatedly using a {{r|Sacrifice Room}}. After using the spikes for the 12th time, continuing to use the Sacrifice Room will have a 50% chance to teleport Isaac directly to the Dark Room, regardless of what floor he was previously on.
+
+{{dlc+|a+}} The Dark Room is home to the [[Grave Room]], which will contain a [[Dirt Patch]], which can be dug up using {{i|Mom's Shovel}}. Doing so for the first time will unlock {{C|The Forgotten}}. On subsequent runs, multiple Dirt Patches can be found, and digging them up using {{i|We Need To Go Deeper!}}, {{p|Ehwaz}}, or Mom's Shovel will spawn a random type of [[chest]].{{dlc-}}
+
+Like {{s|Sheol}} before it, the Dark Room consists of only one floor. In the Dark Room, it is not possible to bomb doors open to skip rooms. The Dark Room's rooms are usually devoid of [[Rocks]] and other obstacles; but are mainly filled with [[boss]]es and [[mini-boss]]es. The boss of the floor is always {{e|The Lamb}}.
+
+The first room the player spawn in will automatically contain 4 {{e|Red Chest}}s that {{Dlc|nr}}function normally or {{Dlc|r}}contain random [[Devil Room (Item Pool)|Devil Deals]]. Rerolling these items will produce new items that are from the [[Treasure Room (Item Pool)|Treasure Room item pool]]. As well, all other types of chests spawned in the Dark Room will always contain Treasure Room items. {{Dlc|nr}}Destroying {{machine|Slot Machine}}s, {{machine|Fortune Telling Machine}}s, and all types of {{machine|Beggar}}s with the exception of {{machine|Shell Game}} will also spawn items.
+
+== [[Monster]]s ==
+{{entity table/header}}
+{{stage entities | Bony, Death's Head, Embryo, Evil Twin, Nulls, Begotten, Gurgling, Bone Knight, Kamikaze Leech, Black Maw, Swarmer, Camillo Jr., Wizoob, Lil' Haunt }}
+{{stage entities | dlc = a | Imp, Black Bony, Black Globin, Dank Death's Head, Flesh Death's Head, Scarred Double Vis, Red Ghost }}
+{{stage entities | dlc = a+ | Soul Sucker }}
+{{stage entities | dlc = r | Wrinkly Baby, Shady, Migraine }}
+|}
+
+''Degraded Bosses:''
+{| class="wikitable mw-collapsible striped sortable"
+! Name
+! ID
+! class="unsortable" | Notes
+{{entity row minimal|The Adversary}} |
+{{entity row minimal|Big Horn}} |
+{{entity row minimal|Blastocyst}} | Medium- and large-form only
+{{entity row minimal|Blighted Ovum}} |
+{{entity row minimal|The Bloat}} |
+{{entity row minimal|Brownie}} |
+{{entity row minimal|The Cage}} |
+{{entity row minimal|Carrion Queen}} |
+{{entity row minimal|Chub}} |
+{{entity row minimal|Conquest}} |
+{{entity row minimal|Daddy Long Legs}} |
+{{entity row minimal|Dark One}} |
+{{entity row minimal|Death}} |
+{{entity row minimal|The Fallen}} |
+{{entity row minimal|Famine}} |
+{{entity row minimal|The Forsaken}} |
+{{entity row minimal|The Gate}} |
+{{entity row minimal|Gish}} |
+{{entity row minimal|Gluttony}} |
+{{entity row minimal|Greed}} |
+{{entity row minimal|Gurdy Jr.}} |
+{{entity row minimal|The Haunt}} |
+{{entity row minimal|Headless Horseman}} |
+{{entity row minimal|The Hollow}} |
+{{entity row minimal|The Husk}} |
+{{entity row minimal|Larry Jr.}} |
+{{entity row minimal|Little Horn}} |
+{{entity row minimal|Lust}} |
+{{entity row minimal|Mask of Infamy}} |
+{{entity row minimal|Mega Fatty}} |
+{{entity row minimal|Mega Maw}} |
+{{entity row minimal|Monstro}} |
+{{entity row minimal|Monstro II}} |
+{{entity row minimal|Peep}} |
+{{entity row minimal|The Pile}} |
+{{entity row minimal|Polycephalus}} |
+{{entity row minimal|Rag Man}} |
+{{entity row minimal|Rag Mega}} |
+{{entity row minimal|Sisters Vis}} |
+{{entity row minimal|Sloth}} |
+{{entity row minimal|The Stain}} |
+{{entity row minimal|Super Envy}} |
+{{entity row minimal|Super Gluttony}} |
+{{entity row minimal|Super Greed}} |
+{{entity row minimal|Super Lust}} |
+{{entity row minimal|Super Pride}} |
+{{entity row minimal|Super Sloth}} |
+{{entity row minimal|Super Wrath}} |
+{{entity row minimal|Teratoma}} | Medium- and large-form only
+{{entity row minimal|War}} |
+{{entity row minimal|Widow}} |
+{{entity row minimal|Wrath}} |
+{{entity row minimal|The Wretched}} |
+|}
+
+== [[Bosses]] ==
+{| style="width: 100%; text-align: center"
+ | [[file:Boss The Lamb portrait.png|link=The Lamb]]
+ | [[file:Boss Mega Satan portrait.png|center|link=Mega Satan]]
+ |-
+ | [[The Lamb]]
+ | [[Mega Satan]]
+ |}
+
+== Notes ==
+* {{dlc|nr+}} If Isaac gets {{i|Key Piece 1}} and {{i|Key Piece 2}}, the key will open the golden gate to fight {{e|Mega Satan}}, but if Isaac uses {{i|Forget Me Now}}, the floor will reset and Isaac won't get both Key Pieces back, making it so that the golden gate won't open again.
+** {{dlc|r+}} Golden gate to {{e|Mega Satan}} will stay opened after using {{i|Forget Me Now}}.
+* {{dlc|r}}When playing as {{C|The Lost}} or {{C|Tainted Lost}}, it is advised to open all the devil deal chests in the starting room, as only one of the four items can be taken and all the other chests will disappear.
+* {{dlc|r}} Taking the devil deals generated by the chests will NOT prevent {{r|Angel Room}}s from appearing.
+* {{dlc|r}}If {{p|Jera}} is used in the initial room with the devil deal chests, the newly spawned chests will contain four additional and distinct devil deals.
+* {{dlc|a}}The {{r|I AM ERROR}} room cannot be reached by any method in {{s|Chest}} and the Dark Room.
+** {{dlc+|r}}The {{r|I AM ERROR}} room can be reached by leaving a {{r|Crawl Space}} through an unintended direction. The room will always contain a portal leading to {{s|The Void}}.{{dlc-}}
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | Angels, Dead Boy, Moving Box }}
+
+== Trivia ==
+* The Dark Room is the only floor in the game which is original to the initial release of ''Rebirth''. All the other floors included in ''Rebirth'' at its launch were from the original ''The Binding of Isaac'' and its DLC ''Wrath of the Lamb''.
+* The Dark Room is also the name of a room which, like its name suggests, is plunged into complete darkness, for the notable purpose of processing photos. The fact that access to this floor is granted by touching the chest in {{s|Sheol}} while holding {{i|The Negative}}, which is the name given to a photo that has not been processed yet and whose colors and hues are inverted, might be a nod to this.
+* The layout to The Chest and the Dark Room are identical for a given seed.
+* {{dlc|na}} One of the {{r|Super Secret Room}} layouts is of the Dark Room and a {{e|Black Heart}}. The sprite for the door is a portal rather than a gray door, however, since bombed-out entrances in the Dark Room appear as portals.
+** This secret room appears floating in a black void on most floors, but in the Dark Room, it appears in a purple misty void instead, just like all the other rooms.
+** {{dlc|a}} This secret room takes the appearance of a {{r|Library}} instead.
+* One possible room in the Dark Room contains only a {{e|Bony}} and a {{e|Lil' Haunt}}. These possibly represent {{C|The Forgotten}} and {{C|The Soul}}.
+* On the [https://youtu.be/xcR9TAOozww 6/2/2021 Kickstarter livestream], Edmund McMillen confirmed that the Dark Room represents the closet that Isaac was locked inside in Ending 21.
+* The theme of Dark Room (''Devoid'') is noticeably shorter than other floor themed soundtracks. This is because a floor theme is comprised of 2 parts. The 1st part is the normal theme, and the 2nd part is for the more intense version of the track when an enemy room with a combined high health count is entered. There is no "Intense" theme for when a high health room in Dark Room is entered. The {{s|Cathedral}}'s theme (''Everlasting Hymn'') is also shorter than other tracks, but does have a barely noticeable secondary intense part of the track.
+
+== Music ==
+* The music for the Dark Room is titled ''Devoid'', which means "empty".<ref>[https://ridiculon.bandcamp.com/album/the-binding-of-isaac-rebirth-ost Binding of Isaac: Rebirth OST]</ref>
+
+== References ==
+{{reflist}}
+
+{{nav|satan unlock|environment|fr=Chambre Noire}}

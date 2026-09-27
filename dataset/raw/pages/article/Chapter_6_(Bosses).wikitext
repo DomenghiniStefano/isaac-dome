@@ -1,0 +1,26 @@
+{{header normal bosses}}
+
+== {{s|Dark Room}} ==
+{| style="width: 70%; text-align: center"
+ | [[file:Boss The Lamb portrait.png|center|link=The Lamb]]
+ |-
+ | [[The Lamb]]
+ |}
+
+== {{s|Chest}} ==
+{| style="width: 70%; text-align: center"
+ | [[file:Boss ??? portrait.png|center|link=??? (Boss)|???]]
+ |-
+ | [[??? (Boss)|???]]
+ |}
+
+== Golden Door {{Unlockable}} ==
+{{e|Mega Satan}} will always appear in the [[Rooms#Mega Satan Arena|room inside the golden door]] found in The Chest and the Dark Room.
+{| style="width: 70%; text-align: center"
+ | [[file:Boss Mega Satan portrait.png|center|link=Mega Satan]]
+ |-
+ | [[Mega Satan]]
+ |}
+
+{{nav|boss|fr=Chapitre 6 (Boss)}}
+[[Category:Bosses| ]]

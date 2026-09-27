@@ -1,0 +1,25 @@
+{{header item pools}}
+{{disambig msg|the item pool|the room|Angel Room}}
+{{item pool}}
+Items in this pool can be found in the {{R|Angel Room}}.
+
+Items in this pool may also be found in {{e|Old Chest}}s created by {{i|Isaac's Tomb}} which can draw items from this item pool or its own unique [[Old Chest (Item Pool)|Old Chest item pool]].
+== Activated Collectibles ==
+{{item pool/header}}
+{{pool items | The Bible, Breath of Life, Dead Sea Scrolls, Prayer Card }}
+{{pool items | dlc = a+ | Eden's Soul }}
+{{pool items | dlc = a+ | weight = {{dlcalt|1|r=0.5}} | Void }}
+{{pool items | dlc = a+ | weight = 0.4 | Delirious }}
+{{pool items | dlc = r | Book of Revelations, Genesis, Jar of Wisps, Urn of Souls, Vade Retro }}
+|}
+
+== Passive Collectibles ==
+{{item pool/header}}
+{{pool items | The Body, Celtic Cross, Dead Dove, Godhead, Guardian Angel, Habit, The Halo, Holy Grail, Holy Mantle, Holy Water, Lazarus' Rags, The Mind, Mitre, The Relic, Rosary, Sacred Heart, Scapular, The Soul, Trinity Shield, The Wafer }}
+{{pool items | dlc = a | Censer, Circle of Protection, Crown Of Light, Holy Light, Immaculate Conception, Seraphim, Spear Of Destiny, Sworn Protector }}
+{{pool items | dlc = a+ | 7 Seals, Angelic Prism, Duality, Eucharist, Glyph of Balance, Lil Delirium, Trisagion }}
+{{pool items | dlc = r | Act of Contrition, Blood of the Martyr, Divine Intervention, Hallowed Ground, Immaculate Heart, Jesus Juice, Monstrance, Paschal Candle, Purgatory, Purity, Revelation, Salvation, Spirit Sword, Star of Bethlehem, Stigmata, Soul Locket, The Stairway }}
+{{pool items | dlc = r | weight = 0.5 | Book of Virtues, Sacred Orb }}
+|}
+
+{{nav|fr=Refuge des Anges (Banque d'Objets)}}

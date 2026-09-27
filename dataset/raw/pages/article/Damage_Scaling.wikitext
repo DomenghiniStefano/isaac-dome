@@ -1,0 +1,157 @@
+{{page dlc|a}}
+'''Damage scaling''' is a mechanic introduced in ''[[The Binding of Isaac: Afterbirth]]'' to make certain monsters and bosses more challenging. Some specific entities in the game mitigate high-damage attacks, which effectively caps Isaac's damage per second to a maximum amount. The more damage dealt to such an enemy in a short period of time, the more Isaac's damage gets reduced.
+
+The mechanic of damage scaling is conventionally referred to as "armor".
+
+The amount of armor that an entity has corresponds to the "shieldStrength" field in the "entities2.xml" file.
+
+== Overview ==
+* The armor is based on four different criteria: how much '''base HP''' the entity has, how much '''damage''' it has taken in the last 4 seconds (120 game logic frames), the '''value''' of its armor (every applicable entity has a specific armor value), and their '''starting armor protection''' (increases from a value of 0 to 120).
+* Every entity in the game is predisposed to make use of this mechanic: in fact, every entity sports a "starting armor protection" counter and an "armor value" field, but few entities actually use it.
+
+== How it Works ==
+* When an entity with an armor value spawns, it starts off with a separate instance of armor. This instance of armor starts off by reducing incoming damage by 99% and will steadily decrease over the course of 4 seconds, at which point it is no longer in effect. This value will increase its "armor deployment" each game logic frame going from 0 (fully armored) to 120 (no longer in effect), and use this value to compute a 'static degree' of damage reduction, separate from this starting armor protection.
+** {{dlc|a+}} In practice, this is only a significant factor in the battle with {{e|Delirium|n}}, as while it's transformed, its starting armor protection is reapplied. In the cases of all other armored entities, the starting armor protection becomes irrelevant after 4 seconds.
+
+* The entity keeps track of how much ''unmodified'' damage it has taken in the last 4 seconds, which combined with the 'static degree', the entity's HP, and armor effectiveness, results in a multiplier to the actual damage dealt, capping out at a multiplier of 0.09× (in other words, Isaac's tears can never deal less than 9% of his [[Damage]] stat). This can stack with the starting armor protection to reduce damage even further.
+* The entity's base HP is divided by its armor value to create a soft cap on damage per second (DPS). This soft cap serves as a way to equalize damage coming from Isaac; if his DPS is above this cap, it will be lowered, while DPS values below the soft cap are completely unaffected. The higher Isaac's DPS, the more his damage will be decreased.
+* Due to the entity keeping track of how much unmodified damage it has taken in the past 4 seconds, Isaac's damage output will gradually decrease until it is equalized to the DPS soft cap, or the damage instance reaches the point that it is reduced to 9% of its original damage.
+* Isaac's [[Damage]] stat is also taken into consideration, not just his DPS. If an individual damage instance is greater than 4 times the armored entity's DPS soft cap, that damage will be preemptively decreased, so as to prevent Isaac from obliterating entities in one shot, even if the entity has not been attacked in a period of 4 seconds.
+* The overall result of this mechanic is that slow, high-powered attacks are less effective than rapid, lower-damage ones; the damage reduction formula has difficulty keeping up with rapid, low-damage attacks while slow, high-powered attacks will preemptively have their damage lowered, allowing for such attacks to have their damage equalized more easily.
+* Ultimately this mechanic has its limits, as no matter what, each individual attack cannot have its damage reduced below 9% of its original damage, allowing the armor to be overwhelmed if the outgoing damage per second is large enough.
+
+== {{dlc+|r}} Bypassing Damage Scaling ==
+* Methods were added to bypass this mechanic, giving Isaac ways to deal full damage by certain means. However, these ways of dealing damage do contribute to Isaac's damage per second, which can cause the damage dealt from his other attacks to be lowered as a result of running into the DPS soft cap. The amount of damage dealt through these methods tends to outweigh the downsides of lowering Isaac's damage in most cases.
+** Bomb damage and most explosive damage in general bypasses damage scaling; most non-explosive bomb effects, however, do not (e.g. the tears fired by {{i|Sad Bombs}}, etc).
+*** {{i|Bomber Boy}}: The initial explosion bypasses damage scaling, the subsequent explosions do not.
+*** {{i|Ghost Bombs}}: The initial explosion bypasses damage scaling, the contact and explosion damage from the ghosts do not.
+*** {{i|Scatter Bombs}}: Both the initial and subsequent explosions deal full damage.
+** Effects which invoke {{i|The Necronomicon}} (e.g. {{e|Black Heart}}s, {{p|XIII - Death}}, etc), and the damage boosts from {{t|A Missing Page}} and {{i|Missing Page 2}} bypass damage scaling.
+** [[Knockback#Strong Knockback|Strong knockback]] damage, for example from {{i|Butter Bean}}, {{i|Hemoptysis}} and {{i|Knockout Drops}} bypasses damage scaling.
+** Dark Esau (see {{C|Tainted Jacob}}) bypasses damage scaling with his charge attack.
+** {{t|Tick}} bypasses damage scaling in all versions of the game.
+* The following items that deal explosive damage are exceptions and do not bypass damage scaling:
+** {{i|Doctor's Remote}}
+** {{i|Dr. Fetus}}
+** {{i|Epic Fetus}}
+** {{i|Explosivo}}
+** {{i|Fire Mind}}
+** {{i|Ipecac}}
+** {{i|Mama Mega!}}
+{{dlc-}}
+
+== Entities with Armor Values ==
+The game enables the armor mechanic for the following entities. (However, Delirium only has partial armor; see the note below.)
+
+{| class="wikitable mw-collapsible sortable striped"
+ ! Entity ID !! Entity Name !! HP !! Armor !! DPS Soft Cap
+ |-
+ | 14.2 || {{e|Tainted Pooter}} || 75 || 30 || 2.5
+ |-
+ | 22.3 || {{e|Tainted Mulligan}} || 100 || 30 || 3.33
+ |-
+ | 25.6 || {{e|Tainted Boom Fly}} || 20 || 10 || 2
+ |-
+ | 29.3 || {{e|Tainted Hopper}} || 80 || 30 || 2.67
+ |-
+ | 31.1 || {{e|Tainted Spitty}} || 60 || 30 || 2
+ |-
+ | 61.7 || {{e|Tainted Sucker}} || 14 || 10 || 1.4
+ |-
+ | 84.0 || {{e|Satan|r+}}|| 600 || 12 || 50
+ |-
+ | 84.1 || {{e|Satan|r+}}'s feet|| 600 || 12 || 50
+ |-
+ | 102.0 || {{e|Isaac|r+}} || 2,000 || 20 || 100
+ |-
+ | 102.1 || {{e|???|r+}} ({{s|Chest}} boss) || 2,000 || 25 || 80
+ |-
+ | 102.2 || {{e|???}} (Hush first phase) || 1,000 || 20 || 50
+ |-
+ | 240.3 || {{e|Tainted Soy Creep}} || 50 || 4 || 12.5
+ |-
+ | 244.2 || {{e|Tainted Round Worm}} || 100 || 30 || 3.33
+ |-
+ | 244.3 || {{e|Tainted Tube Worm}} || 100 || 12 || 8.33
+ |-
+ | 273.0 || {{e|The Lamb|r+}} || 2,000 || 25 || 80
+ |-
+ | 273.1 || {{e|The Lamb|r+}}'s body || 600 || 10 || 60
+ |-
+ | 274.0 || {{e|Mega Satan|r}} (first phase) || 5,000 || 90 || 55.56
+ |-
+ | 274.1 || {{e|Mega Satan|r}}'s Right Hand (first phase)  || 600 || 15 || 40
+ |-
+ | 274.2 || {{e|Mega Satan|r}}'s Left Hand (first phase) || 600 || 15 || 40
+ |-
+ | 275.0 || {{e|Mega Satan|r}} (second phase) || 2,000 || 90 || 22.22
+ |-
+ | 406.0 || {{e|Ultra Greed}} || 3,500  || 85 || 41.18
+ |-
+ | 406.1 || {{e|Ultra Greedier}} || 2,500
+ | data-sort-value="60" | {{dlc|a+nr}} 85<br>{{dlc|r}} 60
+ | data-sort-value="41.67" | {{dlc|a+nr}} 29.41<br>{{dlc|r}} 41.67
+ |-
+ | 407.0 || {{e|Hush}} (second phase) || 6,666
+ | data-sort-value="140" | {{dlc|anr}} 160<br>{{dlc|r}} 140
+ | data-sort-value="47.61" | {{dlc|anr}} 41.66<br>{{dlc|r}} 47.61
+ |-
+ | 412.0 || {{e|Delirium}} (While transformed) || 10,000
+ | data-sort-value="80" | Up to 80 (see notes)
+ | data-sort-value="125" | Up to 125 (see notes)
+ |-
+ | 802.0 || {{i|Blood Puppy}} (Level 2) || 20 || 90 || 0.22
+ |-
+ | 802.1 || {{i|Blood Puppy}} (Level 3) || 50 || 90 || 0.56
+ |-
+ | 812.1 || {{e|Tainted Sub Horf}} || 50 || 8 || 6.25
+ |-
+ | 827.1 || {{e|Tainted Faceless}} || 100 || 20 || 5
+ |-
+ | 829.1 || {{e|Tainted Mole}} || 80 || 10 || 8
+ |-
+ | 831.0 || {{e|Gutted Fatty}} || 80 || 12  || 6.67
+ |-
+ | 850.0 || {{e|Level 2 Gaper}} || 40 || 5 || 8
+ |-
+ | 850.1 || {{e|Level 2 Horf}} || 20 || 2.5 || 8
+ |-
+ | 850.2 || {{e|Level 2 Gusher}} || 20 || 2.5 || 8
+ |-
+ | 855.0 || {{e|Level 2 Charger}} || 40 || 2.5 || 16
+ |-
+ | 855.1 || {{e|Elleech}} || 60 || 5 || 12
+ |-
+ | 888.0 || {{e|Shady}} || 80 || 12 || 6.67
+ |-
+ | 912.0 || {{e|Mother}} (phase 1) || 2,222 || 90 || 24.69
+ |-
+ | 912.10 || {{e|Mother}} (phase 2) || 2,000 || 90 || 22.22
+ |-
+ | 950.1 || {{e|Dogma}} (TV form) || 1,200 || 30 || 40
+ |-
+ | 950.2 || {{e|Dogma}} (Angel form) || 1,200 || 30 || 40
+ |-
+ | 951.0 || {{e|The Beast}} || 10,000 || 60 || 166.67
+ |-
+ | 951.10 || {{e|Ultra Famine}} || 2,000 || 30 || 66.67
+ |-
+ | 951.20 || {{e|Ultra Pestilence}} || 1,800 || 30 || 60
+ |-
+ | 951.30 || {{e|Ultra War}} || 2,000 || 30 || 66.67
+ |-
+ | 951.40 || {{e|Ultra Death}} || 2,000 || 30 || 66.67
+ |}
+
+== Notes ==
+* {{e|Delirium}} only has armor while assuming the form of random bosses. Its armor will start from 0 and increase as damage is taken while transformed; once taking the shape of its true form, it won't have any. Its armor only protects its alternate forms. Every time Delirium transforms, its partial armor will be reapplied, resulting in considerably more damage reduction than the armor value alone.
+* Armor is always actively updated, not only when an entity is taking damage.
+* It is possible to apply the armor effect to any entity via editing its entry in <code>entities2.xml</code>.
+* Ultra Greed, Ultra Greedier, and Delirium do not have corresponding "shieldStrength" values in the "entities2.xml" file. However, they nonetheless have damage scaling, so in these cases the mechanic is likely hard-coded.
+
+== Trivia ==
+* Despite the armor attempting to balance damage dealt and keep fights challenging, it's very possible to overwhelm the mechanic and destroy even strong armored enemies like {{e|Hush}}.
+* Dark Esau (866.0), Mother's Shadow (867.0), and Dogma's phase 1 angel (950.0) have a "shieldStrength" value in the "entities2.xml" file. However, all of these entities are invulnerable, so it has no effect.
+
+{{nav|fr=Armure|es=Escalado de daño}}
+[[Category:Mechanics]]

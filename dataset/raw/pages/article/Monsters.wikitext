@@ -1,0 +1,329 @@
+'''Monsters''' refers to the many antagonistic creatures and entities Isaac can encounter throughout the game.
+
+Most monsters (with few exceptions) damage Isaac by either touching him or shooting him with projectiles. Less frequently, monsters spawn additional, lesser monsters, spread [[creep]], or attempt to affect Isaac's movement. Some monsters have [[Stage HP|scaled health]] depending on which floor they're encountered. Along with the more common variety of monsters, [[Champions|champion]] versions can be found lurking about; these monsters are often like their common counterparts, but have a color tint or size change, more health, and drop basic [[pickup]]s on death. There are also champion versions of most [[bosses]].
+
+There are 336 naturally spawning monsters in total. 40 of them were added in [[The Binding of Isaac: Afterbirth|''Afterbirth'']], 21 were added in ''[[Afterbirth †]]'' (13 were added in [[Booster Pack]]s) and 140 were added in [[The Binding of Isaac: Repentance|''Repentance'']]. Almost all of these naturally spawning entities are featured in the {{dlc|a+}} [[Bestiary|Afterbirth+ Bestiary]] or {{dlc|r}} [[Bestiary Repentance|Repentance Bestiary]].
+
+__TOC__
+
+== Monster List ==
+{{entity table | Frowning Gaper, Gaper, Flaming Gaper, Rotten Gaper, Gurgle, Crackle, Nulls, Cyclopia, Blue Gaper, Greed Gaper, Wraith, Deep Gaper, Blurb, Level 2 Gaper, Level 2 Horf, Level 2 Gusher, Twitchy, Dead Isaac, Faceless, Tainted Faceless, Exorcist, Fanatic, Candler, Dump, Dump Head, Gusher, Pacer, Splasher, Black Globin's Body, Horf, Psychic Horf, Sub Horf, Tainted Sub Horf, Necro, Fly, Attack Fly, Moter, Eternal Fly, Ring Fly, Dart Fly, Swarm, Hush Fly, Willo, Army Fly, Ultra Famine Fly, Ultra Pestilence Fly, Fly Bomb, Eternal Fly Bomb, Sucker, Spit, Ink, Soul Sucker, Mama Fly, Bulb, Bloodfly, Tainted Sucker, Pooter, Super Pooter, Tainted Pooter, Clotty, Clot, I.Blob, Grilled Clotty, Cloggy, Mulligan, Mulligoon, Mulliboom, Hive, Drowned Hive, Holy Mulligan, Tainted Mulligan, Nest, Leper, Leper Flesh, Prey, Mullighoul, Bouncer, Gas Dwarf, Danny, Coal Boy, Blaster, Maggot, Charger, My Shadow, Drowned Charger, Dank Charger, Carrion Princess, Small Leech, Small Maggot, Level 2 Charger, Elleech, Blood Puppy, Spitty, Tainted Spitty, Conjoined Spitty, Globin, Gazing Globin, Dank Globin, Cursed Globin, Black Globin, Clickety Clack, Gasbag, Cohort, Boom Fly, Red Boom Fly, Drowned Boom Fly, Dragon Fly, Dragon Fly X, Bone Fly, Sick Boom Fly, Tainted Boom Fly, Maw, Red Maw, Psychic Maw, Host, Red Host, Hard Host, Mobile Host, Flesh Mobile Host, Floast, Mushroom, Hopper, Eggy, Tainted Hopper, Leaper, Sticky Leaper, Flaming Hopper, Trite, Ragling, Rag Man's Ragling, Blister, Boil, Gut, Sack, Blue Boil, Gush, Pustule, Walking Boil, Walking Gut, Walking Sack, Brain, Black Globin's Head, Festering Guts, Poison Mind, Pon, Gyro, Grilled Gyro, Mr. Maw, Mr. Red Maw, Swinger, Mr. Mine, Baby, Angelic Baby, Angelic Baby (small), Wrinkly Baby, Imp, Unborn, Baby Begotten, Vis, Double Vis, Chubber, Scarred Double Vis, Vis Versa, Evis, Guts, Scarred Guts, Slog, Cyst, Knight, Selfless Knight, Loose Knight, Brainless Knight, Black Knight, Floating Knight, Bone Knight, Whipper, Snapper, Flagellant, Dople, Evil Twin, Leech, Kamikaze Leech, Holy Leech, Adult Leech, Lump, Tar Boy, MemBrain, Mama Guts, Dead Meat, Dinga, Mega Clotty, Para-Bite, Scarred Para-Bite, Fred, Eye, Bloodshot Eye, Holy Eye, Embryo, Spider, Big Spider, Strider, Rock Spider, Tinted Rock Spider, Coal Spider, Swarm Spider, Keeper, Buttlicker, Butt Slicker, Hanger, Swarmer, Mask + Heart, Mask II + 1/2 Heart, Baby Long Legs, Small Baby Long Legs, Crazy Long Legs, Small Crazy Long Legs, Fatty, Pale Fatty, Flaming Fatty, Fat Sack, Blubber, Half Sack, Conjoined Fatty, Blue Conjoined Fatty, Stoney, Cross Stoney, Bubbles, Quakey, Big Bony, Gutted Fatty, Gutted Fatty Eye, Peeping Fatty, Peeping Fatty Eye, Bloaty, Vis Fatty, Fetal Demon, Shady, Death's Head, Dank Death's Head, Cursed Death's Head, Brimstone Death's Head, Redskull, Flesh Death's Head, Dusty Death's Head, Ultra Death Head, Mom's Hand, Mom's Dead Hand, Level 2 Fly, Full Fly, Level 2 Willo, Level 2 Spider, Ticking Spider, Migraine, Dip, Corn, Brownie Corn, Big Corn, Drip, Wizoob, Red Ghost, Squirt, Dank Squirt, Hardy, Splurt, Cod Worm, Oob, Black Maw, Skinny, Rotty, Crispy, Bony, Holy Bony, Black Bony, Revenant, Quad Revenant, Maze Roamer, Homunculus, Begotten, Tumor, Planetoid, Camillo Jr., Psy Tumor, Poofer, Nerve Ending, Nerve Ending 2, Bishop, One Tooth, Fat Bat, Gurgling, Goat, Black Goat, Cultist, Blood Cultist, Grub, Wall Creep, Soy Creep, Tainted Soy Creep, Rage Creep, Blind Creep, The Thing, Round Worm, Tube Worm, Tainted Round Worm, Tainted Tube Worm, Night Crawler, Roundy, Ulcer, Fire Worm, Mole, Tainted Mole, Lil' Haunt, Polty, Kineti, Dust, Dukie, Meatball, Ministro, Fistuloid, Fly Trap, Poot Mine, Bombgagger, Flesh Maiden, Morningstar, Needle, Pasty, Fissure, Portal, Lil Portal, Henry, Stone Grimace, Vomit Grimace, Triple Grimace, Stone Eye, Constant Stone Shooter, Cross Stone Shooter, Brimstone Head, Gaping Maw, Broken Gaping Maw, Quake Grimace, Bomb Grimace, Peep Eye, Bloat Eye, Mockulus, Poky, Slide, Wall Hugger, Grudge, Ball and Chain, Spikeball, Singe's Ball, Pitfall, Suction Pitfall, Teleport Pitfall, Death Scythe, Ultra Death Scythe, Corn Mine, Siren Minion, Siren Helper, Dark Ball, Purple Ball, Visage Plasma, Ultra Pestilence Fly Ball, Ultra Greed Coin (Spinner), Ultra Greed Coin (Key), Ultra Greed Coin (Bomb), Ultra Greed Coin (Heart), Dummy }}
+
+== Champions ==
+See the [[Champions|champions page]].
+
+== Monster Replacements ==
+Some monsters have a chance to be replaced with other monsters when they spawn, {{dlc|a+}} but only at room entry. {{dlc|a}} Some replacements only occur on certain floors.
+
+(Disclaimer: Chances are approximate!)
+
+=== Rebirth ===
+{| class="wikitable mw-collapsible mw-collapsed striped" style="text-align: center"
+ ! Base Monster
+ ! Replacement
+ ! Chance
+ |-
+ | [[file:Mulligan.png|50px|link=Mulligan]]
+ | [[file:Mulligoon.png|50px|link=Mulligoon]]
+ | 10%
+ |-
+ | [[file:Mulligan.png|50px|link=Mulligan]]
+ | rowspan="2" | [[file:Mulliboom.png|50px|link=Mulliboom]]
+ | rowspan="2" | 1%
+ |-
+ | [[file:Mulligoon.png|50px|link=Mulligoon]]
+ |-
+ | [[file:Hopper.png|50px|link=Hopper]]
+ | [[file:Trite.png|70px|link=Trite]]
+ | 6%
+ |-
+ | [[file:Stone Grimace.png|50px|link=Stone Grimace]]
+ | [[file:Vomit Grimace.png|50px|link=Vomit Grimace]]
+ | 6%
+ |-
+ | [[file:Dople.png|50px|link=Dople]]
+ | [[file:Evil Twin.png|80px|link=Evil Twin]]
+ | {{dlc|nr}} 5%
+ |-
+ | [[file:Eye.png|50px|link=Eye]]
+ | [[file:Bloodshot Eye.png|50px|link=Bloodshot Eye (Enemy)]]
+ | 5%
+ |-
+ | [[file:Leech.png|50px|link=Leech (Enemy)]]
+ | [[file:Kamikaze Leech.png|50px|link=Kamikaze Leech]]
+ | 5%
+ |-
+ | [[file:Leech.png|50px|link=Leech (Enemy)]]
+ | rowspan="2" | [[file:Holy Leech.png|50px|link=Holy Leech]]
+ | rowspan="2" | 1%
+ |-
+ | [[file:Kamikaze Leech.png|50px|link=Kamikaze Leech]]
+ |-
+ | [[file:Maw.png|50px|link=Maw]]
+ | [[file:Red Maw.png|50px|link=Red Maw]]
+ | 10%
+ |-
+ | [[file:Maw.png|50px|link=Maw]]
+ | rowspan="2" | [[file:Psychic Maw.png|50px|link=Psychic Maw]]
+ | rowspan="2" | 1%
+ |-
+ | [[file:Red Maw.png|50px|link=Red Maw]]
+ |-
+ | [[file:Host.png|50px|link=Host]]
+ | [[file:Red Host.png|50px|link=Red Host]]
+ | 10%
+ |-
+ | [[file:Vis.png|50px|link=Vis]]
+ | [[file:Double Vis.png|50px|link=Double Vis]]
+ | 6% ({{dlc|r}}{{s|Utero}} only)
+ |-
+ | [[file:Vis.png|50px|link=Vis]]
+ | rowspan="2" | [[file:Chubber.png|50px|link=Chubber]]
+ | rowspan="2" | 1%
+ |-
+ | [[file:Double Vis.png|50px|link=Double Vis]]
+ |-
+ | [[file:Boom Fly.png|50px|link=Boom Fly]]
+ | [[file:Red Boom Fly.png|50px|link=Red Boom Fly]]
+ | 10% ({{dlc|r}} Not in [[Chapter 1]])
+ |-
+ | [[file:Pooter.png|50px|link=Pooter]]
+ | [[file:Super Pooter.png|50px|link=Fat Fly]]
+ | 10%
+ |-
+ | [[file:Knight.png|50px|link=Knight]]
+ | [[file:Selfless Knight.png|50px|link=Selfless Knight]]
+ | 5%
+ |-
+ | [[file:Clotty.png|50px|link=Clotty]]
+ | rowspan="2" | [[file:I.Blob.png|50px|link=I.Blob]]
+ | rowspan="2" | 1%
+ |-
+ | [[file:Clot.png|50px|link=Clot]]
+ |-
+ | [[file:MemBrain.png|100px|link=MemBrain]]
+ | [[file:Mama Guts.png|100px|link=Mama Guts]]
+ | 6%
+ |-
+ | [[file:Globin.png|50px|link=Globin]]
+ | [[file:Gazing Globin.png|50px|link=Gazing Globin]]
+ | 10%
+ |-
+ | [[file:Baby.png|40px|link=Baby]]
+ | [[file:Angelic Baby.png|55px|link=Angelic Baby]]
+ | 6%
+ |-
+ | [[file:Boil.png|50px|link=Boil]]
+ | [[file:Gut.png|50px|link=Gut]]
+ | 6%
+ |-
+ | [[file:Boil.png|50px|link=Boil]]
+ | rowspan="2" | [[file:Sack.png|60px|link=Sack]]
+ | rowspan="2" | 1%
+ |-
+ | [[file:Gut.png|50px|link=Gut]]
+ |-
+ | [[file:Walking Boil.png|50px|link=Walking Boil]]
+ | [[file:Walking Gut.png|50px|link=Walking Gut]]
+ | 6%
+ |-
+ | [[file:Walking Boil.png|50px|link=Walking Boil]]
+ | rowspan="2" | [[file:Walking Sack.png|60px|link=Walking Sack]]
+ | rowspan="2" | 1%
+ |-
+ | [[file:Walking Gut.png|50px|link=Walking Gut]]
+ |-
+ | [[file:Sucker.png|50px|link=Sucker]]
+ | [[file:Spit.png|50px|link=Spit]]
+ | 6%
+ |-
+ | [[file:Poky.png|60px|link=Poky]]
+ | [[file:Slide.png|60px|link=Slide]]
+ | {{dlc|nr}} 6%
+ |}
+
+=== {{dlc+|a}} Afterbirth ===
+ {| class="wikitable mw-collapsible mw-collapsed striped" style="text-align: center"
+ ! Base Monster
+ ! Replacement
+ ! Chance
+ ! Notes
+ |-
+ | [[file:Frowning Gaper.png|50px|link=Frowning Gaper]]
+ | rowspan="2" | [[file:Flaming Gaper.png|60px|link=Flaming Gaper]]
+ | rowspan="2" | 60%
+ | rowspan="2" style="text-align: left" | Exclusive to {{s|Burning Basement}}
+ |-
+ | [[file:Gaper.png|50px|link=Gaper]]
+ |-
+ | [[file:Fatty.png|50px|link=Fatty]]
+ | rowspan="2" | [[file:Flaming Fatty.png|50px|link=Flaming Fatty]]
+ | rowspan="2" | 60%
+ | rowspan="2" style="text-align: left" | Exclusive to {{s|Burning Basement}}<br>Only a single Burning Basement room contains a Pale Fatty, making it a very unusual replacement to witness.
+ |-
+ | [[file:Pale Fatty.png|50px|link=Pale Fatty]]
+ |-
+ | [[file:Hopper.png|50px|link=Hopper]]
+ | rowspan="2" | [[file:Flaming Hopper.png|60px|link=Flaming Hopper]]
+ | 60%
+ | rowspan="2" style="text-align: left" | Exclusive to {{s|Burning Basement}}
+ |-
+ | [[file:Trite.png|70px|link=Trite]]
+ | {{dlc|nr}} 60%
+ |-
+ | [[file:Hive.png|50px|link=Hive]]
+ | [[file:Drowned Hive.png|50px|link=Drowned Hive]]
+ | 50%
+ | style="text-align: left" | Exclusive to {{s|Flooded Caves}}
+ |-
+ | [[file:Charger.png|50px|link=Charger]]
+ | rowspan="3" | [[file:Drowned Charger.png|50px|link=Drowned Charger]]
+ | 50%
+ | rowspan="3" style="text-align: left" | Exclusive to {{s|Flooded Caves}}
+ |-
+ | [[file:Maggot.png|50px|link=Maggot]]
+ | rowspan="2" | {{dlc|nr}} 50%
+ |-
+ | [[file:Spitty.png|50px|link=Spitty]]
+ |-
+ | [[file:Boom Fly.png|50px|link=Boom Fly]]
+ | rowspan="2" | [[file:Drowned Boom Fly.png|50px|link=Drowned Boom Fly]]
+ | rowspan="2" | 50%
+ | rowspan="2" style="text-align: left" | Exclusive to {{s|Flooded Caves}}
+ |-
+ | [[file:Red Boom Fly.png|50px|link=Red Boom Fly]]
+ |-
+ | [[file:Squirt.png|50px|link=Squirt]]
+ | [[file:Dank Squirt.png|50px|link=Dank Squirt]]
+ | 50%
+ | style="text-align: left" | Exclusive to {{s|Dank Depths}}
+ |-
+ | [[file:Death's Head.png|50px|link=Death's Head]]
+ | [[file:Dank Death's Head.png|50px|link=Dank Death's Head]]
+ | 50%
+ | style="text-align: left" | Exclusive to {{s|Dank Depths}}
+ |-
+ | [[file:Globin.png|50px|link=Globin]]
+ | rowspan="2" | [[file:Dank Globin.png|50px|link=Dank Globin]]
+ | rowspan="2" | 50%
+ | rowspan="2" style="text-align: left" | Exclusive to {{s|Dank Depths}}
+ |-
+ | [[file:Gazing Globin.png|50px|link=Gazing Globin]]
+ |-
+ | [[file:Guts.png|50px|link=Guts]]
+ | [[file:Scarred Guts.png|50px|link=Scarred Guts]]
+ | 50%
+ | style="text-align: left" | Exclusive to {{s|Scarred Womb}}
+ |-
+ | [[file:Para-Bite.png|50px|link=Para-Bite]]
+ | [[file:Scarred Para-Bite.png|50px|link=Scarred Para-Bite]]
+ | 50%
+ | style="text-align: left" | Exclusive to {{s|Scarred Womb}}
+ |-
+ | [[file:Vis.png|50px|link=Vis]]
+ | rowspan="2" | [[file:Scarred Double Vis.png|50px|link=Scarred Double Vis]]
+ | rowspan="2" | 50%
+ | rowspan="2" style="text-align: left" | Exclusive to {{s|Scarred Womb}}
+ |-
+ | [[file:Double Vis.png|50px|link=Double Vis]]
+ |}
+{{dlc-}}
+
+=== {{dlc+|a+}} Afterbirth+ ===
+ {| class="wikitable mw-collapsible mw-collapsed striped" style="text-align: center"
+ ! Base Monster
+ ! Replacement
+ ! Chance
+ ! Notes
+ |-
+ | [[file:Keeper.png|50px|link=Keeper (Enemy)]]
+ | rowspan="2" | [[file:Blister.png|70px|link=Blister (Enemy)]]
+ | {{dlc|nr}} 10%
+ |
+ |-
+ | [[file:Ticking Spider.png|60px|link=Ticking Spider]]
+ | {{dlc|nr}} 20%
+ |
+ |-
+ | [[file:Host.png|50px|link=Host]]
+ | rowspan="2" | [[file:Mushroom (Enemy).png|50px|link=Mushroom (Enemy)]]
+ | rowspan="2" | 20%
+ | rowspan="2" style="text-align: left" | {{dlc|r}} Exclusive to [[Chapter 2]]
+ |-
+ | [[file:Red Host.png|50px|link=Red Host]]
+ |-
+ | [[file:Hopper.png|50px|link=Hopper]]
+ | rowspan="2" | [[file:Ministro.png|50px|link=Ministro]]
+ | rowspan="2" | {{dlc|nr}} 20%
+ | rowspan="2" |
+ |-
+ | [[file:Trite.png|70px|link=Trite]]
+ |-
+ | [[file:Nerve Ending.png|50px|link=Nerve Ending]]
+ | [[file:Nerve Ending 2.png|50px|link=Nerve Ending 2]]
+ | 20%
+ |
+ |-
+ | [[file:Brain.png|50px|link=Brain]]
+ | [[file:Poison Mind.png|50px|link=Poison Mind]]
+ | {{dlc|nr}} 20%
+ |
+ |-
+ | [[file:Pale Fatty.png|50px|link=Pale Fatty]]
+ | [[file:Stoney.png|50px|link=Stoney]]
+ | 10%
+ |
+ |-
+ | [[file:Wall Creep.png|50px|link=Wall Creep]]
+ | rowspan="3" | [[file:The Thing.png|50px|link=The Thing]]
+ | rowspan="3" | {{dlc|nr}} 20%
+ | rowspan="3" |
+ |-
+ | [[file:Blind Creep.png|50px|link=Blind Creep]]
+ |-
+ | [[file:Rage Creep.png|50px|link=Rage Creep]]
+ |-
+ | [[file:Mr Maw.png|50px|link=Mr. Maw]]
+ | [[file:Mr. Red Maw.png|50px|link=Mr. Red Maw]]
+ | 20%
+ |
+ |-
+ | [[file:Skinny.png|50px|link=Skinny]]
+ | rowspan="2" | [[file:Crispy.png|60px|link=Crispy]]
+ | rowspan="2" | 40%
+ | rowspan="2" style="text-align: left" | Exclusive to {{s|Burning Basement}}<br>Rottys do not appear in any Burning Basement room layouts, but can still be replaced regardless.
+ |-
+ | [[file:Rotty.png|50px|link=Rotty]]
+ |-
+ | [[file:Dank Charger.png|50px|link=Dank Charger]]
+ | [[file:Drowned Charger.png|50px|link=Drowned Charger]]
+ | 50%
+ | style="text-align: left" | Exclusive to {{s|Flooded Caves}}<br>Dank Chargers do not appear in any Flooded Caves room layouts, but can still be replaced regardless.
+ |-
+ | [[file:Stoney.png|50px|link=Stoney]]
+ | [[file:Cross Stoney.png|50px|link=Cross Stoney]]
+ | 20%
+ | style="text-align: left" | Exclusive to [[Aprils Fool]] challenge
+ |}
+{{dlc-}}
+
+=== {{dlc+|r}} Repentance ===
+{| class="wikitable mw-collapsible mw-collapsed striped" style="text-align: center"
+ ! Base Monster
+ ! Replacement
+ ! Chance
+ |-
+ | [[file:Horf.png|50px|link=Horf]]
+ | [[file:Sub Horf.png|50px|link=Sub Horf]]
+ | 1.66%
+ |-
+ | [[file:Knight.png|50px|link=Knight]]
+ | [[file:Loose Knight.png|50px|link=Loose Knight]]
+ | 1.66%
+ |}
+{{dlc-}}
+
+== Bugs ==
+{{Bug|plat=PS4|dlc=r|Some Champion enemies that turn into another enemy when killed (Gurgle turning into Splasher for instance) become invisible.}}
+{{nav|fr=Monstres}}
+[[Category:Monsters| ]]

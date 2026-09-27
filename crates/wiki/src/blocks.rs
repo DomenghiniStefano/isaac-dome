@@ -5,10 +5,13 @@
 //! The input is external data: no path may panic. Whatever isn't recognized degrades to
 //! a paragraph.
 
-use crate::inline::{name_list_items, parse_inline};
-use crate::resolver::Resolver;
-use crate::template::{template_segments, Segment, Template};
-use crate::{Block, Diagnostics, Inline, ListItem};
+mod tabber;
+mod table;
+
+use crate::inline::{collectible, name_list_items, parse_inline, try_comment};
+use crate::resolver::{Resolver, Row};
+use crate::template::{parse_template_at, template_segments, Segment, Template};
+use crate::{Block, Diagnostics, Inline, ListItem, Style};
 
 /// A list item still to be built: depth, whether the last marker is `#`, text.
 struct RawItem {
@@ -25,6 +28,12 @@ struct Parser<'a> {
     para: Vec<String>,
     list: Vec<RawItem>,
     table: Option<Vec<String>>,
+    /// Inside a `<syntaxhighlight>…</syntaxhighlight>` span opened on an earlier line: every
+    /// line until (and including) the one that closes it is swallowed whole, neither prose
+    /// nor a template closer. GB Bug's "Algorithm" is the one page that opens one; before
+    /// this its Lua listing read as loose paragraph text and its own `}` (a table literal,
+    /// not `{{…}}`'s closer) as an orphaned one.
+    in_verbatim: bool,
 }
 
 /// A template whose content is block-level, and what this pass is allowed to do with it.
@@ -35,6 +44,14 @@ enum Wrapper {
     /// (`column list`) or that the box scrolls (`scroll box`), and the content it holds is
     /// already blocks. Dropped whole, because nothing it says is lost.
     Layout { param: &'static str },
+    /// No content at all, not even a named parameter worth reinserting: a wrapper Decision
+    /// 10 already excludes with a reason (`item pool`'s price-type box, `collection page`'s
+    /// grid recreation, `function`'s Lua signature, `slideshow`'s image gallery), and whose
+    /// multi-line span, left un-unwrapped like any other unknown template, left its own
+    /// closing `}}` stranded on a line of its own — 70 of them, one per span, until this.
+    /// Distinct from `Layout`: that one still owes its `content=` parameter a place in the
+    /// tree, this one owes nothing because task 1 already decided there is nothing to keep.
+    Dropped,
     /// Content whose wrapper the tree already carries somewhere else. Every `{{bug|…}}`
     /// that spans lines sits under `== Bugs ==`, which is `SectionKind::Bugs`, and the
     /// single-line case has been dropped inline since `CONTENT_WRAPPERS` existed: keeping
@@ -54,10 +71,23 @@ enum Wrapper {
 /// `column list` 55, `bug` 9, `book of virtues synergy` 6, `scroll box` 1,
 /// `book of belial synergy` 1. A closed list on purpose — a family that is not here is
 /// counted by `text_nodes_carry_no_raw_template_syntax` rather than guessed at.
+///
+/// `item pool`, `collection page`, `function` and `slideshow` joined on 2026-09-27 (card #86
+/// fix 2): all four are excluded with a reason in `corrections.json` (task 1 — none of them
+/// carries structure worth reading), but every one is written multi-line, and an excluded
+/// name is still an *unknown* one to this pass — the same "unknown template, left as its own
+/// source" fallback `push_template` gives anything not in this list, whose last line is
+/// nothing but the template's own closing `}}`. 70 orphan closers, on exactly the pages that
+/// use these four (measured with `examples/probe_orphans.rs`), and zero left once they are
+/// unwrapped instead — none of the 70 was the wiki's own malformed markup.
 fn wrapper(name: &str) -> Option<Wrapper> {
     match name {
         "column list" | "scroll box" => Some(Wrapper::Layout { param: "content" }),
-        "bug" => Some(Wrapper::Transparent),
+        "item pool" | "collection page" | "function" | "slideshow" => Some(Wrapper::Dropped),
+        // `{{bug|…}}` and `{{quote|…}}`: a sentence (or several) with nothing around it to
+        // draw, the same reason `bug`'s own content wrapper applies to `quote` too — a block
+        // quote (Keeper ARG's voicemail transcripts) written across several lines.
+        "bug" | "quote" => Some(Wrapper::Transparent),
         "book of virtues synergy" | "book of belial synergy" => Some(Wrapper::Headed {
             param: "description",
         }),
@@ -114,6 +144,7 @@ fn push_template(out: &mut String, t: &Template, source: &str, after: &str) {
     }
     match wrapper(&t.name) {
         Some(Wrapper::Layout { param }) => push_content(out, t.named.get(param), after),
+        Some(Wrapper::Dropped) => {}
         Some(Wrapper::Transparent) => push_content(out, t.args.first(), after),
         Some(Wrapper::Headed { param }) => push_headed(out, t, param, source, after),
         None => out.push_str(source),
@@ -145,6 +176,7 @@ pub fn parse_blocks(body: &str, r: &Resolver, d: &mut Diagnostics) -> Vec<Block>
         para: Vec::new(),
         list: Vec::new(),
         table: None,
+        in_verbatim: false,
     };
     for raw in unwrapped(body).lines() {
         p.line(raw.trim_end());
@@ -156,12 +188,25 @@ impl Parser<'_> {
     /// One line, into the state it belongs to. Each kind of line closes the states it does not
     /// belong to and opens its own; the order of the checks is the precedence.
     fn line(&mut self, line: &str) {
+        // Inside a verbatim span every line is swallowed, until the closing tag.
+        if self.in_verbatim {
+            if verbatim_close(line.trim_start()) {
+                self.in_verbatim = false;
+            }
+            return;
+        }
         // Inside a table every line belongs to it, until `|}`.
         if self.table.is_some() {
             self.table_line(line);
             return;
         }
         let trimmed = line.trim_start();
+        // A `<syntaxhighlight>` this line opens but does not close on its own still gets to
+        // be whatever this line otherwise is (a list item, most often) — only what comes
+        // after it, on later lines, is verbatim.
+        if verbatim_open_without_close(trimmed) {
+            self.in_verbatim = true;
+        }
         if trimmed.starts_with("{|") {
             self.flush_para();
             self.flush_list();
@@ -173,6 +218,19 @@ impl Parser<'_> {
             self.flush_list();
             let inline = parse_inline(text, self.r, self.d);
             self.out.push(Block::Heading { level, inline });
+            return;
+        }
+        // `<tabber>` itself is dropped like any other HTML tag it doesn't otherwise know
+        // (inline.rs's `try_tag`), so what is left to read here is the two lines the
+        // extension actually gives meaning to: a tab's own opening line and `</tabber>`.
+        if trimmed == "</tabber>" {
+            return;
+        }
+        if let Some(label) = tabber::tabber_label(trimmed) {
+            self.flush_para();
+            self.flush_list();
+            let inline = parse_inline(label, self.r, self.d);
+            self.out.push(Block::Heading { level: 3, inline });
             return;
         }
         if let Some(item) = list_item(trimmed) {
@@ -191,7 +249,7 @@ impl Parser<'_> {
             return;
         }
         self.flush_list();
-        if !self.name_list_line(trimmed) {
+        if !self.name_list_line(trimmed) && !self.synergy_list_line(trimmed) {
             self.paragraph_line(trimmed);
         }
     }
@@ -215,6 +273,46 @@ impl Parser<'_> {
             ordered: false,
             items,
         });
+        true
+    }
+
+    /// Card #86 fix 1: a line that is nothing but `{{book of virtues synergy list}}`/`{{book
+    /// of belial synergy list}}` — the same "trailing whitespace and a comment allowed" shape
+    /// `name_list_items` reads — becomes the list the wiki's own `{{cargo lookup}}` over
+    /// `bov_combination`/`bob_combination` would draw: one item per row, read straight from
+    /// the downloaded table (`Resolver::synergy_rows`) rather than by expanding that lookup's
+    /// wikitext, which this parser cannot read as a query. `false` for any other line, and
+    /// for a name the resolver has no rows for (the wrong table, or the fetch hasn't run) —
+    /// the same degrade a name list with nothing to draw already has.
+    fn synergy_list_line(&mut self, trimmed: &str) -> bool {
+        let Some((t, end)) = parse_template_at(trimmed, 0) else {
+            return false;
+        };
+        let Some(rows) = self.r.synergy_rows(&t.name) else {
+            return false;
+        };
+        let rest = trimmed.get(end..).unwrap_or_default().trim();
+        if !rest.is_empty() && try_comment(rest) != Some(rest.len()) {
+            return false;
+        }
+        self.flush_para();
+        let items: Vec<ListItem> = rows
+            .iter()
+            .filter_map(|row| synergy_item(row, self.r, self.d))
+            .map(|inline| ListItem {
+                inline,
+                children: Vec::new(),
+            })
+            .collect();
+        // No rows — the fetch hasn't downloaded `bov_combination`/`bob_combination` yet, or
+        // the real table has none — degrades to nothing, the same as a name list with no
+        // names, rather than an empty bulleted list.
+        if !items.is_empty() {
+            self.out.push(Block::List {
+                ordered: false,
+                items,
+            });
+        }
         true
     }
 
@@ -275,7 +373,7 @@ impl Parser<'_> {
 
     fn close_table(&mut self) {
         if let Some(lines) = self.table.take() {
-            let table = build_table(&lines, self.r, self.d);
+            let table = table::build_table(&lines, self.r, self.d);
             self.out.push(table);
         }
     }
@@ -300,6 +398,54 @@ fn list_item(trimmed: &str) -> Option<RawItem> {
             .trim()
             .to_string(),
     })
+}
+
+/// One `bov_combination`/`bob_combination` row, as `{{cargo lookup}}`'s own pattern draws it
+/// (`* {{link|…}}: @description`): the collectible it names, resolved by page name — the row
+/// carries no id, so there is no id to prefer — then its own description, parsed as inline
+/// wikitext. `None` for a row naming nothing, which the wiki's own `WHERE description IS NOT
+/// NULL` already keeps out of the real table.
+fn synergy_item(row: &Row, r: &Resolver, d: &mut Diagnostics) -> Option<Vec<Inline>> {
+    let name = row
+        .get("collectible")
+        .map(String::as_str)
+        .unwrap_or_default()
+        .trim();
+    if name.is_empty() {
+        return None;
+    }
+    let mut inline = vec![match collectible("i", name, r, d) {
+        Some(target) => Inline::Ref {
+            target,
+            label: name.to_string(),
+        },
+        None => Inline::Text {
+            text: name.to_string(),
+            style: Style::Plain,
+        },
+    }];
+    inline.push(Inline::Text {
+        text: ": ".to_string(),
+        style: Style::Plain,
+    });
+    let description = row
+        .get("description")
+        .map(String::as_str)
+        .unwrap_or_default();
+    inline.extend(parse_inline(description, r, d));
+    Some(inline)
+}
+
+/// Whether `line` opens a `<syntaxhighlight …>` tag with no matching close on the same
+/// line. Case-insensitive: MediaWiki's own tag parsing is.
+fn verbatim_open_without_close(line: &str) -> bool {
+    let lower = line.to_ascii_lowercase();
+    lower.contains("<syntaxhighlight") && !lower.contains("</syntaxhighlight>")
+}
+
+/// Whether `line` carries the closing `</syntaxhighlight>`.
+fn verbatim_close(line: &str) -> bool {
+    line.to_ascii_lowercase().contains("</syntaxhighlight>")
 }
 
 /// `=== T ===` → `(3, "T")`, `==== T ====` → `(4, "T")`. Level 2 never appears here: the
@@ -385,126 +531,6 @@ fn build_lists(items: &[RawItem], depth: usize, r: &Resolver, d: &mut Diagnostic
     into_lists(items)
 }
 
-/// Splits a table row into cells, ignoring a separator nested inside `{{…}}` or `[[…]]`.
-///
-/// `||` is both the cell separator and, inside a template, an empty argument:
-/// `{{e|Mask + Heart||Heart}}` is one cell, and cutting it in two leaves each half
-/// holding template syntax that no longer parses — literal `{{` in a text node.
-///
-/// Depth counts the two-character openers and saturates at zero, so a stray `}}` on a
-/// malformed row can't drive it negative: the row degrades into one cell, never into
-/// none. Every delimiter here is ASCII, so slicing on these byte offsets stays on
-/// character boundaries.
-fn split_cells<'a>(body: &'a str, sep: &str) -> Vec<&'a str> {
-    let bytes = body.as_bytes();
-    let sep = sep.as_bytes();
-    let mut cells = Vec::new();
-    let mut depth: usize = 0;
-    let mut start = 0;
-    let mut i = 0;
-    while i < bytes.len() {
-        match bytes.get(i..i + 2) {
-            Some(b"{{") | Some(b"[[") => {
-                depth += 1;
-                i += 2;
-            }
-            Some(b"}}") | Some(b"]]") => {
-                depth = depth.saturating_sub(1);
-                i += 2;
-            }
-            Some(pair) if depth == 0 && pair == sep => {
-                cells.push(&body[start..i]);
-                i += 2;
-                start = i;
-            }
-            _ => i += 1,
-        }
-    }
-    cells.push(&body[start..]);
-    cells
-}
-
-/// The lines between `{|` and `|}`. The first line with `!` cells is `header`; every
-/// other line, `!` cells included (the pill table's subheadings), goes into `rows`.
-fn build_table(lines: &[String], r: &Resolver, d: &mut Diagnostics) -> Block {
-    let mut table = TableBuilder::default();
-    for line in lines {
-        let l = line.trim();
-        if l.starts_with("|-") {
-            table.close_row();
-            continue;
-        }
-        if l.starts_with("|+") {
-            continue; // caption
-        }
-        let (is_header, body) = if let Some(b) = l.strip_prefix('!') {
-            (true, b)
-        } else if let Some(b) = l.strip_prefix('|') {
-            (false, b)
-        } else {
-            continue;
-        };
-        table.row_is_header |= is_header;
-        let sep = if is_header { "!!" } else { "||" };
-        for cell in split_cells(body, sep) {
-            let cell = strip_attributes(cell.trim());
-            table.row.push(parse_inline(cell, r, d));
-        }
-    }
-    table.close_row();
-    Block::Table {
-        header: table.header,
-        rows: table.rows,
-    }
-}
-
-#[derive(Default)]
-struct TableBuilder {
-    header: Vec<Vec<Inline>>,
-    rows: Vec<Vec<Vec<Inline>>>,
-    row: Vec<Vec<Inline>>,
-    row_is_header: bool,
-    /// At least one row already closed: from here on even `!` rows go into `rows`.
-    closed_any: bool,
-}
-
-impl TableBuilder {
-    fn close_row(&mut self) {
-        let is_header = std::mem::take(&mut self.row_is_header);
-        if self.row.is_empty() {
-            return;
-        }
-        let cells = std::mem::take(&mut self.row);
-        if is_header && !self.closed_any {
-            self.header = cells;
-        } else {
-            self.rows.push(cells);
-        }
-        self.closed_any = true;
-    }
-}
-
-/// `colspan="2"| text` → `text`. A `|` inside `[[…]]`/`{{…}}` is not a separator, and a
-/// `|` with no `=` before it is not an attribute: the cell stays whole.
-fn strip_attributes(cell: &str) -> &str {
-    let mut depth = 0i32;
-    for (i, ch) in cell.char_indices() {
-        match ch {
-            '[' | '{' => depth += 1,
-            ']' | '}' => depth -= 1,
-            '|' if depth == 0 => {
-                let before = cell.get(..i).unwrap_or_default();
-                if before.contains('=') {
-                    return cell.get(i + 1..).unwrap_or_default().trim();
-                }
-                return cell;
-            }
-            _ => {}
-        }
-    }
-    cell
-}
-
 // Tests extract one variant and panic on the rest: the wildcard is the assertion.
 #[allow(clippy::wildcard_enum_match_arm)]
 #[cfg(test)]
@@ -515,6 +541,10 @@ mod tests {
 
     fn p(s: &str) -> Vec<Block> {
         parse_blocks(s, &test_resolver(), &mut Diagnostics::default())
+    }
+    fn pd(s: &str) -> (Vec<Block>, Diagnostics) {
+        let mut d = Diagnostics::default();
+        (parse_blocks(s, &test_resolver(), &mut d), d)
     }
     fn t(s: &str) -> Vec<Inline> {
         vec![Inline::Text {
@@ -547,6 +577,68 @@ mod tests {
         // Nothing of the wrapper survives, neither its opener nor the line that closed it.
         assert_eq!(blocks.len(), 1, "{blocks:?}");
         assert_eq!(items[0].inline, t("The flies:"));
+    }
+
+    /// Card #86 fix 2: a multi-line `Wrapper::Dropped` template (Devil Room (Item Pool)'s own
+    /// `{{item pool | price type = health}}` box) used to leave its own closing `}}` on a
+    /// line of its own — an orphan closer, 70 of them across every page that used one of the
+    /// four templates in this family before this. Unwrapped like any other layout wrapper,
+    /// nothing of it survives and nothing is left to count.
+    #[test]
+    fn a_dropped_multiline_wrapper_leaves_no_orphan_closer() {
+        let (blocks, d) = pd(concat!(
+            "{{item pool\n",
+            " | price type = health\n",
+            "}}\n",
+            "\n",
+            "The Devil Room pool.\n",
+        ));
+        assert_eq!(d.orphan_closers, 0, "{d:?}");
+        assert_eq!(
+            blocks,
+            vec![Block::Paragraph {
+                inline: t("The Devil Room pool.")
+            }]
+        );
+    }
+
+    /// GB Bug's "Algorithm" section: a `<syntaxhighlight>` tag opens mid-line, inside a list
+    /// item, and does not close until a line of its own several lines down. Read line by
+    /// line without this, the Lua inside became loose paragraph text and its own `}` — a
+    /// table literal, not a template's closer — bumped `orphan_closers`. Everything from the
+    /// tag onward through its close is dropped whole; the sentence that opens the item and
+    /// the list item right after `</syntaxhighlight>` are unaffected.
+    #[test]
+    fn a_syntaxhighlight_span_is_dropped_whole_and_counts_no_orphan_closer() {
+        let (blocks, d) = pd(concat!(
+            "* intro: <syntaxhighlight lang=\"lua\">\n",
+            "local t = {\n",
+            "\tfield, -- comment\n",
+            "}\n",
+            "</syntaxhighlight>\n",
+            "* after\n",
+        ));
+        let Block::List { items, .. } = &blocks[0] else {
+            panic!("a list, got {blocks:?}")
+        };
+        assert_eq!(items.len(), 2, "{items:?}");
+        let flat = |inline: &[Inline]| -> String {
+            inline
+                .iter()
+                .filter_map(|i| match i {
+                    Inline::Text { text, .. } => Some(text.as_str()),
+                    _ => None,
+                })
+                .collect()
+        };
+        assert_eq!(flat(&items[0].inline).trim(), "intro:");
+        assert!(
+            !flat(&items[0].inline).contains("local t"),
+            "the Lua code leaked into the item: {:?}",
+            items[0].inline
+        );
+        assert_eq!(flat(&items[1].inline).trim(), "after");
+        assert_eq!(d.orphan_closers, 0, "{d:?}");
     }
 
     /// The half of B49 that is not layout. The two `X synergy` templates carry their
@@ -702,26 +794,6 @@ mod tests {
     }
 
     #[test]
-    fn table() {
-        let src = "{| class=\"wikitable\"\n ! Pill !! Changes Into\n |-\n | Stat up pill\n | Stat down pill\n |-\n ! colspan=\"2\"| Neutral pills\n |-\n |colspan=\"2\"| ''I Found Pills''\n|}\n";
-        let v = p(src);
-        let Block::Table { header, rows } = &v[0] else {
-            panic!("table")
-        };
-        assert_eq!(header, &vec![t("Pill"), t("Changes Into")]);
-        assert_eq!(rows.len(), 3);
-        assert_eq!(rows[0], vec![t("Stat up pill"), t("Stat down pill")]);
-        assert_eq!(rows[1], vec![t("Neutral pills")]);
-        assert_eq!(
-            rows[2],
-            vec![vec![Inline::Text {
-                text: "I Found Pills".into(),
-                style: Style::Italic
-            }]]
-        );
-    }
-
-    #[test]
     fn headings_and_definition_lines() {
         let v = p("=== Phase 1 ===\ntext\n==== Phase 2-1 (100-80% HP) ====\n: indented\n");
         assert_eq!(
@@ -795,24 +867,6 @@ mod tests {
             items.len(),
             2,
             "`first` and `second` are siblings: {items:?}"
-        );
-    }
-
-    /// `||` inside a template is an empty argument, not a cell separator. Mystery Egg's
-    /// table carries `{{e|Mask + Heart||Heart}}`; split on the bare `||` it becomes two
-    /// cells, each holding half a template that no longer parses — which is how literal
-    /// `{{` ends up in a text node.
-    #[test]
-    fn a_pipe_pair_inside_a_template_is_an_argument_not_a_cell_separator() {
-        let v = p("{|\n| {{e|Mask + Heart||Heart}} || after\n");
-        let Block::Table { rows, .. } = &v[0] else {
-            panic!("table")
-        };
-        assert_eq!(rows.len(), 1);
-        assert_eq!(
-            rows[0].len(),
-            2,
-            "the template is one cell, `after` is the other: {rows:?}"
         );
     }
 
@@ -944,22 +998,81 @@ mod tests {
         );
     }
 
+    /// Card #86, fix 1: a bare `{{book of virtues synergy list}}` line becomes one list item
+    /// per `bov_combination` row — `test_resolver()`'s own fixture row names "Breakfast" and
+    /// carries a description — a reference to the item it names, then its description parsed
+    /// as inline wikitext, the same shape the wiki's own `{{cargo lookup}}` pattern draws.
     #[test]
-    fn table_cell_keeps_pipe_inside_link_and_survives_missing_close() {
-        let v = p("{|\n| [[Shot Speed|speed]] || x=1|kept\n");
-        let Block::Table { header, rows } = &v[0] else {
-            panic!("table")
+    fn a_synergy_list_reads_its_rows_from_the_downloaded_cargo_tables() {
+        let blocks = p("{{Book of Virtues synergy list}}\n");
+        let Block::List { items, .. } = &blocks[0] else {
+            panic!("a list, got {blocks:?}")
         };
-        assert!(header.is_empty());
-        assert_eq!(
-            rows,
-            &vec![vec![
-                vec![Inline::Concept {
-                    page: "Shot Speed".into(),
-                    label: "speed".into()
-                }],
-                t("kept")
-            ]]
+        assert_eq!(items.len(), 1, "{items:?}");
+        assert!(
+            items[0].inline.iter().any(|i| matches!(
+                i,
+                Inline::Ref {
+                    target: Target::Item { id: 25 },
+                    ..
+                }
+            )),
+            "the collectible is missing: {:?}",
+            items[0].inline
         );
+        let flat: String = items[0]
+            .inline
+            .iter()
+            .filter_map(|i| match i {
+                Inline::Text { text, .. } => Some(text.as_str()),
+                _ => None,
+            })
+            .collect();
+        assert!(
+            flat.contains("Heals for a extra half a heart."),
+            "the description is missing: {flat:?}"
+        );
+    }
+
+    /// The Belial twin reads its own table, not the Book of Virtues one: `bob_combination`'s
+    /// fixture row carries a different description, so the two lines can't be confused for
+    /// each other's rows.
+    #[test]
+    fn the_belial_synergy_list_reads_its_own_table() {
+        let blocks = p("{{Book of Belial synergy list}}\n");
+        let Block::List { items, .. } = &blocks[0] else {
+            panic!("a list, got {blocks:?}")
+        };
+        assert_eq!(items.len(), 1, "{items:?}");
+        let flat: String = items[0]
+            .inline
+            .iter()
+            .filter_map(|i| match i {
+                Inline::Text { text, .. } => Some(text.as_str()),
+                _ => None,
+            })
+            .collect();
+        assert!(
+            flat.contains("chosen at random"),
+            "the belial description is missing: {flat:?}"
+        );
+    }
+
+    /// No rows downloaded — the fetch hasn't run, or the real table is empty — degrades to
+    /// nothing, the same as a name list with no names, rather than an empty bulleted list.
+    #[test]
+    fn a_synergy_list_with_no_rows_produces_nothing() {
+        let tables = crate::resolver::Tables::default();
+        let r = crate::resolver::Resolver::new(
+            &tables,
+            &std::collections::BTreeMap::new(),
+            &crate::resolver::Corrections::default(),
+        );
+        let blocks = parse_blocks(
+            "{{Book of Virtues synergy list}}",
+            &r,
+            &mut Diagnostics::default(),
+        );
+        assert!(blocks.is_empty(), "{blocks:?}");
     }
 }

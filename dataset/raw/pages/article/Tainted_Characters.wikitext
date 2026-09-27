@@ -1,0 +1,49 @@
+{{page dlc|r}}
+'''Tainted characters''' are different versions of already existing [[characters]], both in terms of gameplay and design. They are considered completely new characters, raising the total number of characters to 34 in ''[[The Binding of Isaac: Repentance]]''.
+
+They are unlocked by using the {{i|Red Key}}, {{p|Cracked Key}}, or {{P|1=Soul of Cain}} on the left side of the wall in the hall before Mom's Bedroom in {{s|Home}} with each non-Tainted Character.
+
+They can be accessed via the Character select menu by pressing E on the keyboard or RB on controller. The menu will appear a lot more worn with tears in the wallpaper.
+
+As the Tainted Characters, certain unlocks require multiple completion marks: {{E|Satan}}, {{E|Isaac}}, {{E|The Lamb}}, and {{E|???}} all contribute to just one unlock with {{R|Boss Rush}} and {{E|Hush}} accounting for one unlock as well. On top of this, Tainted Characters lack an unlock for defeating {{E|Mom's Heart}} / {{E|It Lives!}} on Hard Mode, {{E|Ultra Greed}}, completing all [[Hard mode]] completion marks, and naturally lack a corresponding Tainted Character unlock. This results in each only having 7 unlocks rather than the standard 15.
+
+== Characters ==
+* {{C|Tainted Isaac}}
+* {{C|Tainted Magdalene}}
+* {{C|Tainted Cain}}
+* {{C|Tainted Judas}}
+* {{C|Tainted ???}}
+* {{C|Tainted Eve}}
+* {{C|Tainted Samson}}
+* {{C|Tainted Azazel}}
+* {{C|Tainted Lazarus}}
+* {{C|Tainted Eden}}
+* {{C|Tainted Lost}}
+* {{C|Tainted Lilith}}
+* {{C|Tainted Keeper}}
+* {{C|Tainted Apollyon}}
+* {{C|Tainted Forgotten}}
+* {{C|Tainted Bethany}}
+* {{C|Tainted Jacob}}
+
+== Notes ==
+* The {{i|Red Key}} is guaranteed the first time Isaac enters {{s|Home}} and is unlocked by opening the chest in Mom's bedroom for the first time. After that, Mom's Chest will pull from its own [[Mom's Chest (Item Pool)|item pool]] which includes Mom-related items as well as the Red Key rarely.
+* In order to guarantee an unlock on subsequent trips to {{s|Home}}, Isaac must leave a [[trinket]] in either a {{r|Treasure Room}} or a {{r|Boss Room}}. When he reaches the [[Ascent]] after picking up {{i|Dad's Note}}, the trinket that was left will transform into a {{p|Cracked Key}} in the corresponding room.
+* To unlock these characters, Isaac does not need to defeat {{E|Dogma}} or {{E|The Beast}} on the run he opens the closet. They will be unlocked as soon as he touches them (or lets a {{E|Bomb}} explode next to them) regardless of what happens during the following battles.
+* Tainted characters that start with an [[Items|active item]] (except for {{C|Tainted Eden}}) will have that item in their consumable slot rather than the usual active item slot. The item will recharge as expected and can be used normally with the consumable button. Consumables such as [[Cards and Runes|cards]] and [[pills]] can still be picked up, and can be swapped with the starting active by pressing the swap button. Other active items will go in the normal active slot.
+
+== Trivia ==
+* When switching from the normal characters menu to the Tainted characters menu, the music that plays in the background changes to a male singer with a darker tone. The taskbar icon also changes to {{c|Tainted Isaac}}'s sprite instead of regular {{c|Isaac}}.
+* [[Edmund McMillen]] has stated in a livestream that the Tainted Characters are the "abused" versions of their counterparts.
+* Edmund McMillen noted that the Tainted Characters, along with {{E|Dogma}} and {{E|The Beast}} sequence, were initially [https://twitter.com/edmundmcmillen/status/1487577680044195840 reserved for a possible Isaac sequel].
+* There is a consistent theme to nearly every unlock from the Tainted characters:
+** a [[Trinkets|trinket]] for {{E|Satan}}, {{E|Isaac}}, {{E|The Lamb}}, and {{E|???}};
+** an environmental object (a [[Pickups|Pickup]], [[Machines|Machine]]/[[Beggar]], or a [[Rocks|Rock]]) for {{E|Mega Satan}};
+** a [[Cards and Runes|Soul Stone]] for {{R|Boss Rush}} and {{E|Hush}};
+** a [[Cards and Runes|Reversed Tarot Card]] for {{E|Ultra Greedier}};
+** the starting item for the character, or item themed around the character's unique ability for {{E|Delirium}};
+** another trinket for {{E|Mother}};
+** finally, an [[Items|item]] for {{E|The Beast}}.
+
+{{nav|character|fr=Personnages Impurs}}
+[[Category:Characters]]

@@ -1,0 +1,58 @@
+{{infobox version
+ | dlc   = r
+ | steam = 3007816130312947506
+ | date  = 2021-04-03
+}}
+
+== Documented Changes ==
+=== Balance Changes ===
+* Chance to find max level [[Shop]]s in [[Hard mode]] increased to 50%, and back to how they were previously in normal mode.
+* Added [[Machines#Restock Machine|Restock Machines]] back to Shops, with a 25% chance to replace the [[Donation Machine]].
+** This does not occur in game and is only documented.
+* [[Rocks#Tinted Rocks|Tinted rocks]] are now more common in Hard
+
+=== General Fixes ===
+* Fixed a crash caused by dying and reviving during the [[Rotgut]] fight
+* Fixed a crash caused by {{I|Mucormycosis}} tears
+* [[Reap Creep]] can no longer appear on the [[Scat Man]] challenge to reduce the likelihood of unfair softlocks
+* Fixed [[Pills#I Found Pills|I Found Pills]] causing {{C|Keeper}}, {{C|Apollyon}}, {{C|???}}, and {{C|The Forgotten}}'s head to disappear
+* Fixed [[Chub]] and other bomb eating bosses causing a crash when swallowing [[Rocket in a Jar|rockets]]
+* Fixed being able to unlock {{I|Golden Razor}} by saving and resuming a run or by entering a certain area
+* Fixed {{I|Doctor's Remote}} getting canceled when taking damage before the rocket hits the ground
+* Fixed [[Delirium|Delirium's]] death animation getting stuck in an endless loop when he dies while slowed or sped up
+* Added a tentative fix for corrupted graphics caused by burrowing enemies on AMD graphics drivers
+* Entering certain floors now attempts to place the player in a safe spot to prevent instant damage from any room hazards
+* Fixed pickup animation getting stuck when using certain active items while holding a [[Bombs|red bomb]]
+* Fixed [[Bestiary Repentance|Bestiary]] entries for some [[Vis]] enemies that were missing graphics
+* Touching certain fires no longer triggers {{I|Shard of Glass}} bleed effect
+* Touching certain fires no longer rerolls [[Tainted Eden|Eden]]
+* Fixed an unintended interaction with certain fires and {{I|Pyromaniac}}
+* Fixed a rare situation involving Eden tokens which could cause the character selection menu to be stuck on the wrong side
+* Fixed a crash caused by using {{I|Dark Arts}} while having {{I|Midas' Touch}}
+* Fixed {{T|Butter!}} allowing single-use items to be reused endlessly
+* Fixed [[Wormwood]] sometimes getting stuck underwater when slowed down
+* Lightning flashes in {{s|Downpour}} have had their brightness reduced to accommodate for users with sensitive vision
+
+=== Book of Virtues Fixes ===
+* Added {{I|D12}} wisps
+* Fixed {{I|Spin to Win}} wisps not dying as expected
+* Fixed a crash caused by {{I|Box of Friends}} wisps
+* Fixed a possible crash caused by {{I|Diplopia}} wisps
+* Fixed a possible crash caused by {{I|Compost}} wisps
+* Fixed a possible crash caused by {{I|Stitches}} wisps
+* Fixed a possible crash caused by {{I|Ventricle Razor}} wisps
+* Fixed interaction between wisps and {{I|BFFS!}}
+
+=== Co-op Fixes ===
+* Fixed infinite boss item respawn exploit
+* Dead co-op players are now revived only when the end-of-floor boss is defeated
+* Fixed challenge runs
+* Fixed dead co-op player being able to unlock certain doors
+* Fixed not being able to start co-op if Player 1 has one or less red hearts
+
+=== Misc ===
+* Added several missing [[Bestiary Repentance|bestiary]] entries
+* Updated various room layouts
+* Updated sprites for [[Seven Deadly Sins|Sins and Super Sins]]
+
+{{nav|version}}

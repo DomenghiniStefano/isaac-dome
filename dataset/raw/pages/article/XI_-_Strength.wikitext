@@ -1,0 +1,42 @@
+{{header tarot cards}}
+{{Infobox card
+ | name        = XI - Strength
+ | id          = 12
+ | quote       = May your power bring rage
+ | description = Grants the effects of {{i|Magic Mushroom}} (minus the health restoration) for one room. The added [[Red Heart container]] is not removed if doing so would kill Isaac.
+| recharge =             {{dlcalt|4|r=3}}
+}}
+
+{{cit|c}}
+
+== Effects ==
+* Grants the effects of {{i|Magic Mushroom}} (minus the health restoration) for one room. The added [[Red Heart container]] is not removed if doing so would kill Isaac.
+
+== Notes ==
+* {{dlc|nr}} Using '''XI - Strength''' as {{C|???}} will give him a permanent Soul Heart instead of a temporary one.
+* {{dlc+|anr}} When {{C|Keeper}} has only one Coin Heart, he can use '''XI - Strength''' to gain a second one which is also permanent.{{dlc-}}
+** {{dlc|r}} Both of the mentioned characters will lose the temporary health granted by '''XI - Strength'''.
+
+== Strategy ==
+* Since this effect only lasts for a room, it is preferably used against a [[boss]].
+* {{dlc|nr}} The heart container granted by '''XI - Strength''' cannot be used to purchase a [[devil deal]]. However, if Isaac has no other red heart containers to spend, then one granted by '''XI - Strength''' can be used this way. This also works if the devil deal costs 2 hearts, but Isaac only has 0 or 1 before activating the Strength card.
+** {{dlc|r}} The heart container granted by the card can now be spent for any purposes (e. g. devil deals, {{i|Potato Peeler|n}}, etc.) without any restrictions.
+
+== Synergies ==
+* {{I|Tarot Cloth}}: Doubles the stat increases, but the [[damage]] multiplier applies only once.
+** {{I|Tarot Cloth|nr}} + {{i|Blank Card}} + {{i|Car Battery|n}} : Quadruples the stat increases.
+** {{I|Tarot Cloth|r}} + {{i|Blank Card}} : Does not double stat increases if used with Blank card.
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | Huge Growth      }}
+** {{I|Tarot Cloth|n}}: The size increase is also doubled, contributing even more to Huge Growth's unlock.
+
+== Gallery ==
+<gallery>
+File:XI - Strength Steam Card.jpg|'''XI - Strength''''s Steam trading card
+</gallery>
+
+== Trivia ==
+* [[wikipedia:Strength (tarot card)|Strength]] is the eleventh card of a Major Arcana set.
+
+{{nav|fr=XI - La Force|card}}

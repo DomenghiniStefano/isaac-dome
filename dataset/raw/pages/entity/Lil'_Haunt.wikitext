@@ -1,0 +1,13 @@
+{{infobox monster
+ | id          = 260.10
+ | base hp     = 25
+ | environment = {{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Mausoleum}}<br>{{floor|Sheol}}{{floor|Cathedral}}<br>{{floor|Dark Room}}{{floor|Chest}}<br>{{room|boss}}{{room|challenge}}{{room|crawl space}}
+ | behavior    = Floats toward Isaac and occasionally fires a blood shot at him, predicting his movements.
+}} {{disambig msg|the enemy|the item|Lil Haunt|the boss|The Haunt}}
+
+'''Lil' Haunts''' are ghost enemies that slightly mimic the movements of Isaac, which allows them to "chase" him if Isaac constantly tries running away from them. Occasionally, they stop to spew blood shots towards the location Isaac will be in if he doesn't stop moving; this did not have an animation up till [[The Binding of Isaac: Repentance|Repentance]], making it difficult to telegraph.
+
+Three Lil' Haunts circle [[The Haunt]] in its first phase. The first one charges at Isaac, and after the first is killed, the second and third charge at Isaac. [[The Haunt#Champion Versions|The Black Champion Haunt]] will be circled by two Lil' Haunts, and [[The Haunt#Champion Versions|The Pink Champion Haunt]] will only be circled by one.
+
+{{nav|fr=Revenant}}
+[[Category:Ghost monsters]]

@@ -1,0 +1,28 @@
+{{header item pools}}
+{{item pool
+ | dlc = a
+}}
+[[File:Bomb Bum.png|75px|link=]]
+
+[[Bomb Bum]]s will pay out with one of these items after being given enough bombs.
+
+== Activated Collectibles ==
+{{item pool/header}}
+{{pool items | Mr. Boom }}
+{{pool items | dlc = a+ | Mama Mega! }}
+{{pool items | dlc = r | Remote Detonator }}
+|}
+
+== Passive Collectibles ==
+{{item pool/header}}
+{{pool items | Bob's Curse, Bobby-Bomb, Butt Bombs, Hot Bombs, Sad Bombs, Scatter Bombs, Sticky Bombs }}
+{{pool items | weight = {{dlcalt|1|nr=0.2}} | Bomber Boy }}
+{{pool items | weight = {{dlcalt|1|r=0.2}} | Pyro }}
+{{pool items | dlc = nr | BOGO Bombs, Bomb Bag, Boom! }}
+{{pool items | dlc = a+ | Fast Bombs }}
+{{pool items | dlc = r | Blood Bombs, Ghost Bombs, Glitter Bombs, Mr. Mega, Nancy Bombs, Rocket in a Jar }}
+{{pool items | dlc = r | weight = 0.2 | Brimstone Bombs }}
+{{pool items | dlc = r+ | weight = 0.2 | Pyromaniac }}
+|}
+
+{{nav|fr=Mendiant Explosif (Banque d'Objets)}}

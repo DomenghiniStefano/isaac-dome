@@ -1,0 +1,17 @@
+{{unsupported}}
+
+This page lists some useful [[Modding]] tutorials.
+
+* [https://www.youtube.com/watch?v=cJ68vYqzSm0 How to Isaac Sprites by LeatherIceCream]
+*: The Antibirth developer LeatherIceCream demonstrates how to create sprites in the style of The Binding of Isaac. Applies to all versions of the game.
+* [https://www.youtube.com/playlist?list=PLMZJyHSWa_My5DDoTQcKCgs475xIpQHSF The Modding of Isaac: Afterbirth+ with Lyte by Lytebringr]
+*: A series of video tutorials by Lytebringr focused on Afterbirth+ exploring various modding topics such as XML and PNG modifications and Lua scripting.
+* [https://www.youtube.com/playlist?list=PLKQ0xZyS4-66IbMbHpCU1p7NNbj50h7ly How to mod Afterbirth+ by Eufuu]
+*: A collection of video tutorials by Eufuu focused on Afterbirth+ that provides some basic knowledge on how to get started with modding.
+* [https://www.youtube.com/watch?v=oIm8hhXgYlg Afterbirth+ Animation Editor Tutorial by OnyxDarkKnight]
+*: A video tutorial by OnyxDarkKnight that shows how to use the Animation Editor that comes with The Binding of Isaac: Afterbirth+.
+* [https://www.youtube.com/playlist?list=PLkIbky8_pFUpqAF9l7dh_YsEV-zpJ4q50 {{dlc|r}} Repentance Modding Tutorials by Catinsurance]
+*: A series of video tutorials by Catinsurance focused on Repentance changes about modding.
+
+{{nav|modding|fr=Tutoriels de Modding}}
+[[Category:Modding]]

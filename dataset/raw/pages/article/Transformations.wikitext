@@ -1,0 +1,48 @@
+{{header transformations}}
+'''Transformations''' alter Isaac's appearance and grant him special abilities.
+
+A transformation occurs when obtaining at least three different [[item]]s from a particular set of items.<br>
+These collectibles always share a particular theme that corresponds with the transformation.
+
+== Transformation Sets ==
+{{transformation table}}
+
+== Requirements ==
+* Items only need to have been acquired once in order to count.
+** {{dlc|nr}} Duplicate items (like those acquired from {{i|Diplopia}}) do not count toward transformations when picked up. Only the first instance of an item Isaac owns will count.
+** {{dlc|r}} Duplicate items are all counted.
+** {{dlc|r+}} Duplicate items are not counted for the Necromancer transformation.
+** [[Activated collectible]]s (e.g. {{i|Guppy's Head}}) can be picked up once and then swapped away with another without any loss to transformation progress.
+* {{dlc|nr}} Rerolling items with a {{r|Dice Room}}, the {{i|D4}}, or the {{i|D100}} will not remove progress towards the transformation.
+** {{dlc|r}} The transformation will be lost if the items required are rerolled or otherwise lost, eg. {{I|Sacrificial Altar|dlc=x}}.
+* {{dlc+|a}} Familiars gained from {{i|Cambion Conception}} or {{i|Immaculate Conception}} do not count towards transformation progress.{{dlc-}}
+* [[Trinket]]s do not count toward progress for any transformation, with the exceptions of {{t|Kid's Drawing}} that counts for Guppy transformation, {{t|Bob's Bladder|r+}} for Bob, and {{t|A Missing Page|r+}} for Necromancer.
+* [[Pill]]s only count toward [[Adult]] and [[Stompy]], they do not count toward progress for any other transformation.
+* Characters that start with an item that counts towards a transformation do count as one of the three items needed for a transformation, such as Judas starting with [[The Book of Belial]].
+* {{dlc+|r}} Only the first character to pick up an item will gain progress towards its transformation. This applies in [[Repentance Co-Op|co-op]], or when playing as {{c|Jacob and Esau}} or {{c|Tainted Lazarus}}.{{dlc-}}
+* {{C|Tainted Isaac}} will not lose a transformation nor progress towards it if he replaces an item that counts towards that transformation.
+
+== Notes ==
+* Transformations can be combined, keeping the effects of all transformations with no effects overriding others.
+* Transforming into [[Beelzebub]] for the first time will unlock the ''Lord of the Flies'' [[achievement]] and {{i|Angry Fly}}.
+* {{dlc|a}} As none of the Afterbirth transformations unlock an achievement or item, obtaining them is not required for 100% completion of the game in terms of achievements. However, this is only true if you unlocked {{i|Mom's Contacts}} on Rebirth, as the [[Yes Mother?]] transformation will happen once you collect three Mom items on Afterbirth and Afterbirth †.
+* {{dlc|nr}} Many of the Afterbirth transformations override the charge animations of items such as {{i|Monstro's Lung}} and {{i|Brimstone}}, potentially making them more difficult to use.
+** {{dlc|a+}} There is now an option to show a charge bar that floats above Isaac.
+
+== Gallery ==
+<gallery>
+File:Transformations Afterbirth.jpg|Concept art drawn for transformations that would be implemented into the Afterbirth DLC.
+</gallery>
+
+== Trivia ==
+* In the original ''The Binding of Isaac'' flash game, the transformation into [[Guppy]] was the only one available, making it chronologically the first.
+** Rebirth introduced [[Beelzebub]] as the chronologically second transformation.
+** Made after Rebirth, the ''Eternal Edition'' of the original ''The Binding of Isaac'' game added another transformation that turned Isaac into an angel after gaining 7 heart containers from [[eternal heart]]s.
+* The original name for the [[Beelzebub]] transformation was Lord of the Flies.
+* The reason no new transformations were added to Repentance is because at the time Edmund and the dev team did not like them, as they viewed them as significant advantages gained only from being lucky enough to find specific items. This is why Guppy, the most powerful transformation, requires much more effort to get compared to a transformation like Spider Baby. If any new transformations were to be added for Repentance, they would be purely visual.<ref>https://youtu.be/N-tWNv5EJkU?t=2623</ref>
+
+== References ==
+{{Reflist}}
+
+{{nav}}
+[[Category:Transformations| ]]

@@ -1,12 +1,16 @@
 import type {
+  CategorySample,
   Entry,
   ExtractionReport,
+  PoolMembershipView,
   Target,
   UnlockView,
   WikiIndex,
   WikiInfo,
   WikiPageRef,
 } from '../types'
+import { WikiPageCategory } from '../types'
+import { categoryOf } from '@/lib/wiki/category'
 import { pageKey, parsePageKey } from '@/lib/wiki/pageKey'
 import { warnOnce } from './warnOnce'
 
@@ -169,9 +173,15 @@ const infoOf = (list: Page[]): WikiInfo => {
     bosses: count('entity'),
     challenges: count('challenge'),
     characters: count('character'),
-    // There are no transformation pages here: a fixture that invented a number would
-    // show the verification screen a count nothing produced.
+    // There are no transformation, entity or article pages here: a fixture that invented
+    // a number would show the verification screen a count nothing produced.
     transformations: count('transformation'),
+    monsters: 0,
+    cardsAndRunes: 0,
+    pickups: 0,
+    stages: 0,
+    versions: 0,
+    articles: 0,
   }
   return real?.kind === 'loaded'
     ? { ...real, counts }
@@ -190,8 +200,16 @@ export interface WikiAnswerOptions {
   withWiki: boolean
 }
 
+// One sample per landing tile, null like every picture this fixture draws (the development
+// server has no copy of the game to cut a sprite from — see `refs` below for the same
+// reasoning). What the Kit page checks here is the fallback the tile draws without one, the
+// state every category is actually in on a machine with no game installed.
+const categorySamples: CategorySample[] = Object.values(WikiPageCategory).map(
+  (category) => ({ category, iconUrl: null }),
+)
+
 export const wikiIndexAnswer = ({ withWiki }: WikiAnswerOptions): WikiIndex => {
-  if (!withWiki) return { info: missing, pages: [] }
+  if (!withWiki) return { info: missing, pages: [], samples: [] }
   const list = wikiPages()
   const refs: WikiPageRef[] = list.map((p) => {
     // A sample page's own title wins over the index's name.
@@ -203,9 +221,13 @@ export const wikiIndexAnswer = ({ withWiki }: WikiAnswerOptions): WikiIndex => {
       // Null, like every drawing here: the app cuts its sprites from the user's own copy of
       // the game at runtime, and the development server has no copy to cut from.
       iconUrl: null,
+      // `categoryOf` is exact here (never approximate the way its own doc comment warns
+      // about): this fixture's only `entity` pages are real bosses and it carries no
+      // article at all, so the ambiguity that function can't resolve never arises.
+      category: categoryOf(p.target),
     }
   })
-  return { info: infoOf(list), pages: refs }
+  return { info: infoOf(list), pages: refs, samples: categorySamples }
 }
 
 const warnSamples = warnOnce(
@@ -227,3 +249,9 @@ export const wikiEntryAnswer = (target: Target): Entry | null => {
 // machine that recorded none answers the empty report it would have.
 export const extractionReportAnswer = (): ExtractionReport | undefined =>
   Object.values(reports)[0]
+
+// No pools payload was ever recorded (nothing here produces one any more — see this
+// directory's `README.md`), and this fixture never invents numbers `infoOf` doesn't already
+// have a source for. So the pools row reads as it does on a machine with no game installed,
+// with or without the game shown elsewhere: `null`, absent rather than wrong.
+export const wikiItemPoolsAnswer = (): PoolMembershipView[] | null => null

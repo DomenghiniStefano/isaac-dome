@@ -1,0 +1,78 @@
+{{infobox monster
+ | id          = 85
+ | base hp     = 6.5
+ | environment = {{floor|Basement}}{{floor|Cellar}}{{floor|Burning Basement}}<br>{{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|Sheol}}{{floor|Cathedral}}<br>{{floor|Chest}}<br>{{room|boss}}{{room|curse}}{{room|secret}}{{room|clean bedroom}}{{room|dirty bedroom}}{{room|vault}}
+ | behavior    = Erratically moves around the room. If Isaac gets close to it, it chases him, trying to deal contact damage.
+}}
+'''Spiders''' are arachnid enemies that can be commonly found in most chapters. They move quickly and will go in all directions randomly, making them unpredictable. However, if they have a direct line of sight on Isaac, and are close enough, they will move towards him. They are also able to fit through small diagonal gaps.
+__TOC__
+{{clear}}
+
+== Variations ==
+=== Big Spider ===
+{{infobox monster
+ | name        = Big Spider
+ | id          = 94
+ | base hp     = 20
+ | environment = {{floor|Cellar}}{{floor|Burning Basement}}<br>{{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Gehenna}}<br>{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|Sheol}}{{floor|Cathedral}}<br>{{room|curse}}
+ | behavior    = Erratically moves around the room. If Isaac gets close to it, it chases him, trying to deal contact damage. Spawns two Spiders upon death.
+}}
+
+'''Big Spiders''' look like regular Spiders, but with a large black abdomen attached. They behave in the same way as the regular Spiders, having the same movement speed and erratic behavior. However, they have over triple the health of regular Spiders, and upon death, they will split into two regular Spiders. 
+
+Alternatively, if a Big Spider's health is dropped to -20 or less in one instance (i.e., by using a Bomb), it will spawn nothing on death.
+{{clear}}
+
+=== Swarm Spider ===
+{{infobox monster
+ | dlc         = r
+ | name        = Swarm Spider
+ | id          = 884
+ | base hp     = 4.5
+ | stage hp    = 0.2
+ | environment = {{floor|Basement}}{{floor|Cellar}}{{floor|Burning Basement}}<br>{{floor|Catacombs}}<br>{{Floor|Necropolis}}
+ | behavior    = Very erratically hops toward Isaac in large groups, dealing contact damage.
+}}
+
+'''Swarm Spiders''' act much like normal Spiders but are much smaller and tend to come in much larger groups. They also hop and flash a bright yellow.
+
+They are spawned by {{e|Eggy|text=Eggies}} in large number when one dies.
+
+Swarm Spiders cannot be damaged by [[Fire Place]]s.
+{{clear}}
+
+=== Strider ===
+{{infobox monster
+ | dlc         = r
+ | name        = Strider
+ | id          = 814
+ | base hp     = 6.5
+ | environment = {{floor|Downpour}}<br>{{room|challenge}}<br>{{room|secret}} (Downpour only)<br>{{room|Curse}} (Downpour and Dross only)
+ | behavior    = Erratically swims around the room. If it sees Isaac, it chases him, trying to deal contact damage.
+}}
+
+'''Striders''' are a type of spider that can only spawn in {{s|Downpour}} and special rooms in {{s|Dross}}. They glide on the water towards Isaac in short bursts and can swim across flooded gaps.
+
+Striders replace all Spider spawns in the Downpour and Dross stages.
+{{Clear}}{{dlc clear}}
+
+== Gallery ==
+<gallery>
+File:Spider Will.png|A Spider on Isaac's Last Will.
+File:Repentance Monster Sketches.png|Concept sketches of monsters implemented in Repentance, including the Swarm Spiders.
+</gallery>
+
+== Notes ==
+* {{dlc|a}} The following spiders will not attack Isaac, deal contact damage or actively spawn enemies if he has {{I|Bursting Sack}}:
+** Spider, Big Spider, Level 2 Spider, Ticking Spider, Baby Long Legs, Small Baby Long Legs, Crazy Long Legs and Small Crazy Long Legs.
+** {{dlc|a+}} Spiders and Big Spiders no longer blink red when neutral due to it.
+** {{Dlc|r}}Swarm Spiders no longer blink yellow when neutral due to it.
+
+== Trivia ==
+* The original Spider and Big Spider were first added to the original ''The Binding of Isaac'' game's DLC - ''Wrath of the Lamb''.
+* {{dlc+|r}}[[anti:Strider|Strider]]s are from the ''Antibirth'' mod.{{dlc-}}
+* Striders are named after the family [[wikipedia:Gerridae|Gerridae]], also known as water striders.
+* Swarm Spiders have the lowest [[Stage HP]] among all entities in the game by far. It takes until {{s|Caves}} I (etc.) before they have more than 5 HP, and then until {{s|Sheol}} / {{s|Cathedral}} before they have more than 6 HP.
+
+{{nav|fr=Araignée}}
+[[Category:Spider monsters]]

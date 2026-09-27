@@ -1,0 +1,36 @@
+{{infobox version
+ | date  = 2014-12-24
+ | steam = 228887792747724791
+}}
+
+== Documented changes ==
+=== Fixes ===
+* Fixed bombing [[secret room|secret/special room]] walls.
+* Fixed screensaver coming up during play on Linux.
+* Fixed not being able to delete save slots on Steam Cloud.
+* Fixed {{a|Judas}} [[achievement]] not unlocking with [[Black Judas]].
+
+== Undocumented changes ==
+=== Additions ===
+* {{i|Mystery Sack}} now drops a random consumable every few rooms.
+* {{i|The Book of Belial}} now has a use image.
+* Added new seeds for Christmas.
+
+=== Changes ===
+* The Womb Room with four [[Gaping Maw]]s has been changed so that two of the Maws are "[[Broken Gaping Maw|broken]]", trying to suck Isaac in for 4 seconds and then stopping for 4 seconds.
+* {{i|Samson's Chains}} is made easier to use.
+
+=== Fixes ===
+* Fixed getting stuck during teleport.
+* Fixed crash when jumping to new level.
+* Fixed [[Eternal Fly|Eternal Flies]] during [[??? (Boss)|???]] fight.
+* Fixed {{i|Dad's Key}} for double locked doors.
+* Fixed hang on {{i|We Need To Go Deeper!}}.
+* Fixed invisible laser damage.
+* Fixed [[familiar]]s being overwritten by [[blue spider]]s/[[blue fly|flies]].
+* Fixed {{s|Womb}} room with 4 [[Gaping Maw]]s in the center.
+* Fixed Jar + Double Heart issues.
+* Fixed {{i|Guppy's Collar}} hiding co-op babies.
+* Fixed Full Health/[[rainbow poop]] for local co-op.
+
+{{nav|version}}

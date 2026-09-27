@@ -1,0 +1,10 @@
+{{infobox monster
+ | id          = 90
+ | base hp     = 40
+ | environment = {{floor|Catacombs}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Cathedral}}<br>{{room|challenge}}
+ | behavior    = Floats around the room, firing 3 spread blood shots at Isaac. Upon damaging Isaac, Isaac drops 2 [[coins]] on the ground but loses 3. Spawns with an {{E|Eternal Fly}} circling around it.
+}}
+
+'''Hangers''' are dead Shopkeepers that are hostile. They can shoot 3 projectiles at the player that will steal coins on hit (similar to {{E|Greed}} and {{E|Keeper}}s). The Hanger is very slow and can float over obstacles. The best strategy is to be constantly moving. They always have an {{E|Eternal Fly}} circling them, which will become an {{E|Attack Fly}} once the Hanger is dead.
+
+{{nav|fr=Pendu}}

@@ -1,0 +1,79 @@
+{{disambig msg|the enemy|the trinket|Blister}}
+
+{{infobox monster
+ | name           = Trite
+ | id             = 29
+ | variant        = 1
+ | base hp        = 10
+ | environment    = {{floor|Cellar}}{{floor|Burning Basement}}<br>{{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Necropolis}}
+ | replace        = Hopper
+ | replace chance = 5.71%
+ | behavior       = Quickly leaps towards Isaac and deals contact damage.
+}}
+
+The '''Trite''' is a spider variant of the {{e|Hopper}}s. Leaps with less frequency, but at greater distances. This can make them extremely dangerous, as they could potentially leap from one side of the room to the other, catching the player off guard.
+{{clear}}
+
+== Variants ==
+=== Ragling ===
+{{infobox monster
+ | name        = Ragling
+ | id          = 246
+ | base hp     = 13
+ | environment = {{floor|Cellar}}<br>{{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Mausoleum}}<br>{{floor|Cathedral}}
+ | behavior    = Quickly leaps towards Isaac and deals contact damage. Randomly shoots two purple shots that orbit around it.
+}}
+
+The '''Ragling''' is a variant to the normal Trite. They do not leap as often as the Trite and rarely move directly towards Isaac but gains the ability to occasionally shoot 2 magenta-colored orbiting shots.
+{{clear}}
+
+=== Rag Man's Ragling ===
+{{infobox monster
+ | dlc         = a
+ | name        = {{dlcalt|Rag man's Rag Ling|r=Rag Man's Ragling}}
+ | variant     = 1
+ | base hp     = 30
+ | environment = {{floor|Basement}}{{floor|Burning Basement}}<br>{{floor|Mausoleum}}<br>{{floor|Chest}}<br>{{room|boss}}
+ | behavior    = Quickly leaps towards Isaac and deals contact damage. Randomly shoots two purple shots that orbit around it.
+}}
+
+'''Rag Man's Ragling''' is an alternate version of the Ragling that behave like normal Raglings but have more health. They can be spawned by {{e|Rag Man}} and {{e|Rag Mega}} and used as a part of their attacks. If they were spawned by Rag Man or by Rag Mega, they will leave a pile of Rags upon death, from which Rag Man and Rag Mega can revive them. If Rag Man or Rag Mega is killed before them, then they will not leave Rags behind.
+{{clear}}
+
+=== Blister ===
+{{infobox monster
+ | dlc            = a+
+ | name           = Blister
+ | id             = 303
+ | base hp        = 16
+ | stage hp       = 8
+ | environment    = {{floor|Catacombs}}<br>{{floor|Mines}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Utero}}
+ | replace        = {{dlc|nr|Ticking Spider, Keeper}}
+ | replace chance =
+ | behavior       = Slowly hops towards Isaac, occasionally spawning a Dark Ball. Spawns a {{E|Sack}} upon death.
+ | unlocked by    = The gate is open!
+}}
+
+A '''Blister''' is a Trite variant that has much higher health but leaps very slowly. They occasionally spawn a {{e|Dark Ball}} like the ones spawned by {{e|Little Horn}}. They spawn a {{e|Sack}} upon death.
+{{clear}}{{dlc clear}}
+
+== Gallery ==
+<gallery>
+File:Rag man's ragling rag man red.png|A Rag Man's Ragling spawned by Red Champion Rag Man.
+</gallery>
+
+== Notes ==
+* If Blisters aren't unlocked yet, they are replaced by Trites in Normal mode, or {{e|Ticking Spider}}s in [[Hard mode]].
+
+== Trivia ==
+* A trite is the name of a genus of the jumping spider family.
+* Trites share the same name with an [http://doomwiki.org/wiki/Trite enemy in Doom 3], an enemy that leaps towards the player and has an upside-down human-like face.
+* {{dlc|a+}} Blisters were given a shooting animation in [[Booster Packs#Booster Pack #5|Booster Pack #5]], based on [https://steamcommunity.com/sharedfiles/filedetails/?id=918695562 this Steam Workshop mod] by TheShadyOne.
+* {{dlc|a+}} Blisters originally had 54 base hp and 0 stage hp; however, this was changed in Booster Pack #5.
+** Blisters had the fifth-highest base health of all the non-boss enemies, after {{e|Dinga}}s, {{e|Mama Guts}}, {{e|MemBrain}}s, and {{e|Oob}}s.
+
+== Bugs ==
+{{bug|dlc=a+|If a Blister is [[fear|scared]], [[confusion|stunned]], or [[shrink|shrunken]], the Blister will still attack Isaac by chasing him or spawning Dark Balls.}}
+
+[[Category:Spider monsters]]
+{{Nav}}

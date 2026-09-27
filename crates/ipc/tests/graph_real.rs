@@ -278,15 +278,20 @@ fn the_real_catalog_resolves_a_saved_key_into_a_named_target() {
             // The link above is only a promise; this is the half that keeps it. The view
             // no longer extracts anything, so without this the test would pass just as
             // happily on an install whose archives don't hold the sprite at all.
-            let sprite = ipc::icon_source(
+            let source = ipc::icon_source(
                 &c,
                 &ipc::for_tests::bosses(&c),
+                None,
                 &ipc::IconRef::Item {
                     kind: ItemKindView::Passive,
                     id: 1,
                 },
             )
             .expect("the catalog names a sprite for item 1");
+            let sprite = match source {
+                ipc::IconSource::Sprite(s) => s,
+                other => panic!("an item icon is a sprite crop, not {other:?}"),
+            };
             assert!(
                 rs.read(&sprite.path)
                     .is_some_and(|png| png.starts_with(b"\x89PNG")),

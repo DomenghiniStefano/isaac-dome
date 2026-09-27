@@ -1,0 +1,27 @@
+{{header normal bosses}}
+{{page dlc|r}}
+
+== {{s|Home}} {{Unlockable}} ==
+{| style="width: 70%; text-align: center"
+ |-
+ | colspan="4" |[[File:Boss Dogma portrait.png|center|link=Dogma]]
+ |-
+ | colspan="4" |[[Dogma]]
+ |-
+ | [[File:Boss Ultra Famine ingame.png|center|link=Ultra Famine]]
+ |[[File:Boss Ultra Pestilence ingame.png|center|link=Ultra Pestilence]]
+ |[[File:Boss Ultra War ingame.png|center|link=Ultra War]]
+ |[[File:Boss Ultra Death ingame.png|center|link=Ultra Death]]
+ |-
+ |[[Ultra Famine]]
+ |[[Ultra Pestilence]]
+ |[[Ultra War]]
+ |[[Ultra Death]]
+ |-
+ | colspan="4" |[[File:Boss The Beast ingame.png|center|link=The Beast]]
+ |-
+ | colspan="4" |[[The Beast]]
+ |}
+
+{{nav|boss|fr=Maison (Boss)}}
+[[Category:Bosses]]

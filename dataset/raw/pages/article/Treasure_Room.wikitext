@@ -1,0 +1,1509 @@
+[[File:lockeditemroomdoor.png]][[File:itemroomdoor.png]]
+
+{{dlc+|r}}[[File:Devil Treasure Room door locked.png]][[File:Devil Treasure Room door.png]] with {{t|Devil's Crown}}{{dlc-}}
+
+A '''Treasure Room''', or Item Room, is a room that contains items from the {{ip|Treasure Room|text=Treasure Room item pool}}. They appear in [[chapters]] 1, 2, and 3 (and 4 if Isaac holds {{t|Bloody Crown}}, 5 with {{t|Holy Crown}} or {{t|Wicked Crown}}). Two also appear in the {{s|???}}. A Treasure Room can be identified by the gold edges of the door. When the current floor is under the effect of {{Cu|Labyrinth}}, making a floor an XL floor, there will be two Treasure Rooms on the floor instead of one.
+
+Treasure Rooms on the first floor of any run do not require a key to open, even under the effect of Curse of the Labyrinth. Treasure Rooms never border more than a single regular room, but there may be a {{R|Secret Room}} adjacent to it.
+
+{{dlc|a}} In [[Greed Mode]], Treasure Rooms appear in Chapters 1, 2, 3, 4, and 5, and are always locked. Silver Treasure Rooms appear next to these rooms, they give items from the {{ip|Boss|text=Boss Room item pool}} but are always unlocked.
+
+== Variations ==
+* {{dlc|a}} There is a rare chance that a Treasure Room might contain two items, only one of which can be taken.
+** {{dlc|a+}} Occasionally, both items can be taken. In this case, the treasure room will have a unique layout with 8 "special" obstacles ([[Urn]]s in {{s|Basement}}, [[Mushroom]]s in {{s|Caves}} and so on). 
+** {{T|Golden Horse Shoe}} will increase the chance for a Treasure Room to become a double Treasure Room, and {{I|More Options}} will cause every Treasure Room to become a double Treasure Room.
+** {{dlc|r}} If the Treasure Room was unexplored, {{i|Tarot Cloth|n}} + {{p|XVII - The Stars}} will make the Treasure Room a double Treasure Room.
+** {{dlc+|r}} Treasure Rooms in {{s|Downpour}}, {{s|Dross}}, {{s|Mines}}, {{s|Ashpit}}, {{s|Mausoleum}}, {{s|Gehenna}}, and {{s|Corpse}} will always contain two items. One item will be hidden with a non-removable {{Cu|Blind}} effect.{{dlc-}}
+** {{dlc|r}} If a Treasure Room on the alt path spawns with an extra item, it will have three items. One can be taken freely while the other two are still a choice. There is no visual indication which is which, although one of the choice items is still hidden.
+*** {{t|Broken Glasses}} have a chance to add a hidden item choice to regular Treasure Rooms, or reveal the hidden choice in alt Treasure Rooms.
+* {{dlc+|a}} Treasure Rooms may contain a {{M|Shop Restock Machine}}, allowing Isaac to re-roll offered items if he has coins or bombs.{{dlc-}}
+** {{t|Pay to Win}} guarantees a Shop Restock Machine in newly generated Treasure Rooms.
+* {{dlc|a+nr}} 2-3 {{E|Greed Gaper|x}}s may appear in some rooms.
+* {{dlc|r}} 1-3 {{E|Bulb|x}}s may appear in some rooms.
+* {{dlc|r}} Some themed enemies from their respective floors may appear in some alt path Treasure Rooms.
+* Treasure Rooms have a few very rare layouts that do not spawn items. Instead, they spawn:
+** {{dlc|a+}} {{E|Poop}} surrounded by a [[trinket]], five pickups, and {{e|Attack Fly|text=Attack Flies}}.
+** {{dlc|a+}} A trinket surrounded by eight pickups.
+** {{dlc+|r}} ({{s|Downpour}} only) A trinket surrounded by four {{E|Blue Fire Place}}s, with two pairs of [[Pills]], [[Card]]s or [[Rune]]s.{{dlc-}}
+** {{dlc+|r}} ({{s|Mines}} only) Eight various pickups in the middle of the room, with additional pickups surrounded by rocks and a fireplace at each corner.{{dlc-}}
+** {{dlc+|r}} ({{s|Ashpit}} only) A {{M|Key Master}}, with [[key]]s surrounded by [[spiked rock]]s on the top left and bottom right of the room.{{dlc-}}
+** {{dlc+|r}} ({{s|Mausoleum}} and {{s|Gehenna}} only) [[Spikes]] surrounded by a trinket, two [[Golden Chest]]s, one [[Stone Chest]], a trinket, and a random heart, bomb, key and pill.{{dlc-}}
+** {{dlc+|r}} ({{s|Corpse}} only) A {{M|Rotten Beggar}} and a random coin at each room corner.{{dlc-}}
+
+== Layouts ==
+The following room maps were made using [https://github.com/Basement-Renovator/basement-renovator Basement Renovator] for cleaner viewing. Note that some [[urn]]s you see will be the themed obstacle from the corresponding floor when encountered in-game.
+=== Normal path layouts ===
+{| class="wikitable sortable mw-collapsible mw-collapsed" style="text-align: center"
+ ! scope="col" | ID
+ ! scope="col" | Weight
+ ! scope="col" class="unsortable" | Image preview
+ |-
+ ! scope="row" | 0
+ | 1
+ | [[File:Treasure Room 0.png|300px]]
+ |-
+ ! scope="row" | 1
+ | 1
+ | [[File:Treasure Room 1.png|300px]]
+ |-
+ ! scope="row" | 2
+ | 1
+ | [[File:Treasure Room 2.png|300px]]
+ |-
+ ! scope="row" | 3
+ | 1
+ | [[File:Treasure Room 3.png|300px]]
+ |-
+ ! scope="row" | 4
+ | 1
+ | [[File:Treasure Room 4.png|300px]]
+ |-
+ ! scope="row" | 5
+ | 1
+ | [[File:Treasure Room 5.png|300px]]
+ |-
+ ! scope="row" | 6
+ | 1
+ | [[File:Treasure Room 6.png|300px]]
+ |-
+ ! scope="row" | 7
+ | 1
+ | [[File:Treasure Room 7.png|300px]]
+ |-
+ ! scope="row" | 8
+ | 1
+ | [[File:Treasure Room 8.png|300px]]
+ |-
+ ! scope="row" | 9
+ | 1
+ | [[File:Treasure Room 9.png|300px]]
+ |-
+ ! scope="row" | 10
+ | 1
+ | [[File:Treasure Room 10.png|300px]]
+ |-
+ ! scope="row" | {{dlc|anr}} 12<br>{{dlc|r}} 11
+ | 1
+ | [[File:Treasure Room 11.png|300px]]
+ |-
+ ! scope="row" | {{dlc|anr}} 13<br>{{dlc|r}} 12
+ | 1
+ | {{dlcmap slideshow|{{dlcalt|[[File:Treasure Room 13 Afterbirth.png|300px]]|a+=[[File:Treasure Room 12.png|300px]]}}}}
+ |-
+ ! scope="row" | {{dlc|anr}} 14<br>{{dlc|r}} 13
+ | 1
+ | [[File:Treasure Room 13.png|300px]]
+ |-
+ ! scope="row" | {{dlc|anr}} 15<br>{{dlc|r}} 14
+ | 1
+ | [[File:Treasure Room 14.png|300px]]
+ |-
+ ! scope="row" | {{dlc|anr}} 16<br>{{dlc|r}} 15
+ | 1
+ | [[File:Treasure Room 15.png|300px]]
+ |-
+ ! scope="row" | {{dlc|anr}} 23<br>{{dlc|r}} 16
+ | 1
+ | [[File:Treasure Room 16.png|300px]]
+ |-
+ ! scope="row" | {{dlc|anr}} 24<br>{{dlc|r}} 17
+ | 1
+ | [[File:Treasure Room 17.png|300px]]
+ |-
+ ! scope="row" | {{dlc|r}} 18
+ | 0.25
+ | [[File:Treasure Room 18.png|300px]]
+ |-
+ ! scope="row" | {{dlc|a+nr}} 34<br>{{dlc|r}} 19
+ | 1
+ | [[File:Treasure Room 19.png|300px]]
+ |-
+ ! scope="row" | {{dlc|r}} 20
+ | 1
+ | [[File:Treasure Room 20.png|300px]]
+ |-
+ ! scope="row" | {{dlc|r}} 21
+ | 1
+ | [[File:Treasure Room 21.png|300px]]
+ |-
+ ! scope="row" | {{dlc|a+nr}} 37<br>{{dlc|r}} 22
+ | 0.01
+ | [[File:Treasure Room 22.png|300px]]
+ |-
+ ! scope="row" | {{dlc|a+nr}} 38<br>{{dlc|r}} 23
+ | 0.1
+ | [[File:Treasure Room 23.png|300px]]
+ |-
+ ! scope="row" | {{dlc|r}} 24
+ | 1
+ | [[File:Treasure Room 24.png|300px]]
+ |-
+ ! scope="row" | {{dlc|r}} 25
+ | 1
+ | [[File:Treasure Room 25.png|300px]]
+ |-
+ ! scope="row" | {{dlc|r}} 26
+ | 1
+ | [[File:Treasure Room 26.png|300px]]
+ |-
+ ! scope="row" | {{dlc|anr}} 27
+ | 1
+ | [[File:Treasure Room 27 Afterbirth.png|300px]]
+ |-
+ ! scope="row" | {{dlc|r}} 27
+ | 1
+ | [[File:Treasure Room 27.png|300px]]
+ |-
+ ! scope="row" | {{dlc|r}} 28
+ | 1
+ | [[File:Treasure Room 28.png|300px]]
+ |-
+ ! scope="row" | {{dlc|r}} 29
+ | 1
+ | [[File:Treasure Room 29.png|300px]]
+ |-
+ ! scope="row" | {{dlc|r}} 30
+ | 1
+ | [[File:Treasure Room 30.png|300px]]
+ |-
+ ! scope="row" | {{dlc|r}} 31
+ | 1
+ | [[File:Treasure Room 31.png|300px]]
+ |-
+ ! scope="row" | {{dlc|r}} 32
+ | 0.25
+ | [[File:Treasure Room 32.png|300px]]
+ |-
+ ! scope="row" | {{dlc|a+nr}} 33
+ | 0.25
+ | [[File:Treasure Room 33 Afterbirth+.png|300px]]
+ |-
+ ! scope="row" | {{dlc|r}} 33
+ | 0.25
+ | [[File:Treasure Room 33.png|300px]]
+ |-
+ ! scope="row" | {{dlc|r}} 34
+ | 0.25
+ | [[File:Treasure Room 34.png|300px]]
+ |-
+ ! scope="row" | {{dlc|a+nr}} 35
+ | 1
+ | [[File:Treasure Room 35 Afterbirth+.png|300px]]
+ |-
+ ! scope="row" | {{dlc|r}} 35
+ | 0.25
+ | [[File:Treasure Room 35.png|300px]]
+ |-
+ ! scope="row" | {{dlc|a+nr}} 36
+ | 1
+ | [[File:Treasure Room 36 Afterbirth+.png|300px]]
+ |-
+ ! scope="row" | {{dlc|nr}} 11<br>{{dlc|r}} 36
+ | 1
+ | [[File:Treasure Room 36.png|300px]]
+ |-
+ ! scope="row" | {{dlc|anr}} 17<br>{{dlc|r}} 37
+ | 1
+ | [[File:Treasure Room 37.png|300px]]
+ |-
+ ! scope="row" | {{dlc|anr}} 18<br>{{dlc|r}} 38
+ | 1
+ | [[File:Treasure Room 38.png|300px]]
+ |-
+ ! scope="row" | {{dlc|anr}} 19<br>{{dlc|r}} 39
+ | 1
+ | [[File:Treasure Room 39.png|300px]]
+ |-
+ ! scope="row" | {{dlc|anr}} 20<br>{{dlc|r}} 40
+ | 1
+ | [[File:Treasure Room 40.png|300px]]
+ |-
+ ! scope="row" | {{dlc|anr}} 21<br>{{dlc|r}} 41
+ | 1
+ | [[File:Treasure Room 41.png|300px]]
+ |-
+ ! scope="row" | {{dlc|anr}} 22<br>{{dlc|r}} 42
+ | 1
+ | [[File:Treasure Room 42.png|300px]]
+ |-
+ ! scope="row" | {{dlc|anr}} 28<br>{{dlc|r}} 43
+ | 1
+ | [[File:Treasure Room 43.png|300px]]
+ |-
+ ! scope="row" | {{dlc|anr}} 29<br>{{dlc|r}} 44
+ | 1
+ | [[File:Treasure Room 44.png|300px]]
+ |-
+ ! scope="row" | {{dlc|r}} 45
+ | 1
+ | [[File:Treasure Room 45.png|300px]]
+ |-
+ ! scope="row" | {{dlc|r}} 46
+ | 1
+ | [[File:Treasure Room 46.png|300px]]
+ |-
+ ! scope="row" | {{dlc|anr}} 26<br>{{dlc|r}} 47
+ | 1
+ | [[File:Treasure Room 47.png|300px]]
+ |-
+ ! scope="row" | {{dlc|a+nr}} 31<br>{{dlc|r}} 48
+ | 1
+ | [[File:Treasure Room 48.png|300px]]
+ |-
+ ! scope="row" | {{dlc|a+nr}} 30<br>{{dlc|r}} 49
+ | 1
+ | [[File:Treasure Room 49.png|300px]]
+ |-
+ ! scope="row" | {{dlc|r}} 50
+ | 1
+ | [[File:Treasure Room 50.png|300px]]
+ |-
+ ! scope="row" | {{dlc|r}} 51
+ | 0.5
+ | [[File:Treasure Room 51.png|300px]]
+ |-
+ ! scope="row" | {{dlc|anr}} 25<br>{{dlc|r}} 52
+ | 1
+ | [[File:Treasure Room 52.png|300px]]
+ |-
+ ! scope="row" | {{dlc|a+nr}} 32<br>{{dlc|r}} 53
+ | 1
+ | [[File:Treasure Room 53.png|300px]]
+ |-
+ ! scope="row" | {{dlc|r}} 54
+ | 1
+ | [[File:Treasure Room 54.png|300px]]
+ |-
+ ! scope="row" | {{dlc|r}} 55
+ | 0.25
+ | [[File:Treasure Room 55.png|300px]]
+|}
+
+=== {{dlc|a}} {{mode|greed}} Greed mode layouts ===
+{| class="wikitable sortable mw-collapsible mw-collapsed" style="text-align: center"
+ ! scope="col" | ID
+ ! scope="col" | Weight
+ ! scope="col" class="unsortable" | Image preview
+ |-
+ ! scope="row" | 0
+ | 1
+ | [[File:Greed Treasure Room 0.png|300px]]
+ |-
+ ! scope="row" | 1
+ | 1
+ | [[File:Greed Treasure Room 1.png|300px]]
+ |-
+ ! scope="row" | 2
+ | 1
+ | [[File:Greed Treasure Room 2.png|300px]]
+ |-
+ ! scope="row" | 3
+ | 1
+ | [[File:Greed Treasure Room 3.png|300px]]
+ |-
+ ! scope="row" | 4
+ | 1
+ | [[File:Greed Treasure Room 4.png|300px]]
+ |-
+ ! scope="row" | 5
+ | 1
+ | [[File:Greed Treasure Room 5.png|300px]]
+ |-
+ ! scope="row" | 6
+ | 1
+ | [[File:Greed Treasure Room 6.png|300px]]
+ |-
+ ! scope="row" | 7
+ | 1
+ | [[File:Greed Treasure Room 7.png|300px]]
+ |-
+ ! scope="row" | 8
+ | 1
+ | [[File:Greed Treasure Room 8.png|300px]]
+ |-
+ ! scope="row" | {{dlc|nr}} 9
+ | 1
+ | [[File:Greed Treasure Room 9 Afterbirth+.png|300px]]
+ |-
+ ! scope="row" | {{dlcmap slideshow|{{dlcalt|10|r=9}}}}
+ | 1
+ | [[File:Greed Treasure Room 9.png|300px]]
+ |-
+ ! scope="row" | {{dlc|r}} 10
+ | 0.5
+ | [[File:Greed Treasure Room 10.png|300px]]
+ |-
+ ! scope="row" | {{dlc|r+}} 11
+ | 1
+ | [[File:Greed Treasure Room 11.png|300px]]
+ |-
+ ! scope="row" | {{dlc|rnr+}} 11<br>{{dlc|r+}} 12
+ | 1
+ | [[File:Greed Treasure Room 12.png|300px]]
+ |-
+ ! scope="row" | {{dlc|rnr+}} 12<br>{{dlc|r+}} 13
+ | 1
+ | [[File:Greed Treasure Room 13.png|300px]]
+ |-
+ ! scope="row" | {{dlc|nr}} 11<br>{{dlc|rnr+}} 13<br>{{dlc|r+}} 14
+ | {{dlcmap slideshow|{{dlcalt|1|r=0.5}}}}
+ | [[File:Greed Treasure Room 14.png|300px]]
+ |-
+ ! scope="row" | {{dlc|nr}} 13<br>{{dlc|rnr+}} 14<br>{{dlc|r+}} 15
+ | {{dlcmap slideshow|{{dlcalt|1|r=0.5}}}}
+ | [[File:Greed Treasure Room 15.png|300px]]
+ |-
+ ! scope="row" | {{dlc|nr}} 12<br>{{dlc|rnr+}} 15<br>{{dlc|r+}} 16
+ | {{dlcmap slideshow|{{dlcalt|1|r=0.5}}}}
+ | [[File:Greed Treasure Room 16.png|300px]]
+ |-
+ ! scope="row" | {{dlc|nr}} 14<br>{{dlc|rnr+}} 16<br>{{dlc|r+}} 17
+ | {{dlcmap slideshow|{{dlcalt|1|r=0.5}}}}
+ | [[File:Greed Treasure Room 17.png|300px]]
+|}
+
+=== {{s|Downpour}} layouts ===
+{| class="wikitable sortable mw-collapsible mw-collapsed" style="text-align: center"
+ ! scope="col" | ID
+ ! scope="col" | Weight
+ ! scope="col" class="unsortable" | Image preview
+ |-
+ ! scope="row" | 0
+ | 1
+ | [[File:Treasure Room Downpour 0.png|300px]]
+ |-
+ ! scope="row" | 1
+ | 1
+ | [[File:Treasure Room Downpour 1.png|300px]]
+ |-
+ ! scope="row" | 2
+ | 1
+ | [[File:Treasure Room Downpour 2.png|300px]]
+ |-
+ ! scope="row" | 3
+ | 1
+ | [[File:Treasure Room Downpour 3.png|300px]]
+ |-
+ ! scope="row" | 4
+ | 1
+ | [[File:Treasure Room Downpour 4.png|300px]]
+ |-
+ ! scope="row" | 5
+ | 1
+ | [[File:Treasure Room Downpour 5.png|300px]]
+ |-
+ ! scope="row" | 6
+ | 0.01
+ | [[File:Treasure Room Downpour 6.png|300px]]
+ |-
+ ! scope="row" | 7
+ | 0.1
+ | [[File:Treasure Room Downpour 7.png|300px]]
+ |-
+ ! scope="row" | 8
+ | 0.25
+ | [[File:Treasure Room Downpour 8.png|300px]]
+ |-
+ ! scope="row" | 9
+ | 0.25
+ | [[File:Treasure Room Downpour 9.png|300px]]
+ |-
+ ! scope="row" | 10
+ | 1
+ | [[File:Treasure Room Downpour 10.png|300px]]
+ |-
+ ! scope="row" | 11
+ | 1
+ | [[File:Treasure Room Downpour 11.png|300px]]
+ |-
+ ! scope="row" | 12
+ | 1
+ | [[File:Treasure Room Downpour 12.png|300px]]
+ |-
+ ! scope="row" | 13
+ | 1
+ | [[File:Treasure Room Downpour 13.png|300px]]
+ |-
+ ! scope="row" | 14
+ | 1
+ | [[File:Treasure Room Downpour 14.png|300px]]
+ |-
+ ! scope="row" | 15
+ | 0.25
+ | [[File:Treasure Room Downpour 15.png|300px]]
+ |-
+ ! scope="row" | 16
+ | 1
+ | [[File:Treasure Room Downpour 16.png|300px]]
+ |-
+ ! scope="row" | 17
+ | 1
+ | [[File:Treasure Room Downpour 17.png|300px]]
+ |-
+ ! scope="row" | 18
+ | 1
+ | [[File:Treasure Room Downpour 18.png|300px]]
+ |-
+ ! scope="row" | 19
+ | 1
+ | [[File:Treasure Room Downpour 19.png|300px]]
+ |-
+ ! scope="row" | 20
+ | 1
+ | [[File:Treasure Room Downpour 20.png|300px]]
+ |-
+ ! scope="row" | 21
+ | 0.25
+ | [[File:Treasure Room Downpour 21.png|300px]]
+ |-
+ ! scope="row" | 22
+ | 1
+ | [[File:Treasure Room Downpour 22.png|300px]]
+ |-
+ ! scope="row" | 23
+ | 1
+ | [[File:Treasure Room Downpour 23.png|300px]]
+ |-
+ ! scope="row" | 24
+ | 1
+ | [[File:Treasure Room Downpour 24.png|300px]]
+ |-
+ ! scope="row" | 25
+ | 1
+ | [[File:Treasure Room Downpour 25.png|300px]]
+ |-
+ ! scope="row" | 26
+ | 0.25
+ | [[File:Treasure Room Downpour 26.png|300px]]
+ |-
+ ! scope="row" | 27
+ | 1
+ | [[File:Treasure Room Downpour 27.png|300px]]
+ |-
+ ! scope="row" | 28
+ | 1
+ | [[File:Treasure Room Downpour 28.png|300px]]
+ |-
+ ! scope="row" | 10000
+ | 1
+ | [[File:Treasure Room Downpour 10000.png|300px]]
+ |-
+ ! scope="row" | 10001
+ | 1
+ | [[File:Treasure Room Downpour 10001.png|300px]]
+ |-
+ ! scope="row" | 10002
+ | 1
+ | [[File:Treasure Room Downpour 10002.png|300px]]
+|}
+
+=== {{s|Dross}} layouts ===
+{| class="wikitable sortable mw-collapsible mw-collapsed" style="text-align: center"
+ ! scope="col" | ID
+ ! scope="col" | Weight
+ ! scope="col" class="unsortable" | Image preview
+ |-
+ ! scope="row" | 0
+ | 1
+ | [[File:Treasure Room Dross 0.png|300px]]
+ |-
+ ! scope="row" | 1
+ | 1
+ | [[File:Treasure Room Dross 1.png|300px]]
+ |-
+ ! scope="row" | 2
+ | 1
+ | [[File:Treasure Room Dross 2.png|300px]]
+ |-
+ ! scope="row" | 3
+ | 1
+ | [[File:Treasure Room Dross 3.png|300px]]
+ |-
+ ! scope="row" | 4
+ | 1
+ | [[File:Treasure Room Dross 4.png|300px]]
+ |-
+ ! scope="row" | 5
+ | 1
+ | [[File:Treasure Room Dross 5.png|300px]]
+ |-
+ ! scope="row" | 6
+ | 0.01
+ | [[File:Treasure Room Dross 6.png|300px]]
+ |-
+ ! scope="row" | 7
+ | 0.1
+ | [[File:Treasure Room Dross 7.png|300px]]
+ |-
+ ! scope="row" | 8
+ | 1
+ | [[File:Treasure Room Dross 8.png|300px]]
+ |-
+ ! scope="row" | 9
+ | 1
+ | [[File:Treasure Room Dross 9.png|300px]]
+ |-
+ ! scope="row" | 10
+ | 0.1
+ | [[File:Treasure Room Dross 10.png|300px]]
+ |-
+ ! scope="row" | 11
+ | 0.25
+ | [[File:Treasure Room Dross 11.png|300px]]
+ |-
+ ! scope="row" | 12
+ | 1
+ | [[File:Treasure Room Dross 12.png|300px]]
+ |-
+ ! scope="row" | 13
+ | 1
+ | [[File:Treasure Room Dross 13.png|300px]]
+ |-
+ ! scope="row" | 14
+ | 1
+ | [[File:Treasure Room Dross 14.png|300px]]
+ |-
+ ! scope="row" | 15
+ | 1
+ | [[File:Treasure Room Dross 15.png|300px]]
+ |-
+ ! scope="row" | 16
+ | 1
+ | [[File:Treasure Room Dross 16.png|300px]]
+ |-
+ ! scope="row" | 17
+ | 0.25
+ | [[File:Treasure Room Dross 17.png|300px]]
+ |-
+ ! scope="row" | 18
+ | 1
+ | [[File:Treasure Room Dross 18.png|300px]]
+ |-
+ ! scope="row" | 19
+ | 1
+ | [[File:Treasure Room Dross 19.png|300px]]
+ |-
+ ! scope="row" | 20
+ | 1
+ | [[File:Treasure Room Dross 20.png|300px]]
+ |-
+ ! scope="row" | 21
+ | 1
+ | [[File:Treasure Room Dross 21.png|300px]]
+ |-
+ ! scope="row" | 22
+ | 1
+ | [[File:Treasure Room Dross 22.png|300px]]
+ |-
+ ! scope="row" | 23
+ | 0.25
+ | [[File:Treasure Room Dross 23.png|300px]]
+ |-
+ ! scope="row" | 24
+ | 1
+ | [[File:Treasure Room Dross 24.png|300px]]
+ |-
+ ! scope="row" | 25
+ | 1
+ | [[File:Treasure Room Dross 25.png|300px]]
+ |-
+ ! scope="row" | 26
+ | 1
+ | [[File:Treasure Room Dross 26.png|300px]]
+ |-
+ ! scope="row" | 27
+ | 1
+ | [[File:Treasure Room Dross 27.png|300px]]
+ |-
+ ! scope="row" | 28
+ | 0.25
+ | [[File:Treasure Room Dross 28.png|300px]]
+ |-
+ ! scope="row" | 29
+ | 1
+ | [[File:Treasure Room Dross 29.png|300px]]
+ |-
+ ! scope="row" | 30
+ | 1
+ | [[File:Treasure Room Dross 30.png|300px]]
+ |-
+ ! scope="row" | 10000
+ | 1
+ | [[File:Treasure Room Dross 10000.png|300px]]
+ |-
+ ! scope="row" | 10001
+ | 1
+ | [[File:Treasure Room Dross 10001.png|300px]]
+ |-
+ ! scope="row" | 10002
+ | 1
+ | [[File:Treasure Room Dross 10002.png|300px]]
+|}
+
+=== {{s|Mines}} layouts ===
+{| class="wikitable sortable mw-collapsible mw-collapsed" style="text-align: center"
+ ! scope="col" | ID
+ ! scope="col" | Weight
+ ! scope="col" class="unsortable" | Image preview
+ |-
+ ! scope="row" | 0
+ | 1
+ | [[File:Treasure Room Mines 0.png|300px]]
+ |-
+ ! scope="row" | 1
+ | 1
+ | [[File:Treasure Room Mines 1.png|300px]]
+ |-
+ ! scope="row" | 2
+ | 1
+ | [[File:Treasure Room Mines 2.png|300px]]
+ |-
+ ! scope="row" | 3
+ | 1
+ | [[File:Treasure Room Mines 3.png|300px]]
+ |-
+ ! scope="row" | 4
+ | 1
+ | [[File:Treasure Room Mines 4.png|300px]]
+ |-
+ ! scope="row" | 5
+ | 0.5
+ | [[File:Treasure Room Mines 5.png|300px]]
+ |-
+ ! scope="row" | 6
+ | 1
+ | [[File:Treasure Room Mines 6.png|300px]]
+ |-
+ ! scope="row" | 7
+ | 1
+ | [[File:Treasure Room Mines 7.png|300px]]
+ |-
+ ! scope="row" | 8
+ | 1
+ | [[File:Treasure Room Mines 8.png|300px]]
+ |-
+ ! scope="row" | 9
+ | 1
+ | [[File:Treasure Room Mines 9.png|300px]]
+ |-
+ ! scope="row" | 10
+ | 1
+ | [[File:Treasure Room Mines 10.png|300px]]
+ |-
+ ! scope="row" | 11
+ | 1
+ | [[File:Treasure Room Mines 11.png|300px]]
+ |-
+ ! scope="row" | 12
+ | 1
+ | [[File:Treasure Room Mines 12.png|300px]]
+ |-
+ ! scope="row" | 13
+ | 0.25
+ | [[File:Treasure Room Mines 13.png|300px]]
+ |-
+ ! scope="row" | 14
+ | 0.1
+ | [[File:Treasure Room Mines 14.png|300px]]
+ |-
+ ! scope="row" | 15
+ | 0.01
+ | [[File:Treasure Room Mines 15.png|300px]]
+ |-
+ ! scope="row" | 16
+ | 1
+ | [[File:Treasure Room Mines 16.png|300px]]
+ |-
+ ! scope="row" | 17
+ | 1
+ | [[File:Treasure Room Mines 17.png|300px]]
+ |-
+ ! scope="row" | 18
+ | 1
+ | [[File:Treasure Room Mines 18.png|300px]]
+ |-
+ ! scope="row" | 19
+ | 0.25
+ | [[File:Treasure Room Mines 19.png|300px]]
+ |-
+ ! scope="row" | 20
+ | 1
+ | [[File:Treasure Room Mines 20.png|300px]]
+ |-
+ ! scope="row" | 21
+ | 1
+ | [[File:Treasure Room Mines 21.png|300px]]
+ |-
+ ! scope="row" | 22
+ | 1
+ | [[File:Treasure Room Mines 22.png|300px]]
+ |-
+ ! scope="row" | 23
+ | 1
+ | [[File:Treasure Room Mines 23.png|300px]]
+ |-
+ ! scope="row" | 24
+ | 1
+ | [[File:Treasure Room Mines 24.png|300px]]
+ |-
+ ! scope="row" | 25
+ | 0.25
+ | [[File:Treasure Room Mines 25.png|300px]]
+ |-
+ ! scope="row" | 26
+ | 1
+ | [[File:Treasure Room Mines 26.png|300px]]
+ |-
+ ! scope="row" | 27
+ | 1
+ | [[File:Treasure Room Mines 27.png|300px]]
+ |-
+ ! scope="row" | 28
+ | 1
+ | [[File:Treasure Room Mines 28.png|300px]]
+ |-
+ ! scope="row" | 29
+ | 1
+ | [[File:Treasure Room Mines 29.png|300px]]
+ |-
+ ! scope="row" | 30
+ | 0.25
+ | [[File:Treasure Room Mines 30.png|300px]]
+ |-
+ ! scope="row" | 31
+ | 1
+ | [[File:Treasure Room Mines 31.png|300px]]
+ |-
+ ! scope="row" | 32
+ | 1
+ | [[File:Treasure Room Mines 32.png|300px]]
+|}
+
+=== {{s|Ashpit}} layouts ===
+{| class="wikitable sortable mw-collapsible mw-collapsed" style="text-align: center"
+ ! scope="col" | ID
+ ! scope="col" | Weight
+ ! scope="col" class="unsortable" | Image preview
+ |-
+ ! scope="row" | 0
+ | 1
+ | [[File:Treasure Room Ashpit 0.png|300px]]
+ |-
+ ! scope="row" | 1
+ | 1
+ | [[File:Treasure Room Ashpit 1.png|300px]]
+ |-
+ ! scope="row" | 2
+ | 1
+ | [[File:Treasure Room Ashpit 2.png|300px]]
+ |-
+ ! scope="row" | 3
+ | 1
+ | [[File:Treasure Room Ashpit 3.png|300px]]
+ |-
+ ! scope="row" | 4
+ | 1
+ | [[File:Treasure Room Ashpit 4.png|300px]]
+ |-
+ ! scope="row" | 5
+ | 0.25
+ | [[File:Treasure Room Ashpit 5.png|300px]]
+ |-
+ ! scope="row" | 6
+ | 1
+ | [[File:Treasure Room Ashpit 6.png|300px]]
+ |-
+ ! scope="row" | 7
+ | 1
+ | [[File:Treasure Room Ashpit 7.png|300px]]
+ |-
+ ! scope="row" | 8
+ | 1
+ | [[File:Treasure Room Ashpit 8.png|300px]]
+ |-
+ ! scope="row" | 9
+ | 1
+ | [[File:Treasure Room Ashpit 9.png|300px]]
+ |-
+ ! scope="row" | 10
+ | 1
+ | [[File:Treasure Room Ashpit 10.png|300px]]
+ |-
+ ! scope="row" | 11
+ | 1
+ | [[File:Treasure Room Ashpit 11.png|300px]]
+ |-
+ ! scope="row" | 12
+ | 1
+ | [[File:Treasure Room Ashpit 12.png|300px]]
+ |-
+ ! scope="row" | 13
+ | 0.1
+ | [[File:Treasure Room Ashpit 13.png|300px]]
+ |-
+ ! scope="row" | 14
+ | 0.25
+ | [[File:Treasure Room Ashpit 14.png|300px]]
+ |-
+ ! scope="row" | 15
+ | 0.01
+ | [[File:Treasure Room Ashpit 15.png|300px]]
+ |-
+ ! scope="row" | 16
+ | 0.25
+ | [[File:Treasure Room Ashpit 16.png|300px]]
+ |-
+ ! scope="row" | 17
+ | 1
+ | [[File:Treasure Room Ashpit 17.png|300px]]
+ |-
+ ! scope="row" | 18
+ | 1
+ | [[File:Treasure Room Ashpit 18.png|300px]]
+ |-
+ ! scope="row" | 19
+ | 1
+ | [[File:Treasure Room Ashpit 19.png|300px]]
+ |-
+ ! scope="row" | 20
+ | 0.25
+ | [[File:Treasure Room Ashpit 20.png|300px]]
+ |-
+ ! scope="row" | 21
+ | 1
+ | [[File:Treasure Room Ashpit 21.png|300px]]
+ |-
+ ! scope="row" | 22
+ | 1
+ | [[File:Treasure Room Ashpit 22.png|300px]]
+ |-
+ ! scope="row" | 23
+ | 1
+ | [[File:Treasure Room Ashpit 23.png|300px]]
+ |-
+ ! scope="row" | 24
+ | 1
+ | [[File:Treasure Room Ashpit 24.png|300px]]
+ |-
+ ! scope="row" | 25
+ | 1
+ | [[File:Treasure Room Ashpit 25.png|300px]]
+ |-
+ ! scope="row" | 26
+ | 0.25
+ | [[File:Treasure Room Ashpit 26.png|300px]]
+ |-
+ ! scope="row" | 27
+ | 1
+ | [[File:Treasure Room Ashpit 27.png|300px]]
+ |-
+ ! scope="row" | 28
+ | 1
+ | [[File:Treasure Room Ashpit 28.png|300px]]
+ |-
+ ! scope="row" | 29
+ | 1
+ | [[File:Treasure Room Ashpit 29.png|300px]]
+ |-
+ ! scope="row" | 30
+ | 1
+ | [[File:Treasure Room Ashpit 30.png|300px]]
+ |-
+ ! scope="row" | 31
+ | 0.25
+ | [[File:Treasure Room Ashpit 31.png|300px]]
+ |-
+ ! scope="row" | 32
+ | 1
+ | [[File:Treasure Room Ashpit 32.png|300px]]
+ |-
+ ! scope="row" | 33
+ | 1
+ | [[File:Treasure Room Ashpit 33.png|300px]]
+|}
+
+=== {{s|Mausoleum}} layouts ===
+{| class="wikitable sortable mw-collapsible mw-collapsed" style="text-align: center"
+ ! scope="col" | ID
+ ! scope="col" | Weight
+ ! scope="col" class="unsortable" | Image preview
+ |-
+ ! scope="row" | 0
+ | 1
+ | [[File:Treasure Room Mausoleum 0.png|300px]]
+ |-
+ ! scope="row" | 1
+ | 1
+ | [[File:Treasure Room Mausoleum 1.png|300px]]
+ |-
+ ! scope="row" | 2
+ | 1
+ | [[File:Treasure Room Mausoleum 2.png|300px]]
+ |-
+ ! scope="row" | 3
+ | 1
+ | [[File:Treasure Room Mausoleum 3.png|300px]]
+ |-
+ ! scope="row" | 4
+ | 1
+ | [[File:Treasure Room Mausoleum 4.png|300px]]
+ |-
+ ! scope="row" | 5
+ | 1
+ | [[File:Treasure Room Mausoleum 5.png|300px]]
+ |-
+ ! scope="row" | 6
+ | 0.5
+ | [[File:Treasure Room Mausoleum 6.png|300px]]
+ |-
+ ! scope="row" | 7
+ | 1
+ | [[File:Treasure Room Mausoleum 7.png|300px]]
+ |-
+ ! scope="row" | 8
+ | 0.5
+ | [[File:Treasure Room Mausoleum 8.png|300px]]
+ |-
+ ! scope="row" | 9
+ | 0.01
+ | [[File:Treasure Room Mausoleum 9.png|300px]]
+ |-
+ ! scope="row" | 10
+ | 0.1
+ | [[File:Treasure Room Mausoleum 10.png|300px]]
+ |-
+ ! scope="row" | 11
+ | 1
+ | [[File:Treasure Room Mausoleum 11.png|300px]]
+ |-
+ ! scope="row" | 12
+ | 1
+ | [[File:Treasure Room Mausoleum 12.png|300px]]
+ |-
+ ! scope="row" | 13
+ | 1
+ | [[File:Treasure Room Mausoleum 13.png|300px]]
+ |-
+ ! scope="row" | 14
+ | 1
+ | [[File:Treasure Room Mausoleum 14.png|300px]]
+ |-
+ ! scope="row" | 15
+ | 1
+ | [[File:Treasure Room Mausoleum 15.png|300px]]
+ |-
+ ! scope="row" | 16
+ | 1
+ | [[File:Treasure Room Mausoleum 16.png|300px]]
+ |-
+ ! scope="row" | 17
+ | 0.25
+ | [[File:Treasure Room Mausoleum 17.png|300px]]
+ |-
+ ! scope="row" | 18
+ | 1
+ | [[File:Treasure Room Mausoleum 18.png|300px]]
+ |-
+ ! scope="row" | 19
+ | 1
+ | [[File:Treasure Room Mausoleum 19.png|300px]]
+ |-
+ ! scope="row" | 20
+ | 1
+ | [[File:Treasure Room Mausoleum 20.png|300px]]
+ |-
+ ! scope="row" | 21
+ | 1
+ | [[File:Treasure Room Mausoleum 21.png|300px]]
+ |-
+ ! scope="row" | 22
+ | 1
+ | [[File:Treasure Room Mausoleum 22.png|300px]]
+ |-
+ ! scope="row" | 23
+ | 0.25
+ | [[File:Treasure Room Mausoleum 23.png|300px]]
+ |-
+ ! scope="row" | 24
+ | 1
+ | [[File:Treasure Room Mausoleum 24.png|300px]]
+ |-
+ ! scope="row" | 25
+ | 1
+ | [[File:Treasure Room Mausoleum 25.png|300px]]
+ |-
+ ! scope="row" | 26
+ | 1
+ | [[File:Treasure Room Mausoleum 26.png|300px]]
+ |-
+ ! scope="row" | 27
+ | 1
+ | [[File:Treasure Room Mausoleum 27.png|300px]]
+ |-
+ ! scope="row" | 28
+ | 0.25
+ | [[File:Treasure Room Mausoleum 28.png|300px]]
+ |-
+ ! scope="row" | 29
+ | 1
+ | [[File:Treasure Room Mausoleum 29.png|300px]]
+ |-
+ ! scope="row" | 30
+ | 1
+ | [[File:Treasure Room Mausoleum 30.png|300px]]
+|}
+
+=== {{s|Gehenna}} layouts ===
+{| class="wikitable sortable mw-collapsible mw-collapsed" style="text-align: center"
+ ! scope="col" | ID
+ ! scope="col" | Weight
+ ! scope="col" class="unsortable" | Image preview
+ |-
+ ! scope="row" | 0
+ | 1
+ | [[File:Treasure Room Gehenna 0.png|300px]]
+ |-
+ ! scope="row" | 1
+ | 1
+ | [[File:Treasure Room Gehenna 1.png|300px]]
+ |-
+ ! scope="row" | 2
+ | 1
+ | [[File:Treasure Room Gehenna 2.png|300px]]
+ |-
+ ! scope="row" | 3
+ | 1
+ | [[File:Treasure Room Gehenna 3.png|300px]]
+ |-
+ ! scope="row" | 4
+ | 1
+ | [[File:Treasure Room Gehenna 4.png|300px]]
+ |-
+ ! scope="row" | 5
+ | 1
+ | [[File:Treasure Room Gehenna 5.png|300px]]
+ |-
+ ! scope="row" | 6
+ | 0.5
+ | [[File:Treasure Room Gehenna 6.png|300px]]
+ |-
+ ! scope="row" | 7
+ | 0.5
+ | [[File:Treasure Room Gehenna 7.png|300px]]
+ |-
+ ! scope="row" | 8
+ | 0.01
+ | [[File:Treasure Room Gehenna 8.png|300px]]
+ |-
+ ! scope="row" | 9
+ | 0.1
+ | [[File:Treasure Room Gehenna 9.png|300px]]
+ |-
+ ! scope="row" | 10
+ | 1
+ | [[File:Treasure Room Gehenna 10.png|300px]]
+ |-
+ ! scope="row" | 11
+ | 1
+ | [[File:Treasure Room Gehenna 11.png|300px]]
+ |-
+ ! scope="row" | 12
+ | 1
+ | [[File:Treasure Room Gehenna 12.png|300px]]
+ |-
+ ! scope="row" | 13
+ | 1
+ | [[File:Treasure Room Gehenna 13.png|300px]]
+ |-
+ ! scope="row" | 14
+ | 1
+ | [[File:Treasure Room Gehenna 14.png|300px]]
+ |-
+ ! scope="row" | 15
+ | 1
+ | [[File:Treasure Room Gehenna 15.png|300px]]
+ |-
+ ! scope="row" | 16
+ | 0.25
+ | [[File:Treasure Room Gehenna 16.png|300px]]
+ |-
+ ! scope="row" | 17
+ | 1
+ | [[File:Treasure Room Gehenna 17.png|300px]]
+ |-
+ ! scope="row" | 18
+ | 1
+ | [[File:Treasure Room Gehenna 18.png|300px]]
+ |-
+ ! scope="row" | 19
+ | 1
+ | [[File:Treasure Room Gehenna 19.png|300px]]
+ |-
+ ! scope="row" | 20
+ | 1
+ | [[File:Treasure Room Gehenna 20.png|300px]]
+ |-
+ ! scope="row" | 21
+ | 1
+ | [[File:Treasure Room Gehenna 21.png|300px]]
+ |-
+ ! scope="row" | 22
+ | 0.25
+ | [[File:Treasure Room Gehenna 22.png|300px]]
+ |-
+ ! scope="row" | 23
+ | 1
+ | [[File:Treasure Room Gehenna 23.png|300px]]
+ |-
+ ! scope="row" | 24
+ | 1
+ | [[File:Treasure Room Gehenna 24.png|300px]]
+ |-
+ ! scope="row" | 25
+ | 1
+ | [[File:Treasure Room Gehenna 25.png|300px]]
+ |-
+ ! scope="row" | 26
+ | 1
+ | [[File:Treasure Room Gehenna 26.png|300px]]
+ |-
+ ! scope="row" | 27
+ | 0.25
+ | [[File:Treasure Room Gehenna 27.png|300px]]
+ |-
+ ! scope="row" | 28
+ | 1
+ | [[File:Treasure Room Gehenna 28.png|300px]]
+ |-
+ ! scope="row" | 29
+ | 1
+ | [[File:Treasure Room Gehenna 29.png|300px]]
+|}
+
+=== {{s|Corpse}} layouts ===
+{| class="wikitable sortable mw-collapsible mw-collapsed" style="text-align: center"
+ ! scope="col" | ID
+ ! scope="col" | Weight
+ ! scope="col" class="unsortable" | Image preview
+ |-
+ ! scope="row" | 0
+ | 1
+ | [[File:Treasure Room Corpse 0.png|300px]]
+ |-
+ ! scope="row" | 1
+ | 1
+ | [[File:Treasure Room Corpse 1.png|300px]]
+ |-
+ ! scope="row" | 2
+ | 1
+ | [[File:Treasure Room Corpse 2.png|300px]]
+ |-
+ ! scope="row" | 3
+ | 1
+ | [[File:Treasure Room Corpse 3.png|300px]]
+ |-
+ ! scope="row" | 4
+ | 1
+ | [[File:Treasure Room Corpse 4.png|300px]]
+ |-
+ ! scope="row" | 5
+ | 1
+ | [[File:Treasure Room Corpse 5.png|300px]]
+ |-
+ ! scope="row" | 6
+ | 0.5
+ | [[File:Treasure Room Corpse 6.png|300px]]
+ |-
+ ! scope="row" | 7
+ | 1
+ | [[File:Treasure Room Corpse 7.png|300px]]
+ |-
+ ! scope="row" | 8
+ | 0.5
+ | [[File:Treasure Room Corpse 8.png|300px]]
+ |-
+ ! scope="row" | 9
+ | 0.01
+ | [[File:Treasure Room Corpse 9.png|300px]]
+ |-
+ ! scope="row" | 10
+ | 0.1
+ | [[File:Treasure Room Corpse 10.png|300px]]
+ |-
+ ! scope="row" | 11
+ | 1
+ | [[File:Treasure Room Corpse 11.png|300px]]
+ |-
+ ! scope="row" | 12
+ | 1
+ | [[File:Treasure Room Corpse 12.png|300px]]
+ |-
+ ! scope="row" | 13
+ | 1
+ | [[File:Treasure Room Corpse 13.png|300px]]
+ |-
+ ! scope="row" | 14
+ | 1
+ | [[File:Treasure Room Corpse 14.png|300px]]
+ |-
+ ! scope="row" | 15
+ | 1
+ | [[File:Treasure Room Corpse 15.png|300px]]
+ |-
+ ! scope="row" | 16
+ | 1
+ | [[File:Treasure Room Corpse 16.png|300px]]
+ |-
+ ! scope="row" | 17
+ | 0.25
+ | [[File:Treasure Room Corpse 17.png|300px]]
+ |-
+ ! scope="row" | 18
+ | 1
+ | [[File:Treasure Room Corpse 18.png|300px]]
+ |-
+ ! scope="row" | 19
+ | 1
+ | [[File:Treasure Room Corpse 19.png|300px]]
+ |-
+ ! scope="row" | 20
+ | 1
+ | [[File:Treasure Room Corpse 20.png|300px]]
+ |-
+ ! scope="row" | 21
+ | 1
+ | [[File:Treasure Room Corpse 21.png|300px]]
+ |-
+ ! scope="row" | 22
+ | 1
+ | [[File:Treasure Room Corpse 22.png|300px]]
+ |-
+ ! scope="row" | 23
+ | 0.25
+ | [[File:Treasure Room Corpse 23.png|300px]]
+ |-
+ ! scope="row" | 24
+ | 1
+ | [[File:Treasure Room Corpse 24.png|300px]]
+ |-
+ ! scope="row" | 25
+ | 1
+ | [[File:Treasure Room Corpse 25.png|300px]]
+ |-
+ ! scope="row" | 26
+ | 1
+ | [[File:Treasure Room Corpse 26.png|300px]]
+ |-
+ ! scope="row" | 27
+ | 1
+ | [[File:Treasure Room Corpse 27.png|300px]]
+ |-
+ ! scope="row" | 28
+ | 0.25
+ | [[File:Treasure Room Corpse 28.png|300px]]
+ |-
+ ! scope="row" | 29
+ | 1
+ | [[File:Treasure Room Corpse 29.png|300px]]
+ |-
+ ! scope="row" | 30
+ | 1
+ | [[File:Treasure Room Corpse 30.png|300px]]
+|}
+
+=== {{s|Sheol|r}} layouts ===
+{| class="wikitable sortable mw-collapsible mw-collapsed" style="text-align: center"
+ ! scope="col" | ID
+ ! scope="col" | Weight
+ ! scope="col" class="unsortable" | Image preview
+ |-
+ ! scope="row" | 0
+ | 1
+ | [[File:Treasure Room Sheol 0.png|300px]]
+ |-
+ ! scope="row" | 1
+ | 1
+ | [[File:Treasure Room Sheol 1.png|300px]]
+ |-
+ ! scope="row" | 2
+ | 1
+ | [[File:Treasure Room Sheol 2.png|300px]]
+ |-
+ ! scope="row" | 3
+ | 1
+ | [[File:Treasure Room Sheol 3.png|300px]]
+ |-
+ ! scope="row" | 4
+ | 1
+ | [[File:Treasure Room Sheol 4.png|300px]]
+ |-
+ ! scope="row" | 5
+ | 0.5
+ | [[File:Treasure Room Sheol 5.png|300px]]
+ |-
+ ! scope="row" | 6
+ | 0.5
+ | [[File:Treasure Room Sheol 6.png|300px]]
+ |-
+ ! scope="row" | 7
+ | 1
+ | [[File:Treasure Room Sheol 7.png|300px]]
+ |-
+ ! scope="row" | 8
+ | 1
+ | [[File:Treasure Room Sheol 8.png|300px]]
+ |-
+ ! scope="row" | 9
+ | 0.25
+ | [[File:Treasure Room Sheol 9.png|300px]]
+ |-
+ ! scope="row" | 10
+ | 0.1
+ | [[File:Treasure Room Sheol 10.png|300px]]
+ |-
+ ! scope="row" | 11
+ | 0.01
+ | [[File:Treasure Room Sheol 11.png|300px]]
+ |-
+ ! scope="row" | 12
+ | 1
+ | [[File:Treasure Room Sheol 12.png|300px]]
+ |-
+ ! scope="row" | 13
+ | 1
+ | [[File:Treasure Room Sheol 13.png|300px]]
+ |-
+ ! scope="row" | 14
+ | 0.25
+ | [[File:Treasure Room Sheol 14.png|300px]]
+ |-
+ ! scope="row" | 15
+ | 1
+ | [[File:Treasure Room Sheol 15.png|300px]]
+ |-
+ ! scope="row" | 16
+ | 1
+ | [[File:Treasure Room Sheol 16.png|300px]]
+ |-
+ ! scope="row" | 17
+ | 0.25
+ | [[File:Treasure Room Sheol 17.png|300px]]
+ |-
+ ! scope="row" | 18
+ | 1
+ | [[File:Treasure Room Sheol 18.png|300px]]
+ |-
+ ! scope="row" | 19
+ | 1
+ | [[File:Treasure Room Sheol 19.png|300px]]
+ |-
+ ! scope="row" | 20
+ | 1
+ | [[File:Treasure Room Sheol 20.png|300px]]
+ |-
+ ! scope="row" | 21
+ | 0.25
+ | [[File:Treasure Room Sheol 21.png|300px]]
+|}
+
+=== {{s|Cathedral|r}} layouts ===
+{| class="wikitable sortable mw-collapsible mw-collapsed" style="text-align: center"
+ ! scope="col" | ID
+ ! scope="col" | Weight
+ ! scope="col" class="unsortable" | Image preview
+ |-
+ ! scope="row" | 0
+ | 1
+ | [[File:Treasure Room Cathedral 0.png|300px]]
+ |-
+ ! scope="row" | 1
+ | 1
+ | [[File:Treasure Room Cathedral 1.png|300px]]
+ |-
+ ! scope="row" | 2
+ | 1
+ | [[File:Treasure Room Cathedral 2.png|300px]]
+ |-
+ ! scope="row" | 3
+ | 1
+ | [[File:Treasure Room Cathedral 3.png|300px]]
+ |-
+ ! scope="row" | 4
+ | 1
+ | [[File:Treasure Room Cathedral 4.png|300px]]
+ |-
+ ! scope="row" | 5
+ | 0.5
+ | [[File:Treasure Room Cathedral 5.png|300px]]
+ |-
+ ! scope="row" | 6
+ | 0.5
+ | [[File:Treasure Room Cathedral 6.png|300px]]
+ |-
+ ! scope="row" | 7
+ | 1
+ | [[File:Treasure Room Cathedral 7.png|300px]]
+ |-
+ ! scope="row" | 8
+ | 1
+ | [[File:Treasure Room Cathedral 8.png|300px]]
+ |-
+ ! scope="row" | 9
+ | 1
+ | [[File:Treasure Room Cathedral 9.png|300px]]
+ |-
+ ! scope="row" | 10
+ | 0.25
+ | [[File:Treasure Room Cathedral 10.png|300px]]
+ |-
+ ! scope="row" | 11
+ | 0.1
+ | [[File:Treasure Room Cathedral 11.png|300px]]
+ |-
+ ! scope="row" | 12
+ | 0.01
+ | [[File:Treasure Room Cathedral 12.png|300px]]
+ |-
+ ! scope="row" | 13
+ | 1
+ | [[File:Treasure Room Cathedral 13.png|300px]]
+ |-
+ ! scope="row" | 14
+ | 1
+ | [[File:Treasure Room Cathedral 14.png|300px]]
+ |-
+ ! scope="row" | 15
+ | 0.25
+ | [[File:Treasure Room Cathedral 15.png|300px]]
+ |-
+ ! scope="row" | 16
+ | 1
+ | [[File:Treasure Room Cathedral 16.png|300px]]
+ |-
+ ! scope="row" | 17
+ | 1
+ | [[File:Treasure Room Cathedral 17.png|300px]]
+ |-
+ ! scope="row" | 18
+ | 0.25
+ | [[File:Treasure Room Cathedral 18.png|300px]]
+ |-
+ ! scope="row" | 19
+ | 1
+ | [[File:Treasure Room Cathedral 19.png|300px]]
+ |-
+ ! scope="row" | 20
+ | 1
+ | [[File:Treasure Room Cathedral 20.png|300px]]
+ |-
+ ! scope="row" | 21
+ | 1
+ | [[File:Treasure Room Cathedral 21.png|300px]]
+ |-
+ ! scope="row" | 22
+ | 0.25
+ | [[File:Treasure Room Cathedral 22.png|300px]]
+|}
+
+{{nav|room|fr=Salle du Trésor}}
+[[Category:Rooms]]

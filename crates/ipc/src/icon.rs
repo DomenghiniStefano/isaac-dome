@@ -10,7 +10,7 @@
 //! file**, never its bytes.
 
 use catalog::{AchievementId, Catalog, ItemId, SpriteRef};
-use wiki::Target;
+use wiki::{Dataset, Target};
 
 use crate::catalog_view::ItemKindView;
 use crate::floor::{minimap_icon_name, RoomKindView, ROOM_KINDS};
@@ -107,6 +107,17 @@ pub enum IconRef {
     /// same drawing and the boundary has no reason to tell them apart.
     Room {
         kind: RoomKindView,
+    },
+    /// The composed picture of one `entities2.xml` row, by its own bestiary key — independent
+    /// of whether the wiki has a page for that exact triple. `Page { target: Entity }` answers
+    /// "what does *this page* look like"; this answers "what does *this game thing* look
+    /// like", which is what a landing tile's representative picture needs: `5.300.1` (a tarot
+    /// card's own back) is nobody's page — cards are filed as articles (decision 2), never as
+    /// entities — but it is still a real row `catalog::Entity` can compose.
+    Entity {
+        id: u32,
+        variant: u32,
+        subtype: u32,
     },
 }
 
@@ -208,6 +219,11 @@ impl IconRef {
                     page_path(target).unwrap_or_else(|| "none".to_string())
                 )
             }
+            IconRef::Entity {
+                id,
+                variant,
+                subtype,
+            } => format!("entity/{id}/{variant}/{subtype}"),
         }
     }
 
@@ -249,6 +265,14 @@ impl IconRef {
             ("page", kind, first) => {
                 return page_target(kind, first?, parts);
             }
+            ("entity", id, Some(variant)) => {
+                let subtype = parts.next()?;
+                IconRef::Entity {
+                    id: id.parse().ok()?,
+                    variant: variant.parse().ok()?,
+                    subtype: subtype.parse().ok()?,
+                }
+            }
             _ => return None,
         };
         // A trailing segment means the string isn't ours, whatever the prefix said.
@@ -278,14 +302,17 @@ impl IconRef {
             // every one of them, and the offsets are the game's own.
             | IconRef::Widget { .. }
             | IconRef::Page { .. }
+            | IconRef::Entity { .. }
             | IconRef::Unknown => false,
         }
     }
 }
 
-/// The path segments of a page's figure, `item/105` or `entity/20/0/0`. `None` for the
-/// four kinds the dataset has no page for: exhaustive, so a new wiki kind has to say here
-/// whether it has a figure.
+/// The path segments of a page's figure, `item/105` or `entity/20/0/0`. `None` for every
+/// kind `target_sprite` never finds a picture for — not the same question as "does the
+/// dataset have a page for it": a stage, a room, a pickup concept and an article all
+/// resolve to a page since design decision 3, and still draw nothing through this path.
+/// Exhaustive, so a new wiki kind has to say here whether it has a figure.
 fn page_path(target: &Target) -> Option<String> {
     match target {
         Target::Item { id } => Some(format!("item/{id}")),
@@ -306,10 +333,14 @@ fn page_path(target: &Target) -> Option<String> {
         // names, twelve of them for sixteen pages, with holes in the numbering: mushroom,
         // angel, mom, poop, drugs, evilangel, iwata. Mapping those onto the wiki's names is
         // a guess, and a guess is what this repo spends its corrections on.
+        // An article draws no picture either — decision 5's landing tiles get their
+        // pictures from the game's own archives (a card's front, a stage's title art),
+        // never from a page path, and a mechanics article has no picture at all.
         Target::Transformation { .. }
         | Target::Stage { .. }
         | Target::Room { .. }
-        | Target::Concept { .. } => None,
+        | Target::Concept { .. }
+        | Target::Article { .. } => None,
     }
 }
 
@@ -340,24 +371,62 @@ fn page_target<'a>(
     rest.next().is_none().then_some(IconRef::Page { target })
 }
 
-/// The file the catalog names for a reference, if it knows it.
+/// What an `IconRef` resolves to: a single sprite crop, the shape every reference used to
+/// have, or — for a non-boss entity's page — the `.anm2` a composed picture is built from.
+/// The second case isn't a `SpriteRef` because composing it means reading and laying out
+/// several files, which is I/O this pure crate cannot do; the caller reads `anm2_path` and
+/// calls `compose_entity_art` itself, the same way it already reads `MarkFrames` for the
+/// widget.
+#[derive(Debug)]
+pub enum IconSource<'a> {
+    Sprite(&'a SpriteRef),
+    Entity { anm2_path: &'a str },
+}
+
+/// The file the catalog names for a reference, if it knows it. `dataset` is what
+/// `target_sprite` needs to tell a boss's page from a common entity's (see there).
 ///
 /// `None` covers both "no such id" and "the catalog is older than the reference" — the
 /// caller draws the placeholder either way, and nothing here invents a path.
-pub fn icon_source<'a>(c: &'a Catalog, bosses: &BossKeys, r: &IconRef) -> Option<&'a SpriteRef> {
+pub fn icon_source<'a>(
+    c: &'a Catalog,
+    bosses: &BossKeys,
+    dataset: Option<&Dataset>,
+    r: &IconRef,
+) -> Option<IconSource<'a>> {
     match r {
-        IconRef::Achievement { id } => c.achievement(AchievementId(*id)).map(|a| &a.sprite),
-        IconRef::Item { kind, id } => c.item(*kind, ItemId(*id)).map(|i| &i.sprite),
-        IconRef::Head { row } => character_for(*row, c).and_then(|ch| ch.head.as_ref()),
+        IconRef::Achievement { id } => c
+            .achievement(AchievementId(*id))
+            .map(|a| IconSource::Sprite(&a.sprite)),
+        IconRef::Item { kind, id } => c
+            .item(*kind, ItemId(*id))
+            .map(|i| IconSource::Sprite(&i.sprite)),
+        IconRef::Head { row } => character_for(*row, c)
+            .and_then(|ch| ch.head.as_ref())
+            .map(IconSource::Sprite),
         // A page's figure is whatever `target_sprite` finds for the page's identity; "no art"
         // and "unknown id" both draw the placeholder.
-        IconRef::Page { target } => match target_sprite(c, bosses, target) {
-            TargetSprite::Found(s) => Some(s),
+        IconRef::Page { target } => match target_sprite(c, bosses, dataset, target) {
+            TargetSprite::Found(s) => Some(IconSource::Sprite(s)),
+            TargetSprite::Entity(anm2_path) => Some(IconSource::Entity { anm2_path }),
             TargetSprite::NoArt | TargetSprite::Unknown => None,
         },
         // The game's own minimap icon, by the name the game gave it. A kind with no icon and
         // a game that is not installed both answer None, and the screen draws its own symbol.
-        IconRef::Room { kind } => minimap_icon_name(*kind).and_then(|n| c.minimap_icon(n)),
+        IconRef::Room { kind } => minimap_icon_name(*kind)
+            .and_then(|n| c.minimap_icon(n))
+            .map(IconSource::Sprite),
+        // Unlike `Page`, this asks for the row directly: no `Target` to resolve first, and
+        // no dataset needed — the id is the whole of what it names.
+        IconRef::Entity {
+            id,
+            variant,
+            subtype,
+        } => c
+            .entity(*id, *variant, *subtype)
+            .map(|e| IconSource::Entity {
+                anm2_path: &e.anm2_path,
+            }),
         // Not the catalog's: the symbols and the paper they sit on are pieces of the
         // widget's sheets, see `mark_source` and `widget_source`.
         IconRef::Mark { .. } | IconRef::Widget { .. } => None,

@@ -1,0 +1,11 @@
+{{infobox monster
+ | dlc         = r
+ | name        = Dust
+ | id          = 882
+ | base hp     = 22
+ | environment = {{floor|Ashpit}}<br>{{room|challenge}}
+ | behavior    = Follows Isaac, and is only visible when close to Isaac. Will begin to speed up when they are visible. Teleports away after taking enough damage.
+}}
+'''Dust''' will slowly chase after Isaac and are completely invisible and intangible when far away. They will only fade into view once they are close enough to Isaac, becoming vulnerable to damage once visible. Once visible, they will also rapidly gain speed the closer they are to Isaac. Each time a Dust takes at least around a third of its HP, it will teleport to a random spot in the room, far away from Isaac. They can fly over obstacles and pits.
+
+{{nav|fr=Poussière}}

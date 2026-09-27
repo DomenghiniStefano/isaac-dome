@@ -1,0 +1,46 @@
+{{infobox monster
+ | id          = 213
+ | base hp     = 20
+ | environment = {{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|Cathedral}}<br>{{floor|Chest}}<br>{{room|Challenge}}{{room|Devil}}{{room|super secret}}
+ | behavior    = Falls from the ceiling. If it lands on Isaac, it deals damage and teleports him back to the spawn room of the floor. Entering a room containing Mom's Hand will warn Isaac with Mom's laugh.
+}}
+
+'''Mom's Hands''' are tricky foes. When these enemies spawn (either at the start of a room or in a {{r|Challenge Room}} wave), [[Mom]]'s laugh can be heard {{dlc+|a}} and  the ground may shake{{dlc-}}. After this, a disembodied hand will come down to try and grab Isaac, pausing in a stunned state for a brief moment before going back up to repeat this. Before coming down, a subtle shadow on the floor will indicate where the hand is going to land. They can spawn in groups of up to six in large rooms.
+
+If Isaac is grabbed, he takes half a heart of damage and is sent back to the spawn room of the [[chapter|floor]]. Any enemies that Isaac damaged or killed before being grabbed will respawn at full health when Isaac returns to the room. If a black heart is depleted when Isaac is grabbed, he will not be teleported and the hand will die instead.
+
+Charmed Mom's Hands are extremely powerful, as they can potentially kill any monster they attack in a single move if they manage to grab them and pull them up without getting killed in the process. This includes normally invincible enemies such as {{e|Stone Grimace}}s. This can be seen more easily by using the "C0CK FGHT" Special Seed.
+{{clear}}
+
+== Mom's Dead Hand ==
+{{infobox monster
+ | dlc         = a
+ | name        = Mom's Dead Hand
+ | id          = 287
+ | base hp     = 20
+ | environment = {{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|Sheol}}<br>{{room|challenge}}{{room|Devil}}
+ | behavior    = Falls from the ceiling. Upon landing, it spawns several rock waves that travel outwards. Spawns several spiders upon death. Entering a room containing Mom's Dead Hand will warn Isaac with Mom's laugh.
+}}
+
+'''Mom's Dead Hands''' behave similarly to regular Mom's Hands. When they land, they send out 3-4 lines of rock waves in the cardinal directions that can curve slightly and will destroy most obstacles and damage most monsters in its path. Upon death, they spawn 2-3 {{e|Spider}}s. Unlike normal Mom's Hands, they can't grab and teleport Isaac.
+{{clear}}
+
+== Gallery ==
+<gallery>
+File:Edmund McMillen Rebirth Monster Sketches.jpg|Sketches of monsters for the Binding of Isaac: Rebirth, including Mom's Hand in the sixth square of the second row.
+</gallery>
+
+== Notes ==
+* The rock waves that Mom's Dead Hands spawn can open {{r|Secret Room}}s and {{r|Super Secret Room}}s.
+{{dlc clear}}{{clear}}
+
+== Trivia ==
+* The Hands are likely inspired by Wallmasters from the [[wikipedia:Legend of Zelda|''The Legend of Zelda'']].
+* If Mom's Hand catches Isaac in a {{r|Challenge Room}}, it will teleport him out of the room without having to fight the remaining enemy waves, even if the room is re-entered.
+* Mom's Hand is the only enemy in the game that can teleport Isaac to a different room.
+* {{p|Emergency Contact}} card spawns two Mom's Hands that grab enemies.
+
+== Bugs ==
+{{bug|dlc=a+|Entering a room with a Mom's Hand/Mom's Dead Hand causes only very minimal screen shake. Spawning them with the debug console will cause a much more noticeable effect.}}
+
+{{nav|fr=Main de Maman}}

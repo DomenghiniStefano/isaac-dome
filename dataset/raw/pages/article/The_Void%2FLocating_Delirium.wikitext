@@ -1,0 +1,59 @@
+{{page dlc|a+}}
+
+In {{S|The Void}}, locating which [[boss room]] may contain {{E|Delirium}} is a surprisingly simple process, it requires imagining the boss rooms as being 2x2 boss rooms. If the 2x2 boss room would be able to exist where it is without having doors to any other [[room]]s, then it is very likely that boss room will contain Delirium.
+
+We will break down this process by using this map as an example case.
+
+[[File:Locating Delirium Full Map.png]]
+
+== Example 1 ==
+[[File:Locating Delirium 1.png]]
+
+Here we see a small cluster of boss rooms very near to each other.
+
+[[File:Locating Delirium 1 Marks.png]]
+
+By drawing out what one of these boss rooms would look like as a 2x2 boss room, we can get a clear picture of where this room would be connected by doors to if this was the case. The door the boss room already has is indicated with '''green''' here, while doors that would show up if this was a 2x2 room are marked in '''red'''.
+
+[[File:Locating Delirium 1 Final.png]]
+
+Because this room would have multiple doors instead of just one, it is impossible for this room to contain Delirium.
+
+== Example 2 ==
+[[File:Locating Delirium 2.png]]
+
+This boss room is out near the edge of the map.
+
+[[File:Locating Delirium 2 Marks.png]]
+
+When drawing the outline of a 2x2 boss room here, we can see that this room would only have a single door even if it was a 2x2 boss room.
+
+[[File:Locating Delirium 2 Final.png]]
+
+Because this room would only ever have a single door, we can determine that this room is very likely (though not guaranteed!) to contain Delirium.
+
+== Example 3 ==
+[[File:Locating Delirium 3.png]]
+
+Much like example 2, this room is near the edge of the map. However, there is a small trick going on here that may not be obvious at first glance.
+
+[[File:Locating Delirium Full Map Grids.png]]
+
+This is the full map but with every square numbered. Maps have a maximum size of 13x13; rooms cannot go beyond this limit.
+
+[[File:Locating Delirium 3 Marks.png]]
+
+A 2x2 room can be drawn here without any connections to other rooms, but this would go past the 13x13 limit.
+
+[[File:Locating Delirium 3 Final.png]]
+
+Because of this easy-to-miss detail, this room cannot contain Delirium.
+
+== Additional Notes ==
+* It is possible for a floor to contain multiple possible Delirium rooms, though through the above methods you can rule out the rooms which can never contain Delirium.
+* If a boss room on the top or right edge of the map causes the full-sized map to be offset as though it were trying to display a room larger than 1x1, that boss room belongs to either Delirium or {{E|Mr. Fred}}.
+* {{I|Star of Bethlehem}} will always go directly to Delirium's room, allowing you to safely farm items from all the other bosses before fighting him.
+<!--* A rare screen static effect may be encountered when in front of his boss room. Probably unrelated, it happens everywhere in the Void.-->
+
+{{nav|environment|fr=Néant (Étage)/Localiser Delirium}}
+[[Category:Stages]]

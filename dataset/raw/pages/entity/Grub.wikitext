@@ -1,0 +1,32 @@
+{{infobox monster
+ | id          = 239
+ | image name  = * {{dlc|nr|Rebirth}}
+ | base hp     = 10<!-- per segment-->
+ | stage hp    = 2.5
+ | environment = {{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{room|boss}}{{room|challenge}}
+ | behavior    = Erratically moves around the room like {{E|Larry Jr.}} and charges at Isaac when he gets within its line of sight. Spawns {{E|Maggot}}s, {{E|Charger}}s, or {{E|Spitty|text=Spitties}} upon death, one for each of its segments.
+}}
+
+A '''Grub''' is a type of monster that appear infrequently in {{s|Caves}} and beyond. They are similar in appearance to {{E|Larry Jr.}} and can spawn alongside Larry Jr. or {{E|The Hollow}} in their respective boss rooms.
+
+Grubs move around the room somewhat randomly until they line up with Isaac, after which they rapidly charge towards Isaac, similar to a {{E|Charger}}. Upon death, each of the Grub's segments will spawn a {{E|Maggot}}, {{E|Charger}}, or {{E|Spitty}}. Unlike Larry Jr. which requires each of its segments to be destroyed, as soon as one Grub segment is destroyed, the entire enemy will be destroyed.
+
+== Notes ==
+* {{dlc+|a+}} Prior to [[Booster Packs#Booster Pack #5|Booster Pack #5]], if a Grub spawned in the {{s|Flooded Caves}}, it had a high chance to spawn {{E|Drowned Charger}}s instead of {{E|Charger}}s.{{dlc-}}
+
+== Gallery ==
+<gallery>
+Grubhead.png | A grub with only its head section remaining, due to {{i|Midas' Touch}}.
+</gallery>
+
+== Trivia ==
+* Because of its similar movement behavior and design to that of Larry Jr. (along with the fact that Grubs can spawn in a Larry Jr. boss room), Grubs are also known as "Larry Sr." by ''The Binding of Isaac'' community.
+
+== Bugs ==
+{{bug|dlc=a|Attempting to capture a Grub with {{i|Friendly Ball}} will only capture one segment of the Grub.}}
+
+{{nav|fr=Vermine}}
+[[Category:Maggot monsters]]
+[[Category:Chapter 2 monsters]]
+[[Category:Chapter 3 monsters]]
+[[Category:Chapter 4 monsters]]

@@ -1,0 +1,56 @@
+{{header reverse tarot cards}}
+{{Infobox card
+ | dlc         = r
+ | name        = 0 - The Fool?
+ | files name  = 0 - Inverted The Fool
+ | type        = card
+ | id          = 56
+ | quote       = Let go and move on
+ | description = Drops all [[heart]]s, [[trinket]]s, and [[pickup]]s Isaac currently possesses on the floor, leaving Isaac at half a heart. Pickups may be dropped as items such as {{i|A Quarter}} and {{i|Boom!}}.
+ | unlocked by = The Fool
+ | recharge    = 12
+}}
+
+{{cit|uc|r}}
+
+== Effects ==
+* Drops all [[heart]]s, [[trinket]]s, and [[pickup]]s Isaac currently possesses on the ground near him, leaving Isaac at half a heart.
+* Pickups will be dropped grouped in their highest possible value:
+** Every 25 cents will first be dropped as the {{i|A Quarter}}, then {{e|Dime}}s for every remaining 10 cents, {{e|Nickel}}s for every 5 cents, {{e|Double Penny|text=Double Pennies}} for every 2 cents, then finally a {{e|Penny}} if Isaac has 1 remaining cent.
+** If Isaac has exactly 99 bombs, they will be dropped as {{i|Pyro}}. If less than 99, then {{i|Boom!}} for every 10 bombs, {{e|Double Bomb}}s for every 2 bombs, then finally a {{e|Bomb}} if Isaac has 1 remaining.
+** If Isaac has exactly 99 keys, they will be dropped as {{i|Skeleton Key}}. If less than 99, then {{e|Key Ring}}s for every 2 Keys, then finally a {{e|Key}} if Isaac has 1 remaining.
+** Every 2 full red hearts will first be dropped as {{e|Double Heart}}s, then {{e|Red Heart}}s for every remaining red heart, then finally a {{e|Half Red Heart}} if Isaac has one red heart remaining.
+** {{e|Soul Heart}}s, {{e|Half Soul Heart}}s, and {{e|Black Heart}}s will be dropped as usual. If half a Black Heart needs to be dropped, it will drop as a Half Soul Heart. If Isaac only has Soul Hearts, then he will be left at half a Soul Heart. However, if Isaac has only Black Hearts or a mix of Black and Soul Hearts, then he will always be left at half a Black Heart.
+** {{e|Gold Heart}}s will be dropped as usual.
+** {{e|Bone Heart}}s will also be dropped. If Isaac only has Bone Hearts, then he can go down to one empty Bone Heart.
+** A single {{e|Rotten Heart}} will not be dropped, and always stay in the container as the last remaining heart. Any additional Rotten Hearts will be dropped as usual.
+
+== Notes ==
+* The pickups Isaac drops are set and are not affected by replacement effects, i.e. {{t|Daemon's Tail}}.
+* If the amount of pickups dropped exceeds the room's allowed space, then extra pickups will be stacked near Isaac's position when he used the item. The player can still move out of the way while using the card to avoid picking them up.
+
+== Strategy ==
+* '''0 - The Fool?'''‘s effect is most useful in generating item pedestals, as long as Isaac has enough pickups to sacrifice. These item pedestals can be then re-rolled through sources such as {{i|The D6}} or {{m|Shop Restock Machine}}s to get better items, or consumed through {{p|Black Rune}} or {{i|Abyss}} for other benefits. 
+* As '''0 - The Fool?''' can generate a lot of pickups for Isaac to collect, it can activate effects which require pickup collection. Re-picking up Isaac's dropped hearts can contribute to {{i|Candy Heart}}, {{i|Immaculate Conception}}, {{i|Alabaster Box}} etc., and his dropped coins can contribute to {{t|Counterfeit Penny}}, {{t|Blessed Penny}}, etc..
+* '''0 - The Fool?''' also allows Isaac a method to give pickups to {{i|Bum Friend}}, {{i|Key Bum}}, {{i|Dark Bum}}, or {{i|Bumbo}}.
+* '''0 - The Fool?''' allows Isaac to manipulate his health without needing to take damage. Its uses include lowering health to access a {{r|Boss Challenge Room}}, dropping {{e|Soul Heart}}s on the ground so as to spend less valuable {{e|Red Heart}}s in {{r|Sacrifice Room}}s, etc.
+** Similarly, it can be used to regain health in scenarios where that health would otherwise be taken away, such as accepting a [[Devil_Room#Deals_with_the_Devil|devil deal]] or taking {{i|Dead Cat}}.
+
+== Synergies ==
+* {{i|Deep Pockets}}: Every 100 cents will first be dropped as {{i|A Dollar}}.
+* {{i|Tarot Cloth}}: Drops Isaac's 6 most recently collected items on the floor, alongside pickups. Does not affect [[Item Tags quest|quest items]] (e.g. {{I|The Polaroid}}) or {{I|Missing No.}}.
+** {{i|Tarot Cloth}} + {{i|Blank Card}}: Only 3 items drop instead of 6; this also applies with {{I|Car Battery}}.
+
+== Interactions ==
+* {{i|Greed's Gullet}}: If Isaac only has [[heart container]]s granted by Greed's Gullet, then using '''0 - The Fool?''' will kill him. The only exception is if all heart containers are empty and Isaac also has temporary health, in which case the card will leave him at half a Soul/Black Heart
+* {{i|Little Baggy}} / {{i|Starter Deck}} / {{i|Polydactyly}}: The second held consumable will also be dropped.
+* {{t|Mother's Kiss}}: If Isaac uses '''0 - The Fool?''' while having only one [[heart container]], he will die since dropping the trinket will remove his last health. Similarly, using the card as one of the characters that can't have red health while holding this trinket will kill the player instantly, as it drops the trinket, removing the last half soul heart the character normally would remain with. 
+* {{t|Tick}}: Cannot remove the Tick.
+* {{c|Bethany}} / {{c|Tainted Bethany}}: Drops Soul Heart and Red Heart charges.
+* {{c|Tainted ???}}: Cannot drop his poop pickups.
+
+== In-game Footage ==
+{{#ev:youtube|b3cZ6UlSuRk}}
+{{#ev:youtube|x-AkOGMkLJ0}}
+
+{{nav|fr=0 - Le Mat ?|card}}

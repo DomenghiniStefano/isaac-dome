@@ -1,0 +1,107 @@
+{{infobox version
+ | dlc   = r
+ | steam = 3126057906310322306
+ | date  = 2021-12-03
+}}
+
+== Documented Changes ==
+=== Gameplay changes ===
+* Added more new room layouts
+* {{c|Tainted Cain}} can now pick up items normally in the {{i|Genesis}} room
+* {{i|Strawman}}, {{t|Found Soul}}, {{p|Soul of the Forgotten}} and {{p|Soul of Jacob and Esau}} now always match their speed to their owner's
+* Reduced the cooldown of {{i|Yuck Heart}} to 4 (from 6)
+* {{i|Technology 2}} now works with any familiar that replicates the player's attack (i.e. {{i|Incubus}})
+* {{i|Isaac's Heart}} now grants its effects to {{c|Tainted Soul}} instead of {{c|Tainted Forgotten}}
+* {{i|Ipecac}} + {{i|Hemoptysis}} no longer deals damage to players
+* {{t|Wiggle Worm}}'s tears up now scales with trinket multipliers
+* {{t|Hook Worm}}, {{t|Ring Worm}} and {{t|Ouroboros Worm}} now grant a tears up similarly to {{t|Wiggle Worm}}
+* The {{i|D1}} no longer creates exact copies of pickups (i.e. duplicating a card may spawn a different card)
+* {{i|Echo Chamber}} now only copies the last 3 cards/pills used
+* {{i|C Section}} + {{i|Technology}} shots now only have a luck based chance to replicate themselves when combined with {{i|Explosivo}}, {{i|Sinus Infection}} or {{i|Mucormycosis}} to prevent infinite loops
+* {{e|Tainted Mole}}s can no longer be champions
+* Increased the armor strength of {{e|Tainted Round Worm}} to 30 (from 12)
+* Reduced the health of {{e|Tainted Mulligan}} to 100 (from 120)
+* Reduced the health of {{e|Flesh Death's Head}} to 30 (from 50)
+* Added {{i|Dead Tooth}} and {{i|Monstro's Tooth}} to {{e|Bumbino}}'s special drop pool
+* The creep pool spawned by {{i|Free Lemonade}} now deals more damage and lasts twice as long
+* Updated the sprite of {{i|Magic Fingers}}
+* Updated a few item qualities
+* Updated localization files
+
+=== Fixes ===
+* Fixed {{c|Tainted Lazarus}}' hologram taking damage from the lava in the Beast fight
+* Fixed {{c|Tainted Lazarus}}' hologram being affected by poison clouds and Dogma's Godhead shots
+* Fixed {{c|Tainted Lazarus}} not being able to shoot after flipping while {{i|Dark Arts}} is active
+* Fixed {{c|Tainted Keeper}} still getting less coins than intended in from killing enemies in Greed mode if he left the starting room at any point during the current floor
+* Fixed {{c|Tainted Forgotten}} not being able to throw his body if blindfolded with a charged attack (such as {{i|Chocolate Milk}} or {{i|Cursed Eye}})
+* Fixed a crash caused by recalling clots as {{c|Tainted Eve}} while moving between rooms
+* Fixed a crash caused by using {{i|Hemoptysis}} right as the effects of {{i|Berserk!}} end
+* Fixed a crash caused by {{i|Lil Portal}} picking up a heart that spawned as part of a {{r|Devil Room}}
+* Fixed secret shops and angel shops not generating in the [[Red Redemption]] challenge, crashing the game if entered
+* Fixed {{i|Eden's Blessing}} applying to newly created players during the current run (such as {{i|Strawman}} or {{c|Tainted Lazarus}}' hologram)
+* Fixed {{t|Temporary Tattoo}}, {{t|Old Capacitor}}, {{t|Nuh Uh!}}, {{t|Crystal Key}} and {{t|Karma}} appearing in Greed mode
+* Fixed {{i|C Section}}, {{i|Mom's Knife}}, {{i|Brimstone}} and {{i|Monstro's Lung}} not working at 30 tear rate or above
+* Fixed {{i|Cursed Eye}} not working at 60 tear rate or above
+* Fixed {{i|Neptunus}} + {{i|Chocolate Milk}} not firing any tears at 30 tear rate or above
+* Fixed {{e|Red Chest}}s in the {{i|Genesis}} room still teleporting the player to the {{r|Devil Room}}
+* Fixed the aura of {{i|Censer}} and {{i|Succubus}} not rendering correctly when held by {{c|Tainted Lazarus}}' hologram
+* Fixed {{i|Lost Soul}} taking damage from lasers fired by friendly enemies
+* Fixed {{e|The Visage}} getting stuck in its first phase if the chain is broken by {{i|Uranus}} or {{i|Freezer Baby}}
+* Fixed {{i|The Boomerang}} being able to push stalactites around in the Beast fight
+* Fixed bouncy lasers from the pink champion version of {{e|The Haunt}} having a flickering effect
+* Fixed {{e|The Duke of Flies}} setting off explosive gas when summoning flies
+* Fixed {{i|BFFS!}} not affecting {{i|Finger!}}
+* Fixed {{c|Tainted Lazarus}}' inactive form spawning its familiars if the key pieces or knife pieces are consumed while shared between the two
+* Fixed {{c|Tainted Lazarus}} sometimes causing a crash when flipping with the Mom transformation
+* Fixed flipped items sometimes not granting health or consumables
+* Fixed bosses taking less damage when non co-op players are present (such as Strawman, Found Soul, Soul of the Forgotten and Soul of Jacob and Esau) or when playing as Tainted Forgotten
+* Fixed {{i|Lemegeton}} causing a crash if any non orbiting wisps are present (such as {{i|How to Jump}})
+* Fixed {{c|Tainted Forgotten}} getting two copies of the {{i|Dogma}} item when entering the Beast fight
+* Fixed freezing the Bony spawned by the Forsaken preventing it from reappearing and doing its Brimstone attack
+* Fixed {{i|The Stairway}} spawning in an inaccessible position in some Greed mode starting room layouts
+* Fixed familiars not storing their RNG seed properly when saved and restored (this could cause bag familiars to keep dropping the same reward as {{c|Tainted Lazarus}})
+* Fixed active items sometimes getting lost as {{c|Tainted Lazarus}} when both forms holds two copies of the same active item
+* Fixed {{i|Trisagion}} shots always facing right when combined with {{i|Anti-Gravity}}
+* Fixed {{i|Genesis}}, {{p|Joker}} and {{p|IV - The Emperor?}} not teleporting the player to the correct room when used in the mirror dimension or the {{i|Death Certificate}} area
+* Fixed {{i|Rocket in a Jar}} bombs colliding with tears and other bombs
+* Fixed {{i|Blood Clot}}, {{i|Chemical Peel}} and {{i|Stye}} not working correctly on {{i|Incubus}} and similar familiars
+* Fixed troll bombs spawned as part of certain room layouts being turned into poop pickups when playing as {{c|Tainted ???}}
+* Fixed {{i|Guppy's Eye}} causing content previews to briefly appear in room layouts containing buttons set to spawn chests or sacks when pressed
+* Fixed {{i|Guppy's Eye}} not working in {{r|Crawl Space}}s
+* Fixed {{p|Soul of Lazarus}} not being removed upon revival when held by {{c|Esau}}
+* Fixed some lights not rendering properly since [[v1.7.5]] (this was particularly notable with {{i|Night Light}})
+* Fixed glitch items not being removable by victory laps
+* Fixed another issue which caused {{i|Lachryphagy}} tears to accumulate more damage than intended
+* Fixed {{i|C Section}} + {{i|Pop!}} or {{i|Lachryphagy}} causing fetuses to never hit the ground
+* Fixed a rare crash caused by using {{i|Rotten Tomato}} against Mask of Infamy
+* Fixed hearts staying visible in the HUD after turning into {{c|The Lost}} in the middle of a run
+* Fixed damage inflicted by the Greed Mode button not counting as self inflicted damage
+* Fixed extra items spawning when saving and resuming a run while in the {{i|Genesis}} room
+
+== Undocumented Changes ==
+* Item tag changes:
+** Gained [[Item Tags lazarussharedglobal|<code>lazarussharedglobal</code>]]:
+*** {{i|Deep Pockets}}
+*** {{i|Goat Head}}
+*** {{i|Redemption}}
+*** {{t|Temporary Tattoo}}
+** {{i|Flip}}: Gained [[Item Tags offensive|<code>offensive</code>]]
+** {{i|Aries}}: Lost [[Item Tags nolostbr|<code>nolostbr</code>]]
+* Specific item quality changes:
+** {{i|Anemic}}: 0 to 1
+** {{i|Blood Bombs}}: 1 to 2
+** {{i|Circle of Protection}}: 1 to 2
+** {{i|D1}}: 4 to 3
+** {{i|Missing No.}}: 2 to 1
+** {{i|Mom's Razor}}: 1 to 0
+** {{i|Star of Bethlehem}}: 2 to 3
+** {{i|Telepathy For Dummies}}: 0 to 1
+* {{i|Death's List}} was removed from the [[Devil Room (Greed Mode Item Pool)|Greed Mode Devil Room item pool]].
+* {{i|Tech.5}} now works with {{c|Lilith}}; the laser fires from her forehead, not from her {{i|Incubus}}.
+* {{i|D1}} once again works on trinkets.
+* {{e|Brimstone Head}} has an updated sprite.
+** A {{s|Gehenna}}-themed Brimstone Head sprite was also added.
+* {{c|Tainted ???}} now has a {{i|C Section}} costume assigned (previously, he maintained his default appearance).
+* The character select sprites for {{c|Bethany}} and {{c|Jacob and Esau}} (including the locked versions) are shaded a bit darker, so as to match the rest of the characters.
+
+{{nav|version}}

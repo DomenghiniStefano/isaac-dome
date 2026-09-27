@@ -1,0 +1,32 @@
+{{header runes}}
+{{Infobox rune
+ | dlc         = a
+ | name        = Blank Rune
+ | type        = rune
+ | id          = 40
+ | quote       = ???
+ | description = Grants a random rune effect and has a 25% chance to drop another Blank Rune on the ground upon use. {{dlc+|a+nr}} {{p|Black Rune}} is excluded.{{dlc-}}
+ | unlocked by = Blank Rune
+ | recharge    = 3
+}}
+{{Distinguish|Clear Rune}}
+{{cit|ur|a}}
+
+== Effects ==
+* Grants a random rune effect. 
+** {{dlc+|a+nr}} {{p|Black Rune}} is excluded.{{dlc-}}
+** {{p|Rune Shard}} is excluded.
+* Has a 25% chance to drop another Blank Rune on the ground upon use.
+
+== Notes ==
+* The random rune effect can be from a rune that hasn't been unlocked yet.
+* {{dlc|r}} Blank Rune cannot replicate the effects of [[Soul Stone]]s.
+
+== Strategy ==
+* The two most valuable rune effects from Blank Rune are {{p|Perthro}}, for a re-roll, or {{p|Ehwaz}}, for a {{r|Crawl Space}} which has a high chance of containing a free item. Therefore, the best use of Blank Rune is in a room with an item while also standing over a [[We Need To Go Deeper!|tile with a special graphic]]. {{dlc+|r}} Using Blank Rune in a room with an item pedestal also has the chance to activate {{p|Black Rune}}, exchanging the item for stats.{{dlc-}}
+
+== Synergies ==
+* {{I|Tarot Cloth|nr}}: Activates two random rune effects. Attempts to spawn additional Blank Rune twice.
+
+{{nav|fr=Rune Vierge}}
+[[Category:Runes]]

@@ -1,0 +1,24 @@
+'''Book''' may refer to:
+
+== Items ==
+* {{i|Anarchist Cookbook}}, [[activated collectible|activation]] spawns six [[Troll Bomb]]s
+* {{i|Book of Revelations}}, activation adds a [[Soul Heart]] to Isaac's [[health]],
+* {{i|Book of Secrets}}, activation grants the effect of [[The Compass]], [[Treasure Map]], or [[Blue Map]] for the current floor. {{Dlc|r}}Cannot activate the same effect twice.
+* {{i|Book of Shadows}}, activation grants a [[shield]] that protects Isaac from any damage for ten seconds.
+* {{i|How to Jump}}, activation along with a movement key allows Isaac to jump over [[obstacle]]s and gaps in the chosen direction
+* {{i|Monster Manual}}, activation summons a random [[familiar]] {{Dlc|na}} for the duration of the room /{{Dlc|r}}for the current floor
+* {{i|Satanic Bible}}, activation applies a [[Black Heart]] to Isaac's health. {{Dlc|r}}When used, [[Boss Room]] items become [[Devil Room]] items that Isaac has to pay for.
+* {{i|Telepathy For Dummies}}, activation grants [[homing]] tears for the current room
+* {{i|The Bible}}, activation grants [[flight]] for the current room and instantly kills [[Mom]] and [[Mom's Heart]] / [[It Lives]]
+* {{i|The Book of Belial}}, activation grants 2+ [[damage]] for the current room. ({{Dlc|r}}damage stacks) While held increases Isaac's chance to get [[Devil Room]]s or [[Angel Room]]s by 12.5%.
+* {{i|The Book of Sin}}, activation drops a random [[pickup]]. (excluding [[chest]]s)
+* {{i|The Necronomicon}}, activation deals 40 damage to every vulnerable [[NPCs#Antagonists|enemy]] in the room.
+* {{i|Book of the Dead}}, activation spawns an orbital bone familiar, a friendly Bony, or a friendly Black Bony for each enemy killed in the room.
+* {{i|Book of Virtues}}, activation spawns a [[Wisps.xml|wisp]] that orbits Isaac and fires small spectral tears alongside him, and passively grants a wisp-spawning effect to all other active items
+* {{i|Lemegeton}}, activation spawns the soul of a random passive item to act as a destructible orbital familiar, which grants that item's effect as long as it lives
+
+== Locations ==
+* [[Library]], commonly contains at least one book-related [[item]].
+
+{{disambiguation}}
+{{nav|fr=Livre (Homonymie)}}

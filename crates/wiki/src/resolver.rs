@@ -40,6 +40,12 @@ pub struct Tables {
     pub player: Vec<Row>,
     pub transformation: Vec<Row>,
     pub pickup: Vec<Row>,
+    /// Card #86, task 1: `{{book of virtues synergy list}}`'s own `{{cargo lookup}}`, read
+    /// straight from the tables it queries instead of expanding its stored wikitext — two
+    /// fields each, `collectible` (the interacting item's page name — the row carries no id)
+    /// and `description` (wikitext). `bob_combination` is its twin, over The Book of Belial.
+    pub bov_combination: Vec<Row>,
+    pub bob_combination: Vec<Row>,
 }
 
 /// `corrections.json`: per table, page title → the right id when the wiki gets it wrong.
@@ -53,12 +59,47 @@ pub struct Corrections {
     /// different template. Wins over the ids derived from the pages.
     #[serde(default)]
     pub characters: BTreeMap<String, u32>,
-    /// Descriptions written by hand, as wikitext: collection, named the way `wiki.json`
-    /// names it (`achievements`, `bosses`…), then the entry's key in that collection. One
+    /// Descriptions written by hand, as wikitext: collection, named the way `dataset/wiki/`
+    /// names its files (`achievements`, `bosses`…), then the entry's key in that collection. One
     /// wins over the page's, on any kind — the reason to write one is that the wiki's is
     /// missing (Dead God) or says nothing.
     #[serde(default)]
     pub descriptions: BTreeMap<String, BTreeMap<String, String>>,
+    /// What Decision 10 excludes from "every template is read into structure": a template the
+    /// parser deliberately does not model, with the reason written next to it. A completeness
+    /// check in `crates/wiki/tests/` fails on a template that is neither modelled nor listed
+    /// here, and on a listed name the corpus no longer uses.
+    #[serde(default)]
+    pub excluded: Excluded,
+    /// The dead-link residue (design decision 6, `2026-09-26-wiki-complete-design.md`): every
+    /// destination [`crate::dead_links::dead_links`] still reports once resolution has run,
+    /// named the way [`crate::dead_links::DeadLinks`] keys it (`concept_pages`'s canonical
+    /// title, or `unopenable_refs`' `"<kind> <id>"`), with the reason it has no page. A test
+    /// in `tests/real.rs` fails on a destination that is dead and unlisted, and on a listed
+    /// one that no longer is — the residue is meant to shrink to nothing, not to grow quietly.
+    #[serde(default)]
+    pub dead_links: BTreeMap<String, String>,
+}
+
+/// The `excluded` key of `corrections.json`. A struct of one field today, kept apart from
+/// `Corrections`'s other maps because Decision 10 may grow more than one closed list under
+/// `excluded` (section headings, infobox parameters), each with its own reason column.
+#[derive(Debug, Default, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct Excluded {
+    /// Template name → why the parser does not read it into structure: it occurs only inside
+    /// a section already discarded whole (Trivia, Gallery, Audio…), or it is a one-time typo
+    /// on the wiki's own side that was not worth silently correcting.
+    #[serde(default)]
+    pub templates: BTreeMap<String, String>,
+    /// Section title (as a page writes it, not normalized) → why the whole heading is
+    /// dropped rather than kept as `SectionKind::Other`: images and video the constraints
+    /// forbid shipping, citations off the wiki, sound listings (a game asset like the
+    /// others), and the owner's call on Trivia. The single source `sections::is_excluded_section`
+    /// reads at runtime; `sections.rs`'s completeness test is what keeps this list honest
+    /// against the corpus.
+    #[serde(default)]
+    pub sections: BTreeMap<String, String>,
 }
 
 /// The tables [`Corrections::apply`] is ever called with. A `page_id` entry filed under
@@ -145,6 +186,26 @@ pub struct Resolver {
     /// string is a row that states no parent, distinct from the key being absent (no row at
     /// all — see `player_table_parent`).
     player_parent: BTreeMap<String, String>,
+    /// Design decision 4: a character page's base-stat default (`damage`, `tears`, `range`,
+    /// `speed`, `luck`, `shot speed`), read from `Template:Infobox character`'s own wikitext
+    /// by `infobox::stat_defaults` and set once through
+    /// [`Resolver::with_character_stat_defaults`]. Empty until that runs — no template
+    /// fetched, or nobody called it — which degrades to today's "a stat nobody stated is
+    /// empty".
+    character_stat_defaults: BTreeMap<String, String>,
+    /// A content template's own wikitext (`Raw::templates`), by its title, lowercased — read
+    /// by `Resolver::template`, `build.rs`'s reader for `Infobox character`'s base-stat
+    /// defaults. One map for every content template, not one field per template:
+    /// `Raw::templates`/`CONTENT_TEMPLATES` is the one way the fetch and the reader agree on
+    /// what's there. Empty until [`Resolver::with_templates`] runs — no template fetched, or
+    /// nobody called it — which degrades to "nothing stored", same as before either of them
+    /// existed.
+    templates: BTreeMap<String, String>,
+    /// `Tables::bov_combination`/`bob_combination`, kept as raw rows rather than folded into
+    /// an index map: `blocks::synergy_list_line` draws one list item per row, in the table's
+    /// own order, which an index keyed by name could not give back.
+    bov_combination: Vec<Row>,
+    bob_combination: Vec<Row>,
 }
 
 /// A character page's title without the disambiguation suffix
@@ -182,8 +243,16 @@ const LAYOUT: &[&str] = &[
     // because an unknown template recurses into its argument and these have none to give.
     "collectible table/header",
     "trinket table/header",
+    // Card #86: the same head/rows split for a stage's monster list, a pool's item list and
+    // the pickup table — `entity table`, `pool items` and `pickup table`/`pickup rows` are
+    // `NameList`s (`name_list.rs`), and each one's own header draws no rows of its own.
+    "entity table/header",
+    "pickup table/header",
+    "item pool/header",
     "reflist",
     "clear",
+    // `{{-}}` is MediaWiki's own alias for `{{clear}}`: floats the layout, nothing else.
+    "-",
     "main",
     "hatnote",
     "see also",
@@ -191,6 +260,73 @@ const LAYOUT: &[&str] = &[
     "distinguish visual",
     "toc",
     "__toc__",
+    // A table of contents floated beside the text instead of at the top: still no content
+    // of its own.
+    "toc right",
+    // The page-wide edition range, read from the first infobox instead (`page_editions_of`):
+    // the template itself renders no icon of its own.
+    "page dlc",
+    // The same edition box, scoped to one section instead of the whole page (Cut Content's
+    // "Cut *Afterbirth* Content" and its siblings): every fact inside the section already
+    // carries its own `{{dlc|…}}`, so nothing is lost by not tracking the section's own
+    // range separately.
+    "section dlc",
+    // Editorial markers: a flag for another editor, drawn as a small icon or nothing at all,
+    // never a fact about the game.
+    "citation needed",
+    "reconfirm",
+    "explain",
+    // `{{cn}}` is this wiki's own short alias for `{{citation needed}}`.
+    "cn",
+    // A maintenance banner naming what's missing from the page itself ("Verification on the
+    // specifics… is needed"): a note to editors about the article, not a fact about the game.
+    "incomplete",
+    // A banner marking a modding page as community-maintained rather than official: nothing
+    // about the game either.
+    "unsupported",
+    // `{{dlc clear}}` clears the floating edition box `{{dlc}}` can leave open, the same way
+    // `{{clear}}` clears a floated image: layout, not content.
+    "dlc clear",
+    // Wiki maintenance markers with no reader-facing text at all: hidden categories and the
+    // shop-storage flag pages carry beside `{{storage page}}`.
+    "categories",
+    "storage",
+    "no storage",
+    // MediaWiki's own magic word for overriding how the page's title renders (`Less Than
+    // Three` displays as "<3"): the title the reader sees, not a fact about the subject.
+    "displaytitle:<3",
+    // A disambiguation page's own footer marker (`{{disambiguation}}`, and this wiki's short
+    // alias `{{disambig}}`): categorizes the page, carries no text of its own — the page's
+    // body already lists what the title can mean.
+    "disambig",
+    "disambiguation",
+    // An inline icon (a crossed-out trophy) marking that achievements are disabled for the
+    // current run: no argument, no text, the sentence around it already says as much in
+    // words ("if achievements are disabled for the current run").
+    "no unlocks",
+    // The one navbox family left uncounted alongside `header characters` and
+    // `header tainted characters`: a link list at the top of a category page (Bosses,
+    // Attributes, Item Pools, the card and rune suits, Obstacles…), every one of them zero
+    // arguments and none of them a fact the page's own body doesn't already state in full.
+    "header attributes",
+    "header bosses",
+    "header collection pages",
+    "header effects",
+    "header greed bosses",
+    "header greed item pools",
+    "header item pools",
+    "header magic cards",
+    "header modding",
+    "header normal bosses",
+    "header obstacles",
+    "header pickups",
+    "header player effects",
+    "header playing cards",
+    "header reverse tarot cards",
+    "header runes",
+    "header soul stones",
+    "header special cards",
+    "header tarot cards",
 ];
 
 /// Templates that only do layout: they carry no reference.
@@ -259,6 +395,8 @@ impl Resolver {
     ) -> Resolver {
         let mut r = Resolver {
             corrections: corrections.clone(),
+            bov_combination: tables.bov_combination.clone(),
+            bob_combination: tables.bob_combination.clone(),
             ..Resolver::default()
         };
         index_numbered_pages(
@@ -283,6 +421,60 @@ impl Resolver {
         r.index_players(&tables.player);
         r.index_characters(characters, corrections);
         r
+    }
+
+    /// Design decision 4: sets the base-stat defaults `infobox::stat_defaults` read from
+    /// `Raw::templates["Infobox character"]`. A separate step from [`Resolver::new`] rather
+    /// than one more argument on it, because every other caller in this crate's own tests
+    /// builds a `Resolver` with no template text at all and would otherwise have to invent
+    /// one.
+    #[must_use]
+    pub fn with_character_stat_defaults(mut self, defaults: BTreeMap<String, String>) -> Resolver {
+        self.character_stat_defaults = defaults;
+        self
+    }
+
+    /// A character base stat's default, by its infobox parameter name (`"damage"`, `"shot
+    /// speed"`…). `None` when `with_character_stat_defaults` was never called, or didn't have
+    /// that stat — a missing template degrades the same way a page that states nothing does.
+    pub(crate) fn character_stat_default(&self, name: &str) -> Option<&str> {
+        self.character_stat_defaults.get(name).map(String::as_str)
+    }
+
+    /// Sets every content template's own wikitext (`Raw::templates`), keyed the way
+    /// `Raw::templates` already is (a title, any case) — lowercased once here so
+    /// [`Resolver::template`] never has to. Same shape as
+    /// [`Resolver::with_character_stat_defaults`] and the same reason for being a separate
+    /// step: every other caller in this crate's own tests builds a `Resolver` with none of
+    /// this and would otherwise have to invent some.
+    #[must_use]
+    pub fn with_templates(mut self, templates: BTreeMap<String, String>) -> Resolver {
+        self.templates = templates
+            .into_iter()
+            .map(|(name, text)| (name.to_lowercase(), text))
+            .collect();
+        self
+    }
+
+    /// A content template's own wikitext, by its title in any case (`"Infobox character"`,
+    /// or a transcluding template's own already-lowercase name like `"book of virtues
+    /// synergy list"`). `None` when the fetch that downloads it hasn't run, or the name isn't
+    /// one `with_templates` was given — either way the caller degrades to producing nothing,
+    /// the same as before this template had a reader at all.
+    pub(crate) fn template(&self, name: &str) -> Option<&str> {
+        self.templates.get(&name.to_lowercase()).map(String::as_str)
+    }
+
+    /// The rows behind `{{book of virtues synergy list}}`/`{{book of belial synergy list}}`
+    /// (`blocks::synergy_list_line`), by the transcluding template's own already-lowercase
+    /// name (`template::assemble`). `None` for any other name, the same degrade a missing
+    /// content template already has: the caller's `?` falls through to producing nothing.
+    pub(crate) fn synergy_rows(&self, name: &str) -> Option<&[Row]> {
+        match name {
+            "book of virtues synergy list" => Some(&self.bov_combination),
+            "book of belial synergy list" => Some(&self.bob_combination),
+            _ => None,
+        }
     }
 
     /// The reverse of the title rule: an achievement's `name` always enters, its alias only
@@ -374,14 +566,25 @@ impl Resolver {
     /// which map answers it. Split up, the list of link templates would stop being one list.
     pub fn resolve(&self, template: &str, arg: &str) -> Resolution {
         let t = template.trim().to_lowercase();
-        if is_layout_template(&t) {
+        // Decision 10's own list (`corrections.json`'s `excluded.templates`) was, until card
+        // #86 fix 2, read only by `templates_complete.rs`'s static completeness check: a name
+        // could be declared excluded there and still fall through to `Resolution::Unknown`
+        // here, counted in `unknownTemplates` regardless. `item pool`, `#vardefine: item
+        // pool#is devil` and six others did, all eleven entries the snapshot of 2026-09-27
+        // carried, while the file said every one of them was a decided exclusion. One reader
+        // for the map now, the way `is_section_excluded` already is for `excluded.sections`.
+        if is_layout_template(&t) || self.corrections.excluded.templates.contains_key(&t) {
             return Resolution::Ignore;
         }
         let k = key(arg);
         let found = match t.as_str() {
             "i" => self.items.get(&k).map(|id| Target::Item { id: *id }),
             "t" => self.trinkets.get(&k).map(|id| Target::Trinket { id: *id }),
-            "a" | "achievement" => self
+            // `{{achievement image|Name}}` is a completion-marks grid cell: one achievement's
+            // icon, named the same way `{{achievement|Name}}` names one in prose. The icon
+            // itself is a game asset (constraint 3) and is never fetched; the name is real
+            // data and resolves the same reference either way.
+            "a" | "achievement" | "achievement image" => self
                 .achievements
                 .get(&k)
                 .map(|id| Target::Achievement { id: *id }),
@@ -418,7 +621,10 @@ impl Resolver {
             // An item pool. `itempools.xml` keys pools by name and gives them no id, so
             // there is no target to resolve to — the same shape as a machine.
             "ip" => return Resolution::Concept,
-            "s" | "floor" => {
+            // `{{stage image|Name}}` names a stage's title art the same way `{{s|Name}}`
+            // names one in prose; the art itself is a game asset (constraint 3) and is
+            // never fetched, only the reference.
+            "s" | "floor" | "stage image" => {
                 return Resolution::Target(Target::Stage {
                     name: arg.trim().to_string(),
                 })
@@ -436,8 +642,16 @@ impl Resolver {
         }
     }
 
-    /// Page title → target, for the infoboxes' `link`/`unlocks`/`unlocked by`.
-    /// Precedence: character, item, trinket, challenge, entity.
+    /// Page title → target, for the infoboxes' `link`/`unlocks`/`unlocked by`, and for a
+    /// plain `[[wikilink]]` (`inline::link`).
+    /// Precedence: character, item, trinket, challenge, entity, transformation.
+    ///
+    /// Transformations joined this list on 2026-09-26 (design decision 3): a wikilink to a
+    /// transformation's own page (`[[Beelzebub]]`, `[[Guppy]]`) used to name nothing here —
+    /// only `{{tf|…}}` resolved one — so every such link fell through to `Inline::Concept`
+    /// and stayed a dead link even though the page exists and has an id. Measured on the
+    /// snapshot: seven transformation names accounted for 30 of the 161 dead-concept
+    /// occurrences before this was added.
     pub fn by_page_title(&self, title: &str) -> Option<Target> {
         let k = key(title);
         if let Some(id) = self.characters.get(&k) {
@@ -459,6 +673,9 @@ impl Resolver {
                 subtype: *subtype,
             });
         }
+        if let Some(id) = self.transformations.get(&k) {
+            return Some(Target::Transformation { id: *id });
+        }
         None
     }
 
@@ -470,6 +687,14 @@ impl Resolver {
     pub(crate) fn player_table_parent(&self, name: &str) -> Option<Option<Target>> {
         let raw = self.player_parent.get(&key(name))?;
         Some(self.by_page_title(raw))
+    }
+
+    /// Whether a level-2 heading is on the closed exclusion list, read from
+    /// `corrections.json`'s `excluded.sections` the resolver already carries: the one place
+    /// that map reaches the parser, so `page.rs`'s own section split never reads the file
+    /// itself. See `sections::is_excluded_section` for the normalization and the reason.
+    pub fn is_section_excluded(&self, title: &str) -> bool {
+        crate::sections::is_excluded_section(title, &self.corrections.excluded.sections)
     }
 
     /// The id page `title` enters the items with, if the table (already filtered by
@@ -501,6 +726,14 @@ impl Resolver {
     /// Only entities with `type = boss`: the bestiary key for a boss's page.
     pub fn boss_key(&self, page_title: &str) -> Option<(u32, u32, u32)> {
         self.bosses_by_title.get(&key(page_title)).copied()
+    }
+
+    /// An entity's bestiary triple by name — its alias in the Cargo table, or the page title
+    /// for the entity a page's own first infobox names. Every type (`monster`, `mini-boss`,
+    /// `boss`, or none), unlike `boss_key`: an entity infobox's own key resolution needs the
+    /// whole table, not only the bosses.
+    pub fn entity_of_name(&self, name: &str) -> Option<(u32, u32, u32)> {
+        self.entities.get(&key(name)).copied()
     }
 
     /// A transformation's id from its page title. The Cargo table is the only source that
@@ -641,15 +874,43 @@ pub(crate) mod fixtures {
                 ("alias", "Beelzebub"),
             ])],
             pickup: vec![row(&[("_pageName", "Cards"), ("alias", "The Fool")])],
+            // Rows shaped like the real table: `collectible` is a page name, not an id — the
+            // one collectible this fixture's `synergy_rows`-driven tests reference.
+            bov_combination: vec![row(&[
+                ("collectible", "Breakfast"),
+                ("description", "Heals for a extra half a heart."),
+            ])],
+            bob_combination: vec![row(&[
+                ("collectible", "Breakfast"),
+                (
+                    "description",
+                    "One of a few effects happens, chosen at random.",
+                ),
+            ])],
         };
         let mut chars = BTreeMap::new();
         chars.insert("Tainted Isaac".to_string(), 21);
         chars.insert("Jacob & Esau".to_string(), 19);
         // The wiki gives Isaac the id 14 (Keeper's own): our own map wins.
         chars.insert("Isaac".to_string(), 14);
+        // `excluded.sections` mirrors `dataset/corrections.json`'s own set (not read from
+        // disk: this fixture stays a pure unit-test double), because page/block tests that
+        // exercise a page's sections — `Trivia` chief among them — expect the same headings
+        // production drops, now that `is_section_excluded` reads this map instead of a
+        // hardcoded list.
         let corrections: Corrections = serde_json::from_str(
             r#"{"pageId":{"collectible":{"Misfiled":901}},
-                "characters":{"Isaac":0,"Jacob & Esau":19,"???":4}}"#,
+                "characters":{"Isaac":0,"Jacob & Esau":19,"???":4},
+                "excluded":{"sections":{
+                    "Gallery":"images, a game asset",
+                    "In-game Footage":"video, a game asset",
+                    "In-Game Footage":"video, a game asset",
+                    "Ingame Footage":"video, a game asset",
+                    "References":"external citations, off the wiki",
+                    "Trivia":"the owner's call",
+                    "Audio":"sound listings, a game asset",
+                    "Sounds":"sound listings, a game asset"
+                }}}"#,
         )
         .unwrap();
         Resolver::new(&tables, &chars, &corrections)
@@ -661,6 +922,42 @@ mod tests {
     use super::fixtures::test_resolver;
     use super::*;
     use crate::Target;
+
+    /// `corrections.json`'s `excluded.templates` key, read the way the file actually writes
+    /// it: camelCase at the outer level, the template's own name (lowercase, spaces and all)
+    /// unchanged as a map key.
+    #[test]
+    fn excluded_templates_round_trip_from_json() {
+        let c: Corrections = serde_json::from_str(
+            r#"{"excluded":{"templates":{"sound table row":"only inside a discarded section"}}}"#,
+        )
+        .unwrap();
+        assert_eq!(
+            c.excluded
+                .templates
+                .get("sound table row")
+                .map(String::as_str),
+            Some("only inside a discarded section")
+        );
+        // Absent entirely: reads as empty, the same degrade every other `Corrections` map has.
+        let empty: Corrections = serde_json::from_str("{}").unwrap();
+        assert!(empty.excluded.templates.is_empty());
+    }
+
+    /// `corrections.json`'s `excluded.sections` key, the single source `is_section_excluded`
+    /// reads — `sections.rs` no longer carries its own copy of this list.
+    #[test]
+    fn excluded_sections_round_trip_from_json() {
+        let c: Corrections =
+            serde_json::from_str(r#"{"excluded":{"sections":{"Gallery":"images, a game asset"}}}"#)
+                .unwrap();
+        assert_eq!(
+            c.excluded.sections.get("Gallery").map(String::as_str),
+            Some("images, a game asset")
+        );
+        let empty: Corrections = serde_json::from_str("{}").unwrap();
+        assert!(empty.excluded.sections.is_empty());
+    }
 
     #[test]
     fn key_normalizes() {
@@ -902,6 +1199,12 @@ mod tests {
                 subtype: 0
             })
         );
+        // A transformation's own page, which `{{tf|…}}` already resolved but a plain
+        // `[[Beelzebub]]` wikilink did not, until 2026-09-26.
+        assert_eq!(
+            r.by_page_title("Beelzebub"),
+            Some(Target::Transformation { id: 1 })
+        );
         assert_eq!(r.by_page_title("Nope"), None);
         assert_eq!(
             r.achievement_by_name("Epic Fetus"),
@@ -909,5 +1212,19 @@ mod tests {
         );
         assert_eq!(r.boss_key("Mom"), Some((45, 0, 0)));
         assert_eq!(r.boss_key("Angel"), None); // mini-boss, not a boss
+    }
+
+    /// `Resolver::is_section_excluded` reaches the same `excluded.sections` map the JSON
+    /// round-trip test above reads, through the resolver rather than a second file read —
+    /// the way `page.rs`'s section split is meant to consult it.
+    #[test]
+    fn is_section_excluded_reads_the_resolver_s_own_corrections() {
+        let corrections: Corrections =
+            serde_json::from_str(r#"{"excluded":{"sections":{"Gallery":"a game asset"}}}"#)
+                .unwrap();
+        let r = Resolver::new(&Tables::default(), &BTreeMap::new(), &corrections);
+        assert!(r.is_section_excluded("Gallery"));
+        assert!(r.is_section_excluded("{{dlc|nr}} Gallery"));
+        assert!(!r.is_section_excluded("Blood Clots"));
     }
 }

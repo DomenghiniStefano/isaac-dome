@@ -1,0 +1,12 @@
+{{infobox version
+ | dlc   = r
+ | date  = 2024-01-08
+}}
+
+The [[Online (open beta)|online beta]] received a patch on January 8th, 2024, announced on [https://twitter.com/tyronerodriguez/status/1744482400758112503 Twitter].
+
+== Documented Changes ==
+* Fixed crash when using {{c|Jacob and Esau}} or {{c|The Forgotten}}
+* Miscellaneous fixes for Emoji wheel
+
+{{nav|version}}

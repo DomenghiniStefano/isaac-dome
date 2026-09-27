@@ -1,0 +1,51 @@
+{{infobox monster
+ | name        = Pooter
+ | id          = 14
+ | base hp     = 8
+ | environment = {{floor|Basement}}{{floor|Cellar}}{{floor|Burning Basement}}<br>{{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|Cathedral}}<br>{{room|boss}}{{room|challenge}}
+ | behavior    = Slowly drifts toward Isaac, occasionally firing a single blood shot at him. Does not deal contact damage.
+}}
+
+The '''Pooter''' wanders very slowly around the room to the point where they stay put, and they shoot one bullet at Isaac. Pooters will not shoot if Isaac wears {{i|Skatole}}. A {{E|Fly}} can turn into a Pooter if it stays near {{E|Poop}} for long enough.
+{{clear}}
+
+== Variants ==
+=== Super Pooter ===
+{{infobox monster
+ | name           = Super Pooter
+ | variant        = 1
+ | base hp        = 8
+ | environment    = {{floor|Basement}}{{floor|Cellar}}{{floor|Burning Basement}}<br>{{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Necropolis}}<br>{{floor|Utero}}
+ | replace        = Pooter
+ | replace chance = 9.49%
+ | behavior       = Slowly drifts toward Isaac, occasionally firing two blood shots in a V-formation at him. Does not deal contact damage.
+}}
+
+The Super Pooter behaves like the Pooter, except that it shoots two bullets in a V-shaped pattern. Just like the Pooter, it also does not shoot Isaac with {{i|Skatole}}.
+{{clear}}
+
+=== Tainted Pooter ===
+{{infobox monster
+ | dlc         = r
+ | name        = Tainted Pooter
+ | variant     = 2
+ | base hp     = 75
+ | environment = {{floor|Basement}}<br>Found on the [[Ascent]] to {{s|Home}}.
+ | behavior    = Slowly drifts toward Isaac, occasionally firing four blood shots at him that split into two smaller ones when they hit a wall or obstacle.
+}}
+
+Tainted Pooters are corrupt and much tankier versions of Pooters. They move the same as Pooters, slowly drifting towards Isaac, however instead of firing just one blood shot at him, they shoot 4 big shots that become 2 smaller ones when in contact with a wall or obstacle.
+
+They are exclusive to the [[Ascent]] to {{s|Home}}.
+{{clear}}{{dlc clear}}
+
+== Trivia ==
+* Prior to [[Afterbirth †]], Super Pooters were called Fat Flies.
+{{clear}}
+
+== Bugs ==
+{{bug|If a Pooter or a Super Pooter is [[confusion|stunned]] at the same time that it tries to shoot Isaac after the effect wears off, their shot will be fired without its corresponding animation.}}
+{{bug|If a Pooter or a Super Pooter is [[confusion|stunned]] or [[fear]]ed at the same time that it tries to shoot Isaac, its sound effect will repeat continuously until the effect is gone.}}
+{{clear}}
+
+{{nav}}

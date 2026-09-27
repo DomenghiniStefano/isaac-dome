@@ -67,6 +67,16 @@ pub struct Diagnostics {
     /// discarded before it is ever parsed. If this counter ever moves, that template is the
     /// first thing to look for.
     pub spans_outside_their_page: u32,
+    /// `{{hearts|…}}`/`{{heart|…}}` parameter names the closed list of heart types does not
+    /// cover, by name. The text is kept — a heart count of a type we cannot name is still a
+    /// heart count — so this is what makes the wiki growing a new heart type visible instead
+    /// of shipped silently, the same shape `unknown_entities` already is for `&name;`.
+    pub unknown_heart_types: BTreeMap<String, u32>,
+    /// A line inside `{| … |}` that is neither wikitable syntax (`|`, `!`, `|-`, `|+`) nor a
+    /// row shape this parser reads on sight (`{{entity row minimal|…}}`): dropped, the same as
+    /// before there was a counter for it, but no longer in silence. IBS's Effects table writes
+    /// its rows as `[[file:…]] prose`, which is neither.
+    pub unmodelled_table_rows: u32,
 }
 
 /// Adds `n` to the counter under `key`, starting it at zero.
@@ -110,6 +120,14 @@ impl Diagnostics {
         bump(&mut self.discarded_sections, title, 1);
     }
 
+    pub fn unknown_heart_type(&mut self, name: &str) {
+        bump(&mut self.unknown_heart_types, name, 1);
+    }
+
+    pub fn unmodelled_table_row(&mut self) {
+        self.unmodelled_table_rows += 1;
+    }
+
     /// Adds the counters of another pass (a page) into this one (the snapshot).
     ///
     /// `other` is **destructured field by field**, with no `..`, so a counter added to the
@@ -128,6 +146,8 @@ impl Diagnostics {
             unknown_entities,
             unknown_infoboxes,
             spans_outside_their_page,
+            unknown_heart_types,
+            unmodelled_table_rows,
         } = other;
         bump_all(&mut self.unresolved, unresolved);
         bump_all(&mut self.unknown_templates, unknown_templates);
@@ -135,10 +155,12 @@ impl Diagnostics {
         bump_all(&mut self.unknown_dlc_codes, unknown_dlc_codes);
         bump_all(&mut self.unknown_entities, unknown_entities);
         bump_all(&mut self.unknown_infoboxes, unknown_infoboxes);
+        bump_all(&mut self.unknown_heart_types, unknown_heart_types);
         self.pages_without_id += pages_without_id;
         self.orphan_closers += orphan_closers;
         self.transformation_sources_disagree += transformation_sources_disagree;
         self.spans_outside_their_page += spans_outside_their_page;
+        self.unmodelled_table_rows += unmodelled_table_rows;
     }
 }
 
@@ -167,6 +189,8 @@ mod tests {
         page.orphan_closers = 1;
         page.transformation_sources_disagree = 1;
         page.spans_outside_their_page = 1;
+        page.unknown_heart_type("unknown");
+        page.unmodelled_table_row();
 
         let mut all = Diagnostics::default();
         all.merge(&page);
@@ -182,6 +206,8 @@ mod tests {
         assert_eq!(all.orphan_closers, 2);
         assert_eq!(all.transformation_sources_disagree, 2);
         assert_eq!(all.spans_outside_their_page, 2);
+        assert_eq!(all.unknown_heart_types.get("unknown"), Some(&2));
+        assert_eq!(all.unmodelled_table_rows, 2);
     }
 
     /// A dataset from an earlier parser lacks the counters added since, and it still loads:

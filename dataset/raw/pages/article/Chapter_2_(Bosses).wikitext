@@ -1,0 +1,239 @@
+{{header normal bosses}}
+
+== {{s|Caves}} ==
+{| style="width: 70%; text-align: center"
+ | [[file:Boss Chub portrait.png|center|link=Chub]]
+ | [[file:Boss C.H.A.D. portrait.png|center|link=C.H.A.D.]]
+ | [[file:Boss Gurdy portrait.png|center|link=Gurdy]]
+ | [[file:Boss Gurdy Jr. portrait.png|link=Gurdy Jr.]]
+ |-
+ | [[Chub]]
+ | [[C.H.A.D.]] {{Unlockable}}
+ | [[Gurdy]]
+ | [[Gurdy Jr.]]
+ |-
+ |[[file:Boss Mega Fatty portrait.png|center|link=Mega Fatty]]
+ |[[file:Boss Mega Maw portrait.png|center|link=Mega Maw]]
+ |[[file:Boss Peep portrait.png|center|link=Peep]]
+ |[[file:Boss Dark One portrait.png|center|link=Dark One]]
+ |-
+ |[[Mega Fatty]]
+ |[[Mega Maw]]
+ |[[Peep]]
+ |[[Dark One]] {{dlc|nr}}
+ |-
+ |[[file:Boss Pestilence portrait.png|center|link=Pestilence]]
+ |[[file:Boss Headless Horseman portrait.png|center|link=Headless Horseman]]
+ |[[file:Boss The Fallen portrait.png|center|link=The Fallen]]
+ |[[file:Boss The Stain portrait.png|center|link=The Stain]]
+ |-
+ |[[Pestilence]] {{unlockable}}
+ |[[Headless Horseman]] {{unlockable}}
+ |[[The Fallen]] {{room|Devil}}
+ |[[The Stain]] {{dlc|a}} {{unlockable}}
+ |-
+ |[[file:Boss The Frail portrait.png|center|link=The Frail]]
+ |[[file:Boss The Forsaken portrait.png|center|link=The Forsaken]]
+ |[[file:Boss Big Horn portrait.png|center|link=Big Horn]]
+ |[[file:Boss Rag Mega portrait.png|center|link=Rag Mega]]
+ |-
+ |[[The Frail]] {{dlc|anr}} {{unlockable}}
+ |[[The Forsaken]] {{dlc|anr}} {{unlockable}}
+ |[[Big Horn]] {{dlc|a+}} {{unlockable}}
+ |[[Rag Mega]] {{dlc|a+}} {{unlockable}}
+ |-
+ | colspan="4" style="padding: 0" |
+{| style="width: 100%"
+ |[[File:Boss Fistula portrait.png|center|link=Fistula]]
+ |[[file:Boss Bumbino portrait.png|center|link=Bumbino]]
+ |-
+ |[[Fistula]] {{Dlc|r}}
+ |[[Bumbino]] {{dlc|r}} {{unlockable}}
+|}
+ |}
+
+=== Double Trouble ===
+{| class="mw-collapsible mw-collapsed wikitable"
+ !Double Trouble Bosses
+ |-
+ | style="padding: 0; text-align: center" |
+ {| style="width: 100%"
+  |[[file:Boss Dingle portrait.png|center|link=Dingle]]
+  |[[file:Boss The Duke of Flies portrait.png|center|link=The Duke of Flies]]
+  |[[file:Boss Gemini portrait.png|link=Gemini]]
+  |[[file:Boss Larry Jr. portrait.png|center|link=Larry Jr.]]
+  |-
+  |(Double Trouble)<br>[[Dingle]]
+  |(Double Trouble)<br>[[The Duke of Flies]]
+  |(Double Trouble)<br>[[Gemini]]
+  |(Double Trouble)<br>[[Larry Jr.]]
+  |}
+ {| style="width: 100%"
+  |[[file:Boss Monstro portrait.png|link=Monstro]]
+  |[[file:Boss Pin portrait.png|center|link=Pin]]
+  |[[File:Boss Polycephalus portrait.png|center|link=Polycephalus]]
+  |[[file:Boss Rag Man portrait.png|center|link=Rag Man]]
+  |-
+  |(Double Trouble)<br>[[Monstro]]
+  |(Double Trouble)<br>[[Pin]]
+  |(Double Trouble)<br>[[Polycephalus]]
+  |(Double Trouble)<br>[[Rag Man]] {{dlc|a}} {{unlockable}}
+  |}
+ |}
+
+== {{s|Catacombs}} ==
+{| style="width: 70%; text-align: center"
+ |[[file:Boss Carrion Queen portrait.png|center|link=Carrion Queen]]
+ |[[file:Boss Dark One portrait.png|center|link=Dark One]]
+ |[[file:Boss Gurdy Jr. portrait.png|link=Gurdy Jr.]]
+ |[[file:Boss The Hollow portrait.png|center|link=The Hollow]]
+ |-
+ |[[Carrion Queen]]
+ |[[Dark One]]
+ |[[Gurdy Jr.]]
+ |[[The Hollow]]
+ |-
+ |[[file:Boss The Husk portrait.png|center|link=The Husk]]
+ |[[file:Boss Peep portrait.png|center|link=Peep]]
+ |[[file:Boss Polycephalus portrait.png|center|link=Polycephalus]]
+ |[[file:Boss The Wretched portrait.png|center|link=The Wretched]]
+ |-
+ |[[The Husk]]
+ |[[Peep]]
+ |[[Polycephalus]]
+ |[[The Wretched]]
+ |-
+ |[[file:Boss Pestilence portrait.png|center|link=Pestilence]]
+ |[[file:Boss Headless Horseman portrait.png|center|link=Headless Horseman]]
+ |[[file:Boss The Fallen portrait.png|center|link=The Fallen]]
+ |[[file:Boss The Forsaken portrait.png|center|link=The Forsaken]]
+ |-
+ |[[Pestilence]] {{unlockable}}
+ |[[Headless Horseman]] {{unlockable}}
+ |[[The Fallen]] {{room|Devil}}
+ |[[The Forsaken]] {{dlc|a}} {{unlockable}}
+ |-
+ |[[file:Boss The Frail portrait.png|center|link=The Frail]]
+ |[[file:Boss The Stain portrait.png|center|link=The Stain]]
+ |[[file:Boss Big Horn portrait.png|center|link=Big Horn]]
+ |[[file:Boss Rag Mega portrait.png|center|link=Rag Mega]]
+ |-
+ |[[The Frail]] {{dlc|a}} {{unlockable}}
+ |[[The Stain]] {{dlc|anr}} {{unlockable}}
+ |[[Big Horn]] {{dlc|a+}} {{unlockable}}
+ |[[Rag Mega]] {{dlc|a+}} {{unlockable}}
+ |-
+ | colspan="4" |[[file:Boss Bumbino portrait.png|center|link=Bumbino]]
+ |-
+ | colspan="4" |[[Bumbino]] {{dlc|r}} {{unlockable}}
+ |}
+
+=== Double Trouble ===
+{| class="mw-collapsible mw-collapsed wikitable"
+ !Double Trouble Bosses
+ |-
+ | style="padding: 0; text-align: center" |
+ {| style="width: 100%"
+  |[[file:Boss Dingle portrait.png|center|link=Dingle]]
+  |[[file:Boss The Duke of Flies portrait.png|center|link=The Duke of Flies]]
+  |[[file:Boss Gemini portrait.png|link=Gemini]]
+  |[[file:Boss Larry Jr. portrait.png|center|link=Larry Jr.]]
+  |-
+  |(Double Trouble)<br>[[Dingle]]
+  |(Double Trouble)<br>[[The Duke of Flies]]
+  |(Double Trouble)<br>[[Gemini]]
+  |(Double Trouble)<br>[[Larry Jr.]]
+  |}
+ {| style="width: 100%"
+  |[[file:Boss Monstro portrait.png|link=Monstro]]
+  |[[file:Boss Pin portrait.png|center|link=Pin]]
+  |[[file:Boss Rag Man portrait.png|center|link=Rag Man]]
+  |[[File:Boss Gurglings portrait.png|center|link=Gurglings]]
+  |-
+  |(Double Trouble)<br>[[Monstro]]
+  |(Double Trouble)<br>[[Pin]]
+  |(Double Trouble)<br>[[Rag Man]] {{dlc|a}} {{unlockable}}
+  |(Double Trouble)<br>[[Gurglings]] {{dlc|r}}
+  |}
+ |}
+
+== {{s|Flooded Caves}} ==
+{| style="width: 70%; text-align: center"
+ |[[file:Boss Chub portrait.png|center|link=Chub]]
+ |[[file:Boss C.H.A.D. portrait.png|center|link=C.H.A.D.]]
+ |[[file:Boss Gurdy portrait.png|center|link=Gurdy]]
+ |[[file:Boss Gurdy Jr. portrait.png|link=Gurdy Jr.]]
+ |-
+ |[[Chub]]
+ |[[C.H.A.D.]] {{Unlockable}}
+ |[[Gurdy]]
+ |[[Gurdy Jr.]]
+ |-
+ |[[file:Boss Peep portrait.png|center|link=Peep]]
+ |[[file:Boss Polycephalus portrait.png|center|link=Polycephalus]]
+ |[[file:Boss Dark One portrait.png|center|link=Dark One]]
+ |[[file:Boss Pestilence portrait.png|center|link=Pestilence]]
+ |-
+ |[[Peep]]
+ |[[Polycephalus]] {{dlc|nr}}
+ |[[Dark One]] {{dlc|nr}}
+ |[[Pestilence]] {{unlockable}}
+ |-
+ |[[file:Boss Headless Horseman portrait.png|center|link=Headless Horseman]]
+ |[[file:Boss The Fallen portrait.png|center|link=The Fallen]]
+ |[[file:Boss The Forsaken portrait.png|center|link=The Forsaken]]
+ |[[file:Boss The Frail portrait.png|center|link=The Frail]]
+ |-
+ |[[Headless Horseman]] {{unlockable}}
+ |[[The Fallen]] {{room|Devil}}
+ |[[The Forsaken]] {{unlockable}}
+ |[[The Frail]] {{unlockable}}
+ |-
+ |[[file:Boss The Stain portrait.png|center|link=The Stain]]
+ |[[file:Boss Big Horn portrait.png|center|link=Big Horn]]
+ |[[file:Boss Rag Mega portrait.png|center|link=Rag Mega]]
+ |[[File:Boss Fistula portrait.png|center|link=Fistula]]
+ |-
+ |[[The Stain]] {{unlockable}}
+ |[[Big Horn]] {{dlc|a+}} {{unlockable}}
+ |[[Rag Mega]] {{dlc|a+}} {{unlockable}}
+ |[[Fistula]] {{Dlc|r}}
+ |-
+ | colspan="4" style="padding: 0" |
+{| style="width: 100%"
+ |[[File:Boss Mega Maw portrait.png|center|link=Mega Maw]]
+ |[[File:Boss Mega Fatty portrait.png|center|link=Mega Fatty]]
+ |[[File:Boss Bumbino portrait.png|center|link=Bumbino]]
+ |-
+ |[[Mega Maw]] {{Dlc|r}}
+ |[[Mega Fatty]] {{Dlc|r}}
+ |[[Bumbino]] {{Dlc|r}} {{unlockable}}
+ |}
+ |}
+
+=== Double Trouble ===
+{| class="mw-collapsible mw-collapsed wikitable"
+ !Double Trouble Bosses
+ |-
+ | style="padding: 0; text-align: center" |
+ {| style="width: 100%"
+  |[[file:Boss The Duke of Flies portrait.png|center|link=The Duke of Flies]]
+  |[[file:Boss Monstro portrait.png|link=Monstro]]
+  |[[file:Boss Rag Man portrait.png|center|link=Rag Man]]
+  |[[file:Boss Pin portrait.png|link=Pin]]
+  |-
+  |(Double Trouble)<br>[[The Duke of Flies]]
+  |(Double Trouble)<br>[[Monstro]]
+  |(Double Trouble)<br>[[Rag Man]] {{unlockable}}
+  |(Double Trouble)<br>[[Pin]] {{dlc|r}}
+  |}
+ |}
+
+== Notes ==
+* {{e|The Fallen}} and {{e|Headless Horseman}} are universal bosses.
+
+{{nav|boss|fr=Chapitre 2 (Boss)}}
+[[Category:Modified in Afterbirth]]
+[[Category:Modified in Afterbirth+]]
+[[Category:Modified in Repentance]]
+[[Category:Bosses| ]]

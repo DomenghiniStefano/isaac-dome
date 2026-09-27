@@ -1,0 +1,29 @@
+{{header reverse tarot cards}}
+{{Infobox card
+ | dlc         = r
+ | name        = XX - Judgement?
+ | files name  = XX - Inverted Judgement
+ | type        = card
+ | id          = 76
+ | quote       = May you redeem those found wanting
+ | description = Spawns a {{m|Shop Restock Machine}} near Isaac.
+ | unlocked by = Judgement
+ | recharge    = 12
+}}
+
+{{cit|uc|r}}
+
+== Effects ==
+* Spawns a {{m|Shop Restock Machine}} near Isaac.
+
+== Strategy ==
+* It is recommended to check if Isaac has enough money before entering a {{r|Devil Room}} / {{r|Angel Room}} to reroll their items with this card.
+** A bomb is all the more important in an angel room for obtaining and rerolling the key pieces.
+
+== Synergies ==
+* {{I|Tarot Cloth}}: Spawns 2 restock machines.
+
+== In-game Footage ==
+{{#ev:youtube|b3cZ6UlSuRk}}
+
+{{nav|fr=XX - Le Jugement ?|card}}

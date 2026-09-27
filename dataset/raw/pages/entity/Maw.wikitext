@@ -1,0 +1,52 @@
+{{infobox monster
+ | id          = 26
+ | base hp     = 20
+ | environment = {{floor| Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{room|challenge}}
+ | behavior    = Slowly floats towards Isaac, firing a blood shot at him when he is in their range.
+}}
+{{distinguish|Mr. Maw|Mega Maw}}
+
+'''Maws''' slowly drift towards Isaac while spitting a blood shot at him when near him, the latter behavior is similar to that of {{E|Horf}}s.
+
+They resemble pale floating heads with misshapen eye sockets that drip blood and an open mouth with only two teeth.
+{{clear}}
+
+== Variants ==
+=== Red Maw ===
+{{infobox monster
+ | name           = Red Maw
+ | image name     = * {{dlc|nr|Rebirth}}
+ | variant        = 1
+ | base hp        = 20
+ | environment    = {{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|Chest}}
+ | replace        = Maw
+ | replace chance = 9.49%
+ | behavior       = Floats quickly towards Isaac and releases 4 blood shots in the cardinal directions upon death.
+}}
+
+'''Red Maws''' float towards Isaac considerably faster than the Maw but do not fire any projectiles. Instead it will fire 4 blood shots in cardinal directions upon death, similar to {{E|Sucker}}s.
+
+They resemble other types of Maw, but with pink skin and a their mouth stitched shut, as if to prevent blood shots from being fired.
+{{clear}}
+
+=== Psychic Maw ===
+{{infobox monster
+ | name           = Psychic Maw
+ | image name     = * {{dlc|nr|Rebirth}}
+ | variant        = 2
+ | base hp        = 20
+ | environment    = {{floor|Caves}}{{floor|Flooded Caves}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Mausoleum}}<br>{{floor|Utero}}<br>{{floor|Cathedral}}
+ | replace        = Maw, Red Maw
+ | replace chance = 1%
+ | behavior       = Slowly floats towards Isaac, firing homing shots at him when he is in their range. Spawns with an Eternal Fly orbiting around it.
+}}
+
+'''Psychic Maws''' behave identically to Maws but fire purple homing shots that deal a whole heart of damage. Similar to the {{E|Hanger}}, the Psychic Maw will always spawn with an {{E|Eternal Fly}} circling it.
+
+The Psychic Maw resembles a pale floating head with its eyes and mouth stitched shut and a third eye opened in its forehead dripping blood. The third eye emits a small purple fire.
+{{clear}}
+
+== Bugs ==
+{{bug|dlc=nr|If you [[slow]], [[confusion|stun]] or [[fear]] a Maw at the same time that it tries to shoot Isaac, its sound effect will loop infinitely until the Maw is killed.}}
+
+{{nav|fr=Gueule}}

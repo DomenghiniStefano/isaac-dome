@@ -1,0 +1,140 @@
+'''''Note: Any strategy referring to {{i|Cube of Meat}} also works for {{i|Ball of Bandages}}, and the other way around, unless otherwise specified.'''''
+
+== With Repentance ==
+Repentance introduced {{m|Battery Bum}}s. Using them with one {{i|Cube of Meat}} allows one to easily get the required 3 activations of {{c|Lilith}}'s {{i|Box of Friends}} to obtain the achievement.
+
+Repentance also introduced {{T|The Twins}} trinket which allows you to temporarily gain one extra level. This can be used to get the achievement with only a level 3 Super Meat Boy or Super Bandage Girl.
+
+== With Afterbirth † ==
+Afterbirth † introduced the {{i|Potato Peeler}} item. Each time this item is used, a {{i|Cube of Meat}} is created (at the cost of one red heart container), meaning that if this item is used 4 times you can get the achievement. This does not apply to the {{i|Ball of Bandages}}.
+
+This is important as if you play [[Greed Mode]] as {{C|Magdalene}}, you can easily restart the run until Potato Peeler appears in the shop. Once this occurs, use the item until you have no more heart containers. Since Magdalene starts with four heart containers, you have just enough health to use the Potato Peeler enough to get four Cubes of Meat. Even though you die after using the item four times, the achievement is still granted. <br>
+
+{{dlc|r+}} If you find Potato Peeler but are looking to obtain a complete Super Bandage Girl, you can find a {{i|Ball of Bandages}} first before using Potato Peeler, as using it with a Ball of Bandages contributes to that instead of Cube of Meat.
+
+{{dlc|r}} Potato Peeler does not work with Box of Friends, limiting Lilith's strategy to sacrificing heart containers, or picking up other Cubes of Meat from Item Pedestals.
+
+== With Afterbirth ==
+The achievement for creating a Super Meat Boy is much easier with Afterbirth, thanks to the {{i|Box of Friends}}, which {{c|Lilith}} conveniently starts with.
+
+=== General Strategy ===
+Start as {{C|Lilith}} and do not discard the {{i|Box of Friends}}. Play until you find a {{i|Cube of Meat}} or{{i|Ball of Bandages}}.
+
+Then, find a way to use the Box 3 times without leaving the room. There are multiple ways to accomplish this:
+* Find a room with two Batteries or use a 48 hour energy pill.
+* Find {{P|Jera}}. Then, find a Battery and use the rune to create a second battery. With a fully charged Box of Friends, a single use of the Rune is all you need.
+* Do the {{r|Boss Rush}}. Each wave will give 2 charges, easily nabbing you the achievement.
+* Use the {{I|Habit}} and/or the {{I|Sharp Plug}} to fully charge the box two more times with enough health.
+* Get {{I|The Battery}} and double-charge the box. Then find a way to charge the box one more time (a battery, Habit, Sharp Plug, etc.).
+* Get the {{I|Car Battery}} then either find a Battery, charge the Box with the Habit or Sharp Plug, or get a double-charge with The Battery.
+* Get {{I|Restock}} then buy 2 Batteries from the Shop.
+* Find a shop with a {{m|Shop Restock Machine}}, then donate to the box/ bomb the box to re-roll all items while picking up and using all batteries.
+
+[[Greed Mode]] is another easy way to accomplish this, since every wave generates a charge, and a Cube of Meat can be found for sale in the rerollable shops. A Ball of Bandages can spawn in the boss item room in Greedier Mode.
+
+{{I|Diplopia}} is very useful, as it will allow you to pick two {{i|Cube of Meat}} or {{i|Ball of Bandages}} instead of one when finding it, also preventing {{e|Conquest}} or {{e|Headless Horseman}} from ruining your chances of getting a Super Meat Boy/Super Bandage Girl with {{i|Book of Revelations}}.
+
+.
+
+== Without Afterbirth ==
+Without Afterbirth, the achievement for creating a Super Meat Boy and Super Bandage Girl is significantly more difficult to obtain without performing a specific strategy.
+
+=== The Book of Revelations Strategy ===
+The most straightforward method to unlock the Meat Boy is restarting the game until obtaining the {{I|Book of Revelations}} on the first level, which can be found in either a {{R|Treasure Room}} or {{r|Library}}. Using it on the current level will increase the chance of one [[Horseman]] to appear, based on the current chapter:
+
+# {{e|Famine}} in first or second level of [[Chapters#Chapter 1|chapter 1]].
+# {{e|Pestilence}} in first or second level of [[Chapters#Chapter 2|chapter 2]].
+# {{e|War}} in first level of [[Chapters#Chapter 3|chapter 3]]. (Second level boss is always {{e|Mom}}).
+# {{e|Death}} in first level of [[Chapters#Chapter 4|chapter 4]]. (Second level boss is always {{e|Mom's Heart}} or {{e|It Lives!}} if unlocked).
+
+==== Notes ====
+* The harbingers mentioned above can be replaced by {{e|Headless Horseman}} on any chapter. Although {{e|Conquest}} may appear on Womb I / Utero I , they'll only do so if you unlock them by taking a total of 10 Angel Deals in a save file, so refraining from doing so is advised (until you get a SMB/SBG). These bosses are guaranteed to drop {{I|A Pony}} and the {{I|White Pony}} respectively. If you encounter either of these bosses, it means you will not obtain a Cube of Meat (or Ball of Bandages) for whatever chapter you are on, and you will likely not be able to obtain the achievement in your run.
+* Harbingers cannot spawn in a Double Trouble boss room. If the current floor's boss room is a large room, the Book of Revelations cannot increase the chance of a Harbinger to spawn there. This also applies to the {{e|Mr. Fred}} fight in Womb I / Utero I.
+* It is recommended to start this run either as {{C|Isaac}}, to reroll the {{r|Library}} in case the {{I|Book of Revelations}} isn't found, or as {{C|Cain}}, because he starts with a key so you can hold R and keep restarting the run until you see a locked door adjacent to your spawn and it is a Library, however, a key will likely be found on the first floor, so playing as Isaac is recommended.
+
+=== The Blank Card Strategy ===
+This method no longer works in Repentance.
+
+This method involves using the {{I|Blank Card}} item and {{P|Jera}} to create lots of batteries.
+
+# Start as {{C|Azazel}} for ease of fighting to later floors and collecting enough money to buy {{I|Blank Card}}, or Isaac with {{I|The D6}} unlocked.
+# Get the {{I|Blank Card}} and {{P|Jera}}.
+# Optionally also get the {{I|Starter Deck}} and {{P|Perthro}}.
+# Find a battery pickup on the ground.
+# Copy the battery using Blank Card until there are three, at which point Blank Card can produce any number of batteries. You can theoretically do this with 2 batteries, if you use Blank Card while picking up the battery, as it has a chance to be doubled.
+# Find a golden chest with an item inside it, since any copy of a chest containing an item will also contain an item; however you can not open it since it can't be copied by Jera after opened.
+# Get the {{I|Monster Manual}} using the {{I|D20}} and/or the {{I|The D6}}, or simply by using Blank Card to copy golden chests again and again.
+# Optionally, you could get the Monster Manual using {{P|Perthro}}.
+# Use the Monster Manual over and over with the batteries created by the Blank Card. This will eventually create 4 Cubes of Meat/Balls of Bandages.
+
+=== The Sharp Plug / Pyromaniac Strategy ===
+This method can take up to an hour of in-game time, but compared to the {{I|Book of Revelations}} method, should take significantly fewer runs and thus save a lot of time overall. This method can unlock both Super Meat Boy and Super Bandage Girl in the same run.
+
+# Start as {{C|Isaac}} with {{I|The D6}} unlocked.
+# Get {{I|Pyromaniac}}.
+## Hold R to reset the floor until a {{R|Treasure Room}} is adjacent to the starting room. (Or, if it isn't, pick a door and enter the next room. Continue until you see enemies or find the Treasure Room. If you find enemies, reset.)
+## If the item inside the Treasure Room is not {{I|Pyromaniac}}, re-roll it. If it still isn't Pyromaniac, reset.
+# Get {{I|Sharp Plug}} or {{I|Habit}} from a shop.
+## Make sure that you save enough keys so that you can get into every shop.
+## Use all re-rolls on the shop.
+## If you get {{I|Sharp Plug}}, do not get {{I|9 Volt}} since it’ll render [[Sharp Plug]] useless.
+# Get any bomb producing item/synergy. This includes {{I|Dr. Fetus}}, {{I|Epic Fetus}}, {{I|Kamikaze!}}, {{I|Anarchist Cookbook}}, {{I|IV Bag}} + {{I|Curse of the Tower}}/{{I|BOGO Bombs}} + {{T|Burnt Penny}}, etc.
+#* Use all re-rolls on the treasure room if you haven't found Pyromaniac.
+#* If you have {{I|Habit}}, make sure to leave at least one source of damage on the floor so that you can damage yourself. (ex: a fire, spikes, or a {{E|Stone Grimace}}.
+#* If you find a room with green Ipecac-shooting enemies, you can use it to obtain any number of re-rolls. Enter the room, allow the explosions to heal you and charge {{I|The D6}} to full, then allow the explosions to open the exit.
+#* After this step is complete you will have infinite re-rolls.
+# Get a {{I|Sharp Plug}} from a shop if you got {{I|Habit}} in step 2. (The plug is much faster at recharging the manual in the next step.)
+# Get a {{I|Monster Manual}} from a treasure room or library.
+#* If you can spare an item pedestal, and you have the {{I|Sharp Plug}}, it is highly recommended to obtain {{I|The Wafer}}, which will allow you to charge {{I|The D6}} once per 1/2 heart instead of once per 2 hearts, effectively quadrupling your efficiency.
+#* Another way to speed up the progress is to add more item pedestals. If you find a {{P|XX - Judgement}}, save it until you're ready to reroll for the {{I|Monster Manual}}, and then use it in the treasure room. If you can make it pay out with an item, you'll be able to reroll two items per charge.
+# Use the manual over and over until you get a Super Meat Boy and/or Super Bandage Girl.
+
+Note that if you find a {{I|Monster Manual}} before finishing the combo, you will have to finish the combo on that floor or reset the game. This is because finding the manual will take it out of the item pool for the remainder of the run. If you find it, you should try to find another activated item in a different room so you can put the Manual down in a safe place and continue rolling with that activated item inside the treasure room.
+
+=== Sharp Plug / Wafer Strategy ===
+# Start as {{C|Isaac}} with {{I|The D6}} unlocked.
+# Get {{I|The Wafer}}.
+## Hold R to reset the floor until a {{r|Treasure Room}} is adjacent to the starting room.
+## If the item inside the Treasure Room is not {{I|The Wafer}}, re-roll it. If it still isn't The Wafer, reset.
+## {{I|Cancer}} also works as it provides {{I|The Wafer}}'s effects after the first instance of damage during a room.
+# Get a {{I|Sharp Plug}} from a shop.
+## Make sure that you save enough keys so that you can get into every shop.
+## Use all re-rolls on the shop.
+## Other useful items here are {{I|Scapular}}, {{I|Habit}}.
+## Do not get {{I|9 Volt}} or {{I|Isaac's Heart}}, as they will ruin the sharp plug's ability.
+# Complete the game with {{I|The Polaroid}} to go to the chest.
+# In the chest, obtain everything else you need.
+## Clear the chest and look for another pedestal on which you can place your health pickup.
+## Roll the first room to get a health pickup like {{I|Yum Heart}}, {{I|Book of Revelations}}, or {{I|Satanic Bible}}
+## Re-roll the pedestal(s) away from your health pickup for the {{I|Monster Manual}}
+# Use the manual over and over until you get a Super Meat Boy and/or Super Bandage Girl.
+
+=== D20 strategy ===
+# Get the {{I|D20}}.
+## Hold R to reset the floor until a {{R|Treasure Room}} is adjacent to the starting room.
+# Continue playing until you find a [[48 Hour Energy]] or {{I|Sharp Plug}}.
+# Obtain the {{I|Blank Card}}.
+## Leave 48 Hour Energy outside of the shop.
+## Bomb the donation machine 10+ times to get 35+ coins on the ground.
+## Reroll coins with the {{I|D20}}.
+## Open any chests.
+## Take any 48 Hour Energy pills, {{P|Jera}}, and {{P|Perthro}} outside the shop.
+## Continue until you have a {{I|Blank Card}}.
+# Obtain the {{I|Monster Manual}}
+## Use the Blank Card, Jera runes, Energy pills, and/or Sharp Plug with heart pickups to fill a {{R|Treasure Room}} or {{r|Library}} with items
+## Use the Blank Card with the Perthro rune and other stuff to get the {{I|Monster Manual}}
+# Use the manual over and over until you get a Super Meat Boy and/or Super Bandage Girl.
+
+=== Maggy's Bow strategy ===
+# Get {{I|Maggy's Bow}}.
+## Hold R to reset the floor until a {{R|Treasure Room}} is adjacent to the starting room.
+# Visit the shops for {{I|The Jar}} and the {{I|Sharp Plug}}.
+## Do not get {{I|9 Volt}} or {{I|Isaac's Heart}}, as they will ruin the sharp plug's effect.
+## Bomb donation machines if you need money, or if you have {{I|The Jar}}, use a {{M|Blood Donation Machine}} or go to a {{R|Sacrifice Room}}
+# Play until you find the {{I|Monster Manual}}.
+# Use {{I|The Jar}} to fill the room with hearts
+# Swap to the {{I|Monster Manual}} and with the {{I|Sharp Plug}}, keep using until you get a Super Meat Boy and/or Super Bandage Girl.
+#* Use the hearts around to regain the lost health from {{I|Sharp Plug}}.
+
+{{nav|fr=Débloquer Super Meat Boy et Super Bandage Girl}}
+[[Category:Collectibles]]

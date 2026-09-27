@@ -1,0 +1,48 @@
+{{infobox monster
+ | name        = {{dlcalt|lvl2|r=Level 2}} Spider
+ | id          = 215
+ | base hp     = 13
+ | environment = {{floor|Basement}}{{floor|Cellar}}{{floor|Burning Basement}}<br>{{floor|Catacombs}}
+ | behavior    = Crawls around the room erratically, following Isaac and dealing contact damage. Can jump small distances.
+}}
+
+'''Level 2 Spiders''' wander around the room unpredictably and crawl towards Isaac if he is nearby. They combine the abilities of both the normal {{e|Spider}} and the {{e|Trite}}, though unlike the Trite, they do not leap as often and not as far.
+{{clear}}
+
+== Variants ==
+=== Ticking Spider ===
+{{infobox monster
+ | name        = Ticking Spider
+ | id          = 250
+ | base hp     = 13
+ | environment = {{floor|Basement}}{{floor|Cellar}}{{floor|Burning Basement}}<br>{{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Necropolis}}<br>{{floor|Sheol}}
+ | behavior    = Crawls around the room erratically, following Isaac and dealing contact damage. Can jump small distances. Explodes upon death.
+}}
+
+'''Ticking Spiders''' act like Level 2 Spiders, but explode upon death.
+
+{{clear}}
+
+=== Migraine ===
+{{infobox monster
+ | dlc         = r
+ | name        = Migraine
+ | id          = 869
+ | base hp     = 16
+ | environment = {{floor|Cellar}}<br>{{floor|Catacombs}}<br>{{floor|Mines}}{{floor|Ashpit}}<br>{{floor|Necropolis}}<br>{{floor|Dark Room}}
+ | behavior    = Crawls around the room erratically, following Isaac and dealing contact damage. Can jump small distances. Releases multiple {{e|Troll Bomb}}s upon death.
+}}
+'''Migraines''' act like Level 2 Spiders, but move with slower speed and burst into 3 {{e|Troll Bomb}}s.
+{{clear}}{{dlc clear}}
+
+== Gallery ==
+<gallery>
+File:Edmund McMillen Rebirth Monster Sketches.jpg|Sketches of monsters for the ''Binding of Isaac: Rebirth'', including the Lvl2 Spider in the second square of the third row.
+</gallery>
+
+== Trivia ==
+* Ticking Spiders used to deal one heart of damage on contact until [[v1.031]]. Their collision damage now does half a heart.
+{{clear}}
+
+{{Nav|fr=Araignée 2}}
+[[Category:Spider monsters]]

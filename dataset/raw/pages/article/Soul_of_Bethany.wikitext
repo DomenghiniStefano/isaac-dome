@@ -1,0 +1,28 @@
+{{header soul stones}}
+{{Infobox rune
+ | dlc         = r
+ | name        = Soul of Bethany
+ | type        = soul stone
+ | id          = 96
+ | quote       = Friends from beyond
+ | description = Spawns 6 {{i|Book of Virtues}} wisps with random properties.
+ | unlocked by = Soul of Bethany
+ | recharge    = 6
+}}
+
+{{cit|ur|r}}
+
+== Effects ==
+* Spawns 6 blue [[wisps]].
+** Each wisp has its own 10% chance to instead be a random wisp.
+
+== Synergies ==
+* {{i|BFFS!}}: Doubles the base damage, contact damage, and damage scaling per floor of the wisps.
+* {{t|Forgotten Lullaby}}: Doubles the wisps' fire rate.
+* {{t|Baby-Bender}}: Wisp shots become homing shots.
+
+== In-game Footage ==
+{{#ev:youtube|QllR1KrizD0}}
+
+{{nav|fr=Âme de Béthanie}}
+[[Category:Runes]]

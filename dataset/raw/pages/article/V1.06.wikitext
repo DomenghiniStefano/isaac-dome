@@ -1,0 +1,17 @@
+{{infobox version
+ | dlc  = a
+ | name = The Binding of Isaac: Afterbirth
+ | date = 2015-10-30
+ | blog = 132219738479
+}}
+
+''This was the first initial version of the Afterbirth DLC expansion. For an overview on content added in Afterbirth, please see this page: [[The Binding of Isaac: Afterbirth]]''
+
+== Undocumented changes ==
+=== Fixes ===
+* Fixed the bug that prevents an item pedestal from disappearing if the player teleports away before the "poof" animation is completed. (It is no longer possible to steal multiple items from the Boss Rush and so forth.)
+
+== New bugs ==
+* When importing a save from Rebirth to Afterbirth, some post-it note completion marks would not properly transfer over.
+
+{{nav|version}}

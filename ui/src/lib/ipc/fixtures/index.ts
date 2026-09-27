@@ -257,6 +257,7 @@ const handlers: Partial<Record<CommandName, Handler>> = {
     if (!wikiShown()) throw wikiUnavailable
     return (await wiki()).wikiEntryAnswer(args?.target as Target)
   },
+  [Command.WikiItemPools]: async () => (await wiki()).wikiItemPoolsAnswer(),
   // Search needs no profile, as in the app: what it lacks travels as a diagnostic.
   [Command.Search]: async (args) => {
     const { searchAnswer } = await import('./search')

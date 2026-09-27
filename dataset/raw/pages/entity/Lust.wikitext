@@ -1,0 +1,36 @@
+{{infobox monster
+ | id           = 47
+ | image name   = * {{dlc|nr|Rebirth}}
+ | is mini-boss = yes
+ | base hp      = 60
+ | stage hp     = {{dlcalt|15|r=20}}
+ | environment  = <u>Mini-Boss</u><br>{{room|Mini-Boss}}<br><u>Degraded Mini-Boss</u><br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|Sheol}}<br>{{floor|Chest}}{{floor|Dark Room}}
+ | pool         = Random [[Pill]] (75% Chance)<br>or<br>{{i|The Virus}} (25% Chance)
+}}
+
+'''Lust''' is a [[mini-boss]] and one of the [[Seven Deadly Sins]].
+
+== Behavior ==
+* Lust chases Isaac around the room at a fast speed, attempting to do contact damage.
+** She builds speed the longer she travels without turning and takes heavily reduced knockback from Isaac's tears.
+Lust deals a whole heart of contact damage.
+
+== Notes ==
+* Having high [[speed]] will make the fight much easier.
+* {{dlc|nr}} Lust can drop {{i|The Virus}} even if Isaac has already encountered/possessed it.
+
+== Unlockable [[Achievements]] ==
+{{achievement text | The Book of Sin }}
+
+== Trivia ==
+* Lust is confirmed to be female.<ref>https://twitter.com/edmundmcmillen/status/1022278876586635264</ref>
+* {{i|The Virus}} gives Isaac a lumpy appearance that looks similar to Lust's appearance.
+* The [[wikipedia:Seven Deadly Sins|Seven Deadly Sins]] that these mini-bosses are based upon are, in Christian teachings, a classification of vices from which all others are derived.
+* Lust's sickly appearance and chance to drop {{i|The Virus}} may be a reference to sexually transmitted diseases.
+* Lust is a personification of one of the Seven Deadly Sins. Lust is sexual immorality in all its forms. It is believed to lead to impulsivity, dullness in religious thinking, inconstancy, and worldliness — as well as violence and hatred towards God in more extreme forms.
+
+== References ==
+{{Reflist}}
+
+{{nav|mini-boss|fr=Luxure}}
+[[Category:Seven Deadly Sins]]

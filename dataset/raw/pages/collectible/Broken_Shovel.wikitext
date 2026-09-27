@@ -74,6 +74,7 @@ The second Broken Shovel piece can be acquired by completing {{r|Boss Rush}} whi
 === Notes ===
 * The first Broken Shovel piece has to be in the active item slot when the second piece is picked up in order to obtain Mom's Shovel. If the second piece is picked up without the first piece, it will be added as a passive item and won't become Mom's Shovel even if the first piece is picked up afterward.
 ** {{dlc+|r}} If either of {{c|Jacob and Esau|n}} holds the first Broken Shovel piece, that same brother must pick up the second piece.{{dlc-}}
+** {{dlc+|r}} Regardless of which {{c|Tainted Lazarus}} form holds the first Broken Shovel piece, the form that picks up the second piece will receive Mom's Shovel, and the first piece will be removed.{{dlc-}}
 
 === Tips for Obtaining ===
 * Make sure to keep moving; stopping for even a few seconds will increase the chance a foot hits Isaac.

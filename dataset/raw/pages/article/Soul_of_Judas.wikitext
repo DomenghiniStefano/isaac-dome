@@ -1,0 +1,33 @@
+{{header soul stones}}
+{{Infobox rune
+ | dlc         = r
+ | name        = Soul of Judas
+ | type        = soul stone
+ | id          = 84
+ | quote       = Right behind you
+ | description = Increases Isaac's [[speed]] and makes him invulnerable for 3 seconds and allows him to pass through enemies. Damages all enemies and destroys all projectiles Isaac ran through when the effect ends, and grants a temporary [[Damage]] bonus for each enemy and projectile hit.
+ | unlocked by = Soul of Judas
+ | recharge    = {{dlcalt|3|r+=2}}
+}}
+
+{{cit|ur|r}}
+
+== Effects ==
+* Activates the effect of {{i|Dark Arts}} for 3 seconds. Grants a temporary [[damage]] up for each enemy and projectile hit.
+
+== Notes ==
+* The damage boost effect is identical to {{c|Black Judas}}' / {{c|Tainted Judas}}' special {{i|Dark Arts}} interaction.
+* See the {{i|Dark Arts}} page for more details and notes.
+
+== Strategy ==
+* Lasting thrice as long as Dark Arts, the '''Soul of Judas''' can be better used to destroy numerous projectiles shot by bosses like {{e|Mega Satan}} and {{e|Hush}}, potentially resulting in major damage buffs.
+
+== In-game Footage ==
+{{#ev:youtube|QllR1KrizD0}}
+
+== Trivia ==
+* The quote "Right behind you" may be a reference to the [[teamfortress:Spy|Spy from ''Team Fortress 2'']], specifically in ''[https://youtu.be/OR4N5OhcY9s Meet the Spy]''.
+* This Soul Stone, along with {{p|Soul of Isaac}}, {{p|Soul of Magdalene}}, and {{p|Soul of Samson}}, replicates a feature of the character it's unlocked by.
+
+{{nav|fr=Âme de Judas}}
+[[Category:Runes]]

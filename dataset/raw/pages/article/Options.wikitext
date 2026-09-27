@@ -1,0 +1,254 @@
+{{disambig msg|game configuration|a similarly-named item affecting room clear rewards|Options?}}
+The '''Options''' are a page from which the player can adjust different settings. They can be accessed from the main menu and the pause menu.
+
+== In-game options ==
+{| class="wikitable sortable mw-collapsible"
+ ! Option name
+ ! class="unsortable" | Description
+ ! class="unsortable" | Notes
+ |-
+ ! Controls
+ | Allows mapping each of the in-game actions to a controller button or keyboard key.
+ | Not available in the Options page accessed via the pause menu.
+ |-
+ ! Change controller
+ | Allows the player to change which controller to use.
+ | Not available in the Options page accessed via the main menu.
+ |-
+ ! SFX
+ | Changes the volume of sound effects, such as tear splatters, voice lines, bomb explosions, destruction of obstacles, etc.
+ |
+ |-
+ ! Music
+ | Changes the volume of the music. Also affects jingles, such as the one that plays when a secret room entrance is opened.
+ |
+ |-
+ ! Map opacity
+ | Adjusts the transparency of the expanded map when in a game.
+ |
+ |-
+ ! Fullscreen
+ | Toggles between fullscreen and windowed modes.
+ | Can be toggled at any point by pressing the F key.
+ |-
+ ! Filter
+ | Toggles the smoothing filter on or off. When enabled, all pixels on screen will be interpolated, resulting in a smoother but blurrier image.
+ |
+ |-
+ ! Gamma
+ | Changes the brightness of the game.
+ |
+ |-
+ ! {{dlc+|r+}} Rumble
+ | Toggles vibration for supported controllers.
+ | {{dlc-}}
+ |-
+ ! {{dlc+|r+}} Item Descriptions
+ | Toggles pop-ups that describe an item's function once Isaac goes near a collectable item. Applies to all [[items]], [[consumables]], and [[trinkets]].
+ | Unlocked after defeating {{e|Mom}}. Each item must be collected at least once to enable its own item description.{{dlc-}}
+ |-
+ ! Pop-ups
+ | Toggles pop-up messages and animations that appear after unlocking a [[secret]].<br>{{dlc|r+}} If enabled, pop-ups can be set to Big or Small. Small pop-ups will not interrupt gameplay.
+ |
+ |-
+ ! {{dlc+|nr+}} Language
+ | Sets the language to English, Japanese, Spanish, German, French, Russian, Korean, or Chinese.
+ | Not available in the Options page accessed via the pause menu.{{dlc-}}
+ |-
+ ! Active Cam
+ | Toggles the dynamic camera that moves in the direction Isaac is shooting in large rooms.
+ |
+ |-
+ ! {{dlc+|a}} Extra HUD
+ | Toggles displaying collected [[items]] on the right side of the screen. Can be set to OFF, NORMAL or MINI. NORMAL mode displays up to 10 recent items while MINI can display up to 24.
+ | Setting the Extra HUD to NORMAL will always display the time and score in the top center of the screen.{{dlc-}}
+ |-
+ ! HUD Offset
+ | Adjusts how far from the screen edges the UI is displayed.
+ |
+ |-
+ ! {{dlc+|a+}} Found HUD
+ | Toggles displaying Isaac's [[Attributes|stats]] on the left side of the screen.
+ | {{dlc-}}
+ |-
+ ! {{dlc+|a+}} Charge Bars
+ | Toggles displaying visual indicators for chargeable items and attacks, such as {{i|Brimstone}} or {{i|Lil Gurdy}}.
+ | {{dlc-}}
+ |-
+ ! {{dlc+|r}} Bullet Visibility
+ | Toggles highlighting enemy bullets to be able to quickly tell them apart from Isaac's tears. Highlighted bullets have a white pulsating glow.
+ | {{dlc-}}
+ |-
+ ! {{dlc+|r+}} Jacob+Esau Controls
+ | "Classic" controls will switch from using active items to using pills/cards when the player holds the Drop button. <br>"Better" controls will switch from using Jacob's item/pill/card to using Esau's item/pill/card when the player holds the Drop button.
+ | {{dlc-}}
+ |-
+ ! {{dlc+|r+}} Multiplayer HUD
+ | Changes how other players' HUD elements are displayed in online play.
+ | Not available in the Options page accessed via the pause menu in offline runs.{{dlc-}}
+ |-
+ ! {{dlc+|r+}} Streamer Mode
+ | Toggles displaying the full usernames of players in online play.
+ | Not available in the Options page accessed via the pause menu in offline runs.{{dlc-}}
+ |-
+ ! {{dlc+|r+}} Enable Chat
+ | Toggles chat in online play.
+ | Not available in the Options page accessed via the pause menu in offline runs.{{dlc-}}
+ |-
+ ! {{dlc+|r+}} Player Sound
+ | Changes the volume of other players' sound effects in online play.
+ | Not available in the Options page accessed via the pause menu in offline runs.{{dlc-}}
+ |-
+ ! {{dlc+|r+}} Player Opacity
+ | Changes the opacity of other players in online play.
+ | Not available in the Options page accessed via the pause menu in offline runs.{{dlc-}}
+ |-
+ ! {{dlc+|r+}} Player Colors
+ | Changes the colors associated with the 4 player slots in online play.
+ | Not available in the Options page accessed via the pause menu in offline runs.{{dlc-}}
+ |-
+ ! {{dlc+|r+}} Input Delay
+ | Changes the input delay in online play.
+ | Not available in the Options page accessed via the pause menu in offline runs.{{dlc-}}
+ |}
+
+== Options.ini ==
+The ''options.ini'' file, located at <code>C:\Users\%username%\Documents\My Games</code> on Windows, can be used to change several settings that are not available from the in-game menu. To avoid redundancy, only settings that are not available in the game options are listed in this table.
+
+{| class="wikitable sortable mw-collapsible"
+ ! Option name
+ ! class="unsortable" | Description
+ ! class="unsortable" | Values
+ ! class="unsortable" | Notes
+ |-
+ ! Exposure
+ | Changes the exposure (brightness) of the game.
+ |
+ |
+ |-
+ ! ControllerHotplug
+ | Allows the game to recoginse controllers that are pluged-in mid game/run.
+ |
+ |
+ |-
+ ! TryImportSave
+ | Unknown
+ |
+ |
+ |-
+ ! EnableMods
+ | Toggles mods.
+ | {{code|0}}: Mods disabled<br>{{code|1}}: Mods enabled
+ | Can be toggled from the "Mods" tab. Having this option enabled will prevent the player from participating in [[Daily Challenges]] and unlocking secrets on a new save file.
+ |-
+ ! TouchMode
+ | Unknown
+ |
+ |
+ |-
+ ! AimLock
+ | Unknown
+ |
+ |
+ |-
+ ! AscentVoiceOver
+ | Toggles the voice over that plays during the [[Ascent]] sequence.
+ |
+ |
+ |-
+ ! EnableDebugConsole
+ | Toggles the ability to use the [[Debug Console]].
+ | {{code|0}}: Console disabled<br>{{code|1}}: Console enabled
+ | Having this option enabled will prevent the player from participating in [[Daily Challenges]] and unlocking secrets on a new save file.
+ |-
+ ! MaxScale
+ | Controls global game scaling. Values 5-99 result in default (zoomed in as close as possible) behaviour.
+ | {{code|2}}-{{code|4}}: Decreases scaling progressively; for example enabling full screen will not zoom in the game.<br>{{code|1}}: Zooms out as far as possible; for example you can see almost all sections of the Main Menu.<br>{{code|0}}: Makes the game invisible.
+ | Low MaxScale values allow the player to see more of big rooms at once, even fully.  
+ |-
+ ! MaxRenderScale
+ | Toggles whether the game obeys the game's pixel grid during scaling. Also affects the mini version of the extra HUD's item list.
+ | {{code|1}}: Disables sub-pixels, causing scaled down sprites to get pixelated.<br>{{code|2}}: Allows the game to use sub-pixels, making scaling down of sprites to look smoother.
+ |
+ |-
+ ! VSync
+ | Toggles VSync.
+ |
+ |
+ |-
+ ! PauseOnFocusLost
+ | Toggles whether the game will automatically open the pause menu upon clicking outside of the game window or otherwise losing focus.
+ | {{code|0}}: Game does not pause when focus is lost<br>{{code|1}}: Game pauses when focus is lost
+ |
+ |-
+ ! SteamCloud
+ | Toggles whether saves are backed up to the Steam Cloud and achievements are synced with Steam.
+ |
+ |
+ |-
+ ! MouseControl
+ | Toggles the ability to use a mouse as a controller.
+ | {{code|0}}: Mouse control disabled<br>{{code|1}}: Mouse control enabled
+ | Synergizes with reticle-based items, such as {{i|Doctor's Remote}}, {{i|Epic Fetus}}, {{i|Marked}}, etc.
+ |-
+ ! BossHpOnBottom
+ | Makes the BossBar be rendered on top of the screen instead of on the bottom.
+ |
+ |
+ |-
+ ! AnnouncerVoiceMode
+ | Changes how often the narrator speaks the name of consumables upon using them.
+ | {{code|0}}: Sometimes speaks<br>{{code|1}}: Never speaks<br>{{code|2}}: Always speaks
+ |
+ |-
+ ! ConsoleFont
+ | Changes the font of the debug console.
+ | {{code|0}}: Default<br>{{code|1}}: Small<br>{{code|2}}: Tiny
+ |
+ |-
+ ! FadedConsoleDisplay
+ | Displays debug console output in-game even without the debug console opened.
+ |
+ |
+ |-
+ ! SaveCommandHistory
+ | Toggles whether the game remembers the order in which commands have been inputted in the debug console.
+ | {{code|0}}: Command history is not saved<br>{{code|1}}: Command history is saved
+ |
+ |-
+ ! WindowWidth
+ | Changes the width of the game window.
+ | Width of the window in pixels
+ | Cannot be changed in real time.
+ |-
+ ! WindowHeight
+ | Changes the height of the game window.
+ | Height of the window in pixels
+ | Cannot be changed in real time.
+ |-
+ ! WindowPosX
+ | Changes the X position of the game window on the screen.
+ | X Position of the window in pixels
+ | Cannot be changed in real time.
+ |-
+ ! WindowPosY
+ | Changes the Y position of the game window on the screen.
+ | Y Position of the window in pixels
+ | Cannot be changed in real time.
+ |-
+ ! UseExclusiveFullscreen
+ | Toggles between fullscreen and borderless fullscreen.
+ | {{code|0}}: Borderless fullscreen disabled<br>{{code|1}}: Borderless fullscreen enabled
+ |
+ |}
+
+== Trivia ==
+* The "Found HUD" option is a reference to "Missing HUD", a popular external program that would display Isaac's stats before it was officially added to the game.
+* The "Charge Bars" option is based on a [https://steamcommunity.com/sharedfiles/filedetails/?id=835177566 popular Steam Workshop mod] by user Wofsauge.
+* The French language was a Steam Workshop mod by user biobak that was officially implemented into the game.
+* The game's files contain several unused assets that would most likely have been available in the options :
+** A separate "Gamma" menu that would have allowed players to independently set Gamma, Exposure and Offset.
+** Sprites for option names that read "Aim lock", "Console", "Touch Mode", "Pen Opacity" and "Rumble".
+** Sprites for text that reads "Graphics" in the header color, indicating that there might have been a separate section in the options to change graphics-related settings.
+
+{{nav}}

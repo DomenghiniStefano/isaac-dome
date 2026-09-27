@@ -23,6 +23,7 @@ pub enum Source {
     VersusScreen,
     VersusScreenMother,
     VersusScreenDogma,
+    Entities,
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize)]

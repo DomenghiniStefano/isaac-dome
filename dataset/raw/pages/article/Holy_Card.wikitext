@@ -1,0 +1,35 @@
+{{header special cards}}
+{{infobox card
+ | dlc         = a+
+ | type        = special card
+ | id          = 51
+ | recharge    = 4
+ | quote       = You feel protected
+ | description = {{dlc|nr}} Grants a shield that blocks the next hostile damage that would be taken in the current [[room]]. Has a chance to spawn another Holy Card on use.<br>{{dlc|r}} Grants a shield that blocks the next hostile damage that would be taken.
+ | unlocked by = Holy Card
+}}
+
+{{cit|us|a+}}
+
+== Effects ==
+* Grants a one-time {{i|Holy Mantle}} effect.
+** {{dlc|nr}} This only applies for the current room.
+** {{dlc|r}} The effect lasts until damage is taken.
+* {{dlc|nr}} Has a 25% chance to display the message "You feel blessed!" and spawn another Holy Card.
+
+== Notes ==
+* Being a [[special card]], the '''Holy Card''' has a significantly lower chance of appearing compared to other cards.
+* The effect cannot be stacked by using multiple Holy Cards.
+* {{C|Tainted Lost}} starts with this card. Additionally, all cards that spawn have a 10% chance of being turned into a Holy Card, and the card can be found even if not unlocked.
+
+== Interactions ==
+* {{I|Blanket|nr+}}: Holy Card's effect takes priority over the shield from Blanket in {{r|Boss Room}}s.
+** {{dlc|r+}} The shield from Blanket now takes priority.
+* {{I|Holy Mantle}}: Effect stacks with Holy Card, {{dlc|r+}} with Holy Mantle taking priority.
+* {{t|Wooden Cross|nr+}}: Stacks with Holy Card depending on the order of use. If Wooden Cross is picked up after Holy Card has been used, their effects don't stack. If Holy Card is used after Wooden Cross has been picked up, they do. The stacking only lasts for the current room.
+** {{dlc|r+}} The shield from Wooden Cross always stacks no matter the order of use, and will always take priority.
+* {{I|Little Baggy}}: Will make Isaac unable to find Holy Cards, as all cards turn into pills. If Holy Card is dropped after taking Little Baggy, the Holy Card will turn into a random pill.
+* {{I|Dogma|r+}}: Effect stacks with Holy Card, with the latter taking priority.
+
+{{nav|the lost unlock|delirium unlock|fr=Carte Sacrée}}
+[[category:damage-preventing items]]

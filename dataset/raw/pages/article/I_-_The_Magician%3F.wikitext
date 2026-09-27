@@ -1,0 +1,36 @@
+{{header reverse tarot cards}}
+{{Infobox card
+ | dlc         = r
+ | name        = I - The Magician?
+ | files name  = I - Inverted The Magician
+ | type        = card
+ | id          = 57
+ | quote       = May no harm come to you
+ | costume     = Collectible The Soul appearance.png
+ | description = Grants a repelling blue aura for one minute that strongly pushes enemies and projectiles away from Isaac.
+ | unlocked by = The Magician
+ | recharge    = 4
+}}
+
+{{cit|uc|r}}
+
+== Effects ==
+* Grants a repelling blue aura that strongly pushes projectiles and enemies away from Isaac for one minute.
+
+== Strategy ==
+* Since the effect lasts one minute, it is advised to use it on bosses that fire high amounts of projectiles such as {{e|Mega Satan}}, {{e|Hush}}, {{e|Delirium}}, or {{e|Mother}}.
+
+== Notes ==
+* Once the minute has passed, Isaac reverts back to his normal state on the spot, he does not need to change rooms to remove the effect.
+* '''I - The Magician?''''s effect is similar to the {{i|The Soul}}'s but stronger, with a wider area of effect, and has consistent effect strength.
+* As long as Isaac does not walk into a projectile or enemy himself, most projectiles will be completely repelled and enemies cannot come into contact with Isaac.
+** Certain enemies can bypass the effect if they dash fast enough, such as {{e|Oob}}s.
+* Additional uses of '''I - The Magician?''' only refresh the one minute timer.
+
+== Interactions ==
+* {{I|Tarot Cloth}}: No effect.
+
+== In-game Footage ==
+{{#ev:youtube|b3cZ6UlSuRk}}
+
+{{nav|fr=I - Le Bateleur ?|card}}

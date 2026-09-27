@@ -1,0 +1,12 @@
+{{page dlc|r}}
+
+Items with this [[Item Tags|tag]] contribute toward the {{tf|Oh Crap}} transformation.
+
+== Activated Collectibles ==
+{{collectible table | tag = poop | type = activated }}
+
+== Passive Collectibles ==
+{{collectible table | tag = poop | type = passive }}
+
+{{nav|fr=Balise poop}}
+[[Category:Item tags]]

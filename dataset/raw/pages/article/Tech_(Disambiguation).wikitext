@@ -1,0 +1,15 @@
+'''Tech''' may refer to:
+
+== Items ==
+* {{i|Technology}}, a passive item that replaces tears with lasers.
+* {{i|Technology 2}}, a passive item that adds a continuous laser alongside Isaac's tears.
+* {{i|Tech.5}}, a passive item that adds a random chance to fire lasers.
+* {{i|Tech X}}, a passive item that replaces tears with laser rings.
+* {{i|Technology Zero}}, a passive item that connects Isaac's tears with electricity.
+* {{dlc|r}} Any <code>[[Item_Tags_tech|'tech']]</code> tagged item.
+
+== Notes ==
+* {{dlc+|a+nr}} Technology items contribute towards the {{a|Technology Zero}} unlock.{{dlc-}}
+* {{dlc+|r}} The full list of <code>'tech'</code> tagged items are used for the purposes of unlocking {{a|Technology Zero}}.{{dlc-}}
+
+[[Category:Disambiguations]]

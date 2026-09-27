@@ -1,0 +1,33 @@
+{{header reverse tarot cards}}
+{{Infobox card
+ | dlc         = r
+ | name        = VI - The Lovers?
+ | files name  = VI - Inverted The Lovers
+ | type        = card
+ | id          = 62
+ | quote       = May your heart shatter to pieces
+ | description = Creates a random item from the current room's item pool. Turns one [[Red Heart Container]] or two {{e|Soul Heart}}s into a [[Broken Heart]].
+ | unlocked by = The Lovers
+| recharge =             4
+}}
+
+{{cit|uc|r}}
+
+== Effects ==
+* Creates a random item pedestal from the current room's item pool.
+* Turns one [[Health#Red_Heart_Containers|Red Heart Container]] or two {{e|Soul Heart}}s into a [[Health#Broken_Hearts|Broken Heart]].
+
+== Notes ==
+* Can cause Isaac to die if he no longer has health after the conversion.
+* For the purposes of tracking {{i|Heartbreak|n}}'s effect on {{c|The Lost}} / {{c|Tainted Lost}}, VI - The Lovers? doesn't add any hidden [[Broken Heart]]s to their healthbar, allowing them to use the card without penalty.
+* While they're functionally very similar, using VI - The Lovers? does not count as a use of {{i|Magic Skin}}, thus not adding or increasing the chance for future items to be replaced with Magic Skin.
+* For {{c|Keeper}} / {{c|Tainted Keeper}}, broken hearts will lower the maximum amount of coin hearts he can have. Therefore use of this card on them isn't recommended.
+
+
+== Synergies ==
+* {{I|Tarot Cloth}}: Removes 2 heart containers or 4 Soul Heart, then adds 2 broken hearts and spawns 2 items.
+
+== In-game Footage ==
+{{#ev:youtube|b3cZ6UlSuRk}}
+
+{{nav|fr=VI - L'Amoureux ?|card}}

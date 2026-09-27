@@ -1,0 +1,47 @@
+{{infobox version
+ | dlc  = a+
+ | date = 2017-01-10
+}}
+
+== Undocumented changes ==
+Credit for parsing the executable binary changes goes to [https://web.archive.org/web/20230420171236/https://www.reddit.com/r/bindingofisaac/comments/5n425j/aftebirth_20170109_update_b185_unofficial_patch/ eur0pa].
+
+=== Additions ===
+* Added {{a|The Marathon}} achievement (bugged).
+
+=== Changes ===
+* Changed the [[Delirium]] AI.
+* [[Portal]] now spawns between 1 and 5 enemies and then disappear.
+* Improved mod auto-updates.
+* Made changes in <code>Entity::Init()</code>.
+* Made lots of changes to the <code>Entity_Tear</code> class (probably something to do with Lua bindings).
+* The graphic for [[Mimic Chest]]s was updated to have blood on the corner.
+* The graphic for [[Spiked Chest]]s was updated to match the color of [[Mimic Chest]]s and have blood on the corners.
+* {{s|Utero}}:
+** Changed room 741 (8 Blastocysts and 1 Portal) to only have 4 Blastocyst Small instead of 8 Blastocysts.
+** Changed room 780 (8 Blastocysts and 1 Portal) to only have 4 Blastocyst Small instead of 8 Blastocysts. (This appears to be a duplicate of room 741 for some reason.)
+* Special rooms ([[Greed mode]]):
+** They forgot to include this floor with Afterbirth+, so the entire file is new, but they didn't add any Afterbirth+ content.
+** Removed 2 rocks from room 3004. (Presumably, this was interfering with enemy spawns.)
+** Removed 2 rocks from room 4002. (Presumably, this was interfering with enemy spawns.)
+* {{s|Depths}} (Greed mode):
+** Made it so that the spiders no longer spawn in the corners of room 153 (8 Spiders and 6 Death's Heads).
+* {{s|Womb}} (Greed mode):
+** Made room 54 (3 Masks & Hearts) symmetrical and removed a duplicate entity.
+* {{s|The Shop}} (Greed mode):
+** They forgot to include this floor with Afterbirth+, so the entire file is new, but they didn't add any Afterbirth+ content.
+** Room 240 (4 Masks & Hearts and a Mask of Infamy) was adjusted so that the Hearts do not spawn in the corners of the room.
+
+=== Fixes ===
+* Fixed a bug with hallucinations (when the screen turns grey during {{s|The Void}}.
+* Fixed a bug on <code>Level::Init()</code>.
+* Fixed a bug with {{i|Void}} and {{i|Smelter}} where it would "forget" the things you captured after returning from a save and quit.
+* Fixed the "filter" option (it was broken since the release of Afterbirth+).
+
+=== Lua bindings ===
+* Updated docs.
+* <code>LuaEngine::check_compatibility()</code> got updated to account for version -1 and 1 (?).
+* <code>LuaEngine::register_classes()</code>.
+* Lots of changes to the <code>Entity_Tear</code> class.
+
+{{nav|version}}

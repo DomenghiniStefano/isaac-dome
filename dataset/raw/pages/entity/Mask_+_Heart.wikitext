@@ -1,0 +1,53 @@
+{{infobox monster
+ | image       = Mask Heart.png
+ | id          = 93
+ | base hp     = 40
+ | environment = {{floor|Catacombs}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Gehenna}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{room|challenge}}
+ | behavior    = The Mask is invulnerable and moves around erratically, charging at Isaac when he lines up with it. The Heart avoids Isaac and fires 4 blood shots in the cardinal directions when Isaac gets near. Killing the Heart will automatically kill the Mask.
+}}
+{{distinguish|Mask of Infamy}}
+
+The '''Mask + Heart''' is an enemy commonly found in {{s|Necropolis}}, uncommonly in {{s|Womb}}/{{s|Utero}}, and rarely in {{s|Catacombs}}. Hearts may be found on their own in The Womb/Utero as well.
+
+It consists of two parts:
+* an invulnerable mask, which uses a movement pattern similar to a {{E|Knight}}.
+* a slow-moving heart that will shoot 4 projectiles in the cardinal directions when the player approaches it.
+
+Destroying the heart will also destroy the mask. If the heart is afflicted by a [[status effect]], the mask will also gain that status effect.
+{{clear}}
+
+== Variations ==
+=== Mask II + 1/2 Heart ===
+{{infobox monster
+ | dlc         = r
+ | name        = Mask II + 1/2 Heart
+ | image name  = Mask Heart II
+ | variant     = 1
+ | base hp     = 40
+ | environment = {{floor|Gehenna}}<br>{{floor|Scarred Womb}}<br>{{room|challenge}}
+ | behavior    = The Mask is invulnerable and moves around erratically, charging at Isaac when he lines up with it. The Heart avoids Isaac and fires 4 blood shots in the ordinal directions when Isaac gets near. Killing the Heart will automatically kill the Mask. If there are more than one 1/2 Heart in the room, they will fire blood shots between each other.
+}}
+
+The '''Mask II + 1/2 Heart''' is a more advanced variation of Mask + Heart that was introduced in ''[[The Binding of Isaac: Repentance]]''.
+
+While Mask II behaves very similarly to the default Mask most of the time, the 1/2 Heart that accompanies it behaves drastically different. As the name implies, the heart is split into 2 individual halves. Unlike the default Heart, neither half actively avoids the player and instead floats around the room somewhat erratically. While both halves are intact, they create a steady stream of blood shots between themselves acting as somewhat of a barrier between the two. Once one of the halves are destroyed, the mask becomes angry and begins moving much quicker while the remaining half begins slowly floating towards the player while frequently firing 4 blood shots in the ordinal directions. Once both halves are defeated, the Mask II dies with them.
+{{dlc clear}}{{clear}}
+
+== Notes ==
+* Although the mask appears to be floating, it cannot pass over obstacles and the heart can be affected by [[Creep]].
+* The hearts do not do contact damage.
+* The masks can be killed with {{p|Chaos Card}}, {{i|Euthanasia}}, and {{i|Little Horn}}.
+* If a mask is [[Shrink|shrunk]], it can be killed by walking over it.
+* Small versions of the hearts can be spawned by [[Carrion Queen#Champion versions|Pink Champion Carrion Queen]].
+* The hearts can be spawned by {{e|Mom's Heart}} / {{e|It Lives!}}.
+* Although the Heart and its shots will be slowed by {{i|Broken Watch}} and {{i|Stop Watch}}, the Mask will move normally.
+* {{dlc|nr}} Though shown and dying as one enemy, using items such as {{i|D10}} will cause both the mask and the heart to reroll as if it were two different enemies.
+* {{e|Mask of Infamy}} is the boss version of this enemy.
+
+== Gallery ==
+<gallery>
+File:Heart Unused.png|[[Cut Content#Cut Afterbirth .E2.80.A0 Content|Unused]] pre-release sprite for the Heart half of the Mask + Heart duo found among the Room Editor files.
+File:Mask_Heart_II_alt.png|Angry Mask II and the other half of the 1/2 Heart.
+</gallery>
+
+{{nav|fr=Masque + Cœur}}

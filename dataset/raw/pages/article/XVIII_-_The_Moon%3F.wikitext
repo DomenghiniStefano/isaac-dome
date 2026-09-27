@@ -1,0 +1,31 @@
+{{header reverse tarot cards}}
+{{Infobox card
+ | dlc         = r
+ | name        = XVIII - The Moon?
+ | files name  = XVIII - Inverted The Moon
+ | type        = card
+ | id          = 74
+ | quote       = May you remember lost memories
+ | description = Teleports Isaac to the {{r|Ultra Secret Room}}. The pathway back to the normal rooms will be made of {{r|Red Room}}s.
+ | unlocked by = The Sun and the Moon
+ | recharge    = 2
+}}
+
+{{cit|uc|r}}
+
+== Effects ==
+* Teleports Isaac to the {{r|Ultra Secret Room}}.
+** The pathway back to the normal rooms will be made of {{r|Red Room}}s.
+
+== Notes ==
+* Using '''XVIII - The Moon?''' on a floor that doesn't have an ultra secret room will teleport Isaac to a random room.
+* When {{curse|Maze}} is active, using this card can teleport Isaac to a random room instead.
+* '''XVIII - The Moon?''' cannot spawn in [[greed mode]].
+
+== Interactions ==
+* {{I|Tarot Cloth}}: No effect.
+
+== In-game Footage ==
+{{#ev:youtube|b3cZ6UlSuRk}}
+
+{{nav|fr=XVIII - La Lune ?|card}}

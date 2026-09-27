@@ -1,0 +1,22 @@
+{{infobox monster
+ | dlc         = a
+ | id          = 290
+ | base hp     = 15
+ | environment = {{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{room|challenge}}
+ | behavior    = Slides around the room. If Isaac is in sight, it will stop to spew a fountain of short-range blood shots in all directions or to spit a line of damaging [[Creep#Red Creep|Red Creep]] towards Isaac. Spawns a [[Host]] upon death.
+}}
+
+'''Meatballs''' are grotesque enemies found only in [[Chapter 4]]. They slowly slide around the room aimlessly. If Isaac is in sight, they will stop to spew a fountain of short-range blood shots in all directions or spit a line of damaging [[Creep#Red Creep|Red Creep]] towards Isaac. Upon death, they spawn a {{e|Host}}, which can be faintly seen partially sticking out of the Meatball on one side.
+
+== Gallery ==
+<gallery>
+File:Meatball Unused.png|[[Cut Content#Cut Afterbirth .E2.80.A0 Content|Unused]] pre-release sprite for the Meatball found among the Room Editor files.
+</gallery>
+
+== Trivia ==
+* Meatballs are one of five enemies (four without Repentance, three without Afterbirth+) in the game that uses [[Creep]] as projectiles, the others are {{e|Conjoined Fatty}}, {{e|Bloaty}}, {{e|Ultra Pride}} and {{e|The Thing}}.
+* Meatballs are one of two only enemies from the Afterbirth expansion that are entirely new enemies and not new variants of already existing enemies. The other is the {{e|Corn Mine}}. The {{e|Dukie}} is an exception as it's technically a smaller version of {{e|The Duke of Flies}}.
+* {{dlc|a+}} Meatballs now make sounds when they attack.
+* {{dlc|a+}} Prior to [[Booster Packs#Booster Pack #5|Booster Pack #5]], Meatballs had a chance to spawn {{e|Mushroom}}s upon death instead of {{e|Host}}s.
+
+{{nav|fr=Boulette}}

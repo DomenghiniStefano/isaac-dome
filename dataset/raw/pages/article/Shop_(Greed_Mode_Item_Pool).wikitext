@@ -1,0 +1,38 @@
+{{header greed item pools}}
+{{item pool
+ | dlc        = a
+ | is greed   = yes
+ | price type = coins
+}}
+
+Items in this pool can be found for sale in the {{R|Shop}} in [[Greed Mode]]. Greed Mode is special in that the Shop may also sell items from the [[Boss (Greed Mode Item Pool)|Boss Room item pool]] or the [[Treasure Room (Greed Mode Item Pool)|Treasure Room item pool]].
+
+== Activated Collectibles ==
+{{item pool/header}}
+{{pool items | D4, The D6, D8, D10, D12, D100, Jar of Flies, Mom's Box, Pandora's Box, Placebo, Red Candle, We Need To Go Deeper! }}
+{{pool items | weight = {{dlcalt|1|r=0.5}} | Blank Card }}
+{{pool items | weight = {{dlcalt|1|r+=0.1}} | D20 }}
+{{pool items | dlc = a+ | Black Hole, Clicker, Crooked Penny, D1, Dataminer, Dull Razor, Metronome, Mr. ME!, Mystery Gift, Pause, Potato Peeler, Sprinkler, Void }}
+{{pool items | dlc = a+ | weight = 0.2 | Plan C }}
+{{pool items | dlc = a+ | weight = {{dlcalt|1|r=0.5}} | Mama Mega! }}
+{{pool items | dlc = a+ | weight = {{dlcalt|1|r=0.1}} | D infinity }}
+{{pool items | dlc = r | Alabaster Box, Eraser, Mom's Bracelet, Sharp Key }}
+{{pool items | dlc = r | weight = 0.1 | Anima Sola, Esau Jr., Flip, R Key, Spindown Dice }}
+{{pool items | dlc = r+ | The Boomerang, The Candle, Converter, Coupon, Diplopia, The Jar, Notched Axe, Remote Detonator, Smelter }}
+{{pool items | dlc = r+ | weight = 0.5 | Eternal D6 }}
+|}
+
+== Passive Collectibles ==
+{{item pool/header}}
+{{pool items | 9 Volt, The Battery, BFFS!, Black Candle, Blue Map, Car Battery, Champion Belt, Charged Baby, Cube of Meat, Deep Pockets, Fanny Pack, GB Bug, Habit, Hive Mind, Host Hat, Little Baggy, Lucky Foot, Mom's Purse, Pay To Play, PHD, Spelunker Hat, Spider Mod, Starter Deck, X-Ray Vision }}
+{{pool items | weight = {{dlcalt|1|r=0.5}} | Chaos }}
+{{pool items | dlc = a+ | Blanket, Buddy in a Box, King Baby, Sack of Sacks, Schoolbag, Tarot Cloth }}
+{{pool items | dlc = a+nr | Poke Go }}
+{{pool items | dlc = r | 4.5 Volt, Battery Pack, Birthright, Booster Pack, Dream Catcher, Mom's Key, Mom's Ring, Red Stew, Sanguine Bond }}
+{{pool items | dlc = r | weight = 0.1 | Echo Chamber, Glitched Crown, Inner Child, Isaac's Tomb, Sacred Orb, Spirit Shackles, Strawman, TMTRAINER }}
+{{pool items | dlc = r | weight = {{dlcalt|1|r+=0.1}} | 1up! }}
+{{pool items | dlc = r+ | More Options, Sharp Plug }}
+{{pool items | dlc = r+ | weight = 0.1 | Stop Watch }}
+|}
+
+{{nav|fr=Boutique (Banque d'Objets - Mode Avarice)}}

@@ -1,0 +1,6 @@
+This page shows a list of all [[:Category:Bugs|bugs]] declared using the {{tl|bug}} template that exist and can be reproduced in the latest version of the game.
+
+{{bugs table}}
+
+{{nav}}
+[[Category:Bugs| ]]

@@ -1,16 +1,18 @@
 <script setup lang="ts">
-import { computed, provide } from 'vue'
+import { computed, provide, watch } from 'vue'
 import type { Component } from 'vue'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { useMessages } from '@/i18n'
 import { assertNever } from '@/lib/assertNever'
 import type { Entry, Infobox, Target } from '@/lib/ipc/types'
+import { pageKey } from '@/lib/wiki/pageKey'
 import { useWikiStore } from '@/stores/wiki'
 import InfoboxRow from './InfoboxRow.vue'
 import InfoboxAchievement from './infobox/InfoboxAchievement.vue'
 import InfoboxBoss from './infobox/InfoboxBoss.vue'
 import InfoboxChallenge from './infobox/InfoboxChallenge.vue'
 import InfoboxCharacter from './infobox/InfoboxCharacter.vue'
+import InfoboxEntity from './infobox/InfoboxEntity.vue'
 import InfoboxItem from './infobox/InfoboxItem.vue'
 import InfoboxTransformation from './infobox/InfoboxTransformation.vue'
 import InfoboxTrinket from './infobox/InfoboxTrinket.vue'
@@ -19,15 +21,34 @@ import { refOf } from './infoboxRefs'
 import { hasCard } from './transformationCard'
 
 // The whole entry, not just its infobox: the description, the editions and "unlocked by" live
-// on the entry, because they are not specific to a kind.
+// on the entry, because they are not specific to a kind. `target` is the entry's own — it
+// doesn't live on `Entry` itself (design decision 4: the pools row is the game's, joined at
+// the IPC boundary, not the wiki's), so the page hands it down to ask for them.
 const props = defineProps<{
   entry: Entry
+  target: Target | null
   canOpen?: (target: Target) => boolean
 }>()
 const infobox = computed(() => props.entry.infobox)
 const emit = defineEmits<{ navigate: [target: Target, newTab: boolean] }>()
 const wiki = useWikiStore()
 const { t } = useMessages()
+
+// Only an item carries a pools concept the game actually answers (a trinket's is always
+// absent — `ipc::item_pools`'s doc comment has the measurement), so nothing is asked for any
+// other kind.
+watch(
+  () => (infobox.value.kind === 'item' ? props.target : null),
+  (target) => {
+    if (target) void wiki.loadPools(target)
+  },
+  { immediate: true },
+)
+const pools = computed(() => {
+  if (infobox.value.kind !== 'item' || !props.target) return undefined
+  const key = pageKey(props.target)
+  return key === null ? undefined : wiki.poolsFor(key)
+})
 
 // What every row receives, however deep the kind's body draws it: whether a reference opens
 // and the way back up. Getters, so a row reads the props as they are now.
@@ -38,6 +59,11 @@ provide(infoboxLinksKey, {
   navigate: (target, newTab) => emit('navigate', target, newTab),
 })
 
+// An article draws no box at all (design decision 7): its body starts at the top of the
+// page, the same as `drawn` below decides — this entry exists only because `bodies` is a
+// record over the whole kind, and is never actually rendered.
+const NoBody = (): null => null
+
 // One body per kind. A record and not a chain of `v-else-if`: a new infobox kind fails to
 // compile until it says here what it shows.
 const bodies: Record<Infobox['kind'], Component> = {
@@ -45,9 +71,11 @@ const bodies: Record<Infobox['kind'], Component> = {
   boss: InfoboxBoss,
   challenge: InfoboxChallenge,
   character: InfoboxCharacter,
+  entity: InfoboxEntity,
   item: InfoboxItem,
   transformation: InfoboxTransformation,
   trinket: InfoboxTrinket,
+  article: NoBody,
 }
 
 // A transformation carries a card only where the page filled at least one of its three
@@ -65,7 +93,11 @@ const drawn = computed(() => {
     case 'boss':
     case 'challenge':
     case 'character':
+    case 'entity':
       return true
+    // No box at all (design decision 7): an article's body starts at the top of the page.
+    case 'article':
+      return false
     default:
       return assertNever(infobox.value)
   }
@@ -94,7 +126,7 @@ const drawn = computed(() => {
           :inline="refOf(entry.unlockedBy, wiki.titleOf)"
         />
       </dl>
-      <component :is="bodies[infobox.kind]" :infobox="infobox" />
+      <component :is="bodies[infobox.kind]" :infobox="infobox" :pools="pools" />
     </CardContent>
   </Card>
 </template>

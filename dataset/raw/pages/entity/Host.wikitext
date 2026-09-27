@@ -1,0 +1,129 @@
+{{disambig msg|the enemy|the challenge|The Host}}
+
+{{infobox monster
+ | id          = 27
+ | base hp     = {{dlcalt|15|a=14}}
+ | environment = {{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Womb}}{{floor|Scarred Womb}}<br>{{floor|Sheol}}{{floor|Cathedral}}<br>{{room|challenge}}
+ | behavior    = Stationary enemy that is normally invulnerable. Raises its head up when Isaac gets close, revealing a fleshy stem that can be damaged. Upon raising its head, it will fire 3 blood shots in a spread and lower its head again.
+}}
+'''Hosts''' are immobile skulls. When lowered down, which is their normal state, they are invincible to every source of damage except [[Status Effects|status effects]] such as poison, burning, being knocked into a wall by {{I|Hemoptysis}}, or {{I|Knockout Drops}}' knockback. Occasionally, they will pop up and shoot three spread shots towards Isaac, revealing a fleshy stem that can be damaged. Attacking a Host while it is lowered will increase the delay before it pops up: if it takes what would be a large amount of damage at once they will grimace.
+
+Hosts deal no contact damage either when closed or open.
+
+{{clear}}
+
+== Variations ==
+=== Red Host ===
+{{infobox monster
+ | name           = Red Host
+ | variant        = 1
+ | base hp        = 15
+ | environment    = {{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{room|challenge}}
+ | replace        = Host
+ | replace chance = 9.49%
+ | behavior       = Stationary enemy that can be damaged even when its head is lowered. Fire 5 spread blood shots when it raises its head.
+}}
+
+'''Red Hosts''' can replace regular Hosts in any area. Their skull is replaced by a vulnerable red fleshlike material. Unlike normal Hosts, they can still take damage when lowered down, but they will fire 5 blood shots instead of 3.
+{{clear}}
+
+=== Hard Host ===
+{{infobox monster
+ | dlc         = r
+ | name        = Hard Host
+ | variant     = 3
+ | base hp     = 15
+ | environment = {{floor|Mines}}{{floor|Ashpit}}<br>{{room|challenge}}
+ | behavior    = Stationary enemy that is normally invulnerable. Raises its head up when Isaac gets close, revealing a fleshy stem that can be damaged. Shortly after raising its head, it slams its head down and fires a rock wave towards Isaac.
+}}
+
+'''Hard Hosts''' behave similarly to regular Hosts, however instead of firing any shots when they lift their skull, they slam down and fire a tremor towards Isaac. The tremor will destroy most obstacles and damage most monsters in its path. They also deal damage on contact. If Isaac is too close to a Hard Host when it slams down he will be knocked back.
+{{clear}}
+
+=== Mobile Host ===
+{{infobox monster
+ | name        = Mobile Host
+ | id          = 204
+ | base hp     = {{dlcalt|20|a=14}}
+ | environment = {{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|Sheol}}{{floor|Cathedral}}<br>{{room|challenge}}
+ | behavior    = Acts like the Host, but follows Isaac and deals contact damage.
+}}
+
+'''Mobile Hosts''' function the same as the original hosts but now do contact damage and slowly approach Isaac. They also have a more random delay between the times they open up, unlike the immobile Host which opens up instantly if it has a line of sight to Isaac and has been closed for a set amount of time without being shot.
+{{clear}}
+
+=== Flesh Mobile Host ===
+{{infobox monster
+ | name        = Flesh Mobile Host
+ | id          = 247
+ | base hp     = 27
+ | environment = {{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{room|challenge}}
+ | behavior    = Acts like the Red Host, but follows Isaac and deals contact damage.
+}}
+
+'''Flesh Mobile Hosts''' are like Mobile Hosts, but can be damaged at any time and will fire 5 blood shots instead of 3.
+{{clear}}
+
+=== Floast ===
+{{infobox monster
+ | dlc         = r
+ | name        = Floast
+ | id          = 859
+ | base hp     = 20
+ | environment = {{floor|Utero}}<br>{{floor|Corpse}}<br>{{room|challenge}}
+ | behavior    = Floats diagonally around the room and is normally invulnerable. When Isaac gets close, reveals a fleshy stem that can be damaged and fires 3 blood shots in an angle at him before hiding its stem again.
+}}
+
+'''Floasts''' bounce around diagonally, occasionally opening up to shoot a triple shot like regular Hosts. Unlike regular Hosts, they deal contact damage and resemble Mobile Hosts more in that sense.
+{{dlc clear}}{{clear}}
+
+=== Mushroom ===
+{{infobox monster
+ | dlc            = a+
+ | name           = Mushroom
+ | image          = Mushroom (Enemy).png
+ | id             = 300
+ | base hp        = 23
+ | environment    = {{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}
+ | replace        = Host, Red Host
+ | replace chance = 20%
+ | replace notes  = {{dlc|r|in Chapter 2}}
+ | behavior       = Stationary enemy that occasionally pops up and fires four shots in the cardinal or diagonal directions. Takes less damage while its head is down.
+ | unlocked by    = The gate is open!
+}}
+
+'''Mushrooms''' appear exclusively in [[Chapter 2]] and have a 20% chance to replace Hosts.
+
+Mushrooms start by hiding inside of their cap. While inside, they take only 25% damage. Occasionally, they pop out for a few seconds, shooting 4 red shots in either the cardinal or diagonal directions. Unlike Hosts, Mushrooms deal contact damage.
+{{clear}}{{dlc clear}}
+
+== Notes ==
+* Mushrooms will not resist damage while [[petrification|petrified]].
+* If Mushrooms aren't unlocked yet, they are replaced by Hosts.
+* {{dlc|r}} The rock waves spawned by Hard Hosts can open {{r|Secret Room}}s and {{r|Super Secret Room}}s.
+
+== Gallery ==
+<gallery>
+File:Edmund McMillen Rebirth Monster Sketches.jpg|Sketches of monsters for the Binding of Isaac: Rebirth, including the Walking Host in the fourth square of the first row, formerly named "Walkey Skull Shooter." Interestingly enough, despite the Host's name already being established in the original Binding of Isaac, it was given a different name that didn't have the word "host" until it was eventually renamed to the Walking Host.
+File:Hard Host Old.png|alt=The original Antibirth sprite for Hard Hosts.|The original Antibirth sprite for Hard Hosts.
+</gallery>
+
+== Trivia ==
+* Hosts originated from a multiplayer flash game created by Edmund McMillen called ''HOST''.
+* Hosts are very similar to the Met enemies from the ''[[wikipedia:Mega Man|Mega Man]]'' series. Both are immune to any kind of damage when they are lowered down, and when they pop up, they become vulnerable and shoot three shots.
+** Additionally, Mobile Hosts behave like the Neo Met, a version of the Met that walks after shooting.
+* {{e|The Gate}} physically resembles a giant Host.
+* {{dlc|a}} In the game's files, Red Hosts and their walking variations have grimace animations that are impossible to see in-game because they are always vulnerable.
+** {{dlc|r}} When {{i|Mom's Bracelet|n}} is used on a Host/Mobile Host, the resulting Red Host/Flesh Mobile Host will use its respective grimace animation.
+* {{dlc|r}} Using {{i|Mom's Bracelet|n}} on a Host/Mobile Host will transform it into a Red Host/Flesh Mobile Host.
+** {{dlc|r}} A Mobile Host's body won't change color when transformed.
+* {{dlc|r}} [[Anti:Floating Host|Floasts]] and [[Anti:Hard Host|Hard Hosts]] originate from the ''Antibirth'' mod. In ''Antibirth'', Floasts used be to called Floating Hosts.
+* {{dlc|r}} The Floast's name is a reference to [[theendisnigh:Enemies|a monster of the same name]] from ''The End is Nigh''.
+
+== Bugs ==
+{{bug|If Hosts or Mobile Hosts are affected by [[fear]], {{dlc|a}} [[shrink]], or [[confusion|stunned]], then if the effect wears off at the same time as they try to attack you, they sometimes attack without the corresponding animation.}}
+{{bug|dlc=r|{{i|Little Horn}} effect cannot be triggered on Mobile Hosts.}}
+{{bug|If two Mobile Hosts are affected by permenant [[Charm]] (on the C0CKFGHT [[Seeds|seed]]), they do not become vulnerable when touching eachother, meaning they cannot attack eachother or be damaged by isaac, softlocking the game}}
+
+{{nav|fr=Hôte}}
+[[Category:Bone monsters]]

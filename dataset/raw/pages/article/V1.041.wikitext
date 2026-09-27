@@ -1,0 +1,11 @@
+{{infobox version
+ | date = 2014-12-29
+}}
+
+== Undocumented changes ==
+=== Fixes ===
+* Fixed auto release of fire button after room transition.
+* Fixed [[secret room]] placement.
+* Fixed [[heart]] pickup distribution for local co-op.
+
+{{nav|version}}

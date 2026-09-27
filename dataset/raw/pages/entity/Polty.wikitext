@@ -1,0 +1,48 @@
+{{infobox monster
+ | dlc         = r
+ | name        = Polty
+ | id          = 816
+ | base hp     = 14
+ | environment = {{floor|Downpour}}<br/>{{floor|Cathedral}}<br>{{room|boss}}<br/>Spawned by [[Haunted Chest]]s
+ | behavior    = Picks up and throws rocks and props at Isaac.
+ | stage hp    = 2.5
+}}
+
+'''Polty''' is an enemy added in ''[[The Binding of Isaac: Repentance]]''.
+
+Unlike normal enemies, Polties appear from inside [[Rocks#Buckets|Buckets]] or [[Rocks#Urns|Urns]] in the current room. They then pick up the obstacle they were under, fly towards Isaac, and then throw it at him. For the rest of the room, it will fly around the room, stopping to pick up more rocks, props, [[poops]], and other obstacles and throw them at Isaac. Thrown obstacles have the same chance to release pickups or enemies as if they had been destroyed normally. Once there are no more rocks to throw at Isaac, they will leave the room.
+
+Polties prefer to pick up [[Rocks#Buckets|Buckets]] and [[TNT]] over normal rocks, with the exception of [[Blocks|Metal Blocks]] and [[Rocks#Spiked Rocks|Spiked Rocks]], which they cannot pick up. If there's a [[Rocks#Tinted Rocks|Tinted Rock]], it will avoid picking it up until there's no other rocks left to throw. When it finally does pick it up, it will fly offscreen with it instead of throwing it at Isaac. If the Polty is killed before it successfully runs away with the rock, it will give its contents like normal.
+
+Destroying the Bucket or Urn which a Polty is hiding beneath will cause it to spawn and then behave normally.
+
+Once {{A|Haunted Chest}}s are unlocked, Polties may be encountered anywhere. After being spawned by approaching the chest, they grab it and throw it at Isaac, then act normally.
+
+{{clear}}
+
+== Variants ==
+=== Kineti ===
+{{infobox monster
+ | dlc         = r
+ | name        = Kineti
+ | variant     = 1
+ | base hp     = 45
+ | stage hp    = 3
+ | environment = {{floor|Mausoleum}}
+ | behavior    = Uses telekinesis to pick up and throw rocks and obstacles at Isaac.
+}}
+
+'''Kineti''' is the {{s|Mausoleum}} variant of a Polty and behave similarly to their counterpart, with the exception that they use telekinesis to bring [[obstacles]] toward them rather than moving towards them and picking them up manually. The obstacles can damage Isaac while being pulled towards the Kineti.
+
+'''Kinetis''' will prioritize picking up rocks that would hit Isaac while being pulled towards itself. They are also knocked back by the force of the rock they carry once it enters their hands. If there are no more obstacles for them to pick up, similar to Polties, they will exit the room, and if they choose to pick up a Tinted Rock, they will fly offscreen with it instead of throwing it at Isaac.
+{{clear}}
+
+== Trivia ==
+* The [[Anti:Polty|Polty]] first appeared in the ''Antibirth'' mod where it had 20&nbsp;hp and 3 stage hp.
+* "Polty" is a nickname of the word "poltergeist" as it behaves quite similarly to one. In lore, poltergeists are known to be [[wikipedia:Poltergeist|"responsible for physical disturbances, such as loud noises and objects being moved or destroyed."]]
+* "Kineti" is a shortened version of the word "[[wikipedia:Kinetic energy|kinetic]]," which describes the form of energy that an object possesses due to its motion.
+
+== Bugs ==
+{{Bug|Petrifying Kinetis while they are pulling a rock towards them causes the rock to keep flying and can cause it to fly out of the room.}}
+
+{{nav}}

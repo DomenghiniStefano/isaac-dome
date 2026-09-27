@@ -1,0 +1,138 @@
+{{infobox stage
+ | chapter          = 3
+ | id               = {{dlcalt|6|a=8}}
+ | id greed         = {{dlc|r|8}}
+ | level id         = 5, 6
+ | level id greed   = {{dlc|r|3}}
+ | type id          = 1
+ | type id greed    = {{dlc|r|1}}
+ | degraded bosses  = Blastocyst Small, Chub, Dingle, The Duke of Flies, The Haunt, Headless Horseman, Larry Jr., Mega Fatty, Monstro, Pin, Polycephalus, Teratoma Medium, Teratoma Small
+ | bosses 1         = The Adversary, The Bloat, Brownie, The Gate, Loki, Mask of Infamy, Sisters Vis, War
+ | double trouble 1 = Dark One
+ | bosses 2         = Mom
+ | unlocked by      = The Necropolis
+}}
+'''Necropolis''' is the alternative chapter of The {{s|Depths}}. It is a dark environment infested with insects, with common enemies including Masks + Heart, Swarmers, and Hangers.
+
+Necropolis is unlocked by defeating every [[boss]] from The {{s|Depths}} at least once.
+
+The boss of Necropolis II is always {{e|Mom}}.
+
+{{dlc+|r}} After {{a|A Secret Exit}} is unlocked, a door will appear in Necropolis I's {{r|Boss Room}} upon defeating the boss, leading to the {{S|Mausoleum}} / {{S|Gehenna}}. This door requires two hearts to be opened (except on Lost characters). Unlike {{r|Angel Room}}s and {{r|Devil Room}}s, this door never disappears. Also after this achievement is unlocked, [[a Strange Door]] in the starting room of Necropolis II will appear. This door leads to {{S|Mausoleum}} / {{S|Gehenna}} II before entering the [[Ascent]].
+{{dlc-}}
+
+== [[Monster]]s ==
+{{entity table/header}}
+{{stage entities | Baby, Begotten, Boil, Gut, Sack, Walking Boil, Walking Gut, Walking Sack, Bony, Death's Head, Brain, Buttlicker, I.Blob, Dip, Squirt, Dinga, Embryo, Pale Fatty, Fat Sack, Blubber, Half Sack, Fly, Attack Fly, Eternal Fly, Pooter, Super Pooter, Full Fly, Boom Fly, Red Boom Fly, Sucker, Spit, Gurgle, Rotty, Nulls, Globin, Gazing Globin, Guts, Mama Guts, Grub, Gurgling, Keeper, Hanger, Flaming Hopper, Leaper, Psychic Horf, Host, Red Host, Mobile Host, Flesh Mobile Host, Kamikaze Leech, Knight, Floating Knight, Maw, Psychic Maw, Mask + Heart, Mr. Maw, Mom's Hand, Hive, Nest, Nerve Ending, Night Crawler, One Tooth, Spider, Big Spider, Ticking Spider, Trite, Ragling, Baby Long Legs, Wall Creep, Blind Creep, Rage Creep, Splasher, Swarmer, Tumor, Psy Tumor, Vis, Double Vis, Chubber, Wizoob, Lil' Haunt, Poky, Slide, Wall Hugger, Stone Grimace, Vomit Grimace, Constant Stone Shooter, Gaping Maw }}
+{{stage entities | dlc = a | Blue Boil, Dank Death's Head, Mega Clotty, Corn Mine, Flaming Fatty, Conjoined Fatty, Hush Fly, Greed Gaper, Blue Gaper, Black Globin's Head, Black Globin's Body, Black Bony, Drowned Charger, Drowned Boom Fly, Dukie, Mom's Dead Hand, Fat Bat }}
+{{stage entities | dlc = a+ | Blister, Poison Mind, Mr. Red Maw, The Thing, Stoney, Cross Stone Shooter }}
+{{stage entities | dlc = a+nr | Portal }}
+{{stage entities | dlc = r | Swarm Spider, Migraine, Eggy, Triple Grimace }}
+|}
+
+''Degraded Bosses:''
+{| class="wikitable mw-collapsible striped sortable"
+! Name
+! ID
+! class="unsortable" | Notes
+{{entity row minimal|Blastocyst}} | Small-form only
+{{entity row minimal|Chub}} |
+{{entity row minimal|Dingle}} |
+{{entity row minimal|The Duke of Flies}} |
+{{entity row minimal|Fistula}} | Medium-form only
+{{entity row minimal|The Haunt}} |
+{{entity row minimal|Headless Horseman}} | Only the head
+{{entity row minimal|The Hollow}} |
+{{entity row minimal|Larry Jr.}} |
+{{entity row minimal|Mega Fatty}} |
+{{entity row minimal|Monstro}} |
+{{entity row minimal|Pin}} |
+{{entity row minimal|Polycephalus}} |
+{{entity row minimal|Super Greed}} |
+{{entity row minimal|Teratoma}} | Small- and medium-form only
+{{entity row minimal|Widow}} |
+|}
+
+== [[Bosses]] ==
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:Boss The Adversary portrait.png|center|link=The Adversary]]
+| style="text-align: center; border: none" |[[File:Boss The Bloat portrait.png|center|link=The Bloat]]
+| style="text-align: center; border: none" |[[File:Boss Loki portrait.png|center|link=Loki]]
+| style="text-align: center; border: none" |[[File:Boss Mask of Infamy portrait.png|center|link=Mask of Infamy]]
+|-
+| style="text-align: center; border: none" |[[The Adversary]]
+| style="text-align: center; border: none" |[[The Bloat]]
+| style="text-align: center; border: none" |[[Loki]]
+| style="text-align: center; border: none" |[[Mask of Infamy]]
+|}
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:Boss The Gate portrait.png|center|link=The Gate]]
+| style="text-align: center; border: none" |[[File:Boss War portrait.png|center|link=War]]
+| style="text-align: center; border: none" |[[File:Boss The Fallen portrait.png|center|link=The Fallen]]
+| style="text-align: center; border: none" |[[File:Boss Headless Horseman portrait.png|center|link=Headless Horseman]]
+|-
+| style="text-align: center; border: none" |[[The Gate]] {{Dlc|nr}}
+| style="text-align: center; border: none" |[[War]] {{unlockable}}
+| style="text-align: center; border: none" |[[The Fallen]] {{room|Devil}}
+| style="text-align: center; border: none" |[[Headless Horseman]] {{unlockable}}
+|}
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:Boss Brownie portrait.png|center|link=Brownie]]
+| style="text-align: center; border: none" |[[File:Boss Sisters Vis portrait.png|center|link=Sisters Vis]]
+| style="text-align: center; border: none" |[[File:Boss The Pile portrait.png|center|link=The Pile]]
+|-
+| style="text-align: center; border: none" |[[Brownie]] {{dlc|a}} {{unlockable}}
+| style="text-align: center; border: none" |[[Sisters Vis]] {{dlc|a+}} {{unlockable}}
+| style="text-align: center; border: none" |[[The Pile]] {{Dlc|r}} {{unlockable}}
+|}
+
+=== Double Trouble ===
+{| class="mw-collapsible mw-collapsed wikitable"
+! Double Trouble Bosses
+|-
+|
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:Boss Blighted Ovum portrait.png|center|link=Blighted Ovum]]
+| style="text-align: center; border: none" |[[File:Boss The Haunt portrait.png|center|The Haunt]]
+| style="text-align: center; border: none" |[[File:Boss The Husk portrait.png|center|link=The Husk]]
+| style="text-align: center; border: none" |[[File:Boss Larry Jr. portrait.png|center|link=Larry Jr.]]
+|-
+| style="text-align: center; border: none" |(Double Trouble)<br>[[Blighted Ovum]]
+| style="text-align: center; border: none" |(Double Trouble)<br>[[The Haunt]]
+| style="text-align: center; border: none" |(Double Trouble)<br>[[The Husk]]
+| style="text-align: center; border: none" |(Double Trouble)<br>[[Larry Jr.]]
+|}
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:Boss Dangle portrait.png|center|link=Dangle]]
+| style="text-align: center; border: none" |[[File:Boss Little Horn portrait.png|center|link=Little Horn]]
+| style="text-align: center; border: none" |[[File:Boss Rag Man portrait.png|center|link=Rag Man]]
+|-
+| style="text-align: center; border: none" |(Double Trouble)<br>[[Dangle]] {{dlc|a}} {{unlockable}}
+| style="text-align: center; border: none" |(Double Trouble)<br>[[Little Horn]] {{dlc|a}} {{unlockable}}
+| style="text-align: center; border: none" |(Double Trouble)<br>[[Rag Man]] {{dlc|a}} {{unlockable}}
+|}
+|-
+|}
+
+=== Final Boss ===
+[[Mom]] will always appear on the second floor of this chapter or in the last boss room if [[Curse of the Labyrinth]] is active.
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:Boss Mom portrait.png|center|link=Mom]]
+|-
+| style="text-align: center; border: none" |[[Mom]]
+|}
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | Something Sticky, Leprosy, Dark Boy }}
+
+== Trivia ==
+* A [[wikipedia:Necropolis|necropolis]] is a large ancient cemetery with elaborate tomb monuments. In Ancient Greek, νεκρόπολις or ''nekropolis'' literally means "city of the dead".
+* In the original ''The Binding of Isaac'', {{e|Daddy Long Legs}}, {{e|Triachnid}}, {{e|Carrion Queen}}, and {{e|The Wretched}} could appear as bosses.
+
+== Music ==
+* The [[music]] for Necropolis is titled ''When Blood Dries''.<ref>[https://ridiculon.bandcamp.com/album/the-binding-of-isaac-rebirth-ost Binding of Isaac: Rebirth OST]</ref>
+
+== References ==
+{{reflist}}
+
+{{nav|environment|fr=Nécropole}}

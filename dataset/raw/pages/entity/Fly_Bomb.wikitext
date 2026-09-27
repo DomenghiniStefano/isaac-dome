@@ -1,0 +1,32 @@
+{{Disambig msg|the fly enemy|other uses|Fly (Disambiguation)}}
+{{infobox monster
+ | dlc         = r
+ | name        = Fly Bomb
+ | id          = 819
+ | base hp     = 7
+ | environment = {{floor|Mines}}{{floor|Ashpit}}<br>{{room|challenge}}
+ | behavior    = Flies toward Isaac, circling around him as it does. Turn into a tiny {{E|Bomb}} upon death.
+}}
+
+'''Fly Bombs''' are enemies added in ''[[The Binding of Isaac: Repentance]]''. They are characterized by their appearance of a small {{E|Bomb}} with wings.
+
+They chase Isaac, attempting to circle around him as they do so. Upon death, they turn into a tiny {{E|Bomb}} that explodes shorty after. Running into a Fly Bomb causes it to explode instantly. The instant explosion deals a {{e|Half Red Heart}} of damage to Isaac and 40 damage to monsters unlike the tiny bomb's explosion which deals a {{e|Red Heart}} to Isaac and 100 damage to monsters.
+{{clear}}
+
+== Variations ==
+=== Eternal Fly Bomb ===
+{{infobox monster
+ | dlc         = r
+ | name        = Eternal Fly Bomb
+ | variant     = 1
+ | environment = {{floor|Gehenna}}<br>Spawned exclusively by {{E|The Horny Boys}}.
+ | behavior    = Orbits {{E|Boom Fly|text=Boom Flies}} spawned by {{E|The Horny Boys}}. Once its Boom Fly has been killed, turns into a tiny {{E|Bomb}}.
+}}
+
+'''Eternal Fly Bombs''' are variants to Fly Bombs that exclusively spawn in a group of 3 and orbit {{E|Boom Fly|text=Boom Flies}} spawned by {{E|The Horny Boys}}. Similar to {{E|Eternal Fly|text=Eternal Flies}}, they are immune to all damage until their respective Boom Fly dies. Then, they turn into tiny Bombs that explode shortly after. While generally immune to damage they can still be ran into and will explode like regular Fly Bombs.
+{{clear}}
+
+== Trivia ==
+* The {{dlc|r}} [[Anti:Fly Bomb|Fly Bomb]] first appeared in the ''Antibirth'' mod.
+
+{{nav|fr=Mouche Explosive}}

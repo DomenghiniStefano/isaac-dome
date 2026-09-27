@@ -3,22 +3,27 @@ import type { Component } from 'vue'
 import {
   ActivityIcon,
   AppWindowIcon,
+  CircleDotIcon,
   DicesIcon,
   FlagIcon,
   GemIcon,
+  GhostIcon,
   Grid2x2Icon,
   Grid3x3Icon,
   LayersIcon,
   ListChecksIcon,
   LockOpenIcon,
   MonitorDotIcon,
+  MountainIcon,
   PackageIcon,
   PlayIcon,
   RefreshCwIcon,
   SaveIcon,
+  ScrollTextIcon,
   SkullIcon,
   SlidersHorizontalIcon,
   SparklesIcon,
+  SpadeIcon,
   TrophyIcon,
   UserIcon,
 } from '@lucide/vue'
@@ -57,6 +62,15 @@ export const WikiCategory = {
   // B46: the sixteen transformation pages entered the dataset on 2026-09-13 and had no
   // category, so `pageLocation` could not build one and no route opened them.
   Transformations: 'transformations',
+  // The five landing tiles of the wiki-complete sub-project (2026-09-26, design decision 5):
+  // the `entities` collection, and articles by category. Their values equal `WikiPageCategory`
+  // (`types.ts`) member for member, so a page's own category crosses the IPC with no
+  // translation — see that type's own doc comment for why the split exists at all.
+  Monsters: 'monsters',
+  CardsAndRunes: 'cardsAndRunes',
+  Pickups: 'pickups',
+  Stages: 'stages',
+  Versions: 'versions',
 } as const
 export type WikiCategory = (typeof WikiCategory)[keyof typeof WikiCategory]
 
@@ -163,6 +177,11 @@ export const wikiCategoryTitle: Record<WikiCategory, Message> = {
   [WikiCategory.Challenges]: 'wikiCategories.challenges',
   [WikiCategory.Characters]: 'wikiCategories.characters',
   [WikiCategory.Transformations]: 'wikiCategories.transformations',
+  [WikiCategory.Monsters]: 'wikiCategories.monsters',
+  [WikiCategory.CardsAndRunes]: 'wikiCategories.cardsAndRunes',
+  [WikiCategory.Pickups]: 'wikiCategories.pickups',
+  [WikiCategory.Stages]: 'wikiCategories.stages',
+  [WikiCategory.Versions]: 'wikiCategories.versions',
 }
 
 export const wikiCategoryIcon: Record<WikiCategory, Component> = {
@@ -173,6 +192,11 @@ export const wikiCategoryIcon: Record<WikiCategory, Component> = {
   [WikiCategory.Challenges]: FlagIcon,
   [WikiCategory.Characters]: UserIcon,
   [WikiCategory.Transformations]: SparklesIcon,
+  [WikiCategory.Monsters]: GhostIcon,
+  [WikiCategory.CardsAndRunes]: SpadeIcon,
+  [WikiCategory.Pickups]: CircleDotIcon,
+  [WikiCategory.Stages]: MountainIcon,
+  [WikiCategory.Versions]: ScrollTextIcon,
 }
 
 // A tab's label: a wiki category names itself, every other location is its route.

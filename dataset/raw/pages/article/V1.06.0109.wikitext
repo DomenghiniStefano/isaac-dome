@@ -1,0 +1,20 @@
+{{infobox version
+ | dlc  = a
+ | date = 2016-01-21
+}}
+
+== Undocumented changes ==
+=== Additions ===
+* Added [[Friends Till The End!]] pill.
+* Added Japanese and Korean language options.
+
+=== Changes ===
+* Slightly changed the color of the [[collection page]] background.
+
+=== Fixes ===
+* Fixed {{i|Technology}}, {{i|Technology 2}}, and {{i|Tech.5}} being spectral.
+* Fixed [[Krampus]] respawning by quitting and continuing during his death animation to generate multiple items.
+
+(You can find technical details of <code>afterbirth.a</code> file changes [[User:Zamie/Patch v1.06.0109|here]].)
+
+{{nav|version}}

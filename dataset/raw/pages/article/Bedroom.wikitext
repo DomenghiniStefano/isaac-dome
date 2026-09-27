@@ -1,0 +1,344 @@
+The '''Bedroom''' is a special room located behind a double plank door, requiring two bombs to open. It usually contains a bed in a corner and a carpet in the center. Isaac can sleep in the bed once to recover all {{E|Red Heart}}s. If Isaac has no [[Red Heart container]]s, the bed will add three {{e|Soul Heart}}s instead.
+
+Bedrooms have two variants: {{R|Clean Bedroom}}s and {{R|Dirty Bedroom}}s, with each version having a different map icon and color scheme. Which type of Bedroom is not revealed on the map until the room is entered.
+
+Bedrooms can appear from [[Chapters|Chapter]] 1 to 3. They are more likely to generate if Isaac has low health.
+
+== [[file:Bedroom Icon.png|25px|link=]] Clean Bedroom ==
+[[file:Bed.png]]
+
+=== Notes ===
+* The trapdoor under the carpet will always lead to a {{R|Crawl Space}}.
+* {{dlc|na}} In addition to healing Isaac, sleeping in the bed will also give one additional charge to his currently held [[activated item]].	
+** The sleep sequence must be activated to get the charge. If the player wishes to recharge their item while Isaac is at full health, they have to intentionally take at least half a Red Heart damage before doing so.
+
+=== Layouts ===
+The following room maps were made using [https://github.com/Basement-Renovator/basement-renovator Basement Renovator] for cleaner viewing.
+
+{| class="wikitable sortable mw-collapsible mw-collapsed" style="text-align: center"
+ ! scope="col" | ID
+ ! scope="col" | Weight
+ ! scope="col" class="unsortable" | Notes
+ ! scope="col" class="unsortable" | Image preview
+ |-
+ ! scope="row" | 0
+ | 1
+ | 
+ | {{dlcmap slideshow|{{dlcalt|[[File:Isaac's Room 0 Afterbirth+.png|300px]]|r=[[File:Isaac's Room 0.png|300px]]}}}}
+ |-
+ ! scope="row" | 1
+ | 1
+ | 
+ | {{dlcmap slideshow|{{dlcalt|[[File:Isaac's Room 1 Afterbirth+.png|300px]]|r=[[File:Isaac's Room 1.png|300px]]}}}}
+ |-
+ ! scope="row" | 2
+ | 1
+ | 
+ | {{dlcmap slideshow|{{dlcalt|[[File:Isaac's Room 2 Afterbirth+.png|300px]]|r=[[File:Isaac's Room 2.png|300px]]}}}}
+ |-
+ ! scope="row" | 3
+ | 1
+ | 
+ | {{dlcmap slideshow|{{dlcalt|[[File:Isaac's Room 3 Afterbirth+.png|300px]]|r=[[File:Isaac's Room 3.png|300px]]}}}}
+ |-
+ ! scope="row" | 4
+ | 1
+ | 
+ | {{dlcmap slideshow|{{dlcalt|[[File:Isaac's Room 4 Afterbirth+.png|300px]]|r=[[File:Isaac's Room 4.png|300px]]}}}}
+ |-
+ ! scope="row" | 5
+ | 1
+ | 
+ | {{dlcmap slideshow|{{dlcalt|[[File:Isaac's Room 5 Afterbirth+.png|300px]]|r=[[File:Isaac's Room 5.png|300px]]}}}}
+ |-
+ ! scope="row" | 6
+ | 1
+ | 
+ | {{dlcmap slideshow|{{dlcalt|[[File:Isaac's Room 6 Afterbirth+.png|300px]]|r=[[File:Isaac's Room 6.png|300px]]}}}}
+ |-
+ ! scope="row" | 7
+ | 1
+ | 
+ | {{dlcmap slideshow|{{dlcalt|[[File:Isaac's Room 7 Afterbirth+.png|300px]]|r=[[File:Isaac's Room 7.png|300px]]}}}}
+ |-
+ ! scope="row" | 8
+ | 1
+ | 
+ | {{dlcmap slideshow|{{dlcalt|[[File:Isaac's Room 8 Afterbirth+.png|300px]]|r=[[File:Isaac's Room 8.png|300px]]}}}}
+ |-
+ ! scope="row" | 9
+ | 1
+ | 
+ | {{dlcmap slideshow|{{dlcalt|[[File:Isaac's Room 9 Afterbirth+.png|300px]]|r=[[File:Isaac's Room 9.png|300px]]}}}}
+ |-
+ ! scope="row" | 10
+ | 1
+ | 
+ | {{dlcmap slideshow|{{dlcalt|[[File:Isaac's Room 10 Afterbirth+.png|300px]]|r=[[File:Isaac's Room 10.png|300px]]}}}}
+ |-
+ ! scope="row" | 11
+ | 1
+ | 
+ | {{dlcmap slideshow|{{dlcalt|[[File:Isaac's Room 11 Afterbirth+.png|300px]]|r=[[File:Isaac's Room 11.png|300px]]}}}}
+ |-
+ ! scope="row" | 12
+ | 1
+ | 
+ | [[File:Isaac's Room 12.png|300px]]
+ |-
+ ! scope="row" | 13
+ | 1
+ | 
+ | {{dlcmap slideshow|{{dlcalt|[[File:Isaac's Room 13 Afterbirth+.png|300px]]|r=[[File:Isaac's Room 13.png|300px]]}}}}
+ |-
+ ! scope="row" | 14
+ | 1
+ | 
+ | {{dlcmap slideshow|{{dlcalt|[[File:Isaac's Room 14 Afterbirth+.png|300px]]|r=[[File:Isaac's Room 14.png|300px]]}}}}
+ |-
+ ! scope="row" | 15
+ | 1
+ | 
+ | {{dlcmap slideshow|{{dlcalt|[[File:Isaac's Room 15 Afterbirth+.png|300px]]|r=[[File:Isaac's Room 15.png|300px]]}}}}
+ |-
+ ! scope="row" | 16
+ | 1
+ | 
+ | {{dlcmap slideshow|{{dlcalt|[[File:Isaac's Room 16 Afterbirth+.png|300px]]|r=[[File:Isaac's Room 16.png|300px]]}}}}
+ |-
+ ! scope="row" | {{dlc|a+}} 17
+ | 1
+ | 
+ | {{dlcmap slideshow|{{dlcalt|[[File:Isaac's Room 17 Afterbirth+.png|300px]]|r=[[File:Isaac's Room 17.png|300px]]}}}}
+ |-
+ ! scope="row" | {{dlc|a+}} 18
+ | 1
+ | 
+ | {{dlcmap slideshow|{{dlcalt|[[File:Isaac's Room 18 Afterbirth+.png|300px]]|r=[[File:Isaac's Room 18.png|300px]]}}}}
+ |-
+ ! scope="row" | {{dlc|a+}} 19
+ | {{dlcmap slideshow|{{dlcalt|1|r=0.25}}}}
+ |
+ | {{dlcmap slideshow|{{dlcalt|[[File:Isaac's Room 19 Afterbirth+.png|300px]]|r=[[File:Isaac's Room 19.png|300px]]}}}}
+ |-
+ ! scope="row" | {{dlc|a+}} 20
+ | 1
+ | 
+ | {{dlcmap slideshow|{{dlcalt|[[File:Isaac's Room 20 Afterbirth+.png|300px]]|r=[[File:Isaac's Room 20.png|300px]]}}}}
+ |-
+ ! scope="row" | {{dlc|a+}} 21
+ | 1
+ | 
+ | {{dlcmap slideshow|{{dlcalt|[[File:Isaac's Room 21 Afterbirth+.png|300px]]|r=[[File:Isaac's Room 21.png|300px]]}}}}
+ |-
+ ! scope="row" | {{dlc|a+}} 22
+ | 1
+ | 
+ | {{dlcmap slideshow|{{dlcalt|[[File:Isaac's Room 22 Afterbirth+.png|300px]]|r=[[File:Isaac's Room 22.png|300px]]}}}}
+ |-
+ ! scope="row" | {{dlc|a+}} 23
+ | 1
+ | 
+ | {{dlcmap slideshow|{{dlcalt|[[File:Isaac's Room 23 Afterbirth+.png|300px]]|r=[[File:Isaac's Room 23.png|300px]]}}}}
+ |-
+ ! scope="row" | {{dlc|a+}} 24
+ | 1
+ | 
+ | {{dlcmap slideshow|{{dlcalt|[[File:Isaac's Room 24 Afterbirth+.png|300px]]|r=[[File:Isaac's Room 24.png|300px]]}}}}
+ |-
+ ! scope="row" | {{dlc|a+}} 25
+ | 0.1
+ | 
+ | {{dlcmap slideshow|{{dlcalt|[[File:Isaac's Room 25 Afterbirth+.png|300px]]|r=[[File:Isaac's Room 25.png|300px]]}}}}
+ |-
+ ! scope="row" | {{dlc|a+}} 26
+ | 0.1
+ | 
+ | [[File:Isaac's Room 26.png|300px]]
+ |-
+ ! scope="row" | {{dlc|a+}} 27
+ | 0.1
+ | 
+ | {{dlcmap slideshow|{{dlcalt|[[File:Isaac's Room 27 Afterbirth+.png|300px]]|r=[[File:Isaac's Room 27.png|300px]]}}}}
+ |-
+ ! scope="row" | {{dlc|r}} 28
+ | 0.5
+ | 
+ | [[File:Isaac's Room 28.png|300px]]
+ |-
+ ! scope="row" | {{dlc|r}} 29
+ | 0.25
+ | 
+ | [[File:Isaac's Room 29.png|300px]]
+ |-
+ ! scope="row" | {{dlc|r}} 1000
+ | 1
+ | style="text-align: left" | The {{i|Genesis|n}} room.
+ | [[File:Isaac's Room Genesis.png|300px]]
+|}
+
+== [[file:Dirty Bedroom Icon.png|25px|link=]] Dirty Bedroom ==
+[[file:Bed2.png]]
+
+=== Notes ===
+* The trapdoor under the carpet will always lead to the next floor.
+
+=== Layouts ===
+The following room maps were made using [https://github.com/Basement-Renovator/basement-renovator Basement Renovator] for cleaner viewing.
+
+{| class="wikitable sortable mw-collapsible mw-collapsed" style="text-align: center"
+ ! scope="col" | ID
+ ! scope="col" | Weight
+ ! scope="col" class="unsortable" | Image preview
+ |-
+ ! scope="row" | 0
+ | 1
+ | {{dlcmap slideshow|{{dlcalt|[[File:The Barren Room 0 Afterbirth+.png|300px]]|r=[[File:The Barren Room 0.png|300px]]}}}}
+ |-
+ ! scope="row" | 1
+ | 1
+ | {{dlcmap slideshow|{{dlcalt|[[File:The Barren Room 1 Afterbirth+.png|300px]]|r=[[File:The Barren Room 1.png|300px]]}}}}
+ |-
+ ! scope="row" | 2
+ | 1
+ | {{dlcmap slideshow|{{dlcalt|[[File:The Barren Room 2 Afterbirth+.png|300px]]|r=[[File:The Barren Room 2.png|300px]]}}}}
+ |-
+ ! scope="row" | 3
+ | 1
+ | {{dlcmap slideshow|{{dlcalt|[[File:The Barren Room 3 Afterbirth+.png|300px]]|r=[[File:The Barren Room 3.png|300px]]}}}}
+ |-
+ ! scope="row" | 4
+ | 1
+ | {{dlcmap slideshow|{{dlcalt|[[File:The Barren Room 4 Afterbirth+.png|300px]]|r=[[File:The Barren Room 4.png|300px]]}}}}
+ |-
+ ! scope="row" | 5
+ | 1
+ | {{dlcmap slideshow|{{dlcalt|[[File:The Barren Room 5 Afterbirth+.png|300px]]|r=[[File:The Barren Room 5.png|300px]]}}}}
+ |-
+ ! scope="row" | 6
+ | 1
+ | {{dlcmap slideshow|{{dlcalt|[[File:The Barren Room 6 Afterbirth+.png|300px]]|r=[[File:The Barren Room 6.png|300px]]}}}}
+ |-
+ ! scope="row" | 7
+ | 1
+ | {{dlcmap slideshow|{{dlcalt|[[File:The Barren Room 7 Afterbirth+.png|300px]]|r=[[File:The Barren Room 7.png|300px]]}}}}
+ |-
+ ! scope="row" | 8
+ | 1
+ | [[File:The Barren Room 8.png|300px]]
+ |-
+ ! scope="row" | 9
+ | 1
+ | {{dlcmap slideshow|{{dlcalt|[[File:The Barren Room 9 Afterbirth+.png|300px]]|r=[[File:The Barren Room 9.png|300px]]}}}}
+ |-
+ ! scope="row" | 10
+ | 1
+ | {{dlcmap slideshow|{{dlcalt|[[File:The Barren Room 10 Afterbirth+.png|300px]]|r=[[File:The Barren Room 10.png|300px]]}}}}
+ |-
+ ! scope="row" | 11
+ | 1
+ | {{dlcmap slideshow|{{dlcalt|[[File:The Barren Room 11 Afterbirth+.png|300px]]|r=[[File:The Barren Room 11 Repentance.png|300px]]|r+=[[File:The Barren Room 11.png|300px]]}}}}
+ |-
+ ! scope="row" | 12
+ | 1
+ | {{dlcmap slideshow|{{dlcalt|[[File:The Barren Room 12 Afterbirth+.png|300px]]|r=[[File:The Barren Room 12.png|300px]]}}}}
+ |-
+ ! scope="row" | 13
+ | 1
+ | {{dlcmap slideshow|{{dlcalt|[[File:The Barren Room 13 Afterbirth+.png|300px]]|r=[[File:The Barren Room 13.png|300px]]}}}}
+ |-
+ ! scope="row" | {{dlc|a+}} 14
+ | 1
+ | {{dlcmap slideshow|{{dlcalt|[[File:The Barren Room 14 Afterbirth+.png|300px]]|r=[[File:The Barren Room 14.png|300px]]}}}}
+ |-
+ ! scope="row" | {{dlc|a+}} 15
+ | 1
+ | {{dlcmap slideshow|{{dlcalt|[[File:The Barren Room 15 Afterbirth+.png|300px]]|r=[[File:The Barren Room 15.png|300px]]}}}}
+ |-
+ ! scope="row" | {{dlc|a+}} 16
+ | 1
+ | {{dlcmap slideshow|{{dlcalt|[[File:The Barren Room 16 Afterbirth+.png|300px]]|r=[[File:The Barren Room 16.png|300px]]}}}}
+ |-
+ ! scope="row" | {{dlc|a+}} 17
+ | 1
+ | {{dlcmap slideshow|{{dlcalt|[[File:The Barren Room 17 Afterbirth+.png|300px]]|r=[[File:The Barren Room 17.png|300px]]}}}}
+ |-
+ ! scope="row" | {{dlc|a+}} 18
+ | 1
+ | {{dlcmap slideshow|{{dlcalt|[[File:The Barren Room 18 Afterbirth+.png|300px]]|r=[[File:The Barren Room 18.png|300px]]}}}}
+ |-
+ ! scope="row" | {{dlc|a+}} 19
+ | 1
+ | {{dlcmap slideshow|{{dlcalt|[[File:The Barren Room 19 Afterbirth+.png|300px]]|r=[[File:The Barren Room 19.png|300px]]}}}}
+ |-
+ ! scope="row" | {{dlc|a+}} 20
+ | 0.1
+ | {{dlcmap slideshow|{{dlcalt|[[File:The Barren Room 20 Afterbirth+.png|300px]]|r=[[File:The Barren Room 20.png|300px]]}}}}
+ |-
+ ! scope="row" | {{dlc|a+}} 21
+ | 1
+ | {{dlcmap slideshow|{{dlcalt|[[File:The Barren Room 21 Afterbirth+.png|300px]]|r=[[File:The Barren Room 21.png|300px]]}}}}
+ |-
+ ! scope="row" | {{dlc|a+}} 22
+ | 1
+ | {{dlcmap slideshow|{{dlcalt|[[File:The Barren Room 22 Afterbirth+.png|300px]]|r=[[File:The Barren Room 22.png|300px]]}}}}
+ |-
+ ! scope="row" | {{dlc|a+}} 23
+ | 1
+ | {{dlcmap slideshow|{{dlcalt|[[File:The Barren Room 23 Afterbirth+.png|300px]]|r=[[File:The Barren Room 23.png|300px]]}}}}
+ |-
+ ! scope="row" | {{dlc|a+}} 24
+ | 0.1
+ | {{dlcmap slideshow|{{dlcalt|[[File:The Barren Room 24 Afterbirth+.png|300px]]|r=[[File:The Barren Room 24.png|300px]]}}}}
+ |-
+ ! scope="row" | {{dlc|a+}} 25
+ | 0.1
+ | [[File:The Barren Room 25.png|300px]]
+ |-
+ ! scope="row" | {{dlc|r}} 26
+ | 0.5
+ | [[File:The Barren Room 26.png|300px]]
+ |-
+ ! scope="row" | {{dlc|r}} 27
+ | 0.5
+ | [[File:The Barren Room 27.png|300px]]
+ |-
+ ! scope="row" | {{dlc|r}} 28
+ | 0.5
+ | [[File:The Barren Room 28.png|300px]]
+|}
+
+== Notes ==
+* If Isaac already has full health when touching the bed, it will not activate the sleep sequence.
+* Since they cannot hold Red Hearts, {{C|???}}, {{C|Black Judas}}, {{C|Tainted Judas}}, {{C|Tainted ???}}, {{C|Tainted Forgotten}} and {{C|Tainted Bethany}} will always gain 3 {{E|Soul Heart}}s when resting in a bed.
+* Bedrooms are more likely to appear when playing as {{C|The Lost}}, {{C|Tainted Lost}}, and {{c|Tainted Forgotten}}.
+* The bed provides no direct benefit for {{C|The Lost}} and {{C|Tainted Lost}}. Once activated, the sleep sequence will play, but afterward, there will be no notable effect.
+** {{dlc+|a+}} This will still count towards unlocking the {{I|Blanket}}.{{dlc-}}
+* Using a bed takes no game-tracked time. In spite of the pause in movement and slow fade out, the timer will display the same time when Isaac can move again as it did when he stopped moving.
+* Sometimes the carpet can be obstructed by an [[urn]] or bed, making it impossible to reveal the trapdoor under it. Even if the urn is blown up, there will be no trapdoor under the carpet.
+* {{dlc+|a+}} When using a bed with {{C|The Forgotten}}, he will get all {{E|Bone Heart}}s filled {{dlc|nr+}} and {{C|The Soul}} will receive 3 Soul Hearts.{{dlc-}}
+* {{dlc+|r}} Soul hearts will be used to charge the {{i|Alabaster Box}} first, as if they were picked up normally.
+** Although using the bed as {{C|The Lost}} / {{C|Tainted Lost}} does not give soul hearts as health, they will still count toward charging Alabaster Box.{{dlc-}}
+* {{dlc+|r}} The {{s|Home}} floor will have two unique rooms similar to Bedrooms. One is Isaac's room, which has a clean bed, a carpet (with nothing underneath), and a {{e|Locked Chest}}. The other is Mom's room, which has {{e|Mom's Chest}} and an alternate bed, that triggers the sequence to {{e|Dogma}}'s fight once Isaac touches it.{{dlc-}}
+* {{dlc|rnr+}} When playing {{C|Jacob and Esau}}, the bed will only heal the one that touched the bed.
+** {{dlc|r+}} Beds will heal both characters.
+* {{dlc|r+}} In [[multiplayer]], beds heal ''all'' players, not only the one who touched them.
+
+== Unlockable [[achievements]] ==
+{{achievement text | Wooden Cross, Blanket }}
+
+== Gallery ==
+<gallery>
+File:Bedroom No Trapdoor.png|Bedroom without a trapdoor under the carpet since it was obstructed by an Urn.
+</gallery>
+
+== Trivia ==
+* The bedroom looks similar to the inside of Link's House in [[wikipedia:The Legend of Zelda: A Link to the Past|The Legend of Zelda: A Link to the Past]].
+* Having a trapdoor under the carpet is a reference to the fact that Isaac escapes from his [[Mom|mother]] by finding one under a carpet in his bedroom. Likewise, the barred door might also allude to the intro, where his mother locks him inside his room.
+* Despite being so similar, Clean and Dirty Bedrooms have different room ids (18 and 19 respectively).
+* {{dlc|r}} Bedrooms are the only special rooms that are not automatically identified on the map before entering them, since shops, libraries, vaults, and dice rooms were all given distinctive doors in Repentance, but clean and dirty bedrooms still have the same doors.
+
+== Bugs ==
+{{bug|If you use {{i|The Poop}} on the middle of the carpet and blow it up with a bomb, the trapdoor will not appear.}}
+
+{{nav|room|fr=Chambre}}

@@ -1,0 +1,185 @@
+{{header pickups}}
+{{disambig msg|the pickup|title=bomb}}
+
+=== Bombs ===
+{{infobox entity
+ | hidden      = yes
+ | name        = Bomb
+ | id          = 5
+ | variant     = 40
+ | subtype     = 1
+}} {{infobox entity
+ | hidden      = yes
+ | name        = Double Bomb
+ | subtype     = 2
+}} {{infobox entity
+ | hidden      = yes
+ | name        = Troll Bomb
+ | subtype     = 3
+}} {{infobox entity
+ | hidden      = yes
+ | dlc         = a
+ | name        = Golden Bomb
+ | subtype     = 4
+ | unlocked by = Blue Bomber
+}} {{infobox entity
+ | hidden      = yes
+ | name        = Mega Troll Bomb
+ | subtype     = 5
+}} {{infobox entity
+ | hidden      = yes
+ | dlc         = r
+ | name        = Golden Troll Bomb
+ | subtype     = 6
+}} {{infobox entity
+ | hidden      = yes
+ | dlc         = r
+ | name        = Giga Bomb
+ | subtype     = 7
+}} {{infobox entity
+ | hidden      = yes
+ | dlc         = r
+ | name        = Throwable Bomb
+ | variant     = 41
+}}{{dlc clear}}
+
+They are used to damage enemies, destroy rocks, and open up closed regular doors and Secret Rooms. When a bomb pickup spawns, there is a chance for it to be replaced by a Troll Bomb instead.
+
+{{dlc|nr}} Isaac's bombs deal 60 damage to enemies and one full heart of damage to himself.
+
+{{dlc|r}} Isaac's bombs deal 100 damage to enemies and one full heart of damage to himself. Bomb explosions pierce enemy [[armor]].
+
+{| class="wikitable mw-collapsible striped sortable" style="text-align: center"
+ ! scope="col" style="width: 120px" | Bomb
+ ! scope="col" style="width: 10px" | ID
+ ! scope="col" class="unsortable" style="width: 60px" | Image
+ ! scope="col" style="width: 90px" | Worth
+ ! scope="col" class="unsortable" | Additional Info
+ ! scope="col" class="unsortable" | Unlock Method
+ ! scope="col" style="width: 15px" | Probability
+ |-{{anchor|Bomb}}{{anchor|Bombs}}
+ ! scope="row" | Bomb
+ | data-sort-value="1" | {{ghost|5.40.}}1
+ | [[file:Bomb.png|40px]]
+ | 1
+ | {{i|BOGO Bombs}}, {{i|Humbleing Bundle}}, and {{t|Equality!|a+nr+}} can replace this with a Double Bomb.
+ |
+ | 74.84%
+ |-{{anchor|Double Bomb}}
+ ! scope="row" | Double Bomb
+ | data-sort-value="2" | {{ghost|5.40.}}2
+ | [[file:Double Bomb.png|60px]]
+ | 2
+ |Grants two bombs.
+ |
+ | 12.47%
+ |-{{anchor|Troll Bomb}}
+ ! scope="row" | Troll Bomb
+ | data-sort-value="3" | {{ghost|5.40.}}3
+ | [[file:Troll Bomb.png|40px]]
+ | 0
+ | Cannot be picked up. Spawns already ignited and will explode after a few seconds.<br>{{t|Safety Scissors}} will turn this into a Bomb before it explodes.
+ |
+ | 9.9%
+ |-{{anchor|Golden Bomb}}
+ ! scope="row" | {{dlc+|a}} Golden Bomb
+ | data-sort-value="4" | {{ghost|5.40.}}4
+ | [[file:Golden Bomb.png|40px]]
+ | 0
+ | Will not add to the player's bomb count, but when picked up, it will allow the player to place bombs without subtracting from their total for the duration of the current floor, even if the current number of bombs is 0. {{dlc|nr+}} {{M|Bomb Bum}}s ignore the Golden Bomb and still subtract bombs from the bomb count. {{dlc|r+}} {{M|Bomb Bum}}s now consume the Golden Bomb, and will pay out instantly with an item from the {{ip|Bomb Bum|text=Bomb Bum item pool}}.
+ | {{achievement unlock|Gold Bomb}}{{dlc-}}
+ | 0.89%
+ |-{{anchor|Mega Troll Bomb}}
+ ! scope="row" | Mega Troll Bomb
+ | data-sort-value="5" | {{ghost|5.40.}}5
+ | [[file:Mega Troll Bomb.png|40px]]
+ | 0
+ | Like Troll Bombs, but are bigger (like bombs upgraded with {{i|Mr. Mega}}) and will chase Isaac if they are nearby (as if under the influence of {{i|Magneto}}).<br>{{t|Safety Scissors}} will turn this into a Double Bomb before it explodes.
+ |
+ | 1.78%
+ |-{{anchor|Golden Troll Bomb}}
+ ! scope="row" | {{dlc+|r}} Golden Troll Bomb
+ | data-sort-value="6" |{{ghost|5.40.}}6
+ | [[file:Golden Troll Bomb.png|40px]]
+ | 0
+ | Like troll bombs, but are able to explode endlessly, mimicking the effect of a golden bomb pickup.<br>{{t|Safety Scissors}} will turn this into a Golden Bomb before it explodes.
+ |
+ | 0.12%{{dlc-}}
+ |-{{anchor|Giga Bomb}}
+ ! scope="row" | {{dlc+|r}} Giga Bomb
+ | data-sort-value="7" | {{ghost|5.40.}}7
+ | [[file:Giga Bomb.png|80px]]
+ | 1
+ | Thrown by {{e|Bombgagger}}s, {{E|Ultra War}}, and are spawned naturally in some rooms in {{S|Ashpit}} as well as one Super Secret Room layout. Explodes and destroys tiles in a diamond shape. Giga bombs deal 300 damage to enemies.<br>Can be obtained by the player with {{t|Safety Scissors}} or {{i|Everything Jar}}.
+ |
+ | 0.00%{{dlc-}}
+ |-{{anchor|Throwable Bomb}}
+ ! scope="row" | {{dlc+|r}} Throwable Bomb
+ | data-sort-value="10" | {{ghost|5.}}41
+ | [[file:Throwable Bomb.png|40px]]
+ | 0
+ | Can only be picked up and thrown, explodes a few seconds after pickup. Spawned only by the {{e|Bomb Grimace}} enemy.
+ |
+ | 0.00%{{dlc-}}
+ |}
+
+=== {{dlc|r}} Poop ===
+{{infobox entity
+ | hidden      = yes
+ | dlc         = r
+ | name        = Poop Nugget
+ | variant     = 42
+}} {{infobox entity
+ | hidden      = yes
+ | dlc         = r
+ | name        = Big Poop Nugget
+ | subtype     = 1
+}}
+
+Poop pick-ups are exclusive to {{c|Tainted ???}} as his mechanic uses poops instead of bombs.
+
+{| class="wikitable mw-collapsible striped sortable" style="text-align: center"
+ ! scope="col" style="width: 120px" | Poop
+ ! scope="col" style="width: 10px" | ID
+ ! scope="col" class="unsortable" style="width: 60px" | Image
+ ! scope="col" style="width: 90px" | Worth
+ ! scope="col" class="unsortable" | Additional Info
+ |-{{anchor|Poop Nugget}}{{anchor|Poop Nuggets}}
+ ! scope="row" | {{dlc|r}} Poop Nugget
+ |{{ghost|5.42.}}0
+ |[[File:Poop Nugget.png|40px]]
+ | 1
+ | Drops from {{c|Tainted ???}} when dealing damage to enemies.
+ |-{{anchor|Big Poop Nugget}}{{anchor|Big Poop Nuggets}}
+ ! scope="row" | {{dlc|r}} Big Poop Nugget
+ |{{ghost|5.42.}}1
+ |[[File:Big Poop Nugget.png|40px]]
+ | 3
+ | Any bomb pickups that would normally spawn are replaced with this when playing as {{c|Tainted ???}}; this does not affect {{e|Troll Bomb}}s and their variants.
+ |}{{dlc clear}}
+
+== Notes ==
+* The probabilities in the table refer to the kind of bomb that is generated by the game when a bomb pickup is spawned with a sub-type of 0 (i.e. a random bomb).
+* [[Pickup]]s, [[chest]]s, and other movable objects will be flung away if caught in a bomb's explosion radius. Take care not to launch anything you want over spikes or other hazards.
+* Troll bombs of all sizes (whether room reward or spawning from monsters) deal a full heart of damage under normal conditions.
+* {{dlc|a}} If Golden Bombs have not been unlocked, they will be replaced by a random Bomb pickup or Troll Bomb in any room layouts containing them.
+* {{dlc|a}} Troll Bombs explode after a random amount of time. This means that if two Troll Bombs spawn at the same time right next to each other, there's a high chance one Troll Bomb will blow up before the other, sending that Troll Bomb sliding outwards a bit before exploding.
+** Because the timing relates to when the bombs spawn, if you leave the room and reenter, the fuses will reset and the bombs are likely to explode simultaneously, which is generally safer.
+* {{dlc|r}} Gold bombs can be acquired without the unlock by picking up a {{e|Golden Key}} and then consuming a Bombs Are Key pill.
+* {{dlc|r}} Giga bomb explosions will never destroy tiles in front of room exits.
+* {{dlc|r}} The [[HUD]] icon for bombs changes to a bigger one when Isaac holds a Giga bomb.
+* {{dlc|r}} Picked up Giga bombs are always used before normal bombs.
+* {{dlc|r}} Picked up Giga bombs will override the Golden bomb effect until all Giga bombs are used and they do not stack with it.
+* {{dlc+|r}} When playing as {{c|Jacob and Esau}} or having {{i|Strawman}}, both characters place a bomb at the cost of using up only one.{{dlc-}}
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | It's the Key }}
+
+== Trivia ==
+* Troll Bombs are a reference to Trolling, an internet term for tricking or messing with people psychologically.
+** The face on the Troll Bomb depicts the [https://knowyourmeme.com/memes/trollface Trollface], a face commonly associated with internet trolls and trolling.
+* Mega Troll Bombs are spawned by {{E|Super Wrath}}, {{E|Super Pride}}, {{E|War}} (black [[Champion]]), and sometimes {{E|Little Horn}}.
+* In the original game, Mega Troll Bombs can't be blocked by obstacles or non-piercing tears, will follow the player at any distance, and are much faster.
+
+{{nav|bomb|fr=Bombes}}
+[[Category:Pickups]]

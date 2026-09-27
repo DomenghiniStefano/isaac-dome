@@ -1,0 +1,25 @@
+{{header tarot cards}}
+{{Infobox card
+ | name        = VI - The Lovers
+ | id          = 7
+ | quote       = May you prosper and be in good health
+ | description = Spawns 2 full {{e|Red Heart}}s on the ground.
+ | recharge    = {{dlcalt|4|r=6}}
+}}
+
+{{cit|c}}
+
+== Effects ==
+* Spawns 2 {{e|Red Heart}}s on the ground near Isaac.
+
+== Strategy ==
+* Some {{r|Super Secret Room}} layouts can force hearts in them to be of one type. Using '''VI - The Lovers''' in these rooms can transform the red hearts into other types of hearts.
+
+== Synergies ==
+* {{I|Tarot Cloth|n}}: Spawns {{dlc|nr}} 4 / {{dlc|r}} 3 {{e|Red Heart}}s.
+** {{I|Tarot Cloth|n}} + {{i|Blank Card}} + {{i|Car Battery|n}} : Spawns {{dlc|nr}} 8 / {{dlc|r}} 6 Red Hearts.
+
+== Trivia ==
+[[wikipedia:The Lovers|The Lovers]] is the sixth card of a Major Arcana set.
+
+{{nav|fr=VI - L'Amoureux|card}}

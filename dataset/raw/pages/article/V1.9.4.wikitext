@@ -1,0 +1,16 @@
+{{infobox version
+ | dlc   = r
+ | date  = 2023-12-14
+}}
+
+The [[Online (open beta)|online beta]] received a patch on December 14th, 2023, announced on [https://twitter.com/tyronerodriguez/status/1735436443072524677 Twitter].
+
+== Documented Changes ==
+* Raised the amount of health players get when getting revived
+* Fixed more crashes on startup due to mods being installed
+* Fixed softlock in online play when a player gets the controller disconnected popup
+* Fix for active item on boss pedestal
+* Players drop quest items when disconnecting
+* Fixed occasional crash when pressing function keys on keyboard
+
+{{nav|version}}

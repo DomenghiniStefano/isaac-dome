@@ -1,0 +1,16 @@
+'''Florian Himsl''' was one of the two original creators of the original ''The Binding of Isaac'' and its sole programmer.
+
+Florian is represented in-game as the baby of the {{e|Ultra Pride}} mini-boss.
+
+Florian was originally meant to be included in the intro cutscene for Rebirth, but was not, and he remains unused in the files.
+
+== Gallery ==
+<gallery>
+File:Boss Ultra Pride.png|Ultra Pride in-game.
+File:intro6.png|A spritesheet for the intro, which contains Florian Himsl.
+</gallery>
+
+== External links ==
+* [https://twitter.com/Gamesquidable Florian Himsl's twitter]
+
+{{nav|people}}

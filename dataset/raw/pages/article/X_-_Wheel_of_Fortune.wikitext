@@ -1,0 +1,34 @@
+{{header tarot cards}}
+{{Infobox card
+ | name        = X - Wheel of Fortune
+ | id          = 11
+ | quote       = Spin the wheel of destiny
+ | description = Spawns a {{m|Slot Machine}} or {{m|Fortune Telling Machine}} near Isaac. <br>{{dlc+|r+}} Also has a 1% chance to spawn a {{m|Crane Game|n}}.{{dlc-}}
+| recharge =             4
+}}
+
+{{cit|c}}
+
+== Effects ==
+* Spawns a {{m|Slot Machine}} (75% chance) or {{m|Fortune Telling Machine}} (25% chance) near Isaac.
+** {{dlc+|r+}} Also has a 1% chance to spawn a {{m|Crane Game|n}}.{{dlc-}}
+
+== Strategy ==
+* Even if Isaac is short on coins to use the machines, they can still be blown up for more pickups.
+** To save on bombs, it is recommended to use '''X - Wheel of Fortune''' next to a [[tinted rock]] or a {{r|Secret Room}}'s entrance, so that they can both be blown up by the same bomb.
+
+== Synergies ==
+* {{I|Tarot Cloth}}: Spawns 2 machines.
+** Each machine can be any of the two types.
+** {{I|Tarot Cloth|nr}} + {{i|Blank Card}} + {{i|Car Battery|n}}: Spawns 4 machines.
+** {{I|Tarot Cloth|r}} + {{i|Blank Card}}: Only spawns one machine when used with Blank Card.
+
+== Gallery ==
+<gallery>
+File:X - The Wheel of Fortune Steam Card.jpg|'''X - Wheel of Fortune''''s Steam trading card
+</gallery>
+
+== Trivia ==
+* [[wikipedia:Wheel of Fortune (tarot card)|Wheel of Fortune]] is the tenth card of a Major Arcana set.
+
+{{nav|fr=X - La Roue de Fortune|card}}

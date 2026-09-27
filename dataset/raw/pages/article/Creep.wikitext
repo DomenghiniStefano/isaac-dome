@@ -1,0 +1,64 @@
+{{distinguish|Wall Creep}}
+
+'''Creep''' is a liquid created by the attacks of certain [[monster]]s and [[boss]]es, or may be spawned by [[character|Isaac]]. Creep appears on the ground as a glowing or "shiny" puddle or line. There are a few different kinds of Creep which can affect enemies or Isaac. Having the ability to [[flight|fly]] or the {{t|Callus}} trinket or {{I|Orphan Socks}} item nullifies the effects of Creep.
+
+Creep that will affect Isaac is shown flickering rapidly. When all enemies inside a room are defeated, the creep they produced will quickly disappear.
+
+== Red Creep ==
+'''Red Creep''' is the most common type of Creep in the game. It can be created by various different enemies, champions, or Isaac himself. When spawned by enemies, it damages Isaac but not other enemies in the room. When spawned by Isaac, it damages walking enemies but not Isaac himself. It deals half a heart of damage to the player. Red Creep is representative of blood.
+
+== Green Creep ==
+'''Green Creep''' is spawned by various enemies, {{E|Ultra Pride}}, {{E|Pestilence}}, [[Champions|green champion monsters]], {{E|Dangle}}, and {{E|Brownie}} (when they are poisoned). When spawned by enemies, it is functionally equivalent to Red Creep; however, some forms spawned by Isaac deal damage at a faster rate. It can be spawned by Isaac with {{t|Bob's Bladder}}, {{i|Toxic Shock}}, {{i|Mysterious Liquid}}, or {{i|7 Seals}}' {{E|Pestilence}} familiar. ({{dlc+|a}}Notably, the {{tf|Bob}} transformation actually generates red creep that is just colored green.{{dlc-}}) Green Creep is representative of acid, bile, or poison.
+
+== Yellow Creep ==
+'''Yellow Creep''' is spawned by {{E|Peep}}, {{i|Lemon Mishap}}, [[Lemon Party]] pills, and {{i|Free Lemonade}}. When spawned by {{E|Peep}}, it deals half a heart of damage to the player. When spawned by Isaac, it continuously damages walking enemies and seems to do more damage than any other type of creep that Isaac can create. Yellow Creep is representative of urine.
+
+== Black Creep ==
+'''Black Creep''' is spawned by various enemies, {{E|Gish}}, {{dlc|a+}}the [[Something's Wrong...]] pill, {{i|Ball of Tar}}, and {{i|7 Seals}}' {{E|Famine}} familiar. It slows the movement speed of affected enemies or the player. When spawned by enemies, it affects Isaac but not other enemies. When spawned by Isaac, it affects enemies but not Isaac, bypassing the status resistances of [[All Bosses (Bosses)|Bosses]]. Black Creep is likely representative of tar or oil, {{dlc|a+}}though in the case of the [[Something's Wrong...]] pill, it may be fecal matter with blood in it.
+
+== White Creep ==
+'''White Creep''' is functionally similar to Black Creep. White Creep is spawned by several bosses, including {{E|Widow}}, {{E|The Wretched}}, {{E|Triachnid}}, and {{E|The Frail}}, as well as {{E|Small Baby Long Legs}}. Isaac can spawn white creep with {{i|Juicy Sack}}, {{i|Large Zit}}, {{i|Parasitoid}}, and {{i|Sticky Bombs|r}}. White Creep could be representative of a liquid form of [[Cobweb]] or pus.
+
+== Blue Creep ==
+'''Blue Creep''' is spawned by {{i|Depression}}, {{i|Holy Water}}, and {{i|Aquarius}}. Blue creep damages enemies that walk over it. It is likely representative of water or tears.
+
+{{Dlc|r}} Blue creep spawned by {{i|Holy Water}} petrifies enemies.
+
+{{Dlc|r}} Blue creep spawned by {{i|Aquarius}} synergizes with tear effects.
+
+== {{dlc+|a}} Dark Blue Creep ==
+'''Dark Blue Creep''' is spawned by {{E|Hush}} during his beam attack. Blue creep spawned by {{E|Hush}} makes Isaac slide, and does not affect other enemies.
+{{dlc-}}
+
+== Grey Creep ==
+'''Grey Creep''' is spawned only by {{E|The Cage}}. It damages Isaac like Red Creep but does not affect other enemies. It may be representative of some type of rotten fluid.
+
+== Orange Creep ==
+'''Orange Creep''' is spawned only by {{E|Mama Gurdy}}. It slows down Isaac like Black Creep, but does not affect other enemies. Unlike other types of Creep, Orange Creep does not flicker rapidly, even though it only affects Isaac. Due to its nature, it may be representative of vomit, pus, or some other bodily liquid.
+
+== {{dlc+|a}} Brown Creep ==
+'''Brown Creep''' is spawned by {{C|Tainted ???}} and {{I|IBS}}'s mechanics, or by bosses such as {{E|Brownie}}, {{E|Dangle}}, {{E|Turdlings}}, {{E|Sisters Vis}}, and the {{dlc|a+}}[[X-Lax]] pill. Hostile Brown Creep and the Creep spawned by X-Lax will make Isaac slide, affecting his ability to stop moving or change directions while moving. This kind of Brown Creep does not flicker rapidly even though it only affects Isaac. Friendly Brown Creep spawned by {{C|Tainted ???}} or {{I|IBS}} boosts damage and tears if Isaac is standing on it, and will synergize with other kinds of poop spawned by those mechanics. It is representative of liquid poop, likely to be diarrhea.
+{{dlc-}}
+
+== {{dlc+|r}} Static Creep ==
+'''Static Creep''' is spawned exclusively by {{E|Dogma}}'s first phase. It appears underneath the boss as they move. It functions the same as Red Creep, harming Isaac for half a heart. Rather than being representative of a certain type of liquid, it represents visual static, most commonly seen on televisions with no signal.
+{{dlc-}}
+
+== Trivia ==
+* All Creep share a single sprite base, and simply apply their colors and visual effects to it in accordance to the Creep's type.
+** {{dlc+|r}} Static Creep uses the same static effect as the {{I|Dogma}} item and {{E|Dogma}}, but applied to the entire sprite, and not just the areas indicated in blue.{{dlc-}}
+
+== Gallery ==
+<gallery>
+File:Red Creep.jpg|Trail of Red Creep, spawned by {{i|Headless Baby}}.
+File:Green Creep.jpg|Green Creep, spawned by {{i|Mysterious Liquid}}.
+File:Yellow Creep.jpg|Yellow Creep, spawned by {{i|Lemon Mishap}}.
+File:Black Creep.jpg|Trail of slowing Black Creep, spawned by {{i|Ball of Tar}}.
+File:White Creep.jpg|Trail of slowing White Creep, spawned by {{i|Juicy Sack}}.
+File:Blue Creep.jpg|Trail of Blue Creep, spawned by {{i|Aquarius}}.
+File:Brown Creep.jpg|{{dlc|a}} Trail of Brown Creep, spawned by [[Brownie]].
+File:Static Creep.png|{{dlc|r}} Static Creep, left behind by [[Dogma]]'s first phase.
+</gallery>
+
+{{nav|fr=Flaque}}
+[[Category:Mechanics]]

@@ -1,0 +1,13 @@
+{{infobox version
+ | dlc  = a
+ | date = 2015-11-14
+}}
+
+== Undocumented changes ==
+=== Additions ===
+* Added [[Keeper]].
+* Added the {{i|Deep Pockets}} item.
+* Added {{t|Karma}} and the {{t|Rib of Greed}} trinkets.
+* Added [[Babies|Super Greed Baby, Noose Baby, and Sale Baby]].
+
+{{nav|version}}

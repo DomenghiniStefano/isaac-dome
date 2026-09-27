@@ -1,0 +1,78 @@
+{{infobox monster
+ | id          = 35
+ | base hp     = 25
+ | environment = {{floor|Caves}}{{floor|Flooded Caves}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|Sheol}}{{floor|Cathedral}}<br>{{room|challenge}}
+ | behavior    = Walks towards Isaac and attacks by launching its head towards him. Turns into a {{E|Maw}} or {{E|Gusher}} upon death depending on the killed body segment. Occasionally separates at will.
+}}
+
+'''Mr. Maw''' walks towards Isaac and when in range it will launch its head towards him. It appears to be a {{E|Maw}} attached to a {{E|Gusher}} and will turn into either upon death depending on the killed body segment. It can also randomly separate at will into a Gusher and a Maw.
+
+__TOC__
+
+{{clear}}
+
+== Variations ==
+=== Mr. Red Maw ===
+{{infobox monster
+ | dlc            = a+
+ | name           = Mr. Red Maw
+ | variant        = 2
+ | base hp        = 25
+ | environment    = {{floor|Flooded Caves}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|Sheol}}{{floor|Cathedral}}<br>{{room|challenge}}
+ | replace        = Mr. Maw
+ | replace chance = 6.67%
+ | behavior       = Walks towards Isaac and attacks by launching its head towards him. Turns into a {{E|Red Maw}} or Gusher upon death depending on the killed body segment. Occasionally separates at will.
+}}
+
+'''Mr. Red Maw''' behaves similarly to Mr. Maw, but moves quicker and has a {{E|Red Maw}} as its head instead of a regular {{E|Maw}}. If the Red Maw segment is killed first, it will release four shots in the cardinal directions like a regular Red Maw. It can also occasionally separate at will.
+{{clear}}
+
+=== Mr. Mine ===
+{{infobox monster
+ | dlc         = a+
+ | name        = Mr. Mine
+ | image name  = * {{dlc|nr|Afterbirth+}}
+ | id          = 311
+ | base hp     = 20
+ | environment = {{floor|Flooded Caves}}
+ | behavior    = Can only appear in pits. Attempts to launch itself at Isaac if he comes near. Occasionally burrows and pops up in another pit, and fires six shots in all directions upon death.
+}}
+
+'''Mr. Mines''' are chained to pits and will attempt to launch themselves at Isaac if he comes near. They will occasionally burrow and pop up in another pit, often near Isaac. Upon death, they fire six shots in all directions.
+
+{{dlc|nr}} Since pits have a chance to replace rocks in the Flooded Caves where Mr. Mine resides, this can give them more tiles to utilize.
+{{dlc clear}}{{clear}}
+
+=== Swinger ===
+{{infobox monster
+ | name        = Swinger
+ | id          = 216
+ | base hp     = 38
+ | environment = {{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{room|challenge}}
+ | behavior    = Slowly moves towards Isaac as its head swings around its base. Upon death, spawns a {{E|Maw}} or a {{E|Globin}} depending on which part is killed.
+}}
+
+'''Swingers''' behave differently to its variants as rather than firing its head, the Swinger's head is constantly detached and spins around its base clockwise in a fixed radius, while slowly sliding towards Isaac. The cord connecting the head and body of a Swinger isn't solid and does not deal damage. If the base is killed, the spinning head turns into a {{E|Maw}}, and if the head is killed, the base turns into a {{E|Globin}} in its goo form which then can reform into a Globin.
+
+When entering a room, their heads will be retracted and slowly rotate outwards until they reach max length. {{dlc|a+}} Since [[Booster Pack #5]], Swingers extend their heads at a much slower pace, making it easier to avoid damage.
+
+{{clear}}
+
+== Gallery ==
+<gallery>
+File:Edmund McMillen Rebirth Monster Sketches.jpg|Sketches of monsters for the Binding of Isaac: Rebirth, including the Swinger in the third square of the third row, formerly known as "Chain Dudes". Interestingly enough, the Swinger in this concept design is a Maw attached to a Pacer instead of a Globin in its goo form.
+File:Mr Mine Concept.png|Concept art for Mr. Mine by LeatherIceCream.
+</gallery>
+
+== Trivia ==
+* Mr. Mine and Mr. Red Maw were added in [[Booster Pack #5]].
+* Though the {{E|Maw}} appears to have eyes when attached to the {{E|Globin}}, if the Maw survives and spawns upon the Swinger's death, then it will have empty eye sockets.
+* {{dlc|a+}} Mr. Maw makes Gaper noises while chasing Isaac, while Mr. Red Maw makes the Maw noise only if the {{E|Red Maw}} segment dies first.
+* Mr. Mine is based on the enemy Crunch from [[wikipedia:The End Is Nigh (video game)|The End is Nigh]].
+
+== Bugs ==
+{{bug|dlc=na+|Using the {{i|D10}} on any monster with several pieces will reroll every piece into a monster. For the case of {{e|Mr. Maw}}, his cord dots are considered as pieces, and each will turning into a new monster.}}
+{{bug|dlc=na+|If a Swinger's neck touches a [[red poop]], the neck sometimes disappears while the Swinger keeps swinging.}}
+
+{{nav|booster pack|fr=M. Gueule}}
+[[Category:Added in Booster Pack 5]]

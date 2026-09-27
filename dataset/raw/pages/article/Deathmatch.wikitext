@@ -1,0 +1,28 @@
+{{page dlc|r+}}
+'''Deathmatch''' is a PvP mini-game that is played after a successful online co-op run. All the players are placed in a unique arena-themed room, their character is set to {{c|Isaac}} and are given 90 seconds to fight each other. The regular heart system for health is absent here, with the players instead having more gradual healthbars in addition to almost no invincibility frames after getting hit. The match ends when there is one player left. The size and type of the arena is dependent on the number of players: 2 players will use a regular room, while 3-4 players will use a large 2x2 room.
+* The 90 seconds are tracked by a timer in the center of the screen. If it runs out, {{e|Fly Bomb}}s begin to spawn and retractable spikes begin to appear randomly around the arena.
+* Picking up {{e|Soul Heart}}s, {{e|Black Heart}}s, and items that increase HP will increase the player's HP bar by one segment (only HP upgrade items are permanent). Items and pickups that heal the player will only refill up to one empty segment.
+* Upon death, a player is turned into a co-op ghost baby which can launch tiny bombs to damage remaining players that are still alive.
+
+There are a variety of different deathmatches with players given the following items and conditions:
+* Random items and pickups that were previously collected during the run spawn around the room for players to pick up.
+* {{I|Ipecac}}.
+* {{I|Knockout Drops}}.
+* {{I|Mom's Knife}}.
+* {{i|Wait What?}}, {{i|Butt Bombs}}, {{i|Jupiter}}, and {{i|9 Volt}}.
+* {{i|Soy Milk}}, {{i|Spoon Bender}}, {{i|Taurus}}, {{i|Thunder Thighs}}, and {{i|Bucket of Lard}}.
+* {{i|The Ludovico Technique}}, {{i|Proptosis}}, {{i|Cat-o-nine-tails}}, and {{t|Whip Worm}}.
+* {{I|Belly Jelly}} and cannot fire tears. Players are placed in a ring of spikes to knock other players into.
+* {{i|Spirit Sword}} and {{i|Trinity Shield}} with low tear rate.
+* {{I|Mysterious Liquid}}, {{I|Aquarius}}, and {{t|Lost Cork}}. Tears have a lobbed effect.
+* [[Blindfolded]] and given {{I|Bomber Boy}}, 99 bombs, and a {{e|Golden Bomb}}. They are placed in an arena with a similar layout as {{E|Wrath}} / {{E|Super Wrath}}'s rooms, but with metal blocks instead of rocks.
+
+== Notes ==
+* Each mini-game has its own set chance of being played; with some mini-games being rarer to encounter.
+
+== Gallery ==
+<gallery>
+File:Deathmatch knife.png|Deathmatch with {{i|Mom's Knife}}.
+</gallery>
+
+{{nav|fr=Match à mort}}

@@ -1,0 +1,53 @@
+{{infobox monster
+ | id          = 53
+ | base hp     = 20
+ | environment = {{floor|Gehenna}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}
+ | behavior    = Mirrors Isaac's movements and fires blood shots at the same time as Isaac. Can be damaged by spikes.
+}}
+
+'''Doples''' mirror Isaac's movements exactly. They attack by firing projectiles but only when Isaac fires tears, and these shots are fired at the same frequency as Isaac's tears.
+
+__TOC__
+{{clear}}
+
+== Variations ==
+=== Evil Twin ===
+{{infobox monster
+ | name           = Evil Twin
+ | image name     = * {{dlc|nr|Classic}}
+ | variant        = 1
+ | base hp        = 20
+ | environment    = {{floor|Sheol}}<br>{{floor|Dark Room}}<br>{{room|devil}}
+ | replace        = {{dlc|nr|Dople}}
+ | replace chance = Rare
+ | behavior       = Mirrors Isaac's movements and fires three spread blood shots at the same time as Isaac. Can fly over obstacles.
+}}
+
+'''Evil Twins''' shoot three spread blood shots instead of one but have a reduced fire rate. Also, due to the fact that they have flight, they cannot be hurt by spikes.
+
+=== Notes ===
+* {{dlc+|r}} They can spawn in unique {{R|Devil Room}} layouts if Isaac is holding the {{t|Number Magnet}}.{{dlc-}}
+{{clear}}
+
+== Notes ==
+* Doples often appear in rooms that have hazards, such as Spikes. It is possible to kill a Dople by maneuvering Isaac in such a way that the Dople walks onto a hazard, though these spots are often blocked by obstacles such as rocks, key blocks, or {{E|Host}}s.
+* Doples and Evil Twins do not deal contact damage, allowing Isaac to utilize contact items like {{I|Mom's Heels}} against them without risk.
+* If Isaac attacks with an item that replaces regular tears with a charged attack such as {{i|Brimstone}}, Doples and Evil Twins will only attack when the beam first starts to charge up.
+* If Isaac is [[blindfolded]], Doples and Evil Twins will not attack.
+* If Isaac has low tear delay, the Dople (but not the Evil Twin) will fire very rapidly at the same rate as Isaac, making it very dangerous.
+* The Dople, despite mirroring Isaac's movements exactly, do not mimic his range. As a result, they can be significantly easier if Isaac has a higher range and attacks from as much of a distance as possible.
+* {{dlc|na+}} If you are to charm a Dople/Evil Twin in a room with other enemies, the Dople/Evil Twin will try to copy the movement of every other enemy in the room, resulting in teleportation all around the room at very high speeds.
+* {{Dlc+|r}} When playing with multiple characters, such as {{C|Jacob and Esau}} or when using {{p|Soul of the Forgotten}}, Doples/Evil Twins will mimic only one of them. Multiple Doples/Evil Twins will mimic different characters.{{dlc-}}
+** If a temporary character dies, their Dople/Evil Twin will also die.
+* Doples and Evil Twins can press buttons.
+* If multiple Doples are in the room at once, all of them will be killed except one. This is done because multiple doples mimicing the same character at once would cause all of them to overlap and be in the same position at once.
+
+== Trivia ==
+* Evil Twins appear to have {{i|The Inner Eye}} ability, given the fact that it has a spread of 3 shots and a slower fire rate compared to Doples.
+* Doples and Evil Twins are based on the term doppelganger, which means a double of a living person.
+* Doples are a reference to Doppelgängers from the game [[wikipedia:Tomb Raider|Tomb Raider]]. It's a replica of Lara Croft, the protagonist of the video game, and can be found in The Great Pyramid. It's a skinless creature that would mirror the player's movements and could be tricked into jumping into a pit of molten lava.
+
+== Bugs ==
+{{bug|Maximum mirroring tear rate of a Dople is 15. From 15 to 30 they will fire slower like from 15 to 0 and above 30 they will only fire one tear.|dlc=r}}
+
+{{nav}}

@@ -11,7 +11,7 @@
 == Effects ==
 * Gives a chance, upon picking up a coin, to increase the value of that coin by 1.
 ** {{dlc|nr}} 50% chance.
-** {{dlc|r}} The chance is based on the coin's worth:<ref>The chance is calculated as 1-0.50<sup>(coin_worth)</sup></ref>
+** {{dlc|r}} The chance is based on the coin's worth:<ref>The chance is calculated as 1-0.50<sup>(coin_worth)</sup>, making higher value coins have the same chances as if the player collected individual pennies of the same value, but with a maximum of 1 extra cent</ref>
 {| class="wikitable"
  ! Coin
  ! Chance

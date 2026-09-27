@@ -1,0 +1,189 @@
+'''Savefile Images''' are, like their name suggests, images that appear on the savefile icons in the main menu. The images represent the [[Save File Completion|total amount of progress]] the player has made, along with the [[Completion Marks]] in the character menu.
+Below is a list of all Savefile Images.
+{{clear}}
+
+== [[Mom]] Progress ==
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:01_basement.png|center]]
+| style="text-align: center; border: none" |[[File:02_momkill.png|center|link=Mom]]
+|-
+| style="text-align: center; border: none" |The default image on a new file.
+| style="text-align: center; border: none" |After killing {{e|Mom}} for the first time.
+|}
+
+== [[Mom's Heart]] Progress ==
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:03_heart.png|center|link=Mom's Heart]]
+| style="text-align: center; border: none" |[[File:momsheartcheckmarks.png|center|link=Mom's Heart]]
+|-
+| style="text-align: center; border: none" |After killing {{e|Mom's Heart}} for the first time.
+| style="text-align: center; border: none" |Checkmarks added after subsequent {{e|Mom's Heart}} kills.
+|}
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:04_everythingisterrible.png|center|link=Achievements]]
+| style="text-align: center; border: none" |[[File:06_bluebaby.png|center|link=Blue Baby]]
+|-
+| style="text-align: center; border:none" |After defeating {{e|Mom's Heart}} for the fifth time, unlocking [[Achievements|Everything Is Terrible!!!]].
+| style="text-align: center; border:none" |After defeating {{e|Mom's Heart}} for the tenth time, unlocking {{c|???}}.
+|}
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:05_fetus.png|link=It Lives!]]
+|-
+| style="text-align: center; border:none" |After defeating {{e|Mom's Heart}} for the eleventh time, unlocking {{e|It Lives!}}.
+|}
+
+== [[Isaac (Boss)|Isaac]]/[[Satan]] Progress ==
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:12_photooutline.png]]
+|-
+| style="text-align: center; border: none" |After visiting {{s|Cathedral}} or {{s|Sheol}} for the first time.
+|}
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:12_photo1piece.png]]
+| style="text-align: center; border: none" |[[File:12_negative1piece.png]]
+|-
+| style="text-align: center; border: none" |After defeating {{e|Isaac}} for the first time.
+| style="text-align: center; border: none" |After defeating {{e|Satan}} for the first time.
+|}
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:11_photo2pieces.png]]
+| style="text-align: center; border: none" |[[File:11_negative2pieces.png]]
+|-
+| style="text-align: center; border: none" |After defeating {{e|Isaac}} for the second time.
+| style="text-align: center; border: none" |After defeating {{e|Satan}} for the second time.
+|}
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:10_photo3pieces.png]]
+| style="text-align: center; border: none" |[[File:10_negative3pieces.png]]
+|-
+| style="text-align: center; border: none" |After defeating {{e|Isaac}} for the third time.
+| style="text-align: center; border: none" |After defeating {{e|Satan}} for the third time.
+|}
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:09_photo4pieces.png]]
+| style="text-align: center; border: none" |[[File:09_negative4pieces.png]]
+|-
+| style="text-align: center; border: none" |After defeating {{e|Isaac}} for the fourth time.
+| style="text-align: center; border: none" |After defeating {{e|Satan}} for the fourth time.
+|}
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:08_photofull.png]]
+| style="text-align: center; border: none" |[[File:08_negativefull.png]]
+|-
+| style="text-align: center; border: none" |After defeating {{e|Isaac}} for the fifth time, unlocking {{i|The Polaroid}}.
+| style="text-align: center; border: none" |After defeating {{e|Satan}} for the fifth time, unlocking {{i|The Negative}}.
+|}
+
+== [[??? (Boss)|???]]/[[The Lamb]] Progress ==
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:13_lambskull.png]]
+| style="text-align: center; border: none" |[[File:07_goldengod.png]]
+|-
+| style="text-align: center; border: none" |After defeating {{e|???}} or {{e|The Lamb}} for the first time.
+| style="text-align: center; border: none" |After having defeated both {{e|???}} and {{e|The Lamb}} at least once.
+|}
+
+== [[Mega Satan]] Progress ==
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:16_killmegasatan.png]]
+|-
+| style="text-align: center; border: none" |After defeating {{e|Mega Satan}} for the first time.
+|}
+
+== [[Mother]] Progress {{dlc|r}} ==
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:MotherRep.png]]
+|-
+| style="text-align: center; border: none" |After defeating {{e|Mother}} for the first time.
+|}
+
+== [[Dogma]] & [[The Beast]] Progress {{dlc|r}} ==
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:Dogma.png]]
+| style="text-align: center; border: none" |[[File:Beast.png]]
+|-
+| style="text-align: center; border: none" |After defeating {{e|Dogma}} for the first time.
+| style="text-align: center; border: none" |After defeating {{e|The Beast}} for the first time.
+|}
+
+== All [[Endings]] ==
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:14_platinumgod.png]]
+| style="text-align: center; border: none" |[[File:15_realplatinumgod.png]]
+|-
+| style="text-align: center; border: none" |After collecting all [[Items]], and unlocking all secrets and [[endings]], excluding {{c|The Lost}}. {{dlc|na}}
+| style="text-align: center; border: none" |After collecting all [[Items]], and unlocking all secrets and [[endings]]. {{dlc|na}}
+|}
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:17_1000percent.png]]
+| style="text-align: center; border: none" |[[File:Deadgod.png]]
+|-
+| style="text-align: center; border: none" |After collecting all [[Items]], and unlocking all secrets and [[endings]]. {{dlc|a}}
+| style="text-align: center; border: none" |After collecting all [[Items]], and unlocking all secrets and [[endings]],
+including all DLC content up to [[Repentance]]. {{dlc|r}}
+|}
+
+== Full Completion {{dlc|a+}} ==
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:2savefilestogo.png]]
+| style="text-align: center; border: none" |[[File:1savefiletogo.png]]
+|-
+| style="text-align: center; border: none" |After completing one file. {{dlc|a+}}
+| style="text-align: center; border: none" |After completing two files. {{dlc|a+}}
+|}
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:complete1.png]]
+| style="text-align: center; border: none" |[[File:complete2.png]]
+| style="text-align: center; border: none" |[[File:complete3.png]]
+|-
+| style="text-align: center; border: none" |After completing all three files. Purely cosmetic. (File 1) {{dlc|a+}}
+| style="text-align: center; border: none" |After completing all three files. Purely cosmetic. (File 2) {{dlc|a+}}
+| style="text-align: center; border: none" |After completing all three files. Purely cosmetic. (File 3) {{dlc|a+}}
+|}
+
+== Repentance Progress {{dlc|r}} ==
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:2savefilestogoRep.png]]
+| style="text-align: center; border: none" |[[File:1savefiletogoRep.png]]
+|-
+| style="text-align: center; border: none" |Replaces the "2 save files to go!" image if [[Repentance]] is installed.<ref name="repentance">These images are only viewable when updating an already completed Afterbirth+ save to Repentance; they will not appear on a file which completed 1000000% on Repentance. </ref> {{dlc|r}}
+| style="text-align: center; border: none" |Replaces the "1 save file to go!" image if [[Repentance]] is installed.<ref name="repentance"/> {{dlc|r}}
+|}
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:complete1Rep.png]]
+| style="text-align: center; border: none" |[[File:complete2Rep.png]]
+| style="text-align: center; border: none" |[[File:complete3Rep.png]]
+|-
+| style="text-align: center; border: none" |Replaces the previous 3,000,000% Images
+if [[Repentance]] is installed. (File 1)<ref name="repentance"/> {{dlc|r}}
+| style="text-align: center; border: none" |Replaces the previous 3,000,000% Images
+if [[Repentance]] is installed. (File 2)<ref name="repentance"/> {{dlc|r}}
+| style="text-align: center; border: none" |Replaces the previous 3,000,000% Images
+if [[Repentance]] is installed. (File 3)<ref name="repentance"/> {{dlc|r}}
+|}
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:Infinity1.png]]
+| style="text-align: center; border: none" |[[File:Infinity2.png]]
+| style="text-align: center; border: none" |[[File:Infinity3.png]]
+|-
+| style="text-align: center; border: none" |After achieving Dead God on all 3 savefiles. (File 1) {{dlc|r}}
+| style="text-align: center; border: none" |After achieving Dead God on all 3 savefiles. (File 2) {{dlc|r}}
+| style="text-align: center; border: none" |After achieving Dead God on all 3 savefiles. (File 3) {{dlc|r}}
+|}
+
+== Corrupt Data ==
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:corruptdata.png]]
+|-
+| style="text-align: center; border: none" |A save file with [[Corrupt Data|corrupted data]].
+|}
+
+== Gallery ==
+<gallery>
+File:File select 1milx1.png|One 1000000% save file
+File:File select 1milx2.png|Two 1000000% save files
+File:File select 1milx3.png|Three 1000000% save files
+</gallery>
+
+[[Category:Mechanics]]
+{{nav|fr=Images de sauvegarde}}

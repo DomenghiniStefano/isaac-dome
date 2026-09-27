@@ -1,0 +1,9 @@
+{{page dlc|r}}
+
+Items with this [[Item Tags|tag]] are not available to {{c|Keeper}} or {{c|Tainted Keeper}}. At the moment, {{I|A Pound of Flesh}} is the only item with this tag.
+
+== Passive Collectibles ==
+{{collectible table | tag = nokeeper | type = passive }}
+
+{{nav|fr=Balise nokeeper}}
+[[Category:Item tags]]

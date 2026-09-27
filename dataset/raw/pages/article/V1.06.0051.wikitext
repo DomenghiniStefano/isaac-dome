@@ -1,0 +1,23 @@
+{{infobox version
+ | dlc  = a
+ | date = 2015-11-04
+}}
+
+== Undocumented changes ==
+=== Additions ===
+* Added 20 missing Afterbirth items and 11 missing trinkets.
+
+=== Changes ===
+* Increased {{i|Box of Friends}} charge 2 → 4.
+* Increased {{i|D7}} charge 1 → 3.
+* {{i|Glass Cannon}} now affects [[soul heart]]s.
+* Decreased [[Azazel]]'s damage and charge rate.
+* [[Restock Machine]]s now blow up if bombed repeatedly.
+* Removed [[blood donation machine]]s from [[Greed mode]].
+* Using {{p|XIV - Temperance}} in Greed mode now always spawn a [[Devil Beggar]].
+
+=== Fixes ===
+* Fixed the {{a|Blue Womb}} [[achievement]] not unlocking.
+* Defeating [[Hush]] now correctly plays [[ending 17]].
+
+{{nav|version}}

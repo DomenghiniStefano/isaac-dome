@@ -1,0 +1,17 @@
+{{infobox version
+ | dlc   = r
+ | steam = 3126057906320696875
+ | date  = 2021-12-06
+}}
+
+== Documented Changes ==
+=== Localization ===
+* Fixed some achievements being rendered incorrectly when the language is set to Russian
+
+=== Modding Changes ===
+* Added a placeholder collection sprite for modded items that do not provide one
+* Fixed {{i|Lemegeton}} wisps not being rendered properly for modded items
+* Fixed <code>costumeSuffix</code> attribute not working as intended when assigned to Isaac
+* <code>goto</code> command now accepts <code>default</code> as a room type when trying to warp to a special room
+
+{{nav|version}}

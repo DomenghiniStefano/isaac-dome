@@ -1,0 +1,80 @@
+{{header special cards}}
+{{infobox card
+ | type        = special card
+ | id          = 44
+ | recharge    = {{dlcalt|4|r=1}}
+ | quote       = ???
+ | description = Displays a cryptic statement on the screen, similar to a {{M|Fortune Telling Machine}}. These messages (often) provide hints on bosses, bonus areas, etc.
+ | unlocked by = Rules Card
+}}
+
+{{cit|us}}
+
+== Effect ==
+* Upon activation, displays one of the following messages:
+
+{| class="wikitable" style="min-width:70%"
+ | CHUB DISLIKES SMOKE!
+ | Referencing the trick in which Isaac can drop a {{E|Bomb}} in front of a charging {{E|Chub}} to have her swallow it. Reference to Zelda 1 and 'DODONGO DISLIKES SMOKE'.
+ |-
+ | A PIECE OF PAPER IS YOUR GUIDE
+ | Possibly refers to the {{t|Missing Poster}} or, the choice between {{i|The Polaroid}} and {{i|The Negative}} after defeating {{E|Mom}} or the card itself.
+ |-
+ | THE WALLS WILL HARDEN OVER TIME. TIME IS THE ESSENCE
+ | Presumably referencing the {{r|Boss Rush}} that occurs if {{E|Mom}} is beaten in under 20 minutes, and/or the {{E|Hush}} fight that is accessible if {{E|Mom's Heart}} or {{E|It Lives!}} is beaten in under 30 minutes.
+ |-
+ | A DARK MARKET LIES UNDER YOUR FEET
+ | Presumably referencing the secret trapdoors occasionally under rocks and the {{r|Crawl Space}} that leads Isaac to the {{r|Black Market}}, a room which sells {{r|Shop}} items for Hearts rather than Coins.
+ |-
+ | SOME DOORS REQUIRE A BLESSING. CARRY THEM WITH YOU
+ | Refers to how to open the large golden door on {{s|Chest}} and the {{s|Dark Room}} and fight {{E|Mega Satan}}, by gathering two Key Pieces from the [[Angel]]s.
+ |-
+ | DENY HIS GIFTS TO ATTAIN YOUR REWARD
+ | References how skipping a {{r|Devil Room}} gives the chance to gain access to the {{r|Angel Room}}.
+ |-
+ | SLEEPING GATEKEEPERS WILL NEED TO BE AWOKEN WITH A LOUD SOUND
+ | Possibly referencing how Isaac can use bombs on the Angel statues in order to awaken them. Reference to Zelda 1.
+ |-
+ | ROOMS MAY YIELD MORE THAN YOU EXPECT. EXPERIMENTATION IS KEY
+ | Unknown, possibly referencing {{r|Secret Room}}s or the trapdoor and bed in Isaac's room, or tinted rocks and other breakable objects.
+ |}
+One of the following [[Seeds]] may also be displayed:{{column list | width = 10em | content =
+* BOOB TOOB
+* BRWN SNKE
+* B911 TCZL
+* CAMO K1DD
+* CAMO FOES
+* CAMO DROP
+* CHAM P1ON
+* CLST RPHO
+* COCK FGHT
+* COME BACK
+* CONF ETTI
+* DONT STOP
+* DRAW KCAB
+* DYSL EX1A
+* FACE DOWN
+* FART SNDS
+* FREE 2PAY
+* IMNO BODY
+* GGGG GGGG
+* HART BEAT
+* ISAA AACE
+* KEEP AWAY
+* NICA LISY
+* PAC1 F1SM
+* SLOW 4ME2
+* TARO TARJ
+* THEG HOST
+* XXXX XXZX
+* 8AJJ AASE
+* BLCK CNDL
+* LABY RNTH
+* KAPP A
+* {{dlc|r}} M0DE SEVN
+}}
+
+== Notes ==
+* Being a [[special card]], the '''Rules Card''' has a significantly lower chance of appearing compared to other cards.
+
+{{nav|fr=Carte des Règles}}

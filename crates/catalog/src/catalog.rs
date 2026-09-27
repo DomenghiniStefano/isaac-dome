@@ -6,6 +6,7 @@ use crate::achievements::{self, Achievement};
 use crate::bossportraits::{self, Boss};
 use crate::challenges::{self, Challenge};
 use crate::diagnostics::{Diagnostic, Source};
+use crate::entities::{self, Entity};
 use crate::heads;
 use crate::ids::{AchievementId, BossId, ChallengeId, CharacterId, ItemId};
 use crate::itempools::{self, Pool, PoolMembership};
@@ -27,7 +28,7 @@ use crate::versusscreen::{self, PortraitCrops};
 /// itself: a new source read by `build` and left out of here fails
 /// `a_reader_that_has_nothing_yields_one_missing_diagnostic_per_source`.
 #[cfg(feature = "test-api")]
-pub const SOURCES: [(&str, Source); 13] = [
+pub const SOURCES: [(&str, Source); 14] = [
     source(Source::Items),
     source(Source::Metadata),
     source(Source::Strings),
@@ -41,6 +42,7 @@ pub const SOURCES: [(&str, Source); 13] = [
     source(Source::VersusScreen),
     source(Source::VersusScreenMother),
     source(Source::VersusScreenDogma),
+    source(Source::Entities),
 ];
 
 #[cfg(feature = "test-api")]
@@ -69,6 +71,7 @@ const fn path_of(source: Source) -> &'static str {
         Source::VersusScreen => "gfx/ui/boss/versusscreen.anm2",
         Source::VersusScreenMother => "gfx/ui/boss/versusscreen_mother.anm2",
         Source::VersusScreenDogma => "gfx/ui/boss/versusscreen_dogma.anm2",
+        Source::Entities => "entities2.xml",
     }
 }
 
@@ -86,6 +89,8 @@ pub struct Catalog {
     unlocks: unlock::Index,
     /// The game's own minimap icons, by the name the game gave each one.
     minimap: BTreeMap<String, SpriteRef>,
+    /// Every row of `entities2.xml`, by `(id, variant, subtype)`.
+    entities: BTreeMap<(u32, u32, u32), Entity>,
 }
 
 impl Catalog {
@@ -124,6 +129,9 @@ impl Catalog {
             |b| b.id,
         );
         let minimap = src.parse(Source::MinimapIcons, minimap::parse);
+        let entities = keyed(src.parse(Source::Entities, entities::parse), |e| {
+            (e.id, e.variant, e.subtype)
+        });
 
         let mut diagnostics = src.diagnostics;
         assign_rewards(&achievements, &mut challenges, &mut diagnostics);
@@ -140,6 +148,7 @@ impl Catalog {
             diagnostics,
             unlocks,
             minimap,
+            entities,
         }
     }
 
@@ -149,6 +158,25 @@ impl Catalog {
     /// its own symbol either way, and nothing here invents a crop.
     pub fn minimap_icon(&self, name: &str) -> Option<&SpriteRef> {
         self.minimap.get(name)
+    }
+
+    /// The row of `entities2.xml` for `(id, variant, subtype)`.
+    ///
+    /// Falls back to `subtype` `0` when the exact triple isn't its own row: the file lists a
+    /// subtype only where that form draws differently, and every other subtype is the base
+    /// row's picture. A caller that already asked for subtype `0` gets nothing extra from the
+    /// fallback, which is why it's skipped in that case rather than looked up twice.
+    pub fn entity(&self, id: u32, variant: u32, subtype: u32) -> Option<&Entity> {
+        self.entities.get(&(id, variant, subtype)).or_else(|| {
+            (subtype != 0)
+                .then(|| self.entities.get(&(id, variant, 0)))
+                .flatten()
+        })
+    }
+
+    /// All the rows of `entities2.xml`, ordered by their key.
+    pub fn entities(&self) -> impl Iterator<Item = &Entity> {
+        self.entities.values()
     }
 
     pub fn item(&self, kind: ItemKind, id: ItemId) -> Option<&Item> {

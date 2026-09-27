@@ -1,0 +1,27 @@
+{{infobox version
+ | dlc  = a+
+ | date = 2017-05-21
+}}
+
+== Undocumented changes ==
+=== Additions ===
+* Blowing up [[Mom's dressing table]] will now cause it to vanish and drop 1-4 [[pill]]s. There is also a 1% chance to spawn {{i|Mom's Underwear}}, {{i|Mom's Heels}}, {{i|Mom's Lipstick}}, {{i|Mom's Bra}}, {{i|Mom's Pad}}, {{i|Mom's Eyeshadow}}, {{i|Mom's Contacts}}, {{i|Mom's Wig}}, {{i|Mom's Perfume}}, or {{i|Mom's Pearls}}.
+* {{i|Monster Manual}} now contributes towards the [[Bookworm]] transformation.
+* [[I'm Excited!!!]] now turns into [[I'm Drowsy]] when holding {{i|PHD}}.
+
+=== Fixes ===
+* Fixed the bug where {{i|Plan C}} incorrectly had 1 charge.
+* Fixed the bug where {{i|Forget Me Now}} incorrectly had 1 charge.
+* Fixed an issue where holding {{i|Coupon}} in a [[Devil Room]] would crash the game.
+* Fixed the bug with {{s|Caves}} room #208 where it was never given any doors.
+* Fixed the bug where [[Booster Pack #2]] items were given the wrong DecreaseBy value in the "itempools.xml" file.
+* Fixed the bug where the picking up the {{i|The Inner Eye}} or {{i|Mutant Spider}} after having {{i|Polyphemus}} would not properly update your damage.
+* The Leprocy item is now spelled correctly as {{i|Leprosy}}.
+* Fixed the bug where {{i|Jacob's Ladder}} and {{i|Technology Zero}} would damage Isaac.
+* Fixed the bug where the Delirium version of [[Gurglings]] didn't use their unique sprite.
+* Fixed the bug where beating an objective that should grant a completion mark with a modded character would make the game crash.
+* The Levathian transformation is now spelled correctly as [[Leviathan]].
+* An exploit involving {{i|Forget Me Now}} has been fixed. {{explain}}
+
+{{nav|version}}
+[[Category:Added in Booster Pack 2]]

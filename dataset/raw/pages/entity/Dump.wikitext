@@ -1,0 +1,39 @@
+{{infobox monster
+ | dlc         = r
+ | name        = Dump
+ | id          = 876
+ | base hp     = 10
+ | stage hp    = 1
+ | environment = {{floor|Dross}}<br>{{room|challenge}}
+ | behavior    = Slides toward Isaac, leaving a trail of slippery [[creep#Brown Creep|brown creep]]. After taking enough damage, its head slides off and quickly bounces around the room and its body spews out brown shots until it empties.
+}}
+
+'''Dump''' is a monster that is exclusive to {{s|Dross}}.
+
+Dump is consistently in a puddle of [[Creep#Brown Creep|Brown Creep]] and leaves a trail while chasing Isaac. When it takes enough damage, its head comes off and flies around the room while its body spews out brown shots like a geyser until it empties and disappears into the ground.
+
+This enemy has 3 different facial expressions, all of which are purely cosmetic and don't affect how its head looks after it detaches.
+{{clear}}
+
+== Dump Head ==
+{{infobox monster
+ | dlc         = r
+ | name        = Dump Head
+ | variant     = 1
+ | base hp     = 10
+ | stage hp    = 1
+ | environment = {{floor|Dross}}<br>{{room|challenge}}
+ | behavior    = Quickly slides toward Isaac, leaving a trail of slippery [[Creep#Brown Creep|brown creep]]. Can spawn on its own or be created by a Dump after it takes enough damage.
+}}
+
+'''Dump Head''' refers to the head of Dump once its body takes enough damage, although it can also spawn naturally in rooms.
+
+It slides towards Isaac and leaves a trail of slippery brown creep. If split as a result of depleting the Dump’s health, it bounces off walls then chases Isaac.
+{{clear}}
+
+== Gallery ==
+<gallery>
+File:Dross enemy concept art.png|Concept art for the Dump and the [[Poot Mine]].
+</gallery>
+
+{{nav|fr=Ordure}}

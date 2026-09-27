@@ -1,0 +1,32 @@
+{{header runes}}
+{{Infobox rune
+ | name        = Berkano
+ | type        = rune
+ | image scale = 1/10
+ | id          = 38
+ | quote       = Companionship
+ | description = {{dlc|nr+}} Spawns 3 [[Blue Fly|Blue Flies]] and 3 [[Blue Spider]]s.<br>{{dlc|r+}} Gives Isaac 3 standard {{i|Abyss|n}} locusts for the room.
+ | unlocked by = Rune of Berkano
+| recharge = {{dlcalt|2|r+=4}}
+}}
+
+{{cit|ur}}
+
+== Effects ==
+* {{dlc|nr+}} Spawns 3 [[Blue Fly|Blue Flies]] and 3 [[Blue Spider]]s.
+* {{dlc+|r+}} Gives Isaac 3 standard {{i|Abyss}} locusts for the room.{{dlc-}}
+
+== Synergies ==
+* {{I|Tarot Cloth|nr}}: Spawns 6 Blue Flies and 6 Blue Spiders.
+* {{t|Fish Tail|nr+}}: Doubles the flies and spiders spawned.
+* {{i|BFFS!|r+}} / {{i|Hive Mind}}: Increases the locusts' size and damage by 25%.
+** These two items don't stack.
+* {{t|Extension Cord|r+}}: Electricity will flow between Isaac and the locusts.
+* {{i|Ipecac|r+}}: Locusts gain a flat +2 damage.
+* {{i|Sacrificial Altar}}: Locust summoned for the room can be sacrificed as regular {{i|Abyss}} locust, allowing to use the item even if no familiars have been yet obtained.
+
+== Interactions ==
+* {{I|Tarot Cloth|r}}: No effect.
+
+{{nav}}
+[[Category:Runes]]

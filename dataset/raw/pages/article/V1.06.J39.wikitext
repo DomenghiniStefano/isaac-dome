@@ -1,0 +1,13 @@
+{{infobox version
+ | dlc  = a+
+ | date = 2017-03-24
+}}
+
+== Undocumented changes ==
+=== Fixes ===
+* Fixed the bug where tear firing buttons would automatically be released upon entering a boss room.
+* Fixed the bug where {{i|Incubus}} would not work correctly with the new charge bars.
+* Fixed the bug with the new charge bars where it rendered the growing bar behind the background image.
+
+{{nav|version}}
+[[Category:Added in Booster Pack 1]]

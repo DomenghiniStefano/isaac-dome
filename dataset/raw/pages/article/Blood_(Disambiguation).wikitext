@@ -1,0 +1,118 @@
+{{disambiguation}}
+
+'''Blood''' may refer to:
+
+== Mechanics ==
+
+==== [[Challenges]] ====
+[[Bloody Mary]]: A Bethany challenge that starts with some blood related items
+
+==== Environment ====
+* [[Blood Donation Machine]], a machine which depletes half of a Red Heart container in exchange for dropping coins.
+* [[Red creep]], which represents blood.
+
+== Blood in title ==
+The word "blood" appears in the title of the item.
+
+=== Collectibles ===
+==== Activated ====
+* {{I|Blood Rights}}, damages entire room at the cost of depleting a full [[Red Heart container]].
+
+==== Passive ====
+* {{I|Blood Bag}}, grants increased [[health]].
+* {{I|Blood Clot}}, grants increased [[damage]] and [[range]].
+* {{I|Blood of the Martyr}}, grants increased damage and turns Isaac's tears into '''blood''' tears.
+* {{I|Bloody Lust}}, after taking damage, grants increased damage for the floor.
+* {{I|Lusty Blood}}, increases damage by 0.5 up to 10 times in the current room each time a [[monster]] is defeated.
+* {{I|Bloodshot Eye}}, Spawns an [[orbital familiar]] that deals 30 damage per second and fires a randomly angled tear every 2 seconds.
+** Pickup quote states, "'''Blood'''y friend"
+* {{I|Blood Bombs}}, Bombs leave behind damaging [[red creep]]. Isaac can place [[bomb]]s at the cost of half a heart if he doesn't have any. Pickup quote states,
+** "'''Blood'''y blast + HP up"
+* {{I|Blood Oath}}, Stabs Isaac at the beginning of each floor, draining his [[Red Heart container|Red Hearts]]. Increases [[damage]] and [[speed]] for the floor based on the amount drained.
+* {{I|Blood Puppy}}, Spawns a [[familiar]] that chases enemies. After killing enough enemies, it becomes more powerful and drops [[Red Heart]]s after killing enemies, but will also try to hurt Isaac. Attacking it returns it to normal.
+* {{I|Bloody Gust}}, When Isaac takes damage, he gains [[speed]] and [[tears]] for the rest of the floor.
+
+=== Trinkets ===
+* {{t|Bloody Penny}}, when a coin is collected, grants a 50% chance to drop a half [[Red Heart]].
+* {{t|Bloody Crown}}, [[Treasure Room]]s now appear in [[chapter 4]].
+** Pickup quote states, "Drips with '''blood.'''.."
+
+== Blood in item pickup quote ==
+The word blood appears in the pickup quote of the item.
+
+==== Activated ====
+* {{I|IV Bag}}, drops [[Penny|Pennies]] at the cost of depleting half of a Red Heart container.
+** Pickup quote states, "Portable '''blood''' bank."
+* {{I|Sharp Straw}}, Damages all enemies in the room, has a chance to drop a half soul heart if an enemy is hit.
+** Pickup quote states, "More '''blood'''!"
+
+==== Passive ====
+* {{I|Anemic}}, after taking damage, grants a trail of red [[creep]] for the room.
+** Pickup quote states, "Toxic '''blood'''."
+** Anemia is a decrease in the blood's ability to carry oxygen.
+* {{I|Brimstone}}, Replaces Isaac's tears with a charged laser.
+** Pickup quote states, "'''Blood''' laser barrage"
+* {{I|Leech}} , Spawns a leech [[familiar]] that chases enemies, dealing ~3 damage per second. Heals a Half Red Heart whenever Leech kills an enemy.
+** Pickup quote states, "'''Blood''' sucker."
+* {{I|Headless Baby}}, Spawns a familiar that follows Isaac, leaving blood creep on the ground.
+** Pickup quote states, "'''Blood'''y friend."
+* {{I|Bloodshot Eye}}, Spawns an [[orbital familiar]] that deals 30 damage per second and fires a randomly angled tear every 2 seconds.
+** Pickup quote states, "'''Blood'''y friend."
+* {{I|Jumper Cables}}, Grants an active item charge every 15 enemies killed.
+** Pickup quote states, "'''Blood'''y recharge"
+* {{I|Shard of Glass}} Upon taking damage, Isaac has a chance to drop a full red heart,{{dlc|nr}} gain 5 range, and leave a trail of damaging red creep for the current room.
+** Pickup quote states, "'''Blood''' and guts"
+** {{Dlc|r}}Taking damage causes Isaac to bleed, spraying a volley of '''blood''' in the direction he fires. The Bleeding will eventually damage him, but it can be stopped by picking up a Red Heart.
+* {{I|A Pound of Flesh}}, [[Devil deal]]s now cost [[coin]]s, [[shop]] items now cost [[health]], and [[consumable]]s in shops are surrounded by spikes.
+** Pickup quote states, "'''Blood''' money"
+* {{I|Hungry Soul}}, Enemies have a chance to spawn ghosts on death, which chase and deal contact damage to enemies and explode after a short time.
+** Pickup quote states, "Out for '''Blood''' "
+* {{I|Hypercoagulation}}, After Isaac takes damage from an enemy or donates health, launches [[red heart]]s from Isaac that despawn after 1.5 seconds.
+** Pickup quote states, "Thick '''Blood'''ed"
+** Hypercoagulation is a medical condition that causes blood clots to spontaneously form in a person’s blood vessels and prevents them from dissolving properly.
+* {{I|Vengeful Spirit}} After taking damage, spawns an orbital wisp that lasts for the entire floor, up to a maximum of six. They fire tears but do not block shots.
+** Pickup quote states, "Hot '''blood'''ed"
+
+=== Trinkets ===
+* {{t|Bloody Crown}}, [[Treasure Room]]s now spawn in [[chapter 4]].
+** Pickup quote states, "Drips with '''blood.'''.."
+
+== Employs blood creep/tears ==
+When the item is used, it spawns red tears and/or red creep, to show blood.
+
+==== Activated ====
+* {{I|The Book of Belial}}, grants a damage up for the current room and turns Isaac's tears blood Red.
+* {{I|Scissors}}, Turns Isaac's head into a stationary [[familiar]] for the current [[room]] which fires tears automatically.
+** {{Dlc|r}}causes Isaac's body to shoot a controllable fountain of '''blood''' shots.
+* {{I|Glass Cannon}}, {{dlc|nr}}Fires a high-damage piercing spectral tear, but lowers Isaac's health to half a heart.
+** {{Dlc|r}}Fires a high-damage piercing spectral tear. If Isaac takes damage while holding this, he takes extra damage, leaves behind '''blood''' red [[creep]] behind him, and it becomes the [[Broken Glass Cannon]].
+
+==== Passive ====
+* {{I|Headless Baby}}, Spawns a familiar that follows Isaac, leaving blood creep on the ground.
+** Pickup quote states, "'''Blood'''y friend."
+* {{I|Kidney Stone}}, Isaac's tears turn blood red, and  Randomly while firing tears, Isaac will stop firing and turn red himself, where he will charge and release a lot of 'tears' in one go.
+* {{I|Lead Pencil}}, After every 15 tears fired, Isaac will fire a high-damage cluster of blood red tears.
+** Pickup quote states, " ''He's a bleeder!"''
+* {{I|Haemolacria}},Tears are now Red and fired in an arc. Upon hitting the floor, an obstacle, or an enemy, they burst into many smaller tears in all directions. Increases tear delay.
+** Haemolacria is a real condition that causes people to cry blood.
+* {{I|Hemoptysis}}, Double-tapping a fire button causes Isaac to sneeze '''blood''', dealing damage to enemies in front of him.
+** Hemoptysis is the medical term for coughing up blood.
+* {{I|Akeldama}}, While in an uncleared room, Isaac forms a trail of '''blood'''y tears that drags behind him, bursting and dealing damage upon contact with enemies.
+** Akeldama means 'field of '''blood'''<nowiki/>' in Aramaic, and the item references the field that Judas spilled his guts out on
+* {{I|Isaac's Heart}} Isaac himself is now immune to all damage, and a heart familiar follows him. If the heart is hurt, Isaac is hurt.
+** {{Dlc|r}}The heart charges up as Isaac shoots, firing 8 '''blood''' shots, knocking back enemies, and leaving a puddle of '''Blood''' creep when released.
+
+== Bleeding ==
+When losing blood, you bleed. here are the few items that reference bleeding.
+
+* {{I|Backstabber}},Isaac's tears deal double [[damage]] and inflict [[Status Effects#Bleed|bleeding]] on enemies if they're facing away from Isaac.
+* {{I|Mom's Razor}}, Spawns an [[Familiar#Orbital Familiar|orbiting]] razor that deals contact damage and inflicts [[bleed]]ing on enemies, causing them to slowly take damage over time.
+* {{I|Lead Pencil}}, After every 15 tears fired, Isaac will fire a high-damage cluster of blood red tears.
+** Pickup quote states, " ''He's a bleeder!"''
+* {{I|Shard of Glass}} Upon taking damage, Isaac has a chance to drop a full red heart,{{dlc|nr}}gain 5 range, and leave a trail of damaging red creep for the current room.
+** Pickup quote states, "'''Blood''' and guts"
+** {{Dlc|r}}Taking damage causes Isaac to bleed, spraying a volley of blood in the direction he fires. Bleeding will eventually damage him, but it can be stopped by picking up a Red Heart.
+* {{I|Blood Oath}}, Stabs Isaac at the beginning of each floor, draining his [[Red Heart container|red hearts]]. Increases [[damage]] and [[speed]] for the floor based on the amount drained.
+** Pickup quote states, " ''Bleed me dry"''
+
+{{nav|fr=Sang (Homonymie)}}

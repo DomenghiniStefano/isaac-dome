@@ -1,0 +1,20 @@
+{{header item pools}}
+{{item pool
+ | dlc = r
+}}
+
+Mom's Chest is a unique chest appearing in {{s|Home}}. On the first encounter, it always contains {{i|Red Key}} but in later runs will draw additionally from a pool of {{E|Mom}}-related items. Items that draw from the current room's item pool such as {{i|Mystery Gift}} will spawn items from this pool when used in Mom's bedroom.
+
+== Activated Collectibles ==
+{{item pool/header}}
+{{pool items | Mom's Bottle of Pills, Mom's Box, Mom's Bra, Mom's Pad }}
+{{pool items | weight = 0.5 | Red Key }}
+|}
+
+== Passive Collectibles ==
+{{item pool/header}}
+{{pool items | Mom's Coin Purse, Mom's Contacts, Mom's Eye, Mom's Eyeshadow, Mom's Heels, Mom's Key, Mom's Lipstick, Mom's Pearls, Mom's Perfume, Mom's Purse, Mom's Razor, Mom's Ring, Mom's Underwear, Mom's Wig }}
+{{pool items | weight = 0.1 | Mom's Knife }}
+|}
+
+{{nav|fr=Coffre de Maman (Banque d'Objets)}}

@@ -1,0 +1,11 @@
+{{infobox version
+ | dlc  = a+
+ | date = 2017-07-18
+}}
+
+== Undocumented changes ==
+* Fixed the bug where {{i|A Lump of Coal}} would cause the black ring from {{i|Athame}} or {{i|Maw Of The Void}} to only deal half of the damage that it was supposed to.
+* [[Angelic Baby|Angelic Babies]] spawned from Isaac will now always appear in the bottom-center of the room. This fixes the bug where they could occasionally spawn inside of the player, causing unavoidable damage.
+
+{{nav|version}}
+[[Category:Added in Booster Pack 3]]

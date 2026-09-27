@@ -1,38 +1,36 @@
 //! `wiki-snapshot`: a developer tool, never shipped. `fetch` downloads the pages and
 //! Cargo tables from bindingofisaacrebirth.wiki.gg into `dataset/raw/`, the only place
 //! in the repo that talks to the network; `build` turns that snapshot into
-//! `dataset/wiki.json`, the file the `wiki` crate embeds into the binary.
+//! `dataset/wiki/`, one file per collection, which the `wiki` crate merges and embeds
+//! into the binary.
 
+mod admit;
 mod api;
+mod fetch;
 mod http;
+mod namespace;
 mod store;
 
-use std::collections::{BTreeMap, BTreeSet};
+use std::collections::BTreeMap;
 use std::path::{Path, PathBuf};
 use std::process::ExitCode;
 
-use wiki::{build, page_file_name, Corrections, Dataset, IndexEntry, PageKind, Raw, Row};
-
-use crate::api::{
-    cargo_url, is_translation_subpage, pages_url, parse_cargo, parse_pages, sort_rows, FetchedPage,
-    Pending, ROWS_PER_REQUEST, TABLES,
-};
-use crate::store::{prune, write_if_changed};
+use wiki::{build, dead_links, Corrections, Dataset, Raw};
 
 const USAGE: &str =
-    "usage:\n  wiki-snapshot fetch [--out <dir>]\n  wiki-snapshot build [--raw <dir>] [--out <file>]";
+    "usage:\n  wiki-snapshot fetch [--out <dir>]\n  wiki-snapshot build [--raw <dir>] [--out <dir>]";
 /// How many entries of each diagnostic map `build` shows.
 const DIAGNOSTIC_ROWS: usize = 20;
 
 /// How the program ends when things don't go well: a usage error (exit 2) or a
 /// network or disk one (exit 1).
 #[derive(Debug)]
-enum Failure {
+pub(crate) enum Failure {
     Usage(String),
     Error(String),
 }
 
-type Outcome = Result<(), Failure>;
+pub(crate) type Outcome = Result<(), Failure>;
 
 fn main() -> ExitCode {
     let args: Vec<String> = std::env::args().skip(1).collect();
@@ -84,7 +82,7 @@ fn run(args: &[String]) -> Outcome {
                 .get("out")
                 .map(PathBuf::from)
                 .unwrap_or_else(|| root.join("dataset").join("raw"));
-            fetch(&out)
+            fetch::fetch(&out)
         }
         Some("build") => {
             let opts = parse_options(&args[1..], &["raw", "out"])?;
@@ -95,7 +93,7 @@ fn run(args: &[String]) -> Outcome {
             let out = opts
                 .get("out")
                 .map(PathBuf::from)
-                .unwrap_or_else(|| root.join("dataset").join("wiki.json"));
+                .unwrap_or_else(|| root.join("dataset").join("wiki"));
             build_dataset(&raw, &out, &root.join("dataset").join("corrections.json"))
         }
         Some(other) => Err(Failure::Usage(format!("unknown command: {other}"))),
@@ -103,228 +101,8 @@ fn run(args: &[String]) -> Outcome {
     }
 }
 
-fn io_error(what: &Path, e: std::io::Error) -> Failure {
+pub(crate) fn io_error(what: &Path, e: std::io::Error) -> Failure {
     Failure::Error(format!("{}: {e}", what.display()))
-}
-
-/// A page's text as it goes to disk: LF line endings, because the repo forces LF in the
-/// working copy and a downloaded CRLF would get rewritten on every `fetch`.
-fn page_bytes(text: &str) -> Vec<u8> {
-    text.replace("\r\n", "\n").into_bytes()
-}
-
-/// What fetching one kind leaves behind: how many files it wrote, and the names it wrote or
-/// confirmed — the ones the directory's `prune` keeps, and whose count is the kind's page
-/// count. It also remembers each file name's lowercase spelling, for [`admit`].
-#[derive(Debug, Default)]
-struct KindFetch {
-    written: usize,
-    keep: BTreeSet<String>,
-    /// `page_file_name` is injective, but Windows's filesystem is case-insensitive: two
-    /// titles that collide would keep the first one and warn about it. Lowercase file name →
-    /// the title that took it.
-    titles_by_lower_name: BTreeMap<String, String>,
-}
-
-/// Whether a page that arrived with text is filed under the kind being fetched.
-#[derive(Debug, PartialEq, Eq)]
-enum Admission {
-    /// Filed, under this file name.
-    Admit(String),
-    /// A translation (`Steven/de`): it transcludes the same infobox, and it is not a page of ours.
-    Translation,
-    /// Already filed under another kind, which keeps it.
-    OtherKind(PageKind),
-    /// Another title already took the same file name on a case-insensitive filesystem.
-    SameFileAs(String),
-}
-
-/// Where a page goes, from what is already filed. Pure: the warnings and the writes are the
-/// caller's. A page that reappears with text within the same kind is admitted again and
-/// silently replaces its entry; the same page under a different kind stays with the first.
-fn admit(
-    title: &str,
-    kind: PageKind,
-    index: &BTreeMap<String, IndexEntry>,
-    fetched: &KindFetch,
-) -> Admission {
-    if is_translation_subpage(title) {
-        return Admission::Translation;
-    }
-    if let Some(prev) = index.get(title).filter(|prev| prev.kind != kind) {
-        return Admission::OtherKind(prev.kind);
-    }
-    let name = format!("{}.wikitext", page_file_name(title));
-    match fetched
-        .titles_by_lower_name
-        .get(&name.to_lowercase())
-        .filter(|first| *first != title)
-    {
-        Some(first) => Admission::SameFileAs(first.clone()),
-        None => Admission::Admit(name),
-    }
-}
-
-/// Downloads all pages of one kind, writes them and updates the index.
-///
-/// One generator run per template, and `Pending` belongs to a run: a page the server lists
-/// without text arrives in a later batch *of that same run*, so each template has to answer
-/// for its own before the next one starts (B45: the characters have two).
-fn fetch_kind(
-    kind: PageKind,
-    dir: &Path,
-    index: &mut BTreeMap<String, IndexEntry>,
-) -> Result<KindFetch, Failure> {
-    let mut fetched = KindFetch::default();
-    for template in kind.templates() {
-        fetch_template(template, kind, dir, index, &mut fetched)?;
-    }
-    Ok(fetched)
-}
-
-/// One template's generator run, batch after batch.
-///
-/// Pages listed without text: the server relists in every batch the ones already delivered
-/// too, and in a truncated batch it lists ahead of time the ones that will arrive later. Only
-/// at the end of the run do we know if any are still missing.
-fn fetch_template(
-    template: &str,
-    kind: PageKind,
-    dir: &Path,
-    index: &mut BTreeMap<String, IndexEntry>,
-    fetched: &mut KindFetch,
-) -> Outcome {
-    let mut pending = Pending::default();
-    let mut cont = BTreeMap::new();
-    loop {
-        let body = http::get(&pages_url(template, &cont)).map_err(Failure::Error)?;
-        let batch = parse_pages(&body).map_err(Failure::Error)?;
-        for (pageid, title) in &batch.without_revision {
-            pending.seen_without(*pageid, title);
-        }
-        for page in batch.pages {
-            pending.delivered(page.pageid);
-            file_page(page, kind, dir, index, fetched)?;
-        }
-        match batch.cont {
-            Some(c) => cont = c,
-            None => break,
-        }
-    }
-    let unresolved = pending.unresolved();
-    if !unresolved.is_empty() {
-        return Err(Failure::Error(format!(
-            "{}: {} pages listed by {template} but never arrived with text: {}",
-            kind.dir(),
-            unresolved.len(),
-            unresolved.join(", ")
-        )));
-    }
-    Ok(())
-}
-
-/// Writes one page and files it in the index, or says why it is not filed.
-fn file_page(
-    page: FetchedPage,
-    kind: PageKind,
-    dir: &Path,
-    index: &mut BTreeMap<String, IndexEntry>,
-    fetched: &mut KindFetch,
-) -> Outcome {
-    let name = match admit(&page.title, kind, index, fetched) {
-        Admission::Admit(name) => name,
-        Admission::Translation => return Ok(()),
-        Admission::OtherKind(prev) => {
-            eprintln!(
-                "  warning: «{}» is already of kind {}; ignored as {}",
-                page.title,
-                prev.dir(),
-                kind.dir()
-            );
-            return Ok(());
-        }
-        Admission::SameFileAs(first) => {
-            eprintln!(
-                "  warning: «{}» and «{}» have the same file name on a case-insensitive \
-                 filesystem; keeping the first one",
-                first, page.title
-            );
-            return Ok(());
-        }
-    };
-    fetched
-        .titles_by_lower_name
-        .insert(name.to_lowercase(), page.title.clone());
-    let path = dir.join(&name);
-    if write_if_changed(&path, &page_bytes(&page.text)).map_err(|e| io_error(&path, e))? {
-        fetched.written += 1;
-    }
-    fetched.keep.insert(name);
-    index.insert(
-        page.title,
-        IndexEntry {
-            kind,
-            pageid: page.pageid,
-            revid: page.revid,
-            timestamp: page.timestamp,
-        },
-    );
-    Ok(())
-}
-
-/// Downloads a whole Cargo table, in pages of `ROWS_PER_REQUEST` rows.
-fn fetch_table(table: &str, fields: &str) -> Result<Vec<Row>, Failure> {
-    let mut rows = Vec::new();
-    let mut offset = 0;
-    loop {
-        let body = http::get(&cargo_url(table, fields, offset)).map_err(Failure::Error)?;
-        let batch = parse_cargo(&body).map_err(Failure::Error)?;
-        let n = batch.len();
-        rows.extend(batch);
-        if n < ROWS_PER_REQUEST {
-            break;
-        }
-        offset += ROWS_PER_REQUEST;
-    }
-    sort_rows(&mut rows);
-    Ok(rows)
-}
-
-fn pretty_json<T: serde::Serialize>(value: &T) -> Result<Vec<u8>, Failure> {
-    let mut s = serde_json::to_string_pretty(value)
-        .map_err(|e| Failure::Error(format!("serialization: {e}")))?;
-    s.push('\n');
-    Ok(s.into_bytes())
-}
-
-fn fetch(out: &Path) -> Outcome {
-    println!("snapshot at {}", out.display());
-    let mut index = BTreeMap::new();
-    for kind in PageKind::ALL {
-        let dir = out.join("pages").join(kind.dir());
-        let fetched = fetch_kind(kind, &dir, &mut index)?;
-        let removed = prune(&dir, &fetched.keep).map_err(|e| io_error(&dir, e))?;
-        for name in &removed {
-            println!("  deleted {}", name);
-        }
-        println!(
-            "{}: {} pages, {} written, {} deleted",
-            kind.dir(),
-            fetched.keep.len(),
-            fetched.written,
-            removed.len()
-        );
-    }
-    for (table, fields) in TABLES {
-        let rows = fetch_table(table, fields)?;
-        let path = out.join("cargo").join(format!("{table}.json"));
-        write_if_changed(&path, &pretty_json(&rows)?).map_err(|e| io_error(&path, e))?;
-        println!("{table}: {} rows", rows.len());
-    }
-    let path = out.join("index.json");
-    write_if_changed(&path, &pretty_json(&index)?).map_err(|e| io_error(&path, e))?;
-    println!("index.json: {} pages", index.len());
-    Ok(())
 }
 
 /// `corrections.json` if present; a missing file counts as an empty map, a malformed one is an error.
@@ -352,14 +130,16 @@ fn print_meta(ds: &Dataset) {
     let m = &ds.meta;
     let c = &m.counts;
     println!(
-        "entries: {} items, {} trinkets, {} achievements, {} bosses, {} challenges, {} characters, {} transformations",
+        "entries: {} items, {} trinkets, {} achievements, {} bosses, {} challenges, {} characters, {} transformations, {} entities, {} articles",
         c.items,
         c.trinkets,
         c.achievements,
         c.bosses,
         c.challenges,
         c.characters,
-        c.transformations
+        c.transformations,
+        c.entities,
+        c.articles
     );
     println!("snapshotAt: {} (max revid {})", m.snapshot_at, m.max_revid);
     match &m.last_known_patch {
@@ -379,29 +159,42 @@ fn print_meta(ds: &Dataset) {
         unknown_entities,
         unknown_infoboxes,
         spans_outside_their_page,
+        unknown_heart_types,
+        unmodelled_table_rows,
     } = &m.diagnostics;
     println!("pages without id: {pages_without_id}");
     println!("transformations whose two item lists disagree: {transformation_sources_disagree}");
     println!("orphan closers: {orphan_closers}");
     println!("spans outside their page: {spans_outside_their_page}");
+    println!("unmodelled table rows: {unmodelled_table_rows}");
     print_diagnostic("unresolved references", unresolved);
     print_diagnostic("unknown templates", unknown_templates);
     print_diagnostic("discarded sections", discarded_sections);
     print_diagnostic("unknown dlc codes", unknown_dlc_codes);
     print_diagnostic("unknown entities", unknown_entities);
     print_diagnostic("unknown infoboxes", unknown_infoboxes);
+    print_diagnostic("unknown heart types", unknown_heart_types);
+    // Not part of `meta.diagnostics`: whether a `Ref`'s target has a page is a fact about
+    // the whole dataset, not about the page one is printed from, and it never ships in
+    // `dataset/wiki/` — the destinations are the parser's own maintenance concern, not the
+    // app's at runtime.
+    let links = dead_links(ds);
+    print_diagnostic("dead concept links", &links.concept_pages);
+    print_diagnostic("unopenable refs (id with no page)", &links.unopenable_refs);
 }
 
 fn build_dataset(raw_dir: &Path, out: &Path, corrections_path: &Path) -> Outcome {
     let raw = Raw::load(raw_dir).map_err(|e| Failure::Error(e.to_string()))?;
     let corrections = load_corrections(corrections_path)?;
     let ds = build(&raw, &corrections);
-    let changed = write_if_changed(out, ds.to_json().as_bytes()).map_err(|e| io_error(out, e))?;
-    println!(
-        "{}: {}",
-        out.display(),
-        if changed { "written" } else { "unchanged" }
-    );
+    let report = ds.write_dir(out).map_err(|e| io_error(out, e))?;
+    for (file, written) in &report {
+        println!(
+            "{}: {}",
+            out.join(file).display(),
+            if *written { "written" } else { "unchanged" }
+        );
+    }
     print_meta(&ds);
     Ok(())
 }
@@ -423,55 +216,5 @@ mod tests {
             Err(Failure::Usage(_))
         ));
         assert!(matches!(run(&[]), Err(Failure::Usage(_))));
-    }
-
-    #[test]
-    fn page_bytes_normalise_line_endings() {
-        assert_eq!(page_bytes("a\r\nb\n"), b"a\nb\n");
-    }
-
-    fn entry(kind: PageKind) -> IndexEntry {
-        IndexEntry {
-            kind,
-            pageid: 1,
-            revid: 1,
-            timestamp: String::new(),
-        }
-    }
-
-    /// A page is filed under the kind being fetched unless it is a translation, belongs to
-    /// another kind already, or would share a file name with another title on a
-    /// case-insensitive filesystem. The same title twice is the server relisting it, and it
-    /// is filed again.
-    #[test]
-    fn admission_decides_where_a_page_goes() {
-        let mut index = BTreeMap::new();
-        index.insert("Cain".to_string(), entry(PageKind::Character));
-        let mut fetched = KindFetch::default();
-        fetched
-            .titles_by_lower_name
-            .insert("the_d6.wikitext".into(), "The D6".into());
-
-        let kind = PageKind::Collectible;
-        assert_eq!(
-            admit("Steven/de", kind, &index, &fetched),
-            Admission::Translation
-        );
-        assert_eq!(
-            admit("Cain", kind, &index, &fetched),
-            Admission::OtherKind(PageKind::Character)
-        );
-        assert_eq!(
-            admit("The d6", kind, &index, &fetched),
-            Admission::SameFileAs("The D6".into())
-        );
-        assert_eq!(
-            admit("The D6", kind, &index, &fetched),
-            Admission::Admit("The_D6.wikitext".into())
-        );
-        assert_eq!(
-            admit("Cain", PageKind::Character, &index, &fetched),
-            Admission::Admit("Cain.wikitext".into())
-        );
     }
 }

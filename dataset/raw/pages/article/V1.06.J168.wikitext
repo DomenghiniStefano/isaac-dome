@@ -1,0 +1,113 @@
+{{infobox version
+ | dlc    = a+
+ | date   = 2018-05-11
+ | reddit = 8iscer
+}}
+
+== Documented changes ==
+=== Graphical changes ===
+* Added unique {{c|The Forgotten}} costumes for {{tf|Conjoined}}, {{tf|Seraphim}}, {{tf|Leviathan}} {{tf|Spider Baby}} , {{tf|Bob}}, {{i|Capricorn}}, {{i|The Ludovico Technique}}, {{i|Tooth Picks}}, {{i|Tough Love}}, {{i|Serpent's Kiss}}, {{i|Infestation 2}}, {{i|Spirit of the Night}}, {{i|Epiphora}}, {{i|Epic Fetus}}, and {{i|Pupula Duplex}}.
+* Added skin color alts to {{i|Immaculate Conception}}.
+* Slightly improved item sprite for {{i|The Belt}}.
+* Added extra animations to the {{i|Gemini}} familiar. Based on [https://steamcommunity.com/sharedfiles/filedetails/?id=1239674288 this Steam Workshop mod] by piber20.
+* Picking up {{i|Black Candle}} under {{Curse|Darkness}} will now make the darkness fade away instead of immediately lighting the room up.
+
+=== Other Changes ===
+* {{i|Mom's Shovel}} now counts towards the {{tf|Yes Mother?}} transformation.
+* Familiars will now be teleported to the player's position when entering the {{e|Mom}} fight.
+* {{c|The Forgotten}}'s body will now be teleported to the player’s position when entering a fight against {{e|Gurdy}}, {{e|Mom}} or {{e|Mom's Heart}} as {{c|The Soul}}.
+* {{t|Locust of War}} will now refrain from targeting or colliding with enemies for 2 seconds after entering a room.
+* {{e|The Thing}} can no longer spawn as a regenerating red champion as that makes it near impossible to kill with some loadouts.
+* Added a charge bar to {{i|Lil Spewer}}.
+* Losing a {{e|Bone Heart}} to damage will now reduce {{c|The Forgotten}}'s devil deal chance.
+* {{e|Ministro}}s will now be replaced with {{e|Hopper}}s instead of {{e|Leaper}}s in {{mode|hard}}[[Hard Mode]] before "The Gate is Open" is unlocked.
+* {{i|Brittle Bones}} is now a simple minor Tears Up when picked up by {{c|Keeper}} or {{c|The Lost}} and will no longer kill {{c|Keeper}}.
+* Added stage HP to {{e|Blister}}s to make them less tanky when encountered on early floors.
+* {{e|The Lamb}} will no longer do its rotating {{i|Brimstone}} attack when close to a wall.
+* {{i|Epiphora}} and {{i|Dead Eye}} now synergize with {{c|The Forgotten}}.
+* {{i|Eden's Blessing}}s are now limited to a maximum of 10 to prevent potential crashes.
+* Adjusted the contents of {{i|Pandora's Box}} in {{mode|greed}}[[Greed mode]].
+* {{e|Krampus}} will now do a short dash towards the player before doing a spinning {{i|Brimstone}} attack (this should act as a clearer tell and prevent him from doing that attack when next to a wall).
+
+=== Bug fixes ===
+* Fixed many missing/outdated features from the Linux version.
+* Fixed {{c|The Forgotten}}'s score value fluctuating when switching between forms.
+* Fixed {{c|The Forgotten}}'s ranged attack sometimes firing backwards with controllers.
+* Fixed {{i|Flat Stone}} causing Ipecac shots to silently explode with no visible explosion effect.
+* Fixed {{i|3 Dollar Bill}} not increasing the size of the player's tears when granting the Proptosis effect.
+* Fixed being able to keep the {{i|Whore of Babylon}} state when switching from {{c|The Forgotten}}'s soul form to his skeleton form.
+* Fixed being able to go to the {{s|Cathedral}} while holding {{i|Mom's Shovel}}.
+* Fixed {{i|Dr. Fetus}} and {{i|Epic Fetus}} being launched from the wrong position when thrown by {{c|The Forgotten}} right after a pickup animation.
+* Fixed {{i|Mega Blast}} not requiring {{e|Mega Satan}} to be defeated with {{c|Apollyon}} and {{c|The Forgotten}}.
+* Fixed a crash occurring when running the game after subscribing or unsubscribing from a mod.
+* Fixed big {{e|Attack Fly|Display=Attack Flies}} spawned by {{e|The Duke of Flies}} orbiting him instead of chasing the player.
+* Fixed first spawned {{e|The Duke of Flies}} in a room hogging all the orbital flies spawned by other Dukes in the room.
+* Fixed {{e|Bomb}}s sometimes being thrown up in the air when dropped (could happen after a {{c|The Forgotten}} + {{i|Dr. Fetus}} run).
+* Fixed a previous {{e|Big Horn}} fix causing his {{e|Delirium}} form to permanently drop Delirium's HP to a very low amount, making him very easy to kill.
+* Fixed a previous change causing explosions from permanently [[charm]]ed enemies to damage the player.
+* Fixed [[Reward Plate]]s spawning multiple rewards on top of each other in the exact same position.
+* Fixed [[Hematemesis]] removing all red hearts with the {{c|The Forgotten}} instead of leaving a single full red heart.
+* Fixed {{i|Placebo}} not triggering {{i|Acid Baby}} and {{i|Lil Spewer}} like using a [[pill]] normally would.
+* Fixed {{i|Flat Stone}} not being in any item pool.
+* Fixed the charge bar for {{i|Maw Of The Void}} not being positioned properly when the player's size changes.
+* Fixed the {{c|The Forgotten}} charge bar being inaccurate with {{i|Monstro's Lung}}.
+* Fixed {{t|Crow Heart}} causing the player to lose their devil deal chance even if the damaged red hearts were inside a Bone Heart.
+* Fixed a previous change causing {{r|I AM ERROR}} rooms to always use the same layout.
+* Fixed the {{i|Coupon}} being able to drop from {{e|Greed}} and {{e|Shopkeeper}}s without actually being unlocked.
+* Fixed {{i|E. Coli}} poops not being destructible by lasers.
+* Fixed [[charm]]ed enemies sometimes getting stuck trying to target invulnerable enemies.
+* Fixed [[charm]]ed enemies not being able to hit certain enemies (such as {{e|Portal}}s and {{e|Widow}}).
+* Fixed {{e|Portal}}s always being replaced with {{e|Greed}} in {{mode|greed}}[[Greed Mode]] before "The Gate is Open" is unlocked.
+* Fixed a {{r|Black Market}} layout having the wrong type of [[button]]s.
+* Fixed {{e|Krampus}} sometimes not roaring before an attack.
+* Fixed softlock caused by teleporting to the {{r|I AM ERROR}} room when holding {{i|Broken Shovel 1}} in Depths 2.
+* Fixed some glitchy behavior with {{e|Delirium}}'s {{e|The Matriarch}} form.
+* Fixed [[Babies|coop babies]] taking more {{e|Red Heart}}s from the player than intended when the player has {{e|Bone Heart}}s.
+* Fixed being able to get black hearts from {{e|Stoney}}s by touching them while having {{i|The Virus}}/{{i|Serpent's Kiss}}.
+* Fixed [[Bomb Rock]] explosions not being symmetrical, causing some nearby rocks to survive the explosion despite being close enough.
+* Fixed a rare crash caused by {{e|The Matriarch}} when transitioning to her second phase.
+* Fixed {{e|The Lamb}} being able to move during its rotating Brimstone attack before the beams have fully disappeared.
+* Fixed a previous change causing fires from {{i|Fire Mind}} and {{i|Hot Bombs}} to deal much less damage than intended.
+* Fixed several AB+ Double Trouble boss layouts being picked on the wrong floors.
+* Fixed Double Trouble allowing the player to encounter bosses that haven't been unlocked yet.
+* Fixed a softlock caused by catching {{e|The Haunt}}'s {{e|Lil' Haunt}}s with {{i|Friendly Ball}}.
+* Fixed a softlock caused by using {{i|Delirious}} in {{e|Mega Satan}}'s room before triggering his boss fight.
+* Fixed bosses spawned by {{i|Delirious}} playing the boss victory jingle on death in some cases.
+* Fixed {{e|Ultra Greed}} getting stuck trying to dash against item pedestals or the player in {{i|Gnawed Leaf}} form.
+* Fixed {{e|Bone Heart}}s causing {{c|???}} to become invulnerable in certain conditions.
+* Fixed {{p|Jera}}, {{i|D20}} and other similar items affecting pickups that have already been picked up and are playing their disappearing animation.
+* Fixed a previous fix causing {{c|Eden}}'s hair to always be the first variant.
+* Fixed a bug causing battery charge to be duplicated with the {{i|Schoolbag}}.
+* Fixed {{i|Pause}} not disabling itself when the player loses it or swaps it with another item.
+* Fixed {{i|Abaddon}} and {{i|Brittle Bones}} not removing {{c|The Forgotten}}'s {{e|Red Heart}}s if picked up when in soul form.
+* Fixed a glitch with {{i|Glowing Hourglass}} causing {{c|The Forgotten}}'s soul to die upon rewinding.
+* Fixed {{i|Polyphemus}} having a wrong green skin variant.
+* Fixed {{i|Number One}} having an outdated white skin variant.
+* Fixed {{tf|Seraphim}} transformation costume not supporting skin variants.
+* Fixed {{c|Lilith}} not starting with {{i|Cambion Conception}} before unlocking it.
+* Fixed {{i|Dr. Fetus}} and {{i|Epic Fetus}} not firing with {{c|The Forgotten}} when held between more than two rooms.
+* Fixed {{i|Dr. Fetus}} with {{c|The Forgotten}} sometimes causing {{e|Bomb}}s to be invisible.
+* Fixed {{i|Jumper Cables}} not unlocking if {{t|AAA Battery}} or {{t|Watch Battery}} were picked up last.
+* Fixed a previous change causing invisible headless enemies (such as {{e|Pacer}}s and {{e|Gusher}}s) to spawn from enemies killed during their spawn animation.
+
+=== Mod support ===
+* Added missing sound enums.
+* Fixed a previous change preventing modded tears from changing their sprite scale from a Lua callback.
+* {{e|Death's Head}}s and {{e|Stoney}}s can now be placed alone in rooms with pressure plates.
+* Added a <code>costumeSuffix</code> parameter to <code>players.xml</code> to specify a special costumes folder per character (for instance a custom character with <code>costumesSuffix="test"</code> will attempt to load costume spritesheets from <code>resources/gfx/costumes_test</code> instead of <code>resources/gfx/costumes</code>).
+
+=== Debug console changes ===
+* Fixed Alt Gr sometimes causing the left Ctrl key to get stuck in the console (Windows fix only for now, need to confirm Linux and OSX have this issue as well)
+
+== Undocumented changes ==
+* Fixed the bugged stacked entities in Super Gluttony room #2112.
+* There are now 2 item pedestals in Greed Mode Angel Room #0 (up from 1).
+* There is now 1 item pedestal in Greed Mode Angel Room #6 (up from 0).
+* There are now 2 item pedestals in Greed Mode Angel Room #1 (up from 1).
+* There are now 2 item pedestals in Greed Mode Angel Room #1 (up from 2).
+* Fixed the bugged Begotten Chains in Greed Sheol room #31.
+* Fixed the bugged Begotten Chain in Greed Sheol room #58.
+* Fixed glowing firefly/dust motes getting stuck at the center of L-shaped rooms.
+
+{{nav|version}}
+[[Category:Added in Booster Pack 5]]

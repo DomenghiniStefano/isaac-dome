@@ -1,0 +1,31 @@
+{{infobox version
+ | date = 2014-11-07
+}}
+
+== Documented changes ==
+=== Additions ===
+* Add parameter in Options.ini where you can turn off Steam Cloud.
+* Add ALT + F2 shortcut on Stats page to import Steam [[achievement]]s.
+
+=== Fixes ===
+* Added soundtrack files of the Afterbirth DLC.
+* Added some lost items to the item pools.
+* Fixed crash on using FBO in OpenGL 2 contexts.
+* Fixed some issues with Steam Cloud Sync.
+* Fixed [[The Haunt]] staying invulnerable sometimes.
+* Fixed other gameplay related bugs.
+* Fixed OS X black screen issue.
+* Fixed player position when returning from [[black market]].
+* Fixed crash when fighting one of the final bosses.
+* Fixed Xbox 360 controller issues on Linux.
+
+== Undocumented changes ==
+=== Changes ===
+* Increased the default range of [[Azazel]]'s {{i|Brimstone}}.<ref>http://i.imgur.com/CjASJjg.png</ref>
+* Improved the effect of Range Up items on [[Azazel]]'s {{i|Brimstone}}.<ref>https://www.reddit.com/r/bindingofisaac/comments/2lfbpr/the_binding_of_isaac_rebirth_known_pc_issues/clullmn</ref>
+* Decreased {{i|Dark Bum}}'s heart conversion rate to a 1.5:1 ratio.<ref>http://www.reddit.com/r/bindingofisaac/comments/2lnjio/the_binding_of_isaac_rebirth_version_101_release/clwhhc3</ref>
+
+== References ==
+<references />
+
+{{nav|version}}

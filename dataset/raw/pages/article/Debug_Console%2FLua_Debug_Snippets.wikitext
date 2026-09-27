@@ -1,0 +1,23 @@
+A collection of Lua code snippets that can be run directly in the [[Debug Console]] to find out otherwise hidden details, leveraging the Modding API functionality.
+
+To use these, simply copy the entire code block and paste it (with Control+V) with the Debug Console open.
+
+{| class="wikitable"
+ ! Code
+ ! Description
+ |-
+ | <syntaxhighlight lang="lua">l for _,v in pairs(Isaac.GetRoomEntities()) do print("Type "..v.Type.."."..v.Variant.."."..v.SubType..", size "..v.Size.." x ("..v.SizeMulti.X..", "..v.SizeMulti.Y..")") end</syntaxhighlight>
+ | Displays the type, variant and subtype for all entities in the room, their hitbox sizes and size multipliers. The entity type numbers can be found in the Modding reference.
+ |-
+ | <syntaxhighlight lang="lua">l for _,v in pairs(Isaac.GetRoomEntities()) do c=v:GetColor(); print(c.R..", "..c.G..", "..c.B.." ("..c.A..") + "..c.RO..", "..c.GO..", "..c.BO) end</syntaxhighlight>
+ | Shows all the entities' colors (as RGBA multiplier + RGB offset).
+ |-
+ | <syntaxhighlight lang="lua">l for _,v in pairs(Isaac.GetRoomEntities()) do f=v:ToFamiliar(); if f ~= nil then print(f.OrbitDistance.X.."/"..f.OrbitDistance.Y) end end</syntaxhighlight>
+ | Finds all Isaac's [[familiar]]s and displays their orbit distances; useful for comparing orbitals' blocking/attacking area.
+ |-
+ | <syntaxhighlight lang="lua">l local pos = 32; local room = Game():GetRoom(); room:SpawnGridEntity(pos, 14, 7, 1, 0); room:SpawnGridEntity(pos+1, 14, 8, 1, 0); room:SpawnGridEntity(pos+15, 14, 9, 1, 0); room:SpawnGridEntity(pos+16, 14, 10, 1, 0)</syntaxhighlight>
+ | Spawns a [[Giant Poop]]. Use <code>debug 11</code> to determine which <code>pos</code> to use.
+ |}
+
+{{nav|modding}}
+[[Category:Lua reference]]

@@ -1,0 +1,25 @@
+{{Disambig msg|damaged savefiles|the achievement|Corrupted Data}}
+
+Corrupt data is a savefile state where the savefile can not be loaded due to an error. There are several conditions that may induce corruption in the savefile.
+
+{{incomplete|Verification on the specifics of what causes corruption is needed.}}
+
+== Importing Save Files Manually ==
+Importing save files may not work properly, as some important things might have not been moved in the manual import, resulting in an unusable imported version.
+
+== Installing DLCs ==
+Due to the numerous changes between DLCs, automatic savefile importing may also result in errors when installing ''Afterbirth+'' or ''Repentance''.
+
+Errors are more likely while having a save file with a run already started.{{cn}}
+
+== Hardware/Software Issues ==
+Misbehaving hardware or software on the computer/console may cause damage to the game state while it's held in memory, and if written to disk can corrupt the save file.
+
+== Modifying Game Files ==
+Modified game files could cause unstable or even deleterious effects on the game; the files should be edited only with proper modding knowledge and tested on a save file that is not important.
+
+== Modifying Save Files ==
+Although the save data can be edited directly using binary/hex editing tools, it is very risky as the format is complex and an edit without accounting for integrity of the data and checksums will likely render the file unusable.
+
+{{nav|fr=Données corrompues (Sauvegarde)}}
+[[Category:Mechanics]]

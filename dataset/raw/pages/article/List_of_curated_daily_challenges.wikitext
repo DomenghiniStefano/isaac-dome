@@ -1,0 +1,245 @@
+The following table is a list of curated daily runs for [[Daily Challenges]]:
+
+{| class="wikitable striped"
+ |-
+ ! Date !! Event, if any !! Peculiarities
+ |-
+ | January 1
+ | New Year's
+ |{{Dlc|ana+}}{{c|Magdalene}} to {{e|It Lives!}} / {{dlc|a+}} {{c|Lazarus}} to {{e|The Lamb}}; [[blindfolded]]; starts with 99 {{e|Bomb}}s. The {{r|Treasure Room}} item pool is replaced with explosive Items: {{i|Mr. Boom}}, {{i|Bob's Rotten Head}}, {{i|Remote Detonator}}, {{i|Anarchist Cookbook}}, {{i|Boom!}}, {{i|Pyro}}, {{i|Mr. Mega}}, {{i|Butt Bombs}}, {{i|Glitter Bombs|n}}, {{i|Sticky Bombs|n}}, {{i|Scatter Bombs|n}}, {{i|Sad Bombs}}, {{i|Hot Bombs}}, {{i|Bomber Boy|n}}, {{i|Bob's Curse}}, {{i|Bobby-Bomb}}, {{i|Pyromaniac}}, {{i|Match Book}}, {{i|BOGO Bombs}}, {{i|Bomb Bag}}, {{i|Curse of the Tower|n}}, {{i|Dr. Fetus}}, {{i|Nancy Bombs}}, {{i|Rocket in a Jar}}, {{i|Blood Bombs}}, {{i|Ghost Bombs}}.
+Once all of these have been encountered once, the item pool will turn back to normal.
+ |-
+ |{{dlc|a+}} January 14
+ | National Dress Up Your Pet Day
+ | {{c|Isaac}} to a random goal; starts with {{i|Guppy's Head}}, {{i|Guppy's Collar}}, and {{i|Guppy's Tail}}; no {{r|Treasure Room}}s.
+ |-
+ |{{dlc|a+}} January 16
+ | National Nothing Day
+ | {{c|Apollyon}} to a random goal; no {{r|Treasure Room}}s or {{r|Shop}}s.
+ |-
+ |{{dlc|a+}} January 27
+ | Thomas Crapper Day
+ | {{c|???}} to a random goal; starts with {{i|Flush!}}, {{i|No. 2|n}}, {{i|Number One}} and {{i|Butt Bombs}}; no {{r|Treasure Room}}s or {{r|Shop}}s.
+ |-
+ | February 2
+ | Groundhog Day
+ | Same character, goal and seed as the previous day. However, if either day is a Sunday or Monday, slight variations could occur.
+Note: {{dlc|a}} This run is not available in [[Afterbirth]]. Only the results of previous days can be seen and you can't participate in the run, unless you haven't played the previous day. Leaderboards for Feb 2nd on the AB version of the run still don't exist no matter what, however.
+ |-
+ |{{dlc|a+}} February 9
+ | National Toothache Day
+ | {{c|Cain}} to a random goal; starts with {{i|Monstro's Tooth}}, {{i|Tough Love}}, {{i|Dead Tooth|n}} and 50 Luck; no {{r|Treasure Room}}s.
+ |-
+ |{{dlc|a+}} February 11
+ | National "Don't Cry Over Spilled Milk" Day
+ | {{c|Magdalene}} to a random goal; starts with {{i|Soy Milk}} and {{i|Milk!|n}}.
+ |-
+ | February 14
+ | Valentine's Day
+ | {{c|Magdalene}} to {{e|It Lives!}}; starts with {{i|Friendly Ball|n}}, {{i|Mom's Eyeshadow}}, {{i|The Battery}} and 7 Luck.
+ |-
+ |{{dlc|a+}} February 18
+ | National Battery Day
+ | {{c|Isaac}} to a random goal; starts with {{i|Charged Baby|n}}, {{i|9 Volt}}, {{i|The Battery}}, {{i|Car Battery|n}}, {{i|Mom's Purse}}, {{t|AAA Battery}} and {{t|Watch Battery|n}}.
+ |-
+ | March 2
+ | Edmund's birthday
+ | {{c|Isaac}} to {{e|Mega Satan}}; starts with {{t|The Left Hand}}. The drop function is disabled, however Trinkets and Cards/Pills/Runes can still be swapped.
+ |-
+ |{{dlc|a+}} March 4
+ | Holy Experiment Day
+ | {{c|Magdalene}} to a random goal; starts with {{i|Immaculate Conception|n}}, {{i|Seraphim|n}} and {{i|Eucharist|n}}; no {{r|Treasure Room}}s.
+ |-
+ | March 17
+ | St. Patrick's day
+ | {{c|Cain}} to {{e|Mega Satan}}; starts with 18 Luck.
+ |-
+ |{{dlc|a+}} March 20
+ | National Alien Abduction Day
+ | {{c|Isaac}} to a random goal; starts with {{i|The Parasite}}, {{i|Tractor Beam|n}} and {{i|Cone Head|n}}; no {{r|Treasure Room}}s.
+ |-
+ |{{dlc|a+}} March 22
+ | National "Goof off" day
+ | {{c|Isaac}} to a random goal; starts with an inherent effect of most worm Trinkets: {{t|Flat Worm}}, {{t|Hook Worm}}, {{t|Lazy Worm|n}}, {{t|Ouroboros Worm|n}}, {{t|Pulse Worm}}, {{t|Ring Worm}}, {{t|Tape Worm|n}}, {{t|Whip Worm}}, {{t|Wiggle Worm}}.
+ |-
+ |[[wikipedia:List of dates for Easter|Easter]] (ranges from late March through May)
+ |Easter
+ | {{c|Lazarus}} to {{e|Isaac}}; starts with {{i|The Nail}}, {{i|Stigmata}} and {{i|Blood of the Martyr}}; no {{r|Treasure Room}}s.
+ |-
+ |April 1
+ |April Fool's Day
+ |{{c|Keeper}} ({{dlc|nr}} with the Old Man Keeper costume) to {{e|Mega Satan}}; random Items and Trinkets upon pickup. The ''actual'' Items will be from the current room's item pool and ignore the [[Item Pool#Weight Decrementation|touch-removal rule]]. The ''advertised'' Items' [[Item Pool#Weight Decrementation|weights are decremented]] on sight and are removed from all item pools upon pickup. If the actual item is an [[active item]], the player's current active item will be overwritten on pickup. Every {{e|Nickel}} is a {{e|Sticky Nickel}}. {{dlc|nr}} Chests are more likely to spawn Chests.
+ |-
+ |{{dlc|a+}} April 10
+ |National siblings day
+ |{{c|Lilith}} to a random goal; starts with {{i|Sister Maggy}}, {{i|Brother Bobby}}, {{i|Ghost Baby}}, {{i|Little Gish}}, {{i|Little Steven}} and {{i|Mongo Baby}}.
+ |-
+ |{{dlc|a+}} April 15
+ |National That Sucks day
+ | {{c|Lazarus}} to a random goal; starts with {{i|Bob's Brain}}, {{i|Cursed Eye}}, {{i|Curse of the Tower|n}}, {{i|Dead Cat}}, {{i|Bucket of Lard}} and {{t|Tick}}; no {{r|Treasure Room}}s.
+ |-
+ |{{dlc|a+}} April 22
+ |National Jelly Bean day
+ |{{c|Magdalene}} to a random goal; starts with {{i|Wait What?|n}}, {{i|The Black Bean}}, {{i|Linger Bean|n}} and {{i|9 Volt}}; no {{r|Treasure Room}}s.
+ |-
+ | {{dlc|a+}} May 4
+ |May the 4th be with you!
+ |{{c|Isaac}} to a random goal; starts with {{i|Technology}} and {{i|Spear Of Destiny|nr}} / {{i|Spirit Sword}}.
+ |-
+ |May 8
+ |Mothers' day
+ |{{c|Isaac}} to {{e|It Lives!|nr+}} / {{e|The Beast|r+}}; starts with {{i|Mom's Pad}}, {{i|Mom's Lipstick}} and {{i|Mom's Eye}}; no {{r|Treasure Room}}s.
+ |-
+ |{{dlc|a+}} May 13
+ |National "Stamp Out Hunger" and Frog Jump day
+ |{{c|Magdalene}} to a random goal; starts with {{i|How to Jump}} and {{i|Thunder Thighs}}. Using {{i|How to Jump}} will send out rock waves similar to {{i|Wait What?|n}}. No {{r|Treasure Room}}s.
+ |-
+ |{{dlc|a+}} May 17
+ |National "Pack Rat Day"
+ |{{c|Isaac}} to a random goal; starts with {{i|D20}} and {{i|Sack Head|n}}.
+ |-
+ |May 30
+ |Memorial day
+ |{{c|The Lost}} to {{e|???}}; [[blindfolded]]; starts with {{i|Ghost Baby}}, {{i|Sister Maggy}}, {{i|Brother Bobby}}, {{i|Rotten Baby}}, {{i|Dry Baby}} and {{i|BFFS!}}.
+ |-
+ |{{dlc|a+}} June 2
+ |
+ |{{c|Magdalene}} to {{e|It Lives!|nr}} / {{e|The Lamb|rnr+}} / {{e|Mother|r+}}; starts with {{i|Blank Card}}, {{t|Mom's Toenail}} and {{p|II - The High Priestess}} in addition to her starting Pill. Mom's Toenail can't be dropped or swapped, however other Trinkets can. No {{r|Treasure Room}}s.
+ |-
+ |{{dlc|a+}} June 5
+ |World Environment Day
+ |{{c|???}} to a random goal; starts with {{i|Gnawed Leaf}} and {{i|Restock|n}}.
+ |-
+ |{{dlc|a+}} June 18
+ |National Splurge Day
+ |{{c|Cain}} to a random goal; starts with {{i|A Dollar}}.
+ |-
+ |June 19
+ | Fathers' day
+ |{{c|Cain}} to {{dlc|nr+}}{{e|It Lives!}}/{{dlc+|r+}}{{e|The Beast}}{{dlc-}}; starts with {{i|Dad's Key}}, {{i|Daddy Longlegs}} and {{i|9 Volt}}; no {{r|Treasure Room}}s.
+{{dlc|nr+}}Trapdoors can't be spawned on {{s|Womb}} II.
+ |-
+ |June 25
+ |Pride day
+ |{{c|The Lost}} to {{e|Mom}}; starts with {{i|3 Dollar Bill}}, {{i|Fruit Cake|n}} and {{i|Rainbow Baby}}.
+ |-
+ |{{dlc|a+}} July 2
+ |I Forgot Day
+ |{{c|???|nr}} / {{c|The Forgotten|r}} to a random goal; starts with {{i|Forget Me Now}}. Permanent {{curse|Lost}}, {{curse|Blind}}, and {{curse|Unknown}}. Curse removal only lasts for the current floor.
+ |-
+ |July 4
+ |American Independence day
+ |{{c|Samson}} to {{e|Mega Satan}}; starts with {{i|Dr. Fetus}}, {{i|Scatter Bombs|n}}, {{dlc|r}}{{i|Soy Milk}} and {{i|Rocket in a Jar}}.
+{{dlc|r}} Bombs/Rockets fired by Dr. Fetus have a cosmetic firework effect.
+ |-
+ |{{dlc|a+}} July 11
+ |
+ |{{c|???}} to a random goal; starts with {{i|Compost|n}}, {{i|The Mulligan}}, and {{i|Rotten Baby}}; no {{r|Treasure Room}}s.
+ |-
+ |{{dlc|a+}} July 13
+ |Embrace Your Geekness Day
+ | {{c|Lazarus}} to a random goal; starts with {{i|Monster Manual}}, {{i|20/20}}, {{i|Robo-Baby}} and {{p|Dice Shard|n}} in addition to his starting Pill; no {{r|Treasure Room}}s.
+ |-
+ |{{dlc|a+}} August 15
+ |National Relaxation day
+ |{{c|Magdalene}} to a random goal; starts with {{i|Tammy's Head}}, {{i|Brimstone}}, {{i|Rubber Cement}}, {{i|Holy Mantle}} and {{i|Spoon Bender}}; no {{r|Treasure Room}}s.
+ |-
+ |{{dlc|a+}} August 16
+ | National Tell a Joke day
+ |{{c|Keeper}} to a random goal; firing tears sometimes causes farts; every pill is [[Explosive Diarrhea]].
+ |-
+ |{{dlc|a+}} August 22
+ |National Be an Angel day
+ |{{c|Isaac}} to a random goal; starts with {{i|Sacred Heart}}, {{i|Fate}} and {{i|Holy Light|n}}.
+ |-
+ |{{dlc|a+}} September 5
+ |National Be Late for Something day
+ |{{c|Magdalene}} to a random goal; starts with {{i|Stop Watch}}, {{i|Broken Watch}} and 0.15 Speed.
+ |-
+ |{{dlc|a+}} September 17
+ |National Apple Dumpling day
+ |{{c|Cain}} to a random goal; every Boss Item is {{i|Apple!|n}}.
+ |-
+ |{{dlc|a+}} September 22
+ | Elephant Appreciation Day
+ |{{c|Magdalene}} to a random goal; starts with {{i|Thunder Thighs}} and {{i|Bucket of Lard}}.
+ |-
+ |{{dlc|a+}} October 6
+ |National Mad Hatter day
+ |{{c|Judas}} to a random goal; starts with {{i|Dr. Fetus}} and {{i|Scatter Bombs|n}}. The {{r|Treasure Room}} item pool is replaced with explosive Items: {{i|Mr. Boom}}, {{i|Remote Detonator}}, {{i|Boom!}}, {{i|Mr. Mega}}, {{i|Butt Bombs}}, {{i|Glitter Bombs|n}}, {{i|Sticky Bombs|n}}, {{i|Scatter Bombs|n}}, {{i|Sad Bombs}}, {{i|Bomber Boy|n}}, {{i|Bob's Curse}}, {{i|Bobby-Bomb}}, {{i|Bomb Bag}}, {{i|No. 2|n}}, {{i|Curse of the Tower|n}}, {{i|Explosivo|n}}, {{i|Nancy Bombs}}, {{i|Rocket in a Jar}}.
+ |-
+ |{{dlc|a+}} October 7
+ |World Smile Day
+ |{{c|Isaac}} to a random goal; starts with {{i|Chaos|n}}.
+ |-
+ |October 31
+ |Halloween
+ |{{c|Eve}} to {{e|Satan}}; starts with {{i|Sack Head|n}}.
+ |-
+ |November 1
+ |Day of the Dead
+ |{{c|The Lost}} to {{e|The Lamb}} on [[Hard mode]]; starts with {{i|Dead Cat}}, without {{i|D4}} and {{i|Holy Mantle}}.<br />{{i|Eternal D6}} is removed, but the inherent {{i|Holy Mantle}} effect is available.
+ |-
+ |November 4
+ |G FUEL launch
+ | |{{c|Isaac}} to {{e|???}}; starts without {{i|The D6}}; [[Seeds#Special Seeds|GFVE LLLL special seed]] is enabled.
+The item blacklist from the seed is expanded with: {{i|Cupid's Arrow}}, {{i|The D6}}, {{i|Death's Touch}}, {{i|D100}}, {{i|D4}}, {{i|Taurus}}, {{i|Cursed Eye}}, {{i|Dead Onion}}, {{i|D7|n}}, {{i|Eye of Belial|n}}, {{i|D infinity|n}}, {{i|Eye of the Occult|n}}, {{i|Eternal D6|n}}, {{i|Death Certificate|n}}, {{i|Berserk!|n}}.
+
+Score-specific changes: Having atleast one [[G FUEL!]] multiplies Exploration Bonus from enemies killed by 10. G FUEL! awards an independent base value of 1833 Schwag Bonus; every subsequent can gives around 17% less; every floor increases the base value of a can by around 17%; maximum G FUEL! Schwag Bonus is 10289.
+ |-
+ |November 11
+ | Veterans' day
+ |{{c|The Lost}} to {{e|Mega Satan}} on [[Hard mode]]; no {{r|Treasure Room}}s.
+ |-
+ |{{dlc|a+}} November 13
+ |World Kindness day
+ |{{c|Isaac}} to a random goal; starts with {{i|Blank Card}}, {{i|Habit}}, {{i|A Quarter}}, {{i|PHD}} and {{p|XX - Judgement}}; no {{r|Treasure Room}}s.
+ |-
+ |{{dlc|a+}}November 19
+ |National "Have a Bad Day" day
+ |{{c|???}} to a random goal; starts with {{i|Cursed Eye}}, {{i|Curse of the Tower|n}}, {{i|Scatter Bombs|n}}, {{i|Bob's Brain}} and {{t|Tick}}; no {{r|Treasure Room}}s.
+ |-
+ |4th Thursday of November
+ |Thanksgiving
+ |{{c|Magdalene}} to {{e|Mega Satan}}; starts with {{i|Cupid's Arrow}}. The {{r|Boss Room}} item pool is replaced with {{i|Rotten Meat}}. ({{dlc|nr}}This only applies to the initial Item. Rerolls can be other Items)
+ |-
+ |December 5
+ |Krampusnacht
+ |{{c|Isaac}} to {{e|Satan}}; starts with {{i|A Lump of Coal}} and {{i|Mitre}}. A {{r|Devil Room}} spawns on the first floor. Isaac has an inherent {{i|Goat Head}} effect until {{e|Krampus}} ({{dlc|r}} or {{e|Greed}}) is encountered.
+ |-
+ |December 6
+ |Satoru Iwata's birthday
+ |{{c|Isaac}} (with the Satoru Iwata costume) to {{e|Isaac}}; starts with {{i|The Gamekid}} and {{t|Cartridge}}. The {{r|Treasure Room}} item pool is replaced with Nintendo-themed Items: {{i|How to Jump}}, {{i|Friendly Ball|n}}, {{i|The Boomerang}}, {{i|The Candle}}, {{i|Red Candle}}, {{i|Odd Mushroom (Thin)}}, {{i|Odd Mushroom (Large)}}, {{i|Magic Mushroom}}, {{i|Mini Mush}}, {{i|Gnawed Leaf}}, {{i|The Ladder}}, {{i|Treasure Map}}, {{i|The Compass}}, {{i|Crown Of Light|n}}, {{i|Trinity Shield}}, {{i|Spirit Sword}}, {{i|Mom's Bracelet}}.
+Once all of these have been encountered once, the item pool will turn back to normal.
+ |-
+ |{{dlc|a+}} December 23
+ |National Festivus day
+ |{{c|Judas}} to a random goal; starts with {{i|Blank Card}}, {{i|PHD}}, {{i|Habit}} and {{p|XI - Strength }}. The Treasure Room item pool is replaced with: {{i|The Body}}, {{i|The Soul}}, {{i|The Mind}} and {{i|Godhead}}.
+ |-
+ |December 25
+ |Christmas
+ |{{c|Isaac}} (with a Christmas Hat) to {{e|Mega Satan}}; starts with {{i|A Lump of Coal}} and {{i|A Quarter}}. Isaac has an inherent {{i|More Options|n}} effect.
+ |-
+ |{{dlc|a+}} December 31
+ |New Year's Eve
+ |{{c|Isaac}} to a random goal; starts with {{i|There's Options}} and {{i|More Options|n}}.
+ |}
+
+== Removed dailies ==
+{| class="wikitable striped"
+ |-
+ ! Date !! Event, if any !! Peculiarities
+ |-
+ |}
+
+== Notes ==
+* Only the listed peculiarities are predetermined. Everything else is randomly generated by the game.
+* If a curated daily with a set goal lands on a Monday, it will be on Normal mode instead.
+** {{dlc|r+}} Set goal will also take priority over Mother.
+* If a curated daily with a set goal lands on a Sunday, the set goal will take priority over Mega Satan. This may not always hold true across different DLC run versions, however.
+* Starting Items can be removed with {{i|D4}} effects, {{i|Clicker}} or {{p|0 - The Fool?}} with {{i|Tarot Cloth|n}}.
+* {{p|Soul of the Forgotten}} or {{p|Soul of Jacob and Esau|n}} will copy all starting items (including Active Items), grant the same amount of starting pickups and drop a copy of the starting Trinket/Card/Pill/Rune.
+* {{dlc|r}}Curated item pools work slightly differently: Encountering one of the Items in a Treasure Room will not [[Item Pool#Weight Decrementation|decrement its weight]], allowing it to reappear again. Picking them up or encountering them in a different item pool will decrement them as usual. Once all of the listed Items have been removed, the item pool will turn back to normal.
+
+[[ru:Тематические ежедневные забеги]]
+{{nav|fr=Liste des défis du jour fixes}}

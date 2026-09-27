@@ -1,0 +1,96 @@
+{{infobox version
+ | dlc   = r
+ | steam = 3128308348046688007
+ | date  = 2021-11-16
+}}
+
+== Documented Changes ==
+=== Gameplay changes ===
+* Reduced the cooldown of {{i|Placebo}} with stat upgrades, Pretty Fly and Experimental Pill
+* {{c|The Lost}}'s hearts are now hidden again ({{i|Holy Mantle}} indicator is still visible)
+* Enemies are no longer guaranteed to drop coins when encountered in a previously visited room as {{c|Tainted Keeper}}
+* {{i|Glyph of Balance}} no longer drops soul hearts when playing as the Lost
+* Glyph of Balance can now drop soul hearts, red hearts as Bethany, Tainted Bethany if they need any
+* Glyph of Balance can now drop poop pickups as Tainted ??? if he needs any
+* {{i|Esau Jr.}} now preserves [[Item Tags quest|quest items]] (such as the Polaroid and the Negative)
+* Added {{i|Red Stew}} to the [[Ultra Secret Room (Item Pool)|Ultra Secret Room pool]]
+* Added even more new room layouts
+* Updated a few item qualities
+* Updated localization files
+
+=== Fixes ===
+* Fixed {{a|The Marathon}} achievement not usually unlocking (dailies completed before this update may not count)
+* Fixed the daily exit confirmation popup not rendering correctly in the Chinese translation
+* Fixed the Continue option becoming unavailable when switching languages while mods are enabled
+* Fixed {{c|Tainted Judas}}' {{i|Birthright}} not working as intended
+* Fixed {{c|Tainted Cain}} being able to take fatal devil deals without dying (again)
+* Fixed Tainted Cain not being able to pick up items normally in the {{i|Death Certificate}} area
+* Fixed victory lap popup displaying the wrong message
+* Fixed the victory lap HUD icon clipping into the stat display
+* Fixed lava pits not refreshing properly if the game window was resized
+* {{i|20/20}} now decreases the damage given by Polyphemus similarly to other tear multipliers (this is still very strong since it cancels the firerate decrease from Polyphemus)
+* Fixed 20/20 not increasing {{c|Keeper}} and {{c|Tainted Keeper}}'s firerate
+* Fixed Tainted Keeper getting less coins than intended from enemies in Greed mode
+* Fixed {{t|Telescope Lens}} and {{t|Door Stop}} appearing in Greed mode
+* Fixed {{t|Butter!}} having a 100% chance to drop passive items on damage taken
+* Fixed Butter! being able to drop active items on damage taken
+* {{e|Red Chest}}s can no longer teleport the player to the Devil/Angel room while in the {{i|Genesis}} room
+* Fixed {{e|Dark Esau}} not blocking enemy projectiles when not charging
+* Fixed Dark Esau preventing white champion enemies from losing their invulnerability
+* Fixed Esau Jr. removing Dark Esau when used as {{c|Tainted Jacob}}
+* Fixed {{c|Tainted Lazarus}}' charge bar being visible in water reflections
+* Fixed {{c|Tainted Lilith}}'s birthright preventing her from opening the flesh door in {{s|Mausoleum}} II
+* Fixed {{i|Dogma}} giving hearts every time it is dropped and picked back up
+* Fixed {{i|Mom's Ring}} spawning a rune every time it is dropped and picked back up
+* Fixed {{i|Magic Mushroom}} and {{i|Leo}} granting the Stompy! transformation when repeatedly dropped and picked back up
+* Fixed a {{s|Dross}} room that could have the right side entrance blocked by rocks
+* Fixed a {{s|Depths}} room that could have {{e|Brain}}s behind rocks
+* Fixed a {{s|Cathedral}} room that could have {{e|Polty|text=Polties}} appear on top of entrances
+* Fixed a {{s|Flooded Caves}} boss wave in Greed mode sometimes causing a crash
+* Fixed a crash caused by an “I’m Excited!” pill activating in a room with rain effects
+* Fixed {{t|Expansion Pack}} rarely preventing the player from attacking
+* Fixed not being able to go to {{s|Sheol}} after having used Genesis
+* Fixed Genesis turning other characters into {{c|Isaac}} after having used Esau Jr
+* Fixed {{r|Ultra Secret Room}}s very rarely generating in impossible locations, causing a softlock when teleported to via {{p|XVIII - The Moon?}}
+* Fixed white fire rooms in {{s|Downpour}} and special button rooms in the {{s|Mines}} rarely generating connected to special rooms
+* Fixed {{i|Decap Attack}} causing the head to hover endlessly over the player's body if recalled before the head hits the ground
+* Fixed {{i|Trisagion}} lasers getting stuck when spawned by item interactions that create large amounts of tears
+* Fixed a rare freeze caused by Trisagion + {{i|Continuum}}
+* Fixed {{i|C Section}} synergies with melee weapons creating more fetuses (causing loops/crashes)
+* Fixed a crash caused by picking up {{i|Strawman}} after {{i|Money Power}}
+* Fixed {{t|Shiny Rock}} not doing anything
+* Fixed {{t|Dice Bag}} causing the {{i|Whore of Babylon}} popup to appear whenever it gives a temporary dice item if the player has Whore of Babylon and is at low health
+* Fixed {{t|Panic Button}} triggering on white fires
+* Fixed quest items being disabled when the player carrying them dies in co-op
+* Fixed {{i|Best Friend}} + {{i|Brimstone Bombs}} damaging the player
+* Fixed {{i|C Section}} + {{i|Technology}} sometimes causing self damage when fired by familiars (such as {{i|Incubus}} and {{i|Twisted Pair}})
+* Fixed {{i|Dr. Fetus}} / {{i|Epic Fetus}} + poison effects spawning harmful poison clouds when fired by familiars
+* Fixed the light emanating from {{e|Dogma}}'s TV not rendering correctly
+
+== Undocumented Changes ==
+* New Achievement popups for {{i|7 Seals}}, {{i|Angry Fly}}, {{i|Buddy in a Box}}, {{i|D infinity}}, and {{i|Technology Zero}} which more resemble their actual in-game appearance.
+* Updated icon for {{i|Flip}}, including the blue version (very slightly)
+* Updated icon for {{t|Gigante Bean}}
+* {{c|Tainted Bethany}}'s Found HUD was updated such that her Blood Charges counter doesn't cause the Hard Mode indicator to overlap the Speed icon.
+* {{e|Henry}}'s name in <code>entities2.xml</code> is correct now and no longer "Grave Robber"
+* {{i|Dark Arts}} has a "Dark Arts halo" sprite and associated animation
+* {{i|Glowing Hourglass}} was given the <code>nocantrip</code> [[Item Tags nocantrip|item tag]]
+* Specific changes to item qualities:
+** {{i|Abaddon}}: 4 to 3
+** {{i|Dark Bum}}: 4 to 3
+** {{i|Gello}}: 2 to 3
+** {{i|Halo of Flies}}: 3 to 2
+** {{i|Judas' Shadow}}: 4 to 3
+* Specific {{i|Placebo}} charge amounts:
+** All Stat Ups (Luck, Shot Speed, etc.): 12 to 6
+** Pretty Fly: 12 to 6
+** ???: 2 to 6
+** Experimental Pill: 4 to 3
+* Item quote changes:
+** {{i|Flip}}: Changed from "Life and death" to "Twist of fate"
+** {{i|Sumptorium}}: Changed from "Return" to "Blood to blood"
+** {{i|Birthright}}: Tainted Jacob's Birthright quote changed from "There is no escape" to "It's not yours"
+* Fixed {{t|Broken Glasses}} turning one item blind in double item rooms, such as the ones in {{s|???}}.
+* The southwest door of a 1x2 'tall' room layout in {{s|Utero}} containing {{e|Stone Eye}}s and {{e|Lump}}s was blocked off with a [[Blocks|Metal Block]].
+
+{{nav|version}}

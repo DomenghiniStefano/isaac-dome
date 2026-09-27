@@ -1,0 +1,230 @@
+The '''music''' in ''The Binding of Isaac: Rebirth'', ''[[Afterbirth]]'', ''[[Afterbirth †]]'', and ''[[Repentance]]'' was created by Ridiculon. These soundtracks can be purchased on [https://store.steampowered.com/app/322660/The_Binding_of_Isaac_Rebirth__Soundtrack/ Steam] and on [https://ridiculon.bandcamp.com/ Ridiculon's Bandcamp page], as well as being [https://open.spotify.com/artist/3nR7YC6thZ34eER6R6jAta?si=AtUpNA-RQ6mCdll5CBfKFQ available on Spotify], containing 32, 9, 4, and 20 tracks, respectively. Not all tracks heard in-game are included in the OST releases, and some tracks in the OST do not appear in-game or go unused.
+
+Most main floor tracks have a heavier variant that plays when enough enemies or bosses are in the room. In the OST, these variants are generally heard in each song’s second half. What instrument is added is listed next to each track's name in square brackets.
+
+== [https://ridiculon.bandcamp.com/album/the-binding-of-isaac-rebirth-ost The Binding of Isaac: Rebirth] ==
+{| class="wikitable"
+|-
+! Bandcamp title
+!Spotify title (if different)!! Plays where? !! Internal filename
+|-
+| Genesis 22:10 (Title)
+| rowspan="18" |N/A||{{dlc|na}} Title Screen || title screen
+|-
+| Diptera Sonata ''[Guitar]'' || {{s|Basement}} || diptera sonata(basement)
+|-
+| Crusade (Basic Boss Fight) || Most [[Bosses|boss fights]] || basic boss fight
+|-
+| Sodden Hollow (Caves) ''[Bass guitar]'' || {{s|Caves}} || the caves
+|-
+| The Forgotten (Secret Room) || {{r|Secret Room}}; {{dlc|nr}} {{r|Super Secret Room}} || secret to everyone
+|-
+| Abyss (The Depths) ''[Ambient sounds]'' || {{s|Depths}} || the depths
+|-
+| Matricide (Mom Fight) || {{e|Mom}} fight || mom fight
+|-
+| The Calm || After defeating most bosses; {{dlc|nr}} before starting a {{r|Challenge Room}} || the calm
+|-
+| Viscera (Womb) ''[Drums]'' || {{s|Womb}}; {{dlc|nr}} {{s|Utero}} || the womb chapter four
+|-
+| Ventricide (Womb Fight) || {{e|Mom's Heart}} || womb fight
+|-
+| Acceptance (You Died) || [[Isaac's Last Will|Death screen]] || you died
+|-
+| Anima Vendit (Deal With the Devil) || {{r|Devil Room}}; {{e|Satan}} fight before [[The Fallen]] spawns || deal with the devil
+|-
+| Duress (Sheol) ''[Drums]'' || {{s|Sheol}} || sheol
+|-
+| Hericide (Satan Fight) || [[Satan]] fight after defeating [[The Fallen]] || satan fight
+|-
+| Murmur of the Harvestman (Store) || {{r|Shop}} || store loop
+|-
+| Empty Vessels (Angel Room) || {{r|Angel Room}} || angel room
+|-
+| Everlasting Hymn (Cathedral) ''[Backing choir]'' || {{s|Cathedral}} || cathedral chant
+|-
+| Infanticide (Isaac Fight) || {{e|Isaac}} fight || isaac fight
+|-
+| Ambush
+|Same name, but at the end of the album||{{r|Challenge Room}}; {{dlc|nr}} {{r|Boss Rush}} || ambush
+|-
+| Tome of Knowledge (Library)
+| rowspan="6" |N/A||{{r|Library}} || library
+|-
+| Periculum (The Cellar) ''[Guitar]'' || {{s|Cellar}} || the cellar alt
+|-
+| Capiticus Calvaria (Catacombs) ''[Guitar]'' || {{s|Catacombs}} || catacombs
+|-
+| When Blood Dries (Necropolis) ''[Guitar]'' || {{s|Necropolis}} || necropolis
+|-
+| Sketches of Pain (Chest Room) ''[Guitar]'' || {{s|Chest}} || chest room chapter 6
+|-
+| Ascension (Chest Fight) || {{e|???}} Fight || chest fight
+|-
+| Devoid (___________)
+|Devoid (Dark Room)||{{s|Dark Room}} || dark room alt chapter 6
+|-
+| The Fallen Angel (_____________)
+|The Fallen Angel (Dark Room Fight)||{{e|The Lamb}} fight || dark room fight
+|-
+| Tribute (Credits Roll)
+|Tribute (Credits)||{{dlc|nr}} Credits || credits roll
+|-
+| Genesis 13:37 (Retro Beats)
+| rowspan="2" |N/A||{{r|Arcade}} || retro beats 8-6-14
+|-
+| Hush (Jesus Loves Uke) || {{dlc|r}} Credits after beating [[Mom's Heart]] for the 10th time || jesus loves uke
+|-
+| Descensum (BONUS)
+|Descensum (Bonus Track)|| rowspan="2" | (not heard in-game) || rowspan="2" | (n/a)
+|-
+| He's the Number One (BONUS)
+|He's the Number One (Bonus Track)
+|}
+
+== {{dlc+|a}} [https://ridiculon.bandcamp.com/album/the-binding-of-isaac-afterbirth-ost The Binding of Isaac: Afterbirth] ==
+{| class="wikitable"
+|-
+! Bandcamp title
+!Spotify title (if different)!! Plays where? !! Internal filename
+|-
+| ReGenesis
+|Regenesis (Title)||{{dlc|anr}} Title Screen || regenesis (loop) v3
+|-
+| Cerebrum Dispersio (Boss Alt)
+|N/A|| Chance to replace Crusade || cerebrum dispersio (boss alt) loop
+|-
+| Cicatrix ''[Drums]''
+|Cicatrix (Scarred Womb)||{{s|Scarred Womb}} || cicatrix (scarred womb) loop
+|-
+| Fundamentum ''[Guitar]''
+|Fundamentum (Burning Basement)||{{s|Burning Basement}} || burning basement loop
+|-
+| Kave Diluvii ''[Guitar]''
+|Kave Diluvii (Flooded Caves)||{{s|Flooded Caves}} || kave diluvii (flooded caves) loop
+|-
+| Nativitate ''[Guitar]''
+|Nativitate (Dead Womb)||{{s|???}} || nativitate (dead womb floor) loop
+|-
+| Morituros
+|Morituros (Hush Fight)||{{e|Hush}} fight || morituros (dead womb boss) loop
+|-
+| Pulso Profundum ''[Drums]''
+|Pulso Profundum (Dank Depths)||{{s|Dank Depths}} || pulso profundum (dank depths ) loop
+|-
+| Chorus Mortis (Alt Title Theme)
+|Chorus Mortis (Ultra Greed)||{{e|Ultra Greed}} fight || chorus mortis (punk credit) loop
+|}
+{{dlc-}}
+
+== {{dlc+|a+}} [https://ridiculon.bandcamp.com/album/the-binding-of-isaac-afterbirth-ost-2 The Binding of Isaac: Afterbirth †] ==
+{| class="wikitable"
+|-
+! Bandcamp title
+!Spotify title (if different)!! Plays where? !! Internal filename
+|-
+| Terminus ( ________ )
+|Terminus||{{s|The Void}} || void
+|-
+| Delirium
+| rowspan="2" |N/A||{{e|Delirium}} fight || delirium fight
+|-
+| Sepulcrum || {{dlc|nr}} [[Endings#Ending 20 .2FFinal Ending .28Delirium Ending.29|Final Ending]] / {{dlc|r}} [[Endings#Ending 20 .2FFinal Ending .28Delirium Ending.29|Ending 20]] || the_void_ending
+|-
+| Ante Lucem (BONUS)
+|Ante Lucem|| (not heard in-game) || (n/a)
+|}
+{{dlc-}}
+
+== {{dlc+|r}} [https://ridiculon.bandcamp.com/album/the-binding-of-isaac-repentance-ost The Binding of Isaac: Repentance] ==
+{| class="wikitable"
+|-
+! Bandcamp title
+!Spotify title (if different)!! Plays where? !! Internal filename
+|-
+| Genesis Retake Light
+| rowspan="11" |N/A||{{dlc|r}} Title Screen || genesis retake light loop
+|-
+| River of Despair (Downpour) ''[Heavier instrumentation]'' || {{s|Downpour}} || downpour
+|-
+| Juggernaut (Boss Alt) || Boss fights on Repentance alt floors || boss alt
+|-
+| Fissure (Mines) ''[Heavier instrumentation]'' || {{s|Mines}} || mines
+|-
+| Super Secret Room || {{dlc|r}} {{r|Super Secret Room}} || secret room alt
+|-
+| Walls of Denial (Mausoleum) ''[Heavier instrumentation]'' || {{s|Mausoleum}} || mausoleum
+|-
+| Dread (The Calm Twisted) || After defeating the Mausoleum variant of {{e|Mom's Heart}} || the calm twisted v4 loop
+|-
+| Carrion (Corpse) ''[Guitar]'' || {{s|Corpse}} || corpse
+|-
+| Morticide (Corpse Fight) || {{e|Mother}} fight || mother_boss_v6
+|-
+|Caesarian (Utero) ''[Guitar]'' || {{dlc|r}} {{s|Utero}} || utero
+|-
+| Armageddon (Boss Rush) || {{dlc|r}}  {{r|Boss Rush}} || boss rush
+|-
+| StarGazer (Planetarium)
+|Stargazer (Planetarium)||{{r|Planetarium}} || planetarium
+|-
+| Night Soil (Dross) ''[Heavier instrumentation]''
+| rowspan="8" |N/A||{{s|Dross}} || sewer
+|-
+| Absentia (Ashpit) ''[Heavier instrumentation]'' || {{s|Ashpit}} || ash pit
+|-
+| Morning Star (Gehenna) ''[Heavier instrumentation]'' || {{s|Gehenna}} || gehenna
+|-
+| Bygone || {{r|Ultra Secret Room}} || super secret room loop ''(sic)''
+|-
+| Home ''[Mom's shouts]'' || {{s|Home}} || echoes of mom
+|-
+| [[Living in the Light]] || {{e|Dogma}} fight || static boss light v2
+|-
+| Revelations 13-1 || {{e|The Beast}} fight || the_end_beast
+|-
+| Genesis Retake Dark || [[Characters#Tainted Characters|Tainted]] character select || genesis retake twisted loop
+|-
+| colspan="2" rowspan="7" | (Not Included) ||{{i|Knife Piece 2}} area || vast empty chasm
+|-
+|{{e|Mother's Shadow}} chase || chased by death v3
+|-
+|[[Ascent]] || genesis ii reverse
+|-
+|{{s|Home}} at night || echoes of mom twisted v2
+|-
+|{{i|Death Certificate}} area || echoes reverse
+|-
+|{{dlc|r}} [[Endings#Final Ending .28Dogma .26 The Beast Ending.29|Final Ending]] || end end end vo
+|-
+| Replaces Jesus Loves Uke after unlocking {{a|Dead God}} || jesus loves viggo v3
+|-
+|}
+{{dlc-}}
+
+== {{dlc+|r+}} [[The Binding of Isaac: Repentance+]] ==
+{| class="wikitable"
+|-
+! Bandcamp title
+!Spotify title (if different)!! Plays where? !! Internal filename
+|-
+| There Can Be Only One || N/A || [[Deathmatch]] || deathmatch
+|-
+|}
+{{dlc-}}
+
+== Trivia ==
+* Besides the music listed here, Ridiculon have released three unofficial albums; ''[https://ridiculon.bandcamp.com/album/the-binding-of-isaac-lullabies The Binding of Isaac - Lullabies]'' (which has a colon instead of a hyphen on Spotify), ''[https://ridiculon.bandcamp.com/album/the-binding-of-isaac-mutations The Binding of Isaac: Mutations]'', and ''[https://ridiculon.bandcamp.com/album/shards-of-repentance Shards of Repentance]''.
+* Ridiculon have also released a single titled ''[https://ridiculon.bandcamp.com/album/the-binding-of-christmas The Binding of Christmas]'', though this is only available on Bandcamp.
+* Devoid and The Fallen Angel's descriptions are simply a line of underscores on Bandcamp, while they have real descriptions in the Spotify release. This was likely done to prevent spoilers, as {{s|Dark Room}} was new to Rebirth and not present in Flash Isaac. Terminus also has these underscores, but the description is entirely absent in the Spotify release.
+* The Legend of Bum-Bo, a Binding of Isaac spinoff, has a title theme that sounds similar to and shares a name with Rebirth’s title theme.
+** The title motif can also be heard in ''Living in the Light'' and ''Chorus Mortis'', as well as ''Terminal Lucidity'', [[Delirium]]'s theme in Antibirth. 
+* In an [https://steamcommunity.com/games/250900/announcements/detail/2909846985626025208 interview on Steam], Ridiculon producer Jon Evans listed the OST songs he is most proud of: “‘Sodden Hollow’ for its dripping groove. ‘Sheol’ for even being allowed to be so terrifying in a game OST. ‘Delirium’ for its dank heaviness.” He also points out that “every track we’ve written for Repentance is our fave.”
+* {{s|???}}’s and {{s|Home}}’s music both have “heavy” layers that normally cannot be heard in-game since their respective floors do not contain enemies.
+** {{dlc+|r}} ???’s theme can now be heard in-game by various methods, such as using {{i|Red Key}} in ???.{{dlc-}}
+** Home's layer theme is not referenced in the <code>music.xml</code> file, and as such, can never be heard in game, even if you were to somehow spawn enemies in Home.
+* The filename of Jesus Loves Viggo alludes to Viggo Bossi, Isaac’s voice actor, who sings on the track.
+* The filename of the secret room theme, ''secret to everyone'', is a reference to ''The Legend of Zelda'', where secret rooms contain an NPC that says, "It's a secret to everybody."
+
+{{nav|fr=Musique}}
+[[Category:Music| ]]

@@ -1,0 +1,40 @@
+{{header reverse tarot cards}}
+{{Infobox card
+ | dlc         = r
+ | name        = VII - The Chariot?
+ | files name  = VII - Inverted The Chariot
+ | type        = card
+ | id          = 63
+ | quote       = May nothing walk past you
+ | costume name = Inverted The Chariot
+ | description = Isaac becomes an invincible statue with 4× fire rate for 10 seconds. The statue can be nudged slightly by moving and is affected by knockback.
+ | unlocked by = The Chariot
+ | recharge    = 2
+}}
+
+{{cit|uc|r}}
+
+== Effects ==
+* Isaac becomes an invincible statue with 4× [[fire rate]] for 10 seconds. The statue can no longer move normally, and will only be nudged slightly when pressing a movement key. However, it is still affected by knockback.
+
+== Notes ==
+* Unlike most effects that grant [[invulnerability]], '''VII - The Chariot?''' does not negate damage from {{m|Blood Donation Machine}}s and {{m|Devil Beggar}}s.
+
+== Synergies ==
+* {{i|Rock Bottom}}: The fire rate bonus is retained after the card's effect runs out.
+
+== Interactions ==
+* {{I|Tarot Cloth}}: No effect.
+
+== In-game Footage ==
+{{#ev:youtube|b3cZ6UlSuRk}}
+
+== Trivia ==
+* When '''VII - The Chariot?''' is activated, the statue has a 0.1% chance to look like [[anti:Edith|Edith]], a hidden character from ''Antibirth'' that wasn't adapted into Repentance.
+
+== Gallery ==
+<gallery>
+File:Pickup Inverted The Chariot appearance alt.png|The statue's Easter egg appearance as Edith.
+</gallery>
+
+{{nav|fr=VII - Le Chariot ?|card}}

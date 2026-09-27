@@ -1,0 +1,31 @@
+'''Heart''' may refer to:
+
+== Challenges ==
+* [[Have a Heart]], [[challenge]] #24.
+
+== Enemies ==
+* [[Mask + Heart]], a [[monster]] commonly found in {{s|Necropolis}}.
+* [[Mom's Heart]], the final [[boss]] of [[chapter 4]].
+
+== Items ==
+* {{i|<3}}, a [[passive collectible]] that increases [[health]].
+* {{i|Candy Heart}}, a [[passive collectible]] that grants a stat boost every time red health is regenerated.
+* {{i|BFFS!}}, a [[passive collectible]] that grants increased damage for some [[familiar]]s.
+* {{I|Empty Heart}}, a [[passive collectible]] that adds an empty heart container when Isaac has 1 or less red hearts.
+* {{i|Immaculate Heart}}, a [[passive collectible]] that grants a red heart container, a 1.2 damage multiplier, and a chance to occasionally fire extra spectral tears that orbit around Isaac.
+* {{i|Isaac's Heart}}, a [[passive collectible]] that grants Isaac direct [[death|damage]] immunity, but allows indirect damage through a following heart familiar.
+* {{i|Sacred Heart}}, a [[passive collectible]] that grants [[homing tears]], increased [[damage]], increased [[range]], decreased [[shot speed]], and decreased [[tears]].
+* {{i|Yuck Heart}}, an [[activated collectible]] that grants 1 Rotten Heart.
+* {{i|Yum Heart}}, an [[activated collectible]] that heals Isaac for 1 Red Heart.
+
+== Pickups ==
+* [[Hearts]], a type of [[pickup]] that comes in Red, Soul, Black, Eternal, {{dlc|a+}}Blended, {{dlc|a}}Gold, {{dlc|a+}}Bone, {{dlc|r}}Rotten, and {{dlc|a+}}Scared variants.
+
+== Trinkets ==
+* {{t|Child's Heart}}, which grants an increased chance to find hearts from room drops and [[chest]]s.
+* {{t|Purple Heart}}, which grants an increased chance to find [[Boss Challenge Room]]s and [[champion]] enemies.
+* {{t|Crow Heart}}, which makes all damage go towards red hearts first.
+* {{t|Hollow Heart}}, which grants a bone heart at the start of every floor.
+
+{{disambiguation}}
+{{nav}}

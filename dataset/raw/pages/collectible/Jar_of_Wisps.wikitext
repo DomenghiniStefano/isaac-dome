@@ -35,6 +35,11 @@
 ** {{I|Teleport!}}/{{I|Teleport 2.0}} Wisps fade into and out of existence and have a chance to teleport non-boss enemies to a random spot in the current room when their tears hit them.
 * Switching the jar with other active items and then picking it up again does not reset the number of wisps that will be spawned on use.
 
+== Gallery ==
+<gallery>
+File:JarOfWisps_Animated.gif| Jar of Wisps being gradually filled.
+</gallery>
+
 == Trivia ==
 * This item functions similarly to {{i|Jar of Flies}} and {{I|The Jar}}.
 

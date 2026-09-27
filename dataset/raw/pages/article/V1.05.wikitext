@@ -1,0 +1,30 @@
+{{infobox version
+ | date = 2015-02-06
+}}
+
+== Undocumented changes ==
+=== Additions ===
+* Added a screen shaking visual effect when [[Curse of the Maze]] is active.
+* Added an awakening animation to [[Homunculus]] and [[Begotten]].
+* [[I AM ERROR]] rooms on {{s|Chest}} and {{s|Dark Room}} now generate brand new floors.
+
+=== Changes ===
+* Removed the version number from the main menu.
+* Curse of the Maze now shuffles room layouts more randomly.
+* When the player has {{i|Proptosis}} and {{i|Anti-Gravity}}, tears will not begin shrinking until they start moving.
+* Modified the enemy [[creep]] animation.
+* Modified the teleport animation.
+* Removed the [[Lemon Party]] pill's white flash.
+* Shortened the window to steal a [[Boss Rush]] item with a teleport and have the other items remain.
+* Improved the damage on the beams from {{i|Crack the Sky}}.
+
+=== Fixes ===
+* [[Pin]] and [[Scolex]]'s health bars now accurately depletes.
+* [[Library|Libraries]] now correctly play their music track.
+* Fixed the bug where the player could play as [[Eden]] even without having any Eden tokens available.
+
+== New bugs ==
+* {{i|Ipecac}} shots no longer affect [[machine]]s and [[beggar]]s.
+* {{i|Pyromaniac}} no longer provides invincibility from {{i|Ipecac}} shots.
+
+{{nav|version}}

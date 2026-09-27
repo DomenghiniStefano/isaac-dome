@@ -321,6 +321,11 @@
 == In-game Footage ==
 {{#ev:youtube|ercU7e_f1rs}}
 
+== Gallery ==
+<gallery>
+File:JarOfFlies_Animated.gif|{{dlc|r}} Jar of Flies being gradually filled.
+</gallery>
+
 == Trivia ==
 * {{dlc|nr}} The item's pickup quote references the tagline of the [[wikipedia:Pokemon|Pokémon]] games. The quote said "Gotta catch 'em all?".
 ** The updated quote is also a Pokémon reference, with Bug Catchers being common low-level trainers that appear in foresty areas in most Pokémon games.

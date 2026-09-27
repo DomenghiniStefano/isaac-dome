@@ -1,0 +1,25 @@
+{{page dlc|a+}}
+[[File:RERUN image.jpg|thumb|The main menu with the RERUN option active.]]
+
+'''RERUN''' is a menu option in added in [[Afterbirth †]], unlocked after completing {{a|RERUN}} (Unlocked by completing 3 [[Victory Lap]]s in a row).
+
+After winning a run, the ''Continue'' option in the main menu will be replaced by ''RERUN''. Selecting it starts a new run using most of the previous won run's items.
+
+== Notes ==
+* Isaac will take full heart damage on all floors, except in [[Greed Mode]].
+* It may not be necessary to start a 4th lap to complete the achievement on some versions/platforms. Even if an extra lap is started, it may be quit immediately.
+* RERUN cannot be used multiple times in a row. After beating a RERUN, the main menu option becomes ''Continue'' again.
+** The run with the last character can be relaunched only via defeating {{e|The Lamb}} and starting [[Victory Lap]].
+** After ending a [[Victory Lap]] in any way, the option in the menu is still ''Continue.''
+* RERUN is not counted into the win streak.
+* [[Achievements]] are disabled for RERUN.
+** As achievements are disabled, the {{m|Donation Machine}} will not spawn.
+** This applies to [[Greed Mode]] runs started by RERUN as well, with the {{m|Greed Donation Machine}} not appearing after defeating {{e|Ultra Greed}}.
+
+== Bugs ==
+{{bug|Starting a RERUN with {{i|Schoolbag}} and two active items may copy the item in the "first" slot to both slots.}}
+{{Bug|dlc=r|Starting a victory lap with {{i|Card Reading}} will not work the first time you will walk on the portal. The second time it will work.}}
+
+{{nav|fr=REJOUER}}
+[[Category:Mechanics]]
+[[Category:Modes]]

@@ -1,0 +1,52 @@
+{{infobox monster
+ | id          = 224
+ | base hp     = 100
+ | environment = {{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|Sheol}}<br>{{floor|Chest}}<br>{{room|challenge}}
+ | behavior    = When Isaac lines up with it horizontally, it charges across the room once. When Isaac is not horizontal to it, it spawns Brains.
+}}
+
+'''Oob''' will float slowly around the room randomly and occasionally spawn a {{e|Brain}}. If Isaac lines up horizontal to it, it charges quickly covering the room once.
+
+{{clear}}
+
+== Variations ==
+=== Black Maw ===
+{{infobox monster
+ | name        = Black Maw
+ | image name  = * {{dlc|nr|Rebirth}}
+ | id          = 225
+ | base hp     = 20
+ | stage hp    = 6
+ | environment = {{floor|Sheol}}<br>{{floor|Dark Room}}<br>{{room|challenge}}{{room|devil}}
+ | behavior    = When Isaac lines up with it horizontally, it charges in his direction and then doubles back, charging back to its original position. When Isaac is not horizontal to it, it spawns Leeches. Explodes when it dies.
+}}
+
+'''Black Maws''' behave like Oob but spawns {{e|Leech}}es instead. If Isaac lines up horizontal to it, it very quickly charges in his direction and then doubles back, charging back to its original position. It explodes upon death.
+
+While in normal rooms Black Maws will generally charge off-screen before returning, in long horizontal rooms they can charge a random distance before returning rather than having to fly out of the room first, this can also happen if they make contact with another enemy.
+
+Unlike the Oob, Black Maws can still summon Leeches regardless of whether they are over an obstruction or not, due to the fact that Leeches can fly.
+
+=== Notes ===
+* They can spawn in unique {{R|Devil Room}} layouts if Isaac is holding the {{t|Number Magnet}}.
+{{clear}}
+
+== Gallery ==
+<gallery>
+File:Edmund McMillen Rebirth Monster Sketches.jpg|Sketches of monsters for the Binding of Isaac: Rebirth, including what appears to be an early design of the Oob and Black Maw in the fourth rectangle of the fourth row and the fifth rectangle of the fourth row, respectively.
+File:Last Will Oob.png|An Oob on Isaac's Last Will.
+</gallery>
+
+== Trivia ==
+* Oob and Black Maw are both enemies from one of Edmund McMillen's previous games named ''[[wikipedia:Super Meat Boy|Super Meat Boy]]''.
+** Oobs have a different, but a somewhat similiar design. These extremely slowly float towards Meat Boy, but become much faster when Meat Boy is close enough to them.
+** In ''Super Meat Boy'', Black Maws work like a homing projectile that breaks into 9 smaller projectiles on impact. They appear from a black hole.
+* Oobs and Black Maws are the only non-boss enemies that can charge off-screen.
+** Black Maws specifically are also the only monsters that double back after charging off-screen, making them unique.
+* {{dlc|nr}} Rerolling [[Gaping Maw]]s with {{i|D10}} always turns them into Oobs.
+* Black Maws look surprisingly similar to the xenomorph's mouths from the ''Alien'' movies, but this could also be a coincidence.
+** It also slightly resembles a sperm cell.
+* {{dlc|nr}} Oobs have the highest health of any non-boss enemy.
+* Oob's name is "boo" backwards.
+
+{{nav}}

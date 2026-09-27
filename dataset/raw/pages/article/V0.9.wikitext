@@ -1,0 +1,11 @@
+{{infobox version
+ | date = 2014-10-29
+}}
+
+''This was a pre-release version that wasn't sold publically.''
+
+== Documented changes ==
+* First release without debugging features.
+* Will erase any old stats and saved games.
+
+{{nav|version}}

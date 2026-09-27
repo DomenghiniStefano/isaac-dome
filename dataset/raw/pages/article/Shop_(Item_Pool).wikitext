@@ -1,0 +1,33 @@
+{{header item pools}}
+{{item pool
+ | price type = coins
+}}
+
+Items in this pool can be found for sale in the {{R|Shop}}.
+
+== Activated Collectibles ==
+{{item pool/header}}
+{{pool items | The Bible, The Boomerang, The Candle, Converter, Deck of Cards, The Jar, Magic Fingers, Mom's Bottle of Pills, Pandora's Box, Red Candle, Remote Detonator }}
+{{pool items | weight = {{dlcalt|1|r=0.5}} | Blank Card }}
+{{pool items | dlc = nr+ | Portable Slot }}
+{{pool items | dlc = a | Box of Friends, Diplopia, Glowing Hourglass, Jar of Flies, Mom's Box, Placebo, Tear Detonator, Ventricle Razor, Wooden Nickel }}
+{{pool items | dlc = a+ | Compost, Coupon, Dull Razor, Moving Box, Mr. ME!, Mystery Gift, Potato Peeler, Smelter }}
+{{pool items | dlc = a+ | weight = {{dlcalt|1|r=0.5}} | Crooked Penny, Mama Mega! }}
+{{pool items | dlc = a+ | weight = 0.2 | Plan C }}
+{{pool items | dlc = r | Alabaster Box, Eraser, Mom's Bracelet, Notched Axe, Sharp Key }}
+{{pool items | dlc = r | weight = 0.5 | Keeper's Box }}
+{{pool items | dlc = r | weight = 0.1 | Magic Skin }}
+|}
+
+== Passive Collectibles ==
+{{item pool/header}}
+{{pool items | 9 Volt, The Battery, BFFS!, Black Candle, Blue Map, BOGO Bombs, Broken Watch, Champion Belt, The Compass, Fanny Pack, Habit, Hive Mind, Humbleing Bundle, The Ladder, Little Baggy, Mom's Coin Purse, Mom's Key, Mom's Purse, PHD, Piggy Bank, Sharp Plug, Starter Deck, Steam Sale, Stop Watch, There's Options, Treasure Map }}
+{{pool items | dlc = a | Car Battery, Charged Baby, Deep Pockets, More Options, Night Light, Pay To Play, Restock, Spider Mod }}
+{{pool items | dlc = a | weight = {{dlcalt|1|r=0.5}} | Chaos, Sack Head }}
+{{pool items | dlc = a+ | Blanket, Broken Modem, Buddy in a Box, Jumper Cables, King Baby, Poke Go, Schoolbag, Tarot Cloth }}
+{{pool items | dlc = a+nr | Sack of Sacks }}
+{{pool items | dlc = r | 4.5 Volt, Battery Pack, Birthright, Booster Pack, Dream Catcher, Keeper's Sack, Member Card, Options?, Red Stew, Voodoo Head }}
+{{pool items | dlc = r | weight = 0.5 | Card Reading }}
+|}
+
+{{nav|fr=Boutique (Banque d'Objets)}}

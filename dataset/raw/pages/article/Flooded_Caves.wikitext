@@ -1,0 +1,130 @@
+{{infobox stage
+ | dlc             = a
+ | chapter         = 2
+ | id              = 6
+ | id greed        = {{dlc|r|6}}
+ | level id        = 3, 4
+ | level id greed  = {{dlc|r|2}}
+ | type id         = 2
+ | type id greed   = {{dlc|r|2}}
+ | degraded bosses = Larry Jr., Blastocyst (Small), Fistula (small)
+ | bosses          = Big Horn, C.H.A.D., Chub, Dark One, The Forsaken, The Frail, Gurdy, Gurdy Jr., Peep, Pestilence, Polycephalus, Rag Mega, The Stain
+ | unlocked by     = Flooded Caves
+}}
+
+The '''Flooded Caves''' is one of the environments in [[chapter 2]] added in ''[[The Binding of Isaac: Afterbirth]]''. The theme of the Flooded Caves is water; as such, most of the enemies inhabiting it are airborne, such as One Tooth and flies, and many of them shoot projectiles, while there are fewer ground-bound and contact-damage-reliant enemies. Some enemies like the {{e|Hive}} have a chance to be replaced with their drowned variants {{dlc|nr}} and rocks have a chance to be replaced with water-filled pits.
+
+The Flooded Cave's alternate floors are the {{s|Caves}} and the {{s|Catacombs}}.
+
+{{dlc+|r}}After {{a|A Secret Exit}} is unlocked, a boarded door similar to the one leading to a [[Bedroom]] will appear in this floor's {{r|Boss Room}} upon defeating the boss, leading to the {{S|Mines}} / {{S|Ashpit}}. This door, like a Bedroom, requires two bombs to be opened. Unlike {{r|Angel Room}}s and {{r|Devil Room}}s, this door never disappears.{{dlc-}}
+
+{{dlc+|r}} Though there is some overlap with {{s|Downpour}} due to both featuring water flooding, Downpour's unique enemies are often ghostly and supernatural in nature as opposed to the Flooded Cave's theme of drowned or bloated enemies.{{dlc-}}
+
+{{dlc|a+}} The Flooded Caves are unlocked by defeating {{e|It Lives!}} 16 times.
+* {{dlc+|r}} Killing {{e|Dogma}} and {{e|The Beast}} also increases this tally, as does {{s|Mausoleum}}'s version of {{e|Mom's Heart}}.{{dlc-}}
+
+== [[Monster]]s ==
+{{entity table/header}}
+{{stage entities | Boil, Gut, Sack, Bony, Clotty, Clot, I.Blob, Dip, Squirt, Embryo, Fatty, Pale Fatty, Blubber, Half Sack, Fly, Attack Fly, Ring Fly, Moter, Eternal Fly, Level 2 Fly, Boom Fly, Red Boom Fly, Full Fly, Pooter, Super Pooter, Sucker, Gurgle, Skinny, Rotty, Globin, Gazing Globin, Grub, Gurgling, Hopper, Flaming Hopper, Leaper, Psychic Horf, Host, Red Host, Mobile Host, Flesh Mobile Host, Knight, Maggot, Charger, Spitty, Conjoined Spitty, Maw, Red Maw, Psychic Maw, Mr. Maw, Hive, Nest, One Tooth, Splasher, Round Worm, Night Crawler, Spider, Big Spider, Ticking Spider, Trite, Ragling, Baby Long Legs, Small Baby Long Legs, Crazy Long Legs, Small Crazy Long Legs, Wall Creep, Blind Creep, Swarmer, Tumor, Stone Grimace, Constant Stone Shooter, Gaping Maw, Slide, Wall Hugger, Corn, Dank Squirt, Conjoined Fatty, Swarm, Dart Fly, Drowned Boom Fly, Greed Gaper, Blue Gaper, Blue Boil, Drowned Charger, Drowned Hive, Dukie, Fat Bat, Roundy, Ulcer, Corn Mine, Dark Ball }}
+{{stage entities | dlc = a+ | Mr. Red Maw, Mr. Mine, Stoney, Ministro, Mushroom, Tube Worm, Cross Stone Shooter }}
+{{stage entities | dlc = a+nr | Portal }}
+{{stage entities | dlc = r | Bloaty, Bulb, Faceless, Needle, Pasty, Prey, Willo }}
+|}
+
+''Degraded Bosses:''
+{| class="wikitable mw-collapsible sortable striped"
+! Name
+! ID
+! class="unsortable" |  Notes
+{{entity row minimal|Blastocyst}} | Small-form only
+{{entity row minimal|Fistula}} | Small- and Medium-form only
+{{entity row minimal|The Hollow}} |
+{{entity row minimal|Larry Jr.}} |
+|}
+
+== [[Boss]]es ==
+{| style="width: 70%; text-align: center"
+ | [[file:Boss Chub portrait.png|center|link=Chub]]
+ | [[file:Boss C.H.A.D. portrait.png|center|link=C.H.A.D.]]
+ | [[file:Boss Gurdy portrait.png|center|link=Gurdy]]
+ | [[file:Boss Gurdy Jr. portrait.png|link=Gurdy Jr.]]
+ |-
+ | [[Chub]]
+ | [[C.H.A.D.]] {{unlockable}}
+ | [[Gurdy]]
+ | [[Gurdy Jr.]]
+ |}
+{| style="width: 70%; text-align: center"
+ | [[file:Boss Peep portrait.png|center|link=Peep]]
+ | [[file:Boss Polycephalus portrait.png|center|link=Polycephalus]]
+ | [[file:Boss Dark One portrait.png|center|link=Dark One]]
+ | [[file:Boss Pestilence portrait.png|center|link=Pestilence]]
+ |-
+ | [[Peep]]
+ | [[Polycephalus]] {{Dlc|nr}}
+ | [[Dark One]] {{Dlc|nr}}
+ | [[Pestilence]] {{unlockable}}
+ |}
+{| style="width: 70%; text-align: center"
+ | [[file:Boss The Fallen portrait.png|center|link=The Fallen]]
+ | [[file:Boss Headless Horseman portrait.png|center|link=Headless Horseman]]
+ | [[file:Boss The Forsaken portrait.png|center|link=The Forsaken]]
+ | [[file:Boss The Frail portrait.png|center|link=The Frail]]
+ |-
+ | [[The Fallen]] {{room|Devil}}
+ | [[Headless Horseman]] {{unlockable}}
+ | [[The Forsaken]] {{dlc|a}} {{unlockable}}
+ | [[The Frail]] {{dlc|a}} {{unlockable}}
+ |}
+{| style="width: 70%; text-align: center"
+ | [[file:Boss The Stain portrait.png|center|link=The Stain]]
+ | [[file:Boss Big Horn portrait.png|center|link=Big Horn]]
+ | [[file:Boss Rag Mega portrait.png|center|link=Rag Mega]]
+ | [[File:Boss Fistula portrait.png|center|link=Fistula]]
+ |-
+ | [[The Stain]] {{dlc|a}} {{unlockable}}
+ | [[Big Horn]] {{dlc|a+}} {{unlockable}}
+ | [[Rag Mega]] {{dlc|a+}} {{unlockable}}
+ | [[Fistula]] {{Dlc|r}}
+ |}
+{| style="width: 70%; text-align: center"
+ | [[File:Boss Mega Maw portrait.png|center|link=Mega Maw]]
+ | [[File:Boss Mega Fatty portrait.png|center|link=Mega Fatty]]
+ | [[File:Boss Bumbino portrait.png|center|link=Bumbino]]
+ |
+ |-
+ | [[Mega Maw]] {{Dlc|r}}
+ | [[Mega Fatty]] {{Dlc|r}}
+ | [[Bumbino]] {{Dlc|r}} {{unlockable}}
+ |
+ |}
+
+=== Double Trouble ===
+{| class="mw-collapsible mw-collapsed wikitable"
+ ! Double Trouble Bosses
+ |-
+ |
+ {| style="width: 70%; text-align: center"
+  | [[file:Boss The Duke of Flies portrait.png|center|link=The Duke of Flies]]
+  | [[file:Boss Monstro portrait.png|link=Monstro]]
+  | [[file:Boss Rag Man portrait.png|center|link=Rag Man]]
+  | [[file:Boss Pin portrait.png|link=Pin]]
+  |-
+  | (Double Trouble)<br>[[The Duke of Flies]]
+  | (Double Trouble)<br>[[Monstro]]
+  | (Double Trouble)<br>[[Rag Man]] {{dlc|a}} {{unlockable}}
+  | (Double Trouble)<br>[[Pin]] {{dlc|r}}
+  |}
+ |}
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | Something Cute, Spelunker Boy, Telekinesis }}
+
+== Music ==
+* The [[music]] that plays in the Flooded Caves is titled ''Kave Diluvii''.<ref>[https://ridiculon.bandcamp.com/album/the-binding-of-isaac-afterbirth-ost Binding of Isaac: Afterbirth OST]</ref>
+
+== References ==
+{{reflist}}
+
+{{nav|it lives unlock|environment|fr=Grottes Inondées}}
+[[ru:Затопленные пещеры]]

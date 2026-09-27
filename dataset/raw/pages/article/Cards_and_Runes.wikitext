@@ -1,0 +1,406 @@
+{{header pickups}}
+'''Cards''' and '''runes''' are single-use pickups with a wide variety of effects. They take up the same [[item slot|slot]] as [[pill]]s.
+
+[[#Runes|Runes]] and [[special card]]s are unlocked by completing [[challenge]]s.
+
+In the base game, there are 32 cards and 8 runes.
+
+* {{dlc+|a}} [[The Binding of Isaac: Afterbirth]] adds {{p|Get out of Jail Free Card}}, {{p|? Card}}, the {{p|Blank Rune}}, and two non-card consumables: {{p|Dice Shard}} and {{p|Emergency Contact}}.{{dlc-}}
+
+* {{dlc+|a+}} [[The Binding of Isaac: Afterbirth †]] adds the [[Ace cards]], {{p|Holy Card}}, and {{p|Black Rune}}, for a total of 39 cards and 10 runes.
+** [[Booster Pack#1]] also added three other Magic: The Gathering cards: {{p|Huge Growth}}, {{p|Ancient Recall}}, and {{p|Era Walk}}.{{dlc-}}
+
+* {{dlc+|r}} [[The Binding of Isaac: Repentance]] adds Reversed Major Arcana Cards, the {{p|Queen of Hearts}}, the {{p|Wild Card}}, {{p|Rune Shard}}s, Soul Stones, as well as the {{p|Cracked Key}}, for a grand total of 66 cards, 28 runes and 3 other consumables.{{dlc-}}
+
+== Cards ==
+=== Major Arcana Cards ===
+When on the ground, these cards look like: [[file:TarotCard.png|42px]]
+{{pickup table | 0 - The Fool, I - The Magician, II - The High Priestess, III - The Empress, IV - The Emperor, V - The Hierophant, VI - The Lovers, VII - The Chariot, VIII - Justice, IX - The Hermit, X - Wheel of Fortune, XI - Strength, XII - The Hanged Man, XIII - Death, XIV - Temperance, XV - The Devil, XVI - The Tower, XVII - The Stars, XVIII - The Moon, XIX - The Sun, XX - Judgement, XXI - The World|where=}}
+
+=== {{dlc+|r}} Reversed Major Arcana Cards ===
+These cards share the same names as their counterparts (barring the question marks at the end of their names), but have the sprite upside-down, a different message, the narrator sound clip reversed, and give different effects.
+
+When on the ground, these cards look like: [[file:ReverseTarotCard.png|42px]]
+{{pickup table | 0 - The Fool?, I - The Magician?, II - The High Priestess?, III - The Empress?, IV - The Emperor?, V - The Hierophant?, VI - The Lovers?, VII - The Chariot?, VIII - Justice?, IX - The Hermit?, X - Wheel of Fortune?, XI - Strength?, XII - The Hanged Man?, XIII - Death?, XIV - Temperance?, XV - The Devil?, XVI - The Tower?, XVII - The Stars?, XVIII - The Moon?, XIX - The Sun?, XX - Judgement?, XXI - The World? | unlock method = yes }}{{dlc-}}
+
+=== Playing Cards ===
+When on the ground, these cards look like: [[file:FaceCard.png|42px]]
+{{pickup table | 2 of Clubs, 2 of Diamonds, 2 of Spades, 2 of Hearts, Ace of Clubs, Ace of Diamonds, Ace of Spades, Ace of Hearts, Joker, Queen of Hearts | main = yes | unlock method = yes}}
+
+== Special Cards ==
+[[Special Cards]] are a category of cards that have a rarer spawn chance.
+
+=== Playing Cards ===
+When on the ground, this card looks like: [[file:FaceCard.png|42px]]
+{{pickup table | Suicide King | main = yes | unlock method = yes}}
+
+=== Magic: The Gathering Cards ===
+When on the ground, these cards look like: {{dlc|na+}} [[file:FaceCard.png|42px]] &nbsp;&nbsp; {{dlc|a+nr}} [[file:MagicCard.png|42px]]  {{Dlc|r}} [[file:MagicCardRepentance.png|42px]]
+{{pickup table | Chaos Card, Huge Growth, Ancient Recall, Era Walk | unlock method = yes}}
+
+=== Credit Card ===
+When on the ground, this card looks like: {{dlc|na+}} [[file:FaceCard.png|42px]] &nbsp;&nbsp; {{dlc|a+}} [[file:CreditCard.png|42px]]
+{{pickup table | Credit Card | unlock method = yes}}
+
+=== Other Playing Cards ===
+When on the ground, these cards look like: [[file:FaceCard.png|42px]]
+{{pickup table | Rules Card, ? Card | unlock method = yes}}
+
+=== Card Against Humanity ===
+When on the ground, this card looks like: {{dlc|na+}} [[file:FaceCard.png|42px]] &nbsp;&nbsp; {{dlc|a+}} [[file:HumanityCard.png|42px]]
+{{pickup table | A Card Against Humanity | unlock method = yes}}
+
+=== {{dlc+|a}} Monopoly Card ===
+When on the ground, this card looks like: {{dlc|na+}} [[file:FaceCard.png|42px]] &nbsp;&nbsp; {{dlc|a+}} [[file:ChanceCard.png|42px]]
+{{pickup table | Get out of Jail Free Card | unlock method = yes }}{{dlc-}}
+
+=== {{dlc+|a+}} Holy Card ===
+When on the ground, this card looks like: [[file:HolyCard.png|42px]]
+{{pickup table | Holy Card | unlock method = yes }}{{dlc-}}
+
+=== {{dlc+|r}} Uno Card ===
+When on the ground, this card looks like: [[file:WildCardBack.png|42px]]
+{{pickup table | Wild Card | unlock method = yes}}{{dlc-}}
+
+== Runes ==
+=== Left Pointing Runes ===
+When on the ground, these runes look like: [[file:Rune2.png|45x45px]]
+{{pickup table | Hagalaz, Jera, Ehwaz, Dagaz | main = yes | unlock method = yes}}
+
+=== Right Pointing Runes ===
+When on the ground, these runes look like: [[file:Rune1.png|45x45px]]
+{{pickup table | Ansuz, Perthro, Berkano, Algiz, Blank Rune | main = yes | unlock method = yes }}
+
+=== Other Runes ===
+{{pickup table | Black Rune, Rune Shard | main = yes | unlock method = yes }}{{dlc-}}
+
+== {{dlc+|r}} Soul Stones ==
+Soul Stones are all unlocked by beating both {{e|Hush}} and {{r|Boss Rush}} as their respective [[tainted character]]. They count as runes for the purposes of {{i|Clear Rune}} and {{i|Rune Bag}} and can spawn anywhere a rune can.
+{{pickup table | Soul of Isaac, Soul of Magdalene, Soul of Cain, Soul of Judas, Soul of ???, Soul of Eve, Soul of Samson, Soul of Azazel, Soul of Lazarus, Soul of Eden, Soul of the Lost, Soul of Lilith, Soul of the Keeper, Soul of Apollyon, Soul of the Forgotten, Soul of Bethany, Soul of Jacob and Esau | main = yes | unlock method = yes}}{{dlc-}}
+
+== Other ==
+These are items other than cards and runes (and [[pill]]s) that take up the consumable slot. When on the ground, each of these items are uniquely identifiable by their respective icon. {{dlc+|r}} These consumables cannot be replicated by either {{i|Blank Card}} or {{i|Clear Rune}}, and {{i|Tarot Cloth}} has no effect on them, but the {{i|D1}} will always duplicate these into themselves.{{dlc-}}
+{{pickup table | Cracked Key, Dice Shard, Emergency Contact | unlock method = yes }}{{dlc-}}
+
+== Probabilities ==
+Cards that spawn as random ones, i.e. with a sub-type of 0, have the following probabilities:
+* Any tarot card (1-22) - 66.66%
+** A specific tarot card - 3.03%
+* Any reverse tarot card (56-77) - 11.22%
+** A specific reverse tarot card - 0.51%
+* Any face card (23-31) - 7.74%
+** A specific face card (23-31) - 0.86%
+* Queen of Hearts (79) - 0.86% (same as a specific face card)
+* Any special card (42-54) - 3.51%
+** A specific special card - 0.27%
+* Cracked Key (78) - 0.27% (same as a specific special card)
+* Wild Card (80) - 0.27% (same as a specific special card)
+* Any rune (32-41) - 3.60%
+** A specific rune - 0.36%
+* Any soul stone (81-97) - 5.95%
+** A specific soul stone - 0.35%
+* Rune shard (55) - 0.00% (never spawns on a fully completed save file, chosen only as a replacement otherwise)
+
+== Notes ==
+* {{dlc|nr}} The game counts runes as cards for the purposes of {{i|Blank Card}}, and {{i|Tarot Cloth}}.
+** {{dlc|r}} Even though runes no longer count as cards as of ''Repentance'', {{i|Little Baggy}} still prevents new runes from appearing except through forced drops (such as from {{i|Mom's Ring}} or {{i|Clear Rune}}). Runes that already existed prior to picking up Little Baggy will not be converted.
+** {{i|Starter Deck}} does not prevent runes/soul stones from generating, will sometimes turn pills into either, and allows holding two of them.
+* Runes will be replaced with cards if no runes are unlocked.
+** {{dlc+|r}} However, items that normally spawn runes (e.g. {{i|Rune Bag}} or {{i|Clear Rune}}) can spawn Rune Shards before any runes are unlocked.{{dlc-}}
+* If alternate versions of consumables have been unlocked (for example, {{E|Charged Key}}s or {{E|Mega Chest}}s), any cards that can spawn that type of consumables (for example, Ace of Spades or {{dlc|r}} VIII - Justice?) have a chance of being replaced with those rarer consumables.
+** {{e|Key Ring|nr}}s are the only exception to this.
+* {{dlc+|r}} If {{I|Tarot Cloth}} is held, the card will flash, indicating that it will be amplified by Tarot Cloth.{{dlc-}}
+* {{Dlc+|r}} Using any teleport cards while inside of {{E|The Beast}} fight will simply move Isaac instantly to a different spot in the same room. This also includes the Joker card.{{dlc-}}
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | The Necronomicon, Blinding Baby, Ancient Recall, Huge Growth, Baby-Bender }}
+
+== In-game footage ==
+{{#ev:youtube|b3cZ6UlSuRk||inline}}
+{{#ev:youtube|QllR1KrizD0||inline}}
+
+== Trivia ==
+* The appearance of the tarot cards seems to be based on the Universal Tarot of Marseille deck produced by Lo Scarabeo, most clearly seen with the card backs as well as the splash image that appears when using The Sun.
+* The runes and their names ingame are based on the [[wikipedia:Elder Futhark|Elder Futhark]] alphabet system and its reconstructed [[wikipedia:Proto-Germanic language|Proto-Germanic]] names. In popular culture, runes often signify that something is in some way magical.
+* Ancient Recall, Era Walk, Huge Growth, and Chaos Card are all based on cards from ''Magic: The Gathering''.
+* A NULL card with ID 0 exists, revealed by the "giveitem k0" [[Debug Console]] command. It can't be acquired or used in any way.
+* {{dlc|a+}} Many cards were given new unique back sprites in [[Booster Pack#5]], some originating from [https://antibirth.com/ Antibirth].
+* {{dlc|r}} The Reverse Tarot Cards refer to tarot card readings, where a reversed card has a contrary meaning to its upright variant.
+
+== Voiceovers ==
+=== Major Arcana Cards ===
+{| class="wikitable sortable mw-collapsible mw-collapsed"
+! Tarot Card
+! class="unsortable | Voiceover
+! class="unsortable | Voiceover (Reverse)
+|-
+| data-sort-value="0" | 0 - The Fool
+| [[File:FoolTarotCardVoiceover.wav]]
+| [[File:FoolTarotCardReverseVoiceover.wav]]
+|-
+| data-sort-value="1" | I - The Magician
+| [[File:MagicianTarotCardVoiceover.wav]]
+| [[File:MagicianTarotCardReverseVoiceover.wav]]
+|-
+| data-sort-value="2" | II - The High Priestess
+| [[File:HighPriestessTarotCardVoiceover.wav]]
+| [[File:HighPriestessTarotCardReverseVoiceover.wav]]
+|-
+| data-sort-value="3" | III - The Empress
+| [[File:EmpressTarotCardVoiceover.wav]]
+| [[File:EmpressTarotCardReverseVoiceover.wav]]
+|-
+| data-sort-value="4" | IV - The Emperor
+| [[File:EmperorTarotCardVoiceover.wav]]
+| [[File:EmperorTarotCardReverseVoiceover.wav]]
+|-
+| data-sort-value="5" | V - The Hierophant
+| [[File:HierophantTarotCardVoiceover.wav]]
+| [[File:HierophantTarotCardReverseVoiceover.wav]]
+|-
+| data-sort-value="6" | VI - The Lovers
+| [[File:LoversTarotCardVoiceover.wav]]
+| [[File:LoversTarotCardReverseVoiceover.wav]]
+|-
+| data-sort-value="7" | VII - The Chariot
+| [[File:ChariotTarotCardVoiceover.wav]]
+| [[File:ChariotTarotCardReverseVoiceover.wav]]
+|-
+| data-sort-value="8" | VIII - Justice
+| [[File:JusticeTarotCardVoiceover.wav]]
+| [[File:JusticeTarotCardReverseVoiceover.wav]]
+|-
+| data-sort-value="9" | IX - The Hermit
+| [[File:HermitTarotCardVoiceover.wav]]
+| [[File:HermitTarotCardReverseVoiceover.wav]]
+|-
+| data-sort-value="10" | X - Wheel of Fortune
+| [[File:WheelOfFortuneTarotCardVoiceover.wav]]
+| [[File:WheelOfFortuneTarotCardReverseVoiceover.wav]]
+|-
+| data-sort-value="11" | XI - Strength
+| [[File:StrengthTarotCardVoiceover.wav]]
+| [[File:StrengthTarotCardReverseVoiceover.wav]]
+|-
+| data-sort-value="12" | XII - The Hanged Man
+| [[File:HangedManTarotCardVoiceover.wav]]
+| [[File:HangedManTarotCardReverseVoiceover.wav]]
+|-
+| data-sort-value="13" | XIII - Death
+| [[File:DeathTarotCardVoiceover.wav]]
+| [[File:DeathTarotCardReverseVoiceover.wav]]
+|-
+| data-sort-value="14" | XIV - Temperance
+| [[File:TemperanceTarotCardVoiceover.wav]]
+| [[File:TemperanceTarotCardReverseVoiceover.wav]]
+|-
+| data-sort-value="15" | XV - The Devil
+| [[File:DevilTarotCardVoiceover.wav]]
+| [[File:DevilTarotCardReverseVoiceover.wav]]
+|-
+| data-sort-value="16" | XVI - The Tower
+| [[File:TowerTarotCardVoiceover.wav]]
+| [[File:TowerTarotCardReverseVoiceover.wav]]
+|-
+| data-sort-value="17" | XVII - The Stars
+| [[File:StarsTarotCardVoiceover.wav]]
+| [[File:StarsTarotCardReverseVoiceover.wav]]
+|-
+| data-sort-value="18" | XVIII - The Moon
+| [[File:MoonTarotCardVoiceover.wav]]
+| [[File:MoonTarotCardReverseVoiceover.wav]]
+|-
+| data-sort-value="19" | XIX - The Sun
+| [[File:SunTarotCardVoiceover.wav]]
+| [[File:SunTarotCardReverseVoiceover.wav]]
+|-
+| data-sort-value="20" | XX - Judgement
+| [[File:JudgementTarotCardVoiceover.wav]]
+| [[File:JudgementTarotCardReverseVoiceover.wav]]
+|-
+| data-sort-value="21" | XXI - The World
+| [[File:WorldTarotCardVoiceover.wav]]
+| [[File:WorldTarotCardReverseVoiceover.wav]]
+|}
+
+=== Playing Cards ===
+{| class="wikitable sortable mw-collapsible mw-collapsed"
+! Card
+! class="unsortable | Voiceover
+|-
+| 2 of Clubs
+| [[File:TwoOfClubsCardVoiceover.wav]]
+|-
+| 2 of Diamonds
+| [[File:TwoOfDiamondsCardVoiceover.wav]]
+|-
+| 2 of Spades
+| [[File:TwoOfSpadesCardVoiceover.wav]]
+|-
+| 2 of Hearts
+| [[File:TwoOfHeartsCardVoiceover.wav]]
+|-
+| Ace of Clubs
+| [[File:AceOfClubsCardVoiceover.wav]]
+|-
+| Ace of Diamonds
+| [[File:AceOfDiamondsCardVoiceover.wav]]
+|-
+| Ace of Spades
+| [[File:AceOfSpadesCardVoiceover.wav]]
+|-
+| Ace of Hearts
+| [[File:AceOfHeartsCardVoiceover.wav]]
+|-
+| Joker
+| [[File:JokerCardVoiceover.wav]]
+|-
+| Suicide King
+| [[File:SuicideKingCardVoiceover.wav]]
+|-
+| Queen of Hearts
+| [[File:QueenOfHeartsCardVoiceover.wav]]
+|}
+
+=== Runes and Soul Stones ===
+{| class="wikitable sortable mw-collapsible mw-collapsed"
+! Rune or Soul Stone
+! class="unsortable | Voiceover
+|-
+| Hagalaz
+| [[File:HagalazRuneVoiceover.wav]]
+|-
+| Jera
+| [[File:JeraRuneVoiceover.wav]]
+|-
+| Ehwaz
+| [[File:EhwazRuneVoiceover.wav]]
+|-
+| Dagaz
+| [[File:DagazRuneVoiceover.wav]]
+|-
+| Ansuz
+| [[File:AnsuzRuneVoiceover.wav]]
+|-
+| Perthro
+| [[File:PerthroRuneVoiceover.wav]]
+|-
+| Berkano
+| [[File:BerkanoRuneVoiceover.wav]]
+|-
+| Algiz
+| [[File:AlgizRuneVoiceover.wav]]
+|-
+| Black Rune
+| [[File:BlackRuneVoiceover.wav]]
+|-
+| Rune Shard
+| [[File:RuneShardVoiceover.wav]]
+|-
+| Soul of Isaac
+| [[File:SoulOfIsaacVoiceover.wav]]
+|-
+| Soul of Magdalene
+| [[File:SoulOfMagdaleneVoiceover.wav]]
+|-
+| Soul of Cain
+| [[File:SoulOfCainVoiceover.wav]]
+|-
+| Soul of Judas
+| [[File:SoulOfJudasVoiceover.wav]]
+|-
+| Soul of ???
+| [[File:SoulOfBlueBabyVoiceover.wav]]
+|-
+| Soul of Eve
+| [[File:SoulOfEveVoiceover.wav]]
+|-
+| Soul of Samson
+| [[File:SoulOfSamsonVoiceover.wav]]
+|-
+| Soul of Azazel
+| [[File:SoulOfAzazelVoiceover.wav]]
+|-
+| Soul of Lazarus
+| [[File:SoulOfLazarusVoiceover.wav]]
+|-
+| Soul of Eden
+| [[File:SoulOfEdenVoiceover.wav]]
+|-
+| Soul of the Lost
+| [[File:SoulOfTheLostVoiceover.wav]]
+|-
+| Soul of Lilith
+| [[File:SoulOfLilithVoiceover.wav]]
+|-
+| Soul of the Keeper
+| [[File:SoulOfTheKeeperVoiceover.wav]]
+|-
+| Soul of Apollyon
+| [[File:SoulOfApollyonVoiceover.wav]]
+|-
+| Soul of the Forgotten
+| [[File:SoulOfTheForgottenVoiceover.wav]]
+|-
+| Soul of Bethany
+| [[File:SoulOfBethanyVoiceover.wav]]
+|-
+| Soul of Jacob and Esau
+| [[File:SoulOfJacobAndEsauVoiceover.wav]]
+|}
+
+=== Other cards and consumables ===
+{| class="wikitable sortable mw-collapsible mw-collapsed"
+! Consumable
+! class="unsortable | Voiceover
+|-
+| Chaos Card
+| [[File:ChaosCardVoiceover.wav]]
+|-
+| Huge Growth
+| [[File:HugeGrowthCardVoiceover.wav]]
+|-
+| Ancient Recall
+| [[File:AncientRecallCardVoiceover.wav]]
+|-
+| Era Walk
+| [[File:EraWalkCardVoiceover.wav]]
+|-
+| Credit Card
+| [[File:CreditCardVoiceover.wav]]
+|-
+| Rules Card
+| [[File:RulesCardVoiceover.wav]]
+|-
+| A Card Against Humanity
+| [[File:ACardAgainstHumanityVoiceover.wav]]
+|-
+| Get out of Jail Free Card
+| [[File:GetOutOfJailFreeCardVoiceover.wav]]
+|-
+| ? Card
+| [[File:QuestionMarkCardVoiceover.wav]]
+|-
+| Dice Shard
+| [[File:DiceShardVoiceover.wav]]
+|-
+| Emergency Contact
+| [[File:EmergencyContactVoiceover.wav]]
+|-
+| Holy Card
+| [[File:HolyCardVoiceover.wav]]
+|-
+| Wild Card
+| [[File:WildCardVoiceover.wav]]
+|-
+| Cracked Key
+| [[File:CrackedKeyVoiceover.wav]]
+|}
+
+== Bugs ==
+{{bug|Any blue flies, blue spiders, {{dlc|a+}}friendly enemies, {{dlc|a+}}locusts, {{dlc|a+}}orbital bones, and {{dlc|r}}wisps created by cards, runes, and soul stones can be multiplied when {{i|Glowing Hourglass}} teleports Isaac in a way that does not move him to a different room from the one he is currently in (such as by teleporting to the previous room then using it again).}}
+
+{{nav|fr=Cartes et Runes|es=Cartas}}
+[[Category:Pickups]]
+[[Category:Cards| ]]
+[[Category:Runes| ]]

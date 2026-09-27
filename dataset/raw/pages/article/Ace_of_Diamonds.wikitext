@@ -1,0 +1,28 @@
+{{Header playing cards}}
+{{Infobox card
+ | dlc         = a+
+ | name        = Ace of Diamonds
+ | type        = card
+ | id          = 28
+ | quote       = Convert all
+ | unlocked by = ZIP!
+ | description = Turns all [[pickup]]s, [[trinkets]] and [[chest]]s in the room into {{e|Penny|text=coins}}.<br>{{dlc|r}} All non-boss enemies in the room are also transformed into coins.
+ | recharge    = {{dlcalt|4|r=6}}
+}}
+
+{{cit|uc|a+}}
+
+== Effects ==
+* Turns all [[pickup]]s, [[trinkets]] and [[chest]]s in the room into {{e|Penny|text=coins}}.
+* {{dlc|r}} All non-boss enemies in the room are also transformed into coins.
+
+== Notes ==
+* Any unlocked coin variant can appear.
+* {{dlc|r}} On-kill effects such as {{i|Charm of the Vampire}}, do not trigger from turning enemies into coins.
+* {{dlc|r}} [[Friendly]] enemies will be transformed into coins.
+
+== Interactions ==
+* {{I|Tarot Cloth}}: No effect.
+* {{i|Blood Puppy|nr+}}: Using an Ace card on an angry Blood Puppy will create the respective pickup and tame it.
+
+{{nav|fr=As de Carreau|card|coin modifier}}

@@ -1,0 +1,57 @@
+{{infobox monster
+ | dlc         = a
+ | id          = 404
+ | variant     = 1
+ | base hp     = 10
+ | environment = {{floor|Caves}}{{floor|Flooded Caves}}<br>{{floor|Mausoleum}}<br>{{floor|Chest}}<br>Spawned by {{e|Little Horn}}, {{e|Big Horn}} and {{e|Blister}}
+ | behavior    = Floats towards Isaac, doing contact damage.
+}}
+
+'''Dark Balls''' chase Isaac, flying at a moderate pace and take increased knockback from tears. They're most often encountered when spawned by {{e|Little Horn}}, {{e|Big Horn}}, and {{e|Blister}}s but can be sometimes encountered in some rare rooms in the {{s|Caves}} or {{s|Flooded Caves}} as well as {{s|Mausoleum}} rooms with {{e|Bishop}}s. The Dark Balls Big Horn can spawn are larger and can either behave normally or have different behavior where they travel diagonally, bouncing off walls.
+{{clear}}
+
+== Variations ==
+=== Purple Ball ===
+{{infobox monster
+ | dlc         = a+
+ | name        = Purple Ball
+ | id          = 409
+ | variant     = 1
+ | environment = Spawned exclusively by {{e|Rag Mega}} and {{e|Cultist}}s
+ | behavior    = Floats towards Isaac, doing contact damage.
+}}
+
+'''Purple Balls''' behave similarly to regular Dark Balls, but are immune to all damage. 3 of them will always spawn orbiting {{e|Rag Mega}} and detach to chase Isaac as the boss's HP drops. {{E|Cultist}}s spawn a variant of Purple Balls that are indestructible but slowly transform into vulnerable Dark Balls.
+
+Purple Balls can be destroyed by any instant kill effects, such as {{i|Little Horn}} or {{p|Ace of Diamonds}}.
+{{clear}}
+
+=== Visage Plasma ===
+{{infobox monster
+ | dlc         = r
+ | name        = Visage Plasma
+ | id          = 903
+ | variant     = 20
+ | base hp     = 50
+ | environment = Spawned exclusively by {{e|The Visage}}
+ | behavior    = Floats in diagonal directions, doing contact damage. Spawned by {{E|The Visage}} and used in its phase 3 attacks.
+}}
+
+'''Visage Plasma''' are similar to the Dark Balls summoned by Big Horn and slowly float diagonally around the room bouncing off walls. If {{e|The Visage}}'s mask is deactivated, one will travel towards it to revive the mask. If there are 3 alive at once, they can be absorbed by The Visage's heart to heal it and cause it to perform a special attack.
+{{clear}}
+
+=== Ultra Pestilence Fly Ball ===
+{{infobox monster
+ | dlc         = r
+ | name        = Ultra Pestilence Fly Ball
+ | id          = 951
+ | variant     = 23
+ | base hp     = 200
+ | environment = Spawned exclusively by {{e|Ultra Pestilence}}.
+ | behavior    = Floats towards Isaac, doing contact damage and spawning {{e|Ultra Pestilence Fly|text=Ultra Pestilence Flies}} upon taking damage.
+}}
+
+'''Ultra Pestilence Fly Balls''' behave like regular Dark Balls and float towards Isaac, dealing contact damage. Each time it takes enough damage it spawns an {{e|Ultra Pestilence Fly}} and can spawn multiple at once if it takes a large singular amount of damage. Upon death, it leaves behind another Ultra Pestilence Fly.
+{{clear}}{{dlc clear}}
+
+{{nav|fr=Boule Noire}}

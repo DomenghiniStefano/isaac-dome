@@ -1,0 +1,12 @@
+{{page dlc|r+}}
+
+Items with this [[Item Tags|tag]] have their [[Devil deal]] price changed to a sacrifice.
+
+== Activated Collectibles ==
+{{collectible table | tag = devilsacrifice | type = activated }}
+
+== Passive Collectibles ==
+{{collectible table | tag = devilsacrifice | type = passive }}
+
+{{nav|fr=Balise devilsacrifice}}
+[[Category:Item tags]]

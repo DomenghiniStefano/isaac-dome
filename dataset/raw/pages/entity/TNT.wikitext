@@ -1,0 +1,37 @@
+{{header obstacles}}
+
+{{infobox entity
+ | hidden = yes
+ | name   = TNT
+}}
+[[file:TNT.png|50px]]
+* Blocks movement.
+* Can be destroyed by tears, explosions, stomping effects (such as {{i|Thunder Thighs}}), or certain effects that grant [[invulnerability]] (such as {{I|The Gamekid}} and {{i|My Little Unicorn}}).
+* Explodes when destroyed.
+* Small chance to drop a {{t|Match Stick}} or a {{t|Burnt Penny}} when destroyed.
+
+== {{dlc+|a}} Movable TNT ==
+{{infobox entity
+ | hidden = yes
+ | dlc    = a
+ | name   = Movable TNT
+ | id     = 292
+}} {{infobox entity
+ | hidden  = yes
+ | dlc     = r
+ | name    = Mine Crafter TNT
+ | variant = 1
+}}
+[[file:Movable TNT.png|50px]][[file:Mine Crafter TNT.png|50px]]
+* Can be pushed around by Isaac and enemies.
+* Can be destroyed by tears, explosions, or stompy effects.
+** Unlike normal TNT, it cannot be destroyed by [[invulnerability]] effects and {{p|Hagalaz}}.
+* Explodes when destroyed.
+* Occasionally replaces normal TNT.
+* Can be spawned with {{i|Mine Crafter}}.
+** {{dlc|r}} Moveable TNT spawned by Mine Crafter takes a unique cubic appearance.
+* Will explode when pushed into a [[Fire Place]], a [[Spiked Rock]], or a {{E|Red Poop}}.
+{{dlc-}}
+
+{{nav|fr=Baril de TNT}}
+[[category:objects]]

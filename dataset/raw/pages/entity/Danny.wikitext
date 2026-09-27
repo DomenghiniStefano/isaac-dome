@@ -1,0 +1,31 @@
+{{infobox monster
+ | dlc         = r
+ | name        = Danny
+ | id          = 820
+ | base hp     = 40
+ | environment = {{floor|Mines}}{{floor|Ashpit}}<br>{{room|challenge}}
+ | behavior    = Walks toward Isaac and spits chaotic bursts of rocks at him, some of which may be {{E|Rock Spider}}s.
+}} {{disambig msg|the monster found in {{s|Mines}}}}
+'''Dannies''' are an enemy added in ''[[The Binding of Isaac: Repentance]]''. They are exclusive to {{s|Mines}} and {{s|Ashpit}}.
+
+They walk towards Isaac, periodically spitting a burst of rocks towards him, up to two of which may be {{E|Rock Spider}}s. Their rock bursts cannot spawn Rock Spiders if the two it spawned are still alive. Dannies have a long cooldown between rock bursts, but are more likely to use it soon after Isaac enters the room.
+{{clear}}
+
+== Variants ==
+=== Coal Boy ===
+{{infobox monster
+ | dlc         = r
+ | name        = Coal Boy
+ | variant     = 1
+ | base hp     = 40
+ | environment = {{floor|Mines}}{{floor|Ashpit}}
+ | behavior    = Walks toward Isaac and spits hot coals at him, some of which may be {{E|Coal Spider}}s.
+}}
+
+'''Coal Boys''' appear in the {{S|Mines}} and {{S|Ashpit}}. They walk towards Isaac, periodically spitting four hot coals towards him, one of which may be a {{E|Coal Spider}}. Hot coals linger and can hurt Isaac, but disappear after ~15 seconds, and disappear faster if they take damage. Coal Boys cannot summon coal spiders if the one it spawned is still alive. Coal Boys have a six second cooldown between coal spits, but are more likely to use it soon after Isaac enters the room.
+{{clear}}
+
+== Trivia ==
+* [[Anti:Danny|Dannies]] and [[Anti:Coal Boy|Coal Boys]] originate from the ''Antibirth'' mod.
+
+{{nav}}

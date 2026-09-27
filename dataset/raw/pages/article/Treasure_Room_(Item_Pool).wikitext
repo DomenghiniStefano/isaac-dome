@@ -1,0 +1,35 @@
+{{header item pools}}
+{{item pool}}
+
+The {{r|Treasure Room}} item pool contains the majority of the game's items. All of the items in this pool are able to be found in the Treasure Room. 
+
+This pool is also used for random items spawned in any other regular room or room without a specified item pool such as {{r|Vault}}s, {{r|Arcade}}s, {{r|Boss Rush}} etc.
+
+== Activated Collectibles ==
+{{item pool/header}}
+{{pool items | Anarchist Cookbook, The Bean, Best Friend, Blood Rights, Bob's Rotten Head, Book of Revelations, Book of Secrets, Book of Shadows, The Book of Sin, Box of Spiders, Butter Bean, Crack the Sky, D10, D100, D20, D4, The D6, Dad's Key, Dead Sea Scrolls, Deck of Cards, Doctor's Remote, Flush!, Forget Me Now, The Gamekid, The Hourglass, How to Jump, Isaac's Tears, Kamikaze!, Lemon Mishap, Magic Fingers, Mom's Bottle of Pills, Mom's Bra, Mom's Pad, Monster Manual, Monstro's Tooth, Mr. Boom, My Little Unicorn, The Pinking Shears, The Poop, Prayer Card, Remote Detonator, Satanic Bible, Scissors, Shoop da Whoop!, Spider Butt, Telepathy For Dummies, Teleport!, Undefined, Unicorn Stump, Yum Heart }}
+{{pool items | dlc = nr | Blank Card, Crystal Ball, Notched Axe }}
+{{pool items | dlc = a | D12, D7, D8, Friendly Ball, Glass Cannon, Glowing Hourglass, Kidney Bean, Mega Bean, Mine Crafter, Teleport 2.0 }}
+{{pool items | dlc = a+ | Black Hole, Book of the Dead, Brown Nugget, Clicker, Crooked Penny, D1, Dataminer, Metronome, Pause, Sharp Straw, Sprinkler, Telekinesis }}
+{{pool items | dlc = a+nr | D infinity, Wait What? }}
+{{pool items | dlc = r | Anima Sola, Bag of Crafting, Decap Attack, Everything Jar, Fortune Cookie, Free Lemonade, Friend Finder, Golden Razor, Larynx, Meat Cleaver, Razor Blade, The Scooper, Spin to Win, Stitches, Sumptorium, Suplex!, Tammy's Head, Yuck Heart }}
+{{pool items | dlc = r | weight = 0.5 | Esau Jr., Eternal D6, Gello, Plum Flute }}
+{{pool items | dlc = r | weight = 0.1 | Mega Mush, Spindown Dice }}
+|}
+
+== Passive Collectibles ==
+{{item pool/header}}
+{{pool items | 20/20, 3 Dollar Bill, <3, ???'s Only Friend, Abel, Anemic, Ankh, Anti-Gravity, Aquarius, Aries, BBF, Ball of Tar, Best Bud, Big Fan, The Black Bean, Blood of the Martyr, Bloody Lust, Bob's Brain, Bob's Curse, Bobby-Bomb, Bomb Bag, Boom!, Brother Bobby, Bucket of Lard, Bum Friend, Butt Bombs, Cain's Other Eye, Cancer, Capricorn, Celtic Cross, Charm of the Vampire, Chemical Peel, Chocolate Milk, The Common Cold, Cricket's Body, Cricket's Head, Cupid's Arrow, Cursed Eye, Daddy Longlegs, Dark Bum, Dead Bird, Dead Onion, Demon Baby, Distant Admiration, Dr. Fetus, Dry Baby, E. Coli, Eve's Mascara, Experimental Treatment, Fire Mind, Forever alone, Gemini, Ghost Baby, Gimpy, Gnawed Leaf, Guillotine, Halo of Flies, Harlequin Baby, Headless Baby, Holy Water, Hot Bombs, Infamy, Infestation 2, Infestation, The Inner Eye, Ipecac, Iron Bar, Isaac's Heart, Juicy Sack, Lazarus' Rags, Leech, Leo, Libra, Lil Brimstone, Lil Haunt, Little C.H.A.D., Little Chubby, Little Gish, Little Steven, Loki's Horns, Lost Contact, Lucky Foot, The Ludovico Technique, Maggy's Bow, Magneto, Midas' Touch, Mini Mush, Mitre, Mom's Contacts, Mom's Eye, Mom's Eyeshadow, Mom's Perfume, Mom's Wig, Money Power, Mongo Baby, Monstro's Lung, Mr. Mega, The Mulligan, Mutant Spider, My Reflection, Mysterious Liquid, Mystery Sack, Number One, Odd Mushroom (Large), Odd Mushroom (Thin), Ouija Board, The Parasite, The Peeper, PHD, Piggy Bank, Pisces, Polyphemus, Proptosis, Punching Bag, Pyromaniac, Rainbow Baby, Robo-Baby 2.0, Robo-Baby, Roid Rage, Rosary, Rotten Baby, Rubber Cement, SMB Super Fan, Sack of Pennies, Sacrificial Dagger, Sad Bombs, The Sad Onion, Sagittarius, Samson's Chains, Scapular, Scorpio, Sissy Longlegs, Sister Maggy, Smart Fly, Soy Milk, Speed Ball, Spelunker Hat, Spider Bite, Spiderbaby, Spoon Bender, Stem Cells, Stigmata, Strange Attractor, Super Bandage, Taurus, Tech.5, Technology 2, Technology, Thunder Thighs, Tiny Planet, Tough Love, Virgo, The Virus, The Wafer, X-Ray Vision }}
+{{pool items | weight = {{dlcalt|1|r=0.5}} | The Halo, Magic Mushroom }}
+{{pool items | weight = {{dlcalt|1|r=0.2}} | The Body, Death's Touch, Holy Mantle, The Mind, Mom's Knife, The Relic, The Soul }}
+{{pool items | weight = {{dlcalt|1|r=0.1}} | Epic Fetus, Pyro }}
+{{pool items | dlc = nr | A Quarter, Judas' Shadow }}
+{{pool items | dlc = a | 8 Inch Nails, Betrayal, Bomber Boy, Bumbo, Bursting Sack, Continuum, Curse of the Tower, Dead Eye, Eden's Blessing, Epiphora, Evil Eye, Explosivo, Farting Baby, Fate's Reward, Friend Zone, Fruit Cake, GB Bug, Glitter Bombs, God's Flesh, Host Hat, Key Bum, Kidney Stone, Lil Chest, Lil Gurdy, Lil Loki, Lost Fly, Lusty Blood, Marked, Milk!, Multidimensional Baby, No. 2, Obsessed Fan, Papa Fly, Pupula Duplex, Purity, Rune Bag, Scatter Bombs, Seraphim, Serpent's Kiss, Sticky Bombs, Tech X, Toxic Shock, Tractor Beam, The Wiz, Zodiac }}
+{{pool items | dlc = a | weight = {{dlcalt|1|r=0.2}} | Holy Light }}
+{{pool items | dlc = a+ | Acid Baby, Adrenaline, Analog Stick, Angry Fly, Apple!, Backstabber, Big Chubby, Bloodshot Eye, Bozo, Brittle Bones, Camo Undies, Compound Fracture, Cone Head, Contagion, Dead Tooth, Depression, Dog Tooth, Euthanasia, Fast Bombs, Finger!, Flat Stone, Ghost Pepper, Glaucoma, Haemolacria, Hallowed Ground, Hushy, Jacob's Ladder, Jaw Bone, Lachryphagy, Large Zit, Lead Pencil, Leprosy, Lil Monstro, Lil Spewer, Linger Bean, Metal Plate, Mom's Razor, Mystery Egg, Parasitoid, Pointy Rib, Pop!, Shard of Glass, Sinus Infection, Slipped Rib, Sulfuric Acid, Technology Zero, Varicose Veins, YO LISTEN! }}
+{{pool items | dlc = r | 120 Volt, Akeldama, Almond Milk, Belly Button, Belly Jelly, Bird Cage, Bird's Eye, Blood Bombs, Blood Puppy, Bloody Gust, Boiled Baby, Bone Spurs, Bot Fly, Candy Heart, Cracked Orb, C Section, Cube Baby, Dirty Mind, Empty Heart, Eye Sore, Freezer Baby, Fruity Plum, Ghost Bombs, Giant Cell, Hemoptysis, Hypercoagulation, IBS, It Hurts, Keeper's Kin, Knockout Drops, Lil Dumpy, Lil Portal, Lodestone, Lost Soul, Montezuma's Revenge, Mucormycosis, Nancy Bombs, Playdough Cookie, Polydactyly, Psy Fly, Quints, Rocket in a Jar, Rotten Tomato, The Intruder, The Swarm, Tinytoma, Tooth and Nail, Vasculitis, Worm Friend }}
+{{pool items | dlc = r | weight = 0.2 | Astral Projection }}
+{{pool items | dlc = r | weight = 0.1 | Skeleton Key }}
+|}
+
+{{nav|fr=Salle du Trésor (Banque d'Objets)}}

@@ -1,0 +1,7 @@
+'''Milk''' may refer to one of the following:
+* {{i|Milk!}}, a [[passive collectible]] follower that increases fire rate upon breaking.
+* {{i|Chocolate Milk}}, a passive collectible that grants Isaac chargeable shots.
+* {{i|Soy Milk}}, a passive collectible that grants Isaac very high fire rate at the expense of low damage.
+* {{i|Almond Milk}}, a passive collectible that grants Isaac very high fire rate at the expense of low damage, as well as random tear effects from worm trinkets.
+
+{{disambiguation}}

@@ -1,0 +1,114 @@
+{{infobox monster
+ | id          = 38
+ | base hp     = 25
+ | environment = {{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{room|challenge}}
+ | behavior    = Slowly floats towards Isaac and fires a blood shot at him. Occasionally teleports and reappears elsewhere.
+}} {{disambig msg|the monster|co-op babies|Co-op|items that follow Isaac|Familiar}}
+
+'''Babies''' slowly float towards Isaac, occasionally shooting a single projectile towards him. They can also occasionally teleport to anywhere in the room.
+{{clear}}
+
+== Variants ==
+=== Angelic Baby ===
+{{infobox monster
+ | name           = Angelic Baby
+ | variant        = 1
+ | base hp        = 25
+ | environment    = {{floor|Cathedral}}
+ | replace        = Baby
+ | replace chance = 5.71%
+ | behavior       = Slowly floats towards Isaac and fires three spread shots. Occasionally teleports and reappears elsewhere.
+}}
+
+'''Angelic Babies''' are variants of Babies that fire 3 projectiles at Isaac in a spread instead of 1. They also teleport more often, usually near Isaac.
+{{clear}}
+
+=== Small Angelic Baby ===
+{{infobox monster
+ | dlc         = r
+ | name        = Angelic Baby (small)
+ | subtype     = 1
+ | base hp     = 16
+ | environment = Spawned by Holy Mulligans
+ | behavior    = Slowly floats towards Isaac and fires a blood shot at him. Occasionally teleports and reappears elsewhere. Can only be spawned by {{e|Holy Mulligan}}s.
+}}
+
+'''Small Angelic Babies''' behave identically to Angelic Babies but have less health and shoots only one projectile instead of three.
+
+They are exclusively spawned by {{e|Holy Mulligan}}s.
+{{clear}}
+
+=== Wrinkly Baby ===
+{{infobox monster
+ | dlc         = r
+ | name        = Wrinkly Baby
+ | variant     = 3
+ | base hp     = 25
+ | environment = {{floor|Utero}}<br>{{floor|Corpse}}<br>{{floor|Sheol}}<br>{{floor|Dark Room}}{{floor|Chest}}<br>{{room|challenge}}
+ | behavior    = Dashes towards Isaac at high speed and fires three blood shots in his direction once stopped.
+}}
+
+'''Wrinkly Babies''' slowly move towards Isaac similar to regular Babies, but while approaching him, they may dash towards him at high speed until they hit either a wall or Isaac and then subsequently fire three projectiles in his direction once they stop dashing. If Isaac approaches them after they've performed their previous attack, they will move back from Isaac and fire three projectiles at him without dashing for as long as Isaac continues to follow them, although they will resume their chase and dashing attack if Isaac then moves far from them. They are unable to teleport.
+{{clear}}
+
+=== Imp ===
+{{infobox monster
+ | dlc         = a
+ | name        = Imp
+ | id          = 259
+ | base hp     = 25
+ | environment = {{floor|Sheol}}<br>{{floor|Dark Room}}{{floor|Chest}}<br>{{room|challenge}}{{room|devil}}{{room|curse}}
+ | behavior    = Slowly drifts towards Isaac, frequently firing 5 blood shots in quick succession towards him. Tries to avoid Isaac's shots and occasionally teleports and reappears elsewhere.
+}}
+
+'''Imps''' slowly float towards Isaac, occasionally firing 5 projectiles at Isaac in quick succession and can also occasionally randomly teleport around the room. They move slightly to try to avoid Isaac's tears.
+{{clear}}
+
+=== Baby Begotten ===
+{{infobox monster
+ | dlc         = r
+ | name        = Baby Begotten
+ | id          = 883
+ | base hp     = 18
+ | stage hp    = 3
+ | environment = {{floor|Mausoleum}}{{floor|Gehenna}}<br>{{room|challenge}}
+ | behavior    = Floats toward Isaac, avoiding his tears. After getting close, fires a short {{i|Brimstone}} laser in the closest cardinal direction and propels itself away from him.
+}}
+
+'''Baby Begottens''' float toward Isaac, attempting to avoid Isaac's tears as it approaches. After getting close to him, it lines itself up with him in the closest cardinal direction and fires a thin short-range {{i|Brimstone}} laser at him, propelling itself in the opposite direction.
+
+Despite their namesake and visual similarities to {{e|Begotten}}s they have no similarities in behavior.
+{{clear}}
+
+=== Unborn ===
+{{infobox monster
+ | dlc         = r
+ | name        = Unborn
+ | id          = 860
+ | base hp     = 32
+ | environment = {{floor|Corpse}}
+ | behavior    = Floats quickly towards Isaac, and occasionally teleports to another position near him.
+}}
+'''Unborn''' fly towards Isaac in a circular pattern, and will periodically teleport near Isaac on another side of him.
+{{clear}}{{dlc clear}}
+
+== Sounds ==
+{{sound table header}}
+{{sound table row | [[File:Floaty baby roar.wav]] | Baby Monster Attack Sound/Scream. }}
+{{sound table row | [[File:Floaty baby roar 2.wav]] | Baby Monster Attack Sound/Scream. }}
+{{sound table row | [[File:Goo death 0.wav]] | Baby Monster when dying. }}
+{{sound table row | [[File:Goo death 1.wav]] | Baby Monster when dying. }}
+{{sound table row | [[File:Goo death 2.wav]] | Baby Monster when dying. }}
+|}
+
+== Trivia ==
+* {{dlc|r}} The [[Anti:Unborn|Unborn]] first appeared in the ''Antibirth'' mod.
+* {{dlc|anr+}} The Imp entirely lacks sound effects.
+** {{dlc|r+}} The Imp has a wholly unique set of sound effects.
+
+== Bugs ==
+{{bug|If a Baby, Angelic Baby or Imp tries to shoot Isaac at the same time as it teleports, their shots will be fired without their corresponding animation.}}
+{{bug|dlc=a|If an Imp is [[confusion|stunned]], [[fear]]ed, or [[shrink|shrunken]], it will still attack Isaac while running away from him.}}
+
+{{nav|fr=Bébé}}
+[[Category:Fetal monsters]]

@@ -1,0 +1,205 @@
+{{header normal bosses}}
+
+== {{s|Depths}} ==
+{| style="width: 70%; text-align: center"
+ | [[file:Boss The Cage portrait.png|center|link=The Cage]]
+ | [[file:Boss The Gate portrait.png|center|link=The Gate]]
+ | [[file:Boss Monstro II portrait.png|center|link=Monstro II]]
+ | [[file:Boss Gish portrait.png|center|link=Gish]]
+ |-
+ | [[The Cage]]
+ | [[The Gate]]
+ | [[Monstro II]]
+ | [[Gish]] {{Unlockable}}
+ |-
+ |[[file:Boss Loki portrait.png|center|link=Loki]]
+ |[[file:Boss The Adversary portrait.png|center|link=The Adversary]]
+ |[[file:Boss War portrait.png|center|link=War]]
+ |[[file:Boss Headless Horseman portrait.png|center|link=Headless Horseman]]
+ |-
+ |[[Loki]]
+ |[[The Adversary]] {{dlc|nr}}
+ |[[War]] {{unlockable}}
+ |[[Headless Horseman]] {{unlockable}}
+ |-
+ |[[file:Boss The Fallen portrait.png|center|link=The Fallen]]
+ |[[file:Boss Brownie portrait.png|center|link=Brownie]]
+ |[[file:Boss Sisters Vis portrait.png|center|link=Sisters Vis]]
+ |[[file:Boss Reap Creep portrait.png|center|link=Reap Creep]]
+ |-
+ |[[The Fallen]] {{room|Devil}}
+ |[[Brownie]] {{dlc|a}} {{unlockable}}
+ |[[Sisters Vis]] {{dlc|a+}} {{unlockable}}
+ |[[Reap Creep]] {{dlc|r}} {{unlockable}}
+ |}
+
+=== Double Trouble ===
+{| class="wikitable mw-collapsible mw-collapsed"
+ !Double Trouble Bosses
+ |-
+ | style="padding: 0; text-align: center" |
+ {| style="width: 100%"
+  |[[file:Boss Chub portrait.png|center|link=Chub]]
+  |[[file:Boss Gurdy Jr. portrait.png|center|link=Gurdy Jr.]]
+  |[[file:Boss The Haunt portrait.png|center|link=The Haunt]]
+  |-
+  |(Double Trouble)<br>[[Chub]]
+  |(Double Trouble)<br>[[Gurdy Jr.]]
+  |(Double Trouble)<br>[[The Haunt]]
+  |}
+ {| style="width: 100%"
+  |[[file:Boss The Hollow portrait.png|center|link=The Hollow]]
+  |[[file:Boss The Husk portrait.png|center|link=The Husk]]
+  |[[file:Boss Larry Jr. portrait.png|center|link=Larry Jr.]]
+  |-
+  |(Double Trouble)<br>[[The Hollow]]
+  |(Double Trouble)<br>[[The Husk]]
+  |(Double Trouble)<br>[[Larry Jr.]]
+  |}
+ {| style="width: 100%"
+  |[[file:Boss The Wretched portrait.png|center|link=The Wretched]]
+  |[[file:Boss Little Horn portrait.png|center|link=Little Horn]]
+  |[[file:Boss Rag Man portrait.png|center|link=Rag Man]]
+  |-
+  |(Double Trouble)<br>[[The Wretched]]
+  |(Double Trouble)<br>[[Little Horn]] {{dlc|a}} {{unlockable}}
+  |(Double Trouble)<br>[[Rag Man]] {{dlc|a}} {{unlockable}}
+  |}
+{| style="width: 100%"
+  |[[File:Boss Dark One portrait.png|center|link=Dark One]]
+  |
+  |
+  |-
+  |(Double Trouble)<br>[[Dark One]] {{Dlc|r}}
+  |
+  |
+  |}
+ |}
+
+== {{s|Necropolis}} ==
+{| style="width: 70%; text-align: center"
+ |[[file:Boss The Adversary portrait.png|center|link=The Adversary]]
+ |[[file:Boss The Bloat portrait.png|center|link=The Bloat]]
+ |[[file:Boss Mask of Infamy portrait.png|center|link=Mask Of Infamy]]
+ |[[file:Boss Loki portrait.png|center|link=Loki]]
+ |-
+ |[[The Adversary]]
+ |[[The Bloat]]
+ |[[Mask Of Infamy]]
+ |[[Loki]]
+ |}
+{| style="width: 70%; text-align: center"
+ |[[file:Boss The Gate portrait.png|center|link=The Gate]]
+ |[[file:Boss War portrait.png|center|link=War]]
+ |[[file:Boss Headless Horseman portrait.png|center|link=Headless Horseman]]
+ |[[file:Boss The Fallen portrait.png|center|link=The Fallen]]
+ |-
+ |[[The Gate]] {{dlc|nr}}
+ |[[War]] {{unlockable}}
+ |[[Headless Horseman]] {{unlockable}}
+ |[[The Fallen]] {{room|Devil}}
+ |-
+ | colspan="4" style="padding: 0" |
+{| style="width: 100%"
+ |[[file:Boss Brownie portrait.png|center|link=Brownie]]
+ |[[file:Boss Sisters Vis portrait.png|center|link=Sisters Vis]]
+ |[[file:Boss The Pile portrait.png|center|link=The Pile]]
+ |-
+ |[[Brownie]] {{dlc|a}} {{unlockable}}
+ |[[Sisters Vis]] {{dlc|a+}} {{unlockable}}
+ |[[The Pile]] {{dlc|r}} {{unlockable}}
+ |}
+|}
+
+=== Double Trouble ===
+{| class="wikitable mw-collapsible mw-collapsed"
+ !Double Trouble Bosses
+ |-
+ | style="padding: 0; text-align: center" |
+ {| style="width: 100%"
+  |[[file:Boss Blighted Ovum portrait.png|center|link=Blighted Ovum]]
+  |[[file:Boss The Haunt portrait.png|center|link=The Haunt]]
+  |[[file:Boss The Husk portrait.png|center|link=The Husk]]
+  |[[file:Boss Larry Jr. portrait.png|center|link=Larry Jr.]]
+  |-
+  | (Double Trouble)<br>[[Blighted Ovum]]
+  |(Double Trouble)<br>[[The Haunt]]
+  |(Double Trouble)<br>[[The Husk]]
+  |(Double Trouble)<br>[[Larry Jr.]]
+  |}
+ {| style="100%"
+  |[[file:Boss Dangle portrait.png|center|link=Dangle]]
+  |[[file:Boss Little Horn portrait.png|center|link=Little Horn]]
+  |[[file:Boss Rag Man portrait.png|center|link=Rag Man]]
+  |-
+  |(Double Trouble)<br>[[Dangle]] {{dlc|a}} {{unlockable}}
+  |(Double Trouble)<br>[[Little Horn]] {{dlc|a}} {{unlockable}}
+  |(Double Trouble)<br>[[Rag Man]] {{dlc|a}} {{unlockable}}
+  |}
+ |}
+
+== {{s|Dank Depths}} ==
+{| style="width: 70%; text-align: center"
+ |[[file:Boss Loki portrait.png|center|link=Loki]]
+ |[[file:Boss Monstro II portrait.png|center|link=Monstro II]]
+ |[[file:Boss Gish portrait.png|center|link=Gish]]
+ |[[file:Boss The Adversary portrait.png|center|link=The Adversary]]
+ |-
+ |[[Loki]]
+ |[[Monstro II]]
+ |[[Gish]] {{Unlockable}}
+ |[[The Adversary]] {{dlc|nr}}
+ |-
+ |[[file:Boss War portrait.png|center|link=War]]
+ |[[file:Boss Headless Horseman portrait.png|center|link=Headless Horseman]]
+ |[[file:Boss The Fallen portrait.png|center|link=The Fallen]]
+ |[[file:Boss Brownie portrait.png|center|link=Brownie]]
+ |-
+ |[[War]] {{unlockable}}
+ |[[Headless Horseman]] {{unlockable}}
+ |[[The Fallen]] {{room|Devil}}
+ |[[Brownie]] {{unlockable}}
+ |-
+ |[[file:Boss Sisters Vis portrait.png|center|link=Sisters Vis]]
+ |[[File:Boss The Cage portrait.png|center|link=The Cage]]
+ |[[File:Boss The Gate portrait.png|center|link=The Gate]]
+ |[[File:Boss Reap Creep portrait.png|center|link=Reap Creep]]
+ |-
+ |[[Sisters Vis]] {{dlc|a+}} {{unlockable}}
+ |[[The Cage]] {{Dlc|r}}
+ |[[The Gate]] {{Dlc|r}}
+ |[[Reap Creep]] {{Dlc|r}} {{unlockable}}
+ |}
+
+=== Double Trouble ===
+{| class="wikitable mw-collapsible mw-collapsed"
+ !Double Trouble Bosses
+ |-
+ | style="padding: 0; text-align: center" |
+ {| style="width: 100%"
+  |[[file:Boss The Haunt portrait.png|center|The Haunt]]
+  |[[file:Boss Little Horn portrait.png|center|link=Little Horn]]
+  |[[file:Boss Baby Plum portrait.png|center|link=Baby Plum]]
+  |-
+  |(Double Trouble)<br>[[The Haunt]]
+  |(Double Trouble)<br>[[Little Horn]] {{dlc|a}} {{unlockable}}
+  |(Double Trouble)<br>[[Baby Plum]] {{dlc|r}} {{unlockable}}
+  |}
+ |}
+
+== Final Boss ==
+{{e|Mom}} will always appear in the second floor of this chapter or in the last boss room if {{curse|Labyrinth}} is active.
+{| style="width: 70%; text-align: center"
+ |[[file:Boss Mom portrait.png|center|link=Mom]]
+ |-
+ |[[Mom]]
+ |}
+
+== Notes ==
+* {{e|The Fallen}} and {{e|Headless Horseman}} are universal bosses.
+
+{{nav|boss|fr=Chapitre 3 (Boss)}}
+[[Category:Modified in Afterbirth]]
+[[Category:Modified in Afterbirth+]]
+[[Category:Modified in Repentance]]
+[[Category:Bosses| ]]

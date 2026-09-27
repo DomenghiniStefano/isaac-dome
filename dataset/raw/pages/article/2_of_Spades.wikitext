@@ -1,0 +1,26 @@
+{{Header playing cards}}
+{{Infobox card
+ | name        = 2 of Spades
+ | type        = card
+ | id          = 25
+ | quote       = Item multiplier
+ | description = Doubles Isaac's {{e|Key}}s.<br>If he has no keys, gives him 2 instead.
+ | recharge    = {{dlcalt|4|r=12}}
+}}
+
+{{cit|c}}
+
+== Effects ==
+* Doubles Isaac's {{e|Key|text=keys}}.
+* If Isaac has no keys, gives 2 keys instead.
+
+== Strategy ==
+* The key counter cannot exceed 99, so the most optimal time to use '''2 of Spades''' is when Isaac has 49 or 50 keys.
+
+== Synergies ==
+* {{I|Tarot Cloth|nr}}: Quadruples Isaac's keys.
+
+== Interactions ==
+* {{I|Tarot Cloth|r}}: No effect.
+
+{{nav|fr=2 de Pique|card|key modifier}}

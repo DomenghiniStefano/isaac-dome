@@ -1,0 +1,161 @@
+<div style="float:right; width:auto; margin:5px 0 5px 10px">__TOC__</div>{{page dlc|a+}}
+{{disambig msg|the Afterbirth † content updates|the passive item|Booster Pack (Item)}}
+'''Booster Packs''' were recurring content updates for ''[[The Binding of Isaac: Afterbirth †]]''. Booster Packs contained popular community-developed mods as updates in the game continued to add features.
+
+== Booster Pack #{{anchor|1}} ==
+The first Booster Pack was released on March 23, 2017 on PC, and contains 9 new items, 3 new trinkets, and 3 new special cards, along with some new features.<ref>[[boisite:158765831809|Booster Tutor!]]</ref>
+
+=== Active Items ===
+{{collectible table | Black Hole, Mystery Gift, Sprinkler }}
+
+=== Passive Items ===
+{{collectible table | Angry Fly, Bozo, Broken Modem, Buddy in a Box, Fast Bombs, Lil Delirium }}
+
+=== Trinkets ===
+{{trinket table | Hairpin, Wooden Cross, Butter! }}
+
+=== Cards ===
+{{pickup table | Huge Growth, Ancient Recall, Era Walk }}
+
+=== Other Features ===
+* [[Dice Room]]s now have a small icon in the corner of the room that denotes what the effect of the room is, inspired by [http://steamcommunity.com/sharedfiles/filedetails/?id=835149267 this Steam Workshop mod].
+* Added a new option in the menu to display charge bars, based on [http://steamcommunity.com/sharedfiles/filedetails/?id=835177566 this Steam Workshop mod].
+* Added 5 new {{c|Eden}} hairstyles, based on [http://steamcommunity.com/sharedfiles/filedetails/?id=834446972 this Steam Workshop mod].
+
+== Booster Pack #{{anchor|2}} ==
+The second Booster Pack was released on May 12, 2017 on PC, and contains 6 new items, 1 new trinket, and miscellaneous changes.<ref>[[boisite:160602152274|Booster Rooster #2!]]</ref>
+
+=== Active Items ===
+{{collectible table | Coupon, Telekinesis, Moving Box }}
+
+=== Passive Items ===
+{{collectible table | Jumper Cables, Leprosy, Technology Zero }}
+
+=== Trinkets ===
+{{trinket table | Filigree Feather }}
+
+=== Other Features ===
+* {{r|Angel Room}}s were rebalanced - they contain more items but only a single one can be collected.
+* Mods no longer disable achievements after beating {{e|Mom}} once. This includes the use of the [[Debug Console]].
+* Active items now charge during {{r|Challenge Room}} waves.
+* Multiple items that affect the appearance of bombs now stack visually, based on [http://steamcommunity.com/sharedfiles/filedetails/?id=854593270 this Steam Workshop mod].
+* {{i|Jar of Flies}} now changes appearance depending on how many flies are in the jar, based on [http://steamcommunity.com/sharedfiles/filedetails/?id=840463618 this Steam Workshop mod].
+* Added {{m|Mom's Dressing Table}}, which changes Isaac's appearance to only reflect a few of his items, based on [http://steamcommunity.com/sharedfiles/filedetails/?id=859294029 this Steam Workshop mod].
+* Added the {{tf|Stompy}} transformation.
+
+== Booster Pack #{{anchor|3}} ==
+The third Booster Pack was released on June 30, 2017, for the PC, and contains 4 new items, and 1 trinket.
+
+=== Active Items ===
+{{collectible table | Mr. ME! }}
+
+=== Passive Items ===
+{{collectible table | 7 Seals, Angelic Prism, Pop! }}
+
+=== Trinkets ===
+{{trinket table | Door Stop }}
+
+=== Other Features ===
+* Added new {{c|Eden}} hairstyles, based on [http://steamcommunity.com/sharedfiles/filedetails/?id=889949830 this Steam Workshop mod].
+
+== Booster Pack #{{anchor|4}} ==
+The fourth Booster Pack was released on October 10, 2017 and contains 5 new items, 1 new trinket, and 6 new enemies.<ref>[[boisite:166309298439|Booster Pack 4 You!]]</ref>
+
+=== Passive Items ===
+{{collectible table | Death's List, Haemolacria, Lachryphagy, Schoolbag, Trisagion }}
+
+=== Trinkets ===
+{{trinket table | Extension Cord }}
+
+=== Monsters ===
+{{entity table | Cross Stone Shooter, Fistuloid, Gush, Soul Sucker, Tar Boy, Tube Worm }}
+
+=== Other Features ===
+* Most items from previous Booster Packs have new and improved graphics.
+** {{i|Broken Modem}} collectible sprite was changed.
+** {{i|Technology Zero}} collectible and costume sprites were changed.
+** {{i|Angry Fly}} collectible and familiar sprites were changed.
+** {{i|Sprinkler}} collectible and entity sprites were changed.
+** {{i|7 Seals}} collectible and familiar sprites were changed. Familiar sprites were based on [http://steamcommunity.com/sharedfiles/filedetails/?id=1098300666 this Steam Workshop mod] by Quartz.
+** {{i|Pop!}} collectible sprite was changed.
+** {{t|Hairpin}} trinket sprite was changed.
+** {{t|Butter!}} trinket sprite was changed.
+** {{t|Door Stop}} trinket sprite was changed.
+* Added 400 new rooms to better integrate the Afterbirth+ enemies (including Booster Pack #4 enemies) into the game.
+
+== Booster Pack #{{anchor|5}} ==
+The fifth and last Booster Pack was released on April 30, 2018 and contains 1 new character, 18 new items, 3 new trinkets, 7 new enemies, and a new boss.<ref>[[boisite:173459905199|The Forgotten Booster!]]</ref>
+
+=== Characters ===
+[[The Forgotten]] is a new character added in the Booster pack.
+
+=== Active Items ===
+{{collectible table | Book of the Dead, Broken Shovel 1, Mom's Shovel, Sacrificial Altar }}
+
+=== Passive Items ===
+{{collectible table | Blanket, Brittle Bones, Broken Shovel 2, Dad's Ring, Divorce Papers, Flat Stone, Hallowed Ground, Jaw Bone, Lil Spewer, Marbles, Marrow, Mystery Egg, Pointy Rib, Slipped Rib }}
+
+=== Trinkets ===
+{{trinket table | Rotten Penny, Baby-Bender, Finger Bone }}
+
+=== Monsters ===
+{{entity table | Crispy, Cross Stoney, Dank Charger, Leper, Leper Flesh, Mr. Mine, Mr. Red Maw }}
+
+=== Bosses ===
+{| style="width: 100%; text-align: center"
+ | [[File:Boss The Matriarch portrait.png|link=The Matriarch]]
+ |-
+ | [[The Matriarch]]
+ |}
+
+=== Other features ===
+* {{e|Bone Heart}}s, a new heart-type.
+* {{e|Golden Bomb}}s now have a pickup sound effect.
+* {{e|Black Heart}}s now have a pickup sound effect.
+* {{e|White Poop}}, a new poop type.
+* {{e|Gaping Maw}}s supposedly have a chance to become {{e|Broken Gaping Maw}}s, although this never actually happens ingame.<ref name="brokenmaw">[https://twitter.com/edmundmcmillen/status/972008259266650112 ''"i believe more broken maw rooms were added and possibly the chance for normal ones to become broken ones"'']</ref>
+* Changes to {{mode|greed}} [[Greed]] mode {{r|Angel Room}}s.
+* Added 817 new rooms.
+* New charge bar graphics.
+* New and improved graphics based on [https://steamcommunity.com/sharedfiles/filedetails/?id=1158478342 this Steam Workshop mod].
+* New and improved graphics for burrowing monsters based on [https://steamcommunity.com/sharedfiles/filedetails/?id=1201700604 this Steam Workshop mod].
+* Added the unlocks from the Switch version of the game.
+* Added 64 new achievements, including 36 from the Switch version.
+* Added 43 new [[Babies|Co-op Babies]], 41 being cosmetic and two unlockables (Bone Baby and Bound Baby).
+* Other items received new and improved graphics.
+** {{i|Bozo}} collectible sprite was changed.
+** {{i|Fast Bombs}} collectible sprite was changed.
+** {{i|Haemolacria}} collectible sprite was changed.
+** {{i|Mom's Contacts}} collectible sprite was changed.
+** {{i|Mom's Eye}} collectible sprite was changed.
+** {{i|Schoolbag}} collectible sprite was changed.
+** {{i|YO LISTEN!}} familiar sprite was changed.
+** {{t|Cracked Dice}} trinket sprite was changed.
+** {{t|Endless Nameless}} trinket sprite was changed.
+** {{t|Extension Cord}} trinket sprite was changed.
+** {{t|Filigree Feather}} trinket sprite was changed.
+** {{t|Hairpin}} trinket sprite was changed.
+** {{t|Karma}} trinket sprite was changed.
+** {{t|Lazy Worm}} trinket sprite was changed.
+** {{t|Lil Larva}} trinket sprite was changed.
+** {{t|Mom's Pearl}} trinket sprite was changed.
+** {{t|NO!}} trinket sprite was changed.
+** {{t|Second Hand}} trinket sprite was changed.
+** {{t|Stud Finder}} trinket sprite was changed.
+** {{t|Super Magnet}} trinket sprite was changed.
+
+== Gallery ==
+<gallery>
+File:Scrapped BP Enemy.png|Concept Art For Cells, Fused Cells, and Tissues, scrapped Booster Pack enemies by LeatherIceCream.
+</gallery>
+
+== Trivia ==
+* Booster Pack 3 is the only booster pack to not be featured on a blog post.
+* The developers of [[anti:|Antibirth]] helped create booster packs 4 and 5.
+* Many of the added [[Babies|Co-op Babies]] from Booster Pack 5 are references to popular mods that were never added in the Booster Packs.
+
+== References ==
+{{reflist}}
+
+{{nav|booster pack}}
+[[Category:Afterbirth+]]

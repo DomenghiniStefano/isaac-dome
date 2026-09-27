@@ -56,7 +56,7 @@
 {{#ev:youtube|5s18BaD5iZY}}
 
 == Trivia ==
-* Any {{e|Dummy|text=Dummies}} on screen will not only be attacked by the Minisaac spawned by Giant Cell, but will prioritize attacking the Dummy over any other enemies.
+* A Minisaac spawned by Giant Cell will not only attack {{e|Dummy|text=Dummies}} on screen, but will prioritize attacking the Dummy over any other enemies.
 
 {{nav|fr=Cellule Géante}}
 [[Category:Damage-triggered items]]

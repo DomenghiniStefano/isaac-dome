@@ -22,7 +22,7 @@
 * {{I|Dull Razor}} may be used to safely activate Astral Projection as The Lost.
 * It's also possible to leave the room while the ghost is outside the body, either by bombing it or having items that keep doors open, such as {{t|Door Stop}} or {{i|Mercurius}}. This grants Isaac an additional chance to heal.
 ** Teleporting outside of the room will not work.
-* Astral Projection cannot be triggered inside of {{r|Boss Rush}}.
+* {{dlc|nr+}} Astral Projection cannot be triggered inside of {{r|Boss Rush}}.
 
 == Synergies ==
 * {{I|Hypercoagulation}}: Due to the effective speed up, the heart used to activate Astral Projection can easily be collected before it disappears.

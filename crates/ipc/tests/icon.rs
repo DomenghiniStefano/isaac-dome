@@ -5,8 +5,18 @@
 //! can't parse is an image that silently never appears. `unpack` taught this lesson once
 //! already — a wrong path doesn't raise an error, it goes quiet.
 
-use catalog::Catalog;
-use ipc::{icon_source, IconRef, ItemKindView, MarkFill, MarkTier, Target};
+use catalog::{Catalog, SpriteRef};
+use ipc::{icon_source, IconRef, IconSource, ItemKindView, MarkFill, MarkTier, Target};
+
+/// Most of this file only cares about the single-sprite case: the other outcome
+/// (`IconSource::Entity`) is `app/icons.rs`'s to read and compose, and only
+/// `a_non_boss_entitys_page_resolves_to_its_anm2_not_a_sprite` below checks for it.
+fn sprite(s: Option<IconSource<'_>>) -> Option<&SpriteRef> {
+    match s {
+        Some(IconSource::Sprite(sprite)) => Some(sprite),
+        _ => None,
+    }
+}
 
 const ITEMS: &[u8] = b"<items gfxroot=\"gfx/items/\"><passive id=\"2\" gfx=\"a.png\" name=\"A\" achievement=\"1\" /></items>";
 const ACH: &[u8] = b"<achievements gfxroot=\"gfx/ui/achievement/\"><achievement id=\"1\" text=\"t1\" gfx=\"1.png\" /></achievements>";
@@ -70,23 +80,25 @@ fn a_path_that_is_not_ours_parses_to_nothing() {
 fn a_reference_resolves_to_the_file_the_catalog_names() {
     let c = catalog();
     assert_eq!(
-        icon_source(
+        sprite(icon_source(
             &c,
             &ipc::for_tests::bosses(&c),
+            None,
             &IconRef::Achievement { id: 1 }
-        )
+        ))
         .map(|s| s.path.as_str()),
         Some("gfx/ui/achievement/1.png")
     );
     assert_eq!(
-        icon_source(
+        sprite(icon_source(
             &c,
             &ipc::for_tests::bosses(&c),
+            None,
             &IconRef::Item {
                 kind: ItemKindView::Passive,
                 id: 2
             }
-        )
+        ))
         .map(|s| s.path.as_str()),
         // The subfolder comes from the kind, which the XML doesn't state: `kind.folder()`.
         Some("gfx/items/collectibles/a.png")
@@ -102,6 +114,7 @@ fn the_kind_is_part_of_the_key_not_decoration() {
     assert!(icon_source(
         &c,
         &ipc::for_tests::bosses(&c),
+        None,
         &IconRef::Item {
             kind: ItemKindView::Trinket,
             id: 2
@@ -116,6 +129,7 @@ fn an_id_the_catalog_does_not_know_resolves_to_nothing() {
     assert!(icon_source(
         &c,
         &ipc::for_tests::bosses(&c),
+        None,
         &IconRef::Achievement { id: 999 }
     )
     .is_none());
@@ -211,8 +225,13 @@ fn catalog_with_heads() -> Catalog {
 fn a_head_resolves_through_the_matrix_row() {
     let c = catalog_with_heads();
     let at = |row| {
-        icon_source(&c, &ipc::for_tests::bosses(&c), &IconRef::Head { row })
-            .map(|s| (s.path.clone(), s.rect.map(|r| (r.x, r.y, r.w, r.h))))
+        sprite(icon_source(
+            &c,
+            &ipc::for_tests::bosses(&c),
+            None,
+            &IconRef::Head { row },
+        ))
+        .map(|s| (s.path.clone(), s.rect.map(|r| (r.x, r.y, r.w, r.h))))
     };
     // Row 0 is Isaac (id 0, frame 1 = column 1, row 0); row 17 is T. Isaac (id 21, frame 21
     // = column 5, row 2).
@@ -237,6 +256,7 @@ fn a_mark_is_not_in_the_catalog() {
     assert!(icon_source(
         &c,
         &ipc::for_tests::bosses(&c),
+        None,
         &IconRef::Mark {
             column: 0,
             tier: MarkTier::Hard
@@ -302,17 +322,19 @@ fn a_page_icon_resolves_through_target_sprite() {
     let found = icon_source(
         &c,
         &ipc::for_tests::bosses(&c),
+        None,
         &IconRef::Page {
             target: Target::Item { id: 2 },
         },
     );
     assert_eq!(
-        found.map(|s| s.path.as_str()),
+        sprite(found).map(|s| s.path.as_str()),
         Some("gfx/items/collectibles/a.png")
     );
     assert!(icon_source(
         &c,
         &ipc::for_tests::bosses(&c),
+        None,
         &IconRef::Page {
             target: Target::Item { id: 99 }
         }
@@ -322,11 +344,49 @@ fn a_page_icon_resolves_through_target_sprite() {
     assert!(icon_source(
         &c,
         &ipc::for_tests::bosses(&c),
+        None,
         &IconRef::Page {
             target: Target::Challenge { number: 1 }
         }
     )
     .is_none());
+}
+
+#[test]
+fn a_non_boss_entitys_page_resolves_to_its_anm2_not_a_sprite() {
+    // The wiki dataset says which of the two `Target::Entity` reads (boss or common
+    // entity) applies; without one, every entity is read as a possible boss (this crate's
+    // other tests cover that path), so this is the one place a real embedded dataset is
+    // worth reaching for.
+    let Ok(ds) = wiki::Dataset::embedded() else {
+        return;
+    };
+    const ENTITIES: &[u8] =
+        b"<entities><entity id=\"10\" variant=\"0\" name=\"Gaper\" anm2path=\"010_Gaper.anm2\" /></entities>";
+    let c = Catalog::build(|p| match p {
+        "entities2.xml" => Some(ENTITIES.to_vec()),
+        _ => None,
+    });
+    // Gaper is `10.0.0` on the real dataset, filed under `ds.entities` and not `ds.bosses`.
+    if !ds.entities.contains_key(&wiki::Dataset::boss_key(10, 0, 0)) {
+        return;
+    }
+    let found = icon_source(
+        &c,
+        &ipc::for_tests::bosses(&c),
+        Some(ds),
+        &IconRef::Page {
+            target: Target::Entity {
+                id: 10,
+                variant: 0,
+                subtype: 0,
+            },
+        },
+    );
+    assert!(
+        matches!(found, Some(IconSource::Entity { anm2_path }) if anm2_path == "gfx/010_Gaper.anm2"),
+        "{found:?}"
+    );
 }
 
 // Which references are served trimmed to their drawing, and which are served as the anm2

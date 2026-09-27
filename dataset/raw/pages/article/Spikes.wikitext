@@ -1,0 +1,26 @@
+{{header obstacles}}
+
+{{disambig msg|the floor-based spike hazards|the spiked, ball-like hazards|Spikeball|the active, enemy-like hazards|Poky}}
+
+[[file:Spikes.png|50px|link=]] [[file:Womb Spikes.png|50px|link=]]
+* Can be walked over, but will damage Isaac in the process.
+* Deal one heart of damage upon contact with the player (unless the player has {{t|Callus}}, {{i|Orphan Socks}}, the ability to jump, or [[flight]] to avoid being damaged). Non-flying enemies take 8 points of damage.
+** {{r|Sacrifice Room}} spikes will damage Isaac and enemies even with flight ability.
+* {{dlc|a}} They can be deactivated with {{e|Pressure Plate|n}}s.
+* {{dlc+|r}} Will retract if Isaac holds {{t|Flat File}}, even if they're sacrifice room spikes.{{dlc-}}
+
+== Retractable Spikes ==
+[[file:retractingspikes.gif|50px|link=]]
+* Retract and extend on timers.
+* Can be walked over safely while they are retracted.
+* Can be destroyed by placing {{i|The Poop}}'s poop on them while they are retracted and then clearing the poop.
+* {{dlc|a}} Deactivates when all {{e|Pressure Plate|n}}s are pressed.
+{{clear}}
+
+== Gallery ==
+<gallery>
+File:Edmund McMillen Rebirth Monster Sketches.jpg|Sketches of monsters for the Binding of Isaac: Rebirth, including the Retractable Spikes in the bottom square of the fourth row, formerly called "On/Off Tiles." Despite technically being an obstacle, the concept art groups it with monsters.
+</gallery>
+
+{{nav|fr=Pics}}
+[[Category:Objects]]

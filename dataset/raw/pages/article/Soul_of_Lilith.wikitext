@@ -1,0 +1,35 @@
+{{header soul stones}}
+{{Infobox rune
+ | dlc         = r
+ | name        = Soul of Lilith
+ | type        = soul stone
+ | id          = 92
+ | quote       = Motherhood
+ | description = Grants one permanent [[familiar]] from the {{ip|Baby Shop|text=Baby Shop pool}}. Can give familiars that Isaac already has.
+ | unlocked by = Soul of Lilith
+ | recharge    = 12
+}}
+
+{{cit|ur|r}}
+
+== Effects ==
+* Grants one permanent [[familiar]] from the {{ip|Baby Shop|text=Baby Shop pool}}.
+** Soul of Lilith can give familiars that Isaac already has.
+** [[Item Tags uniquefamiliar|Unique familiars]] can be received only once.
+
+== Notes ==
+* Soul of Lilith cannot grant {{i|Stitches}} and {{i|Gello|r+}}, as they are both active items.
+* Items granted by Soul of Lilith do not count as collected, and can still spawn in any pool they're in. Familiars obtained this way contribute toward transformations such as {{tf|Conjoined}}.
+* Soul of Lilith takes its familiars from the {{ip|Baby Shop|text=Baby Shop pool}}; however, when Isaac's items are rerolled, those familiars are rerolled in the {{ip|Treasure Room|text=Treasure Room item pool}}.
+* With {{c|Tainted Lost}}, Soul of Lilith is one of the few ways to obtain non-<code>[[Item Tags offensive|offensive]]</code> items.
+
+== Interactions ==
+* {{c|Tainted Isaac}}: Using Soul of Lilith while Isaac's inventory is full adds a permanent familiar that does not take up an inventory slot.
+** If Soul of Lilith is used while Tainted Isaac has an empty slot, the granted familiar ''will'' take up an inventory slot and can be dropped in exchange for another item as normal.
+* {{i|Void}} / {{i|Abyss}} / {{i|Starter Deck}} (or other ways of holding 2 consumables at once) + {{p|Black Rune}}: Items granted by Soul of Lilith can be destroyed for their respective bonuses right after using the soul stone while the pedestal pickup animation is playing.
+
+== In-game Footage ==
+{{#ev:youtube|QllR1KrizD0}}
+
+{{nav|fr=Âme de Lilith}}
+[[Category:Runes]]

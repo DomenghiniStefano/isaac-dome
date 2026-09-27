@@ -1,0 +1,160 @@
+{{infobox stage
+ | chapter          = 4
+ | id               = {{dlcalt|8|a=11}}
+ | id greed         = {{dlc|r|11}}
+ | level id         = 7, 8
+ | level id greed   = {{dlc|r|4}}
+ | type id          = 1
+ | type id greed    = {{dlc|r|1}}
+ | degraded bosses  = Blastocyst, Blastocyst Medium, Blastocyst Small, Chub, Dingle, Envy, Fistula, Fistula Medium, Gemini, Gluttony, Gurdy Jr., The Haunt, The Husk, Larry Jr., Loki, Lust, Mega Fatty, Mega Maw, Monstro, Pin, Polycephalus, Sloth, Wrath, The Wretched
+ | bosses 1         = Blastocyst, The Bloat, Conquest, Daddy Long Legs, Death, Lokii, Mama Gurdy, The Matriarch, Mr. Fred, Sisters Vis, Triachnid
+ | double trouble 1 = The Gate, Gurdy
+ | bosses 2         = Mom's Heart, It Lives!
+ | unlocked by      = The Womb
+}}
+The '''Utero''' is an alternate floor to the {{s|Womb}}. Unlike other alternate floors, the Utero does not need to be unlocked, aside from unlocking the Womb. While the theme of Utero overlaps heavily with the Womb, it appears to emphasize gore and disfigurement rather than its counterpart's focus on 'intact' viscera, though the difference in enemy make-up is still more subtle compared to other floors nonetheless. Its walls are slightly different, with white ribs spaced out on the walls, and the floor contains several new enemies that are bloodier and more deformed, as well as more enemies borrowed from later chapters, such as the {{s|Cathedral}} and {{s|Sheol}}, such as Holy Leeches or Bloodshot Eyes.
+
+Like the Womb, from this floor onward, {{r|Treasure Room}}s and {{r|Shop}}s will no longer naturally generate and all damage that is taken deducts a full heart from Isaac's HP (unless he has {{i|The Wafer}}), regardless of the source.
+
+{{dlc|r}} While in the Utero, a dark yellowish desaturated screen shader and a warping effect will be applied to the screen, making it appear as if the area is submerged in fluid and further distinguishing the floor's appearance from the Womb.
+
+== [[Monster]]s ==
+{{entity table/header}}
+{{stage entities | Baby, Boil, Walking Boil, Bony, Death's Head, Brain, MemBrain, Clotty, Clot, I.Blob, Dip, Squirt, Dinga, Dople, Embryo, Eye, Bloodshot Eye, Pale Fatty, Fat Sack, Blubber, Half Sack, Fly, Eternal Fly, Moter, Pooter, Super Pooter, Full Fly, Red Boom Fly, Sucker, Spit, Fred, Globin, Gazing Globin, Grub, Gurgling, Guts, Mama Guts, Homunculus, Leech, Holy Leech, Lump, Charger, Mask + Heart, Knight, Maw, Red Maw, Psychic Maw, Mr. Maw, Mom's Hand, Swinger, Nerve Ending, Oob, Para-Bite, Cod Worm, Red Host, Flesh Mobile Host, Rotty, Round Worm, Spider, Big Spider, Crazy Long Legs, Small Crazy Long Legs, Wall Creep, Blind Creep, Rage Creep, Tumor, Vis, Double Vis, Chubber, Wall Hugger, Stone Grimace, Vomit Grimace, Constant Stone Shooter, Gaping Maw, Broken Gaping Maw, Stone Eye }}
+{{stage entities | dlc = a | Flesh Death's Head, Mega Clotty, Meatball, Mom's Dead Hand, Red Ghost, Ulcer, Suction Pitfall }}
+{{stage entities | dlc = a+ | Blister, Poison Mind, Mr. Red Maw, Nerve Ending 2, Stoney, Cross Stone Shooter }}
+{{stage entities | dlc = a+nr | Portal }}
+{{stage entities | dlc = r | Cohort, Eggy, Floast, Wrinkly Baby, Needle, Peeping Fatty, Planetoid, Triple Grimace }}
+|}
+
+''Degraded Bosses:''
+{| class="wikitable mw-collapsible striped sortable"
+! Name
+! ID
+! class="unsortable" | Notes
+{{entity row minimal|Blastocyst}} | Appears in all forms
+{{entity row minimal|Chub}} |
+{{entity row minimal|Dingle}} |
+{{entity row minimal|Envy}} |
+{{entity row minimal|Fistula}} | Medium- and large-form only
+{{entity row minimal|Gemini}} |
+{{entity row minimal|Gluttony}} |
+{{entity row minimal|Gurdy Jr.}} |
+{{entity row minimal|Gurglings}} |
+{{entity row minimal|The Haunt}} |
+{{entity row minimal|The Hollow}} |
+{{entity row minimal|The Husk}} |
+{{entity row minimal|Larry Jr.}} |
+{{entity row minimal|Loki}} |
+{{entity row minimal|Lokii}} |
+{{entity row minimal|Lust}} |
+{{entity row minimal|Mega Fatty}} |
+{{entity row minimal|Mega Maw}} |
+{{entity row minimal|Monstro}} |
+{{entity row minimal|Pin}} |
+{{entity row minimal|Polycephalus}} |
+{{entity row minimal|Sloth}} |
+{{entity row minimal|Teratoma}} |
+{{entity row minimal|Widow}} |
+{{entity row minimal|Wrath}} |
+{{entity row minimal|The Wretched}} |
+|}
+
+== [[Bosses]] ==
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:Boss_The_Bloat portrait.png|center|link=The Bloat]]
+| style="text-align: center; border: none" |[[File:Boss_Daddy_Long_Legs portrait.png|center|link=Daddy Long Legs]]
+| style="text-align: center; border: none" |[[File:Boss_Triachnid portrait.png|center|link=Triachnid]]
+| style="text-align: center; border: none" |[[File:Boss_Lokii portrait.png|center|link=Lokii]]
+|-
+| style="text-align: center; border: none" |[[The Bloat]]
+| style="text-align: center; border: none" |[[Daddy Long Legs]]
+| style="text-align: center; border: none" |[[Triachnid]] {{unlockable}}
+| style="text-align: center; border: none" |[[Lokii]]
+|}
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:Boss_Teratoma portrait.png|center|link=Teratoma]]
+| style="text-align: center; border: none" |[[File:Boss_Blastocyst portrait.png|center|link=Blastocyst]]
+| style="text-align: center; border: none" |[[File:Boss_Mama_Gurdy portrait.png|center|link=Mama Gurdy]]
+| style="text-align: center; border: none" |[[File:Boss_Mr._Fred portrait.png|center|link=Mr. Fred]]
+|-
+| style="text-align: center; border: none" |[[Teratoma]]
+| style="text-align: center; border: none" |[[Blastocyst]] {{Dlc|nr}}
+| style="text-align: center; border: none" |[[Mama Gurdy]] {{Dlc|nr}}
+| style="text-align: center; border: none" |[[Mr. Fred]] {{Dlc|nr}}
+|}
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:Boss_Death portrait.png|center|link=Death (Boss)]]
+| style="text-align: center; border: none" |[[File:Boss_Conquest portrait.png|center|link=Conquest]]
+| style="text-align: center; border: none" |[[File:Boss_The_Fallen portrait.png|center|link=The Fallen]]
+| style="text-align: center; border: none" |[[File:Boss Headless_Horseman portrait.png|center|link=Headless Horseman]]
+|-
+| style="text-align: center; border: none" |[[Death (Boss)|Death]] {{unlockable}}
+| style="text-align: center; border: none" |[[Conquest]] {{unlockable}}
+| style="text-align: center; border: none" |[[The Fallen]] {{room|Devil}}
+| style="text-align: center; border: none" |[[Headless Horseman]] {{unlockable}}
+|}
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:Boss Sisters Vis portrait.png|center|link=Sisters Vis]]
+| style="text-align: center; border: none" |[[File:Boss_The_Matriarch portrait.png|center|link=The Matriarch]]
+|-
+| style="text-align: center; border: none" |[[Sisters Vis]] {{dlc|a+nr}} {{unlockable}}
+| style="text-align: center; border: none" |[[The Matriarch]] {{dlc|a+nr}} {{unlockable}}
+|}
+
+=== Double Trouble ===
+{| class="mw-collapsible mw-collapsed wikitable"
+! Double Trouble Bosses
+|-
+|
+{| style="width:100%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:Boss_The_Cage portrait.png|center|link=The Cage]]
+| style="text-align: center; border: none" |[[File:Boss_The_Fallen portrait.png|center|link=The Fallen]]
+| style="text-align: center; border: none" |[[File:Boss_The_Gate portrait.png|center|link=The Gate]]
+| style="text-align: center; border: none" |[[File:Boss_Gurdy portrait.png|center|link=Gurdy]]
+|-
+| style="text-align: center; border: none" |(Double Trouble)<br>[[The Cage]]
+| style="text-align: center; border: none" |(Double Trouble)<br>[[The Fallen]]
+| style="text-align: center; border: none" |(Double Trouble)<br>[[The Gate]]
+| style="text-align: center; border: none" |(Double Trouble)<br>[[Gurdy]]
+|}
+{| style="width:100%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:Boss_Loki portrait.png|center|link=Loki]]
+| style="text-align: center; border: none" |[[File:Boss_Little_Horn portrait.png|center|link=Little Horn]]
+| style="text-align: center; border: none" |[[File:Boss_Dangle portrait.png|center|link=Dangle]]
+| style="text-align: center; border: none" |[[File:Boss_Turdlings portrait.png|center|link=Turdlings]]
+|-
+| style="text-align: center; border: none" |(Double Trouble)<br>[[Loki]]
+| style="text-align: center; border: none" |(Double Trouble)<br>[[Little Horn]] {{dlc|a}} {{unlockable}}
+| style="text-align: center; border: none" |(Double Trouble)<br>[[Dangle]] {{dlc|r}} {{unlockable}}
+| style="text-align: center; border: none" |(Double Trouble)<br>[[Turdlings]] {{dlc|r}} {{unlockable}}
+|}
+|-
+|}
+
+=== Final Boss ===
+{{e|Mom's Heart}} will always appear in the second floor of this chapter or in the last boss room if {{cu|Labyrinth}} is active. Once {{E|It Lives!}} is unlocked, it will appear instead of Mom's Heart.
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:Boss_Mom's_Heart portrait.png|center|link=Mom's Heart]]
+| style="text-align: center; border: none" |[[File:Boss_It_Lives! portrait.png|center|link=It Lives!]]
+|-
+| style="text-align: center; border: none" |[[Mom's Heart]]
+| style="text-align: center; border: none" |[[It Lives!]] {{unlockable}}
+|}
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | Eden, Pop!, Mama's Boy }}
+
+== Music ==
+* {{dlc|nr}} The [[music]] for the Utero is titled ''Viscera''. The term “viscera” refers to the internal organs in the body. The {{s|Womb}} shares this same track, making Utero the only floor in base Rebirth which does not have its own track.<ref name="music">[https://ridiculon.bandcamp.com/album/the-binding-of-isaac-rebirth-ost Binding of Isaac: Rebirth OST]</ref>
+* {{dlc|r}} The [[music]] for the Utero is titled ''Caesarian''. A caesarian is a medical procedure where a baby is surgically removed from the mother due to complications during birth.<ref name="music"/>
+* The music heard during the fight against Mom's Heart/It Lives! is called ''Ventricide''. Ventricide combines ventricle, a word that means a hollow area in an organ and is often associated with the heart, and the suffix -cide, which denotes the act of killing.
+
+== Trivia ==
+* ''Utero'' is the ablative or dative form for the Latin word and medical term "uterus", meaning "womb", and it probably stands for the expression ''in utero'', "within the womb", which refers to certain surgical procedures or other occurrences taking place inside the womb or during the length of time that a fetus is in the uterus of the pregnant female.
+* The Utero's backdrop (red walls with white ribs) was also the backdrop of the {{s|Womb}} in flash Isaac, as both floors looked exactly the same in flash Isaac.
+
+== References ==
+{{reflist}}
+
+{{nav|mom unlock|environment|fr=Matrice}}

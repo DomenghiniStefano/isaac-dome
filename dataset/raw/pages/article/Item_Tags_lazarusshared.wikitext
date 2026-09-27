@@ -1,0 +1,9 @@
+{{page dlc|r}}
+
+Items with this [[Item Tags|tag]] have their passive effects shared between {{c|Tainted Lazarus}} and {{c|Dead Tainted Lazarus}}; similar to the [[Item Tags lazarussharedglobal|<code>lazarussharedglobal</code> item tag]], the difference being that stat changes take effect on both forms.
+
+== Passive Collectibles ==
+{{collectible table | tag = lazarusshared | type = passive }}
+
+{{nav|fr=Balise lazarusshared}}
+[[Category:Item tags]]

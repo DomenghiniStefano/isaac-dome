@@ -1,0 +1,391 @@
+{{header obstacles}}
+
+[[file:Rocks.png|365px]]
+* Blocks movement and projectiles unless the player has [[flight]] or [[spectral tears]], respectively.
+* Can be destroyed with explosions and certain items like the {{i|Notched Axe}}, {{i|The Nail}}, {{i|Leo}}, or {{i|Thunder Thighs}}.
+* Can fill in a 1-block wide gap when pushed in the right direction by an explosion, or with one of the abilities that allows destruction by walking onto the rock.
+** Note: With these items, it is important to walk in the direction of the gap.
+* Small chance to reveal a {{R|Crawl Space}} when destroyed.
+* Destroying 100 rocks will unlock the {{t|Lucky Rock}} trinket.
+
+== Tinted Rocks ==
+[[file:Tinted Rocks Repentance.png|422px]]
+
+Sometimes referred to as "Marked Rocks", they are always marked with an "X", and in some levels slightly tinted/discolored. These rocks are much less noticeable in {{s|Womb}}, {{s|Utero}}, and {{s|Scarred Womb}} due to them being the same color as the surrounding rocks, but can still be distinguished by the "X" on the bottom right. Only one tinted rock can spawn per room.
+* Destroying 10 Tinted Rocks will unlock {{i|Mr. Mega}}.
+* Destroying 100 Tinted Rocks will unlock {{i|The Small Rock}}.
+* {{dlc+|r}} Multiple tinted rocks can spawn in one room by using {{p|XVI - The Tower?}}.{{dlc-}}
+
+'''Found in:''' Every Stage
+
+Tinted Rocks have a chance to spawn 1-2 of the following when destroyed:
+{| class="wikitable sortable"
+|+ Tinted Rock reward chances
+! Reward
+! Probability
+|-
+| {{i|The Small Rock}} (if unlocked)
+| 10%
+|-
+| 1 {{E|Soul Heart}}
+| 27%
+|-
+| 2 {{E|Soul Heart}}s
+| 16.2%
+|-
+| 1 {{E|Soul Heart}} + 1 {{E|Bomb}}
+| 13.5%
+|-
+| 1 {{E|Soul Heart}} + 1 {{E|Key}}
+| 8.1%
+|-
+| 1 {{E|Key}} + 1 {{E|Bomb}}
+| 3.6%
+|-
+| 2 {{E|Bomb}}s
+| 2.7%
+|-
+| 2 {{E|Key}}s
+| 0.9%
+|-
+| 1 {{E|Locked Chest}}
+| 17.1%
+|-
+| 1 {{E|Chest}}
+| 0.9%
+|}
+* Chest rewards may be replaced by other chest variants through the normal chest replacement mechanics. The probabilities above do not account for these replacements.
+* {{dlc|nr}}Not picking up The Small Rock right after it spawned doesn't prevent other tinted rocks from spawning it again. Even though the chances are very small, this can be exploited to obtain multiple Small Rocks.
+
+== Super Special Rocks {{dlc+|a+}} ==
+[[File:Repentance super special rocks.png|448px]]
+
+Super Special Rocks are Tinted Rock variants whose smaller marks and lack of discoloration make them much harder to spot. Super Special Rocks take two bombs to blow up and drop the contents of two Tinted Rocks, with the exception that a single chest or {{i|The Small Rock}} appear without extra rewards.
+<!-- it's been claimed here that a super special rock always drops the small rock if it's not been generated, but seed LLMEDLKT, 1 north 1 east from start disproves it -->
+
+Only one super special rock can spawn per room, and normal tinted rocks cannot appear in the same room.
+
+In [[Chapter 4]] and [[Chapter 4.5]], Super Special Rocks are almost identical to Tinted Rocks, making them easier to spot in these chapters.
+
+Super Special Rocks are unlocked by the achievement {{a|5 Nights at Mom's}}, which requires getting a 5-win streak, using a different character each time. {{dlc|rnr+}} This number can be reduced to 3; see [[Achievements#Notes|the Notes section of the Achievements page]].
+
+{| class="wikitable sortable"
+|+ Super Special Rock reward chances
+! Reward
+! Probability
+|-
+| {{i|The Small Rock}} (need unlock)
+| 10%
+|-
+| 1 {{E|Locked Chest}}
+| 17.1%
+|-
+| 1 {{E|Chest}}
+| 0.9%
+|-
+| 2 {{E|Soul Heart}}s
+| 8.1%
+|-
+| 3 {{E|Soul Heart}}s
+| 12.15%
+|-
+| 4 {{E|Soul Heart}}s
+| 1.458%
+|-
+| 1 {{E|Soul Heart}} + 2 {{E|Key}}s
+| 0.81%
+|-
+| 1 {{E|Soul Heart}} + 3 {{E|Key}}s
+| 0.135%
+|-
+| 2 {{E|Soul Heart}}s + 1 {{E|Key}}
+| 6.48%
+|-
+| 2 {{E|Soul Heart}}s + 2 {{E|Key}}s
+| 0.729%
+|-
+| 3 {{E|Soul Heart}}s + 1 {{E|Key}}
+| 1.701%
+|-
+| 1 {{E|Soul Heart}} + 1 {{E|Bomb}}
+| 14.58%
+|-
+| 2 {{E|Soul Heart}}s + 1 {{E|Bomb}}
+| 4.131%
+|-
+| 3 {{E|Soul Heart}}s + 1 {{E|Bomb}}
+| 4.131%
+|-
+| 1 {{E|Soul Heart}} + 2 {{E|Bomb}}s
+| 4.05%
+|-
+| 2 {{E|Soul Heart}}s + 2 {{E|Bomb}}s
+| 4.131%
+|-
+| 1 {{E|Soul Heart}} + 3 {{E|Bomb}}s
+| 1.701%
+|-
+| 1 {{E|Soul Heart}} + 1 {{E|Key}} + 1 {{E|Bomb}}
+| 3.78%
+|-
+| 1 {{E|Soul Heart}} + 2 {{E|Key}}s + 1 {{E|Bomb}}
+| 0.999%
+|-
+| 2 {{E|Soul Heart}}s + 1 {{E|Key}} + 1 {{E|Bomb}}
+| 3.564%
+|-
+| 1 {{E|Soul Heart}} + 1 {{E|Key}} + 2 {{E|Bomb}}s
+| 2.349%
+|-
+| 4 {{E|Bomb}}s
+| 0.243%
+|-
+| 3 {{E|Key}}s + 1 {{E|Bomb}}
+| 0.09%
+|-
+| 2 {{E|Key}}s + 2 {{E|Bomb}}s
+| 0.324%
+|-
+| 1 {{E|Key}} + 3 {{E|Bomb}}s
+| 0.486%
+|-
+| 4 {{E|Key}}s
+| 0.009%
+|}
+
+Chest rewards may be replaced by other chest variants through the normal chest replacement mechanics. The probabilities above do not account for these replacements.
+
+{{dlc-}}
+
+== Bomb Rocks ==
+[[file:Bomb Rock.png|50px]]
+
+Act like [[#Rocks|rocks]].
+
+'''Found in:''' Small chance of replacing any rock on any chapter. Some room layouts have predetermined bomb rocks. They are like regular rocks, but explode when destroyed.
+* {{dlc|nr+}} Destroying a bomb rock next to a hole does not create a bridge.
+** {{dlc|r+}} Destroying a bomb rock next to a hole can create bridges.
+
+== Spiked Rocks {{dlc+|r}} ==
+[[File:Spiked_Rock.png|50px]]
+
+Spiked Rocks are variants of normal rocks which hurt Isaac on contact, even if he's flying.<br/>
+They can fill in a 1-block wide gap like ordinary rocks, but the spikes will remain and Isaac will take damage as he steps on them. If they are located in a room with {{E|Pressure Plate}}s, after all the plates are pressed, the spikes will retract into the interiors of the rock. If a Crawl Space is generated with the same rock used to fill a gap, the bridge will not be spiked.
+
+{{t|Flat File}} will remove the spikes from the rocks.
+
+If spiked rocks are crushed by being {{tf|Stompy}}, having {{i|Leo}} or {{i|Thunder Thighs}}, or using {{i|The Nail}}, they do not always deal damage, depending on Isaac's speed, size, and the angle they are touched from.
+
+'''Found in:''' Every stage except for [[Chapter 6]], {{s|???}} and {{s|Home}}. Additionally, some layouts of {{r|Curse Room}}s, {{r|Super Secret Room}}s, and {{r|Boss Rush}} have spiked rocks.
+
+=== Notes ===
+* If a Spiked Rock is used to fill in a gap, stepping on the created spiked path will deal a full heart of damage. This damage is considered self-damage (it will not affect [[Devil Room#Conditions to make Devil Rooms appear|Angel/Devil Deal chances]] and items such as {{i|Paschal Candle}}). Touching Spiked Rocks, however, will not count as self-damage.{{dlc-}}
+
+== Fool's Gold Rocks {{dlc+|r}} ==
+[[File:Fool's_Gold_Rocks_2.png|256px]]
+
+Act like [[#Rocks|rocks]]. They have a small chance of replacing normal rocks, sometimes in small clusters, once unlocked.
+* Unlocked by: {{achievement unlock|Fool's Gold}}
+
+Fool's Gold Rocks will spawn the following when destroyed:
+* 2-4 {{E|Penny|text=Pennies}}
+{{Dlc-}}
+
+== Urns ==
+[[file:Urns.png|170px]]
+
+Act like [[#Rocks|rocks]].
+
+'''Found in:'''
+{|
+ |
+* {{s|Basement}}
+* {{s|Cellar}}
+ |
+* {{s|Burning Basement}}
+* {{s|Cathedral}}
+ |
+* {{R|Shop}}
+* {{R|Arcade}}
+ |
+* {{R|Angel Room}}
+ |}
+
+When urns are destroyed, the following events can occur:
+* Nothing (68.00%)
+* One random coin spawns (4.84%)
+* Two random coins spawn (4.84%)
+* {{t|Swallowed Penny}} spawns (2.50%)
+* {{i|A Quarter}} spawns (0.50%)
+* One spider spawns (9.67%)
+* Two spiders spawn (9.67%)
+
+=== Notes ===
+* If spiders spawn from destroying an urn after clearing a room, they will disappear if Isaac leaves and re-enters the room.
+
+== Mushrooms ==
+[[file:Mushrooms.png|135px]]
+* Act like [[#Rocks|rocks]].
+
+'''Found in:'''
+{|
+ |
+* {{s|Caves}}
+* {{s|Catacombs}}
+ |
+* {{s|Flooded Caves}}
+* {{s|Mines}}
+ |
+* {{s|Ashpit}}
+* {{R|Secret Room}}
+ |}
+
+When mushrooms are destroyed, the following events can occur:
+* Nothing (68.00%)
+* One [[Pill]] spawns (9.67%)
+* {{t|Liberty Cap}} spawns (2.50%)
+* {{i|Magic Mushroom}}  spawns (0.33%) / {{i|Mini Mush}} spawns (0.25%)
+** Only one of each collectible will drop per run. However, it is possible to get both collectibles in the same run.
+** {{dlc+|r}}There is a 2.72% chance for a mushroom in a [[Secret Room]] to drop {{i|Wavy Cap}} instead of a Magic Mushroom or Mini Mush. Only one will drop per run.{{dlc-}}
+* One [[Poison|poisonous gas effect]] spawns (19.33%)
+** This effect knocks Isaac back and deals half a heart of damage. (It does not count as an explosion.)
+
+== Skulls ==
+[[File:skull.png|50px]]
+
+Act like [[#Rocks|rocks]].
+
+'''Found in:'''
+{|
+ |
+* {{s|Depths}}
+* {{s|Necropolis}}
+* {{s|Dank Depths}}
+ |
+* {{s|Sheol}}
+* {{s|Mausoleum}}
+* {{s|Gehenna}}
+ |
+* {{s|Dark Room}}
+* {{R|Sacrifice Room}}
+* {{R|Devil Room}}
+ |}
+
+When skulls are destroyed, the following events can occur:
+* Nothing (68.00%)
+* One random [[Tarot Card|card / rune]] spawns (9.67%)
+* One {{E|Black Heart}} spawns (2.50%)
+* {{i|Dry Baby}} / {{i|Ghost Baby}} spawns (0.25% chance each)
+** Only one of each collectible will drop per run. However, it is possible to get both collectibles in the same run.
+* One {{E|Host}} enemy spawns (19.33%)
+
+=== Notes ===
+* {{dlc+|a+}}Prior to [[Booster Pack#5]], skulls had a chance of spawning {{E|Mushroom}}s instead of {{E|Host}}s.{{dlc-}}
+
+== Marked Skulls {{dlc+|r}} ==
+[[File:Tinted_Skull.png|50px]]
+
+Act like [[#Rocks|rock]]s.
+
+* Unlocked by: {{achievement unlock|A Strange Door}}
+
+Once unlocked, a single skull marked with a small "x" will appear in {{s|Depths}}, {{s|Necropolis}}, and {{s|Dank Depths}} II or XL. When destroyed, it will drop {{P|0 - The Fool}}.
+* If Isaac has {{I|Little Baggy}}, it will drop an identified [[Pills|Telepill]]. If Isaac also has {{I|False PHD}}, it will drop an identified [[Pills|???]] pill.
+
+=== Notes ===
+* Cannot be re-rolled by {{I|D12}}.
+* Marked Skulls may spawn in {{R|Red Room}}s on {{s|Depths}}, {{s|Necropolis}}, and {{s|Dank Depths}}, even while not in the II or XL floor. They can also appear in Red Rooms in {{s|The Void}} based on rooms from those floors.
+* Marked Skulls have different appearances when spawned on other floors, e.g. manually via the console or during the [[DELETE THIS]] challenge. Some of these are [[Cut Content]] from the original game.
+** For example, it will appear as a white urn in {{s|Basement}}, as a red mushroom in {{s|Caves}}, or a horizontally flipped polyp in {{s|Womb}}.
+** It will appear as a regular bucket in {{s|Dross}} with no visual difference.
+{{dlc-}}
+
+== Polyps ==
+[[file:Polyps.png|270px]]
+
+Act like [[#Rocks|rocks]].
+
+'''Found in:'''
+{|
+ |
+* {{s|Womb}}
+* {{s|Utero}}
+ |
+* {{s|Scarred Womb}}
+* {{s|Corpse}}
+ |
+* {{s|???}}
+ |}
+
+When polyps are destroyed, the following events can occur:
+* Nothing (68.00%)
+* Random [[heart]] spawns (9.67%)
+* {{t|Umbilical Cord}} spawns (2.50%)
+* {{i|Blood Clot}} / {{i|Placenta}} spawns (0.25% chance each)
+** Only one of each collectible is encounterable per run. However, it is possible to get both collectibles in the same run.
+* A ring of 6 red projectiles and a puddle of red [[creep]] (19.33%)
+
+When polyps in the {{s|Corpse}} are destroyed, the following events can occur:
+* Nothing (68.00%)
+* {{e|Rotten Heart}} spawns (9.67%)
+* {{t|Lil Larva}} spawns (2.50%)
+* {{i|Rotten Baby}} or {{i|Rotten Meat}} spawns (0.25% chance each)
+** Only one of each collectible is encounterable per run. However, it is possible to get both collectibles in the same run.
+* Launches 6 {{e|Small Maggot}}s in all directions and a puddle of green [[creep]] (19.33%)
+
+== Buckets {{dlc+|r}} ==
+[[File:Buckets.png|150px]]
+
+Act like [[#Rocks|rocks]].
+
+'''Found in:'''
+{|
+ |
+* {{s|Downpour}}
+* {{s|Dross}}
+ |}
+
+When buckets in Downpour are destroyed, the following events can occur:
+* Nothing (68.00%)
+* One random coin spawns (4.84%)
+* Two random coins spawn (4.84%)
+* {{t|Swallowed Penny}} spawns (2.50%)
+* {{i|Leech}} spawns (0.50%)
+* One {{E|Strider}} spawns (4.83%)
+* Two {{E|Strider}}s spawn (4.83%)
+* One {{E|Small Leech}} spawns (4.83%)
+* Two {{E|Small Leech}}es spawn (4.83%)
+
+When buckets in Dross are destroyed, the following events can occur:
+* Nothing (68.00%)
+* One random coin spawns (4.84%)
+* Two random coins spawn (4.84%)
+* {{t|Butt Penny}} spawns (2.50%)
+* {{i|The Poop}} spawns (0.50%)
+* One {{E|Drip}} spawns (4.83%)
+* Two {{E|Drip}}s spawn (4.83%)
+* One {{E|Small Leech}} spawns (4.83%)
+* Two {{E|Small Leech}}es spawn (4.83%)
+
+In addition to these rewards, whenever a full bucket (i.e. filled with water or filled with poop) is destroyed or picked up by a {{e|Polty}}, 6 projectiles will always spawn in a small radius.
+
+=== Notes ===
+* {{dlc|na|If a bucket would normally spawn Striders, but is in a dry room, normal Spiders will spawn instead.}}
+
+== Notes ==
+* All [[item]] and [[trinket]] drops from rocks can only spawn once per run, and copies cannot spawn if Isaac has already previously collected the item/trinket on the run.
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | Lucky Rock, Mystery Gift, Mr. Mega, Blue Bomber, A Small Rock, 5 Nights at Mom's, Fool's Gold }}
+
+== Gallery ==
+<gallery>
+File:Rebirth Concepts.jpg|Rebirth concepts, including Bomb Rocks.
+File:Tinted rocks.png|Tinted rock appearances throughout the floors.
+</gallery>
+
+== References ==
+{{reflist}}
+
+{{nav|mega satan unlock|tainted lilith unlock|fr=Rochers}}
+[[Category:Objects]]

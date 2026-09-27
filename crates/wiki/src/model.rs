@@ -3,6 +3,8 @@
 
 use serde::{Deserialize, Serialize};
 
+use crate::raw::ArticleCategory;
+
 /// A wiki page reduced to what's needed: the infobox and the text sections that are kept.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize, ts_rs::TS)]
 #[serde(rename_all = "camelCase")]
@@ -42,6 +44,12 @@ pub struct Entry {
 #[serde(rename_all = "camelCase")]
 pub struct Section {
     pub kind: SectionKind,
+    /// The heading exactly as the wiki wrote it, parsed like any other span of wikitext: a
+    /// heading can carry `{{dlc+|r}}` or name a page (`{{c|Tainted Eve}}`, `{{s|Ashpit}}`).
+    /// Carried for every kind, not only `Other`'s: the thirteen known kinds still show their
+    /// translated title on screen, but a reader that wants the wiki's own words (a dead-link
+    /// tally, a diagnostic) has one field to read regardless of kind.
+    pub title: Vec<Inline>,
     pub blocks: Vec<Block>,
 }
 
@@ -65,6 +73,11 @@ pub enum SectionKind {
     /// the eight pages that have it have both, one under the other, and two sections with one
     /// name read as the same list twice.
     StartingItems,
+    /// A heading the thirteen kinds above don't name — Damage's "Formula", Bag of Crafting's
+    /// "Recipes" — kept under its own title (`Section::title`) instead of discarded. Every
+    /// kind but the handful excluded by name (design decision 2) lands here or in a named
+    /// kind; nothing else is dropped for being unrecognized.
+    Other,
 }
 
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize, ts_rs::TS)]
@@ -159,16 +172,45 @@ pub enum Style {
     rename_all_fields = "camelCase"
 )]
 pub enum Target {
-    Item { id: u32 },
-    Trinket { id: u32 },
-    Character { id: u32 },
-    Achievement { id: u32 },
-    Challenge { number: u32 },
-    Entity { id: u32, variant: u32, subtype: u32 },
-    Transformation { id: u32 },
-    Stage { name: String },
-    Room { name: String },
-    Concept { name: String },
+    Item {
+        id: u32,
+    },
+    Trinket {
+        id: u32,
+    },
+    Character {
+        id: u32,
+    },
+    Achievement {
+        id: u32,
+    },
+    Challenge {
+        number: u32,
+    },
+    Entity {
+        id: u32,
+        variant: u32,
+        subtype: u32,
+    },
+    Transformation {
+        id: u32,
+    },
+    Stage {
+        name: String,
+    },
+    Room {
+        name: String,
+    },
+    Concept {
+        name: String,
+    },
+    /// A plain `[[link]]` that names an article: no id in the game, and no infobox category
+    /// either (design decision 3, `2026-09-26-wiki-complete-design.md`). `title` is the
+    /// canonical page title (`wiki::canonical_title`), through any redirect the wiki wrote —
+    /// resolved once, at build time, so a reader never has to follow one.
+    Article {
+        title: String,
+    },
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Serialize, Deserialize, ts_rs::TS)]
@@ -188,6 +230,20 @@ pub enum Dlc {
     rename_all_fields = "camelCase"
 )]
 pub enum Infobox {
+    // Neither Item nor Trinket carries a `pools` field any more: measured on the 2026-09-27
+    // snapshot, the wiki's own `pool` parameter is empty on 674 of 719 items and 181 of 188
+    // trinkets, and the game's own `itempools.xml` is the source that actually knows every
+    // weighted-pool membership — `ipc` joins it at the page view, keyed by the same id.
+    //
+    // The 52 pages (45 items, 7 trinkets) that do write `pool` don't fill that gap: they name
+    // a boss, a machine or another item ("shell game beggar", "mushroom", "Krampus", "mom's
+    // dressing table-a+"), a guaranteed *source* rather than a weighted pool. Checked against
+    // the installed game (2026-09-27): Skatole ("shell game beggar") and Magic Mushroom
+    // ("mushroom") are themselves members of ordinary weighted pools too
+    // (`itempools.xml`'s `shellGame`, `treasure`), so the wiki's text was never standing in
+    // for an absent pool — it answers a different question, and is kept as `obtained_from`
+    // below, its own field under its own name: the game's pools and the wiki's acquisition
+    // text are two answers, shown as two rows, neither one a stand-in for the other.
     Item {
         /// The pickup quote. Inline, not a string: 78 of 719 carry edition markup
         /// (`Boomerang tears {{dlc|r|+ DMG up + luck down}}`), and read as raw text they
@@ -207,14 +263,18 @@ pub enum Infobox {
         /// Not a number either: 36 of the 56 real `devil price` values are per-edition.
         devil_price: Vec<Inline>,
         shop_price: Vec<Inline>,
-        /// What the wiki says about the pools. Present on only 45 of 720 pages: the
-        /// game's `itempools.xml` is the source that knows them all.
-        pools: Vec<Inline>,
+        /// The wiki's own `pool` parameter, kept under its own name: on the 45 items that
+        /// write it, it names a specific guaranteed source (a boss, a machine, another
+        /// item), not a weighted pool — see this enum's own doc comment. Empty on 674 of
+        /// 719, same as before; the game's pools are the separate, catalog-joined row.
+        obtained_from: Vec<Inline>,
     },
     Trinket {
         quote: Vec<Inline>,
         tags: Vec<String>,
-        pools: Vec<Inline>,
+        /// Same as `Item.obtained_from`: 7 of 188 trinkets name a guaranteed source
+        /// ("urn, special shopkeeper", "blood donation machine"), never a weighted pool.
+        obtained_from: Vec<Inline>,
     },
     Achievement {
         /// The line on the game's unlock paper, which the wiki files under `description`:
@@ -283,14 +343,42 @@ pub enum Infobox {
         /// The character this one is a variant of (Lazarus Risen's Lazarus, Tainted's base).
         parent: Option<Target>,
     },
+    /// A monster or a pickup entity: `Infobox monster` and `Infobox entity` (design
+    /// decision 2). One variant for both — measured on the raw corpus (2026-09-26), the
+    /// second template's parameters (`name`, `dlc`, `variant`, `hidden`, `subtype`, `id`,
+    /// `unlocked by`) are a subset of the first's, `environment` and `behavior` included
+    /// (three of each on the whole snapshot); nothing in `Infobox entity` needs a shape the
+    /// monster fields can't hold.
+    Entity {
+        base_hp: Option<u32>,
+        /// Per-stage or per-note hp, the same reason `Boss.stage_hp` is inline and not a
+        /// number.
+        stage_hp: Vec<Inline>,
+        environment: Vec<Inline>,
+        /// The only place a **variant**'s own behavior is stated: several infoboxes on one
+        /// page (Gaper's sixteen) share the page's sections, so a per-variant sentence has
+        /// nowhere else to live.
+        behavior: Vec<Inline>,
+        pool: Vec<Inline>,
+        /// What this entity can turn into or be replaced by (a champion condition), and its
+        /// odds and notes. Not a number: `replace chance` carries `%` and edition markup.
+        replace: Vec<Inline>,
+        replace_chance: Vec<Inline>,
+        replace_notes: Vec<Inline>,
+    },
+    /// A page with none of the other six infoboxes: no fields of its own beyond which of the
+    /// four infobox templates this sub-project declines to read (design decision 2) named it,
+    /// when one did. The body — description and sections — is `Entry`'s, like every other kind.
+    Article { category: Option<ArticleCategory> },
 }
 
 impl Infobox {
     /// The same fields as [`Self::inlines_mut`], read-only, destructured the same way and
     /// **without `..`**, so a field added to a variant breaks the build here instead of
-    /// slipping past the guard over the dataset's text — which, naming its fields by hand,
-    /// once skipped five of them. Only that guard, a test, reads it.
-    #[cfg(feature = "test-api")]
+    /// slipping past a pass over the dataset's text — which, naming its fields by hand, once
+    /// skipped five of them. Read by `Entry::inlines`, which every read-only pass over an
+    /// entry's text goes through in turn; unlike the test-only guards that used to call this
+    /// directly, that method ships in `wiki-snapshot build`, so it is not behind `test-api`.
     pub fn inlines(&self) -> Vec<&Vec<Inline>> {
         match self {
             Infobox::Item {
@@ -301,13 +389,13 @@ impl Infobox {
                 recharge,
                 devil_price,
                 shop_price,
-                pools,
-            } => vec![quote, recharge, devil_price, shop_price, pools],
+                obtained_from,
+            } => vec![quote, recharge, devil_price, shop_price, obtained_from],
             Infobox::Trinket {
                 quote,
                 tags: _,
-                pools,
-            } => vec![quote, pools],
+                obtained_from,
+            } => vec![quote, obtained_from],
             Infobox::Achievement {
                 quote,
                 requirements,
@@ -351,6 +439,25 @@ impl Infobox {
                 collectibles,
                 parent: _,
             } => vec![health, pickups, collectibles],
+            Infobox::Entity {
+                base_hp: _,
+                stage_hp,
+                environment,
+                behavior,
+                pool,
+                replace,
+                replace_chance,
+                replace_notes,
+            } => vec![
+                stage_hp,
+                environment,
+                behavior,
+                pool,
+                replace,
+                replace_chance,
+                replace_notes,
+            ],
+            Infobox::Article { category: _ } => vec![],
         }
     }
 
@@ -367,13 +474,13 @@ impl Infobox {
                 recharge,
                 devil_price,
                 shop_price,
-                pools,
-            } => vec![quote, recharge, devil_price, shop_price, pools],
+                obtained_from,
+            } => vec![quote, recharge, devil_price, shop_price, obtained_from],
             Infobox::Trinket {
                 quote,
                 tags: _,
-                pools,
-            } => vec![quote, pools],
+                obtained_from,
+            } => vec![quote, obtained_from],
             Infobox::Achievement {
                 quote,
                 requirements,
@@ -417,6 +524,25 @@ impl Infobox {
                 collectibles,
                 parent: _,
             } => vec![health, pickups, collectibles],
+            Infobox::Entity {
+                base_hp: _,
+                stage_hp,
+                environment,
+                behavior,
+                pool,
+                replace,
+                replace_chance,
+                replace_notes,
+            } => vec![
+                stage_hp,
+                environment,
+                behavior,
+                pool,
+                replace,
+                replace_chance,
+                replace_notes,
+            ],
+            Infobox::Article { category: _ } => vec![],
         }
     }
 }
@@ -534,7 +660,7 @@ mod tests {
                 recharge: vec![],
                 devil_price: vec![],
                 shop_price: vec![],
-                pools: vec![],
+                obtained_from: vec![],
             })
             .unwrap(),
             json!({
@@ -546,17 +672,27 @@ mod tests {
                 "recharge": [],
                 "devilPrice": [],
                 "shopPrice": [],
-                "pools": []
+                "obtainedFrom": []
             })
         );
         assert_eq!(
             to_value(Infobox::Trinket {
                 quote: vec![],
                 tags: vec![],
-                pools: vec![],
+                obtained_from: vec![Inline::Text {
+                    text: "urn, special shopkeeper".into(),
+                    style: Style::Plain,
+                }],
             })
             .unwrap(),
-            json!({"kind":"trinket","quote":[],"tags":[],"pools":[]})
+            json!({
+                "kind": "trinket",
+                "quote": [],
+                "tags": [],
+                "obtainedFrom": [
+                    {"kind": "text", "text": "urn, special shopkeeper", "style": "plain"}
+                ]
+            })
         );
         // `unlockedBy` is gone from the variant: it rose to `Entry` on 2026-09-13.
         assert_eq!(
@@ -591,7 +727,7 @@ mod tests {
                 recharge: vec![],
                 devil_price: vec![],
                 shop_price: vec![],
-                pools: vec![],
+                obtained_from: vec![],
             },
             sections: vec![],
         };
@@ -613,7 +749,7 @@ mod tests {
                     "recharge": [],
                     "devilPrice": [],
                     "shopPrice": [],
-                    "pools": []
+                    "obtainedFrom": []
                 },
                 "sections": []
             })
@@ -634,10 +770,14 @@ mod tests {
             infobox: Infobox::Trinket {
                 quote: vec![],
                 tags: vec![],
-                pools: vec![],
+                obtained_from: vec![],
             },
             sections: vec![Section {
                 kind: SectionKind::Effects,
+                title: vec![Inline::Text {
+                    text: "Effects".into(),
+                    style: Style::Plain,
+                }],
                 blocks: vec![Block::Paragraph {
                     inline: vec![
                         Inline::Text {

@@ -1,0 +1,48 @@
+{{header special cards}}
+{{infobox card
+ | type        = special card
+ | id          = 45
+ | recharge    = {{dlcalt|4|r=6}}
+ | quote       = Something stinks...
+ | description = Covers the entire room with {{E|Poop}}. The process is not instant, and the room will not get filled if Isaac leaves before it's done filling.
+ | unlocked by = Card Against Humanity
+}}
+
+{{cit|us}}
+
+== Effect ==
+* Fills the entire room with {{E|Poop}}.
+
+== Notes ==
+* Being a [[special card]], '''A Card Against Humanity''' has a significantly lower chance of appearing compared to other cards.
+* Poop will not fill tiles with [[obstacle]]s, even if they have already been destroyed.
+* The process is not instant and the room will not get fully filled if Isaac leaves before it's done filling.
+* It is more beneficial to use the card in a large-sized room as it will create more poop piles.
+* {{dlc+|a+}} Using A Card Against Humanity in the {{E|Ultra Greedier}} fight will result in {{E|Golden Poop}}s spawning after defeating the boss.
+** {{dlc|r}} Results in Yellow Poops which only have normal drops.{{dlc-}}
+* {{dlc+|a}} Using A Card Against Humanity in the {{E|Ultra Greed}} fight can trap the {{E|Greed Gaper}}s after {{E|Ultra Greed Coin (Key)|text=Key Coins}} appear, preventing Ultra Greed from attacking.{{dlc-}}
+
+== Synergies ==
+* {{i|Dirty Mind}}: Each poop spawns 1-4 [[Familiar#Dips|Dip Familiars]] when destroyed.
+* {{T|Meconium}}: Spawned Poops have a 33% chance to turn into Black Poop.
+* {{dlc|a}} [[Infested!]] pill: Every Poop spawns a Blue Spider.
+* {{t|Lil Larva}} /{{dlc|r}}{{c|???}}: Every Poop spawns a Blue Fly.
+* {{i|Hallowed Ground}}: Spawned Poops have a 33% chance to turn into White Poop.
+* {{T|Butt Penny}}: Spawned Poops drop coins 20% more often.
+* {{i|Midas' Touch}}: Spawned Poops have a great chance to turn into Golden Poops. (11% when 0 Luck)
+* {{t|Petrified Poop}}: Pickup drop rate set to 50%. It's extremely likely to be obtained when using the card in larger, less obstructed rooms.
+
+== Interactions ==
+* {{t|Brown Cap}}: All the Poop explodes in a chain reaction once one is destroyed.
+* {{i|Dr. Fetus}}/{{i|Ipecac}}: If Isaac has no other means of destroying Poop than his explosive tears, he will have to hurt himself to clear out a path through the Poop unless he has acquired {{i|Pyromaniac}} or {{i|Host Hat}}.
+
+== Trivia ==
+* The card is a reference to [[wikipedia:Cards Against Humanity|''Cards Against Humanity'']], a satirical card game whose name in turn references "[[wikipedia:crimes against humanity|crimes against humanity]]". Specifically, it refers to the way the first player is chosen: Whoever was the last to poop goes first.
+** This actually contradicts the original card game, as black cards are prompts while the white cards are answers to the prompt.
+* In the pop-up (if not disabled) for unlocking this card, the text on it reads "A room full of poop".
+
+== Bugs ==
+{{Bug|dlc=r|Using this card in the TV room in Home will move the sofa and the TV to the nearest empty space (Which would be where Isaac is standing as that's the only space that doesn't get filled with poop). If Isaac tries to approach where they were previously then he will be violently pushed back. Destroying the poop will return them back to normal.
+If the poop is not destroyed before sleeping in Mom's bed then Isaac will have to stand below where the TV was teleported to in order to activate the {{e|Dogma}} fight. If Dogma is summoned before destroying the poop then the TV will glitch inside the Dogma fight and push Isaac around, possibly making him touch Dogma and get hit multiple times.}}
+
+{{nav|poop|fr=Une Carte Limite Limite}}

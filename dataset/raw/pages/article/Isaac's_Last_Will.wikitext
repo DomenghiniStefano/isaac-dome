@@ -1,0 +1,57 @@
+[[file:Full Death Note.png|200px|right]]
+
+'''Isaac's Last Will''' is the Game Over screen of the game. It is shown whenever Isaac is definitively [[death|dead]]; that is, he doesn't have any more [[heart]]s or [[Death#Extra Lives|extra lives]]. It follows the following format:
+
+{| class="mw-collapsible wikitable"
+ ! Sentence
+ ! Notes
+ |-
+ | '''DEAR DIARY,<br>TODAY I DIED.'''
+ | To the right, a small "Me ↘" note points to a random drawing. Some examples are a bloated Isaac, Isaac's decapitated body, Isaac's severed head with an exposed spine, Isaac as an angel, a tombstone with a cross on it, and a pile of poop surrounded by flies.
+ |-
+ | '''I WAS KILLED BY THIS THING →'''
+ | This shows a picture of whatever landed the finishing blow on Isaac.
+ |-
+ | '''IN SOME ________'''
+ | The blank space is occupied by a short description of the current [[chapter]]:
+
+* ''basement'' for {{s|Basement}}, {{s|Cellar}}, and {{s|Burning Basement}},
+* ''cave'' for {{s|Caves}}, {{s|Catacombs}}, and {{s|Flooded Caves}},
+* ''dark place'' for {{s|Depths}}, {{s|Necropolis}}, and {{s|Dank Depths}},
+* ''warm place'' for {{s|Womb}}, {{s|Utero}}, and {{s|Scarred Womb}},
+* ''barren place'' for {{s|???}},
+* ''cold place'' for {{s|Sheol}}, {{s|Cathedral}}, {{s|Chest}},  {{s|Dark Room}}, {{mode|greed}}{{s|The Shop}}, and {{mode|greed}}Ultra Greed,
+* ''dying memory...'' for {{s|The Void}},
+* ''sewer'' for {{s|Downpour}} and {{s|Dross}},
+* ''mine'' for {{s|Mines}} and {{s|Ashpit}},
+* ''cursed place'' for {{s|Mausoleum}} and {{s|Gehenna}},
+* ''dead place'' for {{s|Corpse}},
+* ''faded memory...'' for the [[ascent]],
+* ''familiar place'' for {{s|Home}}.
+ |-
+ | '''I LEAVE ALL THAT I OWN TO MY CAT [[Guppy|GUPPY]]'''
+ | A list of all of Isaac's items (using the same icons displayed in the pause menu and the [[Collection Page]]) is shown. A small, underlined "↖ Cool Stuff!" note will point to them. If the player has a lot of items, the items will overlap with the Cool Stuff text and arrow.
+ |-
+ | '''GOODBYE CRUEL WORLD'''
+ | None.
+ |-
+ | '''XOXO ________'''
+ | The blank space is filled by the character's name.
+ |}
+
+{{dlc|na}} If the [[Missing Poster]] trinket is held at the moment of death and Isaac dies in a [[Sacrifice Room]], a jigsaw puzzle piece will be shown in the '''"I WAS KILLED BY THIS THING →"''' box.
+
+== Notes ==
+* If Isaac dies from the timer while using the [[seed]] THEG HOST or in [[SPEED!]] (challenge #22), the cause of death will be a timer.
+* Dying from self-inflicted damage or suicide items when you haven't taken damage from any other sources will have Isaac's face showing on the page.
+
+== Trivia ==
+* "xoxo" is slang for "Hugs & kisses", commonly used in various written communique.
+* If you die as {{c|Lazarus Risen}}, there are blood dots on top of his name.
+* When dying in close proximity to enemies that make fly buzzing noises, their sound effects are slowed down during the Game Over instead of completely stopped. This results in a [https://www.youtube.com/watch?v=aVTvOAoDEMo deep growling noise] being heard while staying in the Game Over screen.
+* One of the images shown next to “Me ↘” shows Isaac being decapitated, causing him to look identical to a {{E|Hopper}}.
+
+== Bugs ==
+{{bug|dlc=r+|The item in the first slot of "↖ Cool Stuff!" section will always be {{t|Swallowed Penny}}, and any other items are rendered above it. Other trinkets, including gulped or smelted ones, are not displayed.}}
+
+{{nav|fr=Dernière Volonté d'Isaac}}

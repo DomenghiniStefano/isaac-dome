@@ -1,0 +1,12 @@
+{{page dlc|r}}
+
+Items with this [[Item Tags|tag]] contribute toward the {{tf|Fun Guy}} transformation.
+
+== Activated Collectibles ==
+{{collectible table | tag = mushroom | type = activated }}
+
+== Passive Collectibles ==
+{{collectible table | tag = mushroom | type = passive }}
+
+{{nav|fr=Balise mushroom}}
+[[Category:Item tags]]

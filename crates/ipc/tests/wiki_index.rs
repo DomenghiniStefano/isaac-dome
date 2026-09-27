@@ -16,7 +16,7 @@ fn catalog() -> Catalog {
     })
 }
 
-use wiki::for_tests::{empty_boss, empty_item, empty_trinket, entry};
+use wiki::for_tests::{empty_article, empty_boss, empty_entity, empty_item, empty_trinket, entry};
 
 fn dataset() -> Dataset {
     let mut ds = wiki::for_tests::empty_dataset();
@@ -43,7 +43,7 @@ fn the_shape_is_pinned_and_icons_are_null_without_a_catalog() {
     assert_eq!(v["info"]["kind"], "loaded");
     assert_eq!(
         v["pages"][0],
-        json!({ "target": { "kind": "item", "id": 2 }, "title": "A", "iconUrl": null })
+        json!({ "target": { "kind": "item", "id": 2 }, "title": "A", "iconUrl": null, "category": "items" })
     );
     assert_eq!(v["pages"].as_array().unwrap().len(), 4);
 }
@@ -80,7 +80,44 @@ fn a_missing_dataset_is_an_empty_index_that_says_why() {
     let err = wiki::DatasetError::Malformed { reason: "x".into() };
     let index = wiki_index(Err(&err), None, ipc::BossKeys::NONE, None, link);
     assert!(index.pages.is_empty());
+    assert!(index.samples.is_empty());
     assert_eq!(to_value(&index.info).unwrap()["kind"], "missing");
+}
+
+/// Without a catalog, every tile's sample is declared and every one of them draws nothing —
+/// the same "no picture without the game" the pages themselves fall back to.
+#[test]
+fn every_category_has_a_sample_entry_and_none_draw_without_a_catalog() {
+    let ds = dataset();
+    let index = wiki_index(Ok(&ds), None, ipc::BossKeys::NONE, None, link);
+    assert_eq!(index.samples.len(), ipc::WIKI_PAGE_CATEGORIES.len());
+    let categories: Vec<ipc::WikiPageCategory> = index.samples.iter().map(|s| s.category).collect();
+    assert_eq!(categories, ipc::WIKI_PAGE_CATEGORIES.to_vec());
+    assert!(index.samples.iter().all(|s| s.icon_url.is_none()));
+}
+
+/// `category_sample` is total over `WikiPageCategory` (the match has no wildcard), so this is
+/// a property of the table, not a probe for a gap: every category the wire declares is one
+/// `WIKI_PAGE_CATEGORIES` lists, in the same set — a category added to the enum without being
+/// added here would still compile (the match in `category_sample` would refuse to), so this
+/// catches the one thing that wouldn't: the constant array quietly falling out of step.
+#[test]
+fn wiki_page_categories_lists_every_category_the_wire_declares() {
+    use ts_rs::TS;
+    let decl = <ipc::WikiPageCategory as TS>::decl(&ts_rs::Config::new());
+    let mut declared: Vec<&str> = decl.split('"').skip(1).step_by(2).collect();
+    assert!(
+        !declared.is_empty(),
+        "the declaration still reads as quoted members: {decl}"
+    );
+    let mut listed: Vec<String> = ipc::WIKI_PAGE_CATEGORIES
+        .iter()
+        .map(|k| serde_json::to_value(k).expect("serializes"))
+        .map(|v| v.as_str().expect("a bare string").to_string())
+        .collect();
+    declared.sort_unstable();
+    listed.sort_unstable();
+    assert_eq!(listed, declared);
 }
 
 #[test]
@@ -107,12 +144,15 @@ fn the_embedded_index_counts_match_its_meta_and_stay_small() {
         + counts.bosses
         + counts.challenges
         + counts.characters
-        + counts.transformations;
+        + counts.transformations
+        + counts.entities
+        + counts.articles;
     assert_eq!(index.pages.len() as u32, expected);
     let json = serde_json::to_string(&index).unwrap();
-    // A generous ceiling: the index is one load per window and must stay one order of
-    // magnitude under `unlock`'s (crates/ipc/tests/unlock_size.rs).
-    assert!(json.len() < 256_000, "wiki index is {} bytes", json.len());
+    // Raised once, for the whole-namespace fetch (design decision 1, 2026-09-26): 971 more
+    // pages, entities and articles, moved this from 256 KB. Still one order of magnitude
+    // under `unlock`'s (crates/ipc/tests/unlock_size.rs).
+    assert!(json.len() < 512_000, "wiki index is {} bytes", json.len());
 }
 
 /// B46. A transformation has had a page in the dataset since the transformations
@@ -143,4 +183,79 @@ fn a_transformation_is_a_page_of_the_index() {
         .find(|p| p.target == Target::Transformation { id: 1 })
         .expect("the transformation is a page of the index");
     assert_eq!(page.title, "Guppy");
+}
+
+/// Design decisions 2, 5 and 7: `Target::Entity` covers both a boss and a common enemy, and
+/// `Target::Article` covers four landing tiles or none — neither distinction survives in
+/// the wire shape of `Target` itself, so `WikiPageRef.category` is read from each page's own
+/// `entry.infobox`, not guessed from the target's kind.
+#[test]
+fn a_pages_category_tells_a_boss_from_a_monster_and_an_articles_tile() {
+    let mut ds = dataset();
+    ds.entities
+        .insert(Dataset::boss_key(45, 0, 0), entry("Gaper", empty_entity()));
+    ds.articles.insert(
+        "0 - The Fool".to_string(),
+        entry(
+            "0 - The Fool",
+            wiki::Infobox::Article {
+                category: Some(wiki::ArticleCategory::Card),
+            },
+        ),
+    );
+    ds.articles
+        .insert("Damage".to_string(), entry("Damage", empty_article()));
+    ds.articles.insert(
+        "Afterbirth+".to_string(),
+        entry(
+            "Afterbirth+",
+            wiki::Infobox::Article {
+                category: Some(wiki::ArticleCategory::Version),
+            },
+        ),
+    );
+    let index: WikiIndex = wiki_index(Ok(&ds), None, ipc::BossKeys::NONE, None, link);
+    let category_of = |t: &Target| {
+        index
+            .pages
+            .iter()
+            .find(|p| &p.target == t)
+            .unwrap_or_else(|| panic!("{t:?} is not a page of the index"))
+            .category
+    };
+    assert_eq!(
+        category_of(&Target::Entity {
+            id: 20,
+            variant: 0,
+            subtype: 0
+        }),
+        Some(ipc::WikiPageCategory::Bosses)
+    );
+    assert_eq!(
+        category_of(&Target::Entity {
+            id: 45,
+            variant: 0,
+            subtype: 0
+        }),
+        Some(ipc::WikiPageCategory::Monsters)
+    );
+    assert_eq!(
+        category_of(&Target::Article {
+            title: "0 - The Fool".into()
+        }),
+        Some(ipc::WikiPageCategory::CardsAndRunes)
+    );
+    assert_eq!(
+        category_of(&Target::Article {
+            title: "Damage".into()
+        }),
+        None,
+        "an article with no category has no landing tile"
+    );
+    assert_eq!(
+        category_of(&Target::Article {
+            title: "Afterbirth+".into()
+        }),
+        Some(ipc::WikiPageCategory::Versions)
+    );
 }

@@ -1,0 +1,22 @@
+{{infobox monster
+ | name        = Swarmer
+ | id          = 91
+ | base hp     = 40
+ | environment = {{floor|Caves}}{{floor|Flooded Caves}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Sheol}}<br>{{floor|Dark Room}}<br>{{room|challenge}}
+ | behavior    = Slowly floats around the room, spawning several {{E|Attack Fly|text=Attack Flies}}. Spawns {{E|Pooter}}s upon taking damage. Spawns a {{E|Boom Fly}} upon death.
+}}
+
+'''Swarmers''' float aimlessly around the room, occasionally spawning {{E|Attack Fly|text=Attack Flies}}. When hit, they will spawn a {{E|Pooter}}, and when destroyed, they will spawn a {{E|Boom Fly}}. Swarmers do not deal contact damage.
+
+== Notes ==
+* {{i|Skatole}} will charm a Swarmer. When charmed it won't spawn any Attack Flies until it is damaged. The Attack Flies that spawn will also be charmed.
+* The ring of Flies that surround the Swarmer is an indication of how much health it has. The Flies deplete as the Swarmer takes more damage.
+
+== Trivia ==
+* Swarmers are the next and possibly the final stage of the original {{E|Gaper}}.<ref>https://edmundmcmillen.tumblr.com/post/51416553970/binding-of-isaac-fast-facts-now-they-need-to-do</ref>
+* As Swarmers have Champion forms it's possible to encounter a White Champion (though extremely rarely). This can be a challenging occurrence as the Swarmer will regain invincibility every time it takes damage due to spawning Pooters.
+
+== References ==
+{{reflist}}
+
+{{nav|fr=Essaim}}

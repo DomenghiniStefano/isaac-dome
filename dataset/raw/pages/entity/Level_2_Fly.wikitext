@@ -1,0 +1,43 @@
+{{infobox monster
+ | name        = {{dlcalt|lvl2|r=Level 2}} Fly
+ | id          = 214
+ | base hp     = 10
+ | environment = {{floor|Basement}}{{floor|Cellar}}{{floor|Burning Basement}}<br>{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{room|boss}}
+ | behavior    = Flies toward Isaac erratically, dealing contact damage.
+}}
+
+The '''Level 2 Fly''' is an enemy that moves towards Isaac somewhat erratically, dealing contact damage.
+{{clear}}
+
+== Variants ==
+=== Full Fly ===
+{{infobox monster
+ | name        = Full Fly
+ | id          = 249
+ | base hp     = 10
+ | environment = {{floor|Basement}}{{floor|Cellar}}{{floor|Burning Basement}}<br>{{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}
+ | behavior    = Flies toward Isaac erratically, dealing contact damage. Releases 6 bullets in all directions upon death.
+}}
+
+The '''Full Fly''' behaves similarly to the Level 2 Fly and [[Red Boom Fly]] combined: it chases Isaac and shoots 6 blood shots in all directions upon death. Full Flies do not actively run into Isaac, but will orbit around him closely until he moves, which may end up causing him to run into the fly.
+{{clear}}
+
+=== Level 2 Willo ===
+{{infobox monster
+ | dlc         = r
+ | name        = Level 2 Willo
+ | id          = 838
+ | base hp     = 20
+ | environment = {{floor|Downpour}}<br>{{room|boss}}
+ | behavior    = Orbits enemies and shoots tears at Isaac. If the enemy it is orbiting dies, it will orbit another enemy. However, if all enemies are dead, it will chase Isaac, while still occasionally shooting at Isaac.
+}}
+
+'''Level 2 Willos''' are stronger versions of the [[Willo]] that orbit enemies rather than Isaac; however, when there are no enemies left, they will chase Isaac and, upon catching up, attempt to orbit in a tight ring around him and maintain that distance from him while shooting at him, just like their weaker counterparts.
+{{clear}}{{dlc clear}}
+
+== Gallery ==
+<gallery>
+File:Edmund McMillen Rebirth Monster Sketches.jpg|Sketches of monsters for ''The Binding of Isaac: Rebirth'', including the Lvl2 Fly in the first square of the third row.
+</gallery>
+
+{{Nav|fr=Mouche 2}}

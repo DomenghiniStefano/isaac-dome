@@ -1,0 +1,23 @@
+{{header greed item pools}}
+{{item pool
+ | dlc      = a
+ | is greed = yes
+}}
+
+Items in this pool can be found in the silver {{R|Treasure Room}} or for sale in the {{R|Shop}} in [[Greed mode]].
+
+{{item pool/header}}
+{{pool items | The Belt, Binky, Blood Clot, Blue Cap, Box, Breakfast, Caffeine Pill, Crack Jacks, Cube of Meat, Dessert, Dinner, Experimental Treatment, Growth Hormones, Jesus Juice, Latch Key, A Lump of Coal, Lunch, Magic 8 Ball, Magic Scab, Match Book, MEAT!, Mini Mush, Mom's Coin Purse, Mom's Heels, Mom's Lipstick, Mom's Pearls, Mom's Underwear, Mr. Dolly, Odd Mushroom (Thin), Roid Rage, Rotten Meat, Safety Pin, Screw, A Snack, Speed Ball, Squeezy, Stem Cells, Synthoil, Tooth Picks, Torn Photo, Wire Coat Hanger, Wooden Spoon }}
+{{pool items | weight = {{dlcalt|1|r=0.5}} | The Halo, PJs }}
+{{pool items | weight = {{dlcalt|1|r+=0.2}} | Raw Liver }}
+{{pool items | dlc = nr | 1up!, Mom's Key }}
+{{pool items | dlc = nr+ | <3, Thunder Thighs }}
+{{pool items | dlc = a+ | Dad's Lost Coin, Midnight Snack, Marbles, Marrow, Divorce Papers }}
+{{pool items | dlc = a+nr | Belly Button, Polydactyly }}
+{{pool items | dlc = r | Ball of Bandages, A Bar of Soap, Booster Pack, Consolation Prize, Eye Drops, Glass Eye, Odd Mushroom (Large), Stapler, Stye, Supper, Tropicamide }}
+{{pool items | dlc = r | weight = 0.2 | Magic Mushroom }}
+{{pool items | dlc = r+ | Cat-o-nine-tails, Old Bandage, Pentagram, Placenta }}
+{{pool items | dlc = r+ | weight = 0.5 | Super Bandage }}
+|}
+
+{{nav|fr=Boss (Banque d'Objets - Mode Avarice)}}

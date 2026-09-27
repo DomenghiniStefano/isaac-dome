@@ -1,0 +1,112 @@
+{{header attributes}}
+
+[[file:Attribute health icon.png|50px]]
+'''Health''' represents the amount of damage the player can take before [[death|dying]]. There are multiple different types of health in the game, each with their own [[hearts|pickups]]. The ''health bar'' is the visual representation of a player's health on the [[HUD]], where hearts are arranged in two rows of six.
+* The order in which hearts are placed is, from left to right, Red Hearts (and empty Red Heart containers), {{Dlc|r}}Rotten Hearts, then Eternal Hearts, then Soul Hearts, Black Hearts, and {{Dlc|a+}}Bone Hearts (depending on the order in which they were picked up), then {{Dlc|r}}Broken Hearts. The top row is filled before the bottom row.
+* Hearts are lost in a certain order, which depends on the damage source.
+* The player can only hold a maximum of twelve hearts, and any permutation of the different types can be used. Picking up a Black or Soul Heart will refill a halved Black/Soul Heart (the other half is then placed at its right); Soul Hearts can replenish Black Hearts and vice versa.
+** {{C|Keeper|a+}} and {{C|Tainted Keeper}}: only Coin Hearts are available when playing as these characters.
+** Obtaining {{I|Birthright}} as {{C|Magdalene}} increases the maximum amount of hearts from twelve to eighteen.
+
+* The exact damage taken by Isaac depends on the item, hazard, or enemy and the specific attack used by the enemy, but in [[chapters]] 1 to 3, most sources deal half a heart of damage unless otherwise specified. From Chapter 4 onwards, all half-heart hits deal a full heart of damage (unless Isaac has a form of damage reduction, such as {{i|The Wafer}}).
+
+== Damage Order ==
+There are two separate damage orders; the game uses these to determine which hearts to take when the player is damaged. In both orders, the bottom row of hearts is taken from first.
+
+=== Normal Order ===
+The first order is simple, and applies to most situations. Hearts are drained from right to left, with {{Dlc|a+}} Bone Hearts having to be drained before their bone component is destroyed. The bottom row of hearts will always be drained first.
+
+=== Alternate Order ===
+The '''alternate order''' is more complicated and only applies when holding {{T|Crow Heart}}, taking damage from a {{M|Blood Donation Machine}}, {{M|Devil Beggar}}, {{M|Confessional}}, or {{m|Hell Game}}, or using a self-damaging item such as {{I|Razor Blade}} or {{I|Blood Rights}}. This order will drain Red Hearts from their containers before other heart types, {{dlc|a+}} including leaving empty Bone Hearts. Once Isaac has no Red Hearts left to drain, normal order is resumed.
+
+{{dlc|nr}} If Isaac has any Red Heart containers, at least half of a Red Heart must be full at all times. If damage in the alternate order would bring Isaac below one Red Heart, normal order is resumed instead.
+
+Using machines and items will not lower the chance for a {{r|Devil Room}}/{{r|Angel Room}}. However, taking damage from an enemy while holding {{t|Crow Heart}} will.
+
+{{Dlc|r}}[[#Rotten Hearts|Rotten Hearts]] are drained after Red Hearts, but before all other hearts.
+
+{{dlc|nr}}[[#Eternal Hearts|Eternal Hearts]] are drained after Red Hearts, but before all other Hearts.
+
+{{Dlc|r}}[[#Eternal Hearts|Eternal Hearts]] will be drained only when they would be the only heart left otherwise. This means that if Isaac has an Eternal Heart and only half a Red / Soul / Black Heart, or only a Rotten Heart / Empty Bone Heart, then the Eternal Heart will be taken instead of the other heart.
+
+== Red Heart Containers ==
+{{heart|red}}{{heart|red|half}}{{heart|red|empty}}
+
+'''Red Heart containers''', or {{anchor|Red Heart|Red Hearts}}, are the main form of health for the majority of characters. If the player has only Red Hearts, the containers will be unfilled as damage is taken (but the containers themselves remain). Empty Red Heart containers can be refilled with [[Red Heart]] pickups. If Isaac takes a heart that would heal him for more than his current maximum health (for example, taking a Red Heart when he is only missing half a Red Heart worth of health), the excessive health will be wasted. The number of Red Heart containers can be increased with multiple items or ''Health Up'' [[pill]]s or decreased with items, ''Health Down'' pills, having another player join a game as a [[Babies|baby]], or trading them away in a {{R|Devil Room}} or at an underground {{R|Black Market}}.
+
+== Soul Hearts ==
+{{heart|soul}}{{heart|soul|half}}
+
+'''Soul Hearts''' are blue hearts that are appended to the end of the health bar. Unlike Red Hearts, Soul Hearts do not have containers, so once they're depleted, new ones must replace them. If Isaac has Red Hearts and half a Soul Heart, taking a full heart of damage will not remove any Red Hearts. Losing Soul Hearts does not count as damage for {{R|Devil Room}} or {{R|Angel Room}} appearance chances, but does count as damage taken for the Basement Boy, Spelunker Boy, Dark Boy, Mama's Boy, and Dead Boy [[achievement]]s.
+
+== Black Hearts ==
+{{heart|black}}{{heart|black|half}}
+
+'''Black Hearts''' are similar to Soul Hearts in that they are appended to the end of the health bar, are not permanent, and that losing them does not count as damage for Devil or Angel Room chances. However, when a Black Heart is depleted, {{i|The Necronomicon}} effect is triggered, damaging all enemies in the current room. Picking up a Soul Heart while at half a Black Heart will complete the Black Heart and add half a Soul Heart, and vice versa. If Isaac is at his HP cap and any of his hearts are Soul Hearts, the Black Heart will replace the rightmost Soul Heart when picked up.
+
+== Eternal Hearts ==
+{{heart|red|empty|eternal}}
+
+'''Eternal Hearts''' are the rarest variation of a heart. They always appear as half-hearts and, once picked up, can transform into a new Red Heart container in two ways: either by collecting a second Eternal Heart on the same floor or by traveling to the next floor. Eternal Hearts are not permanent, cannot be refilled when lost, and do not count for the limit of twelve hearts, instead overlapping the rightmost Red Heart container. If no Red Heart containers are available, the Eternal Heart will overlap the leftmost Soul Heart or Black Heart. Losing an Eternal Heart will prevent it from becoming a new Red Heart container. If Isaac has 12 Red Heart containers and travels to a new floor with an Eternal Heart, Isaac will heal one Red Heart but will not gain another Heart Container. If Isaac is at full health, the Eternal Heart will simply disappear.
+
+An Eternal Heart will be used up the first time Isaac takes Red Heart damage (but is not lost by taking Red Heart damage if Isaac has no Red Heart containers). Health removal from Devil Room deals will not drain an Eternal Heart; rather, the Eternal Heart is appended onto the end of the next Red Heart. An Eternal Heart cannot keep Isaac alive on its own; making a deal with the Devil which drains all hearts except the Eternal Heart will kill Isaac. {{dlc|nr}}This also means that using a {{M|Blood Donation Machine}} or activated items like the {{i|Razor Blade}} will drain the Eternal Heart, even if Isaac has full health and Soul Hearts.
+
+{{dlc|a+}}Since Bone Hearts are treated as [[#Red Heart Containers|Red Heart containers]], Eternal Hearts will be appended to the rightmost Bone Heart even if there are Soul and Black Hearts between it and any Red Hearts.
+
+{{dlc|r}}{{M|Blood Donation Machine}}s and other items and devices that take red hearts directly will ignore Eternal Hearts, even if Isaac has no other red hearts left. However, an eternal heart will still be taken if Isaac's only other health is worth one half-heart, meaning that you cannot have just an eternal heart and no other health.
+
+When playing as {{c|Tainted Magdalene}}, Eternal Hearts won't be drained even if there is no other leaking health left.
+
+== Gold Hearts {{dlc+|a}} ==
+{{heart|red|empty|gold}}
+
+'''Gold Hearts''' are unlocked by completing the {{A|XXXXXXXXL}} challenge. Once picked up, the Gold Heart surrounds Isaac's rightmost heart. The Gold Heart does not prevent damage, but when the heart that the Gold Heart surrounds is depleted, several {{E|Penny|text=Pennies}} will spawn and nearby enemies will be changed to gold statues that release Pennies upon death, similar to the {{i|Midas' Touch}} effect. Some other methods of losing hearts, such as a non-red heart being "pushed off" the health bar by an HP up or removing hearts via items such as {{I|Converter}} or {{I|Potato Peeler}}, will also trigger the effect. Gaining additional hearts that go after the rightmost heart will move the Gold Heart to the newly rightmost heart.
+
+{{dlc|a+}}Gold Hearts that surround Bone Hearts will not be used if the red health inside them is removed, instead triggering on the Bone Heart itself being removed.{{dlc-}}
+
+== Coin Hearts {{dlc+|a}} ==
+{{heart|coin}}{{heart|coin|half}}{{heart|coin|empty}}
+
+'''Coin Hearts''' are a special heart type used exclusively by {{c|Keeper}} and {{c|Tainted Keeper}}. Coin Hearts always take a full heart of damage from all sources, even with {{i|The Wafer}}. They can only be replenished by acquiring money (either through picking up [[coin]]s or obtaining items such as {{i|A Quarter}}), which will consume one cent from the coin pickup for each heart restored. They are treated as Red Hearts by the effects of all items. {{dlc|nr}}They can be sold in Devil deals or {{R|Black Market}}s. {{dlc|r}}Taking Coin Heart damage does not reduce the chance to find a {{R|Devil Room}} or {{R|Angel Room}}.
+
+See [[Keeper#Notes|Keeper Notes]] for more information.
+{{dlc-}}
+== Bone Hearts {{dlc+|a+}} ==
+{{heart|bone}}{{heart|bone|half}}{{heart|bone|empty}}
+
+'''Bone Hearts''' are special Red Heart containers unlocked alongside {{c|The Forgotten}}, and are appended to the end of the health bar. Empty containers can be filled with Red Hearts and filled containers take three hits to deplete (or two hits against sources that deal a full heart of damage), but disappear permanently upon depleting. If a Bone Heart is only filled with half a heart or a {{dlc|r}}Rotten Heart, taking a full heart of damage will only empty it without destroying it. Bone Hearts, empty or full, are considered Red Hearts by most items, {{dlc+|nr}}but cannot be used for Devil deals or {{R|Black Market}}s{{dlc-}}. Bone Hearts will be emptied when picking up items that remove all Red Hearts, such as {{i|Abaddon}} and {{i|Brittle Bones}}. Losing Bone Hearts or the Red Hearts contained within will not affect the chance to find a {{R|Devil Room}} or {{R|Angel Room}}, with the exception of The Forgotten, who receives a penalty for a Bone Heart breaking. Acquiring an empty Red Heart container while you have a filled Bone Heart will fill the new heart and empty the Bone Heart. Any character with health can pick up bone hearts, but characters who cannot possess Red Heart Containers cannot fill them with Red Hearts.{{dlc-}}
+
+Self-damage that prioritize red hearts such as {{i|IV Bag}} and {{i|Razor Blade}} will empty bone hearts in a slightly different way: if the rightmost bone heart is half-filled, only a half heart is removed even if the hit would deal a full heart of damage. Any further bone hearts are allowed to take full hearts of damage, draining past bone heart borders. This can be used to optimize health usage, refilling the rightmost heart with half hearts before applying self-damage.
+
+{{dlc+|r}}Bone Hearts can replace the rightmost Soul or Black Hearts if acquired while Isaac is at his HP cap. They can also be filled with Rotten Hearts. Bone Hearts count as Red Heart containers when paying for items with health, unless the character can't have Red Heart containers.{{dlc-}}
+
+== Rotten Hearts {{dlc+|r}} ==
+[[File:Rotten heart2.png|30x30px]]
+
+'''Rotten Hearts''' are special Red Hearts unlocked by entering {{s|Corpse}} for the first time. Rotten Hearts spawn two friendly [[Familiar#Blue Flies|Blue Flies]] for each one that Isaac possesses upon clearing a room. They can be used to fill empty Red Heart containers or replace the rightmost Red Heart if there are no empty containers. It is not possible to have half a Rotten Heart; rather, each Rotten Heart is equivalent to half a heart. Normal hits will fully deplete them and hits which would deal a full heart of damage will deplete two Rotten Hearts or, if Isaac has only one Rotten Heart, a Rotten Heart and half a red heart. Losing Rotten Hearts will not affect the chance to find a {{R|Devil Room}} or {{R|Angel Room}}.{{dlc-}}
+
+== Broken Hearts {{dlc+|r}} ==
+[[File:Broken Heart.png|30x30px]][[file:Broken_Coin_Heart.png|30x30px]]
+
+'''Broken Hearts''' are special Red Heart containers that only appear when using {{i|Magic Skin}}, {{I|Heartbreak}}, a {{p|VI - The Lovers?}} card or an {{dlc|r+}} Addicted! horse pill. Broken Hearts are considered empty Red Heart containers, but cannot be removed or refilled under normal circumstances. They cannot be used for any [[Devil Room#Deals with the Devil|Devil Deals]], they cannot be refilled with any form of Heart, or replaced by any Heart Container. They are permanently applied to the character for the rest of the run, even after using items that can revive or change the current character. They also do not let you benefit from stat upgrades for having empty red heart containers like {{i|Adrenaline}}. One of the only ways to remove them is to donate to a {{M|Confessional}}, which has a chance to remove them with each donation. The other way is using {{I|Genesis}}. Replacing all 12 Heart Container slots with Broken Hearts will cause Isaac to instantly [[Death|die]], and if revived, Isaac will have 1 of the Broken Hearts removed and have half a Soul Heart take its place.{{dlc-}}
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | Magdalene, Lazarus, The Tank, Cursed! }}
+
+== Trivia ==
+* Upon entering a room with only half a heart left, a small yellow spot, presumably urine, will appear underneath Isaac.
+** If Isaac has {{i|Kidney Stone}}, a bloodstain will appear instead of urine.
+** {{dlc|a+}}As {{c|Eve}} and {{c|Tainted Eve}}, a bloodstain will appear instead of urine.
+* {{dlc|r}}Eternal Hearts have a special animation if used by a character who cannot use red hearts, where the animation of the hearts joining together will show their respective heart type.
+* There is a half Coin Heart graphic left in the files. To see it, you must have half a Red Heart, use {{i|Clicker}}, and turn into {{c|Keeper}}.
+* The most amount of hearts Isaac can have on one heart slot is a Bone, Gold, Eternal, Rotten heart.
+
+[[file:Isaac low health.png|Isaac leaving a urine puddle at low health.|thumb]]
+
+== Bugs ==
+{{bug|A Gold Heart surrounding a Soul, Black, or empty Bone Heart will be used if a Red Heart is depleted via the alternate order before the rightmost heart is lost.}}
+{{bug|dlc=nr|Losing many hearts at once, such as via {{i|Dead Cat}} or a [[Hematemesis]] pill, while having a Gold Heart will trigger the Gold Heart loss effect many times at once, showering the player in coins.}}
+{{bug|If the last Rotten Heart is drained when Isaac has an Eternal Heart, the latter will turn into a Half Red Heart. The same will occur if normal damage is taken to a Rotten Heart while Isaac has an Eternal Heart. If in this scenario the Rotten Heart fills the Bone Heart, the Bone Heart will be filled with a Half Red Heart after taking damage even if a full heart worth of damage is taken.}}
+
+{{nav|fr=Vie|es=Vida}}
+[[Category:Mechanics]]

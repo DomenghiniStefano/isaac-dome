@@ -1,0 +1,14 @@
+{{page dlc|r}}
+[[File:A Strange Door locked.png]]
+
+'''A Strange Door''' is a special exit that is unlocked by beating {{E|Mother}} for the first time. It leads to a special version of {{s|Mausoleum}}/{{s|Gehenna}} II, which contains {{i|Dad's Note}}, which starts the [[Ascent]], and eventually {{s|Home}} and the fight against {{E|Dogma}} and {{E|The Beast}}.
+
+The door spawns in the starting room of {{s|Depths}}/{{s|Necropolis}}/{{s|Dank Depths}} II. It can be opened by giving it {{i|The Polaroid}} or {{i|The Negative}}. This can be done through methods such as using a teleportation card, a [[Telepills]], a teleport activated item, {{I|Ventricle Razor}}, or {{i|Forget Me Now}} after defeating {{E|Mom}}, escaping the boss room. The door can also be opened with {{t|Broken Padlock}}, {{i|Cracked Orb}}, {{t|Faded Polaroid}}, {{P|Soul of Cain}}, or {{I|Sharp Key}}.
+
+It '''cannot''' be opened using {{i|Mr. ME!}}, {{i|Dad's Key}},{{t|Mysterious Paper}}, or a {{p|Get out of Jail Free Card}}.
+
+Having more than one of {{i|The Polaroid}} or {{i|The Negative}}, (such as through {{i|Diplopia}} or {{i|R Key}}) will only remove one to open the door. {{t|Faded Polaroid}} is always taken first if held, then The Negative and then The Polaroid.
+
+A [[Marked Skull]] always spawns somewhere in the second floor of the chapter. Destroying it will drop a guaranteed {{P|0 - The Fool}} (or a [[Telepills]] if holding {{I|Little Baggy}}), giving a reliable way to open the door. It is recommended to visit the {{R|Boss Rush}} room for a free item before teleporting out if possible. The Telepills will become a [[??? (Pill)|???]] if Isaac has {{I|Little Baggy}} and {{I|False PHD}}, rendering it more difficult to exit the boss room.
+
+{{nav|mother unlock|fr=Une Porte Étrange}}

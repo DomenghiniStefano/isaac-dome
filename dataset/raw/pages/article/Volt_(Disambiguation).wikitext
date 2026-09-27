@@ -1,0 +1,8 @@
+{{disambiguation}}
+
+'''Volt''' may refer to:
+* {{i|9 Volt}}, a [[passive collectible]] found in {{r|Shops}}.
+* {{i|120 Volt}}, a [[passive collectible]] found in {{r|Treasure Rooms}}.
+* {{i|4.5 Volt}}, a [[passive collectible]] found in {{r|Shops}}.
+
+{{nav}}

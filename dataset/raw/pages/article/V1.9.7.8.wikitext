@@ -1,0 +1,66 @@
+{{infobox version
+ | dlc = r+
+ | steam = 520825731534554234
+ | date = 2024-12-16
+}}
+
+Disclaimer: The official patch notes combined both [[v1.9.7.7]] and '''v1.9.7.8''' changes, only v1.9.7.8 changes will be documented here.
+
+== Documented changes ==
+=== Changes ===
+* Made additions to "onlinelogs” folder to more accurately diagnose desyncs, crashes, and save file issues
+* Made only one {{i|Lil Portal}} create a portal. If the player has more Lil’ Portals they will still grow but remain as offensive familiars
+* Password protected lobbies will now display in the Friend Match lobby list
+* Full Friend Matches will be displayed in the Friend Match lobby list
+* Popup will now display error when trying to join a Friend Match with mismatched versions
+* Kicked players can no longer rejoin Friend Match lobbies
+* Data collection consent popup now shows up before online play
+* {{i|Abyss}} locusts now appear larger or smaller based on their damage multiplier
+* Reworked several unfair or excessively tedious rooms
+* Increased the minimum distance that {{e|Needle}} enemies can appear from the player
+* Reduced the overall health of {{e|Wizoob}} and {{e|Red Ghost}} enemies
+* Reduced the amount of random directional change for stone shockwave attacks
+
+=== Fixes ===
+* Fixed an issue where players could join in-progress Daily Runs
+* Fixed multiple issues that caused game crashes in solo and online play
+* Fixed overlapping HUD issues for {{c|Tainted Isaac}} and {{c|Tainted ???}}
+* Fixed an issue with {{i|More Options}} and {{i|Glowing Hourglass}} creating alternate treasure room layouts and items
+* Fixed an issue where characters with alternate player types (ex. {{c|Lazarus}}) would not get credit for completion events
+* Fixed an issue where the HUD for {{c|Jacob and Esau}} could run off screen
+* Fixed an exploit where {{i|Eden's Blessing}} could be stored when earned in a challenge and deployed on the next standard run
+* Fixed an issue with Abyss locust damage modifiers resetting if a player quits and resumes
+* Fixed an issue where {{e|Hush}} spawned from {{i|Delirious}} would kill any boss when it died
+* Fixed a soft-lock with {{i|Mega Mush}} when entering trap door to the Womb
+* Fixed issues related to {{m|Greed Donation Machine}} unlocks
+* Fixed an issue where Lil Portal wouldn't shoot if you also had {{i|GB Bug}}
+* Fixed issues where friendly enemies could sometimes hurt the player
+* Fixed an issue preventing Esau from donating to the Greed donation machine
+* Fixed issue where {{m|Revive Machine}} could overlap the Member's shop in Greed mode
+* Fixed an issue causing red doors in ultra secret room to remain hidden after being opened with {{i|Red Key}}
+* Fixed various issues causing crashes
+* Fixed various desyncs related to player opacity
+* Fixed an issue that could allow online challenges to be started with any character
+* Fixed an issue with Lil Portal resetting its room contents when going to the {{s|Corpse}}
+* Fixed an issue where return doors wouldn’t open in online matches with {{t|Door Stop}} or {{i|Mercurius}}
+* Fixed an Issue where {{e|Bumbino}} attacks could knock coins out of dead or shielded players
+
+=== Modding changes ===
+* Player:GetGreedDonationBreakChance no longer crashes if called without any parameters and returns the correct value again
+* Fixed an issue with Entity:Kill() for subclasses
+* Fixed an issue with GridEntity:Destroy() for subclasses
+* Fixed an issue with HUD.ShowItemText staying onscreen forever
+* Fixed an issue with Calling Isaac.FindInRadius causing the game to crash if no args are provided
+* Added wrapper for Room:MamaMegaExplosion method to support optional params for mod compatibility
+* Fixed an issue with Game::Fadein and Game::Fadeout causing a crash
+* Fixed an issue with Familiars Alpha Value being ignored
+* Added <code>REPENTANCE</code> global define back
+* HUD.ShowItemText now has a new parameter (for both versions of the function). if this new value is missing or true then it clears the message stack (legacy functionality). if it's false then they stack up (Rep+ functionality)
+* Fixed an error with number multiplied by Entity.SizeMulti
+* Room:DamageGrid() and Room:DestroyGrid() no longer expect an EntityRef
+* GridEntity:Hurt() no longer expects an EntityRef
+
+== Undocumented changes ==
+* Fixed a crash when using {{i|Forget Me Now}} while holding {{t|Broken Remote}}
+
+{{nav|version}}

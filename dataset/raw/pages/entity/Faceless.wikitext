@@ -1,0 +1,31 @@
+{{infobox monster
+ | dlc         = r
+ | name        = Faceless
+ | id          = 827
+ | base hp     = 20
+ | environment = {{floor|Caves}}{{floor|Flooded Caves}}<br>{{floor|Mines}}<br>{{floor|Scarred Womb}}<br>{{room|challenge}}
+ | behavior    = Wanders around the room, rarely firing a radial burst of six shots. Chases Isaac and fires shots more frequently after taking damage.
+}}
+The '''Faceless''' is a monster added in ''[[The Binding of Isaac: Repentance]]''. It takes on the appearance of a {{e|Gaper}} with most of its head cut off, but with its entire spine still intact. Initially, it wanders around the room aimlessly, occasionally firing out 6 blood shots in a hexagonal shape. Once it takes damage or if Isaac gets close to it, it starts to chase him and fires shots much more frequently. Upon death, it may turn into a {{e|Pacer}} or {{e|Gusher}} but more often the latter.
+{{clear}}
+
+== Variations ==
+=== Tainted Faceless ===
+{{infobox monster
+ | dlc         = r
+ | name        = Tainted Faceless
+ | variant     = 1
+ | base hp     = 100
+ | environment = {{floor|Mines}}<br>Found on the [[Ascent]] to [[Home]]
+ | behavior    = Wanders around the room, rarely firing a radial burst of six shots. Chases Isaac and fires shots very frequently after taking damage.
+}}
+
+'''The Tainted Faceless''' appears to be a Fatty version of the Faceless, with its lower jaw including teeth still intact.
+
+The Tainted Faceless walks towards Isaac while rapidly releasing volleys of 6 blood shots in a hexagonal shape. It essentially behaves like the Faceless with higher health and faster attack rate.
+{{clear}}
+
+== Trivia ==
+* [[Anti:Faceless|Faceless]] originate from the ''Antibirth'' mod.
+
+{{nav|fr=Dévisagé}}

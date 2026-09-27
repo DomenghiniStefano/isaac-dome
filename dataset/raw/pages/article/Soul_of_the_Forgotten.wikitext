@@ -1,0 +1,37 @@
+{{header soul stones}}
+{{Infobox rune
+ | dlc         = r
+ | name        = Soul of the Forgotten
+ | type        = soul stone
+ | id          = 95
+ | quote       = Skeletal protector
+ | description = Spawns {{c|The Forgotten}} as a temporary secondary character, controlled at the same time as Isaac. He dies with no consequences if his health run out, and disappears when Isaac leaves the room. The bone swing deals high damage, and reflects tears.
+ | unlocked by = Soul of the Forgotten
+ | recharge    = 3
+}}
+
+{{cit|ur|r}}
+
+== Effects ==
+* Spawns {{c|The Forgotten}} as a temporary secondary character, controlled at the same time as Isaac. He dies with no consequences if his health run out, and disappears when Isaac leaves the room. The bone swing deals high damage, and reflects tears.
+
+== Notes ==
+* The spawned Forgotten can interact with {{Machine|Blood Donation Machine}}s, {{Machine|Devil Beggar}}s, {{Machine|Hell Game}}s, and {{r|Sacrifice Room}} allowing {{C|The Lost}} and {{C|Tainted Lost}} to safely use them without dying, or a form of invulnerability.
+* He cannot leave a room, so he can't be used to negate damage from exiting a {{r|Curse Room}}.
+* He also cannot pick up items, nor can he pick up things such as pills/cards/soul stones.
+** He can pick up hearts, however he can only replenish his bone hearts by collecting a bone heart pickup.
+* {{dlc|nr+}} If The Forgotten is hit, this will invalidate the conditions for spawning {{t|Perfection}}, regardless of whether or not the main character has been hit.
+* The spawned Forgotten cannot switch to The Soul.
+* {{E|Lucky Penny|text=Lucky Pennies}} picked up by the Forgotten will not give Isaac luck.
+
+== Strategy ==
+* As mentioned above, the Forgotten can be used to sacrifice health at various sources with no cost to Isaac, enabling Isaac to obtain certain items if lucky enough.
+
+== In-game Footage ==
+{{#ev:youtube|QllR1KrizD0}}
+
+== Bugs ==
+{{bug|If multiple Souls of the Forgotten are used in the same room, only 1 Forgotten will be removed after leaving the room. For every room that is left, one copy of him will disappear.}}
+
+{{nav|fr=Âme du Délaissé}}
+[[Category:Runes]]

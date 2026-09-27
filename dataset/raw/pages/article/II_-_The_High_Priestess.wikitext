@@ -1,0 +1,47 @@
+{{header tarot cards}}
+{{Infobox card
+| name =                 II - The High Priestess
+| id =  	            3
+| recharge =             {{dlcalt|4|r=2}}
+| quote =                Mother is watching you
+| description =          [[Mom]]'s dismembered leg stomps on the enemy with the most health, dealing 300 damage and destroying obstacles in the area. If used in an empty room or during the {{e|Mom}} fight, stomps Isaac instead. {{dlc|a+}} Isaac can move to avoid the stomp.
+}}
+
+{{cit|c}}
+
+== Effects ==
+* {{e|Mom}}'s dismembered leg stomps on the enemy with the most health, dealing 300 damage and destroying obstacles in the area.
+* If used in an empty room or during the {{e|Mom}} fight, the foot stomps Isaac instead, dealing a full heart of damage.
+** {{dlc|a+}} Isaac can move to avoid the stomp.
+
+== Notes ==
+* The stomp is considered to be an explosion.
+** {{dlc|nr}} Isaac can thus be immune to it with {{i|Host Hat}} or {{i|Pyromaniac}}
+** {{dlc|r}} Although it remains an explosion for other purposes, these items no longer protect Isaac against the stomp.
+
+== Strategy ==
+* Since the foot is an explosion, it can be used as a substitute for {{e|Bomb}}s.
+** It can break rocks and open doors to {{r|Secret Room}}s. {{dlc|r}} However, unlike bombs, it cannot destroy [[machines]] and {{m|Beggar}}s.
+** In a room containing no enemies and a {{e|Shopkeeper}}, the foot will target it instead of Isaac.
+* The foot deals 300 damage, enough to heavily weaken or even kill some bosses.
+** All [[Chapter 1 (Bosses)|Chapter 1 bosses]] can be one shot from full health with one use of '''II - The High Priestess''' (except {{e|The Fallen}} for its two phases).
+
+== Synergies ==
+* {{I|Tarot Cloth|r}}: Another foot strikes down shortly after the first.
+** {{I|Tarot Cloth|r}} + {{i|Blank Card}} + {{i|Car Battery|n}} : No extra effect, only two feet are spawned.
+
+== Interactions ==
+* {{I|Tarot Cloth|nr}}: No effect.
+* {{I|Stop Watch|r}}: Even though it's not visible, it makes the foot stomp twice, dealing 600 damage.
+** {{I|Stop Watch|r}} + {{I|Tarot Cloth|r}}: A maximum of 1200 damage can be dealt.
+
+== Gallery ==
+<gallery>
+File:Pickup The High Priestess Foot.png|Mom's dismembered leg.
+</gallery>
+
+== Trivia ==
+* [[wikipedia:The High Priestess|The High Priestess]] is the second card of a Major Arcana set.
+** The High Priestess, or The Popess, in most of her depictions is a reference to [[wikipedia:Pope Joan|Pope Joan]], a woman that became Pope by disguising herself as a man.
+
+{{nav|fr=II - La Papesse|card}}

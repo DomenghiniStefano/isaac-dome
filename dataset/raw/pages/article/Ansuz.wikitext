@@ -1,0 +1,29 @@
+{{header runes}}
+{{Infobox rune
+ | name        = Ansuz
+ | type        = rune
+ | image scale = 1/10
+ | id          = 36
+ | quote       = Vision
+ | description = Reveals the whole map, including the {{r|Secret Room}} and the {{r|Super Secret Room}}. (This will not remove {{cu|Lost}}.) {{dlc+|r}} Does not reveal the {{r|Ultra Secret Room}}.{{dlc-}}
+ | unlocked by = Rune of Ansuz
+ | recharge    = 2
+}}
+
+{{cit|ur}}
+
+== Effects ==
+* Reveals the whole map, including the {{r|Secret Room}} and the {{r|Super Secret Room}}. 
+
+== Notes ==
+* {{dlc+|r}} Does not reveal the {{r|Ultra Secret Room}}.{{dlc-}}
+* Will not remove {{cu|Lost}}.
+
+== Synergies ==
+* {{i|Book of Secrets|r}}: The mapping provided by '''Ansuz''' counts as one mapping effect. After using '''Ansuz''', the {{i|X-Ray Vision}} effect can be activated by using the Book of Secrets three times instead of four.
+
+== Interactions ==
+* {{I|Tarot Cloth}}: No effect.
+
+{{nav}}
+[[Category:Runes]]

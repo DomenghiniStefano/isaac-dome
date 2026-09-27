@@ -1,0 +1,179 @@
+{{infobox version
+ | dlc   = r
+ | steam = 3409815046669797018
+ | date  = 2022-11-04
+}}
+
+== Documented changes ==
+=== Gameplay changes ===
+* {{i|C Section}} fetuses now only deal 75% damage every 10 frames (from 100% damage every 8 frames).
+* {{i|Lil Dumpy}} now has a secondary, larger detection radius that can cause it to randomly trigger from nearby enemy projectiles.
+* {{i|Glowing Hourglass}} no longer has a cooldown, but can only be used three times per floor, after which it functions as {{i|The Hourglass}} for the duration of the floor.
+* Increased the cooldown of {{i|D10}} to 2 (from 1). It now "devolves" enemies instead of replacing them with a random enemy.
+* {{i|Cain's Other Eye}} now follows Isaac and copies all tear modifiers/stats, but shoots in random cardinal directions and has -25% reduced damage
+* {{i|Bum Friend}} can now give batteries and items from the [[Beggar (Item Pool)|Beggar pool]].
+* {{i|The Black Bean}} now causes multiple farts in quick succession and leaves poisonous gas clouds.
+* {{i|20/20}} now only decreases damage by -20% (from -25%).
+* {{i|Isaac's Tears}} now has an added +5 damage bonus applied to the tears.
+* {{i|Sticky Bombs}} now cause white creep to splash on the ground, slowing enemies.
+* {{i|Breath of Life}} now takes less time to activate and recharge. Upon blocking damage with perfect timing, it will release holy beams in four directions (similar to {{i|Salvation}}) and grant a brief shield effect.
+* {{i|Athame}} no longer creates a black ring on damage taken, instead it adds a chance for the ring to spawn around killed enemies (scales with luck).
+* {{i|Betrayal}} no longer charms all enemies on damage taken, it now allows enemy projectiles to hit other enemies - when an enemy takes damage from an enemy projectile, it will attempt to target the enemy that fired it.
+* {{i|My Shadow}} no longer creates dark chargers on damage taken, instead Isaac's shadow will closely follow him and create temporary dark chargers when enemies come into contact with it.
+* Increased the damage of {{i|Lil Brimstone}} to 3 per tick (from 2.5).
+* Increased the damage of {{i|Shade}} to 5 per tick (from 2).
+* {{i|Razor Blade}} and {{i|Blood Rights}} now only cost a half heart after the first usage in a room.
+* {{i|Ouija Board}} now grants a +0.4 tears up.
+* {{i|My Reflection}} now grants a +1.5 damage up and a -1 luck down.
+* Reduced the cooldown of {{i|Mom's Pad}} to 2 (from 3). It now also spawns 1 blue fly on use.
+* Adjusted the cooldown of {{i|Blank Card}} with a few cards.
+* A penny now appears in all curse rooms when in possession of {{i|Voodoo Head}}.
+* {{i|Cube Baby}} can now be launched by melee attacks.
+* The {{i|Bag of Crafting}} can no longer be crafted.
+* {{i|Saturnus}} tears no longer damage grid entities (such as poop and TNT barrels).
+* Items spawned from chests can now be safely picked up in the {{i|Death Certificate}} area
+* Removed a redundant range increase from {{i|Crown Of Light}} (it used to counteract the shot speed decrease).
+* Reduced the devil price of {{i|Sacrificial Altar}} to 1 heart.
+* Increased the average amount of items available for purchase in {{r|Devil Room}}s.
+* Added {{i|Backstabber}} to the [[Devil Room (Item Pool)|Devil Room item pool]].
+* Added {{i|Book of Revelations}}, {{i|Stigmata}}, {{i|Jesus Juice}} and {{i|Purity}} to the [[Angel Room (Item Pool)|Angel Room item pool]] (they were previously only there in [[Greed Mode]]).
+* Added {{i|C Section}} to the [[Ultra Secret Room (Item Pool)|Ultra Secret Room item pool]].
+* Added {{i|Mom's Ring}} to the [[Old Chest (Item Pool)|Old Chest item pool]].
+* Added {{i|Epic Fetus}} to the [[Treasure Room (Item Pool)|Treasure Room item pool]] (at very low weight).
+* Added {{i|Glowing Hourglass}} to the [[Treasure Room (Greed Mode Item Pool)|Greed Mode Treasure Room item pool]].
+* Added {{i|Ouija Board}} to the [[Devil Room (Greed Mode Item Pool)|Greed Mode Devil Room item pool]].
+* Added {{i|Breath of Life}} to the [[Angel Room (Greed Mode Item Pool)|Greed Mode Angel Room item pool]].
+* Moved {{i|Mom's Key}} from the Greed Mode [[Boss (Greed Mode Item Pool)|silver Treasure Room item pool]] to the [[Shop (Greed Mode Item Pool)|Greed Mode Shop pool]].
+* {{c|Tainted Bethany}} can now use her blood charges to place bombs when in possession of {{i|Blood Bombs}}.
+* {{t|Mom's Toenail}} now drops a foot every 20 seconds (previously every 2 minutes), with further reduced time for the [[Golden Trinket|doubled/golden variants]].
+* {{t|Duct Tape}} now affects delayed following familiars (such as {{i|Multidimensional Baby}} and {{i|Shade}}).
+* {{t|Cracked Dice}} now has a chance to trigger the {{i|D10}} effect.
+* Shot speed up/down is now considered a minor pill effect, meaning other stat modifying pill effects are slightly more likely to appear instead.
+* The {{r|Shop}} is now offering a discount on a variety of active items.
+* [[Ultra Secret Room]]s can no longer generate near curse rooms (this fixes a rare softlock caused by using {{p|XVIII - The Moon?}} in certain floor layouts).
+* [[Teleporters]], {{i|Purgatory}} cracks and [[button]]s now always render above water to aid in visibility.
+* Rooms containing {{e|Pitfall|text=Suction Pitfalls}} in the {{s|Scarred Womb}} can no longer be bloody.
+* Reduced the damage enemy Brimstone lasers deal to other enemies to 11 per tick (from 22).
+* Increased the health of {{e|Blastocyst}}'s largest form to 300 (from 190)
+* Increased the health of {{e|The Hollow}}'s segments to 26 (from 22).
+* {{e|Hanger}}s can now be [[champion]]s.
+* {{e|Needle}}s and {{e|Pasty|text=Pasties}} can no longer be champions.
+* {{p|XVII - The Stars}} and {{p|Joker}} cards can now show up in Greed mode.
+* {{e|Baby Plum}}, {{e|Bumbino}}, {{e|The Pile}} and {{e|Reap Creep}} are now locked behind the "Something wicked this way comes+!" achievement.
+* Added game over portraits for spiked chests, spiked rocks, {{m|Hell Game}}, {{m|Confessional}}, buckets, mushrooms, polyps and the {{s|Mausoleum}} entrance.
+* Added attack sound effects for {{i|Bob's Rotten Head}}, {{i|The Candle}} and {{i|Red Candle}}.
+* Added feedback for actives with a timed recharge being ready to use.
+* Added more [[Golden Trinket|golden/doubled trinket]] effects. The following trinkets received golden effect:
+** {{t|AAA Battery}}
+** {{t|Bible Tract}}
+** {{t|Black Lipstick}}
+** {{t|Broken Magnet}}
+** {{t|Broken Remote}}
+** {{t|Cartridge}}
+** {{t|Flat Worm}}
+** {{t|Hook Worm}}
+** {{t|Lucky Rock}}
+** {{t|Mom's Toenail}}
+** {{t|Mysterious Candy}}
+** {{t|Pulse Worm}}
+** {{t|Ring Worm}}
+** {{t|Rosary Bead}}
+** {{t|Store Credit}}
+** {{t|Whip Worm}}
+** {{t|Wiggle Worm}}
+* Added a few more [[co-op]] babies.
+* Added even more new room layouts and updated various existing layouts (note that resuming a saved run from before this update may result in temporarily broken maps/rooms).
+* Updated a few boss champion sprites.
+* Updated the sprite of {{i|Breath of Life}}.
+* Updated the "giantbook" animations.
+* Updated various item qualities.
+* Added French language support.
+* Updated localization files.
+
+=== Fixes ===
+* Fixed the button in [[Greed Mode]] dealing damage when in {{c|The Lost|text=Lost}} form (from {{p|Soul of the Lost}} or when playing as {{c|Tainted Jacob}}).
+* Fixed a few useless items, trinkets and cards appearing in Greed Mode (such as {{p|XVIII - The Moon?}}).
+* Fixed {{e|Ultra Greed}} getting stuck in his dash state forever when his movement is blocked by certain objects (his dash now automatically ends after 3 seconds).
+* Fixed {{e|Dangle}} and {{e|Turdlings}} not being locked behind the "Something wicked this way comes!" achievement.
+* Fixed {{i|Cube Baby}} sometimes flying in the wrong direction when thrown with {{i|Mom's Bracelet}}.
+* Fixed an issue with {{i|Multidimensional Baby}} that could cause laser items to damage Isaac when changing rooms.
+* Fixed {{c|Esau}}'s items becoming dormant when using a revival item that changes character.
+* Fixed {{c|The Forgotten}}'s {{i|Brimstone}} balls not dealing increased damage against enemies affected by Brimstone curse.
+* Fixed {{c|The Forgotten}} losing his deal chance when losing a bone heart to a curse room door or similar damage sources.
+* Fixed {{e|Rotten Heart}}s and Broken Hearts getting removed from {{c|The Forgotten}}'s inactive form when saving and resuming a run.
+* Fixed {{c|Tainted Forgotten}}'s soul and {{c|Tainted Lazarus}}' hologram being able to exceed the movement speed cap.
+* Fixed {{c|Tainted Lazarus}}' hologram being vulnerable to damage from certain sources.
+* Fixed a crash caused by using a pill after using {{p|0 - The Fool?}} with {{i|Echo Chamber}}.
+* Fixed a crash caused by using {{i|R Key}} with {{t|Broken Remote}}.
+* Fixed a crash caused by too many knives passing through {{i|Multidimensional Baby}} at once.
+* Fixed rewards from the {{p|Suicide King}} card not being seeded.
+* Fixed enemy kills in the current room not giving score after using the {{i|D10}}.
+* Fixed being able to go beyond the intended goal of a daily challenge using the crawlspace out of bounds teleport into the {{r|I AM ERROR}} room.
+* Fixed using {{i|Forget Me Now}} while picking up another active item with the {{i|Schoolbag}} causing the other active item to be consumed instead.
+* Fixed items with variable charge time (such as {{i|D infinity}}) not always having the expected amount of charge when dropped and picked back up.
+* Fixed {{i|120 Volt}} attacking perma-charmed enemies.
+* Fixed {{i|Adrenaline}}'s damage bonus not updating when losing a {{e|Bone Heart}} from damage.
+* Fixed a rare case where {{i|Vasculitis}} would spawn a hostile fire when killing a burning enemy.
+* Fixed {{i|Friend Finder}} allies being duplicated when saving/resuming as {{c|Jacob and Esau}} or {{c|Tainted Forgotten}}.
+* Fixed win streaks being cleared and not being able to save/resume a run after being revived by {{t|Mysterious Paper}}.
+* Fixed {{e|Bumbino}} rarely getting teleported to an invalid position after being suplexed.
+* Fixed {{e|The Siren}} attempting to take control of {{i|Star of Bethlehem}} and causing damage from an invisible source.
+* Fixed {{e|Tuff Twins}} being able to pass through rocks when being pulled by certain item effects.
+* Fixed {{e|Vis Versa}}'s brimstone beam not always using the correct color in challenge rooms.
+* Fixed an issue with pink champion {{e|The Haunt}}'s death animation.
+* Fixed champion {{e|Flaming Hopper}}s not using their proper champion sprites.
+* Fixed certain champion enemies (such as {{e|Globin}}s) not using the correct body color.
+* Fixed status effect icons not appearing on {{e|Meatball}}, {{e|Dark Ball}}, {{e|Rag Man}}'s head and {{e|Mega Satan}}'s second phase.
+* Fixed some items with no passive effect being granted by {{i|Lemegeton}} and [[Cantripped!]] challenge cards.
+* Fixed various items not increasing/decreasing range as much as intended.
+* Fixed {{i|Shard of Glass}} appearing with {{c|The Lost}}'s {{i|Birthright}}.
+* Fixed {{i|Guppy's Eye}} not being in the [[Curse Room (Item Pool)|Curse Room item pool]].
+* Fixed {{i|Chaos}} not including item pools introduced in Repentance (such as the {{r|Planetarium}}).
+* Fixed double pennies, nickels and dimes healing Keeper for only half of their intended amount.
+* Fixed rocket bombs exploding on contact with certain types of projectiles.
+* Fixed rocket bombs being slowed down when passing through regular bombs
+* Fixed {{e|Bone Knight}}s receiving more knockback from tears than intended.
+* Fixed minor issues with certain room layouts.
+* Fixed not being able to open the Mausoleum door when playing on the ALM1 GHTY seed.
+* Fixed taking damage when going to the next floor when playing on the D0NT ST0P seed.
+
+== Undocumented changes ==
+* Specific {{i|Blank Card}} cooldown adjustments:
+** {{p|IX - The Hermit?}}: increased to 2 rooms (from 1).
+** {{p|XII - The Hanged Man}}: reduced to 3 rooms (from 4).
+** {{p|X - Wheel of Fortune}}: reduced to 4 rooms (from 6).
+* Shop prices of the following activated items have been reduced to 10 (from 15):
+** {{i|Box of Friends}}
+** {{i|Compost}}
+** {{i|Dull Razor}}
+** {{i|Magic Fingers}}
+** {{i|Mom's Bottle of Pills}}
+** {{i|Mom's Bracelet}}
+** {{i|Placebo}}
+** {{i|Portable Slot}}
+** {{i|Tear Detonator}}
+** {{i|The Boomerang}}
+** {{i|The Jar}}
+** {{i|Ventricle Razor}}
+** {{i|Wooden Nickel}}
+* Specific item quality changes:
+** 0 to 1: {{i|Betrayal}}, {{i|Book of Secrets}}, {{i|Breath of Life}}, {{i|Bum Friend}}, {{i|D10}}, {{i|Isaac's Tears}}, {{i|The Scooper}}.
+** 0 to 2: {{i|Cain's Other Eye}}, {{i|My Reflection}}, {{i|My Shadow}}.
+** 0 to 3: {{i|Dogma}}.
+** 1 to 0: {{i|A Quarter}}, {{i|Battery Pack}}, {{i|Box}}, {{i|Curse of the Tower}}, {{i|Lemon Mishap}}, {{i|Little Baggy}}, {{i|Missing No.}}, {{i|Spiderbaby}}, {{i|The Wiz}}.
+** 1 to 2: {{i|Adrenaline}}, {{i|Aquarius}}, {{i|Big Chubby}}, {{i|Crooked Penny}}, {{i|Dad's Key}}, {{i|Dog Tooth}}, {{i|Epiphora}}, {{i|Leech}}, {{i|Little Chubby}}, {{i|Little Steven}}, {{i|Lost Fly}}, {{i|Nancy Bombs}}, {{i|Poke Go}}, {{i|Sharp Plug}}, {{i|Spear Of Destiny}}, {{i|Sticky Bombs}}, {{i|Voodoo Head}}.
+** 2 to 0: {{i|IBS}}, {{i|TMTRAINER}}.
+** 2 to 1: {{i|2Spooky}}, {{i|Blood Oath}}, {{i|Candy Heart}}, {{i|Compost}}, {{i|Dad's Lost Coin}}, {{i|Dirty Mind}}, {{i|Empty Heart}}, {{i|Eye Sore}}, {{i|Friendly Ball}}, {{i|The Gamekid}}, {{i|Guppy's Collar}}, {{i|Night Light}}, {{i|Latch Key}}, {{i|Lazarus' Rags}}, {{i|Plum Flute}}, {{i|Pop!}}, {{i|Soul Locket}}, {{i|The Boomerang}}, {{i|Varicose Veins}}, {{i|Vasculitis}}, {{i|Vengeful Spirit}}, {{i|Yuck Heart}}.
+** 2 to 3: {{i|3 Dollar Bill}}, {{i|Backstabber}}, {{i|Broken Modem}}, {{i|Camo Undies}}, {{i|Echo Chamber}}, {{i|Everything Jar}}, {{i|Eve's Mascara}}, {{i|Explosivo}}, {{i|Fruit Cake}}, {{i|Genesis}}, {{i|Lil Dumpy}}, {{i|Trisagion}}.
+** 3 to 2: {{i|Azazel's Rage}}, {{i|Berserk!}}, {{i|Bloody Gust}}, {{i|Bloody Lust}}, {{i|Brimstone Bombs}}, {{i|D1}}, {{i|D4}}, {{i|Dark Arts}}, {{i|Glyph of Balance}}, {{i|Guppy's Head}}, {{i|Hungry Soul}}, {{i|Hypercoagulation}}, {{i|Lil Abaddon}}, {{i|Lil Brimstone}}, {{i|Mom's Box}}, {{i|Mom's Wig}}, {{i|Montezuma's Revenge}}, {{i|Suplex!}}, {{i|The Nail}}, {{i|Trinity Shield}}, {{i|Vade Retro}}, {{i|Vanishing Twin}}.
+** 3 to 4: {{i|Ghost Pepper}}, {{i|Haemolacria}}.
+** 4 to 3: {{i|20/20}}, {{i|Bag of Crafting}}, {{i|Infestation 2}}, {{i|Maw Of The Void}}, {{i|Proptosis}}, {{i|Pyromaniac}}.
+* The following trinkets gained the [[Item Tags nogreed|<code>nogreed</code> item tag]]: {{t|Ace of Spades}}, {{t|A Lighter}}, {{t|Bat Wing}}, {{t|Fragmented Card}}, {{t|Hairpin}}, {{t|Match Stick}}, {{t|Rusted Key}}, {{t|Safety Cap}}, {{t|Watch Battery}}.
+** {{t|Bat Wing}} was mistakenly given the tag in place of {{t|Ice Cube}}.
+* Updated the sprite of {{i|Undefined}}. It now displays the updated sprites of {{i|The Compass}} and {{i|Blood Bag}}.
+* Removed the costume of {{i|My Shadow}}.
+* {{I|Void}} now shows red door outlines when it has absorbed {{I|Red Key}}, allowing it to create red rooms without needing {{P|Cracked Key}} or {{P|Soul of Cain}}.
+* When {{e|Baby Plum}} dies, an animation plays in which she is struck by a ballistic missile.
+* Fixed a bug where [[Rocks#Super Special Rocks|Super Special Rocks]] are guaranteed to drop [[Small Rock]]. The usual drops of the obstacles are now restored.
+
+{{nav|version}}

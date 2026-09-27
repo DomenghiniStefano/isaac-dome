@@ -1,0 +1,87 @@
+{{dlc|nr}}[[file:Double Locked Room.png]] {{dlc|r}}[[File:Dice Room door locked.png]][[File:Dice Room door.png]]
+
+'''Dice Rooms'''  are [[special room]]s that can randomize many elements of the run. Dice Rooms require two {{e|Key}}s to be opened, unlike most other special rooms. For a Dice Room to spawn,  two things must happen;
+* First, the game must decide that a {{R|Sacrifice Room}} will spawn that floor. This normally has a 1/7 (~14%) chance of happening each floor, but increases to 5/14 (~36%) if Isaac’s total health (filled [[Hearts|red and soul hearts]]) is equal to or greater than his total Red Heart  Containers (including Bone Hearts).
+* Once the game determines a Sacrifice Room will spawn, a Dice Room has a 1/50 (2%) chance to replace it. [[Level Generation|This chance increases to 27/125 (~22%) if Isaac has two or more keys.]]
+
+== Effects ==
+[[file:Dice room example.png|250px]]
+
+In addition to whatever else the room holds, there will always be a symbol of one of the sides of a six-sided die in the 5x5 center of the room. The amount of pips shown will be between one to six, chosen randomly. When Isaac crosses the die, a certain effect will occur that randomizes a certain aspect of the run, dependent on how many pips were on the die face shown. Any given Dice Room can only give this effect once.
+
+The die numbers and effects are:
+* ⚀ 1 pip - {{dlc|na+}} Rerolls Isaac's currently held [[collectible]]s into items from the {{ip|Treasure Room|text=Treasure Room item pool}}, like the {{i|D4}} would. Activated collectibles can be changed into passive ones, but passive collectibles cannot turn into activated ones.
+** {{dlc|a+}} Rerolls each of Isaac's passive items into a random item from the pool of the room where it was acquired.
+** {{dlc|r}} Rerolls both Isaac's active and passive items.
+** {{dlc|r}} Only rerolls the items of the character that stepped onto the dice in co-op.
+*** Meaning that {{C|Tainted Forgotten}} has to be thrown on the button in order to take effect.
+* ⚁ 2 pips - Rerolls all [[pickup]]s in the room, like the {{i|D20}} would.
+* ⚂ 3 pips - Rerolls all [[pickup]]s and [[trinket]]s on the entire floor. This includes {{r|Shop}} [[pickup]]s. Does not reroll pickups or trinkets in the {{R|Devil Room}}, {{R|Angel Room}}, {{R|Black Market}}, or {{R|Crawl Space}}.
+** Pickups rerolled in shops by this effect have a chance to turn into items. If these are active items, they will have no charges when picked up.
+* ⚃ 4 pips - Rerolls any [[item|item pedestals]] on the floor, like {{i|The D6}} would. Does not reroll item pedestals in the {{R|Devil Room}}, {{R|Angel Room}}, {{R|Library}}, {{R|Black Market}}, or {{R|Crawl Space}}.
+* ⚄ 5 pips - Rerolls and restarts the current floor, which is the same effect as {{i|Forget Me Now}}.
+* ⚅ 6 pips - Combines the effects of the 1-, 3-, and 4-pip rooms. (Rerolls all held items (including active), pickups, trinkets, and pedestal items like the {{i|D100}}.)
+** {{dlc|r}} Rerolls all held items for all characters in co-op.
+
+== Layouts ==
+The following room maps were made using [https://github.com/Basement-Renovator/basement-renovator Basement Renovator] for cleaner viewing. Note that any pickups in the 5×5 center of the room will be on the die symbol, requiring Isaac to activate the room in order to obtain them unless he knocks them away with explosions of some kind. Given how hazardous some dice room effects can be, this may be the preferred way of retrieving them.
+
+All rooms have a weight of 1.
+<gallery>
+File:Dice Room 0.png
+File:Dice Room 1.png
+File:Dice Room 2.png
+File:Dice Room 3.png
+File:Dice Room 4.png
+File:Dice Room 5.png
+File:Dice Room 6.png
+File:Dice Room 7.png
+File:Dice Room 8.png
+File:Dice Room 9.png
+File:Dice Room 10.png
+File:Dice Room 11.png
+File:Dice Room 12.png
+File:Dice Room 13.png
+File:Dice Room 14.png
+File:Dice Room 15.png
+File:Dice Room 16.png
+File:Dice Room 17.png
+File:Dice Room 18.png| <center>{{dlc|a}}</center>
+File:Dice Room 19.png| <center>{{dlc|a}}</center>
+File:Dice Room 20.png| <center>{{dlc|a}}</center>
+</gallery>
+
+== Notes ==
+* {{i|Dad's Key}}, {{p|Get out of Jail Free Card}}, {{i|Mr. ME!}}, and {{i|Sharp Key}} open Dice Rooms in one use.
+* Due to how Dice Room generation works, a floor cannot have both a Dice Room and {{r|Sacrifice Room}}; they are mutually exclusive.
+* If a floor has two special rooms that require two keys to enter, the one closer to the start room will be a {{R|Vault}}, and the one further away from it will be a Dice Room.
+* It is possible to re-roll a floor into another that has a 5-pip Dice Room. Getting a 5-pip dice room in {{s|Womb}} / {{s|Utero}} II can allow the player to defeat {{e|Mom's Heart}} (or {{E|It Lives!}}) multiple times in one run. This can be used to quickly gain progress tied to the number of Mom's Heart kills.
+* It is possible to unlock {{C|Samson}} by finishing the first floor and using a 5-pip Dice Room.
+* A 5-pip dice room on an XL floor sends Isaac to the first floor of the chapter.
+* When shop pickups are re-rolled via a 3- or 6-pip room, the original prices will remain in place.
+* 3- or 6-pip Dice Rooms can reroll chests in Challenge Rooms or Boss Challenge Rooms into collectibles. And since those rooms detect whether a chest is open or an item picked up, there won't be any monsters.
+* 3-pip room can re-roll shop pickups into items.
+** Using items such as {{I|The D6}} in the room without buying the item can cause the item to revert to a pickup.
+* There is a small chance that 1- and 6-pip rooms will not reroll every item Isaac has in his possession.
+* {{dlc|a}} Dice Rooms don't re-roll starter challenge items or remove blindfold on challenges.
+* {{dlc|a+}} Dice Rooms have a small marker indicating the effect that will be activated when the room is used. This was inspired by [http://steamcommunity.com/sharedfiles/filedetails/?id=835149267 this Steam Workshop mod] by Wofsauge.
+* {{dlc+|r}} If {{c|Jacob and Esau}} activate a 6-pip room, the items held by both characters will be rerolled, but only the items of the character that step on a 1-pip room will be rerolled.{{dlc-}}
+* {{dlc+|r}} Any rooms generated by {{I|Red Key}} that contain an item pedestal will not be affected by a 4-pip room.{{dlc-}}
+* {{dlc|r}} In the [[Mirrored World]], the second Dice Room may be different.
+* {{dlc+|r}} If {{c|Tainted Lazarus}} activates a 1-pip room, only the state that activated the room will have the items rerolled, leaving the other form's items untouched.{{dlc-}}
+
+== Gallery ==
+<gallery>
+File:D4 (marker).png|{{dlc|a+}} The {{i|D4}} marker, appears in 1-pip rooms.
+File:D20 (marker).png|{{dlc|a+}} The {{i|D20}} marker, appears in 2-pip rooms.
+File:All the floor (marker).png|{{dlc|a+}} The floor marker, appears in 3-pip rooms.
+File:D6 (marker).png|{{dlc|a+}} {{i|The D6}} marker, appears in 4-pip rooms.
+File:Forget Me Now (marker).png|{{dlc|a+}} The {{i|Forget Me Now}} marker, appears in 5-pip rooms.
+File:D100 (marker).png|{{dlc|a+}} The {{i|D100}} marker, appears in 6-pip rooms.
+</gallery>
+
+== Bugs ==
+{{bug|dlc=nr|The 1-pip room may reroll your active item into a "passive" item. The 1-pip room always empties your active item slot. However 1-pip room may fail to find a replacement item which results in Isaac still having the collectible. This is because the D4 will try 3 times to get a non-active item from the item pool before giving up replacing the item.}}
+{{bug|dlc=nr|The 1-pip room will reroll your secondary active collectible without emptying the slot. This means you will keep the active ability but lose some passive abilities. For example, you will lose {{i|Mom's Box}} passive of doubling trinkets but you keep the speed boost from {{i|A Pony}}.}}
+
+{{nav|room|fr=Salle de Dé}}

@@ -1,0 +1,81 @@
+{{header attributes}}
+
+[[file:Attribute range icon.png|50px]]
+'''Range''' determines how long tears will travel before landing and is represented by a bow and arrow.
+
+{{dlc|nr}} This attribute's name is misleading because Range determines the ''time'' that a shot stays in the air rather than the ''"distance"'' that it travels. The effective Range is calculated based on said travel time, [[Shot Speed]], and [[Tear Falling Speed]]. Range cannot be lowered below 5.0 but has no upper limit. Internally, this attribute is called Tear Height, and also affects the starting height that tears spawn at.
+* {{dlc|r}} Range now represents how many tiles a tear will travel. Range cannot be lowered below 1.0, but has no upper limit. Tear Height no longer represents this attribute and no longer affects effective range.
+
+Extremely high Tear Height makes Isaac's tears start so high in the air they can cross over [[obstacles]] as if they were [[spectral tears|spectral]], but they won't go through room walls. Once the tears fall down, they will start hitting obstacles again. This compounds with [[Tear Falling Speed]].
+
+Each character's base Range is as follows:
+
+<tabber>
+ Post-Repentance=
+{| class="wikitable sortable striped"
+ |-
+ ! class="unsortable" | {{dlc|r}} Character
+ ! Range
+ |-
+ | {{c|Cain}} {{c|Azazel}} {{c|Lazarus}} {{c|Tainted Cain}} {{c|Tainted Judas}} {{c|Tainted Lazarus}}
+ | 4.5
+ |-
+ | {{c|Samson}} {{c|Jacob}} {{c|Tainted Samson}}
+ | 5.0
+ |-
+ | {{c|Isaac}} {{c|Magdalene}} {{c|Judas}} {{c|Black Judas}} {{c|???}} {{c|Eve}} {{c|Lazarus Risen}} {{c|The Lost}} {{c|Lilith}} {{c|Keeper}} {{c|Apollyon}} {{c|The Forgotten}} {{c|The Soul}} {{c|Bethany}} {{c|Tainted Isaac}} {{c|Tainted Magdalene}} {{c|Tainted ???}} {{c|Tainted Eve}} {{c|Tainted Azazel}} {{c|Dead Tainted Lazarus}} {{c|Tainted Lost}} {{c|Tainted Lilith}} {{c|Tainted Keeper}} {{c|Tainted Apollyon}} {{c|Tainted Forgotten}} {{c|Tainted Bethany}} {{c|Tainted Jacob}}
+ | 6.5
+ |-
+ | {{c|Esau}}
+ | 8.0
+ |}
+
+* {{c|Azazel}}: The mini-Brimstone beam doesn't calculate its Range the same way as normal tear attacks, so his Range stat is misleading. His attack has a much shorter Range than other characters with the same value.
+* {{c|Eden}} and {{c|Tainted Eden}}: Range is a random value between 5.0 and 8.0, inclusive.
+* {{c|The Forgotten}} and {{c|Tainted Forgotten}}: Their melee attacks don't calculate their Range the same way as normal tear attacks, and their actual attack Range is far less than other characters with the same value.
+** {{c|The Soul}}: Tear attack range works normally.
+** {{c|Tainted Soul}}: Incapable of firing tears. The range of the thrown Forgotten body is unaffected by Range.
+* {{c|Tainted Magdalene}}: The lethal hug is unaffected by Range. Tear attack range works normally.
+* {{c|Tainted Samson}}: The melee attack in [[Berserk!|the berserk state]] doesn't calculate its Range in the same way as normal tear attacks, and its actual attack Range is far less than other characters with the same value. Tear attack range for non-berserk state works normally.
+* {{c|Tainted Azazel}}: The thin Brimstone beam has unlimited Range, while {{I|Hemoptysis|n}} is not affected by Range, so his Range stat isn't commonly relevant.
+|-|
+ Pre-Repentance=
+{| class="wikitable sortable striped"
+ |-
+ ! class="unsortable" | {{dlc|nr}} Character
+ ! Range
+ |-
+ | {{c|Cain}} {{c|Azazel}} {{c|Lazarus}}
+ | 17.75
+ |-
+ | {{c|Samson}}
+ | 18.75
+ |-
+ | {{c|Isaac}} {{c|Magdalene}} {{c|Judas}} {{c|Black Judas}} {{c|???}} {{c|Eve}} {{c|Lazarus Risen}} {{c|The Lost}} {{c|Lilith}} {{c|Keeper|a}} {{c|Apollyon|a+}} {{c|The Forgotten|a+}} {{c|The Soul|a+}}
+ | 23.75
+ |}
+
+* {{c|Azazel}}: The mini-Brimstone beam doesn't calculate its Range the same way as normal tear attacks, so his Range stat is misleading. His attack has a much shorter Range than other characters with the same value.
+* {{c|Eden|nr}}: Range is a random value between 18.75 and 28.75, inclusive.
+* {{c|The Forgotten|a+}}: The melee attack doesn't calculate its Range the same way as normal tear attacks, and their actual attack Range is far less than other characters with the same value.
+</tabber>
+
+== Items That Affect Range ==
+=== Activated Items ===
+{{collectible table | D8, D100, Dataminer, Glass Cannon, Potato Peeler, Telepathy For Dummies, Mega Mush, Void }}
+
+=== Passive Items ===
+{{collectible table | Anemic, Binge Eater, Blood Clot, Capricorn, Candy Heart, Compound Fracture, Continuum, Consolation Prize, Cricket's Body, Crown Of Light, Dad's Lost Coin, Dark Prince's Crown, Dead Onion, Death's List, Experimental Treatment, Eye of Belial, Godhead, Haemolacria, The Halo, Ipecac, Jesus Juice, Kidney Stone, Libra, Magic Mushroom, Marked, Mini Mush, Missing No., Mom's Contacts, Mom's Heels, Mom's Lipstick, Mom's Pearls, Mom's Underwear, Mr. Dolly, My Reflection, Number One, Purity, Odd Mushroom (Large), Roid Rage, Sacred Heart, Safety Pin, SMB Super Fan, Soul Locket, Stye, Synthoil, Tiny Planet, Tractor Beam, Eye of the Occult, Keeper's Sack, Sausage, Tropicamide, Zodiac }}
+
+=== Trinkets ===
+{{trinket table | Azazel's Stump, Cracked Crown, Cracked Dice, Hook Worm, Lazy Worm, Liberty Cap, Dim Bulb, Ouroboros Worm, Rainbow Worm, Tape Worm, Vibrant Bulb, Broken Syringe, Mom's Lock }}
+
+=== Other ===
+* Range Up [[pill]]s increase Range by {{dlc|nr}} 2.5 {{dlc|r}} 1.25, and Range Down pills decrease Range by {{dlc|nr}} 2 {{dlc|r}} 1.
+* {{dlc|a}} In co-op, [[Co-op#Special Babies 2|Long Baby]] will occasionally briefly increase Range, Shot Speed, and Tear Falling Speed. [[Co-op#Special Babies 2|Dark Baby]] will occasionally briefly increase all stats, including Range. [[Co-op#Special Babies 2|Dripping Baby]] will occasionally briefly grant {{I|Anemic}}, increasing Range.
+* {{P|XI - Strength}} activates the {{I|Magic Mushroom}} effect for the current room, which increases Range.
+* {{dlc|a+}} Absorbing an item using {{p|Black Rune|n}} can increase Range by 2.5.
+* {{P|Huge Growth|a+}} and {{dlc|r}} [[Pills#Horse Pills|horse]] [[Power Pill!]] increases Range, Damage, and Isaac's size for the current room.
+
+{{nav|fr=Portée}}
+[[Category:Mechanics]]

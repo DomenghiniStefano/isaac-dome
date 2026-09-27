@@ -1,0 +1,29 @@
+{{infobox monster
+ | id           = 49
+ | variant      = 1
+ | image name   = * {{dlc|nr|Rebirth}}
+ | is mini-boss = yes
+ | environment  = <u>Mini-Boss</u><br>{{room|mini-boss}}<br>{{dlc|r}} Cannot be encountered in [[Chapter 1]] Mini-Boss Rooms<br>{{room|boss challenge}}<br><u>Degraded Mini-Boss</u><br>{{floor|Corpse}}<br>{{floor|Sheol}}<br>{{floor|Dark Room}}{{floor|Chest}}<br>{{room|challenge}}
+ | base hp      = 60
+ | stage hp     = {{dlcalt|15|r=25}}
+ | pool         = 2 random {{E|Red Heart|text=Hearts}} (78.6% Chance) <br>or<br>{{i|Bucket of Lard}} (21.4% Chance)
+}}
+
+'''Super Gluttony''' is a [[mini-boss]] and one of the [[Seven Deadly Sins#Super Sins|Seven Super Deadly Sins]]. He is randomly encountered as an alternate version of {{E|Gluttony}}.
+
+== Behavior ==
+Super Gluttony wanders randomly around the room and performs one of two attacks:
+* Fires 8 projectiles in all directions in conjunction with a disorganized spray of projectiles aimed at Isaac, similar to {{E|Monstro}}.
+* Fires a {{i|Brimstone}} laser out of his belly and back towards Isaac if he is aligned in a cardinal direction.
+Super Gluttony deals a whole heart of contact damage.
+
+== Notes ==
+* Super Gluttony can spawn with 2 {{E|Vis}} in the mini-boss room.
+* {{dlc|nr}} Super Gluttony can drop {{i|Bucket of Lard}} even if Isaac has already encountered/possessed it. 
+
+== Trivia ==
+* Similar to {{E|Gluttony}}, who is a {{E|Vis}} with a head, Super Gluttony is a {{E|Double Vis}} with a head.
+* The [[wikipedia:Seven Deadly Sins|Seven Deadly Sins]] that these mini-bosses are based upon are, in Christian teachings, a classification of vices from which all others are derived.
+
+{{nav|mini-boss|fr=Super Gourmandise}}
+[[Category:Seven Super Deadly Sins]]

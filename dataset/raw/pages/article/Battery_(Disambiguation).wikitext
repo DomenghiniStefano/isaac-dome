@@ -1,0 +1,27 @@
+{{disambiguation}}
+__NOTOC__
+[[Batteries]] are pickups that add charges to Isaac's active item.
+
+'''Battery''' may also refer to:
+
+== Items ==
+* {{i|9 Volt}}, recharges one bar of an active item after each use.
+* {{i|The Battery}}, allows activated items to store an additional full charge.
+* {{i|Car Battery}}, doubles the effect of Isaac's active items.
+* {{i|4.5 Volt}}, gain charges from dealing damage instead of clearing rooms.
+* {{i|Battery Pack}}, spawns 2-4 battery pickups.
+* {{i|Jumper Cables}}, recharges Isaac's active item by 1 bar for every 15 enemies killed.
+
+== Trinkets ==
+* {{t|AAA Battery}}, recharges the last bar of an active item.
+* {{t|Charged Penny}}, grants a small chance to gain 1 bar of charge on Isaac's active item when picking up {{e|Penny|text=coins}}.
+* {{t|Old Capacitor}}, Isaac's active item no longer gains charges, but greatly increases Battery drop rates.
+* {{t|Watch Battery}}, increases chance of {{e|Lil' Battery}} pickups, grants chance to add an extra charge upon room completion.
+
+== Familiars ==
+* {{i|Charged Baby}}, occasionally spawns batteries and adds charges to Isaac's active item.
+
+== Pickups ==
+* [[48 Hour Energy]], a pill that fully charges Isaac's active item and drops one or two {{e|Lil' Battery}} pickups.
+
+{{nav|fr=Batterie (Homonymie)}}

@@ -1,0 +1,31 @@
+{{infobox monster
+ | dlc         = r
+ | name        = Siren Minion
+ | id          = 3
+ | variant     = 220
+ | environment = {{floor|Mausoleum}}<br>Spawned by [[The Siren]].
+ | behavior    = Spawned in automatically charmed by {{E|The Siren}}. Orbits the boss and fires projectiles towards Isaac.
+}}
+'''Siren Minions''' are spawned by {{E|The Siren}} as one of her attacks and shoot projectiles towards Isaac while orbiting the boss. They are only spawned if Siren does not have 3 follower/orbital familiars stolen from Isaac. Technically classified as familiars and not enemies, their enemy status and HP is determined by the Siren Helper enemy that controls them. They behave identically to a charmed {{i|Brother Bobby}}.
+
+{{clear}}
+
+=== Siren Helper ===
+{{infobox monster
+ | dlc         = r
+ | name        = Siren Helper
+ | id          = 966
+ | base hp     = 60
+ | environment = {{floor|Mausoleum}}<br>Spawned by [[The Siren]].
+ | behavior    = Spawned in by {{E|The Siren}} and takes the form and control of all of her charmed familiars.
+}}
+
+'''Siren Helper''' has no appearance itself and instead controls and takes on the appearance of all of {{E|The Siren}}'s charmed familiars. It also acts as the hitbox of each familiar and determines their HP. When it takes control of a familiar stolen from Isaac, the familiar will have a red hue. Siren Minions it controls have no change to their appearance.
+
+{{clear}}
+
+== Trivia ==
+* If spawned by other means than The Siren's attack, e.g. by console commands or modded effects, the Siren Minion follows Isaac and acts identically to {{I|Brother Bobby}}. If such a copy is charmed by The Siren, it will be destroyed like the ones summoned by The Siren herself instead of uncharmed when defeated.
+* The Siren Helper appears as a {{E|Fly}} if forcibly spawned, but it will not take control of Isaac's familiars whether The Siren is present or not. It simply disappears immediately.
+
+{{nav|fr=Sbire de La Sirène}}

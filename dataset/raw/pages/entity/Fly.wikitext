@@ -1,0 +1,224 @@
+{{infobox monster
+ | id          = 13
+ | base hp     = 3
+ | environment = {{floor|Basement}}{{floor|Cellar}}{{floor|Burning Basement}}<br>{{floor|Downpour}}{{floor|Dross}}<br>{{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Mausoleum}}{{floor|Gehenna}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|Cathedral}}<br>{{room|treasure}}{{room|shop}}{{room|secret}}{{room|super secret}}{{room|boss}}{{room|mini-boss}}{{room|arcade}}{{room|crawl space}}{{room|black market}}{{room|I AM ERROR}}{{room|clean bedroom}}{{room|dirty bedroom}}
+ | behavior    = Hovers in place. Does not deal contact damage and is harmless, but can turn into {{E|Pooter}}s if they stay around {{E|Poop}}.
+}} {{disambig msg|the fly enemies}}
+
+'''Flies''' are enemies that buzz around the room randomly, but slowly hover towards Isaac. They cannot damage Isaac at all, even by touch, making them completely harmless. However, they can turn into {{e|Pooter}}s if they fly around {{E|Poop}} for too long.
+
+Along with monsters like the {{e|Gaper}}s and {{e|Spider}}s, Flies are one of the most commonly-encountered monsters and appear in numerous different types.
+__TOC__
+{{clear}}
+
+== Variants ==
+=== Attack Fly ===
+{{infobox monster
+ | name        = Attack Fly
+ | id          = 18
+ | base hp     = 5
+ | environment = {{floor|Basement}}{{floor|Cellar}}{{floor|Burning Basement}}<br>{{floor|Dross}}<br>{{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|Chest}}<br>{{room|boss}}{{room|challenge}}{{room|vault}}{{room|I AM ERROR}}{{room|treasure}}<br>{{dlc|nr}}<br>{{room|crawl space}}
+ | behavior    = Red fly that follows Isaac and deals contact damage.
+}}
+
+'''Attack Flies''' are red and black flashing flies that will chase Isaac, dealing contact damage.
+
+Weirdly, while they can easily hit Isaac from the left or right, they have great difficulty hitting him from the top or bottom.
+
+==== Notes ====
+* Attack Flies turn into regular Flies if Isaac has {{i|Skatole}}. However, they take a small amount of time to convert into Flies, so it is possible for Isaac to be damaged if the player is not careful.
+* {{e|Hive}}s can spit out attack flies that die upon touching Isaac, but the ones spawned upon the monster's death do not.
+* {{e|The Duke of Flies}} can spit out normal and larger versions of Attack Flies that have 10 base HP. Both of these Attack Flies die upon touching Isaac, but the ones spawned upon the boss's death do not.
+* {{e|The Husk}} can spit out attack flies that die upon touching Isaac, but the ones spawned upon the boss's death do not. 
+* {{e|Gurdy}} can spawn weaker versions of Attack Flies that only have 3 base HP and die upon touching Isaac.
+{{clear}}
+
+=== Ring Fly ===
+{{infobox monster
+ | name        = Ring Fly
+ | id          = 222
+ | base hp     = 5
+ | environment = {{floor|Basement}}{{floor|Cellar}}{{floor|Burning Basement}}<br>{{floor|Dross}}<br>{{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}
+ | behavior    = Gathers with any other Ring Flies in the room. These flies orbit around themselves while following Isaac. Deals contact damage.
+}}
+
+'''Ring Flies''' are a new addition to ''Rebirth''. They are pink flies that, upon entering the room, will cluster together into a circular formation and orbit rapidly while moving towards Isaac. They will hold formation even as flies are destroyed. The maximum amount of flies per formation is 10.
+
+==== Notes ====
+* Ring Flies are not affected by {{i|Strange Attractor}} and will continue to stay within their current circular formation.
+{{clear}}
+
+=== Moter ===
+{{infobox monster
+ | name        = Moter
+ | id          = 80
+ | image name  = * {{dlc|nr|Rebirth}}
+ | base hp     = 10
+ | environment = {{floor|Basement}}{{floor|Cellar}}{{floor|Burning Basement}}<br>{{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Depths}}{{floor|Dank Depths}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}
+ | behavior    = Follows Isaac, similar to {{E|Attack Fly|text=Attack Flies}}. Deals contact damage. Splits into 2 Attack Flies upon death.
+}}
+
+'''Moters''' appear as two conjoined Attack Flies. They behave similarly to regular Attack Flies, but split into two Attack Flies upon being killed. The directions the Attack Flies will split off is parallel to Isaac (vertical if Isaac is to either side, and horizontal if he is above or below).
+
+Alternatively, if a Moter's health is dropped to -20 or less in one instance (i.e., by using a Bomb), it will spawn nothing on death.
+
+==== Notes ====
+* If Isaac has {{i|Skatole}}, it will not split into two Attack Flies on death.
+{{clear}}
+
+=== Eternal Fly ===
+{{infobox monster
+ | name        = Eternal Fly
+ | id          = 96
+ | image name  = * {{dlc|nr|Rebirth}}
+ | environment = All [[Chapters]]<br>{{room|boss}}{{room|treasure}}{{room|secret}}{{room|dirty bedroom}}{{room|vault}}{{room|I AM ERROR}}
+ | behavior    = Invulnerable fly that circles {{E|Corny Poop}} and various monsters. Deals contact damage. Turns into a vulnerable {{E|Attack Fly}} after the object or monster it circles is destroyed.
+}}
+
+The '''Eternal Fly''' is a white-colored fly that can be found on any floor in the game. They usually circle {{E|Corny Poop}} or enemies like {{e|Holy Leech}}es and {{e|Hanger}}s, and will not stop circling them until their hosts are destroyed. Before that, they will deal damage to Isaac if he touches them, and they are completely immune to all forms of damage. When their hosts are destroyed, they convert into a modified version of an [[#Attack Fly|Attack Fly]] that regenerates health and can be killed if walked into.
+Eternal Flies circling Corn Poop do not need to be killed to clear a room.
+
+==== Notes ====
+* Eternal Flies can be killed by {{p|Chaos Card}}, {{i|Little Horn}}, and {{i|Euthanasia}}.
+* Their [[bestiary]] entry states that they have 300 HP.
+{{clear}}
+
+=== Dart Fly ===
+{{infobox monster
+ | dlc         = a
+ | name        = Dart Fly
+ | id          = 256
+ | base hp     = 5
+ | environment = {{floor|Basement}}{{floor|Cellar}}{{floor|Burning Basement}}<br>{{floor|Dross}}<br>{{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Depths}}<br>{{room|boss}}{{room|crawl space}}{{room|dice}}
+ | behavior    = Flies towards Isaac and attempts to predict his movements. Deals contact damage.
+}}
+
+'''Dart Flies''' are similar to regular [[#Attack Fly|Attack Flies]], but attempt to predict Isaac's movements and cut him off. If surrounded or otherwise in a tricky situation, moving toward these can buy some time or keep an escape route open, as they will stop their advance toward Isaac and instead start moving away from him for a moment.
+{{clear}}
+
+=== Swarm ===
+{{infobox monster
+ | dlc         = a
+ | name        = Swarm
+ | id          = 281
+ | base hp     = 5
+ | environment = {{floor|Basement}}{{floor|Cellar}}{{floor|Burning Basement}}<br>{{floor|Dross}}<br>{{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}
+ | behavior    = Follows Isaac in large, tightly-clustered groups and deals contact damage.
+}}
+
+'''Swarms''' are similar to regular Attack Flies, but appear in tightly-packed clusters.
+
+==== Notes ====
+* If a Swarm is somehow separated from its group, it quickly moves back to its group when it is able to.
+{{clear}}
+
+=== Hush Fly ===
+{{infobox monster
+ | dlc         = a
+ | name        = Hush Fly
+ | id          = 296
+ | base hp     = 10
+ | environment = {{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|???}}<br>Spawned by [[Hush]]
+ | behavior    = Gathers with other Hush Flies to form certain patterns. If spawned by {{E|Hush}}, can chase Isaac or orbit Hush. Deals contact damage.
+}}
+
+'''Hush Flies''' are mainly spawned by {{e|Hush}} and behave somewhat similar to [[Ring Fly|Ring Flies]], but do not fly towards Isaac and remain in a fixed path. Unlike Ring Flies, Hush Flies can form other shapes such as polygons. When spawned by Hush they can also orbit it, form a pattern and travel in a straight path, or form a pattern and chase after Isaac.
+
+Hush Flies have a brief period of invincibility when Hush spawns them, making them appear to have more health than they actually have.
+
+{{dlc|a+}} Hush Flies can also spawn outside of the Hush fight in some rare rooms. When encountered in these rooms they will continuously orbit in a fixed path.
+
+==== Notes ====
+* Hush Flies are not affected by the {{tf|Beelzebub}} [[transformation]].
+* {{dlc+|r}} They can also appear in {{s|???}} with the use of {{i|Red Key}}.{{dlc-}}
+{{clear}}
+
+=== Army Fly ===
+{{infobox monster
+ | dlc         = r
+ | name        = Army Fly
+ | id          = 868
+ | base hp     = 5
+ | environment = {{floor|Basement}}{{floor|Burning Basement}}<br>{{floor|Dross}}<br>{{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Depths}}{{floor|Dank Depths}}<br>{{floor|Corpse}}
+ | behavior    = Chases Isaac, moving along the cardinal directions. Forms a line with other Army Flies in the room. Deals contact damage.
+}}
+
+'''Army Flies''' chase Isaac, moving in the cardinal directions as they do so. If there are other Army Flies in the room, they will form a single-file line while chasing Isaac.
+{{clear}}
+
+=== Willo ===
+{{infobox monster
+ | dlc         = r
+ | name        = Willo
+ | id          = 808
+ | base hp     = 6
+ | environment = {{floor|Downpour}}<br>{{floor|Flooded Caves}}<br>{{room|boss}}{{room|challenge}}
+ | behavior    = Flies in a circle around Isaac (in formation with other Willos if available), keeping an exact distance away from him. One Willo at a time will occasionally light up and fire a shot at Isaac.
+}}
+
+'''Willos''' circle a set distance around Isaac, moving with him perfectly, and firing shots inwards towards him; only one can fire at a time, and the one about to fire telegraphs this by flashing rapidly just beforehand. They circle quickly at even intervals, and can be hard to hit. If there is a Fire Place within the room, they can be guided into it; making this an efficient method of tackling this enemy. They do not deal contact damage.
+
+==== Notes ====
+* {{e|Min-Min}} can spawn these; some of them behave normally, while some pop out of the ground, launch a volley of shots at Isaac, and disappear back into the ground.
+* {{e|Mullighoul}}s spawn these occasionally, and spawn 2 more when they die.
+{{clear}}
+
+=== Ultra Famine Fly ===
+{{infobox monster
+ | dlc         = r
+ | name        = Ultra Famine Fly
+ | id          = 951
+ | variant     = 11
+ | base hp     = 10
+ | environment = {{floor|Home}}<br>Spawned exclusively by [[Ultra Famine]].
+ | behavior    = Charges at Isaac at a delay. Deals contact damage. Spawned by {{E|Ultra Famine}}.
+}}
+
+'''Ultra Famine Flies''' are flies spawned by {{e|Ultra Famine}} that charge at Isaac on a delay. They come in 3 sizes- small, medium and large.
+{{clear}}
+
+=== Ultra Pestilence Fly ===
+{{infobox monster
+ | dlc         = r
+ | name        = Ultra Pestilence Fly
+ | id          = 951
+ | variant     = 21
+ | base hp     = 10
+ | environment = {{floor|Home}}<br>Spawned exclusively by [[Ultra Pestilence]].
+ | behavior    = Flies in swarms around {{E|Ultra Pestilence}}, blocking shots and dealing contact damage.
+}}
+
+'''Ultra Pestilence Flies''' are flies spawned by {{e|Ultra Pestilence}} that swarm around him, blocking shots and dealing contact damage. They also can be spawned by the {{e|Ultra Pestilence Fly Ball}} in Ultra Pestilence's 2nd phase. They come in 3 sizes- small, medium and large.
+{{clear}}{{dlc clear}}
+
+== Gallery ==
+<gallery>
+File:Flywill.png|An Attack Fly on Isaac's Last Will.
+File:Edmund McMillen Rebirth Monster Sketches.jpg|Sketches of monsters for ''The Binding of Isaac: Rebirth'', including the Ring of Flies in the second rectangle of the fourth row, formerly called "Halo of Flies". The name change may have occurred to avoid confusion with [[Halo of Flies]], an item originating from the original ''Binding of Isaac''.
+</gallery>
+{{clear}}
+
+== Trivia ==
+* The Black Fly has the lowest health of any enemy in the game, tied with the {{e|Corn}}.
+* Eternal Flies were first added to the ''Wrath of the Lamb'' DLC for the original ''Binding of Isaac'' game.
+** Before ''Rebirth'', Eternal Flies simply became vulnerable and chased the player rather than turning into an Attack Fly.
+* There is a variant of [[enboi:Moter|Moters]] in the ''Eternal Edition'' of the original ''The Binding of Isaac'' that resembles a ball of 4 Attack Flies, or 2 Moters stuck to each other. This enemy does not appear in ''Rebirth'', likely due to being added in said ''Eternal Edition'' update that was added a while after the release of ''Rebirth''.
+* In a Q&A Reddit thread by [[Edmund McMillen]], Edmund confirmed that the species of flies in ''The Binding of Isaac'' are [[Wikipedia:Housefly|house flies]] and [[Wikipedia:Botfly|botflies]].<ref>https://www.reddit.com/r/bindingofisaac/comments/g854b5/tapeworm_kickstarter_four_souls_and_general_isaac/</ref>
+* {{dlc|r}} The [[Anti:Willo|Willo]] originates from the ''Antibirth'' mod.
+* The name Willo might be a reference to Will'o the Wisps, atmospheric ghost lights seen at night, especially over bogs, swamps or marshes.
+* Although Army Flies were known to be revealed during Repentance's first PAX session, it was in fact first revealed in the [https://blog.antibirth.com/ latest blog of a now-canceled update for the Antibirth mod] back in December 21, 2017.
+
+== References ==
+{{reflist}}
+
+{{nav|fr=Mouche}}
+[[Category:Fly monsters]]
+[[Category:Chapter 1 monsters]]
+[[Category:Chapter 1.5 monsters]]
+[[Category:Chapter 2 monsters]]
+[[Category:Chapter 2.5 monsters]]
+[[Category:Chapter 3 monsters]]
+[[Category:Chapter 3.5 monsters]]
+[[Category:Chapter 4 monsters]]
+[[Category:Chapter 5 monsters]]
+[[Category:Chapter 6 monsters]]

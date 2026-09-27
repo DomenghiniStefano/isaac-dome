@@ -1,0 +1,29 @@
+{{header greed item pools}}
+{{item pool
+ | dlc      = a
+ | is greed = yes
+}}
+
+Items in this pool can be found in the {{R|Angel Room}} in [[Greed mode]].
+
+== Activated Collectibles ==
+{{item pool/header}}
+{{pool items | Book of Revelations }}
+{{pool items | dlc = a+ | Eden's Soul }}
+{{pool items | dlc = r | Breath of Life, Genesis, Jar of Wisps, Urn of Souls, Vade Retro }}
+{{pool items | dlc = r+ | The Bible, Dead Sea Scrolls, Prayer Card }}
+{{pool items | dlc = r+ | weight = 0.4 | Delirious }}
+|}
+
+== Passive Collectibles ==
+{{item pool/header}}
+{{pool items | Blood of the Martyr, The Body, Celtic Cross, Censer, Circle of Protection, Crown Of Light, Dead Dove, Godhead, Guardian Angel, Holy Grail, Holy Mantle, Holy Water, Immaculate Conception, Jesus Juice, The Mind, Purity, Rosary, Sacred Heart, Seraphim, The Soul, Spear Of Destiny, Stigmata, Sworn Protector, Trinity Shield }}
+{{pool items | dlc = nr | Cube of Meat, Mitre }}
+{{pool items | dlc = a+ | 7 Seals, Angelic Prism, Eucharist, Trisagion }}
+{{pool items | dlc = a+nr | Glyph of Balance }}
+{{pool items | dlc = r | Act of Contrition, Divine Intervention, Hallowed Ground, Immaculate Heart, Monstrance, Paschal Candle, Purgatory, Revelation, Salvation, Soul Locket, Spirit Sword, The Stairway, Star of Bethlehem }}
+{{pool items | dlc = r | weight = 0.5 | Book of Virtues, Sacred Orb }}
+{{pool items | dlc = r+ | The Halo, Holy Light, Lazarus' Rags, Lil Delirium, The Relic, Scapular, The Wafer }}
+|}
+
+{{nav|fr=Refuge des Anges (Banque d'Objets - Mode Avarice)}}

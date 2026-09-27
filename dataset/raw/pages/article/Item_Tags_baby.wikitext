@@ -1,0 +1,9 @@
+{{page dlc|r}}
+
+Items with this [[Item Tags|tag]] contribute toward the {{tf|Conjoined}} transformation.
+
+== Passive Collectibles ==
+{{collectible table | tag = baby | type = passive }}
+
+{{nav|fr=Balise baby}}
+[[Category:Item tags]]

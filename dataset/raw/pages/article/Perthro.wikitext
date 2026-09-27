@@ -1,0 +1,31 @@
+{{header runes}}
+{{Infobox rune
+ | name        = Perthro
+ | type        = rune
+ | image scale = 1/10
+ | id          = 37
+ | quote       = Change
+ | description = Rerolls all items in the room (the same effect as {{i|The D6}}).
+ | unlocked by = Rune of Perthro
+ | recharge    = 4
+}}
+
+{{cit|ur}}
+
+== Effects ==
+* Rerolls all items in the room.
+
+== Notes ==
+* For further interaction and notes regarding item rerolls, see {{i|The D6}}.
+
+== Strategy ==
+* If obtained later in the run, it is recommended to keep it for the {{s|Chest}} / {{s|Dark Room}}, as their first rooms always contain 4 chests whose items can be all rerolled at once.
+
+== Synergies ==
+* {{I|Tarot Cloth|nr}}: Instantly re-rolls items twice, essentially removing an extra item from the item pool.
+
+== Interactions ==
+* {{I|Tarot Cloth|r}}: No effect.
+
+{{nav}}
+[[Category:Runes]]

@@ -128,6 +128,7 @@ mod tests {
                 pageid: 1,
                 revid: 1,
                 timestamp: "2026-01-01T00:00:00Z".into(),
+                category: None,
             },
             text: text.to_string(),
         }

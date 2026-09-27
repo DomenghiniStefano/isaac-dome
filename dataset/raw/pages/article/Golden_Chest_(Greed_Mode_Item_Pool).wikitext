@@ -1,0 +1,21 @@
+{{header greed item pools}}
+{{item pool
+ | dlc      = anr
+ | is greed = yes
+}}
+
+Items in this pool can appear in [[Locked Chest]]s and [[Bomb Chest]]s in [[Greed Mode]].
+
+{{without context|{{dlc|r}}}} Greed Mode's chests now use the same item pool as Normal and Hard Mode.
+
+== Activated Collectibles ==
+{{item pool/header}}
+{{pool items | Bob's Rotten Head, Guppy's Head, Tammy's Head }}
+|}
+
+== Passive Collectibles ==
+{{item pool/header}}
+{{pool items | Abel, Bob's Brain, Cricket's Head, Fate's Reward, Fate, Infamy, Steven }}
+|}
+
+{{nav|fr=Coffre Doré (Banque d'Objets - Mode Avarice)}}

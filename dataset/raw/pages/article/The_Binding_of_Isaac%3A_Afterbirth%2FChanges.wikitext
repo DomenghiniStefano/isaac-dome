@@ -1,0 +1,365 @@
+<noinclude>{{page dlc|ana+}}</noinclude>
+
+== Player ==
+=== Characters ===
+; [[Azazel]]
+* His mini-brimstone's range can be increased with range up items or pills.
+; [[The Lost]]
+* He is unlocked by dying in a [[Sacrifice Room]] while holding {{t|Missing Poster}}.
+
+== Items ==
+=== Activated Collectibles ===
+; {{i|Bob's Rotten Head}}
+* The head deals 3 times Isaac's tear damage as poison over time instead of either 6 or 8 points.
+; {{i|The Book of Belial}}
+* Increases the chance to open the [[Devil Room]] or [[Angel Room]] by 12.5% after killing a boss while holding it instead of guaranteeing it.
+; {{i|Book of Revelations}}
+* Increases chance for a Devil/Angel Room Door to open by 17.5% instead of 35%.
+; {{i|Butter Bean}}
+* Knocks back enemy shots.
+; {{i|Crack the Sky}}
+* The beams have a high chance to directly target enemies.
+; {{i|D4}}
+* Previously held items are removed from the pause menu.
+; {{i|The D6}}
+* Reroll an item after defeating [[The Fallen]] no longer replace the Devil Room item he drops to a random item from the normal boss item pool.
+; {{i|D10}}
+* Fly enemies are only rerolled into other fly enemies.
+* Red flies can't be rerolled anymore (even though enemies can be rerolled into them).
+; {{i|Flush!}}
+* Floods the whole room with water.
+* Flushes all poop-related enemies and bosses away.
+* The ladders are covered in water but the walls are not when used inside a crawl space.
+; {{i|Guppy's Paw}}
+* Can no longer be used without red heart containers.
+; {{i|Head of Krampus}}
+* Has a 50% chance to rotate all beams around the player 90 degrees, similar to Krampus' second Brimstone attack.
+; {{i|The Jar}}
+* Sprite changed.
+; {{i|Monstro's Tooth}}
+* Does not affect if [[Monstro]] is in the room the item is used in.
+; {{i|The Poop}}
+* Knocks back enemy shots.
+; {{i|Scissors}}
+* Its recharge time is 2 rooms instead of 6 rooms.
+; {{i|Undefined}}
+* [[Dark Room]] can no longer be cleared repeatedly.
+
+=== Passive Collectibles ===
+; {{i|20/20}}
+* Sprite changed.
+; {{i|3 Dollar Bill}}
+* The type of randomized tear changes every 2–3 seconds. The item appears to select two tear effects at once, perhaps staggering the times at which each of those effects changes.
+* If a run is quit, and then continued, 3 Dollar Bill will keep tear effects for the current room.
+; {{i|Abel}}
+* Shoots tears towards Isaac regardless of which direction Isaac is shooting.
+; {{i|Ball of Bandages}}
+* Blocks enemy shots.
+; {{i|Bob's Brain}}
+* Bob's Brain is fired directly from where it is located in the chain of familiars behind Isaac, making aiming it slightly more difficult.
+* Each copy takes up its own spot on the familiar line, but only the first one launches out. Respawning brains may end up stacking on top of each other.
+; {{i|Bomb Bag}}
+* Can drop a [[Golden Bomb]].
+; {{i|Box}}
+* Can drop a [[Golden Bomb]].
+; {{i|Butt Bombs}}
+* Heals [[Brownie]], [[Dangle]], and [[Dingle]].
+; {{i|Cain's Other Eye}}
+* Each tear deals Isaac's tear damage.
+; {{i|The Common Cold}}
+* The poison hits twice, dealing a total of double Isaac's damage.
+; {{i|Dr. Fetus}}
+* Each bomb deals 5 times the character's normal tear damage instead of 3, plus a flat 30 damage. The flat 30 is not affected by damage multipliers.
+; {{i|Fire Mind}}
+* Isaac gives a wide glow lighting up dark areas, such as those under the effects of the Curse of Darkness or the [[Dark One]]'s attacks.
+; {{i|Isaac's Heart}}
+* Brimstone shots damage the heart.
+; {{i|Leo}}
+* Nullifies effects of One Makes You Small [[pills]], One Makes You Larger pills, and other items that decrease the size of Isaac, such as [[Caffeine Pill]].
+; {{i|Lost Contact}}
+* Gives a shield to familiar's tears.
+; {{i|Lord of the Pit}}
+* Speed boost is applied immediately.
+; {{i|Mom's Contacts}}
+* Range and tear falling speed buffs are applied immediately.
+; {{i|Mom's Knife}}
+* If picked up twice in the same run, two knives are fired at once.
+; {{i|Punching Bag}}
+* Dies after taking too much damage and then respawns after a long time. Exiting and continuing the run will cause it to reappear right away.
+* Dies instantly by enemies' beam-type attacks, such as [[Uriel]]'s and [[Gabriel]]'s beam. This also includes enemies' [[Technology]] lasers such as [[Eye]] and [[Camillo Jr.]].
+* Reappears instantly each time a familiar or orbital item is picked up.
+; {{i|Scorpio}}
+* The poison hits twice, dealing a total of double Isaac's damage.
+; {{i|Steam Sale}}
+* Having multiple Steam Sales reduces all shop prices to 0 coins.
+* Causes the Deals with the Devil not to convert the heart-type automatically.
+; {{i|Stop Watch}}
+* The [[slow]] is only applied after the player is hit.
+; {{i|Strange Attractor}}
+* Isaac's bombs are magnetically attracted to the player character's tears.
+; {{i|Tech.5}}
+* The laser can have the effect of [[Mysterious Liquid]] or [[Rubber Cement]].
+; {{i|The Virus}}
+* Each poison hit deals damage equal to Isaac's tear damage instead of 4 or 6 damage.
+* Enemies killed after they have been inflicted with this type of poison have a 20% chance to drop [[Black Heart]]s.
+
+=== Trinkets ===
+; {{t|Match Stick}}
+* Can replace the [[Tick]].
+; {{t|Missing Poster}}
+* No longer displays a particular puzzle piece on the last will screen if Isaac dies in a [[Sacrifice Room]] while holding it.
+* Dying in a Sacrifice Room while holding it unlock [[The Lost]], regardless of the current character.
+** If The Lost was already unlocked, Isaac will be revived as The Lost and Missing Poster will be consumed.
+** If the player's character is already The Lost, he will be revived in the previous room and Missing Poster will be consumed.
+; {{t|Mysterious Paper}}
+* Small chance to revive Isaac as [[The Lost]] upon death, like [[Missing Poster]].
+; {{t|Tick}}
+* Can be replaced by [[Match Stick]].
+
+=== Interactions ===
+{{scroll box | height = 400px | content =
+<p style="font-size:0px"><br></p>
+* {{i|20/20}} + {{i|Brimstone}} - Two brimstone shots are fired, without an increase in charge time.
+* {{i|20/20}} + {{i|Epic Fetus}} - Makes two missiles drop one after the other.
+* {{i|20/20}} + {{i|The Inner Eye}} - 5 shots are fired with the normal decrease in fire rate instead of 3.
+* {{i|20/20}} + {{i|Mom's Knife}} - Two knives are now thrown instead of one.
+* {{i|20/20}} + {{i|Mutant Spider}} - 6 shots are fired with the normal decrease in fire rate.
+* {{i|20/20}} + {{i|Technology}} - Two technology shots are fired simultaneously.
+* [[Azazel]] + {{i|Monstro's Lung}} - Gives several additional Brimstone beams around Azazel.
+* [[Azazel]] + {{i|My Reflection}} - Greatly increases the Brimstone laser's range and makes the laser curve as Azazel moves around the room.
+* [[Azazel]] + {{i|Technology}} - Technology laser wraps around the Brimstone beam, dealing extra damage, but not increasing Brimstone range.
+* {{i|BBF}} + {{i|Brimstone}} - BBF will fire Brimstone beams in all directions upon exploding.
+* {{i|Brimstone}} + {{i|Dr. Fetus}} - Isaac continuously fires bombs while charging the Brimstone beams.
+* {{i|Brimstone}} + {{i|Epic Fetus}} - Fires 10 Brimstone beams in all directions upon impact of a missile.
+* {{i|Brimstone}} + {{i|Monstro's Lung}} - 3-5 additional Brimstone beams fire in random directions. One beam always fire straight forward as normal.
+* {{i|Brimstone}} + {{i|My Reflection}} - Makes the beam curve when moving.
+* {{i|Brimstone}} + {{i|Mysterious Liquid}} - When Brimstone hits enemies or walls it leaves creep based on how long it hits.
+* {{i|Brimstone}} + {{i|Proptosis}} - Doubles damage but it rapidly decreases with distance, down to 0.1 from about 6 tiles away.
+* {{i|Brimstone}} + {{i|Rubber Cement}} - Brimstone beam bounces off walls, creating a second beam that does half damage. Azazel's Brimstone will continue to full length after bouncing but will deal half of the damage.
+* {{i|Brimstone}} + {{i|Sad Bombs}} - Bombs explode into Brimstone beams in all directions.
+* {{i|Brimstone}} + {{i|Tech.5}} - Tech.5 fires at player's tear rate while Brimstone laser is charging.
+* {{i|Brimstone}} + {{i|Technology}} - The Technology laser coils around the Brimstone beam, granting a 1.5x damage multiplier.
+* {{i|Brimstone}} + {{i|Technology 2}} - Laser fires while Brimstone is charging.
+* {{i|Brimstone}} + {{i|Tough Love}} - Occasionally fires Brimstone beam with damage multiplier of Tough Love.
+* {{i|Broken Watch}} + {{i|Stop Watch}} - Both the slow effect and the rarer speed up can trigger at the start of a room. However, getting hit in a sped-up room will trigger Stop Watch's slow down.
+* {{i|Cricket's Body}} + {{i|Dr. Fetus}} - Bombs split outwards into 4 tiny bombs that are not affected by Isaac's bomb modifiers, which detonate almost immediately.
+* {{i|Death's Touch}} + {{i|Fire Mind}} - Scythes now properly explode.
+* {{i|Dr. Fetus}} + {{i|Hot Bombs}} - Bombs leave behind fire that damages enemies on contact after exploding.
+* {{i|Dr. Fetus}} + {{i|Mom's Knife}} - Isaac continuously fires bombs while charging the knife.
+* {{i|Dr. Fetus}} + {{i|Monstro's Lung}} - Shoots 6 bombs which need to be fully charged before firing. The bombs detonate simultaneously.
+* {{i|Dr. Fetus}} + {{i|Mysterious Liquid}} - Exploding bombs leave behind a large pool of green creep.
+* {{i|Dr. Fetus}} + {{i|The Parasite}} - Bombs split into two bombs upon exploding.
+* {{i|Dr. Fetus}} + [[poison|Poison tears]] - No damage increase from poison.
+* {{i|Dr. Fetus}} + {{i|Polyphemus}} - Bombs become [[Mr. Mega]] bombs. After they explode, they leave behind a regular-sized bomb.
+* {{i|Dr. Fetus}} + {{i|Sad Bombs}} - Fires tears as normally placed Sad Bombs would. If this synergy is combined with Ipecac, the tears from the bomb become explosive, which Isaac is not immune to. Tears fired from previous Dr. Fetus bombs can collide with other Dr. Fetus bombs (can be negated with spectral tears).
+* {{i|Dr. Fetus}} + {{i|Spoon Bender}} - Bombs are purple and act as if Isaac had [[Bobby-Bomb]].
+* {{i|Dr. Fetus}} + {{i|Technology}} - Both bombs and lasers are fired.
+* {{i|Dr. Fetus}} + {{i|Tough Love}} - Tears that would have fired a tooth shot instead become a bomb with the [[Mr. Mega]], dealing more damage and shaking the screen.
+* {{i|Epic Fetus}} + {{i|Hot Bombs}} - Creates a fire every time a shot lands.
+* {{i|Epic Fetus}} + {{i|Ipecac}} + {{i|Sad Bombs}} - Tear Blast tears explode and can damage Isaac.
+* {{i|Epic Fetus}} + {{i|Mom's Knife}} - Each explosion shoots 10 knives in a circle from the point of impact.
+* {{i|Epic Fetus}} + {{i|Monstro's Lung}} - Adds 2 to 4 more crosshairs that orbit the main crosshair and fires a missile onto each crosshair.
+* {{i|Epic Fetus}} + {{i|Mysterious Liquid}} - Exploding bombs leave behind a large pool of green creep.
+* {{i|Epic Fetus}} + {{i|Sad Bombs}} - Missiles fire a burst of tears where they land.
+* {{i|Epic Fetus}} + {{i|Spoon Bender}} - Cursor slides towards enemies.
+* {{i|Epic Fetus}} + {{i|Strange Attractor}} - Enemies get drawn towards the crosshair.
+* {{i|Epic Fetus}} + {{i|Spoon Bender}} - Cursor slides towards enemies
+* {{i|Epic Fetus}} + {{i|Technology}} - Explosion shoots Technology lasers in all directions. When firing/moving the cursor, Isaaac still shoot his Technology laser.
+* {{i|Epic Fetus}} + {{i|Technology 2}} - Both the Technology 2 laser, and the Epic Fetus missiles will be active.
+* {{i|Epic Fetus}} + {{i|Telepathy For Dummies}} - Cursor slides towards enemies.
+* {{i|Fire Mind}} + {{i|Mysterious Liquid}} - When the Fire Mind tear explodes, a much larger pool of creep is left behind.
+* [[Guppy]] + {{i|Ipecac}} - Ipecac shots now spawn blue flies on hit, both direct and indirect.
+* {{i|Holy Mantle}} + {{i|Stop Watch}} - Blocking damage with Holy Mantle triggers the Stop Watch effect.
+* {{i|The Inner Eye}} + {{i|Mutant Spider}} - Shoots 7 tears instead of 3. No further decrease in fire rate.
+* {{i|Ipecac}} + {{i|Mysterious Liquid}} - Explosions leave behind a large pool of green creep.
+* {{i|The Ludovico Technique}} + {{i|Mom's Knife}} + {{i|Technology}} - Creates an uncontrollable laser ring centered on Isaac. The knife becomes stuck under Isaac and cannot be fired.
+* {{i|The Ludovico Technique}} + {{i|Monstro's Lung}} - Tear becomes a cluster of variably sized tears spread over a small area. The tears move at the same speed when controlled but constantly move around each other.
+* {{i|The Ludovico Technique}} + {{i|Mysterious Liquid}} - Pools the size of the tear constantly form on the ground dealing large amounts of damage to any non-flying enemy inside the tear.
+* {{i|A Lump of Coal}} + {{i|Brimstone}} - Beam will gradually increase in size and damage the farther it travels, on a multiplier that is roughly +20% per tile of distance.
+* {{i|A Lump of Coal}} + {{i|Technology}} - Damage increases the further away the enemy is, on a multiplier that is roughly +20% per tile of distance.
+* {{i|A Lump of Coal}} + {{i|Technology}} + {{i|Tiny Planet}} - The extra distance covered by the laser more than doubles damage right in front of Isaac, and it increases as normal further away.
+* {{i|A Lump of Coal}} + {{i|Technology 2}} - Damage increases the further away the enemy is, on a multiplier that is roughly +20% per tile of distance.
+* {{i|Mom's Knife}} + {{i|Monstro's Lung}} - Fires a cluster of 3-5 knives at maximum charge, each dealing 2x damage.
+* {{i|Mom's Knife}} + {{i|Technology}} - Both the knife and the laser fire normally.
+* {{i|My Reflection}} + {{i|Technology}} - Makes the beam curve when moving. Has the same effect on Azazel's mini-brimstone and doubles the range.
+* {{i|My Reflection}} + {{i|Technology 2}} - Laser is bent as Isaac moves, then gradually becomes straight as he stands still.
+* {{i|Mysterious Liquid}} + {{i|Technology}} - The laser spawns pools of liquid always when it hits obstacles and occasionally on enemies.
+* {{i|Proptosis}} + {{i|Technology}} - The beam decreases in damage and width the farther it travels. Tears become virtually powerless across large rooms like the Boss Rush and the Hush fight.
+* {{i|Proptosis}} + {{i|Technology 2}} - The beam decreases in damage and width the farther it travels. Tears become virtually powerless across large rooms like the Boss Rush and the Hush fight.
+* {{i|Pisces}} + {{i|Technology 2}} - Laser can knock back enemies well due to its high fire rate.
+* {{i|Rubber Cement}} + {{i|Technology}} - Laser bounces off of walls, creating a second beam that does half damage.
+* {{i|Rubber Cement}} + {{i|Technology 2}} - Laser bounces off of walls, creating a second beam that does half damage.
+}}
+
+== Pickups ==
+=== Bombs ===
+; [[Troll Bomb]]
+* Troll Bombs are now given a random amount of time before exploding. Before that, they always exploded at a fixed time. This means that if two Troll Bombs spawn at the exact time right next to each other, there's a high chance one Troll Bomb will blow up before the other, sending that Troll Bomb sliding outwards a bit before exploding.
+
+== Entities ==
+=== Monsters ===
+; [[Bony]]
+* Only leaves behind bones when killed.
+
+== Environment ==
+=== Rooms ===
+; [[Boss Room]]
+* Double Trouble boss rooms can now contain 2 bosses of different types. Additionally, they can appear as early as [[chapter 1]].
+
+; [[Arcade]]
+* Can contain a [[Bed]], a [[Key Master]] and 3 hanging dead [[Shopkeeper]]s.
+* New layouts:
+[[File:Arcade 11 Afterbirth+.png|200px]][[File:Arcade 12 Afterbirth.png|200px]][[File:Arcade 13 Afterbirth.png|200px]][[File:Arcade 14 Afterbirth.png|200px]]
+
+; [[Angel Room]]
+* Possible rewards found in the room include:
+** 2 [[Eternal Chest]]s
+** 1 [[Eternal Heart]], and 4 [[Soul Heart]]s behind [[Key Block]]s
+** {{mode|greed}} 6 coins
+** {{mode|greed}} 2 [[Soul Heart]]s and 1 [[Gold Heart]].
+* [[Urn]]s might spawn in the room.
+* Killing Key [[Key Master]] and [[Shell Game Beggar]] no longer apply the 25% bonus.
+* Donating to a [[Beggar]] until it pays out with an item on the current floor applies a 10% bonus instead of 25%.
+* Donating to a [[Devil Beggar]] until it pays out with an item on the current floor applies a 10% bonus instead of 25%.
+** If this coin flip succeeds, a Devil Room will be generated regardless of the above coin flips.
+* "You feel blessed!" fortune in the [[Sacrifice Room]] of the current floor applies a bonus:
+** If the "You feel blessed!" fortune appeared on the 3rd sacrifice, the chance will be 15%.
+** If the "You feel blessed!" fortune appeared on the 5th sacrifice, the chance will be 50%.
+** If both "You feel blessed!" fortunes appeared, the chance will be 65%.
+* Angel Rooms that spawn after Isaac defeats Mom's Heart or It Lives will be normal Angel Rooms with items or pickups.
+* A [[Troll Bomb]] can sometimes appear behind the Angel Statue, blowing it up. If the Angel fights have been unlocked, this will begin the boss fight if the player is not careful or quick enough to move the bomb.
+
+; [[Bedroom]]
+* The clean bedroom occasionally has two clean beds instead of one.
+* The trapdoor in a dirty bedroom has a chance to lead to a Crawl Space.
+* Occasionally, one [[Rag Man]] will spawn inside the dirty bedroom.
+
+; [[Boss Rush]]
+* There is a chance that there will only be 2 items to choose from. Additionally, items may be trapped behind [[rock]]s or [[spikes]]. Items may appear in the corners of the room instead of the center.
+* All 15 waves are randomized. Each wave spawns two random bosses from the list. Each boss can only appear once per Boss Rush.
+** [[Brownie]], [[Dangle]], [[Dark One]], [[Dingle]], 3x [[Gurglings]], [[Little Horn]], [[Mega Fatty]], [[Mega Maw]], [[Polycephalus]], [[Rag Man]], [[The Adversary]], [[The Cage]], [[The Forsaken]], [[The Frail]], [[The Gate]], [[The Haunt]], [[The Stain]], and 3x [[Turdlings]] can appear in the Boss Rush.
+** The angels [[Uriel]] and [[Gabriel]] can also appear.
+* New layouts:
+[[File:Boss Rush 2.png|200px]][[File:Boss Rush 3 Repentance.png|200px]][[File:Boss Rush 4.png|200px]][[File:Boss Rush 5.png|200px]]
+* If a [[sack]] spawns for whatever reason, picking it up will start the Boss Rush. The player can still pick up one of the pedestal items.
+
+; [[Black Market]]
+* Black Market can no longer be accessed in The Chest and The Dark Room, and therefore cannot be used to collect more items.
+
+; [[Curse Room]]
+* Can contain [[Reward Plate]]s, [[card]]s, [[rune]]s, [[Black Globin's Head]]s, [[Imp]]s, and/or [[Nulls]].
+
+; [[Challenge Room]]
+* The three waves appear in random orders rather than the original orders.
+
+; [[Sacrifice Room]]
+* The payouts only depend on the number of sacrifices made. The number of sacrifices is reset to 0 when the player goes to the next floor.
+* Rewards are reworked:
+{| class="wikitable"
+ ! style="width: 10em" | № of sacrifices on Current Floor
+ ! Chance
+ ! Reward
+ |-
+ | rowspan="2" | 1st/2nd
+ | 50%
+ | Nothing
+ |-
+ | 50%
+ | 1 [[Penny]]
+ |-
+ | rowspan="2" | 3rd
+ | 33%
+ | Nothing
+ |-
+ | 67%
+ | "You feel blessed!" (increased [[Angel Room#Angel Room Generation Chance|chance to receive an Angel Room over a Devil Room for the current floor]])
+* Does not increase the chance of a Devil/Angel room after defeating a boss, only the chance of getting an Angel Room over a Devil Room.
+* Can cause an Angel Room to spawn even if you already took a deal with the devil.
+* Less of a modifier than the "You feel blessed!" effect below.
+ |-
+ | rowspan="2" | 4th
+ | 50%
+ | Nothing
+ |-
+ | 50%
+ | 1 random [[chest]] (The type of chest is governed by the same mechanic as room drops. Thus, brown chests are more likely to spawn than any other kind of chest.)
+ |-
+ | rowspan="2" | 5th
+ | 33%
+ | 3 [[Penny|Pennies]] (These coins do not have a chance to spawn as a nickel or a dime.)
+ |-
+ | 67%
+ | You feel blessed!" (Same conditions as 3rd sacrifice but a stronger modifier.)
+ |-
+ | rowspan="2" | 6th
+ | 33%
+ | Teleport to the Devil/Angel Room. (If the floor's Devil/Angel Room has not been entered yet, an Angel Room is guaranteed to spawn  — even if you already took a Devil Deal.)
+ |-
+ | 67%
+ | 1 random [[chest]] (The type of chest is governed by the same mechanic as room drops. Thus, brown chests are more likely to spawn than any other kind of chest.)
+ |-
+ | rowspan="2" | 7th
+ | 33%
+ | 1 random [[Angel Room (Item Pool)|Angel Room]] pedestal item.
+ |-
+ | 67%
+ | 1 [[Soul Heart]]
+ |-
+ | 8th
+ | 100%
+ | 6 [[Troll Bomb]]s
+ |-
+ | 9th
+ | 100%
+ | [[Uriel]] battle
+ |-
+ | rowspan="2" | 10th
+ | 50%
+ | 7 Soul Hearts
+ |-
+ | 50%
+ | 30 Pennies
+ |-
+ | 11th
+ | 100%
+ | [[Gabriel]] battle
+ |-
+ | rowspan="2" | 12th and onwards
+ | 50%
+ | Nothing
+ |-
+ | 50%
+ | Teleport directly to the [[Dark Room]]
+ |}
+* Losing red hearts due to the spikes will reduce the chance for a [[Devil Room]] to appear.
+* The amount of luck that the player has does not affect the payout probabilities.
+* Angels are normally able to fly over spikes but will take damage from sacrifice room spikes.
+* New layouts:
+[[File:Sacrifice Room 2.png|200px]][[File:Sacrifice Room 3.png|200px]][[File:Sacrifice Room 4.png|200px]][[File:Sacrifice Room 5.png|200px]]
+
+; [[Secret Room]]
+* Can contain 2 [[Reward Plate]]s.
+
+; [[Shop]]
+* There is a small chance when you bomb the Shopkeeper that they can turn into [[Greed]] and start attacking you.
+
+; [[Super Secret Room]]
+* The [[Dark Room]] theme contains 4 [[Nulls]] and 6 [[pill]]s or [[rune]]s instead of 1 [[Black Heart]].
+* New themes:
+** Burning Basement: 2 [[Bomb Chest]]s, a [[Shopkeeper]], 3 [[TNT]], and [[Fire Place]]s, including [[Red Fire Place]]s.
+** Flooded Caves: [[black poop]] and [[spikes]].
+** Library: 1 [[Black Heart]].
+** I AM ERROR: A [[Mom's Hand]], random pickups, [[chest]]s, [[card]]s, and [[trinket]]s.
+
+; [[Treasure Room]]
+* There's a rare chance that a treasure room might contain two items to choose from, only one of which can be taken.
+* Treasure rooms may also contain a [[Restock Machine]], allowing Isaac to re-roll offered items if he has coins or bombs.
+* New layouts:
+[[File:Treasure Room 11.png|200px]][[File:Treasure Room 13 Afterbirth.png|200px]][[File:Treasure Room 13.png|200px]][[File:Treasure Room 14.png|200px]][[File:Treasure Room 15.png|200px]][[File:Treasure Room 37.png|200px]][[File:Treasure Room 38.png|200px]][[File:Treasure Room 39.png|200px]][[File:Treasure Room 40.png|200px]][[File:Treasure Room 41.png|200px]][[File:Treasure Room 42.png|200px]][[File:Treasure Room 16.png|102px]][[File:Treasure Room 17.png|200px]][[File:Treasure Room 52.png|200px]][[File:Treasure Room 47.png|200px]][[File:Treasure Room 27 Afterbirth.png|200px]][[File:Treasure Room 43.png|200px]][[File:Treasure Room 44.png|200px]]
+
+== Other ==
+* When not having red hearts in [[Devil Room]], the price of items switches to soul hearts.
+* [[Krampus]] has a new attack pattern.
+* The floor icons on the stage transition sprites are updated; instead of being large rectangles with the unknown ones being grey, the sprites feature a much thinner and more detailed border with the unknown floors being represented by a closed trap door.
+
+[[Category:Added in Afterbirth]]

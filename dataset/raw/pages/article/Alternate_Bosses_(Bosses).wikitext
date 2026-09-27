@@ -1,0 +1,19 @@
+{{header bosses}}
+
+== Alternate Bosses {{Unlockable}} ==
+{| style="width: 70%; text-align: center"
+ | [[File:Boss Steven portrait.png|center|link=Steven]]
+ | [[File:Boss C.H.A.D. portrait.png|center|link=C.H.A.D.]]
+ | [[File:Boss Gish portrait.png|center|link=Gish]]
+ | [[File:Boss Triachnid portrait.png|center|link=Triachnid]]
+ | [[File:Boss Conquest portrait.png|center|link=Conquest]]
+|-
+|[[Steven]] {{Unlockable}}
+|[[C.H.A.D.]] {{Unlockable}}
+|[[Gish]] {{Unlockable}}
+|[[Triachnid]] {{Unlockable}}
+|[[Conquest]] {{Unlockable}}
+|}
+
+{{nav|boss|fr=Boss Alternatifs (Boss)}}
+[[Category:Bosses]]

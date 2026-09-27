@@ -450,7 +450,7 @@
  | name         = The Family Man
  | link         = The Family Man
  | description  = Unlocked Challenge #19.
- | requirements = Pick up both Key Pieces from the [[Angel]]s in one run
+ | requirements = Pick up both Key Pieces from the [[Angel]]s in one run and defeat {{e|Mom's Heart}} 11 times
  | id           = 165
 }} {{infobox achievement
  | name         = Purist

@@ -1,0 +1,41 @@
+{{header reverse tarot cards}}
+{{Infobox card
+ | dlc         = r
+ | name        = XII - The Hanged Man?
+ | files name  = XII - Inverted The Hanged Man
+ | type        = card
+ | id          = 68
+ | quote       = May your greed know no bounds
+ | costume     = Character Keeper appearance.png
+ | description = Isaac turns visually into {{c|Keeper}} for 30 seconds, with triple shot and -0.1 [[speed]]. Killed enemies drop a random {{e|Penny||coin}}.
+ | unlocked by = The Hanged Man
+ | recharge    = 6
+}}
+
+{{cit|uc|r}}
+
+== Effects ==
+* Isaac turns visually into {{c|Keeper}} for 30 seconds, with triple shot, -0.1 [[Speed]] and a [[tears]] multiplier of x0.51.
+* Killing an enemy during the effect makes them drop a random {{e|Penny||coin}}.
+
+== Notes ==
+* Once the 30 seconds are passed, Isaac reverts back to his normal state on the spot, he does not need to change rooms to remove the effect.
+* Only enemies killed specifically by Isaac drop coins, those killed by Isaac's [[familiar]]s, or environmental hazards such as {{e|Fire Place}}s do not.
+* Unlike many other on-kill drop resources effects, the coin drops do not suffer from diminishing returns on repeatedly spawned enemies.
+* Further uses of '''XII - The Hanged Man?''' are additive, each adding 30 seconds to the effect's length.
+* The card's effect persists in the {{i|Knife Piece 2}} abandoned area.
+
+== Strategy ==
+* XII - The Hanged Man? is best used against enemies that spawn many weak enemies such as {{e|Eggy||Eggies}} or {{e|The Duke of Flies}}.
+
+== Synergies ==
+* {{I|Tarot Cloth}}: Doubles the effect's duration.
+* {{t|Nuh Uh!}}: Slain enemies drop random pickups other than coins and {{e|Key}}s on [[Chapter 4]] and beyond.
+
+== Interactions ==
+* {{i|Sprinkler}}: Enemies killed by the sprinkler do drop coins.
+
+== In-game Footage ==
+{{#ev:youtube|b3cZ6UlSuRk}}
+
+{{nav|fr=XII - Le Pendu ?|card}}

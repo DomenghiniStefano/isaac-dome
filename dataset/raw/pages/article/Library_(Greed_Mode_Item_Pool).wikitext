@@ -1,0 +1,20 @@
+{{header greed item pools}}
+{{item pool
+ | dlc      = anr
+ | is greed = yes
+}}
+
+Items in this pool can be found in {{R|Library}} themed {{R|Super Secret Room}}s in [[Greed Mode]].
+
+== Activated Collectibles ==
+{{item pool/header}}
+{{pool items | Anarchist Cookbook, The Book of Belial, Book of Revelations, Book of Secrets, Book of Shadows, The Book of Sin, Monster Manual, The Necronomicon, Satanic Bible, Telepathy For Dummies }}
+{{pool items | dlc = a+ | Book of the Dead }}
+|}
+
+== Passive Collectibles ==
+{{item pool/header}}
+{{pool items | Missing Page 2 }}
+|}
+
+{{nav|fr=Bibliothèque (Banque d'Objets - Mode Avarice)}}

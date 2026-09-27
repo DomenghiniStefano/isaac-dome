@@ -49,7 +49,7 @@
 {{#ev:youtube|gUnSu2xQfps||inline}} {{#ev:youtube|2JgSExbmTN8||inline}}
 
 == Trivia ==
-* Beating the game whilst under the effects of The Gamekid will cause the credits music to be sped up.
+* Beating the game whilst under the effects of The Gamekid, [[Unicorn Stump]], [[My Little Unicorn]] or the [[Power Pill]] will cause the credits music and ending animation to be sped up dramatically.
 * This item's name and appearance are references to the Nintendo Game Boy.
 * The pickup quote and Isaac's appearance while under the effects of The Gamekid are references to ''Pac-Man''.
 * ''Tetris'' appears to be the game being played on The Gamekid. ''Tetris'' was also the launch title for the Nintendo Game Boy.

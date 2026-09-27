@@ -6,6 +6,7 @@ mod bossportraits;
 mod catalog;
 mod challenges;
 mod diagnostics;
+mod entities;
 mod heads;
 mod ids;
 mod itempools;
@@ -23,7 +24,7 @@ mod versusscreen;
 mod xml;
 
 pub use achievements::Achievement;
-pub use anm2::{frames as anm2_frames, Anm2Frame};
+pub use anm2::{default_animation as anm2_default_animation, frames as anm2_frames, Anm2Frame};
 pub use bossportraits::Boss;
 pub use catalog::Catalog;
 // The list of sources, public for the tests that check every one is asked for.
@@ -31,6 +32,7 @@ pub use catalog::Catalog;
 pub use catalog::SOURCES;
 pub use challenges::Challenge;
 pub use diagnostics::{Diagnostic, SkipReason, Source};
+pub use entities::Entity;
 pub use ids::{AchievementId, BossId, ChallengeId, CharacterId, ItemId};
 pub use itempools::{Pool, PoolEntry, PoolMembership};
 pub use items::{Item, ItemKind};

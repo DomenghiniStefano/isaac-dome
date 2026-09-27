@@ -1,0 +1,25 @@
+{{infobox version
+ | date  = 2014-11-11
+ | steam = 225505655437070501
+}}
+
+== Documented changes ==
+=== Fixes ===
+* Fixed white textures for players using OpenGL 2.x due to older graphics hardware. If "ogl2" beta is used, make sure to opt out of the beta to upgrade properly.
+* Fixed window disappearing on startup on Windows. The game window would show up for a short amount of time and then disappear, while the music was still playing. In case the bug is still present, press Windows + Left, or Windows + Right (the little key with the Windows logo, and one of the arrow keys).
+* Fixed crash on startup because of a broken options.ini, that could be resolved by deleting the file. The game can now detect and repair broken .ini files.
+* Fixed startup crash on Linux with shader errors in the log.
+* Fixed {{a|Godhead}}, {{a|!Platinum God!}}, {{a|The Real Platinum God}}, and {{a|Dead Boy}} [[achievement]]s not unlocking properly.
+* Fixed a problem with the music pitch during the Epilogue cutscene, and some gameplay related issues.
+* Fixed crash when sound is not working.
+* Fixed save/continue during Boss Rush.
+* Fixed [[The Lost]] + {{i|Dead Cat}} exploits.
+* Fixed infinite item respawn exploits.
+* Fixed P2 {{i|Trinity Shield}} exploit.
+* Fixed {{i|D10}} generating invincible enemies.
+
+== Undocumented changes ==
+=== Fixes ===
+* The soundtrack DLC works now.
+
+{{nav|version}}
