@@ -47,7 +47,7 @@ const progress = computed(() => wiki.progressFor(props.page.target))
         class="text-micro text-faint-foreground tabular-nums"
         >{{ t('wiki.id', { id }) }}</span
       >
-      <EditionBadge :dlc="page.dlc" />
+      <EditionBadge :dlc="page.dlc" compact />
     </div>
     <FactChips :facts="page.facts" :limit="ChipLimit" class="justify-center" />
     <ProgressBadge :progress="progress" />
