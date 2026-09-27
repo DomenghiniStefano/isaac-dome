@@ -11,7 +11,7 @@ export const en: MessageSchema = {
     active: 'active filters',
     reset: 'Clear filters',
     inMenu: 'filter the values',
-    noMatch: 'No value matches that text.',
+    noMatch: 'No matching values.',
   },
   shell: {
     newTab: 'New tab',
@@ -46,7 +46,7 @@ export const en: MessageSchema = {
     roll: 'Tonight',
     runs: 'Runs',
     live: 'Live',
-    floor: 'Floor',
+    floor: 'Floor map',
     wiki: 'Wiki',
     profile: 'Game profile',
     appearance: 'Appearance',
@@ -70,63 +70,64 @@ export const en: MessageSchema = {
   },
   sidebar: {
     progressTitle: 'Progress',
-    progressHint: 'Every entry reads the active profile.',
+    progressHint: 'Everything here is based on your save.',
     toolTitle: 'Tools',
-    toolHint: 'They work without a save: they read the log, or what you draw.',
+    toolHint:
+      'No save needed: they work from the run in progress, or from what you draw.',
     wikiTitle: 'Wiki',
-    wikiHint: 'The Wiki works without the game or a save.',
+    wikiHint: 'Available even without the game installed.',
     wikiOverview: 'Overview',
     settingsTitle: 'Settings',
-    settingsHint: 'The save you are playing, and how it opens tabs.',
+    settingsHint: 'Which save to read, how the app looks and how it behaves.',
   },
   live: {
     intro:
-      'What you are playing now, and what finishing it would open. The app has to be running while you play: the game rewrites the log on every launch.',
+      'The run you are playing, as it happens, and what finishing it would unlock. Keep IsaacDome open while you play: the game wipes its log at every launch.',
     floors: 'floors',
     collected: 'collected',
     wouldOpen: 'If you finish this run',
-    missing: '{n} marks still to take',
+    missing: '{n} marks still to get',
     secondLevel: {
       hard: 'on hard',
       ultraGreedier: 'on Ultra Greedier',
     },
-    noCondition: 'the game does not say',
+    noCondition: 'condition not given by the game',
     column: {
       achievement: 'Achievement',
       cell: 'Mark needed',
-      condition: 'How it is earned',
-      opens: 'Opens',
+      condition: 'How to earn it',
+      opens: 'Unlocks',
     },
-    marks: 'The marks of who you are playing',
-    items: 'What you are holding',
+    marks: 'Marks for the character in play',
+    items: 'Your items',
     startingItems: 'Started with',
     collectedItems: 'Collected',
     unlockedHere: 'Unlocked in this run',
-    opens: 'opens {count}',
-    opensNothingMore: 'opens nothing more',
+    opens: 'unlocks {count}',
+    opensNothingMore: 'unlocks nothing more',
     nothing:
-      'Nothing this run can open on its own: what the achievements are missing is not a mark for this character.',
+      'This run cannot unlock any new achievement on its own: the ones you are missing need marks from other characters.',
     diagnostic: {
       noRun:
-        'No run in progress: the app is watching, and you are not playing.',
+        'No run in progress. Start a game and IsaacDome will follow it automatically.',
       characterNotNamed:
-        'We do not know who you are playing yet: the name appears when you pick up the first item.',
+        'The character will show up as soon as you pick up your first item.',
       unknownCharacter: 'The character “{name}” is not in the game’s catalog.',
       ambiguousCharacter:
-        'The log writes “{name}”, and the game calls {forms} characters that: the base form and the Tainted one. Both are below, because guessing which would be an inference.',
-      noGraph: 'Without the game installed we do not know what it would open.',
-      noProfile: 'Without a save chosen we do not know what you are missing.',
+        'The log says “{name}”, a name the game uses for {forms} characters: the base form and the Tainted one. Both are shown below.',
+      noGraph: 'Install the game to see what you would unlock.',
+      noProfile: 'Choose a save to see what you are missing.',
       saveUnreadable:
-        'The chosen save does not read, so we do not know what you are missing. The run stays here.',
+        'We could not read the chosen save, so we cannot tell what you are missing. The run in progress stays on screen.',
     },
   },
   floor: {
     intro:
-      'Draw the floor the way you see it on the minimap: empty cells light up where the game’s own rules allow a Secret, Super Secret or Ultra Secret Room.',
+      'Draw the floor the way you see it on the minimap: empty cells light up wherever the game’s rules allow a Secret, Super Secret or Ultra Secret Room.',
     clear: 'Clear the grid',
     clearConfirm: {
       title: 'Clear the grid?',
-      body: 'The floor you drew goes, and it cannot be brought back.',
+      body: 'The floor you drew will be deleted, and it cannot be recovered.',
       cancel: 'Cancel',
       confirm: 'Clear',
     },
@@ -136,18 +137,18 @@ export const en: MessageSchema = {
     at: 'Row {row}, column {column}',
     rooms: 'Rooms',
     startRoomMissing: 'The start room is missing',
-    cellCandidate: '{cell} — {target}, place {rank}',
+    cellCandidate: '{cell} — {target}, rank {rank}',
     move: {
       title: 'Move the drawing',
-      note: 'The arrows shift the whole floor you drew one cell in that direction, without redrawing it. They are for when the start room ended up too close to an edge and the map does not fit. A grey arrow means a room is against that edge: moving further would push it off the grid.',
+      note: 'The arrows shift your whole drawing by one cell, so you don’t have to redraw it. Use them when the start room is too close to an edge and the map doesn’t fit. A grey arrow means a room is already touching that edge.',
       left: 'Move everything left',
       up: 'Move everything up',
       down: 'Move everything down',
       right: 'Move everything right',
     },
     rank: {
-      title: 'What a colour means',
-      note: 'The fuller the square, the likelier the place. Past the third the rules say no more.',
+      title: 'What the colours mean',
+      note: 'The fuller the square, the likelier the spot. Beyond third place the rules make no distinction.',
     },
     // What each rule of `crates/floor/rules/placement.json` says, keyed by its id in camel case
     // (`lib/floor/ruleText.ts`). In English it is the wiki's quote, word for word.
@@ -185,11 +186,12 @@ export const en: MessageSchema = {
       superSecretSecondLongest:
         'There is no start room: without one, the rooms walked through cannot be counted.',
       ultraSecretShapes:
-        'It depends on the shape of the room behind that side, and every room on this grid is a single square: L-shaped and narrow rooms cannot be drawn, so this rule cannot be judged.',
+        'It depends on the shape of the room on that side, and every room on this grid is a single square: L-shaped and narrow rooms cannot be drawn, so this rule cannot be checked.',
     },
-    unresolved: 'What the grid cannot judge',
-    none: 'No cell the rules allow, with what you have drawn so far.',
-    failed: 'The candidates could not be computed. What you drew stays.',
+    unresolved: 'Rules the grid cannot check',
+    none: 'With what you have drawn so far, no cell fits the rules.',
+    failed:
+      'We could not work out the possible spots. Your drawing is left as it was.',
     target: {
       secret: 'Secret Room',
       superSecret: 'Super Secret Room',
@@ -217,25 +219,24 @@ export const en: MessageSchema = {
       ultraSecret: 'Ultra Secret',
     },
     diagnostic: {
-      gridEmpty:
-        'Draw at least one room: without one there is nothing to judge.',
+      gridEmpty: 'Draw at least one room to get started.',
       noStartRoom:
-        'Mark the start room. Without it the rule about rooms walked from the start cannot be read, and the Super Secret Room is only half judged.',
+        'Mark the start room: without it, the Super Secret Room can only be partly placed.',
       rulesUnreadable:
-        'The placement rules did not load. This is a fault in the build, not in your floor.',
+        'The placement rules did not load. That is a fault in the app, not in your drawing.',
       gridMalformed:
-        'The grid that arrived is not a floor: {cells} cells instead of 169.',
+        'The grid received is not valid: {cells} cells instead of 169.',
     },
   },
   runs: {
     intro:
-      'The runs the app has read: this session’s, and the online sessions the game had already recorded. The log carries no clock, so the order is by session and not by time.',
+      'Your run history: this session’s runs and the online games the game has recorded. The log carries no timestamps, so runs are ordered by session.',
     rows: 'runs',
     search: 'search a seed or a character',
     facet: {
       outcome: 'Outcome',
       character: 'Character',
-      online: 'With whom',
+      online: 'Mode',
       source: 'Source',
     },
     outcome: {
@@ -246,14 +247,14 @@ export const en: MessageSchema = {
     },
     online: {
       online: 'online',
-      solo: 'alone',
+      solo: 'solo',
     },
     source: {
       live: 'this session',
       session: 'online session',
     },
     totals: {
-      runs: 'runs read',
+      runs: 'runs',
       won: 'won',
       died: 'died',
       abandoned: 'abandoned',
@@ -265,9 +266,9 @@ export const en: MessageSchema = {
       seed: 'Seed',
       source: 'Source',
     },
-    noCharacter: 'character not named',
+    noCharacter: 'unknown character',
     noItems: 'none',
-    openPage: 'Click for the page, Ctrl-click to open it beside',
+    openPage: 'Click to open the page, Ctrl-click to open it in a new tab',
     itemId: 'item {id}',
     killedBy: 'killed by {killer}',
     endedWith: 'ending {ending}',
@@ -276,79 +277,78 @@ export const en: MessageSchema = {
     heldActive: 'Active held',
     unnamedItem: 'item {id}',
     empty:
-      'Nothing in the archive: no run has been played since the app was installed.',
-    noMatch: 'No run matches these filters.',
+      'No runs yet: play a game with IsaacDome open and it will show up here.',
+    noMatch: 'No runs match these filters.',
     diagnostic: {
       noLogFolder:
-        'We cannot find the folder the game writes its logs to, so there is nothing to read.',
+        'We cannot find the game’s log folder, so there are no runs to show.',
       storeUnavailable:
-        'The app’s database will not open, so the archive cannot be read.',
+        'We could not open the app’s database, so the run history is unavailable.',
       unreadableEvents:
-        '{count} log lines were not understood: the runs holding them may be incomplete.',
+        '{count} log lines were not recognised: some runs may be incomplete.',
       unreadableSessions:
-        '{count} online sessions could not be read: the runs inside them are not in the archive.',
+        '{count} online sessions could not be read, and their runs are missing from the history.',
       liveLogUnreadable:
-        'The log the game is writing cannot be read: the run being played is not in the archive.',
+        'We cannot read the log of the game in progress: the current run is not in the history.',
       noCatalog:
-        'The game is not installed: items carry their number and not their name.',
+        'The game is not installed: items show their number instead of their name.',
     },
   },
   challenges: {
     intro:
-      'The game’s 45 challenges: which ones you have finished, what it takes to open them and what they unlock. The conditions — who you play as, how far you go, whether it is blindfolded — come from the wiki; each challenge’s page has the rest.',
+      'Every challenge in the game: which ones you have completed, what it takes to unlock them and what they reward. Character, goal and blindfold come from the wiki; everything else is on each challenge’s page.',
     rows: 'challenges',
     search: 'search a challenge or its number',
     state: {
-      done: 'done',
+      done: 'completed',
       available: 'to do',
-      blocked: 'blocked',
+      blocked: 'locked',
       unknown: 'unreadable',
     },
     blockedBy: 'missing requirements: {count}',
     facet: {
       state: 'State',
       character: 'Character',
-      rewards: 'Unlocks',
+      rewards: 'Reward',
       blindfolded: 'Blindfolded',
     },
-    rewardsSome: 'unlocks something',
-    rewardsNone: 'unlocks nothing',
+    rewardsSome: 'has a reward',
+    rewardsNone: 'no reward',
     blindfoldedYes: 'blindfolded',
     blindfoldedNo: 'not blindfolded',
     blindfolded: 'blindfolded',
-    noCondition: 'the wiki does not say',
+    noCondition: 'not given by the wiki',
     unlocksNothing: 'unlocks nothing',
     unnamedReward: 'achievement {id}',
     columns: {
       number: '#',
       challenge: 'Challenge',
       character: 'Character',
-      goal: 'Finish line',
+      goal: 'Goal',
       state: 'State',
     },
-    empty: 'No challenge to show.',
-    noResults: 'No challenge matches these filters.',
+    empty: 'No challenges to show.',
+    noResults: 'No challenges match these filters.',
     diagnostics: {
-      noCatalogTitle: 'We cannot find the game',
+      noCatalogTitle: 'We can’t find the game',
       noCatalog:
-        'The challenges live in the game’s own files: without them we know how many you have finished, not which. Install The Binding of Isaac from Steam and reopen the app.',
-      noChallengesSectionTitle:
-        'The save does not say which challenges you finished',
+        'Challenges are described in the game’s own files: without them we know how many you have completed, but not which. Install The Binding of Isaac from Steam and reopen the app.',
+      noChallengesSectionTitle: 'We don’t know which challenges you completed',
       noChallengesSection:
-        'The section holding the challenges could not be read: every challenge is listed below, and none of them can say whether you have done it.',
-      noAchievementSectionTitle: 'The save does not say what you have unlocked',
+        'We could not read the part of the save that holds challenges: they are all listed below, but without knowing which ones you have completed.',
+      noAchievementSectionTitle: 'We don’t know what you have unlocked',
       noAchievementSection:
-        'Without the achievements we do not know which challenges are already open, nor which rewards you already hold.',
+        'Without the achievements we cannot tell which challenges are already unlocked, or which rewards you already have.',
       noWiki:
-        'The wiki dataset did not load: the challenges stay, without their character, goal and blindfold.',
+        'The wiki data did not load: challenges are listed without their character, goal and blindfold.',
     },
   },
   roll: {
     intro:
-      'One target, drawn from the 442-cell matrix: what is worth playing tonight, without choosing between hundreds of cells yourself.',
+      'Not sure what to play tonight? Draw a target from the marks matrix and let chance decide.',
     draw: 'Draw',
     drawAgain: 'Draw again',
-    notDrawnYet: 'Nothing drawn yet tonight.',
+    notDrawnYet: 'Press “Draw” to find out what to play tonight.',
     status: {
       missing: 'to do',
       taken: 'already taken',
@@ -361,49 +361,49 @@ export const en: MessageSchema = {
     },
     emptyDeck: {
       taken:
-        'The deck is empty: {count} targets are left out because they are already taken.',
+        'The deck is empty: {count} targets are left out because you already have them.',
       unreadable:
-        'The deck is empty: {count} targets cannot be read from the save.',
+        'The deck is empty: we cannot read {count} targets from the save.',
       locked:
-        'The deck is empty: {count} targets are locked to a character that is not playable yet.',
+        'The deck is empty: {count} targets need a character you have not unlocked yet.',
       filtered:
         'The deck is empty: {count} targets are left out by the filters below.',
-      nothing: 'The deck is empty: there is nothing to offer yet.',
+      nothing: 'The deck is empty: there is nothing to offer right now.',
     },
     panel: {
       characters: 'Characters',
       columns: 'Columns',
-      includeTaken: 'Include already-taken targets',
+      includeTaken: 'Include targets you already have',
       includeTakenHint:
-        'Otherwise the deck only draws from what is still to do.',
-      onlyPlayable: 'Only already-playable characters',
-      onlyPlayableHint:
-        'Hides the characters the save does not let you pick yet.',
+        'Otherwise the draw only picks from what is still to do.',
+      onlyPlayable: 'Only unlocked characters',
+      onlyPlayableHint: 'Leaves out the characters you cannot pick yet.',
     },
     diagnostics: {
-      noCounterSectionTitle: 'The save does not say which marks you took',
+      noCounterSectionTitle: 'We don’t know which marks you have',
       noCounterSection:
-        'The section holding the marks could not be read: the matrix stays, but every cell reads as unreadable.',
-      documentUnreadableTitle: "Tonight's choices could not be read",
+        'We could not read the part of the save that holds marks: the matrix is there, but every cell shows as unreadable.',
+      documentUnreadableTitle: 'Your preferences did not load',
       documentUnreadable:
-        'The saved document could not be parsed: the default preset was used instead.',
-      documentFromTheFutureTitle: 'Your choices come from a newer version',
+        'The saved preferences could not be read: we restored the defaults.',
+      documentFromTheFutureTitle: 'Your preferences come from a newer version',
       documentFromTheFuture:
-        'The document is at version {version}, and this app reads up to {supported}: the default preset was used instead.',
-      noCatalogTitle: "We can't find the game",
+        'They are saved in format {version}, and this version of the app reads up to {supported}: the defaults are used for now.',
+      noCatalogTitle: 'We can’t find the game',
       noCatalog:
-        'Without the game installed there are no names, no art, and no way to tell who is already playable.',
-      playabilityUnknownTitle: "We don't know who is already playable",
+        'Without the game installed there are no names or icons, and we cannot tell which characters you have unlocked.',
+      playabilityUnknownTitle:
+        'We don’t know which characters you have unlocked',
       playabilityUnknown:
-        'The "only already-playable characters" filter was turned off for this draw: without the catalog or the achievements there is no way to tell.',
-      storeUnavailableTitle: 'Your choices cannot be saved',
+        'The “only unlocked characters” filter was turned off for this draw: without the game’s catalog or the achievements we cannot check it.',
+      storeUnavailableTitle: 'We can’t save your preferences',
     },
   },
   collection: {
     intro:
-      "The items this save doesn't hold yet, with their quality and the pools they turn up in. Trinkets aren't here: the game keeps no record of which ones you have found.",
+      'The items you are missing, with their quality and the pools they appear in. Trinkets are not included: the game does not record which ones you have found.',
     state: {
-      inCollection: 'in the collection',
+      inCollection: 'collected',
       available: 'to find',
       locked: 'locked',
       unknown: 'unreadable',
@@ -436,34 +436,34 @@ export const en: MessageSchema = {
     lockedBy: 'unlocked by',
     achievement: 'achievement',
     empty: 'No items to show.',
-    noResults: 'No items with these filters.',
+    noResults: 'No items match these filters.',
     diagnostics: {
-      noCatalogTitle: "We can't find the game",
+      noCatalogTitle: 'We can’t find the game',
       noCatalog:
-        'Without the game files the items have no name and no quality: we know how many you have, not which. Install The Binding of Isaac from Steam and reopen the app.',
-      noCollectionSectionTitle: "The save doesn't say what you picked up",
+        'Without the game files, items have no name and no quality: we know how many you have, but not which. Install The Binding of Isaac from Steam and reopen the app.',
+      noCollectionSectionTitle: 'We don’t know which items you have collected',
       noCollectionSection:
-        "Every item reads as unreadable. It doesn't mean you never found it: it means that part of the save would not open.",
-      noAchievementSectionTitle: "The save doesn't say what you unlocked",
+        'We could not read the part of the save that holds items, so they all show as unreadable. It does not mean you have never found them.',
+      noAchievementSectionTitle: 'We don’t know what you have unlocked',
       noAchievementSection:
-        'We cannot tell which items are still locked: the ones that come from an achievement stay uncertain.',
+        'We cannot tell which items are still locked: the ones tied to an achievement stay uncertain.',
       itemsBeyondSlots:
-        '{count} items the game knows and this save does not name: we show them as unreadable',
+        '{count} of the game’s items do not appear in this save: we show them as unreadable',
     },
   },
   wiki: {
     intro:
-      'A copy of the Isaac wiki inside the app: items, characters, bosses, challenges, achievements and transformations. It works without the game installed and without a save chosen.',
+      'The Isaac wiki, built into the app and linked to your progress: items, characters, bosses, challenges, achievements, transformations and much more. Always at hand, offline too, even without the game installed.',
     provenance: {
-      title: 'Where it comes from',
-      snapshot: 'Snapshot of',
-      patch: 'Last known patch',
+      title: 'Source',
+      snapshot: 'Up to date as of',
+      patch: 'Latest patch covered',
       patchUnknown: 'unknown',
       newerGame:
-        'The game is newer than this snapshot: recent changes may be missing.',
+        'Your game is newer than this edition of the wiki: the latest changes may be missing.',
       license: 'wiki.gg · CC BY-SA 4.0',
       licenseLong:
-        'The wiki text is CC BY-SA 4.0, from bindingofisaacrebirth.wiki.gg',
+        'Wiki text licensed CC BY-SA 4.0, from bindingofisaacrebirth.wiki.gg',
       unresolved: 'unresolved references',
       unknownTemplates: 'unknown templates',
     },
@@ -471,9 +471,9 @@ export const en: MessageSchema = {
     pages: '{n} pages',
     pagesOf: '{shown} / {total} pages',
     noCatalog:
-      'Without the game installed the pages have no picture: the artwork comes from your own copy of Isaac, not from the app.',
+      'Without the game installed the pages have no pictures: the artwork comes from your own installation of Isaac.',
     search: 'search a page',
-    noResults: 'No page with this name.',
+    noResults: 'No pages found.',
     emptyCategory: 'This category has no pages.',
     resetFilters: 'Clear the search',
     back: 'Back to the category',
@@ -490,7 +490,7 @@ export const en: MessageSchema = {
       ascending: 'Ascending',
       descending: 'Descending',
       facet: {
-        profile: 'Save state',
+        profile: 'Your progress',
         edition: 'Edition',
         quality: 'Quality',
         template: 'Type',
@@ -540,7 +540,7 @@ export const en: MessageSchema = {
       other: 'Other',
     },
     infobox: {
-      title: 'Card',
+      title: 'Overview',
       description: 'Description',
       requirements: 'Requirements',
       notes: 'Notes',
@@ -615,15 +615,15 @@ export const en: MessageSchema = {
     },
     progress: {
       done: 'Done',
-      notDone: 'Not done',
+      notDone: 'To do',
       itemCollected: 'Collected',
       itemNotCollected: 'Not collected',
       unlocked: 'Unlocked',
       locked: 'Locked',
-      lockedBy: 'Locked by achievement {id}',
+      lockedBy: 'Unlocked by achievement {id}',
       marks: 'Marks {done}/{total}',
       available: 'Available',
-      blocked: 'Blocked ({count} missing)',
+      blocked: 'Locked ({count} missing)',
       unknownState: 'Unknown',
       bestiaryMet: 'Met {count}',
       bestiaryKilled: 'Killed {count}',
@@ -636,21 +636,21 @@ export const en: MessageSchema = {
       progressOf: '{done} / {total}',
     },
     states: {
-      unknownTitle: 'Unknown page',
-      unknown: 'This page is not in our copy of the wiki.',
+      unknownTitle: 'Page not found',
+      unknown: 'This page is not in IsaacDome’s wiki yet.',
       unknownHint:
-        'It may have been added since: the copy is from the date above, and it updates with the app.',
-      noSections: 'For this page we only have the card, with no text.',
-      failedTitle: "The Wiki didn't answer",
-      pageFailedTitle: "This page didn't open",
-      missingTitle: "The Wiki didn't open",
+        'It may have been added recently: the wiki is current as of the date above, and it updates along with the app.',
+      noSections: 'This page only has an overview, with no text.',
+      failedTitle: 'The Wiki is not responding',
+      pageFailedTitle: 'This page didn’t open',
+      missingTitle: 'The Wiki didn’t open',
       missing:
-        'The copy of the wiki inside the app will not read, so there are no pages to show. Restarting the app usually clears it; if it does not, it is worth reporting.',
+        'We could not load the wiki, so there are no pages to show. Restarting the app usually fixes it; if it keeps happening, please let us know.',
     },
   },
   search: {
     intro:
-      "One search over everything: the game's names, achievement conditions, wiki titles and the body of wiki pages.",
+      'Search the whole app: screens, items, achievements and the text of every wiki page.',
     placeholder: 'Search screens, achievements, items, wiki pages…',
     empty: 'No results.',
     allResults: 'All results ({count})',
@@ -671,20 +671,21 @@ export const en: MessageSchema = {
       newTab: 'open in a new tab',
     },
     diagnostics: {
-      noProfileTitle: 'No profile chosen',
+      noProfileTitle: 'No save chosen',
       noCatalogTitle: 'Game not installed',
-      noWikiTitle: "The Wiki didn't open",
-      noAchievementSectionTitle: "The save doesn't say what you unlocked",
-      noCollectionSectionTitle: "The save doesn't say what you picked up",
+      noWikiTitle: 'The Wiki didn’t open',
+      noAchievementSectionTitle: 'We don’t know what you have unlocked',
+      noCollectionSectionTitle: 'We don’t know which items you have collected',
       noProfile:
-        'The results do not say what you have already done: choose a save in the settings.',
+        'Results do not show your progress: choose a save in the settings.',
       noCatalog:
-        'Only wiki titles and text are searched, with no pictures, and no result opens Unlock or the Collection.',
-      noWiki: "Only the game's names are searched, and no result opens a page.",
+        'Only the wiki is searched, without pictures, and results do not open Unlock or the Collection.',
+      noWiki:
+        'Only the game’s names are searched, and results do not open wiki pages.',
       noAchievementSection:
-        'Achievements carry no "done" or "to do". It does not mean you have not done them: it means we cannot tell.',
+        'Achievements show no “done” or “to do”: we cannot read that part of the save.',
       noCollectionSection:
-        'Items do not say whether you already have them. It does not mean you do not: it means we cannot tell.',
+        'Items do not show whether you have them: we cannot read that part of the save.',
     },
   },
   find: {
@@ -695,92 +696,90 @@ export const en: MessageSchema = {
     previous: 'Previous match',
     next: 'Next match',
     close: 'Close find',
-    nothingToSearch: 'There is nothing here to search.',
+    nothingToSearch: 'There is nothing to search here.',
   },
   background: {
     intro:
-      'When the app starts, and what it does when you close the last window.',
+      'When IsaacDome starts, and what happens when you close the last window.',
     startTitle: 'Start with Windows',
     startHint:
-      'IsaacDome has to be running while you play: the game rewrites its log at every launch. A session you played before opening the app is still recoverable — until the game is launched again, and then it is gone.',
+      'Keep IsaacDome open while you play so no run is lost: the game wipes its log at every launch. A session played with the app closed can still be recovered, but only until you restart the game.',
     startDev:
-      'Not available in this build. A development build would put its own temporary path in your login, where it would fail at every boot without saying so.',
+      'Not available in development builds: it would register a temporary path at login that would soon stop working.',
     startWithoutBackground:
-      'With "keep running in the background" off, you get the icon next to the clock at login and no window; the first window you open and close ends the app, and the reading stops with it.',
-    startFailedTitle: 'Windows did not accept the entry',
+      'With “Keep running in the background” off, IsaacDome starts at login as an icon next to the clock, with no window; once you close the first window you open, the app quits and stops following your games.',
+    startFailedTitle: 'Windows did not accept the startup entry',
     stayTitle: 'Keep running in the background',
     stayHint:
-      'Closing the last window leaves the app next to the clock, in the notification area: one click on the icon brings the window back. Off, closing the last window closes the app.',
+      'When you close the last window, IsaacDome stays in the notification area next to the clock: one click on the icon brings it back. When off, closing the last window quits the app.',
     saveFailedTitle: 'The setting was not saved',
     saveFailed:
-      'The app already behaves this way, but we could not write it down: it will be back as it was next time you start it.',
+      'The change is already in effect, but we could not save it: it will be back to how it was next time you start the app.',
   },
   updates: {
     intro:
-      'Which version you have, and whether a newer one is out. The app downloads the update while you keep using it, and installs it when you say so.',
+      'Your installed version and any available updates. IsaacDome downloads updates while you keep using it, and installs them when you choose.',
     currentVersion: 'Installed version: {version}',
     autoTitle: 'Update automatically',
     autoHint:
-      'On, the app asks GitHub at every start whether there is a newer version and downloads it if there is. Off, no request is made at all: nothing leaves this computer unless you press “Check now”.',
+      'When on, the app checks GitHub for a new version at every start and downloads it. When off, no request is made: nothing leaves your computer unless you press “Check now”.',
     unsupported: 'This build does not update itself.',
     unsupportedHint:
-      'Not available in this build. An installer run from here would silently replace the development build with a release, and nobody would notice.',
-    idle: 'We have not checked yet since this app started.',
+      'Not available in development builds: updating would replace it with a release build.',
+    idle: 'No check yet since you opened the app.',
     checking: 'Checking…',
-    upToDate: 'You have the newest version.',
+    upToDate: 'You have the latest version.',
     downloading: 'Downloading {version}…',
     ready: '{version} is ready to install.',
     // Not bad luck like the others: what arrived is not what it claims to be.
     failedRejected:
-      'The update was refused: the signature does not match. Nothing was installed. Download the installer from the releases page rather than trying again here.',
+      'Update refused: the signature does not match, and nothing was installed. Download the installer from the releases page instead of retrying here.',
     failedOffline:
-      'We could not reach GitHub. Try again when you are back online.',
-    failedNotPublished: 'There is no published version to download.',
+      'Could not reach GitHub. Try again once you are back online.',
+    failedNotPublished: 'There are no published versions to download yet.',
     failedInstall:
-      'The update was downloaded and the installation did not start. The file is still here: you can try again.',
-    failedUnknown: 'The update did not work.',
-    failedTitle: 'Could not install',
-    notesTitle: 'What changes',
+      'The update was downloaded, but the installation did not start. The file is still available: you can try again.',
+    failedUnknown: 'The update did not complete.',
+    failedTitle: 'Installation failed',
+    notesTitle: 'What’s new',
     check: 'Check now',
     install: 'Restart and install',
     installHint: 'Closes the app, installs the new version and opens it again.',
     saveFailedTitle: 'The setting was not saved',
     saveFailed:
-      'The app already behaves this way, but we could not write it down: it will be back as it was next time you start it.',
+      'The change is already in effect, but we could not save it: it will be back to how it was next time you start the app.',
   },
   tabsSettings: {
-    intro: 'What you find when you open the app again.',
-    resumeTitle: "Reopen the last session's tabs",
+    intro: 'What you find when you reopen IsaacDome.',
+    resumeTitle: 'Reopen the last session’s tabs',
     resumeHint:
-      'At startup you find the windows you had, holding the same tabs. Off, the app starts on the landing screen and what was saved is deleted at once.',
+      'At startup you get back the windows and tabs you had open. When off, the app starts on the home screen and the saved session is deleted right away.',
     keptTitle: 'What is saved',
-    keptWindows:
-      'The windows you had open, where they were and how big they were.',
-    keptTabs:
-      'The tabs of each window, in their order, and which one was in front.',
+    keptWindows: 'The windows you had open, with their position and size.',
+    keptTabs: 'The tabs of each window, in order, and which one was in front.',
     keptReading:
-      'How you were reading each tab: the filters, the sort, the selected row and how far you had scrolled.',
+      'The state of each tab: filters, sort order, selected row and how far you had scrolled.',
     keptSidebar: 'The width of the sidebar.',
     stoppedTitle: 'The session is no longer being saved',
     stopped:
-      'The open tabs stay where they are, but they will not come back at the next start: what the windows are showing is past the room the session has. Closing a few tabs and opening any one again resumes the saving.',
+      'Too many tabs are open to save them all: they stay where they are, but will not come back at the next start. Close a few, then open any tab, and saving resumes.',
     saveFailedTitle: 'The setting was not saved',
     saveFailed:
-      'The app already behaves this way, but we could not write it down: it will be back as it was next time you start it.',
+      'The change is already in effect, but we could not save it: it will be back to how it was next time you start the app.',
   },
   appearance: {
     intro:
-      'Choose how large the interface is. It moves everything at once — text, icons, rows, the window — and it stays that way between launches.',
+      'Choose the size of the interface: text, icons, rows and the window all scale together, and your choice is kept between launches.',
     scaleTitle: 'Size',
     scaleLabel: 'Interface size',
     preview: 'Preview',
     previewHint:
-      'It stays here while you scroll: the app, drawn at the size you picked.',
+      'Stays in view while you scroll: the app at the size you picked.',
     shortcut: 'From any screen:',
     shortcutReset: 'back to 100%',
-    saveFailedTitle: "The size wasn't saved",
+    saveFailedTitle: 'The size was not saved',
     saveFailed:
-      "The interface is already this size, but we couldn't write it down: the next launch starts as it was.",
+      'The new size is already in effect, but we could not save it: it will be back to how it was next time you start the app.',
     sample: {
       kpi: 'Achievements done',
       item: 'The Sad Onion',
@@ -794,83 +793,82 @@ export const en: MessageSchema = {
       'IsaacDome is a fan-made project and is not affiliated with, endorsed or sponsored by Nicalis or Edmund McMillen.',
     version: 'Version',
     versionUnknown: 'development server',
-    promisesTitle: 'The three promises',
+    promisesTitle: 'Our promises',
     promises: {
-      readOnlyTitle: 'Saves are read only',
+      readOnlyTitle: 'Your saves are never modified',
       readOnly:
-        'Saves are only ever read. The module that opens the .dat files holds no write code, and the checksum is never recomputed.',
+        'IsaacDome only reads your saves: the code that opens the .dat files contains no write function at all.',
       offlineTitle: 'No account, no server, no telemetry',
       offline:
-        'IsaacDome works offline. It needs no account and uses no server and no telemetry. The network is used only for an optional dataset update.',
-      oneFileTitle: 'One file written',
+        'IsaacDome works offline, with no account, no server and no telemetry. The network is used only for updates, and you can turn them off.',
+      oneFileTitle: 'It only writes to its own folders',
       oneFile:
-        "The app writes one file, isaacdome.db, in the app's data folder. No other file on your disk is changed or written.",
+        'IsaacDome keeps its settings and its database, isaacdome.db, in its own folders. The game, your saves and the rest of your disk are never touched.',
     },
     creditsTitle: 'Credits and licences',
     wikiText:
       'The wiki text is licensed CC BY-SA 4.0 and comes from bindingofisaacrebirth.wiki.gg.',
     assets:
-      "The game's images are neither included nor distributed with the app. They are extracted from the user's own copy of the game.",
+      'The game’s images are not included with the app: they are extracted from your own installation of the game.',
     font: 'The Determination Mono typeface is licensed CC BY 3.0.',
   },
 
   plan: {
-    opens: 'opens {count}',
-    opensNothing: 'opens nothing',
-    detail: 'Show the detail',
+    opens: 'unlocks {count}',
+    opensNothing: 'unlocks nothing else',
+    detail: 'Show details',
     queueCount: 'Your queue',
     addPane: 'Suggested goals',
     hint: {
-      idle: 'drag to reorder — no move is ever refused',
-      dragging: 'drop it anywhere: the queue sorts itself out',
-      stoppedUnder: "it stopped under «{name}»: that's a prerequisite",
+      idle: 'drag to reorder: every move is allowed',
+      dragging: 'drop it anywhere: the queue rearranges itself',
+      stoppedUnder: 'it stopped under “{name}”, which it depends on',
     },
     row: {
       move: 'Move the row (Alt and the up or down arrow)',
       wanted: 'added by you',
-      serves: 'needed for «{name}»',
-      outsideQueue: 'prerequisites not queued',
+      serves: 'needed for “{name}”',
+      outsideQueue: 'prerequisites not in the queue',
     },
     achievementNumbered: 'achievement {id}',
     empty: 'The queue is empty.',
-    emptyHint: 'Add a row from the proposal beside it, or from Unlock.',
+    emptyHint: 'Add a goal from the suggestions alongside, or from Unlock.',
     completed: {
-      closed: 'rows closed by playing: {count}',
+      closed: 'completed by playing: {count}',
       closedWanted:
-        'rows closed by playing: {count} · among the ones you added: {names}',
+        'completed by playing: {count} · among the ones you added: {names}',
     },
-    unresolved: 'achievement {id}: the game no longer knows it',
+    unresolved: 'achievement {id}: no longer in the game',
     alerts: {
-      storeUnavailableTitle: "The plan isn't available",
-      unreadableTitle: "This version can't read the saved queue",
+      storeUnavailableTitle: 'The plan is not available',
+      unreadableTitle: 'This version can’t read the saved queue',
       unreadable:
-        'It stays as it is in the file and is never overwritten: a newer version of the app may be able to read it.',
-      noCatalogTitle: 'The game has to be installed',
+        'The queue stays saved exactly as it is and is never overwritten: a newer version of the app will be able to read it.',
+      noCatalogTitle: 'The game needs to be installed',
       noCatalog:
-        'Without the game files we cannot tell which achievement each row is, or what it still needs. The queue stays saved: it comes back as it was as soon as the game is there.',
+        'Without the game files we cannot tell which achievement each row is, or what it still needs. The queue stays saved and comes back as soon as the game is installed.',
       goalsPendingTitle: 'Saved goals to import: {count}',
       goalsPending:
-        'Goals saved before the queue existed: nothing moves them in on its own.',
+        'Goals saved with an earlier version of the app: import them to add them to the queue.',
       import: 'Import into the queue',
     },
   },
   completion: {
-    intro:
-      'Every character, every mark, and how much of it the save lets us read.',
+    intro: 'Every character and every completion mark, at a glance.',
     headline: 'marks taken on hard',
     kpi: {
       columns: 'complete bosses',
       columnsExplain:
-        'Bosses every character has beaten on hard (Greed on Ultra Greedier), among that column’s readable cells. The same count as “complete characters”, read down a column instead of across a row — and it is what the paper beside it draws: a symbol appears at hard only once its column is full.',
-      normal: 'marks at normal',
+        'Bosses beaten on hard by every character (Greed on Ultra Greedier), counting only readable cells. It is the same count as “complete characters”, read down a column instead of across a row, and it is what the card alongside draws: a symbol turns hard only once its column is full.',
+      normal: 'marks on normal',
       normalExplain:
-        'Cells with a mark, among those the save lets us read. A mark taken on hard counts here too, because beating a boss on hard is the harder of the two. Unreadable cells stay out of the denominator.',
-      hard: 'marks at hard',
+        'Cells with at least one mark, among the readable ones. A mark taken on hard counts here too. Unreadable cells are left out of the total.',
+      hard: 'marks on hard',
       hardExplain:
-        'Cells with the second level, over the same denominator: hard in the boss columns, Ultra Greedier in Greed’s. Never more than the count beside it, because a mark at the second level counts as a normal one too.',
+        'Cells with the second-level mark, over the same total: hard for the bosses, Ultra Greedier for Greed. Never higher than the number alongside, because every hard mark also counts as a normal one.',
       complete: 'complete characters',
       completeExplain:
-        'Characters with every one of their readable cells at hard, and Greed at Ultra Greedier, which is what the game’s own widget means by a full row. A character with unreadable cells is complete over fewer columns.',
+        'Characters with every readable cell on hard (Greed on Ultra Greedier): the game’s own full row. For characters with unreadable cells, only the others count.',
     },
     card: {
       title: 'Marks matrix',
@@ -888,7 +886,7 @@ export const en: MessageSchema = {
       hard: 'hard',
       unreadable: '{n} unreadable',
       columnTotals: 'Characters with the mark',
-      columnTotalsHard: 'Of those, at hard',
+      columnTotalsHard: 'Of those, on hard',
     },
     groups: {
       base: 'Base characters',
@@ -899,60 +897,60 @@ export const en: MessageSchema = {
       normal: 'normal',
       hard: 'hard',
       ultraGreedier: 'Ultra Greedier',
-      unknown: "we can't tell for this character",
-      unexpected: 'a value we did not expect:',
+      unknown: 'unreadable for this character',
+      unexpected: 'unexpected value:',
     },
     nothingReadable:
-      'We cannot read a single mark from this save: the part that holds them is missing, or stops half way.',
+      'We cannot read any mark from this save: the part that holds them is missing or incomplete.',
   },
   // The landing screen: what you get, how, why it is worth it, and the one action.
   goals: {
     intro:
-      'What to unlock and in what order: take from the suggestions, or ask for what you want, and queue it.',
-    fanOut: 'They open the most',
+      'What to unlock and in what order: pick from the suggestions or search for what you want, and add it to the queue.',
+    fanOut: 'Unlock the most',
     closeness: 'Almost there',
-    seeAll: 'See them all',
-    noCatalogTitle: "We can't find the game",
+    seeAll: 'See all',
+    noCatalogTitle: 'We can’t find the game',
     noCatalog:
-      "IsaacDome reads The Binding of Isaac's own files to know which achievement unlocks what, and it cannot find them on this computer. Install the game from Steam and reopen the app: this is where you'll find what's worth playing tonight.",
+      'IsaacDome reads The Binding of Isaac’s own files to know what each achievement unlocks, but it cannot find them on this computer. Install the game from Steam and reopen the app: this is where you will find what is worth playing tonight.',
     nothingNow:
-      'There is nothing to unlock right now: either it is all done, or everything waits on something else.',
+      'There is nothing to unlock right now: either you have done it all, or every goal needs something else first.',
   },
   // B37: the same screen asked from the other end. You name what you want, and the answer is
   // the series to play, in the order the Plan would play it.
   want: {
     placeholder: 'I want… (an item, a character, a challenge, an achievement)',
     clear: 'Cancel',
-    chain: 'What you have to play',
+    chain: 'What you need to play',
     availableNow: 'You can play it now',
     done: 'You already have it',
-    noProfile: 'We don’t know where you stand',
-    wayOf: 'Way {index} of {total}',
+    noProfile: 'We don’t know how far along you are',
+    wayOf: 'Path {index} of {total}',
     unknown:
-      'Plus {count} requirements we cannot read: the series may be longer.',
-    addAll: 'Put it all in the Plan',
+      'Plus {count} requirements we cannot interpret: the path may be longer.',
+    addAll: 'Add all to the Plan',
     diagnostics: {
       noCatalog:
-        'Without the game files we don’t know which achievement unlocks what. Install The Binding of Isaac and reopen the app.',
+        'Without the game files we don’t know what each achievement unlocks. Install The Binding of Isaac and reopen the app.',
       noProfile:
-        'No profile read: we can tell you how it is obtained, not where you stand.',
+        'No save chosen: we can tell you how to get it, but not how far along you are.',
       nothingUnlocks:
-        'Nothing unlocks it: either you have always had it, or it comes from playing rather than from an achievement.',
+        'No achievement unlocks it: it is either available from the start, or earned by playing.',
       notUnlockable: 'This is not something you unlock.',
     },
   },
   // The block an achievement's wiki page gains when a profile is active. It says only where
   // you stand: what the thing is and what it asks is already in the infobox below.
   profileBlock: {
-    title: 'Your profile',
+    title: 'Your progress',
     missing: 'What you are missing',
     unlocks: 'What you get',
-    opens: 'Unlocking it opens {count} more things.',
+    opens: 'Unlocking it opens up {count} more things.',
     // A node already done will not open: it opened. The future tense under an "Already
     // done" reads as if something were still left to do.
-    opened: 'It opened {count} more things.',
-    opensNothing: 'It opens nothing else: this is the end of a branch.',
-    openedNothing: 'It opened nothing else: this is the end of a branch.',
+    opened: 'It unlocked {count} more things.',
+    opensNothing: 'It unlocks nothing else.',
+    openedNothing: 'It unlocked nothing else.',
     stepsMissing: '{count} unlocks are needed first.',
     done: 'Already done.',
   },
@@ -973,7 +971,7 @@ export const en: MessageSchema = {
       mark: 'Completion marks',
       counter: 'Bosses to beat',
       threshold: 'Transformations',
-      unknown: "Conditions we can't read",
+      unknown: 'Conditions we can’t interpret',
     },
     kinds: {
       passive: 'passive item',
@@ -983,12 +981,12 @@ export const en: MessageSchema = {
       character: 'character',
       boss: 'boss',
       challenge: 'challenge',
-      nothing: 'nothing the game names',
+      nothing: 'no unlock listed by the game',
     },
     stateName: {
       done: 'done',
       now: 'unlockable now',
-      blocked: 'blocked',
+      blocked: 'locked',
       partial: 'requirements unclear',
     },
     // One cell of the matrix: the boss, and the character to beat it with.
@@ -1002,17 +1000,17 @@ export const en: MessageSchema = {
   },
   unlock: {
     intro:
-      'Every achievement in the game, filter it however you like. The filter that matters most is "unlockable now".',
+      'Every achievement in the game, filtered however you like. The most useful filter is “unlockable now”.',
     rows: 'rows',
     search: 'search name, condition or what it unlocks',
     sortBy: 'sort by',
     sort: {
-      fanOut: 'how many it opens',
+      fanOut: 'how many it unlocks',
       steps: 'steps missing',
       name: 'name',
     },
     empty: 'No achievements to show.',
-    noResults: 'No rows with these filters.',
+    noResults: 'No rows match these filters.',
     facet: {
       state: 'State',
       unlocks: 'What it unlocks',
@@ -1024,30 +1022,30 @@ export const en: MessageSchema = {
       unlocks: 'What it unlocks',
       condition: 'Condition',
       state: 'State',
-      fanOut: 'Opens',
+      fanOut: 'Unlocks',
     },
-    unlocksNothing: 'nothing the game names',
-    noCondition: 'the game does not say',
+    unlocksNothing: 'no unlock listed by the game',
+    noCondition: 'condition not given by the game',
     diagnostics: {
-      noCatalogTitle: "We can't find the game",
+      noCatalogTitle: 'We can’t find the game',
       noCatalog:
-        'Without the game files the achievements have no name and no condition: the rows only say which ones you have already done.',
-      noAchievementSectionTitle: "The save doesn't say what you unlocked",
+        'Without the game files achievements have no name and no condition: you can only see which ones you have already done.',
+      noAchievementSectionTitle: 'We don’t know what you have unlocked',
       noAchievementSection:
-        "Zero rows done doesn't mean zero achievements: it means that part of the save would not open.",
+        'We cannot read the part of the save that holds achievements: if none show as done, it does not mean you have none.',
       slotsBeyondCatalog:
-        '{count} achievements the save knows and your copy of the game does not: they are probably from a newer version',
+        '{count} achievements are in the save but not in the installed game: they are probably from a newer version',
       catalogBeyondSlots:
-        '{count} achievements the game has and this save does not name: they are left out of the list',
+        '{count} of the game’s achievements do not appear in this save and are left out of the list',
     },
   },
   welcome: {
     title: 'Which save are you playing with?',
     subtitle:
-      'Every number in the app comes from the file you choose here. You can change it whenever you like.',
+      'All the data in the app comes from the save you choose here. You can change it whenever you like.',
     savedGone:
-      'The save you were using is no longer where it was. We have not picked another one in its place: the numbers of a different profile, shown without saying so, are the mistake you never notice you have.',
-    hint: 'The most recent one is only a suggestion: you choose which to read.',
+      'The save you were using is no longer where it was. We have not picked another one for you: choose which one to read.',
+    hint: 'We suggest the most recent one, but the choice is yours.',
     use: 'Continue',
     cancel: 'Cancel',
     card: {
@@ -1058,32 +1056,32 @@ export const en: MessageSchema = {
       unread: 'unreadable',
       suggested: 'most recent',
       never: 'date unknown',
-      unreadableCells: '{count} cells not read',
-      unreadable: 'This file would not let us read it',
+      unreadableCells: '{count} unreadable cells',
+      unreadable: 'We could not read this file',
     },
     nothing: {
-      title: 'We found no save at all',
+      title: 'No saves found',
       retry: 'Search again',
-      diagnostics: 'Diagnostics — what we tried',
+      diagnostics: 'Details — where we looked',
       chooseGame: 'Choose the game folder',
       chooseSaves: 'Choose the saves folder',
     },
     failed: {
-      title: 'We could not read it',
+      title: 'Could not read the save',
       retry: 'Try again',
     },
   },
   indicator: {
-    noProfile: 'No active profile',
+    noProfile: 'No save chosen',
     notFound: 'Saves not found',
     slot: 'slot {slot}',
   },
   profile: {
     title: 'Game profile',
     intro:
-      'Where the numbers come from: which save is being read, where we found it, and what the file let us read. To change it, the indicator at the top.',
+      'The save you are using, where we found it and what we could read from it. To change it, use the indicator at the top.',
     chain: {
-      title: 'The three things it takes',
+      title: 'What it takes',
       summary: 'Steam, the game and the saves',
       steam: 'Steam',
       game: 'Game',
@@ -1093,23 +1091,23 @@ export const en: MessageSchema = {
       yourChoice: 'your choice',
       several: 'more than one',
       chosen: 'chosen',
-      candidates: '{n} candidate files',
+      candidates: '{n} files found',
     },
     none: {
       steamNotFound:
-        "We can't find Steam on this computer, and that is where we start to reach the game folder and then the saves.",
+        'We can’t find Steam on this computer: that is where we start looking for the game and its saves.',
       gameNotFound:
-        "Steam is there, but the game isn't in any of its libraries: without the game folder we can't find the saves.",
+        'Steam is installed, but the game is not in any of its libraries: without the game folder we cannot find the saves.',
       noSaves:
-        'The game is there, but there is no save file in the known places.',
+        'The game is installed, but we found no saves in the usual places.',
       noSavesInChosenFolder:
-        'The folder you pointed at holds no save. The game calls them `rep_persistentgamedata1.dat` or `rep+persistentgamedata1.dat`: if they are not there, it is a different folder.',
+        'There is no save in the folder you picked. The game names them `rep_persistentgamedata1.dat` or `rep+persistentgamedata1.dat`: if they are not there, the right folder is a different one.',
     },
     diagnostics: {
       steamNotFound: 'Steam: no installation found',
-      gameNotFound: "Game: not in Steam's libraries",
-      noSavesFound: 'Saves: no file in the known places',
-      noSavesInChosenFolder: 'Saves: no file in the folder you pointed at',
+      gameNotFound: 'Game: not in Steam’s libraries',
+      noSavesFound: 'Saves: no file in the usual places',
+      noSavesInChosenFolder: 'Saves: no file in the folder you picked',
       unreadablePath: 'Unreadable path · {name} · {reason}',
       malformedManifest: 'Unreadable Steam manifest · {name}',
     },
@@ -1119,25 +1117,25 @@ export const en: MessageSchema = {
       manual: 'Chosen by hand',
     },
     active: {
-      title: 'Active profile',
-      autoSelected: 'chosen by us · it was the only one',
+      title: 'Active save',
+      autoSelected: 'chosen automatically · it was the only one',
       modified: 'Modified',
       size: 'Size',
       dlcs: 'DLC',
       foundIn: 'Found in {source}',
-      change: 'Change profile',
+      change: 'Change save',
       reload: 'Read the file again',
       unknownDate: 'unknown',
       bytes: '{count} bytes',
     },
     read: {
-      title: 'What we could read',
+      title: 'What we read',
       sections: 'sections',
-      note: 'Some parts of the save we do not know the content of yet, and the quantities change with every patch of the game. What you see here and everywhere else in the app is always what your own file declares, never a number we decided.',
-      diagnostics: "The file holds something we didn't expect",
+      note: 'Some parts of the save are not decoded yet, and the numbers change with the game’s patches. What you see here and across the app always comes from your own file, never from our estimates.',
+      diagnostics: 'The file contains unexpected data',
     },
     saveDiagnostics: {
-      unexpectedKind: "A section isn't the expected one ({expected}, {found})",
+      unexpectedKind: 'A section is not the expected one ({expected}, {found})',
       sectionOverrun: 'A section runs past the end of the file ({section})',
       trailingBytes: 'There are extra bytes at the end of the file',
     },
@@ -1152,49 +1150,49 @@ export const en: MessageSchema = {
       unknown: 'To identify',
     },
     errors: {
-      title: "We can't read the profile",
+      title: 'We can’t read the save',
       retry: 'Try again',
     },
   },
   queue: {
     inQueue: 'queued',
-    inPlan: "already in the Plan's queue",
+    inPlan: 'already in the Plan’s queue',
     add: 'Add to the queue',
     remove: 'Remove from the queue',
     removeShort: 'Remove from the queue',
-    errorTitle: "The queue didn't change",
+    errorTitle: 'The queue did not change',
   },
   // Why a command could not answer. Since N2 these are variants on the wire, not a sentence
   // built in Rust: the numbers arrive as numbers and the wording lives here.
   ipcReasons: {
-    ioNotFound: "The file isn't there.",
-    ioPermissionDenied: "Windows won't let us open it.",
-    ioOther: "The system wouldn't open it.",
-    saveTooShort: "It's too short to hold a save.",
-    saveBadMagic: "It doesn't look like an Isaac save.",
-    settingsConfigDirUnknown: "Windows won't say where settings go.",
-    settingsEncoding: "The settings wouldn't be written out.",
-    storeDataDirUnknown: "Windows won't say where app data goes.",
-    storeDataDirNotCreatable: "The app's folder can't be created.",
-    storeUnreadable: "The file won't open, or isn't a database.",
+    ioNotFound: 'The file does not exist.',
+    ioPermissionDenied: 'Windows does not allow us to open it.',
+    ioOther: 'The system could not open it.',
+    saveTooShort: 'It is too short to be a save.',
+    saveBadMagic: 'It does not look like an Isaac save.',
+    settingsConfigDirUnknown: 'Windows does not say where to store settings.',
+    settingsEncoding: 'We could not write the settings.',
+    storeDataDirUnknown: 'Windows does not say where to store app data.',
+    storeDataDirNotCreatable: 'We could not create the app’s folder.',
+    storeUnreadable: 'The file does not open, or is not a database.',
     storeNewerSchema:
       'It comes from a newer version of the app ({found} against {supported}).',
-    storeQueueUnparseable: "The saved plan can't be read.",
+    storeQueueUnparseable: 'We could not read the saved plan.',
     autostartWriteRefused:
-      'Windows refused the entry: a system policy or an antivirus may be standing in the way. Nothing will start at login.',
+      'Windows refused the entry: a system policy or an antivirus may be blocking it. IsaacDome will not start at login.',
     autostartWriteIgnored:
-      'The entry was written and Windows goes on saying no. Look in Task Manager, under Startup apps: switched off there, IsaacDome stays off whatever is written here.',
+      'The entry was written, but Windows keeps blocking it. Check Task Manager, under Startup apps: if IsaacDome is disabled there, it has to be re-enabled there.',
   },
   ipcErrors: {
-    noBackend: "The backend didn't answer.",
-    noActiveProfile: 'No active profile.',
-    unknownProfile: 'The chosen profile no longer exists.',
-    unreadableSave: "The save can't be read.",
-    settingsNotWritable: "We can't remember the choice.",
-    unknownTarget: "What you're looking for doesn't exist.",
-    catalogUnavailable: "The game's catalogue isn't available.",
-    storeUnavailable: "The app's database isn't available.",
-    wikiUnavailable: "The wiki dataset isn't available.",
+    noBackend: 'The app did not respond.',
+    noActiveProfile: 'No save chosen.',
+    unknownProfile: 'The chosen save no longer exists.',
+    unreadableSave: 'We could not read the save.',
+    settingsNotWritable: 'We could not save your choice.',
+    unknownTarget: 'What you are looking for does not exist.',
+    catalogUnavailable: 'The game’s catalog is not available.',
+    storeUnavailable: 'The app’s database is not available.',
+    wikiUnavailable: 'The wiki is not available.',
     sessionTooLarge: 'The tab session is too large to be saved.',
     autostartNotWritable: 'Windows did not accept the start-at-login entry.',
     updateNotReady: 'There is no downloaded update to install.',

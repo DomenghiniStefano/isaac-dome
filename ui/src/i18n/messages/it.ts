@@ -4,7 +4,7 @@
 export const it = {
   ui: {
     close: 'Chiudi',
-    explain: 'Cosa vuol dire',
+    explain: 'Cosa significa',
   },
   // The filter bar's own words, shared by every list that has one. They were written once per
   // screen until 3.10, with the same values three times over: that is how two of them end up
@@ -15,7 +15,7 @@ export const it = {
     active: 'filtri attivi',
     reset: 'Azzera i filtri',
     inMenu: 'filtra i valori',
-    noMatch: 'Nessun valore con questo testo.',
+    noMatch: 'Nessun valore corrisponde.',
   },
   shell: {
     newTab: 'Nuova tab',
@@ -25,7 +25,7 @@ export const it = {
     minimize: 'Riduci a icona',
     maximize: 'Ingrandisci',
     closeWindow: 'Chiudi finestra',
-    search: 'Cerca in tutto',
+    search: 'Cerca ovunque',
     settings: 'Impostazioni',
     about: 'Informazioni',
     resizeSidebar: 'Ridimensiona la barra laterale',
@@ -33,7 +33,7 @@ export const it = {
     expandSidebar: 'Espandi la barra laterale',
     sections: {
       progress: 'Progressi',
-      tool: 'Tool',
+      tool: 'Strumenti',
       wiki: 'Wiki',
     },
   },
@@ -50,7 +50,7 @@ export const it = {
     roll: 'Stasera',
     runs: 'Run',
     live: 'Live',
-    floor: 'Piano di gioco',
+    floor: 'Mappa del piano',
     wiki: 'Wiki',
     profile: 'Profilo di gioco',
     appearance: 'Aspetto',
@@ -74,19 +74,20 @@ export const it = {
   },
   sidebar: {
     progressTitle: 'Progressi',
-    progressHint: 'Ogni voce si legge sul profilo attivo.',
-    toolTitle: 'Tool',
+    progressHint: 'Tutto calcolato sul tuo salvataggio.',
+    toolTitle: 'Strumenti',
     toolHint:
-      'Funzionano senza salvataggio: leggono il log, o quello che disegni tu.',
+      'Non serve un salvataggio: lavorano sulla partita in corso o su quello che disegni.',
     wikiTitle: 'Wiki',
-    wikiHint: 'La Wiki funziona senza gioco né salvataggio.',
+    wikiHint: 'Consultabile anche senza il gioco installato.',
     wikiOverview: 'Panoramica',
     settingsTitle: 'Impostazioni',
-    settingsHint: 'Il salvataggio che stai giocando, e come apre le tab.',
+    settingsHint:
+      'Il salvataggio da leggere, l’aspetto e il comportamento dell’app.',
   },
   live: {
     intro:
-      'Quello che stai giocando adesso, e cosa aprirebbe se lo finisci. L’app deve essere aperta mentre giochi: il gioco riscrive il log a ogni avvio.',
+      'La run che stai giocando, in tempo reale, e cosa sblocchi se la porti a termine. Tieni IsaacDome aperta mentre giochi: il gioco azzera il suo log a ogni avvio.',
     floors: 'piani',
     collected: 'raccolti',
     wouldOpen: 'Se finisci questa run',
@@ -95,42 +96,44 @@ export const it = {
       hard: 'in hard',
       ultraGreedier: 'in Ultra Greedier',
     },
-    noCondition: 'il gioco non lo scrive',
+    noCondition: 'condizione non indicata dal gioco',
     column: {
       achievement: 'Achievement',
       cell: 'Marchio richiesto',
       condition: 'Come si ottiene',
-      opens: 'Apre',
+      opens: 'Sblocca',
     },
-    marks: 'I marchi di chi stai giocando',
-    items: 'Cosa hai in mano',
+    marks: 'I marchi del personaggio in gioco',
+    items: 'I tuoi oggetti',
     startingItems: 'Di partenza',
     collectedItems: 'Raccolti',
     unlockedHere: 'Sbloccati in questa run',
-    opens: 'apre {count}',
-    opensNothingMore: 'non apre altro',
+    opens: 'sblocca {count}',
+    opensNothingMore: 'non sblocca altro',
     nothing:
-      'Niente che questa run possa aprire da sola: quello che manca agli achievement non è un marchio di questo personaggio.',
+      'Questa run da sola non sblocca nuovi achievement: quelli che ti mancano richiedono i marchi di altri personaggi.',
     diagnostic: {
-      noRun: 'Nessuna run in corso: l’app sta guardando, e non stai giocando.',
+      noRun:
+        'Nessuna run in corso. Avvia una partita: IsaacDome la segue in automatico.',
       characterNotNamed:
-        'Non sappiamo ancora con chi stai giocando: il nome compare quando raccogli il primo oggetto.',
-      unknownCharacter: 'Il personaggio «{name}» non è nel catalogo del gioco.',
+        'Il personaggio comparirà appena raccogli il primo oggetto.',
+      unknownCharacter:
+        'Il personaggio «{name}» non risulta nel catalogo del gioco.',
       ambiguousCharacter:
-        'Il log scrive «{name}», e il gioco chiama così {forms} personaggi: la forma base e quella Tainted. Sotto trovi entrambe, perché indovinare quale sia sarebbe un’ipotesi.',
-      noGraph: 'Senza il gioco installato non sappiamo cosa aprirebbe.',
-      noProfile: 'Senza un salvataggio scelto non sappiamo cosa ti manca.',
+        'Il log indica «{name}», un nome che il gioco usa per {forms} personaggi: la forma base e quella Tainted. Qui sotto li trovi entrambi.',
+      noGraph: 'Installa il gioco per vedere cosa sbloccheresti.',
+      noProfile: 'Scegli un salvataggio per vedere cosa ti manca.',
       saveUnreadable:
-        'Il salvataggio scelto non si legge, quindi non sappiamo cosa ti manca. La partita resta qui.',
+        'Non riusciamo a leggere il salvataggio scelto, quindi non sappiamo cosa ti manca. La run in corso resta visibile.',
     },
   },
   floor: {
     intro:
-      'Disegna la mappa del piano come la vedi sulla minimappa: le celle vuote si accendono dove le regole del gioco permettono una stanza segreta, super segreta o ultra segreta.',
+      'Disegna il piano come lo vedi sulla minimappa: le celle vuote si illuminano dove le regole del gioco consentono una stanza segreta, super segreta o ultra segreta.',
     clear: 'Svuota la griglia',
     clearConfirm: {
       title: 'Svuotare la griglia?',
-      body: 'Il piano che hai disegnato sparisce e non si può recuperare.',
+      body: 'Il piano che hai disegnato verrà cancellato e non potrà essere recuperato.',
       cancel: 'Annulla',
       confirm: 'Svuota',
     },
@@ -143,15 +146,15 @@ export const it = {
     cellCandidate: '{cell} — {target}, posto {rank}',
     move: {
       title: 'Sposta il disegno',
-      note: "Le frecce spostano tutto il piano disegnato di una cella in quella direzione, senza ridisegnarlo. Servono quando la stanza di partenza è finita troppo vicina a un bordo e la mappa non ci sta. Una freccia grigia vuol dire che c'è una stanza contro quel bordo: spostare ancora la farebbe uscire dalla griglia.",
+      note: 'Le frecce spostano tutto il disegno di una cella, senza doverlo rifare. Servono quando la stanza di partenza è troppo vicina a un bordo e la mappa non ci sta. Una freccia grigia indica che una stanza tocca già quel bordo.',
       left: 'Sposta tutto a sinistra',
       up: 'Sposta tutto in alto',
       down: 'Sposta tutto in basso',
       right: 'Sposta tutto a destra',
     },
     rank: {
-      title: 'Cosa vuol dire un colore',
-      note: 'Più pieno il quadrato, più probabile il posto. Oltre il terzo le regole non dicono altro.',
+      title: 'Cosa indicano i colori',
+      note: 'Più il quadrato è pieno, più il punto è probabile. Oltre il terzo posto le regole non fanno distinzioni.',
     },
     // What each rule of `crates/floor/rules/placement.json` says, keyed by its id in camel case
     // (`lib/floor/ruleText.ts`). In English it is the wiki's quote, word for word.
@@ -190,12 +193,12 @@ export const it = {
       superSecretSecondLongest:
         'Manca la stanza di partenza: senza, non si possono contare le stanze da attraversare.',
       ultraSecretShapes:
-        'Dipende dalla forma della stanza dietro quel lato, e su questa griglia ogni stanza è un quadrato solo: le stanze a L e quelle strette non si possono disegnare, quindi questa regola non si può giudicare.',
+        'Dipende dalla forma della stanza su quel lato, e su questa griglia ogni stanza occupa un solo quadrato: le stanze a L e quelle strette non si possono disegnare, quindi questa regola non si può verificare.',
     },
-    unresolved: 'Quello che la griglia non può giudicare',
-    none: 'Nessuna cella permessa dalle regole, con quello che hai disegnato finora.',
+    unresolved: 'Regole che la griglia non può verificare',
+    none: 'Con quello che hai disegnato finora, nessuna cella è compatibile con le regole.',
     failed:
-      'Non è stato possibile calcolare i candidati. Quello che hai disegnato resta.',
+      'Non siamo riusciti a calcolare le posizioni possibili. Il tuo disegno resta com’è.',
     target: {
       secret: 'Stanza segreta',
       superSecret: 'Super segreta',
@@ -223,30 +226,29 @@ export const it = {
       ultraSecret: 'Ultra segreta',
     },
     diagnostic: {
-      gridEmpty:
-        'Disegna almeno una stanza: senza, non c’è niente da giudicare.',
+      gridEmpty: 'Disegna almeno una stanza per iniziare.',
       noStartRoom:
-        'Segna la stanza di partenza. Senza, la regola sui passi dalla partenza non si può leggere, e la Super segreta resta giudicata solo a metà.',
+        'Segna la stanza di partenza: senza, la posizione della super segreta si può valutare solo in parte.',
       rulesUnreadable:
-        'Le regole di piazzamento non si sono caricate. È un difetto della build, non del tuo piano.',
+        'Le regole di piazzamento non si sono caricate: è un errore dell’app, non del tuo disegno.',
       gridMalformed:
-        'La griglia arrivata non è un piano: {cells} celle invece di 169.',
+        'La griglia ricevuta non è valida: {cells} celle invece di 169.',
     },
   },
   runs: {
     intro:
-      'Le run che l’app ha letto: quelle di questa sessione e quelle delle partite online che il gioco ha già registrato. Il log non ha un orologio, quindi l’ordine è per sessione e non per ora.',
+      'Lo storico delle tue run: quelle di questa sessione e quelle delle partite online registrate dal gioco. Il log non riporta l’ora, quindi le run sono ordinate per sessione.',
     rows: 'run',
     search: 'cerca un seed o un personaggio',
     facet: {
       outcome: 'Esito',
       character: 'Personaggio',
-      online: 'Con chi',
+      online: 'Modalità',
       source: 'Origine',
     },
     outcome: {
       won: 'vinta',
-      died: 'morta',
+      died: 'persa',
       abandoned: 'abbandonata',
       open: 'in corso',
     },
@@ -259,9 +261,9 @@ export const it = {
       session: 'sessione online',
     },
     totals: {
-      runs: 'run lette',
+      runs: 'run',
       won: 'vinte',
-      died: 'morte',
+      died: 'perse',
       abandoned: 'abbandonate',
     },
     column: {
@@ -271,9 +273,10 @@ export const it = {
       seed: 'Seed',
       source: 'Origine',
     },
-    noCharacter: 'personaggio non nominato',
+    noCharacter: 'personaggio sconosciuto',
     noItems: 'nessuno',
-    openPage: 'Clic per la pagina, Ctrl+clic per aprirla di fianco',
+    openPage:
+      'Clic per aprire la pagina, Ctrl+clic per aprirla in una nuova tab',
     itemId: 'oggetto {id}',
     killedBy: 'uccisa da {killer}',
     endedWith: 'finale {ending}',
@@ -282,30 +285,30 @@ export const it = {
     heldActive: 'Attivo in mano',
     unnamedItem: 'oggetto {id}',
     empty:
-      'Nessuna run nell’archivio: non è ancora stata giocata una partita da quando l’app è installata.',
+      'Ancora nessuna run nello storico: gioca una partita con IsaacDome aperta e la vedrai comparire qui.',
     noMatch: 'Nessuna run con questi filtri.',
     diagnostic: {
       noLogFolder:
-        'Non troviamo la cartella dove il gioco scrive i log, quindi non c’è niente da leggere.',
+        'Non troviamo la cartella dei log del gioco, quindi non ci sono run da mostrare.',
       storeUnavailable:
-        'Il database dell’app non si apre, quindi l’archivio non si può leggere.',
+        'Non riusciamo ad aprire il database dell’app, quindi lo storico non è disponibile.',
       unreadableEvents:
-        '{count} righe del log non sono state capite: le run che le contengono possono essere incomplete.',
+        '{count} righe del log non sono state riconosciute: alcune run potrebbero essere incomplete.',
       unreadableSessions:
-        '{count} sessioni online non si sono lette: le run che contengono non sono nell’archivio.',
+        '{count} sessioni online non sono state lette, e le loro run mancano dallo storico.',
       liveLogUnreadable:
-        'Il log che il gioco sta scrivendo non si legge: la run in corso non è nell’archivio.',
+        'Non riusciamo a leggere il log della partita in corso: la run attuale non compare nello storico.',
       noCatalog:
-        'Il gioco non è installato: gli oggetti hanno il loro numero e non il nome.',
+        'Il gioco non è installato: gli oggetti compaiono con il loro numero invece del nome.',
     },
   },
   challenges: {
     intro:
-      'Le 45 sfide del gioco: quali hai finito, cosa serve per aprirle e cosa sbloccano. Le condizioni — con chi si gioca, fin dove si arriva, se è bendata — vengono dalla wiki; la pagina di ogni sfida ha il resto.',
+      'Tutte le sfide del gioco: quali hai completato, cosa serve per sbloccarle e cosa ti danno in cambio. Personaggio, traguardo e bendatura vengono dalla wiki; tutto il resto è nella pagina di ogni sfida.',
     rows: 'sfide',
     search: 'cerca una sfida o il suo numero',
     state: {
-      done: 'fatta',
+      done: 'completata',
       available: 'da fare',
       blocked: 'bloccata',
       unknown: 'non leggibile',
@@ -314,15 +317,15 @@ export const it = {
     facet: {
       state: 'Stato',
       character: 'Personaggio',
-      rewards: 'Cosa sblocca',
+      rewards: 'Ricompensa',
       blindfolded: 'Bendata',
     },
-    rewardsSome: 'sblocca qualcosa',
-    rewardsNone: 'non sblocca niente',
+    rewardsSome: 'con ricompensa',
+    rewardsNone: 'senza ricompensa',
     blindfoldedYes: 'bendata',
     blindfoldedNo: 'non bendata',
     blindfolded: 'bendata',
-    noCondition: 'la wiki non lo dice',
+    noCondition: 'non indicato dalla wiki',
     unlocksNothing: 'non sblocca niente',
     unnamedReward: 'achievement {id}',
     columns: {
@@ -337,24 +340,23 @@ export const it = {
     diagnostics: {
       noCatalogTitle: 'Non troviamo il gioco',
       noCatalog:
-        'Le sfide sono scritte nei file del gioco: senza, sappiamo quante ne hai finite ma non quali. Installa The Binding of Isaac da Steam e riapri l’app.',
-      noChallengesSectionTitle:
-        'Il salvataggio non dice quali sfide hai finito',
+        'Le sfide sono descritte nei file del gioco: senza, sappiamo quante ne hai completate ma non quali. Installa The Binding of Isaac da Steam e riapri l’app.',
+      noChallengesSectionTitle: 'Non sappiamo quali sfide hai completato',
       noChallengesSection:
-        'La sezione che tiene le sfide non si è letta: le sfide qui sotto ci sono tutte, ma nessuna sa dire se l’hai già fatta.',
-      noAchievementSectionTitle: 'Il salvataggio non dice cosa hai sbloccato',
+        'Non siamo riusciti a leggere la parte del salvataggio con le sfide: le trovi tutte qui sotto, ma senza sapere quali hai già completato.',
+      noAchievementSectionTitle: 'Non sappiamo cosa hai sbloccato',
       noAchievementSection:
-        'Senza gli achievement non sappiamo quali sfide sono già aperte, né quali premi hai già preso.',
+        'Senza gli achievement non possiamo sapere quali sfide sono già sbloccate, né quali ricompense hai già ottenuto.',
       noWiki:
-        'Il dataset della wiki non si è caricato: le sfide restano, senza personaggio, obiettivo e bendatura.',
+        'I dati della wiki non si sono caricati: le sfide sono elencate senza personaggio, traguardo e bendatura.',
     },
   },
   roll: {
     intro:
-      'Un bersaglio solo, pescato dalla matrice dei 442: cosa vale la pena giocare stasera, senza dover scegliere tra centinaia di caselle.',
+      'Non sai cosa giocare stasera? Pesca un obiettivo dalla matrice dei marchi e lascia decidere al caso.',
     draw: 'Pesca',
     drawAgain: 'Pesca di nuovo',
-    notDrawnYet: 'Non hai ancora pescato niente stasera.',
+    notDrawnYet: 'Premi «Pesca» per scoprire cosa giocare stasera.',
     status: {
       missing: 'da fare',
       taken: 'già preso',
@@ -363,52 +365,51 @@ export const it = {
     card: {
       mark: '{character} contro {column}',
       greedier: '{character} — Greedier!',
-      drawnFrom: 'Pescato da {size} bersagli possibili',
+      drawnFrom: 'Pescato tra {size} obiettivi possibili',
     },
     emptyDeck: {
       taken:
-        'Il mazzo è vuoto: {count} bersagli restano fuori perché già presi.',
+        'Il mazzo è vuoto: {count} obiettivi sono esclusi perché già presi.',
       unreadable:
-        'Il mazzo è vuoto: {count} bersagli non si leggono dal salvataggio.',
+        'Il mazzo è vuoto: non riusciamo a leggere {count} obiettivi dal salvataggio.',
       locked:
-        'Il mazzo è vuoto: {count} bersagli sono bloccati per un personaggio non ancora sbloccato.',
+        'Il mazzo è vuoto: {count} obiettivi richiedono un personaggio che non hai ancora sbloccato.',
       filtered:
-        'Il mazzo è vuoto: {count} bersagli restano fuori dai filtri scelti qui sotto.',
-      nothing: 'Il mazzo è vuoto: non c’è ancora nessun bersaglio da proporre.',
+        'Il mazzo è vuoto: {count} obiettivi sono esclusi dai filtri qui sotto.',
+      nothing:
+        'Il mazzo è vuoto: al momento non c’è nessun obiettivo da proporre.',
     },
     panel: {
       characters: 'Personaggi',
       columns: 'Colonne',
-      includeTaken: 'Includi i bersagli già presi',
-      includeTakenHint:
-        'Altrimenti il mazzo pesca solo tra quelli ancora da fare.',
-      onlyPlayable: 'Solo personaggi già giocabili',
-      onlyPlayableHint:
-        'Nasconde i personaggi che il salvataggio non lascia ancora scegliere.',
+      includeTaken: 'Includi gli obiettivi già presi',
+      includeTakenHint: 'Altrimenti si pesca solo tra quelli ancora da fare.',
+      onlyPlayable: 'Solo personaggi già sbloccati',
+      onlyPlayableHint: 'Esclude i personaggi che non puoi ancora scegliere.',
     },
     diagnostics: {
-      noCounterSectionTitle: 'Il salvataggio non dice quali marchi hai preso',
+      noCounterSectionTitle: 'Non sappiamo quali marchi hai preso',
       noCounterSection:
-        'La sezione che tiene i marchi non si è letta: la matrice resta, ma ogni cella è segnata come non leggibile.',
-      documentUnreadableTitle: 'Le tue scelte di stasera non si sono lette',
+        'Non siamo riusciti a leggere la parte del salvataggio con i marchi: la matrice c’è, ma ogni cella risulta non leggibile.',
+      documentUnreadableTitle: 'Le tue preferenze non si sono caricate',
       documentUnreadable:
-        'Il documento salvato non si è capito: è stato usato il preset di partenza al suo posto.',
+        'Le preferenze salvate non erano leggibili: abbiamo ripristinato quelle predefinite.',
       documentFromTheFutureTitle:
-        'Le tue scelte vengono da una versione più recente',
+        'Le tue preferenze vengono da una versione più recente',
       documentFromTheFuture:
-        'Il documento è alla versione {version}, questa app legge fino alla {supported}: è stato usato il preset di partenza al suo posto.',
+        'Sono salvate nel formato {version}, e questa versione dell’app legge fino al {supported}: per ora usiamo le preferenze predefinite.',
       noCatalogTitle: 'Non troviamo il gioco',
       noCatalog:
-        'Senza il gioco installato non ci sono nomi, simboli né modo di sapere chi è già giocabile.',
-      playabilityUnknownTitle: 'Non sappiamo chi è già giocabile',
+        'Senza il gioco installato mancano nomi e simboli, e non possiamo sapere quali personaggi hai sbloccato.',
+      playabilityUnknownTitle: 'Non sappiamo quali personaggi hai sbloccato',
       playabilityUnknown:
-        'Il filtro "solo personaggi già giocabili" è stato spento per questa pescata: senza il catalogo o gli achievement non c’è modo di saperlo.',
-      storeUnavailableTitle: 'Le tue scelte non si possono salvare',
+        'Il filtro «solo personaggi già sbloccati» è stato disattivato per questa pescata: senza il catalogo del gioco o gli achievement non possiamo verificarlo.',
+      storeUnavailableTitle: 'Non riusciamo a salvare le tue preferenze',
     },
   },
   collection: {
     intro:
-      'Gli oggetti che questo salvataggio non ha ancora, con la loro qualità e i pool in cui compaiono. I trinket non ci sono: il gioco non tiene traccia di quali hai trovato.',
+      'Gli oggetti che ti mancano, con la loro qualità e i pool in cui compaiono. I trinket non sono inclusi: il gioco non registra quali hai trovato.',
     state: {
       inCollection: 'in collezione',
       available: 'da trovare',
@@ -422,7 +423,7 @@ export const it = {
       kind: 'Tipo',
       origin: 'DLC di origine',
     },
-    qualityUnrated: 'non valutato',
+    qualityUnrated: 'senza qualità',
     poolNone: 'nessun pool',
     items: 'oggetti',
     search: 'cerca un oggetto',
@@ -447,30 +448,30 @@ export const it = {
     diagnostics: {
       noCatalogTitle: 'Non troviamo il gioco',
       noCatalog:
-        'Senza i file del gioco gli oggetti non hanno nome né qualità: sappiamo quanti ne hai, non quali. Installa The Binding of Isaac da Steam e riapri l’app.',
-      noCollectionSectionTitle: 'Il salvataggio non dice cosa hai raccolto',
+        'Senza i file del gioco gli oggetti non hanno nome né qualità: sappiamo quanti ne hai, ma non quali. Installa The Binding of Isaac da Steam e riapri l’app.',
+      noCollectionSectionTitle: 'Non sappiamo quali oggetti hai raccolto',
       noCollectionSection:
-        'Ogni oggetto risulta non leggibile. Non vuol dire che non l’hai mai trovato: vuol dire che quella parte del salvataggio non si è aperta.',
-      noAchievementSectionTitle: 'Il salvataggio non dice cosa hai sbloccato',
+        'Non siamo riusciti a leggere la parte del salvataggio con gli oggetti, quindi risultano tutti non leggibili. Non significa che non li hai trovati.',
+      noAchievementSectionTitle: 'Non sappiamo cosa hai sbloccato',
       noAchievementSection:
-        'Non sappiamo dire quali oggetti siano ancora bloccati: quelli che arrivano da un achievement restano incerti.',
+        'Non possiamo sapere quali oggetti sono ancora bloccati: quelli legati a un achievement restano incerti.',
       itemsBeyondSlots:
-        '{count} oggetti che il gioco conosce e questo salvataggio non nomina: li mostriamo come non leggibili',
+        '{count} oggetti del gioco non compaiono in questo salvataggio: li mostriamo come non leggibili',
     },
   },
   wiki: {
     intro:
-      'Una copia della wiki di Isaac dentro l’app: oggetti, personaggi, boss, sfide, achievement e trasformazioni. Funziona anche senza il gioco installato e senza aver scelto un salvataggio.',
+      'La wiki di Isaac, integrata nell’app e collegata ai tuoi progressi: oggetti, personaggi, boss, sfide, achievement, trasformazioni e molto altro. Sempre disponibile, anche offline e senza il gioco installato.',
     provenance: {
-      title: 'Da dove viene',
-      snapshot: 'Istantanea del',
-      patch: 'Ultima patch nota',
+      title: 'Fonte',
+      snapshot: 'Aggiornata al',
+      patch: 'Ultima patch coperta',
       patchUnknown: 'sconosciuta',
       newerGame:
-        'Il gioco è più recente di questa istantanea: le modifiche recenti possono mancare.',
+        'Il tuo gioco è più recente di questa versione della wiki: le ultime novità potrebbero mancare.',
       license: 'wiki.gg · CC BY-SA 4.0',
       licenseLong:
-        'Il testo della wiki è CC BY-SA 4.0, da bindingofisaacrebirth.wiki.gg',
+        'Testi della wiki con licenza CC BY-SA 4.0, da bindingofisaacrebirth.wiki.gg',
       unresolved: 'riferimenti non risolti',
       unknownTemplates: 'template sconosciuti',
     },
@@ -478,9 +479,9 @@ export const it = {
     pages: '{n} pagine',
     pagesOf: '{shown} / {total} pagine',
     noCatalog:
-      'Senza il gioco installato le pagine non hanno immagine: le figure vengono dalla tua copia di Isaac, non dall’app.',
+      'Senza il gioco installato le pagine non hanno immagini: le immagini vengono dalla tua installazione di Isaac.',
     search: 'cerca una pagina',
-    noResults: 'Nessuna pagina con questo nome.',
+    noResults: 'Nessuna pagina trovata.',
     emptyCategory: 'Questa categoria non ha pagine.',
     resetFilters: 'Azzera la ricerca',
     back: 'Torna alla categoria',
@@ -489,7 +490,7 @@ export const it = {
       rows: 'pagine',
       sortBy: 'ordina per',
       noData: 'Nessun dato',
-      qualityUnrated: 'Non valutato',
+      qualityUnrated: 'Senza qualità',
       baseForm: 'Forma base',
       progressOf: '{done} / {total}',
       grid: 'Schede',
@@ -497,12 +498,12 @@ export const it = {
       ascending: 'Crescente',
       descending: 'Decrescente',
       facet: {
-        profile: 'Stato salvataggio',
+        profile: 'I tuoi progressi',
         edition: 'Edizione',
         quality: 'Qualità',
         template: 'Tipo',
         tag: 'Etichetta',
-        tainted: 'Corrotto',
+        tainted: 'Tainted',
         articleCategory: 'Carta o Runa',
       },
       sort: {
@@ -563,7 +564,7 @@ export const it = {
       goal: 'Obiettivo',
       items: 'Oggetti',
       trinkets: 'Trinket',
-      pickups: 'Pickup',
+      pickups: 'Oggetti raccoglibili',
       health: 'Salute',
       curse: 'Maledizione',
       restrictions: 'Restrizioni',
@@ -610,7 +611,7 @@ export const it = {
       speed: 'Velocità {value}',
       luck: 'Fortuna {value}',
       shotSpeed: 'Velocità del colpo {value}',
-      tainted: 'Corrotto',
+      tainted: 'Tainted',
       requires: 'Oggetti richiesti {value}',
       contributors: 'Oggetti che contano {value}',
       category: 'Categoria',
@@ -622,13 +623,13 @@ export const it = {
     },
     progress: {
       done: 'Fatto',
-      notDone: 'Non fatto',
+      notDone: 'Da fare',
       itemCollected: 'Raccolto',
       itemNotCollected: 'Non raccolto',
       unlocked: 'Sbloccato',
       locked: 'Bloccato',
-      lockedBy: 'Bloccato dall’achievement {id}',
-      marks: 'Segni {done}/{total}',
+      lockedBy: 'Si sblocca con l’achievement {id}',
+      marks: 'Marchi {done}/{total}',
       available: 'Disponibile',
       blocked: 'Bloccato ({count} mancanti)',
       unknownState: 'Sconosciuto',
@@ -639,25 +640,25 @@ export const it = {
     landing: {
       totalPages: 'Pagine',
       overallProgress: 'Progresso complessivo',
-      categoryProgress: 'Progresso di {category}',
+      categoryProgress: 'Progresso in {category}',
       progressOf: '{done} / {total}',
     },
     states: {
-      unknownTitle: 'Pagina sconosciuta',
-      unknown: 'Questa pagina non è nella nostra copia della wiki.',
+      unknownTitle: 'Pagina non trovata',
+      unknown: 'Questa pagina non è ancora nella wiki di IsaacDome.',
       unknownHint:
-        'Può essere stata aggiunta dopo: la copia risale alla data qui sopra e si aggiorna con l’app.',
-      noSections: 'Di questa pagina abbiamo solo la scheda, senza testo.',
-      failedTitle: 'La Wiki non ha risposto',
+        'Potrebbe essere stata aggiunta di recente: la wiki è aggiornata alla data indicata qui sopra e si aggiorna insieme all’app.',
+      noSections: 'Per questa pagina c’è solo la scheda, senza testo.',
+      failedTitle: 'La Wiki non risponde',
       pageFailedTitle: 'Questa pagina non si è aperta',
       missingTitle: 'La Wiki non si è aperta',
       missing:
-        'La copia della wiki dentro l’app non si legge, quindi non c’è nessuna pagina da mostrare. Riavviare l’app di solito basta; se continua, è un problema da segnalare.',
+        'Non riusciamo a caricare la wiki, quindi non ci sono pagine da mostrare. Di solito basta riavviare l’app; se il problema continua, segnalacelo.',
     },
   },
   search: {
     intro:
-      'Una ricerca sola su tutto: nomi del gioco, condizioni degli achievement, titoli e testo delle pagine della wiki.',
+      'Cerca in tutta l’app: schermate, oggetti, achievement e il testo di ogni pagina della wiki.',
     placeholder: 'Cerca schermate, achievement, oggetti, pagine wiki…',
     empty: 'Nessun risultato.',
     allResults: 'Tutti i risultati ({count})',
@@ -678,21 +679,21 @@ export const it = {
       newTab: 'apri in una nuova tab',
     },
     diagnostics: {
-      noProfileTitle: 'Nessun profilo scelto',
+      noProfileTitle: 'Nessun salvataggio scelto',
       noCatalogTitle: 'Gioco non installato',
       noWikiTitle: 'La Wiki non si è aperta',
-      noAchievementSectionTitle: 'Il salvataggio non dice cosa hai sbloccato',
-      noCollectionSectionTitle: 'Il salvataggio non dice cosa hai raccolto',
+      noAchievementSectionTitle: 'Non sappiamo cosa hai sbloccato',
+      noCollectionSectionTitle: 'Non sappiamo quali oggetti hai raccolto',
       noProfile:
-        'I risultati non dicono cosa hai già fatto: scegli un salvataggio dalle impostazioni.',
+        'I risultati non mostrano i tuoi progressi: scegli un salvataggio nelle impostazioni.',
       noCatalog:
-        'Si cerca solo nei titoli e nel testo della wiki, senza immagini, e nessun risultato apre Unlock o la Collezione.',
+        'La ricerca copre solo la wiki, senza immagini, e i risultati non aprono Unlock o la Collezione.',
       noWiki:
-        'Si cerca solo nei nomi del gioco, e nessun risultato apre una pagina.',
+        'La ricerca copre solo i nomi del gioco, e i risultati non aprono pagine della wiki.',
       noAchievementSection:
-        'Accanto agli achievement non compare "fatto" o "da fare". Non vuol dire che non li hai: vuol dire che non lo sappiamo.',
+        'Accanto agli achievement non compare «fatto» o «da fare»: non riusciamo a leggere quella parte del salvataggio.',
       noCollectionSection:
-        'Accanto agli oggetti non compare se ce l’hai già. Non vuol dire di no: vuol dire che non lo sappiamo.',
+        'Accanto agli oggetti non compare se li hai già: non riusciamo a leggere quella parte del salvataggio.',
     },
   },
   find: {
@@ -703,91 +704,92 @@ export const it = {
     previous: 'Risultato precedente',
     next: 'Risultato successivo',
     close: 'Chiudi la ricerca',
-    nothingToSearch: 'Qui non c’è niente in cui cercare.',
+    nothingToSearch: 'Qui non c’è niente da cercare.',
   },
   background: {
-    intro: "Quando parte l'app, e cosa fa quando chiudi l'ultima finestra.",
+    intro:
+      'Quando si avvia IsaacDome, e cosa succede quando chiudi l’ultima finestra.',
     startTitle: 'Avvia con Windows',
     startHint:
-      "IsaacDome deve essere aperta mentre giochi: il gioco riscrive il suo log a ogni avvio. Una sessione giocata prima di aprire l'app si recupera ancora — finché il gioco non viene riavviato, e da lì è persa.",
+      'Tieni IsaacDome aperta mentre giochi, così non perdi nessuna run: il gioco azzera il suo log a ogni avvio. Una sessione giocata ad app chiusa si recupera ancora, ma solo finché non riavvii il gioco.',
     startDev:
-      'Non disponibile in questa build. Una build di sviluppo metterebbe nel tuo accesso un percorso temporaneo, che a ogni avvio fallirebbe senza dirlo.',
+      'Non disponibile nelle build di sviluppo: registrerebbe all’accesso un percorso temporaneo che smetterebbe presto di funzionare.',
     startWithoutBackground:
-      "Con «resta aperta in background» spenta, all'accesso trovi l'icona accanto all'orologio e nessuna finestra; la prima finestra che apri e chiudi chiude l'app, e la lettura si ferma con lei.",
-    startFailedTitle: 'Windows non ha accettato la voce',
+      'Con «Resta aperta in background» disattivata, all’accesso IsaacDome parte come icona accanto all’orologio, senza finestre; quando chiudi la prima finestra che apri, l’app si chiude e smette di seguire le partite.',
+    startFailedTitle: 'Windows non ha accettato l’avvio automatico',
     stayTitle: 'Resta aperta in background',
     stayHint:
-      "Chiudendo l'ultima finestra l'app resta accanto all'orologio, nell'area di notifica: un clic sull'icona riapre la finestra. Spenta, chiudere l'ultima finestra chiude l'app.",
-    saveFailedTitle: "L'impostazione non è stata salvata",
+      'Quando chiudi l’ultima finestra, IsaacDome resta attiva nell’area di notifica accanto all’orologio: basta un clic sull’icona per riaprirla. Se disattivata, chiudere l’ultima finestra chiude l’app.',
+    saveFailedTitle: 'L’impostazione non è stata salvata',
     saveFailed:
-      "L'app si comporta già così, ma non siamo riusciti a scriverlo: al prossimo avvio torna com'era.",
+      'La modifica è già attiva, ma non siamo riusciti a salvarla: al prossimo avvio tornerà come prima.',
   },
   updates: {
     intro:
-      "Che versione hai, e se ne è uscita una nuova. L'app scarica l'aggiornamento mentre continui a usarla e lo installa quando lo dici tu.",
+      'La versione installata e gli aggiornamenti disponibili. IsaacDome scarica l’aggiornamento mentre la usi e lo installa quando vuoi tu.',
     currentVersion: 'Versione installata: {version}',
     autoTitle: 'Aggiorna automaticamente',
     autoHint:
-      "Accesa, a ogni avvio l'app chiede a GitHub se c'è una versione più nuova e, se c'è, la scarica. Spenta non parte nessuna richiesta: niente esce da questo computer se non premi «Controlla ora».",
+      'Se attivo, a ogni avvio l’app controlla su GitHub se c’è una nuova versione e la scarica. Se disattivo, non parte nessuna richiesta: niente lascia il tuo computer finché non premi «Controlla ora».',
     unsupported: 'Questa build non si aggiorna da sola.',
     unsupportedHint:
-      'Non disponibile in questa build. Un installer lanciato da qui sostituirebbe in silenzio la build di sviluppo con una di release, e nessuno se ne accorgerebbe.',
-    idle: 'Non abbiamo ancora controllato in questo avvio.',
-    checking: 'Sto controllando…',
-    upToDate: 'Hai la versione più recente.',
-    downloading: 'Sto scaricando la {version}…',
+      'Non disponibile nelle build di sviluppo: l’aggiornamento la sostituirebbe con una build di release.',
+    idle: 'Nessun controllo eseguito da quando hai aperto l’app.',
+    checking: 'Controllo in corso…',
+    upToDate: 'Hai già la versione più recente.',
+    downloading: 'Download della {version} in corso…',
     ready: 'La {version} è pronta da installare.',
     // Non è sfortuna come le altre: quello che è arrivato non è quello che dice di essere.
     failedRejected:
-      "L'aggiornamento è stato rifiutato: la firma non corrisponde. Non è stato installato niente. Scarica l'installer dalla pagina delle release invece di riprovare da qui.",
+      'Aggiornamento rifiutato: la firma non corrisponde, e non è stato installato nulla. Scarica l’installer dalla pagina delle release invece di riprovare da qui.',
     failedOffline:
-      'Non siamo riusciti a raggiungere GitHub. Riprova quando la connessione torna.',
-    failedNotPublished: 'Non c’è nessuna versione pubblicata da scaricare.',
+      'Impossibile raggiungere GitHub. Riprova quando sei di nuovo online.',
+    failedNotPublished: 'Non ci sono ancora versioni pubblicate da scaricare.',
     failedInstall:
-      "L'aggiornamento è stato scaricato e l'installazione non è partita. Il file è ancora qui: puoi riprovare.",
-    failedUnknown: "L'aggiornamento non è riuscito.",
-    failedTitle: 'Non è stato possibile installare',
-    notesTitle: 'Cosa cambia',
+      'L’aggiornamento è stato scaricato, ma l’installazione non è partita. Il file è ancora disponibile: puoi riprovare.',
+    failedUnknown: 'L’aggiornamento non è andato a buon fine.',
+    failedTitle: 'Installazione non riuscita',
+    notesTitle: 'Novità',
     check: 'Controlla ora',
     install: 'Riavvia e installa',
-    installHint: "Chiude l'app, installa la nuova versione e la riapre.",
-    saveFailedTitle: "L'impostazione non è stata salvata",
+    installHint: 'Chiude l’app, installa la nuova versione e la riapre.',
+    saveFailedTitle: 'L’impostazione non è stata salvata',
     saveFailed:
-      "L'app si comporta già così, ma non siamo riusciti a scriverlo: al prossimo avvio torna com'era.",
+      'La modifica è già attiva, ma non siamo riusciti a salvarla: al prossimo avvio tornerà come prima.',
   },
   tabsSettings: {
-    intro: "Cosa ritrovi quando riapri l'app.",
-    resumeTitle: "Riapri le tab dell'ultima sessione",
+    intro: 'Cosa ritrovi quando riapri IsaacDome.',
+    resumeTitle: 'Riapri le tab dell’ultima sessione',
     resumeHint:
-      "All'avvio ritrovi le finestre che avevi, con dentro le stesse tab. Spenta, l'app riparte dalla schermata iniziale e quello che era salvato viene cancellato subito.",
+      'All’avvio ritrovi le finestre e le tab che avevi aperto. Se disattivata, l’app riparte dalla schermata iniziale e la sessione salvata viene cancellata subito.',
     keptTitle: 'Cosa viene salvato',
     keptWindows:
-      'Le finestre che avevi aperte, la loro posizione e la loro dimensione.',
+      'Le finestre che avevi aperto, con la loro posizione e dimensione.',
     keptTabs:
-      'Le tab di ogni finestra, nel loro ordine, e quale era in primo piano.',
+      'Le tab di ogni finestra, nel loro ordine, e quella in primo piano.',
     keptReading:
-      "Come stavi leggendo ogni tab: i filtri, l'ordinamento, la riga selezionata e il punto in cui eri arrivato.",
+      'Lo stato di ogni tab: i filtri, l’ordinamento, la riga selezionata e il punto in cui eri arrivato.',
     keptSidebar: 'La larghezza della barra laterale.',
     stoppedTitle: 'La sessione non viene più salvata',
     stopped:
-      'Le tab aperte restano dove sono, ma non verranno riaperte al prossimo avvio: quello che le finestre stanno mostrando supera lo spazio riservato alla sessione. Chiudere qualche tab e riaprirne una qualsiasi riprende il salvataggio.',
-    saveFailedTitle: "L'impostazione non è stata salvata",
+      'Ci sono troppe tab aperte per salvarle tutte: restano dove sono, ma non verranno riaperte al prossimo avvio. Chiudine qualcuna e poi aprine una qualsiasi: il salvataggio riprenderà.',
+    saveFailedTitle: 'L’impostazione non è stata salvata',
     saveFailed:
-      "L'app si comporta già così, ma non siamo riusciti a scriverlo: al prossimo avvio torna com'era.",
+      'La modifica è già attiva, ma non siamo riusciti a salvarla: al prossimo avvio tornerà come prima.',
   },
   appearance: {
     intro:
-      "Scegli quanto è grande l'interfaccia. Cambia tutto insieme — testo, icone, righe, la finestra — e resta com'è tra un avvio e l'altro.",
+      'Scegli la dimensione dell’interfaccia: testo, icone, righe e finestra cambiano insieme, e la scelta resta tra un avvio e l’altro.',
     scaleTitle: 'Dimensione',
-    scaleLabel: "Dimensione dell'interfaccia",
+    scaleLabel: 'Dimensione dell’interfaccia',
     preview: 'Anteprima',
     previewHint:
-      "Resta qui mentre scorri: è l'app disegnata alla dimensione scelta.",
+      'Resta visibile mentre scorri: è l’app alla dimensione scelta.',
     shortcut: 'Da qualsiasi schermata:',
     shortcutReset: 'torna al 100%',
     saveFailedTitle: 'La dimensione non è stata salvata',
     saveFailed:
-      "L'interfaccia è già a questa dimensione, ma non siamo riusciti a scriverla: al prossimo avvio torna com'era.",
+      'La dimensione è già attiva, ma non siamo riusciti a salvarla: al prossimo avvio tornerà come prima.',
     sample: {
       kpi: 'Achievement fatti',
       item: 'The Sad Onion',
@@ -801,83 +803,83 @@ export const it = {
       'IsaacDome è un progetto realizzato dai fan e non è affiliato, approvato o sponsorizzato da Nicalis né da Edmund McMillen.',
     version: 'Versione',
     versionUnknown: 'server di sviluppo',
-    promisesTitle: 'Le tre promesse',
+    promisesTitle: 'Le nostre promesse',
     promises: {
-      readOnlyTitle: 'Salvataggi in sola lettura',
+      readOnlyTitle: 'I tuoi salvataggi non vengono mai modificati',
       readOnly:
-        'I salvataggi vengono esclusivamente letti. Il modulo che apre i file .dat non contiene codice di scrittura e il checksum non viene mai ricalcolato.',
+        'IsaacDome legge i salvataggi e basta: il codice che apre i file .dat non contiene alcuna funzione di scrittura.',
       offlineTitle: 'Nessun account, server o telemetria',
       offline:
-        'IsaacDome funziona offline. Non richiede un account e non utilizza server né sistemi di telemetria. La connessione di rete viene utilizzata esclusivamente per un eventuale aggiornamento facoltativo del dataset.',
-      oneFileTitle: 'Un solo file scritto',
+        'IsaacDome funziona offline, senza account, server o telemetria. La rete serve solo per gli aggiornamenti, e puoi disattivarli.',
+      oneFileTitle: 'Scrive solo nelle sue cartelle',
       oneFile:
-        "L'app scrive un solo file, isaacdome.db, nella cartella dati dell'app. Nessun altro file sul disco viene modificato o scritto.",
+        'IsaacDome salva le impostazioni e il suo database, isaacdome.db, nelle proprie cartelle. Il gioco, i salvataggi e il resto del disco non vengono mai toccati.',
     },
     creditsTitle: 'Crediti e licenze',
     wikiText:
       'Il testo della wiki è distribuito con licenza CC BY-SA 4.0 e proviene da bindingofisaacrebirth.wiki.gg.',
     assets:
-      "Le immagini del gioco non sono incluse né distribuite con l'app. Vengono estratte direttamente dalla copia del gioco dell'utente.",
+      'Le immagini del gioco non sono incluse nell’app: vengono estratte dalla tua installazione del gioco.',
     font: 'Il carattere Determination Mono è distribuito con licenza CC BY 3.0.',
   },
 
   plan: {
-    opens: 'apre {count}',
-    opensNothing: 'non apre altro',
-    detail: 'Mostra il dettaglio',
+    opens: 'sblocca {count}',
+    opensNothing: 'non sblocca altro',
+    detail: 'Mostra i dettagli',
     queueCount: 'La tua coda',
     addPane: 'Obiettivi consigliati',
     hint: {
-      idle: 'trascina per riordinare — nessuno spostamento viene rifiutato',
-      dragging: 'rilascia dove vuoi: la coda si sistema da sola',
-      stoppedUnder: 'si è fermata sotto «{name}»: è un prerequisito',
+      idle: 'trascina per riordinare: ogni spostamento è consentito',
+      dragging: 'rilascia dove vuoi: la coda si riordina da sola',
+      stoppedUnder: 'si è fermata sotto «{name}», che è un suo prerequisito',
     },
     row: {
       move: 'Sposta la riga (Alt e freccia su o giù)',
-      wanted: 'aggiunta da te',
+      wanted: 'aggiunto da te',
       serves: 'serve per «{name}»',
       outsideQueue: 'prerequisiti non in coda',
     },
     achievementNumbered: 'achievement {id}',
     empty: 'La coda è vuota.',
-    emptyHint: 'Aggiungi una riga dalla proposta qui accanto, o da Unlock.',
+    emptyHint: 'Aggiungi un obiettivo dai consigli qui accanto o da Unlock.',
     completed: {
-      closed: 'righe chiuse giocando: {count}',
+      closed: 'completati giocando: {count}',
       closedWanted:
-        'righe chiuse giocando: {count} · fra quelle aggiunte da te: {names}',
+        'completati giocando: {count} · tra quelli aggiunti da te: {names}',
     },
-    unresolved: 'achievement {id}: il gioco non lo conosce più',
+    unresolved: 'achievement {id}: non esiste più nel gioco',
     alerts: {
       storeUnavailableTitle: 'Il piano non è disponibile',
-      unreadableTitle: 'La coda salvata non si legge con questa versione',
+      unreadableTitle: 'Questa versione non riesce a leggere la coda salvata',
       unreadable:
-        'Resta com’è nel file e non viene sovrascritta: una versione più recente dell’app potrebbe saperla leggere.',
+        'La coda resta salvata così com’è e non viene sovrascritta: una versione più recente dell’app potrà leggerla.',
       noCatalogTitle: 'Serve il gioco installato',
       noCatalog:
-        'Senza i file del gioco non sappiamo che achievement sia ogni riga né cosa le manchi. La coda resta salvata: torna com’era appena il gioco c’è.',
+        'Senza i file del gioco non possiamo sapere a quale achievement corrisponde ogni riga, né cosa gli manca. La coda resta salvata e torna com’era appena il gioco è installato.',
       goalsPendingTitle: 'Obiettivi salvati da importare: {count}',
       goalsPending:
-        'Obiettivi salvati prima che esistesse la coda: nessuno li sposta da solo.',
+        'Obiettivi salvati con una versione precedente dell’app: importali per aggiungerli alla coda.',
       import: 'Importa nella coda',
     },
   },
   completion: {
     intro:
-      'Ogni personaggio, ogni marchio, e quanto il salvataggio lascia leggere.',
+      'Tutti i personaggi e tutti i loro marchi di completamento, a colpo d’occhio.',
     headline: 'marchi presi in hard',
     kpi: {
       columns: 'boss completi',
       columnsExplain:
-        'Boss che ogni personaggio ha battuto in hard (in Greed, in Ultra Greedier), fra le celle leggibili di quella colonna. È lo stesso conto di “personaggi completi”, letto per colonna invece che per riga — ed è quello che disegna la carta qui accanto: un simbolo compare in hard solo quando la colonna è piena.',
+        'Boss battuti in hard da tutti i personaggi (Greed in Ultra Greedier), contando solo le celle leggibili. È lo stesso conto dei «personaggi completi», letto per colonna invece che per riga, ed è quello che disegna la carta qui accanto: un simbolo appare nella versione hard solo quando la sua colonna è piena.',
       normal: 'marchi in normale',
       normalExplain:
-        'Celle con un segno, fra quelle che il salvataggio lascia leggere. Un marchio preso in hard conta anche qui, perché battere un boss in hard è la più difficile delle due. Le celle non leggibili restano fuori dal denominatore.',
+        'Celle con almeno un marchio, tra quelle leggibili. Un marchio preso in hard conta anche qui. Le celle non leggibili sono escluse dal totale.',
       hard: 'marchi in hard',
       hardExplain:
-        'Celle con il secondo livello, sullo stesso denominatore: hard nelle colonne dei boss, Ultra Greedier in quella di Greed. Mai più del numero accanto, perché un marchio al secondo livello conta anche come marchio normale.',
+        'Celle con il marchio di secondo livello, sullo stesso totale: hard per i boss, Ultra Greedier per Greed. Non supera mai il numero accanto, perché ogni marchio hard vale anche come normale.',
       complete: 'personaggi completi',
       completeExplain:
-        'Personaggi con tutte le celle leggibili in hard, e Greed in Ultra Greedier, che è quello che il widget del gioco intende per riga piena. Chi ha celle non leggibili risulta completo su meno colonne.',
+        'Personaggi con tutte le celle leggibili in hard (Greed in Ultra Greedier): è la riga piena del gioco. Per chi ha celle non leggibili contano solo le altre.',
     },
     card: {
       title: 'Matrice dei marchi',
@@ -906,26 +908,26 @@ export const it = {
       normal: 'normale',
       hard: 'hard',
       ultraGreedier: 'Ultra Greedier',
-      unknown: 'non lo sappiamo dire per questo personaggio',
-      unexpected: 'un valore che non ci aspettavamo:',
+      unknown: 'non leggibile per questo personaggio',
+      unexpected: 'valore inatteso:',
     },
     nothingReadable:
-      'Di questo salvataggio non riusciamo a leggere nessun marchio: la parte che li contiene manca o si interrompe a metà.',
+      'Non riusciamo a leggere nessun marchio da questo salvataggio: la parte che li contiene manca o è incompleta.',
   },
   // La schermata di atterraggio: cosa ottieni, come, perché conviene, e l'azione. L'intro
   // dice *cos'è* la lista, non come è stata calcolata: il calcolo sta nelle promesse della
   // finestra Informazioni, dove chi vuole lo trova (B32 §2).
   goals: {
     intro:
-      'Cosa sbloccare e in che ordine: prendi dai consigli, o chiedi quello che vuoi, e mettilo in coda.',
-    fanOut: 'Aprono di più',
+      'Cosa sbloccare e in che ordine: scegli dai consigli o cerca quello che vuoi, e aggiungilo alla coda.',
+    fanOut: 'Sbloccano di più',
     closeness: 'Ci sei quasi',
-    seeAll: 'Vedile tutte',
+    seeAll: 'Vedi tutti',
     noCatalogTitle: 'Non troviamo il gioco',
     noCatalog:
-      'IsaacDome legge i file di The Binding of Isaac per sapere quale achievement sblocca cosa, e sul computer non li trova. Installa il gioco da Steam e riapri l’app: qui troverai cosa conviene giocare stasera.',
+      'IsaacDome legge i file di The Binding of Isaac per sapere cosa sblocca ogni achievement, ma su questo computer non li trova. Installa il gioco da Steam e riapri l’app: qui troverai cosa conviene giocare stasera.',
     nothingNow:
-      'Non c’è niente da sbloccare adesso: o è tutto fatto, o tutto aspetta qualcos’altro.',
+      'Al momento non c’è niente da sbloccare: hai già fatto tutto, oppure ogni obiettivo richiede prima qualcos’altro.',
   },
   // B37: la stessa schermata, chiesta dall'altro capo. Dici cosa vuoi e la risposta è la
   // serie da giocare, nell'ordine in cui il Piano la giocherebbe.
@@ -937,32 +939,32 @@ export const it = {
     availableNow: 'Puoi giocarlo adesso',
     done: 'Ce l’hai già',
     noProfile: 'Non sappiamo a che punto sei',
-    wayOf: 'Strada {index} di {total}',
+    wayOf: 'Percorso {index} di {total}',
     unknown:
-      'Più {count} requisiti che non riusciamo a leggere: la serie potrebbe essere più lunga.',
-    addAll: 'Metti tutto nel Piano',
+      'Più {count} requisiti che non riusciamo a interpretare: il percorso potrebbe essere più lungo.',
+    addAll: 'Aggiungi tutto al Piano',
     diagnostics: {
       noCatalog:
-        'Senza i file del gioco non sappiamo quale achievement sblocchi cosa. Installa The Binding of Isaac e riapri l’app.',
+        'Senza i file del gioco non sappiamo cosa sblocca ogni achievement. Installa The Binding of Isaac e riapri l’app.',
       noProfile:
-        'Nessun profilo letto: possiamo dirti come si ottiene, non a che punto sei.',
+        'Nessun salvataggio scelto: possiamo dirti come si ottiene, ma non a che punto sei.',
       nothingUnlocks:
-        'Niente lo sblocca: o ce l’hai da sempre, o si ottiene giocando e non da un achievement.',
-      notUnlockable: 'Questo non è qualcosa che si sblocca.',
+        'Nessun achievement lo sblocca: o è disponibile da subito, o si ottiene giocando.',
+      notUnlockable: 'Questo non si sblocca.',
     },
   },
   // Il blocco che la pagina wiki di un achievement guadagna quando c'è un profilo attivo.
   // Dice soltanto dove sei tu: cos'è e cosa chiede lo dice già l'infobox sotto.
   profileBlock: {
-    title: 'Il tuo profilo',
+    title: 'I tuoi progressi',
     missing: 'Cosa ti manca',
     unlocks: 'Cosa ottieni',
-    opens: 'Sbloccarlo apre altre {count} cose.',
+    opens: 'Sbloccarlo apre altri {count} contenuti.',
     // Un nodo già fatto non "aprirà": ha aperto. La stessa frase al futuro, sotto un
     // "Già fatto", si legge come se ci fosse ancora qualcosa da fare.
-    opened: 'Ha aperto altre {count} cose.',
-    opensNothing: 'Non apre nient’altro: è una fine di ramo.',
-    openedNothing: 'Non ha aperto nient’altro: è una fine di ramo.',
+    opened: 'Ha sbloccato altri {count} contenuti.',
+    opensNothing: 'Non sblocca nient’altro.',
+    openedNothing: 'Non ha sbloccato nient’altro.',
     stepsMissing: 'Prima servono ancora {count} sblocchi.',
     done: 'Già fatto.',
   },
@@ -986,7 +988,7 @@ export const it = {
       mark: 'Marchi di completamento',
       counter: 'Boss da battere',
       threshold: 'Trasformazioni',
-      unknown: 'Condizioni che non sappiamo leggere',
+      unknown: 'Condizioni che non riusciamo a interpretare',
     },
     kinds: {
       passive: 'oggetto passivo',
@@ -996,7 +998,7 @@ export const it = {
       character: 'personaggio',
       boss: 'boss',
       challenge: 'sfida',
-      nothing: 'niente che il gioco nomini',
+      nothing: 'nessuno sblocco indicato dal gioco',
     },
     stateName: {
       done: 'fatto',
@@ -1017,16 +1019,16 @@ export const it = {
   },
   unlock: {
     intro:
-      'Tutti gli achievement del gioco, da filtrare come vuoi. Il filtro che conta più degli altri è "sbloccabile ora".',
+      'Tutti gli achievement del gioco, filtrabili come vuoi. Il filtro più utile è «sbloccabile ora».',
     rows: 'righe',
     search: 'cerca nome, condizione o cosa sblocca',
     sortBy: 'ordina per',
     sort: {
-      fanOut: 'quanti ne apre',
+      fanOut: 'quanti ne sblocca',
       steps: 'passi mancanti',
       name: 'nome',
     },
-    empty: 'Nessun obiettivo da mostrare.',
+    empty: 'Nessun achievement da mostrare.',
     noResults: 'Nessuna riga con questi filtri.',
     facet: {
       state: 'Stato',
@@ -1039,21 +1041,21 @@ export const it = {
       unlocks: 'Cosa sblocca',
       condition: 'Condizione',
       state: 'Stato',
-      fanOut: 'Ne apre',
+      fanOut: 'Ne sblocca',
     },
-    unlocksNothing: 'niente che il gioco nomini',
-    noCondition: 'il gioco non la scrive',
+    unlocksNothing: 'nessuno sblocco indicato dal gioco',
+    noCondition: 'condizione non indicata dal gioco',
     diagnostics: {
       noCatalogTitle: 'Non troviamo il gioco',
       noCatalog:
-        'Senza i file del gioco gli achievement non hanno nome né condizione: le righe dicono soltanto quali hai già fatto.',
-      noAchievementSectionTitle: 'Il salvataggio non dice cosa hai sbloccato',
+        'Senza i file del gioco gli achievement non hanno nome né condizione: puoi vedere solo quali hai già fatto.',
+      noAchievementSectionTitle: 'Non sappiamo cosa hai sbloccato',
       noAchievementSection:
-        'Zero righe fatte non vuol dire zero achievement: vuol dire che quella parte del salvataggio non si è aperta.',
+        'Non riusciamo a leggere la parte del salvataggio con gli achievement: se nessuno risulta fatto, non significa che non ne hai.',
       slotsBeyondCatalog:
-        '{count} achievement che il salvataggio conosce e la tua copia del gioco no: probabilmente sono di una versione più recente',
+        '{count} achievement presenti nel salvataggio ma non nel gioco installato: probabilmente vengono da una versione più recente',
       catalogBeyondSlots:
-        '{count} achievement che il gioco ha e questo salvataggio non nomina: non compaiono nella lista',
+        '{count} achievement del gioco non compaiono in questo salvataggio e sono esclusi dalla lista',
     },
   },
   // La prima cosa che si incontra, quando nessun salvataggio è ancora scelto. Ha preso il
@@ -1061,10 +1063,10 @@ export const it = {
   welcome: {
     title: 'Con quale salvataggio giochi?',
     subtitle:
-      'I numeri di tutta l’app vengono dal file che scegli qui. Puoi cambiarlo quando vuoi.',
+      'Tutti i dati dell’app vengono dal salvataggio che scegli qui. Puoi cambiarlo quando vuoi.',
     savedGone:
-      'Il salvataggio che usavi non esiste più dove stava. Non ne abbiamo scelto un altro al suo posto: i numeri di un profilo diverso, mostrati senza dirlo, sono l’errore che non ti accorgi di avere.',
-    hint: 'Il più recente è solo un suggerimento: scegli tu quale leggere.',
+      'Il salvataggio che usavi non si trova più dov’era. Non ne abbiamo scelto un altro al posto tuo: scegli tu quale leggere.',
+    hint: 'Ti suggeriamo il più recente, ma la scelta è tua.',
     use: 'Entra',
     cancel: 'Annulla',
     card: {
@@ -1072,35 +1074,35 @@ export const it = {
       achievements: 'achievement',
       items: 'oggetti',
       marks: 'marchi',
-      unread: 'non si legge',
+      unread: 'non leggibile',
       suggested: 'più recente',
       never: 'data sconosciuta',
-      unreadableCells: '{count} celle non lette',
-      unreadable: 'Questo file non si è lasciato leggere',
+      unreadableCells: '{count} celle non leggibili',
+      unreadable: 'Non riusciamo a leggere questo file',
     },
     nothing: {
-      title: 'Non abbiamo trovato nessun salvataggio',
-      retry: 'Riprova la ricerca',
-      diagnostics: 'Diagnostica — cosa abbiamo provato',
+      title: 'Nessun salvataggio trovato',
+      retry: 'Cerca di nuovo',
+      diagnostics: 'Dettagli — dove abbiamo cercato',
       chooseGame: 'Scegli la cartella del gioco',
       chooseSaves: 'Scegli la cartella dei salvataggi',
     },
     failed: {
-      title: 'Non siamo riusciti a leggere',
+      title: 'Lettura non riuscita',
       retry: 'Riprova',
     },
   },
   indicator: {
-    noProfile: 'Nessun profilo attivo',
+    noProfile: 'Nessun salvataggio scelto',
     notFound: 'Salvataggi non trovati',
     slot: 'slot {slot}',
   },
   profile: {
     title: 'Profilo di gioco',
     intro:
-      'Da dove arrivano i numeri: quale salvataggio stai leggendo, dove lo abbiamo trovato e cosa il file si è lasciato leggere. Per cambiarlo, l’indicatore in alto.',
+      'Il salvataggio che stai usando, dove l’abbiamo trovato e cosa siamo riusciti a leggere. Per cambiarlo, usa l’indicatore in alto.',
     chain: {
-      title: 'Le tre cose che servono',
+      title: 'Cosa serve',
       summary: 'Steam, il gioco e i salvataggi',
       steam: 'Steam',
       game: 'Gioco',
@@ -1110,22 +1112,22 @@ export const it = {
       yourChoice: 'scegli tu',
       several: 'più di uno',
       chosen: 'scelto',
-      candidates: '{n} file candidati',
+      candidates: '{n} file trovati',
     },
     none: {
       steamNotFound:
-        'Non troviamo Steam su questo computer, e partiamo da lì per arrivare alla cartella del gioco e poi ai salvataggi.',
+        'Non troviamo Steam su questo computer: è da lì che partiamo per trovare il gioco e i salvataggi.',
       gameNotFound:
-        'Steam c’è, ma il gioco non è in nessuna delle sue librerie: senza la cartella del gioco non troviamo i salvataggi.',
+        'Steam è installato, ma il gioco non è in nessuna delle sue librerie: senza la cartella del gioco non possiamo trovare i salvataggi.',
       noSaves:
-        'Il gioco c’è, ma nelle posizioni note non c’è nessun file di salvataggio.',
+        'Il gioco è installato, ma non abbiamo trovato salvataggi nelle posizioni abituali.',
       noSavesInChosenFolder:
-        'Nella cartella che hai indicato non c’è nessun salvataggio. Il gioco li chiama `rep_persistentgamedata1.dat` o `rep+persistentgamedata1.dat`: se non sono lì, la cartella è un’altra.',
+        'Nella cartella che hai indicato non c’è nessun salvataggio. Il gioco li chiama `rep_persistentgamedata1.dat` o `rep+persistentgamedata1.dat`: se non sono lì, la cartella giusta è un’altra.',
     },
     diagnostics: {
       steamNotFound: 'Steam: nessuna installazione trovata',
       gameNotFound: 'Gioco: non presente nelle librerie di Steam',
-      noSavesFound: 'Salvataggi: nessun file nelle posizioni note',
+      noSavesFound: 'Salvataggi: nessun file nelle posizioni abituali',
       noSavesInChosenFolder:
         'Salvataggi: nessun file nella cartella che hai indicato',
       unreadablePath: 'Percorso non leggibile · {name} · {reason}',
@@ -1137,22 +1139,22 @@ export const it = {
       manual: 'Scelto a mano',
     },
     active: {
-      title: 'Profilo attivo',
-      autoSelected: 'scelto da noi · era l’unico',
+      title: 'Salvataggio attivo',
+      autoSelected: 'scelto in automatico · era l’unico',
       modified: 'Modificato',
       size: 'Dimensione',
       dlcs: 'DLC',
       foundIn: 'Trovato in {source}',
-      change: 'Cambia profilo',
+      change: 'Cambia salvataggio',
       reload: 'Rileggi il file',
       unknownDate: 'sconosciuto',
       bytes: '{count} byte',
     },
     read: {
-      title: 'Cosa siamo riusciti a leggere',
+      title: 'Cosa abbiamo letto',
       sections: 'sezioni',
-      note: 'Di alcune parti del salvataggio non sappiamo ancora cosa contengano, e le quantità cambiano a ogni patch del gioco. Quello che vedi qui e nel resto dell’app è sempre quanto dichiara il tuo file, mai un numero deciso da noi.',
-      diagnostics: 'Il file contiene qualcosa che non ci aspettavamo',
+      note: 'Alcune parti del salvataggio non sono ancora decifrate, e le quantità cambiano con le patch del gioco. I numeri che vedi qui e nel resto dell’app vengono sempre dal tuo file, mai da stime nostre.',
+      diagnostics: 'Il file contiene dati inattesi',
     },
     saveDiagnostics: {
       unexpectedKind: 'Una sezione non è quella attesa ({expected}, {found})',
@@ -1170,7 +1172,7 @@ export const it = {
       unknown: 'Da identificare',
     },
     errors: {
-      title: 'Non riusciamo a leggere il profilo',
+      title: 'Non riusciamo a leggere il salvataggio',
       retry: 'Riprova',
     },
   },
@@ -1185,40 +1187,41 @@ export const it = {
   // Perché un comando non ha potuto rispondere. Da N2 sono varianti sul filo, non una frase
   // costruita in Rust: i numeri arrivano come numeri e le parole stanno qui.
   ipcReasons: {
-    ioNotFound: 'Il file non c’è.',
-    ioPermissionDenied: 'Windows non ci lascia aprirlo.',
-    ioOther: 'Il sistema non lo ha aperto.',
-    saveTooShort: 'È troppo corto per contenere un salvataggio.',
+    ioNotFound: 'Il file non esiste.',
+    ioPermissionDenied: 'Windows non ci permette di aprirlo.',
+    ioOther: 'Il sistema non è riuscito ad aprirlo.',
+    saveTooShort: 'È troppo corto per essere un salvataggio.',
     saveBadMagic: 'Non sembra un salvataggio di Isaac.',
-    settingsConfigDirUnknown: 'Windows non dice dove vanno le impostazioni.',
-    settingsEncoding: 'Le impostazioni non si sono scritte.',
-    storeDataDirUnknown: 'Windows non dice dove vanno i dati dell’app.',
-    storeDataDirNotCreatable: 'La cartella dell’app non si crea.',
-    storeUnreadable: 'Il file non si apre, o non è un database.',
+    settingsConfigDirUnknown:
+      'Windows non indica dove salvare le impostazioni.',
+    settingsEncoding: 'Non siamo riusciti a scrivere le impostazioni.',
+    storeDataDirUnknown: 'Windows non indica dove salvare i dati dell’app.',
+    storeDataDirNotCreatable: 'Non riusciamo a creare la cartella dell’app.',
+    storeUnreadable: 'Il file non si apre, oppure non è un database.',
     storeNewerSchema:
       'Viene da una versione più recente dell’app ({found} contro {supported}).',
-    storeQueueUnparseable: 'Il piano salvato non si legge.',
+    storeQueueUnparseable: 'Non riusciamo a leggere il piano salvato.',
     autostartWriteRefused:
-      "Windows ha rifiutato la voce: può esserci di mezzo un criterio di sistema o un antivirus. All'accesso non partirà niente.",
+      'Windows ha rifiutato la voce: potrebbe dipendere da un criterio di sistema o da un antivirus. All’accesso IsaacDome non partirà.',
     autostartWriteIgnored:
-      'La voce è stata scritta e Windows continua a dire di no. Guarda nel Task Manager, in App di avvio: se lì è disattivata, IsaacDome resta spenta qualunque cosa si scriva da qui.',
+      'La voce è stata scritta, ma Windows continua a bloccarla. Controlla in Gestione attività, alla scheda App di avvio: se IsaacDome è disattivata lì, va riattivata da lì.',
   },
   // One sentence per IpcError, for every screen that has to say why a command failed.
   ipcErrors: {
-    noBackend: 'Il backend non ha risposto.',
-    noActiveProfile: 'Nessun profilo attivo.',
-    unknownProfile: 'Il profilo scelto non esiste più.',
-    unreadableSave: 'Il salvataggio non si legge.',
-    settingsNotWritable: 'Non riusciamo a ricordare la scelta.',
+    noBackend: 'L’app non ha risposto.',
+    noActiveProfile: 'Nessun salvataggio scelto.',
+    unknownProfile: 'Il salvataggio scelto non esiste più.',
+    unreadableSave: 'Non riusciamo a leggere il salvataggio.',
+    settingsNotWritable: 'Non siamo riusciti a salvare la scelta.',
     unknownTarget: 'Quello che cerchi non esiste.',
     catalogUnavailable: 'Il catalogo del gioco non è disponibile.',
-    storeUnavailable: "Il database dell'app non è disponibile.",
-    wikiUnavailable: 'Il dataset della wiki non è disponibile.',
+    storeUnavailable: 'Il database dell’app non è disponibile.',
+    wikiUnavailable: 'La wiki non è disponibile.',
     sessionTooLarge:
       'La sessione delle tab è troppo grande per essere salvata.',
     autostartNotWritable:
-      "Windows non ha accettato la voce di avvio all'accesso.",
-    updateNotReady: "Non c'è nessun aggiornamento scaricato da installare.",
+      'Windows non ha accettato l’avvio automatico all’accesso.',
+    updateNotReady: 'Non c’è nessun aggiornamento scaricato da installare.',
   },
 }
 
