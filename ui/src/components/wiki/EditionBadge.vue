@@ -10,12 +10,22 @@ import { toneOfEdition } from '@/lib/wiki/tone'
 // "Added in …" and "Removed in …", each in the edition's own colour.
 // `dlc` is the entry's own restriction list; `editionAdded`/`editionRemoved` already read
 // the two null cases that mean "draw nothing" (no restriction, or present since Rebirth),
-// so this component states no rule of its own about when a chip appears.
-const props = defineProps<{ dlc: Dlc[] }>()
+// so this component states no rule of its own about when a chip appears. `compact` is a
+// card's form: the edition's name alone, whole where "Added in Repentance+" would be cut, the
+// sentence on hover; a removed edition's name is struck through.
+const props = defineProps<{ dlc: Dlc[]; compact?: boolean }>()
 const { t } = useMessages()
 
 const added = computed(() => editionAdded(props.dlc))
 const removed = computed(() => editionRemoved(props.dlc))
+const addedText = computed(() =>
+  added.value ? t('wiki.addedIn', { edition: dlcNames[added.value] }) : '',
+)
+const removedText = computed(() =>
+  removed.value
+    ? t('wiki.removedIn', { edition: dlcNames[removed.value] })
+    : '',
+)
 </script>
 
 <template>
@@ -23,11 +33,15 @@ const removed = computed(() => editionRemoved(props.dlc))
     v-if="added || removed"
     class="flex max-w-full min-w-0 flex-wrap items-center gap-2"
   >
-    <Chip v-if="added" :tone="toneOfEdition(added)">{{
-      t('wiki.addedIn', { edition: dlcNames[added] })
+    <Chip v-if="added" :tone="toneOfEdition(added)" :title="addedText">{{
+      compact ? dlcNames[added] : addedText
     }}</Chip>
-    <Chip v-if="removed" :tone="toneOfEdition(removed)">{{
-      t('wiki.removedIn', { edition: dlcNames[removed] })
-    }}</Chip>
+    <Chip
+      v-if="removed"
+      :tone="toneOfEdition(removed)"
+      :title="removedText"
+      :class="compact ? 'line-through' : undefined"
+      >{{ compact ? dlcNames[removed] : removedText }}</Chip
+    >
   </span>
 </template>
