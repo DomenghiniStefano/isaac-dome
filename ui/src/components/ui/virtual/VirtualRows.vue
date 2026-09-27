@@ -5,6 +5,7 @@ import {
   useResizeObserver,
 } from '@vueuse/core'
 import { computed, inject, nextTick, onMounted, ref, watch } from 'vue'
+import type { ComponentPublicInstance } from 'vue'
 import { useScaledRows } from '@/composables/useScaledRows'
 import { Timing } from '@/lib/constants/timing'
 import { offsetToApply } from '@/lib/scale/scrollOffset'
@@ -34,7 +35,10 @@ const props = defineProps<{
 
 const emit = defineEmits<{ offsetChange: [ScrollOffset] }>()
 defineSlots<{
-  default(props: { visible: VisibleRow<T>[] }): unknown
+  default(props: {
+    visible: VisibleRow<T>[]
+    measure: (el: Element | ComponentPublicInstance | null) => void
+  }): unknown
 }>()
 
 // The box this list scrolls in: its own, or the screen's when the screen scrolls as a whole
@@ -72,6 +76,14 @@ const virtualizer = useScaledRows({
   overscan: props.overscan,
   scrollMargin: () => margin.value,
 })
+
+// A row whose height depends on what it holds — a card grid row, as tall as its tallest card —
+// hands its element to `measure` (with `data-index`), and the virtualizer lays the rows out
+// from what they measure instead of from `rowPx`, which stays the estimate. A list whose rows
+// are all one height does not use it and keeps the fixed layout.
+const measure = (el: Element | ComponentPublicInstance | null): void => {
+  if (el instanceof Element) virtualizer.value.measureElement(el)
+}
 
 const visible = computed(() =>
   visibleRows(virtualizer.value.getVirtualItems(), props.rows, margin.value),
@@ -136,7 +148,7 @@ useEventListener(() => page?.value ?? null, 'scroll', onScroll, {
     @scroll="onScroll"
   >
     <div ref="bodyEl" :style="body" class="relative h-(--virtual-rows-total)">
-      <slot :visible="visible" />
+      <slot :visible="visible" :measure="measure" />
     </div>
   </div>
 </template>
