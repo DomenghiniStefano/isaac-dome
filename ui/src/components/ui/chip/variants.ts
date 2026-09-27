@@ -6,7 +6,11 @@ import { Tone } from '@/lib/wiki/tone'
 // else. There is no third "line" token in the wiki restyle's colour families (card #90,
 // decision 5 — only `-surface`/`-foreground`), so the border is the same bright colour the
 // text is, the way `BadgeVariant.Unknown` already borrows its own foreground for its edge.
-const toneClass: Record<Tone, string> = {
+// Exported so a surface that wants the same tone painted large — the landing's tiles and hero
+// (card #90, decision 8), never a pill of their own — read the one definition instead of a
+// second hand-written map: Tailwind's class scanner needs the literal strings written
+// somewhere, and this is where `Chip` already keeps them.
+export const toneClass: Record<Tone, string> = {
   [Tone.EditionRebirth]:
     'border-edition-rebirth-foreground bg-edition-rebirth-surface text-edition-rebirth-foreground',
   [Tone.EditionAfterbirth]:

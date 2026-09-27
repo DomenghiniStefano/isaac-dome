@@ -8,13 +8,25 @@ import { cn } from '@/lib/cn'
 import type { Target } from '@/lib/ipc/types'
 import { categoryOf } from '@/lib/wiki/category'
 import { wikiCategoryIcon } from '@/router/routeTable'
+import type { WikiCategory } from '@/router/routeTable'
 import { FigureBoxPx, SpriteNativePx, integerScale } from './figureScale'
 import { FigureSize } from './figureSize'
 
 const props = defineProps<{
-  target: Target
+  target: Target | null
   url: string | null
   size: FigureSize
+  /**
+   * The category to read the fallback icon from, when the caller already knows it precisely
+   * — a landing tile or the hero's mosaic (card #90, decision 8), which draw a category's own
+   * representative picture and not one page's. `categoryOf(target)` (the default below) is an
+   * approximation for two kinds: an `entity` always reads as Bosses, so it cannot tell a
+   * Monsters tile from a Bosses one, and an `article` reads as no category at all, so it
+   * cannot resolve the four article-based tiles (cards & runes, pickups, stages, versions).
+   * Decides the fallback icon only — the frame (sprite, painting or portrait) still comes from
+   * `target` alone, unchanged for every caller that doesn't pass this.
+   */
+  category?: WikiCategory
 }>()
 
 // One figure component, everywhere a wiki picture is drawn (card #90, decision 2): the
@@ -28,7 +40,11 @@ const Frame = {
 } as const
 type Frame = (typeof Frame)[keyof typeof Frame]
 
+// `target === null` only ever reaches here from a landing sample with no representative page
+// at all (`CategorySample.target`, `wiki_samples.rs`): `url` is always null then too, so no
+// frame is ever actually drawn — Portrait is picked for its box, and nothing else reads it.
 const frame = computed((): Frame => {
+  if (props.target === null) return Frame.Portrait
   switch (props.target.kind) {
     case 'item':
     case 'trinket':
@@ -50,20 +66,25 @@ const frame = computed((): Frame => {
 })
 
 // Without the game, or without a picture at all (a transformation, a stage, a version
-// article), the figure falls back to the page's own category icon — the same one the
-// landing tile draws — never a hole (Review Focus 2). `categoryOf` returns `null` for the
-// four kinds it cannot resolve from the target alone (`lib/wiki/category.ts`'s own doc); for
+// article), the figure falls back to a category icon — never a hole (Review Focus 2). The
+// caller's own `category` wins when given (see its own doc comment for why); otherwise
+// `categoryOf(target)`, which returns `null` for the four kinds it cannot resolve from the
+// target alone (`lib/wiki/category.ts`'s own doc) or when there is no target at all — for
 // those there is no category icon to fall back to, and the plain placeholder is drawn
 // instead, same as everywhere else in the app.
 const fallbackIcon = computed(() => {
-  const category = categoryOf(props.target)
+  const category =
+    props.category ?? (props.target ? categoryOf(props.target) : null)
   return category ? wikiCategoryIcon[category] : null
 })
+// Half of the box, at every size: proportional to the picture it stands in for, never a
+// small glyph lost in a large frame (the owner, on a `Hero`-sized boss with no picture: the
+// icon read as stuck in a corner, not centred and not sized like the thing it replaces).
 const fallbackIconClass: Record<FigureSize, string> = {
-  [FigureSize.Row]: 'size-6',
-  [FigureSize.Card]: 'size-8',
-  [FigureSize.Tile]: 'size-8',
-  [FigureSize.Hero]: 'size-12',
+  [FigureSize.Row]: 'size-8',
+  [FigureSize.Card]: 'size-16',
+  [FigureSize.Tile]: 'size-20',
+  [FigureSize.Hero]: 'size-24',
 }
 
 const artSize: Record<FigureSize, ArtSize> = {
