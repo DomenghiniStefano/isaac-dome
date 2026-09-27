@@ -14888,9 +14888,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -14995,9 +15005,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -15280,9 +15300,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -15634,9 +15664,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -15697,9 +15737,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -15784,9 +15834,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -15986,9 +16046,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -16528,9 +16598,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -16833,9 +16913,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -16996,9 +17086,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -17163,9 +17263,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -17300,9 +17410,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -23824,9 +23944,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -23913,9 +24043,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -24246,9 +24386,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -24339,9 +24489,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -41525,9 +41685,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -46180,9 +46350,19 @@
               [
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -46248,9 +46428,19 @@
               [
                 [
                   {
-                    "kind": "text",
-                    "text": "2",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "2",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -46316,9 +46506,19 @@
               [
                 [
                   {
-                    "kind": "text",
-                    "text": "3",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "3",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -46384,9 +46584,19 @@
               [
                 [
                   {
-                    "kind": "text",
-                    "text": "4",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "4",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -46462,9 +46672,19 @@
               [
                 [
                   {
-                    "kind": "text",
-                    "text": "5",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "5",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -46535,9 +46755,19 @@
               [
                 [
                   {
-                    "kind": "text",
-                    "text": "6",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "6",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -46601,9 +46831,19 @@
               [
                 [
                   {
-                    "kind": "text",
-                    "text": "7",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "7",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -46667,9 +46907,19 @@
               [
                 [
                   {
-                    "kind": "text",
-                    "text": "8",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "8",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -46748,9 +46998,19 @@
               [
                 [
                   {
-                    "kind": "text",
-                    "text": "9",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "9",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -60672,9 +60932,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -60714,9 +60984,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -60756,9 +61036,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -60812,9 +61102,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -92684,9 +92984,19 @@
               [
                 [
                   {
-                    "kind": "text",
-                    "text": "6",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "6",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -92705,9 +93015,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -92757,9 +93077,19 @@
               [
                 [
                   {
-                    "kind": "text",
-                    "text": "10",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "10",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -92789,9 +93119,19 @@
               [
                 [
                   {
-                    "kind": "text",
-                    "text": "7",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "7",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -92810,9 +93150,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "0.75",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "0.75",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -92853,9 +93203,19 @@
               [
                 [
                   {
-                    "kind": "text",
-                    "text": "8",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "8",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -92892,9 +93252,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -92924,9 +93294,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -93030,9 +93410,19 @@
               [
                 [
                   {
-                    "kind": "text",
-                    "text": "5",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "5",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -136386,12 +136776,22 @@
                                     "style": "plain"
                                   },
                                   {
-                                    "kind": "ref",
-                                    "target": {
-                                      "kind": "item",
-                                      "id": 286
-                                    },
-                                    "label": "Blank Card"
+                                    "kind": "edition",
+                                    "only": [
+                                      "rebirth",
+                                      "afterbirth",
+                                      "afterbirthPlus"
+                                    ],
+                                    "inline": [
+                                      {
+                                        "kind": "ref",
+                                        "target": {
+                                          "kind": "item",
+                                          "id": 286
+                                        },
+                                        "label": "Blank Card"
+                                      }
+                                    ]
                                   },
                                   {
                                     "kind": "edition",
@@ -136555,8 +136955,24 @@
                       },
                       {
                         "kind": "text",
-                        "text": " icon and also blue and purple Completion Marks (only shown online). Blue is for Completion Marks that were completed in online mode only, and purple is for the Completion Marks completed in both Hard and online mode. (online is Hard mode only)",
+                        "text": " icon and also blue and purple Completion Marks (only shown online). ",
                         "style": "plain"
+                      },
+                      {
+                        "kind": "edition",
+                        "only": [
+                          "rebirth",
+                          "afterbirth",
+                          "afterbirthPlus",
+                          "repentance"
+                        ],
+                        "inline": [
+                          {
+                            "kind": "text",
+                            "text": "Blue is for Completion Marks that were completed in online mode only, and purple is for the Completion Marks completed in both Hard and online mode. (online is Hard mode only)",
+                            "style": "plain"
+                          }
+                        ]
                       },
                       {
                         "kind": "edition",
@@ -140790,9 +141206,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -140856,9 +141282,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -140948,9 +141384,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -141118,9 +141564,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -141262,9 +141718,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -141443,9 +141909,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "0.1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "0.1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -145022,9 +145498,18 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -145076,9 +145561,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -145291,9 +145786,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -145413,9 +145918,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -145491,9 +146006,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -145542,9 +146067,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -145608,9 +146143,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -145754,9 +146299,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -145937,9 +146492,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "0.25",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "0.25",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -146003,9 +146568,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -146893,9 +147468,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -146946,9 +147531,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -146999,9 +147594,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -147047,9 +147652,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -147110,9 +147725,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -147246,9 +147871,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -147297,9 +147932,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -147350,9 +147995,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -147388,9 +148043,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -147474,9 +148139,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -147527,9 +148202,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -147580,9 +148265,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -147618,9 +148313,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -191008,9 +191713,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -191085,9 +191800,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -191123,9 +191848,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -191176,9 +191911,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -191379,9 +192124,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -191432,9 +192187,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -191574,9 +192339,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "0.1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "0.1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -192725,9 +193500,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -192943,9 +193728,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -192981,9 +193776,20 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus",
+                      "repentance"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -193135,9 +193941,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -193271,9 +194087,20 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "0.1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus",
+                      "repentance"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "0.1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -193426,9 +194253,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -375476,9 +376313,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -375646,9 +376493,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -375749,9 +376606,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -375798,9 +376665,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -375907,9 +376784,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -375982,9 +376869,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -376143,9 +377040,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -376206,9 +377113,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -376254,9 +377171,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -376302,9 +377229,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -376365,9 +377302,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -377755,9 +378702,17 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -377778,12 +378733,20 @@
                 ],
                 [
                   {
-                    "kind": "ref",
-                    "target": {
-                      "kind": "stage",
-                      "name": "Dark Room"
-                    },
-                    "label": "Dark Room"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "stage",
+                          "name": "Dark Room"
+                        },
+                        "label": "Dark Room"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -377885,9 +378848,18 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -377987,9 +378959,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -378161,9 +379143,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -378248,9 +379240,18 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -378445,12 +379446,22 @@
                 ],
                 [
                   {
-                    "kind": "ref",
-                    "target": {
-                      "kind": "stage",
-                      "name": "Womb"
-                    },
-                    "label": "Womb"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "stage",
+                          "name": "Womb"
+                        },
+                        "label": "Womb"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -378806,12 +379817,22 @@
                 ],
                 [
                   {
-                    "kind": "ref",
-                    "target": {
-                      "kind": "stage",
-                      "name": "Womb"
-                    },
-                    "label": "Womb"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "stage",
+                          "name": "Womb"
+                        },
+                        "label": "Womb"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -381167,9 +382188,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -381316,9 +382347,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -381424,9 +382465,20 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus",
+                      "repentance"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -381476,9 +382528,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -381539,9 +382601,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -381651,9 +382723,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -381859,9 +382941,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -381944,9 +383036,20 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "0.1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus",
+                      "repentance"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "0.1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -394039,9 +395142,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1/256",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1/256",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -394139,9 +395252,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1/256",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1/256",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -492773,9 +493896,19 @@
               [
                 [
                   {
-                    "kind": "text",
-                    "text": "10",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "10",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -492974,9 +494107,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -493041,9 +494184,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -493108,9 +494261,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -493175,9 +494338,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
@@ -635254,9 +636427,19 @@
                 ],
                 [
                   {
-                    "kind": "text",
-                    "text": "1",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth",
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "1",
+                        "style": "plain"
+                      }
+                    ]
                   },
                   {
                     "kind": "edition",
