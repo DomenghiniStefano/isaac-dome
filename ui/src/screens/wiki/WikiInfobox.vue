@@ -14,10 +14,10 @@ import InfoboxChallenge from './infobox/InfoboxChallenge.vue'
 import InfoboxCharacter from './infobox/InfoboxCharacter.vue'
 import InfoboxEntity from './infobox/InfoboxEntity.vue'
 import InfoboxItem from './infobox/InfoboxItem.vue'
+import InfoboxRefRow from './infobox/InfoboxRefRow.vue'
 import InfoboxTransformation from './infobox/InfoboxTransformation.vue'
 import InfoboxTrinket from './infobox/InfoboxTrinket.vue'
 import { infoboxLinksKey } from './infobox/links'
-import { refOf } from './infoboxRefs'
 import { hasCard } from './transformationCard'
 
 // The whole entry, not just its infobox: the description, the editions and "unlocked by" live
@@ -121,9 +121,9 @@ const drawn = computed(() => {
           :label="t('wiki.infobox.description')"
           :inline="entry.description"
         />
-        <InfoboxRow
+        <InfoboxRefRow
           :label="t('wiki.infobox.unlockedBy')"
-          :inline="refOf(entry.unlockedBy, wiki.titleOf)"
+          :targets="entry.unlockedBy ? [entry.unlockedBy] : []"
         />
       </dl>
       <component :is="bodies[infobox.kind]" :infobox="infobox" :pools="pools" />

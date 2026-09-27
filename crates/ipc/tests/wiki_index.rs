@@ -43,7 +43,14 @@ fn the_shape_is_pinned_and_icons_are_null_without_a_catalog() {
     assert_eq!(v["info"]["kind"], "loaded");
     assert_eq!(
         v["pages"][0],
-        json!({ "target": { "kind": "item", "id": 2 }, "title": "A", "iconUrl": null, "category": "items" })
+        json!({
+            "target": { "kind": "item", "id": 2 }, "title": "A", "iconUrl": null,
+            "category": "items", "dlc": [],
+            "facts": {
+                "kind": "item", "quality": null, "activated": false, "recharge": null,
+                "shopPrice": null, "devilPrice": null, "tags": []
+            }
+        })
     );
     assert_eq!(v["pages"].as_array().unwrap().len(), 4);
 }
@@ -85,7 +92,9 @@ fn a_missing_dataset_is_an_empty_index_that_says_why() {
 }
 
 /// Without a catalog, every tile's sample is declared and every one of them draws nothing —
-/// the same "no picture without the game" the pages themselves fall back to.
+/// the same "no picture without the game" the pages themselves fall back to. `target` is a
+/// property of the *choice*, not of the catalog (`icon_ref_target`, `wiki_samples.rs`): it is
+/// `Some` even here, for every category but the three with no picture at all.
 #[test]
 fn every_category_has_a_sample_entry_and_none_draw_without_a_catalog() {
     let ds = dataset();
@@ -94,6 +103,19 @@ fn every_category_has_a_sample_entry_and_none_draw_without_a_catalog() {
     let categories: Vec<ipc::WikiPageCategory> = index.samples.iter().map(|s| s.category).collect();
     assert_eq!(categories, ipc::WIKI_PAGE_CATEGORIES.to_vec());
     assert!(index.samples.iter().all(|s| s.icon_url.is_none()));
+    let no_picture = [
+        ipc::WikiPageCategory::Transformations,
+        ipc::WikiPageCategory::Stages,
+        ipc::WikiPageCategory::Versions,
+    ];
+    for sample in &index.samples {
+        assert_eq!(
+            sample.target.is_none(),
+            no_picture.contains(&sample.category),
+            "{:?}",
+            sample.category
+        );
+    }
 }
 
 /// `category_sample` is total over `WikiPageCategory` (the match has no wildcard), so this is
@@ -150,9 +172,12 @@ fn the_embedded_index_counts_match_its_meta_and_stay_small() {
     assert_eq!(index.pages.len() as u32, expected);
     let json = serde_json::to_string(&index).unwrap();
     // Raised once, for the whole-namespace fetch (design decision 1, 2026-09-26): 971 more
-    // pages, entities and articles, moved this from 256 KB. Still one order of magnitude
-    // under `unlock`'s (crates/ipc/tests/unlock_size.rs).
-    assert!(json.len() < 512_000, "wiki index is {} bytes", json.len());
+    // pages, entities and articles, moved this from 256 KB.
+    //
+    // Raised again for `dlc` and `facts` on every page reference (design decision 3,
+    // `2026-09-27-wiki-restyle-design.md`): measured at 659,246 bytes on the 2026-09-27
+    // snapshot. Still under `unlock`'s ceiling (`crates/ipc/tests/unlock_size.rs`).
+    assert!(json.len() < 900_000, "wiki index is {} bytes", json.len());
 }
 
 /// B46. A transformation has had a page in the dataset since the transformations
@@ -183,6 +208,70 @@ fn a_transformation_is_a_page_of_the_index() {
         .find(|p| p.target == Target::Transformation { id: 1 })
         .expect("the transformation is a page of the index");
     assert_eq!(page.title, "Guppy");
+}
+
+/// Design decision 3 (`2026-09-27-wiki-restyle-design.md`): `dlc` and `facts` on every page
+/// reference, camelCase, computed once per window — the same window `wiki_index` already
+/// builds everything else on.
+#[test]
+fn a_page_carries_its_dlc_and_its_own_facts() {
+    let mut ds = wiki::for_tests::empty_dataset();
+    let mut e = entry(
+        "Deck of Cards",
+        wiki::Infobox::Item {
+            quote: vec![],
+            template: wiki::CollectibleTemplate::Activated,
+            quality: Some(3),
+            tags: vec!["offensive".into()],
+            recharge: vec![],
+            devil_price: vec![],
+            shop_price: vec![],
+            obtained_from: vec![],
+        },
+    );
+    e.dlc = vec![wiki::Dlc::Repentance, wiki::Dlc::RepentancePlus];
+    ds.items.insert(1, e);
+    ds.meta.counts.items = 1;
+
+    let index = wiki_index(Ok(&ds), None, ipc::BossKeys::NONE, None, link);
+    let v = to_value(&index).unwrap();
+    assert_eq!(
+        v["pages"][0]["dlc"],
+        json!(["repentance", "repentancePlus"])
+    );
+    assert_eq!(
+        v["pages"][0]["facts"],
+        json!({
+            "kind": "item", "quality": 3, "activated": true, "recharge": null,
+            "shopPrice": null, "devilPrice": null, "tags": ["offensive"]
+        })
+    );
+}
+
+/// The Sad Onion (item 1) and The D6 (item 105), read off the real embedded dataset
+/// (2026-09-27 snapshot): the wiki states the Sad Onion's own quality, and states the D6 as
+/// the activated collectible it is.
+#[test]
+fn real_items_carry_their_own_measured_facts() {
+    let ds = Dataset::embedded().expect("embedded dataset");
+    let index = wiki_index(Ok(ds), None, ipc::BossKeys::NONE, None, link);
+    let facts_of = |id: u32| {
+        index
+            .pages
+            .iter()
+            .find(|p| p.target == Target::Item { id })
+            .unwrap_or_else(|| panic!("item {id} is not a page of the embedded index"))
+            .facts
+            .clone()
+    };
+    let ipc::PageFacts::Item { quality, .. } = facts_of(1) else {
+        panic!("expected an item");
+    };
+    assert_eq!(quality, Some(3), "The Sad Onion's own stated quality");
+    let ipc::PageFacts::Item { activated, .. } = facts_of(105) else {
+        panic!("expected an item");
+    };
+    assert!(activated, "The D6 is the activated collectible template");
 }
 
 /// Design decisions 2, 5 and 7: `Target::Entity` covers both a boss and a common enemy, and

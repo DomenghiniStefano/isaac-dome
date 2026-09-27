@@ -60,8 +60,8 @@ describe('the wiki list row', () => {
     )
   })
 
-  it('is 60px at scale 100 and follows every step', () => {
-    expect(rowWikiPx(100)).toBe(60)
-    expect(rowWikiPx(200)).toBe(120)
+  it('is 72px at scale 100 and follows every step', () => {
+    expect(rowWikiPx(100)).toBe(72)
+    expect(rowWikiPx(200)).toBe(144)
   })
 })

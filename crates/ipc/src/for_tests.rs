@@ -54,3 +54,10 @@ pub fn update_at(phase: crate::UpdatePhase) -> crate::UpdateState {
 pub fn bosses(catalog: &Catalog) -> crate::BossKeys {
     crate::boss_keys(catalog, wiki::Dataset::embedded().ok())
 }
+
+/// The completion matrix row a catalog character occupies — `wiki_progress`'s own lookup, by
+/// id and Tainted flag, reachable so a test can tell two characters sharing a name apart
+/// without reconstructing the roster by hand.
+pub fn row_for_character(c: &catalog::Character) -> Option<usize> {
+    crate::marks::row_for_character(c)
+}

@@ -51,10 +51,17 @@ export interface StoredWindow {
 // `sidebarCollapsed` is the same kind of part, and it is `true` or absent — never `false`. Open is
 // what the sidebar is until somebody folds it, so an open sidebar writes nothing, exactly as a
 // width nobody set writes nothing.
+//
+// `wikiListView` is the same kind of part again (card #90): the Wiki's category lists remember
+// card grid or table per category, a per-viewer convenience and not tab state, so it sits beside
+// `sidebarWidth` rather than inside any one tab's own `view`. This document stays opaque to what
+// the values mean — a category name, `"grid"` or `"table"` — the same way `view` is opaque to a
+// screen's own reading; `lib/wiki/listViewMode.ts` is the one place that gives them meaning.
 export interface StoredSession {
   windows: StoredWindow[]
   sidebarWidth?: number
   sidebarCollapsed?: true
+  wikiListView?: Record<string, string>
 }
 
 const routeNames: readonly string[] = Object.values(RouteName)
@@ -195,6 +202,19 @@ const readWindow = (value: unknown): StoredWindow | null => {
   return { ...read, ...withOptional('box', where) }
 }
 
+// A plain string-to-string map, its own values validated and nothing more: what a category
+// means and what "grid" or "table" means belong to `lib/wiki/listViewMode.ts`, which reads this
+// map back and drops what it does not recognise — the same two-layer degrading `readSession`
+// itself does for everything else here (an entry's `view`, a stored tab's `location`).
+const readStringMap = (value: unknown): Record<string, string> | undefined => {
+  if (typeof value !== 'object' || value === null || Array.isArray(value))
+    return undefined
+  const kept = Object.entries(value as Record<string, unknown>).filter(
+    (entry): entry is [string, string] => typeof entry[1] === 'string',
+  )
+  return kept.length === 0 ? undefined : Object.fromEntries(kept)
+}
+
 // Text that is not JSON reads as `null`, which the reader already refuses along with every other
 // value that is not an object: one refusal, not two.
 const parsedOrNull = (raw: string): unknown => {
@@ -221,6 +241,7 @@ export const readSession = (raw: string | null): StoredSession | null => {
     windows,
     sidebarWidth,
     sidebarCollapsed,
+    wikiListView,
   } = parsed as Record<string, unknown>
   // Version 1 said `tabs` at the top level and knew nothing about windows. It is one window,
   // wherever the window manager decides to put it — and it never carried a sidebar width.
@@ -244,6 +265,7 @@ export const readSession = (raw: string | null): StoredSession | null => {
       isFiniteNumber(sidebarWidth) ? sidebarWidth : undefined,
     ),
     ...withOptional('sidebarCollapsed', whenTrue(sidebarCollapsed === true)),
+    ...withOptional('wikiListView', readStringMap(wikiListView)),
   }
 }
 
@@ -259,15 +281,23 @@ const stored = (tab: TabSeed): TabSeed => ({
   ),
 })
 
-// The session as it is written: the windows, and the sidebar beside them — its width only once
-// somebody sized it, folded only when somebody folded it.
+// The session as it is written: the windows, the sidebar beside them — its width only once
+// somebody sized it, folded only when somebody folded it — and the Wiki's list views, only once
+// a category was switched away from its default.
 export const storedSession = (
   windows: StoredWindow[],
   layout: Layout,
+  wikiListView?: Record<string, string>,
 ): StoredSession => ({
   windows,
   ...withOptional('sidebarWidth', layout.sidebarWidth ?? undefined),
   ...withOptional('sidebarCollapsed', whenTrue(layout.sidebarCollapsed)),
+  ...withOptional(
+    'wikiListView',
+    wikiListView && Object.keys(wikiListView).length > 0
+      ? wikiListView
+      : undefined,
+  ),
 })
 
 export const writeSession = (session: StoredSession): string =>
@@ -282,4 +312,5 @@ export const writeSession = (session: StoredSession): string =>
     // nothing is a key every reader has to ask about.
     ...withOptional('sidebarWidth', session.sidebarWidth),
     ...withOptional('sidebarCollapsed', session.sidebarCollapsed),
+    ...withOptional('wikiListView', session.wikiListView),
   })

@@ -39,37 +39,71 @@
      fraction the browser smears pixel art, so the multiple is an integer the app writes on
      the root (`lib/scale/apply.ts`) and never a rem value. */
   --spacing-sprite: calc(32px * var(--sprite-multiple));
-  /* Achievement icons are painted 263x176 images, not pixel art:
-     at half their native size they stay readable without going mushy. */
-  --spacing-achievement: 5.5rem;
-  /* An achievement drawing in a table row: 48 x 32, the 263 x 176 drawing at its ratio. */
+  /* An achievement drawing in a table row: 48 x 32, the 263 x 176 drawing at its ratio. Still
+     the size of every `AchievementArt` caller that is not `WikiFigure` (`SearchRow`,
+     `GoalRow`, `UnlockRow`, `ScalePreview`) — `WikiFigure`'s own four sizes reuse
+     `--spacing-figure-*` below for `AchievementArt`'s width too, one token for the frame and
+     the painting inside it, rather than a second scale that happens to agree with the first. */
   --spacing-achievement-thumb: 3rem;
   /* The same drawing beside its name in a wiki list of names (`WikiNameList`): 72 x 48. At the
      table rows' 48 the lettering on the paper is lost, and a list of names has room for it. It
      is also the width of the list's picture column, where a 32px sprite sits centred. */
   --spacing-wiki-name-art: 4.5rem;
-  /* The same drawing leading a wiki page's band (card #57): 176 wide, so at its ratio it is
-     118 tall and sits inside the band's 128 without setting the band's height itself. */
-  --spacing-achievement-hero: 11rem;
-  /* A wiki page's figure (Schermate.dc.html): a 32px sprite at 3x, a 192px portrait at half. */
+  /* A wiki page's figure (Schermate.dc.html): a 32px sprite at 3x, a 192px portrait at half.
+     Kept for `RollCard`, which frames a drawn character's head at this size independently of
+     the wiki (`--spacing-figure-card` below is `WikiFigure`'s own, larger, replacement). */
   --spacing-wiki-figure: 6rem;
   /* The same figure on a page's opening band (card #57), half as large again: on a band that
      wide the 96px one reads as a label stuck to the title rather than as the subject of the
-     page. It stays a whole multiple of the 32px sprite, so pixel art lands on whole pixels. */
+     page. It stays a whole multiple of the 32px sprite, so pixel art lands on whole pixels.
+     Retired from `WikiFigure` by `--spacing-figure-hero` below; still declared because
+     nothing has moved it out of `WikiCategoryList`'s and `WikiLanding`'s own markup yet
+     (card #90, Stream B — those screens are rebuilt in Streams C and D). */
   --spacing-wiki-hero: 8rem;
+  /* `WikiFigure`'s one frame, four sizes (card #90, decision 2): the list row, the card
+     grid, the landing tile, and the page's own band. Each is a whole multiple of the game's
+     32px sprite at scale 100 — 2x, 4x, 5x, 6x — so `integerScale` (`figureScale.ts`) always
+     fills the box exactly for a sprite; a portrait or an achievement painting fits inside it
+     at its own aspect instead. Larger than every size it replaces, per the owner's request
+     that a figure read before anything else does. `-tile` raised from 4x to 5x (only the
+     landing's own tile uses it — grep confirms): the owner asked for the picture to fill most
+     of the tile ("più le immagini occupano meglio è"), and at 4x it read closer to the name
+     and count under it than to the thing the tile is about. */
+  --spacing-figure-row: 4rem;
+  --spacing-figure-card: 8rem;
+  --spacing-figure-tile: 10rem;
+  --spacing-figure-hero: 12rem;
   /* The column that stays beside a page's text: the card, the index of its sections, and the
      provenance. Measured on the character sheet, the widest of the seven — six stats in two
      rows fit at this width and wrap at anything narrower. */
   --spacing-wiki-aside: 17rem;
   /* A wiki list row: the framed figure, the page's name, and the line under it saying what it
-     is. `RowWikiRem` in `lib/scale/rows.ts` is this number, and its test holds the two here. */
-  --spacing-row-wiki: 3.75rem;
+     is. `RowWikiRem` in `lib/scale/rows.ts` is this number, and its test holds the two here.
+     Grown from 3.75rem with `WikiFigure`'s own `--spacing-figure-row` (card #90): a row
+     shorter than the figure it frames clips it in the virtualized list, so this stays the
+     figure's 4rem plus the 4px clearance on each side the old pair had, on the 4px grid. */
+  --spacing-row-wiki: 4.5rem;
+  /* A category list's card grid (card #90, decision 4): the card's own width, wide enough
+     that the id, the edition badge and a chip or two fit under the `--spacing-figure-card`
+     picture without wrapping every word; and one row of that grid, tall enough for the
+     picture, the name, the id, the badge and two rows of chips. `rows.ts`'s `wikiCardPx` and
+     `rowWikiCardPx` hold the same two numbers on the TypeScript side, for `useCardColumns` and
+     the virtualizer. */
+  --spacing-wiki-card: 12rem;
+  --spacing-row-wiki-card: 15.5rem;
+  /* A category list's table (card #90, decision 4): the id and the edition columns, and one
+     of the category's own fact columns — quality, HP, a stat, a price. The progress column
+     reuses `ProgressBadge`, which wraps its own badges rather than needing a width of its
+     own. */
+  --spacing-wiki-table-id: 4rem;
+  --spacing-wiki-table-edition: 9rem;
+  --spacing-wiki-table-fact: 9rem;
   /* The figure inside one of those rows, framed: the 32px sprite at 1.5x, which is what the
-     row's height leaves once its padding is taken. */
+     row's height leaves once its padding is taken. Retired from `WikiFigure` by
+     `--spacing-figure-row` above; still declared for `WikiCategoryList`'s own category icon
+     in its hero band, which does not go through `WikiFigure` (card #90, Stream B — that
+     screen is rebuilt in Stream D). */
   --spacing-wiki-row-figure: 3rem;
-  /* A category's tile on the landing: tall enough that the icon leads and the two lines of
-     text sit under it, instead of three things competing on one line. */
-  --spacing-wiki-tile: 7rem;
   /* Unlock's table (Schermate.dc.html): the drawing column, the state badge column, the
      fan-out column, the add-to-the-queue column. */
   --spacing-unlock-art: 4rem;

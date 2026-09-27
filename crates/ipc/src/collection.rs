@@ -197,8 +197,9 @@ fn diagnostics(
     .collect()
 }
 
-/// A slot past section 1's end reads as not done: the save has no record of it.
-fn lock_of(
+/// A slot past section 1's end reads as not done: the save has no record of it. Shared with
+/// `wiki_progress`, which reads the same tri-state gating for an item or trinket's page.
+pub(crate) fn lock_of(
     c: &Catalog,
     dataset: Option<&Dataset>,
     unlocked_by: Option<AchievementId>,

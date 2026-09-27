@@ -2,17 +2,13 @@
 import { vScrollMemory } from '@/directives/scrollMemory'
 import { InfoIcon, TriangleAlertIcon } from '@lucide/vue'
 import { computed } from 'vue'
-import { TabOrigin } from '@/lib/shell/tabs'
-import { tabOriginIcon } from '@/lib/shell/tabOriginIcon'
 import {
   Alert,
   AlertDescription,
   AlertTitle,
   AlertVariant,
 } from '@/components/ui/alert'
-import { Button, ButtonVariant } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import PixelSprite from '@/components/sprite/PixelSprite.vue'
 import ScreenSkeleton from '@/components/data-state/ScreenSkeleton.vue'
 import { SkeletonBlock } from '@/components/data-state/skeletonBlock'
 import {
@@ -22,16 +18,17 @@ import {
 } from '@/components/ui/tooltip'
 import { useFormat } from '@/composables/useFormat'
 import { useMessages } from '@/i18n'
-import {
-  RouteName,
-  WikiCategory,
-  wikiCategoryIcon,
-  wikiCategoryTitle,
-} from '@/router/routeTable'
+import { RouteName, WikiCategory } from '@/router/routeTable'
 import { useTabsStore } from '@/stores/tabs'
 import { useWikiStore } from '@/stores/wiki'
+import type { CategorySample } from '@/lib/ipc/types'
 import ProfileFact from '@/components/data-state/ProfileFact.vue'
 import HeroBand from '@/components/screen/HeroBand.vue'
+import { TabOrigin } from '@/lib/shell/tabs'
+import { tabOriginIcon } from '@/lib/shell/tabOriginIcon'
+import { categoryProgress, overallProgress } from '@/lib/wiki/progress'
+import WikiLandingHero from './landing/WikiLandingHero.vue'
+import WikiLandingTile from './landing/WikiLandingTile.vue'
 
 const wiki = useWikiStore()
 const tabs = useTabsStore()
@@ -54,21 +51,36 @@ const view = computed(() => {
       : t('wiki.provenance.patchUnknown'),
     unresolved: fmt.count(value.unresolved),
     unknownTemplates: fmt.count(value.unknownTemplates),
-    count: (category: WikiCategory) => fmt.count(value.counts[category]),
+    count: (category: WikiCategory) => value.counts[category],
   }
 })
 
 const categories = Object.values(WikiCategory)
 
+// The ground truth for "how many pages the wiki has" (design decision 8b's hero totals): the
+// index's own array, never a hand-summed total over `WikiCounts` — some of its fields are
+// subsets of others (`cardsAndRunes`, `pickups`, `stages`, `versions` are all `articles`),
+// so adding them would count a page more than once.
+const totalPages = computed(() => wiki.index?.pages.length ?? 0)
+
+const overall = computed(() =>
+  wiki.index ? overallProgress(wiki.index.pages, wiki.progressFor) : null,
+)
+
+const categoryProgressOf = (category: WikiCategory) =>
+  wiki.index
+    ? categoryProgress(wiki.index.pages, category, wiki.progressFor)
+    : null
+
 // A tile's own picture, when the game gives one (design decision 5): a representative row
 // the backend chose deliberately (`ipc::category_sample`), never "whichever page happens to
-// be first". `null` — no game, or the kind has no picture at all (transformations, stages,
-// version articles) — falls back to the category's plain icon, same as every other sprite
-// in the app (`PixelSprite`'s own `fallback` slot).
-const sampleUrl = (category: WikiCategory): string | null =>
-  wiki.index?.samples.find((s) => s.category === category)?.iconUrl ?? null
+// be first". `undefined` before the index has loaded; `WikiFigure` reads a sample with no
+// `iconUrl` — no game, or the kind has no picture at all (transformations, stages, version
+// articles) — as its cue to fall back to the category's plain icon.
+const sampleOf = (category: WikiCategory): CategorySample | undefined =>
+  wiki.index?.samples.find((s) => s.category === category)
 
-// A category card opens its list in the tab, or beside it with Ctrl, as a sidebar entry does.
+// A category tile opens its list in the tab, or beside it with Ctrl, as a sidebar entry does.
 const open = (category: WikiCategory, event: MouseEvent) =>
   tabs.go({ name: RouteName.Wiki, query: { category } }, event.ctrlKey)
 </script>
@@ -82,32 +94,44 @@ const open = (category: WikiCategory, event: MouseEvent) =>
     v-scroll-memory="'page'"
     class="flex h-full flex-col overflow-y-auto pb-15"
   >
-    <!-- The landing opens on the same band its pages do, and the categories come straight
-         under it: what somebody arriving here wants is a way in, not the provenance of the
-         dataset — that stays, and it goes last. -->
-    <HeroBand class="flex items-center gap-4">
-      <component
-        :is="tabOriginIcon[TabOrigin.Wiki]"
-        class="relative size-8 shrink-0 text-foreground-soft"
-      />
-      <div class="relative flex min-w-0 flex-col gap-1.5">
-        <h1 class="text-title text-foreground">{{ t('routes.wiki') }}</h1>
-        <p class="max-w-200 text-body text-subtle-foreground">
-          {{ t('wiki.intro') }}
-        </p>
+    <!-- The wiki failed entirely (a corrupted embedded dataset): the plain band still names
+         the screen, and everything else is the alert below explaining why there is nothing
+         to open. The enriched hero (mosaic, totals, the overall bar) only draws once there
+         is a dataset to draw it from. -->
+    <template v-if="info?.kind === 'missing'">
+      <HeroBand class="flex items-center gap-4">
+        <component
+          :is="tabOriginIcon[TabOrigin.Wiki]"
+          class="relative size-8 shrink-0 text-foreground-soft"
+        />
+        <div class="relative flex min-w-0 flex-col gap-1.5">
+          <h1 class="text-title text-foreground">{{ t('routes.wiki') }}</h1>
+          <p class="max-w-200 text-body text-subtle-foreground">
+            {{ t('wiki.intro') }}
+          </p>
+        </div>
+      </HeroBand>
+      <div class="flex flex-col px-5.5">
+        <Alert :variant="AlertVariant.Destructive" class="mt-5">
+          <TriangleAlertIcon />
+          <AlertTitle>{{ t('wiki.states.missingTitle') }}</AlertTitle>
+          <AlertDescription>{{ t('wiki.states.missing') }}</AlertDescription>
+        </Alert>
       </div>
-    </HeroBand>
-    <div class="flex flex-col px-5.5">
-      <Alert
-        v-if="info?.kind === 'missing'"
-        :variant="AlertVariant.Destructive"
-        class="mt-5"
-      >
-        <TriangleAlertIcon />
-        <AlertTitle>{{ t('wiki.states.missingTitle') }}</AlertTitle>
-        <AlertDescription>{{ t('wiki.states.missing') }}</AlertDescription>
-      </Alert>
-      <template v-else-if="loaded && view">
+    </template>
+    <template v-else-if="loaded && view">
+      <!-- The landing opens on a hero (design decision 8b): the mosaic, the title, the
+           totals and, with a save, the overall progress. The categories come straight
+           under it — what somebody arriving here wants is a way in — and the provenance
+           of the dataset goes last. -->
+      <WikiLandingHero
+        :samples="wiki.index?.samples ?? []"
+        :total-pages="totalPages"
+        :snapshot="view.snapshot"
+        :patch="view.patch"
+        :overall="overall"
+      />
+      <div class="flex flex-col px-5.5">
         <Alert v-if="loaded.gameNewerThanSnapshot === true" class="mt-5">
           <InfoIcon />
           <AlertDescription>{{
@@ -120,31 +144,15 @@ const open = (category: WikiCategory, event: MouseEvent) =>
           {{ t('wiki.categories') }}
         </h2>
         <div class="grid grid-cols-2 gap-3 @regular/page:grid-cols-4">
-          <Button
+          <WikiLandingTile
             v-for="category in categories"
             :key="category"
-            :variant="ButtonVariant.Outline"
-            class="h-wiki-tile flex-col items-start justify-end gap-1 border-border tile-wash p-3 hover:border-input [&_svg]:size-7"
-            @click="open(category, $event)"
-          >
-            <PixelSprite
-              :url="sampleUrl(category)"
-              class="mb-auto grid size-wiki-row-figure place-items-center [&>img]:size-full [&>img]:object-contain"
-            >
-              <template #fallback>
-                <component
-                  :is="wikiCategoryIcon[category]"
-                  class="text-foreground-soft"
-                />
-              </template>
-            </PixelSprite>
-            <span class="text-heading text-foreground">{{
-              t(wikiCategoryTitle[category])
-            }}</span>
-            <span class="text-caption text-subtle-foreground tabular-nums">{{
-              t('wiki.pages', { n: view.count(category) })
-            }}</span>
-          </Button>
+            :category="category"
+            :sample="sampleOf(category)"
+            :page-count="view.count(category)"
+            :progress="categoryProgressOf(category)"
+            @open="open(category, $event)"
+          />
         </div>
         <Card class="mt-6">
           <CardHeader>
@@ -183,13 +191,13 @@ const open = (category: WikiCategory, event: MouseEvent) =>
             />
           </CardContent>
         </Card>
-      </template>
-      <ScreenSkeleton
-        v-else
-        untitled
-        class="pt-5"
-        :blocks="[SkeletonBlock.SummaryCard, SkeletonBlock.Card]"
-      />
-    </div>
+      </div>
+    </template>
+    <ScreenSkeleton
+      v-else
+      untitled
+      class="px-5.5 pt-5"
+      :blocks="[SkeletonBlock.SummaryCard, SkeletonBlock.Card]"
+    />
   </div>
 </template>

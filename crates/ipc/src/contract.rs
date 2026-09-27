@@ -244,9 +244,14 @@ pub fn render() -> String {
     decl::<crate::WikiCounts>(&cfg, &mut out);
     decl::<crate::WikiInfo>(&cfg, &mut out);
     decl::<crate::WikiPageCategory>(&cfg, &mut out);
+    decl::<crate::VersionFacts>(&cfg, &mut out);
+    decl::<crate::PageFacts>(&cfg, &mut out);
     decl::<crate::WikiPageRef>(&cfg, &mut out);
     decl::<crate::CategorySample>(&cfg, &mut out);
     decl::<crate::WikiIndex>(&cfg, &mut out);
+    decl::<crate::PageProgress>(&cfg, &mut out);
+    decl::<crate::PageProgressEntry>(&cfg, &mut out);
+    decl::<crate::WikiProgress>(&cfg, &mut out);
     decl::<crate::PoolMembershipView>(&cfg, &mut out);
     decl::<crate::ProgressMark>(&cfg, &mut out);
     decl::<crate::SearchDiagnostic>(&cfg, &mut out);

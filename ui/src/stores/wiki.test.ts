@@ -6,13 +6,20 @@ import type {
   PoolMembershipView,
   Target,
   WikiIndex,
+  WikiProgress,
 } from '@/lib/ipc/types'
 
 const wikiIndex = vi.fn<() => Promise<WikiIndex>>()
 const wikiEntry = vi.fn<(target: Target) => Promise<Entry | null>>()
 const wikiItemPools =
   vi.fn<(target: Target) => Promise<PoolMembershipView[] | null>>()
-vi.mock('@/lib/ipc/wiki', () => ({ wikiIndex, wikiEntry, wikiItemPools }))
+const wikiProgress = vi.fn<() => Promise<WikiProgress | null>>()
+vi.mock('@/lib/ipc/wiki', () => ({
+  wikiIndex,
+  wikiEntry,
+  wikiItemPools,
+  wikiProgress,
+}))
 
 const { LoadStatus } = await import('./loadStatus')
 const { useWikiStore } = await import('./wiki')
@@ -27,6 +34,7 @@ beforeEach(() => {
   wikiIndex.mockReset()
   wikiEntry.mockReset()
   wikiItemPools.mockReset()
+  wikiProgress.mockReset()
 })
 
 // Card #80, R9: a page that would not load marked the whole index `Failed`, and every screen
@@ -114,5 +122,94 @@ describe("an item's pools", () => {
     await wiki.loadPools(d6)
     expect(wikiItemPools).toHaveBeenCalledTimes(2)
     expect(wiki.poolsFor(d6Key)).toBeNull()
+  })
+})
+
+// Design decision 6: the save's state per page, read separately from the index because the
+// index does not depend on a save and the progress does.
+describe('the wiki progress', () => {
+  const isaac: Target = { kind: 'character', id: 0 }
+  const taintedIsaac: Target = { kind: 'character', id: 21 }
+
+  it('is null before a save chose to say anything, and stays that way when it answers null', async () => {
+    wikiProgress.mockResolvedValue(null)
+    const wiki = useWikiStore()
+    expect(wiki.progress).toBeNull()
+    await wiki.loadProgress()
+    expect(wiki.progress).toBeNull()
+    expect(wiki.progressFor(d6)).toBeNull()
+  })
+
+  it('looks a page up by its own key, Isaac and Tainted Isaac kept apart', async () => {
+    wikiProgress.mockResolvedValue({
+      pages: [
+        {
+          target: isaac,
+          progress: {
+            kind: 'character',
+            unlocked: true,
+            marksDone: 3,
+            marksTotal: 12,
+          },
+        },
+        {
+          target: taintedIsaac,
+          progress: {
+            kind: 'character',
+            unlocked: false,
+            marksDone: 0,
+            marksTotal: 12,
+          },
+        },
+      ],
+    })
+    const wiki = useWikiStore()
+    await wiki.loadProgress()
+    expect(wiki.progressFor(isaac)).toEqual({
+      kind: 'character',
+      unlocked: true,
+      marksDone: 3,
+      marksTotal: 12,
+    })
+    expect(wiki.progressFor(taintedIsaac)).toEqual({
+      kind: 'character',
+      unlocked: false,
+      marksDone: 0,
+      marksTotal: 12,
+    })
+  })
+
+  it('never caches a failed read as "no save chosen"', async () => {
+    wikiProgress.mockResolvedValueOnce({
+      pages: [
+        {
+          target: d6,
+          progress: {
+            kind: 'item',
+            collected: true,
+            unlocked: null,
+            unlockedBy: null,
+          },
+        },
+      ],
+    })
+    const wiki = useWikiStore()
+    await wiki.loadProgress()
+    expect(wiki.progressFor(d6)).toEqual({
+      kind: 'item',
+      collected: true,
+      unlocked: null,
+      unlockedBy: null,
+    })
+
+    wikiProgress.mockRejectedValueOnce(new Error('boom'))
+    await wiki.loadProgress()
+    expect(wiki.progress).not.toBeNull()
+    expect(wiki.progressFor(d6)).toEqual({
+      kind: 'item',
+      collected: true,
+      unlocked: null,
+      unlockedBy: null,
+    })
   })
 })

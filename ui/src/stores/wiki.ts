@@ -2,14 +2,22 @@ import { defineStore } from 'pinia'
 import { computed, ref } from 'vue'
 import { StoreId } from '@/lib/constants/stores'
 import { asIpcError } from '@/lib/ipc/errors'
-import { wikiEntry, wikiIndex, wikiItemPools } from '@/lib/ipc/wiki'
+import {
+  wikiEntry,
+  wikiIndex,
+  wikiItemPools,
+  wikiProgress,
+} from '@/lib/ipc/wiki'
 import type {
   Entry,
   IpcError,
+  PageFacts,
+  PageProgress,
   PoolMembershipView,
   Target,
   WikiIndex,
   WikiPageRef,
+  WikiProgress,
 } from '@/lib/ipc/types'
 import { pageKey } from '@/lib/wiki/pageKey'
 import { LoadStatus } from './loadStatus'
@@ -33,6 +41,13 @@ export const useWikiStore = defineStore(StoreId.Wiki, () => {
   // the same way the index's own icon links are, so a page asks once per window.
   const pools = ref(new Map<string, PoolMembershipView[] | null>())
   const pendingPools = new Set<string>()
+  // The save's state for every page that has one (design decision 6): `null` is a real
+  // answer, "no save chosen", the same as `wikiProgress` itself answers — never the shape a
+  // failed read leaves behind, which is why `loadProgress` below never writes it on a
+  // rejection.
+  const progress = ref<WikiProgress | null>(null)
+  const progressStatus = ref<LoadStatus>(LoadStatus.Idle)
+  const progressError = ref<IpcError | null>(null)
 
   const byKey = computed(
     () =>
@@ -72,6 +87,44 @@ export const useWikiStore = defineStore(StoreId.Wiki, () => {
     const key = pageKey(target)
     return key !== null && byKey.value.has(key)
   }
+
+  // A page's own facts (design decision 3), read off the index the same way `iconFor` reads
+  // its picture: `null` for a target with no key or one the index doesn't list, never a
+  // second copy of the entry's fields.
+  const factsFor = (target: Target): PageFacts | null => {
+    const key = pageKey(target)
+    return key === null ? null : (byKey.value.get(key)?.facts ?? null)
+  }
+
+  // Built once per `progress` load, the way `byKey` is built once per index load: a `Map`
+  // over the same page keys, so every screen's lookup is O(1) rather than a scan per row.
+  const progressByKey = computed(
+    () =>
+      new Map<string, PageProgress>(
+        (progress.value?.pages ?? []).flatMap((entry) => {
+          const key = pageKey(entry.target)
+          return key === null ? [] : [[key, entry.progress] as const]
+        }),
+      ),
+  )
+
+  // The active save's state for one page, by its own key — never by title, since a Tainted
+  // form shares its base form's (CLAUDE.md, "resolve by id first"). `null` covers both "no
+  // save chosen" and "this page has no state" (decision 6's table): a screen that only wants
+  // to know whether to draw a bar treats the two the same way.
+  const progressFor = (target: Target): PageProgress | null => {
+    const key = pageKey(target)
+    return key === null ? null : (progressByKey.value.get(key) ?? null)
+  }
+
+  // Read again whenever the wiki screen mounts or the chosen save changes
+  // (`useOnActiveProfile` in the screens that call this). A read that fails leaves `progress`
+  // exactly as it was: `wikiProgress()` throwing is never the same fact as it resolving to
+  // `null`, and writing `null` for the first would cache a failure as "no save chosen".
+  const loadProgress = (): Promise<void> =>
+    tracked(progressStatus, progressError, async () => {
+      progress.value = await wikiProgress()
+    })
 
   // `undefined`: not read yet; `null`: read, and the dataset doesn't know it.
   const entry = (key: string): Entry | null | undefined =>
@@ -127,11 +180,17 @@ export const useWikiStore = defineStore(StoreId.Wiki, () => {
     titleOf,
     iconFor,
     hasPage,
+    factsFor,
     entry,
     pageFailed,
     pageError,
     loadEntry,
     poolsFor,
     loadPools,
+    progress,
+    progressStatus,
+    progressError,
+    progressFor,
+    loadProgress,
   }
 })
