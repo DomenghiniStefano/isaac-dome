@@ -126,7 +126,7 @@ These items provide significant benefits to Tainted Lost.
 * {{i|Telekinesis}}: Can be used to block projectiles or enemies.
 * {{i|Tooth and Nail}}: Timed invincibility allows exiting {{r|Curse Room}}s safely.
 * {{I|Uranus}}: Frozen enemies will not be able to spawn hazards (tears, explosives, other enemies) on death. Icicles from frozen enemies can also slow other enemies and potentially cause a chain reaction, freezing a whole group of enemies.
-* {{t|Wooden Cross}}: A single-use Holy Mantle per floor. Note that it does not break before Holy Card, thus it is wise to save them for when the shield from Wooden Cross is broken.
+* {{t|Wooden Cross}}: A single-use Holy Mantle per floor. {{dlc|nr+}} Note that it does not break before Holy Card, thus it is wise to save them for when the shield from Wooden Cross is broken. {{dlc|r+}} Both Wooden Cross and Holy Card shields can be active without issue; the Wooden Cross shield will be broken first upon hit. The trinket grants two shields if {{I|Mom's Box}} is held, or it is a [[Golden Trinket]].
 * {{i|Genesis}}: Will remove current Holy Mantle shield on use, but will give another {{p|Holy Card}}.
 
 === Disfavored Items ===

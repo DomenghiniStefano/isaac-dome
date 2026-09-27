@@ -1,0 +1,23 @@
+{{header item pools}}
+{{item pool}}
+Items in this pool can be found in {{E|Red Chest}}s.
+
+== Activated Collectibles ==
+{{item pool/header}}
+{{pool items | Guppy's Head, Guppy's Paw, Pandora's Box }}
+{{pool items | dlc = a+ | weight = {{dlcalt|0.2|r=0.1}} | Plan C }}
+{{pool items | dlc = r | Magic Skin }}
+{{pool items | dlc = r | weight = 0.1 | Red Key }}
+|}
+
+== Passive Collectibles ==
+{{item pool/header}}
+{{pool items | Dead Cat, Guppy's Collar, Guppy's Tail }}
+{{pool items | dlc = na | Goat Head }}
+{{pool items | dlc = a | Bob's Curse, Curse of the Tower, Cursed Eye }}
+{{pool items | dlc = r | Guppy's Eye }}
+{{pool items | dlc = r | weight = 0.5 | Blood Puppy }}
+{{pool items | dlc = r | weight = 0.2 | False PHD }}
+|}
+
+{{nav|fr=Coffre Rouge (Banque d'Objets)}}

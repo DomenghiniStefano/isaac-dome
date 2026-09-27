@@ -1,0 +1,38 @@
+{{infobox monster
+ | dlc         = r
+ | name        = Mole
+ | id          = 829
+ | base hp     = 12
+ | environment = {{floor|Mines}}<br>{{room|challenge}}
+ | behavior    = Burrows towards Isaac and jumps out the ground to fire 3 blood shots at him.
+}}
+The '''Mole''' is a monster added in ''[[The Binding of Isaac: Repentance]]''.
+
+It chases Isaac by burrowing in the ground (characterized by small, moving rubble on the surface). When it gets near Isaac, it pokes out of the ground and fires 3 blood shots at him. It will then jump to a nearby tile leaving a {{E|Poop}} where it jumped.
+{{clear}}
+
+== Variations ==
+=== Tainted Mole ===
+{{infobox monster
+ | dlc         = r
+ | name        = Tainted Mole
+ | variant     = 1
+ | base hp     = 80
+ | environment = {{floor|Mines}}<br>Found on the [[Ascent]] to {{s|Home}}.
+ | behavior    =Dig towards Isaac and release a ring of rock waves. Fires 3 blood shots at Isaac 4 times.
+}}
+
+The '''Tainted Mole''' is a stronger, distorted version of the regular mole.
+
+It burrows through the ground, creating rockwaves in the direction it moves in. When it gets near Isaac, it pokes out of the ground, creating a ring of rock waves (similar to the {{E|Roundy}}) and fires 3 blood shots at him 4 times. It will then jump to a nearby tile leaving a {{E|Poop}} where it jumped. {{clear}}
+
+== Gallery ==
+<gallery>
+Mole Eyes Open.png|A Mole's appearance in a dark room with its eyes open.
+</gallery>
+
+== Trivia ==
+* The [[Anti:Mole|Mole]] first appeared in the ''Antibirth'' mod where it would not create {{E|Poop}}s upon leaping, but instead Pits.
+* Moles will have their eyes open and glowing in the dark if encountered in a dark room, however this doesn't affect their behavior.
+
+{{nav|fr=Taupe}}

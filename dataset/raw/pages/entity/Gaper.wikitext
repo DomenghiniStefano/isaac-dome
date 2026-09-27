@@ -1,0 +1,318 @@
+{{infobox monster
+ | id          = 10
+ | variant     = 1
+ | base hp     = 10
+ | environment = {{floor|Basement}}{{floor|Cellar}}{{floor|Burning Basement}}<br>{{floor|Downpour}}{{floor|Dross}}<br>{{room|boss}}<br>{{dlc|nr}}{{room|challenge}}
+ | behavior    = Walks towards Isaac, dealing contact damage. Usually turns into a {{e|Pacer}} or a {{e|Gusher}} upon death.
+}}
+
+'''Gapers''' walk towards Isaac by the most direct route possible. They will actively path around obstacles and other enemies that block their path to Isaac. Upon death, there is a 50% chance they leave behind a {{e|Pacer}} or a {{e|Gusher}}; if this check succeeds, there is a 33% chance it leaves behind a Gusher, otherwise it leaves behind a Pacer (in other words, 1 in 3 Gapers leave behind a Pacer on death, and 1/6 leave behind a Gusher; 50% of them will leave nothing).
+
+==== Notes ====
+All Gaper variations will never leave behind an enemy on death if their HP is dropped to -25 or less in one instance (i.e., by using a Bomb). The {{e|Level 2 Gaper}} is an exception and will do so regardless.
+
+__TOC__
+{{clear}}
+
+== Variations ==
+=== Frowning Gaper ===
+{{infobox monster
+ | name        = Frowning Gaper
+ | variant     = 0
+ | base hp     = 10
+ | environment = {{floor|Basement}}{{floor|Cellar}}{{floor|Burning Basement}}<br>{{floor|Downpour}}{{floor|Dross}}<br>{{floor|Chest}}<br>{{room|boss}}{{room|challenge}}
+ | behavior    = Walks towards Isaac, dealing contact damage. They start out with their eyes closed, but when they gain line of sight with Isaac, their eyes open and they permanently move faster. Usually turns into a {{e|Pacer}} or with a small chance a {{e|Gusher}} upon death.
+}}
+
+'''Frowning Gapers''' walk slowly toward Isaac (though faster than Gapers) and deal contact damage. They start out with their eyes closed, and when they have line of sight with Isaac, they will open their eyes and gain extra permanent speed. Upon death, they will usually transform into a {{e|Pacer}} or {{e|Gusher}}.
+{{clear}}
+
+=== Flaming Gaper ===
+{{infobox monster
+ | dlc            = a
+ | name           = Flaming Gaper
+ | variant        = 2
+ | base hp        = 9
+ | environment    = {{floor|Burning Basement}}
+ | replace        = Gaper, Frowning Gaper
+ | replace chance = 60%
+ | replace notes  = in {{s|Burning Basement}}
+ | behavior       = Walks towards Isaac, dealing contact damage. Has a 50% chance to leave behind a {{e|Pacer}} or a {{e|Gusher}} upon death.
+}}
+
+'''Flaming Gapers''' walk slowly toward Isaac (slightly faster than Gapers) and deal contact damage. Upon death, they have a 50% chance to leave behind a {{e|Pacer}} or a {{e|Gusher}}.
+
+==== Notes ====
+* Unlike other flaming enemies, they are not immune to damage from fire sources and regular Gapers will not turn into Flaming Gapers upon contact with any source of fire.
+{{clear}}
+
+=== Nulls ===
+{{infobox monster
+ | name        = Nulls
+ | image name  = * {{dlc|nr|Rebirth}}
+ | id          = 252
+ | base hp     = 30
+ | environment = {{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Sheol}}<br>{{floor|Dark Room}}{{floor|Chest}}<br>{{room|challenge}}{{room|devil}}{{room|curse}}{{room|super secret}}{{room|dirty bedroom}}
+ | behavior    = Walks towards Isaac, dealing contact damage. Upon getting near Isaac, it will open its eyes, though its speed doesn't change. Fades into and out of visibility.
+}}
+
+'''Nulls''' walk slowly toward Isaac (similarly to Frowning Gapers) and deal contact damage. They start out with their eyes closed, and when they have line of sight with Isaac, they will open their eyes, though without a speed increase. They periodically fade into and out of visibility.
+
+==== Notes ====
+* White Champion Nulls may not be able to turn invisible while invincible.
+* They are referred to as "Nulls", which goes both for its singular and plural usage.
+* {{dlc|a}} The health bar that {{i|Spider Mod|n}} adds to enemies will not appear under a Nulls while it is invisible.
+{{clear}}
+
+=== Cyclopia ===
+{{infobox monster
+ | dlc         = a
+ | name        = Cyclopia
+ | image name  = * {{dlc|nr|Afterbirth}}
+ | id          = 284
+ | base hp     = 10
+ | environment = {{floor|Basement}}{{floor|Cellar}}{{floor|Burning Basement}}<br>{{floor|Depths}}<br>{{floor|Chest}}<br>{{room|boss}}{{room|challenge}}
+ | behavior    = Walks towards Isaac, dealing contact damage and leaving behind a short-lasting trail of damaging [[Red Creep]]. Occasionally shoots a blood shot towards Isaac.
+}}
+
+'''Cyclopias''' walk toward Isaac (slightly slower than Gapers), dealing contact damage and leaving behind a short-lasting trail of damaging [[Red Creep]]. Occasionally shoots a blood shot towards Isaac.
+{{clear}}
+
+=== Gurgle ===
+{{infobox monster
+ | name        = Gurgle
+ | image name  = * {{dlc|nr|Rebirth}}
+ | id          = 87
+ | base hp     = 40
+ | environment = {{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Mines}}{{floor|Ashpit}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Sheol}}<br>{{room|challenge}}
+ | behavior    = Walks towards Isaac, dealing contact damage and periodically firing {{i|Ipecac}} shots at him; they are immune to this explosion, but other enemies are not. Can turn into a {{e|Splasher}} upon death.
+}}
+
+'''Gurgles''' walk towards Isaac (significantly faster than Gapers), dealing contact damage and periodically firing {{i|Ipecac}} shots at him. These shots can kill other enemies caught in their blast radius, but Gurgles themselves are immune to their own shots as well as Ipecac shots, bombs, and {{dlc|r}} fireballs from other monsters. They can turn into a {{e|Splasher}} upon death.
+{{clear}}
+
+=== Crackle ===
+{{infobox monster
+ | dlc         = r
+ | name        = Crackle
+ | variant     = 1
+ | base hp     = 40
+ | environment = {{floor|Ashpit}}<br>{{room|challenge}}
+ | behavior    =  Walks toward Isaac, dealing contact damage and spitting fireballs that create lines of fire in the cardinal directions on impact.
+}}
+
+'''Crackles''' walk towards Isaac at the same speed as a Gurgle, dealing contact damage and periodically shooting a fireball which releases 4 lines of fire in the cardinal directions when it touches the ground. These lines of fire span the length and height of a normal sized room. Like the Gurgle, they are immune to fireballs, Ipecac shots, and bombs from other monsters.
+{{clear}}
+
+=== Blue Gaper ===
+{{infobox monster
+ | dlc         = a
+ | name        = Blue Gaper
+ | id          = 297
+ | base hp     = {{dlcalt|30|a+=16}}
+ | stage hp    = {{dlcalt|0|a+=2}}
+ | environment = {{floor|Basement}}{{floor|Cellar}}{{floor|Burning Basement}}<br>{{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|???}}<br>{{room|dirty bedroom}}{{room|I AM ERROR}}
+ | behavior    = Walks towards Isaac, dealing contact damage.
+}}
+
+'''Blue Gapers''' walk towards Isaac slightly faster than Gapers, and deal contact damage. They are mainly spawned by {{e|Hush}}.
+
+==== Notes ====
+* They can rarely appear in {{r|Dirty Bedroom}}s and {{r|I AM ERROR}} rooms.
+* {{dlc|a+}} They can rarely appear in a [[closet]] on most floors before [[Chapter 4]].
+* {{dlc+|r}} Blue Gapers can also be found in the unique rooms created by {{t|Blue Key}} and in {{r|Red Room}}s created on {{s|???}}.{{dlc-}}
+{{clear}}
+
+=== Greed Gaper ===
+{{infobox monster
+ | dlc         = a
+ | name        = Greed Gaper
+ | id          = 299
+ | base hp     = 9
+ | environment = {{floor|Basement}}{{floor|Cellar}}{{floor|Burning Basement}}<br>{{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Ultra Greed}}<br>{{room|super secret}}{{room|ultra secret}}<br>{{dlc|nr}}<br>{{room|treasure}}
+ | behavior    = Walks towards Isaac, dealing contact damage.
+}}
+
+'''Greed Gapers''' walk toward Isaac, dealing contact damage. They are mainly spawned during the {{e|Ultra Greed}} boss fight.
+
+{{dlc|r}} If they deal contact damage to Isaac, they will force Isaac to drop or lose some coins, similar to {{e|Keeper}}s.
+
+==== Notes ====
+* They have 4 different appearances, though this is purely cosmetic.
+* {{dlc|a+}} 2 Greed Gapers may rarely replace the [[Shopkeeper]] in {{r|Shop}}s.
+* {{dlc|a+nr}} 2-4 Greed Gapers have a chance to appear in {{r|Treasure Room}}s.
+* {{dlc+|r}} Greed Gapers no longer appear in Treasure Rooms; layouts that used to contain them now contain {{e|Bulb}}s. They can, however, appear in {{r|Ultra Secret Room}}s.{{dlc-}}
+{{clear}}
+
+=== Deep Gaper ===
+{{infobox monster
+ | dlc         = r
+ | name        = Deep Gaper
+ | id          = 811
+ | base hp     = 10
+ | environment = {{floor|Downpour}}{{floor|Dross}}<br>{{room|Treasure}} (Downpour and Dross only)
+ | behavior    = Emerges from the floor once all previous enemies have been killed, then proceeds to chase Isaac. Deals contact damage.
+}}
+
+'''Deep Gapers''' are initially hidden and emerge from the floor once all initial enemies in the room have been killed. Deep Gapers walk towards Isaac slightly faster than Gapers after emerging and deal contact damage.
+
+==== Notes ====
+* This enemy has 14 design variants, 7 for {{s|Downpour}} and 7 for {{s|Dross}}. These variants are purely cosmetic with the exception of one that has a {{e|Small Leech}} stuck to its head, which will detach from it and chase Isaac when the Deep Gaper is killed.
+{{clear}}
+
+=== Blurb ===
+{{infobox monster
+ | dlc         = r
+ | name        = Blurb
+ | id          = 813
+ | base hp     = 16
+ | environment = {{floor|Downpour}}{{floor|Dross}}<br>{{room|challenge}}
+ | behavior    = Walks slowly towards Isaac, dealing contact damage. After taking some damage or getting close to Isaac, it fires a chaotic burst of tears at him and chases him more quickly. Can turn into a {{e|Pacer}} or {{e|Gusher}} upon death.
+}}
+
+'''Blurbs''' walk slowly towards Isaac, dealing contact damage. After taking some damage or getting close to Isaac, they fire a chaotic burst of tears at him and chases Isaac at the speed of Frowning Gapers, attempting to deal contact damage. They have a high chance to turn into {{e|Pacer}}s or {{e|Gusher}}s upon death.
+
+They will still spit out their projectiles if killed in an instant with high damage, firing towards Isaac even if he is not within targeting range.
+{{clear}}
+
+=== Wraith ===
+{{infobox monster
+ | dlc         = r
+ | name        = Wraith
+ | id          = 807
+ | base hp     = 10
+ | stage hp    = 0
+ | environment = {{floor|Downpour}}{{floor|Dross}}<br>{{room|challenge}}
+ | behavior    = Walks toward Isaac, dealing contact damage. They are invisible and can only be seen through the reflection they cast in the water, or the ripples they make as they walk.
+}}
+
+'''Wraiths''' walk towards Isaac slightly faster than Gapers, dealing contact damage. They are invisible and can only be seen through the reflection they cast in the water, or the ripples they make as they walk. The occasional lightning strikes in {{S|Downpour}} will also make them briefly visible.
+
+==== Notes ====
+* They are visible in the [[Mirrored World]], but their reflections will be invisible instead, appearing when lightning strikes.
+{{clear}}
+
+=== Rotten Gaper ===
+{{infobox monster
+ | dlc         = r
+ | name        = Rotten Gaper
+ | id          = 10
+ | variant     = 3
+ | base hp     = 24
+ | stage hp    = 0
+ | environment = {{floor|Corpse}}
+ | behavior    = Walks toward Isaac, dealing contact damage. Its behavior varies slightly depending on its facial expression.
+}}
+
+'''Rotten Gapers''' chase Isaac but have different behaviors depending on their appearance, and each has a different subtype (10.3.x).
+
+{| class="wikitable mw-collapsible mw-collapsed striped"
+ |-
+ ! ID
+ ! Image
+ ! Specifications
+ |-
+ | 10.3.1
+ | [[File:Rotten Gaper.png|50px]]
+ | Fairly high speed, same as a {{e|Frowning Gaper}}.
+ |-
+ | 10.3.2
+ | [[File:Rotten Gaper 2.png|50px]]
+ | Significantly higher speed, slightly less than a {{e|Gazing Globin}}.
+ |-
+ | 10.3.3
+ | [[File:Rotten Gaper 3.png|50px]]
+ | Moderate speed; spawns a {{e|Small Maggot}} every 2 seconds, but no more than 6 at a time.
+ |-
+ | 10.3.4
+ | [[File:Rotten Gaper 4.png|50px]]
+ | Moderate speed, same as a {{e|Gaper}}.
+ |-
+ | 10.3.5
+ | [[File:Rotten Gaper 5.png|50px]]
+ | Moves similarly to {{e|Lust}}, gradually gaining momentum, and moves very fast. Doesn't try to run into Isaac, instead tries to 'orbit' around him.
+ |}
+{{clear}}
+
+=== Dead Isaac ===
+{{infobox monster
+ | dlc         = r
+ | name        = Dead Isaac
+ | id          = 912
+ | variant     = 20
+ | base hp     = 40
+ | environment = {{floor|Corpse}}<br>Spawned by {{e|Mother}}
+ | behavior    = Summoned by {{e|Mother}} at the bottom of the arena, they walk upward (ignoring Isaac completely), and deal contact damage. Releases a burst of blood shots upon being killed by Mother, while she launches their corpses towards Isaac.
+}}
+
+'''Dead Isaacs''' are enemies exclusively spawned by {{e|Mother}} as part of one of her attacks. They are summoned from the bottom of the arena and will walk directly upward (ignoring Isaac completely), dealing contact damage. Once they reach Mother, she swipes at them, killing them, releasing a burst of blood shots, and launching their corpses towards Isaac. After a while, she ends this attack by slamming down both hands, which causes a small rock wave to appear beneath any remaining Dead Isaacs, launching them up into the air.
+
+==== Notes ====
+* Due to Dead Isaac only being encountered via one attack, it is possible to go multiple runs without finding them. They are required in order to complete the [[Bestiary Repentance|Bestiary]].
+{{clear}}
+
+=== Twitchy ===
+{{infobox monster
+ | dlc         = r
+ | name        = Twitchy
+ | id          = 851
+ | base hp     = 40
+ | stage hp    = 0
+ | environment = {{floor|Corpse}}<br>{{room|challenge}}
+ | behavior    = Alternates between walking towards and rapidly leaping at Isaac, dealing contact damage. Can leap to Isaac's current position, or where Isaac is heading, and can also leap away to dodge incoming fire.
+}}
+
+'''Twitchies''' are a Gaper/{{e|Trite}} hybrid that alternate between chasing Isaac and rapidly leaping at him, dealing contact damage. They leap at Isaac 1-3 times before returning to chasing him on foot, and their leaps can target him from almost across an entire normal-sized room. They can leap to Isaac's current position, or where Isaac is heading, and can also leap away to dodge incoming fire.
+{{clear}}
+
+=== Level 2 Gaper ===
+{{infobox monster
+ | dlc         = r
+ | name        = Level 2 Gaper
+ | id          = 850
+ | base hp     = 40
+ | environment = {{floor|Corpse}}<br>{{room|challenge}}
+ | behavior    = Walks towards Isaac, dealing a full Heart of contact damage. Splits into a {{e|Level 2 Horf}} and {{e|Level 2 Gusher}} upon death.
+}}
+
+'''Level 2 Gapers''' walk toward Isaac (faster than Gapers but slower than Frowning Gapers), dealing a full Heart of contact damage. They split into a {{e|Level 2 Horf}} and {{e|Level 2 Gusher}} upon death.
+{{clear}}{{dlc clear}}
+
+== Gallery ==
+<gallery>
+File:Gaper Downpour.png|{{dlc+|r}} A Gaper's appearance in {{s|Downpour}} and {{s|Flooded Caves}}.{{dlc-}}
+File:Gaper Dross.png|{{dlc+|r}} A Gaper's appearance in {{s|Dross}}.{{dlc-}}
+File:Frowning Gaper Eyes Open.png|A Frowning Gaper after it catches sight of Isaac.
+File:Frowning Gaper Downpour.png|{{dlc+|r}} A Frowning Gaper's appearance in {{s|Downpour}} and {{s|Flooded Caves}}.{{dlc-}}
+File:Frowning Gaper Dross.png|{{dlc+|r}} A Frowning Gaper's appearance in {{s|Dross}}.{{dlc-}}
+File:Nulls Open Eyes.png|A Nulls after it catches sight of Isaac.
+File:Deep Gaper Dross.png|{{dlc+|r}} A Deep Gaper's appearance in {{s|Dross}}.{{dlc-}}
+File:Blurb Dross.png|{{dlc+|r}} A Blurb's appearance in {{s|Dross}}.{{dlc-}}
+File:Blurb Normal.png|{{dlc+|r}} A Blurb's appearance outside of {{s|Dross}}, {{s|Downpour}}, and {{s|Flooded Caves}}.{{dlc-}}
+File:Wraith Dross.png|{{dlc+|r}} A Wraith's appearance in {{s|Dross}}.{{dlc-}}
+File:Twitchy Antibirth.png|{{dlc|r}} The Twitchy's appearance in ''Antibirth''.
+File:Repentance Monster Sketches.png|{{dlc|r}} Concept sketches of monsters implemented in Repentance, including the Crackle.
+File:Repentance Enemy Design Sketches.png|{{dlc|r}} Concept art of various enemies by Edmund McMillen, including the Level 2 Gaper.
+</gallery>
+
+== Trivia ==
+* {{dlc+|a}} When {{i|Head of the Keeper}} is picked up as {{c|Keeper}}, he will look similar to the Greed Gaper.{{dlc-}}
+* The appearance of Cyclopias is reminiscent of [[wikipedia:Cyclopia|the fatal birth defect of the same name]], which is characterized by the failure of the embryonic prosencephalon to properly divide the orbit of the eyes into two cavities.
+* {{dlc+|a+nr}} A {{e|Stoney}} makes the same sound as a Large [[Champion]] Gaper.{{dlc-}}
+* Frowning Gapers and Nulls don't make noises until they open their eyes.
+* {{dlc|a}} Greed Gapers are also known as Greedlings, a name given by a card of it from ''[[wikipedia:The Binding of Isaac: Four Souls|The Binding of Isaac: Four Souls]]'', although it's seldom referred to as a "Greedling" by players.
+* Gapers have among the most variations of any 'family' of monster.
+* {{dlc+|r}} Blurbs spawned outside of {{s|Downpour}} will be skin-toned.{{dlc-}}
+* {{dlc|r}} Wraiths spawned in rooms without water will appear translucent.
+* {{dlc|r}} [[Anti:Blurb|Blurbs]], [[Anti:Tidal Gaper|Deep Gapers]], [[Anti:Wraith|Wraiths]], [[Anti:Rotten Gaper|Rotten Gapers]], and [[Anti:Twitchy|Twitchies]] originate from the ''Antibirth'' mod. In ''Antibirth'', Deep Gapers were referred to as Tidal Gapers.
+* {{dlc+|r}} Despite being a hybrid with a Trite, Twitchies aren't affected by {{I|Bursting Sack}} due to being categorized as a Gaper variant.{{dlc-}}
+* {{dlc+|r}} 34 Dead Isaacs are specifically spawned in {{e|Mother}}'s attack, referencing the 34 playable characters, implying that they are all dead. This makes sense, as all characters really are Isaac himself, whom we see suffocating in a chest in [[Endings#Ending 20/Final Ending|Ending 20]].{{dlc-}}
+* A Frowning Gaper figure can be seen in a screenshot for the player's house in [https://store.steampowered.com/app/686060/Mewgenics/ Mewgenics], another game from Edmund McMillen.
+
+== Bugs ==
+{{bug|If a Dark-Red champion Frowning Gaper does not become a {{e|Pacer}} or {{e|Gusher}} and regenerates, the head won't appear until it sees Isaac. The same goes for a Gaper, however the head won't appear at all.}}
+{{bug|dlc=anr|If an {{i|Explosivo}} tear is stuck to a Nulls when it becomes invisible, the tear will fall to the ground.}}
+{{bug|dlc=r|The {{i|Explosivo}} tear will instakill a Nulls when it becomes invisible.}}
+{{bug|dlc=na+|If a [[Champion]] Gaper is killed and it turns into a {{e|Pacer}} or {{e|Gusher}}, it will no longer be a champion.}}
+{{bug|dlc=r|Cyclopias become unable to shoot while slowed, either through attacks that cause the [[slow]] status or global effects like {{i|Stop Watch}}.}}
+{{nav|fr=Béant}}

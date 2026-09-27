@@ -1,0 +1,15 @@
+{{header item pools}}
+{{item pool
+ | dlc = r
+}}
+[[file:Battery Bum.png|75px]]
+
+[[Battery Bum]]s can pay out with charges or any of these electricity-related items if given enough Coins.
+
+== Passive Collectibles ==
+{{item pool/header}}
+{{pool items | 4.5 Volt, 9 Volt, Battery Pack, Car Battery, Charged Baby, Jumper Cables, Sharp Plug, The Battery }}
+{{pool items | weight = 0.1 | 120 Volt, Jacob's Ladder }}
+|}
+
+{{nav|fr=Mendiant Électrique (Banque d'Objets)}}

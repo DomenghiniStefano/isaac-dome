@@ -1,0 +1,120 @@
+Every floor Isaac reaches has a chance to be '''cursed''', which hides or alters game elements to make the floor more difficult to complete. Each curse only lasts for the current floor. Possible curses include:
+
+{| class="wikitable mw-collapsible"
+ ! style="text-align: center; width: 20%" | Curse
+ ! style="text-align: center; width: 80%" | Description
+ |-
+ | {{curse|blind}}
+ | All [[item]] sprites are replaced with a question mark and are not revealed until they are picked up.
+ |-
+ | {{curse|darkness}}
+ | The floor is much darker, and is only barely lit by Isaac's natural aura. [[Room]]s are occasionally filled with swarms of intangible glowing particles. Fire, explosions, and lasers all cast light as normal, as does [[red creep]].
+{{Dlc|r}} The aura of light around Isaac is much larger, but the darkness outside it is much darker.
+ |-
+ | {{curse|lost}}
+ | Removes the map from the [[HUD]], similarly to the [[Amnesia]] pill, and increases the possible total room count of the current floor by 4.
+ |-
+ | {{curse|maze}}
+ | Entering a new room (including teleporting) will occasionally take Isaac to the wrong room, with a screen-shake and sound effect to indicate the jump. For instance, entering the room to the right may instead take Isaac to the room to the left. Occasionally, discovered rooms with identical door layouts can swap contents, without a screen-shake or sound effect.
+{{dlc|r}} Curse of the Maze is now supposed to only teleport Isaac into uncleared rooms, but this is bugged (See bugs section) and no longer triggers a screen-shake.
+ |-
+ | {{curse|unknown}}
+ | Removes Isaac's [[health]] from the [[HUD]], leaving the player unable to see how many hearts remain of any kind. All health is still tracked as normal, and Isaac still urinates on the floor by the door when he enters a room at half a heart of total HP.
+{{Dlc|r}} Also removes the {{I|Holy Mantle}} icon from the HUD.
+ |-
+ | {{curse|labyrinth}}
+ | Appears only on the first floor of a [[chapter]]. Merges the two floors of a chapter; the resulting XL floor contains two {{R|Boss Room}}s, two {{R|Treasure Room}}s, and counts as two floors.
+ |-
+ | {{curse|cursed}}
+ | Changes normal doors into [[Curse Room|cursed doors]]. Found only in the [[Cursed!]] [[challenge]] or when playing with the {{dlc|a}} "CVRS ED" [[seed]].
+ |-
+ | {{curse|giant}}
+ | Merges normal-sized rooms into 2x2, 1x2, 2x1, or L-shaped rooms while narrow rooms are not affected ''<small>(further confimation needed)</small>''. This curse currently isn't achievable naturally in game.
+ |}
+
+== Chance ==
+Odds of getting a curse vary with progression, increasing over time.
+{| class="wikitable mw-collapsible striped"
+ ! style="width: 20%" | Unlocks
+ ! style="width: 40%" | Normal
+ ! style="width: 40%" | Hard
+ |-
+ | New Game
+ | 1/80
+ | 1/10
+ |-
+ | Killed {{E|Mom}}
+ | 1/30
+ | 1/5
+ |-
+ | Everything is Terrible
+ | 1/10
+ | 1/3
+ |-
+ | Killed {{E|Isaac}}
+ | 1/5
+ | {{dlc|nr}} 1/2 or {{dlc|r}} 1/3
+ |}
+
+* All curses have an equal, 1/6 chance of occurring.
+** If Curse of the Labyrinth is picked on a floor it cannot spawn on, such as the second floor of any chapter, [[Greed mode]], or on any chapters post-Womb, no curses will be active for the floor.
+*** This makes the chance of getting cursed on floors without Curse of the Labyrinth 1/6, or {{dlc|nr}} 5/12 or {{dlc|r}} 5/18 for [[Hard Mode]] if {{E|Isaac}} has been defeated.
+
+== Notes ==
+* {{curse|labyrinth}} can spawn the same [[boss]] in both rooms on one floor.
+* If {{curse|Labyrinth}} is encountered in {{s|Basement}}, {{s|Cellar}}, or the {{s|Burning Basement}}, both {{R|Treasure Room}} doors will be unlocked.
+* As Curse of the Labyrinth causes the two floors in a [[chapter]] to merge, the {{R|Devil Room}} or [[Angel Room]] (if playing as [[Bethany]] or the player is holding [[Rosary Bead]]) can be encountered in {{s|Basement}} XL, {{s|Cellar}} XL, or {{s|Burning Basement}} XL, and the chances to do so are lowered as usual if Isaac takes red heart damage.
+* With the Curse of the Labyrinth, it is possible to teleport into the second {{R|Boss Room}} and completely skip the first.
+* {{dlc+|r}} If Curse of the Labyrinth takes effect during [[Chapter 1]], taking the door that spawns after the second boss room will lead to {{s|Downpour}} II or {{s|Dross}} II.{{dlc-}}
+* {{dlc+|r}} If Curse of the Labyrinth merges {{s|Downpour}} or {{S|Dross}}, there will be two "mirror" Boss Rooms.{{dlc-}}
+* {{dlc+|r}} If Curse of the Labyrinth merges {{s|Downpour}}, {{s|Dross}}, {{s|Mines}}, or {{s|Ashpit}} into an XL floor, the special rooms leading to {{i|Knife Piece 1}} and {{i|Knife Piece 2}} and their associated gimmicks will still appear.
+** Only one of the "mirror" treasure rooms in {{s|Downpour}} and {{s|Dross}} will contain the knife piece; the other will be empty.{{dlc-}}
+* {{r|Red Room}}s can be created adjacent to the first {{r|Boss Room}} if {{cu|Labyrinth}} takes effect on the floor.
+* {{curse|darkness}} can be made somewhat easier by increasing the gamma setting in the game's [[options]].
+** {{dlc+|r}} {{p|XIX - The Sun}} can now remove Curse of Darkness for the current floor.{{dlc-}}
+** {{dlc+|a}} The {{i|Night Light}} can remove Curse of Darkness for the floor it's picked up. While it does not make Isaac immune to the Curse in floors after picking it up, the light beam it emits diminishes the drawback of low visibility.{{dlc-}}
+** Interactions and attacks that have a controlled crosshair have their own little highlight. Controlled characters such as {{i|Strawman}} / {{p|Soul of the Forgotten}} / {{p|Soul of Jacob and Esau}} / {{t|Found Soul}} have their own full lighting like Isaac.
+* {{curse|unknown}} does not affect {{C|The Lost}}, as he lacks health to begin with.
+** {{Dlc+|r}} The Lost can no longer see whether the {{I|Holy Mantle}}'s shield has been broken in the current room.{{dlc-}}
+
+* {{curse|maze}} can be exploited  to enter all types of locked rooms without spending resources. Be warned, though, as trying to enter a {{R|Curse Room}} can teleport Isaac elsewhere, dealing damage without getting him into the desired room (unless he has some form of [[flight]]).
+* When Curse of the Maze triggers, it takes into account the direction the room was exited through. For example, if Isaac leaves a room by a door on the right wall, it can only take Isaac to a room that has a door on its left wall. (This also works with teleporting.)
+* Since Curse of the Maze can only swap rooms with identical door layouts, if one of the rooms has a wall where the other had a door, a secret room is guaranteed to be there.
+* Curse of the Maze can interfere with teleportation cards, but {{p|Joker}} is unaffected.
+* With Curse of the Maze active, using any form of extra life or revival item can put Isaac into a previously unvisited room.
+* {{dlc+|nr}} Curse of the Maze can teleport Isaac to the same room he was just in.{{dlc-}}
+* Items that reveal the entire map do not counteract the effect of Curse of the Lost.
+* With {{curse|blind}} active, leaving and re-entering a room which had a revealed item will change the item back to a question mark.
+* {{dlc|r}} If an item is affected by {{achievement|Corrupted Data|n}}, it is revealed upon first entering the room even if {{curse|blind}} is active. Leaving the room and returning will render it hidden again.
+* {{plat|3DS}} Curse of the Lost can be countered, as the player can draw a map on the touch screen.
+* {{curse|giant}} will not merge special rooms, including Red Rooms, and will not affect static stage layouts, like those of [[Home]] or [[Greed Mode]].
+* When activating curses via the console, curses are calculated using powers of 2 and addition. To apply multiple curses, add the number of each desired curse together. For example, <code>curse 43</code> would give Isaac Curse of Darkness, Curse of Labyrinth, Curse of the Unknown, and Curse of the Maze (1+2+8+32 = 43).
+** Curse of Darkness = 1.
+** Curse of Labyrinth = 2.
+** Curse of the Lost = 4.
+** Curse of the Unknown = 8.
+** Curse of the Cursed = 16.
+** Curse of the Maze = 32.
+** Curse of the Blind = 64.
+** {{dlc|r}} Curse of the Giant = 128.
+
+== Gallery ==
+<gallery>
+File:questionmark.png|The question mark icon that hides [[items]] when Curse of the Blind is active
+</gallery>
+
+== Trivia ==
+* Of the three curses that returned from ''Wrath of the Lamb,'' (Labyrinth, the Lost, and Darkness), two of them — {{curse|lost}} and {{curse|darkness}} — have different effects from ''Rebirth'' onwards.
+** The Curse of Darkness used to hide the map, but was given the floor darkening effect in Rebirth.
+** The Curse of the Lost used to simply add 4 rooms to the possible total room count of a floor, and was also given the map removal effect from Curse of Darkness.
+** The {{curse|labyrinth}} remained untouched.
+* {{curse|giant}} originated from the ''Antibirth'' mod, but cannot be encountered in-game without using mods or the [[Debug Console]]. This was because the room-combining aspect of the curse would often lead to buggy or unfair rooms. 
+** The game is thus prone to crashing when entering a new floor; luck is required to reach an ending if this curse is enabled.
+** A system was to be added that determined the fairness of a large room, such as limiting the number of enemies, but this proved to be too complicated to finish in time.
+* {{dlc+|r}} There is another curse being used internally in the game, called '''Curse of the Mist'''. This is active inside the {{E|Mother's Shadow}} area and is used to disable Isaac's items.{{dlc-}}
+
+== Bugs ==
+{{Bug|dlc=r|{{curse|maze}} can still teleport Isaac to already explored rooms.}}
+
+{{nav|fr=Fléaux}}
+[[Category:Mechanics]]

@@ -1,0 +1,53 @@
+'''The Harbingers''' is the achievement that unlocks {{e|Famine}}, {{e|War}}, {{e|Pestilence}}, and {{e|Death}} as four additional bosses. '''The Harbingers''' are referenced in the Bible as [[wikipedia:Four Horsemen of the Apocalypse|the Four Horsemen of the Apocalypse]]. These bosses are only unlocked once {{e|Mom}} has been defeated for the first time. These bosses, with the exception of {{e|Conquest}} and {{e|Headless Horseman}}, are guaranteed to drop either a {{i|Ball of Bandages}} or a {{i|Cube of Meat}}. By default, there is a 10% chance the current floor's boss will be a Harbinger unless the floor has a fixed boss (for example, {{e|Mom}} in {{s|Depths}} and {{s|Necropolis}}) or the Harbinger has been fought already. By using the {{i|Book of Revelations}} on a floor, it is guaranteed that the boss will be a Harbinger.
+
+== Famine ==
+{{e|Famine}} is the Harbinger for [[Chapter 1]].
+
+[[File:Boss_Famine portrait.png|link=Famine]]
+
+== Pestilence ==
+{{e|Pestilence}} is the Harbinger for [[Chapter 2]].
+
+[[File:Boss_Pestilence portrait.png|link=Pestilence]]
+
+== War ==
+{{e|War}} is the Harbinger for [[Chapter 3]]. War cannot be found in {{s|Depths}} II, {{s|Necropolis}} II, or {{s|Dank Depths}} II as {{e|Mom}} will always be the boss of that floor.
+
+[[File:Boss_War portrait.png|link=War]]
+
+== Death ==
+{{e|Death}} is the Harbinger for [[Chapter 4]]. Death cannot be found in {{s|Womb}} II, {{s|Utero}} II, or {{s|Scarred Womb}} II as {{e|Mom's Heart}} or {{e|It Lives!}} will always be the boss of that floor.
+
+[[File:Boss_Death portrait.png|link=Death (Boss)]]
+
+== Conquest ==
+{{e|Conquest}} is an alternative boss to {{e|Death}} in [[Chapter 4]]. He is unlocked once 10 items have been taken from {{r|Angel Room}}s. Conquest does not drop normal Horseman items, instead dropping {{i|White Pony}}.
+
+[[File:Boss_Conquest portrait.png|link=Conquest]]
+
+== Headless Horseman ==
+{{e|Headless Horseman}} can appear in the place of any Harbinger. Like Conquest, he doesn't drop normal Horseman items, instead dropping {{I|A Pony}}.
+
+[[File:Boss Headless Horseman portrait.png|frameless|link=Headless_Horseman]]
+
+== Unlockable [[Achievements]] ==
+{{achievement text | The Book of Revelations, 7 Seals }}
+
+== Gallery ==
+<gallery>
+File:4_Horsemen_Plus_Enemies.jpg|Concept art.
+</gallery>
+
+== Trivia ==
+* {{e|Conquest}} was added in the ''Binding of Isaac: Wrath of the Lamb''. In [[Wikipedia:Book of Revelation|the Bible]], Conquest is actually the first Horseman to appear, while {{e|Pestilence}} is a Horseman existing only in popular culture, coming from a different translation of the Greek word 'Thanatos', often meaning {{e|Death}} instead (the canon four Horsemen, thus, are Conquest, War, Famine and Death).
+** {{e|Conquest}}'s entry in the secrets is called "The Forgotten Horseman", because of that very reason.
+* {{e|Death}} is the only horseman specifically given a name in ''The Book of Revelation''.
+* The use of the {{i|Book of Revelations}} item to summon a horseman for the current floor is reference to the fact that the book of the Bible in which the horsemen are described is Revelation.
+* None of the Harbingers have a death animation.
+* Under normal circumstances, {{e|Conquest}} and {{e|Headless Horseman}} are 2 of only 5 bosses (the others being {{e|Krampus}}, {{e|The Fallen}}, and {{e|Baby Plum}} if spared) who drop or can drop active items upon defeat.
+** {{e|Bumbino}} can drop active items if paid 12 coins, but this does not defeat him in the traditional sense.
+** As for abnormal circumstances, the use of {{t|Filigree Feather}} allows the Angels to drop active items, and the use of {{i|Satanic Bible}} allows nearly any boss to drop an active item.
+* The horses used by the Harbingers resemble hobbyhorses.
+
+{{nav|mom unlock|boss|fr=Cavaliers de l'Apocalypse|es=Los Jinetes Del Apocalipsis|zh=天启骑士}}
+[[Category:Bosses]]

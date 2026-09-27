@@ -1,0 +1,32 @@
+{{Header playing cards}}
+{{Infobox card
+ | dlc         = r
+ | name        = Queen of Hearts
+ | type        = card
+ | id          = 79
+ | quote       = &lt;3
+ | description = Drops 1-20 full {{E|Red Heart}}s on the ground.
+ | unlocked by = Queen of Hearts
+ | recharge    = 12
+}}
+
+{{cit|uc|r}}
+
+== Effects ==
+* Drops 1-20 full {{E|Red Heart}}s on the ground.
+
+== Notes ==
+* Red Hearts spawned by this card are not affected by most replacement effects, other than those of {{r|Super Secret Room}}s.
+
+== Strategy ==
+* Any extra hearts left over could be used for a {{Machine|Blood Donation Machine}} to get extra money.
+* The same can also be used for {{Machine|Devil Beggar}}s, {{Machine|Hell Game}}s, and {{Machine|Confessional}}s.
+* Any characters that are unable to have red hearts can benefit from this card if they have {{i|Dark Bum}}, as it can drop {{E|Black Heart}}s.
+
+== Synergies ==
+* {{i|Maggy's Bow}}: With the increased healing, Isaac could get up to 40 hearts.
+
+== Interactions ==
+* {{I|Tarot Cloth}}: No effect.
+
+{{nav|fr=Dame de Cœur|card}}

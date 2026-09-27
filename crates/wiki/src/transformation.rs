@@ -62,7 +62,8 @@ fn item_refs(inline: &[Inline]) -> Vec<Target> {
                 | Target::Transformation { .. }
                 | Target::Stage { .. }
                 | Target::Room { .. }
-                | Target::Concept { .. } => Vec::new(),
+                | Target::Concept { .. }
+                | Target::Article { .. } => Vec::new(),
             },
             Inline::Edition { inline, .. } => item_refs(inline),
             Inline::Text { .. } | Inline::Concept { .. } => Vec::new(),

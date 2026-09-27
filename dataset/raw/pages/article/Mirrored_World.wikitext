@@ -1,0 +1,63 @@
+{{infobox stage/infobox
+ | name        = Mirrored World
+ | image       = Stage Mirrored World room.png
+ | chapter     = 1.5
+ | unlocked by = A Secret Exit
+}}{{page dlc|r}}
+
+The '''Mirrored World''' is a special area of {{s|Downpour}} II and {{s|Dross}} II. The layout of the Mirrored World is the exact same as the normal floor, except mirrored left to right. Rooms contain the same enemy encounters and have mirrored layouts, although some [[rocks]] may be different. The boss is also identical and will drop an item from the Boss [[Item Pool|item pool]] if defeated. The {{r|Treasure Room}} of the Mirrored World contains {{i|Knife Piece 1}}. 
+
+== Accessing the Mirrored World ==
+In Downpour II or Dross II, one room will contain a mirror on the wall. In another room, at least one {{E|White Fire Place}} will spawn. Touching the fire will cause the player to "die" and immediately take control of {{c|The Lost}}. This state allows Isaac to pass through the mirror and access the Mirrored World.
+
+== Notes ==
+* The Mirrored World is covered in a shimmery overlay, and its graphics slowly warp. Additionally, items and pickups will have their artwork inverted, and an alternate reversed version of the soundtrack is played.
+* Breaking the mirror is possible with a {{e|Bomb}}, and will prevent re-entry.
+** Breaking the mirror while inside the Mirrored World will cause Isaac to begin fading and eventually start taking damage. Extra lives cannot be used to prevent death after this, as Isaac will be forced to remain inside and continue dying.
+** The mirror will also break if {{p|Soul of Cain}} is used in the mirror's room.
+** {{i|Sulfuric Acid}} or {{i|Terra}} can break the mirror.
+** {{i|Mama Mega!}} will break the mirror upon entering the room.
+** {{dlc|r+}} Breaking the mirror will grant −7 [[luck]].
+* {{C|The Lost}}, {{C|Tainted Soul}}, and {{C|Tainted Lost}} can pass through the mirror normally without needing to touch the White Fire Place.
+** {{c|Tainted Jacob}} can enter the mirror if he is in his Lost state.
+** {{p|Soul of the Lost}} can be used to enter the Mirrored World without touching the White Fire Place. Isaac will also always return to normal when leaving the Mirrored World.
+* While in the Lost form, Isaac still technically has a health bar that can be replenished with hearts and/or items, but almost all sources of damage taken will remove all of his health, thus instantly killing him. 
+** This includes any [[Beggar]] or [[Machine]] that takes health in exchange for rewards, such as a {{e|Devil Beggar}}, {{e| Hell Game}}, or {{m| Blood Donation Machine}}.
+** {{I|Dull Razor}} and {{I|Potato Peeler}} give invincibility frames after use as if Isaac took damage, but do not deplete his entire health bar and kill him.
+** {{I|Sharp Plug}}, despite giving invincibility frames and consuming hearts to use, will not kill Isaac when used.
+** {{I|Shard of Glass}}' bleeding effect is canceled when entering Lost form, and cannot be activated in Lost form even if Isaac has red hearts that can be depleted.
+** Using {{I|Esau Jr.}} while in Lost form in the Mirrored World will swap between the two characters as usual. The secondary form retains a standard health bar, but will not have intrinsic flight, spectral tears, or Holy Mantle. Either character will still be able to use the mirror to leave the Mirrored World.
+*** If the secondary form exits the Mirrored World, then the primary form will remain in the Lost form when switching back.
+** Characters spawned by {{I|Strawman}}, {{p|Soul of the Forgotten}}, and {{p|Soul of Jacob and Esau}} will have their normal health bars and behaviors while Isaac is in the Lost form.
+** Items that cost health to purchase (such as Boss items converted to Devil Room items by {{I|Satanic Bible}}, items restocked in Black Markets, etc.) function identically to The Lost and will not remove Isaac's health.
+** Effects that can directly drain Isaac's health without damaging him (such as {{I|Guppy's Paw}}, {{I|Magic Skin}}, {{I|Sumptorium}}, etc.) will still drain his health as normal.
+* To revert from the Lost form, Isaac must clear at least 1 room on any floor. If Isaac is in the Mirrored World, he will turn back after going through the mirror if he has not gone through it already.
+* On XL floors, only one of the Treasure Rooms will contain Knife Piece 1; the other will be empty. Both {{r|Boss Room}}s will drop an item as normal.
+* All {{r|Secret Room}}s, {{r|Shop}}s, and {{r|Vault}}s will be devoid of items. However, {{e|Shopkeeper}}s will still appear, and can drop items as normal.
+** The {{i|Member Card}} trapdoor will appear in the shop, and will lead to a store.
+** {{i|D7}} will spawn rerolled versions of whatever was initially in the room in the normal world; that includes any pickups, chests, and pedestal items.
+** Using the {{m|Shop Restock Machine}} in the shop in the Mirrored World will cause items to appear. The normal shop will not be rerolled, and rerolls will not correlate between the two.
+* If the location of a Secret Room or Super Secret Room was first discovered in the Mirrored World, its location will be mapped when returning to the normal world, and vice versa.
+* Trapdoors will not be spawned, except to [[Crawl Space|crawlspaces]] or {{r|Black Market}}s, which will have no items but can be populated with a {{m|Shop Restock Machine}} to spawn some.
+* {{e|Wraith}}s will appear visible, but they will lack reflections unlike other entities, opposite of their normal appearance.
+* The rooms in the Mirrored World count as separate rooms, so anything that happens in the normal world room will not affect the mirror world variant of the room, and they drop their own pickups upon completion.
+** Using a {{p|Joker}} card in the Mirrored World is not recommended, as it will teleport Isaac to an empty version of the {{r|Devil Room|Display=Devil}} or the {{r|Angel Room|Display=Angel}}, causing the card to be wasted.
+* Due to the Mirrored World technically being a separate floor from the main floor of Downpour/Dross II, several items and effects have their effects modified while in the Mirrored World:
+** Any effects that would attempt to teleport Isaac to the {{r|I AM ERROR}} room in the Mirrored World will teleport Isaac to the one on the normal floor instead.
+** {{I|Forget Me Now}} + {{I|Genesis}}: Returns Isaac to the normal floor when used. If no rooms were cleared in the Mirrored World, he will remain in Lost form until a room is cleared.
+** {{I|Teleport 2.0}}: After every normal room, Boss Room, Shop, and Treasure Room has been cleared, Teleport 2.0 has a chance to not work and only teleport Isaac to an already cleared room, regardless of if there's any uncleared rooms left to explore. If Teleport 2.0 still continues to work, it's capable of teleporting Isaac to the {{r|Ultra Secret Room}} in addition to its normal destinations.
+** {{I|We Need To Go Deeper!}}: Can spawn a crawl space in the Mirrored World if one wasn't already made on the normal floor. However, doing so will prevent it from creating a crawl space on the normal floor, and the crawl space in the Mirrored World won't have items or pickups. It also can't spawn normal trapdoors at all, and nothing will happen if it tries.
+** {{I|Ventricle Razor}}: Portals are deleted when entering and exiting the Mirrored World.
+** {{p|IV - The Emperor?}}: Teleports Isaac to a {{s|Mines}}/{{s|Ashpit}} boss room, which will be fought in normal form. Additionally, if there are any pits with lava, they will be covered with rocks and become walkable land. Leaving the boss room returns Isaac to the the normal floor.
+*** Entering the Mirrored World using Soul of the Lost will cause Isaac to enter the Boss Room in his normal form.
+* If a {{r|Planetarium}} or a {{r|Library}} exists in the normal world, it will exist in the Mirrored World and require a key to open, even if it's opened in the normal world. However, there will be no items.
+* When using any revival items while in the Mirrored World, such as {{i|Dead Cat}} or {{i|Judas' Shadow}}, Isaac's health will still be affected by the revival item used, even though the character in the Mirrored World is the Lost. For example, dying with Dead Cat will set the character's health to 1 red heart, regardless of the player's health in the non-Mirrored World.
+* The mirror cannot be entered if the player uses {{I|Dad's Key}} or {{p|Get out of Jail Free Card}}.
+* A {{r|Dice Room}} in the Mirror World is distinct from the other Dice Room, is activated separately, and may have a different number.
+* When multiple active characters are available, such as with [[co-op]] mode or {{c|Jacob and Esau}}, only one is required to be in a valid Lost form for all characters to enter. Any characters not in the Lost form will retain their normal forms when entering.
+* Items and trinkets that affect tear projectile direction, such as {{t|Ouroboros Worm}}, will be mirrored horizontally from Isaac.
+
+== Bugs ==
+{{bug|Spawning items with a Restock Machine in a {{i|Member Card}} mirrored shop will result in them overlapping with the items in the non-mirrored Member Card shop.}}
+
+{{nav|environment|fr=Monde Miroir}}

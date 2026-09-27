@@ -1,0 +1,43 @@
+{{header tarot cards}}
+{{Infobox card
+ | name        = XVII - The Stars
+ | id          = 18
+ | quote       = May you find what you desire
+ | description = Teleports Isaac to the {{r|Treasure Room}}. {{dlc+|r}}If there is a {{r|Planetarium}}, teleports Isaac there instead.{{dlc-}}
+ | recharge    = {{dlcalt|4|r=2}}
+}}
+
+{{cit|c}}
+
+== Effects ==
+* Teleports Isaac to the {{r|Treasure Room}}.
+* {{dlc+|r}} If there is a {{r|Planetarium}}, teleports Isaac there instead.{{dlc-}}
+
+== Notes ==
+* {{dlc|nr}} XVII - The Stars cannot appear in [[greed mode]].
+* Using XVII - The Stars on a floor that doesn't have a {{r|Treasure Room}} / {{r|Planetarium}} will teleport Isaac to a random room.
+* When {{cu|Labyrinth}} is active, one of the two treasure rooms is chosen at random to teleport Isaac into.
+** XVII - The Stars will always teleport to an unexplored treasure room. If one has been explored, it will teleport to the other.
+* When {{curse|Maze}} is active, using this card can teleport Isaac to a random room instead.
+
+== Strategy ==
+* XVII - The Stars allows to access the {{r|Treasure Room}} / {{r|Planetarium}} without using a key.
+* XVII - The Stars can be used to escape any room that locks down after taking its contents, like {{r|Challenge Room}}s or {{r|Boss Rush}}, effectively "stealing" its contents without facing the imposed challenge.
+
+== Synergies ==
+* {{I|Tarot Cloth|r}}: If the treasure room was unexplored before using XVII - The Stars, it will contain two choice item pedestals, as if {{i|More Options|n}} was active.
+** It has no effect if it teleports to a planetarium.
+
+== Interactions ==
+* {{I|Tarot Cloth|nr}}: No effect.
+
+== Gallery ==
+<gallery>
+File:XVII - The Stars Steam Card.jpg| '''XVII - The Stars''''s Steam trading card. Note that it is correctly titled "The Star".
+</gallery>
+
+== Trivia ==
+* [[wikipedia:The Star (tarot card)|The Star]] is the seventeenth card of a Major Arcana set.
+** This card is erroneously titled "The Star'''s'''"
+
+{{nav|fr=XVII - L'Étoile|card}}

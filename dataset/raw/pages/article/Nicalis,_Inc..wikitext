@@ -1,0 +1,9 @@
+'''Nicalis, Inc.''' is an indie video game publisher, famous for developing and publishing ''The Binding of Isaac: Rebirth'' and its DLCs- ''Afterbirth,'' ''Afterbirth+'' ''and Repentance''. It was founded by Tyrone Rodriguez in 2007.
+
+== External links ==
+* [https://www.nicalis.com Nicalis's official website]
+* [https://twitter.com/nicalis Nicalis's official twitter]
+* [[wikipedia:Nicalis|Nicalis's official Wikipedia page]]
+
+{{nav|people}}
+[[Category:Developers]]

@@ -1,0 +1,12 @@
+{{page dlc|r}}
+
+Items with this [[Item Tags|tag]] are not available to {{c|The Lost}} after obtaining {{i|Birthright}}. Most of these are health-related or related to "on hit" effects, since The Lost has no health. Some of these are also related to abilities The Lost already has, such as [[spectral tears]] or [[flight]], and some change The Lost into a different [[characters|character]].
+
+== Activated Collectibles ==
+{{collectible table | tag = nolostbr | type = activated }}
+
+== Passive Collectibles ==
+{{collectible table | tag = nolostbr | type = passive }}
+
+{{nav|fr=Balise nolostbr}}
+[[Category:Item tags]]

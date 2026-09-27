@@ -1,0 +1,42 @@
+{{header soul stones}}
+{{Infobox rune
+ | dlc         = r
+ | name        = Soul of Isaac
+ | type        = soul stone
+ | id          = 81
+ | quote       = Reroll... or not
+ | description = Rerolls all items in the room, but they cycle back to the original item after one second, repeating. If more uses are stacked, an additional item per use will be cycled through.
+ | unlocked by = Soul of Isaac
+ | recharge    = 4
+}}
+
+{{cit|ur|r}}
+
+== Effects ==
+* Rerolls all items in the room, but they cycle back to the original item after one second, repeating.
+
+== Notes ==
+* The reroll has the same rules as {{i|The D6}}.
+* If more uses are stacked, an additional item per use will be cycled through.
+* Activation of a {{M|Shop Restock Machine}} will reset the number of items that will be cycled through.
+
+== Strategy ==
+* It is best to use this in a room with multiple items in order to maximize the amount of items seen, allowing for the most potential choices.
+** A smart idea is to use this in the {{r|Angel Room}}. This is because they often have multiple pedestals, including the one spawned by fighting the [[Angel]].
+
+== Interactions ==
+* {{c|Isaac}} + {{i|Birthright}} / {{c|Tainted Isaac}} / {{i|Glitched Crown}}: An additional item will be cycled through.
+
+== In-game Footage ==
+{{#ev:youtube|QllR1KrizD0}}
+
+== Trivia ==
+* This effect is the same as {{c|Tainted Isaac}}'s passive 'more options' effect. 
+** It's also identical to the {{i|Birthright}} effect for [[Isaac]].
+** This Soul Stone, along with {{p|Soul of Magdalene}}, {{p|Soul of Judas}}, and {{p|Soul of Samson}}, replicates a feature of the character it's unlocked by.
+
+== Bugs ==
+{{bug|If an active item on a pedestal is touched and then rerolled with {{p|Soul of Isaac}}, the alternate item will also count as "already picked up": it will not drop pickups, grant health or transformations like it  normally would.}}
+
+{{nav|fr=Âme d'Isaac}}
+[[Category:Runes]]

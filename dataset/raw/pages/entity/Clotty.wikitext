@@ -1,0 +1,74 @@
+{{infobox monster
+ | id          = 15
+ | base hp     = 15
+ | environment = {{floor|Basement}}{{floor|Cellar}}{{floor|Burning Basement}}<br>{{floor|Downpour}}<br>{{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{room|challenge}}
+ | behavior    = Randomly wanders around the room, firing 4 blood shots in the cardinal directions.
+}}
+
+'''Clotties''' are enemies that wander around the room, randomly shooting four blood shots in the cardinal directions. These can be particularly difficult to deal with early on if the player isn't careful. {{dlc|a}} Two of them are also spawned from [[Mega Clotty|Mega Clotties]] when killed. They are immune to any fire damage and will turn into Grilled Clotties when set on fire, unless they're in a flooded room (such as those found in the Flooded Caves or a room that [[Flush!]] was used in), in which case they'll be killed as normal.
+{{clear}}
+
+== Variations ==
+=== Clot ===
+{{infobox monster
+ | name        = Clot
+ | image name  = * {{dlc|nr|Classic}}
+ | variant     = 1
+ | base hp     = 15
+ | environment = {{floor|Basement}}{{floor|Cellar}}{{floor|Burning Basement}}<br>{{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Depths}}{{floor|Dank Depths}}<br>{{floor|Utero}}<br>{{floor|Cathedral}}<br>{{room|boss}}
+ | behavior    = Randomly wanders around the room, firing 4 tar shots in the ordinal directions.
+}}
+
+A '''Clot''' is an alternate version of a Clotty that shoots four tar shots in the diagonal directions. They appear similar to [[Gish]], who also spawns them. As they do not shoot tar shots in the cardinal directions, they are considerably easier to defeat than Clotties.
+{{clear}}
+
+=== I.Blob ===
+{{infobox monster
+ | name           = I.Blob
+ | variant        = 2
+ | base hp        = 15
+ | environment    = {{floor|Basement}}{{floor|Cellar}}{{floor|Burning Basement}}<br>{{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|Cathedral}}
+ | replace        = Clotty, Clot
+ | replace chance = 1%
+ | behavior       = Randomly wanders around the room, firing 8 shots in all directions.
+}}
+
+The '''I.Blob''' is an even rarer alternate version of the Clotty. It is an Isaac-like blob that shoots 8 blood shots in all directions, combining the attacks of both the Clotty and the Clot.
+{{clear}}
+
+=== Grilled Clotty ===
+{{infobox monster
+ | name        = Grilled Clotty
+ | variant     = 3
+ | base hp     = 20
+ | environment = {{floor|Burning Basement}}<br>{{floor|Chest}}
+ | behavior    = Quickly and randomly wanders around the room, firing four flame shots in the cardinal directions at a slight angle.
+|dlc=r}}
+
+The '''Grilled Clotty''' is an enemy that behaves exactly like a Clotty; however, it moves much quicker, and their shots are ever-so slightly off-kilter. Clotties transform into Grilled Clotties when set on fire.
+{{clear}}
+
+=== Cloggy ===
+{{infobox monster
+ | name        = Cloggy
+ | id          = 872
+ | base hp     = 15
+ | stage hp    = 2
+ | environment = {{floor|Dross}}<br>{{room|challenge}}
+ | behavior    = Randomly wanders around the room, firing four curved brown shots in the cardinal directions. These shots alternate between rotating clockwise and counterclockwise with each shot.
+|dlc=r}}
+
+The '''Cloggy''' is an enemy that behaves similarly to a Clotty; however, its shots are brown and curved rather than straight. Its bullets alternate clockwise and counterclockwise with each shot.
+{{clear}}{{dlc clear}}
+
+== Gallery ==
+<gallery>
+FIle:Clotty Downpour.png|A Clotty's appearance in Downpour and Flooded Caves.
+</gallery>
+
+== Trivia ==
+* Clots are a miniature version of [[Gish]], from [http://store.steampowered.com/app/9500/ the game of the same name].
+* The I in I.Blob stands for Isaac, referencing their similarities to Isaac.
+* {{dlc|r}} [[Anti:Grilled Clotty|Grilled Clotties]] originate from the ''Antibirth'' mod.
+
+{{nav|fr=Coagulé}}

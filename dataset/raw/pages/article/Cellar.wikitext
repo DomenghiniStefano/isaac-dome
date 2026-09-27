@@ -1,0 +1,90 @@
+{{infobox stage
+ | chapter         = 1
+ | id              = 2
+ | id greed        = {{dlc|r|2}}
+ | level id        = 1, 2
+ | level id greed  = {{dlc|r|1}}
+ | type id         = 1
+ | type id greed   = {{dlc|r|1}}
+ | degraded bosses = Blastocyst Small
+ | bosses          = Blighted Ovum, The Duke of Flies, Famine, Fistula, The Haunt, Little Horn, Pin, Rag Man, Widow
+ | unlocked by     = The Cellar
+}}
+
+'''The Cellar''' is one of the environments in [[Chapter 1]]. It is unlocked after defeating each [[boss]] in the {{s|Basement}}, including defeating the smallest twin first in {{e|Gemini}}'s fight. It is not necessary to defeat {{e|Steven}} to unlock the Cellar. The theme of the Cellar is spiders and poop. Common enemies include Trites, Sacks and Wall Creeps, fitting the floor's theme of spider-themed enemies.
+
+The Cellar's alternate floors are the {{s|Basement}} and the {{s|Burning Basement}}.
+
+{{dlc+|r}} After {{a|A Secret Exit}} is unlocked, a locked door similar to the one leading to a {{r|Treasure Room}} will appear in this floor's {{r|Boss Room}} upon defeating the boss leading to {{S|Downpour}} / {{S|Dross}}. Like a Treasure Room, this door requires a key to be unlocked. Unlike {{r|Angel Room}}s and {{r|Devil Room}}s, this door never disappears.{{dlc-}}
+
+== [[Monsters]] ==
+{{entity table/header}}
+{{stage entities | Sack, Walking Sack, Clotty, Clot, I.Blob, Dip, Squirt, Embryo, Fatty, Blubber, Fly, Attack Fly, Ring Fly, Moter, Pooter, Super Pooter, Level 2 Fly, Full Fly, Sucker, Spit, Gaper, Frowning Gaper, Skinny, Horf, Psychic Horf, Mulligan, Mulligoon, Mulliboom, Hive, Nest, Pacer, Gusher, Hopper, Round Worm, Night Crawler, Spider, Big Spider, Level 2 Spider, Ticking Spider, Trite, Ragling, Baby Long Legs, Small Baby Long Legs, Crazy Long Legs, Small Crazy Long Legs, Blind Creep, Wall Creep, Wall Hugger, Slide }}
+{{stage entities | dlc = a | Flaming Fatty, Brownie Corn, Dart Fly, Swarm, Cyclopia, Blue Gaper, Greed Gaper, Conjoined Fatty, Black Globin's Head, Black Globin's Body, Roundy, Mega Clotty, Suction Pitfall, Ulcer }}
+{{stage entities | dlc = a+ | Stoney }}
+{{stage entities | dlc = a+nr | Portal }}
+{{stage entities | dlc = r | Bulb, Migraine, Swarm Spider }}
+|}
+
+''Degraded Bosses:''
+{| class="wikitable mw-collapsible"
+! Name
+! ID
+! Notes
+{{entity row minimal|Blastocyst}} | Small-form only
+|}
+
+== [[Boss]]es ==
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:Boss Blighted Ovum portrait.png|center|link=Blighted Ovum]]
+| style="text-align: center; border: none" |[[File:Boss The Duke of Flies portrait.png|center|link=The Duke of Flies]]
+| style="text-align: center; border: none" |[[File:Boss The Haunt portrait.png|center|link=The Haunt]]
+| style="text-align: center; border: none" |[[File:Boss Pin portrait.png|center|link=Pin]]
+|-
+| style="text-align: center; border: none" |[[Blighted Ovum]]
+| style="text-align: center; border: none" |[[The Duke of Flies]]
+| style="text-align: center; border: none" |[[The Haunt]]
+| style="text-align: center; border: none" |[[Pin]]
+|}
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:Boss Widow portrait.png|link=Widow]]
+| style="text-align: center; border: none" |[[File:Boss Fistula portrait.png|center|link=Fistula]]
+| style="text-align: center; border: none" |[[File:Boss Famine portrait.png|center|link=Famine]]
+| style="text-align: center; border: none" |[[File:Boss The Fallen portrait.png|center|link=The Fallen]]
+|-
+| style="text-align: center; border: none" |[[Widow]]
+| style="text-align: center; border: none" |[[Fistula]] {{Dlc|nr}}
+| style="text-align: center; border: none" |[[Famine]] {{unlockable}}
+| style="text-align: center; border: none" |[[The Fallen]] {{room|Devil}}
+|}
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:Boss Headless Horseman portrait.png|center|link=Headless Horseman]]
+| style="text-align: center; border: none" |[[File:Boss Little Horn portrait.png|center|link=Little Horn]]
+| style="text-align: center; border: none" |[[File:Boss Rag Man portrait.png|center|link=Rag Man]]
+|[[File:Boss Baby Plum portrait.png|alt=|center|link=Baby Plum]]
+|-
+| style="text-align: center; border: none" |[[Headless Horseman]] {{unlockable}}
+| style="text-align: center; border: none" |[[Little Horn]] {{dlc|a}} {{unlockable}}
+| style="text-align: center; border: none" |[[Rag Man]] {{dlc|a}} {{unlockable}}
+| style="text-align: center; border: none" |[[Baby Plum]] {{Dlc|r}} {{unlockable}}
+|}
+
+== Notes ==
+* Unlocking the Cellar requires defeating every [[boss]] in the Basement. However, this does not require fighting them in the Basement. It is possible, for instance, to have defeated every single boss except for the {{e|Gurglings}}, encounter them in the {{s|Womb}}, clear the room in which they are encountered, and successfully unlock the Cellar.
+
+== Trivia ==
+* Unlike the {{s|Basement}}, the backdrop of the Cellar consists of older, more rotten wood with occasional cobwebs on the wall.
+* In the original Binding of Isaac, {{e|Gurdy Jr.}} could appear as a boss.
+
+== Unlockable [[Achievements]] ==
+{{achievement text | Something From The Future, Sprinkler, Basement Boy }}
+
+== Music ==
+* The [[music]] for the cellar is titled ''Periculum''.<ref>[https://ridiculon.bandcamp.com/album/the-binding-of-isaac-rebirth-ost Binding of Isaac: Rebirth OST]</ref>
+** Periculum is Latin for "danger" or "risk", signifying how the Cellar is a step-up from the Basement.
+
+== References ==
+{{reflist}}
+
+{{nav|environment|fr=Cave}}
+[[ru:Погреб]]

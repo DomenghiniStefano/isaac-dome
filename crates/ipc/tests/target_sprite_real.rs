@@ -35,19 +35,24 @@ fn family(t: &Target) -> &'static str {
         Target::Stage { .. } => "stage",
         Target::Room { .. } => "room",
         Target::Concept { .. } => "concept",
+        Target::Article { .. } => "article",
     }
 }
 
 #[derive(Default, Debug, Clone, Copy)]
 struct Counts {
     found: usize,
+    /// A non-boss entity's own picture, still to be composed from its `.anm2`
+    /// (`TargetSprite::Entity`): the catalog names a row, but drawing it is more than a
+    /// crop, so it is counted apart from `found` rather than folded into it.
+    entity: usize,
     no_art: usize,
     unknown: usize,
 }
 
 impl Counts {
     fn total(&self) -> usize {
-        self.found + self.no_art + self.unknown
+        self.found + self.entity + self.no_art + self.unknown
     }
 }
 
@@ -85,14 +90,37 @@ fn pages() -> Vec<Target> {
     out
 }
 
+/// `ds.entities`' own keys as targets, the same notation `pages` reads for bosses — the
+/// common enemies design decision 2 added, kept apart from `pages` because they answer a
+/// different question: not "is the boss's portrait reachable" but "what does the sprite
+/// pipeline still need before a common enemy has a picture at all".
+fn entity_page_targets(ds: &wiki::Dataset) -> Vec<Target> {
+    ds.entities
+        .keys()
+        .filter_map(|k| {
+            let mut p = k.split('.').map(|n| n.parse::<u32>());
+            match (p.next(), p.next(), p.next()) {
+                (Some(Ok(id)), Some(Ok(variant)), Some(Ok(subtype))) => Some(Target::Entity {
+                    id,
+                    variant,
+                    subtype,
+                }),
+                _ => None,
+            }
+        })
+        .collect()
+}
+
 /// Walks the dataset's pages and counts how **the page itself** (its target) resolves,
 /// per family.
 fn page_coverage(c: &Catalog) -> BTreeMap<&'static str, Counts> {
+    let ds = wiki::Dataset::embedded().ok();
     let mut per_family: BTreeMap<&'static str, Counts> = BTreeMap::new();
     for t in pages() {
         let entry = per_family.entry(family(&t)).or_default();
-        match target_sprite(c, &ipc::for_tests::bosses(c), &t) {
+        match target_sprite(c, &ipc::for_tests::bosses(c), ds, &t) {
             TargetSprite::Found(_) => entry.found += 1,
+            TargetSprite::Entity(_) => entry.entity += 1,
             TargetSprite::NoArt => entry.no_art += 1,
             TargetSprite::Unknown => entry.unknown += 1,
         }
@@ -133,9 +161,11 @@ fn most_boss_pages_reach_their_portrait_through_the_entity_key() {
         test_support::skip("the dataset has no entity pages");
         return;
     }
-    // The wiki's `entity` pages aren't just bosses: they include common enemies, which
-    // by definition don't have a portrait. The property that holds is that the bosses
-    // the game illustrates are reachable — not that every entity has a picture.
+    // `pages` walks `ds.bosses` alone: the common enemies design decision 2 filed under
+    // `ds.entities` are a different collection and a different property, covered by
+    // `common_enemies_have_no_picture_yet` below — mixing the two here would drag this
+    // threshold down for a reason that has nothing to do with whether a *boss* portrait
+    // is reachable.
     //
     // The threshold was `> 50` while the key was read from the portrait's file name alone
     // and 75 of 102 resolved. Since the page's own title decides the key (2026-09-21) the
@@ -145,6 +175,56 @@ fn most_boss_pages_reach_their_portrait_through_the_entity_key() {
     assert!(
         n.found * 10 > n.total() * 9,
         "boss portraits must stay reachable from the entity key ({n:?})"
+    );
+}
+
+/// The common enemies design decision 2 filed under `ds.entities` (Gaper, Fly, every
+/// non-boss `Infobox monster`/`Infobox entity` page) now read `TargetSprite::Entity`: once
+/// `target_sprite` is handed the dataset, it tells a boss's page from a common entity's by
+/// which collection (`ds.bosses` vs `ds.entities`) claims the triple, and a common entity's
+/// row in the real `entities2.xml` names its own `.anm2` — no portrait lookup involved.
+///
+/// This replaces the earlier "reads as Unknown, not NoArt yet" statement: that was the
+/// measured gap before the dataset was threaded through, and this is the measured fix.
+#[test]
+fn common_enemies_resolve_to_their_own_anm2() {
+    let Some(c) = real_catalog() else { return };
+    let Ok(ds) = wiki::Dataset::embedded() else {
+        test_support::skip("wiki dataset not embedded");
+        return;
+    };
+    let targets = entity_page_targets(ds);
+    if targets.is_empty() {
+        test_support::skip("the dataset has no entity pages");
+        return;
+    }
+    let bosses = ipc::for_tests::bosses(&c);
+    let mut n = Counts::default();
+    for t in &targets {
+        match target_sprite(&c, &bosses, Some(ds), t) {
+            TargetSprite::Found(_) => n.found += 1,
+            TargetSprite::Entity(_) => n.entity += 1,
+            TargetSprite::NoArt => n.no_art += 1,
+            TargetSprite::Unknown => n.unknown += 1,
+        }
+    }
+    eprintln!("coverage common entities: {n:?}");
+    // A common entity's picture always exists in the archives somewhere: `NoArt` would mean
+    // this pipeline gave up on a kind it should draw, which is never the right answer here.
+    assert_eq!(n.no_art, 0, "a common entity never reads 'NoArt': {n:?}");
+    // A handful genuinely draw a boss's portrait, by coincidence and not by a reader gap:
+    // Peep Eye (`68.1.0`) shares its exact triple with the boss The Bloat, and Lil' Haunt
+    // (`260.0.0`) with The Haunt — `entity_role` checks `ds.bosses` first, the same order
+    // `Dataset::entry` resolves in, so these two monster pages draw the boss's picture.
+    assert!(
+        n.found <= 4,
+        "more 'found' than the two known boss/monster key collisions explain: {n:?}"
+    );
+    // The overwhelming majority resolve to their own anm2: what's left is ids the wiki
+    // cites that the installed archives' `entities2.xml` does not carry a row for.
+    assert!(
+        n.entity * 10 > n.total() * 9,
+        "common entities should mostly compose their own picture now: {n:?}"
     );
 }
 
@@ -216,7 +296,7 @@ fn a_contested_key_draws_the_boss_whose_page_it_is_and_not_its_neighbour() {
             variant,
             subtype: 0,
         };
-        let path = match target_sprite(&c, &ipc::for_tests::bosses(&c), &t) {
+        let path = match target_sprite(&c, &ipc::for_tests::bosses(&c), Some(ds), &t) {
             TargetSprite::Found(s) => s.path.clone(),
             other => panic!("{}.{} ({}) resolved to {other:?}", id, variant, page.title),
         };
@@ -269,6 +349,7 @@ fn the_pages_a_portrait_file_name_cannot_reach_are_reached_by_the_title() {
         match target_sprite(
             &c,
             &ipc::for_tests::bosses(&c),
+            Some(ds),
             &Target::Entity {
                 id,
                 variant,
@@ -276,7 +357,9 @@ fn the_pages_a_portrait_file_name_cannot_reach_are_reached_by_the_title() {
             },
         ) {
             TargetSprite::Found(_) => recovered += 1,
-            TargetSprite::NoArt | TargetSprite::Unknown => still_missing.push(&entry.title),
+            TargetSprite::Entity(_) | TargetSprite::NoArt | TargetSprite::Unknown => {
+                still_missing.push(&entry.title)
+            }
         }
     }
     eprintln!("sample: {recovered} boss pages no file name reaches, recovered by title");

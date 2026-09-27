@@ -1,0 +1,121 @@
+{{infobox monster
+ | name        = Charger
+ | id          = 23
+ | base hp     = 20
+ | environment = {{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|Corpse}}<br>{{floor|Sheol}}<br>{{room|boss}}{{room|mini-boss}}{{room|challenge}}{{room|boss challenge}}
+ | behavior    = Slowly moves around the room, charging at Isaac when he gets in its line of sight.
+}}
+
+'''Chargers''' are a more advanced form of {{e|Maggot}}.
+
+They possess a smiling face of sorts and look quite harmless as they slowly crawl along without attempting to follow Isaac. If a Charger lines up with Isaac vertically or horizontally, however, they will immediately and quickly charge in a straight line towards him. Because they're usually encountered in groups, avoiding them quickly becomes a problem. They are also unusually tanky for enemies encountered so early; the default damage of most characters is 3.5, so without damage upgrades (not especially rare for Chapter 2), they require 6 shots to take down, and can thus easily become overwhelming when combined with other threats. Usage of Bombs or offensive Active Items/Cards may be warranted during those early floors to dispatch them.
+
+__TOC__
+{{clear}}
+
+== Variants ==
+=== Drowned Charger ===
+{{infobox monster
+ | dlc            = a
+ | name           = Drowned Charger
+ | image name     = * {{dlc|nr|Afterbirth}}
+ | variant        = 1
+ | base hp        = 22
+ | environment    = {{floor|Flooded Caves}}<br>{{floor|Necropolis}}<br>{{room|boss}}{{room|mini-boss}}{{room|challenge}}
+ | replace        = Charger, {{dlc|nr|Maggot, Spitty}}
+ | replace chance = 50%
+ | replace notes  = in {{s|Flooded Caves}}
+ | behavior       = Slowly moves around the room, charging at Isaac when he gets in its line of sight. Explodes into four blood shots in the ordinal directions upon death.
+}}
+
+'''Drowned Chargers''' are a drowned variant added in ''[[The Binding of Isaac: Afterbirth]]'' DLC.
+
+They possess the same behavior of regular Chargers, but have 10% more health. They shoot four diagonal blood shots upon death. They can be spawned by {{e|Drowned Boom Fly|text=Drowned Boom Flies}} upon death, as well as (at reduced health) by {{e|Drowned Hive}}s.
+
+{{clear}}
+
+=== Dank Charger ===
+{{infobox monster
+ | dlc         = a+
+ | name        = Dank Charger
+ | variant     = 2
+ | base hp     = 26
+ | environment = {{floor|Dank Depths}}<br>{{room|challenge}}
+ | behavior    = Slowly moves around the room, launching itself at Isaac if he gets in its line of sight. Bounces off of walls and leaves a trail of slowing [[black creep]] while charging.
+}}
+
+'''Dank Chargers''' are the dank variants added in [[Booster Pack 5|Booster Pack #5]] of ''[[The Binding of Isaac: Afterbirth †]]'' DLC.
+
+They behave similarly to regular Chargers, but have a much faster dash, bounce off of walls while dashing, and leave a trail of slowing [[black creep]] while dashing. When their charge ends, they have a short cooldown period before they start moving again.
+
+{{clear}}
+
+=== Carrion Princess ===
+{{infobox monster
+ | dlc         = r
+ | name        = Carrion Princess
+ | variant     = 3
+ | base hp     = 26
+ | environment = {{floor|Ashpit}}<br>{{room|challenge}}
+ | behavior    = Slowly moves around the room, charging at Isaac when he lines up diagonally with it. Can only be damaged by hitting its tail.
+}}
+'''Carrion Princess''' is a {{e|Carrion Queen}}-like variation of a Charger added in ''[[The Binding of Isaac: Repentance]]''. They appear exclusively in {{s|Ashpit}}.
+
+They charge diagonally, similar to Carrion Queen. Much like the Carrion Queen, they can only be damaged by hitting their pink tail segments.
+{{clear}}
+
+=== Level 2 Charger ===
+{{infobox monster
+ | dlc         = r
+ | name        = Level 2 Charger
+ | id          = 855
+ | base hp     = 40
+ | environment = {{floor|Corpse}}<br>{{room|challenge}}
+ | behavior    = Slowly moves around the room, charging at Isaac when he gets in its line of sight. Can slowly change its trajectory while charging.
+}}
+
+'''Level 2 Chargers''' are stronger variants of {{e|Charger}}s added in ''[[The Binding of Isaac: Repentance]]'' DLC. They are found in {{s|Corpse}} and the ascent to [[Home]].
+
+Upon lining up with Isaac cardinally, Level 2 Chargers will initially charge cardinally towards him but will curve their trajectory towards Isaac's position if attempting to move out of the way. Level 2 Chargers move slightly slower than default Chargers.
+{{clear}}
+
+=== Elleech ===
+{{infobox monster
+ | dlc         = r
+ | name        = Elleech
+ | variant     = 1
+ | base hp     = 60
+ | environment = {{floor|Downpour}}<br>Found on the [[Ascent]] to {{s|Home}}
+ | behavior    = Slowly moves around the room. After Isaac gets in its line of sight, continuously charges at him in the closest cardinal direction.
+}}
+
+'''Elleeches''' are enemies added in ''The Binding of Isaac: Repentance'' DLC.
+
+Their behavior is a cross between a Level 2 Charger and {{e|Small Leech}}, moving aimlessly until Isaac lines up with them cardinally. They then will charge indefinitely at Isaac, not stopping at objects.
+{{clear}}{{dlc clear}}
+
+== Gallery ==
+<gallery>
+File:Dank Charger Concept.png|{{dlc|a+}} Dank Charger concept art by _Kilburn.
+File:Repentance Enemy Design Sketches.png|{{dlc|r}} Concept art of various enemies by Edmund McMillen, including the Level 2 Charger.
+</gallery>
+
+== Trivia ==
+* Chargers first appear in the original Flash version of ''The Binding of Isaac''.
+* Chargers are based on [[zelda:Rope|Ropes]] from the ''Legend of Zelda'' franchise, since both charge at the player when they are in their sight.
+* {{dlc|a+}} Dank Chargers were created by Kilburn for Booster Pack #5.
+* {{dlc|a+}} The behavior of the Dank Charger resembles that of the Charger from ''The End is Nigh'', another game made by Edmund McMillen.
+* {{dlc|r}} Elleeches are the only [[Ascent]] enemy without "Tainted" in its name.
+** Their name instead is a portmanteau combining the words "Elite" and "Leech", still carrying its elevated status.
+** They also take the appearance and behavior of a Small Leech, so in a way, they could be called Tainted Small Leeches.
+
+{{nav|booster pack|fr=Fonceur}}
+
+[[Category:Maggot monsters]]
+[[Category:Chapter 1.5 monsters]]
+[[Category:Chapter 2 monsters]]
+[[Category:Chapter 2.5 monsters]]
+[[Category:Chapter 3 monsters]]
+[[Category:Chapter 4 monsters]]
+[[Category:Chapter 4.5 monsters]]
+[[Category:Chapter 5 monsters]]

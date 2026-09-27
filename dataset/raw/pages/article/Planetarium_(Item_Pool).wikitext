@@ -1,0 +1,13 @@
+{{header item pools}}
+{{item pool
+ | dlc = r
+}}
+
+{{r|Planetarium}}s contain astronomical items representing the Sun and the planets orbiting it (plus Pluto and Earth's moon).
+
+== Passive Collectibles ==
+{{item pool/header}}
+{{pool items | Jupiter, Luna, Mars, Mercurius, Neptunus, Pluto, Saturnus, Sol, Terra, Uranus, Venus }}
+|}
+
+{{nav|fr=Planétarium (Banque d'Objets)}}

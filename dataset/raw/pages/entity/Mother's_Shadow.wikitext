@@ -1,0 +1,71 @@
+{{infobox monster
+ | dlc          = r
+ | is mini-boss = yes
+ | id           = 867
+ | variant      = 1
+ | environment  = {{floor|Mines}}{{floor|Ashpit}}
+ | behavior     = An invulnerable shadow that chases and occasionally lunges at Isaac. Only encountered in the escape sequence after acquiring {{i|Knife Piece 2}}.
+}}
+Mother's Shadow is a [[mini-boss]] found in a sub-area of the second floor of [[Chapter 2.5]] ({{s|Mines}} and {{s|Ashpit}}). She spawns on the way back after obtaining the {{i|Knife Piece 2}}. She's completely invincible and only serves as an obstacle in a chase sequence.
+
+== Behavior ==
+Upon entering this area, all [[Items#Passive Collectibles|passive items]], [[Items#Active Collectibles|active items]], and [[trinket]]s will be rendered inactive, and Isaac's {{e|Bomb}}s, {{e|Penny|text=coins}}, and {{e|Key}}s will be set to zero, leaving him similar to his state during the start of the game. He only has his current hearts. He must walk through several empty rooms before reaching the end room containing {{i|Knife Piece 2}}. Picking it up causes the room to shake and summons Mother's Shadow. Mother's Shadow is completely invulnerable and Isaac must escape her by returning to the special area entrance and leaving. On the way back, the path back will be obstructed by various obstacles, such as [[rocks]], {{e|Fire Place}}s, [[spikes]], and {{e|Poop}}s.
+
+'''Mother's Shadow''', after appearing, begins slowly floating after Isaac. When close enough to him, she stops and then quickly dashes at Isaac, dealing a whole heart of contact damage. Isaac can 'push' Mother's shadow before her charge by walking into her and will not take contact damage. Mother's Shadow can go off-screen with her dash attack or when a door is crossed into a different room. She then resumes following Isaac.
+* Mother's Shadow's position at all times is determined by her position relative to the general layout of the floor, meaning she persists in the same location even when Isaac moves through rooms. However, she cannot be left  behind and is carried along as the screen moves.
+* After encountering Mother's Shadow, the previously empty path back to the main floor map becomes filled with a variety of [[obstacles]], such as poops that must be destroyed, timed spikes, rocks that must be broken by {{e|Throwable Bomb}}s from {{e|Bomb Grimace}}s, buttons, and sometimes keys and certain cards that spawn in each room.
+
+As soon as Isaac passes the door leading out of the sub-area, Mother's Shadow screams Isaac's name in defeat and disappears as the sub-area's entrance is blocked by falling rocks. It is no longer possible to access this area again past this point.
+
+== Audio ==
+{{sound table header}}
+{{sound table row | [[File:Momintro.wav]] | The stinger that plays upon picking up Knife Piece 2 as Mom's Shadow appears. }}
+{{sound table row | [[File:Momappear.wav]] | The laugh the shadow makes upon emerging. }}
+{{sound table row | [[File:Momchargeup1.wav]] | The laugh the shadow makes upon emerging. }}
+{{sound table row | [[File:Momdash1.wav]] | The shadow calling Isaac's name as she lunges at him. }}
+{{sound table row | [[File:Momend.wav]] | The noise Mother's Shadow makes after Isaac successfully escapes.}}
+|}
+
+== Notes ==
+* Upon acquiring the Knife Piece 2, all [[Fire Places]] are extinguished and then re-ignited as red fires as Mother's Shadow appears.
+** Fire places can drop their pickups during this scene.
+* After Mother's Shadow spawns and the Knife Piece room reopens, Isaac gains 1 charge for his [[Active Collectible|active item]].
+* New [[pickups]] obtained in the area will persist after Isaac leaves.
+* Unlike non-story items, which disappear during the sequence, Isaac's health stays the same, and [[Status Effects#Friendly|friendly]] enemies still follow him here.
+** [[Blue Fly|Blue Flies]], [[Blue Spider]]s, [[Locust]]s, {{I|Big Fan}} spawned from a Pretty Fly Horse [[Pills|Pill]], {{I|Cube of Meat}} spawned from a {{I|Potato Peeler}}, and Wisps spawned from {{i|Book of Virtues}} and {{i|Vengeful Spirit}} persist into this sequence, but have no effect on Mother's Shadow. Blood clots spawned by {{i|Sumptorium}} will also persist and are immune to Mother's Shadow.
+* Extra lives granted by items such as {{i|Dead Cat}} or {{i|Guppy's Collar}} do not work, as they are removed from Isaac.
+** {{c|Lazarus}}, however, still retains his extra life.
+* Items that grant [[flight]] are taken away, forcing most characters to traverse the obstacles normally.
+** {{p|XIX - The Sun?}} allows any character to fly, despite not having the visual effects of the card's {{i|Spirit of the Night}} visible.
+** {{p|XV - The Devil?}} also allows any character to fly. However, the effect is likely to wear off before the end of the chase sequence.
+** {{I|Esau Jr.}} works similarly. If Isaac enters the zone with Esau Jr., he is still able to fly without his appearance.
+* The active piece of {{i|Broken Shovel 1}} will still spawn Mom's feet in this area.
+* {{c|Eve}} will benefit from her {{i|Whore of Babylon}} if criteria are met but her sprite will remain un-cursed.
+
+== Strategies ==
+* The key to avoiding damage during the chase sequence is to be patient. Trying to rush to the exit door will often result in unavoidable hits.
+* Mother's Shadow will not attack Isaac directly between dashes, only float in his general direction. She will scream right before attacking, and will lock her direction; stay in place until she starts to dash and then swiftly move out of the way to dodge.
+* Going back into the previous room doesn't cancel her attacks, but provides more space for avoiding them, as well as invincibility frames.
+* Do not stand on one tile-wide paths for too long, because they limit Isaac's ability to move out of the way of her dashes.
+* Since Isaac keeps any health he enters the area with, it is wise to stock up on hearts beforehand to minimize chances of death.
+** {{c|Tainted Eve}}'s {{i|Sumptorium}} should be used before entering to maximize health.
+* {{C|Azazel}}, {{C|The Lost}}, {{C|Tainted Lost}}, {{c|Tainted Jacob}} in his Lost form, and {{C|Tainted Forgotten}} can escape with minimal risk, as they can use their inherent flight to fly directly to the exit door.
+
+== Trivia ==
+* If a {{r|Crawl Space}} or {{r|Black Market}} spawns, the player can regain access to their items and cards/pills/runes in that space; however, Mother's Shadow will continue to give chase. If the player progresses to the next floor while in this space, Mother's Shadow dies, letting out the Isaac scream and temporarily locking the doors at the beginning of the next floor.
+* Mother's Shadow resembles the face of Mom as she is depicted on the cover art for ''Repentance''.
+* Sometimes when charging, Mother's Shadow can yell Isaac's name in a deeper voice.
+* The only items that are not taken away from Isaac in this sequence are {{i|Knife Piece 1}}, {{i|Key Piece 1}}, {{i|Key Piece 2}}, and {{i|Dogma}}, although the latter can only be obtained through special means.
+* Although Mother's Shadow has 250 health, it can not be damaged or killed, even with {{P|Chaos Card}}.
+* Using <code>debug 10</code> while entering the room containing {{I|Knife Piece 2}} will kill Mother's Shadow before the chase activates. Picking up {{I|Knife Piece 2}} will not start the chase if Mother's Shadow has been killed this way.
+* Due to how the escape sequence is spawned (one version spawned when you enter for the first time, and one edited version spawned when Mother's Shadow appears after {{I|Knife Piece 2}} is collected), items relevant to the escape sequence, such as cards used in puzzles like {{p|XII - The Hanged Man}}, will spawn both when the area is entered and when the escape sequence itself begins. Ergo, despite normally being blocked off, if you have some way to collect these items on the way to collect {{I|Knife Piece 2}} (such as methods either as simple as using a character like {{C|Azazel}} or {{C|The Lost}} and their innate ability to fly, or complex ones such as using the explosive tears made by Wisps spawned from {{i|Book of Virtues}} combined with {{I|Bob's Rotten Head}} to break rocks that prevent items like these from being obtained on the first run through), you can obtain an extra copy of these items, allowing you to 'skip' rooms that may not account for you possessing these items before the escape begins - for example, using the aforementioned {{p|XII - The Hanged Man}} within the room you got it from before Mother's Shadow spawned to simply fly through the room, grab another copy of the same card spawned by Mother's Shadow's appearance before exiting, and then use that copy in another room.
+* If {{i|Mama Mega!}} is used prior to entering the sequence, it will destroy all obstacles in every new room entered. However, due to how Mama Mega! works, it will not re-destroy obstacles on the way out, and thus does not aid the player during the chase.
+** When Isaac enters the final room that contains {{I|Knife Piece 2}}, Mama Mega will activate, breaking open the exit door. If Isaac takes {{I|Knife Piece 2}} and leaves before Mother's Shadow activates and charges at Isaac, the exit path of the sub-area will not have completely reset, and the doors will all be locked while Mother's Shadow still continues her activation sequence. This forces the player to re-enter the {{I|Knife Piece 2}} room, which will start ''another'' activation process for Mother's Shadow, but this time, the exit door will lock as normal, preventing the player from leaving early. This results in the player being pursued by 2 Mother's Shadows during the escape sequence.
+* The effect of the player's items being disabled whilst in the Mother's Shadow area is known as '''Curse of the Mist''', as seen in the [https://moddingofisaac.com/docs/rep/ Lua Documentation].
+
+== Bugs ==
+{{bug|If the game is saved and exited while in the sub-area, when it is continued, Isaac's visual appearance will match his items; however, items will still have no effect. It will revert to his plain appearance after either changing rooms or picking up a {{e|Throwable Bomb}}.}}
+{{bug|Familiars with levels/stages will revert to their base form upon exiting the sub-area as the game does not internally store their levels. This includes, but is not limited to: {{i|Bumbo}}, {{i|Guppy's Hairball}}, etc.}}
+{{bug|If {{e|Mother's Shadow}} kills Issac as he exits the sub-area, after his death animation finishes, the game will crash.}}
+
+{{nav|mini-boss|fr=Ombre de Mère}}

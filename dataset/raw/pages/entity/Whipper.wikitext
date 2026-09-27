@@ -1,0 +1,58 @@
+{{infobox monster
+ | dlc         = r
+ | id          = 834
+ | base hp     = 35
+ | environment = {{floor|Mausoleum}}{{floor|Gehenna}}<br>{{floor|Sheol}}<br>{{room|challenge}}
+ | behavior    = Runs around the room, sprinting at Isaac when he gets in its line of sight and lashing at him when it gets close.
+}}
+
+'''Whippers''' are fiendish enemies added in ''[[The Binding of Isaac: Repentance]]''.
+
+They wield long fleshy whip-like tendrils, which they use for a short-range melee attack. They wander around the room in straight lines and charge at Isaac if he lines up with them, during which they open their mouths wide. If Isaac gets too close, they will slash their whips at him, causing damage and deflecting nearby tears. Whippers will also whip at placed {{e|Bomb}}s.
+
+In {{s|Gehenna}}, their appearance changes to resemble a bondage suit.
+{{clear}}
+
+== Snapper ==
+{{infobox monster
+ | dlc         = r
+ | name        = Snapper
+ | variant     = 1
+ | base hp     = 35
+ | environment = {{floor|Mausoleum}}{{floor|Gehenna}}<br>{{floor|Sheol}}<br>{{room|challenge}}
+ | behavior    = Runs around the room, sprinting at Isaac when he gets in its line of sight and throwing out its whip when he gets in range.
+}}
+
+'''Snappers''' are much more dangerous versions of the Whipper. They possess a much longer, fleshy whip that can extend across the room, at the minor cost of decreased attack width. They behave similarly to normal Whippers in that they'll charge towards Isaac if he's far enough but in their sights (their eyes turn redder to signify such) but will snap their whips at Isaac if he lines up with them at a moderate or close distance. Similar to the Whippers, their appearance resembles a bondage suit in {{s|Gehenna}}.
+{{clear}}
+
+== Flagellant ==
+{{infobox monster
+ | dlc         = r
+ | name        = Flagellant
+ | variant     = 2
+ | base hp     = 42
+ | environment = {{floor|Mausoleum}}<br>{{floor|Sheol}}
+ | behavior    = Runs around the room. When Isaac gets in its line of sight, continuously chases him and lashes its whip, occasionally deflecting Isaac’s shots.
+}}
+
+'''Flagellants''' are even more mutilated versions of the Whipper. They wander around the room in straight lines, charging at Isaac relentlessly if he lines up with them. However, they constantly swipe their whips back and forth as they charge, damaging Isaac if he gets caught and deflecting tears much more frequently than regular Whippers. Flagellants are also more aggressive than regular Whippers and will chase Isaac for a while instead of simply charging once.
+{{clear}}
+
+== Gallery ==
+<gallery>
+File:Whipper Gehenna.png|A Whipper's appearance in Gehenna.
+File:Snapper Gehenna.png|A Snapper's appearance in Gehenna.
+File:Whipper_old.png|Whippers in ''Antibirth''.
+File:Snapper_old.png|Snappers in ''Antibirth''.
+File:Lunatic.png|Flagellants/Lunatics in ''Antibirth''.
+</gallery>
+
+== Trivia ==
+* {{dlc|r}}The [[Anti:Lunatic|Flagellant]], [[Anti:Snapper|Snapper]], and [[Anti:Whipper|Whipper]] first appeared in the ''Antibirth'' mod.
+** Flagellant, Snapper, and Whipper's sprites were changed slightly in ''Repentance''.
+** Flagellants were formerly called "Lunatics" in the ''Antibirth'' mod and could appear in {{S|Corpse}}.
+** Snapper in ''Antibirth'' would only appear in {{S|Mausoleum}}.
+* The names of the Whipper and Snapper enemies are a joke to the term "whippersnapper", which is the name for a young and inexperienced person who is considered to be presumptuous or overconfident.
+
+{{nav|fr=Pierre}}

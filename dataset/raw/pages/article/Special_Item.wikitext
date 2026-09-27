@@ -1,0 +1,53 @@
+{{page dlc|nr}}
+{{dlc|nr}}'''Special items''' are [[item]]s in the game that are considered stronger than normal by the developers. If the player sees a special item, even if the player has {{cu|Blind}}, subsequent special items have a chance of being rerolled rather than being presented to Isaac, decreasing the likelihood of obtaining multiple special items on one run.
+
+The system was removed entirely in Repentance, with the [[Item Pool#Item Weight|item weight]] mechanic expanded to compensate.
+
+* The list of special items is as follows:
+** {{i|Brimstone}}
+** {{i|D100}}
+** {{i|The D6}}
+** {{i|Dr. Fetus}}
+** {{i|Epic Fetus}}
+** {{i|Godhead}}
+** {{dlc|na}} {{i|Lil Brimstone}}
+** {{i|The Ludovico Technique}}
+** {{i|Mom's Knife}}
+** {{i|Mutant Spider}}
+** {{i|Polyphemus}}
+** {{i|Pyromaniac}}
+** {{i|Sacred Heart}}
+** {{dlc|na}} {{i|Soy Milk}}
+** {{dlc|na}} {{i|Stop Watch}}
+
+== Special Item Generation ==
+When Isaac enters a room with an item in it, items are selected out of certain [[Item Pool|item pools]] depending upon the current room. Special items have a chance of being re-rolled depending on how many special items have been seen during the run:
+
+{| class="wikitable" style="width:10%;height:100%;text-align: center;"
+!style="width:5%"|Number of Special Items Seen
+!style="width:5%"|Re-roll Chance
+|-
+| 0
+| 0%
+|-
+| 1
+| 50%
+|-
+| 2
+| 90%
+|-
+| 3
+| 98%
+|-
+| 4 or more
+| 99%
+|-
+|}
+
+== Notes ==
+* Isaac's {{i|The D6}} doesn't count as a "seen" special item, as it is directly given to him when the run starts.
+* Special items given by the {{i|D4}}, the {{i|D100}}, 1-pip [[Dice Room]]s, and 6-pip {{r|Dice Room}}s count as "seen" special items.
+* Due to the nature of special items, it can sometimes require hundreds of {{i|The D6}} rolls for special items that are not in the [[Item Pool#Treasure Room|Treasure Room pool]] to appear. (Note that with infinite rolls, it is always possible to see a special item as long as it is not already removed from the pools.)
+
+{{nav|fr=Objets Spéciaux}}
+[[Category:Mechanics]]

@@ -1,0 +1,22 @@
+{{infobox version
+ | dlc   = r+
+ | date  = 2025-09-13
+}}
+
+== Undocumented changes ==
+=== Fixes ===
+* Fixed an issue where collecting {{i|Knife Piece 1}} on {{s|Downpour}} 2 and using the trapdoor to {{s|Caves}} would send Isaac to {{s|Mines}} instead.
+* Fixed an issue where defeating {{e|Mom}} in {{s|Mausoleum}} and using the trapdoor to {{s|Womb}} would send Isaac to {{s|Corpse}} instead, even without killing {{e|Mom's Heart}} with {{i|Knife Piece 1}} and {{i|Knife Piece 2}}.
+* Fixed an issue where using a {{p|Holy Card}} would give a permanent innate Holy Mantle effect.
+* Fixed an issue where {{c|Tainted Forgotten}} could purchase [[Devil deal]]s for free as The Soul.
+* Fixed an issue where {{c|The Lost}}, {{c|Tainted Lost}}, or {{c|Tainted Forgotten}} could purchase items for free with {{t|Store Credit}}, which would never disappear.
+* Fixed an issue where rerolling any [[Devil deal]] outside of a {{r|Devil Room}} would crash the game.
+* Fixed an issue where rerolling any Devil deals with the [[Item Tags|item tag]] [[Item Tags devilsacrifice|devilsacrifice]] into regular Devil deals, then rerolled back into a sacrifice deal, would cause the item to become free. 
+* Fixed an issue where {{m|Fortune Telling Machine}}s, {{m|Hell Game}}s, and {{m|Rotten Beggar}}s would give {{e|Red Heart}}s of a random subtype, rather than the subtypes assigned to each machine/beggar.
+* Fixed a crash with a {{t|Cursed Penny}} teleport.
+* Fixed the internal item descriptions sometimes showing information about the previous trinket encountered.
+* Fixed some trinket icons showing other trinkets in the "My stuff!" menu.
+* Fixed {{i|Satanic Bible}} deals blocking the bottom door when the price was a sacrifice.
+* Fixed audio issues.
+
+{{nav|version}}

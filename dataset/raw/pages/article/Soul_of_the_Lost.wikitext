@@ -1,0 +1,38 @@
+{{header soul stones}}
+{{Infobox rune
+ | dlc         = r
+ | name        = Soul of the Lost
+ | type        = soul stone
+ | id          = 91
+ | quote       = Leave your body behind
+ | description = Turns Isaac into a ghost for the current room as if he touched the {{e|White Fire Place}} in {{s|Downpour}} II / {{s|Dross}} II, temporarily granting {{c|The Lost}}'s properties.
+ | unlocked by = Soul of the Lost
+ | recharge    = 3
+}}
+
+{{cit|ur|r}}
+
+== Effects ==
+* Turns Isaac into a ghost for the current room as if he touched the {{e|White Fire Place}} in {{s|Downpour}} II / {{s|Dross}} II, temporarily granting {{c|The Lost}}'s properties.
+
+== Notes ==
+* '''Soul of The Lost''' does not actually turn the played character into {{c|The Lost}}. As such, completion marks will be attributed to the played character.
+** However, it can be used to enter the Mirror Dimension in Downpour/Dross II. Isaac does not turn back into the original character after entering the mirror.
+* Unlike touching the {{e|White Fire Place}}, the ghost form granted by the rune will always have {{i|Holy Mantle}} even if it hasn't been unlocked yet for {{c|The Lost}}. 
+** The {{i|Holy Mantle}} shield gained from this can be stacked with multiple uses.
+* The ghost form can take [[devil deal]]s at no HP cost, but can only take one.
+
+== Strategy ==
+* Since in ghost form only one devil deal can be taken, it is better (if one has HP to spare) to pay for a devil deal then use '''Soul of the Lost''' on the most expensive item if applicable.
+** Note that, unlike {{c|Tainted Jacob}}'s interaction with {{e|Dark Esau}}, using '''Soul of the Lost''' after taking a deal that would be fatal will '''not''' save you and will result in Isaac dying.
+* '''Soul of The Lost''' can also be used as last resort in a boss fight to allow for one more hit before dying.
+
+== Interactions ==
+* {{c|The Lost}}: Grants an additional holy mantle shield for the room.
+* {{c|Tainted Lost}}: The shield granted by {{p|Holy Card}} is broken before the one granted by '''Soul of the Lost'''.
+
+== In-game Footage ==
+{{#ev:youtube|QllR1KrizD0}}
+
+{{nav|fr=Âme de l'Égaré}}
+[[Category:Runes]]

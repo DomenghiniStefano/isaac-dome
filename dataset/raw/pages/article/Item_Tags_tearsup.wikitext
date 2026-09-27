@@ -1,0 +1,9 @@
+{{page dlc|r}}
+
+Items with this [[Item Tags|tag]] contribute toward the unlock of {{a|Lachryphagy}}.
+
+== Passive Collectibles ==
+{{collectible table | tag = tearsup | type = passive }}
+
+{{nav|fr=Balise tearsup}}
+[[Category:Item tags]]

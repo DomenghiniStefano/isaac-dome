@@ -1,0 +1,33 @@
+{{header reverse tarot cards}}
+{{Infobox card
+ | dlc         = r
+ | name        = XV - The Devil?
+ | files name  = XV - Inverted The Devil
+ | type        = card
+ | id          = 71
+ | quote       = Bask in the light of your mercy
+ | costume     = Collectible Fate appearance.png
+ | description = Invokes {{i|The Bible}} (which can kill {{E|Mom}}). Grants [[Flight]] and spawns a {{i|Seraphim}} familiar for 30 seconds.
+ | unlocked by = The Devil
+ | recharge    = 4
+}}
+
+{{cit|uc|r}}
+
+== Effects ==
+* Invokes {{i|The Bible}} effect.
+* Grants [[Flight]] and spawns a {{i|Seraphim}} familiar for 30 seconds.
+
+== Notes ==
+* {{i|The Bible}} effect can kill {{e|Mom}}, {{e|Mom's Heart}}, and {{e|It Lives!}}. It will also kill Isaac if '''XV - The Devil?''' is used during the {{e|Satan}} fight.
+** As such, killing Mom with '''XV - The Devil?''' can also unlock {{a|A Halo}}.
+* The card's effect persists in the {{i|Knife Piece 2}} abandoned area, allowing for easier completion of the chase sequence. However, the effect is likely to wear off before the end of the sequence.
+* The Seraphim familiar disappears precisely 30 seconds after use, but the flight ability is removed only after exiting the room the 30 seconds were elapsed in.
+
+== Interactions ==
+* {{I|Tarot Cloth}}: No effect.
+
+== In-game Footage ==
+{{#ev:youtube|b3cZ6UlSuRk}}
+
+{{nav|fr=XV - Le Diable ?|card}}

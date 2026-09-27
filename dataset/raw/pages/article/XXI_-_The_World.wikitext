@@ -1,0 +1,31 @@
+{{header tarot cards}}
+{{Infobox card
+ | name        = XXI - The World
+ | id          = 22
+ | quote       = Open your eyes and see
+ | description = Reveals the entire floor, except for the {{r|Super Secret Room}} and {{r|Ultra Secret Room}}.
+| recharge     = {{dlcalt|4|r=3}}
+}}
+
+{{cit|c}}
+
+== Effects ==
+* Reveals the current floor's entire map, except for the {{r|Super Secret Room}} and {{r|Ultra Secret Room}}.
+
+== Notes ==
+* {{dlc|r}} '''XXI - The World''' cannot appear in [[greed mode]].
+
+== Interactions ==
+* {{i|Book of Secrets|r}}: The mapping provided by '''XXI - The World''' does not count as a mapping effect. The amount of times the Book of Secrets must be used before activating the {{i|X-Ray Vision}} effect remains the same.
+* {{I|Tarot Cloth}}: No effect.
+
+== Gallery ==
+<gallery>
+File:XXI - The World Steam Card.jpg|'''XXI - The World''''s Steam trading card
+</gallery>
+
+== Trivia ==
+* [[wikipedia:The World (tarot card)|The World]] is the twenty-first and final card of a Major Arcana set.
+* This card is not a Jojo reference.
+
+{{nav|fr=XXI - Le Monde|card}}

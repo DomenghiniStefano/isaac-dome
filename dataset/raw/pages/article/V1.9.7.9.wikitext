@@ -1,0 +1,57 @@
+{{infobox version
+ | dlc = r+
+ | steam = 511824140485787667
+ | date = 2025-02-12
+}}
+
+== Documented changes ==
+=== Features/Balance changes ===
+* Increased the charge of {{i|Mega Bean}} from 4 to 6.
+* Increased the damage multiplier for the {{t|Apollyon's Best Friend}} trinket.
+* Added the shop to {{i|Card Reading}}’s potential destinations.
+* {{m|Shop Restock Machine}}s no longer double roll items when destroyed. '''Note: It still can with coins.'''
+* Fixed an exploit with {{i|Abyss}} and {{i|Void}} where players could get the effect AND the item.
+* Reduced the maximum number of {{i|Eden's Blessing}} items granted on subsequent runs to 2.
+* Added a map indicator for {{i|Lil Portal}}'s location.
+* Locust trinkets and {{i|Purgatory}} now correctly spawn in {{r|Challenge Room}}s, {{r|Boss Rush}} and {{mode|greed|greedier}} [[Greed mode]].
+* {{p|Berkano}} has been reworked to give 3 {{i|Abyss}} locusts for the duration of the room.
+* Removed the wind-up for {{i|Mars}}' dash and added impact tremors when hitting an enemy or obstacle. The player will now bounce off of enemies when colliding with them during a dash.
+* Updated {{i|Abyss}} with many more synergies and art to differentiate locust types.
+* Added a win streak counter to daily runs.
+* Removed {{t|Karma}} trinket from challenges and daily runs. '''Note: While this is indicated in the patch notes, this is actually not the case.'''
+* Added [[tainted characters]] to Tuesday daily runs (unless there is a special seed).
+* {{c|Tainted Magdalene}} won’t have her score reduced when taking damage if she is in her bleeding state.
+
+=== Bug fixes ===
+* Fixed an issue where holding R could prevent pickup text from properly appearing on the next run.
+* Fixed an issue where {{e|Gabriel}} was not spawning angel babies.
+* Fixed an issue where the pill banning system for deathmatch was applied globally.
+* Fixed several graphical issues with boss “vs.” screens.
+* Fixed an issue where destroying {{m|Key Master}}s and {{m|Bomb Bum}}s did not affect the chances of spawning a {{r|Devil Room}}.
+* Fixed an issue where {{t|Found Soul}} would disappear during the {{e|Mother}} fight.
+* Fixed an issue where {{c|Tainted Forgotten}} would get double the expected health from sleeping in a bed.
+
+=== [[Online (open beta)|Online]] ===
+* Fixed an issue where {{c|Tainted Isaac}} could be played in online matches without having him unlocked.
+* Fixed an issue where joining in progress could disable unlocks for all players.
+* Fixed an occasional crash during gameplay while firing tears.
+* Increased the maximum message length in online chat.
+* Added an in-game option to manually adjust input delay in online matches.
+* Completed online runs now take players back to the lobby screen.
+* Reveal and hide password for online matches is now a toggle.
+* Added public and friend lobby system to daily runs.
+* Fixed a desync that could occur in online matches when join-in-progress players entered the {{e|Mother's Shadow}} area.
+* Fixed an issue where players would incorrectly get double the gambling stat in co-op matches when using a {{m|Slot Machine}} or {{m|Fortune Telling Machine}}.
+* Fixed a crash in co-op related to {{i|Guppy's Eye}} previews.
+* Fixed a variety of bugs, desyncs and crashes caused by {{i|Glowing Hourglass}}.
+* Resolved various crashes and desyncs.
+
+== Undocumented changes ==
+=== Changes ===
+* Treasure and secret room jingles now play even when the music is off.
+
+=== Fixes ===
+* Fixed a crash that was caused by an enemy that fires homing projectiles (like {{e|Psychic Horf}}) being killed while its projectile was caught in {{i|Telekinesis}}.
+* Fixed a bug which caused {{i|Mucormycosis}} to not spawn a special locust when destroyed by {{i|Abyss}}, and {{i|Contagion}} to give 2 special locusts instead.
+
+{{nav|version}}

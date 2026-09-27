@@ -1,0 +1,551 @@
+A '''Challenge Room''' is a special room that allows Isaac to fight enemies for extra rewards. They will only spawn on a floor if, upon entering the floor, Isaac's total health is greater than or equal to his number of heart containers. There are two kinds of challenge rooms: ''Normal Challenge Rooms'', which appear on the first floor of a [[chapter]] or on {{Cu|Labyrinth}} floors, and ''Boss Challenge Rooms'', which appear on the second floor of a chapter. Challenge rooms do not appear in chapter 6.
+
+== Normal Challenge Room ==
+[[file:Challenge Room door.png|link=]]
+
+Normal Challenge Rooms can only be entered via their doors if Isaac's total health (Red, Black, and Soul Hearts) is greater than or equal to his number of heart containers. Picking up its contents will cause three waves of enemies to spawn. While in chapter 4 ({{s|Womb}}/{{s|Utero}}/{{s|Scarred Womb}}), 3 waves of bosses will be spawned, typically from Chapters 1 or 2.
+
+{{dlc|a+}} Each wave cleared will charge Isaac's active item by 1.
+
+=== {{Dlc|nr}} Waves ===
+The enemies that spawn depend on the current chapter, and each chapter has two different possible sets of enemies:
+{| class="wikitable" style="text-align: center"
+ ! scope="col" style="width: 10%" | Floor
+ ! scope="col" style="width: 30%" | Wave 1
+ ! scope="col" style="width: 30%" | Wave 2
+ ! scope="col" style="width: 30%" | Wave 3
+ |-
+ | rowspan="2" | {{s|Basement}}
+ | 3 {{E|Hopper}}s
+ | 3 {{E|Horf}}s
+ | 2 {{E|Clotty||Clotties}}
+ |-
+ | 5 {{E|Attack Fly||Attack Flies}}
+ | 5 {{E|Pooter}}s
+ | 4 {{E|Gaper}}s
+ |-
+ | rowspan="2" | {{s|Cellar}}
+ | 3 {{E|Fatty||Fatties}}
+ | 3 {{E|Round Worm}}s
+ | 5 {{E|Dip}}s
+ |-
+ | 3 {{E|Gaper}}s
+ | 3 {{E|Horf}}s
+ | 3 {{E|Fatty||Fatties}}
+ |-
+ | rowspan="2" | {{s|Caves}}
+ | 5 {{E|Charger}}s
+ | 4 {{E|Globin}}s
+ | 4 {{E|Maw}}s
+ |-
+ | 5 {{E|Spitty||Spitties}}
+ | 3 {{E|Hive}}s
+ | 3 {{E|Host}}s
+ |-
+ | rowspan="2" | {{s|Catacombs}}
+ | 2 {{E|Bony||Bonies}}
+ | 2 {{E|Tumor}}s
+ | 3 {{E|Wall Creep}}s
+ |-
+ | 4 {{E|Round Worm}}s
+ | 3 {{E|Night Crawler}}s
+ | 1 {{E|Grub}}
+ |-
+ | rowspan="2" | {{s|Depths}}
+ | 3 {{E|Vis}}es
+ | 4 {{E|Leaper}}s
+ | 4 {{E|Globin}}s
+ |-
+ | 4 {{E|Baby||Babies}}
+ | 5 {{E|Hopper}}s
+ | 4 {{E|Knight}}s
+ |-
+ | rowspan="2" | {{s|Necropolis}}
+ | 4 {{E|Knight}}s
+ | 3 {{e|Mom's Hand}}s
+ | 3 {{E|Fat Sack}}s
+ |-
+ | 4 {{E|Bony||Bonies}}
+ | 2 {{E|Squirt}}s
+ | 3 {{E|Nulls}}
+ |-
+ | rowspan="2" | {{s|Womb}}<br>{{s|Utero}}<br>
+ | 3 {{E|Larry Jr.}}
+ | {{E|Chub}} and 3 {{E|Charger}}s
+ | 2 {{E|Monstro}}s
+ |-
+ | {{E|Fistula}}
+ | {{E|Loki}}
+ | {{E|Chub}}
+ |-
+ | rowspan="2" |{{s|Cathedral}}<br>{{s|Sheol}}
+ | 3 {{E|Larry Jr.}}
+ | {{E|Chub}} and 3 {{E|Charger}}s
+ | 2 {{E|Monstro}}s
+ |-
+ | {{E|Fistula}}
+ | {{E|Loki}}
+ | {{E|Chub}}
+ |}
+
+=== {{Dlc+|r}} Waves (Sorted By Difficulty; Basement, Cellar, and Burning Basement Unused) ===
+{| class="wikitable" style="text-align: center"
+ ! scope="col" style="width: 10%" | Floor
+ ! scope="col" style="width: 22.5%" | Easy
+ ! scope="col" style="width: 22.5%" | 'Norma
+ ! scope="col" style="width: 22.5%" | Hard
+ ! scope="col" style="width: 22.5%" | Hardest
+ |-
+ | {{S|Basement}}
+ | 3 {{E|Hopper}}s / 5 {{E|Attack Fly||Attack Flies}} / 4 {{E|Dip}}s
+ | 3 {{E|Horf}}s / 5 {{E|Pooter}}s / 2 3-Segment {{E|Army Fly||Army Flies}}
+ | 2 {{E|Clotty||Clotties}} / 4 {{E|Frowning Gaper}}s / 1 {{E|Squirt}} and 2 {{E|Dip}}s
+ | 3 {{E|Level 2 Fly||Level 2 Flies}} and 2 {{E|Full Fly||Full Flies}} / 3 {{E|Sucker}}s / 4 {{E|Cyclopia}}s / 3 {{E|Ministro}}s
+ |-
+ | {{S|Cellar}}
+ | 3 {{E|Level 2 Spider}}s / 5 {{E|Spider}}s / 3 {{E|Sack}}s
+ | 4 {{E|Trite}}s / 3 {{E|Small Crazy Long Legs}} / 3 {{E|Wall Creep}}s
+ | 2 {{E|Nest}}s / 2 {{E|Crazy Long Legs}} / 3 {{E|Small Baby Long Legs}}
+ | 2 {{E|Baby Long Legs}} / 2 {{E|Big Spider}}s and 2 {{E|Spider}}s / 2 {{E|Blind Creep}}s / 2 {{E|Migraine}}s
+ |-
+ | {{S|Burning Basement}}
+ | 2 {{E|Flaming Hopper}}s
+ | 5 {{E|Dart Fly||Dart Flies}} / 2 Pairs of 5 {{E|Swarm}}s / 2 Pairs of 4 {{E|Swarm Spider}}s
+ | 3 {{E|Flaming Fatty||Flaming Fatties}} / 4 {{E|Sucker}}s / 2 {{E|Grilled Clotty||Grilled Clotties}}
+ | 4 {{E|Flaming Hopper}}s / 4 {{E|Crispy||Crispies}}
+ |-
+ | {{S|Downpour}}
+ | 2 {{E|Blurb}}s / 5 {{E|Small Leech}}es / 4 {{E|Strider}}s
+ | 4 {{E|Frowning Gaper}}s and 1 {{E|Wraith}} / 2 {{E|Prey}}s / 3 {{E|Sub Horf}}s
+ | 5 {{E|Willo}}s and 2 {{E|Strider}}s / 2 {{E|Bubbles}} and 2 {{E|Strider}}s / 3 {{E|Bloaty||Bloaties}}
+ | 4 {{E|Sub Horf}}s and 2 {{E|Blurb}}s / 2 {{E|Mullighoul}}s
+ |-
+ | {{S|Dross}}
+ | 5 {{E|Drip}}s / 5 {{E|Small Leech}}es / 2 {{E|Dump Head}}s
+ | 3 {{E|Cloggy||Cloggies}} / 2 {{E|Gas Dwarf||Gas Dwarves}} and 4 Gas Clouds / 4 {{E|Big Corn}}s
+ | 4 {{E|Blurb}}s / 2 {{E|Bubbles}} and 2 {{E|Sub Horf}}s / 3 {{E|Dump}}s
+ | 2 {{E|Cloggy||Cloggies}} and 1 {{E|Splurt}} / 2 {{E|Gas Dwarf||Gas Dwarves}} and 2 {{E|Poot Mine}}s / 4 {{E|Boom Fly||Boom Flies}} and 4 Gas Clouds
+ |-
+ | {{s|Caves}}
+ | {{dlc+|nr+}}5 {{E|Conjoined Spitty||Conjoined Spitties}}{{dlc-}} {{dlc+|r+}}2 {{E|Conjoined Fatty||Conjoined Fatties}}{{dlc-}} / 4 {{E|Boil}}s / 6 {{E|Maggot}}s
+ | 3 {{E|Hive}}s / 3 {{E|Globin}}s / 4 {{E|Charger}}s
+ | 3 {{E|Host}}s / 3 {{E|Maw}}s / {{dlc+|nr+}}2 {{E|Conjoined Fatty||Conjoined Fatties}}{{dlc-}} {{dlc+|r+}}5 {{E|Conjoined Spitty||Conjoined Spitties}}{{dlc-}}
+ | 4 {{E|Pale Fatty||Pale Fatties}} / 2 {{E|Tumor}}s / 4 {{E|Red Boom Fly||Red Boom Flies}}
+ |-
+ | {{s|Catacombs}}
+ | 5 {{e|Round Worm}}s / 4 {{E|Wall Creep}}s / 4 {{E|Splasher}}s
+ | 3 {{E|Night Crawler}}s / 2 2-Segment {{E|Buttlicker}}s and 1 3-Segment {{E|Buttlicker}} / 3 {{E|Boom Fly||Boom Flies}}
+ | 1 3-Segment {{E|Grub}} / 3 {{E|One Tooth}}s / 3 {{E|Psychic Horf}}s
+ | 2 {{E|Mobile Host}}s / 4 {{E|Chubber}}s / 4 {{E|Gurgle}}s
+ |-
+ | {{S|Flooded Caves}}
+ | 4 {{E|Conjoined Spitty||Conjoined Spitties}} / 3 {{E|Drowned Boom Fly||Drowned Boom Flies}}
+ | 2 {{E|Drowned Hive}}s / 3 {{E|Globin}}s / 3 {{E|Night Crawler}}s
+ | 4 {{E|Maw}}s / 2 {{E|Squirt}}s / 2 {{E|Drowned Boom Fly||Drowned Boom Flies}} and 2 {{E|Dukie}}s
+ | 4 {{E|Blubber}}s and 2 {{E|Conjoined Fatty||Conjoined Fatties}} / 5 {{E|Drowned Charger}}s / 3 {{E|Tube Worm}}s
+ |-
+ | {{S|Mines}}
+ | 4 {{E|Soy Creep}}s / 4 {{E|Ink}}s / 3 {{E|Fly Bomb}}s
+ | 2 {{E|Quakey||Quakeys}} and 2 {{E|Rock Spider}}s / 2 {{E|Ink}}s and 2 {{E|Soy Creep}}s / 2 {{E|Hard Host}}s
+ | 2 {{E|Danny||Dannies}} / 2 {{E|Gyro}}s / 2 {{E|Gyro}}s and 1 {{E|Bouncer}} / 2 {{E|Hardy||Hardies}}
+ | 2 {{E|Blaster}}s / 4 {{E|Faceless}}es / 4 {{E|Mole}}s
+ |-
+ | {{S|Ashpit}}
+ | 3 {{E|Bony||Bonies}} / 6 {{E|Rock Spider}}s / 3 {{E|Clickety Clack}}s
+ | 3 {{E|Bone Fly||Bone Flies}} / 3 {{E|Flesh Maiden}}s / 2 {{E|Necro}}s
+ | 2 {{E|Hardy||Hardies}} / 2 {{E|Big Bony||Big Bonies}} / 3 {{E|Carrion Princess}}s / 4 {{E|Dust}}s
+ | 3 {{E|Pasty||Pasties}} / 2 {{E|Blaster}}s and 2 {{E|Fly Bomb}}s / 4 {{E|Bony||Bonies}} and 3 {{E|Dusty Death's Head}}s / 3 {{E|Crackle}}s
+ |-
+ | {{s|Depths}}
+ | 3 {{E|Vis}}es / 4 {{E|Baby||Babies}} / 4 {{E|Brain}}s
+ | 4 {{E|Leaper}}s / 5 {{E|Rotty||Rotties}} / 3 {{E|Lil' Haunt}}s
+ | 4 {{E|Knight}}s / 3 {{E|Fat Sack}}s / 3 {{E|Needle}}s
+ | 3 {{E|Mr. Maw}}s / 3 {{E|Wizoob}}s / 3 {{e|Mom's Hand}}s / 2 {{E|Mr. Red Maw}}s
+ |-
+ | {{S|Necropolis}}
+ | 3 {{E|Bony||Bonies}} / 3 {{E|Gurgle}}s / 2 {{E|Lil' Haunt}}s
+ | 2 {{E|Swarmer}}s and 4 {{E|Pooter}}s / 3 {{E|Double Vis}}es / 3 {{E|Rage Creep}}s
+ | 2 {{E|Mask + Heart}} Pairs / 4 {{E|Keeper}}s / 3 {{E|Psychic Maw}}s / {{dlc+|nr+}}3 {{E|Eggy||Eggies}}{{dlc-}} {{dlc+|r+}}1 {{E|Dinga}}{{dlc-}}
+ | 3 {{E|Fat Sack}}s / 3 {{E|Wizoob}}s / 3 {{E|Hanger}}s / {{dlc+|nr+}}1 {{E|Dinga}}{{dlc-}} {{dlc+|r+}}3 {{E|Eggy||Eggies}}{{dlc-}}
+ |-
+ | {{S|Dank Depths}}
+ | 4 {{E|Clot}}s / 2 {{E|Dank Squirt}}s / 2 {{E|Sticky Leaper}}s
+ | 6 {{E|Dank Death's Head}}s / 1 {{E|Mega Clotty}} / 4 {{E|Slog}}s / 6 {{E|Ink}}s
+ | 3 {{E|Black Bony||Black Bonies}} and 2 {{E|Death's Head}}s / 4 {{E|Black Bony||Black Bonies}} / 3 {{E|Dank Charger}}s / 2 {{E|Tar Boy}}s and 1 {{E|Dank Squirt}}
+ | 1 {{e|Mom's Dead Hand}} and 1 {{E|Dank Globin}} / 4 {{E|Dank Globin}}s / 2 3-Segment {{E|Butt Slicker}}s / 5 {{E|Sticky Leaper}}s
+ |-
+ | {{S|Mausoleum}}
+ | 3 {{E|Bony||Bonies}} / 2 {{E|Psychic Maw}}s / 4 {{E|Soul Sucker}}s
+ | 2 {{E|Loose Knight}}s / 2 {{E|Whipper}}s / 4 {{E|Candler}}s / 1 {{E|Cursed Globin}}
+ | 2 {{E|Snapper}}s / 2 {{E|Vis Versa}}s / 2 {{E|Vis Fatty||Vis Fatties}} / 2 {{E|Vis Versa}}s
+ | 2 {{E|Lil Portal}}s / 1 {{E|Bony}} and 2 {{E|Cultist}}s / 2 {{E|Bishop}}s and 2 {{E|Baby Begotten}}s / 2 {{E|Revenant}}s
+ |-
+ | {{S|Gehenna}}
+ | 3 {{E|Bony||Bonies}} / 4 {{E|Soul Sucker}}s / 2 {{E|Begotten}}s / 2 {{E|Poofer}}s
+ | 2 {{E|Whipper}}s / 2 {{E|Baby Begotten}}s / 1 {{E|Cursed Globin}} / 2 {{E|Snapper}}s
+ | 2 {{E|Maze Roamer}}s / 2 {{E|Vis Versa}}s / 2 {{E|Vis Fatty||Vis Fatties}} / 2 {{E|Black Knight}}s
+ | 3 {{E|Blood Cultist}}s / 2 {{E|Mask II + 1/2 Heart}} Pairs / 8 {{E|Goat}}s / 3 {{E|Black Goat}}s
+ |-
+ | {{s|Womb}}
+ | 3 3-Segment {{E|Larry Jr.}} / 2 {{E|MemBrain}}s / 3 {{E|Fred}}s
+ | 4 {{E|Leech}}es / 3 {{E|Swinger}}s / 2 {{E|Mega Clotty||Mega Clotties}}
+ | 1 {{E|Chub}} / 2 {{E|Monstro}}s / 1 {{E|Fistula}}
+ | 2 {{E|Gemini}}s / 2 {{E|Pin}}s / 2 {{E|Polycephalus}}es
+ |-
+ | {{S|Utero}}
+ | 3 3-Segment {{E|The Hollow}}s / 2 {{E|Mama Guts}} / 4 {{E|Mask + Heart||Heart}}s
+ | 2 {{E|Oob}}s / 3 {{E|Gurgling}}s / 4 {{E|Para-Bite}}s / 2 {{E|Planetoid}}s
+ | 1 {{E|C.H.A.D.}} / 3 {{E|Mask + Heart}} Pairs / 2 {{E|Widow}}s / 4 {{E|Red Ghost}}s / 2 {{E|Floast}}s
+ | 2 {{E|Blighted Ovum}}s / 1 {{E|Gluttony}} and 1 {{E|Super Gluttony}} / 1 {{E|Blastocyst||Blastocyst (Small)}} and 4 {{E|Embryo}}s / 4 {{E|Poison Mind}}s/ 2 {{E|Peeping Fatty||Peeping Fatties}}
+ |-
+ | {{S|Scarred Womb}}
+ | 1 {{E|Mama Guts}} and 4 {{E|Scarred Guts}} / 2 {{E|Red Host}}s and 2 {{E|Brain}}s / 3 {{E|Fistuloid}}s
+ | 4 {{E|Scarred Double Vis}}es / 4 {{E|Scarred Para-Bite}}s
+ | 4 {{E|Meatball}}s / 3 {{E|Flesh Mobile Host}}s
+ | 2 {{E|Monstro}}s / 2 {{E|Eye}}s and 4 {{E|Nerve Ending}}s / 2 {{E|Leper||Lepers (Stage 2)}} and 2 {{E|Leper||Lepers (Stage 4)}}
+ |-
+ | {{S|Corpse}}
+ | 20 {{E|Small Maggot}}s / 2 {{E|Sloth}}s / 2 {{E|Level 2 Charger}}s and 4 {{E|Charger}}s / 4 {{E|Pustule}}s
+ | 3 {{E|Wrinkly Baby||Wrinkly Babies}} / 3 {{E|Sick Boom Fly||Sick Boom Flies}} / 2 {{E|Level 2 Horf}}s / 3 {{E|Twitchy||Twitchies}}
+ | 3 {{E|Cyst}}s / 1 {{E|Cohort}} / 2 {{E|Mama Fly||Mama Flies}} and 4 {{E|Pustule}}s / 2 {{E|Level 2 Gaper}}s
+ | 1 {{E|Chub}}, 2 {{E|Charger}}s, and 5 {{E|Small Maggot}}s / 1 {{E|Adult Leech}} and 2 {{E|Leech}}es / 2 {{E|Cyst}}s and 1 {{E|Dead Meat}} / 4 {{E|Level 2 Charger}}s
+ |-
+ | {{s|Cathedral}}
+ | 3 {{E|Holy Leech}}es / 3 {{E|Angelic Baby||Angelic Babies}} / 4 {{E|Bony||Bonies}} and 2 {{E|Death's Head}}s
+ | 5 {{E|Wizoob}}s / 7 {{E|Pale Fatty||Pale Fatties}} / 4 {{E|Hanger}}s / 3 {{E|Candler}}s
+ | 2 {{E|Wrath}}s / 2 {{E|Psy Tumor}}s / 1 {{E|Daddy Long Legs}} / 2 {{E|Bishop}}s and 1 {{E|Angelic Baby}} / 2 {{E|Holy Mulligan}}s
+ | 1 {{E|Conquest}} / 1 {{E|Headless Horseman||Headless Horsemen Heads}} / 2 {{E|Greed}}s / 2 {{E|Holy Bony||Holy Bonies}}
+ |-
+ | {{s|Sheol}}
+ | 4 {{E|Kamikaze Leech}}es / 3 {{E|Begotten}}s / {{dlc+|nr+}}3 {{E|Black Globin}}s{{dlc-}} {{dlc+|r+}}4 {{E|Black Globin's Head}}s{{dlc-}} / 3 {{E|Imp}}s
+ | 3 {{E|Selfless Knight}}s / 2 {{E|Black Maw}}s / {{dlc+|nr+}}4 {{E|Black Globin's Head}}s{{dlc-}} {{dlc+|r+}}3 {{E|Black Globin}}s{{dlc-}} / 3 {{E|Whipper}}s
+ | 4 {{E|Nulls}} / 2 {{E|Bloodshot Eye}}s / 2 {{E|Camillo Jr.}} / 2 {{E|Snapper}}s / 2 {{E|Bloodshot Eye}}s and 1 {{E|Soul Sucker}}
+ | 2 {{E|Greed}}s / 1 {{E|Death}} / 2 {{E|Dark One}}s / 1 {{E|The Pile}}
+ |}{{dlc-}}
+
+== Boss Challenge Room ==
+[[file:Boss Challenge Room Door.png|link=]]
+
+'''Boss Challenge Rooms''' will only spawn if Isaac has full health upon entering the second floor of a chapter, and can also only be entered via their doors if he has one or fewer hearts of health. Picking up its contents will cause two waves of bosses to spawn. Starting on Chapter 4, they use the same waves of bosses as Normal Challenge Rooms.
+
+{{dlc|a+}} Each wave cleared will charge Isaac's active item by 1.
+
+{{dlc|nr}} The Boss Challenge Room door only counts Red Hearts in determining whether Isaac is allowed to enter. Soul Hearts are ignored.
+
+{{dlc|r}} Boss Challenge Rooms require one or fewer hearts ''total'' to enter, counting Soul Hearts. Boss Challenge Rooms will always contain an item from the {{ip|Boss|text=Boss item pool}}.
+
+The bosses that spawn depend on the current chapter. Alternate floors have two possible sets of bosses that could spawn:
+
+=== {{Dlc|nr}}  Boss Waves ===
+{| class="wikitable" style="text-align: center"
+ ! scope="col" style="width: 10%" | Floor
+ ! scope="col" style="width: 45%" | Wave 1
+ ! scope="col" style="width: 45%" | Wave 2
+ |-
+ | {{s|Basement}}
+ | {{E|Monstro}}
+ | {{E|Larry Jr.}}
+ |-
+ | rowspan="2" | {{s|Cellar}}
+ | {{E|Pin}}
+ | {{E|Gurglings}}
+ |-
+ | {{E|Dingle}}
+ | {{E|Gemini}}
+ |-
+ | {{s|Caves}}
+ | {{E|Chub}}
+ | {{E|Peep}}
+ |-
+ | rowspan="2" | {{s|Catacombs}}
+ | {{E|Mega Fatty}}
+ | {{E|Mega Maw}}
+ |-
+ | {{E|Fistula}}
+ | {{E|The Haunt}}
+ |-
+ | {{s|Depths}}
+ | {{E|Loki}}
+ | {{E|Monstro II}}
+ |-
+ | rowspan="2" | {{s|Necropolis}}
+ | {{E|Mega Maw}}
+ | {{E|The Husk}}
+ |-
+ | {{E|Dark One}}
+ | {{E|Loki}}
+ |}
+
+=== {{Dlc+|r}} Boss Waves (Sorted By Difficulty) ===
+{| class="wikitable" style="text-align: center"
+ ! scope="col" style="width: 10%" | Floor
+ ! scope="col" style="width: 30%" | Easy
+ ! scope="col" style="width: 30%" | Normal
+ ! scope="col" style="width: 30%" | Hard
+ |-
+ | {{s|Basement}}
+ | {{E|Monstro}} / {{E|Gemini}}
+ | 3 3-Segment {{E|Larry Jr.}} / {{E|The Duke of Flies}}
+ | {{E|Gurglings}} / {{E|Dingle}}
+ |-
+ | {{S|Cellar}}
+ | {{E|Pin}} / {{E|The Duke of Flies}}
+ | {{E|Widow}}/{{dlc+|nr+}}{{E|Blighted Ovum}}{{dlc-}} {{dlc+|r+}}{{E|Little Horn}}{{dlc-}}
+ | {{E|The Haunt}} / {{dlc+|nr+}}{{E|Little Horn}}{{dlc-}} {{dlc+|r+}}{{E|Blighted Ovum}}{{dlc-}} / {{E|Baby Plum}}
+ |-
+ | {{S|Burning Basement}}
+ | {{dlc+|nr+}}{{E|Dangle}}{{dlc-}} {{dlc+|r+}}{{E|Little Horn}}{{dlc-}}
+ | {{e|Turdlings}} / {{dlc+|nr+}}{{E|Little Horn}}{{dlc-}} {{dlc+|r+}}{{E|Dangle}}{{dlc-}}
+ | {{E|Rag Man}}
+ |-
+ | {{S|Downpour}}
+ | {{E|The Haunt}}
+ | {{E|The Rainmaker}}
+ | {{E|Lil Blub}} / {{E|Min-Min}}
+ |-
+ | {{S|Dross}}
+ | {{E|Dingle}}
+ | {{E|Lil Blub}}
+ |5-Segment {{E|Turdlet}} / {{E|Clog}}
+ |-
+ | {{s|Caves}}
+ | {{E|Chub}} / {{E|Fistula}}
+ | {{E|Peep}} / {{E|Gurdy Jr.}} / {{E|Pin}} and 2 {{E|Needle}}s
+ | {{dlc+|nr+}}{{E|Polycephalus}}{{dlc-}} {{dlc+|r+}}{{E|Mega Fatty}}{{dlc-}} / {{E|Mega Maw}}
+ |-
+ | {{S|Catacombs}}
+ | {{E|The Husk}} / 2 4-Segment {{E|The Hollow}}s
+ | {{E|The Wretched}} and 2 {{E|Trite}}s / {{E|Gurdy Jr.}} / {{dlc+|nr+}}{{E|The Stain}}{{dlc-}} {{dlc+|r+}}{{E|Polycephalus}}{{dlc-}}
+ | {{E|Dark One}} / {{E|Carrion Queen}}
+ |-
+ | {{S|Flooded Caves}}
+ | {{E|The Forsaken}} / {{E|Gurdy Jr.}}
+ | {{E|The Stain}}/{{E|Rag Mega}}
+ | {{E|The Frail}} / {{E|Big Horn}}
+ |-
+ | {{S|Mines}}
+ | 2 {{E|Wrath}}s
+ | 4-Segment {{E|Larry Jr.}}, 5-Segment {{E|Tuff Twins||Tuff Twin}}, and 1 {{e|Bomb Grimace}}
+ | {{E|Reap Creep}}
+ |-
+ | {{S|Ashpit}}
+ | {{E|Super Wrath}}
+ | {{E|The Pile}} / 5-Segment {{E|The Shell}} and 1 {{e|Bomb Grimace}}
+ | {{E|Singe}} and 4 {{E|Singe's Ball}}s / {{E|Clutch}} and 3 {{E|Clickety Clack}}s
+ |-
+ | {{s|Depths}}
+ | {{E|Loki}} / {{E|Gurdy}}
+ | {{E|Monstro II}} / 2 {{E|Little Horn}}s
+ | {{E|The Bloat}} / {{E|The Gate}}
+ |-
+ | {{s|Necropolis}}
+ | {{E|Loki}}
+ | {{E|The Adversary}} / {{E|The Pile}}
+ | {{E|The Cage}} / {{E|Mask of Infamy}}
+ |-
+ | {{s|Dank Depths}}
+ | {{E|Gish}} / {{E|Monstro II}}
+ | 2 {{E|Little Horn}}s / 2 {{E|Rag Man||Rag Men}}
+ | {{E|Brownie}} / {{E|Sisters Vis}}
+ |-
+ | {{s|Mausoleum}}
+ | {{E|Rag Mega}}
+ | {{E|The Heretic}}
+ | {{E|The Siren}}
+ |-
+ | {{s|Gehenna}}
+ | {{E|Sisters Vis}}
+ | {{E|The Visage}}
+ | {{E|The Horny Boys}}
+ |-
+ | {{S|Womb}}
+ | {{E|Blastocyst}} / {{E|Lokii}}
+ | {{E|The Stain}} / 3 {{E|Gurglings}}
+ | {{E|The Bloat}} / {{E|The Cage}}
+ |-
+ | {{S|Utero}}
+ | {{E|Blastocyst}} / {{E|Lokii}}
+ | {{E|Teratoma}} / {{E|Daddy Long Legs}}
+ | {{E|The Bloat}} / 2 {{E|Gurdy Jr.}}s
+ |-
+ | {{s|Scarred Womb}}
+ | {{E|Blastocyst}} / {{E|Polycephalus}} / {{E|Lokii}}
+ | {{E|Fistula}} / {{E|Gurdy Jr.}} + 1 {{E|Gurglings||Gurgling}}
+ | {{E|The Matriarch}} / {{E|The Bloat}} / {{E|Mama Gurdy}}
+ |-
+ | {{s|Corpse}}
+ | 2 {{E|Super Sloth}}s / 2 {{E|Super Gluttony||Super Gluttonies}}
+ | {{E|Chimera}} / 2 {{E|Chub}}s
+ | {{E|The Scourge}}
+ |}{{dlc-}}
+
+== Layouts ==
+The following room maps were made using [https://github.com/Basement-Renovator/basement-renovator Basement Renovator] for cleaner viewing. {{dlc|nr}} Note that both normal and boss challenge rooms use the same layouts. {{dlc|r}} Boss Challenge Rooms layouts always contain an item at the center.
+
+{| class="wikitable sortable mw-collapsible mw-collapsed" style="text-align: center"
+ ! scope="col" | ID
+ ! scope="col" | Weight
+ ! scope="col" class="unsortable" | Notes
+ ! scope="col" class="unsortable" | Image preview
+ |-
+ ! scope="row" | 0-2
+ | 1
+ | style="text-align: left" |This room appears three times in the room pool, making it three times more likely to appear than normal.
+ | [[File:Challenge 0-2.png|350px]]
+ |-
+ ! scope="row" | 3-4
+ | 1
+ | style="text-align: left" |This room appears twice in the room pool, making it twice as likely to appear than normal.
+ | [[File:Challenge 3-4.png|350px]]
+ |-
+ ! scope="row" | {{dlcmap slideshow|{{dlcalt|6|r=5}}}}
+ | {{dlcmap slideshow|{{dlcalt|1|r=0.5}}}}
+ | style="text-align: left" |
+ | [[File:Challenge 5.png|350px]]
+ |-
+ ! scope="row" | {{dlc|r}} 6
+ | 1
+ |
+ | [[File:Challenge 6.png|350px]]
+ |-
+ ! scope="row" | {{dlcmap slideshow|{{dlcalt|10|r=7}}}}
+ | 0.5
+ |
+ | [[File:Challenge 7.png|350px]]
+ |-
+ ! scope="row" | {{dlcmap slideshow|{{dlcalt|7|r=8}}}}
+ | {{dlcmap slideshow|{{dlcalt|0.75|r=0.5}}}}
+ |
+ | [[File:Challenge 8.png|350px]]
+ |-
+ ! scope="row" | 9
+ | 0.5
+ |
+ | [[File:Challenge 9.png|350px]]
+ |-
+ ! scope="row" | {{dlcmap slideshow|{{dlcalt|8|r=10}}}}
+ | 0.5
+ |
+ | [[File:Challenge 10.png|350px]]
+ |-
+ ! scope="row" | 11
+ | {{dlcmap slideshow|{{dlcalt|1|r=0.1}}}}
+ |
+ | [[File:Challenge 11.png|350px]]
+ |-
+ ! scope="row" | 12
+ | {{dlcmap slideshow|{{dlcalt|1|r=0.5}}}}
+ |
+ | [[File:Challenge 12.png|350px]]
+ |-
+ ! scope="row" | {{dlc|r}} 13
+ | 0.1
+ |
+ | [[File:Challenge 13.png|350px]]
+ |-
+ ! scope="row" | {{dlc|r}} 14
+ | 0.25
+ |
+ | [[File:Challenge 14.png|350px]]
+ |-
+ ! scope="row" | {{dlc|r}} 15
+ | 0.5
+ |
+ | [[File:Challenge 15.png|350px]]
+ |-
+ ! scope="row" | {{dlcmap slideshow|{{dlcalt|5|r=16-18}}}}
+ | 1
+ | style="text-align: left" |{{dlc|nr}} The item will come from the {{ip|Treasure Room|text=Treasure Room pool}}.<br>{{dlc|r}} This room appears three times in the room pool, making it three times more likely to appear than normal.
+ | [[File:Challenge 16-18.png|350px]]
+ |-
+ ! scope="row" | {{dlc|r}} 19
+ | 1
+ |
+ | [[File:Challenge 19.png|350px]]
+ |-
+ ! scope="row" | {{dlc|r}} 20
+ | 1
+ |
+ | [[File:Challenge 20.png|350px]]
+ |-
+ ! scope="row" | {{dlc|r}} 21
+ | 1
+ |
+ | [[File:Challenge 21.png|350px]]
+ |-
+ ! scope="row" | {{dlc|r}} 22
+ | 0.5
+ |
+ | [[File:Challenge 22.png|350px]]
+ |-
+ ! scope="row" | {{dlc|r}} 23
+ | 0.1
+ |
+ | [[File:Challenge 23.png|350px]]
+ |-
+ ! scope="row" | {{dlc|r}} 24
+ | 0.75
+ |
+ | [[File:Challenge 24.png|350px]]
+ |-
+ ! scope="row" | {{dlc|r}} 25
+ | 1
+ | style="text-align: left" |Unused. Meant to be used in the {{s|Mines|n}}.
+ | [[File:Challenge 25.png|350px]]
+ |-
+ ! scope="row" | {{dlc|r}} 26
+ | 1
+ | style="text-align: left" |Unused. Meant to be used in the {{s|Mines|n}}.
+ | [[File:Challenge 26.png|350px]]
+ |-
+ ! scope="row" | {{dlc|r}} 27
+ | 1
+ | style="text-align: left" |Unused. Meant to be used in the {{s|Mines|n}}.
+ | [[File:Challenge 27.png|350px]]
+ |-
+ ! scope="row" | {{dlc|r}} 28
+ | 0.5
+ | style="text-align: left" |Unused. Meant to be used in the {{s|Mines|n}}.
+ | [[File:Challenge 28.png|350px]]
+ |-
+ ! scope="row" | {{dlc|r}} 29
+ | 1
+ | style="text-align: left" |Unused. Meant to be used in the {{s|Mines|n}}.
+ | [[File:Challenge 29.png|350px]]
+ |-
+ ! scope="row" | {{dlc|r}} 30
+ | 1
+ | style="text-align: left" |Unused. Meant to be used in the {{s|Mines|n}}.
+ | [[File:Challenge 30.png|350px]]
+ |-
+ ! scope="row" | {{dlc|r}} 31
+ | 1
+ | style="text-align: left" |Unused. Meant to be used in the {{s|Mines|n}}.
+ | [[File:Challenge 31.png|350px]]
+ |-
+ ! scope="row" | {{dlc|r}} 32
+ | 1
+ | style="text-align: left" |Unused. Meant to be used in the {{s|Mines|n}}.
+ | [[File:Challenge 32.png|350px]]
+|}
+
+== Notes ==
+* {{t|Temporary Tattoo}} will cause an additional chest to spawn after a normal Challenge Room is completed as well as cause an additional item from the {{ip|Boss|text=Boss item pool}} to spawn after completing a Boss Challenge Room.
+* {{dlc|a}} The waves appear in random orders rather than the orders listed above.
+* If Isaac has some way to teleport out of the room, the contents of the Challenge Room can be taken without fighting the enemies.
+** If a trigger to start a challenge room is left in the room after teleporting out (such as a chest or active item) or an item is spawned in the room and collected (such as rewards from {{M|Beggar}}s or {{M|Blood Donation Machine}}s), the challenge room will start over when it is picked up/opened.
+* If a {{R|Secret Room}} is next to a Challenge Room, it can be entered by using a bomb in the Secret Room on the wall separating the two rooms. However, the entrance to the Secret Room from the Challenge Room will be closed when waves are active, meaning Isaac cannot escape through the Secret Room entrance.
+* If Spiders spawn from a Red Chest before or during a wave, the Spiders have to be killed in order for the waves to start/continue.
+** If Spiders spawn from a Red Chest after the challenge room is cleared, Isaac can leave the room without fighting them.
+* Because of the health requirements, both types of Challenge Room will always be open for {{C|The Lost}}, {{C|Tainted Lost}} {{dlc|nr}} and {{C|???}}.
+** {{dlc|r}} As Boss Challenge Rooms now take soul hearts into account, Soul Heart characters are now also forced to be at one heart before being allowed access.
+* Doors to challenge rooms can be opened regardless of health with {{I|Dad's Key}}, {{p|Get out of Jail Free Card}}, {{I|Mr. ME!}}, or {{p|Soul of Cain}}.
+* Boss Challenge Room doors do not count Bone Hearts as long as they are not filled with Red Hearts, so picking up an item like {{i|Brittle Bones}} will allow entry, despite the player technically having more than one heart of health.
+* {{dlc+|r}} Using {{i|Glowing Hourglass}} will re-roll the enemies involved in both variations.{{dlc-}}
+* {{dlc+|r}} In cases in which there are multiple characters on screen (such as when playing Co-op, being {{c|Jacob and Esau}}, etc.), all characters must meet the requirement for the door to open.{{dlc-}}
+
+== Bugs ==
+{{bug|dlc=na+|If the game crashes or you close it before you finish the challenge room it will crash every time you try to continue that run.}}
+{{bug|dlc=nr+|If Isaac encounters {{e|Greed}} or {{e|Super Greed}} in a {{r|Secret Room}} next to a boss challenge room, the path to the boss challenge room is boarded up from the [[Mini-Boss Room|mini-boss]] fight. Defeating Greed or Super Greed does not remove the boards, despite the room no longer being active.}}
+
+{{nav|room|fr=Salle de Défi}}

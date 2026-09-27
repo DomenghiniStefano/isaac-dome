@@ -1,0 +1,44 @@
+{{Header playing cards}}
+{{Infobox card
+ | name        = Joker
+ | type        = card
+ | id          = 31
+ | quote       = ???
+ | description = Teleports Isaac to the {{r|Devil Room}} or {{r|Angel Room}}.
+| recharge =             {{dlcalt|4|r=2}}
+}}
+
+{{cit|c}}
+
+== Effects ==
+* Teleports Isaac to the {{r|Devil Room}} or {{r|Angel Room}}.
+
+== Notes ==
+* Using the '''Joker''' in {{s|Womb}} II / {{s|Utero}} II / {{s|Scarred Womb}} II will teleport Isaac to the Devil Room or Angel Room with a trapdoor leading to {{s|Sheol}} or a light beam leading to the {{s|Cathedral}} (respectively). This can be used to skip {{e|Mom's Heart}} and will not count as a kill.
+** {{dlc+|a}} After unlocking {{e|It Lives!}}, Devil or Angel Rooms in {{s|Womb}} / {{s|Utero}} / {{s|Scarred Womb}} II no longer contain trapdoors and instead have their normal contents.{{dlc-}}
+* Using The Joker card can allow Isaac to encounter Devil Rooms or Angel Rooms on floors they otherwise cannot appear on, such as the first floor, or {{s|Corpse}} II.
+* Unlike all teleportation cards, the '''Joker''' still works normally when {{curse|maze}} is active.
+* {{dlc|nr}} The '''Joker''' cannot spawn in {{mode|greed}} [[Greed mode]].
+* Using the '''Joker''' does not affect the spawn chance of Devil and Angel Rooms.
+** {{dlc|r}} This includes the 100% chance of an Angel Room appearing after skipping the first Devil Room. If a '''Joker''' card is used to teleport to Angel Room and it has not spawned after defeating the boss, the 100% chance will get carried over to the next floor as usual.
+
+== Strategy ==
+* {{dlc+|r}} Touching the {{e|White Fire Place}} in {{s|Downpour}} II / {{s|Dross}} II temporarily turns Isaac into a ghost. Using the '''Joker''' allows Isaac to take the devil deals for free, which is normally impossible because beating the boss makes Isaac lose his ghost form before entering the devil room. {{dlc-}}
+
+== Synergies ==
+* {{i|Eucharist}}: Always teleports to an {{r|Angel Room}}.
+
+== Interactions ==
+* {{I|Tarot Cloth}}: No effect.
+* {{i|Duality}}: Teleportation ''before'' defeating the boss and choosing a door will follow the normal rules of Devil/Angel Room generation, instead of a 50/50 chance.
+** This means that if Duality was taken as a Devil deal, or any other deal with the Devil was made in the run, teleportation will always lead to the {{R|Devil Room}}.
+** The room that was chosen this way will be the only one that opens once the boss is defeated.
+** Teleporting after choosing a door will always teleport to the same room.
+
+== In-game Footage ==
+* TBA
+
+== Trivia ==
+* The [[wikipedia:Joker (playing card)|Joker]] is a special card from a playing card deck. It belongs to none of the 4 suites and sometimes has a red variant. It is oftentimes used as a highest value card, a trump card or other special roles within a game.
+
+{{nav|fr=Joker|card}}

@@ -1,0 +1,20 @@
+{{infobox version
+ | dlc   = r
+ | date  = 2023-12-07
+}}
+
+The [[Online (open beta)|online beta]] received a patch on December 7th, 2023, announced on [https://twitter.com/tyronerodriguez/status/1732647152206442911 Twitter].
+
+== Documented Changes ==
+* Fixed "Disable All Mods" not letting you into online mode.
+* Added delay to door that was entered so you can't immediately go back through it.
+* Added player transparency option.
+* Added player sound option.
+* New compact pause screen.
+* Text chat functionality
+* Made it so you won't get a quick match lobby as a result if you've previously left that lobby
+* Changes to countdown timer in lobby screen
+* Beta now uses copy of save data so your main branch save remains untouched
+* "A bunch of other small issue fixes"
+
+{{nav|version}}

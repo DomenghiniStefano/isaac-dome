@@ -1,0 +1,35 @@
+'''Key''' may refer to:
+
+== Enemies ==
+* {{dlc+|a}}{{e|Ultra Greed Coin (Key)}}, a [[monster]] spawned by [[Ultra Greed]].{{dlc-}}
+
+== Items ==
+* {{i|Dad's Key}}, an [[activated collectible]] that opens all doors in the current [[room]] in almost all circumstances.
+* {{i|Key Bum}}, a [[passive collectible]] that spawns a [[familiar]] that collects keys and give random {{e|Chest}}s in return.
+* [[Key Piece]]s, [[passive collectible]]s that unlock the golden gate in the starting [[room]] of {{s|Chest}} and {{s|Dark Room}} when combined.
+* {{i|Latch Key}}, a [[passive collectible]] that grants keys and a {{e|Soul Heart}}, and increases [[luck]].
+* {{i|Mom's Key}}, a [[passive collectible]] that grants keys and makes chests drop additional [[pickup]]s.
+* {{dlc+|r}}{{i|Red Key}}, an [[activated collectible]] that creates a {{r|Red Room}} adjacent to a viable wall.{{dlc-}}
+* {{i|R Key}}, an [[activated collectible]] that brings Isaac back to the first floor of a new run, retaining all of his items.
+* {{i|Skeleton Key}}, a [[passive collectible]] that grants keys.
+* {{i|Sharp Key}}, an [[activated collectible]] that grants keys and allows to throw keys to deal damage to enemies, destroy [[obstacle]]s, and open doors.
+
+== Pickups ==
+* [[Key]]s, a type of [[pickup]].
+* [[Bombs Are Key]], a [[pill]] effect that swaps the values of bombs and keys.
+* {{dlc+|r}}{{p|Cracked Key}}, a [[Cards and Runes#Other|consumable item]] that creates a {{r|Red Room}} adjacent to a viable wall.{{dlc-}}
+
+== Trinkets ==
+* {{t|Blue Key}}, which unlocks locked door by adding an in-between room with a few monsters.
+* {{dlc+|r}}{{t|Crystal Key}}, which gives a chance to open a neighboring {{r|Red Room}} when clearing a room.{{dlc-}}
+* {{t|Gilded Key}}, which grants a key and replaces chests with {{e|Locked Chest}}s.
+* {{t|Rusted Key}}, which increases the chance of keys dropping after clearing a room and when opening a {{e|Chest}}.
+* {{t|Store Key}}, which opens {{r|Shop}} doors.
+* {{dlc+|r}}{{t|Strange Key}}, which unlocks the passageway to {{s|???}} and the {{e|Hush}} fight.{{dlc-}}
+
+== Environment ==
+* [[Key Master]], a [[beggar]] which asks for [[key]]s in exchange for {{e|Chest}}s and items.
+* [[Key Block]], a [[Metal Block]] that can be unlocked with a key.
+
+{{disambiguation}}
+{{nav}}

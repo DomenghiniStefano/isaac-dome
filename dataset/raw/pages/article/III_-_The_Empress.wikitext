@@ -1,0 +1,30 @@
+{{header tarot cards}}
+{{Infobox card
+| name        = III - The Empress
+| id          = 4
+| recharge    = {{dlcalt|4|r=3}}
+| quote       = May your rage bring power
+| costume     = Collectible Whore of Babylon appearance.png
+| description = Triggers the {{i|Whore of Babylon}} effect (+1.5 [[Damage]], +0.3 [[Speed]]) for the current room, regardless of Isaac's total health.
+}}
+
+{{cit|c}}
+
+== Effects ==
+* Triggers the {{i|Whore of Babylon}} effect (+1.5 [[Damage]], +0.3 [[Speed]]) for the current room, regardless of Isaac's total health.
+
+== Notes ==
+* '''III - The Empress''' effect can be stacked with itself.
+** The damage bonus is the number of uses squared, e.g. +1.5 × 4 × 4 damage for using the card via a {{i|Blank Card}}, with {{i|Tarot Cloth}} and {{i|Car Battery}} equipped.
+
+== Strategy ==
+* Since this effect only lasts for a room, it is preferably used against a boss.
+
+== Synergies ==
+* {{I|Tarot Cloth}}: Doubles the speed increase and quadruples the damage increase.
+* {{i|Whore of Babylon}}: The effect stacks with each other, as they are the same.
+
+== Trivia ==
+* [[wikipedia:The Empress (tarot card)|The Empress]] is the third card of a Major Arcana set.
+
+{{nav|fr=III - L'Impératrice|card}}

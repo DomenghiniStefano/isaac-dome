@@ -1,0 +1,29 @@
+Launch options are special options that you can set in Steam before launching the game. They are also referred to as "[[wikipedia:Command-line interface#Command-line option|flags]]".
+
+== Setting Launch Options ==
+* Open Steam.
+* Click on the "Library" tab near the top of the screen.
+* Right-click on "The Binding of Isaac: Rebirth" and select "Properties".
+* Click on the "General" tab on the left.
+* At the bottom of the screen, there will be a box to specify "Launch Options".
+
+== The Launch Options ==
+There are currently four different launch options:
+
+=== <code>--luadebug</code> ===
+Normally, mods are restricted from doing anything harmful, like reading files from the file system or communicating over the network. Setting the <code>--luadebug</code> flag lifts these restrictions, allowing Lua code to use the <code>require()</code> function to require arbitrary files and to use the "socket.lua" library.
+
+As the name implies, this should primarily be used by mod developers for debug purposes, not for general use. You should never enable <code>--luadebug</code> unless you have a very specific reason and you know what you are doing, as it could lead to your computer being compromised. Mods asking you to enable this without a specific reason (e.g. needing network capability) should probably not be trusted.
+
+=== {{dlc|a+}} <code>--set-stage=X</code> ===
+When supplied with a floor ID, you will immediately be placed into a run in the specified stage as Isaac upon opening the game, skipping the main menu entirely. Attempting to enter an ID above 13 will place you into {{s|Sheol}}, and an ID below 1 will crash the game in most cases.
+{{dlc+|r}} IDs over 13 will start the run in {{s|Home}}. {{dlc-}}
+
+=== {{dlc|a+}} <code>--set-stage-type=X</code> ===
+When supplied with a numerical stage type, you will immediately be placed into a run with the specified stage type, skipping the main menu entirely. The numerical stage type usually correlates to the debug console's stage types, with a being 1. Entering an invalid stage type number will send you to the closest valid stage type, and a completely invalid stage type will be treated as 0. In tandem with <code>--set-stage</code>, attempting to enter a reserved invalid stage, such as <code>7d</code>, will cause the game to crash, similarly to loading one via the [[Debug Console]].
+
+=== {{dlc+|rnr+}} <code>--networktest</code> ===
+This must be set to enable the "secret" [[Debug Console#Unlisted Commands|online multiplayer mode]]. It is recommended to remove this flag when you are done playing multiplayer, as anyone on Steam can disrupt your future runs by pulling you into their games. {{dlc-}}
+
+{{nav|modding|fr=Options de lancement}}
+[[Category:Modding]]

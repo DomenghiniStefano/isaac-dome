@@ -1,0 +1,44 @@
+{{infobox monster
+ | id          = 68
+ | variant     = 1
+ | environment = Spawned in pairs exclusively by [[Peep]].
+ | behavior    = Invulnerable enemy that floats diagonally over obstacles and bounces off of walls, blocking tears and dealing contact damage. Spawned by [[Peep]] as apart of his fight.
+}}
+'''Peep Eyes''' spawn in pairs and float diagonally around the room over obstacles, bouncing off of walls and other monsters and dealing contact damage to Isaac. They are completely invulnerable and can also block projectiles. The trajectory of the eyes can be deviated by bombs. They are only spawned by [[Peep]] as apart of his fight, one at 66% HP and a second at 33% HP and are destroyed once Peep is killed.
+
+=== Notes ===
+* Cyan champion Peep Eyes spawn detached from Peep at the beginning of the fight.
+{{clear}}
+__TOC__
+
+== Variations ==
+=== Bloat Eye ===
+{{infobox monster
+ | name        = Bloat Eye
+ | variant     = 11
+ | environment = Spawned in pairs exclusively by [[The Bloat]].
+ | behavior    = Invulnerable enemy that floats diagonally over obstacles and bounces off of walls, blocking tears and dealing contact damage. Spawned by [[The Bloat]] as apart of his fight.
+}}
+'''Bloat Eyes''' spawn in pairs and behave identically to Peep Eyes but are spawned by [[The Bloat]]- both completely detached at the beginning of the fight and are destroyed once The Bloat is killed.
+{{clear}}
+
+=== Mockulus ===
+{{infobox monster
+ | name        = Mockulus
+ | dlc         = r
+ | id          = 864
+ | environment = {{floor|Gehenna}}
+ | behavior    = Invulnerable enemy that rapidly floats diagonally over obstacles and bounces off of walls, blocking tears and dealing contact damage. They can only move while Isaac is shooting.
+}}
+'''Mockuli''' start off stationary, but start rapidly floating around the room diagonally when Isaac starts shooting. They stop moving when Isaac stops shooting. There is a minimum time that they move for before stopping. Unlike other Peep Eye variants they do not spawn with a correlating Monster and will be destroyed once the room they spawn in is cleared.
+{{clear}}{{dlc clear}}
+
+== Gallery ==
+<gallery>
+File:Delirium_Eye.png|{{dlc|a+}} A Peep Eye or Bloat Eye spawned by [[Delirium]] in its forms.
+</gallery>
+
+== Trivia ==
+* {{dlc|r}} Mockulus is a portmanteau of "mock" (to ridicule) and "oculus" (Latin for "eye").
+
+{{nav|fr=Œil de La Flaque}}

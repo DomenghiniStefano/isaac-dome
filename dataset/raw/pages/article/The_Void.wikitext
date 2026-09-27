@@ -1,0 +1,108 @@
+{{infobox stage
+ | dlc         = a+
+ | chapter     = 7
+ | id          = 26
+ | level id    = 12
+ | type id     = 0
+ | bosses      = Delirium
+ | unlocked by = New Area
+}} {{disambig msg|the chapter|the item|Void|the enemy|Portal}}
+
+'''The Void''' is a [[chapter]] added in ''[[Afterbirth+]]''. It is unlocked by defeating {{e|Hush}}. '''The Void''' is one of five final levels in ''The Binding of Isaac'', alongside the {{s|Chest}}, the {{s|Dark Room}}, the {{s|Corpse}}, and {{s|Home}}.
+
+Each room in this chapter takes the form of a different chapter, ranging from the {{s|Basement}} to the {{s|Chest}} and the {{s|Dark Room}}, including variant chapters like the {{s|Cellar}} and the {{s|Burning Basement}}. The Void is extremely large compared to other floors, and it is the only floor in the game (not counting XL floors) to contain multiple boss rooms. Most of them contain random bosses from other floors, including some of the final bosses, such as {{e|It Lives!}}, {{e|Satan}}, {{e|Isaac}}, etc. One of them, however, contains the main boss of the floor, which is always {{e|Delirium}}.
+
+Monsters encountered in The Void have a much higher chance of appearing as Champions.
+
+{{dlc|r}} The {{e|Portal}} monster is exclusive to this floor, and all rooms in which it would have been previously encountered on other chapters now only generate on this floor.
+
+== Access ==
+After defeating Hush at least once, a new exit will appear in the upper right-hand corner of the 2x2 boss room in which Hush was fought. The new room contains nothing except for a Portal. It does not spawn enemies and serves as the entrance to The Void.
+
+After unlocking The Void, the portal can then appear after every major boss starting with {{e|Mom}}, even if Hush was not defeated in that run.
+
+The deeper the boss, the higher the spawning chance:
+* 5% after {{e|Mom}} (Only if Isaac has 10+ tear damage or 20+ items)
+* 10% after {{e|Mom's Heart}} / {{e|It Lives!}}
+* 15% after {{e|Isaac}} or {{e|Satan}}
+* {{dlc|nr+}} 20% after {{e|???}} or {{e|The Lamb}}
+* {{dlc|nr+}} 50% after {{e|Mega Satan}} (If the portal appears, the run will not end instantly like it normally does)
+* Defeating {{e|Hush}} will guarantee entrance to The Void.
+** {{dlc|r+}} Defeating {{e|???}}, {{e|The Lamb}}, {{e|Mega Satan}}, or {{e|Mother|n}} will also guarantee a portal.
+
+=== Notes ===
+* The portal can appear multiple times during a single run.
+** {{dlc|nr+}} The chance for at least one portal to open after fighting It Lives!, Isaac/Satan, and {{e|???}}/{{e|The Lamb}} is 38.8%.<ref>Chance = 1 - (1-0.10)(1-0.15)(1-0.20) = 1 - 0.9*0.85*0.80 = 0.388</ref>
+** {{dlc|nr+}} If {{e|Mega Satan}} is defeated, the chance for at least one portal increases to 69.4%.
+* If a portal appears after Mega Satan, a big chest will appear alongside it. Jumping into the chest will end the run normally.
+* {{Dlc|nr}} If the portal spawns below Isaac's position after defeating a boss, he will immediately enter The Void.
+* {{dlc|nr}} Jumping into a trapdoor will reset The Void, an effect identical to {{i|Forget Me Now}}. This is useful if it has already been explored, but the player wants to clear more rooms to acquire health items before the final fight. The trapdoor must be found via a black market under rocks, as {{i|We Need To Go Deeper!}} and {{p|Ehwaz}} won't work.
+* {{dlc|nr}} Similarly, going to an {{r|I AM ERROR}} Room in The Void allows Isaac to reset the floor, so teleport items like {{i|Undefined}} can let Isaac repeat The Void multiple times.
+* {{dlc|r}} The {{r|I AM ERROR}} room can be reached by leaving a {{r|Crawl Space}} through an unintended direction in the {{s|Chest}} and the {{s|Dark Room}}. The room will always contain a portal leading to The Void. However, any other method of getting to the {{r|I AM ERROR}} room will fail and generate an I am Error shopkeeper instead. Thus, the likelihood of this ever happening is practically zero without using items that can force the generation of the Crawl Space trapdoor, such as {{i|We Need To Go Deeper!}}
+* {{Dlc|r}} If the portal appears after Mom and the player chooses the [[Ascent]] path, the portal will still visually spawn on the way up. However, it is closed and can not be interacted with.
+* Once the Portal Entrance to the Void is spawned in a Boss Room, it will stay open even after leaving the room.
+
+== Bosses ==
+<center>
+{| style="width:100%; align:left padding-right:2em"
+| style="text-align: center;" |[[File:Boss Delirium portrait.png|link=Delirium]]
+|
+|-
+| style="text-align: center;" |[[Delirium]]
+|}
+</center>
+
+This floor contains multiple boss rooms, only one of which will contain Delirium. The other boss rooms contain a random boss from any floor including final bosses, except {{e|Mom}}, {{e|Mega Satan}}, {{e|Hush}}, {{e|Ultra Greed}}, {{e|Mother}}, {{e|Dogma}}, the [[Harbingers (Bosses)|Ultra Harbingers]], {{e|The Beast}}, and all ''[[Repentance]]'' bosses that only appear on the alternate path.
+
+=== Notes ===
+* Delirium's boss room is a 2x2 room, but appears as a 1x1 room on the minimap.
+** Similarly, {{e|Mr. Fred}}'s 1x2 room will appear as a 1x1 room if he spawns.
+** {{dlc+|r}} Unlike normal boss rooms, {{r|Red Room}}s can be created adjacent to these non-appearing rooms.{{dlc-}}
+* Items awarded from defeating bosses in The Void are generated as if {{i|Chaos|n}} was active, drawing from any [[item pool]].
+** If rerolled, the new items use the [[Boss (Item Pool)|Boss item pool]].
+* Since the Void has multiple boss rooms, using {{p|IV - The Emperor}} will teleport Isaac to one of them randomly.
+* Defeating a final boss in The Void that is not Delirium will not give a [[Completion Mark]] of that boss and will not unlock the respective item. It will however count towards other unlocks, like {{e|Triachnid}} for killing {{e|Isaac}}.
+
+=== Locating Delirium ===
+{{Main|The Void/Locating Delirium}}
+* To locate boss rooms which will most likely contain Delirium, Isaac must look at the boss rooms on the map:
+** Try to find a boss room that would not be connected to other rooms if it was a 2x2 room. If it would connect, the room won't contain Delirium.
+** Remember that the boundaries of the map are at a maximum of 13x13 squares. If a 2x2 boss room would extend past those boundaries, that room cannot contain Delirium.
+* By knowing which boss rooms cannot contain Delirium, Isaac can safely enter certain boss rooms to gather items before fighting Delirium, or not enter these boss rooms knowing that Delirium is not there.
+* Entering boss rooms with a teleport card is also smart in case you encounter Delirium.
+
+== Gallery ==
+<gallery>
+File:The Void Floor.png|The red "floor" of the Void.
+File:Stage The Void icon.png|The Void's icon on the Progress Bar.
+</gallery>
+
+== Trivia ==
+* It is implied that the different forms (floors from chapters 1 to 6) of this floor are just Isaac's hallucinations, as the Void's icon on the progress bar (after advancing to the next floor) is a red vortex, and the "floor" graphic (below the player character and bosses in "VS" screens) is a red vortex as well.
+* On [[Isaac's last will]], The Void is referred to as "some dying memory".
+* Occasionally, there will be a static distortion and the background and objects of the room may change to those of other chapters.
+* {{e|Mom's Heart}} can still spawn as a boss, even after being replaced by It Lives! in [[Chapter 4]].
+* {{dlc|nr}} The Void is the only floor that can be cleared indefinitely with {{i|Undefined}} (or {{i|Teleport 2.0}} plus {{i|The Battery}} or a guaranteed {{e|Lil' Battery}} drop).
+* The champion enemies spawned in The Void will never drop any of their assigned drops.
+* {{dlc|nr}} The Void can be entered in [[Greed Mode]] by entering "stage 8" in the [[Debug Console]]. The rooms have random backdrops and the music is the same as The Void in regular mode, but the boss is {{e|Ultra Greed}} and will drop the Final Boss Chest. Entering the chest will play Ending 20 instead of Ending 18 or 19.
+** {{dlc|r}} The "stage 8" floor has no name, no music and plays no ending when entering the Chest.
+* The starting room and the boss rooms of The Void do not have the visual effects of the environment they're based on (i.e. a boss room with a Womb backdrop will not have the red static of the {{s|Womb}}).
+** {{dlc|nr}} Also, Caves-based rooms do not have the visual effects of {{s|Caves}}.
+* Even if a boss isn't unlocked (i.e. {{e|Sisters Vis}} before beating {{e|???}} 6 times), it can still appear in one of the boss rooms.
+* {{dlc|r}} An unused floor found in ''Repentance'' sharing the name "The Void" can be found in the game's files and contains a variety of unique unimplemented rooms, some of which feature ''Repentance'' bosses.
+** This may have been related to the Delirium revamp which Kilburn noted in a tweet.<ref>https://twitter.com/fixitvinh/status/1251434846011998208</ref>
+* {{dlc|r}} As of [[Repentance]], The Void is the only chapter in which the boss VS screen is completely black, as opposed to having a slightly coloured shade to represent the current chapter/environment Isaac is in.
+
+== Music ==
+* The [[music]] that plays in The Void is titled ''Terminus''.<ref>[https://ridiculon.bandcamp.com/album/the-binding-of-isaac-afterbirth-ost-2 Binding of Isaac: Afterbirth+ OST]</ref>
+** The track appears to be a remix of Crusade, Genesis 22:10 (title screen), and the {{s|Basement}} and the {{s|Burning Basement}} themes.
+*** This may be inspired by the Void's theme in Antibirth, which was a mashup of several floor tracks in the game.
+
+== Bugs ==
+{{Bug|A {{e|Stoney}} can spawn alone in a room, causing it to instantly die.}}
+{{bug|dlc=r|{{i|D12|n}} can still generate trapdoors. Entering one will send Isaac into a different version of The Void.}}
+
+== References ==
+{{reflist}}
+
+{{nav|hush unlock|environment|fr=Néant (Étage)}}

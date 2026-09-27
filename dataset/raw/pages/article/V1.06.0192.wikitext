@@ -1,0 +1,102 @@
+{{infobox version
+ | dlc   = a+
+ | date  = 2017-01-20
+ | steam = 244718878352578364
+}}
+
+== Documented changes ==
+=== Changes ===
+* All EvaluateItems are refering to NumCollectibleHeld instead of m_Collectibles for consistency.
+* Fixed unfair room in {{s|Caves}}.
+* Made all Easy {{s|Sheol}}/{{s|Cathedral}} rooms Medium (approved, alot of room were actually medium/hard by design but flagged as Easy).
+* Made [[library]] and [[shop]]s upgrades based on subtypes.
+
+=== Fixes ===
+* Fixed {{i|Void}}, {{i|Dataminer}}, {{p|Black Rune}} incorrect.{{explain}}
+* Fixed {{i|Epiphora}} resetting between rooms and reset incorrectly.
+* Fixed {{i|Humbleing Bundle}} not applying instantly on first shop visit.
+* Fixed grid entity randomly destroyed when reentering a room.
+* Changed the way price and modifiers is applied to items, should fix most of the shop/devil issues.
+* Fixed special rock spawns displaying first anm2 frame of spawned entity.
+* Fixed Error room + x2 {{i|Steam Sale}}.
+* Fixed hush door consuming keys.
+* Refixed {{i|The Ludovico Technique}} + {{i|Sinus Infection}} and {{i|Explosivo}} tears.
+* {{i|Metronome}} fixes.
+* Fixed {{i|Punching Bag}} being able to die.
+* Fixed bug in room difficulty selection making impossible to pick easy rooms in {{s|Sheol}}/{{s|Cathedral}} and {{s|The Void}}.
+* Fixed [[Bookworm]] issue.
+* Fixed Library/Shop missing rooms.
+
+== Undocumented changes ==
+=== Additions ===
+* {{i|Euthanasia}} now counts towards the [[Spun]] transformation.
+* [[The Thing]] now has an attack sound.
+* {{i|The Virus}} now properly updates the speed cache. (Its speed down is no longer delayed.)
+* {{i|Lord of the Pit}} now properly updates the speed cache. (Its speed up is no longer delayed.)
+* {{i|Mom's Contacts}} now properly updates the range cache. (Its range up is no longer delayed.)
+* There was never an icon for {{i|Delirious}} in the in-game "My Stuff!" menu; one has now been added.
+* {{t|Pay to Win}} now spawns reroll machines in Greed/Greedier mode item rooms (both the yellow Treasure Room and the grey Treasure Room).
+* [[Ultra Greed]]'s charge attack now has a start sound effect.
+* [[Meatball]]s' blood spew attack now has a sound effect.
+* Items discounted by {{i|Steam Sale}} can now be half off on top of that.
+* [[Mushroom (enemy)|Mushroom]] enemies now have sounds when they shoot and pop open.
+
+=== Changes ===
+* The "pause" animation (where the diary is opened) is now 1 frame longer.
+* Several rooms were changed:
+** {{s|Basement}}/{{s|Cellar}} #124: An issue where the player could be hit from unavoidable damage by [[corny poop]] has been fixed.
+** {{s|???}}: The stacked Blue Baby entity was removed, so the player will always encounter [[Hush]] now.
+** Greed special: 4 new [[treasure room]]s have been added.
+*** Two rooms have an item pedestal and a [[Restock Machine]].
+*** Two rooms have two item pedestals and a [[Restock Machine]].
+* The "hitbox" of Void Portals has been changed such that you have to charge directly at it in order for it to suck you up.
+* You can no longer kill Ultra Greedier during his opening transformation with a {{i|Little Horn}} shot.
+* Enemies that spawn from the death of a charmed {{i|Friendly Ball}} enemy are now considered friendly.
+* Enemy discoveries and enemy kills no longer count towards the [[bestiary]] if mods are enabled.
+* [[Greed mode|Greedier mode]] waves now last the same as the [[Greed mode]] ones.
+
+=== Fixes ===
+* The description bug for {{i|Monstro's Tooth}} that was introduced in the last patch was fixed.
+* Before, the {{i|Epic Fetus}} and [[Bookworm]] synergy would result in some missiles not firing. This has been fixed.
+* Fixed "The Marathon" achievement. This was verified by looking at the internal game disassembly. For people who have done Daily Challenges in the past, you will have to do 5 new Daily Challenges in a row from the date of this patch (or later) in order to get the achievement.
+* The bug where you could choose between The Polaroid and The Negative on the Pong challenge is fixed.
+* Certain graphic filters are fixed on the OS X version, including the "B00B T00B" easter egg.
+* The bug where Judas was unable to obtain the [[Bookworm]] transformation is fixed.
+* The bug where {{i|Smelter}} and the [[Gulp!]] pill effect erroneously gave you permanent 1-time trinkets ({{t|Missing Poster}}, {{t|Monkey Paw}}, {{t|Store Credit}}, {{t|Bag Lunch}}, {{t|Wish Bone}}, and {{t|Walnut}}) has been fixed.
+* The bug where devil items would not convert from red to soul hearts and vice versa when the player is holding{{i|Steam Sale}} has been fixed.
+* The bug where Keeper would die automatically after resuming a game in which he had {{i|Greed's Gullet}} has been fixed.
+* The bug where the player would take damage from the {{i|Jacob's Ladder}} and {{i|Multidimensional Baby}} synergy has been fixed. (This also applied to the {{i|Jacob's Ladder}} + {{i|Cricket's Body}} synergy and the {{i|Jacob's Ladder}} + {{i|The Ludovico Technique}} synergy.)
+* The bug with {{i|The Ludovico Technique}} and the {{i|Eye of Belial}} synergy has been fixed.
+* The bug where {{i|Fire Mind}} fires resulting from shots by an {{i|Incubus}} familiar can damage you has been fixed.
+* The bug where {{i|Holy Mantle}}, {{i|Scapular}}, {{i|Whore of Babylon}}, {{i|Crown Of Light}}, and {{i|Purity}} do not work on the first room of a floor has been fixed.
+* The bug where {{i|Fire Mind}} fires resulting from shots that go through {{i|Multidimensional Baby}} can damage you has been fixed.
+* The bug where {{i|Void}} could give range downs (on the HUD) is fixed.
+* The bug where using the {{i|Maw Of The Void}} ring could hurt and kill charmed enemies that you're not supposed to be able to hit (such as the leeches spawned by {{i|My Shadow}}, or {{i|Delirious}} bosses) has been fixed.
+* Before, if you had {{i|Humbleing Bundle}}, items would not be doubled the first time you entered a shop. This has been fixed.
+* Before, when you had the {{t|Equality!}} trinket, all shop items that have double versions would automatically be bought for you. This has been fixed.
+* The bug where you permanently got the {{i|Lazarus' Rags}} item from getting [[Lazarus]] from the {{i|Clicker}} is fixed.
+* The bug where a combo of {{i|Dr. Fetus}}, {{i|Ipecac}} and {{i|Monstro's Lung}} will cause you to take immediate damage is fixed.
+* The bug where using {{i|Void}} on {{i|Breath of Life}} will cause you to take damage until you die is fixed.
+* The bug where {{i|Proptosis}}, {{i|Ipecac}}, and the {{i|Eve's Mascara}} synergy causes tears to no longer damage or poison enemies has been fixed.
+* The bug where {{i|Bumbo}} no longer deals contact damage has been fixed.
+* The bug where {{i|Void}} won't let you fire any tears after absorbing certain items is fixed.
+* The bug with the {{i|Marked}}, {{i|Ipecac}}, and {{i|Brimstone}} synergy is fixed.
+* The bug where {{t|Tonsil}} would not appear on the [[collection page]] is fixed.
+* The bug where {{i|Dataminer}} caused range downs on the Found HUD has been fixed.
+* The bug where a [[Mushroom (enemy)|Mushroom]] would appear as a [[Host]] for a few frames after spawning from a skull is fixed.
+* The bug where rocks and other entities would randomly break upon entering a room with an item pedestal is fixed. (This fixes the unavoidable damage in the Treasure Room with TNT barrels.)
+* Several bugs with {{i|Metronome}} were fixed:
+** {{i|Little Chubby}} and {{i|Distant Admiration}} will no longer stay with you forever.
+* The bug where the game would crash if too many flies were spawned is fixed.
+* The softlock with {{i|Delirious}} and [[Stoney]]s on Greed Mode has been fixed.
+* Hush Flies are now correctly added to the Bestiary when killed in the Blue Womb.
+
+== New bugs ==
+* The version number and build timestamp appear on the title screen. (A developer-only version of the game got accidentally pushed to everyone.)
+* The {{i|Epic Fetus}} and {{i|Monstro's Lung}} synergy is broken; only a single missile fires.
+* On Eve, when {{i|Whore of Babylon}} is activated via the {{i|Razor Blade}}, she will turn red instead of having the standard whore costume. This new look only lasts for the current room, so it might be a new bug.
+* {{i|Robo-Baby 2.0}} does not unlock anymore after defeating the “Computer Savvy” challenge. Nothing at all happens when you complete the challenge for the first time. (It could also be happening to other challenges as well, but this is unconfirmed.)
+* For some people, save files are bugged and do not show up.
+* For some people, the OSX version crashes on startup.
+
+{{nav|version}}

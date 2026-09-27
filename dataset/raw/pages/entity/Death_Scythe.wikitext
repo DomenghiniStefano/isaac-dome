@@ -1,0 +1,31 @@
+{{infobox monster
+ | name        = Death Scythe
+ | id          = 66
+ | variant     = 10
+ | base hp     = 50
+ | environment = Spawned by {{e|Death}}
+ | behavior    = Stays stationary for a few seconds, then homes in on Isaac.
+}}
+
+'''Death Scythes''' are enemies spawned by {{e|Death}} that either stay stationary for a few seconds before accelerating toward Isaac or immediately home in on him. They have 50 HP in total, but spawn with only 15 HP. They deal 1 full heart of damage. If Death is killed, any Death Scythes he summoned are immediately destroyed.
+{{clear}}
+
+== Variations ==
+=== Ultra Death Scythe ===
+{{infobox monster
+ | dlc         = r
+ | name        = Ultra Death Scythe
+ | image scale = 1/2
+ | id          = 951
+ | variant     = 41
+ | base hp     = 100
+ | environment = {{floor|Home}}<br>Spawned by {{e|Ultra Death}}.
+ | behavior    = Stays stationary for a moment, then travels in straight lines towards [[Ultra Death]].
+}}
+
+'''Ultra Death Scythes''' are enemies spawned by [[Ultra Death]]; they are larger than regular Death Scythes and travel in one direction towards Ultra Death's position a brief moment after spawning, continuing until they travel off-screen or are killed. Unlike regular Death Scythes, they only deal half a heart of damage.
+
+When spawned in manually they remain stationary and only deal contact damage if walked into.
+
+{{dlc clear}}
+{{nav|fr=Faux de Mort}}

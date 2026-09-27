@@ -1,0 +1,16 @@
+{{infobox version
+ | dlc   = r+
+ | steam = 
+ | date  = 2026-04-20
+}}
+
+== Undocumented changes ==
+=== Fixes ===
+* Fixed {{i|Mr. ME!}} not opening doors and not attacking.
+* Fixed a crash where EOS failed to initialize.
+* Fixed gamepads remapping (If you modified your bindings it may require a reset to default).
+* Fixed analog triggers on gamepads not activating occasionally.
+* Fixed nightmare scenes not fading up and down properly.
+* Fixed game minimizing when changing focus.
+
+{{nav|version}}

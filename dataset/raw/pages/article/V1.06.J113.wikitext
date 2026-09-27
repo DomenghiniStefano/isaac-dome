@@ -1,0 +1,78 @@
+{{infobox version
+ | dlc  = a+
+ | name = Booster Pack #4
+ | date = 2017-10-10
+ | blog = 166309298439
+}}
+
+''This was the initial version of Booster Pack #4 for the [[Afterbirth †]] DLC expansion. For an overview on content, see [[Booster Pack #4]].''
+
+== Documented changes ==
+=== New items ===
+* {{i|Death's List}} (530), which is based on [http://steamcommunity.com/sharedfiles/filedetails/?id=908104321 this Steam Workshop item] by Merlo.
+* {{i|Haemolacria}} (531), which is based on [http://steamcommunity.com/sharedfiles/filedetails/?id=915837573 this Steam Workshop item] by HiHowAreYou.
+* {{i|Lachryphagy}} (532), which is based on [http://steamcommunity.com/sharedfiles/filedetails/?id=893096768 this Steam Workshop item] by Echo.
+* {{i|Trisagion}} (533), which is based on [http://steamcommunity.com/sharedfiles/filedetails/?id=894879673 this Steam Workshop item] by x Wyvern x.
+* {{i|Schoolbag}} (534), which is based on the [https://isaacracing.net/ Racing+] implementation of the [[anti:Schoolbag|Schoolbag]] from [https://antibirth.com/ Antibirth].
+
+=== New trinkets ===
+* {{t|Extension Cord}} (125), which is based on [http://steamcommunity.com/sharedfiles/filedetails/?id=894760381 this Steam Workshop item] by Strawrat, which was originally a passive collectible.
+
+== Undocumented changes ==
+=== New enemies ===
+* {{e|Soul Sucker}} (61.2; variant of a {{e|Sucker}}).
+* {{e|Cross Stone Shooter}} (202.10; variant of a {{e|Constant Stone Shooter}}).
+* {{e|Tube Worm}} (244.1; variant of a {{e|Round Worm}}).
+* {{e|Tar Boy}} (307.0).
+* {{e|Fistuloid}} (308.0).
+* {{e|Gush}} (309.0).
+
+=== New graphics ===
+* {{i|Broken Modem}} collectible sprite was changed.
+* {{i|Technology Zero}} collectible and costume sprites were changed.
+* {{i|Angry Fly}} collectible and familiar sprites were changed.
+* {{i|Sprinkler}} collectible and entity sprites were changed.
+* {{i|7 Seals}} collectible and familiar sprites were changed. Familiar sprites were based on [http://steamcommunity.com/sharedfiles/filedetails/?id=1098300666 this Steam Workshop mod] by Quartz.
+* {{i|Pop!}} collectible sprite was changed.
+* {{t|Hairpin}} trinket sprite was changed.
+* {{t|Butter!}} trinket sprite was changed.
+* {{t|Door Stop}} trinket sprite was changed.
+
+=== Room changes ===
+* Removed the stacked angel statue from Devil Room #11.
+* Added 10 unique rooms to {{s|Basement}}. ({{s|Burning Basement}} has the same rooms.)
+* Added 10 unique rooms to {{s|Cellar}}.
+* Added 16 unique rooms to {{s|Caves}}.
+* Added 19 unique rooms to {{s|Catacombs}}.
+* Added 66 unique rooms to {{s|Flooded Caves}}.
+* Added 21 unique rooms to {{s|Depths}}.
+* Added 56 unique rooms to {{s|Necropolis}}.
+* Added 53 unique rooms to {{s|Dank Depths}}.
+* Added 31 unique rooms to {{s|Womb}}.
+* Added 37 unique rooms to {{s|Utero}}.
+* Added 20 unique rooms to {{s|Scarred Womb}}.
+* Added 25 unique rooms to {{s|Cathedral}}.
+* Added 70 unique rooms to {{s|Sheol}}.
+* Added 7 unique rooms to {{s|Chest}}.
+* Added 7 unique rooms to {{s|Dark Room}}.
+
+=== Other changes ===
+* Key Pieces will now drop from angels that are not in [[Angel Room]]s.
+* The {{i|Dead Eye}} multiplier will no longer be lost when hitting poops or TNT barrels.
+* [[Blended Heart]]s will now appear on the minimap as soul hearts.
+
+=== Bug fixes ===
+* Fixed the bug where [[Rage Creep]]'s brimstone was moved upwards during the Afterbirth release and caused the player to take damage along the top wall in Womb/Utero room #202.
+* Fixed the bug where [[pickup]] velocities were not seeded from machines, beggars, tinted rocks, chests, sacks, and bosses.
+* Fixed the bug where the "[[RERUN]]" option would not appear if any mods were enabled.
+* Fixed the bug where if you quit and continue in a shop or secret room with a [[Greed]] in it, the Greed would despawn and a [[Super Greed]] would appear.
+* Fixed the bug where [[Half Soul Heart]]s appeared on the minimap as red hearts.
+* Fixed the bug where the number of flies from {{i|Guppy's Head}} was unseeded.
+* Fixed the bug where the champion [[Scolex]] was using the wrong graphics (from the black [[The Frail|Frail]] champion).
+* Fixed the bug where the [[Adult]] transformation sprite was misaligned.
+
+== New bugs ==
+* Taking the {{i|Schoolbag}} can lead to graphical glitches that usually manifest as white squares. When this occurs, the game will (eventually) crash.
+
+{{nav|version}}
+[[Category:Added in Booster Pack 4]]

@@ -1,0 +1,19 @@
+{{infobox version
+ | dlc  = a+
+ | date = 2017-01-12
+}}
+
+== Undocumented changes ==
+=== Changes ===
+* The 4 boss rooms with [[Sisters Vis]] have been adjusted so that the boss spawns in the center to avoid unavoidable damage upon entering.
+
+=== Fixes ===
+* Fixed [http://images.akamai.steamusercontent.com/ugc/169282316723061582/18F6C4A1615DD9AE3C02F6A7C3DBDD08CCD5ADEC/ a softlock] in Double Trouble room 3732 (with 2 Rag Megas and 1 Rag Man).
+* Most of the remaining bugged Afterbirth+ achievements have been fixed to function correctly. (The only ones still bugged are the 2 Daily Challenge related ones.)
+* Using a custom <code>itempools.xml</code> file works now.
+
+=== Lua bindings ===
+* <code>MC_POST_CURSE_EVAL</code> in Curses enum.
+* <code>TearVariant</code> enum.
+
+{{nav|version}}

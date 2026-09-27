@@ -1,0 +1,83 @@
+{{disambig msg|the enemy|the item|Lil Portal|the chapter|The Void}}
+{{infobox monster
+ | dlc         = a+
+ | id          = 306
+ | base hp     = 9
+ | stage hp    = 5
+ | environment = <br>{{dlc|nr}}<br>{{floor|Basement}}{{floor|Cellar}}{{floor|Burning Basement}}<br>{{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|Sheol}}{{floor|Cathedral}}<br>{{floor|The Void}}<br>{{dlc|r}}<br>{{floor|The Void}}
+ | behavior    = Spawns various enemies from the current floor until it either vanishes or is killed.
+ | unlocked by = The gate is open!
+}}
+
+'''Portals''' are enigmatic entities that appear {{dlc|a+nr}} on many floors/{{dlc+|r}} only in {{s|The Void}}{{dlc-}}. They continuously spawn enemies until they are destroyed or spawn a certain number of enemies.
+
+Portals spawn different enemies depending on the floor they appear on.
+
+In {{s|The Void}}, Portals spawn enemies based on the theme of the room they are in.
+
+== List of [[monster|possible spawns]] ==
+=== Chapter 1 ===
+{{entity table | Dip, Attack Fly, Spider, Frowning Gaper, Mulligan, Round Worm, Hopper }}
+
+=== Chapter 2 ===
+{{entity table | Pale Fatty, Boom Fly, Sucker, Maw, One Tooth, Fat Bat, Charger }}
+
+=== Chapter 3 ===
+{{entity table | Bony, Death's Head, Brain, Globin, Leaper, Knight, Tumor }}
+
+=== Chapter 4 ===
+{{entity table | Brain, Fred, Mobile Host, Leech, Lump, Para-Bite, Clotty }}
+
+=== {{s|Sheol|r}} ===
+{{entity table | Kamikaze Leech, Black Maw, Nulls, Fat Bat, Imp, Black Globin }}
+
+=== {{s|Cathedral}} and {{s|Sheol|nr}} ===
+{{entity table | Baby, Hanger, Holy Leech, Keeper, Wizoob, Lil' Haunt }}
+
+== Lil Portal ==
+{{infobox monster
+ | dlc         = r
+ | name        = Lil Portal
+ | variant     = 1
+ | base hp     = 15
+ | stage hp    = 6
+ | environment = {{floor|Mausoleum}}{{floor|Gehenna}}<br>{{room|challenge}}
+ | behavior    = Spawns fly and spider enemies until it is destroyed.
+}}
+
+'''Lil Portals''' are entities that only appear in {{s|Mausoleum}} and {{s|Gehenna}}. They continuously spawn fly and spider enemies until they are destroyed. There can be a max of 4 spawned monsters alive at once. Monsters they can spawn include:
+{{entity table | Attack Fly, Moter, Sucker, Ink, Level 2 Fly, Full Fly, Spider, Swarm Spider, Big Spider, Level 2 Spider, Small Crazy Long Legs, }}
+
+== Lil Portal (Flies Only) ==
+There is a variant of the Lil Portal with the ID 306.1.1 that looks and behaves identically to regular Lil Portals but will only spawn Fly related monsters from its regular pool.
+
+{{clear}}{{dlc clear}}
+
+== Entrance Portal ==
+A special version of the Portal (dubbed the "Entrance Portal" to avoid confusion) serves as the entrance to {{s|The Void}}. It is found in {{s|???}}, but can also be found after defeating {{E|Mom}}, {{E|Mom's Heart}} / {{E|It Lives!}}, {{E|Isaac}} / {{E|Satan}}, {{E|???}} / {{E|The Lamb}}, {{E|Mega Satan}}, or {{e|Mother|r+}}.
+The Entrance Portal room in ??? gets darker the closer the player is to the portal.
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | Black Hole }}
+
+== Notes ==
+* [[Status Effects#Charm|Charming]] a Portal with {{i|Mom's Eyeshadow}} or similar items will cause the Portal to spawn permanently charmed enemies similar to the {{i|Friendly Ball}}.
+** As a result, a permanently charmed {{E|Death's Head}} can spawn from charmed Portals on Chapter 3 and remain permanently invulnerable. This is the only known method of charming an invulnerable enemy.
+* If a portal is spawned in {{s|???}}, {{s|Chest}}, {{s|Dark Room}} or {{s|Home}} via {{dlc|a+}} [[Debug Console]], the Portal will despawn a few seconds before spawning any monster.
+* If Portals aren't unlocked, certain enemies will spawn in their rooms instead, depending on the floor the room is in. For instance, Frowning Gapers spawn as Portal placeholders on Chapter 1 floors, whereas Vises spawn as Portal placeholders on Chapter 4 floors.
+* It is often wise to instantly run into portals with orbitals after entering the room, if possible. Catching the small window timeframe for this almost always results in their instant death without any consequences.
+
+== Gallery ==
+<gallery>
+File:Entrance Portal Room Blue Dark.png|The room darkening as the player approaches the portal.
+File:Entrance Portal Room Holy.png|The Entrance Portal next to the Chest after defeating Isaac. Notice the distortion effect on the chest.
+File:Portal anim.gif|A portal's idle animation, as found in the game files.
+</gallery>
+
+== Trivia ==
+* Before [[v1.06.0185]], portals continually spawned enemies until they were defeated.
+* Portals were able to spawn Bosses such as {{E|The Haunt}} on floors such as the {{s|Cathedral}}. This was later removed.
+* As of [[Booster Pack #5]], Portals will now leave a Purple "blood" splatter when killed by the player. This effect is only for aesthetic purposes. Formerly, they left the generic Red blood splatter.
+* {{dlc|r}} Lil Portals resemble Warp Zones from ''Super Meat Boy''.
+
+{{nav|the lamb unlock|fr=Vortex}}

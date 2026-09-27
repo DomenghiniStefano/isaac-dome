@@ -1,0 +1,3093 @@
+{{disambig msg|co-op babies|the monster|Baby|items that follow Isaac|familiar}}
+
+Rebirth features two-player local '''co-op''' on PC. The Afterbirth DLC increased this to four-player local co-op. The PlayStation 4 and Steam versions of the game are capable of both local and online multiplayer via PS4's "Share Play" and Steam's "Remote Play Together" features, as well as a dedicated online multiplayer system in [[Repentance+]]. (These versions can also support up to 4 players.)
+
+Co-op players can join in at any time as a random baby, taking a Red Heart container away from Isaac and giving it to the second player. Subsequent pressing of the join button will despawn the baby, giving Isaac the Red Heart container back.
+
+Babies share Isaac's stats except for health and damage; babies deal half of Isaac's damage. Babies always have flight, but they cannot interact with objects like items and pickups, except for certain special babies like Magnet Baby and Isaac 2.
+
+{{dlc|a}} Joining as a co-op baby will bring up a menu that allows the player to pick from 5 special babies. Dying as one of the available special babies will remove it from the pool.
+
+{{dlc|r}} If you start a normal game and player 2/3/4 presses Start while in the starting room, a mini character selection wheel displays at the top of the screen, with which that player can choose any unlocked character, or a random character. If a player dies without any revival items, they become a ghost baby that can only deal minimal damage and press buttons. Once the boss of a floor is killed, the dead player is reborn with all the items they once had, but with half a heart. When a boss is killed, the item pedestal will spawn as many items as there are players. All players share resources (coins, bombs, and keys), but each have their own hearts and items. All damage players do to bosses is reduced by 20%, including the damage from items, familiars, or bombs. Once all players die, it's game over.
+
+== Notes (Co-op Babies) ==
+* [[Soul Heart]]s will be given to Player 2 before normal hearts, and half hearts will be given before full hearts. If player 2 dies, they can rejoin the game at the cost of another [[Red Heart container]], as a new random Baby.
+* The last [[shooting familiar]] Isaac picked up will follow Player 2 instead of Isaac.
+* If Isaac has more than 6 total hearts, including Soul Hearts and Black Hearts, Player 2 will take two hearts instead of one.
+* If Isaac has a maximum of 12 hearts, including Soul Hearts and Black Hearts, Player 2 will take three hearts instead of one or two.
+* The maximum amount of hearts Player 2 can have is three Red Hearts and one Soul Heart, using {{i|Scapular}}.
+** {{dlc|a}} This limit increases by one Red Heart container, Soul Heart, or Black Heart when using Red Baby, Blue Baby, or Black Baby, respectively.
+* Because at least 1.5 hearts are required for co-op, Player 2 cannot join when playing as {{c|The Lost}}.
+
+== {{dlc|r}} Strategy (True Co-op) ==
+<blockquote>''Main Page: [[Repentance Co-Op|Repentance Co-op]]''</blockquote>
+
+* {{c|Magdalene}} not only heals herself with {{i|Yum Heart}}, but also heals all other co-op players for a Half Red Heart. It's best to pair Magdalene up with characters who benefit or rely heavily on red health, such as {{c|Samson}}, {{c|The Forgotten}}, or {{c|Bethany}}.
+* {{c|Cain}} can pair well with {{c|Lazarus}}, as Cain can take Lazarus' pill to have it be a guaranteed positive or neutral pill for Cain.
+** {{i|Lucky Foot}} will not convert pills unless Cain holds them, so it can still be a negative pill if used by Lazarus.
+* {{c|Tainted Lost}}'s reroll mechanic will apply in co-op, but this still includes the reroll of any items not labelled as "offensive".
+** Since there will be significantly less health-up sources as a result, it's recommended to pair {{c|Tainted Lost}} with characters who can't use red health, like {{c|???}}, {{c|Keeper}}, {{c|Tainted Judas}}, {{c|Tainted ???}}, {{c|Tainted Keeper}}, {{c|Tainted Forgotten}}, or {{c|Tainted Bethany}}. {{c|Tainted Cain}} can also work, since his Bag of Crafting entirely bypasses the reroll mechanic.
+* {{c|Keeper}}/{{c|Tainted Keeper}} will not replace heart drops with flies when paired with other characters that use hearts.
+* On kill effects such as {{i|Infestation 2}}, {{i|Lusty Blood|n}}, or {{c|Tainted Keeper}}'s coin drops will trigger for the player holding it regardless of which player killed the enemy.
+* {{c|Tainted Magdalene}} synergizes with {{c|Tainted Bethany}} as due to Tainted Maggy's generation of heart pickups, Tainted Bethany can quickly accumulate Blood Charges.
+* {{c|Tainted Isaac}} can be a viable choice for a character, as the changed item pedestals benefit all players, not just Tainted Isaac.
+* Due to the overall lack of items, visiting Curse rooms becomes a lot more viable, especially since one can play as a character that mitigates damage from Curse Rooms, such as {{c|Tainted Judas}} with his innate Dark Arts.
+* Similarly to {{c|Jacob and Esau}}, if you time it properly, both items can be acquired from alternate path treasure rooms.
+
+== Rebirth babies ==
+=== Special Babies ===
+These Babies have special effects that may help or hinder the player.
+
+{| class="mw-collapsible wikitable striped" style="width:100%; height:100%; text-align:center"
+! style="width:32px" | '''ID'''
+! style="width:64px" | '''Appearance'''
+! style="width:200px" | '''Name'''
+! '''Description'''
+|-
+| 0
+| [[File:000_baby_spider.png|64px|link=]]
+| Spider Baby
+| Occasionally spawns a spider.
+|-
+| 1
+| [[File:001_baby_love.png|64px|link=]]
+| Love Baby
+| Drops a heart pickup when killed. Can also drop [[soul heart]]s.
+|-
+| 2
+| [[File:002_baby_bloat.png|64px|link=]]
+| Bloat Baby
+| Spawns with a [[Pretty Fly]].
+|-
+| 3
+| [[File:003_baby_water.png|64px|link=]]
+| Water Baby
+| Explodes into tears when it dies. 
+|-
+| 4
+| [[File:004_baby_psy.png|64px|link=]]
+| Psy Baby
+| Spawns with [[homing tears]].
+|-
+| 5
+| [[File:005_baby_cursed.png|64px|link=]]
+| Cursed Baby
+| Attracts enemies and enemy tears.
+|-
+| 6
+| [[File:006_baby_troll.png|64px|link=]]
+| Troll Baby
+| Spawns [[troll bomb]]s beneath itself at random times, and always spawns one upon death.
+|-
+| 7
+| [[File:007_baby_ybab.png|64px|link=]]
+| Ybab
+| Scrambles buttons associated with tear shot direction.
+|-
+| 8
+| [[File:008_baby_cockeyed.png|64px|link=]]
+| Cockeyed Baby
+| Shoots tears diagonally, similar to the effect of the [[R U a Wizard?]] pill.
+|-
+| 9
+| [[File:009_baby_host.png|64px|link=]]
+| Host Baby
+| Spawns one to three hostile [[Spider]]s upon death.
+|-
+| 10
+| [[File:010_baby_lost.png|64px|link=]]
+| Lost Baby
+| Constantly bleeds small puddles of [[red creep]] which can damage enemies.<br>Releases a larger puddle of creep upon death.<br>{{achievement unlock|Lost Baby}} to unlock it.
+|-
+| 11
+| [[File:011_baby_cute.png|64px|link=]]
+| Cute Baby
+| {{achievement unlock|Cute Baby}} to unlock it.
+|-
+| 12
+| [[File:012_baby_crow.png|64px|link=]]
+| Crow Baby
+| Deals contact damage to enemies.<br>{{achievement unlock|Crow Baby}} to unlock it.
+|-
+| 13
+| [[File:013_baby_shadow.png|64px|link=]]
+| Shadow Baby
+| Fires red blood shots and deals slightly more damage than other babies.<br>{{achievement unlock|Shadow Baby}} to unlock it.
+|-
+| 14
+| [[File:014_baby_glass.png|64px|link=]]
+| Glass Baby
+| Drops a random [[pickup]] on death.<br>{{achievement unlock|Glass Baby}} to unlock it.
+|-
+| 15
+| [[File:015_baby_gold.png|64px|link=]]
+| Gold Baby
+| Drops 1-3 [[coin]]s upon death.
+|-
+| 16
+| [[File:016_baby_cy.png|64px|link=]]
+| Cy-Baby
+| Spawns with an effect similar to {{I|Tech.5}}, randomly firing lasers alongside normal tears.
+|-
+| 17
+| [[File:017_baby_bean.png|64px|link=]]
+| Bean Baby
+| Farts when hit, like {{i|The Black Bean|nr}} effect.
+|-
+| 18
+| [[File:018_baby_mag.png|64px|link=]]
+| Mag Baby
+| Shiny silver baby that attracts [[coin]]s. 
+|-
+| 19
+| [[File:019_baby_wrath.png|64px|link=]]
+| Wrath Baby
+| Spawns a [[bomb]] pickup when killed.
+|-
+| 20
+| [[File:020_baby_wrapped.png|64px|link=]]
+| Wrapped Baby
+| Explodes when hit.<br>{{achievement unlock|Wrapped Baby}} to unlock it.
+|-
+| 21
+| [[File:021_baby_begotten.png|64px|link=]]
+| Begotten Baby
+| Shoots large, slow moving tears that have a chance to cause fear.<br>{{achievement unlock|Begotten Baby}} to unlock it.
+|-
+| 22
+| [[File:022_baby_dead.png|64px|link=]]
+| Dead Baby
+| Has a chance to spawn a [[Blue fly]] upon killing an enemy.<br>{{achievement unlock|Dead Baby}} to unlock it.
+|-
+| 23
+| [[File:023_baby_fighting.png|64px|link=]]
+| Fighting Baby
+| Appears to throw its tears rather than crying them. Drops a heart pickup upon death.<br>{{achievement unlock|Fighting Baby}} to unlock it.
+|-
+| 24
+| [[File:024_baby_0.png|64px|link=]]
+|  -0- Baby
+| Immune to all forms of damage. Leaving the game as this baby causes a different baby to spawn in its place.<br>{{achievement unlock|-0- Baby}} to unlock it.
+|-
+| 25
+| [[File:025_baby_glitch.png|64px|link=]]
+| Glitch Baby
+| Turns into a random baby at the start of each floor.<br>{{achievement unlock|Glitch Baby}} to unlock it.
+|-
+| 26
+| [[File:026_baby_magnet.png|64px|link=]]
+| Magnet Baby
+| Cannot fire tears. Can pick up [[item]]s and open [[chest]]s.
+|-
+| 122
+| [[File:122_baby_monochrome.png|64px|link=]]
+| {{dlc|na}} Isaac 2
+| Cannot fire tears. Can pick up [[item]]s and open [[chest]]s. (This was reverted to just a cosmetic baby in Afterbirth.)
+|-
+|}
+
+=== Normal Babies ===
+These Babies are purely cosmetic and do not have any special behaviors.
+
+{| class="mw-collapsible wikitable" style="width:100%; height:100%; text-align:center"
+! style="width:32px" | '''ID'''
+! style="width:64px" | '''Appearance'''
+! style="width:200px" | '''Name'''
+! '''Description'''
+|-
+| 59
+| [[File:059_baby_bigeyes.png|64px|link=]]
+| Big Eyes Baby
+| A baby with big eyes.
+|-
+| 60
+| [[File:060_baby_sleep.png|64px|link=]]
+| Sleep Baby
+| A sleeping baby.
+|-
+| 61
+| [[File:061_baby_zombie.png|64px|link=]]
+| Zombie Baby
+| An undead baby.
+|- 
+| 62
+| [[File:062_baby_goat.png|64px|link=]]
+| Goat Baby
+| A baby that looks like a goat.
+|-
+| 63
+| [[File:063_baby_butthole.png|64px|link=]]
+| Butthole Baby
+| A baby with an anus for a face.
+|-
+| 64
+| [[File:064_baby_eyepatch.png|64px|link=]]
+| Eye Patch Baby
+| A baby that looks remarkably similar to [[Cain]].
+|-
+| 65
+| [[File:065_baby_bloodeyes.png|64px|link=]]
+| Blood Eyes Baby
+| A baby who is crying blood.
+|-
+| 66
+| [[File:066_baby_mustache.png|64px|link=]]
+| Mustache Baby
+| A baby with a mustache.
+|-
+| 67
+| [[File:067_baby_spittle.png|64px|link=]]
+| Spittle Baby
+| A baby who seems to be drooling.
+|-
+| 68
+| [[File:068_baby_brain.png|64px|link=]]
+| Brain Baby
+| A baby that looks like it has the item {{i|The Mind}}.
+|-
+| 69
+| [[File:069_baby_threeeyes.png|64px|link=]]
+| 3 Eyes Baby
+| A baby with three eyes.
+|-
+| 70
+| [[File:070_baby_viridian.png|64px|link=]]
+| Viridian Baby
+| Reference to the VVVVVV character of the same name.
+|-
+| 71
+| [[File:071_baby_blockhead.png|64px|link=]]
+| Blockhead Baby
+| A baby with a blocky head.
+|-
+| 72
+| [[File:072_baby_worm.png|64px|link=]]
+| Worm Baby
+| A baby that looks like {{i|Little Chubby}}.
+|-
+| 73
+| [[File:073_baby_lowface.png|64px|link=]]
+| Lowface Baby
+| A baby with a lowered face.
+|-
+| 74
+| [[File:074_baby_alienhominid.png|64px|link=]]
+| Alien Hominid Baby
+| Reference to the game Alien Hominid by The Behemoth.
+|-
+| 75
+| [[File:075_baby_bomb.png|64px|link=]]
+| Bomb Baby
+| A baby with a bomb for a head.
+|-
+| 76
+| [[File:076_baby_video.png|64px|link=]]
+| Video Baby
+| Reference to Commander Video, the main character of the BIT.TRIP series.
+|-
+| 77
+| [[File:077_baby_parasite.png|64px|link=]]
+| Parasite Baby
+| A baby that seems to be a parasite.
+|-
+| 78
+| [[File:078_baby_derp.png|64px|link=]]
+| Derp Baby
+| A reference to the internet meme, DERP.
+|-
+| 79
+| [[File:079_baby_lobotomy.png|64px|link=]]
+| Lobotomy Baby
+| A baby who seems to have been lobotomized.
+|-
+| 80
+| [[File:080_baby_choke.png|64px|link=]]
+| Choke Baby
+| A baby that looks to have been choked to death.
+|-
+| 81
+| [[File:081_baby_scream.png|64px|link=]]
+| Scream Baby
+| Reference to Edvard Munch's "The Scream".
+|-
+| 82
+| [[File:082_baby_gurdy.png|64px|link=]]
+| Gurdy Baby
+| A baby that looks like [[Gurdy]].
+|-
+| 83
+| [[File:083_baby_ghoul.png|64px|link=]]
+| Ghoul Baby
+| A baby that has large red eyes and fangs.
+|-
+| 84
+| [[File:084_baby_goatee.png|64px|link=]]
+| Goatee Baby
+| A baby with a goatee.
+|-
+| 85
+| [[File:085_baby_shades.png|64px|link=]]
+| Shades Baby
+| A baby with sunglasses.
+|-
+| 86
+| [[File:086_baby_statue.png|64px|link=]]
+| Statue Baby
+| A baby that is composed of stone.
+|-
+| 87
+| [[File:087_baby_bloodsucker.png|64px|link=]]
+| Bloodsucker Baby
+| A baby with blood coming out of its mouth and eyes.
+|-
+| 88
+| [[File:088_baby_bandaid.png|64px|link=]]
+| Bandaid Baby
+| A baby with a bandage on its head.
+|-
+| 89
+| [[File:089_baby_eyebrows.png|64px|link=]]
+| Eyebrows Baby
+| A baby with thick eyebrows.
+|-
+| 90
+| [[File:090_baby_nerd.png|64px|link=]]
+| Nerd Baby
+| A baby with square glasses.
+|-
+| 91
+| [[File:091_baby_boss.png|64px|link=]]
+| Boss Baby
+| Based on Newgrounds' Agnry Faic.
+|-
+| 92
+| [[File:092_baby_turd.png|64px|link=]]
+| Turd Baby
+| A baby composed of poop.
+|-
+| 93
+| [[File:093_baby_o.png|64px|link=]]
+| O Baby
+| A baby making an "O" face. 
+|-
+| 94
+| [[File:094_baby_squareeyes.png|64px|link=]]
+| Square Eyes Baby
+| A baby with square eyes.
+|-
+| 95
+| [[File:095_baby_teeth.png|64px|link=]]
+| Teeth Baby
+| A baby with noticeable teeth.
+|-
+| 96
+| [[File:096_baby_frown.png|64px|link=]]
+| Frown Baby
+| A frowning baby.
+|-
+| 97
+| [[File:097_baby_tongue.png|64px|link=]]
+| Tongue Baby
+| A baby whose tongue is sticking out.
+|-
+| 98
+| [[File:098_baby_halfhead.png|64px|link=]]
+| Half Head Baby
+| A baby with the top half of its head missing.
+|-
+| 99
+| [[File:099_baby_makeup.png|64px|link=]]
+| Makeup Baby
+| A baby wearing makeup.
+|-
+| 100
+| [[File:100_baby_ed.png|64px|link=]]
+| Ed Baby
+| Appears similar to [[Edmund McMillen]], the creator of the game.
+|-
+| 101
+| [[File:101_baby_d.png|64px|link=]]
+| D Baby
+| Appears similar to Danielle, Edmund's wife.
+|-
+| 102
+| [[File:102_baby_guppy.png|64px|link=]]
+| Guppy Baby
+| A baby that looks like Edmund's first cat, [[Guppy]].
+|-
+| 103
+| [[File:103_baby_puke.png|64px|link=]]
+| Puke Baby
+| A baby that's vomiting.
+|-
+| 104
+| [[File:104_baby_dumb.png|64px|link=]]
+| Dumb Baby
+| A smiling blue baby.
+|-
+| 105
+| [[File:105_baby_lipstick.png|64px|link=]]
+| Lipstick Baby
+| A baby wearing an excess amount of lipstick.
+|-
+| 106
+| [[File:106_baby_aether.png|64px|link=]]
+| Aether Baby
+| Reference to Aether, another one of Edmund McMillen's games.
+|-
+| 107
+| [[File:107_baby_brownie.png|64px|link=]]
+| Brownie Baby
+| Reference to Brownie, a character from Super Meat Boy.
+|-
+| 108
+| [[File:108_baby_vvvvvv.png|64px|link=]]
+| VVVVVV Baby
+| Reference to Captain Viridian, the main character of VVVVVV.
+|-
+| 109
+| [[File:109_baby_nosferatu.png|64px|link=]]
+| Nosferatu Baby
+| A reference to the movie, Nosferatu.
+|-
+| 110
+| [[File:110_baby_pubic.png|64px|link=]]
+| Pubic Baby
+| A baby with the cosmetic effect of the pill [[Puberty]].
+|-
+| 111
+| [[File:111_baby_eyemouth.png|64px|link=]]
+| Eyemouth Baby
+| A baby with an eye in its mouth.
+|-
+| 112
+| [[File:112_baby_weirdo.png|64px|link=]]
+| Weirdo Baby
+| A frowning blue baby.
+|-
+| 113
+| [[File:113_baby_v.png|64px|link=]]
+| V Baby
+| A baby with a red "V" on its head.
+|-
+| 114
+| [[File:114_baby_strangemouth.png|64px|link=]]
+| Strange Mouth Baby
+| A baby with the ":3" face.
+|-
+| 115
+| [[File:115_baby_masked.png|64px|link=]]
+| Masked Baby
+| A baby with a black mask and red eyes.
+|-
+| 116
+| [[File:116_baby_cyber.png|64px|link=]]
+| Cyber Baby
+| A reference to the cyber men from Doctor Who.
+|-
+| 117
+| [[File:117_baby_axewound.png|64px|link=]]
+| Axe Wound Baby
+| Fires tears from its wound.
+|-
+| 118
+| [[File:118_baby_statue.png|64px|link=]]
+| Statue Baby
+| A petrified baby.
+|-
+| 119
+| [[File:119_baby_grin.png|64px|link=]]
+| Grin Baby
+| A grinning baby.
+|-
+| 120
+| [[File:120_baby_upset.png|64px|link=]]
+| Upset Baby
+| A baby who looks upset.
+|-
+| 121
+| [[File:121_baby_plastic.png|64px|link=]]
+| Plastic Baby
+| A baby that resembles a mannequin.
+|-
+| 122
+| [[File:122_baby_monochrome.png|64px|link=]]
+| Monochrome Baby
+| A baby that is possibly a reference to the character Monoko from Yume Nikki.
+|-
+| 123
+| [[File:123_baby_onetooth.png|64px|link=]]
+| One Tooth Baby
+| A baby with a single tooth.
+|-
+| 124
+| [[File:124_baby_tusks.png|64px|link=]]
+| Tusks Baby
+| A baby with two large tusks.
+|-
+| 125
+| [[File:125_baby_hopeless.png|64px|link=]]
+| Hopeless Baby
+| A black depressed baby.
+|-
+| 126
+| [[File:126_baby_bigmouth.png|64px|link=]]
+| Big Mouth Baby
+| A baby with a big mouth.
+|-
+| 127
+| [[File:127_baby_peeeyes.png|64px|link=]]
+| Pee Eyes Baby
+| A baby with urine in its eyes.
+|-
+| 128
+| [[File:128_baby_earwig.png|64px|link=]]
+| Earwig Baby
+| A baby that looks like an earwig.
+|-
+| 129
+| [[File:129_baby_ninkumpoop.png|64px|link=]]
+| Ninkumpoop Baby
+| A baby that appears to be stupid.
+|-
+| 130
+| [[File:130_baby_strangeshape.png|64px|link=]]
+| Strange Shape Baby
+| A baby with an almond shaped head.
+|-
+| 131
+| [[File:131_baby_bugeyed.png|64px|link=]]
+| Bugeyed Baby
+| A baby with bugeyes.
+|-
+| 132
+| [[File:132_baby_freaky.png|64px|link=]]
+| Freaky Baby
+| A baby with a large mouth and sharp teeth.
+|-
+| 133
+| [[File:133_baby_crooked.png|64px|link=]]
+| Crooked Baby
+| A baby whose eyes are off center.
+|-
+| 134
+| [[File:134_baby_spiderlegs.png|64px|link=]]
+| Spider Legs Baby
+| A baby that looks like a spider.
+|-
+| 135
+| [[File:135_baby_smiling.png|64px|link=]]
+| Smiling Baby
+| A smiling baby.
+|-
+| 136
+| [[File:136_baby_tears.png|64px|link=]]
+| Tears Baby
+| A crying baby.
+|-
+| 137
+| [[File:137_baby_bowling.png|64px|link=]]
+| Bowling Baby
+| A brown baby.
+|-
+| 138
+| [[File:138_baby_mohawk.png|64px|link=]]
+| Mohawk Baby
+| A baby with a mohawk.
+|-
+| 139
+| [[File:139_baby_rottenmeat.png|64px|link=]]
+| Rotten Meat Baby
+| A baby that appears to be a rotten version of Meatboy.
+|-
+| 140
+| [[File:140_baby_noarms.png|64px|link=]]
+| No Arms Baby
+| A baby with no arms.
+|-
+| 141
+| [[File:141_baby_twin2.png|64px|link=]]
+| Twin Baby 2
+| A baby that has a blue bow.
+|-
+| 142
+| [[File:142_baby_uglygirl.png|64px|link=]]
+| Ugly Girl Baby
+| A yellow baby with a pink bow.
+|-
+| 143
+| [[File:143_baby_chompers.png|64px|link=]]
+| Chompers Baby
+| A baby that bears a slight resemblance to Scolex.
+|-
+| 144
+| [[File:144_baby_camillojr.png|64px|link=]]
+| Camillo Jr. Baby
+| A baby that looks like the enemy [[Camillo Jr.]]
+|-
+| 145
+| [[File:145_baby_eyeless.png|64px|link=]]
+| Eyeless Baby
+| A baby with no eyes.
+|-
+| 146
+| [[File:146_baby_sloppy.png|64px|link=]]
+| Sloppy Baby
+| A baby with a crooked mouth.
+|-
+| 147
+| [[File:147_baby_bluebird.png|64px|link=]]
+| Bluebird Baby
+| A blue baby with wings.
+|-
+| 148
+| [[File:148_baby_fat.png|64px|link=]]
+| Fat Baby
+| A baby that looks like [[Gluttony]].
+|-
+| 149
+| [[File:149_baby_butterfly.png|64px|link=]]
+| Butterfly Baby
+| A baby that appears to look like a winged Pikmin from Pikmin 3.
+|-
+| 150
+| [[File:150_baby_goggles.png|64px|link=]]
+| Goggles Baby
+| A baby with goggles.
+|-
+| 151
+| [[File:151_baby_apathetic.png|64px|link=]]
+| Apathetic Baby
+| A baby that seems to be bored.
+|-
+| 152
+| [[File:152_baby_cape.png|64px|link=]]
+| Cape Baby
+| A baby with a cape.
+|-
+| 153
+| [[File:153_baby_sorrow.png|64px|link=]]
+| Sorrow Baby
+| A blue baby with a grimace on its face.
+|-
+| 154
+| [[File:154_baby_rictus.png|64px|link=]]
+| Rictus Baby
+| A baby with a frown of pain on its face.
+|-
+| 155
+| [[File:155_baby_awaken.png|64px|link=]]
+| Awaken Baby
+| A baby with closed eyes.
+|-
+| 156
+| [[File:156_baby_puff.png|64px|link=]]
+| Puff Baby
+| A reference to Kirby.
+|-
+| 157
+| [[File:157_baby_attractive.png|64px|link=]]
+| Attractive Baby
+| Another baby with the ":3" face.
+|-
+| 158
+| [[File:158_baby_pretty.png|64px|link=]]
+| Pretty Baby
+| A baby with eyeshadow.
+|-
+| 159
+| [[File:159_baby_crackedinfamy.png|64px|link=]]
+| Cracked Infamy Baby
+| A baby with a cracked [[Infamy]] mask.
+|-
+| 160
+| [[File:160_baby_distended.png|64px|link=]]
+| Distended Baby
+| A baby with twisted arms.
+|-
+| 161
+| [[File:161_baby_mean.png|64px|link=]]
+| Mean Baby
+| A green baby with a grumpy look.
+|-
+| 162
+| [[File:162_baby_digital.png|64px|link=]]
+| Digital Baby
+| A green baby that has the static T.V. effect.
+|-
+| 163
+| [[File:163_baby_helmet.png|64px|link=]]
+| Helmet Baby
+| A baby with a helmet.
+|-
+| 164
+| [[File:164_baby_blackeye.png|64px|link=]]
+| Black Eye Baby
+| A baby with a black eye.
+|-
+| 165
+| [[File:165_baby_lights.png|64px|link=]]
+| Lights Baby
+| A baby with white eyes.
+|-
+| 166
+| [[File:166_baby_spike.png|64px|link=]]
+| Spike Baby
+| A baby with a spike on its head.
+|-
+| 167
+| [[File:167_baby_worry.png|64px|link=]]
+| Worry Baby
+| A baby with blue skin and a frown.
+|-
+| 168
+| [[File:168_baby_ears.png|64px|link=]]
+| Ears Baby
+| A baby with animal-like ears. 
+|-
+| 169
+| [[File:169_baby_funeral.png|64px|link=]]
+| Funeral Baby
+| A baby with a tuxedo.
+|-
+| 170
+| [[File:170_baby_libra.png|64px|link=]]
+| Libra Baby
+| A baby that looks like it has the item {{i|Libra}}.
+|-
+| 171
+| [[File:171_baby_gappy.png|64px|link=]]
+| Gappy Baby
+| An angry baby with red eyes.
+|-
+| 172
+| [[File:172_baby_sunburn.png|64px|link=]]
+| Sunburn Baby
+| A red baby.
+|-
+| 173
+| [[File:173_baby_atepoop.png|64px|link=]]
+| Ate Poop Baby
+| A baby who ate poop.
+|-
+| 174
+| [[File:174_baby_electris.png|64px|link=]]
+| Electric Baby
+| Reference to Pikachu from Pokémon.
+|-
+| 175
+| [[File:175_baby_bloodhole.png|64px|link=]]
+| Blood Hole Baby
+| A baby with a bloody anus for a face.
+|-
+| 176
+| [[File:176_baby_transforming.png|64px|link=]]
+| Transforming Baby
+| Reference to Optimus Prime from Transformers.
+|-
+| 177
+| [[File:177_baby_aban.png|64px|link=]]
+| Aban Baby
+| Reference to Aban Hawkins from 1001 Spikes.
+|-
+| 178
+| [[File:178_baby_bandagegirl.png|64px|link=]]
+| Bandage Girl Baby
+| Reference to Bandage Girl from Super Meat Boy.
+|-
+| 179
+| [[File:179_baby_piecea.png|64px|link=]]
+| Piece A Baby
+| Reference to Tetris.
+|-
+| 180
+| [[File:180_baby_pieceb.png|64px|link=]]
+| Piece B Baby
+| Reference to Tetris.
+|-
+| 181
+| [[File:181_baby_spelunker.png|64px|link=]]
+| Spelunker Baby
+| Reference to the Spelunker from Spelunky.
+|-
+| 182
+| [[File:182_baby_frog.png|64px|link=]]
+| Frog Baby
+| A baby that looks like a frog.
+|-
+| 183
+| [[File:183_baby_crook.png|64px|link=]]
+| Crook Baby
+| A baby with a bandit's eye mask.
+|-
+| 184
+| [[File:184_baby_don.png|64px|link=]]
+| Don Baby
+| Reference to Donatello from Teenage Mutant Ninja Turtles.
+|-
+| 185
+| [[File:185_baby_web.png|64px|link=]]
+| Web Baby
+| A baby with strands of spider silk stuck on it.
+|-
+| 186
+| [[File:186_baby_faded.png|64px|link=]]
+| Faded Baby
+| A baby that appears to be phasing out of existence.
+|-
+| 187
+| [[File:187_baby_sick.png|64px|link=]]
+| Sick Baby
+| A sickly baby.
+|-
+| 188
+| [[File:188_baby_drfetus.png|64px|link=]]
+| Dr Fetus Baby
+| Reference to Dr. Fetus from Super Meat Boy.
+|-
+| 189
+| [[File:189_baby_spectral.png|64px|link=]]
+| Spectral Baby
+| A baby that is translucent in appearance.
+|-
+| 190
+| [[File:190_baby_redskeleton.png|64px|link=]]
+| Red Skeleton Baby
+| A reference to the Red Skeleton enemy from Castlevania.
+|-
+| 191
+| [[File:191_baby_skeleton.png|64px|link=]]
+| Skeleton Baby
+| A reference to the Skeleton enemy from Castlevania.
+|-
+| 192
+| [[File:192_baby_jammies.png|64px|link=]]
+| Jammies Baby
+| A baby with pajamas.
+|-
+| 193
+| [[File:193_baby_newjammies.png|64px|link=]]
+| New Jammies Baby
+| A baby with red pajamas.
+|-
+| 194
+| [[File:194_baby_cold.png|64px|link=]]
+| Cold Baby
+| A baby with a snowman appearance.
+|-
+| 195
+| [[File:195_baby_oldman.png|64px|link=]]
+| Old Man Baby
+| A baby that appears to look like an old man.
+|-
+| 196
+| [[File:196_baby_spooked.png|64px|link=]]
+| Spooked Baby
+| A scared baby.
+|-
+| 197
+| [[File:197_baby_nice.png|64px|link=]]
+| Nice Baby
+| A baby with a neutral expression.
+|-
+| 198
+| [[File:198_baby_dots.png|64px|link=]]
+| Dots Baby
+| A baby with blood splattered on it.
+|-
+| 199
+| [[File:199_baby_peeling.png|64px|link=]]
+| Peeling Baby
+| A baby whose skull is exposed.
+|-
+| 200
+| [[File:200_baby_smallface.png|64px|link=]]
+| Small Face Baby
+| A baby with an abnormally small face.
+|-
+| 201
+| [[File:201_baby_good.png|64px|link=]]
+| Good Baby
+| A happy baby with blonde hair.
+|-
+| 202
+| [[File:202_baby_blindfold.png|64px|link=]]
+| Blindfold Baby
+| A baby with a [[Blindfolded|blindfold]].
+|-
+| 203
+| [[File:203_baby_pipe.png|64px|link=]]
+| Pipe Baby
+| A baby with a pipe stuck in its head.
+|-
+| 204
+| [[File:204_baby_dented.png|64px|link=]]
+| Dented Baby
+| A baby with a dented head.
+|- id="Steven Baby"
+| 205
+| [[File:205_baby_steven.png|64px|link=]]
+| Steven Baby
+| Reference to another one of Edmund McMillen's games, Time Fcuk.
+|-
+| 206
+| [[File:206_baby_monocle.png|64px|link=]]
+| Monocle Baby
+| A baby wearing a monocle. 
+|-
+| 207
+| [[File:207_baby_belial.png|64px|link=]]
+| Belial Baby
+| A baby that looks like it used {{i|The Book of Belial}}.
+|-
+| 208
+| [[File:208_baby_monstro.png|64px|link=]]
+| Monstro Baby
+| A baby that looks like [[Monstro]].
+|-
+| 209
+| [[File:209_baby_fez.png|64px|link=]]
+| Fez Baby
+| A baby wearing a fez, possibly a reference to the game, Fez.
+|-
+| 210
+| [[File:210_baby_meatboy.png|64px|link=]]
+| MeatBoy Baby
+| Reference to the titular character from Super Meat Boy.
+|-
+| 211
+| [[File:211_baby_skull.png|64px|link=]]
+| Skull Baby
+| A skeletal baby.
+|-
+| 212
+| [[File:212_baby_conjoined.png|64px|link=]]
+| Conjoined Baby
+| A baby with a conjoined twin.
+|-
+| 213
+| [[File:213_baby_skinny.png|64px|link=]]
+| Skinny Baby
+| A baby that looks malnourished.
+|-
+| 214
+| [[File:214_baby_spider.png|64px|link=]]
+| Basic Spider Baby
+| A baby that has the characteristics of a spider.
+|-
+| 215
+| [[File:215_baby_shopkeeper.png|64px|link=]]
+| Shopkeeper Baby
+| A baby that looks like a shopkeeper.
+|-
+| 216
+| [[File:216_baby_fancy.png|64px|link=]]
+| Fancy Baby
+| A baby with a bowtie.
+|-
+| 217
+| [[File:217_baby_chubby.png|64px|link=]]
+| Chubby Baby
+| A chubby baby with three hairs.
+|-
+| 218
+| [[File:218_baby_cyclops.png|64px|link=]]
+| Cyclops Baby
+| A baby that looks like it has the item {{i|Polyphemus}}.
+|-
+| 219
+| [[File:219_baby_isaac.png|64px|link=]]
+| Isaac Baby
+| A baby that looks like Isaac.
+|-
+| 220
+| [[File:220_baby_plug.png|64px|link=]]
+| Plug Baby
+| A baby that looks like an electrical outlet.
+|-
+| 221
+| [[File:221_baby_drool.png|64px|link=]]
+| Drool Baby
+| A baby that is drooling.
+|-
+| 222
+| [[File:222_baby_wink.png|64px|link=]]
+| Wink Baby
+| A baby that is winking.
+|-
+| 223
+| [[File:223_baby_pox.png|64px|link=]]
+| Pox Baby
+| A baby that has smallpox or chickenpox.
+|-
+| 224
+| [[File:224_baby_onion.png|64px|link=]]
+| Onion Baby
+| A baby with a head that looks like the item {{i|The Sad Onion}}.
+|-
+| 225
+| [[File:225_baby_zipper.png|64px|link=]]
+| Zipper Baby
+| A pale baby with a zipper on its torso.
+|-
+| 226
+| [[File:226_baby_buckteeth.png|64px|link=]]
+| Buckteeth Baby
+| A baby with buckteeth.
+|-
+| 227
+| [[File:227_baby_beard.png|64px|link=]]
+| Beard Baby
+| A bearded baby.
+|-
+| 228
+| [[File:228_baby_hanger.png|64px|link=]]
+| Hanger Baby
+| A baby that appears to have the item {{i|Wire Coat Hanger}}.
+|-
+| 229
+| [[File:229_baby_vampire.png|64px|link=]]
+| Vampire Baby
+| A vampiric baby.
+|-
+| 230
+| [[File:230_baby_tilt.png|64px|link=]]
+| Tilt Baby
+| A baby whose face is tilted.
+|-
+| 231
+| [[File:231_baby_bawl.png|64px|link=]]
+| Bawl Baby
+| A baby who looks to be crying more than usual.
+|-
+| 232
+| [[File:232_baby_lemon.png|64px|link=]]
+| Lemon Baby
+| A baby with a lemon head.
+|-
+| 478
+| [[File:478_baby_tooth.png|64px|link=]]
+| Tooth Baby
+| A baby with one tooth.
+|-
+| 479
+| [[File:479_baby_haunt.png|64px|link=]]
+| Haunt Baby
+| A ghostly baby.
+|}
+
+== {{dlc+|a}} Afterbirth babies ==
+<section begin="Afterbirth babies" />
+=== Special Babies ===
+These Babies have special bonuses that will aid the player in some way.
+
+{| class="mw-collapsible wikitable striped" style="width: 100%; height: 100%; text-align: center"
+! style="width:32px" | '''ID'''
+! style="width:64px" | '''Appearance'''
+! style="width:200px" | '''Name'''
+! '''Description'''
+|-
+| 27
+| [[File:027_baby_black.png|64px|link=]]
+| Black Baby
+| Spawns with an extra [[black heart]].<br>{{achievement unlock|Black Baby}} to unlock it.
+|-
+| 28
+| [[File:028_baby_red.png|64px|link=]]
+| Red Baby
+| Spawns with an extra [[red heart]].<br>{{achievement unlock|Red Baby}} to unlock it.
+|-
+| 29
+| [[File:029_baby_white.png|64px|link=]]
+| White Baby
+| Gives Isaac an [[eternal heart]] when it spawns.<br>{{achievement unlock|White Baby}} to unlock it.
+|-
+| 30
+| [[File:030_baby_blue.png|64px|link=]]
+| Blue Baby
+| Spawns with an extra [[soul heart]].<br>{{achievement unlock|Blue Baby}} to unlock it.
+|-
+| 31
+| [[File:031_baby_rage.png|64px|link=]]
+| Rage Baby
+| Occasionally briefly increases Isaac's [[damage]] by 2.<br>{{achievement unlock|Rage Baby}} to unlock it.
+|-
+| 32
+| [[File:032_baby_cry.png|64px|link=]]
+| Cry Baby
+| Occasionally briefly increases Isaac's [[tears]] by 1.<br>{{achievement unlock|Cry Baby}} to unlock it.
+|-
+| 33
+| [[File:033_baby_yellow.png|64px|link=]]
+| Yellow Baby
+| Occasionally briefly increases Isaac's [[speed]] by 0.15.<br>{{achievement unlock|Yellow Baby}} to unlock it.
+|-
+| 34
+| [[File:034_baby_long.png|64px|link=]]
+| Long Baby
+| Occasionally briefly increases Isaac's [[range]] by 2, [[shot speed]] by 0.5, {{dlc|nr}} and [[tear falling speed]].<br>{{achievement unlock|Long Baby}} to unlock it.
+|-
+| 35
+| [[File:035_baby_green.png|64px|link=]]
+| Green Baby
+| Occasionally briefly increases Isaac's [[luck]] by 2.<br>{{achievement unlock|Green Baby}} to unlock it.
+|-
+| 36
+| [[File:036_baby_lil.png|64px|link=]]
+| Lil' Baby
+| Occasionally briefly decreases Isaac's size.<br>{{achievement unlock|Lil' Baby}} to unlock it.
+|-
+| 37
+| [[File:037_baby_big.png|64px|link=]]
+| Big Baby
+| Occasionally briefly increases Isaac's size.<br>{{achievement unlock|Big Baby}} to unlock it.
+|-
+| 38
+| [[File:038_baby_brown.png|64px|link=]]
+| Brown Baby
+| Occasionally briefly gives Isaac the {{t|Butt Penny}} effect. <br>{{achievement unlock|Brown Baby}} to unlock it.
+|-
+| 39
+| [[File:039_baby_noose.png|64px|link=]]
+| Noose Baby
+| Occasionally briefly gives Isaac the {{i|Transcendence}} effect, granting [[flight]].<br>{{achievement unlock|Noose Baby}} to unlock it.
+|-
+| 40
+| [[File:040_baby_hive.png|64px|link=]]
+| Hive Baby
+| Occasionally briefly gives Isaac the {{i|Hive Mind}} effect, doubling the damage dealt by [[blue spider]]s and [[Blue fly|blue flies]].<br>{{achievement unlock|Hive Baby}} to unlock it.
+|-
+| 41
+| [[File:041_baby_buddy.png|64px|link=]]
+| Buddy Baby
+| Occasionally briefly gives Isaac the {{i|Guillotine}} effect, detaching Isaac's head and increasing damage and tears.<br>{{achievement unlock|Buddy Baby}} to unlock it.
+|-
+| 42
+| [[File:042_baby_colorful.png|64px|link=]]
+| Colorful Baby
+| Upon joining, fully heals Isaac, similar to the [[rainbow poop]] effect.<br>{{achievement unlock|Colorful Baby}} to unlock it.
+|-
+| 43
+| [[File:043_baby_whore.png|64px|link=]]
+| Whore Baby
+| Occasionally briefly gives Isaac the {{i|Whore of Babylon}} effect, increasing [[damage]] and [[speed]].<br>{{achievement unlock|Whore Baby}} to unlock it.
+|-
+| 44
+| [[File:044_baby_cracked.png|64px|link=]]
+| Cracked Baby
+|{{achievement unlock|Cracked Baby}} to unlock it.
+|-
+| 45
+| [[File:045_baby_dripping.png|64px|link=]]
+| Dripping Baby
+| Occasionally briefly gives Isaac {{i|Anemic}}, increasing [[range]] by 5 and causing Isaac to leave a [[Red creep|trail of blood]] that damages enemies.<br>{{achievement unlock|Dripping Baby}} to unlock it.
+|-
+| 46
+| [[File:046_baby_blinding.png|64px|link=]]
+| Blinding Baby
+| Upon death, activates the effect of [[XIX - The Sun]], fully restoring Isaac's [[red heart]]s, deals 100 damage to all enemies in the room, and revealing the map for the current floor.<br>{{achievement unlock|Blinding Baby}} to unlock it.
+|-
+| 47
+| [[File:047_baby_sucky.png|64px|link=]]
+| Sucky Baby
+| Has an aura around itself that damages enemies while they are inside, similar to {{i|Succubus|n}}.<br>{{achievement unlock|Sucky Baby}} to unlock it.
+|-
+| 48
+| [[File:048_baby_dark.png|64px|link=]]
+| Dark Baby
+| Occasionally provides a brief boost to all of Isaac's [[Attributes|stats]].<br>{{achievement unlock|Dark Baby}} to unlock it.
+|-
+| 49
+| [[File:049_baby_picky.png|64px|link=]]
+| Picky Baby
+| Occasionally briefly gives Isaac the {{t|Paper Clip}} effect.<br>{{achievement unlock|Picky Baby}} to unlock it.
+|-
+| 50
+| [[File:050_baby_revenge.png|64px|link=]]
+| Revenge Baby
+| Occasionally briefly increases Isaac's [[damage]].<br>{{achievement unlock|Revenge Baby}} to unlock it.
+|-
+| 51
+| [[File:051_baby_belial.png|64px|link=]]
+| Belial Baby
+| Occasionally briefly gives Isaac the {{i|The Book of Belial}} effect, increasing [[damage]].<br>{{achievement unlock|Belial Baby}} to unlock it.
+|-
+| 52
+| [[File:052_baby_sale.png|64px|link=]]
+| Sale Baby
+| Occasionally briefly gives Isaac the {{i|Steam Sale}} effect, halving the prices of all shop items.<br>{{achievement unlock|Sale Baby}} to unlock it.
+|-
+| 53
+| [[File:053_baby_goatbaby.png|64px|link=]]
+| Goat Head Baby
+| Occasionally briefly gives Isaac the {{i|Goat Head}} effect, guaranteeing that a [[Devil room]] or [[angel room]] will open if a [[boss room]] is completed while the effect is active. <br>{{achievement unlock|Goat Head Baby}} to unlock it.
+|-
+| 54
+| [[File:054_baby_supergreedbaby.png|64px|link=]]
+| Super Greed Baby
+| Has the [[Head of the Keeper]] effect, firing coin tears that have a chance to spawn a [[coin]] upon hitting an enemy.<br>{{achievement unlock|Super Greed Baby}} to unlock it.
+|}
+
+=== Normal Babies ===
+These Babies are purely cosmetic and do not have any special behaviors.
+{| class="mw-collapsible wikitable striped" style="width:100%; height:100%; text-align:center"
+! style="width:32px" | '''ID'''
+! style="width:64px" | '''Appearance'''
+! style="width:200px" | '''Name'''
+! '''Description'''
+|-
+| 233
+| [[File:233_baby_punkboy.png|64px|link=]]
+| Punkboy Baby 
+| A baby dressed as a punk rocker boy.
+|-
+| 234
+| [[File:234_baby_punkgirl.png|64px|link=]]
+| Punkgirl Baby
+| A baby dressed as a punk rocker girl.
+|-
+| 235
+| [[File:235_baby_computer.png|64px|link=]]
+| Computer Baby
+| A baby with a computer for a head.
+|-
+| 236
+| [[File:236_baby_mask.png|64px|link=]]
+| Mask Baby
+| A baby wearing a mask.
+|-
+| 237
+| [[File:237_baby_gem.png|64px|link=]]
+| Gem Baby
+| A baby that looks like it's made of crystal.
+|-
+| 238
+| [[File:238_baby_shark.png|64px|link=]]
+| Shark Baby
+| A baby that looks like a shark.
+|-
+| 239
+| [[File:239_baby_beret.png|64px|link=]]
+| Beret Baby
+| A baby that's wearing a beret.
+|-
+| 240
+| [[File:240_baby_blisters.png|64px|link=]]
+| Blisters Baby
+| A baby covered in blisters.
+|-
+| 241
+| [[File:241_baby_radioactive.png|64px|link=]]
+| Radioactive Baby
+| A sickly green baby.
+|-
+| 242
+| [[File:242_baby_beast.png|64px|link=]]
+| Beast Baby
+| A baby that looks like a beast.
+|-
+| 243
+| [[File:243_baby_dark.png|64px|link=]]
+| Dark Baby
+| A very dark baby.
+|-
+| 244
+| [[File:244_baby_snail.png|64px|link=]]
+| Snail Baby
+| A baby that looks like a snail.
+|-
+| 245
+| [[File:245_baby_blood.png|64px|link=]]
+| Blood Baby
+| A baby that looks like a drop of blood.
+|-
+| 246
+| [[File:246_baby_8ball.png|64px|link=]]
+| 8 Ball Baby
+| A baby with an 8 ball for a head.
+|-
+| 247
+| [[File:247_baby_wisp.png|64px|link=]]
+| Wisp Baby
+| A wispy baby.
+|-
+| 248
+| [[File:248_baby_cactus.png|64px|link=]]
+| Cactus Baby
+| A baby that looks like a cactus.
+|-
+| 249
+| [[File:249_baby_loveeye.png|64px|link=]]
+| Love Eye Baby
+| A pink baby with a heart for an eye.
+|-
+| 250
+| [[File:250_baby_medusa.png|64px|link=]]
+| Medusa Baby
+| A baby that resembles Medusa.
+|-
+| 251
+| [[File:251_baby_nuclear.png|64px|link=]]
+| Nuclear Baby
+| A baby that looks like a mushroom cloud.
+|-
+| 252
+| [[File:252_baby_purple.png|64px|link=]]
+| Purple Baby
+| A strange purple baby.
+|-
+| 253
+| [[File:253_baby_wizard.png|64px|link=]]
+| Wizard Baby
+| A baby with a wizard hat.
+|-
+| 254
+| [[File:254_baby_earth.png|64px|link=]]
+| Earth Baby
+| A baby whose head looks like planet Earth.
+|-
+| 255
+| [[File:255_baby_saturn.png|64px|link=]]
+| Saturn Baby
+| A baby with a ring around its head.
+|-
+| 256
+| [[File:256_baby_cloud.png|64px|link=]]
+| Cloud Baby
+| A baby made of cloud.
+|-
+| 257
+| [[File:257_baby_tube.png|64px|link=]]
+| Tube Baby
+| A baby with a tube connecting both eyes.
+|-
+| 258
+| [[File:258_baby_rocker.png|64px|link=]]
+| Rocker Baby
+| A baby dressed as a rock fan.
+|-
+| 259
+| [[File:259_baby_king.png|64px|link=]]
+| King Baby
+| A baby with a crown.
+|-
+| 260
+| [[File:260_baby_coat.png|64px|link=]]
+| Coat Baby
+| A baby wearing a winter coat.
+|-
+| 261
+| [[File:261_baby_viking.png|64px|link=]]
+| Viking Baby
+| A baby with a Viking helmet.
+|-
+| 262
+| [[File:262_baby_panda.png|64px|link=]]
+| Panda Baby
+| A baby that looks like a panda.
+|-
+| 263
+| [[File:263_baby_raccoon.png|64px|link=]]
+| Raccoon Baby
+| A baby that looks like a raccoon.
+|-
+| 264
+| [[File:264_baby_bear.png|64px|link=]]
+| Bear Baby
+| A baby that looks like a grizzly bear.
+|-
+| 265
+| [[File:265_baby_polarbear.png|64px|link=]]
+| Polar Bear Baby
+| A baby that looks like a polar bear.
+|-
+| 266
+| [[File:266_baby_lovebear.png|64px|link=]]
+| Lovebear Baby
+| A baby that looks like a Care Bear.
+|-
+| 267
+| [[File:267_baby_hare.png|64px|link=]]
+| Hare Baby
+| A baby that looks like a rabbit.
+|-
+| 268
+| [[File:268_baby_squirrel.png|64px|link=]]
+| Squirrel Baby
+| A baby that looks like a squirrel.
+|-
+| 269
+| [[File:269_baby_tabby.png|64px|link=]]
+| Tabby Baby
+| A baby that looks like a cat.
+|-
+| 270
+| [[File:270_baby_porcupine.png|64px|link=]]
+| Porcupine Baby
+| A baby that looks like a porcupine.
+|-
+| 271
+| [[File:271_baby_puppy.png|64px|link=]]
+| Puppy Baby
+| A baby that looks like a puppy.
+|-
+| 272
+| [[File:272_baby_parrot.png|64px|link=]]
+| Parrot Baby
+| A baby that looks like a parrot.
+|-
+| 273
+| [[File:273_baby_chameleon.png|64px|link=]]
+| Chameleon Baby
+| A baby that looks like a chameleon.
+|-
+| 274
+| [[File:274_baby_boulder.png|64px|link=]]
+| Boulder Baby
+| A baby made of rocks.
+|-
+| 275
+| [[File:275_baby_aqua.png|64px|link=]]
+| Aqua Baby
+| An aqua-blue baby.
+|-
+| 276
+| [[File:276_baby_gargoyle.png|64px|link=]]
+| Gargoyle Baby
+| A baby that resembles a gargoyle.
+|-
+| 277
+| [[File:277_baby_spikydemon.png|64px|link=]]
+| Spiky Demon Baby
+| A baby that looks like a spiky demon.
+|-
+| 278
+| [[File:278_baby_reddemon.png|64px|link=]]
+| Red Demon Baby
+| A baby that looks like a red demon.
+|-
+| 279
+| [[File:279_baby_orangedemon.png|64px|link=]]
+| Orange Demon Baby
+| A baby that looks like an orange demon.
+|-
+| 280
+| [[File:280_baby_eyedemon.png|64px|link=]]
+| Eye Demon Baby
+| A baby with an eye for a head.
+|-
+| 281
+| [[File:281_baby_fangdemon.png|64px|link=]]
+| Fang Demon Baby
+| A baby with big fangs.
+|-
+| 282
+| [[File:282_baby_ghost.png|64px|link=]]
+| Ghost Baby
+| A baby that looks like a ghost.
+|-
+| 283
+| [[File:283_baby_arachnid.png|64px|link=]]
+| Arachnid Baby
+| A baby that looks like a spider.
+|-
+| 284
+| [[File:284_baby_bony.png|64px|link=]]
+| Bony Baby
+| A baby that looks like a Bony.
+|-
+| 285
+| [[File:285_baby_bigtongue.png|64px|link=]]
+| Big Tongue Baby
+| A baby with a big tongue.
+|-
+| 286
+| [[File:286_baby_3d.png|64px|link=]]
+| 3D Baby
+| A baby wearing 3D glasses.
+|-
+| 287
+| [[File:287_baby_suit.png|64px|link=]]
+| Suit Baby
+| A baby in a nice suit.
+|-
+| 288
+| [[File:288_baby_butt.png|64px|link=]]
+| Butt Baby
+| A baby with a butt for a face.
+|-
+| 289
+| [[File:289_baby_cupid.png|64px|link=]]
+| Cupid Baby
+| A baby that looks like Cupid.
+|-
+| 290
+| [[File:290_baby_heart.png|64px|link=]]
+| Heart Baby
+| A baby with a heart-shaped head.
+|-
+| 291
+| [[File:291_baby_killer.png|64px|link=]]
+| Killer Baby
+| A baby that looks like [[wikipedia:Jason Voorhees|Jason Voorhees]] from the "Friday the 13th" horror movie series.
+|-
+| 292
+| [[File:292_baby_lantern.png|64px|link=]]
+| Lantern Baby
+| A baby that looks like Ash Williams from the Evil Dead series.
+|-
+| 293
+| [[File:293_baby_banshee.png|64px|link=]]
+| Banshee Baby
+| A baby that looks like a banshee.
+|-
+| 294
+| [[File:294_baby_ranger.png|64px|link=]]
+| Ranger Baby
+| A baby that looks like a Red Power Ranger.
+|-
+| 295
+| [[File:295_baby_rider.png|64px|link=]]
+| Rider Baby
+| A baby that looks like a Kamen Rider.
+|-
+| 296
+| [[File:296_baby_choco.png|64px|link=]]
+| Choco Baby
+| A baby made of chocolate.
+|-
+| 297
+| [[File:297_baby_woodsman.png|64px|link=]]
+| Woodsman Baby
+| A baby dressed as a hiker.
+|-
+| 298
+| [[File:298_baby_brunette.png|64px|link=]]
+| Brunette Baby
+| A baby with brown hair.
+|-
+| 299
+| [[File:299_baby_blonde.png|64px|link=]]
+| Blonde Baby
+| A baby with blonde hair.
+|-
+| 300
+| [[File:300_baby_bluehair.png|64px|link=]]
+| Blue Hair Baby
+| A baby that looks like Chloe from Life is Strange.
+|-
+| 301
+| [[File:301_baby_bloodied.png|64px|link=]]
+| Bloodied Baby
+| A baby covered in blood.
+|-
+| 302
+| [[File:302_baby_cheese.png|64px|link=]]
+| Cheese Baby
+| A baby made of cheese.
+|-
+| 303
+| [[File:303_baby_pizza.png|64px|link=]]
+| Pizza Baby
+| A baby made of pizza.
+|-
+| 304
+| [[File:304_baby_hotdog.png|64px|link=]]
+| Hotdog Baby
+| A baby that is a hotdog.
+|-
+| 305
+| [[File:305_baby_pear.png|64px|link=]]
+| Pear Baby
+| A naked baby with a pear.
+|-
+| 306
+| [[File:306_baby_borg.png|64px|link=]]
+| Borg Baby
+| A robotic baby.
+|-
+| 307
+| [[File:307_baby_corrupted.png|64px|link=]]
+| Corrupted Baby
+| A baby that seems to be covered by an alien life.
+|-
+| 308
+| [[File:308_baby_xmouth.png|64px|link=]]
+| X Mouth Baby
+| A gagged baby.
+|-
+| 309
+| [[File:309_baby_xeyes.png|64px|link=]]
+| X Eyed Baby
+| A comically dead baby.
+|-
+| 310
+| [[File:310_baby_stareyes.png|64px|link=]]
+| Starry Eyed Baby
+| A baby with starry eyes.
+|-
+| 311
+| [[File:311_baby_surgeon.png|64px|link=]]
+| Surgeon Baby
+| A baby ready for surgery.
+|-
+| 312
+| [[File:312_baby_sword.png|64px|link=]]
+| Sword Baby
+| A baby that's a sword.
+|-
+| 313
+| [[File:313_baby_monk.png|64px|link=]]
+| Monk Baby
+| A baby that's a monk.
+|-
+| 314
+| [[File:314_baby_disco.png|64px|link=]]
+| Disco Baby
+| A funky baby with an afro.
+|-
+| 315
+| [[File:315_baby_puzzle.png|64px|link=]]
+| Puzzle Baby
+| A baby with a "Rubik's Cube" for a head.
+|-
+| 316
+| [[File:316_baby_speaker.png|64px|link=]]
+| Speaker Baby
+| A baby that has a speaker for a head.
+|-
+| 317
+| [[File:317_baby_scary.png|64px|link=]]
+| Scary Baby
+| A baby that resembles Jeff the Killer.
+|-
+| 318
+| [[File:318_baby_fireball.png|64px|link=]]
+| Fireball Baby
+| A fireball with eyes. Possibly a reference to the fire enemy in the Donkey Kong and Mario games.
+|-
+| 319
+| [[File:319_baby_maw.png|64px|link=]]
+| Maw Baby
+| A baby that's just a mouth.
+|-
+| 320
+| [[File:320_baby_exploding.png|64px|link=]]
+| Exploding Baby
+| A baby that's a bomb.
+|-
+| 321
+| [[File:321_baby_cupcake.png|64px|link=]]
+| Cupcake Baby
+| A baby that's a cupcake.
+|-
+| 322
+| [[File:322_baby_skinless.png|64px|link=]]
+| Skinless Baby
+| A baby without skin.
+|-
+| 323
+| [[File:323_baby_ballerina.png|64px|link=]]
+| Ballerina Baby
+| A baby wearing a tutu.
+|-
+| 324
+| [[File:324_baby_goblin.png|64px|link=]]
+| Goblin Baby
+| A baby that resembles a goblin.
+|-
+| 325
+| [[File:325_baby_coolgoblin.png|64px|link=]]
+| Cool Goblin Baby
+| A green baby with brown hair and cool shades.
+|-
+| 326
+| [[File:326_baby_geek.png|64px|link=]]
+| Geek Baby
+| A baby with black hair and nerdy glasses.
+|-
+| 327
+| [[File:327_baby_longbeard.png|64px|link=]]
+| Long Beard Baby
+| A baby with a long beard.
+|-
+| 328
+| [[File:328_baby_muttonchops.png|64px|link=]]
+| Muttonchops Baby
+| A baby with muttonchops.
+|-
+| 329
+| [[File:329_baby_spartan.png|64px|link=]]
+| Spartan Baby
+| A baby that resembles King Leonidas from 300.
+|-
+| 330
+| [[File:330_baby_tortoise.png|64px|link=]]
+| Tortoise Baby
+| A baby that resembles Vectorman from the game Vectorman.
+|-
+| 331
+| [[File:331_baby_slicer.png|64px|link=]]
+| Slicer Baby
+| A baby that resembles Shredder.
+|-
+| 332
+| [[File:332_baby_butterfly.png|64px|link=]]
+| Butterfly Baby
+| A baby with butterfly wings.
+|-
+| 333
+| [[File:333_baby_homeless.png|64px|link=]]
+| Homeless Baby
+| A baby that resembles a homeless person.
+|-
+| 334
+| [[File:334_baby_lumberjack.png|64px|link=]]
+| Lumberjack Baby
+| A baby that resembles a lumberjack.
+|-
+| 335
+| [[File:335_baby_cyberspace.png|64px|link=]]
+| Cyberspace Baby
+| A baby that resembles something from the [[wikipedia:Tron|Tron]] universe.
+|-
+| 336
+| [[File:336_baby_hero.png|64px|link=]]
+| Hero Baby
+| A baby that resembles Red from Gunstar Heroes.
+|-
+| 337
+| [[File:337_baby_boxers.png|64px|link=]]
+| Boxers Baby
+| A baby that resembles Arthur from Ghosts & Goblins (in his boxers).
+|-
+| 338
+| [[File:338_baby_winghelmet.png|64px|link=]]
+| Wing Helmet Baby
+| A baby that resembles Opa-Opa.
+|-
+| 339
+| [[File:339_baby_x.png|64px|link=]]
+| X Baby
+| A baby with an X for a head.
+|-
+| 340
+| [[File:340_baby_o.png|64px|link=]]
+| O Baby
+| A baby with an O for a head.
+|-
+| 341
+| [[File:341_baby_vomit.png|64px|link=]]
+| Vomit Baby
+| A baby with vomit coming from its mouth.
+|-
+| 342
+| [[File:342_baby_merman.png|64px|link=]]
+| Merman Baby
+| A baby that resembles Aquaman.
+|-
+| 343
+| [[File:343_baby_cyborg.png|64px|link=]]
+| Cyborg Baby
+| A baby that's a cyborg.
+|-
+| 344
+| [[File:344_baby_barbarian.png|64px|link=]]
+| Barbarian Baby
+| A baby that resembles the [https://us.diablo3.com/en/class/barbarian/ Barbarian from Diablo].
+|-
+| 345
+| [[File:345_baby_locust.png|64px|link=]]
+| Locust Baby
+| A baby that resembles a locust.
+|-
+| 346
+| [[File:346_baby_twotone.png|64px|link=]]
+| Twotone Baby
+| A completely white baby with a black outline.
+|-
+| 347
+| [[File:347_baby_2600.png|64px|link=]]
+| 2600 Baby
+| A baby that resembles an Atari 2600 sprite.
+|-
+| 348
+| [[File:348_baby_fourtone.png|64px|link=]]
+| Fourtone Baby
+| A baby with a minimal colour sprite.
+|-
+| 349
+| [[File:349_baby_grayscale.png|64px|link=]]
+| Grayscale Baby
+| A baby colored with several shades of gray.
+|-
+| 350
+| [[File:350_baby_rabbit.png|64px|link=]]
+| Rabbit Baby
+| A baby that resembles Oswald the Lucky Rabbit.
+|-
+| 351
+| [[File:351_baby_mouse.png|64px|link=]]
+| Mouse Baby
+| A baby that resembles an old-style Mickey Mouse.
+|-
+| 352
+| [[File:352_baby_critter.png|64px|link=]]
+| Critter Baby
+| A baby that resembles to Cubby the Bear from Van Beuren.
+|-
+| 353
+| [[File:353_baby_bluerobot.png|64px|link=]]
+| Blue Robot Baby
+| A baby that resembles Mega Man.
+|-
+| 354
+| [[File:354_baby_pilot.png|64px|link=]]
+| Pilot Baby
+| A baby that resembles Jason from Blaster Master.
+|-
+| 355
+| [[File:355_baby_redplumber.png|64px|link=]]
+| Red Plumber Baby
+| A baby that resembles Mario.
+|-
+| 356
+| [[File:356_baby_greenplumber.png|64px|link=]]
+| Green Plumber Baby
+| A baby that resembles Luigi.
+|-
+| 357
+| [[File:357_baby_yellowplumber.png|64px|link=]]
+| Yellow Plumber Baby
+| A baby that resembles Wario.
+|-
+| 358
+| [[File:358_baby_purpleplumber.png|64px|link=]]
+| Purple Plumber Baby
+| A baby that resembles Waluigi.
+|-
+| 359
+| [[File:359_baby_tanooki.png|64px|link=]]
+| Tanooki Baby
+| A baby that's wearing a Tanooki Suit.
+|-
+| 360
+| [[File:360_baby_mushroomman.png|64px|link=]]
+| Mushroom Man Baby
+| A baby that resembles Toad.
+|-
+| 361
+| [[File:361_baby_mushroomgirl.png|64px|link=]]
+| Mushroom Girl Baby
+| A baby that resembles Toadette.
+|-
+| 362
+| [[File:362_baby_cannonball.png|64px|link=]]
+| Cannonball Baby
+| A baby that resembles a Chain Chomp.
+|-
+| 363
+| [[File:363_baby_froggy.png|64px|link=]]
+| Froggy Baby
+| A baby that's wearing a Frog Suit.
+|-
+| 364
+| [[File:364_baby_turtledragon.png|64px|link=]]
+| Turtle Dragon Baby
+| A baby that resembles Bowser.
+|-
+| 365
+| [[File:365_baby_shellsuit.png|64px|link=]]
+| Shell Suit Baby
+| A baby wearing a Hammer Suit.
+|-
+| 366
+| [[File:366_baby_fiery.png|64px|link=]]
+| Fiery Baby
+| A baby wearing a Fire Suit.
+|-
+| 367
+| [[File:367_baby_meanmushroom.png|64px|link=]]
+| Mean Mushroom Baby
+| A baby that resembles a Goomba.
+|-
+| 368
+| [[File:368_baby_arcade.png|64px|link=]]
+| Arcade Baby
+| A baby that resembles Pac-Man.
+|-
+| 369
+| [[File:369_baby_scaredghost.png|64px|link=]]
+| Scared Ghost Baby
+| A blue ghost with a scared expression.
+|-
+| 370
+| [[File:370_baby_blueghost.png|64px|link=]]
+| Blue Ghost Baby
+| A baby that resembles Inky.
+|-
+| 371
+| [[File:371_baby_redghost.png|64px|link=]]
+| Red Ghost Baby
+| A baby that resembles Blinky.
+|-
+| 372
+| [[File:372_baby_pinkghost.png|64px|link=]]
+| Pink Ghost Baby
+| A baby that resembles Pinky.
+|-
+| 373
+| [[File:373_baby_orangeghost.png|64px|link=]]
+| Orange Ghost Baby
+| A baby that resembles Clyde.
+|-
+| 374
+| [[File:374_baby_pinkprincess.png|64px|link=]]
+| Pink Princess Baby
+| A baby that resembles Princess Peach.
+|-
+| 375
+| [[File:375_baby_yellowprincess.png|64px|link=]]
+| Yellow Princess Baby
+| A baby that resembles Princess Daisy.
+|-
+| 376
+| [[File:376_baby_dino.png|64px|link=]]
+| Dino Baby
+| A baby that resembles Yoshi.
+|-
+| 377
+| [[File:377_baby_elf.png|64px|link=]]
+| Elf Baby
+| A baby that resembles Link.
+|-
+| 378
+| [[File:378_baby_darkelf.png|64px|link=]]
+| Dark Elf Baby
+| A baby that resembles Dark Link.
+|-
+| 379
+| [[File:379_baby_darkknight.png|64px|link=]]
+| Dark Knight Baby
+| A baby that resembles [[zelda:Phantom|Phantom]] from The Legend of Zelda: Phantom Hourglass.
+|-
+| 380
+| [[File:380_baby_octopus.png|64px|link=]]
+| Octopus Baby
+| A baby that resembles an Octorok.
+|-
+| 381
+| [[File:381_baby_orangepig.png|64px|link=]]
+| Orange Pig Baby
+| A baby that resembles an orange Moblin.
+|-
+| 382
+| [[File:382_baby_bluepig.png|64px|link=]]
+| Blue Pig Baby
+| A baby that resembles a blue Moblin.
+|-
+| 383
+| [[File:383_baby_elfprincess.png|64px|link=]]
+| Elf Princess Baby
+| A baby that resembles Princess Zelda.
+|-
+| 384
+| [[File:384_baby_fishman.png|64px|link=]]
+| Fishman Baby
+| A baby that resembles a Zora.
+|-
+| 385
+| [[File:385_baby_fairyman.png|64px|link=]]
+| Fairyman Baby
+| A baby that resembles Tingle.
+|-
+| 386
+| [[File:386_baby_imp.png|64px|link=]]
+| Imp Baby
+| A baby that resembles Midna.
+|-
+| 387
+| [[File:387_baby_worm.png|64px|link=]]
+| Worm Baby
+| A baby that resembles Earthworm Jim.
+|-
+| 388
+| [[File:388_baby_bluewrestler.png|64px|link=]]
+| Blue Wrestler Baby
+| A baby that looks like the blue player in Smash TV.
+|-
+| 389
+| [[File:389_baby_redwrestler.png|64px|link=]]
+| Red Wrestler Baby
+| A baby that looks like the red player in Smash TV.
+|-
+| 390
+| [[File:390_baby_toast.png|64px|link=]]
+| Toast Baby
+| A baby that resembles Powdered Toast Man.
+|-
+| 391
+| [[File:391_baby_roboboy.png|64px|link=]]
+| Roboboy Baby
+| A baby that resembles Astro Boy.
+|-
+| 392
+| [[File:392_baby_liberty.png|64px|link=]]
+| Liberty Baby
+| A baby that resembles the Statue of Liberty.
+|-
+| 393
+| [[File:393_baby_dreamknight.png|64px|link=]]
+| Dream Knight Baby
+| A baby that resembles Meta Knight.
+|-
+| 394
+| [[File:394_baby_cowboy.png|64px|link=]]
+| Cowboy Baby
+| A baby that's wearing a cowboy outfit.
+|-
+| 395
+| [[File:395_baby_mermaid.png|64px|link=]]
+| Mermaid Baby
+| A baby that resembles Ariel.
+|-
+| 396
+| [[File:396_baby_plague.png|64px|link=]]
+| Plague Baby
+| A baby wearing a plague doctor outfit.
+|-
+| 397
+| [[File:397_baby_spacesoldier.png|64px|link=]]
+| Space Soldier Baby
+| A baby that resembles a Warhammer 40k Space Marine.
+|-
+| 398
+| [[File:398_baby_darkspacesoldier.png|64px|link=]]
+| Dark Space Soldier Baby
+| A baby that resembles a Warhammer 40k Chaos Space Marine.
+|-
+| 399
+| [[File:399_baby_gasmask.png|64px|link=]]
+| Gas Mask Baby
+| A baby that's wearing a gas mask.
+|-
+| 400
+| [[File:400_baby_tomboy.png|64px|link=]]
+| Tomboy Baby
+| A baby that resembles Sheik from the Legend of Zelda franchise.
+|-
+| 401
+| [[File:401_baby_corgi.png|64px|link=]]
+| Corgi Baby
+| A baby that looks like a corgi.
+|-
+| 402
+| [[File:402_baby_unicorn.png|64px|link=]]
+| Unicorn Baby
+| A baby that looks like a unicorn.
+|-
+| 403
+| [[File:403_baby_pixie.png|64px|link=]]
+| Pixie Baby
+| A baby that resembles Tinkerbell.
+|-
+| 404
+| [[File:404_baby_referee.png|64px|link=]]
+| Referee Baby
+| A baby wearing a referee outfit.
+|-
+| 405
+| [[File:405_baby_dealwithit.png|64px|link=]]
+| Deal With It Baby
+| A baby with a goatee and sunglasses.
+|-
+| 406
+| [[File:406_baby_astronaut.png|64px|link=]]
+| Astronaut Baby
+| A baby that's wearing an astronaut outfit.
+|-
+| 407
+| [[File:407_baby_blurred.png|64px|link=]]
+| Blurred Baby
+| A baby with a blur effect across its privates.
+|-
+| 408
+| [[File:408_baby_censored.png|64px|link=]]
+| Censored Baby
+| A baby with a censor bar across its privates.
+|-
+| 409
+| [[File:409_baby_coolghost.png|64px|link=]]
+| Cool Ghost Baby
+| A baby that resembles the character Shades (Sukezaemon) from Ufouria: The Saga.
+|-
+| 410
+| [[File:410_baby_gills.png|64px|link=]]
+| Gills Baby
+| A baby that resembles the character Gil (Jennifer) from Ufouria: The Saga.
+|-
+| 411
+| [[File:411_baby_bluehat.png|64px|link=]]
+| Blue Hat Baby
+| A baby that resembles the character Bop-Louie (Hebe) from Ufouria: The Saga.
+|-
+| 412
+| [[File:412_baby_catsuit.png|64px|link=]]
+| Catsuit Baby
+| A baby that's wearing a cat outfit. Also resembles the character Oh-Chan from Ufouria: The Saga (Japanese version).
+|-
+| 413
+| [[File:413_baby_pirate.png|64px|link=]]
+| Pirate Baby
+| A baby that's wearing a pirate outfit.
+|-
+| 414
+| [[File:414_baby_superrobo.png|64px|link=]]
+| Super Robo Baby
+| A baby that resembles Tekkaman the Space Knight.
+|-
+| 415
+| [[File:415_baby_lightmage.png|64px|link=]]
+| Lightmage Baby
+| A baby that resembles the white mage class from Final Fantasy.
+|-
+| 416
+| [[File:416_baby_puncher.png|64px|link=]]
+| Puncher Baby
+| A baby that resembles the warrior class from Final Fantasy.
+|-
+| 417
+| [[File:417_baby_holyknight.png|64px|link=]]
+| Holy Knight Baby
+| A baby that resembles the monk class from Final Fantasy.
+|-
+| 418
+| [[File:418_baby_shadowmage.png|64px|link=]]
+| Shadowmage Baby
+| A baby that resembles the black mage class from Final Fantasy.
+|-
+| 419
+| [[File:419_baby_firemage.png|64px|link=]]
+| Firemage Baby
+| A baby that resembles the red mage class from Final Fantasy.
+|-
+| 420
+| [[File:420_baby_priest.png|64px|link=]]
+| Priest Baby
+| A baby that's wearing a priest outfit.
+|-
+| 421
+| [[File:421_baby_zipper.png|64px|link=]]
+| Zipper Baby
+| A baby with a zipped mouth.
+|-
+| 422
+| [[File:422_baby_bag.png|64px|link=]]
+| Bag Baby
+| A baby with a bag over its head.
+|-
+| 423
+| [[File:423_baby_sailor.png|64px|link=]]
+| Sailor Baby
+| A baby that's wearing a sailor outfit.
+|-
+| 424
+| [[File:424_baby_rich.png|64px|link=]]
+| Rich Baby
+| A baby with a top hat and monocle.
+|-
+| 425
+| [[File:425_baby_toga.png|64px|link=]]
+| Toga Baby
+| A baby in an ancient Roman outfit.
+|-
+| 426
+| [[File:426_baby_knight.png|64px|link=]]
+| Knight Baby
+| A baby that resembles a Darknut from The Legend of Zelda.
+|-
+| 427
+| [[File:427_baby_blackknight.png|64px|link=]]
+| Black Knight Baby
+| A baby that resembles a black Darknut from The Legend of Zelda.
+|}
+<section end="Afterbirth babies" />
+{{dlc-}}
+
+== {{dlc+|a+}} Afterbirth† babies ==
+<section begin="Afterbirth+ babies" />
+=== Special Babies ===
+These Babies have special bonuses that will aid the player in some way.
+
+{| class="mw-collapsible wikitable striped" style="width:100%; height:100%; text-align:center"
+! style="width:32px" | '''ID'''
+! style="width:64px" | '''Appearance'''
+! style="width:200px" | '''Name'''
+! '''Description'''
+|-
+| 55
+| [[File:055_baby_mort.png|64px]]
+| Mort Baby
+| Spawns a [[blue fly]], and spawns a new blue fly whenever its blue fly is destroyed.<br>{{achievement unlock|Mort Baby}} to unlock it. The sprite greatly resembles {{i|Rotten Baby}}.
+|-
+| 56
+| [[File:056_baby_apollyon.png|64px]]
+| Apollyon Baby
+| Spawns with two [[Pretty Fly|Pretty Flies]].<br>{{achievement unlock|Apollyon Baby}} to unlock it.
+|-
+| 57
+| [[File:057_baby_boner.png|64px]]
+| Bone Baby
+| Wields a melee bone club instead of shooting tears, similarly to [[The Forgotten]].<br>{{achievement unlock|Bone Baby}} to unlock it.
+|-
+| 58
+| [[File:058_baby_bound.png|64px]]
+| Bound Baby
+| Is bound to Isaac, similarly to [[The Forgotten]]'s soul. Shoots spectral tears.<br>{{achievement unlock|Bound Baby}} to unlock it.
+|}
+
+=== Normal Babies ===
+These Babies are purely cosmetic and do not have any special behaviors.
+
+{| class="mw-collapsible wikitable striped" style="width:100%; height:100%; text-align:center"
+! style="width:32px" | '''ID'''
+! style="width:64px" | '''Appearance'''
+! style="width:200px" | '''Name'''
+! '''Description'''
+|-
+| 428
+| [[File:428_baby_magiccat.png|64px]]
+| Magiccat Baby
+| A baby that resembles the avatar of Tikara, the artist of the Isaac Tarot deck.
+|-
+| 429
+| [[File:429_baby_littlehorn.png|64px]]
+| Little Horn Baby
+| A baby that resembles [[Little Horn]].
+|-
+| 430
+| [[File:430_baby_folder.png|64px]]
+| Folder Baby
+| A baby with a folder for a head.
+|-
+| 431
+| [[File:431_baby_driver.png|64px]]
+| Driver Baby
+| A baby that is driving a car.
+|-
+| 432
+| [[File:432_baby_dragon.png|64px]]
+| Dragon Baby
+| A baby that resembles a dragon.
+|-
+| 433
+| [[File:433_baby_downwell.png|64px]]
+| Downwell Baby
+| A baby that resembles the player character from Downwell.
+|-
+| 434
+| [[File:434_baby_cylinder.png|64px]]
+| Cylinder Baby
+| A baby that is shaped like a cylinder.
+|-
+| 435
+| [[File:435_baby_cup.png|64px]]
+| Cup Baby
+| A baby with a teacup for a head.
+|-
+| 436
+| [[File:436_baby_cave_robot.png|64px]]
+| Cave Robot Baby
+| A baby that resembles Quote from Cave Story.
+|-
+| 437
+| [[File:437_baby_breadmeat_hoodiebread.png|64px]]
+| Breadmeat Baby
+| A toothy baby with a slice of toast for a head that resembles Breadmeat, a member of the Isaac community.
+|-
+| 438
+| [[File:438_baby_bigmouth.png|64px]]
+| Big Mouth Baby
+| A baby with a large, wide-open mouth.
+|-
+| 439
+| [[File:439_baby_afro_rainbow.png|64px]]
+| Afro Rainbow Baby
+| A baby with a rainbow colored afro.
+|-
+| 440
+| [[File:440_baby_afro.png|64px]]
+| Afro Baby
+| A baby with an afro.
+|-
+| 441
+| [[File:441_baby_tv.png|64px]]
+| TV Baby
+| A baby with a television for a head.
+|-
+| 442
+| [[File:442_baby_tooth.png|64px]]
+| Tooth Baby
+| A baby with a tooth for a head.
+|-
+| 443
+| [[File:443_baby_tired.png|64px]]
+| Tired Baby
+| A tired-looking baby.
+|-
+| 444
+| [[File:444_baby_steroids.png|64px]]
+| Steroids Baby
+| A muscular baby.
+|-
+| 445
+| [[File:445_baby_soap_monster.png|64px]]
+| Soap Monster Baby
+| A baby that resembles Balrog from Cave Story.
+|-
+| 446
+| [[File:446_baby_rojen_whitefox.png|64px]]
+| Rojen Whitefox Baby
+| A baby that resembles a white fox.
+|-
+| 447
+| [[File:447_baby_rocket.png|64px]]
+| Rocket Baby
+| A baby that looks like a firework.
+|-
+| 448
+| [[File:448_baby_nurf.png|64px]]
+| Nurf Baby
+| A baby that resembles [https://overwatch.wiki/w/D.Va D.Va] from Overwatch.
+|-
+| 449
+| [[File:449_baby_mutated_fish.png|64px]]
+| Mutated Fish Baby
+| A baby that resembles Fish from Nuclear Throne.
+|-
+| 450
+| [[File:450_baby_moth.png|64px]]
+| Moth Baby
+| A baby that resembles Moth from Creepy Castle.
+|-
+| 451
+| [[File:451_baby_buttface.png|64px]]
+| Buttface Baby
+| A baby with a butt for a face.
+|-
+| 452
+| [[File:452_baby_flying_candle.png|64px]]
+| Flying Candle Baby
+| A baby that looks like a candle.
+|-
+| 453
+| [[File:453_baby_graven.png|64px]]
+| Graven Baby
+| A baby with long hair.
+|-
+| 454
+| [[File:454_baby_gizzy_chargeshot.png|64px]]
+| Gizzy Chargeshot Baby
+| A baby that resembles Gizzy from ChargeShot.
+|-
+| 455
+| [[File:455_baby_green_koopa.png|64px]]
+| Green Koopa Baby
+| A baby that resembles a green koopa from Mario.
+|-
+| 456
+| [[File:456_baby_handsome_mrfrog.png|64px]]
+| Handsome Mr Frog Baby
+| A baby that resembles Handsome Mr. Frog from the game of the same name.
+|-
+| 457
+| [[File:457_baby_pumpkin_guy.png|64px]]
+| Pumpkin Guy Baby
+| A baby with a pumpkin for a head wearing a purple rag. Possible reference to [https://terraria.wiki.gg/Terraria Terraria]'s [https://terraria.wiki.gg/wiki/Pumpking Pumpking].
+|-
+| 458
+| [[File:458_baby_red_koopa.png|64px]]
+| Red Koopa Baby
+| A baby that resembles a red koopa from Mario.
+|-
+| 459
+| [[File:459_baby_sad_bunny.png|64px]]
+| Sad Bunny Baby
+| A baby that looks like a crying rabbit. This is a reference to the sprites creator, Mort Mort (MnrArt) and their character Sad Bunny Face.
+|-
+| 460
+| [[File:460_baby_saturn.png|64px]]
+| Saturn Baby
+| A baby that resembles the main character from Sgt. Saturn.
+|-
+| 461
+| [[File:461_baby_toast_boy.png|64px]]
+| Toast Boy Baby
+| A baby with a slice of bread for a head. This is a reference to the sprite's creator, Mort Mort (MnrArt) and their character Toast Boy.
+|-
+| 462
+| [[File:462_baby_voxdog.png|64px]]
+| Voxdog Baby
+| A baby that resembles [https://twitter.com/Outside_the_Vox/ Vox the Dog].
+|-
+| 463
+| [[File:463_baby_404.png|64px]]
+| 404 Baby
+| A baby that has the [[Error]] trinket for a head.
+|-
+| 464
+| [[File:464_baby_arrowhead.png|64px]]
+| Arrowhead Baby
+| A baby with an arrow through its head.
+|-
+| 465
+| [[File:465_baby_beanie.png|64px]]
+| Beanie Baby
+| A baby wearing a green beanie.
+|-
+| 466
+| [[File:466_baby_blindcursed.png|64px]]
+| Blindcursed Baby
+| A baby with the [[Curses|Curse of the Blind]]'s question mark for a head.
+|-
+| 467
+| [[File:467_baby_burning.png|64px]]
+| Burning Baby
+| A baby that's been burnt to a crisp.
+|-
+| 468
+| [[File:468_baby_cursor.png|64px]]
+| Cursor Baby
+| A baby that looks like a mouse cursor.
+|-
+| 469
+| [[File:469_baby_flybaby.png|64px]]
+| Flybaby
+| A baby that looks like a fly.
+|-
+| 470
+| [[File:470_baby_headphone.png|64px]]
+| Headphone Baby
+| A baby wearing headphones.
+|-
+| 471
+| [[File:471_baby_knife.png|64px]]
+| Knife Baby
+| A baby with a knife for a head.
+|-
+| 472
+| [[File:472_baby_mufflerscarf.png|64px]]
+| Mufflerscarf Baby
+| A baby wearing a scarf.
+|-
+| 473
+| [[File:473_baby_robbermask.png|64px]]
+| Robbermask Baby
+| A baby wearing a stereotypical robber's ski mask.
+|-
+| 474
+| [[File:474_baby_scoreboard.png|64px]]
+| Scoreboard Baby
+| A baby with a digital number display, like those at a sporting event or on an alarm clock, for a face.
+|-
+| 475
+| [[File:475_baby_somanyeyes.png|64px]]
+| So Many Eyes Baby
+| A baby with eyes all over its body.
+|-
+| 476
+| [[File:476_baby_text.png|64px]]
+| Text Baby
+| A baby made out of text characters. (ASCII art)
+|-
+| 477
+| [[File:477_baby_wing.png|64px]]
+| Wing Baby
+| A baby with wings.
+|-
+| 480
+| [[File:480_baby_imp.png|64px]]
+| Imp Baby
+| A baby that resembles the modded character [[devilsharvest:Fiend|Fiend]] from [https://steamcommunity.com/sharedfiles/filedetails/?id=895960454 Devil's Harvest MOD].
+|-
+| 481
+| [[File:481_baby_32bit.png|64px]]
+| 32bit Baby
+| A baby that resembles Isaac in a 32 bit style.
+|-
+| 482
+| [[File:482_baby_adventure.png|64px]]
+| Adventure Baby
+| A baby that resembles Finn the Human from Adventure Time.
+|-
+| 483
+| [[File:483_baby_bubbles.png|64px]]
+| Bubbles Baby
+| A baby made entirely of tar.
+|-
+| 484
+| [[File:484_baby_bulb.png|64px]]
+| Bulb Baby
+| A baby that's very bright for his age.
+|-
+| 485
+| [[File:485_baby_coolorange.png|64px]]
+| Cool Orange Baby
+| A baby that resembles a very cool orange with sunglasses.
+|-
+| 486
+| [[File:486_baby_crazyghost.png|64px]]
+| Crazy Ghost Baby
+| A baby that resembles Crazy Diamond from JoJo's Bizarre Adventure. (Also possibly a reference to the [https://steamcommunity.com/sharedfiles/filedetails/?id=943074431 modded character].)
+|-
+| 487
+| [[File:487_baby_cursedpillow.png|64px]]
+| Cursed Pillow Baby
+| A baby that's unfortunately pillow shaded.
+|-
+| 488
+| [[File:488_baby_egg.png|64px]]
+| Egg Baby
+| A baby that resembles the modded item [https://steamcommunity.com/sharedfiles/filedetails/?id=936149948 Greg the Egg].
+|-
+| 489
+| [[File:489_baby_factory.png|64px]]
+| Factory Baby
+| A baby that resembles a strange cyborg.
+|-
+| 490
+| [[File:490_baby_falling.png|64px]]
+| Falling Baby
+| A baby that resembles William Foster from Falling Down. Inspired by a prominent member of the Binding of Isaac community.
+|-
+| 491
+| [[File:491_baby_funny.png|64px]]
+| Funny Baby
+| A baby that resembles Sans from Undertale.
+|-
+| 492
+| [[File:492_baby_gamer.png|64px]]
+| Gamer Baby 
+| A baby that resembles an epic gamer. Inspired by a prominent member of the Binding of Isaac community.
+|-
+| 493
+| [[File:493_baby_glitterypeach.png|64px]]
+| Glittery Peach Baby
+| A baby resembling an oddly British [[Baby Plum]].
+|-
+| 494
+| [[File:494_baby_pompadour.png|64px]]
+| Pompadour Baby
+| A baby that resembles Josuke from JoJo's Bizarre Adventure. (Also possibly a reference to the [https://steamcommunity.com/sharedfiles/filedetails/?id=943074431 modded character].)
+|-
+| 495
+| [[File:495_baby_headkick.png|64px]]
+| Head Kick Baby
+| A baby that resembles the Facepunch Logo.
+|-
+| 496
+| [[File:496_baby_horn.png|64px]]
+| Horn Baby
+| A baby that resembles the modded character [https://steamcommunity.com/sharedfiles/filedetails/?id=911055107 Chronos].
+|-
+| 497
+| [[File:497_baby_ichor.png|64px]]
+| Ichor Baby
+| A baby that resembles Ichor beasts from the game Heckland.
+|-
+| 498
+| [[File:498_baby_ill.png|64px]]
+| Ill Baby
+| A baby that resembles the modded boss [https://steamcommunity.com/sharedfiles/filedetails/?id=960253826 Mahalath].
+|-
+| 499
+| [[File:499_baby_lazy.png|64px]]
+| Lazy Baby
+| A baby that resembles Garfield.
+|-
+| 500
+| [[File:500_baby_mern.png|64px]]
+| Mern Baby
+| Mern.
+|-
+| 501
+| [[File:501_baby_necro.png|64px]]
+| Necro Baby
+| A baby that resembles the Xenomorph from the Alien franchise.
+|-
+| 502
+| [[File:502_baby_peeping.png|64px]]
+| Peeping Baby
+| A baby that resembles the modded boss [https://steamcommunity.com/sharedfiles/filedetails/?id=838891822 The Peeping].
+|-
+| 503
+| [[File:503_baby_penance.png|64px]]
+| Penance Baby
+| A baby that resembles the modded character [[revelations:Sarah|Sarah]] from [https://steamcommunity.com/sharedfiles/filedetails/?id=1536643474 Revelations].
+|-
+| 504
+| [[File:504_baby_psychic.png|64px]]
+| Psychic Baby
+| A baby that resembles the modded character [https://steamcommunity.com/sharedfiles/filedetails/?id=842051906 Mei].
+|-
+| 505
+| [[File:505_baby_puppet.png|64px]]
+| Puppet Baby
+| A baby that resembles the costume for the modded item Pinhead from [https://steamcommunity.com/sharedfiles/filedetails/?id=880006673 Happy Items Pack].
+|-
+| 506
+| [[File:506_baby_reaper.png|64px]]
+| Reaper Baby
+| A baby that resembles the modded character [https://steamcommunity.com/sharedfiles/filedetails/?id=897795840 Samael].
+|-
+| 507
+| [[File:507_baby_roadkill.png|64px]]
+| Road Kill Baby
+| A baby that got ran over.
+|-
+| 508
+| [[File:508_baby_sausagelover.png|64px]]
+| Sausage Lover Baby
+| A baby that resembles _Kilburn, the lead developer for Antibirth.
+|-
+| 509
+| [[File:509_baby_scribble.png|64px]]
+| Scribble Baby
+| A baby that resembles the modded character [https://steamcommunity.com/sharedfiles/filedetails/?id=899746193 The Drawn].
+|-
+| 510
+| [[File:510_baby_starplant.png|64px]]
+| Star Plant Baby
+| A baby that resembles the main character from Germination.
+|-
+| 511
+| [[File:511_baby_twitchy.png|64px]]
+| Twitchy Baby
+| A baby that resembles Twitch from Heckland.
+|-
+| 512
+| [[File:512_baby_witch.png|64px]]
+| Witch Baby
+| A baby that resembles the modded character [[alphabirth:Endor|Endor]] from [https://steamcommunity.com/workshop/filedetails/?id=866199068 Alphabirth].
+|-
+| 513
+| [[File:513_baby_workshop.png|64px]]
+| Workshop Baby
+| A baby that references a common trope of workshop thumbnails when firing tears.
+|-
+| 514
+| [[File:514_baby_hooligan.png|64px]]
+| Hooligan Baby
+| A baby that resembles Čeda from LeatherIceCream's "Poor 4" animations. 
+|-
+| 515
+| [[File:515_baby_halfspider.png|64px]]
+| Half Spider Baby
+| A baby that resembles Miroslav from LeatherIceCream's "Poor 4" animations. 
+|-
+| 516
+| [[File:516_baby_silly.png|64px]]
+| Silly Baby
+| A baby that resembles Djole from LeatherIceCream's "Poor 4" animations. 
+|-
+| 517
+| [[File:517_baby_mastercook.png|64px]]
+| Master Cook Baby
+| A baby that resembles Andre from LeatherIceCream's "Poor 4" animations. 
+|-
+| 518
+| [[File:518_baby_greenpepper.png|64px]]
+| Green Pepper Baby
+| A baby that resembles one of _Kilburn's characters.
+|-
+| 519
+| [[File:519_baby_baggycap.png|64px]]
+| Baggy Cap Baby
+| A baby that resembles one of _Kilburn's characters.
+|-
+| 520
+| [[File:520_baby_stylish.png|64px]]
+| Stylish Baby
+| A baby resembling the character Ren from the cancelled game Shenanigans: World of Illusions.
+|}
+<section end="Afterbirth+ babies" />
+{{dlc-}}
+
+== {{dlc+|r}} Repentance babies ==
+<section begin="Repentance babies" />
+=== Special Babies ===
+These Babies have special effects that may help or hinder the player.
+
+{| class="mw-collapsible wikitable striped" style="width:100%; height:100%; text-align:center"
+! style="width:32px" | '''ID'''
+! style="width:64px" | '''Appearance'''
+! style="width:200px" | '''Name'''
+! '''Description'''
+|-
+| 59
+| [[File:059_found_soul.png|64px|link=]]
+| Found Soul
+| Found Soul is a familiar that follows Isaac's exact movements, akin to Jacob and Esau, and shoots spectral tears. It is spawned by the trinket Found Soul. The familiar uses Isaac's tears, range, shot speed, and tear effects, and deals 0.5x Isaac's damage. The familiar has collision and can be separated. Holding down the "drop" button keeps the familiar in place. When Isaac places a bomb, the familiar will drop one as well. The familiar can also press Buttons. The familiar dies after taking any damage, and will respawn on the next floor.
+|-
+| 60
+| [[File:60_baby_lost_white.png|64px|link=]]
+| Baby Lost White
+| A co-op player turns into this after dying. After the floor's boss is defeated, the player reverts to normal. It cannot fly over pits but does not take damage. Can fire very weak tears.
+|-
+| 61
+| [[File:61_baby_lost_black.png|64px|link=]]
+| Baby Lost Black
+| A co-op player turns into this after dying if playing as Azazel. After the floor's boss is defeated, the player reverts to normal. It cannot fly over pits but does not take damage. Can fire very weak Brimstone with limited range.
+|-
+| 62
+| [[File:62_baby_lost_blue.png|64px|link=]]
+| Baby Lost Blue
+| A co-op player turns into this after dying if playing as ???. After the floor's boss is defeated, the player reverts to normal. It cannot fly over pits but does not take damage. Can fire very weak tears.
+|-
+| 63
+| [[File:63_baby_lost_grey.png|64px|link=]]
+| Baby Lost Grey
+| A co-op player turns into this after dying if playing as Keeper. After the floor's boss is defeated, the player reverts to normal. It cannot fly over pits but does not take damage. Fires a triple shot similar to [[The Inner Eye]].
+|-
+| 64
+| [[File:064_baby_wisp.png|64px|link=]]
+| Wisp Baby
+| Effect unknown.<br>{{achievement unlock|Wisp Baby}} to unlock.
+|-
+| 65
+| [[File:065_baby_double.png|64px|link=]]
+| Double Baby
+| Shoots {{I|20/20}} style shots which deal 1.1 damage (compared to 1.4 damage of normal co-op babies).<br>{{achievement unlock|Double Baby}} to unlock.
+|-
+| 66
+| [[File:066_baby_glowing.png|64px|link=]]
+| Glowing Baby
+| Emits very bright light that covers huge part of the screen.<br>{{achievement unlock|Glowing Baby}} to unlock.
+|-
+| 67
+| [[File:067_baby_illusion.png|64px|link=]]
+| Illusion Baby
+| Effect not implemented yet.<br>{{achievement unlock|Illusion Baby}} to unlock.
+|-
+| 68
+| [[File:068_baby_hope.png|64px|link=]]
+| Hope Baby
+| Drops a half soul heart on death.<br>{{achievement unlock|Hope Baby}} to unlock.
+|-
+| 69
+| [[File:069_baby_solomon_a.png|64px|link=]]
+| Solomon's Baby [A]
+| This baby is composed of two parts and supposedly controls like {{c|Jacob and Esau}} but effect is not implemented yet.<br>{{achievement unlock|Solomon's Baby}} to unlock.
+|-
+| 70
+| [[File:070_baby_solomon_b.png|64px|link=]]
+| Solomon's Baby [B]
+| This baby is a part of Solomon's baby and not accessible on its own but effect is not implemented yet.
+|}
+
+=== Normal Babies ===
+These Babies are purely cosmetic and do not have any special behaviors.
+
+{| class="mw-collapsible wikitable" style="width:100%; height:100%; text-align:center"
+! style="width:32px" | '''ID'''
+! style="width:64px" | '''Appearance'''
+! style="width:200px" | '''Name'''
+! '''Description'''
+|-
+| 490
+| [[File:490_baby_ersatz.png|64px|link=]]
+| Ersatz Baby
+| Α baby resembling Falling Baby from Afterbirth+ with the same ID. Inspired by a prominent member of the Binding of Isaac community.
+|-
+| 533
+| [[File:533_baby_thirteenth.png|64px|link=]]
+| Thirteenth Baby
+| Α baby resembling D-13 from Star of Providence.
+|-
+| 534
+| [[File:534_baby_goldberry.png|64px|link=]]
+| Berry Baby
+| A baby resembling the Golden Strawberry from Celeste. Referred to internally as "baby_goldberry", further cementing this similarity.
+|-
+| 535
+| [[File:535_baby_eyebat.png|64px|link=]]
+| Eyebat Baby
+| A baby resembling Eyebats from Vagante.
+|-
+| 536
+| [[File:536_baby_isyou.png|64px|link=]]
+| Baby Is You
+| A baby resembling Baba from Baba Is You.
+|-
+| 537
+| [[File:537_baby_vessel.png|64px|link=]]
+| Vessel Baby
+| A baby resembling the Broken Vessel from Hollow Knight.
+|-
+| 538
+| [[File:538_baby_rock.png|64px|link=]]
+| Rock Baby
+| A baby resembling Golem from the Devil's Harvest mod and the Fiend Folio mod.
+|-
+| 539
+| [[File:539_baby_janitor.png|64px|link=]]
+| Janitor Baby
+| A baby who resembles Smokes from the game Hell’s Janitor by HappyHead.
+|-
+| 540
+| [[File:540_baby_meaty.png|64px|link=]]
+| Meaty Baby
+| A baby resembling Bertran from the Bertran mod.
+|-
+| 541
+| [[File:541_baby_pig.png|64px|link=]]
+| Pig Baby
+| A baby resembling Mammon from the Retribution mod.
+|-
+| 542
+| [[File:542_baby_pegasus.png|64px|link=]]
+| Pegasus Baby
+| A baby that doesn't look a whole lot like a pegasus. A reference to an original character by NotYourSagittarius.
+|-
+| 543
+| [[File:543_baby_mre.png|64px|link=]]
+| Mr. E Baby
+| A mysterious baby. Potentially a reference to a [https://i.imgur.com/PRoRjQi.png meme] posted by _Kilburn in the Isaac Discord, however, an identical image was also [https://discord.com/channels/205854501083545601/267353315073982465/292749570327445504 posted a year earlier] in the Modding of Isaac Discord by a separate user, making the true origins unknown.
+|-
+| 544
+| [[File:544_baby_slab.png|64px|link=]]
+| Slab Baby
+| A baby resembling a Slabfish from Team Abnormals' Minecraft mods.
+|-
+| 545
+| [[File:545_baby_pog.png|64px|link=]]
+| Pog Baby
+| A floating Isaac head resembling the Twitch emote PogChamp.
+|-
+| 546
+| [[File:546_baby_hiveking.png|64px|link=]]
+| Hive King Baby
+| A baby resembling the Hive King from the Team Bugulon game Hivemind.
+|-
+| 547
+| [[File:547_baby_pillship.png|64px|link=]]
+| Pill Ship Baby
+| A baby resembling the Pill Ship from the Team Bugulon game Lymphosite.
+|-
+| 548
+| [[File:548_baby_point.png|64px|link=]]
+| Point Baby
+| A baby resembling the main character of the Team Bugulon game Tricky Keys.
+|-
+| 549
+| [[File:549_baby_gunwyrm.png|64px|link=]]
+| Wyrm Baby
+| A baby resembling the Gunwyrm from the Team Bugulon game Gunwyrm.
+|-
+| 550
+| [[File:550_baby_bullet.png|64px|link=]]
+| Bullet Baby
+| A baby wearing a hat that resembles a [[enterthegungeon:Bullet Kin|Bullet kin]] from Enter the Gungeon. Inspired by a prominent member of the Binding of Isaac community and one of Repentance's playtesters.
+|-
+| 551
+| [[File:551_baby_purplehorse.png|64px|link=]]
+| Purple Horse Baby
+| A decapitated horse head resembling Twilight Sparkle from My Little Pony. Inspired by a prominent member of the Binding of Isaac community and one of Repentance's playtesters.
+|-
+| 552
+| [[File:552_baby_koala.png|64px|link=]]
+| Koala Baby
+| A decapitated koala head. Inspired by a prominent member of the Binding of Isaac community and one of Repentance's playtesters.
+|-
+| 553
+| [[File:553_baby_cliffhanger.png|64px|link=]]
+| Cliff Hanger Baby
+| A baby with a question mark for a face that resembles a hanging Shopkeeper. Inspired by one of Repentance's playtesters.
+|-
+| 554
+| [[File:554_baby_penguin.png|64px|link=]]
+| Penguin Baby
+| A baby that is a penguin. Inspired by a prominent member of the Binding of Isaac community and one of Repentance's playtesters.
+|-
+| 555
+| [[File:555_baby_kindaloveable.png|64px|link=]]
+| Kinda Loveable Baby
+| A baby that is loveable, but only kinda. Inspired by a prominent member of the Binding of Isaac community and one of Repentance's playtesters.
+|-
+| 556
+| [[File:556_baby_cursedroom.png|64px|link=]]
+| Cursed Room Baby
+| A baby that looks similar to [https://i.imgur.com/oPjrprr.jpg an infamous Mausoleum room from Antibirth]. Inspired by the room's creator and one of Repentance's playtesters.
+|-
+| 557
+| [[File:557_baby_proto.png|64px|link=]]
+| Proto Baby
+| A baby resembling Prototype from OneShot.
+|-
+| 558
+| [[File:558_baby_finger.png|64px|link=]]
+| Finger Baby
+| A baby resembling a Deployer - a block from a Minecraft mod called Create.
+|-
+| 559
+| [[File:559_baby_bald.png|64px|link=]]
+| Bald Baby
+| A bald baby based on a Baldie from the RTS game Baldies.
+|-
+| 560
+| [[File:560_baby_hex.png|64px|link=]]
+| Hex Baby
+| A baby that resembles a witch character.
+|-
+| 561
+| [[File:561_baby_singing.png|64px|link=]]
+| Singing Baby
+| A baby resembling the Vocaloid singer Hatsune Miku.
+|-
+| 562
+| [[File:562_baby_junk.png|64px|link=]]
+| Junk Baby
+| A baby that resembles Spamton from Deltarune.
+|-
+| 563
+| [[File:563_baby_lucky.png|64px|link=]]
+| Lucky Baby
+| A baby that resembles Konata Izumi from Lucky Star.
+|-
+| 564
+| [[File:564_baby_finger.png|64px|link=]]
+| Baby Named Finger
+| A baby that resembles Mike Ehrmantraut from Breaking Bad. The name is a reference to the "Kid named Finger" internet meme.
+|-
+| 565
+| [[File:565_baby_sucky.png|64px|link=]]
+| Sucky Baby
+| A baby that resembles a Sucklet from itemLabel.
+|-
+| 566
+| [[File:566_baby_doormimic.png|64px|link=]]
+| Door Mimic Baby
+| A baby that resembles The Door from Cave Story.
+|-
+| 567
+| [[File:567_baby_kyuukyuu.png|64px|link=]]
+| Kyuukyuu Baby
+| A baby that resembles Kyuukyuu-kun from Yume Nikki.
+|-
+| 568
+| [[File:568_baby_moonjelly.png|64px|link=]]
+| Moon Jelly Baby
+| A baby that resembles Moon Jelly Wizard from a Terraria mod called Spirit Mod.
+|-
+| 569
+| [[File:569_baby_excelsior.png|64px|link=]]
+| Excelsior Baby
+| A baby that resembles Walker, an original character by community member RENREN. This baby is in reference to her Excelsior music mod.
+|-
+| 570
+| [[File:570_baby_painful.png|64px|link=]]
+| Painful Baby
+| A baby that resembles Brad from LISA: The Painful.
+|-
+| 571
+| [[File:571_baby_pointless.png|64px|link=]]
+| Pointless Baby
+| A baby that resembles Alex from the LISA: The Pointless fangame.
+|-
+| 572
+| [[File:572_baby_doleful.png|64px|link=]]
+| Doleful Baby
+| A baby that resembles Rovert from the LISA: The Doleful fangame.
+|-
+| 573
+| [[File:573_baby_cubic.png|64px|link=]]
+| Cubic Baby
+| A baby that resembles a cube from FEZ.
+|-
+| 574
+| [[File:574_baby_foodreviewer.png|64px|link=]]
+| Food Reviewer Baby
+| A baby that resembles a background character from the 2004 Spongebob Squarepants movie. This baby is a reference to community member BlorengeRhymes, who uses this character as his profile picutre.
+|}
+<section end="Repentance babies" />
+{{dlc-}}
+
+== {{dlc+|r+}} Repentance+ babies ==
+<section begin="Repentance+ babies" />
+=== Normal Babies ===
+These Babies are purely cosmetic and do not have any special behaviors.
+
+{| class="mw-collapsible wikitable" style="width:100%; height:100%; text-align:center"
+! style="width:32px" | '''ID'''
+! style="width:64px" | '''Appearance'''
+! style="width:200px" | '''Name'''
+! '''Description'''
+|-
+| 575
+| [[File:575_baby_jones.png|64px|link=]]
+| Jones Baby
+| A baby that resembles the late puppy of Zombolis, producer of The Binding of Isaac at Nicalis.
+|-
+| 576
+| [[File:576_baby_stacey.png|64px|link=]]
+| Stacey Baby
+| A baby that resembles [[mewgenics:Stacy (Boss)|Stacy]] from [[mewgenics:Mewgenics|Mewgenics]].
+|-
+| 577
+| [[File:577_baby_tracy.png|64px|link=]]
+| Tracy Baby
+| A baby that resembles [[mewgenics:Tracy|Tracy]] from [[mewgenics:Mewgenics|Mewgenics]].
+|-
+| 578
+| [[File:578_baby_butch.png|64px|link=]]
+| Butch Baby
+| A baby that resembles [[mewgenics:Butch|Butch]] from [[mewgenics:Mewgenics|Mewgenics]].
+|-
+| 579
+| [[File:579_baby_beanies.png|64px|link=]]
+| Beanie Baby
+| A baby that resembles [[mewgenics:Dr. Beanies|Dr. Beanies]] from [[mewgenics:Mewgenics|Mewgenics]].
+|-
+| 580
+| [[File:580_baby_jack.png|64px|link=]]
+| Jack Baby
+| A baby that resembles [[mewgenics:Baby Jack|Baby Jack]] from [[mewgenics:Mewgenics|Mewgenics]].
+|-
+| 581
+| [[File:581_baby_frank.png|64px|link=]]
+| Frank Baby
+| A baby that resembles [[mewgenics:Frank|Frank]] from [[mewgenics:Mewgenics|Mewgenics]].
+|-
+| 582
+| [[File:582_baby_tink.png|64px|link=]]
+| Tink Baby
+| A baby that resembles [[mewgenics:Tink|Tink]] from [[mewgenics:Mewgenics|Mewgenics]].
+|-
+| 583
+| [[File:583_baby_grinder.png|64px|link=]]
+| Grinder Baby
+| A baby that resembles [[mewgenics:Organ Grinder|Organ Grinder]] from [[mewgenics:Mewgenics|Mewgenics]].
+|}
+<section end="Repentance+ babies" />
+{{dlc-}}
+
+== {{dlc|r}} Possessor ==
+There is a hidden multiplayer game mode that allows a second player to control enemies and bosses in a way similar to {{i|Friend Finder|n}}. To access it, the second player should hold both bumpers on their gamepad and press the Start/Options button (On keyboard, the second player should hold Q and E, then press Enter). After this, a message saying that a player has joined as the possessor will appear in the [[Debug Console]]. It works properly for most normal enemies and some specific bosses, such as [[Ultra Greed]], but for the rest, controls are limited or do not work at all.
+
+== Gallery ==
+<gallery>
+File:Co-Op Baby Designs Concepts.jpg|Concepts drawn for some Co-Op Baby designs.
+File:Coop Babies Antibirth Concepts.png|Concepts drawn for unlockable co-op baby designs. Notably, all of Bethany's unlockable co-op babies made it in the Repentance DLC along with Double Baby but not the others (the final 3 being that Edith was scrapped as a character altogether for Antibirth and would never return as a realized concept).
+</gallery>
+
+== Bugs ==
+{{bug|plat=PC|If the co-op player joins using a keyboard, the join button and the fire button must be pressed simultaneously to bring up the special baby menu. It may take several tries, as the timing seems to be almost frame-perfect.}}
+{{bug|dlc=r|Special co-op babies are not accessible normally due to some of the effects being unfinished.}}
+{{bug|dlc=r|Normal Baby 549 (Wyrm Baby) calls for the wrong filename in the babies.xml, causing the baby to appear invisible.}}
+{{bug|dlc=rnr+|Each baby with an ID higher than 562 is unable to appear in-game.}}
+{{bug|dlc=r+|Co-op players using controllers with Steam Input enabled may randomly switch controlled characters, or become unable to control a character at all.}}
+
+{{nav|fr=Co-op|moms heart unlock|it lives unlock|mega satan unlock}}
+[[Category:Characters]]
+[[Category:Mechanics]]
+[[Category:Modes]]

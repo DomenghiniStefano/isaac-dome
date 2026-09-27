@@ -1,0 +1,170 @@
+{{header attributes}}
+
+'''Attributes''', also known as '''stats''', are the numerical values of a [[character]] that affect their performance and the behavior of their [[tears]], Isaac's primary weapon. All characters start with a different set of values that can be increased or decreased during a run. The seven main stats are:
+* {{attribute|Health}}: The amount of damage Isaac can take before dying.
+* {{attribute|Speed}}: How quickly Isaac moves.
+* {{attribute|Tears}}: Isaac's rate of fire. The lower the number, the faster tears are fired.
+** {{Dlc|r}} As of ''Repentance'', Isaac's tear rate is shown in tears fired per second; the higher the number, the faster tears are fired.
+* {{attribute|Damage}}: The amount of damage that each of Isaac's tears deal to enemies.
+* {{attribute|Range}}: How far Isaac's tears travel before landing.
+* {{attribute|Shot speed}}: The speed at which Isaac's tears travel.
+* {{attribute|Luck}}: Affects a variety of chance-based effects.
+
+Additionally, there are a few [[Hidden Attributes]].
+
+== Stat Screen ==
+Most attributes can be viewed on the pause menu, except for health (which is shown in the game [[HUD]]). The pause menu's attributes are shown on an imprecise scale from 1 to 7 ({{dlc|r}} 0 to 7), and the values are as follows:
+
+{| class="wikitable sortable"
+ |+ {{dlc|nr}}
+ ! scope="col" | Attribute
+ ! scope="col" class="unsortable" style="width: 8em" | 1
+ ! scope="col" class="unsortable" style="width: 8em" | 2
+ ! scope="col" class="unsortable" style="width: 8em" | 3
+ ! scope="col" class="unsortable" style="width: 8em" | 4
+ ! scope="col" class="unsortable" style="width: 8em" | 5
+ ! scope="col" class="unsortable" style="width: 8em" | 6
+ ! scope="col" class="unsortable" style="width: 8em" | 7
+ |-
+ ! scope="row" | {{attribute|Speed}}
+ | 0.10 - 0.99
+ | 1.00 - 1.49
+ | 1.50 - 1.99
+ | 2.00
+ ! style="background-color: #0003" | N/A
+ ! style="background-color: #0003" | N/A
+ ! style="background-color: #0003" | N/A
+ |-
+ ! scope="row" | {{attribute|Tear delay}}
+ | ≥8
+ | 7 - 6
+ | 5 - 4
+ ! style="background-color: #0003" | N/A
+ | 3
+ ! style="background-color: #0003" | N/A
+ | 2 - 1
+ |-
+ ! scope="row" | {{attribute|Damage}}
+ | 0.00 - 2.99
+ | 3.00 - 4.49
+ | 4.50 - 5.99
+ | 6.00 - 7.49
+ | 7.50 - 8.99
+ | 9.00 - 10.49
+ | ≥10.50
+ |-
+ ! scope="row" | {{attribute|Range}}
+ | ≤19.99
+ | 20.00 - 39.99
+ | 40.00 - 59.99
+ | 60.00 - 79.99
+ | 80.00 - 99.99
+ | 100.00 - 119.99
+ | ≥120.00
+ |-
+ ! scope="row" | {{attribute|Shot speed}}
+ | 0.60 - 0.99
+ | 1.00 - 1.49
+ | 1.50 - 1.99
+ | 2.00 - 2.49
+ | 2.50 - 2.99
+ | 3.00 - 3.49
+ | ≥3.50
+ |-
+ ! scope="row" | {{attribute|Luck}}
+ | ≤1
+ | 2
+ | 3
+ | 4
+ | 5
+ | 6
+ | ≥7
+ |}
+* Tear falling speed increases range stat in the pause menu by 1 for every 0.5 tear falling speed added.
+
+{| class="wikitable"
+ |+ {{dlc|r}}
+ ! scope="col" | Attribute
+ ! scope="col" class="unsortable" style="width: 8em" | 0
+ ! scope="col" class="unsortable" style="width: 8em" | 1
+ ! scope="col" class="unsortable" style="width: 8em" | 2
+ ! scope="col" class="unsortable" style="width: 8em" | 3
+ ! scope="col" class="unsortable" style="width: 8em" | 4
+ ! scope="col" class="unsortable" style="width: 8em" | 5
+ ! scope="col" class="unsortable" style="width: 8em" | 6
+ ! scope="col" class="unsortable" style="width: 8em" | 7
+ |-
+ ! scope="row" | {{attribute|Speed}}
+ | 0.10 - 0.66
+ | 0.67 - 0.88
+ | 0.89 - 1.11
+ | 1.12 - 1.33
+ | 1.34 - 1.55
+ | 1.56 - 1.77
+ | 1.78 - 1.99
+ | 2.00
+ |-
+ ! scope="row" | {{attribute|Fire rate}}
+ | ≤1.58
+ | 1.59 - 2.32
+ | 2.33 - 3.13
+ | 3.14 - 3.99
+ | 4.00 - 4.91
+ | 4.92 - 5.86
+ | 5.87 - 6.86
+ | ≥6.87
+ |-
+ ! scope="row" | {{attribute|Damage}}
+ | 0.00 - 1.69
+ | 1.70 - 2.83
+ | 2.84 - 4.21
+ | 4.22 - 5.84
+ | 5.85 - 7.69
+ | 7.70 - 9.77
+ | 9.78 - 12.06
+ | ≥12.07
+ |-
+ ! scope="row" | {{attribute|Range}}
+ | ≤4.24
+ | 4.25 - 5.74
+ | 5.75 - 7.24
+ | 7.25 - 8.74
+ | 8.75 - 10.24
+ | 10.25 - 11.74
+ | 11.75 - 13.24
+ | ≥13.25
+ |-
+ ! scope="row" | {{attribute|Shot speed}}
+ | 0.60 - 0.69
+ | 0.70 - 0.89
+ | 0.90 - 1.09
+ | 1.10 - 1.29
+ | 1.30 - 1.49
+ | 1.50 - 1.69
+ | 1.70 - 1.89
+ | ≥1.90
+ |-
+ ! scope="row" | {{attribute|Luck}}
+ | ≤-1.51
+ | -1.50 - -0.51
+ | -0.50 - 0.49
+ | 0.50 - 1.49
+ | 1.50 - 2.49
+ | 2.50 - 3.49
+ | 3.50 - 4.49
+ | ≥4.50
+ |}
+
+{{dlc|a}} The pause menu stat screen is made almost completely irrelevant by the introduction of the "Found Hud" feature. Once it is enabled from the in-game options, Isaac's stats will be displayed in numerical form below the key count.
+
+== Found HUD ==
+Some stats on the Found HUD are calculated and displayed differently from the internal, technical side of stats.
+* '''Damage''': Simply displays base damage per tear, without considering any special tear effects.
+* '''Tears''': Displayed as {{dlc|nr}} "tear delay" or {{dlc|r}} "tears per second".
+** {{dlc|nr}} To convert the internal tear delay to "Tears per second", use this formula: <math>\frac{30}{\text{Tear Delay} + 1}</math>.
+* '''Range''': Displayed as approximate {{dlc|nr}} "tear lifespan" per tear or {{dlc|r}} "range in tiles".
+** {{dlc|nr}} There is no straightforward conversion from tear lifespan to range in tiles, as tear falling speed and shot speed are also involved.
+
+{{nav|fr=Attributs}}
+
+[[Category:Mechanics]]

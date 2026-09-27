@@ -1,0 +1,47 @@
+{{header tarot cards}}
+{{Infobox card
+ | name        = XVI - The Tower
+ | id          = 17
+ | quote       = Destruction brings creation
+ | description = Spawns 6 {{e|Troll Bomb}}s randomly around the room.
+| recharge =             {{dlcalt|4|r=3}}
+}}
+
+{{cit|c}}
+
+== Effects ==
+* Spawns 6 {{e|Troll Bomb}}s, generally near the center of the [[room]].
+
+== Notes ==
+* This card's active effect is identical to {{i|Anarchist Cookbook}}'s.
+* Although visually unchanged, all passive {{e|Bomb}} effect items affect the spawned Troll Bombs unless otherwise noted.
+* The bombs spawn one after the other, meaning that they will also explode one after the other and can push each other around.
+** If the room is exited before all bombs are spawned, the remaining bombs will not continue to spawn upon re-entering the room.
+* Exiting the room will reset the troll bombs' fuses.
+
+== Strategy ==
+* By repeatedly exiting and re-entering the room, the bombs can be slowly pushed towards a [[tinted rock]] or a {{r|Secret Room}}'s entrance.
+
+== Synergies ==
+* {{I|Tarot Cloth}}: Spawns '''13''' troll bombs.
+** {{I|Tarot Cloth|r}} + {{i|Blank Card}}: Only spawns 6 troll bombs if used with blank card.
+* {{t|Blasting Cap}}: All troll bombs have a 10% chance to drop a {{e|Bomb}} pickup when it explodes.
+* {{i|Remote Detonator}}: The Troll Bombs generated will not explode until Remote Detonator is activated.
+
+== Interactions ==
+* {{I|Bomber Boy}}: Not recommended. The cross pattern explosion makes it very hard to avoid taking damage.
+* {{i|Mr. Mega}}: No effect.
+* {{I|Pyromaniac}}: Spawned bombs can be used for mass healing.
+* {{T|Safety Scissors}}: Spawned troll bombs become bomb pickups.
+* {{i|Scatter Bombs|a+}}: Not recommended. Each Troll Bomb will spawn several smaller bombs upon exploding, making it very hard to avoid taking damage.
+** {{dlc|r}} No visual change can be seen with the Troll Bombs, but the smaller bombs have the sprite of the smaller normal bombs.
+
+== Gallery ==
+<gallery>
+File:XVI - The Tower Steam Card.jpg|'''XVI - The Tower''''s Steam trading card
+</gallery>
+
+== Trivia ==
+* [[wikipedia:The Tower (tarot card)|The Tower]] is the sixteenth card of a Major Arcana set.
+
+{{nav|fr=XVI - La Maison Dieu|card|bomb spawner}}

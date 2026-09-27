@@ -1,0 +1,14 @@
+{{infobox monster
+ | dlc         = r
+ | name        = Gasbag
+ | id          = 856
+ | base hp     = 80
+ | environment = {{floor|Corpse}}
+ | behavior    = Occasionally summons {{E|Army Fly|text=Army Flies}} to chase Isaac. Is surrounded by a ring of toxic gas that hurts Isaac if he stands in it for too long.
+}}
+'''Gasbags''' are a unique enemy type found only in {{S|Corpse}}. While they are alive, they emit a ring of toxic gas that deals damage to Isaac if he stands in it for too long. Additionally, Gasbags will occasionally spawn a chain of 4 {{E|Army Fly|text=Army Flies}} to chase Isaac. Gasbags will only spawn flies if there are less than 8 army flies in the room, no matter how many Gasbags there are. The Gasbag's toxic cloud disappears a short time after it dies.
+
+== Trivia ==
+* The [[Anti:Gasbag|Gasbag]] first appeared in the ''Antibirth'' mod where it acted identical but could not spawn flies.
+
+{{nav|fr=Brumisateur}}

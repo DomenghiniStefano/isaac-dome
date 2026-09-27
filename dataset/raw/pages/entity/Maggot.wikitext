@@ -1,0 +1,40 @@
+{{infobox monster
+ | id          = 21
+ | base hp     = 15
+ | environment = {{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Corpse}}<br>{{room|boss}}{{room|library}}
+ | behavior    = Aimlessly moves around the room, dealing contact damage.
+}}
+
+A '''Maggot''' is a type of monster introduced in the vanilla content of ''[[The Binding of Isaac: Rebirth]]''. They can be commonly found in [[Chapter 2]]. {{dlc|a}} They can also be found wandering about within [[Library|libraries]].
+
+As their name suggests, they're blind, white insect maggots that lack any appendages. They crawl around the room slowly and aimlessly, but will deal damage upon full contact.
+
+__TOC__
+{{clear}}
+
+== Variations ==
+=== Small Maggot ===
+{{infobox monster
+ | dlc         = r
+ | name        = Small Maggot
+ | id          = 853
+ | image scale = 1/2
+ | base hp     = 10
+ | environment = {{floor|Corpse}}<br>{{room|challenge}}<br>{{room|secret}} (Corpse only)
+ | behavior    = Slowly crawls toward Isaac, dealing contact damage.
+}}
+
+'''Small Maggots''' are a type of Maggots added in ''[[The Binding of Isaac: Repentance]]'' DLC. They can be exclusively found in {{s|Corpse}}.
+
+They are quite similar to regular Maggots but are variants that are very small in size. Shortly after spawning, they very slowly crawl towards Isaac. They are primarily spawned by {{e|Pustule}}s, {{e|Level 2 Horf}}s , and [[Corpse (Bosses)|Corpse's bosses]].
+
+{{clear}}{{dlc clear}}
+
+== Trivia ==
+* The Maggots first appear in the original Flash version of ''The Binding of Isaac''.
+* {{dlc|r}} [[Anti:Small Maggot|Small Maggots]] originate from the ''Antibirth'' mod.
+
+{{nav|fr=Asticot}}
+[[Category:Maggot monsters]]
+[[Category:Chapter 2 monsters]]
+[[Category:Chapter 4.5 monsters]]

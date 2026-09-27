@@ -1,0 +1,17 @@
+The 12 '''Signs of the Zodiac''' are featured as [[passive collectible]]s each with effects loosely based on their given namesake.
+
+{{i|Zodiac}} Grants the effect of a random Zodiac sign each floor.
+
+{{dlc+|r}} Collecting any three items with the [[Item Tags stars|<code>stars</code> item tag]] unlocks the {{r|Planetarium}}.{{dlc-}}
+
+== Items ==
+{{collectible table | Aries, Taurus, Gemini, Cancer, Leo, Virgo, Libra, Scorpio, Sagittarius, Capricorn, Aquarius, Pisces, Zodiac}}
+
+== Unlockable [[Achievements]] ==
+{{achievement text | The Planetarium }}
+
+== Trivia ==
+* Some of the effects caused by the items in-game are directly related to their astrological significance or symbol. For example, Aquarius is portrayed as a man (Ganymede) bearing water, and in game the item causes Isaac to leave a trail of tears behind him while walking; Libra, which represents weighing scales, balances Isaac's stats.
+
+{{nav|zodiac|fr=Signes du Zodiaque}}
+[[Category:Signs of the Zodiac| ]]

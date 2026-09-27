@@ -1,0 +1,12 @@
+{{page dlc|r}}
+
+Items with this [[Item Tags|tag]] contribute toward {{a|The Parasite}} unlock.
+
+== Activated Collectibles ==
+{{collectible table | tag = dead | type = activated }}
+
+== Passive Collectibles ==
+{{collectible table | tag = dead | type = passive }}
+
+{{nav|fr=Balise dead}}
+[[Category:Item tags]]

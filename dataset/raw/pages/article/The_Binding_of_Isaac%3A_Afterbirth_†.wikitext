@@ -1,0 +1,38 @@
+{{toc right}}{{page dlc|a+nr}}
+
+'''Afterbirth †''' is an expansion to ''[[The Binding of Isaac: Afterbirth]]'' that was released on January 3, 2017 and costs $9.99.
+
+''For a list of the pre-release blog posts, see [[The Binding of Isaac: Afterbirth † (Pre-Release)]].''
+
+Nicalis, the game's publisher, also created mod tools for easier creation of community mods with the release. They occasionally released updates to Afterbirth † that incorporated certain high-quality and popular mods. These updates are known as [[Booster Pack]]s.
+
+= Features =
+* 111 new [[item]]s, 38 new [[trinket]]s, and 22 new [[pickup]]s.
+* New [[The Void|final chapter]] with [[Delirium|boss]], new [[Ultra Greedier|boss]] exclusive to [[Greedier Mode]] and 2 [[ending 19|endings]].
+* 2 new [[#characters|playable characters]].
+* [[Greedier mode]], the [[Hard mode]] equivalent to [[Greed Mode]].
+* 5 new [[#challenges|challenges]].
+* 127 new [[#achievements|achievements]].
+* 5 [[Modding Tools#Official Tools|modding tools]].
+* 1500+ new rooms, including a few exceptionally rare ones.
+* New [[victory lap]] feature.
+* [[Bestiary]] that attempts to track the amount of times you have encountered, killed, and been killed by specific enemies.
+* 4 new [[#transformations|transformations]].
+* 5 [[Booster Packs|content updates]] that feature fan-made mods added officially into the game, along with additional original content.
+* 6 new bosses and new champion forms for existing bosses.
+* 20 new [[#monsters|enemies]] and 4 new champion forms.
+* 2 new cutscenes and 4 music tracks.
+
+= Additions =
+{{/Additions}}
+
+= Changes =
+{{/Changes}}
+
+== New bugs/Fixed bugs ==
+{{bug|If an angel statue is broken inside the devil room the door will incorrectly be shown to be open, but can't be escaped from}}
+{{bug|When Scolex is [[slow]]ed, some of his body parts may detach or won't even show up - they will only be visible while entering the ground (especially the tail).}}
+
+{{nav|version}}
+[[Category:DLC]]
+[[Category:Afterbirth+| ]]

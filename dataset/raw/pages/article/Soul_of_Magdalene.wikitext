@@ -1,0 +1,28 @@
+{{header soul stones}}
+{{Infobox rune
+ | dlc         = r
+ | name        = Soul of Magdalene
+ | type        = soul stone
+ | id          = 82
+ | quote       = Give me your love!
+ | description = Surrounds Isaac with a bubbling red aura for the current room. All enemies killed drop {{e|Half Red Heart}}s that disappear in 2 seconds.
+ | unlocked by = Soul of Magdalene
+ | recharge    =  3
+}}
+
+{{cit|ur|r}}
+
+== Effects ==
+* Surrounds Isaac with a bubbling red aura for the current room. All enemies killed drop {{e|Half Red Heart}}s that disappear in 2 seconds.
+
+== Synergies ==
+{{t|Mom's Locket}}: Makes enemies drop full red hearts instead of half red hearts.
+
+== In-game Footage ==
+{{#ev:youtube|QllR1KrizD0}}
+
+== Trivia ==
+* This Soul Stone, along with {{p|Soul of Isaac}}, {{p|Soul of Judas}}, and {{p|Soul of Samson}}, replicates a feature of the character it's unlocked by.
+
+{{nav|fr=Âme de Marie}}
+[[Category:Runes]]

@@ -116,6 +116,29 @@ fn segment_at(text: &str, at: usize) -> Option<(Segment<'_>, usize)> {
     })
 }
 
+/// Every template name in `text`, at every nesting depth: the top level from
+/// `template_segments`, recursed into each argument. Only the completeness check (Decision
+/// 10) calls this — it needs exactly what the parser's own scanner finds, not a second one
+/// written by hand to agree with it.
+#[cfg(feature = "test-api")]
+pub fn all_template_names(text: &str) -> Vec<String> {
+    let mut names = Vec::new();
+    collect_template_names(text, &mut names);
+    names
+}
+
+#[cfg(feature = "test-api")]
+fn collect_template_names(text: &str, names: &mut Vec<String>) {
+    for segment in template_segments(text) {
+        if let Segment::Template { template, .. } = segment {
+            names.push(template.name.clone());
+            for arg in template.args.iter().chain(template.named.values()) {
+                collect_template_names(arg, names);
+            }
+        }
+    }
+}
+
 fn assemble(parts: Vec<String>) -> Template {
     let mut it = parts.into_iter();
     let name = it.next().unwrap_or_default().trim().to_lowercase();
@@ -289,6 +312,15 @@ mod tests {
                 ..
             }
         ));
+    }
+
+    /// The completeness check's scanner has to see a template nested inside another one's
+    /// argument, not only the top level: `{{bug|{{i|x}}}}` names two templates, `bug` and `i`,
+    /// wherever either of them sits.
+    #[test]
+    fn all_template_names_finds_every_nesting_depth() {
+        let names = all_template_names("a {{bug|dlc=r|{{i|x}} and {{hearts|red=3}}}} b {{cit|p}}");
+        assert_eq!(names, vec!["bug", "i", "hearts", "cit"]);
     }
 
     #[test]

@@ -1,0 +1,59 @@
+{{#ev:youtube|https://www.youtube.com/watch?v=gXzJFoaQxsU}}
+
+In ''The Binding of Isaac: Rebirth'', the '''Title Sequence''' plays as the game opens, before the player reaches the title screen and main menu. It explains the premise of the game, introducing [[Isaac]] and his [[mom|mother]], why Isaac is descending, and is one of the only portions of the story explicitly shared with the player. The animated sequence is narrated and has been confirmed to be the voice of [https://twitter.com/edmundmcmillen/status/919819259492016129 Isaac's father] by [[Edmund McMillen]] (he also confirmed that the [https://twitter.com/edmundmcmillen/status/1480795032227512320 father's name is Abraham]).
+
+== Transcript ==
+''The following is a transcript of the dialogue from the title sequence.''
+
+Isaac and his mother lived alone in a small house on a hill.
+
+Isaac kept to himself, drawing pictures and playing with his toys as his mom watched Christian broadcasts on the television.
+
+Life was simple, and they were both happy. That was, until the day Isaac’s mom heard a voice from above.
+
+“Your son has become corrupted by sin. He needs to be saved.”
+
+“I will do my best to save him, my Lord,” Isaac’s mother replied, rushing into Isaac’s room, removing all that was evil from his life.
+
+Again the voice called to her, "Isaac’s soul is still corrupt. He needs to be cut off from all that is evil in this world and confess his sins."
+
+“I will follow your instructions, Lord. I have faith in thee,” Isaac’s mother replied, as she locked Isaac in his room, away from the evils of the world.
+
+One last time, Isaac’s mom heard the voice of God calling to her.
+
+“You've done as I've asked, but I still question your devotion to me. To prove your faith, I will ask one more thing of you."
+
+"Yes Lord, anything!” Isaac’s mother begged.
+
+"To prove your love and devotion, I require a sacrifice. Your son, Isaac, will be this sacrifice. Go into his room and end his life, as an offering to me to prove you love me above all else."
+
+"Yes Lord", she replied, grabbing a butcher’s knife from the kitchen.
+
+{{Anchor|Isaac's Door|Isaac, watching through a crack in his door, trembled in fear.}}
+
+Scrambling around his room to find a hiding place, he noticed a trap door to the basement hidden under his rug.
+
+Without hesitation, he flung open the hatch, just as his mother burst through his door, and threw himself down into the unknown depths below.
+
+== Storyboard ==
+<gallery widths="250" heights="200" perrow="4">
+File:TitleSequence1.png|'' Isaac and his mother...''
+File:TitleSequence2.png|''...lived alone in a small house on a hill.''
+File:TitleSequence.png|'' Isaac kept to himself, drawing pictures and playing with his toys as his mom watched Christian broadcasts on the television.''
+File:TitleSequence3.png|'' That was, until the day Isaac’s mom heard a voice from above. “Your son has become corrupted by sin. He needs to be saved.”''
+File:TitleSequence4.png|'' rushing into Isaac’s room...''
+File:TitleSequence5.png|''...removing all that was evil from his life''
+File:TitleSequence6.png|'' Again the voice called to her, "Isaac’s soul is still corrupt."''
+File:TitleSequence7.png|'' She locked Isaac in his room away from the evils of the world.''
+File:TitleSequence8.png|'' One last time, Isaac’s mom heard the voice of God calling to her... "To prove your love and devotion, I require a sacrifice."''
+File:TitleSequence9.png|''...grabbing a butcher’s knife from the kitchen''
+File:TitleSequence10.png|'' Isaac, watching through a crack in his door..''
+File:TitleSequence11.png|'' Scrambling around his room to find a hiding place..''
+File:TitleSequence12.png|'' he noticed a trapdoor to the basement hidden under his rug''
+File:TitleSequence15.png|'' He flung open the hatch...''
+File:TitleSequence14.png|''...just as his mother burst through his door''
+File:TitleSequence16.png|''...into the unknown depths below.''
+</gallery>
+
+{{nav|fr=Séquence titre}}
+[[Category:Mechanics]]

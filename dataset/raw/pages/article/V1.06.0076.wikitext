@@ -1,0 +1,48 @@
+{{infobox version
+| dlc  = a
+| date = 2015-12-06
+}}
+
+== Undocumented changes ==
+=== Additions ===
+* Added graphics for a [[wikipedia:Satoru Iwata|Satoru Iwata]] themed daily run.
+* {{i|Butter Bean}} and {{i|The Poop}} now deflect bullets.
+* {{i|Shoop da Whoop!}} now does 4x Isaac's base damage.
+* Picking up {{t|Match Stick}} will now remove the {{t|Tick}}.
+* {{i|Marked}} can now be controlled with the mouse.
+
+=== Changes ===
+* {{i|Stop Watch}} is no longer a special item.
+* Blocking damage with {{i|Holy Mantle}} now activates {{i|Stop Watch}}.
+* Decreased {{i|Scissors}} charge time 6 → 2.
+* Decreased {{i|Friendly Ball}} charge time 4 → 3.
+* {{i|Abel}} now fires tears directly towards Isaac.
+* Modified room #717 on the Basement/Cellar so that [[Mulligan]]s no longer spawn next to the entrances. (Mulligans have a chance to randomly explode upon room loading. If this occurred before the patch, it was guaranteed damage to the player.)
+* Removed the top entrances from [[Devil room]] #11 and #14. (These are the rooms with [[Nulls]] and an [[Imp]], which also happen to spawn at the top of the room, which causes near-guaranteed damage to the player.)
+* Reworked [[sacrifice room]]s.
+* {{i|Lost Fly}}, {{i|Papa Fly}}, {{i|Friend Zone}}, and {{i|Obsessed Fan}} now all counts towards the [[Beelzebub]] transformation.
+* {{i|Cain's Other Eye}} now scales with Isaac's damage.
+* Curse of the Tower no longer activates if you are damaged by a troll bomb spawned by Curse of the Tower.
+* The window for using {{i|Glass Cannon}} to steal Devil Room items is much smaller.
+* {{i|Crack the Sky}}'s damage has been buffed and now targets enemies specifically.
+
+=== Fixes ===
+* Fixed the bug where players who completed the 1001% achievement before the release of v1.06.0067 were unable to get the achievement.
+* Fixed {{i|The Battery}} bug where it was impossible to get a full overcharge on an activated item from clearing rooms.
+* Fixed the bug where it was possible to respawn an Angel Room statue by reloading the room with {{i|Goat Head}} (or quitting and continuing).
+* Fixed the bug where it was possible to quit and continue from a Boss Rush in order to quickly complete it.
+* {{i|Taurus}} now works in [[Greed mode]] as expected.
+* Picking up {{i|God's Flesh}} will now properly update Isaac's tear color.
+
+(You can find technical details of afterbirth.a file changes [[user:Zamie/Patch v1.06.0076|here]].)
+
+== New bugs ==
+* {{i|Technology}}, {{i|Technology 2}}, and {{i|Tech.5}} function as if the player has spectral tears. (Visually, the items will appear to be functioning normally, but this isn't the case.)
+* The {{i|Dr. Fetus}} and {{i|Tech X}} synergy causes enemies to drop black hearts as if they were killed by {{i|Maw Of The Void}}.
+* If you pick up {{i|Tech X}} after picking up {{i|Ipecac}}, you still erroneously retain the +40 damage boost from {{i|Ipecac}} and the increased tear delay. After the damage stat is refreshed (by picking up another damage item), this bug goes away.
+* With a controller attached, it is possible to move Isaac when the game is out of focus and get him across loading zones and spikes without taking any damage.<ref>https://www.reddit.com/r/bindingofisaac/comments/3why73/bombfree_method_of_getting_into_black_market/</ref>
+
+== References ==
+<references />
+
+{{nav|version}}

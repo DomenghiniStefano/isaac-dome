@@ -20,7 +20,8 @@
 * Once this item has been unlocked, if the current character's [[Tainted Characters|Tainted]] version was already unlocked or the current character is a Tainted character, it is guaranteed to spawn in the hidden closet in {{s|Home}}.
 ** This item will appear even if Inner Child had been obtained earlier in the run, allowing Isaac to have two copies of the item.
 ** Despite being hard-coded not to appear anywhere else for him, this specific occurrence of Inner Child will still spawn for {{c|Tainted Lost}}.
-** If this item is obtained in Home, a viable strategy is to intentionally die towards the end of the fight with {{E|Dogma}}. Isaac will be respawned with the size down and Speed up, and these effects will carry over to the Beast fight along with the healing provided by {{i|Dogma}}, making Isaac much harder to hit for the fight.
+** If this item is obtained in Home, a viable strategy is to intentionally die towards the end of the fight with {{E|Dogma}}. Isaac will be respawned with the size down and Speed up, and these effects will carry over to the Beast fight along with the healing provided by {{i|Dogma}}, making Isaac much harder to hit for the fight. 
+*** If Isaac's health consists of only {{e|Red Heart}}s, a safer strategy may be to use bombs to die in the starting room of Home to trigger the item's effects and then use the bed in that room to recover all {{e|Red Heart}}s back.
 * The size down from being revived by Inner Child is the same as if Isaac had collected {{i|Pluto}}.
 
 == In-game footage ==

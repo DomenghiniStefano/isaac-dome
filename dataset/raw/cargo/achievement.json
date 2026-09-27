@@ -2257,7 +2257,7 @@
     "id": "1",
     "name": "Magdalene",
     "notes": "",
-    "requirements": "Have 7 or more <span class=\"tb-icon tb-link-icon\" >[[File:Red Heart.png|link=Hearts#Red Heart|Red Heart|alt=]]</span>[[:Hearts#Red Heart|Red Heart]] Containers at one time"
+    "requirements": "Have 7 or more [[File:Red Heart.png|link=Hearts#Red Heart|class=tb-icon tb-link-icon|alt=|Red Heart]][[:Hearts#Red Heart|Red Heart]] Containers at one time"
   },
   {
     "_pageName": "Achievements/Rebirth 1",
@@ -2267,7 +2267,7 @@
     "id": "10",
     "name": "A Quarter",
     "notes": "",
-    "requirements": "Defeat <span class=\"tb-icon tb-link-icon\" >[[File:Boss Mom's Heart ingame.png|link=Mom's Heart|Mom's Heart|alt=]]</span>[[:Mom's Heart|Mom's Heart]] 8 times"
+    "requirements": "Defeat [[File:Boss Mom's Heart ingame.png|link=Mom's Heart|class=tb-icon tb-link-icon|alt=|Mom's Heart]][[:Mom's Heart|Mom's Heart]] 8 times"
   },
   {
     "_pageName": "Achievements/Rebirth 1",
@@ -2277,7 +2277,7 @@
     "id": "11",
     "name": "A Fetus in a Jar",
     "notes": "",
-    "requirements": "Defeat <span class=\"tb-icon tb-link-icon\" >[[File:Boss Mom's Heart ingame.png|link=Mom's Heart|Mom's Heart|alt=]]</span>[[:Mom's Heart|Mom's Heart]] 9 times"
+    "requirements": "Defeat [[File:Boss Mom's Heart ingame.png|link=Mom's Heart|class=tb-icon tb-link-icon|alt=|Mom's Heart]][[:Mom's Heart|Mom's Heart]] 9 times"
   },
   {
     "_pageName": "Achievements/Rebirth 1",
@@ -2317,7 +2317,7 @@
     "id": "15",
     "name": "Loki's Horns",
     "notes": "",
-    "requirements": "Defeat <span class=\"tb-icon tb-link-icon\" >[[File:Boss Lokii ingame.png|link=Lokii|Lokii|alt=]]</span>[[:Lokii|Lokii]]"
+    "requirements": "Defeat [[File:Boss Lokii ingame.png|link=Lokii|class=tb-icon tb-link-icon|alt=|Lokii]][[:Lokii|Lokii]]"
   },
   {
     "_pageName": "Achievements/Rebirth 1",
@@ -2327,7 +2327,7 @@
     "id": "16",
     "name": "Something From The Future",
     "notes": "",
-    "requirements": "Beat <span class=\"tb-icon tb-link-icon\" >[[File:Stage Basement icon.png|link=Basement|Basement|alt=]]</span>[[:Basement|Basement]] 40 times"
+    "requirements": "Beat [[File:Stage Basement icon.png|link=Basement|class=tb-icon tb-link-icon|alt=|Basement]][[:Basement|Basement]] 40 times"
   },
   {
     "_pageName": "Achievements/Rebirth 1",
@@ -2357,7 +2357,7 @@
     "id": "19",
     "name": "A Bandage",
     "notes": "See [[Unlocking Super Meat Boy & Super Bandage Girl]]",
-    "requirements": "Make a Super Bandage Girl by picking up 4 copies of <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CBall+of+Bandages\" data-tooltip-dlc=\"31\"><span class=\"tb-icon tb-link-icon\" style=\"--tb-icon-size: 1.4em\">[[File:Collectible Ball of Bandages icon.png|link=Ball of Bandages|Ball of Bandages|alt=]]</span>[[:Ball of Bandages|Ball of Bandages]]</span> in one run"
+    "requirements": "Make a Super Bandage Girl by picking up 4 copies of <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CBall+of+Bandages\" data-tooltip-dlc=\"31\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Ball of Bandages icon.png|link=Ball of Bandages|class=tb-icon tb-link-icon|alt=|Ball of Bandages]]</span>[[:Ball of Bandages|Ball of Bandages]]</span> in one run"
   },
   {
     "_pageName": "Achievements/Rebirth 1",
@@ -2377,7 +2377,7 @@
     "id": "20",
     "name": "A Cross",
     "notes": "",
-    "requirements": "Defeat <span class=\"tb-icon tb-link-icon\" >[[File:Boss Isaac ingame.png|link=Isaac (Boss)|Isaac|alt=]]</span>[[:Isaac (Boss)|Isaac]] as <span class=\"tb-icon tb-link-icon\" style=\"--tb-icon-size: 1.4em\">[[File:Character Magdalene icon.png|link=Magdalene||alt=]]</span>[[:Magdalene|Magdalene]]"
+    "requirements": "Defeat [[File:Boss Isaac ingame.png|link=Isaac (Boss)|class=tb-icon tb-link-icon|alt=|Isaac]][[:Isaac (Boss)|Isaac]] as <span style=\"--tb-icon-size: 1.4em\">[[File:Character Magdalene icon.png|link=Magdalene|class=tb-icon tb-link-icon|alt=|]]</span>[[:Magdalene|Magdalene]]"
   },
   {
     "_pageName": "Achievements/Rebirth 1",
@@ -2387,7 +2387,7 @@
     "id": "21",
     "name": "A Bag of Pennies",
     "notes": "",
-    "requirements": "Defeat <span class=\"tb-icon tb-link-icon\" >[[File:Boss Isaac ingame.png|link=Isaac (Boss)|Isaac|alt=]]</span>[[:Isaac (Boss)|Isaac]] as <span class=\"tb-icon tb-link-icon\" style=\"--tb-icon-size: 1.4em\">[[File:Character Cain icon.png|link=Cain||alt=]]</span>[[:Cain|Cain]]"
+    "requirements": "Defeat [[File:Boss Isaac ingame.png|link=Isaac (Boss)|class=tb-icon tb-link-icon|alt=|Isaac]][[:Isaac (Boss)|Isaac]] as <span style=\"--tb-icon-size: 1.4em\">[[File:Character Cain icon.png|link=Cain|class=tb-icon tb-link-icon|alt=|]]</span>[[:Cain|Cain]]"
   },
   {
     "_pageName": "Achievements/Rebirth 1",
@@ -2407,7 +2407,7 @@
     "id": "23",
     "name": "Little Gish",
     "notes": "",
-    "requirements": "Defeat <span class=\"tb-icon tb-link-icon\" >[[File:Boss Gish ingame.png|link=Gish|Gish|alt=]]</span>[[:Gish|Gish]]"
+    "requirements": "Defeat [[File:Boss Gish ingame.png|link=Gish|class=tb-icon tb-link-icon|alt=|Gish]][[:Gish|Gish]]"
   },
   {
     "_pageName": "Achievements/Rebirth 1",
@@ -2417,7 +2417,7 @@
     "id": "24",
     "name": "Little Steven",
     "notes": "",
-    "requirements": "Defeat <span class=\"tb-icon tb-link-icon\" >[[File:Boss Steven ingame.png|link=Steven|Steven|alt=]]</span>[[:Steven|Steven]]"
+    "requirements": "Defeat [[File:Boss Steven ingame.png|link=Steven|class=tb-icon tb-link-icon|alt=|Steven]][[:Steven|Steven]]"
   },
   {
     "_pageName": "Achievements/Rebirth 1",
@@ -2427,7 +2427,7 @@
     "id": "25",
     "name": "Little C.H.A.D.",
     "notes": "",
-    "requirements": "Defeat <span class=\"tb-icon tb-link-icon\" >[[File:Boss C.H.A.D. ingame.png|link=C.H.A.D.|C.H.A.D.|alt=]]</span>[[:C.H.A.D.|C.H.A.D.]]"
+    "requirements": "Defeat [[File:Boss C.H.A.D. ingame.png|link=C.H.A.D.|class=tb-icon tb-link-icon|alt=|C.H.A.D.]][[:C.H.A.D.|C.H.A.D.]]"
   },
   {
     "_pageName": "Achievements/Rebirth 1",
@@ -2437,7 +2437,7 @@
     "id": "26",
     "name": "A Gamekid",
     "notes": "",
-    "requirements": "Visit 10 <span class=\"tb-icon tb-link-icon\" >[[File:Arcade Icon.png|link=Arcade||alt=]]</span>[[:Arcade|Arcade]]s"
+    "requirements": "Visit 10 [[File:Arcade Icon.png|link=Arcade|class=tb-icon tb-link-icon|alt=|]][[:Arcade|Arcade]]s"
   },
   {
     "_pageName": "Achievements/Rebirth 1",
@@ -2447,7 +2447,7 @@
     "id": "27",
     "name": "A Halo",
     "notes": "",
-    "requirements": "Defeat <span class=\"tb-icon tb-link-icon\" >[[File:Boss Mom ingame.png|link=Mom|Mom|alt=]]</span>[[:Mom|Mom]], <span class=\"tb-icon tb-link-icon\" >[[File:Boss Mom's Heart ingame.png|link=Mom's Heart|Mom's Heart|alt=]]</span>[[:Mom's Heart|Mom's Heart]], or <span class=\"tb-icon tb-link-icon\" >[[File:Boss It Lives! ingame.png|link=It Lives!|It Lives!|alt=]]</span>[[:It Lives!|It Lives!]] using <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CThe+Bible\" data-tooltip-dlc=\"31\"><span class=\"tb-icon tb-link-icon\" style=\"--tb-icon-size: 1.4em\">[[File:Collectible The Bible icon.png|link=The Bible|The Bible|alt=]]</span>[[:The Bible|The Bible]]</span> or [[File:Dlc r indicator.png|link=|class=dlc cf-tag cf-val-24 |alt=(in Repentance and Repentance+)|Added in Repentance]]<span class=\"tooltip\" data-tooltip=\"p%2Ftooltip%7CXV+-+The+Devil%3F\" data-tooltip-dlc=\"24\"><span class=\"tb-icon tb-link-icon\" >[[File:Pickup XV - Inverted The Devil icon.png|link=XV - The Devil?|XV - The Devil?|alt=]]</span>[[:XV - The Devil?|XV - The Devil?]]</span>"
+    "requirements": "Defeat [[File:Boss Mom ingame.png|link=Mom|class=tb-icon tb-link-icon|alt=|Mom]][[:Mom|Mom]], [[File:Boss Mom's Heart ingame.png|link=Mom's Heart|class=tb-icon tb-link-icon|alt=|Mom's Heart]][[:Mom's Heart|Mom's Heart]], or [[File:Boss It Lives! ingame.png|link=It Lives!|class=tb-icon tb-link-icon|alt=|It Lives!]][[:It Lives!|It Lives!]] using <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CThe+Bible\" data-tooltip-dlc=\"31\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible The Bible icon.png|link=The Bible|class=tb-icon tb-link-icon|alt=|The Bible]]</span>[[:The Bible|The Bible]]</span> or [[File:Dlc r indicator.png|link=|class=dlc cf-tag cf-val-24 |alt=(in Repentance and Repentance+)|Added in Repentance]]<span class=\"tooltip\" data-tooltip=\"p%2Ftooltip%7CXV+-+The+Devil%3F\" data-tooltip-dlc=\"24\">[[File:Pickup XV - Inverted The Devil icon.png|link=XV - The Devil?|class=tb-icon tb-link-icon|alt=|XV - The Devil?]][[:XV - The Devil?|XV - The Devil?]]</span>"
   },
   {
     "_pageName": "Achievements/Rebirth 1",
@@ -2467,7 +2467,7 @@
     "id": "29",
     "name": "The D6",
     "notes": "",
-    "requirements": "Defeat <span class=\"tb-icon tb-link-icon\" >[[File:Boss Isaac ingame.png|link=Isaac (Boss)|Isaac|alt=]]</span>[[:Isaac (Boss)|Isaac]] as <span class=\"tb-icon tb-link-icon\" style=\"--tb-icon-size: 1.4em\">[[File:Character ??? icon.png|link=??? (Character)|???|alt=]]</span>[[:??? (Character)|???]]"
+    "requirements": "Defeat [[File:Boss Isaac ingame.png|link=Isaac (Boss)|class=tb-icon tb-link-icon|alt=|Isaac]][[:Isaac (Boss)|Isaac]] as <span style=\"--tb-icon-size: 1.4em\">[[File:Character ??? icon.png|link=??? (Character)|class=tb-icon tb-link-icon|alt=|???]]</span>[[:??? (Character)|???]]"
   },
   {
     "_pageName": "Achievements/Rebirth 1",
@@ -2477,7 +2477,7 @@
     "id": "3",
     "name": "Judas",
     "notes": "",
-    "requirements": "Defeat <span class=\"tb-icon tb-link-icon\" >[[File:Boss Satan ingame.png|link=Satan|Satan|alt=]]</span>[[:Satan|Satan]]"
+    "requirements": "Defeat [[File:Boss Satan ingame.png|link=Satan|class=tb-icon tb-link-icon|alt=|Satan]][[:Satan|Satan]]"
   },
   {
     "_pageName": "Achievements/Rebirth 1",
@@ -2496,7 +2496,7 @@
     "dlc": "31",
     "id": "31",
     "name": "The Parasite",
-    "notes": "[[File:Dlc nr indicator.png|link=|class=dlc cf-tag cf-val-7 |alt=(except in Repentance and Repentance+)|Removed in Repentance]] Dead-related items are <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CBob%27s+Rotten+Head\" data-tooltip-dlc=\"31\"><span class=\"tb-icon tb-link-icon\" style=\"--tb-icon-size: 1.4em\">[[File:Collectible Bob's Rotten Head icon.png|link=Bob's Rotten Head|Bob's Rotten Head|alt=]]</span>[[:Bob's Rotten Head|Bob's Rotten Head]]</span>, <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CDead+Cat\" data-tooltip-dlc=\"31\"><span class=\"tb-icon tb-link-icon\" style=\"--tb-icon-size: 1.4em\">[[File:Collectible Dead Cat icon.png|link=Dead Cat|Dead Cat|alt=]]</span>[[:Dead Cat|Dead Cat]]</span>, <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CCricket%27s+Head\" data-tooltip-dlc=\"31\"><span class=\"tb-icon tb-link-icon\" style=\"--tb-icon-size: 1.4em\">[[File:Collectible Cricket's Head icon.png|link=Cricket's Head|Cricket's Head|alt=]]</span>[[:Cricket's Head|Cricket's Head]]</span>, and <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CTammy%27s+Head\" data-tooltip-dlc=\"31\"><span class=\"tb-icon tb-link-icon\" style=\"--tb-icon-size: 1.4em\">[[File:Collectible Tammy's Head icon.png|link=Tammy's Head|Tammy's Head|alt=]]</span>[[:Tammy's Head|Tammy's Head]]</span><br>[[File:Dlc r indicator.png|link=|class=dlc cf-tag cf-val-24 |alt=(in Repentance and Repentance+)|Added in Repentance]] Dead-related items have the [[Item Tags dead|'dead' item tag]]",
+    "notes": "[[File:Dlc nr indicator.png|link=|class=dlc cf-tag cf-val-7 |alt=(except in Repentance and Repentance+)|Removed in Repentance]] Dead-related items are <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CBob%27s+Rotten+Head\" data-tooltip-dlc=\"31\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Bob's Rotten Head icon.png|link=Bob's Rotten Head|class=tb-icon tb-link-icon|alt=|Bob's Rotten Head]]</span>[[:Bob's Rotten Head|Bob's Rotten Head]]</span>, <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CDead+Cat\" data-tooltip-dlc=\"31\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Dead Cat icon.png|link=Dead Cat|class=tb-icon tb-link-icon|alt=|Dead Cat]]</span>[[:Dead Cat|Dead Cat]]</span>, <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CCricket%27s+Head\" data-tooltip-dlc=\"31\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Cricket's Head icon.png|link=Cricket's Head|class=tb-icon tb-link-icon|alt=|Cricket's Head]]</span>[[:Cricket's Head|Cricket's Head]]</span>, and <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CTammy%27s+Head\" data-tooltip-dlc=\"31\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Tammy's Head icon.png|link=Tammy's Head|class=tb-icon tb-link-icon|alt=|Tammy's Head]]</span>[[:Tammy's Head|Tammy's Head]]</span><br>[[File:Dlc r indicator.png|link=|class=dlc cf-tag cf-val-24 |alt=(in Repentance and Repentance+)|Added in Repentance]] Dead-related items have the [[Item Tags dead|'dead' item tag]]",
     "requirements": "Pick up 2 dead-related items in a single run"
   },
   {
@@ -2507,7 +2507,7 @@
     "id": "32",
     "name": "???",
     "notes": "",
-    "requirements": "Defeat <span class=\"tb-icon tb-link-icon\" >[[File:Boss Mom's Heart ingame.png|link=Mom's Heart|Mom's Heart|alt=]]</span>[[:Mom's Heart|Mom's Heart]] 10 times"
+    "requirements": "Defeat [[File:Boss Mom's Heart ingame.png|link=Mom's Heart|class=tb-icon tb-link-icon|alt=|Mom's Heart]][[:Mom's Heart|Mom's Heart]] 10 times"
   },
   {
     "_pageName": "Achievements/Rebirth 1",
@@ -2517,7 +2517,7 @@
     "id": "33",
     "name": "Everything Is Terrible!!!",
     "notes": "",
-    "requirements": "Defeat <span class=\"tb-icon tb-link-icon\" >[[File:Boss Mom's Heart ingame.png|link=Mom's Heart|Mom's Heart|alt=]]</span>[[:Mom's Heart|Mom's Heart]] 5 times"
+    "requirements": "Defeat [[File:Boss Mom's Heart ingame.png|link=Mom's Heart|class=tb-icon tb-link-icon|alt=|Mom's Heart]][[:Mom's Heart|Mom's Heart]] 5 times"
   },
   {
     "_pageName": "Achievements/Rebirth 1",
@@ -2527,7 +2527,7 @@
     "id": "34",
     "name": "It Lives!",
     "notes": "",
-    "requirements": "Defeat <span class=\"tb-icon tb-link-icon\" >[[File:Boss Mom's Heart ingame.png|link=Mom's Heart|Mom's Heart|alt=]]</span>[[:Mom's Heart|Mom's Heart]] 11 times"
+    "requirements": "Defeat [[File:Boss Mom's Heart ingame.png|link=Mom's Heart|class=tb-icon tb-link-icon|alt=|Mom's Heart]][[:Mom's Heart|Mom's Heart]] 11 times"
   },
   {
     "_pageName": "Achievements/Rebirth 1",
@@ -2547,7 +2547,7 @@
     "id": "36",
     "name": "The Necronomicon",
     "notes": "",
-    "requirements": "Use <span class=\"tooltip\" data-tooltip=\"p%2Ftooltip%7CXIII+-+Death\" data-tooltip-dlc=\"31\"><span class=\"tb-icon tb-link-icon\" >[[File:Pickup XIII - Death icon.png|link=XIII - Death|XIII - Death|alt=]]</span>[[:XIII - Death|XIII - Death]]</span> 4 times"
+    "requirements": "Use <span class=\"tooltip\" data-tooltip=\"p%2Ftooltip%7CXIII+-+Death\" data-tooltip-dlc=\"31\">[[File:Pickup XIII - Death icon.png|link=XIII - Death|class=tb-icon tb-link-icon|alt=|XIII - Death]][[:XIII - Death|XIII - Death]]</span> 4 times"
   },
   {
     "_pageName": "Achievements/Rebirth 1",
@@ -2587,7 +2587,7 @@
     "id": "4",
     "name": "The Womb",
     "notes": "",
-    "requirements": "Defeat <span class=\"tb-icon tb-link-icon\" >[[File:Boss Mom ingame.png|link=Mom|Mom|alt=]]</span>[[:Mom|Mom]]"
+    "requirements": "Defeat [[File:Boss Mom ingame.png|link=Mom|class=tb-icon tb-link-icon|alt=|Mom]][[:Mom|Mom]]"
   },
   {
     "_pageName": "Achievements/Rebirth 1",
@@ -2607,7 +2607,7 @@
     "id": "41",
     "name": "Golden God!",
     "notes": "",
-    "requirements": "Defeat <span class=\"tb-icon tb-link-icon\" >[[File:Boss ??? ingame.png|link=??? (Boss)|???|alt=]]</span>[[:??? (Boss)|???]] and <span class=\"tb-icon tb-link-icon\" >[[File:Boss The Lamb ingame.png|link=The Lamb|The Lamb|alt=]]</span>[[:The Lamb|The Lamb]]"
+    "requirements": "Defeat [[File:Boss ??? ingame.png|link=??? (Boss)|class=tb-icon tb-link-icon|alt=|???]][[:??? (Boss)|???]] and [[File:Boss The Lamb ingame.png|link=The Lamb|class=tb-icon tb-link-icon|alt=|The Lamb]][[:The Lamb|The Lamb]]"
   },
   {
     "_pageName": "Achievements/Rebirth 1",
@@ -2627,7 +2627,7 @@
     "id": "43",
     "name": "Mom's Knife",
     "notes": "",
-    "requirements": "Defeat <span class=\"tb-icon tb-link-icon\" >[[File:Boss Satan ingame.png|link=Satan|Satan|alt=]]</span>[[:Satan|Satan]] as <span class=\"tb-icon tb-link-icon\" style=\"--tb-icon-size: 1.4em\">[[File:Character Isaac icon.png|link=Isaac||alt=]]</span>[[:Isaac|Isaac]]"
+    "requirements": "Defeat [[File:Boss Satan ingame.png|link=Satan|class=tb-icon tb-link-icon|alt=|Satan]][[:Satan|Satan]] as <span style=\"--tb-icon-size: 1.4em\">[[File:Character Isaac icon.png|link=Isaac|class=tb-icon tb-link-icon|alt=|]]</span>[[:Isaac|Isaac]]"
   },
   {
     "_pageName": "Achievements/Rebirth 1",
@@ -2637,7 +2637,7 @@
     "id": "44",
     "name": "The Razor",
     "notes": "",
-    "requirements": "Defeat <span class=\"tb-icon tb-link-icon\" >[[File:Boss Satan ingame.png|link=Satan|Satan|alt=]]</span>[[:Satan|Satan]] as <span class=\"tb-icon tb-link-icon\" style=\"--tb-icon-size: 1.4em\">[[File:Character Eve icon.png|link=Eve||alt=]]</span>[[:Eve|Eve]]"
+    "requirements": "Defeat [[File:Boss Satan ingame.png|link=Satan|class=tb-icon tb-link-icon|alt=|Satan]][[:Satan|Satan]] as <span style=\"--tb-icon-size: 1.4em\">[[File:Character Eve icon.png|link=Eve|class=tb-icon tb-link-icon|alt=|]]</span>[[:Eve|Eve]]"
   },
   {
     "_pageName": "Achievements/Rebirth 1",
@@ -2647,7 +2647,7 @@
     "id": "45",
     "name": "Guardian Angel",
     "notes": "",
-    "requirements": "Defeat <span class=\"tb-icon tb-link-icon\" >[[File:Boss Satan ingame.png|link=Satan|Satan|alt=]]</span>[[:Satan|Satan]] as <span class=\"tb-icon tb-link-icon\" style=\"--tb-icon-size: 1.4em\">[[File:Character Magdalene icon.png|link=Magdalene||alt=]]</span>[[:Magdalene|Magdalene]]"
+    "requirements": "Defeat [[File:Boss Satan ingame.png|link=Satan|class=tb-icon tb-link-icon|alt=|Satan]][[:Satan|Satan]] as <span style=\"--tb-icon-size: 1.4em\">[[File:Character Magdalene icon.png|link=Magdalene|class=tb-icon tb-link-icon|alt=|]]</span>[[:Magdalene|Magdalene]]"
   },
   {
     "_pageName": "Achievements/Rebirth 1",
@@ -2657,7 +2657,7 @@
     "id": "46",
     "name": "A Bag of Bombs",
     "notes": "",
-    "requirements": "Defeat <span class=\"tb-icon tb-link-icon\" >[[File:Boss Satan ingame.png|link=Satan|Satan|alt=]]</span>[[:Satan|Satan]] as <span class=\"tb-icon tb-link-icon\" style=\"--tb-icon-size: 1.4em\">[[File:Character Cain icon.png|link=Cain||alt=]]</span>[[:Cain|Cain]]"
+    "requirements": "Defeat [[File:Boss Satan ingame.png|link=Satan|class=tb-icon tb-link-icon|alt=|Satan]][[:Satan|Satan]] as <span style=\"--tb-icon-size: 1.4em\">[[File:Character Cain icon.png|link=Cain|class=tb-icon tb-link-icon|alt=|]]</span>[[:Cain|Cain]]"
   },
   {
     "_pageName": "Achievements/Rebirth 1",
@@ -2667,7 +2667,7 @@
     "id": "47",
     "name": "Demon Baby",
     "notes": "",
-    "requirements": "Defeat <span class=\"tb-icon tb-link-icon\" >[[File:Boss The Lamb ingame.png|link=The Lamb|The Lamb|alt=]]</span>[[:The Lamb|The Lamb]] as <span class=\"tb-icon tb-link-icon\" style=\"--tb-icon-size: 1.4em\">[[File:Character Azazel icon.png|link=Azazel||alt=]]</span>[[:Azazel|Azazel]]"
+    "requirements": "Defeat [[File:Boss The Lamb ingame.png|link=The Lamb|class=tb-icon tb-link-icon|alt=|The Lamb]][[:The Lamb|The Lamb]] as <span style=\"--tb-icon-size: 1.4em\">[[File:Character Azazel icon.png|link=Azazel|class=tb-icon tb-link-icon|alt=|]]</span>[[:Azazel|Azazel]]"
   },
   {
     "_pageName": "Achievements/Rebirth 1",
@@ -2677,7 +2677,7 @@
     "id": "48",
     "name": "Forget Me Now",
     "notes": "",
-    "requirements": "Defeat <span class=\"tb-icon tb-link-icon\" >[[File:Boss Satan ingame.png|link=Satan|Satan|alt=]]</span>[[:Satan|Satan]] as <span class=\"tb-icon tb-link-icon\" style=\"--tb-icon-size: 1.4em\">[[File:Character ??? icon.png|link=??? (Character)|???|alt=]]</span>[[:??? (Character)|???]]"
+    "requirements": "Defeat [[File:Boss Satan ingame.png|link=Satan|class=tb-icon tb-link-icon|alt=|Satan]][[:Satan|Satan]] as <span style=\"--tb-icon-size: 1.4em\">[[File:Character ??? icon.png|link=??? (Character)|class=tb-icon tb-link-icon|alt=|???]]</span>[[:??? (Character)|???]]"
   },
   {
     "_pageName": "Achievements/Rebirth 1",
@@ -2687,7 +2687,7 @@
     "id": "49",
     "name": "The D20",
     "notes": "",
-    "requirements": "Defeat <span class=\"tb-icon tb-link-icon\" >[[File:Boss ??? ingame.png|link=??? (Boss)|???|alt=]]</span>[[:??? (Boss)|???]] as <span class=\"tb-icon tb-link-icon\" style=\"--tb-icon-size: 1.4em\">[[File:Character Isaac icon.png|link=Isaac||alt=]]</span>[[:Isaac|Isaac]]"
+    "requirements": "Defeat [[File:Boss ??? ingame.png|link=??? (Boss)|class=tb-icon tb-link-icon|alt=|???]][[:??? (Boss)|???]] as <span style=\"--tb-icon-size: 1.4em\">[[File:Character Isaac icon.png|link=Isaac|class=tb-icon tb-link-icon|alt=|]]</span>[[:Isaac|Isaac]]"
   },
   {
     "_pageName": "Achievements/Rebirth 1",
@@ -2697,7 +2697,7 @@
     "id": "5",
     "name": "The Harbingers",
     "notes": "",
-    "requirements": "Defeat <span class=\"tb-icon tb-link-icon\" >[[File:Boss Mom ingame.png|link=Mom|Mom|alt=]]</span>[[:Mom|Mom]]"
+    "requirements": "Defeat [[File:Boss Mom ingame.png|link=Mom|class=tb-icon tb-link-icon|alt=|Mom]][[:Mom|Mom]]"
   },
   {
     "_pageName": "Achievements/Rebirth 1",
@@ -2707,7 +2707,7 @@
     "id": "50",
     "name": "Celtic Cross",
     "notes": "",
-    "requirements": "Defeat <span class=\"tb-icon tb-link-icon\" >[[File:Boss ??? ingame.png|link=??? (Boss)|???|alt=]]</span>[[:??? (Boss)|???]] as <span class=\"tb-icon tb-link-icon\" style=\"--tb-icon-size: 1.4em\">[[File:Character Magdalene icon.png|link=Magdalene||alt=]]</span>[[:Magdalene|Magdalene]]"
+    "requirements": "Defeat [[File:Boss ??? ingame.png|link=??? (Boss)|class=tb-icon tb-link-icon|alt=|???]][[:??? (Boss)|???]] as <span style=\"--tb-icon-size: 1.4em\">[[File:Character Magdalene icon.png|link=Magdalene|class=tb-icon tb-link-icon|alt=|]]</span>[[:Magdalene|Magdalene]]"
   },
   {
     "_pageName": "Achievements/Rebirth 1",
@@ -2717,7 +2717,7 @@
     "id": "51",
     "name": "Abel",
     "notes": "",
-    "requirements": "Defeat <span class=\"tb-icon tb-link-icon\" >[[File:Boss The Lamb ingame.png|link=The Lamb|The Lamb|alt=]]</span>[[:The Lamb|The Lamb]] as <span class=\"tb-icon tb-link-icon\" style=\"--tb-icon-size: 1.4em\">[[File:Character Cain icon.png|link=Cain||alt=]]</span>[[:Cain|Cain]]"
+    "requirements": "Defeat [[File:Boss The Lamb ingame.png|link=The Lamb|class=tb-icon tb-link-icon|alt=|The Lamb]][[:The Lamb|The Lamb]] as <span style=\"--tb-icon-size: 1.4em\">[[File:Character Cain icon.png|link=Cain|class=tb-icon tb-link-icon|alt=|]]</span>[[:Cain|Cain]]"
   },
   {
     "_pageName": "Achievements/Rebirth 1",
@@ -2727,7 +2727,7 @@
     "id": "52",
     "name": "Curved Horn",
     "notes": "",
-    "requirements": "Defeat <span class=\"tb-icon tb-link-icon\" >[[File:Boss The Lamb ingame.png|link=The Lamb|The Lamb|alt=]]</span>[[:The Lamb|The Lamb]] as <span class=\"tb-icon tb-link-icon\" style=\"--tb-icon-size: 1.4em\">[[File:Character Judas icon.png|link=Judas||alt=]]</span>[[:Judas|Judas]]"
+    "requirements": "Defeat [[File:Boss The Lamb ingame.png|link=The Lamb|class=tb-icon tb-link-icon|alt=|The Lamb]][[:The Lamb|The Lamb]] as <span style=\"--tb-icon-size: 1.4em\">[[File:Character Judas icon.png|link=Judas|class=tb-icon tb-link-icon|alt=|]]</span>[[:Judas|Judas]]"
   },
   {
     "_pageName": "Achievements/Rebirth 1",
@@ -2737,7 +2737,7 @@
     "id": "53",
     "name": "Sacrificial Dagger",
     "notes": "",
-    "requirements": "Defeat <span class=\"tb-icon tb-link-icon\" >[[File:Boss ??? ingame.png|link=??? (Boss)|???|alt=]]</span>[[:??? (Boss)|???]] as <span class=\"tb-icon tb-link-icon\" style=\"--tb-icon-size: 1.4em\">[[File:Character Eve icon.png|link=Eve||alt=]]</span>[[:Eve|Eve]]"
+    "requirements": "Defeat [[File:Boss ??? ingame.png|link=??? (Boss)|class=tb-icon tb-link-icon|alt=|???]][[:??? (Boss)|???]] as <span style=\"--tb-icon-size: 1.4em\">[[File:Character Eve icon.png|link=Eve|class=tb-icon tb-link-icon|alt=|]]</span>[[:Eve|Eve]]"
   },
   {
     "_pageName": "Achievements/Rebirth 1",
@@ -2747,7 +2747,7 @@
     "id": "54",
     "name": "Bloody Lust",
     "notes": "",
-    "requirements": "Defeat <span class=\"tb-icon tb-link-icon\" >[[File:Boss Isaac ingame.png|link=Isaac (Boss)|Isaac|alt=]]</span>[[:Isaac (Boss)|Isaac]] as <span class=\"tb-icon tb-link-icon\" style=\"--tb-icon-size: 1.4em\">[[File:Character Samson icon.png|link=Samson||alt=]]</span>[[:Samson|Samson]]"
+    "requirements": "Defeat [[File:Boss Isaac ingame.png|link=Isaac (Boss)|class=tb-icon tb-link-icon|alt=|Isaac]][[:Isaac (Boss)|Isaac]] as <span style=\"--tb-icon-size: 1.4em\">[[File:Character Samson icon.png|link=Samson|class=tb-icon tb-link-icon|alt=|]]</span>[[:Samson|Samson]]"
   },
   {
     "_pageName": "Achievements/Rebirth 1",
@@ -2757,7 +2757,7 @@
     "id": "55",
     "name": "Blood Penny",
     "notes": "",
-    "requirements": "Defeat <span class=\"tb-icon tb-link-icon\" >[[File:Boss ??? ingame.png|link=??? (Boss)|???|alt=]]</span>[[:??? (Boss)|???]] as <span class=\"tb-icon tb-link-icon\" style=\"--tb-icon-size: 1.4em\">[[File:Character Samson icon.png|link=Samson||alt=]]</span>[[:Samson|Samson]]"
+    "requirements": "Defeat [[File:Boss ??? ingame.png|link=??? (Boss)|class=tb-icon tb-link-icon|alt=|???]][[:??? (Boss)|???]] as <span style=\"--tb-icon-size: 1.4em\">[[File:Character Samson icon.png|link=Samson|class=tb-icon tb-link-icon|alt=|]]</span>[[:Samson|Samson]]"
   },
   {
     "_pageName": "Achievements/Rebirth 1",
@@ -2767,7 +2767,7 @@
     "id": "56",
     "name": "Blood Rights",
     "notes": "",
-    "requirements": "Defeat <span class=\"tb-icon tb-link-icon\" >[[File:Boss Satan ingame.png|link=Satan|Satan|alt=]]</span>[[:Satan|Satan]] as <span class=\"tb-icon tb-link-icon\" style=\"--tb-icon-size: 1.4em\">[[File:Character Samson icon.png|link=Samson||alt=]]</span>[[:Samson|Samson]]"
+    "requirements": "Defeat [[File:Boss Satan ingame.png|link=Satan|class=tb-icon tb-link-icon|alt=|Satan]][[:Satan|Satan]] as <span style=\"--tb-icon-size: 1.4em\">[[File:Character Samson icon.png|link=Samson|class=tb-icon tb-link-icon|alt=|]]</span>[[:Samson|Samson]]"
   },
   {
     "_pageName": "Achievements/Rebirth 1",
@@ -2777,7 +2777,7 @@
     "id": "57",
     "name": "The Polaroid",
     "notes": "",
-    "requirements": "Defeat <span class=\"tb-icon tb-link-icon\" >[[File:Boss Isaac ingame.png|link=Isaac (Boss)|Isaac|alt=]]</span>[[:Isaac (Boss)|Isaac]] 5 times"
+    "requirements": "Defeat [[File:Boss Isaac ingame.png|link=Isaac (Boss)|class=tb-icon tb-link-icon|alt=|Isaac]][[:Isaac (Boss)|Isaac]] 5 times"
   },
   {
     "_pageName": "Achievements/Rebirth 1",
@@ -2797,7 +2797,7 @@
     "id": "59",
     "name": "Blue Candle",
     "notes": "",
-    "requirements": "Donate 900 coins to the <span class=\"tb-icon tb-link-icon\" >[[File:Donation Machine.png|link=Machines#Donation Machine|Donation Machine|alt=]]</span>[[:Machines#Donation Machine|Donation Machine]]"
+    "requirements": "Donate 900 coins to the [[File:Donation Machine.png|link=Donation Machine|class=tb-icon tb-link-icon|alt=|Donation Machine]][[:Donation Machine|Donation Machine]]"
   },
   {
     "_pageName": "Achievements/Rebirth 1",
@@ -2807,7 +2807,7 @@
     "id": "6",
     "name": "A Cube of Meat",
     "notes": "",
-    "requirements": "Defeat <span class=\"tb-icon tb-link-icon\" >[[File:Boss Mom ingame.png|link=Mom|Mom|alt=]]</span>[[:Mom|Mom]]"
+    "requirements": "Defeat [[File:Boss Mom ingame.png|link=Mom|class=tb-icon tb-link-icon|alt=|Mom]][[:Mom|Mom]]"
   },
   {
     "_pageName": "Achievements/Rebirth 1",
@@ -2867,7 +2867,7 @@
     "id": "65",
     "name": "Guppy's Hairball",
     "notes": "",
-    "requirements": "Become <span class=\"tooltip\" data-tooltip=\"tf%2Ftooltip%7CGuppy\" data-tooltip-dlc=\"31\"><span class=\"tb-icon tb-link-icon\" >[[File:Transformation Guppy appearance.png|link=Guppy|Guppy|alt=]]</span>[[:Guppy|Guppy]]</span>"
+    "requirements": "Become <span class=\"tooltip\" data-tooltip=\"tf%2Ftooltip%7CGuppy\" data-tooltip-dlc=\"31\">[[File:Transformation Guppy appearance.png|link=Guppy|class=tb-icon tb-link-icon|alt=|Guppy]][[:Guppy|Guppy]]</span>"
   },
   {
     "_pageName": "Achievements/Rebirth 1",
@@ -2897,7 +2897,7 @@
     "id": "68",
     "name": "Something Icky",
     "notes": "",
-    "requirements": "Defeat <span class=\"tb-icon tb-link-icon\" >[[File:Boss Isaac ingame.png|link=Isaac (Boss)|Isaac|alt=]]</span>[[:Isaac (Boss)|Isaac]] 10 times"
+    "requirements": "Defeat [[File:Boss Isaac ingame.png|link=Isaac (Boss)|class=tb-icon tb-link-icon|alt=|Isaac]][[:Isaac (Boss)|Isaac]] 10 times"
   },
   {
     "_pageName": "Achievements/Rebirth 1",
@@ -2907,7 +2907,7 @@
     "id": "69",
     "name": "!Platinum God!",
     "notes": "",
-    "requirements": "[[collection page|Collect]] all non-DLC items, and unlock all non-DLC secrets and [[ending]]s (minus <span class=\"tb-icon tb-link-icon\" style=\"--tb-icon-size: 1.4em\">[[File:Character The Lost icon.png|link=The Lost||alt=]]</span>[[:The Lost|The Lost]] and his 6 unlockable items)"
+    "requirements": "[[collection page|Collect]] all non-DLC items, and unlock all non-DLC secrets and [[ending]]s (minus <span style=\"--tb-icon-size: 1.4em\">[[File:Character The Lost icon.png|link=The Lost|class=tb-icon tb-link-icon|alt=|]]</span>[[:The Lost|The Lost]] and his 6 unlockable items)"
   },
   {
     "_pageName": "Achievements/Rebirth 1",
@@ -2927,7 +2927,7 @@
     "id": "70",
     "name": "Isaac's Head",
     "notes": "",
-    "requirements": "Complete the <span class=\"tb-icon tb-link-icon\" >[[File:Boss Rush Icon.png|link=Boss Rush||alt=]]</span>[[:Boss Rush|Boss Rush]] as <span class=\"tb-icon tb-link-icon\" style=\"--tb-icon-size: 1.4em\">[[File:Character Isaac icon.png|link=Isaac||alt=]]</span>[[:Isaac|Isaac]]"
+    "requirements": "Complete the [[File:Boss Rush Icon.png|link=Boss Rush|class=tb-icon tb-link-icon|alt=|]][[:Boss Rush|Boss Rush]] as <span style=\"--tb-icon-size: 1.4em\">[[File:Character Isaac icon.png|link=Isaac|class=tb-icon tb-link-icon|alt=|]]</span>[[:Isaac|Isaac]]"
   },
   {
     "_pageName": "Achievements/Rebirth 1",
@@ -2937,7 +2937,7 @@
     "id": "71",
     "name": "Maggy's Faith",
     "notes": "",
-    "requirements": "Defeat <span class=\"tb-icon tb-link-icon\" >[[File:Boss The Lamb ingame.png|link=The Lamb|The Lamb|alt=]]</span>[[:The Lamb|The Lamb]] as <span class=\"tb-icon tb-link-icon\" style=\"--tb-icon-size: 1.4em\">[[File:Character Magdalene icon.png|link=Magdalene||alt=]]</span>[[:Magdalene|Magdalene]]"
+    "requirements": "Defeat [[File:Boss The Lamb ingame.png|link=The Lamb|class=tb-icon tb-link-icon|alt=|The Lamb]][[:The Lamb|The Lamb]] as <span style=\"--tb-icon-size: 1.4em\">[[File:Character Magdalene icon.png|link=Magdalene|class=tb-icon tb-link-icon|alt=|]]</span>[[:Magdalene|Magdalene]]"
   },
   {
     "_pageName": "Achievements/Rebirth 1",
@@ -2947,7 +2947,7 @@
     "id": "72",
     "name": "Judas' Tongue",
     "notes": "",
-    "requirements": "Defeat <span class=\"tb-icon tb-link-icon\" >[[File:Boss Satan ingame.png|link=Satan|Satan|alt=]]</span>[[:Satan|Satan]] as <span class=\"tb-icon tb-link-icon\" style=\"--tb-icon-size: 1.4em\">[[File:Character Judas icon.png|link=Judas||alt=]]</span>[[:Judas|Judas]]"
+    "requirements": "Defeat [[File:Boss Satan ingame.png|link=Satan|class=tb-icon tb-link-icon|alt=|Satan]][[:Satan|Satan]] as <span style=\"--tb-icon-size: 1.4em\">[[File:Character Judas icon.png|link=Judas|class=tb-icon tb-link-icon|alt=|]]</span>[[:Judas|Judas]]"
   },
   {
     "_pageName": "Achievements/Rebirth 1",
@@ -2957,7 +2957,7 @@
     "id": "73",
     "name": "???'s Soul",
     "notes": "",
-    "requirements": "Defeat <span class=\"tb-icon tb-link-icon\" >[[File:Boss The Lamb ingame.png|link=The Lamb|The Lamb|alt=]]</span>[[:The Lamb|The Lamb]] as <span class=\"tb-icon tb-link-icon\" style=\"--tb-icon-size: 1.4em\">[[File:Character ??? icon.png|link=??? (Character)|???|alt=]]</span>[[:??? (Character)|???]]"
+    "requirements": "Defeat [[File:Boss The Lamb ingame.png|link=The Lamb|class=tb-icon tb-link-icon|alt=|The Lamb]][[:The Lamb|The Lamb]] as <span style=\"--tb-icon-size: 1.4em\">[[File:Character ??? icon.png|link=??? (Character)|class=tb-icon tb-link-icon|alt=|???]]</span>[[:??? (Character)|???]]"
   },
   {
     "_pageName": "Achievements/Rebirth 1",
@@ -2967,7 +2967,7 @@
     "id": "74",
     "name": "Samson's Lock",
     "notes": "",
-    "requirements": "Defeat <span class=\"tb-icon tb-link-icon\" >[[File:Boss The Lamb ingame.png|link=The Lamb|The Lamb|alt=]]</span>[[:The Lamb|The Lamb]] as <span class=\"tb-icon tb-link-icon\" style=\"--tb-icon-size: 1.4em\">[[File:Character Samson icon.png|link=Samson||alt=]]</span>[[:Samson|Samson]]"
+    "requirements": "Defeat [[File:Boss The Lamb ingame.png|link=The Lamb|class=tb-icon tb-link-icon|alt=|The Lamb]][[:The Lamb|The Lamb]] as <span style=\"--tb-icon-size: 1.4em\">[[File:Character Samson icon.png|link=Samson|class=tb-icon tb-link-icon|alt=|]]</span>[[:Samson|Samson]]"
   },
   {
     "_pageName": "Achievements/Rebirth 1",
@@ -2977,7 +2977,7 @@
     "id": "75",
     "name": "Cain's Eye",
     "notes": "",
-    "requirements": "Defeat <span class=\"tb-icon tb-link-icon\" >[[File:Boss ??? ingame.png|link=??? (Boss)|???|alt=]]</span>[[:??? (Boss)|???]] as <span class=\"tb-icon tb-link-icon\" style=\"--tb-icon-size: 1.4em\">[[File:Character Cain icon.png|link=Cain||alt=]]</span>[[:Cain|Cain]]"
+    "requirements": "Defeat [[File:Boss ??? ingame.png|link=??? (Boss)|class=tb-icon tb-link-icon|alt=|???]][[:??? (Boss)|???]] as <span style=\"--tb-icon-size: 1.4em\">[[File:Character Cain icon.png|link=Cain|class=tb-icon tb-link-icon|alt=|]]</span>[[:Cain|Cain]]"
   },
   {
     "_pageName": "Achievements/Rebirth 1",
@@ -2987,7 +2987,7 @@
     "id": "76",
     "name": "Eve's Bird Foot",
     "notes": "",
-    "requirements": "Defeat <span class=\"tb-icon tb-link-icon\" >[[File:Boss Isaac ingame.png|link=Isaac (Boss)|Isaac|alt=]]</span>[[:Isaac (Boss)|Isaac]] as <span class=\"tb-icon tb-link-icon\" style=\"--tb-icon-size: 1.4em\">[[File:Character Eve icon.png|link=Eve||alt=]]</span>[[:Eve|Eve]]"
+    "requirements": "Defeat [[File:Boss Isaac ingame.png|link=Isaac (Boss)|class=tb-icon tb-link-icon|alt=|Isaac]][[:Isaac (Boss)|Isaac]] as <span style=\"--tb-icon-size: 1.4em\">[[File:Character Eve icon.png|link=Eve|class=tb-icon tb-link-icon|alt=|]]</span>[[:Eve|Eve]]"
   },
   {
     "_pageName": "Achievements/Rebirth 1",
@@ -2997,7 +2997,7 @@
     "id": "77",
     "name": "The Left Hand",
     "notes": "",
-    "requirements": "Defeat <span class=\"tb-icon tb-link-icon\" >[[File:Ultra Pride.png|link=Ultra Pride|Ultra Pride|alt=]]</span>[[:Ultra Pride|Ultra Pride]] as any character, or <span class=\"tb-icon tb-link-icon\" >[[File:Boss ??? ingame.png|link=??? (Boss)|???|alt=]]</span>[[:??? (Boss)|???]] as <span class=\"tb-icon tb-link-icon\" style=\"--tb-icon-size: 1.4em\">[[File:Character Judas icon.png|link=Judas||alt=]]</span>[[:Judas|Judas]]"
+    "requirements": "Defeat [[File:Ultra Pride.png|link=Ultra Pride|class=tb-icon tb-link-icon|alt=|Ultra Pride]][[:Ultra Pride|Ultra Pride]] as any character, or [[File:Boss ??? ingame.png|link=??? (Boss)|class=tb-icon tb-link-icon|alt=|???]][[:??? (Boss)|???]] as <span style=\"--tb-icon-size: 1.4em\">[[File:Character Judas icon.png|link=Judas|class=tb-icon tb-link-icon|alt=|]]</span>[[:Judas|Judas]]"
   },
   {
     "_pageName": "Achievements/Rebirth 1",
@@ -3007,7 +3007,7 @@
     "id": "78",
     "name": "The Negative",
     "notes": "",
-    "requirements": "Defeat <span class=\"tb-icon tb-link-icon\" >[[File:Boss Satan ingame.png|link=Satan|Satan|alt=]]</span>[[:Satan|Satan]] 5 times"
+    "requirements": "Defeat [[File:Boss Satan ingame.png|link=Satan|class=tb-icon tb-link-icon|alt=|Satan]][[:Satan|Satan]] 5 times"
   },
   {
     "_pageName": "Achievements/Rebirth 1",
@@ -3027,7 +3027,7 @@
     "id": "8",
     "name": "A Noose",
     "notes": "",
-    "requirements": "Defeat <span class=\"tb-icon tb-link-icon\" >[[File:Boss Mom's Heart ingame.png|link=Mom's Heart|Mom's Heart|alt=]]</span>[[:Mom's Heart|Mom's Heart]] 3 times"
+    "requirements": "Defeat [[File:Boss Mom's Heart ingame.png|link=Mom's Heart|class=tb-icon tb-link-icon|alt=|Mom's Heart]][[:Mom's Heart|Mom's Heart]] 3 times"
   },
   {
     "_pageName": "Achievements/Rebirth 1",
@@ -3057,7 +3057,7 @@
     "id": "82",
     "name": "The Lost",
     "notes": "",
-    "requirements": "[[File:Dlc na indicator.png|link=|class=dlc cf-tag cf-val-1 |alt=(in Rebirth)|Removed in Afterbirth]] [[The Lost#Unlocking The Lost in Rebirth|It's complicated]]<br>[[File:Dlc a indicator.png|link=|class=dlc cf-tag cf-val-30 |alt=(except in Rebirth)|Added in Afterbirth]] Die in a <span class=\"tb-icon tb-link-icon\" >[[File:Sacrifice Room Icon.png|link=Sacrifice Room||alt=]]</span>[[:Sacrifice Room|Sacrifice Room]] while holding <span class=\"tooltip\" data-tooltip=\"t%2Ftooltip%7CMissing+Poster\" data-tooltip-dlc=\"31\"><span class=\"tb-icon tb-link-icon\" style=\"--tb-icon-size: 1.4em\">[[File:Trinket Missing Poster icon.png|link=Missing Poster|Missing Poster|alt=]]</span>[[:Missing Poster|Missing Poster]]</span>"
+    "requirements": "[[File:Dlc na indicator.png|link=|class=dlc cf-tag cf-val-1 |alt=(in Rebirth)|Removed in Afterbirth]] [[The Lost#Unlocking The Lost in Rebirth|It's complicated]]<br>[[File:Dlc a indicator.png|link=|class=dlc cf-tag cf-val-30 |alt=(except in Rebirth)|Added in Afterbirth]] Die in a [[File:Sacrifice Room Icon.png|link=Sacrifice Room|class=tb-icon tb-link-icon|alt=|]][[:Sacrifice Room|Sacrifice Room]] while holding <span class=\"tooltip\" data-tooltip=\"t%2Ftooltip%7CMissing+Poster\" data-tooltip-dlc=\"31\"><span style=\"--tb-icon-size: 1.4em\">[[File:Trinket Missing Poster icon.png|link=Missing Poster|class=tb-icon tb-link-icon|alt=|Missing Poster]]</span>[[:Missing Poster|Missing Poster]]</span>"
   },
   {
     "_pageName": "Achievements/Rebirth 1",
@@ -3097,7 +3097,7 @@
     "id": "86",
     "name": "The Cellar",
     "notes": "[[File:Dlc r indicator.png|link=|class=dlc cf-tag cf-val-24 |alt=(in Repentance and Repentance+)|Added in Repentance]] Except [[Baby Plum]]<br>Not restricted to beating bosses ''in'' The Basement",
-    "requirements": "Beat all <span class=\"tb-icon tb-link-icon\" >[[File:Stage Basement icon.png|link=Basement|Basement|alt=]]</span>[[:Basement|Basement]] bosses"
+    "requirements": "Beat all [[File:Stage Basement icon.png|link=Basement|class=tb-icon tb-link-icon|alt=|Basement]][[:Basement|Basement]] bosses"
   },
   {
     "_pageName": "Achievements/Rebirth 1",
@@ -3107,7 +3107,7 @@
     "id": "87",
     "name": "The Catacombs",
     "notes": "[[File:Dlc r indicator.png|link=|class=dlc cf-tag cf-val-24 |alt=(in Repentance and Repentance+)|Added in Repentance]] Except [[Bumbino]]<br>Not restricted to beating bosses ''in'' The Caves",
-    "requirements": "Beat all <span class=\"tb-icon tb-link-icon\" >[[File:Stage Caves icon.png|link=Caves|Caves|alt=]]</span>[[:Caves|Caves]] bosses"
+    "requirements": "Beat all [[File:Stage Caves icon.png|link=Caves|class=tb-icon tb-link-icon|alt=|Caves]][[:Caves|Caves]] bosses"
   },
   {
     "_pageName": "Achievements/Rebirth 1",
@@ -3117,7 +3117,7 @@
     "id": "88",
     "name": "The Necropolis",
     "notes": "[[File:Dlc r indicator.png|link=|class=dlc cf-tag cf-val-24 |alt=(in Repentance and Repentance+)|Added in Repentance]] Except [[Reap Creep]]<br>Not restricted to beating bosses ''in'' The Depths",
-    "requirements": "Beat all <span class=\"tb-icon tb-link-icon\" >[[File:Stage Depths icon.png|link=Depths|Depths|alt=]]</span>[[:Depths|Depths]] bosses"
+    "requirements": "Beat all [[File:Stage Depths icon.png|link=Depths|class=tb-icon tb-link-icon|alt=|Depths]][[:Depths|Depths]] bosses"
   },
   {
     "_pageName": "Achievements/Rebirth 1",
@@ -3137,7 +3137,7 @@
     "id": "9",
     "name": "The Nail",
     "notes": "",
-    "requirements": "Complete the <span class=\"tb-icon tb-link-icon\" >[[File:Boss Rush Icon.png|link=Boss Rush||alt=]]</span>[[:Boss Rush|Boss Rush]] as <span class=\"tb-icon tb-link-icon\" style=\"--tb-icon-size: 1.4em\">[[File:Character Azazel icon.png|link=Azazel||alt=]]</span>[[:Azazel|Azazel]]"
+    "requirements": "Complete the [[File:Boss Rush Icon.png|link=Boss Rush|class=tb-icon tb-link-icon|alt=|]][[:Boss Rush|Boss Rush]] as <span style=\"--tb-icon-size: 1.4em\">[[File:Character Azazel icon.png|link=Azazel|class=tb-icon tb-link-icon|alt=|]]</span>[[:Azazel|Azazel]]"
   },
   {
     "_pageName": "Achievements/Rebirth 1",
@@ -3807,7 +3807,7 @@
     "id": "165",
     "name": "The Family Man",
     "notes": "",
-    "requirements": "Pick up both Key Pieces from the [[Angel]]s in one run"
+    "requirements": "Pick up both Key Pieces from the [[Angel]]s in one run and defeat [[File:Boss Mom's Heart ingame.png|link=Mom's Heart|class=tb-icon tb-link-icon|alt=|Mom's Heart]][[:Mom's Heart|Mom's Heart]] 11 times"
   },
   {
     "_pageName": "Achievements/Rebirth 2",

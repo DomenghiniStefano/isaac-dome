@@ -2,96 +2,134 @@
   "schemaVersion": 2,
   "aliases": {},
   "verdicts": {
-    "concept:'stars' item tag": {
+    "article:'stars' item tag": {
       "notAPrerequisite": true
     },
-    "concept:7 Deadly Sins": {
+    "article:7 Deadly Sins": {
       "alwaysAvailable": true
     },
-    "concept:Angel Room items": {
+    "article:Angel Room items": {
       "notAPrerequisite": true
     },
-    "concept:Angel Rooms items": {
+    "article:Angel Rooms items": {
       "notAPrerequisite": true
     },
-    "concept:Bestiary": {
+    "article:Bestiary": {
       "unknown": {
         "reason": "filling the bestiary is a collection goal, not one achievement"
       }
     },
-    "concept:Blood Donation Machine": {
-      "alwaysAvailable": true
-    },
-    "concept:Blue Flies": {
+    "article:Blue Flies": {
       "notAPrerequisite": true
     },
-    "concept:Cards and Runes": {
+    "article:Cards and Runes": {
       "notAPrerequisite": true
     },
-    "concept:Chapter 1": {
+    "article:Chapter 1": {
       "alwaysAvailable": true
     },
-    "concept:Chapter 2": {
+    "article:Chapter 2": {
       "alwaysAvailable": true
     },
-    "concept:Chapter 3": {
+    "article:Chapter 3": {
       "alwaysAvailable": true
     },
-    "concept:Chapter 4": {
+    "article:Chapter 4": {
       "alwaysAvailable": true
     },
-    "concept:Chapter 6": {
+    "article:Chapter 6": {
       "alwaysAvailable": true
     },
-    "concept:Character": {
+    "article:Character": {
       "notAPrerequisite": true
     },
-    "concept:Coin": {
-      "notAPrerequisite": true
-    },
-    "concept:Collect": {
+    "article:Collect": {
       "unknown": {
         "reason": "'collect all items' is a set, and the model can't say how many"
       }
     },
-    "concept:Completion Mark": {
+    "article:Completion Mark": {
       "notAPrerequisite": true
     },
-    "concept:Daily Challenge": {
+    "article:Daily Challenge": {
       "alwaysAvailable": true
     },
-    "concept:Deals with the Devil": {
+    "article:Deals with the Devil": {
       "alwaysAvailable": true
     },
-    "concept:Donation Machine": {
-      "alwaysAvailable": true
-    },
-    "concept:Greed Donation Machine": {
-      "alwaysAvailable": true
-    },
-    "concept:Gulp!": {
+    "article:Gulp!": {
       "notAPrerequisite": true
     },
-    "concept:Harbinger": {
+    "article:Harbinger": {
       "alwaysAvailable": true
     },
-    "concept:Hard mode": {
+    "article:Hard mode": {
       "alwaysAvailable": true
     },
-    "concept:Horf!": {
+    "article:Horf!": {
+      "notAPrerequisite": true
+    },
+    "article:Tinted Rock": {
+      "notAPrerequisite": true
+    },
+    "article:Victory Lap": {
+      "alwaysAvailable": true
+    },
+    "article:bed": {
+      "notAPrerequisite": true
+    },
+    "article:character": {
+      "notAPrerequisite": true
+    },
+    "article:collect": {
+      "unknown": {
+        "reason": "'collect all items' is a set, and the model can't say how many"
+      }
+    },
+    "article:collection": {
+      "unknown": {
+        "reason": "the collection page is a set, not one achievement"
+      }
+    },
+    "article:ending": {
+      "unknown": {
+        "reason": "'all endings' is a set, and the model can't say how many"
+      }
+    },
+    "article:familiar": {
+      "notAPrerequisite": true
+    },
+    "article:hard mode": {
+      "alwaysAvailable": true
+    },
+    "article:homing": {
+      "notAPrerequisite": true
+    },
+    "article:item": {
+      "notAPrerequisite": true
+    },
+    "article:items": {
+      "notAPrerequisite": true
+    },
+    "article:items from Devil Rooms": {
+      "notAPrerequisite": true
+    },
+    "article:pills": {
+      "notAPrerequisite": true
+    },
+    "article:rock": {
+      "notAPrerequisite": true
+    },
+    "article:tainted character": {
+      "unknown": {
+        "reason": "any of the 17 tainted, each behind its own achievement: a disjunction"
+      }
+    },
+    "article:technology": {
       "notAPrerequisite": true
     },
     "concept:I - The Magician": {
       "notAPrerequisite": true
-    },
-    "concept:Slot Machine": {
-      "alwaysAvailable": true
-    },
-    "concept:Tinted Rock": {
-      "notAPrerequisite": true
-    },
-    "concept:Victory Lap": {
-      "alwaysAvailable": true
     },
     "concept:XIII - Death": {
       "notAPrerequisite": true
@@ -100,65 +138,6 @@
       "notAPrerequisite": true
     },
     "concept:XV - The Devil?": {
-      "notAPrerequisite": true
-    },
-    "concept:Yes Mother? items": {
-      "notAPrerequisite": true
-    },
-    "concept:bed": {
-      "notAPrerequisite": true
-    },
-    "concept:character": {
-      "notAPrerequisite": true
-    },
-    "concept:collect": {
-      "unknown": {
-        "reason": "'collect all items' is a set, and the model can't say how many"
-      }
-    },
-    "concept:collection": {
-      "unknown": {
-        "reason": "the collection page is a set, not one achievement"
-      }
-    },
-    "concept:ending": {
-      "unknown": {
-        "reason": "'all endings' is a set, and the model can't say how many"
-      }
-    },
-    "concept:familiar": {
-      "notAPrerequisite": true
-    },
-    "concept:hard mode": {
-      "alwaysAvailable": true
-    },
-    "concept:heart": {
-      "notAPrerequisite": true
-    },
-    "concept:homing": {
-      "notAPrerequisite": true
-    },
-    "concept:item": {
-      "notAPrerequisite": true
-    },
-    "concept:items": {
-      "notAPrerequisite": true
-    },
-    "concept:items from Devil Rooms": {
-      "notAPrerequisite": true
-    },
-    "concept:pills": {
-      "notAPrerequisite": true
-    },
-    "concept:rock": {
-      "notAPrerequisite": true
-    },
-    "concept:tainted character": {
-      "unknown": {
-        "reason": "any of the 17 tainted, each behind its own achievement: a disjunction"
-      }
-    },
-    "concept:technology": {
       "notAPrerequisite": true
     },
     "entity:???": {
@@ -173,10 +152,16 @@
     "entity:Battery Bum": {
       "notAPrerequisite": true
     },
+    "entity:Blood Donation Machine": {
+      "alwaysAvailable": true
+    },
     "entity:C.H.A.D.": {
       "behind": {
         "achievement": 17
       }
+    },
+    "entity:Coin": {
+      "notAPrerequisite": true
     },
     "entity:Delirium": {
       "progress": {
@@ -193,10 +178,16 @@
     "entity:Die": {
       "notAPrerequisite": true
     },
+    "entity:Donation Machine": {
+      "alwaysAvailable": true
+    },
     "entity:Gish": {
       "behind": {
         "achievement": 18
       }
+    },
+    "entity:Greed Donation Machine": {
+      "alwaysAvailable": true
     },
     "entity:Hell Game": {
       "notAPrerequisite": true
@@ -275,6 +266,9 @@
     "entity:Shopkeeper": {
       "alwaysAvailable": true
     },
+    "entity:Slot Machine": {
+      "alwaysAvailable": true
+    },
     "entity:Soul Heart": {
       "notAPrerequisite": true
     },
@@ -316,6 +310,9 @@
       "alwaysAvailable": true
     },
     "entity:dying": {
+      "notAPrerequisite": true
+    },
+    "entity:heart": {
       "notAPrerequisite": true
     },
     "entity:poops": {

@@ -166,6 +166,7 @@ const canAdd = computed(
         >
           <WikiInfobox
             :entry="entry"
+            :target="target"
             :can-open="wiki.hasPage"
             @navigate="tabs.openPage"
           />

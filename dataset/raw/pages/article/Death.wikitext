@@ -1,0 +1,58 @@
+{{header player effects}}
+{{disambig msg|the conditions that will kill Isaac|the Death tarot card|XIII - Death|the boss|Death (Boss)}}
+
+'''Death''' occurs when Isaac runs out of [[health]]. There are multiple ways to cause this.
+* Damage from [[monster]]s
+* Damage from [[boss]]es
+* Damage from [[obstacle]]s
+* Damage from [[bomb]]s
+* Damage from a {{Machine|Blood Donation Machine}}
+* Damage from {{R|Curse Room}}s
+* Trading your last bit of [[health]] when making a [[deal with the Devil]] unless that item provides any hearts in return, such as the {{i|Ceremonial Robes}}
+* Using {{i|The Bible}} against [[Satan]]
+* Using the {{p|Suicide King}} card
+* ... and more.
+As long as Isaac has [[health]] of any type ([[Red Heart|Red]], [[Black Heart|Black]], [[Soul Heart|Soul]], [[Bone Heart|Bone]], [[Health#Rotten Hearts|Rotten]], or [[Health#Coin Hearts|Coin]] hearts) left, he will not be killed.
+
+== Extra Lives ==
+Typically, when Isaac dies, [[Isaac's last will|the game over screen]] appears; however, there are certain [[revival item]]s, [[character]]s, and abilities that can resurrect Isaac after death. It is possible to obtain extra lives throughout a run by picking up various items. When Isaac dies with one (on most occasions), he will be revived in the previous [[room]] under the new life. Below is a list of these items and special death / extra life conditions that they bestow; take note that reviving as a different character than your current one gives any further [[Completion Marks]] to the new one, and the transformation may change stats if the new character has different base values. The order of revives is independent of order of item pickup, determined by the list below from highest to lowest placing:
+
+=== {{P|Soul of Lazarus}} ===
+When a '''Soul of Lazarus''' is used, Isaac immediately dies and is revived in the same room at half a heart and given some invincibility time. If Isaac dies while holding the stone, it is automatically used upon taking the fatal hit, acting as another life (with the same effect as if it was used manually). If used manually, it does not count as taking damage, so any positive or negative effects associated with taking damage are not triggered.
+
+=== {{i|1up!}} ===
+Isaac will be revived with full Red [[Heart container]]s. If he lacks any, he will revive with one Half [[Soul Heart]], unless he is a character that can't use Red hearts, in which case he will respawn with 3 of their respective heart type (Soul Hearts for {{C|???}}, {{C|The Soul}}, {{C|Tainted ???}}, {{C|Tainted Soul}}, and {{C|Tainted Bethany}}, Black Hearts for {{C|Black Judas|r}} and {{C|Tainted Judas}}, and Bone Hearts for {{C|The Forgotten}}).
+
+=== {{c|Lazarus}} and {{i|Lazarus' Rags}} ===
+* {{dlc|nr}} Upon death while holding '''Lazarus' Rags''' or playing as '''Lazarus''', the player will be revived in the same room as {{C|Lazarus Risen}} with 1 Red Heart container.
+* {{dlc|r}} Upon death while holding '''Lazarus' Rags''' or playing as '''Lazarus''', the player will be revived in the same room as {{C|Lazarus Risen}} with one less Red Heart container (but no less than one).
+
+=== {{i|Dead Cat}} ===
+'''Dead Cat''' grants Isaac nine extra lives. Isaac will be revived with one Red Heart container unless playing as {{C|???}} or {{C|Tainted Judas}}, where he will be revived with one soul heart/black heart.
+
+=== {{i|Inner Child}} ===
+Isaac respawns in the same room with half a heart left, a massive size down, and +0.2 speed. If Isaac has any heart containers, he will respawn with half a heart container filled; otherwise, he will respawn with half a soul heart.
+
+=== {{i|Guppy's Collar}} ===
+'''Guppy's Collar''' grants Isaac a 50% chance to be revived with one Red Heart container half-filled. If he lacks any, he will be revived at half a Soul Heart instead. If the collar fails to activate, any other items after '''Guppy's Collar''' will be checked. The revives from Guppy's Collar are seeded per death.
+
+=== {{i|Ankh}} ===
+Isaac revives as {{c|???}} with 3 Soul Hearts.
+
+=== {{t|Broken Ankh}} ===
+'''Broken Ankh''' has a 2/9 chance to resurrect Isaac as ??? with 3 Soul Hearts. The revives from '''Broken Ankh''' are seeded per death.
+
+=== {{i|Judas' Shadow}} ===
+'''Judas' Shadow''' revives Isaac as {{C|Black Judas}} with 2 [[Black Heart]]s.
+
+=== {{t|Missing Poster|a}} ===
+Isaac will be revived as {{C|The Lost}} and '''Missing Poster''' will be removed. If already playing as The Lost or {{C|Tainted Lost}}, Isaac will respawn as normal in the previous room.
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | The Scissors, The Lost, Lil Spewer }}
+
+== Bugs ==
+{{bug|Quitting the game before the death animation is completed does not allow the player to continue the run, but does not add a death on the stats screen.}}
+
+{{nav|fr=Mort|zh=死亡骑士}}
+[[Category:Mechanics]]

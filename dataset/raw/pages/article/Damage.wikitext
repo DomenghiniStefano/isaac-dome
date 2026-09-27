@@ -1,0 +1,359 @@
+{{header attributes}}
+
+[[file:Attribute damage icon.png|50px]]
+'''Damage''' refers to the amount of damage each tear deals to [[enemy|enemies]], and is represented by a sword. As damage increases, the size of the tears increases as well. However, tear size is not always a direct indication of how much damage tears will do; for example, items like {{i|Dead Onion}} and {{I|Tropicamide}} increase tear size without increasing damage. Tears will grow and shrink when damage changes, but tears of a certain size do not have a specific damage value, and two tears of the same size (in two different runs) are likely to have different damage values.
+
+== Effective Damage ==
+The formula for damage is: <math display="block">\mathit{EffectiveDamage} = (\mathit{CharBaseDmg} \times \sqrt{\mathit{TotalDmgUps} \times 1.2 + 1} + \mathit{FlatDmgUps}) \times \mathit{Multipliers}</math>
+
+where:
+* CharBaseDmg = The character's base damage multiplied by their multiplier,
+* TotalDmgUps = the total of all regular damage ups collected (not including special exceptions or damage multipliers),
+* FlatDmgUps = the total of all damage ups that are excluded from the above (for example, {{t|Curved Horn}} or {{i|Ipecac}}), and
+* EffectiveDmg = the approximate damage that can be expected per tear, or per 'tick' when using {{i|Brimstone}} or {{i|Technology 2}}.
+
+This formula makes most damage upgrades less potent the more that Isaac has. For example, a {{i|Pentagram}} (+1 Damage) on Isaac would make his total damage 3.5 × (1 × 1.2 + 1)^0.5 = 3.5 × 1.48 = 5.19. Another Pentagram (+1+1) increases this to 6.45 (a 1.26 increase instead of a 1.69 increase). The higher a character's base damage, the more effective damage ups will be for that character. Flat damage modifiers and special adjustments like {{i|Polyphemus}} or {{i|Sacred Heart}} happen after the main formula.
+
+=== Character Modifier ===
+The ''character base damage'' is defined by a base number and a multiplier.
+* {{C|Eve}}<sup>†</sup> and {{C|Tainted Magdalene}}: 0.75 × 3.50 = 2.625
+* {{C|Jacob}}<sup>‡</sup>: 1.00 × 3.50 - 0.75 = 2.75
+* {{C|Isaac}}, {{C|Magdalene}}, {{C|Samson}}, {{C|Lazarus}}, {{C|Lilith}}, {{C|The Lost}}, {{C|Apollyon}}, {{C|The Soul}}, {{C|Bethany}}, {{C|Tainted Isaac}}, {{C|Tainted Judas}}, {{C|Tainted ???}}, {{C|Tainted Samson}}, {{C|Tainted Lazarus}}, {{C|Tainted Lilith}}, {{C|Tainted Keeper}}, {{C|Tainted Apollyon}}, {{C|Tainted Bethany}}, and {{C|Tainted Jacob}}: 1.00 × 3.50 = 3.50
+* {{C|Eden}} and {{C|Tainted Eden}}: 1.00 x 3.50 ± 1.0 = from 2.50 to 4.50
+* {{C|???}}: 1.05 × 3.50 = 3.675
+* {{C|Esau}}<sup>‡</sup>: 1.00 × 3.50 + 0.25 = 3.75
+* {{C|Keeper}}, {{C|Cain}}, {{C|Tainted Cain}}, {{C|Tainted Eve}}, and {{dlc|nr}}{{C|Lazarus Risen}}: 1.20 × 3.50 = 4.20
+* {{C|Judas}}: 1.35 × 3.50 = 4.725
+* {{C|Azazel}}, {{C|The Forgotten}}, {{C|Tainted Azazel}}, {{C|Tainted Forgotten}}, and {{C|Dead Tainted Lazarus}}: 1.50 × 3.50 = 5.25
+* {{dlc+|r}}{{C|Lazarus Risen}}: 1.40 × 3.50 = 4.90 (+0.5 damage after each death, 6.20 effective damage on the first death){{dlc-}}
+* {{C|Tainted Lost}}: 1.30 × 3.50 = 4.55
+* {{C|Black Judas}}: 2 × 3.50 = 7.00
+
+<sup>†</sup>: {{I|Whore of Babylon}} has the unique effect of increasing Eve's damage modifier from 0.75 to 1.00 when active. This does not apply to other characters, however.<br/>
+<sup>‡</sup>: Jacob and Esau have -0.75 and +0.25 flat damage, respectively: their base damage, as far as the damage formula is considered, is still 3.5 with a 1.0 multiplier.
+
+=== Damage Multipliers ===
+Some items multiply damage rather than simply adding to it. Damage multipliers (not to be confused with the aforementioned character-inherent base multiplier) do not simply multiply the character's damage once; the damage stat is constantly recalculated and the damage multipliers are multiplied with the end result. This means that if a character starts with 3.50 damage and gets a 2× multiplier, their effective damage will be 3.5×2 = 7.00. If an item that grants +1 damage is picked up, the character's effective damage will be 3.5×(1×1.2+1)^0.5×2 = 3.5×(2.2)^0.5×2 = 3.5×1.48×2 = 10.38, and not 7.00 + 1.
+
+Most damage multipliers stack. For example, {{Dlc|nr}}{{i|Proptosis}} and {{i|Eve's Mascara}} both provide a 2× multiplier; picking up both will give a total multiplier of 4×. The exception to this is the 1.5× damage multipliers provided by {{i|Cricket's Head}}, {{i|Magic Mushroom}}, and the combination of {{i|Blood of the Martyr}} and {{i|The Book of Belial}}. These multipliers do not stack; for example, picking up both Cricket's Head and Magic Mushroom will result in an overall 1.5× multiplier rather than the expected 2.25×. Some damage multipliers may be applied to certain flat damage increases, while others will not; see [[Damage#The order that damage multipliers and flat damage are applied|the section on the order in which damage multipliers and flat damage are applied]] for more information.
+
+=== Reverse Formula ===
+Consequently, the reverse formula to determine your damage bonuses from the displayed value is <math display="block">\mathit{Bonus} = \frac{1}{1.2}\left[\left(\frac{\mathit{EffectiveDamage}/\mathit{Multipliers} - \mathit{FlatDmgUps}}{\mathit{CharBaseDmg}}\right)^2 - 1\right]</math>
+''Multipliers'' is the product of all damage multipliers in effect.
+
+== Items that affect damage ==
+=== Activated Items ===
+{{collectible table | Berserk!, The Book of Belial, D100, D8, Dataminer, Esau Jr., Golden Razor, Mega Mush, The Nail, Potato Peeler, Razor Blade, Sulfur, Void }}
+
+=== Passive Items ===
+{{collectible table/header}}
+{{collectible rows | 20/20, 8 Inch Nails, Abaddon, Adrenaline, Almond Milk, Binge Eater, Blood Clot, Blood Oath, Blood of the Martyr, Bloody Lust, Brimstone, Bozo, Camo Undies, Candy Heart, Capricorn, Cat-o-nine-tails, Ceremonial Robes, Champion Belt, Charm of the Vampire, Chemical Peel, Consolation Prize, Cricket's Head, Crown Of Light, Dark Matter, Dead Eye, Death's List, Death's Touch, Dogma, Dog Tooth, Eve's Mascara, Experimental Treatment, Eye of the Occult, False PHD, Glass Eye, Godhead, Growth Hormones, Guillotine, Haemolacria, The Halo, Hallowed Ground, Heartbreak, Ipecac, Immaculate Heart, Iron Bar, Jesus Juice, Keeper's Sack, Libra, A Lump of Coal, Lusty Blood, Magic Mushroom, The Mark, Maw Of The Void, MEAT!, Missing No., Mom's Ring, Money Power, My Reflection, The Negative, Odd Mushroom (Large), Odd Mushroom (Thin), The Pact, The Peeper, Pentagram, Polyphemus, Proptosis, Purity, Redemption, Red Stew, Sacred Heart, Sanguine Bond, Sausage, The Small Rock, SMB Super Fan, Sol, Soul Locket, Soy Milk, Stapler, Star of Bethlehem, Steven, Stigmata, Stye, Succubus, Sulfuric Acid, Synthoil, Terra, Whore of Babylon, Zodiac }}
+{{collectible rows | Technology 2 | dlc = nr }}
+|}
+
+=== Trinkets ===
+{{trinket table | Azazel's Stump, Black Feather, Broken Syringe, Cracked Crown, Cracked Dice, Curved Horn, Dim Bulb, Liberty Cap, Red Patch, Samson's Lock, Vibrant Bulb }}
+
+=== Cards and Runes ===
+{{pickup table | III - The Empress, XI - Strength, XV - The Devil, Black Rune, Huge Growth, XIX - The Sun?, Soul of Judas, Soul of Samson }}
+
+== Items that multiply damage ==
+=== Positive Multiplier ===
+{{collectible table | Immaculate Heart, Cricket's Head, Crown Of Light, Dead Eye, Eve's Mascara, Hallowed Ground, Haemolacria, Magic Mushroom, Polyphemus, Sacred Heart, Star of Bethlehem, Succubus }}
+
+Character-specific damage multipliers:
+* {{c|Eve}} + {{i|Whore of Babylon}} - Raises her damage multiplier from 0.75× to 1× while the whore effect is active. (It does not have this effect for any other character.)
+* {{c|Judas}} + {{i|The Book of Belial}} + {{i|Birthright}} + {{i|Damocles}} - 1.4× damage multiplier while the Damocles effect is active.
+* Dying with {{i|Judas' Shadow}} transforms the player into {{c|Black Judas}}, who has a 2× damage multiplier, which is the highest character-based damage multiplier in the game.
+
+Synergy-specific damage multipliers:
+* {{i|The Book of Belial}} + {{i|Blood of the Martyr}} - 1.5× damage multiplier. (The multiplier is shared with {{i|Cricket's Head}} and {{i|Magic Mushroom}}.)
+* {{i|Brimstone}} + {{i|Brimstone}} - 1.2× damage multiplier.
+* {{i|Brimstone}} + {{i|Technology}} - 1.5× damage multiplier.
+
+=== Random Multiplier ===
+{{collectible table | D100, D8 }}
+
+=== Negative Multiplier ===
+{{collectible table/header}}
+{{collectible rows | 20/20, Almond Milk, Odd Mushroom (Thin), Soy Milk }}
+{{collectible rows | Technology 2 | dlc = nr}}
+|}
+* Note that {{i|Odd Mushroom (Thin)}} is not a "real" damage multiplier in that it only affects the increases from other items. For example, if you only had {{i|Eve's Mascara}} for a 2× damage multiplier and nothing else, then Odd Mushroom would only grant a flat -0.4 damage (because nothing would be multiplied by 0.9).
+
+=== {{dlc+|r}} The order that damage multipliers and flat damage are applied ===
+{| class="wikitable mw-collapsible"
+! Order !! Item !! Damage !! Notes
+|-
+| 0
+| Any normal damage up not listed below
+|
+|
+|-
+| 1
+| {{i|Odd Mushroom (Thin)}}
+| TotalDmgUps * 0.9
+| The normal damage ups below this don't get this multiplier
+|-
+| rowspan="12" | 2
+| {{i|Odd Mushroom (Thin)}}
+| -0.4
+|
+|-
+| {{t|Black Feather}}
+| +0.5 per evil item
+|
+|-
+| {{i|Camo Undies}}
+| +10.5
+| Fades quickly over time
+|-
+| {{i|Dark Arts}}
+| +1 per enemy/bullet
+| Fades over time
+|-
+| {{i|Golden Razor}}
+| +1.2
+|
+|-
+| {{c|Lazarus Risen}}
+| +0.5
+| Permanent damage up from reviving
+|-
+| {{i|Lusty Blood}}
+| rowspan="2" | +0.5 per enemy, up to 5 max
+| rowspan="2" | Both items share the same max
+|-
+| {{t|Samson's Lock}}
+|-
+| {{i|The Nail}}
+| +2
+|
+|-
+| {{i|Purity}}
+| +4
+| With damage aura
+|-
+| {{i|Razor Blade}}
+| +1.2
+|
+|-
+| {{t|Red Patch}}
+| +1.8
+|
+|-
+| rowspan="2" | 3
+| {{i|Polyphemus}}
+| flat +4
+| rowspan="2" | These don't stack with each other
+|-
+| {{i|Polyphemus}} + {{i|20/20}}/{{i|The Inner Eye}}/{{i|Mutant Spider}}
+| flat +5
+|-
+| rowspan="2" | 4
+| {{i|Polyphemus}}
+| ×2
+| This doesn't apply with {{i|20/20}}/{{i|The Inner Eye}}/{{i|Mutant Spider}}
+|-
+| Character multiplier
+| See above section
+|
+|-
+| rowspan="2" | 5
+| Character flat damage
+| See above section
+|
+|-
+| {{i|Esau Jr.}}
+| flat +2
+|
+|-
+| 6
+| {{i|Mega Mush}}
+| ×4
+|
+|-
+| rowspan="14" | 7
+| {{i|Berserk!}}
+| flat +3
+|
+|-
+| {{i|Bozo}}
+| flat +0.1
+|
+|-
+| {{i|Candy Heart}}
+| flat +0.1
+|
+|-
+| {{i|Consolation Prize}}
+| flat +1
+|
+|-
+| {{t|Curved Horn}}
+| flat +2
+|
+|-
+| {{i|Dataminer}}
+| flat +1 or -1
+|
+|-
+| {{i|Death's List}}
+| flat +1
+|
+|-
+| {{i|Experimental Treatment}}
+| flat +1 or -1
+|
+|-
+| {{c|The Forgotten}} + Mom's Knife
+| flat +4
+|
+|-
+| {{p|Huge Growth}}
+| flat +7
+|
+|-
+| {{i|Missing No.}}
+| flat +1 or -1
+|
+|-
+| {{i|Potato Peeler}}
+| flat +0.2
+|
+|-
+| {{i|Soul Locket}}
+| flat +0.2
+|
+|-
+| {{i|Void}}
+| flat +1
+|
+|-
+| rowspan="3" | 8
+| {{i|Brimstone}} + {{i|Brimstone}}
+| ×1.2
+| Doesn't apply to {{i|Haemolacria}} and overrides {{i|Brimstone}} + {{i|Technology}}
+|-
+| {{i|Crown Of Light}}
+| ×2
+|
+|-
+| {{i|Sacred Heart}}
+| ×2.3
+|
+|-
+| 9
+| {{i|Sacred Heart}}
+| flat +1
+|
+|-
+| 10
+| {{c|Judas}} + {{i|Birthright}} + {{i|Damocles}}
+| ×1.4
+|
+|-
+| 11
+| {{c|Judas}} + {{i|Birthright}} + {{i|Damocles}}
+| flat +1
+| This effect grants two separate damage boosts, with the order of application excluding the flat damage boost from the multiplier.
+|-
+| rowspan="3" | 12
+| {{i|Hallowed Ground}}
+| rowspan="3" | ×1.2
+| rowspan="3" | These don't stack with each other
+|-
+| {{i|Immaculate Heart}}
+|-
+| {{i|Star of Bethlehem}}
+|-
+| rowspan="2" | 13
+| {{i|Adrenaline}}
+| flat ((2 × MissingHearts) ^ 1.6) × 0.1
+|
+|-
+| {{i|Bloody Lust}}
+| flat +6 max
+|
+|-
+| rowspan="3" | 14
+| {{c|Azazel}} + {{i|The Ludovico Technique}}
+| ×0.5
+|
+|-
+| {{i|Brimstone}} + {{i|Technology}}
+| rowspan="2" | ×1.5
+| rowspan="2" | These don't stack with each other
+|-
+| {{i|Haemolacria}}
+|-
+| rowspan="2" | 15
+| {{i|Ipecac}}
+| flat +40
+| rowspan="2" | These don't stack with each other
+|-
+| {{i|Ipecac}} + {{i|Brimstone}} / {{i|Dr. Fetus}} / {{c|The Forgotten}} / {{i|The Ludovico Technique}} / {{i|Mom's Knife}} / {{i|Tech X}} / {{i|Technology}}
+| flat +2
+|-
+| rowspan="11" | 16
+| {{i|20/20}}
+| x0.8
+|
+|-
+| {{i|Almond Milk}}
+| x0.3
+|
+|-
+| {{i|Cricket's Head}}
+| rowspan="3" | ×1.5
+| rowspan="3" | These don't stack with each other
+|-
+| {{i|Magic Mushroom}}
+|-
+| {{i|The Book of Belial}} + {{i|Blood of the Martyr}}
+|-
+| {{i|D8}}
+| ×0.5 to ×2.0
+|
+|-
+| {{i|Dead Eye}}
+| ×2 max
+|
+|-
+| {{i|Eve's Mascara}}
+| ×2
+|
+|-
+| {{i|Soy Milk}}
+| ×0.2
+| Overridden by {{i|Almond Milk}}
+|-
+| {{dlc|nr+}} {{i|Star of Bethlehem}}
+| ×1.5
+| While the total damage boost from Star of Bethlehem amounts to ×1.8, splitting it into two portions causes it to interact in unusual ways with other damage boosts. See the item's page for details.
+|-
+| {{i|Succubus}}
+| ×1.5
+|
+|-
+| rowspan="2" | 17
+| {{t|Cracked Crown}}
+| ×1.2 for damage over 3.5
+|-
+| {{c|Tainted Bethany}}'s stat multiplier
+| x0.75 for damage over 3.5
+|
+|}
+{{dlc-}}
+
+== Other ==
+* The {{tf|Spun}} transformation increases damage by 2.
+* The {{tf|Conjoined}} transformation decreases damage by 0.3.
+* {{dlc|a}} In co-op, [[Rage Baby]], [[Revenge Baby]], and [[Belial Baby]] will occasionally briefly increase damage. [[Dark Baby]] will occasionally briefly increase all stats, including damage. [[Buddy Baby]] will occasionally briefly grant the {{i|Guillotine}} effect, which increases damage. [[Whore Baby]] will occasionally briefly grant the {{i|Whore of Babylon}} effect, which increases damage.
+* {{dlc|r}} The [[Pills#Horse Pills|horse]] [[Power Pill!]] activates the {{p|Huge Growth|n}} effect for the current room, which grants +7 flat damage.
+* {{dlc|r}} Standing next to a {{e|White Poop|n}} or a [[Familiar#Dips|white dip]] grants a x1.2 damage multiplier.
+* {{dlc|r}} Standing on a brown creep produced by {{c|Tainted ???}} or {{i|IBS|n}} grants +1 damage.
+* {{dlc|r}} {{c|Lazarus Risen}} + {{i|Birthright|n}}: Grants +7.2 damage which fades away quickly.
+
+{{nav|fr=Dégâts}}
+[[Category:Mechanics]]

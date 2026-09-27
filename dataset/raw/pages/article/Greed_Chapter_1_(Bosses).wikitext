@@ -1,0 +1,217 @@
+{{header greed bosses}}
+{{page dlc|a}}
+
+== {{s|Basement}} ==
+=== All Boss Waves ===
+{| style="width: 70%; text-align: center"
+ | [[file:Boss Dingle portrait.png|center|link=Dingle]]
+ | [[file:Boss The Duke of Flies portrait.png|center|link=The Duke of Flies]]
+ | [[file:Boss Gemini portrait.png|link=Gemini]]
+ | [[file:Boss Larry Jr. portrait.png|center|link=Larry Jr.]]
+ |-
+ | [[Dingle]]
+ | [[The Duke of Flies]]
+ | [[Gemini]]
+ | [[Larry Jr.]]
+ |-
+ | colspan="4" |[[file:Boss Monstro portrait.png|link=Monstro]]
+ |-
+ | colspan="4" |[[Monstro]]
+ |}
+
+=== Boss Wave 1 Specific ===
+{| style="width: 70%; text-align: center"
+ |[[file:Boss Gurglings portrait.png|center|link=Gurglings]]
+ |[[file:Boss Steven portrait.png|link=Steven]]
+ |-
+ |[[Gurglings]]
+ |[[Steven]] {{unlockable}}
+ |}
+
+=== Boss Wave 2 Specific ===
+{| style="width: 70%; text-align: center"
+ |[[file:Boss Gurglings portrait.png|center|link=Gurglings]]
+ |[[file:Boss Famine portrait.png|center|link=Famine]]
+ |-
+ |[[Gurglings]]
+ |[[Famine]] {{unlockable}}
+ |}
+
+=== Nightmare Wave Specific ===
+{| style="width: 70%; text-align: center"
+ |[[file:Boss Steven portrait.png|link=Steven]]
+ |[[file:Boss The Husk portrait.png|center|link=The Husk]]
+ |[[file:Boss Headless Horseman portrait.png|center|link=Headless Horseman]]
+ |[[file:Boss Baby Plum portrait.png|center|link=Baby Plum]]
+ |-
+ |[[Steven]] {{unlockable}}
+ |[[The Husk]]
+ |[[Headless Horseman]] {{unlockable}}
+ |[[Baby Plum]] {{Dlc|r}}
+ |-
+ |[[file:Envy.png|64px|center|link=Envy]]
+ |[[file:Gluttony.png|64px|center|link=Gluttony]]
+ |[[file:Wrath.png|64px|center|link=Wrath]]
+ |[[file:Lust.png|64px|center|link=Lust]]
+ |-
+ |[[Envy]]
+ |[[Gluttony]]
+ |[[Wrath]]
+ |[[Lust]]
+ |}
+
+== {{dlc+|r}} {{s|Cellar}} ==
+=== All Boss Waves ===
+{| style="width: 70%; text-align: center"
+ |[[file:Boss Dingle portrait.png|center|link=Dingle]]
+ |[[file:Boss The Haunt portrait.png|center|link=The Haunt]]
+ |[[file:Boss Monstro portrait.png|link=Monstro]]
+ |[[file:Boss Pin portrait.png|link=Pin]]
+ |-
+ |[[Dingle]]
+ |[[The Haunt]]
+ |[[Monstro]]
+ |[[Pin]]
+ |}
+
+=== Boss Wave 1 Specific ===
+{| style="width: 70%; text-align: center"
+ |[[file:Boss Blighted Ovum portrait.png|center|link=Blighted Ovum]]
+ |
+[[file:Boss Widow portrait.png|center|link=Widow]]
+ |[[file:Boss Steven portrait.png|link=Steven]]
+ |-
+ |[[Blighted Ovum]]
+ |[[Widow]]
+ |[[Steven]] {{unlockable}}
+ |}
+
+=== Boss Wave 2 Specific ===
+{| style="width: 70%; text-align: center"
+ |[[file:Boss Blighted Ovum portrait.png|center|link=Blighted Ovum]]
+ |
+[[file:Boss Larry Jr. portrait.png|center|link=Larry Jr.]]
+ |[[file:Boss Famine portrait.png|center|link=Famine]]
+ |[[file:Boss Polycephalus portrait.png|center|link=Polycephalus]]
+ |-
+ |[[Blighted Ovum]]
+ |[[Larry Jr.]]
+ |[[Famine]] {{unlockable}}
+ |[[Polycephalus]]
+ |}
+
+=== Nightmare Wave Specific ===
+{| style="width: 70%; text-align: center"
+ |[[file:Boss Gemini portrait.png|link=Gemini]]
+ |[[file:Boss Larry Jr. portrait.png|center|link=Larry Jr.]]
+ |[[file:Boss Widow portrait.png|center|link=Widow]]
+ |[[file:Boss Steven portrait.png|link=Steven]]
+ |-
+ |[[Gemini]]
+ |[[Larry Jr.]]
+ |[[Widow]]
+ |[[Steven]] {{unlockable}}
+ |-
+ | colspan="4" |[[file:Boss Headless Horseman portrait.png|center|link=Headless Horseman]]
+ |-
+ | colspan="4" |[[Headless Horseman]] {{unlockable}}
+ |-
+ |[[file:Envy.png|64px|center|link=Envy]]
+ |[[file:Gluttony.png|64px|center|link=Gluttony]]
+ |[[file:Wrath.png|64px|center|link=Wrath]]
+ |[[file:Lust.png|64px|center|link=Lust]]
+ |-
+ |[[Envy]]
+ |[[Gluttony]]
+ |[[Wrath]]
+ |[[Lust]]
+ |}
+{{dlc-}}
+
+== {{dlc+|r}} {{s|Burning Basement}} ==
+=== All Boss Waves ===
+{| style="width: 70%; text-align: center"
+ |[[file:Boss Dingle portrait.png|center|link=Dingle]]
+ |[[file:Boss The Duke of Flies portrait.png|center|link=The Duke of Flies]]
+ |[[file:Boss Gemini portrait.png|link=Gemini]]
+ |[[file:Boss The Haunt portrait.png|center|link=The Haunt]]
+ |-
+ |[[Dingle]]
+ |[[The Duke of Flies]]
+ |[[Gemini]]
+ |[[The Haunt]]
+ |-
+ | colspan="4" style="padding: 0" |
+{| style="width: 100%"
+ |[[file:Boss Monstro portrait.png|link=Monstro]]
+ |[[file:Boss Pin portrait.png|link=Pin]]
+ |[[file:Boss Rag Man portrait.png|center|link=Rag Man]]
+ |-
+ |[[Monstro]]
+ |[[Pin]]
+ |[[Rag Man]] {{unlockable}}
+ |}
+|}
+
+=== Boss Wave 1 Specific ===
+{| style="width: 70%; text-align: center"
+ |[[file:Boss Blighted Ovum portrait.png|center|link=Blighted Ovum]]
+ |[[file:Boss Gurglings portrait.png|center|link=Gurglings]]
+ |[[file:Boss Widow portrait.png|center|link=Widow]]
+ |[[file:Boss Steven portrait.png|link=Steven]]
+ |-
+ |[[Blighted Ovum]]
+ |[[Gurglings]]
+ |[[Widow]]
+ |[[Steven]] {{unlockable}}
+ |}
+
+=== Boss Wave 2 Specific ===
+{| style="width: 70%; text-align: center"
+ |[[file:Boss Blighted Ovum portrait.png|center|link=Blighted Ovum]]
+ |[[file:Boss Gurglings portrait.png|center|link=Gurglings]]
+ |[[file:Boss Famine portrait.png|center|link=Famine]]
+ |[[file:Boss Polycephalus portrait.png|center|link=Polycephalus]]
+ |-
+ |[[Blighted Ovum]]
+ |[[Gurglings]]
+ |[[Famine]] {{unlockable}}
+ |[[Polycephalus]]
+ |-
+ | colspan="4" |[[file:Boss Baby Plum portrait.png|center|link=Baby Plum]]
+ |-
+ | colspan="4" |[[Baby Plum]]
+ |}
+
+=== Nightmare Wave Specific ===
+{| style="width: 70%; text-align: center"
+ |[[file:Boss Larry Jr. portrait.png|center|link=Larry Jr.]]
+ |[[file:Boss Widow portrait.png|center|link=Widow]]
+ |[[file:Boss Steven portrait.png|link=Steven]]
+ |[[file:Boss The Husk portrait.png|center|link=The Husk]]
+ |-
+ |[[Larry Jr.]]
+ |[[Widow]]
+ |[[Steven]] {{unlockable}}
+ |[[The Husk]]
+ |-
+ | colspan="2" |[[file:Boss Polycephalus portrait.png|center|link=Polycephalus]]
+ | colspan="2" |[[file:Boss Headless Horseman portrait.png|center|link=Headless Horseman]]
+ |-
+ | colspan="2" |[[Polycephalus]]
+ | colspan="2" |[[Headless Horseman]] {{unlockable}}
+ |-
+ |[[file:Envy.png|64px|center|link=Envy]]
+ |[[file:Gluttony.png|64px|center|link=Gluttony]]
+ |[[file:Wrath.png|64px|center|link=Wrath]]
+ |[[file:Lust.png|64px|center|link=Lust]]
+ |-
+ |[[Envy]]
+ |[[Gluttony]]
+ |[[Wrath]]
+ |[[Lust]]
+ |}
+{{dlc-}}
+
+{{nav|boss|fr=Avarice Chapitre 1 (Boss)}}
+[[Category:Bosses]]

@@ -1,0 +1,9 @@
+{{page dlc|r}}
+
+Items with this [[Item Tags|tag]] contribute toward the unlock of {{a|Technology Zero}}, and includes, strangely, Technology Zero itself.
+
+== Passive Collectibles ==
+{{collectible table | tag = tech | type = passive }}
+
+{{nav|fr=Balise tech}}
+[[Category:Item tags]]

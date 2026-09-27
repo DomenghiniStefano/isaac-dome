@@ -1,0 +1,29 @@
+{{infobox monster
+ | id           = 47
+ | variant      = 1
+ | image name   = * {{dlc|nr|Rebirth}}
+ | is mini-boss = yes
+ | base hp      = 60
+ | stage hp     = {{dlcalt|15|r=25}}
+ | environment  = <u>Mini-Boss</u><br>{{room|mini-boss}}<br>{{dlc|r}} Cannot be encountered in [[Chapter 1]] Mini-Boss Rooms<br><u>Degraded Mini-Boss</u><br>{{floor|Dark Room}}{{floor|Chest}}
+ | pool         = Random [[Pill]] (78.6% Chance) <br>or<br>{{i|Yum Heart}} (21.4% Chance)
+}}
+
+'''Super Lust''' is a [[mini-boss]] and one of the [[Seven Deadly Sins#Super Sins|Seven Super Deadly Sins]]. She is randomly encountered as an alternate version of {{e|Lust}}.
+
+== Behavior ==
+* Super Lust chases Isaac around the room at a very fast speed, leaving a trail of damaging [[Creep#Red Creep|Red Creep]] behind and attempting to do contact damage.
+** She builds up speed the longer she travels without turning and takes heavily reduced knockback from Isaac's tears.
+Super Lust deals a whole heart of contact damage.
+
+== Notes ==
+* {{dlc|nr}} Super Lust can drop {{i|Yum Heart}} even if Isaac has already encountered/possessed it. 
+* A high [[speed]] attribute and/or [[flight]] helps with the fight tremendously.
+
+== Trivia ==
+* The [[wikipedia:Seven Deadly Sins|Seven Deadly Sins]] that these mini-bosses are based upon are, in Christian teachings, a classification of vices from which all others are derived.
+* Super Lust appears to be violently diseased or sick, which could be a reference to [[wikipedia:Sexually transmitted disease|sexually transmitted diseases]] (STDs), which fits Super Lust's sin. Super Lust's maimed appearance could also imply rough or violent sexual acts, which is an extreme act of lust.
+* Super Lust is female, like her counterpart {{e|Lust}}.
+
+{{nav|mini-boss|fr=Super Luxure}}
+[[Category:Seven Super Deadly Sins]]

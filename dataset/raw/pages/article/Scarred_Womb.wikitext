@@ -1,0 +1,149 @@
+{{infobox stage
+ | dlc             = a
+ | chapter         = 4
+ | id              = 12
+ | id greed        = {{dlc|r|12}}
+ | level id        = 7, 8
+ | level id greed  = {{dlc|r|4}}
+ | type id         = 2
+ | type id greed   = {{dlc|r|2}}
+ | degraded bosses = Blastocyst Small, Chub, Fistula Medium, Gurdy Jr., Gurglings, Loki
+ | bosses 1        = Blastocyst, The Bloat, Conquest, Daddy Long Legs, Death, Mama Gurdy, The Matriarch, Scolex, Sisters Vis, Teratoma, Triachnid
+ | bosses 2        = Mom's Heart, It Lives
+ | unlocked by     = Scarred Womb
+}}
+
+The '''Scarred Womb''' is one of the environments in [[Chapter 4]] added in ''[[Afterbirth]]''. The theme of the Scarred Womb is wounded and scarred tissue, grafted skin, and early stages of decay. The floor looks much like a failed surgery, with stapled skin being plastered onto the womb's walls being this floor's alt. backdrop. Most new enemies featured in The Scarred Womb are damaged and grievously injured variations of other enemies, such as Fistuloids and Lepers. {{dlc|nr}} Rocks have a chance to be replaced with {{E|Red Poop}}.
+
+The Scarred Womb's alternate floors are the {{s|Womb}} and the {{s|Utero}}. Similarly to these, from this floor onward, {{r|Treasure Room}}s and {{r|Shop}}s will no longer naturally generate and all damage that is taken deducts a full heart from Isaac's HP (unless he has {{i|The Wafer}}), regardless of the source.
+
+{{dlc|a+}} The Scarred Womb is unlocked by defeating {{e|It Lives!}} 30 times. Killing {{e|Dogma}} and {{e|The Beast}} also increases this tally, as does {{s|Mausoleum}}'s version of Mom's Heart.
+
+== [[Monster]]s ==
+{{entity table/header}}
+{{stage entities | Baby, Boil, Walking Boil, Bony, Death's Head, Flesh Death's Head, Brain, MemBrain, Clotty, I.Blob, Mega Clotty, Dip, Squirt, Dinga, Dople, Embryo, Eye, Pale Fatty, Fat Sack, Blubber, Half Sack, Fly, Attack Fly, Eternal Fly, Moter, Pooter, Full Fly, Red Boom Fly, Sucker, Spit, Fred, Globin, Gazing Globin, Grub, Gurgling, Guts, Scarred Guts, Mama Guts, Homunculus, Leech, Pacer, Lump, Charger, Mask + Heart, Maw, Red Maw, Mr. Maw, Swinger, Mom's Hand, Mom's Dead Hand, Nerve Ending, Oob, Tumor, Para-Bite, Scarred Para-Bite, Cod Worm, Host, Red Host, Flesh Mobile Host, Meatball, Rotty, Crazy Long Legs, Small Crazy Long Legs, Round Worm, Ulcer, Spider, Big Spider, Wall Creep, Blind Creep, Rage Creep, Vis, Double Vis, Scarred Double Vis, Chubber, Red Ghost, Slide, Wall Hugger, Stone Grimace, Gaping Maw, Broken Gaping Maw, Stone Eye, Suction Pitfall }}
+{{stage entities | dlc = a+ | Fistuloid, Leper, Leper Flesh, Ministro, Poison Mind, Mr. Red Maw, Nerve Ending 2, Stoney, Cross Stone Shooter }}
+{{stage entities | dlc = a+nr | Portal }}
+{{stage entities | dlc = r | Faceless, Mask II + 1/2 Heart, Needle, Triple Grimace }}
+|}
+
+''Degraded Bosses:''
+{| class="wikitable mw-collapsible striped sortable"
+! Name
+! ID
+! class="unsortable" | Notes
+{{entity row minimal|Blastocyst}} | Small- and Medium-form only
+{{entity row minimal|Chub}} |
+{{entity row minimal|Dingle}} |
+{{entity row minimal|The Duke of Flies}} |
+{{entity row minimal|Envy}} |
+{{entity row minimal|Fistula}} |
+{{entity row minimal|Gemini}} |
+{{entity row minimal|Gluttony}} |
+{{entity row minimal|Gurdy Jr.}} |
+{{entity row minimal|Gurglings}} |
+{{entity row minimal|The Haunt}} |
+{{entity row minimal|The Hollow}} |
+{{entity row minimal|Larry Jr.}} |
+{{entity row minimal|Loki}} |
+{{entity row minimal|Lust}} |
+{{entity row minimal|Mega Fatty}} |
+{{entity row minimal|Mega Maw}} |
+{{entity row minimal|Monstro}} |
+{{entity row minimal|Peep}} |
+{{entity row minimal|Pin}} |
+{{entity row minimal|Polycephalus}} |
+{{entity row minimal|Sloth}} |
+{{entity row minimal|Widow}} |
+{{entity row minimal|Wrath}} |
+{{entity row minimal|The Wretched}} |
+|}
+
+== [[Bosses]] ==
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:Boss Blastocyst portrait.png|center|link=Blastocyst]]
+| style="text-align: center; border: none" |[[File:Boss Mama Gurdy portrait.png|center|link=Mama Gurdy]]
+| style="text-align: center; border: none" |[[File:Boss Scolex portrait.png|center|link=Scolex]]
+| style="text-align: center; border: none" |[[File:Boss Triachnid portrait.png|center|link=Triachnid]]
+|-
+| style="text-align: center; border: none" |[[Blastocyst]]
+| style="text-align: center; border: none" |[[Mama Gurdy]]
+| style="text-align: center; border: none" |[[Scolex]]
+| style="text-align: center; border: none" |[[Triachnid]] {{unlockable}}
+|}
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:Boss The Bloat portrait.png|center|link=The Bloat]]
+| style="text-align: center; border: none" |[[File:Boss Teratoma portrait.png|center|link=Teratoma]]
+| style="text-align: center; border: none" |[[File:Boss Daddy Long Legs portrait.png|center|link=Daddy Long Legs]]
+| style="text-align: center; border: none" |[[File:Boss Death portrait.png|center|link=Death (Boss)]]
+|-
+| style="text-align: center; border: none" |[[The Bloat]] {{Dlc|nr}}
+| style="text-align: center; border: none" |[[Teratoma]] {{Dlc|nr}}
+| style="text-align: center; border: none" |[[Daddy Long Legs]] {{Dlc|nr}}
+| style="text-align: center; border: none" |[[Death (Boss)|Death]] {{unlockable}}
+|}
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:Boss Conquest portrait.png|center|link=Conquest]]
+| style="text-align: center; border: none" |[[File:Boss The Fallen portrait.png|center|link=The Fallen]]
+| style="text-align: center; border: none" |[[File:Boss Headless Horseman portrait.png|center|link=Headless Horseman]]
+| style="text-align: center; border: none" |[[File:Boss The Matriarch portrait.png|center|link=The Matriarch]]
+|-
+| style="text-align: center; border: none" |[[Conquest]] {{unlockable}}
+| style="text-align: center; border: none" |[[The Fallen]] {{room|Devil}}
+| style="text-align: center; border: none" |[[Headless Horseman]] {{unlockable}}
+| style="text-align: center; border: none" |[[The Matriarch]] {{dlc|a+}} {{unlockable}}
+|}
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:Boss Sisters Vis portrait.png|center|link=Sisters Vis]]
+| style="text-align: center; border: none" |[[File:Boss Lokii portrait.png|center|link=Lokii]]
+| style="text-align: center; border: none" |[[File:Boss Mr. Fred portrait.png|center|link=Mr. Fred]]
+|-
+| style="text-align: center; border: none" |[[Sisters Vis]] {{dlc|a+nr}} {{unlockable}}
+| style="text-align: center; border: none" |[[Lokii]] {{dlc|r}}
+| style="text-align: center; border: none" |[[Mr. Fred]] {{dlc|r}}
+|}
+
+=== Double Trouble ===
+{| class="mw-collapsible mw-collapsed wikitable"
+! Double Trouble Bosses
+|-
+|
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:Boss Gurdy portrait.png|center|link=Gurdy]]
+|-
+| style="text-align: center; border: none" |(Double Trouble)<br>[[Gurdy]]
+|}
+|-
+|}
+
+=== Final Boss ===
+{{e|It Lives!}} will always appear in the second floor of this chapter or in the last boss room if the {{cu|Labyrinth}} is active.
+
+{{dlc|na+}} After being killed 11 times, Mom's Heart is permanently replaced by {{e|It Lives!}}.
+{| style="width:70%; align:left padding-right:2em"
+| style="text-align: center; border: none" |[[File:Boss Mom's Heart portrait.png|center|link=Mom's Heart]]
+| style="text-align: center; border: none" |[[File:Boss_It_Lives! portrait.png|center|link=It Lives!]]
+|-
+| style="text-align: center; border: none" |[[Mom's Heart]] {{dlc|na+}}
+| style="text-align: center; border: none" |[[It Lives!]]
+|}
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | Eden, Pop!, Mama's Boy }}
+
+== Trivia ==
+* Before the proper release of ''Afterbirth'', the Scarred Womb was to be named "Rotten Womb".
+* The stitches on the walls and floor faintly resemble the {{e|Fistula}} boss.
+* Using {{i|Flush!}} on the scarred womb will flood the room with red liquid (likely blood) instead of water.
+* {{dlc|a+}} Previously, {{e|Mom's Heart}} could appear in the Scarred Womb. However, as of [[Booster Packs#Booster Pack #5|Booster Pack #5]], since it is required to defeat It Lives! 30 times to unlock the Scarred Womb, Mom's Heart can no longer appear in it.
+{{clear}}
+
+== Music ==
+* The [[music]] for the Scarred Womb is titled ''Cicatrix''.<ref>[https://ridiculon.bandcamp.com/album/the-binding-of-isaac-afterbirth-ost Binding of Isaac: Afterbirth OST]</ref>
+* A cicatrix is a medical term for a scar, as well as the Latin term for "scar".
+* The music heard during the fight against Mom's Heart/It Lives! is called ''Ventricide''. Ventricide combines ventricle, a word that means a hollow area in an organ and is often associated with the heart, and the suffix -cide, which denotes the act of killing.
+
+== References ==
+{{reflist}}
+
+{{nav|it lives unlock|environment|fr=Utérus Balafré}}

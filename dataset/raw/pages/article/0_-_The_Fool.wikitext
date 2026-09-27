@@ -1,0 +1,38 @@
+{{header tarot cards}}
+{{Infobox card
+| name =                 0 - The Fool
+| id =  	             1
+| recharge =             {{dlcalt|4|r=2}}
+| quote =                Where journey begins
+| description =          Teleports Isaac to the starting room of the current floor.
+}}
+
+{{cit|c}}
+
+== Effects ==
+* Teleports Isaac to the starting room of the current floor.
+
+== Notes ==
+* If the room teleported out of was hostile, it will be reset.
+* Previously cleared rooms do not reset.
+* {{dlc+|r}} A 0 - The Fool is guaranteed to appear on {{s|Depths}} / {{s|Necropolis}} / {{s|Dank Depths}} II in a [[marked skull]] after unlocking {{a|A Strange Door}}.{{dlc-}}
+* When {{curse|Maze}} is active, using this card can teleport Isaac to a random room instead.
+
+== Strategy ==
+* 0 - The Fool is the only teleportation card that guarantees a teleportation to a safe room:
+** {{p|IX - The Hermit }} may teleport Isaac to a {{e|Greed}} fight.
+** {{p|XVII - The Stars}} / {{p|XVIII - The Moon }} may teleport Isaac to a {{r|Treasure Room}} / {{r|Secret Room}} containing enemies.
+** {{p|Joker}} may teleport Isaac to a {{r|Devil Room}} with enemies or a {{e|Krampus}} fight.
+* 0 - The Fool can be used to escape any room that locks down after taking its contents, like {{r|Challenge Room}}s or {{r|Boss Rush}}, effectively "stealing" its contents without facing the imposed challenge.
+* 0 - The Fool can be used to escape any boss fight to recover on the current floor.
+* {{dlc+|r}} Using 0 - The Fool during the [[ascent]] can entirely skip a floor, as the light beam is located in the starting room. {{dlc-}}
+
+== Interactions ==
+* {{i|Tarot Cloth}} : No effect.
+
+== Trivia ==
+* {{dlc|nr}} 0 - The Fool is the only teleportation card available in [[Greed mode]].
+* {{dlc|r}} Two other cards are available in greed mode : {{p|XVII - The Stars}} and {{p|Joker}}.
+* [[wikipedia:The Fool (tarot card)|The Fool]] is considered a special trump card, being the last or the first of a Major Arcana set, hence the number 0, or no number at all being attributed to it.
+
+{{nav|fr=0 - Le Mat|card}}

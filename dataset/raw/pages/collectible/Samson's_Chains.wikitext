@@ -16,6 +16,8 @@
 
 == Notes ==
 * Despite its appearance, the item does not slow Isaac's movement.
+* Can be charmed by {{e|The Siren}}, chaining itself to her until damaged enough to return to Isaac.
+* Is ignored by {{I|Sacrificial Altar}}.
 * Cannot be used to open {{R|Secret Room}}s or {{R|Super Secret Room}}s.
 * Can be used to initiate the Uriel/Gabriel fight inside Angel Rooms.
 
@@ -30,6 +32,6 @@
 * This item references the biblical story of Samson, who was chained upon losing his strength.
 * The item visually resembles "leg irons", devices historically used to restrain prisoners' feet.
 ** Furthermore, the description is the phrase stereotypically associated with older men complaining about their wives, equating their relationship to these devices.
-* It is likely a reference to the Punish Ball from ''Spelunky'', which damages enemies and terrain at the cost of slowing the player.
+* Samson's Chains, in both appearance and function, resembles the Punish Ball from ''Spelunky'', with the exception of Samson's Chains not slowing down the player.
 
 {{nav|samson unlock|boss rush unlock|fr=Boulet de Samson}}

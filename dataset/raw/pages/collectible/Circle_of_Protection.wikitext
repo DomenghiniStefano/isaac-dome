@@ -33,7 +33,7 @@
 {{#ev:youtube|iTAksu-4MTM}}
 
 == Trivia ==
-* Circle of Protection is based on a cycle of <u>Magic: the Gathering</u> cards of the same name, which similarly provide defensive effects to their wielder.
+* Circle of Protection is based on a cycle of ''Magic: the Gathering'' cards of the same name, which similarly provide defensive effects to their wielder.
 * Circle of Protection's in-game icon may be based on the band A Perfect Circle's logo. The pickup quote is also similar to the lyrics of their song Pet.
 
 {{nav|fr=Cercle de Protection}}

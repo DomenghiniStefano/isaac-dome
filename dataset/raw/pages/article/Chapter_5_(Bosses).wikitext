@@ -1,0 +1,18 @@
+{{header normal bosses}}
+
+== {{s|Sheol}} ==
+{| style="width: 70%; text-align: center"
+ | [[file:Boss Satan portrait.png|center|link=Satan]]
+ |-
+ | [[Satan]]
+ |}
+
+== {{s|Cathedral}} ==
+{| style="width: 70%; text-align: center"
+ | [[file:Boss Isaac portrait.png|center|link=Isaac (Boss)]]
+ |-
+ | [[Isaac (Boss)|Isaac]]
+ |}
+
+{{nav|boss|fr=Chapitre 5 (Boss)}}
+[[Category:Bosses| ]]

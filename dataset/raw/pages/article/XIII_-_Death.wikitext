@@ -1,0 +1,37 @@
+{{header tarot cards}}
+{{Infobox card
+ | name        = XIII - Death
+ | id          = 14
+ | quote       = Lay waste to all that oppose you
+ | description = Triggers {{i|The Necronomicon}} effect, dealing 40 damage to all enemies in the room.
+ | recharge    = {{dlcalt|4|r=3}}
+}}
+
+{{cit|c}}
+
+== Effects ==
+* Deals 40 damage to all enemies in the room.
+
+== Notes ==
+* '''XIII - Death''''s effect is identical to {{i|The Necronomicon}}'s effect.
+* {{dlc|a}} Damage from the card bypasses [[damage scaling]].
+
+== Synergies ==
+* {{I|Tarot Cloth}}: Deals 80 damage.
+** {{I|Tarot Cloth|r}} + {{i|Blank Card}}: Deals 40 damage.
+* {{t|A Missing Page|r}} / {{i|Missing Page 2|r}}: Deals +40 damage per copy.
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | The Necronomicon }}
+** {{I|Tarot Cloth}}: Reduces the number of uses to 2 to unlock.
+
+== Gallery ==
+<gallery>
+File:XIII - Death Steam Card.jpg|'''XIII - Death''''s Steam Trading card
+</gallery>
+
+== Trivia ==
+* [[wikipedia:Death (tarot card)|Death]] is the thirteenth card of a Major Arcana set.
+** Death is sometimes called the "Card with no name" with its number hidden for the bad omen it represents.
+
+{{nav|fr=XIII - La Mort|card}}

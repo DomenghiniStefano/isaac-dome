@@ -1,0 +1,18 @@
+{{header item pools}}
+{{item pool
+ | dlc = r
+}}
+
+{{e|Wooden Chest}}s contain items made out of wood. Unlocked after defeating {{E|Mega Satan}} as {{C|Tainted Lazarus}}.
+
+== Activated Collectibles ==
+{{item pool/header}}
+{{pool items | Keeper's Box, Metronome, Mom's Box, Mr. ME!, Wooden Nickel }}
+|}
+
+== Passive Collectibles ==
+{{item pool/header}}
+{{pool items | Blood of the Martyr, The Ladder, Lil Chest, Stigmata, Tooth Picks, Wooden Spoon }}
+|}
+
+{{nav|fr=Coffre en Bois (Banque d'Objets)}}

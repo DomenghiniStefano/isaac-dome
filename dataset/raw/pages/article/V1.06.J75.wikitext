@@ -1,0 +1,72 @@
+{{infobox version
+| dlc  = a+
+| name = Booster Pack #2
+| date = 2017-05-12
+| blog = 160602152274
+}}
+
+''This was the first initial version of Booster Pack #2 for the [[Afterbirth †]] DLC expansion. For an overview on content added in Booster Pack #2, please see this page: [[Booster Pack]]s''
+
+== Documented changes ==
+=== New items ===
+* {{i|Jumper Cables}} (520), which is based off [http://steamcommunity.com/sharedfiles/filedetails/?id=846644717 this Steam Workshop item] by Ashkait & Scayze.
+* {{i|Coupon}} (521), which is based off [https://steamcommunity.com/sharedfiles/filedetails/?id=839401874 this Steam Workshop item] by Plumbo.
+* {{i|Telekinesis}} (522), which is based off [http://steamcommunity.com/sharedfiles/filedetails/?id=857187975 this Steam Workshop item] by Eufuu.
+* {{i|Moving Box}} (523), which is based off [http://steamcommunity.com/sharedfiles/filedetails/?id=858673093 this Steam Workshop item] by Tim l'enchanteur.
+* {{i|Technology Zero}} (524), which is based off [http://steamcommunity.com/sharedfiles/filedetails/?id=850840324 this Steam Workshop item] by Ashkait & Scayze.
+* {{i|Leprosy}} (525), which was inspired by [https://steamcommunity.com/sharedfiles/filedetails/?id=840814967 this Steam Workshop item] by Extreme Ninja Home Makeover.
+
+=== New trinkets ===
+* {{t|Filigree Feather}} (123)
+
+=== New features ===
+* Added bomb synergy graphics, which is based off of this [http://steamcommunity.com/sharedfiles/filedetails/?id=854593270 this Steam Workshop mod] by S-body.
+* Added a custom {{i|Jar of Flies}} sprite depending on how many flies you have, which is based off of this [http://steamcommunity.com/sharedfiles/filedetails/?id=840463618 this Steam Workshop mod] by Stewartisme.
+* A [[Mom's dressing table]] will now spawn in the starting room of every floor if you have 8 or more collectible items. You can bomb it once per floor to yield the same rewards as a random grey chest. It is not affected by [[Mom's Key]]. It is based off of this [http://steamcommunity.com/sharedfiles/filedetails/?id=859294029 this Steam Workshop mod] by Sinsthar.
+* Angel Rooms now function similar to Treasure Rooms in that if there is more than 1 pedestal item, touching one will make all of the others disappear.
+* Changed some Angel Rooms:
+** Added an additional pedestal item to room #1 (the room with 1 statues and 1 item pedestal).
+** Added an eternal heart to room #2 (the room with 1 statue and 1 item pedestal).
+** Added 4 eternal hearts and removed 2 soul hearts from room #3 (the room with 1 statue and 3 soul hearts).
+** Added 3 item pedestals and removed 2 eternal hearts from room #4 (the room with 2 eternal hearts).
+** Added 6 more blue fires to room #5 (the room with 1 statue and 1 item pedestal).
+** Added an item pedestal to room #6 (the room with 1 statue and 1 item pedestal).
+** Added 4 item pedestals and removed 3 soul hearts and removed 1 eternal heart from room room #7 (the room with 1 eternal heart and 4 soul hearts behind locked blocks).
+** Added an additional pedestal item to room #9 (the narrow room with 1 statues and 1 item pedestal).
+** Added an additional pedestal item to room #12 (the room with 2 statues and 1 item pedestal).
+** Added two additional pedestal items and removed 3 soul hearts from room #13 (the room with 1 statue and 5 soul hearts).
+** Added an extra soul heart to room #14 (the room with 2 items).
+** Added 3 pedestal items and removed 2 soul hearts from room #15 (the room with 2 soul hearts and 2 statues).
+* Added a new transformation called [[Stompy]] upon getting three size up items (such as {{i|Magic Mushroom}} or a [[One Makes You Larger]] pill). After attaining this transformation, the player will create dust clouds when walking and have a chance to spawn the {{i|Wait What?}} effect upon getting hit.
+
+== Undocumented changes ==
+=== Additions ===
+* Active items charge during Challenge Room waves.
+* {{i|Angry Fly}} now counts towards [[Beelzebub]].
+* Added Booster Pack #1 items to the [[Greed mode]] pool.
+
+=== Changes ===
+* Enabling mods no longer disables achievements after beating [[Mom's Heart]].
+* The {{i|Broken Modem}} sprite now has an outline.
+* {{i|Lil Delirium}} is now unlocked with {{i|Delirious}}.
+
+=== Fixes ===
+* Fixed the bug where the Treasure Room item pool was yielding {{i|Breakfast}} before the pool was actually depleted.
+* Fixed the bug where the {{i|Ipecac}} and {{i|Lead Pencil}} synergy caused unavoidable damage.
+* Fixed the bug where {{i|Loki's Horns}} would not properly unlock.
+* Fixed the bug where dropped pickup positions were unseeded.
+* Fixed the bug where rerolled item pedestals from {{i|Pandora's Box}} were unseeded.
+* Fixed the bug where {{i|Tech X}} would not work on [[Azazel]].
+* Fixed the bug where the drops from {{i|Lil Chest}} were unseeded.
+* Fixed the bug where the payouts from {{i|Crystal Ball}} were unseeded.
+* Fixed the bug where the number of enemies from [[Portal]]s were unseeded.
+* Fixed the bug where the void portal that appeared after [[Mom]] was incorrectly textured.
+* Fixed the bug where familiars with a charge component would automatically fire upon entering a boss room.
+
+== New bugs ==
+* The {{i|Leprosy}} item is misspelled as "Leperocy".
+* The [[Boss Rush]] gives double the amount of charges that it is supposed to, since it awards charges at both the beginning and the end of every wave.
+* Entering the [[Devil room]] with the new item {{i|Coupon}} often causes the game to crash.
+
+{{nav|version}}
+[[Category:Added in Booster Pack 2]]

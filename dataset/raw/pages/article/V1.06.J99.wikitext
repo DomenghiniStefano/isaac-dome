@@ -1,0 +1,32 @@
+{{infobox version
+ | dlc  = a+
+ | name = Booster Pack #3
+ | date = 2017-06-30
+}}
+
+''This was the first initial version of Booster Pack #3 for the [[Afterbirth †]] DLC expansion. For an overview on content added in Booster Pack #3, please see this page: [[Booster Pack]]s''
+
+== Undocumented changes ==
+=== New items ===
+* {{i|7 Seals}} (526), which is based on [http://steamcommunity.com/sharedfiles/filedetails/?id=848969396 this Steam Workshop item] by Scayze and Askhait.
+* {{i|Mr. ME!}} (527), which is based on [http://steamcommunity.com/sharedfiles/filedetails/?id=857824006 this Steam Workshop item] by Jean-Alphonse.
+* {{i|Angelic Prism}} (528), which is based on [http://steamcommunity.com/sharedfiles/filedetails/?id=869439958 this Steam Workshop item] by electoon and Erfly.
+* {{i|Pop!}} (529), which is based on [http://steamcommunity.com/sharedfiles/filedetails/?id=891893639 this Steam Workshop item] by Scayze and Ashkait.
+
+=== New trinkets ===
+* {{t|Door Stop}} (124), which is based on [http://steamcommunity.com/sharedfiles/filedetails/?id=894758868 this Steam Workshop trinket] by Strawrat and CupertinoEffect.
+
+=== Additions ===
+* Added 40 new [[Eden]] hairstyles, which is based off of [http://steamcommunity.com/sharedfiles/filedetails/?id=889949830 this Steam workshop mod] by This Guy.
+* The Delirious achievement now has an image on the achievement list.
+* [[Mom's dressing table]] now has a unique broken sprite upon being destroyed.
+
+=== Changes ===
+* The Double Trouble room with 1 Rag Man and 2 Rag Megas (#3732) was changed to have 1 Rag Man and 1 Rag Mega.
+* The Locust of Wrath trinket has been renamed to {{t|Locust of War}}.
+
+=== Modding API ===
+* The <code>FindFreePickupSpawnPosition</code> function is now seeded.
+
+{{nav|version}}
+[[Category:Added in Booster Pack 3]]

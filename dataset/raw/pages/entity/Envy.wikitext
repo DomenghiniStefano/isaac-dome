@@ -1,0 +1,36 @@
+{{infobox monster
+ | id           = 51
+ | image name   = * {{dlc|nr|Rebirth}}
+ | is mini-boss = yes
+ | base hp      = {{dlcalt|60|a=40}}
+ | stage hp     = 7.5
+ | environment  = <u>Mini-Boss</u><br>{{room|mini-boss}}<br><u>Degraded Mini-Boss</u><br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|Cathedral}}
+ | pool         = {{e|Troll Bomb}} (75% Chance)<br>or<br>{{i|Shoop da Whoop!}} (25% Chance)
+ | behavior     = Flies around the room diagonally, bouncing off the walls.
+}}
+
+'''Envy''' is a [[mini-boss]] and one of the [[Seven Deadly Sins]].
+
+== Behavior ==
+* Envy floats around the room diagonally, bouncing off the walls.
+* He splits into 2 medium heads upon death which split into 2 small heads each when destroyed. These small heads split one last time into 2 even smaller heads when destroyed.
+** The last head killed drops a {{e|Troll Bomb}} or {{i|Shoop da Whoop!}}.
+* The heads increase in speed as they split into smaller versions.
+
+== Notes ==
+* {{dlc|anr}} Occasionally, 2 regular Envies appear in a Mini-Boss Room and the boss message will display "Isaac vs. [[Super Envy]]".
+* {{dlc+|a+}} Both Envy and Super Envy are extremely vulnerable to {{i|Contagion}} as their relatively low health generally ensures that the poison effect will persist all the way down to the smallest heads.{{dlc-}}
+* {{dlc|nr}} Envy can drop {{i|Shoop da Whoop!}} even if Isaac has already encountered/possessed it. 
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | The Book of Sin }}
+
+== Trivia ==
+* Envy's expressions are a reference to "rage comic" memes, with the biggest and smallest heads showing a [https://knowyourmeme.com/memes/trollface troll face] and [https://knowyourmeme.com/memes/poker-face poker face], respectively.
+* Envy and Super Envy have a lower chance of dropping their item than the other sins.
+* The [[wikipedia:Seven Deadly Sins|Seven Deadly Sins]] that these mini-bosses are based upon are, in Christian teachings, a classification of vices from which all others are derived.
+* Envy is a personification of one of the Seven Deadly Sins. Envy is described as resentment or sorrow at the success or good fortune of others. It is believed to lead to hatred, slander, and gossip aimed at ruining the reputation of others.
+
+__NOTOC__
+{{nav|mini-boss|fr=Envie}}
+[[Category:Seven Deadly Sins]]

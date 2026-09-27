@@ -1,0 +1,92 @@
+A '''breaking run''' is a community term referring to a scenario where Isaac can create an infinite number of [[item]]s to get whatever combination of items he wants, making the rest of the run trivial to beat.
+
+== Elements of Breaking Runs ==
+Breaking runs work by manipulating items to appear from regular [[pickup]]s in a renewable way, whether they be rerolling pickups, duplicating [[chest]]s, or endlessly restocking items. Many of the items that enable this can be found in [[Arcade]]s, [[Shop]]s, and [[Super Secret Room]]s; anything that lets Isaac make better use of these items and rooms makes it easier for the circumstances required for a breaking run to come together.
+* Shops contain hearts, [[Lil' Battery|Lil' Batteries]] and items, notably {{i|Blank Card}}, {{i|Piggy Bank}}, {{i|Mom's Box}}, {{i|Restock}}, and many other items that give extra active item charges. {{dlc|nr}} They can also have a [[Restock Machine]], making rerolling through the shop item pool very easy.
+* Arcades almost always have a [[Blood Donation Machine]], which can give {{i|IV Bag}} if it hasn’t already been obtained that run. They also occasionally have [[Fortune Telling Machine]]s and [[Devil Beggar]]s, which can give {{t|Cracked Dice}} or {{t|Modeling Clay}}, and [[Crane Game]]s which can give {{i|Clear Rune}}, {{i|9 Volt}}, {{i|The Battery}}, and many [[Dice (Disambiguation)|Dice items]]. They can only spawn if Isaac has at least 5 coins entering the second floor of a [[chapter]].
+* Super Secret Rooms have a tendency to contain chests, Blood Donation Machines, Fortune Telling Machines, Devil Beggars, trinkets, or [[rune]]s. {{dlc|r}} They can now also contain [[Battery Bum]]s.
+* {{dlc+|a+nr}} Locked Chests can give {{i|Rune Bag}}, {{i|Sack of Sacks}}, and IV Bag.{{dlc-}}
+* Ways to reroll items ({{i|The D6}}, {{P|Perthro}}, Restock Machines, etc.) make it easier to find the items necessary for a breaking run.
+** Anything that gives Isaac extra coins ({{dlc|nr}} or bombs or gives him explosive tears) lets him use Restock Machines more frequently.
+
+== Method 1: Blank Card/Clear Rune + Jera + Infinite Charges ==
+This can endlessly duplicate Locked Chests with items in them to create an endless amount of items.
+
+* Elements:
+** {{dlc|nr}}{{I|Blank Card}}, found in Shops, Treasure Rooms, and Secret Rooms.
+** {{i|Clear Rune}}, found in Secret Rooms and [[Crane Game]]s (harder to set up, since using Clear Rune on Jera will cost 12 charges, compared to 4 before Repentance).
+** {{P|Jera}}, found in Super Secret Rooms, [[Skull]]s, or from Rune Bag.
+** A Lil' Battery found in Shops or created from [[Grab Bag]]s or {{I|Charged Baby}}, or {{i|Habit}}/{{dlc|nr}}{{i|Sharp Plug}} and {{i|Scapular}}.
+** A chest with an item in it.
+
+{{dlc|nr}} With Blank Card + Jera {{dlc|r}} Clear Rune + Jera, Lil' Batteries can be duplicated endlessly, and if a chest on the floor has an item in it, all chests duplicated from it will also have items. From this, chests can be duplicated endlessly, creating infinite items. Note that keys will also have to be duplicated to open the chests if they're [[Locked Chest|Locked]]/[[Eternal Chest]]s, or bombs if they're [[Bomb Chest]]s.
+
+== {{dlc|nr}} Method 2: IV Bag + Restock ==
+One of the simplest methods of breaking a run, it allows Isaac to buy as many items as he wants from the Shop. This is not possible in [[Greed mode]] because Blood Donation Machines cannot spawn in Greed mode, and {{C|The Lost}} cannot use this because IV Bag ignores {{i|Holy Mantle}} and will kill him.
+
+* {{dlc|r}} This method is no longer possible, due to restock increasing the price of hearts each time they're purchased.
+* Elements:
+** {{I|IV Bag}}, obtained from Blood Donation Machines {{dlc|a+}} or Locked Chests.
+** {{I|Restock}}, bought from the Shop.
+
+On average, {{I|IV Bag}} makes more cash from Red Hearts than it costs to purchase them, and with Restock he can buy endless Red Hearts to make an infinite amount of money. {{dlc+|a}} {{I|Restock}} also makes the items in the Shop restock when purchased, meaning he can also buy out every item from the shop until {{i|Chaos}} shows up, at which point he can empty every item pool in the game.{{dlc-}}
+
+== Method 3: Pickup Generation on Hit + Damage Source + Cracked Dice ==
+This allows Isaac to generate endless pickups, which can then be rerolled into hearts to continue generating more pickups and chests to generate endless items. This method is unavailable to {{C|The Lost}}, as it requires taking damage to work.
+* Elements:
+** Pickup generation on hit ({{i|Piggy Bank}}, {{I|Fanny Pack}}, {{I|IV Bag}}, etc.), most likely obtained from Shops or Blood Donation Machines.
+** A damage source, such as a self-damage active item or [[Curse Room]].
+*** {{i|Dull Razor}} also works if Isaac also has {{i|The Battery}}, Habit, and {{i|9 Volt}}/{{i|Car Battery}}.
+** {{T|Cracked Dice}}, to reroll the pickups generated.
+
+{{T|Cracked Dice}} has a 25% chance to reroll every pickup in the room, and can be fueled by items like {{i|Piggy Bank}} or {{I|IV Bag}} that generate pickups on hit. Once enough pickups are accumulated, the room can completely refill Isaac’s health on each reroll as well as spawn many chests, creating a renewable cycle of item and health generation.
+
+== {{dlc|nr}} Method 4: D20 + Infinite Charges ==
+Similar to the previous method, this can create an endless amount of chests, but relies on having active item charges to reroll pickups instead of taking damage. This was the original breaking method back in ''The Binding of Isaac: Wrath of the Lamb''.
+
+* Elements:
+** {{i|D20}}, obtainable only in Treasure Rooms.
+** {{I|Habit}}/{{dlc|nr}}{{I|Sharp Plug}} and {{i|Scapular}}, or {{I|Restock}} and a [[Batteries#Lil.27 Battery|Lil' Battery]] in the Shop.
+
+After opening a chest, the D20 can reroll all the pickups created by the chest as well as the empty chest itself (unless it had an item) for the chance at more chests. With a way to endlessly recharge the D20, these pickups can be continually rerolled into chests and opened to eventually create an endless supply of coins to buy Lil' Batteries (if using Restock) and chests for items.
+
+== {{dlc+|r}} Method 5: {{t|Modeling Clay}} + Cards/Pills ==
+Because Modeling Clay can cycle between item effects by leaving and re-entering rooms constantly, it can be used to constantly reroll cards, then use those cards to spawn items in Secret Rooms that constantly cycle between items due to {{i|Glitched Crown}}, allowing many powerful and game-breaking items to be acquired (such as {{i|Clear Rune}}, {{i|Rune Bag}}, {{i|R Key}}, {{i|Spindown Dice}}, {{i|D infinity}}, {{i|Echo Chamber}}, and {{i|Death Certificate}}).
+
+* Elements:
+** Modeling Clay
+** Plenty of [[Card]]s/[[Pill]]s/[[Rune]]s/[[Soul Stone]]s
+** Patience
+
+To start, gather all the cards/pills on the floor and drop them outside the [[Shop]], and then constantly leave and re-enter the Shop. When Modeling Clay mimics {{i|Little Baggy}} and {{i|Starter Deck}}, it will transform the cards/pills into new ones. This can be done indefinitely until they become cards you want, at which point you’ll drop them in a [[Secret Room]].
+
+Once you have all the cards you want in the Secret Room, leave and re-enter it until Modeling Clay mimics {{i|Echo Chamber}}. Once it does, use all the cards you left in the room, starting with ones that spawn stage elements that can spawn items (such as [[machine]]s, [[beggar]]s, and [[chest]]s), then moving to ones that spawn resources, and ending with ones that have neutral effects.
+
+Finally, once you’ve used all the cards and all the item-spawning stage elements have been made, leave and re-enter the Secret Room until Modeling Clay mimics {{i|Glitched Crown}}. Once it does, you can open all the chests and play the machines/beggars, and any items they spawn will also cycle between 4 extra [[Secret Room (Item Pool)|Secret Room items]] to choose from.
+
+If you’re not able to get enough cards to start a breaking run on the current floor, don’t worry; Echo Chamber will remember the cards you used on earlier floors, allowing you to resume where you left off on later floors.
+
+Cards you’re looking for include ones that:
+* Can give an infinite supply of cards to use ({{p|Jera}}, {{p|Ancient Recall}})
+* Spawn stage elements that can spawn/reroll items ({{p|XIV - Temperance}}, {{p|XX - Judgement}}, {{p|VIII - Justice?}}, {{p|XX - Judgement?}})
+** Cards that spawn items immediately ({{p|0 - The Fool?}}/{{p|VI - The Lovers?}}/{{p|XVII - The Stars?}}) can also be used, but they will have to be used with Glitched Crown instead of Echo Chamber, as they spawn the item immediately, and do not allow you to leave and re-enter to get both the effects of Echo Chamber and Glitched Crown.
+*** If you got Glitched Crown from earlier sets of items acquired, you can use the cards with Echo Chamber and still have them cycle through items.
+* Spawn hearts, cards, and/or keys ({{p|V - The Hierophant}}, {{p|VI - The Lovers}}, {{p|VIII - Justice}}, {{p|V - The Hierophant?}}, {{p|Queen of Hearts}}, {{p|Soul of the Keeper}})
+** Cards that heal/give coins directly ({{p|XI - Strength}}, {{p|XIX - The Sun}}, {{p|III - The Empress?}}, {{p|2 of Diamonds}}, {{p|2 of Clubs}}, {{p|2 of Spades}}, {{p|2 of Hearts}}, {{p|Dagaz}}) can give extra initial resources to work with, but they will not let you refresh your supply while spawning items, as you’ll be spending health and resources ''after'' using all your cards.
+*** If you have neutral cards, you can also drop them in the Secret Room to use with the previous cards to refresh your resource supply and get extra uses out of all the other cards Echo Chamber copies; just remember to get Modeling Clay to mimic Echo Chamber again before you use them.
+{{dlc-}}
+
+== Unique Advantages ==
+Breaking runs are able to reroll through entire item pools, allowing them to get combinations of any items they want. Aside from making runs easy, this carries with it some unique advantages.
+
+* {{i|Mama Mega!}} lets Isaac open the doors to [[Boss Rush]] or [[??? (Floor)|???]] without having to meet their time limits. It can be obtained from Shops or [[Bomb Bum]]s (which can be spawned by using [[XX - Judgement]] continuously), meaning breaking runs can complete Boss Rush, [[Hush]], and/or [[Delirium]] with a run that’s as powerful as they want it to be.
+* {{dlc+|a}} Picking up multiple copies of {{i|Eden's Blessing}} makes it so Isaac starts with that many random items at the start of the next run, up to a maximum of ten; if ten or more Eden’s Blessings were picked up, all leftover items to be given will instead go to the next run, and so on and so forth until there are no more random items to be given. {{dlc+|a+}} With the use of {{i|Glowing Hourglass}}, {{i|Crooked Penny}}, {{i|Schoolbag}}, and an endless supply of Little Batteries, an indefinite amount of Eden’s Blessings can be picked up, and '''''Isaac can start every run thereon with ten {{dlc|r+}} two more items.'''''{{dlc-}}{{dlc-}}
+* {{dlc+|r}} {{i|R Key}} lets Isaac go back to the start of a new run while retaining all his items and unlocks. Breaking runs create R Keys in a Secret Room, hold them in a {{i|Moving Box}}, and use them at the end of a path to go after achievements on multiple paths with the same build.{{dlc-}}
+* {{i|Clicker}} transforms Isaac into another unlocked [[character]], and [[completion mark]]s earned will be for the character transformed into. This means once a breaking run has Clicker, it can earn completion marks for any character. {{dlc|r}} Note that [[Characters#Regular Characters|normal characters]] cannot transform into [[tainted character]]s, or vice versa.
+** {{dlc|r}} The prevention from transforming between tainted and normal characters can be circumvented if you are playing as a tainted character. If you are doing, for example, the Tainted Cain method, if you craft {{i|Ankh}}, {{i|Lazarus' Rags}}, or {{i|Judas' Shadow}}, if you die and revive, you will be resurrected as a non tainted character, and using the clicker will swap between non tainted characters. Note that there is no item to turn you into a tainted character as a non tainted one.
+
+== Notes ==
+* All breaking runs will eventually lead into the Treasure Room [[item pool]] when their original item pools are emptied, then eventually create only {{i|Breakfast}} once the Treasure Room is emptied of items. Breakfast is a sign that a breaking run has become as powerful as it can be (unless Chaos is involved).
+* {{dlc|nr}} {{I|9 Volt}} should be avoided if {{i|Sharp Plug}} is being used to endlessly recharge an active item; 9 Volt prevents an active item from reaching 0 charges, which is required for Sharp Plug to be used.
+
+{{nav|fr=Casser le jeu}}

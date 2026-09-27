@@ -1,0 +1,50 @@
+{{infobox monster
+ | id           = 46
+ | variant      = 2
+ | image name   = * {{dlc|nr|Rebirth}}
+ | is mini-boss = yes
+ | environment  = <u>Mini-Boss</u><br>{{room|Mini-Boss}}
+ | base hp      = 85
+ | stage hp     = {{dlcalt|15|r=25}}
+ | pool         = {{dlc|nr}}[[Treasure room]] item /<br>{{i|Eternal D6}}<br>or<br>{{t|The Left Hand}}
+}}
+
+'''Ultra Pride''' is a [[mini-boss]] and one of the [[Seven Deadly Sins#Ultra Sins|Ultra Sins]]. Ultra Pride resembles [[Edmund McMillen]], while the Ultra Pride Baby resembles [[Florian Himsl]].
+
+== Behavior ==
+Ultra Pride differs from its normal counterparts by having attacks more similar to {{e|Super Sloth}} and a {{e|Baby}} than {{e|Pride}}. They perform attacks independently of each other.
+
+Edmund wanders randomly around the room and performs one of two attacks:
+* Shoots out 3 arcing homing projectiles.
+* Throws out a horizontal line of [[Creep#Green Creep|Green Creep]] if Isaac is to his left or right.
+** The line is cone-shaped and will always be wider to the right end, no matter which direction it was sent from.
+Ultra Pride Edmund deals a whole heart of contact damage.
+
+Florian slowly floats towards Isaac and can randomly teleport around the room.
+* If Isaac is close, he periodically shoots out a homing projectile that deals one full heart of damage.
+* Florian has {{dlc|nr}} 25 HP / {{dlc|r}} 30 HP.
+
+== Notes ==
+* If Edmund is defeated last, Ultra Pride drops {{t|The Left Hand}}, regardless of whether or not it has already appeared during that run. If this is the first time it is defeated, the Left Hand [[achievement]] is also unlocked.
+* If Florian is defeated last, there is a 25% chance to spawn {{dlc|nr}} a [[Treasure Room (Item Pool)|A Treasure Room]] item / {{dlc|r}} the {{i|Eternal D6|n}} if it has been unlocked.
+* {{dlc|nr}} Florian is treated as an ordinary {{e|Baby}} by the game, so it still has a chance to spawn as an {{e|Angelic Baby}}. This will override its unique appearance.
+* {{dlc|a}} In one room, two Edmunds can spawn instead of one of each.
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | The Left Hand }}
+
+== Trivia ==
+* They are randomly encountered as an alternate version of {{e|Pride}}.
+** Despite this, Edmund's attacks mirror {{e|Super Sloth}}'s more than Pride's.
+*** This is supported by both Edmund and Super Sloth having the same entity ID of 46.
+* Ultra Pride may be a reference to the book Frankenstein, in which Victor Frankenstein creates a living being he deems a monster. The creation of life is often considered the ultimate act of pride. In this case, Florian takes the place of Frankenstein and Edmund takes the place of the monster.
+** It might also be a reference to the fact that inserting yourself into your own video-game is often seen as narcissistic.
+** Ultra Pride's first appearance was in the final update to the flash version of ''The Binding of Isaac'' and was believed by fans to symbolize Edmund's "Ultimate Pride" at both the success of, and the fact he had finally finished development on ''The Binding of Isaac''.
+* Florian Himsl was the programmer of the first [[wikipedia:The Binding of Isaac (video game)|''The Binding of Isaac'']] game.
+* Ultra Pride (Edmund) is one of five enemies (four without Repentance, three without Afterbirth+) in the game that uses [[Creep]] as projectiles, the others are {{e|Conjoined Fatty}}, {{e|Bloaty}}, {{e|Meatball}}, and {{e|The Thing}}.
+* The [[wikipedia:Seven Deadly Sins|Seven Deadly Sins]] that these mini-bosses are based upon are, in Christian teachings, a classification of vices from which all others are derived from.
+* {{dlc+|r}} Florian dropping the {{i|Eternal D6}} is a reference to the Eternal Edition of the original game, which was a free update developed by Florian.
+* According to Edmund in a [https://twitter.com/edmundmcmillen/status/1733332795353923624?s=20 twitter AMA], the other deadly sins were supposed to have ultra forms as well, however they were scrapped for unknown reasons.{{dlc-}}
+* Edmund dropping/unlocking the Left Hand trinket may be a reference to how Edmund is left handed in real life.
+__NOTOC__
+{{nav|mini-boss|fr=Ultra Orgueil}}

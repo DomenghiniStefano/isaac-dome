@@ -1,0 +1,149 @@
+<!-- {{#ev:twitchvod|v312958626|400|right}} -->
+'''Items''' are an integral part of the gameplay of ''The Binding of Isaac: Rebirth''. They modify Isaac's [[attribute]]s, grant or modify [[tear effect]]s, and much more.
+
+Items are classified into several distinct types and groups. Some items are passive, which add an effect permanently to Isaac, while others only activate when used.
+
+* The original ''The Binding of Isaac'' had 196 items.
+* ''Rebirth'' has a total of 341 items.
+* {{dlc|a}} ''[[Afterbirth]]'' adds 95 new items, for a total of 436 items.
+** [[V1.06.0051|Updates]] to the DLC added or enabled a total of 22 items. On release, the DLC's item count was 73.
+* {{dlc|a+}} ''[[Afterbirth †]]'' adds 111 new items, for a total of 547 items.
+** [[Booster Packs]] added a total of 42 items. The DLC's original item count was 69.
+* {{dlc|r}} ''[[Repentance]]'' adds 172 new items, for a total of 719 items.
+** An update for Repentance, [[V1.7.5]], added 3 new items. The DLC's original item count was 169.
+
+In ''[[Afterbirth †]]'' and prior, 13 items are considered [[Special Item|special]] and are less likely to appear if Isaac has already come across other special items. The ''[[Repentance]]'' expansion removed the Special Item mechanic, replacing it with the [[Item Pool#Item Weight|item weight]] and [[item quality]] mechanics.
+
+For a list of which items can potentially appear in a given [[special room]] or under certain conditions, see [[item pool]] and [[Item Tags]].
+
+For the grids of items that appear in the stats menu, see [[Collection Page]].
+
+Not to be confused with [[cards and runes]], [[pills]], and [[trinkets]].
+
+__TOC__
+
+== Activated Collectibles ==
+Unless Isaac has {{i|Schoolbag}}, only one activated item can be held at a time, with the old collectible being placed on a pedestal if a new activated item is picked up. Most activated items need to recharge before use, with the recharge bar filling either by clearing rooms or recharging over time. Other activated items do not have a charge bar, and, with a few exceptions (such as {{i|How to Jump}}), will instead either disappear after a single use or require resources such as [[coins]] or [[health]]. Some activated items will also grant passive effects as long as they are equipped.
+
+{{dlc|r}} In some special circumstances, activated items can be placed in the consumable slot instead of the standard activated item slot. This counts as both an extra activated item slot and an extra consumable slot, meaning other activated items and consumables can be picked up as normal. Items in this slot are used with the consumable key, and can't be lost through any means (unless they're consumed like items from {{t|Dice Bag}}). Otherwise, they function the same as other activated items.
+
+=== Notes ===
+* [[Battery Bum]]s and most [[Batteries]] charge item(s) in the activated item slot first, then the item in the consumable slot. The exception to this is the {{e|Mega Battery}}, which recharges the items in both slots.
+* Most trinkets that work with activated items (e.g. {{t|Vibrant Bulb}}, {{t|Panic Button}}, etc.) ignore items in the consumable slot.
+* There are a total of 171 activated items.
+
+{{collectible table | type = activated }}
+
+== Passive Collectibles ==
+Passive collectibles are vast and diverse, varying wildly in effect and strength. Some simply improve Isaac's stats, add [[health]], or provide a [[familiar]]. Some completely change the way the run can play.
+
+* Other common effects include:
+** Isaac's tears gaining [[Tear effects]] or causing [[Status Effects]] on hitting enemies.
+** Isaac's tears being replaced with a completely different weapon, such as a [[Mom's Knife|knife]].
+** Isaac's bombs gaining new effects, often with a bonus supply of extra bombs.
+** Triggering a special effect when Isaac takes damage, or kills an enemy.
+** Creating additional [[pickups]], either when first collected, or over time.
+** Improving active item cooldowns.
+** Granting permanent [[flight]].
+
+An unlimited amount of passive collectibles can be held at a time, and the effects they grant usually last until the end of that run.
+
+* Removing a passive item is only possible in a few rare ways, and usually comes with severe drawbacks, such as {{I|D4}} and {{I|Genesis}} rerolling ''all'' passive items, or {{I|Clicker}} removing the last passive item collected at the cost of changing the active character.
+
+* {{dlc|r}}{{C|Tainted Isaac}} is limited to 8 passive items (12 with {{I|Birthright}}) at a time, and can freely swap out old passive items once his inventory is full.
+
+Nearly all passive collectibles alter Isaac's appearance when collected, with newer items replacing the cosmetic effects of older items.
+
+{{collectible table | type = passive }}
+
+== Collectible ID Gaps ==
+All of the collectibles in the game have contiguous IDs, with the following exceptions:
+
+{| class="mw-collapsible wikitable striped" style="width: 100%"
+! style="width:  40px" | '''ID'''
+! '''Description'''
+! '''Item Before'''
+! '''Item After'''
+|-
+| 43
+| Has a placeholder name of "Pills here!" in the "items.xml" file, a leftover from the original ''The Binding of Isaac''.
+| {{i|Bob's Rotten Head}} (42)
+| {{i|Teleport!}} (44)
+|-
+| 59
+| {{dlc|r}} The passive version of {{i|The Book of Belial}} granted when obtaining {{i|Birthright}} as {{c|Judas}} or {{c|Black Judas}}.
+| {{i|Book of Shadows}} (58)
+| {{i|The Ladder}} (60)
+|-
+| 61
+| Has a placeholder name of "Tarot Card" in the "items.xml" file, a leftover from the original ''The Binding of Isaac''.
+| {{i|The Ladder}} (60)
+| {{i|Charm of the Vampire}} (62)
+|-
+| 235
+| n/a
+| {{i|Infestation 2}} (234)
+| {{i|E. Coli}} (236)
+|-
+| 263
+| {{i|Clear Rune}} was reallocated to this ID in Repentance.
+| {{i|Missing Page 2}} (262)
+| {{i|Smart Fly}} (264)
+|-
+| 587
+| Used to be the ID for Menorah before it was cut from Repentance.
+| {{i|The Stairway}} (586)
+| {{i|Sol}} (588)
+|-
+| 613
+| Used to be the ID for Salt Shaker before it was cut from Repentance.
+| {{i|Lost Soul}} (612)
+| {{i|Blood Bombs}} (614)
+|-
+| 620
+| Used to be the ID for Voodoo Pin before it was cut from Repentance.
+| {{i|Birthright}} (619)
+| {{i|Red Stew}} (621)
+|-
+| 630
+| Used to be the ID for Lucky Seven before it was cut from Repentance.
+| {{i|Bot Fly}} (629)
+| {{i|Meat Cleaver}} (631)
+|-
+| 648
+| Used to be the ID for Pill Crusher before it was cut from Repentance.
+| {{i|4.5 Volt}} (647)
+| {{i|Fruity Plum}} (649)
+|-
+| 656
+| A passive collectible granted when you use the {{i|Damocles}} active item. Since it is not a "real" item, it is included in this list of missing IDs.
+| {{i|Spin to Win}} (655)
+| {{i|Vasculitis}} (657)
+|-
+| 662
+| Used to be the ID for the [[Cut_Content#Unimplemented_Items|cut item Pacifist]].
+| {{i|Quints}} (661)
+| {{i|Tooth and Nail}} (663)
+|-
+| 666
+| n/a
+| {{i|Guppy's Eye}} (665)
+| {{i|Strawman}} (667)
+|-
+| 718
+| Used to be the ID for the [[Cut_Content#Unimplemented_Items|cut item Keeper's Rope]].
+| {{i|Keeper's Kin}} (717)
+| {{i|Keeper's Box}} (719)
+|}
+
+== Trivia ==
+* {{t|Wiggle Worm}} was an item in the original ''The Binding of Isaac''; however, in ''Rebirth'', it was changed into a [[trinket]].
+** {{i|The Polaroid}} was a trinket in the original ''The Binding of Isaac'', but was changed into an item. Interestingly, these changes keep the count of items and trinkets from the original game the same.
+* There are a total of 170 active items, with 74 in ''Rebirth'', 19 in ''Afterbirth'', 30 in ''Afterbirth+'', and 47 in ''Repentance''. Of those, 138 items possess a charge bar, with 61 items in ''Rebirth'', 16 in ''Afterbirth'', 24 in ''Afterbirth+'', and 37 in ''Repentance''.
+* There are a total of 547 passive items, with 267 in ''Rebirth'', 76 in ''Afterbirth'', 81 in ''Afterbirth+'', and 123 in ''Repentance''.
+** From ''Rebirth'' to ''Afterbirth+'', there has been about a 1:4 ratio of active items to passive items.
+* {{dlc|a+}} ''Afterbirth+'s'' original item count was 89. The [[Booster Pack]]s added 42 items.
+
+{{nav|fr=Objets}}
+[[Category:Collectibles| ]]
+[[Category:Objects]]

@@ -1,0 +1,16 @@
+{{infobox version
+ | dlc   = r
+ | date  = 2024-02-01
+}}
+
+The [[Online (open beta)|online beta]] received a patch on February 1st, 2024, announced on [https://twitter.com/tyronerodriguez/status/1752949244594647158 Twitter].
+
+== Documented Changes ==
+* Minor fixes for Emote menu
+* HUD tweaks and fixes
+* Revive machine tweaks
+
+== Undocumented changes ==
+* {{c|Jacob and Esau}} were given a new toggle in the options menu labelled "Jacob+Esau Controls" with the choices being "Classic" or "Better".
+
+{{nav|version}}

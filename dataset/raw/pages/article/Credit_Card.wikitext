@@ -1,0 +1,30 @@
+{{header special cards}}
+{{infobox card
+ | type        = special card
+ | id          = 43
+ | recharge    = {{dlcalt|4|r=6}}
+ | quote       = Charge it!
+ | description = Makes all [[pickup]]s and [[item]]s that cost money or health in the room free.
+ | unlocked by = Credit Card
+}}
+
+{{cit|us}}
+
+== Effects ==
+* Using the Credit Card in a {{r|Shop}} instantly removes the cost of all items in that shop, allowing Isaac to take all of them for free.
+* Using the Credit Card in a {{r|Devil Room}} or {{r|Black Market}} allows Isaac to take all the items without any health cost.
+** Taking Devil Room items with the Credit Card does not prevent {{r|Angel Room}}s from appearing.
+
+== Notes ==
+* Being a [[special card]], the '''Credit Card''' has a significantly lower chance of appearing compared to other cards.
+* Free items will remain free, even if Isaac leaves the current room.
+* Works with the {{i|Blank Card}}, allowing Isaac to purchase all items from every {{r|Shop}}, if used correctly.
+* {{dlc+|a}} Using the Credit Card in a Shop prevents {{i|Restock}} from working in this Shop only. However, {{m|Shop Restock Machine}}s will work, creating new items.{{dlc-}}
+* {{dlc|r}} Can be used in the starting room of {{s|Dark Room}}, allowing all four items to be taken for free.
+
+== Trivia ==
+* Credit Card is given significantly more detail in its [https://bindingofisaacfoursouls.fandom.com/wiki/Loot_deck Four Souls card], showing it to be owned by Isaac's [[Mom]].
+** The Credit Card itself is from "Heavenly Rewards", with a symbol resembling an upside-down {{i|Godhead}} in the bottom right corner.
+** The last four digits on the Credit Card are "0109", a reference to a bug involving the {{m|Greed Donation Machine}} that was later incorporated in an [[Keeper_ARG|ARG]] that added {{c|Keeper}} to the game.
+
+{{nav|fr=Carte de Crédit}}

@@ -1,0 +1,203 @@
+{{page dlc|r}}
+[[File:Planetarium door locked.png]] [[File:Planetarium door.png]]
+
+The {{r|Planetarium}} is an unlockable [[room]] type added in ''[[The Binding of Isaac: Repentance]]''. Planetariums are similar to {{r|Treasure Room}}s, in that they both require keys to enter, but always contain special {{ip|Planetarium|text=astronomy-themed items}} that are only available through Planetariums. Their chance for appearing increases with each Treasure Room skipped. They are unlocked by acquiring three different [[Item Tags stars|astrology-related items]] in a single run.
+
+== Generation Chance ==
+Planetariums can only appear in [[chapters]] 1, 2, and 3 (Including their alternative floors).
+* {{t|Telescope Lens}} allows Planetariums to generate in {{s|Womb}} and {{s|Corpse}}.
+* However, Planetariums ''can'' appear in the additional {{s|Mausoleum}} II / {{s|Gehenna}} II level that is accessed through {{a|A Strange Door}}.
+The base chance for a Planetarium to generate is 1%. This chance can be modified in various ways:
+{| class="wikitable" style="text-align: center"
+ ! scope="col" | Condition
+ ! scope="col" | Chance
+ |- style="background-color: #440f0f"
+ | Descending a floor
+ | +20%
+ |- style="background-color: #440f0f"
+ | Entering a {{r|Treasure Room}}
+ | -20%
+ |-
+ | Having {{t|Telescope Lens}}
+ | +24%
+ |-
+ | Having {{i|Crystal Ball}}
+ | +15%<br>+100% if a {{r|Treasure Room}} has been skipped
+ |-
+ | Having {{i|Magic 8 Ball}}
+ | +15%
+ |-
+ | Having {{i|Sausage}}
+ | +6.9%
+ |-
+ | Entering a Planetarium
+ | Set to 1% chance and cannot be increased<br>Set to 10% with {{t|Telescope Lens}}
+ |}
+In other words, every {{r|Treasure Room}} skipped will add 20% to the generation chance. However, if additional Treasure Rooms are entered, such as those created by {{i|Forget Me Now}} or {{i|Red Key}}, then the 20% penalty for entering a Treasure Room will be taken without receiving the 20% bonus for descending a floor.
+* The combined percentage from descending floors and entering Treasure Rooms will never go below 0%.
+* Entering Treasure Rooms in the [[Mirrored World]] of {{s|Downpour}} II / {{s|Dross}} II will not affect the generation chance.
+
+== Layouts ==
+The following room maps were made using [https://github.com/Basement-Renovator/basement-renovator Basement Renovator] for cleaner viewing.
+{| class="wikitable sortable mw-collapsible mw-collapsed" style="text-align: center"
+ ! scope="col" | ID
+ ! scope="col" | Weight
+ ! scope="col" class="unsortable" | Image preview
+ |-
+ ! scope="row" | 0
+ | 1
+ | [[File:Planetarium 0.png|300px]]
+ |-
+ ! scope="row" | 1
+ | 1
+ | [[File:Planetarium 1.png|300px]]
+ |-
+ ! scope="row" | 2
+ | 1
+ | [[File:Planetarium 2.png|300px]]
+ |-
+ ! scope="row" | 3
+ | 1
+ | [[File:Planetarium 3.png|300px]]
+ |-
+ ! scope="row" | 4
+ | 1
+ | [[File:Planetarium 4.png|300px]]
+ |-
+ ! scope="row" | 5
+ | 0.5
+ | [[File:Planetarium 5.png|300px]]
+ |-
+ ! scope="row" | 6
+ | 0.25
+ | [[File:Planetarium 6.png|300px]]
+|}
+
+== Notes ==
+* The {{I|Crystal Ball}} and {{I|Deck of Cards}} will not count towards the unlock if they are left behind after picking them up, they must be actively held.
+* If Isaac loses passive items (ie: using the {{I|D4}}) they will not count towards the unlock. In other words, Isaac must have 3 items simultaneously.
+* Planetarium items can be found before Planetariums have been unlocked in-game. To do so, use any method that ignores item pools ({{I|Chaos}}, {{C|Eden}}, etc.).
+* If attempting to find a Planetarium to obtain one of its items, very careful consideration should be taken before picking up {{I|Rosary}}, as this will add {{I|The Bible}} to the Planetarium's item pool. Given the pool's small size, you will have a high chance to find it instead of a normal Planetarium item.
+* A simple way to unlock Planetariums is to acquire a {{I|D20}} in [[Greed Mode]] and re-roll the coins to keep buying store items (this requires a battery to recharge the {{I|D20}}). The item pool includes {{I|Magic 8 Ball}} and all [[Treasure Room (Greed Mode Item Pool)|Treasure Room items]] (which include most of the pertinent items); therefore, it can easily be unlocked.
+* Acquiring the astrology-related items from the {{i|Bag of Crafting}} will not guarantee the Planetarium achievement.
+** However, acquiring the regular Zodiac items via {{i|Bag of Crafting}} will grant the achievement.
+* If a Planetarium has been generated, {{P|XVII - The Stars}} will prioritize teleporting Isaac into it over the Treasure Room.
+* If a Planetarium appears on {{s|Downpour}} II, even if the door has been unlocked, the planetarium in the [[Mirrored World]] will be locked and will contain nothing.
+* Planetariums will not be available on challenges that prevent Treasure Rooms from spawning.
+** During {{chal|Pica Run}}, a Planetarium will contain only a trinket.
+* If Isaac uses {{I|Glowing Hourglass}} to exit a Planetarium upon first entering one, the Planetarium does not count as entered, and Planetarium chance is preserved for later floors, allowing Isaac to effectively reroll his Planetarium until a desired item is found.
+* Doing a [[Victory Lap]] does ''not'' reset the entered Treasure Room count, making it very difficult to have a high chance for Planetarium generation.
+* Using {{i|R Key}} resets the entered Treasure Room count.
+* If the Planetarium layout selected was a closet-sized room, and there are no valid locations for it to spawn, then the Planetarium will not generate.
+* Leaving an XL floor will count as descending 2 floors.
+
+== General Strategy ==
+Overall, the Planetarium items are average to above-average. None of them are bad, but none of them are particularly gamebreaking either. So, given that skipping a treasure room doesn't guarantee a Planetarium showing up, it usually isn't worth skipping Treasure Rooms without a good reason to do so unless you're doing speedruns. In speedruns the global strategy is to skip everything to go to the last floor. So in that case, Terra and Mercurius are the best items and overall skipping Treasure rooms is always worth since we can have a build with only Devil or Angel deals.
+
+Given the [[Ascent]] path takes Isaac back through previous floors, it is viable to skip item rooms on the way down to improve his chances of the Planetarium spawning and then getting the items from the rooms he skipped on the way back up. However, Planetariums can NOT generate during the Ascent, nor will skipped Planetariums "reappear".
+
+Items such as {{i|Glowing Hourglass}} or {{i|Dream Catcher}} can be used to check the contents of a Treasure Room without negatively affecting the chances for a Planetarium to spawn.
+
+== Statistics ==
+Without {{T|Telescope Lens}}, Planetarium rooms can't be found in chapter 4 and after. Since the chance to find a Planetarium depends on the number of Treasure Rooms skipped, skipping earlier ones allows for a higher cumulative chance of encountering one.
+
+The table below presents the chances if the first Treasure Rooms are skipped. For example, if the first two are passed on, there is an 84% chance to find a Planetarium between {{s|Basement}} I and {{s|Depths}} I.
+<!-- each row adds a probability factor: 0.99x for first column, 0.79 for second, 0.59 for third, 0.39, 0.19 and finally 0; final probability is 1 minus the multiplied factors -->
+{| class="wikitable mw-collapsible mw-collapsed" style="text-align: center"
+ ! scope="row" | Treasure Rooms skipped
+ ! scope="col" | 0
+ ! scope="col" | 1
+ ! scope="col" | 2
+ ! scope="col" | 3
+ ! scope="col" | 4
+ ! scope="col" | 5
+ ! scope="col" | 6
+ |-
+ ! scope="row" | Chapter 1-1
+ | 1.0%
+ | x
+ | x
+ | x
+ | x
+ | x
+ | x
+ |-
+ ! scope="row" | Chapter 1-2/1A-1
+ | 2.0%
+ | 21.8%
+ | x
+ | x
+ | x
+ | x
+ | x
+ |-
+ ! scope="row" | Chapter 2-1/1A-2
+ | 3.0%
+ | 38.2%
+ | 53.9%
+ | x
+ | x
+ | x
+ | x
+ |-
+ ! scope="row" | Chapter 2-2/2A-1
+ | 3.9%
+ | 51.2%
+ | 72.8%
+ | 82.0%
+ | x
+ | x
+ | x
+ |-
+ ! scope="row" | Chapter 3-1/2A-2
+ | 4.9%
+ | 61.4%
+ | 83.9%
+ | 93.0%
+ | 96.6%
+ | x
+ | x
+ |-
+ ! scope="row" | Chapter 3-2/3A-1
+ | 5.9%
+ | 69.5%
+ | 90.5%
+ | 97.3%
+ | 99.4%
+ | 100%
+ | x
+ |-
+ ! scope="row" | Chapter 3A-2 or 4-1 with {{T|Telescope Lens}}
+ | 6.8%
+ | 75.9%
+ | 94.4%
+ | 98.9%
+ | 99.9%
+ | 100%
+ | 100%
+|-
+ ! scope="row" | Chapter 4-2 with {{T|Telescope Lens}}
+ | 7.7%
+ | 81.0%
+ | 96.7%
+ | 99.6%
+ | 99.98%
+ | 100%
+ | 100%
+ |}
+
+== Gallery ==
+<gallery>
+File:UnlockPaper Planetarium.png|Unlocking the Planetarium
+File:Achievement The Planetarium icon.png|Achievement icon from unlocking the Planetarium
+</gallery>
+
+== In-Game Footage ==
+{{#ev:youtube|9eMCVpFrPUg||inline}} {{#ev:youtube|iBXy4Y0XgWE||inline}}
+
+== Trivia ==
+* [[anti:Planetarium|Planetarium]]s were introduced in the ''Antibirth'' mod, which forms the basis for most of ''Repentance''<nowiki/>'s content. Their unlock method and generation mechanics remain the same in both versions.
+** Their item pool in ''Antibirth'' included the [[Signs of the Zodiac]] alongside the Planetarium-exclusive items. This is not the case in ''Repentance''.
+** The original effects of most of the Planetarium-exclusive items have been unchanged from ''Antibirth'' with the item pool now having the introduction of two new items, {{i|Jupiter}} and {{i|Neptunus}}, in ''Repentance''.
+
+{{nav|room|fr=Planétarium}}

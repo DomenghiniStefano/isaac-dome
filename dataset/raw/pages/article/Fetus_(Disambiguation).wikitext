@@ -1,0 +1,9 @@
+{{disambiguation}}
+
+'''Fetus''' may refer to:
+* {{i|Dr. Fetus}}, an unlockable [[passive collectible]] found in {{r|Treasure Rooms}}.
+* {{i|Epic Fetus}}, an unlockable [[passive collectible]] found in {{r|Treasure Rooms}} {{dlc|r|and {{r|Secret Rooms}}}}.
+* {{a|A Fetus in a Jar}}, an [[achievement]] unlocking {{i|Dr. Fetus}}.
+* {{dlc|r}} Tears fired while having {{i|C Section|n}}.
+
+{{nav}}

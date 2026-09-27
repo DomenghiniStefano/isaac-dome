@@ -1,0 +1,27 @@
+{{header item pools}}
+{{item pool}}
+
+Items in this pool can appear in {{E|Locked Chest}}, {{E|Bomb Chest}}, and {{R|Vault}}.
+
+== Activated Collectibles ==
+{{item pool/header}}
+{{pool items | dlc = nr | Guppy's Head, Bob's Rotten Head, Tammy's Head }}
+{{pool items | dlc = a+nr | IV Bag }}
+|}
+
+== Passive Collectibles ==
+{{item pool/header}}
+{{pool items | weight = {{dlcalt|1|r=0.5}} | Fate }}
+{{pool items | dlc = nr | Abel, Bob's Brain, Cricket's Head, Goat Head, Infamy }}
+{{pool items | dlc = anr | Fate's Reward, Head of the Keeper, Steven }}
+{{pool items | dlc = a+nr | Blood Bag, Bomb Bag, Little Baggy, Mystery Sack, Rune Bag, Sack of Pennies, Sack of Sacks }}
+{{pool items | dlc = r | The Belt, Binky, Consolation Prize, Crack Jacks, Dad's Lost Coin, Glass Eye, Latch Key, Magic 8 Ball, Match Book, Midnight Snack, Mom's Pearls, Mom's Ring, Mom's Underwear, Mr. Dolly, A Quarter, Screw, Squeezy, Stapler, Torn Photo, Wire Coat Hanger }}
+{{pool items | dlc = r | weight = 0.5 | PJs, Schoolbag }}
+{{pool items | dlc = r | weight = 0.1 | Lead Pencil, Orphan Socks }}
+|}
+
+== Trivia ==
+* {{dlc| a+nr }} "Bag" and "sack" items were added to the Golden Chest pool, which previously contained only "head" items.
+* {{Dlc|r}} In Repentance, the Golden Chest pool was overhauled to mostly include "household" items, the majority of which are [[Boss (Item Pool)|Boss]] items. The only previous item to not have been removed from the pool is {{I|Fate}}.
+
+{{nav|fr=Coffre Doré (Banque d'Objets)}}

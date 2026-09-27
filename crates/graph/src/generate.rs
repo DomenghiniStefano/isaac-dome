@@ -1,4 +1,4 @@
-//! One pass from `dataset/wiki.json` to `requirements.json`. Runs offline, once per
+//! One pass from `dataset/wiki/` to `requirements.json`. Runs offline, once per
 //! snapshot, never from the app.
 
 use catalog::AchievementId;
@@ -55,7 +55,8 @@ fn reduces_by_id(t: &Target) -> bool {
         | Target::Transformation { .. }
         | Target::Stage { .. }
         | Target::Room { .. }
-        | Target::Concept { .. } => false,
+        | Target::Concept { .. }
+        | Target::Article { .. } => false,
     }
 }
 
@@ -95,7 +96,9 @@ fn requirements_of(entry: &Entry) -> Option<&[Inline]> {
         | Infobox::Boss { .. }
         | Infobox::Challenge { .. }
         | Infobox::Transformation { .. }
-        | Infobox::Character { .. } => None,
+        | Infobox::Character { .. }
+        | Infobox::Entity { .. }
+        | Infobox::Article { .. } => None,
     }
 }
 
@@ -139,6 +142,8 @@ fn transformation_row(e: &Entry) -> Option<TransformationRow> {
         | Infobox::Achievement { .. }
         | Infobox::Boss { .. }
         | Infobox::Challenge { .. }
-        | Infobox::Character { .. } => None,
+        | Infobox::Character { .. }
+        | Infobox::Entity { .. }
+        | Infobox::Article { .. } => None,
     }
 }

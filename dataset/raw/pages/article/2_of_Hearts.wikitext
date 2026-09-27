@@ -1,0 +1,34 @@
+{{Header playing cards}}
+{{Infobox card
+ | name        = 2 of Hearts
+ | type        = card
+ | id          = 26
+ | quote       = Item multiplier
+ | description = Doubles Isaac's current number of {{e|Red Heart}}s.<br>If Isaac only has empty Red Heart containers, he is healed for 1 Red Heart.
+ | recharge    = {{dlcalt|4|r=12}}
+}}
+
+{{cit|c}}
+
+== Effects ==
+* Doubles Isaac's {{e|Red Heart}}s.
+* If Isaac only has empty Red Heart containers, he is healed for 1 Red Heart.
+
+== Notes ==
+* '''2 of Hearts''' doesn't add new Red Heart containers, just fills empty ones. Nor does it double any other types of health.
+
+== Strategy ==
+* '''2 of Hearts''' can be used to significantly increase the use of {{r|Sacrifice Room}}s / {{m|Blood Donation Machine}}s / {{m|Devil Beggar}}s and any other health-draining object. The more heart containers, the more free hearts can be obtained form one use of the card.
+
+== Synergies ==
+* {{I|Tarot Cloth|nr}}: Quadruples Isaac's red hearts.
+* {{c|Tainted Bethany|r}}: Doubles her Blood Charges.
+
+== Interactions ==
+* {{I|Tarot Cloth|r}}: No effect.
+* {{a|It's the Key}}: Acquiring red hearts with '''2 of Hearts''' does not invalidate the achievement condition.
+* {{e|Bone Heart}}: Bone hearts are also filled by doubling health.
+* {{e|Rotten Heart}}: If only a rotten heart is the only heart filling the otherwise empty heart containers, heals one heart.
+** If there are red hearts and rotten hearts, the rotten heart is counted as a full red heart for doubling.
+
+{{nav|fr=2 de Cœur|card}}

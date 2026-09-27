@@ -1,0 +1,31 @@
+{{infobox version
+ | dlc  = r+
+ | steam = 520825731534554234
+ | date = 2024-12-05
+}}
+
+Disclaimer: The official patch notes combined both v1.9.7.7 and [[v1.9.7.8]] changes, only v1.9.7.7 changes will be documented here.
+
+== Documented changes ==
+* Added a rumble option for controllers into the menu.
+* Added <code>repentance_plus</code> global variable and removed <code>repentance</code> global variable.
+* Added a charging tears animation to co-op ghost babies.
+* {{i|Flush!}} now works on {{e|Turdlings}}.
+* Co-op ghosts are now able to fire out tiny bombs in [[Deathmatch]].
+* Void portal is now guaranteed after defeating {{e|Mother}} if the Mother ending has been seen once by any character.
+* Blocked {{i|Lil Portal}} from spawning portals in Angel Shop, Secret Shop, Crawlspaces, and Black Markets
+
+=== Fixes ===
+* Attempted a fix to forbid mods in online.
+* Fixed {{i|Abyss}} locusts not remembering their quality when exiting and continuing a run, or when flipping back to a form with locusts as {{c|Tainted Lazarus}}.
+* Fixed the dice from {{t|Dice Bag}} being invisible in the [[HUD]].
+* Fixed tears not hurting {{e|Spider}}s from {{i|Dark Bum}} or {{e|Dip}}s from flushed poop bosses.
+* Fixed the oddities that happen when you exit and continue in {{e|Mother}}'s arena after killing her (no exit door appears, no invisible wall blocks off the void portal now).
+* Fixed crashes caused by {{i|C Section}} shots from familiars like clots and {{c|Tainted Lilith}}'s Gello.
+* Various API fixes.
+
+== Undocumented changes ==
+=== Fixes ===
+* Fixed {{c|Bethany}} being revived with one and a half soul heart in online runs.
+
+{{nav|version}}

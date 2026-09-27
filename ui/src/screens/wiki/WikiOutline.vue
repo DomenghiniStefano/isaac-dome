@@ -4,13 +4,23 @@ import { Button, ButtonSize, ButtonVariant } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { useMessages } from '@/i18n'
 import type { Section } from '@/lib/ipc/types'
-import { outlineOf } from './wikiOutline'
+import { SectionKind } from '@/lib/ipc/types'
+import { outlineOf, type OutlineItem } from './wikiOutline'
+import { inlinePlain } from '@/lib/wiki/inlinePlain'
 import { sectionText } from '@/lib/wiki/wikiLabels'
 
 const props = defineProps<{ sections: Section[] }>()
 const { t } = useMessages()
 
 const items = computed(() => outlineOf(props.sections))
+
+// `Other`'s label is its own title — the same one `WikiSections` renders as the heading —
+// read as plain text: the row is a `<button>` already, so a reference inside it would be a
+// button inside a button, which is what `WikiInline`'s links would draw.
+const label = (item: OutlineItem): string =>
+  item.kind === SectionKind.Other
+    ? inlinePlain(item.title)
+    : t(sectionText[item.kind])
 
 // The page scrolls in the screen's own container, so the heading is reached by asking the
 // element to come into view rather than by a hash the memory router would have to carry.
@@ -35,7 +45,7 @@ const jump = (id: string) => {
         :size="ButtonSize.Row"
         class="w-full justify-start px-2 text-left text-row text-foreground-soft"
         @click="jump(item.id)"
-        >{{ t(sectionText[item.kind]) }}</Button
+        >{{ label(item) }}</Button
       >
     </CardContent>
   </Card>

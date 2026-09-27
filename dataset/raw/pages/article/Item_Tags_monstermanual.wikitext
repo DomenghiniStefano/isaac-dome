@@ -1,0 +1,9 @@
+{{page dlc|r}}
+
+Items with this [[Item Tags|tag]] are familiars which can be summoned by {{i|Monster Manual}}.
+
+== Passive Collectibles ==
+{{collectible table | tag = monstermanual | type = passive }}
+
+{{nav|fr=Balise monstermanual}}
+[[Category:Item tags]]

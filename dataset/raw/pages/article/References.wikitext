@@ -1,0 +1,236 @@
+{{disambig msg|popular culture references|the Seed Generator which doubles as a cheat code entry|Seeds}}
+'''References''' is one of the speculation pages in ''[[The Binding of Isaac: Rebirth]]''. Besides the obvious [[seed]]s - (Seed generator which doubles as a cheat code entry), there's lots more references to popular culture in the game.
+
+== Super Meat Boy ==
+* {{i|Ball of Bandages}} - Becomes Bandage Girl.
+* {{i|Cube of Meat}} - Becomes Super Meat Boy.
+* {{i|Dr. Fetus}}, {{I|Epic Fetus}} - Reference to the main antagonist from the game.
+* {{i|Little C.H.A.D.}} - Referencing C.H.A.D. shrinking after his defeat in Super Meat Boy.
+* {{i|SMB Super Fan}} - Gives Isaac an appearance similar to Super Meat Boy.
+* {{E|C.H.A.D.}} - Reference to the boss C.H.A.D.
+* {{E|Brownie}} - Shares the same name as a boss from the game.
+* {{E|Little Horn}} - Shares the same name as a boss from the game.
+* {{E|Larry Jr.}} - The presumed offspring of the Larries from the original game.
+* Coop Baby #76 is a reference to [https://supermeatboy.fandom.com/wiki/CommanderVideo Commander Video] - one of the guest unlockable characters.
+* Coop Baby #107 is a reference to [https://supermeatboy.fandom.com/wiki/Brownie Brownie].
+* Coop Baby #178 is a reference to Bandage Girl.
+* Coop Baby #188 is a reference to Dr. Fetus.
+* Coop Baby #210 is a reference to Meat Boy.
+
+== Edmund's other games ==
+=== [https://www.newgrounds.com/portal/view/459147 Aether] ===
+* Coop Baby #106 is a reference to Monster.
+
+=== [https://store.steampowered.com/app/9500/Gish/ Gish] ===
+* {{i|Ball of Tar}} - Gives Isaac an appearance similar to that of Gish.
+* {{E|Clot}} - Enemies that appear to be smaller versions of Gish.
+* {{E|Gish}} - The protagonist of the original game.
+* {{i|Little Gish}} - A familiar based off of the protagonist (and boss respectively.)
+* {{E|Sisters Vis}} - A boss taken from the original game.
+* {{S|Dross}} - Reference to a chapter from the original game.
+* {{S|Gehenna}} - Reference to a chapter from the original game.
+
+=== [https://www.newgrounds.com/portal/view/511754 Time Fcuk] ===
+* {{i|Little Steven}} - The smaller steven attached to Steven.
+* {{i|Steven}} - Attaches a small head to Isaac, similar to that of the smaller Steven.
+* {{E|Steven}} - The protagonist of the original game.
+* Coop Baby #205 resembles Steven.
+
+=== [https://www.newgrounds.com/portal/view/347467 Tri-achnid] ===
+* {{E|Triachnid}} - The protagonist of the original game.
+
+=== [https://www.newgrounds.com/portal/view/494129 Spewer] ===
+* {{i|Lil Spewer}} - A smaller version of the protagonist from the original game.
+
+=== [https://store.steampowered.com/app/384360/Fingered/ Fingered] ===
+* {{i|Finger!}} - The mouse cursor used in the game.
+
+=== [https://store.steampowered.com/app/583470/The_End_Is_Nigh/ The End Is Nigh] ===
+* {{E|Morningstar}} - Resembles Ferals, enemies in the game.
+* {{E|Fissure}} - Based on enemies of the same name.
+* {{E|Floast}} - Name is taken from enemies in the game.
+* {{e|Delirium}} when transformed into {{E|Steven}} - Resembles Ash, the protagonist of the original game.
+* {{i|Ball of Tar}} when picked up as {{c|???}} or {{c|Tainted ???}} - Gives Isaac an appearance similar to Ash.
+
+== Nintendo ==
+Daily runs on the 6th of December will turn Isaac into former Nintendo president '''Satoru Iwata''' as tribute, Satoru starts with {{i|The Gamekid}} and
+{{t|Cartridge}}
+
+=== Gameboy ===
+* {{i|The Gamekid}} and Power Pill! - A reference to the Nintendo Gameboy, with its effect referencing Pac-Man.
+* Coop Babies #368 - #373 are refrences to characters from Pac-Man: Pac-Man, Scared Ghost, Inky, Blinky, Pinky, Clyde.
+
+=== Super Mario ===
+* {{i|1up!}} - Reference to the 1-up power-up.
+* {{i|Bobby-Bomb}} - Reference to the Bob-omb enemy from the Mario series.
+* {{i|Gnawed Leaf}} - The item's appearance is a reference to the Leaf power-up, the effect to the Tanooki suit power-up from the series.
+* {{i|How to Jump}} - The cover looks like the NES Super Mario Bros. cartridge
+* {{t|Liberty Cap}} - Touch fuzzy, get dizzy (Reference to level 1-7 in the Super Nintendo title Yoshi's Island)
+* {{i|Magic Mushroom}} - Reference to the Super Mushroom power-up
+* {{i|Mini Mush}} - Reference to the Mini Mushroom power-up
+* {{i|Mega Mush}} - Reference to the Mega Mushroom power-up
+* Coop Babies #355 - #367 and #374 - #376 are references to characters from Super Mario series: Mario, Luigi, Wario, Waluigi, Mario with Tanooki Suit, Toad, Toadette, Chain Chomp, Mario with Frog Suit, Bowser, Hammer Bro, Mario with Fire Suit, Goomba, Princess Peach, Princess Daily and Yoshi.
+* Coop Baby #458 is a reference to Red Koopa.
+
+=== Pokémon ===
+* {{i|Friendly Ball}} - The item is a reference to Poké Balls from the [[wikipedia:Pokémon|Pokémon]] franchise.
+* {{i|Missing No.}} - Reference to the infamous Missing No. glitch from Pokémon: Red and Blue.
+* {{i|Poke Go}} - Reference to the mobile game Pokémon Go.
+* {{i|TMTRAINER}} - Reference to a glitch in Pokemon: Red and Blue.
+* {{t|'M}} - Reference to a glitch in Pokemon: Red and Blue.
+* Coop Baby #174 is a reference to Pikachu.
+
+=== The Legend of Zelda ===
+* The general gameplay is a reference to the original NES title, right down to the HUD. Coins, Keys, and Bombs are used similarly to Rupees, Keys, and Bombs in the NES game.
+** The original flash version of The Binding of Isaac uses a HUD that is a nearly direct port of the original NES Zelda title's HUD.
+* {{E|Pin}}, {{E|The Frail}}, {{E|Scolex}}, {{E|Needle}}, and {{E|Pasty}} may have all been inspired by Lanmola from The Legend of Zelda: A Link To The Past..
+* {{E|Death's Head}} was likely inspired by Bubbles from The Legend of Zelda on the NES, as they are both skulls that are invulnerable and maneuver by bouncing off walls.
+** {{E|Cursed Death's Head}} also has a similar cursing effect which prevents the player from attacking.
+* {{e|Mom's Hand}} and {{e|Mom's Dead Hand}} are a reference to Wallmasters from The Legend of Zelda.
+* {{I|Spirit Sword}} Behaves like the Master Sword in 2D Zelda games, but acts closest to how Link's sword acts in [[wikipedia:The Legend of Zelda: Link's Awakening|Link's Awakening]], which is also a reference to the [[Isaac's Awakening|challenge where it is obtained]].
+* [[I AM ERROR]] - Reference to an NPC's dialogue in Zelda II: The Adventure of Link.
+* {{E|Mother}} - The ability to deflect the Fistula attack is a reference to the Dead Man's Volley.
+* Coop Babies #377 - #386 are refrences to characters from Legend of Zelda series: Link, Dark Link, Phantom, Octorok, Orange Moblin, Blue Moblin, Zelda, Zora, Tingle, Midna.
+* Coop Baby #400 is a reference to Sheik.
+* Coop Baby #426 is a reference to Darknut, while Coop Baby #427 is a reference to black Darknut.
+
+=== Kirby ===
+* {{E|Camillo Jr.}} - Likely a reference to Kracko Jr. from the Kirby series.
+
+=== Final Fantasy ===
+* Coop Babies #415 - #419 are refrences to classes from Final Fantasy: White Mage, Warrior, Monk, Black Mage, Red Mage.
+
+== Magic: The Gathering ==
+* {{p|Chaos Card}} - Refers to [https://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=603 Chaos Orb], which instructs the player to flip it onto the playing field and destroy any cards it touches when it lands, a behavior similar to how the in-game Chaos Card is thrown and instantly kills any enemy.
+* {{i|Black Lotus}} - Refers to the [https://gatherer.wizards.com/pages/card/Details.aspx?multiverseid=600 Black Lotus], one of Magic: The Gathering's most powerful cards. The 3 hearts it adds to the player's health total are a play on how the lotus creates 3 mana of any color.[https://gatherer.wizards.com/pages/card/Details.aspx?multiverseid=600]
+* {{i|Lord of the Pit}} - Refers to [https://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=438662 Lord of the Pit], a creature that has flying similar to how the item gives Isaac flying.[https://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=438662]
+* {{i|Spirit of the Night}} - Refers to [https://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=3315 Spirit of the Night], a creature that was popular in early Magic. Also has flying, similar to Lord of the Pit.
+* {{i|Contract From Below}} - Refers to [https://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=1147 Contract from Below], which allowed a player to add a card to the (now-defunct) ante in a match to draw cards.
+* {{P|Huge Growth|dlc=a+}} - Refers to [https://scryfall.com/card/lea/197/giant-growth Giant Growth], which increases the power and toughness of the creature the card is used on. This effect is similar to the effect in game as the card increases Isaac's damage and size.
+* {{P|Ancient Recall|dlc=a+}} - Refers to [https://scryfall.com/card/cei/48/ancestral-recall Ancestral Recall], which allows the player to draw three cards from their library. In game, the card works similarly by spawning three new card items.
+* {{P|Era Walk|dlc=a+}} - Refers to [https://scryfall.com/card/vma/2/time-walk Time Walk], which allows the caster to take an extra turn, which is an incredibly powerful effect for the game. Isaac references this by granting the player the effects of both {{I|Stop Watch}} and {{I|Broken Watch}}; two time related items.
+* {{i|Spindown Dice}} - Refers to [https://www.ebay.es/itm/192582576591 Spindown Dice], a dice using on Magic to count life.
+
+== Dungeons & Dragons ==
+The first released four main characters you could pick in D&D are some of the playable characters in BOIR, based on the health and abilities.
+* {{C|Isaac}} - Fighter
+* {{C|Magdalene}} - Cleric
+* {{C|Cain}} - Thief
+* {{C|Judas}} - Mage
+* {{I|D4}}, {{i|The D6}}, {{I|D8}}, {{I|D10}}, {{I|D12}}, {{i|D20}} - The main/required 6 dice types used to play D&D.
+* {{i|Monster Manual}} - Reference to the book series of the same name that is used to reference what monsters do what in the game.
+* Dead God - Like {{i|Monster Manual}}, the achievement Dead God is a reference to the [[wikipedia:Dead Gods|Dead Gods]] adventure module for the second edition of [[wikipedia:Advanced Dungeons & Dragons]].
+
+== Minecraft ==
+* {{i|Notched Axe}} - Reference to Minecraft and its creator/former owner, Markus Persson (Known as Notch).
+** Can also be "repaired" with the {{i|Iron Bar}}.
+* {{i|Mine Crafter}} - Minecraft TNT.
+
+== Castlevania ==
+* {{I|Whore of Babylon}} and {{P|III - The Empress}} display the message "What a horrible night to have a curse." upon activation. The text comes from ''Castlevania II: Simon's Quest''.
+** {{P|III - The Empress?}} shows the message "The morning sun has vanquished the horrible night.", which also comes from said game.
+* {{E|Globin}}, {{E|Gazing Globin}} - may have been inspired by Red Skeletons from the series.
+* {{E|Mask of Infamy}} - A reference to Carmilla from ''Castlevania II: Simon's Quest''.
+* {{i|Holy Water}} - A weapon famously used by the many protagonists of the series.
+* {{i|Rosary}} - A recurring item in the series.
+* Coop Baby #190 is a reference to Red Skeleton, while Coop Baby #191 is a reference to normal Skeleton.
+
+== Other ==
+* {{i|Steam Sale}} - (Steam / Valve)
+* {{e|Troll Bomb}}, {{e|Mega Troll Bomb}}, {{E|Envy}}, {{E|Super Envy}}, {{E|Pride}}, {{E|Super Pride}} - Troll Face, a famous internet meme.
+* {{i|Shoop da Whoop!}} - Internet meme of the same name.
+* {{i|Forever alone}} - Internet meme of the same name. {{E|Envy}}, {{E|Super Envy}}, {{E|Pride}}, {{E|Super Pride}} also reference this meme.
+* I Found Pills (and Ate Them), R U a Wizard?, and I can see forever! are all [[wikipedia:image_macro|image macro]] memes.
+* {{dlc|a+}} The Feels like I'm walking on sunshine! pill is a reference to the 80s song [[wikipedia:Walking on Sunshine (Katrina and the Waves song)|Walking on Sunshine]] and [https://www.youtube.com/watch?v=eMIXDlvD_Yw a video with the same name] created by Edmund McMillen in 2010.
+* Balls of Steel is a reference to ''Duke Nukem'' as that's one of Duke's memorable lines.
+* Lemon Party is a reference to internet shock site featuring a group of elderly men performing oral sex, peeing on each other.
+* 48 Hour Energy is a reference to the drink 5 Hour Energy.
+* {{dlc|a}} One makes you larger and One makes you small are references to Alice in Wonderland, and the specific wording is a reference to the song [https://www.youtube.com/watch?v=pnJM_jC7j_4 White Rabbit] by Jefferson Airplane.
+* {{dlc|a}} Percs! is a reference to a street name for the prescription drug Percocet, which is more generically known as Oxycodone. This drug is meant to be used to treat pain, but it is often abused for recreational purposes.
+* {{E|Dople}} - Reference to the Doppelgänger from the [[wikipedia:Tomb Raider|Tomb Raider games]].
+* {{i|We Need To Go Deeper!}} - A quote from the film Inception.
+* {{i|Humbleing Bundle}} - Reference to the Humble Bundle storefront.
+* {{P|A Card Against Humanity}} - [[wikipedia:Cards Against Humanity|Cards Against Humanity]].
+* {{t|Endless Nameless}} - Reference to the nirvana song [[wikipedia:Endless, Nameless (song)|Endless, Nameless]]
+* {{i|8 Inch Nails}} - Reference to [[wikipedia:Nine Inch Nails|9-Inch Nails]].
+* {{i|My Shadow}} - Description is a reference to the song [https://www.youtube.com/watch?v=GIuZUCpm9hc&ab_channel=TOOLVEVO Forty Six & 2] by TOOL
+* {{i|King Baby}} - Item description is a reference to the film Army of Darkness.
+* {{i|Mr. ME!}} - A reference to Mr. Meeseeks from [[wikipedia:Rick and Morty|Rick and Morty]].
+* {{E|Tar Boy}} - The name is a reference to the [https://www.youtube.com/watch?v=ACHVwA1D8fE TARBOY animation] by James Lee.
+* {{I|Berserk!}} - Reference to the recurring power-up from the [[wikipedia:Doom (franchise)|Doom series]], where you can only punch enemies to kill them in one hit.
+* {{P|VII - The Chariot?}} - Isaac has a chance to gain the appearance of Edith in statue form, a cut character from the Antibirth mod.
+* Coop Baby #537 is a reference to the Broken Vessel boss from [https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwjuoO_ppvD-AhXsF1kFHUR9CGoQFnoECBEQAQ&url=https%3A%2F%2Fwww.hollowknight.com%2F&usg=AOvVaw2jN0vXLi65exM3oBoh37z- Hollow Knight]
+* Coop Baby #70 is a reference to VVVVVV character of the same name.
+* Coop Baby #74 is a reference to the game Alien Hominid by The Behemoth.
+* Coop Baby #78 is a reference to the internet meme, DERP.
+* Coop Baby #87 is a reference to Edvard Munch's paiting "The Scream".
+* Coop Baby #108 is a reference to VVVVVV's main character - Captain Vridian.
+* Coop Baby #109 is a reference to Nosferatu movie.
+* Coop Baby #116 is a reference to [[wikipedia:Cyberman|Cyberman]] from Doctor Who.
+* Coop Baby #122 is a reference to Monoko from Yume Nikki.
+* Coop Baby #176 is a reference to Optimus Prime from Transformers.
+* Coop Baby #177 is a reference to Aban Hawkins from 1001 Spikes. 
+* Coop Babies #179 and #180 are reference to Tetris.
+* Coop Baby #181 is a reference to Spelunker from Spelunky.
+* Coop Baby #184 is a reference to Donatello from Teenage Mutant Ninja Turtles. 
+* Coop Baby #209 and Coop Baby #573 are references to Fez.
+* Coop Baby #291 is a reference to Jason Voorhees from the "Friday the 13th" horror movie series.
+* Coop Baby #292 is a reference to Ash Williams from the Evil Dead series.
+* Coop Baby #294 is a reference to Power Rangers.
+* Coop Baby #295 is a reference to Kamen Rider.
+* Coop Baby #300 is a reference to Chloe from Life is Strange.
+* Coop Baby #329 is a reference to King Leonidas from 300.
+* Coop Baby #330 is a reference to Vectorman.
+* Coop Baby #331 is a reference to Shredder from Teenage Mutant Ninja Turtles.
+* Coop Baby #336 is a reference to Red from Gunstar Heroes.
+* Coop Baby #337 is a reference to Arthur from Ghosts & Goblins.
+* Coop Baby #338 is a reference to Opa-Opa from Fantasy Zone.
+* Coop Baby #342 is a reference to Aquaman.
+* Coop Baby #344 is a reference to Barbarian class in Diablo series.
+* Coop Baby #350 is a reference to Oswald the Lucky Rabbit.
+* Coop Baby #351 is a reference to old-style Mickey Mouse
+* Coop Baby #352 is a reference to Cubby the Bear from Van Beuren.
+* Coop Baby #353 is a reference to Mega Man.
+* Coop Baby #354 is a reference to Jason from Blaster Master.
+* Coop Baby #387 is a reference to Earthworm Jim.
+* Coop Babies #388 and #389 are references to player colors in Smash TV.
+* Coop Baby #390 is a reference to Powdered Toast Man.
+* Coop Baby #391 is a reference to Astro Boy manga and animation.
+* Coop Baby #395 is a reference to Ariel from Little Mermaid.
+* Coop Babies #397 amd #398 are references to Space Marines from Warhammer 40k.
+* Coop Baby #403 is a reference to Tinkerbell from Peter Pan series.
+* Coop Babies #409 - #412 are references to Ufouria: The Saga: Shades (Sukezaemon), Gil (Jennifer), Bop-Louie (Hebe) and Oh-Chan.
+* Coop Baby #414 is a reference to Tekkaman the Space Knight.
+* Coop Babies #436, #445 and #568 are references to Cave Story.
+* Coop Baby #448 is a reference to Overwatch.
+* Coop Baby #449 is a reference to Nuclear Throne.
+* Coop Baby #450 is a reference to Creepy Castle.
+* Coop Baby #454 is a reference to ChargeShot.
+* Coop Baby #455 is a reference to Handsome Mr. Frog.
+* Coop Baby #460 is a reference to Sgt. Saturn.
+* Coop Baby #484 is a reference to Adventure Time.
+* Coop Baby #490 is a reference to William Foster from Falling Down.
+* Coop Baby #491 is a reference to Sans from Undertale.
+* Coop Baby #501 is a reference to Alien franchise.
+* Coop Baby #533 is a reference to Star of Providence.
+* Coop Baby #534 is a reference to Celeste.
+* Coop Baby #535 is a reference to Vagante.
+* Coop Baby #536 is a reference to Baba Is You.
+* Coop Baby #539 is a reference to Smokes from the game Hell’s Janitor by HappyHead.
+* Coop Babies #546 amd #549 are references to Team Bugulon's games: Hivemind, Lymphosite, Tricky Keys and Gunwyrm.
+* Coop Baby #550 is a reference to Bullet Kin from Enter the Gungeon.
+* Coop Baby #551 is a reference to My Little Pony.
+* Coop Baby #533 is a reference to Star of Providence.
+* Coop Baby #557 is a reference to OneShot.
+* Coop Baby #559 is a reference to Baldie from the RTS game Baldies.
+* Coop Baby #561 is a reference to Hatsune Miku.
+* Coop Baby #562 is a reference to Spamton from Deltarune.
+* Coop Baby #563 is a reference to Konata Izumi from Lucky Star.
+* Coop Baby #564 is a reference to Mike Ehrmantraut from Breaking Bad as well as "Kid named Finger" internet meme.
+* Coop Baby #567 is a reference to Kyuukyuu-kun from Yume Nikki.
+* Coop Babies #570 - #572 are references to LISA game and fangames.
+* Coop Baby #574 is a reference to background character from the 2004 Spongebob Squarepants movie.
+* Coop Babies #576 - #583 are references to NPCs from Mewgenics.
+
+{{nav}}
+[[Category:The Binding of Isaac: Rebirth]]

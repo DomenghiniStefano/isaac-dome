@@ -14,15 +14,12 @@ fn the_embedded_rules_are_the_committed_ones() {
             .all(|t| rules.verdict(&t.key).is_some()),
         "the embedded rules carry a verdict for every target"
     );
-    // The era of the numbers pinned across this suite. Moved from 2026-09-13T14:01:45Z on
-    // 2026-09-14 by B45's refetch, and **only the era moved**: the regenerated
-    // `requirements.json` differs from the previous one in `snapshotAt` and `maxRevid` and
-    // in nothing else. The four character pages that arrived were already resolving by id
-    // through `dataset/corrections.json`, so the graph was right while the pages were
-    // missing — which is exactly why nothing ever complained about them.
+    // The era of the numbers pinned across this suite. A refetch moves it, and moving it is
+    // the moment to read what else the regenerated `requirements.json` changed: a new edge
+    // is a wiki edit to look at, not noise to accept.
     assert_eq!(
         rules.generated_from().snapshot_at,
-        "2026-09-14T17:31:43Z",
+        "2026-09-27T04:33:07Z",
         "era of the numbers pinned across this suite"
     );
 }

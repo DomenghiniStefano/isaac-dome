@@ -1,0 +1,60 @@
+{{infobox monster
+ | id          = 226
+ | base hp     = 10
+ | stage hp    = 4
+ | environment = {{floor|Basement}}{{floor|Cellar}}{{floor|Burning Basement}}<br>{{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Womb}}
+ | behavior    = Slowly walks towards Isaac, leaving short-lasting [[Creep#Red Creep|Red Creep]] behind itself.
+}}
+
+A '''Skinny''' is a variant of the Gaper with melted faces and a very small [[Creep#Red Creep|Red Creep]] trail behind them. Skinnies travel much slower than normal Gapers, making them easy to kill without receiving damage.
+
+__TOC__
+{{clear}}
+
+== Variations ==
+=== Rotty ===
+{{infobox monster
+ | name        = Rotty
+ | variant     = 1
+ | base hp     = 16
+ | stage hp    = 5
+ | environment = {{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|Cathedral}}<br>{{floor|Chest}}<br>{{room|challenge}}
+ | behavior    = Slowly walks towards Isaac, leaving short-lasting [[Creep#Red Creep|Red Creep]] behind itself. Spawns a {{E|Bony}} or two {{E|Attack Fly|text=Attack Flies}} upon death.
+}}
+
+Rotties are paler versions of Skinnies that can turn into a {{E|Bony}} or several {{E|Attack Fly|text=Attack Flies}} after being killed.
+{{clear}}
+
+=== Crispy ===
+{{infobox monster
+ | dlc            = a+
+ | name           = Crispy
+ | image name     = * {{dlc|nr|Afterbirth+}}
+ | variant        = 2
+ | base hp        = 12
+ | stage hp       = 4
+ | environment    = {{floor|Burning Basement}}<br>{{floor|Mines}}{{floor|Ashpit}}<br>{{floor|Sheol}}
+ | replace        = Skinny
+ | replace chance = 40%
+ | replace notes  = in {{s|Burning Basement}}
+ | behavior       = Slowly walks towards Isaac, but increases in speed as they take damage. Constantly passively takes damage.
+}}
+
+Crispies are burned Skinny variants. They initially start slow but will turn darker in color until it becomes black and begin to chase Isaac at a much faster pace as they take damage. They also take damage regardless of Isaac every few moments.
+{{clear}}{{dlc clear}}
+
+== Gallery ==
+<gallery>
+File:Black_Crispy.png|Fully charred Crispy.
+File:CrispyOriginalArt.png|Original Semi-Concept Art For Crispies, By LeatherIceCream
+</gallery>
+
+== Trivia ==
+* Unlike Skinnies, Rotties make Gaper noises when chasing Isaac.
+* {{dlc|a+}} Crispies were first revealed on Twitter by Tyrone Rodriguez.<ref>[https://twitter.com/tyronerodriguez/status/989671676873854976 ''"Oops..."'']</ref>
+* {{dlc|a+}} The Crispy has been added in [[Booster Pack #5]], after the initial release of the DLC.
+
+== References ==
+{{reflist}}
+
+{{nav|booster pack|fr=Maigrichon}}

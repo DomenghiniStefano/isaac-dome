@@ -1,0 +1,23 @@
+{{header item pools}}
+{{item pool
+ | dlc        = r
+ | price type = coins
+}}
+
+While Isaac holds {{t|Adoption Papers}}, {{R|Shop}}s will sell these [[familiar]]s instead of the usual shop item selection. {{p|Soul of Lilith}} also draws from the [[passive item]]s in this pool. While holding the Adoption Papers, the familiars are discounted to 10 coins instead of the listed 15 cents.
+
+== Activated Collectibles ==
+{{item pool/header}}
+{{pool items | Stitches }}
+{{pool items | dlc = r+ | weight = 0.5 | Gello }}
+|}
+
+== Passive Collectibles ==
+{{item pool/header}}
+{{pool items | ???'s Only Friend, Abel, Acid Baby, Angry Fly, Ball of Bandages, BBF, Best Bud, Big Chubby, Big Fan, Bird Cage, Bloodshot Eye, Bob's Brain, Boiled Baby, Bot Fly, Brother Bobby, Buddy in a Box, Bum Friend, Bumbo, Charged Baby, Cube of Meat, Daddy Longlegs, Dark Bum, Dead Bird, Demon Baby, Distant Admiration, Dry Baby, Farting Baby, Fate's Reward, Forever alone, Freezer Baby, Friend Zone, Fruity Plum, Ghost Baby, Guardian Angel, Halo of Flies, Harlequin Baby, Headless Baby, Hushy, Incubus, Juicy Sack, Key Bum, King Baby, Leech, Lil Abaddon, Lil Brimstone, Lil Delirium, Lil Dumpy, Lil Gurdy, Lil Haunt, Lil Loki, Lil Monstro, Lil Spewer, Little C.H.A.D., Little Chubby, Little Gish, Little Steven, Lost Fly, Lost Soul, Mongo Baby, Obsessed Fan, Papa Fly, Psy Fly, Punching Bag, Quints, Rainbow Baby, Robo-Baby, Robo-Baby 2.0, Rotten Baby, Seraphim, Shade, Sissy Longlegs, Sister Maggy, Smart Fly, Spider Mod, Succubus, Sworn Protector, The Intruder, The Peeper, Tinytoma, Twisted Pair, Worm Friend, YO LISTEN! }}
+{{pool items | dlc = nr+ | Sacrificial Dagger  }}
+{{pool items | dlc = r+ | Blood Puppy, Cube Baby, Gemini, Multidimensional Baby, Mystery Egg }}
+{{pool items | dlc = r+ | weight = 0.5 | Vanishing Twin }}
+|}
+
+{{nav|fr=Boutique de Bébés (Banque d'Objets)}}

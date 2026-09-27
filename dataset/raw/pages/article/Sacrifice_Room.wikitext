@@ -1,0 +1,226 @@
+{{dlc|r}}[[File:Sacrifice Room door.png]]
+
+'''Sacrifice Rooms''' are special rooms that contain a set of spikes in their center.
+
+{{dlc|na}} Isaac can damage himself on the spikes for a chance to spawn a {{E|Chest}} or a {{E|Locked Chest}}. The chance is determined by the [[seed]], meaning Isaac must damage himself on the spikes a set number of times for a Chest to spawn.
+
+{{dlc|a}} Sacrifice Rooms were reworked, with a wide variety of possible rewards (shown below).
+
+{{dlc|r}} Taking damage from the spikes doesn't reduce the odds of getting a Devil or Angel room.
+
+The base chance of a Sacrifice Room being generated is 1/7 (~14%). If Isaac's total health is equal to or greater than his total red heart containers, an additional 1/4 chance applies for a total of 5/14 (~36%).
+
+Sacrifice Rooms are mutually exclusive with {{R|Dice Room}}s. If a Sacrifice Room is to be generated, it has a 1/50 base chance to be replaced by a Dice Room, plus an additional 1/5 chance for a total of 27/125 (~22%) if Isaac has 2 or more keys.
+
+== Rewards {{dlc|a}} ==
+The payouts only depend on the number of sacrifices made. The number of sacrifices is reset to 0 when Isaac goes to the next floor.
+{| class="wikitable mw-collapsible"
+ ! scope="col" style="width: 10em" | № of sacrifices on Current Floor
+ ! scope="col" | Chance
+ ! scope="col" | Reward
+ |-
+ ! scope="row" rowspan="3" | 1st / 2nd
+ | 50%
+ | Nothing
+ |-
+ | 50%
+ | 1 [[Penny]]
+ |-
+ | 100% {{dlc+|a+}}
+ | 1 Bomb (Only if the first floor boss has been defeated in less than one minute and Isaac has no bombs, to help obtain {{i|Broken Shovel 1}}){{dlc-}}
+ |-
+ ! scope="row" rowspan="2" | 3rd
+ | 33%
+ | Nothing
+ |-
+ | 67%
+ | "You feel blessed!" (increased [[Angel Room#Angel Room Generation Chance|chance to receive an Angel Room over a Devil Room for the current floor]])
+* Does not increase the chance of a Devil/Angel Room after defeating a boss, only the chance of getting an {{R|Angel Room}} over a {{R|Devil Room}}.
+* Can cause an {{R|Angel Room}} to spawn even if Isaac has already taken a deal with the Devil.
+* Gives a smaller bonus than the "You feel blessed!" effect below.
+* {{dlc|nr}} A guaranteed Angel Room replacement if this occurred in a Chapter 1 XL floor.
+* {{dlc|r}} If Isaac has not yet encountered a Devil/Angel Room, guarantees the room encountered on the same floor as the sacrifice (if any) to be an Angel Room.
+ |-
+ ! scope="row" rowspan="2" | 4th
+ | 50%
+ | Nothing
+ |-
+ | 50%
+ | 1 random {{E|Chest}} (The type of chest is governed by the same mechanic as room drops. Thus, regular chests are more likely to spawn than any other kind of chest.)
+ |-
+ ! scope="row" rowspan="2" | 5th
+ | 33%
+ | 3 {{E|Penny|text=Pennies}} (These coins do not have a chance to spawn as a nickel or a dime.)
+ |-
+ | 67%
+ | "You feel blessed!" (Same conditions as 3rd sacrifice but providing a stronger modifier.)
+ |-
+ ! scope="row" rowspan="2" | 6th
+ | 33%
+ | Teleport to the Angel Room, even if past Devil Deals have been taken. If the Devil Deal on that floor has already been seen, it will sent Isaac back there instead.
+ |-
+ | 67%
+ | 1 random {{E|Chest}} (The type of chest is governed by the same mechanic as room drops. Thus, regular chests are more likely to spawn than any other kind of chest.)
+ |-
+ ! scope="row" rowspan="3" | 7th
+ | 33%
+ | 1 random {{ip|Angel Room|text=Angel Room item}}.
+ |-
+ | 67%
+ | 1 {{E|Soul Heart}}
+ |-
+ | 50%
+ | {{dlc|r}} if a Deal with the Devil was taken previously, {{i|Redemption|n}} can spawn instead if unlocked.
+ |-
+ ! scope="row" | 8th
+ | 100%
+ | {{dlc|nr}} 6 {{dlc|r}} 7 {{E|Troll Bomb}}s
+ |-
+ ! scope="row" | 9th
+ | 100%
+ |{{E|Uriel}} battle
+ |-
+ ! scope="row" rowspan="2" |10th
+ | 50%
+ | 7 {{E|Soul Heart}}s
+ |-
+ | 50%
+ | 30 {{E|Penny|text=Pennies}} (individual coins may overlap)
+ |-
+ ! scope="row" | 11th
+ | 100%
+ | {{E|Gabriel}} battle
+ |-
+ ! scope="row" rowspan="2" | 12th and onwards
+ | 50%
+ | Nothing
+ |-
+ | 50%
+ | Teleport directly to the {{s|Dark Room}}.
+ |}
+
+== Layouts ==
+The following room maps were made using [https://github.com/Basement-Renovator/basement-renovator Basement Renovator] for cleaner viewing; note that all [[urn]]s you see will be [[skull]]s when encountered in-game.
+
+{| class="wikitable sortable mw-collapsible mw-collapsed" style="text-align: center"
+ ! scope="col" | ID
+ ! scope="col" | Weight
+ ! scope="col" class="unsortable" | Notes
+ ! scope="col" class="unsortable" | Image preview
+ |-
+ ! scope="row" | 0
+ | 1
+ | 
+ | [[File:Sacrifice Room 0.png|400px]]
+ |-
+ ! scope="row" | 1
+ | 1
+ |
+ | [[File:Sacrifice Room 1.png|400px]]
+ |-
+ ! scope="row" | 2
+ | 1
+ |
+ | [[File:Sacrifice Room 2.png|400px]]
+ |-
+ ! scope="row" | 3
+ | 1
+ | style="text-align: left" | {{dlc|r+}} The random heart has 50% chance to not appear.
+ | [[File:Sacrifice Room 3.png|400px]]
+ |-
+ ! scope="row" | 4
+ | 1
+ | style="text-align: left" | {{dlc|r+}} The random heart has 50% chance to not appear.
+ | [[File:Sacrifice Room 4.png|400px]]
+ |-
+ ! scope="row" | {{dlc|a}} 5
+ | 1
+ | 
+ | [[File:Sacrifice Room 5.png|400px]]
+ |-
+ ! scope="row" | {{dlc|a}} 6
+ | 1
+ | 
+ | [[File:Sacrifice Room 6.png|400px]]
+ |-
+ ! scope="row" | {{dlc|a}} 7
+ | 1
+ | 
+ | [[File:Sacrifice Room 7.png|400px]]
+ |-
+ ! scope="row" | {{dlc|anr}} 8
+ | 1
+ | style="text-align: left" | This room is still in the game files but was disabled in Repentance.
+ | [[File:Sacrifice Room 8.png|400px]]
+ |-
+ ! scope="row" | {{dlc|a+}} 9
+ | 0.1
+ | style="text-align: left" | Cointains {{e|Half Red Heart}}s if {{e|Scared Heart|n}}s are not unlocked.
+ | [[File:Sacrifice Room 9.png|400px]]
+ |-
+ ! scope="row" | {{dlc|r}} 10
+ | 1
+ | 
+ | [[File:Sacrifice Room 10.png|400px]]
+ |-
+ ! scope="row" | {{dlc|r}} 11
+ | 1
+ |
+ | [[File:Sacrifice Room 11.png|400px]]
+ |-
+ ! scope="row" | {{dlc|r}} 12
+ | 0.5
+ | style="text-align: left" | Each skull has 50% chance to be a {{e|Half Red Heart}}.
+ | [[File:Sacrifice Room 12.png|400px]]
+|}
+
+== Notes ==
+* The sacrifice rewards are determined ahead of time, not when Isaac steps on the spikes.
+** Received items/trinkets can be changed, however. If Isaac checks the items and resets (such as with the {{I|Glowing Hourglass}}), he can find that item on the same floor, then redo the sacrifice to force a different item to spawn.
+** Resetting will reset Isaac's number of sacrifices to what it was prior to his reset unless stated otherwise.
+* Spikes in a {{R|Sacrifice Room}} will deal damage even when flown over, so Isaac can use them even with [[Flight]].
+* Isaac must take damage on the spikes for the rewards to pay out. [[Temporary Buffs#Invulnerability|Invulnerability]], [[Temporary Buffs#Shield|shields]], and effects that block damage ({{I|Holy Mantle}}, {{T|Wooden Cross}}, the Dog Mode [[Seeds#Special Seeds|Special Seed]] etc.) will not trigger a sacrifice.
+** Temporary characters created  by {{I|Strawman}}, {{p|Soul of the Forgotten}}, and {{p|Soul of Jacob and Esau}} can be used to make sacrifices without Isaac himself having to take damage.
+* {{dlc|nr}} The {{T|Callus}} prevents the Sacrifice Room from functioning.
+* {{T|Cracked Dice|r}} has a chance to re-roll the spike in the middle of a  Sacrifice Room, making it unusable.
+* {{e|Bone Heart}}s cannot be broken if filled with at least a {{e|Half Red Heart}}, even if a full heart of damage is taken. This can be abused to repeatedly pay a half-red heart for each use of a Sacrifice Room.
+* If {{i|Redemption|n}} was already taken, 1 random {{ip|Angel Room|text=Angel Room item}} will spawn instead.
+* Sacrifice Rooms do not naturally appear in the {{s|Chest}}, {{s|Dark Room}}, or {{s|The Void}}.
+** {{dlc|r}} They can, however, be generated in red rooms, such as those created by the {{i|Red Key|n}}.
+** {{dlc|r}} Sacrifice Rooms generated by using {{i|Red Key|n}} in the {{s|Dark Room}} will warp Isaac to the first room of the floor when used enough, rather than warping to a new instance of Dark Room.
+* {{dlc|r}} If more than one Sacrifice Room is created on one floor with {{i|Red Key|n}} or equivalent effects, each Sacrifice Room has its own sacrifice counter. For example, doing 3 sacrifices in one room, then 3 in another gives Isaac the 1st to 3rd effects from both rooms, instead of 1st to 3rd, then 4th to 6th. Additionally, performing more sacrifices in the first room again will count up from 4th; the count is not reset by using another room.
+* {{dlc|r}} Sacrifice Rooms won't teleport Isaac to the {{s|Dark Room}} during a [[challenge]] or [[daily challenge]] that does not end there, thus nothing will happen from the 12th sacrifice onward.
+* {{dlc+|r}} Similarly, separate spikes even in the same sacrifice room, if spawned with the {{i|D12}}, have their own individual sacrifice counters.{{dlc-}}
+* {{dlc|r}} Entering a Sacrifice Room while holding {{T|Flat File|n}} will cause the spikes to be retracted into the ground. Dropping the trinket and re-entering the room will cause the spikes to reappear.
+* This room is essential for daily runs as every angel statue gives a large amount of exploration bonus without consequences of damage penalty. However, overindulging in it can make you miss {{r|Boss Rush}} | {{e|Hush}} so playing cleverly around it is a must. Something to keep in mind is that " no damage penalty " only holds true for Repentance dailies, in Afterbith and AB✞ dailies these rooms give a lot of damage penalty and aren't worthwhile unless you need a seam inside of Dark Room and / or just want to go fast.
+
+== {{dlc|na}}Notes on Rebirth Sacrifice Rooms ==
+* Only one chest can be received per Sacrifice Room.
+* Taking damage down to half a red heart will always drop a chest. (Because {{c|???}} cannot have Red Heart containers, dropping down to half a heart does not guarantee a drop.)
+* Dying on the spikes guarantees a chest, which can be useful if Isaac is low on health and has more lives from something like {{I|Dead Cat}}.
+* Dying in a Sacrifice Room with the {{T|Missing Poster}} will reveal puzzle pieces used to unlock the {{C|The Lost}}.
+
+== {{dlc|a}}Notes on Afterbirth Sacrifice Rooms ==
+* {{Dlc|nr}} Losing red hearts due to the spikes will reduce the chance for a {{R|Devil Room}} or {{R|Angel Room}} to appear.
+* If Isaac receives both of the "You feel blessed!" effects, they will stack for a 65% [[Angel Room#Angel Room Generation Chance|Angel Room generation chance]].
+* The amount of health Isaac has left after taking a sacrifice does not affect the payout probabilities.
+* Isaac's [[Luck]] stat does not affect the payout probabilities.
+* If {{E|Uriel}} or {{E|Gabriel}} spawn, they can be despawned by exiting the room.
+* While {{E|Uriel}} and {{E|Gabriel}} can normally fly over spikes without taking damage, they will take damage from Sacrifice Room spikes.
+* Dying in a Sacrifice Room while holding {{T|Missing Poster}} will unlock {{C|The Lost}} (except during a [[Challenge]] or [[Victory Lap]]).
+* Spikes in the sacrifice room normally deal one full heart of damage.
+** However, if you have half a soul heart in addition to red hearts, the damage will remove the half soul heart and not deal any red heart damage.
+** {{i|The Wafer}}, {{i|Cancer}}, and the {{dlc|a}}[[Percs]] pill reduce the spikes' damage to half a heart, allowing Isaac to make more sacrifices.
+* If using the <code>BASE MENT</code> seed, the {{s|Dark Room}} teleport can escape the infinite {{s|Basement}} floors.
+* Even if {{i|The Negative}} isn't unlocked, Isaac can still teleport to the {{s|Dark Room}}.
+** This allows Isaac to challenge {{E|The Lamb}} without facing {{E|Satan}}, {{E|Mom's Heart}} / {{E|It Lives!}}, or even {{E|Mom}}.
+* Dying and respawning does not reset the number of sacrifices made, so {{I|Dead Cat}} can be used on low health in an attempt to acquire soul hearts.
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | The Lost }}
+
+== Bugs ==
+{{bug|dlc=a+nr|Found HUD will incorrectly display Angel Room generation chance at 100% when receiving either of the "You feel blessed!" effects.}}
+{{bug|dlc=r+|Attempting to teleport to the Dark Room via the Sacrifice Room in online multiplayer whilst having all other players be ghost babies plays the teleporting animation and locks Isaac in place, softlocking him.}}
+
+{{nav|room|fr=Salle de Sacrifice}}

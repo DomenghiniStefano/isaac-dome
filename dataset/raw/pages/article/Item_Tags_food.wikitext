@@ -1,0 +1,12 @@
+{{page dlc|r}}
+
+When holding {{i|Binge Eater}}, items will cycle with these food items as options. Each food item grants specific bonuses described in the Binge Eater article.
+
+== Passive Collectibles ==
+{{collectible table | tag = food | type = passive }}
+
+== Trivia ==
+There are items which are food such as {{i|The Wafer}}, {{i|Sausage}} or {{i|MEAT!}}  that aren't included in Binge Eater's pool of food items.
+
+{{nav|fr=Balise food}}
+[[Category:Item tags]]

@@ -1,0 +1,583 @@
+{{page dlc|a}}
+[[file:Kotaku Daily Challenge Mode.png|center|frameless|450x450px]]
+The '''daily challenge''' (or daily run) is a unique run generated every day. Daily Challenges were introduced in ''[[The Binding of Isaac: Afterbirth]]''. Daily challenges start the player off with a specific character, seed, end-stage, difficulty and set of starting items. The player is scored and placed on a global leaderboard after ending the run. The run can only be played once per day and only on one save file, but an unscored practice run is unlocked afterward, which is identical to the Daily Run but can be played multiple times. Unlike regular runs, the Daily Run cannot be continued; exiting the Daily Run will end it and disallow further progress.
+
+All unlockables are available during daily challenges (the game acts as if full game completion was attained for this save file). Daily runs cannot be played if mods or the debug console are active. However, mods can be used on practice runs, after finishing a daily run for that day. Finally, achievements are disabled during daily challenges.
+
+The third-party site [https://buttergreed.info/ Buttergreed] provides daily run results and in-depth statistics gathered from the official leaderboard. The results are filtered to remove illegitimate ones, for more reliable rankings. 
+
+{{dlc|r}} Items with the [[Item Tags nodaily|<code>nodaily</code> item tag]] cannot be found during Daily Challenges.
+
+== Curated daily runs ==
+Currently, the game has '''52''' curated daily runs a year. Each curated daily run offers a different challenge, some quirks, and some restrictions. The list of the disclosed daily runs can be seen [[List of curated daily challenges|here]].
+
+== Score ==
+Score plays a bigger role in daily challenges, as the player is ranked in the leaderboards by their score. Having a strategy that accounts for how the score is handled is important in achieving an optimal score.
+
+Below is a list of all the starting points for each character.
+
+{| class="wikitable"
+ ! Character !! Starting score
+ |-
+ | {{C|Isaac}} || 627
+ |-
+ | {{C|Magdalene}} || 644
+ |-
+ | {{C|Cain}} || 594
+ |-
+ | {{C|Judas}} || 568
+ |-
+ | {{C|???}} || 560
+ |-
+ | {{C|Eve}} || 558
+ |-
+ | {{C|Samson}} || 610
+ |-
+ | {{C|Azazel}} || 600
+ |-
+ | {{C|Lazarus}} || {{dlc|na+}} 630 / {{dlc|a+}} 610
+ |-
+ | {{C|Eden}} || Depends on starting items.
+ |-
+ | {{C|The Lost}} || {{dlc|nr}} 524 / {{dlc|r}} 526
+ |-
+ | {{C|Lilith}} || 581
+ |-
+ | {{C|Keeper}} || {{dlc|nr}} 602 / {{dlc|r}} 636
+ |-
+ | {{C|Apollyon}} || 577
+ |-
+ | {{C|The Forgotten}} || 590
+ |-
+ | {{C|Bethany}} || 610
+ |-
+ | {{C|Jacob and Esau}} || {{dlc|nr+}} 630 / {{dlc|r+}} 690
+ |-
+ | {{C|Tainted Isaac}} || 650
+ |-
+ | {{C|Tainted Magdalene}} || 610
+ |-
+ | {{C|Tainted Cain}} || 594
+ |-
+ | {{C|Tainted Judas}} || 585
+ |-
+ | {{C|Tainted ???}} || 560
+ |-
+ | {{C|Tainted Eve}} || 577
+ |-
+ | {{C|Tainted Samson}} || 630
+ |-
+ | {{C|Tainted Azazel}} || 600
+ |-
+ | {{C|Tainted Lazarus}} || {{dlc|nr+}} 610 / {{dlc|r+}} 644
+ |-
+ | {{C|Dead Tainted Lazarus}} || 543
+ |-
+ | {{C|Tainted Eden}} || Depends on starting items.
+ |-
+ | {{C|Tainted Lost}} || 530
+ |-
+ | {{C|Tainted Lilith}} || 610
+ |-
+ | {{C|Tainted Keeper}} || 610
+ |-
+ | {{C|Tainted Apollyon}} || 577
+ |-
+ | {{C|Tainted Forgotten}} || {{dlc|nr+}} 570 / {{dlc|r+}} 580
+ |-
+ | {{C|Tainted Bethany}} || 560
+ |-
+ | {{C|Tainted Jacob}} || 610
+|}
+
+* Tainted characters are playable on Tuesdays only on [[Repentance+]].
+
+The final score is calculated based on several bonuses and a few penalties:
+
+* '''Stage bonus''', the number of points earned for reaching a set of [[Chapters|floors]];
+* '''Exploration bonus''', points awarded for exploring and clearing [[rooms]] or events;
+* '''Schwag bonus''', points earned for collecting [[pickups]];
+* '''Rush bonus''', awarded for clearing {{R|Boss Rush}} or {{E|Hush}};
+* '''??? or Lamb bonus''', awarded for killing {{E|???}} or {{E|The Lamb}};
+* '''Mega Satan, {{dlc|r+}}Mother, or {{dlc|r+}}Beast bonus''', awarded for killing {{E|Mega Satan}}, {{E|Mother|r+}}, or {{E|The Beast|r+}};
+* '''Damage penalty''', points lost for taking damage;
+* '''Time penalty''', points lost for spending time;
+* '''Item penalty''', points lost for picking up items (actives and passives).
+
+=== Stage Bonus ===
+'''Stage bonus''' is pretty straightforward: a fixed value given to each floor you ''reach''. To reach a floor, you need to clear the previous one. Stage bonus is immune to floor restarts (ie: when using {{I|Forget Me Now}} or a 5-pips {{R|Dice Room}}), and cannot be pushed higher than 20,000.
+
+{| class="wikitable"
+|-
+! Floor reached !! Bonus points
+|-
+| {{S|Basement}} 1 || 500
+|-
+| {{S|Basement}} 2 || 1,000
+|-
+| {{S|Caves}} 1 || 1,500
+|-
+| {{S|Caves}} 2 || 1,500
+|-
+| {{S|Depths}} 1 || 2,500
+|-
+| {{S|Depths}} 2 || 2,500
+|-
+| {{S|Womb}} 1 || 3,000
+|-
+| {{S|Womb}} 2 || 3,000
+|-
+| {{S|Cathedral}} / {{S|Sheol}} || 3,000
+|-
+| {{S|Chest}} / {{S|Dark Room}} || 4,000<sup>*</sup>
+|}
+<sup>* The Chest and The Dark Room will not yield any "floor bonuses" by themselves, but you do get 4,000 points for killing Satan or Isaac, or otherwise reaching the 11th floor</sup>
+
+Therefore, by reaching these floors, the total Stage bonus gained is as follows:
+
+{| class="wikitable"
+|-
+! Floor cleared !! Total bonus
+|-
+| {{S|Basement}} 1 || 1,000
+|-
+| {{S|Basement}} 2 || 2,000
+|-
+| {{S|Caves}} 1 || 3,500
+|-
+| {{S|Caves}} 2 || 5,000
+|-
+| {{S|Depths}} 1 || 7,500
+|-
+| {{S|Depths}} 2 || 10,000
+|-
+| {{S|Womb}} 1 || 13,000
+|-
+| {{S|Womb}} 2 || 16,000
+|-
+| {{S|Cathedral}} / {{S|Sheol}} (reached) || 16,000
+|-
+| {{S|Cathedral}} / {{S|Sheol}} (boss killed) || 20,000
+|-
+| {{S|Chest}} / {{S|Dark Room}} || 20,000
+|}
+
+=== Exploration Bonus ===
+'''Exploration bonus''' is awarded for visiting rooms, clearing rooms and killing enemies. The damage penalty calculation results in a damage penalty proportional to the players exploration bonus, this means that the player will receive a larger damage penalty the higher their exploration bonus is. The maximum damage penalty is limited to 80% of the exploration bonus.
+
+==== Room Bonuses ====
+Each room will have its visited and cleared bonus value assigned according to its type and size, with 2x1 and 2x2 rooms accounting for '''twice''' the bonuses for visiting and clearing.
+
+Rooms will default to '''10''' points for visiting and '''40''' for clearing if not stated otherwise. {{R|Red Room}}s are worth the same amount as the type of room that they generate as. The table below accounts for the size of {{R|Boss Rush}}, {{E|Hush}} and {{R|Black Market}} rooms, the reader should take care not to double these values again.
+{| class="wikitable"
+ ! Room type
+ ! Visited
+ ! Cleared
+ |-
+ | Normal room
+ | 10
+ | 40
+ |-
+ | {{R|Arcade}}
+ | 10
+ |
+ |-
+ | {{R|Sacrifice Room}}
+ | 10
+ |
+ |-
+ | {{R|Ultra Secret Room}}
+ |10
+ |
+ |-
+ | {{R|Planetarium}}
+ | 10
+ |
+ |-
+ | {{R|Challenge Room}}
+ | 10
+ | 200
+ |-
+ | {{R|Boss Challenge Room}}
+ | 10
+ | 300
+ |-
+ | {{R|Mini-Boss Room}}
+ | 10
+ | 70
+ |-
+ | {{R|Boss Room}}
+ | 10
+ | 100
+ |-
+ | {{R|Boss Rush}}
+ | 20
+ | 1000
+ |-
+ | {{E|Hush}} Room
+ | 20
+ | 1000
+ |-
+ | {{R|Shop}}¹
+ | 30
+ |
+ |-
+ | {{R|Treasure Room}}
+ | 30
+ |
+ |-
+ | {{R|Library}}
+ | 30
+ |
+ |-
+ | {{R|Curse Room}}
+ | 50
+ |
+ |-
+ | {{R|Devil Room}}
+ | 50
+ |
+ |-
+ | {{R|Angel Room}}
+ | 50
+ |
+ |-
+ | {{R|I AM ERROR}} room
+ | 60
+ |
+ |-
+ | {{R|Secret Room}}
+ | 60
+ |
+ |-
+ | Bedroom
+ | 60
+ |
+ |-
+ | {{R|Vault}}
+ | 60
+ |
+ |-
+ | {{R|Dice Room}}
+ | 60
+ |
+ |-
+ | {{R|Super Secret Room}}
+ | 160
+ |
+ |-
+ | {{R|Black Market}}
+ | 160
+ |
+ |}
+<sup>1 {{Dlc|nr}} If Greed is inside, the shop is considered a mini-boss room and worth 70 points for clearing instead of 40.</sup>
+
+==== Enemy Bonuses ====
+Killing enemies will add to your exploration bonus. The following formula applies to most enemies that spawn on room entry:
+
+<math>EnemyBonus = \lceil MaxHitPoints ^ {0.2} \times 5 \rceil</math>
+
+For example, a {{E|Round Worm}} will reward 8 points upon death while its most champion variants (2x health) reward 10 points. Only enemies that spawn on room entry are worth points and count towards the number of enemies in the room, this makes enemies spawned by {{E|Reward Plate}}, in {{R|Boss Rush}} and those spawned by other enemies worth no points.
+
+[[Angel]]s spawned by {{R|Sacrifice Room}} spikes or by blowing up angel statues will grant 300 points each. {{dlc|r+}} They will give points only the first time they are encountered each.
+
+{{dlc|r+}} Perma charmed enemies also contribute to the score.
+
+=== Schwag bonus ===
+'''Schwag bonus''' depends on the raw amount of pickups you collected throughout the run; it has an upper limit and is tied to the [[item penalty]].
+On the daily leaderboards, you can often see high-ranking people sporting considerable amounts of schwag points, obtained through the means of some kind of "break", as well as many cheaters forging their bonuses as much as the integer limits allow them to.
+
+The game computes the schwag bonus on every engine update, plus once more before showing the final score from a daily run, and it's defined as follows:
+
+ +-Minimap::Render()
+ | Game::End()
+ '-+-> ScoreSheet::Calculate()
+     '~> ScoreSheet::get_swag_points_bonus()
+
+ SchwagBonus = GoldenHearts              // 12 max
+             + 10 * (RedHeartsContainers // 24 max
+                  +  RedHearts           // 24 max
+                  +  SoulHearts          // 24 max
+                  +  BlackHearts         // 12 max
+                  +  EternalHearts       //  1 max
+                  +  Coins)              // 99 max
+             + 20 * (Keys + Bombs)       // 99 max
+             + PickupBonus               // unlimited (???)
+
+You can easily see how Schwag usually caps at 5,452 when not considering the '''PickupBonus'''.
+
+==== The Pickup Bonus {{dlc|nr}} ====
+Every time you collect a pickup that is used in the formula above (HP containers, any kind of heart, coins, bombs, keys '''and batteries''') another value is computed: this value is uncapped and can reach the limits of a signed integer, and keeps the tally of everything you've picked up so far. Every consumable has its own value:
+
+ Entity_Pickup::handle_collision()
+ '-> ScoreSheet::AddPickup()
+
+{| class="wikitable"
+ ! Pickup type
+ ! Variant
+ ! Points
+ |-
+ | rowspan="10" | '''[[Heart]]s'''
+ | {{E|Half Red Heart}}
+ | 1
+ |-
+ | {{E|Eternal Heart}}
+ | 1
+ |-
+ | {{E|Half Soul Heart}}
+ | 1
+ |-
+ | {{E|Red Heart}}
+ | 2
+ |-
+ | {{E|Soul Heart}}
+ | 2
+ |-
+ | {{E|Black Heart}}
+ | 2
+ |-
+ | {{E|Gold Heart}}
+ | 2
+ |-
+ | {{E|Scared Heart}}
+ | 2
+ |-
+ | {{E|Blended Heart}}
+ | 2
+ |-
+ | {{E|Double Heart}}
+ | 4
+ |-
+ | rowspan="5" | '''[[Coin]]s'''
+ | {{E|Penny}}
+ | 1
+ |-
+ | {{E|Double Penny}}
+ | 2
+ |-
+ | {{E|Lucky Penny}}
+ | 2
+ |-
+ | {{E|Nickel}}
+ | 5
+ |-
+ | {{E|Dime}}
+ | 10
+ |-
+ | rowspan="3" | '''[[Bomb]]s'''
+ | {{E|Bomb}}
+ | 2
+ |-
+ | {{E|Double Bomb}}
+ | 4
+ |-
+ | {{E|Golden Bomb}}
+ | 35
+ |-
+ | rowspan="3" | '''[[Key]]s'''
+ | {{E|Key}}
+ | 6<sup>*</sup>
+ |-
+ | {{E|Key Ring}}
+ | 4
+ |-
+ | {{E|Golden Key}}
+ | 35
+ |-
+ | '''[[Battery|Batteries]]'''
+ |
+ |
+ |}
+<sup>* bug, should be 2</sup>
+
+Once this value is computed, the game will obtain a "final pickup bonus" to add to the formula above and return the definitive amount of Schwag:
+
+<syntaxhighlight lang="lua">
+p = pickup_bonus;
+i = 1.0f;
+j = 0.0f;
+
+do {
+    k = j;
+    x = p < 100.0f ? p : 100.0f;
+    j = ((x * i) * 2) + k;
+    i *= 0.98;
+
+    if (i <= 0.001f)
+        break;
+
+    p -= 100.0f;
+} while (p > 0.0f)
+</syntaxhighlight>
+
+In short, the game is taking the uncapped tally of all the pickups and computing a capped value out of it to somewhat limit the Schwag bonus by taking a 2% off at every iteration; that's the reason why Schwag bonus doesn't get much higher after a certain threshold.
+At around 34,500 pickup points Schwag will cap and no longer increase because $i (which is used to multiply the bonus) will only lead to a 0.1% increase on the total bonus (* 0.001), completely worthless and offset by both the [[time penalty|time]] and [[item penalty|item]] penalties munching at your points.
+
+'''16,329''' points seems to be the upper limit for the Schwag bonus. Adding more pickup points doesn't seem to affect it past that value, even with preposterous amounts (1,874,919,423) Schwag will always cap at 16,329.
+
+=== Rush bonus ===
+'''Rush bonus''' is awarded to the player upon obtaining the event flag relative to either clearing {{R|Boss Rush}} or killing {{E|Hush}}.
+Restarting the floor '''will clear''' the flag; therefore, it's not possible to obtain multiple bonuses — the maximum amount of obtainable points is fixed to 9,999 when clearing both events.
+
+{| class="wikitable"
+|-
+! Event !! Points
+|-
+| {{R|Boss Rush}} || 4,444
+|-
+| {{E|Hush}} || 5,555
+|}
+
+=== ??? or Lamb Bonus ===
+A 4,000 points bonus awarded for killing either {{E|???}} or {{E|The Lamb}} in a daily run. Restarting the floor by any mean will not allow the player to obtain multiple bonuses. Only one of the two bonuses is obtainable, for there are no ways to reach {{s|Chest}} from {{s|Dark Room}} and vice versa.
+
+=== Mega Satan, {{dlc|r+}} Delirium, {{dlc|r+}} Mother, or {{dlc|r+}} Beast bonus ===
+A 6,666 points bonus awarded to players after killing {{E|Mega Satan}} (Sunday only, unless curated), {{E|Delirium|r+}} (Wednesday only, unless curated), {{E|Mother|r+}} (Monday only, unless curated) or {{E|The Beast|r+}} (Thursday only, unless curated) in a daily run. Restarting the floor by any means will not allow the player to obtain multiple bonuses.
+
+=== Damage penalty ===
+'''Damage penalty''' is the amount of lost points for suffering damage in a daily run. Its formula is defined as follows:
+
+<math>DamagePenalty = \left\lceil \left(1.0 - \exp(HitsTaken \times \frac{\log 0.8}{12})\right) \times (ExplorationBonus \times 0.8) \right\rceil</math>
+
+Being tied to the exploration bonus, it means that getting hit once in the whole run bears different weights depending on how much you kill and explore:
+* getting hit once (1st floor, 1st room) and quitting the run: (10 exp. bonus) -1 damage penalty
+* getting hit once (1st floor, 1st room) and completing a full run: (20,000 exp. bonus) -295 damage penalty
+* an "average" run: (25 hits, 15k exp. bonus) -4,462 damage penalty
+* an "explore plenty, walk on spikes, eat bullets, dodge into enemies" run: (80 hits, 15k exp. bonus) -9,580 damage penalty
+
+The same hit will come with a progressively heftier price ''the more rooms you explore and clear, and the more enemies you kill''. Assuming the same number of hits and rooms explored, it doesn't matter if the hit happened in chapter 1 or chapter 4.
+
+Some kind of hits count as twice the damage, ie: when getting hit by a [[Champion]], walking on [[Spikes]] or otherwise losing a full heart by harm.
+
+==== Exceptions ====
+Not all forms of damage will add to the damage penalty, there are, in fact, many exceptions:
+* {{R|Curse Room}}s, which will only raise the Damage penalty indirectly by adding points to the Exploration bonus
+* Using {{I|IV Bag}}, {{I|Razor Blade}}, a {{M|Blood Donation Machine}}, donating hearts to a {{M|Devil Beggar}} doesn't count as damage, but it will cost the player [[Schwag bonus|Schwag points]] for losing Red Hearts.
+* {{dlc|r+}} Getting hit as {{c|Tainted Magdalene|n}} in her bleeding hearts doesn't count for the damage penalty.
+
+=== Time penalty ===
+'''Time penalty''' is how many points you lose in a run for spending time clearing floors, and it varies according to the events you've cleared throughout the run.
+
+The formula(s) behind time penalty are as follows:
+
+ TimePenalty = Floor(Ceil(((Rush_Bonus
+                          + Mega_Satan_Bonus
+                          + Lamb_Bonus
+                          + XXX_Bonus
+                          + Stage_Bonus) * 0.80) * (1.0 - SecondsPenalty)))
+
+Where '''SecondsPenalty''' is:
+
+  SecondsPenalty = Exp((Elapsed_Seconds * -0.22) / BaseStagePenalty)
+
+And, in turn '''BaseStagePenalty''' is the sum of several fixed amounts of points per each stage and event, called '''"Expected Stage Times"''':
+
+{| class="wikitable"
+|-
+! Stage reached / event !! Value
+|-
+| 1 ({{S|Basement}} 1) || 60
+|-
+| 2 ({{S|Basement}} 2) || 60
+|-
+| 3 ({{S|Caves}} 1) || 120
+|-
+| 4 ({{S|Caves}} 2) || 180
+|-
+| 5 ({{S|Depths}} 1)|| 180
+|-
+| 6 ({{S|Depths}} 2)|| 300
+|-
+| {{R|Boss Rush}} cleared|| 240
+|-
+| 7 ({{S|Womb}} 1)|| 300
+|-
+| 8 ({{S|Womb}} 2)|| 360
+|-
+| 9 ({{S|???}})	|| 360
+|-
+| 10 ({{S|Sheol}} / {{S|Cathedral}}) ||
+|-
+| 11a ({{S|Dark Room}} / {{S|Chest}})|| 420<sup>*</sup>
+|-
+| 11b ({{E|Mega Satan}})|| 420
+|-
+| 12 ({{S|The Void}})	||
+|}
+<sup>* from killing Satan / Isaac in stage 10</sup>
+
+Using a {{I|Forget Me Now}} or a 5-pips {{R|Dice Room}} will not alter those values.
+
+=== Item penalty ===
+'''Item penalty''' is the amount of points lost for collecting items throughout the run. As far as the game is concerned, an ''item'' can be both a collectible (actives, passives) or a pickup (anything making up the Schwag bonus).
+
+The formula is as follows:
+
+<math>ItemPenalty = \lceil (SchwagBonus \times 0.8) \times CollectiblePenalty \rceil</math>
+
+where <math>CollectiblePenalty = 1.0 - \exp(\frac{CollectibleCount \times -0.22}{Ending \times 2.5})</math>
+
+where '''Ending''' is a "game ending status":
+{| class="wikitable"
+ ! Ending !! Value
+ |-
+ |  0 || None
+ |-
+ |  1 || [[Isaac's last will|Game Over]]
+ |-
+ |  2 || {{E|Mom}}
+ |-
+ |  3 || {{S|Womb}}
+ |-
+ |  4 || {{S|Sheol}}
+ |-
+ |  5 || {{S|Cathedral}}
+ |-
+ |  6 || {{S|Dark Room}}
+ |-
+ |  7 || {{S|Chest}}
+ |-
+ |  8 || {{E|Mega Satan}}
+ |-
+ |  9 || [[Greed mode]]
+ |-
+ | 10 || {{S|???}}
+ |-
+ | 11 || {{S|The Void}}
+ |}
+
+In short, the game rewards you for going further with as little as possible. Item penalty has an upper bound to ~80% of the Schwag bonus. Schwag bonus has a high impact on the Item penalty.
+
+Curiously, quitting the run in the Void grants a slightly higher item penalty, as Ending will be set to "Game Over" (1), meaning the Item penalty will only be divided by 2.5.
+
+== Strategies ==
+* {{Dlc|nr}} It's possible to obtain a full 20,000 Stage bonus even if the set objective is lower by using a sacrifice room.
+* The player should explore as much as possible, while still allowing time for {{R|Boss Rush}} and {{E|Hush}} to be completed. It is a good idea to find {{R|Secret Room}}s and {{R|Super Secret Room}}s, go into special rooms, and fight against {{R|Challenge Room}} enemies and Angels. Looking for {{R|Crawl Space}}s is not advised in most cases, as bombs can usually be spent better elsewhere. Items that grant mapping or reveal secrets can be extremely useful for getting a high exploration bonus while clearing floors quickly.
+* {{dlc+|r}} Since {{R|Ultra Secret Room}}s do not grant more of a bonus than regular rooms, it can be better for score to generate {{R|Red Room}}s where they will grant access to {{R|Challenge Room}}s, rather than to use them to look for the {{R|Ultra Secret Room}}.{{dlc-}}
+* Using a {{R|Sacrifice Room}} has a complex cost, starting with 1 hit per half a heart - meaning 2 hits per pop in most cases (no {{I|The Wafer}}, no Percs, etc). A full teleport comes with at least 24 hits (or 12 if the damage can be halved somehow);  {{Dlc|nr}} however, teleporting does not raise your damage penalty as much as expected, because reaching the {{S|Dark Room}} via teleport doesn't add points to your exploration bonus, only to the stage bonus. Reaching {{E|The Lamb}} by exploring, though, does.
+* {{dlc+|a+nr}} Gaining access to {{s|The Void}} and killing {{E|Delirium}} counts as a won daily run, but it seems that no points are directly (floor bonus) earned for killing it. However, it has effects on the item penalty, as well as giving extra exploration bonuses.{{dlc-}}
+* {{dlc+|r}} If {{i|Genesis}} is found in a daily run, it is highly recommended to take it to the very end of the run (right before touching the trophy), since using it will remove the item and {{dlc|nr+}} damage penalties.
+** It may also be beneficial to leave behind as many pickups as possible on the final floor until after using Genesis to help restore the schwag bonus.{{dlc-}}
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | The Marathon, Dedication, Broken Modem, Win Online Daily }}
+
+== Trivia ==
+* On December 6, every year, Isaac is reskinned as former Nintendo president [[wikipedia:Satoru Iwata|Satoru Iwata]] as tribute. December 6 was also Iwata's birthday. He has the same stats as Isaac, but starts with {{i|The Gamekid}} and {{t|Cartridge}}. {{i|How to Jump}} and {{i|Treasure Map}} are also more likely to appear.
+* {{dlc+|r+}} Due to the special methods required to access them, runs ending on {{E|Mother}} and {{E|The Beast}} feature slightly unique mechanics:
+** Runs ending on Mother will go through the alternate route as normal; the rooms leading to them are opened automatically. The trap doors leading to {{s|Mines}}/{{s|Ashpit}} I and {{s|Mausoleum}}/{{s|Gehenna}} I will not open until {{i|Knife Piece 1}} or {{i|Knife Piece 2}} has been obtained, respectively. Both items will be visible in [[Treasure Room]]s on the alternate route.
+** In runs ending on the Beast, {{E|Mom}}'s boss room can be exited normally, making the marked skull optional. No trophy appears after defeating The Beast; the results screen will appear automatically.{{dlc-}}
+*** Due to an oversight, if a [[Devil Room]] or [[Angel Room]] spawns after defeating Mom and the [[Boss Rush]] is open, leaving the special room can cause the Boss Rush entrance to attempt to appear on the same wall as the boss room door. If it does, Boss Rush will be inaccessible for that run.{{dlc-}}
+* {{dlc+|r+}} In runs ending on {{E|Delirium}}, there are two guaranteed entrances to {{s|The Void}}:
+** On {{s|???}} after defeating {{E|Hush}}.
+** After defeating {{E|???}} in the {{s|Chest}}, or {{E|The Lamb}} in the {{s|Dark Room}}.
+{{dlc-}}
+
+== Gallery ==
+<gallery>
+File:Boi Iwata.png|Isaac as Iwata.
+</gallery>
+
+{{nav|fr=Défis du jour}}
+[[Category:Mechanics]]
+[[Category:Modes]]

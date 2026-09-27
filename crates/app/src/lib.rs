@@ -42,6 +42,7 @@ pub fn run() {
             completion::completion,
             completion::extraction_report,
             wiki::wiki_entry,
+            wiki::wiki_item_pools,
             wiki::wiki_index,
             wiki::search,
             graph::graph_views,

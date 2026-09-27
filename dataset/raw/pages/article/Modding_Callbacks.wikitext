@@ -1,0 +1,5 @@
+'''Callbacks''' are how modders hook in to Afterbirth+ and run code. There are many different callbacks, which are fired at different times, depending on what you want to do. For information about callbacks, see [https://wofsauge.github.io/IsaacDocs/rep/enums/ModCallbacks.html Wofsauge's documentation].
+
+{{nav|modding|fr=Fonctions de rappel pour modder}}
+[[Category:Lua reference]]
+[[Category:Modding]]

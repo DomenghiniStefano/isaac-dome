@@ -1,0 +1,36 @@
+{{header attributes}}
+
+[[file:Attribute shot speed icon.png|50px]]
+'''Shot Speed''' is the attribute that governs how quickly an individual tear travels and is represented by a speeding ball.
+
+{{dlc|nr}} Shot Speed also affects the ''effective'' range of the tears. As the range stat determines how long tears will stay in the air (and not distance traveled), a lesser shot speed reduces effective range.
+
+Shot speed measures the velocity of each tear in contrast to the [[Tears]] stat, which measures tear frequency.
+
+A tear traveling at 1.0 shot speed crosses one tile in 4 ticks (8 frames, or 0.133 seconds), giving a velocity of 7.5 tiles per second. Higher and lower values of the attribute scale the velocity linearly.
+
+== Notes ==
+* All characters start with the same shot speed except for {{C|Samson}}, who has 1.31 shot speed, {{C|Jacob}}, who has 1.15 shot speed, {{C|Esau}}, who has 0.85 shot speed, and {{C|Eden}}, whose shot speed can be anywhere between 0.75 and 1.25.
+* A higher shot speed will increase the [[knockback|directional knockback]] of enemies hit by the tears.
+* Having a high shot speed is not always desirable. While a high shot speed means enemies are easier to aim at, {{dlc|nr}} and effective range is increased , it also means more knockback, which can make enemies move in unpredictable ways, potentially damaging Isaac and making it harder to land consecutive shots. Some items will also directly benefit from low shot speed, such as {{i|Tech X}} and {{i|Trisagion}}, and particularly items that grant [[Tear Effects#Homing|homing tears]], such as {{i|Godhead}} and {{i|Spoon Bender}}.
+* Items that reduce shot speed cannot lower it past 0.6.
+
+== Items that affect shot speed ==
+=== Active Items ===
+{{collectible table | Dataminer, Void }}
+
+=== Passive Items ===
+{{collectible table | A Bar of Soap, Binge Eater, Blue Cap, Candy Heart, Cat-o-nine-tails, Crown Of Light, Dark Prince's Crown, Dead Onion, Death's List, Eve's Mascara, Experimental Treatment, Eye of the Occult, Godhead, Lost Contact, Magic 8 Ball, Missing No., My Reflection, Sacred Heart, Safety Pin, Sausage, Screw, Speed Ball, Soul Locket, Stem Cells, Stye, Tooth Picks, Torn Photo, Tractor Beam }}
+
+=== Trinkets ===
+{{trinket table | Broken Syringe, Cracked Crown, Dim Bulb, Lazy Worm, Liberty Cap, Rainbow Worm, Vibrant Bulb, Whip Worm }}
+
+=== Other ===
+* {{dlc|a}} In co-op, [[Co-op#Special Babies 2|Long Baby]] will occasionally briefly increase range, shot speed, and tear falling speed. [[Co-op#Special Babies 2|Dark Baby]] will occasionally briefly increase all stats, including shot speed.
+* {{dlc+|a+}} The {{P|Era Walk}} card decreases shot speed and increases [[speed]] for the current room.{{dlc-}}
+* {{dlc|a+}} Absorbing an item using {{p|Black Rune|n}} can increase shot speed by 0.2.
+* {{dlc|r}} [[Shot Speed Up]] pills increase shot speed by 0.15, and [[Shot Speed Down]] pills lower it by 0.15.
+
+{{nav|fr=Vitesse des tirs}}
+
+[[Category:Mechanics]]

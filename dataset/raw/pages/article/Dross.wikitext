@@ -1,0 +1,91 @@
+{{infobox stage
+ | dlc         = r
+ | chapter     = 1.5
+ | id          = 28
+ | level id    = 1, 2
+ | type id     = 5
+ | bosses      = Clog, Colostomia, Wormwood, Lil Blub, Turdlet
+ | unlocked by = Dross
+}}
+'''Dross''' is one of the environments of [[chapter 1|chapter 1.5]], added in ''[[The Binding of Isaac: Repentance]]''.
+
+Dross is an alternative floor to {{s|Downpour}}, differentiating itself from Downpour by having more poop and sewage-themed [[Monsters|enemies]]. Just like in {{s|Downpour}}, {{i|Knife Piece 1}} can be found on Dross II. Some rooms in this green brick sewage recess have a thin layer of dirtied reflective water on the ground.
+
+Along with the watery floor, many visual effects are employed on this floor, such as:
+* Random walls might have animated pipes pumping brown sewage onto the floor.
+* Wet rooms have water distorted light reflections on the walls.
+* Random water shower points consistently dropping water on the floor in small areas.
+* Small water droplets randomly fall from the sky, leaving small wet marks that dry over in dry rooms, and don't really visually affect the floor of wet rooms.
+* The floor underneath the water can be tiled, solid concrete, or grated.
+* Overhead, light is blocked in 3-4 bar grate, multi-pipe, and diagonal pipe patterns, the remaining light hitting the floor and coloring it a little more yellow.
+* Downpour [[Rocks|Buckets]] also show up here as well, with the full variant of the bucket being full of poop, instead of full of water.
+
+In Dross, some [[Rooms]] may have grates on the walls, expelling a strong water flow. The water flow pushes Isaac and everything else in the Room in one specific direction, usually towards the wall opposing the grates. The flow will hamper your speed if you move against it and speed you up if you move with it.
+
+In addition, Dross floors have the rare chance to spawn [[Poops|Giant Poops]], Big Poops that take up 4× the space as regular Poops.
+
+== [[Monster]]s ==
+{{entity table/header}}
+{{stage entities | Drip, Big Corn, Splurt, Cloggy, Fly Trap, Gas Dwarf, Poot Mine, Dump, Dump Head, Small Leech, Fly, Attack Fly, Eternal Fly, Ring Fly, Dart Fly, Swarm, Army Fly, Boom Fly, Dukie, Tube Worm, Gaper, Frowning Gaper, Pacer, Gusher, Bulb, Wraith, Blurb, Bubbles, Sub Horf, Deep Gaper, Prey, Henry }}
+|}
+
+== [[Bosses]] ==
+{| style="width: 75%; text-align: center"
+ |[[File:Boss Clog portrait.png|center|link=Clog]]
+ |[[File:Boss Colostomia portrait.png|center|link=Colostomia]]
+ |[[file:Boss Wormwood (Dross) portrait.png|center|link=Wormwood]]
+ |[[file:Boss Lil Blub (Dross) portrait.png|center|link=Lil Blub]]
+ |-
+ | [[Clog]] {{Dlc|r}}
+ | [[Colostomia]] {{Dlc|r}}
+ | [[Wormwood]] {{Dlc|r}}
+ | [[Lil Blub]] {{Dlc|r}}
+ |-
+ | colspan="4" |[[file:Boss Turdlet portrait.png|center|link=Turdlet]]
+ |-
+ | colspan="4" |[[Turdlet]] {{Dlc|r}}
+ |}
+
+== Knife Piece 1 ==
+Dross II (or Downpour) contains a special area in which Isaac can acquire the {{I|Knife Piece 1}}, one of the key items for accessing the {{s|Corpse}}. Two unique features can be found here:
+* A [[White Fire Place]] that cannot be extinguished. Touching it separates Isaac's body and soul, converting Isaac into {{C|The Lost}} (with {{I|Holy Mantle}} if you have unlocked it as a starting item, as well as your current items) for a brief time. After a room is cleared, the player returns to normal.
+** Be warned that even if it has been unlocked for The Lost, the Holy Mantle will ''not'' be active until Isaac leaves the room. Taking damage in the same room after touching the white fireplace will be fatal.
+** When playing as {{C|The Forgotten}}, {{C|The Lost}} still fights with the bone club, and turning into {{c|The Soul}} is still possible.
+** When playing as {{C|Azazel}}, {{C|The Lost}} keeps Azazel's mini-{{i|Brimstone}} attack.
+* A 1×1 room with a mirror on the icon. There is always a mirror that can't be accessed normally.
+
+The mirror can only be entered as the Lost (or {{C|Tainted Forgotten}} (but not non-tainted {{c|The Soul}}) or Dark Esau-stricken {{C|Tainted Jacob}}, the former of which is allowed to retain their [functional] health), after which it leads Isaac to the '''[[Mirrored World]]''', where he can find the {{I|Knife Piece 1}}.
+* No items or pickups other than Knife Piece 1 will spawn there via [[level generation]] (i.e. be present upon the room being loaded/entered). However, the player can still get rewards for clearing rooms or destroying objects.
+** Beating the boss room will spawn an item from the [[Boss (Item Pool)|boss pool]].
+** While shops do not usually have items or pickups in them, using or destroying a [[Machines#Restock Machine|restock machine]] will spawn items and pickups from the [[Shop (Item Pool)|shop pool]] to buy.
+
+Once Isaac has the Knife Piece and returns through the mirror back to the real world, he will be converted back to the original character. To acquire {{I|Knife Piece 2}} and complete the process, be sure to head to the {{s|Mines}}/{{s|Ashpit}} II next.
+
+== Trivia ==
+* Dross may be a reference to the Sewers of Dross from ''Gish'', one of [[Edmund McMillen|Edmund McMillen's]] previous games.
+** It may also be a reference to [[thelegendofbumbo:Sewers of Dross|Sewers of Dross]] from ''[https://store.steampowered.com/app/1148650/The_Legend_of_BumBo/ The Legend of Bum-bo]''. Though, this stage might also just be a reference to ''Gish'' as well.
+* Like the Downpour, the Dross has unique recolors of certain enemies. Tube Worms, Blurbs, Sub Horfs, Gapers, Frowning Gapers, Pacers, Gushers, and Small Leeches are recolored to fit the floor, Preys and Bubbles are altered to focus on poop, and Deep Gapers and Wraiths get a different texture entirely.
+** {{e|Lil Blub}} and {{e|Wormwood}} are also recolored green to match this floor.
+* Occasionally, player can find a rare room that only contains {{e|Henry}}. He will smile at Isaac, then get flushed, instantly getting killed.
+* "Dross", other than a synonym for rubbish and feces, is the residue of smelting of precious metals, frequently mentioned in the Bible as a metaphor for impurity and worthlessness.
+
+== Music ==
+* The music for the Dross is called ''[https://www.youtube.com/watch?v=8fJeWa--MKg Night Soil]''.
+** Night Soil is a historical euphemism for human waste, which used to be collected at night from cesspools and eventually made into a fertilizer.
+
+== Gallery ==
+<gallery>
+File:Small Leech Dross.png|A Small Leech's appearance in Dross
+File:Sub Horf Dross.png|A Sub Horf's appearance in Dross
+File:Tube Worm Dross.png|A Tube Worm's appearance in Dross
+File:Prey Dross.png|A Prey's appearance in Dross
+File:Wraith Dross.png|A Wraith's appearance in Dross
+File:Bubbles Dross.png|A Bubbles' appearance in Dross
+File:Gusher Dross.png|A Gusher's appearance in Dross
+File:Pacer Dross.png|A Pacer's appearance in Dross
+File:Gaper Dross.png|A Gaper's appearance in Dross
+File:Frowning Gaper Dross.png|A Frowning Gaper's appearance in Dross
+File:Blurb Dross.png|A Blurb's appearance in Dross
+</gallery>
+
+{{nav|environment|fr=Égouts}}

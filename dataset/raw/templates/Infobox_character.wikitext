@@ -1,0 +1,74 @@
+<onlyinclude><includeonly><!--
+
+-->{{#vardefine: infobox#dlc | {{section dlc | {{{dlc|}}} }} }}<!--
+
+-->{{#vardefine: infobox#name       | {{#or: {{dlcmap | {{{name|}}} }} | {{PAGENAMEBASE}} }} }}<!--
+-->{{#vardefine: infobox#alias      | {{#or: {{{alias|}}} | {{dlcmap find | {{#var: infobox#name }} }} }} }}<!--
+-->{{#vardefine: infobox#files name | {{#or: {{{files name|}}} | {{#var: infobox#alias }} }} }}<!--
+-->{{#vardefine: infobox#image name | {{dlcmap replace | {{#or: {{{image name|}}} | * }} | * | {{#var: infobox#files name }} }} }}<!--
+-->{{#vardefine: infobox#image      | {{dlcmap replace | {{#or: {{{image|}}} | Character * appearance.png }} | * | {{#var: infobox#image name }} }} }}<!--
+-->{{#vardefine: infobox#damage     | {{#or: {{dlcmap | {{{damage|}}} }} | 3.5 (*1.00) }} }}<!--
+-->{{#vardefine: infobox#tears      | {{#or: {{dlcmap | {{{tears|}}} }} | +0 }} }}<!--
+-->{{#vardefine: infobox#shot speed | {{#or: {{dlcmap | {{{shot speed|}}} }} | 1 }} }}<!--
+-->{{#vardefine: infobox#range      | {{#or: {{dlcmap | {{{range|}}} }} | {{dlcmap | {{dlcalt|23.75|r=6.5}} }} }} }}<!--
+-->{{#vardefine: infobox#speed      | {{#or: {{dlcmap | {{{speed|}}} }} | 1.0 }} }}<!--
+-->{{#vardefine: infobox#luck       | {{#or: {{dlcmap | {{{luck|}}} }} | 0 }} }}<!--
+
+-->{{if storage | {{cargo/player
+ | alias        = {{#var: infobox#alias }}
+ | id           = {{{id|}}}
+ | parent       = {{{parent|}}}
+ | health       = {{{health|}}}
+ | shot speed   = {{#var: infobox#shot speed }}
+ | luck         = {{#var: infobox#luck }}
+ | description  = {{{description|}}}
+ | pickups      = {{{pickups|}}}
+ | collectibles = {{{collectibles|}}}
+ | unlocked by  = {{{unlocked by|}}}
+}}{{dlcmap format | {{#var: infobox#name }} | <esc>{{cargo/player name
+ | dlc    = @dlc
+ | player = </esc>{{#var: infobox#alias }}<esc>
+ | name   = @value
+}}</esc> }}{{dlcmap format | {{#var: infobox#image }} | <esc>{{cargo/player image
+ | dlc    = @dlc
+ | player = </esc>{{#var: infobox#alias }}<esc>
+ | file   = @value
+}}</esc> }}{{dlcmap format | {{#var: infobox#damage }} | <esc>{{cargo/player damage
+ | dlc    = @dlc
+ | player = </esc>{{#var: infobox#alias }}<esc>
+ | damage = @value
+}}</esc> }}{{dlcmap format | {{#var: infobox#tears }} | <esc>{{cargo/player tears
+ | dlc    = @dlc
+ | player = </esc>{{#var: infobox#alias }}<esc>
+ | tears  = @value
+}}</esc> }}{{dlcmap format | {{#var: infobox#range }} | <esc>{{cargo/player range
+ | dlc    = @dlc
+ | player = </esc>{{#var: infobox#alias }}<esc>
+ | range  = @value
+}}</esc> }}{{dlcmap format | {{#var: infobox#speed }} | <esc>{{cargo/player speed
+ | dlc    = @dlc
+ | player = </esc>{{#var: infobox#alias }}<esc>
+ | speed  = @value
+}}</esc> }} }}<!--
+
+-->{{#if: {{{hidden|}}} |  | {{infobox character/infobox
+ | name         = {{#var: infobox#name  }}
+ | image        = {{#var: infobox#image }}
+ | health       = {{{health|}}}
+ | damage       = {{#var: infobox#damage     }}
+ | tears        = {{#var: infobox#tears      }}
+ | shot speed   = {{#var: infobox#shot speed }}
+ | range        = {{#var: infobox#range      }}
+ | speed        = {{#var: infobox#speed      }}
+ | luck         = {{#var: infobox#luck       }}
+ | pickups      = {{{pickups|}}}
+ | collectibles = {{{collectibles|}}}
+ | unlocked by  = {{{unlocked by|}}}
+}}{{#var: infobox#dlc }} }}<!--
+
+-->{{if categories | [[Category:Characters]] }}</includeonly></onlyinclude>
+{{category-populating template|Characters}}
+{{documentation|fr=infobox personnage}}
+
+[[Category:Infobox templates]]
+[[Category:Character templates]]

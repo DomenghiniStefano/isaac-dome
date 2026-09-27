@@ -1,0 +1,30 @@
+{{header soul stones}}
+{{Infobox rune
+ | dlc         = r
+ | name        = Soul of Samson
+ | type        = soul stone
+ | id          = 87
+ | quote       = Slay a thousand
+ | description = Isaac turns berserk for 10 seconds, replacing his tears with a melee jawbone club and gaining +0.4 [[Speed]], some [[Tears]], and +3 flat [[Damage]].
+ | unlocked by = Soul of Samson
+ | recharge    = 6
+}}
+
+{{cit|ur|r}}
+
+== Effects ==
+* Isaac turns berserk for 10 seconds, replacing Isaac's tears with a melee jawbone club and gaining +0.4 [[Speed]], some [[Tears]], and +3 flat [[Damage]].
+** The jawbone club works similar to {{c|The Forgotten}}'s bone club.
+
+== Notes ==
+* The rune's effect is nearly identical to {{i|Berserk!}}, with the exceptions that Isaac will not get any speed bonuses from killing enemies, nor can the duration of the effect be extended. ''See the item page for more detailed information on the effect and notes.''
+
+== In-game Footage ==
+{{#ev:youtube|QllR1KrizD0}}
+
+== Trivia ==
+* The pickup quote "Slay a thousand" is a reference to the biblical [[wikipedia:Samson|Samson]], who killed a thousand men with a donkey's jawbone.
+* This Soul Stone, along with {{p|Soul of Isaac}}, {{p|Soul of Magdalene}}, and {{p|Soul of Judas}}, replicates a feature of the character it's unlocked by.
+
+{{nav|fr=Âme de Samson}}
+[[Category:Runes]]

@@ -1,0 +1,81 @@
+{{infobox stage
+ | dlc         = r
+ | chapter     = 3.5
+ | id          = 31
+ | level id    = 5, 6
+ | type id     = 4
+ | bosses      = The Heretic, The Siren, Mom, Mom's Heart
+ | unlocked by = A Secret Exit
+}}
+
+The '''Mausoleum''' is the alternative floor to the {{s|Depths}} and was added in ''[[The Binding of Isaac: Repentance]]''.
+
+Mausoleum is an occult-themed stage full of magic and cult material. Unique features of this stage include [[Teleporters]] and {{e|Grudge}}s.
+
+The door to the Mausoleum / Gehenna will appear after defeating the boss in The {{S|Mines}} II / {{S|Ashpit}} II or the {{S|Depths}} I / {{S|Necropolis}} I / {{S| Dank Depths}} I. The door will '''not''' spawn after defeating {{e|Mom}}. It costs two full hearts to enter, and ignores almost every form of damage reduction, including {{I|The Wafer}} and invincibility. Unlike other methods of health donation, red hearts will not be prioritized over more valuable hearts.
+
+* {{C|The Lost}}, {{C|Tainted Lost}}, {{c|Tainted Jacob}} (In his soul form), {{C|Tainted Soul}} (unless he is holding {{C|Tainted Forgotten}}), and any character under the effect of {{p|Soul of the Lost}} can enter the door for free.
+* {{I|Dad's Key}}, {{p|Get out of Jail Free Card}}, {{I|Mr. ME!}}, and {{I|Sharp Key}} can be used to open the door without taking damage.
+* {{t|Broken Padlock}} can be used to open the door with one bomb.
+* {{i|Cracked Orb}}'s effect can open the door with less damage taken than needed, or with no damage with {{i|Dull Razor}}.
+* The extra characters spawned by {{I|Strawman}}, {{P|Soul of the Forgotten}}, and {{P|Soul of Jacob and Esau}} can expend their health to open the door.
+* {{t|Crow Heart}} can be used to open the door with red hearts first.
+
+The boss of Mausoleum II is always a more powerful version of {{e|Mom}}. After Mom is defeated, a trapdoor that leads to the {{S|Womb}} II, and a sealed fleshy door both appear. Stabbing the door with the knife familiar created by {{i|Knife Piece 1}} and {{i|Knife Piece 2}} will cause it to open, leading to a more difficult version of {{e|Mom's Heart}}. Defeating Mom's Heart will cause the boss room to darken, and the trapdoor to Womb II will now lead to the {{s|Corpse}}.
+
+* A {{i|Sharp Key}} can be used in place of the Knife.
+* {{i|Cracked Orb}}'s effect can open the flesh door, allowing Isaac to keep the knife.
+* If Isaac exits the {{R|Boss Rush}} room after 25 minutes have passed, there is a chance that the flesh door will change positions to the wall where the boss rush door was, causing Isaac to "come out" of the flesh door and leaving it open, allowing entry without the knife.
+* After this special version of Mom's Heart is defeated, any [[Item]] or [[Pickup]] that was left behind anywhere on the floor will disappear (including {{R|Shop}} items, {{R|Angel Room}}/{{R|Devil Room}} items, etc.): the floor will be empty.
+** Therefore, make sure not to leave behind something that you might want to use after this floor. The strategy consisting of teleporting outside of Mom and Mom's Heart to retrieve something that was left behind after fighting them is '''not''' viable here.
+** The {{r|Boss Rush}} entrance will disappear if it was previously open.
+** If a {{M|Shop Restock Machine}} is used within the now-empty shop, it will restock the shop as normal.
+** If the effect of {{i|Forget Me Now}} is invoked after the special version of Mom's Heart is defeated, the {{cu|Darkness}}-like effect will remain on the newly generated floor. Additionally, no items will naturally generate in rooms where they would have. After the player defeats Mom again, there will be no flesh door, and the trapdoor to Corpse will appear.
+* The alternative floor to Mausoleum is {{s|Gehenna}}. It is unlocked after all bosses from this floor have been defeated.
+
+__TOC__
+
+== Unique Elements ==
+* '''Hidden Switches''' - Mausoleum and Gehenna commonly contain [[buttons]] hidden behind [[pillar]]s which allow access to normally inaccessible areas or immediately kill all enemies in the room.
+
+== [[Monster]]s ==
+{{entity table/header}}
+{{stage entities | Baby Begotten, Begotten, Cultist, Blood Cultist, Bony, Revenant, Quad Revenant, Dark Ball, Death's Head, Cursed Death's Head, Vis Fatty, Fetal Demon, Fly, Eternal Fly, Sucker, Soul Sucker, Whipper, Snapper, Flagellant, Cursed Globin, Loose Knight, Brainless Knight, Pon, Psychic Horf, Psychic Maw, Ragling, Rag Man's Ragling, Poofer, Vis Versa, Lil' Haunt, Candler, Kineti, Bishop, Lil Portal, Poky, Slide, Wall Hugger, Grudge, Stone Grimace, Triple Grimace, Constant Stone Shooter, Gaping Maw, Broken Gaping Maw }}
+|}
+
+''Degraded Bosses:''
+{| class="wikitable mw-collapsible striped sortable"
+! Name
+! ID
+! class="unsortable" | Notes
+{{entity row minimal|Rag Man}} |
+{{entity row minimal|Rag Mega}} |
+|}
+
+== [[Bosses]] ==
+{| style="width: 100%; text-align: center"
+ |[[file:Boss The_Siren portrait.png|center|link=The Siren]]
+ |[[file:Boss The_Heretic portrait.png|center|link=The Heretic]]
+ |[[file:Boss Mom portrait.png|center|link=Mom#Behavior in Mausoleum/Gehenna]]
+ |[[file:Boss Mom's_Heart portrait.png|center|link=Mom's Heart#Behavior in Mausoleum/Gehenna]]
+ |-
+ |[[The Siren]] {{Dlc|r}}
+ |[[The Heretic]] {{Dlc|r}}
+ |[[Mom#Behavior in Mausoleum/Gehenna|Mom]] {{Dlc|r}}
+ |[[Mom's Heart#Behavior in Mausoleum/Gehenna|Mom's Heart]] {{Dlc|r}}
+ |}
+
+== Unlockable [[achievements]] ==
+{{achievement text | Gehenna }}
+
+== Trivia ==
+* In ''Antibirth'', fully constructing The Knife required 3 Knife Pieces, with the third appearing in Mausoleum II. For Repentance, however, the third piece was removed, and the completed knife only requires the player to obtain two pieces from Downpour and Mines.
+** Also in ''Antibirth,'' there was a mechanic where somewhere on the floor, there was a special [[Teleporters|Teleporter]] that usually required solving a puzzle, having flight, or using pickups to access. This [[Teleporters|Teleporter]] led to a second section of the floor, a cluster of rooms with enemies and a few random special rooms. Since this second area was on the same map as the main part of the floor, it could also be accessed by using the {{i|Red Key}} enough times to reach it, or by teleporting to it with other means. Both floors of the Mausoleum had this feature, and in Mausoleum II it was required to go there to solve a puzzle in order to unlock Knife Piece 3. However, like Knife Piece 3, this mechanic was also removed in Repentance.
+* {{e|The Visage}} was originally a Mausoleum boss in ''Antibirth'', but it was changed in Repentance to appear on Mausoleum's alternate floor, Gehenna. Its appearance was also updated from grey and purple to black and red to reflect this.
+** This might have been because of Gehenna's "torture chamber" theming, which The Visage complements more so than Mausoleum's occult theming.
+* Mausoleum is referred to on [[Isaac's last will|Isaac's Last Will]] as "Some Cursed Place".
+
+== Bugs ==
+{{Bug|If the LABY RNTH (permanent curse of the labyrinth) special seed is being used, the door to the mausoleum in Mines/Ashpit generates very infrequently.}}
+
+{{nav|environment|hush unlock|fr=Mausolée}}

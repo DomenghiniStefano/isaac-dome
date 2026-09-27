@@ -1,0 +1,31 @@
+{{page dlc|a+}}
+
+'''[[Achievements#All_Achievements|The gate is open!]]''' is an achievement added to Afterbirth+ that unlocks new enemy types that can appear during runs. It is unlocked by defeating {{E|The Lamb}}.
+
+== The gate is open! ==
+Enemies that are unlocked by earning this achievement.
+{| style="width:70%; align:left; padding-right:2em"
+| style="text-align:center" | [[File:Mushroom (Enemy).png|center|link=Mushroom (Enemy)]]
+| style="text-align:center" | [[File:poison Mind.png|center|link=Poison Mind]]
+| style="text-align:center" | [[File:stoney.png|center|link=Stoney]]
+| style="text-align:center" | [[File:blister.png|center|link=Blister]]
+|-
+| style="text-align:center" | [[Mushroom (enemy)]]
+| style="text-align:center" | [[Poison Mind]]
+| style="text-align:center" | [[Stoney]]
+| style="text-align:center" | [[Blister (Enemy)]]
+|}
+{| style="width:70%; align:left; padding-right:2em"
+| style="text-align:center" | [[File:the Thing.png|center|link=The Thing]]
+| style="text-align:center" | [[File:ministro.png|center|link=Ministro]]
+| style="text-align:center" | [[File:portal.png|center|link=Portal]]
+| style="text-align:center" | [[File:lil Portal.png|center|link=Lil Portal]]
+|-
+| style="text-align:center" | [[The Thing]]
+| style="text-align:center" | [[Ministro]]
+| style="text-align:center" | [[Portal]]*
+| style="text-align:center" | [[Lil Portal]]
+|}
+{{dlc|r}} * In Repentance, Portals have been restricted to only spawning in [[The Void]].
+
+{{nav}}

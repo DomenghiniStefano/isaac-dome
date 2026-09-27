@@ -1,0 +1,22 @@
+{{infobox version
+ | dlc = r+
+ | steam = 585007901206118756
+ | date = 2025-02-14
+}}
+
+== Documented changes ==
+=== Fixes ===
+* Fixed an issue where {{P|Berkano}} locusts could persist when used with {{I|Glowing Hourglass}}.
+* Fixed an issue causing {{I|The Stairway}}, {{I|Card Reading}}, and {{I|Isaac's Tomb}} to not function properly.
+* Fixed an issue where the {{T|Karma}} trinket could show up in daily runs and challenges if the trinket pool was depleted.
+* Fixed an issue where force quitting a daily run would not reset the win streak counter.
+* Fixed an issue where the {{M|Shop Restock Machine}} would still double reroll if destroyed via coins instead of bombs.
+* Modding API fixes.
+* Fixed inventory font.
+
+== Undocumented changes ==
+=== Changes ===
+* The closing game pop-up now says "Are you sure you want me to die?" instead of "Are you sure you want to quit?".
+* {{p|Rune Shard}}'s Berkano now gives one {{i|Abyss}} locust for the room.
+
+{{nav|version}}

@@ -1,0 +1,102 @@
+{{infobox monster
+ | name        = Wall Creep
+ | id          = 240
+ | base hp     = 10
+ | environment = {{floor|Basement}}{{floor|Cellar}}{{floor|Burning Basement}}<br>{{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{room|challenge}}
+ | behavior    = Crawls along walls to try to line up with Isaac and shoots three blood shots in a line.
+}}
+
+'''Wall Creeps''' will try to line up with Isaac, and shoot three blood shots quickly in a horizontal line. They walk moderately quickly on the wall they were originally placed onto and they cannot move on another wall. They have a long blood-shot range, but Isaac can attack them safely by shooting diagonally.
+{{clear}}
+
+== Variants ==
+=== Blind Creep ===
+{{infobox monster
+ | name        = Blind Creep
+ | id          = 242
+ | base hp     = 10
+ | environment = {{floor|Cellar}}<br>{{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{room|boss}}
+ | behavior    = Randomly crawls along walls and shoots three spread blood shots.
+}}
+
+'''Blind Creeps''' will crawl along walls randomly and shoot 3 spreading blood shots, like {{i|The Inner Eye}}. They are slower than Wall Creeps, fire less frequently and do not directly target Isaac, but their shots are less predictable.
+{{clear}}
+
+=== The Thing ===
+{{infobox monster
+ | dlc         = a+
+ | name        = The Thing
+ | image name  = * {{dlc|nr|Afterbirth+}}
+ | id          = 304
+ | base hp     = 15
+ | environment = {{floor|Catacombs}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{dlc|nr}} Chance to replace Wall Creeps, Blind Creeps and Rage Creeps
+ | behavior    = Crawls along a wall and attempts to line up with Isaac, then spits a line of damaging Red Creep.
+ | unlocked by = The gate is open!
+}}
+
+'''The Thing''' will try to line up with Isaac and spit a line of damaging [[Creep#Red Creep|Red Creep]]. The creep has a fairly long range, spanning about half of the width of a normal-sized room. During this attack, a tongue will protrude from its mouth which can deal contact damage.
+
+After it uses its Creep attack, it will not be able to do so again until the Creep has faded, although it will still be moving to follow Isaac with its tongue out.
+{{clear}}
+
+=== Rage Creep ===
+{{infobox monster
+ | name        = Rage Creep
+ | id          = 241
+ | base hp     = 10
+ | environment = {{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{room|challenge}}
+ | behavior    = Slowly crawls along walls to try to line up with Isaac and shoots a Brimstone laser.
+}}
+
+'''Rage Creeps''' will try to line up with Isaac and fire a {{i|Brimstone}} laser. They are much slower than other Creeps and also take more time to charge up their attacks, but they have infinite range and their laser instantly travels across the room, forcing Isaac to be careful when dealing with them, especially when there are many Rage Creeps in the same room.
+{{clear}}
+
+=== Soy Creep ===
+{{infobox monster
+ | dlc         = r
+ | name        = Soy Creep
+ | id          = 240
+ | variant     = 1
+ | base hp     = 13.5
+ | environment = {{floor|Mines}}<br>{{room|challenge}}
+ | behavior    = Slowly crawls along walls to try to line up with Isaac and shoots a stream of shots seemingly affected by {{i|Soy Milk}}.
+}}
+
+'''Soy Creeps''' will try to line up with Isaac and fire a continuous stream of shots that are seemingly affected by {{i|Soy Milk}}. Their range is quite impressive, rendering them able to hit Isaac when he cannot see them. In dark areas, the rooms are illuminated by their eyes.
+{{clear}}
+
+=== Tainted Soy Creep ===
+{{infobox monster
+ | dlc         = r
+ | name        = Tainted Soy Creep
+ | variant     = 3
+ | base hp     = 50
+ | environment = {{floor|Mines}}<br>Found on the [[Ascent]] to {{s|Home}}.
+ | behavior    = Slowly crawls along walls to try to line up with Isaac and shoots a 4 diagonal streams of {{i|Soy Milk}} shots.
+}}
+The '''Tainted Soy Creeps''' appear in the Ascent path and will fire continuous streams of tears, similar to the Soy Creep. These streams are shot diagonally in four directions.
+{{dlc clear}}{{clear}}
+
+== Notes ==
+* Rage Creeps can kill other enemies with their {{i|Brimstone}} laser.
+* Unlike other Creeps, The Thing can be a [[Champion]].
+** {{dlc|r}} Wall Creeps also have Champion forms.
+* {{dlc|r}} If The Thing isn't unlocked yet, it will be replaced by Wall Creeps in Normal mode, or Blind Creeps in [[Hard Mode]].
+
+== Gallery ==
+<gallery>
+File:The_Thing_Attack.png|{{dlc|r}} The Thing performing its attack.
+</gallery>
+
+== Trivia ==
+* The Thing is a reference to the eponymous movie.
+** Their sprites prior to ''Repentance'' consist of a red-colored Blind Creep with a stitched mouth and a [[Nerve Ending]] reused as a tongue.
+* The Thing is one of five enemies (four without Repentance, three without Afterbirth+) in the game that uses [[Creep]] as projectiles, the others are [[Conjoined Fatty]], [[Fatty#Bloaty|Bloaty]], [[Ultra Pride]] and [[Meatball]].
+* [[anti:Soi Creep|Soy Creeps]] are from the ''Antibirth'' mod. In ''Antibirth'', Soy Creeps were named Soi Creeps.
+** They originally were able to spawn in {{s|Caves}}, {{s|Catacombs}}, {{s|Depths}}, and {{s|Necropolis}}.
+* {{dlc|r}} There is an unused version of a Rage Creep known as a Split Rage Creep which shot two {{i|Brimstone}} lasers at diagonal angles instead of one.
+** {{dlc|r}} An unused Repentance boss called [[Cut Content#Raglich|Raglich]] would have spawned rag themed Creeps known as Rag Creeps which are also unused.
+* {{dlc|r}} Soy Creeps and Tainted Soy Creeps' eyes glow bright white in dark rooms.
+
+{{nav|fr=Rampant Mural}}
+[[Category:Spider monsters]]

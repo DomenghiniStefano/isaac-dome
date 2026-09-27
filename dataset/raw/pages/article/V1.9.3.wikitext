@@ -1,0 +1,16 @@
+{{infobox version
+ | dlc   = r
+ | date  = 2023-12-08
+}}
+
+The [[Online (open beta)|online beta]] received a patch on December 8th, 2023, announced on [https://twitter.com/tyronerodriguez/status/1733302031669203074 Twitter].
+
+== Documented Changes ==
+* Fixed unrecognized controller softlock
+* Fixed false report mods as being active
+* Create new match if all run results in-progress
+* Small delay to active item after boss intro
+* Caps lock works in text chat
+* Profanity filter tweaked
+
+{{nav|version}}

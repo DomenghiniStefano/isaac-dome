@@ -1,0 +1,29 @@
+{{header special cards}}
+{{infobox card
+ | dlc         = r
+ | type        = special card
+ | id          = 80
+ | recharge    = 6
+ | quote       = Again
+ | description = Copies the effect of the most recently used [[Pill]], [[Card]], [[Rune]], [[Soul Stone]], or [[activated item]].
+ | unlocked by = Wild Card
+}}
+
+{{cit|us|r}}
+
+== Effects ==
+* Copies the effect of the most recently used [[Pill]], [[Card]], [[Rune]], [[Soul Stone]], or [[activated item]].
+
+== Notes ==
+* Being a [[special card]], the '''Wild Card''' has a significantly lower chance of appearing compared to other cards.
+* Using {{p|Jera}} on a Wild Card will copy the Wild Card, allowing Isaac to infinitely copy any other consumables in the room.
+* Using {{i|Diplopia}} will copy the Wild Card and any pedestal item in the room, allowing Isaac to infinitely copy any item in the room.
+
+== Synergies ==
+* {{i|Plan C}}: Activating the Plan C effect resets Isaac's 3 second death timer, allowing for longer boss death animations to play out.
+** {{dlc|r+}} Bosses with longer death animations now make Plan C's cooldown longer, therefore making this strategy a little less useful.
+
+== Trivia ==
+* The Wild Card comes from [[wikipedia:Uno (card game)|Uno]]. In Uno, this card allows whoever played it to choose its color.
+
+{{nav|fr=Dernière Carte}}

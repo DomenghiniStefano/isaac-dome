@@ -1,0 +1,15 @@
+{{page dlc|r}}
+
+Items with this [[Item Tags|tag]] are not available as card effects during {{chal|Cantripped!}}.
+
+== Activated Collectibles ==
+{{collectible table | tag = nocantrip | type = activated }}
+
+== Passive Collectibles ==
+{{collectible table | tag = nocantrip | type = passive }}
+
+==Notes==
+* Passive items under this tag are redundant as passive items can't normally spawn as cards in {{chal|Cantripped!}}, this is because all items could spawn in the challenge prior to patch [[V1.7.9b]].
+
+{{nav|fr=Balise nocantrip}}
+[[Category:Item tags]]

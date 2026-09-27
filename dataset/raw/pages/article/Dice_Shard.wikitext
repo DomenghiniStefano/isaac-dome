@@ -1,0 +1,29 @@
+{{header special cards}}
+{{infobox pickup
+ | dlc         = a
+ | id          = 49
+ | quote       = D6 + D20
+ | description = Upon use, invokes the effects of {{i|The D6}} and the {{i|D20}} at the same time, rerolling all item pedestals and pickups in the room.
+}}
+
+'''Dice Shard''' is a [[Cards and Runes#Other|consumable item]] added in ''[[The Binding of Isaac: Afterbirth]]''.
+
+== Effects ==
+Upon use, it:
+* rerolls all pedestal [[item]]s in the room (like {{i|The D6}})
+* rerolls all [[pickups]] and [[trinket]]s in the room (like the {{i|D20}})
+
+== Notes ==
+* Despite it not being a card, the '''Dice Shard''' is considered a [[special card]], so it has a significantly lower chance of appearing compared to other cards.
+* {{dlc|nr}} Similarly to runes, this item counts as a card and can be used with {{i|Blank Card}}.
+* {{dlc+|r}} This item cannot be mimicked by either {{i|Blank Card}} or {{i|Clear Rune}}, and {{i|Tarot Cloth}} has no effect on it.{{dlc-}}
+* {{dlc|a+}} '''Dice Shard''''s ID was changed from 44 to 49.
+* {{dlc|r+}} '''Dice Shard''' can sometimes spawn within the special bedroom created by {{i|Lil Portal|n}}.
+
+== Trivia ==
+* The item's appearance is similar to {{i|The D6}}, but broken in half.
+* {{dlc+|r}} Dice Shard is similar to {{P|Cracked Key}} in that they are both one-use broken versions of an active item. However, Dice Shard has an additional effect that The D6 lacks while Cracked Key simply replicates the use of Red Key.{{dlc-}}
+* Despite being a dice item, Dice Shard is not an unlock.
+** This trait is shared with {{I|D10}} and {{I|D7}}.
+
+{{nav|dice|broken|fr=Fragment de Dé}}

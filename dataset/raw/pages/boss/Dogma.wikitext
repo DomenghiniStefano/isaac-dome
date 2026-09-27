@@ -12,7 +12,7 @@
 
 == Behavior ==
 === Phase 1 ===
-In its first phase, Dogma is attached to a television. Damage can only be dealt to Dogma by damaging the television in the center of the room. Any attacks towards Dogma themself causes a shield to briefly appear and block the attack. Dogma moves slowly towards Isaac, leaving a trail of damaging [[Creep#Static Creep|Static Creep]] and has a variety of attacks:
+In its first phase, Dogma is attached to a television. Damage can only be dealt to Dogma by damaging the television in the center of the room. Any attacks towards Dogma itself causes a shield to briefly appear and block the attack. Dogma moves slowly towards Isaac, leaving a trail of damaging [[Creep#Static Creep|Static Creep]] and has a variety of attacks:
 * Fires three consecutive radial bursts of 8 {{i|Godhead}} projectiles. If Isaac stands within the projectiles' auras for long enough, a {{i|Crack the Sky}} beam hits Isaac from above.
 * Fires four consecutive bursts of projectiles in groups of 1, 2, 3, and 4 in each of the cardinal directions, with the overall pattern resembling a star.
 ** Occasionally after firing the 4th burst, Dogma greatly slows down all the projectiles mid-flight, leaving them to float around slowly for a moment before vanishing.
@@ -27,7 +27,7 @@ After destroying the television, Dogma falls apart into a puddle of static, befo
 ** If the thrown ball of beams is slowed (by {{i|Stop Watch}} for instance), the 8 beams fire before being properly aligned.
 * Turns into a winged wheel resembling an [[wikipedia:Ophanim|Ophanim]] and floats off-screen before charging back towards Isaac, continuing off-screen releasing a radial burst with three layers of feather projectiles with 12 feathers each near the end of the dash. It repeats this attack a total of 6 times.
 
-As Dogma takes more and more damage during this phase, its Seraph form will occasionally flicker into various other forms; these include Isaac's head, a lamb's skull with a serpent in its eye, a fly, and a troll face with horns. They represent each one of the 4 horsemen. This is a purely visual effect.
+As Dogma takes more and more damage during this phase, its Seraph form will occasionally flicker into various other forms; these include Isaac's head, a lamb's skull with a serpent in its eye, a fly, and a troll face with horns (each of which represents one of the Four Horsemen of the Apocalypse). This is a purely visual effect.
 
 When Dogma's HP reaches zero for the second time, it is destroyed as the whole screen fades to white before turning off like an old TV. Then Isaac is automatically given {{i|Dogma}} as the cutscene that introduces {{e|The Beast}} is played.
 

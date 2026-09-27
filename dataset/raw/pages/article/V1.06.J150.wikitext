@@ -1,0 +1,10 @@
+{{infobox version
+ | dlc  = a+
+ | date = 2018-04-30
+}}
+
+== Undocumented changes ==
+* Hotfix for some of the Lua changes mentioned in the previous patch.
+
+{{nav|version}}
+[[Category:Added in Booster Pack 5]]

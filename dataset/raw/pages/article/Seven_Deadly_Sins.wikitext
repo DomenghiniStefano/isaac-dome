@@ -1,0 +1,73 @@
+{{header bosses}}
+The '''Seven Deadly Sins''' are mini-bosses that can be encountered on any floor in their respective Mini-Boss rooms outside of The Chest and Dark Room. Unlike with bosses, there is no special door leading to a mini-boss room, meaning that there is no way to tell whether a room is inhabited by a mini-boss unless the player has an item that reveals map icons such as {{i|The Compass}} or a Map item. Once in a mini-boss room, the player cannot escape through means of bombing the door, as it will be boarded off. The Sins and Super Sins notably [[Stage HP|become tougher]] the later in the game they are encountered.
+
+Each of the Sins has specific drops, that are consumables or a pedestal item (less frequently). In a room containing multiple Sins, only the last one will drop something, allowing you to choose what drop you want by killing a certain mini-boss last.
+
+All of them are based on the [[wikipedia:Seven deadly sins|Seven Deadly Sins]].
+
+== Sins ==
+{| style="width:70%; align:left padding-right:2em; text-align: center; border: none"
+|[[File:Envy.png |64px|center|link=Envy]]
+|[[File:Gluttony.png|64px|center|link=Gluttony]]
+|[[File:Wrath.png|64px|center|link=Wrath]]
+|-
+|[[Envy]]
+|[[Gluttony]]
+|[[Wrath]]
+|-
+|[[File:Pride.png|64px|center|link=Pride]]
+|[[File:Lust.png|64px|center|link=Lust]]
+|[[File:Greed.png|64px|center|link=Greed]]
+|-
+|[[Pride]]
+|[[Lust]]
+|[[Greed]]
+|-
+| colspan="3" |[[File:Sloth.png|64px|center|link=Sloth]]
+|-
+| colspan="3" |[[Sloth]]
+|}
+
+== Super Sins ==
+These are much stronger alternatives to the original sins, known as the Seven Super Deadly Sins.
+
+{{dlc|r}} The Super Sins cannot appear during [[Chapter 1]].
+
+{| style="width:70%; align:left padding-right:2em; text-align: center; border: none"
+|[[File:Super_Envy.png|80px|center|link=Super Envy]]
+|[[File:Super_Gluttony.png|80px|center|link=Super Gluttony]]
+|[[File:Super_Wrath.png|80px|center|link=Super Wrath]]
+|-
+|[[Super Envy]]
+|[[Super Gluttony]]
+|[[Super Wrath]]
+|-
+|[[File:Super_Pride.png|80px|center|link=Super Pride]]
+|[[File:Super_Lust.png|80px|center|link=Super Lust]]
+|[[File:Super_Greed.png|80px|center|link=Super Greed]]
+|-
+|[[Super Pride]]
+|[[Super Lust]]
+|[[Super Greed]]
+|-
+| colspan="3" |[[File:Super_Sloth.png|80px|center|link=Super Sloth]]
+|-
+| colspan="3" |[[Super Sloth]]
+|}
+
+== Ultra Sins ==
+There is an Ultra variant of both Pride and Greed. Ultra Pride resembles [[Edmund]] and [[Florian]], while {{e|Ultra Greed}} and {{e|Ultra Greedier}} serve as the final bosses for [[Greed Mode]] and [[Greedier Mode]] respectively.
+
+{| style="width:70%; align:left padding-right:2em; text-align: center; border: none"
+|[[File:Ultra_Pride.png|128px|center|link=Ultra Pride]]
+|[[File:Ultra_Greed_ingame.png|128px|center|link=Ultra Greed]]
+|[[File:Boss Ultra Greedier ingame.png|128px|center|link=Ultra Greedier]]
+|-
+|[[Ultra Pride]]
+|{{dlc|a}} [[Ultra Greed]]
+|{{dlc|a+}} [[Ultra Greedier]]
+|}
+
+{{nav|boss|mini-boss|es=Los_Siete_Pecados_Capitales|fr=Sept Péchés Capitaux}}
+
+[[Category:Bosses|*]]

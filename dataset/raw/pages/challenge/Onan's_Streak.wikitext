@@ -50,7 +50,7 @@ Not hitting anything with tears causes Judas to take damage. This makes accuracy
 ** {{i|Tech.5}} has the same effect, {{dlc|r}}and is not blacklisted.
 * Taking {{i|Rubber Cement}} is recommended, tears hitting a wall will not damage Judas, nor upon hitting the ground if an enemy is hit first.
 ** Enemies include Stone Grimaces, unkillable enemies, fireplaces, poop, and bombs.
-** {{plat|XboxOne}} Poop is not considered an enemy if it is the first object hit.
+** Poop is not considered an enemy if it is the first object hit.
 * {{i|Proptosis}} allows Judas' shots to miss without dealing damage as long as they don't hit a wall or non-tear-destructible object (such as a rock).
 * {{i|Isaac's Tears}} do not count as a hit/miss, and it maintains Chocolate Milk's charged damage bonus when activated, making it a safe combat alternative.
 * {{i|Dead Eye}} benefits from this challenge, since the player will be focused on not missing anyways. This can allow for long streaks at high damage.
@@ -137,6 +137,7 @@ Not hitting anything with tears causes Judas to take damage. This makes accuracy
 * {{i|Neptunus}} fires many shots at once, making it very easy for the player to shoot more than needed and cause self-damage.
 * {{I|Strawman}} is basically useless, as The Keeper's tears will also damage themself (not Judas), essentially killing themself in a few seconds due to The Keeper firing automatically while Judas charges up Chocolate Milk.
 * {{I|Eye of the Occult}} will generally make it harder to control your tears and will probably result in a failed run.
+** Hitting anything other than an enemy will harm Judas.
 * {{I|Gello}} will harm Judas with missed shots.
 
 == Reward ==

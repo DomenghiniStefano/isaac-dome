@@ -1,0 +1,324 @@
+Each [[floor]] of the game is made up of a number of '''Rooms'''. The number of Rooms on each floor generally increases as the game progresses.
+__TOC__
+
+{{clear}}
+
+== Normal Rooms ==
+Normal Rooms make up the majority of the Rooms on a floor. These Rooms typically contain enemies and may drop a [[pickup]] or chest after all enemies are killed. Many Rooms also contain various [[pickup]]s, [[chest]]s, [[item]]s, and [[obstacle]]s.
+
+Isaac cannot leave a Room with enemies until they are all killed or until a door is opened with an explosion. If Isaac is currently holding an [[active item]], completing a Room with enemies will add one charge.
+
+Rooms can come in various sizes; while normal-sized Rooms are the most common, double and quadruple-sized Rooms can also appear.
+
+{{dlc|a}} L-shaped triple-sized Rooms, narrow hallways, and tiny Rooms can also appear. Additionally, completing a quadruple-sized Room or an L-shaped Room will add two charges to Isaac's active item.
+* {{dlc|nr+}} The last wave of {{r|Boss Rush}} adds only one charge.
+
+Sometimes rooms may be "flooded" with water, blood, or lava, depending on the [[Chapters|Chapter]]. Flooded rooms allow for unique interactions with some [[Items]], such as {{i|Jacob's Ladder}}, and enemies.
+
+Normal rooms have occurrence weight assigned to them. Some rooms occur very rarely. Usually, those rooms contain numerous or rare pickups or chests — sometimes even items.
+
+=== {{dlc|a}} [[Closet]]s ===
+Closets are rare, small, dead end Normal Rooms. They often contain a unique arrangement of items, objects, or pickups.
+
+== Special Rooms ==
+=== {{r|Boss Room}}s ===
+[[file:Boss Room door.png|98px]]
+
+Boss Rooms contain one of the many [[Boss]]es, with victory granting Isaac an item from the {{ip|Boss|text=Boss pool}}, [[heart]]s (depending on difficulty), and a trap door leading to the next level. They typically spawn in the room that's as far from the starting room as possible.
+
+{{dlc|r+}}Boss Rooms emit continuous roaring noises, which dynamically pan left or right depending on Isaac's position relative to the door. The roaring stops when the boss is defeated.
+
+==== {{r|Mini-Boss Room}} ====
+Mini-Boss Rooms are identical in appearance to normal Rooms and contain one of the [[Seven Deadly Sins]].
+
+* Mini-Boss Rooms are barred shut upon entering and are unable to be escaped or opened, even by explosions, until the Mini-Bosses have been defeated.
+* Mini-Boss Rooms have a map icon but don't have a special door.
+** The map icon is only revealed once the room is entered, or if Isaac has an item that reveals map icons like {{i|The Compass}}.
+
+=== [[Treasure Room]]s ===
+==== Normal/Golden {{r|Treasure Room}}s ====
+{{slideshow
+ | [[file:itemroomdoor.png|98px]]
+ | [[file:lockeditemroomdoor.png|98px]]
+}}
+
+A Treasure Room, or Item Room, is guaranteed to appear on all floors from {{s|Basement}} 1 to {{s|Depths}} 2. From Basement 2 and on, this Room requires a [[key]] to enter. The Room contains one item from the {{ip|Treasure Room|text=Treasure Room item pool}}. Various [[obstacle]]s may be present, and occasionally {{E|Fly|a|text=Flies}} or {{E|Greed Gaper|a+nr}}s/{{E|Bulb|r}}s will be present. The Room has a small chance to contain two items from the treasure pool that can both be collected, and a ''very'' small chance of containing no item pedestal at all.
+
+{{dlc+|r}} On {{s|Downpour}} / {{s|Dross}}, {{s|Mines}} / {{s|Ashpit}}, and {{s|Mausoleum}} / {{s|Gehenna}}, Treasure Rooms always contain at least two items, with one of them being hidden, similar to {{Cu|Blind}}.{{dlc-}}
+
+{{dlc|a}} Golden Treasure Rooms always require one key to open in [[Greed Mode]] and Greedier Mode.
+
+{{dlc|a+}} Golden Treasure Rooms can generate in the {{s|Womb}} / {{s|Utero}} if the {{t|Bloody Crown}} trinket is equipped when the floor is generated.
+
+{{dlc|r}} Golden Treasure Rooms can generate in {{s|Sheol}} with the {{t|Wicked Crown}} trinket equipped, and can generate in the {{s|Cathedral}} with the {{t|Holy Crown}} trinket equipped.
+
+==== {{dlc|a}} Silver Treasure Rooms ====
+[[File:Silver_Treasure_Room_opened.png|98px]]
+
+Silver Treasure Rooms are Rooms found in [[Greed Mode]] and Greedier Mode. They always contain one item from the {{ip|Greed Boss|text=Greed "Boss" Item Pool}}, and require no keys to open, being open from the start of the floor.
+
+==== {{r|Devil Treasure Room}}s ====
+{{slideshow
+ | [[File:Devil Treasure Room door locked.png|98px]]
+ | [[File:Devil Treasure Room door.png|98px]]
+}}
+
+When carrying the {{t|Devil's Crown}} trinket, any newly found or not walked into Treasure Room becomes a Red Treasure Room, which contain items from the Devil Room pool for the price of heart containers. The prices are the same as normally required in regular [[Devil Room|Devil Deals]].
+
+=== {{r|Planetarium}}s ===
+{{slideshow
+ | [[file:Planetarium door locked.png|98px]]
+ | [[file:Planetarium door.png|98px]]
+}}
+
+Planetariums are similar to Treasure Rooms, but only contain one powerful celestial item belonging to the {{ip|Planetarium|text=Planetarium item pool}}, items exclusive to Planetarium Rooms. Planetariums have an additive and higher chance of spawning if the player avoids walking into Treasure Rooms.
+
+=== {{r|Shop}}s ===
+{{slideshow
+ |{{Dlc|r}}[[file:Shop door locked.png|98px]]
+ |{{Dlc|r}}[[file:Shop door.png|98px]]
+}}
+{{dlc|nr}}[[file:Locked Door.png|98px]]
+
+Shops require a key to open. They sell various items and pickups in exchange for coins. Shops start at level 0 and only sell 2 things, but Shops at higher levels sell more things. They can be upgraded through the {{M|Donation Machine}}, which can be commonly found in the Shops and sometimes in an [[Arcade]].<br/>
+Shops also have a chance of being replaced by a miniboss Room containing {{E|Greed}} or {{E|Super Greed}}.
+
+{{dlc|a+}} Shops can generate in the {{s|Womb}}/{{s|Utero}} if the {{t|Silver Dollar}} trinket is equipped when the floor is generated.
+
+{{dlc|r}} The Shop spawned on the first floor is free to enter.
+
+{{dlc|r}} Shops can generate in {{s|Sheol}} with the {{t|Wicked Crown}} trinket equipped, as well as {{s|Cathedral}} with the {{t|Holy Crown}} trinket equipped.
+
+=== {{r|Arcade}}s ===
+[[file:Arcade Door.png|98px]]
+
+These Rooms are locked and require one coin to be opened. Arcades can only spawn on even floors (Basement II, Caves II, Depths II, Womb II, etc) if the previous floor was completed with 5 or more coins. [[Arcade]]s can contain [[machine]]s, [[beggar]]s, and other objects.
+
+{{dlc+|r}} Arcades spawn on the first floor of the alternate chapters ({{s|Downpour}} I, {{s|Mines}} I, {{s|Mausoleum}} I, {{s|Corpse}} I).{{dlc-}}
+
+=== [[Challenge Room]]s ===
+==== Normal {{r|Challenge Room}} ====
+[[file:Challenge Room door.png|98px]]
+
+Challenge Rooms can only spawn if, upon entering the floor, Isaac's total health (red, black, and soul hearts) is equal to or greater than his number of heart containers. Same conditions are required to be able to enter it. Upon picking up its contents, Isaac has to fight three waves of enemies.
+
+==== {{r|Boss Challenge Room}} ====
+[[file:Boss Challenge Room Door.png|98px]]
+
+Boss Challenge Rooms generate with the same conditions as normal challenge rooms upon entering the second floor of a [[Chapter]]. Their contents are similar to the Normal Challenge Room, but upon picking up the contents, Isaac faces two waves of [[Boss]]es instead of normal monsters.
+
+{{dlc|nr}} They can only be entered if Isaac has one or less red heart. 
+
+{{dlc|r}} They can only be entered if Isaac's total health (red, black, and soul hearts) is equal to or less than 1 full heart, and always contain an item from the {{ip|Boss|text=Boss Item Pool}}.
+
+=== {{r|Curse Room}}s ===
+[[file:Curse Room Door.png|98px]]
+
+Curse Rooms are special rooms with spikes on the door that hurt Isaac when entering and exiting the Room. Curse Rooms can contain various things, ranging from enemies, red chests, to even pedestal [[item]]s from the {{ip|Curse Room|text=Curse Room Item Pool}}. Isaac doesn't take damage upon entering the room if he has [[flight]] (still takes damage upon exiting).
+
+=== {{r|Sacrifice Room}}s ===
+{{Dlc|r}}[[file:Sacrifice Room door.png|98px]]
+
+Sacrifice Rooms are special rooms with a chance to spawn a {{E|Chest}} or other preset rewards after Isaac damages himself on the spikes featured at the center of the Room. Sacrifice Rooms have a higher chance to spawn if Isaac's total health (red, black, and soul hearts) is equal to or greater than his number of heart containers.
+
+{{dlc|a}} Sacrifice Rooms can now pay out with a much wider variety of rewards.
+
+{{dlc|r}} Has a unique bloody door, replacing its old, generic one.
+
+=== {{r|Secret Room}}s ===
+[[file:Secret Room Door.png|98px]]
+
+Secret Rooms must be bombed into, and are usually surrounded by 3 or 4 Rooms. Secret Rooms usually contain {{e|Shopkeeper}}s and various [[pickup]]s.
+
+=== {{r|Super Secret Room}}s ===
+[[file:Secret Room Door.png|98px]]
+
+Super Secret Rooms must be bombed into, and are only located next to one other non-special Room. They tend to spawn closer to the Boss Room. Super Secret Rooms can contain a variety of [[pickup]]s.
+
+=== {{r|Ultra Secret Room}}s ===
+[[file:Secret Room Door.png|98px]]
+
+Ultra Secret Rooms are unique secret rooms, found when venturing one Red Room outside the normal map using the {{I|Red Key|x}}, {{T|Crystal Key|x}}, {{P|Cracked Key|x}}, {{P|Soul of Cain|x}}, or by teleporting to it with {{P|XVIII - The Moon?|x}}. These map-expanding items allow you to create Red Rooms, and if correctly found, one of those new Red Rooms will have a Secret Room passageway to the Ultra Secret Room already opened. The Ultra Secret Room itself contains {{e|Key}}s, [[Blocks|key blocks]], and/or {{e|Shopkeeper}}s, and one item from the {{ip|Ultra Secret Room|text=Ultra Secret Room item pool}} for its pedestal rewards.
+
+=== {{r|Libraries}} ===
+{{slideshow
+ | {{Dlc|r}}[[file:Library door locked.png|98px]]
+ | {{Dlc|r}}[[file:Library door.png|98px]]
+}}
+{{dlc|nr}}[[file:Locked Door.png|98px]]
+
+Libraries require a key to be entered and can contain {{ip|Library|text=book items}}, [[card]]s, [[rune]]s, and [[trinket]]s.
+
+=== {{r|Devil Room}}s ===
+[[file:Devil Room door.png|98px]]
+
+These Rooms allow the player to make [[Devil Deal|deals with the Devil]] by trading [[health]] for {{ip|Devil Room|text=items}}. Devil Rooms can also contain {{e|Red Chest}}s, {{e|Black Heart}}s, [[spikes]], or [[monster]]s along with its signature devil statue. They may also have {{e|Fire Place}}s or {{E|Red Fire Place}}s which have a chance to drop [[coins]], {{e|Red Heart}}s, and more when extinguished.
+
+[[Devil Room]]s have a chance to contain {{E|Krampus}} rather than any items, if Krampus is unlocked.
+
+=== {{r|Angel Room}}s ===
+[[file:Angel Room door.png|98px]]
+
+Angel Rooms contain an angel statue and one or more {{ip|Angel Room|text=items}} to choose from, {{e|Soul Heart}}s, or {{e|Eternal Heart}}s. The Angel Room has a chance to replace the Devil Room if certain conditions are met. They may also have {{E|Blue Fire Place}}s or {{E|Purple Fire Place}}s, which have a chance to drop {{e|Soul Heart}}s when extinguished.
+
+{{dlc+|r}} Can now have a {{M|Confessional}} in them.{{dlc-}}
+
+=== {{r|Vault}}s ===
+{{slideshow
+ | {{Dlc|r}}[[file:Vault door locked.png|98px]]
+ | {{Dlc|r}}[[file:Vault door.png|98px]]
+}}
+{{dlc|nr}}[[file:Double Locked Room.png|98px]]
+
+Vaults require two keys to open and can contain various things, ranging from [[item]]s to {{M|Donation Machine}}s.
+
+=== {{r|Dice Room}}s ===
+{{slideshow
+ | {{Dlc|r}}[[file:Dice Room door locked.png|98px]]
+ | {{Dlc|r}}[[file:Dice Room door.png|98px]]
+}}
+{{dlc|nr}}[[file:Double Locked Room.png|98px]]
+
+Dice Rooms require two keys to open. Stepping onto the center of the die activates an [[dice room#effects|effect]], determined by the number of pips imprinted on the face of the large red die embedded in the floor, .
+
+* Dice Rooms, when spawning, replace a sacrifice room that also could have spawned on the floor. They have a higher chance of spawning over a sacrifice room spawn if you have 2 or more keys.
+* {{dlc|a+}} Dice Rooms now have a small image in the corner of the large red die that also tells the effect of stepping on it.
+
+=== {{r|Clean Bedroom}}s and {{r|Dirty Bedroom}}s ===
+[[file:Double Boarded Room.png|98px]]
+
+Bedrooms require two bombs to open. Bedrooms contain a bed that can be used once to restore all of the player's health, or if they have no red hearts, they give you 3 soul hearts {{dlc|na}}and add one charge to their active item.
+
+Depending on if the Bedroom is Clean or Dirty (the main difference being the state of the bed and wall color), bombing the center of the carpet will reveal a [[crawl space]] (Clean) or a trapdoor (Dirty) leading to the next floor.
+
+=== {{r|Crawl Space}}s ===
+[[file:Secret_Trap_Door.png|98px]]
+
+These Rooms are entered through Trapdoors with ladders in them. They can rarely be found under destroyed rocks. They can also be found using {{i|We Need To Go Deeper!}}, {{p|Ehwaz}}, {{p|XXI - The World?}} or under a {{r|Clean Bedroom}}'s rug. These Rooms are viewed from the side, rather than the top like the rest of the Rooms in the game. Crawl Spaces usually contain an item or various [[pickup]]s. Rarely, the Crawl Space can lead to a {{r|Black Market}}.
+
+==== {{r|Black Market}}s ====
+Black markets are accessed through Rare Crawl Spaces. These Rooms are 2 Rooms wide and have {{ip|Shop|text=shop items}} that can all be bought for 1 heart container, like [[Devil Room|devil deals]]. Black Markets also have a trapdoor to the next floor and various [[machine]]s or {{m|Beggar}}s.
+
+=== {{dlc+|r}} [[The Stairway|Angel Room Shops]] ===
+Angel Room Shops are special holy shops, accessed if Isaac has {{I|The Stairway}}. The Stairway spawns a ladder in the starting room of each floor leading to each floor's Angel Room shop, a [[Shop]] that sells {{ip|Angel Room|text=Angel deal items}}, has angel-related pickups, sometimes includes a coin [[beggar]] or a {{M|Confessional}}, and always includes an angel statue. This ladder disappears upon leaving the room.{{dlc-}}
+
+=== {{dlc|r}} [[Member Card|Secret Shops]] ===
+[[file:Secret_Shop_Trapdoor.png|98px]]
+
+Secret shops are accessed by buying a {{I|Member Card|x}}, opening up a 'special' Shop Trapdoor that leads to the floor's underground shop. Secret shops have a wider variety of items and pickups, sold at various expensive prices.
+
+=== {{r|Red Room}}s ===
+{{slideshow
+ | [[file:Red Room Door outline.png|98px]]
+ | [[file:Red Room Door opened.png|98px]]
+}}
+
+Red Rooms are special rooms created when using the {{I|Red Key|x}} (and Red Key wisps spawned with {{I|Book of Virtues}}), {{T|Crystal Key|x}}, {{P|Cracked Key|x}}, or the {{P|Soul of Cain|x}}. The Red Rooms can’t be opened without these items, and are spawned into existence at the closest red outline door when the item is used. The new Red Room can be a normal Room on this floor, or any special Room, aside from extra Ultra Secret Rooms and Boss Rooms. Red Rooms can't spawn where there aren't 4 connections out of the Room, not spawning if a touching room contains a bottomless pit on one wall, already is a secret room, or is a thin closet/hallway room.
+
+Red rooms can only be spawned in an 13x13 radius from the the center room of the map, or six rooms from the center room in any direction; going any farther will teleport Isaac into the I AM ERROR Room.
+
+=== {{r|I AM ERROR}} Rooms ===
+I AM ERROR Rooms have a small chance of being reached upon using [[Telepills]], and can be reached with other items such as {{I|Undefined}} and {{I|Red Key}}. Every I AM ERROR Room contains a trapdoor to the next floor along with various [[pickup]]s or [[item]]s. The only way out of an I AM ERROR Room is through the trapdoor or by teleporting out.
+
+Using {{I|Teleport 2.0|x}} when all other rooms have been explored guarantees to be teleported in an I AM ERROR room.
+
+The I AM ERROR Room is a running gag within games that is a reference to the "I AM ERROR" easter egg in Zelda II: The Adventure of Link (1987)
+
+=== {{r|Boss Rush}} ===
+[[file:Boss Rush Door.png|98px]]
+
+If the player manages to beat {{e|Mom}} in under 20 minutes from the start of a run (visually indicated by the clock icon that appears during the cutscene between floors), a crack will open in one of the walls of the Boss Room, allowing entry to a large Room with 2, 4 or 8 item pedestals in the center or the corners, often blocked by [[rock]]s or [[spikes]]. Taking one of the presented items will destroy the others and begin the Boss Rush.
+
+* {{I|Mama Mega!}} or {{i|Mega Bean|r+}} can be used to open the Boss Rush entrance in the Mom Boss Room even after the 20 minute deadline, allowing access to the Boss Rush Room.
+* {{dlc+|a+}} The {{i|Broken Shovel 1}} opens the Boss Rush Room, even after the 20 minute deadline. The Trapdoor to the next Floor is also closed until Boss Rush is completed.{{dlc-}}
+* {{dlc|r}} Mausoleum Mom also spawns the Boss Rush Room if defeated within 25 minutes.
+
+=== [[Mega Satan|Mega Satan Arena]] ===
+[[file:Mega_Satan_Door.png|98px]]
+
+This long Room is only found in the starting Room of {{s|Chest}} and {{s|Dark Room}}. Opening this door requires an item such as {{i|Dad's Key}} or the two key pieces from [[Angel]]s. Once the Room is entered, Isaac will have to face off against {{E|Mega Satan}}.
+
+=== {{dlc|a}} [[??? (Floor)|??? Entrance]] ===
+[[file:Blue Womb Door.png|98px]]
+
+If the player manages to beat {{e|Mom's Heart}} or {{E|It Lives!}} in under 30 minutes (visually indicated by the clock icon that appears during the cutscene between floors), a crack will open in the wall of the Boss Room upon defeating it, containing a room with a Trapdoor to {{s|???}}.
+
+=== {{dlc|r}} [[Mother|Mother Arena]] ===
+[[file:Mother Trapdoor.png|98px]]
+
+Mother's arena is accessible by a large pit in the ground in the Boss Room of {{s|Corpse}} II. Dropping into the pit leads to Mother's unique transforming boss room.
+
+=== {{dlc|a}} Greed Exit Rooms ===
+[[file:Greed_Exit_Door_opened.png|98px]]
+
+Exit Rooms are Rooms with the defining feature of having a Trapdoor/exit to the next Floor.
+
+Greed Exit Rooms start barred off and unbombable, like miniboss rooms, but become accessible once {{mode|greed}} ten / {{mode|greedier}} eleven waves of enemies are defeated.
+* Greed Exit Rooms have a special door, having a special black exit doorway in the main greed room, but having a normal floor colored doorframe when in the room itself.
+
+Exit Rooms may contain pickups, chests, and enemies.
+
+=== {{dlc+|r}} Alternate Path Exit Rooms ===
+{{slideshow
+ | [[file:Downpour entrance door.png|98px]]
+ | [[file:Downpour entrance door locked.png|98px]]
+}}{{slideshow
+ | [[file:Mines entrance door.png|98px]]
+ | [[file:Mines entrance door locked 2.png|98px]]
+ | [[file:Mines entrance door locked 1.png|98px]]
+}}{{slideshow
+ | [[file:Mausoleum entrance door.png|98px]]
+ | [[file:Mausoleum entrance door locked.png|98px]]
+}}
+
+When unlocked, these Rooms appear attached to a Main Path Boss Room once the [[Boss]] is defeated (or appear at the end of Alternate Path [[Chapter]]). These Rooms contain an entrance to the Alternate Path Floors. These Rooms have different requirements to open them, based on the [[Chapter]] they are barring entrance to:
+
+# In floors 1-2, the door requires a key to unlock the entrance to {{s|Downpour}} or {{s|Dross}}.
+# In floors 3-4, the door requires two bombs to unlock the entrance to {{s|Mines}} or {{s|Ashpit}}.
+# In floors 5-6, the door requires sacrificing two hearts to unlock the entrance to {{s|Mausoleum}} or {{s|Gehenna}} (except on {{s|Depths}} II and its variants, where this door doesn't appear).{{dlc-}}
+
+==== {{a|A Strange Door}} Exit Room ====
+[[File:A_Strange_Door_locked.png|98px]]
+
+When unlocked, this room appears above the starting room of the second floor of Chapter 3, containing a trapdoor leading to a special version of the second floor of Chapter 3.5. This door is generally opened by obtaining and sacrificing either {{i|The Polaroid}} or the {{i|The Negative}}. The door can also be opened with {{t|Broken Padlock}}, {{i|Cracked Orb}}, {{t|Faded Polaroid}}, {{p|Soul of Cain}}, or {{i|Sharp Key}}.
+
+=== {{dlc|a+}} [[Grave Room]]s ===
+Grave Rooms are Rooms that appear in the {{s|Dark Room}} which only contain 1-3 [[Dirt Patch]]es. {{c|The Forgotten}} is unlocked by reaching this room and digging with {{i|Mom's Shovel}}.
+{{slideshow
+ | [[file:Dirt Patch.png]]
+ | [[file:Dirt Patch Forgotten.png]]
+}}
+
+=== {{dlc+|r}} {{r|Mirror Room}} ===
+[[File:Mirror_Door.png|98px]]
+
+The Mirror Room is a single special room found on the second floor of Chapter 1.5, containing a single mirror on either the left or right doorway location. This mirror can be broken by explosions, but also can be entered to explore the [[Mirrored World]], a replica of the current floor, to find {{i|Knife Piece 1}}. The mirror can only be entered by {{C|The Lost}}, {{C|Tainted Lost}}, {{C|Tainted Forgotten}}, and {{C|Tainted Jacob}}'s ghost form. All other characters must touch the {{e|White Fire Place}} which always generates on the second floor of Chapter 1.5 in order to temporarily become The Lost in order to enter the mirror.{{dlc-}}
+
+=== {{dlc+|r}} {{r|Mine Cart Room}} ===
+{{slideshow
+ | [[file:Mineshaft_Door_locked.png|98px]]
+ | [[file:Mineshaft_Door_opened.png|98px]]
+ | [[file:Mineshaft_Door_blocked.png|98px]]
+}}
+
+The Mine Cart Room is a single special room found on the second floor of Chapter 2.5 only if Isaac already has {{i|Knife Piece 1}}. It contains a Yellow Button, a single minecart, a blocked door at the top of the room and occasionally some enemies.
+
+There are 2 other {{e|Yellow Button}}s located randomly on the same floor and pressing all 3 repairs the minecart's track allowing access through the blocked door. Alternatively having [[Flight]] and 2 bombs also allows access through the door. The area past the blocked door contains {{i| Knife Piece 2}} and a chase sequence with {{E|Mother's Shadow}}. The door is permanently blocked after leaving the sub-area.{{dlc-}}
+
+== Notes ==
+* In regular Rooms with unreachable enemies, the doors will automatically open after a while to prevent Isaac from becoming unable to progress. See [[User:Blcd/RandomTidbits#Room Anti-softlock|here]] for the specific details.
+** This will not occur if Isaac has [[flight]] or if there is a boss or miniboss in the Room.
+** This will not occur in Rooms with {{E|Pressure Plate}}s that do not have enemies or only have indestructible enemies such as {{E|Wall Hugger}}s or {{E|Stone Grimace}}s.
+* Rooms that have obstacles in the middle covered by pits can often drop the room reward in the place of the destroyed obstacle. Because of that, it is advised avoiding touching that obstacle if you really need pickups.
+* In short, the following types of special rooms no longer appear after a specific chapter, unless the player has collected specific items or trinkets:
+** Treasure Rooms, Shops and Planetariums no longer appear from Chapter 4/4.5 onward
+** Arcades and Vaults no longer appear from Chapter 5 onward
+** Curse Rooms, Sacrifice Rooms, Challenge Rooms, and Boss Challenge Rooms no longer appear from Chapter 6 onward
+
+== Gallery ==
+<gallery>
+File:Binding Of Octorock.jpg|[https://twitter.com/edmundmcmillen/status/1235474907489689601 The original concept art] for "Octorock," an early model of Isaac, and gameplay features. Interestingly enough, XL Rooms and L-shaped Room layouts were shown but never implemented until Rebirth and its first DLC, Afterbirth, respectively.
+File:Room Concepts.jpg|Afterbirth Room layout concepts on the upper left side by Edmund McMillen.
+</gallery>
+
+{{nav|room|fr=Salles}}

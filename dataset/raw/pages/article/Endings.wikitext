@@ -1,0 +1,215 @@
+{{#ev:youtube|https://www.youtube.com/watch?v=LG5gFI09wMg}}
+
+'''Endings''' are cutscenes that play at the end of each completed run. They are all different and generally depend on Isaac's route through the game. There are 16 endings in Rebirth, with 2 more added in Afterbirth, 2 added in Afterbirth+, and another 2 added in Repentance. They can be unlocked by killing the [[boss]] at the end of [[chapter]]s 3-6, and are viewable in the 'stats' section of the menu.
+
+* The credits are played after any ending.
+* Epilogue is available after defeating {{e|Mom}} in {{s|Depths}} (or its variants) for the first time.
+* Endings 1-11 are unlocked by defeating {{e|Mom's Heart}} in {{s|Womb}} (or its variants) for the first 11 times.
+* Ending 12 is unlocked by completing {{s|Sheol}}, defeating {{e|Satan}}.
+* Ending 13 is unlocked by completing {{s|Cathedral}}, defeating {{e|Isaac}}.
+* Ending 14 is unlocked by completing {{s|Chest}}, defeating {{e|???}}.
+* Ending 15 is unlocked by completing {{s|Dark Room}}, defeating {{e|The Lamb}}.
+* Ending 16 is unlocked by defeating {{e|Mega Satan}}.
+* {{dlc+|a}} Ending 17 is unlocked by completing {{s|???}}, defeating {{e|Hush}}, for the first time.{{dlc-}}
+* {{dlc+|a}} Ending 18 is unlocked by completing [[Greed Mode]], defeating {{e|Ultra Greed}}.{{dlc-}}
+* {{dlc+|a+}} Ending 19 is unlocked by completing [[Greedier Mode]], defeating {{e|Ultra Greedier}}.{{dlc-}}
+* {{dlc+|a+}} Ending 20 is unlocked by completing {{s|The Void}}, defeating {{e|Delirium}}.{{dlc-}}
+* {{dlc+|r}} Ending 21 is unlocked by completing {{s|Corpse}}, defeating {{e|Mother}}.{{dlc-}}
+* {{dlc+|r}} Ending 22 is unlocked by completing {{s|Home}}, defeating {{e|The Beast}}.{{dlc-}}
+
+== Endings ==
+=== Epilogue (Mom Ending) ===
+In a drawn sequence similar to that of the [[Title Sequence]], Isaac's mother closes in while holding a knife, trapping Isaac in a corner, preparing to kill him, when a Bible falls off a shelf and hits her on the head, knocking her out. Isaac is victorious. The scene then cuts to the real Isaac. Unfortunately, this turns out to be just a story that Isaac has written. Seconds later, the door to Isaac's room bursts open, and Mom appears again with the knife in her hand. Isaac quickly becomes shocked at the sight. The scene then cuts to the credits.
+
+==== Transcript ====
+''The following is a transcript of the dialogue from the epilogue.''
+
+Isaac was cornered. His mother, fueled with the desire to serve her God, was bearing down on Isaac.
+
+"I will do as I'm told, my Lord. I love You above all else," Isaac's mother repeated to herself.
+
+This was the end of the line for Isaac. His mother was far too strong for him. But just as he accepted his fate, God intervened, sending an angel down from above to stop his mother's hand and, just like that, it was over.
+
+=== Ending 1 (Mom's Heart Ending 1) ===
+Isaac opens and falls into the chest, which closes, locking him inside. The chest rattles a few times, and then a bright light comes out of it. Isaac then emerges from it as {{c|Eden}}, switching hairstyles as it does every time you spend an Eden Token. This unlocks said character, who has randomized starting items and stats.
+
+=== Ending 2 (Mom's Heart Ending 2) ===
+Isaac opens the chest and finds {{i|Rubber Cement}} inside of it. He then uses it and looks at the camera with white eyes and his eyelids stretched out. This unlocks said item, a passive item which makes your tears bounce off of enemies, objects, and walls.
+
+=== Ending 3 (Mom's Heart Ending 3) ===
+Isaac opens the chest and finds a noose inside of it. He then hangs himself with it. This unlocks the item {{i|Transcendence}}, a passive item that gives Isaac flight.
+
+=== Ending 4 (Mom's Heart Ending 4) ===
+Isaac opens the chest and finds a {{i|Wire Coat Hanger}} inside of it. He is then shown with it jammed into his head. This unlocks said item, a passive item which increases Isaac's tears stat.
+
+=== Ending 5 (Mom's Heart Ending 5) ===
+Isaac opens the chest. His mother is heard yelling his name. Her arm then comes out of the chest, punches Isaac, grabs him, and locks him inside of it. Mom's muffled laugh is then heard. This unlocks the achievement "Everything is Terrible", which makes the game harder in several ways.
+
+=== Ending 6 (Mom's Heart Ending 6) ===
+Isaac opens the chest, but before he can reveal what he found, he becomes nauseated and vomits into the chest, creating several explosions. This unlocks the item {{i|Ipecac}}, a passive item that makes Isaac spit green explosive projectiles which are vomit.
+
+=== Ending 7 (Mom's Heart Ending 7) ===
+Isaac opens the chest and finds a syringe with a yellow liquid inside of it. He is then shown deformed and happy. This unlocks the item {{i|Experimental Treatment}}, a passive item that increases four of Isaac's stats, and decreases two.
+
+=== Ending 8 (Mom's Heart Ending 8) ===
+Isaac opens the chest and finds {{i|A Quarter}}. This unlocks said item, a passive item that instantly gives Isaac 25 cents.
+
+=== Ending 9 (Mom's Heart Ending 9) ===
+Isaac opens the chest and finds {{i|Dr. Fetus}} inside of it. He is then seen holding it wearing Dr. Fetus' characteristic top hat and monocle. This unlocks said item, a passive item which turns Isaac's tears into lit bombs.
+
+=== Ending 10 (Mom's Heart Ending 10) ===
+Isaac opens the chest and finds {{c|???}} lying inside of it. ??? sits up and smiles at him, which terrifies Isaac. This unlocks said character, who starts with {{i|The Poop}} and can only have {{e|Soul Heart}}s or {{e|Black Heart}}s.
+
+=== Ending 11 (Mom's Heart Ending 11) ===
+Isaac opens the chest, and {{e|It Lives!}} appears behind him. It Lives! then growls and smiles at him. This unlocks said boss, a harder version of Mom's Heart which permanently replaces it.
+
+=== Ending 12 (Satan Ending) ===
+Isaac opens the chest, which has a bright light coming out of it. The screen then cycles through various scenes of different characters in different places, before finally cycling to his room. Isaac then gets into the chest and closes it. The characters it cycles in are {{c|Cain}}, {{c|Magdalene}}, {{c|Judas}}, {{c|Eve}}, and {{c|Azazel}}.
+
+=== Ending 13 (Isaac Ending) ===
+Isaac is shown reading a Bible, and then he looks up at his mirror, which shows him with red eyes and black skin. Believing he is full of sin, Isaac closes the Bible and shamefully looks at the toy chest in the corner of his room.
+
+=== Ending 14 (??? Ending) ===
+Various pictures are shown of Isaac and his family, showing various events such as Isaac dressing up like his mom, Isaac having a demonic shadow, Isaac naked and crying near his toy chest, his angry mother holding a knife, and Isaac watching his father leaving. The screen then fades to black and says "The End" with a chest next to it.
+
+=== Ending 15 (The Lamb Ending) ===
+The camera slowly pans to the {{t|Missing Poster}} attached to a pole with Isaac's mother looking around for Isaac in the background.
+
+=== Ending 16 (Mega Satan Ending) ===
+Isaac is shown curled up inside of a chest with Guppy's paw visible. His breathing gradually increases while pictures of a demonic Isaac flash onto the screen until he makes the demonic transformation. A heartbeat can be heard in the background.
+
+=== {{dlc|a}} Ending 17 (Hush Ending) ===
+The cinematic begins showing the Missing Poster from Ending 15, with Isaac's home being in the background. The scene is changed to Isaac's chest, with his mother's shadow over it. The chest is popped open and multiple flies leave it. The chest is then opened up further, showing Isaac's skeletal remains. A spider can be seen crawling inside the eye hole of Isaac's skull and a fly zooms into the camera, then the scene switches over to a dull-colored ghastly landscape. Isaac pops out of a red chest, and a large shadow forms behind him. The shadow then grows fangs and red eyes as the scene blacks out accompanied with {{r|Devil Room}} ambiance.
+
+=== {{dlc|a}} Ending 18 (Ultra Greed Ending) ===
+Isaac is shown inside a small cave, followed by Isaac turning around to see the cave entrance collapsing, trapping him and a few flies inside it. The screen then cuts back to the same cave, with the rocks being cleared to show a rotting shopkeeper. The shopkeeper suddenly smiles at the camera and the scene ends.
+
+=== {{dlc|a+}} Ending 19 (Ultra Greedier Ending) ===
+Isaac is shown inside a small cave, followed by Isaac turning around to see the cave entrance collapsing, trapping him and a few flies inside it. The screen then cuts back to the same cave, with the rocks being cleared to show a rotting shopkeeper.
+
+The shopkeeper suddenly smiles at the camera, his head falls off, and he begins to spew out a geyser of spiders.
+
+=== {{dlc|a+nr}} Final Ending / {{dlc|r}} Ending 20 (Delirium Ending) ===
+Isaac is shown lying inside his toy chest, breathing heavily. In memory, he is shown drawing and smiling (but still nude), but is distracted by noise (presumably his parents fighting), and looks at one of the drawings he made of his house with a caption saying "WE LIVED HERE". He remembers seeing his mother crying in front of the TV. His breathing gets faster as he remembers looking at a burnt version of {{i|The Polaroid}}, or the {{i|Torn Photo}}, with his father's face being partially burnt away, standing in front of his toy chest which is filled with polaroid photos. His breathing slows down, Isaac is shown turning blue in the chest, and a wall is shown. The pictures hanging on the wall are (from right to left): Isaac with his parents; Isaac's house; Isaac with [[Guppy]]; Isaac playing with his father; Isaac watching his parents fight; Isaac with his mother; Isaac with a wig / {{c|Magdalene}}; Isaac's mother with a knife, angry; a demon with the word "bad" written on it with red ink; a smiling demon with the words "I'm the devil" written on it (as well as a little arrow labeled "me" pointing at it); a [[wikipedia:pentagram|pentagram]], once again with the word "bad" written on it; and finally, a demon which is shown above Isaac's dead and blood-covered parents, laughing. The left side of the wall is also covered with the words "bad", "evil", and "I'm the devil". As the wall is shown, the noises of an argument in the background get louder, culminating in a man's voice audibly saying "I'm outta here!". After a cut to black, Isaac's skeleton is shown lying in the chest, covered in cobwebs. The chest is opened, and the {{t|Missing Poster}} from ending 15 is shown falling off the telephone pole outside Isaac's house. Finally, Isaac is shown roaming the dull-colored ghastly landscape from Ending 17.
+
+{{#ev:youtube|https://www.youtube.com/watch?v=1t7WuSTc8Kw}}
+
+=== {{dlc|r}} Ending 21 (Mother Ending) ===
+Isaac is drawing a picture of {{e|Mother}} when Mom walks in. He attempts to hide the drawing from her, but is unsuccessful. Outraged, she asks Isaac if this is how he truly thinks of her. Despite Isaac's pleads, she throws him in a closet, and leaves to cry. After a pause, she starts reciting the Lord's Prayer. Isaac begins to shake in the fetal position in the corner. The closet grows even darker, and a pair of red eyes fades in over him. He begins to hyperventilate as a statue of {{e|Satan}} appears behind him.
+
+==== Transcript ====
+''The following is a transcript of the dialogue from Ending 21.''
+
+'''Mom:''' Isaac... what are you drawing?
+
+'''Mom:''' Isaac, let me see it.
+
+'''Mom:''' Give it to me now.
+
+'''Mom:''' This is what you think of me? This is what I am to you?! A monster?!
+
+'''Isaac:''' No, no, Mom, I just--
+
+'''Mom:''' After all I've done for you, this is how you view me?! You think I'm a monster, Isaac!? I'll show you a monster!
+
+'''Isaac:''' No, no, Please!
+
+'''Mom:''' You are just like your father... I can't even look at you.
+
+'''Mom:''' How could you?! You're just like him! [crying]
+
+'''Mom:''' Our Father who art in heaven, hallowed be thy name. Thy kingdom come, thy will be done, on Earth as it is in Heaven. Give us this day our daily bread, and forgive us for trespassing as we forgive those who trespass against us...
+
+{{#ev:youtube|https://www.youtube.com/watch?v=QVNXsMlWuLU}}
+
+=== {{dlc|r}} Final Ending (Dogma & The Beast Ending) ===
+After defeating {{e|The Beast}}, the sky cracks open as a beam of light smites the monster, sending it sinking into the lake of lava. Isaac then ascends into the beam, as recollections of past events play back; his Mom mourning [[The Forgotten|her son's death]], his Mom and Dad arguing, his Dad leaving without saying goodbye, his Dad stealing money from [[Mom's Purse]] while she sleeps, and the restless nights Isaac endured overhearing his parents arguing, believing he was the cause. He then feels his fear and worries fall from his being, his ascent growing faster while {{c|???}} and {{c|The Lost}} fall from him. He sees his only companion, [[Guppy]], his Mom and Dad loving each other, his Mother kissing him on the head as he falls asleep, and his own birth. Then, Isaac sees nothing.
+
+Isaac's Dad interjects, asking Isaac if he really wants the story to end like this and telling him that since he's the one writing it, it doesn't have to end this way. Isaac's Dad asks Isaac if he wants to make a new ending to the story — perhaps even a happy one. Isaac says ok, and his father begins the opening narration again, but with Isaac living with both of his parents instead of just his mother, as the screen fades to black and the credits appear.
+
+==== Transcript ====
+''The following is a transcript of the dialogue from Ending 22.''
+
+Then, suddenly, the sky above cracked open, and a white beam of light reached down into the Earth, smiting the [[The Beast|Mother of Harlots]] asunder and setting the blood lake to a boil. As the Beast descended down into the lake of fire, Isaac ascended towards the crack in the sky, and as he flew he could see echoes of his past before him:
+
+He saw his mother mourning the loss of her son.
+
+He saw his father leaving them without turning to say goodbye.
+
+He saw his mother sleeping, and his father taking money from her purse.
+
+He heard the late-night fights they had that kept him up at night, and the guilt he felt for what he believed he was causing.
+
+He felt the pain in his stomach during those sleepless nights, and saw his shadow in the closet, waiting for him.
+
+As he rose, he felt his fears drop from his body. His shame, his worry, pulled from his being. As he became lighter, his ascent became faster.
+
+He saw his [[Guppy|one true companion]], alive and well.
+
+He saw his mother and father together again, holding each other.
+
+He felt his mother kissing him on the head after he had said his prayers, and the comfort in knowing someone was watching over him.
+
+He saw his own birth, and the faces of his parents filled with joy and optimism.
+
+And then… he saw nothing.
+
+'''Isaac's Father:''' Are you sure this is how you want this story to end, Isaac? You're the one writing it, it doesn't have to end this way. Here, how about we tell it a different way - maybe a happy ending?
+
+'''Isaac:''' Okay, Daddy.
+
+'''Isaac's Father:''' Good. Are you getting sleepy yet?
+
+'''Isaac:''' Yeah.
+
+'''Isaac's Father:''' Okay, so… *Ahem*
+
+'''Isaac's Father:''' Isaac and his parents lived in a small house, on the top of a hill...
+
+{{#ev:youtube|https://www.youtube.com/watch?v=WsvA_BR2zf4}}
+
+== Gallery ==
+<gallery>
+File:Ending 1 Eden.png|400px|Eden in ending 1.
+File:Ending 2 Rubber Cement.png|{{i|Rubber Cement}} in ending 2.
+File:Ending 2 Rubber Cement 2.png|400px|Isaac using {{i|Rubber Cement}}.
+File:Ending 3 Transcendence.png|400px|{{i|Transcendence}} in ending 3.
+File:Ending 3 Transcendence 2.png|400px|Isaac using {{i|Transcendence}}.
+File:Ending 4 Wire Coat Hanger.png|400px|{{i|Wire Coat Hanger}} in ending 4.
+File:Ending 4 Wire Coat Hanger 2.png|400px|Isaac using {{i|Wire Coat Hanger}}.
+File:Ending 5 Mom.png|400px|Mom in ending 5.
+File:Ending 6 Ipecac.png|400px|Isaac using {{i|Ipecac}} in ending 6.
+File:Ending 7 Experimental Treatment.png|{{i|Experimental Treatment}} in ending 7.
+File:Ending 7 Experimental Treatment 2.png|Isaac using {{i|Experimental Treatment}}.
+File:Ending 8 Quarter.png|{{i|A Quarter}} in ending 8.
+File:Ending 9 Dr. Fetus.png|{{i|Dr. Fetus}} in ending 9.
+File:Ending 9 Dr. Fetus 2.png|400px|Isaac using {{i|Dr. Fetus}}.
+File:Ending 10 Blue Baby.png|??? in ending 10.
+File:Ending 11 It Lives.png|400px|It Lives in ending 11.
+File:Isaac in Sheol ending.png|Isaac in ending 12.
+File:Ending 14.png|{{dlc|nr}} {{i|The Polaroid}} in ending 14.
+File:Ending 14 Repentance.png|{{dlc|r}} {{i|The Polaroid}} in ending 14 in Repentance.
+File:Ending 15 Missing Poster.png|The {{t|Missing Poster}} in ending 15.
+File:Ending 16 Normal Isaac.png|Isaac and Guppy in ending 16.
+File:Ending 16.png|Demon Isaac and Guppy in ending 16.
+File:Ending 17 - Skeleton.png|{{dlc|a}} Isaac's skeleton in ending 17.
+File:Isaac being Isaac.png|{{dlc|a+}} Isaac lying in the {{s|Chest}} in ending 20.
+File:The Wall.png|{{dlc|a+}} The wall of drawings as seen in ending 20.
+</gallery>
+
+== Trivia ==
+* The narrator of the epilogue is confirmed to be [https://twitter.com/edmundmcmillen/status/919819259492016129 Isaac's father by Edmund McMillen]. This is reinforced by the final ending, where Isaac's dad asks if the story should have a happy ending, before asking if Isaac is tired yet.
+** Credits for his voice are given to Matthias Bossi, one of the members of [[RIDICULON|Ridiculon]].
+* The item and character appearance for [[Dr. Fetus]], unlocked in ending 9, is one of many references to the game [https://www.newgrounds.com/portal/view/463241 Meat Boy], another game Edmund McMillen has worked on. Meat Boy was followed by a successor called [http://store.steampowered.com/app/40800/ Super Meat Boy].
+* Ending 9, especially the dramatic camera shot of Isaac dressed as Dr. Fetus, may also be a reference to the popular meme in the early internets age (2008-2012) [https://www.youtube.com/watch?v=a1Y73sPHKxw Dramatic chipmunk].
+** The sound effect that plays when Isaac does the dramatic spin is a slight remix of the tune "[https://www.youtube.com/watch?v=ofKuzgwHcRc&ab_channel=DannyBaranowsky-Topic Dun Dun Dun!!!]", specifically from [[supermeatboy:|Super Meat Boy]], which plays after you enter any of the 8 chapters.
+* In Ending 21, Mother recites the Lord's Prayer, a common Christian prayer.
+* The ghastly landscape at the end of endings 17 and 20 are [https://twitter.com/edmundmcmillen/status/922695726278238209?s=21 confirmed by Edmund to be Purgatory].
+* The music that is played throughout ending 20 (Delirium's ending) is titled [https://ridiculon.bandcamp.com/track/sepulcrum Sepulcrum]. Sepulcrum is the Latin word for "Grave" or "Burial".
+* {{dlc+|r}} Ending 14 was visually overhauled in Repentance [[V1.06.J813]], and is currently the only ending to have done so.{{dlc-}}
+
+==Bugs==
+{{bug|After saving and exiting the game whilst [[Mom]] is dying during the first time you kill her, the [[Epilogue]] ending still plays, however, you are able to continue the run, which spawns Isaac in the [[Mom]] arena without an entrance to the [[Womb]], softlocking him.}}
+
+{{nav|fr=Fins}}
+[[Category:Mechanics]]

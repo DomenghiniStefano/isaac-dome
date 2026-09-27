@@ -62,6 +62,14 @@ const KEPT: &[&str] = &[
     // the page body instead.
     "items",
     "target",
+    // Entity (`Infobox monster` / `Infobox entity`, design decision 2). `base hp`,
+    // `stage hp`, `environment` and `pool` are shared with Boss and Item/Trinket above.
+    // `behavior` used to be in `IGNORED_PARAMS` — editorial prose on every other kind, but
+    // the only place a *variant*'s own behavior is stated on a page several infoboxes share.
+    "behavior",
+    "replace",
+    "replace chance",
+    "replace notes",
 ];
 
 #[test]

@@ -1,0 +1,79 @@
+{{toc right}}{{page dlc|rnr+}}
+
+'''''Repentance''''' is a DLC expansion to ''[[The Binding of Isaac: Afterbirth †]]'' that was released on March 31, 2021.
+
+''For a list of the pre-release blog posts, see [[The Binding of Isaac: Repentance (Pre-Release)]].''
+
+= Features =
+General features revealed include:
+
+* The fan mod [[anti:Antibirth|The Binding of Isaac: Antibirth]] integrated into the game as official content!
+* A new reworked [[Co-op|co-op mode]], allowing up to four players to play as actual characters instead of babies.
+* 130+ new items (more than 700 items in total and some are from ''Antibirth'')
+
+* A full alternate path with brand new chapters and two new final bosses and endings (one from ''Antibirth'')
+* 100+ new enemies
+* 25 new bosses
+* 19 new playable characters
+* 10 new challenges
+* 234 new achievements, for a grand total of 637.
+* 5,000+ new room designs
+
+= Additions =
+{{/Additions}}
+
+= Changes =
+The Repentance DLC brings with it many changes to old content in the previous game. For a list of changes when Repentance released, see the [[V1.06.J787]] page.
+
+Some of the most important changes include (but are not limited to):
+
+* Coop can now be played with multiple, separate characters instead of babies.
+* Removed the [[special item]] system.
+* Items/mechanics that damage red hearts first now ignore eternal hearts instead of removing them.
+* Beggars and machines no longer drop item pedestals when bombed in The Chest/Dark Room.
+* Fixed being able to pay demon beggars twice per half heart.
+* Hard Mode is now much harder, due to a reduced the frequency of tinted rocks, reduced odds of getting soul hearts from blue/purple fireplaces, shot speed for many classic enemies being increased, shops can appear at a lower level, and more. To balance this, champion enemies are no longer more common in hard mode, red hearts are slightly more common, bosses can drop hearts again, and your odds of getting a Curse has been reduced from 1/2 to 1/3.
+* Restock machines now explode when bombed. Still grants one reroll/restock in the process. They also appear much less frequently outside of Greed Mode (There is a 20% chance for a shop to contain a {{M|Shop Restock Machine}} if the Shop is level 1 or 2, and a 9% chance if the Shop is level 3 or 4.{{dlc-}}
+** These layouts contain 1 less slot than their normal counterparts.
+* Sacks can now be sold in shops for {{pennies|7}}.
+* Donation machines now give increased money when bombed, but can only be destroyed once per run. This is especially useful on early floors, as it makes it much easier to purchase a 15 cent item.
+* The shop on the first floor is now free to enter.
+* Super Sins no longer appear in the first chapter.
+* Fixed Mom rarely ever doing her hand attack when standing near her doors.
+* Small boss rooms have been disabled.
+* Boss Challenge Rooms now always contain a boss pool item. Isaac must be at one heart or less total to enter, including soul/black hearts.
+* Devil deals now accept bone hearts, equal in worth to a regular heart container.
+* If Isaac only has one heart container, devil items that would normally cost two heart containers now cost one heart container plus two soul hearts.
+* Devil deal prices have been rebalanced.
+* Angel deals can now be guaranteed if the first seen devil deal is skipped without entering it.
+* Devil/angel chances on the HUD have changed to display the chance the respective deal will appear (previously displayed the chance for an angel deal to replace a devil deal).
+* Leaving a crawlspace from any unintended direction now teleports the player to the I AM ERROR room.
+* The tears stat on the HUD now displays as "tears per second" (previously displayed delay between tears in frames).
+* Brightness around players has been increased in order to aid visibility in Curse of Darkness on lower gamma settings.
+* {{c|Lazarus}}, {{c|???}}, {{c|Cain}}, {{c|The Lost}}, and {{c|Keeper}} have been buffed, while {{c|Azazel}} and {{c|Samson}} have been nerfed.
+* Greed Mode and Greedier Mode now feature floor alts (Burning Basement, Necropolis, etc.).
+* Curse of the Maze now avoids teleporting players to already explored rooms.
+* It is now possible to see items again that have been rerolled away from by full run reroll effects (this should prevent "Breakfasting" with them).
+* Full run reroll effects (such as D4) are now able to remove heart containers and transformations if losing the respective items during the reroll. Rerolls also does not directly grant health, and heart containers gained from rerolling will start empty.
+* Red chests in the starting room of the Dark Room now turn into devil deals when opened. These must still be paid for.
+* Bomb damage has been increased to 100 (from 60). Bombs now pierce enemy armor.
+* Blue spider damage has been reduced to 2x Isaac's damage (previously x2.5).
+* The Guppy transformation now grants a 50% chance to spawn a blue fly upon attacking enemies (previously 100%).
+* It is now possible to fully empty heart containers through donations or self-harm items.
+* Sacrifice Room spikes, Curse Room doors, spiked chests,  Kamikaze!,  Sharp Plug, and the Bad Trip pill no longer compromise devil/angel room chances if they damage red hearts. These sources also no longer count as damage for scoring purposes.
+* Pill rotation generation has been reworked to reduce the amount of "joke" pills in rotation and to increase the prevalence of stat modifiers.
+* Added a [[familiar]] chain priority system.
+* "Ace" cards now convert all non-boss enemies in the room into the respective pickups. Still applies to other pickups in the room as well.
+* Added "rune shards", which are weaker versions of existing runes. They only appear if not all runes have been unlocked.
+* Black hearts no longer pause the game with animation when lost. New, less intrusive effects have been added for many items.
+* Added tons of new synergies between existing items.
+* Every item pool in the game has been rebalanced.
+* Many items have been either buffed or reworked entirely.
+* And much, much more!
+
+= Video previews =
+{{#ev:youtube|NrKglonymJ8||inline}}
+
+{{nav|version}}
+[[Category:DLC]]
+[[Category:Repentance| ]]

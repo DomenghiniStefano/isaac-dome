@@ -1,0 +1,13 @@
+: ''For save file completion images, see [[Savefile Images]]''
+In terms of "percentage" of the game that is completed, the save file will show confusing values. This is because more items and unlocks were added incrementally over the lifetime of the game. The system is as follows:
+
+* Original: Golden God / 100%
+* WotL: Platinum God / 110%
+* Rebirth: Real Platinum God / 111%
+* {{dlc|a}} Afterbirth: 1001%
+* {{dlc|a+}} Afterbirth+: 1,000,000%
+* {{dlc|a+}} Afterbirth+ with 1,000,000% on all 3 save files: 3,000,000%
+* {{dlc|r}} Repentance: Dead God
+* {{dlc|r}} Repentance with Dead God on all 3 save files: Infinity%
+
+{{nav|fr=Complétion de la sauvegarde}}

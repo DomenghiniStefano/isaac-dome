@@ -1,0 +1,30 @@
+{{header runes}}
+{{Infobox rune
+ | name        = Dagaz
+ | type        = rune
+ | image scale = 1/10
+ | id          = 35
+ | quote       = Purity
+ | description = Removes any [[Curse]]s from the current floor and grants a {{e|Soul Heart}}. (This will not remove {{cu|Labyrinth}}.)
+ | unlocked by = Rune of Dagaz
+ | recharge    = 6
+}}
+
+{{cit|ur}}
+
+== Effects ==
+* Removes any [[Curse]]s from the current floor.
+* Grants a {{e|Soul Heart}}.
+
+== Notes ==
+* The effects of [[Amnesia]] and [[??? (Pill)|???]] pills are also negated by '''Dagaz'''.
+* '''Dagaz''' does not remove {{cu|Labyrinth}}.
+
+== Synergies ==
+* {{I|Tarot Cloth|nr}}: Grants 2 {{e|Soul Heart}}s.
+
+== Interactions ==
+* {{I|Tarot Cloth|r}}: No effect.
+
+{{nav}}
+[[Category:Runes]]

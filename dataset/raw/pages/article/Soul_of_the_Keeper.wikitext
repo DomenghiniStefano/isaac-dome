@@ -1,0 +1,27 @@
+{{header soul stones}}
+{{Infobox rune
+ | dlc         = r
+ | name        = Soul of the Keeper
+ | type        = soul stone
+ | id          = 93
+ | quote       = $$$
+ | description = Drops 1-25 random [[Coins]] on the ground.
+ | unlocked by = Soul of the Keeper
+ | recharge    = 12
+}}
+
+{{cit|ur|r}}
+
+== Effects ==
+* Drops 1-25 random {{e|Penny|text=Coins}} on the ground.
+** These coins may be any normal type with their respective usual chances: {{E|Penny|text=Pennies}}, {{E|Nickel}}s, {{E|Dime}}s, {{E|Lucky Penny|text=Lucky Pennies}}, {{E|Sticky Nickel}}s or {{E|Golden Penny|text=Golden Pennies}}.
+** Denomination of coins that spawn is not affected by [[luck]].
+
+== Interactions ==
+* {{t|Nuh Uh!}}: Provides an abundance of resources from [[Chapter 4]] onward.
+
+== In-game Footage ==
+{{#ev:youtube|QllR1KrizD0}}
+
+{{nav|fr=Âme du Gardien}}
+[[Category:Runes]]

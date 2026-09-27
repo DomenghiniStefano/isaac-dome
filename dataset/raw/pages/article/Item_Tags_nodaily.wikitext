@@ -1,0 +1,9 @@
+{{page dlc|r}}
+
+Items with this [[Item Tags|tag]] are not available during [[daily challenge]]s.
+
+== Activated Collectibles ==
+{{collectible table | tag = nodaily | type = activated }}
+
+{{nav|fr=Balise nodaily}}
+[[Category:Item tags]]

@@ -1,0 +1,31 @@
+{{header soul stones}}
+{{Infobox rune
+ | dlc         = r
+ | name        = Soul of ???
+ | type        = soul stone
+ | id          = 85
+ | quote       = Chemical warfare
+ | description = Causes 8 [[poison]] farts that leave lingering brown [[creep]], then plants a trail of 7 {{i|Butt Bombs}} in quick succession. Standing on the creep gives +1.5 [[Fire Rate]] and +1 [[Damage]].
+ | unlocked by = Soul of ???
+ | recharge    = 3
+}}
+{{disambig msg|the soul stone|the item|???'s Soul}}
+
+{{cit|ur|r}}
+
+== Effects ==
+* Releases in this order:
+** 8 poison farts over 2 seconds while [[Tainted_???#Non-Throwable|brown creep]] is released for 1 second.
+** 7 {{i|Butt Bombs}} are then released at the same rate as the farts.
+
+== Notes ==
+* The farts and creep are the same as those from {{c|Tainted ???}}'s arsenal.
+** The initial fart deals 5 damage, poisons enemies and reflects projectiles. 
+** The creep gives +1.5 [[Fire Rate]] and +1 [[Damage]] if stood on, and deals 1.5x damage per tick to enemies.
+** The butt bombs are affected by any bomb modifying items, although their appearance remains unchanged.
+
+== In-game Footage ==
+{{#ev:youtube|QllR1KrizD0}}
+
+{{nav|fr=Âme de ???}}
+[[Category:Runes]]

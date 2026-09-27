@@ -1,0 +1,32 @@
+{{header soul stones}}
+{{Infobox rune
+ | dlc         = r
+ | name        = Soul of Eden
+ | type        = soul stone
+ | id          = 90
+ | quote       = Embrace chaos
+ | description = Rerolls all [[pickups]], [[trinket]]s, and [[item]]s in the room. The rerolled items use random pools, as if {{i|Chaos}} were held.
+ | unlocked by = Soul of Eden
+ | recharge    = 4
+}}
+{{disambig msg|the soul stone|the item|Eden's Soul}}
+
+{{cit|ur|r}}
+
+== Effects ==
+* Rerolls all [[pickups]], [[trinket]]s, and [[item]]s in the room.
+** Rerolled items use random item pools, as if {{i|Chaos}} were held.
+** Rerolled pickups and trinkets work identically to the {{i|D20}}.
+
+== Notes ==
+* The reroll does not change a pedestal's item pool. Normally rerolling an item previously rerolled with the '''Soul of Eden''' will reset it to the current room's pool.
+* {{dlc|r+}} The '''Soul of Eden''' can sometimes spawn within the special bedroom created by {{i|Lil Portal}}.
+
+== Strategy ==
+* It is better to use the '''Soul of Eden''' in a room with many items, as to maximize the number of rare items that can be obtained.
+
+== In-game Footage ==
+{{#ev:youtube|QllR1KrizD0}}
+
+{{nav|fr=Âme d'Éden (Pierre d'Âme)}}
+[[Category:Runes]]

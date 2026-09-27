@@ -1,0 +1,22 @@
+{{infobox version
+ | dlc   = r+
+ | steam = 509610386809425460
+ | date  = 2026-04-11
+}}
+
+== Documented changes ==
+* Added "EosCrossplay" setting to [[Options#Options.ini|options.ini]].
+* Added a muting feature to online play.
+
+== Undocumented changes ==
+* Removed {{i|Sister Maggy}} from the {{ip|Greed Devil Room}} [[Greed mode]] [[item pool]].
+* Updated credits for [[Repentance+]].
+
+=== Fixes ===
+* Fixed an issue where playing [[Cantripped!]] challenge with Item Descriptions enabled would crash the game.
+* Various in-game item descriptions fixes.
+
+=== New Bugs ===
+{{bug|{{i|Mr. ME!}} can't target tinted rocks, and no longer opens locked doors, including the door to {{e|Mega Satan}}.}}
+
+{{nav|version}}

@@ -1,0 +1,34 @@
+{{header greed bosses}}
+{{page dlc|a}}
+
+== {{s|Ultra Greed}} ==
+=== First Room ===
+{| style="width: 100%; text-align: center"
+ | [[file:Boss Monstro portrait.png|link=Monstro]]
+ |[[file:boss Wrath.png|64px|center|link=Wrath]]
+ |[[file:boss Greed.png|64px|center|link=Greed]]
+ |[[file:boss Super Greed.png|64px|center|link=Super Greed]]
+ |-
+ |[[Monstro]]
+ |[[Wrath]]
+ |[[Greed]]
+ |[[Super Greed]]
+ |}
+
+=== Boss Room ===
+{| style="width: 100%; text-align: center"
+ |[[file:Boss Ultra Greed portrait.png|center|link=Ultra Greed]]
+ |[[file:Boss Ultra Greedier ingame.png|172px|center|link=Ultra Greedier]]
+ |-
+ |[[Ultra Greed]]
+ |[[Ultra Greedier]] {{dlc|a+}} {{unlockable}}
+ |}
+
+== Notes ==
+* The Monstro that spawns in the first room tries to ambush the player by landing down on Isaac's position a few moments after entering the room.
+
+== Bugs ==
+{{bug|Clearing the boss room before Ultra Greed's room will not charge Isaac's active item.}}
+
+{{nav|boss|fr=Ultra Avarice (Boss)}}
+[[Category:Bosses]]

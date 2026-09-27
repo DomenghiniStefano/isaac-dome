@@ -1,0 +1,28 @@
+{{infobox version
+ | dlc  = a+
+ | name = The Binding of Isaac: Afterbirth +
+ | date = 2017-01-03
+ | blog = 155355804054
+}}
+
+''This was the first initial version of the Afterbirth † DLC expansion. For an overview on content added in Afterbirth †, please see this page: [[The Binding of Isaac: Afterbirth †]]''
+
+== Undocumented changes ==
+=== Additions ===
+* Added the following items to the Golden Chest pool:
+** {{i|Sack of Pennies}}
+** {{i|Little Baggy}}
+** {{i|Mystery Sack}}
+** {{i|Rune Bag}}
+** {{i|Bomb Bag}}
+** {{i|Blood Bag}}
+** {{i|IV Bag}}.
+
+=== Changes ===
+* After 5 uses, the {{i|Glowing Hourglass}} will turn into {{i|The Hourglass}}.
+
+=== Fixes ===
+* [[Spiked chest]]s will now correctly damage you on {{s|Chest}} and {{s|Dark Room}}.
+* Charge items now correctly work with [[transformation]]s.
+
+{{nav|version}}

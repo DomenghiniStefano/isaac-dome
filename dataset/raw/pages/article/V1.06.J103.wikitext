@@ -1,0 +1,15 @@
+{{infobox version
+ | dlc  = a+
+ | date = 2017-07-17
+}}
+
+== Undocumented changes ==
+=== Additions ===
+* The {{i|7 Seals}} familiars can now generate different types of [[locust]]s.
+
+=== Fixes ===
+* Fixed the bug where {{t|Door Stop}} would crash the game in certain circumstances (Mega Satan, Devil Room doors, teleportation, etc.).
+* Fixed the bug where shooting a laser through {{i|Multidimensional Baby}} would produce weird effects and occasionally crash the game.
+
+{{nav|version}}
+[[Category:Added in Booster Pack 3]]

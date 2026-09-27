@@ -1,0 +1,15 @@
+{{page dlc|r}}
+
+Items with this [[Item Tags|tag]] are not available during [[challenge]]s.
+
+== Activated Collectibles ==
+{{collectible table | tag = nochallenge | type = activated }}
+
+== Passive Collectibles ==
+{{collectible table | tag = nochallenge | type = passive }}
+
+== Trinkets ==
+{{trinket table | tag = nochallenge }}
+
+{{nav|fr=Balise nochallenge}}
+[[Category:Item tags]]

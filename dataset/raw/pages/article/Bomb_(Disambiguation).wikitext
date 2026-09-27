@@ -1,0 +1,41 @@
+{{disambiguation}}
+
+'''Bomb''' may refer to:
+
+== Challenges ==
+* {{chal|Blue Bomber}}.
+
+== Enemies ==
+* {{dlc+|r}}{{e|Bombgagger}}, a [[monster]] commonly found in {{s|Ashpit}}.{{dlc-}}
+* {{dlc+|r}}{{e|Bomb Grimace}}, an invincible [[monster]] commonly found in {{s|Mines}}.{{dlc-}}
+* {{dlc+|r}}{{e|Eternal Fly Bomb}}, a [[monster]] commonly found in {{s|Gehenna}}.{{dlc-}}
+* {{dlc+|r}}{{e|Fly Bomb}}, a [[monster]] commonly found in {{s|Mines}}.{{dlc-}}
+* {{dlc+|a}}{{e|Ultra Greed Coin (Bomb)}}, a [[monster]] spawned by [[Ultra Greed]].{{dlc-}}
+
+== Items ==
+* {{i|Blood Bombs}}, a [[passive collectible]] that increases [[health]] and leave a pool of [[red creep]] when a bomb explodes.
+* {{i|Bobby-Bomb}}, a [[passive collectible]] that grants bombs and causes bombs to home in on enemies.
+* {{i|BOGO Bombs}}, a [[passive collectible]] that doubles all normal bomb pickups.
+* {{i|Bomb Bag}}, a [[passive collectible]] that spawns a [[familiar]] that drops a bomb every few rooms.
+* {{i|Bomber Boy}}, a [[passive collectible]] that grants bombs and causes bombs to explode in a large cross-shaped blast.
+* {{i|Brimstone Bombs}}, a [[passive collectible]] that grants bombs and fires {{i|Brimstone}} lasers when a bomb explodes.
+* {{i|Butt Bombs}}, a [[passive collectible]] that grants bombs and spawns a damaging and [[confusion|confusing]] cloud when a bomb explodes.
+* {{i|Fast Bombs}}, a [[passive collectible]] that grants bombs and removes the delay between bomb placements.
+* {{i|Ghost Bombs}}, a [[passive collectible]] that grants bombs and spawns an exploding ghost when a bomb explodes.
+* {{i|Glitter Bombs}}, a [[passive collectible]] that grants bombs and a chance to charm enemies and spawn a [[pickup]] or [[trinket]] when a bomb explodes.
+* {{i|Hot Bombs}}, a [[passive collectible]] that grants bombs and causes bombs to deal contact damage and leave behind a fire.
+* {{i|Nancy Bombs}}, a [[passive collectible]] that grants bombs and causes bombs to gain the effects of random bomb synergies.
+* {{i|Sad Bombs}}, a [[passive collectible]] that grants bombs and shoot 10 tears off in every direction when a bomb explodes.
+* {{i|Scatter Bombs}}, a [[passive collectible]] that grants bombs and causes bombs to split into tiny bombs after exploding.
+* {{i|Sticky Bombs}}, a [[passive collectible]] that grants bombs, causes bombs to stick to enemies, and spawns [[Blue Spider]]s when a bomb kills the enemy it has stuck to.
+
+== Pickups ==
+* [[Bomb]]s, a type of [[pickup]].
+* [[Bombs Are Key]], a [[pill]] effect that swaps the values of bombs and keys.
+* [[Bomb Chest]], a [[chest]] that opens when hit by an explosion.
+
+== Environment ==
+* [[Bomb Bum]], a [[beggar]] which asks for [[bomb]]s in exchange for pickups and items.
+* [[Bomb Rock]], a [[rock]] that explodes when destroyed.
+
+{{nav}}

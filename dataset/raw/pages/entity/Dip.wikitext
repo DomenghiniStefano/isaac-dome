@@ -1,0 +1,85 @@
+{{infobox monster
+ | id          = 217
+ | base hp     = 3
+ | stage hp    = 1
+ | environment = {{floor|Basement}}{{floor|Cellar}}{{floor|Burning Basement}}<br>{{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Mines}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|Sheol}}{{floor|Cathedral}}<br>{{floor|Chest}}<br>{{room|boss}}{{room|challenge}}{{room|clean bedroom}}
+ | behavior    = Slowly dashes in random directions, dealing contact damage.
+}}
+
+'''Dips''' move by making small dashes in random directions and are commonly found on most floors. They can also be spawned by some bosses, like [[Dingle]] and [[Mega Fatty]], as well as enemies like [[Squirt]]s and [[Dinga]]s.
+{{clear}}
+
+== Variants ==
+=== Corn ===
+{{infobox monster
+ | dlc         = a
+ | name        = Corn
+ | image name  = * {{dlc|nr|Afterbirth}}
+ | variant     = 1
+ | base hp     = 3
+ | environment = {{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{room|boss}}
+ | behavior    = Quickly dashes in random directions, dealing contact damage.
+}}
+
+Like Dips, '''Corns''' dash in random directions. Their dashes are faster and longer, but they have less health.
+{{clear}}
+
+=== Brownie Corn ===
+{{infobox monster
+ | dlc         = a
+ | name        = Brownie Corn
+ | image name  = * {{dlc|nr|Afterbirth}}
+ | variant     = 2
+ | base hp     = 3
+ | environment = {{floor|Basement}}{{floor|Cellar}}{{floor|Burning Basement}}<br>{{floor|Depths}}<br>{{room|boss}}
+ | behavior    = Quickly dashes in random directions, dealing contact damage.
+}}
+
+A '''Brownie Corn''' is an alternate version of the Corn mainly spawned by the [[Turdlings]], [[Dangle]] and [[Brownie]], though they can also rarely be found in some rooms. Despite the different appearance, they behave exactly like normal Corns.
+{{clear}}
+
+=== Big Corn ===
+{{infobox monster
+ | dlc         = r
+ | name        = Big Corn
+ | variant     = 3
+ | base hp     = 6
+ | stage hp    = 2
+ | environment = {{floor|Dross}}<br>{{room|challenge}}
+ | behavior    = Quickly dashes in random directions, dealing contact damage. Shoots one piece of corn upon death.
+}}
+
+A '''Big Corn''' is an alternate version of the Dip with twice as much HP that can also travel over flooded pits. When it dies, it launches the corn lodged in its head toward Isaac, predicting his movements and aiming for where he is moving.
+{{clear}}
+
+=== Drip ===
+{{infobox monster
+ | dlc         = r
+ | name        = Drip
+ | id          = 870
+ | base hp     = 3
+ | stage hp    = 1
+ | environment = {{floor|Dross}}<br>{{room|challenge}}<br>{{room|secret}}{{room|treasure}} (Dross only)
+ | behavior    = Quickly rolls around in diagonal directions, dealing contact damage.
+}}
+
+A '''Drip''' is an alternate version of the Dip that rolls around in diagonal directions and can travel over flooded pits. They are also spawned by [[Splurt]]s upon death and by [[Clog]] during battle.
+{{clear}}{{dlc clear}}
+
+== Notes ==
+* {{i|Dirty Mind}} will convert all Dips to [[Familiar#Dips|Dip Familiars]]. Dips, Corns and Brownie Corns are turned into their respective familiar counterparts while Drips are converted into regular Dip familiars and Big Corns into Corny Dip familiars.
+
+== Gallery ==
+<gallery>
+File:Edmund McMillen Rebirth Monster Sketches.jpg|Sketches of monsters for the Binding of Isaac: Rebirth, including the Dip in the fourth square of the third row, formerly known as "Pooper."
+File:Squirt Last Will.png|A Dip on Isaac's Last Will.
+</gallery>
+
+== Trivia ==
+* {{dlc|a}} The Corn has the lowest health of any enemy in the game, tied with the [[Fly]].
+* Dips are likely a reference to [[zelda:Gel|Gels]], enemies from [[wikipedia:The Legend of Zelda: A Link to the Past|''The Legend of Zelda: A Link to the Past'']], as they have nearly the same movement patterns.
+* The name of the Dips is a pun on the term "dipshit", due to their names (Dips) and the fact that they are living fecal matter.
+
+{{nav|fr=Crotte}}
+
+[[Category:Poop monsters]]

@@ -1,0 +1,23 @@
+{{infobox version
+ | dlc   = r+
+ | date  = 2025-09-24
+}}
+
+== Undocumented changes ==
+=== Item description changes ===
+* Added missing descriptions for {{t|Vibrant Bulb}} and {{t|Dim Bulb}}.
+* Fixed {{i|Hungry Soul}} description not showing the ghost spawn chance.
+* Fixed {{i|The Swarm}} description always showing 9 instead of the number of spawned and cap of orbital flies.
+
+=== Other changes ===
+* {{i|Dry Baby}}: Added to the {{ip|Greed Devil Room|text=Greed mode Devil pool}}.
+* {{i|2Spooky}}: Added the {{code|tearsup}} tag.
+* Added {{t|Karma}} back to [[daily run]]s and challenges.
+
+=== Fixes ===
+* Fixed an issue where using the beam of light to {{s|Cathedral}} in the {{r|I AM ERROR}} room or {{i|Genesis}} on {{s|Womb}} II would send Isaac to a glitched [[Ascent]] version of ??? instead.
+* Fixed an issue where using the beam of light to {{s|Chest}} in the {{r|I AM ERROR}} room or {{i|Genesis}} on {{s|Cathedral}} would send Isaac to another Cathedral floor instead.
+* Fixed an issue where resetting the run while in an off-grid room would start a new run on [[Chapter 1.5]].
+* Fixed an issue where exiting the floor through the {{r|I AM ERROR}} room in the first floor of [[Chapter 1]], [[Chapter 2]] or [[Chapter 3]] would send Isaac to [[Chapter 1.5]], [[Chapter 2.5]] or [[Chapter 3.5]] respectfully.
+
+{{nav|version}}

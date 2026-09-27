@@ -6,7 +6,21 @@
 //! raises nothing. The reference resolves to `None`, the cell falls back to our drawing, and
 //! the screen looks exactly like a machine without the game.
 
-use ipc::{crop_png, decode_rgba, icon_source, trim_opaque, IconRef, RoomKindView};
+// A room reference always resolves through `IconSource::Sprite` (`icon_source` never composes
+// entity art for it): the wildcard is the assertion, and it panics loudly if that changes.
+#![allow(clippy::wildcard_enum_match_arm)]
+
+use ipc::{crop_png, decode_rgba, icon_source, trim_opaque, IconRef, IconSource, RoomKindView};
+
+/// A room's icon is always a single sprite crop. `icon_source` also composes entity art now
+/// (`IconSource::Entity`), which `IconRef::Room` never produces.
+fn sprite(s: Option<IconSource<'_>>) -> Option<&catalog::SpriteRef> {
+    match s {
+        Some(IconSource::Sprite(sprite)) => Some(sprite),
+        Some(IconSource::Entity { .. }) => panic!("a room icon composed entity art"),
+        None => None,
+    }
+}
 
 const KINDS: [RoomKindView; 14] = [
     RoomKindView::Start,
@@ -37,11 +51,12 @@ fn every_mapped_kind_crops_a_real_icon() {
     let rs = unpack::ResourceSet::open(&dir);
     let catalog = catalog::Catalog::build(|p| rs.read(p));
     for kind in KINDS {
-        let sprite = icon_source(
+        let sprite = sprite(icon_source(
             &catalog,
             &ipc::for_tests::bosses(&catalog),
+            None,
             &IconRef::Room { kind },
-        );
+        ));
         if BARE.contains(&kind) {
             assert!(sprite.is_none(), "{kind:?}: the game has no icon for it");
             continue;
@@ -78,11 +93,12 @@ fn a_room_icon_is_served_with_no_transparent_margin_around_it() {
     // on 2026-09-20, all twelve are smaller than their square.
     let mut trimmed_smaller = 0;
     for kind in KINDS {
-        let Some(sprite) = icon_source(
+        let Some(sprite) = sprite(icon_source(
             &catalog,
             &ipc::for_tests::bosses(&catalog),
+            None,
             &IconRef::Room { kind },
-        ) else {
+        )) else {
             continue;
         };
         let sheet = rs.read(&sprite.path).expect("the sheet is in the archives");
@@ -126,11 +142,12 @@ fn no_two_kinds_crop_the_same_piece_of_the_sheet() {
     let catalog = catalog::Catalog::build(|p| rs.read(p));
     let mut seen: Vec<(String, Option<catalog::Rect>)> = Vec::new();
     for kind in KINDS {
-        if let Some(sprite) = icon_source(
+        if let Some(sprite) = sprite(icon_source(
             &catalog,
             &ipc::for_tests::bosses(&catalog),
+            None,
             &IconRef::Room { kind },
-        ) {
+        )) {
             let key = (sprite.path.clone(), sprite.rect);
             assert!(!seen.contains(&key), "{kind:?}: already taken");
             seen.push(key);

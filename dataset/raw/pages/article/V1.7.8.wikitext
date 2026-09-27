@@ -1,0 +1,158 @@
+{{infobox version
+ | dlc   = r
+ | steam = 3117060130395071360
+ | date  = 2022-03-21
+}}
+
+== Documented Changes ==
+=== Gameplay Changes ===
+* [[Clutch|"Something spooky"]] has appeared in the {{s|Ashpit}}!
+* {{c|Lazarus}} now reverts to his normal form when going to the next floor, gaining his extra life back if he lost it.
+* {{c|Lazarus}} now gains a permanent +.5 damage up each time he turns into his revived form.
+* {{c|Lazarus}} now only loses up to 1 heart container when turning into his revived form; this cannot bring him below 1 heart container.
+* Increased the damage multiplier of {{c|Lazarus}}' revived form to 1.4 (from 1.2).
+* Reduced the duration of the temporary damage bonus granted by {{c|Lazarus}}' {{i|Birthright}} from 3 minutes to 1; however, this bonus is granted every time Lazarus turns into his revived form.
+* {{c|???}} now gets devil deals at a reduced cost and starts with an innate {{t|Lil Larva}} effect (destroying poop spawns 1 blue fly).
+* Bleed effects from {{i|Mom's Razor}} and {{i|Backstabber}} now deal damage based on how quickly an enemy is moving (faster enemies take more damage). While an enemy bleeds, they leave behind creep that damages other enemies. The effects can now also be applied to bosses.
+* {{i|Mom's Razor}} now blocks projectiles and can damage bosses.
+* {{i|Camo Undies}} now grants +.5 speed while cloaked. When uncloaking, all nearby enemies take damage, and Isaac gains a brief tears + damage up.
+* {{i|Lost Fly}} now deals damage less frequently (7 damage every 7 frames) but forces nearby enemies to target it.
+* {{i|D12}} can now reroll most obstacles, including poop, spikes and fireplaces, and can generate more varied obstacles.
+* {{i|Pay To Play}} now works on double locked doors, key blocks, and chests, and features new sprites for all types of locked doors.
+* {{i|We Need To Go Deeper!}} / {{i|Mom's Shovel}} / {{p|Ehwaz}} now feature a secret method to guarantee a crawlspace once per floor and no longer create them based on random chance.
+* {{i|Lil Dumpy}} is now a follower and automatically produces a Butter Bean fart when an enemy or projectile is about to hit Isaac.
+* {{i|Voodoo Head}} now improves curse room layouts/rewards.
+* {{i|The Book of Sin}} no longer creates [[Batteries|Micro Batteries]] (only Lil' Batteries and rarely Golden/Mega Batteries).
+* Adjusted the formula used to calculate damage for {{i|Libra}} and the pause menu stat tallies (this results in overall higher damage during Libra runs).
+* Reduced the Devil Deal price of {{i|The Nail}}, {{i|Bloody Lust}}, and {{i|Bloody Gust}} to 1 heart.
+* Added {{i|Little Horn}} to the [[Devil Room (Item Pool)|Devil Room item pool]] (it was previously only there in Greed mode).
+* Replaced {{i|Razor Blade}} with {{i|Blood Rights}} in the Devil Room item pool.
+* Replaced {{i|Mom's Razor}} with {{i|Razor Blade}} in the Curse Room item pool.
+* Increased the weight of {{i|Blank Card}} in the [[Shop (Item Pool)|Shop item pool]] (was previously more rare).
+* {{i|Bomber Boy}} now has normal weight/rarity in the [[Bomb Bum (Item Pool)|Bomb Bum item pool]] (was previously more rare).
+* Toned down the amount of enemies spawned on the first floor of [[Greed Mode|Greed/Greedier Mode]].
+* {{m|Beggar}}s no longer give {{i|Treasure Map}}, {{i|The Compass}}, or {{i|Contract From Below}} in Greed Mode.
+* Added {{i|Odd Mushroom (Large)}} to the [[Treasure Room (Greed Mode Item Pool)|Treasure Room item pool in Greed mode]].
+* Added {{i|Ball of Bandages}} to the [[Boss (Greed Mode Item Pool)|Greed Mode Boss item pool]].
+* Removed {{i|Cube of Meat}} from most Greed Mode item pools except the Boss and Shop item pools.
+* Removed {{i|Dead Bird}} and {{i|Ouija Board}} from the [[Devil Room (Greed Mode Item Pool)|Devil Room item pool in Greed mode]].
+* Reduced the appearance rate of the Devil Room layout with only [[Runes]] in Greed mode.
+* {{i|Urn of Souls}} now deals 50% more damage when combined with {{i|The Book of Belial}} via {{c|Judas}}' {{i|Birthright}}.
+* Significantly increased the durability of {{i|Book of Virtues}} wisps created from {{i|Ventricle Razor}}.
+* Significantly increased the range and damage of the Brimstone beams from {{i|Sulfur}} wisps.
+* {{t|Devil's Crown}} no longer affects the mirrored Treasure Room in {{s|Downpour}} \ {{s|Dross}} II.
+* {{i|Monster Manual}} can now grant {{i|Gemini}} and {{i|Psy Fly}}.
+* Rooms containing pits in {{s|Corpse}} can no longer be bloody.
+* {{i|D7}} no longer teleports Isaac when used in certain special rooms (such as Devil Rooms).
+* Red champion {{e|Monstro II}} now has faster attacks, but also slightly reduced health.
+* Added unique champion sprites for bosses.
+* Added visual and audio feedback for {{i|Backstabber}}’s effect.
+* Added more new room layouts.
+* Updated various item qualities.
+* Updated localization files.
+
+=== Fixes ===
+* Fixed some characters in the item description font (such as b and d) not displaying correctly since last update.
+* Fixed some missing shading in {{e|The Horny Boys}}' boss portrait.
+* Fixed {{i|Bag of Crafting}} being able to craft locked items using fixed recipes.
+* Fixed {{t|Bag Lunch}} and {{t|Wish Bone}} causing strange behavior with pickups for the rest of the run after triggering (such as infinitely duplicating items from {{i|Damocles}}).
+* Fixed {{r|Devil Room}}s not spawning in the {{s|The Shop}} floor in [[Greed Mode]] if {{s|Womb}} wasn't unlocked first.
+* Fixed [[Co-op]] ghosts being able to take damage from certain sources.
+* Fixed a rare crash caused by floor generation in the [[Red Redemption]] challenge.
+* Fixed {{i|Astral Projection}} causing a crash when triggering in a room containing rain.
+* Fixed {{e|Clickety Clack}}s becoming white champions, which could result in a softlock.
+* Fixed a softlock when throwing {{c|Tainted Forgotten}} into the special minecart in {{s|Mines}} / {{s|Ashpit}} II right after entering the room.
+* Fixed {{c|Tainted Forgotten}} getting extra plays on {{m|Devil Beggar}}s during damage iframes.
+* Fixed the sound of {{c|Tainted Forgotten}} hitting the ground playing when thrown into a trapdoor.
+* Fixed {{i|The Book of Belial}} not increasing Devil Deal chance when held by {{c|Judas}} with {{i|Birthright}}.
+* Fixed {{e|Satan}} sometimes becoming invulnerable during his second phase when under the effects of [[Pills|I'm Excited]].
+* Fixed not being able to shoot during the {{i|Kidney Stone}} barrage effect with {{i|Chocolate Milk}}.
+* Fixed {{i|Neptunus}} + {{i|Chocolate Milk}} preventing the charge bar from completely filling up.
+* Fixed {{i|Head of Krampus}} dealing 19 ticks of damage instead of 20.
+* Fixed {{i|Brimstone}} + {{i|Anti-Gravity}} + {{i|Soy Milk}} not working as intended.
+* Fixed {{i|Pyromaniac}} being more rare than intended.
+* Fixed various minor issues with certain room layouts.
+* Fixed {{e|Mother's Shadow}}'s chase track not looping correctly.
+* Fixed the door to the minecart room in {{s|Mines}} / {{s|Ashpit}} II taking longer to open than intended after successfully escaping Mother's Shadow.
+* Fixed {{e|Colostomia}} sometimes staying invulnerable for longer than intended during the transition to her second phase.
+* Fixed {{p|VIII - Justice?}} removing an item from the current room's item pool for every chest spawned.
+* Fixed {{i|Rocket in a Jar}} Bombs exploding on contact with perma-charmed enemies.
+* Fixed a softlock caused by falling into a pitfall while {{i|Mega Mush}} is active.
+* Fixed {{i|Sumptorium}} sometimes not being able to recall all clots when playing as {{c|Tainted Eve}}.
+* Fixed {{i|Black Hole}} not destroying Fool’s Gold rocks.
+* Fixed various issues caused by {{i|D7}} in {{s|Home}}.
+
+=== Modding changes ===
+* The <code>rewind</code> [[Debug Console|console command]] now instantly reverts the game to the last visited room, skipping the fade in transition.
+* Fixed <code>EntityPlayer:TriggerBookOfVirtues()</code> not working correctly.
+* Fixed <code>EntityFamiliar:PlayChargeAnim</code>, <code>PlayShootAnim</code>, and <code>PlayFloatAnim</code> crashing the game when called.
+* Fixed <code>Level:MakeRedRoomDoor()</code> crashing the game when called.
+* Added missing enums for recently added item tags.
+* Added <code>Room:GetEnemyDamageInflicted()</code>.
+** Returns the total amount of HP lost by all enemies in the room within the current frame.
+** This is used by items that charge on damage inflicted such as {{i|Berserk!}}.
+* Added <code>EntityPlayer.SamsonBerserkCharge</code>.
+** Internally used by {{c|Tainted Samson}}, increases based on damage dealt, range is 0-100000.
+* Added <code>EntityPlayer.IBSCharge</code>.
+** Internally used by {{i|IBS}}, increases based on damage dealt, range is 0-1.
+
+== Undocumented Changes ==
+* Added two new co-op babies: Finger Baby and Bald Baby.
+* In modding, calling <code>json.decode</code> will no longer create a global variable for no reason.
+* When the game crashes, it will print the Lua line number that caused the crash (if applicable).
+* {{e|The Haunt}}'s 2nd phase sprite was updated.
+* {{e|The Hollow}}'s teeth got some new shading.
+* {{e|Mega Satan}} (both forms, and both forms of each hand) have the <code>nodelirium</code> tag now (preventing {{e|Delirium}} from transforming into them).
+* {{i|Blank Card}}'s weight also increased in the [[Shop (Greed Mode Item Pool)|Greed Mode Shop item pool]] (from 0.2 to 0.5).
+* {{i|Crooked Penny}}'s weight in the [[Shop (Greed Mode Item Pool)|Greed Mode Shop item pool]] changed from 0.5 to 1.
+* {{i|D infinity}}'s weight in the [[Shop (Greed Mode Item Pool)|Greed Mode Shop item pool]] changed from 1 to 0.5.
+* {{i|Lost Contact}}'s icon was very slightly changed, and {{i|Lost Fly}}'s icon was changed significantly.
+* {{i|Odd Mushroom (Large)}} was also added to the [[Boss (Item Pool)|Greed Mode Boss item pool]].
+* {{i|Razor Blade}} was added to the [[Treasure Room (Item Pool)|Treasure Room item pool]] (normal and Greed modes).
+* Specific item quality changes:
+** {{i|Backstabber}}: 1 to 2
+** {{i|Camo Undies}}: 0 to 2
+** {{i|Compound Fracture}}: 2 to 3
+** {{i|D12}}: 0 to 1
+** {{i|Glaucoma}}: 2 to 1
+** {{i|Golden Razor}}: 2 to 1
+** {{i|Glyph of Balance}}: 2 to 3
+** {{i|Hemoptysis}}: 3 to 2
+** {{i|Iron Bar}}: 3 to 2
+** {{i|Lazarus' Rags}}: 1 to 2
+** {{i|Lil Dumpy}}: 0 to 2
+** {{i|Member Card}}: 1 to 2
+** {{i|Mom's Razor}}: 0 to 2
+** {{i|Purity}}: 2 to 3
+** {{i|The Relic}}: 4 to 3
+** {{i|Tarot Cloth}}: 3 to 2
+** {{i|We Need To Go Deeper!}}: 0 to 2
+* The following items gained the [[Item Tags nolostbr|<code>nolostbr</code> item tag]]:
+** {{i|Greed's Gullet}}
+** {{i|Hypercoagulation}}
+** {{i|Infestation}}
+** {{i|Sumptorium}}
+* {{i|Heartbreak}} lost the [[Item Tags nolostbr|<code>nolostbr</code> item tag]].
+* Localization team members appear in the Credits now:
+** German:
+*** Michael Lambert (plus Defiant Seagulls?)
+** Japanese:
+*** Pikii GK (translation + art)
+** Chinese:
+*** Yazawa Akio (art, translation review/edits)
+*** Asakin Xheepey87 (translation review/edits)
+** Korean:
+*** Bada Games (translation)
+*** SeonYeon Min (Rojen) (art)
+** Spanish:
+*** Luis Roberto Gómez Calderón, Juvenal Paye Cahuaya (both translation + art)
+** Russian:
+*** Calmic Ivan (translation)
+*** Stepan Derevenko, Remezyuk Maxim, Rogachev Dmitry (all art)
+
+== Erroneous Patch Notes ==
+* The following changes were claimed in the patch notes but weren't actually implemented:
+** Added {{i|Guppy's Eye}} to the [[Curse Room (Item Pool)|Curse Room item pool]].
+** Updated [[Onan's Streak]] to require {{c|Judas}} and {{e|It Lives!}} be unlocked first.
+
+{{nav|version}}

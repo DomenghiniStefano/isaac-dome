@@ -1,0 +1,49 @@
+{{infobox monster
+ | id          = 56
+ | base hp     = 30
+ | environment = {{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{room|boss}}
+ | behavior    = Fires 3 spread blood shots at Isaac when he gets in its line of sight. Will burrow underground and reappear elsewhere after firing.
+}}
+
+'''Lumps''' remain stationary in one spot and shoot a spread of three shots towards Isaac when he comes within range, then they burrow underground and resurface in a different part of the room. If they resurface in range to shoot at Isaac, they will do so incredibly quickly before burrowing underground again.
+
+Lumps will also burrow underground to reappear elsewhere if Isaac doesn't approach them for a short period of time.
+
+=== Notes ===
+* When a Lump is a [[Champion|Green or Purple Champion]], it can be seen teleporting around the room while burrowed.
+
+{{clear}}
+
+== Variations ==
+=== Tar Boy ===
+{{infobox monster
+ | dlc         = a+
+ | name        = Tar Boy
+ | id          = 307
+ | base hp     = 55
+ | environment = {{floor|Dank Depths}}<br>{{room|challenge}}
+ | behavior    = Fires a short-ranged spray of shots that leave behind slowing [[Creep#Black Creep|Black Creep]]. Occasionally burrows underground and reappears under any pools of black creep in the room. If Isaac stands on the Creep, the Tar Boy can {{dlc|nr}} fire shots straight upwards out of the Creep underneath Isaac/{{dlc|r}} send out a tentacle underneath Isaac.
+}}
+
+'''Tar Boys''' occasionally fire a short-ranged spray of shots towards Isaac that leaves behind slowing [[Creep#Black Creep|Black Creep]]. It can also burrow underground and resurface in a different part of the room, much like the Lump. However, it is only able to resurface in areas that have Black Creep and it will prefer to resurface close to Isaac.
+
+If Isaac is standing on Black Creep, Tar Boys can {{dlc|nr}} launch a fountain of tar shots straight upwards out of the Creep where Isaac is standing/{{dlc|r}} create a {{e|Nerve Ending}}-like tentacle directly underneath Isaac. This can also occur with Black Creep spawned by other enemies such as {{e|Gush}}es.
+{{clear}}{{dlc clear}}
+
+== Gallery ==
+<gallery>
+File:Tar Boy Tentacle.png|{{dlc|r}} Tar Boy's tentacle attack.
+File:Tar boy concept.png|Concept art for Tar Boy.
+</gallery>
+
+== Trivia ==
+* Tar Boys were added in [[Booster Pack #4]].
+* Lumps had a radically different appearance in the original Binding of Isaac.
+* {{dlc+|a}} Previously, Lumps appeared as Light Brown in the {{s|Scarred Womb}}. As of [[Booster Packs#Booster Pack #5|Booster Pack #5]], Lumps are now red in this environment.{{dlc-}}
+* Tar Boy is a reference to the [https://www.newgrounds.com/portal/view/509092 Newgrounds animation of the same name].
+
+== Bugs ==
+{{bug|If you [[confusion|stun]] a Lump at the same time that it burrows underground, it will cause their sound effect to repeat continuously for a few seconds.}}
+{{bug|dlc=anr|If a Lump spawns as a [[Champion|Light White Champion]], when the Lump burrows underground, its {{e|Eternal Fly}} will rapidly teleport around the room, potentially resulting in unavoidable damage.}}
+
+{{nav|booster pack|fr=Grumeau}}

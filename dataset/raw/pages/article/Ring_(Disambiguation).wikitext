@@ -1,0 +1,11 @@
+{{disambiguation}}
+
+'''Ring''' may refer to:
+* {{e|Key Ring}}, a type of [[key]] [[pickup]].
+* {{i|Mom's Ring}}, a [[passive collectible]] found in {{e|Locked Chest}}s.
+* {{i|Dad's Ring}}, an unlockable [[passive collectible]] found in {{r|Secret Rooms}}.
+* {{t|Ring Worm}}, a [[trinket]].
+* {{t|Ring Cap}}, an unlockable [[trinket]].
+* {{e|Ring Fly}}, a [[monster]] commonly found in [[chapter]]s 1 to 3.
+
+{{nav}}

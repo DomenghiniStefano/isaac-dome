@@ -19,9 +19,6 @@
 == Notes ==
 * Since Papa Fly's damage scales off of Isaac's own damage, any item that provides a massive damage increase (such as {{i|Ipecac}} or {{i|Polyphemus}}) will prove benefitial.
 
-== Synergies ==
-* {{dlc|r}} {{I|Multidimensional Baby}}: Papa Fly will always shoot two shots due to both of them having the same movement delay.
-
 == In-game Footage ==
 {{#ev:youtube|4gnSLUnM7vI}}
 

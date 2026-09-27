@@ -1,0 +1,134 @@
+[
+  {
+    "collectible": "Alabaster Box",
+    "description": "Changes the payout to 2 [[File:Black Heart.png|link=Hearts#Black Heart|class=tb-icon tb-link-icon|alt=|Black Heart]][[:Hearts#Black Heart|Black Heart]]s and 1 item from the [[Devil Room (Item Pool)|Devil Room item pool]]. If a [[Devil Deal]] has been taken, the payout is boosted to 3 Black Hearts and 2 Devil items."
+  },
+  {
+    "collectible": "Bag of Crafting",
+    "description": "Collecting [[File:Red Heart.png|link=Hearts#Red Heart|class=tb-icon tb-link-icon|alt=|Red Heart]][[:Hearts#Red Heart|Red Heart]]s, [[File:Half Red Heart.png|link=Hearts#Half Red Heart|class=tb-icon tb-link-icon|alt=|Half Red Heart]][[:Hearts#Half Red Heart|Half Red Heart]]s, or [[File:Double Heart.png|link=Hearts#Double Heart|class=tb-icon tb-link-icon|alt=|Double Heart]][[:Hearts#Double Heart|Double Heart]]s with this item has a chance to transform them into [[File:Black Heart.png|link=Hearts#Black Heart|class=tb-icon tb-link-icon|alt=|Black Heart]][[:Hearts#Black Heart|Black Heart]]s. When a heart is transformed in this way, a special sound plays and a black smoke puff appears. Does not work with [[File:Red Heart.png|link=Hearts#Scared Heart|class=tb-icon tb-link-icon|alt=|Scared Heart]][[:Hearts#Scared Heart|Scared Heart]]s."
+  },
+  {
+    "collectible": "Blood Rights",
+    "description": "Invokes the effect of <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CRazor+Blade\" data-tooltip-dlc=\"24\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Razor Blade icon.png|link=Razor Blade|class=tb-icon tb-link-icon|alt=|Razor Blade]]</span>[[:Razor Blade|Razor Blade]]</span> along with its original effect."
+  },
+  {
+    "collectible": "Book of Virtues",
+    "description": "Can be stacked along with The Book of Belial, allowing you to carry 2 passive books and an activated item on top of them."
+  },
+  {
+    "collectible": "Breath of Life",
+    "description": "Judas leaves a damaging flame trail while the invincibility is active instead of creating beams of light. Blocking damage just as the invincibility begins activates <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CThe+Necronomicon\" data-tooltip-dlc=\"24\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible The Necronomicon icon.png|link=The Necronomicon|class=tb-icon tb-link-icon|alt=|The Necronomicon]]</span>[[:The Necronomicon|The Necronomicon]]</span> effect and grants Judas a temporary damage bonus."
+  },
+  {
+    "collectible": "Clicker",
+    "description": "Replaces the most recently acquired item with <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CPentagram\" data-tooltip-dlc=\"24\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Pentagram icon.png|link=Pentagram|class=tb-icon tb-link-icon|alt=|Pentagram]]</span>[[:Pentagram|Pentagram]]</span> instead of removing it. Birthright's effects will also change to that of the character transformed into."
+  },
+  {
+    "collectible": "Damocles",
+    "description": "The sword also increases Judas' damage by x1.4 then a flat +1 while it's active."
+  },
+  {
+    "collectible": "Dark Arts",
+    "description": "Grants temporary damage ups for every enemy/projectile hit by Dark Arts, similarly to <span style=\"--tb-icon-size: 1.4em\">[[File:Character Tainted Judas icon.png|link=Tainted Judas|class=tb-icon tb-link-icon|alt=|]]</span>[[:Tainted Judas|Tainted Judas]]. This stacks with <span style=\"--tb-icon-size: 1.4em\">[[File:Character Black Judas icon.png|link=Black Judas|class=tb-icon tb-link-icon|alt=|]]</span>[[:Judas#Black Judas|Black Judas]]' inherent version of this, doubling the amount of damage gained."
+  },
+  {
+    "collectible": "Decap Attack",
+    "description": "Grants Judas +2 damage and ×3 tears fired per second while his head is detached from his body."
+  },
+  {
+    "collectible": "Forget Me Now",
+    "description": "Grants +2 damage up for the entirety of the new floor."
+  },
+  {
+    "collectible": "Genesis",
+    "description": "Grants a free <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CPentagram\" data-tooltip-dlc=\"24\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Pentagram icon.png|link=Pentagram|class=tb-icon tb-link-icon|alt=|Pentagram]]</span>[[:Pentagram|Pentagram]]</span> that will not be removed by Genesis."
+  },
+  {
+    "collectible": "Glass Cannon",
+    "description": "Grants Judas +2.67 damage up while Glass Cannon is broken."
+  },
+  {
+    "collectible": "Golden Razor",
+    "description": "Also invokes the effect of <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CMagic+Fingers\" data-tooltip-dlc=\"24\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Magic Fingers icon.png|link=Magic Fingers|class=tb-icon tb-link-icon|alt=|Magic Fingers]]</span>[[:Magic Fingers|Magic Fingers]]</span> when used, which occurs after the damage increase and deals an additional +5 damage; non-boss enemies killed by this effect also have a chance to drop 1-2 pennies."
+  },
+  {
+    "collectible": "Guppy's Paw",
+    "description": "Grants a permanent 0.5 damage up for every converted heart."
+  },
+  {
+    "collectible": "How to Jump",
+    "description": "Enemies Judas jumps through take ''2 + 0.2 × floor'' contact damage and are set on fire. The burn deals damage equal to Judas' damage, and ticks up to 5 times."
+  },
+  {
+    "collectible": "IV Bag",
+    "description": "Gives a temporary +0.66 damage up with each use."
+  },
+  {
+    "collectible": "Isaac's Tears",
+    "description": "Fires a ring of 10 tears instead of 8, the tears are [[piercing]] and [[spectral]], and the tears deal 1.4 × Judas' damage, plus a flat 5."
+  },
+  {
+    "collectible": "Jar of Wisps",
+    "description": "Will only spawn <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CSatanic+Bible\" data-tooltip-dlc=\"24\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Satanic Bible icon.png|link=Satanic Bible|class=tb-icon tb-link-icon|alt=|Satanic Bible]]</span>[[:Satanic Bible|Satanic Bible]]</span> wisps that increase Judas' [[File:Devil Room Icon.png|link=Devil Room|class=tb-icon tb-link-icon|alt=|]][[:Devil Room|Devil Room]] chance by 10% for each one he has."
+  },
+  {
+    "collectible": "Kamikaze!",
+    "description": "Invokes the effect of <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CThe+Necronomicon\" data-tooltip-dlc=\"24\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible The Necronomicon icon.png|link=The Necronomicon|class=tb-icon tb-link-icon|alt=|The Necronomicon]]</span>[[:The Necronomicon|The Necronomicon]]</span> effect along with the original effect."
+  },
+  {
+    "collectible": "Magic Fingers",
+    "description": "Also has a chance to invoke the effect of <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CGolden+Razor\" data-tooltip-dlc=\"24\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Golden Razor icon.png|link=Golden Razor|class=tb-icon tb-link-icon|alt=|Golden Razor]]</span>[[:Golden Razor|Golden Razor]]</span>."
+  },
+  {
+    "collectible": "Magic Skin",
+    "description": "Grants a permanent +0.5 damage up on use in addition to the temporary +4 damage up given to it by Birthright. This bonus is not lost if the broken hearts are removed."
+  },
+  {
+    "collectible": "Notched Axe",
+    "description": "The axe receives a purplish glow and receives the following upgrades:\n** '''Increased durability''': Each use of the axe has a very high chance not to use a charge.\n** '''Faster usage''': The axe can be swung up to four times per second, regardless of Judas' tears stat.\n** '''Higher knockback''': Enemies are [[knock-back|knocked back]] when hit, receiving ''8 + 0.2 × floor'' damage if they collide with a wall, obstacle, or other enemies.\n** '''Fire effect''': The axe will set enemies on fire. The burn deals damage equal to Judas' damage, and ticks up to 5 times.\n** '''Increased luck''': destroying obstacles with the axe has an increased chance to spawn pickups.\n*** Destroying [[File:Poop.png|link=Poop (Disambiguation)|class=tb-icon tb-link-icon|alt=|Poop]][[:Poop (Disambiguation)|Poop]]s will spawn pickups much more frequently. When combined with <span class=\"tooltip\" data-tooltip=\"t%2Ftooltip%7CPetrified+Poop\" data-tooltip-dlc=\"24\"><span style=\"--tb-icon-size: 1.4em\">[[File:Trinket Petrified Poop icon.png|link=Petrified Poop|class=tb-icon tb-link-icon|alt=|Petrified Poop]]</span>[[:Petrified Poop|Petrified Poop]]</span>, the chance becomes 100% and will often result in multiple pickups from a single poop.\n*** Destroying [[Tinted Rock]]s will drop more consumables than usual, similarly to [[Rocks#Super Special Rocks|Super Special Rocks]].\n*** Destroying [[Rocks#Urns|Props]] (such as [[Urn]]s, [[Mushroom]]s, [[Skull]]s, and [[Polyp]]s) gives the prop an extra chance to drop its rewards. This can result in a single prop giving multiple drops.\n*** Destroying [[Fool's Gold]] rocks will drop significantly more coins."
+  },
+  {
+    "collectible": "Pandora's Box",
+    "description": "In addition to the item's expected reward, spawns one of the following demonic familiars: <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CBlood+Puppy\" data-tooltip-dlc=\"24\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Blood Puppy icon.png|link=Blood Puppy|class=tb-icon tb-link-icon|alt=|Blood Puppy]]</span>[[:Blood Puppy|Blood Puppy]]</span>, <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CDark+Bum\" data-tooltip-dlc=\"24\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Dark Bum icon.png|link=Dark Bum|class=tb-icon tb-link-icon|alt=|Dark Bum]]</span>[[:Dark Bum|Dark Bum]]</span>, <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CDemon+Baby\" data-tooltip-dlc=\"24\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Demon Baby icon.png|link=Demon Baby|class=tb-icon tb-link-icon|alt=|Demon Baby]]</span>[[:Demon Baby|Demon Baby]]</span>, <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CIncubus\" data-tooltip-dlc=\"24\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Incubus icon.png|link=Incubus|class=tb-icon tb-link-icon|alt=|Incubus]]</span>[[:Incubus|Incubus]]</span>, <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CLil+Abaddon\" data-tooltip-dlc=\"24\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Lil Abaddon icon.png|link=Lil Abaddon|class=tb-icon tb-link-icon|alt=|Lil Abaddon]]</span>[[:Lil Abaddon|Lil Abaddon]]</span>, <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CLil+Brimstone\" data-tooltip-dlc=\"24\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Lil Brimstone icon.png|link=Lil Brimstone|class=tb-icon tb-link-icon|alt=|Lil Brimstone]]</span>[[:Lil Brimstone|Lil Brimstone]]</span>, <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CSuccubus\" data-tooltip-dlc=\"24\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Succubus icon.png|link=Succubus|class=tb-icon tb-link-icon|alt=|Succubus]]</span>[[:Succubus|Succubus]]</span>, or <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CTwisted+Pair\" data-tooltip-dlc=\"24\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Twisted Pair icon.png|link=Twisted Pair|class=tb-icon tb-link-icon|alt=|Twisted Pair]]</span>[[:Twisted Pair|Twisted Pair]]</span>."
+  },
+  {
+    "collectible": "Plan C",
+    "description": "Respawns Judas as <span style=\"--tb-icon-size: 1.4em\">[[File:Character Black Judas icon.png|link=Black Judas|class=tb-icon tb-link-icon|alt=|]]</span>[[:Judas#Black Judas|Black Judas]] if he has an extra life."
+  },
+  {
+    "collectible": "Potato Peeler",
+    "description": "Each use grants a permanent +0.5 normal damage up in addition to a +0.2 flat damage up."
+  },
+  {
+    "collectible": "Razor Blade",
+    "description": "Invokes the effect of <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CThe+Necronomicon\" data-tooltip-dlc=\"24\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible The Necronomicon icon.png|link=The Necronomicon|class=tb-icon tb-link-icon|alt=|The Necronomicon]]</span>[[:The Necronomicon|The Necronomicon]]</span> effect along with the original effect."
+  },
+  {
+    "collectible": "Sacrificial Altar",
+    "description": "Grants +10.8 temporary damage up for every sacrificed familiar. The damage bonus scales down to 0 over time, similarly to <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CRed+Stew\" data-tooltip-dlc=\"24\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Red Stew icon.png|link=Red Stew|class=tb-icon tb-link-icon|alt=|Red Stew]]</span>[[:Red Stew|Red Stew]]</span>. Sacrificing blue flies or blue spiders has no special effect."
+  },
+  {
+    "collectible": "Sharp Key",
+    "description": "Invokes the effect of <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CRazor+Blade\" data-tooltip-dlc=\"24\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Razor Blade icon.png|link=Razor Blade|class=tb-icon tb-link-icon|alt=|Razor Blade]]</span>[[:Razor Blade|Razor Blade]]</span> without dealing damage to Judas along with the original effect."
+  },
+  {
+    "collectible": "Stitches",
+    "description": "Creates a shadowy line similar to <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CDark+Arts\" data-tooltip-dlc=\"24\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Dark Arts icon.png|link=Dark Arts|class=tb-icon tb-link-icon|alt=|Dark Arts]]</span>[[:Dark Arts|Dark Arts]]</span> between Judas and the familiar. Enemies caught in the line take damage equal to 2 × Judas' damage, plus a flat 3."
+  },
+  {
+    "collectible": "The Jar",
+    "description": "Instead of dropping hearts on the floor, using The Jar consumes up to one full heart in the jar at a time, giving a temporary +0.66 damage up for each half heart consumed and spawning a puddle of [[red creep]] that deals 2 damage per tick (20 damage per second)."
+  },
+  {
+    "collectible": "Urn of Souls",
+    "description": "The stream of fire is replaced with a controllable <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CBrimstone\" data-tooltip-dlc=\"24\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Brimstone icon.png|link=Brimstone|class=tb-icon tb-link-icon|alt=|Brimstone]]</span>[[:Brimstone|Brimstone]]</span> beam that destroys projectiles and deals more damage the longer it's active. The minimum damage is ''3.37 + 0.361 × floor'', and the maximum damage is ''4.2 + 0.45 × floor'', which it scales up to over the course of 3 seconds of continuous fire. Souls dropped from enemies are colored red, and the Urn displays a red graphic on the HUD when active.This brimstone will not be affected by any synergies, except side ones such as <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CAngelic+Prism\" data-tooltip-dlc=\"24\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Angelic Prism icon.png|link=Angelic Prism|class=tb-icon tb-link-icon|alt=|Angelic Prism]]</span>[[:Angelic Prism|Angelic Prism]]</span>, <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CHemoptysis\" data-tooltip-dlc=\"24\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Hemoptysis icon.png|link=Hemoptysis|class=tb-icon tb-link-icon|alt=|Hemoptysis]]</span>[[:Hemoptysis|Hemoptysis]]</span> and <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CMarked\" data-tooltip-dlc=\"24\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Marked icon.png|link=Marked|class=tb-icon tb-link-icon|alt=|Marked]]</span>[[:Marked|Marked]]</span>."
+  },
+  {
+    "collectible": "Vade Retro",
+    "description": "Instead of exploding on the spot, souls home in on nearby enemies and explode on contact, similarly to <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CPurgatory\" data-tooltip-dlc=\"24\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Purgatory icon.png|link=Purgatory|class=tb-icon tb-link-icon|alt=|Purgatory]]</span>[[:Purgatory|Purgatory]]</span>. The souls deal 2 × Judas's damage up to 3 times and destroy projectiles."
+  },
+  {
+    "collectible": "Wavy Cap",
+    "description": "Gives a damage bonus which lasts until the next floor equal to 0.2 × the maximum number of times Wavy Cap's effects have been stacked."
+  }
+]

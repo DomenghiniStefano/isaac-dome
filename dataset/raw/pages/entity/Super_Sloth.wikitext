@@ -1,0 +1,29 @@
+{{infobox monster
+ | id           = 46
+ | variant      = 1
+ | is mini-boss = yes
+ | image name   = * {{dlc|nr|Rebirth}}
+ | environment  = <u>Mini-Boss</u><br>{{room|mini-boss}}<br>{{dlc|r}} Cannot be encountered in [[Chapter 1]] Mini-Boss Rooms<br>{{room|boss challenge}}<br><u>Degraded Mini-Boss</u><br>{{floor|Corpse}}<br>{{floor|Sheol}}<br>{{floor|Dark Room}}{{floor|Chest}}
+ | base hp      = 60
+ | stage hp     = {{dlcalt|15|r=25}}
+ | pool         = Random [[Tarot Card]] (78.6% Chance)<br>or<br>{{i|Bob's Curse}} (21.4% Chance)
+}}
+
+'''Super Sloth''' is a [[mini-boss]] and one of the [[Seven Deadly Sins#Super Sins|Seven Super Deadly Sins]]. He is randomly encountered as an alternate version of {{E|Sloth}}.
+
+== Behavior ==
+Super Sloth wanders randomly around the room and performs one of two attacks:
+* Fires 2 {{i|Ipecac}} projectiles in Isaac's direction.
+* Spits out 2 {{E|Spider}}s or {{dlc|r}} a {{E|Big Spider}} in Isaac's direction.
+* Super Sloth deals a whole heart of contact damage.
+
+== Notes ==
+* In a mini-boss room, Super Sloth can spawn with 2-4 {{E|Charger}}s or 2 {{E|Attack Fly|text=Attack Flies}}.
+* {{dlc|nr}} Super Sloth can drop {{i|Bob's Curse}} even if Isaac has already encountered/possessed it. 
+
+== Trivia ==
+* Super Sloth appears to be a recolored {{E|Gazing Globin}} with a large head. This may be done humorously to represent his sin, sloth (laziness).
+* The [[wikipedia:Seven Deadly Sins|Seven Deadly Sins]] that these mini-bosses are based upon are, in Christian teachings, a classification of vices from which all others are derived.
+
+{{nav|mini-boss|fr=Super Paresse}}
+[[Category:Seven Super Deadly Sins]]

@@ -1,0 +1,58 @@
+'''Something wicked this way comes!''' are [[Achievement]]s introduced to the PC version in [[Booster Pack #5]] and earlier in the Switch release of [[Afterbirth †]] that unlocks after [[??? (Boss)]] has been defeated three and six times with different characters. They unlock main path bosses that were introduced in and originally unlocked by default in [[Afterbirth]] and [[Afterbirth †]], {{dlc|r}}and were extended to include main path bosses introduced in [[Repentance]].
+
+== Something wicked this way comes! ==
+These bosses unlock after defeating [[??? (Boss)]] with three different characters.
+{| style="width:70%; align:left; padding-right:2em"
+| style="text-align:center" | [[File:Boss_Rag_Man portrait.png|center|link=Rag Man]]
+| style="text-align:center" | [[File:Boss_Little_Horn portrait.png|center|link=Little Horn]]
+| style="text-align:center" | [[File:Boss_Dangle portrait.png|center|link=Dangle]]
+| style="text-align:center" | [[File:Boss_Turdlings portrait.png|center|link=Turdlings]]
+|-
+| style="text-align:center" | [[Rag Man]]
+| style="text-align:center" | [[Little Horn]]
+| style="text-align:center" | [[Dangle]]
+| style="text-align:center" | [[Turdlings]]
+|}
+{| style="width:70%; align:left; padding-right:2em"
+| style="text-align:center" | [[File:Boss_The_Frail portrait.png|center|link=The Frail]]
+| style="text-align:center" | [[File:Boss_The_Stain portrait.png|center|link=The Stain]]
+| style="text-align:center" | [[File:Boss_The_Forsaken portrait.png|center|link=The Forsaken]]
+| style="text-align:center" | [[File:Boss_Brownie portrait.png|center|link=Brownie]]
+|-
+| style="text-align:center" | [[The Frail]]
+| style="text-align:center" | [[The Stain]]
+| style="text-align:center" | [[The Forsaken]]
+| style="text-align:center" | [[Brownie]]
+|}
+
+== Something wicked this way comes+! ==
+These bosses unlock after defeating [[??? (Boss)]] with six different characters.
+{| style="width:70%; align:left; padding-right:2em"
+| style="text-align:center" | [[File:Boss_Rag Mega portrait.png|center|link=Rag Mega]]
+| style="text-align:center" | [[File:Boss_Big Horn portrait.png|center|link=Big Horn]]
+| style="text-align:center" | [[File:Boss_Sisters Vis portrait.png|center|link=Sisters Vis]]
+| style="text-align:center" | [[File:Boss_The Matriarch portrait.png|link=The Matriarch]]
+|-
+| style="text-align:center" | [[Rag Mega]]
+| style="text-align:center" | [[Big Horn]]
+| style="text-align:center" | [[Sisters Vis]]
+| style="text-align:center" | [[The Matriarch]]
+|}
+{| style="width:70%; align:left; padding-right:2em"
+| style="text-align:center" | [[File:Boss Baby Plum portrait.png|center|link=Baby Plum]]
+| style="text-align:center" | [[File:Boss Bumbino portrait.png|center|link=Bumbino]]
+| style="text-align:center" | [[File:Boss Reap Creep portrait.png|center|link=Reap Creep]]
+| style="text-align:center" | [[File:Boss The Pile portrait.png|center|link=The Pile]]
+|-
+| style="text-align:center" | [[Baby Plum]]{{dlc|r}}
+| style="text-align:center" | [[Bumbino]]{{dlc|r}}
+| style="text-align:center" | [[Reap Creep]]{{dlc|r}}
+| style="text-align:center" | [[The Pile]]{{dlc|r}}
+|}
+
+== Trivia ==
+* The Something Wicked This Way Comes quote is most likely a reference to the same quote from one of the witches from Shakespeare's play "Macbeth." It may also be a reference to the Ray Bradbury novel of the same name, which in turn, is also a reference to Macbeth.
+* {{plat|PS4}} {{dlc|a+}} Achievements 340-348 don't exist in the PS4 version, resulting in the content already being "unlocked" even on new save files.
+* These achievements existed in earlier versions of the Switch release, but were ported to PC after popular demand.
+
+{{nav|fr=Succès|es=Logros|ru=Достижения/Rebirth}}

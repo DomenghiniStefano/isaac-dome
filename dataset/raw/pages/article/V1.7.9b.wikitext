@@ -1,0 +1,140 @@
+{{infobox version
+ | dlc   = r
+ | steam = 3645131352093069363
+ | date  = 2022-12-08
+}}
+
+== Documented Changes ==
+=== Gameplay Changes ===
+* The [[Cantripped!]] challenge now only spawns active item cards, item cards can be swapped out when picking up new cards when all card slots are already full
+* {{c|Tainted Cain}} now has the same starting stats as {{c|Cain}} (increased damage and reduced range)
+* Salvaging {{c|Tainted Cain}}'s active item no longer spawns special drops in [[special room]]s (such as {{r|Secret Room}}s)
+* The fire aura granted by {{i|Breath of Life}} + {{c|Judas}}' {{i|Birthright}} no longer destroys projectiles
+* Adjusted the active to passive item ratio from {{i|TMTRAINER}} from 1/2 to 1/4
+* Glitch items can no longer destroy {{s|Cathedral}} light beams, ending chests and challenge trophies
+* Enemies respawned by the {{i|D7}} no longer drop loot when killed if they were champions and no longer grant score in daily runs
+* {{e|Great Gideon}}'s {{r|Crawl Space}} no longer appears in the [[Ascent]] (as it crashed the game when entered)
+* {{t|Expansion Pack}} can no longer trigger the {{i|Glowing Hourglass}}
+* Items in the {{i|Death Certificate}} area now spawn as "option" items similarly to items in {{r|Boss Rush}} and {{r|Angel Room}}s - the player is automatically returned to the main floor whenever picking up an item would cause other items in the room to disappear
+* Added rubber banding to {{i|Star of Bethlehem}} - it now moves faster off screen when the player is ahead of it along the path to the boss room and slows down if the player is lagging behind
+* {{i|Star of Bethlehem}} now moves towards {{e|Mega Satan}}'s room in the {{s|Chest}} and the {{s|Dark Room}} if its door was unlocked
+* {{i|Vanishing Twin}} is now shared by both of {{c|Tainted Lazarus}}' forms - this also fixes several bugs that occur when flipping while Vanishing Twin is copying a [[boss]]
+* {{i|Spindown Dice}} is now available in [[challenge]]s and [[daily run]]s, items that are tagged to never appear in those modes are considered locked and will be skipped over
+* {{i|Bag of Crafting}} is now available in [[challenge]]s and [[daily run]]s, as well as when playing as {{c|Tainted Lost}}
+* {{i|Bag of Crafting}} now obeys changes to item availability such as [[challenge]]s, [[daily run]]s and [[Tainted Lost#Item Exclusion|Tainted Lost's adjusted item pools]] and will not craft items that cannot be normally obtained
+* {{i|Death Certificate}} now ignores changes to item availability caused by items or characters (i.e. Tainted Lost or {{i|Sacred Orb}}) and will only refrain from spawning items locked behind [[achievement]]s or current game rules (challenges or daily runs)
+* Added new co-op babies
+* Updated some of {{c|Eden}}'s hair styles
+* Updated a few item qualities
+* Updated localization files
+
+=== Fixes ===
+* Fixed a crash that could occur when firing large amounts of {{i|Haemolacria}} shots with laser attacks
+* Fixed a crash caused by killing {{e|The Siren}} while she has control of {{i|Lil Delirium}}
+* Fixed reward plates crashing the game when attempting to spawn enemies in {{s|Home}}
+* Fixed {{r|Devil Room}} doors and other temporary doors leaving an invisible door with an invalid state behind when removed (this could cause crashes with certain items such as {{i|Mr. ME!}})
+* Fixed dying from taking a [[devil deal]] sometimes displaying the wrong portrait on the game over screen
+* Fixed enemies attempting to pathfind through {{e|Bomb Grimace}}s and {{e|Quake Grimace}}s
+* Fixed {{i|We Need To Go Deeper!}}/{{i|Mom's Shovel}} being unable to create crawlspaces with {{i|Car Battery}}
+* Fixed item pedestals duplicated by {{i|Crooked Penny}} forgetting their option group, allowing all duplicated options to be picked up
+* Fixed instant death when turning into {{c|Keeper}} using {{i|Clicker}} while having 2 or more [[Broken Heart]]s
+* Fixed instant death when {{i|Esau Jr.}} grants {{i|Heartbreak}} when used as {{c|Keeper}}
+* Fixed {{c|Tainted Lazarus}} becoming intangible when using {{i|Flip}} with {{i|Car Battery}} and {{i|Birthright}}
+* Fixed {{p|III - The Empress?}} not applying its speed decrease as intended
+* Fixed {{p|III - The Empress?}} not tracking HP overflow correctly, removing more hearts than intended upon wearing off in certain situations
+* Fixed {{p|II - The High Priestess}} being able to target {{e|Dark Esau}} and {{i|Blood Puppy}}
+* Fixed {{i|Tooth and Nail}} not ticking while Isaac is holding an item above his head (this could be abused for near-infinite invincibility)
+* Fixed {{i|Tooth and Nail}} not removing its invincibility effect until the room is left if the item is dropped or destroyed
+* Fixed the {{i|Broken Modem}} sometimes causing enemies to remain frozen forever if the item is dropped or destroyed when enemies are present in the room
+* Fixed the {{i|Book of Shadows}} visually giving wings to Isaac when he also has {{i|Jupiter}}
+* Fixed items gained through full run reroll effects (such as {{i|D4}}) not contributing towards transformations
+* Fixed [[transformation]] progress not being properly decreased when holding several copies of the same passive item and losing one or more
+* Fixed active items losing their [[transformation]] progress when crafting a new one as {{c|Tainted Cain}}
+* Fixed active items losing their [[transformation]] progress when dropping them with {{t|Butter!}}
+* Fixed not being able to shoot or interact after using a pill while flying during the {{i|Mega Mush}} effect
+* Fixed a softlock that could occur when saving and resuming a run while picking up {{i|Dad's Note}}
+* Fixed being able to use {{p|Soul of Isaac}} on {{i|Dad's Note}}
+* Fixed {{i|Trisagion}} effects lingering when combined with {{i|Lachryphagy}} or {{i|Angelic Prism}}
+* Fixed {{i|Star of Bethlehem}} not entering special boss rooms in the {{s|???}} and {{s|Corpse}} II
+* Fixed the {{i|D10}} being able to devolve permanently charmed enemies
+* Fixed the {{i|Book of Revelations}} replacing {{e|Mother}}'s boss room with {{e|Death}} in the [[Red Redemption]] challenge
+* Fixed {{e|Chub}}, {{e|C.H.A.D.}} and {{e|Carrion Queen}} missing their body segments when spawned by {{i|Delirious}}
+* Fixed {{i|Technology 2}}'s laser persisting when changing form as {{c|The Forgotten}} or when it is removed/rerolled
+* Fixed {{i|Cursed Eye}} only allowing {{c|The Forgotten}} to charge up to 4 attacks rather than the intended 5
+* Fixed a softlock caused by using {{i|Clicker}} or reviving from {{i|Lazarus' Rags}} as {{c|Tainted Forgotten}} while his body is in a location that would be inaccessible without flight
+* Fixed {{c|Lilith}} being able to shoot tears normally when using the {{i|Glowing Hourglass}} after reviving as a different character
+* Fixed the {{i|Glowing Hourglass}} not losing its uses when used in the {{e|The Beast}} fight and behaving like an infinitely reusable teleport
+* Fixed the {{i|Glowing Hourglass}} not losing its uses when rewinding to a state where it is inside {{i|Moving Box}}
+* Fixed the {{i|Glowing Hourglass}} triggering effects that normally trigger at the start of a new level when rewinding back to a previous level
+* Fixed {{i|Twisted Pair}} entering a bugged state when rewinding with the {{i|Glowing Hourglass}} or starting a [[victory lap]]
+* Fixed {{i|Guppy's Eye}} incorrectly predicting item drops from shopkeepers
+* Fixed enemies rarely spawning behind [[rocks]] in certain {{r|Challenge Room}}/[[Greed mode]] waves
+* Fixed a minor hitch in the loop of {{e|The Lamb}}'s fight theme
+* Fixed {{i|The Sad Onion}}'s costume not appearing on most characters
+
+=== Modding changes<ref>[https://pastebin.com/raw/ujwS23xf List of technical changes on Pastebin]</ref> ===
+* Added extra safety checks to prevent crashing on startup after disabling mods that contain custom characters or items
+* Fixed a crash when resuming a run that was stopped while in the temporary room created by the <code>goto</code> command
+* Fixed not being able to register more than one <code>MC_PRE_PLAYER_COLLISION</code> callback
+* Added a new debug flag (14) which displays Lua memory usage as a graph
+* Added a dedicated memory pool for use by Lua scripts (this should prevent issues with loading sounds and textures when many large mods are loaded at the same time)
+* Added <code>--luaheapsize</code> as a startup parameter for debugging purposes
+** There is no reason to use it unless your mod runs into memory issues and you suspect this update is responsible
+** This is used to configure the size of the memory pool reserved by Lua on startup
+** The default value is <code>--luaheapsize 1024M</code>, or 1 GB
+** Keep in mind Repentance is a 32-bit application so trying to allocate 1.5 GB or more will most likely fail
+** <code>--luaheapsize 0</code> disables the dedicated memory pool, causing Lua memory allocation to behave like it did prior to this update
+** If the parameter is invalid or the game fails to allocate the requested amount of memory, it will attempt to allocate 512 MB instead, then fall back to <code>--luaheapsize 0</code> if that also fails
+* Moved all callback related logic to Lua (this should improve performance when many callbacks are registered)
+** Added <code>Isaac.RunCallback(callbackId, entityId, ...)</code>
+*** This runs all functions tied to the given callback and <code>entityId</code> (<code>entityId</code> may be <code>nil</code> for callbacks that do not depend on specific entity types)
+** Added <code>Isaac.AddPriorityCallback(mod, callbackId, priority, func, entityId)</code>
+*** Adds a callback with the given priority, callbacks with higher priority values are called later
+*** Added a <code>CallbackPriority</code> enum with preset priority values
+*** This function is also available from the mod object returned by <code>Isaac.RegisterMod</code>
+** <code>Isaac.AddCallback</code>, <code>Isaac.AddPriorityCallback</code>, <code>Isaac.RemoveCallback</code> and <code>Isaac.RunCallback</code> now accept any value as a callback ID, even non-numeric values such as strings
+*** This may be used by mods to define custom callbacks for other mods to use
+*** Custom callbacks added this way will be automatically removed when a mod is unloaded
+** Added <code>ModCallbacks.MC_PRE_MOD_UNLOAD(mod)</code>
+*** This is called before any mod is unloaded (by disabling it in the mod menu or reloading it via <code>luamod</code>)
+*** The table of the mod being unloaded is passed to this callback as an argument
+* Added missing enum <code>TearVariant.FETUS</code>
+* Added <code>LaserVariant</code> enum
+* Added <code>SortingLayer</code> property to <code>Entity</code>, accepts any value from the <code>SortingLayer</code> enum
+** <code>SortingLayer.SORTING_NORMAL</code> is the default behavior
+** <code>SortingLayer.SORTING_BACKGROUND</code> is used by [[creep]] and other entities that should render behind everything else in the room
+** <code>SortingLayer.SORTING_DOOR</code> is used by entities that should be rendered on the walls of the room, after background entities but before every other entity
+* Fixed <code>Room:GetSeededCollectible</code> crashing the game when called
+** Arguments are now <code>Room:GetSeededCollectible(int Seed, bool NoDecrease = false)</code>
+** When <code>NoDecrease</code> is <code>true</code>, returned collectibles will not be removed from the pools they came from
+* Removed <code>ShockwaveParams</code>, <code>Room:SetShockwaveParam()</code> and <code>Room:GetNextShockwaveId()</code>
+* Added <code>Game:MakeShockwave(Vector Position, float Amplitude, float Speed, int Duration)</code>
+** For reference, {{e|Monstro}}'s stomp has <code>Amplitude=0.035, Speed=0.025, Duration=10</code>
+* Added the following properties and methods to <code>ItemConfig.Card</code>:
+** <code>int PickupSubType</code>
+** <code>int CardType</code> (accepts any value from the <code>ItemConfig.CARDTYPE_*</code> enum)
+** <code>int AnnouncerVoice</code> (accepts any value from the <code>SoundEffect.SOUND_*</code> enum)
+** <code>int AnnouncerDelay</code>
+** <code>int MimicCharge</code>
+** <code>bool IsCard()</code>
+** <code>bool IsRune()</code>
+** <code>bool IsAvailable()</code>
+* Added the following properties and methods to <code>ItemConfig.PillEffect</code>:
+** <code>int AnnouncerVoice</code> (accepts any value from the <code>SoundEffect.SOUND_*</code> enum)
+** <code>int AnnouncerVoiceSuper</code> (accepts any value from the <code>SoundEffect.SOUND_*</code> enum)
+** <code>int AnnouncerDelay</code>
+** <code>int MimicCharge</code>
+** <code>int EffectClass</code>
+** <code>int EffectSubClass</code>
+** <code>bool IsAvailable()</code>
+* Added the following methods to <code>ItemConfig.Item</code>:
+** <code>bool IsAvailable()</code>
+
+== Undocumented Changes ==
+* Fixed the {{i|Glowing Hourglass}} removing {{C|Eden}}/{{C|Tainted Eden}} starting items if used immediately in the first room of the first floor. Instead, it will send the player to {{S|Home}}.
+* Removed the "loadfile" global function, which was used in various mods. Presumably, this was due to security concerns.
+
+== References ==
+{{reflist}}
+
+{{nav|version}}

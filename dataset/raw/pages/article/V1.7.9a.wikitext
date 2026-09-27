@@ -1,0 +1,56 @@
+{{infobox version
+ | dlc   = r
+ | steam = 6232446836692812577
+ | date  = 2022-11-11
+}}
+
+== Documented Changes ==
+=== Gameplay Changes ===
+* Reduced the chance of {{e|Baby Plum}} being struck by a ballistic missile on death to 0.0001% (was 100%)
+* Increased the maximum damage dealt by {{i|Cube Baby}} when pushed.
+* Added special interactions with {{i|Book of Virtues}} and {{c|Judas}}' {{i|Birthright}} when executing a perfect block with {{I|Breath of Life}}.
+* {{i|Breath of Life}} no longer wastes a charge if released after being fully charged by clearing a room.
+* {{I|Breath of Life}} now has a more intuitive interaction with {{i|The Battery}}.
+* Flying enemies will now be teleported to accessible positions if rerolled into non-flying enemies by the {{i|D10}}
+* {{i|Sanguine Bond}} will now immediately spawn its spikes in the middle of the room when picked up in a {{r|Devil Room}}
+* Added unique drops to {{s|Corpse}} polyps
+* Added a proper death portrait for the {{s|Mausoleum}} door
+* Renamed the "Glowing Hour Glass" to "Glowing Hourglass"
+* Updated a few item qualities
+* Updated localization files
+
+=== Fixes ===
+* Fixed the game failing to start on Windows 7.
+* Fixed {{i|Cube Baby}} moving in the wrong direction when thrown using {{i|Mom's Bracelet}}.
+* Fixed {{i|Cube Baby}} spinning while held with {{i|Mom's Bracelet}}.
+* Fixed exchanging active items in the Death Certificate area not kicking the player back to the main floor.
+* Fixed {{e|Mega Satan}}'s door being able to spawn in the {{i|Death Certificate}} area if {{i|Death Certificate}} was used in the {{s|Chest}} or the {{s|Dark Room}}.
+* Fixed {{p|0 - The Fool}} crashing the game or not teleporting the player to the correct room when used in the {{i|Death Certificate}} area.
+* Fixed a crash caused by using {{i|Breath of Life}} with {{t|Butter!}}.
+* Fixed {{i|Breath of Life}} setting {{c|Bethany}}'s {{e|Soul Heart}} counter to zero.
+* Fixed {{i|Breath of Life}} sometimes providing infinite invincibility while remaining in contact with an enemy.
+* Fixed the {{i|D10}} being able to affect {{e|Delirium}} when transformed into certain bosses.
+* Fixed several enemies not being correctly devolved by the {{i|D10}}.
+* Fixed {{i|D10}} wisps rerolling hit enemies into random enemies instead of devolving them.
+* Fixed the {{i|D infinity}} still causing the {{i|D10}} full-screen animation to play.
+* Fixed Glowing Hourglass infinitely regaining uses when traveling between floors.
+* Fixed Glowing Hourglass uses not decrementing when used with the {{t|'M}} trinket.
+* Fixed Glowing Hourglass uses not decrementing when reverting {{c|Tainted Lazarus}} to his other form.
+* Fixed Glowing Hourglass uses resetting when swapped between {{c|Jacob and Esau}}.
+* Fixed {{i|Void}} not always losing its charge when mimicking Glowing Hourglass with {{i|Schoolbag}}.
+* Fixed {{i|Genesis}} allowing challenges and daily runs to continue beyond their intended goal.
+* Fixed {{c|Tainted Forgotten}}'s items not being rerolled by dice rooms if they were triggered by {{c|Tainted Soul}}.
+* Fixed {{c|Tainted Forgotten}} not gaining damage increases from {{i|Sanguine Bond}}.
+* Fixed not being able to buy items surrounded by spikes from {{i|A Pound of Flesh}} while invincible.
+* Fixed backdrop graphics for L rooms not loading properly in the Womb.
+* Fixed a couple of room layout issues in the {{s|Catacombs}} and {{s|Gehenna}}.
+
+=== Modding changes ===
+* Devolution entries can now be added to <entity> elements in entities2.xml to make modded enemies compatible with the D10, syntax is <devolve id="type.variant.subtype" weight="weight" /> (ex: <devolve id="10.1.0" weight="1" />)
+* Devolution entries are randomly picked according to the room's seed if more than one entry is present (enemies of the same type in the same room will always devolve into the same entity)
+* Devolution ID follows room layout rules, i.e. 999 is used instead of 1000 for effect entities, 1000 and higher are used for grid entities, allowing certain enemies to be rerolled into rocks or other obstacles
+* Added MC_PRE_ENTITY_DEVOLVE(Entity) callback for more complex custom behavior, returning true overrides default behavior
+* Added HUD:Update(), HUD:PostUpdate() and HUD:Render()
+* Added missing enums to TearFlags, SeedEffect and SoundEffect
+
+{{nav|version}}

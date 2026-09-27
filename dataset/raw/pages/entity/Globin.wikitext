@@ -1,0 +1,107 @@
+{{infobox monster
+ | id          = 24
+ | base hp     = 33
+ | environment = {{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|Corpse}}<br>{{floor|Sheol}}<br>{{room|challenge}}
+ | behavior    = Chases Isaac, dealing a full heart of contact damage. Upon taking enough damage, it collapses into a pile of goo, which can be killed. Will regenerate after a short period of time if not killed quickly.
+}}
+
+'''Globins''' chase after Isaac, similar to {{e|Gaper}}s but are much faster. Instead of dying, they will collapse into goo and then regenerate after a few moments unless destroyed in their goo form. Each time a Globin is turned into goo form, it will have its total health decreased. Globins will do 1 full heart of damage on contact.
+{{clear}}
+
+== Variations ==
+=== Gazing Globin ===
+{{infobox monster
+ | name           = Gazing Globin
+ | base hp        = 33
+ | variant        = 1
+ | environment    = {{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|Corpse}}<br>{{floor|Sheol}}{{floor|Cathedral}}
+ | replace        = Globin
+ | replace chance = 9.49%
+ | behavior       = Quickly chases Isaac, dealing a full heart of contact damage. Upon taking enough damage, it collapses into a pile of goo, which will slide away from Isaac and can be killed. Will regenerate after a short period of time if not killed quickly.
+}}
+
+'''Gazing Globins''' are an alternate version of the Globin which have a 9.49% chance to replace regular Globins. Gazing Globins run towards Isaac with increased speed and slide away when they collapse into goo, but otherwise function identically to regular Globins.
+{{clear}}
+
+=== Dank Globin ===
+{{infobox monster
+ | dlc         = a
+ | name        = Dank Globin
+ | image name  = * {{dlc|nr|Afterbirth}}
+ | variant     = 2
+ | base hp     = 33
+ | environment = {{floor|Dank Depths}}<br>{{floor|Sheol}}<br>{{room|challenge}}
+ | replace        = Globin, Gazing Globin
+ | replace chance = 50%
+ | replace notes  = in {{s|Dank Depths}}
+ | behavior    = Chases Isaac, dealing a full heart of contact damage. Upon taking enough damage, it collapses into a pile of goo, spawns a {{E|Spider}}, and leaves a puddle of slowing [[Creep#Black Creep|Black Creep]]. Will regenerate after a short time if not killed quickly. Leaves another puddle of Black Creep upon death.
+}}
+
+'''Dank Globins''' behave identically to regular Globins. Each time they collapse, they leave behind a puddle of slowing [[Creep#Black Creep|Black Creep]] and spawn a {{e|Spider}}. They spawn another puddle of Black Creep when finished off.
+{{clear}}
+
+=== Cursed Globin ===
+{{infobox monster
+ | dlc         = r
+ | name        = Cursed Globin
+ | variant     = 3
+ | base hp     = 33
+ | environment = {{floor|Mausoleum}}{{floor|Gehenna}}<br>{{room|challenge}}
+ | behavior    = Chases Isaac, dealing a full heart of contact damage. Upon taking enough damage, it collapses into 1-2 piles of goo, each of which can be killed and regenerate after a short period of time if not killed quickly. These goo piles have less health the more times the Cursed Globin splits.
+}}
+
+'''Cursed Globins''' are a variant of Globin that chase Isaac at a pace similar to a Gazing Globin. However, they will split into two piles of goo instead of one, and unless killed in this goo form, they will regenerate quickly into two Cursed Globins.
+
+There is a maximum number of times the Cursed Globin can split.
+
+Champion Cursed Globins will split into non-champion enemies.
+{{clear}}
+
+=== Black Globin ===
+{{infobox monster
+ | dlc         = a
+ | name        = Black Globin
+ | id          = 278
+ | base hp     = 33
+ | environment = {{floor|Sheol}}<br>{{floor|Dark Room}}<br>{{room|challenge}}
+ | behavior    = Chases Isaac, dealing a full heart of contact damage and launching {{e|Spider}}s towards Isaac whenever it takes damage. Spawns a Spider, a {{e|Black Globin's Head}}, and a {{e|Black Globin's Body}} upon death.
+}}
+
+'''Black Globins''' walk towards Isaac, launching {{e|Spider}}s towards Isaac every time it takes damage. Upon death, they spawn another spider and split into a {{e|Black Globin's Head}} and a {{e|Black Globin's Body}}. This makes them the only Globin variant that doesn't have a goo form.
+
+{{clear}}
+
+=== Clickety Clack ===
+{{infobox monster
+ | dlc         = r
+ | name        = Clickety Clack
+ | id          = 889
+ | base hp     = 20
+ | stage hp    = 3
+ | environment = {{floor|Catacombs}}<br>{{floor|Ashpit}}<br>{{room|boss}}{{room|challenge}}{{room|boss challenge}}
+ | behavior    = Walks towards Isaac and turn into a pile of bones when killed. Regenerates a few seconds after killed. Will only despawn if all Clickety Clacks in the room are killed.
+}}
+'''Clickety Clacks''' are a bony version of Globins that alternate between chasing Isaac and wandering around the room. They turn into a pile of bones that can block Isaac's tears when killed, and will eventually regenerate if any other Clickety Clacks in the room are still alive. Only when all Clickety Clacks in the room are dead will the piles of bone disappear.
+{{clear}}{{dlc clear}}
+
+== Gallery ==
+<gallery>
+File:Cursed Globin Gehenna.png|A Cursed Globin's appearance in Gehenna.
+</gallery>
+
+== Notes ==
+* [[Champion|Dark Red Champion]] Globins will turn into goo twice.
+* {{dlc|r}} To prevent softlocks, Clickety Clacks cannot spawn as [[Champion|White Champions]].
+* {{dlc+|r}} 3 Clickety Clacks spawn at the beginning of the {{E|Clutch}} boss fight{{dlc-}}
+
+== Trivia ==
+* {{E|Sloth}} is a recolored Globin.
+* {{E|Super Sloth}} is a recolored Gazing Globin with a large head.
+* The name of the monster is a [[wikipedia:globin|type of protein]] and is also similar to a [[wikipedia:Goblin|goblin]].
+* Globins appear to be based on the [[castlevania:Red Skeleton|Red Skeletons]] from the ''Castlevania'' series since they reform from their pile of bones after being killed. They can only be killed using a special weapon or spell.
+* {{dlc|r}}Clickety Clacks seem to be based on Dry Bones, a ''Mario'' enemy that has a similar mechanic.
+* {{dlc|r}}The [[anti:Cursed Globins|Cursed Globins]] first appeared in the ''Antibirth'' mod where they regenerated at a slower rate.
+* {{dlc|r}}Cursed Globins act similarly to [[nuclearthrone:Cursed Crystal Spider|Cursed Crystal Spiders]] from ''Nuclear Throne''.
+
+{{nav}}
+[[Category:Bone monsters]]

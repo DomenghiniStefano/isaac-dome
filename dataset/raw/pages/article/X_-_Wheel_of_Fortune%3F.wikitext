@@ -1,0 +1,28 @@
+{{header reverse tarot cards}}
+{{Infobox card
+ | dlc         = r
+ | name        = X - Wheel of Fortune?
+ | files name  = X - Inverted Wheel of Fortune
+ | type        = card
+ | id          = 66
+ | quote       = Throw the dice of fate
+ | description = Invokes a random {{r|Dice Room}} effect.
+ | unlocked by = Wheel of Fortune
+ | recharge    = 4
+}}
+
+{{cit|uc|r}}
+
+== Effects ==
+* Invokes a random {{r|Dice Room}} effect.
+
+== Notes ==
+* There is no clear indication as to what effect is triggered.
+
+== Synergies ==
+* {{I|Tarot Cloth}}: Invokes an additional random {{r|Dice Room}} effect.
+
+== In-game Footage ==
+{{#ev:youtube|b3cZ6UlSuRk}}
+
+{{nav|fr=X - La Roue de Fortune ?|card}}

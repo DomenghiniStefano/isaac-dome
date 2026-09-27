@@ -1,0 +1,87 @@
+{{toc right}}{{page dlc|ana+}}
+
+== [[boisite:115745801844|April 7 Update (Update #1)]] ==
+In the April 14th update, Edmund revealed that ''The Binding of Isaac: Rebirth'' would be coming to the [[wikipedia:New Nintendo 3DS|New Nintendo 3DS]], the [[wikipedia:Wii U|Nintendo Wii U]], and the [[wikipedia:Xbox One|Xbox One]]. A new [[Item#Activated Collectibles|active item]], the [[Friend Ball]] was also revealed.
+
+== [[boisite:116361536234|April 14 Update (Update #2)]] ==
+In this update, a new music track called ''Pulso Profundum'' was revealed. It is an alternative track for [[The Depths]] and [[Necropolis]]. Each [[Chapters|chapter]] will have an alternative music track that could be used instead of the original tracks. At least 8 new tracks are being added to the expansion.
+
+== [[boisite:116987269584|April 21 Update (Update #3)]] ==
+In the April 21st update, it was revealed that approximately 20 new [[trinkets]] were being added. One of them was teased is called [[Safety Scissors]]. A [[Pickups#Bombs|bomb]] synergy was also teased that appears to spawn mini-[[#Pickups#Troll Bombs|troll bombs]] when a troll bomb explodes.
+
+== [[boisite:117577461949|April 28 Update (Update #4)]] ==
+In the April 28th update, it was revealed that eight new [[transformations]] are being added to the game, including one based on [[Mom]].
+
+== [[boisite:118142172929|May 4 Update (Update #5)]] ==
+In the May 4th update, it was revealed that each [[Chapters|chapter]] will have a rare, more difficult third variant with new music, visuals, and effects. [[Chapters#Chapter 1|Chapter 1]] has the Burning Basement, which features flaming versions of enemies and has a chance to replace rocks with [[Obstacles#Fireplace|fireplaces]].
+
+== [[boisite:118734743319|May 11 Update (Update #6)]] ==
+In the May 11th update, the Fat Bat, a new variant of the [[One Tooth]], was revealed.
+
+== [[boisite:119330273474|May 18 Update (Update #7)]] ==
+A new music track for a new game mode was revealed. The track is a remix of Rebirth's title music, Genesis 22:10. [[Rooms#Sacrifice Rooms|Sacrifice Rooms]] are also to be receiving an overhaul to make them more useful, and a new unnamed item was also teased.
+* This item name begins with "de" and is speculated to be called [[Dead Eye]]. The concept was originally proposed in a community thread on Reddit.
+
+== [[boisite:119975207139|May 26 Update (Update #8)]] ==
+The teased item, confirmed to be called the Dead Eye, was revealed. The Dead Eye raises Isaac's damage on each consecutive hit, with a maximum of 2x damage. Another item, called the [[Continuum]] was also revealed. With it, when tears are shot off the side of the screen, they will loop back through the opposite wall. Daily Rebirth Runs with scoreboards were also revealed.
+
+== [[boisite:120502015899|June 2 Update (Update #9)]] ==
+A new boss known as the [[Rag Man]] was revealed. He can shoot out 3 purple (possibly homing) shots in quick succession, and can also spawn in a new type of [[Spider#Ragling|Ragling]] with an alternative skin. He appears to also be able to heal himself with a purple beam, while simultaneously spawning a Ragling. Edmund may have suggested that the Rag Man can appear in [[Crawl Space]]s. (However, the name "Crawl Space" was created by an Admin of this wiki as an alternative to the previous name for that type of room and Edmund might not be aware of its usage.)
+
+== [[boisite:121084390904|June 8 Update (Update #10)]] ==
+The new character, [[Lilith]], was revealed. She will start with 3 items and is blindfolded. New room layouts were also revealed, with L-Shaped large rooms now appearing. Things like room weight (the frequency at which a room layout might appear) will be emphasized, with more unique rooms, and [[Cut Content]] (such as [[Cut Content#Pressure Plates|Pressure Plates]]) may be added to the game.
+
+== [[boisite:121656934019|June 16 Update (Update #11)]] ==
+Pressure Plates were confirmed to be added to Afterbirth and will do a variety of different things. Some pressure plates will randomly do something bad or good, and some will open certain doors. A new challenge, called "TURBO!" mode, was also revealed, which is a normal run, except sped up.
+
+== [[boisite:122200451849|June 23 Update (Update #12)]] ==
+Daily Rebirth Runs were further explained, with scoring being the main focus. Points are earned by clearing floors, by beating [[Boss Rush]] and/or [[Bosses#Mega Satan|Mega Satan]], with a bonus that can be earned by currently unknown means. Points are also deducted when the player is hurt by an enemy or when the player picks up an item, and the score will decrease by 1 every single second to encourage fast gameplay.
+
+== [[boisite:122813041679|June 29 Update (Update #13)]] ==
+New room types were revealed, with these rooms being small and wide, or small and tall. The [[3 Dollar Bill]] was updated, now switching tear effects every two to three seconds rather than after exiting a room. The [[Rainbow Worm]], a new trinket, was revealed. When in use, Isaac will fire a tear with a random 'worm effect' every three seconds.
+
+== [[boisite:123420496744|July 6 Update (Update #14)]] ==
+The game was announced to be released on the Xbox One on July 23. A new item, [[More Options]], was revealed, which functions similarly to [[There's Options]] but with treasure rooms instead of bosses, spawning two items in each treasure room but only allowing one to be taken. Additionally, double treasure rooms were announced, which have a very small chance to replace a regular treasure room. An unnamed item, which looks like a white rose, was also seen in the teaser for double treasure rooms.
+
+== [[boisite:124037931109|July 13 Update (Update #15)]] ==
+Afterbirth will feature a lot of new basic pickups, new item types, and 10 new challenges. New content revealed include 3 new pill sprites, a blue chest with a white aura, a sack with a question mark, 2 new trinkets ([[Mom's Locket]] and [[Error]]), 2 new passive collectible items ([[Sack Head]] and [[Fruit Cake]]), and a new monster that could be a boss. Finally, he stated that Afterbirth will be available for pre-order and released in approximately 2 months.
+
+== [[boisite:124615487509|July 20 Update (Update #16)]] ==
+The Afterbirth soundtrack will include 8 new tracks along with a bonus track, and a new alternate boss theme called ''Cerebrum Dispersio'' was revealed. More details were revealed about [[Lilith]]'s starting items, including the [[Incubus]] (a new demon familiar), a new active item (a golden box with a 2 room charge), and an unknown passive item.
+
+== [[boisite:125204869824|July 27 Update (Update #17)]] ==
+Afterbirth will feature five new types  [[Monsters#Champions|champion]] enemies, two of which were revealed in the update. The green pulsing champion splits into two enemies upon death, and the itty bitty champion is much smaller and moves faster. More seed features were announced including a seed code chooser and the ability to combine multiple [[Seeds#Special Seeds|special seeds]].
+
+== [[boisite:125792901269|August 3 Update (Update #18)]] ==
+A new single-use active item, [[Diplopia]], was revealed, which duplicates all pickups and item pedestals in the room. Additionally, Afterbirth will feature many new enemy variants which will primarily be used in the alternate chapters. One such variant, the Drowned Hive, was revealed, which looks and behaves like a [[Mulligan#Hive|Hive]] but spawns dark blue chargers instead of flies.
+
+== [[boisite:126390851399|August 10 Update (Update #19)]] ==
+A new object, the [[Restock Machine]], was revealed, which will primarily be used in the new game mode. Donating money to the Restock Machine restocks purchased items and re-rolls everything else. A new passive item, [[Restock]], was revealed, which causes store items to be restocked when purchased. Additionally, all characters will start with Restock in the new game mode.
+
+== [[boisite:126958800209|August 17 Update (Update #20)]] ==
+Several new item interactions were revealed, including [[Rubber Cement]] causing [[Technology 2]] and [[Brimstone]] beams to bounce and [[Dr. Fetus]] working with [[Sad Bombs]]. Additionally, a new boss, [[Little Horn]], was revealed.
+
+== [[boisite:127517383219|August 24 Update (Update #21)]] ==
+The new game mode was revealed to be [[Greed Mode]], a game mode centered around surviving waves of enemies.
+
+== [[boisite:128066842874|September 1 Update (Update #22)]] ==
+A gameplay video by Cobalt of the DLC during PAX was released, featuring some new items: [[Athame]], [[Crack Jacks]], and [[The Wiz]]. Athame generates a black ring similar to [[The Ludovico Technique]] combined with [[Brimstone]] around Isaac whenever he gets hit, damaging nearby enemies. Crack Jacks grants Isaac 1 red heart container and spawns a random trinket. The Wiz lets Isaac shoot from both eyes at the same time and makes his tears pass above all obstacles, but also results in a permanent R U A Wizard? effect. Also, a few new enemies such as [[Rag Man]] were shown.
+
+== [[boisite:128587755599|September 7 Update (Update #23)]] ==
+The release date trailer was revealed, announcing that the expansion will be released on October 30.
+{{#ev:youtube|LU-oejwVNAM}}
+
+== [[boisite:129105339689|September 15 Update (Update #24)]] ==
+Afterbirth can now be pre-ordered for a discount price of $6.66 on Steam.
+
+== [[boisite:129600893559|September 21 Update (Update #25)]] ==
+Daily Runs were explained and shown a little more in-depth, such as what the menu looks like, the leaderboards, and how certain things will work.
+
+== [[boisite:130107389809|September 28 Update (Update #26)]] ==
+Various GIFs of new combos were shown, which include [[Epic Fetus]] + [[Mom's Knife]] + Loki's Horns, Mutant spider + 20/20 + Spoon bender, [[Technology]] + [[Mutant Spider]] + The Wiz (New DLC item) + [[Rubber Cement]] + [[Spoon Bender]], Dr. fetus + Inner eye + Technology 2 + The Wiz a few others.
+
+== [[boisite:131065125284|October 12 Update (Update #27)]] ==
+The new music track for the Flooded Caves chapter, ''Kave Diluvii'', was revealed.
+
+{{nav}}
+[[Category:Afterbirth]]

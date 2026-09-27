@@ -1,0 +1,35 @@
+{{infobox monster
+ | id           = 46
+ | image name   = * {{dlc|nr|Rebirth}}
+ | is mini-boss = yes
+ | base hp      = 60
+ | stage hp     = {{dlcalt|15|r=20}}
+ | environment  = <u>Mini-Boss</u><br>{{room|mini-boss}}<br><u>Degraded Mini-Boss</u><br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|Corpse}}<br>{{floor|Sheol}}{{floor|Cathedral}}<br>{{floor|Dark Room}}{{floor|Chest}}
+ | pool         = Random [[Tarot Card]] (75% Chance)<br>or<br>{{i|Bob's Rotten Head}} (25% Chance)
+}}
+
+'''Sloth''' is a [[mini-boss]] and one of the [[Seven Deadly Sins]].
+
+== Behavior ==
+Sloth wanders randomly around the room and performs one of two attacks:
+* Fires an {{i|Ipecac}} projectile in Isaac's direction.
+* Spawns a {{e|Charger}} charging in the horizontal direction Sloth is facing before returning to normal Charger patterns.
+Sloth deals a whole heart of contact damage.
+
+== Notes ==
+* Sloth is often encountered with either 2 {{e|Splasher}}s, 2 {{e|Charger}}s, or 2 {{e|Attack Fly||Attack Flies}}.
+* {{dlc|nr}} Sloth can drop {{i|Bob's Rotten Head}} even if Isaac has already encountered/possessed it. 
+
+== Unlockable [[Achievement]]s ==
+{{achievement text | The Book of Sin }}
+
+== Trivia ==
+* According to Edmund McMillen, Sloth's first name is Bob, and Sloth is his last name. His first name is referenced by the items {{i|Bob's Rotten Head}}, {{i|Bob's Curse}} and {{i|Bob's Brain}}, and is also referenced by the {{tf|Bob}} transformation.
+** Furthermore, Edmund confirmed that Bob is [https://twitter.com/edmundmcmillen/status/1218023840145534978?s=21 Isaac’s father’s brother], which makes Bob Isaac’s uncle.
+*** This may possibly be just a joke based on the phrase "Bob's your uncle".
+* Sloth's sprite is just a re-coloring of the {{e|Globin}} enemy. This may have been done humorously to match his sin, Sloth (laziness).
+* The [[wikipedia:Seven Deadly Sins|Seven Deadly Sins]] that these mini-bosses are based upon are, in Christian teachings, a classification of vices from which all others are derived from.
+* Sloth is a personification of one of the Seven Deadly Sins. Sloth is an excessive aversion towards difficulty in regards towards doing good, or moral/spiritual laziness. It is believed to lead to negligence, idleness, spite towards those who do good, despair, and other capital sins such as gluttony and lust.
+
+{{nav|mini-boss|fr=Paresse}}
+[[Category:Seven Deadly Sins]]

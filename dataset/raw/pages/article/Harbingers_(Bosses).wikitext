@@ -1,0 +1,41 @@
+{{header bosses}}
+The '''Harbingers''' are a group of hobbyhorse riding bosses that are unlocked by defeating {{e|Mom}} for the first time.
+
+== [[The Harbingers|Harbingers]] {{Unlockable}} ==
+{| style="width: 100%; text-align: center"
+ | [[file:Boss Famine portrait.png|center|link=Famine]]
+ | [[file:Boss Pestilence portrait.png|center|link=Pestilence]]
+ | [[file:Boss War portrait.png|center|link=War]]
+ | [[file:Boss Death portrait.png|center|link=Death (Boss)]]
+ |-
+ | [[Famine]] {{Unlockable}}
+ | [[Pestilence]] {{Unlockable}}
+ | [[War]] {{Unlockable}}
+ | [[Death (Boss)|Death]] {{Unlockable}}
+ |-
+ | colspan=2|[[file:Boss Conquest portrait.png|center|link=Conquest]]
+ | colspan=2|[[file:Boss Headless Horseman portrait.png|center|link=Headless Horseman]]
+ |-
+ | colspan=2|[[Conquest]] {{Unlockable}}
+ | colspan=2|[[Headless Horseman]] {{Unlockable}}
+ |}
+
+== {{dlc+|r}} [[The Beast|The Ultra Harbingers]] {{unlockable}} ==
+The Ultra Harbingers are a team of stronger forms of [[The Harbingers]]. The team comprises of the main four harbingers without the alternatives of Conquest, or Headless Horseman. They are fought one at a time prior to fighting {{e|The Beast}}.
+{| style="width: 100%; text-align: center"
+ | [[file:Boss Ultra Famine ingame.png|center|link=Ultra Famine]]
+ | [[file:Boss Ultra Pestilence ingame.png|center|link=Ultra Pestilence]]
+ | [[file:Boss Ultra War ingame.png|center|link=Ultra War]]
+ | [[file:Boss Ultra Death ingame.png|center|link=Ultra Death]]
+ |-
+ | [[Ultra Famine]] {{Unlockable}}
+ | [[Ultra Pestilence]] {{Unlockable}}
+ | [[Ultra War]] {{Unlockable}}
+ | [[Ultra Death]] {{Unlockable}}
+ |}
+{{dlc-}}
+== Trivia ==
+* Each of the Harbingers, excluding Conquest, have a unique transition to phase 2/final phase of their fight which is shared by their Ultra versions (Except for Death & Ultra Death). Everything except Famine's head is lost, Pestilence only loses their head, War loses their horse and Death dismounts their horse to fight alongside them.
+** Ultra Death does not dismount, instead upon defeat they lose their scythe and begin descending with the horse while exploding like the other Ultra Harbingers.
+{{nav|boss|fr=Les Cavaliers (Boss)}}
+[[Category:Bosses]]

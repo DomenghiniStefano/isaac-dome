@@ -1,0 +1,250 @@
+{{infobox version
+| dlc = r+
+| date = 2024-11-18
+| name = The Binding of Isaac: Repentance+
+| steam = 7119722540407193807
+}}
+
+== Documented Changes ==
+=== Item Changes ===
+* {{i|Tammy's Head}} - Reduced the duration of the animation when using Tammy’s Head, allowing Isaac to fire more quickly after use.
+* {{i|Lemon Mishap}} - Slightly increased the size of the puddle. Also, the puddle will now persist until Isaac exits the room.
+* {{i|Mega Bean}} - Creates a catastrophic fart that sweeps the entire room.
+* {{i|Milk!}} - The familiar now follows closely behind Isaac and blocks shots. After 10 hits, the glass will break and give Isaac a Tears upgrade for the remainder of the floor.
+* {{i|Delirious}} - Summoned bosses will now persist through rooms. Only one boss can be active at a time. The charge is now variable, based on the quality of the previously summoned boss.
+* {{i|Jar of Wisps}} - Reduced to a 6-room charge, allowing the wisps to stack up to the maximum number more quickly.
+* {{i|Abyss}} - Item quality now impacts the damage of the summoned locust. Locusts now inherit many different effects based on the item destroyed by Abyss.
+* {{i|Flip}} - Charge has been reduced to 4 rooms for {{c|Tainted Lazarus}} only.
+* {{i|Portable Slot}} - Removed from the Shop pool. Added as a possible reward from slot machines.
+* {{i|Void}} - Charge has been reduced from 6 rooms to 4.
+* {{i|Epiphora}} - The Tears upgrade from firing in a single direction is now a smooth increase, instead of being staggered every few seconds.
+* {{i|God's Flesh}} - Doubled the chance of shrink tears firing. Shrunken enemies now briefly flash white before growing back to full size. Enemies that explode, fire shots or summon minions on death can no longer hurt Isaac if they’re killed while shrunken.
+* {{i|Hushy}} - While held in place, Hushy now fires radial bursts of shots.
+* {{i|It Hurts}} - After taking damage, Isaac’s tears will now leave behind small pools of blood creep for the room.
+* {{i|Mars}} - In addition to being invulnerable when charging, Isaac will gain a 1-second bubble of invulnerability after the charge. Hitting obstacles also causes a knockback effect to clear any threats from the surrounding area.
+* {{i|Evil Charm}} - Isaac now gains immunity to spider-web slowdown, flame attacks, fireplaces and poison mushrooms. Isaac can also stand in enemy creep for 1 second before taking damage.
+* {{i|Vasculitis}} - Friendly radial shots fired after killing an enemy will now appear as blood clots to more easily distinguish them.
+* {{i|Lil Portal}} - Has been completely reworked. Double-tapping a fire button is now required to launch Lil’ Portal. After it has consumed enough items and the room is clear, a single portal will spawn and the familiar will now disappear for the remainder of the floor. Entering this portal now takes Isaac to a room where he can pick up or drop off items. This room persists throughout the rest of the current run.
+* {{i|Linger Bean}} - The fart cloud is now deployed after 4 seconds of continuous fire (instead of 7 seconds). The cloud starts small and potent, and will grow and deal reduced damage over the course of 10 seconds.
+* {{i|Jupiter}} - Now heals 2 red hearts instead of just ½.
+* {{i|Butter Bean}} - Recharge time has been reduced from 3 seconds to 2.
+* {{i|The Bean}} - Can now be re-used after a 4-second cooldown (instead of a room charge).
+* {{i|Kidney Bean}} - Can now be re-used after a 4-second cooldown (instead of a room charge).
+* {{i|Dead Bird}} - Will remain active between rooms as long as the player is at ½ heart. (Note: {{c|Eve}} requires 1 full heart.)
+* {{i|Dataminer}} - Using Dataminer in a room with an item pedestal will now reroll it into a glitched item.
+
+=== Fixes ===
+* Bomb rocks can now create bridges across chasms.
+* Fixed a bug where {{i|Technology 2}} and {{i|Mom's Eye}} could cause backward-firing shots to do excessive damage.
+* Fixed an issue with the {{i|D4}} unintentionally being able to force all items in a particular pool to reroll.
+* {{i|Parasitoid}} egg sacs can now be created from {{i|Technology}} shots and {{i|Brimstone}} beams.
+* When picking up cards/pills/runes with tainted characters who carry eternal items, the consumable is now placed behind the item and can be manually selected, avoiding unintentional uses.
+* The {{t|Tick}} trinket can now be removed by picking up the {{t|A Lighter}} trinket.
+* The {{t|Error}} trinket now shows which trinket it is emulating.
+* The {{t|Short Fuse}} trinket now makes {{e|Bomb}}s deal 15% more damage.
+* The number of hits required to make the {{t|Tonsil}} trinket create a familiar has been reduced from 12-20 to 6-12.
+* Increased the chances of the {{t|Wish Bone}} and {{t|Bag Lunch}} trinkets spawning an item.
+* {{i|Lil Delirium}} now contributes to the {{tf|Conjoined}} transformation.
+* Once it’s been unlocked, {{s|The Void}} portal is now guaranteed after defeating {{e|The Lamb}}, {{e|???}} and {{e|Mega Satan}}.
+* Added several new {{c|Eden}} hairstyles.
+* Fixed {{e|Hush}} attacking more aggressively than intended when below 50% HP.
+* Fixed [[PAY TO PLAY]] challenge incorrectly requiring {{i|Mr. Mega}} to be unlocked.
+* Removed {{i|E. Coli}} from [[Scat Man]] challenge, as it made the player virtually invincible.
+* Fixed enemy tear projectiles not having the same collision size as blood projectiles.
+* Fixed being able to reroll some enemies that shouldn't be rerollable (i.e. {{e|Eternal Fly|text=Eternal Flies}}, evolved {{i|Blood Puppy}} and {{e|Rag Mega}}'s purple light beam attack)
+* Reverted {{e|Flesh Death's Head}}'s base HP from 30 back to its original value of 50.
+* Increased the shadow size of {{e|Ultra Greed}}'s coins to make them easier to see when falling.
+* {{e|Ultra Greed}}'s coins can now be devolved into coin pickups using the {{i|D10}}.
+* {{e|Stone Eye}}s now do a full turn before they start firing their laser. (This prevents some unfair damage scenarios when entering a room from the bottom door.)
+* Fixed {{m|Shell Game}}s showing an outdated sprite when the prize is {{i|Skatole}}.
+* Added {{i|Skeleton Key}}, {{i|Best Bud}}, {{i|Angry Fly}} and {{i|Sharp Key}} to the Key Beggar's prize pool.
+* Fixed several items that were missing from [[Greed Mode]]'s item pools.
+* Added several baby familiars to the [[Baby Shop (Item Pool)|Baby Shop pool]] which were previously missing, and removed {{i|Sacrificial Dagger}} from the Baby Shop pool.
+* Fixed {{tf|Guppy}} transformation not granting flight when obtained from {{t|Kid's Drawing}}.
+* Fixed {{i|Candy Heart}} and {{i|Soul Locket}} not updating stats when dropped and picked back up.
+* Adjusted the price of several items in {{i|The Stairway}} shop.
+* Lowered the devil price of {{i|Ocular Rift}}.
+* Lowered the shop price of {{i|D12}} and {{i|Pause}} in [[Greed Mode]].
+* Fixed {{i|D infinity}} displaying the wrong number of charges when first picked up.
+* Fixed {{i|Death's List}}, {{i|Sanguine Bond}} and {{i|Member Card}} not working with {{c|Tainted Lazarus}} when held by his inactive form.
+* Made {{i|Goat Head}}, {{i|D7}}, {{i|Poke Go}}, {{t|Child's Heart}}, {{t|Mom's Pearl}}, {{t|Black Lipstick}} and {{t|Bible Tract}} unobtainable in Greed Mode.
+* Made the Amnesia and ??? pills unobtainable in Greed Mode.
+* Fixed {{i|Bird's Eye}}, {{i|Cube Baby}}, {{i|Poke Go}} and {{i|Blood Puppy}} not being summonable by {{i|Lemegeton}}.
+* Fixed several familiars not being summonable by {{i|Monster Manual}}.
+* Lowered the [[Clear Rune|mimic]] charge of {{p|Soul of Judas}} from 3 to 2.
+* Lowered the [[Placebo|mimic]] charge of Hematemesis from 6 to 4.
+* Increased the [[Blank Card|mimic]] charge of {{p|XVI - The Tower?}} from 3 to 4.
+* Increased the health and damage of wisps spawned when using {{i|Mega Blast}} and {{i|Delirious}} with the {{i|Book of Virtues}}.
+* Made adjustments to several unfair rooms, oddly configured rooms that would very rarely spawn, and added several new rooms.
+* Added a SMALL amount of boss armor to {{e|???}}, {{e|The Lamb}} and {{e|Mother}}.
+
+== Undocumented changes ==
+=== Item Changes ===
+* {{i|The Mark}} and {{i|The Pact}} are now evil up items.
+* The 8 bombs fixed recipe for {{i|Bag of Crafting}} now gives {{i|Mr. Mega}} instead of {{i|Mr. Boom}}.
+* {{i|Hive Mind}} and {{i|???'s Only Friend}} now synergize.
+* {{i|Sticky Bombs}} now spawns [[Blue Spider]]s or [[Blue Flies]] when it damages an enemy.
+
+=== Enemy Changes ===
+* Enemies and bosses such as {{e|Eye}}, {{e|The Bloat}}, or {{e|Gabriel}}, now have an indicator on where they will fire their laser beam in rooms larger than a regular 1x1 room (Online co-op runs only).
+
+=== Quality changes ===
+* {{I|Abyss}}: 4 -> 3
+* {{I|Anarchist Cookbook}}: 1 -> 2
+* {{I|Alabaster Box}}: 2 -> 1
+* {{I|Anima Sola}}: 3 -> 2
+* {{I|Anti-Gravity}}: 2 -> 1
+* {{I|Ball of Bandages}}: 2 -> 1
+* {{I|A Bar of Soap}}: 3 -> 2
+* {{I|Blue Map}}: 2 -> 1
+* {{I|Bob's Brain}}: 1 -> 0
+* {{I|Bobby-Bomb}}: 2 -> 1
+* {{I|Bomb Bag}}: 2 -> 1
+* {{I|The Book of Sin}}: 2 -> 1
+* {{I|Book of the Dead}}: 3 -> 2
+* {{I|Butt Bombs}}: 2 -> 1
+* {{I|Charged Baby}}: 3 -> 2
+* {{I|Charm of the Vampire}}: 1 -> 2
+* {{I|The Compass}}: 2 -> 1
+* {{I|Converter}}: 1 -> 0
+* {{I|Crack the Sky}}: 2 -> 1
+* {{I|Cube of Meat}}: 2 -> 1
+* {{I|Cupid's Arrow}}: 3 -> 2
+* {{I|D100}}: 3 -> 1
+* {{I|D8}}: 2 -> 1
+* {{I|Dad's Ring}}: 3 -> 2
+* {{I|Damocles}}: 2 -> 3
+* {{I|Dead Onion}}: 3 -> 2
+* {{I|Demon Baby}}: 2 -> 1
+* {{I|Distant Admiration}}: 2 -> 1
+* {{I|E. Coli}}: 1 -> 0
+* {{I|Eden's Soul}}: 3 -> 2
+* {{I|Epiphora}}: 2 -> 1
+* {{I|Eraser}}: 2 -> 1
+* {{I|Esau Jr.}}: 2 -> 1
+* {{I|Everything Jar}}: 3 -> 2
+* {{I|Friend Finder}}: 3 -> 2
+* {{I|Genesis}}: 3 -> 2
+* {{I|Golden Razor}}: 1 -> 0
+* {{I|Guillotine}}: 2 -> 0
+* {{I|The Halo}}: 2 -> 3
+* {{I|Head of Krampus}}: 2 -> 1
+* {{I|The Hourglass}}: 1 -> 0
+* {{I|Isaac's Tomb}}: 3 -> 2
+* {{I|The Inner Eye}}: 2 -> 3
+* {{I|The Intruder}}: 3 -> 2
+* {{I|IV Bag}}: 1 -> 2
+* {{I|Jumper Cables}}: 3-> 2
+* {{I|Lachryphagy}}: 2 -> 3
+* {{I|Lil Delirium}}: 2 -> 1
+* {{I|Lil Gurdy}}: 2 -> 1
+* {{I|Little Chubby}}: 2 -> 1
+* {{I|Little Gish}}: 2 -> 1
+* {{I|Lodestone}}: 3 -> 2
+* {{I|The Ludovico Technique}}: 2 -> 1
+* {{I|Luna}}: 2 -> 3
+* {{I|Magic Fingers}}: 1 -> 0
+* {{I|Mars}}: 2 -> 0
+* {{I|Mercurius}}: 3 -> 2
+* {{I|Midas' Touch}}: 2 -> 1
+* {{I|Mom's Bra}}: 1 -> 0
+* {{I|Mom's Razor}}: 2 -> 1
+* {{I|My Reflection}}: 2 -> 3
+* {{I|My Shadow}}: 2 -> 1
+* {{I|Ocular Rift}}: 3 -> 2
+* {{I|Red Candle}}: 2 -> 1
+* {{I|Rock Bottom}}: 3 -> 4
+* {{I|Rocket in a Jar}}: 2 -> 1
+* {{I|Sack of Sacks}}: 3 -> 2
+* {{I|Satanic Bible}}: 4 -> 3
+* {{I|Skeleton Key}}: 3 -> 2
+* {{I|Spear Of Destiny}}: 2 -> 1
+* {{I|Sprinkler}}: 2 -> 1
+* {{I|Sticky Bombs}}: 2 -> 1
+* {{I|Strawman}}: 2 -> 1
+* {{I|Sulfur}}: 3 -> 2
+* {{I|Tammy's Head}}: 2 -> 1
+* {{I|Transcendence}}: 3 -> 2
+* {{I|Treasure Map}}: 2 -> 1
+* {{I|Undefined}}: 2 -> 1
+* {{I|Vade Retro}}: 2 -> 1
+* {{I|Ventricle Razor}}: 1 -> 0
+* {{I|Void}}: 4 -> 3
+* {{I|White Pony}}: 2 -> 3
+
+=== Item Tags Changes ===
+* {{i|Skatole}}: +offensive
+* {{i|Halo of Flies}}: -monstermanual
+* {{i|1up!}}: +uniquefamiliar
+* {{i|The Virus}}: -nolostbr +offensive
+* {{i|The Bible}}: -offensive +nolostbr
+* {{i|Rosary}}: -nolostbr +tearsup +offensive
+* {{i|Ouija Board}}: -nolostbr +tearsup +offensive
+* {{i|Stigmata}}: +nolostbr
+* {{i|Infestation}}: +fly
+* {{i|Daddy Longlegs}}: +monstermanual
+* {{i|Rainbow Baby}}: +monstermanual
+* {{i|Abel}}: +monstermanual
+* {{i|SMB Super Fan}}: +tearsup
+* {{i|Goat Head}}: +nogreed
+* {{i|Dark Bum}}: +offensive
+* {{i|Punching Bag}}: +monstermanual
+* {{i|How to Jump}}: +nolostbr +nocantrip
+* {{i|Satanic Bible}} -nolostbr +offensive
+* {{i|Epiphora}}: +tearsup
+* {{i|Tractor Beam}}: +tearsup
+* {{i|Obsessed Fan}}: +monstermanual
+* {{i|Multidimensional Baby}}: +monstermanual
+* {{i|Milk!}}: +tearsup
+* {{i|D7}}: +nogreed
+* {{i|Clicker}}: -nodaily
+* {{i|Poke Go}}: +summonable +nogreed
+* {{i|Buddy in a Box}}: +monstermanual
+* {{i|Lil Delirium}}: +baby
+* {{i|7 Seals}}: +monstermanual
+* {{i|Death's List}}: +lazarusshared
+* {{i|Divorce Papers}}: +tearsup
+* {{i|Brittle Bones}}: -nolostbr +offensive +tearsup
+* {{i|It Hurts}}: +tearsup
+* {{i|Blood Puppy}}: +summonable +monstermanual
+* {{i|Red Key}}: +nocantrip
+* {{i|The Stairway}}: +lazarussharedglobal
+* {{i|Voodoo Head}}: +nogreed
+* {{i|Member Card}}: +lazarussharedglobal
+* {{i|Lost Soul}}: +uniquefamiliar
+* {{i|Lil Dumpy}}: +monstermanual
+* {{i|Bird's Eye}}: +summonable
+* {{i|Star of Bethlehem}}: +uniquefamiliar
+* {{i|Cube Baby}}: +summonable +monstermanual +offensive
+* {{i|Guppy's Eye}}: +dead
+* {{i|Strawman}}: +uniquefamiliar
+* {{i|Sausage}}: +tearsup
+* {{i|Worm Friend}}: +monstermanual
+* {{i|Sanguine Bond}}: +lazarussharedglobal
+* {{i|Bloody Gust}}: +tearsup
+* {{i|Bag of Crafting}}: +nocantrip
+* {{i|IBS}}: +poop
+
+=== Trinkets Tags Changes ===
+* {{t|Black Lipstick}}: +nogreed
+* {{t|Bible Tract}}: +nogreed
+* {{t|Mysterious Paper}}: +nochallenge
+* {{t|Missing Poster}}: +nochallenge
+* {{t|Broken Ankh}}: +nochallenge
+* {{t|Child's Heart}}: +nogreed
+* {{t|Mom's Pearl}}: +nogreed
+
+=== Miscellaneous Changes ===
+* The [[Online (open beta)|online co-op]] mode is no longer restricted to closed beta and now in open beta.
+* A new [[co-op]] baby (#575 - Jones Baby) was added.
+* A [[Deathmatch]] mini-game was added to coop mode.
+* Any new title card that pops up (i.e. picking up a new item/pickup) immediately after another will display its name and description in a new line beneath the previous rather than replacing it.
+
+=== Fixes ===
+* Fixed {{i|Dream Catcher}} not showing the right items in Greed Mode or if {{t|Broken Glasses}} spawned a second item.
+* Fixed the {{a|5 Nights at Mom's}} achievement not unlocking correctly when using some characters.
+* Fixed {{c|Tainted Forgotten}} not being able to fire after Tainted Soul was getting hit while Tainted Forgotten was holding {{i|Glass Cannon}} over his head.
+* Fixed {{i|Azazel's Rage}} not firing in {{r|Challenge Room}}s/{{r|Boss Rush}}.
+* Fixed range ups reducing {{i|Monstro's Lung}} range.
+
+{{nav|version}}

@@ -1,0 +1,353 @@
+{{infobox monster
+ | id          = 208
+ | base hp     = 20
+ | environment = {{floor|Basement}}{{floor|Cellar}}{{floor|Burning Basement}}<br>{{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{room|challenge}}
+ | behavior    = Slowly walks towards Isaac. Occasionally farts, which pushes Isaac and adjacent enemies away.
+}} {{disambig msg|the monster|the boss|Mega Fatty}}
+
+'''Fatties''' walk slowly toward Isaac, occasionally stopping to fart, which pushes Isaac away without dealing damage if he is too close. This will also push away adjacent enemies to a lesser degree.
+=== Notes ===
+* The {{e|Pale Fatty}}, {{e|Fat Sack}}, {{e|Blubber}}, and the {{e|Conjoined Fatty}} will not spawn anything on death if their HP is dropped to -25 or below in one instance (i.e., by using a Bomb).
+
+__TOC__
+{{clear}}
+
+== Variations ==
+=== Pale Fatty ===
+{{infobox monster
+ | name        = Pale Fatty
+ | variant     = 1
+ | base hp     = 20
+ | environment = {{floor|Basement}}{{floor|Cellar}}{{floor|Burning Basement}}<br>{{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|Cathedral}}<br>{{floor|Chest}}<br>{{room|challenge}}
+ | behavior    = Slowly walks towards Isaac. Occasionally farts and shoots 6 blood shots in all directions. Has a chance to turn into a Blubber upon death.
+}}
+
+'''Pale Fatties''' behave like Fatties, but will also spit out 6 blood shots in all directions when farting. When killed, they have a chance to become a Blubber.
+{{clear}}
+
+=== Flaming Fatty ===
+{{infobox monster
+ | dlc            = a
+ | name           = Flaming Fatty
+ | variant        = 2
+ | base hp        = 18
+ | environment    = {{floor|Burning Basement}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}
+ | replace        = Fatty
+ | replace chance = 60%
+ | replace notes  = in {{s|Burning Basement}}
+ | behavior       = Slowly walks towards Isaac. Occasionally farts, which pushes Isaac and adjacent enemies away {{dlc|r}} and spawns a damaging flame. Has a chance to leave behind a damaging flame upon death.
+}}
+
+'''Flaming Fatties''' behave identically to regular Fatties but have a chance to leave behind a damaging flame upon death. {{dlc|r}} They can also spawn a damaging flame by farting.
+
+Unlike other flaming enemies, they are not immune to damage from fire sources, and regular Fatties will not turn into Flaming Fatties upon contact with any source of fire.
+{{clear}}
+
+=== Fat Sack ===
+{{infobox monster
+ | name        = Fat Sack
+ | id          = 209
+ | base hp     = 16
+ | environment = {{floor|Caves}}{{floor|Catacombs}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|Cathedral}}<br>{{room|challenge}}
+ | behavior    = Slowly walks towards Isaac. Occasionally leaps off-screen and attempts to land on Isaac, leaving a puddle of Red Creep and shooting 6 blood shots in all directions where it lands. Has a chance to turn into a Blubber upon death.
+}}
+
+'''Fat Sacks''' walk slowly towards Isaac and can leap offscreen and attempt to land on Isaac, shooting 6 bullets in all directions and leaving a puddle of [[Creep#Red Creep|Red Creep]] behind when it lands. Like Pale Fatties, they have a chance to turn into a Blubber when killed. These monsters behave very similar to {{e|Leaper}}s.
+{{clear}}
+
+=== Blubber ===
+{{infobox monster
+ | name        = Blubber
+ | id          = 210
+ | base hp     = 16
+ | environment = {{floor|Basement}}{{floor|Cellar}}{{floor|Burning Basement}}<br>{{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{room|challenge}}
+ | behavior    = Walks around aimlessly and randomly spews a cluster of blood shots in all directions. Has a chance to turn into a Half Sack when killed.
+}}
+
+'''Blubbers''' walk aimlessly around the room, randomly spewing a cluster of blood shots in all directions. When killed, there is a chance for it to become a Half Sack.
+{{clear}}
+
+=== Half Sack ===
+{{infobox monster
+ | name        = Half Sack
+ | id          = 211
+ | base hp     = 10
+ | environment = {{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}
+ | behavior    = Wanders around aimlessly and leaves a trail of Red Creep.
+}}
+
+'''Half Sacks''' walk aimlessly around the room and leave behind a trail of [[Creep#Red Creep|Red Creep]].
+{{clear}}
+
+=== Conjoined Fatty ===
+{{infobox monster
+ | dlc         = a
+ | name        = Conjoined Fatty
+ | id          = 257
+ | base hp     = 20
+ | environment = {{floor|Basement}}{{floor|Cellar}}{{floor|Burning Basement}}<br>{{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Necropolis}}<br>{{room|challenge}}
+ | behavior    = Slowly walks towards Isaac. Occasionally pauses to fart out a line of damaging Green Creep towards Isaac. Chance to turn into a regular Fatty upon death.
+}}
+
+'''Conjoined Fatties''' slowly walk towards Isaac and occasionally pause to fart out a line of damaging [[Creep#Green Creep|Green Creep]]. There is a chance that upon death, it will turn into a regular Fatty.
+
+If killed while farting, the Creep line won't grow to its full length. It will instead stop spreading the instant the Conjoined Fatty is killed.
+{{clear}}
+
+=== Blue Conjoined Fatty ===
+{{infobox monster
+ | dlc         = a
+ | name        = Blue Conjoined Fatty
+ | image name  = * {{dlc|nr|Afterbirth}}
+ | variant     = 1
+ | base hp     = 60
+ | environment = {{floor|???}}<br>{{floor|Chest}}
+ | behavior    = Slowly walks towards Isaac and occasionally farts out a homing Ipecac shot at Isaac.
+}}
+
+'''Blue Conjoined Fatties''' slowly walk towards Isaac and occasionally fart out a homing Ipecac shot at Isaac. Unlike normal Conjoined Fatties, they won't turn into any kind of Fatty upon death.
+
+==== Notes ====
+* {{dlc|nr}} They only appear in normal mode.
+** {{i|D10}} can be used to reroll non-boss enemies in {{s|Chest}} and in {{s|The Void}} into Blue Conjoined Fatties even on Hard mode.
+* {{dlc+|r}} They can also appear in {{s|???}} with the use of {{i|Red Key}} or by entering Treasure Rooms with the {{t|Blue Key}}.{{dlc-}}
+* {{dlc+|r}} Blue Conjoined Fatties now have a new appearance, resembling that of {{e|Hush}}.{{dlc-}}
+{{clear}}
+
+=== Peeping Fatty ===
+{{infobox monster
+ | dlc         = r
+ | name        = Peeping Fatty
+ | id          = 835
+ | base hp     = 60
+ | environment = {{floor|Utero}}<br>{{room|challenge}}
+ | behavior    = Has two indestructible Peeping Fatty Eyes that are out of their sockets but attached by muscles. Wanders around the room randomly, or toward Isaac if its eyes see him. Occasionally farts and fires a radial burst of 6 blood shots.
+}}
+
+'''Peeping Fatties''' slowly walk towards Isaac and occasionally fart out 6 blood shots in all directions. They are unique in that they have two indestructible Peeping Fatty Eyes that float around them that are out of their sockets and attached by muscles.
+
+Each eye generally prioritizes its focus on Isaac, but will occasionally become interested in something else, which could be an enemy, obstacle, or a collectible. The Peeping Fatty will sometimes begin pursuing whatever one or both of his eyes have become fascinated with, but will also prioritize chasing Isaac if he is in view.
+
+If both eyes are destroyed (using {{i|Euthanasia}}, for example), the Fatty will become blind and wander around randomly.
+{{clear}}
+
+=== Peeping Fatty Eye ===
+{{infobox monster
+ | dlc         = r
+ | name        = Peeping Fatty Eye
+ | variant     = 10
+ | environment = Spawned in pairs connected to a Peeping Fatty.
+ | behavior    = Invulnerable enemy attached to a Peeping Fatty. Follows Isaac when in line of sight, blocking tears and dealing contact damage.
+}}
+'''Peeping Fatty Eyes''' spawn in pairs and behave differently from similar enemies, as they are attached by muscle-like cords to a Peeping Fatty. Peeping Fatty Eyes each have their individual object of focus which directs the Peeping Fatty's movements. They can still float over obstacles like their variants while the Peeping Fatty cannot. They will be destroyed once their correlating Peeping Fatty dies.
+
+Each eye generally prioritizes its focus on Isaac, but will occasionally become interested in something else, which could be an enemy, obstacle, or a collectible. The Peeping Fatty will sometimes begin pursuing whatever one or both of his eyes have become fascinated with, but will also prioritize chasing Isaac if he is in view.
+{{clear}}
+
+=== Bloaty ===
+{{infobox monster
+ | dlc         = r
+ | name        = Bloaty
+ | id          = 879
+ | base hp     = 26
+ | environment = {{floor|Downpour}}<br>{{floor|Flooded Caves}}<br>{{room|challenge}}
+ | behavior    = Lumbers around, occasionally spitting green shots and a line of damaging [[creep#Green Creep|green creep]] in a random direction.
+}}
+
+'''Bloaties''', unlike other Fatties, seem to be blind and do not chase Isaac nor target him. They lumber in random directions and periodically spit out a line of [[Creep#Green Creep|Green Creep]] and arcing projectiles in the direction they are facing or to its either side, horizontally or diagonally. The initial creep shot can hit Isaac even if he has [[flight]]. Upon death, they leave a small puddle of green creep.
+{{clear}}
+
+=== Bubbles ===
+{{infobox monster
+ | dlc         = r
+ | name        = Bubbles
+ | id          = 806
+ | base hp     = 20
+ | environment = {{floor|Downpour}}{{floor|Dross}}<br>{{room|challenge}}
+ | behavior    = Slowly walks towards Isaac, firing back shots upon taking damage. Occasionally farts, which pushes Isaac and adjacent enemies away and creates a chaotic burst of shots. Creates a geyser of water shots upon death.
+}}
+
+'''Bubbles''' slowly walk towards Isaac like regular Fatties and will occasionally fart, sending out a burst of short range projectiles in all directions. Hitting a Bubbles will cause it to shoot a projectile in a random direction. Upon death, they will burst into a geyser of projectiles that rain down in a large radius.
+{{clear}}
+
+=== Shady ===
+{{infobox monster
+ | dlc         = r
+ | name        = Shady
+ | id          = 888
+ | base hp     = 80
+ | environment = {{floor|Sheol}}<br>{{floor|Dark Room}}
+ | behavior    = Walks slowly toward Isaac, occasionally firing a shot that creates shots perpendicular to itself while traveling and splits into a ring of shots upon hitting a wall or obstacle. Also occasionally jumps, creating lines of explosions in the cardinal directions. One of the few enemies that utilize [[Damage Scaling]].
+}}
+
+'''Shadies''' follow Isaac at a faster pace than regular Fatties and have two attacks which they perform:
+* They can shoot a large black and red projectile towards Isaac which releases accelerating shots perpendicular to itself while traveling. Upon colliding with a wall, the large projectile creates a ring of shots that spread outward.
+* They can jump in place, creating lines of explosions in the cardinal directions upon landing which span the length of the room.
+
+==== Notes ====
+* Shadies are one of the few enemies which utilize [[Damage Scaling]], making their unimpressive HP total misleading. Their armor is quite high and allows them to take massive amounts of punishment before being taken down, comparable even to some bosses.
+{{clear}}
+
+=== Quakey ===
+{{infobox monster
+ | dlc         = r
+ | name        = Quakey
+ | id          = 823
+ | base hp     = 45
+ | environment = {{floor|Mines}}<br>{{room|challenge}}
+ | behavior    =  Walks slowly toward Isaac, occasionally attempting to jump on Isaac, shooting out 8 rock shots when it hits the ground and causing rocks to fall from the ceiling.
+}}
+
+'''Quakeys''' walk slowly towards Isaac and occasionally attempt to jump on Isaac, shooting out 8 rock shots when they hit the ground and causing rocks to fall from the ceiling. Isaac will take knockback if he is standing too close to a Quakey's zone of impact.
+{{clear}}
+
+=== Big Bony ===
+{{infobox monster
+ | dlc         = r
+ | name        = Big Bony
+ | id          = 830
+ | base hp     = 50
+ | environment = {{floor|Ashpit}}<br>{{room|challenge}}
+ | behavior    = Walks slowly toward Isaac, and will occasionally fire a bone that bounces around the room for a few moments. The bone can be broken if shot enough.
+}}
+
+'''Big Bonies''' walk towards towards Isaac, and occasionally fire a large bone projectile that bounces off of objects and can be destroyed.
+{{clear}}
+
+=== Vis Fatty ===
+{{infobox monster
+ | dlc         = r
+ | name        = Vis Fatty
+ | id          = 886
+ | base hp     = 40
+ | stage hp    = 4
+ | environment = {{floor|Mausoleum}}{{floor|Gehenna}}<br>{{room|challenge}}
+ | behavior    = Spawns with a Fetal Demon attached to it and slowly walks towards Isaac. Will occasionally fart, briefly pushing the demon away and spawning creep around itself and the demon. If the demon is killed first, the Fatty will shoot out {{i|Brimstone}} in the diagonal direction closest to Isaac. It will then fly around the room diagonally, bumping off of walls and tall blocks, all while continuously firing {{i|Brimstone}} behind it.
+}}
+
+'''Vis Fatties''' spawn with a Fetal Demon attached to their slit abdomens. The Fatty will slowly walk towards the player while the Fetal Demon occasionally lunges towards Isaac if he gets too close. As it is tethered, the Demon has a limited range of movement. Occasionally, the Vis Fatty will fart, which briefly pushes the Fetal Demon away, giving it a substantial increase in range, as well as creating puddles of damaging [[Creep#Red Creep|Red Creep]] around the Fatty, the Demon, and the cord that attaches them.
+
+If the Fatty is killed first, the Demon will be broken free and continuously chase down the player similar to {{E|Gemini|Display=Gemini's}} Suture. If the Demon is killed first, the Vis Fatty unleashes a {{i|Brimstone}} laser in the closest diagonal direction to Isaac. It will then fly backwards around the room diagonally, bumping off of walls and tall blocks, all while continuously shooting {{i|Brimstone}} behind it.
+
+{{clear}}
+
+=== Fetal Demon ===
+{{infobox monster
+ | dlc         = r
+ | name        = Fetal Demon
+ | variant     = 1
+ | base hp     = 40
+ | stage hp    = 3
+ | environment = {{floor|Mausoleum}}{{floor|Gehenna}}<br> Spawns connected to a Vis Fatty
+ | behavior    = Usually encountered tethered to {{E|Vis Fatty|text=Vis Fatties}}. When tethered it makes short lunges towards Isaac if he gets close. If the Vis Fatty is killed or when encountered alone, it will chase Isaac, similarly to {{E|Gemini}}'s Suture.
+}}
+
+'''Fetal Demons''' usually spawn tethered to a Vis Fatty's slit abdomen and occasionally makes short lunges towards Isaac if he gets close. They can also be propelled a longer distance when the Vis Fatty farts. If the Vis Fatty is killed, they will chase Isaac, similarly to {{e|Gemini|Display=Gemini's}} Suture. The only other place where they can be encountered is in the {{e|Mom}} fight in {{s|Mausoleum}} / {{s|Gehenna}}, and is the only place where they are encountered alone.
+
+{{clear}}
+
+=== Gutted Fatty ===
+{{infobox monster
+ | dlc         = r
+ | name        = Gutted Fatty
+ | id          = 831
+ | base hp     = 80
+ | environment = {{floor|Corpse}}
+ | behavior    = Slowly lumbers around the room, occasionally spawning {{e|Festering Guts}}. Its eyes dislocate as it takes damage, which are invincible and follow the Gutted Fatty but chase Isaac if he gets close to them. Creates a geyser of blood projectiles upon death.
+}}
+
+'''Gutted Fatties''' lumber around the room aimlessly and occasionally shoot out a pile of {{e|Festering Guts}} downwards leaving a trail of [[Creep#Red Creep|Red Creep]]. They can spawn a maximum of 3.
+
+Every time a third of the Gutted Fatty's health is depleted, it spawns a Gutted Fatty Eye. These eyes normally float around the Gutted Fatty they emerged from and block shots. Whenever Isaac walks too close to one of these eyes, they will abandon their position and begin slowly chasing him instead. The eyes will return to defending the Gutted Fatty if Isaac walks far enough away from them. The eyes only die when the Gutted Fatty dies.
+
+Upon death, the Gutted Fatty explodes into a massive shower of blood projectiles, similar to that of Bubbles.
+{{clear}}
+
+=== Gutted Fatty Eye ===
+{{infobox monster
+ | name        = Gutted Fatty Eye
+ | dlc         = r
+ | variant     = 10
+ | environment = Spawned in pairs by Gutted Fatties.
+ | behavior    = Invulnerable enemy spawned by Gutted Fatties. Hovers around their correlating Gutted Fatty unless Isaac draws near, after which it will chase Isaac, blocking tears and dealing contact damage.
+}}
+'''Gutted Fatty Eyes''' spawn in pairs, but do not bounce around the room erratically like similar enemies. They are spawned by a Gutted Fatty as it takes damage, one at 66% HP and a second at 33% HP. When spawned, they will hover around their correlating Gutted Fatty blocking tears. They will be destroyed once their correlating Gutted Fatty dies.
+
+Whenever Isaac walks too close to one of these eyes, they will abandon their position and begin slowly chasing him instead, moving in wave-like patterns. If both eyes are chasing Isaac, they will maintain a distance between the two as they move in order to cover more area. They will return to defending the Gutted Fatty if Isaac walks far enough away from them.
+{{clear}}
+
+=== Stoney ===
+{{infobox monster
+ | dlc            = a+
+ | name           = Stoney
+ | id             = 302
+ | environment    = {{floor|Basement}}{{floor|Cellar}}{{floor|Burning Basement}}<br>{{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Mines}}{{floor|Ashpit}}<br>{{floor|Depths}}{{floor|Necropolis}}{{floor|Dank Depths}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|Sheol}}{{floor|Cathedral}}
+ | replace        = Pale Fatty
+ | replace chance = 10%
+ | behavior       = Chases Isaac and blocks tears, but does not deal contact damage. Temporarily pauses in exhaustion after a certain amount of time. Invulnerable; dies when the room is cleared.
+ | unlocked by    = The gate is open!
+}}
+
+'''Stoneys''' walk towards Isaac while blocking his shots. They stop and catch their breath after chasing Isaac for a few seconds. They do not do contact damage but will often push Isaac around. They are invincible, but die when the room is cleared, similar to the {{e|Death's Head}} enemies.
+
+==== Notes ====
+* If Stoneys aren't unlocked yet, they will be replaced by Fatties in Normal mode, or Conjoined Fatties in [[Hard Mode]].
+* [[Spectral tears]] and {{dlc|nr}} [[piercing tears]] will pierce through Stoneys.
+* {{dlc|nr}} If they are poisoned with {{i|The Virus}}, upon clearing the room, they have a chance to drop a Black Heart despite not taking damage.
+* Stoneys are immune to all [[status effect]]s.
+* Stoneys can be killed with {{p|Chaos Card}}, {{i|Euthanasia}}, and {{i|Little Horn}}.
+* Stoneys were nerfed in update [[v1.06.0188]] by making them pause in exhaustion after following the player. Before that, Stoneys would continually chase the player.
+{{clear}}
+
+=== Cross Stoney ===
+{{infobox monster
+ | dlc            = a+
+ | name           = Cross Stoney
+ | variant        = 10
+ | replace        = Stoney
+ | replace chance = 20%
+ | replace notes  = in {{chal|Aprils Fool}}
+ | behavior       = Chases Isaac and shoots 4 tears vertically and diagonally like a {{E|Cross Stone Shooter}}. Dies when the room is cleared.<br>Only appears in [[Aprils Fool]] (challenge #32) as replacements to regular Stoneys.
+ | unlocked by    = The gate is open!
+}}
+
+A '''Cross Stoney''' is a type of Stoney added in Booster Pack #5. These new enemies act like a hybridization of a Stoney and a {{e|Cross Stone Shooter}}; they constantly chase the player like a Stoney but will shoot 4 shots outwards vertically and diagonally like a Cross Grimace.
+
+Cross Stoneys only appear in [[challenge]] #32 ([[Aprils Fool]]) as replacements to regular Stoneys.
+{{clear}}{{dlc clear}}
+
+== Gallery ==
+<gallery>
+File:Bubbles Dross.png|{{dlc|r}} A Bubbles' appearance in Dross.
+File:Gutted_Fatty_OneEye.png|{{dlc|r}} Gutted Fatty missing an eye.
+File:Gutted_Fatty_Eyeless.png|{{dlc|r}} Gutted Fatty missing both eyes.
+File:Fatty Will.png|A Fatty on Isaac's Last Will.
+File:Edmund McMillen Rebirth Monster Sketches.jpg|Sketches of monsters for the Binding of Isaac: Rebirth, including the Fatty, the Fat Sack, the Blubber, and the Half Sack.
+File:BloatyConceptArt.png|{{dlc|r}} Concept art for the Bloaty.
+File:Quakey old.png|{{dlc|r}} Quakeys in ''Antibirth''.
+File:Repentance Monster Sketches.png|{{dlc|r}} Concept sketches of monsters implemented in Repentance, including the Peeping Fatty.
+File:Repentance Enemy Design Sketches.png|{{dlc|r}} Concept art of various enemies by Edmund McMillen, including the Gutted Fatty.
+</gallery>
+
+== Trivia ==
+* {{e|Death's Head}}, {{e|Flesh Death's Head}}, Stonies, Cross Stonies, and {{e|Eggy|text=Eggies}} are the only non-boss enemies with a death animation.
+* Conjoined Fatties and Bloaties are one of five enemies (four without ''Repentance'', three without ''Afterbirth+'') in the game that use [[Creep]] as projectiles, the others are {{e|Ultra Pride}}, {{e|Meatball}}s and {{e|The Thing}}.
+* Blubbers appear to be headless Pale Fatties or, more accurately, headless Fat Sacks.
+** Similarly, Half Sacks appear to be the lower portions of Pale Fatties or, more accurately, the lower portions of Fat Sacks.
+* {{dlc|a}} Conjoined Fatties and Blue Conjoined Fatties suffer the condition of [[wikipedia:Polycephaly|polycephaly]], having more than one head.
+* {{dlc|ana+}} Conjoined Fatties and Blue Conjoined Fatties make the same high-pitched growling noises as {{e|Gaper}}s instead of the lower-pitched ones used by other Fatties.
+* {{dlc|a+}} Stoneys make the sounds of a pitched-down Gaper.
+** {{dlc|r}} Stoneys make the sounds of a pitched-down Fatty.
+* {{dlc|a+}} Antibirth developer Kilburn first revealed Cross Stoneys on the 1st of April for Booster Pack #5.<ref>[https://twitter.com/FixItVinh/status/980490518747631616 ''"Looking good."'']</ref>
+** It was revealed on the 1st of April, and Cross Stoneys are exclusive to the Aprils Fool Challenge.
+* {{dlc|r}} [[Anti:Bubbles|Bubbles]], [[Anti:Quakey|Quakies]], and [[Anti:Big Bony|Big Bonies]] originate from the ''Antibirth'' mod.
+** In ''Antibirth'', Quakies have a different face.
+** The Big Bony's bone attack is also different from ''Antibirth'', where the bone was instead a lobbed projectile that created shockwaves in the place of its impact. Big Bonies also used to spawn in {{s|Mausoleum|n}}.
+* {{dlc|r}} Vis Fatties look very similar to {{e|Exorcist|n}}s.
+* {{dlc|r}} Bloaty's name and design is somewhat a reminiscent to the human corpse's bloating stage, which causes the corpse to swell up and bear swollen lips and eyeballs due to gas.
+* {{dlc|r}} Shadies are inspired by the Shadow Ninja enemy from the ''Shadow Warrior'' game series.<ref>https://ibb.co/dtzb7Zy</ref>
+
+== References ==
+{{reflist}}
+
+{{nav|booster pack|fr=Gros Tas}}

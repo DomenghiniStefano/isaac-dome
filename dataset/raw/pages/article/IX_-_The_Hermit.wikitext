@@ -1,0 +1,40 @@
+{{header tarot cards}}
+{{Infobox card
+ | name        = IX - The Hermit
+ | id          = 10
+ | quote       = May you see what life has to offer
+ | description = Teleports Isaac to the {{r|Shop}}.
+| recharge =             {{dlcalt|4|r=2}}
+}}
+
+{{cit|c}}
+
+== Effects ==
+* Teleports Isaac to the {{r|Shop}}.
+
+== Notes ==
+* Using '''IX - The Hermit''' on a floor that doesn't have a Shop will teleport Isaac to a random room.
+* When {{curse|Maze}} is active, using this card can teleport Isaac to a random room instead.
+* '''IX - The Hermit''' cannot appear in [[greed mode]].
+
+== Strategy ==
+* '''IX - The Hermit''' allows to access the shop without using a key.
+* '''IX - The Hermit''' can be used to escape any room that locks down after taking its contents, like {{r|Challenge Room}}s or {{r|Boss Rush}}, effectively "stealing" its contents without facing the imposed challenge.
+
+== Synergies ==
+* {{I|Tarot Cloth|r}}: Prevents {{E|Greed}} / {{E|Super Greed}} from spawning in the shop. If Greed was already defeated in the shop, using the card turns it into a normal shop (Does not create a working shop in the [[Mirrored World]]).
+
+== Interactions ==
+* {{I|Tarot Cloth|nr}}: No effect.
+
+== Trivia ==
+* [[wikipedia:The Hermit (tarot card)|The Hermit]] is the ninth card of a Major Arcana set.
+* {{dlc+|r}} There is one room in the game (in {{s|Dross}}) that contains a guaranteed Hermit card (see Gallery). {{dlc-}}
+
+== Gallery ==
+<gallery>
+File:IX - The Hermit Steam Card.jpg|'''IX - The Hermit''''s Steam trading card
+File:Hermit_card_Dross.png|{{dlc+|r}} The room in {{s|Dross}} that contains a guaranteed Hermit card behind a maze of spiked rocks.{{dlc-}}
+</gallery>
+
+{{nav|fr=IX - L'Ermite|card}}

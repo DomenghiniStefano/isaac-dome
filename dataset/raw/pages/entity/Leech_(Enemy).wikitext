@@ -1,0 +1,109 @@
+{{infobox monster
+ | name        = Leech
+ | image name  = * {{dlc|nr|Rebirth}}
+ | id          = 55
+ | base hp     = 25
+ | environment = {{floor|Depths}}{{floor|Dank Depths}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{floor|Corpse}}<br>{{floor|Sheol}}{{floor|Cathedral}}<br>{{room|challenge}}
+ | behavior    = Quickly charges towards Isaac when he gets in its line of sight, dealing a full heart of contact damage.
+}} {{disambig msg|the monster|the item|Leech}}
+
+'''Leeches''' are flying monsters introduced in the vanilla content of ''[[The Binding of Isaac: Rebirth]]''.
+
+Similar to {{e|Charger}}s, if Isaac lines up with a Leech horizontally or vertically, the Leech will quickly charge towards him. Leeches do a full heart of contact damage.
+
+{{dlc|r}} Leeches and their variants are immune to knockback.
+
+__TOC__
+{{clear}}
+
+== Variations ==
+{{infobox monster
+ | name           = Kamikaze Leech
+ | image name     = * {{dlc|nr|Rebirth}}
+ | variant        = 1
+ | base hp        = 25
+ | environment    = {{floor|Necropolis}}<br>{{floor|Sheol}}<br>{{floor|Dark Room}}<br>{{room|challenge}}
+ | replace        = Leech
+ | replace chance = 4.96%
+ | behavior       = Quickly charges towards Isaac when he gets in its line of sight, dealing a full heart of contact damage. Explodes upon death.
+}}
+
+=== Kamikaze Leech ===
+'''Kamikaze Leeches''' are a unique type of Leech with an eye in their mouth. They are introduced in the vanilla content of ''[[The Binding of Isaac: Rebirth]]'' and commonly found in {{s|Sheol}} but can appear elsewhere such as {{s|Necropolis}} and {{s|Dark Room}}.
+
+These behave similarly to normal Leeches, but explode upon death. They can be spawned by a couple of bosses, such as {{e|Satan}}'s second form; as well, two of these will also appear to either side of {{e|The Fallen}} during the first phase of this battle.
+{{clear}}
+
+=== Holy Leech ===
+{{infobox monster
+ | name           = Holy Leech
+ | image name     = * {{dlc|nr|Rebirth}}
+ | variant        = 2
+ | base hp        = 25
+ | environment    = {{floor|Utero}}<br>{{floor|Cathedral}}<br>{{room|challenge}}
+ | replace        = Leech, Kamikaze Leech
+ | replace chance = 1%
+ | behavior       = Quickly charges towards Isaac when he gets in its line of sight, dealing a full heart of contact damage. Explodes upon death. Spawns with an [[Eternal Fly]] circling it, which instantly dies when the Holy Leech explodes.
+}}
+
+'''Holy Leeches''' are white-colored variants of the Kamikaze Leech commonly found in the {{s|Cathedral}}, but can occasionally appear in {{s|Utero}}.
+
+These behave similarly to Kamikaze Leeches, but have an {{e|Eternal Fly}} circling them. Because the Holy Leech explodes upon death, the Eternal Fly will die instantly and only serves to block projectiles.
+{{clear}}
+
+=== Small Leech ===
+{{infobox monster
+ | dlc         = r
+ | name        = Small Leech
+ | image scale = 1/2
+ | id          = 810
+ | base hp     = 5
+ | environment = {{floor|Downpour}}{{floor|Dross}}<br>{{room|treasure}} (Downpour only)<br>{{room|secret}} (Dross only)<br>{{room|boss}}{{room|challenge}}
+ | behavior    = Chases Isaac continuously, not stopping at walls. Able to swim over gaps.
+}}
+
+'''Small Leeches''' are small, juvenile versions of the Leech added in ''[[The Binding of Isaac: Repentance]]'' DLC.
+
+They are quite similar to normal Leeches and make the same sound effect (albeit higher-pitched), but they have no knockback immunity, and continuously chase Isaac rather than only pursuing him if Isaac lines up with one horizontally or vertically. They are also very small in size and can swim over flooded gaps.
+
+Primarily spawned by {{e|Prey}} and {{e|Lil Blub}}, and can be found in [[Rocks#Buckets|Buckets]]. They will also spawn during {{e|Wormwood}}'s boss fight, after Wormwood charges out from the wall.
+
+When in a room without water, Small Leeches make small, short hops towards Isaac.
+
+{{clear}}
+
+=== Adult Leech ===
+{{infobox monster
+ | dlc         = r
+ | name        = Adult Leech
+ | id          = 854
+ | base hp     = 90
+ | environment = {{floor|Corpse}}<br>{{room|challenge}}
+ | behavior    = Wanders around the room, quickly charging at Isaac when he lines up horizontally with him and releasing a ring of blood shots upon colliding with a wall. After taking a certain amount of damage, burrows into the ground and reappears by falling above Isaac, releasing another ring of blood shots and only performing this behavior once.
+}}
+
+'''Adult Leeches''' are bigger and stronger versions of the Leech added in ''The Binding of Isaac: Repentance'' DLC.
+
+They are characterized by their large size and much higher amount of health in comparison to typical Leeches. They behave like Leeches but will only charge horizontally and release a ring of 12 blood shots in all directions upon colliding with a wall. Upon taking a certain amount of damage, they burrow underground then reappear by attempting to crash into Isaac from above (a sound cue will play prior to it crashing down) and sending out a ring of 10 blood shots in all directions on impact, which only occurs once per Adult Leech.
+{{clear}}{{dlc clear}}
+
+== Gallery ==
+<gallery>
+File:Small Leech Dross.png|A Small Leech's appearance in Dross.
+</gallery>
+
+== Trivia ==
+* Kamikaze Leech was first added in the Halloween update for the original Flash version of ''The Binding of Isaac''.
+* Holy Leech was first added in the original Flash game's ''Wrath of the Lamb'' DLC.
+* The Leech's charging sound effect is, in reality, a man saying "EHHH" sped up. This can be revealed by listening to the attack sound of a [[Champion|Large Champion]] Leech.
+* {{dlc|r}} The [[Anti:Small Leech|Small Leech]] and [[Anti:Adult Leech|Adult Leech]] first appeared in the fan DLC ''Antibirth''.
+** The Adult Leech's design is from a mockup for a Corpse altfloor by artist NotYourSagittarius created in February 2015.<ref>https://www.reddit.com/r/bindingofisaac/comments/2veccu/enemy_ideas/</ref>
+
+== References ==
+{{reflist}}
+
+{{nav|fr=Sangsue (Monstre)}}
+[[Category:Worm monsters]]
+[[Category:Chapter 1.5 monsters]]
+[[Category:Chapter 3 monsters]]
+[[Category:Chapter 4 monsters]]

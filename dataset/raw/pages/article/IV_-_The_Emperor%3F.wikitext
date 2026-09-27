@@ -1,0 +1,50 @@
+{{header reverse tarot cards}}
+{{Infobox card
+ | dlc         = r
+ | name        = IV - The Emperor?
+ | files name  = IV - Inverted The Emperor
+ | type        = card
+ | id          = 60
+ | quote       = May you find a worthy opponent
+ | description = Teleports Isaac into an extra {{r|Boss Room}} from the boss pool two floors deeper than the current floor (but never a final boss). The boss will drop a reward. Exiting the room returns Isaac to where he used the card.
+ | unlocked by = The Emperor
+ | recharge    = 2
+}}
+
+{{cit|uc|r}}
+
+== Effects ==
+* Teleports Isaac into an extra {{r|Boss Room}} from the boss pool two floors deeper than the current floor (but never a final boss). The boss will drop a reward. Exiting the room returns Isaac to where he used the card.
+
+== Notes ==
+* Using IV - The Emperor? in {{s|Womb}} / {{s|Utero}}/ {{s|Scarred Womb}} / {{s|Corpse}} I or II will teleport Isaac to a boss fight from the current boss pool.
+** Using it in {{s|Sheol}} / {{s|Cathedral}} / {{s|Dark Room}} / {{s|Chest}} / {{s|The Void}} / {{s|Home}} will teleport Isaac to a random room.
+** Using it in {{s|???}} will teleport Isaac to a boss fight from the {{S|Womb}} boss pool.
+** Using it in an {{R|I AM ERROR}} room or a {{r|Black Market}} will take Isaac to the last room he was in when exited, allowing him to further explore the floor.
+* Using IV - The Emperor? again on the same floor after defeating the boss it spawns takes Isaac back to the same cleared Boss room.
+* If IV - The Emperor? is used in [[Chapter 3]] (i.e. {{s|Depths}}), the [[Chapter 4]] boss will only deal regular damage to Isaac, rather than the whole heart damage penalty of the chapter.
+** This is one of the few situations where bosses such as {{e|It Lives!}} dealing a whole heart of projectile damage, or {{e|Daddy Long Legs}} dealing a whole heart of contact damage takes effect.
+* {{r|Devil Room}}s / {{r|Angel Room}}s do not appear from the extra boss rooms.
+* IV - The Emperor? cannot spawn in [[greed mode]].
+
+== Strategy ==
+* IV - The Emperor? can be used to steal an item from {{r|Boss Rush}} without going through the waves. After taking the item, using the card and defeating the extra boss, leaving the room will lead Isaac to the regular, locked {{E|Mom}} boss room.{{dlc-}}
+** {{r|Challenge Room}}s / {{r|Boss Challenge Room}}s can also be stolen from. Returning to the room after defeating the extra boss will make the room inactive (until another element is interacted with).
+
+== Synergies ==
+* {{i|Blanket}}: A shield is granted upon teleporting to the extra boss room.
+* {{t|Hairpin}}: The currently held active item is fully charged the first time the extra boss room is teleported to. The normal boss room also charges the active item.
+* {{i|There's Options}}: The extra boss room's reward will be two choice pedestals.
+* {{t|Tick}}: Heals 1 {{e|Red Heart}} upon teleporting to the extra boss room. The normal boss room also provides healing.
+
+== Interactions ==
+* {{I|Tarot Cloth|n}}: No effect.
+* {{i|Book of Revelations}}: Does not guarantee the extra boss to be a [[The Harbingers|harbinger]].
+* {{i|Satanic Bible}}: The extra boss room's reward is also transformed into a devil deal.
+* {{i|Sol}}: Defeating the extra boss will not activate Sol's effect.
+* {{i|Vanishing Twin}}: The twin will clone the extra boss and spawn an item if the original one has not been visited yet. The vanishing twin familiar is consumed and will not allow for another item to be obtained from the floor's original boss, because the familiar won't respawn until the next floor.
+
+== In-game Footage ==
+{{#ev:youtube|b3cZ6UlSuRk}}
+
+{{nav|fr=IV - L'Empereur ?|card}}

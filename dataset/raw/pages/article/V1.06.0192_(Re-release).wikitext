@@ -1,0 +1,13 @@
+{{infobox version
+ | dlc  = a+
+ | date = 2017-01-21
+}}
+
+== Undocumented changes ==
+=== Changes ===
+* Removed the version number and build timestamp from the title screen. (A developer-only version of the game got accidentally pushed to everyone in the patch before this.)
+
+=== Fixes ===
+* Fixed/updated the difficulty widget in the Japanese version.
+
+{{nav|version}}

@@ -1,0 +1,12 @@
+{{page dlc|r}}
+
+When playing as {{c|Tainted Lost}}, only items that have this [[Item Tags|tag]] can appear. Note that not all items with the tag are purely ''offensive'' as per the definition of the word.
+
+== Activated Collectibles ==
+{{collectible table | tag = offensive | type = activated }}
+
+== Passive Collectibles ==
+{{collectible table | tag = offensive | type = passive }}
+
+{{nav|fr=Balise offensive}}
+[[Category:Item tags]]

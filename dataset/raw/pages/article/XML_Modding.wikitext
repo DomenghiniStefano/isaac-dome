@@ -1,0 +1,122 @@
+'''XML Modding''' is an aspect of [[Modding]] that applies to altering XML files. The capabilities are limited depending on the XML file that is being modded. In Afterbirth+, mods can add new content to an existing XML file under the content folder of the mod.
+
+For modding [[Challenges]], see [[Custom Challenges]].
+
+== bosscolors.xml ==
+* The bosscolors.xml file contains all champion variants of bosses.
+* The root element is <code><bosscolors></code> which contains separate <code><boss></code> elements inside it.
+
+=== Boss ===
+The individual <code><boss></code> elements are used to define champion variants for each boss. It contains the id and variant of the boss.
+
+{|Attributes
+|-
+|'''Attribute'''
+|'''Explanation'''
+|-
+|id
+|Boss entity id.
+|-
+|variant
+|Boss variant.
+|}
+
+==== Color ====
+* The <code><color></code> element is a child of <code><boss></code> and is used to determine the champion's color, scale and HP.
+* Multiple <code><color></code> elements can be added in each <code><boss></code> element in order to add more champion variants in the game.
+
+{|Attributes
+|-
+|'''Attribute'''
+|'''Explanation'''
+|-
+|idx
+|Color index. Ranges from 1 to 23.
+|-
+|health
+|Health multiplier that is applied to the health amount of the non-champion boss variant. Defaults to <code>1.0</code>. For example, if set to <code>1.15</code>, this will make the champion have 15% more HP than the non-champion variant.
+|-
+|scale
+|Scale multiplier that will be used for the boss' sprite. Defaults to <code>1.0</code>. For example, if set to <code>0.85</code>, this will make the champion appear 15% smaller than the non-champion variant.
+|}
+
+== players.xml ==
+The players.xml file contains information and statistics about the different characters.
+
+=== Players ===
+The root element is <code><players></code>, which may contain attributes that identify the root directories for graphics.
+
+{|Attributes
+|-
+|'''Attribute'''
+|'''Explanation'''
+|-
+|root
+|Character skin directory.
+|-
+|nameimageroot
+|Character name sprite directory.
+|-
+|portraitroot
+|Character portrait sprite directory.
+|-
+|bigportraitroot
+|Large character portrait sprite directory.
+|}
+
+==== Player ====
+The meat of the file are the individual <code><player></code> elements. These contain the file names and a number of statistics of each character.
+
+{|Attributes
+|-
+|'''Attribute'''
+|'''Explanation'''
+|-
+|name
+|Used to identify the character by name.
+|-
+|cache
+|Every time the cache is evaluated, these items are updated. Separated by spaces. Accepted values: <code>damage</code>, <code>familiars</code>, <code>firedelay</code>, <code>flying</code>, <code>luck</code>, <code>range</code>, <code>shotspeed</code>, <code>speed</code>, <code>tearcolor</code>, <code>tearflag</code>, and <code>weapon</code>. You can also use <code>all</code> if you want it to affect every value.
+|-
+|hp
+|The amount of filled red hearts the character starts with. 1 per half heart.
+|-
+|armor
+|The amount of soul hearts the character starts with. 1 per half heart.
+|-
+|black
+|The amount of black hearts the character starts with. 1 per half heart.
+|-
+|coins
+|The amount of coins the character starts with.
+|-
+|bombs
+|The amount of bombs the character starts with.
+|-
+|items
+|The ids of the items the character starts with. Separated by spaces (commas in Afterbirth †). Does not work with custom items.
+|-
+|card
+|The id of the card the character starts with. Does not work with custom items.
+|-
+|pill
+|The id of the pill the character starts with. Does not work with custom items.
+|-
+|trinket
+|The id of the trinket the character starts with. Does not work with custom items.
+|-
+|skin
+|The file name of the character's skin. Searches the <code>root</code> attribute's directory from the <code><players></code> element.
+|-
+|nameimage
+|The file name of the character's name sprite. Searches the <code>nameimageroot</code> attribute's directory from the <code><players></code> element.
+|-
+|portrait
+|The file name of the character's portrait sprite. Searches the <code>portraitroot</code> attribute's directory from the <code><players></code> element.
+|-
+|bigportrait
+|The file name of the character's large portrait sprite. Searches the <code>bigportraitroot</code> attribute's directory from the <code><players></code> element.
+|}
+
+{{nav|modding}}
+[[Category:Modding]]

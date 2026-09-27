@@ -1,0 +1,37 @@
+{{header tarot cards}}
+{{Infobox card
+ | name        = XIV - Temperance
+ | id          = 15
+ | quote       = May you be pure in heart
+ | description = Creates a {{m|Blood Donation Machine}} near Isaac. {{dlc|a}} Spawns a {{m|Devil Beggar}} instead in [[Greed mode]].
+ | recharge    = {{dlcalt|4|r=6}}
+}}
+
+{{cit|c}}
+
+== Effects ==
+* Spawns a {{m|Blood Donation Machine}} near Isaac.
+* In {{mode|greed}}[[Greed mode]], spawns a {{m|Devil Beggar}} instead.
+
+== Notes ==
+* Using '''XIV - Temperance''' can, in rare cases, spawn the {{m|Blood Donation Machine}} directly on Isaac, forcing him to use it once. This happens more often if Isaac is against a wall and there are many more machines around him.
+
+== Strategy ==
+* Even if Isaac is short on HP to use the machines, they can still be blown up for more pickups.
+** To save on bombs, it is recommended to use '''XIV - Temperance''' next to a [[tinted rock]] or a {{r|Secret Room}}'s entrance, so that they can both be blown up by the same bomb.
+* Since the machine/beggar prioritizes taking away {{e|Red Heart}}s, they can be placed next to a {{r|Curse Room}} and entered just after giving health to the machine/beggar. This halves the cost of potential Soul/Black Hearts for entering the Curse Room.
+
+== Synergies ==
+* {{I|Tarot Cloth}}: Spawns 2 machines.
+** {{I|Tarot Cloth|nr}} + {{i|Blank Card}} + {{i|Car Battery|n}} : Spawns 4 machines.
+** {{I|Tarot Cloth|r}} + {{i|Blank Card}}: Only spawns one machine when used with Blank Card.
+
+== Gallery ==
+<gallery>
+File:XIV - Temperance Steam Card.jpg|'''XIV - Temperance''''s Steam trading card
+</gallery>
+
+== Trivia ==
+* [[wikipedia:Temperance (tarot card)|Temperance]] is the fourteenth card of a Major Arcana set.
+
+{{nav|fr=XIV - Tempérance|card}}

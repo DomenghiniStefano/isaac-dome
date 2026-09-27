@@ -1,0 +1,45 @@
+{{toc right}}{{page dlc|ana+}}
+
+'''''The Binding of Isaac: Afterbirth''''' is the expansion to ''[[The Binding of Isaac: Rebirth]]''. The DLC was released on October 30, 2015 and costs $10.99/£7.99. It was released on May 10, 2016 on Xbox One and PS4.
+
+''For a list of the pre-release blog posts, see [[The Binding of Isaac: Afterbirth (Pre-Release)]].''
+
+= Features =
+* [[Greed Mode]]: A new game mode with a heavy focus on risk/reward, featuring a new [[ending]] and [[Ultra Greed|final boss]].
+* [[Blue Womb]]: A new area, featuring a new [[ending]] and [[Hush|final boss]].
+* [[Daily Challenges|Daily Runs]]: Daily seeded runs with online leaderboards.
+* Two new characters, [[Lilith]] and [[Keeper]].
+* 95 new [[Items#Afterbirth Collectibles|items]] and 29 new [[Trinkets#Afterbirth Trinkets|trinkets]].
+* New [[pickups]], [[chests]], [[pills]], and [[Cards and Runes|cards]].
+* 10 new [[challenges]].
+* 4 new alternate chapters: [[Burning Basement]], [[Flooded Caves]], [[Dank Depths]], and [[Scarred Womb]].
+* Many new room layouts including tiny rooms, long hallways, and L-shaped rooms.
+* New room types like trap rooms, double treasure rooms, and [[closets]].
+* New special [[seeds]], along with a seed code combo page.
+* An expanded [[Music#The Binding of Isaac: Afterbirth|soundtrack]].
+* An extra HUD option, allowing items picked up to be displayed on-screen.
+* 9 new [[transformations]].
+* New [[The Binding of Isaac: Afterbirth#Bosses|bosses]], along with new variations of bosses introduced in Rebirth.
+* New [[The Binding of Isaac: Afterbirth#Monsters|monsters]].
+* Updated item combo system.
+* New [[Achievements#Afterbirth Achievements|achievements]].
+* New [[Babies#Afterbirth Babies|co-op babies]].
+* An improved [[Collection Page#Afterbirth Complete Collection Grid|collection page]] that shows item descriptions.
+
+= Additions =
+{{/Additions}}
+
+= Changes =
+{{/Changes}}
+
+= Gallery =
+<gallery>
+Afterbirth Title Screen.png|The title screen of The Binding of Isaac: Afterbirth.
+</gallery>
+
+= Trivia =
+* [[wikipedia:Placental expulsion|Afterbirth]] is the placenta and fetal membranes discharged from the uterus after the birth of offspring, which might be why the title screen is bloody.
+
+{{nav|version}}
+[[Category:DLC]]
+[[Category:Afterbirth| ]]

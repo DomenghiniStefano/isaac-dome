@@ -1,0 +1,15 @@
+{{page dlc|r}}
+
+Items with this [[Item Tags|tag]] contribute toward the {{a|Jumper Cables}} unlock.
+
+== Passive Collectibles ==
+{{collectible table | tag = battery | type = passive }}
+
+== Trinkets ==
+{{trinket table | tag = battery }}
+
+== Bugs ==
+{{bug| dlc=r | Neither AAA Battery nor Watch Battery will contribute to unlocking {{i|Jumper Cables}} despite having the item tag.}}
+
+{{nav|fr=Balise battery}}
+[[Category:Item tags]]

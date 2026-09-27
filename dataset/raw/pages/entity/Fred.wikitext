@@ -1,0 +1,17 @@
+{{infobox monster
+ | id          = 59
+ | base hp     = 20
+ | environment = {{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}<br>{{room|boss}}
+ | behavior    = Hops out of the ground and burrows elsewhere, firing 4 blood shots in the cardinal directions. Occasionally fires red Ipecac shots at Isaac.
+}}
+{{disambig msg|the enemy|the boss|Mr. Fred}}
+
+'''Fred''' is a monster that can be encountered in [[Chapter 4]].
+
+Fred fires an explosive {{i|Ipecac}} shot at Isaac. Fred can also jump out of the ground and towards Isaac and then dive back in, shooting four blood shots in the cardinal directions when it does so. It usually does this after firing an Ipecac shot or if Isaac is far away.
+
+== Trivia ==
+* In the original game, the shots that Fred fired when he dived back into the ground traveled diagonally instead of in the cardinal directions.
+* Freds appear to be babies with the medical condition [[wikipedia:Harlequin Ichthyosis|harlequin ichthyosis]].
+
+{{nav}}

@@ -1,0 +1,26 @@
+{{infobox monster
+ | id          = 207
+ | base hp     = 16
+ | stage hp    = 4
+ | environment = {{floor|Basement}}{{floor|Cellar}}{{floor|Burning Basement}}<br>{{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}
+ | behavior    = Chases Isaac, dealing touch damage. Occasionally stops to spit 8 blood shots in all directions.
+}}
+
+The '''Crazy Long Legs''' runs towards Isaac and stops to spit 8 medium range blood shots in an all directions.
+{{clear}}
+
+== Variants ==
+=== Small Crazy Long Legs ===
+{{infobox monster
+ | name        = Small Crazy Long Legs
+ | variant     = 1
+ | base hp     = 12
+ | stage hp    = 4
+ | environment = {{floor|Basement}}{{floor|Cellar}}{{floor|Burning Basement}}<br>{{floor|Caves}}{{floor|Catacombs}}{{floor|Flooded Caves}}<br>{{floor|Depths}}{{floor|Dank Depths}}<br>{{floor|Womb}}{{floor|Utero}}{{floor|Scarred Womb}}
+ | behavior    = Chases Isaac, dealing touch damage. Occasionally stops to spit 4 blood shots in the diagonal directions.
+}}
+
+The '''Small Crazy Long Legs''' is a tiny variant of the Crazy Long Legs. It runs slightly slower towards Isaac and stops to spit medium range 4 blood shots in the diagonal directions.
+
+{{nav|fr=Foucheux}}
+[[Category:Spider monsters]]

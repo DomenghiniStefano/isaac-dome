@@ -29,6 +29,7 @@ export const refArt = (target: Target): RefArt => {
     case 'stage':
     case 'room':
     case 'concept':
+    case 'article':
       return RefArt.Sprite
     default:
       return assertNever(target)

@@ -1,0 +1,26 @@
+{{infobox monster
+ | dlc         = r
+ | name        = Cohort
+ | id          = 857
+ | base hp     = 125
+ | environment = {{floor|Utero}}<br>{{floor|Corpse}}<br>{{room|challenge}}
+ | behavior    = Acts similarly to {{E|Monstro}}, hopping towards Isaac and can either spit a large projectile towards Isaac that bursts into 8 smaller projectiles or cough up a burst of arcing projectiles and a pile of {{E|Globin}} goo. Spawns 4 piles of Globin goo upon death.
+}}
+
+'''Cohorts''' are enemies resembling a giant {{E|Globin}} in the shape of {{E|Monstro}}. They act similarly to Monstro, and have the following attacks:
+
+* Hops towards Isaac.
+* Spits a ball of blood at Isaac, which creates a radial burst of 8 blood shots after a moderate distance.
+* Coughs up a chaotic burst of shots at Isaac. This burst contains a {{E|Globin}} goo pile, which will regenerate and chase Isaac if not killed. This has a chance to be a {{E|Gazing Globin}} goo pile.
+** This attack cannot create Globins if the Cohort currently has 4 summoned Globins. Other Globins in the room do not count towards this limit.
+* Upon death, splits into four Globin goo piles.
+
+== Notes ==
+* If a Globin goo pile lands over non-solid ground e.g. over a pit or between a wall and obstacles, it is killed instead of spawning.
+{{clear}}
+
+== Trivia ==
+* The [[Anti:Cohort|Cohort]] first appeared in the ''Antibirth'' mod.
+* The eyeball that appears when it performs its splitting projectile attack resembles that of a {{E|Gazing Globin}}.
+
+{{nav|fr=Cohorte}}

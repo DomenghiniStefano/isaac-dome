@@ -1,0 +1,36 @@
+{{header player effects}}
+[[File:Blindfolded.png|70px]]
+
+'''Blindfolded''' is a special condition exclusive to certain [[challenge]]s. {{dlc|a}}The characters {{c|Lilith}} and {{c|Tainted Lilith}} are also blindfolded.
+
+When Isaac is blindfolded, he is unable to fire tears and most projectiles. It also prevents attacks from other firsthand sources, such as {{i|Mom's Knife}}, {{i|Brimstone}}, {{i|The Ludovico Technique}}, and {{i|Epic Fetus}}. {{dlc+|r}} However, this does not prevent attacks from items such as:
+* {{I|Tech.5}}
+* {{I|Maw Of The Void}}
+* {{I|Revelation}}
+* {{I|Montezuma's Revenge}}{{dlc-}}
+* {{dlc|r}} {{I|Notched Axe}}
+
+Despite being unable to fire tears, Isaac can still command familiars to shoot by holding the attack button (this includes {{i|Incubus}} and {{i|Twisted Pair}}), and can still use active items.
+
+Since blindfolded is a challenge condition instead of an existing [[item]], it cannot be removed with effects such as {{r|Dice Room}}s, {{i|Missing No.}}, or {{i|D100}}, and does not show up on the "My stuff!" screen, nor can it be obtained or removed with the debug menu.
+
+This condition is used in the following challenges:
+{{column list | width = 20em | content =
+* {{chal|Solar System}}
+* {{chal|Cat Got Your Tongue}}
+* {{chal|Beans!}}
+* {{chal|The Family Man}}
+* {{chal|Blue Bomber}}
+* {{chal|BRAINS!}}
+* {{chal|The Guardian}}
+* {{chal|Scat Man}}
+* {{chal|Baptism by Fire}}
+* {{chal|Hot Potato}}
+}}
+
+== Trivia ==
+* {{dlc|a}} Both {{c|Lilith}} and [[The Guardian]] have different blindfolds that still function the same.
+* {{dlc|r}} [[Hot Potato]] and {{c|Tainted Lilith}} do not visually have blindfolds, but the mechanic is still present.
+
+{{nav|es=Ojos vendados|fr=Yeux bandés}}
+[[Category:Mechanics]]

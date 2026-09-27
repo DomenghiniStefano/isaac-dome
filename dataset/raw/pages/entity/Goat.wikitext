@@ -1,0 +1,30 @@
+{{infobox monster
+ | dlc         = r
+ | name        = Goat
+ | id          = 891
+ | base hp     = 18
+ | stage hp    = 3
+ | environment = {{floor|Gehenna}}<br>{{room|challenge}}
+ | behavior    = Wanders around the room. Occasionally moves toward Isaac, either firing blood shots at him or charging if he lines up on either side of it.
+}}
+'''Goats''' are an enemy added in ''[[The Binding of Isaac: Repentance]]''.
+
+Goats usually spawn in large groups and perform attacks depending on the number of other Goats around. When there is only 1 Goat it will chase Isaac and charge, attempting to ram him, if he is to his either side. If there are 2 Goats, one will perform the charge attack, the other will stop when near Isaac to shoot two blood shots in a spread followed by three blood shots in a spread in succession, similar to {{E|Krampus}}. Only 2 Goats can actively attack at one time and all other Goats will attempt to stay away from Isaac but can switch places with an active Goat if Isaac draws near to it.
+
+{{clear}}
+
+== Variations ==
+=== Black Goat ===
+{{infobox monster
+ | dlc         = r
+ | name        = Black Goat
+ | variant     = 1
+ | base hp     = 24
+ | stage hp    = 5
+ | environment = {{floor|Gehenna}}<br>{{room|challenge}}
+ | behavior    = Wanders around the room. Occasionally moves toward Isaac, either firing blood shots at him or charging if he lines upon either side of it. Can also fire thin {{i|Brimstone}} lasers in the cardinal directions, along with all other Black Goats in the room.
+}}
+
+'''Black Goats''' act the same as Goats, but shoot three blood shots in a spread followed by four blood shots in a spread in succession, identical to {{E|Krampus}}. Additionally, they also gain the ability to shoot thin {{i|Brimstone}} lasers in the cardinal directions. When one Black Goat performs a {{i|Brimstone}} attack all other Black Goats mimic it and perform the attack even if they were passive and not one of the 2 active goats. If there is only one Black Goat, it still retains the {{i|Brimstone}} in addition to its ramming attack.
+
+{{nav|fr=Chèvre}}

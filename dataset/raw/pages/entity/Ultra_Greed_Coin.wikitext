@@ -1,0 +1,58 @@
+'''Ultra Greed Coins''' are enemies exclusively spawned by {{e|Ultra Greed}} during some of his attacks.
+
+=== Spinner Coin ===
+{{infobox monster
+ | dlc         = a
+ | name        = Ultra Greed Coin (Spinner)
+ | id          = 293
+ | base hp     = 50
+ | environment = {{floor|Ultra Greed}}
+ | behavior    = Spins around the room, dealing contact damage.
+}}
+
+'''Spinner Coins''' will spin around the room. Unlike the other coins, these deal contact damage, but won't do anything if they are not destroyed in time. They also last longer.
+{{clear}}
+
+=== Key Coin ===
+{{infobox monster
+ | dlc         = a
+ | name        = Ultra Greed Coin (Key)
+ | variant     = 1
+ | base hp     = 60
+ | environment = {{floor|Ultra Greed}}
+ | behavior    = Spins on itself and opens a golden door around the room if not destroyed, spawning hordes of [[Greed Gaper]]s.
+}}
+
+'''Key Coins''' open the golden doors around Ultra Greed's boss room if not destroyed, which spawn hordes of {{e|Greed Gaper}}s.
+{{clear}}
+
+=== Bomb Coin ===
+{{infobox monster
+ | dlc         = a
+ | name        = Ultra Greed Coin (Bomb)
+ | variant     = 2
+ | base hp     = 50
+ | environment = {{floor|Ultra Greed}}
+ | behavior    = Spins on itself and explodes with a large radius if not destroyed.
+}}
+
+'''Bomb Coins''' explode with a large radius if not destroyed, but a single explosion can deal 40 damage to Ultra Greed. Bomb Coins spawned by {{e|Ultra Greedier}} can drop a {{e|Penny}}.
+{{clear}}
+
+=== Heart Coin ===
+{{infobox monster
+ | dlc         = a
+ | name        = Ultra Greed Coin (Heart)
+ | variant     = 3
+ | base hp     = 40
+ | environment = {{floor|Ultra Greed}}
+ | behavior    = Spins on itself and heals Ultra Greed for 13.125 HP each if not destroyed.
+}}
+
+'''Heart Coins''' heal Ultra Greed for 13.125 HP each if not destroyed.
+{{clear}}
+
+== Notes ==
+* The Coins all gain +15% HP after unlocking {{a|Everything is Terrible 2!!!}} and their timings (breaking up and activating effect) are 10% faster.
+
+{{nav|fr=Pièce d'Ultra Avarice}}

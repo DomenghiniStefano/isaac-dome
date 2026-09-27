@@ -1,0 +1,46 @@
+{{header reverse tarot cards}}
+{{Infobox card
+ | dlc         = r
+ | name        = XIX - The Sun?
+ | files name  = XIX - Inverted The Sun
+ | type        = card
+ | id          = 75
+ | quote       = May the darkness swallow all around you
+ | costume     = Collectible Spirit of the Night appearance.png
+ | description = Gain {{i|Spirit of the Night}} and +1.5 [[Damage]] for the current floor. Turns Isaac's {{e|Red Heart|text=Red Heart Containers}} into {{e|Bone Heart}}s, but they revert once the effect ends. Also causes {{cu|Darkness}} that cannot be dispelled.
+ | unlocked by = The Sun and the Moon
+ | recharge    =  6
+}}
+
+{{cit|uc|r}}
+
+== Effects ==
+* For the duration of the current floor:
+** Grants {{i|Spirit of the Night}} and +1.5 [[Damage]].
+** Turns Isaac's red [[heart container]]s into {{e|Bone Heart||bone hearts}}.
+** Causes a {{cu|Darkness}} that cannot be dispelled.
+
+== Notes ==
+* When the effect reverts, all bone hearts remaining will be restored to heart containers.
+** Actual bone hearts remain unchanged.
+** If Isaac travels to the next floor with ''only'' empty temporary bone hearts (either by donation or with {{t|Crow Heart}}), '''he will die''' as his resulting health after reverting are only empty heart containers.
+* The card's effect persists in the {{i|Knife Piece 2}} abandoned area, allowing for easier completion of the chase sequence if flight was not acquired before.
+* Picking up health-increasing items while '''XIX - The Sun?''''s effect is active will add normal heart containers.
+** Using '''XIX - The Sun?''' again will convert them into bone hearts.
+
+== Strategy ==
+* '''XIX - The Sun?''' negates the downsides of items that remove [[heart container]]s on pickup (such as {{i|Dead Cat}} and {{i|Brittle Bones}}) since it converts all [[heart container]]s into {{e|Bone Heart}}s.
+* The bone hearts allow for more uses of the {{r|Sacrifice Room}}.
+
+== Interactions ==
+* {{i|Night Light}}: Curse of Darkness is not removed, regardless of whether Night Light is picked up before or after using the card. However, the visual effect is still lessened.
+* {{I|Tarot Cloth}}: No effect.
+
+== In-game Footage ==
+{{#ev:youtube|b3cZ6UlSuRk}}
+
+== Bugs ==
+{{Bug|dlc=r|As {{c|Tainted Lazarus}}, all effects of {{p|XIX - The Sun?}} except bone heart conversion and sprite change will disappear when flipping.}}
+{{Bug|dlc=r|Entering the {{i|Knife Piece 2}} area while under the effects of {{p|XIX - The Sun?}} will cause a visual bug wherein Isaac will revert to his default appearance but still be capable of flight and spectral tears.}}
+
+{{nav|fr=XIX - Le Soleil ?|card}}

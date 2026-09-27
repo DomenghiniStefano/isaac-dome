@@ -28,6 +28,7 @@ const canBeWanted = (target: Target): boolean => {
     case 'stage':
     case 'room':
     case 'concept':
+    case 'article':
       return false
     default:
       return assertNever(target)

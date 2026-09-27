@@ -1,0 +1,25 @@
+{{infobox version
+ | dlc   = r
+ | date  = 2024-01-02
+ | steam = 3884982211414214319
+}}
+
+The [[Online (open beta)|online beta]] received a patch on January 2nd, 2024, announced on [https://store.steampowered.com/news/app/250900/view/3884982211414214319 Steam].
+
+== Documented Changes ==
+* Mom's bed now revives all players
+* Online Matches Hard Mode online
+
+=== Fixes ===
+* Pedestal item functionality
+* {{i|Book of Virtues}} + {{i|Mr. ME!}} wisps killing themselves on cooldown doors
+* Easter egg menu
+* Player off-screen indicators would sometimes display the wrong character
+* Desync if a player paused while a fullscreen overlay (ex. rainbow poop) was going
+* Aimed attacks (ex. {{i|Marked}}, {{i|The Ludovico Technique}}, etc.) could slightly move the camera of other players
+* Players revived after special bosses (ex. {{e|Mother}})
+* {{c|Lilith}} ghost baby from shooting
+* Wisps staying around after player dies
+* Lockup in text chat under specific conditions
+
+{{nav|version}}
