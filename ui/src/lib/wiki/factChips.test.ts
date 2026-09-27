@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest'
 import type { PageFacts, WikiPageRef } from '@/lib/ipc/types'
 import { WikiCategory } from '@/router/routeTable'
 import { Tone } from './tone'
-import { factChips, factColumns } from './factChips'
+import { factChips, factColumns, shortList } from './factChips'
 
 describe('factChips', () => {
   it('produces no chip at all for an empty item', () => {
@@ -132,9 +132,9 @@ describe('factChips', () => {
   })
 
   it('gives a boss its base HP and floors, and an entity the same shape', () => {
-    const boss: PageFacts = { kind: 'boss', baseHp: 300, floors: 'Womb' }
+    const boss: PageFacts = { kind: 'boss', baseHp: 300, floors: ['Womb'] }
     expect(factChips(boss).map((c) => c.key)).toEqual(['baseHp', 'floors'])
-    const entity: PageFacts = { kind: 'entity', baseHp: null, floors: '' }
+    const entity: PageFacts = { kind: 'entity', baseHp: null, floors: [] }
     expect(factChips(entity)).toEqual([])
   })
 
@@ -185,5 +185,18 @@ describe('factColumns', () => {
 
   it('gives trinkets no scalar column, since a tag list is not one', () => {
     expect(factColumns(WikiCategory.Trinkets)).toEqual([])
+  })
+})
+
+describe('shortList', () => {
+  it('names the first ones and counts the rest', () => {
+    expect(shortList(['Basement', 'Caves', 'Depths', 'Womb'], 2)).toBe(
+      'Basement, Caves +2',
+    )
+  })
+
+  it('names them all when they fit', () => {
+    expect(shortList(['Basement'], 2)).toBe('Basement')
+    expect(shortList(['Basement', 'Caves'], 2)).toBe('Basement, Caves')
   })
 })

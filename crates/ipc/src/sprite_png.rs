@@ -4,6 +4,8 @@
 //! menu's heads — and the anm2 files say where to cut. The app serves those pieces through
 //! its icon protocol, so the cut lives in this pure crate: bytes in, bytes out.
 
+use crate::icon::Placement;
+
 /// Decodes a PNG to 8-bit RGBA, whatever its internal format (palette, grayscale, no alpha
 /// channel): the game's sprites aren't all the same type. `(width, height, pixels)`.
 pub fn decode_rgba(bytes: &[u8]) -> Option<(u32, u32, Vec<u8>)> {
@@ -100,6 +102,18 @@ pub fn centre_opaque(png: &[u8]) -> Option<Vec<u8>> {
         out[to..to + bytes].copy_from_slice(&drawing[from..from + bytes]);
     }
     encode_rgba(w, h, &out)
+}
+
+/// The picture with its drawing where the reference says it sits (`IconRef::placement`).
+/// A placement that cannot be carried out — nothing drawn, or not a PNG — keeps the picture
+/// as it was, which is where the game's rectangle put it: degrade, never fail.
+pub fn place(png: Vec<u8>, placement: Placement) -> Vec<u8> {
+    let placed = match placement {
+        Placement::AsDeclared => None,
+        Placement::Trimmed => trim_opaque(&png),
+        Placement::Centred => centre_opaque(&png),
+    };
+    placed.unwrap_or(png)
 }
 
 /// The box the opaque pixels occupy, as `(x, y, w, h)`. `None` when there are none.

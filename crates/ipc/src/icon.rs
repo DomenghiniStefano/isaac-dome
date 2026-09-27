@@ -279,33 +279,48 @@ impl IconRef {
         parts.next().is_none().then_some(out)
     }
 
-    /// Whether the picture is served shrunk to its own drawing (`sprite_png::trim_opaque`)
-    /// rather than as the rectangle the anm2 declared.
+    /// Where the drawing sits in the picture served for this reference.
     ///
-    /// **Only the room kinds**, and the reason is where the picture is drawn rather than
-    /// which sheet it comes from. The Floor's cell draws a sprite at a fixed pixel scale in a
-    /// 2rem square and centres it; centring the declared square puts the drawing off-centre,
-    /// because `minimap_icons.anm2` leaves its icons in the upper-left of their sixteen
-    /// pixels. Everywhere else a sprite is fitted to a box, and trimming there would make the
-    /// same drawing bigger on whichever row happened to have the wider margin — a rescale on
-    /// six screens to fix one.
+    /// **Rooms are trimmed**: the Floor's cell draws a sprite at a fixed pixel scale in a
+    /// 2rem square and centres it, and `minimap_icons.anm2` leaves its icons in the upper-left
+    /// of their sixteen pixels.
     ///
-    /// Exhaustive on purpose: a new kind of icon has to say which of the two it is.
-    pub fn trims_to_drawing(&self) -> bool {
+    /// **Sprites fitted to a box are centred, keeping their canvas.** The item and trinket
+    /// sheets leave the drawing off the middle of its frame — a trinket sits low and to the
+    /// left of its 32 pixels — so centring the frame does not centre the drawing. Trimming
+    /// would make the same drawing bigger on whichever sprite has the wider margin; centring
+    /// keeps every sprite of a sheet the same size and its integer scale exact, and only
+    /// moves the drawing.
+    ///
+    /// **Kept as declared**: an achievement painting fills its paper, and the widget's and
+    /// the marks' margins are where the game places the marks.
+    ///
+    /// Exhaustive on purpose: a new kind of icon has to say which of the three it is.
+    pub fn placement(&self) -> Placement {
         match self {
-            IconRef::Room { .. } => true,
-            IconRef::Achievement { .. }
-            | IconRef::Item { .. }
-            | IconRef::Mark { .. }
+            IconRef::Room { .. } => Placement::Trimmed,
+            IconRef::Item { .. }
             | IconRef::Head { .. }
-            // The paper's margin is where the marks are placed: trimming it would move
-            // every one of them, and the offsets are the game's own.
-            | IconRef::Widget { .. }
             | IconRef::Page { .. }
             | IconRef::Entity { .. }
-            | IconRef::Unknown => false,
+            // It stands in for an item in the same box, so it sits where an item does.
+            | IconRef::Unknown => Placement::Centred,
+            IconRef::Achievement { .. } | IconRef::Mark { .. } | IconRef::Widget { .. } => {
+                Placement::AsDeclared
+            }
         }
     }
+}
+
+/// How a served picture places its drawing (`IconRef::placement`).
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub enum Placement {
+    /// The rectangle the game declares, untouched.
+    AsDeclared,
+    /// Shrunk to the drawing (`sprite_png::trim_opaque`).
+    Trimmed,
+    /// The same canvas, the drawing moved to its middle (`sprite_png::centre_opaque`).
+    Centred,
 }
 
 /// The path segments of a page's figure, `item/105` or `entity/20/0/0`. `None` for every

@@ -54,7 +54,7 @@ pub(crate) fn icon_bytes(app: &AppHandle, path: &str) -> tauri::http::Response<V
         // The game isn't installed: expected, not an error worth logging.
         return no_icon(404);
     };
-    let trim = reference.trims_to_drawing();
+    let placement = reference.placement();
     let png = match &reference {
         // The one reference that is a picture of several: the widget's paper with the
         // symbols the profile has earned laid on it, at the offsets the anm2 declares.
@@ -70,10 +70,10 @@ pub(crate) fn icon_bytes(app: &AppHandle, path: &str) -> tauri::http::Response<V
                 let column = *ipc::MarkColumnView::ALL.get(*column)?;
                 ipc::mark_source(column, *tier, frames)
             })
-            .and_then(|sprite| sprite_bytes(rs, &sprite, trim)),
+            .and_then(|sprite| sprite_bytes(rs, &sprite, placement)),
         // The stand-in for a picture that did not resolve: a file of the game named by the
         // boundary itself, so there is no catalog row to look it up in.
-        ipc::IconRef::Unknown => sprite_bytes(rs, &ipc::unknown_source(), trim),
+        ipc::IconRef::Unknown => sprite_bytes(rs, &ipc::unknown_source(), placement),
         ipc::IconRef::Achievement { .. }
         | ipc::IconRef::Item { .. }
         | ipc::IconRef::Head { .. }
@@ -86,13 +86,15 @@ pub(crate) fn icon_bytes(app: &AppHandle, path: &str) -> tauri::http::Response<V
                 let bosses = state.bosses(Some(catalog));
                 let dataset = wiki::Dataset::embedded().ok();
                 match ipc::icon_source(catalog, bosses, dataset, &reference)? {
-                    ipc::IconSource::Sprite(sprite) => sprite_bytes(rs, sprite, trim),
+                    ipc::IconSource::Sprite(sprite) => sprite_bytes(rs, sprite, placement),
                     // A non-boss entity's own picture: not a sheet crop the catalog names,
                     // but a document (its `.anm2`) whose layers are composed at request
                     // time — reading 1337 rows' files at startup for pictures most
                     // sessions never open is exactly what `catalog::Entity`'s own doc
                     // comment says not to do.
-                    ipc::IconSource::Entity { anm2_path } => entity_bytes(rs, anm2_path),
+                    ipc::IconSource::Entity { anm2_path } => {
+                        entity_bytes(rs, anm2_path).map(|png| ipc::place(png, placement))
+                    }
                 }
             })
         }
@@ -108,21 +110,20 @@ pub(crate) fn icon_bytes(app: &AppHandle, path: &str) -> tauri::http::Response<V
     r
 }
 
-/// The file a sprite names, cropped when it names a piece of a sheet, and shrunk to its own
-/// drawing when the reference asks for that (`IconRef::trims_to_drawing`).
-///
-/// **A trim that fails keeps the crop.** The picture is then drawn where the game's rectangle
-/// puts it, which is what every build before this one did: degrade, never fail.
-fn sprite_bytes(rs: &ResourceSet, sprite: &catalog::SpriteRef, trim: bool) -> Option<Vec<u8>> {
+/// The file a sprite names, cropped when it names a piece of a sheet, with its drawing placed
+/// where the reference says (`IconRef::placement`). A placement that fails keeps the crop
+/// (`ipc::place`): degrade, never fail.
+fn sprite_bytes(
+    rs: &ResourceSet,
+    sprite: &catalog::SpriteRef,
+    placement: ipc::Placement,
+) -> Option<Vec<u8>> {
     let file = rs.read(&sprite.path)?;
     let png = match sprite.rect {
         None => file,
         Some(r) => ipc::crop_png(&file, r.x, r.y, r.w, r.h)?,
     };
-    if !trim {
-        return Some(png);
-    }
-    Some(ipc::trim_opaque(&png).unwrap_or(png))
+    Some(ipc::place(png, placement))
 }
 
 /// A non-boss entity's own picture: its `.anm2`'s default animation, one piece per layer,
@@ -139,7 +140,13 @@ fn entity_bytes(rs: &ResourceSet, anm2_path: &str) -> Option<Vec<u8>> {
     let pieces: Vec<(Vec<u8>, i32, i32)> = art
         .layers
         .iter()
-        .filter_map(|(sprite, x, y)| Some((sprite_bytes(rs, sprite, false)?, *x, *y)))
+        .filter_map(|(sprite, x, y)| {
+            Some((
+                sprite_bytes(rs, sprite, ipc::Placement::AsDeclared)?,
+                *x,
+                *y,
+            ))
+        })
         .collect();
     if pieces.is_empty() {
         return None;
@@ -159,11 +166,17 @@ fn entity_bytes(rs: &ResourceSet, anm2_path: &str) -> Option<Vec<u8>> {
 /// same thing about its own two arguments. The rest of this file's rule holds too — nothing
 /// here guesses, and every failure is a 404 the band draws as "no picture".
 fn widget_bytes(rs: &ResourceSet, art: &ipc::WidgetArt) -> Option<Vec<u8>> {
-    let paper = sprite_bytes(rs, &art.paper, false)?;
+    let paper = sprite_bytes(rs, &art.paper, ipc::Placement::AsDeclared)?;
     let marks: Vec<(Vec<u8>, i32, i32)> = art
         .marks
         .iter()
-        .filter_map(|(sprite, x, y)| Some((sprite_bytes(rs, sprite, false)?, *x, *y)))
+        .filter_map(|(sprite, x, y)| {
+            Some((
+                sprite_bytes(rs, sprite, ipc::Placement::AsDeclared)?,
+                *x,
+                *y,
+            ))
+        })
         .collect();
     let pieces: Vec<(&[u8], i32, i32)> = marks
         .iter()
