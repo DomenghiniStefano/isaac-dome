@@ -151,12 +151,14 @@ never read into the view. Character: looked up by id and tainted flag.
 
 ### Task 4 (C): the landing · `ui/src/screens/wiki/WikiLanding.vue` (+ a `landingTile.ts` if logic appears)
 
+- Hero on top: a mosaic of the category samples through `WikiFigure`, the title, totals (pages, snapshot), and with a save the overall progress from `landingProgress` summed over categories.
 - Tile: `WikiFigure` at `Tile` centred on `toneOfCategory` surface, name, page count; with a save a progress bar "N of M" from `wiki_progress` (done achievements, collected items, unlocked characters, done challenges, bosses killed at least once, unlocked trinkets/cards/runes); categories without save data show no bar.
 - [ ] Vitest for `landingProgress(category, pages, progress | null)` → `{ done, total } | null` (null without save and for categories without state).
 - [ ] Browser check with fixtures, with and without a save fixture, without the game.
 
 ### Task 5 (D): the lists · `ui/src/screens/wiki/WikiCategoryList.vue`, new `WikiCardGrid.vue`, `WikiTable.vue`, `ui/src/lib/wiki/listFilter.ts` (+ tests), `ui/src/lib/wiki/listColumns.ts` (+ tests)
 
+- A hero on top of every list: the category sample at `Hero` on `toneOfCategory`, name, page count, with a save the "N of M" bar (reuse `landingProgress` from Task 4 — if D starts before C lands, D owns `landingProgress` in `ui/src/lib/wiki/progress.ts` and C imports it).
 - Card grid (default) and table, switch remembered per category through the same per-viewer persistence the window session uses (find it in `ui/src/lib/` / `stores/`; if it is the SQLite session, use a key per category; say which).
 - Per-category columns and chips from `PageFacts` (spec decision 3 table) + `EditionBadge` + profile state.
 - Filters: title, edition, profile state, and kind filters (item quality and activated, tags, character tainted, article category). Sorts: name, id, edition, every numeric fact; missing values last in both directions.

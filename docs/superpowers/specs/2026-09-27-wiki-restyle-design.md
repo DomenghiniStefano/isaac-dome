@@ -147,6 +147,16 @@ centred, on the category's accent; the name; the page count; and with a save the
 challenges done, bosses killed). The Wiki header keeps its text and gains the snapshot facts it
 already shows below.
 
+## Decision 8b — a hero on the landing and on every list (owner)
+
+The owner, 2026-09-27: *"anche una Hero magari?"*. **The landing** opens on a hero: a mosaic of
+the category samples (an item, a boss, a character, a monster, a card…) through `WikiFigure`, the
+title, the Wiki's totals (pages, snapshot) and, with a save, the overall progress (achievements
+done of all, items collected of all). **Every category list** opens on a hero of its own: the
+category picture at `--spacing-figure-hero` on the category accent, its name, its page count and,
+with a save, its "N of M" bar. Both are pure layout over data decisions 3, 6 and 8 already
+provide: no new IPC.
+
 ## Decision 9 — the single pages (delegated)
 
 `WikiHero`: the figure at `--spacing-figure-hero` on its background, the edition badges in their
