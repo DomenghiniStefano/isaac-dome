@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
+import { useOnActiveProfile } from '@/composables/useOnActiveProfile'
 import { useMessages } from '@/i18n'
 import { singleQuery } from '@/lib/search/queryParam'
 import { WikiCategory } from '@/router/routeTable'
@@ -17,6 +18,10 @@ const { t } = useMessages()
 
 // The index once per window: the store refuses a second load while one is ready or running.
 void wiki.loadIndex()
+
+// The save's state per page (design decision 6), read again on mount and whenever the chosen
+// save changes: it depends on the save, unlike the index above, which does not.
+useOnActiveProfile(() => wiki.loadProgress())
 
 // The location's query decides the view (spec 3.5, Decision 3): a page, a category's list,
 // or the landing. A query value the router hands as an array or null is no value.
