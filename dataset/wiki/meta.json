@@ -1,7 +1,7 @@
 {
   "schemaVersion": 4,
-  "snapshotAt": "2026-09-26T15:34:47Z",
-  "maxRevid": 269722,
+  "snapshotAt": "2026-09-27T04:33:07Z",
+  "maxRevid": 269731,
   "lastKnownPatch": {
     "number": "v1.9.7.17",
     "date": "2026-04-20"
@@ -32,7 +32,10 @@
       "#vardefine: item pool#is devil": 1,
       "afterbirth babies": 1,
       "afterbirth† babies": 1,
+      "cargo lookup": 2,
+      "cargo query template": 2,
       "dlc_": 1,
+      "documentation": 2,
       "item pool": 11,
       "repentance babies": 1,
       "repentance+ babies": 1,
@@ -725,6 +728,7 @@
     "Golden key": "Keys",
     "Golden penny": "Coins",
     "Golden poop": "Poops",
+    "Golden trinket": "Golden Trinket",
     "Golden troll bomb": "Bombs",
     "Grab Bag": "Sacks",
     "Grab bag": "Sacks",

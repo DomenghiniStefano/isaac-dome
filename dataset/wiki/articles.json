@@ -141549,7 +141549,7 @@
   },
   "Corrupted Data": {
     "title": "Corrupted Data",
-    "revid": 267206,
+    "revid": 269729,
     "description": [
       {
         "kind": "text",
@@ -141644,6 +141644,32 @@
                       "id": 721
                     },
                     "label": "TMTRAINER"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "or ",
+                        "style": "plain"
+                      },
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 481
+                        },
+                        "label": "Dataminer"
+                      }
+                    ]
                   },
                   {
                     "kind": "text",
@@ -344759,7 +344785,7 @@
   },
   "Queen of Hearts": {
     "title": "Queen of Hearts",
-    "revid": 262760,
+    "revid": 269724,
     "description": [],
     "dlc": [],
     "unlockedBy": null,
@@ -344829,7 +344855,7 @@
                 "inline": [
                   {
                     "kind": "text",
-                    "text": "These Red Hearts are not affected by most replacement effects, other than those of ",
+                    "text": "Red Hearts spawned by this card are not affected by most replacement effects, other than those of ",
                     "style": "plain"
                   },
                   {
@@ -357942,7 +357968,7 @@
   },
   "Rocks": {
     "title": "Rocks",
-    "revid": 268271,
+    "revid": 269727,
     "description": [
       {
         "kind": "text",
@@ -362601,9 +362627,17 @@
               {
                 "inline": [
                   {
-                    "kind": "text",
-                    "text": "If a bucket would normally spawn Striders, but is in a dry room, normal Spiders will spawn instead.",
-                    "style": "plain"
+                    "kind": "edition",
+                    "only": [
+                      "rebirth"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": "If a bucket would normally spawn Striders, but is in a dry room, normal Spiders will spawn instead.",
+                        "style": "plain"
+                      }
+                    ]
                   }
                 ],
                 "children": []
@@ -660929,7 +660963,7 @@
   },
   "XIV - Temperance?": {
     "title": "XIV - Temperance?",
-    "revid": 262780,
+    "revid": 269726,
     "description": [],
     "dlc": [],
     "unlockedBy": null,
@@ -660956,7 +660990,7 @@
                 "inline": [
                   {
                     "kind": "text",
-                    "text": "Forces Isaac to eat 5 random ",
+                    "text": "Forces Isaac to eat several random ",
                     "style": "plain"
                   },
                   {

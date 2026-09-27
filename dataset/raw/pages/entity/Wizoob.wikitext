@@ -35,7 +35,7 @@ Edmund_McMillen_Rebirth_Monster_Sketches.jpg | Sketches of monsters for the Bind
 </gallery>
 
 == Trivia ==
-* Wizoobs may be a reference to Wizrobes from ''The Legend of Zelda'' due to their similar names, similar sound effects, and attack patterns.
+* Wizoobs may be a reference to Wizzrobes from ''The Legend of Zelda'' due to their similar names, similar sound effects, and attack patterns.
 * They could be a reference to Boos from the ''Super Mario'' series as well, considering that they look and act like boos, as well as having "boo" spelled backward at the end of their name.
 * {{dlc+|r}} Wizoobs and Red Ghosts are the only entities in the game whose [[Stage HP]]s were reduced in ''Repentance'', both from 5 to 4.
 ** {{dlc|r+}} This is once again true in ''Repentance+'', both from 4 to 3.{{dlc-}}

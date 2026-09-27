@@ -15937,7 +15937,17 @@
             "inline": [
               {
                 "kind": "text",
-                "text": "Certain active items also gain additional effects, which are noted below; any items not listed have their standard effects aside from the temporary damage up Birthright gives them.  ",
+                "text": "Certain active items also gain additional effects, which are noted below; any items not listed have their standard effects aside from the temporary damage up Birthright gives them.",
+                "style": "plain"
+              }
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "inline": [
+              {
+                "kind": "text",
+                "text": " collectible, collectible_name, collectible_image, bob_combination ",
                 "style": "plain"
               }
             ]
@@ -442955,7 +442965,18 @@
             "style": "plain"
           }
         ],
-        "blocks": []
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "inline": [
+              {
+                "kind": "text",
+                "text": " collectible, collectible_name, collectible_image, bov_combination ",
+                "style": "plain"
+              }
+            ]
+          }
+        ]
       },
       {
         "kind": "effects",
@@ -492329,7 +492350,7 @@
   },
   "658": {
     "title": "Giant Cell",
-    "revid": 266995,
+    "revid": 269730,
     "description": [
       {
         "kind": "text",

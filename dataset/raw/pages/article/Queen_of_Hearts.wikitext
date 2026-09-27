@@ -16,7 +16,7 @@
 * Drops 1-20 full {{E|Red Heart}}s on the ground.
 
 == Notes ==
-* These Red Hearts are not affected by most replacement effects, other than those of {{r|Super Secret Room}}s.
+* Red Hearts spawned by this card are not affected by most replacement effects, other than those of {{r|Super Secret Room}}s.
 
 == Strategy ==
 * Any extra hearts left over could be used for a {{Machine|Blood Donation Machine}} to get extra money.
