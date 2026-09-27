@@ -142,6 +142,13 @@
     "sections": [
       {
         "kind": "effects",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Effects",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -231,7 +238,235 @@
         ]
       },
       {
+        "kind": "other",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Requirements",
+            "style": "plain"
+          }
+        ],
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "inline": [
+              {
+                "kind": "text",
+                "text": "Pick up 3 ",
+                "style": "plain"
+              },
+              {
+                "kind": "concept",
+                "page": "item",
+                "label": "item"
+              },
+              {
+                "kind": "text",
+                "text": "s or ",
+                "style": "plain"
+              },
+              {
+                "kind": "concept",
+                "page": "trinket",
+                "label": "trinket"
+              },
+              {
+                "kind": "text",
+                "text": "s from the following list (",
+                "style": "plain"
+              },
+              {
+                "kind": "edition",
+                "only": [
+                  "repentance",
+                  "repentancePlus"
+                ],
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": " with the ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "concept",
+                    "page": "Item Tags guppy",
+                    "label": "{{code"
+                  }
+                ]
+              },
+              {
+                "kind": "text",
+                "text": ").",
+                "style": "plain"
+              }
+            ]
+          },
+          {
+            "kind": "heading",
+            "level": 3,
+            "inline": [
+              {
+                "kind": "text",
+                "text": "Activated Collectibles",
+                "style": "plain"
+              }
+            ]
+          },
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 145
+                    },
+                    "label": "Guppy's Head"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 133
+                    },
+                    "label": "Guppy's Paw"
+                  }
+                ],
+                "children": []
+              }
+            ]
+          },
+          {
+            "kind": "heading",
+            "level": 3,
+            "inline": [
+              {
+                "kind": "text",
+                "text": "Passive Collectibles",
+                "style": "plain"
+              }
+            ]
+          },
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 81
+                    },
+                    "label": "Dead Cat"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 212
+                    },
+                    "label": "Guppy's Collar"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 134
+                    },
+                    "label": "Guppy's Tail"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 187
+                    },
+                    "label": "Guppy's Hairball"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 665
+                    },
+                    "label": "Guppy's Eye"
+                  }
+                ],
+                "children": []
+              }
+            ]
+          },
+          {
+            "kind": "heading",
+            "level": 3,
+            "inline": [
+              {
+                "kind": "text",
+                "text": "Trinkets",
+                "style": "plain"
+              }
+            ]
+          },
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "trinket",
+                      "id": 169
+                    },
+                    "label": "Kid's Drawing"
+                  }
+                ],
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -333,6 +568,23 @@
       },
       {
         "kind": "unlockable",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Unlockable ",
+            "style": "plain"
+          },
+          {
+            "kind": "concept",
+            "page": "Achievement",
+            "label": "Achievement"
+          },
+          {
+            "kind": "text",
+            "text": "s",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -614,6 +866,13 @@
     "sections": [
       {
         "kind": "effects",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Effects",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -1147,7 +1406,513 @@
         ]
       },
       {
+        "kind": "other",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Requirements",
+            "style": "plain"
+          }
+        ],
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "inline": [
+              {
+                "kind": "text",
+                "text": "Pick up 3 ",
+                "style": "plain"
+              },
+              {
+                "kind": "concept",
+                "page": "item",
+                "label": "item"
+              },
+              {
+                "kind": "text",
+                "text": "s from the following list (",
+                "style": "plain"
+              },
+              {
+                "kind": "edition",
+                "only": [
+                  "repentance",
+                  "repentancePlus"
+                ],
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": " with the ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "concept",
+                    "page": "Item Tags fly",
+                    "label": "{{code"
+                  }
+                ]
+              },
+              {
+                "kind": "text",
+                "text": ").",
+                "style": "plain"
+              }
+            ]
+          },
+          {
+            "kind": "heading",
+            "level": 3,
+            "inline": [
+              {
+                "kind": "text",
+                "text": "Active Collectibles",
+                "style": "plain"
+              }
+            ]
+          },
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 434
+                    },
+                    "label": "Jar of Flies"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 650
+                    },
+                    "label": "Plum Flute"
+                  }
+                ],
+                "children": []
+              }
+            ]
+          },
+          {
+            "kind": "heading",
+            "level": 3,
+            "inline": [
+              {
+                "kind": "text",
+                "text": "Passive Collectibles",
+                "style": "plain"
+              }
+            ]
+          },
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 320
+                    },
+                    "label": "???'s Only Friend"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 511
+                    },
+                    "label": "Angry Fly"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 272
+                    },
+                    "label": "BBF"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 274
+                    },
+                    "label": "Best Bud"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 279
+                    },
+                    "label": "Big Fan"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 57
+                    },
+                    "label": "Distant Admiration"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 128
+                    },
+                    "label": "Forever alone"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 364
+                    },
+                    "label": "Friend Zone"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 10
+                    },
+                    "label": "Halo of Flies"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 248
+                    },
+                    "label": "Hive Mind"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 365
+                    },
+                    "label": "Lost Fly"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 151
+                    },
+                    "label": "The Mulligan"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 426
+                    },
+                    "label": "Obsessed Fan"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 430
+                    },
+                    "label": "Papa Fly"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 9
+                    },
+                    "label": "Skatole"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 264
+                    },
+                    "label": "Smart Fly"
+                  }
+                ],
+                "children": []
+              }
+            ]
+          },
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 629
+                        },
+                        "label": "Bot Fly"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 649
+                        },
+                        "label": "Fruity Plum"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 461
+                        },
+                        "label": "Parasitoid"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 581
+                        },
+                        "label": "Psy Fly"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 693
+                        },
+                        "label": "The Swarm"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 492
+                        },
+                        "label": "YO LISTEN!"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              }
+            ]
+          },
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 148
+                        },
+                        "label": "Infestation"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              }
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "inline": [
+              {
+                "kind": "text",
+                "text": "|}",
+                "style": "plain"
+              }
+            ]
+          }
+        ]
+      },
+      {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -1202,6 +1967,23 @@
       },
       {
         "kind": "unlockable",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Unlockable ",
+            "style": "plain"
+          },
+          {
+            "kind": "concept",
+            "page": "Achievement",
+            "label": "Achievement"
+          },
+          {
+            "kind": "text",
+            "text": "s",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -1389,6 +2171,13 @@
     "sections": [
       {
         "kind": "effects",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Effects",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -1410,6 +2199,226 @@
                     "kind": "text",
                     "text": ".",
                     "style": "plain"
+                  }
+                ],
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "other",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Requirements",
+            "style": "plain"
+          }
+        ],
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "inline": [
+              {
+                "kind": "text",
+                "text": "Pick up 3 ",
+                "style": "plain"
+              },
+              {
+                "kind": "concept",
+                "page": "item",
+                "label": "item"
+              },
+              {
+                "kind": "text",
+                "text": "s from the following list (",
+                "style": "plain"
+              },
+              {
+                "kind": "edition",
+                "only": [
+                  "repentance",
+                  "repentancePlus"
+                ],
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": " with the ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "concept",
+                    "page": "Item Tags mushroom",
+                    "label": "{{code"
+                  }
+                ]
+              },
+              {
+                "kind": "text",
+                "text": ").",
+                "style": "plain"
+              }
+            ]
+          },
+          {
+            "kind": "heading",
+            "level": 3,
+            "inline": [
+              {
+                "kind": "text",
+                "text": "Active Collectibles",
+                "style": "plain"
+              }
+            ]
+          },
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 625
+                    },
+                    "label": "Mega Mush"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 582
+                    },
+                    "label": "Wavy Cap"
+                  }
+                ],
+                "children": []
+              }
+            ]
+          },
+          {
+            "kind": "heading",
+            "level": 3,
+            "inline": [
+              {
+                "kind": "text",
+                "text": "Passive Collectibles",
+                "style": "plain"
+              }
+            ]
+          },
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 11
+                    },
+                    "label": "1up!"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 342
+                    },
+                    "label": "Blue Cap"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 398
+                    },
+                    "label": "God's Flesh"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 12
+                    },
+                    "label": "Magic Mushroom"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 71
+                    },
+                    "label": "Mini Mush"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 553
+                    },
+                    "label": "Mucormycosis"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 121
+                    },
+                    "label": "Odd Mushroom (Large)"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 120
+                    },
+                    "label": "Odd Mushroom (Thin)"
                   }
                 ],
                 "children": []
@@ -1587,6 +2596,13 @@
     "sections": [
       {
         "kind": "effects",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Effects",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -1632,7 +2648,518 @@
         ]
       },
       {
+        "kind": "other",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Requirements",
+            "style": "plain"
+          }
+        ],
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "inline": [
+              {
+                "kind": "text",
+                "text": "Pick up 3 ",
+                "style": "plain"
+              },
+              {
+                "kind": "concept",
+                "page": "item",
+                "label": "item"
+              },
+              {
+                "kind": "text",
+                "text": "s from the following list (",
+                "style": "plain"
+              },
+              {
+                "kind": "edition",
+                "only": [
+                  "repentance",
+                  "repentancePlus"
+                ],
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": " with the ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "concept",
+                    "page": "Item Tags angel",
+                    "label": "{{code"
+                  }
+                ]
+              },
+              {
+                "kind": "text",
+                "text": ").",
+                "style": "plain"
+              }
+            ]
+          },
+          {
+            "kind": "heading",
+            "level": 3,
+            "inline": [
+              {
+                "kind": "text",
+                "text": "Activated Collectibles",
+                "style": "plain"
+              }
+            ]
+          },
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 33
+                    },
+                    "label": "The Bible"
+                  }
+                ],
+                "children": []
+              }
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "inline": [
+              {
+                "kind": "text",
+                "text": "|}",
+                "style": "plain"
+              }
+            ]
+          },
+          {
+            "kind": "heading",
+            "level": 3,
+            "inline": [
+              {
+                "kind": "text",
+                "text": "Passive Collectibles",
+                "style": "plain"
+              }
+            ]
+          },
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 185
+                    },
+                    "label": "Dead Dove"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 101
+                    },
+                    "label": "The Halo"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 184
+                    },
+                    "label": "Holy Grail"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 313
+                    },
+                    "label": "Holy Mantle"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 173
+                    },
+                    "label": "Mitre"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 72
+                    },
+                    "label": "Rosary"
+                  }
+                ],
+                "children": []
+              }
+            ]
+          },
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 112
+                        },
+                        "label": "Guardian Angel"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "afterbirth",
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 363
+                        },
+                        "label": "Sworn Protector"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              }
+            ]
+          },
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 162
+                        },
+                        "label": "Celtic Cross"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 568
+                        },
+                        "label": "Divine Intervention"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 331
+                        },
+                        "label": "Godhead"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 374
+                        },
+                        "label": "Holy Light"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 573
+                        },
+                        "label": "Immaculate Heart"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 643
+                        },
+                        "label": "Revelation"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 182
+                        },
+                        "label": "Sacred Heart"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 696
+                        },
+                        "label": "Salvation"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 691
+                        },
+                        "label": "Sacred Orb"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 142
+                        },
+                        "label": "Scapular"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              }
+            ]
+          },
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 390
+                        },
+                        "label": "Seraphim"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              }
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "inline": [
+              {
+                "kind": "text",
+                "text": "|}",
+                "style": "plain"
+              }
+            ]
+          }
+        ]
+      },
+      {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -1818,6 +3345,13 @@
     "sections": [
       {
         "kind": "effects",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Effects",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -1899,6 +3433,206 @@
                   }
                 ],
                 "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "other",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Requirements",
+            "style": "plain"
+          }
+        ],
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "inline": [
+              {
+                "kind": "text",
+                "text": "Pick up 3 ",
+                "style": "plain"
+              },
+              {
+                "kind": "concept",
+                "page": "item",
+                "label": "item"
+              },
+              {
+                "kind": "text",
+                "text": "s or ",
+                "style": "plain"
+              },
+              {
+                "kind": "concept",
+                "page": "trinket",
+                "label": "trinket"
+              },
+              {
+                "kind": "text",
+                "text": "s from the following list (",
+                "style": "plain"
+              },
+              {
+                "kind": "edition",
+                "only": [
+                  "repentance",
+                  "repentancePlus"
+                ],
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": " with the ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "concept",
+                    "page": "Item Tags bob",
+                    "label": "{{code"
+                  }
+                ]
+              },
+              {
+                "kind": "text",
+                "text": ").",
+                "style": "plain"
+              }
+            ]
+          },
+          {
+            "kind": "heading",
+            "level": 3,
+            "inline": [
+              {
+                "kind": "text",
+                "text": "Activated Collectibles",
+                "style": "plain"
+              }
+            ]
+          },
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 42
+                    },
+                    "label": "Bob's Rotten Head"
+                  }
+                ],
+                "children": []
+              }
+            ]
+          },
+          {
+            "kind": "heading",
+            "level": 3,
+            "inline": [
+              {
+                "kind": "text",
+                "text": "Passive Collectibles",
+                "style": "plain"
+              }
+            ]
+          },
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 273
+                    },
+                    "label": "Bob's Brain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 140
+                    },
+                    "label": "Bob's Curse"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 149
+                    },
+                    "label": "Ipecac"
+                  }
+                ],
+                "children": []
+              }
+            ]
+          },
+          {
+            "kind": "heading",
+            "level": 3,
+            "inline": [
+              {
+                "kind": "text",
+                "text": "Trinkets",
+                "style": "plain"
+              }
+            ]
+          },
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "trinket",
+                          "id": 71
+                        },
+                        "label": "Bob's Bladder"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              }
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "inline": [
+              {
+                "kind": "text",
+                "text": "|}",
+                "style": "plain"
               }
             ]
           }
@@ -2030,6 +3764,13 @@
     "sections": [
       {
         "kind": "effects",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Effects",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -2120,6 +3861,183 @@
                     ]
                   }
                 ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "other",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Requirements",
+            "style": "plain"
+          }
+        ],
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "inline": [
+              {
+                "kind": "text",
+                "text": "Pick up 3 ",
+                "style": "plain"
+              },
+              {
+                "kind": "concept",
+                "page": "item",
+                "label": "item"
+              },
+              {
+                "kind": "text",
+                "text": "s from the following list (",
+                "style": "plain"
+              },
+              {
+                "kind": "edition",
+                "only": [
+                  "repentance",
+                  "repentancePlus"
+                ],
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": " with the ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "concept",
+                    "page": "Item Tags syringe",
+                    "label": "{{code"
+                  }
+                ]
+              },
+              {
+                "kind": "text",
+                "text": ").",
+                "style": "plain"
+              }
+            ]
+          },
+          {
+            "kind": "heading",
+            "level": 3,
+            "inline": [
+              {
+                "kind": "text",
+                "text": "Passive Collectibles",
+                "style": "plain"
+              }
+            ]
+          },
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 493
+                    },
+                    "label": "Adrenaline"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 496
+                    },
+                    "label": "Euthanasia"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 240
+                    },
+                    "label": "Experimental Treatment"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 70
+                    },
+                    "label": "Growth Hormones"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 14
+                    },
+                    "label": "Roid Rage"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 143
+                    },
+                    "label": "Speed Ball"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 345
+                    },
+                    "label": "Synthoil"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 13
+                    },
+                    "label": "The Virus"
+                  }
+                ],
+                "children": []
               }
             ]
           }
@@ -2286,6 +4204,13 @@
     "sections": [
       {
         "kind": "effects",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Effects",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -2336,7 +4261,411 @@
         ]
       },
       {
+        "kind": "other",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Requirements",
+            "style": "plain"
+          }
+        ],
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "inline": [
+              {
+                "kind": "text",
+                "text": "Pick up 3 ",
+                "style": "plain"
+              },
+              {
+                "kind": "concept",
+                "page": "item",
+                "label": "item"
+              },
+              {
+                "kind": "text",
+                "text": "s from the following list (",
+                "style": "plain"
+              },
+              {
+                "kind": "edition",
+                "only": [
+                  "repentance",
+                  "repentancePlus"
+                ],
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": " with the ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "concept",
+                    "page": "Item Tags mom",
+                    "label": "{{code"
+                  }
+                ]
+              },
+              {
+                "kind": "text",
+                "text": ").",
+                "style": "plain"
+              }
+            ]
+          },
+          {
+            "kind": "heading",
+            "level": 3,
+            "inline": [
+              {
+                "kind": "text",
+                "text": "Activated Collectibles",
+                "style": "plain"
+              }
+            ]
+          },
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 102
+                    },
+                    "label": "Mom's Bottle of Pills"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 39
+                    },
+                    "label": "Mom's Bra"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 41
+                    },
+                    "label": "Mom's Pad"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 552
+                    },
+                    "label": "Mom's Shovel"
+                  }
+                ],
+                "children": []
+              }
+            ]
+          },
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 439
+                        },
+                        "label": "Mom's Box"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 604
+                        },
+                        "label": "Mom's Bracelet"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              }
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "inline": [
+              {
+                "kind": "text",
+                "text": "|}",
+                "style": "plain"
+              }
+            ]
+          },
+          {
+            "kind": "heading",
+            "level": 3,
+            "inline": [
+              {
+                "kind": "text",
+                "text": "Passive Collectibles",
+                "style": "plain"
+              }
+            ]
+          },
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 195
+                    },
+                    "label": "Mom's Coin Purse"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 110
+                    },
+                    "label": "Mom's Contacts"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 55
+                    },
+                    "label": "Mom's Eye"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 200
+                    },
+                    "label": "Mom's Eyeshadow"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 30
+                    },
+                    "label": "Mom's Heels"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 199
+                    },
+                    "label": "Mom's Key"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 114
+                    },
+                    "label": "Mom's Knife"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 31
+                    },
+                    "label": "Mom's Lipstick"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 355
+                    },
+                    "label": "Mom's Pearls"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 228
+                    },
+                    "label": "Mom's Perfume"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 139
+                    },
+                    "label": "Mom's Purse"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 508
+                    },
+                    "label": "Mom's Razor"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 732
+                    },
+                    "label": "Mom's Ring"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 29
+                    },
+                    "label": "Mom's Underwear"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 217
+                    },
+                    "label": "Mom's Wig"
+                  }
+                ],
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -2396,6 +4725,23 @@
       },
       {
         "kind": "unlockable",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Unlockable ",
+            "style": "plain"
+          },
+          {
+            "kind": "concept",
+            "page": "Achievement",
+            "label": "Achievement"
+          },
+          {
+            "kind": "text",
+            "text": "s",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -2651,6 +4997,13 @@
     "sections": [
       {
         "kind": "effects",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Effects",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -2714,7 +5067,749 @@
         ]
       },
       {
+        "kind": "other",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Requirements",
+            "style": "plain"
+          }
+        ],
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "inline": [
+              {
+                "kind": "text",
+                "text": "Pick up 3 ",
+                "style": "plain"
+              },
+              {
+                "kind": "concept",
+                "page": "item",
+                "label": "item"
+              },
+              {
+                "kind": "text",
+                "text": "s from the following list (",
+                "style": "plain"
+              },
+              {
+                "kind": "edition",
+                "only": [
+                  "repentance",
+                  "repentancePlus"
+                ],
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": " with the ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "concept",
+                    "page": "Item Tags baby",
+                    "label": "{{code"
+                  }
+                ]
+              },
+              {
+                "kind": "text",
+                "text": ").",
+                "style": "plain"
+              }
+            ]
+          },
+          {
+            "kind": "heading",
+            "level": 3,
+            "inline": [
+              {
+                "kind": "text",
+                "text": "Passive Collectibles",
+                "style": "plain"
+              }
+            ]
+          },
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 8
+                    },
+                    "label": "Brother Bobby"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 167
+                    },
+                    "label": "Harlequin Baby"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 269
+                    },
+                    "label": "Headless Baby"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 100
+                    },
+                    "label": "Little Steven"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 322
+                    },
+                    "label": "Mongo Baby"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 268
+                    },
+                    "label": "Rotten Baby"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 67
+                    },
+                    "label": "Sister Maggy"
+                  }
+                ],
+                "children": []
+              }
+            ]
+          },
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 188
+                        },
+                        "label": "Abel"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 491
+                        },
+                        "label": "Acid Baby"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 607
+                        },
+                        "label": "Boiled Baby"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 518
+                        },
+                        "label": "Buddy in a Box"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 652
+                        },
+                        "label": "Cube Baby"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 113
+                        },
+                        "label": "Demon Baby"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 265
+                        },
+                        "label": "Dry Baby"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 404
+                        },
+                        "label": "Farting Baby"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 608
+                        },
+                        "label": "Freezer Baby"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 163
+                        },
+                        "label": "Ghost Baby"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 112
+                        },
+                        "label": "Guardian Angel"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 360
+                        },
+                        "label": "Incubus"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 472
+                        },
+                        "label": "King Baby"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 679
+                        },
+                        "label": "Lil Abaddon"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 275
+                        },
+                        "label": "Lil Brimstone"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 435
+                        },
+                        "label": "Lil Loki"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 431
+                        },
+                        "label": "Multidimensional Baby"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 661
+                        },
+                        "label": "Quints"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 174
+                        },
+                        "label": "Rainbow Baby"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 95
+                        },
+                        "label": "Robo-Baby"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 267
+                        },
+                        "label": "Robo-Baby 2.0"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 390
+                        },
+                        "label": "Seraphim"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 363
+                        },
+                        "label": "Sworn Protector"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 698
+                        },
+                        "label": "Twisted Pair"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              }
+            ]
+          },
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 519
+                        },
+                        "label": "Lil Delirium"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              }
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "inline": [
+              {
+                "kind": "text",
+                "text": "|}",
+                "style": "plain"
+              }
+            ]
+          }
+        ]
+      },
+      {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -3096,6 +6191,13 @@
     "sections": [
       {
         "kind": "effects",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Effects",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -3141,7 +6243,281 @@
         ]
       },
       {
+        "kind": "other",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Requirements",
+            "style": "plain"
+          }
+        ],
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "inline": [
+              {
+                "kind": "text",
+                "text": "Pick up 3 ",
+                "style": "plain"
+              },
+              {
+                "kind": "concept",
+                "page": "item",
+                "label": "item"
+              },
+              {
+                "kind": "text",
+                "text": "s from the following list (",
+                "style": "plain"
+              },
+              {
+                "kind": "edition",
+                "only": [
+                  "repentance",
+                  "repentancePlus"
+                ],
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": " with the ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "concept",
+                    "page": "Item Tags devil",
+                    "label": "{{code"
+                  }
+                ]
+              },
+              {
+                "kind": "text",
+                "text": ").",
+                "style": "plain"
+              }
+            ]
+          },
+          {
+            "kind": "heading",
+            "level": 3,
+            "inline": [
+              {
+                "kind": "text",
+                "text": "Activated Collectibles",
+                "style": "plain"
+              }
+            ]
+          },
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 83
+                    },
+                    "label": "The Nail"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 556
+                    },
+                    "label": "Sulfur"
+                  }
+                ],
+                "children": []
+              }
+            ]
+          },
+          {
+            "kind": "heading",
+            "level": 3,
+            "inline": [
+              {
+                "kind": "text",
+                "text": "Passive Collectibles",
+                "style": "plain"
+              }
+            ]
+          },
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 230
+                    },
+                    "label": "Abaddon"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 118
+                    },
+                    "label": "Brimstone"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 79
+                    },
+                    "label": "The Mark"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 80
+                    },
+                    "label": "The Pact"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 51
+                    },
+                    "label": "Pentagram"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 159
+                    },
+                    "label": "Spirit of the Night"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 399
+                    },
+                    "label": "Maw Of The Void"
+                  }
+                ],
+                "children": []
+              }
+            ]
+          },
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 572
+                        },
+                        "label": "Eye of the Occult"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 82
+                        },
+                        "label": "Lord of the Pit"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              }
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "inline": [
+              {
+                "kind": "text",
+                "text": "|}",
+                "style": "plain"
+              }
+            ]
+          }
+        ]
+      },
+      {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -3307,6 +6683,13 @@
     "sections": [
       {
         "kind": "effects",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Effects",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -3342,7 +6725,356 @@
         ]
       },
       {
+        "kind": "other",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Requirements",
+            "style": "plain"
+          }
+        ],
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "inline": [
+              {
+                "kind": "text",
+                "text": "Pick up 3 ",
+                "style": "plain"
+              },
+              {
+                "kind": "concept",
+                "page": "item",
+                "label": "item"
+              },
+              {
+                "kind": "text",
+                "text": "s from the following list (",
+                "style": "plain"
+              },
+              {
+                "kind": "edition",
+                "only": [
+                  "repentance",
+                  "repentancePlus"
+                ],
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": " with the ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "concept",
+                    "page": "Item Tags poop",
+                    "label": "{{code"
+                  }
+                ]
+              },
+              {
+                "kind": "text",
+                "text": ").",
+                "style": "plain"
+              }
+            ]
+          },
+          {
+            "kind": "heading",
+            "level": 3,
+            "inline": [
+              {
+                "kind": "text",
+                "text": "Activated Collectibles",
+                "style": "plain"
+              }
+            ]
+          },
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 291
+                    },
+                    "label": "Flush!"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 36
+                    },
+                    "label": "The Poop"
+                  }
+                ],
+                "children": []
+              }
+            ]
+          },
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 504
+                        },
+                        "label": "Brown Nugget"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              }
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "inline": [
+              {
+                "kind": "text",
+                "text": "|}",
+                "style": "plain"
+              }
+            ]
+          },
+          {
+            "kind": "heading",
+            "level": 3,
+            "inline": [
+              {
+                "kind": "text",
+                "text": "Passive Collectibles",
+                "style": "plain"
+              }
+            ]
+          },
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 236
+                    },
+                    "label": "E. Coli"
+                  }
+                ],
+                "children": []
+              }
+            ]
+          },
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 209
+                        },
+                        "label": "Butt Bombs"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 576
+                        },
+                        "label": "Dirty Mind"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 543
+                        },
+                        "label": "Hallowed Ground"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 680
+                        },
+                        "label": "Montezuma's Revenge"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 378
+                        },
+                        "label": "No. 2"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 9
+                        },
+                        "label": "Skatole"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              }
+            ]
+          },
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 725
+                        },
+                        "label": "IBS"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              }
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "inline": [
+              {
+                "kind": "text",
+                "text": "|}",
+                "style": "plain"
+              }
+            ]
+          }
+        ]
+      },
+      {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -3829,6 +7561,13 @@
     "sections": [
       {
         "kind": "effects",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Effects",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -3925,7 +7664,299 @@
         ]
       },
       {
+        "kind": "other",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Requirements",
+            "style": "plain"
+          }
+        ],
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "inline": [
+              {
+                "kind": "text",
+                "text": "Pick up 3 ",
+                "style": "plain"
+              },
+              {
+                "kind": "concept",
+                "page": "item",
+                "label": "item"
+              },
+              {
+                "kind": "text",
+                "text": "s from the following list (",
+                "style": "plain"
+              },
+              {
+                "kind": "edition",
+                "only": [
+                  "repentance",
+                  "repentancePlus"
+                ],
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": " with the ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "concept",
+                    "page": "Item Tags book",
+                    "label": "{{code"
+                  }
+                ]
+              },
+              {
+                "kind": "text",
+                "text": ").",
+                "style": "plain"
+              }
+            ]
+          },
+          {
+            "kind": "heading",
+            "level": 3,
+            "inline": [
+              {
+                "kind": "text",
+                "text": "Activated Collectibles",
+                "style": "plain"
+              }
+            ]
+          },
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 65
+                    },
+                    "label": "Anarchist Cookbook"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 33
+                    },
+                    "label": "The Bible"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 34
+                    },
+                    "label": "The Book of Belial"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 78
+                    },
+                    "label": "Book of Revelations"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 287
+                    },
+                    "label": "Book of Secrets"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 58
+                    },
+                    "label": "Book of Shadows"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 97
+                    },
+                    "label": "The Book of Sin"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 545
+                    },
+                    "label": "Book of the Dead"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 282
+                    },
+                    "label": "How to Jump"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 35
+                    },
+                    "label": "The Necronomicon"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 123
+                    },
+                    "label": "Monster Manual"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 292
+                    },
+                    "label": "Satanic Bible"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 192
+                    },
+                    "label": "Telepathy For Dummies"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 712
+                    },
+                    "label": "Lemegeton"
+                  }
+                ],
+                "children": []
+              }
+            ]
+          },
+          {
+            "kind": "heading",
+            "level": 3,
+            "inline": [
+              {
+                "kind": "text",
+                "text": "Passive Collectibles",
+                "style": "plain"
+              }
+            ]
+          },
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 584
+                    },
+                    "label": "Book of Virtues"
+                  }
+                ],
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -4085,6 +8116,13 @@
     "sections": [
       {
         "kind": "effects",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Effects",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -4126,6 +8164,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -4272,6 +8317,13 @@
     "sections": [
       {
         "kind": "effects",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Effects",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -4333,6 +8385,420 @@
                     ]
                   }
                 ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "other",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Requirements",
+            "style": "plain"
+          }
+        ],
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "inline": [
+              {
+                "kind": "text",
+                "text": "Pick up 3 ",
+                "style": "plain"
+              },
+              {
+                "kind": "concept",
+                "page": "item",
+                "label": "item"
+              },
+              {
+                "kind": "text",
+                "text": "s from the following list (",
+                "style": "plain"
+              },
+              {
+                "kind": "edition",
+                "only": [
+                  "repentance",
+                  "repentancePlus"
+                ],
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": " with the ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "concept",
+                    "page": "Item Tags spider",
+                    "label": "{{code"
+                  }
+                ]
+              },
+              {
+                "kind": "text",
+                "text": ").",
+                "style": "plain"
+              }
+            ]
+          },
+          {
+            "kind": "heading",
+            "level": 3,
+            "inline": [
+              {
+                "kind": "text",
+                "text": "Activated Collectibles",
+                "style": "plain"
+              }
+            ]
+          },
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 288
+                    },
+                    "label": "Box of Spiders"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 171
+                    },
+                    "label": "Spider Butt"
+                  }
+                ],
+                "children": []
+              }
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "inline": [
+              {
+                "kind": "text",
+                "text": "|}",
+                "style": "plain"
+              }
+            ]
+          },
+          {
+            "kind": "heading",
+            "level": 3,
+            "inline": [
+              {
+                "kind": "text",
+                "text": "Passive Collectibles",
+                "style": "plain"
+              }
+            ]
+          },
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 153
+                    },
+                    "label": "Mutant Spider"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 89
+                    },
+                    "label": "Spider Bite"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 403
+                    },
+                    "label": "Spider Mod"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 211
+                    },
+                    "label": "Spiderbaby"
+                  }
+                ],
+                "children": []
+              }
+            ]
+          },
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 377
+                        },
+                        "label": "Bursting Sack"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 170
+                        },
+                        "label": "Daddy Longlegs"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 248
+                        },
+                        "label": "Hive Mind"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 234
+                        },
+                        "label": "Infestation 2"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 575
+                        },
+                        "label": "The Intruder"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 266
+                        },
+                        "label": "Juicy Sack"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 717
+                        },
+                        "label": "Keeper's Kin"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 461
+                        },
+                        "label": "Parasitoid"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 280
+                        },
+                        "label": "Sissy Longlegs"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "item",
+                          "id": 367
+                        },
+                        "label": "Sticky Bombs"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              }
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "inline": [
+              {
+                "kind": "text",
+                "text": "|}",
+                "style": "plain"
               }
             ]
           }
@@ -4423,6 +8889,13 @@
     "sections": [
       {
         "kind": "effects",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Effects",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -4564,7 +9037,131 @@
         ]
       },
       {
+        "kind": "other",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Requirements",
+            "style": "plain"
+          }
+        ],
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "inline": [
+              {
+                "kind": "text",
+                "text": "Pick up 3 ",
+                "style": "plain"
+              },
+              {
+                "kind": "concept",
+                "page": "item",
+                "label": "item"
+              },
+              {
+                "kind": "text",
+                "text": "s or ",
+                "style": "plain"
+              },
+              {
+                "kind": "concept",
+                "page": "pill",
+                "label": "pill"
+              },
+              {
+                "kind": "text",
+                "text": "s from the following list.",
+                "style": "plain"
+              }
+            ]
+          },
+          {
+            "kind": "heading",
+            "level": 3,
+            "inline": [
+              {
+                "kind": "text",
+                "text": "Passive Collectibles",
+                "style": "plain"
+              }
+            ]
+          },
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 302
+                    },
+                    "label": "Leo"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 12
+                    },
+                    "label": "Magic Mushroom"
+                  }
+                ],
+                "children": []
+              }
+            ]
+          },
+          {
+            "kind": "heading",
+            "level": 3,
+            "inline": [
+              {
+                "kind": "text",
+                "text": "Pills",
+                "style": "plain"
+              }
+            ]
+          },
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "concept",
+                    "page": "One Makes You Larger",
+                    "label": "One Makes You Larger"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " (each pill taken will count towards the transformation)",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -4748,6 +9345,13 @@
     "sections": [
       {
         "kind": "effects",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Effects",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -4807,6 +9411,158 @@
                     ]
                   }
                 ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "other",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Requirements",
+            "style": "plain"
+          }
+        ],
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "inline": [
+              {
+                "kind": "text",
+                "text": "Pick up each of the 3 ",
+                "style": "plain"
+              },
+              {
+                "kind": "concept",
+                "page": "item",
+                "label": "item"
+              },
+              {
+                "kind": "text",
+                "text": "s and ",
+                "style": "plain"
+              },
+              {
+                "kind": "concept",
+                "page": "trinket",
+                "label": "trinket"
+              },
+              {
+                "kind": "text",
+                "text": "s from the following list.",
+                "style": "plain"
+              }
+            ]
+          },
+          {
+            "kind": "heading",
+            "level": 3,
+            "inline": [
+              {
+                "kind": "text",
+                "text": "Activated Collectibles",
+                "style": "plain"
+              }
+            ]
+          },
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 35
+                    },
+                    "label": "The Necronomicon"
+                  }
+                ],
+                "children": []
+              }
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "inline": [
+              {
+                "kind": "text",
+                "text": "|}",
+                "style": "plain"
+              }
+            ]
+          },
+          {
+            "kind": "heading",
+            "level": 3,
+            "inline": [
+              {
+                "kind": "text",
+                "text": "Passive Collectibles",
+                "style": "plain"
+              }
+            ]
+          },
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 262
+                    },
+                    "label": "Missing Page 2"
+                  }
+                ],
+                "children": []
+              }
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "inline": [
+              {
+                "kind": "text",
+                "text": "|}",
+                "style": "plain"
+              }
+            ]
+          },
+          {
+            "kind": "heading",
+            "level": 3,
+            "inline": [
+              {
+                "kind": "text",
+                "text": "Trinkets",
+                "style": "plain"
+              }
+            ]
+          },
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "trinket",
+                      "id": 48
+                    },
+                    "label": "A Missing Page"
+                  }
+                ],
+                "children": []
               }
             ]
           }
@@ -4933,6 +9689,13 @@
     "sections": [
       {
         "kind": "effects",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Effects",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -4963,7 +9726,102 @@
         ]
       },
       {
+        "kind": "other",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Requirements",
+            "style": "plain"
+          }
+        ],
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "inline": [
+              {
+                "kind": "text",
+                "text": "Pick up 3 ",
+                "style": "plain"
+              },
+              {
+                "kind": "concept",
+                "page": "item",
+                "label": "item"
+              },
+              {
+                "kind": "text",
+                "text": "s from the following list.",
+                "style": "plain"
+              }
+            ]
+          },
+          {
+            "kind": "heading",
+            "level": 3,
+            "inline": [
+              {
+                "kind": "text",
+                "text": "Passive Collectibles",
+                "style": "plain"
+              }
+            ]
+          },
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 144
+                    },
+                    "label": "Bum Friend"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 278
+                    },
+                    "label": "Dark Bum"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 388
+                    },
+                    "label": "Key Bum"
+                  }
+                ],
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -5066,6 +9924,17 @@
             ]
           }
         ]
+      },
+      {
+        "kind": "other",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Videos",
+            "style": "plain"
+          }
+        ],
+        "blocks": []
       }
     ]
   }

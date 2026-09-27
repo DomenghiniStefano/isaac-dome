@@ -93,6 +93,13 @@
     "sections": [
       {
         "kind": "difficulty",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Difficulty",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -176,6 +183,13 @@
       },
       {
         "kind": "strategies",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Strategy",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -275,6 +289,23 @@
       },
       {
         "kind": "unlockable",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Unlockable ",
+            "style": "plain"
+          },
+          {
+            "kind": "concept",
+            "page": "achievement",
+            "label": "achievement"
+          },
+          {
+            "kind": "text",
+            "text": "s",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -502,6 +533,13 @@
     "sections": [
       {
         "kind": "difficulty",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Difficulty",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -559,6 +597,13 @@
       },
       {
         "kind": "strategies",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Strategy",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -897,6 +942,23 @@
       },
       {
         "kind": "unlockable",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Unlockable ",
+            "style": "plain"
+          },
+          {
+            "kind": "concept",
+            "page": "Achievement",
+            "label": "Achievement"
+          },
+          {
+            "kind": "text",
+            "text": "s",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -1115,6 +1177,13 @@
     "sections": [
       {
         "kind": "difficulty",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Difficulty",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -1156,6 +1225,13 @@
       },
       {
         "kind": "strategies",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Strategy",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -1569,6 +1645,23 @@
       },
       {
         "kind": "unlockable",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Unlockable ",
+            "style": "plain"
+          },
+          {
+            "kind": "concept",
+            "page": "Achievement",
+            "label": "Achievement"
+          },
+          {
+            "kind": "text",
+            "text": "s",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -1851,6 +1944,13 @@
     "sections": [
       {
         "kind": "difficulty",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Difficulty",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -1866,6 +1966,13 @@
       },
       {
         "kind": "strategies",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Strategy",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -2050,6 +2157,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -2096,6 +2210,23 @@
       },
       {
         "kind": "unlockable",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Unlockable ",
+            "style": "plain"
+          },
+          {
+            "kind": "concept",
+            "page": "Achievement",
+            "label": "Achievement"
+          },
+          {
+            "kind": "text",
+            "text": "s",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -2320,6 +2451,13 @@
     "sections": [
       {
         "kind": "difficulty",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Difficulty",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -2381,6 +2519,13 @@
       },
       {
         "kind": "strategies",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Strategy",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -2585,6 +2730,18 @@
       },
       {
         "kind": "unlockable",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Unlockable ",
+            "style": "plain"
+          },
+          {
+            "kind": "concept",
+            "page": "Achievements",
+            "label": "Achievements"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -2837,6 +2994,13 @@
     "sections": [
       {
         "kind": "difficulty",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Difficulty",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -2868,6 +3032,13 @@
       },
       {
         "kind": "strategies",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Strategy",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -3728,6 +3899,23 @@
       },
       {
         "kind": "unlockable",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Unlockable ",
+            "style": "plain"
+          },
+          {
+            "kind": "concept",
+            "page": "achievement",
+            "label": "achievement"
+          },
+          {
+            "kind": "text",
+            "text": "s",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -3981,6 +4169,13 @@
     "sections": [
       {
         "kind": "difficulty",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Difficulty",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -4015,6 +4210,13 @@
       },
       {
         "kind": "strategies",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Strategy",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -4900,6 +5102,13 @@
       },
       {
         "kind": "reward",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Reward",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -4958,6 +5167,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -5084,6 +5300,13 @@
       },
       {
         "kind": "bugs",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Bugs",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -5291,6 +5514,13 @@
     "sections": [
       {
         "kind": "difficulty",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Difficulty",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -5322,6 +5552,13 @@
       },
       {
         "kind": "strategies",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Strategy",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -5797,6 +6034,13 @@
       },
       {
         "kind": "reward",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Reward",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -6019,6 +6263,13 @@
     "sections": [
       {
         "kind": "difficulty",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Difficulty",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -6110,6 +6361,13 @@
       },
       {
         "kind": "strategies",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Strategy",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -6395,6 +6653,13 @@
       },
       {
         "kind": "reward",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Reward",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -6686,6 +6951,13 @@
     "sections": [
       {
         "kind": "difficulty",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Difficulty",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -6730,6 +7002,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -6761,6 +7040,13 @@
       },
       {
         "kind": "strategies",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Strategy",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -7154,6 +7440,13 @@
       },
       {
         "kind": "reward",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Reward",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -7414,6 +7707,13 @@
     "sections": [
       {
         "kind": "difficulty",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Difficulty",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -7531,6 +7831,13 @@
       },
       {
         "kind": "strategies",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Strategy",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -7802,6 +8109,13 @@
       },
       {
         "kind": "reward",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Reward",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -8020,6 +8334,13 @@
     "sections": [
       {
         "kind": "difficulty",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Difficulty",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -8048,6 +8369,13 @@
       },
       {
         "kind": "strategies",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Strategy",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -8125,6 +8453,13 @@
       },
       {
         "kind": "reward",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Reward",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -8356,6 +8691,13 @@
     "sections": [
       {
         "kind": "difficulty",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Difficulty",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -8437,6 +8779,13 @@
       },
       {
         "kind": "strategies",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Strategy",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -8951,6 +9300,13 @@
       },
       {
         "kind": "synergies",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Synergies",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -9034,6 +9390,13 @@
       },
       {
         "kind": "reward",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Reward",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -9278,6 +9641,13 @@
     "sections": [
       {
         "kind": "difficulty",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Difficulty",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -9306,6 +9676,13 @@
       },
       {
         "kind": "strategies",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Strategy",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -9526,6 +9903,13 @@
       },
       {
         "kind": "reward",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Reward",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -9728,6 +10112,13 @@
     "sections": [
       {
         "kind": "difficulty",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Difficulty",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -9753,6 +10144,13 @@
       },
       {
         "kind": "strategies",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Strategy",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -10027,6 +10425,13 @@
       },
       {
         "kind": "reward",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Reward",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -10219,6 +10624,13 @@
     "sections": [
       {
         "kind": "difficulty",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Difficulty",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -10234,6 +10646,13 @@
       },
       {
         "kind": "strategies",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Strategy",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -10371,6 +10790,13 @@
       },
       {
         "kind": "reward",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Rewards",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -10537,6 +10963,13 @@
     "sections": [
       {
         "kind": "difficulty",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Difficulty",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -10552,6 +10985,13 @@
       },
       {
         "kind": "strategies",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Strategy",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -10828,6 +11268,13 @@
       },
       {
         "kind": "reward",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Reward",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -11026,6 +11473,13 @@
     "sections": [
       {
         "kind": "difficulty",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Difficulty",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -11212,6 +11666,13 @@
       },
       {
         "kind": "strategies",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Strategy",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -11580,6 +12041,13 @@
       },
       {
         "kind": "reward",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Reward",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -11853,6 +12321,13 @@
     "sections": [
       {
         "kind": "difficulty",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Difficulty",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -11913,6 +12388,13 @@
       },
       {
         "kind": "strategies",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Strategy",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -12720,6 +13202,13 @@
       },
       {
         "kind": "reward",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Reward",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -12952,6 +13441,13 @@
     "sections": [
       {
         "kind": "difficulty",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Difficulty",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -12980,6 +13476,13 @@
       },
       {
         "kind": "strategies",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Strategy",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -13312,6 +13815,13 @@
       },
       {
         "kind": "reward",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Reward",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -13416,6 +13926,13 @@
     "sections": [
       {
         "kind": "difficulty",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Difficulty",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -13431,6 +13948,13 @@
       },
       {
         "kind": "strategies",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Strategy",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -13614,6 +14138,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -13645,6 +14176,13 @@
       },
       {
         "kind": "reward",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Reward",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -13747,6 +14285,13 @@
     "sections": [
       {
         "kind": "difficulty",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Difficulty",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -13762,6 +14307,13 @@
       },
       {
         "kind": "strategies",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Strategy",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "heading",
@@ -14981,6 +15533,13 @@
       },
       {
         "kind": "reward",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Reward",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -15024,6 +15583,13 @@
       },
       {
         "kind": "bugs",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Bugs",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -15330,6 +15896,13 @@
     "sections": [
       {
         "kind": "difficulty",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Difficulty",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -15405,6 +15978,13 @@
       },
       {
         "kind": "strategies",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Strategies",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -16619,6 +17199,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -16718,6 +17305,13 @@
       },
       {
         "kind": "reward",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Reward",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -16882,6 +17476,13 @@
     "sections": [
       {
         "kind": "difficulty",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Difficulty",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -17018,6 +17619,13 @@
       },
       {
         "kind": "strategies",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Strategy",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -18010,6 +18618,13 @@
       },
       {
         "kind": "reward",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Reward",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -18095,6 +18710,13 @@
       },
       {
         "kind": "bugs",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Bugs",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -18220,6 +18842,13 @@
     "sections": [
       {
         "kind": "difficulty",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Difficulty",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -18575,6 +19204,13 @@
       },
       {
         "kind": "strategies",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Strategy",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -19769,6 +20405,13 @@
       },
       {
         "kind": "reward",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Reward",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -20127,6 +20770,13 @@
     "sections": [
       {
         "kind": "difficulty",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Difficulty",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -20142,6 +20792,13 @@
       },
       {
         "kind": "strategies",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Strategy",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -20445,6 +21102,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -20690,6 +21354,13 @@
       },
       {
         "kind": "reward",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Reward",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -20938,6 +21609,13 @@
     "sections": [
       {
         "kind": "difficulty",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Difficulty",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -20992,6 +21670,13 @@
       },
       {
         "kind": "strategies",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Strategy",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -22139,6 +22824,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -22241,6 +22933,13 @@
       },
       {
         "kind": "reward",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Reward",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -22374,6 +23073,13 @@
     "sections": [
       {
         "kind": "difficulty",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Difficulty",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -22425,6 +23131,13 @@
       },
       {
         "kind": "reward",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Reward",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -22552,6 +23265,13 @@
     "sections": [
       {
         "kind": "difficulty",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Difficulty",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -22567,6 +23287,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -22799,6 +23526,13 @@
       },
       {
         "kind": "strategies",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Strategy",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -25551,6 +26285,13 @@
       },
       {
         "kind": "reward",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Reward",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -25630,6 +26371,13 @@
       },
       {
         "kind": "bugs",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Bugs",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -25760,6 +26508,13 @@
     "sections": [
       {
         "kind": "difficulty",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Difficulty",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -25831,6 +26586,13 @@
       },
       {
         "kind": "strategies",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Strategy",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -26990,6 +27752,13 @@
       },
       {
         "kind": "reward",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Reward",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -27124,6 +27893,13 @@
     "sections": [
       {
         "kind": "difficulty",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Difficulty",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -27179,6 +27955,13 @@
       },
       {
         "kind": "strategies",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Strategy",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -27870,6 +28653,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -28111,6 +28901,13 @@
       },
       {
         "kind": "reward",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Reward",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -28154,6 +28951,13 @@
       },
       {
         "kind": "bugs",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Bugs",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -28298,6 +29102,13 @@
     "sections": [
       {
         "kind": "difficulty",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Difficulty",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -28757,6 +29568,13 @@
       },
       {
         "kind": "strategies",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Strategy",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -29329,6 +30147,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -29547,6 +30372,13 @@
       },
       {
         "kind": "reward",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Reward",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -29659,6 +30491,13 @@
     "sections": [
       {
         "kind": "difficulty",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Difficulty",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -29680,6 +30519,13 @@
       },
       {
         "kind": "strategies",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Strategy",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -30512,6 +31358,13 @@
       },
       {
         "kind": "reward",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Reward",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -30627,7 +31480,599 @@
     },
     "sections": [
       {
+        "kind": "other",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Modifiers",
+            "style": "plain"
+          }
+        ],
+        "blocks": [
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "Isaac does not start with ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 105
+                    },
+                    "label": "The D6"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ", even if it is unlocked.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "All enemies with champion forms, including bosses, will be ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "concept",
+                    "page": "champion",
+                    "label": "champion"
+                  },
+                  {
+                    "kind": "text",
+                    "text": "s.",
+                    "style": "plain"
+                  }
+                ],
+                "children": [
+                  {
+                    "kind": "list",
+                    "ordered": false,
+                    "items": [
+                      {
+                        "inline": [
+                          {
+                            "kind": "text",
+                            "text": "Champions will not drop any collectibles.",
+                            "style": "plain"
+                          }
+                        ],
+                        "children": []
+                      },
+                      {
+                        "inline": [
+                          {
+                            "kind": "text",
+                            "text": "Ultra Hard is the only place in the game where \"Rainbow\" champions are not limited by time constraints and can appear early-game.",
+                            "style": "plain"
+                          }
+                        ],
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "Every boss fight, if possible, will be double trouble.",
+                    "style": "plain"
+                  }
+                ],
+                "children": [
+                  {
+                    "kind": "list",
+                    "ordered": false,
+                    "items": [
+                      {
+                        "inline": [
+                          {
+                            "kind": "text",
+                            "text": "Since the Basement can't have double-trouble bosses, these don't start until ",
+                            "style": "plain"
+                          },
+                          {
+                            "kind": "ref",
+                            "target": {
+                              "kind": "stage",
+                              "name": "Caves"
+                            },
+                            "label": "Caves"
+                          },
+                          {
+                            "kind": "text",
+                            "text": ".",
+                            "style": "plain"
+                          }
+                        ],
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "The player suffers from the following curses each floor: Labyrinth, Blind, lost, and Maze.",
+                    "style": "plain"
+                  }
+                ],
+                "children": [
+                  {
+                    "kind": "list",
+                    "ordered": false,
+                    "items": [
+                      {
+                        "inline": [
+                          {
+                            "kind": "text",
+                            "text": "These curses are ",
+                            "style": "plain"
+                          },
+                          {
+                            "kind": "text",
+                            "text": "permanent",
+                            "style": "italic"
+                          },
+                          {
+                            "kind": "text",
+                            "text": " and cannot be stopped through the usual methods of removing curses, such as ",
+                            "style": "plain"
+                          },
+                          {
+                            "kind": "ref",
+                            "target": {
+                              "kind": "concept",
+                              "name": "Dagaz"
+                            },
+                            "label": "Dagaz"
+                          },
+                          {
+                            "kind": "text",
+                            "text": ", ",
+                            "style": "plain"
+                          },
+                          {
+                            "kind": "ref",
+                            "target": {
+                              "kind": "item",
+                              "id": 260
+                            },
+                            "label": "Black Candle"
+                          },
+                          {
+                            "kind": "text",
+                            "text": " or ",
+                            "style": "plain"
+                          },
+                          {
+                            "kind": "ref",
+                            "target": {
+                              "kind": "item",
+                              "id": 622
+                            },
+                            "label": "Genesis"
+                          },
+                          {
+                            "kind": "text",
+                            "text": ".",
+                            "style": "plain"
+                          }
+                        ],
+                        "children": []
+                      },
+                      {
+                        "inline": [
+                          {
+                            "kind": "text",
+                            "text": "In addition to the four curses, the player may additionally suffer from either Curse of the Unknown or Curse of Darkness, which can be removed through usual means.",
+                            "style": "plain"
+                          }
+                        ],
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "concept",
+                    "page": "Heart",
+                    "label": "Heart"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " drops of any kind (red, soul, black, eternal, bone, golden, blended and rotten hearts) do not appear on this run. Any heart drops will play their pickup sounds upon spawning, but will not physically spawn.",
+                    "style": "plain"
+                  }
+                ],
+                "children": [
+                  {
+                    "kind": "list",
+                    "ordered": false,
+                    "items": [
+                      {
+                        "inline": [
+                          {
+                            "kind": "text",
+                            "text": "Items that add hearts directly to the player's count upon collection will work as usual (such as ",
+                            "style": "plain"
+                          },
+                          {
+                            "kind": "concept",
+                            "page": "Balls of Steel",
+                            "label": "Balls of Steel"
+                          },
+                          {
+                            "kind": "text",
+                            "text": ", ",
+                            "style": "plain"
+                          },
+                          {
+                            "kind": "ref",
+                            "target": {
+                              "kind": "item",
+                              "id": 292
+                            },
+                            "label": "Satanic Bible"
+                          },
+                          {
+                            "kind": "text",
+                            "text": ", ",
+                            "style": "plain"
+                          },
+                          {
+                            "kind": "ref",
+                            "target": {
+                              "kind": "item",
+                              "id": 92
+                            },
+                            "label": "Super Bandage"
+                          },
+                          {
+                            "kind": "text",
+                            "text": ", etc.) and are the only method of regaining hearts. Heal-on-kill effects also work (eg. ",
+                            "style": "plain"
+                          },
+                          {
+                            "kind": "ref",
+                            "target": {
+                              "kind": "item",
+                              "id": 93
+                            },
+                            "label": "The Gamekid"
+                          },
+                          {
+                            "kind": "text",
+                            "text": ").",
+                            "style": "plain"
+                          }
+                        ],
+                        "children": []
+                      },
+                      {
+                        "inline": [
+                          {
+                            "kind": "text",
+                            "text": "Items and cards that normally drop hearts, such as ",
+                            "style": "plain"
+                          },
+                          {
+                            "kind": "ref",
+                            "target": {
+                              "kind": "concept",
+                              "name": "V - The Hierophant"
+                            },
+                            "label": "V - The Hierophant"
+                          },
+                          {
+                            "kind": "text",
+                            "text": " tarot card or ",
+                            "style": "plain"
+                          },
+                          {
+                            "kind": "ref",
+                            "target": {
+                              "kind": "item",
+                              "id": 96
+                            },
+                            "label": "Little C.H.A.D."
+                          },
+                          {
+                            "kind": "text",
+                            "text": ", will not drop any hearts. Using an ",
+                            "style": "plain"
+                          },
+                          {
+                            "kind": "ref",
+                            "target": {
+                              "kind": "concept",
+                              "name": "Ace of Hearts"
+                            },
+                            "label": "Ace of Hearts"
+                          },
+                          {
+                            "kind": "text",
+                            "text": " card will consume all pickups in the room, and not drop any hearts.",
+                            "style": "plain"
+                          }
+                        ],
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "Unlike in most other challenges, ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "concept",
+                    "page": "Treasure Room",
+                    "label": "Treasure Room"
+                  },
+                  {
+                    "kind": "text",
+                    "text": "s spawn normally; two can be expected on the first three floors.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "Only ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 328
+                    },
+                    "label": "The Negative"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " drops after killing ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "entity",
+                      "id": 45,
+                      "variant": 0,
+                      "subtype": 0
+                    },
+                    "label": "Mom"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ". This forces the player to progress through ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "stage",
+                      "name": "Sheol"
+                    },
+                    "label": "Sheol"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " and the ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "stage",
+                      "name": "Dark Room"
+                    },
+                    "label": "Dark Room"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " to fight Mega Satan.",
+                    "style": "plain"
+                  }
+                ],
+                "children": [
+                  {
+                    "kind": "list",
+                    "ordered": false,
+                    "items": [
+                      {
+                        "inline": [
+                          {
+                            "kind": "edition",
+                            "only": [
+                              "afterbirthPlus"
+                            ],
+                            "inline": [
+                              {
+                                "kind": "text",
+                                "text": " Even though the option to proceed upward through the ",
+                                "style": "plain"
+                              },
+                              {
+                                "kind": "ref",
+                                "target": {
+                                  "kind": "stage",
+                                  "name": "Cathedral"
+                                },
+                                "label": "Cathedral"
+                              },
+                              {
+                                "kind": "text",
+                                "text": " is presented, the run will end after defeating Isaac and touching the chest will ",
+                                "style": "plain"
+                              },
+                              {
+                                "kind": "text",
+                                "text": "not",
+                                "style": "bold"
+                              },
+                              {
+                                "kind": "text",
+                                "text": " give the player credit for completing the challenge.",
+                                "style": "plain"
+                              }
+                            ]
+                          }
+                        ],
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "If the player manages to defeat ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "entity",
+                      "id": 407,
+                      "variant": 0,
+                      "subtype": 0
+                    },
+                    "label": "Hush"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ", the entrances to the ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": " ",
+                        "style": "plain"
+                      },
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "stage",
+                          "name": "Cathedral"
+                        },
+                        "label": "Cathedral"
+                      },
+                      {
+                        "kind": "text",
+                        "text": ", ",
+                        "style": "plain"
+                      },
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "stage",
+                          "name": "Sheol"
+                        },
+                        "label": "Sheol"
+                      },
+                      {
+                        "kind": "text",
+                        "text": ", and ",
+                        "style": "plain"
+                      },
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "stage",
+                          "name": "The Void"
+                        },
+                        "label": "The Void"
+                      },
+                      {
+                        "kind": "text",
+                        "text": " appear.",
+                        "style": "plain"
+                      }
+                    ]
+                  }
+                ],
+                "children": [
+                  {
+                    "kind": "list",
+                    "ordered": false,
+                    "items": [
+                      {
+                        "inline": [
+                          {
+                            "kind": "text",
+                            "text": "Defeating ",
+                            "style": "plain"
+                          },
+                          {
+                            "kind": "ref",
+                            "target": {
+                              "kind": "entity",
+                              "id": 412,
+                              "variant": 0,
+                              "subtype": 0
+                            },
+                            "label": "Delirium"
+                          },
+                          {
+                            "kind": "text",
+                            "text": " by traveling to The Void after defeating Hush spawns the trophy. Collecting it will still complete the challenge as normal.",
+                            "style": "plain"
+                          }
+                        ],
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
         "kind": "strategies",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Strategy",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -32369,6 +33814,13 @@
       },
       {
         "kind": "reward",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Reward",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -32506,6 +33958,13 @@
     "sections": [
       {
         "kind": "difficulty",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Difficulty",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -32521,6 +33980,13 @@
       },
       {
         "kind": "strategies",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Strategy",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -33975,6 +35441,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -34077,6 +35550,13 @@
       },
       {
         "kind": "reward",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Reward",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -34340,6 +35820,13 @@
     "sections": [
       {
         "kind": "strategies",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Strategy",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -34661,6 +36148,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -34707,6 +36201,13 @@
       },
       {
         "kind": "reward",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Reward",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -35024,6 +36525,13 @@
     "sections": [
       {
         "kind": "strategies",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Strategy",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -35572,7 +37080,1565 @@
         ]
       },
       {
+        "kind": "other",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Good Items",
+            "style": "plain"
+          }
+        ],
+        "blocks": [
+          {
+            "kind": "heading",
+            "level": 3,
+            "inline": [
+              {
+                "kind": "text",
+                "text": "Defense",
+                "style": "plain"
+              }
+            ]
+          },
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "Any item that can be charged with Bethany's soul charges to grant red health. Consistent examples include ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 45
+                    },
+                    "label": "Yum Heart"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " (may be dropped by ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "entity",
+                      "id": 47,
+                      "variant": 1,
+                      "subtype": 0
+                    },
+                    "label": "Super Lust"
+                  },
+                  {
+                    "kind": "text",
+                    "text": "), while luck-based examples include ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 85
+                    },
+                    "label": "Deck of Cards"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " (for ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "concept",
+                      "name": "VI - The Lovers"
+                    },
+                    "label": "VI - The Lovers"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " or ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "concept",
+                      "name": "XIX - The Sun"
+                    },
+                    "label": "XIX - The Sun"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ") or ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 102
+                    },
+                    "label": "Mom's Bottle of Pills"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " (for ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "concept",
+                    "page": "Full Health",
+                    "label": "Full Health"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " pills). If obtained, the ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 146
+                    },
+                    "label": "Prayer Card"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " can quickly allow Bethany to obtain a full rack of hearts if used with soul charges or at the end of a floor, though this value diminishes drastically once Bethany has 12 health containers and does not intend on spending them for devil deal items.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "Cards and pills that give health and/or invincibility, such as ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "concept",
+                      "name": "XIX - The Sun"
+                    },
+                    "label": "XIX - The Sun"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " and ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "concept",
+                    "page": "Power Pill",
+                    "label": "Power Pill"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ". ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "concept",
+                    "page": "Bad Trip",
+                    "label": "Bad Trip"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " pills will turn into Full Health pills once Bethany is at one heart (which is usually the case). Keep any one of these for emergency use.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "Any item that grants flight, such as ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 185
+                    },
+                    "label": "Dead Dove"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ", grants protection against accidental deaths from spikes and lets Bethany hover over objects to safely deal damage.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "Any item that gives defense (eg.",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 243
+                    },
+                    "label": "Trinity Shield"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " or ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 335
+                    },
+                    "label": "The Soul"
+                  },
+                  {
+                    "kind": "text",
+                    "text": "), slowdown (eg. ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 387
+                    },
+                    "label": "Censer"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " or",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 232
+                    },
+                    "label": "Stop Watch"
+                  },
+                  {
+                    "kind": "text",
+                    "text": "), or orbitals (eg.",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 73
+                    },
+                    "label": "Cube of Meat"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ") will make it easier to avoid damage.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "Any item that grants bone hearts will act like pseudo-soul hearts, protecting Bethany's chance of spawning an Angel/Devil Room. However, Blood Oath will still cause her to die in one hit if she only has one bone heart, as it will deplete all of Bethany's red health and leave her with an empty bone heart.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "Any item or trinket that has a chance to spawn health resources upon taking damage such as ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 219
+                    },
+                    "label": "Old Bandage"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ", ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 513
+                    },
+                    "label": "Bozo"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ", or ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "trinket",
+                      "id": 128
+                    },
+                    "label": "Finger Bone"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " will have a chance to activate multiple times from Blood Oath at the beginning of each floor.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 286
+                    },
+                    "label": "Blank Card"
+                  },
+                  {
+                    "kind": "text",
+                    "text": "/",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 348
+                    },
+                    "label": "Placebo"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ": Can reuse powerful healing cards and pills.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 58
+                    },
+                    "label": "Book of Shadows"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ": Can be activated to avoid being stabbed by Blood Oath. This does not trigger Blood Oath, so no damage and speed bonuses are received. This can also be used to protect yourself in dangerous early rooms if you haven't obtained any red heart drops after the stab.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 584
+                    },
+                    "label": "Book of Virtues"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ": Can be found in a ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "room",
+                      "name": "Library"
+                    },
+                    "label": "Library"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ". As Bethany starts with the Book of Belial, this allows her to start generating a protective circle of wisps just like her normal self.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 705
+                    },
+                    "label": "Dark Arts"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ": Can be used to dodge Blood Oath each floor.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 62
+                    },
+                    "label": "Charm of the Vampire"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ": Provides a reliable source of health regeneration via killing enemies.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 204
+                    },
+                    "label": "Fanny Pack"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ": Every half heart gives a 50% chance of dropping a pickup, including red hearts. This allows Bethany to make use of red health that would immediately be removed in the first room anyway and potentially heal up some health.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 225
+                    },
+                    "label": "Gimpy"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ": Monsters may drop half a red heart on death, and soul hearts will be dropped if Bethany is healed and can take a hit. Soul hearts can be used to charge her active item.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 212
+                    },
+                    "label": "Guppy's Collar"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ": Gives a set 50% chance to revive on death.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 464
+                    },
+                    "label": "Glyph of Balance"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ": Champion enemies' drops and room drops are modified. By clearing rooms, Bethany will only find red hearts (or rotten hearts) until she's fully healed. ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "concept",
+                    "page": "Pickup",
+                    "label": "Pickup"
+                  },
+                  {
+                    "kind": "text",
+                    "text": "s generated together with the room will not be replaced, though.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 694
+                    },
+                    "label": "Heartbreak"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ": Allows Bethany to take fatal damage till her hearts are replaced with broken hearts, while also granting a stat boost. This may stack up tremendously and kill her in the end.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 313
+                    },
+                    "label": "Holy Mantle"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " / ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "trinket",
+                      "id": 121
+                    },
+                    "label": "Wooden Cross"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ": Can now take a hit until finding red hearts.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 290
+                    },
+                    "label": "The Jar"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ": Allows for collection of spare hearts to be used on the next floor.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 96
+                    },
+                    "label": "Little C.H.A.D."
+                  },
+                  {
+                    "kind": "text",
+                    "text": ": Grants half heart drops for every 3 rooms cleared.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "trinket",
+                      "id": 137
+                    },
+                    "label": "Myosotis"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ": Can bring your red hearts to the next floor if you have spare ones lying on the ground.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 571
+                    },
+                    "label": "Orphan Socks"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ": Makes Bethany immune to creep and spikes, which eliminates any accidental environmental deaths. Also grants a speed up and a few soul charges.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 218
+                    },
+                    "label": "Placenta"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ": In theory, Bethany can simply stand in the starting room and recover all lost health, though this will take a significant amount of time.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 227
+                    },
+                    "label": "Piggy Bank"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ": Generates a large amount of coin drops every time Blood Oath is triggered.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 376
+                    },
+                    "label": "Restock"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ": As Treasure Rooms do not spawn in this challenge, this improves the effectiveness of shops. Bethany can purchase a large variety of items so long as she has sufficient coins and a way to gain them (such as Piggy Bank).",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 479
+                    },
+                    "label": "Smelter"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " / ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 458
+                    },
+                    "label": "Belly Button"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " / ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 139
+                    },
+                    "label": "Mom's Purse"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ": Allows Bethany to keep Child's Heart and use other trinkets.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 108
+                    },
+                    "label": "The Wafer"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " / ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 301
+                    },
+                    "label": "Cancer"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " / ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "concept",
+                    "page": "Percs",
+                    "label": "Percs"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ": Can prove invaluable once in the Womb thanks to increasing her survivability.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              }
+            ]
+          },
+          {
+            "kind": "heading",
+            "level": 3,
+            "inline": [
+              {
+                "kind": "text",
+                "text": "Offense",
+                "style": "plain"
+              }
+            ]
+          },
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "Any active item that requires only one charge to use (such as ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 145
+                    },
+                    "label": "Guppy's Head"
+                  },
+                  {
+                    "kind": "text",
+                    "text": "), as Bethany can eventually spam said item for a powerful offense boost.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 413
+                    },
+                    "label": "Immaculate Conception"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ": Picking up red hearts (which there usually will be a lot of while Bethany is holding Child's Heart) will generate permanent familiars.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 412
+                    },
+                    "label": "Cambion Conception"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ": Blood Oath will count as taking damage, allowing her to expend her hearts each floor and generate permanent familiars.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 493
+                    },
+                    "label": "Adrenaline"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ": Grants a huge damage boost if Bethany has a lot of heart containers and is stabbed by Blood Oath.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 157
+                    },
+                    "label": "Bloody Lust"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " / ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 695
+                    },
+                    "label": "Bloody Gust"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ": Blood Oath will typically max these effects out at the start of each floor.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 442
+                    },
+                    "label": "Dark Prince's Crown"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " / ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 122
+                    },
+                    "label": "Whore of Babylon"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ": Grants a large stat boost if Bethany is at half a heart, which she usually is.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 487
+                    },
+                    "label": "Potato Peeler"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ": Allows Bethany to create multiple meat cubes/meat boys if she has spare heart containers that she is unable to fill up, or has already taken too many hits to spawn a Devil Room.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 671
+                    },
+                    "label": "Candy Heart"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ": Each red heart that is picked up increases Bethany's stats.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 702
+                    },
+                    "label": "Vengeful Spirit"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ": Provides one invincible wisp per half heart lost to Blood Oath, maxing out at 6.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 562
+                    },
+                    "label": "Rock Bottom"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ": Allows Bethany to keep highest damage acquired with multiple usages of Book of Belial combined with boost from Blood Oath and focus on Defense items.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "other",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Bad items",
+            "style": "plain"
+          }
+        ],
+        "blocks": [
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 230
+                    },
+                    "label": "Abaddon"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ": Removes all but one heart container and leaves Bethany at half a heart in exchange for an offense boost. This prevents Blood Oath from triggering if she is unable to heal up to a full heart, and makes floors past The Womb kill Bethany in one hit if she cannot obtain new heart containers.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 296
+                    },
+                    "label": "Converter"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ": Completely unusable for Bethany.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 371
+                    },
+                    "label": "Curse of the Tower"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ": Blood Oath will trigger a flood of troll bombs for each half heart removed, which will result in almost certain death.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 278
+                    },
+                    "label": "Dark Bum"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ": Will snatch up red heart drops. As Bethany cannot use soul or black hearts, this item is extremely detrimental.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 133
+                    },
+                    "label": "Guppy's Paw"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ": Removes a heart container for 6 soul charges, which is usually not beneficial.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 126
+                    },
+                    "label": "Razor Blade"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ": Has questionable use as it is essentially a Book of Belial that requires red health as charges. It is recommended to ignore this item.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 173
+                    },
+                    "label": "Mitre"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ": Not recommended as it has a high chance of converting red heart drops into soul hearts, making it far more difficult to obtain health.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 292
+                    },
+                    "label": "Satanic Bible"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ": Grants only a soul charge, and replaces potential health/healing items with Devil Deal items, which require expending a heart container.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "other",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Neutral Items",
+            "style": "plain"
+          }
+        ],
+        "blocks": [
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "Any boss items that grants healing/a heart container but nothing else, such as ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 226
+                    },
+                    "label": "Black Lotus"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " or ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 346
+                    },
+                    "label": "A Snack"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ". Bethany gains a larger damage/speed boost if she has as many full hearts as possible, but if she is unable to refill those hearts anyway, they are useless apart from Devil Deals.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "Any items that changes Bethany's tears to explosive ones (",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 52
+                    },
+                    "label": "Dr. Fetus"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ", ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 168
+                    },
+                    "label": "Epic Fetus"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ", ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 149
+                    },
+                    "label": "Ipecac"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ") makes her even more powerful, but significantly increases the risk of hitting Bethany and ending the run.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "trinket",
+                      "id": 140
+                    },
+                    "label": "Apple of Sodom"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ": At full health, changes any leftover red heart drops into blue flies if walked over. However, this can also trigger when Bethany isn't at full health, wasting the heart. It is recommended to drop the trinket each time Bethany needs to heal up.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 565
+                    },
+                    "label": "Blood Puppy"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ": The familiar drops red hearts for every 10 enemies killed while raging. Not recommended if Bethany does not have sufficient damage to deal with it afterwards.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 402
+                    },
+                    "label": "Chaos"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ": Can be found in shops and will help with finding items you otherwise usually would not, including powerful healing-focused items that only spawn in treasure rooms (IE: ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 45
+                    },
+                    "label": "Yum Heart"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ", ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 312
+                    },
+                    "label": "Maggy's Bow"
+                  },
+                  {
+                    "kind": "text",
+                    "text": "), but also increases the amount of junk items that may appear since it pulls items from completely random pools.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 577
+                    },
+                    "label": "Damocles"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ": Extremely high risk, as it doubles the amount of item pedestals Bethany can find through the run, but adds yet another risk of dying at any moment. It is only recommended to take Damocles if the player is extremely confident about not getting hit, or rushes through the run before the sword has a chance of falling. Note that Damocles falling chance is not affected by Blood Oath's stab.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 81
+                    },
+                    "label": "Dead Cat"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ": Gives extra lives, granting a safety net if Bethany dies; however, this sets her at one heart every time she does, which will cause her to die on one hit in later floors (eg. The Womb).",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 422
+                    },
+                    "label": "Glowing Hourglass"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ": Can be used to reverse rooms if Bethany takes any unintentional red heart damage, or enters a dead end room. This item loses a lot of effectiveness if Bethany cannot find any sources of healing, as any hit will kill her anyway and not allow her to reverse rooms. This item pairs best with ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 313
+                    },
+                    "label": "Holy Mantle"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " (or ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "trinket",
+                      "id": 121
+                    },
+                    "label": "Wooden Cross"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " supposing Bethany gulped Child's Heart or accept finding less hearts overall) as Bethany can undo breaking the mantle, guaranteeing a safer run.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 210
+                    },
+                    "label": "Gnawed Leaf"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ": Standing still when spawning in a new floor will negate the stab damage of Blood Oath. This does not trigger Blood Oath, so no damage and speed bonuses are received, however.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 448
+                    },
+                    "label": "Shard of Glass"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ": Acts similarly to Old Bandage and can spawn hearts after Blood Oath's stab. The bleed effect is more risky without the ability to gain soul hearts, however.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "trinket",
+                      "id": 23
+                    },
+                    "label": "Missing Poster"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ": After death, Bethany revives as ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "character",
+                      "id": 10
+                    },
+                    "label": "The Lost"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ". Transformation makes Blood Oath useless, so both risk and rewards are removed from the rest of the challenge, making it a standard run as The Lost.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "trinket",
+                      "id": 149
+                    },
+                    "label": "Panic Button"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ": Useful if Bethany has an activated item that grants protection (eg. ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 58
+                    },
+                    "label": "Book of Shadows"
+                  },
+                  {
+                    "kind": "text",
+                    "text": "), as it will trigger before she takes damage. Otherwise, Child's Heart is more useful to hold onto.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
         "kind": "reward",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Reward",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -35825,6 +38891,13 @@
     "sections": [
       {
         "kind": "strategies",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Strategy",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -36310,6 +39383,13 @@
       },
       {
         "kind": "reward",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Reward",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -36514,6 +39594,13 @@
     "sections": [
       {
         "kind": "strategies",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Strategy",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -37178,6 +40265,13 @@
       },
       {
         "kind": "reward",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Reward",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -37221,6 +40315,13 @@
       },
       {
         "kind": "bugs",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Bugs",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -37435,6 +40536,13 @@
     "sections": [
       {
         "kind": "difficulty",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Difficulty",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -37463,6 +40571,13 @@
       },
       {
         "kind": "strategies",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Strategy",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -37973,6 +41088,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -38122,6 +41244,13 @@
       },
       {
         "kind": "reward",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Reward",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -38257,6 +41386,13 @@
     "sections": [
       {
         "kind": "strategies",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Strategy",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -38728,6 +41864,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -38929,6 +42072,13 @@
       },
       {
         "kind": "reward",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Reward",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -39019,6 +42169,13 @@
     "sections": [
       {
         "kind": "strategies",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Strategy",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -40313,6 +43470,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -40406,6 +43570,13 @@
       },
       {
         "kind": "reward",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Reward",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -40526,6 +43697,13 @@
     "sections": [
       {
         "kind": "strategies",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Strategy",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -41015,6 +44193,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -41398,6 +44583,13 @@
       },
       {
         "kind": "reward",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Reward",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -41441,6 +44633,13 @@
       },
       {
         "kind": "bugs",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Bugs",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -41592,6 +44791,13 @@
     "sections": [
       {
         "kind": "strategies",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Strategy",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -42379,6 +45585,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -42586,6 +45799,13 @@
       },
       {
         "kind": "reward",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Reward",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -42629,6 +45849,13 @@
       },
       {
         "kind": "bugs",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Bugs",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -42753,6 +45980,13 @@
     "sections": [
       {
         "kind": "strategies",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Strategy",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -42985,6 +46219,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -43249,6 +46490,13 @@
       },
       {
         "kind": "reward",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Reward",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -43292,6 +46540,13 @@
       },
       {
         "kind": "bugs",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Bugs",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",

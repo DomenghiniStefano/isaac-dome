@@ -4,7 +4,7 @@
 use std::collections::BTreeMap;
 
 use crate::dataset::{Dataset, Meta, Patch, Source, HOST};
-use crate::infobox::{extract_infoboxes, InfoboxKind, RawInfobox};
+use crate::infobox::{extract_infoboxes, stat_defaults, InfoboxKind, RawInfobox};
 use crate::page::{parse_page, PageKind};
 use crate::raw::{Raw, RawPage};
 use crate::resolver::{Corrections, Resolver, Row};
@@ -44,7 +44,18 @@ fn leading_id(ib: &RawInfobox) -> Option<u32> {
 /// Builds the dataset. Pages are visited in (kind, title) order; a key that recurs keeps
 /// the first entry.
 pub fn build(raw: &Raw, corrections: &Corrections) -> Dataset {
-    let r = Resolver::new(&raw.tables, &characters(raw), corrections);
+    // Design decision 4: a character page's base stats default to the ones
+    // `Template:Infobox character` itself declares. `template_infobox_character` is `None`
+    // until the template-defaults fetch runs, and `stat_defaults` degrades an unexpected
+    // shape to an empty map — either way `with_character_stat_defaults` then leaves every
+    // stat as `text()` alone would.
+    let character_stat_defaults = raw
+        .template_infobox_character
+        .as_deref()
+        .map(stat_defaults)
+        .unwrap_or_default();
+    let r = Resolver::new(&raw.tables, &characters(raw), corrections)
+        .with_character_stat_defaults(character_stat_defaults);
     let mut ds = Dataset::empty();
     let mut diagnostics = Diagnostics::default();
     for p in pages_in_order(raw) {

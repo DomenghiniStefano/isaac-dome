@@ -505,6 +505,7 @@ export const it = {
       reward: 'Ricompensa',
       unlockable: 'Sbloccabile',
       startingItems: 'Oggetti iniziali sbloccabili',
+      other: 'Altro',
     },
     infobox: {
       title: 'Scheda',

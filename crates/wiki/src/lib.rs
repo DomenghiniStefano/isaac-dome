@@ -51,6 +51,6 @@ pub use resolver::{
     in_current_edition, is_layout_template, key, Corrections, Resolution, Resolver, Row, Tables,
     CORRECTED_TABLES,
 };
-pub use sections::{normalize_title, section_kind, split_page, RawSection};
+pub use sections::{is_excluded_section, normalize_title, section_kind, split_page, RawSection};
 pub use template::{parse_template_at, Template};
 pub use title::canonical_title;
