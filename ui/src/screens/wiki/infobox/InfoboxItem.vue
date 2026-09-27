@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import QualityPips from '@/components/data-state/QualityPips.vue'
+import EmptyValue from '@/components/data-state/EmptyValue.vue'
+import QualityChip from '@/components/wiki/QualityChip.vue'
 import { useMessages } from '@/i18n'
 import { CollectibleTemplate } from '@/lib/ipc/types'
 import type { PoolMembershipView } from '@/lib/ipc/types'
@@ -23,7 +24,8 @@ const { t } = useMessages()
        and an empty row there would read as "it recharges, and nobody wrote how fast". -->
   <dl class="flex flex-col gap-2">
     <InfoboxRow :label="t('wiki.infobox.quality')" value-class="min-w-0">
-      <QualityPips :quality="infobox.quality" />
+      <QualityChip v-if="infobox.quality !== null" :quality="infobox.quality" />
+      <EmptyValue v-else>{{ t('wiki.infobox.none') }}</EmptyValue>
     </InfoboxRow>
     <InfoboxRow
       v-if="infobox.template === CollectibleTemplate.Activated"

@@ -1,12 +1,10 @@
 <script setup lang="ts">
 import { useMessages } from '@/i18n'
-import { useWikiStore } from '@/stores/wiki'
 import InfoboxRow from '../InfoboxRow.vue'
-import { refsOf } from '../infoboxRefs'
+import InfoboxRefRow from './InfoboxRefRow.vue'
 import type { InfoboxOf } from './links'
 
 defineProps<{ infobox: InfoboxOf<'transformation'> }>()
-const wiki = useWikiStore()
 const { t } = useMessages()
 </script>
 
@@ -21,10 +19,10 @@ const { t } = useMessages()
       :label="t('wiki.infobox.requires')"
       :text="String(infobox.requires)"
     />
-    <InfoboxRow
+    <InfoboxRefRow
       v-if="infobox.contributors.length > 0"
       :label="t('wiki.infobox.contributors')"
-      :inline="refsOf(infobox.contributors, wiki.titleOf)"
+      :targets="infobox.contributors"
     />
     <!-- Fourteen of the sixteen pages say nothing here, and "nessuno" would read as a
          claim that the transformation acts on nothing. -->

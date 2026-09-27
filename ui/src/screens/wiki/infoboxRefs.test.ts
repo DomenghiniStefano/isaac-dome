@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import type { Target } from '@/lib/ipc/types'
-import { refOf, refsOf } from './infoboxRefs'
+import { refOf, refsOf, titleOrKey } from './infoboxRefs'
 
 // B40: a transformation's `contributors` are items and trinkets, in page order, that link
 // like any other `Target`. The same resolution `WikiInfobox.vue` already did for one
@@ -48,5 +48,24 @@ describe('refOf', () => {
 
   it('draws no field as no reference', () => {
     expect(refOf(null, () => 'Maggy')).toEqual([])
+  })
+})
+
+// `refsOf` and `InfoboxRefRow` (design decision 9) share this one resolution, so it is
+// tested once here rather than once per caller.
+describe('titleOrKey', () => {
+  const sarDine: Target = { kind: 'item', id: 105 }
+
+  it('prefers the index title when it knows one', () => {
+    expect(titleOrKey(sarDine, () => 'The D6')).toBe('The D6')
+  })
+
+  it('falls back to the page key while the index does not know the title yet', () => {
+    expect(titleOrKey(sarDine, () => null)).toBe('item:105')
+  })
+
+  it('falls back to an empty string for a target with no key at all', () => {
+    const concept: Target = { kind: 'concept', name: 'Chest' }
+    expect(titleOrKey(concept, () => null)).toBe('')
   })
 })
