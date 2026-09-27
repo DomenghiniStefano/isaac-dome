@@ -9,8 +9,13 @@ import { progressLines } from '@/lib/wiki/progressLines'
 // The save's state for one page, compact: a small row of `Badge`s, one
 // per `progressLines` line, in the state tones (`--color-state-done/now/blocked/unknown`).
 // `null` — no save chosen, or this page's kind carries no state at all — draws nothing, never
-// an empty or a guessed badge.
-const props = defineProps<{ progress: PageProgress | null }>()
+// an empty or a guessed badge. `compact` is a table cell's form: one line, the lines joined,
+// cut short when the column is narrower than them and whole on hover — three stacked badges
+// would be taller than the row.
+const props = defineProps<{
+  progress: PageProgress | null
+  compact?: boolean
+}>()
 const { t } = useMessages()
 
 // `progressLines` lives in `lib/`, which may not import a component (CLAUDE.md, the layer
@@ -28,10 +33,20 @@ const badgeVariant: Record<StateTone, BadgeVariant> = {
 const lines = computed(() =>
   props.progress === null ? [] : progressLines(props.progress),
 )
+const joined = computed(() =>
+  lines.value.map((line) => t(line.label.key, line.label.params)).join(' · '),
+)
 </script>
 
 <template>
-  <div v-if="lines.length > 0" class="flex flex-wrap items-center gap-1.5">
+  <Badge
+    v-if="compact && lines[0]"
+    :variant="badgeVariant[lines[0].variant]"
+    :title="joined"
+    class="max-w-full min-w-0"
+    ><span class="truncate">{{ joined }}</span></Badge
+  >
+  <div v-else-if="lines.length > 0" class="flex flex-wrap items-center gap-1.5">
     <Badge
       v-for="line in lines"
       :key="line.key"
