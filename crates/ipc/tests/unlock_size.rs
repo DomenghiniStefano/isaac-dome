@@ -69,9 +69,13 @@ fn the_unlock_payload_carries_links_and_stays_small() {
 }
 
 /// The wiki index is answered once per window and carries every page's title: it has to stay
-/// a payload, not a download. Titles only — the icons are links — so 256 KB is generous, and a
-/// regression here means something started travelling that shouldn't.
-const INDEX_CEILING: usize = 256_000;
+/// a payload, not a download. Titles only — the icons are links — so this is generous, and a
+/// regression means something started travelling that shouldn't.
+///
+/// Raised once, for the whole-namespace fetch (design decision 1, 2026-09-26): 971 more
+/// pages (entities, articles) moved this from 256 KB — measured on the embedded dataset,
+/// same reason `wiki_index.rs`'s own ceiling moved.
+const INDEX_CEILING: usize = 512_000;
 
 #[test]
 fn the_wiki_index_stays_a_payload() {

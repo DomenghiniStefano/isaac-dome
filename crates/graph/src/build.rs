@@ -249,7 +249,8 @@ fn sentence_character(
         | Target::Transformation { .. }
         | Target::Stage { .. }
         | Target::Room { .. }
-        | Target::Concept { .. } => None,
+        | Target::Concept { .. }
+        | Target::Article { .. } => None,
     })
 }
 

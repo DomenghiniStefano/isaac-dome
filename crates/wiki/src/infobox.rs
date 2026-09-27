@@ -100,6 +100,8 @@ pub enum InfoboxKind {
     Challenge,
     Character,
     Transformation,
+    /// `Infobox monster` and `Infobox entity`: one kind for both (design decision 2).
+    Entity,
 }
 
 impl InfoboxKind {
@@ -116,6 +118,7 @@ impl InfoboxKind {
             "infobox challenge" => InfoboxKind::Challenge,
             "infobox character" => InfoboxKind::Character,
             "infobox transformation" => InfoboxKind::Transformation,
+            "infobox monster" | "infobox entity" => InfoboxKind::Entity,
             _ => return None, // allowed: template name, an open-ended string
         })
     }
@@ -130,11 +133,16 @@ impl InfoboxKind {
 ///   `bomb app`, `portrait*`, `image`, `character appearance`): they name files inside the
 ///   user's own copy of the game. `unpack` extracts sprites from there and no wiki image is
 ///   ever shipped, so a file name from the wiki has nothing to open.
-/// - **Identity** (`name`, `id`, `number`, `link`, `alias`): already resolved into the
-///   entry's key and title before the infobox is converted. Keeping them twice invites the
-///   two copies to disagree.
-/// - **Editorial** (`hidden`, `appearance`, `behavior`, `is mini-boss`, `oldpool`,
-///   `special goal`): presentation switches and prose the sections already carry.
+/// - **Identity** (`name`, `id`, `number`, `link`, `alias`, `variant`'s twin `subtype`):
+///   already resolved into the entry's key and title before the infobox is converted.
+///   Keeping them twice invites the two copies to disagree. `variant` itself is a rare
+///   exception: `Boss` and `Entity` both keep it as a display field, since the infobox can
+///   state one the entity table does not (`Infobox::Boss.variant`, `entry_key`'s entity
+///   fallback).
+/// - **Editorial** (`hidden`, `appearance`, `is mini-boss`, `oldpool`, `special goal`):
+///   presentation switches, and one flag (`is mini-boss`) that only restates what the
+///   entity table's own `type` column already says.
+/// - **Asset scale** (`image scale`): a size hint for a wiki image never shipped.
 /// - **`requirement`**, on a transformation: it looks like data and is not. All sixteen
 ///   rows of the Cargo table hold the identical string `three items from this set` — Adult,
 ///   whose infobox has no such parameter, included — so it is the template's default and
@@ -154,15 +162,16 @@ pub const IGNORED_PARAMS: &[&str] = &[
     "portrait",
     "portrait name",
     "image",
+    "image scale",
     "character appearance",
     "name",
     "id",
     "number",
     "link",
     "alias",
+    "subtype",
     "hidden",
     "appearance",
-    "behavior",
     "is mini-boss",
     "oldpool",
     "special goal",
@@ -314,6 +323,20 @@ pub fn infobox_from(
             }
         }
         InfoboxKind::Character => character_from(ib, r, d),
+        InfoboxKind::Entity => entity_from(ib, r, d),
+    }
+}
+
+fn entity_from(ib: &RawInfobox, r: &Resolver, d: &mut Diagnostics) -> Infobox {
+    Infobox::Entity {
+        base_hp: leading_number(param(ib, "base hp")),
+        stage_hp: inline(ib, "stage hp", r, d),
+        environment: inline(ib, "environment", r, d),
+        behavior: inline(ib, "behavior", r, d),
+        pool: inline(ib, "pool", r, d),
+        replace: inline(ib, "replace", r, d),
+        replace_chance: inline(ib, "replace chance", r, d),
+        replace_notes: inline(ib, "replace notes", r, d),
     }
 }
 
@@ -628,6 +651,80 @@ mod tests {
         ));
         assert_eq!(tags, vec!["offensive"]);
         assert!(pools.is_empty());
+    }
+
+    /// Gaper's real infobox (`dataset/raw/pages/entity/Gaper.wikitext`, 2026-09-26): a
+    /// monster's `environment` and `behavior` are read, and `base hp` is its leading number
+    /// like a boss's.
+    #[test]
+    fn a_monster_infobox_keeps_its_parameters() {
+        let r = test_resolver();
+        let mut d = Diagnostics::default();
+        let ib = raw(
+            "infobox monster",
+            &[
+                ("id", "10"),
+                ("variant", "1"),
+                ("base hp", "10"),
+                ("environment", "{{floor|Basement}}"),
+                ("behavior", "Walks towards Isaac, dealing contact damage."),
+            ],
+        );
+        let Infobox::Entity {
+            base_hp,
+            environment,
+            behavior,
+            stage_hp,
+            pool,
+            replace,
+            replace_chance,
+            replace_notes,
+        } = infobox_from(InfoboxKind::Entity, &ib, "", &r, &mut d)
+        else {
+            panic!("a monster infobox gives Infobox::Entity")
+        };
+        assert_eq!(base_hp, Some(10));
+        assert!(matches!(
+            environment.first(),
+            Some(Inline::Ref { target: Target::Stage { name }, .. }) if name == "Basement"
+        ));
+        assert!(matches!(
+            behavior.first(),
+            Some(Inline::Text { text, .. }) if text.starts_with("Walks towards Isaac")
+        ));
+        assert!(stage_hp.is_empty());
+        assert!(pool.is_empty());
+        assert!(replace.is_empty());
+        assert!(replace_chance.is_empty());
+        assert!(replace_notes.is_empty());
+    }
+
+    /// Batteries' real infoboxes (`dataset/raw/pages/pickup/Batteries.wikitext`): `Infobox
+    /// entity` reads no `environment`/`behavior` on the vast majority of its 137 pages, and
+    /// a bare one still degrades to the same shape rather than a different variant.
+    #[test]
+    fn an_entity_infobox_gives_the_same_shape_as_a_monster_one() {
+        let r = test_resolver();
+        let mut d = Diagnostics::default();
+        let ib = raw(
+            "infobox entity",
+            &[("id", "5"), ("variant", "90"), ("subtype", "1")],
+        );
+        let Infobox::Entity { base_hp, .. } =
+            infobox_from(InfoboxKind::Entity, &ib, "", &r, &mut d)
+        else {
+            panic!("an entity infobox gives Infobox::Entity")
+        };
+        assert_eq!(base_hp, None);
+    }
+
+    #[test]
+    fn the_two_entity_templates_are_one_kind() {
+        assert_eq!(
+            InfoboxKind::of("infobox monster"),
+            Some(InfoboxKind::Entity)
+        );
+        assert_eq!(InfoboxKind::of("infobox entity"), Some(InfoboxKind::Entity));
     }
 
     #[test]

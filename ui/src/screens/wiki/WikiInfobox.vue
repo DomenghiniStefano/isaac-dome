@@ -11,6 +11,7 @@ import InfoboxAchievement from './infobox/InfoboxAchievement.vue'
 import InfoboxBoss from './infobox/InfoboxBoss.vue'
 import InfoboxChallenge from './infobox/InfoboxChallenge.vue'
 import InfoboxCharacter from './infobox/InfoboxCharacter.vue'
+import InfoboxEntity from './infobox/InfoboxEntity.vue'
 import InfoboxItem from './infobox/InfoboxItem.vue'
 import InfoboxTransformation from './infobox/InfoboxTransformation.vue'
 import InfoboxTrinket from './infobox/InfoboxTrinket.vue'
@@ -38,6 +39,11 @@ provide(infoboxLinksKey, {
   navigate: (target, newTab) => emit('navigate', target, newTab),
 })
 
+// An article draws no box at all (design decision 7): its body starts at the top of the
+// page, the same as `drawn` below decides — this entry exists only because `bodies` is a
+// record over the whole kind, and is never actually rendered.
+const NoBody = (): null => null
+
 // One body per kind. A record and not a chain of `v-else-if`: a new infobox kind fails to
 // compile until it says here what it shows.
 const bodies: Record<Infobox['kind'], Component> = {
@@ -45,9 +51,11 @@ const bodies: Record<Infobox['kind'], Component> = {
   boss: InfoboxBoss,
   challenge: InfoboxChallenge,
   character: InfoboxCharacter,
+  entity: InfoboxEntity,
   item: InfoboxItem,
   transformation: InfoboxTransformation,
   trinket: InfoboxTrinket,
+  article: NoBody,
 }
 
 // A transformation carries a card only where the page filled at least one of its three
@@ -65,7 +73,11 @@ const drawn = computed(() => {
     case 'boss':
     case 'challenge':
     case 'character':
+    case 'entity':
       return true
+    // No box at all (design decision 7): an article's body starts at the top of the page.
+    case 'article':
+      return false
     default:
       return assertNever(infobox.value)
   }

@@ -64,6 +64,7 @@ fn target_identity(t: &Target) -> String {
         Target::Stage { name } => format!("stage {name}"),
         Target::Room { name } => format!("room {name}"),
         Target::Concept { name } => format!("concept {name}"),
+        Target::Article { title } => format!("article {title}"),
     }
 }
 

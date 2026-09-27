@@ -16,7 +16,7 @@ fn catalog() -> Catalog {
     })
 }
 
-use wiki::for_tests::{empty_boss, empty_item, empty_trinket, entry};
+use wiki::for_tests::{empty_article, empty_boss, empty_entity, empty_item, empty_trinket, entry};
 
 fn dataset() -> Dataset {
     let mut ds = wiki::for_tests::empty_dataset();
@@ -43,7 +43,7 @@ fn the_shape_is_pinned_and_icons_are_null_without_a_catalog() {
     assert_eq!(v["info"]["kind"], "loaded");
     assert_eq!(
         v["pages"][0],
-        json!({ "target": { "kind": "item", "id": 2 }, "title": "A", "iconUrl": null })
+        json!({ "target": { "kind": "item", "id": 2 }, "title": "A", "iconUrl": null, "category": "items" })
     );
     assert_eq!(v["pages"].as_array().unwrap().len(), 4);
 }
@@ -107,12 +107,15 @@ fn the_embedded_index_counts_match_its_meta_and_stay_small() {
         + counts.bosses
         + counts.challenges
         + counts.characters
-        + counts.transformations;
+        + counts.transformations
+        + counts.entities
+        + counts.articles;
     assert_eq!(index.pages.len() as u32, expected);
     let json = serde_json::to_string(&index).unwrap();
-    // A generous ceiling: the index is one load per window and must stay one order of
-    // magnitude under `unlock`'s (crates/ipc/tests/unlock_size.rs).
-    assert!(json.len() < 256_000, "wiki index is {} bytes", json.len());
+    // Raised once, for the whole-namespace fetch (design decision 1, 2026-09-26): 971 more
+    // pages, entities and articles, moved this from 256 KB. Still one order of magnitude
+    // under `unlock`'s (crates/ipc/tests/unlock_size.rs).
+    assert!(json.len() < 512_000, "wiki index is {} bytes", json.len());
 }
 
 /// B46. A transformation has had a page in the dataset since the transformations
@@ -143,4 +146,64 @@ fn a_transformation_is_a_page_of_the_index() {
         .find(|p| p.target == Target::Transformation { id: 1 })
         .expect("the transformation is a page of the index");
     assert_eq!(page.title, "Guppy");
+}
+
+/// Design decisions 2, 5 and 7: `Target::Entity` covers both a boss and a common enemy, and
+/// `Target::Article` covers three landing tiles or none — neither distinction survives in
+/// the wire shape of `Target` itself, so `WikiPageRef.category` is read from each page's own
+/// `entry.infobox`, not guessed from the target's kind.
+#[test]
+fn a_pages_category_tells_a_boss_from_a_monster_and_an_articles_tile() {
+    let mut ds = dataset();
+    ds.entities
+        .insert(Dataset::boss_key(45, 0, 0), entry("Gaper", empty_entity()));
+    ds.articles.insert(
+        "0 - The Fool".to_string(),
+        entry(
+            "0 - The Fool",
+            wiki::Infobox::Article {
+                category: Some(wiki::ArticleCategory::Card),
+            },
+        ),
+    );
+    ds.articles
+        .insert("Damage".to_string(), entry("Damage", empty_article()));
+    let index: WikiIndex = wiki_index(Ok(&ds), None, ipc::BossKeys::NONE, None, link);
+    let category_of = |t: &Target| {
+        index
+            .pages
+            .iter()
+            .find(|p| &p.target == t)
+            .unwrap_or_else(|| panic!("{t:?} is not a page of the index"))
+            .category
+    };
+    assert_eq!(
+        category_of(&Target::Entity {
+            id: 20,
+            variant: 0,
+            subtype: 0
+        }),
+        Some(ipc::WikiPageCategory::Bosses)
+    );
+    assert_eq!(
+        category_of(&Target::Entity {
+            id: 45,
+            variant: 0,
+            subtype: 0
+        }),
+        Some(ipc::WikiPageCategory::Monsters)
+    );
+    assert_eq!(
+        category_of(&Target::Article {
+            title: "0 - The Fool".into()
+        }),
+        Some(ipc::WikiPageCategory::CardsAndRunes)
+    );
+    assert_eq!(
+        category_of(&Target::Article {
+            title: "Damage".into()
+        }),
+        None,
+        "an article with no category has no landing tile"
+    );
 }

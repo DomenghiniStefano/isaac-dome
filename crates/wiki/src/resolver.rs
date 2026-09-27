@@ -65,6 +65,14 @@ pub struct Corrections {
     /// here, and on a listed name the corpus no longer uses.
     #[serde(default)]
     pub excluded: Excluded,
+    /// The dead-link residue (design decision 6, `2026-09-26-wiki-complete-design.md`): every
+    /// destination [`crate::dead_links::dead_links`] still reports once resolution has run,
+    /// named the way [`crate::dead_links::DeadLinks`] keys it (`concept_pages`'s canonical
+    /// title, or `unopenable_refs`' `"<kind> <id>"`), with the reason it has no page. A test
+    /// in `tests/real.rs` fails on a destination that is dead and unlisted, and on a listed
+    /// one that no longer is — the residue is meant to shrink to nothing, not to grow quietly.
+    #[serde(default)]
+    pub dead_links: BTreeMap<String, String>,
 }
 
 /// The `excluded` key of `corrections.json`. A struct of one field today, kept apart from
@@ -506,8 +514,16 @@ impl Resolver {
         }
     }
 
-    /// Page title → target, for the infoboxes' `link`/`unlocks`/`unlocked by`.
-    /// Precedence: character, item, trinket, challenge, entity.
+    /// Page title → target, for the infoboxes' `link`/`unlocks`/`unlocked by`, and for a
+    /// plain `[[wikilink]]` (`inline::link`).
+    /// Precedence: character, item, trinket, challenge, entity, transformation.
+    ///
+    /// Transformations joined this list on 2026-09-26 (design decision 3): a wikilink to a
+    /// transformation's own page (`[[Beelzebub]]`, `[[Guppy]]`) used to name nothing here —
+    /// only `{{tf|…}}` resolved one — so every such link fell through to `Inline::Concept`
+    /// and stayed a dead link even though the page exists and has an id. Measured on the
+    /// snapshot: seven transformation names accounted for 30 of the 161 dead-concept
+    /// occurrences before this was added.
     pub fn by_page_title(&self, title: &str) -> Option<Target> {
         let k = key(title);
         if let Some(id) = self.characters.get(&k) {
@@ -528,6 +544,9 @@ impl Resolver {
                 variant: *variant,
                 subtype: *subtype,
             });
+        }
+        if let Some(id) = self.transformations.get(&k) {
+            return Some(Target::Transformation { id: *id });
         }
         None
     }
@@ -579,6 +598,14 @@ impl Resolver {
     /// Only entities with `type = boss`: the bestiary key for a boss's page.
     pub fn boss_key(&self, page_title: &str) -> Option<(u32, u32, u32)> {
         self.bosses_by_title.get(&key(page_title)).copied()
+    }
+
+    /// An entity's bestiary triple by name — its alias in the Cargo table, or the page title
+    /// for the entity a page's own first infobox names. Every type (`monster`, `mini-boss`,
+    /// `boss`, or none), unlike `boss_key`: an entity infobox's own key resolution needs the
+    /// whole table, not only the bosses.
+    pub fn entity_of_name(&self, name: &str) -> Option<(u32, u32, u32)> {
+        self.entities.get(&key(name)).copied()
     }
 
     /// A transformation's id from its page title. The Cargo table is the only source that
@@ -1030,6 +1057,12 @@ mod tests {
                 variant: 0,
                 subtype: 0
             })
+        );
+        // A transformation's own page, which `{{tf|…}}` already resolved but a plain
+        // `[[Beelzebub]]` wikilink did not, until 2026-09-26.
+        assert_eq!(
+            r.by_page_title("Beelzebub"),
+            Some(Target::Transformation { id: 1 })
         );
         assert_eq!(r.by_page_title("Nope"), None);
         assert_eq!(

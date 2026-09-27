@@ -7,6 +7,7 @@ import type {
   WikiInfo,
   WikiPageRef,
 } from '../types'
+import { categoryOf } from '@/lib/wiki/category'
 import { pageKey, parsePageKey } from '@/lib/wiki/pageKey'
 import { warnOnce } from './warnOnce'
 
@@ -169,9 +170,14 @@ const infoOf = (list: Page[]): WikiInfo => {
     bosses: count('entity'),
     challenges: count('challenge'),
     characters: count('character'),
-    // There are no transformation pages here: a fixture that invented a number would
-    // show the verification screen a count nothing produced.
+    // There are no transformation, entity or article pages here: a fixture that invented
+    // a number would show the verification screen a count nothing produced.
     transformations: count('transformation'),
+    monsters: 0,
+    cardsAndRunes: 0,
+    pickups: 0,
+    stages: 0,
+    articles: 0,
   }
   return real?.kind === 'loaded'
     ? { ...real, counts }
@@ -203,6 +209,10 @@ export const wikiIndexAnswer = ({ withWiki }: WikiAnswerOptions): WikiIndex => {
       // Null, like every drawing here: the app cuts its sprites from the user's own copy of
       // the game at runtime, and the development server has no copy to cut from.
       iconUrl: null,
+      // `categoryOf` is exact here (never approximate the way its own doc comment warns
+      // about): this fixture's only `entity` pages are real bosses and it carries no
+      // article at all, so the ambiguity that function can't resolve never arises.
+      category: categoryOf(p.target),
     }
   })
   return { info: infoOf(list), pages: refs }

@@ -44,7 +44,9 @@ fn conditions(ds: &Dataset) -> Conditions {
             | Infobox::Boss { .. }
             | Infobox::Character { .. }
             | Infobox::Challenge { .. }
-            | Infobox::Transformation { .. } => None,
+            | Infobox::Transformation { .. }
+            | Infobox::Entity { .. }
+            | Infobox::Article { .. } => None,
         })
         .collect()
 }
