@@ -8,8 +8,8 @@ use std::sync::OnceLock;
 
 use wiki::for_tests::cross_check_character_parents;
 use wiki::{
-    build, dead_links, Block, Corrections, Dataset, Entry, Infobox, Inline, Raw, Resolution,
-    Resolver, SectionKind, Target,
+    build, dead_links, Block, Corrections, Dataset, Entry, Infobox, Inline, ListItem, Raw,
+    Resolution, Resolver, SectionKind, Target,
 };
 
 fn root() -> PathBuf {
@@ -115,6 +115,203 @@ fn characters_key_by_our_map_not_by_the_wiki_ids() {
     assert_eq!(title(4), Some("???"));
     assert_eq!(title(11), Some("Lazarus Risen"));
     assert_eq!(title(12), Some("Black Judas"));
+}
+
+/// A character's `health` as a reader would read it: the labels of the `Health` concepts
+/// `{{hearts|…}}`/`{{heart|…}}` build, in order, joined the way they read on the page.
+fn health_labels(inline: &[Inline]) -> String {
+    inline
+        .iter()
+        .filter_map(|i| match i {
+            Inline::Concept { page, label } if page == "Health" => Some(label.clone()),
+            Inline::Concept { .. }
+            | Inline::Text { .. }
+            | Inline::Ref { .. }
+            | Inline::Edition { .. } => None,
+        })
+        .collect::<Vec<_>>()
+        .join(", ")
+}
+
+fn character_health(ds: &Dataset, id: u32) -> Vec<Inline> {
+    let e = ds
+        .entry(&Target::Character { id })
+        .unwrap_or_else(|| panic!("character {id}"));
+    let Infobox::Character { health, .. } = &e.infobox else {
+        panic!("character {id} carries a character infobox")
+    };
+    health.clone()
+}
+
+/// `{{hearts|…}}` and `{{heart|…}}` read into `infobox.health`, verified against the raw
+/// wikitext by hand: Isaac and Magdalene write a single named count, ??? a different heart
+/// type, Tainted Jacob the same shape on a page with two infoboxes. The Lost's page carries no
+/// `health` parameter at all — "The Lost starts with no health" is the page's own prose, not
+/// this parser's gap — so its `health` stays correctly empty rather than getting an invented
+/// value.
+#[test]
+fn starting_health_is_read_from_the_hearts_template() {
+    let ds = dataset();
+    assert_eq!(health_labels(&character_health(ds, 0)), "3 red hearts"); // Isaac
+    assert_eq!(health_labels(&character_health(ds, 1)), "4 red hearts"); // Magdalene
+    assert_eq!(health_labels(&character_health(ds, 4)), "3 soul hearts"); // ??? / Blue Baby
+    assert_eq!(health_labels(&character_health(ds, 37)), "3 red hearts"); // Tainted Jacob
+    assert!(
+        character_health(ds, 10).is_empty(), // The Lost
+        "The Lost's page states no health parameter: {:?}",
+        character_health(ds, 10)
+    );
+}
+
+/// How many character and challenge pages still carry an empty `health` once
+/// `{{hearts|…}}`/`{{heart|…}}` are read — measured 2026-09-26, down from 32 of 40 characters
+/// and 44 of 45 challenges before this parser read either template.
+///
+/// The four names below are not a parser gap: Eden and Tainted Eden's starting loadout is
+/// randomized (the wiki states no fixed health for a start that isn't fixed), and The Lost and
+/// Tainted Lost have none by design. A fifth name here is a regression; a challenge, since
+/// nearly all of them play as some character's default health with no override stated, is
+/// expected to stay empty unless the page actually declares one.
+#[test]
+fn starting_health_is_filled_wherever_the_page_states_one() {
+    let ds = dataset();
+    let empty_characters: Vec<&str> = ds
+        .characters
+        .values()
+        .filter(|e| {
+            let Infobox::Character { health, .. } = &e.infobox else {
+                panic!(
+                    "{}: ds.characters only holds Infobox::Character entries",
+                    e.title
+                )
+            };
+            health.is_empty()
+        })
+        .map(|e| e.title.as_str())
+        .collect();
+    // Named, not a tolerance: a fifth name here is a regression, and the four are sorted by
+    // `Dataset::insert_first`'s own (kind, title) order.
+    assert_eq!(
+        empty_characters,
+        vec!["Eden", "The Lost", "Tainted Eden", "Tainted Lost"]
+    );
+
+    let empty_challenges: Vec<&str> = ds
+        .challenges
+        .values()
+        .filter(|e| {
+            let Infobox::Challenge { health, .. } = &e.infobox else {
+                panic!(
+                    "{}: ds.challenges only holds Infobox::Challenge entries",
+                    e.title
+                )
+            };
+            health.is_empty()
+        })
+        .map(|e| e.title.as_str())
+        .collect();
+    // 39 of 45, measured 2026-09-26 — down from 44, the one already-filled challenge being
+    // Have a Heart's `{{heart|…}}` chain, which the old first-positional fallback happened to
+    // half-read. The other 39 are not a gap: most challenges play at their character's normal
+    // health and the page states no override at all, so an empty `health` is what the
+    // wikitext actually says. The six that do declare one — Bloody Mary, Cat Got Your Tongue,
+    // Have a Heart, Hot Potato, Scat Man, Seeing Double — are the ones this bound requires to
+    // have filled in; Bloody Mary's own value is pinned below.
+    assert_eq!(empty_challenges.len(), 39, "{empty_challenges:?}");
+
+    // Bloody Mary (challenge #37): `{{hearts|red=4}}`.
+    let bloody_mary = ds
+        .entry(&Target::Challenge { number: 37 })
+        .expect("challenge 37");
+    let Infobox::Challenge { health, .. } = &bloody_mary.infobox else {
+        panic!("challenge 37 carries a challenge infobox")
+    };
+    assert_eq!(health_labels(health), "4 red hearts");
+}
+
+/// Ultra Greed's `{{entity table | Ultra Greed Coin (Spinner), … }}` — a comma list on its own
+/// line, the same shape `collectible table`/`trinket table` already read, extended to `{{e|…}}`
+/// so it becomes a list of entity references instead of four names with no link.
+#[test]
+fn ultra_greeds_entity_table_becomes_a_list_of_entity_refs() {
+    let ds = dataset();
+    let ultra_greed = ds
+        .bosses
+        .values()
+        .find(|e| e.title == "Ultra Greed")
+        .expect("Ultra Greed");
+    // The list `entity table` builds is a bare reference per item, nothing else — the same
+    // shape `collectible table`/`trinket table` already produce — so it's picked out from the
+    // page's other lists (Behavior's own attack notes, which mix prose with entity refs) by
+    // that shape, not merely by counting every `Entity` ref on the page.
+    let is_bare_entity_ref = |item: &ListItem| {
+        matches!(
+            item.inline.as_slice(),
+            [Inline::Ref {
+                target: Target::Entity { .. },
+                ..
+            }]
+        ) && item.children.is_empty()
+    };
+    let coin_variants: Vec<&str> = ultra_greed
+        .sections
+        .iter()
+        .flat_map(|s| &s.blocks)
+        .filter_map(|b| match b {
+            Block::List { items, .. }
+                if items.iter().all(is_bare_entity_ref) && !items.is_empty() =>
+            {
+                Some(items)
+            }
+            Block::List { .. }
+            | Block::Paragraph { .. }
+            | Block::Heading { .. }
+            | Block::Table { .. } => None,
+        })
+        .flatten()
+        .map(|item| match item.inline.as_slice() {
+            [Inline::Ref { label, .. }] => label.as_str(),
+            _ => unreachable!("filtered to bare entity refs above"),
+        })
+        .collect();
+    assert_eq!(
+        coin_variants,
+        vec![
+            "Ultra Greed Coin (Spinner)",
+            "Ultra Greed Coin (Key)",
+            "Ultra Greed Coin (Bomb)",
+            "Ultra Greed Coin (Heart)",
+        ]
+    );
+}
+
+/// Haemolacria's Bugs section: `[https://imgur.com/a/i2J3hB4 (Video clip)]` inside a
+/// single-line `{{bug|…}}`, the one external link the audit found in a kept section that
+/// wasn't already swallowed whole by `<ref>…</ref>`. The label stays; the URL never does.
+#[test]
+fn an_external_link_in_a_kept_section_keeps_its_label_and_drops_the_url() {
+    let ds = dataset();
+    let e = ds.entry(&Target::Item { id: 531 }).expect("Haemolacria");
+    let bugs = e
+        .sections
+        .iter()
+        .find(|s| s.kind == SectionKind::Bugs)
+        .expect("Bugs");
+    let text = wiki::plain(
+        &bugs
+            .blocks
+            .iter()
+            .flat_map(|b| match b {
+                Block::Paragraph { inline } => inline.clone(),
+                Block::List { .. } | Block::Heading { .. } | Block::Table { .. } => Vec::new(),
+            })
+            .collect::<Vec<_>>(),
+    );
+    assert!(text.contains("(Video clip)"), "{text}");
+    assert!(
+        !text.contains("http"),
+        "a URL crossed into the dataset: {text}"
+    );
 }
 
 #[test]
