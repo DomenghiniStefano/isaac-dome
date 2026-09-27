@@ -1,10 +1,11 @@
-// How large a page's figure is drawn: a list row's thumbnail, the page header's picture, or
-// the one that leads a page's opening band (card #57).
-export const WikiFigureSize = {
-  Thumb: 'thumb',
+// How large `WikiFigure` draws a page's picture: a list row, a card in the grid, a landing
+// tile, or the one leading a page's opening band (card #90, decision 2). `Thumb` — a bare
+// sprite with no frame — left with the list rows it was for: every size now gets the same
+// frame, so a picture reads as the same object in a row, a card and a band.
+export const FigureSize = {
   Row: 'row',
   Card: 'card',
+  Tile: 'tile',
   Hero: 'hero',
 } as const
-export type WikiFigureSize =
-  (typeof WikiFigureSize)[keyof typeof WikiFigureSize]
+export type FigureSize = (typeof FigureSize)[keyof typeof FigureSize]

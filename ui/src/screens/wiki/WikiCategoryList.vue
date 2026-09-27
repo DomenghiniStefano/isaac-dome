@@ -8,7 +8,7 @@ import { Input } from '@/components/ui/input'
 import { Skeleton } from '@/components/ui/skeleton'
 import { VirtualRows } from '@/components/ui/virtual'
 import WikiFigure from '@/components/wiki/WikiFigure.vue'
-import { WikiFigureSize } from '@/components/wiki/figureSize'
+import { FigureSize } from '@/components/wiki/figureSize'
 import { useTabView } from '@/composables/useTabView'
 import { useMessages } from '@/i18n'
 import type { WikiPageRef } from '@/lib/ipc/types'
@@ -124,7 +124,7 @@ const open = (page: WikiPageRef, event: MouseEvent) =>
             <WikiFigure
               :target="page.target"
               :url="page.iconUrl"
-              :size="WikiFigureSize.Row"
+              :size="FigureSize.Row"
             />
             <span
               class="min-w-0 flex-1 truncate text-left text-body text-foreground"
