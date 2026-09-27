@@ -1,5 +1,10 @@
 import { assertNever } from '@/lib/assertNever'
 import { setWindowSession } from '@/lib/ipc/session'
+// The Wiki's own reading of what the session's opaque `wikiListView` map holds (card #90):
+// generic session machinery never learns what a category or a view mode is, the same layering
+// `sidebarWidth` and `sidebarCollapsed` already keep — only this one call site, which is where
+// every other named part of the document is assembled for writing, reaches into it.
+import { currentWikiListView } from '@/lib/wiki/listViewMode'
 import { currentLayout } from './layout'
 import { replaceableTimeout } from './replaceableTimeout'
 import { storedSession, writeSession } from './sessionDocument'
@@ -60,7 +65,13 @@ export const sessionSaver = (ledger: SessionLedger): SessionSaver => {
         waits.postponed = 0
         try {
           await setWindowSession(
-            writeSession(storedSession(decision.windows, currentLayout())),
+            writeSession(
+              storedSession(
+                decision.windows,
+                currentLayout(),
+                currentWikiListView(),
+              ),
+            ),
           )
         } catch (e) {
           // Swallowed, with one exception: `SessionTooLarge` is the only error that means the

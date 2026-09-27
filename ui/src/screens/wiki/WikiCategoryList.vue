@@ -1,55 +1,94 @@
 <script setup lang="ts">
-import { ChevronRightIcon } from '@lucide/vue'
-import ListEmptyState from '@/components/data-state/ListEmptyState.vue'
+import {
+  ArrowDownIcon,
+  ArrowUpIcon,
+  LayoutGridIcon,
+  TableIcon,
+} from '@lucide/vue'
 import { computed } from 'vue'
-import { Button, ButtonSize, ButtonVariant } from '@/components/ui/button'
+import ListEmptyState from '@/components/data-state/ListEmptyState.vue'
+import FilterBar from '@/components/facets/FilterBar.vue'
 import { Card } from '@/components/ui/card'
-import { Input } from '@/components/ui/input'
 import { Skeleton } from '@/components/ui/skeleton'
-import { VirtualRows } from '@/components/ui/virtual'
-import WikiFigure from '@/components/wiki/WikiFigure.vue'
-import { FigureSize } from '@/components/wiki/figureSize'
-import { useTabView } from '@/composables/useTabView'
+import {
+  ToggleGroup,
+  ToggleGroupItem,
+  ToggleGroupType,
+} from '@/components/ui/toggle-group'
+import { useFacetedReading } from '@/composables/useFacetedReading'
 import { useMessages } from '@/i18n'
 import type { WikiPageRef } from '@/lib/ipc/types'
-import { rowWikiPx } from '@/lib/scale/rows'
-import { emptyList, queryTyped } from '@/lib/facets/emptyList'
-import { filterPages } from '@/lib/wiki/listFilter'
+import { emptyList, isFiltering } from '@/lib/facets/emptyList'
 import type { ScrollOffset } from '@/lib/scale/scrollOffset'
-import { pageKey } from '@/lib/wiki/pageKey'
+import { filterPages } from '@/lib/wiki/listFilter'
 import {
-  WikiCategory,
-  wikiCategoryIcon,
-  wikiCategoryTitle,
-} from '@/router/routeTable'
+  emptyWikiListFilter,
+  wikiBar,
+  wikiFaceting,
+  wikiFacetValueLabel,
+} from '@/lib/wiki/listFacets'
+import type { WikiFacet } from '@/lib/wiki/listFacets'
+import { SortDirection, sortPages } from '@/lib/wiki/listSort'
+import type { WikiSortSpec } from '@/lib/wiki/listSort'
+import {
+  ListViewMode,
+  listViewFor,
+  setListViewFor,
+} from '@/lib/wiki/listViewMode'
+import { categoryProgress } from '@/lib/wiki/progress'
+import { WikiCategory } from '@/router/routeTable'
 import { useTabsStore } from '@/stores/tabs'
 import { useWikiStore } from '@/stores/wiki'
+import WikiCardGrid from './list/WikiCardGrid.vue'
+import WikiListHero from './list/WikiListHero.vue'
+import WikiTable from './list/WikiTable.vue'
 import { wikiView } from './tabView'
-import { pageId } from '@/lib/wiki/wikiLabels'
-import HeroBand from '@/components/screen/HeroBand.vue'
 
 const props = defineProps<{ category: WikiCategory }>()
 const wiki = useWikiStore()
 const tabs = useTabsStore()
 const { t } = useMessages()
 
-// The filter and the position are the entry's reading (`tabView.ts`): they come back after a tab
-// switch, a back, a tear-off. A tab that moves to another category is a new entry, so it starts
-// clean without anything here having to clear it.
-const { reading, update } = useTabView(wikiView)
-const query = computed(() => reading.value.query)
-const setQuery = (value: string) => update({ query: value })
+// The filter, the sort and the position are the entry's reading (`tabView.ts`): they come
+// back after a tab switch, a back, a tear-off. A tab that moves to another category is a new
+// entry, so it starts clean without anything here having to clear it.
+const { reading, update, filter, setPicks, setQuery, reset } =
+  useFacetedReading(wikiView, emptyWikiListFilter)
 const setOffset = (offset: ScrollOffset) => update({ offset })
+const setSort = (sort: WikiSortSpec) => update({ sort })
+const setSortKey = (key: string) =>
+  setSort({ key, direction: reading.value.sort.direction })
+
+const progressFor = (target: WikiPageRef['target']) => wiki.progressFor(target)
 
 const all = computed(() => wiki.index?.pages ?? [])
-const total = computed(() => filterPages(all.value, props.category, '').length)
-const pages = computed(() =>
-  filterPages(all.value, props.category, query.value),
+const categoryPages = computed(() =>
+  all.value.filter((page) => page.category === props.category),
 )
-// An empty list is not always a search that failed: a category with nothing in it says so,
-// and offers no button to clear a search nobody typed.
+const total = computed(() => categoryPages.value.length)
+
+// One faceting instance per render of the save's own answers: `progressFor` closes over the
+// store, so a save switch — which changes what every page's profile facet reads — reaches the
+// filter without a second lookup.
+const faceting = computed(() => wikiFaceting(progressFor))
+const filtered = computed(() =>
+  filterPages(all.value, props.category, filter.value, faceting.value),
+)
+const pages = computed(() =>
+  sortPages(filtered.value, props.category, reading.value.sort),
+)
+
+const progress = computed(() =>
+  categoryProgress(all.value, props.category, progressFor),
+)
+const bar = computed(() =>
+  wikiBar(props.category, progress.value !== null, faceting.value),
+)
+const valueLabel = (facet: WikiFacet, value: string) =>
+  wikiFacetValueLabel(t, facet, value)
+
 const empty = computed(() =>
-  emptyList(total.value, queryTyped(query.value), {
+  emptyList(total.value, isFiltering(filter.value), {
     empty: 'wiki.emptyCategory',
     noResults: 'wiki.noResults',
   }),
@@ -59,6 +98,26 @@ const noCatalog = computed(
   () => all.value.length > 0 && all.value.every((p) => p.iconUrl === null),
 )
 
+// The hero's picture (design decision 8b): the curated sample this category draws on the
+// landing, framed through a page of the same category so `WikiFigure` still picks the right
+// frame and fallback (`WikiListHero`'s own doc comment says why a target is borrowed at all).
+const heroSample = computed(
+  () =>
+    wiki.index?.samples.find((sample) => sample.category === props.category) ??
+    null,
+)
+const representative = computed(() => categoryPages.value[0]?.target ?? null)
+
+const viewMode = computed(() => listViewFor(props.category))
+const onViewMode = (value: unknown) => {
+  if (value === ListViewMode.Grid || value === ListViewMode.Table)
+    setListViewFor(props.category, value)
+}
+const onDirection = (value: unknown) => {
+  if (value === SortDirection.Asc || value === SortDirection.Desc)
+    setSort({ ...reading.value.sort, direction: value })
+}
+
 const open = (page: WikiPageRef, event: MouseEvent) =>
   tabs.openPage(page.target, event.ctrlKey)
 </script>
@@ -67,83 +126,81 @@ const open = (page: WikiPageRef, event: MouseEvent) =>
   <!-- The gutter is the children's, so the band can be the full width without overflowing
        anything (`WikiLanding.vue` says what that cost when it was done the other way round). -->
   <div class="flex h-full min-h-0 flex-col overflow-hidden pb-5">
-    <!-- The same band a page opens with (`WikiHero.vue`), at the size a list deserves: the
-         category is the subject here, so it carries the icon, the count, and the filter. -->
-    <HeroBand class="flex flex-wrap items-center gap-4 py-4">
-      <span
-        class="relative grid size-wiki-row-figure shrink-0 place-items-center border border-border tile-wash"
-      >
-        <component
-          :is="wikiCategoryIcon[category]"
-          class="size-6 text-foreground-soft"
-        />
-      </span>
-      <div class="relative flex min-w-0 flex-1 flex-col gap-1">
-        <h1 class="text-title text-foreground">
-          {{ t(wikiCategoryTitle[category]) }}
-        </h1>
-        <span class="text-caption text-subtle-foreground tabular-nums">{{
-          t('wiki.pagesOf', { shown: pages.length, total })
-        }}</span>
-      </div>
-      <Input
-        :model-value="query"
-        :placeholder="t('wiki.search')"
-        class="relative w-search"
-        @update:model-value="setQuery(String($event))"
-      />
-    </HeroBand>
+    <WikiListHero
+      :category="category"
+      :representative="representative"
+      :sample-url="heroSample?.iconUrl ?? null"
+      :count="total"
+      :progress="progress"
+    />
     <div class="flex min-h-0 flex-1 flex-col gap-3 px-5.5 pt-4">
       <p v-if="noCatalog" class="text-caption text-subtle-foreground">
         {{ t('wiki.noCatalog') }}
       </p>
-      <Card v-if="wiki.index" class="min-h-0 flex-1">
-        <VirtualRows
-          v-if="pages.length > 0"
-          v-slot="{ visible }"
-          :rows="pages"
-          :row-px="rowWikiPx"
-          :offset="reading.offset"
-          @offset-change="setOffset"
-        >
-          <!-- The banding is the row's position, so a list of 900 keeps a place to rest the
-               eye; the hover wins over it, or the row under the pointer would be the only
-               one that changes nothing. -->
-          <Button
-            v-for="{ index, style, row: page } in visible"
-            :key="pageKey(page.target) ?? index"
-            :variant="ButtonVariant.Ghost"
-            :size="ButtonSize.Row"
-            :style="style"
-            :class="[
-              'absolute inset-x-0 top-0 h-row-wiki translate-y-(--row-start) gap-3 border-0 px-3 py-0',
-              index % 2 === 1 ? 'bg-row-alt' : 'bg-transparent',
-            ]"
-            @click="open(page, $event)"
-          >
-            <WikiFigure
-              :target="page.target"
-              :url="page.iconUrl"
-              :size="FigureSize.Row"
-            />
-            <span
-              class="min-w-0 flex-1 truncate text-left text-body text-foreground"
-              >{{ page.title }}</span
-            >
-            <span
-              v-if="pageId(page.target) !== null"
-              class="shrink-0 text-micro text-faint-foreground tabular-nums"
-              >{{ t('wiki.id', { id: pageId(page.target) }) }}</span
-            >
-            <ChevronRightIcon class="shrink-0 text-faint-foreground" />
-          </Button>
-        </VirtualRows>
-        <ListEmptyState
-          v-else
-          :empty="empty"
-          :reset-text="'wiki.resetFilters'"
-          @reset="setQuery('')"
+      <Card v-if="wiki.index" class="flex min-h-0 flex-1 flex-col">
+        <FilterBar
+          :bar="bar"
+          :rows="categoryPages"
+          :filter="filter"
+          :shown="pages.length"
+          :sort="reading.sort.key"
+          :value-label="valueLabel"
+          @update:query="setQuery"
+          @update:picks="setPicks"
+          @update:sort="setSortKey"
+          @reset="reset"
         />
+        <div
+          class="flex flex-wrap items-center justify-end gap-2 border-b border-hairline bg-muted px-3 py-2"
+        >
+          <ToggleGroup
+            :type="ToggleGroupType.Single"
+            :model-value="reading.sort.direction"
+            @update:model-value="onDirection"
+          >
+            <ToggleGroupItem
+              :value="SortDirection.Asc"
+              :aria-label="t('wiki.list.ascending')"
+              ><ArrowUpIcon
+            /></ToggleGroupItem>
+            <ToggleGroupItem
+              :value="SortDirection.Desc"
+              :aria-label="t('wiki.list.descending')"
+              ><ArrowDownIcon
+            /></ToggleGroupItem>
+          </ToggleGroup>
+          <ToggleGroup
+            :type="ToggleGroupType.Single"
+            :model-value="viewMode"
+            @update:model-value="onViewMode"
+          >
+            <ToggleGroupItem :value="ListViewMode.Grid" class="gap-2"
+              ><LayoutGridIcon />{{ t('wiki.list.grid') }}</ToggleGroupItem
+            >
+            <ToggleGroupItem :value="ListViewMode.Table" class="gap-2"
+              ><TableIcon />{{ t('wiki.list.table') }}</ToggleGroupItem
+            >
+          </ToggleGroup>
+        </div>
+        <template v-if="pages.length > 0">
+          <WikiCardGrid
+            v-if="viewMode === ListViewMode.Grid"
+            :pages="pages"
+            :offset="reading.offset"
+            @offset-change="setOffset"
+            @open="open"
+          />
+          <WikiTable
+            v-else
+            :pages="pages"
+            :category="category"
+            :sort="reading.sort"
+            :offset="reading.offset"
+            @offset-change="setOffset"
+            @open="open"
+          />
+        </template>
+        <ListEmptyState v-else :empty="empty" @reset="reset" />
       </Card>
       <Skeleton v-else class="h-150 w-full" />
     </div>

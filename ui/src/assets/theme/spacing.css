@@ -80,6 +80,21 @@
      shorter than the figure it frames clips it in the virtualized list, so this stays the
      figure's 4rem plus the 4px clearance on each side the old pair had, on the 4px grid. */
   --spacing-row-wiki: 4.5rem;
+  /* A category list's card grid (card #90, decision 4): the card's own width, wide enough
+     that the id, the edition badge and a chip or two fit under the `--spacing-figure-card`
+     picture without wrapping every word; and one row of that grid, tall enough for the
+     picture, the name, the id, the badge and two rows of chips. `rows.ts`'s `wikiCardPx` and
+     `rowWikiCardPx` hold the same two numbers on the TypeScript side, for `useCardColumns` and
+     the virtualizer. */
+  --spacing-wiki-card: 12rem;
+  --spacing-row-wiki-card: 15.5rem;
+  /* A category list's table (card #90, decision 4): the id and the edition columns, and one
+     of the category's own fact columns — quality, HP, a stat, a price. The progress column
+     reuses `ProgressBadge`, which wraps its own badges rather than needing a width of its
+     own. */
+  --spacing-wiki-table-id: 4rem;
+  --spacing-wiki-table-edition: 9rem;
+  --spacing-wiki-table-fact: 9rem;
   /* The figure inside one of those rows, framed: the 32px sprite at 1.5x, which is what the
      row's height leaves once its padding is taken. Retired from `WikiFigure` by
      `--spacing-figure-row` above; still declared for `WikiCategoryList`'s own category icon
