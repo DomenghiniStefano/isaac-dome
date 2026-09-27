@@ -153,6 +153,20 @@ pub fn character_for(row: usize, catalog: &catalog::Catalog) -> Option<&catalog:
     })
 }
 
+/// The inverse of [`character_for`]: the roster row a catalog character occupies, by its own
+/// key and Tainted flag — never by name, which the base and Tainted forms share (B28). `None`
+/// for a hidden form with no row of its own (Lazarus 2, Black Judas, The Soul) or a name that
+/// isn't the plain `#KEY_NAME` shape.
+pub(crate) fn row_for_character(c: &catalog::Character) -> Option<usize> {
+    let catalog::Text::Key { key } = &c.name else {
+        return None;
+    };
+    let key = key.strip_suffix("_NAME")?;
+    ROSTER
+        .iter()
+        .position(|r| r.key == key && r.tainted == c.tainted)
+}
+
 /// The level a cell's mark reached. Fieldless, so it crosses as a bare camelCase string
 /// and the TypeScript is a union of values: a tag distinguishes variants that carry
 /// different data, and there is none here (CLAUDE.md, "Enums on the IPC").
