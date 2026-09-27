@@ -5,6 +5,7 @@ mod catalog_view;
 mod challenges;
 mod collection;
 pub mod contract;
+mod entity_art;
 mod error;
 mod flags;
 mod floor;
@@ -51,6 +52,7 @@ pub use collection::{
     collection_view, CollectionDiagnostic, CollectionItem, CollectionTotals, CollectionView,
     LockView,
 };
+pub use entity_art::{compose as compose_entity_art, ComposedArt};
 pub use error::IpcError;
 pub use floor::{
     floor_view, room_icons, AppliedRule, FloorCandidate, FloorDiagnostic, FloorSolutionView,
@@ -64,7 +66,8 @@ pub use graph::{
     UnlockDiagnostic, UnlockInputs, UnlockNode, UnlockTotals, UnlockView, STEPS,
 };
 pub use icon::{
-    icon_source, unknown_source, IconRef, MarkFill, MarkTier, ICON_SCHEME, UNKNOWN_SPRITE,
+    icon_source, unknown_source, IconRef, IconSource, MarkFill, MarkTier, ICON_SCHEME,
+    UNKNOWN_SPRITE,
 };
 pub use live::{
     characters_named, live_graph, live_mark_rows, live_marks, live_view, LiveAchievement,
@@ -112,20 +115,21 @@ pub use runs::{
 };
 pub use save_cache::SaveCache;
 pub use search::{
-    search, ProgressMark, SaveFlags, SearchDiagnostic, SearchHit, SearchIndex, SearchMatch,
-    SearchView,
+    search, ProgressMark, SaveFlags, SearchCatalog, SearchDiagnostic, SearchHit, SearchIndex,
+    SearchMatch, SearchView,
 };
 pub use settings::{
     session_document_fits, snap_percent, Settings, DEFAULT_SCALE, MAX_SESSION_BYTES, SCALE_PERCENTS,
 };
-pub use sprite_png::{centre_opaque, crop_png, decode_rgba, overlay, trim_opaque};
+pub use sprite_png::{blank_canvas, centre_opaque, crop_png, decode_rgba, overlay, trim_opaque};
 pub use summary::{save_summary, SaveDiagnostic, SaveSummary, SectionCount};
 pub use target_sprite::{boss_keys, target_sprite, BossKeys, TargetSprite};
 pub use tray::{tray_action, tray_locale, tray_text, TrayAction, TrayLocale, TrayText};
 pub use update::{UpdateFailure, UpdatePhase, UpdateReason, UpdateState, UpdateView};
 pub use want::{want_view, WantDiagnostic, WantRoute, WantState, WantView, WantedView};
 pub use wiki::{
-    rfc3339_to_unix, wiki_index, wiki_info, ArticleCategory, Block, Dlc, Entry, Infobox, Inline,
-    ListItem, PatchView, Section, SectionKind, Style, Target, WikiCounts, WikiIndex, WikiInfo,
-    WikiMissingReason, WikiPageCategory, WikiPageRef,
+    category_sample, rfc3339_to_unix, wiki_index, wiki_info, ArticleCategory, Block,
+    CategorySample, Dlc, Entry, Infobox, Inline, ListItem, PatchView, Section, SectionKind, Style,
+    Target, WikiCounts, WikiIndex, WikiInfo, WikiMissingReason, WikiPageCategory, WikiPageRef,
+    WIKI_PAGE_CATEGORIES,
 };

@@ -60,10 +60,14 @@ pub fn search(
         achievements: a.as_deref(),
         items: i.as_deref(),
     });
+    let game = ipc::SearchCatalog {
+        catalog,
+        bosses: state.bosses(catalog),
+        dataset: wiki::Dataset::embedded().ok(),
+    };
     Ok(ipc::search(
         index.get(),
-        catalog,
-        state.bosses(catalog),
+        &game,
         flags,
         &query,
         limit,

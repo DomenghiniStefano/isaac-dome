@@ -70,6 +70,7 @@ export const it = {
     cardsAndRunes: 'Carte e Rune',
     pickups: 'Oggetti raccoglibili',
     stages: 'Piani',
+    versions: 'Versioni',
   },
   sidebar: {
     progressTitle: 'Progressi',
@@ -496,8 +497,11 @@ export const it = {
       cardOrRune: 'Carta o Runa',
       pickup: 'Oggetto raccoglibile',
       stage: 'Piano',
+      version: 'Versione',
     },
     revision: 'rev. {revision}',
+    addedIn: 'Aggiunto in {edition}',
+    removedIn: 'Rimosso in {edition}',
     outline: 'In questa pagina',
     section: {
       effects: 'Effetti',

@@ -78,14 +78,23 @@ pub(crate) fn icon_bytes(app: &AppHandle, path: &str) -> tauri::http::Response<V
         | ipc::IconRef::Item { .. }
         | ipc::IconRef::Head { .. }
         | ipc::IconRef::Page { .. }
+        | ipc::IconRef::Entity { .. }
         | ipc::IconRef::Room { .. } => {
             // The catalog is built from the same archives as `rs`: `ResourcesState` opens them once.
             let state = app.state::<CatalogState>();
-            catalog_now(app, &resources, &state)
-                .and_then(|catalog| {
-                    ipc::icon_source(catalog, state.bosses(Some(catalog)), &reference).cloned()
-                })
-                .and_then(|sprite| sprite_bytes(rs, &sprite, trim))
+            catalog_now(app, &resources, &state).and_then(|catalog| {
+                let bosses = state.bosses(Some(catalog));
+                let dataset = wiki::Dataset::embedded().ok();
+                match ipc::icon_source(catalog, bosses, dataset, &reference)? {
+                    ipc::IconSource::Sprite(sprite) => sprite_bytes(rs, sprite, trim),
+                    // A non-boss entity's own picture: not a sheet crop the catalog names,
+                    // but a document (its `.anm2`) whose layers are composed at request
+                    // time — reading 1337 rows' files at startup for pictures most
+                    // sessions never open is exactly what `catalog::Entity`'s own doc
+                    // comment says not to do.
+                    ipc::IconSource::Entity { anm2_path } => entity_bytes(rs, anm2_path),
+                }
+            })
         }
     };
     let Some(png) = png else {
@@ -114,6 +123,33 @@ fn sprite_bytes(rs: &ResourceSet, sprite: &catalog::SpriteRef, trim: bool) -> Op
         return Some(png);
     }
     Some(ipc::trim_opaque(&png).unwrap_or(png))
+}
+
+/// A non-boss entity's own picture: its `.anm2`'s default animation, one piece per layer,
+/// laid out on a blank canvas sized to what they draw (`ipc::compose_entity_art`).
+///
+/// **Every piece is read, and a missing one is left out — the canvas is not.** A monster
+/// missing an overlay layer is still mostly itself; a monster with none of its layers is no
+/// picture at all, the same distinction `widget_bytes` draws between a mark and the paper.
+fn entity_bytes(rs: &ResourceSet, anm2_path: &str) -> Option<Vec<u8>> {
+    let doc = rs.read(anm2_path)?;
+    let frames = catalog::anm2_frames(&doc)?;
+    let default_animation = catalog::anm2_default_animation(&doc)?;
+    let art = ipc::compose_entity_art(anm2_path, &frames, &default_animation)?;
+    let pieces: Vec<(Vec<u8>, i32, i32)> = art
+        .layers
+        .iter()
+        .filter_map(|(sprite, x, y)| Some((sprite_bytes(rs, sprite, false)?, *x, *y)))
+        .collect();
+    if pieces.is_empty() {
+        return None;
+    }
+    let refs: Vec<(&[u8], i32, i32)> = pieces
+        .iter()
+        .map(|(p, x, y)| (p.as_slice(), *x, *y))
+        .collect();
+    let canvas = ipc::blank_canvas(art.width, art.height)?;
+    ipc::overlay(&canvas, &refs)
 }
 
 /// The widget, drawn: the paper first, then every mark over it.

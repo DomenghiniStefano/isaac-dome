@@ -1,4 +1,5 @@
 import type {
+  CategorySample,
   Entry,
   ExtractionReport,
   Target,
@@ -7,6 +8,7 @@ import type {
   WikiInfo,
   WikiPageRef,
 } from '../types'
+import { WikiPageCategory } from '../types'
 import { categoryOf } from '@/lib/wiki/category'
 import { pageKey, parsePageKey } from '@/lib/wiki/pageKey'
 import { warnOnce } from './warnOnce'
@@ -177,6 +179,7 @@ const infoOf = (list: Page[]): WikiInfo => {
     cardsAndRunes: 0,
     pickups: 0,
     stages: 0,
+    versions: 0,
     articles: 0,
   }
   return real?.kind === 'loaded'
@@ -196,8 +199,16 @@ export interface WikiAnswerOptions {
   withWiki: boolean
 }
 
+// One sample per landing tile, null like every picture this fixture draws (the development
+// server has no copy of the game to cut a sprite from — see `refs` below for the same
+// reasoning). What the Kit page checks here is the fallback the tile draws without one, the
+// state every category is actually in on a machine with no game installed.
+const categorySamples: CategorySample[] = Object.values(WikiPageCategory).map(
+  (category) => ({ category, iconUrl: null }),
+)
+
 export const wikiIndexAnswer = ({ withWiki }: WikiAnswerOptions): WikiIndex => {
-  if (!withWiki) return { info: missing, pages: [] }
+  if (!withWiki) return { info: missing, pages: [], samples: [] }
   const list = wikiPages()
   const refs: WikiPageRef[] = list.map((p) => {
     // A sample page's own title wins over the index's name.
@@ -215,7 +226,7 @@ export const wikiIndexAnswer = ({ withWiki }: WikiAnswerOptions): WikiIndex => {
       category: categoryOf(p.target),
     }
   })
-  return { info: infoOf(list), pages: refs }
+  return { info: infoOf(list), pages: refs, samples: categorySamples }
 }
 
 const warnSamples = warnOnce(
