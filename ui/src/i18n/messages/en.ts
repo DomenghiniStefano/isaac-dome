@@ -493,6 +493,7 @@ export const en: MessageSchema = {
       version: 'Version',
     },
     revision: 'rev. {revision}',
+    qualityChip: 'Quality {quality}',
     addedIn: 'Added in {edition}',
     removedIn: 'Removed in {edition}',
     outline: 'On this page',

@@ -4,7 +4,7 @@ import { Badge } from '@/components/ui/badge'
 import QualityPips from '@/components/data-state/QualityPips.vue'
 import WikiFigure from '@/components/wiki/WikiFigure.vue'
 import WikiInline from '@/components/wiki/WikiInline.vue'
-import { WikiFigureSize } from '@/components/wiki/figureSize'
+import { FigureSize } from '@/components/wiki/figureSize'
 import { dlcNames } from '@/lib/wiki/dlcNames'
 import { editionAdded, editionRemoved } from '@/lib/wiki/edition'
 import { useMessages } from '@/i18n'
@@ -95,7 +95,7 @@ const id = computed(() => (props.target ? pageId(props.target) : null))
         v-if="target"
         :target="target"
         :url="icon"
-        :size="WikiFigureSize.Hero"
+        :size="FigureSize.Hero"
       />
       <div class="flex min-w-0 flex-1 flex-col gap-2">
         <span

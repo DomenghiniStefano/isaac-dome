@@ -6,16 +6,21 @@ import PixelSprite from '@/components/sprite/PixelSprite.vue'
 import { assertNever } from '@/lib/assertNever'
 import { cn } from '@/lib/cn'
 import type { Target } from '@/lib/ipc/types'
-import { WikiFigureSize } from './figureSize'
+import { categoryOf } from '@/lib/wiki/category'
+import { wikiCategoryIcon } from '@/router/routeTable'
+import { FigureBoxPx, SpriteNativePx, integerScale } from './figureScale'
+import { FigureSize } from './figureSize'
 
 const props = defineProps<{
   target: Target
   url: string | null
-  size: WikiFigureSize
+  size: FigureSize
 }>()
 
-// How a page's figure is framed, by what the game draws for that kind (DESIGN-BRIEF.md
-// §8): a 32px sprite scaled up, a painted achievement at its own ratio, a portrait.
+// One figure component, everywhere a wiki picture is drawn (card #90, decision 2): the
+// background, the centring and the scale are decided once, here, by what the game draws for
+// that kind (DESIGN-BRIEF.md §8) — a 32px sprite scaled up, a painted achievement at its own
+// ratio on the mark paper, or a portrait.
 const Frame = {
   Sprite: 'sprite',
   Painting: 'painting',
@@ -44,65 +49,96 @@ const frame = computed((): Frame => {
   }
 })
 
-const artSize: Record<WikiFigureSize, ArtSize> = {
-  [WikiFigureSize.Thumb]: ArtSize.Thumb,
-  [WikiFigureSize.Row]: ArtSize.Thumb,
-  [WikiFigureSize.Card]: ArtSize.Card,
-  [WikiFigureSize.Hero]: ArtSize.Hero,
+// Without the game, or without a picture at all (a transformation, a stage, a version
+// article), the figure falls back to the page's own category icon — the same one the
+// landing tile draws — never a hole (Review Focus 2). `categoryOf` returns `null` for the
+// four kinds it cannot resolve from the target alone (`lib/wiki/category.ts`'s own doc); for
+// those there is no category icon to fall back to, and the plain placeholder is drawn
+// instead, same as everywhere else in the app.
+const fallbackIcon = computed(() => {
+  const category = categoryOf(props.target)
+  return category ? wikiCategoryIcon[category] : null
+})
+const fallbackIconClass: Record<FigureSize, string> = {
+  [FigureSize.Row]: 'size-6',
+  [FigureSize.Card]: 'size-8',
+  [FigureSize.Tile]: 'size-8',
+  [FigureSize.Hero]: 'size-12',
 }
 
-// The box a sprite or a portrait is set in. A thumbnail has none — it sits bare in whatever
-// holds it — and the other three are the same frame at three sizes, so a page's figure is
-// recognisably one thing from a list row to the band that opens the page.
-const box: Record<WikiFigureSize, string | null> = {
-  [WikiFigureSize.Thumb]: null,
-  [WikiFigureSize.Row]: 'size-wiki-row-figure border-hairline tile-wash',
-  [WikiFigureSize.Card]: 'size-wiki-figure border-hairline bg-data',
-  [WikiFigureSize.Hero]: 'size-wiki-hero border-border tile-wash',
+const artSize: Record<FigureSize, ArtSize> = {
+  [FigureSize.Row]: ArtSize.Row,
+  [FigureSize.Card]: ArtSize.Card,
+  [FigureSize.Tile]: ArtSize.Tile,
+  [FigureSize.Hero]: ArtSize.Hero,
 }
 
-// What the picture is drawn at inside that box. A portrait fills the frame; a sprite keeps
-// the game's whole multiple of 32px — except in a list row, whose 48px frame is smaller than
-// that multiple already is at scale 200. There the sprite stays at its native 32, which is
-// still a whole multiple and still crisp, rather than being cropped by the frame around it.
-const portrait: Record<WikiFigureSize, string> = {
-  [WikiFigureSize.Thumb]: 'size-8',
-  [WikiFigureSize.Row]: 'size-wiki-row-figure',
-  [WikiFigureSize.Card]: 'size-wiki-figure',
-  [WikiFigureSize.Hero]: 'size-wiki-hero',
+// The frame every size shares: centred on both axes, in a box lit the way a tile or a band
+// already is (`tile-wash`) or flat like the data beside it (`bg-data`, the card grid's own
+// picture). A portrait fills it; a sprite and a painting sit inside it at their own scale,
+// letterboxed.
+const box: Record<FigureSize, string> = {
+  [FigureSize.Row]: 'size-figure-row border-hairline tile-wash',
+  [FigureSize.Card]: 'size-figure-card border-hairline bg-data',
+  [FigureSize.Tile]: 'size-figure-tile border-border tile-wash',
+  [FigureSize.Hero]: 'size-figure-hero border-border tile-wash',
 }
-const sprite: Record<WikiFigureSize, string> = {
-  [WikiFigureSize.Thumb]: 'size-8',
-  [WikiFigureSize.Row]: 'size-8',
-  [WikiFigureSize.Card]: 'size-sprite',
-  [WikiFigureSize.Hero]: 'size-sprite',
+const portrait: Record<FigureSize, string> = {
+  [FigureSize.Row]: 'size-figure-row',
+  [FigureSize.Card]: 'size-figure-card',
+  [FigureSize.Tile]: 'size-figure-tile',
+  [FigureSize.Hero]: 'size-figure-hero',
 }
+
+// A pixel sprite is drawn at the largest *integer* multiple of its own 32px that still fits
+// the box (`figureScale.ts`): the four boxes are whole multiples of 32 for exactly this
+// reason, so this always fills the box edge to edge. The value is computed, so it travels as
+// a CSS variable bound from the template, consumed by a `size-*` utility — never a
+// hand-written pixel (`docs/frontend-conventions.md`, "Dynamic values: CSS variables, not
+// inline pixels").
+const spriteSizePx = computed(
+  () => SpriteNativePx * integerScale(SpriteNativePx, FigureBoxPx[props.size]),
+)
 </script>
 
 <template>
-  <!-- One figure per page: a missing one is the hatch placeholder, never a broken image
-       and never another page's picture. A thumbnail sits bare in its row; every other size
-       gets the frame, which is what makes the same picture read as the same object in a
-       list, in a header and on the page's own band. -->
-  <AchievementArt
-    v-if="frame === Frame.Painting"
-    :url="url"
-    :size="artSize[size]"
-  />
-  <PixelSprite
-    v-else-if="box[size] === null"
-    :url="url"
-    placeholder
-    class="size-8 shrink-0"
-  />
-  <span
-    v-else
-    :class="cn('grid shrink-0 place-items-center border', box[size])"
-  >
+  <!-- One figure per page: a missing one is the category icon, never a broken image and
+       never another page's picture. Every size gets the same frame, so a picture reads as
+       the same object in a row, a card and a band. -->
+  <span :class="cn('grid shrink-0 place-items-center border', box[size])">
+    <AchievementArt
+      v-if="frame === Frame.Painting"
+      :url="url"
+      :size="artSize[size]"
+    >
+      <template v-if="fallbackIcon" #fallback>
+        <component
+          :is="fallbackIcon"
+          :class="cn(fallbackIconClass[size], 'text-foreground-soft')"
+        />
+      </template>
+    </AchievementArt>
     <PixelSprite
+      v-else-if="frame === Frame.Sprite"
       :url="url"
       placeholder
-      :class="cn(frame === Frame.Sprite ? sprite[size] : portrait[size])"
-    />
+      :style="{ '--figure-sprite-size': `${spriteSizePx}px` }"
+      class="size-(--figure-sprite-size)"
+    >
+      <template v-if="fallbackIcon" #fallback>
+        <component
+          :is="fallbackIcon"
+          :class="cn(fallbackIconClass[size], 'text-foreground-soft')"
+        />
+      </template>
+    </PixelSprite>
+    <PixelSprite v-else :url="url" placeholder :class="portrait[size]">
+      <template v-if="fallbackIcon" #fallback>
+        <component
+          :is="fallbackIcon"
+          :class="cn(fallbackIconClass[size], 'text-foreground-soft')"
+        />
+      </template>
+    </PixelSprite>
   </span>
 </template>
