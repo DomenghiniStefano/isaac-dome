@@ -588,7 +588,7 @@ a variant loses. The collapsible card is a set of Card parts (`CardCollapsible`,
 Reka's collapsible root.
 
 **Added with sub-project 3.3a**: `BadgeVariant.Partial` — a node the graph couldn't fully
-interpret: the blocked colours, a dashed edge and the lock, never the star of `Now` and never
+interpret: the blocked colours, a dashed edge and the lock, never the target of `Now` and never
 the hatch of `Unknown`. Long lists are virtualized with `@tanstack/vue-virtual`: the options
 are a `computed`, the row height is a number pinned against its spacing token by a test
 (`ui/src/lib/scale/rows.test.ts`, which reads `--spacing-row-wide` out of the CSS), and each
