@@ -12,6 +12,7 @@ const PageKind = {
   Character: 'character',
   Entity: 'entity',
   Transformation: 'transformation',
+  Article: 'article',
 } as const
 type PageKind = (typeof PageKind)[keyof typeof PageKind]
 
@@ -39,6 +40,8 @@ export const pageKey = (target: Target): string | null => {
       return `${PageKind.Entity}${Separator}${[target.id, target.variant, target.subtype].join(EntitySeparator)}`
     case 'transformation':
       return `${PageKind.Transformation}${Separator}${target.id}`
+    case 'article':
+      return `${PageKind.Article}${Separator}${target.title}`
     case 'stage':
     case 'room':
     case 'concept':
@@ -63,6 +66,9 @@ export const parsePageKey = (key: string): Target | null => {
   const kind = key.slice(0, at)
   const rest = key.slice(at + 1)
   if (!isPageKind(kind)) return null
+  if (kind === PageKind.Article) {
+    return rest.length > 0 ? { kind: 'article', title: rest } : null
+  }
   if (kind === PageKind.Entity) {
     const parts = rest.split(EntitySeparator)
     if (parts.length !== 3) return null

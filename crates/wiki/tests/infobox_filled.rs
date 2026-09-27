@@ -32,6 +32,19 @@ fn says_nothing(e: &Entry) -> bool {
             contributors,
             ..
         } => requires.is_none() && contributors.is_empty(),
+        // Not scanned by the tests below (like `Transformation`, not chained into `all`):
+        // an entity's box is often genuinely bare (`Infobox entity`'s 137 pages, mostly
+        // pickups with no environment or behavior to state) and an article has no infobox
+        // fields at all beyond which of the four declined templates named it, so both would
+        // trivially fail a "not too many say nothing" threshold built for the six kinds
+        // whose infobox *is* their content.
+        Infobox::Entity {
+            base_hp,
+            environment,
+            behavior,
+            ..
+        } => base_hp.is_none() && environment.is_empty() && behavior.is_empty(),
+        Infobox::Article { category } => category.is_none(),
     }
 }
 

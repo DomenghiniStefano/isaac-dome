@@ -66,8 +66,13 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Coin",
+          "kind": "ref",
+          "target": {
+            "kind": "entity",
+            "id": 5,
+            "variant": 20,
+            "subtype": 3
+          },
           "label": "Coin"
         },
         {
@@ -260,8 +265,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "The Harbingers",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "The Harbingers"
+          },
           "label": "Harbinger"
         }
       ],
@@ -481,8 +489,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Tinted Rock",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Rocks"
+          },
           "label": "Tinted Rock"
         },
         {
@@ -521,8 +532,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Chapter 1",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Chapters"
+          },
           "label": "Chapter 1"
         }
       ],
@@ -556,8 +570,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Chapter 2",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Chapters"
+          },
           "label": "Chapter 2"
         }
       ],
@@ -676,8 +693,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Chapter 2",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Chapters"
+          },
           "label": "Chapter 2"
         },
         {
@@ -718,8 +738,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Chapter 3",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Chapters"
+          },
           "label": "Chapter 3"
         },
         {
@@ -780,8 +803,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Unlocking Super Meat Boy & Super Bandage Girl",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Unlocking Super Meat Boy & Super Bandage Girl"
+          },
           "label": "Unlocking Super Meat Boy & Super Bandage Girl"
         }
       ],
@@ -920,8 +946,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "7 Deadly Sins",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Seven Deadly Sins"
+          },
           "label": "7 Deadly Sins"
         }
       ],
@@ -1214,8 +1243,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Tinted Rock",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Rocks"
+          },
           "label": "Tinted Rock"
         },
         {
@@ -1426,8 +1458,11 @@
                   "style": "plain"
                 },
                 {
-                  "kind": "concept",
-                  "page": "Item Tags dead",
+                  "kind": "ref",
+                  "target": {
+                    "kind": "article",
+                    "title": "Item Tags dead"
+                  },
                   "label": "'dead' item tag"
                 }
               ]
@@ -1681,8 +1716,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Chapter 1",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Chapters"
+          },
           "label": "Chapter 1"
         },
         {
@@ -1718,8 +1756,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Chapter 2",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Chapters"
+          },
           "label": "Chapter 2"
         },
         {
@@ -1755,8 +1796,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Chapter 3",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Chapters"
+          },
           "label": "Chapter 3"
         },
         {
@@ -1792,8 +1836,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Chapter 4",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Chapters"
+          },
           "label": "Chapter 4"
         },
         {
@@ -1881,8 +1928,13 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "heart",
+          "kind": "ref",
+          "target": {
+            "kind": "entity",
+            "id": 5,
+            "variant": 10,
+            "subtype": 6
+          },
           "label": "heart"
         },
         {
@@ -2753,8 +2805,13 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Donation Machine",
+          "kind": "ref",
+          "target": {
+            "kind": "entity",
+            "id": 6,
+            "variant": 8,
+            "subtype": 0
+          },
           "label": "Donation Machine"
         }
       ],
@@ -3059,8 +3116,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Angel Room (Item Pool)",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Angel Room (Item Pool)"
+          },
           "label": "Angel Room items"
         }
       ],
@@ -3168,8 +3228,11 @@
       ],
       "requirements": [
         {
-          "kind": "concept",
-          "page": "collection page",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Collection Page"
+          },
           "label": "Collect"
         },
         {
@@ -3178,8 +3241,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "ending",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Endings"
+          },
           "label": "ending"
         },
         {
@@ -3710,8 +3776,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Devil Room",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Devil Room"
+          },
           "label": "Deals with the Devil"
         },
         {
@@ -3795,8 +3864,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Chapter 4",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Chapters"
+          },
           "label": "Chapter 4"
         }
       ],
@@ -3918,8 +3990,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Chapter 6",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Chapters"
+          },
           "label": "Chapter 6"
         },
         {
@@ -3950,8 +4025,11 @@
       ],
       "requirements": [
         {
-          "kind": "concept",
-          "page": "Collection Page",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Collection Page"
+          },
           "label": "Collect"
         },
         {
@@ -3960,8 +4038,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "items",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Items"
+          },
           "label": "items"
         },
         {
@@ -3970,8 +4051,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "ending",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Endings"
+          },
           "label": "ending"
         },
         {
@@ -4007,8 +4091,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "rock",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Rocks"
+          },
           "label": "rock"
         },
         {
@@ -6360,8 +6447,13 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Donation Machine",
+          "kind": "ref",
+          "target": {
+            "kind": "entity",
+            "id": 6,
+            "variant": 8,
+            "subtype": 0
+          },
           "label": "Donation Machine"
         }
       ],
@@ -6395,8 +6487,13 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Donation Machine",
+          "kind": "ref",
+          "target": {
+            "kind": "entity",
+            "id": 6,
+            "variant": 8,
+            "subtype": 0
+          },
           "label": "Donation Machine"
         }
       ],
@@ -6430,8 +6527,13 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Donation Machine",
+          "kind": "ref",
+          "target": {
+            "kind": "entity",
+            "id": 6,
+            "variant": 8,
+            "subtype": 0
+          },
           "label": "Donation Machine"
         }
       ],
@@ -6465,8 +6567,13 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Donation Machine",
+          "kind": "ref",
+          "target": {
+            "kind": "entity",
+            "id": 6,
+            "variant": 8,
+            "subtype": 0
+          },
           "label": "Donation Machine"
         }
       ],
@@ -6500,8 +6607,13 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Donation Machine",
+          "kind": "ref",
+          "target": {
+            "kind": "entity",
+            "id": 6,
+            "variant": 8,
+            "subtype": 0
+          },
           "label": "Donation Machine"
         }
       ],
@@ -6670,8 +6782,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Devil Room",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Devil Room"
+          },
           "label": "items from Devil Rooms"
         }
       ],
@@ -6767,8 +6882,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Unlocking Super Meat Boy & Super Bandage Girl",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Unlocking Super Meat Boy & Super Bandage Girl"
+          },
           "label": "Unlocking Super Meat Boy & Super Bandage Girl"
         }
       ],
@@ -6933,8 +7051,11 @@
                   "style": "plain"
                 },
                 {
-                  "kind": "concept",
-                  "page": "Item Tags syringe",
+                  "kind": "ref",
+                  "target": {
+                    "kind": "article",
+                    "title": "Item Tags syringe"
+                  },
                   "label": "'syringe' item tag"
                 }
               ]
@@ -6971,8 +7092,13 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Blood Donation Machine",
+          "kind": "ref",
+          "target": {
+            "kind": "entity",
+            "id": 6,
+            "variant": 2,
+            "subtype": 0
+          },
           "label": "Blood Donation Machine"
         },
         {
@@ -7011,8 +7137,13 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Slot Machine",
+          "kind": "ref",
+          "target": {
+            "kind": "entity",
+            "id": 6,
+            "variant": 2,
+            "subtype": 0
+          },
           "label": "Slot Machine"
         }
       ],
@@ -7144,8 +7275,13 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Donation Machine",
+          "kind": "ref",
+          "target": {
+            "kind": "entity",
+            "id": 6,
+            "variant": 8,
+            "subtype": 0
+          },
           "label": "Donation Machine"
         }
       ],
@@ -7176,8 +7312,13 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Donation Machine",
+          "kind": "ref",
+          "target": {
+            "kind": "entity",
+            "id": 6,
+            "variant": 8,
+            "subtype": 0
+          },
           "label": "Donation Machine"
         }
       ],
@@ -7208,8 +7349,13 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Donation Machine",
+          "kind": "ref",
+          "target": {
+            "kind": "entity",
+            "id": 6,
+            "variant": 8,
+            "subtype": 0
+          },
           "label": "Donation Machine"
         }
       ],
@@ -7240,8 +7386,13 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Donation Machine",
+          "kind": "ref",
+          "target": {
+            "kind": "entity",
+            "id": 6,
+            "variant": 8,
+            "subtype": 0
+          },
           "label": "Donation Machine"
         }
       ],
@@ -7272,8 +7423,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Chapter 6",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Chapters"
+          },
           "label": "Chapter 6"
         }
       ],
@@ -7354,8 +7508,11 @@
                           "style": "plain"
                         },
                         {
-                          "kind": "concept",
-                          "page": "Completion Mark",
+                          "kind": "ref",
+                          "target": {
+                            "kind": "article",
+                            "title": "Completion Marks"
+                          },
                           "label": "Completion Mark"
                         },
                         {
@@ -7364,8 +7521,11 @@
                           "style": "plain"
                         },
                         {
-                          "kind": "concept",
-                          "page": "Hard mode",
+                          "kind": "ref",
+                          "target": {
+                            "kind": "article",
+                            "title": "Hard mode"
+                          },
                           "label": "Hard mode"
                         },
                         {
@@ -8022,8 +8182,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Hard mode",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Hard mode"
+          },
           "label": "Hard mode"
         },
         {
@@ -8097,8 +8260,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Hard mode",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Hard mode"
+          },
           "label": "Hard mode"
         },
         {
@@ -8172,8 +8338,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Hard mode",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Hard mode"
+          },
           "label": "Hard mode"
         },
         {
@@ -8247,8 +8416,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Hard mode",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Hard mode"
+          },
           "label": "Hard mode"
         },
         {
@@ -8322,8 +8494,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Hard mode",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Hard mode"
+          },
           "label": "Hard mode"
         },
         {
@@ -8404,8 +8579,11 @@
               "style": "plain"
             },
             {
-              "kind": "concept",
-              "page": "Hard mode",
+              "kind": "ref",
+              "target": {
+                "kind": "article",
+                "title": "Hard mode"
+              },
               "label": "Hard mode"
             },
             {
@@ -8470,8 +8648,11 @@
                   "style": "plain"
                 },
                 {
-                  "kind": "concept",
-                  "page": "Hard mode",
+                  "kind": "ref",
+                  "target": {
+                    "kind": "article",
+                    "title": "Hard mode"
+                  },
                   "label": "Hard mode"
                 },
                 {
@@ -8556,8 +8737,11 @@
               "style": "plain"
             },
             {
-              "kind": "concept",
-              "page": "Hard mode",
+              "kind": "ref",
+              "target": {
+                "kind": "article",
+                "title": "Hard mode"
+              },
               "label": "Hard mode"
             },
             {
@@ -8622,8 +8806,11 @@
                   "style": "plain"
                 },
                 {
-                  "kind": "concept",
-                  "page": "Hard mode",
+                  "kind": "ref",
+                  "target": {
+                    "kind": "article",
+                    "title": "Hard mode"
+                  },
                   "label": "Hard mode"
                 },
                 {
@@ -8701,8 +8888,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Hard mode",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Hard mode"
+          },
           "label": "Hard mode"
         },
         {
@@ -8776,8 +8966,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Hard mode",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Hard mode"
+          },
           "label": "Hard mode"
         },
         {
@@ -8851,8 +9044,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Hard mode",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Hard mode"
+          },
           "label": "Hard mode"
         },
         {
@@ -8926,8 +9122,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Hard mode",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Hard mode"
+          },
           "label": "Hard mode"
         },
         {
@@ -8980,7 +9179,10 @@
         }
       ],
       "notes": [],
-      "unlocks": null
+      "unlocks": {
+        "kind": "transformation",
+        "id": 1
+      }
     },
     "sections": []
   },
@@ -11552,8 +11754,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Hard mode",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Hard mode"
+          },
           "label": "Hard mode"
         },
         {
@@ -12145,8 +12350,11 @@
               "style": "plain"
             },
             {
-              "kind": "concept",
-              "page": "ending",
+              "kind": "ref",
+              "target": {
+                "kind": "article",
+                "title": "Endings"
+              },
               "label": "ending"
             },
             {
@@ -12155,8 +12363,11 @@
               "style": "plain"
             },
             {
-              "kind": "concept",
-              "page": "collection page",
+              "kind": "ref",
+              "target": {
+                "kind": "article",
+                "title": "Collection Page"
+              },
               "label": "collect"
             },
             {
@@ -12533,8 +12744,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Hard mode",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Hard mode"
+          },
           "label": "Hard mode"
         },
         {
@@ -12583,8 +12797,13 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Greed Donation Machine",
+          "kind": "ref",
+          "target": {
+            "kind": "entity",
+            "id": 6,
+            "variant": 11,
+            "subtype": 0
+          },
           "label": "Greed Donation Machine"
         }
       ],
@@ -12625,8 +12844,13 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Greed Donation Machine",
+          "kind": "ref",
+          "target": {
+            "kind": "entity",
+            "id": 6,
+            "variant": 11,
+            "subtype": 0
+          },
           "label": "Greed Donation Machine"
         }
       ],
@@ -12667,8 +12891,13 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Greed Donation Machine",
+          "kind": "ref",
+          "target": {
+            "kind": "entity",
+            "id": 6,
+            "variant": 11,
+            "subtype": 0
+          },
           "label": "Greed Donation Machine"
         }
       ],
@@ -12707,8 +12936,13 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Greed Donation Machine",
+          "kind": "ref",
+          "target": {
+            "kind": "entity",
+            "id": 6,
+            "variant": 11,
+            "subtype": 0
+          },
           "label": "Greed Donation Machine"
         }
       ],
@@ -12747,8 +12981,13 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Greed Donation Machine",
+          "kind": "ref",
+          "target": {
+            "kind": "entity",
+            "id": 6,
+            "variant": 11,
+            "subtype": 0
+          },
           "label": "Greed Donation Machine"
         }
       ],
@@ -12789,8 +13028,13 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Greed Donation Machine",
+          "kind": "ref",
+          "target": {
+            "kind": "entity",
+            "id": 6,
+            "variant": 11,
+            "subtype": 0
+          },
           "label": "Greed Donation Machine"
         }
       ],
@@ -12831,8 +13075,13 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Greed Donation Machine",
+          "kind": "ref",
+          "target": {
+            "kind": "entity",
+            "id": 6,
+            "variant": 11,
+            "subtype": 0
+          },
           "label": "Greed Donation Machine"
         }
       ],
@@ -12871,8 +13120,13 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Greed Donation Machine",
+          "kind": "ref",
+          "target": {
+            "kind": "entity",
+            "id": 6,
+            "variant": 11,
+            "subtype": 0
+          },
           "label": "Greed Donation Machine"
         }
       ],
@@ -12911,8 +13165,13 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Greed Donation Machine",
+          "kind": "ref",
+          "target": {
+            "kind": "entity",
+            "id": 6,
+            "variant": 11,
+            "subtype": 0
+          },
           "label": "Greed Donation Machine"
         }
       ],
@@ -12951,8 +13210,13 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Greed Donation Machine",
+          "kind": "ref",
+          "target": {
+            "kind": "entity",
+            "id": 6,
+            "variant": 11,
+            "subtype": 0
+          },
           "label": "Greed Donation Machine"
         }
       ],
@@ -12991,8 +13255,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Hard mode",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Hard mode"
+          },
           "label": "Hard mode"
         },
         {
@@ -13001,8 +13268,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Completion Mark",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Completion Marks"
+          },
           "label": "Completion Mark"
         },
         {
@@ -13051,8 +13321,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Hard mode",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Hard mode"
+          },
           "label": "Hard mode"
         },
         {
@@ -13061,8 +13334,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Completion Mark",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Completion Marks"
+          },
           "label": "Completion Mark"
         },
         {
@@ -13111,8 +13387,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Hard mode",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Hard mode"
+          },
           "label": "Hard mode"
         },
         {
@@ -13121,8 +13400,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Completion Mark",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Completion Marks"
+          },
           "label": "Completion Mark"
         },
         {
@@ -13171,8 +13453,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Hard mode",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Hard mode"
+          },
           "label": "Hard mode"
         },
         {
@@ -13181,8 +13466,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Completion Mark",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Completion Marks"
+          },
           "label": "Completion Mark"
         },
         {
@@ -13231,8 +13519,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Hard mode",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Hard mode"
+          },
           "label": "Hard mode"
         },
         {
@@ -13241,8 +13532,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Completion Mark",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Completion Marks"
+          },
           "label": "Completion Mark"
         },
         {
@@ -13291,8 +13585,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Hard mode",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Hard mode"
+          },
           "label": "Hard mode"
         },
         {
@@ -13301,8 +13598,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Completion Mark",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Completion Marks"
+          },
           "label": "Completion Mark"
         },
         {
@@ -13404,8 +13704,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Hard mode",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Hard mode"
+          },
           "label": "Hard mode"
         },
         {
@@ -13414,8 +13717,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Completion Mark",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Completion Marks"
+          },
           "label": "Completion Mark"
         },
         {
@@ -13464,8 +13770,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Hard mode",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Hard mode"
+          },
           "label": "Hard mode"
         },
         {
@@ -13474,8 +13783,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Completion Mark",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Completion Marks"
+          },
           "label": "Completion Mark"
         },
         {
@@ -13524,8 +13836,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Hard mode",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Hard mode"
+          },
           "label": "Hard mode"
         },
         {
@@ -13534,8 +13849,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Completion Mark",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Completion Marks"
+          },
           "label": "Completion Mark"
         },
         {
@@ -13584,8 +13902,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Hard mode",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Hard mode"
+          },
           "label": "Hard mode"
         },
         {
@@ -13594,8 +13915,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Completion Mark",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Completion Marks"
+          },
           "label": "Completion Mark"
         },
         {
@@ -13644,8 +13968,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Hard mode",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Hard mode"
+          },
           "label": "Hard mode"
         },
         {
@@ -13654,8 +13981,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Completion Mark",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Completion Marks"
+          },
           "label": "Completion Mark"
         },
         {
@@ -13704,8 +14034,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Hard mode",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Hard mode"
+          },
           "label": "Hard mode"
         },
         {
@@ -13714,8 +14047,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Completion Mark",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Completion Marks"
+          },
           "label": "Completion Mark"
         },
         {
@@ -13854,8 +14190,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Tinted Rock",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Rocks"
+          },
           "label": "Tinted Rock"
         },
         {
@@ -13955,8 +14294,11 @@
               "style": "plain"
             },
             {
-              "kind": "concept",
-              "page": "Tinted Rock",
+              "kind": "ref",
+              "target": {
+                "kind": "article",
+                "title": "Rocks"
+              },
               "label": "Tinted Rock"
             },
             {
@@ -14505,8 +14847,13 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Greed Donation Machine",
+          "kind": "ref",
+          "target": {
+            "kind": "entity",
+            "id": 6,
+            "variant": 11,
+            "subtype": 0
+          },
           "label": "Greed Donation Machine"
         }
       ],
@@ -14569,8 +14916,11 @@
               "style": "plain"
             },
             {
-              "kind": "concept",
-              "page": "tainted character",
+              "kind": "ref",
+              "target": {
+                "kind": "article",
+                "title": "Tainted Characters"
+              },
               "label": "tainted character"
             },
             {
@@ -17112,8 +17462,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Hard mode",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Hard mode"
+          },
           "label": "Hard mode"
         },
         {
@@ -17164,8 +17517,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Hard mode",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Hard mode"
+          },
           "label": "Hard mode"
         },
         {
@@ -17174,8 +17530,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Completion Mark",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Completion Marks"
+          },
           "label": "Completion Mark"
         },
         {
@@ -17264,8 +17623,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Victory Lap",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Victory Lap"
+          },
           "label": "Victory Lap"
         },
         {
@@ -17391,8 +17753,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Bestiary",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Bestiary"
+          },
           "label": "Bestiary"
         }
       ],
@@ -17433,8 +17798,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Daily Challenge",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Daily Challenges"
+          },
           "label": "Daily Challenge"
         },
         {
@@ -17990,8 +18358,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Daily Challenge",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Daily Challenges"
+          },
           "label": "Daily Challenge"
         },
         {
@@ -18040,8 +18411,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Victory Lap",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Victory Lap"
+          },
           "label": "Victory Lap"
         },
         {
@@ -18141,8 +18515,11 @@
               "style": "plain"
             },
             {
-              "kind": "concept",
-              "page": "Collection Page (Afterbirth †)",
+              "kind": "ref",
+              "target": {
+                "kind": "article",
+                "title": "Collection Page (Afterbirth †)"
+              },
               "label": "Collect"
             },
             {
@@ -18151,8 +18528,11 @@
               "style": "plain"
             },
             {
-              "kind": "concept",
-              "page": "ending",
+              "kind": "ref",
+              "target": {
+                "kind": "article",
+                "title": "Endings"
+              },
               "label": "ending"
             },
             {
@@ -18161,8 +18541,11 @@
               "style": "plain"
             },
             {
-              "kind": "concept",
-              "page": "Bestiary",
+              "kind": "ref",
+              "target": {
+                "kind": "article",
+                "title": "Bestiary"
+              },
               "label": "Bestiary"
             },
             {
@@ -18262,8 +18645,13 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Greed Donation Machine",
+          "kind": "ref",
+          "target": {
+            "kind": "entity",
+            "id": 6,
+            "variant": 11,
+            "subtype": 0
+          },
           "label": "Greed Donation Machine"
         }
       ],
@@ -18542,8 +18930,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Character",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Characters"
+          },
           "label": "Character"
         },
         {
@@ -18598,8 +18989,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Character",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Characters"
+          },
           "label": "Character"
         },
         {
@@ -18734,8 +19128,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "rock",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Rocks"
+          },
           "label": "rock"
         },
         {
@@ -18778,8 +19175,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Chapter 1",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Chapters"
+          },
           "label": "Chapter 1"
         },
         {
@@ -18913,8 +19313,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Daily Challenge",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Daily Challenges"
+          },
           "label": "Daily Challenge"
         },
         {
@@ -18957,8 +19360,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "familiar",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Familiar"
+          },
           "label": "familiar"
         },
         {
@@ -19148,8 +19554,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "bed",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Bedroom"
+          },
           "label": "bed"
         }
       ],
@@ -19187,8 +19596,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Victory Lap",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Victory Lap"
+          },
           "label": "Victory Lap"
         },
         {
@@ -19272,8 +19684,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Cards and Runes",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Cards and Runes"
+          },
           "label": "Cards and Runes"
         },
         {
@@ -19339,8 +19754,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Collection Page",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Collection Page"
+          },
           "label": "collection"
         }
       ],
@@ -19448,8 +19866,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Chapter 2",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Chapters"
+          },
           "label": "Chapter 2"
         },
         {
@@ -19611,8 +20032,11 @@
                   "style": "plain"
                 },
                 {
-                  "kind": "concept",
-                  "page": "Item Tags battery",
+                  "kind": "ref",
+                  "target": {
+                    "kind": "article",
+                    "title": "Item Tags battery"
+                  },
                   "label": "'battery' item tag"
                 },
                 {
@@ -19658,8 +20082,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Chapter 3",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Chapters"
+          },
           "label": "Chapter 3"
         },
         {
@@ -19702,8 +20129,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Tech (Disambiguation)",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Tech (Disambiguation)"
+          },
           "label": "technology"
         },
         {
@@ -19726,8 +20156,11 @@
               "style": "plain"
             },
             {
-              "kind": "concept",
-              "page": "Item Tags tech",
+              "kind": "ref",
+              "target": {
+                "kind": "article",
+                "title": "Item Tags tech"
+              },
               "label": "'tech' item tag"
             }
           ]
@@ -19870,8 +20303,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Harbinger",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Harbingers (Bosses)"
+          },
           "label": "Harbinger"
         },
         {
@@ -19963,8 +20399,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Chapter 4",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Chapters"
+          },
           "label": "Chapter 4"
         },
         {
@@ -20054,8 +20493,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Devil Room",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Devil Room"
+          },
           "label": "Deals with the Devil"
         }
       ],
@@ -20140,8 +20582,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Item Tags tearsup",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Item Tags tearsup"
+          },
           "label": "items"
         },
         {
@@ -20150,8 +20595,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Tears Up",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Pills"
+          },
           "label": "pills"
         },
         {
@@ -20241,8 +20689,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Angel Room (Item Pool)",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Angel Room (Item Pool)"
+          },
           "label": "Angel Rooms items"
         }
       ],
@@ -20400,8 +20851,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Devil Room",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Devil Room"
+          },
           "label": "Deals with the Devil"
         }
       ],
@@ -20504,8 +20958,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Horf!",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Pills"
+          },
           "label": "Horf!"
         },
         {
@@ -20548,8 +21005,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "bed",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Bedroom"
+          },
           "label": "bed"
         },
         {
@@ -20592,8 +21052,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Gulp!",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Pills"
+          },
           "label": "Gulp!"
         },
         {
@@ -20684,8 +21147,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Blue Fly",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Familiar"
+          },
           "label": "Blue Flies"
         },
         {
@@ -20754,8 +21220,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "homing",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Tear Effects"
+          },
           "label": "homing"
         },
         {
@@ -20899,8 +21368,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Hard mode",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Hard mode"
+          },
           "label": "Hard mode"
         },
         {
@@ -21462,8 +21934,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Hard mode",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Hard mode"
+          },
           "label": "Hard mode"
         },
         {
@@ -21472,8 +21947,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Completion Mark",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Completion Marks"
+          },
           "label": "Completion Mark"
         },
         {
@@ -21604,8 +22082,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "hard mode",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Hard mode"
+          },
           "label": "hard mode"
         },
         {
@@ -21718,8 +22199,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Item Tags stars",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Item Tags stars"
+          },
           "label": "'stars' item tag"
         },
         {
@@ -22180,8 +22664,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Hard mode",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Hard mode"
+          },
           "label": "Hard mode"
         },
         {
@@ -22730,8 +23217,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Hard mode",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Hard mode"
+          },
           "label": "Hard mode"
         },
         {
@@ -22740,8 +23230,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Completion Mark",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Completion Marks"
+          },
           "label": "Completion Mark"
         },
         {
@@ -22871,8 +23364,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Hard mode",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Hard mode"
+          },
           "label": "Hard mode"
         },
         {
@@ -23421,8 +23917,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Hard mode",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Hard mode"
+          },
           "label": "Hard mode"
         },
         {
@@ -23431,8 +23930,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Completion Mark",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Completion Marks"
+          },
           "label": "Completion Mark"
         },
         {
@@ -28043,8 +28545,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Battery Bum (Item Pool)",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Battery Bum (Item Pool)"
+          },
           "label": "item"
         },
         {
@@ -29133,8 +29638,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Hard mode",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Hard mode"
+          },
           "label": "Hard mode"
         },
         {
@@ -29143,8 +29651,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Completion Mark",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Completion Marks"
+          },
           "label": "Completion Mark"
         },
         {
@@ -29153,8 +29664,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "character",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Characters"
+          },
           "label": "character"
         },
         {
@@ -34490,8 +35004,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Hard mode",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Hard mode"
+          },
           "label": "Hard mode"
         },
         {
@@ -34500,8 +35017,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Completion Mark",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Completion Marks"
+          },
           "label": "Completion Mark"
         },
         {
@@ -34510,8 +35030,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "character",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Characters"
+          },
           "label": "character"
         },
         {
@@ -34571,8 +35094,11 @@
           "style": "plain"
         },
         {
-          "kind": "concept",
-          "page": "Collection Page (Repentance)",
+          "kind": "ref",
+          "target": {
+            "kind": "article",
+            "title": "Collection Page (Repentance)"
+          },
           "label": "collect"
         },
         {

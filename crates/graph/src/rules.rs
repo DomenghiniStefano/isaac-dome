@@ -330,6 +330,7 @@ pub fn target_key(t: &Target, label: &str) -> String {
         Target::Stage { .. } => "stage",
         Target::Room { .. } => "room",
         Target::Concept { .. } => "concept",
+        Target::Article { .. } => "article",
     };
     format!("{kind}:{label}")
 }

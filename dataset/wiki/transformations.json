@@ -14,8 +14,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "transformation",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "Transformations"
+        },
         "label": "transformation"
       },
       {
@@ -42,8 +45,11 @@
             "style": "plain"
           },
           {
-            "kind": "concept",
-            "page": "flight",
+            "kind": "ref",
+            "target": {
+              "kind": "article",
+              "title": "Flight"
+            },
             "label": "flight"
           },
           {
@@ -52,8 +58,11 @@
             "style": "plain"
           },
           {
-            "kind": "concept",
-            "page": "Blue Fly",
+            "kind": "ref",
+            "target": {
+              "kind": "article",
+              "title": "Familiar"
+            },
             "label": "Blue Fly"
           },
           {
@@ -74,8 +83,11 @@
                 "style": "plain"
               },
               {
-                "kind": "concept",
-                "page": "flight",
+                "kind": "ref",
+                "target": {
+                  "kind": "article",
+                  "title": "Flight"
+                },
                 "label": "flight"
               },
               {
@@ -84,8 +96,11 @@
                 "style": "plain"
               },
               {
-                "kind": "concept",
-                "page": "Blue Fly",
+                "kind": "ref",
+                "target": {
+                  "kind": "article",
+                  "title": "Familiar"
+                },
                 "label": "Blue Fly"
               },
               {
@@ -155,8 +170,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "flight",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Flight"
+                    },
                     "label": "flight"
                   },
                   {
@@ -183,8 +201,11 @@
                         "style": "plain"
                       },
                       {
-                        "kind": "concept",
-                        "page": "Blue Fly",
+                        "kind": "ref",
+                        "target": {
+                          "kind": "article",
+                          "title": "Familiar"
+                        },
                         "label": "Blue Fly"
                       },
                       {
@@ -212,8 +233,11 @@
                         "style": "plain"
                       },
                       {
-                        "kind": "concept",
-                        "page": "Blue Fly",
+                        "kind": "ref",
+                        "target": {
+                          "kind": "article",
+                          "title": "Familiar"
+                        },
                         "label": "Blue Fly"
                       },
                       {
@@ -423,8 +447,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "transformation",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "Transformations"
+        },
         "label": "transformation"
       },
       {
@@ -443,8 +470,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "flight",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "Flight"
+        },
         "label": "flight"
       },
       {
@@ -468,8 +498,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "Blue Fly",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "Familiar"
+        },
         "label": "Blue Flies"
       },
       {
@@ -490,8 +523,11 @@
             "style": "plain"
           },
           {
-            "kind": "concept",
-            "page": "friendly",
+            "kind": "ref",
+            "target": {
+              "kind": "article",
+              "title": "Status Effects"
+            },
             "label": "friendly"
           },
           {
@@ -627,8 +663,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "flight",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Flight"
+                    },
                     "label": "flight"
                   },
                   {
@@ -647,8 +686,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "Blue Fly",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Familiar"
+                    },
                     "label": "Blue Flies"
                   },
                   {
@@ -1184,8 +1226,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "Champions",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Champions"
+                    },
                     "label": "violet and rainbow champions"
                   },
                   {
@@ -1292,8 +1337,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "transformation",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "Transformations"
+        },
         "label": "transformation"
       },
       {
@@ -1302,8 +1350,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "The Binding of Isaac: Afterbirth",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "The Binding of Isaac: Afterbirth"
+        },
         "label": "The Binding of Isaac: Afterbirth"
       },
       {
@@ -1322,8 +1373,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "Heart Container",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "Health"
+        },
         "label": "Heart Container"
       },
       {
@@ -1402,8 +1456,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "Red Heart container",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Health"
+                    },
                     "label": "Red Heart container"
                   },
                   {
@@ -1435,8 +1492,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "transformation",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "Transformations"
+        },
         "label": "transformation"
       },
       {
@@ -1445,8 +1505,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "The Binding of Isaac: Afterbirth",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "The Binding of Isaac: Afterbirth"
+        },
         "label": "The Binding of Isaac: Afterbirth"
       },
       {
@@ -1465,8 +1528,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "flight",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "Flight"
+        },
         "label": "flight"
       },
       {
@@ -1600,8 +1666,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "flight",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Flight"
+                    },
                     "label": "flight"
                   },
                   {
@@ -1741,8 +1810,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "transformation",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "Transformations"
+        },
         "label": "transformation"
       },
       {
@@ -1751,8 +1823,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "The Binding of Isaac: Afterbirth",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "The Binding of Isaac: Afterbirth"
+        },
         "label": "The Binding of Isaac: Afterbirth"
       },
       {
@@ -1771,8 +1846,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "Green Creep",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "Creep"
+        },
         "label": "green poisonous creep"
       },
       {
@@ -1831,8 +1909,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "Green Creep",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Creep"
+                    },
                     "label": "green poisonous creep"
                   },
                   {
@@ -1886,8 +1967,11 @@
                         "style": "plain"
                       },
                       {
-                        "kind": "concept",
-                        "page": "poison",
+                        "kind": "ref",
+                        "target": {
+                          "kind": "article",
+                          "title": "Status Effects"
+                        },
                         "label": "poison"
                       },
                       {
@@ -1921,8 +2005,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "transformation",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "Transformations"
+        },
         "label": "transformation"
       },
       {
@@ -1931,8 +2018,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "The Binding of Isaac: Afterbirth",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "The Binding of Isaac: Afterbirth"
+        },
         "label": "The Binding of Isaac: Afterbirth"
       },
       {
@@ -1951,8 +2041,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "damage",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "Damage"
+        },
         "label": "damage"
       },
       {
@@ -1961,8 +2054,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "speed",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "Speed"
+        },
         "label": "speed"
       },
       {
@@ -1971,8 +2067,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "pill",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "Pills"
+        },
         "label": "pill"
       },
       {
@@ -2043,8 +2142,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "pill",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Pills"
+                    },
                     "label": "pill"
                   },
                   {
@@ -2063,8 +2165,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "damage",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Damage"
+                    },
                     "label": "damage"
                   },
                   {
@@ -2083,8 +2188,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "speed",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Speed"
+                    },
                     "label": "speed"
                   },
                   {
@@ -2142,8 +2250,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "transformation",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "Transformations"
+        },
         "label": "transformation"
       },
       {
@@ -2152,8 +2263,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "The Binding of Isaac: Afterbirth",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "The Binding of Isaac: Afterbirth"
+        },
         "label": "The Binding of Isaac: Afterbirth"
       },
       {
@@ -2456,8 +2570,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "transformation",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "Transformations"
+        },
         "label": "transformation"
       },
       {
@@ -2466,8 +2583,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "The Binding of Isaac: Afterbirth",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "The Binding of Isaac: Afterbirth"
+        },
         "label": "The Binding of Isaac: Afterbirth"
       },
       {
@@ -2486,8 +2606,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "Damage",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "Damage"
+        },
         "label": "Damage"
       },
       {
@@ -2496,8 +2619,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "Tears",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "Fire rate"
+        },
         "label": "Tears"
       },
       {
@@ -2687,8 +2813,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "damage",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Damage"
+                    },
                     "label": "damage"
                   },
                   {
@@ -2697,8 +2826,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "tears",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Fire rate"
+                    },
                     "label": "tears"
                   },
                   {
@@ -2741,8 +2873,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "blindfolded",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Blindfolded"
+                    },
                     "label": "blindfolded"
                   },
                   {
@@ -2970,8 +3105,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "transformation",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "Transformations"
+        },
         "label": "transformation"
       },
       {
@@ -2980,8 +3118,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "The Binding of Isaac: Afterbirth",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "The Binding of Isaac: Afterbirth"
+        },
         "label": "The Binding of Isaac: Afterbirth"
       },
       {
@@ -3010,8 +3151,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "flight",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "Flight"
+        },
         "label": "flight"
       },
       {
@@ -3124,8 +3268,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "flight",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Flight"
+                    },
                     "label": "flight"
                   },
                   {
@@ -3186,8 +3333,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "transformation",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "Transformations"
+        },
         "label": "transformation"
       },
       {
@@ -3196,8 +3346,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "The Binding of Isaac: Afterbirth",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "The Binding of Isaac: Afterbirth"
+        },
         "label": "The Binding of Isaac: Afterbirth"
       },
       {
@@ -3710,8 +3863,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "transformation",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "Transformations"
+        },
         "label": "transformation"
       },
       {
@@ -3720,8 +3876,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "The Binding of Isaac: Afterbirth †",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "The Binding of Isaac: Afterbirth †"
+        },
         "label": "The Binding of Isaac: Afterbirth †"
       },
       {
@@ -3904,8 +4063,11 @@
                             "style": "plain"
                           },
                           {
-                            "kind": "concept",
-                            "page": "Luck",
+                            "kind": "ref",
+                            "target": {
+                              "kind": "article",
+                              "title": "Luck"
+                            },
                             "label": "Luck"
                           },
                           {
@@ -4020,8 +4182,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "transformation",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "Transformations"
+        },
         "label": "transformation"
       },
       {
@@ -4030,8 +4195,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "The Binding of Isaac: Afterbirth †",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "The Binding of Isaac: Afterbirth †"
+        },
         "label": "The Binding of Isaac: Afterbirth †"
       },
       {
@@ -4040,8 +4208,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "Puberty",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "Pills"
+        },
         "label": "Puberty"
       },
       {
@@ -4060,8 +4231,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "Heart container",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "Health"
+        },
         "label": "Heart container"
       },
       {
@@ -4098,8 +4272,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "Red Heart container",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Health"
+                    },
                     "label": "Red Heart container"
                   },
                   {
@@ -4162,8 +4339,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "transformation",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "Transformations"
+        },
         "label": "transformation"
       },
       {
@@ -4172,8 +4352,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "The Binding of Isaac: Afterbirth †",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "The Binding of Isaac: Afterbirth †"
+        },
         "label": "The Binding of Isaac: Afterbirth †"
       },
       {
@@ -4285,8 +4468,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "familiar",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Familiar"
+                    },
                     "label": "familiar"
                   },
                   {
@@ -4295,8 +4481,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "status effect",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Status Effects"
+                    },
                     "label": "status effect"
                   },
                   {
@@ -4355,8 +4544,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "transformation",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "Transformations"
+        },
         "label": "transformation"
       },
       {
@@ -4365,8 +4557,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "The Binding of Isaac: Afterbirth †",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "The Binding of Isaac: Afterbirth †"
+        },
         "label": "The Binding of Isaac: Afterbirth †"
       },
       {
@@ -4468,8 +4663,11 @@
                             "style": "plain"
                           },
                           {
-                            "kind": "concept",
-                            "page": "Rocks",
+                            "kind": "ref",
+                            "target": {
+                              "kind": "article",
+                              "title": "Rocks"
+                            },
                             "label": "spiked rocks"
                           },
                           {
@@ -4630,8 +4828,13 @@
                         "style": "plain"
                       },
                       {
-                        "kind": "concept",
-                        "page": "Blood Donation Machine",
+                        "kind": "ref",
+                        "target": {
+                          "kind": "entity",
+                          "id": 6,
+                          "variant": 2,
+                          "subtype": 0
+                        },
                         "label": "Blood Donation Machine"
                       },
                       {
@@ -4640,8 +4843,13 @@
                         "style": "plain"
                       },
                       {
-                        "kind": "concept",
-                        "page": "Devil Beggar",
+                        "kind": "ref",
+                        "target": {
+                          "kind": "entity",
+                          "id": 6,
+                          "variant": 4,
+                          "subtype": 0
+                        },
                         "label": "Devil Beggar"
                       },
                       {
@@ -4675,8 +4883,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "transformation",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "Transformations"
+        },
         "label": "transformation"
       },
       {
@@ -4685,8 +4896,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "The Binding of Isaac: Repentance+",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "The Binding of Isaac: Repentance+"
+        },
         "label": "The Binding of Isaac: Repentance+"
       },
       {
@@ -4829,8 +5043,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "transformation",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "Transformations"
+        },
         "label": "transformation"
       },
       {
@@ -4839,8 +5056,11 @@
         "style": "plain"
       },
       {
-        "kind": "concept",
-        "page": "The Binding of Isaac: Afterbirth",
+        "kind": "ref",
+        "target": {
+          "kind": "article",
+          "title": "The Binding of Isaac: Afterbirth"
+        },
         "label": "The Binding of Isaac: Afterbirth"
       },
       {
@@ -4946,8 +5166,11 @@
                     "style": "plain"
                   },
                   {
-                    "kind": "concept",
-                    "page": "familiar",
+                    "kind": "ref",
+                    "target": {
+                      "kind": "article",
+                      "title": "Familiar"
+                    },
                     "label": "familiar"
                   },
                   {

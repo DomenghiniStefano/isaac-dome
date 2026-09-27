@@ -64,6 +64,26 @@ pub fn empty_trinket() -> Infobox {
     }
 }
 
+/// An entity infobox that says nothing (design decision 2): a common enemy or pickup,
+/// `Infobox monster`/`Infobox entity`.
+pub fn empty_entity() -> Infobox {
+    Infobox::Entity {
+        base_hp: None,
+        stage_hp: Vec::new(),
+        environment: Vec::new(),
+        behavior: Vec::new(),
+        pool: Vec::new(),
+        replace: Vec::new(),
+        replace_chance: Vec::new(),
+        replace_notes: Vec::new(),
+    }
+}
+
+/// An article with no category: the plain shape (design decision 2).
+pub fn empty_article() -> Infobox {
+    Infobox::Article { category: None }
+}
+
 /// B42's cross-check between the `player` Cargo table's `parent` and the one every
 /// character page states in its own infobox. It reads the committed snapshot and answers a
 /// question about it, which no command of the app ever asks: a disagreement is a fact about
