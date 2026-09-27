@@ -6,7 +6,7 @@ import { StateTone } from '@/lib/facets/stateTone'
 import type { PageProgress } from '@/lib/ipc/types'
 import { progressLines } from '@/lib/wiki/progressLines'
 
-// The save's state for one page, compact (card #90, decision 6): a small row of `Badge`s, one
+// The save's state for one page, compact: a small row of `Badge`s, one
 // per `progressLines` line, in the state tones (`--color-state-done/now/blocked/unknown`).
 // `null` — no save chosen, or this page's kind carries no state at all — draws nothing, never
 // an empty or a guessed badge.

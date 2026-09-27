@@ -1,5 +1,5 @@
 // The colour a `Chip` or an `EditionBadge` draws with, for a value the wiki, the game or the
-// save already gives us (card #90, decision 5): an edition, an item's quality, or a page's
+// save already gives us: an edition, an item's quality, or a page's
 // category. `Tone` names the pair of tokens (`--color-<tone>-surface`/`-foreground` in
 // `theme/colors.css`) that `chip/variants.ts` reads — this module says WHICH tone a value
 // gets, never how the tone is painted, so the two stay one definition each.
