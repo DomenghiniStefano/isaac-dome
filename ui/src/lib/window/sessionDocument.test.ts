@@ -374,6 +374,74 @@ describe('whether the sidebar was folded', () => {
   })
 })
 
+describe('the Wiki list views the document remembers', () => {
+  const one = [{ tabs: [tab(RouteName.Goals)], activeIndex: 0 }]
+
+  it('round-trips a category switched to the table', () => {
+    const back = readSession(
+      writeSession({ windows: one, wikiListView: { items: 'table' } }),
+    )
+    expect(back?.wikiListView).toEqual({ items: 'table' })
+  })
+
+  it('has none when nothing was ever switched', () => {
+    const stored = JSON.parse(writeSession({ windows: one }))
+    expect('wikiListView' in stored).toBe(false)
+    expect(
+      readSession(writeSession({ windows: one }))?.wikiListView,
+    ).toBeUndefined()
+  })
+
+  it('drops a value that is not a string, and keeps the rest', () => {
+    const raw = JSON.stringify({
+      version: 2,
+      windows: one,
+      wikiListView: { items: 'table', bosses: 3 },
+    })
+    expect(readSession(raw)?.wikiListView).toEqual({ items: 'table' })
+  })
+
+  it('reads a version 1 document, which never had one', () => {
+    expect(
+      readSession(v1([tab(RouteName.Goals)]))?.wikiListView,
+    ).toBeUndefined()
+  })
+
+  it('travels beside the sidebar width without disturbing it', () => {
+    const back = readSession(
+      writeSession({
+        windows: one,
+        sidebarWidth: 260,
+        wikiListView: { items: 'table' },
+      }),
+    )
+    expect(back?.sidebarWidth).toBe(260)
+    expect(back?.wikiListView).toEqual({ items: 'table' })
+  })
+})
+
+describe('storedSession and the Wiki list views', () => {
+  const windows = [
+    {
+      tabs: [{ entries: [{ location: { name: RouteName.Goals } }], index: 0 }],
+      activeIndex: 0,
+    },
+  ]
+  const noLayout = { sidebarWidth: null, sidebarCollapsed: false }
+
+  it('carries a map once something was switched', () => {
+    expect(storedSession(windows, noLayout, { items: 'table' })).toStrictEqual({
+      windows,
+      wikiListView: { items: 'table' },
+    })
+  })
+
+  it('leaves the key out when nothing was ever switched', () => {
+    expect(storedSession(windows, noLayout, {})).toStrictEqual({ windows })
+    expect(storedSession(windows, noLayout)).toStrictEqual({ windows })
+  })
+})
+
 describe('a tab stored on a screen that has since merged', () => {
   // The route left the table in the same commit as this test. Before that, `plan` was a
   // RouteName and both assertions would have passed without a line of the map being

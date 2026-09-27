@@ -25,7 +25,23 @@ export const rowResultPx = (percent: number): number =>
 // A wiki list row carries more than a table row does: the page's figure in its frame, the
 // title, and the line that says what the page is. Its own constant, because it is drawn
 // with its own token — `--spacing-row-wiki`, and rows.test.ts holds the two together.
-export const RowWikiRem = 3.75
+// Grown with `WikiFigure`'s own `--spacing-figure-row` (card #90, 3rem to 4rem): the row has
+// to stay at least as tall as the figure it frames, with the same 4px clearance on each side
+// the old pair (48px figure in a 60px row) had.
+export const RowWikiRem = 4.5
 
 export const rowWikiPx = (percent: number): number =>
   remToPx(RowWikiRem, percent)
+
+// The wiki's card grid (card #90, decision 4), virtualized by row of cards rather than by
+// card: one row's height, and the card's own width, so `useCardColumns` can say how many fit
+// before a row is ever measured. The height holds the `--spacing-figure-card` picture, the
+// name, the id, the edition badge and a couple of rows of chips underneath.
+export const WikiCardRem = 12
+export const RowWikiCardRem = 15.5
+
+export const wikiCardPx = (percent: number): number =>
+  remToPx(WikiCardRem, percent)
+
+export const rowWikiCardPx = (percent: number): number =>
+  remToPx(RowWikiCardRem, percent)

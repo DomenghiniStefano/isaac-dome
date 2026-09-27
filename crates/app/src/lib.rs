@@ -44,6 +44,7 @@ pub fn run() {
             wiki::wiki_entry,
             wiki::wiki_item_pools,
             wiki::wiki_index,
+            wiki::wiki_progress,
             wiki::search,
             graph::graph_views,
             graph::collection,

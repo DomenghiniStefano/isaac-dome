@@ -55,11 +55,22 @@ const layer = computed(() =>
        it, and whatever the caller puts in the slot when it has something better — the Floor
        grid has its own drawing for every room, and an empty square there would be a cell
        that says nothing rather than one the game has no icon for. That drawing wins over
-       the question mark for the same reason: it answers a different question. -->
+       the question mark for the same reason: it answers a different question.
+
+       `grid place-items-center`, on this root itself: the size the caller's own `class`
+       binding gives it (`WikiFigure`'s box, `size-figure-*`) lands here, on whichever branch
+       actually renders — a slotted icon smaller than that box has to be centred by the
+       element that was GIVEN the box, not by a parent that only ever sees a child already
+       filling it edge to edge. `RoomSymbol`, the one other caller with a `#fallback` slot,
+       gives this element no size of its own — its own wrapper centres instead — so this is a
+       no-op there. -->
   <span
     v-else
     aria-hidden="true"
-    :class="placeholder ? 'hatch-placeholder' : undefined"
+    :class="[
+      'grid place-items-center',
+      placeholder ? 'hatch-placeholder' : undefined,
+    ]"
     ><slot name="fallback"
   /></span>
 </template>
