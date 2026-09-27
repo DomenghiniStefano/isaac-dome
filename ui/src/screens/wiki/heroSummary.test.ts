@@ -73,7 +73,12 @@ describe('summaryOf', () => {
   })
 
   it('composes nothing for another kind', () => {
-    const trinket: Infobox = { kind: 'trinket', quote: [], tags: [], pools: [] }
+    const trinket: Infobox = {
+      kind: 'trinket',
+      quote: [],
+      tags: [],
+      obtainedFrom: [],
+    }
     expect(summaryOf(entry(trinket), 'Unlocks', titleOf)).toEqual([])
   })
 })

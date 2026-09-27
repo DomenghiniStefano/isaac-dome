@@ -18,6 +18,24 @@ pub fn wiki_entry(target: ipc::Target) -> Result<Option<ipc::Entry>, IpcError> {
     Ok(ds.entry(&target).cloned())
 }
 
+/// The pools the installed game lists an item in (design decision 4 of
+/// `2026-09-26-wiki-complete-design.md`): `None` without the game, or for a target that
+/// isn't a collectible — a trinket included, since `itempools.xml` has no pools for those at
+/// all (`ipc::item_pools`'s doc comment has the measurement). Not cached: the game turning up
+/// after launch has to be seen the next time a page asks, the same as everything else behind
+/// `catalog_now`.
+#[tauri::command]
+pub fn wiki_item_pools(
+    app: AppHandle,
+    state: tauri::State<'_, CatalogState>,
+    resources: tauri::State<'_, ResourcesState>,
+    target: ipc::Target,
+) -> Result<Option<Vec<ipc::PoolMembershipView>>, IpcError> {
+    let catalog = catalog_now(&app, &resources, &state);
+    let ds = wiki::Dataset::embedded().ok();
+    Ok(catalog.and_then(|c| ipc::item_pools(c, ds, &target)))
+}
+
 /// Every page the dataset has, once per window: the category lists, the tab labels and
 /// the icon of every reference on a page read from it (spec 3.5, Decision 2). A dataset
 /// that didn't load is an empty index that says so, not an `Err`: the landing shows it.

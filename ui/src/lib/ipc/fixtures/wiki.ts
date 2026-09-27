@@ -2,6 +2,7 @@ import type {
   CategorySample,
   Entry,
   ExtractionReport,
+  PoolMembershipView,
   Target,
   UnlockView,
   WikiIndex,
@@ -248,3 +249,9 @@ export const wikiEntryAnswer = (target: Target): Entry | null => {
 // machine that recorded none answers the empty report it would have.
 export const extractionReportAnswer = (): ExtractionReport | undefined =>
   Object.values(reports)[0]
+
+// No pools payload was ever recorded (nothing here produces one any more — see this
+// directory's `README.md`), and this fixture never invents numbers `infoOf` doesn't already
+// have a source for. So the pools row reads as it does on a machine with no game installed,
+// with or without the game shown elsewhere: `null`, absent rather than wrong.
+export const wikiItemPoolsAnswer = (): PoolMembershipView[] | null => null

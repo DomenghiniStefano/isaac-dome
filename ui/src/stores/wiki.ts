@@ -2,10 +2,11 @@ import { defineStore } from 'pinia'
 import { computed, ref } from 'vue'
 import { StoreId } from '@/lib/constants/stores'
 import { asIpcError } from '@/lib/ipc/errors'
-import { wikiEntry, wikiIndex } from '@/lib/ipc/wiki'
+import { wikiEntry, wikiIndex, wikiItemPools } from '@/lib/ipc/wiki'
 import type {
   Entry,
   IpcError,
+  PoolMembershipView,
   Target,
   WikiIndex,
   WikiPageRef,
@@ -27,6 +28,11 @@ export const useWikiStore = defineStore(StoreId.Wiki, () => {
   // the index's `status`: one page that would not load says nothing about the others.
   const failures = ref(new Map<string, IpcError | null>())
   const pending = new Set<string>()
+  // The pools the installed game lists an item in, keyed like `entries` (design decision 4):
+  // `null` is a real answer here too — no game, or a target with no pools concept — cached
+  // the same way the index's own icon links are, so a page asks once per window.
+  const pools = ref(new Map<string, PoolMembershipView[] | null>())
+  const pendingPools = new Set<string>()
 
   const byKey = computed(
     () =>
@@ -93,6 +99,26 @@ export const useWikiStore = defineStore(StoreId.Wiki, () => {
     }
   }
 
+  // `undefined`: not read yet; `null`: read, and there is nothing to show — no game, or a
+  // target with no pools concept at all.
+  const poolsFor = (key: string): PoolMembershipView[] | null | undefined =>
+    pools.value.get(key)
+
+  // A failed read leaves nothing cached, unlike `loadEntry`: there is no retry affordance for
+  // a pools row, so asking again next time it is shown is simpler than a second failure map.
+  const loadPools = async (target: Target): Promise<void> => {
+    const key = pageKey(target)
+    if (key === null || pools.value.has(key) || pendingPools.has(key)) return
+    pendingPools.add(key)
+    try {
+      pools.value.set(key, await wikiItemPools(target))
+    } catch {
+      // no-op
+    } finally {
+      pendingPools.delete(key)
+    }
+  }
+
   return {
     index,
     status,
@@ -105,5 +131,7 @@ export const useWikiStore = defineStore(StoreId.Wiki, () => {
     pageFailed,
     pageError,
     loadEntry,
+    poolsFor,
+    loadPools,
   }
 })
