@@ -28,6 +28,12 @@ struct Parser<'a> {
     para: Vec<String>,
     list: Vec<RawItem>,
     table: Option<Vec<String>>,
+    /// Inside a `<syntaxhighlight>…</syntaxhighlight>` span opened on an earlier line: every
+    /// line until (and including) the one that closes it is swallowed whole, neither prose
+    /// nor a template closer. GB Bug's "Algorithm" is the one page that opens one; before
+    /// this its Lua listing read as loose paragraph text and its own `}` (a table literal,
+    /// not `{{…}}`'s closer) as an orphaned one.
+    in_verbatim: bool,
 }
 
 /// A template whose content is block-level, and what this pass is allowed to do with it.
@@ -148,6 +154,7 @@ pub fn parse_blocks(body: &str, r: &Resolver, d: &mut Diagnostics) -> Vec<Block>
         para: Vec::new(),
         list: Vec::new(),
         table: None,
+        in_verbatim: false,
     };
     for raw in unwrapped(body).lines() {
         p.line(raw.trim_end());
@@ -159,12 +166,25 @@ impl Parser<'_> {
     /// One line, into the state it belongs to. Each kind of line closes the states it does not
     /// belong to and opens its own; the order of the checks is the precedence.
     fn line(&mut self, line: &str) {
+        // Inside a verbatim span every line is swallowed, until the closing tag.
+        if self.in_verbatim {
+            if verbatim_close(line.trim_start()) {
+                self.in_verbatim = false;
+            }
+            return;
+        }
         // Inside a table every line belongs to it, until `|}`.
         if self.table.is_some() {
             self.table_line(line);
             return;
         }
         let trimmed = line.trim_start();
+        // A `<syntaxhighlight>` this line opens but does not close on its own still gets to
+        // be whatever this line otherwise is (a list item, most often) — only what comes
+        // after it, on later lines, is verbatim.
+        if verbatim_open_without_close(trimmed) {
+            self.in_verbatim = true;
+        }
         if trimmed.starts_with("{|") {
             self.flush_para();
             self.flush_list();
@@ -318,6 +338,18 @@ fn list_item(trimmed: &str) -> Option<RawItem> {
     })
 }
 
+/// Whether `line` opens a `<syntaxhighlight …>` tag with no matching close on the same
+/// line. Case-insensitive: MediaWiki's own tag parsing is.
+fn verbatim_open_without_close(line: &str) -> bool {
+    let lower = line.to_ascii_lowercase();
+    lower.contains("<syntaxhighlight") && !lower.contains("</syntaxhighlight>")
+}
+
+/// Whether `line` carries the closing `</syntaxhighlight>`.
+fn verbatim_close(line: &str) -> bool {
+    line.to_ascii_lowercase().contains("</syntaxhighlight>")
+}
+
 /// `=== T ===` → `(3, "T")`, `==== T ====` → `(4, "T")`. Level 2 never appears here: the
 /// sections are already split further upstream. Other levels stay as text.
 fn heading(line: &str) -> Option<(u8, &str)> {
@@ -412,6 +444,10 @@ mod tests {
     fn p(s: &str) -> Vec<Block> {
         parse_blocks(s, &test_resolver(), &mut Diagnostics::default())
     }
+    fn pd(s: &str) -> (Vec<Block>, Diagnostics) {
+        let mut d = Diagnostics::default();
+        (parse_blocks(s, &test_resolver(), &mut d), d)
+    }
     fn t(s: &str) -> Vec<Inline> {
         vec![Inline::Text {
             text: s.into(),
@@ -443,6 +479,45 @@ mod tests {
         // Nothing of the wrapper survives, neither its opener nor the line that closed it.
         assert_eq!(blocks.len(), 1, "{blocks:?}");
         assert_eq!(items[0].inline, t("The flies:"));
+    }
+
+    /// GB Bug's "Algorithm" section: a `<syntaxhighlight>` tag opens mid-line, inside a list
+    /// item, and does not close until a line of its own several lines down. Read line by
+    /// line without this, the Lua inside became loose paragraph text and its own `}` — a
+    /// table literal, not a template's closer — bumped `orphan_closers`. Everything from the
+    /// tag onward through its close is dropped whole; the sentence that opens the item and
+    /// the list item right after `</syntaxhighlight>` are unaffected.
+    #[test]
+    fn a_syntaxhighlight_span_is_dropped_whole_and_counts_no_orphan_closer() {
+        let (blocks, d) = pd(concat!(
+            "* intro: <syntaxhighlight lang=\"lua\">\n",
+            "local t = {\n",
+            "\tfield, -- comment\n",
+            "}\n",
+            "</syntaxhighlight>\n",
+            "* after\n",
+        ));
+        let Block::List { items, .. } = &blocks[0] else {
+            panic!("a list, got {blocks:?}")
+        };
+        assert_eq!(items.len(), 2, "{items:?}");
+        let flat = |inline: &[Inline]| -> String {
+            inline
+                .iter()
+                .filter_map(|i| match i {
+                    Inline::Text { text, .. } => Some(text.as_str()),
+                    _ => None,
+                })
+                .collect()
+        };
+        assert_eq!(flat(&items[0].inline).trim(), "intro:");
+        assert!(
+            !flat(&items[0].inline).contains("local t"),
+            "the Lua code leaked into the item: {:?}",
+            items[0].inline
+        );
+        assert_eq!(flat(&items[1].inline).trim(), "after");
+        assert_eq!(d.orphan_closers, 0, "{d:?}");
     }
 
     /// The half of B49 that is not layout. The two `X synergy` templates carry their

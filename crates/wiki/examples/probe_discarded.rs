@@ -17,7 +17,7 @@
 use std::collections::BTreeMap;
 use std::path::Path;
 
-use wiki::{is_excluded_section, normalize_title, split_page, Raw};
+use wiki::{is_excluded_section, normalize_title, split_page, Corrections, Raw};
 
 struct Dropped {
     raws: BTreeMap<String, u32>,
@@ -34,12 +34,23 @@ fn main() {
         }
     };
 
+    let corrections_path = dir.parent().unwrap().join("corrections.json");
+    let corrections: Corrections = match std::fs::read_to_string(&corrections_path).ok().as_deref()
+    {
+        Some(text) => serde_json::from_str(text).expect("corrections.json is valid JSON"),
+        None => {
+            println!("dataset/corrections.json could not be read");
+            return;
+        }
+    };
+    let excluded = &corrections.excluded.sections;
+
     let mut dropped: BTreeMap<String, Dropped> = BTreeMap::new();
     let mut kept = 0u32;
     for page in &raw.pages {
         let (_, sections) = split_page(&page.text);
         for s in sections {
-            if !is_excluded_section(&s.title) {
+            if !is_excluded_section(&s.title, excluded) {
                 kept += 1;
                 continue;
             }

@@ -324,6 +324,77 @@ fn broken_shovel_page_yields_both_halves() {
     }
 }
 
+/// Equality! (trinket 103) is one `<tabber>` opened before any heading of the page's own,
+/// each tab carrying its own `== Effects ==`/`== Synergies ==` — the shape `split_page` used
+/// to leave opaque end to end, so the page built with **zero** sections. Both tabs' real
+/// content is checked, not just that the count is non-zero: the pre-Repentance+ mechanic
+/// ("doubled variants") and the Repentance+ one ("fire rate") are different sentences, and
+/// losing either would still leave a plausible-looking `Effects` section.
+#[test]
+fn equality_keeps_both_tabs_sections() {
+    let ds = dataset();
+    let e = ds.entry(&Target::Trinket { id: 103 }).expect("Equality!");
+    assert!(!e.sections.is_empty(), "{:?}", e.sections);
+    let flat = |s: &wiki::Section| -> String {
+        let mut out = String::new();
+        for block in &s.blocks {
+            flatten_block(block, &mut out);
+        }
+        out
+    };
+    let effects: Vec<String> = e
+        .sections
+        .iter()
+        .filter(|s| s.kind == SectionKind::Effects)
+        .map(flat)
+        .collect();
+    assert_eq!(effects.len(), 2, "one Effects section per tab: {effects:?}");
+    assert!(
+        effects.iter().any(|t| t.contains("doubled variants")),
+        "the pre-Repentance+ tab's Effects is missing: {effects:?}"
+    );
+    assert!(
+        effects.iter().any(|t| t.contains("fire rate")),
+        "the Repentance+ tab's Effects is missing: {effects:?}"
+    );
+    assert!(
+        e.sections.iter().any(|s| s.kind == SectionKind::Synergies),
+        "{:?}",
+        e.sections
+    );
+}
+
+/// All the plain text of a block, recursively, with no separator: enough to search a
+/// section's content for a phrase without caring how it's split across list items.
+fn flatten_block(block: &Block, out: &mut String) {
+    match block {
+        Block::Paragraph { inline } | Block::Heading { inline, .. } => flatten_inline(inline, out),
+        Block::List { items, .. } => {
+            for item in items {
+                flatten_inline(&item.inline, out);
+                for child in &item.children {
+                    flatten_block(child, out);
+                }
+            }
+        }
+        Block::Table { header, rows } => {
+            for cell in header.iter().chain(rows.iter().flatten()) {
+                flatten_inline(cell, out);
+            }
+        }
+    }
+}
+
+fn flatten_inline(inline: &[Inline], out: &mut String) {
+    for node in inline {
+        match node {
+            Inline::Text { text, .. } => out.push_str(text),
+            Inline::Edition { inline, .. } => flatten_inline(inline, out),
+            Inline::Ref { label, .. } | Inline::Concept { label, .. } => out.push_str(label),
+        }
+    }
+}
+
 #[test]
 fn binge_eater_notes_reference_eight_food_items() {
     let ds = dataset();
@@ -588,23 +659,29 @@ fn text_nodes_carry_no_raw_template_syntax() {
     // cannot notice its own remainder drifting, which is the argument for pinning it at
     // what the data says and not at a round number.
     //
-    // **9 → 20 on 2026-09-27** (design decision 2), and the 11 are one more family, not a
-    // new defect: the multi-line-template family this comment already names, hit by more
-    // input because a heading that used to be silently discarded is now kept.
-    // `Effects`/`Notes`/`Synergies` nested three levels down (`=== … ===`, inside a **kept**
-    // level-2 section) were unreachable either way before — the level-2 wrapper naming the
-    // second form fell to `None` and took its whole body with it — so this isn't content
-    // regressing, it's content that starts arriving, with the one open defect riding along
-    // on its first line. Six pages, the same shape each time: a page with two forms, the
-    // second one under a level-2 heading naming it, opening on that heading's very first
-    // line with a second `{{infobox …}}` call the multi-line-template defect doesn't
-    // consume: Judas (`Black Judas`, ×2 — Judas and Black Judas both carry the page's
-    // sections), Lazarus (`Lazarus Risen`, ×2), Broken Shovel (`Activated Collectible` and
-    // `Passive Collectible`, ×2 forms ×2 text nodes = 4), My Shadow (`Friendly Charger`,
-    // ×1), Ultra Greed (`Ultra Greedier`, ×1), Tainted Jacob (`Dark Esau`, ×1). 2+2+4+1+1+1
-    // = 11.
+    // **9 → 20 on 2026-09-27** (design decision 2): the multi-line-template family this
+    // comment already names, hit by more input because a heading that used to be silently
+    // discarded is now kept. `Effects`/`Notes`/`Synergies` nested three levels down
+    // (`=== … ===`, inside a **kept** level-2 section) were unreachable either way before —
+    // the level-2 wrapper naming the second form fell to `None` and took its whole body with
+    // it — so this wasn't content regressing, it was content starting to arrive, with one
+    // open defect riding along on its first line: a page with two forms opens the level-2
+    // section naming the second one with a second `{{infobox …}}` call, on that heading's
+    // very first line, which `blocks::unwrapped`'s wrapper list doesn't know and the line
+    // pass then read as prose. Six pages carried it: Judas (`Black Judas`, ×2), Lazarus
+    // (`Lazarus Risen`, ×2), Broken Shovel (×2 forms ×2 text nodes = 4), My Shadow
+    // (`Friendly Charger`, ×1), Ultra Greed (`Ultra Greedier`, ×1), Tainted Jacob
+    // (`Dark Esau`, ×1). 2+2+4+1+1+1 = 11.
+    //
+    // **20 → 9 the same day**: `page::sections` now strips a raw `{{infobox …}}` call out of
+    // a section's body before it ever reaches `parse_blocks` — `page::without_infobox_calls`,
+    // the same segment-level removal the preamble's own infoboxes already had
+    // (`without_the_boxes`), read on every section instead of only the first paragraphs. All
+    // 11 were that one call on that one line; none of the six pages' sections carry it any
+    // more, and the bound is back at the number that was true before decision 2, because the
+    // family it opened is closed, not merely smaller.
     assert!(
-        offenders.len() <= 20,
+        offenders.len() <= 9,
         "{} nodes with raw template syntax: {offenders:?}",
         offenders.len()
     );

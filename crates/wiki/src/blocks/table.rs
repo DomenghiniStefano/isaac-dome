@@ -49,6 +49,53 @@ fn split_cells<'a>(body: &'a str, sep: &str) -> Vec<&'a str> {
     cells
 }
 
+/// A cell's wrapped continuation joined onto the line that opened it: ordinary MediaWiki, a
+/// `|`/`!`-led line opens a cell and everything up to the next `|`/`!`/`|-`/`|+` is that
+/// cell's content, newlines included. Read one raw line at a time without this, a wrapped
+/// sentence had no shape the table parser knew and was counted `unmodelled_table_row` —
+/// character/Tainted ???'s "Poop Varieties" table wraps several of its descriptions this way.
+///
+/// A bare line with nothing open before it — no `|`/`!` line has been seen since the last
+/// `|-`/`|+`, or the table has none yet — has nowhere to attach and is left as its own line:
+/// IBS's second Effects table opens straight from `|-` into five lines of `[[file:…]] prose`,
+/// which stays unmodelled rather than being merged into a row that never opened a cell.
+///
+/// `{{entity row minimal|…}}` is the other shape that starts a row on its own, unprefixed at
+/// this level because MediaWiki's preprocessor expands the template — which itself begins
+/// `|` — before the table is ever split into lines; this parser never sees that expansion, so
+/// it treats the call by name instead. Camo Undies' two Notes tables open a header row with
+/// `!` cells and no `|-` before the first `{{entity row minimal|…}}` line: read as an ordinary
+/// bare line it would merge into the header's last cell instead of opening its own row.
+fn merge_continuations(lines: &[String]) -> Vec<String> {
+    let mut out: Vec<String> = Vec::new();
+    let mut cell_open = false;
+    for line in lines {
+        let t = line.trim();
+        if t.starts_with("|-") || t.starts_with("|+") || opens_entity_row_minimal(t) {
+            cell_open = false;
+        } else if t.starts_with('|') || t.starts_with('!') {
+            cell_open = true;
+        } else if cell_open && !t.is_empty() {
+            if let Some(prev) = out.last_mut() {
+                prev.push(' ');
+                prev.push_str(t);
+            }
+            continue;
+        }
+        out.push(line.clone());
+    }
+    out
+}
+
+/// Whether `line` opens with `{{entity row minimal|…}}` (any case: the wiki's own templates
+/// are written in several). Only the name is checked, the same test `entity_row_minimal`
+/// itself makes after a full parse; a cheap prefix check is enough here, where the only
+/// question is whether the line is a continuation target.
+fn opens_entity_row_minimal(line: &str) -> bool {
+    line.to_ascii_lowercase()
+        .starts_with("{{entity row minimal")
+}
+
 /// The lines between `{|` and `|}`. The first line with `!` cells is `header`; every
 /// other line, `!` cells included (the pill table's subheadings), goes into `rows`.
 ///
@@ -57,7 +104,8 @@ fn split_cells<'a>(body: &'a str, sep: &str) -> Vec<&'a str> {
 /// is read as one where this parser knows the shape, counted where it does not.
 pub(super) fn build_table(lines: &[String], r: &Resolver, d: &mut Diagnostics) -> Block {
     let mut table = TableBuilder::default();
-    for line in lines {
+    let lines = merge_continuations(lines);
+    for line in &lines {
         let l = line.trim();
         if l.starts_with("|-") {
             table.close_row();
@@ -423,6 +471,78 @@ mod tests {
         assert_eq!(header, &vec![t("Poop")]);
         assert!(rows.is_empty(), "the two lines produced no row: {rows:?}");
         assert_eq!(d.unmodelled_table_rows, 2);
+    }
+
+    /// character/Tainted ???'s "Poop Varieties" table: a cell's description wraps onto a line
+    /// of its own, real MediaWiki (a cell's content runs until the next `|`/`!`/`|-`/`|+`, not
+    /// until the next raw newline). Read one line at a time without `merge_continuations`, the
+    /// wrapped sentence had no shape this parser knew and was counted `unmodelled_table_row`;
+    /// joined, it is the second sentence of the cell above it.
+    #[test]
+    fn a_cell_s_wrapped_continuation_joins_the_cell_above_it() {
+        let (blocks, d) = pd(concat!(
+            "{|\n",
+            "! Icon\n",
+            "|-\n",
+            "| A\n",
+            "| A normal poop.\n",
+            "Can drop pick-ups like normal.\n",
+            "|-\n",
+            "| B\n",
+            "| Something else.\n",
+            "|}\n",
+        ));
+        let Block::Table { rows, .. } = &blocks[0] else {
+            panic!("table, got {blocks:?}")
+        };
+        assert_eq!(rows.len(), 2, "{rows:?}");
+        assert_eq!(
+            rows[0][1],
+            t("A normal poop. Can drop pick-ups like normal.")
+        );
+        assert_eq!(rows[1][1], t("Something else."));
+        assert_eq!(d.unmodelled_table_rows, 0, "{d:?}");
+    }
+
+    /// Camo Undies' actual shape: a two-cell `!` header with no `|-` before the first
+    /// `{{entity row minimal|…}}` line. The continuation merge must not read that line as the
+    /// header's own wrapped text — it opens its own row, same as
+    /// `a_bare_entity_row_minimal_line_is_its_own_row` pins for the simpler case with no
+    /// header at all.
+    #[test]
+    fn an_entity_row_minimal_line_right_after_a_header_still_opens_its_own_row() {
+        let blocks = p(
+            "{|\n ! Name\n ! ID\n {{entity row minimal|Mom}}\n {{entity row minimal|Uriel}}\n|}\n",
+        );
+        let Block::Table { header, rows } = &blocks[0] else {
+            panic!("table, got {blocks:?}")
+        };
+        assert_eq!(header, &vec![t("Name"), t("ID")]);
+        assert_eq!(rows.len(), 2, "{rows:?}");
+        assert_eq!(
+            rows[0],
+            vec![vec![Inline::Ref {
+                target: Target::Entity {
+                    id: 45,
+                    variant: 0,
+                    subtype: 0
+                },
+                label: "Mom".into()
+            }]]
+        );
+    }
+
+    /// The line right after `|-`, with no `|`/`!` cell opened yet, has nowhere to attach: it
+    /// stays exactly what `a_bare_line_that_is_neither_syntax_nor_a_known_template_is_counted_not_silent`
+    /// already pins, unaffected by the continuation merge.
+    #[test]
+    fn a_bare_line_straight_after_a_row_separator_still_has_nowhere_to_attach() {
+        let (blocks, d) = pd("{|\n|-\nprose with no cell before it\n|}\n");
+        let Block::Table { rows, .. } = &blocks[0] else {
+            panic!("table, got {blocks:?}")
+        };
+        assert!(rows.is_empty(), "{rows:?}");
+        assert_eq!(d.unmodelled_table_rows, 1);
     }
 
     /// Birthright's Effects table: Judas's row declares `rowspan="2"` on its last two cells,

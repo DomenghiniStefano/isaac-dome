@@ -35618,49 +35618,6 @@
             "inline": [
               {
                 "kind": "text",
-                "text": "{{infobox boss | dlc         = a+ | name        = Ultra Greedier | variant     = 1 | environment = Boss greedier ",
-                "style": "plain"
-              },
-              {
-                "kind": "ref",
-                "target": {
-                  "kind": "stage",
-                  "name": "Ultra Greed"
-                },
-                "label": "Ultra Greed"
-              },
-              {
-                "kind": "text",
-                "text": " | base hp     = 2500 | pool        = Final Boss Chest (",
-                "style": "plain"
-              },
-              {
-                "kind": "concept",
-                "page": "Endings",
-                "label": "Ending 19"
-              },
-              {
-                "kind": "text",
-                "text": ") ",
-                "style": "plain"
-              },
-              {
-                "kind": "concept",
-                "page": "Greed Donation Machine",
-                "label": "Greed Donation Machine"
-              },
-              {
-                "kind": "text",
-                "text": " | portrait    = no",
-                "style": "plain"
-              }
-            ]
-          },
-          {
-            "kind": "paragraph",
-            "inline": [
-              {
-                "kind": "text",
                 "text": "Greedier Mode",
                 "style": "bold"
               },

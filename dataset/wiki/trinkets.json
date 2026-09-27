@@ -48674,7 +48674,469 @@
       "tags": [],
       "pools": []
     },
-    "sections": []
+    "sections": [
+      {
+        "kind": "effects",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Effects",
+            "style": "plain"
+          }
+        ],
+        "blocks": [
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "All pickups on the ground become their doubled variants as long as Isaac's held pickups are all the same number, e.g. 65 pennies, 65 bombs, 65 keys.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
+        "blocks": [
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": " All single keys, bombs and red hearts in a shop will become free when doubled.",
+                        "style": "plain"
+                      }
+                    ]
+                  }
+                ],
+                "children": [
+                  {
+                    "kind": "list",
+                    "ordered": false,
+                    "items": [
+                      {
+                        "inline": [
+                          {
+                            "kind": "text",
+                            "text": "This is likely due to the entity being removed and a double variant being spawned, instead of simply overriding it before it spawns like ",
+                            "style": "plain"
+                          },
+                          {
+                            "kind": "ref",
+                            "target": {
+                              "kind": "item",
+                              "id": 203
+                            },
+                            "label": "Humbleing Bundle"
+                          },
+                          {
+                            "kind": "text",
+                            "text": " does.",
+                            "style": "plain"
+                          }
+                        ],
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "afterbirthPlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": " Upon picking up a non-doubled pickup that makes Isaac's pickups equal in number, a doubled variant will be spawned as well.",
+                        "style": "plain"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "Doubled pickups will not revert if Isaac's pickups become unequal.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "This trinket works well in ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "concept",
+                    "page": "Greed mode",
+                    "label": "Greed mode"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ", doubling all pennies spawned from completing waves as long as Isaac's pickups are equal.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "strategies",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Strategy",
+            "style": "plain"
+          }
+        ],
+        "blocks": [
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "Previously seen non-doubled pickups will become their doubled variants after reaching equal numbers for all of Isaac's pickups. Said doubled pickups will never revert back even if Isaac's pickups numbers changes or if the trinket is dropped.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "It is recommended to leave pickups on the ground until going to the next floor. Not only does it allow for more opportunities to reach equal numbers for all pickups, but it also allows for previously found pickups to transform into their doubled variants.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "Heart pickups will also be doubled, however Isaac's hearts amount will not prevent Equality! from working. This means doubled hearts can be picked up as much as you want without any downside.",
+                    "style": "plain"
+                  }
+                ],
+                "children": [
+                  {
+                    "kind": "list",
+                    "ordered": false,
+                    "items": [
+                      {
+                        "inline": [
+                          {
+                            "kind": "ref",
+                            "target": {
+                              "kind": "item",
+                              "id": 135
+                            },
+                            "label": "IV Bag"
+                          },
+                          {
+                            "kind": "text",
+                            "text": ", especially if paired with ",
+                            "style": "plain"
+                          },
+                          {
+                            "kind": "ref",
+                            "target": {
+                              "kind": "item",
+                              "id": 219
+                            },
+                            "label": "Old Bandage"
+                          },
+                          {
+                            "kind": "text",
+                            "text": ", can be abused for doubled pennies to spawn while also taking advantage of said doubled hearts.",
+                            "style": "plain"
+                          }
+                        ],
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "synergies",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Synergies",
+            "style": "plain"
+          }
+        ],
+        "blocks": [
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 724
+                    },
+                    "label": "Hypercoagulation"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " / ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "character",
+                      "id": 22
+                    },
+                    "label": "Tainted Magdalene"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ": As long as Equality! is active, all hearts spawned their respective sources will be ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "entity",
+                      "id": 5,
+                      "variant": 10,
+                      "subtype": 5
+                    },
+                    "label": "Double Heart"
+                  },
+                  {
+                    "kind": "text",
+                    "text": "s and do not disappear.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 670
+                    },
+                    "label": "Options?"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ": While Equality! is active, if one of the two rewards are doubled pickups, both rewards can be collected without the other despawning. Options? also makes Equality! easier to keep active.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "character",
+                      "id": 25
+                    },
+                    "label": "Tainted ???"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ": Tainted ??? will always have 0 bombs, making the trinket only possible to activate while also having 0 coins and keys (except with the Bombs are Key pill).",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "character",
+                      "id": 33
+                    },
+                    "label": "Tainted Keeper"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ": Doubled pennies from killed enemies will not despawn. All other coin types will still disappear.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "effects",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Effects",
+            "style": "plain"
+          }
+        ],
+        "blocks": [
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "+2.0 ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "concept",
+                    "page": "fire rate",
+                    "label": "fire rate"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " as long as Isaac's held pickups are all the same number.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "synergies",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Synergies",
+            "style": "plain"
+          }
+        ],
+        "blocks": [
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 439
+                    },
+                    "label": "Mom's Box"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " / ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "achievement",
+                      "id": 617
+                    },
+                    "label": "n"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ": Adds +2.0 ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "concept",
+                    "page": "fire rate",
+                    "label": "fire rate"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " per stack.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 177
+                    },
+                    "label": "Portable Slot"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ": Allows Isaac to get rid of coins and potentially spawn bombs and keys, making it easier to keep the number of pickups the same.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
   },
   "104": {
     "title": "Wish Bone",

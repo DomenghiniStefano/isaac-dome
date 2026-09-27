@@ -13,14 +13,35 @@ pub struct RawSection {
 /// Splits the page into preamble (everything before the first `== … ==`) and level-2
 /// sections. Level-3 headings and beyond stay in the body of the section that contains them.
 ///
-/// A `<tabber>…</tabber>` span is opaque to this cut: MediaWiki's tab syntax reuses `==` to
-/// open each tab's content on some pages (collectible/Equality!, one tab per edition), and a
-/// line-by-line pass reading those as page sections merges two editions' `Effects` into one
-/// and loses which tab either half belongs to. Whatever is inside the tags stays raw text in
-/// whichever section (or the preamble) was already open when `<tabber>` appeared — the same
+/// A `<tabber>…</tabber>` span is opaque to *this* cut, on the first pass
+/// ([`split_page_lines`]): MediaWiki's tab syntax reuses `==` to open each tab's content on
+/// some pages (collectible/Equality!, one tab per edition), and reading those as page sections
+/// directly would merge two editions' `Effects` into one and lose which tab either half
+/// belongs to. When that leaves the page with no sections at all — a tabber opened before any
+/// heading of the page's own, with real `==` headings inside it — [`tabber_span_sections`]
+/// reopens the span tab by tab instead of leaving it as unread text: each tab is itself
+/// ordinary wikitext once its own `Label=` line is off the front, so it is split exactly the
+/// way any other page is, and every tab's sections land in the page's own list in order. A
+/// tabber with no headings inside (article/Range, article/Completion Marks) or one that
+/// merely sits inside a section the page already opened stays exactly as before: nothing
+/// changes for either shape, because the first pass never leaves them with an empty `secs`.
+pub fn split_page(text: &str) -> (String, Vec<RawSection>) {
+    let (pre, secs) = split_page_lines(text);
+    if secs.is_empty() {
+        if let Some((before, tabbed, after)) = tabber_span_sections(&pre) {
+            let mut pre = before;
+            pre.push_str(&after);
+            return (pre, tabbed);
+        }
+    }
+    (pre, secs)
+}
+
+/// The line-by-line cut `split_page` used to be in full: a `<tabber>…</tabber>` span, wherever
+/// it opens, stays raw text in whichever section (or the preamble) was already open — the same
 /// place any other body text on that line would land — so the tab markers and the headings
 /// they carry reach `parse_blocks` intact, for the block parser to read as it renders tabs.
-pub fn split_page(text: &str) -> (String, Vec<RawSection>) {
+fn split_page_lines(text: &str) -> (String, Vec<RawSection>) {
     let mut pre = String::new();
     let mut secs: Vec<RawSection> = Vec::new();
     let mut in_tabber = false;
@@ -49,6 +70,45 @@ pub fn split_page(text: &str) -> (String, Vec<RawSection>) {
         push_line(&mut pre, &mut secs, line);
     }
     (pre, secs)
+}
+
+/// A page-opening `<tabber>`'s own span inside `pre` — the text before it, the sections
+/// recovered from splitting it tab by tab, and the text after it — or `None` when there is no
+/// such span, or its tabs carry no level-2 heading of their own. The plain case (a tabber with
+/// only tables or prose inside, no page of its own tabs) is content with no heading to recover
+/// and stays exactly the opaque blob `split_page_lines` already left it as: this never
+/// second-guesses that shape, only the one where a heading was lost.
+fn tabber_span_sections(pre: &str) -> Option<(String, Vec<RawSection>, String)> {
+    let open = pre.find("<tabber>")?;
+    let close_tag = "</tabber>";
+    let close = pre[open..].find(close_tag)? + open + close_tag.len();
+    let sections: Vec<RawSection> = tabber_tabs(&pre[open..close])
+        .into_iter()
+        .flat_map(|tab| split_page_lines(tab).1)
+        .collect();
+    if sections.is_empty() {
+        return None;
+    }
+    Some((pre[..open].to_string(), sections, pre[close..].to_string()))
+}
+
+/// `span` (`<tabber>…</tabber>`, tags included) split at each `|-|` tab boundary, with the
+/// opening `<tabber>`/`|-|` and the tab's own `Label=` line taken off the front of each piece:
+/// what is left of every tab is ordinary wikitext, headings and all. The label is the tab's
+/// first line ending in `=` (`{{dlc|nr+}} Before Repentance+=`), so cutting at the first `=`
+/// in the tab's text is enough — nothing before it on that line uses the character, and a tab
+/// whose own text has none keeps its would-be label as an unmatched first line instead of
+/// losing content.
+fn tabber_tabs(span: &str) -> Vec<&str> {
+    let inner = span
+        .strip_prefix("<tabber>")
+        .unwrap_or(span)
+        .strip_suffix("</tabber>")
+        .unwrap_or(span);
+    inner
+        .split("|-|")
+        .map(|tab| tab.split_once('=').map_or(tab, |(_, rest)| rest))
+        .collect()
 }
 
 /// One line, into the last opened section's body, or the preamble when none has opened yet.
@@ -112,23 +172,31 @@ fn rendered(t: &Template) -> String {
     t.args.first().cloned().unwrap_or_default()
 }
 
-/// Titles dropped by name, with the reason recorded in `corrections.json`'s
-/// `excluded.sections` (design decision 10): images and video the constraints forbid
-/// shipping (`Gallery`, the `In-game Footage`/`Ingame Footage`/`In-Game Footage` spellings,
-/// `Audio`), citations that point off the wiki (`References`), and the owner's call to leave
-/// the least useful part of a page out (`Trivia`, decision 9). Everything else that used to
-/// fall through `section_kind` now lands there instead, as `SectionKind::Other` — this list
-/// is the one place a heading is still thrown away.
+/// Whether `title` is on the closed exclusion list `corrections.json`'s `excluded.sections`
+/// carries (design decision 10): images and video the constraints forbid shipping
+/// (`Gallery`, the `In-game Footage`/`Ingame Footage`/`In-Game Footage` spellings, `Audio`,
+/// `Sounds`), citations that point off the wiki (`References`), and the owner's call to
+/// leave the least useful part of a page out (`Trivia`, decision 9). Everything else that
+/// used to fall through `section_kind` now lands there instead, as `SectionKind::Other` —
+/// this map is the one place a heading is still thrown away.
+///
+/// `excluded` is that map exactly as the file writes it (title as a page spells it, not
+/// normalized) → reason: read once into `resolver::Corrections` and carried from there
+/// (`Resolver::is_section_excluded`) so the file has one reader, not a second, test-only
+/// copy of the same list.
 ///
 /// Checked against the raw corpus by
 /// `every_discarded_heading_is_listed_and_every_listed_heading_occurs`: a title dropped here
 /// and missing from `corrections.json`, or listed there and no longer dropped, fails the
 /// build.
-pub fn is_excluded_section(title: &str) -> bool {
-    matches!(
-        normalize_title(title).as_str(),
-        "gallery" | "in-game footage" | "ingame footage" | "references" | "trivia" | "audio"
-    )
+pub fn is_excluded_section(
+    title: &str,
+    excluded: &std::collections::BTreeMap<String, String>,
+) -> bool {
+    let norm = normalize_title(title);
+    excluded
+        .keys()
+        .any(|listed| normalize_title(listed) == norm)
 }
 
 /// The section kind for a wiki title. A title the thirteen named kinds below don't
@@ -208,18 +276,27 @@ mod tests {
     /// collectible/Equality!: the whole page is one `<tabber>`, opened before any `== … ==`
     /// of the page's own, and each tab's content carries `==Effects==`/`==Synergies==`
     /// headings of its own — MediaWiki's tab syntax, not this page's sections. Read as
-    /// ordinary headings they merge two editions' `Effects` into one section and lose which
-    /// tab either half came from; opaque, none of it becomes a `RawSection`, and the raw
-    /// tags and headings both survive in the preamble text for the block parser to read.
+    /// ordinary headings *by the first pass* they would merge two editions' `Effects` into
+    /// one section and lose which tab either half came from, so that pass stays opaque to
+    /// them — but a page whose only content sits inside such a tabber must not come out with
+    /// **zero** sections either, which is what leaving it opaque used to mean end to end.
+    /// `tabber_span_sections` reopens the span tab by tab instead: each tab's own headings
+    /// become real sections, in order, tab 1's ahead of tab 2's, and neither the raw tags nor
+    /// the raw `==` markup reach the preamble text any more.
     #[test]
-    fn a_tabber_before_any_heading_is_not_split_on_its_own_headings() {
+    fn a_tabber_before_any_heading_still_yields_the_sections_inside_it() {
         let src = "{{infobox trinket|id=103}}\n\n<tabber>{{dlc|nr+}} Before=\n== Effects ==\n* a\n== Synergies ==\n* b\n|-|{{dlc|r+}} After=\n== Effects ==\n* c\n</tabber>\n\n{{nav|x}}\n";
         let (pre, secs) = split_page(src);
-        assert!(secs.is_empty(), "{secs:?}");
-        assert!(pre.contains("<tabber>"));
-        assert!(pre.contains("== Effects =="));
-        assert!(pre.contains("== Synergies =="));
-        assert!(pre.contains("</tabber>"));
+        assert_eq!(
+            secs.iter().map(|s| s.title.as_str()).collect::<Vec<_>>(),
+            vec!["Effects", "Synergies", "Effects"],
+            "{secs:?}"
+        );
+        assert_eq!(secs[0].body.trim(), "* a");
+        assert_eq!(secs[1].body.trim(), "* b");
+        assert_eq!(secs[2].body.trim(), "* c");
+        assert!(!pre.contains("=="), "raw heading markup leaked: {pre:?}");
+        assert!(!pre.contains("<tabber>"), "{pre:?}");
     }
 
     /// The common shape (article/Range, article/Completion Marks): a `<tabber>` with no
@@ -310,7 +387,7 @@ mod tests {
             ""
         );
         assert_eq!(section_kind(""), SectionKind::Other);
-        assert!(!is_excluded_section(""));
+        assert!(!is_excluded_section("", &fixture_excluded()));
     }
 
     /// B54's near-miss family, with the line the reading drew: **a spelling of a kind comes in,
@@ -410,15 +487,17 @@ mod tests {
 
         // 2. The heading is not a heading. `[[Monsters]]` (boss/Great Gideon) is a **link**, and
         //    its section has no body at all: the 54 lines are two `=== … Waves ===` tables under
-        //    it. `Videos` is one `{{#ev:youtube}}` and `Sounds` is a table of `.wav` files —
-        //    media, the same reason `Gallery` and in-game footage are excluded, but this
-        //    heading's own spelling is not on that list, so it is kept as `Other` rather than
-        //    dropped — its body is a table, not the media itself. The two `Combinations` are a
-        //    single list template each, so the content is not on the page to keep either way.
+        //    it. `Videos` is one `{{#ev:youtube}}` — media, the same reason `Gallery` and
+        //    in-game footage are excluded, but this heading's own spelling is not on that list,
+        //    so it is kept as `Other` rather than dropped. `Sounds` (trinket/Dog Tooth) is the
+        //    sibling that *is* on the list now: a table of `.wav` files is exactly the media
+        //    constraint 3 forbids shipping, so it moved to `excluded.sections` instead of
+        //    staying `Other` — see `the_deliberate_discards_stay_discarded`. The two
+        //    `Combinations` are a single list template each, so the content is not on the page
+        //    to keep either way.
         for (title, page) in [
             ("[[Monsters]]", "boss/Great Gideon"),
             ("Videos", "trinket/Super Bum"),
-            ("Sounds", "trinket/Dog Tooth"),
             ("Combinations", "collectible/Book of Virtues"),
             (
                 "{{dlc+|r}} Judas' Birthright Combinations",
@@ -498,12 +577,33 @@ mod tests {
         );
     }
 
+    /// The map `is_excluded_section`'s unit tests exercise, mirroring what
+    /// `corrections.json`'s `excluded.sections` currently carries — mirrored rather than read
+    /// from disk so this module's own tests stay independent of the dataset; the completeness
+    /// test below is the one that checks the real file against the real corpus.
+    fn fixture_excluded() -> std::collections::BTreeMap<String, String> {
+        [
+            "Trivia",
+            "Gallery",
+            "In-game Footage",
+            "In-Game Footage",
+            "Ingame Footage",
+            "References",
+            "Audio",
+            "Sounds",
+        ]
+        .into_iter()
+        .map(|t| (t.to_string(), "test fixture".to_string()))
+        .collect()
+    }
+
     /// The other half of `discardedSections`, and the half worth protecting: these are out
     /// on purpose, and this test is what keeps a later "let's map everything" from taking
     /// 2248 lines of trivia and video embeds into the dataset. `Blood Clots`, a page-specific
     /// heading with no reason to be dropped, is the contrast: kept, as `Other`.
     #[test]
     fn the_deliberate_discards_stay_discarded() {
+        let excluded = fixture_excluded();
         for t in [
             "Trivia",
             "Gallery",
@@ -512,10 +612,11 @@ mod tests {
             "Ingame Footage",
             "References",
             "Audio",
+            "Sounds",
         ] {
-            assert!(is_excluded_section(t), "{t}");
+            assert!(is_excluded_section(t, &excluded), "{t}");
         }
-        assert!(!is_excluded_section("Blood Clots"));
+        assert!(!is_excluded_section("Blood Clots", &excluded));
         assert_eq!(section_kind("Blood Clots"), SectionKind::Other);
     }
 
@@ -538,24 +639,29 @@ mod tests {
         assert_eq!(section_kind("Trivia"), SectionKind::Other);
     }
 
-    /// Design decision 10's completeness check, scoped to sections: every level-2 heading the
-    /// raw corpus actually drops has to be named in `corrections.json`'s `excluded.sections`,
-    /// with its reason, and a name listed there that the corpus no longer drops is stale and
-    /// fails too. Read independently of `resolver::Corrections` — another branch adds an
-    /// `excluded.templates` key under the same top-level `excluded` object, and the two
-    /// readers merge into one struct once both land.
+    /// Design decision 10's completeness check, scoped to sections, on the single definition:
+    /// every level-2 heading the raw corpus actually drops has to be named in
+    /// `corrections.json`'s `excluded.sections`, with its reason, and a name listed there that
+    /// the corpus no longer drops is stale and fails too. Reads `resolver::Corrections`, the
+    /// same struct `Resolver::is_section_excluded` carries at runtime, rather than a
+    /// test-only copy of the file's shape — one reader for `excluded.sections`, shared with
+    /// `excluded.templates`'s own completeness test in `templates_complete.rs`.
+    ///
+    /// Non-vacuous both ways: `listed` comes straight from the file's keys, `occurring` from
+    /// calling the real `is_excluded_section` against every heading in the corpus, so a bug in
+    /// its normalization — matching a heading no key names, or missing one that should — shows
+    /// up as a non-empty difference on one side or the other, not just as an always-empty set.
     #[test]
     fn every_discarded_heading_is_listed_and_every_listed_heading_occurs() {
         let root = std::path::Path::new(env!("CARGO_MANIFEST_DIR")).join("../../dataset");
         let raw = crate::Raw::load(&root.join("raw")).expect("dataset/raw/");
-        let corrections: SectionCorrections = serde_json::from_str(
+        let corrections: crate::resolver::Corrections = serde_json::from_str(
             &std::fs::read_to_string(root.join("corrections.json")).expect("corrections.json"),
         )
         .expect("json");
+        let excluded = &corrections.excluded.sections;
 
-        let listed: std::collections::BTreeSet<String> = corrections
-            .excluded
-            .sections
+        let listed: std::collections::BTreeSet<String> = excluded
             .keys()
             .map(|title| normalize_title(title))
             .collect();
@@ -564,7 +670,7 @@ mod tests {
         for page in &raw.pages {
             let (_pre, secs) = split_page(&page.text);
             for s in &secs {
-                if is_excluded_section(&s.title) {
+                if is_excluded_section(&s.title, excluded) {
                     occurring.insert(normalize_title(&s.title));
                 }
             }
@@ -580,23 +686,5 @@ mod tests {
             stale.is_empty(),
             "listed in corrections.json's excluded.sections but no longer discarded: {stale:?}"
         );
-    }
-
-    /// The slice of `corrections.json` this module reads on its own: `excluded.sections`,
-    /// title (as a page writes it, not normalized) → reason. A small, separate struct rather
-    /// than a field on `resolver::Corrections` (see the note on `is_excluded_section` and the
-    /// test above) — reconciled into one reader at merge, once the `excluded.templates`
-    /// branch lands. Test-only: nothing at runtime reads this half of the file, the same way
-    /// `section_kind`'s decision of what to keep is a closed list that needs no file at all.
-    #[derive(Debug, Clone, Default, serde::Deserialize)]
-    struct SectionCorrections {
-        #[serde(default)]
-        excluded: ExcludedKinds,
-    }
-
-    #[derive(Debug, Clone, Default, serde::Deserialize)]
-    struct ExcludedKinds {
-        #[serde(default)]
-        sections: std::collections::BTreeMap<String, String>,
     }
 }

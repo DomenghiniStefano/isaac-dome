@@ -14,7 +14,7 @@ use crate::infobox::{
 };
 use crate::inline::{parse_inline, plain};
 use crate::resolver::{is_layout_template, Resolver};
-use crate::sections::{is_excluded_section, section_kind, split_page};
+use crate::sections::{section_kind, split_page};
 use crate::template::{template_segments, Segment};
 use crate::{Block, Diagnostics, Entry, Inline, Section, Style};
 
@@ -241,23 +241,26 @@ fn squeezed(text: &str, space: &mut bool) -> String {
         })
 }
 
-/// The preamble text with the infobox and the page header taken out, and **nothing else**:
-/// a `{{i|Flip}}` in the same sentence is a reference the prose needs. `template_segments`
-/// is what says where a template ends, which a line-by-line pass cannot — an infobox spans
-/// a dozen lines and a header one.
-fn without_the_boxes(text: &str) -> String {
+/// `text` with every top-level template `drop` names true for taken out whole, and nothing
+/// else touched: a `{{i|Flip}}` inside a kept stretch is a reference the prose still needs.
+/// `template_segments` is what says where a template ends, which a line-by-line pass cannot
+/// — an infobox spans a dozen lines and a header one.
+fn without_templates(text: &str, drop: impl Fn(&str) -> bool) -> String {
     template_segments(text)
         .map(|segment| match segment {
             Segment::Text(text) => text,
-            Segment::Template { template, .. }
-                if template.name.starts_with("infobox") || is_layout_template(&template.name) =>
-            {
-                ""
-            }
+            Segment::Template { template, .. } if drop(&template.name) => "",
             // Any other template is prose: leave it for `parse_inline` to resolve.
             Segment::Template { source, .. } => source,
         })
         .collect()
+}
+
+/// The preamble text with the infobox and the page header taken out, and **nothing else**.
+fn without_the_boxes(text: &str) -> String {
+    without_templates(text, |name| {
+        name.starts_with("infobox") || is_layout_template(name)
+    })
 }
 
 /// The page's edition context: the range the **first** infobox declares, and not each
@@ -389,24 +392,39 @@ fn narrow_node(node: Inline, page: Editions, d: &mut Diagnostics) -> Vec<Inline>
 }
 
 /// The page's kept sections, in the order they appear. A title on the closed exclusion list
-/// (`sections::is_excluded_section` — Gallery, In-game Footage, References, Trivia, Audio) is
-/// the only kind of section dropped; every other heading is kept, either as one of the
-/// thirteen known kinds or as `SectionKind::Other` under its own title.
+/// (`Resolver::is_section_excluded`, reading `corrections.json`'s `excluded.sections` —
+/// Gallery, In-game Footage, References, Trivia, Audio, Sounds) is the only kind of section
+/// dropped; every other heading is kept, either as one of the thirteen known kinds or as
+/// `SectionKind::Other` under its own title.
 fn sections(text: &str, r: &Resolver, d: &mut Diagnostics) -> Vec<Section> {
     let (_preamble, raw) = split_page(text);
     raw.iter()
         .filter_map(|s| {
-            if is_excluded_section(&s.title) {
+            if r.is_section_excluded(&s.title) {
                 d.discarded_section(&s.title);
                 return None;
             }
             Some(Section {
                 kind: section_kind(&s.title),
                 title: parse_inline(&s.title, r, d),
-                blocks: parse_blocks(&s.body, r, d),
+                blocks: parse_blocks(&without_infobox_calls(&s.body), r, d),
             })
         })
         .collect()
+}
+
+/// A section's body with any raw `{{infobox …}}` call taken out, the same way the page's own
+/// infoboxes are stripped from the preamble (`without_the_boxes`). A second-form page (Judas/
+/// Black Judas, Lazarus/Lazarus Risen, Broken Shovel, My Shadow/Friendly Charger, Ultra Greed/
+/// Ultra Greedier, Tainted Jacob/Dark Esau) opens the level-2 section that carries its
+/// alternate form with that form's own infobox; `extract_infoboxes` already reads it for its
+/// fields, from the page's full text, before sections are ever split out. Left in the body,
+/// it is not a wrapper `blocks::parse_blocks` recognizes: the line pass read its parameter
+/// lines as prose and its lone `}}` as an orphaned template closer (Tonsil's Notes carries a
+/// third shape — a past edition's own collectible infobox, its `}}` sharing a line with
+/// `{{dlc clear}}` — read as unresolved raw template text instead).
+fn without_infobox_calls(body: &str) -> String {
+    without_templates(body, |name| name.starts_with("infobox"))
 }
 
 /// The infobox's `name`, if it's present and not empty.
