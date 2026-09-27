@@ -294,15 +294,26 @@ const warnSamples = warnOnce(
   `wiki fixture: ${samplePages.size} sample pages are recorded; every other page reads as unknown`,
 )
 
-// The eleven sample pages answer with their real text; every other page is one the fixtures
-// don't carry, answered the way the app answers a page the dataset lacks.
+// `obtainedFrom` (design decision 3, card #90) was added to `Infobox::Item`/`Infobox::Trinket`
+// after every sample here was last recorded: the field the recording predates is filled in by
+// the reader, with the value that recording would have carried (`[]`, "the wiki states no
+// guaranteed source" — this file's own README, "a field a payload predates").
+const withObtainedFrom = (entry: Entry): Entry => {
+  const box = entry.infobox
+  return box.kind === 'item' || box.kind === 'trinket'
+    ? { ...entry, infobox: { ...box, obtainedFrom: box.obtainedFrom ?? [] } }
+    : entry
+}
+
+// The sample pages answer with their real text; every other page is one the fixtures don't
+// carry, answered the way the app answers a page the dataset lacks.
 export const wikiEntryAnswer = (target: Target): Entry | null => {
   warnSamples()
   const key = pageKey(target)
   if (key === null) return null
   // Round-tripping the key guards the sample names against a target the app never writes.
   const sample = parsePageKey(key) === null ? undefined : samplePages.get(key)
-  return sample ?? null
+  return sample ? withObtainedFrom(sample) : null
 }
 
 // The recorded extraction report, as the development-only verification page asks for it. A

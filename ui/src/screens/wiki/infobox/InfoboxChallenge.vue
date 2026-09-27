@@ -2,13 +2,11 @@
 import { computed } from 'vue'
 import { Badge, BadgeVariant } from '@/components/ui/badge'
 import { useMessages } from '@/i18n'
-import { useWikiStore } from '@/stores/wiki'
 import InfoboxRow from '../InfoboxRow.vue'
-import { refOf } from '../infoboxRefs'
+import InfoboxRefRow from './InfoboxRefRow.vue'
 import type { InfoboxOf } from './links'
 
 const props = defineProps<{ infobox: InfoboxOf<'challenge'> }>()
-const wiki = useWikiStore()
 const { t } = useMessages()
 
 // A challenge's restrictions, as the export lists them: only the ones that apply.
@@ -49,9 +47,9 @@ const restrictions = computed((): string[] => [
         >{{ t('wiki.infobox.noRestrictions') }}</span
       >
     </InfoboxRow>
-    <InfoboxRow
+    <InfoboxRefRow
       :label="t('wiki.infobox.unlocks')"
-      :inline="refOf(infobox.unlocks, wiki.titleOf)"
+      :targets="infobox.unlocks ? [infobox.unlocks] : []"
     />
   </dl>
 </template>
