@@ -295,12 +295,21 @@ pub enum SearchDiagnostic {
     NoCollectionSection,
 }
 
-/// The ranked answer to one query. Pure: the caller supplies the index, the catalog, the
+/// The game's own data a search draws on, bundled into one argument rather than three —
+/// `search` and `hit` took `catalog`, `bosses` and `dataset` separately until the fourth
+/// (`dataset`, needed to tell a boss's page from a common entity's, the same disambiguation
+/// `icon::icon_source` needs) pushed `search` over clippy's argument count.
+pub struct SearchCatalog<'a> {
+    pub catalog: Option<&'a Catalog>,
+    pub bosses: &'a BossKeys,
+    pub dataset: Option<&'a Dataset>,
+}
+
+/// The ranked answer to one query. Pure: the caller supplies the index, the game's data, the
 /// profile's two sections and the icon link.
 pub fn search(
     index: &SearchIndex,
-    catalog: Option<&Catalog>,
-    bosses: &BossKeys,
+    game: &SearchCatalog<'_>,
     flags: Option<SaveFlags<'_>>,
     query: &str,
     limit: usize,
@@ -316,7 +325,7 @@ pub fn search(
         };
     }
     let folded_query = fold(query.trim());
-    let mut ranked: Vec<Ranked> = documents(index, catalog, bosses)
+    let mut ranked: Vec<Ranked> = documents(index, game.catalog, game.bosses)
         .into_iter()
         .filter_map(|(target, doc)| {
             let progress = progress(&target, flags);
@@ -328,13 +337,13 @@ pub fn search(
     let hits = ranked
         .into_iter()
         .take(limit)
-        .map(|r| hit(r, catalog, bosses, &mut icon))
+        .map(|r| hit(r, game, &mut icon))
         .collect();
     SearchView {
         query: query.to_string(),
         hits,
         total,
-        diagnostics: diagnostics(index, catalog, flags),
+        diagnostics: diagnostics(index, game.catalog, flags),
     }
 }
 
@@ -342,16 +351,18 @@ pub fn search(
 /// for the target: a link nothing can serve draws a broken image.
 fn hit(
     r: Ranked,
-    catalog: Option<&Catalog>,
-    bosses: &BossKeys,
+    game: &SearchCatalog<'_>,
     icon: &mut impl FnMut(&IconRef) -> Option<String>,
 ) -> SearchHit {
-    let icon_url = catalog.and_then(|c| match target_sprite(c, bosses, &r.target) {
-        TargetSprite::Found(_) => icon(&IconRef::Page {
-            target: r.target.clone(),
-        }),
-        TargetSprite::NoArt | TargetSprite::Unknown => None,
-    });
+    let icon_url =
+        game.catalog.and_then(
+            |c| match target_sprite(c, game.bosses, game.dataset, &r.target) {
+                TargetSprite::Found(_) | TargetSprite::Entity(_) => icon(&IconRef::Page {
+                    target: r.target.clone(),
+                }),
+                TargetSprite::NoArt | TargetSprite::Unknown => None,
+            },
+        );
     SearchHit {
         icon_url,
         has_page: r.doc.has_page,

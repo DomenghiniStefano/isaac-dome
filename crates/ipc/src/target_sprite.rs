@@ -15,16 +15,23 @@ use std::collections::{BTreeMap, HashMap, HashSet};
 use catalog::{AchievementId, Catalog, ChallengeId, CharacterId, ItemId, ItemKind, SpriteRef};
 use wiki::{Dataset, Target};
 
-/// The outcome of the resolution. Three cases, not an `Option`, because the two ways of
-/// having no image are meant to be drawn differently: brief §5.6 asks for one placeholder
-/// for "I don't know this" and another for "there is none".
+/// The outcome of the resolution. Four cases: the two ways of having no image are meant to
+/// be drawn differently (brief §5.6 asks for one placeholder for "I don't know this" and
+/// another for "there is none"), and a common entity's own picture isn't a single sheet
+/// crop like the rest — composing it needs its `.anm2`'s frames, which is I/O this pure
+/// crate cannot do, so the caller is handed the file to read and compose
+/// (`ipc::compose_entity_art`) rather than a cropped `SpriteRef`.
 #[derive(Debug)]
 pub enum TargetSprite<'a> {
     /// The catalog knows which file to show.
     Found(&'a SpriteRef),
+    /// A non-boss entity's own picture, composed from this `.anm2` at request time: the
+    /// logical path `entities2.xml` names for the row, not a `SpriteRef` — an anm2 is a
+    /// document, and reading it is the caller's to do.
+    Entity(&'a str),
     /// The target exists, but the game doesn't draw an image for that kind of thing
-    /// (transformations, rooms), or we have no way to name it (pickups and floors: the
-    /// art is in the archives, but the name-to-file map isn't).
+    /// (transformations, rooms), or we have no way to name it (floors: the art is in the
+    /// archives, but the name-to-file map isn't).
     NoArt,
     /// The catalog doesn't know this id. Happens when the wiki dataset is newer than the
     /// installed game, or on an id the game doesn't use.
@@ -32,11 +39,19 @@ pub enum TargetSprite<'a> {
 }
 
 /// The image for a wiki reference, if the catalog knows which one it is. `bosses` is the
-/// catalog's [`boss_keys`], settled once by whoever holds the catalog.
+/// catalog's [`boss_keys`], settled once by whoever holds the catalog. `dataset` is what
+/// tells a boss from a common enemy for `Target::Entity` (below); without one, every entity
+/// is read as a possible boss, which is what every call site already assumed before the
+/// dataset was threaded through.
 ///
 /// Exhaustive over `Target`: a new variant added to the wiki must break the build here,
 /// not silently turn into a page with no figure.
-pub fn target_sprite<'a>(c: &'a Catalog, bosses: &BossKeys, t: &Target) -> TargetSprite<'a> {
+pub fn target_sprite<'a>(
+    c: &'a Catalog,
+    bosses: &BossKeys,
+    dataset: Option<&Dataset>,
+    t: &Target,
+) -> TargetSprite<'a> {
     match t {
         // The wiki doesn't distinguish passives, actives and familiars: it just says
         // `Item { id }`. The three share the same id space, so at most one will match.
@@ -61,34 +76,74 @@ pub fn target_sprite<'a>(c: &'a Catalog, bosses: &BossKeys, t: &Target) -> Targe
                 None => TargetSprite::NoArt,
             },
         },
-        // The boss: the portrait of the row `bosses` gives this type and variant to.
-        //
-        // A common enemy (the `entities` collection, design decision 2) reads `Unknown`
-        // here too, not `NoArt` — measured, not a shortcut. `BossKeys` is the *only*
-        // information this function has about which ids are bosses (`catalog::Boss` carries
-        // no type/variant of its own, only what `boss_keys` already derived from the name,
-        // the portrait file name, or the file name's own declared key), and an unkeyed boss
-        // — one `bossportraits.xml` has no name or file-name match for (17 portraits on the
-        // installed archives, `Portrait_Nevecka.png` among them) — is indistinguishable from
-        // an ordinary monster by that same measure: neither's type appears anywhere in
-        // `bosses`. Telling them apart needs to know which dataset collection (`ds.bosses`
-        // vs `ds.entities`) the target came from, which this function is not handed — giving
-        // callers `Option<&Dataset>` here, or deciding it once where the target is built, is
-        // what the sprite spike (decision 5) needs to solve before a common enemy can read
-        // `NoArt` without also mislabeling an unkeyed boss.
-        Target::Entity { id, variant, .. } => match entity_portrait(c, bosses, (*id, *variant)) {
-            Some(s) => TargetSprite::Found(s),
-            None => TargetSprite::Unknown,
+        // A boss draws the portrait of the row `bosses` gives this type and variant to; a
+        // common enemy or pickup (the `entities` collection, design decision 2) draws its
+        // own `.anm2`, composed at request time. The two need telling apart first, and the
+        // only reliable way is the entry itself: which collection (`ds.bosses` vs
+        // `ds.entities`) the wiki filed this exact triple under (`entity_role`) — not
+        // `BossKeys`, which an unkeyed boss (`bossportraits.xml` names 17 with no name or
+        // file-name match, `Portrait_Nevecka.png` among them) leaves with no entry either,
+        // indistinguishable there from an ordinary monster.
+        Target::Entity {
+            id,
+            variant,
+            subtype,
+        } => match entity_role(dataset, *id, *variant, *subtype) {
+            EntityRole::Boss | EntityRole::Unknown => {
+                match entity_portrait(c, bosses, (*id, *variant)) {
+                    Some(s) => TargetSprite::Found(s),
+                    None => TargetSprite::Unknown,
+                }
+            }
+            EntityRole::Monster => match c.entity(*id, *variant, *subtype) {
+                Some(e) => TargetSprite::Entity(&e.anm2_path),
+                None => TargetSprite::Unknown,
+            },
         },
-        // An article draws no picture through this pipeline either way: decision 5 gives
-        // cards, pickups and stages their pictures from the game's own files by name
-        // (`pocketitems.xml`, the `entities2.xml` reader, `gfx/ui/stage/`), a different path
-        // than a wiki `Target`, and a mechanics article has no picture at all.
+        // An article draws no picture through this pipeline. Decision 5 hoped for a card
+        // front per card from `pocketitems.xml`; measured on the installed game, that file
+        // carries no `gfx` at all, and `entities2.xml`'s one row per card family
+        // (`5.300.1` "Tarot Card") points at a single `.anm2` whose body layer is the
+        // shared card *back* — the face itself is a game-code lookup no data file names.
+        // So a card or rune article stays `NoArt`, honestly rather than by omission; a
+        // stage's title art (`gfx/ui/stage/`) is the one path decision 5 still owes, and a
+        // mechanics article has no picture at all.
         Target::Transformation { .. }
         | Target::Stage { .. }
         | Target::Room { .. }
         | Target::Concept { .. }
         | Target::Article { .. } => TargetSprite::NoArt,
+    }
+}
+
+/// Which of the wiki's two entity collections a bestiary triple was filed under: the
+/// question `target_sprite` needs answered before it can draw a boss's portrait rather than
+/// a common enemy's own picture, or the reverse.
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+enum EntityRole {
+    Boss,
+    Monster,
+    /// No dataset to ask, or the triple is in neither collection (an id the dataset does
+    /// not carry at all). Read as a possible boss: every call site before the dataset was
+    /// threaded through here already assumed that, and a boss with no picture still reads
+    /// `Unknown` the same way it always has.
+    Unknown,
+}
+
+/// `ds.bosses` is checked first, `ds.entities` second — the same order `Dataset::entry`
+/// resolves a `Target::Entity` in (design decision 2: a triple two tables both claim, such
+/// as The Bloat and Peep Eye sharing `68.1.0`, is read as the boss).
+fn entity_role(dataset: Option<&Dataset>, id: u32, variant: u32, subtype: u32) -> EntityRole {
+    let Some(ds) = dataset else {
+        return EntityRole::Unknown;
+    };
+    let key = Dataset::boss_key(id, variant, subtype);
+    if ds.bosses.contains_key(&key) {
+        EntityRole::Boss
+    } else if ds.entities.contains_key(&key) {
+        EntityRole::Monster
+    } else {
+        EntityRole::Unknown
     }
 }
 
