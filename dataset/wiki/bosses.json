@@ -18708,7 +18708,17 @@
                 "inline": [
                   {
                     "kind": "text",
-                    "text": "Dims the room, causing the darkness effect for a period of time.",
+                    "text": "Dims the room, causing the ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "concept",
+                    "page": "Curses",
+                    "label": "darkness"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " effect for a period of time.",
                     "style": "plain"
                   }
                 ],
@@ -19164,7 +19174,17 @@
                 "inline": [
                   {
                     "kind": "text",
-                    "text": "Dims the room, causing the Darkness effect for a period of time.",
+                    "text": "Dims the room, causing the ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "concept",
+                    "page": "Curses",
+                    "label": "Darkness"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " effect for a period of time.",
                     "style": "plain"
                   }
                 ],
@@ -21072,7 +21092,17 @@
                 "inline": [
                   {
                     "kind": "text",
-                    "text": "When the body is killed, a darkness effect is applied for a long period of time.",
+                    "text": "When the body is killed, a ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "concept",
+                    "page": "Curses",
+                    "label": "darkness"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " effect is applied for a long period of time.",
                     "style": "plain"
                   }
                 ],
@@ -24432,7 +24462,17 @@
               },
               {
                 "kind": "text",
-                "text": "'s hand and \"die\" again, causing darkness effect to be applied a second time. The body is not destroyed by the hand, so this can be repeated indefinitely. Regular tears cannot hit the body after it is defeated, a beam attack such as ",
+                "text": "'s hand and \"die\" again, causing ",
+                "style": "plain"
+              },
+              {
+                "kind": "concept",
+                "page": "Curses",
+                "label": "darkness"
+              },
+              {
+                "kind": "text",
+                "text": " effect to be applied a second time. The body is not destroyed by the hand, so this can be repeated indefinitely. Regular tears cannot hit the body after it is defeated, a beam attack such as ",
                 "style": "plain"
               },
               {
@@ -34562,12 +34602,68 @@
             ]
           },
           {
-            "kind": "paragraph",
-            "inline": [
+            "kind": "list",
+            "ordered": false,
+            "items": [
               {
-                "kind": "text",
-                "text": "Ultra Greed Coin (Spinner), Ultra Greed Coin (Key), Ultra Greed Coin (Bomb), Ultra Greed Coin (Heart)",
-                "style": "plain"
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "entity",
+                      "id": 293,
+                      "variant": 0,
+                      "subtype": 0
+                    },
+                    "label": "Ultra Greed Coin (Spinner)"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "entity",
+                      "id": 293,
+                      "variant": 1,
+                      "subtype": 0
+                    },
+                    "label": "Ultra Greed Coin (Key)"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "entity",
+                      "id": 293,
+                      "variant": 2,
+                      "subtype": 0
+                    },
+                    "label": "Ultra Greed Coin (Bomb)"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "entity",
+                      "id": 293,
+                      "variant": 3,
+                      "subtype": 0
+                    },
+                    "label": "Ultra Greed Coin (Heart)"
+                  }
+                ],
+                "children": []
               }
             ]
           },
@@ -61084,7 +61180,7 @@
           },
           {
             "kind": "text",
-            "text": " in greed ",
+            "text": " in greed/greedier ",
             "style": "plain"
           },
           {

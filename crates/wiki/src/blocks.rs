@@ -5,10 +5,13 @@
 //! The input is external data: no path may panic. Whatever isn't recognized degrades to
 //! a paragraph.
 
+mod tabber;
+mod table;
+
 use crate::inline::{name_list_items, parse_inline};
 use crate::resolver::Resolver;
 use crate::template::{template_segments, Segment, Template};
-use crate::{Block, Diagnostics, Inline, ListItem};
+use crate::{Block, Diagnostics, ListItem};
 
 /// A list item still to be built: depth, whether the last marker is `#`, text.
 struct RawItem {
@@ -175,6 +178,19 @@ impl Parser<'_> {
             self.out.push(Block::Heading { level, inline });
             return;
         }
+        // `<tabber>` itself is dropped like any other HTML tag it doesn't otherwise know
+        // (inline.rs's `try_tag`), so what is left to read here is the two lines the
+        // extension actually gives meaning to: a tab's own opening line and `</tabber>`.
+        if trimmed == "</tabber>" {
+            return;
+        }
+        if let Some(label) = tabber::tabber_label(trimmed) {
+            self.flush_para();
+            self.flush_list();
+            let inline = parse_inline(label, self.r, self.d);
+            self.out.push(Block::Heading { level: 3, inline });
+            return;
+        }
         if let Some(item) = list_item(trimmed) {
             self.flush_para();
             self.list.push(item);
@@ -275,7 +291,7 @@ impl Parser<'_> {
 
     fn close_table(&mut self) {
         if let Some(lines) = self.table.take() {
-            let table = build_table(&lines, self.r, self.d);
+            let table = table::build_table(&lines, self.r, self.d);
             self.out.push(table);
         }
     }
@@ -383,126 +399,6 @@ fn build_lists(items: &[RawItem], depth: usize, r: &Resolver, d: &mut Diagnostic
         (entry.ordered, ListItem { inline, children })
     });
     into_lists(items)
-}
-
-/// Splits a table row into cells, ignoring a separator nested inside `{{…}}` or `[[…]]`.
-///
-/// `||` is both the cell separator and, inside a template, an empty argument:
-/// `{{e|Mask + Heart||Heart}}` is one cell, and cutting it in two leaves each half
-/// holding template syntax that no longer parses — literal `{{` in a text node.
-///
-/// Depth counts the two-character openers and saturates at zero, so a stray `}}` on a
-/// malformed row can't drive it negative: the row degrades into one cell, never into
-/// none. Every delimiter here is ASCII, so slicing on these byte offsets stays on
-/// character boundaries.
-fn split_cells<'a>(body: &'a str, sep: &str) -> Vec<&'a str> {
-    let bytes = body.as_bytes();
-    let sep = sep.as_bytes();
-    let mut cells = Vec::new();
-    let mut depth: usize = 0;
-    let mut start = 0;
-    let mut i = 0;
-    while i < bytes.len() {
-        match bytes.get(i..i + 2) {
-            Some(b"{{") | Some(b"[[") => {
-                depth += 1;
-                i += 2;
-            }
-            Some(b"}}") | Some(b"]]") => {
-                depth = depth.saturating_sub(1);
-                i += 2;
-            }
-            Some(pair) if depth == 0 && pair == sep => {
-                cells.push(&body[start..i]);
-                i += 2;
-                start = i;
-            }
-            _ => i += 1,
-        }
-    }
-    cells.push(&body[start..]);
-    cells
-}
-
-/// The lines between `{|` and `|}`. The first line with `!` cells is `header`; every
-/// other line, `!` cells included (the pill table's subheadings), goes into `rows`.
-fn build_table(lines: &[String], r: &Resolver, d: &mut Diagnostics) -> Block {
-    let mut table = TableBuilder::default();
-    for line in lines {
-        let l = line.trim();
-        if l.starts_with("|-") {
-            table.close_row();
-            continue;
-        }
-        if l.starts_with("|+") {
-            continue; // caption
-        }
-        let (is_header, body) = if let Some(b) = l.strip_prefix('!') {
-            (true, b)
-        } else if let Some(b) = l.strip_prefix('|') {
-            (false, b)
-        } else {
-            continue;
-        };
-        table.row_is_header |= is_header;
-        let sep = if is_header { "!!" } else { "||" };
-        for cell in split_cells(body, sep) {
-            let cell = strip_attributes(cell.trim());
-            table.row.push(parse_inline(cell, r, d));
-        }
-    }
-    table.close_row();
-    Block::Table {
-        header: table.header,
-        rows: table.rows,
-    }
-}
-
-#[derive(Default)]
-struct TableBuilder {
-    header: Vec<Vec<Inline>>,
-    rows: Vec<Vec<Vec<Inline>>>,
-    row: Vec<Vec<Inline>>,
-    row_is_header: bool,
-    /// At least one row already closed: from here on even `!` rows go into `rows`.
-    closed_any: bool,
-}
-
-impl TableBuilder {
-    fn close_row(&mut self) {
-        let is_header = std::mem::take(&mut self.row_is_header);
-        if self.row.is_empty() {
-            return;
-        }
-        let cells = std::mem::take(&mut self.row);
-        if is_header && !self.closed_any {
-            self.header = cells;
-        } else {
-            self.rows.push(cells);
-        }
-        self.closed_any = true;
-    }
-}
-
-/// `colspan="2"| text` → `text`. A `|` inside `[[…]]`/`{{…}}` is not a separator, and a
-/// `|` with no `=` before it is not an attribute: the cell stays whole.
-fn strip_attributes(cell: &str) -> &str {
-    let mut depth = 0i32;
-    for (i, ch) in cell.char_indices() {
-        match ch {
-            '[' | '{' => depth += 1,
-            ']' | '}' => depth -= 1,
-            '|' if depth == 0 => {
-                let before = cell.get(..i).unwrap_or_default();
-                if before.contains('=') {
-                    return cell.get(i + 1..).unwrap_or_default().trim();
-                }
-                return cell;
-            }
-            _ => {}
-        }
-    }
-    cell
 }
 
 // Tests extract one variant and panic on the rest: the wildcard is the assertion.
@@ -702,26 +598,6 @@ mod tests {
     }
 
     #[test]
-    fn table() {
-        let src = "{| class=\"wikitable\"\n ! Pill !! Changes Into\n |-\n | Stat up pill\n | Stat down pill\n |-\n ! colspan=\"2\"| Neutral pills\n |-\n |colspan=\"2\"| ''I Found Pills''\n|}\n";
-        let v = p(src);
-        let Block::Table { header, rows } = &v[0] else {
-            panic!("table")
-        };
-        assert_eq!(header, &vec![t("Pill"), t("Changes Into")]);
-        assert_eq!(rows.len(), 3);
-        assert_eq!(rows[0], vec![t("Stat up pill"), t("Stat down pill")]);
-        assert_eq!(rows[1], vec![t("Neutral pills")]);
-        assert_eq!(
-            rows[2],
-            vec![vec![Inline::Text {
-                text: "I Found Pills".into(),
-                style: Style::Italic
-            }]]
-        );
-    }
-
-    #[test]
     fn headings_and_definition_lines() {
         let v = p("=== Phase 1 ===\ntext\n==== Phase 2-1 (100-80% HP) ====\n: indented\n");
         assert_eq!(
@@ -795,24 +671,6 @@ mod tests {
             items.len(),
             2,
             "`first` and `second` are siblings: {items:?}"
-        );
-    }
-
-    /// `||` inside a template is an empty argument, not a cell separator. Mystery Egg's
-    /// table carries `{{e|Mask + Heart||Heart}}`; split on the bare `||` it becomes two
-    /// cells, each holding half a template that no longer parses — which is how literal
-    /// `{{` ends up in a text node.
-    #[test]
-    fn a_pipe_pair_inside_a_template_is_an_argument_not_a_cell_separator() {
-        let v = p("{|\n| {{e|Mask + Heart||Heart}} || after\n");
-        let Block::Table { rows, .. } = &v[0] else {
-            panic!("table")
-        };
-        assert_eq!(rows.len(), 1);
-        assert_eq!(
-            rows[0].len(),
-            2,
-            "the template is one cell, `after` is the other: {rows:?}"
         );
     }
 
@@ -941,25 +799,6 @@ mod tests {
                 .count(),
             2,
             "{inline:?}"
-        );
-    }
-
-    #[test]
-    fn table_cell_keeps_pipe_inside_link_and_survives_missing_close() {
-        let v = p("{|\n| [[Shot Speed|speed]] || x=1|kept\n");
-        let Block::Table { header, rows } = &v[0] else {
-            panic!("table")
-        };
-        assert!(header.is_empty());
-        assert_eq!(
-            rows,
-            &vec![vec![
-                vec![Inline::Concept {
-                    page: "Shot Speed".into(),
-                    label: "speed".into()
-                }],
-                t("kept")
-            ]]
         );
     }
 }

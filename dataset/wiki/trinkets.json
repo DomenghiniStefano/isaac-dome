@@ -15526,7 +15526,7 @@
                     "inline": [
                       {
                         "kind": "text",
-                        "text": " 2",
+                        "text": " -2 Tear Delay",
                         "style": "plain"
                       }
                     ]
@@ -48430,8 +48430,13 @@
               {
                 "inline": [
                   {
+                    "kind": "concept",
+                    "page": "Curses",
+                    "label": "XL"
+                  },
+                  {
                     "kind": "text",
-                    "text": "XL floors will have 2 treasure rooms, like any other XL floor.",
+                    "text": " floors will have 2 treasure rooms, like any other XL floor.",
                     "style": "plain"
                   }
                 ],
@@ -48448,7 +48453,17 @@
                     "inline": [
                       {
                         "kind": "text",
-                        "text": "The Treasure Rooms that appear in Corpse will have 2 items, one behind a blind like the other Alt Path floors.",
+                        "text": "The Treasure Rooms that appear in Corpse will have 2 items, one behind a ",
+                        "style": "plain"
+                      },
+                      {
+                        "kind": "concept",
+                        "page": "Curses",
+                        "label": "blind"
+                      },
+                      {
+                        "kind": "text",
+                        "text": " like the other Alt Path floors.",
                         "style": "plain"
                       }
                     ]
@@ -49248,7 +49263,7 @@
                     "inline": [
                       {
                         "kind": "text",
-                        "text": " greed ",
+                        "text": " greed/greedier ",
                         "style": "plain"
                       },
                       {
@@ -49674,7 +49689,7 @@
                     "inline": [
                       {
                         "kind": "text",
-                        "text": " greed ",
+                        "text": " greed/greedier ",
                         "style": "plain"
                       },
                       {
@@ -49881,7 +49896,7 @@
                     "inline": [
                       {
                         "kind": "text",
-                        "text": " greed ",
+                        "text": " greed/greedier ",
                         "style": "plain"
                       },
                       {
@@ -50088,7 +50103,7 @@
                     "inline": [
                       {
                         "kind": "text",
-                        "text": " greed ",
+                        "text": " greed/greedier ",
                         "style": "plain"
                       },
                       {
@@ -50305,7 +50320,7 @@
                     "inline": [
                       {
                         "kind": "text",
-                        "text": " greed ",
+                        "text": " greed/greedier ",
                         "style": "plain"
                       },
                       {
@@ -51038,7 +51053,17 @@
                 "inline": [
                   {
                     "kind": "text",
-                    "text": "If there are multiple Boss rooms on the same floor (XL, ",
+                    "text": "If there are multiple Boss rooms on the same floor (",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "concept",
+                    "page": "Curses",
+                    "label": "XL"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ", ",
                     "style": "plain"
                   },
                   {
@@ -74895,7 +74920,7 @@
                 "inline": [
                   {
                     "kind": "text",
-                    "text": "All Bonies spawned by the trinket in greed ",
+                    "text": "All Bonies spawned by the trinket in greed/greedier ",
                     "style": "plain"
                   },
                   {

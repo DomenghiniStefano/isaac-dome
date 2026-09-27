@@ -157,17 +157,21 @@ fn print_meta(ds: &Dataset) {
         unknown_entities,
         unknown_infoboxes,
         spans_outside_their_page,
+        unknown_heart_types,
+        unmodelled_table_rows,
     } = &m.diagnostics;
     println!("pages without id: {pages_without_id}");
     println!("transformations whose two item lists disagree: {transformation_sources_disagree}");
     println!("orphan closers: {orphan_closers}");
     println!("spans outside their page: {spans_outside_their_page}");
+    println!("unmodelled table rows: {unmodelled_table_rows}");
     print_diagnostic("unresolved references", unresolved);
     print_diagnostic("unknown templates", unknown_templates);
     print_diagnostic("discarded sections", discarded_sections);
     print_diagnostic("unknown dlc codes", unknown_dlc_codes);
     print_diagnostic("unknown entities", unknown_entities);
     print_diagnostic("unknown infoboxes", unknown_infoboxes);
+    print_diagnostic("unknown heart types", unknown_heart_types);
     // Not part of `meta.diagnostics`: whether a `Ref`'s target has a page is a fact about
     // the whole dataset, not about the page one is printed from, and it never ships in
     // `dataset/wiki/` — the destinations are the parser's own maintenance concern, not the

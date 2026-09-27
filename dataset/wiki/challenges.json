@@ -20,7 +20,27 @@
       },
       {
         "kind": "text",
-        "text": " #1. During this challenge, Darkness and Unknown will be permanently active. Unlike other challenges, ",
+        "text": " #1. During this challenge, ",
+        "style": "plain"
+      },
+      {
+        "kind": "concept",
+        "page": "Curses",
+        "label": "Darkness"
+      },
+      {
+        "kind": "text",
+        "text": " and ",
+        "style": "plain"
+      },
+      {
+        "kind": "concept",
+        "page": "Curses",
+        "label": "Unknown"
+      },
+      {
+        "kind": "text",
+        "text": " will be permanently active. Unlike other challenges, ",
         "style": "plain"
       },
       {
@@ -78,9 +98,19 @@
       "health": [],
       "curse": [
         {
+          "kind": "concept",
+          "page": "Curses",
+          "label": "Darkness"
+        },
+        {
           "kind": "text",
-          "text": "Darkness Unknown",
+          "text": " ",
           "style": "plain"
+        },
+        {
+          "kind": "concept",
+          "page": "Curses",
+          "label": "Unknown"
         }
       ],
       "goal": [],
@@ -99,7 +129,17 @@
             "inline": [
               {
                 "kind": "text",
-                "text": "The curses inflicted are typically trivial on their own, however, they are the primary source of difficulty in this challenge due to the permanence of Unknown, making it much more difficult to keep track of Isaac's ",
+                "text": "The curses inflicted are typically trivial on their own, however, they are the primary source of difficulty in this challenge due to the permanence of ",
+                "style": "plain"
+              },
+              {
+                "kind": "concept",
+                "page": "Curses",
+                "label": "Unknown"
+              },
+              {
+                "kind": "text",
+                "text": ", making it much more difficult to keep track of Isaac's ",
                 "style": "plain"
               },
               {
@@ -129,7 +169,17 @@
               },
               {
                 "kind": "text",
-                "text": "s. Additionally, Darkness, although mostly just thematic, does contribute to the difficulty of the challenge by making it harder to spot ",
+                "text": "s. Additionally, ",
+                "style": "plain"
+              },
+              {
+                "kind": "concept",
+                "page": "Curses",
+                "label": "Darkness"
+              },
+              {
+                "kind": "text",
+                "text": ", although mostly just thematic, does contribute to the difficulty of the challenge by making it harder to spot ",
                 "style": "plain"
               },
               {
@@ -205,7 +255,17 @@
             "inline": [
               {
                 "kind": "text",
-                "text": "Turning the gamma setting up in the options can lessen the impact of Darkness.",
+                "text": "Turning the gamma setting up in the options can lessen the impact of ",
+                "style": "plain"
+              },
+              {
+                "kind": "concept",
+                "page": "Curses",
+                "label": "Darkness"
+              },
+              {
+                "kind": "text",
+                "text": ".",
                 "style": "plain"
               }
             ]
@@ -238,7 +298,17 @@
             "inline": [
               {
                 "kind": "text",
-                "text": "Amnesia pills don't incur the Lost, thus being one less bad pill to worry about; with ",
+                "text": "Amnesia pills don't incur the ",
+                "style": "plain"
+              },
+              {
+                "kind": "concept",
+                "page": "Curses",
+                "label": "Lost"
+              },
+              {
+                "kind": "text",
+                "text": ", thus being one less bad pill to worry about; with ",
                 "style": "plain"
               },
               {
@@ -5279,7 +5349,33 @@
       ],
       "trinkets": [],
       "pickups": [],
-      "health": [],
+      "health": [
+        {
+          "kind": "concept",
+          "page": "Health",
+          "label": "3 black hearts"
+        },
+        {
+          "kind": "text",
+          "text": ", ",
+          "style": "plain"
+        },
+        {
+          "kind": "concept",
+          "page": "Health",
+          "label": "3 red hearts"
+        },
+        {
+          "kind": "text",
+          "text": ", ",
+          "style": "plain"
+        },
+        {
+          "kind": "concept",
+          "page": "Health",
+          "label": "3 soul hearts"
+        }
+      ],
       "curse": [],
       "goal": [],
       "character": null,
@@ -6550,7 +6646,17 @@
       },
       {
         "kind": "text",
-        "text": ". Every floor is cursed with Cursed. The goal is to defeat ",
+        "text": ". Every floor is cursed with ",
+        "style": "plain"
+      },
+      {
+        "kind": "concept",
+        "page": "Curses",
+        "label": "Cursed"
+      },
+      {
+        "kind": "text",
+        "text": ". The goal is to defeat ",
         "style": "plain"
       },
       {
@@ -6668,9 +6774,9 @@
       "health": [],
       "curse": [
         {
-          "kind": "text",
-          "text": "Cursed",
-          "style": "plain"
+          "kind": "concept",
+          "page": "Curses",
+          "label": "Cursed"
         }
       ],
       "goal": [],
@@ -13622,8 +13728,13 @@
               {
                 "inline": [
                   {
+                    "kind": "concept",
+                    "page": "Curses",
+                    "label": "Labyrinth"
+                  },
+                  {
                     "kind": "text",
-                    "text": "Labyrinth can still spawn as normal, combining the two floors as normal, and causing there to be two treasure rooms and boss rooms. The size is unchanged.",
+                    "text": " can still spawn as normal, combining the two floors as normal, and causing there to be two treasure rooms and boss rooms. The size is unchanged.",
                     "style": "plain"
                   }
                 ],
@@ -14523,7 +14634,27 @@
                   },
                   {
                     "kind": "text",
-                    "text": " is a valuable item to purchase from the shop, as it prevents Isaac from being afflicted by Lost and Maze, both of which can waste precious time. ",
+                    "text": " is a valuable item to purchase from the shop, as it prevents Isaac from being afflicted by ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "concept",
+                    "page": "Curses",
+                    "label": "Lost"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " and ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "concept",
+                    "page": "Curses",
+                    "label": "Maze"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ", both of which can waste precious time. ",
                     "style": "plain"
                   },
                   {
@@ -18198,9 +18329,69 @@
       "pickups": [],
       "health": [
         {
+          "kind": "concept",
+          "page": "Health",
+          "label": "1 red heart"
+        },
+        {
+          "kind": "concept",
+          "page": "Health",
+          "label": "1 empty red heart container"
+        },
+        {
+          "kind": "concept",
+          "page": "Health",
+          "label": "1 empty red heart container"
+        },
+        {
+          "kind": "concept",
+          "page": "Health",
+          "label": "1 empty red heart container"
+        },
+        {
+          "kind": "concept",
+          "page": "Health",
+          "label": "1 empty red heart container"
+        },
+        {
+          "kind": "concept",
+          "page": "Health",
+          "label": "1 empty red heart container"
+        },
+        {
           "kind": "text",
-          "text": "redredredredredred redredredredredred",
+          "text": " ",
           "style": "plain"
+        },
+        {
+          "kind": "concept",
+          "page": "Health",
+          "label": "1 empty red heart container"
+        },
+        {
+          "kind": "concept",
+          "page": "Health",
+          "label": "1 empty red heart container"
+        },
+        {
+          "kind": "concept",
+          "page": "Health",
+          "label": "1 empty red heart container"
+        },
+        {
+          "kind": "concept",
+          "page": "Health",
+          "label": "1 empty red heart container"
+        },
+        {
+          "kind": "concept",
+          "page": "Health",
+          "label": "1 empty red heart container"
+        },
+        {
+          "kind": "concept",
+          "page": "Health",
+          "label": "1 empty red heart container"
         }
       ],
       "curse": [],
@@ -28320,7 +28511,27 @@
                         "inline": [
                           {
                             "kind": "text",
-                            "text": "While Blind is not active, the fact that all pedestal items are displayed incorrectly means that, like with Blind, it is impossible to know what each item is until acquired.",
+                            "text": "While ",
+                            "style": "plain"
+                          },
+                          {
+                            "kind": "concept",
+                            "page": "Curses",
+                            "label": "Blind"
+                          },
+                          {
+                            "kind": "text",
+                            "text": " is not active, the fact that all pedestal items are displayed incorrectly means that, like with ",
+                            "style": "plain"
+                          },
+                          {
+                            "kind": "concept",
+                            "page": "Curses",
+                            "label": "Blind"
+                          },
+                          {
+                            "kind": "text",
+                            "text": ", it is impossible to know what each item is until acquired.",
                             "style": "plain"
                           }
                         ],
@@ -30607,9 +30818,39 @@
       "health": [],
       "curse": [
         {
+          "kind": "concept",
+          "page": "Curses",
+          "label": "Labyrinth"
+        },
+        {
           "kind": "text",
-          "text": "Labyrinth Blind lost Maze",
+          "text": " ",
           "style": "plain"
+        },
+        {
+          "kind": "concept",
+          "page": "Curses",
+          "label": "Blind"
+        },
+        {
+          "kind": "text",
+          "text": " ",
+          "style": "plain"
+        },
+        {
+          "kind": "concept",
+          "page": "Curses",
+          "label": "lost"
+        },
+        {
+          "kind": "text",
+          "text": " ",
+          "style": "plain"
+        },
+        {
+          "kind": "concept",
+          "page": "Curses",
+          "label": "Maze"
         }
       ],
       "goal": [
@@ -34322,7 +34563,13 @@
       ],
       "trinkets": [],
       "pickups": [],
-      "health": [],
+      "health": [
+        {
+          "kind": "concept",
+          "page": "Health",
+          "label": "4 red hearts"
+        }
+      ],
       "curse": [],
       "goal": [
         {
@@ -35003,7 +35250,13 @@
           "label": "soul charges"
         }
       ],
-      "health": [],
+      "health": [
+        {
+          "kind": "concept",
+          "page": "Health",
+          "label": "4 red hearts"
+        }
+      ],
       "curse": [],
       "goal": [
         {
@@ -37414,7 +37667,23 @@
       ],
       "trinkets": [],
       "pickups": [],
-      "health": [],
+      "health": [
+        {
+          "kind": "concept",
+          "page": "Health",
+          "label": "4 red hearts"
+        },
+        {
+          "kind": "text",
+          "text": ", ",
+          "style": "plain"
+        },
+        {
+          "kind": "concept",
+          "page": "Health",
+          "label": "1 soul heart"
+        }
+      ],
       "curse": [],
       "goal": [
         {
@@ -38998,7 +39267,13 @@
       "items": [],
       "trinkets": [],
       "pickups": [],
-      "health": [],
+      "health": [
+        {
+          "kind": "concept",
+          "page": "Health",
+          "label": "3 soul hearts"
+        }
+      ],
       "curse": [],
       "goal": [
         {
@@ -41529,7 +41804,17 @@
       },
       {
         "kind": "text",
-        "text": " rooms.\nEach floor generates as a labyrinth floor, with one shop, and two item and boss rooms, except the fourth floor, which has only one boss room. All rooms may be from any floor of the current chapter.",
+        "text": " rooms.\nEach floor generates as a ",
+        "style": "plain"
+      },
+      {
+        "kind": "concept",
+        "page": "Curses",
+        "label": "labyrinth"
+      },
+      {
+        "kind": "text",
+        "text": " floor, with one shop, and two item and boss rooms, except the fourth floor, which has only one boss room. All rooms may be from any floor of the current chapter.",
         "style": "plain"
       }
     ],
@@ -41954,8 +42239,13 @@
               {
                 "inline": [
                   {
+                    "kind": "concept",
+                    "page": "Curses",
+                    "label": "maze"
+                  },
+                  {
                     "kind": "text",
-                    "text": "maze can be beneficial for this challenge, as it can rarely teleport you to unexplored normal rooms.",
+                    "text": " can be beneficial for this challenge, as it can rarely teleport you to unexplored normal rooms.",
                     "style": "plain"
                   }
                 ],
@@ -42341,7 +42631,17 @@
                 "inline": [
                   {
                     "kind": "text",
-                    "text": "Getting lost is almost always a disaster, as the player has no way of seeing even the real rooms and it renders any mapping useless, so it is very likely for the player to waste all of the Red Key's charges on random rooms, triggering Dark Esau. As such, obtaining ",
+                    "text": "Getting ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "concept",
+                    "page": "Curses",
+                    "label": "lost"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " is almost always a disaster, as the player has no way of seeing even the real rooms and it renders any mapping useless, so it is very likely for the player to waste all of the Red Key's charges on random rooms, triggering Dark Esau. As such, obtaining ",
                     "style": "plain"
                   },
                   {

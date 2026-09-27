@@ -48,7 +48,13 @@
     "unlockedBy": null,
     "infobox": {
       "kind": "character",
-      "health": [],
+      "health": [
+        {
+          "kind": "concept",
+          "page": "Health",
+          "label": "3 red hearts"
+        }
+      ],
       "damage": "",
       "tears": "",
       "range": "",
@@ -1089,7 +1095,13 @@
     },
     "infobox": {
       "kind": "character",
-      "health": [],
+      "health": [
+        {
+          "kind": "concept",
+          "page": "Health",
+          "label": "4 red hearts"
+        }
+      ],
       "damage": "",
       "tears": "",
       "range": "",
@@ -2927,7 +2939,13 @@
     },
     "infobox": {
       "kind": "character",
-      "health": [],
+      "health": [
+        {
+          "kind": "concept",
+          "page": "Health",
+          "label": "2 red hearts"
+        }
+      ],
       "damage": "3.5 (*1.20)",
       "tears": "",
       "range": "{{dlcalt|17.75|r=4.5}}",
@@ -4428,9 +4446,9 @@
       "kind": "character",
       "health": [
         {
-          "kind": "text",
-          "text": "red",
-          "style": "plain"
+          "kind": "concept",
+          "page": "Health",
+          "label": "1 red heart"
         }
       ],
       "damage": "3.5 (*1.35)",
@@ -5691,7 +5709,13 @@
     },
     "infobox": {
       "kind": "character",
-      "health": [],
+      "health": [
+        {
+          "kind": "concept",
+          "page": "Health",
+          "label": "3 soul hearts"
+        }
+      ],
       "damage": "3.5 (*1.05)",
       "tears": "",
       "range": "",
@@ -8525,7 +8549,13 @@
     },
     "infobox": {
       "kind": "character",
-      "health": [],
+      "health": [
+        {
+          "kind": "concept",
+          "page": "Health",
+          "label": "2 red hearts"
+        }
+      ],
       "damage": "3.5 (*0.75)<br>(*1.00 at a Red Heart)",
       "tears": "",
       "range": "",
@@ -10204,7 +10234,13 @@
     },
     "infobox": {
       "kind": "character",
-      "health": [],
+      "health": [
+        {
+          "kind": "concept",
+          "page": "Health",
+          "label": "3 red hearts"
+        }
+      ],
       "damage": "",
       "tears": "-0.1",
       "range": "{{dlcalt|18.75|r=5.0}}",
@@ -12048,7 +12084,13 @@
     },
     "infobox": {
       "kind": "character",
-      "health": [],
+      "health": [
+        {
+          "kind": "concept",
+          "page": "Health",
+          "label": "3 black hearts"
+        }
+      ],
       "damage": "3.5 (*1.50)",
       "tears": "+0.5; x0.267",
       "range": "{{dlcalt|17.75|r=4.5}}",
@@ -14527,7 +14569,13 @@
     },
     "infobox": {
       "kind": "character",
-      "health": [],
+      "health": [
+        {
+          "kind": "concept",
+          "page": "Health",
+          "label": "3 red hearts"
+        }
+      ],
       "damage": "",
       "tears": "",
       "range": "{{dlcalt|17.75|r=4.5}}",
@@ -21272,9 +21320,14 @@
       "kind": "character",
       "health": [
         {
-          "kind": "text",
-          "text": "red",
-          "style": "plain"
+          "kind": "concept",
+          "page": "Health",
+          "label": "1 red heart"
+        },
+        {
+          "kind": "concept",
+          "page": "Health",
+          "label": "2 unknown hearts"
         }
       ],
       "damage": "3.5 (*{{dlcalt|1.20|r=1.40}})",
@@ -23200,7 +23253,13 @@
     "unlockedBy": null,
     "infobox": {
       "kind": "character",
-      "health": [],
+      "health": [
+        {
+          "kind": "concept",
+          "page": "Health",
+          "label": "2 black hearts"
+        }
+      ],
       "damage": "3.5 (*2.00)",
       "tears": "",
       "range": "",
@@ -24488,9 +24547,19 @@
       "kind": "character",
       "health": [
         {
+          "kind": "concept",
+          "page": "Health",
+          "label": "1 red heart"
+        },
+        {
           "kind": "text",
-          "text": "red",
+          "text": ", ",
           "style": "plain"
+        },
+        {
+          "kind": "concept",
+          "page": "Health",
+          "label": "2 black hearts"
         }
       ],
       "damage": "",
@@ -24501,6 +24570,11 @@
       "shotSpeed": "",
       "pickups": [],
       "collectibles": [
+        {
+          "kind": "concept",
+          "page": "Blindfolded",
+          "label": "Blindfolded"
+        },
         {
           "kind": "text",
           "text": " ",
@@ -26757,9 +26831,28 @@
       "kind": "character",
       "health": [
         {
+          "kind": "concept",
+          "page": "Health",
+          "label": "2 coin hearts"
+        },
+        {
           "kind": "text",
           "text": "  ",
           "style": "plain"
+        },
+        {
+          "kind": "edition",
+          "only": [
+            "repentance",
+            "repentancePlus"
+          ],
+          "inline": [
+            {
+              "kind": "concept",
+              "page": "Health",
+              "label": "3 coin hearts"
+            }
+          ]
         }
       ],
       "damage": "3.5 (*1.20)",
@@ -32431,7 +32524,17 @@
                               },
                               {
                                 "kind": "text",
-                                "text": " - Start with 3 coin ",
+                                "text": " - Start with 3 ",
+                                "style": "plain"
+                              },
+                              {
+                                "kind": "concept",
+                                "page": "Health",
+                                "label": "1 coin heart"
+                              },
+                              {
+                                "kind": "text",
+                                "text": " ",
                                 "style": "plain"
                               },
                               {
@@ -32552,7 +32655,13 @@
     },
     "infobox": {
       "kind": "character",
-      "health": [],
+      "health": [
+        {
+          "kind": "concept",
+          "page": "Health",
+          "label": "2 red hearts"
+        }
+      ],
       "damage": "",
       "tears": "",
       "range": "",
@@ -33094,7 +33203,17 @@
                     "inline": [
                       {
                         "kind": "text",
-                        "text": " Void can be used during the 'item get' animation to absorb the held item. This allows Apollyon to absorb undesirable devil and shop items, albeit by paying their cost first. It can also be used on items formerly unidentified due to the Blind (Pausing is recommended right after picking up the item to properly check what it is before absorbing it or not). ",
+                        "text": " Void can be used during the 'item get' animation to absorb the held item. This allows Apollyon to absorb undesirable devil and shop items, albeit by paying their cost first. It can also be used on items formerly unidentified due to the ",
+                        "style": "plain"
+                      },
+                      {
+                        "kind": "concept",
+                        "page": "Curses",
+                        "label": "Blind"
+                      },
+                      {
+                        "kind": "text",
+                        "text": " (Pausing is recommended right after picking up the item to properly check what it is before absorbing it or not). ",
                         "style": "plain"
                       }
                     ]
@@ -34084,7 +34203,13 @@
     },
     "infobox": {
       "kind": "character",
-      "health": [],
+      "health": [
+        {
+          "kind": "concept",
+          "page": "Health",
+          "label": "2 bone hearts"
+        }
+      ],
       "damage": "3.5 (*1.50)",
       "tears": "+0; x1/2",
       "range": "",
@@ -38830,9 +38955,9 @@
       "kind": "character",
       "health": [
         {
-          "kind": "text",
-          "text": "soul",
-          "style": "plain"
+          "kind": "concept",
+          "page": "Health",
+          "label": "1 soul heart"
         }
       ],
       "damage": "3.5 (*1.00)",
@@ -43630,7 +43755,13 @@
     },
     "infobox": {
       "kind": "character",
-      "health": [],
+      "health": [
+        {
+          "kind": "concept",
+          "page": "Health",
+          "label": "3 red hearts"
+        }
+      ],
       "damage": "",
       "tears": "",
       "range": "",
@@ -45666,7 +45797,13 @@
     },
     "infobox": {
       "kind": "character",
-      "health": [],
+      "health": [
+        {
+          "kind": "concept",
+          "page": "Health",
+          "label": "3 red hearts"
+        }
+      ],
       "damage": "2.75 (*1.00)",
       "tears": "+0.277",
       "range": "5.00",
@@ -48011,7 +48148,18 @@
     },
     "infobox": {
       "kind": "character",
-      "health": [],
+      "health": [
+        {
+          "kind": "concept",
+          "page": "Health",
+          "label": "1 red heart"
+        },
+        {
+          "kind": "concept",
+          "page": "Health",
+          "label": "1 soul heart"
+        }
+      ],
       "damage": "3.75 (*1.00)",
       "tears": "-0.1",
       "range": "8.00",
@@ -50406,7 +50554,13 @@
     },
     "infobox": {
       "kind": "character",
-      "health": [],
+      "health": [
+        {
+          "kind": "concept",
+          "page": "Health",
+          "label": "3 red hearts"
+        }
+      ],
       "damage": "",
       "tears": "",
       "range": "",
@@ -52720,9 +52874,19 @@
       "kind": "character",
       "health": [
         {
-          "kind": "text",
-          "text": "redred",
-          "style": "plain"
+          "kind": "concept",
+          "page": "Health",
+          "label": "2 red hearts"
+        },
+        {
+          "kind": "concept",
+          "page": "Health",
+          "label": "1 empty red heart container"
+        },
+        {
+          "kind": "concept",
+          "page": "Health",
+          "label": "1 empty red heart container"
         }
       ],
       "damage": "3.5 (*0.75)",
@@ -53171,8 +53335,13 @@
             "kind": "paragraph",
             "inline": [
               {
+                "kind": "concept",
+                "page": "Curses",
+                "label": "unknown"
+              },
+              {
                 "kind": "text",
-                "text": "unknown can cause more trouble for Tainted Magdalene than for other characters, as knowing how much health she has is important. She stops producing red creep when she runs out of leaky red hearts, which may be a helpful indicator.",
+                "text": " can cause more trouble for Tainted Magdalene than for other characters, as knowing how much health she has is important. She stops producing red creep when she runs out of leaky red hearts, which may be a helpful indicator.",
                 "style": "plain"
               }
             ]
@@ -55444,7 +55613,13 @@
     },
     "infobox": {
       "kind": "character",
-      "health": [],
+      "health": [
+        {
+          "kind": "concept",
+          "page": "Health",
+          "label": "2 red hearts"
+        }
+      ],
       "damage": "3.5 (*1.20)",
       "tears": "",
       "range": "4.5",
@@ -59155,7 +59330,13 @@
     },
     "infobox": {
       "kind": "character",
-      "health": [],
+      "health": [
+        {
+          "kind": "concept",
+          "page": "Health",
+          "label": "2 black hearts"
+        }
+      ],
       "damage": "",
       "tears": "",
       "range": "4.5",
@@ -61048,7 +61229,13 @@
     },
     "infobox": {
       "kind": "character",
-      "health": [],
+      "health": [
+        {
+          "kind": "concept",
+          "page": "Health",
+          "label": "3 soul hearts"
+        }
+      ],
       "damage": "",
       "tears": "-0.35",
       "range": "",
@@ -62942,7 +63129,13 @@
     },
     "infobox": {
       "kind": "character",
-      "health": [],
+      "health": [
+        {
+          "kind": "concept",
+          "page": "Health",
+          "label": "2 red hearts"
+        }
+      ],
       "damage": "3.5 (×1.20)",
       "tears": "-0.5; ×0.66",
       "range": "",
@@ -65751,7 +65944,13 @@
     },
     "infobox": {
       "kind": "character",
-      "health": [],
+      "health": [
+        {
+          "kind": "concept",
+          "page": "Health",
+          "label": "3 red hearts"
+        }
+      ],
       "damage": "",
       "tears": "-0.1",
       "range": "5",
@@ -67368,7 +67567,13 @@
     },
     "infobox": {
       "kind": "character",
-      "health": [],
+      "health": [
+        {
+          "kind": "concept",
+          "page": "Health",
+          "label": "3 black hearts"
+        }
+      ],
       "damage": "3.5 (*1.50)",
       "tears": "+0; x1/3",
       "range": "6.50",
@@ -68673,7 +68878,13 @@
     },
     "infobox": {
       "kind": "character",
-      "health": [],
+      "health": [
+        {
+          "kind": "concept",
+          "page": "Health",
+          "label": "3 red hearts"
+        }
+      ],
       "damage": "",
       "tears": "",
       "range": "4.50",
@@ -72434,8 +72645,13 @@
                       {
                         "inline": [
                           {
+                            "kind": "concept",
+                            "page": "Curses",
+                            "label": "Unknown"
+                          },
+                          {
                             "kind": "text",
-                            "text": "Unknown is also potentially dangerous if one gets hit a lot, as your health is truly unknown.",
+                            "text": " is also potentially dangerous if one gets hit a lot, as your health is truly unknown.",
                             "style": "plain"
                           }
                         ],
@@ -77471,9 +77687,19 @@
       "kind": "character",
       "health": [
         {
+          "kind": "concept",
+          "page": "Health",
+          "label": "1 red heart"
+        },
+        {
           "kind": "text",
-          "text": "red",
+          "text": ", ",
           "style": "plain"
+        },
+        {
+          "kind": "concept",
+          "page": "Health",
+          "label": "2 black hearts"
         }
       ],
       "damage": "",
@@ -78937,7 +79163,13 @@
     },
     "infobox": {
       "kind": "character",
-      "health": [],
+      "health": [
+        {
+          "kind": "concept",
+          "page": "Health",
+          "label": "2 coin hearts"
+        }
+      ],
       "damage": "",
       "tears": "-2.2",
       "range": "",
@@ -83194,7 +83426,13 @@
     },
     "infobox": {
       "kind": "character",
-      "health": [],
+      "health": [
+        {
+          "kind": "concept",
+          "page": "Health",
+          "label": "2 red hearts"
+        }
+      ],
       "damage": "",
       "tears": "-0.5",
       "range": "",
@@ -86287,7 +86525,13 @@
     },
     "infobox": {
       "kind": "character",
-      "health": [],
+      "health": [
+        {
+          "kind": "concept",
+          "page": "Health",
+          "label": "3 soul hearts"
+        }
+      ],
       "damage": "",
       "tears": "",
       "range": "",
@@ -88158,7 +88402,13 @@
     },
     "infobox": {
       "kind": "character",
-      "health": [],
+      "health": [
+        {
+          "kind": "concept",
+          "page": "Health",
+          "label": "3 red hearts"
+        }
+      ],
       "damage": "",
       "tears": "+0.277",
       "range": "",
@@ -90539,7 +90789,13 @@
     },
     "infobox": {
       "kind": "character",
-      "health": [],
+      "health": [
+        {
+          "kind": "concept",
+          "page": "Health",
+          "label": "2 soul hearts"
+        }
+      ],
       "damage": "3.5 (* 1.50)",
       "tears": "-0.1",
       "range": "6.50",
@@ -93610,7 +93866,13 @@
     },
     "infobox": {
       "kind": "character",
-      "health": [],
+      "health": [
+        {
+          "kind": "concept",
+          "page": "Health",
+          "label": "3 soul hearts"
+        }
+      ],
       "damage": "－",
       "tears": "－",
       "range": "－",

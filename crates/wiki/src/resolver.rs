@@ -59,6 +59,25 @@ pub struct Corrections {
     /// missing (Dead God) or says nothing.
     #[serde(default)]
     pub descriptions: BTreeMap<String, BTreeMap<String, String>>,
+    /// What Decision 10 excludes from "every template is read into structure": a template the
+    /// parser deliberately does not model, with the reason written next to it. A completeness
+    /// check in `crates/wiki/tests/` fails on a template that is neither modelled nor listed
+    /// here, and on a listed name the corpus no longer uses.
+    #[serde(default)]
+    pub excluded: Excluded,
+}
+
+/// The `excluded` key of `corrections.json`. A struct of one field today, kept apart from
+/// `Corrections`'s other maps because Decision 10 may grow more than one closed list under
+/// `excluded` (section headings, infobox parameters), each with its own reason column.
+#[derive(Debug, Default, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct Excluded {
+    /// Template name → why the parser does not read it into structure: it occurs only inside
+    /// a section already discarded whole (Trivia, Gallery, Audio…), or it is a one-time typo
+    /// on the wiki's own side that was not worth silently correcting.
+    #[serde(default)]
+    pub templates: BTreeMap<String, String>,
 }
 
 /// The tables [`Corrections::apply`] is ever called with. A `page_id` entry filed under
@@ -191,6 +210,25 @@ const LAYOUT: &[&str] = &[
     "distinguish visual",
     "toc",
     "__toc__",
+    // The page-wide edition range, read from the first infobox instead (`page_editions_of`):
+    // the template itself renders no icon of its own.
+    "page dlc",
+    // Editorial markers: a flag for another editor, drawn as a small icon or nothing at all,
+    // never a fact about the game.
+    "citation needed",
+    "reconfirm",
+    "explain",
+    // `{{dlc clear}}` clears the floating edition box `{{dlc}}` can leave open, the same way
+    // `{{clear}}` clears a floated image: layout, not content.
+    "dlc clear",
+    // Wiki maintenance markers with no reader-facing text at all: hidden categories and the
+    // shop-storage flag pages carry beside `{{storage page}}`.
+    "categories",
+    "storage",
+    "no storage",
+    // MediaWiki's own magic word for overriding how the page's title renders (`Less Than
+    // Three` displays as "<3"): the title the reader sees, not a fact about the subject.
+    "displaytitle:<3",
 ];
 
 /// Templates that only do layout: they carry no reference.
@@ -661,6 +699,27 @@ mod tests {
     use super::fixtures::test_resolver;
     use super::*;
     use crate::Target;
+
+    /// `corrections.json`'s `excluded.templates` key, read the way the file actually writes
+    /// it: camelCase at the outer level, the template's own name (lowercase, spaces and all)
+    /// unchanged as a map key.
+    #[test]
+    fn excluded_templates_round_trip_from_json() {
+        let c: Corrections = serde_json::from_str(
+            r#"{"excluded":{"templates":{"sound table row":"only inside a discarded section"}}}"#,
+        )
+        .unwrap();
+        assert_eq!(
+            c.excluded
+                .templates
+                .get("sound table row")
+                .map(String::as_str),
+            Some("only inside a discarded section")
+        );
+        // Absent entirely: reads as empty, the same degrade every other `Corrections` map has.
+        let empty: Corrections = serde_json::from_str("{}").unwrap();
+        assert!(empty.excluded.templates.is_empty());
+    }
 
     #[test]
     fn key_normalizes() {

@@ -4,10 +4,15 @@
 //! The input is external data: no path may panic. Every malformed construct (an
 //! unclosed template, an open link, a tag with no `>`) degrades to text.
 
+mod hearts;
 mod name_list;
+mod oneoffs;
 mod out;
 
 pub use name_list::name_list_items;
+// `blocks` needs the same "resolve by kind, or keep the name as text" fallback for a bare
+// `{{entity row minimal|…}}` row: one definition, reached from both places.
+pub(crate) use name_list::collectible;
 
 use crate::editions::span_restriction;
 use crate::resolver::{Resolution, Resolver};
@@ -124,6 +129,7 @@ fn step(
         .or_else(|| try_style(rest, out))
         .or_else(|| try_template(src, at, r, d, out, depth))
         .or_else(|| try_link(rest, r, out))
+        .or_else(|| try_external_link(rest, out))
         .or_else(|| try_tag(rest, out))
         .or_else(|| try_entity(rest, d, out))
         .unwrap_or_else(|| text_char(rest, out))
@@ -184,6 +190,24 @@ fn try_link(rest: &str, r: &Resolver, out: &mut Out) -> Option<usize> {
     };
     link(inner, r, out);
     Some(end + 2)
+}
+
+/// `[http://… label]` or `[https://…]`: the label only, the URL never kept. `[url]` with no
+/// label — MediaWiki numbers it `[1]`, `[2]`… — carries nothing worth keeping, so it is
+/// dropped whole, the same as an unread `<ref>` citation. A `[` that closes nothing is text,
+/// same as everywhere else in this scan: the URL only leaks if the bracket never closes, which
+/// does not happen on a well-formed page.
+fn try_external_link(rest: &str, out: &mut Out) -> Option<usize> {
+    let after = rest.strip_prefix('[')?;
+    if !after.starts_with("http://") && !after.starts_with("https://") {
+        return None;
+    }
+    let end = rest.find(']')?;
+    let body = &rest[1..end];
+    if let Some(space) = body.find(char::is_whitespace) {
+        out.buf.push_str(body[space..].trim());
+    }
+    Some(end + 1)
 }
 
 /// An HTML tag: `<br>` is a space, `<ref>…</ref>` disappears whole (without a closing tag only
@@ -279,6 +303,21 @@ fn template(t: &Template, r: &Resolver, d: &mut Diagnostics, out: &mut Out, dept
         // the description with it.
         "book of belial synergy" => synergy("The Book of Belial", t, r, d, out, depth),
         "achievement unlock" => achievement_unlock(t, &arg, r, d, out),
+        "hearts" => hearts::hearts(t, out, d),
+        "heart" => hearts::heart(t, &arg, out, d),
+        "cu" | "curse" => oneoffs::curse(&arg, out),
+        "blindfolded" => oneoffs::blindfolded(out),
+        "mode" => oneoffs::mode(t, r, d, out, depth),
+        "tear delay down" => oneoffs::tear_delay_down(&arg, out),
+        // The wiki's escape for a literal `=` inside a template argument, where a bare one
+        // would be read as introducing a named parameter (`MouseControl{{=}}0`).
+        "=" => out.buf.push('='),
+        // Three templates whose argument is already genuine content and needed nothing beyond
+        // what the unknown-template fallback already does to it — a platform qualifier, an
+        // in-page anchor (kept as its first name; MediaWiki draws the second only as a second
+        // invisible id), a monospace note (no `Style::Code` exists, so it stays plain text).
+        // Modelled here so Decision 10's completeness check stops counting them as unknown.
+        "plat" | "anchor" | "code" => recurse_into_arg(&arg, r, d, out, depth),
         // 204 of the 547 `{{bug|…}}` carry a `dlc`, and until 2026-09-15 this arm recursed
         // into the positional argument and read no named one: a defect that exists in one
         // edition was shown to every reader as theirs. The 130 whose code this parser

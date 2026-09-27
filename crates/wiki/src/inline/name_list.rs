@@ -19,8 +19,9 @@ pub(super) enum NameList {
     /// A boss or character page naming the achievements it unlocks.
     Achievements,
     /// How a transformation page states what counts toward it, the only complete
-    /// statement of that set — the infobox's `items` misses Guppy's trinket. The kind is the
-    /// resolver's namespace, `"i"` or `"t"`.
+    /// statement of that set — the infobox's `items` misses Guppy's trinket. Also Ultra
+    /// Greed's `{{entity table|…}}`, the same comma-list shape naming entities instead: the
+    /// kind is the resolver's namespace, `"i"`, `"t"` or `"e"`.
     Collectibles(&'static str),
 }
 
@@ -30,6 +31,7 @@ impl NameList {
             "achievement text" => Some(NameList::Achievements),
             "collectible table" | "collectible rows" => Some(NameList::Collectibles("i")),
             "trinket table" | "trinket rows" => Some(NameList::Collectibles("t")),
+            "entity table" => Some(NameList::Collectibles("e")),
             _ => None, // allowed: template names are the wiki's open vocabulary
         }
     }
@@ -132,7 +134,16 @@ fn names(t: &Template) -> impl Iterator<Item = &str> {
         .filter(|name| !name.is_empty())
 }
 
-fn collectible(kind: &str, name: &str, r: &Resolver, d: &mut Diagnostics) -> Option<Target> {
+/// A reference under `resolve`'s namespace (`"i"`, `"t"`, `"e"`…), counted where every other
+/// failed lookup is when the name doesn't resolve. `blocks` reaches this too, for the entity
+/// a bare `{{entity row minimal|…}}` row names — the same fallback a `{{e|…}}` reference has,
+/// not a second one written to agree with it.
+pub(crate) fn collectible(
+    kind: &str,
+    name: &str,
+    r: &Resolver,
+    d: &mut Diagnostics,
+) -> Option<Target> {
     match r.resolve(kind, name) {
         Resolution::Target(target) => Some(target),
         Resolution::Concept | Resolution::Unresolved | Resolution::Ignore | Resolution::Unknown => {
