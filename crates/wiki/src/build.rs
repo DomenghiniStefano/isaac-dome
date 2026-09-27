@@ -78,6 +78,7 @@ pub fn build(raw: &Raw, corrections: &Corrections) -> Dataset {
     add_conditions(&mut ds);
     resolve_concepts_to_articles(&mut ds, &r);
     ds.meta.last_known_patch = last_known_patch(&raw.versions);
+    ds.meta.patches = patches_by_page(&raw.versions);
     ds.meta.source = Source {
         name: "The Binding of Isaac: Rebirth Wiki".into(),
         url: HOST.into(),
@@ -244,6 +245,20 @@ fn last_known_patch(versions: &[Row]) -> Option<Patch> {
         .filter_map(|v| Some((v.get("date")?.clone(), v.get("number")?.clone())))
         .max()
         .map(|(date, number)| Patch { number, date })
+}
+
+/// The whole `version` table, keyed by each row's own page title. A row missing `_pageName`,
+/// `number` or `date` is left out rather than filed under a guessed key.
+fn patches_by_page(versions: &[Row]) -> BTreeMap<String, Patch> {
+    versions
+        .iter()
+        .filter_map(|v| {
+            let page = v.get("_pageName")?.clone();
+            let number = v.get("number")?.clone();
+            let date = v.get("date")?.clone();
+            Some((page, Patch { number, date }))
+        })
+        .collect()
 }
 
 #[cfg(test)]

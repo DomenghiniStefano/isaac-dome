@@ -258,6 +258,12 @@ const handlers: Partial<Record<CommandName, Handler>> = {
     return (await wiki()).wikiEntryAnswer(args?.target as Target)
   },
   [Command.WikiItemPools]: async () => (await wiki()).wikiItemPoolsAnswer(),
+  // `null` without an active profile, the way the real command answers "no save chosen" —
+  // never the rejection `whenActive` gives the commands that read a save's own bytes.
+  [Command.WikiProgress]: async (_args, scenario) =>
+    (await wiki()).wikiProgressAnswer(
+      settledProfile(setupFor(scenario)) !== null,
+    ),
   // Search needs no profile, as in the app: what it lacks travels as a diagnostic.
   [Command.Search]: async (args) => {
     const { searchAnswer } = await import('./search')
