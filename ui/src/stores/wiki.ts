@@ -11,6 +11,7 @@ import {
 import type {
   Entry,
   IpcError,
+  PageFacts,
   PageProgress,
   PoolMembershipView,
   Target,
@@ -85,6 +86,14 @@ export const useWikiStore = defineStore(StoreId.Wiki, () => {
   const hasPage = (target: Target): boolean => {
     const key = pageKey(target)
     return key !== null && byKey.value.has(key)
+  }
+
+  // A page's own facts (design decision 3), read off the index the same way `iconFor` reads
+  // its picture: `null` for a target with no key or one the index doesn't list, never a
+  // second copy of the entry's fields.
+  const factsFor = (target: Target): PageFacts | null => {
+    const key = pageKey(target)
+    return key === null ? null : (byKey.value.get(key)?.facts ?? null)
   }
 
   // Built once per `progress` load, the way `byKey` is built once per index load: a `Map`
@@ -171,6 +180,7 @@ export const useWikiStore = defineStore(StoreId.Wiki, () => {
     titleOf,
     iconFor,
     hasPage,
+    factsFor,
     entry,
     pageFailed,
     pageError,
