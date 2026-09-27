@@ -114,4 +114,72 @@
   /* The one you are standing on, out of the seventeen that matched. */
   --color-find-current: #b08900;
   --color-find-current-foreground: #1a1205;
+
+  /* Wiki restyle (card #90): colour as data. Three families, each a `-surface`/
+     `-foreground` pair, never a third "line" token — a chip's border is drawn in its own
+     `-foreground`, the way `Chip`'s variants read it. No alpha modifier anywhere in the
+     three families: this app has exactly one, `--color-overlay`/`--color-grain`, and it
+     stays that way. Every pair holds contrast >= 4.5:1 on the dark theme (checked with the
+     WCAG relative-luminance formula, not eyeballed); the lowest is quality -1 at 4.78:1.
+
+     The game's own recognisable colours where it has one (an edition, a quality tier);
+     Isaac's palette — warm browns and parchment — for the rest. A hue reused across
+     families (items' gold, Afterbirth+'s gold, quality 3's gold) is never the same value
+     twice: the three contexts don't appear interchangeably, but a hero band can show an
+     edition badge and a quality chip together, so each keeps its own shade. */
+
+  /* Edition: the five DLC, in release order, the colour the box art gave each one. */
+  --color-edition-rebirth-surface: #2a0e0b;
+  --color-edition-rebirth-foreground: #f2a08f;
+  --color-edition-afterbirth-surface: #1c2226;
+  --color-edition-afterbirth-foreground: #a9c2d1;
+  --color-edition-afterbirth-plus-surface: #2b230c;
+  --color-edition-afterbirth-plus-foreground: #e0b93f;
+  --color-edition-repentance-surface: #240a0a;
+  --color-edition-repentance-foreground: #d98a86;
+  --color-edition-repentance-plus-surface: #251029;
+  --color-edition-repentance-plus-foreground: #cf8fe0;
+
+  /* Quality: -1 (not in any pool) through 4, grey through bronze, silver, gold to a vivid
+     highlight — never cyan, the one hue `--color-ring` alone is allowed to use. -1 and 0
+     are both grey by the brief's own gradient; -1 sits duller and darker than 0, the way
+     "not rated" reads as less than the lowest real tier. */
+  --color-quality-none-surface: #201a17;
+  --color-quality-none-foreground: #8f8580;
+  --color-quality-low-surface: #221d1a;
+  --color-quality-low-foreground: #b7aca5;
+  --color-quality-bronze-surface: #2b1c10;
+  --color-quality-bronze-foreground: #cf9a5c;
+  --color-quality-silver-surface: #20242a;
+  --color-quality-silver-foreground: #c7d0d8;
+  --color-quality-gold-surface: #2c2410;
+  --color-quality-gold-foreground: #f0cf5e;
+  --color-quality-highlight-surface: #2c1024;
+  --color-quality-highlight-foreground: #ef6fc9;
+
+  /* Category: one accent per landing tile, twelve in all (`WikiCategory`). */
+  --color-category-items-surface: #2a2110;
+  --color-category-items-foreground: #d9b354;
+  --color-category-trinkets-surface: #0f241c;
+  --color-category-trinkets-foreground: #62c9a0;
+  --color-category-achievements-surface: #2a2418;
+  --color-category-achievements-foreground: #e8dcb8;
+  --color-category-bosses-surface: #260c0c;
+  --color-category-bosses-foreground: #e2665c;
+  --color-category-challenges-surface: #2b1c0c;
+  --color-category-challenges-foreground: #e2984a;
+  --color-category-characters-surface: #2a1a1c;
+  --color-category-characters-foreground: #e8a8ab;
+  --color-category-transformations-surface: #211029;
+  --color-category-transformations-foreground: #b98fe8;
+  --color-category-monsters-surface: #1c2410;
+  --color-category-monsters-foreground: #a7c25a;
+  --color-category-cards-and-runes-surface: #0f1c2c;
+  --color-category-cards-and-runes-foreground: #7aa8e0;
+  --color-category-pickups-surface: #2a0c10;
+  --color-category-pickups-foreground: #f06a7c;
+  --color-category-stages-surface: #1e1c1a;
+  --color-category-stages-foreground: #b0a89e;
+  --color-category-versions-surface: #171b20;
+  --color-category-versions-foreground: #94a4b0;
 }

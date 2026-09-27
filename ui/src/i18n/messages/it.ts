@@ -500,6 +500,7 @@ export const it = {
       version: 'Versione',
     },
     revision: 'rev. {revision}',
+    qualityChip: 'Qualità {quality}',
     addedIn: 'Aggiunto in {edition}',
     removedIn: 'Rimosso in {edition}',
     outline: 'In questa pagina',
