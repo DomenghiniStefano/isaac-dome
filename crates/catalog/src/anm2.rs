@@ -61,6 +61,18 @@ pub struct Anm2Frame {
     pub origin: Point,
 }
 
+/// The animation `<Animations DefaultAnimation="…">` names: the pose the game itself opens
+/// on, and what a single still picture of the actor shows when nothing asks for a
+/// particular state. `None` when the file has no `Animations` element, or that element
+/// names none.
+pub fn default_animation(bytes: &[u8]) -> Option<String> {
+    let els = elements(bytes).ok()?;
+    els.iter()
+        .find(|e| e.name == "Animations")
+        .and_then(|e| e.attr("DefaultAnimation"))
+        .map(str::to_string)
+}
+
 /// The sheets the file cites, in declaration order. No production reader: a frame carries its
 /// own sheet (`Anm2Frame::sheet`), and this list is what its tests check that against.
 #[cfg(test)]
@@ -490,6 +502,16 @@ mod tests {
         assert_eq!(f.len(), 1);
         assert_eq!(f[0].index, 1, "the index still counts the frame left out");
         assert_eq!(f[0].sheet, "", "no sheet declared at all");
+    }
+
+    #[test]
+    fn the_default_animation_is_read_from_the_animations_element() {
+        let named: &[u8] = br#"<AnimatedActor><Animations DefaultAnimation="Idle"><Animation Name="Idle"/><Animation Name="Walk"/></Animations></AnimatedActor>"#;
+        assert_eq!(default_animation(named).as_deref(), Some("Idle"));
+        let none: &[u8] =
+            br#"<AnimatedActor><Animations><Animation Name="Idle"/></Animations></AnimatedActor>"#;
+        assert_eq!(default_animation(none), None);
+        assert_eq!(default_animation(b"not xml <<<"), None);
     }
 
     #[test]

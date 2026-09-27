@@ -120,7 +120,7 @@ fn frame_at<'a>(
     })
 }
 
-fn sprite_of(anm2: &str, f: &Anm2Frame) -> SpriteRef {
+pub(crate) fn sprite_of(anm2: &str, f: &Anm2Frame) -> SpriteRef {
     SpriteRef {
         path: sheet_path(anm2, &f.sheet),
         rect: Some(f.rect),

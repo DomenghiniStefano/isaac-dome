@@ -42,6 +42,7 @@ export const kindText: Record<WikiCategory, Message> = {
   [WikiCategory.CardsAndRunes]: 'wiki.kind.cardOrRune',
   [WikiCategory.Pickups]: 'wiki.kind.pickup',
   [WikiCategory.Stages]: 'wiki.kind.stage',
+  [WikiCategory.Versions]: 'wiki.kind.version',
 }
 
 // The id a list row prints under the title: the number the game knows the page by; a boss

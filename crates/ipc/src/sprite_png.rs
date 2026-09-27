@@ -145,6 +145,16 @@ fn encode_rgba(w: u32, h: u32, pixel: &[u8]) -> Option<Vec<u8>> {
     Some(out)
 }
 
+/// A fully transparent canvas of `w`x`h`, for a composed picture with no single sheet of its
+/// own to serve as ground — what `entity_art::compose` hands `overlay` its pieces onto, the
+/// role the completion widget's paper plays for the marks. `None` for a zero size.
+pub fn blank_canvas(w: u32, h: u32) -> Option<Vec<u8>> {
+    if w == 0 || h == 0 {
+        return None;
+    }
+    encode_rgba(w, h, &vec![0u8; (w as usize) * (h as usize) * 4])
+}
+
 /// Lays `pieces` over `base` and encodes the result, which keeps **the base's size**: a
 /// piece is placed on the picture, it never enlarges it.
 ///

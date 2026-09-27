@@ -24,7 +24,7 @@ mod versusscreen;
 mod xml;
 
 pub use achievements::Achievement;
-pub use anm2::{frames as anm2_frames, Anm2Frame};
+pub use anm2::{default_animation as anm2_default_animation, frames as anm2_frames, Anm2Frame};
 pub use bossportraits::Boss;
 pub use catalog::Catalog;
 // The list of sources, public for the tests that check every one is asked for.

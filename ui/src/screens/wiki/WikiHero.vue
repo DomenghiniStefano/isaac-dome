@@ -6,6 +6,7 @@ import WikiFigure from '@/components/wiki/WikiFigure.vue'
 import WikiInline from '@/components/wiki/WikiInline.vue'
 import { WikiFigureSize } from '@/components/wiki/figureSize'
 import { dlcNames } from '@/lib/wiki/dlcNames'
+import { editionAdded, editionRemoved } from '@/lib/wiki/edition'
 import { useMessages } from '@/i18n'
 import type { Entry, Target } from '@/lib/ipc/types'
 import { Dlc } from '@/lib/ipc/types'
@@ -40,6 +41,20 @@ const editions = computed(() =>
     .filter((dlc) => props.entry?.dlc.includes(dlc) === true)
     .map((dlc) => ({ dlc, name: dlcNames[dlc] })),
 )
+
+// Added in / Removed in: the same `dlc` list read as one sentence rather than a badge row.
+// `null` either way is the common case (no restriction, or present since Rebirth) and draws
+// nothing — see `editionAdded`/`editionRemoved`'s own doc for the two null cases each covers.
+const added = computed(() => {
+  const dlc = props.entry?.dlc ?? []
+  const edition = editionAdded(dlc)
+  return edition ? dlcNames[edition] : null
+})
+const removed = computed(() => {
+  const dlc = props.entry?.dlc ?? []
+  const edition = editionRemoved(dlc)
+  return edition ? dlcNames[edition] : null
+})
 
 // The line under the title (`heroSummary.ts`): the entry's description, or on an achievement
 // what it unlocks, else what it asks for.
@@ -121,6 +136,12 @@ const id = computed(() => (props.target ? pageId(props.target) : null))
             class="text-caption text-faint-foreground tabular-nums"
             >{{ t('wiki.revision', { revision: entry.revid }) }}</span
           >
+          <span v-if="added" class="text-caption text-faint-foreground">{{
+            t('wiki.addedIn', { edition: added })
+          }}</span>
+          <span v-if="removed" class="text-caption text-faint-foreground">{{
+            t('wiki.removedIn', { edition: removed })
+          }}</span>
           <span
             v-if="entry === null"
             class="text-caption text-faint-foreground tabular-nums"

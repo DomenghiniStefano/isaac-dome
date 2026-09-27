@@ -46,7 +46,7 @@ fn catalog_with_art() -> Catalog {
 }
 
 fn path(c: &Catalog, t: &Target) -> String {
-    match target_sprite(c, &ipc::for_tests::bosses(c), t) {
+    match target_sprite(c, &ipc::for_tests::bosses(c), None, t) {
         TargetSprite::Found(s) => s.path.clone(),
         other => panic!("expected a sprite for {t:?}, got {other:?}"),
     }
@@ -76,7 +76,12 @@ fn a_trinket_is_a_separate_id_space_from_the_collectibles() {
         "gfx/items/trinkets/t.png"
     );
     assert!(matches!(
-        target_sprite(&c, &ipc::for_tests::bosses(&c), &Target::Item { id: 1 }),
+        target_sprite(
+            &c,
+            &ipc::for_tests::bosses(&c),
+            None,
+            &Target::Item { id: 1 }
+        ),
         TargetSprite::Unknown
     ));
 }
@@ -125,6 +130,7 @@ fn a_boss_page_finds_its_portrait_through_the_entity_id_written_in_the_filename(
             target_sprite(
                 &c,
                 &ipc::for_tests::bosses(&c),
+                None,
                 &Target::Entity {
                     id: 28,
                     variant: 0,
@@ -165,6 +171,7 @@ fn a_portrait_that_does_not_declare_an_entity_is_not_reachable_by_entity() {
         target_sprite(
             &c,
             &ipc::for_tests::bosses(&c),
+            None,
             &Target::Entity {
                 id: 999,
                 variant: 0,
@@ -191,6 +198,7 @@ fn a_challenge_borrows_the_icon_of_the_achievement_it_rewards() {
         target_sprite(
             &c,
             &ipc::for_tests::bosses(&c),
+            None,
             &Target::Challenge { number: 2 }
         ),
         TargetSprite::NoArt
@@ -207,6 +215,7 @@ fn the_targets_the_game_does_not_illustrate_say_so_instead_of_guessing() {
         target_sprite(
             &c,
             &ipc::for_tests::bosses(&c),
+            None,
             &Target::Transformation { id: 1 }
         ),
         TargetSprite::NoArt
@@ -215,6 +224,7 @@ fn the_targets_the_game_does_not_illustrate_say_so_instead_of_guessing() {
         target_sprite(
             &c,
             &ipc::for_tests::bosses(&c),
+            None,
             &Target::Room {
                 name: "Devil Room".into()
             }
@@ -230,6 +240,7 @@ fn the_targets_the_game_does_not_illustrate_say_so_instead_of_guessing() {
         target_sprite(
             &c,
             &ipc::for_tests::bosses(&c),
+            None,
             &Target::Concept {
                 name: "Black Heart".into()
             }
@@ -240,6 +251,7 @@ fn the_targets_the_game_does_not_illustrate_say_so_instead_of_guessing() {
         target_sprite(
             &c,
             &ipc::for_tests::bosses(&c),
+            None,
             &Target::Stage {
                 name: "Depths".into()
             }
@@ -255,6 +267,7 @@ fn an_unknown_id_is_not_the_same_hole_as_a_missing_picture() {
         target_sprite(
             &c,
             &ipc::for_tests::bosses(&c),
+            None,
             &Target::Achievement { id: 900 }
         ),
         TargetSprite::Unknown
@@ -263,6 +276,7 @@ fn an_unknown_id_is_not_the_same_hole_as_a_missing_picture() {
         target_sprite(
             &c,
             &ipc::for_tests::bosses(&c),
+            None,
             &Target::Character { id: 900 }
         ),
         TargetSprite::Unknown
@@ -271,6 +285,7 @@ fn an_unknown_id_is_not_the_same_hole_as_a_missing_picture() {
         target_sprite(
             &c,
             &ipc::for_tests::bosses(&c),
+            None,
             &Target::Challenge { number: 900 }
         ),
         TargetSprite::Unknown
@@ -300,7 +315,7 @@ fn an_empty_catalog_never_panics_and_never_invents() {
     ] {
         assert!(
             !matches!(
-                target_sprite(&empty, &ipc::for_tests::bosses(&empty), &t),
+                target_sprite(&empty, &ipc::for_tests::bosses(&empty), None, &t),
                 TargetSprite::Found(_)
             ),
             "without a catalog nothing resolves: {t:?}"
@@ -324,14 +339,15 @@ fn a_boss_only_the_wiki_names_is_keyed_by_the_dataset_it_is_given() {
         variant: 0,
         subtype: 0,
     };
-    let with_wiki = ipc::boss_keys(&c, Some(wiki::Dataset::embedded().expect("embedded")));
+    let ds = Some(wiki::Dataset::embedded().expect("embedded"));
+    let with_wiki = ipc::boss_keys(&c, ds);
     assert!(matches!(
-        target_sprite(&c, &with_wiki, &chub),
+        target_sprite(&c, &with_wiki, ds, &chub),
         TargetSprite::Found(s) if s.path.ends_with("Portrait_Chub.png")
     ));
     let without = ipc::boss_keys(&c, None);
     assert!(matches!(
-        target_sprite(&c, &without, &chub),
+        target_sprite(&c, &without, None, &chub),
         TargetSprite::Unknown
     ));
 }

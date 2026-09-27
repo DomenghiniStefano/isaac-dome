@@ -8,7 +8,7 @@ import { pageKey } from './pageKey'
 // category's entry lit while a page tab is active.
 //
 // An approximation for two kinds, by construction: `entity` covers both a boss and a common
-// enemy (design decision 2) and `article` covers three landing tiles or none (decision 5),
+// enemy (design decision 2) and `article` covers four landing tiles or none (decision 5),
 // and neither distinction survives in `Target` alone — it is `entry.infobox`'s variant that
 // says which, and only the wiki index still has the entry when it is built
 // (`WikiPageRef.category`, `crates/ipc/src/wiki.rs`). `filterPages` (`listFilter.ts`) reads

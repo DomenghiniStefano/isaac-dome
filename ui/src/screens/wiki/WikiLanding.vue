@@ -12,6 +12,7 @@ import {
 } from '@/components/ui/alert'
 import { Button, ButtonVariant } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import PixelSprite from '@/components/sprite/PixelSprite.vue'
 import ScreenSkeleton from '@/components/data-state/ScreenSkeleton.vue'
 import { SkeletonBlock } from '@/components/data-state/skeletonBlock'
 import {
@@ -58,6 +59,14 @@ const view = computed(() => {
 })
 
 const categories = Object.values(WikiCategory)
+
+// A tile's own picture, when the game gives one (design decision 5): a representative row
+// the backend chose deliberately (`ipc::category_sample`), never "whichever page happens to
+// be first". `null` — no game, or the kind has no picture at all (transformations, stages,
+// version articles) — falls back to the category's plain icon, same as every other sprite
+// in the app (`PixelSprite`'s own `fallback` slot).
+const sampleUrl = (category: WikiCategory): string | null =>
+  wiki.index?.samples.find((s) => s.category === category)?.iconUrl ?? null
 
 // A category card opens its list in the tab, or beside it with Ctrl, as a sidebar entry does.
 const open = (category: WikiCategory, event: MouseEvent) =>
@@ -118,10 +127,17 @@ const open = (category: WikiCategory, event: MouseEvent) =>
             class="h-wiki-tile flex-col items-start justify-end gap-1 border-border tile-wash p-3 hover:border-input [&_svg]:size-7"
             @click="open(category, $event)"
           >
-            <component
-              :is="wikiCategoryIcon[category]"
-              class="mb-auto text-foreground-soft"
-            />
+            <PixelSprite
+              :url="sampleUrl(category)"
+              class="mb-auto grid size-wiki-row-figure place-items-center [&>img]:size-full [&>img]:object-contain"
+            >
+              <template #fallback>
+                <component
+                  :is="wikiCategoryIcon[category]"
+                  class="text-foreground-soft"
+                />
+              </template>
+            </PixelSprite>
             <span class="text-heading text-foreground">{{
               t(wikiCategoryTitle[category])
             }}</span>
