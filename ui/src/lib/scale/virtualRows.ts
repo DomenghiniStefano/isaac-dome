@@ -15,19 +15,24 @@ export interface VisibleRow<T> {
   row: T
 }
 
+// `margin` is the space above the list inside its scroller: zero when the list scrolls on its
+// own, the hero and the filters when the page does. The virtualizer counts offsets from the
+// scroller's top, so a row is placed that much higher, back at its own place in the list.
 export const visibleRows = <T>(
   items: VirtualItemLike[],
   rows: T[],
+  margin = 0,
 ): VisibleRow<T>[] =>
   items.flatMap((item) => {
     const row = rows[item.index]
+    const start = item.start - margin
     return row === undefined
       ? []
       : [
           {
             index: item.index,
-            start: item.start,
-            style: { '--row-start': `${item.start}px` },
+            start,
+            style: { '--row-start': `${start}px` },
             row,
           },
         ]
@@ -36,3 +41,12 @@ export const visibleRows = <T>(
 // The virtualizer's total size is a number of device pixels; the utility that reads it wants a
 // CSS length.
 export const totalHeightPx = (total: number): string => `${total}px`
+
+// A list that scrolls with its page keeps its position as the list's own offset, the same
+// number it keeps when it scrolls on its own: how far the page has scrolled past the list's
+// top, and back.
+export const listScrollTop = (pageTop: number, margin: number): number =>
+  Math.max(0, pageTop - margin)
+
+export const pageScrollTop = (listTop: number, margin: number): number =>
+  listTop + margin
