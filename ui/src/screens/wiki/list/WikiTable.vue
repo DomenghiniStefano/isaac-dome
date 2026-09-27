@@ -22,7 +22,7 @@ import { pageKey } from '@/lib/wiki/pageKey'
 import type { WikiCategory } from '@/router/routeTable'
 import { useWikiStore } from '@/stores/wiki'
 
-// The table (card #90, decision 4): the picture, the name, the id, the edition, every fact
+// The table: the picture, the name, the id, the edition, every fact
 // column `factColumns` gives this category — the same table `FactChips` reads for the card
 // grid's chips, one definition either view draws from — and the save's state. Sorting is the
 // filter bar's own control (`listFacets.ts`'s `wikiSortOrder`); this only marks which column

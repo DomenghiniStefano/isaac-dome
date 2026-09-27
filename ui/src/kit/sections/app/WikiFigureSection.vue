@@ -12,7 +12,7 @@ import KitSection from '../../KitSection.vue'
 
 // No drawing ships in the repo (constraint 3), so `url` is always `null` here, exactly what
 // every machine without the game sees: this is the fallback path, on purpose — the category
-// icon at every size, centred, at half the box (card #90 follow-up: it was neither, on a
+// icon at every size, centred, at half the box (it was neither, on a
 // `Hero`-sized boss with no picture — `PixelSprite`'s own fallback span had no box to centre
 // within, so the icon sat wherever inline flow put it).
 const sizes = Object.values(FigureSize)

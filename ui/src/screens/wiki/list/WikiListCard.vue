@@ -11,7 +11,7 @@ import type { WikiPageRef } from '@/lib/ipc/types'
 import { pageId } from '@/lib/wiki/wikiLabels'
 import { useWikiStore } from '@/stores/wiki'
 
-// One card of the grid (card #90, decision 4): the picture as large as the card, the name,
+// One card of the grid: the picture as large as the card, the name,
 // the id, the edition badge, the kind's own facts as chips (`FactChips` already reads
 // `PageFacts` into them, `factChips.ts`) and the save's state. `limit` keeps a page with a
 // long tag list from pushing the progress badge out of the card.
@@ -30,7 +30,7 @@ const progress = computed(() => wiki.progressFor(props.page.target))
   <Button
     :variant="ButtonVariant.Ghost"
     :size="ButtonSize.Row"
-    class="h-full w-full flex-col items-center justify-start gap-2 border-hairline bg-data p-3 text-center hover:bg-row-hover"
+    class="h-full w-full min-w-0 flex-col items-center justify-start gap-2 overflow-hidden border-hairline bg-data p-3 text-center whitespace-normal hover:bg-row-hover"
     @click="emit('open', $event)"
   >
     <WikiFigure
