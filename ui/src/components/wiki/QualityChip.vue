@@ -4,7 +4,7 @@ import { Chip } from '@/components/ui/chip'
 import { useMessages } from '@/i18n'
 import { toneOfQuality } from '@/lib/wiki/tone'
 
-// An item's quality, coloured the way the catalog rates it (card #90, decision 5): grey
+// An item's quality, coloured the way the catalog rates it: grey
 // through bronze, silver, gold, to the vivid highlight of a 4. `null` — a trinket, or any
 // page that has no quality at all — draws nothing, the same silence `QualityPips` keeps for
 // it; the two are not one component because a pip row and a coloured chip answer different

@@ -1506,7 +1506,15 @@ export type PageFacts =
     }
   | { kind: 'trinket'; tags: Array<string> }
   | { kind: 'achievement'; requirement: string; unlocks: Target | null }
-  | { kind: 'boss'; baseHp: number | null; floors: string }
+  | {
+      kind: 'boss'
+      baseHp: number | null
+      /**
+       * The floors the environment names, once each, in the page's order: the stage
+       * references of the infobox's environment table, never its rooms or notes.
+       */
+      floors: Array<string>
+    }
   | {
       kind: 'challenge'
       character: Target | null
@@ -1538,7 +1546,15 @@ export type PageFacts =
       tainted: boolean
     }
   | { kind: 'transformation'; requires: number | null; contributors: number }
-  | { kind: 'entity'; baseHp: number | null; floors: string }
+  | {
+      kind: 'entity'
+      baseHp: number | null
+      /**
+       * The floors the environment names, once each, in the page's order: the stage
+       * references of the infobox's environment table, never its rooms or notes.
+       */
+      floors: Array<string>
+    }
   | {
       kind: 'article'
       category: ArticleCategory | null

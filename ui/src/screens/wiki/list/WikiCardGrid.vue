@@ -8,7 +8,7 @@ import { pageKey } from '@/lib/wiki/pageKey'
 import WikiListCard from './WikiListCard.vue'
 import { useCardColumns } from './useCardColumns'
 
-// The card grid (card #90, decision 4), virtualized **by row of cards**: `VirtualRows` only
+// The card grid, virtualized **by row of cards**: `VirtualRows` only
 // ever measures rows, the same component the list's own table and Unlock already use, so the
 // pages are chunked into rows here, as many wide as `useCardColumns` says the box holds.
 const props = defineProps<{

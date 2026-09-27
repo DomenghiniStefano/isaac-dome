@@ -18,8 +18,8 @@ const props = defineProps<{
   size: FigureSize
   /**
    * The category to read the fallback icon from, when the caller already knows it precisely
-   * — a landing tile or the hero's mosaic (card #90, decision 8), which draw a category's own
-   * representative picture and not one page's. `categoryOf(target)` (the default below) is an
+   * — a landing tile or a list hero, which draw a category's own representative picture and
+   * not one page's. `categoryOf(target)` (the default below) is an
    * approximation for two kinds: an `entity` always reads as Bosses, so it cannot tell a
    * Monsters tile from a Bosses one, and an `article` reads as no category at all, so it
    * cannot resolve the four article-based tiles (cards & runes, pickups, stages, versions).
@@ -29,8 +29,8 @@ const props = defineProps<{
   category?: WikiCategory
 }>()
 
-// One figure component, everywhere a wiki picture is drawn (card #90, decision 2): the
-// background, the centring and the scale are decided once, here, by what the game draws for
+// One figure component, everywhere a wiki picture is drawn: the background, the centring and
+// the scale are decided once, here, by what the game draws for
 // that kind (DESIGN-BRIEF.md §8) — a 32px sprite scaled up, a painted achievement at its own
 // ratio on the mark paper, or a portrait.
 const Frame = {
@@ -70,8 +70,7 @@ const frame = computed((): Frame => {
 // caller's own `category` wins when given (see its own doc comment for why); otherwise
 // `categoryOf(target)`, which returns `null` for the four kinds it cannot resolve from the
 // target alone (`lib/wiki/category.ts`'s own doc) or when there is no target at all — for
-// those there is no category icon to fall back to, and the plain placeholder is drawn
-// instead, same as everywhere else in the app.
+// those there is no category icon to fall back to, and the box stays empty.
 const fallbackIcon = computed(() => {
   const category =
     props.category ?? (props.target ? categoryOf(props.target) : null)
@@ -94,21 +93,22 @@ const artSize: Record<FigureSize, ArtSize> = {
   [FigureSize.Hero]: ArtSize.Hero,
 }
 
-// The frame every size shares: centred on both axes, in a box lit the way a tile or a band
-// already is (`tile-wash`) or flat like the data beside it (`bg-data`, the card grid's own
-// picture). A portrait fills it; a sprite and a painting sit inside it at their own scale,
-// letterboxed.
+// The box every size shares: centred on both axes and with **no ground of its own** — the
+// picture sits on whatever surface holds it (the tile's colour, the card, the band), since a
+// square behind every sprite reads as a frame around nothing. Only a painting brings its paper
+// (`AchievementArt`), which it needs to be read at all. A portrait fits the box keeping its
+// ratio; a sprite and a painting sit inside it at their own scale.
 const box: Record<FigureSize, string> = {
-  [FigureSize.Row]: 'size-figure-row border-hairline tile-wash',
-  [FigureSize.Card]: 'size-figure-card border-hairline bg-data',
-  [FigureSize.Tile]: 'size-figure-tile border-border tile-wash',
-  [FigureSize.Hero]: 'size-figure-hero border-border tile-wash',
-}
-const portrait: Record<FigureSize, string> = {
   [FigureSize.Row]: 'size-figure-row',
   [FigureSize.Card]: 'size-figure-card',
   [FigureSize.Tile]: 'size-figure-tile',
   [FigureSize.Hero]: 'size-figure-hero',
+}
+const portrait: Record<FigureSize, string> = {
+  [FigureSize.Row]: 'size-figure-row object-contain',
+  [FigureSize.Card]: 'size-figure-card object-contain',
+  [FigureSize.Tile]: 'size-figure-tile object-contain',
+  [FigureSize.Hero]: 'size-figure-hero object-contain',
 }
 
 // A pixel sprite is drawn at the largest *integer* multiple of its own 32px that still fits
@@ -126,39 +126,29 @@ const spriteSizePx = computed(
   <!-- One figure per page: a missing one is the category icon, never a broken image and
        never another page's picture. Every size gets the same frame, so a picture reads as
        the same object in a row, a card and a band. -->
-  <span :class="cn('grid shrink-0 place-items-center border', box[size])">
+  <span :class="cn('grid shrink-0 place-items-center', box[size])">
     <AchievementArt
       v-if="frame === Frame.Painting"
       :url="url"
       :size="artSize[size]"
     >
       <template v-if="fallbackIcon" #fallback>
-        <component
-          :is="fallbackIcon"
-          :class="cn(fallbackIconClass[size], 'text-foreground-soft')"
-        />
+        <component :is="fallbackIcon" :class="fallbackIconClass[size]" />
       </template>
     </AchievementArt>
     <PixelSprite
       v-else-if="frame === Frame.Sprite"
       :url="url"
-      placeholder
       :style="{ '--figure-sprite-size': `${spriteSizePx}px` }"
       class="size-(--figure-sprite-size)"
     >
       <template v-if="fallbackIcon" #fallback>
-        <component
-          :is="fallbackIcon"
-          :class="cn(fallbackIconClass[size], 'text-foreground-soft')"
-        />
+        <component :is="fallbackIcon" :class="fallbackIconClass[size]" />
       </template>
     </PixelSprite>
-    <PixelSprite v-else :url="url" placeholder :class="portrait[size]">
+    <PixelSprite v-else :url="url" :class="portrait[size]">
       <template v-if="fallbackIcon" #fallback>
-        <component
-          :is="fallbackIcon"
-          :class="cn(fallbackIconClass[size], 'text-foreground-soft')"
-        />
+        <component :is="fallbackIcon" :class="fallbackIconClass[size]" />
       </template>
     </PixelSprite>
   </span>

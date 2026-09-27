@@ -50,7 +50,9 @@ pub enum PageFacts {
     },
     Boss {
         base_hp: Option<u32>,
-        floors: String,
+        /// The floors the environment names, once each, in the page's order: the stage
+        /// references of the infobox's environment table, never its rooms or notes.
+        floors: Vec<String>,
     },
     Challenge {
         character: Option<Target>,
@@ -82,7 +84,9 @@ pub enum PageFacts {
     },
     Entity {
         base_hp: Option<u32>,
-        floors: String,
+        /// The floors the environment names, once each, in the page's order: the stage
+        /// references of the infobox's environment table, never its rooms or notes.
+        floors: Vec<String>,
     },
     Article {
         category: Option<ArticleCategory>,
@@ -99,6 +103,30 @@ fn plain_opt(inline: &[wiki::Inline]) -> Option<String> {
     let text = plain(inline);
     let trimmed = text.trim();
     (!trimmed.is_empty()).then(|| trimmed.to_string())
+}
+
+/// The stages `inline` refers to, once each, in the order they first appear, looking inside
+/// edition-only runs. The environment field is a table the wiki flattens into one run of text
+/// and references glued together; its stage references are the floors, the rest is rooms and
+/// notes a list of floors has no place for.
+fn stage_names(inline: &[wiki::Inline]) -> Vec<String> {
+    let mut names: Vec<String> = Vec::new();
+    collect_stages(inline, &mut names);
+    names
+}
+
+fn collect_stages(inline: &[wiki::Inline], names: &mut Vec<String>) {
+    for node in inline {
+        match node {
+            wiki::Inline::Ref {
+                target: Target::Stage { name },
+                ..
+            } if !names.contains(name) => names.push(name.clone()),
+            wiki::Inline::Edition { inline, .. } => collect_stages(inline, names),
+            wiki::Inline::Ref { .. } | wiki::Inline::Text { .. } | wiki::Inline::Concept { .. } => {
+            }
+        }
+    }
 }
 
 /// The wiki convention this crate has measured on the committed snapshot: a Tainted form's
@@ -220,7 +248,7 @@ fn boss_facts(infobox: &Infobox) -> PageFacts {
     );
     PageFacts::Boss {
         base_hp: *base_hp,
-        floors: plain(environment),
+        floors: stage_names(environment),
     }
 }
 
@@ -313,7 +341,7 @@ fn entity_facts(infobox: &Infobox) -> PageFacts {
     );
     PageFacts::Entity {
         base_hp: *base_hp,
-        floors: plain(environment),
+        floors: stage_names(environment),
     }
 }
 
@@ -516,7 +544,54 @@ mod tests {
             facts(&e, &empty_dataset()),
             PageFacts::Boss {
                 base_hp: Some(300),
-                floors: String::new(),
+                floors: vec![],
+            }
+        );
+    }
+
+    fn floor(name: &str) -> Inline {
+        Inline::Ref {
+            target: Target::Stage { name: name.into() },
+            label: name.into(),
+        }
+    }
+
+    #[test]
+    fn floors_are_the_stages_the_environment_names_once_each_in_order() {
+        // Monstro's shape on the snapshot: stage refs glued together, with rooms, notes and
+        // an edition-only run in between, and a stage repeated further down the table.
+        let environment = vec![
+            text("Boss ").remove(0),
+            floor("Basement"),
+            floor("Burning Basement"),
+            Inline::Ref {
+                target: Target::Room {
+                    name: "boss rush".into(),
+                },
+                label: "boss rush".into(),
+            },
+            text(" Double Trouble ").remove(0),
+            Inline::Edition {
+                only: vec![wiki::Dlc::Repentance],
+                inline: vec![floor("Caves")],
+            },
+            floor("Basement"),
+        ];
+        let e = entry(
+            "Monstro",
+            Infobox::Boss {
+                base_hp: Some(250),
+                stage_hp: vec![],
+                variant: None,
+                environment,
+                pool: vec![],
+            },
+        );
+        assert_eq!(
+            facts(&e, &empty_dataset()),
+            PageFacts::Boss {
+                base_hp: Some(250),
+                floors: vec!["Basement".into(), "Burning Basement".into(), "Caves".into()],
             }
         );
     }
