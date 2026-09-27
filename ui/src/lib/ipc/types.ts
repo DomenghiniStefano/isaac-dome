@@ -1478,14 +1478,94 @@ export type WikiPageCategory =
   (typeof WikiPageCategory)[keyof typeof WikiPageCategory]
 
 /**
+ * A version article's own patch, read from the wiki's `version` Cargo table
+ * (`wiki::Meta::patches`), matched by the article's own title. Distinct from `wiki::PatchView`
+ * (which names the *whole dataset's* most recent patch): this one is a fact about a single
+ * page.
+ */
+export type VersionFacts = { number: string; date: string }
+
+/**
+ * One page's own facts, one variant per infobox kind (CLAUDE.md: fieldless enums are bare
+ * strings, but every variant here carries data, so it is tagged).
+ */
+export type PageFacts =
+  | {
+      kind: 'item'
+      quality: number | null
+      /**
+       * From the template name (`CollectibleTemplate::Activated`): the wiki has two
+       * separate infobox templates, `infobox passive collectible` and `infobox activated
+       * collectible`.
+       */
+      activated: boolean
+      recharge: string | null
+      shopPrice: string | null
+      devilPrice: string | null
+      tags: Array<string>
+    }
+  | { kind: 'trinket'; tags: Array<string> }
+  | { kind: 'achievement'; requirement: string; unlocks: Target | null }
+  | { kind: 'boss'; baseHp: number | null; floors: string }
+  | {
+      kind: 'challenge'
+      character: Target | null
+      goal: string
+      blindfolded: boolean
+      curse: string
+    }
+  | {
+      kind: 'character'
+      /**
+       * Already plain text on `Infobox::Character` for every field but `health`: the
+       * template-default fill (design decision 4 of `2026-09-26-wiki-complete-design.md`)
+       * happens once, at build time, in the wiki crate — `facts` only carries what the
+       * entry already states.
+       */
+      health: string
+      damage: string
+      tears: string
+      range: string
+      speed: string
+      luck: string
+      shotSpeed: string
+      /**
+       * Read from the page's own title, not guessed: every Tainted form's title on the
+       * committed snapshot starts with "Tainted " (measured on `dataset/wiki/characters.json`,
+       * 2026-09-27 — ids 21 through 40, "Tainted Isaac" through "Tainted Soul"), and the
+       * infobox itself states no such flag.
+       */
+      tainted: boolean
+    }
+  | { kind: 'transformation'; requires: number | null; contributors: number }
+  | { kind: 'entity'; baseHp: number | null; floors: string }
+  | {
+      kind: 'article'
+      category: ArticleCategory | null
+      /**
+       * Only for `category: Some(Version)`, and only when the wiki's own `version` table
+       * names this exact page.
+       */
+      version: VersionFacts | null
+    }
+
+/**
  * One page of the dataset: its identity, its own title, the link to its figure when
- * the catalog draws one, and which landing tile / sidebar category it belongs to.
+ * the catalog draws one, which landing tile / sidebar category it belongs to, the
+ * editions it exists in, and its own facts (design decision 3,
+ * `2026-09-27-wiki-restyle-design.md`).
  */
 export type WikiPageRef = {
   target: Target
   title: string
   iconUrl: string | null
   category: WikiPageCategory | null
+  /**
+   * The entry's own `dlc` (`Entry::dlc`), carried up so a list can show and filter by
+   * edition without a second lookup into the dataset per row.
+   */
+  dlc: Array<Dlc>
+  facts: PageFacts
 }
 
 /**
@@ -1511,6 +1591,31 @@ export type WikiIndex = {
    */
   samples: Array<CategorySample>
 }
+
+/**
+ * One page's state, one variant per kind decision 6's table gives any.
+ */
+export type PageProgress =
+  | { kind: 'achievement'; done: boolean }
+  | {
+      kind: 'item'
+      collected: boolean | null
+      unlocked: boolean | null
+      unlockedBy: number | null
+    }
+  | { kind: 'unlockable'; unlocked: boolean; unlockedBy: number }
+  | {
+      kind: 'character'
+      unlocked: boolean | null
+      marksDone: number
+      marksTotal: number
+    }
+  | { kind: 'challenge'; state: ChallengeStateView }
+  | { kind: 'bestiary'; met: number; killed: number; killedYou: number }
+
+export type PageProgressEntry = { target: Target; progress: PageProgress }
+
+export type WikiProgress = { pages: Array<PageProgressEntry> }
 
 /**
  * One pool the installed game lists a collectible in.

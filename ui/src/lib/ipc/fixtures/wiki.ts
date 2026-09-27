@@ -2,12 +2,16 @@ import type {
   CategorySample,
   Entry,
   ExtractionReport,
+  PageFacts,
+  PageProgress,
+  PageProgressEntry,
   PoolMembershipView,
   Target,
   UnlockView,
   WikiIndex,
   WikiInfo,
   WikiPageRef,
+  WikiProgress,
 } from '../types'
 import { WikiPageCategory } from '../types'
 import { categoryOf } from '@/lib/wiki/category'
@@ -208,6 +212,59 @@ const categorySamples: CategorySample[] = Object.values(WikiPageCategory).map(
   (category) => ({ category, iconUrl: null }),
 )
 
+// This fixture's `Page` carries only an identity and a title, never an infobox: there is no
+// wikitext to derive a real `PageFacts` from. Every field reads as "not stated" — `null`,
+// `false`, `''`, `[]` — the same shape a page with an empty infobox gets from the real
+// `facts()`, never an invented value. Only the kinds `wikiPages()` ever produces are named;
+// the rest fall to the `article` shape with no category, since this fixture carries no
+// article at all.
+const factsOf = (target: Target): PageFacts => {
+  switch (target.kind) {
+    case 'item':
+      return {
+        kind: 'item',
+        quality: null,
+        activated: false,
+        recharge: null,
+        shopPrice: null,
+        devilPrice: null,
+        tags: [],
+      }
+    case 'trinket':
+      return { kind: 'trinket', tags: [] }
+    case 'achievement':
+      return { kind: 'achievement', requirement: '', unlocks: null }
+    case 'entity':
+      return { kind: 'boss', baseHp: null, floors: '' }
+    case 'challenge':
+      return {
+        kind: 'challenge',
+        character: null,
+        goal: '',
+        blindfolded: false,
+        curse: '',
+      }
+    case 'character':
+      return {
+        kind: 'character',
+        health: '',
+        damage: '',
+        tears: '',
+        range: '',
+        speed: '',
+        luck: '',
+        shotSpeed: '',
+        tainted: false,
+      }
+    case 'transformation':
+    case 'stage':
+    case 'room':
+    case 'concept':
+    case 'article':
+      return { kind: 'article', category: null, version: null }
+  }
+}
+
 export const wikiIndexAnswer = ({ withWiki }: WikiAnswerOptions): WikiIndex => {
   if (!withWiki) return { info: missing, pages: [], samples: [] }
   const list = wikiPages()
@@ -225,6 +282,9 @@ export const wikiIndexAnswer = ({ withWiki }: WikiAnswerOptions): WikiIndex => {
       // about): this fixture's only `entity` pages are real bosses and it carries no
       // article at all, so the ambiguity that function can't resolve never arises.
       category: categoryOf(p.target),
+      // No fixture ever recorded a page's editions: the same "not stated" `facts` gets.
+      dlc: [],
+      facts: factsOf(p.target),
     }
   })
   return { info: infoOf(list), pages: refs, samples: categorySamples }
@@ -255,3 +315,59 @@ export const extractionReportAnswer = (): ExtractionReport | undefined =>
 // have a source for. So the pools row reads as it does on a machine with no game installed,
 // with or without the game shown elsewhere: `null`, absent rather than wrong.
 export const wikiItemPoolsAnswer = (): PoolMembershipView[] | null => null
+
+// One page's progress, from what this fixture actually has: an achievement's `done` is the
+// recorded unlock payload's own (the same fact `wikiConditions` reads), everything else this
+// fixture has no recorded save for reads as a plain, uncommitted state — never invented as
+// "0 of N" the way the real command never would either. `null` for a kind this fixture
+// carries no gate for at all (trinkets) or the kind states nothing about (decision 6's table).
+const progressOf = (
+  target: Target,
+  doneById: Map<number, boolean>,
+): PageProgress | null => {
+  switch (target.kind) {
+    case 'achievement':
+      return { kind: 'achievement', done: doneById.get(target.id) ?? false }
+    case 'item':
+      return {
+        kind: 'item',
+        collected: null,
+        unlocked: null,
+        unlockedBy: null,
+      }
+    case 'entity':
+      return { kind: 'bestiary', met: 0, killed: 0, killedYou: 0 }
+    case 'challenge':
+      return { kind: 'challenge', state: { kind: 'available' } }
+    case 'character':
+      return { kind: 'character', unlocked: true, marksDone: 0, marksTotal: 12 }
+    case 'trinket':
+    case 'transformation':
+    case 'stage':
+    case 'room':
+    case 'concept':
+    case 'article':
+      return null
+  }
+}
+
+// The save's state for every page this fixture's `wikiPages()` lists. No profile chosen
+// answers `null`, the same "no save" the real command answers — never the rejection the
+// commands that read a save's own bytes reject with.
+export const wikiProgressAnswer = (
+  hasProfile: boolean,
+): WikiProgress | null => {
+  if (!hasProfile) return null
+  const doneById = new Map<number, boolean>(
+    (Object.values(unlocks)[0]?.nodes ?? []).flatMap((node) =>
+      node.achievement.kind === 'known'
+        ? [[node.achievement.id, node.done] as const]
+        : [],
+    ),
+  )
+  const pages: PageProgressEntry[] = wikiPages().flatMap((p) => {
+    const progress = progressOf(p.target, doneById)
+    return progress ? [{ target: p.target, progress }] : []
+  })
+  return { pages }
+}

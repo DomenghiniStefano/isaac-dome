@@ -92,3 +92,33 @@ pub fn search(
         icon_url,
     ))
 }
+
+/// The save's state for every wiki page that has one (design decision 6,
+/// `2026-09-27-wiki-restyle-design.md`). `None` when no save is chosen — never cached, the
+/// same rule every other command reads `active_save` under: a profile picked while the wiki
+/// is open has to show up the next time this is asked, not after a restart.
+#[tauri::command]
+pub fn wiki_progress(
+    app: AppHandle,
+    state: tauri::State<'_, CatalogState>,
+    resources: tauri::State<'_, ResourcesState>,
+) -> Result<Option<ipc::WikiProgress>, IpcError> {
+    let catalog = catalog_now(&app, &resources, &state);
+    let Ok((_, save)) = active_save(&app) else {
+        return Ok(None);
+    };
+    let achievements = save.flags(Kind::Achievements);
+    let items = save.flags(Kind::Items);
+    let challenges = save.flags(Kind::Challenges);
+    let counters = save.u32s(Kind::Counters);
+    let bestiary = save.bestiary_tallies();
+    Ok(Some(ipc::wiki_progress(ipc::WikiProgressInputs {
+        dataset: wiki::Dataset::embedded(),
+        catalog,
+        achievements: achievements.as_deref(),
+        items: items.as_deref(),
+        challenges: challenges.as_deref(),
+        counters: counters.as_deref(),
+        bestiary: bestiary.as_ref(),
+    })))
+}

@@ -184,11 +184,13 @@ fn challenge_rows(
         .collect()
 }
 
-/// The two sections a row is read against, either of which may not have been read.
+/// The two sections a row is read against, either of which may not have been read. Shared
+/// with `wiki_progress`, which reads the same gating logic (`state_of`) for a page's own
+/// challenge state.
 #[derive(Clone, Copy)]
-struct Profile<'a> {
-    challenges: Option<&'a [bool]>,
-    achievements: Option<&'a [bool]>,
+pub(crate) struct Profile<'a> {
+    pub(crate) challenges: Option<&'a [bool]>,
+    pub(crate) achievements: Option<&'a [bool]>,
 }
 
 fn challenge_row(
@@ -224,7 +226,7 @@ fn challenge_row(
 
 /// Unread is `Unknown`, never "not done"; a challenge not done is available when every
 /// achievement gating it is done, and blocked by the ones that are not.
-fn state_of(ch: &catalog::Challenge, profile: Profile<'_>) -> ChallengeStateView {
+pub(crate) fn state_of(ch: &catalog::Challenge, profile: Profile<'_>) -> ChallengeStateView {
     let missing: Vec<u32> = ch
         .unlocked_by
         .iter()

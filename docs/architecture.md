@@ -26,7 +26,7 @@ that takes, what the screens are, and what it takes to build and check the thing
 > just below are the tripwire — if one of them is wrong, so is the drawing.
 
 Counted at that commit, and every number below is derived from the code, not from prose:
-**16 crates**, **42 Tauri commands**, **6 events**, **16 routes**, **6 store migrations**.
+**16 crates**, **43 Tauri commands**, **6 events**, **16 routes**, **6 store migrations**.
 
 ---
 
@@ -67,10 +67,10 @@ flowchart LR
   end
 
   ipc["ipc<br/>view-models — the only contract"]
-  app["crates/app<br/>41 commands, 6 events"]
+  app["crates/app<br/>43 commands, 6 events"]
 
   subgraph vue["Vue — never touches the disk"]
-     app -->|"invoke — 41 commands"| wrappers["lib/ipc/*.ts<br/>typed wrappers, one call()"]
+     app -->|"invoke — 43 commands"| wrappers["lib/ipc/*.ts<br/>typed wrappers, one call()"]
     stores["Pinia stores"]
     screens["17 screens"]
   end
@@ -113,7 +113,7 @@ flowchart LR
   logwatch --> app
   github -.->|"only if the switch is on,<br/>signature checked before install"| app
 
-  app -->|"invoke — 41 commands"| wrappers
+  app -->|"invoke — 43 commands"| wrappers
   app -.->|"6 events, no payload"| wrappers
   ipc -.->|"pnpm ipc:types, build time"| wrappers
   wrappers --> stores
@@ -141,7 +141,7 @@ the typed wrappers in `ui/src/lib/ipc/`, and every wrapper goes through the sing
 `SearchScreen.vue` is today the only screen that reaches a wrapper directly; every other one
 stops at a store. `pnpm scan` is what keeps a component from taking the shortcut.
 
-**Pull, then a nudge.** The 41 commands are pull: a window asks, the backend answers. The 6
+**Pull, then a nudge.** The 43 commands are pull: a window asks, the backend answers. The 6
 events (`profile-changed`, `settings-changed`, `plan-changed`, `runs-changed`, `roll-changed`,
 `update-changed`) are the nudge, and they carry **no payload** on purpose — a payload would be a copy of state the
 next command could contradict. A second window only ever learns of a write it did not make this
@@ -294,7 +294,7 @@ outside it.
 | Runs | `/tool/runs` | tool | `views` | `runs` |
 | Live | `/tool/live` | tool | `views` | `live` |
 | Floor | `/tool/floor` | tool | `floor` | `floor_candidates`, `room_icons` |
-| Wiki | `/wiki` | wiki | `wiki`, `views`, `queue` | `wiki_entry`, `wiki_item_pools`, `wiki_index`, and `graph_views` when nobody has read the graph in this window |
+| Wiki | `/wiki` | wiki | `wiki`, `views`, `queue` | `wiki_entry`, `wiki_item_pools`, `wiki_index`, `wiki_progress`, and `graph_views` when nobody has read the graph in this window |
 | Profile | `/settings/profile` | settings | `profile` | `setup_state`, `select_profile`, `save_summary`, `completion` |
 | Appearance | `/settings/appearance` | settings | `settings` | the six below |
 | Background | `/settings/background` | settings | `settings` | the six below |
