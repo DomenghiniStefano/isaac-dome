@@ -62,6 +62,7 @@ const HANDLED: &[&str] = &[
     "dlc+",
     "dlc-",
     "dlcalt",
+    "dlcmap",
     "dlcmap slideshow",
     "e",
     "entity row minimal",

@@ -2,7 +2,7 @@
 
 use std::collections::BTreeMap;
 
-use crate::editions::declared_range;
+use crate::editions::{declared_range, Editions};
 use crate::inline::parse_inline;
 use crate::resolver::Resolver;
 use crate::template::{parse_template_at, template_segments, Segment, Template};
@@ -362,12 +362,12 @@ fn challenge_from(ib: &RawInfobox, r: &Resolver, d: &mut Diagnostics) -> Infobox
 fn character_from(ib: &RawInfobox, r: &Resolver, d: &mut Diagnostics) -> Infobox {
     Infobox::Character {
         health: inline(ib, "health", r, d),
-        damage: stat(ib, "damage", r),
-        tears: stat(ib, "tears", r),
-        range: stat(ib, "range", r),
-        speed: stat(ib, "speed", r),
-        luck: stat(ib, "luck", r),
-        shot_speed: stat(ib, "shot speed", r),
+        damage: stat(ib, "damage", r, d),
+        tears: stat(ib, "tears", r, d),
+        range: stat(ib, "range", r, d),
+        speed: stat(ib, "speed", r, d),
+        luck: stat(ib, "luck", r, d),
+        shot_speed: stat(ib, "shot speed", r, d),
         pickups: inline(ib, "pickups", r, d),
         collectibles: inline(ib, "collectibles", r, d),
         parent: r.by_page_title(param(ib, "parent")),
@@ -380,14 +380,51 @@ fn character_from(ib: &RawInfobox, r: &Resolver, d: &mut Diagnostics) -> Infobox
 /// `Raw::templates` had no `"Infobox character"` entry (no template-defaults fetch) or it
 /// didn't parse in the shape `stat_defaults` expects — either way this degrades to `text`'s
 /// own empty string, today's behaviour.
-fn stat(ib: &RawInfobox, name: &str, r: &Resolver) -> String {
+///
+/// Either way the value is wikitext — `{{dlcalt|23.75|r=6.5}}` inside `{{dlcmap|…}}` for a
+/// value that changed between editions, `<br>` for a second line — and is read as one line of
+/// text for the edition the app is built for (`current_text`).
+fn stat(ib: &RawInfobox, name: &str, r: &Resolver, d: &mut Diagnostics) -> String {
     let declared = text(ib, name);
-    if !declared.is_empty() {
-        return declared;
+    let raw = if declared.is_empty() {
+        r.character_stat_default(name).unwrap_or_default()
+    } else {
+        declared.as_str()
+    };
+    current_text(&parse_inline(raw, r, d))
+}
+
+/// The edition a stat is read as: the one the app is built for. A value the wiki gives for
+/// several editions keeps the part that holds in this one.
+const CURRENT_EDITION: Dlc = Dlc::RepentancePlus;
+
+/// `inline` as plain text, keeping only the edition-bound runs that hold in
+/// [`CURRENT_EDITION`], whitespace collapsed to single spaces and trimmed.
+///
+/// A kept run loses its leading whitespace: in a stat it is always the separator `{{dlcalt}}`
+/// writes before each alternative, which the page needs between two values and a single value
+/// does not (`3.5 (*{{dlcalt|1.20|r=1.40}})` reads `3.5 (*1.40)`, not `3.5 (* 1.40)`).
+fn current_text(inline: &[Inline]) -> String {
+    let mut out = String::new();
+    push_current(inline, &mut out);
+    out.split_whitespace().collect::<Vec<_>>().join(" ")
+}
+
+fn push_current(inline: &[Inline], out: &mut String) {
+    for node in inline {
+        match node {
+            Inline::Edition { only, inline } => {
+                if Editions::of(only).contains(CURRENT_EDITION) {
+                    let mut run = String::new();
+                    push_current(inline, &mut run);
+                    out.push_str(run.trim_start());
+                }
+            }
+            Inline::Text { .. } | Inline::Ref { .. } | Inline::Concept { .. } => {
+                out.push_str(&crate::plain(std::slice::from_ref(node)));
+            }
+        }
     }
-    r.character_stat_default(name)
-        .map(str::to_string)
-        .unwrap_or_default()
 }
 
 /// The six base stats `Template:Infobox character` declares a default for, each on its own
