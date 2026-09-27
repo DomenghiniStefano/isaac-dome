@@ -77,9 +77,9 @@
   --spacing-row-wiki: 4.5rem;
   /* A category list's card grid: the card's own width, wide enough
      that the id, the edition badge and a chip or two fit under the `--spacing-figure-card`
-     picture without wrapping every word; and one row of that grid, tall enough for the
-     picture, the name, the id, the badge, two rows of chips and two rows of save badges (a
-     boss's met, killed and killed-you wrap to two in a card this wide). `rows.ts`'s
+     picture without wrapping every word; and the estimate of one row of that grid, before the
+     row is measured — each row takes the height of its tallest card (`VirtualRows`'
+     `measure`), since a boss's chips and save badges and an item's differ. `rows.ts`'s
      `wikiCardPx` and `rowWikiCardPx` hold the same two numbers on the TypeScript side, for
      `useCardColumns` and the virtualizer. */
   --spacing-wiki-card: 12rem;

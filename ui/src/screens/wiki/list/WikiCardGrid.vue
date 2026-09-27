@@ -46,7 +46,7 @@ const rowVars = (start: string) => ({
   <div ref="box" class="flex flex-col">
     <VirtualRows
       v-if="rows.length > 0"
-      v-slot="{ visible }"
+      v-slot="{ visible, measure }"
       :rows="rows"
       :row-px="rowWikiCardPx"
       :offset="offset"
@@ -55,6 +55,8 @@ const rowVars = (start: string) => ({
       <div
         v-for="{ index, style, row } in visible"
         :key="index"
+        :ref="measure"
+        :data-index="index"
         :style="{ ...style, ...rowVars(style['--row-start']) }"
         class="absolute inset-x-0 top-0 grid translate-y-(--row-start) grid-cols-(--wiki-grid-columns) gap-3 px-3 pb-3"
       >
