@@ -12,7 +12,7 @@ export const SpriteNativePx = 32
 export const FigureBoxPx: Record<FigureSize, number> = {
   [FigureSize.Row]: 64, // --spacing-figure-row: 4rem
   [FigureSize.Card]: 128, // --spacing-figure-card: 8rem
-  [FigureSize.Tile]: 96, // --spacing-figure-tile: 6rem
+  [FigureSize.Tile]: 160, // --spacing-figure-tile: 10rem
   [FigureSize.Hero]: 192, // --spacing-figure-hero: 12rem
 }
 

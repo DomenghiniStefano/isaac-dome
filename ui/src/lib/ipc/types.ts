@@ -1575,6 +1575,19 @@ export type WikiPageRef = {
 export type CategorySample = {
   category: WikiPageCategory
   iconUrl: string | null
+  /**
+   * The game thing the picture is of, when `category_sample` names one at all: `None` only
+   * for the three categories with no picture at all (transformations, stages, versions) —
+   * whether the picture actually draws on this machine is `icon_url`'s question, not this
+   * one; `target` is the *choice*, unaffected by whether the catalog is even there.
+   * **Not always a wiki page**:
+   * the two "raw" choices (cards and runes, pickups) compose a picture from an
+   * `entities2.xml` row nobody filed a page under (`category_sample`'s own doc comment), and
+   * this still names that row as a `Target::Entity` — honest about *what game thing* the
+   * picture is of, never a promise that opening it finds a page. The frontend reads it only
+   * to pick the picture's frame (sprite, painting or portrait) and never to navigate.
+   */
+  target: Target | null
 }
 
 /**

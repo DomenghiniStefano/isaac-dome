@@ -62,13 +62,16 @@
   --spacing-wiki-hero: 8rem;
   /* `WikiFigure`'s one frame, four sizes (card #90, decision 2): the list row, the card
      grid, the landing tile, and the page's own band. Each is a whole multiple of the game's
-     32px sprite at scale 100 — 2x, 4x, 3x, 6x — so `integerScale` (`figureScale.ts`) always
+     32px sprite at scale 100 — 2x, 4x, 5x, 6x — so `integerScale` (`figureScale.ts`) always
      fills the box exactly for a sprite; a portrait or an achievement painting fits inside it
      at its own aspect instead. Larger than every size it replaces, per the owner's request
-     that a figure read before anything else does. */
+     that a figure read before anything else does. `-tile` raised from 4x to 5x (only the
+     landing's own tile uses it — grep confirms): the owner asked for the picture to fill most
+     of the tile ("più le immagini occupano meglio è"), and at 4x it read closer to the name
+     and count under it than to the thing the tile is about. */
   --spacing-figure-row: 4rem;
   --spacing-figure-card: 8rem;
-  --spacing-figure-tile: 6rem;
+  --spacing-figure-tile: 10rem;
   --spacing-figure-hero: 12rem;
   /* The column that stays beside a page's text: the card, the index of its sections, and the
      provenance. Measured on the character sheet, the widest of the seven — six stats in two
@@ -86,9 +89,6 @@
      in its hero band, which does not go through `WikiFigure` (card #90, Stream B — that
      screen is rebuilt in Stream D). */
   --spacing-wiki-row-figure: 3rem;
-  /* A category's tile on the landing: tall enough that the icon leads and the two lines of
-     text sit under it, instead of three things competing on one line. */
-  --spacing-wiki-tile: 7rem;
   /* Unlock's table (Schermate.dc.html): the drawing column, the state badge column, the
      fan-out column, the add-to-the-queue column. */
   --spacing-unlock-art: 4rem;

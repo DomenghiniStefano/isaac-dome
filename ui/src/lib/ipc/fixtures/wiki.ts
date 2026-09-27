@@ -206,10 +206,12 @@ export interface WikiAnswerOptions {
 
 // One sample per landing tile, null like every picture this fixture draws (the development
 // server has no copy of the game to cut a sprite from — see `refs` below for the same
-// reasoning). What the Kit page checks here is the fallback the tile draws without one, the
-// state every category is actually in on a machine with no game installed.
+// reasoning). `target` is `null` too: this fixture never runs the real `category_sample`
+// choice, so it has none to report, the same "not modelled" reading every other field here
+// gets. What the Kit page checks here is the fallback the tile draws without one, the state
+// every category is actually in on a machine with no game installed.
 const categorySamples: CategorySample[] = Object.values(WikiPageCategory).map(
-  (category) => ({ category, iconUrl: null }),
+  (category) => ({ category, iconUrl: null, target: null }),
 )
 
 // This fixture's `Page` carries only an identity and a title, never an infobox: there is no
