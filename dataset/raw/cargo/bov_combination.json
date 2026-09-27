@@ -1,0 +1,658 @@
+[
+  {
+    "collectible": "A Pony",
+    "description": "Spawns wisps in the middle ring, looking like \"A Pony\". The wisps charge in the direction Isaac shoots instead of firing tears. While charging, the wisps deal contact damage equal to 40% of Isaac's damage per tick (120% of Isaac's damage per second) and are immune to damage. Wisps must wait 2.5 seconds after hitting a wall before they can charge again. The wisps deal their normal contact damage while not charging."
+  },
+  {
+    "collectible": "Abyss",
+    "description": "Spawns wisps in the middle ring in the form of black-glowing flies with extra HP that do not fire tears."
+  },
+  {
+    "collectible": "Alabaster Box",
+    "description": "Spawns up to 8 normal wisps, filling up the middle ring."
+  },
+  {
+    "collectible": "Anarchist Cookbook",
+    "description": "Spawns wisps in the middle ring, looking like bombs. The wisps spawn [[File:Troll Bomb.png|link=Bombs#Troll Bomb|class=tb-icon tb-link-icon|alt=|Troll Bomb]][[:Bombs#Troll Bomb|Troll Bomb]]s when destroyed. These troll bombs will use Isaac's bomb synergies."
+  },
+  {
+    "collectible": "Anima Sola",
+    "description": "Spawns a dark wisp that orbits the locked enemy and shoots at them. When the enemy dies, the wisp despawns."
+  },
+  {
+    "collectible": "Bag of Crafting",
+    "description": "Spawns a random wisp when an item is crafted."
+  },
+  {
+    "collectible": "Berserk!",
+    "description": "Spawns a pale wisp on the middle ring. The wisp has extra HP and does not shoot."
+  },
+  {
+    "collectible": "Best Friend",
+    "description": "Creates wisps that are small Isaac heads with a white flame in the middle ring. Tears shot by these have a 7.5% of applying the [[bait]] status effect, akin to [[File:Dlc r indicator.png|link=|class=dlc cf-tag cf-val-24 |alt=(in Repentance and Repentance+)|Added in Repentance]][[Category:Modified in Repentance]]<span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CRotten+Tomato\" data-tooltip-dlc=\"24\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Rotten Tomato icon.png|link=Rotten Tomato|class=tb-icon tb-link-icon|alt=|Rotten Tomato]]</span>[[:Rotten Tomato|Rotten Tomato]]</span>."
+  },
+  {
+    "collectible": "Black Hole",
+    "description": "Spawns black wisps on the middle ring. Wisps' tears have the <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CStrange+Attractor\" data-tooltip-dlc=\"28\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Strange Attractor icon.png|link=Strange Attractor|class=tb-icon tb-link-icon|alt=|Strange Attractor]]</span>[[:Strange Attractor|Strange Attractor]]</span> effect."
+  },
+  {
+    "collectible": "Blank Card",
+    "description": "Spawns card wisps in the middle ring. Enemies killed by the wisps' tears have a 15% chance to drop a [[cards|card]]. A wisp is given even if Isaac is not holding a card when the item is used."
+  },
+  {
+    "collectible": "Blood Rights",
+    "description": "Spawns red wisps in the middle ring that have higher health than average and shoot red tears."
+  },
+  {
+    "collectible": "Bob's Rotten Head",
+    "description": "Spawns wisps in the middle ring. The wisps shoot arcing green tears with decreased range, with a 7.5% chance of firing an explosive, poisonous tear."
+  },
+  {
+    "collectible": "Book of Revelations",
+    "description": "Creates wisps in the inner ring, resembling tiny crosses that do not fire tears. The wisps create a Harbinger that spawns [[Locust]]s (the same ones that [[File:Dlc a† indicator.png|link=|class=dlc cf-tag cf-val-28 |alt=(except in Rebirth and Afterbirth)|Added in Afterbirth †]][[Category:Modified in Afterbirth+]]<span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7C7+Seals\" data-tooltip-dlc=\"28\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible 7 Seals icon.png|link=7 Seals|class=tb-icon tb-link-icon|alt=|7 Seals]]</span>[[:7 Seals|7 Seals]]</span> creates) for the current room when destroyed."
+  },
+  {
+    "collectible": "Book of Secrets",
+    "description": "Spawns wisps in the middle ring, looking like tiny spinning question marks. The wisps invoke the effect of [[File:Dlc r indicator.png|link=|class=dlc cf-tag cf-val-24 |alt=(in Repentance and Repentance+)|Added in Repentance]][[Category:Modified in Repentance]]<span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CCracked+Orb\" data-tooltip-dlc=\"24\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Cracked Orb icon.png|link=Cracked Orb|class=tb-icon tb-link-icon|alt=|Cracked Orb]]</span>[[:Cracked Orb|Cracked Orb]]</span> when destroyed."
+  },
+  {
+    "collectible": "Book of Shadows",
+    "description": "Spawns shielded wisps in the middle ring. The wisps have 1 health, but will not be damaged by blocking projectiles, and can only be destroyed on contact with enemies. When Book of Shadows is active, wisps are immune to all damage, allowing for easy melee kills."
+  },
+  {
+    "collectible": "Book of the Dead",
+    "description": "Spawns tiny skull wisps on the inner ring. The wisps fire bones and spawn friendly Bonies when destroyed. The book will summon wisps regardless of whether or not there were enemies killed in the current room."
+  },
+  {
+    "collectible": "Box of Friends",
+    "description": "Spawns black wisps on the middle ring. After creating a wisp, Box of Friends also gives temporary copies of all of Isaac's wisps, including any extra copies Box of Friends made."
+  },
+  {
+    "collectible": "Box of Spiders",
+    "description": "Spawns wisps instead of spiders, in the outer ring. Wisps summon Blue Spiders when destroyed. One wisp contains one Blue Spider."
+  },
+  {
+    "collectible": "Breath of Life",
+    "description": "Spawns 4 regular wisps on the inner ring when the four-way beam is created. Only 4 of these wisps can exist at a time. No wisps are created otherwise."
+  },
+  {
+    "collectible": "Broken Shovel 1",
+    "description": "Creates a tiny ghost wisp on the middle ring, which resembles <span style=\"--tb-icon-size: 1.4em\">[[File:Character The Soul icon.png|link=The Soul (Character)|class=tb-icon tb-link-icon|alt=|The Soul]]</span>[[:The Forgotten#The Soul|The Soul]]. These wisps' tears have a 10% chance of invoking <span class=\"tooltip\" data-tooltip=\"p%2Ftooltip%7CII+-+The+High+Priestess\" data-tooltip-dlc=\"28\">[[File:Pickup II - The High Priestess icon.png|link=II - The High Priestess|class=tb-icon tb-link-icon|alt=|II - The High Priestess]][[:II - The High Priestess|II - The High Priestess]]</span> on enemies."
+  },
+  {
+    "collectible": "Brown Nugget",
+    "description": "Spawns brown wisps on the middle ring. These wisps shoot 3 times faster with 1/3rd of the damage of an average wisp. The wisps automatically shoot at nearby enemies instead of in the direction Isaac shoots. The wisps do not persist between rooms."
+  },
+  {
+    "collectible": "Butter Bean",
+    "description": "Spawns white wisps on the inner ring. The wisps do not shoot tears, have only 1 health each, release farts that knockback upon death, and cannot be carried across rooms."
+  },
+  {
+    "collectible": "Clear Rune",
+    "description": "Spawns purple glowing rune wisps on the middle ring. The wisps spawn random [[Rune|Runes/Soul Stones]] when destroyed, and enemies killed by the wisps' tears have a 15% chance to drop a Rune/Soul Stone. A wisp is given even if Isaac is not holding a rune when the item is used."
+  },
+  {
+    "collectible": "Clicker",
+    "description": "Spawns a random wisp."
+  },
+  {
+    "collectible": "Compost",
+    "description": "Spawns a wisp in the middle ring if Compost destroys at least one pickup, and the wisp's health will be equal to the number of pickups converted to [[Blue Fly|Blue Flies]]/[[Blue Spider|Spiders]]. If Isaac hits the blue fly cap of 64 as a result of using Compost, all but one of Isaac's wisps will despawn."
+  },
+  {
+    "collectible": "Converter",
+    "description": "Spawns wisps in the middle ring, looking like hearts. Wisps have slightly higher health than average. Red Heart pickups can be used to restore their health."
+  },
+  {
+    "collectible": "Coupon",
+    "description": "Spawns green wisps on the middle ring. The wisps fire three tears at a time, similarly to <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CThe+Inner+Eye\" data-tooltip-dlc=\"28\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible The Inner Eye icon.png|link=The Inner Eye|class=tb-icon tb-link-icon|alt=|The Inner Eye]]</span>[[:The Inner Eye|The Inner Eye]]</span>. However, all of these wisps are destroyed if Isaac buys something using money. Does not affect wisps other than ones made by this item."
+  },
+  {
+    "collectible": "Crack the Sky",
+    "description": "Spawns wisps in the middle ring. The wisps summon a beam of light when touched, dealing 12 damage to nearby enemies in addition to their normal contact damage."
+  },
+  {
+    "collectible": "Crooked Penny",
+    "description": "Spawns a coin wisp on the middle ring. The wisps have a 50/50 chance to duplicate all their copies or destroy all their copies when one takes damage. Does not affect wisps other than ones made by this item. Using Crooked Penny always spawns one wisp, with no chance to affect the others."
+  },
+  {
+    "collectible": "Crystal Ball",
+    "description": "Wisps have much greater health than normal wisps. Tears that are fired from the wisps will auto aim towards  nearby enemies, similar to <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CDemon+Baby\" data-tooltip-dlc=\"31\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Demon Baby icon.png|link=Demon Baby|class=tb-icon tb-link-icon|alt=|Demon Baby]]</span>[[:Demon Baby|Demon Baby]]</span>."
+  },
+  {
+    "collectible": "D infinity",
+    "description": "Spawns a normal wisp in addition to having an extra effect based on the current die selected."
+  },
+  {
+    "collectible": "D1",
+    "description": "Spawns a white six-sided die wisp on the middle ring. An extra wisp spawns if no pickups are duplicated."
+  },
+  {
+    "collectible": "D10",
+    "description": "Spawns orange wisps in the middle ring. Tears shot from these wisps have a 10% chance to replace enemies with their weaker variants."
+  },
+  {
+    "collectible": "D100",
+    "description": "Rerolls all of Isaac's wisps and gives him one random wisp. Book of Virtues will not be rerolled in the process."
+  },
+  {
+    "collectible": "D12",
+    "description": "Spawns blue die wisps on the middle ring. Wisps' tears have a 5% chance to reroll obstacles they hit. Poops, TNT barrels and metal blocks cannot be rerolled."
+  },
+  {
+    "collectible": "D20",
+    "description": "Spawns wisps in the middle ring. In addition to summoning its specific wisp, instead of rerolling pickups, it will <u>destroy all the pickups in the room</u> and has a chance to give a random wisp for each pickup destroyed."
+  },
+  {
+    "collectible": "D4",
+    "description": "Removes all of Isaac's wisps and gives him one random wisp for every two items rerolled. Book of Virtues will not be rerolled in the process."
+  },
+  {
+    "collectible": "D7",
+    "description": "Spawns a grey six-sided die wisp on the middle ring. The wisps start gray; if the wisps get hit while they’re gray, they invoke the effect of the D7 in the current room and turn blue. Damage that turns the wisps from gray to blue is negated."
+  },
+  {
+    "collectible": "D8",
+    "description": "Spawns a black glowing die wisp on the middle ring. Each wisp has a random damage and fire rate assigned to it. Wisp health is not randomized."
+  },
+  {
+    "collectible": "Dad's Key",
+    "description": "Creates wisps in the middle ring. If the wisps touch [[File:Locked Chest.png|link=Chests#Locked Chest|class=tb-icon tb-link-icon|alt=|Locked Chest]][[:Chests#Locked Chest|Locked Chest]]s, Special Room doors, or uncleared room doors, they will unlock and open them, destroying themselves in the process. These wisps can open ''any'' locked door they touch, including the door to the [[File:Mega Satan Head ingame.png|link=Mega Satan|class=tb-icon tb-link-icon|alt=|Mega Satan]][[:Mega Satan|Mega Satan]] arena, [[File:Dlc r indicator.png|link=|class=dlc cf-tag cf-val-24 |alt=(in Repentance and Repentance+)|Added in Repentance]][[Category:Modified in Repentance]]<span class=\"tooltip\" data-tooltip=\"a%2Ftooltip%7CA+Strange+Door\" data-tooltip-dlc=\"24\">[[File:achievement A Strange Door icon.png|link=A Strange Door|class=tb-icon tb-link-icon|alt=|A Strange Door]][[:A Strange Door|A Strange Door]]</span>, and the flesh door to [[File:Dlc r indicator.png|link=|class=dlc cf-tag cf-val-24 |alt=(in Repentance and Repentance+)|Added in Repentance]][[Category:Modified in Repentance]][[File:Stage Corpse icon.png|link=Corpse|class=tb-icon tb-link-icon|alt=|Corpse]][[:Corpse|Corpse]]. [[File:Bomb Chest.png|link=Chests#Bomb Chest|class=tb-icon tb-link-icon|alt=|Bomb Chest]][[:Chests#Bomb Chest|Bomb Chest]]s and [[File:Dlc r indicator.png|link=|class=dlc cf-tag cf-val-24 |alt=(in Repentance and Repentance+)|Added in Repentance]][[Category:Modified in Repentance]][[File:Mega Chest.png|link=Chests#Mega Chest|class=tb-icon tb-link-icon|alt=|Mega Chest]][[:Chests#Mega Chest|Mega Chest]]s are unaffected. They will also donate to [[File:Key Master.png|link=Beggar#Key Master|class=tb-icon tb-link-icon|alt=|Key Master]][[:Beggar#Key Master|Key Master]]s on touch, destroying themselves in the process. Opening a chest in a [[File:Challenge Room Icon.png|link=Challenge Room|class=tb-icon tb-link-icon|alt=|]][[:Challenge Room|Challenge Room]] with a wisp will ''not'' start the challenge."
+  },
+  {
+    "collectible": "Damocles",
+    "description": "Spawns a wisp on the middle ring, looking like a sword. The wisp's tears look like <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CSpirit+Sword\" data-tooltip-dlc=\"24\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Spirit Sword icon.png|link=Spirit Sword|class=tb-icon tb-link-icon|alt=|Spirit Sword]]</span>[[:Spirit Sword|Spirit Sword]]</span>'s beams, but there are no other effects."
+  },
+  {
+    "collectible": "Dark Arts",
+    "description": "Spawns black wisps on the middle ring whenever an enemy is killed with Dark Arts. The wisps do not persist between rooms."
+  },
+  {
+    "collectible": "Dataminer",
+    "description": "Spawns a special wisp on the middle ring that is otherwise undistinguishable from a normal wisp. These wisps' tears have a 5% chance of transforming any non-boss enemy into random wisps."
+  },
+  {
+    "collectible": "Dead Sea Scrolls",
+    "description": "Each wisp spawned has the attributes of the active item that was triggered."
+  },
+  {
+    "collectible": "Decap Attack",
+    "description": "A stationary wisp spawns where Isaac was when he threw his head that fires tears in the same direction Isaac does. The wisps do not persist between rooms."
+  },
+  {
+    "collectible": "Deck of Cards",
+    "description": "Spawns card-like wisps on the inner ring which spawn a [[card]] when destroyed."
+  },
+  {
+    "collectible": "Delirious",
+    "description": "Generates a white wisp that resembles one random boss from this list:\n** [[File:Boss Monstro ingame.png|link=Monstro|class=tb-icon tb-link-icon|alt=|Monstro]][[:Monstro|Monstro]]: Fires an inaccurate spray of 6-10 tears, similar to <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CLil+Monstro\" data-tooltip-dlc=\"28\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Lil Monstro icon.png|link=Lil Monstro|class=tb-icon tb-link-icon|alt=|Lil Monstro]]</span>[[:Lil Monstro|Lil Monstro]]</span> but without the charge time.\n** [[File:Boss The Duke of Flies ingame.png|link=The Duke of Flies|class=tb-icon tb-link-icon|alt=|The Duke of Flies]][[:The Duke of Flies|The Duke of Flies]]: Creates [[Blue Flies]] instead of firing tears. Each wisp can have a maximum of 3 flies at a time.\n** [[File:Boss Loki ingame.png|link=Loki|class=tb-icon tb-link-icon|alt=|Loki]][[:Loki|Loki]]: Fires four tears that alternate between cardinal and ordinal directions.\n** [[File:Boss The Haunt ingame.png|link=The Haunt|class=tb-icon tb-link-icon|alt=|The Haunt]][[:The Haunt|The Haunt]]: Fires <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CBrimstone\" data-tooltip-dlc=\"28\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Brimstone icon.png|link=Brimstone|class=tb-icon tb-link-icon|alt=|Brimstone]]</span>[[:Brimstone|Brimstone]]</span> lasers. The laser does not need to be charged to be fired, and can tick up to 8 times for a total of 8 damage."
+  },
+  {
+    "collectible": "Diplopia",
+    "description": "Spawns a special Diplopia wisp on the middle ring. The wisp fires two tears at a time (similar to <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7C20%2F20\" data-tooltip-dlc=\"30\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible 20 20 icon.png|link=20/20|class=tb-icon tb-link-icon|alt=|20/20]]</span>[[:20/20|20/20]]</span>) and has very high HP. Also duplicates all of Isaac's other wisps."
+  },
+  {
+    "collectible": "Doctor's Remote",
+    "description": "Spawns grey bomb-like wisps in the middle ring. When Doctor's Remote is used, the wisps fire two inaccurate, explosive tears at the crosshair in an arc that deal 14 damage (28 with  <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CBFFS%21\" data-tooltip-dlc=\"31\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible BFFS! icon.png|link=BFFS!|class=tb-icon tb-link-icon|alt=|BFFS!]]</span>[[:BFFS!|BFFS!]]</span>)."
+  },
+  {
+    "collectible": "Dull Razor",
+    "description": "Spawns a grey wisp on the middle ring. The wisp doesn't fire any tears. Whenever Isaac takes damage, there is a chance that the damage is negated and one of the wisps is destroyed instead. \"Damage\" taken from using Dull Razor does not count for this effect."
+  },
+  {
+    "collectible": "Eden's Soul",
+    "description": "Spawns a random wisp. For the rest of the run, a random wisp spawns after clearing a room if the one given by the item was destroyed, including the replacement wisps given by this effect."
+  },
+  {
+    "collectible": "Eraser",
+    "description": "Spawns a pink eraser wisp on the middle ring. The wisp is immune to projectiles. If a [[monster|non-boss enemy]] touches the wisp, it is erased and the wisp is destroyed. The wisp cannot erase [[boss]]es, regardless of how much health they have left."
+  },
+  {
+    "collectible": "Esau Jr.",
+    "description": "Spawns a black wisp when used to turn into Esau Jr. that is otherwise identical to a normal one; turning back into the original character spawns a normal wisp. Each form will retain their own set of wisps."
+  },
+  {
+    "collectible": "Eternal D6",
+    "description": "50% to spawn an eternal white glowing wisp on the middle ring, which cannot be destroyed. Every use has a 50% chance to destroy all the wisps instead of spawning another. Does not affect wisps other than the ones made by this item. Rerolling items does not affect this chance."
+  },
+  {
+    "collectible": "Everything Jar",
+    "description": "Spawns a random wisp."
+  },
+  {
+    "collectible": "Flip",
+    "description": "Spawns a small white Isaac head wisp in the middle ring with high health. If you are playing Tainted Lazarus, the wisp is given to the form that isn't holding Book of Virtues. A wisp is also granted when Flip is automatically used by clearing the room as Tainted Lazarus."
+  },
+  {
+    "collectible": "Flush!",
+    "description": "Spawns brown wisps in the middle ring. An additional wisp is spawned for each enemy turned into [[File:Poop.png|link=Poop (Disambiguation)|class=tb-icon tb-link-icon|alt=|Poop]][[:Poop (Disambiguation)|Poop]]."
+  },
+  {
+    "collectible": "Forget Me Now",
+    "description": "Spawns a wisp in the middle ring with infinite health. The wisp only lasts for the floor Forget Me Now created."
+  },
+  {
+    "collectible": "Fortune Cookie",
+    "description": "Spawns a green wisp on the middle ring. Each wisp gives Isaac +0.2 [[Luck]]."
+  },
+  {
+    "collectible": "Free Lemonade",
+    "description": "Spawns large, yellow wisps on the middle ring. The wisps make small puddles of yellow creep every other shot, which last for 3 seconds and deal 7 damage per tick to enemies that walk over them (56 damage per second)."
+  },
+  {
+    "collectible": "Friend Finder",
+    "description": "Spawns a random wisp."
+  },
+  {
+    "collectible": "Friendly Ball",
+    "description": "Spawns a wisp, all on the middle ring, whenever a [[friendly]] enemy dies. Depending on the enemy that dies, the wisp may have a different effect:\n** Normal: Enemies captured by Friendly Ball spawn this wisp when they die if they wouldn't spawn any of the other variants listed below.\n** Homing: Enemies captured by Friendly Ball spawn this wisp when they die if they were psychic or had homing shots in some way. Wisps' tears are [[homing]].\n** Explosive: Enemies captured by Friendly Ball spawn this wisp when they die if they created explosions in some way. Wisps' tears have a 33% chance to explode. Explosive tears deal no extra damage.\n** Brimstone: Enemies captured by Friendly Ball spawn this wisp when they die if they fired lasers in some way. Wisps fire <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CBrimstone\" data-tooltip-dlc=\"30\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Brimstone icon.png|link=Brimstone|class=tb-icon tb-link-icon|alt=|Brimstone]]</span>[[:Brimstone|Brimstone]]</span> lasers. The laser does not need to be charged to be fired, and can tick up to 8 times for a total of 20 damage."
+  },
+  {
+    "collectible": "Gello",
+    "description": "Spawns a red wisp on the middle ring. The wisps will orbit Gello instead of Isaac while it's active."
+  },
+  {
+    "collectible": "Genesis",
+    "description": "Replaces all of Isaac's wisps with 3 normal wisps. Unlike other reroll items, Isaac does not keep Book of Virtues."
+  },
+  {
+    "collectible": "Glass Cannon",
+    "description": "Spawns white wisps on the middle ring. The wisps shatter in one hit and their tears deal 8 damage per shot, but if one of the wisps is destroyed, all the others are also destroyed. Does not affect wisps other than ones made by this item. Despite Glass Cannon having a timed charge, the wisps persist between rooms."
+  },
+  {
+    "collectible": "Glowing Hourglass",
+    "description": "Any wisps lost in the previous room will be restored, and an additional Glowing Hourglass wisp will be added on the middle ring. This wisp's tears have a 30% chance to [[petrify]] enemies."
+  },
+  {
+    "collectible": "Golden Razor",
+    "description": "Spawns yellow wisps on the middle ring, looking like coins. Wisps' tears have a 15% chance of inflicting <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CMidas%27+Touch\" data-tooltip-dlc=\"24\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Midas' Touch icon.png|link=Midas' Touch|class=tb-icon tb-link-icon|alt=|Midas' Touch]]</span>[[:Midas' Touch|Midas' Touch]]</span> effect on enemies."
+  },
+  {
+    "collectible": "Guppy's Head",
+    "description": "Summons wisps in the outer ring instead of flies. Wisps summon Blue Flies when destroyed. One wisp contains one Blue Fly."
+  },
+  {
+    "collectible": "Guppy's Paw",
+    "description": "Spawns 3 wisps in the middle ring for every Red Heart Container consumed, in addition to granting Soul Hearts. These wisps have a large amount of health."
+  },
+  {
+    "collectible": "Head of Krampus",
+    "description": "Spawns red wisps in the middle ring. The wisps fire small <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CBrimstone\" data-tooltip-dlc=\"31\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Brimstone icon.png|link=Brimstone|class=tb-icon tb-link-icon|alt=|Brimstone]]</span>[[:Brimstone|Brimstone]]</span> lasers in the cardinal directions when destroyed. The lasers deal the wisps' tear damage per tick, and can hit up to 20 times. <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CBFFS%21\" data-tooltip-dlc=\"31\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible BFFS! icon.png|link=BFFS!|class=tb-icon tb-link-icon|alt=|BFFS!]]</span>[[:BFFS!|BFFS!]]</span> will not increase this damage, despite it scaling with the wisps' tear damage."
+  },
+  {
+    "collectible": "How to Jump",
+    "description": "Spawns stationary wisps at the location jumped from which fires in the same direction as Isaac. Max of 6 wisps can be spawned at a time this way. Wisps only last for the current room."
+  },
+  {
+    "collectible": "IV Bag",
+    "description": "Spawns wisps in the outer ring, resembling coins. The wisps only have one health."
+  },
+  {
+    "collectible": "Isaac's Tears",
+    "description": "Summons six wisps at a time, in the middle ring. Using Isaac's Tears destroys the previous set of wisps. The wisps are automatically destroyed after three seconds."
+  },
+  {
+    "collectible": "Jar of Flies",
+    "description": "Using Jar of Flies summons wisps instead of [[Blue Fly|Blue Flies]]; the wisps do not summon the flies when destroyed. Up to five flies at a time are consumed to summon one wisp, with stacking health and damage. The damage of the wisps decreases as they take damage. Enemies killed by wisps’ tears will not add flies to the jar."
+  },
+  {
+    "collectible": "Jar of Wisps",
+    "description": "Triples the wisps which are spawned including any special wisps spawned."
+  },
+  {
+    "collectible": "Kamikaze!",
+    "description": "Spawns wisps in the middle ring that looks like small sticks of dynamite. The wisps fire explosive projectiles and explode when destroyed, dealing 30 damage to enemies that are close to it. This explosion is small enough to not always hit Isaac, although it will hurt him should he get caught in it. All explosions the wisps make are unaffected by <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CBFFS%21\" data-tooltip-dlc=\"31\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible BFFS! icon.png|link=BFFS!|class=tb-icon tb-link-icon|alt=|BFFS!]]</span>[[:BFFS!|BFFS!]]</span> and bomb synergies. Using Kamikaze! will also trigger an explosion on each dynamite wisp."
+  },
+  {
+    "collectible": "Keeper's Box",
+    "description": "Spawns glowing coin wisps on the middle ring. Enemies killed by the wisps' tears have a 20% chance to drop a random [[coin]]."
+  },
+  {
+    "collectible": "Kidney Bean",
+    "description": "Spawns purple wisps on the middle ring. The wisps [[charm]] nearby enemies when destroyed."
+  },
+  {
+    "collectible": "Larynx",
+    "description": "Spawns red wisps on the middle ring. The wisps deals contact damage equal to 30% of Isaac's damage * Charges Used. Charges Used equals the number of charges Larynx had at the time it was used. Health = <code>1 * Charges Used</code>. Tear Damage = <code>1.5 * Charges Used</code>."
+  },
+  {
+    "collectible": "Lemegeton",
+    "description": "Lets Lemegeton's wisps shoot homing tears once per second that deal 3 damage."
+  },
+  {
+    "collectible": "Lemon Mishap",
+    "description": "Spawns yellow wisps in the middle ring. The wisps fire faster and have decreased range. The wisps themselves occasionally leave small puddles of yellow [[creep]] that last for 3 seconds and deal 7 damage per tick to enemies that walk over them (56 damage per second)."
+  },
+  {
+    "collectible": "Magic Fingers",
+    "description": "Spawns wisps in the inner ring, looking like coins. The wisps have a chance to drop [[coin]]s when destroyed."
+  },
+  {
+    "collectible": "Magic Skin",
+    "description": "Spawns pink wisps in the inner ring, looking like skin. Wisps have a large amount of health and fire [[piercing]] tears."
+  },
+  {
+    "collectible": "Mama Mega!",
+    "description": "Summons 8 wisps in the middle ring on use. The wisps summon [[File:Dlc r indicator.png|link=|class=dlc cf-tag cf-val-24 |alt=(in Repentance and Repentance+)|Added in Repentance]][[Category:Modified in Repentance]][[File:Golden Troll Bomb.png|link=Bombs#Golden Troll Bombs|class=tb-icon tb-link-icon|alt=|Golden Troll Bomb]][[:Bombs#Golden Troll Bombs|Golden Troll Bomb]]s when destroyed."
+  },
+  {
+    "collectible": "Meat Cleaver",
+    "description": "Spawns one red wisp on the middle ring on use. Before spawning wisps, Meat Cleaver divides all of Isaac's wisps into two wisps that deal half tear damage. Wisps will be destroyed if they try to divide a third time."
+  },
+  {
+    "collectible": "Mega Bean",
+    "description": "Spawns tiny magenta wisps on the middle ring. The wisps send rock waves outward when Mega Bean is used. They also [[petrify]] and [[poison]] all enemies in a large radius when destroyed."
+  },
+  {
+    "collectible": "Mega Blast",
+    "description": "Spawns red wisps on the middle ring that utilize a miniature Brimstone as their weapon, which requires charging and releasing as usual. Lasers can hit up to 8 times for a total of 24 damage. If Mega Blast is being used, the wisps will continuously fire their laser outward rather than in the direction Mega Blast is firing."
+  },
+  {
+    "collectible": "Metronome",
+    "description": "If an active item was selected, grants the same wisp as that item. If a passive item was selected, grants any random wisp."
+  },
+  {
+    "collectible": "Mine Crafter",
+    "description": "Spawns one glowing green wisp that cannot take or deal damage in any way, and bounces around the room in a random direction, instead of following Isaac. If the wisp is shot by Isaac or his familiars, it explodes, dealing 100 damage to nearby enemies. The wisp does not persist between rooms. Explosions and enemy shots do not detonate it, and the wisps' explosions are unaffected by <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CBFFS%21\" data-tooltip-dlc=\"30\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible BFFS! icon.png|link=BFFS!|class=tb-icon tb-link-icon|alt=|BFFS!]]</span>[[:BFFS!|BFFS!]]</span> and bomb synergies."
+  },
+  {
+    "collectible": "Mom's Bottle of Pills",
+    "description": "Spawns wisps in the inner ring, looking like pills. The wisps spawn [[pill]]s when destroyed. The wisps come in random colors (Blue, Red, White, Pink, Gray, Light Blue, and Yellow). Each color may fire tears that confuse, poison, petrify, burn, or spawn troll bombs. Each tear effect is assigned to one color of pill wisp based on the current seed. The only color pill wisp without a tear effect also spawns a hostile [[Spider]] when destroyed. For the troll bomb effect, the pill itself spawns the troll bomb instead of the tear, and the chance for it to do so is independent of whether or not its tears hit anything."
+  },
+  {
+    "collectible": "Mom's Bra",
+    "description": "Spawns red wisps in the middle ring. Wisps' tears have a 5% chance to [[petrify]] enemies."
+  },
+  {
+    "collectible": "Mom's Bracelet",
+    "description": "Three wisps are created where thrown [[obstacle]]s land; these wisps rotate around where the obstacle was thrown and fire tears in the same direction Isaac does. The wisps do not persist between rooms. Isaac cannot have more than 8 of these wisps at one time, and wisps in Isaac's middle ring count against this limit. Wisps' tears have a 10% chance of inflicting [[confusion]] on enemies."
+  },
+  {
+    "collectible": "Mom's Pad",
+    "description": "Spawns a black wisp with a yellow fire in the middle ring. Wisps' tears have a 7.5% chance to inflict [[fear]] on enemies."
+  },
+  {
+    "collectible": "Mom's Shovel",
+    "description": "Creates two wisps on the middle ring: one looks like <span style=\"--tb-icon-size: 1.4em\">[[File:Character The Forgotten icon.png|link=The Forgotten|class=tb-icon tb-link-icon|alt=|]]</span>[[:The Forgotten|The Forgotten]], which has increased HP but does not fire tears, and the other looks like <span style=\"--tb-icon-size: 1.4em\">[[File:Character The Soul icon.png|link=The Soul (Character)|class=tb-icon tb-link-icon|alt=|The Soul]]</span>[[:The Forgotten#The Soul|The Soul]], which fires tears that have a 10% chance of invoking <span class=\"tooltip\" data-tooltip=\"p%2Ftooltip%7CII+-+The+High+Priestess\" data-tooltip-dlc=\"28\">[[File:Pickup II - The High Priestess icon.png|link=II - The High Priestess|class=tb-icon tb-link-icon|alt=|II - The High Priestess]][[:II - The High Priestess|II - The High Priestess]]</span> on enemies."
+  },
+  {
+    "collectible": "Monster Manual",
+    "description": "Spawns wisps in the inner ring. The given wisps function similarly to familiars given by <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CBuddy+in+a+Box\" data-tooltip-dlc=\"31\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Buddy in a Box icon.png|link=Buddy in a Box|class=tb-icon tb-link-icon|alt=|Buddy in a Box]]</span>[[:Buddy in a Box|Buddy in a Box]]</span>."
+  },
+  {
+    "collectible": "Monstro's Tooth",
+    "description": "Spawns wisps in the middle ring, looking like teeth. These wisps shoot 50% slower than the average wisp, but deal 12 damage per shot."
+  },
+  {
+    "collectible": "Moving Box",
+    "description": "Spawns a box wisp on the middle ring. Moving Box must drop a pickup/item in order for it to spawn wisps. The wisps invoke the effect of <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CThe+Book+of+Sin\" data-tooltip-dlc=\"28\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible The Book of Sin icon.png|link=The Book of Sin|class=tb-icon tb-link-icon|alt=|The Book of Sin]]</span>[[:The Book of Sin|The Book of Sin]]</span> when destroyed."
+  },
+  {
+    "collectible": "Mr. Boom",
+    "description": "Spawns wisps in the middle ring, looking like bombs. The wisps spawn miniature homing bombs when destroyed. These miniature bombs behave the same as ones created by [[File:Dlc a indicator.png|link=|class=dlc cf-tag cf-val-30 |alt=(except in Rebirth)|Added in Afterbirth]][[Category:Modified in Afterbirth]]<span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CScatter+Bombs\" data-tooltip-dlc=\"30\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Scatter Bombs icon.png|link=Scatter Bombs|class=tb-icon tb-link-icon|alt=|Scatter Bombs]]</span>[[:Scatter Bombs|Scatter Bombs]]</span>, with the exception that they deal 100 blast damage instead of 50."
+  },
+  {
+    "collectible": "Mr. ME!",
+    "description": "Spawns a wisp that looks like a face in the middle ring. The wisp cannot shoot. If the current room is cleared, the wisps automatically move toward and unlock [[chest]]s (Except for  [[File:Bomb Chest.png|link=Chests#Bomb Chest|class=tb-icon tb-link-icon|alt=|Bomb Chest]][[:Chests#Bomb Chest|Bomb Chest]]s and [[File:Mega Chest.png|link=Chests#Mega Chest|class=tb-icon tb-link-icon|alt=|Mega Chest]][[:Chests#Mega Chest|Mega Chest]]s) and special room doors, destroying themselves in the process. The wisps can open almost any locked doors, including the ones to [[File:Mega Satan Head ingame.png|link=Mega Satan|class=tb-icon tb-link-icon|alt=|Mega Satan]][[:Mega Satan|Mega Satan]], the [[Ascent]], but excluding [[File:Dlc r indicator.png|link=|class=dlc cf-tag cf-val-24 |alt=(in Repentance and Repentance+)|Added in Repentance]][[Category:Modified in Repentance]][[File:Stage Corpse icon.png|link=Corpse|class=tb-icon tb-link-icon|alt=|Corpse]][[:Corpse|Corpse]]."
+  },
+  {
+    "collectible": "My Little Unicorn",
+    "description": "Spawns rainbow-colored wisps in the middle ring. The wisps orbit Isaac more quickly than normal wisps and change colors constantly, with both of these effects being boosted while My Little Unicorn is active. The wisps also deal an extra 8 contact damage, for a total of 15 contact damage per tick. When de-activated, the rainbow coloring slightly fades away."
+  },
+  {
+    "collectible": "Mystery Gift",
+    "description": "Spawns a random wisp. For the rest of the run, a random wisp spawns after clearing a room if the one given by the item was destroyed, including the replacement wisps given by this effect."
+  },
+  {
+    "collectible": "Notched Axe",
+    "description": "When used with the Book of Virtues, breaking obstacles has a chance to generate wisps that have different effects based on the \"mineral\" mined, from most common to least common:\n** Dip wisp (can only be obtained from poop): Fires brown tears that deal 1.5 damage and has extremely low health.\n** Black wisp: Fires black tears that have the effect of <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CA+Lump+of+Coal\" data-tooltip-dlc=\"31\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible A Lump of Coal icon.png|link=A Lump of Coal|class=tb-icon tb-link-icon|alt=|A Lump of Coal]]</span>[[:A Lump of Coal|A Lump of Coal]]</span> and deal 2.5 damage.\n** Silver wisp: Fires metallic tears that have the effect of <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CIron+Bar\" data-tooltip-dlc=\"31\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Iron Bar icon.png|link=Iron Bar|class=tb-icon tb-link-icon|alt=|Iron Bar]]</span>[[:Iron Bar|Iron Bar]]</span> and deal 4 damage.\n** Gold wisp: Fires penny tears that can turn enemies gold similar to <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CMidas%27+Touch\" data-tooltip-dlc=\"31\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Midas' Touch icon.png|link=Midas' Touch|class=tb-icon tb-link-icon|alt=|Midas' Touch]]</span>[[:Midas' Touch|Midas' Touch]]</span> and deal 3.5 damage.\n** Red wisp: Fires laser tears similar to the ones fired by <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CTechnology\" data-tooltip-dlc=\"31\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Technology icon.png|link=Technology|class=tb-icon tb-link-icon|alt=|Technology]]</span>[[:Technology|Technology]]</span> and deal 3.5 damage.\n** Blue wisp: Fires diamond tears similar to the ones fired by [[File:Dlc a indicator.png|link=|class=dlc cf-tag cf-val-30 |alt=(except in Rebirth)|Added in Afterbirth]][[Category:Modified in Afterbirth]]<span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CCrown+Of+Light\" data-tooltip-dlc=\"30\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Crown Of Light icon.png|link=Crown Of Light|class=tb-icon tb-link-icon|alt=|Crown Of Light]]</span>[[:Crown Of Light|Crown Of Light]]</span> that deal 7 damage."
+  },
+  {
+    "collectible": "Pandora's Box",
+    "description": "Spawns <code>floor - 1</code> regular wisps with no unique effect, up to a maximum of 8. No wisps are spawned on the first floor."
+  },
+  {
+    "collectible": "Pause",
+    "description": "Spawns green wisps on the middle ring. Wisps pause all enemies and enemy shots for 3 seconds when destroyed. This effect is not cancelled by shooting tears."
+  },
+  {
+    "collectible": "Placebo",
+    "description": "Spawns white wisps on the middle ring. The wisps spawn [[pill]]s when destroyed. The effects of the wisps and types of pills they spawn is independent from Placebo's charge time and the most recently used pill. Unlike <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CBlank+Card\" data-tooltip-dlc=\"30\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Blank Card icon.png|link=Blank Card|class=tb-icon tb-link-icon|alt=|Blank Card]]</span>[[:Blank Card|Blank Card]]</span> and [[File:Dlc r indicator.png|link=|class=dlc cf-tag cf-val-24 |alt=(in Repentance and Repentance+)|Added in Repentance]][[Category:Modified in Repentance]]<span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CClear+Rune\" data-tooltip-dlc=\"24\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Clear Rune icon.png|link=Clear Rune|class=tb-icon tb-link-icon|alt=|Clear Rune]]</span>[[:Clear Rune|Clear Rune]]</span>, enemies killed by these wisps' tears do not have a chance to drop pills."
+  },
+  {
+    "collectible": "Plan C",
+    "description": "Spawns 8 red wisps that shoot red tears at 12 damage per tear. Using Plan C will kill Isaac as expected, but wisps won't disappear if used with an item that grants an extra life."
+  },
+  {
+    "collectible": "Plum Flute",
+    "description": "Spawns a wisp on the middle ring, resembling Baby Plum. When the [[File:Boss Baby Plum ingame.png|link=Baby Plum|class=tb-icon tb-link-icon|alt=|Baby Plum]][[:Baby Plum|Baby Plum]] spawned from using Plum Flute bounces diagonally around the room, all the wisps will bounce around the room and fire tears behind themselves as well. The wisps are invulnerable while bouncing around the room."
+  },
+  {
+    "collectible": "Portable Slot",
+    "description": "Gives the wisps of the following items depending on the reward:\n** [[File:Fly.png|link=Fly|class=tb-icon tb-link-icon|alt=|Fly]][[:Fly|Fly]]: Nothing.\n** [[File:Bomb.png|link=Bombs|class=tb-icon tb-link-icon|alt=|Bomb]][[:Bombs|Bomb]]: <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CMr.+Boom\" data-tooltip-dlc=\"31\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Mr. Boom icon.png|link=Mr. Boom|class=tb-icon tb-link-icon|alt=|Mr. Boom]]</span>[[:Mr. Boom|Mr. Boom]]</span> wisp.\n** [[File:Penny.png|link=Penny (Disambiguation)|class=tb-icon tb-link-icon|alt=|Coin]][[:Penny (Disambiguation)|Coin]]: Coin wisp for each coin dropped.\n** [[File:Red Heart.png|link=Hearts#Red Heart|class=tb-icon tb-link-icon|alt=|Heart]][[:Hearts#Red Heart|Heart]]: <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CYum+Heart\" data-tooltip-dlc=\"31\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Yum Heart icon.png|link=Yum Heart|class=tb-icon tb-link-icon|alt=|Yum Heart]]</span>[[:Yum Heart|Yum Heart]]</span> wisp.\n** [[File:Key.png|link=Keys|class=tb-icon tb-link-icon|alt=|Key]][[:Keys|Key]]: <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CDad%27s+Key\" data-tooltip-dlc=\"31\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Dad's Key icon.png|link=Dad's Key|class=tb-icon tb-link-icon|alt=|Dad's Key]]</span>[[:Dad's Key|Dad's Key]]</span> wisp.\n** [[Pill]]: <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CMom%27s+Bottle+of+Pills\" data-tooltip-dlc=\"31\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Mom's Bottle of Pills icon.png|link=Mom's Bottle of Pills|class=tb-icon tb-link-icon|alt=|Mom's Bottle of Pills]]</span>[[:Mom's Bottle of Pills|Mom's Bottle of Pills]]</span> wisp.\n** [[Pretty Fly]]: 2-4 <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CGuppy%27s+Head\" data-tooltip-dlc=\"31\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Guppy's Head icon.png|link=Guppy's Head|class=tb-icon tb-link-icon|alt=|Guppy's Head]]</span>[[:Guppy's Head|Guppy's Head]]</span> wisps."
+  },
+  {
+    "collectible": "Potato Peeler",
+    "description": "Spawns an indestructible wisp. The wisps do not orbit Isaac, block shots, or deal contact damage. Instead, they chase and constantly shoot at nearby enemies."
+  },
+  {
+    "collectible": "Prayer Card",
+    "description": "Spawns white, heart-shaped wisps in the inner ring. Wisps' tears have 0.75 shot speed. The wisps' tears effectively act as though they have <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CSacred+Heart\" data-tooltip-dlc=\"31\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Sacred Heart icon.png|link=Sacred Heart|class=tb-icon tb-link-icon|alt=|Sacred Heart]]</span>[[:Sacred Heart|Sacred Heart]]</span>."
+  },
+  {
+    "collectible": "Razor Blade",
+    "description": "Spawns red wisps in the middle ring. Wisps have higher health."
+  },
+  {
+    "collectible": "Red Candle",
+    "description": "Spawns red wisps in the middle ring. The wisps shoot small flames instead of tears, with a very high tear delay; flames last for 5 seconds or until they block 2 shots and/or deal 2 ticks of damage. The wisps do not persist between rooms, and the damage they deal does not increase with <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CBFFS%21\" data-tooltip-dlc=\"31\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible BFFS! icon.png|link=BFFS!|class=tb-icon tb-link-icon|alt=|BFFS!]]</span>[[:BFFS!|BFFS!]]</span> or scale up on later floors."
+  },
+  {
+    "collectible": "Red Key",
+    "description": "Creates a Red Key wisp in the middle ring. The wisps have a chance to create Red Rooms when Isaac enters an unexplored room."
+  },
+  {
+    "collectible": "Remote Detonator",
+    "description": "Spawns wisps in the inner ring when bombs placed by Isaac explode. Using Remote Detonator also causes the wisps' tears to explode, dealing 16.5 damage to enemies that are close to them (24 if Isaac has <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CBFFS%21\" data-tooltip-dlc=\"31\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible BFFS! icon.png|link=BFFS!|class=tb-icon tb-link-icon|alt=|BFFS!]]</span>[[:BFFS!|BFFS!]]</span>)."
+  },
+  {
+    "collectible": "Sacrificial Altar",
+    "description": "Converts each wisp into a [[File:Half Red Heart.png|link=Hearts#Half Red Heart|class=tb-icon tb-link-icon|alt=|Half Red Heart]][[:Hearts#Half Red Heart|Half Red Heart]]. Spawns a single red and black wisp in the middle ring after the sacrifice."
+  },
+  {
+    "collectible": "Satanic Bible",
+    "description": "Spawns black wisps in the middle ring, looking like a red inverted cross. Each wisp increases the chances of [[File:Devil Room Icon.png|link=Devil Room|class=tb-icon tb-link-icon|alt=|]][[:Devil Room|Devil Room]] appearing by 10%."
+  },
+  {
+    "collectible": "Scissors",
+    "description": "Spawns red wisps in the middle ring. The wisps fire 2-3 tears at a time, which are inaccurate, travel in an arc, and have variable range."
+  },
+  {
+    "collectible": "Sharp Key",
+    "description": "Spawns white wisps in the shape of keys, on the middle ring. Despite the wisps' appearance, they cannot unlock anything, and act as normal wisps."
+  },
+  {
+    "collectible": "Sharp Straw",
+    "description": "Enemies have a chance to spawn wisps in the outer ring upon use, although they sometimes extinguish instantly. Using it in a room with no enemies does not grant a wisp. Despite Sharp Straw having a timed charge, the wisps persist between rooms."
+  },
+  {
+    "collectible": "Shoop da Whoop!",
+    "description": "Spawns white wisps in the outer ring that resemble Shoop da Whoop!. The wisps will not fire tears, but will each fire a thin Shoop da Whoop! laser whenever Isaac uses it (including the wisp that was just summoned). The lasers deal 7 damage per tick (BUG: 3.5 if Isaac has <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CBFFS%21\" data-tooltip-dlc=\"31\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible BFFS! icon.png|link=BFFS!|class=tb-icon tb-link-icon|alt=|BFFS!]]</span>[[:BFFS!|BFFS!]]</span>), and can hit up to 10 times for a total of 70 damage."
+  },
+  {
+    "collectible": "Smelter",
+    "description": "Spawns yellow wisps on the middle ring. The wisps have a chance to spawn [[trinket]]s when destroyed."
+  },
+  {
+    "collectible": "Spider Butt",
+    "description": "Spawns white wisps in the middle ring, looking like a spider. Wisps' tears have a 7.5% chance to inflict [[slow]] on enemies."
+  },
+  {
+    "collectible": "Spin to Win",
+    "description": "Generates up to eight wisps in the middle ring while charging the item, which are immediately extinguished once the charge runs out. These wisps shoot six times faster than an average wisp and deal 3 damage."
+  },
+  {
+    "collectible": "Spindown Dice",
+    "description": "Spawns a random wisp in the middle ring and rerolls all of Isaac's wisps into the type that was just spawned. Due to some wisps having unique behaviors, Isaac can end up with more or less wisps in a given ring than expected."
+  },
+  {
+    "collectible": "Sprinkler",
+    "description": "Spawns spinning eyeball wisps on the middle ring. The wisps fire 3 times faster than average, and fire in a spiral pattern similar to Sprinkler."
+  },
+  {
+    "collectible": "Stitches",
+    "description": "When Isaac teleports, he leaves behind a stationary wisp that fires tears in the same direction Isaac does. Up to 6 of these wisps can exist at a time. The wisps do not persist between rooms."
+  },
+  {
+    "collectible": "Sulfur",
+    "description": "Spawns red wisps in the middle ring that fire a short <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CBrimstone\" data-tooltip-dlc=\"24\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Brimstone icon.png|link=Brimstone|class=tb-icon tb-link-icon|alt=|Brimstone]]</span>[[:Brimstone|Brimstone]]</span> laser beam similar to <span style=\"--tb-icon-size: 1.4em\">[[File:Character Azazel icon.png|link=Azazel|class=tb-icon tb-link-icon|alt=|]]</span>[[:Azazel|Azazel]], but significantly smaller."
+  },
+  {
+    "collectible": "Sumptorium",
+    "description": "For Tainted Eve, it will create red wisps for every clot consumed, and they will disappear if she starts creating clots again. Soul charges cannot be used to create wisps. Has no effect for other characters."
+  },
+  {
+    "collectible": "Suplex!",
+    "description": "3 wisps are spawned where Isaac lands after using Suplex!. The wisps rotate around the spot Isaac landed and fire tears in the same direction Isaac does. The wisps do not persist between rooms."
+  },
+  {
+    "collectible": "TMTRAINER",
+    "description": "Using a glitched active spawns a random wisp."
+  },
+  {
+    "collectible": "Tammy's Head",
+    "description": "Spawns pale wisps in the outer ring. The wisps' tears deal 1.5 damage, but fire twice as fast as standard wisps. Tears are inaccurate and fire in a spread."
+  },
+  {
+    "collectible": "Tear Detonator",
+    "description": "Spawns wisps on the middle ring. The wisps' tears are also detonated into 6 tears; the resulting tears are based on Isaac's own, rather than the wisps'. Created wisps trigger Tear Detonator's effect when destroyed. Despite Tear Detonator having a timed recharge, the wisps persist between rooms."
+  },
+  {
+    "collectible": "Telekinesis",
+    "description": "Tears caught by Telekinesis become blue wisps in the outer ring. The wisps are outside the range of Telekinesis, making them vulnerable to shots before they can be converted to wisps. Wisps persist between rooms."
+  },
+  {
+    "collectible": "Telepathy For Dummies",
+    "description": "Spawns purple wisps in the middle ring. These wisps fire [[homing]] tears."
+  },
+  {
+    "collectible": "Teleport 2.0",
+    "description": "Spawns flashing blue wisps on the middle ring. Tears have 20% chance of teleporting non-boss enemies to a random location in the current room on hit. Wisps also temporarily vanish every 5 seconds, preventing them from blocking shots or taking/dealing damage.\n** This effect is identical to <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CTeleport%21\" data-tooltip-dlc=\"30\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Teleport! icon.png|link=Teleport!|class=tb-icon tb-link-icon|alt=|Teleport!]]</span>[[:Teleport!|Teleport!]]</span>'s effect with Book of Virtues, albeit with a 10% higher chance of teleporting enemies on hit."
+  },
+  {
+    "collectible": "Teleport!",
+    "description": "Spawns blue wisps in the middle ring. Wisps' tears have a 10% chance of teleporting non-boss enemies to a random location in the current room on hit. Wisps also temporarily vanish every 5 seconds, preventing them from blocking shots or taking/dealing damage."
+  },
+  {
+    "collectible": "The Bean",
+    "description": "Spawns wisps surrounded by green stink clouds on the outer ring. The wisps deal 5 damage and poison nearby enemies when destroyed."
+  },
+  {
+    "collectible": "The Bible",
+    "description": "Spawns white wisps in the middle ring. Wisps' tears have 0.75 shot speed and [[homing]], and deal 6 damage +0.1 per floor."
+  },
+  {
+    "collectible": "The Book of Belial",
+    "description": "Spawns black and red wisps in the middle ring. Wisps deal double damage compared to normal wisps."
+  },
+  {
+    "collectible": "The Book of Sin",
+    "description": "Grants a random wisp based on one of the [[Seven Deadly Sins]]. The wisp spawned isn't linked to the pickup dropped.\n** [[File:Pride.png|link=Pride|class=tb-icon tb-link-icon|alt=|Pride]][[:Pride|Pride]]: a blue bomb wisp in the middle ring. When destroyed, a small homing bomb that deals normal troll bomb damage is spawned.\n** [[File:Greed.png|link=Greed|class=tb-icon tb-link-icon|alt=|Greed]][[:Greed|Greed]]: 3 yellow coin wisps in the outer ring. Their tears may petrify enemies like <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CMidas%27+Touch\" data-tooltip-dlc=\"31\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Midas' Touch icon.png|link=Midas' Touch|class=tb-icon tb-link-icon|alt=|Midas' Touch]]</span>[[:Midas' Touch|Midas' Touch]]</span>.\n** [[File:Wrath.png|link=Wrath|class=tb-icon tb-link-icon|alt=|Wrath]][[:Wrath|Wrath]]: an orange bomb wisp in the middle ring, which fire flaming tears. They drop troll bombs when continuously firing, and leave a bomb pickup when they die.\n** [[File:Envy.png|link=Envy|class=tb-icon tb-link-icon|alt=|Envy]][[:Envy|Envy]]: a white face-like wisp in the outer ring.\n** [[File:Lust.png|link=Lust|class=tb-icon tb-link-icon|alt=|Lust]][[:Lust|Lust]]: a randomly colored pill wisp in the inner ring, with effects that are the same as <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CMom%27s+Bottle+of+Pills\" data-tooltip-dlc=\"31\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Mom's Bottle of Pills icon.png|link=Mom's Bottle of Pills|class=tb-icon tb-link-icon|alt=|Mom's Bottle of Pills]]</span>[[:Mom's Bottle of Pills|Mom's Bottle of Pills]]</span> wisps.\n** [[File:Gluttony.png|link=Gluttony|class=tb-icon tb-link-icon|alt=|Gluttony]][[:Gluttony|Gluttony]]: a heart wisp in the middle ring, with effects that are the same as <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CYum+Heart\" data-tooltip-dlc=\"31\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Yum Heart icon.png|link=Yum Heart|class=tb-icon tb-link-icon|alt=|Yum Heart]]</span>[[:Yum Heart|Yum Heart]]</span> wisps.\n** [[File:Sloth.png|link=Sloth|class=tb-icon tb-link-icon|alt=|Sloth]][[:Sloth|Sloth]]: a Bob's Head wisp in the middle ring. Their tears travel in an arc like <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CIpecac\" data-tooltip-dlc=\"31\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Ipecac icon.png|link=Ipecac|class=tb-icon tb-link-icon|alt=|Ipecac]]</span>[[:Ipecac|Ipecac]]</span> but don't always explode on impact. There is a small chance for an exploding tear."
+  },
+  {
+    "collectible": "The Boomerang",
+    "description": "Spawns wisps in the middle ring. Wisps' tears have the <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CMy+Reflection\" data-tooltip-dlc=\"31\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible My Reflection icon.png|link=My Reflection|class=tb-icon tb-link-icon|alt=|My Reflection]]</span>[[:My Reflection|My Reflection]]</span> effect and do not persist between rooms."
+  },
+  {
+    "collectible": "The Candle",
+    "description": "Spawns blue wisps on the middle ring. The wisps do not persist between rooms."
+  },
+  {
+    "collectible": "The D6",
+    "description": "Spawns a D6 wisp in the middle ring. An extra wisp is spawned per item rerolled."
+  },
+  {
+    "collectible": "The Gamekid",
+    "description": "Spawns wisps in the inner ring, looking like little Pac-Men. Wisps' tears have the <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CAnti-Gravity\" data-tooltip-dlc=\"31\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Anti-Gravity icon.png|link=Anti-Gravity|class=tb-icon tb-link-icon|alt=|Anti-Gravity]]</span>[[:Anti-Gravity|Anti-Gravity]]</span> effect and can inflict [[fear]] on enemies."
+  },
+  {
+    "collectible": "The Hourglass",
+    "description": "Spawns hourglass-shaped wisps on the middle ring. The wisps [[slow]] all enemies in the room for 3 seconds when destroyed. If the Hourglass is used or extra wisps are destroyed while the slow is in effect, its duration is extended."
+  },
+  {
+    "collectible": "The Jar",
+    "description": "Consumes stored hearts to spawn heart wisps, rather than releasing heart pickups. Heart wisps have a chance to drop a [[File:Half Red Heart.png|link=Hearts#Half Red Heart|class=tb-icon tb-link-icon|alt=|Half Red Heart]][[:Hearts#Half Red Heart|Half Red Heart]] when destroyed."
+  },
+  {
+    "collectible": "The Nail",
+    "description": "Spawns black wisps on the inner ring. Wisps shoot nails that deal double damage from standard wisps and have increased knockback, akin to [[File:Dlc a indicator.png|link=|class=dlc cf-tag cf-val-30 |alt=(except in Rebirth)|Added in Afterbirth]][[Category:Modified in Afterbirth]]<span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7C8+Inch+Nails\" data-tooltip-dlc=\"30\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible 8 Inch Nails icon.png|link=8 Inch Nails|class=tb-icon tb-link-icon|alt=|8 Inch Nails]]</span>[[:8 Inch Nails|8 Inch Nails]]</span>."
+  },
+  {
+    "collectible": "The Necronomicon",
+    "description": "Spawns black wisps on the inner ring. The wisps deal 40 damage to all enemies in the room when destroyed. This is not boosted by <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CBFFS%21\" data-tooltip-dlc=\"31\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible BFFS! icon.png|link=BFFS!|class=tb-icon tb-link-icon|alt=|BFFS!]]</span>[[:BFFS!|BFFS!]]</span>, but is boosted by <span class=\"tooltip\" data-tooltip=\"t%2Ftooltip%7CA+Missing+Page\" data-tooltip-dlc=\"31\"><span style=\"--tb-icon-size: 1.4em\">[[File:Trinket A Missing Page icon.png|link=A Missing Page|class=tb-icon tb-link-icon|alt=|A Missing Page]]</span>[[:A Missing Page|A Missing Page]]</span> and <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CMissing+Page+2\" data-tooltip-dlc=\"31\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Missing Page 2 icon.png|link=Missing Page 2|class=tb-icon tb-link-icon|alt=|Missing Page 2]]</span>[[:Missing Page 2|Missing Page 2]]</span>."
+  },
+  {
+    "collectible": "The Pinking Shears",
+    "description": "Spawns wisps on the inner ring, looking like Isaac's floating head. Wisps fire [[piercing]] tears."
+  },
+  {
+    "collectible": "The Poop",
+    "description": "Spawns wisps on the outer ring, looking like miniature [[File:Dip.png|link=Dip|class=tb-icon tb-link-icon|alt=|Dip]][[:Dip|Dip]]s. Wisps' tears have a 2.5% chance to apply <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CE.+Coli\" data-tooltip-dlc=\"31\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible E. Coli icon.png|link=E. Coli|class=tb-icon tb-link-icon|alt=|E. Coli]]</span>[[:E. Coli|E. Coli]]</span> to enemies, turning them to poop."
+  },
+  {
+    "collectible": "The Scooper",
+    "description": "Spawns white-glowing eyeball wisps on the middle ring. They function the same as normal wisps."
+  },
+  {
+    "collectible": "Undefined",
+    "description": "Creates blue glitched wisps on the middle ring. Wisps fire tears with [[File:Dlc r indicator.png|link=|class=dlc cf-tag cf-val-24 |alt=(in Repentance and Repentance+)|Added in Repentance]][[Category:Modified in Repentance]]<span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CPlaydough+Cookie\" data-tooltip-dlc=\"24\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Playdough Cookie icon.png|link=Playdough Cookie|class=tb-icon tb-link-icon|alt=|Playdough Cookie]]</span>[[:Playdough Cookie|Playdough Cookie]]</span> effects."
+  },
+  {
+    "collectible": "Unicorn Stump",
+    "description": "Spawns an orbital rainbow wisp on the middle ring. Wisps do not deal contact damage and will not take contact damage. When Isaac is invulnerable, wisps become much more vibrant and deal contact damage equal to 2x Isaac's damage -5. If Isaac has less than 2.5 damage, the wisps will deal no damage even if Unicorn Stump is active."
+  },
+  {
+    "collectible": "Urn of Souls",
+    "description": "Spawns a wisp in the middle ring for every consecutive second Urn of Souls is fired. The occasional fires shot by the wisps block enemy shots, deal contact damage to enemies, and last for 3 seconds before dissipating. The flames deal 10 damage per tick for the first second they're out, scale down to 5 damage over the next second, and then stay at 5 damage until they dissipate (60-30 damage per second). The damage these fires deal does not increase with <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CBFFS%21\" data-tooltip-dlc=\"24\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible BFFS! icon.png|link=BFFS!|class=tb-icon tb-link-icon|alt=|BFFS!]]</span>[[:BFFS!|BFFS!]]</span> or scale up on later floors."
+  },
+  {
+    "collectible": "Vade Retro",
+    "description": "Ghosts very slowly move and shoot tears in the same direction Isaac is shooting. The ghosts' tears deal 3.5 damage, and are fired once every second."
+  },
+  {
+    "collectible": "Ventricle Razor",
+    "description": "Spawns a blue/orange wisp that circles the respective portal. Wisps do not fire tears. Wisps do persist if Isaac leaves the room and reenters."
+  },
+  {
+    "collectible": "Void",
+    "description": "Spawns the wisps of all the active items Void has absorbed. Spawns no wisps by itself. Using Void on Book of Virtues will give stat upgrades instead of its normal effect, as Book of Virtues is considered a passive item."
+  },
+  {
+    "collectible": "Wait What?",
+    "description": "Spawns white glowing wisps on the middle ring that don't shoot. The wisps invoke the effect of Wait What? when destroyed and do not persist between rooms."
+  },
+  {
+    "collectible": "Wavy Cap",
+    "description": "Creates a single mushroom wisp on the middle ring, firing 1.5 damage tears. Only one of these wisps can exist at a time."
+  },
+  {
+    "collectible": "We Need To Go Deeper!",
+    "description": "Spawns a skull wisp on the middle ring that shoots bone tears."
+  },
+  {
+    "collectible": "White Pony",
+    "description": "Creates white pony wisps on the middle ring that fire white tears with a 10% chance to fire [[File:Dlc a indicator.png|link=|class=dlc cf-tag cf-val-30 |alt=(except in Rebirth)|Added in Afterbirth]][[Category:Modified in Afterbirth]]<span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CHoly+Light\" data-tooltip-dlc=\"30\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Holy Light icon.png|link=Holy Light|class=tb-icon tb-link-icon|alt=|Holy Light]]</span>[[:Holy Light|Holy Light]]</span> tears. The beams of light the wisps' tears make deal extra damage to enemies in a small area equal to 3x the wisps' tear damage."
+  },
+  {
+    "collectible": "Wooden Nickel",
+    "description": "Spawns tiny coin wisps in the middle ring. The wisps have a 50% chance to drop a random [[coin]] when destroyed."
+  },
+  {
+    "collectible": "Yuck Heart",
+    "description": "Creates green-glowing rotten hearts wisps on the middle ring. They spawn a [[Blue Fly]] when shooting, similar to <span class=\"tooltip\" data-tooltip=\"i%2Ftooltip%7CRotten+Baby\" data-tooltip-dlc=\"24\"><span style=\"--tb-icon-size: 1.4em\">[[File:Collectible Rotten Baby icon.png|link=Rotten Baby|class=tb-icon tb-link-icon|alt=|Rotten Baby]]</span>[[:Rotten Baby|Rotten Baby]]</span>. The wisps also create a small green cloud when destroyed, which is purely cosmetic."
+  },
+  {
+    "collectible": "Yum Heart",
+    "description": "Creates Red Heart wisps in the middle ring. Enemies killed by the wisps' tears have a 1/15 chance to drop a full [[File:Red Heart.png|link=Hearts#Red Heart|class=tb-icon tb-link-icon|alt=|Red Heart]][[:Hearts#Red Heart|Red Heart]]."
+  }
+]
