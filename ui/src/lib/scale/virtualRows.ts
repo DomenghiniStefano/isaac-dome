@@ -41,12 +41,3 @@ export const visibleRows = <T>(
 // The virtualizer's total size is a number of device pixels; the utility that reads it wants a
 // CSS length.
 export const totalHeightPx = (total: number): string => `${total}px`
-
-// A list that scrolls with its page keeps its position as the list's own offset, the same
-// number it keeps when it scrolls on its own: how far the page has scrolled past the list's
-// top, and back.
-export const listScrollTop = (pageTop: number, margin: number): number =>
-  Math.max(0, pageTop - margin)
-
-export const pageScrollTop = (listTop: number, margin: number): number =>
-  listTop + margin
