@@ -6,12 +6,18 @@
 //! reports more distinct titles than there are, and it cannot say which page lost a section,
 //! which is the only thing that lets a title be placed. This probe answers both.
 //!
+//! Design decision 2 narrowed "dropped" a great deal: a title none of the thirteen named
+//! kinds recognizes is `SectionKind::Other` now, kept under its own heading, not discarded.
+//! What is left to drop is `is_excluded_section`'s short, closed list (`Gallery`, the
+//! in-game-footage spellings, `References`, `Trivia`, `Audio`) — the completeness test in
+//! `sections.rs` is what actually gates it; this probe is for looking at the corpus by hand.
+//!
 //! `cargo run -p wiki --example probe_discarded`
 
 use std::collections::BTreeMap;
 use std::path::Path;
 
-use wiki::{normalize_title, section_kind, split_page, Raw};
+use wiki::{is_excluded_section, normalize_title, split_page, Raw};
 
 struct Dropped {
     raws: BTreeMap<String, u32>,
@@ -33,7 +39,7 @@ fn main() {
     for page in &raw.pages {
         let (_, sections) = split_page(&page.text);
         for s in sections {
-            if section_kind(&s.title).is_some() {
+            if !is_excluded_section(&s.title) {
                 kept += 1;
                 continue;
             }

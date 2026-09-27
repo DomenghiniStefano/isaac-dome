@@ -177,6 +177,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -300,6 +307,13 @@
       },
       {
         "kind": "championVersions",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Champion Versions ",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -399,6 +413,13 @@
       },
       {
         "kind": "bugs",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Bugs",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -631,6 +652,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -1112,6 +1140,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -1263,6 +1298,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -1342,6 +1384,13 @@
       },
       {
         "kind": "bugs",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Bugs",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -1688,6 +1737,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -1859,6 +1915,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -2119,6 +2182,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -2428,6 +2498,18 @@
       },
       {
         "kind": "unlockable",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Unlockable ",
+            "style": "plain"
+          },
+          {
+            "kind": "concept",
+            "page": "Achievements",
+            "label": "Achievements"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -5140,6 +5222,13 @@
       },
       {
         "kind": "damageScaling",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Damage Scaling",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -5213,6 +5302,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -5345,6 +5441,13 @@
       },
       {
         "kind": "bugs",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Bugs",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -5524,6 +5627,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -5823,6 +5933,23 @@
       },
       {
         "kind": "unlockable",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Unlockable ",
+            "style": "plain"
+          },
+          {
+            "kind": "concept",
+            "page": "Achievement",
+            "label": "Achievement"
+          },
+          {
+            "kind": "text",
+            "text": "s",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -8873,6 +9000,13 @@
       },
       {
         "kind": "damageScaling",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Damage Scaling",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -9345,6 +9479,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -9470,6 +9611,13 @@
       },
       {
         "kind": "championVersions",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Champion Versions ",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -9515,6 +9663,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -9893,6 +10048,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -10011,6 +10173,13 @@
       },
       {
         "kind": "championVersions",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Champion Versions ",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -10096,6 +10265,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -10191,6 +10367,13 @@
       },
       {
         "kind": "bugs",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Bugs",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -10363,6 +10546,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -10636,6 +10826,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -10763,6 +10960,13 @@
       },
       {
         "kind": "bugs",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Bugs",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -10916,6 +11120,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -11125,6 +11336,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -11527,6 +11745,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -11568,6 +11793,13 @@
       },
       {
         "kind": "championVersions",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Champion Versions ",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -11598,6 +11830,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -12435,6 +12674,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -12518,6 +12764,13 @@
       },
       {
         "kind": "championVersions",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Champion Versions ",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -12595,6 +12848,13 @@
       },
       {
         "kind": "bugs",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Bugs",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -13005,6 +13265,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -13098,6 +13365,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -13533,6 +13807,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -13688,6 +13969,13 @@
       },
       {
         "kind": "championVersions",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Champion Versions ",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -13755,6 +14043,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -13984,6 +14279,13 @@
       },
       {
         "kind": "bugs",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Bugs",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -14491,6 +14793,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -14584,6 +14893,13 @@
       },
       {
         "kind": "championVersions",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Champion Versions ",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -14680,6 +14996,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -15114,6 +15437,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -15232,6 +15562,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -15703,6 +16040,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -15804,6 +16148,13 @@
       },
       {
         "kind": "championVersions",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Champion Versions ",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -16232,6 +16583,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -16430,6 +16788,13 @@
       },
       {
         "kind": "championVersions",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Champion Versions ",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -16497,6 +16862,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -16979,6 +17351,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -17097,6 +17476,13 @@
       },
       {
         "kind": "championVersions",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Champion Versions ",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -17225,6 +17611,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -17586,6 +17979,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -17732,6 +18132,13 @@
       },
       {
         "kind": "championVersions",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Champion Versions ",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -17808,6 +18215,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -18185,6 +18599,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -18656,6 +19077,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -18720,6 +19148,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -18735,6 +19170,13 @@
       },
       {
         "kind": "bugs",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Bugs",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -19097,6 +19539,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -19176,6 +19625,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -19656,6 +20112,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -19757,6 +20220,13 @@
       },
       {
         "kind": "championVersions",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Champion Versions ",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -20067,6 +20537,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -20160,6 +20637,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -20491,6 +20975,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -20775,6 +21266,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "heading",
@@ -21084,6 +21582,18 @@
       },
       {
         "kind": "unlockable",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Unlockable ",
+            "style": "plain"
+          },
+          {
+            "kind": "concept",
+            "page": "Achievements",
+            "label": "Achievements"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -24177,6 +24687,13 @@
       },
       {
         "kind": "damageScaling",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Damage Scaling",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -24250,6 +24767,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -24385,6 +24909,13 @@
       },
       {
         "kind": "bugs",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Bugs",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -24618,6 +25149,13 @@
     "sections": [
       {
         "kind": "unlockable",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Unlock",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -25325,6 +25863,13 @@
       },
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -26279,6 +26824,18 @@
       },
       {
         "kind": "unlockable",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Unlockable ",
+            "style": "plain"
+          },
+          {
+            "kind": "concept",
+            "page": "Achievements",
+            "label": "Achievements"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -28000,6 +28557,13 @@
       },
       {
         "kind": "damageScaling",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Damage Scaling",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -28069,6 +28633,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -28399,6 +28970,13 @@
       },
       {
         "kind": "bugs",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Bugs",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -28831,6 +29409,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -28946,6 +29531,13 @@
       },
       {
         "kind": "championVersions",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Champion Versions ",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -29035,6 +29627,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -29229,6 +29828,13 @@
       },
       {
         "kind": "bugs",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Bugs",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -29430,6 +30036,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -29543,6 +30156,23 @@
       },
       {
         "kind": "unlockable",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Unlockable ",
+            "style": "plain"
+          },
+          {
+            "kind": "concept",
+            "page": "Achievement",
+            "label": "Achievement"
+          },
+          {
+            "kind": "text",
+            "text": "s",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -29588,6 +30218,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -29694,6 +30331,13 @@
       },
       {
         "kind": "bugs",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Bugs",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -29926,6 +30570,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "heading",
@@ -30136,6 +30787,13 @@
       },
       {
         "kind": "championVersions",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Champion Versions ",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -30171,6 +30829,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -30197,6 +30862,13 @@
       },
       {
         "kind": "bugs",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Bugs",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -30465,6 +31137,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -30605,6 +31284,13 @@
       },
       {
         "kind": "championVersions",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Champion Versions ",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -30625,6 +31311,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -30686,6 +31379,13 @@
       },
       {
         "kind": "bugs",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Bugs",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -31074,6 +31774,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -31160,6 +31867,13 @@
       },
       {
         "kind": "championVersions",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Champion Versions ",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -31419,6 +32133,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "heading",
@@ -31681,6 +32402,13 @@
       },
       {
         "kind": "championVersions",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Champion Versions ",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -31770,6 +32498,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -32013,6 +32748,13 @@
       },
       {
         "kind": "bugs",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Bug",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -32399,6 +33141,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -32582,6 +33331,13 @@
       },
       {
         "kind": "championVersions",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Champion Versions ",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -32642,6 +33398,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -33018,6 +33781,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -33193,6 +33963,13 @@
       },
       {
         "kind": "championVersions",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Champion Versions ",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -33256,6 +34033,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -33441,6 +34225,23 @@
       },
       {
         "kind": "unlockable",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Unlockable ",
+            "style": "plain"
+          },
+          {
+            "kind": "concept",
+            "page": "Achievement",
+            "label": "Achievement"
+          },
+          {
+            "kind": "text",
+            "text": "s",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -33943,6 +34744,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -34140,6 +34948,13 @@
       },
       {
         "kind": "championVersions",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Champion Versions ",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -34205,6 +35020,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -34390,6 +35212,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -34679,7 +35508,292 @@
         ]
       },
       {
+        "kind": "other",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Ultra Greedier",
+            "style": "plain"
+          }
+        ],
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "inline": [
+              {
+                "kind": "text",
+                "text": "{{infobox boss | dlc         = a+ | name        = Ultra Greedier | variant     = 1 | environment = Boss greedier ",
+                "style": "plain"
+              },
+              {
+                "kind": "ref",
+                "target": {
+                  "kind": "stage",
+                  "name": "Ultra Greed"
+                },
+                "label": "Ultra Greed"
+              },
+              {
+                "kind": "text",
+                "text": " | base hp     = 2500 | pool        = Final Boss Chest (",
+                "style": "plain"
+              },
+              {
+                "kind": "concept",
+                "page": "Endings",
+                "label": "Ending 19"
+              },
+              {
+                "kind": "text",
+                "text": ") ",
+                "style": "plain"
+              },
+              {
+                "kind": "concept",
+                "page": "Greed Donation Machine",
+                "label": "Greed Donation Machine"
+              },
+              {
+                "kind": "text",
+                "text": " | portrait    = no",
+                "style": "plain"
+              }
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "inline": [
+              {
+                "kind": "text",
+                "text": "Greedier Mode",
+                "style": "bold"
+              },
+              {
+                "kind": "text",
+                "text": " is a mode added in ",
+                "style": "plain"
+              },
+              {
+                "kind": "text",
+                "text": "Afterbirth ♰",
+                "style": "italic"
+              },
+              {
+                "kind": "text",
+                "text": ". It is unlocked by depositing 500 coins in the Greed Machine.",
+                "style": "plain"
+              }
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "inline": [
+              {
+                "kind": "text",
+                "text": "Playing on Greedier Mode gives ",
+                "style": "plain"
+              },
+              {
+                "kind": "text",
+                "text": "Ultra Greed",
+                "style": "bold"
+              },
+              {
+                "kind": "text",
+                "text": " a second phase where his gold statue form comes to life. This phase is known as ",
+                "style": "plain"
+              },
+              {
+                "kind": "text",
+                "text": "Ultra Greedier",
+                "style": "bold"
+              },
+              {
+                "kind": "text",
+                "text": ", and is the final boss of ",
+                "style": "plain"
+              },
+              {
+                "kind": "concept",
+                "page": "Endings",
+                "label": "Ending 19"
+              },
+              {
+                "kind": "text",
+                "text": ". Additionally, he performs several new attacks:",
+                "style": "plain"
+              }
+            ]
+          },
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "The coin projectiles that Ultra Greedier shoots from his first phase now explode upon contact.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "Slams his fists into the ground, creating explosions where he slams and causing golden ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 118
+                    },
+                    "label": "Brimstone"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " lasers to fire from the golden Boss Room doors that surround the room.",
+                    "style": "plain"
+                  }
+                ],
+                "children": [
+                  {
+                    "kind": "list",
+                    "ordered": false,
+                    "items": [
+                      {
+                        "inline": [
+                          {
+                            "kind": "text",
+                            "text": "They can either come out from one pair of doors at a time or from all of them at once.",
+                            "style": "plain"
+                          }
+                        ],
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "Jumps into the air towards Isaac's position, dropping exploding coins down below while travelling. Upon landing, rock waves are sent in various directions.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "Stomps on the ground four times, causing a slew of Bomb Coins to rain from the ceiling.",
+                    "style": "plain"
+                  }
+                ],
+                "children": [
+                  {
+                    "kind": "list",
+                    "ordered": false,
+                    "items": [
+                      {
+                        "inline": [
+                          {
+                            "kind": "text",
+                            "text": "These coins can spawn a single ",
+                            "style": "plain"
+                          },
+                          {
+                            "kind": "ref",
+                            "target": {
+                              "kind": "entity",
+                              "id": 5,
+                              "variant": 20,
+                              "subtype": 1
+                            },
+                            "label": "Penny"
+                          },
+                          {
+                            "kind": "text",
+                            "text": " when they explode, providing both healing for Ultra Greedier and extra coins for Isaac.",
+                            "style": "plain"
+                          }
+                        ],
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "inline": [
+              {
+                "kind": "text",
+                "text": "After defeating Ultra Greedier, he explodes, dropping a ",
+                "style": "plain"
+              },
+              {
+                "kind": "ref",
+                "target": {
+                  "kind": "entity",
+                  "id": 5,
+                  "variant": 20,
+                  "subtype": 1
+                },
+                "label": "Penny"
+              },
+              {
+                "kind": "text",
+                "text": " and turning the entire room into solid gold. It is at this point that the end chest and the ",
+                "style": "plain"
+              },
+              {
+                "kind": "ref",
+                "target": {
+                  "kind": "entity",
+                  "id": 6,
+                  "variant": 11,
+                  "subtype": 0
+                },
+                "label": "Greed Donation Machine"
+              },
+              {
+                "kind": "text",
+                "text": " spawn. ",
+                "style": "plain"
+              }
+            ]
+          }
+        ]
+      },
+      {
         "kind": "unlockable",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Unlockable ",
+            "style": "plain"
+          },
+          {
+            "kind": "concept",
+            "page": "Achievement",
+            "label": "Achievement"
+          },
+          {
+            "kind": "text",
+            "text": "s",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "heading",
@@ -37136,6 +38250,13 @@
       },
       {
         "kind": "damageScaling",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Damage Scaling",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -37181,6 +38302,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -37489,6 +38617,13 @@
       },
       {
         "kind": "bugs",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Bugs",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -37702,6 +38837,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "heading",
@@ -38257,6 +39399,23 @@
       },
       {
         "kind": "unlockable",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Unlockable ",
+            "style": "plain"
+          },
+          {
+            "kind": "concept",
+            "page": "Achievement",
+            "label": "Achievement"
+          },
+          {
+            "kind": "text",
+            "text": "s",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -40265,6 +41424,13 @@
       },
       {
         "kind": "damageScaling",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Damage Scaling",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -40310,6 +41476,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -40511,6 +41684,13 @@
       },
       {
         "kind": "strategies",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Strategies",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -41314,6 +42494,13 @@
       },
       {
         "kind": "bugs",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Bugs",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -41647,6 +42834,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -41738,6 +42932,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -42261,6 +43462,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "heading",
@@ -42535,6 +43743,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -42847,6 +44062,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -43245,6 +44467,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -43403,6 +44632,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -43919,6 +45155,23 @@
       },
       {
         "kind": "unlockable",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Unlockable ",
+            "style": "plain"
+          },
+          {
+            "kind": "concept",
+            "page": "Achievement",
+            "label": "Achievement"
+          },
+          {
+            "kind": "text",
+            "text": "s",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -45706,6 +46959,13 @@
       },
       {
         "kind": "damageScaling",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Damage Scaling",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -45751,6 +47011,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -46614,6 +47881,13 @@
       },
       {
         "kind": "strategies",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Strategies",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -46767,6 +48041,13 @@
       },
       {
         "kind": "bugs",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Bugs",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -47457,6 +48738,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "heading",
@@ -47934,6 +49222,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -48213,6 +49508,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -48341,6 +49643,13 @@
       },
       {
         "kind": "championVersions",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Champion Versions ",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -48375,6 +49684,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -48556,6 +49872,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -48736,6 +50059,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -48836,6 +50166,23 @@
       },
       {
         "kind": "unlockable",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Unlockable ",
+            "style": "plain"
+          },
+          {
+            "kind": "concept",
+            "page": "Achievement",
+            "label": "Achievement"
+          },
+          {
+            "kind": "text",
+            "text": "s",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -49154,6 +50501,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -49564,7 +50918,301 @@
         ]
       },
       {
+        "kind": "other",
+        "title": [
+          {
+            "kind": "edition",
+            "only": [
+              "repentance",
+              "repentancePlus"
+            ],
+            "inline": [
+              {
+                "kind": "text",
+                "text": " Behavior in Mausoleum/Gehenna",
+                "style": "plain"
+              }
+            ]
+          }
+        ],
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "inline": [
+              {
+                "kind": "text",
+                "text": "A stronger version of Mom can be fought on the second floor of the ",
+                "style": "plain"
+              },
+              {
+                "kind": "ref",
+                "target": {
+                  "kind": "stage",
+                  "name": "Mausoleum"
+                },
+                "label": "Mausoleum"
+              },
+              {
+                "kind": "text",
+                "text": " and ",
+                "style": "plain"
+              },
+              {
+                "kind": "ref",
+                "target": {
+                  "kind": "stage",
+                  "name": "Gehenna"
+                },
+                "label": "Gehenna"
+              },
+              {
+                "kind": "text",
+                "text": ". This version of Mom has noticeably bluer veins on her leg and stronger variations of her attacks:",
+                "style": "plain"
+              }
+            ]
+          },
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "Stomps 3 times on Isaac's position in rapid succession, with the third stomp releasing explosions in the cardinal directions.",
+                    "style": "plain"
+                  }
+                ],
+                "children": [
+                  {
+                    "kind": "list",
+                    "ordered": false,
+                    "items": [
+                      {
+                        "inline": [
+                          {
+                            "kind": "text",
+                            "text": "If an eye is already attacking, only 1 stomp will be performed.",
+                            "style": "plain"
+                          }
+                        ],
+                        "children": []
+                      },
+                      {
+                        "inline": [
+                          {
+                            "kind": "text",
+                            "text": "She always begins the fight by stomping once in the center of the room, just like in Chapter 3.",
+                            "style": "plain"
+                          }
+                        ],
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "Sticks an eye out of a door, and if Isaac is in line of sight, it shoots 2 ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "item",
+                      "id": 118
+                    },
+                    "label": "Brimstone"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " beams in a helix pattern towards the door on the opposite side.",
+                    "style": "plain"
+                  }
+                ],
+                "children": [
+                  {
+                    "kind": "list",
+                    "ordered": false,
+                    "items": [
+                      {
+                        "inline": [
+                          {
+                            "kind": "text",
+                            "text": "If Mom had already initiated the 3-stomp attack, the eyes opened during it won't fire the beams.",
+                            "style": "plain"
+                          }
+                        ],
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "Sticks out a piece of flesh from a door and spawns a Monster:",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              }
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "inline": [
+              {
+                "kind": "text",
+                "text": ": ",
+                "style": "plain"
+              },
+              {
+                "kind": "ref",
+                "target": {
+                  "kind": "entity",
+                  "id": 18,
+                  "variant": 0,
+                  "subtype": 0
+                },
+                "label": "Attack Fly"
+              },
+              {
+                "kind": "text",
+                "text": " : ",
+                "style": "plain"
+              },
+              {
+                "kind": "ref",
+                "target": {
+                  "kind": "entity",
+                  "id": 24,
+                  "variant": 3,
+                  "subtype": 0
+                },
+                "label": "Cursed Globin"
+              },
+              {
+                "kind": "text",
+                "text": " : ",
+                "style": "plain"
+              },
+              {
+                "kind": "ref",
+                "target": {
+                  "kind": "entity",
+                  "id": 886,
+                  "variant": 1,
+                  "subtype": 0
+                },
+                "label": "Fetal Demon"
+              },
+              {
+                "kind": "text",
+                "text": " : ",
+                "style": "plain"
+              },
+              {
+                "kind": "ref",
+                "target": {
+                  "kind": "entity",
+                  "id": 246,
+                  "variant": 1,
+                  "subtype": 0
+                },
+                "label": "Rag Man's Ragling"
+              },
+              {
+                "kind": "text",
+                "text": " : ",
+                "style": "plain"
+              },
+              {
+                "kind": "ref",
+                "target": {
+                  "kind": "entity",
+                  "id": 61,
+                  "variant": 0,
+                  "subtype": 0
+                },
+                "label": "Sucker"
+              },
+              {
+                "kind": "text",
+                "text": " : ",
+                "style": "plain"
+              },
+              {
+                "kind": "ref",
+                "target": {
+                  "kind": "entity",
+                  "id": 248,
+                  "variant": 0,
+                  "subtype": 0
+                },
+                "label": "Psychic Horf"
+              }
+            ]
+          },
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "Unlike in Chapter 3, Mom never uses her hand attack.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "All enemies spawned by Mom die alongside her, except for Cursed Globins, which collapse into 2 piles of goo.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              }
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "inline": [
+              {
+                "kind": "text",
+                "text": "Mom deals a whole heart of contact damage. This version of Mom never spawns as a champion. ",
+                "style": "plain"
+              }
+            ]
+          }
+        ]
+      },
+      {
         "kind": "championVersions",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Champion Versions ",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -49680,6 +51328,18 @@
       },
       {
         "kind": "unlockable",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Unlockable ",
+            "style": "plain"
+          },
+          {
+            "kind": "concept",
+            "page": "Achievements",
+            "label": "Achievements"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -50240,6 +51900,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -50844,6 +52511,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -50961,6 +52635,13 @@
       },
       {
         "kind": "championVersions",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Champion Versions ",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -50990,6 +52671,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -51133,6 +52821,13 @@
       },
       {
         "kind": "bugs",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Bugs",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -51309,6 +53004,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -51449,6 +53151,13 @@
       },
       {
         "kind": "championVersions",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Champion Versions ",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -51479,6 +53188,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -51560,6 +53276,13 @@
       },
       {
         "kind": "bugs",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Bugs",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -52035,6 +53758,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "heading",
@@ -52249,6 +53979,13 @@
       },
       {
         "kind": "championVersions",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Champion Versions ",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -52279,6 +54016,13 @@
       },
       {
         "kind": "bugs",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Bugs",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -52511,6 +54255,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -52866,6 +54617,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "heading",
@@ -53012,6 +54770,13 @@
       },
       {
         "kind": "championVersions",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Champion Versions ",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -53087,6 +54852,23 @@
       },
       {
         "kind": "unlockable",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Unlockable ",
+            "style": "plain"
+          },
+          {
+            "kind": "concept",
+            "page": "Achievement",
+            "label": "Achievement"
+          },
+          {
+            "kind": "text",
+            "text": "s",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -53161,6 +54943,13 @@
       },
       {
         "kind": "bugs",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Bugs",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -53449,6 +55238,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "heading",
@@ -53653,6 +55449,13 @@
       },
       {
         "kind": "championVersions",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Champion Versions ",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -53713,6 +55516,18 @@
       },
       {
         "kind": "unlockable",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Unlockable ",
+            "style": "plain"
+          },
+          {
+            "kind": "concept",
+            "page": "achievements",
+            "label": "achievements"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -54028,6 +55843,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "heading",
@@ -54193,6 +56015,13 @@
       },
       {
         "kind": "championVersions",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Champion Versions ",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -54228,6 +56057,23 @@
       },
       {
         "kind": "unlockable",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Unlockable ",
+            "style": "plain"
+          },
+          {
+            "kind": "concept",
+            "page": "achievement",
+            "label": "achievement"
+          },
+          {
+            "kind": "text",
+            "text": "s",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -54509,6 +56355,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -54617,6 +56470,23 @@
       },
       {
         "kind": "unlockable",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Unlockable ",
+            "style": "plain"
+          },
+          {
+            "kind": "concept",
+            "page": "Achievement",
+            "label": "Achievement"
+          },
+          {
+            "kind": "text",
+            "text": "s",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -54691,6 +56561,13 @@
       },
       {
         "kind": "bugs",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Bugs",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -54980,6 +56857,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "heading",
@@ -55203,6 +57087,13 @@
       },
       {
         "kind": "championVersions",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Champion Versions ",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -55253,6 +57144,23 @@
       },
       {
         "kind": "unlockable",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Unlockable ",
+            "style": "plain"
+          },
+          {
+            "kind": "concept",
+            "page": "Achievement",
+            "label": "Achievement"
+          },
+          {
+            "kind": "text",
+            "text": "s",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -55327,6 +57235,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -55674,6 +57589,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -55871,6 +57793,13 @@
       },
       {
         "kind": "championVersions",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Champion Versions ",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -55946,6 +57875,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -56184,6 +58120,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -56405,6 +58348,13 @@
       },
       {
         "kind": "championVersions",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Champion Versions ",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -56712,6 +58662,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -56810,6 +58767,13 @@
       },
       {
         "kind": "championVersions",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Champion Versions ",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -56855,6 +58819,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -56928,6 +58899,13 @@
       },
       {
         "kind": "bugs",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Bugs",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -57357,6 +59335,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -57532,6 +59517,13 @@
       },
       {
         "kind": "championVersions",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Champion Versions ",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -57633,6 +59625,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -57706,6 +59705,13 @@
       },
       {
         "kind": "bugs",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Bugs",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -58021,6 +60027,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -58156,6 +60169,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -58557,6 +60577,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -58648,6 +60675,18 @@
       },
       {
         "kind": "unlockable",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Unlockable ",
+            "style": "plain"
+          },
+          {
+            "kind": "concept",
+            "page": "Achievements",
+            "label": "Achievements"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -58768,6 +60807,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -59295,6 +61341,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -59415,6 +61468,13 @@
       },
       {
         "kind": "championVersions",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Champion Versions ",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -59932,6 +61992,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -60597,6 +62664,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -60819,6 +62893,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -60887,6 +62968,13 @@
       },
       {
         "kind": "bugs",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Bugs",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -61401,6 +63489,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "heading",
@@ -62147,7 +64242,370 @@
         ]
       },
       {
+        "kind": "other",
+        "title": [
+          {
+            "kind": "edition",
+            "only": [
+              "repentance",
+              "repentancePlus"
+            ],
+            "inline": [
+              {
+                "kind": "text",
+                "text": " Behavior in Mausoleum/Gehenna",
+                "style": "plain"
+              }
+            ]
+          }
+        ],
+        "blocks": [
+          {
+            "kind": "heading",
+            "level": 3,
+            "inline": [
+              {
+                "kind": "text",
+                "text": "Phase 1",
+                "style": "plain"
+              }
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "inline": [
+              {
+                "kind": "text",
+                "text": "The beginning of this fight is similar to one from Chapter 4, as Mom's Heart is always accompanied by two Eyes and retreats upwards after awhile, shooting the same four slow-moving lines of projectiles. However, a second pair of Eyes does not replace the first, and after both initial Eyes are killed, Mom's Heart lowers itself and no longer retreats upwards.",
+                "style": "plain"
+              }
+            ]
+          },
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "Mom's Heart begins with 3 projectile patterns it can perform:",
+                    "style": "plain"
+                  }
+                ],
+                "children": [
+                  {
+                    "kind": "list",
+                    "ordered": false,
+                    "items": [
+                      {
+                        "inline": [
+                          {
+                            "kind": "text",
+                            "text": "2 rings of 8 projectiles at different intervals that expand outwards overlapping on each other either continuously or in a pulsating manner.",
+                            "style": "plain"
+                          }
+                        ],
+                        "children": []
+                      },
+                      {
+                        "inline": [
+                          {
+                            "kind": "text",
+                            "text": "2 streams of projectiles that spiral outwards and gradually increase in density.",
+                            "style": "plain"
+                          }
+                        ],
+                        "children": []
+                      },
+                      {
+                        "inline": [
+                          {
+                            "kind": "text",
+                            "text": "2 rings of 8 projectiles each ring expanding and alternating between rotating clockwise and counter-clockwise.",
+                            "style": "plain"
+                          }
+                        ],
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "kind": "heading",
+            "level": 3,
+            "inline": [
+              {
+                "kind": "text",
+                "text": "Phase 2",
+                "style": "plain"
+              }
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "inline": [
+              {
+                "kind": "text",
+                "text": "After reaching 60% HP, Mom's Heart beats slightly faster and replaces the patterns from its first phase with the following patterns:",
+                "style": "plain"
+              }
+            ]
+          },
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "5 lines of projectiles that rotate and pulsate outwards.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "A combined ring of 2 rings of 8 projectiles that rotate in opposite directions while expanding.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "16 wavy streams of projectiles that intertwine and create gaps.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "16 streams of projectiles that curve back towards Mom's Heart and intertwine to create gaps.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "5 waving lines of projectiles that rotate and expand outwards.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              }
+            ]
+          },
+          {
+            "kind": "heading",
+            "level": 3,
+            "inline": [
+              {
+                "kind": "text",
+                "text": "Phase 3",
+                "style": "plain"
+              }
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "inline": [
+              {
+                "kind": "text",
+                "text": "After reaching 30% HP, Mom's Heart beats much faster, keeps the patterns from its previous phase, and gains the following patterns:",
+                "style": "plain"
+              }
+            ]
+          },
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "6 curved lines of projectiles that rotate in opposite directions while expanding — 3 clockwise, 3 counter-clockwise.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "A ring of 12 projectiles that expands outwards, along with 2 rings of 4 projectiles that expand outwards and rotate in opposite directions at a higher speed.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              }
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "inline": [
+              {
+                "kind": "text",
+                "text": "It also regains 2 patterns from its first phase:",
+                "style": "plain"
+              }
+            ]
+          },
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "2 streams of projectiles that spiral outwards and gradually increase in density.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "2 rings of 8 projectiles, each ring expanding and alternating between rotating clockwise and counter-clockwise.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              }
+            ]
+          },
+          {
+            "kind": "heading",
+            "level": 3,
+            "inline": [
+              {
+                "kind": "text",
+                "text": "Phase 4",
+                "style": "plain"
+              }
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "inline": [
+              {
+                "kind": "text",
+                "text": "After reaching 10% HP, Mom's Heart stops its previous projectile attacks and fires 2 ",
+                "style": "plain"
+              },
+              {
+                "kind": "ref",
+                "target": {
+                  "kind": "item",
+                  "id": 118
+                },
+                "label": "Brimstone"
+              },
+              {
+                "kind": "text",
+                "text": " lasers in opposite directions that slowly rotate either clockwise or counter-clockwise at a steady pace. During this, it also shoots 2 continuous streams of projectiles, one that follows Isaac's movements and the other mirroring the first.",
+                "style": "plain"
+              }
+            ]
+          },
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "Upon defeat, Mom's Heart fires out a ring of 14 projectiles and permanently causes the Darkness and gray-scale effect for the entire floor. This persists for a brief moment upon entering the ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "ref",
+                    "target": {
+                      "kind": "stage",
+                      "name": "Corpse"
+                    },
+                    "label": "Corpse"
+                  },
+                  {
+                    "kind": "text",
+                    "text": ". Additionally it makes all consumables, items, and shops disappear after Mom's Heart is killed.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              }
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "inline": [
+              {
+                "kind": "text",
+                "text": "A majority of Mom's Heart's projectile attacks use large projectiles and deal a whole heart of damage; however, some attacks can be mixed with, or fully use smaller projectiles which only deal half a heart of damage. The heart's ",
+                "style": "plain"
+              },
+              {
+                "kind": "ref",
+                "target": {
+                  "kind": "item",
+                  "id": 118
+                },
+                "label": "Brimstone"
+              },
+              {
+                "kind": "text",
+                "text": " lasers also only deal half a heart of damage.",
+                "style": "plain"
+              }
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "inline": [
+              {
+                "kind": "text",
+                "text": "As most of Mom's Heart's projectile attacks are synced with the rhythm of the heart's beating, as the fight progresses, the speed of each projectile attack increases. ",
+                "style": "plain"
+              }
+            ]
+          }
+        ]
+      },
+      {
         "kind": "unlockable",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Unlockable ",
+            "style": "plain"
+          },
+          {
+            "kind": "concept",
+            "page": "Achievements",
+            "label": "Achievements"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -64555,7 +67013,174 @@
         ]
       },
       {
+        "kind": "other",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Everything Is Terrible!!! changes",
+            "style": "plain"
+          }
+        ],
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "inline": [
+              {
+                "kind": "text",
+                "text": " After beating Mom's Heart 5 times, the following playthroughs have the following changes:",
+                "style": "plain"
+              }
+            ]
+          },
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "Bosses drop 1 less health pickup.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "text",
+                    "text": "The chance of a floor receiving a ",
+                    "style": "plain"
+                  },
+                  {
+                    "kind": "concept",
+                    "page": "curses",
+                    "label": "curse"
+                  },
+                  {
+                    "kind": "text",
+                    "text": " increases.",
+                    "style": "plain"
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": " The ",
+                        "style": "plain"
+                      },
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "entity",
+                          "id": 61,
+                          "variant": 5,
+                          "subtype": 0
+                        },
+                        "label": "Bulb"
+                      },
+                      {
+                        "kind": "text",
+                        "text": " enemy can appear.",
+                        "style": "plain"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": " Unlocks ",
+                        "style": "plain"
+                      },
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "entity",
+                          "id": 5,
+                          "variant": 10,
+                          "subtype": 8
+                        },
+                        "label": "n"
+                      },
+                      {
+                        "kind": "text",
+                        "text": "s.",
+                        "style": "plain"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "inline": [
+                  {
+                    "kind": "edition",
+                    "only": [
+                      "repentance",
+                      "repentancePlus"
+                    ],
+                    "inline": [
+                      {
+                        "kind": "text",
+                        "text": " Unlocks ",
+                        "style": "plain"
+                      },
+                      {
+                        "kind": "ref",
+                        "target": {
+                          "kind": "entity",
+                          "id": 5,
+                          "variant": 90,
+                          "subtype": 2
+                        },
+                        "label": "Micro Batteries"
+                      },
+                      {
+                        "kind": "text",
+                        "text": ".",
+                        "style": "plain"
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -64866,6 +67491,13 @@
       },
       {
         "kind": "bugs",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Bugs",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -65137,6 +67769,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -65469,6 +68108,23 @@
       },
       {
         "kind": "unlockable",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Unlockable ",
+            "style": "plain"
+          },
+          {
+            "kind": "concept",
+            "page": "Achievement",
+            "label": "Achievement"
+          },
+          {
+            "kind": "text",
+            "text": "s",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -67110,6 +69766,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -67203,6 +69866,13 @@
       },
       {
         "kind": "bugs",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Bugs",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -67580,6 +70250,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -67648,6 +70325,13 @@
       },
       {
         "kind": "championVersions",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Champion Versions ",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -67797,6 +70481,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -67848,6 +70539,13 @@
       },
       {
         "kind": "bugs",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Bugs",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -68234,6 +70932,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -68382,6 +71087,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -68473,6 +71185,23 @@
       },
       {
         "kind": "unlockable",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Unlockable ",
+            "style": "plain"
+          },
+          {
+            "kind": "concept",
+            "page": "Achievement",
+            "label": "Achievement"
+          },
+          {
+            "kind": "text",
+            "text": "s",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -68691,6 +71420,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -68770,6 +71506,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -68835,6 +71578,13 @@
       },
       {
         "kind": "bugs",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Bugs",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -69214,6 +71964,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "heading",
@@ -69353,6 +72110,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -69771,6 +72535,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -69940,6 +72711,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -70121,6 +72899,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -70449,6 +73234,18 @@
       },
       {
         "kind": "unlockable",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Unlockable ",
+            "style": "plain"
+          },
+          {
+            "kind": "concept",
+            "page": "Achievements",
+            "label": "Achievements"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -73212,6 +76009,13 @@
       },
       {
         "kind": "damageScaling",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Damage Scaling",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -73285,6 +76089,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -73503,6 +76314,13 @@
       },
       {
         "kind": "bugs",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Bugs",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -73770,6 +76588,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "heading",
@@ -74167,6 +76992,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -74228,6 +77060,13 @@
       },
       {
         "kind": "bugs",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Bugs",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -74443,6 +77282,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -74741,6 +77587,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -74829,6 +77682,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -74991,6 +77851,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "heading",
@@ -75417,6 +78284,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -75451,6 +78325,13 @@
       },
       {
         "kind": "bugs",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Bugs",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -75669,6 +78550,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -75891,6 +78779,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -76446,6 +79341,18 @@
       },
       {
         "kind": "unlockable",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Unlockable ",
+            "style": "plain"
+          },
+          {
+            "kind": "concept",
+            "page": "Achievements",
+            "label": "Achievements"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -76496,6 +79403,13 @@
       },
       {
         "kind": "bugs",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Bugs",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -76662,6 +79576,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "heading",
@@ -76932,6 +79853,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -77121,6 +80049,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "heading",
@@ -77567,6 +80502,18 @@
       },
       {
         "kind": "unlockable",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Unlockable ",
+            "style": "plain"
+          },
+          {
+            "kind": "concept",
+            "page": "Achievements",
+            "label": "Achievements"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -77617,6 +80564,13 @@
       },
       {
         "kind": "bugs",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Bugs",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -77755,6 +80709,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -77994,7 +80955,104 @@
         ]
       },
       {
+        "kind": "other",
+        "title": [
+          {
+            "kind": "concept",
+            "page": "Monsters",
+            "label": "Monsters"
+          }
+        ],
+        "blocks": [
+          {
+            "kind": "heading",
+            "level": 3,
+            "inline": [
+              {
+                "kind": "ref",
+                "target": {
+                  "kind": "stage",
+                  "name": "Mines"
+                },
+                "label": "Mines"
+              },
+              {
+                "kind": "text",
+                "text": " Waves",
+                "style": "plain"
+              }
+            ]
+          },
+          {
+            "kind": "table",
+            "header": [
+              [
+                {
+                  "kind": "text",
+                  "text": "Name",
+                  "style": "plain"
+                }
+              ],
+              [
+                {
+                  "kind": "text",
+                  "text": "ID",
+                  "style": "plain"
+                }
+              ]
+            ],
+            "rows": []
+          },
+          {
+            "kind": "heading",
+            "level": 3,
+            "inline": [
+              {
+                "kind": "ref",
+                "target": {
+                  "kind": "stage",
+                  "name": "Ashpit"
+                },
+                "label": "Ashpit"
+              },
+              {
+                "kind": "text",
+                "text": " Waves",
+                "style": "plain"
+              }
+            ]
+          },
+          {
+            "kind": "table",
+            "header": [
+              [
+                {
+                  "kind": "text",
+                  "text": "Name",
+                  "style": "plain"
+                }
+              ],
+              [
+                {
+                  "kind": "text",
+                  "text": "ID",
+                  "style": "plain"
+                }
+              ]
+            ],
+            "rows": []
+          }
+        ]
+      },
+      {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -78301,6 +81359,13 @@
       },
       {
         "kind": "bugs",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Bugs",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -78548,6 +81613,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -78729,6 +81801,18 @@
       },
       {
         "kind": "unlockable",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Unlockable ",
+            "style": "plain"
+          },
+          {
+            "kind": "concept",
+            "page": "achievements",
+            "label": "achievements"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -78818,6 +81902,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -78852,6 +81943,13 @@
       },
       {
         "kind": "bugs",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Bugs",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -79000,6 +82098,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -79197,6 +82302,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -79231,6 +82343,13 @@
       },
       {
         "kind": "bugs",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Bugs",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -79410,6 +82529,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "heading",
@@ -79759,6 +82885,13 @@
       },
       {
         "kind": "bugs",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Bugs",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -79899,6 +83032,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "heading",
@@ -80353,6 +83493,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -80464,6 +83611,13 @@
       },
       {
         "kind": "bugs",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Bugs",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -80744,6 +83898,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -81172,6 +84333,23 @@
       },
       {
         "kind": "unlockable",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Unlockable ",
+            "style": "plain"
+          },
+          {
+            "kind": "concept",
+            "page": "Achievement",
+            "label": "Achievement"
+          },
+          {
+            "kind": "text",
+            "text": "s",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -83022,6 +86200,13 @@
       },
       {
         "kind": "damageScaling",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Damage Scaling",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -83067,6 +86252,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -83410,6 +86602,13 @@
       },
       {
         "kind": "strategies",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Strategies",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -83801,6 +87000,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "heading",
@@ -84141,6 +87347,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -84416,6 +87629,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -84635,6 +87855,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -84782,6 +88009,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -84984,6 +88218,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -85385,6 +88626,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -85419,6 +88667,13 @@
       },
       {
         "kind": "bugs",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Bugs",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -85594,6 +88849,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "heading",
@@ -85928,6 +89190,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "heading",
@@ -86069,6 +89338,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -86269,6 +89545,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -86783,6 +90066,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "heading",
@@ -87059,6 +90349,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -87270,6 +90567,13 @@
       },
       {
         "kind": "bugs",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Bugs",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -87392,6 +90696,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "heading",
@@ -87717,6 +91028,13 @@
       },
       {
         "kind": "damageScaling",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Damage Scaling",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -87762,6 +91080,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -87998,6 +91323,13 @@
       },
       {
         "kind": "bugs",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Bugs",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -88171,6 +91503,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -88746,6 +92085,18 @@
       },
       {
         "kind": "unlockable",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Unlockable ",
+            "style": "plain"
+          },
+          {
+            "kind": "concept",
+            "page": "Achievements",
+            "label": "Achievements"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -90355,6 +93706,13 @@
       },
       {
         "kind": "damageScaling",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Damage Scaling",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -90400,6 +93758,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -91194,6 +94559,13 @@
       },
       {
         "kind": "bugs",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Bugs",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -91419,6 +94791,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "heading",
@@ -91523,6 +94902,13 @@
       },
       {
         "kind": "damageScaling",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Damage Scaling",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -91677,6 +95063,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "heading",
@@ -91866,6 +95259,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -91926,6 +95326,13 @@
       },
       {
         "kind": "damageScaling",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Damage Scaling",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -92080,6 +95487,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "heading",
@@ -92223,6 +95637,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -92303,6 +95724,13 @@
       },
       {
         "kind": "damageScaling",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Damage Scaling",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -92457,6 +95885,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -92555,6 +95990,13 @@
       },
       {
         "kind": "damageScaling",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Damage Scaling",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -92736,6 +96178,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "heading",
@@ -92847,6 +96296,13 @@
       },
       {
         "kind": "championVersions",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Champion Versions ",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -92867,6 +96323,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",
@@ -93146,6 +96609,13 @@
     "sections": [
       {
         "kind": "behavior",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Behavior",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "heading",
@@ -93277,6 +96747,13 @@
       },
       {
         "kind": "championVersions",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Champion Versions ",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "paragraph",
@@ -93337,6 +96814,13 @@
       },
       {
         "kind": "notes",
+        "title": [
+          {
+            "kind": "text",
+            "text": "Notes",
+            "style": "plain"
+          }
+        ],
         "blocks": [
           {
             "kind": "list",

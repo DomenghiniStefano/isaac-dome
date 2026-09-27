@@ -35,6 +35,7 @@ fn entry_with(title: &str, infobox: Infobox, sections: Vec<Section>) -> Entry {
 fn d6_effects() -> Section {
     Section {
         kind: SectionKind::Effects,
+        title: vec![text("Effects")],
         blocks: vec![
             Block::Heading {
                 level: 2,
@@ -85,6 +86,7 @@ fn dataset() -> Dataset {
             empty_boss(),
             vec![Section {
                 kind: SectionKind::Behavior,
+                title: vec![text("Behavior")],
                 blocks: vec![Block::Paragraph {
                     inline: vec![text("Jumps at the player and spits blood")],
                 }],
@@ -524,6 +526,7 @@ fn the_ranking_is_tier_then_profile_then_name_then_target() {
             empty_item(),
             vec![Section {
                 kind: SectionKind::Effects,
+                title: vec![text("Effects")],
                 blocks: vec![Block::Paragraph {
                     inline: vec![text("Heals half a heart")],
                 }],

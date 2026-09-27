@@ -15,5 +15,16 @@
     "achievements": {
       "637": "Unlocked everything. You are the Dead God."
     }
+  },
+  "excluded": {
+    "sections": {
+      "Gallery": "images, a game asset (constraint 3)",
+      "In-game Footage": "video, a game asset (constraint 3)",
+      "In-Game Footage": "video, a game asset (constraint 3)",
+      "Ingame Footage": "video, a game asset (constraint 3)",
+      "References": "external citations, off the wiki",
+      "Trivia": "the owner's call: the least useful part of a page (decision 9)",
+      "Audio": "sound listings, a game asset (constraint 3)"
+    }
   }
 }

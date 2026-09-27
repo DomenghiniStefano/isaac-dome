@@ -145,6 +145,13 @@ pub struct Resolver {
     /// string is a row that states no parent, distinct from the key being absent (no row at
     /// all — see `player_table_parent`).
     player_parent: BTreeMap<String, String>,
+    /// Design decision 4: a character page's base-stat default (`damage`, `tears`, `range`,
+    /// `speed`, `luck`, `shot speed`), read from `Template:Infobox character`'s own wikitext
+    /// by `infobox::stat_defaults` and set once through
+    /// [`Resolver::with_character_stat_defaults`]. Empty until that runs — no template
+    /// fetched, or nobody called it — which degrades to today's "a stat nobody stated is
+    /// empty".
+    character_stat_defaults: BTreeMap<String, String>,
 }
 
 /// A character page's title without the disambiguation suffix
@@ -283,6 +290,23 @@ impl Resolver {
         r.index_players(&tables.player);
         r.index_characters(characters, corrections);
         r
+    }
+
+    /// Design decision 4: sets the base-stat defaults `infobox::stat_defaults` read from
+    /// `Raw::template_infobox_character`. A separate step from [`Resolver::new`] rather than
+    /// one more argument on it, because every other caller in this crate's own tests builds a
+    /// `Resolver` with no template text at all and would otherwise have to invent one.
+    #[must_use]
+    pub fn with_character_stat_defaults(mut self, defaults: BTreeMap<String, String>) -> Resolver {
+        self.character_stat_defaults = defaults;
+        self
+    }
+
+    /// A character base stat's default, by its infobox parameter name (`"damage"`, `"shot
+    /// speed"`…). `None` when `with_character_stat_defaults` was never called, or didn't have
+    /// that stat — a missing template degrades the same way a page that states nothing does.
+    pub(crate) fn character_stat_default(&self, name: &str) -> Option<&str> {
+        self.character_stat_defaults.get(name).map(String::as_str)
     }
 
     /// The reverse of the title rule: an achievement's `name` always enters, its alias only

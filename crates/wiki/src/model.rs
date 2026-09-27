@@ -42,6 +42,12 @@ pub struct Entry {
 #[serde(rename_all = "camelCase")]
 pub struct Section {
     pub kind: SectionKind,
+    /// The heading exactly as the wiki wrote it, parsed like any other span of wikitext: a
+    /// heading can carry `{{dlc+|r}}` or name a page (`{{c|Tainted Eve}}`, `{{s|Ashpit}}`).
+    /// Carried for every kind, not only `Other`'s: the thirteen known kinds still show their
+    /// translated title on screen, but a reader that wants the wiki's own words (a dead-link
+    /// tally, a diagnostic) has one field to read regardless of kind.
+    pub title: Vec<Inline>,
     pub blocks: Vec<Block>,
 }
 
@@ -65,6 +71,11 @@ pub enum SectionKind {
     /// the eight pages that have it have both, one under the other, and two sections with one
     /// name read as the same list twice.
     StartingItems,
+    /// A heading the thirteen kinds above don't name — Damage's "Formula", Bag of Crafting's
+    /// "Recipes" — kept under its own title (`Section::title`) instead of discarded. Every
+    /// kind but the handful excluded by name (design decision 2) lands here or in a named
+    /// kind; nothing else is dropped for being unrecognized.
+    Other,
 }
 
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize, ts_rs::TS)]
@@ -639,6 +650,10 @@ mod tests {
             },
             sections: vec![Section {
                 kind: SectionKind::Effects,
+                title: vec![Inline::Text {
+                    text: "Effects".into(),
+                    style: Style::Plain,
+                }],
                 blocks: vec![Block::Paragraph {
                     inline: vec![
                         Inline::Text {
