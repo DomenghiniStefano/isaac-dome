@@ -3,6 +3,7 @@
 //! exist. The frontend never touches disk itself: it goes through here via `ipc`.
 
 mod archive;
+mod contents;
 mod degrade;
 #[cfg(feature = "test-api")]
 pub mod for_tests;
