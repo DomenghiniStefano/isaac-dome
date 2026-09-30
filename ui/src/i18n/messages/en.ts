@@ -1196,5 +1196,6 @@ export const en: MessageSchema = {
     sessionTooLarge: 'The tab session is too large to be saved.',
     autostartNotWritable: 'Windows did not accept the start-at-login entry.',
     updateNotReady: 'There is no downloaded update to install.',
+    folderNotOpenable: 'Explorer would not open on this folder.',
   },
 }
