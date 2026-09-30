@@ -23,7 +23,7 @@ fn io_failed(e: std::io::Error) -> IpcError {
     })
 }
 
-fn settings_path(app: &AppHandle) -> Result<PathBuf, IpcError> {
+pub(crate) fn settings_path(app: &AppHandle) -> Result<PathBuf, IpcError> {
     app.path()
         .app_config_dir()
         .map(|d| d.join("settings.json"))
