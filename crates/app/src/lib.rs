@@ -11,7 +11,7 @@ mod state;
 mod tray;
 mod window;
 use crate::commands::{
-    completion, floor, graph, plan, profile, queue, roll, runs, session, update, wiki,
+    completion, data, floor, graph, plan, profile, queue, roll, runs, session, update, wiki,
 };
 use crate::icons::icon_bytes;
 use crate::state::{
@@ -67,7 +67,9 @@ pub fn run() {
             floor::room_icons,
             update::update_status,
             update::check_update,
-            update::install_update
+            update::install_update,
+            data::data_location,
+            data::reveal_data_file
         ])
         // The first window is built here, not by the config: one recipe, and the same call
         // the tray and a second launch make.
@@ -93,6 +95,10 @@ fn plugins(builder: Builder<Wry>) -> Builder<Wry> {
         // calls the plugin in Rust never crosses that boundary. It also keeps frontend rule 3
         // — the path stays inside the backend and never reaches JavaScript.
         .plugin(tauri_plugin_dialog::init())
+        // Called from Rust only, like the dialog: `reveal_data_file` resolves the path here and
+        // hands the plugin a path the webview never saw, so no `opener:*` capability and no npm
+        // package.
+        .plugin(tauri_plugin_opener::init())
 }
 
 /// The expensive things the commands share, each opened on first use (`state.rs`).

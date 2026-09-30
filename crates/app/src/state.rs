@@ -6,6 +6,7 @@
 //! All wiring. Nothing here has a return value worth checking that is not already checked
 //! in the pure crate it comes from.
 
+use std::path::PathBuf;
 use std::sync::{Arc, Mutex, MutexGuard, OnceLock};
 
 use catalog::Catalog;
@@ -204,6 +205,16 @@ pub(crate) struct SaveState(pub(crate) ipc::SaveCache<Save>);
 /// an `IpcError` because the only variant that would make sense here is `StoreUnavailable` —
 /// the type pins that down, and `plan` puts it straight into the plan without a `match` that
 /// would have to discard impossible variants.
+/// The database's file name, in the platform's data folder. Named once: the store opens it
+/// and the Data page stats and reveals it.
+pub(crate) const DATABASE_FILE: &str = "isaacdome.db";
+
+pub(crate) fn data_dir(app: &AppHandle) -> Result<PathBuf, ipc::StoreReason> {
+    app.path()
+        .app_data_dir()
+        .map_err(|_| ipc::StoreReason::DataDirUnknown)
+}
+
 #[derive(Default)]
 pub(crate) struct StoreState {
     store: OnceLock<Mutex<Store>>,
@@ -221,13 +232,10 @@ impl StoreState {
         if let Some(store) = self.store.get() {
             return Ok(store);
         }
-        let dir = app
-            .path()
-            .app_data_dir()
-            .map_err(|_| ipc::StoreReason::DataDirUnknown)?;
+        let dir = data_dir(app)?;
         std::fs::create_dir_all(&dir).map_err(|_| ipc::StoreReason::DataDirNotCreatable)?;
         let store =
-            Store::open(&dir.join("isaacdome.db")).map_err(|e| ipc::StoreReason::from(&e))?;
+            Store::open(&dir.join(DATABASE_FILE)).map_err(|e| ipc::StoreReason::from(&e))?;
         Ok(self.store.get_or_init(|| Mutex::new(store)))
     }
 
