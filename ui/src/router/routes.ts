@@ -47,6 +47,7 @@ const screens: Record<
   [RouteName.Background]: () => import('@/screens/BackgroundScreen.vue'),
   [RouteName.TabsSettings]: () => import('@/screens/TabsSettingsScreen.vue'),
   [RouteName.Updates]: () => import('@/screens/UpdatesScreen.vue'),
+  [RouteName.Data]: () => import('@/screens/DataScreen.vue'),
 }
 
 export const routes: RouteRecordRaw[] = [

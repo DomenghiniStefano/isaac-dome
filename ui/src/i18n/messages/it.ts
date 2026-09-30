@@ -57,6 +57,7 @@ export const it = {
     background: 'Background',
     tabsSettings: 'Tab',
     updates: 'Aggiornamenti',
+    data: 'Dati',
   },
   wikiCategories: {
     items: 'Oggetti',
@@ -723,6 +724,30 @@ export const it = {
     saveFailedTitle: 'L’impostazione non è stata salvata',
     saveFailed:
       'La modifica è già attiva, ma non siamo riusciti a salvarla: al prossimo avvio tornerà come prima.',
+  },
+  data: {
+    intro:
+      'I due file che IsaacDome scrive, e dove. Copiali per tenerne un backup; cancellali per ripartire da zero. Il gioco e i tuoi salvataggi non sono mai fra questi.',
+    database: 'Database',
+    databaseHint: 'I tuoi obiettivi, la coda, le run lette dal log e il tiro.',
+    settings: 'Impostazioni',
+    settingsHint:
+      'Il profilo attivo, la scala, gli interruttori e le cartelle che hai scelto.',
+    folder: 'Cartella',
+    size: 'Dimensione',
+    notCreated: 'Non ancora creato: non è stato salvato niente.',
+    folderUnknown: 'Windows non ha detto quale cartella sia.',
+    unreadable: 'Il file c’è e non si apre.',
+    reveal: 'Mostra nella cartella',
+    revealFailed: 'Non è stato possibile aprire la cartella',
+    contents: {
+      goals: 'Obiettivi: {count}',
+      queue: 'In coda: {count}',
+      queueUnknown: 'In coda: illeggibile',
+      sessions: 'Sessioni di log lette: {count}',
+      runs: 'Run: {count}',
+      rollSaved: 'Preset del tiro salvato',
+    },
   },
   updates: {
     intro:

@@ -1,5 +1,6 @@
 import { i18n } from '@/i18n'
 import type { Locale } from '@/i18n/locale'
+import { formatSize } from '@/lib/data/formatSize'
 import {
   formatCount,
   formatDate,
@@ -19,6 +20,7 @@ export const useFormat = () => {
     count: (n: number) => formatCount(n, locale()),
     date: (date: Date) => formatDate(date, locale()),
     percent: (percent: number) => formatPercent(percent, locale()),
+    size: (bytes: number) => formatSize(bytes, locale()),
     modified: (unix: number | null, now: Date) =>
       formatModified(unix, now, locale()),
     relativeDay: (unix: number | null, now: Date) =>

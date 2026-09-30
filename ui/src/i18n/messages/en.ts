@@ -53,6 +53,7 @@ export const en: MessageSchema = {
     background: 'Background',
     tabsSettings: 'Tabs',
     updates: 'Updates',
+    data: 'Data',
   },
   wikiCategories: {
     items: 'Items',
@@ -715,6 +716,31 @@ export const en: MessageSchema = {
     saveFailedTitle: 'The setting was not saved',
     saveFailed:
       'The change is already in effect, but we could not save it: it will be back to how it was next time you start the app.',
+  },
+  data: {
+    intro:
+      'The two files IsaacDome writes, and where. Copy them to keep a backup; delete them to start over. The game and your saves are never among them.',
+    database: 'Database',
+    databaseHint:
+      'Your goals, the queue, the runs read from the log, and the roll.',
+    settings: 'Settings',
+    settingsHint:
+      'The active profile, the scale, the switches, and the folders you chose.',
+    folder: 'Folder',
+    size: 'Size',
+    notCreated: 'Not created yet: nothing has been saved.',
+    folderUnknown: 'Windows did not say which folder this is.',
+    unreadable: 'The file is there and will not open.',
+    reveal: 'Show in folder',
+    revealFailed: 'Could not open the folder',
+    contents: {
+      goals: 'Goals: {count}',
+      queue: 'In the queue: {count}',
+      queueUnknown: 'In the queue: unreadable',
+      sessions: 'Log sessions read: {count}',
+      runs: 'Runs: {count}',
+      rollSaved: 'Roll preset saved',
+    },
   },
   updates: {
     intro:
