@@ -5,6 +5,7 @@ mod catalog_view;
 mod challenges;
 mod collection;
 pub mod contract;
+mod data;
 mod entity_art;
 mod error;
 mod flags;
@@ -13,6 +14,7 @@ mod floor;
 pub mod for_tests;
 mod goals;
 mod graph;
+mod hint;
 mod icon;
 mod live;
 mod mark_art;
@@ -55,6 +57,9 @@ pub use challenges::{
 pub use collection::{
     collection_view, CollectionDiagnostic, CollectionItem, CollectionTotals, CollectionView,
     LockView,
+};
+pub use data::{
+    data_view, DataFacts, DataFile, DataFileState, DataFileView, DataView, FileFact, StoreContents,
 };
 pub use entity_art::{compose as compose_entity_art, ComposedArt};
 pub use error::IpcError;

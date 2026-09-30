@@ -54,4 +54,7 @@ pub enum IpcError {
     /// actually run into, an endpoint that will not answer included, travels in the payload as
     /// a phase.
     UpdateNotReady,
+    /// Explorer would not open on the app's own folder. The plugin's message stays in `app`:
+    /// it can name the path.
+    FolderNotOpenable,
 }

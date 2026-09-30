@@ -16,6 +16,7 @@ const ipcErrorKinds: Record<IpcError['kind'], true> = {
   sessionTooLarge: true,
   autostartNotWritable: true,
   updateNotReady: true,
+  folderNotOpenable: true,
 }
 
 // A rejection from a command is an IpcError when it carries one of the contract's tags.

@@ -37,7 +37,6 @@ pub struct DataView { pub files: Vec<DataFileView> }
 #[serde(rename_all = "camelCase")]
 pub struct DataFileView {
     pub file: DataFile,          // which one — also the argument of `reveal_data_file`
-    pub folder_hint: String,     // the folder, username masked; display only
     pub state: DataFileState,
 }
 
@@ -46,9 +45,9 @@ pub enum DataFile { Database, Settings }            // fieldless: a bare string
 
 #[serde(tag = "kind", rename_all = "camelCase", rename_all_fields = "camelCase")]
 pub enum DataFileState {
-    Present { size_bytes: u64, contents: Option<StoreContents> },
-    NotCreated,                                     // a fresh install, nothing written yet
-    Unreadable { reason: StoreReason },             // the database only: the existing reasons
+    Present { folder_hint: String, size_bytes: u64, contents: Option<StoreContents> },
+    NotCreated { folder_hint: String },             // a fresh install, nothing written yet
+    Unreadable { folder_hint: String, reason: StoreReason }, // the database only
     FolderUnknown,                                  // the OS could not name the directory
 }
 
@@ -63,7 +62,8 @@ pub struct StoreContents {
 ```
 
 - `contents` is `Some` only for the database, and only when the store opened.
-- `folder_hint` is the folder's display string through `mask_user_dir`, the function
+- `folder_hint` sits inside the states that have a folder — `FolderUnknown` has none, and an
+  empty string would be a value pretending to be one. It is the folder's display string through `mask_user_dir`, the function
   `discovery`'s save hints already use. It moves out of `ipc::profile` into a module both
   call (`ipc::hint`), so the masking is written once.
 - `DataFile` crosses **inward** as the argument of the reveal command. No path crosses in
@@ -71,14 +71,16 @@ pub struct StoreContents {
 
 ## Rust
 
-**`store`** — `Store::summary() -> Result<StoreSummary, StoreError>`: `COUNT(*)` on `goals`,
+**`store`** — `Store::contents() -> Result<ipc::StoreContents, StoreError>` (`store` already
+depends on `ipc`, so there is no second type): `COUNT(*)` on `goals`,
 `sources`, `runs`; the queue's length through the existing `queue()` read (a document that
 does not parse is `None`, not a failure); whether the `roll` row exists. Test-first, on a
 temporary database: an empty store counts zero everywhere, each write moves exactly its count.
 
 **`ipc`** — `data_view(facts) -> DataView`, pure. `app` gathers the facts (the two
 directories as `Option<PathBuf>`, each file's `metadata` length or absence, the store's
-summary or its reason) and `ipc` shapes them. Tests: the username is masked, an absent file
+contents or its reason) and `ipc` shapes them. The store is not asked when its file is
+absent: opening it creates the file, and the page would never say "not created yet". Tests: the username is masked, an absent file
 reads `NotCreated`, an unreadable store reads `Unreadable` with its reason and still carries
 the settings row, an unknown directory reads `FolderUnknown`; plus a JSON-shape test pinning
 `sizeBytes`, `folderHint`, `queueRows` (`rename_all_fields`).

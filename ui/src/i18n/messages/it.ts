@@ -1222,6 +1222,7 @@ export const it = {
     autostartNotWritable:
       'Windows non ha accettato l’avvio automatico all’accesso.',
     updateNotReady: 'Non c’è nessun aggiornamento scaricato da installare.',
+    folderNotOpenable: 'Esplora file non si è aperto su questa cartella.',
   },
 }
 
