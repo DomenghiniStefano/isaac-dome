@@ -101,6 +101,14 @@ the settings row, an unknown directory reads `FolderUnknown`; plus a JSON-shape 
   Rust-side call passes through the capability ACL; Tauri's model says it does not, and the
   first window settles it — that is this card's `NEEDS WINDOW`.
 
+**Measured after the build: the database is created at startup, not by this page.** The window
+session (`window_session`, read by `App.vue` whenever tabs are resumed, on by default) and the
+log backfill (whenever the game folder is found) both open the store before any screen. So on a
+real install the database row reads `Present` with every count at zero, which is true; its
+`NotCreated` is reachable only with tab resume off, no game folder and no store-backed screen
+visited. `settings.json`'s `NotCreated` is the common case — it is written on the first save.
+The page still never creates the file itself, and that is what its order of operations is for.
+
 ## UI
 
 - Route `Data`, path `/settings/data`, in the Settings section of the sidebar after Updates,
