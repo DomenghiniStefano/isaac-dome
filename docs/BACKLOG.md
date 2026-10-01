@@ -1825,6 +1825,36 @@ are page-own mechanics text. Splitting the family that way is the recommendation
 call is the owner's**, because it decides the shape of `Entry` and nothing should decide that
 quietly.
 
+### Closed — by card #86, re-measured 2026-10-01
+
+The call was made, by the owner, in `docs/superpowers/specs/2026-09-26-wiki-complete-design.md`,
+decision 2: a heading `section_kind` does not know is **kept under its own title** as
+`SectionKind::Other`, on every kind — not discarded, and not turned into an entry of its own. So
+the second-subject family stays on the page that carries it. Measured in the committed
+`dataset/wiki/`, every one of the ten is there as an `other` section:
+
+| section | on |
+|---|---|
+| `Black Judas` | character/Judas |
+| `Blood Clots` | character/Tainted Eve |
+| `Dark Esau` | character/Tainted Jacob |
+| `Lazarus Risen` | character/Lazarus |
+| `The Soul` | character/The Forgotten |
+| `Ultra Greedier` | boss/Ultra Greed |
+| `Friendly Charger` | collectible/My Shadow |
+| `Special Locusts` | collectible/Abyss |
+| `Activated Collectible`, `Passive Collectible` | both Broken Shovel entries |
+
+**What is still dropped is a closed list with a reason each**, `corrections.json` →
+`excluded.sections`: `Gallery`, the three in-game footage spellings, `Audio`, `Sounds` and
+`Pages` (images, video and sound — constraint 3), `References` (citations off the wiki) and
+`Trivia` (decision 9). `every_discarded_heading_is_listed_and_every_listed_heading_occurs` fails
+on a heading dropped without being listed, so `discardedSections` now holds only those.
+
+**Left as it is, on purpose:** the two Broken Shovel entries still carry the same text, both
+halves on each. Splitting them would need an entry built from a section, which is the shape
+decision 2 declined; the halves are titled, so a reader can tell them apart.
+
 ---
 
 ## B55 — The log has no clock and Steam keeps one (analysis, then `run` and `log-watch`)
