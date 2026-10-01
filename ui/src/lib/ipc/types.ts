@@ -525,6 +525,7 @@ export type IpcError =
   | { kind: 'sessionTooLarge' }
   | { kind: 'autostartNotWritable'; reason: AutostartFailure }
   | { kind: 'updateNotReady' }
+  | { kind: 'folderNotOpenable' }
 
 /**
  * The compression mode, remapped onto an enum **of our own**.
@@ -2212,6 +2213,43 @@ export type Settings = {
    */
   autoUpdate: boolean
 }
+
+/**
+ * Which of the app's files. Also the argument of `reveal_data_file`: the frontend names a
+ * file, the backend knows where it is.
+ */
+export const DataFile = {
+  Database: 'database',
+  Settings: 'settings',
+} as const
+export type DataFile = (typeof DataFile)[keyof typeof DataFile]
+
+/**
+ * What the database holds, counted. `queue_rows` is `None` when the queue document does not
+ * parse: "unknown" and "empty" are different sentences.
+ */
+export type StoreContents = {
+  goals: number
+  queueRows: number | null
+  sessions: number
+  runs: number
+  rollSaved: boolean
+}
+
+export type DataFileState =
+  | {
+      kind: 'present'
+      folderHint: string
+      sizeBytes: number
+      contents: StoreContents | null
+    }
+  | { kind: 'notCreated'; folderHint: string }
+  | { kind: 'unreadable'; folderHint: string; reason: StoreReason }
+  | { kind: 'folderUnknown' }
+
+export type DataFileView = { file: DataFile; state: DataFileState }
+
+export type DataView = { files: Array<DataFileView> }
 
 /**
  * Why the switch cannot be offered.

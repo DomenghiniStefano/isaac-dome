@@ -101,6 +101,7 @@ const handleIpcError = (e: unknown) => {
     case 'autostartNotWritable':
     case 'sessionTooLarge':
     case 'updateNotReady':
+    case 'folderNotOpenable':
       error.value = err
       return
     default:

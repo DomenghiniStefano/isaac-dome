@@ -204,6 +204,8 @@ const handlers: Partial<Record<CommandName, Handler>> = {
   // There is nothing to install on the development server: the answer the app gives when the
   // bytes are not there.
   [Command.InstallUpdate]: () => Promise.reject(updateNotReady),
+  [Command.DataLocation]: async () => (await import('./data')).dataAnswer(),
+  [Command.RevealDataFile]: () => Promise.resolve(),
   [Command.Roll]: () => rollAnswer(),
   [Command.RollDraw]: () => rollDrawAnswer(),
   [Command.SetRollPreset]: (args) =>

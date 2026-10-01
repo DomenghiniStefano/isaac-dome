@@ -363,7 +363,8 @@ pub fn live_graph<'a>(
             | E::WikiUnavailable
             | E::SessionTooLarge
             | E::AutostartNotWritable { .. }
-            | E::UpdateNotReady,
+            | E::UpdateNotReady
+            | E::FolderNotOpenable,
         ) => LiveGraph::NoGraph,
     }
 }
