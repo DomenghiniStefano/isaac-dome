@@ -1614,6 +1614,33 @@ measurement. `Diagnostics::unknown_infoboxes` (B45) is what will keep either dec
 template we never enumerate never appears there, but one we start fetching without teaching the
 parser will.
 
+### Closed — by card #86, re-measured 2026-10-01
+
+Decided in `docs/superpowers/specs/2026-09-26-wiki-complete-design.md`, decision 2, and built
+there: `Infobox entity` and `Infobox monster` are `PageKind::Entity`, in the `entities`
+collection; `Infobox card`, `rune`, `pickup` and `stage` are `PageKind::Article` with an
+`ArticleCategory`, their parameters declined and counted by `Diagnostics::unknown_infoboxes`;
+`Infobox grid entity` has no page. The three id-less grid entities (Pressure Plate, Reward
+Plate, Killswitch) are in `corrections.json` with their reason.
+
+**The 591 above double-counts**, which is why the snapshot's own numbers look short of it.
+Re-measured against the wiki (`list=embeddedin`, namespace 0) and crossed with
+`dataset/raw/index.json`:
+
+| template | pages | where they are in the snapshot |
+|---|---|---|
+| `Infobox entity` | 247 | 137 `entity`, 102 `boss`, 2 `collectible`, 1 `character`, 5 translations |
+| `Infobox monster` | 126 | all 126 also transclude `Infobox entity` — a subset, not 126 more |
+| `Infobox pickup` | 97 | 66 `article:card` + 28 `article:rune` + 3 `article:pickup`: the card and rune infoboxes transclude it |
+| `Infobox card` | 66 | 66 `article:card` |
+| `Infobox rune` | 28 | 28 `article:rune` |
+| `Infobox stage` | 27 | 27 `article:stage` |
+| `Infobox grid entity` | 0 | — |
+
+A page that also has a stronger kind keeps it (a boss is a boss, not an entity), and the five
+missing are `/de` subpages, refused on purpose by `wiki-snapshot`'s `is_translation_subpage`.
+Nothing behind these templates is missing from the snapshot.
+
 ---
 
 ## B54 — 54 sections are discarded once each, and they are not the noise the counter was built for (analysis, then `wiki`)
