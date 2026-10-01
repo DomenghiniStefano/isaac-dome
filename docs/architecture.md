@@ -13,6 +13,8 @@ that takes, what the screens are, and what it takes to build and check the thing
 > on 2026-09-22** on `feature/goals-plan-merge`, which took that seventeenth route back out: the
 > Plan stopped being a screen and became the queue inside Obiettivi, so `/progress/plan` is now a
 > bare redirect carrying no name, and the commands that were on its row are listed on Goals's.
+> **Redrawn on 2026-09-30** on `feature/data-page`, which added `/settings/data` and its two
+> commands, `data_location` and `reveal_data_file`.
 >
 > **What keeps it true, and what does not.** Every path named here is checked by
 > `scripts/check-doc-refs.mjs`, which is why the nodes carry real paths instead of pretty
@@ -26,7 +28,7 @@ that takes, what the screens are, and what it takes to build and check the thing
 > just below are the tripwire — if one of them is wrong, so is the drawing.
 
 Counted at that commit, and every number below is derived from the code, not from prose:
-**16 crates**, **43 Tauri commands**, **6 events**, **16 routes**, **6 store migrations**.
+**16 crates**, **45 Tauri commands**, **6 events**, **17 routes**, **6 store migrations**.
 
 ---
 
@@ -67,15 +69,15 @@ flowchart LR
   end
 
   ipc["ipc<br/>view-models — the only contract"]
-  app["crates/app<br/>43 commands, 6 events"]
+  app["crates/app<br/>45 commands, 6 events"]
 
   subgraph vue["Vue — never touches the disk"]
-     app -->|"invoke — 43 commands"| wrappers["lib/ipc/*.ts<br/>typed wrappers, one call()"]
+     app -->|"invoke — 45 commands"| wrappers["lib/ipc/*.ts<br/>typed wrappers, one call()"]
     stores["Pinia stores"]
-    screens["17 screens"]
+    screens["18 screens"]
   end
 
-  db[("isaacdome.db<br/>the only file written")]
+  db[("isaacdome.db<br/>with settings.json, the only two files written")]
 
   github["github.com — releases<br/>latest.json + the signed installer"]
 
@@ -113,7 +115,7 @@ flowchart LR
   logwatch --> app
   github -.->|"only if the switch is on,<br/>signature checked before install"| app
 
-  app -->|"invoke — 43 commands"| wrappers
+  app -->|"invoke — 45 commands"| wrappers
   app -.->|"6 events, no payload"| wrappers
   ipc -.->|"pnpm ipc:types, build time"| wrappers
   wrappers --> stores
@@ -138,10 +140,10 @@ writes. The `.dat` has an arrow in and none out, by construction: there is no wr
 **The frontend has one door, and it is not `invoke`.** Screens read Pinia stores, stores call
 the typed wrappers in `ui/src/lib/ipc/`, and every wrapper goes through the single `call()` in
 `transport.ts` — which answers from fixtures in a plain browser and from `invoke` inside Tauri.
-`SearchScreen.vue` is today the only screen that reaches a wrapper directly; every other one
-stops at a store. `pnpm scan` is what keeps a component from taking the shortcut.
+`SearchScreen.vue` and `DataScreen.vue` are today the only screens that reach a wrapper
+directly — neither has state another screen shares; every other one stops at a store. `pnpm scan` is what keeps a component from taking the shortcut.
 
-**Pull, then a nudge.** The 43 commands are pull: a window asks, the backend answers. The 6
+**Pull, then a nudge.** The 45 commands are pull: a window asks, the backend answers. The 6
 events (`profile-changed`, `settings-changed`, `plan-changed`, `runs-changed`, `roll-changed`,
 `update-changed`) are the nudge, and they carry **no payload** on purpose — a payload would be a copy of state the
 next command could contradict. A second window only ever learns of a write it did not make this
@@ -274,6 +276,7 @@ flowchart TD
     background["/settings/background"]
     tabsr["/settings/tabs"]
     updatesr["/settings/updates"]
+    datar["/settings/data"]
   end
 ```
 
@@ -300,6 +303,7 @@ outside it.
 | Background | `/settings/background` | settings | `settings` | the six below |
 | Tabs | `/settings/tabs` | settings | `settings` | the seven below |
 | Updates | `/settings/updates` | settings | `update`, `settings` | `update_status`, `check_update`, `install_update`, `set_auto_update` |
+| Data | `/settings/data` | settings | `lib/ipc/data` directly | `data_location`, `reveal_data_file` |
 
 The `settings` store is shared by its four screens and holds all seven between them: `settings`,
 `set_scale`, `set_stay_in_background`, `set_resume_tabs`, `set_auto_update`, `autostart`,
@@ -307,14 +311,14 @@ The `settings` store is shared by its four screens and holds all seven between t
 honest granularity. Updates is the one settings screen with a store of its own beside it,
 because the phase it draws is held in the backend and changes without anybody asking.
 
-**Thirty-six of the forty-one commands are reachable from a screen.** The other five are not
+**Forty of the forty-five commands are reachable from a screen.** The other five are not
 loose ends: `window_session` and `set_window_session` belong to the shell and travel through
 `ui/src/composables/useWindowSession.ts`; `extraction_report` is called only by the development-only
 verification page, `ui/src/verify/VerifyPage.vue`; and `choose_game_folder` and
 `choose_saves_folder` belong to the welcome flow that runs before any screen is routed,
-`ui/src/screens/welcome/NothingFound.vue`. 36 + 2 + 1 + 2 = 41, which is the kind of sum worth
-recomputing whenever this table is edited — it was wrong before this branch too, the two
-`choose_*` commands were never in it.
+`ui/src/screens/welcome/NothingFound.vue`. 40 + 2 + 1 + 2 = 45, which is the kind of sum worth
+recomputing whenever this table is edited — it has been wrong twice, and on 2026-09-30 it still
+said 41 against a header of 43.
 
 ---
 

@@ -8,6 +8,8 @@ export const Command = {
   UpdateStatus: 'update_status',
   CheckUpdate: 'check_update',
   InstallUpdate: 'install_update',
+  DataLocation: 'data_location',
+  RevealDataFile: 'reveal_data_file',
   Autostart: 'autostart',
   SetAutostart: 'set_autostart',
   WindowSession: 'window_session',

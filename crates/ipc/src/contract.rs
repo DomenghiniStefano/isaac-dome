@@ -295,6 +295,11 @@ pub fn render() -> String {
     decl::<crate::ChallengesDiagnostic>(&cfg, &mut out);
     decl::<crate::ChallengesView>(&cfg, &mut out);
     decl::<crate::Settings>(&cfg, &mut out);
+    decl::<crate::DataFile>(&cfg, &mut out);
+    decl::<crate::StoreContents>(&cfg, &mut out);
+    decl::<crate::DataFileState>(&cfg, &mut out);
+    decl::<crate::DataFileView>(&cfg, &mut out);
+    decl::<crate::DataView>(&cfg, &mut out);
     decl::<crate::AutostartReason>(&cfg, &mut out);
     decl::<crate::AutostartFailure>(&cfg, &mut out);
     decl::<crate::AutostartView>(&cfg, &mut out);

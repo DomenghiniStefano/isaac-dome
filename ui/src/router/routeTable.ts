@@ -4,6 +4,7 @@ import {
   ActivityIcon,
   AppWindowIcon,
   CircleDotIcon,
+  DatabaseIcon,
   DicesIcon,
   FlagIcon,
   GemIcon,
@@ -49,6 +50,7 @@ export const RouteName = {
   Background: 'background',
   TabsSettings: 'tabsSettings',
   Updates: 'updates',
+  Data: 'data',
 } as const
 export type RouteName = (typeof RouteName)[keyof typeof RouteName]
 
@@ -108,6 +110,7 @@ export const routePath: Record<RouteName, string> = {
   [RouteName.Background]: '/settings/background',
   [RouteName.TabsSettings]: '/settings/tabs',
   [RouteName.Updates]: '/settings/updates',
+  [RouteName.Data]: '/settings/data',
 }
 
 export const routeTitle: Record<RouteName, Message> = {
@@ -127,6 +130,7 @@ export const routeTitle: Record<RouteName, Message> = {
   [RouteName.Background]: 'routes.background',
   [RouteName.TabsSettings]: 'routes.tabsSettings',
   [RouteName.Updates]: 'routes.updates',
+  [RouteName.Data]: 'routes.data',
 }
 
 export const routeOrigin: Record<RouteName, TabOrigin> = {
@@ -148,6 +152,7 @@ export const routeOrigin: Record<RouteName, TabOrigin> = {
   [RouteName.Background]: TabOrigin.Settings,
   [RouteName.TabsSettings]: TabOrigin.Settings,
   [RouteName.Updates]: TabOrigin.Settings,
+  [RouteName.Data]: TabOrigin.Settings,
 }
 
 export const routeIcon: Record<RouteName, Component> = {
@@ -167,6 +172,7 @@ export const routeIcon: Record<RouteName, Component> = {
   [RouteName.Background]: MonitorDotIcon,
   [RouteName.TabsSettings]: AppWindowIcon,
   [RouteName.Updates]: RefreshCwIcon,
+  [RouteName.Data]: DatabaseIcon,
 }
 
 export const wikiCategoryTitle: Record<WikiCategory, Message> = {

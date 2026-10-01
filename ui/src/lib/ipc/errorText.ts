@@ -124,6 +124,8 @@ export const ipcErrorParts = (e: IpcError | null): MessagePart[] => {
     // can really run into is a phase on the Updates screen.
     case 'updateNotReady':
       return [{ key: 'ipcErrors.updateNotReady' }]
+    case 'folderNotOpenable':
+      return [{ key: 'ipcErrors.folderNotOpenable' }]
     default:
       return assertNever(e)
   }
