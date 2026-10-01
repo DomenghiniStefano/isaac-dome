@@ -1567,6 +1567,19 @@ Either both tables are read by something with a test that would fail if they sto
 agreeing, or they are gone from `TABLES` and from `dataset/raw/cargo/`, with the reason in
 the commit body.
 
+### Closed — 2026-10-01, `stage.json` leaves
+
+Card #82 (D1, `78c899db`, 2026-09-25) took `stage` out of `TABLES` and left the committed file
+where it was. That made it the state this entry was written against, only worse: no fetch would
+ever refresh it again, and nothing read it. The owner decided on 2026-10-01 to delete it — the
+"keep" of 2026-09-14 was about a table still being downloaded. The 27 stage pages are in the
+dataset as `article:stage` (card #86), resolved by name like every `stage:` reference was; nothing
+needs `chapter`.
+
+Both halves are done: `player.json` has the reader of 2026-09-14, and `stage.json` is gone from
+`TABLES` and from `dataset/raw/cargo/`. Every file left in that folder is a table `Raw::load`
+opens.
+
 ---
 
 ## B47 — Seven infobox templates the snapshot does not know, and 591 pages behind them (analysis, then a product decision)
