@@ -50,7 +50,7 @@ The full project document is in `docs/PROJECT.md`.
   and is reconsidered for Collection (3.4).
 - **Backend**: Rust inside Tauri 2. Crates: `steamlocate`, `winreg` (fallback),
   `keyvalues-parser`, `quick-xml`, `notify`, `rusqlite` (bundled), `serde`. Tauri plugins:
-  `single-instance`, `notification`, `dialog`, and — **registered in release builds only** —
+  `single-instance`, `notification`, `dialog`, `opener`, and — **registered in release builds only** —
   `autostart` and `updater`.
 - **Tooling**: pnpm, Git Flow with `develop` as the integration branch.
 
