@@ -77,7 +77,7 @@ flowchart LR
     screens["18 screens"]
   end
 
-  db[("isaacdome.db<br/>the only file written")]
+  db[("isaacdome.db<br/>with settings.json, the only two files written")]
 
   github["github.com — releases<br/>latest.json + the signed installer"]
 
@@ -140,8 +140,8 @@ writes. The `.dat` has an arrow in and none out, by construction: there is no wr
 **The frontend has one door, and it is not `invoke`.** Screens read Pinia stores, stores call
 the typed wrappers in `ui/src/lib/ipc/`, and every wrapper goes through the single `call()` in
 `transport.ts` — which answers from fixtures in a plain browser and from `invoke` inside Tauri.
-`SearchScreen.vue` is today the only screen that reaches a wrapper directly; every other one
-stops at a store. `pnpm scan` is what keeps a component from taking the shortcut.
+`SearchScreen.vue` and `DataScreen.vue` are today the only screens that reach a wrapper
+directly — neither has state another screen shares; every other one stops at a store. `pnpm scan` is what keeps a component from taking the shortcut.
 
 **Pull, then a nudge.** The 45 commands are pull: a window asks, the backend answers. The 6
 events (`profile-changed`, `settings-changed`, `plan-changed`, `runs-changed`, `roll-changed`,
