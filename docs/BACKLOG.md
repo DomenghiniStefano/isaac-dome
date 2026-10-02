@@ -1974,6 +1974,35 @@ the dependency. **The retention is now measured and it points the other way**: i
 read, the durable one is the per-launch log, and the per-run clock is the one that will not be
 there tomorrow.
 
+### Closed — 2026-10-02: the Steam logs do not become a source
+
+The owner's decision, on this reasoning. **The archive does not need Steam to date what it
+holds**, because of where its runs come from:
+
+1. **An online session** is dated already: its folder name is a wall clock
+   (`09_12_2026__13_34_26`).
+2. **A `log.txt` the app reads live** can be dated by the app's own clock, at the moment it reads
+   it — the app is running while the game writes.
+3. **The one `log.txt` the app did not see live** is the last launch, found at startup; every
+   earlier launch's log is gone, because the game wipes it. That one file's own modification time
+   dates it.
+
+So `gameprocess_log.txt` could only date **launches the app never saw**, and their content no
+longer exists to be dated. What it would add on its own is the exit code (quit or crash), and
+that does not pay for a dependency on a file that lives in Steam's folder (`discovery` finds
+neither log), rotates on a machine in daily use, freezes on one where the game is not played, and
+dates a launch rather than a run.
+
+**Re-measured 2026-10-02 on the second machine**, the one the table above calls uninstalled since
+January 2025: `gameprocess_log.txt` 7041 bytes and **0** lines for 250900; `cloud_log.txt`
+851625 bytes, 1760 lines for 250900 from 2024-01-18 to 2025-01-14, 181 naming a
+`gamestate1.dat`. Exactly the numbers of 2026-09-16: a log nobody writes keeps what it had.
+
+**What is actually missing goes to its own card**: *a `log.txt` source carries the time it was
+read* — a nullable column on `sources` (a migration), written by `log-watch`, the file's
+modification time for the launch found at startup, and dates on the Runs screen, which today
+says "the log carries no timestamps, so runs are ordered by session".
+
 ---
 
 ## B56 — Steam knows when each achievement was unlocked (analysis, then `ipc`)
