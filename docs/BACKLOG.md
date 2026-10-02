@@ -2094,10 +2094,10 @@ and B58 closed on 2026-09-17 without needing it.
 - **Its scope is not the app's.** It is one timeline per Steam account, while the app reads one
   save slot at a time; and it covers 641 of the save's 642.
 - **It costs a production parser** for binary KeyValues, over a file whose name carries the Steam
-  account id. Today that reader is a probe, `crates/catalog/examples/probe_steam_schema.rs`, and
-  it stays one.
+  account id. Its one reader was a probe, `probe_steam_schema`, and it left with this closure, a
+  finished probe being dead code; it is in the history at `3f8f471e`.
 
-If a history view with years of dates is ever wanted, that probe is where it starts — and the
+If a history view with years of dates is ever wanted, that commit is where it starts — and the
 second machine's file, the one this entry was measured on, stops at January 2025.
 
 ---
