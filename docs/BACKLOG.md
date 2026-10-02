@@ -2072,6 +2072,34 @@ writing. **The cross-check is done**; what is left of it is what to do about the
 question about which source the app should believe and belongs with B58's era work rather than
 here.
 
+### Closed — 2026-10-02: the timeline does not become a source
+
+The owner's decision. Two findings first, both measured on the committed tree:
+
+**The seven are settled, and not by B58.** The text a user reads for an achievement comes from
+the wiki dataset since card #86, and it agrees with Steam on all seven: 404's quote is "Beat Hard
+mode as Lazarus without losing a life", 470 and 471 name Bethany, 523 is whole, and their
+`requirements` say the same. The game XML's `steam_description` is shown nowhere: its one reader
+is `catalog::challenge_rewarded`, which looks for "Complete Challenge N." to collect a challenge's
+rewards. So "which source should the app believe" has an answer for the descriptions — the wiki —
+and B58 closed on 2026-09-17 without needing it.
+
+**Why the timeline is refused:**
+
+- **No screen asks *when*.** Next steps, the queue and Roll reason about what is missing; none
+  orders by when something was unlocked.
+- **The future is dated without it.** A run in the archive already carries the achievements the
+  log saw it unlock (`Run.achievements`), and #92 gives runs a date — so every unlock from here on
+  is dated by the app's own sources.
+- **Its scope is not the app's.** It is one timeline per Steam account, while the app reads one
+  save slot at a time; and it covers 641 of the save's 642.
+- **It costs a production parser** for binary KeyValues, over a file whose name carries the Steam
+  account id. Today that reader is a probe, `crates/catalog/examples/probe_steam_schema.rs`, and
+  it stays one.
+
+If a history view with years of dates is ever wanted, that probe is where it starts — and the
+second machine's file, the one this entry was measured on, stops at January 2025.
+
 ---
 
 ## B57 — The game writes down where it saves, and `discovery` guessed (implementation, `discovery`, small) ✅ closed on 2026-09-16
