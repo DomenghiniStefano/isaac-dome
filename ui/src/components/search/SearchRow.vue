@@ -24,10 +24,9 @@ const iconUrl = computed(() =>
   props.row.kind === 'hit' ? props.row.hit.iconUrl : null,
 )
 
-// An achievement's or a challenge's picture is a drawing, not a sprite: dark strokes on
-// transparency at its own ratio, which on the dark theme needs the mark paper under it — the
-// way every table and the wiki draw it (`AchievementArt`, `WikiFigure`). Drawn as a sprite it
-// was squeezed into a square and lost against the background.
+// An achievement's or a challenge's picture is a drawing, not a sprite: a painting at its own
+// ratio that arrives on the game's own paper — the way every table and the wiki draw it
+// (`AchievementArt`, `WikiFigure`). Drawn as a sprite it was squeezed into a square.
 const painting = computed(
   () =>
     props.row.kind === 'hit' &&

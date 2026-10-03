@@ -8,8 +8,9 @@ import type {
   UnlockNode,
 } from '@/lib/ipc/types'
 
-// What a name's icon is: an achievement's painted drawing, dark strokes on transparency that
-// need the mark paper under them, or the game's pixel art, drawn at a whole multiple.
+// What a name's icon is: an achievement's painted drawing, which arrives on the game's own
+// paper — a challenge's picture is the achievement it rewards, so it is one too — or the
+// game's pixel art, drawn at a whole multiple.
 export const RefArt = {
   Drawing: 'drawing',
   Sprite: 'sprite',
@@ -19,11 +20,11 @@ export type RefArt = (typeof RefArt)[keyof typeof RefArt]
 export const refArt = (target: Target): RefArt => {
   switch (target.kind) {
     case 'achievement':
+    case 'challenge':
       return RefArt.Drawing
     case 'item':
     case 'trinket':
     case 'character':
-    case 'challenge':
     case 'entity':
     case 'transformation':
     case 'stage':

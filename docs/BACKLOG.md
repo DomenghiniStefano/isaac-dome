@@ -1331,9 +1331,30 @@ holds; a file not created yet and a database that will not open are said, not cr
 
 ---
 
-## B33 — The achievement drawing sits on the game's own backing, as the game shows it (implementation, `ipc` and `ui`)
+## B33 — The achievement drawing sits on the game's own backing, as the game shows it (implementation, `ipc` and `ui`) built on 2026-10-03, **not yet seen in a window**
 
-**Needs:** the game — the backing "has to be looked for in the game's files", which is the whole point of the entry.
+**Needs:** a window with the game — the backing is found and served; what is left is looking at it on every screen that shows an achievement.
+
+**Built on 2026-10-03.** The sheet, measured on the installed game by scanning every archive for
+an `AnimatedActor` that names a paper: the **unlock popup**,
+`gfx/ui/achievement/achievements.anm2` (in `afterbirthp.a`), layers `Background`, `Frame`,
+`Paper` and `Achievement`. `Paper` is `gfx/ui/achievement/paper.png` (in `graphics.a`), a torn,
+stained parchment; `Achievement` declares the same `Paper.png` and the game swaps it for the
+drawing being unlocked. In `Idle`, frame 0, both rest at origin `-130,-88`, so the drawing sits
+at `0,0` on the paper — and both are 263×176, the anm2's 272-wide crop clamping to the sheet.
+The achievements page of the stats menu was not needed: the popup is where the game shows the
+drawing whole.
+
+`ipc::achievement_backing` reads the paper and the offset from the anm2, `ipc::on_paper` lays the
+drawing on it (and serves it alone if the paper cannot be read), and the icon protocol does it for
+every reference whose picture is an achievement's drawing — `achievement/<id>`, and the wiki's
+`page/achievement/<id>` and `page/challenge/<n>`, a challenge's figure being the achievement it
+rewards (`IconRef::is_achievement_drawing`). So the backing arrives inside the picture, and
+`AchievementArt` and `WikiNameIcon` stopped painting a flat colour behind it, which would have
+shown around the paper's torn edge. `achievement_art_real.rs` checks every one of the catalog's
+drawings lands whole on the paper.
+
+What follows is the entry as written.
 
 Logged 2026-09-12, from the owner's review of the cards: the achievement picture is drawn on
 a flat colour, and it should sit on **the image the game itself puts behind it** — the

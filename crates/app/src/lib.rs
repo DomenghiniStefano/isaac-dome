@@ -15,8 +15,8 @@ use crate::commands::{
 };
 use crate::icons::icon_bytes;
 use crate::state::{
-    catalog_now, AllPassive, ArchiveState, CatalogState, GraphState, LiveUnlockState,
-    MarkFramesState, ResourcesState, SaveState, SearchState, StoreState,
+    catalog_now, AchievementBackingState, AllPassive, ArchiveState, CatalogState, GraphState,
+    LiveUnlockState, MarkFramesState, ResourcesState, SaveState, SearchState, StoreState,
 };
 
 use tauri::{Builder, Manager, Wry};
@@ -110,6 +110,7 @@ fn managed_state(builder: Builder<Wry>) -> Builder<Wry> {
         .manage(StoreState::default())
         .manage(ResourcesState::default())
         .manage(MarkFramesState::default())
+        .manage(AchievementBackingState::default())
         .manage(SearchState::default())
         .manage(SaveState::default())
         .manage(ArchiveState::default())

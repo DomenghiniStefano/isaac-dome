@@ -297,6 +297,9 @@ impl IconRef {
     ///
     /// Exhaustive on purpose: a new kind of icon has to say which of the three it is.
     pub fn placement(&self) -> Placement {
+        if self.is_achievement_drawing() {
+            return Placement::AsDeclared;
+        }
         match self {
             IconRef::Room { .. } => Placement::Trimmed,
             IconRef::Item { .. }
@@ -308,6 +311,35 @@ impl IconRef {
             IconRef::Achievement { .. } | IconRef::Mark { .. } | IconRef::Widget { .. } => {
                 Placement::AsDeclared
             }
+        }
+    }
+
+    /// Whether the picture served is an achievement's drawing — reached as itself, as its wiki
+    /// page's figure, or as a challenge page's, which draws the achievement the challenge
+    /// rewards (`target_sprite`). The game never shows one bare: it lays it on the unlock
+    /// popup's paper (`achievement_art`), and so does the protocol, whichever way it is asked.
+    pub fn is_achievement_drawing(&self) -> bool {
+        match self {
+            IconRef::Achievement { .. } => true,
+            IconRef::Page { target } => match target {
+                Target::Achievement { .. } | Target::Challenge { .. } => true,
+                Target::Item { .. }
+                | Target::Trinket { .. }
+                | Target::Character { .. }
+                | Target::Entity { .. }
+                | Target::Transformation { .. }
+                | Target::Stage { .. }
+                | Target::Room { .. }
+                | Target::Concept { .. }
+                | Target::Article { .. } => false,
+            },
+            IconRef::Item { .. }
+            | IconRef::Mark { .. }
+            | IconRef::Widget { .. }
+            | IconRef::Head { .. }
+            | IconRef::Unknown
+            | IconRef::Room { .. }
+            | IconRef::Entity { .. } => false,
         }
     }
 }
