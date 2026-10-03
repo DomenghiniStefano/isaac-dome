@@ -18,6 +18,7 @@ fn sprite(s: Option<IconSource<'_>>) -> Option<&catalog::SpriteRef> {
     match s {
         Some(IconSource::Sprite(sprite)) => Some(sprite),
         Some(IconSource::Entity { .. }) => panic!("a room icon composed entity art"),
+        Some(IconSource::Portrait { .. }) => panic!("a room icon resolved to a boss portrait"),
         None => None,
     }
 }

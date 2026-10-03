@@ -84,22 +84,28 @@ pub fn target_sprite<'a>(
         // `BossKeys`, which an unkeyed boss (`bossportraits.xml` names 17 with no name or
         // file-name match, `Portrait_Nevecka.png` among them) leaves with no entry either,
         // indistinguishable there from an ordinary monster.
+        //
+        // A boss with no portrait row draws its own `.anm2` like a monster: the Ultra
+        // Harbingers, which the game never puts on the versus screen, so `bossportraits.xml`
+        // has no row for them (measured 2026-09-21). Their default animation is `Idle`, a
+        // posed whole figure, which is why it can stand in for the portrait.
         Target::Entity {
             id,
             variant,
             subtype,
-        } => match entity_role(dataset, *id, *variant, *subtype) {
-            EntityRole::Boss | EntityRole::Unknown => {
-                match entity_portrait(c, bosses, (*id, *variant)) {
-                    Some(s) => TargetSprite::Found(s),
-                    None => TargetSprite::Unknown,
-                }
-            }
-            EntityRole::Monster => match c.entity(*id, *variant, *subtype) {
+        } => {
+            let own = || match c.entity(*id, *variant, *subtype) {
                 Some(e) => TargetSprite::Entity(&e.anm2_path),
                 None => TargetSprite::Unknown,
-            },
-        },
+            };
+            match entity_role(dataset, *id, *variant, *subtype) {
+                EntityRole::Boss | EntityRole::Unknown => {
+                    entity_portrait(c, bosses, (*id, *variant))
+                        .map_or_else(own, TargetSprite::Found)
+                }
+                EntityRole::Monster => own(),
+            }
+        }
         // An article draws no picture through this pipeline. Decision 5 hoped for a card
         // front per card from `pocketitems.xml`; measured on the installed game, that file
         // carries no `gfx` at all, and `entities2.xml`'s one row per card family

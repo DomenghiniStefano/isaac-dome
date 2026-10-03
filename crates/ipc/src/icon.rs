@@ -419,15 +419,25 @@ fn page_target<'a>(
 }
 
 /// What an `IconRef` resolves to: a single sprite crop, the shape every reference used to
-/// have, or — for a non-boss entity's page — the `.anm2` a composed picture is built from.
-/// The second case isn't a `SpriteRef` because composing it means reading and laying out
-/// several files, which is I/O this pure crate cannot do; the caller reads `anm2_path` and
-/// calls `compose_entity_art` itself, the same way it already reads `MarkFrames` for the
-/// widget.
+/// have; the `.anm2` a composed picture is built from, for an entity with no portrait; or a
+/// boss's portrait with that `.anm2` to fall back on. An `.anm2` isn't a `SpriteRef` because
+/// composing it means reading and laying out several files, which is I/O this pure crate
+/// cannot do; the caller reads `anm2_path` and calls `compose_entity_art` itself, the same way
+/// it already reads `MarkFrames` for the widget.
 #[derive(Debug)]
 pub enum IconSource<'a> {
     Sprite(&'a SpriteRef),
-    Entity { anm2_path: &'a str },
+    Entity {
+        anm2_path: &'a str,
+    },
+    /// A boss page's versus-screen portrait, and its own `.anm2` to compose when the archives
+    /// do not hold the file the portrait names. The Beast's row names `Portrait_The Beast.png`
+    /// and the game ships no such file (`catalog`'s real-data tests hold it): whether a file
+    /// exists is I/O, so the caller finds out, and this says what to draw if it does not.
+    Portrait {
+        portrait: &'a SpriteRef,
+        otherwise: Option<&'a str>,
+    },
 }
 
 /// The file the catalog names for a reference, if it knows it. `dataset` is what
@@ -454,7 +464,7 @@ pub fn icon_source<'a>(
         // A page's figure is whatever `target_sprite` finds for the page's identity; "no art"
         // and "unknown id" both draw the placeholder.
         IconRef::Page { target } => match target_sprite(c, bosses, dataset, target) {
-            TargetSprite::Found(s) => Some(IconSource::Sprite(s)),
+            TargetSprite::Found(s) => Some(found_on_page(c, target, s)),
             TargetSprite::Entity(anm2_path) => Some(IconSource::Entity { anm2_path }),
             TargetSprite::NoArt | TargetSprite::Unknown => None,
         },
@@ -481,6 +491,34 @@ pub fn icon_source<'a>(
         // is the one that answers for it — the borrow this function hands out has to live in
         // the catalog, and this sprite belongs to no row of it.
         IconRef::Unknown => None,
+    }
+}
+
+/// A page's figure the catalog names. An entity's is a boss portrait, and it carries the
+/// boss's own `.anm2` with it for the day the portrait's file is not in the archives; every
+/// other kind's sprite is the file itself.
+fn found_on_page<'a>(c: &'a Catalog, target: &Target, sprite: &'a SpriteRef) -> IconSource<'a> {
+    match target {
+        Target::Entity {
+            id,
+            variant,
+            subtype,
+        } => IconSource::Portrait {
+            portrait: sprite,
+            otherwise: c
+                .entity(*id, *variant, *subtype)
+                .map(|e| e.anm2_path.as_str()),
+        },
+        Target::Item { .. }
+        | Target::Trinket { .. }
+        | Target::Achievement { .. }
+        | Target::Challenge { .. }
+        | Target::Character { .. }
+        | Target::Transformation { .. }
+        | Target::Stage { .. }
+        | Target::Room { .. }
+        | Target::Concept { .. }
+        | Target::Article { .. } => IconSource::Sprite(sprite),
     }
 }
 
