@@ -825,8 +825,22 @@ export type RequirementView =
       characterName: string
       column: MarkColumnView
       level: MarkLevelView
+      /**
+       * The page of what the column is: its boss, or the article on Boss Rush or Greed
+       * Mode (`wiki_target::column`). `None` when the dataset has no such page.
+       */
+      page: Target | null
     }
-  | { kind: 'counter'; label: string; current: number; atLeast: number }
+  | {
+      kind: 'counter'
+      label: string
+      current: number
+      atLeast: number
+      /**
+       * The page of the column the tally counts, like `Mark`'s.
+       */
+      page: Target | null
+    }
   | {
       kind: 'threshold'
       transformation: number

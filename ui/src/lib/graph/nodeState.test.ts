@@ -3,6 +3,7 @@ import { graphAnswers } from '@/lib/ipc/fixtures/graph'
 import type { GraphInfo, UnlockNode } from '@/lib/ipc/types'
 import { stateRowCounts } from '@/lib/facets/facetOptions'
 import { FacetId, unlockFaceting } from '@/lib/graph/unlockFacets'
+import { pageLocationOf } from '@/lib/wiki/category'
 import {
   NodeState,
   RequirementKind,
@@ -165,6 +166,46 @@ describe('missingGroups', () => {
 
   it('has nothing to say when nothing is missing', () => {
     expect(missingGroups(node({}), t)).toEqual([])
+  })
+
+  it('links a mark and a tally to the page of what their column is', () => {
+    const mother = { kind: 'entity', id: 912, variant: 0, subtype: 0 } as const
+    const bossRush = { kind: 'article', title: 'Boss Rush' } as const
+    const groups = missingGroups(
+      node({
+        missing: [
+          {
+            kind: 'mark',
+            character: 1,
+            characterName: 'Magdalene',
+            column: 'mother',
+            level: 'base',
+            page: mother,
+          },
+          {
+            kind: 'counter',
+            label: 'Boss Rush',
+            current: 0,
+            atLeast: 1,
+            page: bossRush,
+          },
+          {
+            kind: 'counter',
+            label: 'Hush',
+            current: 0,
+            atLeast: 1,
+            page: null,
+          },
+        ],
+      }),
+      t,
+    )
+    const locations = groups.flatMap((g) => g.entries.map((e) => e.location))
+    expect(locations).toEqual([
+      pageLocationOf(mother),
+      pageLocationOf(bossRush),
+      null,
+    ])
   })
 })
 

@@ -4,10 +4,12 @@
 //! challenge's number what the catalog calls its id. Search keys its documents by this, and a
 //! requirement links by it; a second copy would be wrong within a release.
 
-use catalog::{AchievementId, Boss, Challenge, Character, Item, ItemKind};
+use catalog::{AchievementId, Boss, Catalog, Challenge, Character, Item, ItemKind};
+use core_save::Column;
 use wiki::{Dataset, Target};
 
-use crate::target_sprite::BossKeys;
+use crate::marks::boss_name;
+use crate::target_sprite::{column_boss, BossKeys};
 
 /// `items.xml` keeps collectibles and trinkets in one file; the dataset gives them two page
 /// kinds.
@@ -42,6 +44,35 @@ pub(crate) fn boss(bosses: &BossKeys, b: &Boss) -> Option<Target> {
         variant,
         subtype: 0,
     })
+}
+
+/// The page a completion-matrix column is about, the one a mark and a tally link to.
+///
+/// Ten columns are a boss: the column's row in `bossportraits.xml` (`column_boss`), and that
+/// row's page by the same key `boss` gives it. **Two are not entities, and are not made to look
+/// like one**: Boss Rush is a room and an event, Greed is a game mode, so they link to the
+/// articles the wiki writes about them. Those two titles are a decision and not a reading —
+/// there is no key in any file that names them.
+pub(crate) fn column(c: &Catalog, bosses: &BossKeys, column: Column) -> Option<Target> {
+    let article = |title: &str| {
+        Some(Target::Article {
+            title: title.to_string(),
+        })
+    };
+    match column {
+        Column::BossRush => article("Boss Rush"),
+        Column::Greed => article("Greed Mode"),
+        Column::MomsHeart
+        | Column::Isaac
+        | Column::Satan
+        | Column::BlueBaby
+        | Column::TheLamb
+        | Column::MegaSatan
+        | Column::Hush
+        | Column::Delirium
+        | Column::Mother
+        | Column::TheBeast => column_boss(c, boss_name(column)).and_then(|b| boss(bosses, b)),
+    }
 }
 
 pub(crate) fn achievement(id: AchievementId) -> Target {
