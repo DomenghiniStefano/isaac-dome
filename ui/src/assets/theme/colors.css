@@ -66,9 +66,9 @@
   --color-titlebar: #0d0908;
   --color-navbar: #120c0b;
   --color-chrome-inactive-foreground: #5a4a44;
-  /* The paper a drawing from the game sits on: a marked matrix cell, an achievement's picture.
-     Ours and not the game's — the game has no paper per mark, only one note with every symbol
-     on it — so it is warm parchment, washed from `mark-paper` in the lit corner to
+  /* The paper a marked matrix cell is drawn on. Ours and not the game's — the game has no
+     paper per mark, only one note with every symbol on it (an achievement, which does have
+     one, arrives on it from the icon protocol) — so it is warm parchment, washed from `mark-paper` in the lit corner to
      `mark-paper-edge`. Light on purpose: a normal mark is dark ink and needs paper to read on.
      `mark-ink` is the hand-drawn line around a normal mark's paper; a hard one draws it in
      `primary`. */

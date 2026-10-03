@@ -32,7 +32,7 @@ const props = defineProps<{
 // One figure component, everywhere a wiki picture is drawn: the background, the centring and
 // the scale are decided once, here, by what the game draws for
 // that kind (DESIGN-BRIEF.md §8) — a 32px sprite scaled up, a painted achievement at its own
-// ratio on the mark paper, or a portrait.
+// ratio on the paper the game draws it on, or a portrait.
 const Frame = {
   Sprite: 'sprite',
   Painting: 'painting',

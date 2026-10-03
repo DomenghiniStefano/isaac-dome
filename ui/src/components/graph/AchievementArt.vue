@@ -28,20 +28,21 @@ const sizeClass: Record<ArtSize, string> = {
 </script>
 
 <template>
-  <!-- An achievement drawing is dark strokes on transparency: on the dark theme it needs the
-       flat mark paper under it, the way the game shows it on a note. The space keeps the
-       drawing's ratio, so its arrival doesn't move the row. Without a picture, the hatch
-       reads as "unknown" the way every other placeholder in the app does — unless the
-       caller gave its own fallback (`WikiFigure`'s category icon), which draws on the same
-       plain box instead: the hatch and a second glyph would say "unknown" twice. -->
+  <!-- The picture arrives already on the game's own paper — the unlock popup's torn parchment,
+       laid under the drawing by the icon protocol — so nothing is painted behind it here: a
+       flat colour would show around the paper's torn edge. The space keeps the drawing's
+       ratio, so its arrival doesn't move the row. Without a picture, the hatch reads as
+       "unknown" the way every other placeholder in the app does — unless the caller gave its
+       own fallback (`WikiFigure`'s category icon), which draws on the same plain box instead:
+       the hatch and a second glyph would say "unknown" twice. -->
   <span
     :class="
       cn(
         'grid aspect-achievement shrink-0 place-items-center',
         sizeClass[size],
-        url && !failed
-          ? 'bg-mark-paper'
-          : slots.fallback === undefined && 'hatch-placeholder',
+        !(url && !failed) &&
+          slots.fallback === undefined &&
+          'hatch-placeholder',
       )
     "
   >
