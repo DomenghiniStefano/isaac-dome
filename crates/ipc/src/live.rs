@@ -104,6 +104,7 @@ fn mark_of(r: &RequirementView) -> Option<(u32, &str, MarkColumnView, MarkLevelV
             character_name,
             column,
             level,
+            ..
         } => Some((*character, character_name, *column, *level)),
         RequirementView::Item { .. }
         | RequirementView::Character { .. }

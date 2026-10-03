@@ -46,7 +46,7 @@ const blocked: UnlockNode = {
       page: { kind: 'character', id: 10 },
     },
     { kind: 'boss', id: 3, name: 'Nameless', page: null },
-    { kind: 'counter', label: 'Hush', current: 0, atLeast: 1 },
+    { kind: 'counter', label: 'Hush', current: 0, atLeast: 1, page: null },
   ],
   graph: {
     kind: 'computed',

@@ -12,7 +12,9 @@
 
 use std::collections::{BTreeMap, HashMap, HashSet};
 
-use catalog::{AchievementId, Catalog, ChallengeId, CharacterId, ItemId, ItemKind, SpriteRef};
+use catalog::{
+    AchievementId, Boss, Catalog, ChallengeId, CharacterId, ItemId, ItemKind, SpriteRef,
+};
 use wiki::{Dataset, Target};
 
 /// The outcome of the resolution. Four cases: the two ways of having no image are meant to
@@ -301,6 +303,45 @@ fn wiki_boss_keys(ds: &Dataset) -> HashMap<String, (u32, u32)> {
         .collect()
 }
 
+/// The `bossportraits.xml` row a completion-matrix column is about, found by the column's own
+/// name (`marks::boss_name`). `None` for a column no row answers to, or two do.
+pub(crate) fn column_boss<'a>(c: &'a Catalog, column_name: &str) -> Option<&'a Boss> {
+    let rows: Vec<(&str, &str)> = c
+        .bosses()
+        .map(|b| (b.name.as_str(), b.portrait.path.as_str()))
+        .collect();
+    let name = column_row(&rows, column_name)?;
+    c.bosses().find(|b| b.name == name)
+}
+
+/// Whether a row's `(name, portrait path)` answers to a name, read one way.
+type NameTier<'t> = &'t dyn Fn(&str, &str) -> bool;
+
+/// The rule, apart from the catalog: the two tiers of `merge_keys` that read a name, in its
+/// order — the row's own name, then its portrait's file name — each answering only with
+/// exactly one row. The file name comes second because two rows can share a portrait (*Mom's
+/// Heart* and its Mausoleum form), and the column is the one whose name the row bears.
+fn column_row<'a>(rows: &[(&'a str, &str)], column_name: &str) -> Option<&'a str> {
+    let wanted = normalized(column_name);
+    let tiers: [NameTier; 2] = [&|name, _| normalized(name) == wanted, &|_, path| {
+        portrait_stem(path).is_some_and(|s| normalized(s) == wanted)
+    }];
+    tiers.iter().find_map(|tier| {
+        let hits: Vec<&'a str> = rows
+            .iter()
+            .filter(|(name, path)| tier(name, path))
+            .map(|(name, _)| *name)
+            .collect();
+        match hits[..] {
+            [] => None,
+            [one] => Some(Some(one)),
+            // More than one row answers: this tier settles that there is no single row, and a
+            // weaker tier must not pick one of them.
+            _ => Some(None),
+        }
+    })?
+}
+
 /// Case, spaces and punctuation dropped, and a leading `the` with them: the wiki writes
 /// *The Horny Boys* where the game writes `Horny Boys`. Nothing else is normalized —
 /// anything looser stops being equality.
@@ -512,6 +553,50 @@ mod tests {
             Some("The Beast")
         );
         assert_eq!(portrait_stem("gfx/ui/boss/other.png"), None);
+    }
+
+    #[test]
+    fn a_column_reaches_the_row_its_name_is_before_the_rows_its_file_name_is() {
+        // `MomsHeart` is the file both Mom's Heart rows share: read first, it would hand the
+        // column two rows and so none. The row's own name settles it, as in `merge_keys`.
+        let rows = [
+            ("Mom's Heart", "gfx/ui/boss/Portrait_78.0_MomsHeart.png"),
+            (
+                "Mom's Heart (Mausoleum)",
+                "gfx/ui/boss/Portrait_78.0_MomsHeart.png",
+            ),
+        ];
+        assert_eq!(column_row(&rows, "Mom's Heart"), Some("Mom's Heart"));
+    }
+
+    #[test]
+    fn a_column_no_row_is_named_after_is_reached_by_the_portraits_file_name() {
+        // The game calls the row `???`; the matrix and the file call it Blue Baby.
+        let rows = [
+            ("Isaac", "gfx/ui/boss/Portrait_102.0_Isaac.png"),
+            ("???", "gfx/ui/boss/Portrait_102.1_BlueBaby.png"),
+        ];
+        assert_eq!(column_row(&rows, "Blue Baby"), Some("???"));
+    }
+
+    #[test]
+    fn a_column_two_rows_answer_to_reaches_neither() {
+        let rows = [
+            ("Ultra Greed", "gfx/ui/boss/Portrait_406.0_UltraGreed.png"),
+            (
+                "Ultra Greedier",
+                "gfx/ui/boss/Portrait_406.0_UltraGreed.png",
+            ),
+        ];
+        assert_eq!(column_row(&rows, "Ultra Greed"), Some("Ultra Greed"));
+        assert_eq!(column_row(&rows, "Greed"), None, "no row is called Greed");
+        // Two rows under one name: the name tier says "no single row", and the file name tier
+        // must not then pick one of them.
+        let twins = [
+            ("Gemini", "gfx/ui/boss/Portrait_Gemini.png"),
+            ("Gemini", "gfx/ui/boss/Portrait_Gemini.png"),
+        ];
+        assert_eq!(column_row(&twins, "Gemini"), None);
     }
 
     #[test]
