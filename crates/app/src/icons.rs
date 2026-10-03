@@ -8,7 +8,9 @@
 use tauri::{AppHandle, Manager};
 use unpack::ResourceSet;
 
-use crate::state::{catalog_now, CatalogState, MarkFramesState, ResourcesState};
+use crate::state::{
+    catalog_now, AchievementBackingState, CatalogState, MarkFramesState, ResourcesState,
+};
 
 /// The URL the webview can actually fetch for an icon.
 ///
@@ -79,25 +81,14 @@ pub(crate) fn icon_bytes(app: &AppHandle, path: &str) -> tauri::http::Response<V
         | ipc::IconRef::Head { .. }
         | ipc::IconRef::Page { .. }
         | ipc::IconRef::Entity { .. }
-        | ipc::IconRef::Room { .. } => {
-            // The catalog is built from the same archives as `rs`: `ResourcesState` opens them once.
-            let state = app.state::<CatalogState>();
-            catalog_now(app, &resources, &state).and_then(|catalog| {
-                let bosses = state.bosses(Some(catalog));
-                let dataset = wiki::Dataset::embedded().ok();
-                match ipc::icon_source(catalog, bosses, dataset, &reference)? {
-                    ipc::IconSource::Sprite(sprite) => sprite_bytes(rs, sprite, placement),
-                    // A non-boss entity's own picture: not a sheet crop the catalog names,
-                    // but a document (its `.anm2`) whose layers are composed at request
-                    // time — reading 1337 rows' files at startup for pictures most
-                    // sessions never open is exactly what `catalog::Entity`'s own doc
-                    // comment says not to do.
-                    ipc::IconSource::Entity { anm2_path } => {
-                        entity_bytes(rs, anm2_path).map(|png| ipc::place(png, placement))
-                    }
-                }
-            })
+        | ipc::IconRef::Room { .. } => catalog_icon(app, &resources, rs, &reference),
+    };
+    // An achievement's drawing never stands bare: the game shows it on the popup's paper.
+    let png = match png {
+        Some(drawing) if reference.is_achievement_drawing() => {
+            Some(achievement_on_paper(app, rs, drawing))
         }
+        other => other,
     };
     let Some(png) = png else {
         return no_icon(404);
@@ -108,6 +99,42 @@ pub(crate) fn icon_bytes(app: &AppHandle, path: &str) -> tauri::http::Response<V
         tauri::http::HeaderValue::from_static("image/png"),
     );
     r
+}
+
+/// A reference the catalog resolves: a sprite it names, or an entity's `.anm2` composed here.
+fn catalog_icon(
+    app: &AppHandle,
+    resources: &ResourcesState,
+    rs: &ResourceSet,
+    reference: &ipc::IconRef,
+) -> Option<Vec<u8>> {
+    let placement = reference.placement();
+    // The catalog is built from the same archives as `rs`: `ResourcesState` opens them once.
+    let state = app.state::<CatalogState>();
+    let catalog = catalog_now(app, resources, &state)?;
+    let bosses = state.bosses(Some(catalog));
+    let dataset = wiki::Dataset::embedded().ok();
+    match ipc::icon_source(catalog, bosses, dataset, reference)? {
+        ipc::IconSource::Sprite(sprite) => sprite_bytes(rs, sprite, placement),
+        // A non-boss entity's own picture: not a sheet crop the catalog names, but a document
+        // (its `.anm2`) whose layers are composed at request time — reading 1337 rows' files
+        // at startup for pictures most sessions never open is exactly what
+        // `catalog::Entity`'s own doc comment says not to do.
+        ipc::IconSource::Entity { anm2_path } => {
+            entity_bytes(rs, anm2_path).map(|png| ipc::place(png, placement))
+        }
+    }
+}
+
+/// An achievement's drawing on the unlock popup's paper, where the popup's anm2 rests it. A
+/// paper that cannot be read leaves the drawing alone (`ipc::on_paper`).
+fn achievement_on_paper(app: &AppHandle, rs: &ResourceSet, drawing: Vec<u8>) -> Vec<u8> {
+    let backing = app.state::<AchievementBackingState>();
+    let Some(backing) = backing.get(rs) else {
+        return drawing;
+    };
+    let paper = sprite_bytes(rs, &backing.paper, ipc::Placement::AsDeclared);
+    ipc::on_paper(paper.as_deref(), drawing, backing.drawing_at)
 }
 
 /// The file a sprite names, cropped when it names a piece of a sheet, with its drawing placed
