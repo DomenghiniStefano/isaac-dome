@@ -140,6 +140,22 @@ impl MarkFramesState {
         Some(self.0.get_or_init(|| ipc::MarkFrames { widget, lobby }))
     }
 }
+
+/// The unlock popup's paper and where a drawing rests on it, read once from its anm2. Same rule
+/// as `MarkFramesState`: only a successful read is kept.
+#[derive(Default)]
+pub(crate) struct AchievementBackingState(OnceLock<ipc::AchievementBacking>);
+
+impl AchievementBackingState {
+    pub(crate) fn get(&self, rs: &ResourceSet) -> Option<&ipc::AchievementBacking> {
+        if let Some(b) = self.0.get() {
+            return Some(b);
+        }
+        let frames = catalog::anm2_frames(&rs.read(ipc::ACHIEVEMENT_ANM2)?)?;
+        let backing = ipc::achievement_backing(&frames)?;
+        Some(self.0.get_or_init(|| backing))
+    }
+}
 /// The wiki side of the search index, built once: the dataset is compiled into the binary and
 /// never changes, so the flattening is paid for on the first query and never again. The
 /// catalog side is *not* cached here — it is read per query, like everywhere else, because

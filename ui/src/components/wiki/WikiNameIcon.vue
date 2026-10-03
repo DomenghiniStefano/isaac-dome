@@ -27,9 +27,9 @@ watch(
 const art = computed(() => refArt(props.target))
 
 // One size per kind of art, whether the picture is there or not, so the names beside a column of
-// them stay in line. A drawing is `--spacing-wiki-name-art` wide on the mark paper: its dark strokes
-// on the dark page were unreadable. A sprite is `--spacing-sprite`, a whole multiple of
-// its own 32px, so the pixel art lands on whole pixels.
+// them stay in line. A drawing is `--spacing-wiki-name-art` wide and arrives on the game's own
+// paper, laid under it by the icon protocol. A sprite is `--spacing-sprite`, a whole multiple
+// of its own 32px, so the pixel art lands on whole pixels.
 const frame = computed((): string => {
   switch (art.value) {
     case RefArt.Drawing:
@@ -50,7 +50,6 @@ const shown = computed(() => props.src !== null && !failed.value)
         'relative grid shrink-0 place-items-center',
         frame,
         !shown && 'hatch-placeholder',
-        shown && art === RefArt.Drawing && 'bg-mark-paper',
       )
     "
   >

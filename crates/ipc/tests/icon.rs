@@ -435,6 +435,11 @@ fn only_a_room_icon_is_trimmed_and_a_fitted_sprite_is_centred_in_its_frame() {
     }
     let declared = [
         IconRef::Achievement { id: 19 },
+        // The same drawing reached through its wiki page: it is laid on the same paper, so
+        // it has to arrive where the paper expects it, not moved to its middle.
+        IconRef::Page {
+            target: Target::Achievement { id: 19 },
+        },
         IconRef::Mark {
             column: 0,
             tier: MarkTier::Hard,
@@ -446,6 +451,43 @@ fn only_a_room_icon_is_trimmed_and_a_fitted_sprite_is_centred_in_its_frame() {
             Placement::AsDeclared,
             "{reference:?}"
         );
+    }
+}
+
+#[test]
+fn an_achievement_drawing_is_laid_on_paper_whichever_way_it_is_reached() {
+    // The row's own icon and the wiki page's figure are the same drawing: one on the popup's
+    // paper and the other bare would be two pictures of one achievement. A challenge's page
+    // draws the achievement it rewards, so it is the third way to the same picture.
+    for reference in [
+        IconRef::Achievement { id: 19 },
+        IconRef::Page {
+            target: Target::Achievement { id: 19 },
+        },
+        IconRef::Page {
+            target: Target::Challenge { number: 19 },
+        },
+    ] {
+        assert!(reference.is_achievement_drawing(), "{reference:?}");
+    }
+    for reference in [
+        IconRef::Item {
+            kind: ItemKindView::Passive,
+            id: 92,
+        },
+        IconRef::Page {
+            target: Target::Item { id: 105 },
+        },
+        IconRef::Page {
+            target: Target::Character { id: 0 },
+        },
+        IconRef::Mark {
+            column: 0,
+            tier: MarkTier::Hard,
+        },
+        IconRef::Unknown,
+    ] {
+        assert!(!reference.is_achievement_drawing(), "{reference:?}");
     }
 }
 
