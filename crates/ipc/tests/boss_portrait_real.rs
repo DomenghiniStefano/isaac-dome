@@ -142,3 +142,73 @@ fn the_sheets_are_cut_down_and_the_single_pictures_are_left_alone() {
         );
     }
 }
+
+/// Whether an entity's `.anm2` composes into a picture with at least one readable piece —
+/// what `app/icons.rs` draws for `IconSource::Entity` and for a portrait the archives lack.
+fn composes(rs: &ResourceSet, anm2_path: &str) -> bool {
+    let Some(doc) = rs.read(anm2_path) else {
+        return false;
+    };
+    let (Some(frames), Some(default)) = (
+        catalog::anm2_frames(&doc),
+        catalog::anm2_default_animation(&doc),
+    ) else {
+        return false;
+    };
+    ipc::compose_entity_art(anm2_path, &frames, &default)
+        .is_some_and(|art| art.layers.iter().any(|(s, _, _)| rs.contains(&s.path)))
+}
+
+#[test]
+fn every_boss_page_draws_a_picture_from_the_files_the_game_ships() {
+    // A boss page used to have four ways to show nothing: the Ultra Harbingers with no
+    // portrait row at all, and The Beast with a row naming a file the archives do not hold.
+    // Each now falls back to its own `entities2.xml` row, so the property is the whole set:
+    // every page of `ds.bosses` resolves to something that can actually be drawn.
+    let Some((c, rs)) = real() else { return };
+    let Ok(ds) = wiki::Dataset::embedded() else {
+        test_support::skip("wiki dataset not embedded");
+        return;
+    };
+    let bosses = ipc::for_tests::bosses(&c);
+    let mut fell_back: Vec<&str> = Vec::new();
+    let mut blank: Vec<&str> = Vec::new();
+    for (key, entry) in &ds.bosses {
+        let mut p = key.split('.').map(|n| n.parse::<u32>());
+        let (Some(Ok(id)), Some(Ok(variant)), Some(Ok(subtype))) = (p.next(), p.next(), p.next())
+        else {
+            continue;
+        };
+        let target = ipc::Target::Entity {
+            id,
+            variant,
+            subtype,
+        };
+        let drawn = match ipc::icon_source(&c, &bosses, Some(ds), &ipc::IconRef::Page { target }) {
+            Some(ipc::IconSource::Sprite(s)) => rs.contains(&s.path),
+            Some(ipc::IconSource::Entity { anm2_path }) => composes(&rs, anm2_path),
+            Some(ipc::IconSource::Portrait {
+                portrait,
+                otherwise,
+            }) => {
+                if rs.contains(&portrait.path) {
+                    true
+                } else {
+                    fell_back.push(&entry.title);
+                    otherwise.is_some_and(|a| composes(&rs, a))
+                }
+            }
+            None => false,
+        };
+        if !drawn {
+            blank.push(&entry.title);
+        }
+    }
+    eprintln!("sample: boss pages drawn from their own anm2 for a missing portrait: {fell_back:?}");
+    // Vacuity guard: the portrait fallback is only proven by a portrait that is really missing.
+    assert!(
+        fell_back.contains(&"The Beast"),
+        "The Beast's portrait is shipped now, or its page stopped resolving: {fell_back:?}"
+    );
+    assert_eq!(blank, Vec::<&str>::new(), "boss pages that draw nothing");
+}

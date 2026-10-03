@@ -123,6 +123,12 @@ fn catalog_icon(
         ipc::IconSource::Entity { anm2_path } => {
             entity_bytes(rs, anm2_path).map(|png| ipc::place(png, placement))
         }
+        // The portrait if the archives hold it, the boss's own `.anm2` if they don't.
+        ipc::IconSource::Portrait {
+            portrait,
+            otherwise,
+        } => sprite_bytes(rs, portrait, placement)
+            .or_else(|| entity_bytes(rs, otherwise?).map(|png| ipc::place(png, placement))),
     }
 }
 

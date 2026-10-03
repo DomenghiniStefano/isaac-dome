@@ -389,6 +389,90 @@ fn a_non_boss_entitys_page_resolves_to_its_anm2_not_a_sprite() {
     );
 }
 
+/// A boss page with no dataset to ask is read as a possible boss (`target_sprite`), which is
+/// the branch these two tests are about. Monstro has a versus-screen portrait; Ultra Famine
+/// has none, only its own row in `entities2.xml`.
+fn bosses_catalog() -> Catalog {
+    const PORTRAITS: &[u8] =
+        b"<bosses><boss id=\"1\" name=\"Monstro\" portrait=\"Portrait_20.0_Monstro.png\" /></bosses>";
+    const ENTITIES: &[u8] = b"<entities>\
+        <entity id=\"20\" variant=\"0\" name=\"Monstro\" anm2path=\"020.000_monstro.anm2\" />\
+        <entity id=\"951\" variant=\"10\" name=\"Ultra Famine\" anm2path=\"951.010_ultra famine.anm2\" />\
+        </entities>";
+    Catalog::build(|p| match p {
+        "bossportraits.xml" => Some(PORTRAITS.to_vec()),
+        "entities2.xml" => Some(ENTITIES.to_vec()),
+        _ => None,
+    })
+}
+
+fn boss_page(id: u32, variant: u32) -> IconRef {
+    IconRef::Page {
+        target: Target::Entity {
+            id,
+            variant,
+            subtype: 0,
+        },
+    }
+}
+
+#[test]
+fn a_boss_with_no_portrait_row_draws_its_own_anm2() {
+    // The Ultra Harbingers: the game never puts them on the versus screen, so
+    // `bossportraits.xml` has no row for them, and their own `entities2.xml` row is the
+    // picture there is — its default animation, the same composition a common monster gets.
+    let c = bosses_catalog();
+    let found = icon_source(&c, &ipc::for_tests::bosses(&c), None, &boss_page(951, 10));
+    assert!(
+        matches!(found, Some(IconSource::Entity { anm2_path }) if anm2_path == "gfx/951.010_ultra famine.anm2"),
+        "{found:?}"
+    );
+}
+
+#[test]
+fn a_boss_portrait_carries_its_own_anm2_for_when_the_file_is_not_shipped() {
+    // The Beast's row names `Portrait_The Beast.png`, which the archives do not hold: whether
+    // a file exists is the caller's to find out, so the portrait travels with the picture to
+    // draw instead. A boss with no `entities2.xml` row has nothing to fall back on.
+    let c = bosses_catalog();
+    let found = icon_source(&c, &ipc::for_tests::bosses(&c), None, &boss_page(20, 0));
+    match found {
+        Some(IconSource::Portrait {
+            portrait,
+            otherwise,
+        }) => {
+            assert_eq!(portrait.path, "gfx/ui/boss/Portrait_20.0_Monstro.png");
+            assert_eq!(otherwise, Some("gfx/020.000_monstro.anm2"));
+        }
+        other => panic!("a boss page resolved to {other:?}"),
+    }
+    let bare = Catalog::build(|p| {
+        match p {
+        "bossportraits.xml" => Some(
+            b"<bosses><boss id=\"1\" name=\"Monstro\" portrait=\"Portrait_20.0_Monstro.png\" /></bosses>"
+                .to_vec(),
+        ),
+        _ => None,
+    }
+    });
+    let found = icon_source(
+        &bare,
+        &ipc::for_tests::bosses(&bare),
+        None,
+        &boss_page(20, 0),
+    );
+    assert!(
+        matches!(
+            found,
+            Some(IconSource::Portrait {
+                otherwise: None,
+                ..
+            })
+        ),
+        "{found:?}"
+    );
+}
+
 // Where each reference's drawing sits in the picture served for it. It is a reading of the
 // game and not a preference, so it lives in the pure crate and `app/icons.rs` only obeys it.
 //

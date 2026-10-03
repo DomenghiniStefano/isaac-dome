@@ -336,6 +336,7 @@ fn the_pages_a_portrait_file_name_cannot_reach_are_reached_by_the_title() {
         .filter_map(|b| declared_key(&b.portrait.path))
         .collect();
     let mut recovered = 0usize;
+    let mut own_anm2: Vec<&str> = Vec::new();
     let mut still_missing: Vec<&str> = Vec::new();
     for (key, entry) in &ds.bosses {
         let mut p = key.split('.').map(|n| n.parse::<u32>());
@@ -357,9 +358,8 @@ fn the_pages_a_portrait_file_name_cannot_reach_are_reached_by_the_title() {
             },
         ) {
             TargetSprite::Found(_) => recovered += 1,
-            TargetSprite::Entity(_) | TargetSprite::NoArt | TargetSprite::Unknown => {
-                still_missing.push(&entry.title)
-            }
+            TargetSprite::Entity(_) => own_anm2.push(&entry.title),
+            TargetSprite::NoArt | TargetSprite::Unknown => still_missing.push(&entry.title),
         }
     }
     eprintln!("sample: {recovered} boss pages no file name reaches, recovered by title");
@@ -367,18 +367,23 @@ fn the_pages_a_portrait_file_name_cannot_reach_are_reached_by_the_title() {
         recovered >= 20,
         "only {recovered} recovered by title: the name join is not doing its work"
     );
-    // What is left is the pages `bossportraits.xml` has no row for at all — the Ultra
-    // Harbingers. No name join reaches those; `entities2.xml` is the card for them.
-    still_missing.sort_unstable();
+    // The pages `bossportraits.xml` has no row for at all — the Ultra Harbingers, which the
+    // game never puts on the versus screen — draw their own `entities2.xml` row instead.
+    own_anm2.sort_unstable();
     assert_eq!(
-        still_missing,
+        own_anm2,
         [
             "Ultra Death",
             "Ultra Famine",
             "Ultra Pestilence",
             "Ultra War"
         ],
-        "the only boss pages with no portrait row of any kind"
+        "the boss pages with no portrait row of any kind, drawn from their own anm2"
+    );
+    assert_eq!(
+        still_missing,
+        Vec::<&str>::new(),
+        "a boss page with neither a portrait row nor an entities2 row"
     );
 }
 
