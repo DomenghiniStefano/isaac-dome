@@ -746,9 +746,32 @@ has seen it in the app.
 
 ---
 
-## B19 — The marked cell sits on the game's paper, not on a flat panel (implementation, `ipc` and `ui`)
+## B19 — The marked cell sits on the game's paper, not on a flat panel (implementation, `ipc` and `ui`) built on 2026-10-03 as **our own paper**, **not yet seen in a window with the game**
 
-**Needs:** the game — the paper sheet is a game asset, extracted from the user's copy at runtime, and the entry forbids a colour that resembles it.
+**Needs:** a window with the game — the paper is ours now, but a cell only draws it under a symbol, and the symbols come through the icon protocol.
+
+**The premise fell, and the entry changed subject on 2026-10-03.** The game has **no paper per
+mark**: measured on the installed copy on 2026-09-21 and written only in
+`crates/ipc/src/mark_art.rs`, `completion_widget.anm2` has one `Paper` layer — the pinned note,
+96×96 — and the eleven symbols are placed *inside* it. That note is already drawn, whole, as
+Completion's emblem (`widget_source`). Rendered again from the game's files and shown to the
+owner, who did not want a square of untextured paper under each cell and asked for **a style of
+our own** instead. Two rounds of variants, built with the real symbols on a local page and never
+published (they are game assets); the owner chose **"crayon with an outline"**:
+
+- warm parchment, `mark-paper` washed to `mark-paper-edge` from the top-left
+  (`mark-paper-wash`);
+- an edge that wobbles like the game's crayon drawings: an SVG `feTurbulence` +
+  `feDisplacementMap` filter, `CrayonFilter.vue`, mounted at each page root and named by the
+  `crayon` utility — on the paper only, never on the sprite;
+- a hand-drawn 2px outline, `mark-ink` on a normal mark and `primary` on a hard one.
+
+One constraint came out of it and holds for any future restyle: a *normal* symbol is dark ink, so
+whatever sits under it has to be light. The Kit page draws the matrix on a stand-in heart of our
+own, since the browser has no icon protocol. `ipc` was not touched: nothing is cropped from the
+game for this any more. What is left is the look in the app with the game installed.
+
+What follows is the entry as written, kept for how it got here.
 
 Logged 2026-09-12, from the owner's review of Completion: a taken mark is drawn on a flat
 light panel, and it should sit on the game's own paper sheet, the one the completion widget
