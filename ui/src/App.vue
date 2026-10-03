@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, onMounted, onUnmounted, ref, watch } from 'vue'
 import { useRouter } from 'vue-router'
+import CrayonFilter from '@/components/marks/CrayonFilter.vue'
 import AboutDialog from '@/components/shell/AboutDialog.vue'
 import NavBar from '@/components/shell/NavBar.vue'
 import ProfileIndicator from '@/components/shell/ProfileIndicator.vue'
@@ -195,6 +196,7 @@ const takeover = computed(() => welcome.value.kind !== 'hidden')
     <div
       class="flex h-screen flex-col overflow-hidden bg-background text-foreground"
     >
+      <CrayonFilter />
       <TitleBar
         :tabs="tabViews"
         :active-id="tabs.activeId"
