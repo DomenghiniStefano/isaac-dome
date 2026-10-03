@@ -66,9 +66,15 @@
   --color-titlebar: #0d0908;
   --color-navbar: #120c0b;
   --color-chrome-inactive-foreground: #5a4a44;
-  /* The paper a marked matrix cell is drawn on: the pixel at (42, 42) of the game's
-     completion_widget/paper_00.png, sampled through a canvas on 2026-09-10. */
-  --color-mark-paper: #e9dadf;
+  /* The paper a drawing from the game sits on: a marked matrix cell, an achievement's picture.
+     Ours and not the game's — the game has no paper per mark, only one note with every symbol
+     on it — so it is warm parchment, washed from `mark-paper` in the lit corner to
+     `mark-paper-edge`. Light on purpose: a normal mark is dark ink and needs paper to read on.
+     `mark-ink` is the hand-drawn line around a normal mark's paper; a hard one draws it in
+     `primary`. */
+  --color-mark-paper: #e9dbce;
+  --color-mark-paper-edge: #cca37b;
+  --color-mark-ink: #2a1208;
   /* The alpha lives here, never in a class. */
   --color-overlay: rgb(12 7 6 / 0.8);
   /* The grain over a wiki page's opening band (card #57). The skin is flat by decision —
