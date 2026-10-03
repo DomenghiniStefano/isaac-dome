@@ -1,5 +1,6 @@
 //! ipc — view-models for the UI. Pure logic: no I/O, no dependency on Tauri.
 
+mod achievement_art;
 mod autostart;
 mod catalog_view;
 mod challenges;
@@ -45,6 +46,7 @@ mod wiki_progress;
 mod wiki_samples;
 mod wiki_target;
 
+pub use achievement_art::{achievement_backing, on_paper, AchievementBacking, ACHIEVEMENT_ANM2};
 pub use autostart::{
     autostart_answer, launch_intent, AutostartFailure, AutostartReason, AutostartView,
     LaunchIntent, AUTOSTART_ENTRY, SILENT_ARG,
