@@ -50,9 +50,10 @@ const accessibleName = computed(() => {
 </script>
 
 <template>
-  <!-- Chrome e Stati.dc.html, "Cella della matrice", at cycle 2's scale: a 16px symbol at 2x
-       on flat paper; with no art, the bars of Tokens.dc.html. Without a label the cell is
-       decoration and the text beside it speaks. -->
+  <!-- A 16px symbol at 2x on a scrap of parchment whose edge wobbles like crayon, outlined by
+       hand: in ink for a normal mark, in red for a hard one. The paper is its own element so
+       the filter bends it and never the sprite. With no art, the bars of Tokens.dc.html.
+       Without a label the cell is decoration and the text beside it speaks. -->
   <div
     :role="label === undefined ? undefined : 'img'"
     :aria-label="accessibleName"
@@ -63,9 +64,7 @@ const accessibleName = computed(() => {
         'relative grid size-mark-cell shrink-0 place-items-center border',
         visual.kind === 'empty' && 'border-hairline bg-data',
         visual.kind === 'marked' &&
-          (symbol
-            ? 'border-transparent bg-mark-paper'
-            : 'border-input bg-data'),
+          (symbol ? 'border-transparent' : 'border-input bg-data'),
         visual.kind === 'unknown' &&
           'border-dashed border-state-unknown hatch-unknown text-row text-muted-foreground',
         visual.kind === 'unexpected' &&
@@ -74,13 +73,24 @@ const accessibleName = computed(() => {
     "
   >
     <template v-if="visual.kind === 'marked'">
-      <img
-        v-if="symbol"
-        :src="symbol"
-        alt=""
-        class="size-mark-symbol pixelated"
-        @error="failed = true"
-      />
+      <template v-if="symbol">
+        <span
+          :class="
+            cn(
+              'absolute inset-0.5 border-2 mark-paper-wash crayon',
+              visual.tier === MarkTier.Hard
+                ? 'border-primary'
+                : 'border-mark-ink',
+            )
+          "
+        />
+        <img
+          :src="symbol"
+          alt=""
+          class="relative size-mark-symbol pixelated"
+          @error="failed = true"
+        />
+      </template>
       <template v-else>
         <span class="absolute inset-x-0 bottom-0 h-(--mark-bar) bg-primary" />
         <ChevronUpIcon

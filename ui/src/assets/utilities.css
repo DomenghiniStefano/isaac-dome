@@ -307,6 +307,24 @@
   );
 }
 
+/* The paper under a marked cell, lit from the top-left corner and darkening towards the
+   opposite one, so a cell reads as a piece of parchment and not as a flat swatch. */
+@utility mark-paper-wash {
+  background-image: radial-gradient(
+    120% 120% at 28% 22%,
+    var(--color-mark-paper) 45%,
+    var(--color-mark-paper-edge) 100%
+  );
+}
+
+/* An edge that wobbles like the game's crayon drawings. The filter is `CrayonFilter.vue`,
+   mounted once at the root of every page that draws one — a `url(#…)` names an element of the
+   same document, so a window without it would draw the box straight and say nothing. Put it on
+   the paper and never on a sprite: displaced pixel art is no longer the game's picture. */
+@utility crayon {
+  filter: url(#crayon);
+}
+
 /* The floor grid: as many cells across as the grid is wide. The count is not written here — it
    is `WIDTH` in `lib/floor/painting.ts`, which the template sets as `--floor-width`, so the
    number lives once and the CSS only reads it (card #81, C5). */
