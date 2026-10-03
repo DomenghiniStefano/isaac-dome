@@ -41,10 +41,12 @@ import DragListSection from './sections/app/DragListSection.vue'
 import GoalRowSection from './sections/app/GoalRowSection.vue'
 import WidthsSection from './sections/app/WidthsSection.vue'
 import { TooltipProvider } from '@/components/ui/tooltip'
+import CrayonFilter from '@/components/marks/CrayonFilter.vue'
 </script>
 
 <template>
   <TooltipProvider>
+    <CrayonFilter />
     <main
       class="grid min-h-screen grid-cols-3 content-start items-start gap-4 bg-background p-8 text-foreground"
     >
