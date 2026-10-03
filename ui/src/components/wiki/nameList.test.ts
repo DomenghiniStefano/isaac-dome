@@ -53,8 +53,12 @@ describe('isNameItem', () => {
 })
 
 describe('refArt', () => {
-  it('draws an achievement as its drawing, which needs the paper under it', () => {
+  it('draws an achievement as its drawing, on the paper it arrives on', () => {
     expect(refArt({ kind: 'achievement', id: 1 })).toBe(RefArt.Drawing)
+  })
+
+  it('draws a challenge as a drawing too: its picture is the achievement it rewards', () => {
+    expect(refArt({ kind: 'challenge', number: 19 })).toBe(RefArt.Drawing)
   })
 
   it('draws every other target as pixel art', () => {
