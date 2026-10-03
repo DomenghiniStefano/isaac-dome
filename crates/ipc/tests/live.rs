@@ -29,6 +29,7 @@ fn mark(character: u32, name: &str, column: MarkColumnView) -> RequirementView {
         character_name: name.into(),
         column,
         level: MarkLevelView::Base,
+        page: None,
     }
 }
 
@@ -274,6 +275,7 @@ fn a_second_level_offer_names_its_level_the_way_its_column_does() {
         character_name: "Judas".into(),
         column,
         level: MarkLevelView::Second,
+        page: None,
     };
     let nodes = vec![
         node(1, vec![second(MarkColumnView::Greed)]),

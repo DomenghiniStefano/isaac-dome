@@ -55,6 +55,11 @@ fn a_mark_requirement_is_camel_case_and_its_enums_are_bare_strings() {
         character_name: "Magdalene".to_string(),
         column: ipc::MarkColumnView::Mother,
         level: ipc::MarkLevelView::Base,
+        page: Some(ipc::Target::Entity {
+            id: 912,
+            variant: 0,
+            subtype: 0,
+        }),
     };
     let j = serde_json::to_value(&m).expect("serialises");
     assert_eq!(j["kind"], "mark");
@@ -65,6 +70,8 @@ fn a_mark_requirement_is_camel_case_and_its_enums_are_bare_strings() {
         "a fieldless enum is a bare string, never tagged"
     );
     assert_eq!(j["level"], "base");
+    assert_eq!(j["page"]["kind"], "entity");
+    assert_eq!(j["page"]["id"], 912);
 }
 
 #[test]
@@ -73,12 +80,14 @@ fn a_counter_requirement_carries_where_the_profile_stands() {
         label: "Hush".to_string(),
         current: 0,
         at_least: 1,
+        page: None,
     };
     let j = serde_json::to_value(&c).expect("serialises");
     assert_eq!(j["kind"], "counter");
     assert_eq!(j["label"], "Hush");
     assert_eq!(j["current"], 0);
     assert_eq!(j["atLeast"], 1);
+    assert!(j["page"].is_null(), "no page is null, not a missing key");
 }
 
 #[test]

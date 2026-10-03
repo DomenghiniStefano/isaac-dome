@@ -96,6 +96,7 @@ impl Standing<'_> {
                 character_name: self.c.text(&ch.name, EN).to_string(),
                 column,
                 level,
+                page: self.column_page(column),
             })
     }
 
@@ -105,7 +106,12 @@ impl Standing<'_> {
             label: counter_label(name).to_string(),
             current,
             at_least,
+            page: self.column_page(name.column()),
         })
+    }
+
+    fn column_page(&self, column: MarkColumn) -> Option<Target> {
+        wiki_target::column(self.c, self.bosses, column).and_then(|t| page_of(self.dataset, t))
     }
 
     fn character(&self, id: CharacterId) -> Option<RequirementView> {

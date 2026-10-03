@@ -1392,9 +1392,29 @@ game does, and the entry names the sheet and frame it came from.
 
 ---
 
-## B36 — A mark and a counter say which boss they mean, and link to it (measurement, then `ipc` and `ui`)
+## B36 — A mark and a counter say which boss they mean, and link to it (measurement, then `ipc` and `ui`) built on 2026-10-03, **not yet seen in a window**
 
-**Needs:** the game — the ten bosses' keys come from the dataset and need none, but the counters resolve through the catalog, and that half does.
+**Needs:** a window — the links are built and tested on the real catalog; what is left is following one from the blocked menu.
+
+**Built on 2026-10-03.** A counter turned out to be the same question as a mark: `CounterName`
+names a column, so both need one thing — a column's page. **Measured** on the installed game and
+the embedded dataset, by equality after the normalization `boss_keys` already uses:
+
+| column | `bossportraits.xml` row | reached by | page |
+|---|---|---|---|
+| Mom's Heart, Satan, The Lamb, Mega Satan, Hush, Delirium, Mother, The Beast | same name | the row's name | the boss's |
+| Isaac | `Isaac` | the row's name | `102.0` *Isaac (Boss)*, through the key the file name declares |
+| Blue Baby | `???` | the portrait's file name, `Portrait_102.1_BlueBaby.png` | `102.1` *??? (Boss)* |
+| Boss Rush | none | — | the article *Boss Rush* |
+| Greed | none | — | the article *Greed Mode* |
+
+The row's name is read before the file name, because two rows share one portrait (*Mom's Heart*
+and *Mom's Heart (Mausoleum)*); a tier two rows answer to gives no row. From the row, the page is
+the one `boss_keys` gives it — the same key the boss's own link and picture use. **The two that
+are not entities are a decision in words**: a room-and-event and a game mode, linked to the
+articles the wiki writes about them and never dressed as a boss (`wiki_target::column`).
+`RequirementView::Mark` and `Counter` carry `page`, and the blocked menu follows it.
+`column_page_real.rs` reads the mapping from the catalog, not from a table.
 
 Logged on 2026-09-12, with 3.5d. `RequirementView::Mark` names a cell of the completion matrix
 ("beat Delirium with Cain") and `Counter` a threshold on a tally; both draw in the blocked menu

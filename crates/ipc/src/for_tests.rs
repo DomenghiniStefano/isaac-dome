@@ -55,6 +55,15 @@ pub fn bosses(catalog: &Catalog) -> crate::BossKeys {
     crate::boss_keys(catalog, wiki::Dataset::embedded().ok())
 }
 
+/// The page a completion-matrix column links to, as a mark or a tally in the blocked menu
+/// links it: `wiki_target::column` with the app's boss keys, kept only if the embedded
+/// dataset has the page.
+pub fn column_page(catalog: &Catalog, column: core_save::Column) -> Option<Target> {
+    let dataset = wiki::Dataset::embedded().ok();
+    crate::wiki_target::column(catalog, &bosses(catalog), column)
+        .and_then(|t| crate::wiki_target::page_of(dataset, t))
+}
+
 /// The completion matrix row a catalog character occupies — `wiki_progress`'s own lookup, by
 /// id and Tainted flag, reachable so a test can tell two characters sharing a name apart
 /// without reconstructing the roster by hand.
