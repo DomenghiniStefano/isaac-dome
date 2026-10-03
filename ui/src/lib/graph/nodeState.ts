@@ -170,8 +170,9 @@ const requirementKey = (requirement: RequirementView): string => {
 }
 
 // Where to read how *this* is unlocked. `null` is "nowhere to go": either the dataset has no
-// page, or the requirement is a condition and not an entity — a gate, a mark, a counter, an
-// uninterpreted label. Never a link that leads nowhere.
+// page, or the requirement is a condition with no page of its own — a gate, an uninterpreted
+// label. Never a link that leads nowhere. A mark and a tally link to what their column is: the
+// boss, or the article on Boss Rush or Greed Mode (`wiki_target::column`).
 const requirementLocation = (
   requirement: RequirementView,
 ): TabLocation | null => {
@@ -180,10 +181,10 @@ const requirementLocation = (
     case 'boss':
     case 'challenge':
     case 'item':
-      return pageLocationOf(requirement.page)
-    case 'gate':
     case 'mark':
     case 'counter':
+      return pageLocationOf(requirement.page)
+    case 'gate':
     case 'unknown':
       return null
     // Its own page, which the dataset has had since the sixteen were imported.
