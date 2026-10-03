@@ -73,6 +73,9 @@ pub enum RequirementView {
         character_name: String,
         column: MarkColumnView,
         level: MarkLevelView,
+        /// The page of what the column is: its boss, or the article on Boss Rush or Greed
+        /// Mode (`wiki_target::column`). `None` when the dataset has no such page.
+        page: Option<Target>,
     },
     /// A tally and its threshold, with where the profile stands. Unlike every other
     /// requirement here, this one is not a wall: it is content already reachable.
@@ -80,6 +83,8 @@ pub enum RequirementView {
         label: String,
         current: u32,
         at_least: u32,
+        /// The page of the column the tally counts, like `Mark`'s.
+        page: Option<Target>,
     },
     /// A transformation: N of a set of items, in any combination. Like `Counter`, it is not
     /// a wall — it appears only while the profile is short of the count — and unlike every

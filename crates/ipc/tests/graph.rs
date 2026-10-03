@@ -968,6 +968,7 @@ fn a_node_held_only_by_counters_goes_to_the_closeness_section() {
         label: "Mom's Heart".into(),
         current,
         at_least,
+        page: None,
     };
     let available = |slot: u32, fan_out: u32, missing: Vec<RequirementView>| UnlockNode {
         achievement: AchievementRef::Unknown { slot },
@@ -1028,6 +1029,7 @@ fn the_two_sections_never_name_the_same_node() {
             label: "Hush".into(),
             current: 0,
             at_least: 1,
+            page: None,
         }],
         graph: GraphInfo::Computed {
             available_now: true,
@@ -1080,6 +1082,7 @@ fn a_mark_is_not_a_distance_and_stays_in_the_fan_out_section() {
             character_name: "Isaac".into(),
             column: ipc::MarkColumnView::MomsHeart,
             level: ipc::MarkLevelView::Base,
+            page: None,
         }],
         graph: GraphInfo::Computed {
             available_now: true,
@@ -1213,6 +1216,7 @@ fn a_queued_node_is_absent_from_both_sections() {
         label: "Mom's Heart".into(),
         current: 9,
         at_least: 11,
+        page: None,
     };
     let v = ipc::for_tests::unlock_view_of(vec![
         known_available(1, 9, vec![near]),
