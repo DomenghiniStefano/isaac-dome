@@ -4,8 +4,9 @@ import { ACTIONS_KEY, cellClass, cellStyle } from '@/lib/table/gridColumn'
 import type { GridColumn } from '@/lib/table/gridColumn'
 
 // One row of a `GridTable`: a cell per column, each wrapped in the containment, the content
-// handed down from the table's own slots. The Actions cell keeps its clicks: in a clickable row
-// a button there must not also open the row — a Ctrl-click would open two tabs.
+// handed down from the table's own slots. A control in the Actions cell keeps its click: in a
+// clickable row it must not also open the row — a Ctrl-click would open two tabs. The cell's
+// empty room around it is still the row.
 defineProps<{
   columns: GridColumn[]
   rowClass: string
@@ -13,7 +14,10 @@ defineProps<{
 const emit = defineEmits<{ click: [event: MouseEvent] }>()
 
 const keepOnActions = (column: GridColumn, event: MouseEvent): void => {
-  if (column.key === ACTIONS_KEY) event.stopPropagation()
+  const control =
+    event.target instanceof Element &&
+    event.target.closest('button, a, [role="button"]') !== null
+  if (column.key === ACTIONS_KEY && control) event.stopPropagation()
 }
 </script>
 
