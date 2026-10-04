@@ -8,6 +8,7 @@ import {
 import { computed } from 'vue'
 import ListEmptyState from '@/components/data-state/ListEmptyState.vue'
 import FilterBar from '@/components/facets/FilterBar.vue'
+import QueueError from '@/components/plan/QueueError.vue'
 import { Card } from '@/components/ui/card'
 import { Skeleton } from '@/components/ui/skeleton'
 import { PageScroll } from '@/components/ui/virtual'
@@ -17,6 +18,7 @@ import {
   ToggleGroupType,
 } from '@/components/ui/toggle-group'
 import { useFacetedReading } from '@/composables/useFacetedReading'
+import { useQueueOffer } from '@/composables/useQueueOffer'
 import { useMessages } from '@/i18n'
 import type { WikiPageRef } from '@/lib/ipc/types'
 import { emptyList, isFiltering } from '@/lib/facets/emptyList'
@@ -47,6 +49,7 @@ import { wikiView } from './tabView'
 
 const props = defineProps<{ category: WikiCategory }>()
 const wiki = useWikiStore()
+const { queue } = useQueueOffer()
 const tabs = useTabsStore()
 const { t } = useMessages()
 
@@ -138,6 +141,7 @@ const open = (page: WikiPageRef, event: MouseEvent) =>
       <p v-if="noCatalog" class="text-caption text-subtle-foreground">
         {{ t('wiki.noCatalog') }}
       </p>
+      <QueueError v-if="queue.mutationFailed" :error="queue.mutationError" />
       <Card v-if="wiki.index">
         <FilterBar
           :bar="bar"

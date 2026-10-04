@@ -1,3 +1,6 @@
+import { factColumns } from '@/lib/wiki/factChips'
+import type { FactColumn } from '@/lib/wiki/factChips'
+import { WikiCategory } from '@/router/routeTable'
 import { ColumnAlign, ColumnFold, fixed, grow } from './gridColumn'
 import type { GridColumn } from './gridColumn'
 
@@ -11,6 +14,7 @@ export const ListTable = {
   Collection: 'collection',
   Live: 'live',
   Runs: 'runs',
+  Wiki: 'wiki',
 } as const
 export type ListTable = (typeof ListTable)[keyof typeof ListTable]
 
@@ -225,10 +229,67 @@ export const runsColumns: readonly GridColumn[] = [
   },
 ]
 
+// The wiki's table: the picture, the id (where the category has one), the name, the edition,
+// every fact column the category gives (`factColumns`, the same table the card grid's chips
+// read), and the save's state. Every fact folds at compact: they explain a page, and at 428px
+// with Actions beside the state, keeping even one left the name 16px — its padding.
+export const wikiColumns = (
+  facts: readonly FactColumn[],
+  hasId: boolean,
+): GridColumn[] => [
+  {
+    key: 'figure',
+    header: null,
+    width: fixed('w-figure-row'),
+    fold: ColumnFold.Never,
+    align: ColumnAlign.Center,
+  },
+  ...(hasId ? [idColumn] : []),
+  {
+    key: 'name',
+    header: 'wiki.list.sort.name',
+    width: grow(1),
+    fold: ColumnFold.Never,
+    align: ColumnAlign.Start,
+  },
+  {
+    key: 'edition',
+    header: 'wiki.list.sort.edition',
+    width: fixed('w-wiki-table-edition'),
+    fold: ColumnFold.Compact,
+    align: ColumnAlign.Start,
+  },
+  ...facts.map((fact): GridColumn => ({
+    key: `fact-${fact.key}`,
+    header: fact.label,
+    width: fixed('w-wiki-table-fact'),
+    fold: ColumnFold.Compact,
+    align: ColumnAlign.Start,
+  })),
+  {
+    key: 'profile',
+    header: 'wiki.list.facet.profile',
+    width: fixed('w-wiki-table-fact'),
+    fold: ColumnFold.Never,
+    align: ColumnAlign.Start,
+  },
+]
+
+const idColumn: GridColumn = {
+  key: 'id',
+  header: 'wiki.list.sort.id',
+  width: fixed('w-wiki-table-id'),
+  fold: ColumnFold.Compact,
+  align: ColumnAlign.Start,
+}
+
 export const TableColumns: Record<ListTable, readonly GridColumn[]> = {
   [ListTable.Challenges]: challengeColumns,
   [ListTable.Unlock]: unlockColumns,
   [ListTable.Collection]: collectionColumns,
   [ListTable.Live]: liveColumns,
   [ListTable.Runs]: runsColumns,
+  // The items category: it has an id and fact columns, so every width token the wiki's table
+  // uses is read here.
+  [ListTable.Wiki]: wikiColumns(factColumns(WikiCategory.Items), true),
 }
