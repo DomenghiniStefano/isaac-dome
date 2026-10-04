@@ -22,5 +22,5 @@ export const TableTracks: Record<
   [FoldingTable.Unlock]: { full: 7, narrow: 4 },
   [FoldingTable.Collection]: { full: 6, narrow: 3 },
   [FoldingTable.Challenges]: { full: 6, narrow: 4 },
-  [FoldingTable.Runs]: { full: 5, narrow: 3 },
+  [FoldingTable.Runs]: { full: 6, narrow: 4 },
 }

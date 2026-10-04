@@ -1,6 +1,7 @@
 //! Ingesting a log into the archive. **Backfill and live are this one function**: a session
 //! folder is a stream that is finished and `log.txt` is a stream that is still growing, which
-//! is the whole difference between them.
+//! is the whole difference between them. A launch is dated by its file's modification time on
+//! every read; a session by its folder's name.
 
 use std::path::Path;
 
@@ -9,7 +10,7 @@ use run::{
 };
 use store::Store;
 
-use crate::read::{chunk, head, len, window_ending_at, CHUNK};
+use crate::read::{chunk, head, len, modified, window_ending_at, CHUNK};
 use crate::WatchError;
 
 /// What one ingest did. Numbers, not a sentence: the caller logs them and the tests read them.
@@ -73,9 +74,9 @@ impl Ingest<'_> {
             None => (self.new_log_source(log)?, 0),
         };
         let (events, offset) = self.read_events(log, from)?;
-        let written = self
-            .store
-            .append_to_log(id, &self.key_at(log, offset)?, &events)?;
+        let written =
+            self.store
+                .append_to_log(id, &self.key_at(log, offset)?, &events, modified(log))?;
         let runs = self.refold(id)?;
         Ok(Ingested {
             source_id: id,

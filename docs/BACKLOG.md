@@ -2064,8 +2064,9 @@ January 2025: `gameprocess_log.txt` 7041 bytes and **0** lines for 250900; `clou
 
 **What is actually missing goes to its own card**: *a `log.txt` source carries the time it was
 read* — a nullable column on `sources` (a migration), written by `log-watch`, the file's
-modification time for the launch found at startup, and dates on the Runs screen, which today
-says "the log carries no timestamps, so runs are ordered by session".
+modification time for the launch found at startup, and dates on the Runs screen, which until then
+says "the log carries no timestamps, so runs are ordered by session". **Built on 2026-10-04**
+(card #92): `docs/superpowers/specs/2026-10-04-run-dates-design.md`.
 
 ---
 

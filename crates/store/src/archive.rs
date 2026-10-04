@@ -47,15 +47,31 @@ pub struct StoredSource {
     /// The session's folder name. `None` for a launch, which has no name.
     pub key: Option<String>,
     pub source_key: SourceKey,
+    /// When a launch's file was last written, in epoch seconds. `None` for a session, whose
+    /// name is its date, and for a launch read before the app kept dates.
+    pub written_unix: Option<i64>,
 }
 
 impl StoredSource {
     /// The source as the Runs screen names it. A session row with no name cannot be told from
-    /// a launch, and the launch is the honest reading: it is the source with no name.
-    pub fn run_source(&self) -> RunSource {
+    /// a launch, and the launch is the honest reading: it is the source with no name. Of the
+    /// launches, only `latest_log` is Live — the rest are past launches, each its own source.
+    pub fn run_source(&self, latest_log: Option<i64>) -> RunSource {
         match (self.kind, &self.key) {
             (SourceKind::Session, Some(name)) => RunSource::Session { name: name.clone() },
-            (SourceKind::Session, None) | (SourceKind::Log, _) => RunSource::Live,
+            (SourceKind::Session, None) | (SourceKind::Log, _) => self.launch(latest_log),
+        }
+    }
+
+    fn launch(&self, latest_log: Option<i64>) -> RunSource {
+        let written_unix = self.written_unix;
+        if latest_log == Some(self.id) {
+            RunSource::Live { written_unix }
+        } else {
+            RunSource::Launch {
+                id: self.id,
+                written_unix,
+            }
         }
     }
 }
@@ -102,7 +118,7 @@ fn unhex(raw: &str) -> Option<u64> {
 /// The columns every read of a source selects, in the order `source_row` reads them by index:
 /// the two are one contract, which is why the list is written once.
 const SELECT_SOURCE: &str =
-    "SELECT id, kind, key, prefix_hash, prefix_len, anchor_hash, read_offset FROM sources";
+    "SELECT id, kind, key, prefix_hash, prefix_len, anchor_hash, read_offset, written_unix FROM sources";
 
 impl Store {
     /// The source of an online session, by the folder's name.
@@ -184,11 +200,15 @@ impl Store {
     /// The two halves cannot be separate statements. Events written with the offset left behind
     /// are events the next read finds again and files a second time — the duplicate-runs failure
     /// the anchor exists to prevent, reached through a crash instead of through a bad guess.
+    ///
+    /// The file's modification time moves with them; a read that cannot say when keeps the date
+    /// already there.
     pub fn append_to_log(
         &self,
         source_id: i64,
         key: &SourceKey,
         events: &[Event],
+        written_unix: Option<i64>,
     ) -> Result<u32, StoreError> {
         let tx = self
             .conn
@@ -198,13 +218,14 @@ impl Store {
         self.conn
             .execute(
                 "UPDATE sources SET prefix_hash = ?2, prefix_len = ?3, anchor_hash = ?4,
-                 read_offset = ?5 WHERE id = ?1",
+                 read_offset = ?5, written_unix = COALESCE(?6, written_unix) WHERE id = ?1",
                 params![
                     source_id,
                     hex(key.prefix),
                     key.prefix_len as i64,
                     hex(key.anchor),
-                    key.offset as i64
+                    key.offset as i64,
+                    written_unix
                 ],
             )
             .map_err(StoreError::from_sqlite)?;
@@ -370,14 +391,20 @@ impl Store {
     }
 
     /// The cached runs of the launch the watcher follows — the latest `log.txt` — under
-    /// `rules_version`, and no other source's. What Live reads on every line the
-    /// watcher reports: the whole archive would be every session ever played, read to keep one
-    /// run. `None` when there is no launch, or when these rules have not folded it.
-    pub fn live_runs(&self, rules_version: u32) -> Result<Option<Vec<Run>>, StoreError> {
-        match self.latest_log_source()? {
-            Some(source) => self.cached_runs(source.id, rules_version),
-            None => Ok(None),
-        }
+    /// `rules_version`, with the source as the screen names it, and no other source's. What
+    /// Live reads on every line the watcher reports: the whole archive would be every session
+    /// ever played, read to keep one run. `None` when there is no launch, or when these rules
+    /// have not folded it.
+    pub fn live_runs(
+        &self,
+        rules_version: u32,
+    ) -> Result<Option<(RunSource, Vec<Run>)>, StoreError> {
+        let Some(source) = self.latest_log_source()? else {
+            return Ok(None);
+        };
+        Ok(self
+            .cached_runs(source.id, rules_version)?
+            .map(|runs| (source.run_source(Some(source.id)), runs)))
     }
 
     /// Every source's cached runs under `rules_version`, named, oldest source first. A source
@@ -386,10 +413,16 @@ impl Store {
     /// and an empty fold contributes a row with no run in it, which adds nothing to any total.
     /// A cache that cannot be read is counted in `unreadable` and costs no other source.
     pub fn archived_runs(&self, rules_version: u32) -> Result<ArchivedRuns, StoreError> {
+        let latest = self.latest_log_source()?.map(|s| s.id);
         let cached: Vec<_> = self
             .sources()?
             .into_iter()
-            .map(|row| (row.run_source(), self.cached_runs(row.id, rules_version)))
+            .map(|row| {
+                (
+                    row.run_source(latest),
+                    self.cached_runs(row.id, rules_version),
+                )
+            })
             .collect();
         let unreadable = cached.iter().filter(|(_, runs)| runs.is_err()).count() as u32;
         let sources = cached
@@ -452,6 +485,7 @@ fn source_row(r: &rusqlite::Row<'_>) -> rusqlite::Result<Option<StoredSource>> {
     let prefix_len: i64 = r.get(4)?;
     let anchor: String = r.get(5)?;
     let offset: i64 = r.get(6)?;
+    let written_unix: Option<i64> = r.get(7)?;
     Ok(
         match (SourceKind::parse(&kind), unhex(&prefix), unhex(&anchor)) {
             (Some(kind), Some(prefix), Some(anchor)) => Some(StoredSource {
@@ -464,6 +498,7 @@ fn source_row(r: &rusqlite::Row<'_>) -> rusqlite::Result<Option<StoredSource>> {
                     anchor,
                     offset: offset as u64,
                 },
+                written_unix,
             }),
             _ => None,
         },

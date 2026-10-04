@@ -102,7 +102,7 @@ const challenges: ChallengeRow[] = [
 
 const runs: RunView[] = [
   {
-    source: { kind: 'live' },
+    source: { kind: 'live', writtenUnix: 1_790_000_000 },
     ordinal: 1,
     character: 'Isaac',
     characterId: 0,
@@ -116,7 +116,7 @@ const runs: RunView[] = [
     achievements: [],
   },
   {
-    source: { kind: 'session', name: '2026-09-22' },
+    source: { kind: 'session', name: '09_22_2026__21_15_03' },
     ordinal: 2,
     character: null,
     characterId: null,
@@ -124,6 +124,21 @@ const runs: RunView[] = [
     online: true,
     outcome: { kind: 'died', killer: 'Mom' },
     floors: 4,
+    startingItems: [],
+    collected: [],
+    heldActive: null,
+    achievements: [],
+  },
+  // A launch read before the app kept dates: the row says so instead of inventing one.
+  {
+    source: { kind: 'launch', id: 1, writtenUnix: null },
+    ordinal: 1,
+    character: 'Cain',
+    characterId: 2,
+    seedWords: 'KLMN 5555',
+    online: false,
+    outcome: { kind: 'abandoned' },
+    floors: 2,
     startingItems: [],
     collected: [],
     heldActive: null,

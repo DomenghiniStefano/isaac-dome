@@ -58,6 +58,7 @@ const barLabels: FilterBarLabels = {
 /** A table, as the outcome's is: exhaustive by its type, and the one list `isSource` reads. */
 export const sourceText: Record<RunSource['kind'], Message> = {
   live: 'runs.source.live',
+  launch: 'runs.source.launch',
   session: 'runs.source.session',
 }
 

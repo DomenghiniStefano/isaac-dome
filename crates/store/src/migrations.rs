@@ -7,10 +7,10 @@ use rusqlite::Connection;
 use crate::StoreError;
 
 /// The version this binary knows how to read and write.
-pub const SCHEMA_VERSION: u32 = 6;
+pub const SCHEMA_VERSION: u32 = 7;
 
 /// Index = version − 1. Append at the end, never modify a migration that's already shipped.
-const MIGRATIONS: [&str; 6] = [
+const MIGRATIONS: [&str; 7] = [
     // 1: the user's goals. `target_json` is the serialized `ipc::TargetKey` -- identity
     // alone, never name or icon: a column per variant would be a schema that changes
     // with every new kind of unlock.
@@ -94,6 +94,11 @@ const MIGRATIONS: [&str; 6] = [
         id INTEGER PRIMARY KEY CHECK (id = 1),
         document TEXT NOT NULL
     );",
+    // 7: when a launch's file was last written, its modification time in epoch seconds. The log
+    // carries no clock, and a session's date is its folder's name; this is the launch's. Nullable
+    // and additive, migration 5's shape: a row that predates it reads NULL, which is the truth --
+    // nothing recorded when those launches were played.
+    "ALTER TABLE sources ADD COLUMN written_unix INTEGER;",
 ];
 
 pub fn current_version(conn: &Connection) -> Result<u32, StoreError> {

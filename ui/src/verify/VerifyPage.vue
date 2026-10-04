@@ -210,6 +210,8 @@ const sourceText = (s: RunSource) => {
   switch (s.kind) {
     case 'live':
       return 'log.txt'
+    case 'launch':
+      return `log.txt #${s.id}`
     case 'session':
       return s.name
     default:

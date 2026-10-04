@@ -15,8 +15,15 @@ describe("a run's key", () => {
   // A launch of `log.txt` has no name — that is why the store keys it `NULL` — so the kind is
   // what tells it from a session, and the two must never collide.
   it('tells a launch from a session that could be named like one', () => {
-    expect(runKey(run({ kind: 'live' }, 1))).not.toBe(
+    expect(runKey(run({ kind: 'live', writtenUnix: null }, 1))).not.toBe(
       runKey(run({ kind: 'session', name: 'live' }, 1)),
     )
+  })
+
+  // Every launch numbers its runs from one, so two launches' first runs must still differ.
+  it('tells two launches apart', () => {
+    expect(
+      runKey(run({ kind: 'launch', id: 1, writtenUnix: null }, 1)),
+    ).not.toBe(runKey(run({ kind: 'launch', id: 2, writtenUnix: null }, 1)))
   })
 })

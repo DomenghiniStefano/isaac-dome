@@ -7,6 +7,7 @@ import {
   formatModified,
   formatPercent,
   formatRelativeDay,
+  formatTime,
 } from '@/lib/profile/profileView'
 
 // The one reader of the interface's locale for formatting (card #81, V9). The formatters stay
@@ -19,6 +20,7 @@ export const useFormat = () => {
     locale,
     count: (n: number) => formatCount(n, locale()),
     date: (date: Date) => formatDate(date, locale()),
+    time: (date: Date) => formatTime(date, locale()),
     percent: (percent: number) => formatPercent(percent, locale()),
     size: (bytes: number) => formatSize(bytes, locale()),
     modified: (unix: number | null, now: Date) =>

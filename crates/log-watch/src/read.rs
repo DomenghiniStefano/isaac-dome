@@ -7,6 +7,7 @@
 use std::fs::File;
 use std::io::{Read, Seek, SeekFrom};
 use std::path::Path;
+use std::time::UNIX_EPOCH;
 
 use crate::WatchError;
 
@@ -16,6 +17,14 @@ pub const CHUNK: usize = 256 * 1024;
 /// How long the file is right now.
 pub fn len(path: &Path) -> Result<u64, WatchError> {
     Ok(std::fs::metadata(path).map_err(WatchError::io)?.len())
+}
+
+/// When the file was last written, in epoch seconds, or `None` when the OS cannot say. Never an
+/// error: a date is not worth failing an ingest over.
+pub fn modified(path: &Path) -> Option<i64> {
+    let at = std::fs::metadata(path).ok()?.modified().ok()?;
+    let secs = at.duration_since(UNIX_EPOCH).ok()?.as_secs();
+    i64::try_from(secs).ok()
 }
 
 /// The first `n` bytes, or the whole file when it is shorter.

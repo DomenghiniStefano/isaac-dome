@@ -29,6 +29,7 @@ const { t } = useMessages()
     <div
       class="grid grid-cols-runs items-center border-b border-hairline bg-muted text-label text-subtle-foreground @max-compact/page:grid-cols-runs-narrow"
     >
+      <span class="px-2 py-1.5">{{ t('runs.column.date') }}</span>
       <span class="px-2 py-1.5">{{ t('runs.column.character') }}</span>
       <span class="px-2 py-1.5">{{ t('runs.column.outcome') }}</span>
       <span class="px-2 py-1.5 text-right">{{ t('runs.column.floors') }}</span>

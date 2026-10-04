@@ -14,7 +14,8 @@ that takes, what the screens are, and what it takes to build and check the thing
 > Plan stopped being a screen and became the queue inside Obiettivi, so `/progress/plan` is now a
 > bare redirect carrying no name, and the commands that were on its row are listed on Goals's.
 > **Redrawn on 2026-09-30** on `feature/data-page`, which added `/settings/data` and its two
-> commands, `data_location` and `reveal_data_file`.
+> commands, `data_location` and `reveal_data_file`. **Redrawn on 2026-10-04** on
+> `feature/run-dates`, which added the seventh migration, `written_unix` on a source.
 >
 > **What keeps it true, and what does not.** Every path named here is checked by
 > `scripts/check-doc-refs.mjs`, which is why the nodes carry real paths instead of pretty
@@ -28,7 +29,7 @@ that takes, what the screens are, and what it takes to build and check the thing
 > just below are the tripwire — if one of them is wrong, so is the drawing.
 
 Counted at that commit, and every number below is derived from the code, not from prose:
-**16 crates**, **45 Tauri commands**, **6 events**, **17 routes**, **6 store migrations**.
+**16 crates**, **45 Tauri commands**, **6 events**, **17 routes**, **7 store migrations**.
 
 ---
 

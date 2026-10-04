@@ -47,7 +47,7 @@ export type RunCompany = (typeof RunCompany)[keyof typeof RunCompany]
 const onlineOrder: RunCompany[] = [RunCompany.Online, RunCompany.Solo]
 // Typed on the wire's tag, so a renamed source is a compile error here and not a facet value
 // that stops sorting.
-const sourceOrder: RunSource['kind'][] = ['live', 'session']
+const sourceOrder: RunSource['kind'][] = ['live', 'launch', 'session']
 
 const facetValues = (run: RunView, facet: RunFacet): string[] => {
   switch (facet) {
