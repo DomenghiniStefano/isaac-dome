@@ -100,6 +100,10 @@ belongs to no run.
 > `the_launch_of_20240305_holds_one_event_and_it_is_the_intro` skipped there. The test is the
 > instrument and it will speak on the machine that holds the file. A launch with no run announces
 > no floor, so a generation summary in it would be a finding — not a number to fold in quietly.
+> **Twelve since 2026-10-04**, with `greedWave` — `Spawning greed mode wave from room variant N.`,
+> which only a Greed run writes (60 lines in `20260912-greed-online-coop.log.txt`) and which is how
+> a run says it is Greed: its floor lines write the normal path's numbers. The same count stands
+> unrun for it, on the same file.
 
 It is not a rare shape. It is the first launch of most evenings, and it is the reason
 `samples/logs/` means *logs of runs* and this file lives in `samples/launches/` instead: the guard

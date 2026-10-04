@@ -39,6 +39,7 @@ fn run_of(seed: &str) -> Run {
             generated: Generated::NotSaid,
         }],
         achievements: vec![],
+        greed: false,
         outcome: Outcome::Open,
     }
 }

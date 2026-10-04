@@ -19,6 +19,7 @@ fn played(character: &str, id: Option<u32>) -> Run {
         held_active: None,
         floors: vec![],
         achievements: vec![],
+        greed: false,
         outcome: Outcome::Open,
     }
 }

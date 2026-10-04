@@ -43,6 +43,7 @@ fn every_event_survives_the_round_trip() {
             name: "Sheol".to_string(),
         },
         Event::AchievementUnlocked { id: 19 },
+        Event::GreedWave,
         Event::SaveWritten {
             file: "rep+persistentgamedata1.dat".to_string(),
         },
@@ -100,6 +101,7 @@ fn a_folded_run_survives_the_round_trip() {
             generated: Generated::NotSaid,
         }],
         achievements: vec![19],
+        greed: false,
         outcome: Outcome::Won {
             ending: "Mega Satan".to_string(),
         },

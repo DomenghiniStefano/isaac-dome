@@ -667,3 +667,46 @@ fn a_pickup_keeps_the_pool_it_came_from_and_the_floor_it_was_taken_on() {
         ]
     );
 }
+
+// Greed writes the normal path's `m_Stage, m_StageType` pairs — measured on
+// `20260912-greed-online-coop.log.txt`: `1,1`, `2,0`, `3,2` … `7,0` — so a floor's numbers cannot
+// say which mode it is in. The run has to, from what only Greed writes.
+#[test]
+fn a_greed_wave_says_the_run_is_greed_mode() {
+    let runs = Run::fold(
+        [started(), floor(1, 1), Event::GreedWave].into_iter(),
+        &Kinds(&[]),
+    );
+    assert!(runs[0].greed);
+}
+
+// The archive keeps events, not lines: a Greed run read before the wave had an event of its own
+// still says so through its items, which Greed draws from pools of its own.
+#[test]
+fn an_item_from_a_greed_pool_says_the_run_is_greed_mode() {
+    let runs = Run::fold(
+        [
+            started(),
+            Event::RoomTransition,
+            item_from(33, "greedTreasure"),
+        ]
+        .into_iter(),
+        &Kinds(&[]),
+    );
+    assert!(runs[0].greed);
+}
+
+#[test]
+fn a_run_with_neither_is_not_greed_mode() {
+    let runs = Run::fold(
+        [
+            started(),
+            floor(1, 0),
+            Event::RoomTransition,
+            item_from(33, "treasure"),
+        ]
+        .into_iter(),
+        &Kinds(&[]),
+    );
+    assert!(!runs[0].greed);
+}

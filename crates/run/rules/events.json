@@ -11,6 +11,7 @@
     "ended": "playing cutscene (?<cutscene>\\d+) \\((?<name>[^)]*)\\)",
     "achievementUnlocked": "unlock steam achievement '(?<id>\\d+)'",
     "saveWritten": "Saving PersistentGameData to Steam Cloud: (?<file>\\S+?)\\.?$",
-    "playerInitialized": "Initialized player with Variant (?<variant>\\d+) and Subtype (?<subtype>\\d+)"
+    "playerInitialized": "Initialized player with Variant (?<variant>\\d+) and Subtype (?<subtype>\\d+)",
+    "greedWave": "Spawning greed mode wave from room variant \\d+"
   }
 }

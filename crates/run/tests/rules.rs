@@ -212,3 +212,14 @@ fn the_memory_pool_lines_are_not_a_generated_floor() {
         assert_eq!(rules.event(line), None, "{line}");
     }
 }
+
+// Greed's own line, measured on `20260912-greed-online-coop.log.txt` (60 of them): the run is
+// Greed mode, which the floor line cannot say, since Greed writes the normal path's numbers.
+#[test]
+fn a_greed_wave_line_is_an_event() {
+    let rules = Rules::embedded();
+    assert_eq!(
+        rules.event("[INFO] - Spawning greed mode wave from room variant 7."),
+        Some(Event::GreedWave)
+    );
+}

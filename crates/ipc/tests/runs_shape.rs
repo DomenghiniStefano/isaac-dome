@@ -27,6 +27,7 @@ fn a_run(seed: &str, outcome: Outcome) -> Run {
             generated: Generated::NotSaid,
         }],
         achievements: vec![19],
+        greed: false,
         outcome,
     }
 }

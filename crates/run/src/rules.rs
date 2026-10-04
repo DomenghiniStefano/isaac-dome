@@ -49,6 +49,7 @@ enum Kind {
     AchievementUnlocked,
     SaveWritten,
     PlayerInitialized,
+    GreedWave,
 }
 
 impl Kind {
@@ -65,6 +66,7 @@ impl Kind {
             "achievementUnlocked" => Some(Self::AchievementUnlocked),
             "saveWritten" => Some(Self::SaveWritten),
             "playerInitialized" => Some(Self::PlayerInitialized),
+            "greedWave" => Some(Self::GreedWave),
             _ => None,
         }
     }
@@ -192,6 +194,7 @@ fn build(kind: Kind, c: &Captures<'_>) -> Option<Event> {
         Kind::AchievementUnlocked => Event::AchievementUnlocked {
             id: number(c, "id")?,
         },
+        Kind::GreedWave => Event::GreedWave,
         Kind::SaveWritten => Event::SaveWritten {
             file: text(c, "file")?,
         },

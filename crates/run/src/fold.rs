@@ -113,6 +113,11 @@ pub struct Run {
     pub held_active: Option<u32>,
     pub floors: Vec<Floor>,
     pub achievements: Vec<u32>,
+    /// Greed mode, said by a wave line or by an item from one of Greed's own pools. Its floors
+    /// write the normal path's numbers, so without this a Greed floor would be named after the
+    /// normal floor that shares them. `false` in a run cached before it existed.
+    #[serde(default)]
+    pub greed: bool,
     pub outcome: Outcome,
 }
 
@@ -131,6 +136,7 @@ impl Run {
             held_active: None,
             floors: Vec::new(),
             achievements: Vec::new(),
+            greed: false,
             outcome: Outcome::Open,
         }
     }
@@ -180,6 +186,7 @@ impl Fold {
             | Event::Ended { .. }
             | Event::AchievementUnlocked { .. }
             | Event::SaveWritten { .. }
+            | Event::GreedWave
             | Event::PlayerInitialized { .. }) => self.inside_run(other, kinds),
         }
         self
@@ -288,6 +295,9 @@ fn apply(run: &mut Run, event: Event, kinds: &dyn ItemKinds, starting: &mut bool
             ..
         } => {
             run.character.get_or_insert(character);
+            // Greed draws from pools of its own (`greedTreasure`, `greedShop`, `greedBoss`, measured
+            // on the greed sample): a run read before the wave line had an event still says so.
+            run.greed |= pool.starts_with("greed");
             add_item(run, id, pool, kinds.kind_of(id), *starting);
         }
         Event::Died { killer, spawner } => run.outcome = Outcome::Died { killer, spawner },
@@ -296,6 +306,7 @@ fn apply(run: &mut Run, event: Event, kinds: &dyn ItemKinds, starting: &mut bool
         // The watcher's trigger, and it tells the fold nothing. A field for it here would be a
         // promise this crate does not keep.
         Event::SaveWritten { .. } => {}
+        Event::GreedWave => run.greed = true,
         // The first one is the run's: in co-op the line repeats for every player at the
         // table, and this app speaks about the profile it reads.
         Event::PlayerInitialized { subtype, .. } => {
