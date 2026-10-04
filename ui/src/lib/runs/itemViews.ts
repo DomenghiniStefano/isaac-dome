@@ -49,28 +49,43 @@ const asLogged = (run: RunView): ItemGroup[] => [
   ...(run.heldActive === null ? [] : [titled('runs.heldActive', held(run))]),
 ]
 
+// The owner's choice, 2026-10-04: in every view but the logged one, the starting items are a group
+// of their own at the top, and are not repeated in another. The fold files a starting passive as a
+// passive and a starting active as the one held, so by type those are taken out where they repeat.
+const starting = (run: RunView): ItemGroup =>
+  titled('runs.startingItems', run.startingItems)
+
+const notStarting = (run: RunView, items: RunItemRef[]): RunItemRef[] => {
+  const started = new Set(run.startingItems.map((i) => i.id))
+  return items.filter((i) => !started.has(i.id))
+}
+
 const byType = (run: RunView): ItemGroup[] => [
-  titled('runs.startingItems', run.startingItems),
-  titled('runs.passives', run.passives),
-  titled('runs.familiars', run.familiars),
-  titled('runs.heldActive', held(run)),
+  starting(run),
+  titled('runs.passives', notStarting(run, run.passives)),
+  titled('runs.familiars', notStarting(run, run.familiars)),
+  titled('runs.heldActive', notStarting(run, held(run))),
 ]
 
-const byOrigin = (run: RunView): ItemGroup[] =>
-  uniq(run.collected.map((p) => p.pool)).map((pool) => ({
+const byOrigin = (run: RunView): ItemGroup[] => [
+  starting(run),
+  ...uniq(run.collected.map((p) => p.pool)).map((pool) => ({
     title: { kind: GroupTitleKind.Pool, pool },
     items: run.collected.filter((p) => p.pool === pool).map((p) => p.item),
-  }))
+  })),
+]
 
 // The floors in the order they were entered, the items with no floor before them.
-const byFloor = (run: RunView): ItemGroup[] =>
-  [null, ...run.floorDetails.map((_, at) => at)].map((at) => ({
+const byFloor = (run: RunView): ItemGroup[] => [
+  starting(run),
+  ...[null, ...run.floorDetails.map((_, at) => at)].map((at) => ({
     title: {
       kind: GroupTitleKind.Floor,
       floor: at === null ? null : (run.floorDetails[at] ?? null),
     },
     items: run.collected.filter((p) => p.floor === at).map((p) => p.item),
-  }))
+  })),
+]
 
 /**
  * A run's items, cut one way. As logged keeps an empty group — the page says "none" there, as it
@@ -83,7 +98,7 @@ export const groupItems = (run: RunView, view: RunItemView): ItemGroup[] => {
     case RunItemView.ByType:
       return byType(run).filter((g) => g.items.length > 0)
     case RunItemView.ByOrigin:
-      return byOrigin(run)
+      return byOrigin(run).filter((g) => g.items.length > 0)
     case RunItemView.ByFloor:
       return byFloor(run).filter((g) => g.items.length > 0)
     default:
