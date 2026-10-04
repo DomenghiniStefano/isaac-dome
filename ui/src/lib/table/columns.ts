@@ -182,8 +182,9 @@ export const liveColumns: readonly GridColumn[] = [
 ]
 
 // The day, the character, how it ended, the floors, the seed, where it came from. The day stays
-// at compact because when you played is what a diary is read by, and so do the floors: how far
-// you got is half of what a run is.
+// at compact because when you played is what a diary is read by. The floors fold: with Actions
+// beside them, keeping them left the outcome 69px at 428 — "abbandonata" is one word and needs
+// about 107 — and the run's own page still says how far you got.
 export const runsColumns: readonly GridColumn[] = [
   {
     key: 'date',
@@ -202,7 +203,7 @@ export const runsColumns: readonly GridColumn[] = [
   {
     key: 'outcome',
     header: 'runs.column.outcome',
-    width: grow(1.4),
+    width: grow(2),
     fold: ColumnFold.Never,
     align: ColumnAlign.Start,
   },
@@ -210,7 +211,7 @@ export const runsColumns: readonly GridColumn[] = [
     key: 'floors',
     header: 'runs.column.floors',
     width: fixed('w-runs-floors'),
-    fold: ColumnFold.Never,
+    fold: ColumnFold.Compact,
     align: ColumnAlign.End,
   },
   {
