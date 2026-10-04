@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import EmptyValue from '@/components/data-state/EmptyValue.vue'
+import PixelSprite from '@/components/sprite/PixelSprite.vue'
 import { Badge, BadgeVariant } from '@/components/ui/badge'
 import { useMessages } from '@/i18n'
 import type { RunView } from '@/lib/ipc/types'
+import { entityName, whoKilled } from '@/lib/runs/death'
 import { outcomeText, sourceText } from '@/lib/runs/runLabels'
 import RunDate from './RunDate.vue'
 
@@ -28,7 +30,7 @@ const detail = computed(() => {
   if (outcome.kind === 'won')
     return t('runs.endedWith', { ending: outcome.ending })
   if (outcome.kind === 'died')
-    return t('runs.killedBy', { killer: outcome.killer })
+    return t('runs.killedBy', { killer: entityName(whoKilled(outcome)) })
   return ''
 })
 </script>
@@ -38,8 +40,15 @@ const detail = computed(() => {
        `<span>` sets `overflow` on a box that has none, so it generated nothing and the name ran
        under the badge beside it — at every width, not only when the row is narrow. -->
   <RunDate :run="run" />
-  <span class="min-w-0 truncate px-2">
-    <span v-if="run.character !== null" class="text-row">{{
+  <!-- The face keeps its box when there is none to draw — no catalog, a form the co-op menu
+       does not draw — so the names stay in one column down the list. -->
+  <span class="flex min-w-0 items-center gap-2 px-2">
+    <PixelSprite
+      :url="run.characterHeadUrl"
+      placeholder
+      class="size-icon-compact shrink-0"
+    />
+    <span v-if="run.character !== null" class="truncate text-row">{{
       run.character
     }}</span>
     <EmptyValue v-else>{{ t('runs.noCharacter') }}</EmptyValue>

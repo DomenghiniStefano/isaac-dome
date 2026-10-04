@@ -4,6 +4,7 @@ import type {
   EntityRef,
   LiveView,
   PickupView,
+  RunAchievementView,
   RunFloorView,
   RunView,
   RunsView,
@@ -44,6 +45,13 @@ const floor = (
   name: string | null,
   rooms: number | null,
 ): RunFloorView => ({ stage, stageType, name, rooms })
+
+// An achievement the run unlocked; `null` text is a catalog that does not know it.
+const achievement = (id: number, text: string | null): RunAchievementView => ({
+  id,
+  text,
+  iconUrl: null,
+})
 
 // An entity as the death line names it: `9.0` is a shot, and the spawner is who fired it.
 const entity = (raw: string, name: string | null): EntityRef => ({
@@ -102,7 +110,7 @@ const runs: RunView[] = [
     passives: [item(118, 'Brimstone')],
     familiars: [],
     heldActive: null,
-    achievements: [19],
+    achievements: [achievement(19, 'Judas')],
   },
   {
     source: { kind: 'session', name: '09_12_2026__13_34_26' },
@@ -120,7 +128,7 @@ const runs: RunView[] = [
     passives: [item(999, null)],
     familiars: [],
     heldActive: null,
-    achievements: [457],
+    achievements: [achievement(457, null)],
   },
   {
     source: { kind: 'session', name: '09_12_2026__13_34_26' },
@@ -159,7 +167,7 @@ const runs: RunView[] = [
     passives: [item(118, 'Brimstone')],
     familiars: [],
     heldActive: item(105, 'The D6'),
-    achievements: [491],
+    achievements: [achievement(491, 'Dead God')],
   },
   // An older launch read before the app kept dates: the row says so instead of inventing one.
   {
