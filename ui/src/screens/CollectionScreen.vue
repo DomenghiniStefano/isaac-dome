@@ -7,11 +7,13 @@ import ScreenSkeleton from '@/components/data-state/ScreenSkeleton.vue'
 import DiagnosticsList from '@/components/diagnostics/DiagnosticsList.vue'
 import FilterBar from '@/components/facets/FilterBar.vue'
 import FindBar from '@/components/find/FindBar.vue'
+import QueueError from '@/components/plan/QueueError.vue'
 import { Card } from '@/components/ui/card'
 import { PageScroll } from '@/components/ui/virtual'
 import { useFacetedReading } from '@/composables/useFacetedReading'
 import { useFind } from '@/composables/useFind'
 import { useOnActiveProfile } from '@/composables/useOnActiveProfile'
+import { useQueueOffer } from '@/composables/useQueueOffer'
 import { useMessages } from '@/i18n'
 import {
   collectionFaceting,
@@ -36,9 +38,13 @@ import { collectionView } from './collection/tabView'
 import ProfileError from '@/components/data-state/ProfileError.vue'
 
 const store = useCollectionStore()
+const { queue } = useQueueOffer()
 const { t } = useMessages()
 
-useOnActiveProfile(() => store.load())
+// The queue too: a locked item's Actions button puts its achievement in it.
+useOnActiveProfile(async () => {
+  await Promise.all([store.load(), queue.load()])
+})
 
 // It opens on what hasn't been found (the view's default filter); a reset clears every pick.
 const { reading, update, filter, setPicks, setQuery, reset } =
@@ -119,6 +125,7 @@ const empty = computed(() =>
       />
       <template v-else-if="store.view">
         <DiagnosticsList :entries="collectionEntries(store.view.diagnostics)" />
+        <QueueError v-if="queue.mutationFailed" :error="queue.mutationError" />
         <Card>
           <FilterBar
             :bar="bar"

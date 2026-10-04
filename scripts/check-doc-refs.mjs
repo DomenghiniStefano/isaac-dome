@@ -47,6 +47,20 @@ const EXEMPTIONS = [
     path: 'crates/ipc/examples/dlc_mask.rs',
     why: 'a finished probe, deleted; the 2026-09-13 infobox spec records what it measured',
   },
+  // The list tables moved onto GridTable (card #100, 2026-10-04): the row fragments and the
+  // record of wide/narrow template pairs went; the dated specs name what they were written against.
+  {
+    path: 'ui/src/screens/runs/RunRow.vue',
+    why: "the Run diary's row became RunsTable's GridTable slots and three cell components; the 2026-09-17 filter-bar spec names the row it read",
+  },
+  {
+    path: 'ui/src/lib/design/tables.ts',
+    why: 'the record of wide/narrow grid templates, removed when no template was left; the 2026-09-20 responsive-layout spec designed it',
+  },
+  {
+    path: 'lib/design/tables.ts',
+    why: 'the 2026-10-04 grid-table spec names the record it removes',
+  },
   {
     path: 'target/release/latest.json',
     why: 'the updater manifest `pnpm release:manifest` writes; a build output under target/, never tracked, and the release design names where it lands',

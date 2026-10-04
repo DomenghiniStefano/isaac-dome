@@ -41,7 +41,7 @@
   --spacing-sprite: calc(32px * var(--sprite-multiple));
   /* An achievement drawing in a table row: 48 x 32, the 263 x 176 drawing at its ratio. Still
      the size of every `AchievementArt` caller that is not `WikiFigure` (`SearchRow`,
-     `GoalRow`, `UnlockRow`, `ScalePreview`) — `WikiFigure`'s own four sizes reuse
+     `GoalRow`, `UnlockTable`, `ScalePreview`) — `WikiFigure`'s own four sizes reuse
      `--spacing-figure-*` below for `AchievementArt`'s width too, one token for the frame and
      the painting inside it, rather than a second scale that happens to agree with the first. */
   --spacing-achievement-thumb: 3rem;
@@ -89,12 +89,11 @@
   --spacing-wiki-table-id: 4rem;
   --spacing-wiki-table-edition: 9rem;
   --spacing-wiki-table-fact: 9rem;
-  /* Unlock's table (Schermate.dc.html): the drawing column, the state badge column, the
-     fan-out column, the add-to-the-queue column. */
+  /* Unlock's table (Schermate.dc.html): the drawing column, the state badge column and the
+     fan-out column. */
   --spacing-unlock-art: 4rem;
   --spacing-unlock-state: 8.5rem;
   --spacing-unlock-fan: 3.5rem;
-  --spacing-unlock-queue: 2.5rem;
   /* Live's "opens" column: it holds a count, or the words that say there is none — and the
      words are what decides the width. */
   --spacing-live-opens: 7.5rem;
@@ -109,11 +108,13 @@
   --spacing-collection-origin: 6.5rem;
   --spacing-collection-state: 8.5rem;
   --spacing-quality-pip: 0.375rem;
-  /* The Challenges table: the number, the state badge and the add-to-the-queue column. The
-     three that are not flexible; the name, the character and the goal share what is left. */
+  /* The Challenges table: the number and the state badge, the two that are not flexible; the
+     name, the character and the goal share what is left. */
   --spacing-challenge-number: 3rem;
   --spacing-challenge-state: 8.5rem;
-  --spacing-challenge-queue: 2.5rem;
+  /* The Actions column every list table ends with: one icon button, and the header's word
+     ("Azioni", "Actions") at label size, which is the wider of the two. */
+  --spacing-actions: 4rem;
   /* The pane everything enters the queue from. It was `--spacing-plan-aside` at 15.5rem while
      that column was a secondary proposal beside the queue; it is now the only way in, and both
      the name and the number were wrong for that.

@@ -59,6 +59,7 @@ describe('opensRows', () => {
     expect(rows).toEqual([
       {
         key: '4-satan-Judas’ Tongue',
+        achievement: 88,
         name: 'Judas’ Tongue',
         target: { kind: 'achievement', id: 88 },
         condition: 'Beat Satan as Judas',
@@ -68,6 +69,8 @@ describe('opensRows', () => {
       },
       {
         key: '4-satan-640',
+        // The catalog does not know slot 640: there is no id to put in the queue.
+        achievement: null,
         name: '640',
         target: null,
         condition: null,

@@ -1,5 +1,6 @@
 import type { Message, Translate } from '@/i18n/message'
 import {
+  knownRef,
   refCondition,
   refIcon,
   refNumber,
@@ -14,6 +15,8 @@ import type { LiveOpen, Target } from '@/lib/ipc/types'
 // and how much it opens in turn.
 export interface OpenRow {
   key: string
+  /** What the Actions button puts in the queue; `null` for a slot the catalog cannot name. */
+  achievement: number | null
   /** The achievement's text, or its slot number when the catalog cannot name it. */
   name: string
   target: Target | null
@@ -44,6 +47,7 @@ export const opensRows = (opens: LiveOpen[], t: Translate): OpenRow[] =>
       const name = refText(achievement) ?? String(refNumber(achievement))
       return {
         key: `${open.character}-${open.column}-${name}`,
+        achievement: knownRef(achievement)?.id ?? null,
         name,
         target: refTarget(achievement),
         condition: refCondition(achievement),

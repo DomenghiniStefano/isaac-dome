@@ -1,66 +1,63 @@
 <script setup lang="ts">
-import { VirtualRows } from '@/components/ui/virtual'
+import EmptyValue from '@/components/data-state/EmptyValue.vue'
+import AchievementArt from '@/components/graph/AchievementArt.vue'
+import NodeStateBadge from '@/components/graph/NodeStateBadge.vue'
+import { ArtSize } from '@/components/graph/artSize'
+import QueueActionButton from '@/components/plan/QueueActionButton.vue'
+import { GridTable } from '@/components/ui/grid-table'
+import { useQueueOffer } from '@/composables/useQueueOffer'
 import { useMessages } from '@/i18n'
-import { cn } from '@/lib/cn'
-import { nodeNumber } from '@/lib/graph/achievementNode'
+import { knownAchievement, nodeNumber } from '@/lib/graph/achievementNode'
 import type { UnlockNode } from '@/lib/ipc/types'
-import { canQueue, isQueued } from '@/lib/plan/queueRows'
-import { rowWidePx } from '@/lib/scale/rows'
-import UnlockRow from './UnlockRow.vue'
+import { isQueued, nodeQueueTarget } from '@/lib/plan/queueRows'
+import { unlockColumns } from '@/lib/table/columns'
+import UnlockNameCell from './UnlockNameCell.vue'
+import UnlockUnlocksCell from './UnlockUnlocksCell.vue'
 
-defineProps<{
-  nodes: UnlockNode[]
-  queued: Set<number>
-  canWrite: boolean
-  busy: boolean
-}>()
-const emit = defineEmits<{
-  add: [achievement: number]
-}>()
+// The screen scrolls as a page (`PageScroll`): the rows virtualize against it, and the
+// columns' header pins to its top while the list goes by under it.
+defineProps<{ nodes: UnlockNode[] }>()
 const { t } = useMessages()
+const { queued } = useQueueOffer()
 </script>
 
 <template>
-  <!-- The screen scrolls as a page (`PageScroll`): the rows virtualize against it, and the
-       columns' header pins to its top while the list goes by under it. -->
-  <div class="flex flex-col">
-    <div
-      class="sticky top-0 z-raised-header grid grid-cols-unlock items-center border-b border-hairline bg-muted text-label text-subtle-foreground @max-compact/page:grid-cols-unlock-narrow"
-    >
-      <span />
-      <span class="px-2 py-1.5">{{ t('unlock.columns.achievement') }}</span>
-      <span class="px-2 py-1.5 @max-compact/page:hidden">{{
-        t('unlock.columns.unlocks')
-      }}</span>
-      <span class="px-2 py-1.5 @max-compact/page:hidden">{{
-        t('unlock.columns.condition')
-      }}</span>
-      <span class="px-2 py-1.5">{{ t('unlock.columns.state') }}</span>
-      <span class="px-2 py-1.5 text-right @max-compact/page:hidden">{{
-        t('unlock.columns.fanOut')
-      }}</span>
-      <span />
-    </div>
-    <VirtualRows v-slot="{ visible }" :rows="nodes" :row-px="rowWidePx">
-      <div
-        v-for="{ index, style, row: node } in visible"
-        :key="nodeNumber(node)"
-        :style="style"
-        :class="
-          cn(
-            'absolute inset-x-0 top-0 grid h-row-wide translate-y-(--row-start) grid-cols-unlock items-center border-b border-hairline hover:bg-row-hover @max-compact/page:grid-cols-unlock-narrow',
-            index % 2 === 1 && 'bg-row-alt',
-          )
-        "
+  <GridTable
+    :columns="unlockColumns"
+    :rows="nodes"
+    :row-key="nodeNumber"
+    virtual
+  >
+    <template #cell-art="{ row }">
+      <AchievementArt
+        :url="knownAchievement(row)?.iconUrl ?? null"
+        :size="ArtSize.Thumb"
+      />
+    </template>
+    <template #cell-achievement="{ row }">
+      <UnlockNameCell :node="row" :queued="isQueued(row, queued)" />
+    </template>
+    <template #cell-unlocks="{ row }">
+      <UnlockUnlocksCell :node="row" />
+    </template>
+    <template #cell-condition="{ row }">
+      <span
+        v-if="knownAchievement(row)?.condition"
+        class="truncate text-caption text-foreground-soft"
+        >{{ knownAchievement(row)?.condition }}</span
       >
-        <UnlockRow
-          :node="node"
-          :queued="isQueued(node, queued)"
-          :can-add="canWrite && canQueue(node, queued)"
-          :busy="busy"
-          @add="emit('add', nodeNumber(node))"
-        />
-      </div>
-    </VirtualRows>
-  </div>
+      <EmptyValue v-else>{{ t('unlock.noCondition') }}</EmptyValue>
+    </template>
+    <template #cell-state="{ row }">
+      <NodeStateBadge :node="row" />
+    </template>
+    <template #cell-fanOut="{ row }">
+      <span class="text-row text-foreground tabular-nums">{{
+        row.done ? '—' : row.graph.fanOut
+      }}</span>
+    </template>
+    <template #actions="{ row }">
+      <QueueActionButton :target="nodeQueueTarget(row)" />
+    </template>
+  </GridTable>
 </template>

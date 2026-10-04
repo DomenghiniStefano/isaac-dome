@@ -42,123 +42,38 @@
     var(--spacing-matrix-total);
 }
 
-/* Unlock's table: the drawing, three columns that share the width, the state, the fan-out,
-   and the button that puts a row in the Plan's queue. */
-@utility grid-cols-unlock {
-  grid-template-columns:
-    var(--spacing-unlock-art)
-    minmax(0, 1.5fr) minmax(0, 1.1fr) minmax(0, 1fr)
-    var(--spacing-unlock-state)
-    var(--spacing-unlock-fan)
-    var(--spacing-unlock-queue);
-}
-
-/* Unlock at compact (spec 3.13a §7): the drawing, the name, the state, the queue button. What
-   falls is what the row unlocks, its condition, and the fan-out — the two widest, whose absence
-   costs least because the row is still named, and a number that means nothing without the columns
-   beside it. Each of the three carries `@max-compact/page:hidden` on its cell, in
-   `UnlockTable.vue` for the header and `UnlockRow.vue` for the row.
-
-   **The two edits are one change.** A template that drops a track while its cell stays slides
-   every cell after it into the wrong column: it reads as a styling bug and is a counting one.
-   `scan-conventions.mjs` catches the half where the template moves and nothing is hidden. */
-@utility grid-cols-unlock-narrow {
-  grid-template-columns:
-    var(--spacing-unlock-art)
-    minmax(0, 1fr)
-    var(--spacing-unlock-state)
-    var(--spacing-unlock-queue);
-}
-
-/* The Collection's table: the sprite, the name, the quality, the pools, the origin, the state. */
-@utility grid-cols-collection {
-  grid-template-columns:
-    var(--spacing-collection-sprite)
-    minmax(0, 1.4fr)
-    var(--spacing-collection-quality)
-    minmax(0, 1fr)
-    var(--spacing-collection-origin)
-    var(--spacing-collection-state);
-}
-
-/* The Collection at compact (spec 3.13a §7): the sprite, the name, the state. What falls is the
-   quality, the pools and the origin — the pools because they are the widest and say least when
-   truncated, the origin because it is the least urgent thing about an item, and the quality on
-   arithmetic: its 96px would leave the name 140 of the 428 the window floor gives, and most item
-   names truncate there. Each of the three carries `@max-compact/page:hidden` on its cell, in
-   `CollectionTable.vue` for the header and `CollectionRow.vue` for the row. */
-@utility grid-cols-collection-narrow {
-  grid-template-columns:
-    var(--spacing-collection-sprite)
-    minmax(0, 1fr)
-    var(--spacing-collection-state);
-}
-
-/* The Challenges table: the number, the name, the character it forces, the goal, the state,
-   and the button that puts its reward in the Plan's queue. */
-@utility grid-cols-challenges {
-  grid-template-columns:
-    var(--spacing-challenge-number)
-    minmax(0, 1.4fr) minmax(0, 1fr) minmax(0, 1fr)
-    var(--spacing-challenge-state)
-    var(--spacing-challenge-queue);
-}
-
-/* Challenges at compact (spec 3.13a §7): the number, the name, the state, and the button that
-   puts its reward in the queue. What falls is the character it forces and the goal — the two
-   that explain a challenge rather than name it, and the two widest. The button stays: a row that
-   loses its action at the width where it is hardest to reach is a row that does nothing. Both
-   carry `@max-compact/page:hidden`, in `ChallengesTable.vue` for the header and
-   `ChallengeRow.vue` for the row. */
-@utility grid-cols-challenges-narrow {
-  grid-template-columns:
-    var(--spacing-challenge-number)
-    minmax(0, 1fr)
-    var(--spacing-challenge-state)
-    var(--spacing-challenge-queue);
-}
-
 /* A wiki card's spec sheet: each label as wide as it needs, its value taking the rest and
    cut short there. */
 @utility grid-cols-fact-sheet {
   grid-template-columns: auto minmax(0, 1fr);
 }
 
-/* The Run diary: the day, the character, how it ended, the floors, the seed, where it came
-   from. */
-@utility grid-cols-runs {
-  grid-template-columns:
-    var(--spacing-runs-date)
-    minmax(0, 1fr)
-    minmax(0, 1.4fr)
-    var(--spacing-runs-floors)
-    minmax(0, 1fr)
-    minmax(0, 1fr);
+/* A list table's grow column: its share of what the fixed columns leave, by the weight its
+   declaration binds as --cell-grow (`lib/table/gridColumn.ts`). With min-w-0 this is
+   minmax(0, <weight>fr). */
+@utility cell-grow {
+  flex: var(--cell-grow) 1 0;
 }
 
-/* The Run diary at compact (spec 3.13a §7): the day, the character, how it ended, the floors.
-   What falls is the seed — the widest text on the row and the least scannable — and where the
-   run came from, which answers "which log said so" and is not the question a diary is read
-   with. The day stays, because when you played is what a diary is read by, and so do the
-   floors: how far you got is half of what a run is, and the track is 64px. The two that fall
-   carry `@max-compact/page:hidden`, in `RunsTable.vue` for the header and `RunRow.vue` for the
-   row. */
-@utility grid-cols-runs-narrow {
-  grid-template-columns:
-    var(--spacing-runs-date)
-    minmax(0, 1fr)
-    minmax(0, 1.4fr)
-    var(--spacing-runs-floors);
-}
+/* A list table's cell: nothing it holds leaves its track. `clip` rather than `hidden`, with a
+   margin as wide as the focus outline and its offset (base.css, 2px + 2px), so a focused link
+   or button inside still shows its ring. Its children may shrink, so a `truncate` inside
+   truncates; a badge may wrap to a second line instead of running out, at the label's tighter
+   leading — two caption lines at their own 1.45 make a 41px pill, which a 40px row cannot hold;
+   at 1.3 it is 37. */
+@utility grid-cell {
+  overflow: clip;
+  overflow-clip-margin: var(--spacing);
 
-/* Live’s table of what a run could open: the achievement, the cell it needs, how the game
-   words it, and how much it opens in turn. */
-@utility grid-cols-live-opens {
-  grid-template-columns:
-    minmax(0, 1.3fr)
-    minmax(0, 0.8fr)
-    minmax(0, 1.4fr)
-    var(--spacing-live-opens);
+  & > * {
+    min-width: 0;
+  }
+
+  & [data-slot='badge'] {
+    white-space: normal;
+    max-width: 100%;
+    line-height: var(--text-label--line-height);
+  }
 }
 
 @utility hatch-unknown {

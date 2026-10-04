@@ -241,6 +241,7 @@ export const it = {
       'Lo storico delle tue run: quelle di questa sessione, quelle precedenti e le partite online registrate dal gioco, dalla più recente.',
     rows: 'run',
     search: 'cerca un seed o un personaggio',
+    open: 'Apri la run',
     facet: {
       outcome: 'Esito',
       character: 'Personaggio',
@@ -1248,6 +1249,9 @@ export const it = {
       title: 'Non riusciamo a leggere il salvataggio',
       retry: 'Riprova',
     },
+  },
+  table: {
+    actions: 'Azioni',
   },
   queue: {
     inQueue: 'in coda',

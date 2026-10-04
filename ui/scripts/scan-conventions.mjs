@@ -6,6 +6,8 @@ const ROOT = fileURLToPath(new URL('..', import.meta.url))
 const SRC = join(ROOT, 'src')
 const IPC_DIR = join('src', 'lib', 'ipc')
 const UI_DIR = join('src', 'components', 'ui')
+// The two places a row may be striped: the list table, and shadcn's `<table>` primitive.
+const GRID_TABLE_DIRS = [join(UI_DIR, 'grid-table'), join(UI_DIR, 'table')]
 // Development-only pages: main.ts imports them behind `import.meta.env.DEV`, so they never
 // reach the production build and their text is never user-facing. The visible-string check
 // is the one check they are excused from.
@@ -56,7 +58,7 @@ const visibleText = (body) => {
 }
 
 // **A screen is what the router mounts**, not everything under `src/screens/` — that folder holds
-// "one screen per route, **and the parts only it uses**" (the conventions), so `UnlockRow.vue` and
+// "one screen per route, **and the parts only it uses**" (the conventions), so `UnlockNameCell.vue` and
 // `SaveCard.vue` live there and are not screens. Read from `routes.ts` rather than guessed from
 // the path, so it cannot rot: a screen added to the router is a screen here the same minute.
 // **Both shapes of import count**: the screens load lazily since 2026-09-23, so `routes.ts`
@@ -303,6 +305,18 @@ const EXEMPTIONS = [
       "it has no root of its own: it picks the list or a run's page from the query, and both bodies are checked as screens (`SCREEN_FILES`)",
   },
   {
+    file: 'src/components/marks/MarksGrid.vue',
+    check: 'a striped list outside GridTable',
+    reason:
+      'the completion matrix is a grid of mark cells, one column per boss bound from data: a list table has rows of named columns, and its cells would be clipped',
+  },
+  {
+    file: 'src/screens/search/SearchResults.vue',
+    check: 'a striped list outside GridTable',
+    reason:
+      'search results are a list with no columns: a two-line result per row, nothing to align under a header',
+  },
+  {
     file: 'src/screens/WikiScreen.vue',
     check: 'screen root does not flow',
     reason:
@@ -481,14 +495,23 @@ const checks = [
       /\bmax-w-/.test(rootClasses(body)),
   },
   {
-    // Spec 3.13a §7 and §9. It does not prove the *right* columns fell — nothing in a script can.
-    // It proves both edits were made: a narrow template with no hidden cell is a grid that dropped
-    // a track while every cell stayed, which slides the rest into the wrong columns. The header
-    // and the row live in two files, so each has to pass on its own.
-    name: 'narrow grid template with no column hidden',
-    test: (_f, body) =>
-      /\bgrid-cols-[a-z-]+-narrow\b/.test(body) &&
-      !/@max-compact\/page:hidden/.test(body),
+    // A list drawn as a table is a GridTable: its cells keep to their columns and it ends with
+    // Actions. Every hand-written list stripes its rows, so the stripe is the form this reads —
+    // not a list of the tables there were. What it cannot see: a list that does not stripe.
+    name: 'a striped list outside GridTable',
+    test: (file, body) =>
+      !GRID_TABLE_DIRS.some((dir) => isUnder(file, dir)) &&
+      /\bbg-row-alt\b/.test(body),
+  },
+  {
+    // vue-tsc does not report a slot left unfilled, so the table's last column would be drawn
+    // empty with nothing failing. What it cannot see: a file with two tables, one of which fills
+    // it.
+    name: 'a GridTable without #actions',
+    test: (file, body) =>
+      file.endsWith('.vue') &&
+      /<GridTable\b/.test(body) &&
+      !/(?:#|v-slot:)actions\b/.test(body),
   },
   {
     name: 'arbitrary pixel value in a class',
@@ -1049,7 +1072,7 @@ const FIXTURES = [
     // A part that lives under `screens/` is not a screen and owes no shape. This is the guard on
     // the scope: the first version of the rule accused twenty-seven of them.
     name: 'a part under screens/ is not a screen',
-    file: 'src/screens/unlock/UnlockRow.vue',
+    file: 'src/screens/unlock/UnlockNameCell.vue',
     body: '<template>\n  <span class="px-2" />\n</template>\n',
     expect: [],
   },
@@ -1064,13 +1087,13 @@ const FIXTURES = [
   },
   {
     name: 'one of our container variants is allowed',
-    file: 'src/screens/unlock/UnlockRow.vue',
+    file: 'src/screens/unlock/UnlockNameCell.vue',
     body: '<template>\n  <span class="flex flex-col @wide/page:flex-row @max-compact/page:hidden" />\n</template>\n',
     expect: [],
   },
   {
     name: 'a container size that is not ours is caught',
-    file: 'src/screens/unlock/UnlockRow.vue',
+    file: 'src/screens/unlock/UnlockNameCell.vue',
     body: '<template>\n  <span class="@max-md/page:hidden" />\n</template>\n',
     expect: ['media query variant, or a container size that is not ours'],
   },
@@ -1078,21 +1101,57 @@ const FIXTURES = [
     // The guard on the half that could not tell them apart: an event binding wears the same shape
     // as a variant, and only the container's name separates them.
     name: 'a Vue event binding is not a container variant',
-    file: 'src/screens/unlock/UnlockRow.vue',
+    file: 'src/screens/unlock/UnlockNameCell.vue',
     body: '<template>\n  <Thing @update:open="go" @update:model-value="go" />\n</template>\n',
     expect: [],
   },
   {
-    name: 'a narrow template with its hidden cells is allowed',
-    file: 'src/screens/unlock/UnlockRow.vue',
-    body: '<template>\n  <div class="grid grid-cols-unlock @max-compact/page:grid-cols-unlock-narrow">\n    <span class="@max-compact/page:hidden" />\n  </div>\n</template>\n',
+    name: 'a striped list in a cn() outside GridTable is caught',
+    file: 'src/screens/foo/FooTable.vue',
+    body: "<template>\n  <div :class=\"cn('flex', index % 2 === 1 && 'bg-row-alt')\" />\n</template>\n",
+    expect: ['a striped list outside GridTable'],
+  },
+  {
+    name: 'a striped list in a ternary is caught',
+    file: 'src/screens/foo/FooTable.vue',
+    body: "<template>\n  <div :class=\"[index % 2 === 1 ? 'bg-row-alt' : 'bg-transparent']\" />\n</template>\n",
+    expect: ['a striped list outside GridTable'],
+  },
+  {
+    name: 'a striped list by even: is caught',
+    file: 'src/components/foo/FooRow.vue',
+    body: '<template>\n  <tr class="even:bg-row-alt" />\n</template>\n',
+    expect: ['a striped list outside GridTable'],
+  },
+  {
+    name: 'a stripe held in a TypeScript string is caught',
+    file: 'src/lib/foo/rows.ts',
+    body: "export const stripe = (i: number) => (i % 2 === 1 ? 'bg-row-alt' : '')\n",
+    expect: ['a striped list outside GridTable'],
+  },
+  {
+    name: 'GridTable may stripe its rows',
+    file: 'src/components/ui/grid-table/GridTable.vue',
+    body: '<template>\n  <div :class="cn(index % 2 === 1 && \'bg-row-alt\')" />\n</template>\n',
     expect: [],
   },
   {
-    name: 'a narrow template with no hidden cell is half the work',
-    file: 'src/screens/unlock/UnlockRow.vue',
-    body: '<template>\n  <div class="grid grid-cols-unlock @max-compact/page:grid-cols-unlock-narrow" />\n</template>\n',
-    expect: ['narrow grid template with no column hidden'],
+    name: 'a GridTable that never fills #actions is caught',
+    file: 'src/screens/foo/FooTable.vue',
+    body: '<template>\n  <GridTable :columns="c" :rows="r" :row-key="k">\n    <template #cell-name="{ row }">{{ row.name }}</template>\n  </GridTable>\n</template>\n',
+    expect: ['a GridTable without #actions'],
+  },
+  {
+    name: 'a GridTable that fills #actions is the shape',
+    file: 'src/screens/foo/FooTable.vue',
+    body: '<template>\n  <GridTable :columns="c" :rows="r" :row-key="k">\n    <template #actions="{ row }"><Thing :row="row" /></template>\n  </GridTable>\n</template>\n',
+    expect: [],
+  },
+  {
+    name: 'a GridTable that fills v-slot:actions is the shape too',
+    file: 'src/screens/foo/FooTable.vue',
+    body: '<template>\n  <GridTable :columns="c" :rows="r" :row-key="k">\n    <template v-slot:actions="{ row }"><Thing :row="row" /></template>\n  </GridTable>\n</template>\n',
+    expect: [],
   },
   {
     name: 'a width cap on a screen root is caught',

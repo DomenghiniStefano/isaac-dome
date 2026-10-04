@@ -17,14 +17,21 @@ import EntityChip from '@/components/runs/EntityChip.vue'
 import ItemChips from '@/components/runs/ItemChips.vue'
 import LiveMarksRow from './live/LiveMarksRow.vue'
 import LiveOpensTable from './live/LiveOpensTable.vue'
+import QueueError from '@/components/plan/QueueError.vue'
+import { useOnActiveProfile } from '@/composables/useOnActiveProfile'
+import { useQueueOffer } from '@/composables/useQueueOffer'
 import ProfileError from '@/components/data-state/ProfileError.vue'
 import ScreenHeader from '@/components/screen/ScreenHeader.vue'
 
 const store = useLiveStore()
+const { queue } = useQueueOffer()
 const { t } = useMessages()
 
 // The archive is watched, not asked for: the app fills it in the background and says so.
 void store.load()
+
+// The queue is the active profile's: a row of what the run could open goes in it from Actions.
+useOnActiveProfile(() => queue.load())
 
 const run = computed(() => store.view?.run ?? null)
 const opens = computed(() => store.view?.opens ?? [])
@@ -136,6 +143,7 @@ const characterName = computed(
       <!-- One table rather than a card per cell: the cell is a column, so the boss is still
            said once per row and the rows can be read against each other — which a stack of
            cards cannot do. -->
+      <QueueError v-if="queue.mutationFailed" :error="queue.mutationError" />
       <Card v-if="opens.length > 0">
         <CardHeader>
           <CardTitle>{{ t('live.wouldOpen') }}</CardTitle>

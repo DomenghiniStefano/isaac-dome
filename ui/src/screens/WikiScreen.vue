@@ -2,6 +2,7 @@
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 import { useOnActiveProfile } from '@/composables/useOnActiveProfile'
+import { useQueueOffer } from '@/composables/useQueueOffer'
 import { useMessages } from '@/i18n'
 import { singleQuery } from '@/lib/search/queryParam'
 import { WikiCategory } from '@/router/routeTable'
@@ -14,14 +15,18 @@ import WikiPage from './wiki/WikiPage.vue'
 
 const route = useRoute()
 const wiki = useWikiStore()
+const { queue } = useQueueOffer()
 const { t } = useMessages()
 
 // The index once per window: the store refuses a second load while one is ready or running.
 void wiki.loadIndex()
 
 // The save's state per page (design decision 6), read again on mount and whenever the chosen
-// save changes: it depends on the save, unlike the index above, which does not.
-useOnActiveProfile(() => wiki.loadProgress())
+// save changes: it depends on the save, unlike the index above, which does not. The queue is read
+// with it, for both bodies that offer to change it: a page's own "+" and the list's Actions.
+useOnActiveProfile(async () => {
+  await Promise.all([wiki.loadProgress(), queue.load()])
+})
 
 // The location's query decides the view (spec 3.5, Decision 3): a page, a category's list,
 // or the landing. A query value the router hands as an array or null is no value.
