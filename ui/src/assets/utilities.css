@@ -75,16 +75,6 @@
     var(--spacing-runs-floors);
 }
 
-/* Live’s table of what a run could open: the achievement, the cell it needs, how the game
-   words it, and how much it opens in turn. */
-@utility grid-cols-live-opens {
-  grid-template-columns:
-    minmax(0, 1.3fr)
-    minmax(0, 0.8fr)
-    minmax(0, 1.4fr)
-    var(--spacing-live-opens);
-}
-
 /* A list table's grow column: its share of what the fixed columns leave, by the weight its
    declaration binds as --cell-grow (`lib/table/gridColumn.ts`). With min-w-0 this is
    minmax(0, <weight>fr). */

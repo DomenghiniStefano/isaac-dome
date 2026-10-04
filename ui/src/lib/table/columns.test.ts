@@ -1,11 +1,14 @@
 import { describe, expect, it } from 'vitest'
 import spacing from '@/assets/theme/spacing.css?raw'
-import { TableColumns } from './columns'
-import type { ListTable } from './columns'
+import { ListTable, TableColumns } from './columns'
 import { ACTIONS_KEY, ColumnFold, ColumnWidthKind } from './gridColumn'
 
 // The tables that keep every column at compact, each with its reason beside it.
-const KEEPS_EVERY_COLUMN: ListTable[] = []
+const KEEPS_EVERY_COLUMN: ListTable[] = [
+  // Live sits beside the run being played; its four columns are what the row is — the
+  // achievement, the cell that opens it, how to get it, how much it opens.
+  ListTable.Live,
+]
 
 describe('every list table', () => {
   for (const [name, columns] of Object.entries(TableColumns)) {

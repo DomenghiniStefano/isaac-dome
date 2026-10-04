@@ -9,6 +9,7 @@ export const ListTable = {
   Challenges: 'challenges',
   Unlock: 'unlock',
   Collection: 'collection',
+  Live: 'live',
 } as const
 export type ListTable = (typeof ListTable)[keyof typeof ListTable]
 
@@ -143,8 +144,41 @@ export const collectionColumns: readonly GridColumn[] = [
   },
 ]
 
+// The achievement, the cell it needs, how the game words it, and how much it opens in turn.
+export const liveColumns: readonly GridColumn[] = [
+  {
+    key: 'achievement',
+    header: 'live.column.achievement',
+    width: grow(1.3),
+    fold: ColumnFold.Never,
+    align: ColumnAlign.Start,
+  },
+  {
+    key: 'cell',
+    header: 'live.column.cell',
+    width: grow(0.8),
+    fold: ColumnFold.Never,
+    align: ColumnAlign.Start,
+  },
+  {
+    key: 'condition',
+    header: 'live.column.condition',
+    width: grow(1.4),
+    fold: ColumnFold.Never,
+    align: ColumnAlign.Start,
+  },
+  {
+    key: 'opens',
+    header: 'live.column.opens',
+    width: fixed('w-live-opens'),
+    fold: ColumnFold.Never,
+    align: ColumnAlign.End,
+  },
+]
+
 export const TableColumns: Record<ListTable, readonly GridColumn[]> = {
   [ListTable.Challenges]: challengeColumns,
   [ListTable.Unlock]: unlockColumns,
   [ListTable.Collection]: collectionColumns,
+  [ListTable.Live]: liveColumns,
 }

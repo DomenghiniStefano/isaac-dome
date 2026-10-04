@@ -6,9 +6,10 @@ import type {
   UnlockNode,
 } from '@/lib/ipc/types'
 import { ItemKindView, OriginView } from '@/lib/ipc/types'
-import { runsAnswer } from '@/lib/ipc/fixtures/runs'
+import { liveAnswer, runsAnswer } from '@/lib/ipc/fixtures/runs'
 import ChallengesTable from '@/screens/challenges/ChallengesTable.vue'
 import CollectionTable from '@/screens/collection/CollectionTable.vue'
+import LiveOpensTable from '@/screens/live/LiveOpensTable.vue'
 import RunsTable from '@/screens/runs/RunsTable.vue'
 import UnlockTable from '@/screens/unlock/UnlockTable.vue'
 import KitSection from '../../KitSection.vue'
@@ -118,6 +119,7 @@ const challenges: ChallengeRow[] = [
 // The shared fixtures: every case the list has to draw, from a death by a projectile to a launch
 // read before the app kept dates.
 const runs: RunView[] = runsAnswer().runs
+const opens = liveAnswer().opens
 </script>
 
 <template>
@@ -131,6 +133,9 @@ const runs: RunView[] = runsAnswer().runs
       </KitWidths>
       <KitWidths>
         <ChallengesTable :rows="challenges" />
+      </KitWidths>
+      <KitWidths>
+        <LiveOpensTable :opens="opens" />
       </KitWidths>
       <KitWidths>
         <RunsTable :runs="runs" :selected="null" :offset="null" />
