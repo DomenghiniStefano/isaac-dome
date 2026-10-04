@@ -8,6 +8,10 @@
        sizes on two machines. The fallback keeps the app at 100% before the frontend has
        heard from the backend, and on the Kit page, which has no settings. */
     font-size: calc(16px * var(--app-scale, 1));
+    /* The sprite tokens' multiple at scale 100, for the same two moments: the tokens use it
+       with no fallback, so undefined it draws every sprite and mark cell at 0px. The inline
+       value `applyScale` writes on this element wins over it. */
+    --sprite-multiple: 2;
     background-color: var(--color-background);
     color: var(--color-foreground);
   }

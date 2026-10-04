@@ -38,7 +38,8 @@ const mountApp = async () => {
   try {
     applyScale((await settings()).scale)
   } catch {
-    // No backend, or a settings file that won't read: `--app-scale` keeps its CSS fallback.
+    // No backend, or a settings file that won't read: the root keeps `base.css`'s scale-100
+    // values for `--app-scale` and `--sprite-multiple`.
   }
   createApp(App).use(createPinia()).use(router).use(i18n).mount('#app')
   mounted()

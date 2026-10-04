@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest'
+import { DefaultScale, spriteMultiple } from '../lib/scale/steps'
 import base from './base.css?raw'
 import typography from './theme/typography.css?raw'
 
@@ -22,6 +23,17 @@ describe('base.css', () => {
     const html = ruleBody(base, 'html')
     expect(html).toBeDefined()
     expect(html).toMatch(/font-size:\s*calc\(16px \* var\(--app-scale, 1\)\);/)
+  })
+
+  // The sprite tokens multiply it with no fallback of their own: undefined, every sprite and
+  // mark cell computes to 0px. The value is the one the scale ladder gives at its default.
+  it('gives the sprite multiple the default scale before anything applies one', () => {
+    const html = ruleBody(base, 'html')
+    expect(html).toMatch(
+      new RegExp(
+        String.raw`--sprite-multiple:\s*${spriteMultiple(DefaultScale)};`,
+      ),
+    )
   })
 
   it('sets the document text size on the body instead', () => {
