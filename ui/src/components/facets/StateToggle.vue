@@ -33,6 +33,7 @@ const onUpdate = (value: unknown) =>
     :type="ToggleGroupType.Multiple"
     :model-value="picked"
     class="w-fit"
+    wrap
     @update:model-value="onUpdate"
   >
     <ToggleGroupItem

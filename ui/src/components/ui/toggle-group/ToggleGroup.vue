@@ -12,17 +12,22 @@ const props = withDefaults(
     ToggleGroupRootProps & {
       class?: HTMLAttributes['class']
       size?: ToggleSize
+      /** Lets the items go on to another row when the group is wider than its box, instead of
+       * running past it: a group whose items are data (a list's states, with their counts) can
+       * be wider than a narrow page. */
+      wrap?: boolean
     }
   >(),
   {
     size: ToggleSize.Default,
+    wrap: false,
   },
 )
 const emits = defineEmits<ToggleGroupRootEmits>()
 
 provide(toggleGroupSizeKey, toRef(props, 'size'))
 
-const delegatedProps = reactiveOmit(props, 'class', 'size')
+const delegatedProps = reactiveOmit(props, 'class', 'size', 'wrap')
 const forwarded = useForwardPropsEmits(delegatedProps, emits)
 </script>
 
@@ -34,6 +39,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
     :class="
       cn(
         'flex w-fit items-center border border-secondary-edge bg-data',
+        props.wrap && 'max-w-full flex-wrap',
         props.class,
       )
     "
