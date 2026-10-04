@@ -35,6 +35,18 @@ describe('pageQueueTarget', () => {
     })
   })
 
+  // Unread is never "earned", as in the Collection: the button stays offered.
+  it('is the achievement behind an item whose unlock the save could not read', () => {
+    expect(
+      pageQueueTarget(item, {
+        kind: 'item',
+        collected: null,
+        unlocked: null,
+        unlockedBy: 40,
+      }),
+    ).toEqual({ achievement: 40, done: false })
+  })
+
   it('is nothing for an item already unlocked, or one nobody unlocks', () => {
     expect(
       pageQueueTarget(item, {
