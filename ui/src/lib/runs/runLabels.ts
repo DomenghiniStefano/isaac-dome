@@ -30,8 +30,8 @@ export const outcomeText: Record<RunOutcomeView['kind'], Message> = {
 }
 
 /**
- * The outcome is the Run diary's state (spec 3.10 §5), and it wears the tones `RunRow.vue`
- * already gives it: won is done, died is blocked, abandoned is the dashed partial — a fact,
+ * The outcome is the Run diary's state (spec 3.10 §5), and it wears the tones `RunOutcomeCell.vue`
+ * gives it: won is done, died is blocked, abandoned is the dashed partial — a fact,
  * never the unknown hatch this design keeps for what it could not read — and open is in
  * progress, never a failure.
  */
