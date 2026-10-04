@@ -233,7 +233,9 @@ export const runsColumns: readonly GridColumn[] = [
 // The wiki's table: the picture, the id (where the category has one), the name, the edition,
 // every fact column the category gives (`factColumns`, the same table the card grid's chips
 // read), and the save's state. Every fact folds at compact: they explain a page, and at 428px
-// with Actions beside the state, keeping even one left the name 16px — its padding.
+// with Actions beside the state, keeping even one left the name 16px — its padding. Above it the
+// facts share what is left with the name, which weighs two: a category can have eight, and at a
+// fixed width each the row would be wider than the window.
 export const wikiColumns = (
   facts: readonly FactColumn[],
   hasId: boolean,
@@ -249,7 +251,7 @@ export const wikiColumns = (
   {
     key: 'name',
     header: 'wiki.list.sort.name',
-    width: grow(1),
+    width: grow(2),
     fold: ColumnFold.Never,
     align: ColumnAlign.Start,
   },
@@ -263,7 +265,7 @@ export const wikiColumns = (
   ...facts.map((fact): GridColumn => ({
     key: `fact-${fact.key}`,
     header: fact.label,
-    width: fixed('w-wiki-table-fact'),
+    width: grow(1),
     fold: ColumnFold.Compact,
     align: ColumnAlign.Start,
   })),
