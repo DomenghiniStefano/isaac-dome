@@ -106,9 +106,9 @@ Generic over the row type (`generic="T"`), like `VirtualRows`. What it guarantee
 - **Headers.** A column's header is its message; a `#head-<key>` slot replaces it, which is how
   `WikiTable` draws its sort arrow.
 - **Actions, always.** The last column is always *Actions* (`table.actions`), fixed at
-  `--spacing-actions` (2.5rem), added by `withActions` and not declarable by a screen. The
-  `#actions` slot is required by `defineSlots`, so a table that does not fill it does not
-  typecheck.
+  `--spacing-actions` (4rem: the header's word must fit), added by `withActions` and not
+  declarable by a screen. vue-tsc does not report a missing slot — measured: a `<GridTable>` with
+  no `#actions` typechecks — so `pnpm scan` does: *a GridTable without #actions*.
 - **Virtualization** with `:virtual`, through the existing `VirtualRows` and the row height's
   `rowPx`. Unlock, Collection, Runs and the wiki use it; Challenges (45 rows) and Live do not. It
   passes `offset`/`offsetChange` through (the wiki keeps its list's position) and exposes
@@ -199,6 +199,9 @@ of names. It is seen to fail on a fixture first, and its fixtures try the forms 
 the completion matrix (`MarksGrid`) and Search's results, which stripe without being tables —
 go in `EXEMPTIONS` with their reasons. What it cannot see — a list that does not stripe — goes in
 the script's header and in the conventions table.
+
+A second rule, *a GridTable without #actions*, fails on a template that opens `<GridTable` and
+never fills `#actions`. What it cannot see: a file with two tables, one of which fills it.
 
 **Kit:** `WidthsSection` shows the tables at the three widths — Live added — and Challenges with a
 state of twelve missing requirements, so the case this card was opened for stays on the page.
