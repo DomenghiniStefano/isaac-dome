@@ -297,6 +297,9 @@ export const en: MessageSchema = {
       goldenChest: 'golden chest',
       redChest: 'red chest',
       beggar: 'beggar',
+      greedTreasure: 'Greed treasure room',
+      greedShop: 'Greed shop',
+      greedBoss: 'Greed boss',
     },
     itemView: {
       asLogged: 'As logged',

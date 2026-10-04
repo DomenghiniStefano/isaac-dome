@@ -435,3 +435,28 @@ describe('the view a tab is holding', () => {
     expect(tabLocation(activeTab(state)).query?.q).toBe('brim')
   })
 })
+
+describe('tabModel and a run’s page', () => {
+  const runs: TabLocation = { name: RouteName.Runs }
+  const run = (key: string): TabLocation => ({
+    name: RouteName.Runs,
+    query: { run: key },
+  })
+  const onRuns = (): TabsState => ({
+    tabs: [{ id: 'r', entries: [{ location: runs }], index: 0 }],
+    activeId: 'r',
+  })
+
+  // A run's page is the Runs screen with a `run` query: a view of its own, stacked on the list,
+  // so back returns to the list — as a wiki page is stacked on its category.
+  it('stacks a run on the list, and back returns to the list', () => {
+    const s = navigateTab(onRuns(), run('log:3#2'))
+    expect(activeTab(s).entries).toHaveLength(2)
+    expect(tabLocation(activeTab(backTab(s)))).toEqual(runs)
+  })
+
+  it('stacks one run on another', () => {
+    const s = navigateTab(navigateTab(onRuns(), run('log:3#2')), run('log:3#1'))
+    expect(activeTab(s).entries).toHaveLength(3)
+  })
+})

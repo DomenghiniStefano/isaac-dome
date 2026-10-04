@@ -1,12 +1,13 @@
 <script setup lang="ts">
 import { CheckIcon, CopyIcon } from '@lucide/vue'
-import { computed, ref } from 'vue'
+import { computed } from 'vue'
 import EmptyValue from '@/components/data-state/EmptyValue.vue'
 import EntityChip from '@/components/runs/EntityChip.vue'
 import PixelSprite from '@/components/sprite/PixelSprite.vue'
 import { Badge, BadgeVariant } from '@/components/ui/badge'
 import { Button, ButtonSize, ButtonVariant } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
+import { CopyFeedback, useCopyFeedback } from '@/composables/useCopyFeedback'
 import { useFormat } from '@/composables/useFormat'
 import { useMessages } from '@/i18n'
 import { assertNever } from '@/lib/assertNever'
@@ -47,22 +48,15 @@ const when = computed(() => {
 
 // The seed is what a player types to play the run again. The button says whether the copy took
 // for a moment, then goes back to saying what it does.
-const CopyState = { Idle: 'idle', Copied: 'copied', Failed: 'failed' } as const
-type CopyState = (typeof CopyState)[keyof typeof CopyState]
-const copyState = ref<CopyState>(CopyState.Idle)
-const copySeed = async () => {
-  copyState.value = (await copyText(props.run.seedWords))
-    ? CopyState.Copied
-    : CopyState.Failed
-  setTimeout(() => (copyState.value = CopyState.Idle), Timing.CopiedNotice)
-}
+const { state: copyState, report } = useCopyFeedback(Timing.CopiedNotice)
+const copySeed = async () => report(await copyText(props.run.seedWords))
 const copyLabel = computed(() => {
   switch (copyState.value) {
-    case CopyState.Idle:
+    case CopyFeedback.Idle:
       return t('runs.copy')
-    case CopyState.Copied:
+    case CopyFeedback.Copied:
       return t('runs.copied')
-    case CopyState.Failed:
+    case CopyFeedback.Failed:
       return t('runs.copyFailed')
     default:
       return assertNever(copyState.value)
@@ -127,7 +121,7 @@ const copyLabel = computed(() => {
           class="gap-2"
           @click="copySeed"
         >
-          <CheckIcon v-if="copyState === CopyState.Copied" />
+          <CheckIcon v-if="copyState === CopyFeedback.Copied" />
           <CopyIcon v-else />{{ copyLabel }}
         </Button>
         <Badge :variant="BadgeVariant.Tag">{{

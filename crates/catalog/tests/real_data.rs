@@ -688,3 +688,30 @@ fn the_installed_game_names_its_floors() {
     assert_eq!(c.floor_name(10, 1).as_deref(), Some("Cathedral"));
     assert_eq!(c.floor_name(1, 3), None);
 }
+
+// The seven floors of `samples/logs/20260912-greed-online-coop.log.txt`, by the pairs its log
+// writes, named on the installed game.
+#[test]
+fn the_installed_game_names_the_greed_samples_floors() {
+    let Some((c, _)) = build_or_skip() else {
+        return;
+    };
+    let pairs = [(1, 1), (2, 0), (3, 2), (4, 0), (5, 0), (6, 0), (7, 0)];
+    let names: Vec<Option<String>> = pairs
+        .iter()
+        .map(|&(stage, stage_type)| c.greed_floor_name(stage, stage_type))
+        .collect();
+    assert_eq!(
+        names,
+        [
+            "Cellar",
+            "Caves",
+            "Dank Depths",
+            "Womb",
+            "Sheol",
+            "The Shop",
+            "Ultra Greed"
+        ]
+        .map(|n| Some(n.to_string()))
+    );
+}

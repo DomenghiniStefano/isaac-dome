@@ -55,29 +55,51 @@ describe('groupItems', () => {
     ).toEqual([[34], [1, 3], [2], [105]])
   })
 
-  it('reads by origin, one group per pool in the order first met', () => {
+  // The owner's choice, 2026-10-04: the starting items are a group of their own in every view, at
+  // the top, and are not repeated in another group.
+  it('reads by origin, the starting items first, then one group per pool in the order first met', () => {
     const groups = groupItems(run, RunItemView.ByOrigin)
     expect(groups.map((g) => g.title)).toEqual([
+      { kind: GroupTitleKind.Message, message: 'runs.startingItems' },
       { kind: GroupTitleKind.Pool, pool: 'treasure' },
       { kind: GroupTitleKind.Pool, pool: 'shop' },
       { kind: GroupTitleKind.Pool, pool: 'devil' },
     ])
-    expect(groups.map((g) => ids(g.items))).toEqual([[1, 3], [2], [105]])
+    expect(groups.map((g) => ids(g.items))).toEqual([[34], [1, 3], [2], [105]])
   })
 
   // An item taken before the first floor this read saw has no floor, and comes first.
-  it('reads by floor, the items with no floor first', () => {
+  it('reads by floor, the starting items first, then the items with no floor', () => {
     const groups = groupItems(run, RunItemView.ByFloor)
     expect(groups.map((g) => g.title)).toEqual([
+      { kind: GroupTitleKind.Message, message: 'runs.startingItems' },
       { kind: GroupTitleKind.Floor, floor: null },
       { kind: GroupTitleKind.Floor, floor: run.floorDetails[0] },
       { kind: GroupTitleKind.Floor, floor: run.floorDetails[1] },
     ])
-    expect(groups.map((g) => ids(g.items))).toEqual([[1], [2], [3, 105]])
+    expect(groups.map((g) => ids(g.items))).toEqual([[34], [1], [2], [3, 105]])
   })
 
   it('drops an empty group outside the logged reading', () => {
     const lonely = { ...run, familiars: [] } as RunView
     expect(groupItems(lonely, RunItemView.ByType)).toHaveLength(3)
+  })
+})
+
+describe('groupItems and the starting items', () => {
+  // The fold files a starting passive as a passive too: by type, it is in Starting and nowhere
+  // else.
+  it('does not repeat a starting passive among the passives', () => {
+    const lucky = { ...run, passives: [item(34), item(1), item(3)] } as RunView
+    expect(
+      groupItems(lucky, RunItemView.ByType).map((g) => ids(g.items)),
+    ).toEqual([[34], [1, 3], [2], [105]])
+  })
+
+  it('does not repeat a starting active as the active held', () => {
+    const d6 = { ...run, heldActive: item(34) } as RunView
+    expect(groupItems(d6, RunItemView.ByType).map((g) => ids(g.items))).toEqual(
+      [[34], [1, 3], [2]],
+    )
   })
 })

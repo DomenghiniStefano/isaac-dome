@@ -288,7 +288,7 @@ fn outcome_view<F: FnMut(&crate::icon::IconRef) -> Option<String>>(
         run::Outcome::Won { ending } => RunOutcomeView::Won { ending },
         run::Outcome::Died { killer, spawner } => RunOutcomeView::Died {
             killer: resolve.entity(&killer),
-            spawner: resolve.spawner(&spawner),
+            spawner: resolve.spawner(&spawner, &killer),
         },
         run::Outcome::Abandoned => RunOutcomeView::Abandoned,
         run::Outcome::Open => RunOutcomeView::Open,

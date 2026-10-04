@@ -41,6 +41,13 @@ string key, and `stringtable.sta` turns the key into English. The link from the 
 `crates/catalog/src/stages.rs` and held against `m_Stage 4, m_StageType 4` = Mines II. The game
 calls the Blue Womb `???`, and so does the app.
 
+**Greed writes the same pairs for floors of its own**: the greed sample's are `1,1`, `2,0`, `3,2`,
+`4,0`, `5,0`, `6,0`, `7,0`, which the API's `STAGE1_GREED` … `STAGE7_GREED` read as Cellar, Caves,
+Dank Depths, Womb, Sheol, The Shop and Ultra Greed — one floor per chapter, no I/II. A run says it
+is Greed (the `greedWave` line, or an item from a `greed*` pool) and its floors are named by
+Greed's own table; The Shop and Ultra Greed come straight from the stringtable, since
+`stages.xml` keeps Greed's rows inside a comment. Measured on the installed game, 2026-10-04.
+
 **The seed line has three kinds and they are not interchangeable**: `[New, …]`,
 `[Continue, …]` — a run resumed from an earlier launch, logged with the seed it already had —
 and `[Net, …]`, an online run. Reading a `Continue` as a fresh start abandons a run still being

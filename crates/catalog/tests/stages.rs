@@ -62,3 +62,48 @@ fn without_the_strings_there_is_no_name() {
     let c = Catalog::build(|p| (p == "stages.xml").then(|| STAGES.as_bytes().to_vec()));
     assert_eq!(c.floor_name(1, 0), None);
 }
+
+// Greed's own floors. Its log writes the normal path's pairs — the greed sample's are `1,1`, `2,0`,
+// `3,2`, `4,0`, `5,0`, `6,0`, `7,0` — but the modding API's `LevelStage` reads them as Greed's:
+// one floor per chapter (no I/II), then Sheol, The Shop and Ultra Greed, the last two named straight
+// from the stringtable since `stages.xml` keeps Greed's rows in a comment.
+const GREED_STRINGS: &str = r#"<stringtable><languages>
+  <language id="21" index="0" name="Key"/><language id="0" index="1" name="English"/></languages>
+  <category name="Stages">
+  <key name="CELLAR_NAME"><string>Cellar</string></key>
+  <key name="THE_SHOP_NAME"><string>The Shop</string></key>
+  <key name="ULTRA_GREED_NAME"><string>Ultra Greed</string></key>
+  </category></stringtable>"#;
+
+fn greed_catalog() -> Catalog {
+    Catalog::build(|path| match path {
+        "stages.xml" => Some(STAGES.as_bytes().to_vec()),
+        "stringtable.sta" => Some(GREED_STRINGS.as_bytes().to_vec()),
+        _ => None,
+    })
+}
+
+#[test]
+fn a_greed_floor_is_its_chapter_alone() {
+    assert_eq!(
+        greed_catalog().greed_floor_name(1, 1).as_deref(),
+        Some("Cellar")
+    );
+}
+
+#[test]
+fn greeds_last_floors_are_named_from_the_stringtable() {
+    assert_eq!(
+        greed_catalog().greed_floor_name(6, 0).as_deref(),
+        Some("The Shop")
+    );
+    assert_eq!(
+        greed_catalog().greed_floor_name(7, 0).as_deref(),
+        Some("Ultra Greed")
+    );
+}
+
+#[test]
+fn a_greed_pair_with_no_row_has_no_name() {
+    assert_eq!(greed_catalog().greed_floor_name(8, 0), None);
+}
