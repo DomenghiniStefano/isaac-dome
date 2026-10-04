@@ -321,7 +321,7 @@ above to go, exactly as in Completion — let's make this style the default"*.
 
 | root | when |
 |---|---|
-| `PageScroll` (`components/ui/virtual/`) | a screen with a list of any length: Unlock, Collection, Search, Goals, the wiki's category lists. Every `VirtualRows` inside finds the page box through `PageScroller` and virtualizes against it, so 641 rows still draw twenty |
+| `PageScroll` (`components/ui/virtual/`) | a screen with a list of any length: Unlock, Collection, Search, Goals, Runs and a run's page, the wiki's category lists. Every `VirtualRows` inside finds the page box through `PageScroller` and virtualizes against it, so 641 rows still draw twenty |
 | a root with `h-full overflow-y-auto` and `v-scroll-memory` | a screen with nothing to virtualize, or a short list that keeps its own box: Profile, Appearance, Floor, Live, Roll, Challenges, Completion |
 
 A screen that opens on a band (Completion, Goals, the wiki) is the same shape: the band is the
@@ -330,9 +330,12 @@ page's first child, full width, and the children under it carry their own `px-5.
 **What this replaced.** Until 2026-10-04 a screen with a list was *filling*: the root held the
 window's height (`overflow-hidden`, a `min-h-0` on every link) and one region inside it scrolled.
 The band and the filters never left the screen, and on a small window the list scrolled in what
-little height was left under them. Runs is the one screen still filling, declared in the scan's
-exemptions: its run detail sits under the list, and on a page that scrolls it would come after
-every run. It flows when the detail becomes a page of its own (card #95).
+little height was left under them. No screen is filling any more.
+
+**A screen that picks its body has no root of its own.** The Wiki screen picks one of four bodies
+from the query, and the Runs screen picks the diary or one run's page (`?run=`): the bodies are the
+roots, each a `PageScroll`, and the scan checks them as screens (`SCREEN_FILES` in
+`scan-conventions.mjs`), while the picker carries an exemption saying why it has no shape.
 
 **The gutter is on the box that scrolls, never around it** (card #63). A padded box pins its sticky
 header one padding below its edge and the rows show through the strip above it, so `PageScroll`
