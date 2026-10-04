@@ -304,6 +304,9 @@ export const it = {
       goldenChest: 'forziere dorato',
       redChest: 'forziere rosso',
       beggar: 'mendicante',
+      greedTreasure: 'stanza del tesoro (Greed)',
+      greedShop: 'negozio (Greed)',
+      greedBoss: 'boss (Greed)',
     },
     itemView: {
       asLogged: 'Come registrati',

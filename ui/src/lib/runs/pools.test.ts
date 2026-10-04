@@ -17,6 +17,9 @@ describe('poolLabel', () => {
     'goldenChest',
     'redChest',
     'beggar',
+    'greedTreasure',
+    'greedShop',
+    'greedBoss',
   ])('words %s', (pool) => {
     expect(poolLabel(pool)).toBe(`runs.pool.${pool}`)
   })

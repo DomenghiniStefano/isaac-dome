@@ -1,7 +1,7 @@
 import type { Message } from '@/i18n/message'
 
 // The pools a player meets most, worded. The word itself is `itempools.xml`'s pool name, which
-// the log writes on every item line; the other twenty of the 31 the game declares are shown as
+// the log writes on every item line; the other seventeen of the 31 the game declares are shown as
 // written, which is what an unknown word gets too.
 const worded: Record<string, Message> = {
   treasure: 'runs.pool.treasure',
@@ -15,6 +15,10 @@ const worded: Record<string, Message> = {
   goldenChest: 'runs.pool.goldenChest',
   redChest: 'runs.pool.redChest',
   beggar: 'runs.pool.beggar',
+  // Greed's own pools: in a Greed run nearly every item comes from one of these three.
+  greedTreasure: 'runs.pool.greedTreasure',
+  greedShop: 'runs.pool.greedShop',
+  greedBoss: 'runs.pool.greedBoss',
 }
 
 export const poolLabel = (pool: string): Message | null =>
