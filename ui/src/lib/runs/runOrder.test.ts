@@ -47,8 +47,8 @@ describe('sessionTime', () => {
 })
 
 describe('orderRuns', () => {
-  // `Live` has no folder and therefore no clock: it is first by decision, because it is the
-  // launch the app is watching, not because it compares greater than anything.
+  // `Live` is first by decision, because it is the launch the app is watching, not because its
+  // date compares greater than anything: it may carry none at all.
   it('puts the launch being watched first', () => {
     const rows = [run(session('09_12_2026__13_34_26'), 1), run(live, 1)]
     expect(orderRuns(rows).map((r) => r.source.kind)).toEqual([
