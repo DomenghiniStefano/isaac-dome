@@ -285,7 +285,7 @@ export const it = {
     noCharacter: 'personaggio sconosciuto',
     noItems: 'nessuno',
     itemId: 'oggetto {id}',
-    killedBy: 'uccisa da {killer}',
+    killedBy: 'ucciso da {killer}',
     endedWith: 'finale {ending}',
     startingItems: 'Oggetti iniziali',
     collected: 'Raccolti',
