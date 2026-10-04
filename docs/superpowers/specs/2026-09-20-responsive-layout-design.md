@@ -117,6 +117,13 @@ reading cap is a change to this section — not a bug fix.
 
 ## 4. Decision (owner) — the page box scrolls nothing, and a screen is one of two shapes
 
+> **Amended by the owner on 2026-10-04 (card #94): one shape.** *Filling* is retired: every screen
+> is the box that scrolls, a list virtualizes against it through `PageScroll`, and only a table's
+> column header stays pinned — Completion's style, made the default. Runs keeps the filling shape
+> until its detail becomes a page of its own (card #95). The contract is
+> `docs/frontend-conventions.md` §"A screen scrolls as a page"; what follows is the decision as it
+> was taken on 2026-09-20.
+
 `<main>` becomes the **page box**: a flex column, `min-h-0`, `overflow-hidden`, carrying the
 horizontal padding only. The vertical padding moves into the screen, because on a screen that fills
 its height today's `pb-15` would be sixty pixels of nothing under a list that could have used them.

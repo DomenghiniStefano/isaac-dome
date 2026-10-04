@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { vScrollMemory } from '@/directives/scrollMemory'
+import { PageScroll } from '@/components/ui/virtual'
 import { computed, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import DiagnosticsList from '@/components/diagnostics/DiagnosticsList.vue'
@@ -91,10 +91,10 @@ const nodes = computed(() => graph.view?.unlock.nodes ?? [])
 </script>
 
 <template>
-  <!-- The gutter is the children's, so the band can be the full width of the page without
-       overflowing it (spec §4.2). The screen does not scroll as one block: the band stays, and
-       the two panes take the height left. -->
-  <div class="flex h-full min-h-0 flex-col overflow-hidden">
+  <!-- The screen scrolls as a page (`PageScroll`): the band and the alerts go by, and the queue
+       and what could be added scroll with them. The gutter is the children's, so the band can be
+       the full width of the page without overflowing it (spec §4.2). -->
+  <PageScroll>
     <GoalsHero />
     <ProfileError
       v-if="queue.status === LoadStatus.Failed"
@@ -108,10 +108,7 @@ const nodes = computed(() => graph.view?.unlock.nodes ?? [])
       class="mx-5.5 mt-4"
       @retry="reloadWant()"
     />
-    <div
-      v-else-if="queue.view"
-      class="flex min-h-0 flex-1 flex-col gap-3 px-5.5 pt-4 pb-5"
-    >
+    <div v-else-if="queue.view" class="flex flex-col gap-3 px-5.5 pt-4 pb-5">
       <DiagnosticsList :entries="planEntries(queue.view.diagnostics)">
         <template #action>
           <Button
@@ -129,23 +126,13 @@ const nodes = computed(() => graph.view?.unlock.nodes ?? [])
            "what else could I do", and the second question is only worth reading once the first
            has been.
 
-           Stacked, the two panes are one column and the column scrolls. Side by side they
-           are two columns of different lengths, and one scrollbar for both would scroll the
-           queue out of sight to reach the bottom of the recommendations — which is the one
-           thing the queue's fixed place exists to prevent. So above `wide` the row holds the
-           height and each pane scrolls inside itself. Whichever box scrolls at the right-hand
-           edge carries the gutter inside it, so its scrollbar sits on the window's edge: the
-           column when stacked, and side by side **the suggestions**, which is where the gutter
-           went when the two changed places (card #63). -->
+           Stacked, the two panes are one column; side by side, one row. Either way the page is
+           what scrolls, and side by side the two columns scroll together — the owner's choice of
+           one shape for every screen, over the fixed queue that two scrollbars used to keep. -->
       <div
-        v-scroll-memory="'body'"
-        class="-mx-5.5 flex min-h-0 flex-1 flex-col gap-4 overflow-y-auto px-5.5 @wide/page:flex-row @wide/page:items-stretch @wide/page:overflow-hidden @wide/page:pr-0"
+        class="flex flex-col gap-4 @wide/page:flex-row @wide/page:items-stretch"
       >
-        <div
-          v-if="readable"
-          v-scroll-memory="'queue'"
-          class="min-w-0 flex-1 @wide/page:min-h-0 @wide/page:overflow-y-auto"
-        >
+        <div v-if="readable" class="min-w-0 flex-1">
           <!-- Both panes fill the row: two panels of the same height read as one workbench,
                where one tall and one short read as a panel and a leftover. -->
           <QueueCard
@@ -160,8 +147,7 @@ const nodes = computed(() => graph.view?.unlock.nodes ?? [])
           />
         </div>
         <AddPane
-          v-scroll-memory="'suggestions'"
-          class="@wide/page:min-h-0 @wide/page:w-add-pane @wide/page:shrink-0 @wide/page:overflow-y-auto @wide/page:pr-5.5"
+          class="@wide/page:w-add-pane @wide/page:shrink-0"
           :sections="graph.view?.steps.sections ?? []"
           :queued="queued"
           :can-write="canWrite"
@@ -177,5 +163,5 @@ const nodes = computed(() => graph.view?.unlock.nodes ?? [])
       </div>
     </div>
     <ScreenSkeleton v-else class="px-5.5 pt-4" :blocks="[SkeletonBlock.Card]" />
-  </div>
+  </PageScroll>
 </template>

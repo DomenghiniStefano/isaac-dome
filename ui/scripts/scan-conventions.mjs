@@ -84,13 +84,17 @@ const isScreen = (file) => SCREEN_FILES.has(relative(ROOT, file))
 // rules below are facts about that one line and nothing deeper — a `max-w-*` on a card inside a
 // screen is the card's business, and a scroll on a panel is the panel's (spec 3.13a §4).
 const ROOT_TAG = /<template>\s*(?:<!--[\s\S]*?-->\s*)*<([a-zA-Z][\w-]*)([^>]*)>/
-const rootClasses = (body) => {
+const rootOf = (body) => {
   const template = body.match(TEMPLATE_BLOCK)
-  if (!template) return ''
-  const root = `<template>${template[1]}`.match(ROOT_TAG)
+  return template ? `<template>${template[1]}`.match(ROOT_TAG) : null
+}
+const rootClasses = (body) => {
+  const root = rootOf(body)
   const attrs = root ? (root[2] ?? '') : ''
   return attrs.match(/\bclass="([^"]*)"/)?.[1] ?? ''
 }
+// The root's tag name, as written: `PageScroll` and `page-scroll` are the same component.
+const rootTag = (body) => rootOf(body)?.[1] ?? ''
 
 // **A comment is not code** (`docs/BACKLOG.md` B59). Every rule below is a regex against the raw
 // file, so a comment saying *"a screen never calls `invoke()`"* tripped the rule forbidding the
@@ -279,7 +283,7 @@ const switchesOnAValueByLiteral = (body) =>
 const EXEMPTIONS = [
   {
     file: 'src/screens/welcome/WelcomeScreen.vue',
-    check: 'screen root is neither flowing nor filling',
+    check: 'screen root does not flow',
     reason:
       'the welcome is a takeover above the router (3.8), drawn by App.vue outside <main>: there is no page box for it to fill, and it sizes itself against the window',
   },
@@ -290,8 +294,14 @@ const EXEMPTIONS = [
       'the welcome is not a tab: it is shown above the router before there is a profile, so there is no history entry for a position to be kept on',
   },
   {
+    file: 'src/screens/RunsScreen.vue',
+    check: 'screen root does not flow',
+    reason:
+      'the run detail sits under the list, and on a page that scrolls it would come after every run; the screen flows when the detail becomes a page of its own (card #95), and this entry leaves with it',
+  },
+  {
     file: 'src/screens/WikiScreen.vue',
-    check: 'screen root is neither flowing nor filling',
+    check: 'screen root does not flow',
     reason:
       'it has no root of its own: it picks one of four bodies from the query, and each of those carries the shape',
   },
@@ -419,17 +429,20 @@ const checks = [
     },
   },
   {
-    // Spec 3.13a §4. Two shapes and not twenty: a screen either flows and scrolls, or fills and
-    // hands the height that is left to one region inside it. A root that is neither is a screen
-    // whose height nobody decided — which fails nothing, and looks like a bug in the list inside
-    // it rather than in the screen around it.
-    name: 'screen root is neither flowing nor filling',
+    // Spec 3.13a §4, as the owner amended it on 2026-10-04: one shape. A screen is the box that
+    // scrolls — what sits above its list goes by with the page, and only what it pins (`sticky
+    // top-0`, a table's column header) stays. It is either `PageScroll`, which virtualizes every
+    // list inside against itself, or a root that is `h-full` and `overflow-y-auto`. The shape it
+    // replaced, a page that stood still while one region inside it scrolled, is what this now
+    // refuses: it kept the band and the filters on screen and left a long list a short window.
+    // **What it cannot see**: a flowing root whose list keeps its own box — `VirtualRows` outside
+    // a `PageScroll` scrolls inside itself, which is right for a short list and wrong for 641 rows.
+    name: 'screen root does not flow',
     test: (file, body) => {
       if (!isScreen(file)) return false
+      if (/^(PageScroll|page-scroll)$/.test(rootTag(body))) return false
       const cls = rootClasses(body)
-      const flowing = /\boverflow-y-auto\b/.test(cls)
-      const filling = /\boverflow-hidden\b/.test(cls) && /\bmin-h-0\b/.test(cls)
-      return !/\bh-full\b/.test(cls) || !(flowing || filling)
+      return !/\bh-full\b/.test(cls) || !/\boverflow-y-auto\b/.test(cls)
     },
   },
   {
@@ -997,16 +1010,37 @@ const FIXTURES = [
     expect: [],
   },
   {
-    name: 'a filling screen root is allowed',
+    // The shape the owner retired on 2026-10-04: the page stands still and one region scrolls.
+    name: 'a filling screen root is caught',
     file: 'src/screens/GoalsScreen.vue',
     body: '<template>\n  <div class="flex h-full min-h-0 flex-col gap-4 overflow-hidden pt-5 pb-5" />\n</template>\n',
+    expect: ['screen root does not flow'],
+  },
+  {
+    name: 'a PageScroll root flows',
+    file: 'src/screens/GoalsScreen.vue',
+    body: '<template>\n  <!-- the page scrolls -->\n  <PageScroll>\n    <div class="flex flex-col gap-4" />\n  </PageScroll>\n</template>\n',
     expect: [],
+  },
+  {
+    name: 'a page-scroll root, written the kebab way, flows',
+    file: 'src/screens/GoalsScreen.vue',
+    body: '<template>\n  <page-scroll>\n    <div class="flex flex-col gap-4" />\n  </page-scroll>\n</template>\n',
+    expect: [],
+  },
+  {
+    // `PageScroll` one level down is not the screen scrolling: the root above it still has no
+    // shape, and a filling root around it would hold its height to whatever was left.
+    name: 'a PageScroll that is not the root does not make the root flow',
+    file: 'src/screens/GoalsScreen.vue',
+    body: '<template>\n  <div class="flex h-full min-h-0 flex-col overflow-hidden">\n    <PageScroll />\n  </div>\n</template>\n',
+    expect: ['screen root does not flow'],
   },
   {
     name: 'a screen root with no shape at all is caught',
     file: 'src/screens/GoalsScreen.vue',
     body: '<template>\n  <div class="flex flex-col gap-4" />\n</template>\n',
-    expect: ['screen root is neither flowing nor filling'],
+    expect: ['screen root does not flow'],
   },
   {
     // A part that lives under `screens/` is not a screen and owes no shape. This is the guard on
@@ -1022,7 +1056,7 @@ const FIXTURES = [
     body: '<template>\n  <div class="grid grid-cols-2 sm:grid-cols-4" />\n</template>\n',
     expect: [
       'media query variant, or a container size that is not ours',
-      'screen root is neither flowing nor filling',
+      'screen root does not flow',
     ],
   },
   {

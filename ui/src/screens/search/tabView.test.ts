@@ -4,7 +4,7 @@ import { searchView } from './tabView'
 
 describe("Search's reading", () => {
   it('is nothing picked when there is nothing to read', () => {
-    expect(searchView.empty()).toEqual({ picked: [], offset: null })
+    expect(searchView.empty()).toEqual({ picked: [] })
   })
 
   it('reads back the groups that were picked', () => {
@@ -19,6 +19,17 @@ describe("Search's reading", () => {
     expect(
       searchView.read({ picked: [RowGroup.Wiki, 'seances'] })?.picked,
     ).toEqual([RowGroup.Wiki])
+  })
+
+  // The page box keeps the position now: a reading stored with a list offset still reads, and
+  // the offset is left behind.
+  it('reads a reading stored with a list offset, and leaves the offset behind', () => {
+    expect(
+      searchView.read({
+        picked: [RowGroup.Wiki],
+        offset: { top: 300, rows: 40 },
+      }),
+    ).toEqual({ picked: [RowGroup.Wiki] })
   })
 
   it('refuses a record that is not a reading', () => {

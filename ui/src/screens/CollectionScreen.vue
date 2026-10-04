@@ -8,6 +8,7 @@ import DiagnosticsList from '@/components/diagnostics/DiagnosticsList.vue'
 import FilterBar from '@/components/facets/FilterBar.vue'
 import FindBar from '@/components/find/FindBar.vue'
 import { Card } from '@/components/ui/card'
+import { PageScroll } from '@/components/ui/virtual'
 import { useFacetedReading } from '@/composables/useFacetedReading'
 import { useFind } from '@/composables/useFind'
 import { useOnActiveProfile } from '@/composables/useOnActiveProfile'
@@ -104,53 +105,53 @@ const empty = computed(() =>
 </script>
 
 <template>
-  <div
-    class="flex h-full min-h-0 flex-col gap-4 overflow-hidden px-5.5 pt-5 pb-5"
-  >
-    <ScreenHeader :icon="LayersIcon" :title="t('routes.collection')">{{
-      t('collection.intro')
-    }}</ScreenHeader>
-    <ProfileError
-      v-if="store.status === LoadStatus.Failed"
-      :error="store.error"
-      @retry="store.load()"
-    />
-    <template v-else-if="store.view">
-      <DiagnosticsList :entries="collectionEntries(store.view.diagnostics)" />
-      <Card class="min-h-0 flex-1">
-        <FilterBar
-          :bar="bar"
-          :rows="items"
-          :filter="filter"
-          :shown="rows.length"
-          :sort="reading.sort"
-          :value-label="valueLabel"
-          @update:query="setQuery"
-          @update:sort="update({ sort: $event })"
-          @update:picks="setPicks"
-          @reset="reset"
-        />
-        <FindBar
-          v-if="findOpen"
-          v-model:query="findQuery"
-          v-model:current="findCurrent"
-          :rows="haystack"
-          class="px-4 py-2"
-          @move="goToMatch"
-          @close="closeFind"
-        />
-        <CollectionTable
-          v-if="rows.length > 0"
-          ref="table"
-          :items="rows"
-          :offset="reading.offset"
-          :find-query="findOpen ? findQuery : ''"
-          :find-current="findCurrent"
-          @offset-change="update({ offset: $event })"
-        />
-        <ListEmptyState v-else :empty="empty" @reset="reset" />
-      </Card>
-    </template>
-    <ScreenSkeleton v-else />
-  </div>
+  <!-- The screen scrolls as a page (`PageScroll`): the header, the filters and the find bar go
+       by with the list, and only the table's column header stays pinned. -->
+  <PageScroll>
+    <div class="flex flex-col gap-4 px-5.5 pt-5 pb-5">
+      <ScreenHeader :icon="LayersIcon" :title="t('routes.collection')">{{
+        t('collection.intro')
+      }}</ScreenHeader>
+      <ProfileError
+        v-if="store.status === LoadStatus.Failed"
+        :error="store.error"
+        @retry="store.load()"
+      />
+      <template v-else-if="store.view">
+        <DiagnosticsList :entries="collectionEntries(store.view.diagnostics)" />
+        <Card>
+          <FilterBar
+            :bar="bar"
+            :rows="items"
+            :filter="filter"
+            :shown="rows.length"
+            :sort="reading.sort"
+            :value-label="valueLabel"
+            @update:query="setQuery"
+            @update:sort="update({ sort: $event })"
+            @update:picks="setPicks"
+            @reset="reset"
+          />
+          <FindBar
+            v-if="findOpen"
+            v-model:query="findQuery"
+            v-model:current="findCurrent"
+            :rows="haystack"
+            class="px-4 py-2"
+            @move="goToMatch"
+            @close="closeFind"
+          />
+          <CollectionTable
+            v-if="rows.length > 0"
+            ref="table"
+            :items="rows"
+            :find-query="findOpen ? findQuery : ''"
+            :find-current="findCurrent"
+          />
+          <ListEmptyState v-else :empty="empty" @reset="reset" />
+        </Card>
+      </template>
+      <ScreenSkeleton v-else />
+    </div>
+  </PageScroll>
 </template>

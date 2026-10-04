@@ -5,10 +5,10 @@ import { computed, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import EmptyCategory from '@/components/data-state/EmptyCategory.vue'
 import { Card } from '@/components/ui/card'
+import { PageScroll } from '@/components/ui/virtual'
 import { Input } from '@/components/ui/input'
 import { useSearch } from '@/composables/useSearch'
 import { useTabView } from '@/composables/useTabView'
-import type { ScrollOffset } from '@/lib/scale/scrollOffset'
 import { useMessages } from '@/i18n'
 import { Timing } from '@/lib/constants/timing'
 import { SearchLimit } from '@/lib/ipc/search'
@@ -66,7 +66,6 @@ const allRows = computed(() => rowsFor(view.value, typed.value, t, null))
 // Which groups the search is narrowed to belongs to the tab, not to this component (B39). The
 // query is not here: it is in the location already, because a search is a place you can link to.
 const { reading, update } = useTabView(searchView)
-const setOffset = (offset: ScrollOffset) => update({ offset })
 const picked = computed({
   get: () => reading.value.picked,
   set: (value: RowGroup[]) => update({ picked: value }),
@@ -85,35 +84,31 @@ const open = (row: SearchRow, event: MouseEvent) =>
 </script>
 
 <template>
-  <div
-    class="flex h-full min-h-0 flex-col gap-4 overflow-hidden px-5.5 pt-5 pb-5"
-  >
-    <ScreenHeader :icon="SearchIcon" :title="t('routes.search')">{{
-      t('search.intro')
-    }}</ScreenHeader>
-    <Input v-model="typed" :placeholder="t('search.placeholder')" />
-    <DiagnosticsList v-if="hasQuery" :entries="searchEntries(diagnostics)" />
-    <template v-if="hasQuery">
-      <SearchToolbar
-        :counts="counts"
-        :picked="picked"
-        :shown="rows.length"
-        :total="total"
-        :limited="limited"
-        @update="picked = $event"
-      />
-      <Card class="min-h-0 flex-1">
-        <SearchResults
-          v-if="rows.length > 0"
-          :rows="rows"
-          :offset="reading.offset"
-          @open="open"
-          @offset-change="setOffset"
+  <!-- The screen scrolls as a page (`PageScroll`): the box and the groups go by with the
+       results, which virtualize against the page. -->
+  <PageScroll>
+    <div class="flex flex-col gap-4 px-5.5 pt-5 pb-5">
+      <ScreenHeader :icon="SearchIcon" :title="t('routes.search')">{{
+        t('search.intro')
+      }}</ScreenHeader>
+      <Input v-model="typed" :placeholder="t('search.placeholder')" />
+      <DiagnosticsList v-if="hasQuery" :entries="searchEntries(diagnostics)" />
+      <template v-if="hasQuery">
+        <SearchToolbar
+          :counts="counts"
+          :picked="picked"
+          :shown="rows.length"
+          :total="total"
+          :limited="limited"
+          @update="picked = $event"
         />
-        <div v-else class="p-4">
-          <EmptyCategory>{{ t('search.empty') }}</EmptyCategory>
-        </div>
-      </Card>
-    </template>
-  </div>
+        <Card>
+          <SearchResults v-if="rows.length > 0" :rows="rows" @open="open" />
+          <div v-else class="p-4">
+            <EmptyCategory>{{ t('search.empty') }}</EmptyCategory>
+          </div>
+        </Card>
+      </template>
+    </div>
+  </PageScroll>
 </template>

@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { VirtualRows } from '@/components/ui/virtual'
-import type { ScrollOffset } from '@/lib/scale/scrollOffset'
 import { useMessages } from '@/i18n'
 import { cn } from '@/lib/cn'
 import { nodeNumber } from '@/lib/graph/achievementNode'
@@ -14,21 +13,19 @@ defineProps<{
   queued: Set<number>
   canWrite: boolean
   busy: boolean
-  offset: ScrollOffset | null
 }>()
 const emit = defineEmits<{
   add: [achievement: number]
-  offsetChange: [offset: ScrollOffset]
 }>()
 const { t } = useMessages()
 </script>
 
 <template>
-  <!-- A link in the filling chain (spec 3.13a §4): the header keeps its own height, the rows take
-       the rest. `min-h-0` here as on every link, or the scroll box below never shrinks. -->
-  <div class="flex min-h-0 flex-1 flex-col">
+  <!-- The screen scrolls as a page (`PageScroll`): the rows virtualize against it, and the
+       columns' header pins to its top while the list goes by under it. -->
+  <div class="flex flex-col">
     <div
-      class="grid grid-cols-unlock items-center border-b border-hairline bg-muted text-label text-subtle-foreground @max-compact/page:grid-cols-unlock-narrow"
+      class="sticky top-0 z-raised-header grid grid-cols-unlock items-center border-b border-hairline bg-muted text-label text-subtle-foreground @max-compact/page:grid-cols-unlock-narrow"
     >
       <span />
       <span class="px-2 py-1.5">{{ t('unlock.columns.achievement') }}</span>
@@ -44,13 +41,7 @@ const { t } = useMessages()
       }}</span>
       <span />
     </div>
-    <VirtualRows
-      v-slot="{ visible }"
-      :rows="nodes"
-      :row-px="rowWidePx"
-      :offset="offset"
-      @offset-change="emit('offsetChange', $event)"
-    >
+    <VirtualRows v-slot="{ visible }" :rows="nodes" :row-px="rowWidePx">
       <div
         v-for="{ index, style, row: node } in visible"
         :key="nodeNumber(node)"

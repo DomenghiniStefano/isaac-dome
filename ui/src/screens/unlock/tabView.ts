@@ -1,6 +1,4 @@
 import { readFacetFilter, readString } from '@/lib/tabs/tabView'
-import { readScrollOffset } from '@/lib/scale/scrollOffset'
-import type { ScrollOffset } from '@/lib/scale/scrollOffset'
 import type { TabViewSpec } from '@/lib/tabs/tabView'
 import {
   UnlockSort,
@@ -9,10 +7,10 @@ import {
 } from '@/lib/graph/unlockFacets'
 import type { FacetId, UnlockFilter } from '@/lib/graph/unlockFacets'
 
+// No scroll position: the screen scrolls as a page, and the page box keeps its own.
 export interface UnlockReading {
   filter: UnlockFilter
   sort: UnlockSort
-  offset: ScrollOffset | null
 }
 
 const sorts: readonly string[] = Object.values(UnlockSort)
@@ -24,21 +22,18 @@ export const unlockView: TabViewSpec<UnlockReading> = {
   empty: () => ({
     filter: unlockFaceting.empty(),
     sort: UnlockSort.FanOut,
-    offset: null,
   }),
   read: (value) => {
     if (typeof value !== 'object' || value === null) return null
-    const { filter, sort, offset } = value as {
+    const { filter, sort } = value as {
       filter?: unknown
       sort?: unknown
-      offset?: unknown
     }
     const read = readFacetFilter<FacetId>(filter, facetOrder)
     if (read === null) return null
     return {
       filter: read,
       sort: (readString(sort, sorts) as UnlockSort | null) ?? UnlockSort.FanOut,
-      offset: readScrollOffset(offset),
     }
   },
 }

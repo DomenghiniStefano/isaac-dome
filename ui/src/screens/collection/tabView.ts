@@ -1,6 +1,4 @@
 import { readFacetFilter, readString } from '@/lib/tabs/tabView'
-import { readScrollOffset } from '@/lib/scale/scrollOffset'
-import type { ScrollOffset } from '@/lib/scale/scrollOffset'
 import type { TabViewSpec } from '@/lib/tabs/tabView'
 import {
   CollectionSort,
@@ -12,10 +10,10 @@ import type {
   CollectionFilter,
 } from '@/lib/collection/collectionFacets'
 
+// No scroll position: the screen scrolls as a page, and the page box keeps its own.
 export interface CollectionReading {
   filter: CollectionFilter
   sort: CollectionSort
-  offset: ScrollOffset | null
   find: CollectionFind | null
 }
 
@@ -41,15 +39,13 @@ export const collectionView: TabViewSpec<CollectionReading> = {
   empty: () => ({
     filter: defaultCollectionFilter(),
     sort: CollectionSort.Quality,
-    offset: null,
     find: null,
   }),
   read: (value) => {
     if (typeof value !== 'object' || value === null) return null
-    const { filter, sort, offset, find } = value as {
+    const { filter, sort, find } = value as {
       filter?: unknown
       sort?: unknown
-      offset?: unknown
       find?: unknown
     }
     const read = readFacetFilter<CollectionFacet>(filter, collectionFacetOrder)
@@ -59,7 +55,6 @@ export const collectionView: TabViewSpec<CollectionReading> = {
       sort:
         (readString(sort, sorts) as CollectionSort | null) ??
         CollectionSort.Quality,
-      offset: readScrollOffset(offset),
       find: readFind(find),
     }
   },
