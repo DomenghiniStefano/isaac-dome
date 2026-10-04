@@ -341,3 +341,40 @@ fn a_source_already_folded_under_these_rules_is_left_alone() {
     assert!(errors.is_empty(), "{errors:?}");
     assert_eq!(refolded, 0);
 }
+
+/// Sets a file's modification time, so a test can say which time the ingest should keep.
+fn written_at(path: &Path, unix: u64) {
+    let file = fs::OpenOptions::new().write(true).open(path).unwrap();
+    file.set_modified(std::time::UNIX_EPOCH + std::time::Duration::from_secs(unix))
+        .unwrap();
+}
+
+#[test]
+fn reading_the_log_dates_its_launch_by_the_file_and_a_later_read_moves_the_date() {
+    let (dir, store) = open();
+    let rules = Rules::embedded();
+    let log = dir.path().join("log.txt");
+    fs::write(&log, log_text("AAAA AAAA", "Mom")).unwrap();
+    written_at(&log, 1_790_000_000);
+
+    ingest(&store, &rules, &Table).live_log(&log).unwrap();
+    assert_eq!(
+        store.latest_log_source().unwrap().unwrap().written_unix,
+        Some(1_790_000_000)
+    );
+
+    // The same launch, resumed: the date is the file's last write, so it follows it.
+    let mut text = fs::read_to_string(&log).unwrap();
+    text.push_str(&without_banner(&log_text("BBBB BBBB", "Satan")));
+    fs::write(&log, text).unwrap();
+    written_at(&log, 1_790_003_600);
+
+    ingest(&store, &rules, &Table).live_log(&log).unwrap();
+    let latest = store.latest_log_source().unwrap().unwrap();
+    assert_eq!(latest.written_unix, Some(1_790_003_600));
+    assert_eq!(
+        store.sources().unwrap().len(),
+        1,
+        "a resume, not a new launch"
+    );
+}
