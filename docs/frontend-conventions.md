@@ -393,7 +393,7 @@ development server with the fixtures, at 640 × 480, by pasting this into the co
 ```js
 const tabs = document.querySelector('#app').__vue_app__.config.globalProperties.$pinia._s.get('tabs')
 const clipped = (e, top) => { for (let p = e.parentElement; p && p !== top; p = p.parentElement)
-  if (['auto', 'scroll', 'hidden'].includes(getComputedStyle(p).overflowX)) return true; return false }
+  if (['auto', 'scroll', 'hidden', 'clip'].includes(getComputedStyle(p).overflowX)) return true; return false }
 for (const name of ['completion', 'goals', 'roll', 'live', 'floor', 'wiki', 'profile', 'appearance',
   'background', 'tabsSettings', 'updates', 'data', 'challenges', 'unlock', 'collection', 'runs', 'search']) {
   tabs.go({ name }, false); await new Promise((r) => setTimeout(r, 700))
@@ -405,33 +405,28 @@ for (const name of ['completion', 'goals', 'roll', 'live', 'floor', 'wiki', 'pro
 ```
 
 It prints nothing when every screen fits. It cannot see an element cut off by an
-`overflow: hidden` box — that one is clipped, not overflowing — so look at the four lists too.
+`overflow: hidden` or `clip` box — that one is clipped, not overflowing — so look at the lists
+too: every table cell clips (`grid-cell`).
 
 A component whose break is a fact about **itself** rather than about the page declares its own
 token beside itself, with the scale it was measured at in the comment. Two do:
 `--container-tab-narrow` and `--container-sidebar-room`.
 
-### A table drops columns by priority
+### A list is a `GridTable`
 
-Per table, two edits that are one change:
+A list drawn as a table — a header of named columns over a row per item — is a `GridTable`
+(`components/ui/grid-table/`). Its columns are declared once, in `lib/table/columns.ts`: a key, a
+header, a width (a token's class, or a grow weight), whether it folds at compact, its alignment.
+The header and every row are drawn from that declaration, so a column that folds hides its header
+and its cells together, and there is no narrow template to keep in step. A folded cell is
+`hidden`, out of the accessibility tree, never a zero-width track a screen reader would still
+read. Every cell keeps to its track whatever it holds (`grid-cell` in `utilities.css`: clipped,
+its children allowed to shrink, a badge allowed to wrap), and every table ends with **Actions**,
+which no screen declares. The design is `docs/superpowers/specs/2026-10-04-grid-table-design.md`.
 
-1. a **pair of `@utility` declarations adjacent in `utilities.css`** — `grid-cols-unlock` and
-   `grid-cols-unlock-narrow` — with a comment naming which columns fall and why those;
-2. `@max-compact/page:hidden` on the cells that fall, in the header **and** in the row.
-
-A template that drops a track while its cell stays slides every cell after it into the wrong
-column: it reads as a styling bug and is a counting one. Collapsing the track to `0px` instead —
-one edit, nothing to keep in step — is **rejected**: a zero-width cell stays in the accessibility
-tree, and a screen reader would read the columns the eye was told it could do without.
-
-**The pairs that exist are listed in `ui/src/lib/design/tables.ts`** — `unlock`, `collection`,
-`challenges`, `runs` — with the track count of each template, and a fifth table is added there
-**first**. The scan rule below proves both edits were made; the record is what proves the narrow
-template actually drops something, which no stylesheet can state about itself.
-
-**What survives a fold**, the rule the four were chosen by: who the row is, how it is doing, and
-the button that acts on it. What falls is what *explains* the row and what is *derived* from it.
-The sets themselves, and the 428px they were measured against, are in
+**What survives a fold**: who the row is, how it is doing, and the button that acts on it. What
+falls is what *explains* the row and what is *derived* from it. A table that folds nothing says
+why in `columns.test.ts`; the 428px the sets were measured against are in
 `docs/superpowers/specs/2026-09-20-responsive-layout-design.md` §12.
 
 ### The window has a floor
@@ -444,9 +439,10 @@ content.
 
 ### What checks it
 
-`scan-conventions.mjs`, five rules: no media-query variant and no container size that is not ours;
-a screen root is one of the two shapes; no width cap on a screen root; a narrow grid template with
-no hidden cell; no scrolling box under `src/screens/` without `v-scroll-memory`. A screen, for the middle two, is **what the router mounts** — read from
+`scan-conventions.mjs`, six rules: no media-query variant and no container size that is not ours;
+a screen root is one of the two shapes; no width cap on a screen root; no scrolling box under
+`src/screens/` without `v-scroll-memory`; no striped list outside `GridTable`; no `GridTable`
+without `#actions`. A screen, for the second and third, is **what the router mounts** — read from
 `routes.ts`, because `src/screens/` also holds the parts only one screen uses.
 
 ### A tab loses nothing
@@ -835,7 +831,8 @@ For honesty's sake, and so as not to make this document look more complete than 
 | **A media query variant, or a container size that is not ours** | scan: `media query variant, or a container size that is not ours` |
 | **A screen root that does not scroll as a page** | scan: `screen root does not flow` |
 | **A width cap on a screen root** | scan: `width cap on a screen root` |
-| **A narrow grid template with no column hidden** | scan: `narrow grid template with no column hidden` |
+| **A striped list outside `GridTable`** (a `bg-row-alt` outside `components/ui/grid-table/` and `components/ui/table/`; blind to a list that does not stripe) — since 2026-10-04, card #100 | scan: `a striped list outside GridTable` |
+| **A `GridTable` that never fills `#actions`** (vue-tsc does not report an unfilled slot; blind to a file with two tables, one of which fills it) — since 2026-10-04, card #100 | scan: `a GridTable without #actions` |
 | **A scrolling box under `src/screens/` without `v-scroll-memory`** | scan: `scrolling box without v-scroll-memory` |
 | **An import against the layer direction** (`lib/`, `stores/`, `composables/` import no component or screen; `components/` no screen; `router/` no component; by the `@/` alias or a relative path, `from`, side-effect `import` or `import()`) — since 2026-09-24, card #81; relative and side-effect imports since 2026-09-26 | scan: `import against the layer direction` |
 | **A token read from a string** (`var(--…)` in `:style` or a TS string, unless the key *sets* a `'--name'`) — since 2026-09-24, card #81 | scan: `a token read from a string instead of set as a variable` |
