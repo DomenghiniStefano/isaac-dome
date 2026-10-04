@@ -1229,6 +1229,9 @@ export const en: MessageSchema = {
       retry: 'Try again',
     },
   },
+  table: {
+    actions: 'Actions',
+  },
   queue: {
     inQueue: 'queued',
     inPlan: 'already in the Plan’s queue',

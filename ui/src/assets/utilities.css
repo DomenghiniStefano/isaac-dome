@@ -161,6 +161,32 @@
     var(--spacing-live-opens);
 }
 
+/* A list table's grow column: its share of what the fixed columns leave, by the weight its
+   declaration binds as --cell-grow (`lib/table/gridColumn.ts`). With min-w-0 this is
+   minmax(0, <weight>fr). */
+@utility cell-grow {
+  flex: var(--cell-grow) 1 0;
+}
+
+/* A list table's cell: nothing it holds leaves its track. `clip` rather than `hidden`, with a
+   margin as wide as the focus outline and its offset (base.css, 2px + 2px), so a focused link
+   or button inside still shows its ring. Its children may shrink, so a `truncate` inside
+   truncates; a badge may wrap to a second line instead of running out — two caption lines fit
+   a 40px row. */
+@utility grid-cell {
+  overflow: clip;
+  overflow-clip-margin: var(--spacing);
+
+  & > * {
+    min-width: 0;
+  }
+
+  & [data-slot='badge'] {
+    white-space: normal;
+    max-width: 100%;
+  }
+}
+
 @utility hatch-unknown {
   background-image: repeating-linear-gradient(
     45deg,

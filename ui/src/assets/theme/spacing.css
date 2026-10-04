@@ -114,6 +114,9 @@
   --spacing-challenge-number: 3rem;
   --spacing-challenge-state: 8.5rem;
   --spacing-challenge-queue: 2.5rem;
+  /* The Actions column every list table ends with: one icon button, and the header's word
+     ("Azioni", "Actions") at label size, which is the wider of the two. */
+  --spacing-actions: 4rem;
   /* The pane everything enters the queue from. It was `--spacing-plan-aside` at 15.5rem while
      that column was a secondary proposal beside the queue; it is now the only way in, and both
      the name and the number were wrong for that.

@@ -1249,6 +1249,9 @@ export const it = {
       retry: 'Riprova',
     },
   },
+  table: {
+    actions: 'Azioni',
+  },
   queue: {
     inQueue: 'in coda',
     inPlan: 'già nella coda del Piano',
