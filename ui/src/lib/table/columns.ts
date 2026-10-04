@@ -8,6 +8,7 @@ import type { GridColumn } from './gridColumn'
 export const ListTable = {
   Challenges: 'challenges',
   Unlock: 'unlock',
+  Collection: 'collection',
 } as const
 export type ListTable = (typeof ListTable)[keyof typeof ListTable]
 
@@ -96,7 +97,54 @@ export const unlockColumns: readonly GridColumn[] = [
   },
 ]
 
+// The sprite, the name, the quality, the pools, the origin, the state.
+export const collectionColumns: readonly GridColumn[] = [
+  {
+    key: 'sprite',
+    header: null,
+    width: fixed('w-collection-sprite'),
+    fold: ColumnFold.Never,
+    align: ColumnAlign.Center,
+  },
+  {
+    key: 'item',
+    header: 'collection.columns.item',
+    width: grow(1.4),
+    fold: ColumnFold.Never,
+    align: ColumnAlign.Start,
+  },
+  {
+    key: 'quality',
+    header: 'collection.columns.quality',
+    width: fixed('w-collection-quality'),
+    fold: ColumnFold.Compact,
+    align: ColumnAlign.Start,
+  },
+  {
+    key: 'pools',
+    header: 'collection.columns.pools',
+    width: grow(1),
+    fold: ColumnFold.Compact,
+    align: ColumnAlign.Start,
+  },
+  {
+    key: 'origin',
+    header: 'collection.columns.origin',
+    width: fixed('w-collection-origin'),
+    fold: ColumnFold.Compact,
+    align: ColumnAlign.Start,
+  },
+  {
+    key: 'state',
+    header: 'collection.columns.state',
+    width: fixed('w-collection-state'),
+    fold: ColumnFold.Never,
+    align: ColumnAlign.Start,
+  },
+]
+
 export const TableColumns: Record<ListTable, readonly GridColumn[]> = {
   [ListTable.Challenges]: challengeColumns,
   [ListTable.Unlock]: unlockColumns,
+  [ListTable.Collection]: collectionColumns,
 }

@@ -127,12 +127,7 @@ const runs: RunView[] = runsAnswer().runs
         <UnlockTable :nodes="nodes" />
       </KitWidths>
       <KitWidths>
-        <CollectionTable
-          :items="items"
-          :offset="null"
-          find-query=""
-          :find-current="null"
-        />
+        <CollectionTable :items="items" find-query="" :find-current="null" />
       </KitWidths>
       <KitWidths>
         <ChallengesTable :rows="challenges" />

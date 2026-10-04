@@ -2,7 +2,6 @@
 // `@utility` declarations in `assets/utilities.css`: the full template, and the narrow one the
 // header and the rows take under the threshold.
 export const FoldingTable = {
-  Collection: 'collection',
   Runs: 'runs',
 } as const
 export type FoldingTable = (typeof FoldingTable)[keyof typeof FoldingTable]
@@ -17,6 +16,5 @@ export const TableTracks: Record<
   FoldingTable,
   { full: number; narrow: number }
 > = {
-  [FoldingTable.Collection]: { full: 6, narrow: 3 },
   [FoldingTable.Runs]: { full: 6, narrow: 4 },
 }
