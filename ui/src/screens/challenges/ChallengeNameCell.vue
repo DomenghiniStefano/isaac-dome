@@ -26,9 +26,9 @@ const open = (event: MouseEvent): void => {
       v-if="row.page"
       :variant="ButtonVariant.Link"
       :size="ButtonSize.Compact"
-      :class="cn('justify-start truncate', done && 'text-subtle-foreground')"
+      :class="cn('max-w-full justify-start', done && 'text-subtle-foreground')"
       @click="open"
-      >{{ row.name }}</Button
+      ><span class="min-w-0 truncate">{{ row.name }}</span></Button
     >
     <span
       v-else
