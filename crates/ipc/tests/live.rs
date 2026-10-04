@@ -8,7 +8,7 @@ use ipc::{
 
 fn open_run(character: Option<&str>) -> RunView {
     RunView {
-        source: RunSource::Live,
+        source: RunSource::Live { written_unix: None },
         ordinal: 1,
         character: character.map(str::to_string),
         character_id: None,

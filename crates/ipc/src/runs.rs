@@ -1,13 +1,14 @@
 //! The run archive as the UI sees it.
 //!
 //! No path crosses: a session is named by its folder — a date, and nothing about this machine —
-//! and the live log has no name to give. Items carry a name only when the catalog is there; an
-//! id with no name says "the game is not installed" rather than showing a blank.
+//! and a launch of `log.txt` has no name to give, only a row number and a date. Items carry a
+//! name only when the catalog is there; an id with no name says "the game is not installed"
+//! rather than showing a blank.
 
 use catalog::{Catalog, ItemId, ItemKind, Language};
 use serde::Serialize;
 
-/// Where a run came from. Tagged, because one variant carries a name and the other cannot.
+/// Where a run came from. Tagged, because each variant carries something different.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, ts_rs::TS)]
 #[serde(
     tag = "kind",
@@ -15,8 +16,19 @@ use serde::Serialize;
     rename_all_fields = "camelCase"
 )]
 pub enum RunSource {
-    /// The log the game is writing now.
-    Live,
+    /// The latest launch of `log.txt`: the one the game may be writing now.
+    Live {
+        /// When the launch's file was last written, in epoch seconds; `None` when it was read
+        /// before the app kept dates.
+        written_unix: Option<i64>,
+    },
+    /// An older launch. `id` only tells launches apart: it is a row number, nothing on disk.
+    Launch {
+        id: i64,
+        /// When the launch's file was last written, in epoch seconds; `None` when it was read
+        /// before the app kept dates.
+        written_unix: Option<i64>,
+    },
     /// One online session, by its folder's name: `09_12_2026__13_34_26`.
     Session { name: String },
 }
@@ -148,8 +160,8 @@ pub struct RunsView {
 /// What the command gathers before this crate can answer.
 pub struct RunsInputs<'a> {
     /// Each source with its folded runs, in the order the archive took them in — not the order
-    /// they are shown in: that is `ui/src/lib/runs/runOrder.ts`, which reads the one clock the
-    /// archive has, a session folder's name.
+    /// they are shown in: that is `ui/src/lib/runs/runOrder.ts`, which orders by the date each
+    /// source carries.
     pub sources: Vec<(RunSource, Vec<run::Run>)>,
     pub catalog: Option<&'a Catalog>,
     pub diagnostics: Vec<RunsDiagnostic>,

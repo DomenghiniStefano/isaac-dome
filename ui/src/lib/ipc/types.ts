@@ -1790,9 +1790,27 @@ export type QueueView = {
 }
 
 /**
- * Where a run came from. Tagged, because one variant carries a name and the other cannot.
+ * Where a run came from. Tagged, because each variant carries something different.
  */
-export type RunSource = { kind: 'live' } | { kind: 'session'; name: string }
+export type RunSource =
+  | {
+      kind: 'live'
+      /**
+       * When the launch's file was last written, in epoch seconds; `None` when it was read
+       * before the app kept dates.
+       */
+      writtenUnix: number | null
+    }
+  | {
+      kind: 'launch'
+      id: number
+      /**
+       * When the launch's file was last written, in epoch seconds; `None` when it was read
+       * before the app kept dates.
+       */
+      writtenUnix: number | null
+    }
+  | { kind: 'session'; name: string }
 
 /**
  * How a run ended, as the UI draws it. `Open` is not a failure and must never be drawn as one.

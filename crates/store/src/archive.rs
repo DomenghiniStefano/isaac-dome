@@ -54,11 +54,24 @@ pub struct StoredSource {
 
 impl StoredSource {
     /// The source as the Runs screen names it. A session row with no name cannot be told from
-    /// a launch, and the launch is the honest reading: it is the source with no name.
-    pub fn run_source(&self) -> RunSource {
+    /// a launch, and the launch is the honest reading: it is the source with no name. Of the
+    /// launches, only `latest_log` is Live — the rest are past launches, each its own source.
+    pub fn run_source(&self, latest_log: Option<i64>) -> RunSource {
         match (self.kind, &self.key) {
             (SourceKind::Session, Some(name)) => RunSource::Session { name: name.clone() },
-            (SourceKind::Session, None) | (SourceKind::Log, _) => RunSource::Live,
+            (SourceKind::Session, None) | (SourceKind::Log, _) => self.launch(latest_log),
+        }
+    }
+
+    fn launch(&self, latest_log: Option<i64>) -> RunSource {
+        let written_unix = self.written_unix;
+        if latest_log == Some(self.id) {
+            RunSource::Live { written_unix }
+        } else {
+            RunSource::Launch {
+                id: self.id,
+                written_unix,
+            }
         }
     }
 }
@@ -378,14 +391,20 @@ impl Store {
     }
 
     /// The cached runs of the launch the watcher follows — the latest `log.txt` — under
-    /// `rules_version`, and no other source's. What Live reads on every line the
-    /// watcher reports: the whole archive would be every session ever played, read to keep one
-    /// run. `None` when there is no launch, or when these rules have not folded it.
-    pub fn live_runs(&self, rules_version: u32) -> Result<Option<Vec<Run>>, StoreError> {
-        match self.latest_log_source()? {
-            Some(source) => self.cached_runs(source.id, rules_version),
-            None => Ok(None),
-        }
+    /// `rules_version`, with the source as the screen names it, and no other source's. What
+    /// Live reads on every line the watcher reports: the whole archive would be every session
+    /// ever played, read to keep one run. `None` when there is no launch, or when these rules
+    /// have not folded it.
+    pub fn live_runs(
+        &self,
+        rules_version: u32,
+    ) -> Result<Option<(RunSource, Vec<Run>)>, StoreError> {
+        let Some(source) = self.latest_log_source()? else {
+            return Ok(None);
+        };
+        Ok(self
+            .cached_runs(source.id, rules_version)?
+            .map(|runs| (source.run_source(Some(source.id)), runs)))
     }
 
     /// Every source's cached runs under `rules_version`, named, oldest source first. A source
@@ -394,10 +413,16 @@ impl Store {
     /// and an empty fold contributes a row with no run in it, which adds nothing to any total.
     /// A cache that cannot be read is counted in `unreadable` and costs no other source.
     pub fn archived_runs(&self, rules_version: u32) -> Result<ArchivedRuns, StoreError> {
+        let latest = self.latest_log_source()?.map(|s| s.id);
         let cached: Vec<_> = self
             .sources()?
             .into_iter()
-            .map(|row| (row.run_source(), self.cached_runs(row.id, rules_version)))
+            .map(|row| {
+                (
+                    row.run_source(latest),
+                    self.cached_runs(row.id, rules_version),
+                )
+            })
             .collect();
         let unreadable = cached.iter().filter(|(_, runs)| runs.is_err()).count() as u32;
         let sources = cached

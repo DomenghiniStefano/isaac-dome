@@ -131,9 +131,9 @@ fn open_run(
     catalog: Option<&Catalog>,
 ) -> Option<RunView> {
     let guard = store.lock(app).ok()?;
-    let runs = guard.live_runs(archive.rules().version()).ok()??;
+    let (source, runs) = guard.live_runs(archive.rules().version()).ok()??;
     let inputs = RunsInputs {
-        sources: vec![(RunSource::Live, runs)],
+        sources: vec![(source, runs)],
         catalog,
         diagnostics: Vec::new(),
     };

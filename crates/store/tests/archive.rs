@@ -370,6 +370,9 @@ fn every_archived_source_is_named_the_way_the_runs_screen_names_it() {
         .import_session("09_12_2026__13_34_26", &key(0), &[])
         .unwrap();
     let launch = store.insert_log_source(&key(0)).unwrap();
+    store
+        .append_to_log(launch, &key(0), &[], Some(1_790_000_000))
+        .unwrap();
     store.cache_runs(session, 1, &[run_of("AAA AAA")]).unwrap();
     store
         .cache_runs(launch, 1, &[run_of("BBB BBB"), run_of("CCC CCC")])
@@ -392,7 +395,42 @@ fn every_archived_source_is_named_the_way_the_runs_screen_names_it() {
                 },
                 1
             ),
-            (RunSource::Live, 2),
+            (
+                RunSource::Live {
+                    written_unix: Some(1_790_000_000)
+                },
+                2
+            ),
+        ]
+    );
+}
+
+#[test]
+fn only_the_latest_launch_is_live_and_an_older_one_keeps_its_own_name() {
+    // Every launch used to read as Live: two launches drew as one group, and their first runs
+    // shared a key. The latest is the one the game may be writing; the rest are launches.
+    let (_d, store) = temp_store();
+    let older = store.insert_log_source(&key(0)).unwrap();
+    let latest = store.insert_log_source(&key(0)).unwrap();
+    store.cache_runs(older, 1, &[run_of("AAA AAA")]).unwrap();
+    store.cache_runs(latest, 1, &[run_of("BBB BBB")]).unwrap();
+
+    let sources: Vec<RunSource> = store
+        .archived_runs(1)
+        .unwrap()
+        .sources
+        .into_iter()
+        .map(|(source, _)| source)
+        .collect();
+
+    assert_eq!(
+        sources,
+        vec![
+            RunSource::Launch {
+                id: older,
+                written_unix: None
+            },
+            RunSource::Live { written_unix: None },
         ]
     );
 }
@@ -418,7 +456,17 @@ fn a_session_row_with_no_name_reads_as_the_launch_it_cannot_be_told_from() {
         source_key: key(0),
         written_unix: None,
     };
-    assert_eq!(row.run_source(), RunSource::Live);
+    assert_eq!(
+        row.run_source(Some(1)),
+        RunSource::Live { written_unix: None }
+    );
+    assert_eq!(
+        row.run_source(None),
+        RunSource::Launch {
+            id: 1,
+            written_unix: None
+        }
+    );
 }
 
 #[test]
@@ -457,7 +505,10 @@ fn the_live_runs_are_the_latest_launchs_and_no_one_elses() {
 
     assert_eq!(
         store.live_runs(1).unwrap(),
-        Some(vec![run_of("BBB BBB"), run_of("CCC CCC")])
+        Some((
+            RunSource::Live { written_unix: None },
+            vec![run_of("BBB BBB"), run_of("CCC CCC")]
+        ))
     );
 }
 

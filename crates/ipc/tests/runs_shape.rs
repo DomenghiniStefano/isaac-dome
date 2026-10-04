@@ -58,7 +58,7 @@ fn the_fields_are_camel_case_on_the_wire() {
 #[test]
 fn an_outcome_that_carries_something_is_tagged_and_its_fields_are_camel_case() {
     let view = view_of(vec![(
-        RunSource::Live,
+        RunSource::Live { written_unix: None },
         vec![a_run(
             "AAAA AAAA",
             Outcome::Died {
@@ -76,7 +76,10 @@ fn a_session_is_named_by_its_folder_and_the_live_log_is_not_named_at_all() {
     // The IPC forbids a path. A session's folder name is a date; the live log has no name to
     // give, and inventing one would be inventing a path.
     let view = view_of(vec![
-        (RunSource::Live, vec![a_run("AAAA AAAA", Outcome::Open)]),
+        (
+            RunSource::Live { written_unix: None },
+            vec![a_run("AAAA AAAA", Outcome::Open)],
+        ),
         (
             RunSource::Session {
                 name: "09_12_2026__13_34_26".to_string(),
@@ -95,7 +98,7 @@ fn a_session_is_named_by_its_folder_and_the_live_log_is_not_named_at_all() {
 fn without_a_catalog_an_item_keeps_its_id_and_says_it_has_no_name() {
     // "The game is not installed" is a state to report, not a blank to paper over.
     let view = view_of(vec![(
-        RunSource::Live,
+        RunSource::Live { written_unix: None },
         vec![a_run("AAAA AAAA", Outcome::Open)],
     )]);
     let item = &view.runs[0].starting_items[0];
@@ -107,7 +110,7 @@ fn without_a_catalog_an_item_keeps_its_id_and_says_it_has_no_name() {
 #[test]
 fn the_totals_count_each_outcome_once() {
     let view = view_of(vec![(
-        RunSource::Live,
+        RunSource::Live { written_unix: None },
         vec![
             a_run(
                 "AAAA AAAA",
@@ -172,7 +175,7 @@ fn the_game_calling_a_run_online_is_what_online_means() {
     let mut solo = a_run("AAAA AAAA", Outcome::Open);
     solo.seed_kind = SeedKind::New;
     let view = view_of(vec![(
-        RunSource::Live,
+        RunSource::Live { written_unix: None },
         vec![solo, a_run("BBBB BBBB", Outcome::Open)],
     )]);
     assert!(!view.runs[0].online);
@@ -231,7 +234,7 @@ fn the_totals_add_up_across_sources_and_the_given_diagnostics_come_first() {
         RunsInputs {
             sources: vec![
                 (
-                    RunSource::Live,
+                    RunSource::Live { written_unix: None },
                     vec![
                         a_run("AAAA AAAA", Outcome::Open),
                         a_run("BBBB BBBB", Outcome::Abandoned),
@@ -277,4 +280,31 @@ fn the_totals_add_up_across_sources_and_the_given_diagnostics_come_first() {
             ipc::RunsDiagnostic::NoCatalog
         ]
     );
+}
+
+#[test]
+fn a_launch_and_its_date_cross_in_camel_case_with_their_tag() {
+    let view = view_of(vec![
+        (
+            RunSource::Launch {
+                id: 3,
+                written_unix: Some(1_790_000_000),
+            },
+            vec![a_run("AAAA AAAA", Outcome::Abandoned)],
+        ),
+        (
+            RunSource::Live { written_unix: None },
+            vec![a_run("BBBB BBBB", Outcome::Open)],
+        ),
+    ]);
+    let json = serde_json::to_string(&view).unwrap();
+    assert!(
+        json.contains(r#""source":{"kind":"launch","id":3,"writtenUnix":1790000000}"#),
+        "{json}"
+    );
+    assert!(
+        json.contains(r#""source":{"kind":"live","writtenUnix":null}"#),
+        "{json}"
+    );
+    assert!(!json.contains("written_unix"), "{json}");
 }
