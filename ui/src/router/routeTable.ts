@@ -86,6 +86,8 @@ export interface TabLocation {
     page?: string
     q?: string
     state?: string
+    /** A run's page on the Runs screen, by the run's key (`log:3#2`). */
+    run?: string
     /** B37: what you said you want, keyed exactly the way `page` is. */
     want?: string
   }

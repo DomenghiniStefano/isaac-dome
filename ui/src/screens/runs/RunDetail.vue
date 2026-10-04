@@ -15,7 +15,10 @@ const { t } = useMessages()
 
 const groups = computed(() => [
   { title: 'runs.startingItems' as const, items: props.run.startingItems },
-  { title: 'runs.collected' as const, items: props.run.collected },
+  {
+    title: 'runs.collected' as const,
+    items: props.run.collected.map((p) => p.item),
+  },
 ])
 </script>
 

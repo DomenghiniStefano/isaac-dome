@@ -8,12 +8,16 @@ const run = (fields: Partial<RunView>): RunView => ({
   ordinal: 1,
   character: 'Cain',
   characterId: 2,
+  characterHeadUrl: null,
   seedWords: 'FYQ8 QQ8G',
   online: false,
   outcome: { kind: 'abandoned' },
   floors: 3,
+  floorDetails: [],
   startingItems: [],
   collected: [],
+  passives: [],
+  familiars: [],
   heldActive: null,
   achievements: [],
   ...fields,
@@ -84,7 +88,13 @@ describe('the run facets', () => {
     const rows = [
       run({ outcome: { kind: 'abandoned' } }),
       run({ outcome: { kind: 'won', ending: 'Mother' } }),
-      run({ outcome: { kind: 'died', killer: 'Monstro' } }),
+      run({
+        outcome: {
+          kind: 'died',
+          killer: { raw: '20.0', name: 'Monstro', iconUrl: null, page: null },
+          spawner: null,
+        },
+      }),
     ]
     const counts = runFaceting.counts(
       rows,
@@ -97,7 +107,7 @@ describe('the run facets', () => {
 
   it('names a session by its folder, the watched launch and the earlier ones', () => {
     const rows = [
-      run({ source: { kind: 'live', writtenUnix: null } }),
+      run({ source: { kind: 'live', id: 2, writtenUnix: null } }),
       run({ source: { kind: 'launch', id: 1, writtenUnix: null } }),
       run({ source: { kind: 'session', name: '09_12_2026__13_34_26' } }),
     ]

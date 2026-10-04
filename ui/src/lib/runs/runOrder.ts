@@ -42,8 +42,6 @@ export const runTime = (run: RunView): number | null => {
   }
 }
 
-const LiveKey = sourcePart({ kind: 'live', writtenUnix: null })
-
 /** Every run of one source keeps its own place; a source is ordered once. */
 const sourceKey = (run: RunView): string => sourcePart(run.source)
 
@@ -59,9 +57,14 @@ export const orderRuns = (runs: RunView[]): RunView[] => {
   // the diary newest first, so its order is read from the end: the place an undated source
   // keeps is then counted from the newest side, and it lands between its neighbours in time
   // instead of at their mirror image.
+  // The live launch is told by its kind and not by its key: it is keyed like any other launch,
+  // so that its runs keep their keys once a newer launch arrives.
   const keys = uniq(runs.map(sourceKey))
-  const live = keys.filter((key) => key === LiveKey)
-  const sources = keys.filter((key) => key !== LiveKey).reverse()
+  const liveKeys = new Set(
+    runs.filter((run) => run.source.kind === 'live').map(sourceKey),
+  )
+  const live = keys.filter((key) => liveKeys.has(key))
+  const sources = keys.filter((key) => !liveKeys.has(key)).reverse()
   // A source's date, read off its first run: every run of a source carries the same one.
   // Reversed so that the first run of each source is the entry the map keeps.
   const firstOf = new Map(

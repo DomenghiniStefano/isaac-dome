@@ -111,7 +111,10 @@ const characterName = computed(
               <span class="text-label text-subtle-foreground">{{
                 t('live.items')
               }}</span>
-              <ItemChips :items="run.collected" :held="run.heldActive" />
+              <ItemChips
+                :items="run.collected.map((p) => p.item)"
+                :held="run.heldActive"
+              />
             </div>
           </CardContent>
         </Card>
