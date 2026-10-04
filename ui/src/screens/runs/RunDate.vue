@@ -40,9 +40,7 @@ const detail = computed(() => {
 <template>
   <Tooltip>
     <TooltipTrigger as-child>
-      <span
-        class="truncate px-2 text-label text-subtle-foreground tabular-nums"
-      >
+      <span class="truncate text-label text-subtle-foreground tabular-nums">
         <template v-if="day !== null">{{ day }}</template>
         <EmptyValue v-else>{{ t('runs.date.none') }}</EmptyValue>
       </span>

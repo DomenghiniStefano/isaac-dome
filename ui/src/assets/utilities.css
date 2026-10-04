@@ -48,33 +48,6 @@
   grid-template-columns: auto minmax(0, 1fr);
 }
 
-/* The Run diary: the day, the character, how it ended, the floors, the seed, where it came
-   from. */
-@utility grid-cols-runs {
-  grid-template-columns:
-    var(--spacing-runs-date)
-    minmax(0, 1fr)
-    minmax(0, 1.4fr)
-    var(--spacing-runs-floors)
-    minmax(0, 1fr)
-    minmax(0, 1fr);
-}
-
-/* The Run diary at compact (spec 3.13a §7): the day, the character, how it ended, the floors.
-   What falls is the seed — the widest text on the row and the least scannable — and where the
-   run came from, which answers "which log said so" and is not the question a diary is read
-   with. The day stays, because when you played is what a diary is read by, and so do the
-   floors: how far you got is half of what a run is, and the track is 64px. The two that fall
-   carry `@max-compact/page:hidden`, in `RunsTable.vue` for the header and `RunRow.vue` for the
-   row. */
-@utility grid-cols-runs-narrow {
-  grid-template-columns:
-    var(--spacing-runs-date)
-    minmax(0, 1fr)
-    minmax(0, 1.4fr)
-    var(--spacing-runs-floors);
-}
-
 /* A list table's grow column: its share of what the fixed columns leave, by the weight its
    declaration binds as --cell-grow (`lib/table/gridColumn.ts`). With min-w-0 this is
    minmax(0, <weight>fr). */

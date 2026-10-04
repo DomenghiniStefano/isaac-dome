@@ -10,6 +10,7 @@ export const ListTable = {
   Unlock: 'unlock',
   Collection: 'collection',
   Live: 'live',
+  Runs: 'runs',
 } as const
 export type ListTable = (typeof ListTable)[keyof typeof ListTable]
 
@@ -176,9 +177,58 @@ export const liveColumns: readonly GridColumn[] = [
   },
 ]
 
+// The day, the character, how it ended, the floors, the seed, where it came from. The day stays
+// at compact because when you played is what a diary is read by, and so do the floors: how far
+// you got is half of what a run is.
+export const runsColumns: readonly GridColumn[] = [
+  {
+    key: 'date',
+    header: 'runs.column.date',
+    width: fixed('w-runs-date'),
+    fold: ColumnFold.Never,
+    align: ColumnAlign.Start,
+  },
+  {
+    key: 'character',
+    header: 'runs.column.character',
+    width: grow(1),
+    fold: ColumnFold.Never,
+    align: ColumnAlign.Start,
+  },
+  {
+    key: 'outcome',
+    header: 'runs.column.outcome',
+    width: grow(1.4),
+    fold: ColumnFold.Never,
+    align: ColumnAlign.Start,
+  },
+  {
+    key: 'floors',
+    header: 'runs.column.floors',
+    width: fixed('w-runs-floors'),
+    fold: ColumnFold.Never,
+    align: ColumnAlign.End,
+  },
+  {
+    key: 'seed',
+    header: 'runs.column.seed',
+    width: grow(1),
+    fold: ColumnFold.Compact,
+    align: ColumnAlign.Start,
+  },
+  {
+    key: 'source',
+    header: 'runs.column.source',
+    width: grow(1),
+    fold: ColumnFold.Compact,
+    align: ColumnAlign.Start,
+  },
+]
+
 export const TableColumns: Record<ListTable, readonly GridColumn[]> = {
   [ListTable.Challenges]: challengeColumns,
   [ListTable.Unlock]: unlockColumns,
   [ListTable.Collection]: collectionColumns,
   [ListTable.Live]: liveColumns,
+  [ListTable.Runs]: runsColumns,
 }

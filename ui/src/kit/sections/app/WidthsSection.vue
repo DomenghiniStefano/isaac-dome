@@ -138,7 +138,7 @@ const opens = liveAnswer().opens
         <LiveOpensTable :opens="opens" />
       </KitWidths>
       <KitWidths>
-        <RunsTable :runs="runs" :selected="null" :offset="null" />
+        <RunsTable :runs="runs" />
       </KitWidths>
     </div>
   </KitSection>

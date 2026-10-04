@@ -234,6 +234,7 @@ export const en: MessageSchema = {
       'Your run history: this session’s runs, earlier ones and the online games the game has recorded, newest first.',
     rows: 'runs',
     search: 'search a seed or a character',
+    open: 'Open run',
     facet: {
       outcome: 'Outcome',
       character: 'Character',
