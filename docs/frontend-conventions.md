@@ -362,19 +362,50 @@ are forbidden in `ui/`, for two reasons either of which decides it alone: the se
 initial 16px rather than the root, so it cannot see the interface's scale — at 150% a media-query
 layout never folds, which is the one situation that needed it most.
 
-Two named containers, and **every variant names the one it means**:
+Three named containers, and **every variant names the one it means**:
 
 | container | is | measures |
 |---|---|---|
 | `page` | `<main>` | everything a screen draws |
 | `shell` | the row holding the sidebar and `<main>` | the sidebar's own collapse |
+| `nav` | the title bar (`NavBar.vue`) | the search field folding to its icon |
 
 The sidebar's threshold hangs on `shell` and not on `page` **on purpose**: on `page` a collapse
-would widen the content, re-cross the threshold and oscillate.
+would widen the content, re-cross the threshold and oscillate. The title bar sits above both, so
+it measures itself.
 
-Three shared sizes in `assets/theme/containers.css` — `compact` (800px), `regular` (960px),
-`wide` (1280px) — written `@max-compact/page:hidden`, `@wide/page:flex-row`. They are px and
-measured at scale 100, because a container query is compared against a used width.
+Three shared sizes in `assets/theme/containers.css` — `compact` (844px), `regular` (1004px),
+`wide` (1324px), the content widths they were drawn against plus the gutter — written
+`@max-compact/page:hidden`, `@wide/page:flex-row`. They are px and measured at scale 100, because
+a container query is compared against a used width.
+
+### Nothing runs past the page at 640 × 480
+
+The smallest window the app is drawn for (spec 3.13a §8). At that size, with the sidebar open, the
+page box is 428px wide, and **no element may run past its right edge** unless a box of its own
+scrolls it sideways — the Completion matrix and the Floor grid do, on purpose. A row of data that
+can grow (a list's states with their counts) wraps instead: `ToggleGroup` takes `wrap`.
+
+**Held by review, by decision (2026-10-04)**: no browser test runs it, because that would be a
+new dependency and a browser in `pnpm check`. It is measured by hand, in the browser on the
+development server with the fixtures, at 640 × 480, by pasting this into the console:
+
+```js
+const tabs = document.querySelector('#app').__vue_app__.config.globalProperties.$pinia._s.get('tabs')
+const clipped = (e, top) => { for (let p = e.parentElement; p && p !== top; p = p.parentElement)
+  if (['auto', 'scroll', 'hidden'].includes(getComputedStyle(p).overflowX)) return true; return false }
+for (const name of ['completion', 'goals', 'roll', 'live', 'floor', 'wiki', 'profile', 'appearance',
+  'background', 'tabsSettings', 'updates', 'data', 'challenges', 'unlock', 'collection', 'runs', 'search']) {
+  tabs.go({ name }, false); await new Promise((r) => setTimeout(r, 700))
+  const main = document.querySelector('main'); const right = main.getBoundingClientRect().right
+  const over = [...main.querySelectorAll('*')].filter((e) =>
+    e.getBoundingClientRect().right > right + 1 && !clipped(e, main))
+  if (over.length) console.log(name, over)
+}
+```
+
+It prints nothing when every screen fits. It cannot see an element cut off by an
+`overflow: hidden` box — that one is clipped, not overflowing — so look at the four lists too.
 
 A component whose break is a fact about **itself** rather than about the page declares its own
 token beside itself, with the scale it was measured at in the comment. Two do:
