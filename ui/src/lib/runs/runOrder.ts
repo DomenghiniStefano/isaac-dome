@@ -55,10 +55,13 @@ const sourceKey = (run: RunView): string => sourcePart(run.source)
  * The array it receives is not touched: the store hands out what it read.
  */
 export const orderRuns = (runs: RunView[]): RunView[] => {
-  // The sources in the order the archive gave them, each once.
+  // The sources in the order the archive gave them, each once. The archive is oldest first and
+  // the diary newest first, so its order is read from the end: the place an undated source
+  // keeps is then counted from the newest side, and it lands between its neighbours in time
+  // instead of at their mirror image.
   const keys = uniq(runs.map(sourceKey))
   const live = keys.filter((key) => key === LiveKey)
-  const sources = keys.filter((key) => key !== LiveKey)
+  const sources = keys.filter((key) => key !== LiveKey).reverse()
   // A source's date, read off its first run: every run of a source carries the same one.
   // Reversed so that the first run of each source is the entry the map keeps.
   const firstOf = new Map(

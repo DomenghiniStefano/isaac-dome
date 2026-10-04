@@ -156,3 +156,25 @@ describe('orderRuns with past launches', () => {
     ])
   })
 })
+
+describe('orderRuns with an undated source among dated ones', () => {
+  // The archive hands its sources out oldest first and the diary is newest first: the place an
+  // undated source keeps is counted from the newest end, or it mirrors. Played between 09-10
+  // and 09-11, it must be drawn between them — not under the newest session.
+  it('keeps it between its neighbours in time, counted from the newest end', () => {
+    const rows = [
+      run(session('09_10_2026__10_00_00'), 1, 'S10'),
+      run(launch(1, null), 1, 'L'),
+      run(session('09_11_2026__10_00_00'), 1, 'S11'),
+      run(session('09_12_2026__10_00_00'), 1, 'S12'),
+      run(session('09_13_2026__10_00_00'), 1, 'S13'),
+    ]
+    expect(orderRuns(rows).map((r) => r.seedWords)).toEqual([
+      'S13',
+      'S12',
+      'S11',
+      'L',
+      'S10',
+    ])
+  })
+})
