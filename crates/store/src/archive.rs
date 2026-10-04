@@ -66,7 +66,10 @@ impl StoredSource {
     fn launch(&self, latest_log: Option<i64>) -> RunSource {
         let written_unix = self.written_unix;
         if latest_log == Some(self.id) {
-            RunSource::Live { written_unix }
+            RunSource::Live {
+                id: self.id,
+                written_unix,
+            }
         } else {
             RunSource::Launch {
                 id: self.id,

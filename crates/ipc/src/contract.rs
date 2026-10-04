@@ -262,6 +262,9 @@ pub fn render() -> String {
     decl::<crate::QueueDiagnostic>(&cfg, &mut out);
     decl::<crate::QueueView>(&cfg, &mut out);
     decl::<crate::RunSource>(&cfg, &mut out);
+    decl::<crate::EntityRef>(&cfg, &mut out);
+    decl::<crate::RunFloorView>(&cfg, &mut out);
+    decl::<crate::PickupView>(&cfg, &mut out);
     decl::<crate::RunOutcomeView>(&cfg, &mut out);
     decl::<crate::RunItemRef>(&cfg, &mut out);
     decl::<crate::RunView>(&cfg, &mut out);

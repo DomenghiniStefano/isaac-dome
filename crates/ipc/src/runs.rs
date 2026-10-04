@@ -5,7 +5,10 @@
 //! name only when the catalog is there; an id with no name says "the game is not installed"
 //! rather than showing a blank.
 
-use catalog::{Catalog, ItemId, ItemKind, Language};
+use catalog::{Catalog, ItemId, ItemKind};
+use wiki::Dataset;
+
+use crate::run_detail::{EntityRef, PickupView, Resolve, RunFloorView};
 use serde::Serialize;
 
 /// Where a run came from. Tagged, because each variant carries something different.
@@ -16,8 +19,10 @@ use serde::Serialize;
     rename_all_fields = "camelCase"
 )]
 pub enum RunSource {
-    /// The latest launch of `log.txt`: the one the game may be writing now.
+    /// The latest launch of `log.txt`: the one the game may be writing now. Its `id` is the same
+    /// row number it keeps once it is an older launch, so a run's key does not change with it.
     Live {
+        id: i64,
         /// When the launch's file was last written, in epoch seconds; `None` when it was read
         /// before the app kept dates.
         written_unix: Option<i64>,
@@ -41,8 +46,15 @@ pub enum RunSource {
     rename_all_fields = "camelCase"
 )]
 pub enum RunOutcomeView {
-    Won { ending: String },
-    Died { killer: String },
+    Won {
+        ending: String,
+    },
+    /// The killer and, when somebody spawned it, the spawner: a shot and the monster that fired
+    /// it are both half of what killed you.
+    Died {
+        killer: EntityRef,
+        spawner: Option<EntityRef>,
+    },
     Abandoned,
     Open,
 }
@@ -72,13 +84,21 @@ pub struct RunView {
     /// It tells a Tainted form from its base, which the name cannot: the game gives both the
     /// same one.
     pub character_id: Option<u32>,
+    /// The co-op menu head of that character, `None` without a catalog or for a form the menu
+    /// does not draw.
+    pub character_head_url: Option<String>,
     pub seed_words: String,
     /// The game called this run online. The only free discriminator we have for co-op.
     pub online: bool,
     pub outcome: RunOutcomeView,
+    /// How many floors, for the list; `floor_details` is each of them, for the page.
     pub floors: u32,
+    pub floor_details: Vec<RunFloorView>,
     pub starting_items: Vec<RunItemRef>,
-    pub collected: Vec<RunItemRef>,
+    /// Everything picked up after the starting window, in order, with its pool and floor.
+    pub collected: Vec<PickupView>,
+    pub passives: Vec<RunItemRef>,
+    pub familiars: Vec<RunItemRef>,
     pub held_active: Option<RunItemRef>,
     pub achievements: Vec<u32>,
 }
@@ -164,6 +184,8 @@ pub struct RunsInputs<'a> {
     /// source carries.
     pub sources: Vec<(RunSource, Vec<run::Run>)>,
     pub catalog: Option<&'a Catalog>,
+    /// Which entities have a wiki page, so a killer links to one only when it exists.
+    pub wiki: Option<&'a Dataset>,
     pub diagnostics: Vec<RunsDiagnostic>,
 }
 
@@ -192,14 +214,19 @@ impl run::ItemKinds for CatalogKinds<'_> {
 /// catalog's absence said after whatever the archive's reading already met.
 pub fn runs_view(
     inputs: RunsInputs<'_>,
-    mut icon: impl FnMut(&crate::icon::IconRef) -> Option<String>,
+    icon: impl FnMut(&crate::icon::IconRef) -> Option<String>,
 ) -> RunsView {
     let RunsInputs {
         sources,
         catalog,
+        wiki,
         diagnostics,
     } = inputs;
-    let mut named = |id: u32| named_item(catalog, id, &mut icon);
+    let mut resolve = Resolve {
+        catalog,
+        wiki,
+        icon,
+    };
     let runs: Vec<RunView> = sources
         .into_iter()
         .flat_map(|(source, folded)| {
@@ -208,7 +235,7 @@ pub fn runs_view(
                 .enumerate()
                 .map(move |(ordinal, r)| (source.clone(), ordinal as u32, r))
         })
-        .map(|(source, ordinal, r)| run_view(source, ordinal, r, &mut named))
+        .map(|(source, ordinal, r)| run_view(source, ordinal, r, &mut resolve))
         .collect();
     RunsView {
         totals: RunTotals::of(&runs),
@@ -220,55 +247,45 @@ pub fn runs_view(
     }
 }
 
-fn run_view(
+fn run_view<F: FnMut(&crate::icon::IconRef) -> Option<String>>(
     source: RunSource,
     ordinal: u32,
     r: run::Run,
-    named: &mut impl FnMut(u32) -> RunItemRef,
+    resolve: &mut Resolve<'_, F>,
 ) -> RunView {
+    let items = |ids: &[u32], resolve: &mut Resolve<'_, F>| -> Vec<RunItemRef> {
+        ids.iter().map(|id| resolve.item(*id)).collect()
+    };
     RunView {
         source,
         ordinal,
+        character_head_url: resolve.head(r.character_id, r.character.as_deref()),
         character: r.character,
         character_id: r.character_id,
         seed_words: r.seed_words,
         online: r.seed_kind == run::SeedKind::Net,
-        outcome: outcome_view(r.outcome),
+        outcome: outcome_view(r.outcome, resolve),
         floors: r.floors.len() as u32,
-        starting_items: r.starting_items.iter().map(|id| named(*id)).collect(),
-        collected: r.collected.iter().map(|p| named(p.id)).collect(),
-        held_active: r.held_active.map(&mut *named),
+        floor_details: r.floors.iter().map(|f| resolve.floor(f)).collect(),
+        starting_items: items(&r.starting_items, resolve),
+        collected: r.collected.iter().map(|p| resolve.pickup(p)).collect(),
+        passives: items(&r.passives, resolve),
+        familiars: items(&r.familiars, resolve),
+        held_active: r.held_active.map(|id| resolve.item(id)),
         achievements: r.achievements,
     }
 }
 
-/// An item of a run, named and pictured when the catalog knows it. The line the fold reads is
-/// `Adding collectible N`: a trinket cannot be meant, and looking one up would put the wrong
-/// name on a run.
-fn named_item(
-    catalog: Option<&Catalog>,
-    id: u32,
-    icon: &mut impl FnMut(&crate::icon::IconRef) -> Option<String>,
-) -> RunItemRef {
-    let found = catalog.and_then(|c| c.collectible(ItemId(id)));
-    RunItemRef {
-        id,
-        name: found
-            .zip(catalog)
-            .map(|(item, c)| c.text(&item.name, Language::English).to_string()),
-        icon_url: found.and_then(|item| {
-            icon(&crate::icon::IconRef::Item {
-                kind: item.kind,
-                id,
-            })
-        }),
-    }
-}
-
-fn outcome_view(o: run::Outcome) -> RunOutcomeView {
+fn outcome_view<F: FnMut(&crate::icon::IconRef) -> Option<String>>(
+    o: run::Outcome,
+    resolve: &mut Resolve<'_, F>,
+) -> RunOutcomeView {
     match o {
         run::Outcome::Won { ending } => RunOutcomeView::Won { ending },
-        run::Outcome::Died { killer, .. } => RunOutcomeView::Died { killer },
+        run::Outcome::Died { killer, spawner } => RunOutcomeView::Died {
+            killer: resolve.entity(&killer),
+            spawner: resolve.spawner(&spawner),
+        },
         run::Outcome::Abandoned => RunOutcomeView::Abandoned,
         run::Outcome::Open => RunOutcomeView::Open,
     }

@@ -397,6 +397,7 @@ fn every_archived_source_is_named_the_way_the_runs_screen_names_it() {
             ),
             (
                 RunSource::Live {
+                    id: launch,
                     written_unix: Some(1_790_000_000)
                 },
                 2
@@ -430,7 +431,10 @@ fn only_the_latest_launch_is_live_and_an_older_one_keeps_its_own_name() {
                 id: older,
                 written_unix: None
             },
-            RunSource::Live { written_unix: None },
+            RunSource::Live {
+                id: latest,
+                written_unix: None
+            },
         ]
     );
 }
@@ -458,7 +462,10 @@ fn a_session_row_with_no_name_reads_as_the_launch_it_cannot_be_told_from() {
     };
     assert_eq!(
         row.run_source(Some(1)),
-        RunSource::Live { written_unix: None }
+        RunSource::Live {
+            id: 1,
+            written_unix: None
+        }
     );
     assert_eq!(
         row.run_source(None),
@@ -506,7 +513,10 @@ fn the_live_runs_are_the_latest_launchs_and_no_one_elses() {
     assert_eq!(
         store.live_runs(1).unwrap(),
         Some((
-            RunSource::Live { written_unix: None },
+            RunSource::Live {
+                id: latest,
+                written_unix: None
+            },
             vec![run_of("BBB BBB"), run_of("CCC CCC")]
         ))
     );

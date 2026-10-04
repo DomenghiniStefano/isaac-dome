@@ -29,6 +29,7 @@ mod reasons;
 mod release_notes;
 mod resources;
 mod roll;
+mod run_detail;
 mod runs;
 mod save_cache;
 mod search;
@@ -120,6 +121,7 @@ pub use roll::{
     DrawnTargetView, DrawnView, PresetView, RollDiagnostic, RollInputs, RollRowView, RollView,
     SelectionView, StatusView,
 };
+pub use run_detail::{EntityRef, PickupView, RunFloorView};
 pub use runs::{
     runs_view, ArchiveHealth, CatalogKinds, RunItemRef, RunOutcomeView, RunSource, RunTotals,
     RunView, RunsDiagnostic, RunsInputs, RunsView,
