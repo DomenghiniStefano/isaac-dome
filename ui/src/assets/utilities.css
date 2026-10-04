@@ -94,30 +94,6 @@
     var(--spacing-collection-state);
 }
 
-/* The Challenges table: the number, the name, the character it forces, the goal, the state,
-   and the button that puts its reward in the Plan's queue. */
-@utility grid-cols-challenges {
-  grid-template-columns:
-    var(--spacing-challenge-number)
-    minmax(0, 1.4fr) minmax(0, 1fr) minmax(0, 1fr)
-    var(--spacing-challenge-state)
-    var(--spacing-challenge-queue);
-}
-
-/* Challenges at compact (spec 3.13a §7): the number, the name, the state, and the button that
-   puts its reward in the queue. What falls is the character it forces and the goal — the two
-   that explain a challenge rather than name it, and the two widest. The button stays: a row that
-   loses its action at the width where it is hardest to reach is a row that does nothing. Both
-   carry `@max-compact/page:hidden`, in `ChallengesTable.vue` for the header and
-   `ChallengeRow.vue` for the row. */
-@utility grid-cols-challenges-narrow {
-  grid-template-columns:
-    var(--spacing-challenge-number)
-    minmax(0, 1fr)
-    var(--spacing-challenge-state)
-    var(--spacing-challenge-queue);
-}
-
 /* A wiki card's spec sheet: each label as wide as it needs, its value taking the rest and
    cut short there. */
 @utility grid-cols-fact-sheet {
@@ -171,8 +147,9 @@
 /* A list table's cell: nothing it holds leaves its track. `clip` rather than `hidden`, with a
    margin as wide as the focus outline and its offset (base.css, 2px + 2px), so a focused link
    or button inside still shows its ring. Its children may shrink, so a `truncate` inside
-   truncates; a badge may wrap to a second line instead of running out — two caption lines fit
-   a 40px row. */
+   truncates; a badge may wrap to a second line instead of running out, at the label's tighter
+   leading — two caption lines at their own 1.45 make a 41px pill, which a 40px row cannot hold;
+   at 1.3 it is 37. */
 @utility grid-cell {
   overflow: clip;
   overflow-clip-margin: var(--spacing);
@@ -184,6 +161,7 @@
   & [data-slot='badge'] {
     white-space: normal;
     max-width: 100%;
+    line-height: var(--text-label--line-height);
   }
 }
 

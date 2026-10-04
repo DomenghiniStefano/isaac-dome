@@ -14,8 +14,7 @@ import UnlockTable from '@/screens/unlock/UnlockTable.vue'
 import KitSection from '../../KitSection.vue'
 import KitWidths from '../../KitWidths.vue'
 
-// One fixture per folding table — the four pairs listed in `lib/design/tables.ts`. Each carries
-// a row whose name is long on purpose: at 500 the name column is what is left after the fixed
+// One fixture per list table. Each carries a row whose name is long on purpose: at 500 the name column is what is left after the fixed
 // tracks, and truncation is the thing to look at. The three widths moved into `KitWidths.vue`
 // when a second table needed them.
 
@@ -99,6 +98,22 @@ const challenges: ChallengeRow[] = [
     blindfolded: null,
     page: null,
   },
+  // The longest state a challenge can say, in the language that says it longest: the pill
+  // goes onto two lines inside its column, never into the next one.
+  {
+    number: 3,
+    name: 'Darkness Falls',
+    state: {
+      kind: 'blocked',
+      missing: Array.from({ length: 12 }, (_, i) => 60 + i),
+    },
+    rewards: [],
+    character: null,
+    characterName: 'Eve',
+    goal: null,
+    blindfolded: false,
+    page: null,
+  },
 ]
 
 // The shared fixtures: every case the list has to draw, from a death by a projectile to a launch
@@ -127,12 +142,7 @@ const runs: RunView[] = runsAnswer().runs
         />
       </KitWidths>
       <KitWidths>
-        <ChallengesTable
-          :rows="challenges"
-          :queued="[]"
-          :can-write="false"
-          :busy="false"
-        />
+        <ChallengesTable :rows="challenges" />
       </KitWidths>
       <KitWidths>
         <RunsTable :runs="runs" :selected="null" :offset="null" />

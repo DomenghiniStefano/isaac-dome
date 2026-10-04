@@ -1,68 +1,66 @@
 <script setup lang="ts">
+import EmptyValue from '@/components/data-state/EmptyValue.vue'
+import QueueActionButton from '@/components/plan/QueueActionButton.vue'
+import { GridTable } from '@/components/ui/grid-table'
+import { useQueueOffer } from '@/composables/useQueueOffer'
 import { useMessages } from '@/i18n'
-import { cn } from '@/lib/cn'
-import { queueableReward } from '@/lib/challenges/challengeQueue'
-import type { ChallengeRow as Row, Target } from '@/lib/ipc/types'
-import ChallengeRow from './ChallengeRow.vue'
+import { challengeQueueTarget } from '@/lib/challenges/challengeQueue'
+import type { ChallengeRow, Target } from '@/lib/ipc/types'
+import { challengeColumns } from '@/lib/table/columns'
+import ChallengeGoalCell from './ChallengeGoalCell.vue'
+import ChallengeNameCell from './ChallengeNameCell.vue'
+import ChallengeStateBadge from './ChallengeStateBadge.vue'
 
 // Forty-five rows: no virtual list. `VirtualRows` exists for 733 items and 642 achievements,
 // and a list this short pays its machinery for nothing.
-const props = defineProps<{
-  rows: Row[]
-  queued: number[]
-  canWrite: boolean
-  busy: boolean
-}>()
-const emit = defineEmits<{
-  add: [achievement: number]
-  navigate: [target: Target, newTab: boolean]
-}>()
+defineProps<{ rows: ChallengeRow[] }>()
+const emit = defineEmits<{ navigate: [target: Target, newTab: boolean] }>()
 const { t } = useMessages()
+const { queued } = useQueueOffer()
 
-// The rule is `queueableReward`'s: the button only shows when it names an achievement, and a
-// click never queues one it did not name.
-const add = (row: Row): void => {
-  const achievement = queueableReward(row, props.queued)
-  if (achievement !== null) emit('add', achievement)
-}
+const isQueued = (row: ChallengeRow): boolean =>
+  row.rewards.some((r) => queued.value.has(r.achievement))
 </script>
 
 <template>
-  <div class="flex flex-col">
-    <div
-      class="sticky top-0 z-raised-header grid grid-cols-challenges items-center border-b border-hairline bg-muted text-label text-subtle-foreground @max-compact/page:grid-cols-challenges-narrow"
-    >
-      <span class="px-2 py-1.5 text-right">{{
-        t('challenges.columns.number')
+  <GridTable
+    :columns="challengeColumns"
+    :rows="rows"
+    :row-key="(row) => row.number"
+  >
+    <template #cell-number="{ row }">
+      <span class="text-label text-subtle-foreground tabular-nums">{{
+        row.number
       }}</span>
-      <span class="px-2 py-1.5">{{ t('challenges.columns.challenge') }}</span>
-      <span class="px-2 py-1.5 @max-compact/page:hidden">{{
-        t('challenges.columns.character')
-      }}</span>
-      <span class="px-2 py-1.5 @max-compact/page:hidden">{{
-        t('challenges.columns.goal')
-      }}</span>
-      <span class="px-2 py-1.5">{{ t('challenges.columns.state') }}</span>
-      <span />
-    </div>
-    <div
-      v-for="(row, index) in rows"
-      :key="row.number"
-      :class="
-        cn(
-          'grid min-h-row-wide grid-cols-challenges items-center border-b border-hairline hover:bg-row-hover @max-compact/page:grid-cols-challenges-narrow',
-          index % 2 === 1 && 'bg-row-alt',
-        )
-      "
-    >
-      <ChallengeRow
+    </template>
+    <template #cell-name="{ row }">
+      <ChallengeNameCell
         :row="row"
-        :queued="row.rewards.some((r) => queued.includes(r.achievement))"
-        :can-add="canWrite && queueableReward(row, queued) !== null"
-        :busy="busy"
-        @add="add(row)"
+        :queued="isQueued(row)"
         @navigate="(target, newTab) => emit('navigate', target, newTab)"
       />
-    </div>
-  </div>
+    </template>
+    <template #cell-character="{ row }">
+      <!-- A challenge the wiki has no page for says nothing here: it must not read as "any
+           character", which is a fact about the game nobody read. -->
+      <span
+        v-if="row.characterName"
+        class="truncate text-caption text-foreground"
+        >{{ row.characterName }}</span
+      >
+      <EmptyValue v-else>{{ t('challenges.noCondition') }}</EmptyValue>
+    </template>
+    <template #cell-goal="{ row }">
+      <ChallengeGoalCell
+        :row="row"
+        @navigate="(target, newTab) => emit('navigate', target, newTab)"
+      />
+    </template>
+    <template #cell-state="{ row }">
+      <ChallengeStateBadge :state="row.state" />
+    </template>
+    <template #actions="{ row }">
+      <QueueActionButton :target="challengeQueueTarget(row)" />
+    </template>
+  </GridTable>
 </template>

@@ -32,7 +32,7 @@ import { challengesView } from './challenges/tabView'
 import ProfileError from '@/components/data-state/ProfileError.vue'
 
 const store = useChallengesStore()
-const { queue, queued, canWrite } = useQueueOffer()
+const { queue } = useQueueOffer()
 const tabs = useTabsStore()
 const { t } = useMessages()
 
@@ -96,10 +96,6 @@ const empty = computed(() =>
           <ChallengesTable
             v-if="rows.length > 0"
             :rows="rows"
-            :queued="[...queued]"
-            :can-write="canWrite"
-            :busy="queue.busy"
-            @add="queue.add"
             @navigate="tabs.openPage"
           />
           <ListEmptyState v-else :empty="empty" @reset="reset" />
