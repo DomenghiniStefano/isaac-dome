@@ -6,7 +6,6 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from '@/components/ui/tooltip'
-import { useMessages } from '@/i18n'
 import type { Target } from '@/lib/ipc/types'
 import { pageLocation } from '@/lib/wiki/category'
 import { useTabsStore } from '@/stores/tabs'
@@ -26,7 +25,6 @@ const props = defineProps<{
   /** The active actually being carried, which a run can hold exactly one of. */
   highlighted?: boolean
 }>()
-const { t } = useMessages()
 const tabs = useTabsStore()
 
 const location = computed(() =>
@@ -59,9 +57,6 @@ const location = computed(() =>
       <span class="flex flex-col">
         <span>{{ name }}</span>
         <span v-if="detail" class="text-subtle-foreground">{{ detail }}</span>
-        <span v-if="location !== null" class="text-subtle-foreground">{{
-          t('runs.openPage')
-        }}</span>
       </span>
     </TooltipContent>
   </Tooltip>

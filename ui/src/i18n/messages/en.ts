@@ -277,7 +277,6 @@ export const en: MessageSchema = {
     },
     noCharacter: 'unknown character',
     noItems: 'none',
-    openPage: 'Click to open the page, Ctrl-click to open it in a new tab',
     itemId: 'item {id}',
     killedBy: 'killed by {killer}',
     endedWith: 'ending {ending}',
