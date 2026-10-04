@@ -121,11 +121,13 @@ impl<F: FnMut(&IconRef) -> Option<String>> Resolve<'_, F> {
         }
     }
 
-    /// The spawner of a death line, or nobody: entity `0` is what the game writes when the
-    /// killer spawned itself.
-    pub fn spawner(&mut self, raw: &str) -> Option<EntityRef> {
+    /// The spawner of a death line, when it says more than the killer: not entity `0`, which is
+    /// `ENTITY_NULL` in the modding API, and not the killer itself — `Killed by (81.0) spawned by
+    /// (81.0)` is in the samples, and "killed by X, spawned by X" is X said twice.
+    pub fn spawner(&mut self, raw: &str, killer: &str) -> Option<EntityRef> {
         match entity_key(raw) {
             Some((0, _, _)) => None,
+            Some(_) | None if raw == killer => None,
             Some(_) | None => Some(self.entity(raw)),
         }
     }

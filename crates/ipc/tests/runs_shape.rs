@@ -437,3 +437,19 @@ fn an_achievement_of_a_run_crosses_as_one_the_page_can_name() {
     assert!(achievement["text"].is_null(), "{json}");
     assert!(achievement["iconUrl"].is_null(), "{json}");
 }
+
+#[test]
+fn a_killer_that_spawned_itself_crosses_without_a_spawner() {
+    // `Killed by (81.0) spawned by (81.0)` is in the samples: "killed by X, spawned by X" says the
+    // same thing twice, so the spawner is said only when it says more.
+    let view = view_of(vec![(
+        RunSource::Live {
+            id: 1,
+            written_unix: None,
+        },
+        vec![died("81.0", "81.0")],
+    )]);
+    let json = serde_json::to_value(&view).unwrap();
+    assert_eq!(json["runs"][0]["outcome"]["killer"]["raw"], "81.0");
+    assert!(json["runs"][0]["outcome"]["spawner"].is_null(), "{json}");
+}
