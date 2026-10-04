@@ -80,15 +80,37 @@ launch. Nothing is read from disk again and nothing is lost.
 The list carries these too: one view for list and page, no second command. An archive of a few
 hundred runs is not a payload worth a second contract.
 
-### A floor's name — measured before it is written
+### A floor's name — measured on 2026-10-04
 
-The log names a floor by numbers (`m_Stage 2, m_StageType 1`). **Where the name comes from is
-measured first** — the game's own archives are the expected source (a `stages.xml`, read by
-`catalog` like `players.xml`), and the wiki's floor pages the second. The plan's first task is that
-measurement, done through `test-support`, writing nothing under `samples/` (the extraction example
-writes into `samples/sprites/`, and must not be used for this). Until there is a source:
-`name: None`, and the page shows the numbers, never a guessed name — `CLAUDE.md`'s rule about
-naming from a guess applies to floors as it does to sections.
+The log names a floor by numbers (`m_Stage 2, m_StageType 1`). Measured through `ResourceSet` on
+the installed game, writing nothing (a throwaway test, not committed):
+
+- **`stages.xml` is in the archives** (logical path `stages.xml`): one `<stage id= name=>` per
+  stage file — `1` Basement, `2` Cellar, `3` Burning Basement, `4` Caves … `17` Chest, `26` The
+  Void, `27` Downpour, `28` Dross, `29` Mines, `30` Ashpit, `31` Mausoleum, `32` Gehenna, `33`
+  Corpse, `35` Home. The greed stages `18`–`25` sit inside an XML comment. **`name` is a string
+  key**, `#BASEMENT_NAME`, not the name.
+- **`stringtable.sta` is in the archives**, and is XML: `<key name="BASEMENT_NAME">` with one
+  `<string>` per language, English first (then ja, ko, zh, ru, de, es, fr — no Italian). So the name
+  is English in both of the app's languages, like every other game name it shows.
+- **The link from the log's pair to a `stages.xml` id is in no file.** It is the game's own
+  enumeration, documented by the modding API (`LevelStage` 1–13; `StageType` 0 original, 1 Wrath of
+  the Lamb, 2 Afterbirth, 4 Repentance, 5 Repentance B): stages 1–2 are chapter 1 (Basement / Cellar
+  / Burning Basement / Downpour / Dross), 3–4 chapter 2 (Caves / Catacombs / Flooded Caves / Mines /
+  Ashpit), 5–6 chapter 3 (Depths / Necropolis / Dank Depths / Mausoleum / Gehenna), 7–8 chapter 4
+  (Womb / Utero / Scarred Womb / Corpse), 9 the Blue Womb, 10 Sheol / Cathedral, 11 Dark Room /
+  Chest, 12 The Void, 13 Home. That table is written by hand in `catalog`, its source named beside
+  it, and a test holds it against the one pair this repo has measured — `m_Stage 4, m_StageType 4`
+  is Mines II (`docs/log-format.md`).
+
+So `catalog` gains `floor_name(stage, stage_type) -> Option<String>`: the hand table to a
+`stages.xml` id, `stages.xml` to the key, `stringtable.sta` to the English text, and `I` / `II`
+from the stage's parity where a chapter has two floors. Any missing link is `None`, and the page
+shows the numbers — never a guessed name, `CLAUDE.md`'s rule for sections applied to floors.
+
+**Two archives are read whole to build this**, `stages.xml` and `stringtable.sta` (1.3 MB). The
+rule against loading a game file whole is about the `.a` archives and the logs; these are two
+entries of one, read once into the catalog, as `players.xml` already is.
 
 ## The page
 
