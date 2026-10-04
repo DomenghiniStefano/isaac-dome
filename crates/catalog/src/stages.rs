@@ -42,15 +42,13 @@ pub fn parse(bytes: &[u8], diagnostics: &mut Vec<Diagnostic>) -> BTreeMap<u32, T
 /// **The normal path's table only.** Greed writes these same pairs for floors that are not these
 /// — `1,1` is its first floor and this table's Cellar I, measured on the greed sample — so a
 /// Greed run's floors are not looked up here at all (`ipc::run_detail`), and the run says it is
-/// Greed (`run::Run::greed`).
+/// Greed (`run::Run::greed`, [`greed_file_of`]).
 pub fn file_of(stage: u32, stage_type: u32) -> Option<(u32, bool)> {
     let id = match stage {
-        1 | 2 => chapter(stage_type, [1, 2, 3, 27, 28])?,
-        3 | 4 => chapter(stage_type, [4, 5, 6, 29, 30])?,
-        5 | 6 => chapter(stage_type, [7, 8, 9, 31, 32])?,
-        // The womb has no second Repentance floor: Corpse is its only alternate.
-        7 | 8 if stage_type == 5 => return None,
-        7 | 8 => chapter(stage_type, [10, 11, 12, 33, 33])?,
+        1 | 2 => chapter(stage_type, BASEMENT)?,
+        3 | 4 => chapter(stage_type, CAVES)?,
+        5 | 6 => chapter(stage_type, DEPTHS)?,
+        7 | 8 => womb(stage_type)?,
         9 => 13,
         10 => match stage_type {
             0 => 14,
@@ -67,6 +65,47 @@ pub fn file_of(stage: u32, stage_type: u32) -> Option<(u32, bool)> {
         _ => return None,
     };
     Some((id, (1..=8).contains(&stage)))
+}
+
+/// The first four chapters' files, in `StageType` order: original, Wrath of the Lamb, Afterbirth,
+/// Repentance, Repentance B. Both modes walk the same chapters, so both tables read these.
+const BASEMENT: [u32; 5] = [1, 2, 3, 27, 28];
+const CAVES: [u32; 5] = [4, 5, 6, 29, 30];
+const DEPTHS: [u32; 5] = [7, 8, 9, 31, 32];
+const WOMB: [u32; 5] = [10, 11, 12, 33, 33];
+
+/// The womb has no second Repentance floor: Corpse is its only alternate.
+fn womb(stage_type: u32) -> Option<u32> {
+    match stage_type {
+        5 => None,
+        _ => chapter(stage_type, WOMB),
+    }
+}
+
+/// Where a Greed floor's name is: a `stages.xml` row, or — for the two floors Greed alone has,
+/// whose rows `stages.xml` keeps inside a comment — the stringtable key itself.
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub enum GreedFloor {
+    File(u32),
+    Key(&'static str),
+}
+
+/// A Greed floor, from the pair its log writes. The modding API's `LevelStage` has Greed's own
+/// values over the same numbers — `STAGE1_GREED` … `STAGE7_GREED`: one floor per chapter for the
+/// first four, the stage type choosing the variant as on the normal path, then Sheol, The Shop and
+/// Ultra Greed. Held against the greed sample's seven pairs on the installed game: Cellar, Caves,
+/// Dank Depths, Womb, Sheol, The Shop, Ultra Greed (`tests/real_data.rs`).
+pub fn greed_file_of(stage: u32, stage_type: u32) -> Option<GreedFloor> {
+    Some(match stage {
+        1 => GreedFloor::File(chapter(stage_type, BASEMENT)?),
+        2 => GreedFloor::File(chapter(stage_type, CAVES)?),
+        3 => GreedFloor::File(chapter(stage_type, DEPTHS)?),
+        4 => GreedFloor::File(womb(stage_type)?),
+        5 => GreedFloor::File(14),
+        6 => GreedFloor::Key("THE_SHOP_NAME"),
+        7 => GreedFloor::Key("ULTRA_GREED_NAME"),
+        _ => return None,
+    })
 }
 
 /// One chapter's five files, in `StageType` order: original, Wrath of the Lamb, Afterbirth,

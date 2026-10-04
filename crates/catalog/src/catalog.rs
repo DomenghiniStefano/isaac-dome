@@ -165,15 +165,31 @@ impl Catalog {
     /// numbers: a name borrowed from a neighbouring floor would be a guess.
     pub fn floor_name(&self, stage: u32, stage_type: u32) -> Option<String> {
         let (id, numbered) = stages::file_of(stage, stage_type)?;
-        let name = match self.stages.get(&id)? {
-            Text::Key { key } => self.strings.as_ref()?.get(key, Language::English)?,
-            Text::Literal { text } => text.as_str(),
-        };
+        let name = self.stage_file_name(id)?;
         Some(if numbered {
             format!("{name} {}", if stage % 2 == 1 { "I" } else { "II" })
         } else {
             name.to_string()
         })
+    }
+
+    /// A Greed floor's name, from the same pair: Greed writes the normal path's numbers for floors
+    /// of its own — one per chapter, then Sheol, The Shop and Ultra Greed — so a Greed run asks
+    /// here and never [`Catalog::floor_name`]. `None` when any link is missing, as there.
+    pub fn greed_floor_name(&self, stage: u32, stage_type: u32) -> Option<String> {
+        let name = match stages::greed_file_of(stage, stage_type)? {
+            stages::GreedFloor::File(id) => self.stage_file_name(id)?,
+            stages::GreedFloor::Key(key) => self.strings.as_ref()?.get(key, Language::English)?,
+        };
+        Some(name.to_string())
+    }
+
+    /// The English name a `stages.xml` row gives, through the stringtable when it is a key.
+    fn stage_file_name(&self, id: u32) -> Option<&str> {
+        match self.stages.get(&id)? {
+            Text::Key { key } => self.strings.as_ref()?.get(key, Language::English),
+            Text::Literal { text } => Some(text.as_str()),
+        }
     }
 
     /// One of the game's own minimap icons, by the name the game gave it.

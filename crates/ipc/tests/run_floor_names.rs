@@ -1,6 +1,6 @@
-//! A floor's name on the wire. Greed writes the normal path's `m_Stage, m_StageType` pairs, so a
-//! Greed run's floors cross with no name — the page shows their numbers — rather than the name of
-//! the normal floor that shares them.
+//! A floor's name on the wire. Greed writes the normal path's `m_Stage, m_StageType` pairs for
+//! floors of its own, so the same pair names a different floor in each mode: `1,1` is the normal
+//! path's Cellar I and Greed's Cellar, a chapter of one floor.
 
 use ipc::{runs_view, RunSource, RunsInputs};
 use run::{Floor, Generated, Outcome, Run, SeedKind};
@@ -64,7 +64,7 @@ fn first_floor_name(run: Run) -> Option<String> {
 }
 
 #[test]
-fn a_normal_floor_is_named_and_the_same_numbers_in_greed_are_not() {
+fn the_same_numbers_name_a_floor_of_each_mode() {
     assert_eq!(first_floor_name(played(false)).as_deref(), Some("Cellar I"));
-    assert_eq!(first_floor_name(played(true)), None);
+    assert_eq!(first_floor_name(played(true)).as_deref(), Some("Cellar"));
 }
