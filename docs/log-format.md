@@ -47,6 +47,14 @@ and `[Net, …]`, an online run. Reading a `Continue` as a fresh start abandons 
 played and counts it twice, so `run`'s fold decides by **seed**, not by label. `Net` is the only
 free discriminator we have for co-op.
 
+**One open run per mode, not one in all** — the owner's rule, 2026-10-04: *"if I start a run in
+the same mode as one opened before, the old ones become abandoned; locally I can keep only one run,
+but if I start an online one the local one stays"*. So a `Net` seed abandons only an open `Net`
+run, a local seed (`New`, `Continue`, or a label never met) only an open local one, and a local
+seed equal to the open local run's is that run resumed, online run in between or not. The rule is
+the owner's word and the tests' source (`crates/run/tests/fold.rs`); no log here holds the
+sequence local → online → resume yet, so it stands unmeasured until one does.
+
 
 ## How a floor was built, and the one mode that never says
 

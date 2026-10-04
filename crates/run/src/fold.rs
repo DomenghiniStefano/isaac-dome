@@ -153,13 +153,36 @@ impl Run {
     }
 }
 
+/// Which of the game's two open runs a seed belongs to. The owner's rule, 2026-10-04: locally
+/// only one run can be open, and a new one abandons it — but starting an online run leaves the
+/// local one open and resumable. So there is one open run per mode, not one in all.
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+enum Mode {
+    Local,
+    Online,
+}
+
+impl Mode {
+    fn of(kind: SeedKind) -> Self {
+        match kind {
+            SeedKind::Net => Self::Online,
+            // A label we have never met is read as local: that is what every unlabelled run has
+            // been, and an online run says `Net`.
+            SeedKind::New | SeedKind::Continue | SeedKind::Unknown => Self::Local,
+        }
+    }
+}
+
 /// What the fold carries from one event to the next.
 #[derive(Default)]
 struct Fold {
-    /// Runs that are over, in the order they were played.
-    done: Vec<Run>,
-    /// The run the stream is inside, if any.
-    current: Option<Run>,
+    /// Every run started, in the order it started.
+    runs: Vec<Run>,
+    /// The open run of each mode, by its index in `runs`.
+    open_local: Option<usize>,
+    open_online: Option<usize>,
+    /// The run the events now arriving belong to: the one started or resumed last.
+    active: Option<usize>,
     /// The starting window: open from the seed line to the first room transition. Inside it an
     /// `ItemAdded` is the character's own gift, whatever pool the line claims.
     starting: bool,
@@ -193,36 +216,45 @@ impl Fold {
     }
 
     fn run_started(&mut self, seed_words: String, seed_numeric: u32, kind: SeedKind) {
-        // The same seed on a run that is **still open** is that run resumed — the game logs
-        // `[Continue, 1]` with the seed it already had. The seed decides and not the label,
-        // because a label can be a word we have never met. `Open` is load-bearing: a seed can
-        // be replayed deliberately, and a run that already ended is closed, so the same number
-        // arriving again starts a second run rather than reopening the first.
-        if self
-            .current
-            .as_ref()
-            .is_some_and(|run| run.seed_numeric == seed_numeric && run.outcome == Outcome::Open)
-        {
+        let mode = Mode::of(kind);
+        let open = *self.open_of(mode);
+        // The same seed on its mode's run that is **still open** is that run resumed — the game
+        // logs `[Continue, 1]` with the seed it already had, and an online run in between does
+        // not change it. The seed decides and not the label, because a label can be a word we
+        // have never met. `Open` is load-bearing: a seed can be replayed deliberately, and a run
+        // that already ended is closed, so the same number arriving again starts a second run
+        // rather than reopening the first.
+        if let Some(at) = open.filter(|&at| {
+            self.runs
+                .get(at)
+                .is_some_and(|run| run.seed_numeric == seed_numeric && run.outcome == Outcome::Open)
+        }) {
             // The player line logged before this seed was the resumed run's, which already has
             // its character: it is nobody's to keep.
             self.pending_character = None;
+            self.active = Some(at);
             return;
         }
-        self.abandon_current();
-        let mut run = Run::open(seed_words, seed_numeric, kind);
-        run.character_id = self.pending_character.take();
-        self.current = Some(run);
-        self.starting = true;
-    }
-
-    /// A new seed arrived: the run before it is over, and if the log never said how, it was
-    /// abandoned.
-    fn abandon_current(&mut self) {
-        if let Some(mut previous) = self.current.take() {
+        // A new run in this mode: the one this mode had open is over, and if the log never said
+        // how, it was abandoned. The other mode's run is left as it is.
+        if let Some(previous) = open.and_then(|at| self.runs.get_mut(at)) {
             if previous.outcome == Outcome::Open {
                 previous.outcome = Outcome::Abandoned;
             }
-            self.done.push(previous);
+        }
+        let mut run = Run::open(seed_words, seed_numeric, kind);
+        run.character_id = self.pending_character.take();
+        self.runs.push(run);
+        let at = self.runs.len() - 1;
+        *self.open_of(mode) = Some(at);
+        self.active = Some(at);
+        self.starting = true;
+    }
+
+    fn open_of(&mut self, mode: Mode) -> &mut Option<usize> {
+        match mode {
+            Mode::Local => &mut self.open_local,
+            Mode::Online => &mut self.open_online,
         }
     }
 
@@ -232,7 +264,7 @@ impl Fold {
         // being initialized, which a solo run logs just before its seed. The **last** player
         // line before a seed names the run it starts: an earlier one was another player's —
         // Esau beside Jacob — or the resumed run's.
-        let Some(run) = self.current.as_mut() else {
+        let Some(run) = self.active.and_then(|at| self.runs.get_mut(at)) else {
             if let Event::PlayerInitialized { subtype, .. } = event {
                 self.pending_character = Some(subtype);
             }
@@ -245,11 +277,10 @@ impl Fold {
         apply(run, event, kinds, &mut self.starting);
     }
 
-    /// The stream ended. The run it was inside stays `Open`: it is the one being played, or a
-    /// log that ends mid-run, and neither is a failure.
-    fn finish(mut self) -> Vec<Run> {
-        self.done.extend(self.current);
-        self.done
+    /// The stream ended. A run still open stays `Open`: it is the one being played, or a log
+    /// that ends mid-run, or a local run left for an online one — and none of them is a failure.
+    fn finish(self) -> Vec<Run> {
+        self.runs
     }
 }
 

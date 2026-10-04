@@ -710,3 +710,79 @@ fn a_run_with_neither_is_not_greed_mode() {
     );
     assert!(!runs[0].greed);
 }
+
+// The owner's rule, 2026-10-04: locally only one run can be open, and starting a new one in the
+// same mode abandons the one before — but starting an online run leaves the local one as it was,
+// open and resumable. So the fold keeps one open run per mode, not one in all.
+const LOCAL_A: u32 = 1_111_111_111;
+const ONLINE_B: u32 = 2_222_222_222;
+const LOCAL_C: u32 = 3_333_333_333;
+
+fn seeds(runs: &[Run]) -> Vec<u32> {
+    runs.iter().map(|r| r.seed_numeric).collect()
+}
+
+#[test]
+fn an_online_run_leaves_the_open_local_run_open() {
+    let runs = Run::fold(
+        [seed(LOCAL_A, SeedKind::New), seed(ONLINE_B, SeedKind::Net)].into_iter(),
+        &Kinds(&[]),
+    );
+    assert_eq!(seeds(&runs), vec![LOCAL_A, ONLINE_B]);
+    assert_eq!(runs[0].outcome, Outcome::Open);
+}
+
+// The same local run resumed after the online one is that run, not a third: counting it twice is
+// the failure this exists for. And the events after the resume are the local run's.
+#[test]
+fn the_local_run_resumed_after_an_online_one_is_the_same_run() {
+    let runs = Run::fold(
+        [
+            seed(LOCAL_A, SeedKind::New),
+            seed(ONLINE_B, SeedKind::Net),
+            seed(LOCAL_A, SeedKind::Continue),
+            floor(2, 0),
+        ]
+        .into_iter(),
+        &Kinds(&[]),
+    );
+    assert_eq!(seeds(&runs), vec![LOCAL_A, ONLINE_B]);
+    assert_eq!(runs[0].floors.len(), 1, "the floor after the resume is A's");
+    assert!(runs[1].floors.is_empty());
+}
+
+// A new local run abandons the local one before it, and the online run is not the local one's
+// business.
+#[test]
+fn a_new_local_run_abandons_the_local_one_and_not_the_online_one() {
+    let runs = Run::fold(
+        [
+            seed(LOCAL_A, SeedKind::New),
+            seed(ONLINE_B, SeedKind::Net),
+            seed(LOCAL_C, SeedKind::New),
+        ]
+        .into_iter(),
+        &Kinds(&[]),
+    );
+    assert_eq!(seeds(&runs), vec![LOCAL_A, ONLINE_B, LOCAL_C]);
+    assert_eq!(runs[0].outcome, Outcome::Abandoned);
+    assert_eq!(runs[1].outcome, Outcome::Open);
+    assert_eq!(runs[2].outcome, Outcome::Open);
+}
+
+// The same rule on the online side: a second online run abandons the first.
+#[test]
+fn a_new_online_run_abandons_the_online_one_before_it() {
+    let runs = Run::fold(
+        [
+            seed(ONLINE_B, SeedKind::Net),
+            seed(LOCAL_A, SeedKind::New),
+            seed(LOCAL_C, SeedKind::Net),
+        ]
+        .into_iter(),
+        &Kinds(&[]),
+    );
+    assert_eq!(seeds(&runs), vec![ONLINE_B, LOCAL_A, LOCAL_C]);
+    assert_eq!(runs[0].outcome, Outcome::Abandoned);
+    assert_eq!(runs[1].outcome, Outcome::Open);
+}

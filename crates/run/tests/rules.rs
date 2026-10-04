@@ -177,7 +177,9 @@ fn the_embedded_file_is_the_one_that_ships() {
     // **5 since 2026-10-04**, when the fold began keeping each pickup's pool and floor and the
     // spawner of a death, for the run page (card 95): a run cached before carries none of them,
     // and its `collected` is a list of numbers the new shape does not read.
-    assert_eq!(Rules::embedded().version(), 5);
+    // **6 since 2026-10-04**, when the fold began keeping one open run per mode (card 98): a local
+    // run left for an online one was cached as abandoned, and resumed after it as a second run.
+    assert_eq!(Rules::embedded().version(), 6);
 }
 
 #[test]
