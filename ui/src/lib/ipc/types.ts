@@ -1862,6 +1862,16 @@ export type PickupView = {
 }
 
 /**
+ * An achievement a run unlocked, as the page lists it: named and pictured when the catalog
+ * knows it, the id always.
+ */
+export type RunAchievementView = {
+  id: number
+  text: string | null
+  iconUrl: string | null
+}
+
+/**
  * How a run ended, as the UI draws it. `Open` is not a failure and must never be drawn as one.
  */
 export type RunOutcomeView =
@@ -1927,7 +1937,7 @@ export type RunView = {
   passives: Array<RunItemRef>
   familiars: Array<RunItemRef>
   heldActive: RunItemRef | null
-  achievements: Array<number>
+  achievements: Array<RunAchievementView>
 }
 
 /**

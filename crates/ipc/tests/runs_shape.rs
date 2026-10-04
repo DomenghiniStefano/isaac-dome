@@ -418,3 +418,21 @@ fn the_page_fields_cross_in_camel_case() {
     assert!(!json.contains("stage_type"), "{json}");
     assert!(!json.contains("head_url"), "{json}");
 }
+
+#[test]
+fn an_achievement_of_a_run_crosses_as_one_the_page_can_name() {
+    // The page lists what a run unlocked; a bare number would be a chip nobody can read. Without
+    // a catalog the text is `null` and the id stays.
+    let view = view_of(vec![(
+        RunSource::Live {
+            id: 1,
+            written_unix: None,
+        },
+        vec![a_run("AAAA AAAA", Outcome::Open)],
+    )]);
+    let json = serde_json::to_value(&view).unwrap();
+    let achievement = &json["runs"][0]["achievements"][0];
+    assert_eq!(achievement["id"], 19);
+    assert!(achievement["text"].is_null(), "{json}");
+    assert!(achievement["iconUrl"].is_null(), "{json}");
+}

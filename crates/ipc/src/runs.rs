@@ -8,7 +8,7 @@
 use catalog::{Catalog, ItemId, ItemKind};
 use wiki::Dataset;
 
-use crate::run_detail::{EntityRef, PickupView, Resolve, RunFloorView};
+use crate::run_detail::{EntityRef, PickupView, Resolve, RunAchievementView, RunFloorView};
 use serde::Serialize;
 
 /// Where a run came from. Tagged, because each variant carries something different.
@@ -100,7 +100,7 @@ pub struct RunView {
     pub passives: Vec<RunItemRef>,
     pub familiars: Vec<RunItemRef>,
     pub held_active: Option<RunItemRef>,
-    pub achievements: Vec<u32>,
+    pub achievements: Vec<RunAchievementView>,
 }
 
 /// How many runs, and how they ended.
@@ -272,7 +272,11 @@ fn run_view<F: FnMut(&crate::icon::IconRef) -> Option<String>>(
         passives: items(&r.passives, resolve),
         familiars: items(&r.familiars, resolve),
         held_active: r.held_active.map(|id| resolve.item(id)),
-        achievements: r.achievements,
+        achievements: r
+            .achievements
+            .iter()
+            .map(|id| resolve.achievement(*id))
+            .collect(),
     }
 }
 

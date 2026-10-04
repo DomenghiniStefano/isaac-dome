@@ -121,7 +121,7 @@ pub use roll::{
     DrawnTargetView, DrawnView, PresetView, RollDiagnostic, RollInputs, RollRowView, RollView,
     SelectionView, StatusView,
 };
-pub use run_detail::{EntityRef, PickupView, RunFloorView};
+pub use run_detail::{EntityRef, PickupView, RunAchievementView, RunFloorView};
 pub use runs::{
     runs_view, ArchiveHealth, CatalogKinds, RunItemRef, RunOutcomeView, RunSource, RunTotals,
     RunView, RunsDiagnostic, RunsInputs, RunsView,

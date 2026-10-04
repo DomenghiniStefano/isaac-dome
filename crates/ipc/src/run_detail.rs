@@ -3,7 +3,7 @@
 //! whoever was played. One resolver carries the catalog, the wiki and the icon function, so every
 //! part of a run is named and pictured the same way.
 
-use catalog::{Catalog, CharacterId, ItemId, Language};
+use catalog::{AchievementId, Catalog, CharacterId, ItemId, Language};
 use serde::Serialize;
 use wiki::{Dataset, Target};
 
@@ -175,4 +175,28 @@ fn entity_key(raw: &str) -> Option<(u32, u32, u32)> {
         None => 0,
     };
     parts.next().is_none().then_some((id, variant, subtype))
+}
+
+/// An achievement a run unlocked, as the page lists it: named and pictured when the catalog
+/// knows it, the id always.
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, ts_rs::TS)]
+#[serde(rename_all = "camelCase")]
+pub struct RunAchievementView {
+    pub id: u32,
+    pub text: Option<String>,
+    pub icon_url: Option<String>,
+}
+
+impl<F: FnMut(&IconRef) -> Option<String>> Resolve<'_, F> {
+    pub fn achievement(&mut self, id: u32) -> RunAchievementView {
+        let text = self
+            .catalog
+            .and_then(|c| c.achievement(AchievementId(id)))
+            .map(|a| a.text.clone());
+        let icon_url = match text {
+            Some(_) => (self.icon)(&IconRef::Achievement { id }),
+            None => None,
+        };
+        RunAchievementView { id, text, icon_url }
+    }
 }
