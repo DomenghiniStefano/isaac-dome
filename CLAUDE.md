@@ -350,6 +350,10 @@ Steam account id, test count, `samples/` access, `test-api` in the release graph
   and nesting, no side effects in expressions, comments that are true and carry no history, dead
   code removed with its last caller, a defect found in passing written on the correctness card.
 - A reference that carries an id is resolved by the id first.
+- At 640 × 480, with the sidebar open, nothing runs past the page box unless a box of its own scrolls it
+  sideways (`docs/frontend-conventions.md` §"Nothing runs past the page at 640 × 480", which carries
+  the console snippet that measures it). A browser test was declined on 2026-10-04: it would be a new
+  dependency and a browser in `pnpm check`.
 
 **A rule arrives with its check, in the same commit.** Card #81 took a day of eight branches
 and twelve violations to close, and it was needed only because rules had been written here for
