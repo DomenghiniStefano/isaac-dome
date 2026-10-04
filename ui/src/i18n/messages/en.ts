@@ -231,7 +231,7 @@ export const en: MessageSchema = {
   },
   runs: {
     intro:
-      'Your run history: this session’s runs and the online games the game has recorded. The log carries no timestamps, so runs are ordered by session.',
+      'Your run history: this session’s runs, earlier ones and the online games the game has recorded, newest first.',
     rows: 'runs',
     search: 'search a seed or a character',
     facet: {
@@ -262,11 +262,18 @@ export const en: MessageSchema = {
       abandoned: 'abandoned',
     },
     column: {
+      date: 'Date',
       character: 'Character',
       outcome: 'Outcome',
       floors: 'Floors',
       seed: 'Seed',
       source: 'Source',
+    },
+    date: {
+      started: 'started at {time}',
+      written: 'log last written at {time}',
+      undated: 'read before IsaacDome kept dates',
+      none: '—',
     },
     noCharacter: 'unknown character',
     noItems: 'none',

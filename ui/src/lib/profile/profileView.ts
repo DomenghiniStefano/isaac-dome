@@ -121,6 +121,13 @@ export const formatDate = (date: Date, locale: Locale): string =>
     year: 'numeric',
   }).format(date)
 
+// The time of day beside it, for a tooltip that has to say when within the day.
+export const formatTime = (date: Date, locale: Locale): string =>
+  new Intl.DateTimeFormat(locale, {
+    hour: '2-digit',
+    minute: '2-digit',
+  }).format(date)
+
 export const formatCount = (n: number, locale: Locale): string =>
   new Intl.NumberFormat(locale).format(n)
 

@@ -238,7 +238,7 @@ export const it = {
   },
   runs: {
     intro:
-      'Lo storico delle tue run: quelle di questa sessione e quelle delle partite online registrate dal gioco. Il log non riporta l’ora, quindi le run sono ordinate per sessione.',
+      'Lo storico delle tue run: quelle di questa sessione, quelle precedenti e le partite online registrate dal gioco, dalla più recente.',
     rows: 'run',
     search: 'cerca un seed o un personaggio',
     facet: {
@@ -269,11 +269,18 @@ export const it = {
       abandoned: 'abbandonate',
     },
     column: {
+      date: 'Data',
       character: 'Personaggio',
       outcome: 'Esito',
       floors: 'Piani',
       seed: 'Seed',
       source: 'Origine',
+    },
+    date: {
+      started: 'iniziata alle {time}',
+      written: 'log scritto l’ultima volta alle {time}',
+      undated: 'letta prima che IsaacDome salvasse le date',
+      none: '—',
     },
     noCharacter: 'personaggio sconosciuto',
     noItems: 'nessuno',

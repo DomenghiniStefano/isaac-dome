@@ -5,6 +5,7 @@ import { Badge, BadgeVariant } from '@/components/ui/badge'
 import { useMessages } from '@/i18n'
 import type { RunView } from '@/lib/ipc/types'
 import { outcomeText, sourceText } from '@/lib/runs/runLabels'
+import RunDate from './RunDate.vue'
 
 const props = defineProps<{ run: RunView }>()
 const { t } = useMessages()
@@ -36,6 +37,7 @@ const detail = computed(() => {
   <!-- The truncation belongs to the cell and not to what is inside it: `truncate` on an inline
        `<span>` sets `overflow` on a box that has none, so it generated nothing and the name ran
        under the badge beside it — at every width, not only when the row is narrow. -->
+  <RunDate :run="run" />
   <span class="min-w-0 truncate px-2">
     <span v-if="run.character !== null" class="text-row">{{
       run.character

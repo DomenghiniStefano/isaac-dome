@@ -9,6 +9,7 @@ import {
   editionShort,
   formatCount,
   formatDate,
+  formatTime,
   formatPercent,
   formatModified,
   indicator,
@@ -192,5 +193,13 @@ describe('formatPercent', () => {
   it('writes a percentage the way each language does', () => {
     expect(formatPercent(125, Locale.It)).toBe('125%')
     expect(formatPercent(125, Locale.En)).toBe('125%')
+  })
+})
+
+describe('formatTime', () => {
+  it('prints hours and minutes in the locale', () => {
+    const at = new Date(2026, 8, 12, 13, 4)
+    expect(formatTime(at, Locale.En)).toMatch(/^(01:04 PM|1:04 PM|13:04)$/)
+    expect(formatTime(at, Locale.It)).toBe('13:04')
   })
 })
