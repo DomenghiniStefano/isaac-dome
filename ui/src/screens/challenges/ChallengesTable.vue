@@ -4,7 +4,10 @@ import QueueActionButton from '@/components/plan/QueueActionButton.vue'
 import { GridTable } from '@/components/ui/grid-table'
 import { useQueueOffer } from '@/composables/useQueueOffer'
 import { useMessages } from '@/i18n'
-import { challengeQueueTarget } from '@/lib/challenges/challengeQueue'
+import {
+  challengeQueueTarget,
+  isChallengeQueued,
+} from '@/lib/challenges/challengeQueue'
 import type { ChallengeRow, Target } from '@/lib/ipc/types'
 import { challengeColumns } from '@/lib/table/columns'
 import ChallengeGoalCell from './ChallengeGoalCell.vue'
@@ -17,9 +20,6 @@ defineProps<{ rows: ChallengeRow[] }>()
 const emit = defineEmits<{ navigate: [target: Target, newTab: boolean] }>()
 const { t } = useMessages()
 const { queued } = useQueueOffer()
-
-const isQueued = (row: ChallengeRow): boolean =>
-  row.rewards.some((r) => queued.value.has(r.achievement))
 </script>
 
 <template>
@@ -36,7 +36,7 @@ const isQueued = (row: ChallengeRow): boolean =>
     <template #cell-name="{ row }">
       <ChallengeNameCell
         :row="row"
-        :queued="isQueued(row)"
+        :queued="isChallengeQueued(row, queued)"
         @navigate="(target, newTab) => emit('navigate', target, newTab)"
       />
     </template>

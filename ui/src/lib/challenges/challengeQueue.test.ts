@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import type { ChallengeRow, RewardView } from '@/lib/ipc/types'
-import { challengeQueueTarget } from './challengeQueue'
+import { challengeQueueTarget, isChallengeQueued } from './challengeQueue'
 
 const reward = (achievement: number, done: boolean | null): RewardView => ({
   achievement,
@@ -37,5 +37,19 @@ describe('challengeQueueTarget', () => {
 
   it('is nothing when the challenge unlocks nothing', () => {
     expect(challengeQueueTarget(row([]))).toBeNull()
+  })
+})
+
+describe('isChallengeQueued', () => {
+  // The row says "in coda" about the reward its Actions button adds, and no other: a second
+  // reward in the queue must not make the row read queued while its button still offers Add.
+  it('is the first reward being in the queue', () => {
+    const r = row([reward(80, false), reward(81, false)])
+    expect(isChallengeQueued(r, new Set([80]))).toBe(true)
+    expect(isChallengeQueued(r, new Set([81]))).toBe(false)
+  })
+
+  it('is false for a challenge that unlocks nothing', () => {
+    expect(isChallengeQueued(row([]), new Set([80]))).toBe(false)
   })
 })

@@ -11,3 +11,12 @@ export const challengeQueueTarget = (row: ChallengeRow): QueueTarget | null => {
   if (first === undefined) return null
   return { achievement: first.achievement, done: first.done === true }
 }
+
+/** Whether the row reads "in coda": the same reward its Actions button adds or removes. */
+export const isChallengeQueued = (
+  row: ChallengeRow,
+  queued: ReadonlySet<number>,
+): boolean => {
+  const target = challengeQueueTarget(row)
+  return target !== null && queued.has(target.achievement)
+}
