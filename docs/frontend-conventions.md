@@ -285,9 +285,12 @@ check the Kit page, not only the typecheck.
 **Motion runs on `steps()`.** `duration-tap|panel|sheet|loop` with `ease-tap|panel|sheet|frame`,
 and `animate-*` tokens for entrances; the default transition is `0ms` on `steps(1)`, so hover
 and active never lag. No exit animations. `prefers-reduced-motion` collapses everything to
-0ms in `base.css` — durations and delays both.
+0ms in `base.css` — durations and delays both. **One exception**, the owner's on 2026-10-04:
+`ease-fold`, a continuous curve, for the section sidebar folding and its edge tab's arrow — a
+whole column of the shell moving in five jumps read as a stutter. It is not a second style to
+reach for: anything else that moves stays on steps.
 
-**A `display` that follows an animated size waits for it, one way.** When a box folds in steps
+**A `display` that follows an animated size waits for it, one way.** When a box folds over time
 and something inside it has to go (`display: none`, a `justify-content` that changes), a flip at
 the first frame leaves the box half empty for the whole animation. Transition the discrete
 property with `transition-behavior: allow-discrete` and put the `transition-delay` **only on the
