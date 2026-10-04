@@ -29,7 +29,7 @@ import { unlockBar, unlockFacetValueLabel } from '@/lib/graph/unlockLabels'
 import { unlockView } from './unlock/tabView'
 
 const graph = useGraphStore()
-const { queue, queued, canWrite } = useQueueOffer()
+const { queue } = useQueueOffer()
 const { t } = useMessages()
 
 useOnActiveProfile(async () => {
@@ -120,14 +120,7 @@ const empty = computed(() =>
             @update:picks="setPicks"
             @reset="reset"
           />
-          <UnlockTable
-            v-if="rows.length > 0"
-            :nodes="rows"
-            :queued="queued"
-            :can-write="canWrite"
-            :busy="queue.busy"
-            @add="queue.add"
-          />
+          <UnlockTable v-if="rows.length > 0" :nodes="rows" />
           <ListEmptyState v-else :empty="empty" @reset="reset" />
         </Card>
       </template>

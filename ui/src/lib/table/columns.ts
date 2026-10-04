@@ -7,6 +7,7 @@ import type { GridColumn } from './gridColumn'
 
 export const ListTable = {
   Challenges: 'challenges',
+  Unlock: 'unlock',
 } as const
 export type ListTable = (typeof ListTable)[keyof typeof ListTable]
 
@@ -49,6 +50,53 @@ export const challengeColumns: readonly GridColumn[] = [
   },
 ]
 
+// The drawing, the achievement, what it unlocks, its condition, the state, the fan-out.
+export const unlockColumns: readonly GridColumn[] = [
+  {
+    key: 'art',
+    header: null,
+    width: fixed('w-unlock-art'),
+    fold: ColumnFold.Never,
+    align: ColumnAlign.Center,
+  },
+  {
+    key: 'achievement',
+    header: 'unlock.columns.achievement',
+    width: grow(1.5),
+    fold: ColumnFold.Never,
+    align: ColumnAlign.Start,
+  },
+  {
+    key: 'unlocks',
+    header: 'unlock.columns.unlocks',
+    width: grow(1.1),
+    fold: ColumnFold.Compact,
+    align: ColumnAlign.Start,
+  },
+  {
+    key: 'condition',
+    header: 'unlock.columns.condition',
+    width: grow(1),
+    fold: ColumnFold.Compact,
+    align: ColumnAlign.Start,
+  },
+  {
+    key: 'state',
+    header: 'unlock.columns.state',
+    width: fixed('w-unlock-state'),
+    fold: ColumnFold.Never,
+    align: ColumnAlign.Start,
+  },
+  {
+    key: 'fanOut',
+    header: 'unlock.columns.fanOut',
+    width: fixed('w-unlock-fan'),
+    fold: ColumnFold.Compact,
+    align: ColumnAlign.End,
+  },
+]
+
 export const TableColumns: Record<ListTable, readonly GridColumn[]> = {
   [ListTable.Challenges]: challengeColumns,
+  [ListTable.Unlock]: unlockColumns,
 }

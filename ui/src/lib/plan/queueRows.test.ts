@@ -5,6 +5,7 @@ import {
   achievementText,
   canQueue,
   isQueued,
+  nodeQueueTarget,
   originRows,
   queuedIds,
   rowId,
@@ -74,6 +75,22 @@ describe('canQueue', () => {
     )
     expect(unknown).toBeDefined()
     expect(unknown && canQueue(unknown, queued)).toBe(false)
+  })
+})
+
+describe('nodeQueueTarget', () => {
+  it('is the known achievement, with whether it is done', () => {
+    expect(nodeQueueTarget(node(484))).toEqual({
+      achievement: 484,
+      done: node(484).done,
+    })
+    expect(nodeQueueTarget(node(1))).toEqual({ achievement: 1, done: true })
+  })
+
+  it('is nothing for an achievement the catalog does not know', () => {
+    const unknown = nodes.find((n) => n.achievement.kind === 'unknown')
+    expect(unknown).toBeDefined()
+    expect(unknown && nodeQueueTarget(unknown)).toBeNull()
   })
 })
 

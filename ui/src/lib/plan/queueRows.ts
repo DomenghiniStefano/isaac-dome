@@ -1,6 +1,7 @@
 import { knownId, knownText, nodeWithId } from '@/lib/graph/achievementNode'
 import { nodeNumber } from '@/lib/graph/achievementNode'
 import type { QueueRow, QueueView, UnlockNode } from '@/lib/ipc/types'
+import type { QueueTarget } from './queueAction'
 
 // A queue row is always a known achievement (the view leaves unresolved ones out), so its slot
 // is its id.
@@ -25,6 +26,12 @@ export const isQueued = (node: UnlockNode, queued: Set<number>): boolean => {
 // What can be put in the queue: a known achievement, not done, not already there.
 export const canQueue = (node: UnlockNode, queued: Set<number>): boolean =>
   knownId(node) !== null && !node.done && !isQueued(node, queued)
+
+// The achievement a node's Actions button puts in the queue; an unknown one has no id to queue.
+export const nodeQueueTarget = (node: UnlockNode): QueueTarget | null => {
+  const id = knownId(node)
+  return id === null ? null : { achievement: id, done: node.done }
+}
 
 export interface OriginRow {
   id: number

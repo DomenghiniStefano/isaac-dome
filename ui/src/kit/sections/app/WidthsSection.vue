@@ -48,7 +48,6 @@ const nodes = [
     false,
   ),
 ]
-const queued = new Set<number>()
 
 const items: CollectionItem[] = [
   {
@@ -125,13 +124,7 @@ const runs: RunView[] = runsAnswer().runs
   <KitSection title="Larghezze" class="col-span-3">
     <div class="flex flex-col gap-6">
       <KitWidths>
-        <UnlockTable
-          :nodes="nodes"
-          :queued="queued"
-          :can-write="false"
-          :busy="false"
-          :offset="null"
-        />
+        <UnlockTable :nodes="nodes" />
       </KitWidths>
       <KitWidths>
         <CollectionTable
