@@ -310,42 +310,43 @@ The reasoning, and the two approaches that were rejected, are in
 [`docs/superpowers/specs/2026-09-20-responsive-layout-design.md`](superpowers/specs/2026-09-20-responsive-layout-design.md).
 What follows is the contract.
 
-### A screen is one of three shapes
+### A screen scrolls as a page
 
 `<main>` is the **page box**: it scrolls nothing, pads nothing, and is the size container named
-`page`. Under it every screen declares itself, and carries its own gutter:
+`page`. Under it **every screen is the box that scrolls**, and carries its own gutter. What sits
+above a list — the title, the diagnostics, a band, the filter bar — goes by with the page, and only
+what the screen pins stays: a table's column header (`sticky top-0 z-raised-header`), Completion's
+boss header. Decided by the owner on 2026-10-04, looking at Runs: *"if I scroll I want the widgets
+above to go, exactly as in Completion — let's make this style the default"*.
 
-| shape | root classes | who |
-|---|---|---|
-| **flowing** | `flex h-full flex-col gap-4 overflow-y-auto px-5.5 pt-5 pb-15` | content flows and the screen scrolls: Profile, Appearance, Background, Tabs settings, Floor, Live, Roll |
-| **filling** | `flex h-full min-h-0 flex-col gap-4 overflow-hidden px-5.5 pt-5 pb-5`, with **exactly one** descendant carrying `min-h-0 flex-1` | a screen with a list: Unlock, Collection, Challenges, Runs, Search |
-| **banded** | `flex h-full min-h-0 flex-col` with `overflow-hidden` or `overflow-y-auto`, a `hero-wash` header, then children carrying their own `px-5.5` | a screen that opens on a band: Completion, Goals, the wiki's landing, pages and category lists |
+| root | when |
+|---|---|
+| `PageScroll` (`components/ui/virtual/`) | a screen with a list of any length: Unlock, Collection, Search, Goals, the wiki's category lists. Every `VirtualRows` inside finds the page box through `PageScroller` and virtualizes against it, so 641 rows still draw twenty |
+| a root with `h-full overflow-y-auto` and `v-scroll-memory` | a screen with nothing to virtualize, or a short list that keeps its own box: Profile, Appearance, Floor, Live, Roll, Challenges, Completion |
 
-**The gutter is on the box that scrolls, never around it** (card #63). Until 2026-09-22 the page
-box carried `px-5.5` and every scrollbar sat 22px inside the window's edge; the banded screens
-took it back with `-mx-5.5` so their band could reach the edge, which was the same defect paid for
-twice. A box that scrolls at the right-hand edge carries the padding *inside* it, so its scrollbar
-is the window's edge — in Goals side by side that is the queue's pane, not the row.
+A screen that opens on a band (Completion, Goals, the wiki) is the same shape: the band is the
+page's first child, full width, and the children under it carry their own `px-5.5`.
 
-**The third row is a correction, not an addition.** Completion stopped being *flowing* with card
-#58 and this table was not updated, and its matrix scrolled inside itself from then until card #85,
-when the whole screen became the box that scrolls: the band goes, the boss header pins to the top
-of the screen, and only the rows scroll sideways (`MarksGrid.vue` says why the header is a strip of
-its own). A
-contract that describes two of three shapes is read as forbidding the third, so it is written down
-now that Goals is the second screen of the kind. The band never grows past a gutter to reach the
-edge — `WikiLanding.vue` records what that cost.
+**What this replaced.** Until 2026-10-04 a screen with a list was *filling*: the root held the
+window's height (`overflow-hidden`, a `min-h-0` on every link) and one region inside it scrolled.
+The band and the filters never left the screen, and on a small window the list scrolled in what
+little height was left under them. Runs is the one screen still filling, declared in the scan's
+exemptions: its run detail sits under the list, and on a page that scrolls it would come after
+every run. It flows when the detail becomes a page of its own (card #95).
+
+**The gutter is on the box that scrolls, never around it** (card #63). A padded box pins its sticky
+header one padding below its edge and the rows show through the strip above it, so `PageScroll`
+and every flowing root pad nothing: their first child carries `px-5.5`, and the scrollbar is the
+window's edge.
+
+**The scroll position is the page's.** `PageScroll` carries `v-scroll-memory`, and a list inside it
+keeps no offset of its own: a tab's reading holds the filter and the sort, never where the list was.
+A reading stored when the list kept one still reads, and the offset is left behind.
 
 **The thresholds include the gutter.** A container query measures the page box, and since the
 page box pads nothing that is 44px more than the content: `containers.css` declares compact,
 regular and wide at 844, 1004 and 1324, the content widths they were drawn against plus the
 gutter.
-
-**`min-h-0` on every link of a filling chain is not decoration.** A flex item's default
-`min-height:auto` refuses to shrink below its content, so one missing `min-h-0` between the page
-box and the scroll body makes `flex-1` grow instead of fit: the list pushes the screen, and it
-reads as a bug in the virtualizer. Unlock's chain is
-root → `Card class="min-h-0 flex-1"` → the table's root → `VirtualRows`.
 
 **No `max-w-*` on a screen root.** The cap was removed by decision and prose is not excepted: a
 long line on the wiki page is an accepted cost, not an oversight.
@@ -798,7 +799,7 @@ For honesty's sake, and so as not to make this document look more complete than 
 | **Glyph missing from Determination** | scan: `glyph missing from Determination: use an icon` |
 | **A px token in `assets/` with no reason beside it** | scan: `px token with no reason beside it` |
 | **A media query variant, or a container size that is not ours** | scan: `media query variant, or a container size that is not ours` |
-| **A screen root that is neither flowing nor filling** | scan: `screen root is neither flowing nor filling` |
+| **A screen root that does not scroll as a page** | scan: `screen root does not flow` |
 | **A width cap on a screen root** | scan: `width cap on a screen root` |
 | **A narrow grid template with no column hidden** | scan: `narrow grid template with no column hidden` |
 | **A scrolling box under `src/screens/` without `v-scroll-memory`** | scan: `scrolling box without v-scroll-memory` |

@@ -8,6 +8,7 @@ import DiagnosticsList from '@/components/diagnostics/DiagnosticsList.vue'
 import FilterBar from '@/components/facets/FilterBar.vue'
 import QueueError from '@/components/plan/QueueError.vue'
 import { Card } from '@/components/ui/card'
+import { PageScroll } from '@/components/ui/virtual'
 import { useFacetedReading } from '@/composables/useFacetedReading'
 import { useOnActiveProfile } from '@/composables/useOnActiveProfile'
 import { useQueueOffer } from '@/composables/useQueueOffer'
@@ -88,51 +89,49 @@ const empty = computed(() =>
 </script>
 
 <template>
-  <!-- A filling screen (spec 3.13a §4): the header, the diagnostics and the filter bar stay put,
-       and the table takes the height that is left. `pb-5` and not a flowing screen's `pb-15`,
-       because nothing ever scrolls past the bottom here. -->
-  <div
-    class="flex h-full min-h-0 flex-col gap-4 overflow-hidden px-5.5 pt-5 pb-5"
-  >
-    <ScreenHeader :icon="LockOpenIcon" :title="t('routes.unlock')">{{
-      t('unlock.intro')
-    }}</ScreenHeader>
-    <ProfileError
-      v-if="graph.status === LoadStatus.Failed"
-      :error="graph.error"
-      @retry="graph.load()"
-    />
-    <template v-else-if="graph.view">
-      <DiagnosticsList
-        :entries="unlockEntries(graph.view.unlock.diagnostics)"
+  <!-- The screen scrolls as a page (`PageScroll`): the header, the diagnostics and the filter bar
+       go by with the list, and only the table's column header stays pinned. The gutter is the
+       children's, so the sticky header pins at the box's edge and not one padding below it. -->
+  <PageScroll>
+    <div class="flex flex-col gap-4 px-5.5 pt-5 pb-5">
+      <ScreenHeader :icon="LockOpenIcon" :title="t('routes.unlock')">{{
+        t('unlock.intro')
+      }}</ScreenHeader>
+      <ProfileError
+        v-if="graph.status === LoadStatus.Failed"
+        :error="graph.error"
+        @retry="graph.load()"
       />
-      <QueueError v-if="queue.mutationFailed" :error="queue.mutationError" />
-      <Card class="min-h-0 flex-1">
-        <FilterBar
-          :bar="unlockBar"
-          :rows="nodes"
-          :filter="filter"
-          :shown="rows.length"
-          :sort="reading.sort"
-          :value-label="valueLabel"
-          @update:query="setQuery"
-          @update:sort="update({ sort: $event })"
-          @update:picks="setPicks"
-          @reset="reset"
+      <template v-else-if="graph.view">
+        <DiagnosticsList
+          :entries="unlockEntries(graph.view.unlock.diagnostics)"
         />
-        <UnlockTable
-          v-if="rows.length > 0"
-          :nodes="rows"
-          :queued="queued"
-          :can-write="canWrite"
-          :busy="queue.busy"
-          :offset="reading.offset"
-          @offset-change="update({ offset: $event })"
-          @add="queue.add"
-        />
-        <ListEmptyState v-else :empty="empty" @reset="reset" />
-      </Card>
-    </template>
-    <ScreenSkeleton v-else />
-  </div>
+        <QueueError v-if="queue.mutationFailed" :error="queue.mutationError" />
+        <Card>
+          <FilterBar
+            :bar="unlockBar"
+            :rows="nodes"
+            :filter="filter"
+            :shown="rows.length"
+            :sort="reading.sort"
+            :value-label="valueLabel"
+            @update:query="setQuery"
+            @update:sort="update({ sort: $event })"
+            @update:picks="setPicks"
+            @reset="reset"
+          />
+          <UnlockTable
+            v-if="rows.length > 0"
+            :nodes="rows"
+            :queued="queued"
+            :can-write="canWrite"
+            :busy="queue.busy"
+            @add="queue.add"
+          />
+          <ListEmptyState v-else :empty="empty" @reset="reset" />
+        </Card>
+      </template>
+      <ScreenSkeleton v-else />
+    </div>
+  </PageScroll>
 </template>

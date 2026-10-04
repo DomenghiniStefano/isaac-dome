@@ -7,7 +7,6 @@ describe("Unlock's reading", () => {
     expect(unlockView.empty()).toEqual({
       filter: unlockFaceting.empty(),
       sort: UnlockSort.FanOut,
-      offset: null,
     })
   })
 
@@ -15,7 +14,6 @@ describe("Unlock's reading", () => {
     const reading = {
       filter: { ...unlockFaceting.empty(), query: 'brim' },
       sort: UnlockSort.Name,
-      offset: null,
     }
     expect(unlockView.read(JSON.parse(JSON.stringify(reading)))).toEqual(
       reading,
@@ -31,15 +29,18 @@ describe("Unlock's reading", () => {
     ).toBe(UnlockSort.FanOut)
   })
 
-  it('reads back where the list was scrolled to', () => {
+  // The screen scrolls as a page, and the page box keeps its own position. A reading stored when
+  // the list kept one still reads — its filter and sort are the user's — and the offset is left.
+  it('reads a reading stored with a list offset, and leaves the offset behind', () => {
     expect(
       unlockView.read({
         filter: unlockFaceting.empty(),
-        sort: UnlockSort.FanOut,
+        sort: UnlockSort.Name,
         offset: { top: 900, rows: 641 },
-      })?.offset,
-    ).toEqual({ top: 900, rows: 641 })
+      }),
+    ).toEqual({ filter: unlockFaceting.empty(), sort: UnlockSort.Name })
   })
+
   it('refuses a record that is not a reading', () => {
     expect(unlockView.read({ sort: UnlockSort.Name })).toBeNull()
     expect(unlockView.read(null)).toBeNull()

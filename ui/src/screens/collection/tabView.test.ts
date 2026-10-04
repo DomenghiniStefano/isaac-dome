@@ -13,7 +13,6 @@ describe("the Collection's reading", () => {
     expect(collectionView.empty()).toEqual({
       filter: defaultCollectionFilter(),
       sort: CollectionSort.Quality,
-      offset: null,
       find: null,
     })
   })
@@ -24,7 +23,6 @@ describe("the Collection's reading", () => {
     const reading = {
       filter: emptyCollectionFilter(),
       sort: CollectionSort.Name,
-      offset: null,
       find: null,
     }
     expect(collectionView.read(JSON.parse(JSON.stringify(reading)))).toEqual(
@@ -49,7 +47,6 @@ describe("the Collection's reading", () => {
     const reading = {
       filter: emptyCollectionFilter(),
       sort: CollectionSort.Name,
-      offset: null,
       find: { query: 'sacred', current: '331' },
     }
     expect(collectionView.read(JSON.parse(JSON.stringify(reading)))).toEqual(
@@ -74,5 +71,24 @@ describe("the Collection's reading", () => {
         find: { query: 'sacred', current: 331 },
       })?.find,
     ).toEqual({ query: 'sacred', current: null })
+  })
+})
+
+describe("the Collection's reading, stored before the screen scrolled as a page", () => {
+  // The page box keeps the position now. A reading stored when the list kept one still reads —
+  // the filter, the sort and the find bar are the user's — and the offset is left behind.
+  it('reads with its offset left behind', () => {
+    expect(
+      collectionView.read({
+        filter: emptyCollectionFilter(),
+        sort: CollectionSort.Name,
+        offset: { top: 900, rows: 733 },
+        find: null,
+      }),
+    ).toEqual({
+      filter: emptyCollectionFilter(),
+      sort: CollectionSort.Name,
+      find: null,
+    })
   })
 })
