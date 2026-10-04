@@ -24,7 +24,7 @@ const item = (id: number, name: string | null) => ({
 
 const runs: RunView[] = [
   {
-    source: { kind: 'live' },
+    source: { kind: 'live', writtenUnix: null },
     ordinal: 2,
     character: 'Cain',
     characterId: 23,
@@ -38,7 +38,7 @@ const runs: RunView[] = [
     achievements: [],
   },
   {
-    source: { kind: 'live' },
+    source: { kind: 'live', writtenUnix: null },
     ordinal: 1,
     character: 'Judas',
     characterId: 3,

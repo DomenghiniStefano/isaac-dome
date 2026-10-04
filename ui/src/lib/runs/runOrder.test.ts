@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import type { RunView } from '@/lib/ipc/types'
-import { orderRuns, sessionTime } from './runOrder'
+import { orderRuns, runTime, sessionTime } from './runOrder'
 
 const run = (
   source: RunView['source'],
@@ -22,14 +22,21 @@ const run = (
 })
 
 const session = (name: string) => ({ kind: 'session', name }) as const
-const live = { kind: 'live' } as const
+const live = { kind: 'live', writtenUnix: null } as const
+const launch = (id: number, writtenUnix: number | null) =>
+  ({ kind: 'launch', id, writtenUnix }) as const
 
 describe('sessionTime', () => {
-  // The folder's name is the only clock this archive has: the log itself carries none.
-  it('reads the wall clock a session folder is named with', () => {
-    expect(sessionTime('09_12_2026__13_34_26')).toBe(
-      Date.UTC(2026, 8, 12, 13, 34, 26),
-    )
+  // The folder's name is a wall clock on the player's machine: it is read as local time, so
+  // the hour shown is the hour in the name, whatever the zone.
+  it('reads the wall clock a session folder is named with, as local time', () => {
+    const at = new Date(sessionTime('09_12_2026__13_34_26') ?? Number.NaN)
+    expect([at.getFullYear(), at.getMonth(), at.getDate()]).toEqual([
+      2026, 8, 12,
+    ])
+    expect([at.getHours(), at.getMinutes(), at.getSeconds()]).toEqual([
+      13, 34, 26,
+    ])
   })
 
   it('answers nothing for a name that is not one', () => {
@@ -100,6 +107,52 @@ describe('orderRuns', () => {
       'newest',
       'unreadable',
       'older',
+    ])
+  })
+})
+
+describe('runTime', () => {
+  it('dates a session by its name and a launch by its file', () => {
+    expect(runTime(run(session('09_12_2026__13_34_26'), 1))).toBe(
+      sessionTime('09_12_2026__13_34_26'),
+    )
+    expect(runTime(run(launch(4, 1_790_000_000), 1))).toBe(1_790_000_000_000)
+  })
+
+  it('answers nothing for a launch read before dates were kept', () => {
+    expect(runTime(run(launch(4, null), 1))).toBeNull()
+  })
+})
+
+describe('orderRuns with past launches', () => {
+  it('orders past launches among the sessions by date, the live one still first', () => {
+    const named = (sessionTime('09_12_2026__13_34_26') ?? 0) / 1000
+    const rows = [
+      run(launch(1, named - 3600), 1, 'L1'),
+      run(session('09_12_2026__13_34_26'), 1, 'S1'),
+      run(launch(2, named + 3600), 1, 'L2'),
+      run(live, 1, 'NOW'),
+    ]
+    expect(orderRuns(rows).map((r) => r.seedWords)).toEqual([
+      'NOW',
+      'L2',
+      'S1',
+      'L1',
+    ])
+  })
+
+  // The rule unreadable session names already follow: no date says nothing about when, so the
+  // source keeps the place the archive gave it instead of being pushed to an end.
+  it('leaves an undated launch where the archive put it', () => {
+    const rows = [
+      run(session('09_10_2026__10_00_00'), 1, 'OLD'),
+      run(launch(1, null), 1, 'UNDATED'),
+      run(session('09_12_2026__10_00_00'), 1, 'NEW'),
+    ]
+    expect(orderRuns(rows).map((r) => r.seedWords)).toEqual([
+      'NEW',
+      'UNDATED',
+      'OLD',
     ])
   })
 })

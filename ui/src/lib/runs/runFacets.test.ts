@@ -95,13 +95,15 @@ describe('the run facets', () => {
     expect(counts.get('died')).toBe(1)
   })
 
-  it('names a session by its folder and the watched launch by itself', () => {
+  it('names a session by its folder, the watched launch and the earlier ones', () => {
     const rows = [
-      run({ source: { kind: 'live' } }),
+      run({ source: { kind: 'live', writtenUnix: null } }),
+      run({ source: { kind: 'launch', id: 1, writtenUnix: null } }),
       run({ source: { kind: 'session', name: '09_12_2026__13_34_26' } }),
     ]
     expect(runFaceting.options(rows, RunFacet.Source)).toEqual([
       'live',
+      'launch',
       'session',
     ])
   })

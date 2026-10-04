@@ -102,7 +102,7 @@ const challenges: ChallengeRow[] = [
 
 const runs: RunView[] = [
   {
-    source: { kind: 'live' },
+    source: { kind: 'live', writtenUnix: null },
     ordinal: 1,
     character: 'Isaac',
     characterId: 0,

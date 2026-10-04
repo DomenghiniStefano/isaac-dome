@@ -252,6 +252,7 @@ export const en: MessageSchema = {
     },
     source: {
       live: 'this session',
+      launch: 'earlier session',
       session: 'online session',
     },
     totals: {

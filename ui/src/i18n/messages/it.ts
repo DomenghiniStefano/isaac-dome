@@ -259,6 +259,7 @@ export const it = {
     },
     source: {
       live: 'questa sessione',
+      launch: 'sessione precedente',
       session: 'sessione online',
     },
     totals: {
