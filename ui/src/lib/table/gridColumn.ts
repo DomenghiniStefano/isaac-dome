@@ -21,7 +21,7 @@ export type ColumnWidthKind =
   (typeof ColumnWidthKind)[keyof typeof ColumnWidthKind]
 
 // A fixed column names its token's class in full, so Tailwind finds it in this source; a grow
-// column shares what is left by weight, the way `minmax(0, <weight>fr)` did.
+// column shares what is left by weight, as `minmax(0, <weight>fr)` would in a grid.
 export type ColumnWidth =
   | { kind: typeof ColumnWidthKind.Fixed; class: string }
   | { kind: typeof ColumnWidthKind.Grow; weight: number }

@@ -6,7 +6,7 @@ import type { GridColumn } from './gridColumn'
 
 // Each list table's columns, in the order they are drawn. What folds at compact is 3.13b's rule:
 // who the row is and how it is doing stay; what explains it, and what is derived from it, go.
-// The weights are the `fr` of the grid templates these replaced.
+// A weight is a share of what the fixed columns leave: 2 beside 1 takes twice the room.
 
 export const ListTable = {
   Challenges: 'challenges',
