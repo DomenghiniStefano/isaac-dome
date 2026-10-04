@@ -6,6 +6,7 @@ import type {
   UnlockNode,
 } from '@/lib/ipc/types'
 import { ItemKindView, OriginView } from '@/lib/ipc/types'
+import { runsAnswer } from '@/lib/ipc/fixtures/runs'
 import ChallengesTable from '@/screens/challenges/ChallengesTable.vue'
 import CollectionTable from '@/screens/collection/CollectionTable.vue'
 import RunsTable from '@/screens/runs/RunsTable.vue'
@@ -100,51 +101,9 @@ const challenges: ChallengeRow[] = [
   },
 ]
 
-const runs: RunView[] = [
-  {
-    source: { kind: 'live', writtenUnix: 1_790_000_000 },
-    ordinal: 1,
-    character: 'Isaac',
-    characterId: 0,
-    seedWords: 'ABCD 1234',
-    online: false,
-    outcome: { kind: 'won', ending: 'Mother' },
-    floors: 11,
-    startingItems: [],
-    collected: [],
-    heldActive: null,
-    achievements: [],
-  },
-  {
-    source: { kind: 'session', name: '09_22_2026__21_15_03' },
-    ordinal: 2,
-    character: null,
-    characterId: null,
-    seedWords: 'WXYZ 9876',
-    online: true,
-    outcome: { kind: 'died', killer: 'Mom' },
-    floors: 4,
-    startingItems: [],
-    collected: [],
-    heldActive: null,
-    achievements: [],
-  },
-  // A launch read before the app kept dates: the row says so instead of inventing one.
-  {
-    source: { kind: 'launch', id: 1, writtenUnix: null },
-    ordinal: 1,
-    character: 'Cain',
-    characterId: 2,
-    seedWords: 'KLMN 5555',
-    online: false,
-    outcome: { kind: 'abandoned' },
-    floors: 2,
-    startingItems: [],
-    collected: [],
-    heldActive: null,
-    achievements: [],
-  },
-]
+// The shared fixtures: every case the list has to draw, from a death by a projectile to a launch
+// read before the app kept dates.
+const runs: RunView[] = runsAnswer().runs
 </script>
 
 <template>

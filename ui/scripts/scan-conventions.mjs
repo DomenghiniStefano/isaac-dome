@@ -64,7 +64,8 @@ const visibleText = (body) => {
 // `from` let fifteen screens fall out of the check with "0 violations" to show for it — caught
 // by the fixtures below, not by the count.
 // `WelcomeScreen.vue` is added by hand because it is mounted by `App.vue` as a takeover above the
-// router (3.8), which is the one screen the router never names.
+// router (3.8), which is the one screen the router never names. `RunsList.vue` and `RunPage.vue`
+// are added for the reason below: `RunsScreen.vue` picks one of the two, and they are the roots.
 //
 // What this cannot see, said rather than discovered: `WikiScreen.vue` delegates to four bodies
 // that are the real roots, and they are not router-imported, so the shape is not *required* of
@@ -76,7 +77,9 @@ const SCREEN_FILES = new Set(
     ),
   ]
     .map(([, path]) => join('src', 'screens', ...path.split('/')))
-    .concat(join('src', 'screens', 'welcome', 'WelcomeScreen.vue')),
+    .concat(join('src', 'screens', 'welcome', 'WelcomeScreen.vue'))
+    .concat(join('src', 'screens', 'runs', 'RunsList.vue'))
+    .concat(join('src', 'screens', 'runs', 'RunPage.vue')),
 )
 const isScreen = (file) => SCREEN_FILES.has(relative(ROOT, file))
 
@@ -297,7 +300,7 @@ const EXEMPTIONS = [
     file: 'src/screens/RunsScreen.vue',
     check: 'screen root does not flow',
     reason:
-      'the run detail sits under the list, and on a page that scrolls it would come after every run; the screen flows when the detail becomes a page of its own (card #95), and this entry leaves with it',
+      "it has no root of its own: it picks the list or a run's page from the query, and both bodies are checked as screens (`SCREEN_FILES`)",
   },
   {
     file: 'src/screens/WikiScreen.vue',

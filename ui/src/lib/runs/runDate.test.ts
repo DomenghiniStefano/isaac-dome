@@ -23,7 +23,7 @@ describe("a run's date", () => {
   })
 
   it('is nothing for a launch read before dates were kept, or a name that is not a clock', () => {
-    expect(runDate(run({ kind: 'live', writtenUnix: null })).kind).toBe(
+    expect(runDate(run({ kind: 'live', id: 1, writtenUnix: null })).kind).toBe(
       RunDateKind.Undated,
     )
     expect(runDate(run({ kind: 'session', name: 'desyncs' })).kind).toBe(

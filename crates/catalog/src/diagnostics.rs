@@ -24,6 +24,8 @@ pub enum Source {
     VersusScreenMother,
     VersusScreenDogma,
     Entities,
+    /// The stage files, whose rows name a floor through the stringtable.
+    Stages,
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize)]

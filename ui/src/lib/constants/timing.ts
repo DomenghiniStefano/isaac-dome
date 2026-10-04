@@ -7,4 +7,6 @@ export const Timing = {
   // other has no reason to. It costs nothing to be small: what it feeds is the session's own
   // 400ms write, so anything under that is invisible.
   ViewWrite: 120,
+  // How long a button that copied says so before saying what it does again.
+  CopiedNotice: 1500,
 } as const

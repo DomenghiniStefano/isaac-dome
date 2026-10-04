@@ -1,6 +1,6 @@
 //! Events and runs are stored as JSON rows. The archive is only as good as this round trip.
 
-use run::{Event, Floor, Generated, Outcome, Pass, Run, SeedKind};
+use run::{Event, Floor, Generated, Outcome, Pass, Pickup, Run, SeedKind};
 
 fn round_trip_event(e: &Event) -> Event {
     let json = serde_json::to_string(e).expect("an event serializes");
@@ -43,6 +43,7 @@ fn every_event_survives_the_round_trip() {
             name: "Sheol".to_string(),
         },
         Event::AchievementUnlocked { id: 19 },
+        Event::GreedWave,
         Event::SaveWritten {
             file: "rep+persistentgamedata1.dat".to_string(),
         },
@@ -78,7 +79,18 @@ fn a_folded_run_survives_the_round_trip() {
         character: Some("Judas".to_string()),
         character_id: Some(3),
         starting_items: vec![34],
-        collected: vec![225, 105],
+        collected: vec![
+            Pickup {
+                id: 225,
+                pool: "treasure".to_string(),
+                floor: Some(0),
+            },
+            Pickup {
+                id: 105,
+                pool: "shop".to_string(),
+                floor: None,
+            },
+        ],
         passives: vec![225],
         familiars: vec![],
         held_active: Some(105),
@@ -89,6 +101,7 @@ fn a_folded_run_survives_the_round_trip() {
             generated: Generated::NotSaid,
         }],
         achievements: vec![19],
+        greed: false,
         outcome: Outcome::Won {
             ending: "Mega Satan".to_string(),
         },
@@ -106,6 +119,7 @@ fn each_outcome_survives_including_the_one_that_is_not_a_failure() {
         },
         Outcome::Died {
             killer: "9.0".to_string(),
+            spawner: "84.0".to_string(),
         },
         Outcome::Abandoned,
         Outcome::Open,

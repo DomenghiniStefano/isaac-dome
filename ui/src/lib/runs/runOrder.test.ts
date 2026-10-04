@@ -11,18 +11,22 @@ const run = (
   ordinal,
   character: 'Cain',
   characterId: 2,
+  characterHeadUrl: null,
   seedWords,
   online: false,
   outcome: { kind: 'abandoned' },
   floors: 1,
+  floorDetails: [],
   startingItems: [],
   collected: [],
+  passives: [],
+  familiars: [],
   heldActive: null,
   achievements: [],
 })
 
 const session = (name: string) => ({ kind: 'session', name }) as const
-const live = { kind: 'live', writtenUnix: null } as const
+const live = { kind: 'live', id: 9, writtenUnix: null } as const
 const launch = (id: number, writtenUnix: number | null) =>
   ({ kind: 'launch', id, writtenUnix }) as const
 
@@ -176,5 +180,17 @@ describe('orderRuns with an undated source among dated ones', () => {
       'L',
       'S10',
     ])
+  })
+})
+
+describe('orderRuns with the live launch under any id', () => {
+  // The live launch is first by its kind, not by its key: it shares the key shape of every other
+  // launch, and its id may be lower than an older one's in another database.
+  it('puts it first whatever its id', () => {
+    const rows = [
+      run(launch(12, 1_790_000_000), 1, 'OLDER'),
+      run({ kind: 'live', id: 2, writtenUnix: null }, 1, 'NOW'),
+    ]
+    expect(orderRuns(rows).map((r) => r.seedWords)).toEqual(['NOW', 'OLDER'])
   })
 })

@@ -34,6 +34,7 @@ pub(crate) fn runs(
         RunsInputs {
             sources,
             catalog,
+            wiki: wiki::Dataset::embedded().ok(),
             diagnostics,
         },
         crate::icons::icon_url,
@@ -135,6 +136,7 @@ fn open_run(
     let inputs = RunsInputs {
         sources: vec![(source, runs)],
         catalog,
+        wiki: wiki::Dataset::embedded().ok(),
         diagnostics: Vec::new(),
     };
     ipc::runs_view(inputs, crate::icons::icon_url)

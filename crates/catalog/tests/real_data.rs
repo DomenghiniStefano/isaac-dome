@@ -671,3 +671,20 @@ fn a_champion_subtype_and_a_pickup_subtype_resolve_like_any_other_row() {
         "subtype 10 (Heart's variant) declares no subtype 0 row to fall back to"
     );
 }
+
+// A floor's name on the installed game: the hand table, `stages.xml` and the stringtable together.
+// `4, 4` is the one pair measured on a real log (`docs/log-format.md`); `1, 0` is the first floor
+// of every run; `9, 0` is a floor with no I/II — and the game itself calls the Blue Womb `???`,
+// which is what its stringtable says and so what this says (measured 2026-10-04). A pair with no
+// row stays nameless.
+#[test]
+fn the_installed_game_names_its_floors() {
+    let Some((c, _)) = build_or_skip() else {
+        return;
+    };
+    assert_eq!(c.floor_name(4, 4).as_deref(), Some("Mines II"));
+    assert_eq!(c.floor_name(1, 0).as_deref(), Some("Basement I"));
+    assert_eq!(c.floor_name(9, 0).as_deref(), Some("???"));
+    assert_eq!(c.floor_name(10, 1).as_deref(), Some("Cathedral"));
+    assert_eq!(c.floor_name(1, 3), None);
+}

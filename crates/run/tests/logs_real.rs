@@ -109,7 +109,7 @@ fn judas_starts_with_the_book_of_belial_and_it_is_not_a_treasure_find() {
     };
     let runs = Run::fold(events.into_iter(), &AllPassive);
     assert_eq!(runs[0].starting_items, vec![34]);
-    assert!(!runs[0].collected.contains(&34));
+    assert!(!runs[0].collected.iter().any(|p| p.id == 34));
 }
 
 #[test]
@@ -353,5 +353,26 @@ fn the_one_floor_generated_twice_keeps_both_passes() {
                 }
             ]
         }
+    );
+}
+
+/// The Greed log writes the normal path's floor numbers — `1,1`, `2,0`, `3,2` … `7,0` — so its run
+/// has to say it is Greed, or each floor is named after the normal floor sharing its numbers. The
+/// guard has its other half: a normal run on the same rules must not say so.
+#[test]
+fn a_greed_log_folds_into_a_greed_run_and_a_normal_one_does_not() {
+    let Some(greed) = events_of("20260912-greed-online-coop.log.txt") else {
+        return;
+    };
+    let Some(normal) = events_of("20260908-run-megasatan-judas.log.txt") else {
+        return;
+    };
+    let greed = Run::fold(greed.into_iter(), &AllPassive);
+    let normal = Run::fold(normal.into_iter(), &AllPassive);
+    assert!(greed.iter().all(|r| r.greed), "{greed:?}");
+    assert!(normal.iter().all(|r| !r.greed));
+    assert!(
+        !greed.is_empty() && !normal.is_empty(),
+        "both logs hold a run"
     );
 }

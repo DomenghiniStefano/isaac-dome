@@ -16,6 +16,7 @@ use crate::minimap;
 use crate::players::{self, Character};
 use crate::reward;
 use crate::sprite::{Rect, SpriteRef};
+use crate::stages;
 use crate::strings::Strings;
 use crate::text::{Language, Text};
 use crate::unlock::{self, Unlock};
@@ -28,7 +29,7 @@ use crate::versusscreen::{self, PortraitCrops};
 /// itself: a new source read by `build` and left out of here fails
 /// `a_reader_that_has_nothing_yields_one_missing_diagnostic_per_source`.
 #[cfg(feature = "test-api")]
-pub const SOURCES: [(&str, Source); 14] = [
+pub const SOURCES: [(&str, Source); 15] = [
     source(Source::Items),
     source(Source::Metadata),
     source(Source::Strings),
@@ -43,6 +44,7 @@ pub const SOURCES: [(&str, Source); 14] = [
     source(Source::VersusScreenMother),
     source(Source::VersusScreenDogma),
     source(Source::Entities),
+    source(Source::Stages),
 ];
 
 #[cfg(feature = "test-api")]
@@ -72,6 +74,7 @@ const fn path_of(source: Source) -> &'static str {
         Source::VersusScreenMother => "gfx/ui/boss/versusscreen_mother.anm2",
         Source::VersusScreenDogma => "gfx/ui/boss/versusscreen_dogma.anm2",
         Source::Entities => "entities2.xml",
+        Source::Stages => "stages.xml",
     }
 }
 
@@ -91,6 +94,8 @@ pub struct Catalog {
     minimap: BTreeMap<String, SpriteRef>,
     /// Every row of `entities2.xml`, by `(id, variant, subtype)`.
     entities: BTreeMap<(u32, u32, u32), Entity>,
+    /// The rows of `stages.xml`, by the game's own stage id.
+    stages: BTreeMap<u32, Text>,
 }
 
 impl Catalog {
@@ -132,6 +137,7 @@ impl Catalog {
         let entities = keyed(src.parse(Source::Entities, entities::parse), |e| {
             (e.id, e.variant, e.subtype)
         });
+        let stages = src.parse(Source::Stages, stages::parse);
 
         let mut diagnostics = src.diagnostics;
         assign_rewards(&achievements, &mut challenges, &mut diagnostics);
@@ -149,7 +155,25 @@ impl Catalog {
             unlocks,
             minimap,
             entities,
+            stages,
         }
+    }
+
+    /// A floor's name as the game writes it, from the log's `m_Stage, m_StageType`: `Basement I`,
+    /// `Mines II`, `Blue Womb`. `None` when any link is missing — the pair has no row in
+    /// `stages::file_of`, or the file or the string is not there — and the caller shows the
+    /// numbers: a name borrowed from a neighbouring floor would be a guess.
+    pub fn floor_name(&self, stage: u32, stage_type: u32) -> Option<String> {
+        let (id, numbered) = stages::file_of(stage, stage_type)?;
+        let name = match self.stages.get(&id)? {
+            Text::Key { key } => self.strings.as_ref()?.get(key, Language::English)?,
+            Text::Literal { text } => text.as_str(),
+        };
+        Some(if numbered {
+            format!("{name} {}", if stage % 2 == 1 { "I" } else { "II" })
+        } else {
+            name.to_string()
+        })
     }
 
     /// One of the game's own minimap icons, by the name the game gave it.

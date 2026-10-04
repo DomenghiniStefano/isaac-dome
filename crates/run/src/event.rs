@@ -84,6 +84,9 @@ pub enum Event {
     ///
     /// One per player, so a co-op run has several — the first belongs to the run, the rest to
     /// whoever else is at the table.
+    /// `Spawning greed mode wave from room variant N.`: only Greed writes it, and it is how a run
+    /// says it is Greed mode — the floor line cannot, since Greed writes the normal path's numbers.
+    GreedWave,
     PlayerInitialized {
         variant: u32,
         subtype: u32,

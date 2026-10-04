@@ -245,7 +245,7 @@ fn quality_and_tags_come_from_the_metadata_file_and_reach_actives_too() {
 }
 
 #[test]
-fn sources_are_fourteen_and_each_path_is_asked_exactly_once() {
+fn sources_are_fifteen_and_each_path_is_asked_exactly_once() {
     let mut asked: Vec<String> = Vec::new();
     let _ = Catalog::build(|p| {
         asked.push(p.to_string());
@@ -259,8 +259,8 @@ fn sources_are_fourteen_and_each_path_is_asked_exactly_once() {
         "every source asked for once, no path outside SOURCES"
     );
     // Ten until 2026-09-22, then the three versus screens (B70), then entities2.xml for the
-    // wiki's monster and pickup pictures.
-    assert_eq!(SOURCES.len(), 14);
+    // wiki's monster and pickup pictures, then stages.xml for a floor's name.
+    assert_eq!(SOURCES.len(), 15);
 }
 
 #[test]
@@ -432,6 +432,7 @@ fn with_nothing_to_read_the_diagnostics_come_in_reading_order() {
             missing(Source::BossPortraits),
             missing(Source::MinimapIcons),
             missing(Source::Entities),
+            missing(Source::Stages),
         ]
     );
 }

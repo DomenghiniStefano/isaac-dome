@@ -2,7 +2,7 @@
 //! nothing in it that could name a folder on this machine.
 
 use ipc::{runs_view, RunSource, RunsInputs};
-use run::{Floor, Generated, Outcome, Run, SeedKind};
+use run::{Floor, Generated, Outcome, Pickup, Run, SeedKind};
 
 fn a_run(seed: &str, outcome: Outcome) -> Run {
     Run {
@@ -12,7 +12,11 @@ fn a_run(seed: &str, outcome: Outcome) -> Run {
         character: Some("Judas".to_string()),
         character_id: Some(3),
         starting_items: vec![34],
-        collected: vec![105],
+        collected: vec![Pickup {
+            id: 105,
+            pool: "shop".to_string(),
+            floor: Some(0),
+        }],
         passives: vec![],
         familiars: vec![],
         held_active: Some(105),
@@ -23,6 +27,7 @@ fn a_run(seed: &str, outcome: Outcome) -> Run {
             generated: Generated::NotSaid,
         }],
         achievements: vec![19],
+        greed: false,
         outcome,
     }
 }
@@ -32,6 +37,7 @@ fn view_of(sources: Vec<(RunSource, Vec<Run>)>) -> ipc::RunsView {
         RunsInputs {
             sources,
             catalog: None,
+            wiki: None,
             diagnostics: vec![],
         },
         |_| None,
@@ -58,17 +64,21 @@ fn the_fields_are_camel_case_on_the_wire() {
 #[test]
 fn an_outcome_that_carries_something_is_tagged_and_its_fields_are_camel_case() {
     let view = view_of(vec![(
-        RunSource::Live { written_unix: None },
+        RunSource::Live {
+            id: 1,
+            written_unix: None,
+        },
         vec![a_run(
             "AAAA AAAA",
             Outcome::Died {
                 killer: "9.0".to_string(),
+                spawner: "84.0".to_string(),
             },
         )],
     )]);
     let json = serde_json::to_string(&view).unwrap();
     assert!(json.contains("\"kind\":\"died\""), "{json}");
-    assert!(json.contains("\"killer\":\"9.0\""), "{json}");
+    assert!(json.contains("\"killer\":{\"raw\":\"9.0\""), "{json}");
 }
 
 #[test]
@@ -77,7 +87,10 @@ fn a_session_is_named_by_its_folder_and_the_live_log_is_not_named_at_all() {
     // give, and inventing one would be inventing a path.
     let view = view_of(vec![
         (
-            RunSource::Live { written_unix: None },
+            RunSource::Live {
+                id: 1,
+                written_unix: None,
+            },
             vec![a_run("AAAA AAAA", Outcome::Open)],
         ),
         (
@@ -98,7 +111,10 @@ fn a_session_is_named_by_its_folder_and_the_live_log_is_not_named_at_all() {
 fn without_a_catalog_an_item_keeps_its_id_and_says_it_has_no_name() {
     // "The game is not installed" is a state to report, not a blank to paper over.
     let view = view_of(vec![(
-        RunSource::Live { written_unix: None },
+        RunSource::Live {
+            id: 1,
+            written_unix: None,
+        },
         vec![a_run("AAAA AAAA", Outcome::Open)],
     )]);
     let item = &view.runs[0].starting_items[0];
@@ -110,7 +126,10 @@ fn without_a_catalog_an_item_keeps_its_id_and_says_it_has_no_name() {
 #[test]
 fn the_totals_count_each_outcome_once() {
     let view = view_of(vec![(
-        RunSource::Live { written_unix: None },
+        RunSource::Live {
+            id: 1,
+            written_unix: None,
+        },
         vec![
             a_run(
                 "AAAA AAAA",
@@ -122,6 +141,7 @@ fn the_totals_count_each_outcome_once() {
                 "BBBB BBBB",
                 Outcome::Died {
                     killer: "9.0".to_string(),
+                    spawner: "84.0".to_string(),
                 },
             ),
             a_run("CCCC CCCC", Outcome::Abandoned),
@@ -175,7 +195,10 @@ fn the_game_calling_a_run_online_is_what_online_means() {
     let mut solo = a_run("AAAA AAAA", Outcome::Open);
     solo.seed_kind = SeedKind::New;
     let view = view_of(vec![(
-        RunSource::Live { written_unix: None },
+        RunSource::Live {
+            id: 1,
+            written_unix: None,
+        },
         vec![solo, a_run("BBBB BBBB", Outcome::Open)],
     )]);
     assert!(!view.runs[0].online);
@@ -234,7 +257,10 @@ fn the_totals_add_up_across_sources_and_the_given_diagnostics_come_first() {
         RunsInputs {
             sources: vec![
                 (
-                    RunSource::Live { written_unix: None },
+                    RunSource::Live {
+                        id: 1,
+                        written_unix: None,
+                    },
                     vec![
                         a_run("AAAA AAAA", Outcome::Open),
                         a_run("BBBB BBBB", Outcome::Abandoned),
@@ -248,6 +274,7 @@ fn the_totals_add_up_across_sources_and_the_given_diagnostics_come_first() {
                         "CCCC CCCC",
                         Outcome::Died {
                             killer: "9.0".to_string(),
+                            spawner: "84.0".to_string(),
                         },
                     )],
                 ),
@@ -259,6 +286,7 @@ fn the_totals_add_up_across_sources_and_the_given_diagnostics_come_first() {
                 ),
             ],
             catalog: None,
+            wiki: None,
             diagnostics: vec![ipc::RunsDiagnostic::LiveLogUnreadable],
         },
         |_| None,
@@ -293,7 +321,10 @@ fn a_launch_and_its_date_cross_in_camel_case_with_their_tag() {
             vec![a_run("AAAA AAAA", Outcome::Abandoned)],
         ),
         (
-            RunSource::Live { written_unix: None },
+            RunSource::Live {
+                id: 1,
+                written_unix: None,
+            },
             vec![a_run("BBBB BBBB", Outcome::Open)],
         ),
     ]);
@@ -303,8 +334,106 @@ fn a_launch_and_its_date_cross_in_camel_case_with_their_tag() {
         "{json}"
     );
     assert!(
-        json.contains(r#""source":{"kind":"live","writtenUnix":null}"#),
+        json.contains(r#""source":{"kind":"live","id":1,"writtenUnix":null}"#),
         "{json}"
     );
     assert!(!json.contains("written_unix"), "{json}");
+}
+
+fn died(killer: &str, spawner: &str) -> Run {
+    a_run(
+        "AAAA AAAA",
+        Outcome::Died {
+            killer: killer.to_string(),
+            spawner: spawner.to_string(),
+        },
+    )
+}
+
+#[test]
+fn a_death_by_a_projectile_carries_the_one_that_fired_it() {
+    // `Killed by (9.0) spawned by (84.0)`: the killer is a shot, and the spawner is the monster.
+    let view = view_of(vec![(
+        RunSource::Live {
+            id: 1,
+            written_unix: None,
+        },
+        vec![died("9.0", "84.0")],
+    )]);
+    let json = serde_json::to_value(&view).unwrap();
+    let outcome = &json["runs"][0]["outcome"];
+    assert_eq!(outcome["kind"], "died");
+    assert_eq!(outcome["killer"]["raw"], "9.0");
+    assert_eq!(outcome["spawner"]["raw"], "84.0");
+}
+
+#[test]
+fn a_spawner_that_is_nobody_does_not_cross() {
+    let view = view_of(vec![(
+        RunSource::Live {
+            id: 1,
+            written_unix: None,
+        },
+        vec![died("10.0", "0.0")],
+    )]);
+    let json = serde_json::to_value(&view).unwrap();
+    assert!(json["runs"][0]["outcome"]["spawner"].is_null(), "{json}");
+}
+
+#[test]
+fn a_killer_that_does_not_read_as_an_entity_keeps_what_the_log_wrote() {
+    let view = view_of(vec![(
+        RunSource::Live {
+            id: 1,
+            written_unix: None,
+        },
+        vec![died("lava", "0.0")],
+    )]);
+    let json = serde_json::to_value(&view).unwrap();
+    assert_eq!(json["runs"][0]["outcome"]["killer"]["raw"], "lava");
+    assert!(json["runs"][0]["outcome"]["killer"]["name"].is_null());
+}
+
+#[test]
+fn the_page_fields_cross_in_camel_case() {
+    let view = view_of(vec![(
+        RunSource::Live {
+            id: 7,
+            written_unix: None,
+        },
+        vec![a_run("AAAA AAAA", Outcome::Open)],
+    )]);
+    let json = serde_json::to_string(&view).unwrap();
+    for field in [
+        "characterHeadUrl",
+        "floorDetails",
+        "stageType",
+        "passives",
+        "familiars",
+        "\"pool\":\"shop\"",
+        "\"floor\":0",
+    ] {
+        assert!(json.contains(field), "{field} in {json}");
+    }
+    assert!(json.contains(r#""kind":"live","id":7"#), "{json}");
+    assert!(!json.contains("stage_type"), "{json}");
+    assert!(!json.contains("head_url"), "{json}");
+}
+
+#[test]
+fn an_achievement_of_a_run_crosses_as_one_the_page_can_name() {
+    // The page lists what a run unlocked; a bare number would be a chip nobody can read. Without
+    // a catalog the text is `null` and the id stays.
+    let view = view_of(vec![(
+        RunSource::Live {
+            id: 1,
+            written_unix: None,
+        },
+        vec![a_run("AAAA AAAA", Outcome::Open)],
+    )]);
+    let json = serde_json::to_value(&view).unwrap();
+    let achievement = &json["runs"][0]["achievements"][0];
+    assert_eq!(achievement["id"], 19);
+    assert!(achievement["text"].is_null(), "{json}");
+    assert!(achievement["iconUrl"].is_null(), "{json}");
 }

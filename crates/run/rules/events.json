@@ -1,5 +1,5 @@
 {
-  "version": 4,
+  "version": 5,
   "patterns": {
     "runStarted": "RNG Start Seed: (?<words>[A-Z0-9]{4} [A-Z0-9]{4}) \\((?<numeric>\\d+)\\) \\[(?<kind>[^,\\]]+)",
     "floorEntered": "Level::Init m_Stage (?<stage>\\d+), m_StageType (?<stage_type>\\d+) Seed (?<seed>\\d+)",
@@ -11,6 +11,7 @@
     "ended": "playing cutscene (?<cutscene>\\d+) \\((?<name>[^)]*)\\)",
     "achievementUnlocked": "unlock steam achievement '(?<id>\\d+)'",
     "saveWritten": "Saving PersistentGameData to Steam Cloud: (?<file>\\S+?)\\.?$",
-    "playerInitialized": "Initialized player with Variant (?<variant>\\d+) and Subtype (?<subtype>\\d+)"
+    "playerInitialized": "Initialized player with Variant (?<variant>\\d+) and Subtype (?<subtype>\\d+)",
+    "greedWave": "Spawning greed mode wave from room variant \\d+"
   }
 }

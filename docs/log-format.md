@@ -27,6 +27,20 @@ One line gives the item's id and name, the character, and the pool; the death li
 the killing entity and what spawned it. The patterns live in `crates/run/rules/events.json`,
 embedded at build time and updatable without recompiling.
 
+**The death line names entities by number, `id.variant`, never by name.** `Killed by (9.0)
+spawned by (84.0)` is a projectile (entity 9) fired by Satan (84): the killer is often a shot and
+the spawner the monster, so the run keeps both and the Runs screen names the spawner where it has
+room for one name. A spawner of `0.0` is read as nobody — entity type 0 is `ENTITY_NULL` in the
+modding API's `EntityType`; that is documented, not measured on a log here. The names come from
+`entities2.xml` through the catalog.
+
+**A floor is named by the game's own files, through a table no file holds.** `Level::Init
+m_Stage 2, m_StageType 1` is two numbers; `stages.xml` names stage *files* by another id and a
+string key, and `stringtable.sta` turns the key into English. The link from the log's pair to a
+`stages.xml` id is the modding API's `LevelStage`/`StageType`, written by hand in
+`crates/catalog/src/stages.rs` and held against `m_Stage 4, m_StageType 4` = Mines II. The game
+calls the Blue Womb `???`, and so does the app.
+
 **The seed line has three kinds and they are not interchangeable**: `[New, …]`,
 `[Continue, …]` — a run resumed from an earlier launch, logged with the seed it already had —
 and `[Net, …]`, an online run. Reading a `Continue` as a fresh start abandons a run still being
@@ -86,6 +100,10 @@ belongs to no run.
 > `the_launch_of_20240305_holds_one_event_and_it_is_the_intro` skipped there. The test is the
 > instrument and it will speak on the machine that holds the file. A launch with no run announces
 > no floor, so a generation summary in it would be a finding — not a number to fold in quietly.
+> **Twelve since 2026-10-04**, with `greedWave` — `Spawning greed mode wave from room variant N.`,
+> which only a Greed run writes (60 lines in `20260912-greed-online-coop.log.txt`) and which is how
+> a run says it is Greed: its floor lines write the normal path's numbers. The same count stands
+> unrun for it, on the same file.
 
 It is not a rare shape. It is the first launch of most evenings, and it is the reason
 `samples/logs/` means *logs of runs* and this file lives in `samples/launches/` instead: the guard

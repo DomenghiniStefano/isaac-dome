@@ -1795,6 +1795,7 @@ export type QueueView = {
 export type RunSource =
   | {
       kind: 'live'
+      id: number
       /**
        * When the launch's file was last written, in epoch seconds; `None` when it was read
        * before the app kept dates.
@@ -1813,11 +1814,69 @@ export type RunSource =
   | { kind: 'session'; name: string }
 
 /**
+ * An entity as the death line names it, `id.variant` — `9.0`, a shot — resolved when the
+ * catalog knows the row. `raw` stays: a name nobody can give must not take the place of the one
+ * thing the log said.
+ */
+export type EntityRef = {
+  raw: string
+  name: string | null
+  iconUrl: string | null
+  /**
+   * The wiki page for that exact entity, when the wiki has one.
+   */
+  page: Target | null
+}
+
+/**
+ * One floor of a run, as the game announced it.
+ */
+export type RunFloorView = {
+  stage: number
+  stageType: number
+  /**
+   * The game's own name, `Basement I`. `None` when any link to it is missing, and the page
+   * shows the numbers: a name borrowed from another floor would be a guess.
+   */
+  name: string | null
+  /**
+   * How many rooms the floor was built with. `None` when the log described no pass, or more
+   * than one: which of several passes was walked is not established, and this does not pick.
+   */
+  rooms: number | null
+}
+
+/**
+ * One item picked up after the starting window.
+ */
+export type PickupView = {
+  item: RunItemRef
+  /**
+   * The game's pool name as the log wrote it: `treasure`, `shop`, `devil`.
+   */
+  pool: string
+  /**
+   * The index into the run's `floorDetails` of the floor it was taken on.
+   */
+  floor: number | null
+}
+
+/**
+ * An achievement a run unlocked, as the page lists it: named and pictured when the catalog
+ * knows it, the id always.
+ */
+export type RunAchievementView = {
+  id: number
+  text: string | null
+  iconUrl: string | null
+}
+
+/**
  * How a run ended, as the UI draws it. `Open` is not a failure and must never be drawn as one.
  */
 export type RunOutcomeView =
   | { kind: 'won'; ending: string }
-  | { kind: 'died'; killer: string }
+  | { kind: 'died'; killer: EntityRef; spawner: EntityRef | null }
   | { kind: 'abandoned' }
   | { kind: 'open' }
 
@@ -1854,17 +1913,31 @@ export type RunView = {
    * same one.
    */
   characterId: number | null
+  /**
+   * The co-op menu head of that character, `None` without a catalog or for a form the menu
+   * does not draw.
+   */
+  characterHeadUrl: string | null
   seedWords: string
   /**
    * The game called this run online. The only free discriminator we have for co-op.
    */
   online: boolean
   outcome: RunOutcomeView
+  /**
+   * How many floors, for the list; `floor_details` is each of them, for the page.
+   */
   floors: number
+  floorDetails: Array<RunFloorView>
   startingItems: Array<RunItemRef>
-  collected: Array<RunItemRef>
+  /**
+   * Everything picked up after the starting window, in order, with its pool and floor.
+   */
+  collected: Array<PickupView>
+  passives: Array<RunItemRef>
+  familiars: Array<RunItemRef>
   heldActive: RunItemRef | null
-  achievements: Array<number>
+  achievements: Array<RunAchievementView>
 }
 
 /**

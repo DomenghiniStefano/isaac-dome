@@ -39,6 +39,7 @@ fn run_of(seed: &str) -> Run {
             generated: Generated::NotSaid,
         }],
         achievements: vec![],
+        greed: false,
         outcome: Outcome::Open,
     }
 }
@@ -397,6 +398,7 @@ fn every_archived_source_is_named_the_way_the_runs_screen_names_it() {
             ),
             (
                 RunSource::Live {
+                    id: launch,
                     written_unix: Some(1_790_000_000)
                 },
                 2
@@ -430,7 +432,10 @@ fn only_the_latest_launch_is_live_and_an_older_one_keeps_its_own_name() {
                 id: older,
                 written_unix: None
             },
-            RunSource::Live { written_unix: None },
+            RunSource::Live {
+                id: latest,
+                written_unix: None
+            },
         ]
     );
 }
@@ -458,7 +463,10 @@ fn a_session_row_with_no_name_reads_as_the_launch_it_cannot_be_told_from() {
     };
     assert_eq!(
         row.run_source(Some(1)),
-        RunSource::Live { written_unix: None }
+        RunSource::Live {
+            id: 1,
+            written_unix: None
+        }
     );
     assert_eq!(
         row.run_source(None),
@@ -506,7 +514,10 @@ fn the_live_runs_are_the_latest_launchs_and_no_one_elses() {
     assert_eq!(
         store.live_runs(1).unwrap(),
         Some((
-            RunSource::Live { written_unix: None },
+            RunSource::Live {
+                id: latest,
+                written_unix: None
+            },
             vec![run_of("BBB BBB"), run_of("CCC CCC")]
         ))
     );
@@ -606,4 +617,16 @@ fn a_database_from_before_the_dates_keeps_its_sources_undated() {
     let sources = store.sources().unwrap();
     assert_eq!(sources.len(), 1, "the row survived the migration");
     assert_eq!(sources[0].written_unix, None);
+}
+
+#[test]
+fn a_run_cached_under_the_previous_rules_is_folded_again_rather_than_read() {
+    // Rules 4 wrote `collected` as a list of numbers, which rules 5's shape does not read. The
+    // version on the cache is what keeps that row from being read as a fold: under 5 the source
+    // is stale, and the archive folds it again from its events instead of losing the run.
+    let (_d, store) = temp_store();
+    let id = store.insert_log_source(&key(0)).unwrap();
+    store.cache_runs(id, 4, &[run_of("AAA AAA")]).unwrap();
+    assert_eq!(store.cached_runs(id, 5).unwrap(), None);
+    assert_eq!(store.stale_sources(5).unwrap(), vec![id]);
 }

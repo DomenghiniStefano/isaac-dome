@@ -1,7 +1,7 @@
 //! Hand-written event sequences: no log, no game, no catalog. That is the point of the crate
 //! being pure.
 
-use run::{Event, Generated, ItemKind, ItemKinds, Outcome, Pass, Run, SeedKind};
+use run::{Event, Generated, ItemKind, ItemKinds, Outcome, Pass, Pickup, Run, SeedKind};
 
 /// The catalog stands in as a table, so a test says which kind each id is.
 struct Kinds(&'static [(u32, ItemKind)]);
@@ -26,6 +26,21 @@ fn seed(numeric: u32, kind: SeedKind) -> Event {
 
 fn started() -> Event {
     seed(2_913_253_616, SeedKind::New)
+}
+
+/// The ids of what was picked up, in order: most tests are about which items, not where from.
+fn ids(collected: &[Pickup]) -> Vec<u32> {
+    collected.iter().map(|p| p.id).collect()
+}
+
+fn item_from(id: u32, pool: &str) -> Event {
+    Event::ItemAdded {
+        id,
+        name: format!("item {id}"),
+        player: 0,
+        character: "Isaac".into(),
+        pool: pool.into(),
+    }
 }
 
 fn item(id: u32, character: &str) -> Event {
@@ -66,7 +81,7 @@ fn an_item_before_the_first_room_transition_is_the_starting_gift() {
         &Kinds(&[]),
     );
     assert_eq!(runs[0].starting_items, vec![34]);
-    assert_eq!(runs[0].collected, vec![225]);
+    assert_eq!(ids(&runs[0].collected), vec![225]);
 }
 
 #[test]
@@ -99,7 +114,7 @@ fn only_the_first_room_transition_closes_the_starting_window() {
         &Kinds(&[]),
     );
     assert_eq!(runs[0].starting_items, vec![1]);
-    assert_eq!(runs[0].collected, vec![2]);
+    assert_eq!(ids(&runs[0].collected), vec![2]);
 }
 
 #[test]
@@ -156,10 +171,12 @@ fn a_death_is_an_outcome_and_so_is_an_ending() {
         .into_iter(),
         &Kinds(&[]),
     );
+    // The killer is often a shot and the spawner the monster that fired it: both are kept.
     assert_eq!(
         died[0].outcome,
         Outcome::Died {
-            killer: "9.0".into()
+            killer: "9.0".into(),
+            spawner: "84.0".into()
         }
     );
 
@@ -221,7 +238,7 @@ fn the_same_seed_again_is_the_same_run_resumed_and_not_an_abandonment() {
     assert_eq!(runs.len(), 1);
     assert_eq!(runs[0].outcome, Outcome::Open);
     assert_eq!(runs[0].starting_items, vec![34]);
-    assert_eq!(runs[0].collected, vec![225]);
+    assert_eq!(ids(&runs[0].collected), vec![225]);
 }
 
 #[test]
@@ -610,4 +627,86 @@ fn the_last_init_before_a_seed_names_the_run() {
     );
     assert_eq!(runs[0].character_id, Some(19));
     assert_eq!(runs[1].character_id, Some(0), "run 2 is played by 0");
+}
+
+#[test]
+fn a_pickup_keeps_the_pool_it_came_from_and_the_floor_it_was_taken_on() {
+    // A read can begin inside a floor whose `Level::Init` an earlier read took: an item taken
+    // before any floor this read saw has no floor, rather than the first one's.
+    let runs = Run::fold(
+        [
+            started(),
+            Event::RoomTransition,
+            item_from(33, "treasure"),
+            floor(2, 0),
+            item_from(105, "shop"),
+            floor(3, 4),
+            item_from(51, "devil"),
+        ]
+        .into_iter(),
+        &Kinds(&[]),
+    );
+    assert_eq!(
+        runs[0].collected,
+        vec![
+            Pickup {
+                id: 33,
+                pool: "treasure".into(),
+                floor: None
+            },
+            Pickup {
+                id: 105,
+                pool: "shop".into(),
+                floor: Some(0)
+            },
+            Pickup {
+                id: 51,
+                pool: "devil".into(),
+                floor: Some(1)
+            },
+        ]
+    );
+}
+
+// Greed writes the normal path's `m_Stage, m_StageType` pairs — measured on
+// `20260912-greed-online-coop.log.txt`: `1,1`, `2,0`, `3,2` … `7,0` — so a floor's numbers cannot
+// say which mode it is in. The run has to, from what only Greed writes.
+#[test]
+fn a_greed_wave_says_the_run_is_greed_mode() {
+    let runs = Run::fold(
+        [started(), floor(1, 1), Event::GreedWave].into_iter(),
+        &Kinds(&[]),
+    );
+    assert!(runs[0].greed);
+}
+
+// The archive keeps events, not lines: a Greed run read before the wave had an event of its own
+// still says so through its items, which Greed draws from pools of its own.
+#[test]
+fn an_item_from_a_greed_pool_says_the_run_is_greed_mode() {
+    let runs = Run::fold(
+        [
+            started(),
+            Event::RoomTransition,
+            item_from(33, "greedTreasure"),
+        ]
+        .into_iter(),
+        &Kinds(&[]),
+    );
+    assert!(runs[0].greed);
+}
+
+#[test]
+fn a_run_with_neither_is_not_greed_mode() {
+    let runs = Run::fold(
+        [
+            started(),
+            floor(1, 0),
+            Event::RoomTransition,
+            item_from(33, "treasure"),
+        ]
+        .into_iter(),
+        &Kinds(&[]),
+    );
+    assert!(!runs[0].greed);
 }

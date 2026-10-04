@@ -1,6 +1,7 @@
 import { sortBy, uniq } from 'lodash-es'
 import { assertNever } from '@/lib/assertNever'
 import { createFaceting } from '@/lib/facets/faceting'
+import { entityName } from './death'
 import type { RunOutcomeView, RunSource, RunView } from '@/lib/ipc/types'
 
 // The Run diary's half of a faceted list: which facets it has, how a run answers one, what the
@@ -68,15 +69,27 @@ const facetValues = (run: RunView, facet: RunFacet): string[] => {
 }
 
 // What the search reads: the seed is how a player names a run to themselves, the character is
-// how they remember it. The ending and the killer come with the outcome, so a search for
-// "Monstro" finds the runs it ended.
+// how they remember it. The ending and the death's entities come with the outcome — the killer
+// and whoever spawned it, by name — so a search for "Monstro" finds the runs it ended, by its own
+// hand or by a shot it fired.
+const outcomeText = (outcome: RunOutcomeView): string[] => {
+  switch (outcome.kind) {
+    case 'won':
+      return [outcome.ending]
+    case 'died':
+      return [outcome.killer, outcome.spawner]
+        .filter((e) => e !== null)
+        .map(entityName)
+    case 'abandoned':
+    case 'open':
+      return []
+    default:
+      return assertNever(outcome)
+  }
+}
+
 const searchText = (run: RunView): string =>
-  [
-    run.seedWords,
-    run.character ?? '',
-    run.outcome.kind === 'won' ? run.outcome.ending : '',
-    run.outcome.kind === 'died' ? run.outcome.killer : '',
-  ].join(' ')
+  [run.seedWords, run.character ?? '', ...outcomeText(run.outcome)].join(' ')
 
 const facetOptions = (runs: RunView[], facet: RunFacet): string[] => {
   switch (facet) {

@@ -8,16 +8,23 @@ use ipc::{
 
 fn open_run(character: Option<&str>) -> RunView {
     RunView {
-        source: RunSource::Live { written_unix: None },
+        source: RunSource::Live {
+            id: 1,
+            written_unix: None,
+        },
         ordinal: 1,
         character: character.map(str::to_string),
         character_id: None,
+        character_head_url: None,
         seed_words: "FYQ8 QQ8G".into(),
         online: false,
         outcome: RunOutcomeView::Open,
         floors: 3,
+        floor_details: Vec::new(),
         starting_items: Vec::new(),
         collected: Vec::new(),
+        passives: Vec::new(),
+        familiars: Vec::new(),
         held_active: None,
         achievements: Vec::new(),
     }
