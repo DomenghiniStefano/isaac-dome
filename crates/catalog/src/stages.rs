@@ -35,9 +35,14 @@ pub fn parse(bytes: &[u8], diagnostics: &mut Vec<Diagnostic>) -> BTreeMap<u32, T
 ///
 /// **Not in any game file.** It is the game's own enumeration as the modding API documents it:
 /// `LevelStage` 1–13, two stages per chapter for the first four, and `StageType` 0 the original
-/// floor, 1 Wrath of the Lamb's, 2 Afterbirth's, 4 Repentance's and 5 Repentance's second (3 is
-/// Greed's, which this table leaves out). Held against the one pair this repo has measured on a
-/// real log: `m_Stage 4, m_StageType 4` is Mines II (`docs/log-format.md`).
+/// floor, 1 Wrath of the Lamb's, 2 Afterbirth's, 4 Repentance's and 5 Repentance's second. Held
+/// against the one pair this repo has measured on a real log: `m_Stage 4, m_StageType 4` is
+/// Mines II (`docs/log-format.md`).
+///
+/// **The normal path's table only.** Greed writes these same pairs for floors that are not these
+/// — `1,1` is its first floor and this table's Cellar I, measured on the greed sample — so a
+/// Greed run's floors are not looked up here at all (`ipc::run_detail`), and the run says it is
+/// Greed (`run::Run::greed`).
 pub fn file_of(stage: u32, stage_type: u32) -> Option<(u32, bool)> {
     let id = match stage {
         1 | 2 => chapter(stage_type, [1, 2, 3, 27, 28])?,
@@ -65,7 +70,8 @@ pub fn file_of(stage: u32, stage_type: u32) -> Option<(u32, bool)> {
 }
 
 /// One chapter's five files, in `StageType` order: original, Wrath of the Lamb, Afterbirth,
-/// Repentance, Repentance B. `StageType` 3 is Greed's and any other value is not a floor here.
+/// Repentance, Repentance B. `StageType` 3 — deprecated in the modding API, and written by no log
+/// this repo holds — and any other value are not a floor here.
 fn chapter(stage_type: u32, files: [u32; 5]) -> Option<u32> {
     match stage_type {
         0 => Some(files[0]),

@@ -150,13 +150,19 @@ impl<F: FnMut(&IconRef) -> Option<String>> Resolve<'_, F> {
         (self.icon)(&IconRef::Head { row })
     }
 
-    pub fn floor(&self, f: &run::Floor) -> RunFloorView {
+    /// One floor of a run. A Greed run's floors have no name: Greed writes the normal path's
+    /// numbers (`1,1` is its first floor and the normal path's Cellar I), and the table that names
+    /// a floor from them is the normal path's.
+    pub fn floor(&self, f: &run::Floor, greed: bool) -> RunFloorView {
         RunFloorView {
             stage: f.stage,
             stage_type: f.stage_type,
-            name: self
-                .catalog
-                .and_then(|c| c.floor_name(f.stage, f.stage_type)),
+            name: match greed {
+                true => None,
+                false => self
+                    .catalog
+                    .and_then(|c| c.floor_name(f.stage, f.stage_type)),
+            },
             rooms: match &f.generated {
                 run::Generated::Once { rooms, .. } => Some(*rooms),
                 run::Generated::NotSaid | run::Generated::Several { .. } => None,

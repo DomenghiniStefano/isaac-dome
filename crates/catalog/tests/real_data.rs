@@ -675,8 +675,8 @@ fn a_champion_subtype_and_a_pickup_subtype_resolve_like_any_other_row() {
 // A floor's name on the installed game: the hand table, `stages.xml` and the stringtable together.
 // `4, 4` is the one pair measured on a real log (`docs/log-format.md`); `1, 0` is the first floor
 // of every run; `9, 0` is a floor with no I/II — and the game itself calls the Blue Womb `???`,
-// which is what its stringtable says and so what this says (measured 2026-10-04). A Greed pair stays
-// nameless.
+// which is what its stringtable says and so what this says (measured 2026-10-04). A pair with no
+// row stays nameless.
 #[test]
 fn the_installed_game_names_its_floors() {
     let Some((c, _)) = build_or_skip() else {

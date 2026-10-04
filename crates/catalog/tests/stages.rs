@@ -48,8 +48,9 @@ fn a_floor_alone_in_its_chapter_has_no_number() {
     assert_eq!(catalog().floor_name(9, 0).as_deref(), Some("Blue Womb"));
 }
 
-// Greed's floors are commented out in the file and have no row in the table: they keep their
-// numbers rather than borrow "Basement" from the normal path.
+// A pair the table has no row for — a `StageType` no log writes, a stage past the last — keeps its
+// numbers rather than borrow a neighbour's name. Greed is not one of these: it writes the normal
+// path's pairs, and the run keeps it off this table (`run::Run::greed`).
 #[test]
 fn a_pair_with_no_row_has_no_name() {
     assert_eq!(catalog().floor_name(1, 3), None);

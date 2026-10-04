@@ -266,7 +266,7 @@ fn run_view<F: FnMut(&crate::icon::IconRef) -> Option<String>>(
         online: r.seed_kind == run::SeedKind::Net,
         outcome: outcome_view(r.outcome, resolve),
         floors: r.floors.len() as u32,
-        floor_details: r.floors.iter().map(|f| resolve.floor(f)).collect(),
+        floor_details: r.floors.iter().map(|f| resolve.floor(f, r.greed)).collect(),
         starting_items: items(&r.starting_items, resolve),
         collected: r.collected.iter().map(|p| resolve.pickup(p)).collect(),
         passives: items(&r.passives, resolve),
