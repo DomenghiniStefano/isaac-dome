@@ -47,6 +47,9 @@ pub struct StoredSource {
     /// The session's folder name. `None` for a launch, which has no name.
     pub key: Option<String>,
     pub source_key: SourceKey,
+    /// When a launch's file was last written, in epoch seconds. `None` for a session, whose
+    /// name is its date, and for a launch read before the app kept dates.
+    pub written_unix: Option<i64>,
 }
 
 impl StoredSource {
@@ -102,7 +105,7 @@ fn unhex(raw: &str) -> Option<u64> {
 /// The columns every read of a source selects, in the order `source_row` reads them by index:
 /// the two are one contract, which is why the list is written once.
 const SELECT_SOURCE: &str =
-    "SELECT id, kind, key, prefix_hash, prefix_len, anchor_hash, read_offset FROM sources";
+    "SELECT id, kind, key, prefix_hash, prefix_len, anchor_hash, read_offset, written_unix FROM sources";
 
 impl Store {
     /// The source of an online session, by the folder's name.
@@ -184,11 +187,15 @@ impl Store {
     /// The two halves cannot be separate statements. Events written with the offset left behind
     /// are events the next read finds again and files a second time — the duplicate-runs failure
     /// the anchor exists to prevent, reached through a crash instead of through a bad guess.
+    ///
+    /// The file's modification time moves with them; a read that cannot say when keeps the date
+    /// already there.
     pub fn append_to_log(
         &self,
         source_id: i64,
         key: &SourceKey,
         events: &[Event],
+        written_unix: Option<i64>,
     ) -> Result<u32, StoreError> {
         let tx = self
             .conn
@@ -198,13 +205,14 @@ impl Store {
         self.conn
             .execute(
                 "UPDATE sources SET prefix_hash = ?2, prefix_len = ?3, anchor_hash = ?4,
-                 read_offset = ?5 WHERE id = ?1",
+                 read_offset = ?5, written_unix = COALESCE(?6, written_unix) WHERE id = ?1",
                 params![
                     source_id,
                     hex(key.prefix),
                     key.prefix_len as i64,
                     hex(key.anchor),
-                    key.offset as i64
+                    key.offset as i64,
+                    written_unix
                 ],
             )
             .map_err(StoreError::from_sqlite)?;
@@ -452,6 +460,7 @@ fn source_row(r: &rusqlite::Row<'_>) -> rusqlite::Result<Option<StoredSource>> {
     let prefix_len: i64 = r.get(4)?;
     let anchor: String = r.get(5)?;
     let offset: i64 = r.get(6)?;
+    let written_unix: Option<i64> = r.get(7)?;
     Ok(
         match (SourceKind::parse(&kind), unhex(&prefix), unhex(&anchor)) {
             (Some(kind), Some(prefix), Some(anchor)) => Some(StoredSource {
@@ -464,6 +473,7 @@ fn source_row(r: &rusqlite::Row<'_>) -> rusqlite::Result<Option<StoredSource>> {
                     anchor,
                     offset: offset as u64,
                 },
+                written_unix,
             }),
             _ => None,
         },

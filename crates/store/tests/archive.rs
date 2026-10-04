@@ -44,10 +44,10 @@ fn run_of(seed: &str) -> Run {
 }
 
 #[test]
-fn the_schema_is_at_version_six() {
+fn the_schema_is_at_version_seven() {
     let (_d, store) = temp_store();
-    assert_eq!(SCHEMA_VERSION, 6);
-    assert_eq!(store.schema_version().unwrap(), 6);
+    assert_eq!(SCHEMA_VERSION, 7);
+    assert_eq!(store.schema_version().unwrap(), 7);
 }
 
 #[test]
@@ -78,11 +78,11 @@ fn two_launches_are_two_sources_and_the_first_keeps_its_events() {
     let (_d, store) = temp_store();
     let first = store.insert_log_source(&key(0)).unwrap();
     store
-        .append_to_log(first, &key(0), &[started("AAA AAA")])
+        .append_to_log(first, &key(0), &[started("AAA AAA")], None)
         .unwrap();
     let second = store.insert_log_source(&key(0)).unwrap();
     store
-        .append_to_log(second, &key(0), &[started("BBB BBB")])
+        .append_to_log(second, &key(0), &[started("BBB BBB")], None)
         .unwrap();
 
     assert_ne!(first, second);
@@ -99,13 +99,18 @@ fn appending_twice_continues_the_sequence_instead_of_starting_over() {
     let id = store.insert_log_source(&key(0)).unwrap();
     assert_eq!(
         store
-            .append_to_log(id, &key(0), &[started("AAA AAA")])
+            .append_to_log(id, &key(0), &[started("AAA AAA")], None)
             .unwrap(),
         1
     );
     assert_eq!(
         store
-            .append_to_log(id, &key(0), &[Event::RoomTransition, started("BBB BBB")])
+            .append_to_log(
+                id,
+                &key(0),
+                &[Event::RoomTransition, started("BBB BBB")],
+                None
+            )
             .unwrap(),
         2
     );
@@ -123,7 +128,7 @@ fn appending_twice_continues_the_sequence_instead_of_starting_over() {
 fn the_offset_a_source_reached_survives_being_written_again() {
     let (_d, store) = temp_store();
     let id = store.insert_log_source(&key(0)).unwrap();
-    store.append_to_log(id, &key(40_000), &[]).unwrap();
+    store.append_to_log(id, &key(40_000), &[], None).unwrap();
     assert_eq!(
         store.latest_log_source().unwrap().unwrap().source_key,
         key(40_000)
@@ -136,7 +141,12 @@ fn an_event_row_that_does_not_parse_is_counted_and_the_others_still_read() {
     let (_d, store) = temp_store();
     let id = store.insert_log_source(&key(0)).unwrap();
     store
-        .append_to_log(id, &key(0), &[started("AAA AAA"), Event::RoomTransition])
+        .append_to_log(
+            id,
+            &key(0),
+            &[started("AAA AAA"), Event::RoomTransition],
+            None,
+        )
         .unwrap();
     store::for_tests::corrupt_event(&store, id, 1, "{\"NotAnEvent\":{}}").unwrap();
 
@@ -308,7 +318,7 @@ fn the_events_and_the_offset_they_belong_to_move_in_the_same_write() {
     let id = store.insert_log_source(&key(0)).unwrap();
 
     store
-        .append_to_log(id, &key(10), &[started("AAAA AAAA")])
+        .append_to_log(id, &key(10), &[started("AAAA AAAA")], None)
         .unwrap();
     assert_eq!(store.events(id).unwrap().events.len(), 1);
     assert_eq!(
@@ -317,7 +327,12 @@ fn the_events_and_the_offset_they_belong_to_move_in_the_same_write() {
     );
 
     store
-        .append_to_log(id, &key(90), &[Event::RoomTransition, started("BBBB BBBB")])
+        .append_to_log(
+            id,
+            &key(90),
+            &[Event::RoomTransition, started("BBBB BBBB")],
+            None,
+        )
         .unwrap();
     assert_eq!(store.events(id).unwrap().events.len(), 3);
     assert_eq!(
@@ -401,6 +416,7 @@ fn a_session_row_with_no_name_reads_as_the_launch_it_cannot_be_told_from() {
         kind: SourceKind::Session,
         key: None,
         source_key: key(0),
+        written_unix: None,
     };
     assert_eq!(row.run_source(), RunSource::Live);
 }
@@ -477,4 +493,66 @@ fn a_source_is_stale_when_these_rules_did_not_fold_it() {
     store.cache_runs(current, 2, &[]).unwrap();
 
     assert_eq!(store.stale_sources(2).unwrap(), vec![never, other]);
+}
+
+#[test]
+fn a_launch_carries_the_time_its_file_was_last_written() {
+    let (_d, store) = temp_store();
+    let id = store.insert_log_source(&key(0)).unwrap();
+    store
+        .append_to_log(id, &key(10), &[started("AAA AAA")], Some(1_790_000_000))
+        .unwrap();
+    assert_eq!(
+        store.latest_log_source().unwrap().unwrap().written_unix,
+        Some(1_790_000_000)
+    );
+}
+
+#[test]
+fn a_read_that_cannot_say_when_keeps_the_date_already_there() {
+    // An mtime the OS will not give is no reason to forget the one it gave before.
+    let (_d, store) = temp_store();
+    let id = store.insert_log_source(&key(0)).unwrap();
+    store
+        .append_to_log(id, &key(10), &[], Some(1_790_000_000))
+        .unwrap();
+    store.append_to_log(id, &key(20), &[], None).unwrap();
+    assert_eq!(
+        store.latest_log_source().unwrap().unwrap().written_unix,
+        Some(1_790_000_000)
+    );
+}
+
+#[test]
+fn a_database_from_before_the_dates_keeps_its_sources_undated() {
+    // Migration 7 on somebody's file: every row that predates it reads NULL, which is the truth.
+    let dir = tempfile::tempdir().unwrap();
+    let path = dir.path().join("isaacdome.db");
+    {
+        let conn = rusqlite::Connection::open(&path).unwrap();
+        conn.execute_batch(
+            "CREATE TABLE goals (id TEXT PRIMARY KEY, target_json TEXT NOT NULL,
+                created_unix INTEGER NOT NULL, note TEXT, seq INTEGER NOT NULL);
+             CREATE TABLE plan_queue (id INTEGER PRIMARY KEY CHECK (id = 1), rows_json TEXT NOT NULL);
+             CREATE TABLE window_session (id INTEGER PRIMARY KEY CHECK (id = 1), document TEXT NOT NULL);
+             CREATE TABLE sources (id INTEGER PRIMARY KEY, kind TEXT NOT NULL, key TEXT,
+                prefix_hash TEXT NOT NULL, prefix_len INTEGER NOT NULL, anchor_hash TEXT NOT NULL,
+                read_offset INTEGER NOT NULL, folded_rules_version INTEGER, UNIQUE (kind, key));
+             CREATE TABLE events (source_id INTEGER NOT NULL REFERENCES sources(id),
+                seq INTEGER NOT NULL, event_json TEXT NOT NULL, PRIMARY KEY (source_id, seq));
+             CREATE TABLE runs (source_id INTEGER NOT NULL REFERENCES sources(id),
+                ordinal INTEGER NOT NULL, rules_version INTEGER NOT NULL, run_json TEXT NOT NULL,
+                PRIMARY KEY (source_id, ordinal));
+             CREATE TABLE roll (id INTEGER PRIMARY KEY CHECK (id = 1), document TEXT NOT NULL);
+             INSERT INTO sources (id, kind, key, prefix_hash, prefix_len, anchor_hash, read_offset)
+                VALUES (1, 'log', NULL, '0000000000000001', 8, '0000000000000002', 0);
+             PRAGMA user_version = 6;",
+        )
+        .unwrap();
+    }
+    let store = Store::open(&path).unwrap();
+    assert_eq!(store.schema_version().unwrap(), SCHEMA_VERSION);
+    let sources = store.sources().unwrap();
+    assert_eq!(sources.len(), 1, "the row survived the migration");
+    assert_eq!(sources[0].written_unix, None);
 }

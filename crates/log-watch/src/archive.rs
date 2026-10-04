@@ -75,7 +75,7 @@ impl Ingest<'_> {
         let (events, offset) = self.read_events(log, from)?;
         let written = self
             .store
-            .append_to_log(id, &self.key_at(log, offset)?, &events)?;
+            .append_to_log(id, &self.key_at(log, offset)?, &events, None)?;
         let runs = self.refold(id)?;
         Ok(Ingested {
             source_id: id,
