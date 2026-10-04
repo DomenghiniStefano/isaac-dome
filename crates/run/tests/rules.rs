@@ -174,7 +174,10 @@ fn the_embedded_file_is_the_one_that_ships() {
     // **4 since 2026-09-25**, when the fold stopped dropping the player line of a solo
     // launch's second run (card 80, P1): every run after the first was cached without its
     // character, and only a new version makes the store fold those sources again.
-    assert_eq!(Rules::embedded().version(), 4);
+    // **5 since 2026-10-04**, when the fold began keeping each pickup's pool and floor and the
+    // spawner of a death, for the run page (card 95): a run cached before carries none of them,
+    // and its `collected` is a list of numbers the new shape does not read.
+    assert_eq!(Rules::embedded().version(), 5);
 }
 
 #[test]

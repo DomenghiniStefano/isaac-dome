@@ -607,3 +607,15 @@ fn a_database_from_before_the_dates_keeps_its_sources_undated() {
     assert_eq!(sources.len(), 1, "the row survived the migration");
     assert_eq!(sources[0].written_unix, None);
 }
+
+#[test]
+fn a_run_cached_under_the_previous_rules_is_folded_again_rather_than_read() {
+    // Rules 4 wrote `collected` as a list of numbers, which rules 5's shape does not read. The
+    // version on the cache is what keeps that row from being read as a fold: under 5 the source
+    // is stale, and the archive folds it again from its events instead of losing the run.
+    let (_d, store) = temp_store();
+    let id = store.insert_log_source(&key(0)).unwrap();
+    store.cache_runs(id, 4, &[run_of("AAA AAA")]).unwrap();
+    assert_eq!(store.cached_runs(id, 5).unwrap(), None);
+    assert_eq!(store.stale_sources(5).unwrap(), vec![id]);
+}

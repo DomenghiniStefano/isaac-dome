@@ -20,8 +20,16 @@ pub trait ItemKinds {
 /// ends mid-run. **`Open` is not a failure state.**
 #[derive(Debug, Clone, PartialEq, Eq, serde::Serialize, serde::Deserialize)]
 pub enum Outcome {
-    Won { ending: String },
-    Died { killer: String },
+    Won {
+        ending: String,
+    },
+    /// Both entities as the log writes them, `id.variant`: `Killed by (9.0) spawned by (84.0)`.
+    /// The killer is often a shot and the spawner the monster that fired it, so the spawner is
+    /// half of the answer to "what killed me", not a detail.
+    Died {
+        killer: String,
+        spawner: String,
+    },
     Abandoned,
     Open,
 }
@@ -68,6 +76,18 @@ pub struct Floor {
     pub generated: Generated,
 }
 
+/// One item picked up after the starting window: what it was, where it came from, and where.
+#[derive(Debug, Clone, PartialEq, Eq, serde::Serialize, serde::Deserialize)]
+pub struct Pickup {
+    pub id: u32,
+    /// The word the item line writes after `from pool` — `treasure`, `shop`, `devil` — kept as
+    /// written: it is the game's own pool name, and naming it is the reader's business.
+    pub pool: String,
+    /// The index into `floors` of the floor the item was taken on. `None` before the first
+    /// `Level::Init` this read saw: a read can begin inside a floor an earlier one announced.
+    pub floor: Option<u32>,
+}
+
 /// One run: what was played, with what, and how it ended.
 #[derive(Debug, Clone, PartialEq, Eq, serde::Serialize, serde::Deserialize)]
 pub struct Run {
@@ -85,7 +105,7 @@ pub struct Run {
     pub starting_items: Vec<u32>,
     /// Everything picked up after the first room transition, in order, including actives that
     /// were later replaced.
-    pub collected: Vec<u32>,
+    pub collected: Vec<Pickup>,
     pub passives: Vec<u32>,
     pub familiars: Vec<u32>,
     /// The active actually being carried at the end. Actives replace one another, so summing
@@ -261,11 +281,16 @@ fn apply(run: &mut Run, event: Event, kinds: &dyn ItemKinds, starting: &mut bool
         // Kept for the rules to be complete; nothing is read from it yet.
         Event::RoomEntered { .. } => {}
         Event::RoomTransition => *starting = false,
-        Event::ItemAdded { id, character, .. } => {
+        Event::ItemAdded {
+            id,
+            character,
+            pool,
+            ..
+        } => {
             run.character.get_or_insert(character);
-            add_item(run, id, kinds.kind_of(id), *starting);
+            add_item(run, id, pool, kinds.kind_of(id), *starting);
         }
-        Event::Died { killer, .. } => run.outcome = Outcome::Died { killer },
+        Event::Died { killer, spawner } => run.outcome = Outcome::Died { killer, spawner },
         Event::Ended { name, .. } => run.outcome = Outcome::Won { ending: name },
         Event::AchievementUnlocked { id } => run.achievements.push(id),
         // The watcher's trigger, and it tells the fold nothing. A field for it here would be a
@@ -289,11 +314,12 @@ fn add_pass(run: &mut Run, pass: Pass) {
 
 /// An item picked up: among the starting items until the first room transition, collected
 /// after it, and filed by its kind — an active replaces the one held.
-fn add_item(run: &mut Run, id: u32, kind: ItemKind, starting: bool) {
+fn add_item(run: &mut Run, id: u32, pool: String, kind: ItemKind, starting: bool) {
     if starting {
         run.starting_items.push(id);
     } else {
-        run.collected.push(id);
+        let floor = run.floors.len().checked_sub(1).map(|i| i as u32);
+        run.collected.push(Pickup { id, pool, floor });
     }
     match kind {
         ItemKind::Passive => run.passives.push(id),

@@ -236,7 +236,7 @@ fn run_view(
         outcome: outcome_view(r.outcome),
         floors: r.floors.len() as u32,
         starting_items: r.starting_items.iter().map(|id| named(*id)).collect(),
-        collected: r.collected.iter().map(|id| named(*id)).collect(),
+        collected: r.collected.iter().map(|p| named(p.id)).collect(),
         held_active: r.held_active.map(&mut *named),
         achievements: r.achievements,
     }
@@ -268,7 +268,7 @@ fn named_item(
 fn outcome_view(o: run::Outcome) -> RunOutcomeView {
     match o {
         run::Outcome::Won { ending } => RunOutcomeView::Won { ending },
-        run::Outcome::Died { killer } => RunOutcomeView::Died { killer },
+        run::Outcome::Died { killer, .. } => RunOutcomeView::Died { killer },
         run::Outcome::Abandoned => RunOutcomeView::Abandoned,
         run::Outcome::Open => RunOutcomeView::Open,
     }

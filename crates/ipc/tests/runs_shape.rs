@@ -2,7 +2,7 @@
 //! nothing in it that could name a folder on this machine.
 
 use ipc::{runs_view, RunSource, RunsInputs};
-use run::{Floor, Generated, Outcome, Run, SeedKind};
+use run::{Floor, Generated, Outcome, Pickup, Run, SeedKind};
 
 fn a_run(seed: &str, outcome: Outcome) -> Run {
     Run {
@@ -12,7 +12,11 @@ fn a_run(seed: &str, outcome: Outcome) -> Run {
         character: Some("Judas".to_string()),
         character_id: Some(3),
         starting_items: vec![34],
-        collected: vec![105],
+        collected: vec![Pickup {
+            id: 105,
+            pool: "shop".to_string(),
+            floor: Some(0),
+        }],
         passives: vec![],
         familiars: vec![],
         held_active: Some(105),
@@ -63,6 +67,7 @@ fn an_outcome_that_carries_something_is_tagged_and_its_fields_are_camel_case() {
             "AAAA AAAA",
             Outcome::Died {
                 killer: "9.0".to_string(),
+                spawner: "84.0".to_string(),
             },
         )],
     )]);
@@ -122,6 +127,7 @@ fn the_totals_count_each_outcome_once() {
                 "BBBB BBBB",
                 Outcome::Died {
                     killer: "9.0".to_string(),
+                    spawner: "84.0".to_string(),
                 },
             ),
             a_run("CCCC CCCC", Outcome::Abandoned),
@@ -248,6 +254,7 @@ fn the_totals_add_up_across_sources_and_the_given_diagnostics_come_first() {
                         "CCCC CCCC",
                         Outcome::Died {
                             killer: "9.0".to_string(),
+                            spawner: "84.0".to_string(),
                         },
                     )],
                 ),

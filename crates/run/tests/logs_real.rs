@@ -109,7 +109,7 @@ fn judas_starts_with_the_book_of_belial_and_it_is_not_a_treasure_find() {
     };
     let runs = Run::fold(events.into_iter(), &AllPassive);
     assert_eq!(runs[0].starting_items, vec![34]);
-    assert!(!runs[0].collected.contains(&34));
+    assert!(!runs[0].collected.iter().any(|p| p.id == 34));
 }
 
 #[test]
