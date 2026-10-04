@@ -118,3 +118,25 @@ describe('the run facets', () => {
     ])
   })
 })
+
+describe('the run search', () => {
+  // The death line names entities: a run killed by a shot Monstro fired is a run Monstro ended,
+  // and a search for "Monstro" has to find it — the shot's name too, for whoever looks for that.
+  const shot = run({
+    outcome: {
+      kind: 'died',
+      killer: { raw: '9.0', name: 'Projectile', iconUrl: null, page: null },
+      spawner: { raw: '20.0', name: 'Monstro', iconUrl: null, page: null },
+    },
+  })
+
+  it('finds a run by the monster that killed it', () => {
+    expect(runFaceting.matches(shot, filter({}, 'Monstro'))).toBe(true)
+    expect(runFaceting.matches(shot, filter({}, 'Projectile'))).toBe(true)
+  })
+
+  // What a search must never match: the text an object turns into when it is joined as a string.
+  it('does not match the word an object would leave behind', () => {
+    expect(runFaceting.matches(shot, filter({}, 'object'))).toBe(false)
+  })
+})
