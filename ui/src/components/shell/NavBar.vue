@@ -51,7 +51,7 @@ const current = (s: NavSection) =>
        a trigger: it opens the palette, it isn't the input. -->
   <nav
     :data-focused="focused"
-    class="group flex h-navbar items-center gap-2.5 border-b border-hairline bg-navbar pr-2.5"
+    class="group @container/nav flex h-navbar items-center gap-2.5 border-b border-hairline bg-navbar pr-2.5"
   >
     <div
       class="flex h-full w-brand min-w-0 shrink items-center gap-2 border-r border-hairline pl-3"
@@ -99,17 +99,20 @@ const current = (s: NavSection) =>
     </div>
     <div class="min-w-0 flex-1" />
     <slot name="status" />
+    <!-- Below compact the field is its icon: the label and the shortcut have no room, and kept
+         they ran over the buttons beside them. The palette opens the same way, Ctrl+K included. -->
     <Button
       :variant="ButtonVariant.Field"
       :size="ButtonSize.Compact"
-      class="w-search min-w-10 shrink"
+      :aria-label="t('shell.search')"
+      class="w-search min-w-10 shrink @max-compact/nav:w-auto"
       @click="emit('search')"
     >
       <SearchIcon class="size-3" />
-      <span class="min-w-0 flex-1 truncate text-left">{{
+      <span class="min-w-0 flex-1 truncate text-left @max-compact/nav:hidden">{{
         t('shell.search')
       }}</span>
-      <KbdGroup>
+      <KbdGroup class="@max-compact/nav:hidden">
         <Kbd>{{ KeyName.Ctrl }}</Kbd>
         <Kbd>{{ KeyName.K }}</Kbd>
       </KbdGroup>
