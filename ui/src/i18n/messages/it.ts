@@ -284,8 +284,6 @@ export const it = {
     },
     noCharacter: 'personaggio sconosciuto',
     noItems: 'nessuno',
-    openPage:
-      'Clic per aprire la pagina, Ctrl+clic per aprirla in una nuova tab',
     itemId: 'oggetto {id}',
     killedBy: 'uccisa da {killer}',
     endedWith: 'finale {ending}',
