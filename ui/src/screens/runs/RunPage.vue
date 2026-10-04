@@ -12,6 +12,7 @@ import { useTabView } from '@/composables/useTabView'
 import { useMessages } from '@/i18n'
 import type { RunItemView } from '@/lib/runs/itemViews'
 import { runKey as keyOf } from '@/lib/runs/runKey'
+import { listIsBehind } from '@/lib/runs/runLocation'
 import { RouteName } from '@/router/routeTable'
 import { LoadStatus } from '@/stores/loadStatus'
 import { useTabsStore } from '@/stores/tabs'
@@ -34,8 +35,12 @@ const { reading, update } = useTabView(runsView)
 const run = computed(
   () => store.view?.runs.find((r) => keyOf(r) === props.runKey) ?? null,
 )
-const toList = (event: MouseEvent) =>
-  tabs.go({ name: RouteName.Runs }, event.ctrlKey)
+// Back to the list the run was opened from, where the list kept its place; a run reached any
+// other way — a link, a restored tab, Ctrl in a new one — opens the list instead.
+const toList = (event: MouseEvent) => {
+  if (!event.ctrlKey && listIsBehind(tabs.active)) tabs.back()
+  else tabs.go({ name: RouteName.Runs }, event.ctrlKey)
+}
 const setView = (itemView: RunItemView) => update({ itemView })
 </script>
 
