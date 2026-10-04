@@ -17,6 +17,7 @@ mod origin;
 mod players;
 mod reward;
 mod sprite;
+mod stages;
 mod strings;
 mod text;
 mod unlock;
