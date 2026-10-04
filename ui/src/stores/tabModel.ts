@@ -201,13 +201,14 @@ const changed = (state: TabsState, move: (tab: Tab) => Tab): TabsState => ({
 })
 
 // Two locations are the same view when they name the same thing: the route, the wiki
-// category and the page. `q` is deliberately out — what the user has typed is state inside
-// the search, not a location of its own, so a back from a search leaves it for the route it
-// came from instead of walking back through the keystrokes.
+// category, the page, and the run. `q` is deliberately out — what the user has typed is state
+// inside the search, not a location of its own, so a back from a search leaves it for the route
+// it came from instead of walking back through the keystrokes.
 const sameView = (a: TabLocation, b: TabLocation): boolean =>
   a.name === b.name &&
   a.query?.category === b.query?.category &&
-  a.query?.page === b.query?.page
+  a.query?.page === b.query?.page &&
+  a.query?.run === b.query?.run
 
 // A new location either replaces the current entry, when it is the same view, or is stacked
 // on top of it — dropping whatever forward was left, as a browser does.
