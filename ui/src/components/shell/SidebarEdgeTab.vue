@@ -31,7 +31,7 @@ const label = computed(() =>
     @click="emit('toggle')"
   >
     <ChevronLeftIcon
-      class="transition-transform duration-panel ease-panel group-data-[collapsed=true]/tab:rotate-180"
+      class="transition-transform duration-sheet ease-fold group-data-[collapsed=true]/tab:rotate-180"
     />
   </Button>
 </template>

@@ -59,13 +59,13 @@ const onKeydown = (e: KeyboardEvent) => {
        (spec 3.13a §6). The inline style above sets the *variable*, never the width, so a variant
        class wins by ordinary cascade — which is what lets the collapse be pure CSS, set off by
        the shell's `data-sidebar="collapsed"` and touching nothing else. -->
-  <!-- Folding moves in the sheet's five steps (Motion.dc.html), whichever input asked for it. Not
+  <!-- Folding moves over the sheet's duration on `ease-fold`, whichever input asked for it. Not
        while the edge is being dragged: there every pixel of the pointer would become a 200ms
        animation, and the edge would trail the cursor instead of sitting under it. -->
   <aside
     :style="widthVariable"
     :data-resizing="resizing !== null"
-    class="relative flex w-(--sidebar-width) shrink-0 border border-secondary bg-data transition-[width] duration-sheet ease-sheet group-data-[sidebar=collapsed]/shell:w-sidebar-icons data-[resizing=true]:transition-none @max-sidebar-room/shell:w-sidebar-icons"
+    class="relative flex w-(--sidebar-width) shrink-0 border border-secondary bg-data transition-[width] duration-sheet ease-fold group-data-[sidebar=collapsed]/shell:w-sidebar-icons data-[resizing=true]:transition-none @max-sidebar-room/shell:w-sidebar-icons"
   >
     <!-- Clipped, so that while the width folds the edge passes over the labels instead of the
          labels spilling past it onto the page. The column and not the aside: the edge tab hangs

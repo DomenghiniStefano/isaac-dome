@@ -1,5 +1,5 @@
 /* Motion.dc.html: the game doesn't interpolate, so neither do we. Everything moves on
-   steps(); data never moves. */
+   steps(); data never moves. One exception, `ease-fold`, below. */
 @theme {
   /* A bare transition-* class is instant and never a curve: hover and active can't lag. */
   --default-transition-duration: 0ms;
@@ -14,6 +14,10 @@
   --ease-tap: steps(2);
   --ease-panel: steps(3);
   --ease-sheet: steps(5);
+  /* The one curve: the section sidebar folding and unfolding, and its edge tab's arrow turning
+     with it, by the owner's choice. A whole column of the shell moving in five jumps read as a
+     stutter, not as the game's frames. */
+  --ease-fold: cubic-bezier(0.2, 0, 0, 1);
   /* Loops are frame-by-frame keyframes: each segment jumps. */
   --ease-frame: steps(1);
 

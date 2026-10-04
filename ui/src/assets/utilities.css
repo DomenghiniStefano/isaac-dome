@@ -197,10 +197,10 @@
    threshold means moving it here too — `lib/design/thresholds.test.ts` guards the other two
    copies and cannot see this one.
 
-   **Folding, the flip waits for the width** (card #54). The aside folds in the sheet's five steps,
+   **Folding, the flip waits for the width** (card #54). The aside folds over the sheet's duration,
    and `display` cannot animate: flipped at once, the labels vanished on the first frame and left
    the icons centred in a sidebar still two hundred pixels wide. Delayed by the sheet's own
-   duration, the edge clips the labels as it passes over them and drops them on the last step.
+   duration, the edge clips the labels as it passes over them and drops them when it arrives.
    **Unfolding, nothing waits**: the labels are back on the first frame and widen with the edge.
    That asymmetry is where the delay is written — a transition runs on the *arriving* state's
    `transition-*`, so the delay sits in the folded rules only. `allow-discrete` is what lets a
